@@ -1,4 +1,4 @@
-# CareerCompassi 2
+# Career Navigator Pro
 
 AI-powered career guidance platform for Finnish students and young adults.
 
@@ -52,8 +52,8 @@ careercompassi/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/careercompassi-2.git
-cd careercompassi-2
+git clone https://github.com/YOUR_USERNAME/career-navigator-pro.git
+cd career-navigator-pro
 ```
 
 2. Install dependencies:
