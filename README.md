@@ -1,4 +1,4 @@
-# CareerCompassi
+# CareerCompassi 2
 
 AI-powered career guidance platform for Finnish students and young adults.
 
@@ -52,8 +52,8 @@ careercompassi/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/careercompassi.git
-cd careercompassi
+git clone https://github.com/YOUR_USERNAME/careercompassi-2.git
+cd careercompassi-2
 ```
 
 2. Install dependencies:
