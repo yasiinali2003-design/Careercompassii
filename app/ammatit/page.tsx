@@ -4,8 +4,8 @@ import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Search, Filter, X, ChevronDown, ChevronUp } from 'lucide-react';
-import { careersData, filterOptions, CareerFilters } from '@/data/careers-catalog';
-import { Career } from '@/lib/types';
+import { careersData, filterOptions } from '@/data/careers-catalog';
+import { Career, CareerFilters } from '@/lib/types';
 import Logo from '@/components/Logo';
 
 export default function CareerCatalog() {
@@ -29,20 +29,20 @@ export default function CareerCatalog() {
 
   // Filter careers based on search and filters
   const filteredCareers = useMemo(() => {
-    return careersData.filter(career => {
+    return careersData.filter((career: Career) => {
       // Search filter
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
         const matchesSearch = 
           career.title.toLowerCase().includes(searchLower) ||
           career.summary.toLowerCase().includes(searchLower) ||
-          career.industry.some(ind => ind.toLowerCase().includes(searchLower));
+          career.industry.some((ind: string) => ind.toLowerCase().includes(searchLower));
         if (!matchesSearch) return false;
       }
 
       // Industry filter
       if (filters.industry && filters.industry.length > 0) {
-        const hasMatchingIndustry = career.industry.some(ind => 
+        const hasMatchingIndustry = career.industry.some((ind: string) => 
           filters.industry!.includes(ind)
         );
         if (!hasMatchingIndustry) return false;
@@ -50,7 +50,7 @@ export default function CareerCatalog() {
 
       // Education level filter
       if (filters.educationLevel && filters.educationLevel.length > 0) {
-        const hasMatchingEducation = career.educationLevel.some(edu => 
+        const hasMatchingEducation = career.educationLevel.some((edu: string) => 
           filters.educationLevel!.includes(edu)
         );
         if (!hasMatchingEducation) return false;
@@ -58,7 +58,7 @@ export default function CareerCatalog() {
 
       // Personality type filter
       if (filters.personalityType && filters.personalityType.length > 0) {
-        const hasMatchingPersonality = career.personalityType.some(personality => 
+        const hasMatchingPersonality = career.personalityType.some((personality: string) => 
           filters.personalityType!.includes(personality)
         );
         if (!hasMatchingPersonality) return false;
@@ -115,7 +115,7 @@ export default function CareerCatalog() {
     setVisibleCareers(12);
   };
 
-  const hasActiveFilters = searchTerm || Object.values(filters).some(value => 
+  const hasActiveFilters = searchTerm || Object.values(filters).some((value: any) => 
     Array.isArray(value) ? value.length > 0 : value !== undefined
   );
 
@@ -174,7 +174,7 @@ export default function CareerCatalog() {
             Suodattimet
             {hasActiveFilters && (
               <span className="bg-[#2563EB] text-white text-xs px-2 py-1 rounded-full">
-                {Object.values(filters).filter(v => Array.isArray(v) ? v.length > 0 : v !== undefined).length + (searchTerm ? 1 : 0)}
+                {Object.values(filters).filter((v: any) => Array.isArray(v) ? v.length > 0 : v !== undefined).length + (searchTerm ? 1 : 0)}
               </span>
             )}
             {showFilters ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
@@ -192,7 +192,7 @@ export default function CareerCatalog() {
                     Toimiala
                   </label>
                   <div className="space-y-2">
-                    {filterOptions.industry.map(industry => (
+                    {filterOptions.industry.map((industry: string) => (
                       <label key={industry} className="flex items-center">
                         <input
                           type="checkbox"
@@ -202,7 +202,7 @@ export default function CareerCatalog() {
                             if (e.target.checked) {
                               setFilters(prev => ({ ...prev, industry: [...current, industry] }));
                             } else {
-                              setFilters(prev => ({ ...prev, industry: current.filter(i => i !== industry) }));
+                              setFilters(prev => ({ ...prev, industry: current.filter((i: string) => i !== industry) }));
                             }
                           }}
                           className="rounded border-slate-300 text-[#2563EB] focus:ring-[#2563EB]"
@@ -219,7 +219,7 @@ export default function CareerCatalog() {
                     Koulutustaso
                   </label>
                   <div className="space-y-2">
-                    {filterOptions.educationLevel.map(level => (
+                    {filterOptions.educationLevel.map((level: string) => (
                       <label key={level} className="flex items-center">
                         <input
                           type="checkbox"
@@ -229,7 +229,7 @@ export default function CareerCatalog() {
                             if (e.target.checked) {
                               setFilters(prev => ({ ...prev, educationLevel: [...current, level] }));
                             } else {
-                              setFilters(prev => ({ ...prev, educationLevel: current.filter(l => l !== level) }));
+                              setFilters(prev => ({ ...prev, educationLevel: current.filter((l: string) => l !== level) }));
                             }
                           }}
                           className="rounded border-slate-300 text-[#2563EB] focus:ring-[#2563EB]"
@@ -246,7 +246,7 @@ export default function CareerCatalog() {
                     Persoonallisuustyyppi
                   </label>
                   <div className="space-y-2">
-                    {filterOptions.personalityType.map(type => (
+                    {filterOptions.personalityType.map((type: string) => (
                       <label key={type} className="flex items-center">
                         <input
                           type="checkbox"
@@ -256,7 +256,7 @@ export default function CareerCatalog() {
                             if (e.target.checked) {
                               setFilters(prev => ({ ...prev, personalityType: [...current, type] }));
                             } else {
-                              setFilters(prev => ({ ...prev, personalityType: current.filter(t => t !== type) }));
+                              setFilters(prev => ({ ...prev, personalityType: current.filter((t: string) => t !== type) }));
                             }
                           }}
                           className="rounded border-slate-300 text-[#2563EB] focus:ring-[#2563EB]"
@@ -296,7 +296,7 @@ export default function CareerCatalog() {
         <div className="max-w-6xl mx-auto">
           {displayedCareers.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {displayedCareers.map((career) => (
+              {displayedCareers.map((career: Career) => (
                 <Link
                   key={career.slug}
                   href={`/ammatit/${career.slug}`}
@@ -311,7 +311,7 @@ export default function CareerCatalog() {
                     </p>
                     
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {career.educationLevel.slice(0, 2).map(level => (
+                      {career.educationLevel.slice(0, 2).map((level: string) => (
                         <span
                           key={level}
                           className="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-full"

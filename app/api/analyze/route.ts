@@ -73,7 +73,7 @@ function calculateCategoryScores(group: string, answers: number[]) {
 
 function validateAnswers(answers: number[]): { isValid: boolean; reason?: string } {
   // Check if all answers are the same (indicates random clicking)
-  const uniqueAnswers = new Set(answers.filter(a => a > 0));
+  const uniqueAnswers = new Set(answers.filter((a: number) => a > 0));
   if (uniqueAnswers.size <= 1) {
     return { isValid: false, reason: "All answers are identical - please provide thoughtful responses" };
   }
@@ -87,7 +87,7 @@ function validateAnswers(answers: number[]): { isValid: boolean; reason?: string
   });
 
   const maxCount = Math.max(...answerCounts);
-  const totalAnswered = answers.filter(a => a > 0).length;
+  const totalAnswered = answers.filter((a: number) => a > 0).length;
   
   // If more than 80% of answers are the same value, it's suspicious
   if (maxCount / totalAnswered > 0.8) {
@@ -106,16 +106,16 @@ function getTopCategories(scores: { [key: string]: number }, limit: number = 3) 
   const threshold = averageScore * 1.15;
   
   return sortedCategories
-    .filter(([, score]) => score >= threshold)
+    .filter(([, score]: [string, number]) => score >= threshold)
     .slice(0, limit)
-    .map(([key]) => key);
+    .map(([key]: [string, number]) => key);
 }
 
 function getCareersByCategory(categoryKey: string): CareerFI[] {
   const category = CAREER_CATEGORIES[categoryKey as keyof typeof CAREER_CATEGORIES];
   if (!category) return [];
   
-  return careersData.filter(career => career.category === category);
+  return careersData.filter((career: any) => career.category === category);
 }
 
 function generateAIAnalysis(group: string, categoryScores: { [key: string]: number }, topCategories: string[], recommendations: CareerFI[]): {
@@ -340,7 +340,7 @@ function generateCareerRecommendations(topCategories: string[], group: string, c
   // Sort categories by score for better recommendations
   const sortedCategories = Object.entries(categoryScores)
     .sort(([,a], [,b]) => b - a)
-    .map(([key]) => key);
+    .map(([key]: [string, number]) => key);
 
   // Get careers from top categories with score-based weighting
   sortedCategories.forEach(categoryKey => {
@@ -360,8 +360,8 @@ function generateCareerRecommendations(topCategories: string[], group: string, c
   // Ensure we have diverse recommendations by adding from different categories
   if (recommendations.length < 4) {
     const allCategories = Object.keys(CAREER_CATEGORIES);
-    const usedCategories = new Set(recommendations.map(c => c.category));
-    const remainingCategories = allCategories.filter(cat => !usedCategories.has(CAREER_CATEGORIES[cat as keyof typeof CAREER_CATEGORIES]));
+    const usedCategories = new Set(recommendations.map((c: any) => c.category));
+    const remainingCategories = allCategories.filter((cat: string) => !usedCategories.has(CAREER_CATEGORIES[cat as keyof typeof CAREER_CATEGORIES]));
     
     for (const categoryKey of remainingCategories) {
       const careers = getCareersByCategory(categoryKey);
@@ -372,8 +372,8 @@ function generateCareerRecommendations(topCategories: string[], group: string, c
   }
 
   // Remove duplicates and return 4-5 recommendations
-  const uniqueRecommendations = recommendations.filter((career, index, self) => 
-    index === self.findIndex(c => c.id === career.id)
+  const uniqueRecommendations = recommendations.filter((career: any, index: number, self: any[]) => 
+    index === self.findIndex((c: any) => c.id === career.id)
   );
 
   return uniqueRecommendations.slice(0, 5);
@@ -437,7 +437,7 @@ export async function POST(request: NextRequest) {
         answeredQuestions,
         categoryScores,
         topCategories,
-        recommendations: recommendations.map(career => ({
+        recommendations: recommendations.map((career: any) => ({
           id: career.id,
           title_fi: career.title_fi,
           title_en: career.title_en,

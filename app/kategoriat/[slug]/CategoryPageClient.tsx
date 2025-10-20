@@ -97,7 +97,6 @@ export default function CategoryPageClient({
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-4xl">{categoryInfo.icon}</span>
             <h1 className="text-4xl md:text-5xl font-bold">
               {categoryInfo.name_fi} – urat Suomessa
             </h1>

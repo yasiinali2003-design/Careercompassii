@@ -92,7 +92,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
             
             {/* Badges */}
             <div className="flex flex-wrap gap-3">
-              {career.educationLevel.map(level => (
+              {career.educationLevel.map((level: string) => (
                 <span
                   key={level}
                   className="px-4 py-2 bg-blue-50 text-blue-700 rounded-xl font-medium"
@@ -137,7 +137,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                 <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
                   <h2 className="text-2xl font-bold text-slate-900 mb-4">Päivittäiset tehtävät</h2>
                   <ul className="space-y-3">
-                    {career.dailyTasks.map((task, index) => (
+                    {career.dailyTasks.map((task: string, index: number) => (
                       <li key={index} className="flex items-start">
                         <span className="text-[#2563EB] mr-3 mt-1 font-bold">•</span>
                         <span className="text-slate-600 leading-relaxed">{task}</span>
@@ -162,7 +162,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                   <div>
                     <h3 className="text-lg font-semibold text-slate-800 mb-2">Toimialat</h3>
                     <div className="flex flex-wrap gap-2">
-                      {career.industry.map((industry, index) => (
+                      {career.industry.map((industry: string, index: number) => (
                         <span
                           key={index}
                           className="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium"
@@ -184,7 +184,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                     <div className="mb-6">
                       <h3 className="text-lg font-semibold text-slate-800 mb-3">Kovat taidot</h3>
                       <div className="flex flex-wrap gap-2">
-                        {career.skillsHard.map((skill, index) => (
+                        {career.skillsHard.map((skill: string, index: number) => (
                           <span
                             key={index}
                             className="px-3 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium"
@@ -200,7 +200,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                     <div>
                       <h3 className="text-lg font-semibold text-slate-800 mb-3">Pehmeät taidot</h3>
                       <div className="flex flex-wrap gap-2">
-                        {career.skillsSoft.map((skill, index) => (
+                        {career.skillsSoft.map((skill: string, index: number) => (
                           <span
                             key={index}
                             className="px-3 py-2 bg-green-50 text-green-700 rounded-lg text-sm font-medium"
@@ -219,7 +219,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                 <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
                   <h2 className="text-2xl font-bold text-slate-900 mb-4">Koulutuspolut</h2>
                   <div className="space-y-3">
-                    {career.opintopolkuLinks.map((link, index) => (
+                    {career.opintopolkuLinks.map((link: {label: string; url: string}, index: number) => (
                       <a
                         key={index}
                         href={link.url}
@@ -292,7 +292,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                 <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
                   <h3 className="text-lg font-bold text-slate-900 mb-4">Liittyvät ammatit</h3>
                   <div className="space-y-3">
-                    {relatedCareers.map((relatedCareer) => (
+                    {relatedCareers.map((relatedCareer: Career) => (
                       <Link
                         key={relatedCareer.slug}
                         href={`/ammatit/${relatedCareer.slug}`}
