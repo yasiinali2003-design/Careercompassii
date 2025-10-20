@@ -90,14 +90,14 @@ export default function CategoryCard({ category, className = "" }: CategoryCardP
   return (
     <Link href={`/ammatit?personalityType=${category.name_fi}`} className="block">
       <Card className={`group hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50/50 cursor-pointer ${className}`}>
-        <CardContent className="p-6 text-center">
-          <div className={`h-14 w-14 rounded-xl ${colors.bg} ${colors.bgHover} flex items-center justify-center mx-auto mb-4 transition-colors shadow-sm`}>
+        <CardContent className="p-4 sm:p-6 text-center">
+          <div className={`h-12 w-12 sm:h-14 sm:w-14 rounded-xl ${colors.bg} ${colors.bgHover} flex items-center justify-center mx-auto mb-3 sm:mb-4 transition-colors shadow-sm`}>
             {IconComponent && (
-              <IconComponent className={`h-7 w-7 ${colors.icon} ${colors.iconHover} transition-colors`} />
+              <IconComponent className={`h-6 w-6 sm:h-7 sm:w-7 ${colors.icon} ${colors.iconHover} transition-colors`} />
             )}
           </div>
-          <h3 className="text-lg font-semibold mb-2 text-slate-900">{category.name_fi}</h3>
-          <p className="text-sm text-slate-600 leading-relaxed">{category.description}</p>
+          <h3 className="text-base sm:text-lg font-semibold mb-2 text-slate-900">{category.name_fi}</h3>
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{category.description}</p>
         </CardContent>
       </Card>
     </Link>

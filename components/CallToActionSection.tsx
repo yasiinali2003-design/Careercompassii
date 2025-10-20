@@ -44,15 +44,15 @@ export default function CallToActionSection() {
           }`}
         >
           <Card className="bg-primary border-0 shadow-lg">
-            <CardContent className="p-12 text-center">
+            <CardContent className="p-6 sm:p-12 text-center">
               <h2 
-                className="text-3xl md:text-5xl font-bold mb-4 text-white"
+                className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 text-white"
                 style={{ textShadow: "0 2px 6px rgba(0,0,0,0.2)" }}
               >
                 Valmiina löytämään sun vibe?
               </h2>
               <p 
-                className="text-lg md:text-xl mb-8 text-white leading-relaxed"
+                className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-white leading-relaxed"
                 style={{ textShadow: "0 2px 6px rgba(0,0,0,0.2)" }}
               >
                 Sun tuleva minä odottaa. Tee testi nyt ja löydä urat, jotka matchaa sen kuka sä oikeesti oot.
@@ -61,15 +61,15 @@ export default function CallToActionSection() {
                 size="lg"
                 variant="secondary"
                 asChild
-                className="text-lg h-14 px-8 font-semibold hover:scale-105 transition-transform bg-white text-primary hover:bg-white/90"
+                className="text-base sm:text-lg h-12 sm:h-14 px-6 sm:px-8 font-semibold hover:scale-105 transition-transform bg-white text-primary hover:bg-white/90"
               >
                 <Link href="/test">
                   Aloita testi
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Link>
               </Button>
               <p 
-                className="text-sm text-white/80 mt-4"
+                className="text-xs sm:text-sm text-white/80 mt-4"
                 style={{ textShadow: "0 2px 6px rgba(0,0,0,0.2)" }}
               >
                 30 kysymystä • 100% ilmainen • Tekoäly-powered
