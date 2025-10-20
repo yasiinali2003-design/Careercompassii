@@ -322,35 +322,62 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="testimonials" className="py-20 mb-12">
+      <section id="testimonials" className="py-20 mb-12 bg-gradient-to-b from-slate-50/50 to-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">Mitä muut sanoo</h2>
               <p className="text-base sm:text-lg text-muted-foreground">Katso miten muut löysi oman juttunsa</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
-              <Card className="bg-[#A66CFF] border-0 rounded-[20px] shadow-[0_6px_16px_rgba(0,0,0,0.1)] hover:bg-[#B47CFF] hover:scale-[1.02] transition-all duration-300 ease-in-out">
-                <CardContent className="p-6">
-                  <p className="text-white mb-4 italic leading-relaxed">
-                    "En tiennyt mitä haluan tehdä kun valmistun yläasteesta. Tää testi auttoi ymmärtämään mun vahvuuksia ja näyttää kiinnostavia opintovaihtoehtoja. Nyt tuntuu että mulla on selkeämpi kuva tulevaisuudesta!"
-                  </p>
-                  <p className="font-semibold text-white">- Emma, 15</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+              <Card className="bg-gradient-to-br from-purple-50 to-purple-100/80 border border-purple-200/50 rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ease-in-out">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-3 mb-6">
+                    <div className="w-8 h-8 rounded-full bg-purple-200/60 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10z"/>
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800 mb-6 font-medium leading-relaxed tracking-wide max-w-sm">
+                        "En tiennyt mitä haluan tehdä kun valmistun yläasteesta. Tää testi auttoi ymmärtämään mun vahvuuksia ja näyttää kiinnostavia opintovaihtoehtoja. Nyt tuntuu että mulla on selkeämpi kuva tulevaisuudesta!"
+                      </p>
+                      <p className="font-semibold text-gray-700 text-sm">Emma, 15</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
-              <Card className="bg-[#A66CFF] border-0 rounded-[20px] shadow-[0_6px_16px_rgba(0,0,0,0.1)] hover:bg-[#B47CFF] hover:scale-[1.02] transition-all duration-300 ease-in-out">
-                <CardContent className="p-6">
-                  <p className="text-white mb-4 italic leading-relaxed">
-                    "Olin epävarma mihin haluan hakea jatko-opintoihin. Testi selvensi mun ura-suuntaa ja antoi itseluottamusta tehdä päätöksiä. Nyt tiedän että olen valinnut oikean polun!"
-                  </p>
-                  <p className="font-semibold text-white">- Marcus, 17</p>
+              <Card className="bg-gradient-to-br from-purple-50 to-purple-100/80 border border-purple-200/50 rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ease-in-out">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-3 mb-6">
+                    <div className="w-8 h-8 rounded-full bg-purple-200/60 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10z"/>
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800 mb-6 font-medium leading-relaxed tracking-wide max-w-sm">
+                        "Olin epävarma mihin haluan hakea jatko-opintoihin. Testi selvensi mun ura-suuntaa ja antoi itseluottamusta tehdä päätöksiä. Nyt tiedän että olen valinnut oikean polun!"
+                      </p>
+                      <p className="font-semibold text-gray-700 text-sm">Marcus, 17</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
-              <Card className="bg-[#A66CFF] border-0 rounded-[20px] shadow-[0_6px_16px_rgba(0,0,0,0.1)] hover:bg-[#B47CFF] hover:scale-[1.02] transition-all duration-300 ease-in-out">
-                <CardContent className="p-6">
-                  <p className="text-white mb-4 italic leading-relaxed">
-                    "Olin töissä alalla joka ei tuntunut omalta. Tää testi avasi silmäni uusiin mahdollisuuksiin ja auttoi löytämään uran joka oikeesti sopii mulle. Elämäni on muuttunut parempaan suuntaan!"
-                  </p>
-                  <p className="font-semibold text-white">- Sofia, 23</p>
+              <Card className="bg-gradient-to-br from-purple-50 to-purple-100/80 border border-purple-200/50 rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ease-in-out">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-3 mb-6">
+                    <div className="w-8 h-8 rounded-full bg-purple-200/60 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10z"/>
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-800 mb-6 font-medium leading-relaxed tracking-wide max-w-sm">
+                        "Olin töissä alalla joka ei tuntunut omalta. Tää testi avasi silmäni uusiin mahdollisuuksiin ja auttoi löytämään uran joka oikeesti sopii mulle. Elämäni on muuttunut parempaan suuntaan!"
+                      </p>
+                      <p className="font-semibold text-gray-700 text-sm">Sofia, 23</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
