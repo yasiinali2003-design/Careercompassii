@@ -88,7 +88,7 @@ export default function CategoryCard({ category, className = "" }: CategoryCardP
   const colors = categoryColors[category.slug as keyof typeof categoryColors];
   
   return (
-    <Link href={`/kategoriat/${category.slug}`} className="block">
+    <Link href={`/ammatit?personalityType=${category.name_fi}`} className="block">
       <Card className={`group hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50/50 cursor-pointer ${className}`}>
         <CardContent className="p-6 text-center">
           <div className={`h-14 w-14 rounded-xl ${colors.bg} ${colors.bgHover} flex items-center justify-center mx-auto mb-4 transition-colors shadow-sm`}>

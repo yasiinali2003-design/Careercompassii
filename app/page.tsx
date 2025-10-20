@@ -2,7 +2,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import CategoryCard from "@/components/CategoryCard"
-import AboutUs from "@/components/AboutUs"
+import Logo from "@/components/Logo"
+import CallToActionSection from "@/components/CallToActionSection"
 import { getAllCategories } from "@/lib/categories"
 import {
   Sparkles,
@@ -25,18 +26,13 @@ export default function HomePage() {
   const categories = getAllCategories();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background to-primary/5">
+    <div className="min-h-screen">
       {/* Navigation */}
       <nav className="border-b border-border/50 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center">
-              <Sparkles className="h-5 w-5 text-white" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              CareerCompassi
-            </span>
-          </div>
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <Logo className="h-10 w-auto" />
+          </Link>
           <div className="flex items-center gap-4">
             <Link
               href="#miten"
@@ -51,10 +47,16 @@ export default function HomePage() {
               Kenelle
             </Link>
             <Link
+              href="/ammatit"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
+            >
+              Urakirjasto
+            </Link>
+            <Link
               href="/meista"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
             >
-              Meistä
+              Missio
             </Link>
             <Button
               asChild
@@ -70,14 +72,8 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 gradient-animate opacity-30 blur-3xl" />
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30 text-sm mb-6 backdrop-blur-sm">
-            <Sparkles className="h-4 w-4 text-primary" />
-            <span className="font-medium">Tekoälypohjainen urasuunnittelu</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-balance leading-tight">
-            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent gradient-animate">
-              Löydä tulevaisuutesi vibe.
-            </span>
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-balance leading-tight text-primary">
+            Löydä tulevaisuutesi vibe.
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-pretty max-w-2xl mx-auto leading-relaxed">
             Luotettava testi, joka auttaa sinua ymmärtämään vahvuuksiasi ja uramahdollisuuksia.
@@ -253,23 +249,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-transparent via-muted/20 to-transparent">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Keitä me olemme</h2>
-            <p className="text-lg text-muted-foreground">Kolme nuorta, yksi yhteinen tavoite</p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <AboutUs />
-          </div>
-        </div>
-      </section>
 
       <section className="py-20 bg-gradient-to-b from-muted/30 to-transparent">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Card className="border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5">
+            <Card className="border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-out">
               <CardContent className="p-10">
                 <div className="flex items-start gap-6">
                   <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
@@ -329,7 +313,6 @@ export default function HomePage() {
                         Tulokset auttavat sinua pohtimaan vahvuuksiasi ja kiinnostuksen kohteitasi, mutta{" "}
                         <strong>lopulliset valinnat ovat aina sinun</strong>.
                       </p>
-                      <p>Emme tarjoa virallista ura- tai koulutusneuvontaa.</p>
                     </div>
                   </div>
                 </div>
@@ -339,80 +322,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-muted/30 to-transparent">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Mitä muut sanoo</h2>
-            <p className="text-lg text-muted-foreground">Katso miten muut löysi oman juttunsa</p>
+      <section id="testimonials" className="py-20 mb-12">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">Mitä muut sanoo</h2>
+              <p className="text-lg text-muted-foreground">Katso miten muut löysi oman juttunsa</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <Card className="bg-[#A66CFF] border-0 rounded-[20px] shadow-[0_6px_16px_rgba(0,0,0,0.1)] hover:bg-[#B47CFF] hover:scale-[1.02] transition-all duration-300 ease-in-out">
+                <CardContent className="p-6">
+                  <p className="text-white mb-4 italic leading-relaxed">
+                    "En tiennyt mitä haluan tehdä kun valmistun yläasteesta. Tää testi auttoi ymmärtämään mun vahvuuksia ja näyttää kiinnostavia opintovaihtoehtoja. Nyt tuntuu että mulla on selkeämpi kuva tulevaisuudesta!"
+                  </p>
+                  <p className="font-semibold text-white">- Emma, 15</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-[#A66CFF] border-0 rounded-[20px] shadow-[0_6px_16px_rgba(0,0,0,0.1)] hover:bg-[#B47CFF] hover:scale-[1.02] transition-all duration-300 ease-in-out">
+                <CardContent className="p-6">
+                  <p className="text-white mb-4 italic leading-relaxed">
+                    "Olin epävarma mihin haluan hakea jatko-opintoihin. Testi selvensi mun ura-suuntaa ja antoi itseluottamusta tehdä päätöksiä. Nyt tiedän että olen valinnut oikean polun!"
+                  </p>
+                  <p className="font-semibold text-white">- Marcus, 17</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-[#A66CFF] border-0 rounded-[20px] shadow-[0_6px_16px_rgba(0,0,0,0.1)] hover:bg-[#B47CFF] hover:scale-[1.02] transition-all duration-300 ease-in-out">
+                <CardContent className="p-6">
+                  <p className="text-white mb-4 italic leading-relaxed">
+                    "Olin töissä alalla joka ei tuntunut omalta. Tää testi avasi silmäni uusiin mahdollisuuksiin ja auttoi löytämään uran joka oikeesti sopii mulle. Elämäni on muuttunut parempaan suuntaan!"
+                  </p>
+                  <p className="font-semibold text-white">- Sofia, 23</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <Card className="bg-gradient-to-br from-card to-primary/5 border-primary/20">
-              <CardContent className="p-6">
-                <p className="text-muted-foreground mb-4 italic leading-relaxed">
-                  "Mul ei ollu mitään hajuu mitä haluun tehä. Tää testi näytti mulle urii, joita en ollu ees ajatellu.
-                  Nyt opiskelen graafista suunnittelua ja rakastan sitä!"
-                </p>
-                <p className="font-semibold">- Emma, 18</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-gradient-to-br from-card to-secondary/5 border-secondary/20">
-              <CardContent className="p-6">
-                <p className="text-muted-foreground mb-4 italic leading-relaxed">
-                  "Vihdoin jotain mikä ymmärtää mua. Tulokset oli ihan spot on ja antoivat mulle varmuutta hakee sitä
-                  mitä oikeesti kiinnostaa."
-                </p>
-                <p className="font-semibold">- Marcus, 19</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-gradient-to-br from-card to-accent/5 border-accent/20">
-              <CardContent className="p-6">
-                <p className="text-muted-foreground mb-4 italic leading-relaxed">
-                  "Olin jumissa viiden eri polun välillä. Tää auttoi näkemään mikä oikeesti sopii mun persoonalle. Game
-                  changer."
-                </p>
-                <p className="font-semibold">- Sofia, 17</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <Card className="max-w-3xl mx-auto bg-gradient-to-br from-primary via-secondary to-accent border-0 glow-effect">
-            <CardContent className="p-12 text-center">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Valmiina löytämään sun vibe?</h2>
-              <p className="text-lg md:text-xl mb-8 text-white/90 leading-relaxed">
-                Sun tuleva minä odottaa. Tee testi nyt ja löydä urat, jotka matchaa sen kuka sä oikeesti oot.
-              </p>
-              <Button
-                size="lg"
-                variant="secondary"
-                asChild
-                className="text-lg h-14 px-8 font-semibold hover:scale-105 transition-transform bg-white text-primary hover:bg-white/90"
-              >
-                <Link href="/test">
-                  Aloita testi
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <p className="text-sm text-white/70 mt-4">Ei rekisteröitymistä • 30 kysymystä • 100% ilmainen</p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+        <CallToActionSection />
 
       <footer className="border-t border-border/50 py-12 bg-muted/20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center">
-                <Sparkles className="h-5 w-5 text-white" />
-              </div>
-              <span className="font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                CareerCompassi
-              </span>
-            </div>
+            <Logo className="h-8 w-auto" />
             <p className="text-sm text-muted-foreground text-center">
               Tulevaisuus alkaa itsensä löytämisestä • © 2025 CareerCompassi
             </p>

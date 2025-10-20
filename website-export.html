@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Navigator Pro - Löydä tulevaisuutesi vibe</title>
+    <meta name="description" content="AI-pohjainen urasuunnittelu suomalaisille opiskelijoille ja nuorille aikuisille. Tee testi ja löydä ammatit, jotka sopivat persoonallisuutesi kanssa.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1e6f73, #2d5a5d);
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffffff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #1e6f73;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            background: #155e61;
+            transform: translateY(-2px);
+        }
+        
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #1e6f73;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #1e6f73;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e6f73, #2d5a5d);
+            border-radius: 12px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1e6f73;
+        }
+        
+        .how-it-works {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #1e6f73;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .target-audience {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .audience-card {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            padding: 30px;
+            border-radius: 16px;
+            border: 2px solid #1e6f73;
+            transition: all 0.3s ease;
+        }
+        
+        .audience-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .audience-card h3 {
+            color: #1e6f73;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .audience-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .audience-card li {
+            padding: 5px 0;
+            color: #4a5568;
+        }
+        
+        .audience-card li:before {
+            content: "•";
+            color: #1e6f73;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .about {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .about-content {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .about h2 {
+            color: #1e6f73;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        
+        .about p {
+            margin-bottom: 20px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+        
+        .testimonials {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 4px solid #1e6f73;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #4a5568;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #1e6f73;
+        }
+        
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1e6f73, #2d5a5d);
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .feature-grid,
+            .steps,
+            .audience-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Löydä tulevaisuutesi vibe</h1>
+            <p>Luotettava testi, joka auttaa sinua ymmärtämään vahvuuksiasi ja uramahdollisuuksia.</p>
+            <a href="/test" class="cta-button">Aloita testi</a>
+            <a href="#miten" class="cta-button" style="background: transparent; border: 2px solid white;">Lue lisää</a>
+            <div style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
+                <span>⚡ 30 kysymystä</span> • 
+                <span>❤️ 100% ilmainen</span> • 
+                <span>🤖 Tekoäly-powered</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Mikä on sun vibe?</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #4a5568; margin-bottom: 50px;">
+                Löydä persoonallisuustyyppi, joka vastaa sun energiaa
+            </p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Luova</h3>
+                    <p>Taiteellinen ja innovatiivinen persoonallisuus</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Johtaja</h3>
+                    <p>Luontaisesti johtava ja motivoiva persoonallisuus</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Innovaija</h3>
+                    <p>Teknologiaan ja uusiin ideoihin kiinnostunut</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔨</div>
+                    <h3>Rakentaja</h3>
+                    <p>Käytännön tekemisestä ja konkreettisista tuloksista pitävä</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <h3>Auttaja</h3>
+                    <p>Muiden auttamisesta ja merkityksellisestä työstä kiinnostunut</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Ympäristön-puolustaja</h3>
+                    <p>Ympäristönsuojelusta ja kestävästä kehityksestä kiinnostunut</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👁️</div>
+                    <h3>Visionääri</h3>
+                    <p>Strategisesti ajatteleva ja pitkälle näkevä</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Järjestäjä</h3>
+                    <p>Hyvä organisoimaan ja järjestämään asioita</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="miten">
+        <div class="container">
+            <h2>Miten se toimii?</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #4a5568; margin-bottom: 50px;">
+                Kolme helppoa askelta unelma-urasi löytämiseen
+            </p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Tee testi</h3>
+                    <p>Vastaa kysymyksiin kiinnostuksistasi, arvoistasi ja persoonallisuudestasi.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Tekoäly analysoi sut</h3>
+                    <p>Meidän älykäs tekoäly matchaa sun uniikin profiilin uroihin, jotka oikeesti sopii sulle.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Saat sun polun</h3>
+                    <p>Saat personoidut urasuositukset ja konkreettiset seuraavat askeleet. Sun tulevaisuus alkaa tästä.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="target-audience" id="kenelle">
+        <div class="container">
+            <h2>Kenelle tämä on?</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #4a5568; margin-bottom: 50px;">
+                Jos mietit sun tulevaisuutta, oot oikeessa paikassa
+            </p>
+            
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <h3>🎓 Yläasteen oppilaat</h3>
+                    <p>Löydä suunta, joka tuntuu omalta.</p>
+                    <ul>
+                        <li>Tutustu eri uravaihtoehtoihin</li>
+                        <li>Ymmärrä vahvuutesi</li>
+                        <li>Löydä opintopolku, joka tuntuu oikealta</li>
+                    </ul>
+                </div>
+                <div class="audience-card">
+                    <h3>🎯 Toisen asteen opiskelijat</h3>
+                    <p>Selvitä, mihin kiinnostuksesi johtavat.</p>
+                    <ul>
+                        <li>Tunnista kiinnostuksen kohteesi</li>
+                        <li>Selvitä, mihin ammattialoihin ne liittyvät</li>
+                        <li>Tee päätöksiä, jotka tuntuvat varmoilta</li>
+                    </ul>
+                </div>
+                <div class="audience-card">
+                    <h3>👥 Nuoret aikuiset (20–25v)</h3>
+                    <p>Tutustu uusiin mahdollisuuksiin ja löydä oma polkusi ilman stressiä.</p>
+                    <ul>
+                        <li>Tutustu uusiin mahdollisuuksiin</li>
+                        <li>Hahmota oma vahvuusprofiilisi</li>
+                        <li>Löydä seuraava askel ilman stressiä</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>Keitä me olemme</h2>
+                <p><strong>Kolme nuorta, yksi yhteinen tavoite: auttaa muita löytämään oman suunnan.</strong></p>
+                <p>Me ollaan kolme 22-vuotiasta, jotka sekä opiskelevat että työskentelevät. Me ymmärretään, miltä tuntuu kun pitää tehdä isoja päätöksiä tulevaisuudesta ilman selkeää suuntaa.</p>
+                
+                <h3 style="margin-top: 30px; color: #1e6f73;">Miksi loimme CareerCompassin?</h3>
+                <ul style="margin-left: 20px; color: #4a5568;">
+                    <li>Monet nuoret joutuvat tekemään suuria tulevaisuuspäätöksiä ilman riittävää tukea tai tietoa</li>
+                    <li>Koulun uraohjaus on rajallista, eikä opettajilla ole aina aikaa antaa jokaiselle henkilökohtaista apua</li>
+                    <li>Olemme nähneet, kuinka kaverit valitsevat opintoja tai uria sosiaalisen hyväksynnän tai paineen vuoksi – ei aidosta intohimosta</li>
+                    <li>Kasvoimme alueella, jossa on paljon maahanmuuttajataustaisia nuoria, ja haluamme tarjota heille samat mahdollisuudet löytää oma polkunsa</li>
+                </ul>
+                
+                <h3 style="margin-top: 30px; color: #1e6f73;">Meidän tehtävämme</h3>
+                <p>Rakennamme tulevaisuutta, jossa jokaisella nuorella on mahdollisuus löytää oma suuntansa – helposti, yksilöllisesti ja motivoivasti.</p>
+                <p>Haluamme auttaa nuoria säästämään aikaa, välttämään turhia virheitä ja löytämään oman polkunsa – ilman painetta tai epävarmuutta.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Mitä muut sanoo</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #4a5568; margin-bottom: 50px;">
+                Katso miten muut löysi oman juttunsa
+            </p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Mul ei ollu mitään hajuu mitä haluun tehä. Tää testi näytti mulle urii, joita en ollu ees ajatellu. Nyt opiskelen graafista suunnittelua ja rakastan sitä!"</p>
+                    <div class="testimonial-author">- Emma, 18</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Vihdoin jotain mikä ymmärtää mua. Tulokset oli ihan spot on ja antoivat mulle varmuutta hakee sitä mitä oikeesti kiinnostaa."</p>
+                    <div class="testimonial-author">- Marcus, 19</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Olin jumissa viiden eri polun välillä. Tää auttoi näkemään mikä oikeesti sopii mun persoonalle. Game changer."</p>
+                    <div class="testimonial-author">- Sofia, 17</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Valmiina löytämään sun vibe?</h2>
+            <p>Sun tuleva minä odottaa. Tee testi nyt ja löydä urat, jotka matchaa sen kuka sä oikeesti oot.</p>
+            <a href="/test" class="cta-button" style="background: white; color: #1e6f73;">Aloita testi</a>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">
+                Ei rekisteröitymistä • 30 kysymystä • 100% ilmainen
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Tulevaisuus alkaa itsensä löytämisestä • © 2025 Career Navigator Pro</p>
+        </div>
+    </footer>
+</body>
+</html>

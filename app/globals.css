@@ -24,6 +24,11 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
+    
+    /* Brand colors for gradient */
+    --brand-blue: #2563EB;
+    --brand-purple: #A66CFF;
+    --base-white: #FFFFFF;
   }
 
   .dark {
@@ -53,8 +58,14 @@
   * {
     @apply border-border;
   }
+  
+  html, body {
+    min-height: 100%;
+    background: #FFFFFF;
+  }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
   }
 }
 
@@ -65,5 +76,36 @@
   
   .glow-effect:hover {
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  }
+
+
+  /* CTA blending effect */
+  .cta-section {
+    position: relative;
+  }
+
+  .cta-box {
+    background: #2563EB !important;
+    color: #fff !important;
+    border-radius: 20px;
+    border: none !important;
+  }
+
+  /* Ensure CTA content is above the gradient */
+  .cta-content {
+    position: relative;
+  }
+
+  /* Enhanced content boxes for better readability */
+  .content-box {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Semi-transparent white sections */
+  .semi-transparent-white {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   }
 }

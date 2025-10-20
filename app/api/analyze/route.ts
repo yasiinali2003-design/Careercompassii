@@ -125,120 +125,243 @@ function generateAIAnalysis(group: string, categoryScores: { [key: string]: numb
   nextSteps: string[];
   summary: string;
 } {
-  const categoryNames = {
-    CREATIVE: "luova",
-    LEADERSHIP: "johtaja", 
-    INNOVOIJA: "innovoija",
-    RAKENTAJA: "rakentaja",
-    AUTTAJA: "auttaja",
-    YMPARISTO: "ympäristön-puolustaja",
-    VISIONAARI: "visionääri",
-    JARJESTAJA: "järjestäjä"
-  };
-
   const groupNames = {
     YLA: "yläasteen oppilas",
     TASO2: "toisen asteen opiskelija", 
     NUORI: "nuori aikuinen"
   };
 
-  const topCategoryNames = topCategories.map(cat => categoryNames[cat as keyof typeof categoryNames]).join(", ");
   const groupName = groupNames[group as keyof typeof groupNames];
-
-  // Generate personality insights based on top categories
-  const personalityInsights = [];
-  if (topCategories.includes("CREATIVE")) {
-    personalityInsights.push("Sinulla on vahva luova puoli ja kyky nähdä asioita uudella tavalla");
-  }
-  if (topCategories.includes("LEADERSHIP")) {
-    personalityInsights.push("Olet luontaisesti johtava persoona, joka osaa motivoida muita");
-  }
-  if (topCategories.includes("INNOVOIJA")) {
-    personalityInsights.push("Kiinnostut teknologiaan ja uusiin innovaatioihin");
-  }
-  if (topCategories.includes("RAKENTAJA")) {
-    personalityInsights.push("Pidät käytännön tekemisestä ja konkreettisista tuloksista");
-  }
-  if (topCategories.includes("AUTTAJA")) {
-    personalityInsights.push("Haluat auttaa muita ja tehdä merkityksellistä työtä");
-  }
-  if (topCategories.includes("YMPARISTO")) {
-    personalityInsights.push("Olet kiinnostunut ympäristönsuojelusta ja kestävästä kehityksestä");
-  }
-  if (topCategories.includes("VISIONAARI")) {
-    personalityInsights.push("Ajattelet strategisesti ja näet pitkälle tulevaisuuteen");
-  }
-  if (topCategories.includes("JARJESTAJA")) {
-    personalityInsights.push("Olet hyvä organisoimaan ja järjestämään asioita");
-  }
-
-  // Generate strengths based on scores
-  const strengths = [];
+  
+  // Get the top category for personalized analysis
   const sortedScores = Object.entries(categoryScores).sort(([,a], [,b]) => b - a);
+  const topCategory = sortedScores[0] ? sortedScores[0][0] : "CREATIVE";
   
-  if (sortedScores[0] && sortedScores[0][1] > 0) {
-    const topStrength = categoryNames[sortedScores[0][0] as keyof typeof categoryNames];
-    strengths.push(`Vahvin puolesi on ${topStrength} ala`);
-  }
+  // Generate personalized analysis based on the top category
+  const analysis = generatePersonalizedAnalysis(topCategory, groupName, recommendations.length);
   
-  if (sortedScores[1] && sortedScores[1][1] > 0) {
-    const secondStrength = categoryNames[sortedScores[1][0] as keyof typeof categoryNames];
-    strengths.push(`Toinen vahva puolesi on ${secondStrength} ala`);
-  }
-
-  // Generate personalized career advice
-  const careerAdvice = [];
-  careerAdvice.push(`Suosittelemme sinulle ${topCategoryNames} alan urapolkuja`);
-  
-  if (group === "YLA") {
-    careerAdvice.push("Koska olet vielä nuori, voit tutkia erilaisia aloja ja löytää kiinnostuksesi");
-    careerAdvice.push("Kokeile erilaisia harrastuksia ja projekteja löytääksesi vahvuutesi");
-  } else if (group === "TASO2") {
-    careerAdvice.push("Nyt on hyvä aika alkaa suunnitella jatko-opintoja ja urapolkua");
-    careerAdvice.push("Harkitse AMK- tai yliopisto-opintoja suositteiltujen alojen parissa");
-  } else {
-    careerAdvice.push("Voit aloittaa urapolun suositteiltujen alojen parissa");
-    careerAdvice.push("Harkitse koulutusta tai työkokemusta näillä aloilla");
-  }
-
-  // Generate next steps
-  const nextSteps = [];
-  nextSteps.push("Tutustu suositteiltuihin ammatteihin tarkemmin");
-  nextSteps.push("Hae lisätietoja koulutuksesta ja työmahdollisuuksista");
-  nextSteps.push("Kokeile harrastuksia tai projekteja suositteiltujen alojen parissa");
-  nextSteps.push("Ota yhteyttä alan ammattilaisiin ja kysy heidän kokemuksistaan");
-
-  // Generate summary
-  const summary = `Olet ${groupName}, jolla on vahva kiinnostus ${topCategoryNames} aloihin. ` +
-    `Suosittelemme sinulle ${recommendations.length} ammattia, jotka sopivat hyvin persoonallisuutesi ja kiinnostuksiesi kanssa. ` +
-    `Nämä alat tarjoavat sinulle mahdollisuuden hyödyntää vahvuuksiasi ja tehdä merkityksellistä työtä.`;
-
   return {
-    personalityInsights,
-    strengths,
-    careerAdvice,
-    nextSteps,
-    summary
+    personalityInsights: analysis.personalityInsights,
+    strengths: analysis.strengths,
+    careerAdvice: analysis.careerAdvice,
+    nextSteps: analysis.nextSteps,
+    summary: analysis.summary
   };
 }
 
-function generateCareerRecommendations(topCategories: string[], group: string): CareerFI[] {
+function generatePersonalizedAnalysis(topCategory: string, groupName: string, recommendationCount: number): {
+  personalityInsights: string[];
+  strengths: string[];
+  careerAdvice: string[];
+  nextSteps: string[];
+  summary: string;
+} {
+  const analyses = {
+    CREATIVE: {
+      opening: "Sun mieli toimii kuin väripaletti – täynnä ideoita, tarinoita ja visioita, jotka haluavat päästä ulos maailmaan. Sä näet kauneutta ja mahdollisuuksia siellä, missä muut eivät edes katso.",
+      strengths: [
+        "Luova ajattelu ja kyky nähdä yhteyksiä eri asioiden välillä",
+        "Tunteiden ja visuaalisuuden yhdistäminen työssä",
+        "Kyky inspiroida muita omalla ilmaisulla"
+      ],
+      workEnvironment: "Paikat, joissa vapaus ja itseilmaisu kukoistavat — kuten markkinointi, muotoilu, media tai taide. Sä tarvitset ympäristön, jossa ideat virtaavat ja luovuus saa kasvaa.",
+      nextSteps: [
+        "Kokeile projekteja, joissa voit näyttää omaa tyyliäsi",
+        "Etsi mentorin tai yhteisön, joka tukee luovuuttasi",
+        "Rakenna portfolio, joka näyttää kuka sä olet"
+      ]
+    },
+    LEADERSHIP: {
+      opening: "Sä et vain seuraa suuntaa – sä luot sen. Johtajuus tulee sulle luonnostaan, ja ihmiset tuntevat olonsa turvalliseksi sun ohjauksessa.",
+      strengths: [
+        "Vahva vastuunotto ja päätöksentekokyky",
+        "Kyky motivoida ja ohjata muita",
+        "Luontainen karisma ja suunnan näyttäminen"
+      ],
+      workEnvironment: "Dynaamiset tiimit, joissa voit johtaa projekteja ja kehittää strategioita. Sä loistat paikoissa, joissa pääset vaikuttamaan ja tekemään päätöksiä.",
+      nextSteps: [
+        "Ota vastuuta tiimiprojekteissa tai vapaaehtoistyössä",
+        "Opettele delegointia ja palautteen antoa",
+        "Harkitse johtamiskoulutusta tai yrittäjyyttä"
+      ]
+    },
+    INNOVOIJA: {
+      opening: "Sä et pelkää kysyä \"entä jos?\" ja just siksi maailma tarvitsee sua. Sä näet ratkaisuja ennen kuin muut näkevät ongelmia.",
+      strengths: [
+        "Luova ongelmanratkaisu ja uteliaisuus",
+        "Teknologinen ja analyyttinen ajattelu",
+        "Kyky muuttaa ideat käytännöksi"
+      ],
+      workEnvironment: "Nopeatempoiset ja teknologiapainotteiset ympäristöt, joissa saa kokeilla ja kehittää uutta. Sä tarvitset tilaa luoda ilman rajoja.",
+      nextSteps: [
+        "Osallistu hackathoneihin tai startup-yhteisöihin",
+        "Rakenna oma projekti tai sovellus",
+        "Pysy uteliaana ja seuraa uusinta teknologiaa"
+      ]
+    },
+    RAKENTAJA: {
+      opening: "Sulle tekeminen on parasta ajattelua. Sä saat tyytyväisyyttä siitä, kun näet oman kädenjälkesi — jotain konkreettista, joka toimii.",
+      strengths: [
+        "Käytännönläheisyys ja ongelmanratkaisu",
+        "Kärsivällisyys ja huolellisuus",
+        "Kyky tehdä asioita tehokkaasti ja laadukkaasti"
+      ],
+      workEnvironment: "Toiminnalliset ja tavoitteelliset ympäristöt, kuten rakentaminen, insinöörityö, logistiikka tai tekninen suunnittelu.",
+      nextSteps: [
+        "Hanki kokemusta tekemällä — opi käytännön kautta",
+        "Harkitse ammattikoulutusta tai harjoittelupaikkaa",
+        "Kehitä taitojasi uusissa teknologioissa"
+      ]
+    },
+    AUTTAJA: {
+      opening: "Sun supervoima on empatia. Sä huomaat, kun joku tarvitsee tukea — ja osaat antaa sen aidosti.",
+      strengths: [
+        "Empaattinen ja kuunteleva luonne",
+        "Kyky rakentaa luottamusta ja tukea muita",
+        "Vahva vastuuntunto ja halu auttaa"
+      ],
+      workEnvironment: "Ihmissuhdepainotteiset roolit kuten opetus, hoiva-ala, psykologia tai valmennus. Sä loistat, kun voit tehdä työtä, jolla on merkitys muille.",
+      nextSteps: [
+        "Kokeile vapaaehtoistyötä tai mentorointia",
+        "Opiskele vuorovaikutustaitoja ja ihmismieltä",
+        "Pidä huolta myös omista rajoistasi ja jaksamisestasi"
+      ]
+    },
+    YMPARISTO: {
+      opening: "Sulla on vahva sisäinen kompassi, joka ohjaa tekemään hyvää. Sä et tyydy pinnalliseen, vaan haluat muuttaa maailmaa kestävämmäksi.",
+      strengths: [
+        "Arvopohjainen päätöksenteko",
+        "Pitkäjänteisyys ja sitoutuminen tärkeisiin asioihin",
+        "Luontainen vastuullisuus"
+      ],
+      workEnvironment: "Paikat, joissa voi vaikuttaa yhteiskuntaan, ympäristöön tai yhteisöihin – kuten järjestöt, vihreä teknologia, tai yhteiskuntatieteet.",
+      nextSteps: [
+        "Osallistu ympäristö- tai vastuuprojekteihin",
+        "Verkostoidu samanhenkisten ihmisten kanssa",
+        "Harkitse opintoja kestävän kehityksen aloilla"
+      ]
+    },
+    VISIONAARI: {
+      opening: "Sä näet tulevaisuuden ennen kuin muut edes kuulevat siitä. Sun mieli yhdistää luovuuden ja strategian ainutlaatuisella tavalla.",
+      strengths: [
+        "Strateginen ja kokonaisvaltainen ajattelu",
+        "Kyky nähdä iso kuva ja suunnitella pitkälle",
+        "Luontainen inspiroija"
+      ],
+      workEnvironment: "Työt, joissa saa suunnitella, innovoida ja johtaa muutosta – kuten tulevaisuudentutkimus, liiketoiminnan kehitys tai brändistrategia.",
+      nextSteps: [
+        "Hio taitojasi tulevaisuuden ajattelussa",
+        "Harjoittele ideointia ja suunnittelua eri aloilla",
+        "Kirjoita ajatuksiasi ylös ja rakenna niistä visio"
+      ]
+    },
+    JARJESTAJA: {
+      opening: "Sä saat kaaoksen tuntumaan hallitulta. Järjestys, selkeys ja luotettavuus ovat sulle luonnollisia — ja ne tekee susta korvaamattoman monissa tilanteissa.",
+      strengths: [
+        "Järjestelmällisyys ja tarkkuus",
+        "Hyvä ajanhallinta ja suunnittelu",
+        "Luotettavuus ja tasaisuus"
+      ],
+      workEnvironment: "Roolit, joissa selkeys ja struktuuri on tärkeää — kuten hallinto, projektinhallinta, talous, HR tai logistiikka.",
+      nextSteps: [
+        "Hio organisaatio- ja viestintätaitojasi",
+        "Hae harjoittelupaikkaa koordinoivasta tehtävästä",
+        "Kokeile projektijohtamista myös vapaa-ajalla"
+      ]
+    }
+  };
+
+  const analysis = analyses[topCategory as keyof typeof analyses] || analyses.CREATIVE;
+  
+  // Generate personalized summary based on group and category
+  const summary = generatePersonalizedSummary(topCategory, groupName, analysis.opening, recommendationCount);
+
+  return {
+    personalityInsights: [analysis.opening],
+    strengths: analysis.strengths,
+    careerAdvice: [analysis.workEnvironment],
+    nextSteps: analysis.nextSteps,
+    summary: summary
+  };
+}
+
+function generatePersonalizedSummary(topCategory: string, groupName: string, opening: string, recommendationCount: number): string {
+  const categoryVariations = {
+    CREATIVE: {
+      YLA: `Olet ${groupName}, jolla on ainutlaatuinen kyky nähdä maailmaa luovasti. ${opening} Löysimme sinulle ${recommendationCount} ammattia, jotka antavat tilaa ilmaista itseäsi ja hyödyntää luovuuttasi.`,
+      TASO2: `Olet ${groupName}, jolla on vahva luova persoonallisuus. ${opening} Suosittelemme sinulle ${recommendationCount} urapolkua, jotka sopivat täydellisesti sun luovaan energiaan ja visioihin.`,
+      NUORI: `Olet ${groupName}, jolla on kyky muuttaa ideat todellisuudeksi. ${opening} Löysimme sinulle ${recommendationCount} ammattia, jotka tarjoavat tilaa luovuudelle ja itseilmaisulle.`
+    },
+    LEADERSHIP: {
+      YLA: `Olet ${groupName}, jolla on luontainen johtajuuskyky. ${opening} Löysimme sinulle ${recommendationCount} ammattia, joissa voit hyödyntää sun johtamistaitoja ja motivoida muita.`,
+      TASO2: `Olet ${groupName}, jolla on vahva johtajuusprofiili. ${opening} Suosittelemme sinulle ${recommendationCount} urapolkua, jotka antavat tilaa johtaa ja vaikuttaa.`,
+      NUORI: `Olet ${groupName}, jolla on kyky johtaa muutosta. ${opening} Löysimme sinulle ${recommendationCount} ammattia, joissa voit hyödyntää sun strategista ajattelua ja johtamistaitoja.`
+    },
+    INNOVOIJA: {
+      YLA: `Olet ${groupName}, jolla on innovatiivinen mieli. ${opening} Löysimme sinulle ${recommendationCount} ammattia, jotka antavat tilaa kehittää uutta ja ratkaista ongelmia luovasti.`,
+      TASO2: `Olet ${groupName}, jolla on vahva innovaatiokyky. ${opening} Suosittelemme sinulle ${recommendationCount} urapolkua, joissa voit hyödyntää sun teknistä osaamista ja luovaa ajattelua.`,
+      NUORI: `Olet ${groupName}, jolla on kyky muuttaa ideat todellisuudeksi. ${opening} Löysimme sinulle ${recommendationCount} ammattia, jotka tarjoavat tilaa innovoida ja kehittää uutta teknologiaa.`
+    },
+    RAKENTAJA: {
+      YLA: `Olet ${groupName}, jolla on käytännönläheinen persoonallisuus. ${opening} Löysimme sinulle ${recommendationCount} ammattia, joissa voit hyödyntää sun käytännön taitoja ja rakentaa konkreettisia asioita.`,
+      TASO2: `Olet ${groupName}, jolla on vahva rakentajaprofiili. ${opening} Suosittelemme sinulle ${recommendationCount} urapolkua, jotka antavat tilaa tehdä konkreettista työtä ja nähdä tuloksia.`,
+      NUORI: `Olet ${groupName}, jolla on kyky tehdä asioita käytännössä. ${opening} Löysimme sinulle ${recommendationCount} ammattia, joissa voit hyödyntää sun käytännön osaamista ja rakentaa uutta.`
+    },
+    AUTTAJA: {
+      YLA: `Olet ${groupName}, jolla on empaattinen persoonallisuus. ${opening} Löysimme sinulle ${recommendationCount} ammattia, joissa voit hyödyntää sun auttamistaitoja ja tehdä merkityksellistä työtä.`,
+      TASO2: `Olet ${groupName}, jolla on vahva auttajaprofiili. ${opening} Suosittelemme sinulle ${recommendationCount} urapolkua, jotka antavat tilaa auttaa muita ja vaikuttaa positiivisesti yhteiskuntaan.`,
+      NUORI: `Olet ${groupName}, jolla on kyky auttaa ja tukea muita. ${opening} Löysimme sinulle ${recommendationCount} ammattia, joissa voit hyödyntää sun ihmistaitoja ja tehdä työtä, jolla on merkitys.`
+    },
+    YMPARISTO: {
+      YLA: `Olet ${groupName}, jolla on vahva vastuuntunto. ${opening} Löysimme sinulle ${recommendationCount} ammattia, joissa voit hyödyntää sun arvoja ja vaikuttaa positiivisesti ympäristöön.`,
+      TASO2: `Olet ${groupName}, jolla on vahva ympäristöprofiili. ${opening} Suosittelemme sinulle ${recommendationCount} urapolkua, jotka antavat tilaa vaikuttaa kestävään kehitykseen ja yhteiskuntaan.`,
+      NUORI: `Olet ${groupName}, jolla on kyky vaikuttaa yhteiskuntaan. ${opening} Löysimme sinulle ${recommendationCount} ammattia, joissa voit hyödyntää sun arvoja ja tehdä työtä, joka muuttaa maailmaa paremmaksi.`
+    },
+    VISIONAARI: {
+      YLA: `Olet ${groupName}, jolla on visionäärinen persoonallisuus. ${opening} Löysimme sinulle ${recommendationCount} ammattia, joissa voit hyödyntää sun strategista ajattelua ja luoda visioita tulevaisuudesta.`,
+      TASO2: `Olet ${groupName}, jolla on vahva visionääriprofiili. ${opening} Suosittelemme sinulle ${recommendationCount} urapolkua, jotka antavat tilaa suunnitella tulevaisuutta ja johtaa muutosta.`,
+      NUORI: `Olet ${groupName}, jolla on kyky nähdä tulevaisuutta. ${opening} Löysimme sinulle ${recommendationCount} ammattia, joissa voit hyödyntää sun strategista ajattelua ja luoda visioita, jotka inspiroivat muita.`
+    },
+    JARJESTAJA: {
+      YLA: `Olet ${groupName}, jolla on järjestelmällinen persoonallisuus. ${opening} Löysimme sinulle ${recommendationCount} ammattia, joissa voit hyödyntää sun organisointitaitoja ja luoda selkeyttä kaaokseen.`,
+      TASO2: `Olet ${groupName}, jolla on vahva järjestäjäprofiili. ${opening} Suosittelemme sinulle ${recommendationCount} urapolkua, jotka antavat tilaa organisoida ja koordinoida toimintaa tehokkaasti.`,
+      NUORI: `Olet ${groupName}, jolla on kyky organisoida ja koordinoida. ${opening} Löysimme sinulle ${recommendationCount} ammattia, joissa voit hyödyntää sun järjestelmällisyyttä ja luoda tehokkaita prosesseja.`
+    }
+  };
+
+  const categoryVariation = categoryVariations[topCategory as keyof typeof categoryVariations];
+  return categoryVariation ? categoryVariation[groupName as keyof typeof categoryVariation] : 
+    `Olet ${groupName}, jolla on ainutlaatuinen persoonallisuus. ${opening} Löysimme sinulle ${recommendationCount} ammattia, jotka sopivat hyvin sun vahvuuksien kanssa.`;
+}
+
+function generateCareerRecommendations(topCategories: string[], group: string, categoryScores: { [key: string]: number }): CareerFI[] {
   const recommendations: CareerFI[] = [];
   
-  // Get careers from top categories
-  topCategories.forEach(categoryKey => {
+  // Sort categories by score for better recommendations
+  const sortedCategories = Object.entries(categoryScores)
+    .sort(([,a], [,b]) => b - a)
+    .map(([key]) => key);
+
+  // Get careers from top categories with score-based weighting
+  sortedCategories.forEach(categoryKey => {
     const careers = getCareersByCategory(categoryKey);
     if (careers.length > 0) {
-      // Add 1-2 careers from each top category
-      const careersToAdd = careers.slice(0, 2);
+      // Add more careers from higher-scoring categories
+      const score = categoryScores[categoryKey];
+      const maxScore = Math.max(...Object.values(categoryScores));
+      const weight = score / maxScore;
+      
+      // Add 1-3 careers based on category strength
+      const careersToAdd = careers.slice(0, Math.max(1, Math.round(weight * 3)));
       recommendations.push(...careersToAdd);
     }
   });
 
-  // If we don't have enough recommendations, add from other categories
-  if (recommendations.length < 3) {
+  // Ensure we have diverse recommendations by adding from different categories
+  if (recommendations.length < 4) {
     const allCategories = Object.keys(CAREER_CATEGORIES);
-    const remainingCategories = allCategories.filter(cat => !topCategories.includes(cat));
+    const usedCategories = new Set(recommendations.map(c => c.category));
+    const remainingCategories = allCategories.filter(cat => !usedCategories.has(CAREER_CATEGORIES[cat as keyof typeof CAREER_CATEGORIES]));
     
     for (const categoryKey of remainingCategories) {
       const careers = getCareersByCategory(categoryKey);
@@ -248,8 +371,12 @@ function generateCareerRecommendations(topCategories: string[], group: string): 
     }
   }
 
-  // Return 3-5 recommendations
-  return recommendations.slice(0, 5);
+  // Remove duplicates and return 4-5 recommendations
+  const uniqueRecommendations = recommendations.filter((career, index, self) => 
+    index === self.findIndex(c => c.id === career.id)
+  );
+
+  return uniqueRecommendations.slice(0, 5);
 }
 
 export async function POST(request: NextRequest) {
@@ -292,7 +419,7 @@ export async function POST(request: NextRequest) {
     }
     
     // Generate career recommendations using real career data
-    const recommendations = generateCareerRecommendations(topCategories, group);
+    const recommendations = generateCareerRecommendations(topCategories, group, categoryScores);
 
     // Generate AI-powered analysis
     const aiAnalysis = generateAIAnalysis(group, categoryScores, topCategories, recommendations);

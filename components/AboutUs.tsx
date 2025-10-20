@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 // CompassBackground Component - SVG compass with subtle animation
 const CompassBackground = () => {
@@ -211,97 +211,127 @@ const CompassBackground = () => {
   );
 };
 
-// AboutHero Component
-const AboutHero = () => (
-  <div className="mb-12">
-    <p className="text-slate-500 text-sm font-medium mb-4 tracking-wide uppercase">
-      Kolme nuorta, yksi yhteinen tavoite: auttaa muita löytämään oman suunnan.
-    </p>
-    <p className="text-slate-700 text-lg leading-relaxed max-w-prose">
-      Me ollaan kolme 22-vuotiasta, jotka sekä opiskelevat että työskentelevät. Me ymmärretään, miltä tuntuu kun pitää tehdä isoja päätöksiä tulevaisuudesta ilman selkeää suuntaa.
-    </p>
-  </div>
-);
+// AnimatedSection Component for scroll animations
+const AnimatedSection = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
-// WhySection Component
-const WhySection = () => (
-  <div className="mb-12">
-    <h2 className="text-2xl font-bold text-slate-900 mb-6 tracking-tight">
-      Miksi loimme CareerCompassin?
-    </h2>
-    <div className="bg-slate-50 rounded-2xl p-6 shadow-sm border border-slate-100">
-      <ul className="space-y-4">
-        <li className="flex items-start gap-3">
-          <div className="w-2 h-2 rounded-full bg-[#1E6F73] mt-2 flex-shrink-0" />
-          <span className="text-slate-700 leading-relaxed">
-            Monet nuoret joutuvat tekemään suuria tulevaisuuspäätöksiä ilman riittävää tukea tai tietoa
-          </span>
-        </li>
-        <li className="flex items-start gap-3">
-          <div className="w-2 h-2 rounded-full bg-[#1E6F73] mt-2 flex-shrink-0" />
-          <span className="text-slate-700 leading-relaxed">
-            Koulun uraohjaus on rajallista, eikä opettajilla ole aina aikaa antaa jokaiselle henkilökohtaista apua
-          </span>
-        </li>
-        <li className="flex items-start gap-3">
-          <div className="w-2 h-2 rounded-full bg-[#1E6F73] mt-2 flex-shrink-0" />
-          <span className="text-slate-700 leading-relaxed">
-            Olemme nähneet, kuinka kaverit valitsevat opintoja tai uria sosiaalisen hyväksynnän tai paineen vuoksi – ei aidosta intohimosta
-          </span>
-        </li>
-        <li className="flex items-start gap-3">
-          <div className="w-2 h-2 rounded-full bg-[#1E6F73] mt-2 flex-shrink-0" />
-          <span className="text-slate-700 leading-relaxed">
-            Kasvoimme alueella, jossa on paljon maahanmuuttajataustaisia nuoria, ja haluamme tarjota heille samat mahdollisuudet löytää oma polkunsa
-          </span>
-        </li>
-      </ul>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      } ${className}`}
+    >
+      {children}
     </div>
-  </div>
+  );
+};
+
+// MissionIntro Component
+const MissionIntro = () => (
+  <AnimatedSection>
+    <div className="mb-16">
+      <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+        CareerCompassin missio
+      </h2>
+      <div className="space-y-4 max-w-prose">
+        <p className="text-[#334155] leading-relaxed text-lg">
+          CareerCompassin tehtävänä on auttaa nuoria tunnistamaan vahvuutensa ja löytämään oman suunnan, joka tuntuu aidosti omalta.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Uskomme, että jokaisella on potentiaali rakentaa merkityksellinen tulevaisuus. Tarvitaan vain oikea kompassi näyttämään tie eteenpäin.
+        </p>
+      </div>
+    </div>
+  </AnimatedSection>
 );
 
 // MissionSection Component
 const MissionSection = () => (
-  <div className="mb-12">
-    <h2 className="text-2xl font-bold text-slate-900 mb-6 tracking-tight">
-      Meidän tehtävämme
-    </h2>
-    <div className="space-y-4 max-w-prose">
-      <p className="text-slate-700 leading-relaxed">
-        Rakennamme tulevaisuutta, jossa jokaisella nuorella on mahdollisuus löytää oma suuntansa – helposti, yksilöllisesti ja motivoivasti.
-      </p>
-      <p className="text-slate-700 leading-relaxed">
-        Haluamme auttaa nuoria säästämään aikaa, välttämään turhia virheitä ja löytämään oman polkunsa – ilman painetta tai epävarmuutta.
-      </p>
+  <AnimatedSection>
+    <div className="mb-16">
+      <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+        Meidän tehtävämme
+      </h2>
+      <div className="space-y-4 max-w-prose">
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Rakennamme tulevaisuutta, jossa jokaisella nuorella on mahdollisuus löytää oma polkunsa helposti, yksilöllisesti ja motivoivasti.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Autamme nuoria säästämään aikaa, tekemään rohkeita päätöksiä ja rakentamaan uraa, joka tuntuu omalta ilman painetta tai epävarmuutta.
+        </p>
+      </div>
     </div>
-  </div>
+  </AnimatedSection>
 );
 
 // ApproachSection Component
 const ApproachSection = () => (
-  <div className="mb-8">
-    <h3 className="text-lg font-semibold text-slate-900 mb-4 tracking-tight">
-      Lähestymistapamme
-    </h3>
-    <p className="text-slate-700 leading-relaxed max-w-prose">
-      Meidän lähestymistapamme yhdistää teknologian ja empatian. CareerCompassi käyttää tekoälyä ja dataa, mutta pysyy aina ihmiskeskeisenä. Me uskomme, että oikea suunta löytyy, kun ymmärtää itsensä paremmin.
-    </p>
-  </div>
+  <AnimatedSection>
+    <div className="mb-8">
+      <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+        Lähestymistapamme
+      </h2>
+      <div className="space-y-4 max-w-prose">
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Lähestymistapamme yhdistää tekoälyn ja empatian. CareerCompassi hyödyntää dataa ja modernia teknologiaa, mutta säilyttää aina inhimillisen näkökulman.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Tekoäly analysoi vastauksia vertaamalla niitä tuhansiin uraprofiileihin ja löytää koulutuspolkuja, jotka vastaavat käyttäjän arvoja, kiinnostuksia ja vahvuuksia.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Uskomme, että kun ymmärtää itseään paremmin, löytyy myös suunta, joka vie kohti merkityksellisempää elämää.
+        </p>
+      </div>
+    </div>
+  </AnimatedSection>
 );
 
 // Main AboutUs Component
 const AboutUs = () => {
   return (
-    <section className="relative bg-white rounded-2xl border border-slate-200 p-6 md:p-10 shadow-sm">
+    <section className="relative bg-gradient-to-b from-[#E8EEFF] to-white rounded-2xl border border-slate-200 p-6 md:p-10 shadow-sm">
       {/* Compass Background */}
       <CompassBackground />
       
       {/* Content */}
-      <div className="relative z-10">
-        <AboutHero />
-        <WhySection />
-        <MissionSection />
-        <ApproachSection />
+      <div className="relative z-10 max-w-4xl mx-auto">
+        {/* Main Missio Title */}
+        <div className="text-center mb-12">
+          <h1 
+            className="font-bold text-[#2563EB] mb-6"
+            style={{ fontSize: 'clamp(2.5rem, 5vw, 3rem)' }}
+          >
+            Missio
+          </h1>
+          {/* Optional gradient line */}
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#2563EB]/40 to-transparent mx-auto"></div>
+        </div>
+        
+        {/* Mission Content */}
+        <div className="space-y-12">
+          <MissionIntro />
+          <MissionSection />
+          <ApproachSection />
+        </div>
       </div>
     </section>
   );

@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Users, TrendingUp, GraduationCap, Briefcase, AlertCircle } from "lucide-react";
 import { CategoryInfo } from "@/lib/categories";
 import { CareerFI } from "@/data/careers-fi";
+import Logo from "@/components/Logo";
 import { FilterOptions, filterCareers, sortCareers, filtersToSearchParams } from "@/utils/filters";
 import Filters from "@/components/Filters";
 import CareerCard from "@/components/CareerCard";
@@ -76,18 +77,13 @@ export default function CategoryPageClient({
   const stableCareers = careers.filter(career => career.job_outlook.status === "vakaa").length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background to-primary/5">
+    <div className="min-h-screen">
       {/* Navigation */}
       <nav className="border-b border-border/50 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center">
-              <span className="text-white text-lg">{categoryInfo.icon}</span>
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              CareerCompassi
-            </span>
-          </div>
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <Logo className="h-10 w-auto" />
+          </Link>
           <Button variant="outline" asChild>
             <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />

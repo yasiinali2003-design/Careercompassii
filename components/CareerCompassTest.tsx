@@ -2,176 +2,146 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 
-/**
- * CareerCompassTest – Single-file React component
- * Flow:
- * 0) Landing with "Aloita testi" button
- * 1) Valitse kohderyhmä (3 korttia)
- * 2) 30 kysymystä ryhmän perusteella, 5-portainen Likert-asteikko
- * 3) Yhteenveto + JSON, lähetä backendille /api/analyze (voit vaihtaa polun)
- *
- * Notes:
- * - Tailwind CSS luokilla tyylitys. Ei ulkoisia riippuvuuksia.
- * - Vastaukset tallennetaan myös localStorageen (avain: careercompass-progress)
- * - Kaikki 90 kysymystä on sisällytetty alla taulukoihin.
- */
-
-// ---------- KYSYMYKSET ----------
+// ---------- QUESTIONS DATA ----------
 const QUESTIONS = {
   YLA: [
-    "Pidätkö enemmän yksin tekemisestä vai porukassa toimimisesta?",
-    "Nautitko siitä, kun saat suunnitella jotain uutta?",
-    "Tykkäätkö ratkaista pulmia ja tehtäviä, joissa pitää käyttää järkeä?",
-    "Oletko usein se, joka ottaa ohjat ryhmässä?",
-    "Pidätkö käsillä tekemisestä tai rakentelusta?",
-    "Onko sinulle tärkeää, että muut voivat hyvin?",
-    "Kiinnostavatko sinua ympäristöasiat ja luonto?",
-    "Ajatteletko usein tulevaisuutta ja mitä haluat tehdä \"isona\"?",
-    "Haluatko auttaa muita, jos heillä on ongelma?",
-    "Tykkäätkö esiintyä tai kertoa ideoitasi muille?",
-    "Oletko utelias ja haluat tietää, miten asiat toimivat?",
-    "Onko sinusta kivaa järjestää asioita ja pitää aikataulu kunnossa?",
-    "Tykkäätkö kokeilla uusia juttuja, vaikka ne tuntuisivat aluksi vaikeilta?",
-    "Pidätkö taiteesta, musiikista tai piirtämisestä?",
-    "Pidätkö enemmän rauhallisesta vai vauhdikkaasta tekemisestä?",
-    "Onko sinusta mukavaa tehdä tehtäviä, joissa pitää miettiä luovasti?",
-    "Oletko sellainen, joka helposti innostuu uusista projekteista?",
-    "Onko tärkeää, että työsi auttaa muita?",
-    "Tykkäätkö suunnitella asioita etukäteen?",
-    "Onko sinusta mukavaa tehdä yhteistyötä eri ihmisten kanssa?",
-    "Oletko enemmän käytännön tekijä vai ideoija?",
-    "Kiinnitätkö huomiota siihen, että asiat tehdään oikein ja siististi?",
-    "Nautitko siitä, kun opit jotain uutta?",
-    "Pidätkö vastuusta ja päätöksenteosta?",
-    "Oletko kiinnostunut teknologiasta ja sen toiminnasta?",
-    "Pidätkö luonnossa olemisesta tai ympäristöprojekteista?",
-    "Nautitko auttamisesta koulussa tai kotona?",
-    "Tykkäätkö kirjoittaa, piirtää tai luoda tarinoita?",
-    "Onko sinusta mukavaa seurata sääntöjä ja ohjeita?",
-    "Kuvitteletko usein, millainen tulevaisuus voisi olla?",
+    "Pidätkö enemmän yksin työskentelystä vai ryhmätyöstä?",
+    "Kiinnostaako sinua teknologia ja digitaaliset ratkaisut?",
+    "Haluatko johtaa muita vai seurata ohjeita?",
+    "Pidätkö käytännön tekemisestä vai ideoiden kehittelystä?",
+    "Haluatko auttaa muita ihmisiä?",
+    "Kiinnostaako sinua ympäristönsuojelu?",
+    "Ajatteletko strategisesti ja pitkällä tähtäimellä?",
+    "Oletko hyvä organisoimaan asioita?",
+    "Pidätkö luovasta ilmaisusta ja taiteesta?",
+    "Kiinnostaako sinua matematiikka ja tieteet?",
+    "Haluatko tehdä konkreettista työtä käsin?",
+    "Oletko hyvä suunnittelemaan ja järjestämään?",
+    "Pidätkö kirjoittamisesta ja kielistä?",
+    "Kiinnostaako sinua visuaalinen suunnittelu?",
+    "Haluatko oppia uusia taitoja jatkuvasti?",
+    "Pidätkö esiintymisestä ja esittämisestä?",
+    "Kiinnostaako sinua historia ja kulttuuri?",
+    "Haluatko työskennellä ulkona ja luonnossa?",
+    "Oletko hyvä neuvottelemaan ja myymään?",
+    "Pidätkö tarkasta ja järjestelmällisestä työstä?",
+    "Kiinnostaako sinua liiketoiminta ja talous?",
+    "Haluatko kehittää uusia innovaatioita?",
+    "Oletko hyvä motivoida muita?",
+    "Kiinnostaako sinua terveys ja hyvinvointi?",
+    "Pidätkö tutkimisesta ja analysoinnista?",
+    "Haluatko vaikuttaa yhteiskuntaan?",
+    "Kiinnostaako sinua urheilu ja liikunta?",
+    "Oletko hyvä ratkaisemaan ongelmia?",
+    "Pidätkö opettamisesta ja valmentamisesta?",
+    "Haluatko työskennellä kansainvälisesti?"
   ],
   TASO2: [
-    "Millaisissa tehtävissä tunnet olevasi parhaimmillasi?",
-    "Nautitko enemmän ideoiden kehittämisestä vai niiden toteuttamisesta?",
-    "Pidätkö esiintymisestä ja muiden inspiroimisesta?",
-    "Kuinka tärkeää sinulle on vakaus ja ennakoitavuus työssä?",
-    "Pidätkö analyyttisestä ajattelusta ja ongelmien ratkaisusta?",
-    "Tuntuuko sinusta hyvältä johtaa ryhmää tai ohjata muita?",
-    "Haluatko, että työsi vaikuttaa positiivisesti yhteiskuntaan?",
-    "Innostutko teknologiasta ja innovaatioista?",
-    "Tykkäätkö suunnitella ja organisoida projekteja?",
-    "Koetko luovat tehtävät (piirtäminen, kirjoittaminen, suunnittelu) palkitsevina?",
-    "Nautitko käsillä tekemisestä tai konkreettisista tuloksista?",
-    "Pidätkö siitä, että työsi auttaa ihmisiä suoraan?",
-    "Haluatko vaikuttaa muiden päätöksiin ja olla esimerkkinä?",
-    "Onko tärkeää, että työsi on vaihtelevaa ja luovaa?",
-    "Koetko olevasi enemmän käytännönläheinen vai visionäärinen ajattelija?",
-    "Nautitko itsenäisestä työstä ilman tiukkaa ohjausta?",
-    "Pidätkö yhteistyöstä ja tiimityöstä?",
-    "Kiinnostavatko sinua ympäristönsuojelu tai kestävä kehitys?",
-    "Tykkäätkö etsiä uusia ratkaisuja ongelmiin?",
-    "Pidätkö aikataulujen ja projektien hallinnasta?",
-    "Onko sinulla taipumus suunnitella pitkälle eteenpäin?",
-    "Nautitko uusien asioiden kokeilemisesta ilman pelkoa epäonnistumisesta?",
-    "Haluatko työsi olevan luovaa, vastuullista vai teknistä?",
-    "Onko sinulle tärkeämpää vapaus vai turvallisuus työssä?",
-    "Motivoiko sinua raha, vaikutusvalta vai merkityksellisyys?",
-    "Tykkäätkö mieluummin johtaa vai tukea muita?",
-    "Kuinka tärkeää sinulle on nähdä työn tulos konkreettisesti?",
-    "Pidätkö opettamisesta tai muiden auttamisesta oppimaan?",
-    "Koetko olevasi hyvä suunnittelemaan ja järjestämään asioita?",
-    "Kuvitteletko usein, millaisia tulevaisuuden ammatteja voisi syntyä?",
+    "Pidätkö enemmän yksin työskentelystä vai tiimityöstä?",
+    "Kiinnostaako sinua teknologia ja ohjelmointi?",
+    "Haluatko johtaa projekteja vai seurata ohjeita?",
+    "Pidätkö käytännön tekemisestä vai teoreettisesta työstä?",
+    "Haluatko auttaa asiakkaita tai asiakkaita?",
+    "Kiinnostaako sinua kestävä kehitys?",
+    "Ajatteletko strategisesti ja pitkällä tähtäimellä?",
+    "Oletko hyvä projektinhallinnassa?",
+    "Pidätkö luovasta suunnittelusta?",
+    "Kiinnostaako sinua data-analyysi ja tilastot?",
+    "Haluatko tehdä konkreettista työtä?",
+    "Oletko hyvä organisoimaan ja suunnittelemaan?",
+    "Pidätkö viestinnästä ja markkinoinnista?",
+    "Kiinnostaako sinua graafinen suunnittelu?",
+    "Haluatko oppia uusia teknologioita?",
+    "Pidätkö esiintymisestä ja esittämisestä?",
+    "Kiinnostaako sinua kulttuuri ja taide?",
+    "Haluatko työskennellä luonnossa?",
+    "Oletko hyvä myymään ja neuvottelemaan?",
+    "Pidätkö tarkasta ja järjestelmällisestä työstä?",
+    "Kiinnostaako sinua liiketoiminta ja strategia?",
+    "Haluatko kehittää uusia ratkaisuja?",
+    "Oletko hyvä motivoida ja johtaa?",
+    "Kiinnostaako sinua terveys ja hyvinvointi?",
+    "Pidätkö tutkimisesta ja analysoinnista?",
+    "Haluatko vaikuttaa yhteiskuntaan?",
+    "Kiinnostaako sinua urheilu ja liikunta?",
+    "Oletko hyvä ratkaisemaan monimutkaisia ongelmia?",
+    "Pidätkö opettamisesta ja kehittämisestä?",
+    "Haluatko työskennellä kansainvälisesti?"
   ],
   NUORI: [
-    "Mitkä kolme asiaa ovat sinulle tärkeimpiä työelämässä?",
-    "Millaisissa ympäristöissä olet tehokkain (rauha, paine, tiimi)?",
-    "Pidätkö enemmän ideoiden kehittämisestä vai tulosten saavuttamisesta?",
-    "Kuinka tärkeää sinulle on työn merkityksellisyys yhteiskunnassa?",
-    "Nautitko teknologian ja uusien työkalujen käytöstä?",
-    "Haluatko rakentaa uraa johtotehtävissä vai asiantuntijana?",
-    "Millaiset tehtävät antavat sinulle eniten energiaa?",
-    "Pidätkö rutiineista vai vaihtelevuudesta työssä?",
-    "Kuinka tärkeää on, että työsi tukee arvojasi (esim. luonto, ihmiset, kehitys)?",
-    "Nautitko luovasta ongelmanratkaisusta?",
-    "Haluatko, että työsi näkyy konkreettisesti (rakentaminen, tuotanto, palvelu)?",
-    "Pidätkö vastuusta ja päätöksenteosta?",
-    "Koetko itsesi visionääriseksi ajattelijaksi vai realistiseksi toteuttajaksi?",
-    "Motivoiko sinua enemmän ura, yhteisö vai henkilökohtainen kasvu?",
-    "Nautitko muiden ohjaamisesta ja kehittämisestä?",
-    "Pidätkö jatkuvasta oppimisesta ja itsesi kehittämisestä?",
-    "Onko sinulle tärkeää joustava työaika vai selkeä rakenne?",
-    "Koetko helpommaksi suunnitella vai improvisoida?",
-    "Pidätkö ihmisten kohtaamisesta ja kuuntelemisesta?",
-    "Kuinka tärkeää on ympäristön ja kestävän kehityksen huomioiminen työssäsi?",
-    "Onko sinulla luontainen halu johtaa tai vaikuttaa?",
-    "Tykkäätkö suunnitella strategisesti ja pitkällä aikavälillä?",
-    "Oletko enemmän idean luoja vai sen toteuttaja?",
-    "Nautitko verkostoitumisesta ja muiden kanssa työskentelystä?",
-    "Koetko parhaaksi työn, jossa voit auttaa muita suoraan?",
-    "Kuinka tärkeää on työn luovuus ja vapaus?",
-    "Pidätkö enemmän digitaalisten työkalujen käytöstä vai käytännön tekemisestä?",
-    "Haluatko nähdä työsi tulokset nopeasti vai pitkällä aikavälillä?",
-    "Millainen työ saa sinut tuntemaan, että \"tämä on mun juttu\"?",
-    "Jos saisit valita vapaasti, mitä tekisit viiden vuoden päästä?",
-  ],
-};
-
-// ---------- UI HELPERS ----------
-const Likert = ({ value, onChange }: { value?: number; onChange: (v: number) => void }) => {
-  const labels = [
-    "Täysin eri mieltä",
-    "Eri mieltä",
-    "En osaa sanoa",
-    "Samaa mieltä",
-    "Täysin samaa mieltä",
-  ];
-  return (
-    <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-5">
-      {labels.map((label, idx) => (
-        <button
-          key={label}
-          type="button"
-          onClick={() => onChange(idx + 1)}
-          className={
-            "rounded-xl border px-3 py-2 text-sm transition " +
-            (value === idx + 1
-              ? "border-blue-600 bg-blue-50 font-semibold"
-              : "border-slate-300 hover:bg-slate-50")
-          }
-        >
-          {label}
-        </button>
-      ))}
-    </div>
-  );
-};
-
-const Progress = ({ current, total }: { current: number; total: number }) => {
-  const pct = Math.round(((current + 1) / total) * 100);
-  return (
-    <div className="mb-6">
-      <div className="flex items-center justify-between text-xs text-slate-500">
-        <span>{current + 1} / {total}</span>
-        <span>{pct}%</span>
-      </div>
-      <div className="mt-1 h-2 w-full rounded-full bg-slate-100">
-        <div className="h-2 rounded-full bg-blue-500" style={{ width: `${pct}%` }} />
-      </div>
-    </div>
-  );
+    "Pidätkö enemmän itsenäisestä työstä vai tiimityöstä?",
+    "Kiinnostaako sinua teknologia ja digitalisaatio?",
+    "Haluatko johtaa muita vai keskittyä omaan työhösi?",
+    "Pidätkö käytännön tekemisestä vai strategisesta työstä?",
+    "Haluatko auttaa asiakkaita tai yhteisöä?",
+    "Kiinnostaako sinua ympäristö ja kestävyys?",
+    "Ajatteletko strategisesti ja pitkällä tähtäimellä?",
+    "Oletko hyvä projektinhallinnassa ja organisoinnissa?",
+    "Pidätkö luovasta ongelmanratkaisusta?",
+    "Kiinnostaako sinua data ja analytiikka?",
+    "Haluatko tehdä konkreettista ja näkyvää työtä?",
+    "Oletko hyvä suunnittelemaan ja järjestämään?",
+    "Pidätkö viestinnästä ja markkinoinnista?",
+    "Kiinnostaako sinua visuaalinen suunnittelu?",
+    "Haluatko oppia uusia teknologioita ja menetelmiä?",
+    "Pidätkö esiintymisestä ja verkostoitumisesta?",
+    "Kiinnostaako sinua kulttuuri ja taide?",
+    "Haluatko työskennellä luonnossa tai ulkona?",
+    "Oletko hyvä myymään ja neuvottelemaan?",
+    "Pidätkö tarkasta ja järjestelmällisestä työstä?",
+    "Kiinnostaako sinua liiketoiminta ja strategia?",
+    "Haluatko kehittää uusia innovaatioita?",
+    "Oletko hyvä motivoida ja johtaa muita?",
+    "Kiinnostaako sinua terveys ja hyvinvointi?",
+    "Pidätkö tutkimisesta ja analysoinnista?",
+    "Haluatko vaikuttaa yhteiskuntaan ja yhteisöön?",
+    "Kiinnostaako sinua urheilu ja liikunta?",
+    "Oletko hyvä ratkaisemaan monimutkaisia ongelmia?",
+    "Pidätkö opettamisesta ja kehittämisestä?",
+    "Haluatko työskennellä kansainvälisesti?"
+  ]
 };
 
 // ---------- PERSISTENCE ----------
 const STORAGE_KEY = "careercompass-progress";
 
 function saveProgress(state: any) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch {}
+  try {
+    // Add timestamp for debugging
+    const dataToSave = {
+      ...state,
+      timestamp: Date.now(),
+      version: "1.0" // For future compatibility
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
+  } catch (error) {
+    console.warn("Failed to save progress to localStorage:", error);
+    // Could implement fallback to sessionStorage or other storage methods
+  }
 }
+
 function loadProgress() {
   try {
-    const t = localStorage.getItem(STORAGE_KEY);
-    return t ? JSON.parse(t) : null;
-  } catch {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) return null;
+    
+    const parsed = JSON.parse(saved);
+    
+    // Check if data is not too old (optional: expire after 30 days)
+    const thirtyDaysAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
+    if (parsed.timestamp && parsed.timestamp < thirtyDaysAgo) {
+      console.log("Saved progress is too old, clearing...");
+      localStorage.removeItem(STORAGE_KEY);
+      return null;
+    }
+    
+    return parsed;
+  } catch (error) {
+    console.warn("Failed to load progress from localStorage:", error);
+    // Clear corrupted data
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {}
     return null;
   }
 }
@@ -183,23 +153,53 @@ export default function CareerCompassTest() {
   const [group, setGroup] = useState<GroupKey | null>(null);
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
+  const [showSaveNotification, setShowSaveNotification] = useState(false);
+  const [hasLoadedProgress, setHasLoadedProgress] = useState(false);
 
   const qList = useMemo(() => (group ? QUESTIONS[group] : []), [group]);
   const total = qList.length;
 
-  // Load saved progress
+  // Load saved progress on component mount
   useEffect(() => {
     const saved = loadProgress();
-    if (saved && saved.step !== undefined) {
+    if (saved && saved.step !== undefined && saved.step > 0) {
       setStep(saved.step);
       setGroup(saved.group);
       setIndex(saved.index ?? 0);
       setAnswers(saved.answers ?? []);
+      setHasLoadedProgress(true);
+      
+      // Show notification that progress was loaded
+      setTimeout(() => {
+        setShowSaveNotification(true);
+        setTimeout(() => setShowSaveNotification(false), 4000);
+      }, 500);
     }
   }, []);
 
+  // Auto-save progress whenever state changes
   useEffect(() => {
-    saveProgress({ step, group, index, answers });
+    if (step > 0) { // Only save if test has started
+      saveProgress({ step, group, index, answers });
+      
+      // Show save notification (but not on initial load)
+      if (hasLoadedProgress && (step === 2 || step === 3)) {
+        setShowSaveNotification(true);
+        setTimeout(() => setShowSaveNotification(false), 3000);
+      }
+    }
+  }, [step, group, index, answers, hasLoadedProgress]);
+
+  // Save progress before page unload
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      if (step > 0) {
+        saveProgress({ step, group, index, answers });
+      }
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, [step, group, index, answers]);
 
   const start = () => setStep(1);
@@ -228,7 +228,8 @@ export default function CareerCompassTest() {
     setGroup(null);
     setIndex(0);
     setAnswers([]);
-    saveProgress({});
+    setHasLoadedProgress(false);
+    saveProgress({}); // Clear saved progress
   };
 
   const sendToBackend = async () => {
@@ -252,8 +253,22 @@ export default function CareerCompassTest() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
+      {/* Progress Save Notification */}
+      {showSaveNotification && (
+        <div className="fixed top-4 right-4 z-50 animate-in slide-in-from-right duration-300">
+          <div className="rounded-lg bg-blue-50 border border-blue-200 px-4 py-3 shadow-lg">
+            <div className="flex items-center gap-2">
+              <div className="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
+              <p className="text-sm text-blue-800 font-medium">
+                Tallensimme vastauksesi – voit jatkaa myöhemmin tästä kohdasta.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {step === 0 && (
-        <Landing onStart={start} />
+        <Landing onStart={start} hasSavedProgress={hasLoadedProgress} />
       )}
 
       {step === 1 && (
@@ -269,18 +284,17 @@ export default function CareerCompassTest() {
               ? "Toisen asteen opiskelijat (16–19 v) – Löydä suuntasi"
               : "Nuoret aikuiset (20–25 v) – Rakenna oma polkusi"
           }
+          questions={qList}
           index={index}
-          total={total}
-          question={qList[index]}
-          value={answers[index]}
-          onChange={setAnswer}
+          answers={answers}
+          onAnswer={setAnswer}
           onNext={nextQ}
           onPrev={prevQ}
-          onExit={restart}
+          onRestart={restart}
         />
       )}
 
-      {step === 3 && (
+      {step === 3 && group && (
         <Summary
           group={group}
           questions={qList}
@@ -294,94 +308,186 @@ export default function CareerCompassTest() {
 }
 
 // ---------- SUB-COMPONENTS ----------
-const Landing = ({ onStart }: { onStart: () => void }) => (
-  <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-    <h1 className="text-3xl font-bold tracking-tight">Tervetuloa testiin!</h1>
-    <p className="mt-2 text-slate-600">Vastaa kysymyksiin, niin rakennamme sinulle urasuositukset.</p>
-    <ul className="mt-6 space-y-2 text-slate-700">
-      <li>⏱️ 15–20 minuuttia</li>
-      <li>💙 100% ilmainen</li>
-      <li>🤖 Tekoäly analysoi vastauksesi</li>
-    </ul>
-    <button onClick={onStart} className="mt-8 w-full rounded-2xl bg-blue-600 px-6 py-3 text-white shadow hover:bg-blue-700">
-      Aloita testi
-    </button>
-  </div>
-);
+const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedProgress: boolean }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger animation on mount
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div 
+      className={`rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-800 ease-in-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2.5'
+      }`}
+    >
+      <h1 className="text-3xl font-bold tracking-tight text-[#2563EB]">Löydä urasuuntasi</h1>
+      
+      <div className="mt-4 space-y-3">
+        <p className="text-[#475569] leading-relaxed">
+          Vastaa 30 huolellisesti suunniteltuun kysymykseen, jotka kartoittavat kiinnostuksesi, arvosi ja vahvuutesi.
+        </p>
+        <p className="text-[#475569] leading-relaxed">
+          Tekoälymallimme analysoi vastauksesi ja tarjoaa henkilökohtaisia urasuosituksia, jotka perustuvat tutkittuun aineistoon ja nykyaikaiseen uratietoon.
+        </p>
+      </div>
+      
+      <p className="mt-4 text-sm text-slate-500">
+        30 kysymystä • Maksuton • Vastauksesi käsitellään luottamuksellisesti
+      </p>
+      
+      {hasSavedProgress && (
+        <div className="mt-6 rounded-lg bg-blue-50 border border-blue-200 p-4">
+          <div className="flex items-center gap-2">
+            <div className="h-2 w-2 rounded-full bg-blue-500"></div>
+            <p className="text-sm text-blue-800 font-medium">
+              Löysimme tallennetut vastauksesi – voit jatkaa siitä mihin jäit!
+            </p>
+          </div>
+        </div>
+      )}
+      
+      <button 
+        onClick={onStart} 
+        className="mt-8 w-full rounded-2xl bg-[#2563EB] px-6 py-3 text-white font-semibold shadow hover:bg-[#1D4ED8] transition-colors duration-200 flex items-center justify-center gap-2"
+      >
+        {hasSavedProgress ? "Jatka testiä" : "Aloita testi"}
+        <span className="text-lg">→</span>
+      </button>
+    </div>
+  );
+};
 
 const GroupCard = ({ title, desc, onClick }: { title: string; desc: string; onClick: () => void }) => (
   <button onClick={onClick} className="flex w-full flex-col items-start rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm transition hover:shadow-md">
     <h3 className="text-xl font-semibold">{title}</h3>
     <p className="mt-1 text-slate-600">{desc}</p>
-    <span className="mt-4 inline-flex rounded-xl bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">Aloita</span>
   </button>
 );
 
-const GroupSelect = ({ onChoose, onBack }: { onChoose: (g: any) => void; onBack: () => void }) => (
-  <div>
-    <h2 className="mb-6 text-2xl font-bold">Valitse kohderyhmä</h2>
-    <div className="grid gap-4 sm:grid-cols-2">
+const GroupSelect = ({ onChoose, onBack }: { onChoose: (g: "YLA" | "TASO2" | "NUORI") => void; onBack: () => void }) => (
+  <div className="space-y-6">
+    <div className="text-center">
+      <h1 className="text-3xl font-bold">Valitse ikäryhmäsi</h1>
+      <p className="mt-2 text-slate-600">Tämä auttaa meitä antamaan sinulle sopivimmat kysymykset</p>
+    </div>
+
+    <div className="grid gap-4">
       <GroupCard
-        title="Yläasteen oppilaat"
-        desc="Löydä suunta, joka tuntuu omalta."
+        title="Yläasteen oppilas (13–15 v)"
+        desc="Tutustu itseesi ja löydä kiinnostuksesi"
         onClick={() => onChoose("YLA")}
       />
       <GroupCard
-        title="Toisen asteen opiskelijat"
-        desc="Selvitä, mihin kiinnostuksesi johtavat."
+        title="Toisen asteen opiskelija (16–19 v)"
+        desc="Löydä suuntasi ja suunnittele tulevaisuuttasi"
         onClick={() => onChoose("TASO2")}
       />
       <GroupCard
-        title="Nuoret aikuiset (20–25v)"
-        desc="Tutustu uusiin mahdollisuuksiin ja löydä oma polkusi."
+        title="Nuori aikuinen (20–25 v)"
+        desc="Rakenna oma polkusi ja löydä urapolku"
         onClick={() => onChoose("NUORI")}
       />
     </div>
-    <button onClick={onBack} className="mt-6 text-slate-600 hover:underline">← Palaa</button>
+
+    <button onClick={onBack} className="w-full rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-50">
+      Takaisin
+    </button>
   </div>
 );
 
+const RatingScale = ({ value, onChange }: { value: number; onChange: (val: number) => void }) => {
+  const labels = ["Ei lainkaan", "Vähän", "Kohtalaisesti", "Paljon", "Erittäin paljon"];
+  return (
+    <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-5">
+      {labels.map((label, idx) => (
+        <button
+          key={label}
+          type="button"
+          onClick={() => onChange(idx + 1)}
+          className={
+            "rounded-xl border px-3 py-2 text-sm transition " +
+            (value === idx + 1
+              ? "border-blue-600 bg-blue-50 font-semibold"
+              : "border-slate-300 hover:bg-slate-50")
+          }
+        >
+          {label}
+        </button>
+      ))}
+    </div>
+  );
+};
+
 const QuestionScreen = ({
   title,
+  questions,
   index,
-  total,
-  question,
-  value,
-  onChange,
+  answers,
+  onAnswer,
   onNext,
   onPrev,
-  onExit,
+  onRestart,
 }: {
   title: string;
+  questions: string[];
   index: number;
-  total: number;
-  question: string;
-  value?: number;
-  onChange: (n: number) => void;
+  answers: number[];
+  onAnswer: (val: number) => void;
   onNext: () => void;
   onPrev: () => void;
-  onExit: () => void;
-}) => (
-  <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-    <div className="mb-2 text-sm text-slate-500">{title}</div>
-    <Progress current={index} total={total} />
-    <h3 className="text-xl font-semibold">{question}</h3>
-    <Likert value={value} onChange={onChange} />
+  onRestart: () => void;
+}) => {
+  const total = questions.length;
+  const progress = ((index + 1) / total) * 100;
 
-    <div className="mt-8 flex flex-wrap items-center justify-between gap-2">
-      <button onClick={onExit} className="rounded-xl px-4 py-2 text-slate-600 hover:bg-slate-50">Keskeytä</button>
-      <div className="space-x-2">
-        <button onClick={onPrev} disabled={index === 0} className="rounded-xl border border-slate-300 px-4 py-2 text-slate-700 disabled:opacity-40">Edellinen</button>
+  return (
+    <div className="space-y-6">
+      <div className="text-center">
+        <h1 className="text-2xl font-bold">{title}</h1>
+        <p className="mt-2 text-slate-600">
+          Kysymys {index + 1} / {total}
+        </p>
+        <div className="mt-4 h-2 w-full rounded-full bg-slate-200">
+          <div
+            className="h-2 rounded-full bg-blue-600 transition-all duration-300"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+      </div>
+
+      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+        <h2 className="text-xl font-semibold mb-6">{questions[index]}</h2>
+        <RatingScale value={answers[index]} onChange={onAnswer} />
+      </div>
+
+      <div className="flex justify-between">
+        <button
+          onClick={onPrev}
+          disabled={index === 0}
+          className="rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Edellinen
+        </button>
+        <button
+          onClick={onRestart}
+          className="rounded-xl px-4 py-2 text-slate-700 hover:bg-slate-50"
+        >
+          Aloita alusta
+        </button>
         <button
           onClick={onNext}
-          className="rounded-xl bg-blue-600 px-4 py-2 font-medium text-white shadow hover:bg-blue-700"
+          disabled={answers[index] === 0}
+          className="rounded-xl bg-blue-600 px-6 py-2 text-white font-medium shadow hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {index === total - 1 ? "Valmis" : "Seuraava"}
         </button>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Summary = ({
   group,
@@ -399,6 +505,8 @@ const Summary = ({
   const [analysis, setAnalysis] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [selectedCareer, setSelectedCareer] = useState<any>(null);
+  const [careerCache, setCareerCache] = useState<{ [key: string]: any }>({});
 
   const payload = useMemo(() => ({ group, questions, answers }), [group, questions, answers]);
   const answered = answers.filter((a) => a > 0).length;
@@ -429,53 +537,467 @@ const Summary = ({
     }
   };
 
+  const openCareerDetail = (career: any) => {
+    setSelectedCareer(career);
+    // Cache the career data for faster reopens
+    if (!careerCache[career.id]) {
+      setCareerCache(prev => ({ ...prev, [career.id]: career }));
+    }
+  };
+
+  const closeCareerDetail = () => {
+    setSelectedCareer(null);
+  };
+
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      closeCareerDetail();
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      closeCareerDetail();
+    }
+  };
+
+  // Dynamic Career Links Component
+  const DynamicCareerLinks = ({ career }: { career: any }) => {
+    const [activeTab, setActiveTab] = useState<'education' | 'jobs'>('education');
+
+    // Simple URL generation
+    const educationUrl = 'https://opintopolku.fi/';
+    const jobsUrl = 'https://tyomarkkinatori.fi/';
+    
+    const currentUrl = activeTab === 'education' ? educationUrl : jobsUrl;
+    const sourceName = activeTab === 'education' ? 'Opintopolku.fi' : 'Työmarkkinatori';
+    const linkType = activeTab === 'education' ? 'koulutukset' : 'työpaikat';
+
+    const handleTabKeyDown = (e: React.KeyboardEvent) => {
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        setActiveTab(activeTab === 'education' ? 'jobs' : 'education');
+      }
+    };
+
+    const openLink = () => {
+      window.open(currentUrl, '_blank', 'noopener,noreferrer');
+    };
+
+    return (
+      <div className="space-y-4">
+        {/* Tab Control */}
+        <div className="flex items-center justify-between">
+          <div 
+            className="flex rounded-lg border border-white/20 bg-white/10 p-1"
+            role="tablist"
+            aria-label="Valitse hakutyyppi"
+          >
+            <button
+              role="tab"
+              aria-selected={activeTab === 'education'}
+              aria-controls="education-panel"
+              onClick={() => setActiveTab('education')}
+              onKeyDown={handleTabKeyDown}
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                activeTab === 'education'
+                  ? 'bg-white text-[#2563EB] shadow-sm'
+                  : 'text-white/80 hover:text-white'
+              }`}
+            >
+              Koulutukset
+            </button>
+            <button
+              role="tab"
+              aria-selected={activeTab === 'jobs'}
+              aria-controls="jobs-panel"
+              onClick={() => setActiveTab('jobs')}
+              onKeyDown={handleTabKeyDown}
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                activeTab === 'jobs'
+                  ? 'bg-white text-[#2563EB] shadow-sm'
+                  : 'text-white/80 hover:text-white'
+              }`}
+            >
+              Työpaikat
+            </button>
+          </div>
+
+          {/* Primary Action Button */}
+          <button
+            onClick={openLink}
+            aria-label={`Avaa ${linkType} ${sourceName}`}
+            className="px-6 py-2 bg-white text-[#2563EB] font-semibold rounded-xl hover:bg-white/90 transition-colors flex items-center gap-2"
+          >
+            Avaa
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Helper Text */}
+        <p className="text-xs text-white/70">
+          Linkit ohjaavat luotettuihin lähteisiin: Opintopolku (koulutukset) ja Työmarkkinatori (työpaikat). Molemmat linkit vievät pääsivulle, josta voit hakea sopivia mahdollisuuksia.
+        </p>
+      </div>
+    );
+  };
+
+  // Career Detail Modal Component
+  const CareerDetailModal = ({ career }: { career: any }) => {
+    // Generate comprehensive career information
+    const generateCareerDetails = (career: any) => {
+      const careerDetails = {
+        // Enhanced introduction
+        introduction: `${career.title_fi} on ${career.category === 'luova' ? 'luova' : 
+          career.category === 'johtaja' ? 'johtamispainotteinen' :
+          career.category === 'innovoija' ? 'innovaatiopainotteinen' :
+          career.category === 'rakentaja' ? 'käytännönläheinen' :
+          career.category === 'auttaja' ? 'ihmiskeskeinen' :
+          career.category === 'ympariston-puolustaja' ? 'vastuullinen' :
+          career.category === 'visionaari' ? 'strateginen' :
+          career.category === 'jarjestaja' ? 'järjestelmällinen' : 'monipuolinen'} ammatti, joka ${career.short_description.toLowerCase()}`,
+        
+        // Detailed career path
+        careerPath: generateCareerPath(career),
+        
+        // Work environment
+        workEnvironment: generateWorkEnvironment(career),
+        
+        // Skills breakdown
+        skillsBreakdown: generateSkillsBreakdown(career),
+        
+        // Industry insights
+        industryInsights: generateIndustryInsights(career),
+        
+        // Future prospects
+        futureProspects: generateFutureProspects(career)
+      };
+      
+      return careerDetails;
+    };
+
+    const generateCareerPath = (career: any) => {
+      const paths = {
+        'luova': 'Luovassa ammatissa voit aloittaa harjoittelijana tai assistenttina, kehittyä erikoistujaksi ja lopulta luovaksi johtajaksi tai freelanceriksi. Portfolio ja verkostot ovat avain menestykseen.',
+        'johtaja': 'Johtamisammatissa eteneminen tapahtuu tyypillisesti vastuullisempiin tehtäviin, tiimijohtajuuteen ja lopulta strategiseen johtajuuteen. Kokemus ja tulokset ovat tärkeimmät tekijät.',
+        'innovoija': 'Innovaatioammatissa voit aloittaa kehittäjänä, siirtyä senior-rooliin, erikoistua teknologiaan ja lopulta johtaa innovaatioita tai perustaa oman yrityksen.',
+        'rakentaja': 'Rakentamisammatissa eteneminen tapahtuu teknisestä työstä vastuullisempiin tehtäviin, projektijohtajuuteen ja lopulta liiketoimintaan tai yrittäjyyteen.',
+        'auttaja': 'Auttamisammatissa voit kehittyä erikoistujaksi, siirtyä mentorointiin, johtaa tiimejä ja lopulta vaikuttaa laajemmin yhteiskuntaan tai politiikkaan.',
+        'ympariston-puolustaja': 'Ympäristöammatissa eteneminen tapahtuu tutkimuksesta käytännön toimiin, projektijohtajuuteen ja lopulta strategiseen vaikuttamiseen.',
+        'visionaari': 'Visionäärisessä ammatissa voit aloitta analyytikkona, siirtyä strategiksi, johtaa muutosta ja lopulta luoda visioita jotka muuttavat koko alan.',
+        'jarjestaja': 'Järjestämisammatissa eteneminen tapahtuu koordinoinnista projektijohtajuuteen, prosessien kehittämiseen ja lopulta organisaation johtamiseen.'
+      };
+      
+      return paths[career.category as keyof typeof paths] || 'Tämä ammatti tarjoaa hyvät mahdollisuudet kehittyä ja erikoistua. Työkokemuksen karttuessa voit siirtyä vastuullisempiin tehtäviin ja johtaviin rooleihin.';
+    };
+
+    const generateWorkEnvironment = (career: any) => {
+      const environments = {
+        'luova': 'Luovassa työympäristössä on vapaus ilmaista itseäsi, kokeilla uusia ideoita ja työskennellä inspiroivassa ympäristössä. Tiimityö ja verkostoituminen ovat tärkeää.',
+        'johtaja': 'Johtamistyössä työskentelet dynaamisessa ympäristössä, jossa pääset vaikuttamaan strategioihin ja johtamaan ihmisiä. Vastuu ja päätöksenteko ovat keskeisiä.',
+        'innovoija': 'Innovaatiotyössä työskentelet nopeatempoisessa teknologiapainotteisessa ympäristössä, jossa saa kokeilla ja kehittää uutta. Oppiminen ja sopeutuminen ovat avain.',
+        'rakentaja': 'Rakentamistyössä työskentelet käytännönläheisessä ympäristössä, jossa näet konkreettisia tuloksia työstäsi. Tiimityö ja turvallisuus ovat tärkeää.',
+        'auttaja': 'Autamistyössä työskentelet ihmiskeskeisessä ympäristössä, jossa pääset tekemään merkityksellistä työtä. Empatia ja kommunikaatio ovat keskeisiä.',
+        'ympariston-puolustaja': 'Ympäristötyössä työskentelet vastuullisessa ympäristössä, jossa pääset vaikuttamaan kestävään kehitykseen. Tutkimus ja käytännön toimet yhdistyvät.',
+        'visionaari': 'Visionäärisessä työssä työskentelet strategisessa ympäristössä, jossa pääset suunnittelemaan tulevaisuutta. Analyysi ja kommunikaatio ovat tärkeää.',
+        'jarjestaja': 'Järjestämistyössä työskentelet strukturoidussa ympäristössä, jossa pääset luomaan selkeyttä ja tehokkuutta. Organisointi ja kommunikaatio ovat keskeisiä.'
+      };
+      
+      return environments[career.category as keyof typeof environments] || 'Tämä ammatti tarjoaa monipuolisen työympäristön, jossa pääset hyödyntämään vahvuuksiasi ja kehittämään taitojasi.';
+    };
+
+    const generateSkillsBreakdown = (career: any) => {
+      return {
+        technical: career.keywords.filter((skill: string) => 
+          ['ohjelmointi', 'teknologia', 'analyysi', 'suunnittelu', 'kehitys'].some(tech => 
+            skill.toLowerCase().includes(tech)
+          )
+        ),
+        soft: career.keywords.filter((skill: string) => 
+          ['kommunikaatio', 'johtaminen', 'tiimityö', 'kreatiivisuus', 'ongelmanratkaisu'].some(soft => 
+            skill.toLowerCase().includes(soft)
+          )
+        ),
+        industry: career.keywords.filter((skill: string) => 
+          !['ohjelmointi', 'teknologia', 'analyysi', 'suunnittelu', 'kehitys', 'kommunikaatio', 'johtaminen', 'tiimityö', 'kreatiivisuus', 'ongelmanratkaisu'].some(general => 
+            skill.toLowerCase().includes(general)
+          )
+        )
+      };
+    };
+
+    const generateIndustryInsights = (career: any) => {
+      const insights = {
+        'luova': 'Luova ala on muuttumassa digitaaliseksi ja globaaliksi. Uudet teknologiat avaavat mahdollisuuksia, mutta myös kilpailu on kovaa. Verkostoituminen ja jatkuva oppiminen ovat avain menestykseen.',
+        'johtaja': 'Johtaminen muuttuu yhä enemmän palveluksi ja ihmiskeskeiseksi. Etätyö ja globaali tiimityö vaativat uusia taitoja. Empatia ja digitaaliset taidot ovat tärkeitä.',
+        'innovoija': 'Teknologia kehittyy eksponentiaalisesti ja luo jatkuvasti uusia mahdollisuuksia. Tekoäly ja automaatio muuttavat alaa, mutta luovat ihmiset tarvitaan edelleen.',
+        'rakentaja': 'Rakentaminen digitalisoituu ja kestävään kehitykseen siirtyminen on keskeistä. Uudet materiaalit ja rakennustekniikat muuttavat alaa.',
+        'auttaja': 'Autamistyö muuttuu yhä enemmän ennaltaehkäiseväksi ja teknologia-avusteiseksi. Henkilökohtainen lähestymistapa säilyy tärkeänä.',
+        'ympariston-puolustaja': 'Ympäristöalan merkitys kasvaa ja siirtyy yhä enemmän liiketoimintaan. Kestävän kehityksen osaaminen on kilpailuetu.',
+        'visionaari': 'Strateginen ajattelu ja tulevaisuuden ennustaminen ovat tärkeämpiä kuin koskaan. Data-analyysi ja teknologia tukevat visionääristä työtä.',
+        'jarjestaja': 'Organisaatiot muuttuvat ketterämmiksi ja virtuaalisemmiksi. Prosessien optimointi ja automaatio ovat keskeisiä taitoja.'
+      };
+      
+      return insights[career.category as keyof typeof insights] || 'Tämä ala kehittyy jatkuvasti ja tarjoaa hyvät mahdollisuudet niille, jotka pysyvät ajan tasalla ja kehittävät taitojaan.';
+    };
+
+    const generateFutureProspects = (career: any) => {
+      const prospects = {
+        'luova': 'Luova ala kasvaa globaalisti ja digitaaliset taidot ovat yhä tärkeämpiä. Freelancer-työ ja yrittäjyys tarjoavat hyvät mahdollisuudet.',
+        'johtaja': 'Johtamistaitoja tarvitaan yhä enemmän, mutta tyyli muuttuu. Palvelullinen johtaminen ja digitaaliset taidot ovat avain.',
+        'innovoija': 'Teknologia-alan kasvu jatkuu ja uudet teknologiat luovat jatkuvasti uusia mahdollisuuksia. Koodaustaidot ja analytiikka ovat arvostettuja.',
+        'rakentaja': 'Rakentaminen kasvaa kestävän kehityksen paineessa. Uudet teknologiat ja materiaalit muuttavat alaa.',
+        'auttaja': 'Autamistyö kasvaa ikääntyvän väestön takia. Teknologia tukee mutta ei korvaa henkilökohtaista lähestymistapaa.',
+        'ympariston-puolustaja': 'Ympäristöalan merkitys kasvaa ja siirtyy yhä enemmän liiketoimintaan. Kestävän kehityksen osaaminen on kilpailuetu.',
+        'visionaari': 'Strateginen ajattelu ja tulevaisuuden ennustaminen ovat tärkeämpiä kuin koskaan. Data-analyysi tukee visionääristä työtä.',
+        'jarjestaja': 'Prosessien optimointi ja automaatio ovat keskeisiä. Organisaatiot tarvitsevat järjestämistaitoja muuttuvassa maailmassa.'
+      };
+      
+      return prospects[career.category as keyof typeof prospects] || 'Tämä ala tarjoaa hyvät mahdollisuudet tulevaisuudessa niille, jotka kehittävät taitojaan ja sopeutuvat muutoksiin.';
+    };
+
+    const details = generateCareerDetails(career);
+    const skillsBreakdown = details.skillsBreakdown;
+
+    return (
+      <div 
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+        onClick={handleBackdropClick}
+        onKeyDown={handleKeyDown}
+        tabIndex={-1}
+      >
+        <div className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto bg-[#2563EB] rounded-2xl shadow-2xl animate-in fade-in-0 zoom-in-95 duration-250">
+          {/* Close Button */}
+          <button
+            onClick={closeCareerDetail}
+            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/90 hover:bg-white shadow-lg transition-colors"
+            aria-label="Sulje"
+          >
+            <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          <div className="p-8">
+            {/* Header */}
+            <div className="mb-8">
+              <h1 className="text-4xl font-bold text-white mb-4">{career.title_fi}</h1>
+              <p className="text-xl text-white/90 leading-relaxed mb-4">{details.introduction}</p>
+              
+              {/* Category Badge */}
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium">
+                {career.category === 'luova' ? '🎨 Luova' :
+                 career.category === 'johtaja' ? '👑 Johtaminen' :
+                 career.category === 'innovoija' ? '💡 Innovaatio' :
+                 career.category === 'rakentaja' ? '🔨 Rakentaminen' :
+                 career.category === 'auttaja' ? '🤝 Auttaminen' :
+                 career.category === 'ympariston-puolustaja' ? '🌱 Ympäristö' :
+                 career.category === 'visionaari' ? '🔮 Visionääri' :
+                 career.category === 'jarjestaja' ? '📋 Järjestäminen' : '💼 Ammatti'}
+              </div>
+            </div>
+
+            {/* Key Info Grid */}
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              {/* Salary */}
+              <div className="bg-white rounded-xl p-6">
+                <h3 className="text-sm font-semibold text-[#0F172A] uppercase tracking-wide mb-3">Palkka</h3>
+                <p className="text-2xl font-bold text-[#2563EB] mb-2">
+                  {career.salary_eur_month.median}€/kk
+                </p>
+                <p className="text-sm text-[#475569]">
+                  Alue: {career.salary_eur_month.range[0]}€ - {career.salary_eur_month.range[1]}€
+                </p>
+              </div>
+
+              {/* Job Outlook */}
+              <div className="bg-white rounded-xl p-6">
+                <h3 className="text-sm font-semibold text-[#0F172A] uppercase tracking-wide mb-3">Työllisyysnäkymät</h3>
+                <p className="text-sm text-[#475569] leading-relaxed">{career.job_outlook.explanation}</p>
+              </div>
+
+              {/* Work Environment */}
+              <div className="bg-white rounded-xl p-6">
+                <h3 className="text-sm font-semibold text-[#0F172A] uppercase tracking-wide mb-3">Työympäristö</h3>
+                <p className="text-sm text-[#475569] leading-relaxed">{details.workEnvironment}</p>
+              </div>
+            </div>
+
+            {/* Education */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold text-white mb-4">Koulutus</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {career.education_paths.map((path: string, i: number) => (
+                  <div key={i} className="flex items-start gap-3 p-4 bg-white rounded-lg">
+                    <span className="text-[#2563EB] mt-1 font-bold">•</span>
+                    <span className="text-[#475569]">{path}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Main Tasks */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold text-white mb-4">Keskeiset tehtävät / vastuut</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {career.main_tasks.map((task: string, i: number) => (
+                  <div key={i} className="flex items-start gap-3 p-4 bg-white rounded-lg">
+                    <span className="text-[#2563EB] mt-1 font-bold">•</span>
+                    <span className="text-[#475569]">{task}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Skills Breakdown */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold text-white mb-4">Tärkeimmät taidot</h3>
+              <div className="space-y-6">
+                {skillsBreakdown.technical.length > 0 && (
+                  <div className="bg-white rounded-xl p-6">
+                    <h4 className="text-lg font-medium text-[#0F172A] mb-3">Tekniset taidot</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {skillsBreakdown.technical.map((skill: string, i: number) => (
+                        <span key={i} className="px-3 py-1 bg-[#2563EB]/10 text-[#2563EB] rounded-full text-sm font-medium">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                
+                {skillsBreakdown.soft.length > 0 && (
+                  <div className="bg-white rounded-xl p-6">
+                    <h4 className="text-lg font-medium text-[#0F172A] mb-3">Ihmistaidot</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {skillsBreakdown.soft.map((skill: string, i: number) => (
+                        <span key={i} className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                
+                {skillsBreakdown.industry.length > 0 && (
+                  <div className="bg-white rounded-xl p-6">
+                    <h4 className="text-lg font-medium text-[#0F172A] mb-3">Alakohtaiset taidot</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {skillsBreakdown.industry.map((skill: string, i: number) => (
+                        <span key={i} className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Career Path */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold text-white mb-4">Urapolku & etenemismahdollisuudet</h3>
+              <div className="bg-white rounded-xl p-6">
+                <p className="text-[#475569] leading-relaxed text-lg">{details.careerPath}</p>
+              </div>
+            </div>
+
+            {/* Industry Insights */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold text-white mb-4">Alan kehitys</h3>
+              <div className="bg-white rounded-xl p-6">
+                <p className="text-[#475569] leading-relaxed text-lg">{details.industryInsights}</p>
+              </div>
+            </div>
+
+            {/* Future Prospects */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold text-white mb-4">Tulevaisuuden näkymät</h3>
+              <div className="bg-white rounded-xl p-6">
+                <p className="text-[#475569] leading-relaxed text-lg">{details.futureProspects}</p>
+              </div>
+            </div>
+
+            {/* Related Careers */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold text-white mb-4">Liittyvät ammatit</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {analysis?.recommendations
+                  .filter((rec: any) => rec.id !== career.id)
+                  .slice(0, 4)
+                  .map((relatedCareer: any, i: number) => (
+                    <button
+                      key={i}
+                      onClick={() => openCareerDetail(relatedCareer)}
+                      className="text-left p-4 rounded-xl border border-white/20 bg-white hover:border-[#2563EB] hover:shadow-lg transition-all duration-200"
+                    >
+                      <h4 className="font-semibold text-[#0F172A] mb-2">{relatedCareer.title_fi}</h4>
+                      <p className="text-sm text-[#475569]">{relatedCareer.short_description}</p>
+                      <div className="mt-2 text-xs text-[#2563EB] font-medium">Klikkaa nähdäksesi lisätietoja →</div>
+                    </button>
+                  ))}
+              </div>
+            </div>
+
+            {/* Dynamic Links Section */}
+            <div className="pt-6 border-t border-white/20">
+              <DynamicCareerLinks career={career} />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   if (analysis) {
     return (
       <div className="space-y-6">
         {/* AI Analysis Summary */}
-        <div className="rounded-3xl border border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 shadow-sm">
-          <div className="mb-4">
-            <h2 className="text-2xl font-bold text-blue-900">Henkilökohtainen analyysi</h2>
+        <div className="rounded-3xl bg-[#2563EB] p-8 shadow-lg">
+          <div className="mb-6">
+            <h2 className="text-3xl font-bold text-white">Henkilökohtainen analyysi</h2>
           </div>
           
-          <p className="text-blue-800 text-lg leading-relaxed mb-6">
+          <p className="text-white/90 text-lg leading-relaxed mb-8">
             {analysis.aiAnalysis.summary}
           </p>
 
           {/* Personality Insights */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-blue-900 mb-3">Persoonallisuutesi</h3>
-            <div className="grid gap-2">
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-white mb-4">Persoonallisuutesi</h3>
+            <div className="grid gap-3">
               {analysis.aiAnalysis.personalityInsights.map((insight: string, i: number) => (
-                <div key={i} className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span className="text-blue-800">{insight}</span>
+                <div key={i} className="flex items-start gap-3">
+                  <span className="text-white/80 mt-1 font-bold">•</span>
+                  <span className="text-white/90">{insight}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Strengths */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-blue-900 mb-3">Vahvuutesi</h3>
-            <div className="grid gap-2">
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-white mb-4">Vahvuutesi</h3>
+            <div className="grid gap-3">
               {analysis.aiAnalysis.strengths.map((strength: string, i: number) => (
-                <div key={i} className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span className="text-blue-800">{strength}</span>
+                <div key={i} className="flex items-start gap-3">
+                  <span className="text-white/80 mt-1 font-bold">•</span>
+                  <span className="text-white/90">{strength}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Career Advice */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-blue-900 mb-3">Urasuositukset</h3>
-            <div className="grid gap-2">
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-white mb-4">Urasuositukset</h3>
+            <div className="grid gap-3">
               {analysis.aiAnalysis.careerAdvice.map((advice: string, i: number) => (
-                <div key={i} className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span className="text-blue-800">{advice}</span>
+                <div key={i} className="flex items-start gap-3">
+                  <span className="text-white/80 mt-1 font-bold">•</span>
+                  <span className="text-white/90">{advice}</span>
                 </div>
               ))}
             </div>
@@ -483,12 +1005,12 @@ const Summary = ({
 
           {/* Next Steps */}
           <div>
-            <h3 className="text-lg font-semibold text-blue-900 mb-3">Seuraavat askeleet</h3>
-            <div className="grid gap-2">
+            <h3 className="text-xl font-semibold text-white mb-4">Seuraavat askeleet</h3>
+            <div className="grid gap-3">
               {analysis.aiAnalysis.nextSteps.map((step: string, i: number) => (
-                <div key={i} className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span className="text-blue-800">{step}</span>
+                <div key={i} className="flex items-start gap-3">
+                  <span className="text-white/80 mt-1 font-bold">•</span>
+                  <span className="text-white/90">{step}</span>
                 </div>
               ))}
             </div>
@@ -496,39 +1018,56 @@ const Summary = ({
         </div>
 
         {/* Career Recommendations */}
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-2xl font-bold mb-4">Suosittelemme sinulle nämä ammatit</h2>
+        <div className="rounded-3xl bg-[#2563EB] p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-white mb-8">Suosittelemme sinulle nämä ammatit</h2>
           
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2">
             {analysis.recommendations.map((career: any, i: number) => (
-              <div key={i} className="rounded-xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-4 hover:shadow-md transition">
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">{career.title_fi}</h3>
-                <p className="text-slate-600 text-sm mb-3">{career.short_description}</p>
+              <div 
+                key={i} 
+                className="rounded-[20px] bg-white p-6 shadow-[0_8px_20px_rgba(0,0,0,0.08)] hover:scale-[1.03] hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] transition-all duration-300 ease-in-out cursor-pointer"
+                onClick={() => openCareerDetail(career)}
+                role="button"
+                tabIndex={0}
+                aria-expanded={selectedCareer?.id === career.id}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openCareerDetail(career);
+                  }
+                }}
+              >
+                <h3 className="text-xl font-semibold text-[#0F172A] mb-3">{career.title_fi}</h3>
+                <p className="text-[#475569] text-sm mb-4 leading-relaxed">{career.short_description}</p>
                 
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <div>
-                    <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">Palkka</span>
-                    <p className="text-sm text-slate-700">
+                    <span className="text-xs font-medium text-[#475569] uppercase tracking-wide">Palkka</span>
+                    <p className="text-sm text-[#475569]">
                       {career.salary_eur_month.median}€/kk (alue: {career.salary_eur_month.range[0]}-{career.salary_eur_month.range[1]}€)
                     </p>
                   </div>
                   
                   <div>
-                    <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">Työllisyysnäkymät</span>
-                    <p className="text-sm text-slate-700">{career.job_outlook.explanation}</p>
+                    <span className="text-xs font-medium text-[#475569] uppercase tracking-wide">Työllisyysnäkymät</span>
+                    <p className="text-sm text-[#475569]">{career.job_outlook.explanation}</p>
                   </div>
                   
                   <div>
-                    <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">Koulutus</span>
-                    <ul className="text-sm text-slate-700 space-y-1">
+                    <span className="text-xs font-medium text-[#475569] uppercase tracking-wide">Koulutus</span>
+                    <ul className="text-sm text-[#475569] space-y-1">
                       {career.education_paths.map((path: string, j: number) => (
                         <li key={j} className="flex items-start gap-1">
-                          <span className="text-slate-400 mt-1">•</span>
+                          <span className="text-[#475569] mt-1">•</span>
                           <span>{path}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
+                </div>
+                
+                <div className="mt-6 pt-4 border-t border-slate-200">
+                  <span className="text-sm text-[#2563EB] font-medium hover:underline">Klikkaa nähdäksesi lisätietoja →</span>
                 </div>
               </div>
             ))}
@@ -553,6 +1092,9 @@ const Summary = ({
             Aloita alusta
           </button>
         </div>
+
+        {/* Career Detail Modal */}
+        {selectedCareer && <CareerDetailModal career={selectedCareer} />}
       </div>
     );
   }
