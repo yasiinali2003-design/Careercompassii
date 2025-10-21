@@ -189,7 +189,7 @@ export default function CareerCatalog() {
             Urakirjasto
           </h1>
           <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-            Selaa 200 erilaista ammattia eri aloilta ja löydä se ura, joka tuntuu aidosti omalta.
+            Selaa 175 erilaista ammattia eri aloilta ja löydä se ura, joka tuntuu aidosti omalta.
             Suodata tuloksia kiinnostuksen, koulutustason tai työskentelytavan mukaan.
           </p>
           
