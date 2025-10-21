@@ -55,7 +55,9 @@ interface CareerDetailProps {
 }
 
 export default function CareerDetail({ params }: CareerDetailProps) {
-  const career = getCareerBySlug(params.slug);
+  // Decode the slug to handle special characters properly
+  const decodedSlug = decodeURIComponent(params.slug);
+  const career = getCareerBySlug(decodedSlug);
   const relatedCareers = career ? getRelatedCareers(career) : [];
 
   if (!career) {
