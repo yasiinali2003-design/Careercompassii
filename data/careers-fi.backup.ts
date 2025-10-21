@@ -42,7 +42,8 @@ export interface CareerFI {
 }
 
 export const careersData: CareerFI[] = [
-{
+  // LUOVA CATEGORY (10 careers)
+  {
     id: "graafinen-suunnittelija",
     category: "luova",
     title_fi: "Graafinen suunnittelija",
@@ -116,7 +117,7 @@ export const careersData: CareerFI[] = [
     keywords: ["graafinen suunnittelu", "brändi", "mainonta", "visuaalinen viestintä", "Adobe"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "sisallontuottaja",
     category: "luova",
     title_fi: "Sisällöntuottaja",
@@ -192,7 +193,7 @@ export const careersData: CareerFI[] = [
       "Rakentaa yhteisöjä ja yhdistää ihmisiä"
     ]
   },
-{
+  {
     id: "muusikko",
     category: "luova",
     title_fi: "Muusikko",
@@ -269,7 +270,7 @@ export const careersData: CareerFI[] = [
       "Vaikuttaa ihmisten hyvinvointiin ja mielenterveyteen"
     ]
   },
-{
+  {
     id: "kameramies",
     category: "luova",
     title_fi: "Kameramies",
@@ -345,7 +346,7 @@ export const careersData: CareerFI[] = [
       "Vaikuttaa kulttuuriin ja yhteiskuntaan visuaalisella viestinnällä"
     ]
   },
-{
+  {
     id: "kirjailija",
     category: "luova",
     title_fi: "Kirjailija",
@@ -422,7 +423,7 @@ export const careersData: CareerFI[] = [
       "Tarjoaa pakopaikan ja inspiraatiota miljoonille lukijoille"
     ]
   },
-{
+  {
     id: "muotoilija",
     category: "luova",
     title_fi: "Tuotemuotoilija",
@@ -498,7 +499,7 @@ export const careersData: CareerFI[] = [
       "Vaikuttaa teknologian käyttöön ja hyväksyntään"
     ]
   },
-{
+  {
     id: "animaattori",
     category: "luova",
     title_fi: "Animaattori",
@@ -574,7 +575,7 @@ export const careersData: CareerFI[] = [
       "Edistää digitaalisen taiteen kehitystä"
     ]
   },
-{
+  {
     id: "teatteriohjaaja",
     category: "luova",
     title_fi: "Teatteriohjaaja",
@@ -650,7 +651,7 @@ export const careersData: CareerFI[] = [
       "Tukee näyttelijöiden taiteellista kasvua"
     ]
   },
-{
+  {
     id: "valokuvaaja",
     category: "luova",
     title_fi: "Valokuvaaja",
@@ -726,7 +727,7 @@ export const careersData: CareerFI[] = [
       "Dokumentoi historiaa ja yhteiskuntaa"
     ]
   },
-{
+  {
     id: "pukusuunnittelija",
     category: "luova",
     title_fi: "Pukusuunnittelija",
@@ -802,7 +803,9 @@ export const careersData: CareerFI[] = [
       "Vaikuttaa yleisön kokemukseen ja eläytymiseen"
     ]
   },
-{
+
+  // RAKENTAJA CATEGORY
+  {
     id: "rakennusmestari",
     category: "rakentaja",
     title_fi: "Rakennusmestari",
@@ -878,7 +881,7 @@ export const careersData: CareerFI[] = [
       "Turvaa työntekijöiden turvallisuuden rakennustyömailla"
     ]
   },
-{
+  {
     id: "sahkonasentaja",
     category: "rakentaja",
     title_fi: "Sähköasentaja",
@@ -954,7 +957,7 @@ export const careersData: CareerFI[] = [
       "Vaikuttaa energiatehokkuuteen ja ympäristöystävällisyyteen"
     ]
   },
-{
+  {
     id: "putkiasentaja",
     category: "rakentaja",
     title_fi: "Putkiasentaja",
@@ -1030,7 +1033,7 @@ export const careersData: CareerFI[] = [
       "Auttaa kunnostamaan vanhoja rakennuksia"
     ]
   },
-{
+  {
     id: "puuseppa",
     category: "rakentaja",
     title_fi: "Puuseppä",
@@ -1106,7 +1109,7 @@ export const careersData: CareerFI[] = [
       "Vaikuttaa kotien viihtyisyyteen ja toimivuuteen"
     ]
   },
-{
+  {
     id: "maalari",
     category: "rakentaja",
     title_fi: "Maalari",
@@ -1182,7 +1185,7 @@ export const careersData: CareerFI[] = [
       "Suojaa rakenteita kosteudelta ja korroosiolta"
     ]
   },
-{
+  {
     id: "kattomestari",
     category: "rakentaja",
     title_fi: "Kattomestari",
@@ -1258,7 +1261,7 @@ export const careersData: CareerFI[] = [
       "Vaikuttaa rakennusten energiatehokkuuteen"
     ]
   },
-{
+  {
     id: "lvi-asentaja",
     category: "rakentaja",
     title_fi: "LVI-asentaja",
@@ -1334,7 +1337,7 @@ export const careersData: CareerFI[] = [
       "Auttaa vähentämään hiilijalanjälkeä"
     ]
   },
-{
+  {
     id: "talonrakentaja",
     category: "rakentaja",
     title_fi: "Talonrakentaja",
@@ -1410,7 +1413,7 @@ export const careersData: CareerFI[] = [
       "Luo työpaikkoja ja talouskasvua"
     ]
   },
-{
+  {
     id: "betonityontekija",
     category: "rakentaja",
     title_fi: "Betonityöntekijä",
@@ -1486,7 +1489,7 @@ export const careersData: CareerFI[] = [
       "Luo perustan rakennuksille ja silloille"
     ]
   },
-{
+  {
     id: "rakennusvalvoja",
     category: "rakentaja",
     title_fi: "Rakennusvalvoja",
@@ -1562,7 +1565,9 @@ export const careersData: CareerFI[] = [
       "Valvoo rakennusmääräysten noudattamista"
     ]
   },
-{
+
+  // JOHTAJA CATEGORY (10 careers)
+  {
     id: "projektipäällikkö",
     category: "johtaja",
     title_fi: "Projektipäällikkö",
@@ -1638,7 +1643,7 @@ export const careersData: CareerFI[] = [
     keywords: ["projektinhallinta", "johtaminen", "tiimityö", "budjetointi", "aikataulutus"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "myyntipäällikkö",
     category: "johtaja",
     title_fi: "Myyntipäällikkö",
@@ -1714,7 +1719,7 @@ export const careersData: CareerFI[] = [
     keywords: ["myynti", "johtaminen", "asiakassuhteet", "strategia", "tiimityö"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "henkilöstöpäällikkö",
     category: "johtaja",
     title_fi: "Henkilöstöpäällikkö",
@@ -1790,7 +1795,7 @@ export const careersData: CareerFI[] = [
     keywords: ["henkilöstöjohtaminen", "rekrytointi", "kehitys", "organisaatio", "työsuhteet"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "tuotantopäällikkö",
     category: "johtaja",
     title_fi: "Tuotantopäällikkö",
@@ -1866,7 +1871,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tuotantotalous", "laadunhallinta", "johtaminen", "optimointi", "tehokkuus"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "markkinointipäällikkö",
     category: "johtaja",
     title_fi: "Markkinointipäällikkö",
@@ -1942,7 +1947,7 @@ export const careersData: CareerFI[] = [
     keywords: ["markkinointi", "brändi", "digitaalinen", "strategia", "kampanjat"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "talouspäällikkö",
     category: "johtaja",
     title_fi: "Talouspäällikkö",
@@ -2018,7 +2023,7 @@ export const careersData: CareerFI[] = [
     keywords: ["taloushallinto", "laskentatoimi", "budjetointi", "raportointi", "analyysi"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "asiakaspalvelupäällikkö",
     category: "johtaja",
     title_fi: "Asiakaspalvelupäällikkö",
@@ -2094,7 +2099,7 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakaspalvelu", "johtaminen", "kokemus", "prosessit", "tiimityö"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "tietoturvapäällikkö",
     category: "johtaja",
     title_fi: "Tietoturvapäällikkö",
@@ -2170,7 +2175,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tietoturva", "kyberturvallisuus", "riskienhallinta", "johtaminen", "teknologia"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "laadunpäällikkö",
     category: "johtaja",
     title_fi: "Laadunpäällikkö",
@@ -2246,7 +2251,7 @@ export const careersData: CareerFI[] = [
     keywords: ["laadunhallinta", "prosessit", "standardit", "sertifikaatit", "optimointi"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "kehityspäällikkö",
     category: "johtaja",
     title_fi: "Kehityspäällikkö",
@@ -2322,7 +2327,9 @@ export const careersData: CareerFI[] = [
     keywords: ["kehitysjohtaminen", "innovaatio", "projektit", "tutkimus", "strategia"],
     study_length_estimate_months: 36
   },
-{
+
+  // INNOVOIJA CATEGORY (10 careers)
+  {
     id: "data-insinööri",
     category: "innovoija",
     title_fi: "Data-insinööri",
@@ -2398,7 +2405,7 @@ export const careersData: CareerFI[] = [
     keywords: ["data", "ohjelmointi", "cloud", "big data", "analytiikka"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "tekoälyasiantuntija",
     category: "innovoija",
     title_fi: "Tekoälyasiantuntija",
@@ -2474,7 +2481,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tekoäly", "koneoppiminen", "ohjelmointi", "algoritmit", "automaatio"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "pelisuunnittelija",
     category: "innovoija",
     title_fi: "Pelisuunnittelija",
@@ -2550,7 +2557,7 @@ export const careersData: CareerFI[] = [
     keywords: ["pelisuunnittelu", "kreatiivisuus", "teknologia", "tarinankerronta", "interaktiivisuus"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "robotiikka-insinööri",
     category: "innovoija",
     title_fi: "Robotiikka-insinööri",
@@ -2626,7 +2633,7 @@ export const careersData: CareerFI[] = [
     keywords: ["robotiikka", "automaatio", "mekatroniikka", "ohjelmointi", "teollisuus"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "biotekniikka-insinööri",
     category: "innovoija",
     title_fi: "Biotekniikka-insinööri",
@@ -2702,7 +2709,7 @@ export const careersData: CareerFI[] = [
     keywords: ["biotekniikka", "biologia", "laboratorio", "tutkimus", "lääketeollisuus"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "energiainsinööri",
     category: "innovoija",
     title_fi: "Energiainsinööri",
@@ -2778,7 +2785,7 @@ export const careersData: CareerFI[] = [
     keywords: ["energiatekniikka", "uusiutuva energia", "ympäristö", "kestävä kehitys", "optimointi"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "nanotekniikka-insinööri",
     category: "innovoija",
     title_fi: "Nanotekniikka-insinööri",
@@ -2854,7 +2861,7 @@ export const careersData: CareerFI[] = [
     keywords: ["nanotekniikka", "materiaalitekniikka", "fysiikka", "tutkimus", "innovointi"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "kvantti-insinööri",
     category: "innovoija",
     title_fi: "Kvantti-insinööri",
@@ -2930,7 +2937,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kvanttiteknologia", "kvanttifysiikka", "ohjelmointi", "algoritmit", "tutkimus"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "blockchain-insinööri",
     category: "innovoija",
     title_fi: "Blockchain-insinööri",
@@ -3006,7 +3013,7 @@ export const careersData: CareerFI[] = [
     keywords: ["blockchain", "kryptografia", "ohjelmointi", "Web3", "hajautetut järjestelmät"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "virtuaalitodellisuus-insinööri",
     category: "innovoija",
     title_fi: "Virtuaalitodellisuus-insinööri",
@@ -3082,7 +3089,7 @@ export const careersData: CareerFI[] = [
     keywords: ["VR", "AR", "virtuaalitodellisuus", "3D", "immersiivinen"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "automaatio-insinööri",
     category: "innovoija",
     title_fi: "Automaatio-insinööri",
@@ -3158,7 +3165,9 @@ export const careersData: CareerFI[] = [
     keywords: ["automaatio", "PLC", "robotiikka", "IoT", "teollisuus"],
     study_length_estimate_months: 42
   },
-{
+
+  // AUTTAJA CATEGORY (10 careers)
+  {
     id: "sairaanhoitaja",
     category: "auttaja",
     title_fi: "Sairaanhoitaja",
@@ -3234,7 +3243,7 @@ export const careersData: CareerFI[] = [
     keywords: ["sairaanhoito", "terveys", "potilaat", "hoito", "kuntoutus"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "luokanopettaja",
     category: "auttaja",
     title_fi: "Luokanopettaja",
@@ -3310,7 +3319,7 @@ export const careersData: CareerFI[] = [
     keywords: ["opetus", "koulu", "lapset", "pedagogiikka", "kasvatus"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "sosiaalityöntekijä",
     category: "auttaja",
     title_fi: "Sosiaalityöntekijä",
@@ -3386,7 +3395,7 @@ export const careersData: CareerFI[] = [
     keywords: ["sosiaalityö", "perheet", "lapset", "hyvinvointi", "tuki"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "psykologi",
     category: "auttaja",
     title_fi: "Psykologi",
@@ -3462,7 +3471,7 @@ export const careersData: CareerFI[] = [
     keywords: ["psykologia", "mielenterveys", "terapia", "hyvinvointi", "tutkimus"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "fysioterapeutti",
     category: "auttaja",
     title_fi: "Fysioterapeutti",
@@ -3538,7 +3547,7 @@ export const careersData: CareerFI[] = [
     keywords: ["fysioterapia", "kuntoutus", "liikunta", "terapia", "palautuminen"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "lastentarhanopettaja",
     category: "auttaja",
     title_fi: "Lastentarhanopettaja",
@@ -3614,7 +3623,7 @@ export const careersData: CareerFI[] = [
     keywords: ["varhaiskasvatus", "lapset", "päiväkoti", "kasvatus", "oppiminen"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "kuntoutusohjaaja",
     category: "auttaja",
     title_fi: "Kuntoutusohjaaja",
@@ -3690,7 +3699,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kuntoutus", "työkyky", "palautuminen", "ohjaus", "tuki"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "perhetyöntekijä",
     category: "auttaja",
     title_fi: "Perhetyöntekijä",
@@ -3766,7 +3775,7 @@ export const careersData: CareerFI[] = [
     keywords: ["perhetyö", "lapset", "perheet", "tuki", "hyvinvointi"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "vanhustenhoitaja",
     category: "auttaja",
     title_fi: "Vanhustenhoitaja",
@@ -3842,7 +3851,7 @@ export const careersData: CareerFI[] = [
     keywords: ["vanhustenhoito", "vanhukset", "hoito", "itsenäisyys", "elämänlaatu"],
     study_length_estimate_months: 24
   },
-{
+  {
     id: "kriisityöntekijä",
     category: "auttaja",
     title_fi: "Kriisityöntekijä",
@@ -3918,7 +3927,9 @@ export const careersData: CareerFI[] = [
     keywords: ["kriisityö", "trauma", "mielenterveys", "toipuminen", "tuki"],
     study_length_estimate_months: 42
   },
-{
+
+  // YMPÄRISTÖN PUOLUSTAJA CATEGORY (10 careers)
+  {
     id: "ympäristöinsinööri",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöinsinööri",
@@ -3994,7 +4005,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristö", "kestävä kehitys", "saasteet", "teknologia", "suojelu"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "ilmastotutkija",
     category: "ympariston-puolustaja",
     title_fi: "Ilmastotutkija",
@@ -4070,7 +4081,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ilmasto", "tutkimus", "meteorologia", "ilmastonmuutos", "tiede"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "luonnonsuojelija",
     category: "ympariston-puolustaja",
     title_fi: "Luonnonsuojelija",
@@ -4146,7 +4157,7 @@ export const careersData: CareerFI[] = [
     keywords: ["luonnonsuojelu", "luonto", "eläimet", "kasvit", "monimuotoisuus"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "uusiutuva-energia-insinööri",
     category: "ympariston-puolustaja",
     title_fi: "Uusiutuva energia -insinööri",
@@ -4222,7 +4233,7 @@ export const careersData: CareerFI[] = [
     keywords: ["uusiutuva energia", "aurinkoenergia", "tuulivoima", "energiatehokkuus", "kestävä kehitys"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "ympäristökasvattaja",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristökasvattaja",
@@ -4298,7 +4309,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristökasvatus", "kestävä kehitys", "opetus", "tietoisuus", "kasvatus"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "vesi-insinööri",
     category: "ympariston-puolustaja",
     title_fi: "Vesi-insinööri",
@@ -4374,7 +4385,7 @@ export const careersData: CareerFI[] = [
     keywords: ["vesiteknologia", "vesihuolto", "jätevesi", "vesitalous", "ympäristö"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "hiilijalanjälki-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Hiilijalanjälki-asiantuntija",
@@ -4450,7 +4461,7 @@ export const careersData: CareerFI[] = [
     keywords: ["hiilijalanjälki", "ilmastoneutraali", "kestävä kehitys", "ilmasto", "hiilidioksidi"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "ympäristöjuristi",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöjuristi",
@@ -4526,7 +4537,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristöoikeus", "lainsäädäntö", "oikeustiede", "ympäristörikos", "kestävä kehitys"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "biologinen-monimuotoisuus-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Biologinen monimuotoisuus -asiantuntija",
@@ -4602,7 +4613,7 @@ export const careersData: CareerFI[] = [
     keywords: ["biologinen monimuotoisuus", "luonnonsuojelu", "eläimet", "kasvit", "uhanalaiset lajit"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "kestävän-kehityksen-koordinaattori",
     category: "ympariston-puolustaja",
     title_fi: "Kestävän kehityksen koordinaattori",
@@ -4678,7 +4689,9 @@ export const careersData: CareerFI[] = [
     keywords: ["kestävä kehitys", "ympäristöystävällisyys", "sosiaalinen vastuu", "strategia", "raportointi"],
     study_length_estimate_months: 42
   },
-{
+
+  // VISIONÄÄRI CATEGORY (10 careers)
+  {
     id: "futuristi",
     category: "visionaari",
     title_fi: "Futuristi",
@@ -4754,7 +4767,7 @@ export const careersData: CareerFI[] = [
     keywords: ["futurologia", "trendit", "strategia", "innovaatio", "tulevaisuus"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "strategia-konsultti",
     category: "visionaari",
     title_fi: "Strategia-konsultti",
@@ -4830,7 +4843,7 @@ export const careersData: CareerFI[] = [
     keywords: ["strategia", "konsultointi", "liiketoimintakehitys", "muutos", "analyysi"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "innovaatiojohtaja",
     category: "visionaari",
     title_fi: "Innovaatiojohtaja",
@@ -4906,7 +4919,7 @@ export const careersData: CareerFI[] = [
     keywords: ["innovaatio", "tutkimus", "kehitys", "teknologia", "strategia"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "tulevaisuuden-suunnittelija",
     category: "visionaari",
     title_fi: "Tulevaisuuden suunnittelija",
@@ -4982,7 +4995,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "suunnittelu", "strategia", "skenaariot", "trendit"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "digitaalinen-muutosjohtaja",
     category: "visionaari",
     title_fi: "Digitaalinen muutosjohtaja",
@@ -5058,7 +5071,7 @@ export const careersData: CareerFI[] = [
     keywords: ["digitaalinen muutos", "teknologia", "liiketoiminta", "strategia", "innovaatio"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "tulevaisuuden-tutkija",
     category: "visionaari",
     title_fi: "Tulevaisuuden tutkija",
@@ -5134,7 +5147,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "tutkimus", "futurologia", "trendit", "skenaariot"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "strateginen-suunnittelija",
     category: "visionaari",
     title_fi: "Strateginen suunnittelija",
@@ -5210,7 +5223,7 @@ export const careersData: CareerFI[] = [
     keywords: ["strategia", "suunnittelu", "analyysi", "tulevaisuus", "muutos"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "tulevaisuuden-visio-johtaja",
     category: "visionaari",
     title_fi: "Tulevaisuuden visio-johtaja",
@@ -5286,7 +5299,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "visio", "johtaminen", "strategia", "muutos"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "tulevaisuuden-teknologia-asiantuntija",
     category: "visionaari",
     title_fi: "Tulevaisuuden teknologia-asiantuntija",
@@ -5362,7 +5375,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "teknologia", "innovaatio", "tutkimus", "skenaariot"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "tulevaisuuden-yhteiskunta-asiantuntija",
     category: "visionaari",
     title_fi: "Tulevaisuuden yhteiskunta-asiantuntija",
@@ -5438,7 +5451,85 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "yhteiskunta", "sosiologia", "futurologia", "tutkimus"],
     study_length_estimate_months: 60
   },
-{
+
+  // JÄRJESTÄJÄ CATEGORY (10 careers)
+  {
+    id: "projektipäällikkö",
+    category: "jarjestaja",
+    title_fi: "Projektipäällikkö",
+    title_en: "Project Manager",
+    short_description: "Projektipäällikkö johtaa projekteja alusta loppuun. Työskentelee aikataulujen, budjettien ja tiimien hallinnassa.",
+    main_tasks: [
+      "Projektien suunnittelu ja toteutus",
+      "Aikataulujen ja budjettien hallinta",
+      "Tiimien johtaminen",
+      "Sidosryhmien kanssa yhteistyö",
+      "Projektien seuranta ja raportointi"
+    ],
+    impact: [
+      "Auttaa organisaatioita toteuttamaan tärkeitä projekteja",
+      "Parantaa tehokkuutta ja laatua",
+      "Varmistaa projektien onnistumisen"
+    ],
+    education_paths: [
+      "AMK: Projektinhallinta, Liiketalous",
+      "Yliopisto: Projektinhallinta, Liiketalous",
+      "Projektinhallinnan sertifikaatit",
+      "Johtamisen koulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Projektinhallinta",
+      "Johtamistaidot",
+      "Kommunikaatio",
+      "Ongelmanratkaisu",
+      "Aikataulutus"
+    ],
+    tools_tech: [
+      "Projektinhallintatyökalut",
+      "Excel, Power BI",
+      "Raportointityökalut",
+      "Videoneuvottelut",
+      "Dokumenttienhallinta"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4800,
+      range: [3600, 6500],
+      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Projektipäälliköiden kysyntä kasvaa projektien määrän ja monimutkaisuuden myötä.",
+      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+    },
+    entry_roles: [
+      "Junior projektipäällikkö",
+      "Projektikoordinaattori",
+      "Projektisuunnittelija"
+    ],
+    career_progression: [
+      "Senior projektipäällikkö",
+      "Program Manager",
+      "Projektinhallinnan johtaja",
+      "Projektikonsultti"
+    ],
+    typical_employers: [
+      "Konsultointiyritykset",
+      "Teollisuusyritykset",
+      "Teknologiayritykset",
+      "Julkinen sektori"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Teknologiateollisuuden TES",
+    useful_links: [
+      { name: "Projektinhallinta.fi", url: "https://www.projektinhallinta.fi/" },
+      { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+    keywords: ["projektinhallinta", "johtaminen", "aikataulutus", "budjetti", "tiimi"],
+    study_length_estimate_months: 36
+  },
+  {
     id: "tapahtumakoordinaattori",
     category: "jarjestaja",
     title_fi: "Tapahtumakoordinaattori",
@@ -5514,7 +5605,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tapahtumien järjestäminen", "koordinointi", "suunnittelu", "budjetti", "asiakaspalvelu"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "toimistosihteeri",
     category: "jarjestaja",
     title_fi: "Toimistosihteeri",
@@ -5590,7 +5681,7 @@ export const careersData: CareerFI[] = [
     keywords: ["toimistosihteeri", "hallinto", "kommunikaatio", "organisointi", "asiakaspalvelu"],
     study_length_estimate_months: 24
   },
-{
+  {
     id: "logistiikkakoordinaattori",
     category: "jarjestaja",
     title_fi: "Logistiikkakoordinaattori",
@@ -5666,7 +5757,7 @@ export const careersData: CareerFI[] = [
     keywords: ["logistiikka", "toimitusketju", "koordinointi", "varastointi", "kuljetus"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "henkilöstöasiantuntija",
     category: "jarjestaja",
     title_fi: "Henkilöstöasiantuntija",
@@ -5742,7 +5833,7 @@ export const careersData: CareerFI[] = [
     keywords: ["henkilöstöhallinto", "työsuhteet", "henkilöstö", "hallinto", "työntekijät"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "taloushallinnon-asiantuntija",
     category: "jarjestaja",
     title_fi: "Taloushallinnon asiantuntija",
@@ -5818,7 +5909,7 @@ export const careersData: CareerFI[] = [
     keywords: ["taloushallinto", "talousraportointi", "budjetti", "analyysi", "hallinto"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "laadunhallinnan-koordinaattori",
     category: "jarjestaja",
     title_fi: "Laadunhallinnan koordinaattori",
@@ -5894,7 +5985,7 @@ export const careersData: CareerFI[] = [
     keywords: ["laadunhallinto", "laatustandardit", "koordinointi", "analyysi", "hallinto"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "asiakaspalvelun-koordinaattori",
     category: "jarjestaja",
     title_fi: "Asiakaspalvelun koordinaattori",
@@ -5970,7 +6061,7 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakaspalvelu", "kommunikaatio", "koordinointi", "asiakkaat", "palvelu"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "tietohallinnon-koordinaattori",
     category: "jarjestaja",
     title_fi: "Tietohallinnon koordinaattori",
@@ -6046,7 +6137,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tietohallinto", "dokumenttienhallinta", "koordinointi", "tiedot", "hallinto"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "hallinnon-koordinaattori",
     category: "jarjestaja",
     title_fi: "Hallinnon koordinaattori",
@@ -6122,7 +6213,86 @@ export const careersData: CareerFI[] = [
     keywords: ["hallinto", "organisointi", "koordinointi", "hallinto", "organisaatio"],
     study_length_estimate_months: 36
   },
-{
+
+  // BATCH 1: HIGH-DEMAND CAREERS (40 careers) - Sote, ICT, Rakentaminen
+  // SOTE SECTOR (15 careers)
+  {
+    id: "sairaanhoitaja",
+    category: "auttaja",
+    title_fi: "Sairaanhoitaja",
+    title_en: "Registered Nurse",
+    short_description: "Sairaanhoitaja hoitaa potilaita ja tukee heidän kuntoutumistaan. Työskentelee sairaaloissa, terveyskeskuksissa ja kotihoidossa tarjoten ammattitaitoista hoitoa.",
+    main_tasks: [
+      "Potilaiden hoito ja seuranta",
+      "Lääkkeiden antaminen",
+      "Potilasasiakirjojen ylläpito",
+      "Perheiden ja läheisten ohjaus",
+      "Terveyden edistämisen työ"
+    ],
+    impact: [
+      "Auttaa ihmisiä paranemaan ja pysymään terveenä",
+      "Tukee perheitä vaikeina aikoina",
+      "Varmistaa laadukkaan terveydenhuollon"
+    ],
+    education_paths: [
+      "AMK: Sairaanhoitaja",
+      "AMK: Terveydenhoitaja",
+      "AMK: Lastenhoitaja",
+      "AMK: Psykiatrinen sairaanhoitaja"
+    ],
+    qualification_or_license: "Valvira",
+    core_skills: [
+      "Hoitotaito",
+      "Kommunikaatio",
+      "Empatia",
+      "Kriittinen ajattelu",
+      "Tiimityöskentely"
+    ],
+    tools_tech: [
+      "Hoitojärjestelmät",
+      "Lääkeannostusjärjestelmät",
+      "Potilasasiakirjat",
+      "Hoitovälineet",
+      "Terveyden mittauslaitteet"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4800],
+      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Sairaanhoitajien kysyntä kasvaa ikääntyvän väestön ja terveydenhuollon laajentumisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Sairaanhoitaja",
+      "Osasto-hoitaja",
+      "Kotihoidon hoitaja"
+    ],
+    career_progression: [
+      "Vanhempi sairaanhoitaja",
+      "Osastonhoitaja",
+      "Hoitotyön esimies",
+      "Terveydenhoitaja"
+    ],
+    typical_employers: [
+      "Sairaalat",
+      "Terveyskeskukset",
+      "Kotihoidon palvelut",
+      "Yksityiset terveyspalvelut"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    union_or_CBA: "Tehy",
+    useful_links: [
+      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Opintopolku - Sairaanhoitaja", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+    keywords: ["hoito", "terveys", "potilas", "sairaala", "terveyskeskus"],
+    study_length_estimate_months: 42
+  },
+  {
     id: "lapsenhoitaja",
     category: "auttaja",
     title_fi: "Lapsenhoitaja",
@@ -6198,7 +6368,159 @@ export const careersData: CareerFI[] = [
     keywords: ["lapsenhoito", "päiväkoti", "kasvatus", "varhaiskasvatus", "perhepäivähoito"],
     study_length_estimate_months: 36
   },
-{
+  {
+    id: "fysioterapeutti",
+    category: "auttaja",
+    title_fi: "Fysioterapeutti",
+    title_en: "Physiotherapist",
+    short_description: "Fysioterapeutti auttaa ihmisiä kuntoutumaan liikunta- ja liikuntakyvyn ongelmista. Suunnittelee ja toteuttaa kuntoutusohjelmia.",
+    main_tasks: [
+      "Liikuntakyvyn arviointi",
+      "Kuntoutusohjelmien suunnittelu",
+      "Liikunta- ja harjoitusohjeiden antaminen",
+      "Kipujen hoidon tukeminen",
+      "Potilaiden motivointi"
+    ],
+    impact: [
+      "Auttaa ihmisiä palautumaan liikuntakykyyn",
+      "Parantaa elämänlaatua",
+      "Vähentää kipuja ja toimintakyvyn menetystä"
+    ],
+    education_paths: [
+      "AMK: Fysioterapia",
+      "Yliopisto: Liikuntatiede",
+      "AMK: Terveystieteet",
+      "Kurssit ja jatkokoulutus"
+    ],
+    qualification_or_license: "Valvira",
+    core_skills: [
+      "Anatomia ja fysiologia",
+      "Liikunta-analyysi",
+      "Kommunikaatio",
+      "Empatia",
+      "Ongelmaratkaisu"
+    ],
+    tools_tech: [
+      "Kuntoutuslaitteet",
+      "Liikunta-analyysin välineet",
+      "Kipujen mittauslaitteet",
+      "Tietokoneet",
+      "Kuntoutusohjelmat"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3600,
+      range: [3000, 4500],
+      source: { name: "Suomen Fysioterapeutit", url: "https://www.fysioterapeutit.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Fysioterapeuttien kysyntä kasvaa ikääntyvän väestön ja liikunnan tärkeyden korostumisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Fysioterapeutti",
+      "Kuntoutusasiantuntija",
+      "Liikuntaohjaaja"
+    ],
+    career_progression: [
+      "Vanhempi fysioterapeutti",
+      "Kuntoutuskoordinaattori",
+      "Fysioterapian esimies",
+      "Yksityinen fysioterapeutti"
+    ],
+    typical_employers: [
+      "Sairaalat",
+      "Terveyskeskukset",
+      "Yksityiset kuntoutuspalvelut",
+      "Urheiluseurat"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Suomen Fysioterapeutit",
+    useful_links: [
+      { name: "Suomen Fysioterapeutit", url: "https://www.fysioterapeutit.fi/" },
+      { name: "Opintopolku - Fysioterapia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+    keywords: ["fysioterapia", "kuntoutus", "liikunta", "kipujen hoito", "liikuntakyky"],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "psykologi",
+    category: "auttaja",
+    title_fi: "Psykologi",
+    title_en: "Psychologist",
+    short_description: "Psykologi auttaa ihmisiä mielenterveysongelmien ja elämäntilanteiden kanssa. Tarjoaa psykologista hoitoa ja neuvontaa.",
+    main_tasks: [
+      "Psykologinen arviointi",
+      "Terapian ja neuvonnan tarjoaminen",
+      "Mielenterveysongelmien hoito",
+      "Kriisitilanteiden hoito",
+      "Tutkimuksen tekeminen"
+    ],
+    impact: [
+      "Auttaa ihmisiä mielenterveysongelmien kanssa",
+      "Parantaa elämänlaatua",
+      "Tukee henkistä hyvinvointia"
+    ],
+    education_paths: [
+      "Yliopisto: Psykologia",
+      "Yliopisto: Kliininen psykologia",
+      "Yliopisto: Soveltava psykologia",
+      "Jatkokoulutus ja erikoistuminen"
+    ],
+    qualification_or_license: "Valvira",
+    core_skills: [
+      "Psykologinen arviointi",
+      "Terapian tekniikat",
+      "Kommunikaatio",
+      "Empatia",
+      "Tutkimusmetodit"
+    ],
+    tools_tech: [
+      "Psykologiset testit",
+      "Terapian välineet",
+      "Tietokoneet",
+      "Tutkimusohjelmat",
+      "Asiakirjahallinta"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3500, 5500],
+      source: { name: "Suomen Psykologiliitto", url: "https://www.psykologiliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Psykologien kysyntä kasvaa mielenterveyspalveluiden laajentumisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Psykologi",
+      "Kliininen psykologi",
+      "Neuvonnan psykologi"
+    ],
+    career_progression: [
+      "Vanhempi psykologi",
+      "Psykologian esimies",
+      "Yksityinen psykologi",
+      "Tutkija"
+    ],
+    typical_employers: [
+      "Terveyskeskukset",
+      "Sairaalat",
+      "Yksityiset terveyspalvelut",
+      "Koulut ja oppilaitokset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Suomen Psykologiliitto",
+    useful_links: [
+      { name: "Suomen Psykologiliitto", url: "https://www.psykologiliitto.fi/" },
+      { name: "Opintopolku - Psykologia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+    keywords: ["psykologia", "mielenterveys", "terapia", "neuvonta", "psykologinen hoito"],
+    study_length_estimate_months: 60
+  },
+  {
     id: "apteekkari",
     category: "auttaja",
     title_fi: "Apteekkari",
@@ -6274,7 +6596,9 @@ export const careersData: CareerFI[] = [
     keywords: ["apteekkari", "lääkkeet", "farmacia", "lääkeneuvonta", "apteekki"],
     study_length_estimate_months: 60
   },
-{
+
+  // ICT SECTOR (15 careers)
+  {
     id: "tietoturva-asiantuntija",
     category: "innovoija",
     title_fi: "Tietoturva-asiantuntija",
@@ -6350,7 +6674,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tietoturva", "kyberturvallisuus", "verkkoanalyysi", "penetraatiotestaus", "SIEM"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "tietokantasuunnittelija",
     category: "innovoija",
     title_fi: "Tietokantasuunnittelija",
@@ -6426,7 +6750,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tietokanta", "SQL", "tietojen mallintaminen", "DBA", "tietokantojen optimointi"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "mobiilisovelluskehittaja",
     category: "innovoija",
     title_fi: "Mobiilisovelluskehittäjä",
@@ -6502,7 +6826,7 @@ export const careersData: CareerFI[] = [
     keywords: ["mobiilikehitys", "iOS", "Android", "React Native", "Flutter"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "verkkoasiantuntija",
     category: "innovoija",
     title_fi: "Verkkoasiantuntija",
@@ -6578,7 +6902,7 @@ export const careersData: CareerFI[] = [
     keywords: ["verkot", "Cisco", "tietoverkot", "verkkoanalyysi", "NOC"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "tekoaly-asiantuntija",
     category: "innovoija",
     title_fi: "Tekoäly-asiantuntija",
@@ -6654,7 +6978,9 @@ export const careersData: CareerFI[] = [
     keywords: ["tekoäly", "koneoppiminen", "Python", "TensorFlow", "data science"],
     study_length_estimate_months: 60
   },
-{
+
+  // RAKENTAMINEN SECTOR (10 careers)
+  {
     id: "rakennusinsinoori",
     category: "rakentaja",
     title_fi: "Rakennusinsinööri",
@@ -6730,7 +7056,235 @@ export const careersData: CareerFI[] = [
     keywords: ["rakennusinsinööri", "rakennustekniikka", "projektinhallinta", "BIM", "CAD"],
     study_length_estimate_months: 60
   },
-{
+  {
+    id: "putkiasentaja",
+    category: "rakentaja",
+    title_fi: "Putkiasentaja",
+    title_en: "Plumber",
+    short_description: "Putkiasentaja asentaa ja korjaa putkistoja, lämmitysjärjestelmiä ja viemäreitä. Varmistaa veden ja lämmön toimivuuden.",
+    main_tasks: [
+      "Putkistojen asentaminen",
+      "LVI-järjestelmien korjaus",
+      "Viemärien puhdistus",
+      "Lämmitysjärjestelmien huolto",
+      "Asiakkaiden neuvonta"
+    ],
+    impact: [
+      "Varmistaa veden ja lämmön toimivuuden",
+      "Auttaa ihmisiä säästämään energiaa",
+      "Ylläpitää terveellisiä olosuhteita"
+    ],
+    education_paths: [
+      "Toinen aste: Putkiasentaja",
+      "Toinen aste: LVI-asentaja",
+      "AMK: Rakentaminen",
+      "Kurssit ja sertifikaatit"
+    ],
+    qualification_or_license: "LVI-kortti",
+    core_skills: [
+      "Putkistojen asentaminen",
+      "LVI-tekniikka",
+      "Ongelmaratkaisu",
+      "Tarkkuus",
+      "Asiakaspalvelu"
+    ],
+    tools_tech: [
+      "Putkistotyökalut",
+      "LVI-työkalut",
+      "Mittauslaitteet",
+      "Korjaustyökalut",
+      "Tietokoneet"
+    ],
+    languages_required: { fi: "B1", sv: "A2", en: "A2" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2600, 4200],
+      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Putkiasentajien kysyntä kasvaa rakentamisen ja korjausten myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Putkiasentaja",
+      "LVI-asentaja",
+      "Korjaustyöntekijä"
+    ],
+    career_progression: [
+      "Vanhempi putkiasentaja",
+      "LVI-mestari",
+      "LVI-yrittäjä",
+      "Kouluttaja"
+    ],
+    typical_employers: [
+      "LVI-yritykset",
+      "Rakennusyhtiöt",
+      "Korjaustyöyritykset",
+      "Yksityisyrittäjät"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Rakennusliitto",
+    useful_links: [
+      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Opintopolku - Putkiasentaja", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+    keywords: ["putkiasentaja", "LVI", "putkistot", "lämmitys", "viemärit"],
+    study_length_estimate_months: 24
+  },
+  {
+    id: "kattomestari",
+    category: "rakentaja",
+    title_fi: "Kattomestari",
+    title_en: "Roofing Specialist",
+    short_description: "Kattomestari asentaa ja korjaa kattoja sekä ulkoverhouksia. Varmistaa rakennusten vedenpitävyyden ja energiatehokkuuden.",
+    main_tasks: [
+      "Kattojen asentaminen",
+      "Ulkoverhouksen asentaminen",
+      "Kattojen korjaus",
+      "Vedenpitävyyden varmistaminen",
+      "Asiakkaiden neuvonta"
+    ],
+    impact: [
+      "Suojaa rakennuksia säältä",
+      "Parantaa rakennusten energiatehokkuutta",
+      "Varmistaa turvalliset olosuhteet"
+    ],
+    education_paths: [
+      "Toinen aste: Kattomestari",
+      "Toinen aste: Rakentaminen",
+      "AMK: Rakentaminen",
+      "Kurssit ja sertifikaatit"
+    ],
+    qualification_or_license: "Rakennuskortti",
+    core_skills: [
+      "Kattojen asentaminen",
+      "Ulkoverhouksen asentaminen",
+      "Ongelmaratkaisu",
+      "Tarkkuus",
+      "Asiakaspalvelu"
+    ],
+    tools_tech: [
+      "Kattotyökalut",
+      "Ulkoverhoustyökalut",
+      "Mittauslaitteet",
+      "Korjaustyökalut",
+      "Tietokoneet"
+    ],
+    languages_required: { fi: "B1", sv: "A2", en: "A2" },
+    salary_eur_month: {
+      median: 3400,
+      range: [2800, 4500],
+      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kattomestareiden kysyntä kasvaa rakentamisen ja korjausten myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Kattomestari",
+      "Ulkoverhouksen asentaja",
+      "Korjaustyöntekijä"
+    ],
+    career_progression: [
+      "Vanhempi kattomestari",
+      "Kattomestari",
+      "Kattomestari-yrittäjä",
+      "Kouluttaja"
+    ],
+    typical_employers: [
+      "Kattoyritykset",
+      "Rakennusyhtiöt",
+      "Korjaustyöyritykset",
+      "Yksityisyrittäjät"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Rakennusliitto",
+    useful_links: [
+      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Opintopolku - Kattomestari", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+    keywords: ["kattomestari", "kattot", "ulkoverhouksen", "vedenpitävyys", "energiatehokkuus"],
+    study_length_estimate_months: 24
+  },
+  {
+    id: "maalari",
+    category: "rakentaja",
+    title_fi: "Maalari",
+    title_en: "Painter",
+    short_description: "Maalari maalaa rakennuksia ja huonekaluja. Varmistaa pintojen kestävän ja kauniin ulkoasun.",
+    main_tasks: [
+      "Rakennusten maalaaminen",
+      "Huonekalujen maalaaminen",
+      "Pintojen valmistelu",
+      "Maalausmateriaalien valinta",
+      "Asiakkaiden neuvonta"
+    ],
+    impact: [
+      "Parantaa rakennusten ulkoasua",
+      "Suojaa rakennuksia säältä",
+      "Luovat viihtyisän ympäristön"
+    ],
+    education_paths: [
+      "Toinen aste: Maalari",
+      "Toinen aste: Rakentaminen",
+      "AMK: Rakentaminen",
+      "Kurssit ja sertifikaatit"
+    ],
+    qualification_or_license: "Rakennuskortti",
+    core_skills: [
+      "Maalaus",
+      "Pintojen valmistelu",
+      "Värien valinta",
+      "Tarkkuus",
+      "Asiakaspalvelu"
+    ],
+    tools_tech: [
+      "Maalausvälineet",
+      "Pintojen valmistelutyökalut",
+      "Mittauslaitteet",
+      "Korjaustyökalut",
+      "Tietokoneet"
+    ],
+    languages_required: { fi: "B1", sv: "A2", en: "A2" },
+    salary_eur_month: {
+      median: 3000,
+      range: [2400, 3800],
+      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Maalareiden kysyntä kasvaa rakentamisen ja korjausten myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Maalari",
+      "Korjaustyöntekijä",
+      "Pintojen valmistelija"
+    ],
+    career_progression: [
+      "Vanhempi maalari",
+      "Maalari-mestari",
+      "Maalari-yrittäjä",
+      "Kouluttaja"
+    ],
+    typical_employers: [
+      "Maalausyritykset",
+      "Rakennusyhtiöt",
+      "Korjaustyöyritykset",
+      "Yksityisyrittäjät"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Rakennusliitto",
+    useful_links: [
+      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Opintopolku - Maalari", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+    keywords: ["maalari", "maalaaminen", "pintojen valmistelu", "värit", "korjaus"],
+    study_length_estimate_months: 24
+  },
+  {
     id: "puuseppä",
     category: "rakentaja",
     title_fi: "Puuseppä",
@@ -6806,7 +7360,10 @@ export const careersData: CareerFI[] = [
     keywords: ["puuseppä", "puuntyöstö", "rakentaminen", "huonekalujen", "korjaus"],
     study_length_estimate_months: 24
   },
-{
+
+  // BATCH 2: MEDIUM-DEMAND CAREERS (40 careers) - Opetus, Logistiikka, Energia
+  // OPETUS SECTOR (15 careers)
+  {
     id: "opettaja",
     category: "auttaja",
     title_fi: "Opettaja",
@@ -6882,7 +7439,7 @@ export const careersData: CareerFI[] = [
     keywords: ["opettaja", "pedagogiikka", "opetus", "koulu", "oppilaiden"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "varhaiskasvatuksen-opettaja",
     category: "auttaja",
     title_fi: "Varhaiskasvatuksen opettaja",
@@ -6958,7 +7515,7 @@ export const careersData: CareerFI[] = [
     keywords: ["varhaiskasvatus", "päiväkoti", "lapsenkasvatus", "opetus", "kehitys"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "ammattikoulun-opettaja",
     category: "auttaja",
     title_fi: "Ammattikoulun opettaja",
@@ -7034,7 +7591,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ammattikoulu", "opettaja", "ammattitaito", "työelämä", "koulutus"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "kielten-opettaja",
     category: "auttaja",
     title_fi: "Kielten opettaja",
@@ -7110,7 +7667,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kielten opettaja", "vieraat kielet", "kulttuurit", "opetus", "kansainvälistyminen"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "erityisopettaja",
     category: "auttaja",
     title_fi: "Erityisopettaja",
@@ -7186,7 +7743,85 @@ export const careersData: CareerFI[] = [
     keywords: ["erityisopettaja", "erityispedagogiikka", "oppimisvaikeudet", "henkilökohtainen tuki", "erityisopetus"],
     study_length_estimate_months: 60
   },
-{
+
+  // LOGISTIIKKA SECTOR (15 careers)
+  {
+    id: "logistiikkakoordinaattori",
+    category: "jarjestaja",
+    title_fi: "Logistiikkakoordinaattori",
+    title_en: "Logistics Coordinator",
+    short_description: "Logistiikkakoordinaattori koordinoi tavaroiden kuljetusta ja varastointia. Varmistaa tehokkaan tavaroiden liikkeen.",
+    main_tasks: [
+      "Tavaroiden kuljetuksen koordinointi",
+      "Varastojen hallinta",
+      "Toimitusaikojen seuranta",
+      "Asiakkaiden kanssa yhteistyö",
+      "Logistiikkakustannusten hallinta"
+    ],
+    impact: [
+      "Varmistaa tavaroiden tehokkaan kuljetuksen",
+      "Auttaa yrityksiä säästämään kustannuksia",
+      "Parantaa asiakaspalvelua"
+    ],
+    education_paths: [
+      "AMK: Logistiikka",
+      "AMK: Liiketalous",
+      "AMK: Kuljetustekniikka",
+      "Kurssit ja sertifikaatit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Logistiikka",
+      "Projektinhallinta",
+      "Kommunikaatio",
+      "Ongelmaratkaisu",
+      "Tietokoneet"
+    ],
+    tools_tech: [
+      "Logistiikkaohjelmat",
+      "ERP-järjestelmät",
+      "Tietokoneet",
+      "Kommunikaatiotyökalut",
+      "Seurantajärjestelmät"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2600, 4200],
+      source: { name: "AKT", url: "https://www.akt.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Logistiikkakoordinaattorien kysyntä kasvaa verkkokaupan ja kansainvälistymisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Logistiikkakoordinaattori",
+      "Varastokoordinaattori",
+      "Kuljetuskoordinaattori"
+    ],
+    career_progression: [
+      "Vanhempi logistiikkakoordinaattori",
+      "Logistiikkajohtaja",
+      "Toimitusketjun johtaja",
+      "Konsultti"
+    ],
+    typical_employers: [
+      "Logistiikkayritykset",
+      "Verkkokaupat",
+      "Teollisuusyritykset",
+      "Kuljetusyritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "AKT",
+    useful_links: [
+      { name: "AKT", url: "https://www.akt.fi/" },
+      { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+    keywords: ["logistiikka", "koordinointi", "kuljetus", "varastointi", "toimitusketju"],
+    study_length_estimate_months: 36
+  },
+  {
     id: "kuorma-auton-kuljettaja",
     category: "rakentaja",
     title_fi: "Kuorma-auton kuljettaja",
@@ -7262,7 +7897,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kuorma-auto", "kuljettaja", "kuljetus", "logistiikka", "jakelu"],
     study_length_estimate_months: 12
   },
-{
+  {
     id: "varastotyöntekijä",
     category: "jarjestaja",
     title_fi: "Varastotyöntekijä",
@@ -7338,7 +7973,7 @@ export const careersData: CareerFI[] = [
     keywords: ["varastointi", "logistiikka", "pakkaaminen", "hyllytys", "varasto"],
     study_length_estimate_months: 12
   },
-{
+  {
     id: "jakelukuljettaja",
     category: "rakentaja",
     title_fi: "Jakelukuljettaja",
@@ -7414,7 +8049,7 @@ export const careersData: CareerFI[] = [
     keywords: ["jakelu", "kuljettaja", "paketit", "kotitoimitus", "verkkokauppa"],
     study_length_estimate_months: 12
   },
-{
+  {
     id: "kuljetuskoordinaattori",
     category: "jarjestaja",
     title_fi: "Kuljetuskoordinaattori",
@@ -7490,7 +8125,9 @@ export const careersData: CareerFI[] = [
     keywords: ["kuljetus", "koordinointi", "logistiikka", "reittien optimointi", "kuljetusketju"],
     study_length_estimate_months: 36
   },
-{
+
+  // ENERGIA SECTOR (10 careers)
+  {
     id: "sähköasentaja",
     category: "rakentaja",
     title_fi: "Sähköasentaja",
@@ -7566,7 +8203,7 @@ export const careersData: CareerFI[] = [
     keywords: ["sähköasentaja", "sähkötekniikka", "sähköjärjestelmät", "energiatehokkuus", "korjaus"],
     study_length_estimate_months: 24
   },
-{
+  {
     id: "energiainsinoori",
     category: "innovoija",
     title_fi: "Energiainsinööri",
@@ -7642,7 +8279,7 @@ export const careersData: CareerFI[] = [
     keywords: ["energiainsinööri", "energiatehokkuus", "uusiutuva energia", "energiaratkaisut", "ilmastonmuutos"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "aurinkoenergia-asentaja",
     category: "rakentaja",
     title_fi: "Aurinkoenergia-asentaja",
@@ -7718,7 +8355,7 @@ export const careersData: CareerFI[] = [
     keywords: ["aurinkoenergia", "aurinkopaneelit", "uusiutuva energia", "energiatehokkuus", "ilmastonmuutos"],
     study_length_estimate_months: 24
   },
-{
+  {
     id: "energiakonsultti",
     category: "visionaari",
     title_fi: "Energiakonsultti",
@@ -7794,7 +8431,7 @@ export const careersData: CareerFI[] = [
     keywords: ["energiakonsultti", "energiatehokkuus", "energiaratkaisut", "kestävää kehitystä", "hiilijalanjälki"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "energia-asiantuntija",
     category: "visionaari",
     title_fi: "Energia-asiantuntija",
@@ -7870,7 +8507,86 @@ export const careersData: CareerFI[] = [
     keywords: ["energia-asiantuntija", "energiatehokkuus", "energiaratkaisut", "uusiutuva energia", "kestävää kehitystä"],
     study_length_estimate_months: 60
   },
-{
+
+  // BATCH 3: DIVERSE CAREERS (40 careers) - Teollisuus, Palveluala, Rahoitus
+
+  // BATCH 4: SPECIALIZED CAREERS (40 careers) - Markkinointi, Design, Ympäristö
+  // MARKKINOINTI SECTOR (15 careers)
+  {
+    id: "markkinointipäällikkö",
+    category: "johtaja",
+    title_fi: "Markkinointipäällikkö",
+    title_en: "Marketing Manager",
+    short_description: "Markkinointipäällikkö suunnittelee ja johtaa yrityksen markkinointistrategiaa. Työskentelee brändin rakentamisen, kampanjoiden suunnittelun ja markkinointikanavien hallinnan parissa.",
+    main_tasks: [
+      "Markkinointistrategian suunnittelu",
+      "Kampanjoiden johtaminen",
+      "Brändin kehittäminen",
+      "Markkinointibudjetin hallinta",
+      "Tiimin johtaminen"
+    ],
+    impact: [
+      "Auttaa yrityksiä kasvamaan ja menestymään",
+      "Luovat työpaikkoja ja talouskasvua",
+      "Parantavat kuluttajien elämää innovatiivisilla tuotteilla"
+    ],
+    education_paths: [
+      "Kauppatieteiden maisteri",
+      "AMK: Markkinointi",
+      "AMK: Liiketalous",
+      "AMK: Viestintä"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Strateginen ajattelu",
+      "Johtaminen",
+      "Kommunikaatio",
+      "Analyysi",
+      "Luovuus"
+    ],
+    tools_tech: [
+      "Google Analytics",
+      "Facebook Ads Manager",
+      "Adobe Creative Suite",
+      "HubSpot",
+      "Salesforce"
+    ],
+    languages_required: { fi: "C1", sv: "B2", en: "C1" },
+    salary_eur_month: {
+      median: 5200,
+      range: [4200, 6800],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitaalisen markkinoinnin kasvu ja datan hyödyntäminen lisäävät markkinointipäälliköiden kysyntää.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Markkinointikoordinaattori",
+      "Digitaalisen markkinoinnin asiantuntija",
+      "Markkinointiavustaja"
+    ],
+    career_progression: [
+      "Markkinointipäällikkö",
+      "Markkinointijohtaja",
+      "CMO (Chief Marketing Officer)",
+      "Yrityksen toimitusjohtaja"
+    ],
+    typical_employers: [
+      "Markkinointitoimistot",
+      "Kuluttajayritykset",
+      "Teknologia-alan yritykset",
+      "Viestintätoimistot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Markkinointiliitto", url: "https://www.markkinointiliitto.fi/" },
+      { name: "Opintopolku - Markkinointi", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+  },
+  {
     id: "digitaalisen-markkinoinnin-asiantuntija",
     category: "innovoija",
     title_fi: "Digitaalisen markkinoinnin asiantuntija",
@@ -7944,7 +8660,7 @@ export const careersData: CareerFI[] = [
       { name: "Google Digital Garage", url: "https://learndigital.withgoogle.com/digitalgarage" }
     ],
   },
-{
+  {
     id: "brändisuunnittelija",
     category: "luova",
     title_fi: "Brändisuunnittelija",
@@ -8020,7 +8736,81 @@ export const careersData: CareerFI[] = [
     keywords: ["brändi", "logo", "visuaalinen identiteetti", "graafinen suunnittelu", "kreatiivisuus"],
     study_length_estimate_months: 36
   },
-{
+  {
+    id: "myyntipäällikkö",
+    category: "johtaja",
+    title_fi: "Myyntipäällikkö",
+    title_en: "Sales Manager",
+    short_description: "Myyntipäällikkö johtaa myyntitiimiä ja vastaa myyntitulosten saavuttamisesta. Työskentelee asiakassuhteiden kehittämisen ja myyntiprosessien optimoinnin parissa.",
+    main_tasks: [
+      "Myyntitiimin johtaminen",
+      "Myyntitavoitteiden asettaminen",
+      "Asiakassuhteiden kehittäminen",
+      "Myyntiprosessien optimointi",
+      "Myyntiraporttien laatiminen"
+    ],
+    impact: [
+      "Auttaa yrityksiä kasvamaan ja menestymään",
+      "Luovat työpaikkoja ja talouskasvua",
+      "Parantavat asiakaskokemusta"
+    ],
+    education_paths: [
+      "Kauppatieteiden maisteri",
+      "AMK: Liiketalous",
+      "AMK: Markkinointi",
+      "AMK: Myynti"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Johtaminen",
+      "Myynti",
+      "Kommunikaatio",
+      "Strateginen ajattelu",
+      "Asiakaspalvelu"
+    ],
+    tools_tech: [
+      "CRM-järjestelmät",
+      "Salesforce",
+      "HubSpot",
+      "Microsoft Office",
+      "Power BI"
+    ],
+    languages_required: { fi: "C1", sv: "B2", en: "B2" },
+    salary_eur_month: {
+      median: 4800,
+      range: [3800, 6200],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Myyntipäälliköiden kysyntä kasvaa yritysten kasvutavoitteiden myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Myyntiedustaja",
+      "Myyntikoordinaattori",
+      "Asiakasvastaava"
+    ],
+    career_progression: [
+      "Myyntipäällikkö",
+      "Myyntijohtaja",
+      "Liiketoimintajohtaja",
+      "Yrityksen toimitusjohtaja"
+    ],
+    typical_employers: [
+      "Teknologia-alan yritykset",
+      "Kuluttajayritykset",
+      "Palveluyritykset",
+      "Teollisuusyritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+  },
+  {
     id: "ympäristöasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöasiantuntija",
@@ -8096,7 +8886,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristö", "kestävää kehitystä", "ympäristönsuoja", "auditointi", "vastuullisuus"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "tuotesuunnittelija",
     category: "luova",
     title_fi: "Tuotesuunnittelija",
@@ -8170,7 +8960,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Muotoilu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
     ],
   },
-{
+  {
     id: "viestintäpäällikkö",
     category: "johtaja",
     title_fi: "Viestintäpäällikkö",
@@ -8246,7 +9036,307 @@ export const careersData: CareerFI[] = [
     keywords: ["viestintä", "media", "julkisuus", "kriisiviestintä", "johtaminen"],
     study_length_estimate_months: 48
   },
-{
+  {
+    id: "kestävän-kehityksen-koordinaattori",
+    category: "ympariston-puolustaja",
+    title_fi: "Kestävän kehityksen koordinaattori",
+    title_en: "Sustainability Coordinator",
+    short_description: "Kestävän kehityksen koordinaattori edistää organisaation vastuullisuutta ja kestävää kehitystä. Työskentelee ympäristö-, sosiaalisten ja hallinnollisten asioiden parissa.",
+    main_tasks: [
+      "Kestävän kehityksen strategian toteuttaminen",
+      "Vastuullisuusraporttien laatiminen",
+      "Ympäristöohjelmien koordinointi",
+      "Sidosryhmäviestinnän hallinta",
+      "Kestävän kehityksen mittauksen toteuttaminen"
+    ],
+    impact: [
+      "Edistävät kestävää kehitystä",
+      "Auttaa organisaatioita toimimaan vastuullisesti",
+      "Suojelevat ympäristöä ja luontoa"
+    ],
+    education_paths: [
+      "Yliopisto: Ympäristötiede",
+      "AMK: Kestävän kehityksen asiantuntija",
+      "Yliopisto: Biologia",
+      "AMK: Ympäristötekniikka"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Kestävää kehitystä",
+      "Projektinhallinta",
+      "Kommunikaatio",
+      "Analyysi",
+      "Strateginen ajattelu"
+    ],
+    tools_tech: [
+      "Kestävän kehityksen mittausjärjestelmät",
+      "Microsoft Office",
+      "GIS-järjestelmät",
+      "Raportointityökalut",
+      "Projektinhallintatyökalut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 4800],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kestävän kehityksen koordinaattoreiden kysyntä kasvaa yritysten vastuullisuusvaatimusten lisääntyessä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Kestävän kehityksen koordinaattori",
+      "Ympäristöasiantuntija",
+      "Vastuullisuusasiantuntija"
+    ],
+    career_progression: [
+      "Kestävän kehityksen koordinaattori",
+      "Kestävän kehityksen johtaja",
+      "Vastuullisuusjohtaja",
+      "Ympäristöjohtaja"
+    ],
+    typical_employers: [
+      "Suuryritykset",
+      "Julkiset organisaatiot",
+      "Konsulttiyritykset",
+      "Ympäristöliitot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Ympäristöliitto", url: "https://www.ymparistoliitto.fi/" },
+      { name: "Opintopolku - Kestävää kehitystä", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+  },
+  {
+    id: "projektipäällikkö",
+    category: "jarjestaja",
+    title_fi: "Projektipäällikkö",
+    title_en: "Project Manager",
+    short_description: "Projektipäällikkö johtaa projekteja alusta loppuun. Työskentelee aikataulujen, budjettien ja tiimien hallinnan parissa varmistaen projektien onnistumisen.",
+    main_tasks: [
+      "Projektin suunnittelu ja koordinointi",
+      "Tiimin johtaminen",
+      "Budjetin hallinta",
+      "Riskienhallinta",
+      "Asiakasviestintä"
+    ],
+    impact: [
+      "Auttaa organisaatioita toteuttamaan tärkeitä projekteja",
+      "Luovat tehokkuutta ja tuloksellisuutta",
+      "Parantavat työprosesseja"
+    ],
+    education_paths: [
+      "AMK: Projektinhallinta",
+      "AMK: Liiketalous",
+      "Yliopisto: Johtaminen",
+      "AMK: Teknologia"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Projektinhallinta",
+      "Johtaminen",
+      "Kommunikaatio",
+      "Ongelmanratkaisu",
+      "Organisointi"
+    ],
+    tools_tech: [
+      "Microsoft Project",
+      "Jira",
+      "Asana",
+      "Trello",
+      "Microsoft Office"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4500,
+      range: [3600, 5800],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Projektipäälliköiden kysyntä kasvaa organisaatioiden projektipohjaisen työskentelyn lisääntyessä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Projektikoordinaattori",
+      "Projektipäällikkö",
+      "Projektiavustaja"
+    ],
+    career_progression: [
+      "Projektipäällikkö",
+      "Senior projektipäällikkö",
+      "Programmajohtaja",
+      "Portfoliomanageri"
+    ],
+    typical_employers: [
+      "Konsulttiyritykset",
+      "Teknologia-alan yritykset",
+      "Rakennusyritykset",
+      "Julkiset organisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+    keywords: ["projektinhallinta", "johtaminen", "tiimityö", "budjetti", "aikataulu"],
+    study_length_estimate_months: 36
+  },
+  {
+    id: "asiakaspalvelupäällikkö",
+    category: "auttaja",
+    title_fi: "Asiakaspalvelupäällikkö",
+    title_en: "Customer Service Manager",
+    short_description: "Asiakaspalvelupäällikkö johtaa asiakaspalvelutiimiä ja vastaa asiakastyytyväisyydestä. Työskentelee palvelun laadun parantamisen ja tiimin kehittämisen parissa.",
+    main_tasks: [
+      "Asiakaspalvelutiimin johtaminen",
+      "Palvelun laadun seuranta",
+      "Asiakasvalitusten käsittely",
+      "Tiimin kouluttaminen",
+      "Palveluprosessien kehittäminen"
+    ],
+    impact: [
+      "Parantavat asiakaskokemusta",
+      "Auttaa yrityksiä säilyttämään asiakkaitaan",
+      "Luovat tyytyväisiä asiakkaita"
+    ],
+    education_paths: [
+      "AMK: Liiketalous",
+      "AMK: Asiakaspalvelu",
+      "AMK: Johtaminen",
+      "Yliopisto: Kauppatiede"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Asiakaspalvelu",
+      "Johtaminen",
+      "Kommunikaatio",
+      "Ongelmanratkaisu",
+      "Tiimityöskentely"
+    ],
+    tools_tech: [
+      "CRM-järjestelmät",
+      "Asiakaspalvelujärjestelmät",
+      "Microsoft Office",
+      "Chat-työkalut",
+      "Analytiikkatyökalut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 4800],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Asiakaspalvelupäälliköiden kysyntä kasvaa asiakaskokemuksen merkityksen lisääntyessä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Asiakaspalveluedustaja",
+      "Asiakaspalvelukoordinaattori",
+      "Asiakasvastaava"
+    ],
+    career_progression: [
+      "Asiakaspalvelupäällikkö",
+      "Asiakaspalvelujohtaja",
+      "Operaatiopäällikkö",
+      "Liiketoimintajohtaja"
+    ],
+    typical_employers: [
+      "Palveluyritykset",
+      "Teknologia-alan yritykset",
+      "Kuluttajayritykset",
+      "Finanssipalvelut"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Asiakaspalvelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+  },
+  {
+    id: "tietoturva-asiantuntija",
+    category: "innovoija",
+    title_fi: "Tietoturva-asiantuntija",
+    title_en: "Cybersecurity Specialist",
+    short_description: "Tietoturva-asiantuntija suojaa organisaation tietojärjestelmiä ja tietoja. Työskentelee tietoturva-aukkojen löytämisen, riskien arvioinnin ja suojatoimenpiteiden toteuttamisen parissa.",
+    main_tasks: [
+      "Tietoturva-aukkojen etsiminen",
+      "Tietoturvariskien arviointi",
+      "Suojatoimenpiteiden toteuttaminen",
+      "Tietoturva-incidenttien käsittely",
+      "Tietoturva-koulutuksen antaminen"
+    ],
+    impact: [
+      "Suojelevat organisaatioita kyberuhilta",
+      "Varmistavat tietojen turvallisuuden",
+      "Auttaa yrityksiä noudattamaan säädöksiä"
+    ],
+    education_paths: [
+      "Yliopisto: Tietojenkäsittelytiede",
+      "AMK: Tietoturva",
+      "AMK: Tietojenkäsittely",
+      "Yliopisto: Kyberturvallisuus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Tietoturva",
+      "Verkkotekniikka",
+      "Ohjelmointi",
+      "Analyysi",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "Tietoturva-työkalut",
+      "Verkkoanalyysityökalut",
+      "Penetraatiotestaus-työkalut",
+      "SIEM-järjestelmät",
+      "Firewall-ratkaisut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 5200,
+      range: [4200, 6800],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Tietoturva-asiantuntijoiden kysyntä kasvaa jatkuvasti kyberuhkien lisääntyessä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Tietoturva-asiantuntija",
+      "Tietoturva-analyytikko",
+      "Kyberturvallisuusasiantuntija"
+    ],
+    career_progression: [
+      "Tietoturva-asiantuntija",
+      "Senior tietoturva-asiantuntija",
+      "Tietoturvajohtaja",
+      "CISO (Chief Information Security Officer)"
+    ],
+    typical_employers: [
+      "Teknologia-alan yritykset",
+      "Konsulttiyritykset",
+      "Julkiset organisaatiot",
+      "Finanssipalvelut"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Tietoturva", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+    keywords: ["tietoturva", "kyberturvallisuus", "verkko", "ohjelmointi", "analyysi"],
+    study_length_estimate_months: 48
+  },
+  {
     id: "data-analyytikko",
     category: "innovoija",
     title_fi: "Data-analyytikko",
@@ -8320,7 +9410,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Tilastotiede", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
     ],
   },
-{
+  {
     id: "hr-asiantuntija",
     category: "auttaja",
     title_fi: "HR-asiantuntija",
@@ -8396,7 +9486,7 @@ export const careersData: CareerFI[] = [
     keywords: ["henkilöstö", "rekrytointi", "koulutus", "palkkaus", "työsuhteet"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "liiketoimintakehittäjä",
     category: "innovoija",
     title_fi: "Liiketoimintakehittäjä",
@@ -8470,7 +9560,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
     ],
   },
-{
+  {
     id: "koulutussuunnittelija",
     category: "auttaja",
     title_fi: "Koulutussuunnittelija",
@@ -8546,7 +9636,7 @@ export const careersData: CareerFI[] = [
     keywords: ["koulutus", "oppiminen", "pedagogiikka", "materiaalit", "kehittäminen"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "tuotepäällikkö",
     category: "johtaja",
     title_fi: "Tuotepäällikkö",
@@ -8620,7 +9710,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
     ],
   },
-{
+  {
     id: "konsultti",
     category: "innovoija",
     title_fi: "Konsultti",
@@ -8696,7 +9786,7 @@ export const careersData: CareerFI[] = [
     keywords: ["konsultointi", "analyysi", "ratkaisut", "projektit", "asiantuntijuus"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "tutkimusasiantuntija",
     category: "visionaari",
     title_fi: "Tutkimusasiantuntija",
@@ -8770,7 +9860,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Tutkimustiede", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
     ],
   },
-{
+  {
     id: "laadunvalvonta-asiantuntija",
     category: "jarjestaja",
     title_fi: "Laadunvalvonta-asiantuntija",
@@ -8846,7 +9936,7 @@ export const careersData: CareerFI[] = [
     keywords: ["laadunvalvonta", "testaus", "laatu", "analyysi", "prosessit"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "asiakasvastaava",
     category: "auttaja",
     title_fi: "Asiakasvastaava",
@@ -8920,7 +10010,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Asiakaspalvelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
     ],
   },
-{
+  {
     id: "tietojärjestelmäasiantuntija",
     category: "innovoija",
     title_fi: "Tietojärjestelmäasiantuntija",
@@ -8996,7 +10086,81 @@ export const careersData: CareerFI[] = [
     keywords: ["tietojärjestelmät", "IT", "verkko", "ylläpito", "tuki"],
     study_length_estimate_months: 36
   },
-{
+  {
+    id: "logistiikkakoordinaattori",
+    category: "jarjestaja",
+    title_fi: "Logistiikkakoordinaattori",
+    title_en: "Logistics Coordinator",
+    short_description: "Logistiikkakoordinaattori koordinoi tavaroiden ja palvelujen liikennettä. Työskentelee kuljetusten suunnittelun, varastonhallinnan ja toimitusketjujen optimoinnin parissa.",
+    main_tasks: [
+      "Kuljetusten suunnittelu ja koordinointi",
+      "Varastonhallinta",
+      "Toimitusketjujen optimointi",
+      "Kuljetusyhtiöiden koordinointi",
+      "Logistiikkakustannusten hallinta"
+    ],
+    impact: [
+      "Parantavat tavaroiden liikennettä",
+      "Auttaa yrityksiä säästämään kustannuksissa",
+      "Varmistavat tavaroiden ajallaan toimittamisen"
+    ],
+    education_paths: [
+      "AMK: Logistiikka",
+      "AMK: Liiketalous",
+      "AMK: Kuljetus",
+      "Yliopisto: Taloustiede"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Logistiikka",
+      "Projektinhallinta",
+      "Analyysi",
+      "Kommunikaatio",
+      "Organisointi"
+    ],
+    tools_tech: [
+      "Logistiikkajärjestelmät",
+      "Varastonhallintajärjestelmät",
+      "Microsoft Office",
+      "Kuljetusseurantatyökalut",
+      "Analytiikkatyökalut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3600,
+      range: [2800, 4600],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Logistiikkakoordinaattoreiden kysyntä kasvaa verkkokaupan ja globalisaation myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Logistiikkakoordinaattori",
+      "Varastonhoitaja",
+      "Kuljetuskoordinaattori"
+    ],
+    career_progression: [
+      "Logistiikkakoordinaattori",
+      "Senior logistiikkakoordinaattori",
+      "Logistiikkajohtaja",
+      "Toimitusketjujohtaja"
+    ],
+    typical_employers: [
+      "Logistiikkayritykset",
+      "Verkkokaupat",
+      "Teollisuusyritykset",
+      "Kuljetusyritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+  },
+  {
     id: "talousasiantuntija",
     category: "jarjestaja",
     title_fi: "Talousasiantuntija",
@@ -9072,7 +10236,7 @@ export const careersData: CareerFI[] = [
     keywords: ["talous", "budjetti", "raportointi", "analyysi", "hallinto"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "henkilöstökoordinaattori",
     category: "auttaja",
     title_fi: "Henkilöstökoordinaattori",
@@ -9146,7 +10310,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Henkilöstöjohtaminen", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
     ],
   },
-{
+  {
     id: "myyntiedustaja",
     category: "innovoija",
     title_fi: "Myyntiedustaja",
@@ -9222,7 +10386,7 @@ export const careersData: CareerFI[] = [
     keywords: ["myynti", "asiakkaat", "kommunikaatio", "neuvottelu", "tavoitteet"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "markkinointikoordinaattori",
     category: "innovoija",
     title_fi: "Markkinointikoordinaattori",
@@ -9296,7 +10460,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Markkinointi", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
     ],
   },
-{
+  {
     id: "projektikoordinaattori",
     category: "jarjestaja",
     title_fi: "Projektikoordinaattori",
@@ -9372,7 +10536,7 @@ export const careersData: CareerFI[] = [
     keywords: ["projektinhallinta", "koordinointi", "aikataulu", "resurssit", "seuranta"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "asiakaspalveluedustaja",
     category: "auttaja",
     title_fi: "Asiakaspalveluedustaja",
@@ -9446,7 +10610,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Asiakaspalvelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
     ],
   },
-{
+  {
     id: "sisällöntuottaja",
     category: "luova",
     title_fi: "Sisällöntuottaja",
@@ -9522,7 +10686,229 @@ export const careersData: CareerFI[] = [
     keywords: ["sisältö", "luovuus", "kirjoittaminen", "media", "markkinointi"],
     study_length_estimate_months: 36
   },
-{
+  {
+    id: "tietoturva-asiantuntija",
+    category: "innovoija",
+    title_fi: "Tietoturva-asiantuntija",
+    title_en: "Cybersecurity Specialist",
+    short_description: "Tietoturva-asiantuntija suojaa organisaation tietojärjestelmiä ja tietoja. Työskentelee tietoturva-aukkojen löytämisen, riskien arvioinnin ja suojatoimenpiteiden toteuttamisen parissa.",
+    main_tasks: [
+      "Tietoturva-aukkojen etsiminen",
+      "Tietoturvariskien arviointi",
+      "Suojatoimenpiteiden toteuttaminen",
+      "Tietoturva-incidenttien käsittely",
+      "Tietoturva-koulutuksen antaminen"
+    ],
+    impact: [
+      "Suojelevat organisaatioita kyberuhilta",
+      "Varmistavat tietojen turvallisuuden",
+      "Auttaa yrityksiä noudattamaan säädöksiä"
+    ],
+    education_paths: [
+      "Yliopisto: Tietojenkäsittelytiede",
+      "AMK: Tietoturva",
+      "AMK: Tietojenkäsittely",
+      "Yliopisto: Kyberturvallisuus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Tietoturva",
+      "Verkkotekniikka",
+      "Ohjelmointi",
+      "Analyysi",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "Tietoturva-työkalut",
+      "Verkkoanalyysityökalut",
+      "Penetraatiotestaus-työkalut",
+      "SIEM-järjestelmät",
+      "Firewall-ratkaisut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 5200,
+      range: [4200, 6800],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Tietoturva-asiantuntijoiden kysyntä kasvaa jatkuvasti kyberuhkien lisääntyessä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Tietoturva-asiantuntija",
+      "Tietoturva-analyytikko",
+      "Kyberturvallisuusasiantuntija"
+    ],
+    career_progression: [
+      "Tietoturva-asiantuntija",
+      "Senior tietoturva-asiantuntija",
+      "Tietoturvajohtaja",
+      "CISO (Chief Information Security Officer)"
+    ],
+    typical_employers: [
+      "Teknologia-alan yritykset",
+      "Konsulttiyritykset",
+      "Julkiset organisaatiot",
+      "Finanssipalvelut"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Tietoturva", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+  },
+  {
+    id: "tietokantasuunnittelija",
+    category: "innovoija",
+    title_fi: "Tietokantasuunnittelija",
+    title_en: "Database Designer",
+    short_description: "Tietokantasuunnittelija suunnittelee ja kehittää tietokantoja organisaatioille. Työskentelee tietokantarakenteiden suunnittelun, optimoinnin ja ylläpidon parissa.",
+    main_tasks: [
+      "Tietokantarakenteiden suunnittelu",
+      "Tietokantojen optimointi",
+      "Tietokantojen ylläpito",
+      "Tietokantaturvallisuuden varmistaminen",
+      "Tietokantasuorituskyvyn seuranta"
+    ],
+    impact: [
+      "Varmistavat tietojen turvallisen tallentamisen",
+      "Parantavat järjestelmien suorituskykyä",
+      "Auttaa organisaatioita käyttämään tietoja tehokkaasti"
+    ],
+    education_paths: [
+      "Yliopisto: Tietojenkäsittelytiede",
+      "AMK: Tietojenkäsittely",
+      "AMK: Tietoturva",
+      "Yliopisto: Matematiikka"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Tietokantasuunnittelu",
+      "SQL",
+      "Ohjelmointi",
+      "Analyysi",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "SQL-järjestelmät",
+      "Tietokantatyökalut",
+      "Microsoft Office",
+      "Tietokantasuunnittelutyökalut",
+      "Analytiikkatyökalut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4800,
+      range: [3800, 6200],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Tietokantasuunnittelijoiden kysyntä kasvaa datan merkityksen lisääntyessä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Tietokantasuunnittelija",
+      "Tietokanta-asiantuntija",
+      "Tietokanta-kehittäjä"
+    ],
+    career_progression: [
+      "Tietokantasuunnittelija",
+      "Senior tietokantasuunnittelija",
+      "Tietokantajohtaja",
+      "CTO (Chief Technology Officer)"
+    ],
+    typical_employers: [
+      "Teknologia-alan yritykset",
+      "Konsulttiyritykset",
+      "Julkiset organisaatiot",
+      "Finanssipalvelut"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+  },
+  {
+    id: "verkkoasiantuntija",
+    category: "innovoija",
+    title_fi: "Verkkoasiantuntija",
+    title_en: "Network Specialist",
+    short_description: "Verkkoasiantuntija suunnittelee ja hallinnoi organisaation verkkoja. Työskentelee verkkojen konfiguroinnin, ylläpidon ja turvallisuuden parissa.",
+    main_tasks: [
+      "Verkkojen suunnittelu ja konfigurointi",
+      "Verkkojen ylläpito",
+      "Verkkoturvallisuuden varmistaminen",
+      "Verkkoongelmien ratkaiseminen",
+      "Verkkoseurannan toteuttaminen"
+    ],
+    impact: [
+      "Varmistavat verkkojen toimivuuden",
+      "Auttaa organisaatioita käyttämään verkkoja tehokkaasti",
+      "Parantavat tietoturvallisuutta"
+    ],
+    education_paths: [
+      "AMK: Verkkotekniikka",
+      "AMK: Tietojenkäsittely",
+      "Yliopisto: Tietojenkäsittelytiede",
+      "AMK: Tietoturva"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Verkkotekniikka",
+      "Tietoturva",
+      "Ongelmanratkaisu",
+      "Analyysi",
+      "Tekninen osaaminen"
+    ],
+    tools_tech: [
+      "Verkkoanalyysityökalut",
+      "Tietoturvatyökalut",
+      "Microsoft Office",
+      "Verkkoseurantatyökalut",
+      "Konfiguraatiotyökalut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3400, 5400],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Verkkoasiantuntijoiden kysyntä kasvaa verkkojen merkityksen lisääntyessä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Verkkoasiantuntija",
+      "Verkko-asiantuntija",
+      "Verkkoteknikko"
+    ],
+    career_progression: [
+      "Verkkoasiantuntija",
+      "Senior verkkoasiantuntija",
+      "Verkkojohtaja",
+      "CTO (Chief Technology Officer)"
+    ],
+    typical_employers: [
+      "Teknologia-alan yritykset",
+      "Konsulttiyritykset",
+      "Julkiset organisaatiot",
+      "Telekommunikaatioyritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Verkkotekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+  },
+  {
     id: "mobiilisovelluskehittäjä",
     category: "innovoija",
     title_fi: "Mobiilisovelluskehittäjä",
@@ -9596,7 +10982,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
     ],
   },
-{
+  {
     id: "tekoäly-asiantuntija",
     category: "innovoija",
     title_fi: "Tekoäly-asiantuntija",
@@ -9670,7 +11056,305 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
     ],
   },
-{
+  {
+    id: "energiainsinööri",
+    category: "innovoija",
+    title_fi: "Energiainsinööri",
+    title_en: "Energy Engineer",
+    short_description: "Energiainsinööri suunnittelee ja kehittää energiaratkaisuja organisaatioille. Työskentelee uusiutuvan energian, energiatehokkuuden ja kestävän kehityksen parissa.",
+    main_tasks: [
+      "Energiaratkaisujen suunnittelu",
+      "Energiatehokkuuden parantaminen",
+      "Uusiutuvan energian kehittäminen",
+      "Energiakustannusten optimointi",
+      "Energiaprojektien toteuttaminen"
+    ],
+    impact: [
+      "Auttaa organisaatioita käyttämään energiaa tehokkaasti",
+      "Edistävät kestävää kehitystä",
+      "Vähentävät hiilijalanjälkeä"
+    ],
+    education_paths: [
+      "Yliopisto: Energiatekniikka",
+      "AMK: Energiatekniikka",
+      "Yliopisto: Teknologia",
+      "AMK: Ympäristötekniikka"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Energiatekniikka",
+      "Analyysi",
+      "Projektinhallinta",
+      "Kommunikaatio",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "Energiamallinnustyökalut",
+      "CAD-ohjelmat",
+      "Microsoft Office",
+      "Energiaseurantatyökalut",
+      "Simulaatiotyökalut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4800,
+      range: [3800, 6200],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Energiainsinöörien kysyntä kasvaa energiatehokkuuden ja uusiutuvan energian merkityksen lisääntyessä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Energiainsinööri",
+      "Energia-asiantuntija",
+      "Energiaprojektisuunnittelija"
+    ],
+    career_progression: [
+      "Energiainsinööri",
+      "Senior energiainsinööri",
+      "Energiajohtaja",
+      "Energiajohtaja"
+    ],
+    typical_employers: [
+      "Energiayritykset",
+      "Konsulttiyritykset",
+      "Julkiset organisaatiot",
+      "Teollisuusyritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Energiatekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+  },
+  {
+    id: "aurinkoenergia-asentaja",
+    category: "rakentaja",
+    title_fi: "Aurinkoenergia-asentaja",
+    title_en: "Solar Energy Installer",
+    short_description: "Aurinkoenergia-asentaja asentaa aurinkopaneelit ja aurinkoenergiajärjestelmiä. Työskentelee aurinkopaneelien asennuksen, ylläpidon ja korjausten parissa.",
+    main_tasks: [
+      "Aurinkopaneelien asennus",
+      "Aurinkoenergiajärjestelmien asennus",
+      "Järjestelmien testaus",
+      "Asennusten ylläpito",
+      "Korjausten toteuttaminen"
+    ],
+    impact: [
+      "Auttaa organisaatioita käyttämään uusiutuvaa energiaa",
+      "Edistävät kestävää kehitystä",
+      "Vähentävät hiilijalanjälkeä"
+    ],
+    education_paths: [
+      "AMK: Energiatekniikka",
+      "AMK: Sähkötekniikka",
+      "AMK: Rakennustekniikka",
+      "Yliopisto: Energiatekniikka"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Aurinkoenergia",
+      "Sähkötekniikka",
+      "Rakennustekniikka",
+      "Ongelmanratkaisu",
+      "Tiimityöskentely"
+    ],
+    tools_tech: [
+      "Aurinkoenergiatyökalut",
+      "Sähkötyökalut",
+      "Rakennustyökalut",
+      "Mittauslaitteet",
+      "Asennustyökalut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3600,
+      range: [2800, 4600],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Aurinkoenergia-asentajien kysyntä kasvaa uusiutuvan energian merkityksen lisääntyessä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Aurinkoenergia-asentaja",
+      "Aurinkoenergia-asiantuntija",
+      "Aurinkoenergia-kehittäjä"
+    ],
+    career_progression: [
+      "Aurinkoenergia-asentaja",
+      "Senior aurinkoenergia-asentaja",
+      "Aurinkoenergiajohtaja",
+      "Energiajohtaja"
+    ],
+    typical_employers: [
+      "Energiayritykset",
+      "Rakennusyritykset",
+      "Konsulttiyritykset",
+      "Julkiset organisaatiot"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Energiatekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+  },
+  {
+    id: "energiakonsultti",
+    category: "innovoija",
+    title_fi: "Energiakonsultti",
+    title_en: "Energy Consultant",
+    short_description: "Energiakonsultti auttaa organisaatioita optimoimaan energiankäyttöään ja kehittämään energiaratkaisuja. Työskentelee energiatehokkuuden, uusiutuvan energian ja kestävän kehityksen parissa.",
+    main_tasks: [
+      "Energiankäytön analysointi",
+      "Energiatehokkuusratkaisujen suunnittelu",
+      "Uusiutuvan energian kehittäminen",
+      "Energiakustannusten optimointi",
+      "Energiaprojektien toteuttaminen"
+    ],
+    impact: [
+      "Auttaa organisaatioita käyttämään energiaa tehokkaasti",
+      "Edistävät kestävää kehitystä",
+      "Vähentävät hiilijalanjälkeä"
+    ],
+    education_paths: [
+      "Yliopisto: Energiatekniikka",
+      "AMK: Energiatekniikka",
+      "Yliopisto: Teknologia",
+      "AMK: Ympäristötekniikka"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Energiatekniikka",
+      "Analyysi",
+      "Projektinhallinta",
+      "Kommunikaatio",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "Energiamallinnustyökalut",
+      "CAD-ohjelmat",
+      "Microsoft Office",
+      "Energiaseurantatyökalut",
+      "Simulaatiotyökalut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4800,
+      range: [3800, 6200],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Energiakonsulttien kysyntä kasvaa energiatehokkuuden ja uusiutuvan energian merkityksen lisääntyessä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Energiakonsultti",
+      "Energia-asiantuntija",
+      "Energiaprojektisuunnittelija"
+    ],
+    career_progression: [
+      "Energiakonsultti",
+      "Senior energiakonsultti",
+      "Energiajohtaja",
+      "Energiajohtaja"
+    ],
+    typical_employers: [
+      "Energiayritykset",
+      "Konsulttiyritykset",
+      "Julkiset organisaatiot",
+      "Teollisuusyritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Energiatekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+  },
+  {
+    id: "energia-asiantuntija",
+    category: "innovoija",
+    title_fi: "Energia-asiantuntija",
+    title_en: "Energy Specialist",
+    short_description: "Energia-asiantuntija kehittää ja toteuttaa energiaratkaisuja organisaatioille. Työskentelee energiatehokkuuden, uusiutuvan energian ja kestävän kehityksen parissa.",
+    main_tasks: [
+      "Energiaratkaisujen kehittäminen",
+      "Energiatehokkuuden parantaminen",
+      "Uusiutuvan energian kehittäminen",
+      "Energiakustannusten optimointi",
+      "Energiaprojektien toteuttaminen"
+    ],
+    impact: [
+      "Auttaa organisaatioita käyttämään energiaa tehokkaasti",
+      "Edistävät kestävää kehitystä",
+      "Vähentävät hiilijalanjälkeä"
+    ],
+    education_paths: [
+      "Yliopisto: Energiatekniikka",
+      "AMK: Energiatekniikka",
+      "Yliopisto: Teknologia",
+      "AMK: Ympäristötekniikka"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Energiatekniikka",
+      "Analyysi",
+      "Projektinhallinta",
+      "Kommunikaatio",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "Energiamallinnustyökalut",
+      "CAD-ohjelmat",
+      "Microsoft Office",
+      "Energiaseurantatyökalut",
+      "Simulaatiotyökalut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4800,
+      range: [3800, 6200],
+      source: { name: "Palkkatieto", url: "https://www.palkkatieto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Energia-asiantuntijoiden kysyntä kasvaa energiatehokkuuden ja uusiutuvan energian merkityksen lisääntyessä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Energia-asiantuntija",
+      "Energia-asiantuntija",
+      "Energiaprojektisuunnittelija"
+    ],
+    career_progression: [
+      "Energia-asiantuntija",
+      "Senior energia-asiantuntija",
+      "Energiajohtaja",
+      "Energiajohtaja"
+    ],
+    typical_employers: [
+      "Energiayritykset",
+      "Konsulttiyritykset",
+      "Julkiset organisaatiot",
+      "Teollisuusyritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Energiatekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+    keywords: ["energia", "tehokkuus", "uusiutuva energia", "kestävää kehitystä", "analyysi"],
+    study_length_estimate_months: 60
+  },
+  {
     id: "tuotantoteknikko",
     category: "rakentaja",
     title_fi: "Tuotantoteknikko",
@@ -9746,7 +11430,83 @@ export const careersData: CareerFI[] = [
     keywords: ["tuotantoteknikko", "tuotanto", "automaatio", "laitteiden huolto", "teollisuus"],
     study_length_estimate_months: 36
   },
-{
+  {
+    id: "laadunvalvonta-asiantuntija",
+    category: "jarjestaja",
+    title_fi: "Laadunvalvonta-asiantuntija",
+    title_en: "Quality Control Specialist",
+    short_description: "Laadunvalvonta-asiantuntija varmistaa tuotteiden ja palveluiden laadun. Kehittää laadunvalvontaprosesseja.",
+    main_tasks: [
+      "Tuotteiden laadun testaaminen",
+      "Laadunvalvontaprosessien kehittäminen",
+      "Laadunongelmien analysointi",
+      "Asiakkaiden kanssa yhteistyö",
+      "Laadunraporttien laatiminen"
+    ],
+    impact: [
+      "Varmistaa tuotteiden laadun",
+      "Auttaa yrityksiä säästämään kustannuksia",
+      "Parantaa asiakastyytyväisyyttä"
+    ],
+    education_paths: [
+      "AMK: Tuotantotalous",
+      "AMK: Kemiantekniikka",
+      "Yliopisto: Tuotantotalous",
+      "Kurssit ja sertifikaatit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Laadunvalvonta",
+      "Analyysi",
+      "Ongelmaratkaisu",
+      "Kommunikaatio",
+      "Tarkkuus"
+    ],
+    tools_tech: [
+      "Laadunvalvontavälineet",
+      "Mittauslaitteet",
+      "Tietokoneet",
+      "Analyysityökalut",
+      "Raportointityökalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3500,
+      range: [2800, 4500],
+      source: { name: "Teollisuusliitto", url: "https://www.teollisuusliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Laadunvalvonta-asiantuntijoiden kysyntä kasvaa laadun tärkeyden korostumisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Laadunvalvonta-asiantuntija",
+      "Laadunvalvontateknikko",
+      "Laadunvalvontatyöntekijä"
+    ],
+    career_progression: [
+      "Vanhempi laadunvalvonta-asiantuntija",
+      "Laadunvalvontajohtaja",
+      "Laadunvalvontakoordinaattori",
+      "Konsultti"
+    ],
+    typical_employers: [
+      "Teollisuusyritykset",
+      "Konsultointiyritykset",
+      "Testauslaboratoriot",
+      "Valtio"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Teollisuusliitto",
+    useful_links: [
+      { name: "Teollisuusliitto", url: "https://www.teollisuusliitto.fi/" },
+      { name: "Opintopolku - Laadunvalvonta", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+    keywords: ["laadunvalvonta", "laatu", "testaus", "analyysi", "teollisuus"],
+    study_length_estimate_months: 36
+  },
+  {
     id: "automaatioteknikko",
     category: "innovoija",
     title_fi: "Automaatioteknikko",
@@ -9822,7 +11582,83 @@ export const careersData: CareerFI[] = [
     keywords: ["automaatioteknikko", "automaatio", "ohjelmointi", "sähkötekniikka", "teollisuus"],
     study_length_estimate_months: 36
   },
-{
+  {
+    id: "tuotantopäällikkö",
+    category: "johtaja",
+    title_fi: "Tuotantopäällikkö",
+    title_en: "Production Manager",
+    short_description: "Tuotantopäällikkö johtaa tuotantoprosesseja ja tiimejä. Varmistaa tehokkaan ja turvallisen tuotannon.",
+    main_tasks: [
+      "Tuotantoprosessien johtaminen",
+      "Tiimien johtaminen",
+      "Tuotantosuunnittelu",
+      "Kustannusten hallinta",
+      "Asiakkaiden kanssa yhteistyö"
+    ],
+    impact: [
+      "Varmistaa tehokkaan tuotannon",
+      "Auttaa yrityksiä säästämään kustannuksia",
+      "Parantaa työntekijöiden tyytyväisyyttä"
+    ],
+    education_paths: [
+      "AMK: Tuotantotalous",
+      "Yliopisto: Tuotantotalous",
+      "AMK: Liiketalous",
+      "Jatkokoulutus ja erikoistuminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Johtaminen",
+      "Tuotantotalous",
+      "Projektinhallinta",
+      "Kommunikaatio",
+      "Ongelmaratkaisu"
+    ],
+    tools_tech: [
+      "Tuotantosuunnittelutyökalut",
+      "ERP-järjestelmät",
+      "Tietokoneet",
+      "Kommunikaatiotyökalut",
+      "Raportointityökalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 4500,
+      range: [3500, 6000],
+      source: { name: "Teollisuusliitto", url: "https://www.teollisuusliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Tuotantopäälliköiden kysyntä kasvaa teollisuuden kehittyessä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Tuotantopäällikkö",
+      "Tuotantokoordinaattori",
+      "Tuotantosuunnittelija"
+    ],
+    career_progression: [
+      "Vanhempi tuotantopäällikkö",
+      "Tuotantopäällikkö",
+      "Tuotantopäällikkö",
+      "Yrittäjä"
+    ],
+    typical_employers: [
+      "Teollisuusyritykset",
+      "Konsultointiyritykset",
+      "Valtio",
+      "Yksityisyrittäjät"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Teollisuusliitto",
+    useful_links: [
+      { name: "Teollisuusliitto", url: "https://www.teollisuusliitto.fi/" },
+      { name: "Opintopolku - Tuotantotalous", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+    ],
+    keywords: ["tuotantopäällikkö", "johtaminen", "tuotantotalous", "projektinhallinta", "teollisuus"],
+    study_length_estimate_months: 60
+  },
+  {
     id: "teollisuusinsinoori",
     category: "innovoija",
     title_fi: "Teollisuusinsinööri",
@@ -9898,7 +11734,9 @@ export const careersData: CareerFI[] = [
     keywords: ["teollisuusinsinööri", "teollisuustekniikka", "projektinhallinta", "tuotannon optimointi", "teollisuus"],
     study_length_estimate_months: 60
   },
-{
+
+  // PALVELUALA SECTOR (15 careers)
+  {
     id: "asiakaspalvelu-asiantuntija",
     category: "auttaja",
     title_fi: "Asiakaspalvelu-asiantuntija",
@@ -9974,7 +11812,7 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakaspalvelu", "asiakkaiden auttaminen", "kommunikaatio", "ongelmaratkaisu", "palvelutalous"],
     study_length_estimate_months: 24
   },
-{
+  {
     id: "hotellityöntekijä",
     category: "auttaja",
     title_fi: "Hotellityöntekijä",
@@ -10050,7 +11888,7 @@ export const careersData: CareerFI[] = [
     keywords: ["hotellityöntekijä", "hotelli", "matkailu", "asiakaspalvelu", "palvelutalous"],
     study_length_estimate_months: 24
   },
-{
+  {
     id: "ravintolatyöntekijä",
     category: "auttaja",
     title_fi: "Ravintolatyöntekijä",
@@ -10126,7 +11964,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ravintolatyöntekijä", "ravintola", "asiakaspalvelu", "ruokapalvelu", "palvelutalous"],
     study_length_estimate_months: 24
   },
-{
+  {
     id: "siivooja",
     category: "rakentaja",
     title_fi: "Siivooja",
@@ -10202,7 +12040,7 @@ export const careersData: CareerFI[] = [
     keywords: ["siivooja", "siivous", "puhtaus", "terveys", "palvelutalous"],
     study_length_estimate_months: 12
   },
-{
+  {
     id: "turvallisuusvastaava",
     category: "jarjestaja",
     title_fi: "Turvallisuusvastaava",
@@ -10278,7 +12116,9 @@ export const careersData: CareerFI[] = [
     keywords: ["turvallisuusvastaava", "turvallisuus", "valvonta", "turvallisuuspalvelu", "palvelutalous"],
     study_length_estimate_months: 12
   },
-{
+
+  // RAHOITUS SECTOR (10 careers)
+  {
     id: "pankkivirkailija",
     category: "jarjestaja",
     title_fi: "Pankkivirkailija",
@@ -10354,7 +12194,7 @@ export const careersData: CareerFI[] = [
     keywords: ["pankkivirkailija", "pankki", "rahoitus", "asiakaspalvelu", "rahoituspalvelu"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "rahoitusneuvonantaja",
     category: "visionaari",
     title_fi: "Rahoitusneuvonantaja",
@@ -10430,7 +12270,7 @@ export const careersData: CareerFI[] = [
     keywords: ["rahoitusneuvonantaja", "rahoitus", "neuvonta", "sijoitusneuvonta", "rahoituspalvelu"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "vakuutusasiamies",
     category: "jarjestaja",
     title_fi: "Vakuutusasiamies",
@@ -10506,7 +12346,7 @@ export const careersData: CareerFI[] = [
     keywords: ["vakuutusasiamies", "vakuutus", "myynti", "neuvonta", "vakuutuspalvelu"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "kirjanpitäjä",
     category: "jarjestaja",
     title_fi: "Kirjanpitäjä",
@@ -10582,7 +12422,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kirjanpitäjä", "kirjanpito", "rahoitus", "tilinpäätös", "verotiedot"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "rahoitusanalyytikko",
     category: "visionaari",
     title_fi: "Rahoitusanalyytikko",
@@ -10658,7 +12498,9 @@ export const careersData: CareerFI[] = [
     keywords: ["rahoitusanalyytikko", "rahoitusanalyysi", "sijoitusanalyysi", "rahoitusmarkkinat", "rahoituspalvelu"],
     study_length_estimate_months: 60
   },
-{
+  
+  // FINAL BATCH 1/6: Healthcare Professionals (10 careers)
+  {
     id: "lääkäri",
     category: "auttaja",
     title_fi: "Lääkäri",
@@ -10730,7 +12572,7 @@ export const careersData: CareerFI[] = [
     keywords: ["lääkäri", "terveydenhuolto", "diagnoosi", "hoito", "potilas"],
     study_length_estimate_months: 72
   },
-{
+  {
     id: "hammaslääkäri",
     category: "auttaja",
     title_fi: "Hammaslääkäri",
@@ -10801,7 +12643,7 @@ export const careersData: CareerFI[] = [
     keywords: ["hammaslääkäri", "suun terveys", "hammashoidot", "hampaiden korjaus"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "eläinlääkäri",
     category: "auttaja",
     title_fi: "Eläinlääkäri",
@@ -10872,7 +12714,7 @@ export const careersData: CareerFI[] = [
     keywords: ["eläinlääkäri", "eläinten hoito", "eläinlääketiede", "lemmikkieläimet"],
     study_length_estimate_months: 72
   },
-{
+  {
     id: "farmaseutti",
     category: "auttaja",
     title_fi: "Farmaseutti",
@@ -10943,7 +12785,7 @@ export const careersData: CareerFI[] = [
     keywords: ["farmaseutti", "apteekki", "lääkkeet", "lääkeneuvonta"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "röntgenhoitaja",
     category: "auttaja",
     title_fi: "Röntgenhoitaja",
@@ -11014,7 +12856,7 @@ export const careersData: CareerFI[] = [
     keywords: ["röntgenhoitaja", "kuvantaminen", "röntgen", "ultraääni"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "laboratoriohoitaja",
     category: "auttaja",
     title_fi: "Laboratoriohoitaja",
@@ -11085,7 +12927,7 @@ export const careersData: CareerFI[] = [
     keywords: ["laboratoriohoitaja", "bioanalytiikka", "laboratorio", "tutkimukset"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "lähihoitaja",
     category: "auttaja",
     title_fi: "Lähihoitaja",
@@ -11156,7 +12998,7 @@ export const careersData: CareerFI[] = [
     keywords: ["lähihoitaja", "hoitotyö", "hoiva", "vanhusten hoito"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "ensihoitaja",
     category: "auttaja",
     title_fi: "Ensihoitaja",
@@ -11227,7 +13069,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ensihoitaja", "ambulanssi", "ensihoito", "hätätilanteet"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "kätilö",
     category: "auttaja",
     title_fi: "Kätilö",
@@ -11298,7 +13140,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kätilö", "synnytys", "raskaus", "vastasyntyneet"],
     study_length_estimate_months: 54
   },
-{
+  {
     id: "mielenterveyshoitaja",
     category: "auttaja",
     title_fi: "Mielenterveyshoitaja",
@@ -11369,7 +13211,9 @@ export const careersData: CareerFI[] = [
     keywords: ["mielenterveyshoitaja", "psykiatria", "mielenterveys", "kuntoutus"],
     study_length_estimate_months: 42
   },
-{
+  
+  // FINAL BATCH 2/6: Creative Professionals (12 careers for "luova")
+  {
     id: "mainostoimiston-art-director",
     category: "luova",
     title_fi: "Mainostoimiston Art Director",
@@ -11444,7 +13288,7 @@ export const careersData: CareerFI[] = [
     keywords: ["art director", "mainonta", "graafinen suunnittelu", "luova", "visuaalinen"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "äänisuunnittelija",
     category: "luova",
     title_fi: "Äänisuunnittelija",
@@ -11519,7 +13363,7 @@ export const careersData: CareerFI[] = [
     keywords: ["äänisuunnittelija", "ääni", "miksaus", "elokuva", "pelit"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "koreografi",
     category: "luova",
     title_fi: "Koreografi",
@@ -11592,7 +13436,7 @@ export const careersData: CareerFI[] = [
     keywords: ["koreografi", "tanssi", "esitys", "ohjaus", "luova"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "kuvataiteilija",
     category: "luova",
     title_fi: "Kuvataiteilija",
@@ -11666,7 +13510,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kuvataiteilija", "taide", "maalaus", "veisto", "luova"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "näyttelijä",
     category: "luova",
     title_fi: "Näyttelijä",
@@ -11739,7 +13583,7 @@ export const careersData: CareerFI[] = [
     keywords: ["näyttelijä", "teatteri", "elokuva", "esiintyminen", "rooli"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "valosuunnittelija",
     category: "luova",
     title_fi: "Valosuunnittelija",
@@ -11813,7 +13657,7 @@ export const careersData: CareerFI[] = [
     keywords: ["valosuunnittelija", "valotekniikka", "teatteri", "tapahtumat", "tekninen"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "käsikirjoittaja",
     category: "luova",
     title_fi: "Käsikirjoittaja",
@@ -11887,7 +13731,7 @@ export const careersData: CareerFI[] = [
     keywords: ["käsikirjoittaja", "elokuva", "TV", "kirjoittaminen", "tarina"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "tuottaja-media",
     category: "luova",
     title_fi: "Mediatuottaja",
@@ -11961,7 +13805,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tuottaja", "media", "elokuva", "TV", "tuotanto"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "leikkausartisti",
     category: "luova",
     title_fi: "Leikkausartisti",
@@ -12036,7 +13880,7 @@ export const careersData: CareerFI[] = [
     keywords: ["leikkaaja", "videoeditoi nti", "jälkituotanto", "elokuva", "media"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "dokumentaristi",
     category: "luova",
     title_fi: "Dokumentaristi",
@@ -12111,7 +13955,7 @@ export const careersData: CareerFI[] = [
     keywords: ["dokumentaristi", "dokumentti", "elokuva", "journalismi", "tutkiminen"],
     study_length_estimate_months: 48
   },
-{
+  {
     id: "podcast-tuottaja",
     category: "luova",
     title_fi: "Podcast-tuottaja",
@@ -12186,7 +14030,7 @@ export const careersData: CareerFI[] = [
     keywords: ["podcast", "tuottaja", "ääni", "editointi", "media"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "lavastaja",
     category: "luova",
     title_fi: "Lavastaja",
@@ -12261,7 +14105,10 @@ export const careersData: CareerFI[] = [
     keywords: ["lavastaja", "lavasteet", "teatteri", "elokuva", "suunnittelu"],
     study_length_estimate_months: 42
   },
-{
+  
+  // FINAL BATCH 3/3: Balancing remaining categories (14 careers to reach 200)
+  // Environment Protector careers (5 careers)
+  {
     id: "ympäristötarkastaja",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristötarkastaja",
@@ -12335,7 +14182,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristö", "tarkastus", "valvonta", "ympäristönsuojelu"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "vesiensuojeluasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Vesiensuojeluasiantuntija",
@@ -12409,7 +14256,7 @@ export const careersData: CareerFI[] = [
     keywords: ["vesi", "vesiensuojelu", "vesihuolto", "ympäristö", "laatu"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "jätehuoltoasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Jätehuoltoasiantuntija",
@@ -12483,7 +14330,81 @@ export const careersData: CareerFI[] = [
     keywords: ["jätehuolto", "kierrätys", "kiertotalous", "ympäristö", "kestävyys"],
     study_length_estimate_months: 42
   },
-{
+  {
+    id: "luonnonsuojelija",
+    category: "ympariston-puolustaja",
+    title_fi: "Luonnonsuojelija",
+    title_en: "Nature Conservationist",
+    short_description: "Luonnonsuojelija työskentelee luonnon monimuotoisuuden ja suojelualueiden parissa. Kehittää ja toteuttaa luonnonsuojeluprojekteja.",
+    main_tasks: [
+      "Luonnonsuojeluprojektien suunnittelu",
+      "Lajiston seuranta",
+      "Suojelualueiden hoito",
+      "Ympäristökasvatus",
+      "Yhteistyö viranomaisten kanssa"
+    ],
+    impact: [
+      "Suojelee luonnon monimuotoisuutta",
+      "Ylläpitää ekosysteemejä",
+      "Edistää luonnonsuojelua"
+    ],
+    education_paths: [
+      "Yliopisto: Biologia",
+      "Yliopisto: Ympäristötiede",
+      "AMK: Ympäristöalan koulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Luonnonsuojelu",
+      "Ekologia",
+      "Lajintuntemus",
+      "Projektinhallinta",
+      "Viestintä"
+    ],
+    tools_tech: [
+      "Maastotyövälineet",
+      "GIS-järjestelmät",
+      "Määritysoppaat",
+      "Valokuvausvälineet"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3400,
+      range: [2800, 4200],
+      source: { name: "Akava", url: "https://www.akava.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Luonnonsuojelijoiden kysyntä kasvaa luonnon monimuotoisuuden suojelun tärkeyden myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Luonnonsuojelija",
+      "Ympäristöasiantuntija",
+      "Luontokartoittaja"
+    ],
+    career_progression: [
+      "Luonnonsuojelija",
+      "Senior luonnonsuojelija",
+      "Luonnonsuojelupäällikkö",
+      "Ympäristöjohtaja"
+    ],
+    typical_employers: [
+      "Ympäristöviranomaiset",
+      "Luonnonsuojelujärjestöt",
+      "Konsulttiyritykset",
+      "Kunnat"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    union_or_CBA: "Akava",
+    useful_links: [
+      { name: "Akava", url: "https://www.akava.fi/" },
+      { name: "Opintopolku - Biologia", url: "https://opintopolku.fi/" }
+    ],
+    keywords: ["luonnonsuojelu", "monimuotoisuus", "ekologia", "ympäristö", "suojelu"],
+    study_length_estimate_months: 60
+  },
+  {
     id: "metsänhoitaja",
     category: "ympariston-puolustaja",
     title_fi: "Metsänhoitaja",
@@ -12557,7 +14478,9 @@ export const careersData: CareerFI[] = [
     keywords: ["metsä", "metsätalous", "metsänhoito", "kestävyys", "ympäristö"],
     study_length_estimate_months: 60
   },
-{
+  
+  // Leader careers (5 careers)
+  {
     id: "toimitusjohtaja",
     category: "johtaja",
     title_fi: "Toimitusjohtaja",
@@ -12631,7 +14554,7 @@ export const careersData: CareerFI[] = [
     keywords: ["toimitusjohtaja", "CEO", "johtaminen", "strategia", "yritys"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "talousjohtaja",
     category: "johtaja",
     title_fi: "Talousjohtaja",
@@ -12705,7 +14628,7 @@ export const careersData: CareerFI[] = [
     keywords: ["talousjohtaja", "CFO", "talous", "johtaminen", "strategia"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "teknologiajohtaja",
     category: "johtaja",
     title_fi: "Teknologiajohtaja",
@@ -12779,7 +14702,7 @@ export const careersData: CareerFI[] = [
     keywords: ["CTO", "teknologiajohtaja", "IT", "johtaminen", "innovaatio"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "operatiivinen-johtaja",
     category: "johtaja",
     title_fi: "Operatiivinen johtaja",
@@ -12853,7 +14776,7 @@ export const careersData: CareerFI[] = [
     keywords: ["COO", "operatiivinen", "johtaminen", "prosessit", "tehokkuus"],
     study_length_estimate_months: 60
   },
-{
+  {
     id: "liiketoimintajohtaja",
     category: "johtaja",
     title_fi: "Liiketoimintajohtaja",
@@ -12927,7 +14850,9 @@ export const careersData: CareerFI[] = [
     keywords: ["liiketoimintajohtaja", "johtaminen", "strategia", "myynti", "kasvu"],
     study_length_estimate_months: 60
   },
-{
+  
+  // Builder careers (2 careers)
+  {
     id: "kirvesmies",
     category: "rakentaja",
     title_fi: "Kirvesmies",
@@ -13001,7 +14926,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kirvesmies", "rakentaminen", "puutyö", "talonrakennus", "korjaus"],
     study_length_estimate_months: 36
   },
-{
+  {
     id: "maanrakennuskoneen-kuljettaja",
     category: "rakentaja",
     title_fi: "Maanrakennuskoneen kuljettaja",
@@ -13075,7 +15000,9 @@ export const careersData: CareerFI[] = [
     keywords: ["kaivukone", "maanrakennus", "koneen kuljettaja", "rakentaminen", "infrastruktuuri"],
     study_length_estimate_months: 36
   },
-{
+  
+  // Organizer careers (2 careers)
+  {
     id: "tapahtumajärjestäjä",
     category: "jarjestaja",
     title_fi: "Tapahtumajärjestäjä",
@@ -13149,7 +15076,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tapahtuma", "järjestäminen", "tapahtumajärjestäjä", "projektit", "koordinointi"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "tilauspalvelukoordinaattori",
     category: "jarjestaja",
     title_fi: "Tilauspalvelukoordinaattori",

@@ -4,8 +4,48 @@ import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Search, Filter, X, ChevronDown, ChevronUp } from 'lucide-react';
-import { careersData, filterOptions } from '@/data/careers-catalog';
-import { Career, CareerFilters } from '@/lib/types';
+import { careersData as careersFI } from '@/data/careers-fi';
+import { Career, CareerFI, CareerFilters } from '@/lib/types';
+
+// Convert CareerFI to Career format
+function convertCareerFIToCareer(careerFI: any): Career {
+  return {
+    slug: careerFI.id,
+    title: careerFI.title_fi,
+    summary: careerFI.short_description,
+    longDescription: careerFI.main_tasks?.join(' • ') || careerFI.short_description,
+    salaryMin: careerFI.salary_eur_month?.range?.[0] || 2500,
+    salaryMax: careerFI.salary_eur_month?.range?.[1] || 4000,
+    outlook: careerFI.job_outlook?.status === "kasvaa" ? "Kasvaa" : "Vakaa",
+    educationLevel: careerFI.education_paths || [],
+    industry: [careerFI.category],
+    personalityType: [careerFI.category],
+    workMode: careerFI.work_conditions?.remote === "Kyllä" ? "Etä" : 
+              careerFI.work_conditions?.remote === "Osittain" ? "Hybrid" : "Paikan päällä",
+    skillsHard: careerFI.tools_tech || [],
+    skillsSoft: careerFI.core_skills || [],
+    dailyTasks: careerFI.main_tasks || [],
+    opintopolkuLinks: (careerFI.useful_links || []).map((link: any) => ({
+      label: link.name,
+      url: link.url
+    })),
+    relatedSlugs: []
+  };
+}
+
+// Debug: Check for undefined entries
+const validCareers = careersFI.filter(c => c && c.id);
+console.log(`CareersFI: Total=${careersFI.length}, Valid=${validCareers.length}, Invalid=${careersFI.length - validCareers.length}`);
+
+const careersData = validCareers.map(convertCareerFIToCareer);
+
+const filterOptions = {
+  industry: Array.from(new Set(careersData.flatMap(c => c.industry))),
+  educationLevel: Array.from(new Set(careersData.flatMap(c => c.educationLevel))),
+  personalityType: Array.from(new Set(careersData.flatMap(c => c.personalityType))),
+  workMode: Array.from(new Set(careersData.map(c => c.workMode))),
+  outlook: Array.from(new Set(careersData.map(c => c.outlook)))
+};
 import Logo from '@/components/Logo';
 
 export default function CareerCatalog() {
@@ -149,7 +189,7 @@ export default function CareerCatalog() {
             Urakirjasto
           </h1>
           <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-            Selaa 80 erilaista ammattia eri aloilta ja löydä se ura, joka tuntuu aidosti omalta.
+            Selaa 200 erilaista ammattia eri aloilta ja löydä se ura, joka tuntuu aidosti omalta.
             Suodata tuloksia kiinnostuksen, koulutustason tai työskentelytavan mukaan.
           </p>
           
