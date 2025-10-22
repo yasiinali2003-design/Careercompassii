@@ -379,16 +379,18 @@ export default function CareerCard({ career }: CareerCardProps) {
             </div>
 
             {/* Keywords */}
-            <div>
-              <h4 className="font-semibold mb-2">Avainsanat</h4>
-              <div className="flex flex-wrap gap-1">
-                {career.keywords.map((keyword, index) => (
-                  <span key={index} className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-full">
-                    {keyword}
-                  </span>
-                ))}
+            {career.keywords && career.keywords.length > 0 && (
+              <div>
+                <h4 className="font-semibold mb-2">Avainsanat</h4>
+                <div className="flex flex-wrap gap-1">
+                  {career.keywords.map((keyword, index) => (
+                    <span key={index} className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-full">
+                      {keyword}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         )}
       </CardContent>

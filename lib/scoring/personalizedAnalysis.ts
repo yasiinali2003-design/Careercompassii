@@ -320,7 +320,7 @@ export function generatePersonalizedAnalysis(
   }
   
   // 3. STRENGTHS & SUBDIMENSIONS (300-400 chars) - Deep dive into what makes them unique
-  if (topStrengths && topStrengths.length > 0) {
+  if (topStrengths && topStrengths.length > 0 && detailedScores) {
     const strengthsText = topStrengths.slice(0, 2).join(' ja ');
     
     // Get top subdimensions for quality description

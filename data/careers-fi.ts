@@ -37,7 +37,7 @@ export interface CareerFI {
   work_conditions: { remote: "Kyllä" | "Osittain" | "Ei"; shift_work: boolean; travel: "vähän" | "kohtalaisesti" | "paljon" };
   union_or_CBA: string | null;
   useful_links: { name: string; url: string }[];
-  keywords: string[];
+  keywords?: string[];
   study_length_estimate_months?: number; // for sorting
 }
 
