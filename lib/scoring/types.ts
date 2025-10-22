@@ -80,7 +80,7 @@ export interface DetailedDimensionScores {
 export interface UserProfile {
   cohort: Cohort;
   dimensionScores: DimensionScores;
-  detailedScores: DetailedDimensionScores;
+  detailedScores?: DetailedDimensionScores;
   topStrengths: string[];           // Top 3 strongest areas
   profileType?: string;              // e.g., "Tech-savvy Innovator"
   summary?: string;                  // Brief personality summary
