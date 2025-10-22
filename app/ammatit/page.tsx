@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Search, Filter, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { careersData as careersFI } from '@/data/careers-fi';
-import { Career, CareerFI, CareerFilters } from '@/lib/types';
+import { Career, CareerFilters } from '@/lib/types';
+import { CareerFI } from '@/data/careers-fi';
 
 // Convert CareerFI to Career format
 function convertCareerFIToCareer(careerFI: any): Career {
