@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import { careersData as careersFI } from '@/data/careers-fi';
-import { Career, CareerFI } from '@/lib/types';
+import { careersData as careersFI, CareerFI } from '@/data/careers-fi';
+import { Career } from '@/lib/types';
 
 // Convert CareerFI to Career format
 function convertCareerFIToCareer(careerFI: any): Career {
