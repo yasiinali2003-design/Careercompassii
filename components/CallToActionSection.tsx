@@ -72,7 +72,7 @@ export default function CallToActionSection() {
                 className="text-xs sm:text-sm text-white/80 mt-4"
                 style={{ textShadow: "0 2px 6px rgba(0,0,0,0.2)" }}
               >
-                30 kysymystä • 100% maksuton • Tekoäly-powered
+                30 kysymystä • Maksuton • Tekoäly-powered
               </p>
             </CardContent>
           </Card>

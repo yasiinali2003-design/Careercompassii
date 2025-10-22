@@ -106,7 +106,7 @@ export default function HomePage() {
             <span>•</span>
             <span className="flex items-center gap-1">
               <Heart className="h-3 w-3 sm:h-4 sm:w-4 text-secondary" />
-              100% maksuton
+              Maksuton
             </span>
             <span>•</span>
             <span className="flex items-center gap-1">
