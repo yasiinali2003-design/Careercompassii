@@ -516,18 +516,32 @@ const Summary = ({
     setError(null);
     
     try {
-      const response = await fetch("/api/analyze", {
+      // Format answers for new scoring API
+      const formattedAnswers = answers.map((score, index) => ({
+        questionIndex: index,
+        score: score || 3 // Use 3 (neutral) for unanswered questions
+      }));
+
+      // Call new scoring API
+      const response = await fetch("/api/score", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          cohort: group, // YLA, TASO2, or NUORI
+          answers: formattedAnswers
+        }),
       });
       
       const data = await response.json();
       
       if (data.success) {
-        setAnalysis(data.analysis);
+        // Save results to localStorage for results page
+        localStorage.setItem('careerTestResults', JSON.stringify(data));
+        
+        // Navigate to results page
+        window.location.href = '/test/results';
       } else {
-        setError(data.message || "Analyysi epäonnistui");
+        setError(data.error || "Analyysi epäonnistui");
       }
     } catch (e) {
       console.error(e);
