@@ -67,6 +67,13 @@ export default function CareerCatalog() {
   const [filters, setFilters] = useState<CareerFilters>(initialFilters);
   const [showFilters, setShowFilters] = useState(false);
   const [visibleCareers, setVisibleCareers] = useState(12);
+  const [hasTestResults, setHasTestResults] = useState(false);
+
+  // Check if user has test results saved
+  useEffect(() => {
+    const results = localStorage.getItem('careerTestResults');
+    setHasTestResults(!!results);
+  }, []);
 
   // Filter careers based on search and filters
   const filteredCareers = useMemo(() => {
@@ -173,6 +180,14 @@ export default function CareerCatalog() {
             <Logo className="h-10 w-auto" />
           </Link>
           <div className="flex items-center gap-4">
+            {hasTestResults && (
+              <Link
+                href="/test/results"
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm"
+              >
+                📊 Katso tulokseni
+              </Link>
+            )}
             <Link
               href="/"
               className="text-sm text-slate-600 hover:text-slate-800 transition-colors"
