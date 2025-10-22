@@ -247,15 +247,42 @@ export default function ResultsPage() {
 
                 {/* Secondary Path (if exists) */}
                 {results.educationPath.secondary && (
-                  <div className="mt-4 pt-4 border-t border-gray-200">
-                    <h4 className="font-semibold text-gray-700 mb-2">Vaihtoehtoisesti harkitse:</h4>
-                    <div className="flex items-center justify-between">
-                      <span className="text-lg font-medium text-gray-800">
-                        {getEducationPathTitle(results.educationPath.secondary)}
-                      </span>
-                      <span className="text-lg font-semibold text-gray-600">
-                        {Math.round(results.educationPath.scores[results.educationPath.secondary])}%
-                      </span>
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <h4 className="font-semibold text-gray-800 mb-4 text-lg">Vaihtoehtoisesti harkitse:</h4>
+                    
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-3">
+                        <h5 className="text-xl font-bold text-gray-900">
+                          {getEducationPathTitle(results.educationPath.secondary)}
+                        </h5>
+                        <div className="text-right">
+                          <span className="text-2xl font-bold text-gray-600">
+                            {Math.round(results.educationPath.scores[results.educationPath.secondary])}%
+                          </span>
+                          <div className="text-xs text-gray-500">sopivuus</div>
+                        </div>
+                      </div>
+
+                      {/* Secondary Path Description */}
+                      <div className="bg-white rounded-lg p-4 mb-3">
+                        <p className="text-gray-700 mb-4">{getEducationPathDescription(results.educationPath.secondary).description}</p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                          <div>
+                            <span className="font-semibold text-gray-700">Kesto:</span>
+                            <span className="ml-2 text-gray-600">{getEducationPathDescription(results.educationPath.secondary).duration}</span>
+                          </div>
+                          <div>
+                            <span className="font-semibold text-gray-700">Jatko-opinnot:</span>
+                            <div className="ml-2 text-gray-600">
+                              {getEducationPathDescription(results.educationPath.secondary).nextSteps.slice(0, 2).join(', ')}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p className="text-sm text-gray-600 italic">
+                        Tämä polku sopii myös sinulle. Kannattaa tutustua molempiin vaihtoehtoihin ennen päätöksen tekemistä.
+                      </p>
                     </div>
                   </div>
                 )}
