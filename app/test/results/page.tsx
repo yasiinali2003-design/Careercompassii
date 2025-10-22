@@ -3,6 +3,8 @@
 /**
  * CAREER TEST RESULTS PAGE
  * Displays personalized career recommendations after test completion
+ * YLA: Education path recommendation + career preview
+ * TASO2/NUORI: Career recommendations (existing)
  */
 
 import { useEffect, useState } from 'react';
@@ -37,6 +39,18 @@ interface CareerMatch {
   outlook?: string;
 }
 
+interface EducationPathResult {
+  primary: 'lukio' | 'ammattikoulu' | 'kansanopisto';
+  secondary?: 'lukio' | 'ammattikoulu' | 'kansanopisto';
+  scores: {
+    lukio: number;
+    ammattikoulu: number;
+    kansanopisto: number;
+  };
+  reasoning: string;
+  confidence: 'high' | 'medium' | 'low';
+}
+
 interface UserProfile {
   cohort: string;
   dimensionScores: DimensionScores;
@@ -49,6 +63,7 @@ interface ResultsData {
   cohort: string;
   userProfile: UserProfile;
   topCareers: CareerMatch[];
+  educationPath?: EducationPathResult;  // Only for YLA
   cohortCopy: {
     title: string;
     subtitle: string;
@@ -176,14 +191,92 @@ export default function ResultsPage() {
           </CardContent>
         </Card>
 
+        {/* Education Path Recommendation (YLA only) */}
+        {userProfile.cohort === 'YLA' && results.educationPath && (
+          <Card className="mb-8 border-2 border-green-200 bg-gradient-to-r from-green-50 to-blue-50">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-2xl">
+                📚 Sinun koulutuspolkusi
+              </CardTitle>
+              <CardDescription>
+                Vastaustesi perusteella sopiva jatko-opintovalinta
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {/* Primary Path */}
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    {getEducationPathTitle(results.educationPath.primary)}
+                  </h3>
+                  <div className="flex flex-col items-end">
+                    <span className="text-3xl font-bold text-green-600">
+                      {Math.round(results.educationPath.scores[results.educationPath.primary])}%
+                    </span>
+                    <span className="text-xs text-gray-500">sopivuus</span>
+                  </div>
+                </div>
+
+                {/* Confidence Badge */}
+                <div className="mb-4">
+                  {getEducationPathConfidenceBadge(results.educationPath.confidence)}
+                </div>
+
+                {/* Path Description */}
+                <div className="bg-white rounded-lg p-4 mb-4">
+                  <p className="text-gray-700 mb-4">{getEducationPathDescription(results.educationPath.primary).description}</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <span className="font-semibold text-gray-700">Kesto:</span>
+                      <span className="ml-2 text-gray-600">{getEducationPathDescription(results.educationPath.primary).duration}</span>
+                    </div>
+                    <div>
+                      <span className="font-semibold text-gray-700">Jatko-opinnot:</span>
+                      <div className="ml-2 text-sm text-gray-600">
+                        {getEducationPathDescription(results.educationPath.primary).nextSteps.slice(0, 2).join(', ')}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Reasoning */}
+                <div className="bg-blue-50 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-700 mb-2">Miksi tämä sopii sinulle:</h4>
+                  <p className="text-gray-700 leading-relaxed">{results.educationPath.reasoning}</p>
+                </div>
+
+                {/* Secondary Path (if exists) */}
+                {results.educationPath.secondary && (
+                  <div className="mt-4 pt-4 border-t border-gray-200">
+                    <h4 className="font-semibold text-gray-700 mb-2">Vaihtoehtoisesti harkitse:</h4>
+                    <div className="flex items-center justify-between">
+                      <span className="text-lg font-medium text-gray-800">
+                        {getEducationPathTitle(results.educationPath.secondary)}
+                      </span>
+                      <span className="text-lg font-semibold text-gray-600">
+                        {Math.round(results.educationPath.scores[results.educationPath.secondary])}%
+                      </span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Career Matches */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Ammattiehdotukset vastaustesi perusteella
+            {userProfile.cohort === 'YLA' ? 'Ammatteja tulevaisuudessa (esimerkkejä)' : 'Ammattiehdotukset vastaustesi perusteella'}
           </h2>
+          {userProfile.cohort === 'YLA' && (
+            <p className="text-gray-600 mb-6">
+              Näitä ammatteja voit harkita {getEducationPathTitle(results.educationPath?.primary || 'lukio').toLowerCase()}n jälkeen:
+            </p>
+          )}
           
           <div className="space-y-4">
-            {topCareers.map((career, index) => (
+            {topCareers.slice(0, userProfile.cohort === 'YLA' ? 3 : 5).map((career, index) => (
               <CareerMatchCard
                 key={career.slug}
                 career={career}
@@ -344,6 +437,60 @@ function CareerMatchCard({
         </Link>
       </CardFooter>
     </Card>
+  );
+}
+
+// ========== EDUCATION PATH HELPERS ==========
+
+function getEducationPathTitle(path: 'lukio' | 'ammattikoulu' | 'kansanopisto'): string {
+  const titles = {
+    lukio: 'Lukio',
+    ammattikoulu: 'Ammattikoulu',
+    kansanopisto: 'Kansanopisto'
+  };
+  return titles[path];
+}
+
+function getEducationPathDescription(path: 'lukio' | 'ammattikoulu' | 'kansanopisto'): {
+  description: string;
+  duration: string;
+  nextSteps: string[];
+} {
+  const descriptions = {
+    lukio: {
+      description: 'Yleissivistävä koulutus, joka antaa valmiudet jatkaa opiskelua yliopistossa tai ammattikorkeakoulussa. Opiskelet laajasti eri aineita ja kehität opiskelutaitojasi.',
+      duration: '3 vuotta',
+      nextSteps: ['Yliopisto-opinnot', 'Ammattikorkeakouluopinnot', 'Ammatillinen koulutus']
+    },
+    ammattikoulu: {
+      description: 'Ammatillinen koulutus, jossa opit tietyn ammatin taidot käytännössä. Saat työelämävalmiudet ja voit aloittaa työt heti valmistuttuasi.',
+      duration: '3 vuotta',
+      nextSteps: ['Työelämä (välittömästi)', 'Ammattikorkeakouluopinnot (myöhemmin)', 'Erikoistumiskoulutukset']
+    },
+    kansanopisto: {
+      description: 'Vapaan sivistystyön oppilaitoksissa voit tutustua eri aloihin, kasvaa ihmisenä ja selkiyttää tulevaisuuden suunnitelmiasi. Hyvä välivuoden vaihtoehto.',
+      duration: '1 vuosi (yleensä)',
+      nextSteps: ['Lukio', 'Ammattikoulu', 'Työelämä', 'Lisää kansanopisto-opintoja']
+    }
+  };
+  return descriptions[path];
+}
+
+function getEducationPathConfidenceBadge(confidence: 'high' | 'medium' | 'low') {
+  const styles = {
+    high: 'bg-green-100 text-green-800',
+    medium: 'bg-yellow-100 text-yellow-800',
+    low: 'bg-gray-100 text-gray-800'
+  };
+  const labels = {
+    high: 'Vahva suositus',
+    medium: 'Hyvä vaihtoehto',
+    low: 'Mahdollinen vaihtoehto'
+  };
+  return (
+    <span className={`px-3 py-1 rounded-full text-xs font-medium ${styles[confidence]}`}>
+      {labels[confidence]}
+    </span>
   );
 }
 

@@ -7,6 +7,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { rankCareers, generateUserProfile } from '@/lib/scoring/scoringEngine';
 import { Cohort, TestAnswer } from '@/lib/scoring/types';
 import { COHORT_COPY } from '@/lib/scoring/cohortConfig';
+import { calculateEducationPath } from '@/lib/scoring/educationPath';
 
 // ========== REQUEST VALIDATION ==========
 
@@ -79,11 +80,17 @@ export async function POST(request: NextRequest) {
     
     console.log(`[API] Top career: ${topCareers[0]?.title} (${topCareers[0]?.overallScore}%)`);
     
+    // Calculate education path (YLA only)
+    const educationPath = cohort === 'YLA' ? calculateEducationPath(answers, cohort) : null;
+    if (educationPath) {
+      console.log(`[API] Education path: ${educationPath.primary} (${Math.round(educationPath.scores[educationPath.primary])}%)`);
+    }
+    
     // Get cohort-specific copy
     const cohortCopy = COHORT_COPY[cohort];
     
-    // Return results
-    return NextResponse.json({
+    // Build response
+    const response: any = {
       success: true,
       cohort,
       userProfile: {
@@ -113,7 +120,15 @@ export async function POST(request: NextRequest) {
         timestamp: new Date().toISOString(),
         answersCount: answers.length
       }
-    });
+    };
+    
+    // Add education path for YLA
+    if (educationPath) {
+      response.educationPath = educationPath;
+    }
+    
+    // Return results
+    return NextResponse.json(response);
     
   } catch (error) {
     console.error('[API] Error in scoring endpoint:', error);
