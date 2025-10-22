@@ -41,6 +41,7 @@ interface UserProfile {
   cohort: string;
   dimensionScores: DimensionScores;
   topStrengths: string[];
+  personalizedAnalysis?: string;
 }
 
 interface ResultsData {
