@@ -20,13 +20,16 @@ export type SubDimension =
   // Workstyle sub-dimensions
   | 'teamwork' | 'independence' | 'leadership' | 'organization'
   | 'planning' | 'problem_solving' | 'precision' | 'performance'
-  | 'teaching' | 'motivation'
+  | 'teaching' | 'motivation' | 'autonomy' | 'social' | 'structure'
+  | 'flexibility' | 'variety'
   
-  // Values sub-dimensions (limited by current questions)
-  | 'growth' | 'impact' | 'global'
+  // Values sub-dimensions
+  | 'growth' | 'impact' | 'global' | 'career_clarity' | 'financial'
+  | 'entrepreneurship' | 'social_impact' | 'stability' | 'advancement'
+  | 'work_life_balance' | 'company_size'
   
-  // Context sub-dimensions (limited by current questions)
-  | 'outdoor' | 'international';
+  // Context sub-dimensions
+  | 'outdoor' | 'international' | 'work_environment';
 
 // ========== QUESTION MAPPING TYPES ==========
 
