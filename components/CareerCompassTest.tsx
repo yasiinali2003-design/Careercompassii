@@ -38,8 +38,8 @@ const QUESTIONS = {
     // Section 4: Work Style (Q24-30)
     "Pidätkö työskentelystä ryhmässä muiden kanssa?",
     "Tykkäätkö tehdä asioita yksin ja itsenäisesti?",
-    "Haluaisitko työskennellä sisällä rakennuksessa vai ulkona?",
-    "Pidätkö säännöllisestä päivärytmistä vai vaihtelevista päivistä?",
+    "Haluaisitko työskennellä ulkona luonnon keskellä?",
+    "Pidätkö säännöllisestä päivärytmistä ja toistuvista rutiineista?",
     "Kiinnostaako sinua matkustaminen ja eri maiden näkeminen?",
     "Haluaisitko työssä tavata paljon uusia ihmisiä joka päivä?",
     "Onko sinulle tärkeää, että voit tehdä töitä kotona tietokoneen ääressä?"
