@@ -492,7 +492,7 @@ function FeedbackSection() {
       // Get result ID from localStorage
       const resultId = localStorage.getItem('lastTestResultId');
       
-      if (resultId) {
+      if (resultId && supabase) {
         // Save to Supabase
         const { error } = await supabase
           .from('test_results')
@@ -508,6 +508,8 @@ function FeedbackSection() {
         } else {
           console.log('Feedback saved to Supabase for result ID:', resultId);
         }
+      } else if (!supabase) {
+        console.warn('Supabase not configured, feedback saved only to localStorage');
       } else {
         console.warn('No result ID found, feedback not saved to database');
       }
