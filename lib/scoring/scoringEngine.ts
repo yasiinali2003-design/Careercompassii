@@ -295,21 +295,154 @@ function generateInterestReason(subdimension: SubDimension, cohort: Cohort): str
       "Kirjoittaminen on keskeinen taito tässä työssä.",
       "Voit ilmaista itseäsi tekstin kautta."
     ],
-    growth: [],
-    impact: [],
-    global: [],
-    outdoor: [],
-    international: [],
-    teamwork: [],
-    independence: [],
-    leadership: [],
-    organization: [],
-    planning: [],
-    problem_solving: [],
-    precision: [],
-    performance: [],
-    teaching: [],
-    motivation: []
+    // Workstyle subdimensions
+    teamwork: [
+      "Pääset työskentelemään tiimissä ja tekemään yhteistyötä.",
+      "Tiimityö ja yhteistyötaidot ovat tärkeitä tässä ammatissa.",
+      "Voit hyödyntää vahvoja tiimityötaitojasi."
+    ],
+    independence: [
+      "Voit työskennellä itsenäisesti ja tehdä omia päätöksiä.",
+      "Itsenäinen työskentely sopii sinulle erinomaisesti.",
+      "Saat vapautta organisoida työsi haluamallasi tavalla."
+    ],
+    leadership: [
+      "Pääset johtamaan ja ohjaamaan muita.",
+      "Johtamiskykysi tulevat hyötykäyttöön tässä urassa.",
+      "Voit vaikuttaa ja ohjata tiimejä."
+    ],
+    organization: [
+      "Organisointitaitosi ovat tärkeitä tässä työssä.",
+      "Pääset hyödyntämään vahvaa organisointikykyäsi.",
+      "Järjestelmällisyys on keskeinen vahvuus tässä ammatissa."
+    ],
+    planning: [
+      "Suunnittelutaitosi tulevat hyötykäyttöön päivittäin.",
+      "Pääset suunnittelemaan ja organisoimaan työtä.",
+      "Strateginen suunnittelu on olennainen osa tätä uraa."
+    ],
+    problem_solving: [
+      "Pääset ratkaisemaan haasteellisia ongelmia.",
+      "Ongelmanratkaisutaitosi ovat keskeisiä tässä työssä.",
+      "Voit käyttää luovuutta ongelmien ratkaisemiseen."
+    ],
+    precision: [
+      "Tarkkuus ja huolellisuus ovat tärkeitä tässä ammatissa.",
+      "Pääset hyödyntämään tarkkaa työskentelytapaasi.",
+      "Laatu ja tarkkuus ovat keskeisiä tässä urassa."
+    ],
+    performance: [
+      "Pääset näyttämään osaamistasi ja suoriutumistasi.",
+      "Vahva suorituskyky on arvostettua tässä työssä.",
+      "Voit kehittyä ja menestyä suorituksen kautta."
+    ],
+    teaching: [
+      "Pääset opettamaan ja kouluttamaan muita.",
+      "Opetustaito on keskeinen osa tätä ammattia.",
+      "Voit jakaa osaamistasi ja tukea muiden oppimista."
+    ],
+    motivation: [
+      "Pääset motivoimaan ja innostamaan muita.",
+      "Motivointikykysi on tärkeä vahvuus tässä työssä.",
+      "Voit kannustaa ja tukea muita tavoitteiden saavuttamisessa."
+    ],
+    autonomy: [
+      "Saat paljon autonomiaa ja vapautta työssäsi.",
+      "Itsenäinen päätöksenteko on osa tätä uraa.",
+      "Voit vaikuttaa omaan työtapaasi ja aikatauluihisi."
+    ],
+    social: [
+      "Pääset olemaan sosiaalisessa ympäristössä.",
+      "Sosiaalinen vuorovaikutus on keskeinen osa työtä.",
+      "Voit hyödyntää vahvoja sosiaalisia taitojasi."
+    ],
+    structure: [
+      "Työssä on selkeä rakenne ja rutiinit.",
+      "Strukturoitu työskentely sopii sinulle hyvin.",
+      "Selkeät prosessit ja säännöt ohjaavat työtä."
+    ],
+    flexibility: [
+      "Työ tarjoaa joustavuutta ja vaihtelua.",
+      "Voit työskennellä joustavasti ja mukauttaa työtapojasi.",
+      "Muuttuva ja joustava työympäristö sopii sinulle."
+    ],
+    variety: [
+      "Työssä on vaihtelua ja monipuolisuutta.",
+      "Jokainen päivä on erilainen ja tarjoaa uusia haasteita.",
+      "Monipuolinen työtehtävien kirjo pitää työn mielenkiintoisena."
+    ],
+    // Values subdimensions
+    growth: [
+      "Tämä ura tarjoaa jatkuvaa oppimista ja kehittymistä.",
+      "Pääset kasvamaan ja kehittymään ammatillisesti.",
+      "Urapolku mahdollistaa vahvan henkilökohtaisen kasvun."
+    ],
+    impact: [
+      "Voit tehdä merkityksellistä työtä, jolla on todellista vaikutusta.",
+      "Työsi vaikuttaa positiivisesti yhteiskuntaan.",
+      "Pääset tekemään työtä, jolla on merkitystä."
+    ],
+    global: [
+      "Pääset työskentelemään kansainvälisessä ympäristössä.",
+      "Globaali näkökulma on osa tätä uraa.",
+      "Voit vaikuttaa maailmanlaajuisesti."
+    ],
+    career_clarity: [
+      "Tämä ura tarjoaa selkeän urapolun ja kehitysmahdollisuudet.",
+      "Etenemismahdollisuudet ovat hyvin määriteltyjä.",
+      "Voit edetä urallasi johdonmukaisesti."
+    ],
+    financial: [
+      "Ura tarjoaa hyvät ansaintamahdollisuudet.",
+      "Taloudellinen palkitsevuus on osa tätä uraa.",
+      "Voit saavuttaa hyvän taloudellisen aseman."
+    ],
+    entrepreneurship: [
+      "Voit hyödyntää yrittäjämäistä ajatteluasi.",
+      "Yrittäjyys ja omaaloitteisuus ovat arvostettuja.",
+      "Pääset kehittämään omia projektejasi ja ideoitasi."
+    ],
+    social_impact: [
+      "Voit tehdä työtä, jolla on positiivinen sosiaalinen vaikutus.",
+      "Yhteiskunnallinen vaikuttaminen on osa tätä uraa.",
+      "Pääset auttamaan ja tukemaan yhteisöä."
+    ],
+    stability: [
+      "Ura tarjoaa vakautta ja turvallisuutta.",
+      "Työllisyystilanne on vakaa tällä alalla.",
+      "Voit rakentaa pitkäjänteistä uraa."
+    ],
+    advancement: [
+      "Etenemismahdollisuudet ovat erinomaiset.",
+      "Voit edetä nopeasti urallasi.",
+      "Ura tarjoaa jatkuvaa kehittymistä."
+    ],
+    work_life_balance: [
+      "Työssä on hyvä tasapaino työn ja vapaa-ajan välillä.",
+      "Voit yhdistää työn ja henkilökohtaisen elämän.",
+      "Työajat ovat joustavat ja tasapainoiset."
+    ],
+    company_size: [
+      "Voit valita itsellesi sopivan kokoisen työpaikan.",
+      "Työllistymismahdollisuuksia on erikokoisissa yrityksissä.",
+      "Pääset työskentelemään haluamassasi ympäristössä."
+    ],
+    // Context subdimensions
+    outdoor: [
+      "Pääset työskentelemään ulkona ja luonnossa.",
+      "Ulkotyö tarjoaa terveellistä ja vaihtelevaa ympäristöä.",
+      "Voit yhdistää työn ja ulkoilun."
+    ],
+    international: [
+      "Pääset työskentelemään kansainvälisessä ympäristössä.",
+      "Voit matkustaa ja työskennellä eri maissa.",
+      "Kansainväliset kontaktit ovat osa työtä."
+    ],
+    work_environment: [
+      "Työympäristö on miellyttävä ja sopii sinulle.",
+      "Pääset työskentelemään inspiroivassa ympäristössä.",
+      "Työskentelyolosuhteet ovat erinomaiset."
+    ]
   };
   
   const options = templates[subdimension] || [];
