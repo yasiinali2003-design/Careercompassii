@@ -213,7 +213,7 @@ export default function ResultsPage() {
                     <span className="text-3xl font-bold text-green-600">
                       {Math.round(results.educationPath.scores[results.educationPath.primary])}%
                     </span>
-                    <span className="text-xs text-gray-500">sopivuus</span>
+                    <span className="text-xs text-gray-500">(vastaustesi perusteella)</span>
                   </div>
                 </div>
 
@@ -259,7 +259,7 @@ export default function ResultsPage() {
                           <span className="text-2xl font-bold text-gray-600">
                             {Math.round(results.educationPath.scores[results.educationPath.secondary])}%
                           </span>
-                          <div className="text-xs text-gray-500">sopivuus</div>
+                          <div className="text-xs text-gray-500">(vastaustesi perusteella)</div>
                         </div>
                       </div>
 
@@ -543,8 +543,8 @@ function FeedbackSection() {
   return (
     <Card className="mt-12 border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-purple-50">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-2xl">
-          💬 Kerro meille mielipiteesi
+        <CardTitle className="text-2xl">
+          Kerro meille mielipiteesi
         </CardTitle>
         <CardDescription>
           Palautteesi auttaa meitä kehittämään testiä
