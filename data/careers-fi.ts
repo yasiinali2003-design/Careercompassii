@@ -111,7 +111,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Media-alan TES",
     useful_links: [
       { name: "Grafia", url: "https://www.grafia.fi/" },
-      { name: "Opintopolku - Graafinen suunnittelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Graafinen suunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Graafinen%20suunnittelija" }
     ],
     keywords: ["graafinen suunnittelu", "brändi", "mainonta", "visuaalinen viestintä", "Adobe"],
     study_length_estimate_months: 42
@@ -182,7 +182,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Sisällöntuottajien yhdistys", url: "https://www.sisallontuottajat.fi/" },
-      { name: "Opintopolku - Media", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Sisällöntuottaja", url: "https://opintopolku.fi/konfo/fi/haku/Sis%C3%A4ll%C3%B6ntuottaja" }
     ],
     keywords: ["sisällöntuottaminen", "sosiaalinen media", "blogi", "video", "markkinointi"],
     study_length_estimate_months: 36,
@@ -259,7 +259,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Muusikkojen liitto",
     useful_links: [
       { name: "Muusikkojen liitto", url: "https://www.muusikkojenliitto.fi/" },
-      { name: "Opintopolku - Musiikki", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Muusikko", url: "https://opintopolku.fi/konfo/fi/haku/Muusikko" }
     ],
     keywords: ["musiikki", "esiintyminen", "säveltäminen", "opettaminen", "studio"],
     study_length_estimate_months: 48,
@@ -335,7 +335,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Media-alan TES",
     useful_links: [
       { name: "Elokuvatuottajien keskusliitto", url: "https://www.sek.fi/" },
-      { name: "Opintopolku - Media", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Kameramies", url: "https://opintopolku.fi/konfo/fi/haku/Kameramies" }
     ],
     keywords: ["kamera", "kuvaus", "elokuva", "TV", "valaistus"],
     study_length_estimate_months: 36,
@@ -412,7 +412,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Kirjailijaliitto",
     useful_links: [
       { name: "Kirjailijaliitto", url: "https://www.kirjailijaliitto.fi/" },
-      { name: "Opintopolku - Kirjallisuus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Kirjailija", url: "https://opintopolku.fi/konfo/fi/haku/Kirjailija" }
     ],
     keywords: ["kirjoittaminen", "kirjallisuus", "romaani", "artikkeli", "käsikirjoitus"],
     study_length_estimate_months: 48,
@@ -488,7 +488,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "UX Finland", url: "https://www.uxfinland.fi/" },
-      { name: "Opintopolku - Muotoilu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tuotemuotoilija", url: "https://opintopolku.fi/konfo/fi/haku/Tuotemuotoilija" }
     ],
     keywords: ["UX", "UI", "käyttöliittymä", "sovellus", "digitaalinen suunnittelu"],
     study_length_estimate_months: 42,
@@ -564,7 +564,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Media-alan TES",
     useful_links: [
       { name: "Animaatioinstituutti", url: "https://www.animaatioinstituutti.fi/" },
-      { name: "Opintopolku - Animaatio", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Animaattori", url: "https://opintopolku.fi/konfo/fi/haku/Animaattori" }
     ],
     keywords: ["animaatio", "3D", "elokuva", "pelit", "digitaalinen taide"],
     study_length_estimate_months: 42,
@@ -640,7 +640,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teatterin TES",
     useful_links: [
       { name: "Teatterin tiedotuskeskus", url: "https://www.tinfo.fi/" },
-      { name: "Opintopolku - Teatteri", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Teatteriohjaaja", url: "https://opintopolku.fi/konfo/fi/haku/Teatteriohjaaja" }
     ],
     keywords: ["teatteri", "ohjaus", "näytelmä", "esitys", "taide"],
     study_length_estimate_months: 60,
@@ -716,7 +716,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Media-alan TES",
     useful_links: [
       { name: "Suomen valokuvataiteen museo", url: "https://www.valokuvataiteenmuseo.fi/" },
-      { name: "Opintopolku - Valokuvaus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Valokuvaaja", url: "https://opintopolku.fi/konfo/fi/haku/Valokuvaaja" }
     ],
     keywords: ["valokuvaus", "kamera", "kuvankäsittely", "taide", "mainoskuvaus"],
     study_length_estimate_months: 36,
@@ -792,7 +792,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teatterin TES",
     useful_links: [
       { name: "Teatterin tiedotuskeskus", url: "https://www.tinfo.fi/" },
-      { name: "Opintopolku - Pukusuunnittelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Pukusuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Pukusuunnittelija" }
     ],
     keywords: ["pukusuunnittelu", "teatteri", "elokuva", "muoti", "historia"],
     study_length_estimate_months: 48,
@@ -868,7 +868,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Rakennusalan TES",
     useful_links: [
       { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
-      { name: "Opintopolku - Rakennusala", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Rakennusmestari", url: "https://opintopolku.fi/konfo/fi/haku/Rakennusmestari" }
     ],
     keywords: ["rakennus", "johtaminen", "työmaa", "turvallisuus", "projektinhallinta"],
     study_length_estimate_months: 36,
@@ -944,7 +944,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Sähköalan TES",
     useful_links: [
       { name: "Sähköliitto", url: "https://www.sahkoliitto.fi/" },
-      { name: "Opintopolku - Sähköala", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Sähköasentaja", url: "https://opintopolku.fi/konfo/fi/haku/S%C3%A4hk%C3%B6asentaja" }
     ],
     keywords: ["sähkö", "asennus", "korjaus", "turvallisuus", "uusiutuva energia"],
     study_length_estimate_months: 36,
@@ -1020,7 +1020,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "LVI-alan TES",
     useful_links: [
       { name: "LVI-liitto", url: "https://www.lviliitto.fi/" },
-      { name: "Opintopolku - LVI-ala", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Putkiasentaja", url: "https://opintopolku.fi/konfo/fi/haku/Putkiasentaja" }
     ],
     keywords: ["putki", "LVI", "lämmitys", "vesijohto", "huolto"],
     study_length_estimate_months: 36,
@@ -1096,7 +1096,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Puuseppäalan TES",
     useful_links: [
       { name: "Puuseppäliitto", url: "https://www.puuseppaliitto.fi/" },
-      { name: "Opintopolku - Puuseppäala", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Puuseppä", url: "https://opintopolku.fi/konfo/fi/haku/Puusepp%C3%A4" }
     ],
     keywords: ["puuseppä", "puutyö", "huonekalut", "käsityö", "CNC"],
     study_length_estimate_months: 36,
@@ -1172,7 +1172,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Maalausalan TES",
     useful_links: [
       { name: "Maalausliitto", url: "https://www.maalausliitto.fi/" },
-      { name: "Opintopolku - Maalausala", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Maalari", url: "https://opintopolku.fi/konfo/fi/haku/Maalari" }
     ],
     keywords: ["maalaus", "värit", "pintakäsittely", "kunnostus", "viimeistely"],
     study_length_estimate_months: 24,
@@ -1248,7 +1248,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Kattomestarialan TES",
     useful_links: [
       { name: "Kattomestariyhdistys", url: "https://www.kattomestariyhdistys.fi/" },
-      { name: "Opintopolku - Kattomestari", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Kattomestari", url: "https://opintopolku.fi/konfo/fi/haku/Kattomestari" }
     ],
     keywords: ["kattomestari", "katto", "räystäs", "korkea työ", "turvallisuus"],
     study_length_estimate_months: 36,
@@ -1324,7 +1324,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "LVI-alan TES",
     useful_links: [
       { name: "LVI-liitto", url: "https://www.lvi-liitto.fi/" },
-      { name: "Opintopolku - LVI-ala", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - LVI-asentaja", url: "https://opintopolku.fi/konfo/fi/haku/LVI-asentaja" }
     ],
     keywords: ["LVI", "lämpö", "vesi", "ilmastointi", "tekniikka"],
     study_length_estimate_months: 36,
@@ -1400,7 +1400,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Rakennusalan TES",
     useful_links: [
       { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
-      { name: "Opintopolku - Talonrakennus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Talonrakentaja", url: "https://opintopolku.fi/konfo/fi/haku/Talonrakentaja" }
     ],
     keywords: ["talonrakennus", "rakennus", "työmaa", "asuintalo", "rakentaminen"],
     study_length_estimate_months: 36,
@@ -1476,7 +1476,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Rakennusalan TES",
     useful_links: [
       { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
-      { name: "Opintopolku - Betonityö", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Betonityöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Betonity%C3%B6ntekij%C3%A4" }
     ],
     keywords: ["betoni", "valu", "muotti", "raudoitus", "rakennus"],
     study_length_estimate_months: 36,
@@ -1552,7 +1552,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Kunnallinen TES",
     useful_links: [
       { name: "Rakennusvalvonta", url: "https://www.rakennusvalvonta.fi/" },
-      { name: "Opintopolku - Rakennusvalvonta", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Rakennusvalvoja", url: "https://opintopolku.fi/konfo/fi/haku/Rakennusvalvoja" }
     ],
     keywords: ["rakennusvalvonta", "tarkastus", "luvat", "turvallisuus", "laatua"],
     study_length_estimate_months: 48,
@@ -1633,7 +1633,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Liiketalouden TES",
     useful_links: [
       { name: "Projektinhallinta.fi", url: "https://www.projektinhallinta.fi/" },
-      { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Projektipäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Projektip%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["projektinhallinta", "johtaminen", "tiimityö", "budjetointi", "aikataulutus"],
     study_length_estimate_months: 36
@@ -1709,7 +1709,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Liiketalouden TES",
     useful_links: [
       { name: "Myynti.fi", url: "https://www.myynti.fi/" },
-      { name: "Opintopolku - Myynti", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Myyntipäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Myyntip%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["myynti", "johtaminen", "asiakassuhteet", "strategia", "tiimityö"],
     study_length_estimate_months: 36
@@ -1785,7 +1785,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Liiketalouden TES",
     useful_links: [
       { name: "Henkilöstöjohtaminen.fi", url: "https://www.henkilostojohtaminen.fi/" },
-      { name: "Opintopolku - HR", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Henkilöstöpäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Henkil%C3%B6st%C3%B6p%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["henkilöstöjohtaminen", "rekrytointi", "kehitys", "organisaatio", "työsuhteet"],
     study_length_estimate_months: 36
@@ -1861,7 +1861,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teollisuuden TES",
     useful_links: [
       { name: "Tuotantotalous.fi", url: "https://www.tuotantotalous.fi/" },
-      { name: "Opintopolku - Tuotantotalous", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tuotantopäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tuotantop%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["tuotantotalous", "laadunhallinta", "johtaminen", "optimointi", "tehokkuus"],
     study_length_estimate_months: 36
@@ -1937,7 +1937,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Liiketalouden TES",
     useful_links: [
       { name: "Markkinointi.fi", url: "https://www.markkinointi.fi/" },
-      { name: "Opintopolku - Markkinointi", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Markkinointipäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Markkinointip%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["markkinointi", "brändi", "digitaalinen", "strategia", "kampanjat"],
     study_length_estimate_months: 36
@@ -2013,7 +2013,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Liiketalouden TES",
     useful_links: [
       { name: "Taloushallinto.fi", url: "https://www.taloushallinto.fi/" },
-      { name: "Opintopolku - Laskentatoimi", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Talouspäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Talousp%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["taloushallinto", "laskentatoimi", "budjetointi", "raportointi", "analyysi"],
     study_length_estimate_months: 36
@@ -2089,7 +2089,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Liiketalouden TES",
     useful_links: [
       { name: "Asiakaspalvelu.fi", url: "https://www.asiakaspalvelu.fi/" },
-      { name: "Opintopolku - Asiakaspalvelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Asiakaspalvelupäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Asiakaspalvelup%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["asiakaspalvelu", "johtaminen", "kokemus", "prosessit", "tiimityö"],
     study_length_estimate_months: 36
@@ -2165,7 +2165,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "Tietoturva.fi", url: "https://www.tietoturva.fi/" },
-      { name: "Opintopolku - Kyberturvallisuus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tietoturvapäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tietoturvap%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["tietoturva", "kyberturvallisuus", "riskienhallinta", "johtaminen", "teknologia"],
     study_length_estimate_months: 36
@@ -2241,7 +2241,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teollisuuden TES",
     useful_links: [
       { name: "Laadunhallinta.fi", url: "https://www.laadunhallinta.fi/" },
-      { name: "Opintopolku - Laadunhallinta", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Laadunpäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Laadunp%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["laadunhallinta", "prosessit", "standardit", "sertifikaatit", "optimointi"],
     study_length_estimate_months: 36
@@ -2317,7 +2317,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Kehitysjohtaminen.fi", url: "https://www.kehitysjohtaminen.fi/" },
-      { name: "Opintopolku - Kehitysjohtaminen", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Kehityspäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Kehitysp%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["kehitysjohtaminen", "innovaatio", "projektit", "tutkimus", "strategia"],
     study_length_estimate_months: 36
@@ -2393,7 +2393,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "Data Science Finland", url: "https://www.datasciencefinland.fi/" },
-      { name: "Opintopolku - Data-analytiikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Data-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Data-insin%C3%B6%C3%B6ri" }
     ],
     keywords: ["data", "ohjelmointi", "cloud", "big data", "analytiikka"],
     study_length_estimate_months: 42
@@ -2469,7 +2469,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "Tekoäly Finland", url: "https://www.tekoalyfinland.fi/" },
-      { name: "Opintopolku - Tekoäly", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tekoälyasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Teko%C3%A4lyasiantuntija" }
     ],
     keywords: ["tekoäly", "koneoppiminen", "ohjelmointi", "algoritmit", "automaatio"],
     study_length_estimate_months: 48
@@ -2545,7 +2545,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Media-alan TES",
     useful_links: [
       { name: "Peliala.fi", url: "https://www.peliala.fi/" },
-      { name: "Opintopolku - Pelisuunnittelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Pelisuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Pelisuunnittelija" }
     ],
     keywords: ["pelisuunnittelu", "kreatiivisuus", "teknologia", "tarinankerronta", "interaktiivisuus"],
     study_length_estimate_months: 36
@@ -2621,7 +2621,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Robotiikka.fi", url: "https://www.robotiikka.fi/" },
-      { name: "Opintopolku - Automaatiotekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Robotiikka-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Robotiikka-insin%C3%B6%C3%B6ri" }
     ],
     keywords: ["robotiikka", "automaatio", "mekatroniikka", "ohjelmointi", "teollisuus"],
     study_length_estimate_months: 42
@@ -2697,7 +2697,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Kemian teollisuuden TES",
     useful_links: [
       { name: "Biotekniikka.fi", url: "https://www.biotekniikka.fi/" },
-      { name: "Opintopolku - Biotekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Biotekniikka-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Biotekniikka-insin%C3%B6%C3%B6ri" }
     ],
     keywords: ["biotekniikka", "biologia", "laboratorio", "tutkimus", "lääketeollisuus"],
     study_length_estimate_months: 48
@@ -2773,7 +2773,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Energia-alan TES",
     useful_links: [
       { name: "Energia.fi", url: "https://www.energia.fi/" },
-      { name: "Opintopolku - Energiatekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Energiainsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Energiainsin%C3%B6%C3%B6ri" }
     ],
     keywords: ["energiatekniikka", "uusiutuva energia", "ympäristö", "kestävä kehitys", "optimointi"],
     study_length_estimate_months: 42
@@ -2849,7 +2849,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Nanotekniikka.fi", url: "https://www.nanotekniikka.fi/" },
-      { name: "Opintopolku - Materiaalitekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Nanotekniikka-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Nanotekniikka-insin%C3%B6%C3%B6ri" }
     ],
     keywords: ["nanotekniikka", "materiaalitekniikka", "fysiikka", "tutkimus", "innovointi"],
     study_length_estimate_months: 48
@@ -2925,7 +2925,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "Kvanttiteknologia.fi", url: "https://www.kvanttiteknologia.fi/" },
-      { name: "Opintopolku - Fysiikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Kvantti-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Kvantti-insin%C3%B6%C3%B6ri" }
     ],
     keywords: ["kvanttiteknologia", "kvanttifysiikka", "ohjelmointi", "algoritmit", "tutkimus"],
     study_length_estimate_months: 48
@@ -3001,7 +3001,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "Blockchain Finland", url: "https://www.blockchainfinland.fi/" },
-      { name: "Opintopolku - Kryptografia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Blockchain-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Blockchain-insin%C3%B6%C3%B6ri" }
     ],
     keywords: ["blockchain", "kryptografia", "ohjelmointi", "Web3", "hajautetut järjestelmät"],
     study_length_estimate_months: 42
@@ -3077,7 +3077,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "VR Finland", url: "https://www.vrfinland.fi/" },
-      { name: "Opintopolku - VR/AR", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Virtuaalitodellisuus-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Virtuaalitodellisuus-insin%C3%B6%C3%B6ri" }
     ],
     keywords: ["VR", "AR", "virtuaalitodellisuus", "3D", "immersiivinen"],
     study_length_estimate_months: 42
@@ -3153,7 +3153,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Automaatio.fi", url: "https://www.automaatio.fi/" },
-      { name: "Opintopolku - Automaatiotekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Automaatio-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Automaatio-insin%C3%B6%C3%B6ri" }
     ],
     keywords: ["automaatio", "PLC", "robotiikka", "IoT", "teollisuus"],
     study_length_estimate_months: 42
@@ -3229,7 +3229,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tehy",
     useful_links: [
       { name: "Tehy", url: "https://www.tehy.fi/" },
-      { name: "Opintopolku - Sairaanhoitaja", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Sairaanhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Sairaanhoitaja" }
     ],
     keywords: ["sairaanhoito", "terveys", "potilaat", "hoito", "kuntoutus"],
     study_length_estimate_months: 42
@@ -3305,7 +3305,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "OAJ",
     useful_links: [
       { name: "OAJ", url: "https://www.oaj.fi/" },
-      { name: "Opintopolku - Luokanopettaja", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Luokanopettaja", url: "https://opintopolku.fi/konfo/fi/haku/Luokanopettaja" }
     ],
     keywords: ["opetus", "koulu", "lapset", "pedagogiikka", "kasvatus"],
     study_length_estimate_months: 60
@@ -3381,7 +3381,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "JHL",
     useful_links: [
       { name: "Sosiaalityöntekijät", url: "https://www.sosiaalityontyekijat.fi/" },
-      { name: "Opintopolku - Sosiaalityö", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Sosiaalityöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Sosiaality%C3%B6ntekij%C3%A4" }
     ],
     keywords: ["sosiaalityö", "perheet", "lapset", "hyvinvointi", "tuki"],
     study_length_estimate_months: 42
@@ -3457,7 +3457,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tehy",
     useful_links: [
       { name: "Psykologit", url: "https://www.psykologit.fi/" },
-      { name: "Opintopolku - Psykologia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Psykologi", url: "https://opintopolku.fi/konfo/fi/haku/Psykologi" }
     ],
     keywords: ["psykologia", "mielenterveys", "terapia", "hyvinvointi", "tutkimus"],
     study_length_estimate_months: 60
@@ -3533,7 +3533,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tehy",
     useful_links: [
       { name: "Fysioterapeutit", url: "https://www.fysioterapeutit.fi/" },
-      { name: "Opintopolku - Fysioterapia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Fysioterapeutti", url: "https://opintopolku.fi/konfo/fi/haku/Fysioterapeutti" }
     ],
     keywords: ["fysioterapia", "kuntoutus", "liikunta", "terapia", "palautuminen"],
     study_length_estimate_months: 42
@@ -3609,7 +3609,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "OAJ",
     useful_links: [
       { name: "OAJ", url: "https://www.oaj.fi/" },
-      { name: "Opintopolku - Varhaiskasvatus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Lastentarhanopettaja", url: "https://opintopolku.fi/konfo/fi/haku/Lastentarhanopettaja" }
     ],
     keywords: ["varhaiskasvatus", "lapset", "päiväkoti", "kasvatus", "oppiminen"],
     study_length_estimate_months: 42
@@ -3685,7 +3685,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "JHL",
     useful_links: [
       { name: "Kuntoutusohjaajat", url: "https://www.kuntoutusohjaajat.fi/" },
-      { name: "Opintopolku - Kuntoutus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Kuntoutusohjaaja", url: "https://opintopolku.fi/konfo/fi/haku/Kuntoutusohjaaja" }
     ],
     keywords: ["kuntoutus", "työkyky", "palautuminen", "ohjaus", "tuki"],
     study_length_estimate_months: 42
@@ -3761,7 +3761,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "JHL",
     useful_links: [
       { name: "Perhetyöntekijät", url: "https://www.perhetyontyekijat.fi/" },
-      { name: "Opintopolku - Perhetyö", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Perhetyöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Perhety%C3%B6ntekij%C3%A4" }
     ],
     keywords: ["perhetyö", "lapset", "perheet", "tuki", "hyvinvointi"],
     study_length_estimate_months: 42
@@ -3837,7 +3837,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tehy",
     useful_links: [
       { name: "Vanhustenhoitajat", url: "https://www.vanhustenhoitajat.fi/" },
-      { name: "Opintopolku - Vanhustenhoito", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Vanhustenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Vanhustenhoitaja" }
     ],
     keywords: ["vanhustenhoito", "vanhukset", "hoito", "itsenäisyys", "elämänlaatu"],
     study_length_estimate_months: 24
@@ -3913,7 +3913,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tehy",
     useful_links: [
       { name: "Kriisityöntekijät", url: "https://www.kriisityontyekijat.fi/" },
-      { name: "Opintopolku - Kriisityö", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Kriisityöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Kriisity%C3%B6ntekij%C3%A4" }
     ],
     keywords: ["kriisityö", "trauma", "mielenterveys", "toipuminen", "tuki"],
     study_length_estimate_months: 42
@@ -3989,7 +3989,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Ympäristöinsinöörit", url: "https://www.ymparistoinsinoorit.fi/" },
-      { name: "Opintopolku - Ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Ympäristöinsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6insin%C3%B6%C3%B6ri" }
     ],
     keywords: ["ympäristö", "kestävä kehitys", "saasteet", "teknologia", "suojelu"],
     study_length_estimate_months: 42
@@ -4065,7 +4065,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tutkijaliitto",
     useful_links: [
       { name: "Ilmatieteen laitos", url: "https://www.ilmatieteenlaitos.fi/" },
-      { name: "Opintopolku - Meteorologia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Ilmastotutkija", url: "https://opintopolku.fi/konfo/fi/haku/Ilmastotutkija" }
     ],
     keywords: ["ilmasto", "tutkimus", "meteorologia", "ilmastonmuutos", "tiede"],
     study_length_estimate_months: 60
@@ -4141,7 +4141,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "JHL",
     useful_links: [
       { name: "Metsähallitus", url: "https://www.metsa.fi/" },
-      { name: "Opintopolku - Luonnonsuojelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Luonnonsuojelija", url: "https://opintopolku.fi/konfo/fi/haku/Luonnonsuojelija" }
     ],
     keywords: ["luonnonsuojelu", "luonto", "eläimet", "kasvit", "monimuotoisuus"],
     study_length_estimate_months: 42
@@ -4217,7 +4217,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Energia.fi", url: "https://www.energia.fi/" },
-      { name: "Opintopolku - Energiatekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Uusiutuva energia -insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Uusiutuva%20energia%20-insin%C3%B6%C3%B6ri" }
     ],
     keywords: ["uusiutuva energia", "aurinkoenergia", "tuulivoima", "energiatehokkuus", "kestävä kehitys"],
     study_length_estimate_months: 42
@@ -4293,7 +4293,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "OAJ",
     useful_links: [
       { name: "Ympäristökasvatus", url: "https://www.ymparistokasvatus.fi/" },
-      { name: "Opintopolku - Ympäristökasvatus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Ympäristökasvattaja", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6kasvattaja" }
     ],
     keywords: ["ympäristökasvatus", "kestävä kehitys", "opetus", "tietoisuus", "kasvatus"],
     study_length_estimate_months: 42
@@ -4369,7 +4369,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Vesiyhdistys", url: "https://www.vesiyhdistys.fi/" },
-      { name: "Opintopolku - Vesiteknologia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Vesi-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Vesi-insin%C3%B6%C3%B6ri" }
     ],
     keywords: ["vesiteknologia", "vesihuolto", "jätevesi", "vesitalous", "ympäristö"],
     study_length_estimate_months: 42
@@ -4445,7 +4445,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Hiilijalanjälki.fi", url: "https://www.hiilijalanjalki.fi/" },
-      { name: "Opintopolku - Kestävä kehitys", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Hiilijalanjälki-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Hiilijalanj%C3%A4lki-asiantuntija" }
     ],
     keywords: ["hiilijalanjälki", "ilmastoneutraali", "kestävä kehitys", "ilmasto", "hiilidioksidi"],
     study_length_estimate_months: 42
@@ -4521,7 +4521,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Asianajajaliitto",
     useful_links: [
       { name: "Asianajajaliitto", url: "https://www.asianajajaliitto.fi/" },
-      { name: "Opintopolku - Oikeustiede", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Ympäristöjuristi", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6juristi" }
     ],
     keywords: ["ympäristöoikeus", "lainsäädäntö", "oikeustiede", "ympäristörikos", "kestävä kehitys"],
     study_length_estimate_months: 60
@@ -4597,7 +4597,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tutkijaliitto",
     useful_links: [
       { name: "Luonnontieteellinen keskusmuseo", url: "https://www.luomus.fi/" },
-      { name: "Opintopolku - Biologia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Biologinen monimuotoisuus -asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Biologinen%20monimuotoisuus%20-asiantuntija" }
     ],
     keywords: ["biologinen monimuotoisuus", "luonnonsuojelu", "eläimet", "kasvit", "uhanalaiset lajit"],
     study_length_estimate_months: 48
@@ -4673,7 +4673,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Kestävän kehityksen komissio", url: "https://www.kestavankehityksen.fi/" },
-      { name: "Opintopolku - Kestävä kehitys", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Kestävän kehityksen koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Kest%C3%A4v%C3%A4n%20kehityksen%20koordinaattori" }
     ],
     keywords: ["kestävä kehitys", "ympäristöystävällisyys", "sosiaalinen vastuu", "strategia", "raportointi"],
     study_length_estimate_months: 42
@@ -4749,7 +4749,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Futurologia.fi", url: "https://www.futurologia.fi/" },
-      { name: "Opintopolku - Futurologia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Futuristi", url: "https://opintopolku.fi/konfo/fi/haku/Futuristi" }
     ],
     keywords: ["futurologia", "trendit", "strategia", "innovaatio", "tulevaisuus"],
     study_length_estimate_months: 48
@@ -4825,7 +4825,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Strategia.fi", url: "https://www.strategia.fi/" },
-      { name: "Opintopolku - Strategia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Strategia-konsultti", url: "https://opintopolku.fi/konfo/fi/haku/Strategia-konsultti" }
     ],
     keywords: ["strategia", "konsultointi", "liiketoimintakehitys", "muutos", "analyysi"],
     study_length_estimate_months: 48
@@ -4901,7 +4901,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Innovaatio.fi", url: "https://www.innovaatio.fi/" },
-      { name: "Opintopolku - Innovaatio", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Innovaatiojohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Innovaatiojohtaja" }
     ],
     keywords: ["innovaatio", "tutkimus", "kehitys", "teknologia", "strategia"],
     study_length_estimate_months: 48
@@ -4977,7 +4977,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Tulevaisuuden suunnittelu", url: "https://www.tulevaisuudensuunnittelu.fi/" },
-      { name: "Opintopolku - Futurologia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tulevaisuuden suunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20suunnittelija" }
     ],
     keywords: ["tulevaisuus", "suunnittelu", "strategia", "skenaariot", "trendit"],
     study_length_estimate_months: 48
@@ -5053,7 +5053,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "Digitaalinen muutos", url: "https://www.digitaalinenmuutos.fi/" },
-      { name: "Opintopolku - Digitaalinen muutos", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Digitaalinen muutosjohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Digitaalinen%20muutosjohtaja" }
     ],
     keywords: ["digitaalinen muutos", "teknologia", "liiketoiminta", "strategia", "innovaatio"],
     study_length_estimate_months: 48
@@ -5129,7 +5129,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tutkijaliitto",
     useful_links: [
       { name: "Tulevaisuuden tutkimus", url: "https://www.tulevaisuudentutkimus.fi/" },
-      { name: "Opintopolku - Futurologia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tulevaisuuden tutkija", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20tutkija" }
     ],
     keywords: ["tulevaisuus", "tutkimus", "futurologia", "trendit", "skenaariot"],
     study_length_estimate_months: 60
@@ -5205,7 +5205,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Strateginen suunnittelu", url: "https://www.strateginensuunnittelu.fi/" },
-      { name: "Opintopolku - Strategia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Strateginen suunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Strateginen%20suunnittelija" }
     ],
     keywords: ["strategia", "suunnittelu", "analyysi", "tulevaisuus", "muutos"],
     study_length_estimate_months: 48
@@ -5281,7 +5281,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Tulevaisuuden visio", url: "https://www.tulevaisuudenvisio.fi/" },
-      { name: "Opintopolku - Strategia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tulevaisuuden visio-johtaja", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20visio-johtaja" }
     ],
     keywords: ["tulevaisuus", "visio", "johtaminen", "strategia", "muutos"],
     study_length_estimate_months: 48
@@ -5357,7 +5357,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "Tulevaisuuden teknologia", url: "https://www.tulevaisuudenteknologia.fi/" },
-      { name: "Opintopolku - Teknologia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tulevaisuuden teknologia-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20teknologia-asiantuntija" }
     ],
     keywords: ["tulevaisuus", "teknologia", "innovaatio", "tutkimus", "skenaariot"],
     study_length_estimate_months: 48
@@ -5433,7 +5433,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tutkijaliitto",
     useful_links: [
       { name: "Tulevaisuuden yhteiskunta", url: "https://www.tulevaisuudenyhteiskunta.fi/" },
-      { name: "Opintopolku - Sosiologia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tulevaisuuden yhteiskunta-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20yhteiskunta-asiantuntija" }
     ],
     keywords: ["tulevaisuus", "yhteiskunta", "sosiologia", "futurologia", "tutkimus"],
     study_length_estimate_months: 60
@@ -5509,7 +5509,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Tapahtumien järjestäminen", url: "https://www.tapahtumienjarjestaminen.fi/" },
-      { name: "Opintopolku - Tapahtumatuotanto", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tapahtumakoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Tapahtumakoordinaattori" }
     ],
     keywords: ["tapahtumien järjestäminen", "koordinointi", "suunnittelu", "budjetti", "asiakaspalvelu"],
     study_length_estimate_months: 36
@@ -5585,7 +5585,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "JHL",
     useful_links: [
       { name: "Toimistosihteerit", url: "https://www.toimistosihteerit.fi/" },
-      { name: "Opintopolku - Toimistosihteeri", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Toimistosihteeri", url: "https://opintopolku.fi/konfo/fi/haku/Toimistosihteeri" }
     ],
     keywords: ["toimistosihteeri", "hallinto", "kommunikaatio", "organisointi", "asiakaspalvelu"],
     study_length_estimate_months: 24
@@ -5661,7 +5661,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Logistiikka.fi", url: "https://www.logistiikka.fi/" },
-      { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Logistiikkakoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Logistiikkakoordinaattori" }
     ],
     keywords: ["logistiikka", "toimitusketju", "koordinointi", "varastointi", "kuljetus"],
     study_length_estimate_months: 36
@@ -5737,7 +5737,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "JHL",
     useful_links: [
       { name: "Henkilöstöhallinto.fi", url: "https://www.henkilostohallinto.fi/" },
-      { name: "Opintopolku - Henkilöstöhallinto", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Henkilöstöasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Henkil%C3%B6st%C3%B6asiantuntija" }
     ],
     keywords: ["henkilöstöhallinto", "työsuhteet", "henkilöstö", "hallinto", "työntekijät"],
     study_length_estimate_months: 36
@@ -5813,7 +5813,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "JHL",
     useful_links: [
       { name: "Taloushallinto.fi", url: "https://www.taloushallinto.fi/" },
-      { name: "Opintopolku - Taloushallinto", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Taloushallinnon asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Taloushallinnon%20asiantuntija" }
     ],
     keywords: ["taloushallinto", "talousraportointi", "budjetti", "analyysi", "hallinto"],
     study_length_estimate_months: 36
@@ -5889,7 +5889,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Laadunhallinto.fi", url: "https://www.laadunhallinto.fi/" },
-      { name: "Opintopolku - Laadunhallinto", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Laadunhallinnan koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Laadunhallinnan%20koordinaattori" }
     ],
     keywords: ["laadunhallinto", "laatustandardit", "koordinointi", "analyysi", "hallinto"],
     study_length_estimate_months: 36
@@ -5965,7 +5965,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "JHL",
     useful_links: [
       { name: "Asiakaspalvelu.fi", url: "https://www.asiakaspalvelu.fi/" },
-      { name: "Opintopolku - Asiakaspalvelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Asiakaspalvelun koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Asiakaspalvelun%20koordinaattori" }
     ],
     keywords: ["asiakaspalvelu", "kommunikaatio", "koordinointi", "asiakkaat", "palvelu"],
     study_length_estimate_months: 36
@@ -6041,7 +6041,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "JHL",
     useful_links: [
       { name: "Tietohallinto.fi", url: "https://www.tietohallinto.fi/" },
-      { name: "Opintopolku - Tietohallinto", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tietohallinnon koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Tietohallinnon%20koordinaattori" }
     ],
     keywords: ["tietohallinto", "dokumenttienhallinta", "koordinointi", "tiedot", "hallinto"],
     study_length_estimate_months: 36
@@ -6117,7 +6117,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "JHL",
     useful_links: [
       { name: "Hallinto.fi", url: "https://www.hallinto.fi/" },
-      { name: "Opintopolku - Hallinto", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Hallinnon koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Hallinnon%20koordinaattori" }
     ],
     keywords: ["hallinto", "organisointi", "koordinointi", "hallinto", "organisaatio"],
     study_length_estimate_months: 36
@@ -6193,7 +6193,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "JHL",
     useful_links: [
       { name: "JHL", url: "https://www.jhl.fi/" },
-      { name: "Opintopolku - Varhaiskasvatus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Lapsenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Lapsenhoitaja" }
     ],
     keywords: ["lapsenhoito", "päiväkoti", "kasvatus", "varhaiskasvatus", "perhepäivähoito"],
     study_length_estimate_months: 36
@@ -6269,7 +6269,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Suomen Apteekkariliitto",
     useful_links: [
       { name: "Suomen Apteekkariliitto", url: "https://www.apteekkariliitto.fi/" },
-      { name: "Opintopolku - Farmacia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Apteekkari", url: "https://opintopolku.fi/konfo/fi/haku/Apteekkari" }
     ],
     keywords: ["apteekkari", "lääkkeet", "farmacia", "lääkeneuvonta", "apteekki"],
     study_length_estimate_months: 60
@@ -6345,7 +6345,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
-      { name: "Opintopolku - Tietoturva", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tietoturva-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tietoturva-asiantuntija" }
     ],
     keywords: ["tietoturva", "kyberturvallisuus", "verkkoanalyysi", "penetraatiotestaus", "SIEM"],
     study_length_estimate_months: 60
@@ -6421,7 +6421,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
-      { name: "Opintopolku - Tietojärjestelmät", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tietokantasuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Tietokantasuunnittelija" }
     ],
     keywords: ["tietokanta", "SQL", "tietojen mallintaminen", "DBA", "tietokantojen optimointi"],
     study_length_estimate_months: 60
@@ -6497,7 +6497,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
-      { name: "Opintopolku - Mobiilikehitys", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Mobiilisovelluskehittäjä", url: "https://opintopolku.fi/konfo/fi/haku/Mobiilisovelluskehitt%C3%A4j%C3%A4" }
     ],
     keywords: ["mobiilikehitys", "iOS", "Android", "React Native", "Flutter"],
     study_length_estimate_months: 60
@@ -6573,7 +6573,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
-      { name: "Opintopolku - Tietoverkot", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Verkkoasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Verkkoasiantuntija" }
     ],
     keywords: ["verkot", "Cisco", "tietoverkot", "verkkoanalyysi", "NOC"],
     study_length_estimate_months: 60
@@ -6649,7 +6649,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
-      { name: "Opintopolku - Tekoäly", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tekoäly-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Teko%C3%A4ly-asiantuntija" }
     ],
     keywords: ["tekoäly", "koneoppiminen", "Python", "TensorFlow", "data science"],
     study_length_estimate_months: 60
@@ -6725,7 +6725,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "RIL",
     useful_links: [
       { name: "RIL", url: "https://www.ril.fi/" },
-      { name: "Opintopolku - Rakennustekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Rakennusinsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Rakennusinsin%C3%B6%C3%B6ri" }
     ],
     keywords: ["rakennusinsinööri", "rakennustekniikka", "projektinhallinta", "BIM", "CAD"],
     study_length_estimate_months: 60
@@ -6801,7 +6801,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Rakennusliitto",
     useful_links: [
       { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
-      { name: "Opintopolku - Puuseppä", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Puuseppä", url: "https://opintopolku.fi/konfo/fi/haku/Puusepp%C3%A4" }
     ],
     keywords: ["puuseppä", "puuntyöstö", "rakentaminen", "huonekalujen", "korjaus"],
     study_length_estimate_months: 24
@@ -6877,7 +6877,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "OAJ",
     useful_links: [
       { name: "OAJ", url: "https://www.oaj.fi/" },
-      { name: "Opintopolku - Opettajankoulutus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Opettaja" }
     ],
     keywords: ["opettaja", "pedagogiikka", "opetus", "koulu", "oppilaiden"],
     study_length_estimate_months: 60
@@ -6953,7 +6953,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "JHL",
     useful_links: [
       { name: "JHL", url: "https://www.jhl.fi/" },
-      { name: "Opintopolku - Varhaiskasvatus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Varhaiskasvatuksen opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Varhaiskasvatuksen%20opettaja" }
     ],
     keywords: ["varhaiskasvatus", "päiväkoti", "lapsenkasvatus", "opetus", "kehitys"],
     study_length_estimate_months: 42
@@ -7029,7 +7029,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "OAJ",
     useful_links: [
       { name: "OAJ", url: "https://www.oaj.fi/" },
-      { name: "Opintopolku - Ammattikoulun opettaja", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Ammattikoulun opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Ammattikoulun%20opettaja" }
     ],
     keywords: ["ammattikoulu", "opettaja", "ammattitaito", "työelämä", "koulutus"],
     study_length_estimate_months: 60
@@ -7105,7 +7105,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "OAJ",
     useful_links: [
       { name: "OAJ", url: "https://www.oaj.fi/" },
-      { name: "Opintopolku - Kielten opettaja", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Kielten opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Kielten%20opettaja" }
     ],
     keywords: ["kielten opettaja", "vieraat kielet", "kulttuurit", "opetus", "kansainvälistyminen"],
     study_length_estimate_months: 60
@@ -7181,7 +7181,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "OAJ",
     useful_links: [
       { name: "OAJ", url: "https://www.oaj.fi/" },
-      { name: "Opintopolku - Erityisopettaja", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Erityisopettaja", url: "https://opintopolku.fi/konfo/fi/haku/Erityisopettaja" }
     ],
     keywords: ["erityisopettaja", "erityispedagogiikka", "oppimisvaikeudet", "henkilökohtainen tuki", "erityisopetus"],
     study_length_estimate_months: 60
@@ -7257,7 +7257,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "AKT",
     useful_links: [
       { name: "AKT", url: "https://www.akt.fi/" },
-      { name: "Opintopolku - Kuljetus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Kuorma-auton kuljettaja", url: "https://opintopolku.fi/konfo/fi/haku/Kuorma-auton%20kuljettaja" }
     ],
     keywords: ["kuorma-auto", "kuljettaja", "kuljetus", "logistiikka", "jakelu"],
     study_length_estimate_months: 12
@@ -7333,7 +7333,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "AKT",
     useful_links: [
       { name: "AKT", url: "https://www.akt.fi/" },
-      { name: "Opintopolku - Varastointi", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Varastotyöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Varastoty%C3%B6ntekij%C3%A4" }
     ],
     keywords: ["varastointi", "logistiikka", "pakkaaminen", "hyllytys", "varasto"],
     study_length_estimate_months: 12
@@ -7409,7 +7409,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "AKT",
     useful_links: [
       { name: "AKT", url: "https://www.akt.fi/" },
-      { name: "Opintopolku - Jakelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Jakelukuljettaja", url: "https://opintopolku.fi/konfo/fi/haku/Jakelukuljettaja" }
     ],
     keywords: ["jakelu", "kuljettaja", "paketit", "kotitoimitus", "verkkokauppa"],
     study_length_estimate_months: 12
@@ -7485,7 +7485,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "AKT",
     useful_links: [
       { name: "AKT", url: "https://www.akt.fi/" },
-      { name: "Opintopolku - Kuljetus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Kuljetuskoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Kuljetuskoordinaattori" }
     ],
     keywords: ["kuljetus", "koordinointi", "logistiikka", "reittien optimointi", "kuljetusketju"],
     study_length_estimate_months: 36
@@ -7561,7 +7561,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Sähköliitto",
     useful_links: [
       { name: "Sähköliitto", url: "https://www.sahkoliitto.fi/" },
-      { name: "Opintopolku - Sähköasentaja", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Sähköasentaja", url: "https://opintopolku.fi/konfo/fi/haku/S%C3%A4hk%C3%B6asentaja" }
     ],
     keywords: ["sähköasentaja", "sähkötekniikka", "sähköjärjestelmät", "energiatehokkuus", "korjaus"],
     study_length_estimate_months: 24
@@ -7637,7 +7637,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Insöörit",
     useful_links: [
       { name: "Insöörit", url: "https://www.insinoorit.fi/" },
-      { name: "Opintopolku - Energiatekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Energiainsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Energiainsin%C3%B6%C3%B6ri" }
     ],
     keywords: ["energiainsinööri", "energiatehokkuus", "uusiutuva energia", "energiaratkaisut", "ilmastonmuutos"],
     study_length_estimate_months: 60
@@ -7713,7 +7713,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Sähköliitto",
     useful_links: [
       { name: "Sähköliitto", url: "https://www.sahkoliitto.fi/" },
-      { name: "Opintopolku - Aurinkoenergia", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Aurinkoenergia-asentaja", url: "https://opintopolku.fi/konfo/fi/haku/Aurinkoenergia-asentaja" }
     ],
     keywords: ["aurinkoenergia", "aurinkopaneelit", "uusiutuva energia", "energiatehokkuus", "ilmastonmuutos"],
     study_length_estimate_months: 24
@@ -7789,7 +7789,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Insöörit",
     useful_links: [
       { name: "Insöörit", url: "https://www.insinoorit.fi/" },
-      { name: "Opintopolku - Energiakonsultointi", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Energiakonsultti", url: "https://opintopolku.fi/konfo/fi/haku/Energiakonsultti" }
     ],
     keywords: ["energiakonsultti", "energiatehokkuus", "energiaratkaisut", "kestävää kehitystä", "hiilijalanjälki"],
     study_length_estimate_months: 60
@@ -7865,7 +7865,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Insöörit",
     useful_links: [
       { name: "Insöörit", url: "https://www.insinoorit.fi/" },
-      { name: "Opintopolku - Energia-asiantuntija", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Energia-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Energia-asiantuntija" }
     ],
     keywords: ["energia-asiantuntija", "energiatehokkuus", "energiaratkaisut", "uusiutuva energia", "kestävää kehitystä"],
     study_length_estimate_months: 60
@@ -7939,9 +7939,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
-    useful_links: [
-      { name: "Markkinointiliitto", url: "https://www.markkinointiliitto.fi/" },
-      { name: "Google Digital Garage", url: "https://learndigital.withgoogle.com/digitalgarage" }
+    useful_links: [{ name: "Markkinointiliitto", url: "https://www.markkinointiliitto.fi/" },
+      { name: "Google Digital Garage", url: "https://learndigital.withgoogle.com/digitalgarage" },
+      { name: "Opintopolku - Digitaalisen markkinoinnin asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Digitaalisen%20markkinoinnin%20asiantuntija" }
     ],
   },
 {
@@ -8015,7 +8015,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Grafia",
     useful_links: [
       { name: "Grafia", url: "https://www.grafia.fi/" },
-      { name: "Opintopolku - Graafinen suunnittelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Brändisuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Br%C3%A4ndisuunnittelija" }
     ],
     keywords: ["brändi", "logo", "visuaalinen identiteetti", "graafinen suunnittelu", "kreatiivisuus"],
     study_length_estimate_months: 36
@@ -8091,7 +8091,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Ympäristöliitto", url: "https://www.ymparistoliitto.fi/" },
-      { name: "Opintopolku - Ympäristötiede", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Ympäristöasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6asiantuntija" }
     ],
     keywords: ["ympäristö", "kestävää kehitystä", "ympäristönsuoja", "auditointi", "vastuullisuus"],
     study_length_estimate_months: 60
@@ -8167,7 +8167,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Grafia",
     useful_links: [
       { name: "Grafia", url: "https://www.grafia.fi/" },
-      { name: "Opintopolku - Muotoilu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tuotesuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Tuotesuunnittelija" }
     ],
   },
 {
@@ -8241,7 +8241,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Viestintä", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Viestintäpäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Viestint%C3%A4p%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["viestintä", "media", "julkisuus", "kriisiviestintä", "johtaminen"],
     study_length_estimate_months: 48
@@ -8317,7 +8317,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Tilastotiede", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Data-analyytikko", url: "https://opintopolku.fi/konfo/fi/haku/Data-analyytikko" }
     ],
   },
 {
@@ -8391,7 +8391,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Henkilöstöjohtaminen", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - HR-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/HR-asiantuntija" }
     ],
     keywords: ["henkilöstö", "rekrytointi", "koulutus", "palkkaus", "työsuhteet"],
     study_length_estimate_months: 48
@@ -8467,7 +8467,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Liiketoimintakehittäjä", url: "https://opintopolku.fi/konfo/fi/haku/Liiketoimintakehitt%C3%A4j%C3%A4" }
     ],
   },
 {
@@ -8541,7 +8541,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Kasvatustiede", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Koulutussuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Koulutussuunnittelija" }
     ],
     keywords: ["koulutus", "oppiminen", "pedagogiikka", "materiaalit", "kehittäminen"],
     study_length_estimate_months: 48
@@ -8617,7 +8617,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tuotepäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tuotep%C3%A4%C3%A4llikk%C3%B6" }
     ],
   },
 {
@@ -8691,7 +8691,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Konsultti", url: "https://opintopolku.fi/konfo/fi/haku/Konsultti" }
     ],
     keywords: ["konsultointi", "analyysi", "ratkaisut", "projektit", "asiantuntijuus"],
     study_length_estimate_months: 48
@@ -8767,7 +8767,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Tutkimustiede", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tutkimusasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tutkimusasiantuntija" }
     ],
   },
 {
@@ -8841,7 +8841,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Laadunvalvonta", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Laadunvalvonta-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Laadunvalvonta-asiantuntija" }
     ],
     keywords: ["laadunvalvonta", "testaus", "laatu", "analyysi", "prosessit"],
     study_length_estimate_months: 36
@@ -8917,7 +8917,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Asiakaspalvelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Asiakasvastaava", url: "https://opintopolku.fi/konfo/fi/haku/Asiakasvastaava" }
     ],
   },
 {
@@ -8991,7 +8991,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tietojärjestelmäasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tietoj%C3%A4rjestelm%C3%A4asiantuntija" }
     ],
     keywords: ["tietojärjestelmät", "IT", "verkko", "ylläpito", "tuki"],
     study_length_estimate_months: 36
@@ -9067,7 +9067,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Talousasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Talousasiantuntija" }
     ],
     keywords: ["talous", "budjetti", "raportointi", "analyysi", "hallinto"],
     study_length_estimate_months: 48
@@ -9143,7 +9143,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Henkilöstöjohtaminen", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Henkilöstökoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Henkil%C3%B6st%C3%B6koordinaattori" }
     ],
   },
 {
@@ -9217,7 +9217,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Myynti", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Myyntiedustaja", url: "https://opintopolku.fi/konfo/fi/haku/Myyntiedustaja" }
     ],
     keywords: ["myynti", "asiakkaat", "kommunikaatio", "neuvottelu", "tavoitteet"],
     study_length_estimate_months: 36
@@ -9293,7 +9293,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Markkinointi", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Markkinointikoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Markkinointikoordinaattori" }
     ],
   },
 {
@@ -9367,7 +9367,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Projektikoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Projektikoordinaattori" }
     ],
     keywords: ["projektinhallinta", "koordinointi", "aikataulu", "resurssit", "seuranta"],
     study_length_estimate_months: 36
@@ -9443,7 +9443,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Asiakaspalvelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Asiakaspalveluedustaja", url: "https://opintopolku.fi/konfo/fi/haku/Asiakaspalveluedustaja" }
     ],
   },
 {
@@ -9517,7 +9517,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Viestintä", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Sisällöntuottaja", url: "https://opintopolku.fi/konfo/fi/haku/Sis%C3%A4ll%C3%B6ntuottaja" }
     ],
     keywords: ["sisältö", "luovuus", "kirjoittaminen", "media", "markkinointi"],
     study_length_estimate_months: 36
@@ -9593,7 +9593,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Mobiilisovelluskehittäjä", url: "https://opintopolku.fi/konfo/fi/haku/Mobiilisovelluskehitt%C3%A4j%C3%A4" }
     ],
   },
 {
@@ -9667,7 +9667,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro",
     useful_links: [
       { name: "Pro", url: "https://www.pro.fi/" },
-      { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tekoäly-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Teko%C3%A4ly-asiantuntija" }
     ],
   },
 {
@@ -9741,7 +9741,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teollisuusliitto",
     useful_links: [
       { name: "Teollisuusliitto", url: "https://www.teollisuusliitto.fi/" },
-      { name: "Opintopolku - Tuotantotekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Tuotantoteknikko", url: "https://opintopolku.fi/konfo/fi/haku/Tuotantoteknikko" }
     ],
     keywords: ["tuotantoteknikko", "tuotanto", "automaatio", "laitteiden huolto", "teollisuus"],
     study_length_estimate_months: 36
@@ -9817,7 +9817,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teollisuusliitto",
     useful_links: [
       { name: "Teollisuusliitto", url: "https://www.teollisuusliitto.fi/" },
-      { name: "Opintopolku - Automaatiotekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Automaatioteknikko", url: "https://opintopolku.fi/konfo/fi/haku/Automaatioteknikko" }
     ],
     keywords: ["automaatioteknikko", "automaatio", "ohjelmointi", "sähkötekniikka", "teollisuus"],
     study_length_estimate_months: 36
@@ -9893,7 +9893,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Insöörit",
     useful_links: [
       { name: "Insöörit", url: "https://www.insinoorit.fi/" },
-      { name: "Opintopolku - Teollisuustekniikka", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Teollisuusinsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Teollisuusinsin%C3%B6%C3%B6ri" }
     ],
     keywords: ["teollisuusinsinööri", "teollisuustekniikka", "projektinhallinta", "tuotannon optimointi", "teollisuus"],
     study_length_estimate_months: 60
@@ -9969,7 +9969,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "PAM",
     useful_links: [
       { name: "PAM", url: "https://www.pam.fi/" },
-      { name: "Opintopolku - Asiakaspalvelu", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Asiakaspalvelu-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Asiakaspalvelu-asiantuntija" }
     ],
     keywords: ["asiakaspalvelu", "asiakkaiden auttaminen", "kommunikaatio", "ongelmaratkaisu", "palvelutalous"],
     study_length_estimate_months: 24
@@ -10045,7 +10045,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "PAM",
     useful_links: [
       { name: "PAM", url: "https://www.pam.fi/" },
-      { name: "Opintopolku - Hotelli- ja ravintola", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Hotellityöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Hotellity%C3%B6ntekij%C3%A4" }
     ],
     keywords: ["hotellityöntekijä", "hotelli", "matkailu", "asiakaspalvelu", "palvelutalous"],
     study_length_estimate_months: 24
@@ -10121,7 +10121,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "PAM",
     useful_links: [
       { name: "PAM", url: "https://www.pam.fi/" },
-      { name: "Opintopolku - Ravintola- ja catering", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Ravintolatyöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Ravintolaty%C3%B6ntekij%C3%A4" }
     ],
     keywords: ["ravintolatyöntekijä", "ravintola", "asiakaspalvelu", "ruokapalvelu", "palvelutalous"],
     study_length_estimate_months: 24
@@ -10197,7 +10197,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "PAM",
     useful_links: [
       { name: "PAM", url: "https://www.pam.fi/" },
-      { name: "Opintopolku - Siivous", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Siivooja", url: "https://opintopolku.fi/konfo/fi/haku/Siivooja" }
     ],
     keywords: ["siivooja", "siivous", "puhtaus", "terveys", "palvelutalous"],
     study_length_estimate_months: 12
@@ -10273,7 +10273,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "PAM",
     useful_links: [
       { name: "PAM", url: "https://www.pam.fi/" },
-      { name: "Opintopolku - Turvallisuus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Turvallisuusvastaava", url: "https://opintopolku.fi/konfo/fi/haku/Turvallisuusvastaava" }
     ],
     keywords: ["turvallisuusvastaava", "turvallisuus", "valvonta", "turvallisuuspalvelu", "palvelutalous"],
     study_length_estimate_months: 12
@@ -10349,7 +10349,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "PAM",
     useful_links: [
       { name: "PAM", url: "https://www.pam.fi/" },
-      { name: "Opintopolku - Rahoitus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Pankkivirkailija", url: "https://opintopolku.fi/konfo/fi/haku/Pankkivirkailija" }
     ],
     keywords: ["pankkivirkailija", "pankki", "rahoitus", "asiakaspalvelu", "rahoituspalvelu"],
     study_length_estimate_months: 36
@@ -10425,7 +10425,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "PAM",
     useful_links: [
       { name: "PAM", url: "https://www.pam.fi/" },
-      { name: "Opintopolku - Rahoitusneuvonta", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Rahoitusneuvonantaja", url: "https://opintopolku.fi/konfo/fi/haku/Rahoitusneuvonantaja" }
     ],
     keywords: ["rahoitusneuvonantaja", "rahoitus", "neuvonta", "sijoitusneuvonta", "rahoituspalvelu"],
     study_length_estimate_months: 36
@@ -10501,7 +10501,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "PAM",
     useful_links: [
       { name: "PAM", url: "https://www.pam.fi/" },
-      { name: "Opintopolku - Vakuutus", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Vakuutusasiamies", url: "https://opintopolku.fi/konfo/fi/haku/Vakuutusasiamies" }
     ],
     keywords: ["vakuutusasiamies", "vakuutus", "myynti", "neuvonta", "vakuutuspalvelu"],
     study_length_estimate_months: 36
@@ -10577,7 +10577,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "PAM",
     useful_links: [
       { name: "PAM", url: "https://www.pam.fi/" },
-      { name: "Opintopolku - Kirjanpito", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Kirjanpitäjä", url: "https://opintopolku.fi/konfo/fi/haku/Kirjanpit%C3%A4j%C3%A4" }
     ],
     keywords: ["kirjanpitäjä", "kirjanpito", "rahoitus", "tilinpäätös", "verotiedot"],
     study_length_estimate_months: 36
@@ -10653,7 +10653,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "PAM",
     useful_links: [
       { name: "PAM", url: "https://www.pam.fi/" },
-      { name: "Opintopolku - Rahoitusanalyysi", url: "https://opintopolku.fi/konfo/fi/valintaperusteet/2.2.246.562.17.00000000000000000001" }
+      { name: "Opintopolku - Rahoitusanalyytikko", url: "https://opintopolku.fi/konfo/fi/haku/Rahoitusanalyytikko" }
     ],
     keywords: ["rahoitusanalyytikko", "rahoitusanalyysi", "sijoitusanalyysi", "rahoitusmarkkinat", "rahoituspalvelu"],
     study_length_estimate_months: 60
@@ -10725,7 +10725,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Lääkäriliitto",
     useful_links: [
       { name: "Lääkäriliitto", url: "https://www.laakariliitto.fi/" },
-      { name: "Opintopolku - Lääketiede", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Lääkäri", url: "https://opintopolku.fi/konfo/fi/haku/L%C3%A4%C3%A4k%C3%A4ri" }
     ],
     keywords: ["lääkäri", "terveydenhuolto", "diagnoosi", "hoito", "potilas"],
     study_length_estimate_months: 72
@@ -10796,7 +10796,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Hammaslääkäriliitto",
     useful_links: [
       { name: "Hammaslääkäriliitto", url: "https://www.hammaslaakariliitto.fi/" },
-      { name: "Opintopolku - Hammaslääketiede", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Hammaslääkäri", url: "https://opintopolku.fi/konfo/fi/haku/Hammasl%C3%A4%C3%A4k%C3%A4ri" }
     ],
     keywords: ["hammaslääkäri", "suun terveys", "hammashoidot", "hampaiden korjaus"],
     study_length_estimate_months: 60
@@ -10867,7 +10867,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Eläinlääkäriliitto",
     useful_links: [
       { name: "Eläinlääkäriliitto", url: "https://www.sell.fi/" },
-      { name: "Opintopolku - Eläinlääketiede", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Eläinlääkäri", url: "https://opintopolku.fi/konfo/fi/haku/El%C3%A4inl%C3%A4%C3%A4k%C3%A4ri" }
     ],
     keywords: ["eläinlääkäri", "eläinten hoito", "eläinlääketiede", "lemmikkieläimet"],
     study_length_estimate_months: 72
@@ -10938,7 +10938,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Farmasialiitto",
     useful_links: [
       { name: "Farmasialiitto", url: "https://www.farmasialiitto.fi/" },
-      { name: "Opintopolku - Farmasia", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Farmaseutti", url: "https://opintopolku.fi/konfo/fi/haku/Farmaseutti" }
     ],
     keywords: ["farmaseutti", "apteekki", "lääkkeet", "lääkeneuvonta"],
     study_length_estimate_months: 36
@@ -11009,7 +11009,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tehy",
     useful_links: [
       { name: "Tehy", url: "https://www.tehy.fi/" },
-      { name: "Opintopolku - Röntgenhoitaja", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Röntgenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/R%C3%B6ntgenhoitaja" }
     ],
     keywords: ["röntgenhoitaja", "kuvantaminen", "röntgen", "ultraääni"],
     study_length_estimate_months: 42
@@ -11080,7 +11080,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tehy",
     useful_links: [
       { name: "Tehy", url: "https://www.tehy.fi/" },
-      { name: "Opintopolku - Bioanalytiikka", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Laboratoriohoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Laboratoriohoitaja" }
     ],
     keywords: ["laboratoriohoitaja", "bioanalytiikka", "laboratorio", "tutkimukset"],
     study_length_estimate_months: 42
@@ -11151,7 +11151,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tehy",
     useful_links: [
       { name: "Tehy", url: "https://www.tehy.fi/" },
-      { name: "Opintopolku - Lähihoitaja", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Lähihoitaja", url: "https://opintopolku.fi/konfo/fi/haku/L%C3%A4hihoitaja" }
     ],
     keywords: ["lähihoitaja", "hoitotyö", "hoiva", "vanhusten hoito"],
     study_length_estimate_months: 36
@@ -11222,7 +11222,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tehy",
     useful_links: [
       { name: "Tehy", url: "https://www.tehy.fi/" },
-      { name: "Opintopolku - Ensihoitaja", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Ensihoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Ensihoitaja" }
     ],
     keywords: ["ensihoitaja", "ambulanssi", "ensihoito", "hätätilanteet"],
     study_length_estimate_months: 42
@@ -11293,7 +11293,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tehy",
     useful_links: [
       { name: "Tehy", url: "https://www.tehy.fi/" },
-      { name: "Opintopolku - Kätilö", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Kätilö", url: "https://opintopolku.fi/konfo/fi/haku/K%C3%A4til%C3%B6" }
     ],
     keywords: ["kätilö", "synnytys", "raskaus", "vastasyntyneet"],
     study_length_estimate_months: 54
@@ -11364,7 +11364,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tehy",
     useful_links: [
       { name: "Tehy", url: "https://www.tehy.fi/" },
-      { name: "Opintopolku - Sairaanhoitaja", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Mielenterveyshoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Mielenterveyshoitaja" }
     ],
     keywords: ["mielenterveyshoitaja", "psykiatria", "mielenterveys", "kuntoutus"],
     study_length_estimate_months: 42
@@ -11439,7 +11439,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Akava",
     useful_links: [
       { name: "Grafia", url: "https://www.grafia.fi/" },
-      { name: "Opintopolku - Graafinen suunnittelu", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Mainostoimiston Art Director", url: "https://opintopolku.fi/konfo/fi/haku/Mainostoimiston%20Art%20Director" }
     ],
     keywords: ["art director", "mainonta", "graafinen suunnittelu", "luova", "visuaalinen"],
     study_length_estimate_months: 42
@@ -11514,7 +11514,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
       { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
-      { name: "Opintopolku - Musiikkiteknologia", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Äänisuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/%C3%84%C3%A4nisuunnittelija" }
     ],
     keywords: ["äänisuunnittelija", "ääni", "miksaus", "elokuva", "pelit"],
     study_length_estimate_months: 42
@@ -11587,7 +11587,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
       { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
-      { name: "Opintopolku - Tanssipedagogi", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Koreografi", url: "https://opintopolku.fi/konfo/fi/haku/Koreografi" }
     ],
     keywords: ["koreografi", "tanssi", "esitys", "ohjaus", "luova"],
     study_length_estimate_months: 42
@@ -11661,7 +11661,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
       { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
-      { name: "Opintopolku - Kuvataide", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Kuvataiteilija", url: "https://opintopolku.fi/konfo/fi/haku/Kuvataiteilija" }
     ],
     keywords: ["kuvataiteilija", "taide", "maalaus", "veisto", "luova"],
     study_length_estimate_months: 60
@@ -11734,7 +11734,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
       { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
-      { name: "Opintopolku - Esittävä taide", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Näyttelijä", url: "https://opintopolku.fi/konfo/fi/haku/N%C3%A4yttelij%C3%A4" }
     ],
     keywords: ["näyttelijä", "teatteri", "elokuva", "esiintyminen", "rooli"],
     study_length_estimate_months: 48
@@ -11808,7 +11808,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
       { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
-      { name: "Opintopolku - Esittävä taide", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Valosuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Valosuunnittelija" }
     ],
     keywords: ["valosuunnittelija", "valotekniikka", "teatteri", "tapahtumat", "tekninen"],
     study_length_estimate_months: 42
@@ -11882,7 +11882,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
       { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
-      { name: "Opintopolku - Elokuva ja televisio", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Käsikirjoittaja", url: "https://opintopolku.fi/konfo/fi/haku/K%C3%A4sikirjoittaja" }
     ],
     keywords: ["käsikirjoittaja", "elokuva", "TV", "kirjoittaminen", "tarina"],
     study_length_estimate_months: 48
@@ -11956,7 +11956,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Akava",
     useful_links: [
       { name: "Akava", url: "https://www.akava.fi/" },
-      { name: "Opintopolku - Elokuva ja televisio", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Mediatuottaja", url: "https://opintopolku.fi/konfo/fi/haku/Mediatuottaja" }
     ],
     keywords: ["tuottaja", "media", "elokuva", "TV", "tuotanto"],
     study_length_estimate_months: 42
@@ -12031,7 +12031,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
       { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
-      { name: "Opintopolku - Elokuva ja televisio", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Leikkausartisti", url: "https://opintopolku.fi/konfo/fi/haku/Leikkausartisti" }
     ],
     keywords: ["leikkaaja", "videoeditoi nti", "jälkituotanto", "elokuva", "media"],
     study_length_estimate_months: 42
@@ -12106,7 +12106,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Journalistiliitto",
     useful_links: [
       { name: "Journalistiliitto", url: "https://www.journalistiliitto.fi/" },
-      { name: "Opintopolku - Elokuva ja televisio", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Dokumentaristi", url: "https://opintopolku.fi/konfo/fi/haku/Dokumentaristi" }
     ],
     keywords: ["dokumentaristi", "dokumentti", "elokuva", "journalismi", "tutkiminen"],
     study_length_estimate_months: 48
@@ -12181,7 +12181,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Journalistiliitto",
     useful_links: [
       { name: "Journalistiliitto", url: "https://www.journalistiliitto.fi/" },
-      { name: "Opintopolku - Media ja viestintä", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Podcast-tuottaja", url: "https://opintopolku.fi/konfo/fi/haku/Podcast-tuottaja" }
     ],
     keywords: ["podcast", "tuottaja", "ääni", "editointi", "media"],
     study_length_estimate_months: 42
@@ -12256,7 +12256,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
       { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
-      { name: "Opintopolku - Esittävä taide", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Lavastaja", url: "https://opintopolku.fi/konfo/fi/haku/Lavastaja" }
     ],
     keywords: ["lavastaja", "lavasteet", "teatteri", "elokuva", "suunnittelu"],
     study_length_estimate_months: 42
@@ -12330,7 +12330,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Akava",
     useful_links: [
       { name: "Akava", url: "https://www.akava.fi/" },
-      { name: "Opintopolku - Ympäristötekniikka", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Ympäristötarkastaja", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6tarkastaja" }
     ],
     keywords: ["ympäristö", "tarkastus", "valvonta", "ympäristönsuojelu"],
     study_length_estimate_months: 42
@@ -12404,7 +12404,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Akava",
     useful_links: [
       { name: "Akava", url: "https://www.akava.fi/" },
-      { name: "Opintopolku - Ympäristötiede", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Vesiensuojeluasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Vesiensuojeluasiantuntija" }
     ],
     keywords: ["vesi", "vesiensuojelu", "vesihuolto", "ympäristö", "laatu"],
     study_length_estimate_months: 60
@@ -12478,7 +12478,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Akava",
     useful_links: [
       { name: "Akava", url: "https://www.akava.fi/" },
-      { name: "Opintopolku - Ympäristötekniikka", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Jätehuoltoasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/J%C3%A4tehuoltoasiantuntija" }
     ],
     keywords: ["jätehuolto", "kierrätys", "kiertotalous", "ympäristö", "kestävyys"],
     study_length_estimate_months: 42
@@ -12552,7 +12552,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Akava",
     useful_links: [
       { name: "Akava", url: "https://www.akava.fi/" },
-      { name: "Opintopolku - Metsätieteet", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Metsänhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Mets%C3%A4nhoitaja" }
     ],
     keywords: ["metsä", "metsätalous", "metsänhoito", "kestävyys", "ympäristö"],
     study_length_estimate_months: 60
@@ -12626,7 +12626,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "EK", url: "https://www.ek.fi/" },
-      { name: "Opintopolku - Kauppatieteet", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Toimitusjohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Toimitusjohtaja" }
     ],
     keywords: ["toimitusjohtaja", "CEO", "johtaminen", "strategia", "yritys"],
     study_length_estimate_months: 60
@@ -12700,7 +12700,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Akava",
     useful_links: [
       { name: "Akava", url: "https://www.akava.fi/" },
-      { name: "Opintopolku - Kauppatieteet", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Talousjohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Talousjohtaja" }
     ],
     keywords: ["talousjohtaja", "CFO", "talous", "johtaminen", "strategia"],
     study_length_estimate_months: 60
@@ -12774,7 +12774,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Akava",
     useful_links: [
       { name: "Akava", url: "https://www.akava.fi/" },
-      { name: "Opintopolku - Tietojenkäsittelytiede", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Teknologiajohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Teknologiajohtaja" }
     ],
     keywords: ["CTO", "teknologiajohtaja", "IT", "johtaminen", "innovaatio"],
     study_length_estimate_months: 60
@@ -12848,7 +12848,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Akava",
     useful_links: [
       { name: "Akava", url: "https://www.akava.fi/" },
-      { name: "Opintopolku - Kauppatieteet", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Operatiivinen johtaja", url: "https://opintopolku.fi/konfo/fi/haku/Operatiivinen%20johtaja" }
     ],
     keywords: ["COO", "operatiivinen", "johtaminen", "prosessit", "tehokkuus"],
     study_length_estimate_months: 60
@@ -12922,7 +12922,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Akava",
     useful_links: [
       { name: "Akava", url: "https://www.akava.fi/" },
-      { name: "Opintopolku - Kauppatieteet", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Liiketoimintajohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Liiketoimintajohtaja" }
     ],
     keywords: ["liiketoimintajohtaja", "johtaminen", "strategia", "myynti", "kasvu"],
     study_length_estimate_months: 60
@@ -12996,7 +12996,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Rakennusliitto",
     useful_links: [
       { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
-      { name: "Opintopolku - Talonrakentaja", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Kirvesmies", url: "https://opintopolku.fi/konfo/fi/haku/Kirvesmies" }
     ],
     keywords: ["kirvesmies", "rakentaminen", "puutyö", "talonrakennus", "korjaus"],
     study_length_estimate_months: 36
@@ -13070,7 +13070,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Rakennusliitto",
     useful_links: [
       { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
-      { name: "Opintopolku - Kone- ja metalliala", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Maanrakennuskoneen kuljettaja", url: "https://opintopolku.fi/konfo/fi/haku/Maanrakennuskoneen%20kuljettaja" }
     ],
     keywords: ["kaivukone", "maanrakennus", "koneen kuljettaja", "rakentaminen", "infrastruktuuri"],
     study_length_estimate_months: 36
@@ -13144,7 +13144,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "PAM",
     useful_links: [
       { name: "PAM", url: "https://www.pam.fi/" },
-      { name: "Opintopolku - Palveluiden tuottaminen", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Tapahtumajärjestäjä", url: "https://opintopolku.fi/konfo/fi/haku/Tapahtumaj%C3%A4rjest%C3%A4j%C3%A4" }
     ],
     keywords: ["tapahtuma", "järjestäminen", "tapahtumajärjestäjä", "projektit", "koordinointi"],
     study_length_estimate_months: 42
@@ -13218,7 +13218,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "PAM",
     useful_links: [
       { name: "PAM", url: "https://www.pam.fi/" },
-      { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/" }
+      { name: "Opintopolku - Tilauspalvelukoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Tilauspalvelukoordinaattori" }
     ],
     keywords: ["tilauspalvelu", "koordinointi", "tilaukset", "asiakaspalvelu", "toimitukset"],
     study_length_estimate_months: 42
