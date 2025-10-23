@@ -332,6 +332,9 @@ export default function ResultsPage() {
         <div className="text-center mt-8">
           <p className="text-sm text-gray-500">{cohortCopy.shareText}</p>
         </div>
+
+        {/* Feedback Section */}
+        <FeedbackSection />
       </div>
     </div>
   );
@@ -463,6 +466,175 @@ function CareerMatchCard({
           </Button>
         </Link>
       </CardFooter>
+    </Card>
+  );
+}
+
+// ========== FEEDBACK COMPONENT ==========
+
+function FeedbackSection() {
+  const [rating, setRating] = useState<number | null>(null);
+  const [hoveredRating, setHoveredRating] = useState<number | null>(null);
+  const [feedbackText, setFeedbackText] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async () => {
+    if (rating === null) {
+      alert('Valitse ensin tähtien määrä');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // TODO: Send to backend/Supabase when implemented
+    // For now, just save to localStorage
+    const feedbackData = {
+      rating,
+      text: feedbackText.trim() || null,
+      timestamp: new Date().toISOString(),
+      resultId: localStorage.getItem('lastTestResultId') || null
+    };
+
+    // Save feedback to localStorage temporarily
+    const existingFeedback = JSON.parse(localStorage.getItem('testFeedback') || '[]');
+    existingFeedback.push(feedbackData);
+    localStorage.setItem('testFeedback', JSON.stringify(existingFeedback));
+
+    console.log('Feedback submitted:', feedbackData);
+
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    setIsSubmitting(false);
+    setSubmitted(true);
+
+    // Hide feedback section after 3 seconds
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
+  };
+
+  const handleSkip = () => {
+    setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 1500);
+  };
+
+  if (submitted) {
+    return (
+      <Card className="mt-12 border-2 border-green-200 bg-gradient-to-r from-green-50 to-blue-50">
+        <CardContent className="py-8">
+          <div className="text-center">
+            <div className="text-4xl mb-3">✅</div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              Kiitos palautteesta!
+            </h3>
+            <p className="text-gray-600 leading-relaxed max-w-xl mx-auto">
+              Palautteesi auttaa meitä parantamaan testiä ja auttamaan vielä paremmin tulevia oppilaita.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  return (
+    <Card className="mt-12 border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-purple-50">
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2 text-2xl">
+          💬 Kerro meille mielipiteesi
+        </CardTitle>
+        <CardDescription>
+          Palautteesi auttaa meitä kehittämään testiä
+        </CardDescription>
+      </CardHeader>
+
+      <CardContent className="space-y-6">
+        {/* Star Rating */}
+        <div>
+          <label className="block text-lg font-semibold text-gray-900 mb-3">
+            Oliko testi hyödyllinen?
+          </label>
+          
+          <div className="flex items-center gap-2 mb-2">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <button
+                key={star}
+                type="button"
+                onClick={() => setRating(star)}
+                onMouseEnter={() => setHoveredRating(star)}
+                onMouseLeave={() => setHoveredRating(null)}
+                className="text-4xl transition-all duration-150 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+                aria-label={`${star} tähteä`}
+              >
+                {(hoveredRating !== null ? star <= hoveredRating : star <= (rating || 0)) ? (
+                  <span className="text-yellow-400">⭐</span>
+                ) : (
+                  <span className="text-gray-300">☆</span>
+                )}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex justify-between text-sm text-gray-600 mt-1">
+            <span>Ei lainkaan</span>
+            <span>Erittäin hyödyllinen</span>
+          </div>
+        </div>
+
+        {/* Text Feedback - Shows after rating is selected */}
+        {rating !== null && (
+          <div className="animate-in fade-in slide-in-from-top-2 duration-300">
+            <label className="block text-base font-semibold text-gray-900 mb-2">
+              Mikä oli parasta? Mitä voisimme parantaa?
+              <span className="text-sm font-normal text-gray-500 ml-2">(valinnainen)</span>
+            </label>
+            
+            <textarea
+              value={feedbackText}
+              onChange={(e) => setFeedbackText(e.target.value)}
+              maxLength={500}
+              rows={4}
+              placeholder=""
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all resize-none"
+            />
+            
+            <div className="text-sm text-gray-500 mt-1 text-right">
+              {feedbackText.length}/500 merkkiä
+            </div>
+          </div>
+        )}
+
+        {/* Buttons */}
+        {rating !== null && (
+          <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <Button
+              onClick={handleSubmit}
+              disabled={isSubmitting}
+              size="lg"
+              className="flex-1"
+            >
+              {isSubmitting ? 'Lähetetään...' : 'Lähetä palaute'}
+            </Button>
+            <Button
+              onClick={handleSkip}
+              disabled={isSubmitting}
+              size="lg"
+              variant="outline"
+              className="flex-1 sm:flex-none"
+            >
+              Ohita
+            </Button>
+          </div>
+        )}
+
+        {/* Helper text */}
+        <div className="text-sm text-gray-600 text-center pt-2">
+          ✨ Palautteesi auttaa meitä parantamaan testiä! Kaikki palaute on anonyymiä.
+        </div>
+      </CardContent>
     </Card>
   );
 }
