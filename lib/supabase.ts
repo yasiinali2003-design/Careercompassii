@@ -53,6 +53,17 @@ export const supabaseAdmin = (() => {
     auth: {
       autoRefreshToken: false,
       persistSession: false
+    },
+    global: {
+      fetch: (...args) => {
+        return fetch(...args).catch((err) => {
+          console.error('[Supabase] Fetch error:', err);
+          throw err;
+        });
+      }
+    },
+    db: {
+      schema: 'public'
     }
   });
 })();
