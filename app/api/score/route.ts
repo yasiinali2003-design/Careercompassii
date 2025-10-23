@@ -8,6 +8,7 @@ import { rankCareers, generateUserProfile } from '@/lib/scoring/scoringEngine';
 import { Cohort, TestAnswer } from '@/lib/scoring/types';
 import { COHORT_COPY } from '@/lib/scoring/cohortConfig';
 import { calculateEducationPath } from '@/lib/scoring/educationPath';
+import { supabaseAdmin } from '@/lib/supabase';
 
 // ========== REQUEST VALIDATION ==========
 
@@ -89,10 +90,46 @@ export async function POST(request: NextRequest) {
     // Get cohort-specific copy
     const cohortCopy = COHORT_COPY[cohort];
     
+    // Save to Supabase
+    let resultId: string | null = null;
+    try {
+      const testResult = {
+        cohort,
+        school_code: body.schoolCode || null,
+        education_path_primary: educationPath?.primary || null,
+        education_path_scores: educationPath ? educationPath.scores : null,
+        top_careers: topCareers.map(c => ({
+          slug: c.slug,
+          title: c.title,
+          score: c.overallScore
+        })),
+        dimension_scores: userProfile.dimensionScores,
+        time_spent_seconds: body.timeSpentSeconds || null,
+        completed: true
+      };
+      
+      const { data, error } = await supabaseAdmin
+        .from('test_results')
+        .insert(testResult)
+        .select('id')
+        .single();
+      
+      if (error) {
+        console.error('[API] Error saving to Supabase:', error);
+      } else if (data) {
+        resultId = data.id;
+        console.log('[API] Saved to Supabase with ID:', resultId);
+      }
+    } catch (dbError) {
+      console.error('[API] Database error:', dbError);
+      // Continue anyway - don't fail the request if DB save fails
+    }
+    
     // Build response
     const response: any = {
       success: true,
       cohort,
+      resultId, // Include database ID for feedback linking
       userProfile: {
         dimensionScores: userProfile.dimensionScores,
         topStrengths: userProfile.topStrengths,

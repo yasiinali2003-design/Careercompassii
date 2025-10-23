@@ -554,6 +554,11 @@ const Summary = ({
         // Save results to localStorage for results page
         localStorage.setItem('careerTestResults', JSON.stringify(data));
         
+        // Save result ID for feedback linking
+        if (data.resultId) {
+          localStorage.setItem('lastTestResultId', data.resultId);
+        }
+        
         // Navigate to results page
         window.location.href = '/test/results';
       } else {

@@ -13,6 +13,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Logo from '@/components/Logo';
+import { supabase } from '@/lib/supabase';
 
 // Types
 interface DimensionScores {
@@ -487,24 +488,44 @@ function FeedbackSection() {
 
     setIsSubmitting(true);
 
-    // TODO: Send to backend/Supabase when implemented
-    // For now, just save to localStorage
-    const feedbackData = {
-      rating,
-      text: feedbackText.trim() || null,
-      timestamp: new Date().toISOString(),
-      resultId: localStorage.getItem('lastTestResultId') || null
-    };
-
-    // Save feedback to localStorage temporarily
-    const existingFeedback = JSON.parse(localStorage.getItem('testFeedback') || '[]');
-    existingFeedback.push(feedbackData);
-    localStorage.setItem('testFeedback', JSON.stringify(existingFeedback));
-
-    console.log('Feedback submitted:', feedbackData);
-
-    // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 500));
+    try {
+      // Get result ID from localStorage
+      const resultId = localStorage.getItem('lastTestResultId');
+      
+      if (resultId) {
+        // Save to Supabase
+        const { error } = await supabase
+          .from('test_results')
+          .update({
+            satisfaction_rating: rating,
+            feedback_text: feedbackText.trim() || null,
+            feedback_submitted_at: new Date().toISOString()
+          })
+          .eq('id', resultId);
+        
+        if (error) {
+          console.error('Error saving feedback to Supabase:', error);
+        } else {
+          console.log('Feedback saved to Supabase for result ID:', resultId);
+        }
+      } else {
+        console.warn('No result ID found, feedback not saved to database');
+      }
+      
+      // Also save to localStorage as backup
+      const feedbackData = {
+        rating,
+        text: feedbackText.trim() || null,
+        timestamp: new Date().toISOString(),
+        resultId
+      };
+      const existingFeedback = JSON.parse(localStorage.getItem('testFeedback') || '[]');
+      existingFeedback.push(feedbackData);
+      localStorage.setItem('testFeedback', JSON.stringify(existingFeedback));
+      
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+    }
 
     setIsSubmitting(false);
     setSubmitted(true);
