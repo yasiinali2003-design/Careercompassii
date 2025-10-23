@@ -531,18 +531,12 @@ function FeedbackSection() {
 
     setIsSubmitting(false);
     setSubmitted(true);
-
-    // Hide feedback section after 3 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 3000);
+    // Keep the thank you message permanently - don't reset
   };
 
   const handleSkip = () => {
     setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 1500);
+    // Keep the thank you message permanently - don't reset
   };
 
   if (submitted) {
