@@ -9,6 +9,8 @@ import { Cohort, TestAnswer } from '@/lib/scoring/types';
 import { COHORT_COPY } from '@/lib/scoring/cohortConfig';
 import { calculateEducationPath } from '@/lib/scoring/educationPath';
 import { supabaseAdmin } from '@/lib/supabase';
+import { checkRateLimit } from '@/lib/rateLimit';
+import { unshuffleAnswers } from '@/lib/questionShuffle';
 
 // ========== REQUEST VALIDATION ==========
 
@@ -56,6 +58,22 @@ function validateRequest(data: any): { valid: boolean; error?: string } {
 
 export async function POST(request: NextRequest) {
   try {
+    // Check rate limit (GDPR-compliant hashed IP)
+    const rateLimitCheck = await checkRateLimit(request);
+    if (rateLimitCheck) {
+      return NextResponse.json(
+        { 
+          success: false, 
+          error: rateLimitCheck.message || 'Too many requests',
+          code: 'RATE_LIMIT_EXCEEDED'
+        },
+        { 
+          status: 429,
+          headers: rateLimitCheck.headers
+        }
+      );
+    }
+    
     // Parse request body
     const body = await request.json();
     
@@ -71,18 +89,25 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    const { cohort, answers } = body as ScoringRequest;
+    const { cohort, answers, originalIndices, shuffleKey } = body as ScoringRequest & { originalIndices?: number[]; shuffleKey?: string };
     
-    // Run scoring algorithm
-    console.log(`[API] Scoring ${answers.length} answers for cohort ${cohort}`);
+    // Unshuffle answers if shuffle was used
+    let unshuffledAnswers = answers;
+    if (originalIndices && shuffleKey) {
+      unshuffledAnswers = unshuffleAnswers(answers, originalIndices);
+      console.log(`[API mocking: Unshuffling ${answers.length} answers`);
+    }
     
-    const topCareers = rankCareers(answers, cohort, 5);
-    const userProfile = generateUserProfile(answers, cohort);
+    // Run scoring algorithm with unshuffled answers
+    console.log(`[API] Scoring ${unshuffledAnswers.length} answers for cohort ${cohort}`);
+    
+    const topCareers = rankCareers(unshuffledAnswers, cohort, 5);
+    const userProfile = generateUserProfile(unshuffledAnswers, cohort);
     
     console.log(`[API] Top career: ${topCareers[0]?.title} (${topCareers[0]?.overallScore}%)`);
     
     // Calculate education path (YLA only)
-    const educationPath = cohort === 'YLA' ? calculateEducationPath(answers, cohort) : null;
+    const educationPath = cohort === 'YLA' ? calculateEducationPath(unshuffledAnswers, cohort) : null;
     if (educationPath) {
       console.log(`[API] Education path: ${educationPath.primary} (${Math.round(educationPath.scores[educationPath.primary])}%)`);
     }

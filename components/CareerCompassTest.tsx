@@ -171,8 +171,37 @@ export default function CareerCompassTest() {
   const [answers, setAnswers] = useState<number[]>([]);
   const [showSaveNotification, setShowSaveNotification] = useState(false);
   const [hasLoadedProgress, setHasLoadedProgress] = useState(false);
+  const [originalIndices, setOriginalIndices] = useState<number[]>([]); // For shuffle mapping
+  const [shuffleKey, setShuffleKey] = useState<string>(''); // For verification
 
-  const qList = useMemo(() => (group ? QUESTIONS[group] : []), [group]);
+  // Shuffle questions when group is selected
+  const qList = useMemo(() => {
+    if (!group) return [];
+    
+    const originalQs = QUESTIONS[group];
+    const qsWithIndices = originalQs.map((text, idx) => ({ q: idx, text }));
+    
+    // Shuffle using Fisher-Yates
+    const shuffled = [...qsWithIndices];
+    
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    
+    // Create mapping from shuffled position -> original index
+    const mapping: number[] = shuffled.map(q => q.q);
+    setOriginalIndices(mapping);
+    
+    // Generate simple shuffle key
+    let hash = 0;
+    for (let i = 0; i < mapping.length; i++) {
+      hash = (hash + (mapping[i] * (i + 1))) % 2147483647;
+    }
+    setShuffleKey(hash.toString(36));
+    
+    return shuffled.map(q => q.text);
+  }, [group]);
   const total = qList.length;
 
   // Load saved progress on component mount
@@ -315,6 +344,8 @@ export default function CareerCompassTest() {
           group={group}
           questions={qList}
           answers={answers}
+          originalIndices={originalIndices}
+          shuffleKey={shuffleKey}
           onRestart={restart}
           onSend={sendToBackend}
         />
@@ -509,12 +540,16 @@ const Summary = ({
   group,
   questions,
   answers,
+  originalIndices,
+  shuffleKey,
   onRestart,
   onSend,
 }: {
   group: any;
   questions: string[];
   answers: number[];
+  originalIndices: number[];
+  shuffleKey: string;
   onRestart: () => void;
   onSend: () => void;
 }) => {
@@ -544,7 +579,9 @@ const Summary = ({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           cohort: group, // YLA, TASO2, or NUORI
-          answers: formattedAnswers
+          answers: formattedAnswers,
+          originalIndices, // Shuffle mapping
+          shuffleKey // Verification key
         }),
       });
       
