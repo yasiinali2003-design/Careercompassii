@@ -46,7 +46,11 @@ export async function POST(request: NextRequest) {
     if (error) {
       console.error('[API/Classes] Error creating class:', error);
       return NextResponse.json(
-        { success: false, error: 'Failed to create class' },
+        { 
+          success: false, 
+          error: 'Failed to create class. Make sure the database tables exist.',
+          details: error.message 
+        },
         { status: 500 }
       );
     }

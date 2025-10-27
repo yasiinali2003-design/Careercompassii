@@ -112,7 +112,11 @@ export default function NewClassPage() {
           
           {error && (
             <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-              <p className="text-red-800">{error}</p>
+              <p className="text-red-800 font-semibold">{error}</p>
+              <p className="text-red-700 text-sm mt-2">
+                Tämä tapahtuu jos tietokantatauluja ei ole vielä luotu. 
+                Päätetään tämä yhdessä pian!
+              </p>
             </div>
           )}
 
@@ -150,14 +154,24 @@ export default function NewClassPage() {
             </button>
           </div>
 
-          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h3 className="font-semibold text-blue-900 mb-2">Mitä tapahtuu?</h3>
-            <ul className="text-sm text-blue-800 space-y-1">
-              <li>1. Luo luokka → saat luokkatunnuksen ja julkisen linkin</li>
-              <li>2. Luo PIN-koodit → jaa oppilaille</li>
-              <li>3. Syötä nimilista (vain omalle laitteellesi)</li>
-              <li>4. Tarkastele tuloksia nimillä yhdistettynä</li>
-            </ul>
+          <div className="mt-8 space-y-4">
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+              <h3 className="font-semibold text-yellow-900 mb-2">⚠️ Tärkeää</h3>
+              <p className="text-sm text-yellow-800">
+                Teacher Dashboard on kehitysvaiheessa ja vaatii tietokantataulujen luonnin. 
+                Tämä ominaisuus ei ole vielä valmis käyttöönottoon.
+              </p>
+            </div>
+            
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <h3 className="font-semibold text-blue-900 mb-2">Mitä tapahtuu?</h3>
+              <ul className="text-sm text-blue-800 space-y-1">
+                <li>1. Luo luokka → saat luokkatunnuksen ja julkisen linkin</li>
+                <li>2. Luo PIN-koodit → jaa oppilaille</li>
+                <li>3. Syötä nimilista (vain omalle laitteellesi)</li>
+                <li>4. Tarkastele tuloksia nimillä yhdistettynä</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
