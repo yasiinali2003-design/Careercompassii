@@ -312,9 +312,12 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
 
       {/* Public Link */}
       <div className="bg-gray-50 rounded-lg p-4">
-        <p className="font-semibold mb-2">Julkinen linkki (anonyymi):</p>
+        <p className="font-semibold mb-2">Julkinen linkki (oppilaat):</p>
         <p className="text-sm text-blue-600 break-all">
-          https://careercompassii.vercel.app/{classToken}
+          https://careercompassii.vercel.app/{classToken}/test
+        </p>
+        <p className="text-xs text-gray-600 mt-2">
+          Jaa tämä linkki oppilaille. He syöttävät PIN-koodin ja aloittavat testin.
         </p>
       </div>
     </div>
