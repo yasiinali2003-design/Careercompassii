@@ -22,6 +22,13 @@ function getSupabaseConfig() {
     return null;
   }
 
+  // Log what we have (in production, don't log keys)
+  console.log('[Supabase] Config check:', {
+    url: supabaseUrl ? 'Set' : 'Missing',
+    anonKey: supabaseAnonKey ? 'Set' : 'Missing',
+    serviceKey: supabaseServiceRoleKey ? 'Set' : 'Missing'
+  });
+
   return { supabaseUrl, supabaseAnonKey, supabaseServiceRoleKey };
 }
 

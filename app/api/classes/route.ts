@@ -23,6 +23,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Generate unique class token
+    const classToken = generateClassToken();
+
+    // Check if Supabase is configured
     if (!supabaseAdmin) {
       console.error('[API/Classes] Supabase not configured - check environment variables');
       return NextResponse.json(
@@ -34,44 +38,66 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Generate unique class token
-    const classToken = generateClassToken();
+    // Try to insert class into database
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('classes')
+        .insert({
+          teacher_id: teacherId,
+          class_token: classToken
+        })
+        .select('id, class_token, created_at')
+        .single();
 
-    // Insert class into database
-    const { data, error } = await supabaseAdmin
-      .from('classes')
-      .insert({
-        teacher_id: teacherId,
-        class_token: classToken
-      })
-      .select('id, class_token, created_at')
-      .single();
+      if (error) {
+        console.error('[API/Classes] Supabase error:', error);
+        console.error('[API/Classes] Error code:', error.code);
+        console.error('[API/Classes] Error message:', error.message);
+        console.error('[API/Classes] Error details:', error.details);
+        
+        // Check if it's a table missing error
+        if (error.code === 'PGRST116' || error.message?.includes('does not exist')) {
+          return NextResponse.json(
+            { 
+              success: false, 
+              error: 'Database tables not created yet',
+              hint: 'Run the SQL file in Supabase: supabase-teacher-dashboard-fixed.sql',
+              details: error.message
+            },
+            { status: 500 }
+          );
+        }
 
-    if (error) {
-      console.error('[API/Classes] Supabase error:', error);
-      console.error('[API/Classes] Error code:', error.code);
-      console.error('[API/Classes] Error message:', error.message);
-      console.error('[API/Classes] Error details:', error.details);
-      
+        return NextResponse.json(
+          { 
+            success: false, 
+            error: 'Failed to create class',
+            details: error.message,
+            hint: 'Check Vercel logs for more details'
+          },
+          { status: 500 }
+        );
+      }
+
+      console.log('[API/Classes] Created class:', data.id);
+
+      return NextResponse.json({
+        success: true,
+        classId: data.id,
+        classToken: data.class_token,
+        createdAt: data.created_at
+      });
+    } catch (err) {
+      console.error('[API/Classes] Unexpected error:', err);
       return NextResponse.json(
         { 
           success: false, 
-          error: 'Failed to create class',
-          details: error.message,
-          hint: 'Check Vercel logs for more details'
+          error: 'Database connection failed',
+          details: err instanceof Error ? err.message : String(err)
         },
         { status: 500 }
       );
     }
-
-    console.log('[API/Classes] Created class:', data.id);
-
-    return NextResponse.json({
-      success: true,
-      classId: data.id,
-      classToken: data.class_token,
-      createdAt: data.created_at
-    });
 
   } catch (error) {
     console.error('[API/Classes] Unexpected error:', error);
