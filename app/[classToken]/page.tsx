@@ -6,15 +6,14 @@
  * NO NAMES shown - completely anonymous
  */
 
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function PublicClassResultsPage({
   params,
 }: {
-  params: Promise<{ classToken: string }>;
+  params: { classToken: string };
 }) {
-  const resolvedParams = use(params);
-  const { classToken } = resolvedParams;
+  const { classToken } = params;
   const [results, setResults] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
