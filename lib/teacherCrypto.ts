@@ -90,7 +90,11 @@ export async function encryptMapping(
     combined.set(new Uint8Array(encrypted), IV_LENGTH);
 
     // Convert to base64
-    return btoa(String.fromCharCode(...combined));
+    const chars: string[] = [];
+    for (let i = 0; i < combined.length; i++) {
+      chars.push(String.fromCharCode(combined[i]));
+    }
+    return btoa(chars.join(''));
   } catch (error) {
     console.error('[TeacherCrypto] Encryption error:', error);
     throw new Error('Encryption failed: ' + (error as Error).message);
@@ -248,7 +252,11 @@ export function generateClassToken(): string {
   crypto.getRandomValues(randomBytes);
   
   // Convert to base64url (URL-safe)
-  const base64 = btoa(String.fromCharCode(...randomBytes))
+  const chars: string[] = [];
+  for (let i = 0; i < randomBytes.length; i++) {
+    chars.push(String.fromCharCode(randomBytes[i]));
+  }
+  const base64 = btoa(chars.join(''))
     .replace(/\+/g, '-')
     .replace(/\//g, '_')
     .replace(/=/g, '');

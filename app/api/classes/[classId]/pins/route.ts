@@ -72,7 +72,7 @@ export async function POST(
       .eq('class_id', classId);
 
     if (existingPinsData) {
-      existingPinsData.forEach(row => existingPins.add(row.pin));
+      existingPinsData.forEach((row: { pin: string }) => existingPins.add(row.pin));
     }
 
     // Generate until we have enough unique PINs

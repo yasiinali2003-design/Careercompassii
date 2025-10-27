@@ -294,7 +294,11 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                       </td>
                       <td className="border p-2">
                         {result.result_payload?.dimension_scores ? 
-                          Math.round(Object.values(result.result_payload.dimension_scores).reduce((a: any, b: any) => a + b, 0) / 4) + '%'
+                          (() => {
+                            const scores = result.result_payload.dimension_scores as Record<string, number>;
+                            const avg = Object.values(scores).reduce((a, b) => a + b, 0) / 4;
+                            return Math.round(avg) + '%';
+                          })()
                           : '—'}
                       </td>
                     </tr>

@@ -91,12 +91,12 @@ export async function checkRateLimit(request: Request): Promise<{ limit: boolean
     }
     
     // Count requests in different windows
-    const requestsInHour = data?.filter(r => new Date(r.created_at) >= hourAgo)?.length || 0;
+    const requestsInHour = data?.filter((r: { created_at: string }) => new Date(r.created_at) >= hourAgo)?.length || 0;
     const requestsInDay = data?.length || 0;
     
     // Check hourly limit
     if (requestsInHour >= RATE_LIMIT_CONFIG.maxRequestsPerHour) {
-      const oldestInWindow = data?.find(r => new Date(r.created_at) >= hourAgo);
+      const oldestInWindow = data?.find((r: { created_at: string }) => new Date(r.created_at) >= hourAgo);
       const retryAfter = oldestInWindow 
         ? Math.ceil((new Date(oldestInWindow.created_at).getTime() + 60 * 60 * 1000 - now.getTime()) / 1000)
         : 3600;
