@@ -31,10 +31,11 @@ export async function GET(
     }
 
     if (!supabaseAdmin) {
-      return NextResponse.json(
-        { success: false, error: 'Database not configured' },
-        { status: 500 }
-      );
+      console.warn('[API/Results] Supabase not configured - returning mock response');
+      return NextResponse.json({
+        success: true,
+        results: []
+      });
     }
 
     // For now, return all results for the class
