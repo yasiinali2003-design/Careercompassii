@@ -5,16 +5,14 @@
  * Shows PINs, name mapping, and results for a specific class
  */
 
-import { use } from 'react';
 import TeacherClassManager from '@/components/TeacherClassManager';
 
 export default function ClassDetailPage({
   params,
 }: {
-  params: Promise<{ classId: string }>;
+  params: { classId: string };
 }) {
-  const resolvedParams = use(params);
-  const { classId } = resolvedParams;
+  const { classId } = params;
 
   // TODO: Fetch class details and token from API
   // For now, using placeholder
