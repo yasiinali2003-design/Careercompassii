@@ -5,6 +5,7 @@
  * Shows PINs, name mapping, and results for a specific class
  */
 
+import { useEffect, useState } from 'react';
 import TeacherClassManager from '@/components/TeacherClassManager';
 
 export default function ClassDetailPage({
@@ -13,10 +14,38 @@ export default function ClassDetailPage({
   params: { classId: string };
 }) {
   const { classId } = params;
+  const [classToken, setClassToken] = useState<string>('');
+  const [loading, setLoading] = useState(true);
 
-  // TODO: Fetch class details and token from API
-  // For now, using placeholder
-  const classToken = 'placeholder-token';
+  useEffect(() => {
+    fetchClassDetails();
+  }, [classId]);
+
+  const fetchClassDetails = async () => {
+    try {
+      const response = await fetch(`/api/classes/${classId}`);
+      const data = await response.json();
+      if (data.success) {
+        setClassToken(data.class.classToken);
+      } else {
+        console.error('Failed to fetch class details');
+      }
+    } catch (error) {
+      console.error('Error fetching class details:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-8">
+        <div className="max-w-6xl mx-auto text-center py-12">
+          <div className="animate-spin h-8 w-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto"></div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-8">
