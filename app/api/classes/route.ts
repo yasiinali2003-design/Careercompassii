@@ -24,8 +24,12 @@ export async function POST(request: NextRequest) {
     }
 
     if (!supabaseAdmin) {
+      console.error('[API/Classes] Supabase not configured - check environment variables');
       return NextResponse.json(
-        { success: false, error: 'Database not configured' },
+        { 
+          success: false, 
+          error: 'Database not configured. Check environment variables: SUPABASE_SERVICE_ROLE_KEY' 
+        },
         { status: 500 }
       );
     }
@@ -44,12 +48,17 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (error) {
-      console.error('[API/Classes] Error creating class:', error);
+      console.error('[API/Classes] Supabase error:', error);
+      console.error('[API/Classes] Error code:', error.code);
+      console.error('[API/Classes] Error message:', error.message);
+      console.error('[API/Classes] Error details:', error.details);
+      
       return NextResponse.json(
         { 
           success: false, 
-          error: 'Failed to create class. Make sure the database tables exist.',
-          details: error.message 
+          error: 'Failed to create class',
+          details: error.message,
+          hint: 'Check Vercel logs for more details'
         },
         { status: 500 }
       );
