@@ -371,6 +371,11 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                   <p className="text-sm text-slate-600 mb-4">
                     Samankaltaiset ammatit samalta alalta, vastaavilla vaatimuksilla tai palkkaluokalla
                   </p>
+                  <div className="bg-white/60 rounded-lg p-3 mb-4">
+                    <p className="text-xs text-slate-700">
+                      💡 <strong>Miksi nämä ammatit:</strong> Valittu saman alan työtehtävien, koulutusvaatimusten ja palkkatason perusteella. Saatat löytää näistä vaihtoehtoisia urapolkuja.
+                    </p>
+                  </div>
                   <div className="grid grid-cols-1 gap-3">
                     {relatedCareers.map((relatedCareer: Career) => (
                       <Link
