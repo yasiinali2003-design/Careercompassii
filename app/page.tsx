@@ -58,6 +58,12 @@ export default function HomePage() {
             >
               Missio
             </Link>
+            <Link
+              href="/kouluille"
+              className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors hidden sm:block"
+            >
+              Kouluille
+            </Link>
             <Button
               asChild
               className="bg-primary hover:bg-primary/90 text-primary-foreground"
@@ -389,7 +395,20 @@ export default function HomePage() {
       <footer className="border-t border-border/50 py-12 bg-muted/20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <Logo className="h-8 w-auto" />
+            <div className="flex flex-col gap-2">
+              <Logo className="h-8 w-auto" />
+              <div className="flex gap-4 text-sm">
+                <Link href="/ammatit" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Urakirjasto
+                </Link>
+                <Link href="/kouluille" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Kouluille
+                </Link>
+                <Link href="/test" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Testi
+                </Link>
+              </div>
+            </div>
             <p className="text-sm text-muted-foreground text-center">
               Tulevaisuus alkaa itsensä löytämisestä • © 2025 CareerCompassi
             </p>
