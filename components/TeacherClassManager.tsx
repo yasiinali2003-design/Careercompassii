@@ -19,6 +19,23 @@ interface Props {
   classToken: string;
 }
 
+function calculateAnalytics(results: any[]) {
+  const careerCounts: Record<string, number> = {};
+  
+  results.forEach(result => {
+    const topCareer = result.result_payload?.top_careers?.[0]?.title;
+    if (topCareer) {
+      careerCounts[topCareer] = (careerCounts[topCareer] || 0) + 1;
+    }
+  });
+  
+  const topCareers = Object.entries(careerCounts)
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count);
+  
+  return { topCareers };
+}
+
 export default function TeacherClassManager({ classId, classToken }: Props) {
   const [activeTab, setActiveTab] = useState<'pins' | 'names' | 'results'>('pins');
   const [pins, setPins] = useState<string[]>([]);
@@ -274,38 +291,84 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
           {results.length === 0 ? (
             <p className="text-gray-600">Tuloksia ei vielä saatavilla</p>
           ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-gray-300">
-                <thead>
-                  <tr className="bg-gray-50">
-                    <th className="border p-2 text-left">Nimi</th>
-                    <th className="border p-2 text-left">PIN</th>
-                    <th className="border p-2 text-left">Aikana</th>
-                    <th className="border p-2 text-left">Keskiarvo</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {results.map((result, i) => (
-                    <tr key={i}>
-                      <td className="border p-2">{nameMapping[result.pin] || '—'}</td>
-                      <td className="border p-2 font-mono text-sm">{result.pin}</td>
-                      <td className="border p-2">
-                        {new Date(result.created_at).toLocaleDateString('fi-FI')}
-                      </td>
-                      <td className="border p-2">
-                        {result.result_payload?.dimension_scores ? 
-                          (() => {
-                            const scores = result.result_payload.dimension_scores as Record<string, number>;
-                            const avg = Object.values(scores).reduce((a, b) => a + b, 0) / 4;
-                            return Math.round(avg) + '%';
-                          })()
-                          : '—'}
-                      </td>
+            <>
+              {/* Export Buttons */}
+              <div className="flex gap-4">
+                <button
+                  onClick={() => {
+                    const csv = [
+                      ['Nimi', 'PIN', 'Päivämäärä', 'Top 1', 'Top 2', 'Top 3'].join(','),
+                      ...results.map(result => {
+                        const topCareers = result.result_payload?.top_careers?.slice(0, 3) || [];
+                        return [
+                          nameMapping[result.pin] || '',
+                          result.pin,
+                          new Date(result.created_at).toLocaleDateString('fi-FI'),
+                          topCareers[0]?.title || '',
+                          topCareers[1]?.title || '',
+                          topCareers[2]?.title || ''
+                        ].join(',');
+                      })
+                    ].join('\n');
+                    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `tulokset-${classId.substring(0, 8)}.csv`;
+                    a.click();
+                  }}
+                  className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700"
+                >
+                  📥 Lataa CSV
+                </button>
+                <button
+                  onClick={() => {
+                    const analytics = calculateAnalytics(results);
+                    alert(`Yleisimmät ammatit:\n${analytics.topCareers.slice(0, 5).map(c => `${c.name}: ${c.count}`).join('\n')}`);
+                  }}
+                  className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700"
+                >
+                  📊 Näytä analyysi
+                </button>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse border border-gray-300">
+                  <thead>
+                    <tr className="bg-gray-50">
+                      <th className="border p-2 text-left">Nimi</th>
+                      <th className="border p-2 text-left">PIN</th>
+                      <th className="border p-2 text-left">Aikana</th>
+                      <th className="border p-2 text-left">Keskiarvo</th>
+                      <th className="border p-2 text-left">Top 1</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody>
+                    {results.map((result, i) => (
+                      <tr key={i}>
+                        <td className="border p-2">{nameMapping[result.pin] || '—'}</td>
+                        <td className="border p-2 font-mono text-sm">{result.pin}</td>
+                        <td className="border p-2">
+                          {new Date(result.created_at).toLocaleDateString('fi-FI')}
+                        </td>
+                        <td className="border p-2">
+                          {result.result_payload?.dimension_scores ? 
+                            (() => {
+                              const scores = result.result_payload.dimension_scores as Record<string, number>;
+                              const avg = Object.values(scores).reduce((a, b) => a + b, 0) / 4;
+                              return Math.round(avg) + '%';
+                            })()
+                            : '—'}
+                        </td>
+                        <td className="border p-2 text-sm">
+                          {result.result_payload?.top_careers?.[0]?.title || '—'}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
           )}
         </div>
       )}
