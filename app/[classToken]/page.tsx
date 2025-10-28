@@ -25,7 +25,7 @@ export default function PublicClassResultsPage({
   const fetchResults = async () => {
     try {
       const response = await fetch(
-        `https://careercompassii.vercel.app/.netlify/functions/get-class-results?classToken=${classToken}`
+        `/api/classes/${classToken}/results`
       );
       
       const data = await response.json();

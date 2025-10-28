@@ -53,9 +53,17 @@ export const supabase = (() => {
 export const supabaseAdmin = (() => {
   const config = getSupabaseConfig();
   if (!config || !config.supabaseServiceRoleKey) {
+    console.warn('[Supabase] Service role key not configured');
     // Return a mock client during build
     return null as any;
   }
+  
+  // Validate key format (JWT should be ~200+ chars)
+  if (config.supabaseServiceRoleKey.length < 50) {
+    console.error('[Supabase] Service role key appears to be invalid (too short)');
+    return null as any;
+  }
+  
   return createClient(config.supabaseUrl, config.supabaseServiceRoleKey, {
     auth: {
       autoRefreshToken: false,
