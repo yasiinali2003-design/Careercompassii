@@ -153,7 +153,7 @@ export default function PricingPage() {
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>Slack/telefonituki + koulutus</span>
+                  <span>Tuki ja käyttöohjeistus</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
@@ -226,7 +226,7 @@ export default function PricingPage() {
                     <td className="border p-3">Tuki</td>
                     <td className="border p-3 text-center">—</td>
                     <td className="border p-3 text-center">Sähköposti</td>
-                    <td className="border p-3 text-center">Slack/telefoni + koulutus</td>
+                    <td className="border p-3 text-center">Tuki ja käyttöohjeistus</td>
                   </tr>
                   <tr className="bg-gray-50">
                     <td className="border p-3">API-pääsy</td>
