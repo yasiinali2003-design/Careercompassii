@@ -420,34 +420,6 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                 </div>
               </div>
 
-              {/* Career Story Section */}
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl shadow-sm border-2 border-amber-200 p-8 mb-6">
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                  Näkökulma ammatista
-                </h3>
-                <div className="bg-white rounded-xl p-6 border border-amber-200">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center">
-                      <div className="w-8 h-8 bg-amber-200 rounded-full"></div>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900">{career.title}</h4>
-                      <p className="text-sm text-slate-600">Esimerkki henkilökohtaisesta tarinasta</p>
-                    </div>
-                  </div>
-                  <p className="text-slate-700 leading-relaxed mb-4">
-                    "Tämä on esimerkkitarina, joka helpottaa ammatin ymmärtämistä. Oppilaitokset voivat lisätä 
-                    oikeita henkilökohtaisia tarinoita alan ammattilaisilta. Tarinat auttavat nuoria ymmärtämään 
-                    millaista työ on päivittäin käytännössä."
-                  </p>
-                  <div className="bg-amber-50 rounded-lg p-4">
-                    <p className="text-sm text-amber-800">
-                      Premium-versiossa voit lisätä oikeita haastatteluja ja videotarinoita omilta oppilaitosiltasi.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
               {/* Compare Button */}
               <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-6 text-white mb-6">
                 <h3 className="text-lg font-bold mb-2">Vertaa tätä ammattia muihin</h3>
