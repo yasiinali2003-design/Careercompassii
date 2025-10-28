@@ -23,19 +23,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Convert teacher name to UUID (deterministic)
-    function generateUUIDFromString(str: string): string {
-      const hexValues = '0123456789abcdef';
-      let hex = '';
-      for (let i = 0; i < 32; i++) {
-        const char = str.charCodeAt(i % str.length);
-        hex += hexValues[char % 16];
-      }
-      return `${hex.slice(0,8)}-${hex.slice(8,12)}-4${hex.slice(13,16)}-8${hex.slice(17,20)}-${hex.slice(20,32)}`;
-    }
-
-    const validUUID = generateUUIDFromString(teacherId);
-
     // Generate unique class token
     const classToken = generateClassToken();
 
@@ -55,7 +42,7 @@ export async function POST(request: NextRequest) {
       const { data, error } = await supabaseAdmin
         .from('classes')
         .insert({
-          teacher_id: validUUID,
+          teacher_id: teacherId,
           class_token: classToken
         })
         .select('id, class_token, created_at')
