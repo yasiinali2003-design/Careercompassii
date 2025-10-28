@@ -41,6 +41,12 @@ export default function HomePage() {
               Miten toimii
             </Link>
             <Link
+              href="#kenelle"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
+            >
+              Kenelle
+            </Link>
+            <Link
               href="/ammatit"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
             >
@@ -163,6 +169,88 @@ export default function HomePage() {
                 Saat personoidut urasuositukset ja konkreettiset seuraavat askeleet. Sun tulevaisuus alkaa tästä.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kenelle" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">Kenelle tämä on?</h2>
+            <p className="text-base sm:text-lg text-muted-foreground">Jos mietit sun tulevaisuutta, oot oikeessa paikassa</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+            <Card className="group border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 hover:border-primary/50 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-out">
+              <CardContent className="p-6 sm:p-8">
+                <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-3 sm:mb-4">
+                  <GraduationCap className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">Yläasteen oppilaat</h3>
+                <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">Löydä suunta, joka tuntuu omalta.</p>
+                <ul className="space-y-2 text-xs sm:text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Tutustu eri uravaihtoehtoihin</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Ymmärrä vahvuutesi</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Löydä opintopolku, joka tuntuu oikealta</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="group border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 hover:border-primary/50 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-out">
+              <CardContent className="p-6 sm:p-8">
+                <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-3 sm:mb-4">
+                  <Target className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">Toisen asteen opiskelijat</h3>
+                <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">Selvitä, mihin kiinnostuksesi johtavat.</p>
+                <ul className="space-y-2 text-xs sm:text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Tunnista kiinnostuksen kohteesi</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Selvitä, mihin ammattialoihin ne liittyvät</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Tee päätöksiä, jotka tuntuvat varmoilta</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="group border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 hover:border-primary/50 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-out">
+              <CardContent className="p-6 sm:p-8">
+                <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-3 sm:mb-4">
+                  <Users className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">Nuoret aikuiset (20–25v)</h3>
+                <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">
+                  Tutustu uusiin mahdollisuuksiin ja löydä oma polkusi ilman stressiä.
+                </p>
+                <ul className="space-y-2 text-xs sm:text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Tutustu uusiin mahdollisuuksiin</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Hahmota oma vahvuusprofiilisi</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Löydä seuraava askel ilman stressiä</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
