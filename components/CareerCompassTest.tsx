@@ -581,6 +581,7 @@ const Summary = ({
 
       // If PIN and classToken are provided, save to teacher's class
       if (pin && classToken) {
+        console.log('[Test] PIN detected, saving to teacher class:', { pin, classToken });
         // First get the results by calling /api/score
         const scoreResponse = await fetch("/api/score", {
           method: "POST",
@@ -628,9 +629,10 @@ const Summary = ({
             setError(resultsData.error || "Tulosten tallentaminen epäonnistui");
           }
         } else {
-          setError(scoreData.error || "Analyysi epäonnistui");
+            setError(scoreData.error || "Analyysi epäonnistui");
         }
       } else {
+        console.log('[Test] No PIN, regular public flow');
         // Regular public flow (no PIN)
         const response = await fetch("/api/score", {
           method: "POST",
