@@ -6,12 +6,21 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check } from 'lucide-react';
+import { Check, ArrowLeft } from 'lucide-react';
+import Logo from '@/components/Logo';
 
 export default function PricingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="container mx-auto px-4 py-16 max-w-6xl">
+        {/* Back Button */}
+        <div className="mb-8">
+          <Link href="/" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors">
+            <ArrowLeft className="h-4 w-4" />
+            Takaisin etusivulle
+          </Link>
+        </div>
+        
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
