@@ -1,6 +1,6 @@
 /**
- * Pricing Page for Schools
- * "Kouluille" = "For Schools"
+ * Pricing Page for Schools - 3-Tier Setup
+ * Free / Yläaste (€1,200) / Premium (€2,000)
  */
 
 import Link from 'next/link';
@@ -22,13 +22,13 @@ export default function PricingPage() {
           </p>
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {/* Free - Public */}
+        {/* 3-Tier Pricing Cards */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {/* Tier 1: Free */}
           <Card className="border-2">
             <CardHeader>
-              <CardTitle className="text-2xl">JULKINEN (ILMAINEN)</CardTitle>
-              <CardDescription>Kaikille ilmainen</CardDescription>
+              <CardTitle className="text-2xl">ILMAINEN</CardTitle>
+              <CardDescription>Yksityiskäyttäjille</CardDescription>
               <div className="mt-4">
                 <span className="text-4xl font-bold">0€</span>
                 <span className="text-gray-600">/vuosi</span>
@@ -61,18 +61,66 @@ export default function PricingPage() {
             </CardContent>
           </Card>
 
-          {/* School Package */}
-          <Card className="border-2 border-blue-500 relative">
+          {/* Tier 2: Yläaste */}
+          <Card className="border-2 border-green-500 relative">
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                SUOSITELTU KORKEAKOULUILLE
+              <span className="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                PERUSKOULUILLE
               </span>
             </div>
             <CardHeader>
-              <CardTitle className="text-2xl">KORKEAKOULU PAKETTI</CardTitle>
-              <CardDescription>Helppo koulun käyttöön</CardDescription>
+              <CardTitle className="text-2xl">YLÄASTE</CardTitle>
+              <CardDescription>7.-9. luokat</CardDescription>
               <div className="mt-4">
-                <span className="text-4xl font-bold">1 500€</span>
+                <span className="text-4xl font-bold">1 200€</span>
+                <span className="text-gray-600">/vuosi</span>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-center">
+                  <Check className="mr-2 text-green-500" size={20} />
+                  <span>Kaikki ilmaiset ominaisuudet</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="mr-2 text-green-500" size={20} />
+                  <span>Opettajien hallintapaneeli</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="mr-2 text-green-500" size={20} />
+                  <span>PIN-koodien generointi</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="mr-2 text-green-500" size={20} />
+                  <span>Perus CSV-vienti</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="mr-2 text-green-500" size={20} />
+                  <span>Yksinkertaiset analyysit</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="mr-2 text-green-500" size={20} />
+                  <span>Sähköpostituki</span>
+                </li>
+              </ul>
+              <Button className="w-full bg-green-600 hover:bg-green-700">
+                Ota yhteyttä
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Tier 3: Premium */}
+          <Card className="border-2 border-blue-500 relative">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                SUOSITELTU
+              </span>
+            </div>
+            <CardHeader>
+              <CardTitle className="text-2xl">PREMIUM</CardTitle>
+              <CardDescription>Lukio & Ammattikoulu</CardDescription>
+              <div className="mt-4">
+                <span className="text-4xl font-bold">2 000€</span>
                 <span className="text-gray-600">/vuosi</span>
               </div>
             </CardHeader>
@@ -80,27 +128,27 @@ export default function PricingPage() {
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>Kaikki julkiset ominaisuudet</span>
+                  <span>Kaikki Yläaste-ominaisuudet</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>Opettajien hallintapaneeli</span>
+                  <span>Kehittyneet analyysit</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>Lokituksen tulosten seuranta</span>
+                  <span>Mukautetut raporttipohjat</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>CSV-vienti tuloksille</span>
+                  <span>2 vuoden historia</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>Analyyttiset työkalut</span>
+                  <span>Prioriteettituki (24h)</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>Tekninen tuki</span>
+                  <span>1v1 onboarding-koulutus</span>
                 </li>
               </ul>
               <Button className="w-full bg-blue-600 hover:bg-blue-700">
@@ -110,33 +158,63 @@ export default function PricingPage() {
           </Card>
         </div>
 
-        {/* Features */}
+        {/* Feature Comparison Section */}
         <Card className="mb-12">
           <CardHeader>
             <CardTitle className="text-3xl text-center">
-              Mitä sisältyy korkeakoulu pakettiin?
+              Vertailutaulukko
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-bold mb-4">Opettajien hallintapaneeli</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>✓ Luo tunteja ja generaattori PIN-koodit</li>
-                  <li>✓ Seuraa tuloksia reaaliajassa</li>
-                  <li>✓ Tulosten exportaminen CSV-muodossa</li>
-                  <li>✓ Anonyymit tulokset (GDPR-turvalliset)</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-4">Analytiikka & raportointi</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>✓ Yleisimmät kiinnostusten kohteet</li>
-                  <li>✓ Tulosten trendianalyysi</li>
-                  <li>✓ Raportit ryhmille tai kaikille oppilaille</li>
-                  <li>✓ Kustomoitavat raportit</li>
-                </ul>
-              </div>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-gray-50">
+                    <th className="border p-3 text-left">Ominaisuus</th>
+                    <th className="border p-3 text-center">Ilmainen</th>
+                    <th className="border p-3 text-center">Yläaste</th>
+                    <th className="border p-3 text-center">Premium</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border p-3">Urapolku-testi</td>
+                    <td className="border p-3 text-center">✓</td>
+                    <td className="border p-3 text-center">✓</td>
+                    <td className="border p-3 text-center">✓</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border p-3">Opettajien hallintapaneeli</td>
+                    <td className="border p-3 text-center">—</td>
+                    <td className="border p-3 text-center">✓</td>
+                    <td className="border p-3 text-center">✓</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-3">CSV-vienti</td>
+                    <td className="border p-3 text-center">—</td>
+                    <td className="border p-3 text-center">✓</td>
+                    <td className="border p-3 text-center">✓</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border p-3">Analyyttiset työkalut</td>
+                    <td className="border p-3 text-center">—</td>
+                    <td className="border p-3 text-center">Perus</td>
+                    <td className="border p-3 text-center">Kehittyneet</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-3">Tietojen säilytys</td>
+                    <td className="border p-3 text-center">—</td>
+                    <td className="border p-3 text-center">1 vuosi</td>
+                    <td className="border p-3 text-center">2 vuotta</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border p-3">Tuki</td>
+                    <td className="border p-3 text-center">—</td>
+                    <td className="border p-3 text-center">Sähköposti</td>
+                    <td className="border p-3 text-center">Prioriteetti (24h)</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </CardContent>
         </Card>
@@ -164,4 +242,3 @@ export default function PricingPage() {
     </div>
   );
 }
-
