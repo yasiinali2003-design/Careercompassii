@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowLeft, ExternalLink, GraduationCap, TrendingUp, Users, MapPin } from 'lucide-react';
 import { careersData as careersFI, CareerFI } from '@/data/careers-fi';
 import { Career } from '@/lib/types';
+import Logo from '@/components/Logo';
 
 // Convert CareerFI to Career format
 function convertCareerFIToCareer(careerFI: any): Career {
