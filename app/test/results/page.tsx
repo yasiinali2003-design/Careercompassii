@@ -329,6 +329,61 @@ export default function ResultsPage() {
           </Link>
         </div>
 
+        {/* What If Scenarios Section */}
+        <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl shadow-lg border-2 border-indigo-200 p-8 mt-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+            Entä jos?
+          </h2>
+          <p className="text-center text-gray-600 mb-6">
+            Kokeile erilaisia skenaarioita ja katso miten tuloksesi muuttuisivat
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Scenario 1 */}
+            <div className="bg-white rounded-xl p-6 border border-indigo-200">
+              <h3 className="font-bold text-gray-900 mb-3">Entä jos kokeilisit lukiota?</h3>
+              <p className="text-sm text-gray-600 mb-4">
+                Selvitä miten tuloksesi muuttuisivat jos valitsisit lukion ammattikoulun sijaan
+              </p>
+              <Link href="/test">
+                <button className="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                  Kokeile
+                </button>
+              </Link>
+            </div>
+
+            {/* Scenario 2 */}
+            <div className="bg-white rounded-xl p-6 border border-indigo-200">
+              <h3 className="font-bold text-gray-900 mb-3">Entä jos vaihtaisit kiinnostuksia?</h3>
+              <p className="text-sm text-gray-600 mb-4">
+                Kokeile mitä tapahtuu jos vastaat eri tavalla tiettyihin kysymyksiin
+              </p>
+              <Link href="/test">
+                <button className="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                  Kokeile
+                </button>
+              </Link>
+            </div>
+
+            {/* Scenario 3 */}
+            <div className="bg-white rounded-xl p-6 border border-indigo-200">
+              <h3 className="font-bold text-gray-900 mb-3">Entä jos haluaisit etätyön?</h3>
+              <p className="text-sm text-gray-600 mb-4">
+                Katso miten etätyö vaikuttaa suosituksiin ja tuloksiin
+              </p>
+              <Link href="/ammatit?remote=Kyllä">
+                <button className="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                  Tutki
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-6 text-center text-sm text-gray-600">
+            Kokeile erilaisia skenaarioita löytääksesi itsellesi parhaan polun
+          </div>
+        </div>
+
         {/* Share */}
         <div className="text-center mt-8">
           <p className="text-sm text-gray-500">{cohortCopy.shareText}</p>
