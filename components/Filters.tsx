@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { FilterOptions, sortOptions, locationOptions, educationOptions, remoteOptions } from "@/utils/filters";
+import { FilterOptions, sortOptions, locationOptions, educationOptions, remoteOptions, outlookOptions, workStyleOptions } from "@/utils/filters";
 import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Filter, X } from "lucide-react";
@@ -141,6 +141,26 @@ export default function Filters({
                     {remoteOptions.map((option) => (
                       <SelectItem key={option} value={option}>
                         {option}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Demand Filter */}
+              <div>
+                <label className="text-sm font-medium mb-2 block">Työllisyysnäkymä</label>
+                <Select
+                  value={localFilters.outlook || "Kaikki"}
+                  onValueChange={(value) => handleFilterChange('outlook', value)}
+                >
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {outlookOptions.map((option) => (
+                      <SelectItem key={option} value={option}>
+                        {option.charAt(0).toUpperCase() + option.slice(1)}
                       </SelectItem>
                     ))}
                   </SelectContent>

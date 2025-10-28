@@ -44,10 +44,16 @@ export const remoteOptions = [
 ];
 
 export const outlookOptions = [
+  "Kaikki",
   "kasvaa",
-  "vakaa",
-  "laskee",
-  "vaihtelee"
+  "vakaa"
+];
+
+export const workStyleOptions = [
+  "Kaikki",
+  "Etä",
+  "Osittain",
+  "Paikan päällä"
 ];
 
 // Filter functions
@@ -85,6 +91,13 @@ export function filterCareers(careers: CareerFI[], filters: FilterOptions): Care
         return false;
       }
       if (filters.remote === "Ei" && career.work_conditions.remote !== "Ei") {
+        return false;
+      }
+    }
+
+    // Demand/Outlook filter
+    if (filters.outlook && filters.outlook !== "Kaikki") {
+      if (career.job_outlook.status !== filters.outlook) {
         return false;
       }
     }
