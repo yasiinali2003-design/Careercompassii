@@ -18,16 +18,33 @@ export default function StudentLoginPage({
   const [pin, setPin] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!pin.trim()) {
       setError('Syötä PIN-koodi');
       return;
     }
 
-    // TODO: Validate PIN with API
+    setError('');
     
-    // Redirect to test with PIN and classToken
-    router.push(`/test?pin=${pin}&classToken=${classToken}`);
+    // Validate PIN with API
+    try {
+      const response = await fetch('/api/validate-pin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pin, classToken }),
+      });
+      
+      const data = await response.json();
+      
+      if (data.success && data.isValid) {
+        // Redirect to test with PIN and classToken
+        router.push(`/test?pin=${pin}&classToken=${classToken}`);
+      } else {
+        setError('PIN-koodi ei ole voimassa. Tarkista koodi ja kokeile uudelleen.');
+      }
+    } catch (e) {
+      setError('PIN-koodin vahvistus epäonnistui. Yritä myöhemmin uudelleen.');
+    }
   };
 
   return (

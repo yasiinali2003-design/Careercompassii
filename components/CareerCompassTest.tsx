@@ -163,7 +163,7 @@ function loadProgress() {
 }
 
 // ---------- MAIN COMPONENT ----------
-export default function CareerCompassTest() {
+export default function CareerCompassTest({ pin, classToken }: { pin?: string | null; classToken?: string | null } = {}) {
   type GroupKey = "YLA" | "TASO2" | "NUORI";
   const [step, setStep] = useState<0 | 1 | 2 | 3>(0); // 0: landing, 1: group select, 2: questions, 3: summary
   const [group, setGroup] = useState<GroupKey | null>(null);
@@ -348,6 +348,8 @@ export default function CareerCompassTest() {
           shuffleKey={shuffleKey}
           onRestart={restart}
           onSend={sendToBackend}
+          pin={pin}
+          classToken={classToken}
         />
       )}
     </div>
@@ -544,6 +546,8 @@ const Summary = ({
   shuffleKey,
   onRestart,
   onSend,
+  pin,
+  classToken,
 }: {
   group: any;
   questions: string[];
@@ -552,6 +556,8 @@ const Summary = ({
   shuffleKey: string;
   onRestart: () => void;
   onSend: () => void;
+  pin?: string | null;
+  classToken?: string | null;
 }) => {
   const [analysis, setAnalysis] = useState<any>(null);
   const [loading, setLoading] = useState(false);
@@ -573,33 +579,81 @@ const Summary = ({
         score: score || 3 // Use 3 (neutral) for unanswered questions
       }));
 
-      // Call new scoring API
-      const response = await fetch("/api/score", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          cohort: group, // YLA, TASO2, or NUORI
-          answers: formattedAnswers,
-          originalIndices, // Shuffle mapping
-          shuffleKey // Verification key
-        }),
-      });
-      
-      const data = await response.json();
-      
-      if (data.success) {
-        // Save results to localStorage for results page
-        localStorage.setItem('careerTestResults', JSON.stringify(data));
+      // If PIN and classToken are provided, save to teacher's class
+      if (pin && classToken) {
+        // First get the results by calling /api/score
+        const scoreResponse = await fetch("/api/score", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            cohort: group,
+            answers: formattedAnswers,
+            originalIndices,
+            shuffleKey
+          }),
+        });
         
-        // Save result ID for feedback linking
-        if (data.resultId) {
-          localStorage.setItem('lastTestResultId', data.resultId);
+        const scoreData = await scoreResponse.json();
+        
+        if (scoreData.success) {
+          // Now save to /api/results with PIN
+          const resultPayload = {
+            cohort: group,
+            topCareers: scoreData.topCareers || [],
+            dimensionScores: scoreData.userProfile?.dimensionScores || {},
+            personalizedAnalysis: scoreData.userProfile?.personalizedAnalysis || null,
+            timeSpentSeconds: null
+          };
+
+          const resultsResponse = await fetch("/api/results", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              pin,
+              classToken,
+              resultPayload
+            }),
+          });
+
+          const resultsData = await resultsResponse.json();
+
+          if (resultsData.success) {
+            // Save to localStorage and navigate
+            localStorage.setItem('careerTestResults', JSON.stringify(scoreData));
+            if (scoreData.resultId) {
+              localStorage.setItem('lastTestResultId', scoreData.resultId);
+            }
+            window.location.href = '/test/results';
+          } else {
+            setError(resultsData.error || "Tulosten tallentaminen epäonnistui");
+          }
+        } else {
+          setError(scoreData.error || "Analyysi epäonnistui");
         }
-        
-        // Navigate to results page
-        window.location.href = '/test/results';
       } else {
-        setError(data.error || "Analyysi epäonnistui");
+        // Regular public flow (no PIN)
+        const response = await fetch("/api/score", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            cohort: group,
+            answers: formattedAnswers,
+            originalIndices,
+            shuffleKey
+          }),
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          localStorage.setItem('careerTestResults', JSON.stringify(data));
+          if (data.resultId) {
+            localStorage.setItem('lastTestResultId', data.resultId);
+          }
+          window.location.href = '/test/results';
+        } else {
+          setError(data.error || "Analyysi epäonnistui");
+        }
       }
     } catch (e) {
       console.error(e);

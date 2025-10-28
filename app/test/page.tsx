@@ -1,3 +1,6 @@
+'use client';
+
+import { useSearchParams } from 'next/navigation';
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
@@ -5,6 +8,10 @@ import CareerCompassTest from "@/components/CareerCompassTest"
 import Logo from "@/components/Logo"
 
 export default function TestPage() {
+  const searchParams = useSearchParams();
+  const pin = searchParams?.get('pin') || null;
+  const classToken = searchParams?.get('classToken') || null;
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -23,7 +30,7 @@ export default function TestPage() {
       </nav>
 
       {/* Test Component */}
-      <CareerCompassTest />
+      <CareerCompassTest pin={pin} classToken={classToken} />
     </div>
   )
 }
