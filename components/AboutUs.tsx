@@ -250,14 +250,20 @@ const MissionIntro = () => (
   <AnimatedSection>
     <div className="mb-16">
       <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
-        CareerCompassin missio
+        Missiomme
       </h2>
       <div className="space-y-4 max-w-prose">
         <p className="text-[#334155] leading-relaxed text-lg">
-          CareerCompassin tehtävänä on auttaa nuoria tunnistamaan vahvuutensa ja löytämään oman suunnan, joka tuntuu aidosti omalta.
+          CareerCompassin tehtävänä on auttaa nuoria tunnistamaan vahvuutensa ja löytämään oman suuntansa, sellaisen, joka tuntuu aidosti omalta.
         </p>
         <p className="text-[#334155] leading-relaxed text-lg">
           Uskomme, että jokaisella on potentiaali rakentaa merkityksellinen tulevaisuus. Tarvitaan vain oikea kompassi näyttämään tie eteenpäin.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Rakennamme tulevaisuutta, jossa jokaisella nuorella on mahdollisuus löytää oma polkunsa helposti, yksilöllisesti ja motivoivasti.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Autamme säästämään aikaa, tekemään rohkeita päätöksiä ja rakentamaan uraa ilman painetta tai epävarmuutta.
         </p>
       </div>
     </div>
@@ -292,13 +298,72 @@ const ApproachSection = () => (
       </h2>
       <div className="space-y-4 max-w-prose">
         <p className="text-[#334155] leading-relaxed text-lg">
-          Lähestymistapamme yhdistää tekoälyn ja empatian. CareerCompassi hyödyntää dataa ja modernia teknologiaa, mutta säilyttää aina inhimillisen näkökulman.
+          Yhdistämme tekoälyn ja empatian.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          CareerCompassi hyödyntää dataa ja modernia teknologiaa, mutta säilyttää aina inhimillisen näkökulman.
         </p>
         <p className="text-[#334155] leading-relaxed text-lg">
           Tekoäly analysoi vastauksia vertaamalla niitä tuhansiin uraprofiileihin ja löytää koulutuspolkuja, jotka vastaavat käyttäjän arvoja, kiinnostuksia ja vahvuuksia.
         </p>
         <p className="text-[#334155] leading-relaxed text-lg">
           Uskomme, että kun ymmärtää itseään paremmin, löytyy myös suunta, joka vie kohti merkityksellisempää elämää.
+        </p>
+      </div>
+    </div>
+  </AnimatedSection>
+);
+
+// Meistä Section Component
+const MeistSection = () => (
+  <AnimatedSection>
+    <div className="mb-16">
+      <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+        Meistä
+      </h2>
+      <div className="space-y-4 max-w-prose">
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Olemme kolme 22-vuotiasta, jotka sekä opiskelevat että työskentelevät. Elämme siis samaa todellisuutta kuin ne nuoret, joita haluamme auttaa.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Olemme itse kokeneet, kuinka vaikeaa on löytää oma suunta ilman selkeää ohjausta ja kuinka paljon aikaa kuluu tietoa etsiessä eri aloista.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Olemme nähneet läheltä, kuinka monet ystävämme lähtivät opiskelemaan hyväksynnän tunteen tai sosiaalisen paineen vuoksi, eivät aidosta kiinnostuksesta.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Kasvoimme alueella, jossa on paljon maahanmuuttajataustaisia nuoria, joilla ei aina ole tukea tai tietoa suomalaisesta koulutusjärjestelmästä.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Haluamme tarjota heille saman mahdollisuuden löytää oman polkunsa ja rakentaa tulevaisuuden, joka tuntuu omalta.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          CareerCompassin taustalla on aito halu ratkaista ongelma, jonka olemme itse kokeneet.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          Meidän vahvuutemme on syvä ymmärrys kohderyhmästä, motivaatio tehdä yhteiskunnallisesti merkittävää työtä ja into rakentaa ratkaisu, joka on sekä inhimillinen että teknisesti kehittynyt.
+        </p>
+      </div>
+    </div>
+  </AnimatedSection>
+);
+
+// Contact Section Component
+const ContactSection = () => (
+  <AnimatedSection>
+    <div className="mb-8">
+      <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+        Yhteystiedot
+      </h2>
+      <div className="space-y-4 max-w-prose">
+        <p className="text-[#334155] leading-relaxed text-lg">
+          <strong>Sähköposti:</strong> support@careercompassi.fi
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          <strong>Yhteistyö kouluille ja opettajille:</strong> Ota yhteyttä, jos haluat tuoda CareerCompassin osaksi opetusta tai opiskelijapalveluita.
+        </p>
+        <p className="text-[#334155] leading-relaxed text-lg">
+          <strong>Verkkosivut:</strong> careercompassi.com
         </p>
       </div>
     </div>
@@ -329,8 +394,9 @@ const AboutUs = () => {
         {/* Mission Content */}
         <div className="space-y-12">
           <MissionIntro />
-          <MissionSection />
           <ApproachSection />
+          <MeistSection />
+          <ContactSection />
         </div>
       </div>
     </section>
