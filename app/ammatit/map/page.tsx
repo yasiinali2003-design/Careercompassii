@@ -118,13 +118,13 @@ export default function CareerMapPage() {
                 <div className="flex flex-wrap gap-4 text-sm">
                   {selectedCareer.salaryMin && selectedCareer.salaryMax && (
                     <div className="bg-white/20 rounded-lg px-4 py-2">
-                      💰 {selectedCareer.salaryMin}-{selectedCareer.salaryMax}€/kk
+                      {selectedCareer.salaryMin}-{selectedCareer.salaryMax}€/kk
                     </div>
                   )}
                   <div className={`rounded-lg px-4 py-2 ${
                     selectedCareer.outlook === 'Kasvaa' ? 'bg-green-500/30' : 'bg-blue-500/30'
                   }`}>
-                    📈 {selectedCareer.outlook}
+                    {selectedCareer.outlook}
                   </div>
                 </div>
                 <button

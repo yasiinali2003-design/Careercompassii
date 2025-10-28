@@ -197,7 +197,7 @@ export default function ResultsPage() {
           <Card className="mb-8 border-2 border-green-200 bg-gradient-to-r from-green-50 to-blue-50">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-2xl">
-                📚 Sinun koulutuspolkusi
+                Sinun koulutuspolkusi
               </CardTitle>
               <CardDescription>
                 Vastaustesi perusteella sopiva jatko-opintovalinta

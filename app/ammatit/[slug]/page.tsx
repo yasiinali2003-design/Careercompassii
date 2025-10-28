@@ -366,14 +366,14 @@ export default function CareerDetail({ params }: CareerDetailProps) {
               {relatedCareers.length > 0 && (
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl shadow-sm border border-slate-200 p-6">
                   <h3 className="text-lg font-bold text-slate-900 mb-4">
-                    🔍 Tutustu myös näihin ammatteihin
+                    Tutustu myös näihin ammatteihin
                   </h3>
                   <p className="text-sm text-slate-600 mb-4">
                     Samankaltaiset ammatit samalta alalta, vastaavilla vaatimuksilla tai palkkaluokalla
                   </p>
                   <div className="bg-white/60 rounded-lg p-3 mb-4">
                     <p className="text-xs text-slate-700">
-                      💡 <strong>Miksi nämä ammatit:</strong> Valittu saman alan työtehtävien, koulutusvaatimusten ja palkkatason perusteella. Saatat löytää näistä vaihtoehtoisia urapolkuja.
+                      <strong>Miksi nämä ammatit:</strong> Valittu saman alan työtehtävien, koulutusvaatimusten ja palkkatason perusteella. Saatat löytää näistä vaihtoehtoisia urapolkuja.
                     </p>
                   </div>
                   <div className="grid grid-cols-1 gap-3">
@@ -394,7 +394,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
               {/* Demand Forecast Section */}
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-sm border-2 border-green-200 p-8 mb-6">
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                  📈 Ennuste tulevaisuuteen
+                  Ennuste tulevaisuuteen
                 </h3>
                 <div className="space-y-4">
                   <div className="bg-white rounded-xl p-6 border border-green-200">
@@ -403,7 +403,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                       <div className={`px-4 py-2 rounded-full text-sm font-bold ${
                         career.outlook === 'Kasvaa' ? 'bg-green-200 text-green-800' : 'bg-blue-200 text-blue-800'
                       }`}>
-                        {career.outlook === 'Kasvaa' ? '📈 Kasvaa' : '📊 Vakaa'}
+                        {career.outlook === 'Kasvaa' ? 'Kasvaa' : 'Vakaa'}
                       </div>
                     </div>
                     <p className="text-slate-700 leading-relaxed mb-4">
@@ -413,7 +413,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                     </p>
                     <div className="bg-green-50 rounded-lg p-4">
                       <p className="text-sm text-green-800">
-                        💡 Ennuste perustuu työvoimakysynnän kehitykseen ja alan muutoksiin.
+                        Ennuste perustuu työvoimakysynnän kehitykseen ja alan muutoksiin.
                       </p>
                     </div>
                   </div>
@@ -423,12 +423,12 @@ export default function CareerDetail({ params }: CareerDetailProps) {
               {/* Career Story Section */}
               <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl shadow-sm border-2 border-amber-200 p-8 mb-6">
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                  💼 Näkökulma ammatista
+                  Näkökulma ammatista
                 </h3>
                 <div className="bg-white rounded-xl p-6 border border-amber-200">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-2xl">
-                      👤
+                    <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-amber-200 rounded-full"></div>
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">{career.title}</h4>
@@ -442,7 +442,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                   </p>
                   <div className="bg-amber-50 rounded-lg p-4">
                     <p className="text-sm text-amber-800">
-                      💡 Premium-versiossa voit lisätä oikeita haastatteluja ja videotarinoita omilta oppilaitosiltasi.
+                      Premium-versiossa voit lisätä oikeita haastatteluja ja videotarinoita omilta oppilaitosiltasi.
                     </p>
                   </div>
                 </div>
