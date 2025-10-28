@@ -37,16 +37,47 @@ function getCareerBySlug(slug: string): Career | null {
   return careerFI ? convertCareerFIToCareer(careerFI) : null;
 }
 
-function getRelatedCareers(career: Career, limit: number = 4): Career[] {
+function getRelatedCareers(career: Career, limit: number = 6): Career[] {
   const careerFI = careersFI.find(c => c && c.id === career.slug);
   if (!careerFI) return [];
   
-  return careersFI
+  // Same category - highest priority
+  const sameCategory = careersFI
     .filter(c => c && c.category === careerFI.category && c.id !== careerFI.id)
+    .slice(0, 3);
+  
+  // Similar education level - second priority
+  const similarEducation = careersFI
+    .filter(c => 
+      c && 
+      c.id !== careerFI.id &&
+      !sameCategory.find(sc => sc.id === c.id) &&
+      c.education_paths?.some(ep => careerFI.education_paths?.includes(ep))
+    )
+    .slice(0, 2);
+  
+  // Similar salary range - third priority  
+  const careerSalary = careerFI.salary_eur_month?.range || [2500, 4000];
+  const similarSalary = careersFI
+    .filter(c => 
+      c &&
+      c.id !== careerFI.id &&
+      !sameCategory.find(sc => sc.id === c.id) &&
+      !similarEducation.find(se => se.id === c.id) &&
+      c.salary_eur_month?.range
+    )
+    .filter(c => {
+      const salaryRange = c.salary_eur_month!.range!;
+      return (salaryRange[0] >= careerSalary[0] && salaryRange[0] <= careerSalary[1]) ||
+             (salaryRange[1] >= careerSalary[0] && salaryRange[1] <= careerSalary[1]);
+    })
+    .slice(0, 1);
+  
+  // Combine and convert
+  return [...sameCategory, ...similarEducation, ...similarSalary]
     .slice(0, limit)
     .map(convertCareerFIToCareer);
 }
-import Logo from '@/components/Logo';
 
 interface CareerDetailProps {
   params: {
@@ -332,17 +363,22 @@ export default function CareerDetail({ params }: CareerDetailProps) {
 
               {/* Liittyvät ammatit */}
               {relatedCareers.length > 0 && (
-                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
-                  <h3 className="text-lg font-bold text-slate-900 mb-4">Liittyvät ammatit</h3>
-                  <div className="space-y-3">
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl shadow-sm border border-slate-200 p-6">
+                  <h3 className="text-lg font-bold text-slate-900 mb-4">
+                    🔍 Tutustu myös näihin ammatteihin
+                  </h3>
+                  <p className="text-sm text-slate-600 mb-4">
+                    Samankaltaiset ammatit samalta alalta, vastaavilla vaatimuksilla tai palkkaluokalla
+                  </p>
+                  <div className="grid grid-cols-1 gap-3">
                     {relatedCareers.map((relatedCareer: Career) => (
                       <Link
                         key={relatedCareer.slug}
                         href={`/ammatit/${relatedCareer.slug}`}
-                        className="block p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors"
+                        className="block p-4 bg-white rounded-xl hover:shadow-md transition-all border border-slate-200"
                       >
-                        <h4 className="font-medium text-slate-900 mb-1">{relatedCareer.title}</h4>
-                        <p className="text-sm text-slate-600">{relatedCareer.summary}</p>
+                        <h4 className="font-semibold text-slate-900 mb-1">{relatedCareer.title}</h4>
+                        <p className="text-sm text-slate-600 line-clamp-2">{relatedCareer.summary}</p>
                       </Link>
                     ))}
                   </div>
