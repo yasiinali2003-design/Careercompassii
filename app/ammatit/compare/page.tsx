@@ -293,10 +293,6 @@ export default function ComparePage() {
                       )}
                     </div>
                   </div>
-                  {/* Empty columns to match */}
-                  {[...Array(6)].map((_, i) => (
-                    <div key={i} className="h-32 bg-gray-50 rounded-xl border border-dashed border-gray-300"></div>
-                  ))}
                 </div>
               )}
             </div>
