@@ -132,23 +132,23 @@ export default function PricingPage() {
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>Kehittyneet analyysit</span>
+                  <span>PDF-raporttien generointi</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>Mukautetut raporttipohjat</span>
+                  <span>Vertailuanalyysit (luokat/ajanjaksot)</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>2 vuoden historia</span>
+                  <span>5 vuoden historiadata</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>Prioriteettituki (24h)</span>
+                  <span>Slack/telefonituki + koulutus</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>1v1 onboarding-koulutus</span>
+                  <span>API-pääsy järjestelmiin</span>
                 </li>
               </ul>
               <Button className="w-full bg-blue-600 hover:bg-blue-700">
@@ -199,19 +199,31 @@ export default function PricingPage() {
                     <td className="border p-3">Analyyttiset työkalut</td>
                     <td className="border p-3 text-center">—</td>
                     <td className="border p-3 text-center">Perus</td>
-                    <td className="border p-3 text-center">Kehittyneet</td>
+                    <td className="border p-3 text-center">Kehittyneet + vertailut</td>
                   </tr>
                   <tr>
+                    <td className="border p-3">PDF-raportit</td>
+                    <td className="border p-3 text-center">—</td>
+                    <td className="border p-3 text-center">—</td>
+                    <td className="border p-3 text-center">✓</td>
+                  </tr>
+                  <tr className="bg-gray-50">
                     <td className="border p-3">Tietojen säilytys</td>
                     <td className="border p-3 text-center">—</td>
                     <td className="border p-3 text-center">1 vuosi</td>
-                    <td className="border p-3 text-center">2 vuotta</td>
+                    <td className="border p-3 text-center">5 vuotta</td>
                   </tr>
-                  <tr className="bg-gray-50">
+                  <tr>
                     <td className="border p-3">Tuki</td>
                     <td className="border p-3 text-center">—</td>
                     <td className="border p-3 text-center">Sähköposti</td>
-                    <td className="border p-3 text-center">Prioriteetti (24h)</td>
+                    <td className="border p-3 text-center">Slack/telefoni + koulutus</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border p-3">API-pääsy</td>
+                    <td className="border p-3 text-center">—</td>
+                    <td className="border p-3 text-center">—</td>
+                    <td className="border p-3 text-center">✓</td>
                   </tr>
                 </tbody>
               </table>
