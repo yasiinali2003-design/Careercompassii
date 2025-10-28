@@ -41,12 +41,6 @@ export default function HomePage() {
               Miten toimii
             </Link>
             <Link
-              href="#kenelle"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
-            >
-              Kenelle
-            </Link>
-            <Link
               href="/ammatit"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
             >
