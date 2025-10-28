@@ -50,7 +50,7 @@ export default function HomePage() {
               href="/meista"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
             >
-              Missio
+              Meistä
             </Link>
             <Link
               href="/kouluille"

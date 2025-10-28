@@ -385,7 +385,7 @@ const AboutUs = () => {
             className="font-bold text-[#2563EB] mb-6"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 3rem)' }}
           >
-            Missio
+            Meistä
           </h1>
           {/* Optional gradient line */}
           <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#2563EB]/40 to-transparent mx-auto"></div>
