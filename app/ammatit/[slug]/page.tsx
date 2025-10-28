@@ -391,6 +391,35 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                 </div>
               )}
 
+              {/* Demand Forecast Section */}
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-sm border-2 border-green-200 p-8 mb-6">
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                  📈 Ennuste tulevaisuuteen
+                </h3>
+                <div className="space-y-4">
+                  <div className="bg-white rounded-xl p-6 border border-green-200">
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="font-bold text-slate-900">Työllisyysnäkymä 2025-2030</h4>
+                      <div className={`px-4 py-2 rounded-full text-sm font-bold ${
+                        career.outlook === 'Kasvaa' ? 'bg-green-200 text-green-800' : 'bg-blue-200 text-blue-800'
+                      }`}>
+                        {career.outlook === 'Kasvaa' ? '📈 Kasvaa' : '📊 Vakaa'}
+                      </div>
+                    </div>
+                    <p className="text-slate-700 leading-relaxed mb-4">
+                      {career.outlook === 'Kasvaa' 
+                        ? 'Ala kasvaa ja työllisyysnäkymät ovat hyvät seuraavien vuosien aikana. Tämä ammatti tarjoaa vakaat mahdollisuudet urakehitykselle ja työllistymiselle. Automaatio ei vaikuta merkittävästi tähän työhön.'
+                        : 'Ala on vakaa ja tasainen. Työllisyysnäkymät ovat hyvät, ja alalla on jatkuva kysyntä työntekijöille. Tämä on turvallinen uravalinta pitkällä aikavälillä.'}
+                    </p>
+                    <div className="bg-green-50 rounded-lg p-4">
+                      <p className="text-sm text-green-800">
+                        💡 Ennuste perustuu työvoimakysynnän kehitykseen ja alan muutoksiin.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Career Story Section */}
               <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl shadow-sm border-2 border-amber-200 p-8 mb-6">
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">
