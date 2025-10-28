@@ -319,7 +319,7 @@ const MeistSection = () => (
   <AnimatedSection>
     <div className="mb-16">
       <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
-        Meistä
+        Tiimimme
       </h2>
       <div className="space-y-4 max-w-prose">
         <p className="text-[#334155] leading-relaxed text-lg">
