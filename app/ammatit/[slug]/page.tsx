@@ -386,6 +386,21 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                 </div>
               )}
 
+              {/* Compare Button */}
+              <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-6 text-white mb-6">
+                <h3 className="text-lg font-bold mb-2">Vertaa tätä ammattia muihin</h3>
+                <p className="text-purple-100 mb-4 text-sm">
+                  Vertaa palkkaa, vaatimuksia ja työllisyysnäkymiä rinnakkain
+                </p>
+                <Link
+                  href={`/ammatit/compare?careers=${career.slug}`}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-purple-600 rounded-xl hover:bg-purple-50 transition-colors font-medium"
+                >
+                  Siirry vertailuun
+                  <ExternalLink className="h-4 w-4" />
+                </Link>
+              </div>
+
               {/* CTA */}
               <div className="bg-[#2563EB] rounded-2xl p-6 text-white">
                 <h3 className="text-lg font-bold mb-2">Etsi koulutuksia</h3>
