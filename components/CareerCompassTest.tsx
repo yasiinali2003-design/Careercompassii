@@ -559,6 +559,8 @@ const Summary = ({
   pin?: string | null;
   classToken?: string | null;
 }) => {
+  console.log('[Summary] Component rendered with props:', { pin, classToken, hasPin: !!pin, hasClassToken: !!classToken });
+  
   const [analysis, setAnalysis] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -569,6 +571,7 @@ const Summary = ({
   const answered = answers.filter((a) => a > 0).length;
 
   const sendToBackend = async () => {
+    console.log('[Test] Starting sendToBackend with props:', { pin, verifyPin: !!pin, classToken, verifyClassToken: !!classToken });
     setLoading(true);
     setError(null);
     
