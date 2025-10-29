@@ -113,15 +113,15 @@ export async function POST(request: NextRequest) {
           .limit(1);
         
         isValid = (pinExists && pinExists.length > 0);
-        classId = classData.id;
-        console.log(`[API/Results] Fallback validation: isValid=${isValid}, classId=${classId}`);
+        classId = String(classData.id); // Ensure string type for consistency
+        console.log(`[API/Results] Fallback validation: isValid=${isValid}, classId=${classId} (type: ${typeof classId})`);
       } else {
         console.log('[API/Results] Class not found');
       }
     } else if (pinData && pinData.length > 0) {
       isValid = Boolean(pinData[0]?.is_valid);
-      classId = pinData[0]?.class_id;
-      console.log(`[API/Results] RPC validation: isValid=${isValid}, classId=${classId}`);
+      classId = String(pinData[0]?.class_id || ''); // Ensure string type
+      console.log(`[API/Results] RPC validation: isValid=${isValid}, classId=${classId} (type: ${typeof classId})`);
     }
 
     if (!isValid || !classId) {
@@ -132,6 +132,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Store result (no names, no PII)
+    console.log(`[API/Results] About to insert result for PIN: ${pin}, classId: ${classId} (type: ${typeof classId})`);
     const { data: insertData, error: insertError } = await supabaseAdmin
       .from('results')
       .insert({
@@ -139,19 +140,20 @@ export async function POST(request: NextRequest) {
         pin,
         result_payload: resultPayload
       })
-      .select();
+      .select('id, class_id, pin, created_at');
 
     if (insertError) {
       console.error('[API/Results] Error storing result:', insertError);
+      console.error('[API/Results] Error details:', JSON.stringify(insertError, null, 2));
       return NextResponse.json(
-        { success: false, error: 'Failed to store result' },
+        { success: false, error: 'Failed to store result', details: insertError.message },
         { status: 500 }
       );
     }
 
     console.log(`[API/Results] Stored result for PIN: ${pin} (class: ${classId})`);
     if (insertData && insertData.length > 0) {
-      console.log(`[API/Results] Insert successful. ID: ${insertData[0].id}, class_id: ${insertData[0].class_id}`);
+      console.log(`[API/Results] Insert successful. ID: ${insertData[0].id}, class_id: ${insertData[0].class_id}, pin: ${insertData[0].pin}`);
     } else {
       console.log(`[API/Results] Insert returned no data!`);
     }

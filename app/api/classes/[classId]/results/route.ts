@@ -40,14 +40,27 @@ export async function GET(
 
     // For now, return all results for the class
     // TODO: Add teacher authentication to verify ownership
-    console.log(`[API/Results] Fetching for classId: ${classId}`);
+    console.log(`[API/Results] Fetching for classId: ${classId} (type: ${typeof classId})`);
+    
+    // Also try to see what's in the database
+    const { data: allResults } = await supabaseAdmin
+      .from('results')
+      .select('id, class_id, pin, created_at')
+      .limit(5);
+    console.log(`[API/Results] Sample results in DB (first 5):`, allResults?.map(r => ({ id: r.id, class_id: r.class_id, pin: r.pin })));
+    
     const { data, error } = await supabaseAdmin
       .from('results')
       .select('*')  // Select all columns to debug
-      .eq('class_id', classId)
+      .eq('class_id', String(classId)) // Ensure string comparison
       .order('created_at', { ascending: false });
     
-    console.log(`[API/Results] Query result:`, { dataCount: data?.length, error: error?.message });
+    console.log(`[API/Results] Query result:`, { 
+      dataCount: data?.length, 
+      error: error?.message,
+      queryClassId: String(classId),
+      sampleClassIds: data?.slice(0, 2).map(r => ({ stored: r.class_id, type: typeof r.class_id }))
+    });
 
     if (error) {
       console.error('[API/Results] Error fetching results:', error);
