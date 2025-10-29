@@ -138,11 +138,30 @@ export async function POST(request: NextRequest) {
     }
 
     // Store result (no names, no PII)
-    console.log(`[API/Results] About to insert result for PIN: ${pin}, classId: ${classId} (type: ${typeof classId})`);
+    // Ensure classId is a valid UUID string (not just any string)
+    const classIdUUID = classId; // Supabase Postgres should handle string UUID conversion
+    console.log(`[API/Results] About to insert result for PIN: ${pin}, classId: ${classIdUUID} (type: ${typeof classIdUUID}, length: ${classIdUUID?.length})`);
+    
+    // First, verify class exists
+    const { data: classCheck } = await supabaseAdmin
+      .from('classes')
+      .select('id')
+      .eq('id', classIdUUID)
+      .single();
+    
+    if (!classCheck) {
+      console.error(`[API/Results] Class ID ${classIdUUID} does not exist in database!`);
+      return NextResponse.json(
+        { success: false, error: 'Class not found' },
+        { status: 400 }
+      );
+    }
+    
+    console.log(`[API/Results] Class verified, inserting result...`);
     const { data: insertData, error: insertError } = await supabaseAdmin
       .from('results')
       .insert({
-        class_id: classId,
+        class_id: classIdUUID,
         pin,
         result_payload: resultPayload
       })

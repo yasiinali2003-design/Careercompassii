@@ -41,14 +41,34 @@ export async function GET(
 
     // For now, return all results for the class
     // TODO: Add teacher authentication to verify ownership
-    console.log(`[API/Results] Fetching for classId: ${classId} (type: ${typeof classId})`);
+    console.log(`[API/Results] Fetching for classId: ${classId} (type: ${typeof classId}, length: ${classId?.length})`);
+    
+    // First, check if class exists
+    const { data: classData } = await supabaseAdmin
+      .from('classes')
+      .select('id, class_token, created_at')
+      .eq('id', classId)
+      .single();
+    
+    console.log(`[API/Results] Class lookup:`, { found: !!classData, classId });
     
     // Also try to see what's in the database
-    const { data: allResults } = await supabaseAdmin
+    const { data: allResults, error: allResultsError } = await supabaseAdmin
       .from('results')
       .select('id, class_id, pin, created_at')
-      .limit(5);
-    console.log(`[API/Results] Sample results in DB (first 5):`, allResults?.map((r: any) => ({ id: r.id, class_id: r.class_id, pin: r.pin })));
+      .limit(10)
+      .order('created_at', { ascending: false });
+    
+    console.log(`[API/Results] All results in DB (first 10):`, {
+      count: allResults?.length || 0,
+      error: allResultsError?.message,
+      sample: allResults?.slice(0, 3).map((r: any) => ({ 
+        id: r.id?.substring(0, 8) + '...', 
+        class_id: String(r.class_id)?.substring(0, 8) + '...', 
+        pin: r.pin,
+        created: r.created_at 
+      }))
+    });
     
     // Try query with UUID cast to handle both string and UUID types
     let { data, error } = await supabaseAdmin
