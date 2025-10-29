@@ -362,7 +362,7 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                             : '—'}
                         </td>
                         <td className="border p-2 text-sm">
-                          {result.result_payload?.top_careers?.[0]?.title || '—'}
+                          {(result.result_payload?.top_careers || result.result_payload?.topCareers || [])[0]?.title || '—'}
                         </td>
                       </tr>
                     ))}
