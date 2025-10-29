@@ -21,7 +21,8 @@ export async function GET(
   { params }: RouteParams
 ) {
   try {
-    const { classId } = params;
+    const { classId: rawClassId } = params;
+    const classId = rawClassId?.trim(); // Trim whitespace
 
     if (!classId) {
       return NextResponse.json(
@@ -49,11 +50,32 @@ export async function GET(
       .limit(5);
     console.log(`[API/Results] Sample results in DB (first 5):`, allResults?.map(r => ({ id: r.id, class_id: r.class_id, pin: r.pin })));
     
-    const { data, error } = await supabaseAdmin
+    // Try query with UUID cast to handle both string and UUID types
+    let { data, error } = await supabaseAdmin
       .from('results')
       .select('*')  // Select all columns to debug
-      .eq('class_id', String(classId)) // Ensure string comparison
+      .eq('class_id', classId) // Supabase should handle UUID comparison automatically
       .order('created_at', { ascending: false });
+    
+    // If that fails, try fetching all and filtering (fallback debug method)
+    if ((!data || data.length === 0) && !error) {
+      console.log(`[API/Results] Query with .eq() returned 0 results. Trying fallback: fetch all then filter...`);
+      const { data: allData, error: allError } = await supabaseAdmin
+        .from('results')
+        .select('*')
+        .order('created_at', { ascending: false });
+      
+      if (allData) {
+        // Filter in JavaScript
+        const filtered = allData.filter(r => String(r.class_id) === String(classId));
+        console.log(`[API/Results] Fallback: Found ${filtered.length} results after JavaScript filter (from ${allData.length} total)`);
+        
+        if (filtered.length > 0) {
+          data = filtered;
+          error = null;
+        }
+      }
+    }
     
     console.log(`[API/Results] Query result:`, { 
       dataCount: data?.length, 
