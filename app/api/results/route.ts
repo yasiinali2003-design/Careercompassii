@@ -103,13 +103,14 @@ export async function POST(request: NextRequest) {
     }
 
     // Store result (no names, no PII)
-    const { error: insertError } = await supabaseAdmin
+    const { data: insertData, error: insertError } = await supabaseAdmin
       .from('results')
       .insert({
         class_id: classId,
         pin,
         result_payload: resultPayload
-      });
+      })
+      .select();
 
     if (insertError) {
       console.error('[API/Results] Error storing result:', insertError);
@@ -120,6 +121,7 @@ export async function POST(request: NextRequest) {
     }
 
     console.log(`[API/Results] Stored result for PIN: ${pin} (class: ${classId})`);
+    console.log(`[API/Results] Insert returned:`, insertData);
 
     return NextResponse.json({
       success: true,
