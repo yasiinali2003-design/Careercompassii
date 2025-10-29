@@ -22,20 +22,33 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate PIN exists and belongs to class
+    console.log(`[API/ValidatePIN] Validating PIN: ${pin} for class: ${classToken}`);
     const { data: pinData, error: pinError } = await supabaseAdmin
       .rpc('validate_pin', {
         p_pin: pin,
         p_class_token: classToken
       });
 
-    if (pinError || !pinData || pinData.length === 0) {
+    console.log(`[API/ValidatePIN] RPC Response:`, { pinData, pinError: pinError?.message });
+
+    if (pinError) {
+      console.error('[API/ValidatePIN] RPC Error:', pinError);
       return NextResponse.json(
-        { success: false, isValid: false, error: 'PIN validation failed' },
-        { status: 200 } // Still return 200 to avoid confusing students
+        { success: false, isValid: false, error: 'PIN validation failed - database error' },
+        { status: 200 }
+      );
+    }
+
+    if (!pinData || pinData.length === 0) {
+      console.log('[API/ValidatePIN] No data returned from RPC');
+      return NextResponse.json(
+        { success: false, isValid: false, error: 'PIN validation failed - no data' },
+        { status: 200 }
       );
     }
 
     const isValid = pinData[0]?.is_valid;
+    console.log(`[API/ValidatePIN] PIN is valid: ${isValid}`);
 
     return NextResponse.json({
       success: true,
