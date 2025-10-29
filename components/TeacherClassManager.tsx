@@ -299,7 +299,8 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                     const csv = [
                       ['Nimi', 'PIN', 'Päivämäärä', 'Top 1', 'Top 2', 'Top 3'].join(','),
                       ...results.map(result => {
-                        const topCareers = result.result_payload?.top_careers?.slice(0, 3) || [];
+                        // Handle both old (topCareers) and new (top_careers) formats
+                        const topCareers = result.result_payload?.top_careers || result.result_payload?.topCareers || [];
                         return [
                           nameMapping[result.pin] || '',
                           result.pin,
