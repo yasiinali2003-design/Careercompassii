@@ -48,7 +48,7 @@ export async function GET(
       .from('results')
       .select('id, class_id, pin, created_at')
       .limit(5);
-    console.log(`[API/Results] Sample results in DB (first 5):`, allResults?.map(r => ({ id: r.id, class_id: r.class_id, pin: r.pin })));
+    console.log(`[API/Results] Sample results in DB (first 5):`, allResults?.map((r: any) => ({ id: r.id, class_id: r.class_id, pin: r.pin })));
     
     // Try query with UUID cast to handle both string and UUID types
     let { data, error } = await supabaseAdmin
@@ -67,7 +67,7 @@ export async function GET(
       
       if (allData) {
         // Filter in JavaScript
-        const filtered = allData.filter(r => String(r.class_id) === String(classId));
+        const filtered = allData.filter((r: any) => String(r.class_id) === String(classId));
         console.log(`[API/Results] Fallback: Found ${filtered.length} results after JavaScript filter (from ${allData.length} total)`);
         
         if (filtered.length > 0) {
@@ -81,7 +81,7 @@ export async function GET(
       dataCount: data?.length, 
       error: error?.message,
       queryClassId: String(classId),
-      sampleClassIds: data?.slice(0, 2).map(r => ({ stored: r.class_id, type: typeof r.class_id }))
+      sampleClassIds: data?.slice(0, 2).map((r: any) => ({ stored: r.class_id, type: typeof r.class_id }))
     });
 
     if (error) {

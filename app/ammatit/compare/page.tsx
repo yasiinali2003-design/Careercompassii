@@ -56,7 +56,7 @@ export default function ComparePage() {
           const slugs = JSON.parse(saved);
           const careers = slugs
             .map((slug: string) => allCareers.find(c => c.slug === slug))
-            .filter((c): c is Career => c !== undefined);
+            .filter((c: Career | undefined): c is Career => c !== undefined);
           setComparisons(careers);
         } catch (e) {
           console.error('Error loading saved comparisons', e);
