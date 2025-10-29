@@ -586,6 +586,7 @@ const Summary = ({
       if (pin && classToken) {
         console.log('[Test] PIN detected, saving to teacher class:', { pin, classToken });
         // First get the results by calling /api/score
+        console.log('[Test] Calling /api/score with:', { cohort: group, answersCount: formattedAnswers.length });
         const scoreResponse = await fetch("/api/score", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -596,8 +597,10 @@ const Summary = ({
             shuffleKey
           }),
         });
+        console.log('[Test] Score API response status:', scoreResponse.status);
         
         const scoreData = await scoreResponse.json();
+        console.log('[Test] Score API response data:', scoreData);
         
         if (scoreData.success) {
           // Now save to /api/results with PIN
@@ -606,8 +609,15 @@ const Summary = ({
             topCareers: scoreData.topCareers || [],
             dimensionScores: scoreData.userProfile?.dimensionScores || {},
             personalizedAnalysis: scoreData.userProfile?.personalizedAnalysis || null,
-            timeSpentSeconds: null
+            timeSpentSeconds: null,
+            educationPath: scoreData.educationPath || null
           };
+          
+          console.log('[Test] Sending to /api/results with:', { 
+            pin, 
+            totalToken: classToken, 
+            payloadKeys: Object.keys(resultPayload) 
+          });
 
           const resultsResponse = await fetch("/api/results", {
             method: "POST",
@@ -618,10 +628,13 @@ const Summary = ({
               resultPayload
             }),
           });
+          console.log('[Test] Results API response status:', resultsResponse.status);
 
           const resultsData = await resultsResponse.json();
+          console.log('[Test] Results API response:', resultsData);
 
           if (resultsData.success) {
+            console.log('[Test] Results saved successfully, navigating to results page');
             // Save to localStorage and navigate
             localStorage.setItem('careerTestResults', JSON.stringify(scoreData));
             if (scoreData.resultId) {
@@ -629,6 +642,7 @@ const Summary = ({
             }
             window.location.href = '/test/results';
           } else {
+            console.error('[Test] Failed to save results:', resultsData.error);
             setError(resultsData.error || "Tulosten tallentaminen epäonnistui");
           }
         } else {
