@@ -40,11 +40,14 @@ export async function GET(
 
     // For now, return all results for the class
     // TODO: Add teacher authentication to verify ownership
+    console.log(`[API/Results] Fetching for classId: ${classId}`);
     const { data, error } = await supabaseAdmin
       .from('results')
-      .select('pin, result_payload, created_at')
+      .select('*')  // Select all columns to debug
       .eq('class_id', classId)
       .order('created_at', { ascending: false });
+    
+    console.log(`[API/Results] Query result:`, { dataCount: data?.length, error: error?.message });
 
     if (error) {
       console.error('[API/Results] Error fetching results:', error);

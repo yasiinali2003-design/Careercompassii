@@ -121,7 +121,11 @@ export async function POST(request: NextRequest) {
     }
 
     console.log(`[API/Results] Stored result for PIN: ${pin} (class: ${classId})`);
-    console.log(`[API/Results] Insert returned:`, insertData);
+    if (insertData && insertData.length > 0) {
+      console.log(`[API/Results] Insert successful. ID: ${insertData[0].id}, class_id: ${insertData[0].class_id}`);
+    } else {
+      console.log(`[API/Results] Insert returned no data!`);
+    }
 
     return NextResponse.json({
       success: true,
