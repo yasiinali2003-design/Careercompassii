@@ -79,21 +79,50 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate PIN exists and belongs to class
+    console.log(`[API/Results] Validating PIN: ${pin} for class token: ${classToken}`);
+    let isValid = false;
+    let classId = null;
+
+    // Try RPC function first
     const { data: pinData, error: pinError } = await supabaseAdmin
       .rpc('validate_pin', {
         p_pin: pin,
         p_class_token: classToken
       });
 
-    if (pinError || !pinData || pinData.length === 0) {
-      return NextResponse.json(
-        { success: false, error: 'Invalid PIN or class token' },
-        { status: 400 }
-      );
-    }
+    console.log(`[API/Results] RPC Response:`, { pinData, pinError: pinError?.message });
 
-    const isValid = pinData[0]?.is_valid;
-    const classId = pinData[0]?.class_id;
+    // If RPC fails, use fallback direct query
+    if (pinError) {
+      console.log('[API/Results] RPC function failed or not found, using fallback');
+      
+      // Get class by token
+      const { data: classData } = await supabaseAdmin
+        .from('classes')
+        .select('id')
+        .eq('class_token', classToken)
+        .single();
+      
+      if (classData) {
+        // Check if PIN exists for this class
+        const { data: pinExists } = await supabaseAdmin
+          .from('pins')
+          .select('id')
+          .eq('pin', pin)
+          .eq('class_id', classData.id)
+          .limit(1);
+        
+        isValid = (pinExists && pinExists.length > 0);
+        classId = classData.id;
+        console.log(`[API/Results] Fallback validation: isValid=${isValid}, classId=${classId}`);
+      } else {
+        console.log('[API/Results] Class not found');
+      }
+    } else if (pinData && pinData.length > 0) {
+      isValid = Boolean(pinData[0]?.is_valid);
+      classId = pinData[0]?.class_id;
+      console.log(`[API/Results] RPC validation: isValid=${isValid}, classId=${classId}`);
+    }
 
     if (!isValid || !classId) {
       return NextResponse.json(
