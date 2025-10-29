@@ -604,9 +604,16 @@ const Summary = ({
         
         if (scoreData.success) {
           // Now save to /api/results with PIN
+          // Transform topCareers to match Zod schema (overallScore -> score)
+          const topCareersForResults = (scoreData.topCareers || []).map((career: any) => ({
+            slug: career.slug,
+            title: career.title,
+            score: career.overallScore || career.score || 0
+          }));
+          
           const resultPayload = {
             cohort: group,
-            topCareers: scoreData.topCareers || [],
+            topCareers: topCareersForResults,
             dimensionScores: scoreData.userProfile?.dimensionScores || {},
             personalizedAnalysis: scoreData.userProfile?.personalizedAnalysis || null,
             timeSpentSeconds: null,
@@ -662,7 +669,15 @@ const Summary = ({
           }),
         });
         
+        if (!response.ok) {
+          console.error('[Test] API response not OK:', response.status, response.statusText);
+          const errorData = await response.json().catch(() => ({ error: 'Network error' }));
+          setError(errorData.error || `HTTP ${response.status}: ${response.statusText}`);
+          return;
+        }
+        
         const data = await response.json();
+        console.log('[Test] Public flow response:', { success: data.success, hasTopCareers: !!data.topCareers });
         
         if (data.success) {
           localStorage.setItem('careerTestResults', JSON.stringify(data));
@@ -671,7 +686,8 @@ const Summary = ({
           }
           window.location.href = '/test/results';
         } else {
-          setError(data.error || "Analyysi epäonnistui");
+          console.error('[Test] Score API failed:', data);
+          setError(data.error || data.details || "Analyysi epäonnistui");
         }
       }
     } catch (e) {

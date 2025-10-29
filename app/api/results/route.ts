@@ -30,9 +30,9 @@ const SubmitResultSchema = z.object({
       workstyle: z.number(),
       context: z.number()
     }),
-    personalizedAnalysis: z.string().optional(),
-    timeSpentSeconds: z.number().optional(),
-    educationPath: z.any().optional()
+    personalizedAnalysis: z.string().nullable().optional(),
+    timeSpentSeconds: z.number().nullable().optional(),
+    educationPath: z.any().nullable().optional()
   })
 });
 
@@ -59,11 +59,17 @@ export async function POST(request: NextRequest) {
     const validation = SubmitResultSchema.safeParse(body);
 
     if (!validation.success) {
+      console.error('[API/Results] Validation failed:', JSON.stringify(validation.error.issues, null, 2));
+      console.error('[API/Results] Request body:', JSON.stringify(body, null, 2));
       return NextResponse.json(
         { 
           success: false, 
           error: 'Invalid request data',
-          details: validation.error.issues
+          details: validation.error.issues.map(issue => ({
+            path: issue.path.join('.'),
+            message: issue.message,
+            code: issue.code
+          }))
         },
         { status: 400 }
       );
