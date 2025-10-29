@@ -23,6 +23,10 @@ export async function POST(request: NextRequest) {
 
     // Validate PIN exists and belongs to class
     console.log(`[API/ValidatePIN] Validating PIN: ${pin} for class: ${classToken}`);
+    
+    let isValid = false;
+    
+    // Try RPC function first
     const { data: pinData, error: pinError } = await supabaseAdmin
       .rpc('validate_pin', {
         p_pin: pin,
@@ -31,28 +35,39 @@ export async function POST(request: NextRequest) {
 
     console.log(`[API/ValidatePIN] RPC Response:`, { pinData, pinError: pinError?.message });
 
+    // If RPC fails, use fallback direct query
     if (pinError) {
-      console.error('[API/ValidatePIN] RPC Error:', pinError);
-      return NextResponse.json(
-        { success: false, isValid: false, error: 'PIN validation failed - database error' },
-        { status: 200 }
-      );
+      console.log('[API/ValidatePIN] RPC function failed or not found, using fallback');
+      
+      // Get class by token
+      const { data: classData } = await supabaseAdmin
+        .from('classes')
+        .select('id')
+        .eq('class_token', classToken)
+        .single();
+      
+      if (classData) {
+        // Check if PIN exists for this class
+        const { data: pinExists } = await supabaseAdmin
+          .from('pins')
+          .select('id')
+          .eq('pin', pin)
+          .eq('class_id', classData.id)
+          .limit(1);
+        
+        isValid = (pinExists && pinExists.length > 0);
+        console.log(`[API/ValidatePIN] Fallback validation result: ${isValid}`);
+      } else {
+        console.log('[API/ValidatePIN] Class not found');
+      }
+    } else if (pinData && pinData.length > 0) {
+      isValid = Boolean(pinData[0]?.is_valid);
+      console.log(`[API/ValidatePIN] RPC validation result: ${isValid}`);
     }
-
-    if (!pinData || pinData.length === 0) {
-      console.log('[API/ValidatePIN] No data returned from RPC');
-      return NextResponse.json(
-        { success: false, isValid: false, error: 'PIN validation failed - no data' },
-        { status: 200 }
-      );
-    }
-
-    const isValid = pinData[0]?.is_valid;
-    console.log(`[API/ValidatePIN] PIN is valid: ${isValid}`);
 
     return NextResponse.json({
       success: true,
-      isValid: Boolean(isValid)
+      isValid
     });
 
   } catch (error) {
@@ -72,4 +87,3 @@ export async function GET() {
     method: 'POST'
   });
 }
-
