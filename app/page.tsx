@@ -401,6 +401,12 @@ export default function HomePage() {
                 <Link href="/test" className="text-muted-foreground hover:text-foreground transition-colors">
                   Testi
                 </Link>
+                <Link href="/teacher/login" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Opettajille
+                </Link>
+                <Link href="/admin/teachers" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Admin
+                </Link>
               </div>
             </div>
             <p className="text-sm text-muted-foreground text-center">

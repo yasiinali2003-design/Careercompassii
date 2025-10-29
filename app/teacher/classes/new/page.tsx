@@ -8,6 +8,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { generateClassToken } from '@/lib/teacherCrypto';
+import TeacherNav from '@/components/TeacherNav';
 
 interface ClassData {
   classId: string;
@@ -59,8 +60,9 @@ export default function NewClassPage() {
 
   if (classData) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-8">
-        <div className="max-w-4xl mx-auto">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+        <TeacherNav />
+        <div className="max-w-4xl mx-auto p-8">
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h1 className="text-3xl font-bold mb-6">Luokka luotu!</h1>
             
@@ -105,8 +107,9 @@ export default function NewClassPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-8">
-      <div className="max-w-2xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+      <TeacherNav />
+      <div className="max-w-2xl mx-auto p-8">
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h1 className="text-3xl font-bold mb-6">Luo uusi luokka</h1>
           
