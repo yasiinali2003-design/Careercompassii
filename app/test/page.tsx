@@ -12,6 +12,8 @@ export default function TestPage() {
   const pin = searchParams?.get('pin') || null;
   const classToken = searchParams?.get('classToken') || null;
 
+  console.log('[TestPage] URL params:', { pin, classToken, allParams: searchParams?.toString() });
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
