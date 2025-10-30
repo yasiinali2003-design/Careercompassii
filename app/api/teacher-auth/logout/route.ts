@@ -9,7 +9,17 @@ import { cookies } from 'next/headers';
 export async function POST() {
   try {
     const cookieStore = await cookies();
+    // Best-effort delete by name, then explicitly expire path-scoped cookies
     cookieStore.delete('teacher_auth_token');
+    cookieStore.delete('teacher_id');
+
+    // Expire /teacher scoped cookies
+    cookieStore.set('teacher_auth_token', '', { path: '/teacher', maxAge: 0 });
+    cookieStore.set('teacher_id', '', { path: '/teacher', maxAge: 0 });
+
+    // Expire /api scoped cookies
+    cookieStore.set('teacher_auth_token', '', { path: '/api', maxAge: 0 });
+    cookieStore.set('teacher_id', '', { path: '/api', maxAge: 0 });
 
     return NextResponse.json({
       success: true,

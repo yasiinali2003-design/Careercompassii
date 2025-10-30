@@ -20,9 +20,24 @@ export default function TeacherClassesPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // TODO: Fetch classes from API
-    // For now, show empty state
-    setLoading(false);
+    async function fetchClasses() {
+      try {
+        const response = await fetch('/api/classes');
+        const data = await response.json();
+        
+        if (data.success && data.classes) {
+          setClasses(data.classes);
+        } else {
+          console.error('Failed to fetch classes:', data.error);
+        }
+      } catch (error) {
+        console.error('Error fetching classes:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchClasses();
   }, []);
 
   if (loading) {

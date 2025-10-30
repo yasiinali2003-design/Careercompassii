@@ -30,9 +30,17 @@ export async function POST(request: NextRequest) {
         cookieStore.set('teacher_auth_token', 'authenticated', {
           httpOnly: true,
           secure: process.env.NODE_ENV === 'production',
-          sameSite: 'lax',
+          sameSite: 'strict',
           maxAge: 60 * 60 * 24 * 7,
-          path: '/',
+          path: '/teacher',
+        });
+        // Duplicate cookie for API route access
+        cookieStore.set('teacher_auth_token', 'authenticated', {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === 'production',
+          sameSite: 'strict',
+          maxAge: 60 * 60 * 24 * 7,
+          path: '/api',
         });
         return NextResponse.json({
           success: true,
@@ -71,11 +79,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Update last login timestamp
-    await supabaseAdmin
+    // Update last login timestamp (non-blocking, errors are ignored)
+    supabaseAdmin
       .from('teachers')
       .update({ last_login: new Date().toISOString() })
       .eq('id', teacher.id)
+      .then(() => {})
       .catch((err: any) => console.error('[Teacher Auth] Failed to update last_login:', err));
 
     // Set authentication cookie with teacher ID
@@ -83,18 +92,33 @@ export async function POST(request: NextRequest) {
     cookieStore.set('teacher_auth_token', 'authenticated', {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      sameSite: 'strict',
       maxAge: 60 * 60 * 24 * 7, // 7 days
-      path: '/',
+      path: '/teacher',
+    });
+    // Duplicate cookie for API route access
+    cookieStore.set('teacher_auth_token', 'authenticated', {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 60 * 60 * 24 * 7,
+      path: '/api',
     });
 
     // Also store teacher ID in a separate cookie for dashboard use
     cookieStore.set('teacher_id', teacher.id, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      sameSite: 'strict',
       maxAge: 60 * 60 * 24 * 7,
-      path: '/',
+      path: '/teacher',
+    });
+    cookieStore.set('teacher_id', teacher.id, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 60 * 60 * 24 * 7,
+      path: '/api',
     });
 
     return NextResponse.json({
@@ -106,10 +130,20 @@ export async function POST(request: NextRequest) {
         school_name: teacher.school_name,
       },
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error('[Teacher Auth] Login error:', error);
+    console.error('[Teacher Auth] Error stack:', error?.stack);
+    console.error('[Teacher Auth] Error details:', {
+      message: error?.message,
+      name: error?.name,
+      cause: error?.cause
+    });
     return NextResponse.json(
-      { success: false, error: 'Sisäänkirjautuminen epäonnistui' },
+      { 
+        success: false, 
+        error: 'Sisäänkirjautuminen epäonnistui',
+        debug: process.env.NODE_ENV === 'development' ? error?.message : undefined
+      },
       { status: 500 }
     );
   }

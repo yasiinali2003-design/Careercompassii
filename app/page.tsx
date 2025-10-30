@@ -388,7 +388,7 @@ export default function HomePage() {
 
       <footer className="border-t border-border/50 py-12 bg-muted/20">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             <div className="flex flex-col gap-2">
               <Logo className="h-8 w-auto" />
               <div className="flex gap-4 text-sm">
@@ -409,9 +409,19 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground text-center">
-              Tulevaisuus alkaa itsensä löytämisestä • © 2025 CareerCompassi
-            </p>
+            <div className="text-sm">
+              <p className="font-semibold mb-2">Laki ja tietosuoja</p>
+              <ul className="space-y-1">
+                <li><a href="/KAYTTOEHDOT.pdf" target="_blank" className="text-primary hover:underline">Käyttöehdot (PDF)</a></li>
+                <li><a href="/TIETOSUOJASELOSTE.pdf" target="_blank" className="text-primary hover:underline">Tietosuojaseloste (PDF)</a></li>
+                <li><a href="/IMMATERIAALIOIKEUS_SUOJA.pdf" target="_blank" className="text-primary hover:underline">Immateriaalioikeus- ja kilpailijansuoja (PDF)</a></li>
+              </ul>
+            </div>
+            <div className="text-sm">
+              <p className="font-semibold mb-2">Tuki</p>
+              <p><a href="mailto:support@careercompassi.com" className="text-primary hover:underline">support@careercompassi.com</a></p>
+              <p className="text-muted-foreground mt-4">Tulevaisuus alkaa itsensä löytämisestä • © 2025 CareerCompassi</p>
+            </div>
           </div>
         </div>
       </footer>

@@ -107,13 +107,58 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Health check
-export async function GET() {
-  return NextResponse.json({
-    status: 'ok',
-    endpoint: '/api/classes',
-    methods: ['POST'],
-    description: 'Create teacher classes'
-  });
+/**
+ * GET /api/classes
+ * Get all classes for the authenticated teacher
+ * 
+ * Response: { classes: Array<{ id, class_token, created_at, updated_at }> }
+ */
+export async function GET(request: NextRequest) {
+  try {
+    // Get teacher ID from cookie
+    const teacherId = request.cookies.get('teacher_id')?.value;
+
+    if (!teacherId) {
+      return NextResponse.json(
+        { success: false, error: 'Not authenticated' },
+        { status: 401 }
+      );
+    }
+
+    if (!supabaseAdmin) {
+      console.warn('[API/Classes] Supabase not configured - returning mock response');
+      return NextResponse.json({
+        success: true,
+        classes: []
+      });
+    }
+
+    // Fetch all classes for this teacher
+    const { data, error } = await supabaseAdmin
+      .from('classes')
+      .select('id, class_token, created_at, updated_at')
+      .eq('teacher_id', teacherId)
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error('[API/Classes] Error fetching classes:', error);
+      return NextResponse.json(
+        { success: false, error: 'Failed to fetch classes' },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      classes: data || []
+    });
+
+  } catch (error) {
+    console.error('[API/Classes] GET unexpected error:', error);
+    return NextResponse.json(
+      { success: false, error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
 }
 

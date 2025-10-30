@@ -39,16 +39,33 @@ export async function GET(
       });
     }
 
-    // For now, return all results for the class
-    // TODO: Add teacher authentication to verify ownership
+    // Verify teacher authentication and ownership
+    const teacherId = request.cookies.get('teacher_id')?.value;
+    
+    if (!teacherId) {
+      return NextResponse.json(
+        { success: false, error: 'Not authenticated' },
+        { status: 401 }
+      );
+    }
+
     console.log(`[API/Results] Fetching for classId: ${classId} (type: ${typeof classId}, length: ${classId?.length})`);
     
-    // First, check if class exists
-    const { data: classData } = await supabaseAdmin
+    // First, check if class exists AND belongs to this teacher
+    const { data: classData, error: classError } = await supabaseAdmin
       .from('classes')
-      .select('id, class_token, created_at')
+      .select('id, teacher_id, class_token, created_at')
       .eq('id', classId)
+      .eq('teacher_id', teacherId)
       .single();
+    
+    if (classError || !classData) {
+      console.error('[API/Results] Class not found or access denied:', classError?.message);
+      return NextResponse.json(
+        { success: false, error: 'Class not found or access denied' },
+        { status: 403 }
+      );
+    }
     
     console.log(`[API/Results] Class lookup:`, { found: !!classData, classId });
     
@@ -70,11 +87,28 @@ export async function GET(
       }))
     });
     
-    // Try query with UUID cast to handle both string and UUID types
+    // Determine retention window (default 3 years; Premium 5 years if teacher flagged)
+    let retentionYears = 3;
+    try {
+      const { data: t, error: tErr } = await supabaseAdmin
+        .from('teachers')
+        .select('id, package')
+        .eq('id', teacherId)
+        .single();
+      if (!tErr && t?.package && String(t.package).toLowerCase() === 'premium') {
+        retentionYears = 5;
+      }
+    } catch {}
+
+    const since = new Date();
+    since.setFullYear(since.getFullYear() - retentionYears);
+
+    // Query results within retention window
     let { data, error } = await supabaseAdmin
       .from('results')
-      .select('*')  // Select all columns to debug
-      .eq('class_id', classId) // Supabase should handle UUID comparison automatically
+      .select('*')
+      .eq('class_id', classId)
+      .gte('created_at', since.toISOString())
       .order('created_at', { ascending: false });
     
     // If that fails, try fetching all and filtering (fallback debug method)
@@ -87,7 +121,7 @@ export async function GET(
       
       if (allData) {
         // Filter in JavaScript
-        const filtered = allData.filter((r: any) => String(r.class_id) === String(classId));
+        const filtered = allData.filter((r: any) => String(r.class_id) === String(classId) && new Date(r.created_at) >= since);
         console.log(`[API/Results] Fallback: Found ${filtered.length} results after JavaScript filter (from ${allData.length} total)`);
         
         if (filtered.length > 0) {
