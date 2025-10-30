@@ -121,6 +121,22 @@ export async function POST(request: NextRequest) {
       path: '/api',
     });
 
+    // Also set site-wide cookies to ensure middleware receives them regardless of path quirks
+    cookieStore.set('teacher_auth_token', 'authenticated', {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 60 * 60 * 24 * 7,
+      path: '/',
+    });
+    cookieStore.set('teacher_id', teacher.id, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 60 * 60 * 24 * 7,
+      path: '/',
+    });
+
     return NextResponse.json({
       success: true,
       message: 'Kirjautuminen onnistui',

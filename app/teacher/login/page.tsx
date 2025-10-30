@@ -113,7 +113,7 @@ export default function TeacherLoginPage() {
                 type="submit"
                 className="w-full"
                 size="lg"
-                disabled={loading || !password.trim()}
+                disabled={loading}
               >
                 {loading ? (
                   'Kirjaudutaan...'

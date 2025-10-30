@@ -67,10 +67,6 @@ export default function NewClassPage() {
             <h1 className="text-3xl font-bold mb-6">Luokka luotu!</h1>
             
             <div className="space-y-4 mb-8">
-              <div>
-                <label className="font-semibold text-gray-700">Luokkan tunnus:</label>
-                <p className="text-gray-900 font-mono text-sm bg-gray-50 p-2 rounded">{classData.classId}</p>
-              </div>
               
               <div>
                 <label className="font-semibold text-gray-700">Julkinen linkki (anonyymi):</label>
@@ -158,13 +154,6 @@ export default function NewClassPage() {
           </div>
 
           <div className="mt-8 space-y-4">
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-              <h3 className="font-semibold text-yellow-900 mb-2">⚠️ Tärkeää</h3>
-              <p className="text-sm text-yellow-800">
-                Teacher Dashboard on kehitysvaiheessa ja vaatii tietokantataulujen luonnin. 
-                Tämä ominaisuus ei ole vielä valmis käyttöönottoon.
-              </p>
-            </div>
             
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
               <h3 className="font-semibold text-blue-900 mb-2">Mitä tapahtuu?</h3>

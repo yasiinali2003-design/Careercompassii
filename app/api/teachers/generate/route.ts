@@ -8,6 +8,26 @@ import { supabaseAdmin } from '@/lib/supabase';
 
 export async function POST(request: NextRequest) {
   try {
+    // Admin allowlist: accept either Basic Auth (admin user/pass) OR admin teacher cookie
+    const adminUser = process.env.ADMIN_USERNAME || 'admin';
+    const adminPass = process.env.ADMIN_PASSWORD || '';
+    const authHeader = request.headers.get('authorization') || '';
+    const expected = adminPass ? 'Basic ' + Buffer.from(`${adminUser}:${adminPass}`).toString('base64') : '';
+
+    const hasValidBasicAuth = expected && authHeader === expected;
+    const adminCookie = request.cookies.get('admin_auth');
+    const hasAdminCookie = adminCookie?.value === 'yes';
+
+    const teacherToken = request.cookies.get('teacher_auth_token');
+    const teacherId = request.cookies.get('teacher_id');
+    const adminId = process.env.ADMIN_TEACHER_ID || '';
+    const isAuthed = teacherToken && teacherToken.value === 'authenticated';
+    const isAdmin = teacherId && adminId && teacherId.value === adminId;
+
+    if (!(hasValidBasicAuth || hasAdminCookie || (isAuthed && isAdmin))) {
+      return new NextResponse('Not Found', { status: 404 });
+    }
+
     const body = await request.json();
     const { name, email, schoolName } = body;
 

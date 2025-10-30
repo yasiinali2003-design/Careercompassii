@@ -21,6 +21,10 @@ export async function POST() {
     cookieStore.set('teacher_auth_token', '', { path: '/api', maxAge: 0 });
     cookieStore.set('teacher_id', '', { path: '/api', maxAge: 0 });
 
+    // Expire site-wide cookies
+    cookieStore.set('teacher_auth_token', '', { path: '/', maxAge: 0 });
+    cookieStore.set('teacher_id', '', { path: '/', maxAge: 0 });
+
     return NextResponse.json({
       success: true,
       message: 'Uloskirjautuminen onnistui',

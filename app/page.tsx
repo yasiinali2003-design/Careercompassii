@@ -404,9 +404,11 @@ export default function HomePage() {
                 <Link href="/teacher/login" className="text-muted-foreground hover:text-foreground transition-colors">
                   Opettajille
                 </Link>
-                <Link href="/admin/teachers" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Admin
-                </Link>
+                {process.env.NEXT_PUBLIC_SHOW_ADMIN === 'true' && (
+                  <Link href="/admin/teachers" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Admin
+                  </Link>
+                )}
               </div>
             </div>
             <div className="text-sm">
@@ -428,3 +430,4 @@ export default function HomePage() {
     </div>
   )
 }
+
