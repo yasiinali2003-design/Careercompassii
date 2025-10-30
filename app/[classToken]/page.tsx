@@ -23,6 +23,17 @@ export default function PublicClassResultsPage({
   }, [classToken]);
 
   const fetchResults = async () => {
+    // Skip if classToken matches reserved paths (legal pages, etc.)
+    // This should not happen in production (Next.js routes should match first),
+    // but add check for safety
+    const reservedPaths = ['legal', 'teacher', 'admin', 'api', 'test', 'ammatit', 'kategoriat', 'kouluille', 'meista'];
+    if (reservedPaths.includes(classToken.toLowerCase())) {
+      // This route shouldn't be reached for these paths, but if it is, don't try to fetch
+      setLoading(false);
+      setError(null);
+      return;
+    }
+
     try {
       const response = await fetch(
         `/api/classes/${classToken}/results`
@@ -41,6 +52,12 @@ export default function PublicClassResultsPage({
       setLoading(false);
     }
   };
+
+  // If this is a reserved path, return null (shouldn't render this component)
+  const reservedPaths = ['legal', 'teacher', 'admin', 'api', 'test', 'ammatit', 'kategoriat', 'kouluille', 'meista'];
+  if (reservedPaths.includes(classToken.toLowerCase())) {
+    return null;
+  }
 
   if (loading) {
     return (
