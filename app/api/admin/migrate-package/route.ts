@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({
         success: true,
         message: 'Package column already exists',
-        samplePackages: teachers?.map(t => t.package) || [],
+        samplePackages: teachers?.map((t: { package?: string }) => t.package) || [],
       });
     }
 
