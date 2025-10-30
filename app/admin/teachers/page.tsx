@@ -25,6 +25,7 @@ export default function AdminTeachersPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [schoolName, setSchoolName] = useState('');
+  const [packageType, setPackageType] = useState<'premium' | 'yläaste'>('yläaste');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [newTeacher, setNewTeacher] = useState<Teacher | null>(null);
@@ -46,6 +47,7 @@ export default function AdminTeachersPage() {
           name,
           email: email.trim() || null,
           schoolName: schoolName.trim() || null,
+          package: packageType,
         }),
       });
 
@@ -156,6 +158,27 @@ export default function AdminTeachersPage() {
                   placeholder="esim. Helsingin yläaste"
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
                 />
+              </div>
+
+              <div>
+                <label htmlFor="package" className="block text-sm font-medium text-gray-700 mb-2">
+                  Paketti <span className="text-red-500">*</span>
+                </label>
+                <select
+                  id="package"
+                  value={packageType}
+                  onChange={(e) => setPackageType(e.target.value as 'premium' | 'yläaste')}
+                  required
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all bg-white"
+                >
+                  <option value="yläaste">Yläaste (Standard)</option>
+                  <option value="premium">Premium</option>
+                </select>
+                <p className="text-xs text-gray-500 mt-1">
+                  {packageType === 'premium' 
+                    ? 'Premium: API-pääsy, 5v säilytys, vertailuanalyytiikka, PDF-raportit'
+                    : 'Yläaste: Perustoiminnot, 3v säilytys'}
+                </p>
               </div>
 
               {error && (

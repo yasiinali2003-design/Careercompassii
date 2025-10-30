@@ -29,12 +29,25 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { name, email, schoolName } = body;
+    const { name, email, schoolName, package: packageType } = body;
 
     // Validate input
     if (!name || typeof name !== 'string') {
       return NextResponse.json(
         { success: false, error: 'Name is required' },
+        { status: 400 }
+      );
+    }
+
+    // Validate package type
+    const validPackages = ['premium', 'yläaste', 'standard'];
+    const normalizedPackage = packageType && typeof packageType === 'string' 
+      ? packageType.toLowerCase() === 'yläaste' ? 'standard' : packageType.toLowerCase()
+      : 'standard';
+    
+    if (!validPackages.includes(normalizedPackage) && normalizedPackage !== 'standard') {
+      return NextResponse.json(
+        { success: false, error: 'Invalid package type. Must be "premium" or "yläaste"/"standard"' },
         { status: 400 }
       );
     }
@@ -78,22 +91,74 @@ export async function POST(request: NextRequest) {
       }
 
       // Insert teacher with generated code
+      // Try with package first, fallback without if column doesn't exist
+      let insertData: any = {
+        name,
+        email: email || null,
+        school_name: schoolName || null,
+        access_code: accessCode,
+        is_active: true,
+      };
+      
+      // Only include package if column exists (check via a test query or just try)
+      insertData.package = normalizedPackage;
+
       const { data, error } = await supabaseAdmin
         .from('teachers')
-        .insert({
-          name,
-          email: email || null,
-          school_name: schoolName || null,
-          access_code: accessCode,
-          is_active: true,
-        })
-        .select('id, name, email, school_name, access_code, created_at')
+        .insert(insertData)
+        .select('id, name, email, school_name, access_code, package, created_at')
         .single();
 
       if (error) {
         console.error('[API/Teachers] Error creating teacher:', error);
+        console.error('[API/Teachers] Error details:', JSON.stringify(error, null, 2));
+        
+        // If package column doesn't exist, try without it
+        const isPackageColumnError = error.message?.includes('column "package"') 
+          || error.message?.includes("'package' column")
+          || error.message?.includes('package')
+          || error.code === '42703' 
+          || error.code === 'PGRST204';
+        
+        if (isPackageColumnError) {
+          console.warn('[API/Teachers] Package column not found, retrying without package field');
+          const { data: fallbackData, error: fallbackError } = await supabaseAdmin
+            .from('teachers')
+            .insert({
+              name,
+              email: email || null,
+              school_name: schoolName || null,
+              access_code: accessCode,
+              is_active: true,
+            })
+            .select('id, name, email, school_name, access_code, created_at')
+            .single();
+          
+          if (fallbackError) {
+            return NextResponse.json(
+              { success: false, error: 'Failed to create teacher account', details: fallbackError.message, hint: 'Run migration: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';' },
+              { status: 500 }
+            );
+          }
+          
+          return NextResponse.json({
+            success: true,
+            teacher: fallbackData,
+            message: 'Teacher account created (package column not found - run migration)',
+            warning: 'Package column missing. Run: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';'
+          });
+        }
+        
         return NextResponse.json(
-          { success: false, error: 'Failed to create teacher account' },
+          { 
+            success: false, 
+            error: 'Failed to create teacher account', 
+            details: error.message || JSON.stringify(error),
+            code: error.code,
+            hint: error.message?.includes('column "package"') || error.message?.includes("'package' column") || error.code === '42703' || error.code === 'PGRST204'
+              ? 'Run migration: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';'
+              : undefined
+          },
           { status: 500 }
         );
       }
@@ -108,22 +173,73 @@ export async function POST(request: NextRequest) {
     const accessCode = codeData;
 
     // Insert teacher with generated code
+    // Try with package first, fallback without if column doesn't exist
+    let insertData: any = {
+      name,
+      email: email || null,
+      school_name: schoolName || null,
+      access_code: accessCode,
+      is_active: true,
+    };
+    
+    insertData.package = normalizedPackage;
+
     const { data, error } = await supabaseAdmin
       .from('teachers')
-      .insert({
-        name,
-        email: email || null,
-        school_name: schoolName || null,
-        access_code: accessCode,
-        is_active: true,
-      })
-      .select('id, name, email, school_name, access_code, created_at')
+      .insert(insertData)
+      .select('id, name, email, school_name, access_code, package, created_at')
       .single();
 
     if (error) {
       console.error('[API/Teachers] Error creating teacher:', error);
+      console.error('[API/Teachers] Error details:', JSON.stringify(error, null, 2));
+      
+      // If package column doesn't exist, try without it
+      const isPackageColumnError2 = error.message?.includes('column "package"') 
+        || error.message?.includes("'package' column")
+        || error.message?.includes('package')
+        || error.code === '42703' 
+        || error.code === 'PGRST204';
+      
+      if (isPackageColumnError2) {
+        console.warn('[API/Teachers] Package column not found, retrying without package field');
+        const { data: fallbackData, error: fallbackError } = await supabaseAdmin
+          .from('teachers')
+          .insert({
+            name,
+            email: email || null,
+            school_name: schoolName || null,
+            access_code: accessCode,
+            is_active: true,
+          })
+          .select('id, name, email, school_name, access_code, created_at')
+          .single();
+        
+        if (fallbackError) {
+          return NextResponse.json(
+            { success: false, error: 'Failed to create teacher account', details: fallbackError.message, hint: 'Run migration: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';' },
+            { status: 500 }
+          );
+        }
+        
+        return NextResponse.json({
+          success: true,
+          teacher: fallbackData,
+          message: 'Teacher account created (package column not found - run migration)',
+          warning: 'Package column missing. Run: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';'
+        });
+      }
+      
       return NextResponse.json(
-        { success: false, error: 'Failed to create teacher account' },
+        { 
+          success: false, 
+          error: 'Failed to create teacher account', 
+          details: error.message || JSON.stringify(error),
+          code: error.code,
+          hint: isPackageColumnError2
+            ? 'Run migration: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';'
+            : undefined
+        },
         { status: 500 }
       );
     }

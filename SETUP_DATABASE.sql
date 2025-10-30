@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS teachers (
   name TEXT,
   school_name TEXT,
   access_code TEXT UNIQUE NOT NULL,
+  package TEXT DEFAULT 'standard' CHECK (package IN ('premium', 'standard')),
   is_active BOOLEAN DEFAULT true,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   last_login TIMESTAMP WITH TIME ZONE,

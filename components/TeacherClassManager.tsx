@@ -18,6 +18,11 @@ interface Props {
   classToken: string;
 }
 
+interface PackageInfo {
+  hasPremium: boolean;
+  package: 'premium' | 'standard';
+}
+
 interface ClassAnalytics {
   topCareers: Array<{ name: string; count: number }>;
   categoryDistribution: Record<string, number>;
@@ -196,6 +201,7 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
   const [sortBy, setSortBy] = useState<string>('date');
   const [selectedStudents, setSelectedStudents] = useState<Set<string>>(new Set());
   const [viewMode, setViewMode] = useState<'table' | 'detailed'>('table');
+  const [packageInfo, setPackageInfo] = useState<PackageInfo | null>(null);
 
   // Calculate analytics
   const analytics = calculateAnalytics(results);
@@ -205,6 +211,19 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
     fetchPins();
     loadNameMapping();
     fetchResults();
+    // Fetch package info
+    (async () => {
+      try {
+        const res = await fetch('/api/teacher-auth/package-check');
+        const data = await res.json();
+        if (data.success) {
+          setPackageInfo({ hasPremium: data.hasPremium, package: data.package });
+        }
+      } catch (e) {
+        console.error('Failed to check package:', e);
+        setPackageInfo({ hasPremium: false, package: 'standard' });
+      }
+    })();
   }, [classId]);
 
   const fetchPins = async () => {
@@ -739,24 +758,38 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                 >
                   Avaa luokan yhteenveto PDF:ksi
                 </button>
-                <button
-                  type="button"
-                  aria-label="Avaa vertailuanalyysi PDF"
-                  disabled={results.length === 0}
-                  onClick={() => {
-                    const today = new Date();
-                    const lastMonth = new Date();
-                    lastMonth.setMonth(today.getMonth()-1);
-                    const to1 = today.toISOString().slice(0,10);
-                    const from1 = lastMonth.toISOString().slice(0,10);
-                    const from2 = '1970-01-01';
-                    const to2 = lastMonth.toISOString().slice(0,10);
-                    window.open(`/teacher/classes/${classId}/reports/compare?from1=${from2}&to1=${to2}&from2=${from1}&to2=${to1}`, '_blank');
-                  }}
-                  className="border px-6 py-2 rounded-lg disabled:opacity-50"
-                >
-                  Avaa vertailuanalyysi (A4)
-                </button>
+                {packageInfo?.hasPremium ? (
+                  <button
+                    type="button"
+                    aria-label="Avaa vertailuanalyysi PDF"
+                    disabled={results.length === 0}
+                    onClick={() => {
+                      const today = new Date();
+                      const lastMonth = new Date();
+                      lastMonth.setMonth(today.getMonth()-1);
+                      const to1 = today.toISOString().slice(0,10);
+                      const from1 = lastMonth.toISOString().slice(0,10);
+                      const from2 = '1970-01-01';
+                      const to2 = lastMonth.toISOString().slice(0,10);
+                      window.open(`/teacher/classes/${classId}/reports/compare?from1=${from2}&to1=${to2}&from2=${from1}&to2=${to1}`, '_blank');
+                    }}
+                    className="border px-6 py-2 rounded-lg disabled:opacity-50"
+                  >
+                    Avaa vertailuanalyysi (A4)
+                  </button>
+                ) : (
+                  <div className="relative">
+                    <button
+                      type="button"
+                      disabled={true}
+                      className="border px-6 py-2 rounded-lg opacity-50 cursor-not-allowed"
+                      title="Vertailuanalyytiikka vaatii Premium-paketin"
+                    >
+                      Vertailuanalyysi (Premium)
+                    </button>
+                    <span className="absolute -top-1 -right-1 bg-purple-600 text-white text-xs px-1.5 py-0.5 rounded-full">Premium</span>
+                  </div>
+                )}
               </div>
 
               {/* Results Display */}

@@ -21,6 +21,15 @@ export default function CompareReport({ params, searchParams }: { params: { clas
     let cancelled = false;
     (async () => {
       try {
+        // Check Premium access first
+        const checkRes = await fetch('/api/teacher-auth/package-check');
+        const checkData = await checkRes.json();
+        if (!checkData.hasPremium) {
+          setError('Vertailuanalyytiikka vaatii Premium-paketin. Ota yhteyttä tukeen: support@careercompassi.com');
+          if (!cancelled) setLoading(false);
+          return;
+        }
+
         const res = await fetch(`/api/classes/${classId}/results`);
         const data = await res.json();
         if (!data.success) throw new Error(data.error || "Failed to fetch results");

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
+import { requirePremium } from '@/lib/teacherPackage';
 
 export async function GET(request: NextRequest) {
   try {
@@ -8,6 +9,12 @@ export async function GET(request: NextRequest) {
     if (!expected || apiKey !== expected) {
       return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 });
     }
+
+    // For now, API key implies Premium access. In future, map API keys to specific teachers/schools.
+    // If you want stricter control, require teacherId in request and check their package:
+    // const teacherId = request.headers.get('x-teacher-id');
+    // if (teacherId) await requirePremium(teacherId);
+    // else return NextResponse.json({ success: false, error: 'Premium package required for API access' }, { status: 403 });
 
     const classId = request.nextUrl.searchParams.get('classId');
     const since = request.nextUrl.searchParams.get('since');
@@ -32,5 +39,6 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 });
   }
 }
+
 
 
