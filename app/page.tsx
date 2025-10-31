@@ -52,12 +52,7 @@ export default function HomePage() {
             >
               Meistä
             </Link>
-            <Link
-              href="/kouluille"
-              className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors hidden sm:block"
-            >
-              Kouluille
-            </Link>
+            {/* Kouluille link hidden from public - only visible in localhost via middleware */}
             <Button
               asChild
               className="bg-primary hover:bg-primary/90 text-primary-foreground"
@@ -395,9 +390,7 @@ export default function HomePage() {
                 <Link href="/ammatit" className="text-muted-foreground hover:text-foreground transition-colors">
                   Urakirjasto
                 </Link>
-                <Link href="/kouluille" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Kouluille
-                </Link>
+                {/* Kouluille link hidden from public - only visible in localhost */}
                 <Link href="/teacher/login" className="text-muted-foreground hover:text-foreground transition-colors">
                   Opettajille
                 </Link>
