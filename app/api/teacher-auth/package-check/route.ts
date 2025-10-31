@@ -5,6 +5,10 @@ import { isPremiumTeacher } from '@/lib/teacherPackage';
  * GET /api/teacher-auth/package-check
  * Check if authenticated teacher has Premium access
  */
+
+// Force dynamic rendering since we use cookies
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: NextRequest) {
   try {
     const teacherId = request.cookies.get('teacher_id')?.value;

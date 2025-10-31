@@ -6,6 +6,9 @@ import { cookies } from 'next/headers';
  * Checks if user is authenticated
  */
 
+// Force dynamic rendering since we use cookies
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     const cookieStore = await cookies();
