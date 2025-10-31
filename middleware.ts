@@ -105,6 +105,38 @@ export function middleware(request: NextRequest) {
     }
   }
 
+  // Site-wide password protection (via /site-auth page)
+  // Only enable on production domain, not on localhost
+  const sitePasswordEnabled = !isLocalhost && isProduction && process.env.SITE_PASSWORD !== undefined && process.env.SITE_PASSWORD !== '';
+  
+  if (sitePasswordEnabled) {
+    // Always allow access to site auth page and its API
+    if (pathname === '/site-auth' || pathname === '/api/site-auth') {
+      return NextResponse.next();
+    }
+
+    // Exclude routes that have their own auth or are needed for functionality
+    const isExcluded = 
+      pathname.startsWith('/teacher') ||
+      pathname.startsWith('/admin') ||
+      pathname === '/kouluille' || // Already handled above
+      (pathname.startsWith('/api') && pathname !== '/api/site-auth') ||
+      pathname.startsWith('/_next') ||
+      pathname.startsWith('/favicon');
+
+    if (!isExcluded) {
+      // Check for site authentication cookie
+      const siteAuth = request.cookies.get('site_auth');
+      
+      if (!siteAuth || siteAuth.value !== 'authenticated') {
+        // Redirect to site auth page
+        const authUrl = new URL('/site-auth', request.url);
+        authUrl.searchParams.set('returnTo', pathname);
+        return NextResponse.redirect(authUrl);
+      }
+    }
+  }
+
   // Allow all other routes
   return NextResponse.next();
 }
