@@ -113,11 +113,19 @@ export default function NewClassPage() {
           
           {error && (
             <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-              <p className="text-red-800 font-semibold">{error}</p>
-              <p className="text-red-700 text-sm mt-2">
-                Tämä tapahtuu jos tietokantatauluja ei ole vielä luotu. 
-                Päätetään tämä yhdessä pian!
+              <p className="text-red-800 font-semibold mb-2">⚠️ {error}</p>
+              <p className="text-red-700 text-sm mb-3">
+                Luokan luominen epäonnistui.
               </p>
+              <div className="text-sm text-red-700 space-y-1">
+                <p className="font-semibold">Ratkaisu:</p>
+                <ol className="list-decimal list-inside space-y-1 ml-2">
+                  <li>Tarkista verkkoyhteys ja yritä uudelleen</li>
+                  <li>Varmista että olet kirjautunut sisään</li>
+                  <li>Jos ongelma jatkuu, ota yhteyttä tukeen: support@careercompassi.com</li>
+                </ol>
+                <p className="mt-2">Tarvitsetko apua? Avaa FAQ-ikkuna yläpalkin kautta.</p>
+              </div>
             </div>
           )}
 

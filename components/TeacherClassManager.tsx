@@ -254,11 +254,13 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
       if (data.success) {
         setResults(data.results);
       } else {
-        setResultsError(data.error || 'Tulosten lataus epäonnistui');
+        const errorMsg = data.error || 'Tulosten lataus epäonnistui';
+        const hint = data.hint || '';
+        setResultsError(`${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nRatkaisu: Päivitä sivu ja yritä uudelleen. Jos ongelma jatkuu, ota yhteyttä tukeen.`);
       }
     } catch (error) {
       console.error('Error fetching results:', error);
-      setResultsError('Verkkovirhe tuloksia ladattaessa');
+      setResultsError(`Verkkovirhe tuloksia ladattaessa.\n\nRatkaisu:\n1. Tarkista verkkoyhteys\n2. Päivitä sivu (F5)\n3. Odota hetki ja yritä uudelleen\n4. Jos ongelma jatkuu, ota yhteyttä tukeen: support@careercompassi.com`);
     }
     setResultsLoading(false);
   };
@@ -276,11 +278,13 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
       if (data.success) {
         setPins(data.pins);
       } else {
-        alert('Virhe PIN-koodien luonnissa');
+        const errorMsg = data.error || 'PIN-koodien luominen epäonnistui';
+        const recovery = data.hint || 'Tarkista verkkoyhteys ja yritä uudelleen. Jos ongelma jatkuu, tarkista että luokka on olemassa.';
+        alert(`${errorMsg}\n\nRatkaisu: ${recovery}\n\nTarvitsetko apua? Avaa FAQ-ikkuna yläpalkin kautta.`);
       }
     } catch (error) {
       console.error('Error generating PINs:', error);
-      alert('Verkkovirhe');
+      alert(`Verkkovirhe PIN-koodien luonnissa.\n\nRatkaisu:\n1. Tarkista verkkoyhteys\n2. Päivitä sivu ja yritä uudelleen\n3. Jos ongelma jatkuu, ota yhteyttä tukeen: support@careercompassi.com\n\nTarvitsetko apua? Avaa FAQ-ikkuna yläpalkin kautta.`);
     } finally {
       setLoading(false);
     }
@@ -298,7 +302,8 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
       try {
         exportMappingAsFile(nameMapping, passphrase, classId);
       } catch (error) {
-        alert('Virhe viennissä');
+        console.error('Export error:', error);
+        alert(`Nimilistan vienti epäonnistui.\n\nRatkaisu:\n1. Tarkista että salasana on vähintään 8 merkkiä\n2. Kokeile lyhyempää salasanaa\n3. Jos ongelma jatkuu, kopioi nimilista manuaalisesti\n\nTarvitsetko apua? Avaa FAQ-ikkuna yläpalkin kautta.`);
       }
     }
   };
@@ -316,7 +321,8 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
       saveMappingToStorage(classId, mapping);
       alert('Nimilista tuotu onnistuneesti!');
     } catch (error) {
-      alert('Virhe: Väärä salasana tai viallinen tiedosto');
+      console.error('Import error:', error);
+      alert(`Nimilistan tuonti epäonnistui.\n\nMahdolliset syyt:\n• Väärä salasana - käytä samaa salasanaa, jota käytit viennissä\n• Viallinen tiedosto - varmista että tiedosto on oikea JSON-tiedosto\n• Tiedosto on korruptoitunut\n\nRatkaisu:\n1. Tarkista salasana\n2. Lataa tiedosto uudelleen ja yritä uudelleen\n3. Jos tiedosto on menetetty, syötä nimet manuaalisesti\n\nTarvitsetko apua? Avaa FAQ-ikkuna yläpalkin kautta.`);
     }
   };
 
@@ -617,9 +623,25 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
               </div>
 
               {/* Status */}
-              <div aria-live="polite" className="text-sm text-gray-600">
-                {resultsLoading && 'Ladataan tuloksia...'}
-                {!resultsLoading && results.length === 0 && 'Tuloksia ei vielä saatavilla'}
+              <div aria-live="polite" className="text-sm">
+                {resultsLoading && (
+                  <div className="text-gray-600">Ladataan tuloksia...</div>
+                )}
+                {!resultsLoading && results.length === 0 && !resultsError && (
+                  <div className="text-gray-600">Tuloksia ei vielä saatavilla. Oppilaat voivat aloittaa testin PIN-koodilla.</div>
+                )}
+                {resultsError && (
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-4">
+                    <p className="text-red-800 font-semibold mb-2">⚠️ Virhe tuloksia ladattaessa</p>
+                    <pre className="text-sm text-red-700 whitespace-pre-wrap">{resultsError}</pre>
+                    <button
+                      onClick={fetchResults}
+                      className="mt-3 text-sm bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+                    >
+                      Yritä uudelleen
+                    </button>
+                  </div>
+                )}
               </div>
 
               {/* Export Buttons */}

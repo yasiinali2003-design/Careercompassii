@@ -650,10 +650,14 @@ const Summary = ({
             window.location.href = '/test/results';
           } else {
             console.error('[Test] Failed to save results:', resultsData.error);
-            setError(resultsData.error || "Tulosten tallentaminen epäonnistui");
+            const errorMsg = resultsData.error || "Tulosten tallentaminen epäonnistui";
+            const hint = resultsData.hint || '';
+            setError(`${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nRatkaisu:\n1. Tarkista verkkoyhteys\n2. Älä poistu tältä sivulta\n3. Yritä lähettää vastaukset uudelleen\n4. Jos ongelma jatkuu, ota yhteyttä opettajaan.`);
           }
         } else {
-            setError(scoreData.error || "Analyysi epäonnistui");
+            const errorMsg = scoreData.error || "Analyysi epäonnistui";
+            const hint = scoreData.hint || '';
+            setError(`${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nRatkaisu:\n1. Tarkista että vastasit kaikkiin kysymyksiin\n2. Tarkista verkkoyhteys\n3. Yritä lähettää vastaukset uudelleen\n4. Jos ongelma jatkuu, ota yhteyttä opettajaan.`);
         }
       } else {
         console.log('[Test] No PIN, regular public flow');
@@ -671,8 +675,10 @@ const Summary = ({
         
         if (!response.ok) {
           console.error('[Test] API response not OK:', response.status, response.statusText);
-          const errorData = await response.json().catch(() => ({ error: 'Network error' }));
-          setError(errorData.error || `HTTP ${response.status}: ${response.statusText}`);
+          const errorData = await response.json().catch(() => ({ error: 'Verkkovirhe' }));
+          const errorMsg = errorData.error || `Palvelinvirhe (${response.status})`;
+          const hint = errorData.hint || '';
+          setError(`${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nRatkaisu:\n1. Tarkista verkkoyhteys\n2. Odota hetki ja yritä uudelleen\n3. Älä poistu tältä sivulta - vastauksesi tallennetaan\n4. Jos ongelma jatkuu, ota yhteyttä opettajaan.`);
           return;
         }
         
@@ -687,12 +693,14 @@ const Summary = ({
           window.location.href = '/test/results';
         } else {
           console.error('[Test] Score API failed:', data);
-          setError(data.error || data.details || "Analyysi epäonnistui");
+          const errorMsg = data.error || data.details || "Analyysi epäonnistui";
+          const hint = data.hint || '';
+          setError(`${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nRatkaisu:\n1. Tarkista että vastasit kaikkiin kysymyksiin\n2. Tarkista verkkoyhteys\n3. Odota hetki ja yritä lähettää vastaukset uudelleen\n4. Älä poistu tältä sivulta - vastauksesi tallennetaan automaattisesti\n5. Jos ongelma jatkuu, ota yhteyttä opettajaan.`);
         }
       }
     } catch (e) {
       console.error(e);
-      setError("Lähetys epäonnistui. Tarkista yhteys.");
+      setError("Vastausten lähetys epäonnistui.\n\nRatkaisu:\n1. Tarkista verkkoyhteys\n2. Älä poistu tältä sivulta - vastauksesi tallennetaan automaattisesti\n3. Yritä lähettää vastaukset uudelleen\n4. Jos ongelma jatkuu, ota yhteyttä opettajaan.\n\nHuom: Jos poistut sivulta nyt, voit palata myöhemmin ja jatkaa tästä kohdasta.");
     } finally {
       setLoading(false);
     }
@@ -1276,10 +1284,11 @@ const Summary = ({
         
         {error && (
           <div className="mt-4 rounded-xl bg-red-50 border border-red-200 p-4">
-            <p className="text-red-800">{error}</p>
+            <p className="text-red-800 font-semibold mb-2">⚠️ Virhe vastausten lähetyksessä</p>
+            <pre className="text-sm text-red-700 whitespace-pre-wrap mb-3">{error}</pre>
             <button 
               onClick={sendToBackend}
-              className="mt-2 text-sm text-red-600 hover:text-red-800 underline"
+              className="mt-2 text-sm bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
             >
               Yritä uudelleen
             </button>
