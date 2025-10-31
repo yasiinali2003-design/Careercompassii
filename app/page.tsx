@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { headers } from "next/headers"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import CategoryCard from "@/components/CategoryCard"
@@ -24,6 +25,9 @@ import {
 
 export default function HomePage() {
   const categories = getAllCategories();
+  const headersList = headers();
+  const hostname = headersList.get('host') || '';
+  const isLocalhost = hostname === 'localhost:3000' || hostname === '127.0.0.1:3000';
 
   return (
     <div className="min-h-screen">
@@ -390,7 +394,11 @@ export default function HomePage() {
                 <Link href="/ammatit" className="text-muted-foreground hover:text-foreground transition-colors">
                   Urakirjasto
                 </Link>
-                {/* Kouluille link hidden from public - only visible in localhost */}
+                {isLocalhost && (
+                  <Link href="/kouluille" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Kouluille
+                  </Link>
+                )}
                 <Link href="/teacher/login" className="text-muted-foreground hover:text-foreground transition-colors">
                   Opettajille
                 </Link>
