@@ -5,20 +5,20 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 const getMetadataBase = () => {
+  const url = process.env.NEXT_PUBLIC_SITE_URL || 'https://careercompassi.com';
   try {
-    if (process.env.NEXT_PUBLIC_SITE_URL) {
-      return new URL(process.env.NEXT_PUBLIC_SITE_URL);
-    }
-    return new URL('https://careercompassi.com');
+    return new URL(url);
   } catch {
     return undefined;
   }
 };
 
+const metadataBase = getMetadataBase();
+
 export const metadata: Metadata = {
   title: 'CareerCompassi - Löydä tulevaisuutesi vibe',
   description: 'Hauska ja luotettava testi, joka auttaa sinua ymmärtämään vahvuuksiasi ja uramahdollisuuksia.',
-  metadataBase: getMetadataBase(),
+  ...(metadataBase && { metadataBase }),
   robots: {
     index: false,
     follow: false,
