@@ -42,6 +42,21 @@ export async function POST(request: NextRequest) {
           maxAge: 60 * 60 * 24 * 7,
           path: '/api',
         });
+        // Minimal teacher_id for mock mode
+        cookieStore.set('teacher_id', 'mock-teacher', {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === 'production',
+          sameSite: 'strict',
+          maxAge: 60 * 60 * 24 * 7,
+          path: '/teacher',
+        });
+        cookieStore.set('teacher_id', 'mock-teacher', {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === 'production',
+          sameSite: 'strict',
+          maxAge: 60 * 60 * 24 * 7,
+          path: '/api',
+        });
         return NextResponse.json({
           success: true,
           message: 'Kirjautuminen onnistui (fallback mode)',

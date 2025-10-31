@@ -44,3 +44,4 @@ Your app is using Supabase project with reference: **`wpqlslwbyxhpreaglhui`**
 
 ✅ Done!
 
+

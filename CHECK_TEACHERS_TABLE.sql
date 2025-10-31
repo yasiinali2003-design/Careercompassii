@@ -40,3 +40,4 @@ SELECT
 -- 4. Test function (if it exists)
 SELECT generate_teacher_code() as test_code;
 
+

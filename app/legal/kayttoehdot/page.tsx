@@ -1,21 +1,20 @@
-# KÄYTTÖEHDOT — CareerCompassi Oy
-
-Versio 3.2  
-Viimeksi päivitetty: [päivämäärä]  
-Y‑tunnus: [täydennä]  
-Rekisteröity tavaramerkki: [täydennä]
-
----
-
-## 1 Johdanto
+export default function KayttoehdotPage() {
+  return (
+    <main className="min-h-screen bg-white text-slate-900">
+      <div className="container mx-auto px-4 py-12 max-w-3xl">
+        <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-primary">KÄYTTÖEHDOT — CareerCompassi Oy</h1>
+        <p className="text-sm text-muted-foreground mb-8">Versio 3.2 • Viimeksi päivitetty: [päivämäärä] • Y‑tunnus: [täydennä] • Rekisteröity tavaramerkki: [täydennä]</p>
+        <div className="space-y-6 leading-relaxed text-base">
+          <pre className="whitespace-pre-wrap font-sans text-[15px]">
+{`## 1 Johdanto
 
 Nämä käyttöehdot (“Ehdot”) säätelevät CareerCompassi Oy:n (“CareerCompassi”, “me”) tarjoaman verkkopalvelun (“Palvelu”) käyttöä. Käyttämällä Palvelua hyväksyt nämä Ehdot kulloinkin voimassa olevina. Jos et hyväksy Ehtoja, älä käytä Palvelua. Palvelu on tekoälypohjainen urasuunnittelu- ja testijärjestelmä; tulokset ovat ohjeellisia eivätkä takaa tiettyä lopputulosta.
 
 ## 2 Määritelmät
-“Palvelu”: CareerCompassin verkkopalvelu ja sen osat.  
-“Käyttäjä”: henkilö tai oppilaitos, joka käyttää Palvelua.  
-“Opettaja”: oppilaitoksen valtuuttama henkilö, joka hallinnoi testejä.  
-“Oppilaitos”: koulu tai muu organisaatio, joka hankkii käyttöoikeuden Palveluun.  
+“Palvelu”: CareerCompassin verkkopalvelu ja sen osat.
+“Käyttäjä”: henkilö tai oppilaitos, joka käyttää Palvelua.
+“Opettaja”: oppilaitoksen valtuuttama henkilö, joka hallinnoi testejä.
+“Oppilaitos”: koulu tai muu organisaatio, joka hankkii käyttöoikeuden Palveluun.
 “Sopimus”: nämä Ehdot sekä Tietosuojaseloste ja Immateriaalioikeus- ja Kilpailijasuoja.
 
 ## 3 Käyttöoikeus ja ikäraja
@@ -70,8 +69,15 @@ Ilmoitamme tietoturvaloukkauksista ilman aiheetonta viivytystä ja viimeistään
 Voimme päivittää Ehtoja; uudet Ehdot tulevat voimaan ilmoitetusta päivästä. Palvelun käyttö muutosten jälkeen merkitsee hyväksymistä.
 
 ## 20 Yhteystiedot
-CareerCompassi Oy  
-Säterintie 6 C, [postinumero ja kaupunki], Finland  
-Y‑tunnus: [täydennä]  
-Sähköposti: support@careercompassi.com
+CareerCompassi Oy
+Säterintie 6 C, [postinumero ja kaupunki], Finland
+Y‑tunnus: [täydennä]
+Sähköposti: support@careercompassi.com`}
+          </pre>
+        </div>
+      </div>
+    </main>
+  )
+}
+
 

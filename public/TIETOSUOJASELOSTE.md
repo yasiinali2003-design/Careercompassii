@@ -56,3 +56,4 @@ Sovellettava laki: Suomen laki. Virallinen kieli on suomi; ristiriitatilanteessa
 CareerCompassi Oy, Säterintie 6 C, [postinumero ja kaupunki], Finland  
 Sähköposti: support@careercompassi.com
 
+

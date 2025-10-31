@@ -14,3 +14,4 @@ SELECT id, name, access_code, is_active, created_at
 FROM teachers 
 WHERE access_code = 'TEST1234';
 
+

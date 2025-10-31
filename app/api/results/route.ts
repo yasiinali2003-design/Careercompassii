@@ -11,6 +11,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { checkRateLimit } from '@/lib/rateLimit';
+import fs from 'fs';
+import path from 'path';
 import { z } from 'zod';
 
 // Validation schema
@@ -78,10 +80,29 @@ export async function POST(request: NextRequest) {
     const { pin, classToken, resultPayload } = validation.data;
 
     if (!supabaseAdmin) {
-      return NextResponse.json(
-        { success: false, error: 'Database not configured' },
-        { status: 500 }
-      );
+      // Local mock: validate against mock-db.json (classes + pins) and store result
+      const mockPath = path.join(process.cwd(), 'mock-db.json');
+      let store: any = { classes: [], pins: {}, results: [] };
+      try {
+        if (fs.existsSync(mockPath)) {
+          store = JSON.parse(fs.readFileSync(mockPath, 'utf8')) || store;
+        }
+      } catch {}
+
+      // Map classToken -> classId
+      const cls = (store.classes || []).find((c: any) => c.class_token === classToken);
+      const classId = cls?.id;
+      const classPins: string[] = (classId && store.pins?.[classId]) || [];
+      if (!classId || !classPins.includes(pin)) {
+        return NextResponse.json(
+          { success: false, error: 'PIN does not exist for this class' },
+          { status: 400 }
+        );
+      }
+      store.results = store.results || [];
+      store.results.push({ class_id: classId, pin, result_payload: resultPayload, created_at: new Date().toISOString() });
+      try { fs.writeFileSync(mockPath, JSON.stringify(store, null, 2)); } catch {}
+      return NextResponse.json({ success: true, message: 'Result submitted successfully' });
     }
 
     // Validate PIN exists and belongs to class

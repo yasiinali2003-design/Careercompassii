@@ -414,9 +414,9 @@ export default function HomePage() {
             <div className="text-sm">
               <p className="font-semibold mb-2">Laki ja tietosuoja</p>
               <ul className="space-y-1">
-                <li><a href="/KAYTTOEHDOT.pdf" target="_blank" className="text-primary hover:underline">Käyttöehdot (PDF)</a></li>
-                <li><a href="/TIETOSUOJASELOSTE.pdf" target="_blank" className="text-primary hover:underline">Tietosuojaseloste (PDF)</a></li>
-                <li><a href="/IMMATERIAALIOIKEUS_SUOJA.pdf" target="_blank" className="text-primary hover:underline">Immateriaalioikeus- ja kilpailijansuoja (PDF)</a></li>
+                <li><a href="/legal/kayttoehdot" className="text-primary hover:underline">Käyttöehdot</a></li>
+                <li><a href="/legal/tietosuojaseloste" className="text-primary hover:underline">Tietosuojaseloste</a></li>
+                <li><a href="/legal/immateriaalioikeus-ja-kilpailijasuoja" className="text-primary hover:underline">Immateriaalioikeus- ja kilpailijansuoja</a></li>
               </ul>
             </div>
             <div className="text-sm">

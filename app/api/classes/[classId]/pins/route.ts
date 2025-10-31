@@ -9,6 +9,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { generateStudentPin } from '@/lib/teacherCrypto';
+import fs from 'fs';
+import path from 'path';
 
 interface RouteParams {
   params: {
@@ -41,10 +43,25 @@ export async function POST(
     }
 
     if (!supabaseAdmin) {
-      return NextResponse.json(
-        { success: false, error: 'Database not configured' },
-        { status: 500 }
-      );
+      // Local mock: append pins to mock-db.json under this classId
+      const mockPath = path.join(process.cwd(), 'mock-db.json');
+      let store: any = { classes: [], pins: {}, results: [] };
+      try {
+        if (fs.existsSync(mockPath)) {
+          store = JSON.parse(fs.readFileSync(mockPath, 'utf8')) || store;
+        }
+      } catch {}
+      const existing: string[] = store.pins?.[classId] || [];
+      const generatedPins: string[] = [];
+      const seen = new Set(existing);
+      while (generatedPins.length < count) {
+        const p = generateStudentPin();
+        if (!seen.has(p)) { seen.add(p); generatedPins.push(p); }
+      }
+      store.pins = store.pins || {};
+      store.pins[classId] = [...existing, ...generatedPins];
+      try { fs.writeFileSync(mockPath, JSON.stringify(store, null, 2)); } catch {}
+      return NextResponse.json({ success: true, pins: generatedPins, count: generatedPins.length });
     }
 
     // Verify class exists
@@ -135,10 +152,15 @@ export async function GET(
     const { classId } = params;
 
     if (!supabaseAdmin) {
-      return NextResponse.json(
-        { success: false, error: 'Database not configured' },
-        { status: 500 }
-      );
+      const mockPath = path.join(process.cwd(), 'mock-db.json');
+      try {
+        if (fs.existsSync(mockPath)) {
+          const store = JSON.parse(fs.readFileSync(mockPath, 'utf8'));
+          const pins = (store.pins?.[classId] || []).map((pin: string) => ({ id: pin, pin, created_at: '' }));
+          return NextResponse.json({ success: true, pins });
+        }
+      } catch {}
+      return NextResponse.json({ success: true, pins: [] });
     }
 
     const { data, error } = await supabaseAdmin

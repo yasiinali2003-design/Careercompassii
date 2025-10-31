@@ -51,3 +51,4 @@ CareerCompassi voi päivittää tätä dokumenttia teknisten tai oikeudellisten 
 CareerCompassi Oy, Säterintie 6 C, [postinumero ja kaupunki], Finland  
 Sähköposti: support@careercompassi.com
 
+

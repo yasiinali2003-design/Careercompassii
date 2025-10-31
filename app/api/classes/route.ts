@@ -9,6 +9,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { generateClassToken } from '@/lib/teacherCrypto';
+import fs from 'fs';
+import path from 'path';
 
 export async function POST(request: NextRequest) {
   try {
@@ -28,13 +30,19 @@ export async function POST(request: NextRequest) {
 
     // Check if Supabase is configured
     if (!supabaseAdmin) {
-      console.warn('[API/Classes] Supabase not configured - returning mock response for localhost');
-      return NextResponse.json({
-        success: true,
-        classId: 'mock-class-' + Date.now(),
-        classToken: 'MOCK' + Date.now(),
-        createdAt: new Date().toISOString()
-      });
+      console.warn('[API/Classes] Supabase not configured - using local mock store');
+      const mockPath = path.join(process.cwd(), 'mock-db.json');
+      let store: any = { classes: [], pins: {}, results: [] };
+      try {
+        if (fs.existsSync(mockPath)) {
+          store = JSON.parse(fs.readFileSync(mockPath, 'utf8')) || store;
+        }
+      } catch {}
+      const classId = 'mock-class-' + Date.now();
+      const createdAt = new Date().toISOString();
+      store.classes.push({ id: classId, class_token: classToken, created_at: createdAt, teacher_id: teacherId });
+      try { fs.writeFileSync(mockPath, JSON.stringify(store, null, 2)); } catch {}
+      return NextResponse.json({ success: true, classId, classToken, createdAt });
     }
 
     // Try to insert class into database
@@ -126,11 +134,16 @@ export async function GET(request: NextRequest) {
     }
 
     if (!supabaseAdmin) {
-      console.warn('[API/Classes] Supabase not configured - returning mock response');
-      return NextResponse.json({
-        success: true,
-        classes: []
-      });
+      console.warn('[API/Classes] Supabase not configured - reading local mock store');
+      const mockPath = path.join(process.cwd(), 'mock-db.json');
+      try {
+        if (fs.existsSync(mockPath)) {
+          const store = JSON.parse(fs.readFileSync(mockPath, 'utf8'));
+          const classes = (store.classes || []).filter((c: any) => c.teacher_id === teacherId);
+          return NextResponse.json({ success: true, classes });
+        }
+      } catch {}
+      return NextResponse.json({ success: true, classes: [] });
     }
 
     // Fetch all classes for this teacher

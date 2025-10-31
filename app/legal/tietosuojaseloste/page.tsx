@@ -1,22 +1,21 @@
-# TIETOSUOJASELOSTE — CareerCompassi Oy
-
-Versio 3.2  
-Viimeksi päivitetty: [päivämäärä]  
-Y‑tunnus: [täydennä]  
-Rekisteröity tavaramerkki: [täydennä]
-
----
-
-## 1. Rekisterinpitäjä ja yhteystiedot
-CareerCompassi Oy, Säterintie 6 C, [postinumero ja kaupunki], Finland  
-Sähköposti: support@careercompassi.com  
+export default function TietosuojaPage() {
+  return (
+    <main className="min-h-screen bg-white text-slate-900">
+      <div className="container mx-auto px-4 py-12 max-w-3xl">
+        <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-primary">TIETOSUOJASELOSTE — CareerCompassi Oy</h1>
+        <p className="text-sm text-muted-foreground mb-8">Versio 3.2 • Viimeksi päivitetty: [päivämäärä] • Y‑tunnus: [täydennä] • Rekisteröity tavaramerkki: [täydennä]</p>
+        <div className="space-y-6 leading-relaxed text-base">
+          <pre className="whitespace-pre-wrap font-sans text-[15px]">
+{`## 1. Rekisterinpitäjä ja yhteystiedot
+CareerCompassi Oy, Säterintie 6 C, [postinumero ja kaupunki], Finland
+Sähköposti: support@careercompassi.com
 CareerCompassi toimii henkilötietojen käsittelijänä oppilaitosten puolesta sekä rekisterinpitäjänä omille käyttäjätiedoilleen. Oppilaitos on oppilaiden tietojen rekisterinpitäjä.
 
 ## 2. Käsittelyn tarkoitus ja oikeusperuste
 Käsittely koskee urapolku‑testipalvelua. Oikeusperusteet (GDPR 6 art.): suostumus (a), sopimus (b), lakisääteinen velvoite (c), oikeutettu etu (f) (esim. tietoturva ja väärinkäytösten estäminen).
 
 ## 3. Käsiteltävät henkilötiedot
-3.1 Kerättävät tiedot: testivastaukset, pisteytykset ja tulokset pseudonymisoituna; suoritusajankohta; laite-/selaintiedot; valittu kohortti (YLA/TASO2/NUORI); opettajan nimi, sähköposti, koulun nimi (koulupaketti).  
+3.1 Kerättävät tiedot: testivastaukset, pisteytykset ja tulokset pseudonymisoituna; suoritusajankohta; laite-/selaintiedot; valittu kohortti (YLA/TASO2/NUORI); opettajan nimi, sähköposti, koulun nimi (koulupaketti).
 3.2 Ei kerätä: oppilaiden nimiä, sähköposteja, syntymäaikoja tai muita suoraan tunnistavia tietoja.
 
 ## 4. Käyttötarkoitukset
@@ -53,6 +52,13 @@ Voimme päivittää tätä selostetta (esim. lakimuutokset, tekniset muutokset).
 Sovellettava laki: Suomen laki. Virallinen kieli on suomi; ristiriitatilanteessa suomenkielinen versio on ensisijainen.
 
 ## 15. Yhteystiedot
-CareerCompassi Oy, Säterintie 6 C, [postinumero ja kaupunki], Finland  
-Sähköposti: support@careercompassi.com
+CareerCompassi Oy, Säterintie 6 C, [postinumero ja kaupunki], Finland
+Sähköposti: support@careercompassi.com`}
+          </pre>
+        </div>
+      </div>
+    </main>
+  )
+}
+
 

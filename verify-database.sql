@@ -65,3 +65,4 @@ WHERE routine_schema = 'public'
   AND routine_name IN ('generate_teacher_code', 'get_class_results_by_token', 'get_class_by_token', 'validate_pin', 'get_class_results_owner')
 ORDER BY routine_name;
 
+
