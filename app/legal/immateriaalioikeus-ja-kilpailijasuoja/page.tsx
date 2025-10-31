@@ -1,10 +1,13 @@
+import Link from 'next/link';
+
 export default function IpSuojaPage() {
   return (
-    <main className="min-h-screen bg-white text-slate-900">
-      <div className="container mx-auto px-4 py-12 max-w-3xl">
-        <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-primary">IMMATERIAALIOIKEUS- JA KILPAILIJASUOJA — CareerCompassi Oy</h1>
-        <p className="text-sm text-muted-foreground mb-8">Versio 3.2 • Viimeksi päivitetty: [päivämäärä] • Y‑tunnus: [täydennä] • Rekisteröity tavaramerkki: [täydennä]</p>
-        <div className="space-y-6 leading-relaxed text-base">
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col">
+      <main className="flex-1">
+        <div className="container mx-auto px-4 py-12 max-w-3xl">
+          <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-primary">IMMATERIAALIOIKEUS- JA KILPAILIJASUOJA — CareerCompassi Oy</h1>
+          <p className="text-sm text-muted-foreground mb-8">Versio 3.2 • Viimeksi päivitetty: [päivämäärä] • Y‑tunnus: [täydennä] • Rekisteröity tavaramerkki: [täydennä]</p>
+          <div className="space-y-6 leading-relaxed text-base">
           <pre className="whitespace-pre-wrap font-sans text-[15px]">
 {`## 1 Tarkoitus
 Tämä dokumentti täydentää Käyttöehtoja ja Tietosuojaselostetta. Se kuvaa, miten CareerCompassi Oy suojaa immateriaalioikeudellisen omaisuutensa, tekniset ratkaisunsa ja liiketoimintamallinsa sekä estää luvattoman kopioinnin, hyödyntämisen tai kilpailevan jäljittelyn. Perustuu mm. tekijänoikeuslakiin, tavaramerkkilakiin ja liikesalaisuuslakiin.
@@ -51,9 +54,32 @@ CareerCompassi Oy, Säterintie 6 C, [postinumero ja kaupunki], Finland
 Sähköposti: support@careercompassi.com`}
           </pre>
         </div>
-      </div>
-    </main>
+        </div>
+      </main>
+      <footer className="border-t border-gray-200 py-6 bg-gray-50 mt-auto">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+            <Link 
+              href="/" 
+              className="text-primary hover:underline font-medium"
+            >
+              ← Palaa etusivulle
+            </Link>
+            <div className="flex items-center gap-4 text-gray-600">
+              <Link href="/legal/kayttoehdot" className="hover:text-gray-900 hover:underline">
+                Käyttöehdot
+              </Link>
+              <Link href="/legal/tietosuojaseloste" className="hover:text-gray-900 hover:underline">
+                Tietosuojaseloste
+              </Link>
+            </div>
+            <p className="text-gray-500">© 2025 CareerCompassi</p>
+          </div>
+        </div>
+      </footer>
+    </div>
   )
 }
+
 
 

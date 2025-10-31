@@ -73,7 +73,7 @@ export default function HomePage() {
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 text-balance leading-tight text-primary">
-            Löydä tulevaisuutesi vibe.
+            Tulevaisuutesi alkaa oivalluksesta.
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 text-pretty max-w-2xl mx-auto leading-relaxed">
             Luotettava testi, joka auttaa sinua ymmärtämään vahvuuksiasi ja uramahdollisuuksia.
@@ -398,9 +398,6 @@ export default function HomePage() {
                 <Link href="/kouluille" className="text-muted-foreground hover:text-foreground transition-colors">
                   Kouluille
                 </Link>
-                <Link href="/test" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Testi
-                </Link>
                 <Link href="/teacher/login" className="text-muted-foreground hover:text-foreground transition-colors">
                   Opettajille
                 </Link>
@@ -430,4 +427,5 @@ export default function HomePage() {
     </div>
   )
 }
+
 

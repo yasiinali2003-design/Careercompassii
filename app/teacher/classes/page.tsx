@@ -8,6 +8,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import TeacherNav from '@/components/TeacherNav';
+import TeacherFooter from '@/components/TeacherFooter';
 
 interface Class {
   id: string;
@@ -42,22 +43,23 @@ export default function TeacherClassesPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50">
         <TeacherNav />
-        <div className="max-w-6xl mx-auto p-8">
+        <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
           <h1 className="text-3xl font-bold mb-8">Omat luokat</h1>
           <div className="text-center py-12">
             <div className="animate-spin h-8 w-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto"></div>
           </div>
         </div>
+        <TeacherFooter />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50">
       <TeacherNav />
-      <div className="max-w-6xl mx-auto p-8">
+      <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Omat luokat</h1>
           <p className="text-gray-600">Hallinnoi oppilasluokkiasi ja tarkastele tuloksia</p>
@@ -87,15 +89,10 @@ export default function TeacherClassesPage() {
                 </p>
               </Link>
             ))}
-            <Link
-              href="/teacher/classes/new"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition text-center"
-            >
-              + Luo uusi luokka
-            </Link>
           </div>
         )}
       </div>
+      <TeacherFooter />
     </div>
   );
 }

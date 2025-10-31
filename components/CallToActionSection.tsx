@@ -49,13 +49,13 @@ export default function CallToActionSection() {
                 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 text-white"
                 style={{ textShadow: "0 2px 6px rgba(0,0,0,0.2)" }}
               >
-                Valmiina löytämään sun vibe?
+                Valmiina tuntemaan itsesi?
               </h2>
               <p 
                 className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-white leading-relaxed"
                 style={{ textShadow: "0 2px 6px rgba(0,0,0,0.2)" }}
               >
-                Sun tuleva minä odottaa. Tee testi nyt ja löydä urat, jotka matchaa sen kuka sä oikeesti oot.
+                Tunne itsesi ja löydä polkusi. Tee testi nyt ja saa henkilökohtaisia ohjauksia, jotka auttavat miettimään oman suuntasi.
               </p>
               <Button
                 size="lg"

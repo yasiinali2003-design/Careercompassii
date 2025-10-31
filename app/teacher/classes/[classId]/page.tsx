@@ -8,6 +8,7 @@
 import { useEffect, useState } from 'react';
 import TeacherClassManager from '@/components/TeacherClassManager';
 import TeacherNav from '@/components/TeacherNav';
+import TeacherFooter from '@/components/TeacherFooter';
 
 export default function ClassDetailPage({
   params,
@@ -40,18 +41,20 @@ export default function ClassDetailPage({
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-8">
-        <div className="max-w-6xl mx-auto text-center py-12">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50">
+        <TeacherNav />
+        <div className="flex-1 max-w-6xl mx-auto p-8 w-full text-center py-12">
           <div className="animate-spin h-8 w-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto"></div>
         </div>
+        <TeacherFooter />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50">
       <TeacherNav />
-      <div className="max-w-6xl mx-auto p-8">
+      <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h1 className="text-3xl font-bold mb-6">Luokkahallinta</h1>
           <p className="text-gray-600 mb-8">Luokka: {classId.substring(0, 8)}</p>
@@ -59,6 +62,7 @@ export default function ClassDetailPage({
           <TeacherClassManager classId={classId} classToken={classToken} />
         </div>
       </div>
+      <TeacherFooter />
     </div>
   );
 }
