@@ -75,23 +75,17 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Public site protection: Admin-only access (like /admin routes)
-  // Only enable on production domain, not on localhost
+  // Hide /kouluille page from public in production
+  // Allow admin access in localhost
   const isLocalhost = request.nextUrl.hostname === 'localhost' || request.nextUrl.hostname === '127.0.0.1';
   const isProduction = request.nextUrl.hostname.includes('careercompassi.com') || request.nextUrl.hostname.includes('vercel.app');
-  const protectPublicSite = !isLocalhost && isProduction;
 
-  if (protectPublicSite) {
-    // Exclude routes that have their own auth or are needed for functionality
-    const isExcluded = 
-      pathname.startsWith('/teacher') ||
-      pathname.startsWith('/admin') ||
-      pathname.startsWith('/api') ||
-      pathname.startsWith('/_next') ||
-      pathname.startsWith('/favicon');
-
-    if (!isExcluded) {
-      // Check Basic Auth (same as admin routes)
+  if (pathname === '/kouluille') {
+    if (isProduction) {
+      // In production: hide the page completely (404)
+      return new NextResponse('Not Found', { status: 404 });
+    } else if (isLocalhost) {
+      // In localhost: require admin Basic Auth
       const adminUser = process.env.ADMIN_USERNAME || 'admin';
       const adminPass = process.env.ADMIN_PASSWORD || '';
       
@@ -103,11 +97,11 @@ export function middleware(request: NextRequest) {
           // Require Basic Auth - browser will show login prompt
           return new NextResponse('Authentication required', {
             status: 401,
-            headers: { 'WWW-Authenticate': 'Basic realm="CareerCompassi", charset="UTF-8"' }
+            headers: { 'WWW-Authenticate': 'Basic realm="CareerCompassi Admin", charset="UTF-8"' }
           });
         }
       }
-      // If no admin password set, allow access (for development/testing)
+      // If no admin password set in localhost, allow access
     }
   }
 
