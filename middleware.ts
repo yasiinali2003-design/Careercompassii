@@ -10,42 +10,6 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Site-wide password protection
-  // Only enable on production domain, not on localhost
-  const isLocalhost = request.nextUrl.hostname === 'localhost' || request.nextUrl.hostname === '127.0.0.1';
-  const isProduction = request.nextUrl.hostname.includes('careercompassi.com') || request.nextUrl.hostname.includes('vercel.app');
-  const sitePasswordEnabled = !isLocalhost && isProduction && process.env.SITE_PASSWORD !== undefined && process.env.SITE_PASSWORD !== '';
-  
-  if (sitePasswordEnabled) {
-    // Always allow access to site auth page and its API
-    if (pathname === '/site-auth' || pathname === '/api/site-auth') {
-      return NextResponse.next();
-    }
-
-    // Exclude teacher routes (they have their own auth)
-    // Exclude admin routes (they have their own auth)
-    // Exclude other API routes (needed for functionality - but not /api/site-auth which is already handled above)
-    // Exclude static assets
-    const isExcluded = 
-      pathname.startsWith('/teacher') ||
-      pathname.startsWith('/admin') ||
-      (pathname.startsWith('/api') && pathname !== '/api/site-auth') ||
-      pathname.startsWith('/_next') ||
-      pathname.startsWith('/favicon');
-
-    if (!isExcluded) {
-      // Check for site authentication cookie
-      const siteAuth = request.cookies.get('site_auth');
-      
-      if (!siteAuth || siteAuth.value !== 'authenticated') {
-        // Redirect to site auth page
-        const authUrl = new URL('/site-auth', request.url);
-        authUrl.searchParams.set('returnTo', pathname);
-        return NextResponse.redirect(authUrl);
-      }
-    }
-  }
-
   // Admin-only protection: hide existence by returning 404 for non-admins
   if (pathname.startsWith('/admin')) {
     // If a password is configured, enforce Basic Auth first
@@ -109,6 +73,42 @@ export function middleware(request: NextRequest) {
 
     // Authenticated - allow access
     return NextResponse.next();
+  }
+
+  // Public site protection: Admin-only access (like /admin routes)
+  // Only enable on production domain, not on localhost
+  const isLocalhost = request.nextUrl.hostname === 'localhost' || request.nextUrl.hostname === '127.0.0.1';
+  const isProduction = request.nextUrl.hostname.includes('careercompassi.com') || request.nextUrl.hostname.includes('vercel.app');
+  const protectPublicSite = !isLocalhost && isProduction;
+
+  if (protectPublicSite) {
+    // Exclude routes that have their own auth or are needed for functionality
+    const isExcluded = 
+      pathname.startsWith('/teacher') ||
+      pathname.startsWith('/admin') ||
+      pathname.startsWith('/api') ||
+      pathname.startsWith('/_next') ||
+      pathname.startsWith('/favicon');
+
+    if (!isExcluded) {
+      // Check Basic Auth (same as admin routes)
+      const adminUser = process.env.ADMIN_USERNAME || 'admin';
+      const adminPass = process.env.ADMIN_PASSWORD || '';
+      
+      if (adminPass) {
+        const auth = request.headers.get('authorization') || '';
+        const expected = 'Basic ' + Buffer.from(`${adminUser}:${adminPass}`).toString('base64');
+        
+        if (auth !== expected) {
+          // Require Basic Auth - browser will show login prompt
+          return new NextResponse('Authentication required', {
+            status: 401,
+            headers: { 'WWW-Authenticate': 'Basic realm="CareerCompassi", charset="UTF-8"' }
+          });
+        }
+      }
+      // If no admin password set, allow access (for development/testing)
+    }
   }
 
   // Allow all other routes
