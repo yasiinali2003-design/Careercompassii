@@ -41,3 +41,4 @@ SELECT
 SELECT generate_teacher_code() as test_code;
 
 
+

@@ -52,3 +52,4 @@ echo "   Check terminal where 'npm run dev' is running"
 echo "   Look for: [Teacher Auth] or [API/Teachers] messages"
 
 
+

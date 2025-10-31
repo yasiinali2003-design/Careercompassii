@@ -10,6 +10,40 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Site-wide password protection
+  // Check if site password protection is enabled (via env var)
+  const sitePasswordEnabled = process.env.SITE_PASSWORD !== undefined && process.env.SITE_PASSWORD !== '';
+  
+  if (sitePasswordEnabled) {
+    // Allow access to site auth page and API
+    if (pathname === '/site-auth' || pathname === '/api/site-auth') {
+      return NextResponse.next();
+    }
+
+    // Exclude teacher routes (they have their own auth)
+    // Exclude admin routes (they have their own auth)
+    // Exclude API routes (needed for functionality)
+    // Exclude static assets
+    const isExcluded = 
+      pathname.startsWith('/teacher') ||
+      pathname.startsWith('/admin') ||
+      pathname.startsWith('/api') ||
+      pathname.startsWith('/_next') ||
+      pathname.startsWith('/favicon');
+
+    if (!isExcluded) {
+      // Check for site authentication cookie
+      const siteAuth = request.cookies.get('site_auth');
+      
+      if (!siteAuth || siteAuth.value !== 'authenticated') {
+        // Redirect to site auth page
+        const authUrl = new URL('/site-auth', request.url);
+        authUrl.searchParams.set('returnTo', pathname);
+        return NextResponse.redirect(authUrl);
+      }
+    }
+  }
+
   // Admin-only protection: hide existence by returning 404 for non-admins
   if (pathname.startsWith('/admin')) {
     // If a password is configured, enforce Basic Auth first
