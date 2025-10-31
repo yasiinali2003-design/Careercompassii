@@ -84,25 +84,9 @@ export function middleware(request: NextRequest) {
     if (isProduction) {
       // In production: hide the page completely (404)
       return new NextResponse('Not Found', { status: 404 });
-    } else if (isLocalhost) {
-      // In localhost: require admin Basic Auth
-      const adminUser = process.env.ADMIN_USERNAME || 'admin';
-      const adminPass = process.env.ADMIN_PASSWORD || '';
-      
-      if (adminPass) {
-        const auth = request.headers.get('authorization') || '';
-        const expected = 'Basic ' + Buffer.from(`${adminUser}:${adminPass}`).toString('base64');
-        
-        if (auth !== expected) {
-          // Require Basic Auth - browser will show login prompt
-          return new NextResponse('Authentication required', {
-            status: 401,
-            headers: { 'WWW-Authenticate': 'Basic realm="CareerCompassi Admin", charset="UTF-8"' }
-          });
-        }
-      }
-      // If no admin password set in localhost, allow access
     }
+    // In localhost: allow access without authentication
+    // (No Basic Auth requirement for development)
   }
 
   // Site-wide password protection (via /site-auth page)
