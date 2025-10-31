@@ -11,23 +11,25 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Site-wide password protection
-  // Check if site password protection is enabled (via env var)
-  const sitePasswordEnabled = process.env.SITE_PASSWORD !== undefined && process.env.SITE_PASSWORD !== '';
+  // Only enable on production domain, not on localhost
+  const isLocalhost = request.nextUrl.hostname === 'localhost' || request.nextUrl.hostname === '127.0.0.1';
+  const isProduction = request.nextUrl.hostname.includes('careercompassi.com') || request.nextUrl.hostname.includes('vercel.app');
+  const sitePasswordEnabled = !isLocalhost && isProduction && process.env.SITE_PASSWORD !== undefined && process.env.SITE_PASSWORD !== '';
   
   if (sitePasswordEnabled) {
-    // Allow access to site auth page and API
+    // Always allow access to site auth page and its API
     if (pathname === '/site-auth' || pathname === '/api/site-auth') {
       return NextResponse.next();
     }
 
     // Exclude teacher routes (they have their own auth)
     // Exclude admin routes (they have their own auth)
-    // Exclude API routes (needed for functionality)
+    // Exclude other API routes (needed for functionality - but not /api/site-auth which is already handled above)
     // Exclude static assets
     const isExcluded = 
       pathname.startsWith('/teacher') ||
       pathname.startsWith('/admin') ||
-      pathname.startsWith('/api') ||
+      (pathname.startsWith('/api') && pathname !== '/api/site-auth') ||
       pathname.startsWith('/_next') ||
       pathname.startsWith('/favicon');
 
