@@ -56,6 +56,12 @@ export default function HomePage() {
             >
               Meistä
             </Link>
+            <Link
+              href="/teacher/login"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
+            >
+              Opettajille
+            </Link>
             {/* Kouluille link hidden from public - only visible in localhost via middleware */}
             <Button
               asChild
