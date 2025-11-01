@@ -101,7 +101,7 @@ careercompassi/
 ### Target Audience
 1. **Yläasteen oppilaat** (High school students)
 2. **Toisen asteen opiskelijat** (Secondary students)  
-3. **Nuoret aikuiset** (Young adults 20-25)
+3. **Nuoret aikuiset** (Young adults)
 
 ### User Journey
 1. **Landing**: Professional homepage with clear value proposition

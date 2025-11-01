@@ -327,7 +327,7 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
               ? "Yläaste (13–15 v) – Tutustu itseesi"
               : group === "TASO2"
               ? "Toisen asteen opiskelijat (16–19 v) – Löydä suuntasi"
-              : "Nuoret aikuiset (20–25 v) – Rakenna oma polkusi"
+              : "Nuoret aikuiset – Rakenna oma polkusi"
           }
           questions={qList}
           index={index}
@@ -435,7 +435,7 @@ const GroupSelect = ({ onChoose, onBack }: { onChoose: (g: "YLA" | "TASO2" | "NU
         onClick={() => onChoose("TASO2")}
       />
       <GroupCard
-        title="Nuori aikuinen (20–25 v)"
+        title="Nuori aikuinen"
         desc="Rakenna oma polkusi ja löydä urapolku"
         onClick={() => onChoose("NUORI")}
       />

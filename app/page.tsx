@@ -230,7 +230,7 @@ export default function HomePage() {
                 <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-3 sm:mb-4">
                   <Users className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-3">Nuoret aikuiset (20–25v)</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">Nuoret aikuiset</h3>
                 <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">
                   Tutustu uusiin mahdollisuuksiin ja löydä oma polkusi ilman stressiä.
                 </p>
