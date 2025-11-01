@@ -397,9 +397,6 @@ export default function HomePage() {
             <div className="flex flex-col gap-2">
               <Logo className="h-8 w-auto" />
               <div className="flex gap-4 text-sm">
-                <Link href="/ammatit" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Urakirjasto
-                </Link>
                 {isLocalhost && (
                   <Link href="/kouluille" className="text-muted-foreground hover:text-foreground transition-colors">
                     Kouluille
