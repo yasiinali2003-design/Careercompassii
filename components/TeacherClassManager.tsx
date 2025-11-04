@@ -12,6 +12,9 @@ import {
   exportMappingAsFile,
   importMappingFromFile
 } from '@/lib/teacherCrypto';
+import { generateStudentPDF, generateClassSummaryPDF, downloadPDF } from '@/lib/pdfGenerator';
+import { checkClassCompletion, checkAtRiskStudent, triggerNotification } from '@/lib/notificationTriggers';
+import { generateConversationStarters, generateParentMeetingTalkingPoints } from '@/lib/conversationStarters';
 
 interface Props {
   classId: string;
@@ -202,15 +205,25 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
   const [selectedStudents, setSelectedStudents] = useState<Set<string>>(new Set());
   const [viewMode, setViewMode] = useState<'table' | 'detailed'>('table');
   const [packageInfo, setPackageInfo] = useState<PackageInfo | null>(null);
+  const [generatingPDFs, setGeneratingPDFs] = useState(false);
+  const [sendingNotification, setSendingNotification] = useState(false);
+  const [teacherEmail, setTeacherEmail] = useState<string>('');
 
   // Calculate analytics
   const analytics = calculateAnalytics(results);
+
+  // Check for notifications
+  const completionCheck = checkClassCompletion(pins.length, results.length);
+  const atRiskStudents = results.filter(r => checkAtRiskStudent(r).shouldNotify);
 
   // Load existing PINs
   useEffect(() => {
     fetchPins();
     loadNameMapping();
     fetchResults();
+    // Load teacher email from localStorage
+    const savedEmail = localStorage.getItem(`teacher_email_${classId}`);
+    if (savedEmail) setTeacherEmail(savedEmail);
     // Fetch package info
     (async () => {
       try {
@@ -622,6 +635,131 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                 </div>
               </div>
 
+              {/* Notification Alerts */}
+              {(completionCheck.shouldNotify || atRiskStudents.length > 0) && (
+                <div className="space-y-3">
+                  {completionCheck.shouldNotify && (
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h3 className="font-semibold text-green-800 mb-1">
+                            {completionCheck.data?.completionRate === 100 
+                              ? '✅ Kaikki oppilaat ovat suorittaneet testin!' 
+                              : `📊 ${Math.round(completionCheck.data?.completionRate || 0)}% oppilaista on suorittanut testin`}
+                          </h3>
+                          <p className="text-sm text-green-700">
+                            {completionCheck.data?.completedStudents} / {completionCheck.data?.totalStudents} oppilasta
+                          </p>
+                        </div>
+                        {teacherEmail && (
+                          <button
+                            onClick={async () => {
+                              setSendingNotification(true);
+                              try {
+                                const success = await triggerNotification('class_completion', {
+                                  teacherEmail,
+                                  className: classId.substring(0, 8),
+                                  totalStudents: completionCheck.data?.totalStudents || 0,
+                                  completedStudents: completionCheck.data?.completedStudents || 0,
+                                  completionRate: completionCheck.data?.completionRate || 0,
+                                  classId,
+                                });
+                                if (success) {
+                                  alert('Ilmoitus lähetetty onnistuneesti!');
+                                } else {
+                                  alert('Ilmoituksen lähetys epäonnistui. Tarkista sähköpostiasetukset.');
+                                }
+                              } catch (error) {
+                                alert('Virhe ilmoituksen lähetyksessä.');
+                              } finally {
+                                setSendingNotification(false);
+                              }
+                            }}
+                            disabled={sendingNotification}
+                            className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50 text-sm"
+                          >
+                            {sendingNotification ? 'Lähetetään...' : '📧 Lähetä sähköposti'}
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                  
+                  {atRiskStudents.length > 0 && (
+                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                      <h3 className="font-semibold text-yellow-800 mb-2">
+                        ⚠️ {atRiskStudents.length} oppilasta tarvitsee tukea
+                      </h3>
+                      <p className="text-sm text-yellow-700 mb-3">
+                        Seuraavat oppilaat tarvitsevat erityistä huomiota ja ohjausta:
+                      </p>
+                      <div className="space-y-2 mb-3">
+                        {atRiskStudents.slice(0, 5).map((result) => {
+                          const check = checkAtRiskStudent(result);
+                          const name = nameMapping[result.pin] || result.pin;
+                          return (
+                            <div key={result.pin} className="bg-white p-2 rounded text-sm">
+                              <strong>{name}</strong> ({result.pin}) - {check.data?.reasons[0] || 'Tarvitsee tukea'}
+                            </div>
+                          );
+                        })}
+                      </div>
+                      {teacherEmail && (
+                        <button
+                          onClick={async () => {
+                            setSendingNotification(true);
+                            try {
+                              // Send notification for first at-risk student
+                              const firstStudent = atRiskStudents[0];
+                              const check = checkAtRiskStudent(firstStudent);
+                              const success = await triggerNotification('at_risk_student', {
+                                teacherEmail,
+                                className: classId.substring(0, 8),
+                                studentName: nameMapping[firstStudent.pin] || firstStudent.pin,
+                                studentPIN: firstStudent.pin,
+                                reasons: check.data?.reasons || [],
+                                classId,
+                              });
+                              if (success) {
+                                alert('Ilmoitus lähetetty onnistuneesti!');
+                              } else {
+                                alert('Ilmoituksen lähetys epäonnistui.');
+                              }
+                            } catch (error) {
+                              alert('Virhe ilmoituksen lähetyksessä.');
+                            } finally {
+                              setSendingNotification(false);
+                            }
+                          }}
+                          disabled={sendingNotification}
+                          className="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 disabled:opacity-50 text-sm"
+                        >
+                          {sendingNotification ? 'Lähetetään...' : '📧 Lähetä ilmoitus'}
+                        </button>
+                      )}
+                    </div>
+                  )}
+                  
+                  {!teacherEmail && (
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                      <p className="text-sm text-blue-800">
+                        💡 <strong>Vinkki:</strong> Syötä sähköpostiosoitteesi saadaksesi automaattisia ilmoituksia oppilaiden edistymisestä.
+                      </p>
+                      <input
+                        type="email"
+                        placeholder="sähköposti@esimerkki.fi"
+                        value={teacherEmail}
+                        onChange={(e) => {
+                          setTeacherEmail(e.target.value);
+                          localStorage.setItem(`teacher_email_${classId}`, e.target.value);
+                        }}
+                        className="mt-2 px-3 py-2 border border-blue-300 rounded-lg w-full max-w-md"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
+
               {/* Status */}
               <div aria-live="polite" className="text-sm">
                 {resultsLoading && (
@@ -755,30 +893,105 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                 </button>
                 <button
                   type="button"
-                  aria-label="Avaa oppilaskohtaiset PDF-raportit"
-                  disabled={results.length === 0}
-                  onClick={() => {
-                    // Open per-student printable report in new tab for the first selected or each row
-                    filteredResults.forEach((result) => {
-                      const name = nameMapping[result.pin] || '';
-                      const nameParam = name ? `?name=${encodeURIComponent(name)}` : '';
-                      window.open(`/teacher/classes/${classId}/reports/${result.pin}${nameParam}`, '_blank');
-                    });
+                  aria-label="Lataa oppilaskohtaiset PDF-raportit"
+                  disabled={results.length === 0 || generatingPDFs}
+                  onClick={async () => {
+                    if (filteredResults.length === 0) return;
+                    
+                    setGeneratingPDFs(true);
+                    try {
+                      // Download PDFs for selected students or all students
+                      const studentsToProcess = selectedStudents.size > 0 
+                        ? filteredResults.filter(r => selectedStudents.has(r.pin))
+                        : filteredResults;
+                      
+                      if (studentsToProcess.length === 0) {
+                        alert('Valitse oppilaat tai poista valinnat ladataksesi kaikki.');
+                        return;
+                      }
+
+                      // Generate PDFs one by one (with a small delay to avoid browser blocking)
+                      for (let i = 0; i < studentsToProcess.length; i++) {
+                        const result = studentsToProcess[i];
+                        const payload = result.result_payload || {};
+                        const name = nameMapping[result.pin] || result.pin;
+                        const careers = payload.top_careers || payload.topCareers || [];
+                        const dims = payload.dimension_scores || payload.dimensionScores || {};
+                        const cohort = payload.cohort || '';
+                        const edu = payload.educationPath || payload.education_path;
+                        
+                        const reportData = {
+                          name: name,
+                          pin: result.pin,
+                          date: new Date(result.created_at).toLocaleDateString('fi-FI'),
+                          className: classId.substring(0, 8),
+                          cohort: cohort || undefined,
+                          topCareers: careers,
+                          dimensions: {
+                            interests: dims.interests || 0,
+                            values: dims.values || 0,
+                            workstyle: dims.workstyle || 0,
+                            context: dims.context || 0,
+                          },
+                          educationPath: edu ? {
+                            primary: edu.primary || edu.education_path_primary,
+                            score: edu.scores?.[edu.primary] || edu.education_path_scores?.[edu.primary]
+                          } : undefined,
+                          profile: generateStudentProfile(result, name, analytics),
+                        };
+
+                        const blob = await generateStudentPDF(reportData);
+                        const filename = `raportti-${name.replace(/\s+/g, '-')}-${result.pin}.pdf`;
+                        downloadPDF(blob, filename);
+                        
+                        // Small delay between downloads
+                        if (i < studentsToProcess.length - 1) {
+                          await new Promise(resolve => setTimeout(resolve, 300));
+                        }
+                      }
+                      
+                      alert(`Ladattu ${studentsToProcess.length} PDF-raporttia onnistuneesti!`);
+                    } catch (error) {
+                      console.error('Error generating PDFs:', error);
+                      alert('PDF-raporttien luominen epäonnistui. Yritä uudelleen.');
+                    } finally {
+                      setGeneratingPDFs(false);
+                    }
                   }}
-                  className="border px-6 py-2 rounded-lg disabled:opacity-50"
+                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50"
                 >
-                  Avaa tulokset PDF:ksi (oppilaskohtaiset)
+                  {generatingPDFs ? 'Luodaan PDF...' : '📥 Lataa PDF-raportit'}
                 </button>
                 <button
                   type="button"
-                  aria-label="Avaa luokan yhteenveto PDF"
-                  disabled={results.length === 0}
-                  onClick={() => {
-                    window.open(`/teacher/classes/${classId}/reports/summary`, '_blank');
+                  aria-label="Lataa luokan yhteenveto PDF"
+                  disabled={results.length === 0 || generatingPDFs}
+                  onClick={async () => {
+                    setGeneratingPDFs(true);
+                    try {
+                      const reportData = {
+                        className: classId.substring(0, 8),
+                        date: new Date().toLocaleDateString('fi-FI'),
+                        totalTests: results.length,
+                        topCareers: analytics.topCareers,
+                        educationPathDistribution: analytics.educationPathDistribution,
+                        dimensionAverages: analytics.dimensionAverages,
+                        cohortDistribution: analytics.cohortDistribution,
+                      };
+
+                      const blob = await generateClassSummaryPDF(reportData);
+                      const filename = `luokan-yhteenveto-${classId.substring(0, 8)}-${new Date().toISOString().split('T')[0]}.pdf`;
+                      downloadPDF(blob, filename);
+                    } catch (error) {
+                      console.error('Error generating PDF:', error);
+                      alert('PDF:n luominen epäonnistui. Yritä uudelleen.');
+                    } finally {
+                      setGeneratingPDFs(false);
+                    }
                   }}
-                  className="border px-6 py-2 rounded-lg disabled:opacity-50"
+                  className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50"
                 >
-                  Avaa luokan yhteenveto PDF:ksi
+                  {generatingPDFs ? 'Luodaan PDF...' : '📥 Lataa luokan yhteenveto PDF'}
                 </button>
                 {packageInfo?.hasPremium ? (
                   <button
@@ -1002,6 +1215,73 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                             {topCareers.length === 0 && <span className="text-gray-400">Ei tuloksia</span>}
                           </div>
                         </div>
+                        
+                        {/* Conversation Starters */}
+                        {(() => {
+                          const starters = generateConversationStarters({
+                            name,
+                            topCareers,
+                            dimensions: {
+                              interests: dimScores.interests || 0,
+                              values: dimScores.values || 0,
+                              workstyle: dimScores.workstyle || 0,
+                              context: dimScores.context || 0,
+                            },
+                            educationPath: payload.educationPath || payload.education_path,
+                            cohort,
+                            profile,
+                          });
+                          
+                          return (
+                            <div className="mt-4 border-t pt-4">
+                              <div className="flex items-center justify-between mb-3">
+                                <h4 className="font-semibold text-gray-800">💬 Keskustelunavaukset</h4>
+                                <button
+                                  onClick={() => {
+                                    const text = `KESKUSTELUNAVAUKSET - ${name}\n\n` +
+                                      `KYSYMYKSET:\n${starters.questions.map((q, i) => `${i + 1}. ${q}`).join('\n')}\n\n` +
+                                      `KESKUSTELUPISTEET:\n${starters.talkingPoints.map((tp, i) => `${i + 1}. ${tp}`).join('\n')}\n\n` +
+                                      `TOIMINTAKOHDAT:\n${starters.actionItems.map((ai, i) => `${i + 1}. ${ai}`).join('\n')}`;
+                                    navigator.clipboard.writeText(text);
+                                    alert('Kopioitu leikepöydälle!');
+                                  }}
+                                  className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200"
+                                >
+                                  Kopioi teksti
+                                </button>
+                              </div>
+                              
+                              <div className="space-y-3">
+                                <div>
+                                  <p className="text-xs font-medium text-gray-700 mb-1">Kysymykset oppilaan kanssa:</p>
+                                  <ul className="text-xs text-gray-600 space-y-1 ml-4 list-disc">
+                                    {starters.questions.slice(0, 4).map((q, idx) => (
+                                      <li key={idx}>{q}</li>
+                                    ))}
+                                  </ul>
+                                </div>
+                                
+                                <div>
+                                  <p className="text-xs font-medium text-gray-700 mb-1">Keskustelupisteet:</p>
+                                  <ul className="text-xs text-gray-600 space-y-1 ml-4 list-disc">
+                                    {starters.talkingPoints.slice(0, 3).map((tp, idx) => (
+                                      <li key={idx}>{tp}</li>
+                                    ))}
+                                  </ul>
+                                </div>
+                                
+                                <div>
+                                  <p className="text-xs font-medium text-gray-700 mb-1">Toimintakohdat:</p>
+                                  <ul className="text-xs text-gray-600 space-y-1 ml-4 list-disc">
+                                    {starters.actionItems.slice(0, 3).map((ai, idx) => (
+                                      <li key={idx}>{ai}</li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })()}
                       </div>
                     );
                   })}

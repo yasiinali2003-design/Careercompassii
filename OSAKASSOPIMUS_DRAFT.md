@@ -247,3 +247,4 @@ Tarvitset apua osakassopimuksen laadinnassa? Ota yhteyttä:
 
 **Muista**: Tämä on ainoastaan pohja. Konsultoi aina oikeudellista asiantuntijaa ennen sopimuksen allekirjoitusta!
 
+

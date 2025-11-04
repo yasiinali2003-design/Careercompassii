@@ -18,6 +18,133 @@ import { CAREER_VECTORS } from './careerVectors';
 import { careersData as careersFI } from '@/data/careers-fi';
 import { generatePersonalizedAnalysis } from './personalizedAnalysis';
 
+// ========== CATEGORY-SPECIFIC SUBDIMENSION WEIGHTS ==========
+
+/**
+ * Category-specific subdimension weights to improve filtering accuracy within categories
+ * Weights are applied to subdimension scores before cosine similarity calculation
+ */
+const CATEGORY_SUBDIMENSION_WEIGHTS: Record<string, {
+  interests?: Record<string, number>;
+  workstyle?: Record<string, number>;
+  values?: Record<string, number>;
+  context?: Record<string, number>;
+}> = {
+  auttaja: {
+    interests: {
+      health: 1.6,
+      people: 1.5,
+      education: 1.4,
+    },
+    workstyle: {
+      teaching: 1.5,
+      teamwork: 1.3,
+    },
+    values: {
+      social_impact: 1.4,
+      impact: 1.3,
+    },
+  },
+  luova: {
+    interests: {
+      creative: 1.6,
+      arts_culture: 1.5,
+      writing: 1.5,
+      technology: 1.2,
+    },
+    workstyle: {
+      independence: 1.3,
+    },
+    values: {
+      entrepreneurship: 1.2,
+    },
+  },
+  johtaja: {
+    workstyle: {
+      leadership: 1.6,
+      organization: 1.4,
+      planning: 1.4,
+    },
+    values: {
+      advancement: 1.3,
+      financial: 1.2,
+    },
+    interests: {
+      business: 1.2,
+    },
+  },
+  innovoija: {
+    interests: {
+      technology: 1.6,
+      innovation: 1.5,
+      analytical: 1.3,
+      business: 1.2,
+    },
+    workstyle: {
+      problem_solving: 1.4,
+    },
+    values: {
+      entrepreneurship: 1.3,
+    },
+  },
+  rakentaja: {
+    interests: {
+      hands_on: 1.6,
+      technology: 1.2,
+    },
+    workstyle: {
+      precision: 1.5,
+      performance: 1.4,
+    },
+    values: {
+      stability: 1.2,
+    },
+  },
+  'ympariston-puolustaja': {
+    interests: {
+      environment: 1.6,
+      nature: 1.5,
+    },
+    context: {
+      outdoor: 1.4,
+    },
+    values: {
+      social_impact: 1.3,
+    },
+    workstyle: {
+      planning: 1.2,
+    },
+  },
+  visionaari: {
+    workstyle: {
+      planning: 1.5,
+      leadership: 1.2,
+    },
+    interests: {
+      innovation: 1.5,
+      analytical: 1.4,
+    },
+    values: {
+      global: 1.4,
+      career_clarity: 1.3,
+    },
+  },
+  jarjestaja: {
+    workstyle: {
+      organization: 1.6,
+      structure: 1.5,
+      precision: 1.4,
+    },
+    values: {
+      stability: 1.4,
+      career_clarity: 1.2,
+    },
+    interests: {
+      business: 1.2,
+    },
+  },
+};
+
 // ========== STEP 1: NORMALIZE ANSWERS ==========
 
 /**
@@ -95,21 +222,41 @@ function calculateDimensionAverage(scores: Record<string, number>): number {
 
 /**
  * Calculate similarity between user and career
- * Uses weighted dot product
+ * Uses weighted dot product with category-specific subdimension weights
  */
 export function computeCareerFit(
   userDetailed: DetailedDimensionScores,
   careerVector: any,
-  cohort: Cohort
+  cohort: Cohort,
+  category?: string
 ): { overallScore: number; dimensionScores: Record<string, number> } {
   const weights = COHORT_WEIGHTS[cohort];
   
-  // Calculate dimension-level scores
+  // Get category-specific subdimension weights if category is provided
+  const categoryWeights = category ? CATEGORY_SUBDIMENSION_WEIGHTS[category] : undefined;
+  
+  // Calculate dimension-level scores with category-specific weights
   const dimensionScores = {
-    interests: calculateSubdimensionSimilarity(userDetailed.interests, careerVector.interests),
-    values: calculateSubdimensionSimilarity(userDetailed.values, careerVector.values),
-    workstyle: calculateSubdimensionSimilarity(userDetailed.workstyle, careerVector.workstyle),
-    context: calculateSubdimensionSimilarity(userDetailed.context, careerVector.context)
+    interests: calculateSubdimensionSimilarity(
+      userDetailed.interests, 
+      careerVector.interests,
+      categoryWeights?.interests
+    ),
+    values: calculateSubdimensionSimilarity(
+      userDetailed.values, 
+      careerVector.values,
+      categoryWeights?.values
+    ),
+    workstyle: calculateSubdimensionSimilarity(
+      userDetailed.workstyle, 
+      careerVector.workstyle,
+      categoryWeights?.workstyle
+    ),
+    context: calculateSubdimensionSimilarity(
+      userDetailed.context, 
+      careerVector.context,
+      categoryWeights?.context
+    )
   };
   
   // Weighted overall score
@@ -134,10 +281,12 @@ export function computeCareerFit(
 /**
  * Calculate similarity between user and career subdimensions
  * Uses cosine similarity-like approach
+ * Supports optional weights for category-specific prioritization
  */
 function calculateSubdimensionSimilarity(
   userScores: Record<string, number>,
-  careerScores: Record<string, number>
+  careerScores: Record<string, number>,
+  weights?: Record<string, number>
 ): number {
   const allKeys = new Set([...Object.keys(userScores), ...Object.keys(careerScores)]);
   
@@ -148,8 +297,9 @@ function calculateSubdimensionSimilarity(
   let careerMagnitude = 0;
   
   allKeys.forEach(key => {
-    const userScore = userScores[key] || 0;
-    const careerScore = careerScores[key] || 0;
+    const weight = weights?.[key] || 1.0; // Default weight is 1.0 if not specified
+    const userScore = (userScores[key] || 0) * weight;
+    const careerScore = (careerScores[key] || 0) * weight;
     
     dotProduct += userScore * careerScore;
     userMagnitude += userScore * userScore;
@@ -531,10 +681,88 @@ function getTopScores(scores: Record<string, number>, limit: number): [string, n
     .slice(0, limit);
 }
 
+// ========== CATEGORY DETECTION ==========
+
+/**
+ * Determine user's dominant category based on their dimension scores
+ * Maps subdimension scores to career categories
+ */
+function determineDominantCategory(
+  detailedScores: DetailedDimensionScores,
+  cohort: Cohort
+): string {
+  const { interests, values, workstyle, context } = detailedScores;
+  
+  // Calculate category scores based on subdimension patterns
+  const categoryScores: Record<string, number> = {
+    auttaja: 0,
+    luova: 0,
+    johtaja: 0,
+    innovoija: 0,
+    rakentaja: 0,
+    'ympariston-puolustaja': 0,
+    visionaari: 0,
+    jarjestaja: 0
+  };
+  
+  // auttaja: people interest, impact values, teaching/motivation workstyle
+  categoryScores.auttaja += (interests.people || 0) * 1.0;
+  categoryScores.auttaja += (values.impact || 0) * 0.8;
+  categoryScores.auttaja += (workstyle.teaching || 0) * 0.7;
+  categoryScores.auttaja += (workstyle.motivation || 0) * 0.7;
+  categoryScores.auttaja += (values.social_impact || 0) * 0.6;
+  
+  // luova: creative interest, arts_culture, writing
+  categoryScores.luova += (interests.creative || 0) * 1.0;
+  categoryScores.luova += (interests.arts_culture || 0) * 0.8;
+  categoryScores.luova += (interests.writing || 0) * 0.7;
+  
+  // johtaja: leadership workstyle, organization, planning
+  categoryScores.johtaja += (workstyle.leadership || 0) * 1.0;
+  categoryScores.johtaja += (workstyle.organization || 0) * 0.8;
+  categoryScores.johtaja += (workstyle.planning || 0) * 0.7;
+  categoryScores.johtaja += (values.advancement || 0) * 0.6;
+  
+  // innovoija: technology interest, innovation, problem_solving
+  categoryScores.innovoija += (interests.technology || 0) * 1.0;
+  categoryScores.innovoija += (interests.innovation || 0) * 0.8;
+  categoryScores.innovoija += (workstyle.problem_solving || 0) * 0.7;
+  categoryScores.innovoija += (values.entrepreneurship || 0) * 0.6;
+  
+  // rakentaja: hands_on interest, precision
+  categoryScores.rakentaja += (interests.hands_on || 0) * 1.0;
+  categoryScores.rakentaja += (workstyle.precision || 0) * 0.8;
+  categoryScores.rakentaja += (workstyle.performance || 0) * 0.6;
+  
+  // ympariston-puolustaja: environment interest, nature
+  categoryScores['ympariston-puolustaja'] += (interests.environment || 0) * 1.0;
+  categoryScores['ympariston-puolustaja'] += (interests.nature || 0) * 0.8;
+  categoryScores['ympariston-puolustaja'] += ((context?.outdoor || 0) * 0.6);
+  
+  // visionaari: planning workstyle, innovation, global values
+  categoryScores.visionaari += (workstyle.planning || 0) * 0.8;
+  categoryScores.visionaari += (interests.innovation || 0) * 0.7;
+  categoryScores.visionaari += (values.global || 0) * 0.8;
+  categoryScores.visionaari += (values.career_clarity || 0) * 0.6;
+  
+  // jarjestaja: organization, structure workstyle, precision
+  categoryScores.jarjestaja += (workstyle.organization || 0) * 0.9;
+  categoryScores.jarjestaja += (workstyle.structure || 0) * 0.8;
+  categoryScores.jarjestaja += (workstyle.precision || 0) * 0.7;
+  categoryScores.jarjestaja += (values.stability || 0) * 0.6;
+  
+  // Find category with highest score
+  const dominantCategory = Object.entries(categoryScores)
+    .sort(([, a], [, b]) => b - a)[0][0];
+  
+  return dominantCategory;
+}
+
 // ========== MAIN RANKING FUNCTION ==========
 
 /**
  * Rank all careers for a user and return top matches
+ * Now focuses on careers from the user's dominant category
  */
 export function rankCareers(
   answers: TestAnswer[],
@@ -544,12 +772,59 @@ export function rankCareers(
   // Step 1: Compute user vector
   const { dimensionScores, detailedScores } = computeUserVector(answers, cohort);
   
-  // Step 2: Score all careers
-  const scoredCareers = CAREER_VECTORS.map(careerVector => {
+  // Step 2: Determine dominant category
+  const dominantCategory = determineDominantCategory(detailedScores, cohort);
+  console.log(`[rankCareers] Dominant category: ${dominantCategory}`);
+  
+  // Step 3: Filter careers to only those matching dominant category
+  const categoryCareers = CAREER_VECTORS.filter(
+    careerVector => careerVector.category === dominantCategory
+  );
+  console.log(`[rankCareers] Found ${categoryCareers.length} careers in category "${dominantCategory}"`);
+  
+  // Step 4: If category has too few careers, supplement with next-best categories
+  // But prioritize dominant category careers in final results
+  // Only supplement if dominant category has fewer than 3 careers
+  let careersToScore = [...categoryCareers];
+  if (categoryCareers.length < 3) {
+    console.log(`[rankCareers] Category has only ${categoryCareers.length} careers, supplementing...`);
+    // Recalculate category scores for supplementing
+    const { interests, values, workstyle, context } = detailedScores;
+    const categoryScores: Record<string, number> = {};
+    categoryScores.auttaja = (interests.people || 0) * 1.0 + (values.impact || 0) * 0.8;
+    categoryScores.luova = (interests.creative || 0) * 1.0 + (interests.arts_culture || 0) * 0.8;
+    categoryScores.johtaja = (workstyle.leadership || 0) * 1.0 + (workstyle.organization || 0) * 0.8;
+    categoryScores.innovoija = (interests.technology || 0) * 1.0 + (interests.innovation || 0) * 0.8;
+    categoryScores.rakentaja = (interests.hands_on || 0) * 1.0 + (workstyle.precision || 0) * 0.8;
+    categoryScores['ympariston-puolustaja'] = (interests.environment || 0) * 1.0 + (interests.nature || 0) * 0.8;
+    categoryScores.visionaari = (workstyle.planning || 0) * 0.8 + (values.global || 0) * 0.8;
+    categoryScores.jarjestaja = (workstyle.organization || 0) * 0.9 + (workstyle.structure || 0) * 0.8;
+    
+    const allCategories = ['auttaja', 'luova', 'johtaja', 'innovoija', 'rakentaja', 
+                          'ympariston-puolustaja', 'visionaari', 'jarjestaja'];
+    const sortedCategories = allCategories.sort((a, b) => categoryScores[b] - categoryScores[a]);
+    
+    // Add careers from next-best categories until we have enough for ranking
+    for (const category of sortedCategories) {
+      if (careersToScore.length >= limit * 2) break; // Get enough for ranking
+      if (category === dominantCategory) continue; // Already added
+      
+      const additionalCareers = CAREER_VECTORS.filter(
+        cv => cv.category === category
+      );
+      careersToScore = [...careersToScore, ...additionalCareers];
+    }
+  } else {
+    console.log(`[rankCareers] Using only ${categoryCareers.length} careers from dominant category`);
+  }
+  
+  // Step 5: Score filtered careers
+  const scoredCareers = careersToScore.map(careerVector => {
     const { overallScore, dimensionScores: dimScores } = computeCareerFit(
       detailedScores,
       careerVector,
-      cohort
+      cohort,
+      dominantCategory // Pass category for category-specific weighting
     );
     
     // Get full career data
@@ -583,10 +858,33 @@ export function rankCareers(
     } as CareerMatch;
   });
   
-  // Step 3: Sort by score and return top N
-  return scoredCareers
-    .sort((a, b) => b.overallScore - a.overallScore)
-    .slice(0, limit);
+  // Step 6: Sort by score and return top N
+  // Prioritize careers from dominant category even if supplemented
+  const sortedCareers = scoredCareers.sort((a, b) => {
+    // First prioritize by category match
+    const aIsDominant = a.category === dominantCategory;
+    const bIsDominant = b.category === dominantCategory;
+    if (aIsDominant && !bIsDominant) return -1;
+    if (!aIsDominant && bIsDominant) return 1;
+    // Then by score
+    return b.overallScore - a.overallScore;
+  });
+  
+  // If we have enough careers from dominant category (3+), return only those
+  if (categoryCareers.length >= 3) {
+    const dominantOnly = sortedCareers
+      .filter(c => c.category === dominantCategory)
+      .slice(0, limit);
+    console.log(`[rankCareers] Returning ${dominantOnly.length} careers from dominant category "${dominantCategory}"`);
+    return dominantOnly;
+  }
+  
+  // Otherwise, return mixed results but prioritize dominant category
+  const finalResults = sortedCareers.slice(0, limit);
+  const resultCategories = finalResults.map(c => c.category);
+  console.log(`[rankCareers] Returning ${finalResults.length} careers with categories: ${resultCategories.join(', ')} (category had only ${categoryCareers.length} careers)`);
+  
+  return finalResults;
 }
 
 /**

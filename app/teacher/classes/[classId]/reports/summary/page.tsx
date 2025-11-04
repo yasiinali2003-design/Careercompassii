@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { generateClassSummaryPDF, downloadPDF, ClassSummaryData } from "@/lib/pdfGenerator";
 
 export default function ClassSummaryReport({ params }: { params: { classId: string } }) {
   const { classId } = params;
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [results, setResults] = useState<any[]>([]);
+  const [generatingPDF, setGeneratingPDF] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -59,6 +61,39 @@ export default function ClassSummaryReport({ params }: { params: { classId: stri
     return { topCareers, educationPathCounts, dimAvg };
   }, [results]);
 
+  const handleDownloadPDF = async () => {
+    if (results.length === 0) return;
+    
+    setGeneratingPDF(true);
+    try {
+      const reportData: ClassSummaryData = {
+        className: classId.substring(0, 8),
+        date: new Date().toLocaleDateString('fi-FI'),
+        totalTests: results.length,
+        topCareers: analytics.topCareers,
+        educationPathDistribution: analytics.educationPathCounts,
+        dimensionAverages: analytics.dimAvg,
+        cohortDistribution: (() => {
+          const cohortCounts: Record<string, number> = {};
+          results.forEach((r) => {
+            const cohort = r.result_payload?.cohort || 'Unknown';
+            cohortCounts[cohort] = (cohortCounts[cohort] || 0) + 1;
+          });
+          return cohortCounts;
+        })(),
+      };
+
+      const blob = await generateClassSummaryPDF(reportData);
+      const filename = `luokan-yhteenveto-${classId.substring(0, 8)}-${new Date().toISOString().split('T')[0]}.pdf`;
+      downloadPDF(blob, filename);
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('PDF:n luominen epäonnistui. Yritä uudelleen.');
+    } finally {
+      setGeneratingPDF(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white text-black">
       <style>{`
@@ -67,7 +102,19 @@ export default function ClassSummaryReport({ params }: { params: { classId: stri
       `}</style>
       <div className="max-w-3xl mx-auto py-6">
         <div className="no-print mb-4 flex justify-end gap-2">
-          <button onClick={() => window.print()} className="border px-4 py-2 rounded">Tulosta / Tallenna PDF</button>
+          <button 
+            onClick={handleDownloadPDF}
+            disabled={generatingPDF || results.length === 0}
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {generatingPDF ? 'Luodaan PDF...' : '📥 Lataa PDF'}
+          </button>
+          <button 
+            onClick={() => window.print()} 
+            className="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50"
+          >
+            🖨️ Tulosta
+          </button>
         </div>
         <header className="mb-6 border-b pb-4">
           <h1 className="text-2xl font-bold">CareerCompassi - Luokan yhteenveto</h1>
@@ -121,6 +168,7 @@ export default function ClassSummaryReport({ params }: { params: { classId: stri
     </div>
   );
 }
+
 
 
 

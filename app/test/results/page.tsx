@@ -210,12 +210,6 @@ export default function ResultsPage() {
                   <h3 className="text-2xl font-bold text-gray-900">
                     {getEducationPathTitle(results.educationPath.primary)}
                   </h3>
-                  <div className="flex flex-col items-end">
-                    <span className="text-3xl font-bold text-green-600">
-                      {Math.round(results.educationPath.scores[results.educationPath.primary])}%
-                    </span>
-                    <span className="text-xs text-gray-500">(vastaustesi perusteella)</span>
-                  </div>
                 </div>
 
                 {/* Confidence Badge */}
@@ -243,7 +237,7 @@ export default function ResultsPage() {
                 {/* Reasoning */}
                 <div className="bg-blue-50 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-700 mb-2">Miksi tämä sopii sinulle:</h4>
-                  <p className="text-gray-700 leading-relaxed">{results.educationPath.reasoning}</p>
+                  <p className="text-gray-700 leading-relaxed whitespace-pre-line">{results.educationPath.reasoning}</p>
                 </div>
 
                 {/* Secondary Path (if exists) */}
@@ -252,16 +246,10 @@ export default function ResultsPage() {
                     <h4 className="font-semibold text-gray-800 mb-4 text-lg">Vaihtoehtoisesti harkitse:</h4>
                     
                     <div className="bg-gray-50 rounded-lg p-4">
-                      <div className="flex items-center justify-between mb-3">
+                      <div className="mb-3">
                         <h5 className="text-xl font-bold text-gray-900">
                           {getEducationPathTitle(results.educationPath.secondary)}
                         </h5>
-                        <div className="text-right">
-                          <span className="text-2xl font-bold text-gray-600">
-                            {Math.round(results.educationPath.scores[results.educationPath.secondary])}%
-                          </span>
-                          <div className="text-xs text-gray-500">(vastaustesi perusteella)</div>
-                        </div>
                       </div>
 
                       {/* Secondary Path Description */}

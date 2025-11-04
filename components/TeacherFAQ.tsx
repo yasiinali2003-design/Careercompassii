@@ -193,3 +193,4 @@ export default function TeacherFAQ({ isOpen, onClose }: TeacherFAQProps) {
   );
 }
 
+

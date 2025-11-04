@@ -88,3 +88,4 @@ Once domain is working:
 - ⏳ Waiting for DNS propagation
 - ⏳ SSL certificate will auto-generate after DNS is valid
 
+

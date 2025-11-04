@@ -38,3 +38,4 @@ You should see your teachers with `package = 'standard'` (or `'premium'` if alre
 Run `node run-migration.js` to check status and get instructions.
 
 
+

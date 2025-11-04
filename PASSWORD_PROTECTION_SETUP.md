@@ -69,3 +69,4 @@ To temporarily disable password protection:
 - Password prompt has a clean, branded design matching your site
 - Redirects users back to the page they tried to visit after authentication
 
+

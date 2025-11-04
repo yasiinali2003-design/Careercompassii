@@ -66,7 +66,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 5,
-    text: "Pidätkö enemmän käytännön harjoituksista kuin luennoista?",
+    text: "Tykkäätkö enemmän tekemällä oppimisesta kuin kuuntelemisesta?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.1,
@@ -104,7 +104,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 9,
-    text: "Haluaisitko pitää kaikki vaihtoehdot auki mahdollisimman pitkään?",
+    text: "Kuinka paljon haluat pitää eri vaihtoehdot avoinna tulevaisuutta varten?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.0,
