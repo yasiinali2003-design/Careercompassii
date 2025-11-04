@@ -11,7 +11,8 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Admin-only protection: hide existence by returning 404 for non-admins
-  if (pathname.startsWith('/admin')) {
+  // Only apply to page routes, not API routes (API routes handle their own auth)
+  if (pathname.startsWith('/admin') && !pathname.startsWith('/api/admin')) {
     // If a password is configured, enforce Basic Auth first
     const adminUser = process.env.ADMIN_USERNAME || 'admin';
     const adminPass = process.env.ADMIN_PASSWORD || '';
@@ -129,12 +130,12 @@ export const config = {
   matcher: [
     /*
      * Match all request paths except for the ones starting with:
-     * - api (API routes, but we'll manually handle /api/teacher-auth)
+     * - api (API routes - handle their own auth)
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      */
-    '/((?!_next/static|_next/image|favicon.ico).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 };
 

@@ -26,6 +26,18 @@ export interface StudentReportData {
   profile?: string;
 }
 
+export interface ParentReportData {
+  name: string;
+  date: string;
+  className: string;
+  topCareers: Array<{ title: string }>;
+  educationPath?: {
+    primary: string;
+  };
+  profile?: string;
+  teacherNotes?: string;
+}
+
 export interface ClassSummaryData {
   className: string;
   date: string;
@@ -368,6 +380,211 @@ export async function generateClassSummaryPDF(data: ClassSummaryData): Promise<B
       yPos += 5;
     });
   }
+
+  // Footer
+  const footerY = pageHeight - 10;
+  doc.setFontSize(8);
+  doc.setTextColor(150, 150, 150);
+  doc.setFont('helvetica', 'italic');
+  doc.text('CareerCompassi - Urapolun löytäminen AI:n avulla', pageWidth / 2, footerY, { align: 'center' });
+  doc.text(`Luotu: ${new Date().toLocaleDateString('fi-FI')}`, pageWidth / 2, footerY + 5, { align: 'center' });
+
+  return doc.output('blob');
+}
+
+/**
+ * Generate a parent-friendly PDF report (Vanhempainraportti)
+ * Uses plain language, avoids technical jargon
+ */
+export async function generateParentReport(data: ParentReportData): Promise<Blob> {
+  const doc = new jsPDF({
+    orientation: 'portrait',
+    unit: 'mm',
+    format: 'a4'
+  });
+
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
+  const margin = 15;
+  const contentWidth = pageWidth - (margin * 2);
+  let yPos = margin;
+
+  // Header - friendly and welcoming
+  doc.setFontSize(22);
+  doc.setTextColor(37, 99, 235);
+  doc.setFont('helvetica', 'bold');
+  doc.text('Vanhempainraportti', margin, yPos);
+  
+  yPos += 10;
+  doc.setFontSize(12);
+  doc.setTextColor(75, 85, 99);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Oppilaan urapolku-testin tulokset', margin, yPos);
+  
+  yPos += 10;
+  doc.setDrawColor(200, 200, 200);
+  doc.line(margin, yPos, pageWidth - margin, yPos);
+  yPos += 10;
+
+  // Introduction - plain language
+  doc.setFontSize(11);
+  doc.setTextColor(0, 0, 0);
+  const introText = [
+    `Tämä raportti kertoo ${data.name} oppilaan urapolku-testin tuloksista.`,
+    'Testi auttaa tunnistamaan oppilaan kiinnostuksia, vahvuuksia ja sopivia urapolkuja.',
+    'Tulokset ovat suuntaa-antavia ja auttavat keskustelussa oppilaan tulevaisuudesta.'
+  ];
+  
+  introText.forEach((line) => {
+    if (yPos > pageHeight - 20) {
+      doc.addPage();
+      yPos = margin;
+    }
+    const lines = doc.splitTextToSize(line, contentWidth);
+    doc.text(lines, margin, yPos);
+    yPos += lines.length * 5 + 3;
+  });
+  
+  yPos += 5;
+
+  // Top Careers - simplified
+  if (data.topCareers.length > 0) {
+    if (yPos > pageHeight - 30) {
+      doc.addPage();
+      yPos = margin;
+    }
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(0, 0, 0);
+    doc.text('Suosituimmat ammatit:', margin, yPos);
+    yPos += 10;
+    
+    doc.setFontSize(11);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Testin perusteella seuraavat ammatit sopivat oppilaalle hyvin:', margin, yPos);
+    yPos += 7;
+    
+    data.topCareers.slice(0, 5).forEach((career, index) => {
+      if (yPos > pageHeight - 20) {
+        doc.addPage();
+        yPos = margin;
+      }
+      doc.setFontSize(11);
+      doc.setFont('helvetica', 'bold');
+      doc.text(`${index + 1}. ${career.title}`, margin + 5, yPos);
+      yPos += 6;
+    });
+    yPos += 5;
+  }
+
+  // Education Path (for YLA) - simplified explanation
+  if (data.educationPath && data.educationPath.primary) {
+    if (yPos > pageHeight - 40) {
+      doc.addPage();
+      yPos = margin;
+    }
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Koulutuspolkusuositus:', margin, yPos);
+    yPos += 10;
+    
+    doc.setFontSize(11);
+    doc.setFont('helvetica', 'normal');
+    const pathNames: Record<string, string> = {
+      'lukio': 'Lukio',
+      'ammattikoulu': 'Ammattikoulu',
+      'kansanopisto': 'Kansanopisto'
+    };
+    const pathName = pathNames[data.educationPath.primary] || data.educationPath.primary;
+    
+    const eduExplanation: Record<string, string> = {
+      'lukio': 'Lukio sopii oppilaalle hyvin, jos hän haluaa tutustua laajasti eri aineisiin ja jatkaa opiskelua yliopistoon tai ammattikorkeakouluun. Lukiossa oppilas saa aikaa miettiä tulevaisuuttaan ja löytää oman alansa rauhassa.',
+      'ammattikoulu': 'Ammattikoulu on hyvä valinta, jos oppilas haluaa oppia konkreettisen ammatin taidot ja päästä nopeasti töihin. Ammattikoulussa pääsee heti tekemään käytännön töitä ja saat työkokemusta opiskelun aikana.',
+      'kansanopisto': 'Kansanopisto voisi olla hyvä vaihtoehto, jos oppilas haluaa vielä tutustua eri aloihin rauhassa ennen seuraavaa vaihetta. Kansanopisto antaa tilaa kasvaa ja selkiyttää omaa suuntaansa.'
+    };
+    
+    doc.setFont('helvetica', 'bold');
+    doc.text(`${pathName}`, margin + 5, yPos);
+    yPos += 7;
+    
+    doc.setFont('helvetica', 'normal');
+    const explanation = eduExplanation[data.educationPath.primary] || '';
+    if (explanation) {
+      const expLines = doc.splitTextToSize(explanation, contentWidth - 10);
+      doc.text(expLines, margin + 5, yPos);
+      yPos += expLines.length * 5 + 5;
+    }
+  }
+
+  // Profile summary - simplified
+  if (data.profile) {
+    if (yPos > pageHeight - 40) {
+      doc.addPage();
+      yPos = margin;
+    }
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Oppilaan profiili:', margin, yPos);
+    yPos += 10;
+    
+    doc.setFontSize(11);
+    doc.setFont('helvetica', 'normal');
+    const profileLines = doc.splitTextToSize(data.profile, contentWidth - 10);
+    doc.text(profileLines, margin + 5, yPos);
+    yPos += profileLines.length * 5 + 5;
+  }
+
+  // Teacher Notes - if provided
+  if (data.teacherNotes && data.teacherNotes.trim()) {
+    if (yPos > pageHeight - 40) {
+      doc.addPage();
+      yPos = margin;
+    }
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(37, 99, 235);
+    doc.text('Opettajan huomiot:', margin, yPos);
+    yPos += 10;
+    
+    doc.setFontSize(11);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(0, 0, 0);
+    const notesLines = doc.splitTextToSize(data.teacherNotes, contentWidth - 10);
+    doc.text(notesLines, margin + 5, yPos);
+    yPos += notesLines.length * 5 + 5;
+  }
+
+  // Talking Points for Parent Meeting
+  if (yPos > pageHeight - 50) {
+    doc.addPage();
+    yPos = margin;
+  }
+  yPos += 5;
+  doc.setFontSize(14);
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(37, 99, 235);
+  doc.text('Keskustelunavaukset:', margin, yPos);
+  yPos += 10;
+  
+  doc.setFontSize(11);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(0, 0, 0);
+  const talkingPoints = [
+    'Mitä mieltä oppilas on testin tuloksista?',
+    'Tunnistaako oppilas itse näitä kiinnostuksen kohteita?',
+    'Onko oppilas jo miettinyt tulevaa koulutusvalintaa?',
+    'Miten voisimme tukea oppilasta löytämään oman polkunsa?',
+    'Millaisia kokemuksia oppilaan vanhemmilla on omista valinnoistaan?'
+  ];
+  
+  talkingPoints.forEach((point, index) => {
+    if (yPos > pageHeight - 20) {
+      doc.addPage();
+      yPos = margin;
+    }
+    doc.text(`• ${point}`, margin + 5, yPos);
+    yPos += 6;
+  });
 
   // Footer
   const footerY = pageHeight - 10;

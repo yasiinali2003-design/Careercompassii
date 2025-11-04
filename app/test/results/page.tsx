@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Logo from '@/components/Logo';
 import { supabase } from '@/lib/supabase';
+import { ShareResults } from '@/components/ShareResults';
 
 // Types
 interface DimensionScores {
@@ -318,9 +319,10 @@ export default function ResultsPage() {
         </div>
 
         {/* Share */}
-        <div className="text-center mt-8">
-          <p className="text-sm text-gray-500">{cohortCopy.shareText}</p>
-        </div>
+        <ShareResults 
+          topCareers={results.topCareers.map(c => ({ title: c.title }))} 
+          cohort={results.cohort}
+        />
 
         {/* Feedback Section */}
         <FeedbackSection />

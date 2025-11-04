@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { generateStudentPDF, downloadPDF, StudentReportData } from "@/lib/pdfGenerator";
+import { generateStudentPDF, generateParentReport, downloadPDF, StudentReportData, ParentReportData } from "@/lib/pdfGenerator";
 
 interface ResultPayload {
   cohort?: string;
@@ -19,6 +19,8 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<any | null>(null);
   const [generatingPDF, setGeneratingPDF] = useState(false);
+  const [generatingParentPDF, setGeneratingParentPDF] = useState(false);
+  const [teacherNotes, setTeacherNotes] = useState("");
 
   const decodedName = useMemo(() => {
     try {
@@ -87,6 +89,34 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
     }
   };
 
+  const handleDownloadParentPDF = async () => {
+    if (!result || !payload) return;
+    
+    setGeneratingParentPDF(true);
+    try {
+      const parentReportData: ParentReportData = {
+        name: decodedName || '',
+        date: new Date(result.created_at).toLocaleDateString('fi-FI'),
+        className: classId.substring(0, 8),
+        topCareers: careers.map(c => ({ title: c.title })),
+        educationPath: edu ? {
+          primary: edu.primary || edu.education_path_primary
+        } : undefined,
+        profile: result.result_payload?.profile || result.result_payload?.user_profile || undefined,
+        teacherNotes: teacherNotes.trim() || undefined,
+      };
+
+      const blob = await generateParentReport(parentReportData);
+      const filename = `vanhempainraportti-${decodedName || pin}-${new Date().toISOString().split('T')[0]}.pdf`;
+      downloadPDF(blob, filename);
+    } catch (error) {
+      console.error('Error generating parent PDF:', error);
+      alert('Vanhempainraportin luominen epäonnistui. Yritä uudelleen.');
+    } finally {
+      setGeneratingParentPDF(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white text-black">
       <style>{`
@@ -106,11 +136,36 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
             {generatingPDF ? 'Luodaan PDF...' : '📥 Lataa PDF'}
           </button>
           <button 
+            onClick={handleDownloadParentPDF}
+            disabled={generatingParentPDF || !result}
+            className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {generatingParentPDF ? 'Luodaan PDF...' : '👨‍👩‍👧 Vanhempainraportti'}
+          </button>
+          <button 
             onClick={() => window.print()} 
             className="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50"
           >
             🖨️ Tulosta
           </button>
+        </div>
+
+        {/* Teacher Notes Input */}
+        <div className="no-print mb-4 bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            Opettajan huomiot (valinnainen):
+          </label>
+          <textarea
+            value={teacherNotes}
+            onChange={(e) => setTeacherNotes(e.target.value)}
+            placeholder="Kirjoita tähän huomioita, jotka haluat sisällyttää vanhempainraporttiin..."
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm resize-none"
+            rows={3}
+            maxLength={500}
+          />
+          <p className="text-xs text-gray-500 mt-1">
+            {teacherNotes.length}/500 merkkiä
+          </p>
         </div>
 
         <header className="mb-6 border-b pb-4">

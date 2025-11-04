@@ -1,16 +1,26 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
 import CareerCompassTest from "@/components/CareerCompassTest"
 import Logo from "@/components/Logo"
+import { extractReferralCodeFromUrl, trackReferral } from '@/lib/referralSystem';
 
 export default function TestPage() {
   const searchParams = useSearchParams();
   const pin = searchParams?.get('pin') || null;
   const classToken = searchParams?.get('classToken') || null;
+
+  // Track referral code if present
+  useEffect(() => {
+    const referralCode = extractReferralCodeFromUrl();
+    if (referralCode) {
+      trackReferral(referralCode);
+    }
+  }, []);
 
   console.log('[TestPage] URL params:', { pin, classToken, allParams: searchParams?.toString() });
 
