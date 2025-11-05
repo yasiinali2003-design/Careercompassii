@@ -141,7 +141,7 @@ export async function GET(
     if (error) {
       console.error('[API/Results] Error fetching results:', error);
       return NextResponse.json(
-        { success: false, error: 'Failed to fetch results' },
+        { success: false, error: 'Tulosten haku epäonnistui' },
         { status: 500 }
       );
     }
@@ -156,7 +156,7 @@ export async function GET(
   } catch (error) {
     console.error('[API/Results] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }

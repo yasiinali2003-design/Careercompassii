@@ -22,20 +22,20 @@ interface ScoringRequest {
 function validateRequest(data: any): { valid: boolean; error?: string } {
   // Check cohort
   if (!data.cohort) {
-    return { valid: false, error: 'Missing cohort field' };
+    return { valid: false, error: 'Puuttuva kohortti-kenttä' };
   }
   
   if (!['YLA', 'TASO2', 'NUORI'].includes(data.cohort)) {
-    return { valid: false, error: `Invalid cohort: ${data.cohort}` };
+    return { valid: false, error: `Virheellinen kohortti: ${data.cohort}` };
   }
   
   // Check answers
   if (!data.answers || !Array.isArray(data.answers)) {
-    return { valid: false, error: 'Missing or invalid answers field' };
+    return { valid: false, error: 'Puuttuva tai virheellinen vastaus-kenttä' };
   }
   
   if (data.answers.length === 0) {
-    return { valid: false, error: 'No answers provided' };
+    return { valid: false, error: 'Vastauksia ei annettu' };
   }
   
   // Validate each answer
@@ -43,11 +43,11 @@ function validateRequest(data: any): { valid: boolean; error?: string } {
     const answer = data.answers[i];
     
     if (typeof answer.questionIndex !== 'number') {
-      return { valid: false, error: `Answer ${i}: invalid questionIndex` };
+      return { valid: false, error: `Vastaus ${i}: virheellinen kysymysindeksi` };
     }
     
     if (typeof answer.score !== 'number' || answer.score < 1 || answer.score > 5) {
-      return { valid: false, error: `Answer ${i}: score must be 1-5` };
+      return { valid: false, error: `Vastaus ${i}: pisteet täytyy olla 1-5` };
     }
   }
   
@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { 
           success: false, 
-          error: rateLimitCheck.message || 'Too many requests',
+          error: rateLimitCheck.message || 'Liian monta pyyntöä',
           code: 'RATE_LIMIT_EXCEEDED'
         },
         { 
@@ -106,10 +106,16 @@ export async function POST(request: NextRequest) {
     
     console.log(`[API] Top career: ${topCareers[0]?.title} (${topCareers[0]?.overallScore}%)`);
     
-    // Calculate education path (YLA only)
-    const educationPath = cohort === 'YLA' ? calculateEducationPath(unshuffledAnswers, cohort) : null;
+    // Calculate education path (YLA and TASO2)
+    const educationPath = (cohort === 'YLA' || cohort === 'TASO2') ? calculateEducationPath(unshuffledAnswers, cohort) : null;
     if (educationPath) {
-      console.log(`[API] Education path: ${educationPath.primary} (${Math.round(educationPath.scores[educationPath.primary])}%)`);
+      const primaryPath = 'primary' in educationPath ? educationPath.primary : undefined;
+      if (primaryPath) {
+        const scoreKey = cohort === 'YLA' 
+          ? (educationPath as any).scores[primaryPath as string]
+          : (educationPath as any).scores[primaryPath as string];
+        console.log(`[API] Education path: ${primaryPath} (${Math.round(scoreKey)}%)`);
+      }
     }
     
     // Get cohort-specific copy
@@ -188,7 +194,7 @@ export async function POST(request: NextRequest) {
       }
     };
     
-    // Add education path for YLA
+    // Add education path for YLA and TASO2
     if (educationPath) {
       response.educationPath = educationPath;
     }
@@ -202,8 +208,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { 
         success: false, 
-        error: 'Internal server error',
-        details: error instanceof Error ? error.message : 'Unknown error'
+        error: 'Sisäinen palvelinvirhe',
+        details: error instanceof Error ? error.message : 'Tuntematon virhe'
       },
       { status: 500 }
     );

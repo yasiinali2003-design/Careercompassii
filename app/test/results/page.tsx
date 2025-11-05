@@ -4,7 +4,8 @@
  * CAREER TEST RESULTS PAGE
  * Displays personalized career recommendations after test completion
  * YLA: Education path recommendation + career preview
- * TASO2/NUORI: Career recommendations (existing)
+ * TASO2: Post-secondary education path recommendation + career recommendations
+ * NUORI: Career recommendations
  */
 
 import { useEffect, useState } from 'react';
@@ -15,6 +16,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Logo from '@/components/Logo';
 import { supabase } from '@/lib/supabase';
 import { ShareResults } from '@/components/ShareResults';
+import { getEducationPathDescription } from '@/lib/scoring/educationPath';
 
 // Types
 interface DimensionScores {
@@ -42,12 +44,14 @@ interface CareerMatch {
 }
 
 interface EducationPathResult {
-  primary: 'lukio' | 'ammattikoulu' | 'kansanopisto';
-  secondary?: 'lukio' | 'ammattikoulu' | 'kansanopisto';
+  primary: 'lukio' | 'ammattikoulu' | 'kansanopisto' | 'yliopisto' | 'amk';
+  secondary?: 'lukio' | 'ammattikoulu' | 'kansanopisto' | 'yliopisto' | 'amk';
   scores: {
-    lukio: number;
-    ammattikoulu: number;
-    kansanopisto: number;
+    lukio?: number;
+    ammattikoulu?: number;
+    kansanopisto?: number;
+    yliopisto?: number;
+    amk?: number;
   };
   reasoning: string;
   confidence: 'high' | 'medium' | 'low';
@@ -65,7 +69,7 @@ interface ResultsData {
   cohort: string;
   userProfile: UserProfile;
   topCareers: CareerMatch[];
-  educationPath?: EducationPathResult;  // Only for YLA
+  educationPath?: EducationPathResult;  // For YLA and TASO2
   cohortCopy: {
     title: string;
     subtitle: string;
@@ -193,15 +197,17 @@ export default function ResultsPage() {
           </CardContent>
         </Card>
 
-        {/* Education Path Recommendation (YLA only) */}
-        {userProfile.cohort === 'YLA' && results.educationPath && (
+        {/* Education Path Recommendation (YLA and TASO2) */}
+        {(userProfile.cohort === 'YLA' || userProfile.cohort === 'TASO2') && results.educationPath && (
           <Card className="mb-8 border-2 border-green-200 bg-gradient-to-r from-green-50 to-blue-50">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-2xl">
                 Sinun koulutuspolkusi
               </CardTitle>
               <CardDescription>
-                Vastaustesi perusteella sopiva jatko-opintovalinta
+                {userProfile.cohort === 'YLA' 
+                  ? 'Vastaustesi perusteella sopiva jatko-opintovalinta'
+                  : 'Vastaustesi perusteella sopiva jatko-opintosuunta'}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -209,7 +215,7 @@ export default function ResultsPage() {
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-2xl font-bold text-gray-900">
-                    {getEducationPathTitle(results.educationPath.primary)}
+                    {getEducationPathTitle(results.educationPath.primary, userProfile.cohort)}
                   </h3>
                 </div>
 
@@ -220,16 +226,16 @@ export default function ResultsPage() {
 
                 {/* Path Description */}
                 <div className="bg-white rounded-lg p-4 mb-4">
-                  <p className="text-gray-700 mb-4">{getEducationPathDescription(results.educationPath.primary).description}</p>
+                  <p className="text-gray-700 mb-4">{getEducationPathDescription(results.educationPath.primary, userProfile.cohort).description}</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <span className="font-semibold text-gray-700">Kesto:</span>
-                      <span className="ml-2 text-gray-600">{getEducationPathDescription(results.educationPath.primary).duration}</span>
+                      <span className="ml-2 text-gray-600">{getEducationPathDescription(results.educationPath.primary, userProfile.cohort).duration}</span>
                     </div>
                     <div>
                       <span className="font-semibold text-gray-700">Jatko-opinnot:</span>
                       <div className="ml-2 text-sm text-gray-600">
-                        {getEducationPathDescription(results.educationPath.primary).nextSteps.slice(0, 2).join(', ')}
+                        {getEducationPathDescription(results.educationPath.primary, userProfile.cohort).nextSteps.slice(0, 2).join(', ')}
                       </div>
                     </div>
                   </div>
@@ -249,30 +255,42 @@ export default function ResultsPage() {
                     <div className="bg-gray-50 rounded-lg p-4">
                       <div className="mb-3">
                         <h5 className="text-xl font-bold text-gray-900">
-                          {getEducationPathTitle(results.educationPath.secondary)}
+                          {getEducationPathTitle(results.educationPath.secondary, userProfile.cohort)}
                         </h5>
                       </div>
 
+                      {/* Alternative Analysis Text */}
+                      {userProfile.cohort === 'TASO2' && (
+                        <div className="mb-4">
+                          {results.educationPath.primary === 'yliopisto' && results.educationPath.secondary === 'amk' && (
+                            <p className="text-gray-700 mb-4">
+                              Vaihtoehtoisesti harkitse myös ammattikorkeakoulua. Vaikka vastauksesi viittaavat enemmän yliopistoon, AMK voisi sopia sinulle erityisesti jos haluat konkreettisemman työelämäkytköksen ja nopeamman työllistymisen. Molemmat polut ovat hyviä vaihtoehtoja - kannattaa tutustua molempiin ennen päätöksen tekemistä.
+                            </p>
+                          )}
+                          {results.educationPath.primary === 'amk' && results.educationPath.secondary === 'yliopisto' && (
+                            <p className="text-gray-700 mb-4">
+                              Vaihtoehtoisesti harkitse myös yliopisto-opintoja. Vaikka vastauksesi viittaavat enemmän AMK-koulutukseen, yliopisto voisi sopia sinulle erityisesti jos haluat syvempää teoreettista tietämystä tai harkitset tutkijauran tielle menemistä. Molemmat polut ovat hyviä vaihtoehtoja - kannattaa tutustua molempiin ennen päätöksen tekemistä.
+                            </p>
+                          )}
+                        </div>
+                      )}
+
                       {/* Secondary Path Description */}
                       <div className="bg-white rounded-lg p-4 mb-3">
-                        <p className="text-gray-700 mb-4">{getEducationPathDescription(results.educationPath.secondary).description}</p>
+                        <p className="text-gray-700 mb-4">{getEducationPathDescription(results.educationPath.secondary, userProfile.cohort).description}</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                           <div>
                             <span className="font-semibold text-gray-700">Kesto:</span>
-                            <span className="ml-2 text-gray-600">{getEducationPathDescription(results.educationPath.secondary).duration}</span>
+                            <span className="ml-2 text-gray-600">{getEducationPathDescription(results.educationPath.secondary, userProfile.cohort).duration}</span>
                           </div>
                           <div>
                             <span className="font-semibold text-gray-700">Jatko-opinnot:</span>
                             <div className="ml-2 text-gray-600">
-                              {getEducationPathDescription(results.educationPath.secondary).nextSteps.slice(0, 2).join(', ')}
+                              {getEducationPathDescription(results.educationPath.secondary, userProfile.cohort).nextSteps.slice(0, 2).join(', ')}
                             </div>
                           </div>
                         </div>
                       </div>
-
-                      <p className="text-sm text-gray-600 italic">
-                        Tämä polku sopii myös sinulle. Kannattaa tutustua molempiin vaihtoehtoihin ennen päätöksen tekemistä.
-                      </p>
                     </div>
                   </div>
                 )}
@@ -286,9 +304,9 @@ export default function ResultsPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
             {userProfile.cohort === 'YLA' ? 'Ammatteja tulevaisuudessa (esimerkkejä)' : 'Ammattiehdotukset vastaustesi perusteella'}
           </h2>
-          {userProfile.cohort === 'YLA' && (
+          {userProfile.cohort === 'YLA' && results.educationPath && (
             <p className="text-gray-600 mb-6">
-              Näitä ammatteja voit harkita {getEducationPathTitle(results.educationPath?.primary || 'lukio').toLowerCase()}n jälkeen:
+              Näitä ammatteja voit harkita {getEducationPathTitle(results.educationPath.primary, userProfile.cohort).toLowerCase()}n jälkeen:
             </p>
           )}
           
@@ -648,38 +666,23 @@ function FeedbackSection() {
 
 // ========== EDUCATION PATH HELPERS ==========
 
-function getEducationPathTitle(path: 'lukio' | 'ammattikoulu' | 'kansanopisto'): string {
-  const titles = {
+function getEducationPathTitle(path: string, cohort?: string): string {
+  // TASO2 paths
+  if (path === 'yliopisto' || path === 'amk') {
+    const taso2Titles: Record<string, string> = {
+      yliopisto: 'Yliopisto-opinnot',
+      amk: 'Ammattikorkeakoulu'
+    };
+    return taso2Titles[path] || path;
+  }
+  
+  // YLA paths
+  const ylaTitles: Record<string, string> = {
     lukio: 'Lukio',
     ammattikoulu: 'Ammattikoulu',
     kansanopisto: 'Kansanopisto'
   };
-  return titles[path];
-}
-
-function getEducationPathDescription(path: 'lukio' | 'ammattikoulu' | 'kansanopisto'): {
-  description: string;
-  duration: string;
-  nextSteps: string[];
-} {
-  const descriptions = {
-    lukio: {
-      description: 'Yleissivistävä koulutus, joka antaa valmiudet jatkaa opiskelua yliopistossa tai ammattikorkeakoulussa. Opiskelet laajasti eri aineita ja kehität opiskelutaitojasi.',
-      duration: '3 vuotta',
-      nextSteps: ['Yliopisto-opinnot', 'Ammattikorkeakouluopinnot', 'Ammatillinen koulutus']
-    },
-    ammattikoulu: {
-      description: 'Ammatillinen koulutus, jossa opit tietyn ammatin taidot käytännössä. Saat työelämävalmiudet ja voit aloittaa työt heti valmistuttuasi.',
-      duration: '3 vuotta',
-      nextSteps: ['Työelämä (välittömästi)', 'Ammattikorkeakouluopinnot (myöhemmin)', 'Erikoistumiskoulutukset']
-    },
-    kansanopisto: {
-      description: 'Vapaan sivistystyön oppilaitoksissa voit tutustua eri aloihin, kasvaa ihmisenä ja selkiyttää tulevaisuuden suunnitelmiasi. Hyvä välivuoden vaihtoehto.',
-      duration: '1 vuosi (yleensä)',
-      nextSteps: ['Lukio', 'Ammattikoulu', 'Työelämä', 'Lisää kansanopisto-opintoja']
-    }
-  };
-  return descriptions[path];
+  return ylaTitles[path] || path;
 }
 
 function getEducationPathConfidenceBadge(confidence: 'high' | 'medium' | 'low') {

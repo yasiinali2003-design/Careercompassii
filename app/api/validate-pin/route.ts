@@ -9,14 +9,14 @@ export async function POST(request: NextRequest) {
     // Validate input
     if (!pin || !classToken) {
       return NextResponse.json(
-        { success: false, error: 'Missing PIN or class token' },
+        { success: false, error: 'Puuttuva PIN-koodi tai luokka-tunniste' },
         { status: 400 }
       );
     }
 
     if (!supabaseAdmin) {
       return NextResponse.json(
-        { success: false, error: 'Database not configured' },
+        { success: false, error: 'Tietokantaa ei ole määritelty' },
         { status: 500 }
       );
     }
@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('[API/ValidatePIN] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, isValid: false, error: 'Internal server error' },
+      { success: false, isValid: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }

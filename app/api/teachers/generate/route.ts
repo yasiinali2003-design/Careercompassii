@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
 
     if (!supabaseAdmin) {
       return NextResponse.json(
-        { success: false, error: 'Database not configured' },
+        { success: false, error: 'Tietokantaa ei ole määritelty' },
         { status: 500 }
       );
     }

@@ -870,9 +870,24 @@ export function rankCareers(
     return b.overallScore - a.overallScore;
   });
   
+  // Step 7: Deduplicate by title (case-insensitive, ignoring hyphens and spaces)
+  const normalizeTitle = (title: string) => 
+    title.toLowerCase().replace(/[-\s]/g, '').trim();
+  
+  const seenTitles = new Set<string>();
+  const deduplicatedCareers = sortedCareers.filter(career => {
+    const normalized = normalizeTitle(career.title);
+    if (seenTitles.has(normalized)) {
+      console.log(`[rankCareers] Removing duplicate: ${career.title} (already seen)`);
+      return false;
+    }
+    seenTitles.add(normalized);
+    return true;
+  });
+  
   // If we have enough careers from dominant category (3+), return only those
   if (categoryCareers.length >= 3) {
-    const dominantOnly = sortedCareers
+    const dominantOnly = deduplicatedCareers
       .filter(c => c.category === dominantCategory)
       .slice(0, limit);
     console.log(`[rankCareers] Returning ${dominantOnly.length} careers from dominant category "${dominantCategory}"`);
@@ -880,7 +895,7 @@ export function rankCareers(
   }
   
   // Otherwise, return mixed results but prioritize dominant category
-  const finalResults = sortedCareers.slice(0, limit);
+  const finalResults = deduplicatedCareers.slice(0, limit);
   const resultCategories = finalResults.map(c => c.category);
   console.log(`[rankCareers] Returning ${finalResults.length} careers with categories: ${resultCategories.join(', ')} (category had only ${categoryCareers.length} careers)`);
   

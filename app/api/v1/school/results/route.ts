@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
     const apiKey = request.headers.get('x-api-key') || request.nextUrl.searchParams.get('api_key');
     const expected = process.env.SCHOOL_API_KEY;
     if (!expected || apiKey !== expected) {
-      return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json({ success: false, error: 'Ei käyttöoikeutta' }, { status: 401 });
     }
 
     // For now, API key implies Premium access. In future, map API keys to specific teachers/schools.
@@ -32,11 +32,11 @@ export async function GET(request: NextRequest) {
     }
     const { data, error } = await q;
     if (error) {
-      return NextResponse.json({ success: false, error: 'Failed to fetch' }, { status: 500 });
+      return NextResponse.json({ success: false, error: 'Haku epäonnistui' }, { status: 500 });
     }
     return NextResponse.json({ success: true, results: data || [] });
   } catch (e) {
-    return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 });
+    return NextResponse.json({ success: false, error: 'Sisäinen palvelinvirhe' }, { status: 500 });
   }
 }
 

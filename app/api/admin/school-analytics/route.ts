@@ -31,14 +31,14 @@ export async function GET(request: NextRequest) {
     // 4. Admin cookie exists
     if (!isDevMode && adminPass && !hasValidBasicAuth && !hasAdminCookie) {
       return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
+        { success: false, error: 'Ei käyttöoikeutta' },
         { status: 401 }
       );
     }
 
     if (!supabaseAdmin) {
       return NextResponse.json(
-        { success: false, error: 'Database not configured' },
+        { success: false, error: 'Tietokantaa ei ole määritelty' },
         { status: 500 }
       );
     }
@@ -65,7 +65,7 @@ export async function GET(request: NextRequest) {
     if (classesError) {
       console.error('[School Analytics] Error fetching classes:', classesError);
       return NextResponse.json(
-        { success: false, error: 'Failed to fetch classes' },
+        { success: false, error: 'Luokkien haku epäonnistui' },
         { status: 500 }
       );
     }
@@ -103,7 +103,7 @@ export async function GET(request: NextRequest) {
     if (resultsError) {
       console.error('[School Analytics] Error fetching results:', resultsError);
       return NextResponse.json(
-        { success: false, error: 'Failed to fetch results' },
+        { success: false, error: 'Tulosten haku epäonnistui' },
         { status: 500 }
       );
     }
@@ -131,7 +131,7 @@ export async function GET(request: NextRequest) {
   } catch (error: any) {
     console.error('[School Analytics] Error:', error);
     return NextResponse.json(
-      { success: false, error: error.message || 'Internal server error' },
+      { success: false, error: error.message || 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }

@@ -8,8 +8,8 @@ import crypto from 'crypto';
 
 // Rate limit configuration
 const RATE_LIMIT_CONFIG = {
-  maxRequestsPerHour: 10, // Max 10 tests per hour per IP
-  maxRequestsPerDay: 50,  // Max 50 tests per day per IP
+  maxRequestsPerHour: process.env.NODE_ENV === 'development' ? 1000 : 10, // Max 10 tests per hour per IP (1000 in dev)
+  maxRequestsPerDay: process.env.NODE_ENV === 'development' ? 10000 : 50,  // Max 50 tests per day per IP (10000 in dev)
   windowHours: 1,          // 1 hour window for hourly limit
   windowDays: 24           // 24 hour window for daily limit
 };
@@ -103,7 +103,7 @@ export async function checkRateLimit(request: Request): Promise<{ limit: boolean
       
       return {
         limit: true,
-        message: 'Too many requests. Please try again later.',
+        message: 'Liian monta pyyntöä. Yritä myöhemmin uudelleen.',
         headers: {
           'X-RateLimit-Limit': RATE_LIMIT_CONFIG.maxRequestsPerHour.toString(),
           'X-RateLimit-Remaining': '0',
@@ -122,7 +122,7 @@ export async function checkRateLimit(request: Request): Promise<{ limit: boolean
       
       return {
         limit: true,
-        message: 'Daily limit exceeded. Please try again tomorrow.',
+        message: 'Päivittäinen raja ylitetty. Yritä huomenna uudelleen.',
         headers: {
           'X-RateLimit-Limit': RATE_LIMIT_CONFIG.maxRequestsPerDay.toString(),
           'X-RateLimit-Remaining': '0',

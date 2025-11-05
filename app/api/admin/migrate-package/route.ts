@@ -20,12 +20,12 @@ export async function POST(request: NextRequest) {
     const hasAdminCookie = adminCookie?.value === 'yes';
 
     if (!hasValidBasicAuth && !hasAdminCookie) {
-      return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json({ success: false, error: 'Ei käyttöoikeutta' }, { status: 401 });
     }
 
     if (!supabaseAdmin) {
       return NextResponse.json(
-        { success: false, error: 'Database not configured' },
+        { success: false, error: 'Tietokantaa ei ole määritelty' },
         { status: 500 }
       );
     }

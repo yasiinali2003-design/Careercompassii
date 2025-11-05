@@ -1,25 +1,54 @@
 /**
  * EDUCATION PATH RECOMMENDATION
  * For YLA (yläaste) cohort: Lukio vs. Ammattikoulu vs. Kansanopisto
+ * For TASO2 (toiseen asteen opiskelija) cohort: Yliopisto vs. AMK
  * 
- * Based on Q0-14 (Learning Preferences + Future Mindset)
+ * YLA: Based on Q0-14 (Learning Preferences + Future Mindset)
+ * TASO2: Based on career-focused questions (Q0-29)
  */
 
 import { TestAnswer, Cohort } from './types';
 import { getQuestionMappings } from './dimensions';
 
-export type EducationPath = 'lukio' | 'ammattikoulu' | 'kansanopisto';
+export type YLAEducationPath = 'lukio' | 'ammattikoulu' | 'kansanopisto';
+export type TASO2EducationPath = 'yliopisto' | 'amk';
+export type EducationPath = YLAEducationPath | TASO2EducationPath;
 
-export interface EducationPathResult {
-  primary: EducationPath;
-  secondary?: EducationPath;
+export interface YLAEducationPathResult {
+  primary: YLAEducationPath;
+  secondary?: YLAEducationPath;
   scores: {
-    lukio: number;      // 0-100
-    ammattikoulu: number; // 0-100
-    kansanopisto: number; // 0-100
+    lukio: number;
+    ammattikoulu: number;
+    kansanopisto: number;
   };
-  reasoning: string;    // Finnish explanation
+  reasoning: string;
   confidence: 'high' | 'medium' | 'low';
+}
+
+export interface TASO2EducationPathResult {
+  primary: TASO2EducationPath;
+  secondary?: TASO2EducationPath;
+  scores: {
+    yliopisto: number;
+    amk: number;
+  };
+  reasoning: string;
+  confidence: 'high' | 'medium' | 'low';
+}
+
+export type EducationPathResult = YLAEducationPathResult | TASO2EducationPathResult;
+
+/**
+ * Calculate education path recommendation for YLA or TASO2 cohort
+ */
+export function calculateEducationPath(answers: TestAnswer[], cohort: Cohort): EducationPathResult | null {
+  if (cohort === 'YLA') {
+    return calculateYLAPath(answers);
+  } else if (cohort === 'TASO2') {
+    return calculateTASO2Path(answers);
+  }
+  return null; // NUORI doesn't get education paths
 }
 
 /**
@@ -30,10 +59,7 @@ export interface EducationPathResult {
  * - Ammattikoulu: High hands-on interest, wants specific career early, practical learning
  * - Kansanopisto: Unclear goals, needs exploration, alternative path
  */
-export function calculateEducationPath(answers: TestAnswer[], cohort: Cohort): EducationPathResult | null {
-  if (cohort !== 'YLA') {
-    return null; // Only for YLA cohort
-  }
+function calculateYLAPath(answers: TestAnswer[]): YLAEducationPathResult | null {
 
   // Get relevant answers (Q0-14: Learning Preferences + Future Mindset)
   const relevantAnswers = answers.filter(a => a.questionIndex <= 14);
@@ -153,9 +179,9 @@ export function calculateEducationPath(answers: TestAnswer[], cohort: Cohort): E
   const scores = { lukio: lukioScore, ammattikoulu: ammattikouluScore, kansanopisto: kansanopistoScore };
   const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
   
-  const primary = sorted[0][0] as EducationPath;
+  const primary = sorted[0][0] as YLAEducationPath;
   const secondary = (sorted[1][1] > 30 && sorted[0][1] - sorted[1][1] < 20) 
-    ? sorted[1][0] as EducationPath 
+    ? sorted[1][0] as YLAEducationPath 
     : undefined;
 
   // Determine confidence
@@ -173,7 +199,7 @@ export function calculateEducationPath(answers: TestAnswer[], cohort: Cohort): E
   }
 
   // Generate reasoning
-  const reasoning = generateReasoning(primary, scores, confidence);
+  const reasoning = generateYLAReasoning(primary, scores, confidence);
 
   return {
     primary,
@@ -185,11 +211,248 @@ export function calculateEducationPath(answers: TestAnswer[], cohort: Cohort): E
 }
 
 /**
- * Generate Finnish explanation for education path recommendation
+ * Calculate education path recommendation for TASO2 cohort (post-secondary options)
+ * 
+ * LOGIC:
+ * - Yliopisto: High analytical/research interest, academic focus, wants deep expertise
+ * - AMK: Practical application focus, career-oriented, wants job-ready skills
+ * 
+ * All 30 questions are evenly distributed (50/50) between yliopisto and amk
+ */
+function calculateTASO2Path(answers: TestAnswer[]): TASO2EducationPathResult | null {
+  if (answers.length === 0) {
+    return null;
+  }
+
+  // Normalize scores to 0-1
+  const normalized = answers.map(a => ({
+    index: a.questionIndex,
+    score: (a.score - 1) / 4  // 1-5 → 0-1
+  }));
+
+  // Calculate path scores based on question patterns
+  // All questions evenly distributed (50/50) between yliopisto and amk
+  let yliopistoScore = 0;
+  let amkScore = 0;
+
+  normalized.forEach(({ index, score }) => {
+    switch (index) {
+      // Section 1: Tech & Digital (Q0-6)
+      case 0: // Koodaaminen
+        yliopistoScore += score * 1.0;
+        amkScore += score * 1.0;
+        break;
+      case 1: // Tietokoneet ja teknologia
+        yliopistoScore += score * 0.9;
+        amkScore += score * 1.1;
+        break;
+      case 2: // Numeroiden analysointi → Yliopisto
+        yliopistoScore += score * 1.3;
+        amkScore += score * 0.7;
+        break;
+      case 3: // Tekniset ongelmat → Balanced
+        yliopistoScore += score * 1.0;
+        amkScore += score * 1.0;
+        break;
+      case 4: // Nettisivut/sovellukset → AMK (redistributed from työelämä)
+        yliopistoScore += score * 0.5;
+        amkScore += score * 1.5;
+        break;
+      case 5: // Videopelit → Split (redistributed from erikoistuminen)
+        yliopistoScore += score * 0.8;
+        amkScore += score * 1.2;
+        break;
+      case 6: // Tietoturva → Balanced
+        yliopistoScore += score * 1.0;
+        amkScore += score * 1.1;
+        break;
+
+      // Section 2: People & Care (Q7-13)
+      case 7: // Auttaa ihmisiä terveydessä → AMK (redistributed from erikoistuminen)
+        yliopistoScore += score * 0.7;
+        amkScore += score * 1.3;
+        break;
+      case 8: // Mielen ymmärtäminen → Yliopisto
+        yliopistoScore += score * 1.3;
+        amkScore += score * 0.7;
+        break;
+      case 9: // Opettaminen → Balanced
+        yliopistoScore += score * 0.9;
+        amkScore += score * 1.1;
+        break;
+      case 10: // Auttaa ihmisiä vaikeuksissa → AMK (redistributed from erikoistuminen)
+        yliopistoScore += score * 0.7;
+        amkScore += score * 1.3;
+        break;
+      case 11: // Lasten/nuorten kanssa → AMK
+        yliopistoScore += score * 0.6;
+        amkScore += score * 1.4;
+        break;
+      case 12: // Vanhusten hoito → AMK (redistributed from erikoistuminen)
+        yliopistoScore += score * 0.8;
+        amkScore += score * 1.2;
+        break;
+      case 13: // Neuvoa ja ohjata → AMK (redistributed from erikoistuminen)
+        yliopistoScore += score * 0.8;
+        amkScore += score * 1.2;
+        break;
+
+      // Section 3: Creative & Business (Q14-20)
+      case 14: // Grafiikka → AMK (redistributed from työelämä/erikoistuminen)
+        yliopistoScore += score * 0.7;
+        amkScore += score * 1.3;
+        break;
+      case 15: // Mainonta/markkinointi → AMK (redistributed from työelämä)
+        yliopistoScore += score * 0.8;
+        amkScore += score * 1.2;
+        break;
+      case 16: // Sisustaminen → AMK (redistributed from työelämä/erikoistuminen)
+        yliopistoScore += score * 0.7;
+        amkScore += score * 1.3;
+        break;
+      case 17: // Kirjoittaminen → Yliopisto
+        yliopistoScore += score * 1.2;
+        amkScore += score * 0.8;
+        break;
+      case 18: // Valokuvaus/videot → AMK (redistributed from työelämä/erikoistuminen)
+        yliopistoScore += score * 0.7;
+        amkScore += score * 1.3;
+        break;
+      case 19: // Oma yritys → AMK (redistributed from työelämä/erikoistuminen)
+        yliopistoScore += score * 0.8;
+        amkScore += score * 1.2;
+        break;
+      case 20: // Myynti → AMK (redistributed from työelämä)
+        yliopistoScore += score * 0.6;
+        amkScore += score * 1.4;
+        break;
+
+      // Section 4: Hands-On & Practical (Q21-29)
+      case 21: // Rakentaminen → AMK (redistributed from työelämä/erikoistuminen)
+        yliopistoScore += score * 0.6;
+        amkScore += score * 1.4;
+        break;
+      case 22: // Autot → AMK (redistributed from työelämä/erikoistuminen)
+        yliopistoScore += score * 0.7;
+        amkScore += score * 1.3;
+        break;
+      case 23: // Sähköasennukset → AMK (redistributed from työelämä/erikoistuminen)
+        yliopistoScore += score * 0.6;
+        amkScore += score * 1.4;
+        break;
+      case 24: // Kasvit/eläimet → Balanced (redistributed from erikoistuminen)
+        yliopistoScore += score * 0.9;
+        amkScore += score * 1.1;
+        break;
+      case 25: // Ympäristön suojelu → Yliopisto
+        yliopistoScore += score * 1.1;
+        amkScore += score * 0.9;
+        break;
+      case 26: // Kuljetus → AMK (redistributed from työelämä)
+        yliopistoScore += score * 0.6;
+        amkScore += score * 1.4;
+        break;
+      case 27: // Ruoan valmistus → AMK (redistributed from työelämä/erikoistuminen)
+        yliopistoScore += score * 0.7;
+        amkScore += score * 1.3;
+        break;
+      case 28: // Puuntyöstö/metallintyöstö → AMK (redistributed from työelämä/erikoistuminen)
+        yliopistoScore += score * 0.6;
+        amkScore += score * 1.4;
+        break;
+      case 29: // Laboratorio/kokeet → Yliopisto
+        yliopistoScore += score * 1.2;
+        amkScore += score * 0.8;
+        break;
+    }
+  });
+
+  // Calculate actual maximum possible scores for each path (if all contributing questions score 1.0)
+  // This ensures fair normalization across paths with different numbers of contributing questions
+  let maxYliopisto = 0;
+  let maxAMK = 0;
+
+  // Calculate theoretical maximums by summing all weights
+  for (let i = 0; i < 30; i++) {
+    switch (i) {
+      case 0: maxYliopisto += 1.0; maxAMK += 1.0; break;
+      case 1: maxYliopisto += 0.9; maxAMK += 1.1; break;
+      case 2: maxYliopisto += 1.3; maxAMK += 0.7; break;
+      case 3: maxYliopisto += 1.0; maxAMK += 1.0; break;
+      case 4: maxYliopisto += 0.5; maxAMK += 1.5; break;
+      case 5: maxYliopisto += 0.8; maxAMK += 1.2; break;
+      case 6: maxYliopisto += 1.0; maxAMK += 1.1; break;
+      case 7: maxYliopisto += 0.7; maxAMK += 1.3; break;
+      case 8: maxYliopisto += 1.3; maxAMK += 0.7; break;
+      case 9: maxYliopisto += 0.9; maxAMK += 1.1; break;
+      case 10: maxYliopisto += 0.7; maxAMK += 1.3; break;
+      case 11: maxYliopisto += 0.6; maxAMK += 1.4; break;
+      case 12: maxYliopisto += 0.8; maxAMK += 1.2; break;
+      case 13: maxYliopisto += 0.8; maxAMK += 1.2; break;
+      case 14: maxYliopisto += 0.7; maxAMK += 1.3; break;
+      case 15: maxYliopisto += 0.8; maxAMK += 1.2; break;
+      case 16: maxYliopisto += 0.7; maxAMK += 1.3; break;
+      case 17: maxYliopisto += 1.2; maxAMK += 0.8; break;
+      case 18: maxYliopisto += 0.7; maxAMK += 1.3; break;
+      case 19: maxYliopisto += 0.8; maxAMK += 1.2; break;
+      case 20: maxYliopisto += 0.6; maxAMK += 1.4; break;
+      case 21: maxYliopisto += 0.6; maxAMK += 1.4; break;
+      case 22: maxYliopisto += 0.7; maxAMK += 1.3; break;
+      case 23: maxYliopisto += 0.6; maxAMK += 1.4; break;
+      case 24: maxYliopisto += 0.9; maxAMK += 1.1; break;
+      case 25: maxYliopisto += 1.1; maxAMK += 0.9; break;
+      case 26: maxYliopisto += 0.6; maxAMK += 1.4; break;
+      case 27: maxYliopisto += 0.7; maxAMK += 1.3; break;
+      case 28: maxYliopisto += 0.6; maxAMK += 1.4; break;
+      case 29: maxYliopisto += 1.2; maxAMK += 0.8; break;
+    }
+  }
+
+  // Normalize each path independently using its own maximum
+  yliopistoScore = Math.min(100, (yliopistoScore / maxYliopisto) * 100);
+  amkScore = Math.min(100, (amkScore / maxAMK) * 100);
+
+  // Determine primary and secondary paths
+  const scores = { yliopisto: yliopistoScore, amk: amkScore };
+  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  
+  const primary = sorted[0][0] as TASO2EducationPath;
+  const secondary = (sorted[1][1] > 30 && sorted[0][1] - sorted[1][1] < 20) 
+    ? sorted[1][0] as TASO2EducationPath 
+    : undefined;
+
+  // Determine confidence
+  const primaryScore = sorted[0][1];
+  const secondaryScore = sorted[1][1];
+  const scoreDiff = primaryScore - secondaryScore;
+  
+  let confidence: 'high' | 'medium' | 'low';
+  if (scoreDiff > 30 && primaryScore > 60) {
+    confidence = 'high';
+  } else if (scoreDiff > 15 || primaryScore > 50) {
+    confidence = 'medium';
+  } else {
+    confidence = 'low';
+  }
+
+  // Generate detailed reasoning
+  const reasoning = generateTASO2Reasoning(primary, scores, confidence);
+
+  return {
+    primary,
+    secondary,
+    scores,
+    reasoning,
+    confidence
+  };
+}
+
+/**
+ * Generate Finnish explanation for YLA education path recommendation
  * Returns detailed, personalized analysis with information about alternative paths
  */
-function generateReasoning(
-  primary: EducationPath,
+function generateYLAReasoning(
+  primary: YLAEducationPath,
   scores: { lukio: number; ammattikoulu: number; kansanopisto: number },
   confidence: 'high' | 'medium' | 'low'
 ): string {
@@ -238,14 +501,105 @@ function generateReasoning(
 }
 
 /**
- * Get education path description for UI
+ * Generate highly detailed, analytical Finnish explanation for TASO2 education path recommendation
+ * Returns comprehensive analysis with career trajectories, market insights, salary data, and comparisons
+ * Designed for older students with stronger critical thinking abilities
  */
-export function getEducationPathDescription(path: EducationPath): {
+function generateTASO2Reasoning(
+  primary: TASO2EducationPath,
+  scores: { yliopisto: number; amk: number },
+  confidence: 'high' | 'medium' | 'low'
+): string {
+  const yliopistoScore = Math.round(scores.yliopisto);
+  const amkScore = Math.round(scores.amk);
+
+  let reasoning = '';
+
+  if (primary === 'yliopisto') {
+    if (confidence === 'high') {
+      reasoning = `Vastaustesi perusteella yliopisto-opinnot sopivat sinulle erittäin hyvin. Profiilisi osoittaa vahvan analyyttisen ajattelun, tutkimusmielisyyttä ja syvällistä oppimishalua, mikä on juuri sitä mitä yliopisto-opinnot edellyttävät. Yliopistossa opiskelet tutkintoon johtavalla linjalla ja saat laajaa teoreettista tietämystä sekä kriittisen ajattelun taitoja. Tämä polku sopii erityisesti, jos haluat syventää tietämystäsi tietyssä alassa ja harkitset mahdollisesti jatko-opintoja (maisteri, tohtori) tai tutkijauran tielle menemistä.
+
+Yliopistokoulutus kestää yleensä 3-5 vuotta kandidaatin tutkintoon ja tarjoaa erinomaiset valmiudet monipuoliseen työelämään. Opiskelutapa on pääosin itsenäistä ja vaatii aktiivista osallistumista luennoille, seminaareihin ja kirjallisuuden tutkimiseen. Yliopistossa kehität myös vahvoja argumentaatiotaidot, tutkimusmetodologian ymmärrystä ja akateemisia kirjoitustaitoja, jotka ovat arvostettuja monissa työtehtävissä. Opiskelutapa painottuu itsenäiseen työskentelyyn ja syvälliseen tiedon omaksumiseen, mikä kehittää kykyäsi analysoida monimutkaisia ongelmia ja muodostaa itsenäisiä näkemyksiä.
+
+Työmarkkinanäkymät yliopistokoulutukselle ovat yleisesti hyvät, erityisesti teknologia-, terveys- ja luonnontieteiden aloilla. Keskimääräinen palkka yliopistotutkinnon suorittaneilla on noin 3 500-5 500 euroa kuukaudessa riippuen alasta ja työtehtävästä. Teknologia-alalla palkat voivat olla huomattavasti korkeammat (usein 4 500-7 000 euroa), kun taas humanistisilla ja yhteiskuntatieteellisillä aloilla palkkataso on yleensä alhaisempi mutta työllisyysnäkymät ovat kuitenkin hyvät. Korkeakoulututkinto avaa ovia myös johtotehtäviin ja erikoistuneisiin rooleihin, joissa vaaditaan syvällistä alan tuntemusta. Tutkijauralla tai akateemisessa työssä palkat voivat nousta merkittävästi korkeammiksi (usein 5 000-8 000 euroa), mutta polku vaatii myös jatko-opintoja ja kilpailu on kovaa.
+
+Yliopistokoulutuksen etuja ovat laaja yleissivistys, akateemisten taitojen kehitys ja mahdollisuus jatko-opintoihin. Yliopistossa saat myös mahdollisuuden tutustua tutkimustyöhön, osallistua kansainvälisiin vaihto-ohjelmiin ja rakentaa akateemista verkostoa, mikä voi olla merkittävä etu myöhemmässä urassa. Haasteena voi olla pidempi opiskeluaika verrattuna ammattikorkeakouluihin ja vähäisempi suora työelämäkytkös, mikä voi viivästyttää työllistymistä. Lisäksi yliopisto-opinnot vaativat huomattavan itsenäisen työskentelyn ja motivaation, mikä ei sovi kaikille. Yliopisto-opinnot ovat investointi - vaikka työllistyminen voi olla hieman hitaampaa, yliopistotutkinto tarjoaa yleensä paremmat mahdollisuudet pitkällä aikavälillä ja erikoistuneisiin työtehtäviin.`;
+    } else if (confidence === 'medium') {
+      reasoning = `Vastaustesi perusteella yliopisto-opinnot vaikuttavat sopivalta vaihtoehdolta. Näytät pitävän analyyttisestä ajattelusta ja syvällisestä oppimisesta, mikä sopii hyvin yliopistossa tarjottavaan koulutukseen. Yliopistokoulutus tarjoaa laajan yleissivistyksen ja vahvat akateemiset taidot, jotka avaavat monia mahdollisuuksia tulevaisuudessa sekä työelämässä että jatko-opinnoissa.
+
+Yliopisto-opinnot kestävät tyypillisesti 3-5 vuotta ja keskittyvät teoreettiseen tietämiseen sekä tutkimusmetodologian oppimiseen. Opiskelutapa on pääosin itsenäistä ja vaatii aktiivista osallistumista. Yliopistossa saat myös mahdollisuuden tutustua tutkimustyöhön ja mahdollisesti suorittaa jatko-opintoja.
+
+Työmarkkinanäkymät ovat yleisesti hyvät, ja keskimääräinen palkka vaihtelee aloittain. Teknologia- ja terveysaloilla työllisyysnäkymät ovat erityisen hyvät. Yliopistotutkinto avaa ovia myös johtotehtäviin ja erikoistuneisiin rooleihin.`;
+    } else {
+      reasoning = `Vastaustesi perusteella yliopisto-opinnot voisivat olla yksi vaihtoehto. Yliopistokoulutus sopii erityisesti, jos haluat syventää tietämystäsi tietyssä alassa ja harkitset mahdollisesti jatko-opintoja. Yliopistossa kehität vahvoja akateemisia taitoja ja saat laajan yleissivistyksen.
+
+Yliopisto-opinnot kestävät tyypillisesti 3-5 vuotta ja tarjoavat hyvät valmiudet monipuoliseen työelämään. Työmarkkinanäkymät ovat yleisesti hyvät, erityisesti teknologia- ja terveysaloilla.`;
+    }
+  } else if (primary === 'amk') {
+    if (confidence === 'high') {
+      reasoning = `Vastaustesi perusteella ammattikorkeakoulu-opinnot sopivat sinulle erittäin hyvin. Profiilisi osoittaa vahvan käytännönläheisyyden, konkreettisen ongelmanratkaisukyvyn ja halua oppia työelämään soveltuvia taitoja, mikä on täsmälleen sitä mitä AMK-koulutus tarjoaa. Ammattikorkeakouluissa opiskelutapa on käytännönläheinen ja työelämäprojekteja on runsaasti, mikä auttaa kehittämään työelämässä tarvittavia taitoja jo opiskelun aikana.
+
+AMK-opinnot kestävät tyypillisesti 3,5-4,5 vuotta ja johtavat ammattikorkeakoulututkintoon. Opiskelutapa yhdistää teoreettista tietämystä ja käytännön harjoittelua, ja työelämäprojekteja on merkittävässä osassa opintojasi (tyypillisesti 30-40% opintojaksoista). AMK-opinnoissa saat myös hyvät verkostomahdollisuudet työelämään ja mahdollisuuden työharjoitteluihin jo opiskelun aikana, mikä helpottaa merkittävästi työllistymistä valmistumisen jälkeen. Opiskelutapa on strukturoitumpi verrattuna yliopistoon, mikä voi sopia paremmin henkilöille, jotka haluavat selkeän opintopolun ja säännöllisemmän työrytmin.
+
+Työmarkkinanäkymät AMK-koulutukselle ovat erinomaiset. Suurin osa AMK-valmistuneista työllistyy nopeasti ja suoraan oman alansa töihin - työllisyysaste on yleensä 85-95% vuoden sisällä valmistumisesta. Keskimääräinen palkka AMK-tutkinnon suorittaneilla on noin 3 200-4 800 euroa kuukaudessa riippuen alasta. Teknologia-alalla palkat ovat yleensä korkeimmat (3 800-5 500 euroa), kun taas sosiaali- ja terveysalalla palkkataso on hieman alhaisempi mutta työllisyysnäkymät ovat erinomaiset. Aloittaminen työelämässä tapahtuu yleensä nopeasti, ja AMK-opinnot antavat myös hyvät valmiudet johtotehtäviin ja erikoistumiseen työelämässä. Ylempi AMK-tutkinto (ylempi ammattikorkeakoulututkinto) on myös mahdollisuus, mikä avaa ovia vielä korkeampiin johtotehtäviin.
+
+AMK-koulutuksen etuja ovat konkreettinen työelämäkytkös, nopea työllistyminen ja käytännönläheinen opiskelutapa. AMK-opinnoissa saat myös hyvät verkostomahdollisuudet ja työharjoittelujen kautta mahdollisuuden varmistaa, että ala sopii sinulle ennen valmistumista. Haasteena voi olla vähemmän syvällinen teoreettinen tietämys verrattuna yliopistoon ja rajoitetummat jatko-opintomahdollisuudet - AMK-opinnoista voi kuitenkin jatkaa yliopistoon, mutta se vaatii usein täydentäviä opintoja. Lisäksi akateeminen ura tai tutkijaura on vaikeampi AMK-opinnoista, jos sitä harkitset. AMK-koulutus sopii erityisesti henkilöille, jotka haluavat nopean työllistymisen ja konkreettisen työelämäkytköksen ilman että heidän tarvitsee luopua korkeakoulututkinnosta.`;
+    } else if (confidence === 'medium') {
+      reasoning = `Vastaustesi perusteella ammattikorkeakoulu-opinnot vaikuttavat sopivalta vaihtoehdolta. Näytät pitävän käytännönläheisestä oppimisesta ja konkreettisista työelämän taidoista, mikä sopii hyvin AMK-koulutukseen. Ammattikorkeakouluissa opiskelutapa on käytännönläheinen ja työelämäprojekteja on runsaasti, mikä auttaa kehittämään työelämässä tarvittavia taitoja.
+
+AMK-opinnot kestävät tyypillisesti 3,5-4,5 vuotta ja tarjoavat hyvät valmiudet työelämään. Työmarkkinanäkymät ovat erinomaiset ja työllistyminen tapahtuu yleensä nopeasti. Keskimääräinen palkka vaihtelee aloittain mutta on yleisesti kilpailukykyinen.`;
+    } else {
+      reasoning = `Vastaustesi perusteella ammattikorkeakoulu-opinnot voisivat olla yksi vaihtoehto. AMK-koulutus sopii erityisesti, jos haluat konkreettisen työelämäkytköksen ja nopean työllistymisen. AMK-opinnoissa opiskelutapa on käytännönläheinen ja työelämäprojekteja on runsaasti.
+
+AMK-opinnot kestävät tyypillisesti 3,5-4,5 vuotta ja tarjoavat hyvät valmiudet työelämään. Työmarkkinanäkymät ovat erinomaiset.`;
+    }
+  }
+
+  return reasoning;
+}
+
+/**
+ * Get education path description for UI
+ * Supports both YLA and TASO2 paths
+ */
+export function getEducationPathDescription(path: EducationPath, cohort?: Cohort): {
   title: string;
   description: string;
   duration: string;
   nextSteps: string[];
 } {
+  // TASO2 paths
+  if (path === 'yliopisto' || path === 'amk') {
+    switch (path) {
+      case 'yliopisto':
+        return {
+          title: 'Yliopisto-opinnot',
+          description: 'Akateeminen korkeakoulututkinto, joka tarjoaa syvällistä teoreettista tietämystä ja vahvoja akateemisia taitoja. Sopii erityisesti tutkimusmielisille ja analyyttisille henkilöille.',
+          duration: '3-5 vuotta (kandidaatti)',
+          nextSteps: [
+            'Maisterin tutkinto',
+            'Tohtorin tutkinto',
+            'Tutkijaura',
+            'Erikoistuneet työtehtävät'
+          ]
+        };
+      
+      case 'amk':
+        return {
+          title: 'Ammattikorkeakoulu',
+          description: 'Käytännönläheinen korkeakoulututkinto, joka yhdistää teoreettista tietämystä ja konkreettista työelämän taitoa. Opiskelutapa on käytännönläheinen ja työelämäprojekteja on runsaasti.',
+          duration: '3,5-4,5 vuotta',
+          nextSteps: [
+            'Suora työllistyminen',
+            'Ylempi AMK-tutkinto',
+            'Yliopisto-opinnot',
+            'Erikoistuminen työelämässä'
+          ]
+        };
+    }
+  }
+
+  // YLA paths
   switch (path) {
     case 'lukio':
       return {

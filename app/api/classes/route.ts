@@ -156,7 +156,7 @@ export async function GET(request: NextRequest) {
     if (error) {
       console.error('[API/Classes] Error fetching classes:', error);
       return NextResponse.json(
-        { success: false, error: 'Failed to fetch classes' },
+        { success: false, error: 'Luokkien haku epäonnistui' },
         { status: 500 }
       );
     }
@@ -169,7 +169,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('[API/Classes] GET unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }

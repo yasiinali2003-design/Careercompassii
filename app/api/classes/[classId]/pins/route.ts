@@ -30,14 +30,14 @@ export async function POST(
     // Validate input
     if (!classId) {
       return NextResponse.json(
-        { success: false, error: 'Missing classId' },
+        { success: false, error: 'Puuttuva luokka-tunniste' },
         { status: 400 }
       );
     }
 
     if (!count || typeof count !== 'number' || count < 1 || count > 100) {
       return NextResponse.json(
-        { success: false, error: 'Invalid count (must be 1-100)' },
+        { success: false, error: 'Virheellinen määrä (täytyy olla 1-100)' },
         { status: 400 }
       );
     }
@@ -73,7 +73,7 @@ export async function POST(
 
     if (classError || !classData) {
       return NextResponse.json(
-        { success: false, error: 'Class not found' },
+        { success: false, error: 'Luokkaa ei löydy' },
         { status: 404 }
       );
     }
@@ -121,7 +121,7 @@ export async function POST(
     if (insertError) {
       console.error('[API/Pins] Error creating PINs:', insertError);
       return NextResponse.json(
-        { success: false, error: 'Failed to create PINs' },
+        { success: false, error: 'PIN-koodien luominen epäonnistui' },
         { status: 500 }
       );
     }
@@ -137,7 +137,7 @@ export async function POST(
   } catch (error) {
     console.error('[API/Pins] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }
@@ -172,7 +172,7 @@ export async function GET(
     if (error) {
       console.error('[API/Pins] Error fetching PINs:', error);
       return NextResponse.json(
-        { success: false, error: 'Failed to fetch PINs' },
+        { success: false, error: 'PIN-koodien haku epäonnistui' },
         { status: 500 }
       );
     }
@@ -185,7 +185,7 @@ export async function GET(
   } catch (error) {
     console.error('[API/Pins] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }
