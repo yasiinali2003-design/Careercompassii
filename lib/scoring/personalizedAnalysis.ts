@@ -4,11 +4,7 @@
  * Makes users feel understood through cohesive storytelling
  */
 
-import { Cohort, DimensionScores, UserProfile, DetailedDimensionScores, TestAnswer } from './types';
-import { detectAnswerPatterns, generatePatternExplanation } from './answerPatterns';
-import { getQuestionMappings } from './dimensions';
-import { getAnswerLevel, getQuestionReference } from './languageHelpers';
-import { identifyDevelopmentAreas, generateGapAnalysisText } from './gapAnalysis';
+import { Cohort, DimensionScores, UserProfile, DetailedDimensionScores } from './types';
 
 // ========== HELPER FUNCTIONS ==========
 
@@ -46,13 +42,13 @@ const ESSAY_OPENINGS = {
     ],
     workstyle_high: [
       "Vastauksesi kertovat, että pidät käytännön tekemisestä ja siitä, että pääset heti toimintaan. Olet selvästi ihminen, joka haluaa nähdä työnsä tulokset konkreettisesti. Tämä käytännönläheinen ote on arvokas piirre.",
-      "Huomaa selvästi, että nautit aktiivisesta työskentelystä ja konkreettisista tehtävistä. Olet energinen tekijä, joka varmasti tulee viihty mään töissä, joissa pääsee liikkeelle ja tekemään asioita oikeasti.",
+      "Huomaa selvästi, että nautit aktiivisesta työskentelystä ja konkreettisista tehtävistä. Olet energinen tekijä, joka varmasti tulee viihtymään töissä, joissa pääsee liikkeelle ja tekemään asioita oikeasti.",
       "Vastauksistasi välittyy, että olet toiminnallinen ja käytännöllinen. Pidät siitä, kun asiat etenevät ja näet tuloksia. Tämä on juuri sellainen asenne, jota työelämässä arvostetaan."
     ],
     values_high: [
-      "Vastauksistasi huomaa, että sinulle on tärkeää tehdä asioita, joilla on merkitystä. On hienoa, että jo nuorena mietit, minkälainen työ tuntuisi omalta ja vastaisi arvojasi. tämä on viisautta.",
+      "Vastauksistasi huomaa, että sinulle on tärkeää tehdä asioita, joilla on merkitystä. On hienoa, että jo nuorena mietit, minkälainen työ tuntuisi omalta ja vastaisi arvojasi. Tämä on viisautta.",
       "Sinulle on selvästi tärkeää, että tekemäsi asiat tuntuvat oikeilta ja merkityksellisiltä. Tämä arvomaailma ohjaa sinua kohti uravalintoja, jotka tulevat varmasti tuntumaan aidosti omilta.",
-      "Vastauksistasi välittyy, että haluat tehdä asioita, jotka vastaavat omia arvoja si. Tämä kyky kuunnella itseään on tärkeä taito, joka auttaa sinua löytämään oman polkusi."
+      "Vastauksistasi välittyy, että haluat tehdä asioita, jotka vastaavat omia arvojasi. Tämä kyky kuunnella itseään on tärkeä taito, joka auttaa sinua löytämään oman polkusi."
     ]
   },
   TASO2: {
@@ -67,7 +63,7 @@ const ESSAY_OPENINGS = {
       "Vastauksistasi välittyy järjestelmällinen ja tavoitteellinen ote. Tiedät, miten työskentelet parhaiten, ja tämä tieto auttaa sinua valitsemaan sopivan oppimisympäristön ja työpaikan."
     ],
     values_high: [
-      "Vastauksistasi välittyy vahva arvomaailma, joka ohjaa sinua kohti uravalintoja, jotka tuntuvat oikeilta. On tärkeää, että etsit uraa, joka on linjassa omien periaatteidesi kanssa. tämä tuo pitkäaikaista työtyytyväisyyttä.",
+      "Vastauksistasi välittyy vahva arvomaailma, joka ohjaa sinua kohti uravalintoja, jotka tuntuvat oikeilta. On tärkeää, että etsit uraa, joka on linjassa omien periaatteidesi kanssa. Tämä tuo pitkäaikaista työtyytyväisyyttä.",
       "Sinulle on selvästi tärkeää, että tuleva urasi vastaa arvojasi ja periaatteitasi. Tämä tietoinen suhtautuminen urasuunnitteluun auttaa sinua tekemään valintoja, joita et tule katumaan.",
       "Vastauksistasi huomaa, että mietit työn merkityksellisyyttä ja sen yhteyttä omiin arvoihisi. Tämä pohdiskeleva ote on merkki kypsyydestä ja auttaa sinua rakentamaan uran, joka tuntuu aidosti omalta."
     ]
@@ -79,13 +75,13 @@ const ESSAY_OPENINGS = {
       "Vastauksistasi huomaa, että sinulla on selkeä visio siitä, mihin suuntaan haluat kehittyä. Tämä tavoitteellisuus ja ammatillinen suuntautuminen ovat tärkeitä tekijöitä uran rakentamisessa ja antavat sinulle vahvan lähtökohdan."
     ],
     workstyle_high: [
-      "Vastauksesi osoittavat, että sinulla on vahva ymmärrys omasta työskentelytavastasi ja sen vahvuuksista. Tämä itsetuntemus on keskeistä työelämässä menestymiselle. tiedät, missä ympäristössä ja millaisissa tehtävissä loistat parhaiten.",
+      "Vastauksesi osoittavat, että sinulla on vahva ymmärrys omasta työskentelytavastasi ja sen vahvuuksista. Tämä itsetuntemus on keskeistä työelämässä menestymiselle. Tiedät, missä ympäristössä ja millaisissa tehtävissä loistat parhaiten.",
       "Huomaa selvästi, että osaat hyödyntää vahvuuksiasi tehokkaasti ja työskennellä tavoitteellisesti. Nämä ovat ominaisuuksia, joita työnantajat arvostavat erityisesti, sillä ne kertovat kyvystäsi tuottaa tuloksia ja kehittää toimintaa.",
-      "Vastauksistasi välittyy kypsä ja ammattimainen ote työhön. Tiedostat omat vahvuutesi ja osaat soveltaa niitä käytäntöön. tämä reflektiivinen kyky on merkki korkean tason ammattilaisuudesta."
+      "Vastauksistasi välittyy kypsä ja ammattimainen ote työhön. Tiedostat omat vahvuutesi ja osaat soveltaa niitä käytäntöön. Tämä reflektiivinen kyky on merkki korkean tason ammattilaisuudesta."
     ],
     values_high: [
-      "Vastauksistasi välittyy selkeä ja harkittu arvomaailma, joka ohjaa uravalintojasi. On tärkeää, että etsit uraa, joka on linjassa periaatteidesi kanssa. tämä on avain pitkäaikaiseen työtyytyväisyyteen ja motivaatioon.",
-      "Sinulle on selvästi tärkeää, että urasi vastaa henkilökohtaisia arvoja si ja mahdollistaa niiden toteutumisen käytännössä. Tämä arvolähtöinen lähestymistapa uraan luo vahvan perustan merkitykselliselle ja palkitsevalle työuralle.",
+      "Vastauksistasi välittyy selkeä ja harkittu arvomaailma, joka ohjaa uravalintojasi. On tärkeää, että etsit uraa, joka on linjassa periaatteidesi kanssa. Tämä on avain pitkäaikaiseen työtyytyväisyyteen ja motivaatioon.",
+      "Sinulle on selvästi tärkeää, että urasi vastaa henkilökohtaisia arvojasi ja mahdollistaa niiden toteutumisen käytännössä. Tämä arvolähtöinen lähestymistapa uraan luo vahvan perustan merkitykselliselle ja palkitsevalle työuralle.",
       "Vastauksistasi huomaa, että mietit syvällisesti työn merkitystä ja sen yhteyttä omiin periaatteisiisi. Tämä tietoinen suhtautuminen on merkki kypsyydestä ja auttaa sinua rakentamaan uran, joka tuo todellista tyydytystä."
     ]
   }
@@ -119,7 +115,7 @@ const NARRATIVE_CONNECTORS = {
     ],
     interests_to_values: [
       "Tämä kiinnostus yhdistyy vahvasti siihen, mitä pidät tärkeänä tulevassa urassasi.",
-      "Kiinnostavaa on, miten tämä suuntautuminen sopii yhteen arvomaa ilmasi kanssa.",
+      "Kiinnostavaa on, miten tämä suuntautuminen sopii yhteen arvomaailmasi kanssa.",
       "Tämä motivaatio heijastaa myös sitä, minkälaista merkitystä haet työstäsi."
     ],
     workstyle_to_values: [
@@ -140,7 +136,7 @@ const NARRATIVE_CONNECTORS = {
       "Tämä motivaatio heijastaa myös sitä, minkälaista merkitystä ja vaikuttavuutta haet työstäsi."
     ],
     workstyle_to_values: [
-      "Tämä ammattimainen ja tavoitteellinen otteesi työskentelyyn tukee vahvasti arvomaa ilmaasi ja pitkän aikavälin tavoitteitasi.",
+      "Tämä ammattimainen ja tavoitteellinen otteesi työskentelyyn tukee vahvasti arvomaailmaasi ja pitkän aikavälin tavoitteitasi.",
       "Tapasi hyödyntää vahvuuksiasi heijastaa myös sitä, minkälaista uraa tavoittelet ja mihin haluat vaikuttaa.",
       "On selvästi nähtävissä, miten työskentelytapasi ja periaatteesi tukevat toisiaan luoden vahvan perustan urallesi."
     ]
@@ -154,12 +150,12 @@ const STRENGTH_NARRATIVES = {
     with_subdimensions: [
       "Kun katsoo tarkemmin, mitä vastauksistasi nousee esiin, {strengths} erottuvat erityisen vahvoina alueina. Olet selvästi ihminen, joka {subdim_quality}. Nämä taidot täydentävät toisiaan hienosti ja avaavat ovia monenlaisiin ammatteihin, joissa pääset hyödyntämään juuri näitä vahvuuksia.",
       "Erityisen vahvasti profiilissasi korostuvat {strengths}. Kun yhdistät nämä vahvuudet siihen, että {subdim_quality}, sinulla on todella hyvät edellytykset menestyä monenlaisissa tehtävissä. Nämä ovat taitoja, joita arvostetaan yhä enemmän työelämässä.",
-      "Vahvuutesi {strengths} nousevat selvästi esiin. On hienoa, että {subdim_quality}. tämä yhdistelmä on todella arvokas ja antaa sinulle hyvät mahdollisuudet monilla eri aloilla. Kannattaa ehdottomasti hyödyntää näitä vahvuuksia tulevaisuuden valinnoissa."
+      "Vahvuutesi {strengths} nousevat selvästi esiin. On hienoa, että {subdim_quality}. Tämä yhdistelmä on todella arvokas ja antaa sinulle hyvät mahdollisuudet monilla eri aloilla. Kannattaa ehdottomasti hyödyntää näitä vahvuuksia tulevaisuuden valinnoissa."
     ],
     without_subdimensions: [
       "Vahvuutesi {strengths} nousevat selvästi esiin vastauksistasi. Nämä taidot auttavat sinua monissa erilaisissa tehtävissä ja avaavat ovia monenlaisiin ammatteihin tulevaisuudessa.",
       "Profiilissasi korostuvat erityisesti {strengths}. Nämä ovat taitoja, joita arvostetaan yhä enemmän, ja sinulla on hienot edellytykset kehittää niitä edelleen.",
-      "Erityisen vahvasti esiin nousevat {strengths}. On hienoa, että nämä vahvuudet ovat jo nyt selkeästi tunnistettavissa. ne tulevat olemaan tärkeitä tulevaisuudessa."
+      "Erityisen vahvasti esiin nousevat {strengths}. On hienoa, että nämä vahvuudet ovat jo nyt selkeästi tunnistettavissa. Ne tulevat olemaan tärkeitä tulevaisuudessa."
     ]
   },
   TASO2: {
@@ -212,19 +208,19 @@ const FUTURE_ADVICE = {
 
 const RECOMMENDATION_INTROS = {
   YLA: [
-    "Näiden vahvuuksien ja kiinnostusten pohjalta alla näet muutamia ammatteja, jotka voisivat sopia sinulle. Muista, että nämä ovat vain ideoita ja esimerkkejä. sinä päätät oman polkusi, ja tulevaisuudessa voit yhdistää kiinnostuksen kohteesi monin eri tavoin!",
+    "Näiden vahvuuksien ja kiinnostusten pohjalta alla näet muutamia ammatteja, jotka voisivat sopia sinulle. Muista, että nämä ovat vain ideoita ja esimerkkejä. Sinä päätät oman polkusi, ja tulevaisuudessa voit yhdistää kiinnostuksen kohteesi monin eri tavoin!",
     "Olemme valinneet alla sinulle tutustuttavaksi muutamia ammatteja, jotka sopivat profiiliisi. Nämä ovat ehdotuksia, ei valmiita ratkaisuja. Tutki rohkeasti myös muita vaihtoehtoja ja anna itsellesi aikaa löytää se polku, joka tuntuu juuri sinun omalta!",
-    "Alla näet ammattiehdotuksia, jotka perustuvat vastauksiin. Ne on valittu sen mukaan, missä pääsisit hyödyntämään vahvuuksiasi. Pidä nämä suuntaa-antavina ideoina. lopullinen valinta ja päätös omasta tulevaisuudesta on aina sinun!"
+    "Alla näet ammattiehdotuksia, jotka perustuvat vastauksiin. Ne on valittu sen mukaan, missä pääsisit hyödyntämään vahvuuksiasi. Pidä nämä suuntaa-antavina ideoina. Lopullinen valinta ja päätös omasta tulevaisuudesta on aina sinun!"
   ],
   TASO2: [
     "Näiden vahvuuksien ja ominaisuuksien pohjalta alla näet ammattiehdotuksia, jotka vastaavat profiiliasi. Nämä ovat suosituksia, joita voit käyttää oman urasuunnittelusi tukena ja inspiraationa. Ne voivat auttaa hahmottamaan, millaisilla aloilla pääsisit hyödyntämään vahvuuksiasi parhaiten.",
     "Alla olevat ammatit on valittu vastaamaan profiiliasi ja vahvuuksiasi. Ne voivat olla sopiva lähtökohta oman urapolun kartoittamiseen ja jatko-opintojen suunnitteluun. Lopullinen päätös on tietenkin aina sinun, ja nämä toimivat parhaiten ideoina ja suuntaviivoina.",
-    "Olemme koonneet alla ammattiehdotuksia, jotka sopivat vahvuuksiisi ja kiinnostuksen kohteisiisi. Käytä niitä urasuunnittelun tukena ja inspiraationa. Tutki myös muita mielenkiintoisia vaihtoehtoja. polkuja on monia, ja voit löytää juuri sinulle sopivan yhdistelmän!"
+    "Olemme koonneet alla ammattiehdotuksia, jotka sopivat vahvuuksiisi ja kiinnostuksen kohteisiisi. Käytä niitä urasuunnittelun tukena ja inspiraationa. Tutki myös muita mielenkiintoisia vaihtoehtoja. Polkuja on monia, ja voit löytää juuri sinulle sopivan yhdistelmän!"
   ],
   NUORI: [
     "Näiden vahvuuksien ja ammatillisen profiilisi pohjalta alla näet urasuosituksia, jotka vastaavat ominaisuuksiasi. Nämä ovat ammatteja, joissa pääsisit hyödyntämään potentiaaliasi täysimääräisesti ja rakentamaan merkityksellistä uraa. Ne toimivat lähtökohtana urapolkusi suunnittelulle, mutta lopullinen valinta on luonnollisesti aina sinun.",
     "Alla näet ammattiehdotuksia, jotka vastaavat profiiliasi ja vahvuuksiasi. Nämä ovat suosituksia urasuunnittelun ja seuraavien urasiirtojen tueksi, ei lopullisia ratkaisuja. Ne voivat auttaa hahmottamaan, millaisilla poluilla voisit hyödyntää osaamistasi parhaiten ja rakentaa uraa, joka on linjassa arvojesi kanssa.",
-    "Olemme valinneet alla urasuosituksia, jotka perustuvat vahvuuksiisi ja ammatilliseen profiiliisi. Ne tarjoavat suuntaa uravalinnalle ja seuraavien askelten suunnitteluun. Käytä niitä inspiraationa ja tutki myös muita kiinnostavja mahdollisuuksia. päätös on aina sinun käsissäsi, ja voit rakentaa uraa strategisesti omien tavoitteidesi mukaan."
+    "Olemme valinneet alla urasuosituksia, jotka perustuvat vahvuuksiisi ja ammatilliseen profiiliisi. Ne tarjoavat suuntaa uravalinnalle ja seuraavien askelten suunnitteluun. Käytä niitä inspiraationa ja tutki myös muita kiinnostavja mahdollisuuksia. Päätös on aina sinun käsissäsi, ja voit rakentaa uraa strategisesti omien tavoitteidesi mukaan."
   ]
 };
 
@@ -285,8 +281,7 @@ const SUBDIMENSION_QUALITIES = {
 
 export function generatePersonalizedAnalysis(
   userProfile: UserProfile,
-  cohort: Cohort,
-  answers?: TestAnswer[]
+  cohort: Cohort
 ): string {
   const { dimensionScores, detailedScores, topStrengths } = userProfile;
   
@@ -307,15 +302,6 @@ export function generatePersonalizedAnalysis(
   if (openings && openings.length > 0) {
     const opening = openings[Math.floor(Math.random() * openings.length)];
     sections.push(opening);
-  }
-  
-  // 1.5. ANSWER PATTERN DETECTION (if answers provided) - Add insights about patterns
-  if (answers && detailedScores) {
-    const patterns = detectAnswerPatterns(answers, detailedScores, cohort);
-    const patternExplanation = generatePatternExplanation(patterns, cohort);
-    if (patternExplanation) {
-      sections.push(patternExplanation);
-    }
   }
   
   // 2. NARRATIVE CONNECTOR (100-150 chars) - Links dimensions
@@ -339,8 +325,8 @@ export function generatePersonalizedAnalysis(
     
     // Get top subdimensions for quality description
     const topSubs = [
-      ...getTopSubdimensions(detailedScores, 'interests', 2),
-      ...getTopSubdimensions(detailedScores, 'workstyle', 2)
+      ...getTopSubdimensions(detailedScores!, 'interests', 2),
+      ...getTopSubdimensions(detailedScores!, 'workstyle', 2)
     ];
     
     let subdimQuality = '';
@@ -364,47 +350,7 @@ export function generatePersonalizedAnalysis(
       if (hasSubdims) {
         narrative = narrative.replace('{subdim_quality}', subdimQuality);
       }
-      
-      // Add specific answer references if answers provided
-      if (answers && topSubs.length > 0) {
-        const mappings = getQuestionMappings(cohort);
-        const firstSubdim = topSubs[0];
-        const relatedAnswer = answers.find(a => {
-          const mapping = mappings.find(m => m.q === a.questionIndex);
-          return mapping && mapping.subdimension === firstSubdim && a.score >= 4;
-        });
-        
-        if (relatedAnswer) {
-          const mapping = mappings.find(m => m.q === relatedAnswer.questionIndex);
-          if (mapping) {
-            const answerLevel = getAnswerLevel(relatedAnswer.score, cohort);
-            const questionRef = cohort === 'YLA' 
-              ? `kun kysyimme että ${mapping.text.toLowerCase().replace('?', '')}`
-              : getQuestionReference(mapping.q, mapping.text, cohort);
-            
-            if (cohort === 'YLA') {
-              narrative += ` Muistatko ${questionRef}? Vastasit että ${answerLevel}!`;
-            } else if (cohort === 'TASO2') {
-              narrative += ` Erityisesti vastauksesi ${questionRef} oli ${answerLevel}.`;
-            } else {
-              narrative += ` Erityisesti ${questionRef} osoittaa ${answerLevel} kiinnostuksen.`;
-            }
-          }
-        }
-      }
-      
       sections.push(narrative);
-    }
-  }
-  
-  // 3.5. GAP ANALYSIS (if answers provided) - Development areas
-  if (answers && detailedScores) {
-    const developmentAreas = identifyDevelopmentAreas(answers, detailedScores, cohort);
-    if (developmentAreas.length > 0) {
-      const gapText = generateGapAnalysisText(developmentAreas, cohort);
-      if (gapText) {
-        sections.push(gapText);
-      }
     }
   }
   

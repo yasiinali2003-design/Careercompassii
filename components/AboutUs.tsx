@@ -323,19 +323,13 @@ const MeistSection = () => (
       </h2>
       <div className="space-y-4 max-w-prose">
         <p className="text-[#334155] leading-relaxed text-lg">
-          Olemme kolme 22-vuotiasta, jotka sekä opiskelevat että työskentelevät. Elämme siis samaa todellisuutta kuin ne nuoret, joita haluamme auttaa.
+          Olemme kolme 22-vuotiasta, jotka ovat omistaneet kaiken aikansa tämän tuotteen kehittämiselle. Elämme samaa todellisuutta kuin ne nuoret, joita haluamme auttaa, ja ymmärrämme heidän haasteensa syvästi.
         </p>
         <p className="text-[#334155] leading-relaxed text-lg">
           Olemme itse kokeneet, kuinka vaikeaa on löytää oma suunta ilman selkeää ohjausta ja kuinka paljon aikaa kuluu tietoa etsiessä eri aloista.
         </p>
         <p className="text-[#334155] leading-relaxed text-lg">
           Olemme nähneet läheltä, kuinka monet ystävämme lähtivät opiskelemaan hyväksynnän tunteen tai sosiaalisen paineen vuoksi, eivät aidosta kiinnostuksesta.
-        </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
-          Kasvoimme alueella, jossa on paljon maahanmuuttajataustaisia nuoria, joilla ei aina ole tukea tai tietoa suomalaisesta koulutusjärjestelmästä.
-        </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
-          Haluamme tarjota heille saman mahdollisuuden löytää oman polkunsa ja rakentaa tulevaisuuden, joka tuntuu omalta.
         </p>
         <p className="text-[#334155] leading-relaxed text-lg">
           CareerCompassin taustalla on aito halu ratkaista ongelma, jonka olemme itse kokeneet.
