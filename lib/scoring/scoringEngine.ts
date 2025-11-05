@@ -17,6 +17,7 @@ import { getQuestionMappings } from './dimensions';
 import { CAREER_VECTORS } from './careerVectors';
 import { careersData as careersFI } from '@/data/careers-fi';
 import { generatePersonalizedAnalysis } from './personalizedAnalysis';
+import { getAnswerLevel, getQuestionReference } from './languageHelpers';
 
 // ========== CATEGORY-SPECIFIC SUBDIMENSION WEIGHTS ==========
 
@@ -318,15 +319,18 @@ function calculateSubdimensionSimilarity(
 
 /**
  * Generate Finnish explanation for career match
+ * Now uses specific user answers instead of generic templates
  */
 export function generateReasons(
   career: any,
   careerFI: any,
   userDetailed: DetailedDimensionScores,
   dimensionScores: Record<string, number>,
-  cohort: Cohort
+  cohort: Cohort,
+  answers?: TestAnswer[]
 ): string[] {
   const reasons: string[] = [];
+  const mappings = answers ? getQuestionMappings(cohort) : [];
   
   // Find top user strengths
   const topUserInterests = getTopScores(userDetailed.interests, 2);
@@ -336,27 +340,90 @@ export function generateReasons(
   const topCareerInterests = getTopScores(career.interests, 2);
   const topCareerWorkstyle = getTopScores(career.workstyle, 2);
   
-  // Reason 1: Interest match (if strong)
+  // Reason 1: Interest match (if strong) - with specific answer reference
   if (dimensionScores.interests >= 70) {
     const matchedInterest = topUserInterests.find(([key]) => 
       topCareerInterests.some(([careerKey]) => careerKey === key)
     );
     
     if (matchedInterest) {
-      reasons.push(generateInterestReason(matchedInterest[0] as SubDimension, cohort));
+      const subdim = matchedInterest[0] as SubDimension;
+      
+      // Try to find a specific answer that matches this interest
+      if (answers && mappings.length > 0) {
+        const relatedAnswer = answers.find(a => {
+          const mapping = mappings.find(m => m.q === a.questionIndex);
+          return mapping && mapping.subdimension === subdim && a.score >= 4;
+        });
+        
+        if (relatedAnswer) {
+          const mapping = mappings.find(m => m.q === relatedAnswer.questionIndex);
+          if (mapping) {
+            const answerLevel = getAnswerLevel(relatedAnswer.score, cohort);
+            const questionRef = cohort === 'YLA'
+              ? `kun kysyimme että ${mapping.text.toLowerCase().replace('?', '')}`
+              : getQuestionReference(mapping.q, mapping.text, cohort);
+            
+            if (cohort === 'YLA') {
+              const subdimName = subdim === 'technology' ? 'koodaaminen' : subdim === 'people' ? 'ihmisten auttaminen' : subdim === 'creative' ? 'luovuus' : subdim;
+              reasons.push(`Koska vastasit että ${subdimName} kiinnostaa, pääset työskentelemään juuri siitä mikä sinua kiinnostaa! Muistatko ${questionRef}? Vastasit että ${answerLevel}!`);
+            } else if (cohort === 'TASO2') {
+              reasons.push(`Koska vastasit vahvasti ${subdim === 'technology' ? 'koodaamiseen' : subdim} (${questionRef}) ja teknologiaan, teknologiakiinnostuksesi on selkeä vahvuutesi. Tämä yhdistelmä sopii erinomaisesti tähän uraan.`);
+            } else {
+              reasons.push(`Vastauksesi ${subdim === 'technology' ? 'koodaamiseen' : subdim} (${questionRef}), teknologiaan ja ongelmien ratkaisuun muodostavat vahvan teknologia-profiilin, mikä tukee tätä urapolkua. Erityisesti ${questionRef} osoittaa ${answerLevel} kiinnostuksen.`);
+            }
+          } else {
+            reasons.push(generateInterestReason(subdim, cohort));
+          }
+        } else {
+          reasons.push(generateInterestReason(subdim, cohort));
+        }
+      } else {
+        reasons.push(generateInterestReason(subdim, cohort));
+      }
     } else if (topCareerInterests.length > 0) {
       reasons.push(generateInterestReason(topCareerInterests[0][0] as SubDimension, cohort));
     }
   }
   
-  // Reason 2: Workstyle match (if strong)
+  // Reason 2: Workstyle match (if strong) - with specific answer reference
   if (dimensionScores.workstyle >= 65) {
     const matchedWorkstyle = topUserWorkstyle.find(([key]) => 
       topCareerWorkstyle.some(([careerKey]) => careerKey === key)
     );
     
     if (matchedWorkstyle) {
-      reasons.push(generateWorkstyleReason(matchedWorkstyle[0] as SubDimension, cohort));
+      const subdim = matchedWorkstyle[0] as SubDimension;
+      
+      // Try to find a specific answer that matches this workstyle
+      if (answers && mappings.length > 0) {
+        const relatedAnswer = answers.find(a => {
+          const mapping = mappings.find(m => m.q === a.questionIndex);
+          return mapping && mapping.subdimension === subdim && a.score >= 4;
+        });
+        
+        if (relatedAnswer) {
+          const mapping = mappings.find(m => m.q === relatedAnswer.questionIndex);
+          if (mapping) {
+            const answerLevel = getAnswerLevel(relatedAnswer.score, cohort);
+            const questionRef = cohort === 'YLA'
+              ? `kun kysyimme että ${mapping.text.toLowerCase().replace('?', '')}`
+              : getQuestionReference(mapping.q, mapping.text, cohort);
+            
+            if (cohort === 'YLA') {
+              reasons.push(`Tapasi työskennellä sopii hyvin tähän ammattiin. Muistatko ${questionRef}? Vastasit että ${answerLevel}!`);
+            } else {
+              reasons.push(`Työskentelytapasi sopii hyvin. Erityisesti vastauksesi ${questionRef} oli ${answerLevel}, mikä tukee tätä ammattia.`);
+            }
+          } else {
+            reasons.push(generateWorkstyleReason(subdim, cohort));
+          }
+        } else {
+          reasons.push(generateWorkstyleReason(subdim, cohort));
+        }
+      } else {
+        reasons.push(generateWorkstyleReason(subdim, cohort));
+      }
     }
   }
   
@@ -763,6 +830,7 @@ function determineDominantCategory(
 /**
  * Rank all careers for a user and return top matches
  * Now focuses on careers from the user's dominant category
+ * Returns careers with dynamic count based on confidence levels
  */
 export function rankCareers(
   answers: TestAnswer[],
@@ -830,13 +898,14 @@ export function rankCareers(
     // Get full career data
     const careerFI = careersFI.find(c => c && c.id === careerVector.slug);
     
-    // Generate reasons
+    // Generate reasons (with answers for enhanced personalization)
     const reasons = generateReasons(
       careerVector,
       careerFI,
       detailedScores,
       dimScores,
-      cohort
+      cohort,
+      answers // Pass answers for enhanced reasons
     );
     
     // Determine confidence
@@ -885,19 +954,37 @@ export function rankCareers(
     return true;
   });
   
+  // Step 8: Dynamic count based on confidence levels
+  const highConfidence = deduplicatedCareers.filter(c => c.confidence === 'high');
+  const mediumConfidence = deduplicatedCareers.filter(c => c.confidence === 'medium');
+  
+  let dynamicLimit = limit;
+  
+  // Adjust count based on confidence distribution
+  if (highConfidence.length >= 5) {
+    // If we have many high-confidence matches, show more
+    dynamicLimit = Math.min(highConfidence.length, 7);
+  } else if (highConfidence.length >= 3 && mediumConfidence.length >= 3) {
+    // Mix of high and medium - show balanced count
+    dynamicLimit = Math.min(highConfidence.length + Math.floor(mediumConfidence.length / 2), 6);
+  } else if (highConfidence.length < 3 && mediumConfidence.length >= 5) {
+    // Mostly medium confidence - show more options
+    dynamicLimit = Math.min(mediumConfidence.length, 7);
+  }
+  
   // If we have enough careers from dominant category (3+), return only those
   if (categoryCareers.length >= 3) {
     const dominantOnly = deduplicatedCareers
       .filter(c => c.category === dominantCategory)
-      .slice(0, limit);
-    console.log(`[rankCareers] Returning ${dominantOnly.length} careers from dominant category "${dominantCategory}"`);
+      .slice(0, dynamicLimit);
+    console.log(`[rankCareers] Returning ${dominantOnly.length} careers from dominant category "${dominantCategory}" (dynamic limit: ${dynamicLimit})`);
     return dominantOnly;
   }
   
   // Otherwise, return mixed results but prioritize dominant category
-  const finalResults = deduplicatedCareers.slice(0, limit);
+  const finalResults = deduplicatedCareers.slice(0, dynamicLimit);
   const resultCategories = finalResults.map(c => c.category);
-  console.log(`[rankCareers] Returning ${finalResults.length} careers with categories: ${resultCategories.join(', ')} (category had only ${categoryCareers.length} careers)`);
+  console.log(`[rankCareers] Returning ${finalResults.length} careers with categories: ${resultCategories.join(', ')} (dynamic limit: ${dynamicLimit})`);
   
   return finalResults;
 }
@@ -930,8 +1017,8 @@ export function generateUserProfile(
     topStrengths
   };
   
-  // Generate personalized analysis text
-  const personalizedText = generatePersonalizedAnalysis(userProfile, cohort);
+  // Generate personalized analysis text (with answers for pattern detection)
+  const personalizedText = generatePersonalizedAnalysis(userProfile, cohort, answers);
   
   return {
     ...userProfile,

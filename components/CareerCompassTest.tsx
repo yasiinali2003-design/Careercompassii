@@ -34,7 +34,7 @@ const QUESTIONS = {
     "Haluaisitko olla johtaja ja tehdä tärkeitä päätöksiä?",
     "Kiinnostaako sinua rakentaminen ja asioiden korjaaminen?",
     "Haluaisitko auttaa sairaita tai loukkaantuneita ihmisiä?",
-    "Kiinnostaako sinua yritykset ja rahan ansaitseminen?",
+    "Haluaisitko työskennellä myynnissä tai asiakkaiden palvelemisessa?",
     // Section 4: Work Style (Q24-30)
     "Pidätkö työskentelystä ryhmässä muiden kanssa?",
     "Tykkäätkö tehdä asioita yksin ja itsenäisesti?",
@@ -42,7 +42,7 @@ const QUESTIONS = {
     "Pidätkö säännöllisestä päivärytmistä ja toistuvista rutiineista?",
     "Kiinnostaako sinua matkustaminen ja eri maiden näkeminen?",
     "Haluaisitko työssä tavata paljon uusia ihmisiä joka päivä?",
-    "Onko sinulle tärkeää, että voit tehdä töitä kotona tietokoneen ääressä?"
+    "Haluaisitko tehdä töitä kotona tietokoneen ääressä?"
   ],
   TASO2: [
     // Section 1: Tech & Digital (Q1-7)

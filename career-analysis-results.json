@@ -1,0 +1,1516 @@
+{
+  "totalCareers": 175,
+  "categoryDistribution": {
+    "luova": 26,
+    "rakentaja": 20,
+    "johtaja": 17,
+    "innovoija": 28,
+    "auttaja": 35,
+    "ympariston-puolustaja": 15,
+    "visionaari": 15,
+    "jarjestaja": 19
+  },
+  "qualityIssues": {
+    "placeholderSources": [
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "sisallontuottaja",
+        "title": "Sisällöntuottaja"
+      }
+    ],
+    "duplicates": [
+      {
+        "id": "tekoaly-asiantuntija",
+        "title": "Tekoäly-asiantuntija"
+      },
+      {
+        "id": "puuseppä",
+        "title": "Puuseppä"
+      },
+      {
+        "id": "sähköasentaja",
+        "title": "Sähköasentaja"
+      },
+      {
+        "id": "energiainsinoori",
+        "title": "Energiainsinööri"
+      },
+      {
+        "id": "sisällöntuottaja",
+        "title": "Sisällöntuottaja"
+      },
+      {
+        "id": "mobiilisovelluskehittäjä",
+        "title": "Mobiilisovelluskehittäjä"
+      },
+      {
+        "id": "tekoäly-asiantuntija",
+        "title": "Tekoäly-asiantuntija"
+      }
+    ]
+  },
+  "allCareers": [
+    {
+      "id": "graafinen-suunnittelija",
+      "title": "Graafinen suunnittelija",
+      "category": "luova"
+    },
+    {
+      "id": "sisallontuottaja",
+      "title": "Sisällöntuottaja",
+      "category": "luova"
+    },
+    {
+      "id": "muusikko",
+      "title": "Muusikko",
+      "category": "luova"
+    },
+    {
+      "id": "kameramies",
+      "title": "Kameramies",
+      "category": "luova"
+    },
+    {
+      "id": "kirjailija",
+      "title": "Kirjailija",
+      "category": "luova"
+    },
+    {
+      "id": "muotoilija",
+      "title": "Tuotemuotoilija",
+      "category": "luova"
+    },
+    {
+      "id": "animaattori",
+      "title": "Animaattori",
+      "category": "luova"
+    },
+    {
+      "id": "teatteriohjaaja",
+      "title": "Teatteriohjaaja",
+      "category": "luova"
+    },
+    {
+      "id": "valokuvaaja",
+      "title": "Valokuvaaja",
+      "category": "luova"
+    },
+    {
+      "id": "pukusuunnittelija",
+      "title": "Pukusuunnittelija",
+      "category": "luova"
+    },
+    {
+      "id": "rakennusmestari",
+      "title": "Rakennusmestari",
+      "category": "luova"
+    },
+    {
+      "id": "sahkonasentaja",
+      "title": "Sähköasentaja",
+      "category": "rakentaja"
+    },
+    {
+      "id": "putkiasentaja",
+      "title": "Putkiasentaja",
+      "category": "rakentaja"
+    },
+    {
+      "id": "puuseppa",
+      "title": "Puuseppä",
+      "category": "rakentaja"
+    },
+    {
+      "id": "maalari",
+      "title": "Maalari",
+      "category": "rakentaja"
+    },
+    {
+      "id": "kattomestari",
+      "title": "Kattomestari",
+      "category": "rakentaja"
+    },
+    {
+      "id": "lvi-asentaja",
+      "title": "LVI-asentaja",
+      "category": "rakentaja"
+    },
+    {
+      "id": "talonrakentaja",
+      "title": "Talonrakentaja",
+      "category": "rakentaja"
+    },
+    {
+      "id": "betonityontekija",
+      "title": "Betonityöntekijä",
+      "category": "rakentaja"
+    },
+    {
+      "id": "rakennusvalvoja",
+      "title": "Rakennusvalvoja",
+      "category": "rakentaja"
+    },
+    {
+      "id": "projektipäällikkö",
+      "title": "Projektipäällikkö",
+      "category": "rakentaja"
+    },
+    {
+      "id": "myyntipäällikkö",
+      "title": "Myyntipäällikkö",
+      "category": "johtaja"
+    },
+    {
+      "id": "henkilöstöpäällikkö",
+      "title": "Henkilöstöpäällikkö",
+      "category": "johtaja"
+    },
+    {
+      "id": "tuotantopäällikkö",
+      "title": "Tuotantopäällikkö",
+      "category": "johtaja"
+    },
+    {
+      "id": "markkinointipäällikkö",
+      "title": "Markkinointipäällikkö",
+      "category": "johtaja"
+    },
+    {
+      "id": "talouspäällikkö",
+      "title": "Talouspäällikkö",
+      "category": "johtaja"
+    },
+    {
+      "id": "asiakaspalvelupäällikkö",
+      "title": "Asiakaspalvelupäällikkö",
+      "category": "johtaja"
+    },
+    {
+      "id": "tietoturvapäällikkö",
+      "title": "Tietoturvapäällikkö",
+      "category": "johtaja"
+    },
+    {
+      "id": "laadunpäällikkö",
+      "title": "Laadunpäällikkö",
+      "category": "johtaja"
+    },
+    {
+      "id": "kehityspäällikkö",
+      "title": "Kehityspäällikkö",
+      "category": "johtaja"
+    },
+    {
+      "id": "data-insinööri",
+      "title": "Data-insinööri",
+      "category": "johtaja"
+    },
+    {
+      "id": "tekoälyasiantuntija",
+      "title": "Tekoälyasiantuntija",
+      "category": "innovoija"
+    },
+    {
+      "id": "pelisuunnittelija",
+      "title": "Pelisuunnittelija",
+      "category": "innovoija"
+    },
+    {
+      "id": "robotiikka-insinööri",
+      "title": "Robotiikka-insinööri",
+      "category": "innovoija"
+    },
+    {
+      "id": "biotekniikka-insinööri",
+      "title": "Biotekniikka-insinööri",
+      "category": "innovoija"
+    },
+    {
+      "id": "energiainsinööri",
+      "title": "Energiainsinööri",
+      "category": "innovoija"
+    },
+    {
+      "id": "nanotekniikka-insinööri",
+      "title": "Nanotekniikka-insinööri",
+      "category": "innovoija"
+    },
+    {
+      "id": "kvantti-insinööri",
+      "title": "Kvantti-insinööri",
+      "category": "innovoija"
+    },
+    {
+      "id": "blockchain-insinööri",
+      "title": "Blockchain-insinööri",
+      "category": "innovoija"
+    },
+    {
+      "id": "virtuaalitodellisuus-insinööri",
+      "title": "Virtuaalitodellisuus-insinööri",
+      "category": "innovoija"
+    },
+    {
+      "id": "automaatio-insinööri",
+      "title": "Automaatio-insinööri",
+      "category": "innovoija"
+    },
+    {
+      "id": "sairaanhoitaja",
+      "title": "Sairaanhoitaja",
+      "category": "innovoija"
+    },
+    {
+      "id": "luokanopettaja",
+      "title": "Luokanopettaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "sosiaalityöntekijä",
+      "title": "Sosiaalityöntekijä",
+      "category": "auttaja"
+    },
+    {
+      "id": "psykologi",
+      "title": "Psykologi",
+      "category": "auttaja"
+    },
+    {
+      "id": "fysioterapeutti",
+      "title": "Fysioterapeutti",
+      "category": "auttaja"
+    },
+    {
+      "id": "lastentarhanopettaja",
+      "title": "Lastentarhanopettaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "kuntoutusohjaaja",
+      "title": "Kuntoutusohjaaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "perhetyöntekijä",
+      "title": "Perhetyöntekijä",
+      "category": "auttaja"
+    },
+    {
+      "id": "vanhustenhoitaja",
+      "title": "Vanhustenhoitaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "kriisityöntekijä",
+      "title": "Kriisityöntekijä",
+      "category": "auttaja"
+    },
+    {
+      "id": "ympäristöinsinööri",
+      "title": "Ympäristöinsinööri",
+      "category": "auttaja"
+    },
+    {
+      "id": "ilmastotutkija",
+      "title": "Ilmastotutkija",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "luonnonsuojelija",
+      "title": "Luonnonsuojelija",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "uusiutuva-energia-insinööri",
+      "title": "Uusiutuva energia -insinööri",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "ympäristökasvattaja",
+      "title": "Ympäristökasvattaja",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "vesi-insinööri",
+      "title": "Vesi-insinööri",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "hiilijalanjälki-asiantuntija",
+      "title": "Hiilijalanjälki-asiantuntija",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "ympäristöjuristi",
+      "title": "Ympäristöjuristi",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "biologinen-monimuotoisuus-asiantuntija",
+      "title": "Biologinen monimuotoisuus -asiantuntija",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "kestävän-kehityksen-koordinaattori",
+      "title": "Kestävän kehityksen koordinaattori",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "futuristi",
+      "title": "Futuristi",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "strategia-konsultti",
+      "title": "Strategia-konsultti",
+      "category": "visionaari"
+    },
+    {
+      "id": "innovaatiojohtaja",
+      "title": "Innovaatiojohtaja",
+      "category": "visionaari"
+    },
+    {
+      "id": "tulevaisuuden-suunnittelija",
+      "title": "Tulevaisuuden suunnittelija",
+      "category": "visionaari"
+    },
+    {
+      "id": "digitaalinen-muutosjohtaja",
+      "title": "Digitaalinen muutosjohtaja",
+      "category": "visionaari"
+    },
+    {
+      "id": "tulevaisuuden-tutkija",
+      "title": "Tulevaisuuden tutkija",
+      "category": "visionaari"
+    },
+    {
+      "id": "strateginen-suunnittelija",
+      "title": "Strateginen suunnittelija",
+      "category": "visionaari"
+    },
+    {
+      "id": "tulevaisuuden-visio-johtaja",
+      "title": "Tulevaisuuden visio-johtaja",
+      "category": "visionaari"
+    },
+    {
+      "id": "tulevaisuuden-teknologia-asiantuntija",
+      "title": "Tulevaisuuden teknologia-asiantuntija",
+      "category": "visionaari"
+    },
+    {
+      "id": "tulevaisuuden-yhteiskunta-asiantuntija",
+      "title": "Tulevaisuuden yhteiskunta-asiantuntija",
+      "category": "visionaari"
+    },
+    {
+      "id": "tapahtumakoordinaattori",
+      "title": "Tapahtumakoordinaattori",
+      "category": "visionaari"
+    },
+    {
+      "id": "toimistosihteeri",
+      "title": "Toimistosihteeri",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "logistiikkakoordinaattori",
+      "title": "Logistiikkakoordinaattori",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "henkilöstöasiantuntija",
+      "title": "Henkilöstöasiantuntija",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "taloushallinnon-asiantuntija",
+      "title": "Taloushallinnon asiantuntija",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "laadunhallinnan-koordinaattori",
+      "title": "Laadunhallinnan koordinaattori",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "asiakaspalvelun-koordinaattori",
+      "title": "Asiakaspalvelun koordinaattori",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "tietohallinnon-koordinaattori",
+      "title": "Tietohallinnon koordinaattori",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "hallinnon-koordinaattori",
+      "title": "Hallinnon koordinaattori",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "lapsenhoitaja",
+      "title": "Lapsenhoitaja",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "apteekkari",
+      "title": "Apteekkari",
+      "category": "auttaja"
+    },
+    {
+      "id": "tietoturva-asiantuntija",
+      "title": "Tietoturva-asiantuntija",
+      "category": "auttaja"
+    },
+    {
+      "id": "tietokantasuunnittelija",
+      "title": "Tietokantasuunnittelija",
+      "category": "innovoija"
+    },
+    {
+      "id": "mobiilisovelluskehittaja",
+      "title": "Mobiilisovelluskehittäjä",
+      "category": "innovoija"
+    },
+    {
+      "id": "verkkoasiantuntija",
+      "title": "Verkkoasiantuntija",
+      "category": "innovoija"
+    },
+    {
+      "id": "tekoaly-asiantuntija",
+      "title": "Tekoäly-asiantuntija",
+      "category": "innovoija"
+    },
+    {
+      "id": "rakennusinsinoori",
+      "title": "Rakennusinsinööri",
+      "category": "innovoija"
+    },
+    {
+      "id": "puuseppä",
+      "title": "Puuseppä",
+      "category": "rakentaja"
+    },
+    {
+      "id": "opettaja",
+      "title": "Opettaja",
+      "category": "rakentaja"
+    },
+    {
+      "id": "varhaiskasvatuksen-opettaja",
+      "title": "Varhaiskasvatuksen opettaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "ammattikoulun-opettaja",
+      "title": "Ammattikoulun opettaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "kielten-opettaja",
+      "title": "Kielten opettaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "erityisopettaja",
+      "title": "Erityisopettaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "kuorma-auton-kuljettaja",
+      "title": "Kuorma-auton kuljettaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "varastotyöntekijä",
+      "title": "Varastotyöntekijä",
+      "category": "rakentaja"
+    },
+    {
+      "id": "jakelukuljettaja",
+      "title": "Jakelukuljettaja",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "kuljetuskoordinaattori",
+      "title": "Kuljetuskoordinaattori",
+      "category": "rakentaja"
+    },
+    {
+      "id": "sähköasentaja",
+      "title": "Sähköasentaja",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "energiainsinoori",
+      "title": "Energiainsinööri",
+      "category": "rakentaja"
+    },
+    {
+      "id": "aurinkoenergia-asentaja",
+      "title": "Aurinkoenergia-asentaja",
+      "category": "innovoija"
+    },
+    {
+      "id": "energiakonsultti",
+      "title": "Energiakonsultti",
+      "category": "rakentaja"
+    },
+    {
+      "id": "energia-asiantuntija",
+      "title": "Energia-asiantuntija",
+      "category": "visionaari"
+    },
+    {
+      "id": "digitaalisen-markkinoinnin-asiantuntija",
+      "title": "Digitaalisen markkinoinnin asiantuntija",
+      "category": "visionaari"
+    },
+    {
+      "id": "brändisuunnittelija",
+      "title": "Brändisuunnittelija",
+      "category": "innovoija"
+    },
+    {
+      "id": "ympäristöasiantuntija",
+      "title": "Ympäristöasiantuntija",
+      "category": "luova"
+    },
+    {
+      "id": "tuotesuunnittelija",
+      "title": "Tuotesuunnittelija",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "viestintäpäällikkö",
+      "title": "Viestintäpäällikkö",
+      "category": "luova"
+    },
+    {
+      "id": "data-analyytikko",
+      "title": "Data-analyytikko",
+      "category": "johtaja"
+    },
+    {
+      "id": "hr-asiantuntija",
+      "title": "HR-asiantuntija",
+      "category": "innovoija"
+    },
+    {
+      "id": "liiketoimintakehittäjä",
+      "title": "Liiketoimintakehittäjä",
+      "category": "auttaja"
+    },
+    {
+      "id": "koulutussuunnittelija",
+      "title": "Koulutussuunnittelija",
+      "category": "innovoija"
+    },
+    {
+      "id": "tuotepäällikkö",
+      "title": "Tuotepäällikkö",
+      "category": "auttaja"
+    },
+    {
+      "id": "konsultti",
+      "title": "Konsultti",
+      "category": "johtaja"
+    },
+    {
+      "id": "tutkimusasiantuntija",
+      "title": "Tutkimusasiantuntija",
+      "category": "innovoija"
+    },
+    {
+      "id": "laadunvalvonta-asiantuntija",
+      "title": "Laadunvalvonta-asiantuntija",
+      "category": "visionaari"
+    },
+    {
+      "id": "asiakasvastaava",
+      "title": "Asiakasvastaava",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "tietojärjestelmäasiantuntija",
+      "title": "Tietojärjestelmäasiantuntija",
+      "category": "auttaja"
+    },
+    {
+      "id": "talousasiantuntija",
+      "title": "Talousasiantuntija",
+      "category": "innovoija"
+    },
+    {
+      "id": "henkilöstökoordinaattori",
+      "title": "Henkilöstökoordinaattori",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "myyntiedustaja",
+      "title": "Myyntiedustaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "markkinointikoordinaattori",
+      "title": "Markkinointikoordinaattori",
+      "category": "innovoija"
+    },
+    {
+      "id": "projektikoordinaattori",
+      "title": "Projektikoordinaattori",
+      "category": "innovoija"
+    },
+    {
+      "id": "asiakaspalveluedustaja",
+      "title": "Asiakaspalveluedustaja",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "sisällöntuottaja",
+      "title": "Sisällöntuottaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "mobiilisovelluskehittäjä",
+      "title": "Mobiilisovelluskehittäjä",
+      "category": "luova"
+    },
+    {
+      "id": "tekoäly-asiantuntija",
+      "title": "Tekoäly-asiantuntija",
+      "category": "innovoija"
+    },
+    {
+      "id": "tuotantoteknikko",
+      "title": "Tuotantoteknikko",
+      "category": "innovoija"
+    },
+    {
+      "id": "automaatioteknikko",
+      "title": "Automaatioteknikko",
+      "category": "rakentaja"
+    },
+    {
+      "id": "teollisuusinsinoori",
+      "title": "Teollisuusinsinööri",
+      "category": "innovoija"
+    },
+    {
+      "id": "asiakaspalvelu-asiantuntija",
+      "title": "Asiakaspalvelu-asiantuntija",
+      "category": "innovoija"
+    },
+    {
+      "id": "hotellityöntekijä",
+      "title": "Hotellityöntekijä",
+      "category": "auttaja"
+    },
+    {
+      "id": "ravintolatyöntekijä",
+      "title": "Ravintolatyöntekijä",
+      "category": "auttaja"
+    },
+    {
+      "id": "siivooja",
+      "title": "Siivooja",
+      "category": "auttaja"
+    },
+    {
+      "id": "turvallisuusvastaava",
+      "title": "Turvallisuusvastaava",
+      "category": "rakentaja"
+    },
+    {
+      "id": "pankkivirkailija",
+      "title": "Pankkivirkailija",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "rahoitusneuvonantaja",
+      "title": "Rahoitusneuvonantaja",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "vakuutusasiamies",
+      "title": "Vakuutusasiamies",
+      "category": "visionaari"
+    },
+    {
+      "id": "kirjanpitäjä",
+      "title": "Kirjanpitäjä",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "rahoitusanalyytikko",
+      "title": "Rahoitusanalyytikko",
+      "category": "jarjestaja"
+    },
+    {
+      "id": "lääkäri",
+      "title": "Lääkäri",
+      "category": "visionaari"
+    },
+    {
+      "id": "hammaslääkäri",
+      "title": "Hammaslääkäri",
+      "category": "auttaja"
+    },
+    {
+      "id": "eläinlääkäri",
+      "title": "Eläinlääkäri",
+      "category": "auttaja"
+    },
+    {
+      "id": "farmaseutti",
+      "title": "Farmaseutti",
+      "category": "auttaja"
+    },
+    {
+      "id": "röntgenhoitaja",
+      "title": "Röntgenhoitaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "laboratoriohoitaja",
+      "title": "Laboratoriohoitaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "lähihoitaja",
+      "title": "Lähihoitaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "ensihoitaja",
+      "title": "Ensihoitaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "kätilö",
+      "title": "Kätilö",
+      "category": "auttaja"
+    },
+    {
+      "id": "mielenterveyshoitaja",
+      "title": "Mielenterveyshoitaja",
+      "category": "auttaja"
+    },
+    {
+      "id": "mainostoimiston-art-director",
+      "title": "Mainostoimiston Art Director",
+      "category": "auttaja"
+    },
+    {
+      "id": "äänisuunnittelija",
+      "title": "Äänisuunnittelija",
+      "category": "luova"
+    },
+    {
+      "id": "koreografi",
+      "title": "Koreografi",
+      "category": "luova"
+    },
+    {
+      "id": "kuvataiteilija",
+      "title": "Kuvataiteilija",
+      "category": "luova"
+    },
+    {
+      "id": "näyttelijä",
+      "title": "Näyttelijä",
+      "category": "luova"
+    },
+    {
+      "id": "valosuunnittelija",
+      "title": "Valosuunnittelija",
+      "category": "luova"
+    },
+    {
+      "id": "käsikirjoittaja",
+      "title": "Käsikirjoittaja",
+      "category": "luova"
+    },
+    {
+      "id": "tuottaja-media",
+      "title": "Mediatuottaja",
+      "category": "luova"
+    },
+    {
+      "id": "leikkausartisti",
+      "title": "Leikkausartisti",
+      "category": "luova"
+    },
+    {
+      "id": "dokumentaristi",
+      "title": "Dokumentaristi",
+      "category": "luova"
+    },
+    {
+      "id": "podcast-tuottaja",
+      "title": "Podcast-tuottaja",
+      "category": "luova"
+    },
+    {
+      "id": "lavastaja",
+      "title": "Lavastaja",
+      "category": "luova"
+    },
+    {
+      "id": "ympäristötarkastaja",
+      "title": "Ympäristötarkastaja",
+      "category": "luova"
+    },
+    {
+      "id": "vesiensuojeluasiantuntija",
+      "title": "Vesiensuojeluasiantuntija",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "jätehuoltoasiantuntija",
+      "title": "Jätehuoltoasiantuntija",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "metsänhoitaja",
+      "title": "Metsänhoitaja",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "toimitusjohtaja",
+      "title": "Toimitusjohtaja",
+      "category": "ympariston-puolustaja"
+    },
+    {
+      "id": "talousjohtaja",
+      "title": "Talousjohtaja",
+      "category": "johtaja"
+    },
+    {
+      "id": "teknologiajohtaja",
+      "title": "Teknologiajohtaja",
+      "category": "johtaja"
+    },
+    {
+      "id": "operatiivinen-johtaja",
+      "title": "Operatiivinen johtaja",
+      "category": "johtaja"
+    },
+    {
+      "id": "liiketoimintajohtaja",
+      "title": "Liiketoimintajohtaja",
+      "category": "johtaja"
+    },
+    {
+      "id": "kirvesmies",
+      "title": "Kirvesmies",
+      "category": "johtaja"
+    },
+    {
+      "id": "maanrakennuskoneen-kuljettaja",
+      "title": "Maanrakennuskoneen kuljettaja",
+      "category": "rakentaja"
+    },
+    {
+      "id": "tapahtumajärjestäjä",
+      "title": "Tapahtumajärjestäjä",
+      "category": "rakentaja"
+    },
+    {
+      "id": "tilauspalvelukoordinaattori",
+      "title": "Tilauspalvelukoordinaattori",
+      "category": "jarjestaja"
+    }
+  ]
+}

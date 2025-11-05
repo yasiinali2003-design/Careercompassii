@@ -223,7 +223,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 22,
-    text: "Kiinnostaako sinua yritykset ja rahan ansaitseminen?",
+    text: "Haluaisitko työskennellä myynnissä tai asiakkaiden palvelemisessa?",
     dimension: 'values',
     subdimension: 'financial',
     weight: 1.0,
@@ -288,7 +288,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 29,
-    text: "Onko sinulle tärkeää, että voit tehdä töitä kotona tietokoneen ääressä?",
+    text: "Haluaisitko tehdä töitä kotona tietokoneen ääressä?",
     dimension: 'context',
     subdimension: 'work_environment',
     weight: 0.8,

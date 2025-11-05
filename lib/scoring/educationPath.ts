@@ -9,6 +9,7 @@
 
 import { TestAnswer, Cohort } from './types';
 import { getQuestionMappings } from './dimensions';
+import { getAnswerLevel, getQuestionReference } from './languageHelpers';
 
 export type YLAEducationPath = 'lukio' | 'ammattikoulu' | 'kansanopisto';
 export type TASO2EducationPath = 'yliopisto' | 'amk';
@@ -46,7 +47,7 @@ export function calculateEducationPath(answers: TestAnswer[], cohort: Cohort): E
   if (cohort === 'YLA') {
     return calculateYLAPath(answers);
   } else if (cohort === 'TASO2') {
-    return calculateTASO2Path(answers);
+    return calculateTASO2Path(answers, cohort);
   }
   return null; // NUORI doesn't get education paths
 }
@@ -219,7 +220,7 @@ function calculateYLAPath(answers: TestAnswer[]): YLAEducationPathResult | null 
  * 
  * All 30 questions are evenly distributed (50/50) between yliopisto and amk
  */
-function calculateTASO2Path(answers: TestAnswer[]): TASO2EducationPathResult | null {
+function calculateTASO2Path(answers: TestAnswer[], cohort: Cohort): TASO2EducationPathResult | null {
   if (answers.length === 0) {
     return null;
   }
@@ -436,7 +437,7 @@ function calculateTASO2Path(answers: TestAnswer[]): TASO2EducationPathResult | n
   }
 
   // Generate detailed reasoning
-  const reasoning = generateTASO2Reasoning(primary, scores, confidence);
+  const reasoning = generateTASO2Reasoning(primary, scores, confidence, answers, cohort);
 
   return {
     primary,
@@ -508,12 +509,33 @@ function generateYLAReasoning(
 function generateTASO2Reasoning(
   primary: TASO2EducationPath,
   scores: { yliopisto: number; amk: number },
-  confidence: 'high' | 'medium' | 'low'
+  confidence: 'high' | 'medium' | 'low',
+  answers: TestAnswer[],
+  cohort: Cohort
 ): string {
   const yliopistoScore = Math.round(scores.yliopisto);
   const amkScore = Math.round(scores.amk);
+  const mappings = getQuestionMappings(cohort);
 
   let reasoning = '';
+
+  // Find key answers that influenced the recommendation
+  const keyAnswers: Array<{index: number, score: number, text: string}> = [];
+  
+  // Find answers that strongly favor the primary path
+  answers.forEach(answer => {
+    const mapping = mappings.find(m => m.q === answer.questionIndex);
+    if (mapping && answer.score >= 4) {
+      if (primary === 'yliopisto' && (answer.questionIndex === 0 || answer.questionIndex === 6 || answer.questionIndex === 8 || answer.questionIndex === 17 || answer.questionIndex === 29)) {
+        keyAnswers.push({ index: answer.questionIndex, score: answer.score, text: mapping.text });
+      } else if (primary === 'amk' && (answer.questionIndex === 2 || answer.questionIndex === 4 || answer.questionIndex === 7 || answer.questionIndex === 11 || answer.questionIndex === 20)) {
+        keyAnswers.push({ index: answer.questionIndex, score: answer.score, text: mapping.text });
+      }
+    }
+  });
+
+  // Limit to top 2-3 key answers
+  const topAnswers = keyAnswers.slice(0, 2);
 
   if (primary === 'yliopisto') {
     if (confidence === 'high') {
@@ -553,6 +575,17 @@ AMK-opinnot kestävät tyypillisesti 3,5-4,5 vuotta ja tarjoavat hyvät valmiude
 
 AMK-opinnot kestävät tyypillisesti 3,5-4,5 vuotta ja tarjoavat hyvät valmiudet työelämään. Työmarkkinanäkymät ovat erinomaiset.`;
     }
+  }
+
+  // Add answer references to reasoning if we have key answers
+  if (topAnswers.length > 0 && cohort === 'TASO2') {
+    const answerRefs = topAnswers.map(a => {
+      const answerLevel = getAnswerLevel(a.score, cohort);
+      const questionRef = getQuestionReference(a.index, a.text, cohort);
+      return `${questionRef} (${answerLevel})`;
+    }).join(' ja ');
+    
+    reasoning = `Koska vastasit vahvasti että ${topAnswers[0].text.toLowerCase().replace('?', '')} (${getQuestionReference(topAnswers[0].index, topAnswers[0].text, cohort)}) ja ${topAnswers.length > 1 ? topAnswers[1].text.toLowerCase().replace('?', '') : 'muihin kysymyksiin'}, ${primary === 'yliopisto' ? 'yliopisto' : 'AMK'} sopii profiiliisi. Lisäksi vastauksesi siihen että ${topAnswers.length > 1 ? topAnswers[1].text.toLowerCase().replace('?', '') : 'muihin kysymyksiin'} tukee tätä valintaa. ` + reasoning;
   }
 
   return reasoning;
@@ -639,4 +672,5 @@ export function getEducationPathDescription(path: EducationPath, cohort?: Cohort
       };
   }
 }
+
 

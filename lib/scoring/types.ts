@@ -171,3 +171,46 @@ export interface ScoringAPIResponse {
   error?: string;
 }
 
+// ========== PERSONALIZATION TYPES ==========
+
+export interface AnswerPatterns {
+  consistentPreferences: string[];
+  conflicts: Array<{area1: string, area2: string, explanation: string}>;
+  growthAreas: Array<{area: string, currentLevel: string, potential: string}>;
+}
+
+export interface StrengthAnswerMapping {
+  strength: string;
+  questionReferences: Array<{questionNumber: number, questionText: string, answerLevel: string}>;
+  explanation: string;
+}
+
+export interface CareerComparison {
+  career1: string;
+  career2: string;
+  keyDifferences: Array<{aspect: string, career1Value: string, career2Value: string}>;
+  recommendation: string;
+}
+
+export interface DevelopmentArea {
+  area: string;
+  currentLevel: string;
+  explanation: string;
+  improvementSteps: string[];
+}
+
+export interface PersonalizedNextSteps {
+  immediate: string[];
+  shortTerm: string[];
+  longTerm: string[];
+  resources: Array<{name: string, url: string, description: string}>;
+}
+
+export interface ConfidenceExplanation {
+  level: 'high' | 'medium' | 'low';
+  factors: Array<{factor: string, explanation: string}>;
+  text: string;
+}
+
+export type ConfidenceLevel = 'high' | 'medium' | 'low';
+

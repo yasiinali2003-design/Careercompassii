@@ -4,7 +4,11 @@
  * Makes users feel understood through cohesive storytelling
  */
 
-import { Cohort, DimensionScores, UserProfile, DetailedDimensionScores } from './types';
+import { Cohort, DimensionScores, UserProfile, DetailedDimensionScores, TestAnswer } from './types';
+import { detectAnswerPatterns, generatePatternExplanation } from './answerPatterns';
+import { getQuestionMappings } from './dimensions';
+import { getAnswerLevel, getQuestionReference } from './languageHelpers';
+import { identifyDevelopmentAreas, generateGapAnalysisText } from './gapAnalysis';
 
 // ========== HELPER FUNCTIONS ==========
 
@@ -281,7 +285,8 @@ const SUBDIMENSION_QUALITIES = {
 
 export function generatePersonalizedAnalysis(
   userProfile: UserProfile,
-  cohort: Cohort
+  cohort: Cohort,
+  answers?: TestAnswer[]
 ): string {
   const { dimensionScores, detailedScores, topStrengths } = userProfile;
   
@@ -302,6 +307,15 @@ export function generatePersonalizedAnalysis(
   if (openings && openings.length > 0) {
     const opening = openings[Math.floor(Math.random() * openings.length)];
     sections.push(opening);
+  }
+  
+  // 1.5. ANSWER PATTERN DETECTION (if answers provided) - Add insights about patterns
+  if (answers && detailedScores) {
+    const patterns = detectAnswerPatterns(answers, detailedScores, cohort);
+    const patternExplanation = generatePatternExplanation(patterns, cohort);
+    if (patternExplanation) {
+      sections.push(patternExplanation);
+    }
   }
   
   // 2. NARRATIVE CONNECTOR (100-150 chars) - Links dimensions
@@ -350,7 +364,47 @@ export function generatePersonalizedAnalysis(
       if (hasSubdims) {
         narrative = narrative.replace('{subdim_quality}', subdimQuality);
       }
+      
+      // Add specific answer references if answers provided
+      if (answers && topSubs.length > 0) {
+        const mappings = getQuestionMappings(cohort);
+        const firstSubdim = topSubs[0];
+        const relatedAnswer = answers.find(a => {
+          const mapping = mappings.find(m => m.q === a.questionIndex);
+          return mapping && mapping.subdimension === firstSubdim && a.score >= 4;
+        });
+        
+        if (relatedAnswer) {
+          const mapping = mappings.find(m => m.q === relatedAnswer.questionIndex);
+          if (mapping) {
+            const answerLevel = getAnswerLevel(relatedAnswer.score, cohort);
+            const questionRef = cohort === 'YLA' 
+              ? `kun kysyimme että ${mapping.text.toLowerCase().replace('?', '')}`
+              : getQuestionReference(mapping.q, mapping.text, cohort);
+            
+            if (cohort === 'YLA') {
+              narrative += ` Muistatko ${questionRef}? Vastasit että ${answerLevel}!`;
+            } else if (cohort === 'TASO2') {
+              narrative += ` Erityisesti vastauksesi ${questionRef} oli ${answerLevel}.`;
+            } else {
+              narrative += ` Erityisesti ${questionRef} osoittaa ${answerLevel} kiinnostuksen.`;
+            }
+          }
+        }
+      }
+      
       sections.push(narrative);
+    }
+  }
+  
+  // 3.5. GAP ANALYSIS (if answers provided) - Development areas
+  if (answers && detailedScores) {
+    const developmentAreas = identifyDevelopmentAreas(answers, detailedScores, cohort);
+    if (developmentAreas.length > 0) {
+      const gapText = generateGapAnalysisText(developmentAreas, cohort);
+      if (gapText) {
+        sections.push(gapText);
+      }
     }
   }
   
