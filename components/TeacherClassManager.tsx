@@ -208,6 +208,8 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
   const [generatingPDFs, setGeneratingPDFs] = useState(false);
   const [sendingNotification, setSendingNotification] = useState(false);
   const [teacherEmail, setTeacherEmail] = useState<string>('');
+  const [pinCount, setPinCount] = useState<string>('');
+  const [pinCountError, setPinCountError] = useState<string>('');
 
   // Calculate analytics
   const analytics = calculateAnalytics(results);
@@ -276,6 +278,54 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
       setResultsError(`Verkkovirhe tuloksia ladattaessa.\n\nRatkaisu:\n1. Tarkista verkkoyhteys\n2. Päivitä sivu (F5)\n3. Odota hetki ja yritä uudelleen\n4. Jos ongelma jatkuu, ota yhteyttä tukeen: support@careercompassi.com`);
     }
     setResultsLoading(false);
+  };
+
+  const validatePinCount = (value: string): boolean => {
+    if (value === '') {
+      setPinCountError('');
+      return false;
+    }
+    
+    const num = parseInt(value, 10);
+    
+    if (isNaN(num)) {
+      setPinCountError('Syötä kelvollinen numero');
+      return false;
+    }
+    
+    if (num < 1) {
+      setPinCountError('Vähintään 1 PIN-koodi');
+      return false;
+    }
+    
+    if (num > 100) {
+      setPinCountError('Maksimissaan 100 PIN-koodia');
+      return false;
+    }
+    
+    setPinCountError('');
+    return true;
+  };
+
+  const handlePinCountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Only allow numeric input
+    if (value === '' || /^\d+$/.test(value)) {
+      setPinCount(value);
+      validatePinCount(value);
+    }
+  };
+
+  const handleGeneratePins = async () => {
+    if (!pinCount || !validatePinCount(pinCount)) {
+      return;
+    }
+    
+    const count = parseInt(pinCount, 10);
+    await generatePins(count);
+    // Clear input after successful generation
+    setPinCount('');
+    setPinCountError('');
   };
 
   const generatePins = async (count: number) => {
@@ -423,21 +473,43 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
       {/* PIN Tab */}
       {activeTab === 'pins' && (
         <div className="space-y-4">
-          <div className="flex gap-4">
-            <button
-              onClick={() => generatePins(10)}
-              disabled={loading}
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50"
-            >
-              {loading ? 'Luodaan...' : 'Luo 10 PIN-koodia'}
-            </button>
-            <button
-              onClick={() => generatePins(25)}
-              disabled={loading}
-              className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50"
-            >
-              {loading ? 'Luodaan...' : 'Luo 25 PIN-koodia'}
-            </button>
+          <div className="flex gap-4 items-start">
+            <div className="flex-1">
+              <label htmlFor="pinCount" className="block text-sm font-medium text-gray-700 mb-2">
+                PIN-koodien määrä
+              </label>
+              <input
+                id="pinCount"
+                type="text"
+                inputMode="numeric"
+                value={pinCount}
+                onChange={handlePinCountChange}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !loading && pinCount && !pinCountError) {
+                    handleGeneratePins();
+                  }
+                }}
+                placeholder="Kirjoita PIN-koodien määrä (1-100)"
+                disabled={loading}
+                className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed ${
+                  pinCountError ? 'border-red-500' : 'border-gray-300'
+                }`}
+                min="1"
+                max="100"
+              />
+              {pinCountError && (
+                <p className="mt-1 text-sm text-red-600">{pinCountError}</p>
+              )}
+            </div>
+            <div className="flex items-end">
+              <button
+                onClick={handleGeneratePins}
+                disabled={loading || !pinCount || !!pinCountError}
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+              >
+                {loading ? 'Luodaan...' : 'Luo PIN-koodit'}
+              </button>
+            </div>
           </div>
 
           {pins.length > 0 && (
