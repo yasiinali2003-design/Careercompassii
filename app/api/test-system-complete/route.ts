@@ -176,8 +176,11 @@ export async function GET() {
     });
     const result7 = calculateEducationPath(test7, 'YLA');
     const hasScores = result7?.scores !== undefined;
-    const scoresHaveValues = result7?.scores?.lukio !== undefined && 
-                             result7?.scores?.ammattikoulu !== undefined;
+    // Type guard: check if it's YLA result (has lukio property)
+    const isYLAResult = result7 !== null && result7.scores && 'lukio' in result7.scores;
+    const scoresHaveValues = isYLAResult && 
+                             (result7.scores as { lukio: number; ammattikoulu: number; kansanopisto?: number }).lukio !== undefined &&
+                             (result7.scores as { lukio: number; ammattikoulu: number; kansanopisto?: number }).ammattikoulu !== undefined;
     testResults.push({
       test: 'Scores Exist But Not in Reasoning',
       success: hasScores && scoresHaveValues,

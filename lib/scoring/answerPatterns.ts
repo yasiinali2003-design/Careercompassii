@@ -113,7 +113,7 @@ export function generatePatternExplanationYLA(patterns: AnswerPatterns, cohort: 
   
   if (patterns.growthAreas.length > 0 && patterns.growthAreas[0]) {
     const area = patterns.growthAreas[0];
-    explanations.push(`${area.explanation} Voit harjoitella tätä vähitellen.`);
+    explanations.push(`${area.area} on kehitysalue, jossa sinulla on ${area.potential.toLowerCase()}. Voit harjoitella tätä vähitellen.`);
   }
   
   return explanations.join(' ');
