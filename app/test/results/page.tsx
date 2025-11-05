@@ -260,6 +260,20 @@ export default function ResultsPage() {
                       </div>
 
                       {/* Alternative Analysis Text */}
+                      {userProfile.cohort === 'YLA' && (
+                        <div className="mb-4">
+                          {results.educationPath.primary === 'lukio' && results.educationPath.secondary === 'ammattikoulu' && (
+                            <p className="text-gray-700 mb-4">
+                              Vaihtoehtoisesti harkitse myös ammattikoulua. Vaikka vastauksesi viittaavat enemmän lukioon, ammattikoulu voisi sopia sinulle erityisesti jos löydät konkreettisen alan, joka kiinnostaa sinua. Ammattikoulussa pääset heti tekemään käytännön töitä ja saat arvokasta työkokemusta jo opiskelun aikana. Myös ammattikoulusta voit jatkaa myöhemmin ammattikorkeakouluun, joten polut eivät ole toisiaan poissulkevia. Molemmat polut ovat hyviä vaihtoehtoja - kannattaa tutustua molempiin ennen päätöksen tekemistä.
+                            </p>
+                          )}
+                          {results.educationPath.primary === 'ammattikoulu' && results.educationPath.secondary === 'lukio' && (
+                            <p className="text-gray-700 mb-4">
+                              Vaihtoehtoisesti harkitse myös lukiota. Vaikka vastauksesi viittaavat enemmän ammattikouluun, lukio voisi sopia sinulle erityisesti jos haluat pitää vaihtoehdot auki ja jatkaa opiskelua myöhemmin yliopistossa tai ammattikorkeakoulussa. Lukiossa saat laajemman yleissivistyksen ja vahvemmat opiskelutaidot, mikä avaa monia mahdollisuuksia tulevaisuudessa. Myös lukiosta voit aina suorittaa ammatillisen koulutuksen myöhemmin, jos haluat. Molemmat polut ovat hyviä vaihtoehtoja - kannattaa tutustua molempiin ennen päätöksen tekemistä.
+                            </p>
+                          )}
+                        </div>
+                      )}
                       {userProfile.cohort === 'TASO2' && (
                         <div className="mb-4">
                           {results.educationPath.primary === 'yliopisto' && results.educationPath.secondary === 'amk' && (

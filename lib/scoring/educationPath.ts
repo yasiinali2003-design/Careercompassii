@@ -472,11 +472,6 @@ function generateYLAReasoning(
     } else {
       reasoning = `Vastaustesi perusteella lukio voisi olla yksi vaihtoehto. Lukio on hyvä valinta, jos haluat pitää vaihtoehdot auki ja jatkaa opiskelua myöhemmin yliopistossa tai ammattikorkeakoulussa. Lukiossa pääset tutustumaan laajasti eri aineisiin ja kehittämään opiskelutaitojasi, mikä avaa monia mahdollisuuksia tulevaisuudessa.`;
     }
-
-    // Add alternative path info if ammattikoulu score is significant
-    if (ammattikouluScore > 30) {
-      reasoning += `\n\nVaihtoehtoisesti harkitse myös ammattikoulua. Vaikka vastauksesi viittaavat enemmän lukioon, ammattikoulu voisi sopia sinulle erityisesti jos löydät konkreettisen alan, joka kiinnostaa sinua. Ammattikoulussa pääset heti tekemään käytännön töitä ja saat arvokasta työkokemusta jo opiskelun aikana. Myös ammattikoulusta voit jatkaa myöhemmin ammattikorkeakouluun, joten polut eivät ole toisiaan poissulkevia. Molemmat polut ovat hyviä vaihtoehtoja - kannattaa tutustua molempiin ennen päätöksen tekemistä.`;
-    }
   } else if (primary === 'ammattikoulu') {
     if (confidence === 'high') {
       reasoning = `Vastaustesi perusteella ammattikoulu sopii sinulle erittäin hyvin. Näytät pitävän käytännön tekemisestä ja oppimisesta tekemällä, mikä on täsmälleen sitä mitä ammatillinen koulutus tarjoaa. Ammattikoulussa pääset heti käytännön töihin ja opit tietyn ammatin taidot konkreettisesti työtilanteissa. Tämä on erityisen hyvä valinta, koska vastaustesi perusteella haluat oppia konkreettisen ammatin taidot ja aloittaa työelämän suhteellisen pian. Ammatillisessa koulutuksessa saat myös arvokasta työkokemusta jo opiskelun aikana harjoitteluissa, mikä helpottaa työllistymistä valmistumisen jälkeen.`;
@@ -484,11 +479,6 @@ function generateYLAReasoning(
       reasoning = `Vastaustesi perusteella ammattikoulu vaikuttaa sopivalta vaihtoehdolta. Pidät käytännön tekemisestä ja oppimisesta tekemällä, mikä sopii hyvin ammatilliseen koulutukseen. Ammattikoulussa pääset heti työskentelemään oman alasi parissa ja opit käytännön työelämän taidot. Ammatillinen koulutus antaa sinulle valmiudet aloittaa työelämä nopeasti, mutta voit myös jatkaa myöhemmin opiskelua ammattikorkeakoulussa, jos haluat syventää taitoja tai erikoistua.`;
     } else {
       reasoning = `Vastaustesi perusteella ammattikoulu voisi olla yksi vaihtoehto. Ammatillinen koulutus on hyvä valinta, jos haluat oppia konkreettisen ammatin taidot ja päästä nopeasti töihin. Ammattikoulussa pääset heti tekemään käytännön töitä ja saat konkreettista kokemusta työelämästä. Kannattaa tutustua eri aloihin ja miettiä, mikä ala voisi kiinnostaa sinua erityisesti.`;
-    }
-
-    // Add alternative path info if lukio score is significant
-    if (lukioScore > 30) {
-      reasoning += `\n\nVaihtoehtoisesti harkitse myös lukiota. Vaikka vastauksesi viittaavat enemmän ammattikouluun, lukio voisi sopia sinulle erityisesti jos haluat pitää vaihtoehdot auki ja jatkaa opiskelua myöhemmin yliopistossa tai ammattikorkeakoulussa. Lukiossa saat laajemman yleissivistyksen ja vahvemmat opiskelutaidot, mikä avaa monia mahdollisuuksia tulevaisuudessa. Myös lukiosta voit aina suorittaa ammatillisen koulutuksen myöhemmin, jos haluat. Molemmat polut ovat hyviä vaihtoehtoja - kannattaa tutustua molempiin ennen päätöksen tekemistä.`;
     }
   } else { // kansanopisto
     if (confidence === 'high') {

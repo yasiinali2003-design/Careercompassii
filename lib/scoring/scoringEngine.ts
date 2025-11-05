@@ -1017,8 +1017,8 @@ export function generateUserProfile(
     topStrengths
   };
   
-  // Generate personalized analysis text (with answers for pattern detection)
-  const personalizedText = generatePersonalizedAnalysis(userProfile, cohort, answers);
+  // Generate personalized analysis text
+  const personalizedText = generatePersonalizedAnalysis(userProfile, cohort);
   
   return {
     ...userProfile,
@@ -1028,16 +1028,56 @@ export function generateUserProfile(
 
 function translateStrength(key: string, cohort: Cohort): string {
   const translations: Record<string, string> = {
+    // Interests sub-dimensions
     technology: "Vahva teknologiakiinnostus",
     people: "Ihmiskeskeisyys",
     creative: "Luovuus ja innovatiivisuus",
     analytical: "Analyyttinen ajattelu",
     hands_on: "Käytännön tekeminen",
+    business: "Yritystoiminta ja liiketoiminta",
+    environment: "Ympäristökiinnostus",
+    health: "Terveysala",
+    education: "Kasvatus ja opetus",
+    innovation: "Innovatiivisuus",
+    arts_culture: "Taide ja kulttuuri",
+    sports: "Urheilu",
+    nature: "Luonto",
+    writing: "Kirjoittaminen",
+    
+    // Workstyle sub-dimensions
     teamwork: "Tiimityöskentely",
-    leadership: "Johtaminen",
     independence: "Itsenäinen työskentely",
+    leadership: "Johtaminen",
     organization: "Organisointikyky",
-    problem_solving: "Ongelmanratkaisukyky"
+    planning: "Suunnittelu",
+    problem_solving: "Ongelmanratkaisukyky",
+    precision: "Tarkkuus",
+    performance: "Suorituskyky",
+    teaching: "Opetus",
+    motivation: "Motivaatio",
+    autonomy: "Autonomia",
+    social: "Sosiaalisuus",
+    structure: "Rakenne",
+    flexibility: "Joustavuus",
+    variety: "Monipuolisuus",
+    
+    // Values sub-dimensions
+    growth: "Kasvu",
+    impact: "Vaikuttaminen",
+    global: "Kansainvälinen",
+    career_clarity: "Uran selkeys",
+    financial: "Talous",
+    entrepreneurship: "Yrittäjyys",
+    social_impact: "Sosiaalinen vaikutus",
+    stability: "Vakaus",
+    advancement: "Urakehitys",
+    work_life_balance: "Työ-elämä-tasapaino",
+    company_size: "Yrityksen koko",
+    
+    // Context sub-dimensions
+    outdoor: "Ulkotyö",
+    international: "Kansainvälinen",
+    work_environment: "Työympäristö"
   };
   
   return translations[key] || key;
