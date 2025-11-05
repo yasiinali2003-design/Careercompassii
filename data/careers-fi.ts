@@ -117,82 +117,6 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 42
   },
 {
-    id: "sisallontuottaja",
-    category: "luova",
-    title_fi: "Sisällöntuottaja",
-    title_en: "Content Creator",
-    short_description: "Sisällöntuottaja luo kiinnostavaa sisältöä sosiaaliseen mediaan, blogeihin ja muille alustoille. Työskentelee usein itsenäisesti tai yritysten kanssa.",
-    main_tasks: [
-      "Sosiaalisen median sisällön suunnittelu ja tuottaminen",
-      "Blogikirjoitusten ja artikkeleiden kirjoittaminen",
-      "Videoiden käsikirjoittaminen ja tuottaminen",
-      "Yhteisöjen rakentaminen ja ylläpito",
-      "Markkinointikampanjoiden suunnittelu"
-    ],
-    education_paths: [
-      "AMK: Medianomi, Markkinointi",
-      "Yliopisto: Viestinnän maisteri",
-      "Toinen aste: Media-alan perustutkinto",
-      "Ei tutkintovaatimusta (portfolio-pohjainen)"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Kirjoittaminen ja kertomisen taito",
-      "Sosiaalisen median hallinta",
-      "Videotuotannon perusteet",
-      "Markkinoinnin ymmärrys",
-      "Yhteisöjen rakentaminen"
-    ],
-    tools_tech: [
-      "Canva, Figma",
-      "Adobe Premiere, Final Cut Pro",
-      "Instagram, TikTok, YouTube",
-      "WordPress, Medium",
-      "Analytics-työkalut"
-    ],
-    languages_required: { fi: "C1", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 2800,
-      range: [1500, 5000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Sosiaalisen median ja digitaalisen markkinoinnin kasvu luo jatkuvasti uusia mahdollisuuksia sisällöntuottajille.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
-    },
-    entry_roles: [
-      "Freelance sisällöntuottaja",
-      "Sosiaalisen median harjoittelija",
-      "Blogikirjoittaja"
-    ],
-    career_progression: [
-      "Senior sisällöntuottaja",
-      "Sisällön strategi",
-      "Oma yritys/brändi",
-      "Influencer-markkinointi"
-    ],
-    typical_employers: [
-      "Markkinointitoimistot",
-      "Yritysten markkinointiosastot",
-      "Itsenäinen työskentely",
-      "Sosiaalisen median alustat"
-    ],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Sisällöntuottajien yhdistys", url: "https://www.sisallontuottajat.fi/" },
-      { name: "Opintopolku - Sisällöntuottaja", url: "https://opintopolku.fi/konfo/fi/haku/Sis%C3%A4ll%C3%B6ntuottaja" }
-    ],
-    keywords: ["sisällöntuottaminen", "sosiaalinen media", "blogi", "video", "markkinointi"],
-    study_length_estimate_months: 36,
-    impact: [
-      "Auttaa yrityksiä rakentamaan vahvaa läsnäoloa sosiaalisessa mediassa",
-      "Vaikuttaa kuluttajien mielipiteisiin ja ostopäätöksiin",
-      "Rakentaa yhteisöjä ja yhdistää ihmisiä"
-    ]
-  },
-{
     id: "muusikko",
     category: "luova",
     title_fi: "Muusikko",
@@ -230,12 +154,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2500,
       range: [1000, 6000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Musiikkialan TES", url: "https://www.musiikkialan-tes.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vaihtelee",
       explanation: "Perinteinen musiikkiala on haastava, mutta digitaaliset alustat ja live-esiintymiset tarjoavat uusia mahdollisuuksia.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Freelance-muusikko",
@@ -307,12 +231,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3500,
       range: [2500, 5000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Audiovisuaalisen sisällön kysyntä pysyy vakaana, erityisesti streaming-palveluiden ja sosiaalisen median myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Kameramiehen apulainen",
@@ -383,12 +307,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2000,
       range: [500, 8000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Kirjailijaliitto", url: "https://www.kirjailijaliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vaihtelee",
       explanation: "Perinteinen kirjallisuusala on haastava, mutta digitaaliset alustat ja itsenäinen julkaiseminen tarjoavat uusia mahdollisuuksia.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Freelance-kirjoittaja",
@@ -460,12 +384,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200, 6000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitaalisten palveluiden kasvu lisää tarvetta UX/UI-suunnittelijoille. Erityisesti mobiilisovellukset ja verkkokauppa kasvavat.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior UX/UI-suunnittelija",
@@ -536,12 +460,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3500,
       range: [2800, 5000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Animaation kysyntä kasvaa elokuvateollisuuden, peliteollisuuden ja digitaalisen markkinoinnin myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior animaattori",
@@ -612,12 +536,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3000,
       range: [2000, 5000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Teatterin kysyntä pysyy vakaana kulttuurin tukemisen ja yleisön kiinnostuksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Apulaisohjaaja",
@@ -688,12 +612,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2800,
       range: [1500, 6000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vaihtelee",
       explanation: "Perinteinen valokuvaus on kilpailtu ala, mutta erikoistuminen ja digitaaliset alustat tarjoavat mahdollisuuksia.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Valokuvaajan apulainen",
@@ -764,12 +688,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2500, 5000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Pukusuunnittelijoiden kysyntä pysyy vakaana teatterin, elokuvan ja television tuotantojen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Pukusuunnittelijan apulainen",
@@ -879,82 +803,6 @@ export const careersData: CareerFI[] = [
     ]
   },
 {
-    id: "sahkonasentaja",
-    category: "rakentaja",
-    title_fi: "Sähköasentaja",
-    title_en: "Electrician",
-    short_description: "Sähköasentaja asentaa, korjaa ja huoltaa sähköjärjestelmiä. Työ vaatii tarkkuutta ja turvallisuuden ymmärrystä, koska työskentelee korkeajännitteiden kanssa.",
-    main_tasks: [
-      "Sähköjärjestelmien asennus",
-      "Sähkövikausten korjaus",
-      "Sähkötöiden suunnittelu",
-      "Turvallisuussääntöjen noudattaminen",
-      "Asiakkaiden neuvominen"
-    ],
-    education_paths: [
-      "Toinen aste: Sähköalan perustutkinto",
-      "AMK: Sähkötekniikka",
-      "Sähköasentajan ammattitutkinto",
-      "Työkokemus + kurssit"
-    ],
-    qualification_or_license: "Sähköasentajan ammattitutkinto (Sähkötekniikan keskusliitto)",
-    core_skills: [
-      "Sähkötekniikan hallinta",
-      "Turvallisuuden ymmärrys",
-      "Käytännön ongelmaratkaisu",
-      "Tarkkuus ja huolellisuus",
-      "Asiakaspalvelu"
-    ],
-    tools_tech: [
-      "Sähkötyökalut",
-      "Mittauslaitteet",
-      "CAD-ohjelmat",
-      "Sähkösuunnitteluohjelmat",
-      "Mobiilisovellukset"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "A2" },
-    salary_eur_month: {
-      median: 3800,
-      range: [3000, 5000],
-      source: { name: "Sähköalan TES", url: "https://www.sahkoliitto.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Uusiutuva energia, sähköautot ja älykoti-teknologia lisäävät sähköasentajien tarvetta. Alalla on hyvät työllisyysnäkymät.",
-      source: { name: "Sähköliitto", url: "https://www.sahkoliitto.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Sähköasentajan apulainen",
-      "Junior sähköasentaja",
-      "Huoltoasentaja"
-    ],
-    career_progression: [
-      "Senior sähköasentaja",
-      "Sähkösuunnittelija",
-      "Sähköyrittäjä",
-      "Sähköalan konsultti"
-    ],
-    typical_employers: [
-      "Sähköyhtiöt",
-      "Rakennusyhtiöt",
-      "Huoltoyritykset",
-      "Oma yritys"
-    ],
-    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: "Sähköalan TES",
-    useful_links: [
-      { name: "Sähköliitto", url: "https://www.sahkoliitto.fi/" },
-      { name: "Opintopolku - Sähköasentaja", url: "https://opintopolku.fi/konfo/fi/haku/S%C3%A4hk%C3%B6asentaja" }
-    ],
-    keywords: ["sähkö", "asennus", "korjaus", "turvallisuus", "uusiutuva energia"],
-    study_length_estimate_months: 36,
-    impact: [
-      "Turvaa sähkön saannin tuhansille kotitalouksille",
-      "Auttaa siirtymään uusiutuvaan energiaan",
-      "Vaikuttaa energiatehokkuuteen ja ympäristöystävällisyyteen"
-    ]
-  },
-{
     id: "putkiasentaja",
     category: "rakentaja",
     title_fi: "Putkiasentaja",
@@ -1031,82 +879,6 @@ export const careersData: CareerFI[] = [
     ]
   },
 {
-    id: "puuseppa",
-    category: "rakentaja",
-    title_fi: "Puuseppä",
-    title_en: "Carpenter",
-    short_description: "Puuseppä valmistaa ja asentaa puurakenteita, huonekaluja ja muita puutuotteita. Työ yhdistää perinteisiä käsityötaitoja moderniin tekniikkaan.",
-    main_tasks: [
-      "Puurakenteiden valmistus ja asennus",
-      "Huonekalujen valmistus",
-      "Puutyökoneiden käyttö",
-      "Asiakkaiden kanssa suunnitteluyhteistyö",
-      "Laadunvalvonta ja viimeistely"
-    ],
-    education_paths: [
-      "Toinen aste: Puuseppäalan perustutkinto",
-      "AMK: Puunjalostustekniikka",
-      "Puuseppäalan ammattitutkinto",
-      "Työkokemus + kurssit"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Puutyön käsityötaidot",
-      "Puutyökoneiden hallinta",
-      "Suunnittelutaito",
-      "Laadunvalvonta",
-      "Asiakaspalvelu"
-    ],
-    tools_tech: [
-      "Puutyökoneet",
-      "Käsityökalut",
-      "CAD-ohjelmat",
-      "CNC-koneet",
-      "Laadunvalvontatyökalut"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "A2" },
-    salary_eur_month: {
-      median: 3200,
-      range: [2500, 4200],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Puuseppäalan kysyntä pysyy vakaana, erityisesti kustomoidun huonekalujen ja puurakentamisen myötä. Käsityötaitoja arvostetaan.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
-    },
-    entry_roles: [
-      "Puuseppäalan oppilas",
-      "Junior puuseppä",
-      "Huonekaluvalmistaja"
-    ],
-    career_progression: [
-      "Senior puuseppä",
-      "Puuseppäyrittäjä",
-      "Huonekaluvalmistaja",
-      "Puuseppäalan opettaja"
-    ],
-    typical_employers: [
-      "Puuseppäliikkeet",
-      "Huonekaluvalmistajat",
-      "Rakennusyhtiöt",
-      "Oma yritys"
-    ],
-    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
-    union_or_CBA: "Puuseppäalan TES",
-    useful_links: [
-      { name: "Puuseppäliitto", url: "https://www.puuseppaliitto.fi/" },
-      { name: "Opintopolku - Puuseppä", url: "https://opintopolku.fi/konfo/fi/haku/Puusepp%C3%A4" }
-    ],
-    keywords: ["puuseppä", "puutyö", "huonekalut", "käsityö", "CNC"],
-    study_length_estimate_months: 36,
-    impact: [
-      "Luo kestäviä ja kauniita huonekaluja ja rakenteita",
-      "Säilyttää perinteisiä käsityötaitoja",
-      "Vaikuttaa kotien viihtyisyyteen ja toimivuuteen"
-    ]
-  },
-{
     id: "maalari",
     category: "rakentaja",
     title_fi: "Maalari",
@@ -1144,12 +916,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2800,
       range: [2200, 3800],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Maalarin työtä tarvitaan jatkuvasti kunnostuksissa ja uudisrakentamisessa. Alalla on vakaa kysyntä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Maalarin apulainen",
@@ -1220,12 +992,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2700, 4500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Kattomestareiden työtä tarvitaan jatkuvasti uudisrakentamisessa ja kunnostuksissa. Alalla on vakaa kysyntä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Kattomestarin apulainen",
@@ -1296,12 +1068,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3300,
       range: [2600, 4500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "LVI-asentajien kysyntä kasvaa energiatehokkuuden ja ilmastonmuutoksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "LVI-asentajan apulainen",
@@ -1372,12 +1144,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3000,
       range: [2400, 4000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Talonrakentajien kysyntä pysyy vakaana uudisrakentamisen ja korjausrakentamisen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Rakennustyöntekijä",
@@ -1448,12 +1220,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3100,
       range: [2500, 4200],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Betonityöntekijöiden kysyntä pysyy vakaana rakentamisen ja infrastruktuurin kehittämisen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Betonityöntekijän apulainen",
@@ -1524,12 +1296,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 5000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Rakennusvalvojien kysyntä pysyy vakaana rakentamisen valvonnan ja turvallisuuden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Rakennustarkastaja",
@@ -1605,12 +1377,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5200,
       range: [4000, 7000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Projektinhallinnan kysyntä kasvaa digitaalisen muutoksen ja monimutkaisten projektien myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior projektipäällikkö",
@@ -1681,12 +1453,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [3500, 6500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Myyntipäälliköiden kysyntä pysyy vakaana, erityisesti B2B-myynnissä ja digitaalisissa palveluissa.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Myyntiedustaja",
@@ -1757,12 +1529,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3500, 6000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Henkilöstöjohtamisen kysyntä kasvaa organisaatioiden muutoksen ja työelämän digitalisaation myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "HR-koordinaattori",
@@ -1833,12 +1605,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4600,
       range: [3500, 6000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Tuotantopäälliköiden kysyntä pysyy vakaana teollisuuden digitalisaation ja automaation myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Tuotantokoordinaattori",
@@ -1909,12 +1681,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4400,
       range: [3200, 6000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Markkinointipäälliköiden kysyntä kasvaa digitaalisen markkinoinnin ja datan hyödyntämisen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Markkinointikoordinaattori",
@@ -1985,12 +1757,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5000,
       range: [3800, 7000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Talouspäälliköiden kysyntä pysyy vakaana organisaatioiden taloushallinnon digitalisaation myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Talousanalyytikko",
@@ -2061,12 +1833,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200, 5500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Asiakaspalvelupäälliköiden kysyntä kasvaa digitaalisten palveluiden ja asiakaskokemuksen tärkeyden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Asiakaspalveluedustaja",
@@ -2137,12 +1909,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5800,
       range: [4500, 8000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Tietoturvapäälliköiden kysyntä kasvaa nopeasti kyberuhkien lisääntyessä ja tietoturvallisuuden tärkeyden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Tietoturvaasiantuntija",
@@ -2213,12 +1985,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4300,
       range: [3200, 5800],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Laadunpäälliköiden kysyntä pysyy vakaana teollisuuden laadunhallinnan tärkeyden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Laadunvalvonta",
@@ -2289,12 +2061,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5400,
       range: [4000, 7500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kehityspäälliköiden kysyntä kasvaa innovaatioiden ja teknologian kehityksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Kehitysasiantuntija",
@@ -2365,12 +2137,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5500,
       range: [4200, 7500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Data-insinöörien kysyntä kasvaa nopeasti datan hyödyntämisen ja tekoälyn kehityksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior data-insinööri",
@@ -2397,82 +2169,6 @@ export const careersData: CareerFI[] = [
     ],
     keywords: ["data", "ohjelmointi", "cloud", "big data", "analytiikka"],
     study_length_estimate_months: 42
-  },
-{
-    id: "tekoälyasiantuntija",
-    category: "innovoija",
-    title_fi: "Tekoälyasiantuntija",
-    title_en: "AI Specialist",
-    short_description: "Tekoälyasiantuntija kehittää ja toteuttaa tekoälyratkaisuja. Työskentelee koneoppimisen, luonnollisen kielen käsittelyn ja automaation parissa.",
-    main_tasks: [
-      "Tekoälymallien kehittäminen ja optimointi",
-      "Koneoppimisalgoritmien soveltaminen",
-      "Datan esikäsittely ja feature engineering",
-      "Mallien testaus ja validointi",
-      "Tekoälyratkaisujen tuotantoon vienti"
-    ],
-    impact: [
-      "Auttaa organisaatioita automatisoida prosesseja",
-      "Parantaa päätöksentekoa tekoälyn avulla",
-      "Kehittää innovatiivisia AI-ratkaisuja"
-    ],
-    education_paths: [
-      "AMK: Tietojenkäsittely, Data-analytiikka",
-      "Yliopisto: Tietojenkäsittelytieteen maisteri",
-      "Tekoälyn ja koneoppimisen kurssit",
-      "PhD-tutkimus tekoälyssä"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Koneoppiminen ja tekoäly",
-      "Ohjelmointi (Python, R)",
-      "Matematiikka ja tilastotiede",
-      "Datan analyysi",
-      "Algoritmien suunnittelu"
-    ],
-    tools_tech: [
-      "Python, R, TensorFlow",
-      "PyTorch, Scikit-learn",
-      "Jupyter Notebooks",
-      "AWS SageMaker, Azure ML",
-      "Git, Docker"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 5800,
-      range: [4500, 8000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Tekoälyasiantuntijoiden kysyntä kasvaa nopeasti tekoälyn soveltamisen ja automatisointiin.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
-    },
-    entry_roles: [
-      "Junior AI-asiantuntija",
-      "Data Scientist",
-      "Machine Learning Engineer"
-    ],
-    career_progression: [
-      "Senior AI-asiantuntija",
-      "AI Architect",
-      "Chief AI Officer",
-      "AI-konsultti"
-    ],
-    typical_employers: [
-      "Teknologiayritykset",
-      "Tutkimuslaitokset",
-      "Pankit ja vakuutusyhtiöt",
-      "Autoteollisuus"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: "IT-alan TES",
-    useful_links: [
-      { name: "Tekoäly Finland", url: "https://www.tekoalyfinland.fi/" },
-      { name: "Opintopolku - Tekoälyasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Teko%C3%A4lyasiantuntija" }
-    ],
-    keywords: ["tekoäly", "koneoppiminen", "ohjelmointi", "algoritmit", "automaatio"],
-    study_length_estimate_months: 48
   },
 {
     id: "pelisuunnittelija",
@@ -2517,12 +2213,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [2800, 5500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Peliala.fi", url: "https://www.peliala.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Pelisuunnittelijoiden kysyntä kasvaa mobiilipelien ja VR/AR-teknologian myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior pelisuunnittelija",
@@ -2593,12 +2289,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5200,
       range: [4000, 7000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Robotiikka-insinöörien kysyntä kasvaa teollisuuden automaation ja palvelurobottien myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior robotiikka-insinööri",
@@ -2669,12 +2365,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [3600, 6500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Biotekniikka-insinöörien kysyntä kasvaa lääketeollisuuden ja kestävän kehityksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior biotekniikka-insinööri",
@@ -2701,82 +2397,6 @@ export const careersData: CareerFI[] = [
     ],
     keywords: ["biotekniikka", "biologia", "laboratorio", "tutkimus", "lääketeollisuus"],
     study_length_estimate_months: 48
-  },
-{
-    id: "energiainsinööri",
-    category: "innovoija",
-    title_fi: "Energiainsinööri",
-    title_en: "Energy Engineer",
-    short_description: "Energiainsinööri kehittää uusiutuvia energiaratkaisuja ja optimoi energiankäyttöä. Työskentelee kestävän energian ja ympäristöystävällisyyden parissa.",
-    main_tasks: [
-      "Uusiutuvien energialähteiden suunnittelu",
-      "Energiankäytön optimointi",
-      "Energiajärjestelmien kehittäminen",
-      "Ympäristövaikutusten arviointi",
-      "Energiatehokkuuden parantaminen"
-    ],
-    impact: [
-      "Auttaa siirtymään kestävään energiaan",
-      "Vähentää hiilijalanjälkeä",
-      "Parantaa energiatehokkuutta"
-    ],
-    education_paths: [
-      "AMK: Energiatekniikka, Ympäristötekniikka",
-      "Yliopisto: Teknillinen maisteri",
-      "Energiatekniikan erikoiskurssit",
-      "Kestävän kehityksen sertifikaatit"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Energiatekniikka",
-      "Ympäristötekniikka",
-      "Projektinhallinta",
-      "Analyysi ja mallinnus",
-      "Kestävän kehityksen ymmärrys"
-    ],
-    tools_tech: [
-      "CAD-suunnittelu",
-      "Energiamallinnusohjelmistot",
-      "Excel, Power BI",
-      "GIS-työkalut",
-      "Projektinhallintatyökalut"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 5000,
-      range: [3800, 6800],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Energiainsinöörien kysyntä kasvaa uusiutuvan energian ja kestävän kehityksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
-    },
-    entry_roles: [
-      "Junior energiainsinööri",
-      "Energiaasiantuntija",
-      "Ympäristöinsinööri"
-    ],
-    career_progression: [
-      "Senior energiainsinööri",
-      "Energiajohtaja",
-      "Kestävän kehityksen johtaja",
-      "Energiakonsultti"
-    ],
-    typical_employers: [
-      "Energiayhtiöt",
-      "Konsultointiyritykset",
-      "Julkinen sektori",
-      "Teollisuusyritykset"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: "Energia-alan TES",
-    useful_links: [
-      { name: "Energia.fi", url: "https://www.energia.fi/" },
-      { name: "Opintopolku - Energiainsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Energiainsin%C3%B6%C3%B6ri" }
-    ],
-    keywords: ["energiatekniikka", "uusiutuva energia", "ympäristö", "kestävä kehitys", "optimointi"],
-    study_length_estimate_months: 42
   },
 {
     id: "nanotekniikka-insinööri",
@@ -2821,12 +2441,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5200,
       range: [4000, 7000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Nanotekniikka-insinöörien kysyntä kasvaa teknologian kehityksen ja innovaatioiden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior nanotekniikka-insinööri",
@@ -2897,12 +2517,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6000,
       range: [4500, 8500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kvantti-insinöörien kysyntä kasvaa kvanttiteknologian kehityksen ja kvanttitietokoneiden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior kvantti-insinööri",
@@ -2973,12 +2593,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5600,
       range: [4200, 7500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Blockchain-insinöörien kysyntä kasvaa Web3-teknologian ja kryptovaluuttojen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior blockchain-insinööri",
@@ -3049,12 +2669,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [3500, 6500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "VR/AR-insinöörien kysyntä kasvaa metaversen ja immersiivisten teknologioiden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior VR/AR-insinööri",
@@ -3125,12 +2745,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4900,
       range: [3700, 6500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Automaatio-insinöörien kysyntä kasvaa teollisuuden digitalisaation ja Industry 4.0:n myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior automaatio-insinööri",
@@ -3353,12 +2973,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2500, 4200],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "JHL", url: "https://www.jhl.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Sosiaalityöntekijöiden kysyntä kasvaa sosiaalisten ongelmien ja perheiden tukemisen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Sosiaalityöntekijä",
@@ -3429,12 +3049,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200, 5500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Psykologien kysyntä kasvaa mielenterveysongelmien ja hyvinvoinnin tärkeyden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Psykologi",
@@ -3505,12 +3125,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2700, 4300],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Fysioterapeuttien kysyntä kasvaa ikääntyvän väestön ja kuntoutuspalveluiden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Fysioterapeutti",
@@ -3581,12 +3201,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2500, 4000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "OAJ", url: "https://www.oaj.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Lastentarhanopettajien kysyntä kasvaa lapsiluvun ja varhaiskasvatuksen tärkeyden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Lastentarhanopettaja",
@@ -3657,12 +3277,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3000,
       range: [2400, 3800],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "JHL", url: "https://www.jhl.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kuntoutusohjaajien kysyntä kasvaa kuntoutuspalveluiden ja työkyvyn tukemisen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Kuntoutusohjaaja",
@@ -3733,12 +3353,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3100,
       range: [2500, 4000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "JHL", url: "https://www.jhl.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Perhetyöntekijöiden kysyntä kasvaa perheiden tukemisen ja lastensuojelun myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Perhetyöntekijä",
@@ -3809,12 +3429,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2800,
       range: [2200, 3500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Vanhustenhoitajien kysyntä kasvaa ikääntyvän väestön ja vanhustenhoitopalveluiden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Vanhustenhoitaja",
@@ -3885,12 +3505,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3500,
       range: [2800, 4500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kriisityöntekijöiden kysyntä kasvaa mielenterveysongelmien ja kriisitilanteiden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Kriisityöntekijä",
@@ -3961,12 +3581,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [3600, 6500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Ympäristöinsinöörien kysyntä kasvaa ympäristöystävällisyyden ja kestävän kehityksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior ympäristöinsinööri",
@@ -4037,12 +3657,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5200,
       range: [4000, 7000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Tilastokeskus", url: "https://www.stat.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Ilmastotutkijoiden kysyntä kasvaa ilmastonmuutoksen ja ilmastopolitiikan myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Ilmastotutkija",
@@ -4113,12 +3733,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2500, 4200],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "JHL", url: "https://www.jhl.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Luonnonsuojelijoiden kysyntä kasvaa luonnonsuojelun ja kestävän kehityksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Luonnonsuojelija",
@@ -4189,12 +3809,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5000,
       range: [3800, 6800],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Uusiutuva energia -insinöörien kysyntä kasvaa uusiutuvan energian ja kestävän kehityksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior uusiutuva energia -insinööri",
@@ -4265,12 +3885,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3000,
       range: [2400, 3800],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "OAJ", url: "https://www.oaj.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Ympäristökasvattajien kysyntä kasvaa ympäristökasvatuksen ja kestävän kehityksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Ympäristökasvattaja",
@@ -4341,12 +3961,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4600,
       range: [3500, 6200],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Vesi-insinöörien kysyntä kasvaa vesitalouden ja ympäristöystävällisyyden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior vesi-insinööri",
@@ -4417,12 +4037,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200, 5500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Hiilijalanjälki-asiantuntijoiden kysyntä kasvaa ilmastoneutraaliuden ja kestävän kehityksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior hiilijalanjälki-asiantuntija",
@@ -4493,12 +4113,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5500,
       range: [4200, 7500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Suomen Asianajajaliitto", url: "https://www.asianajajaliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Ympäristöjuristien kysyntä kasvaa ympäristölainsäädännön ja kestävän kehityksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Ympäristöjuristi",
@@ -4569,12 +4189,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "JHL", url: "https://www.jhl.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Biologinen monimuotoisuus -asiantuntijoiden kysyntä kasvaa luonnonsuojelun ja kestävän kehityksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Biologinen monimuotoisuus -asiantuntija",
@@ -4645,12 +4265,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4000,
       range: [3000, 5200],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kestävän kehityksen koordinaattoreiden kysyntä kasvaa kestävän kehityksen ja sosiaalisen vastuun myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Kestävän kehityksen koordinaattori",
@@ -4721,12 +4341,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3500, 6000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Futuristien kysyntä kasvaa strategisen suunnittelun ja innovaation myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior futuristi",
@@ -4797,12 +4417,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5200,
       range: [4000, 7000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Strategia-konsulttien kysyntä kasvaa strategisen suunnittelun ja muutoksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior strategia-konsultti",
@@ -4873,12 +4493,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5800,
       range: [4500, 7500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Innovaatiojohtajien kysyntä kasvaa innovaation ja teknologian kehityksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior innovaatiojohtaja",
@@ -4949,12 +4569,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200, 5500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Tulevaisuuden suunnittelijoiden kysyntä kasvaa strategisen suunnittelun ja tulevaisuuden tutkimuksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior tulevaisuuden suunnittelija",
@@ -5025,12 +4645,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5500,
       range: [4200, 7500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitaalisten muutosjohtajien kysyntä kasvaa digitaalisen muutoksen ja teknologian myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior digitaalinen muutosjohtaja",
@@ -5101,12 +4721,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [3600, 6500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Tilastokeskus", url: "https://www.stat.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Tulevaisuuden tutkijoiden kysyntä kasvaa strategisen suunnittelun ja tulevaisuuden tutkimuksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Tulevaisuuden tutkija",
@@ -5177,12 +4797,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4600,
       range: [3500, 6200],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Strategisten suunnittelijoiden kysyntä kasvaa strategisen suunnittelun ja muutoksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior strateginen suunnittelija",
@@ -5253,12 +4873,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5000,
       range: [3800, 6800],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Tulevaisuuden visio-johtajien kysyntä kasvaa strategisen johtamisen ja muutoksen myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior tulevaisuuden visio-johtaja",
@@ -5329,12 +4949,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5200,
       range: [4000, 7000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Tulevaisuuden teknologia-asiantuntijoiden kysyntä kasvaa teknologian kehityksen ja innovaation myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior tulevaisuuden teknologia-asiantuntija",
@@ -5405,12 +5025,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3500, 6000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Tulevaisuuden yhteiskunta-asiantuntijoiden kysyntä kasvaa yhteiskuntatutkimuksen ja futurologian myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior tulevaisuuden yhteiskunta-asiantuntija",
@@ -5481,12 +5101,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2500, 4200],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Tapahtumakoordinaattoreiden kysyntä kasvaa tapahtumien määrän ja monimutkaisuuden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior tapahtumakoordinaattori",
@@ -5557,12 +5177,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2800,
       range: [2200, 3500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Toimistosihteerien kysyntä pysyy vakaana toimistojen ja hallinnon myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Toimistosihteeri",
@@ -5633,12 +5253,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Logistiikkakoordinaattoreiden kysyntä kasvaa logistiikan ja toimitusketjun myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior logistiikkakoordinaattori",
@@ -5709,12 +5329,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200, 5500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Henkilöstöasiantuntijoiden kysyntä kasvaa henkilöstöhallinnon ja työsuhteiden myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior henkilöstöasiantuntija",
@@ -5785,12 +5405,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3500, 6000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Taloushallinnon asiantuntijoiden kysyntä kasvaa taloushallinnon ja raportoinnin myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior taloushallinnon asiantuntija",
@@ -5861,12 +5481,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4000,
       range: [3000, 5200],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Laadunhallinnan koordinaattoreiden kysyntä kasvaa laadunhallinnon ja standardien myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior laadunhallinnan koordinaattori",
@@ -5937,12 +5557,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2500, 4200],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Asiakaspalvelun koordinaattoreiden kysyntä kasvaa asiakaspalvelun ja kommunikaation myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior asiakaspalvelun koordinaattori",
@@ -6013,12 +5633,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5000],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Tietohallinnon koordinaattoreiden kysyntä kasvaa tietohallinnon ja dokumenttienhallinnan myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior tietohallinnon koordinaattori",
@@ -6089,12 +5709,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3500,
       range: [2800, 4500],
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Hallinnon koordinaattoreiden kysyntä kasvaa hallinnon ja organisoinnin myötä.",
-      source: { name: "Lähde tarkistettava", url: "#", year: 2025 }
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
     },
     entry_roles: [
       "Junior hallinnon koordinaattori",
@@ -6427,82 +6047,6 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 60
   },
 {
-    id: "mobiilisovelluskehittaja",
-    category: "innovoija",
-    title_fi: "Mobiilisovelluskehittäjä",
-    title_en: "Mobile App Developer",
-    short_description: "Mobiilisovelluskehittäjä kehittää sovelluksia älypuhelimille ja tableteille. Työskentelee iOS- ja Android-alustoilla.",
-    main_tasks: [
-      "Mobiilisovellusten kehittäminen",
-      "Käyttöliittymien suunnittelu",
-      "Sovellusten testaaminen",
-      "Sovelluskauppojen julkaiseminen",
-      "Sovellusten ylläpito"
-    ],
-    impact: [
-      "Luo sovelluksia, jotka helpottavat arkea",
-      "Mahdollistaa uusia palveluja",
-      "Yhdistää teknologiaa ja käytännön tarpeita"
-    ],
-    education_paths: [
-      "Yliopisto: Tietojenkäsittelytiede",
-      "AMK: Tietojenkäsittely",
-      "AMK: Mobiilikehitys",
-      "Kurssit ja sertifikaatit"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Mobiilikehitys",
-      "Käyttöliittymien suunnittelu",
-      "Ohjelmointi",
-      "Ongelmaratkaisu",
-      "Käyttäjäkokemuksen suunnittelu"
-    ],
-    tools_tech: [
-      "Swift, Kotlin, Java",
-      "React Native, Flutter",
-      "Xcode, Android Studio",
-      "Git, CI/CD",
-      "App Store, Google Play"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 5000,
-      range: [3800, 7000],
-      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Mobiilisovelluskehittäjien kysyntä kasvaa mobiiliteknologian kehittyessä.",
-      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior mobiilisovelluskehittäjä",
-      "iOS/Android kehittäjä",
-      "Cross-platform kehittäjä"
-    ],
-    career_progression: [
-      "Senior mobiilisovelluskehittäjä",
-      "Mobiilikehityksen tech lead",
-      "Mobile Architect",
-      "Konsultti"
-    ],
-    typical_employers: [
-      "IT-yritykset",
-      "Startup-yritykset",
-      "Konsultointiyritykset",
-      "Mediayritykset"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
-    union_or_CBA: "IT-alan TES",
-    useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
-      { name: "Opintopolku - Mobiilisovelluskehittäjä", url: "https://opintopolku.fi/konfo/fi/haku/Mobiilisovelluskehitt%C3%A4j%C3%A4" }
-    ],
-    keywords: ["mobiilikehitys", "iOS", "Android", "React Native", "Flutter"],
-    study_length_estimate_months: 60
-  },
-{
     id: "verkkoasiantuntija",
     category: "innovoija",
     title_fi: "Verkkoasiantuntija",
@@ -6576,82 +6120,6 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Verkkoasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Verkkoasiantuntija" }
     ],
     keywords: ["verkot", "Cisco", "tietoverkot", "verkkoanalyysi", "NOC"],
-    study_length_estimate_months: 60
-  },
-{
-    id: "tekoaly-asiantuntija",
-    category: "innovoija",
-    title_fi: "Tekoäly-asiantuntija",
-    title_en: "AI Specialist",
-    short_description: "Tekoäly-asiantuntija kehittää ja toteuttaa tekoälyratkaisuja organisaatioille. Työskentelee koneoppimisen ja datan kanssa.",
-    main_tasks: [
-      "Tekoälymallien kehittäminen",
-      "Koneoppimisalgoritmien toteuttaminen",
-      "Datan analysointi",
-      "Tekoälyratkaisujen testaaminen",
-      "Tekoälyprojektien johtaminen"
-    ],
-    impact: [
-      "Kehittää innovatiivisia tekoälyratkaisuja",
-      "Auttaa organisaatioita automatisoida",
-      "Parantaa päätöksentekoa"
-    ],
-    education_paths: [
-      "Yliopisto: Tietojenkäsittelytiede",
-      "Yliopisto: Matematiikka",
-      "AMK: Tietojenkäsittely",
-      "Kurssit ja sertifikaatit"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Koneoppiminen",
-      "Tekoäly",
-      "Ohjelmointi",
-      "Matematiikka",
-      "Datan analysointi"
-    ],
-    tools_tech: [
-      "Python, R",
-      "TensorFlow, PyTorch",
-      "Machine Learning -työkalut",
-      "Cloud AI -palvelut",
-      "Jupyter Notebooks"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 5800,
-      range: [4500, 8500],
-      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Tekoäly-asiantuntijoiden kysyntä kasvaa nopeasti tekoälyn leviämisen myötä.",
-      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior tekoäly-asiantuntija",
-      "Machine Learning -kehittäjä",
-      "Data Scientist"
-    ],
-    career_progression: [
-      "Senior tekoäly-asiantuntija",
-      "AI Lead",
-      "Chief AI Officer",
-      "Konsultti"
-    ],
-    typical_employers: [
-      "IT-yritykset",
-      "Konsultointiyritykset",
-      "Startup-yritykset",
-      "Tutkimuslaitokset"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
-    union_or_CBA: "IT-alan TES",
-    useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
-      { name: "Opintopolku - Tekoäly-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Teko%C3%A4ly-asiantuntija" }
-    ],
-    keywords: ["tekoäly", "koneoppiminen", "Python", "TensorFlow", "data science"],
     study_length_estimate_months: 60
   },
 {
@@ -7567,7 +7035,7 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 24
   },
 {
-    id: "energiainsinoori",
+    id: "energiainsinööri",
     category: "innovoija",
     title_fi: "Energiainsinööri",
     title_en: "Energy Engineer",
@@ -9595,6 +9063,8 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://www.pro.fi/" },
       { name: "Opintopolku - Mobiilisovelluskehittäjä", url: "https://opintopolku.fi/konfo/fi/haku/Mobiilisovelluskehitt%C3%A4j%C3%A4" }
     ],
+    keywords: ["mobiilikehitys", "iOS", "Android", "React Native", "Flutter"],
+    study_length_estimate_months: 48
   },
 {
     id: "tekoäly-asiantuntija",
@@ -9669,6 +9139,8 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://www.pro.fi/" },
       { name: "Opintopolku - Tekoäly-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Teko%C3%A4ly-asiantuntija" }
     ],
+    keywords: ["tekoäly", "koneoppiminen", "ohjelmointi", "algoritmit", "automaatio"],
+    study_length_estimate_months: 48
   },
 {
     id: "tuotantoteknikko",
@@ -9744,82 +9216,6 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Tuotantoteknikko", url: "https://opintopolku.fi/konfo/fi/haku/Tuotantoteknikko" }
     ],
     keywords: ["tuotantoteknikko", "tuotanto", "automaatio", "laitteiden huolto", "teollisuus"],
-    study_length_estimate_months: 36
-  },
-{
-    id: "automaatioteknikko",
-    category: "innovoija",
-    title_fi: "Automaatioteknikko",
-    title_en: "Automation Technician",
-    short_description: "Automaatioteknikko suunnittelee ja ylläpitää automaatiojärjestelmiä. Kehittää tehokkaita tuotantoprosesseja.",
-    main_tasks: [
-      "Automaatiojärjestelmien suunnittelu",
-      "Järjestelmien ohjelmointi",
-      "Automaatiojärjestelmien huolto",
-      "Prosessien optimointi",
-      "Asiakkaiden kanssa yhteistyö"
-    ],
-    impact: [
-      "Kehittää tehokkaita tuotantoprosesseja",
-      "Auttaa yrityksiä säästämään kustannuksia",
-      "Parantaa tuotannon laatua"
-    ],
-    education_paths: [
-      "AMK: Automaatiotekniikka",
-      "AMK: Sähkötekniikka",
-      "Toinen aste: Automaatio",
-      "Kurssit ja sertifikaatit"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Automaatiotekniikka",
-      "Ohjelmointi",
-      "Sähkötekniikka",
-      "Ongelmaratkaisu",
-      "Projektinhallinta"
-    ],
-    tools_tech: [
-      "Automaatiojärjestelmät",
-      "Ohjelmointityökalut",
-      "Sähkötyökalut",
-      "Mittauslaitteet",
-      "Tietokoneet"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "B1" },
-    salary_eur_month: {
-      median: 3800,
-      range: [3000, 5000],
-      source: { name: "Teollisuusliitto", url: "https://www.teollisuusliitto.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Automaatioteknikkojen kysyntä kasvaa teollisuuden digitalisoitumisen myötä.",
-      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Automaatioteknikko",
-      "Automaatio-ohjelmoija",
-      "Automaatioasentaja"
-    ],
-    career_progression: [
-      "Vanhempi automaatioteknikko",
-      "Automaatiojohtaja",
-      "Automaatiokoordinaattori",
-      "Konsultti"
-    ],
-    typical_employers: [
-      "Teollisuusyritykset",
-      "Automaatiotalot",
-      "Konsultointiyritykset",
-      "Yksityisyrittäjät"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: "Teollisuusliitto",
-    useful_links: [
-      { name: "Teollisuusliitto", url: "https://www.teollisuusliitto.fi/" },
-      { name: "Opintopolku - Automaatioteknikko", url: "https://opintopolku.fi/konfo/fi/haku/Automaatioteknikko" }
-    ],
-    keywords: ["automaatioteknikko", "automaatio", "ohjelmointi", "sähkötekniikka", "teollisuus"],
     study_length_estimate_months: 36
   },
 {
@@ -13221,6 +12617,3502 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Tilauspalvelukoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Tilauspalvelukoordinaattori" }
     ],
     keywords: ["tilauspalvelu", "koordinointi", "tilaukset", "asiakaspalvelu", "toimitukset"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "devops-insinööri",
+    category: "innovoija",
+    title_fi: "DevOps-insinööri",
+    title_en: "DevOps Engineer",
+    short_description: "DevOps-insinööri yhdistää ohjelmistokehityksen ja IT-operaatiot. Työskentelee automaation, jatkuvan integraation ja tuotantojärjestelmien hallinnan parissa.",
+    main_tasks: [
+      "CI/CD-pipelinejen rakentaminen ja ylläpito",
+      "Cloud-infrastruktuurin hallinta",
+      "Automaation kehittäminen",
+      "Monitoring- ja logging-järjestelmien asennus",
+      "Turvallisuuden ja suorituskyvyn optimointi"
+    ],
+    impact: [
+      "Auttaa yrityksiä julkaisemaan tuotteita nopeammin ja turvallisemmin",
+      "Parantaa järjestelmien luotettavuutta",
+      "Vähentää manuaalista työtä automaatiolla"
+    ],
+    education_paths: [
+      "AMK: Tietojenkäsittely, Ohjelmistotuotanto",
+      "Yliopisto: Tietojenkäsittelytieteen maisteri",
+      "AMK: Tietotekniikka",
+      "DevOps-sertifikaatit (AWS, Azure, Docker)"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Cloud-teknologiat (AWS, Azure, GCP)",
+      "Kontaineritekniikat (Docker, Kubernetes)",
+      "Automaatiotyökalut (Jenkins, GitLab CI)",
+      "Infrastruktuurin koodaus (Terraform, Ansible)",
+      "Scripting (Bash, Python)"
+    ],
+    tools_tech: [
+      "AWS, Azure, Google Cloud",
+      "Docker, Kubernetes",
+      "Jenkins, GitLab CI, GitHub Actions",
+      "Terraform, Ansible",
+      "Prometheus, Grafana, ELK Stack"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 5800,
+      range: [4500, 7500],
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "DevOps-insinöörien kysyntä kasvaa nopeasti cloud-teknologian ja automaation leviämisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior DevOps-insinööri",
+      "IT-tukihenkilö",
+      "Järjestelmäasiantuntija"
+    ],
+    career_progression: [
+      "DevOps-insinööri",
+      "Senior DevOps-insinööri",
+      "Cloud-arkkitehti",
+      "DevOps Lead"
+    ],
+    typical_employers: [
+      "IT-yritykset",
+      "Teknologia-startupit",
+      "Suuryritykset",
+      "Konsulttiyritykset"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tietojenkäsittelyliitto",
+    useful_links: [
+      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
+      { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" }
+    ],
+    keywords: ["devops", "cloud", "automaatio", "docker", "kubernetes", "ci/cd"],
+    study_length_estimate_months: 48
+  },
+{
+    id: "automekaanikko",
+    category: "rakentaja",
+    title_fi: "Automekaanikko",
+    title_en: "Car Mechanic",
+    short_description: "Automekaanikko korjaa ja huoltaa autoja sekä muita ajoneuvoja. Työskentelee korjaamoissa käyttäen erilaisia työkaluja ja diagnostiikka-laitteita.",
+    main_tasks: [
+      "Autojen korjaus ja huolto",
+      "Vikadiagnostiikka",
+      "Osien vaihto",
+      "Ajoneuvojen tarkastus",
+      "Asiakkaiden neuvominen"
+    ],
+    impact: [
+      "Varmistaa ajoneuvojen turvallisuuden",
+      "Pitää liikenteen käynnissä",
+      "Auttaa ihmisiä päivittäisessä elämässä"
+    ],
+    education_paths: [
+      "Toinen aste: Autokorjaajan perustutkinto",
+      "Autokorjaajan ammattitutkinto",
+      "Työkokemus + kurssit",
+      "Ei tutkintovaatimusta"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Mekaaninen osaaminen",
+      "Vikadiagnostiikka",
+      "Käsityötaidot",
+      "Asiakaspalvelu",
+      "Tekninen ajattelu"
+    ],
+    tools_tech: [
+      "Korjaustyökalut",
+      "Diagnostiikka-laitteet",
+      "Tietokoneet ja tabletit",
+      "Sähkötyökalut",
+      "Nosturit ja nostolaitteet"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "A2" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2600, 4200],
+      source: { name: "Autoalan TES", url: "https://www.autoalan-tes.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Automekaanikkojen kysyntä pysyy vakaana, mutta sähköautojen yleistyminen muuttaa työtä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Automekaanikon apulainen",
+      "Junior automekaanikko",
+      "Autokorjaamon harjoittelija"
+    ],
+    career_progression: [
+      "Automekaanikko",
+      "Senior automekaanikko",
+      "Korjaamon työnjohtaja",
+      "Oma korjaamo"
+    ],
+    typical_employers: [
+      "Autokorjaamot",
+      "Autoliikkeet",
+      "Vakuutusyhtiöt",
+      "Oma yritys"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Autoalan TES",
+    useful_links: [
+      { name: "Autoalan TES", url: "https://www.autoalan-tes.fi/" },
+      { name: "Opintopolku - Autokorjaaja", url: "https://opintopolku.fi/konfo/fi/haku/Autokorjaaja" }
+    ],
+    keywords: ["automekaanikko", "autokorjaus", "huolto", "diagnostiikka", "mekaanikko"],
+    study_length_estimate_months: 36
+  },
+{
+    id: "ohjelmistotestaja",
+    category: "innovoija",
+    title_fi: "Ohjelmistotestaja",
+    title_en: "Software Tester",
+    short_description: "Ohjelmistotestaja testaa ohjelmistoja löytääkseen virheitä ja varmistaakseen laadun. Työskentelee testaussuunnittelun, testien toteutuksen ja raportoinnin parissa.",
+    main_tasks: [
+      "Testaussuunnittelu",
+      "Testien kirjoittaminen ja toteuttaminen",
+      "Vikaraporttien laatiminen",
+      "Ohjelmistojen käyttöliittymätestaus",
+      "Automaattitestien ylläpito"
+    ],
+    impact: [
+      "Varmistaa laadukkaat ohjelmistot käyttäjille",
+      "Estää virheitä tuotannossa",
+      "Parantaa käyttökokemusta"
+    ],
+    education_paths: [
+      "AMK: Tietojenkäsittely, Ohjelmistotuotanto",
+      "Yliopisto: Tietojenkäsittelytieteen maisteri",
+      "Toinen aste: Tieto- ja viestintätekniikan perustutkinto",
+      "Testauskurssit ja sertifikaatit (ISTQB)"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Testausmenetelmät",
+      "Vikaraportointi",
+      "Automaattitestaus",
+      "Ohjelmointi (Python, Java)",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "Testauskehitykset (Selenium, Cypress)",
+      "Bug-tracking (Jira, Bugzilla)",
+      "Test-automaatio (TestNG, pytest)",
+      "API-testaus (Postman, REST Assured)",
+      "Tietokantatyökalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3200, 5500],
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Ohjelmistotestaajien kysyntä kasvaa ohjelmistojen määrän ja laadun tärkeyden myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior ohjelmistotestaja",
+      "Testausharjoittelija",
+      "Manuaalinen testaaja"
+    ],
+    career_progression: [
+      "Ohjelmistotestaja",
+      "Senior ohjelmistotestaja",
+      "Testausarkkitehti",
+      "Testauspäällikkö"
+    ],
+    typical_employers: [
+      "IT-yritykset",
+      "Teknologia-startupit",
+      "Konsulttiyritykset",
+      "Suuryritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tietojenkäsittelyliitto",
+    useful_links: [
+      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
+      { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" }
+    ],
+    keywords: ["testaus", "laadunvarmistus", "ohjelmistotestaus", "qa", "vikaraportointi"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "ux-suunnittelija",
+    category: "innovoija",
+    title_fi: "UX-suunnittelija",
+    title_en: "UX Designer",
+    short_description: "UX-suunnittelija suunnittelee käyttäjäkokemuksen ja käytettävyyden. Työskentelee käyttäjätutkimuksen, prototyyppien ja käyttöliittymäsuunnittelun parissa.",
+    main_tasks: [
+      "Käyttäjätutkimuksen suorittaminen",
+      "Käyttöliittymien suunnittelu",
+      "Prototyyppien luominen",
+      "Käytettävyystestaus",
+      "Tiimin kanssa yhteistyö"
+    ],
+    impact: [
+      "Parantaa käyttökokemusta",
+      "Auttaa käyttäjiä löytämään tarvitsemansa nopeasti",
+      "Kasvattaa käyttäjätyytyväisyyttä"
+    ],
+    education_paths: [
+      "AMK: Medianomi, Interaktiivinen media",
+      "Yliopisto: Taiteen maisteri, Muotoilu",
+      "AMK: Tietojenkäsittely, Käyttöliittymäsuunnittelu",
+      "UX-kurssit ja sertifikaatit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Käyttäjätutkimus",
+      "Käytettävyyssuunnittelu",
+      "Prototyypointi",
+      "Visuaalinen suunnittelu",
+      "Empatia ja käyttäjäkeskeisyys"
+    ],
+    tools_tech: [
+      "Figma, Sketch, Adobe XD",
+      "InVision, Marvel",
+      "User research tools",
+      "Analytics-työkalut",
+      "Prototyyppityökalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4400,
+      range: [3300, 6000],
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "UX-suunnittelijoiden kysyntä kasvaa nopeasti käyttäjäkeskeisen suunnittelun merkityksen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior UX-suunnittelija",
+      "UX-harjoittelija",
+      "Käytettävyysanalyytikko"
+    ],
+    career_progression: [
+      "UX-suunnittelija",
+      "Senior UX-suunnittelija",
+      "UX Lead",
+      "Head of UX"
+    ],
+    typical_employers: [
+      "IT-yritykset",
+      "Konsulttiyritykset",
+      "Design-studiot",
+      "Suuryritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tietojenkäsittelyliitto",
+    useful_links: [
+      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
+      { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" }
+    ],
+    keywords: ["ux", "käyttäjäkokemus", "käytettävyys", "suunnittelu", "user experience"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "cloud-arkkitehti",
+    category: "innovoija",
+    title_fi: "Cloud-arkkitehti",
+    title_en: "Cloud Architect",
+    short_description: "Cloud-arkkitehti suunnittelee ja rakentaa cloud-ratkaisuja. Työskentelee pilvipalveluiden, infrastruktuurin ja skaalautuvien järjestelmien parissa.",
+    main_tasks: [
+      "Cloud-arkkitehtuurin suunnittelu",
+      "Pilvipalveluiden optimointi",
+      "Turvallisuuden suunnittelu",
+      "Kustannusten hallinta",
+      "Teknisten ratkaisujen kehittäminen"
+    ],
+    impact: [
+      "Auttaa yrityksiä siirtymään cloudiin",
+      "Parantaa järjestelmien skaalautuvuutta",
+      "Vähentää IT-kustannuksia"
+    ],
+    education_paths: [
+      "Yliopisto: Tietojenkäsittelytieteen maisteri",
+      "AMK: Tietojenkäsittely, Cloud-teknologiat",
+      "Cloud-sertifikaatit (AWS, Azure, GCP)",
+      "Yliopisto: Tietotekniikka"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Cloud-teknologiat (AWS, Azure, GCP)",
+      "Mikropalveluarkkitehtuuri",
+      "Tietoturva",
+      "DevOps-työkalut",
+      "Arkitehtuurisuunnittelu"
+    ],
+    tools_tech: [
+      "AWS, Azure, Google Cloud Platform",
+      "Terraform, CloudFormation",
+      "Kubernetes, Docker",
+      "CI/CD-työkalut",
+      "Monitoring-työkalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 6500,
+      range: [5200, 8500],
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Cloud-arkkitehtien kysyntä kasvaa nopeasti yritysten siirtyessä cloud-ratkaisiin.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior cloud-arkkitehti",
+      "Cloud-kehittäjä",
+      "DevOps-insinööri"
+    ],
+    career_progression: [
+      "Cloud-arkkitehti",
+      "Senior cloud-arkkitehti",
+      "Principal cloud-arkkitehti",
+      "Chief Technology Officer"
+    ],
+    typical_employers: [
+      "IT-yritykset",
+      "Konsulttiyritykset",
+      "Suuryritykset",
+      "Cloud-palveluntarjoajat"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Tietojenkäsittelyliitto",
+    useful_links: [
+      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
+      { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" }
+    ],
+    keywords: ["cloud", "arkkitehtuuri", "aws", "azure", "pilvipalvelut"],
+    study_length_estimate_months: 60
+  },
+{
+    id: "asiakkuusvastaava",
+    category: "johtaja",
+    title_fi: "Asiakkuusvastaava",
+    title_en: "Account Manager",
+    short_description: "Asiakkuusvastaava hallinnoi ja kehittää asiakassuhteita. Työskentelee strategisten asiakkaiden kanssa varmistaen heidän tyytyväisyytensä ja liiketoiminnan kasvun.",
+    main_tasks: [
+      "Asiakassuhteiden hallinta",
+      "Myyntisuunnittelun tekeminen",
+      "Asiakkaiden tarpeiden tunnistaminen",
+      "Sopimusten neuvottelu",
+      "Asiakkaiden tyytyväisyyden seuranta"
+    ],
+    impact: [
+      "Kasvattaa yrityksen liikevaihtoa",
+      "Rakentaa pitkäaikaisia asiakassuhteita",
+      "Parantaa asiakastyytyväisyyttä"
+    ],
+    education_paths: [
+      "AMK: Liiketalous, Markkinointi",
+      "Yliopisto: Kauppatieteiden maisteri",
+      "Myyntikurssit ja sertifikaatit",
+      "Työkokemus + koulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Myynti ja neuvottelu",
+      "Asiakaspalvelu",
+      "Suhteiden rakentaminen",
+      "Strateginen ajattelu",
+      "Kommunikaatio"
+    ],
+    tools_tech: [
+      "CRM-järjestelmät",
+      "Salesforce, HubSpot",
+      "Excel, Power BI",
+      "Slack, Teams",
+      "LinkedIn Sales Navigator"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4600,
+      range: [3500, 6200],
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Asiakkuusvastaavien kysyntä kasvaa B2B-myynnin ja asiakassuhteiden tärkeyden myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Myyntiedustaja",
+      "Asiakaspalveluvastaava",
+      "Myyntikoordinaattori"
+    ],
+    career_progression: [
+      "Asiakkuusvastaava",
+      "Senior asiakkuusvastaava",
+      "Asiakkuusjohtaja",
+      "Myyntidirektori"
+    ],
+    typical_employers: [
+      "IT-yritykset",
+      "Konsulttiyritykset",
+      "Suuryritykset",
+      "Media-alan yritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/Liiketalous" }
+    ],
+    keywords: ["asiakkuus", "myynti", "asiakassuhteet", "account management", "b2b"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "sosiaaliohjaaja",
+    category: "auttaja",
+    title_fi: "Sosiaaliohjaaja",
+    title_en: "Social Counselor",
+    short_description: "Sosiaaliohjaaja ohjaa ja tukee ihmisiä sosiaalisissa ongelmissa. Työskentelee asiakkaiden kanssa auttaen heitä löytämään ratkaisuja ja käyttämään palveluja.",
+    main_tasks: [
+      "Asiakkaiden ohjaus ja neuvonta",
+      "Sosiaalisten ongelmien arviointi",
+      "Palveluiden koordinointi",
+      "Asiakirjojen ja hakemusten valmistelu",
+      "Seuranta ja tuki"
+    ],
+    impact: [
+      "Auttaa ihmisiä vaikeina aikoina",
+      "Parantaa asiakkaiden hyvinvointia",
+      "Varmistaa että palvelut saavuttavat oikeat ihmiset"
+    ],
+    education_paths: [
+      "AMK: Sosiaalityö, Sosionomi",
+      "Yliopisto: Sosiaalityön maisteri",
+      "AMK: Sosionomi",
+      "Työkokemus + koulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Ohjausmenetelmät",
+      "Kommunikaatio ja empatia",
+      "Sosiaalisten palveluiden tuntemus",
+      "Ongelmanratkaisu",
+      "Tiimityö"
+    ],
+    tools_tech: [
+      "Asiakasjärjestelmät",
+      "Dokumenttienhallinta",
+      "Tietokoneet ja tabletit",
+      "Videoneuvottelut",
+      "Ohjausohjelmistot"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2600, 4000],
+      source: { name: "JHL", url: "https://www.jhl.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Sosiaaliohjaajien kysyntä kasvaa sosiaalisten palveluiden tärkeyden myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Sosiaaliohjaaja",
+      "Ohjauskoordinaattori",
+      "Asiakaspalvelija"
+    ],
+    career_progression: [
+      "Sosiaaliohjaaja",
+      "Senior sosiaaliohjaaja",
+      "Ohjauspäällikkö",
+      "Sosiaalipalveluiden johtaja"
+    ],
+    typical_employers: [
+      "Kunnat",
+      "Kela",
+      "Sosiaalialan organisaatiot",
+      "Nuorisopalvelut"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "JHL",
+    useful_links: [
+      { name: "JHL", url: "https://www.jhl.fi/" },
+      { name: "Opintopolku - Sosionomi", url: "https://opintopolku.fi/konfo/fi/haku/Sosionomi" }
+    ],
+    keywords: ["sosiaaliohjaaja", "ohjaus", "sosiaalipalvelut", "neuvonta", "sosionomi"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "terveydenhoitaja",
+    category: "auttaja",
+    title_fi: "Terveydenhoitaja",
+    title_en: "Public Health Nurse",
+    short_description: "Terveydenhoitaja edistää yhteisön terveyttä ja ehkäisee sairauksia. Työskentelee terveyden edistämisen, terveysneuvonnan ja terveystarkastusten parissa.",
+    main_tasks: [
+      "Terveyden edistämisen työ",
+      "Terveysneuvonta",
+      "Terveystarkastusten suorittaminen",
+      "Rokotusten antaminen",
+      "Yhteisön terveyden seuranta"
+    ],
+    impact: [
+      "Ehkäisee sairauksia",
+      "Parantaa yhteisön terveyttä",
+      "Auttaa ihmisiä ylläpitämään hyvää terveyttä"
+    ],
+    education_paths: [
+      "AMK: Terveydenhoitaja",
+      "Yliopisto: Terveystiede",
+      "AMK: Sairaanhoitaja + terveydenhoitajan erikoistuminen",
+      "Ei tutkintovaatimusta (ei yleistä)"
+    ],
+    qualification_or_license: "Valvira",
+    core_skills: [
+      "Terveyden edistämisen menetelmät",
+      "Terveysneuvonta",
+      "Epidemiologia",
+      "Kommunikaatio",
+      "Tiimityö"
+    ],
+    tools_tech: [
+      "Terveydenhoitojärjestelmät",
+      "Tietokoneet ja tabletit",
+      "Mittauslaitteet",
+      "Rokotukset",
+      "Dokumenttienhallinta"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3600,
+      range: [3000, 4500],
+      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Terveydenhoitajien kysyntä kasvaa ehkäisevän terveydenhuollon tärkeyden myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Terveydenhoitaja",
+      "Terveyskeskuksen terveydenhoitaja",
+      "Kouluterveydenhoitaja"
+    ],
+    career_progression: [
+      "Terveydenhoitaja",
+      "Senior terveydenhoitaja",
+      "Terveyden edistämisen koordinaattori",
+      "Terveyden edistämisen johtaja"
+    ],
+    typical_employers: [
+      "Kunnat",
+      "Terveyskeskukset",
+      "Koulut",
+      "Yritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Tehy",
+    useful_links: [
+      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Opintopolku - Terveydenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Terveydenhoitaja" }
+    ],
+    keywords: ["terveydenhoitaja", "terveyden edistäminen", "ehkäisevä terveydenhuolto", "terveysneuvonta"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "dialyysihoitaja",
+    category: "auttaja",
+    title_fi: "Dialyysihoitaja",
+    title_en: "Dialysis Nurse",
+    short_description: "Dialyysihoitaja hoitaa munuaisten vajaatoimintaa sairastavia potilaita dialyysihoidossa. Työskentelee erikoissairaanhoidossa varmistaen potilaiden turvallisen hoidon.",
+    main_tasks: [
+      "Dialyysihoidon suorittaminen",
+      "Potilaiden valvonta ja seuranta",
+      "Dialyysilaitteiden käyttö ja ylläpito",
+      "Potilaiden ja perheiden neuvonta",
+      "Hoitodokumentaation ylläpito"
+    ],
+    impact: [
+      "Pelastaa henkiä ja parantaa elämänlaatua",
+      "Auttaa potilaita selviytymään munuaissairaudesta",
+      "Tukee potilaita ja perheitä vaikeina aikoina"
+    ],
+    education_paths: [
+      "AMK: Sairaanhoitaja",
+      "Dialyysihoidon erikoistuminen",
+      "Yliopisto: Terveystiede",
+      "Työkokemus + erikoiskurssit"
+    ],
+    qualification_or_license: "Valvira",
+    core_skills: [
+      "Dialyysihoidon osaaminen",
+      "Lääketieteelliset laitteet",
+      "Potilaanvalvonta",
+      "Kommunikaatio ja empatia",
+      "Tiimityö"
+    ],
+    tools_tech: [
+      "Dialyysilaitteet",
+      "Valvontalaitteet",
+      "Hoitojärjestelmät",
+      "Laboratoriolaitteet",
+      "Tietokoneet ja tabletit"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4800],
+      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Dialyysihoitajien kysyntä kasvaa ikääntyvän väestön ja munuaissairauksien lisääntymisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Dialyysihoitaja",
+      "Sairaanhoitaja dialyysiyksikössä",
+      "Erikoissairaanhoitaja"
+    ],
+    career_progression: [
+      "Dialyysihoitaja",
+      "Senior dialyysihoitaja",
+      "Dialyysiyksikön johtaja",
+      "Koulutussuunnittelija"
+    ],
+    typical_employers: [
+      "Sairaalat",
+      "Erikoissairaanhoidon yksiköt",
+      "Dialyysiklinikat",
+      "Yksityiset terveydenhuoltofirmat"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    union_or_CBA: "Tehy",
+    useful_links: [
+      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Opintopolku - Sairaanhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Sairaanhoitaja" }
+    ],
+    keywords: ["dialyysi", "sairaanhoitaja", "munuais", "hoito", "erikoissairaanhoito"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "varhaiskasvatuksen-erityisopettaja",
+    category: "auttaja",
+    title_fi: "Varhaiskasvatuksen erityisopettaja",
+    title_en: "Special Needs Early Childhood Educator",
+    short_description: "Varhaiskasvatuksen erityisopettaja tukee erityistä tukea tarvitsevia lapsia varhaiskasvatuksessa. Työskentelee kehityksen, oppimisen ja sosiaalisten taitojen tukemisessa.",
+    main_tasks: [
+      "Erityisen tuen tarpeen arviointi",
+      "Henkilökohtaisen tuensuunnitelman laatiminen",
+      "Lapsen ja perheen tukeminen",
+      "Yhteistyö muiden ammattilaisten kanssa",
+      "Seuranta ja arviointi"
+    ],
+    impact: [
+      "Auttaa lapsia kehittymään täysimääräisesti",
+      "Tukee perheitä ja vahvistaa lapsen mahdollisuuksia",
+      "Edistää inklusiivista varhaiskasvatusta"
+    ],
+    education_paths: [
+      "Yliopisto: Varhaiskasvatuksen erityisopettaja",
+      "AMK: Varhaiskasvatus + erityisopettajan koulutus",
+      "Yliopisto: Kasvatustiede + erityispedagogiikka",
+      "Erikoistumiskoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Erityispedagogiikka",
+      "Kehityksen seuranta",
+      "Erityisen tuen menetelmät",
+      "Kommunikaatio perheiden kanssa",
+      "Tiimityö"
+    ],
+    tools_tech: [
+      "Arviointityökalut",
+      "Oppimismateriaalit",
+      "Tietokoneet ja tabletit",
+      "Videoneuvottelut",
+      "Dokumenttienhallinta"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3500,
+      range: [3000, 4200],
+      source: { name: "OAJ", url: "https://www.oaj.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Erityisopettajien kysyntä kasvaa erityisen tuen tarpeen lisääntymisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Varhaiskasvatuksen erityisopettaja",
+      "Erityisopettaja",
+      "Varhaiskasvatuksen opettaja"
+    ],
+    career_progression: [
+      "Erityisopettaja",
+      "Senior erityisopettaja",
+      "Erityisopetuksen koordinaattori",
+      "Erityisopetuksen johtaja"
+    ],
+    typical_employers: [
+      "Kunnat",
+      "Varhaiskasvatuksen yksiköt",
+      "Erikoiskoulut",
+      "Yksityiset päiväkodit"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "OAJ",
+    useful_links: [
+      { name: "OAJ", url: "https://www.oaj.fi/" },
+      { name: "Opintopolku - Erityisopettaja", url: "https://opintopolku.fi/konfo/fi/haku/Erityisopettaja" }
+    ],
+    keywords: ["erityisopettaja", "varhaiskasvatus", "erityistuki", "kehitysvamma", "oppimisvaikeudet"],
+    study_length_estimate_months: 60
+  },
+{
+    id: "ui-suunnittelija",
+    category: "innovoija",
+    title_fi: "UI-suunnittelija",
+    title_en: "UI Designer",
+    short_description: "UI-suunnittelija suunnittelee käyttöliittymän visuaalisen ilmeen ja vuorovaikutuksen. Työskentelee värien, typografian, ikonien ja layout-suunnittelun parissa.",
+    main_tasks: [
+      "Käyttöliittymien visuaalinen suunnittelu",
+      "Layout-suunnittelu",
+      "Väri- ja typografiasuunnittelu",
+      "Ikonien ja kuvien suunnittelu",
+      "Prototyyppien luominen"
+    ],
+    impact: [
+      "Parantaa käyttökokemusta",
+      "Tehokkaampi ja selkeämpi käyttöliittymä",
+      "Kasvattaa käyttäjätyytyväisyyttä"
+    ],
+    education_paths: [
+      "AMK: Medianomi, Interaktiivinen media",
+      "Yliopisto: Taiteen maisteri, Muotoilu",
+      "AMK: Tietojenkäsittely, Käyttöliittymäsuunnittelu",
+      "UI-kurssit ja sertifikaatit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Visuaalinen suunnittelu",
+      "Väri- ja typografian hallinta",
+      "Layout-suunnittelu",
+      "Prototyypointi",
+      "Brand-ymmärrys"
+    ],
+    tools_tech: [
+      "Figma, Sketch, Adobe XD",
+      "Photoshop, Illustrator",
+      "InVision, Marvel",
+      "Prototyyppityökalut",
+      "Design systems"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3200, 5800],
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "UI-suunnittelijoiden kysyntä kasvaa digitaalisten palveluiden ja käyttöliittymäsuunnittelun tärkeyden myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior UI-suunnittelija",
+      "UI-harjoittelija",
+      "Graafinen suunnittelija"
+    ],
+    career_progression: [
+      "UI-suunnittelija",
+      "Senior UI-suunnittelija",
+      "UI Lead",
+      "Head of Design"
+    ],
+    typical_employers: [
+      "IT-yritykset",
+      "Design-studiot",
+      "Konsulttiyritykset",
+      "Suuryritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tietojenkäsittelyliitto",
+    useful_links: [
+      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
+      { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" }
+    ],
+    keywords: ["ui", "käyttöliittymä", "visuaalinen suunnittelu", "design", "user interface"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "tietoturvaanalyytikko",
+    category: "innovoija",
+    title_fi: "Tietoturvaanalyytikko",
+    title_en: "Cybersecurity Analyst",
+    short_description: "Tietoturvaanalyytikko analysoi ja tutkii tietoturva-uhkia. Työskentelee järjestelmien seurannan, uhkien tunnistamisen ja tietoturvaincidenttien käsittelyn parissa.",
+    main_tasks: [
+      "Tietoturva-uhkien analysointi",
+      "Järjestelmien seuranta",
+      "Tietoturvaincidenttien tutkiminen",
+      "Tietoturvaraporttien laatiminen",
+      "Suosituksien antaminen"
+    ],
+    impact: [
+      "Suojaa organisaation tietoja ja järjestelmiä",
+      "Estää kyberhyökkäykset",
+      "Varmistaa tietoturvallisuuden"
+    ],
+    education_paths: [
+      "AMK: Tietojenkäsittely, Kyberturvallisuus",
+      "Yliopisto: Tietojenkäsittelytieteen maisteri",
+      "Kyberturvallisuuskurssit",
+      "Sertifikaatit (CEH, Security+)"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Kyberturvallisuus",
+      "Verkkoanalyysi",
+      "Malware-analyysi",
+      "Tietoturvamonitorointi",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "SIEM-järjestelmät",
+      "Verkkoanalyysityökalut",
+      "Malware-analyysityökalut",
+      "Penetraatiotestaus",
+      "Tietoturvamonitorointi"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 5200,
+      range: [4000, 6800],
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Tietoturvaanalyytikoiden kysyntä kasvaa nopeasti kyberuhkien lisääntyessä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior tietoturvaanalyytikko",
+      "IT-tukihenkilö",
+      "Järjestelmäasiantuntija"
+    ],
+    career_progression: [
+      "Tietoturvaanalyytikko",
+      "Senior tietoturvaanalyytikko",
+      "Tietoturvapäällikkö",
+      "CISO"
+    ],
+    typical_employers: [
+      "IT-yritykset",
+      "Konsulttiyritykset",
+      "Suuryritykset",
+      "Julkiset organisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tietojenkäsittelyliitto",
+    useful_links: [
+      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
+      { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" }
+    ],
+    keywords: ["tietoturva", "kyberturvallisuus", "analyysi", "tietoturvaincidentti", "soc"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "tietokoneasentaja",
+    category: "innovoija",
+    title_fi: "Tietokoneasentaja",
+    title_en: "Computer Technician",
+    short_description: "Tietokoneasentaja asentaa, korjaa ja ylläpitää tietokoneita ja tietoverkkoja. Työskentelee laitteiden asennuksen, korjauksen ja teknisten ongelmien ratkaisemisen parissa.",
+    main_tasks: [
+      "Tietokoneiden asennus ja konfigurointi",
+      "Laitteiden korjaus",
+      "Tietoverkkojen asennus",
+      "Ohjelmistojen asennus",
+      "Teknisten ongelmien ratkaisu"
+    ],
+    impact: [
+      "Varmistaa tietokoneiden ja verkkojen toimivuuden",
+      "Auttaa käyttäjiä teknisten ongelmien kanssa",
+      "Ylläpitää IT-infrastruktuuria"
+    ],
+    education_paths: [
+      "Toinen aste: Tieto- ja viestintätekniikan perustutkinto",
+      "AMK: Tietotekniikka",
+      "Tietokoneasentajan ammattitutkinto",
+      "Työkokemus + kurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Tietokoneiden rakenne",
+      "Verkkojen asennus",
+      "Vikadiagnostiikka",
+      "Ohjelmistojen asennus",
+      "Asiakaspalvelu"
+    ],
+    tools_tech: [
+      "Työkalut",
+      "Diagnostiikka-laitteet",
+      "Verkkoanalyysityökalut",
+      "Asennusohjelmistot",
+      "Tietokoneet"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2600, 4200],
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Tietokoneasentajien kysyntä pysyy vakaana IT-infrastruktuurin ylläpidon tarpeen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Tietokoneasentaja",
+      "IT-tukihenkilö",
+      "Korjaamon työntekijä"
+    ],
+    career_progression: [
+      "Tietokoneasentaja",
+      "Senior tietokoneasentaja",
+      "IT-asiantuntija",
+      "Järjestelmäasiantuntija"
+    ],
+    typical_employers: [
+      "IT-yritykset",
+      "Korjaamot",
+      "Suuryritykset",
+      "Koulut ja oppilaitokset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Tietojenkäsittelyliitto",
+    useful_links: [
+      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
+      { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Tietotekniikka" }
+    ],
+    keywords: ["tietokoneasentaja", "it-tuki", "tietokonekorjaus", "tietoverkot", "teknikko"],
+    study_length_estimate_months: 36
+  },
+{
+    id: "optometristi",
+    category: "auttaja",
+    title_fi: "Optometristi",
+    title_en: "Optometrist",
+    short_description: "Optometristi tutkii silmien terveyttä ja määrittää näön korjauksen. Työskentelee näön tarkastusten, silmälasejen määräämisen ja silmäsairauksien tunnistamisen parissa.",
+    main_tasks: [
+      "Näön tarkastusten suorittaminen",
+      "Silmälasejen ja linssien määrääminen",
+      "Silmäsairauksien tunnistaminen",
+      "Asiakkaiden neuvonta",
+      "Laitteiden käyttö"
+    ],
+    impact: [
+      "Parantaa ihmisten näköä",
+      "Tunnistaa silmäsairauksia varhaisessa vaiheessa",
+      "Auttaa ihmisiä paremmassa näössä"
+    ],
+    education_paths: [
+      "AMK: Optometria",
+      "Yliopisto: Optometria",
+      "Sairaanhoitaja + optometrian erikoistuminen",
+      "Ei tutkintovaatimusta (ei yleistä)"
+    ],
+    qualification_or_license: "Valvira",
+    core_skills: [
+      "Optometria",
+      "Näön tarkastus",
+      "Laitteiden käyttö",
+      "Asiakaspalvelu",
+      "Kommunikaatio"
+    ],
+    tools_tech: [
+      "Optometriset laitteet",
+      "Refraktometrit",
+      "Kornelamikroskopit",
+      "Tietokoneet",
+      "Optometriaohjelmistot"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4800],
+      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Optometristien kysyntä kasvaa näön ongelmien lisääntymisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Optometristi",
+      "Optometristiharjoittelija",
+      "Silmälasekauppa"
+    ],
+    career_progression: [
+      "Optometristi",
+      "Senior optometristi",
+      "Optometrian johtaja",
+      "Oma optometriapalvelu"
+    ],
+    typical_employers: [
+      "Silmälasekaupat",
+      "Sairaalat",
+      "Terveyskeskukset",
+      "Yksityiset optometriapalvelut"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tehy",
+    useful_links: [
+      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Opintopolku - Optometria", url: "https://opintopolku.fi/konfo/fi/haku/Optometria" }
+    ],
+    keywords: ["optometristi", "näkö", "silmälaseet", "silmätarkastus", "optometria"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "ravitsemusterapeutti",
+    category: "auttaja",
+    title_fi: "Ravitsemusterapeutti",
+    title_en: "Nutrition Therapist",
+    short_description: "Ravitsemusterapeutti neuvoo ravitsemuksessa ja ruokavaliossa. Työskentelee terveyden edistämisen, sairauksien hoidon ja ravitsemusongelmien parissa.",
+    main_tasks: [
+      "Ravitsemusneuvonta",
+      "Ruokavaliosuunnitelmat",
+      "Ravitsemusongelmien arviointi",
+      "Asiakkaiden neuvonta",
+      "Seuranta ja arviointi"
+    ],
+    impact: [
+      "Parantaa ihmisten terveyttä",
+      "Auttaa sairauksien hoidossa",
+      "Edistää terveellistä elämäntapaa"
+    ],
+    education_paths: [
+      "AMK: Ravitsemusterapeutti",
+      "Yliopisto: Ravitsemustiede",
+      "Sairaanhoitaja + ravitsemusterapeutin erikoistuminen",
+      "Ei tutkintovaatimusta (ei yleistä)"
+    ],
+    qualification_or_license: "Valvira",
+    core_skills: [
+      "Ravitsemustiede",
+      "Ruokavaliosuunnittelu",
+      "Neuvonta",
+      "Kommunikaatio",
+      "Tiimityö"
+    ],
+    tools_tech: [
+      "Ravitsemusohjelmistot",
+      "Ruokavaliomallit",
+      "Tietokoneet ja tabletit",
+      "Mittauslaitteet",
+      "Dokumenttienhallinta"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3600,
+      range: [3000, 4500],
+      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Ravitsemusterapeuttien kysyntä kasvaa terveyden edistämisen ja ravitsemusongelmien lisääntymisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Ravitsemusterapeutti",
+      "Ravitsemusneuvonantaja",
+      "Sairaanhoitaja"
+    ],
+    career_progression: [
+      "Ravitsemusterapeutti",
+      "Senior ravitsemusterapeutti",
+      "Ravitsemuspalveluiden johtaja",
+      "Ravitsemustutkija"
+    ],
+    typical_employers: [
+      "Sairaalat",
+      "Terveyskeskukset",
+      "Yksityiset terveydenhuoltofirmat",
+      "Julkiset organisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Tehy",
+    useful_links: [
+      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Opintopolku - Ravitsemusterapeutti", url: "https://opintopolku.fi/konfo/fi/haku/Ravitsemusterapeutti" }
+    ],
+    keywords: ["ravitsemusterapeutti", "ravitsemusneuvonta", "ruokavalio", "terveys", "ravitsemustiede"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "putkityömies",
+    category: "rakentaja",
+    title_fi: "Putkityömies",
+    title_en: "Pipe Worker",
+    short_description: "Putkityömies asentaa ja korjaa putkistoa ja LVI-järjestelmiä. Työskentelee vesihuollon, lämmityksen ja jätevesijärjestelmien parissa.",
+    main_tasks: [
+      "Putkistojen asennus",
+      "LVI-järjestelmien asennus",
+      "Korjaukset ja huolto",
+      "Vesihuoltojärjestelmien ylläpito",
+      "Turvallisuussääntöjen noudattaminen"
+    ],
+    impact: [
+      "Varmistaa veden saannin ja laadun",
+      "Turvaa lämmityksen toimivuuden",
+      "Auttaa ihmisiä päivittäisessä elämässä"
+    ],
+    education_paths: [
+      "Toinen aste: LVI-asentajan perustutkinto",
+      "Putkityömiehen ammattitutkinto",
+      "Työkokemus + kurssit",
+      "Ei tutkintovaatimusta"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Putkityöt",
+      "LVI-tekniikka",
+      "Käsityötaidot",
+      "Fyysinen kunto",
+      "Tarkkuus"
+    ],
+    tools_tech: [
+      "Putkityökalut",
+      "Hitsauslaitteet",
+      "Mittauslaitteet",
+      "Työkalut",
+      "Turvavälineet"
+    ],
+    languages_required: { fi: "B1", sv: "A2", en: "A2" },
+    salary_eur_month: {
+      median: 3400,
+      range: [2800, 4500],
+      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Putkityömiesten kysyntä pysyy vakaana rakentamisen ja ylläpidon tarpeen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Putkityömiehen apulainen",
+      "Junior putkityömies",
+      "LVI-asentaja"
+    ],
+    career_progression: [
+      "Putkityömies",
+      "Senior putkityömies",
+      "Putkityön työnjohtaja",
+      "Oma putkityöyritys"
+    ],
+    typical_employers: [
+      "Rakennusyhtiöt",
+      "LVI-yritykset",
+      "Ylläpitoyritykset",
+      "Oma yritys"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Rakennusliitto",
+    useful_links: [
+      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Opintopolku - LVI-asentaja", url: "https://opintopolku.fi/konfo/fi/haku/LVI-asentaja" }
+    ],
+    keywords: ["putkityömies", "lvi", "putkisto", "vesihuolto", "lämmitys"],
+    study_length_estimate_months: 36
+  },
+{
+    id: "automaatioteknikko",
+    category: "rakentaja",
+    title_fi: "Automaatioteknikko",
+    title_en: "Automation Technician",
+    short_description: "Automaatioteknikko suunnittelee ja ylläpitää automaatiojärjestelmiä. Työskentelee teollisuuden automaation, ohjelmoinnin ja järjestelmien hallinnan parissa.",
+    main_tasks: [
+      "Automaatiojärjestelmien suunnittelu",
+      "Ohjelmoinnin toteutus",
+      "Järjestelmien asennus ja konfigurointi",
+      "Ylläpito ja korjaukset",
+      "Koulutus ja dokumentointi"
+    ],
+    impact: [
+      "Parantaa teollisuuden tehokkuutta",
+      "Vähentää manuaalista työtä",
+      "Parantaa laatua ja turvallisuutta"
+    ],
+    education_paths: [
+      "AMK: Automaatiotekniikka",
+      "Yliopisto: Automaatiotekniikka",
+      "Toinen aste: Sähköasentaja + automaation erikoistuminen",
+      "Työkokemus + kurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Automaatiotekniikka",
+      "Ohjelmointi (PLC)",
+      "Sähkötekniikka",
+      "Järjestelmäintegraatio",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "PLC-ohjelmointi",
+      "SCADA-järjestelmät",
+      "Automaatiojärjestelmät",
+      "Työkalut",
+      "Tietokoneet"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 4500,
+      range: [3600, 6000],
+      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Automaatioteknikkojen kysyntä kasvaa teollisuuden automaation myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Automaatioteknikko",
+      "Sähköasentaja",
+      "Järjestelmäasiantuntija"
+    ],
+    career_progression: [
+      "Automaatioteknikko",
+      "Senior automaatioteknikko",
+      "Automaatioinsinööri",
+      "Automaatiopäällikkö"
+    ],
+    typical_employers: [
+      "Teollisuusyritykset",
+      "Automaatioyritykset",
+      "Konsulttiyritykset",
+      "Suuryritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Insöörit",
+    useful_links: [
+      { name: "Insöörit", url: "https://www.insinoorit.fi/" },
+      { name: "Opintopolku - Automaatiotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Automaatiotekniikka" }
+    ],
+    keywords: ["automaatio", "plc", "scada", "teollisuusautomaatio", "teknikko"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "kiertotalousasiantuntija",
+    category: "ympariston-puolustaja",
+    title_fi: "Kiertotalousasiantuntija",
+    title_en: "Circular Economy Specialist",
+    short_description: "Kiertotalousasiantuntija kehittää kiertotalousratkaisuja ja edistää kestävää kehitystä. Työskentelee jätehuollon, kierrätyksen ja resurssitehokkuuden parissa.",
+    main_tasks: [
+      "Kiertotalousstrategioiden kehittäminen",
+      "Jätehuollon optimointi",
+      "Kierrätyksen edistäminen",
+      "Resurssitehokkuuden parantaminen",
+      "Raporttien laatiminen"
+    ],
+    impact: [
+      "Vähentää jätettä ja hiilijalanjälkeä",
+      "Parantaa resurssitehokkuutta",
+      "Edistää kestävää kehitystä"
+    ],
+    education_paths: [
+      "AMK: Ympäristötekniikka, Kestävän kehityksen",
+      "Yliopisto: Ympäristötekniikan maisteri",
+      "Kiertotalouden erikoiskurssit",
+      "Kestävän kehityksen sertifikaatit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Kiertotalous",
+      "Jätehuolto",
+      "Resurssitehokkuus",
+      "Projektinhallinta",
+      "Kommunikaatio"
+    ],
+    tools_tech: [
+      "Kiertotalousohjelmistot",
+      "Excel, Power BI",
+      "Projektinhallintatyökalut",
+      "Raportointityökalut",
+      "Analytiikkatyökalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3200, 5500],
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kiertotalousasiantuntijoiden kysyntä kasvaa kestävän kehityksen ja ympäristötietoisuuden myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Kiertotalousasiantuntija",
+      "Ympäristöasiantuntija",
+      "Jätehuoltoasiantuntija"
+    ],
+    career_progression: [
+      "Kiertotalousasiantuntija",
+      "Senior kiertotalousasiantuntija",
+      "Kiertotalouskoordinaattori",
+      "Kestävän kehityksen johtaja"
+    ],
+    typical_employers: [
+      "Ympäristöyritykset",
+      "Kunnat",
+      "Konsulttiyritykset",
+      "Suuryritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6tekniikka" }
+    ],
+    keywords: ["kiertotalous", "kierrättäminen", "jätehuolto", "kestävän kehityksen", "ympäristö"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "ympäristövalvonta",
+    category: "ympariston-puolustaja",
+    title_fi: "Ympäristövalvonta",
+    title_en: "Environmental Inspector",
+    short_description: "Ympäristövalvonta valvoo ympäristölainsäädännön noudattamista. Työskentelee ympäristövalvonnan, tarkastusten ja rikkeiden tutkimisen parissa.",
+    main_tasks: [
+      "Ympäristövalvonnan tarkastukset",
+      "Lainsäädännön noudattamisen valvonta",
+      "Rikkeiden tutkiminen",
+      "Raporttien laatiminen",
+      "Suosituksien antaminen"
+    ],
+    impact: [
+      "Suojaa ympäristöä",
+      "Varmistaa lainsäädännön noudattamisen",
+      "Estää ympäristörikokset"
+    ],
+    education_paths: [
+      "AMK: Ympäristötekniikka",
+      "Yliopisto: Ympäristötekniikan maisteri",
+      "Ympäristövalvonnan erikoiskurssit",
+      "Valvonta- ja tarkastuskoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Ympäristötekniikka",
+      "Lainsäädäntö",
+      "Valvonta",
+      "Tarkastusmenetelmät",
+      "Raportointi"
+    ],
+    tools_tech: [
+      "Mittauslaitteet",
+      "Tietokoneet ja tabletit",
+      "GIS-työkalut",
+      "Raportointityökalut",
+      "Kamerat"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 4000,
+      range: [3200, 5200],
+      source: { name: "JHL", url: "https://www.jhl.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Ympäristövalvontaa valvovien kysyntä kasvaa ympäristölainsäädännön tärkeyden myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Ympäristövalvonta",
+      "Ympäristöasiantuntija",
+      "Valvonta-asiantuntija"
+    ],
+    career_progression: [
+      "Ympäristövalvonta",
+      "Senior ympäristövalvonta",
+      "Ympäristövalvonnan johtaja",
+      "Ympäristöasiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat",
+      "Valvira",
+      "Ympäristökeskus",
+      "Julkiset organisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    union_or_CBA: "JHL",
+    useful_links: [
+      { name: "JHL", url: "https://www.jhl.fi/" },
+      { name: "Opintopolku - Ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6tekniikka" }
+    ],
+    keywords: ["ympäristövalvonta", "valvonta", "ympäristölainsäädäntö", "tarkastus", "ympäristö"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "videonmuokkaaja",
+    category: "luova",
+    title_fi: "Videonmuokkaaja",
+    title_en: "Video Editor",
+    short_description: "Videonmuokkaaja leikkaa ja muokkaa videoita eri tarkoituksiin. Työskentelee elokuvien, televisio-ohjelmien, mainosten ja sosiaalisen median videoiden parissa.",
+    main_tasks: [
+      "Videoiden leikkaus",
+      "Äänen ja musiikin lisääminen",
+      "Efektien ja siirtymien käyttö",
+      "Värien ja valaistuksen korjaus",
+      "Lopullisen version renderöinti"
+    ],
+    impact: [
+      "Luo laadukkaita videoita",
+      "Parantaa visuaalista viestiä",
+      "Auttaa yrityksiä viestimään tehokkaasti"
+    ],
+    education_paths: [
+      "AMK: Medianomi, Videonmuokkaus",
+      "Yliopisto: Taiteen maisteri, Elokuva",
+      "Videonmuokkauskurssit",
+      "Työkokemus + portfolio"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Videonmuokkaus",
+      "Tarina- ja leikkauskokemus",
+      "Äänen käsittely",
+      "Visuaalinen silmä",
+      "Aikataulujen hallinta"
+    ],
+    tools_tech: [
+      "Adobe Premiere Pro, Final Cut Pro",
+      "After Effects",
+      "DaVinci Resolve",
+      "Avid Media Composer",
+      "Audition"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3600,
+      range: [2800, 5000],
+      source: { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Videonmuokkaajien kysyntä kasvaa sosiaalisen median ja videosisällön merkityksen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior videonmuokkaaja",
+      "Videonmuokkausharjoittelija",
+      "Freelance-muokkaaja"
+    ],
+    career_progression: [
+      "Videonmuokkaaja",
+      "Senior videonmuokkaaja",
+      "Leikkaaja",
+      "Oma studiot"
+    ],
+    typical_employers: [
+      "Elokuvastudiot",
+      "Televisioyhtiöt",
+      "Mainostoimistot",
+      "Freelance-työskentely"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
+    union_or_CBA: "Media-alan TES",
+    useful_links: [
+      { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/" },
+      { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" }
+    ],
+    keywords: ["videonmuokkaus", "leikkaus", "video", "media", "editing"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "tuotantokoordinaattori",
+    category: "luova",
+    title_fi: "Tuotantokoordinaattori",
+    title_en: "Production Coordinator",
+    short_description: "Tuotantokoordinaattori koordinoi media- ja viihdetuotantojen toteutusta. Työskentelee aikataulujen, resurssien ja tiimien hallinnassa.",
+    main_tasks: [
+      "Tuotantojen koordinointi",
+      "Aikataulujen hallinta",
+      "Resurssien hallinta",
+      "Tiimien koordinointi",
+      "Budjetin seuranta"
+    ],
+    impact: [
+      "Varmistaa tuotantojen sujuvan toteutuksen",
+      "Auttaa tiimejä toimimaan tehokkaasti",
+      "Tukee luovan työn toteutusta"
+    ],
+    education_paths: [
+      "AMK: Medianomi, Tuotantokoordinaattori",
+      "Yliopisto: Taiteen maisteri, Elokuva",
+      "Tuotantokoordinaattorin kurssit",
+      "Työkokemus + koulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Projektinhallinta",
+      "Koordinointi",
+      "Aikataulutus",
+      "Kommunikaatio",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "Projektinhallintatyökalut",
+      "Excel, Google Sheets",
+      "Slack, Teams",
+      "Raportointityökalut",
+      "Budjetointityökalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3400,
+      range: [2800, 4500],
+      source: { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Tuotantokoordinaattoreiden kysyntä kasvaa media- ja viihdetuotantojen määrän myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Tuotantokoordinaattori",
+      "Tuotantoassistentti",
+      "Projektikoordinaattori"
+    ],
+    career_progression: [
+      "Tuotantokoordinaattori",
+      "Senior tuotantokoordinaattori",
+      "Tuotantopäällikkö",
+      "Tuotantojen johtaja"
+    ],
+    typical_employers: [
+      "Elokuvastudiot",
+      "Televisioyhtiöt",
+      "Mainostoimistot",
+      "Tapahtumayritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: true, travel: "paljon" },
+    union_or_CBA: "Media-alan TES",
+    useful_links: [
+      { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/" },
+      { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" }
+    ],
+    keywords: ["tuotantokoordinaattori", "media", "tuotanto", "koordinointi", "projektinhallinta"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "tarjoilija",
+    category: "auttaja",
+    title_fi: "Tarjoilija",
+    title_en: "Waiter/Waitress",
+    short_description: "Tarjoilija palvelee asiakkaita ravintoloissa ja kahviloissa. Työskentelee asiakaspalvelun, tilauksien vastaanoton ja ruokailun järjestämisen parissa.",
+    main_tasks: [
+      "Asiakkaiden palveleminen",
+      "Tilausten vastaanotto",
+      "Ruokailun tarjoilu",
+      "Tiskaus ja siivoaminen",
+      "Kassan hoito"
+    ],
+    impact: [
+      "Luo mukavan ravintolakokemuksen",
+      "Auttaa ihmisiä nauttimaan ruokaillusta",
+      "Tukee ravintolatoimintaa"
+    ],
+    education_paths: [
+      "Toinen aste: Ravintolatyön perustutkinto",
+      "Työkokemus",
+      "Ei tutkintovaatimusta",
+      "Ravintolatyön kurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Asiakaspalvelu",
+      "Kommunikaatio",
+      "Muistutuskyky",
+      "Aikataulujen hallinta",
+      "Fyysinen kunto"
+    ],
+    tools_tech: [
+      "Kassajärjestelmät",
+      "Tilausjärjestelmät",
+      "POS-järjestelmät",
+      "Tietokoneet",
+      "Tabletit"
+    ],
+    languages_required: { fi: "B2", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 2400,
+      range: [2000, 3200],
+      source: { name: "PAM", url: "https://www.pam.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Tarjoilijoiden kysyntä pysyy vakaana ravintolatoiminnan tarpeen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Tarjoilija",
+      "Ravintolatyöntekijä",
+      "Kahvilatyöntekijä"
+    ],
+    career_progression: [
+      "Tarjoilija",
+      "Senior tarjoilija",
+      "Ravintolapäällikkö",
+      "Ravintolan johtaja"
+    ],
+    typical_employers: [
+      "Ravintolat",
+      "Kahvilat",
+      "Hotellit",
+      "Catering-yritykset"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    union_or_CBA: "PAM",
+    useful_links: [
+      { name: "PAM", url: "https://www.pam.fi/" },
+      { name: "Opintopolku - Ravintolatyö", url: "https://opintopolku.fi/konfo/fi/haku/Ravintolaty%C3%B6" }
+    ],
+    keywords: ["tarjoilija", "ravintola", "asiakaspalvelu", "palvelu", "ruokailu"],
+    study_length_estimate_months: 24
+  },
+{
+    id: "kokki",
+    category: "auttaja",
+    title_fi: "Kokki",
+    title_en: "Chef",
+    short_description: "Kokki valmistaa ruokaa ravintoloissa ja muissa ruokailupaikoissa. Työskentelee ruoan valmistuksen, ruokailun suunnittelun ja keittiön hallinnan parissa.",
+    main_tasks: [
+      "Ruokien valmistus",
+      "Ruokailun suunnittelu",
+      "Aineksien valinta",
+      "Keittiön hallinta",
+      "Turvallisuuden varmistaminen"
+    ],
+    impact: [
+      "Luo maukasta ruokaa",
+      "Antaa ihmisille nautinnollisen ruokailukokemuksen",
+      "Edistää ruokakulttuuria"
+    ],
+    education_paths: [
+      "Toinen aste: Kokin perustutkinto",
+      "Kokin ammattitutkinto",
+      "Työkokemus + kurssit",
+      "Ei tutkintovaatimusta"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Ruuanvalmistus",
+      "Keittiötekniikat",
+      "Ruokailun suunnittelu",
+      "Aikataulujen hallinta",
+      "Tiimityö"
+    ],
+    tools_tech: [
+      "Keittiölaitteet",
+      "Veitset",
+      "Kattilat ja pannut",
+      "Uunit",
+      "Mittauslaitteet"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 2800,
+      range: [2300, 3800],
+      source: { name: "PAM", url: "https://www.pam.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Kokkien kysyntä pysyy vakaana ravintolatoiminnan tarpeen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Kokin apulainen",
+      "Junior kokki",
+      "Keittiötyöntekijä"
+    ],
+    career_progression: [
+      "Kokki",
+      "Senior kokki",
+      "Keittiömestari",
+      "Oma ravintola"
+    ],
+    typical_employers: [
+      "Ravintolat",
+      "Hotellit",
+      "Catering-yritykset",
+      "Sairaalat"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    union_or_CBA: "PAM",
+    useful_links: [
+      { name: "PAM", url: "https://www.pam.fi/" },
+      { name: "Opintopolku - Kokki", url: "https://opintopolku.fi/konfo/fi/haku/Kokki" }
+    ],
+    keywords: ["kokki", "ruuanvalmistus", "keittiö", "ruoka", "ravintola"],
+    study_length_estimate_months: 36
+  },
+{
+    id: "oppilashuoltaja",
+    category: "auttaja",
+    title_fi: "Oppilashuoltaja",
+    title_en: "School Welfare Officer",
+    short_description: "Oppilashuoltaja tukee oppilaita koulussa ja varmistaa heidän hyvinvointinsa. Työskentelee oppilaiden tukemisen, ongelmien ratkaisemisen ja yhteistyön parissa.",
+    main_tasks: [
+      "Oppilaiden tukeminen",
+      "Ongelmien ratkaiseminen",
+      "Perheiden kanssa yhteistyö",
+      "Seuranta ja arviointi",
+      "Yhteistyö muiden ammattilaisten kanssa"
+    ],
+    impact: [
+      "Auttaa oppilaita onnistumaan koulussa",
+      "Tukee oppilaiden hyvinvointia",
+      "Varmistaa tasa-arvoisen koulutuksen"
+    ],
+    education_paths: [
+      "AMK: Sosionomi",
+      "Yliopisto: Sosiaalityön maisteri",
+      "AMK: Varhaiskasvatus",
+      "Oppilashuollon erikoiskurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Oppilashuollon menetelmät",
+      "Kommunikaatio",
+      "Ongelmanratkaisu",
+      "Tiimityö",
+      "Empatia"
+    ],
+    tools_tech: [
+      "Asiakasjärjestelmät",
+      "Dokumenttienhallinta",
+      "Tietokoneet ja tabletit",
+      "Videoneuvottelut",
+      "Oppilashuollon ohjelmistot"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2700, 4000],
+      source: { name: "JHL", url: "https://www.jhl.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Oppilashuoltajien kysyntä kasvaa oppilaiden tuen tarpeen lisääntymisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Oppilashuoltaja",
+      "Oppilashuollon työntekijä",
+      "Koulunkäynninohjaaja"
+    ],
+    career_progression: [
+      "Oppilashuoltaja",
+      "Senior oppilashuoltaja",
+      "Oppilashuollon koordinaattori",
+      "Oppilashuollon johtaja"
+    ],
+    typical_employers: [
+      "Kunnat",
+      "Koulut",
+      "Peruskoulut",
+      "Lukiot"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "JHL",
+    useful_links: [
+      { name: "JHL", url: "https://www.jhl.fi/" },
+      { name: "Opintopolku - Sosionomi", url: "https://opintopolku.fi/konfo/fi/haku/Sosionomi" }
+    ],
+    keywords: ["oppilashuoltaja", "koulu", "oppilaiden tuki", "hyvinvointi", "sosionomi"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "hitsaaja",
+    category: "rakentaja",
+    title_fi: "Hitsaaja",
+    title_en: "Welder",
+    short_description: "Hitsaaja yhdistää metalliosia hitsauksella. Työskentelee rakentamisen, valmistuksen ja korjausten parissa käyttäen erilaisia hitsausmenetelmiä.",
+    main_tasks: [
+      "Metalliosien hitsaus",
+      "Hitsausmenetelmien valinta",
+      "Laadunvalvonta",
+      "Turvallisuussääntöjen noudattaminen",
+      "Laitteiden ylläpito"
+    ],
+    impact: [
+      "Rakentaa ja korjaa rakenteita",
+      "Varmistaa laadukkaat hitsaukset",
+      "Tukee teollisuutta ja rakentamista"
+    ],
+    education_paths: [
+      "Toinen aste: Hitsaajan perustutkinto",
+      "Hitsaajan ammattitutkinto",
+      "Työkokemus + kurssit",
+      "Ei tutkintovaatimusta"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Hitsausmenetelmät",
+      "Metallitekniikka",
+      "Laadunvalvonta",
+      "Käsityötaidot",
+      "Turvallisuus"
+    ],
+    tools_tech: [
+      "Hitsauslaitteet",
+      "Hitsauskaasut",
+      "Suojaimet",
+      "Mittauslaitteet",
+      "Työkalut"
+    ],
+    languages_required: { fi: "B1", sv: "A2", en: "A2" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2600, 4200],
+      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Hitsaajien kysyntä pysyy vakaana rakentamisen ja teollisuuden tarpeen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Hitsaajan apulainen",
+      "Junior hitsaaja",
+      "Metallityöntekijä"
+    ],
+    career_progression: [
+      "Hitsaaja",
+      "Senior hitsaaja",
+      "Hitsauspäällikkö",
+      "Oma hitsausyritys"
+    ],
+    typical_employers: [
+      "Rakennusyhtiöt",
+      "Metalliteollisuus",
+      "Laivateollisuus",
+      "Oma yritys"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Rakennusliitto",
+    useful_links: [
+      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Opintopolku - Hitsaaja", url: "https://opintopolku.fi/konfo/fi/haku/Hitsaaja" }
+    ],
+    keywords: ["hitsaaja", "hitsaus", "metalli", "rakentaminen", "teollisuus"],
+    study_length_estimate_months: 36
+  },
+{
+    id: "it-tukihenkilö",
+    category: "innovoija",
+    title_fi: "IT-tukihenkilö",
+    title_en: "IT Support Specialist",
+    short_description: "IT-tukihenkilö auttaa käyttäjiä IT-ongelmien kanssa. Työskentelee teknisten ongelmien ratkaisemisen, järjestelmien ylläpidon ja käyttäjien neuvonnan parissa.",
+    main_tasks: [
+      "IT-ongelmien ratkaiseminen",
+      "Käyttäjien neuvonta",
+      "Järjestelmien ylläpito",
+      "Asennukset ja päivitykset",
+      "Dokumentointi"
+    ],
+    impact: [
+      "Auttaa käyttäjiä työskentelemään tehokkaasti",
+      "Varmistaa järjestelmien toimivuuden",
+      "Vähentää häiriöitä"
+    ],
+    education_paths: [
+      "Toinen aste: Tieto- ja viestintätekniikan perustutkinto",
+      "AMK: Tietotekniikka",
+      "IT-tuen kurssit",
+      "Työkokemus + sertifikaatit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "IT-tuki",
+      "Vikadiagnostiikka",
+      "Asiakaspalvelu",
+      "Kommunikaatio",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "Helpdesk-järjestelmät",
+      "Etätyökalut",
+      "Tietokoneet",
+      "Diagnostiikka-laitteet",
+      "Dokumentointityökalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3100,
+      range: [2600, 4000],
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "IT-tukihenkilöiden kysyntä kasvaa IT-järjestelmien määrän ja monimutkaisuuden myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "IT-tukihenkilö",
+      "Helpdesk-työntekijä",
+      "IT-assistentti"
+    ],
+    career_progression: [
+      "IT-tukihenkilö",
+      "Senior IT-tukihenkilö",
+      "IT-asiantuntija",
+      "IT-päällikkö"
+    ],
+    typical_employers: [
+      "IT-yritykset",
+      "Suuryritykset",
+      "Konsulttiyritykset",
+      "Koulut ja oppilaitokset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tietojenkäsittelyliitto",
+    useful_links: [
+      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
+      { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Tietotekniikka" }
+    ],
+    keywords: ["it-tuki", "helpdesk", "tietotekniikka", "asiakaspalvelu", "tuki"],
+    study_length_estimate_months: 36
+  },
+{
+    id: "puheterapeutti",
+    category: "auttaja",
+    title_fi: "Puheterapeutti",
+    title_en: "Speech Therapist",
+    short_description: "Puheterapeutti auttaa ihmisiä puheen, kielen ja nielemisen ongelmissa. Työskentelee lasten ja aikuisten kommunikaatio- ja syömishäiriöiden hoidossa.",
+    main_tasks: [
+      "Puhe- ja kielihäiriöiden arviointi",
+      "Hoidon suunnittelu ja toteutus",
+      "Perheiden ja opettajien neuvonta",
+      "Syömishäiriöiden hoito",
+      "Viestintävälineiden käyttöönotto"
+    ],
+    impact: [
+      "Auttaa ihmisiä kommunikoimaan tehokkaasti",
+      "Parantaa elämänlaatua",
+      "Tukee oppimista ja sosiaalista vuorovaikutusta"
+    ],
+    education_paths: [
+      "Yliopisto: Puheterapia",
+      "AMK: Puheterapia",
+      "Yliopisto: Logopedia",
+      "Erikoistumiskoulutus"
+    ],
+    qualification_or_license: "Valvira",
+    core_skills: [
+      "Puheterapia",
+      "Kehityksen seuranta",
+      "Kommunikaatio",
+      "Empatia",
+      "Tiimityö"
+    ],
+    tools_tech: [
+      "Arviointityökalut",
+      "Hoitomateriaalit",
+      "Viestintävälineet",
+      "Tietokoneet ja tabletit",
+      "Video- ja ääniteknologia"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4800],
+      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Puheterapeuttien kysyntä kasvaa viestintä- ja syömishäiriöiden lisääntymisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Puheterapeutti",
+      "Puheterapeuttiharjoittelija",
+      "Logopedi"
+    ],
+    career_progression: [
+      "Puheterapeutti",
+      "Senior puheterapeutti",
+      "Puheterapian johtaja",
+      "Tutkija"
+    ],
+    typical_employers: [
+      "Sairaalat",
+      "Terveyskeskukset",
+      "Kunnat",
+      "Yksityiset terveydenhuoltofirmat"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Tehy",
+    useful_links: [
+      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Opintopolku - Puheterapia", url: "https://opintopolku.fi/konfo/fi/haku/Puheterapia" }
+    ],
+    keywords: ["puheterapeutti", "puhe", "kieli", "kommunikaatio", "logopedia"],
+    study_length_estimate_months: 60
+  },
+{
+    id: "audiologi",
+    category: "auttaja",
+    title_fi: "Audiologi",
+    title_en: "Audiologist",
+    short_description: "Audiologi tutkii ja hoitaa kuulon häiriöitä. Työskentelee kuulotarkastusten, kuulolaitteiden määräämisen ja kuulonkuntoutuksen parissa.",
+    main_tasks: [
+      "Kuulotarkastusten suorittaminen",
+      "Kuulolaitteiden määrääminen",
+      "Kuulonkuntoutus",
+      "Asiakkaiden neuvonta",
+      "Kuulon häiriöiden diagnosointi"
+    ],
+    impact: [
+      "Parantaa ihmisten kuuloa",
+      "Auttaa kuulovammaisia kommunikoimaan",
+      "Parantaa elämänlaatua"
+    ],
+    education_paths: [
+      "Yliopisto: Audiologia",
+      "AMK: Audiologia",
+      "Yliopisto: Logopedia",
+      "Erikoistumiskoulutus"
+    ],
+    qualification_or_license: "Valvira",
+    core_skills: [
+      "Audiologia",
+      "Kuulotarkastus",
+      "Kuulolaitteiden asennus",
+      "Kommunikaatio",
+      "Asiakaspalvelu"
+    ],
+    tools_tech: [
+      "Audiometrit",
+      "Kuulolaitteet",
+      "Tietokoneet",
+      "Mittauslaitteet",
+      "Kuulonkuntoutusmateriaalit"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3900,
+      range: [3300, 4900],
+      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Audiologien kysyntä kasvaa ikääntyvän väestön ja kuulohäiriöiden lisääntymisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Audiologi",
+      "Audiologiharjoittelija",
+      "Kuulotutkimusavustaja"
+    ],
+    career_progression: [
+      "Audiologi",
+      "Senior audiologi",
+      "Audiologian johtaja",
+      "Tutkija"
+    ],
+    typical_employers: [
+      "Sairaalat",
+      "Terveyskeskukset",
+      "Kuulolaiteliikkeet",
+      "Yksityiset terveydenhuoltofirmat"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Tehy",
+    useful_links: [
+      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Opintopolku - Audiologia", url: "https://opintopolku.fi/konfo/fi/haku/Audiologia" }
+    ],
+    keywords: ["audiologi", "kuulo", "kuulolaitteet", "kuulotarkastus", "kuulonkuntoutus"],
+    study_length_estimate_months: 60
+  },
+{
+    id: "oppilashuoltotyöntekijä",
+    category: "auttaja",
+    title_fi: "Oppilashuoltotyöntekijä",
+    title_en: "Student Welfare Worker",
+    short_description: "Oppilashuoltotyöntekijä tukee oppilaita koulussa ja varmistaa heidän hyvinvointinsa. Työskentelee oppilaiden tukemisen, ongelmien ratkaisemisen ja yhteistyön parissa.",
+    main_tasks: [
+      "Oppilaiden tukeminen",
+      "Ongelmien ratkaiseminen",
+      "Perheiden kanssa yhteistyö",
+      "Seuranta ja arviointi",
+      "Yhteistyö muiden ammattilaisten kanssa"
+    ],
+    impact: [
+      "Auttaa oppilaita onnistumaan koulussa",
+      "Tukee oppilaiden hyvinvointia",
+      "Varmistaa tasa-arvoisen koulutuksen"
+    ],
+    education_paths: [
+      "AMK: Sosionomi",
+      "Yliopisto: Sosiaalityön maisteri",
+      "AMK: Varhaiskasvatus",
+      "Oppilashuollon erikoiskurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Oppilashuollon menetelmät",
+      "Kommunikaatio",
+      "Ongelmanratkaisu",
+      "Tiimityö",
+      "Empatia"
+    ],
+    tools_tech: [
+      "Asiakasjärjestelmät",
+      "Dokumenttienhallinta",
+      "Tietokoneet ja tabletit",
+      "Videoneuvottelut",
+      "Oppilashuollon ohjelmistot"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3100,
+      range: [2600, 3900],
+      source: { name: "JHL", url: "https://www.jhl.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Oppilashuoltotyöntekijöiden kysyntä kasvaa oppilaiden tuen tarpeen lisääntymisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Oppilashuoltotyöntekijä",
+      "Oppilashuollon avustaja",
+      "Koulunkäynninohjaaja"
+    ],
+    career_progression: [
+      "Oppilashuoltotyöntekijä",
+      "Oppilashuoltaja",
+      "Oppilashuollon koordinaattori",
+      "Oppilashuollon johtaja"
+    ],
+    typical_employers: [
+      "Kunnat",
+      "Koulut",
+      "Peruskoulut",
+      "Lukiot"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "JHL",
+    useful_links: [
+      { name: "JHL", url: "https://www.jhl.fi/" },
+      { name: "Opintopolku - Sosionomi", url: "https://opintopolku.fi/konfo/fi/haku/Sosionomi" }
+    ],
+    keywords: ["oppilashuolto", "koulu", "oppilaiden tuki", "hyvinvointi", "sosionomi"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "suuhygienisti",
+    category: "auttaja",
+    title_fi: "Suuhygienisti",
+    title_en: "Dental Hygienist",
+    short_description: "Suuhygienisti hoitaa potilaiden suun terveyttä ja auttaa ehkäisemään suutautia. Työskentelee hammastarkastusten, puhdistusten ja suuterveysneuvonnan parissa.",
+    main_tasks: [
+      "Hammastarkastusten suorittaminen",
+      "Hampaiden puhdistus",
+      "Suuterveysneuvonta",
+      "Tarttuman poisto",
+      "Röntgenkuvien ottaminen"
+    ],
+    impact: [
+      "Parantaa ihmisten suun terveyttä",
+      "Ehkäisee suutautia",
+      "Auttaa ihmisiä ylläpitämään hyvää suun terveyttä"
+    ],
+    education_paths: [
+      "AMK: Suuhygienisti",
+      "Yliopisto: Hammaslääketiede",
+      "Hammashoitajan perustutkinto + erikoistuminen",
+      "Erikoistumiskoulutus"
+    ],
+    qualification_or_license: "Valvira",
+    core_skills: [
+      "Suuhygienia",
+      "Hammastarkastus",
+      "Kommunikaatio",
+      "Asiakaspalvelu",
+      "Tarkkuus"
+    ],
+    tools_tech: [
+      "Suuhygieniainstrumentit",
+      "Hammaslääketieteelliset laitteet",
+      "Röntgenlaitteet",
+      "Tietokoneet",
+      "Suuhygieniaohjelmistot"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3500,
+      range: [3000, 4400],
+      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Suuhygienistien kysyntä kasvaa suunterveyden merkityksen korostumisen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Suuhygienisti",
+      "Suuhygienistiharjoittelija",
+      "Hammashoitaja"
+    ],
+    career_progression: [
+      "Suuhygienisti",
+      "Senior suuhygienisti",
+      "Suuhygienian johtaja",
+      "Kouluttaja"
+    ],
+    typical_employers: [
+      "Hammaslääkäriasemat",
+      "Terveyskeskukset",
+      "Sairaalat",
+      "Yksityiset hammaslääkäriasemat"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tehy",
+    useful_links: [
+      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Opintopolku - Suuhygienisti", url: "https://opintopolku.fi/konfo/fi/haku/Suuhygienisti" }
+    ],
+    keywords: ["suuhygienisti", "hammas", "suun terveys", "hammashoito", "suuhygienia"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "kotipalvelutyöntekijä",
+    category: "auttaja",
+    title_fi: "Kotipalvelutyöntekijä",
+    title_en: "Home-Based Personal Care Worker",
+    short_description: "Kotipalvelutyöntekijä auttaa ikääntyviä ja vammaisia ihmisiä kotona. Työskentelee kotipalvelun, henkilökohtaisen hoidon ja päivittäisten tehtävien parissa.",
+    main_tasks: [
+      "Henkilökohtaisen hoidon tarjoaminen",
+      "Kotityöt",
+      "Ruuan valmistus",
+      "Lääkkeiden antaminen",
+      "Asiakkaan seuranta"
+    ],
+    impact: [
+      "Auttaa ihmisiä pysymään kotona",
+      "Parantaa elämänlaatua",
+      "Tukee perheitä"
+    ],
+    education_paths: [
+      "Toinen aste: Sosiaali- ja terveysalan perustutkinto",
+      "Kotipalvelun erikoiskurssit",
+      "Työkokemus",
+      "Ei tutkintovaatimusta"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Henkilökohtainen hoito",
+      "Empatia",
+      "Kommunikaatio",
+      "Ongelmanratkaisu",
+      "Fyysinen kunto"
+    ],
+    tools_tech: [
+      "Hoitovälineet",
+      "Liikuntavälineet",
+      "Turvallisuusvälineet",
+      "Tietokoneet",
+      "Hoitojärjestelmät"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "A2" },
+    salary_eur_month: {
+      median: 2500,
+      range: [2100, 3200],
+      source: { name: "JHL", url: "https://www.jhl.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kotipalvelutyöntekijöiden kysyntä kasvaa nopeasti ikääntyvän väestön myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Kotipalvelutyöntekijä",
+      "Henkilökohtainen avustaja",
+      "Kotiavustaja"
+    ],
+    career_progression: [
+      "Kotipalvelutyöntekijä",
+      "Senior kotipalvelutyöntekijä",
+      "Kotipalvelun koordinaattori",
+      "Kotipalvelun johtaja"
+    ],
+    typical_employers: [
+      "Kunnat",
+      "Yksityiset palveluyritykset",
+      "Kolmas sektori",
+      "Oma yritys"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    union_or_CBA: "JHL",
+    useful_links: [
+      { name: "JHL", url: "https://www.jhl.fi/" },
+      { name: "Opintopolku - Sosiaali- ja terveysala", url: "https://opintopolku.fi/konfo/fi/haku/Sosiaali-%20ja%20terveysala" }
+    ],
+    keywords: ["kotipalvelu", "kotihoito", "henkilökohtainen hoito", "ikääntyneet", "avustaja"],
+    study_length_estimate_months: 24
+  },
+{
+    id: "full-stack-kehittäjä",
+    category: "innovoija",
+    title_fi: "Full-Stack-kehittäjä",
+    title_en: "Full-Stack Developer",
+    short_description: "Full-Stack-kehittäjä kehittää sekä frontend- että backend-ohjelmistoja. Työskentelee kokonaisvaltaisten web-sovellusten ja palveluiden rakentamisen parissa.",
+    main_tasks: [
+      "Frontend- ja backend-kehitys",
+      "Tietokantojen suunnittelu",
+      "API-rajapintojen kehittäminen",
+      "Ohjelmistojen testaus",
+      "Deployment ja ylläpito"
+    ],
+    impact: [
+      "Luo kokonaisvaltaisia digitaalisia ratkaisuja",
+      "Parantaa käyttökokemusta",
+      "Auttaa yrityksiä digitaalisessa muutoksessa"
+    ],
+    education_paths: [
+      "AMK: Tietojenkäsittely, Ohjelmistotuotanto",
+      "Yliopisto: Tietojenkäsittelytieteen maisteri",
+      "Full-Stack-kurssit ja bootcamps",
+      "Itsenäinen opiskelu + portfolio"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Frontend-ohjelmointi (React, Vue, Angular)",
+      "Backend-ohjelmointi (Node.js, Python, Java)",
+      "Tietokannat",
+      "API-kehitys",
+      "Versiohallinta"
+    ],
+    tools_tech: [
+      "React, Vue, Angular",
+      "Node.js, Python, Java",
+      "SQL, MongoDB",
+      "Git, GitHub",
+      "Docker, Kubernetes"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 5200,
+      range: [4000, 6800],
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Full-Stack-kehittäjien kysyntä kasvaa web-sovellusten ja palveluiden merkityksen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Full-Stack-kehittäjä",
+      "Full-Stack-harjoittelija",
+      "Web-kehittäjä"
+    ],
+    career_progression: [
+      "Full-Stack-kehittäjä",
+      "Senior Full-Stack-kehittäjä",
+      "Tech Lead",
+      "CTO"
+    ],
+    typical_employers: [
+      "IT-yritykset",
+      "Teknologia-startupit",
+      "Konsulttiyritykset",
+      "Suuryritykset"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tietojenkäsittelyliitto",
+    useful_links: [
+      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
+      { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" }
+    ],
+    keywords: ["full-stack", "web-kehitys", "frontend", "backend", "fullstack"],
+    study_length_estimate_months: 48
+  },
+{
+    id: "sosiaalisen-median-asiantuntija",
+    category: "innovoija",
+    title_fi: "Sosiaalisen median asiantuntija",
+    title_en: "Social Media Specialist",
+    short_description: "Sosiaalisen median asiantuntija hallinnoi ja kehittää brändin sosiaalisen median läsnäoloa. Työskentelee sisällön luomisen, yhteisön rakentamisen ja kampanjoiden parissa.",
+    main_tasks: [
+      "Sosiaalisen median sisällön luominen",
+      "Kampanjoiden suunnittelu ja toteutus",
+      "Yhteisön rakentaminen",
+      "Analytiikka ja raportointi",
+      "Kriisiviestintä"
+    ],
+    impact: [
+      "Kasvattaa brändin tunnettuutta",
+      "Parantaa asiakassuhteita",
+      "Auttaa yrityksiä viestimään tehokkaasti"
+    ],
+    education_paths: [
+      "AMK: Viestintä",
+      "AMK: Markkinointi",
+      "Yliopisto: Viestintätiede",
+      "Sosiaalisen median kurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Sosiaalisen median alustat",
+      "Sisällön luominen",
+      "Yhteisön hallinta",
+      "Analytiikka",
+      "Kriisiviestintä"
+    ],
+    tools_tech: [
+      "Facebook, Instagram, TikTok, LinkedIn",
+      "Sosiaalisen median hallintatyökalut",
+      "Kuva- ja videomuokkaus",
+      "Analytiikkatyökalut",
+      "Sisällönhallintajärjestelmät"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3500,
+      range: [2800, 4800],
+      source: { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Sosiaalisen median asiantuntijoiden kysyntä kasvaa sosiaalisen median merkityksen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior sosiaalisen median asiantuntija",
+      "Sosiaalisen median harjoittelija",
+      "Sisällöntuottaja"
+    ],
+    career_progression: [
+      "Sosiaalisen median asiantuntija",
+      "Senior sosiaalisen median asiantuntija",
+      "Sosiaalisen median johtaja",
+      "CMO"
+    ],
+    typical_employers: [
+      "Markkinointitoimistot",
+      "Media-yritykset",
+      "IT-yritykset",
+      "Suuryritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Media-alan TES",
+    useful_links: [
+      { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/" },
+      { name: "Opintopolku - Viestintä", url: "https://opintopolku.fi/konfo/fi/haku/Viestint%C3%A4" }
+    ],
+    keywords: ["sosiaalinen media", "sosiaalisen median markkinointi", "smm", "sisällöntuotanto", "yhteisö"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "urheiluvalmentaja",
+    category: "auttaja",
+    title_fi: "Urheiluvalmentaja",
+    title_en: "Sports Coach",
+    short_description: "Urheiluvalmentaja valmentaa urheilijoita ja joukkueita. Työskentelee harjoittelun suunnittelun, teknisen valmennuksen ja urheilijoiden kehittämisen parissa.",
+    main_tasks: [
+      "Harjoittelun suunnittelu",
+      "Tekninen valmennus",
+      "Taktinen valmennus",
+      "Urheilijoiden kehittäminen",
+      "Kisojen valmistelu"
+    ],
+    impact: [
+      "Auttaa urheilijoita saavuttamaan tavoitteensa",
+      "Parantaa urheilijoiden suorituskykyä",
+      "Edistää terveellistä liikuntaa"
+    ],
+    education_paths: [
+      "Yliopisto: Liikuntatiede",
+      "AMK: Liikunta- ja terveysala",
+      "Valmentajakoulutus",
+      "Urheilija + valmentajakoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Valmennus",
+      "Liikuntatiede",
+      "Motivaatio",
+      "Kommunikaatio",
+      "Taktinen ajattelu"
+    ],
+    tools_tech: [
+      "Videoanalyysi",
+      "Suorituskyvyn mittauslaitteet",
+      "Valmennusohjelmistot",
+      "Tietokoneet ja tabletit",
+      "Videokamerat"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2500, 4500],
+      source: { name: "OAJ", url: "https://www.oaj.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Urheiluvalmentajien kysyntä kasvaa liikunnan merkityksen ja urheilun suosion myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Urheiluvalmentaja",
+      "Junior-valmentaja",
+      "Apulaisvalmentaja"
+    ],
+    career_progression: [
+      "Urheiluvalmentaja",
+      "Senior-valmentaja",
+      "Päävalmentaja",
+      "Valmentajakouluttaja"
+    ],
+    typical_employers: [
+      "Urheiluseurat",
+      "Kunnat",
+      "Koulut",
+      "Yksityiset valmennuspalvelut"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    union_or_CBA: "OAJ",
+    useful_links: [
+      { name: "OAJ", url: "https://www.oaj.fi/" },
+      { name: "Opintopolku - Liikuntatiede", url: "https://opintopolku.fi/konfo/fi/haku/Liikuntatiede" }
+    ],
+    keywords: ["urheiluvalmentaja", "valmennus", "urheilu", "liikunta", "valmentaja"],
+    study_length_estimate_months: 36
+  },
+{
+    id: "lämpötekniikka-asentaja",
+    category: "rakentaja",
+    title_fi: "Lämpötekniikka-asentaja",
+    title_en: "Heating Technician",
+    short_description: "Lämpötekniikka-asentaja asentaa ja ylläpitää lämmitysjärjestelmiä. Työskentelee kaukolämmön, maalämmön ja uusiutuvan energian lämmitysjärjestelmien parissa.",
+    main_tasks: [
+      "Lämmitysjärjestelmien asennus",
+      "Maalämpöjärjestelmien asennus",
+      "Korjaukset ja huolto",
+      "Uusiutuvaan energiaan siirtyminen",
+      "Turvallisuussääntöjen noudattaminen"
+    ],
+    impact: [
+      "Varmistaa talojen lämmityksen",
+      "Edistää uusiutuvaa energiaa",
+      "Vähentää hiilijalanjälkeä"
+    ],
+    education_paths: [
+      "Toinen aste: LVI-asentajan perustutkinto",
+      "Lämpötekniikan erikoiskurssit",
+      "Työkokemus + kurssit",
+      "Ei tutkintovaatimusta"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Lämpötekniikka",
+      "LVI-tekniikka",
+      "Maalämpö",
+      "Käsityötaidot",
+      "Turvallisuus"
+    ],
+    tools_tech: [
+      "Asennustyökalut",
+      "Mittauslaitteet",
+      "Lämpötekniikkalaitteet",
+      "Työkalut",
+      "Turvavälineet"
+    ],
+    languages_required: { fi: "B1", sv: "A2", en: "A2" },
+    salary_eur_month: {
+      median: 3600,
+      range: [3000, 4700],
+      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Lämpötekniikka-asentajien kysyntä kasvaa uusiutuvan energian ja maalämmön suosion myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Lämpötekniikka-asentaja",
+      "LVI-asentaja",
+      "Lämpötekniikan apulainen"
+    ],
+    career_progression: [
+      "Lämpötekniikka-asentaja",
+      "Senior lämpötekniikka-asentaja",
+      "Lämpötekniikan työnjohtaja",
+      "Oma lämpötekniikkayritys"
+    ],
+    typical_employers: [
+      "LVI-yritykset",
+      "Uusiutuvaa energiaa",
+      "Rakennusyhtiöt",
+      "Oma yritys"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Rakennusliitto",
+    useful_links: [
+      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Opintopolku - LVI-asentaja", url: "https://opintopolku.fi/konfo/fi/haku/LVI-asentaja" }
+    ],
+    keywords: ["lämpötekniikka", "maalämpö", "kaukolämpö", "uusiutuva energia", "lvi"],
+    study_length_estimate_months: 36
+  },
+{
+    id: "ilmastoneuvonantaja",
+    category: "ympariston-puolustaja",
+    title_fi: "Ilmastoneuvonantaja",
+    title_en: "Climate Advisor",
+    short_description: "Ilmastoneuvonantaja auttaa organisaatioita vähentämään hiilijalanjälkeään ja siirtymään kestävään toimintaan. Työskentelee ilmastostrategioiden ja kestävän kehityksen parissa.",
+    main_tasks: [
+      "Hiilijalanjäljen arviointi",
+      "Ilmastostrategioiden kehittäminen",
+      "Kestävyyssuunnitelmat",
+      "Neuvonta ja koulutus",
+      "Raportointi"
+    ],
+    impact: [
+      "Vähentää hiilijalanjälkeä",
+      "Edistää kestävää kehitystä",
+      "Auttaa organisaatioita siirtymään vihreämpään toimintaan"
+    ],
+    education_paths: [
+      "AMK: Ympäristötekniikka",
+      "Yliopisto: Ympäristötiede",
+      "Yliopisto: Kestävän kehityksen maisteri",
+      "Ilmastoneuvonnan erikoiskurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Ilmastotiede",
+      "Kestävyys",
+      "Hiilijalanjälki",
+      "Projektinhallinta",
+      "Kommunikaatio"
+    ],
+    tools_tech: [
+      "Hiilijalanjälkityökalut",
+      "Excel, Power BI",
+      "Projektinhallintatyökalut",
+      "Raportointityökalut",
+      "Analytiikkatyökalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4400,
+      range: [3400, 5800],
+      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Ilmastoneuvonantajien kysyntä kasvaa ilmastonmuutoksen ja kestävän kehityksen merkityksen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Ilmastoneuvonantaja",
+      "Kestävyysasiantuntija",
+      "Ympäristöasiantuntija"
+    ],
+    career_progression: [
+      "Ilmastoneuvonantaja",
+      "Senior ilmastoneuvonantaja",
+      "Kestävyysjohtaja",
+      "Kestävän kehityksen johtaja"
+    ],
+    typical_employers: [
+      "Konsulttiyritykset",
+      "Suuryritykset",
+      "Kunnat",
+      "Julkiset organisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro",
+    useful_links: [
+      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Opintopolku - Ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6tekniikka" }
+    ],
+    keywords: ["ilmasto", "hiilijalanjälki", "kestävyys", "ilmastoneuvonta", "ympäristö"],
+    study_length_estimate_months: 42
+  },
+{
+    id: "aikuiskouluttaja",
+    category: "jarjestaja",
+    title_fi: "Aikuiskouluttaja",
+    title_en: "Adult Educator",
+    short_description: "Aikuiskouluttaja opettaa ja kouluttaa aikuisia eri aiheista. Työskentelee työelämäkoulutuksen, ammattitaitojen ja henkilökohtaisten taitojen kehittämisen parissa.",
+    main_tasks: [
+      "Koulutussuunnitelmien laatiminen",
+      "Opettaminen ja kouluttaminen",
+      "Oppimisen seuranta",
+      "Koulutuksen arviointi",
+      "Oppimismateriaalien kehittäminen"
+    ],
+    impact: [
+      "Auttaa aikuisia kehittämään taitojaan",
+      "Tukee työelämässä pysymistä",
+      "Parantaa työllisyyttä"
+    ],
+    education_paths: [
+      "Yliopisto: Kasvatustiede",
+      "AMK: Aikuiskasvatus",
+      "Aikuiskouluttajan erikoiskurssit",
+      "Työkokemus + pedagoginen koulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Aikuispedagogiikka",
+      "Opettaminen",
+      "Koulutuksen suunnittelu",
+      "Kommunikaatio",
+      "Motivaatio"
+    ],
+    tools_tech: [
+      "Oppimisympäristöt",
+      "Videoneuvottelut",
+      "Tietokoneet ja tabletit",
+      "Oppimismateriaalit",
+      "Arviointityökalut"
+    ],
+    languages_required: { fi: "B2", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3400,
+      range: [2800, 4300],
+      source: { name: "OAJ", url: "https://www.oaj.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Aikuiskouluttajien kysyntä kasvaa työelämän muutoksen ja jatkuvan oppimisen merkityksen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Aikuiskouluttaja",
+      "Kouluttaja",
+      "Opetusavustaja"
+    ],
+    career_progression: [
+      "Aikuiskouluttaja",
+      "Senior aikuiskouluttaja",
+      "Koulutuksen johtaja",
+      "Koulutussuunnittelija"
+    ],
+    typical_employers: [
+      "Aikuiskoulutuskeskukset",
+      "Yritykset",
+      "Kunnat",
+      "Kolmas sektori"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "OAJ",
+    useful_links: [
+      { name: "OAJ", url: "https://www.oaj.fi/" },
+      { name: "Opintopolku - Aikuiskasvatus", url: "https://opintopolku.fi/konfo/fi/haku/Aikuiskasvatus" }
+    ],
+    keywords: ["aikuiskouluttaja", "aikuiskasvatus", "koulutus", "opetus", "työelämäkoulutus"],
+    study_length_estimate_months: 60
+  },
+{
+    id: "myyntityöntekijä",
+    category: "johtaja",
+    title_fi: "Myyntityöntekijä",
+    title_en: "Sales Worker",
+    short_description: "Myyntityöntekijä myy tuotteita ja palveluja asiakkaille. Työskentelee asiakassuhteiden rakentamisen, myyntipuheiden ja asiakaspalvelun parissa.",
+    main_tasks: [
+      "Tuotteiden ja palveluiden myynti",
+      "Asiakassuhteiden rakentaminen",
+      "Myyntipuheet",
+      "Tarjousten laatiminen",
+      "Asiakaspalvelu"
+    ],
+    impact: [
+      "Auttaa yrityksiä kasvattamaan myyntiä",
+      "Rakentaa asiakassuhteita",
+      "Parantaa brändin tunnettuutta"
+    ],
+    education_paths: [
+      "AMK: Myynti",
+      "AMK: Markkinointi",
+      "Toinen aste: Myynti",
+      "Työkokemus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Myynti",
+      "Asiakaspalvelu",
+      "Kommunikaatio",
+      "Neuvottelu",
+      "Motivaatio"
+    ],
+    tools_tech: [
+      "CRM-järjestelmät",
+      "Tietokoneet",
+      "Puhelin",
+      "Tabletit",
+      "Myyntityökalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 2800,
+      range: [2300, 3800],
+      source: { name: "PAM", url: "https://www.pam.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Myyntityöntekijöiden kysyntä pysyy vakaana kaupankäynnin tarpeen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Myyntityöntekijä",
+      "Myyntiavustaja",
+      "Asiakaspalvelija"
+    ],
+    career_progression: [
+      "Myyntityöntekijä",
+      "Senior myyntityöntekijä",
+      "Myyntipäällikkö",
+      "Myyntijohtaja"
+    ],
+    typical_employers: [
+      "Vähittäiskaupat",
+      "B2B-yritykset",
+      "Telekommunikaatio",
+      "Palveluyritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
+    union_or_CBA: "PAM",
+    useful_links: [
+      { name: "PAM", url: "https://www.pam.fi/" },
+      { name: "Opintopolku - Myynti", url: "https://opintopolku.fi/konfo/fi/haku/Myynti" }
+    ],
+    keywords: ["myynti", "myyntityöntekijä", "asiakaspalvelu", "kauppa", "myyntityö"],
+    study_length_estimate_months: 36
+  },
+{
+    id: "reseptionisti",
+    category: "jarjestaja",
+    title_fi: "Reseptionisti",
+    title_en: "Receptionist",
+    short_description: "Reseptionisti vastaanottaa asiakkaita ja hoitaa vastaanottoa. Työskentelee puhelinpalvelun, asiakaspalvelun ja ajanvarauksen parissa.",
+    main_tasks: [
+      "Asiakkaiden vastaanotto",
+      "Puhelinpalvelu",
+      "Ajanvaraus",
+      "Asiakaspalvelu",
+      "Hallintotyöt"
+    ],
+    impact: [
+      "Luo hyvän ensivaikutelman",
+      "Auttaa asiakkaita",
+      "Varmistaa sujuvan palvelun"
+    ],
+    education_paths: [
+      "Toinen aste: Sekretariaatti",
+      "AMK: Liiketalous",
+      "Työkokemus",
+      "Ei tutkintovaatimusta"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Asiakaspalvelu",
+      "Kommunikaatio",
+      "Monitaito",
+      "Tarkkuus",
+      "Ammattimaisuus"
+    ],
+    tools_tech: [
+      "Puhelinjärjestelmät",
+      "Tietokoneet",
+      "Ajanvarausjärjestelmät",
+      "CRM-järjestelmät",
+      "Kirjanpitojärjestelmät"
+    ],
+    languages_required: { fi: "B2", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 2400,
+      range: [2000, 3100],
+      source: { name: "JHL", url: "https://www.jhl.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Reseptionistien kysyntä pysyy vakaana palveluelinkeinojen tarpeen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Reseptionisti",
+      "Vastaanottoavustaja",
+      "Sihteeri"
+    ],
+    career_progression: [
+      "Reseptionisti",
+      "Senior reseptionisti",
+      "Vastaanoton johtaja",
+      "Toimistonjohtaja"
+    ],
+    typical_employers: [
+      "Hotellit",
+      "Sairaalat",
+      "Yritykset",
+      "Julkiset organisaatiot"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    union_or_CBA: "JHL",
+    useful_links: [
+      { name: "JHL", url: "https://www.jhl.fi/" },
+      { name: "Opintopolku - Sekretariaatti", url: "https://opintopolku.fi/konfo/fi/haku/Sekretariaatti" }
+    ],
+    keywords: ["reseptionisti", "vastaanotto", "asiakaspalvelu", "sekretariaatti", "palvelu"],
+    study_length_estimate_months: 24
+  },
+{
+    id: "verkkosivustonhallintaja",
+    category: "innovoija",
+    title_fi: "Verkkosivustonhallintaja",
+    title_en: "Web Administrator",
+    short_description: "Verkkosivustonhallintaja hallinnoi ja ylläpitää verkkosivustoja. Työskentelee sisällön päivityksen, teknisten ongelmien ratkaisemisen ja SEO:n parissa.",
+    main_tasks: [
+      "Verkkosivuston ylläpito",
+      "Sisällön päivitys",
+      "Teknisten ongelmien ratkaisu",
+      "SEO-optimointi",
+      "Turvallisuuden varmistaminen"
+    ],
+    impact: [
+      "Varmistaa verkkosivuston toimivuuden",
+      "Parantaa verkkosivuston näkyvyyttä",
+      "Auttaa yrityksiä viestimään verkossa"
+    ],
+    education_paths: [
+      "AMK: Tietojenkäsittely",
+      "AMK: Medianomi",
+      "Verkkosivustonhallinnan kurssit",
+      "Työkokemus + kurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Verkkosivustonhallinta",
+      "CMS-järjestelmät",
+      "SEO",
+      "Tekninen ongelmanratkaisu",
+      "Sisällönhallinta"
+    ],
+    tools_tech: [
+      "WordPress, Drupal",
+      "CMS-järjestelmät",
+      "SEO-työkalut",
+      "Tietokoneet",
+      "Verkkoanalytiikka"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3300,
+      range: [2700, 4200],
+      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Verkkosivustonhallintajien kysyntä kasvaa verkkosivustojen merkityksen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Verkkosivustonhallintaja",
+      "Web-avustaja",
+      "Sisällönhallinnan avustaja"
+    ],
+    career_progression: [
+      "Verkkosivustonhallintaja",
+      "Senior verkkosivustonhallintaja",
+      "Web-johtaja",
+      "Digitaalisen palvelun johtaja"
+    ],
+    typical_employers: [
+      "IT-yritykset",
+      "Media-yritykset",
+      "Suuryritykset",
+      "Konsulttiyritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tietojenkäsittelyliitto",
+    useful_links: [
+      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
+      { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" }
+    ],
+    keywords: ["verkkosivustonhallinta", "web", "cms", "seo", "verkkosivusto"],
+    study_length_estimate_months: 36
+  },
+{
+    id: "vaihtoehtoinen-energia-insinööri",
+    category: "ympariston-puolustaja",
+    title_fi: "Vaihtoehtoinen energia-insinööri",
+    title_en: "Renewable Energy Engineer",
+    short_description: "Vaihtoehtoinen energia-insinööri suunnittelee ja kehittää uusiutuvaa energiaa. Työskentelee aurinkoenergian, tuulienergian ja biokaasun järjestelmien parissa.",
+    main_tasks: [
+      "Uusiutuvan energian järjestelmien suunnittelu",
+      "Aurinko- ja tuulivoimaloiden suunnittelu",
+      "Biokaasujärjestelmien kehittäminen",
+      "Projektinhallinta",
+      "Teknisten ratkaisujen optimointi"
+    ],
+    impact: [
+      "Vähentää hiilijalanjälkeä",
+      "Edistää uusiutuvaa energiaa",
+      "Auttaa siirtymään vihreämpään energiaan"
+    ],
+    education_paths: [
+      "AMK: Energiatekniikka",
+      "Yliopisto: Energiatekniikan maisteri",
+      "AMK: Ympäristötekniikka",
+      "Uusiutuvan energian erikoiskurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Energiatekniikka",
+      "Uusiutuva energia",
+      "Projektinhallinta",
+      "Tekninen suunnittelu",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "Suunnittelutyökalut",
+      "Simulointiohjelmistot",
+      "Mittauslaitteet",
+      "CAD-ohjelmistot",
+      "Projektinhallintatyökalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4800,
+      range: [3800, 6300],
+      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Vaihtoehtoinen energia-insinöörien kysyntä kasvaa nopeasti uusiutuvan energian merkityksen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Vaihtoehtoinen energia-insinööri",
+      "Energiainsinööri",
+      "Projekti-insinööri"
+    ],
+    career_progression: [
+      "Vaihtoehtoinen energia-insinööri",
+      "Senior energia-insinööri",
+      "Energiajohtaja",
+      "Kestävän energian johtaja"
+    ],
+    typical_employers: [
+      "Energiayritykset",
+      "Konsulttiyritykset",
+      "Suuryritykset",
+      "Julkiset organisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Insöörit",
+    useful_links: [
+      { name: "Insöörit", url: "https://www.insinoorit.fi/" },
+      { name: "Opintopolku - Energiatekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Energiatekniikka" }
+    ],
+    keywords: ["uusiutuva energia", "aurinkoenergia", "tuulienergia", "biokaasu", "energiainsinööri"],
+    study_length_estimate_months: 48
+  },
+{
+    id: "rakennustyönjohtaja",
+    category: "rakentaja",
+    title_fi: "Rakennustyönjohtaja",
+    title_en: "Construction Supervisor",
+    short_description: "Rakennustyönjohtaja johtaa rakennustyömaita ja varmistaa projektien sujuvan toteutuksen. Työskentelee aikataulujen, resurssien ja turvallisuuden hallinnassa.",
+    main_tasks: [
+      "Työmaan johtaminen",
+      "Aikataulujen hallinta",
+      "Resurssien hallinta",
+      "Turvallisuuden varmistaminen",
+      "Laadunvalvonta"
+    ],
+    impact: [
+      "Varmistaa rakennusprojektien onnistumisen",
+      "Parantaa turvallisuutta",
+      "Auttaa rakentamaan kestävästi"
+    ],
+    education_paths: [
+      "AMK: Rakennusinsinööri",
+      "Yliopisto: Rakennusinsinööri",
+      "Rakennustyönjohtajan koulutus",
+      "Työkokemus + kurssit"
+    ],
+    qualification_or_license: "Rakennustyönjohtajan pätevyys",
+    core_skills: [
+      "Rakennustekniikka",
+      "Projektinhallinta",
+      "Johtaminen",
+      "Turvallisuus",
+      "Kommunikaatio"
+    ],
+    tools_tech: [
+      "Projektinhallintatyökalut",
+      "CAD-ohjelmistot",
+      "Tietokoneet ja tabletit",
+      "Mittauslaitteet",
+      "Raportointityökalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 4600,
+      range: [3700, 6000],
+      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Rakennustyönjohtajien kysyntä kasvaa rakentamisen aktiivisuuden myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Rakennustyönjohtaja",
+      "Apulais-työnjohtaja",
+      "Rakennusinsinööri"
+    ],
+    career_progression: [
+      "Rakennustyönjohtaja",
+      "Senior työnjohtaja",
+      "Rakennusjohtaja",
+      "Rakennusyrityksen johtaja"
+    ],
+    typical_employers: [
+      "Rakennusyhtiöt",
+      "Rakennuttajat",
+      "Suuryritykset",
+      "Kunnat"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
+    union_or_CBA: "Rakennusliitto",
+    useful_links: [
+      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Opintopolku - Rakennusinsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Rakennusinsin%C3%B6%C3%B6ri" }
+    ],
+    keywords: ["rakennustyönjohtaja", "työnjohtaja", "rakennus", "projektinhallinta", "rakennusinsinööri"],
+    study_length_estimate_months: 48
+  },
+{
+    id: "aineenopettaja",
+    category: "auttaja",
+    title_fi: "Aineenopettaja",
+    title_en: "Subject Teacher",
+    short_description: "Aineenopettaja opettaa yhtä tai useampaa ainetta peruskoulussa tai lukiossa. Työskentelee opetuksen suunnittelun, oppilaiden arvioinnin ja oppimisen tukemisen parissa.",
+    main_tasks: [
+      "Opetussuunnitelmien laatiminen",
+      "Opetuksen antaminen",
+      "Oppilaiden arviointi",
+      "Oppimisen tukeminen",
+      "Yhteistyö kollegoiden kanssa"
+    ],
+    impact: [
+      "Auttaa oppilaita oppimaan",
+      "Valmistaa oppilaita työelämään",
+      "Kehittää oppilaiden taitoja"
+    ],
+    education_paths: [
+      "Yliopisto: Kasvatustieteiden maisteri",
+      "Yliopisto: Aineenopettajan koulutus",
+      "AMK: Opettaja",
+      "Erikoistumiskoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Opetus",
+      "Aineen osaaminen",
+      "Pedagogiikka",
+      "Kommunikaatio",
+      "Motivaatio"
+    ],
+    tools_tech: [
+      "Oppimisympäristöt",
+      "Tietokoneet ja tabletit",
+      "Oppimismateriaalit",
+      "Arviointityökalut",
+      "Videoneuvottelut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3700,
+      range: [3100, 4600],
+      source: { name: "OAJ", url: "https://www.oaj.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Aineenopettajien kysyntä kasvaa opettajapulan myötä, erityisesti STEM-aineissa.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Aineenopettaja",
+      "Opettajaharjoittelija",
+      "Vikariopettaja"
+    ],
+    career_progression: [
+      "Aineenopettaja",
+      "Vanhempi opettaja",
+      "Opettajakouluttaja",
+      "Koulun rehtori"
+    ],
+    typical_employers: [
+      "Kunnat",
+      "Peruskoulut",
+      "Lukiot",
+      "Yksityiset koulut"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: "OAJ",
+    useful_links: [
+      { name: "OAJ", url: "https://www.oaj.fi/" },
+      { name: "Opintopolku - Opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Opettaja" }
+    ],
+    keywords: ["aineenopettaja", "opettaja", "opetus", "koulu", "pedagogiikka"],
+    study_length_estimate_months: 60
+  },
+{
+    id: "livestream-tuottaja",
+    category: "luova",
+    title_fi: "Livestream-tuottaja",
+    title_en: "Livestream Producer",
+    short_description: "Livestream-tuottaja tuottaa ja hallinnoi suoratoisto-ohjelmia. Työskentelee suoratoiston suunnittelun, teknisen toteutuksen ja sisällön parissa.",
+    main_tasks: [
+      "Livestream-ohjelmien suunnittelu",
+      "Tekninen toteutus",
+      "Kuva- ja äänenlaadun varmistaminen",
+      "Chatin ja yhteisön hallinta",
+      "Sisällön kehittäminen"
+    ],
+    impact: [
+      "Luo kiinnostavaa suoratoistosisältöä",
+      "Rakentaa yhteisöä",
+      "Auttaa viestimään reaaliajassa"
+    ],
+    education_paths: [
+      "AMK: Medianomi",
+      "AMK: Viestintä",
+      "Livestream-kurssit",
+      "Työkokemus + portfolio"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Livestream-tekniikka",
+      "Sisällön suunnittelu",
+      "Tekninen ongelmanratkaisu",
+      "Yhteisön hallinta",
+      "Luovuus"
+    ],
+    tools_tech: [
+      "Livestream-alustat (Twitch, YouTube Live)",
+      "Ohjelmointityökalut",
+      "Kamerat ja mikrofonit",
+      "Streaming-ohjelmistot",
+      "Chat-työkalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2500, 4400],
+      source: { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Livestream-tuottajien kysyntä kasvaa suoratoiston suosion myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Livestream-tuottaja",
+      "Livestream-harjoittelija",
+      "Streaming-avustaja"
+    ],
+    career_progression: [
+      "Livestream-tuottaja",
+      "Senior livestream-tuottaja",
+      "Livestream-studion johtaja",
+      "Oma livestream-studio"
+    ],
+    typical_employers: [
+      "Media-yritykset",
+      "Peliyhtiöt",
+      "Yritykset",
+      "Freelance-työskentely"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: true, travel: "vähän" },
+    union_or_CBA: "Media-alan TES",
+    useful_links: [
+      { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/" },
+      { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" }
+    ],
+    keywords: ["livestream", "suoratoisto", "streaming", "media", "tuottaja"],
+    study_length_estimate_months: 36
+  },
+{
+    id: "hieroja",
+    category: "auttaja",
+    title_fi: "Hieroja",
+    title_en: "Massage Therapist",
+    short_description: "Hieroja antaa hierontaa ja auttaa ihmisiä rentoutumaan ja lievittämään kipuja. Työskentelee hieronnan, rentoutumisen ja terveyden edistämisen parissa.",
+    main_tasks: [
+      "Hierontapalveluiden tarjoaminen",
+      "Asiakkaiden tarpeiden arviointi",
+      "Eri hierontatekniikoiden käyttö",
+      "Asiakkaiden neuvonta",
+      "Terveyden edistäminen"
+    ],
+    impact: [
+      "Auttaa ihmisiä rentoutumaan",
+      "Lievittää kipuja",
+      "Parantaa hyvinvointia"
+    ],
+    education_paths: [
+      "Toinen aste: Hieroja",
+      "Hierojan ammattitutkinto",
+      "Hierojan erikoiskurssit",
+      "Työkokemus + kurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Hierontatekniikat",
+      "Anatomia",
+      "Kommunikaatio",
+      "Empatia",
+      "Fyysinen kunto"
+    ],
+    tools_tech: [
+      "Hierontapöydät",
+      "Öljyt ja voiteet",
+      "Liikuntavälineet",
+      "Tietokoneet",
+      "Ajanvarausjärjestelmät"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "A2" },
+    salary_eur_month: {
+      median: 2600,
+      range: [2200, 3500],
+      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Hierojien kysyntä kasvaa hyvinvoinnin ja terveyden merkityksen myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Hieroja",
+      "Hierojan apulainen",
+      "Rentoutushierojan avustaja"
+    ],
+    career_progression: [
+      "Hieroja",
+      "Senior hieroja",
+      "Hierojan kouluttaja",
+      "Oma hierontastudio"
+    ],
+    typical_employers: [
+      "Hierontastudiot",
+      "Kuntoutuskeskukset",
+      "Hotellit",
+      "Oma yritys"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
+    union_or_CBA: "Tehy",
+    useful_links: [
+      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Opintopolku - Hieroja", url: "https://opintopolku.fi/konfo/fi/haku/Hieroja" }
+    ],
+    keywords: ["hieroja", "hieronta", "rentoutus", "hyvinvointi", "terveys"],
+    study_length_estimate_months: 24
+  },
+{
+    id: "ääniteknikko",
+    category: "luova",
+    title_fi: "Ääniteknikko",
+    title_en: "Sound Technician",
+    short_description: "Ääniteknikko hoitaa äänen laadun eri tapahtumissa ja tuotannoissa. Työskentelee äänityksen, miksaauksen ja masteroinnin parissa.",
+    main_tasks: [
+      "Äänityksen teknisen laadun varmistaminen",
+      "Miksaaminen",
+      "Masterointi",
+      "Laitteiden käyttö",
+      "Äänenlaadun optimointi"
+    ],
+    impact: [
+      "Parantaa äänen laatua",
+      "Auttaa viestimään tehokkaasti",
+      "Luo ammattimaisen äänen"
+    ],
+    education_paths: [
+      "AMK: Medianomi, Äänitekniikka",
+      "Yliopisto: Musiikkitiede",
+      "Ääniteknikon kurssit",
+      "Työkokemus + portfolio"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Äänitekniikka",
+      "Miksaaminen",
+      "Masterointi",
+      "Laitteiden käyttö",
+      "Tekninen taito"
+    ],
+    tools_tech: [
+      "Pro Tools, Logic Pro",
+      "Äänityslaitteet",
+      "Mikrofonit",
+      "Miksauspöydät",
+      "Masterointilaitteet"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3400,
+      range: [2800, 4500],
+      source: { name: "Musiikkialan TES", url: "https://www.musiikkialan-tes.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Ääniteknikkojen kysyntä kasvaa media- ja viihdetuotantojen määrän myötä.",
+      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Ääniteknikko",
+      "Äänitysavustaja",
+      "Miksausavustaja"
+    ],
+    career_progression: [
+      "Ääniteknikko",
+      "Senior ääniteknikko",
+      "Äänituotannon johtaja",
+      "Oma äänistudio"
+    ],
+    typical_employers: [
+      "Studiot",
+      "Televisioyhtiöt",
+      "Radioyhtiöt",
+      "Freelance-työskentely"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
+    union_or_CBA: "Musiikkialan TES",
+    useful_links: [
+      { name: "Musiikkialan TES", url: "https://www.musiikkialan-tes.fi/" },
+      { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" }
+    ],
+    keywords: ["ääniteknikko", "ääni", "miksaaminen", "masterointi", "media"],
     study_length_estimate_months: 42
   }
 ];
