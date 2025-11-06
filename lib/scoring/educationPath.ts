@@ -466,25 +466,25 @@ function generateYLAReasoning(
 
   if (primary === 'lukio') {
     if (confidence === 'high') {
-      reasoning = `Vastaustesi perusteella lukio sopii sinulle erittäin hyvin. Näytät pitävän monipuolisesta opiskelusta ja teoreettisesta oppimisesta, mikä on juuri sitä mitä lukio tarjoaa. Lukiossa pääset tutustumaan laajasti eri aineisiin - matematiikasta taiteeseen, luonnontieteistä kieliin - ja kehittämään vahvaa opiskelutaitoa ja itsenäistä ajattelua. Tämä on erityisen hyvä valinta, koska vastaustesi perusteella haluat pitää vaihtoehdot auki ja jatkaa opiskelua yliopistossa tai ammattikorkeakoulussa. Lukiossa saat myös aikaa miettiä tulevaisuuttasi ja löytää oman alasi rauhassa, ilman kiirettä päätösten tekemiseen.`;
+      reasoning = `Profiilistasi välittyy, että olet sellainen henkilö, joka arvostaa monipuolista oppimista ja haluat pitää vaihtoehdot auki tulevaisuutta varten. Sinussa on vahva uteliaisuus eri aineita kohtaan ja halu ymmärtää asioita syvällisesti, mikä tekee sinusta juuri sellaisen oppilaan, joka viihtyy lukiossa. Lukiossa pääset tutustumaan laajasti eri aineisiin - matematiikasta taiteeseen, luonnontieteistä kieliin - ja kehittämään vahvaa opiskelutaitoa ja itsenäistä ajattelua. Tämä on erityisen hyvä valinta, koska olet sellainen henkilö, joka haluat rakentaa vahvan perustan jatko-opinnoille ja antaa itsellesi aikaa löytää oma alasi rauhassa, ilman kiirettä päätösten tekemiseen.`;
     } else if (confidence === 'medium') {
-      reasoning = `Vastaustesi perusteella lukio vaikuttaa sopivalta vaihtoehdolta. Pidät teoreettisesta oppimisesta ja monipuolisesta opiskelusta, mikä sopii hyvin lukiossa tarjottavaan koulutukseen. Lukiossa saat tutustua moniin eri aineisiin ja kehittää vahvoja opiskelutaitoja, jotka ovat hyödyllisiä jatko-opinnoissa. Jos haluat jatkaa opiskelua lukion jälkeen, lukio antaa sinulle erinomaiset valmiudet yliopistoon tai ammattikorkeakouluun.`;
+      reasoning = `Profiilistasi välittyy, että olet sellainen henkilö, joka nauttii teoreettisesta oppimisesta ja monipuolisesta opiskelusta. Sinussa on halu ymmärtää asioita laajasti ja kehittää vahvoja opiskelutaitoja, mikä sopii hyvin lukiossa tarjottavaan koulutukseen. Lukiossa saat tutustua moniin eri aineisiin ja rakentaa vahvan perustan, joka avaa monia mahdollisuuksia tulevaisuudessa. Jos haluat jatkaa opiskelua lukion jälkeen, lukio antaa sinulle erinomaiset valmiudet yliopistoon tai ammattikorkeakouluun.`;
     } else {
-      reasoning = `Vastaustesi perusteella lukio voisi olla yksi vaihtoehto. Lukio on hyvä valinta, jos haluat pitää vaihtoehdot auki ja jatkaa opiskelua myöhemmin yliopistossa tai ammattikorkeakoulussa. Lukiossa pääset tutustumaan laajasti eri aineisiin ja kehittämään opiskelutaitojasi, mikä avaa monia mahdollisuuksia tulevaisuudessa.`;
+      reasoning = `Profiilistasi välittyy, että olet sellainen henkilö, joka arvostaa monipuolisuutta ja haluat pitää vaihtoehdot auki. Lukio on hyvä valinta, jos haluat rakentaa vahvan perustan jatko-opinnoille ja antaa itsellesi aikaa löytää oma alasi. Lukiossa pääset tutustumaan laajasti eri aineisiin ja kehittämään opiskelutaitojasi, mikä avaa monia mahdollisuuksia tulevaisuudessa.`;
     }
   } else if (primary === 'ammattikoulu') {
     if (confidence === 'high') {
-      reasoning = `Vastaustesi perusteella ammattikoulu sopii sinulle erittäin hyvin. Näytät pitävän käytännön tekemisestä ja oppimisesta tekemällä, mikä on täsmälleen sitä mitä ammatillinen koulutus tarjoaa. Ammattikoulussa pääset heti käytännön töihin ja opit tietyn ammatin taidot konkreettisesti työtilanteissa. Tämä on erityisen hyvä valinta, koska vastaustesi perusteella haluat oppia konkreettisen ammatin taidot ja aloittaa työelämän suhteellisen pian. Ammatillisessa koulutuksessa saat myös arvokasta työkokemusta jo opiskelun aikana harjoitteluissa, mikä helpottaa työllistymistä valmistumisen jälkeen.`;
+      reasoning = `Profiilistasi välittyy, että olet sellainen henkilö, joka nauttii käytännön tekemisestä ja oppimisesta tekemällä. Sinussa on vahva halu nähdä konkreettisia tuloksia ja oppia taitoja, joita voit heti käyttää käytännössä, mikä tekee sinusta juuri sellaisen oppilaan, joka viihtyy ammatillisessa koulutuksessa. Ammattikoulussa pääset heti käytännön töihin ja opit tietyn ammatin taidot konkreettisesti työtilanteissa. Tämä on erityisen hyvä valinta, koska olet sellainen henkilö, joka haluat oppia konkreettisen ammatin taidot ja aloittaa työelämän suhteellisen pian. Ammatillisessa koulutuksessa saat myös arvokasta työkokemusta jo opiskelun aikana harjoitteluissa, mikä helpottaa työllistymistä valmistumisen jälkeen.`;
     } else if (confidence === 'medium') {
-      reasoning = `Vastaustesi perusteella ammattikoulu vaikuttaa sopivalta vaihtoehdolta. Pidät käytännön tekemisestä ja oppimisesta tekemällä, mikä sopii hyvin ammatilliseen koulutukseen. Ammattikoulussa pääset heti työskentelemään oman alasi parissa ja opit käytännön työelämän taidot. Ammatillinen koulutus antaa sinulle valmiudet aloittaa työelämä nopeasti, mutta voit myös jatkaa myöhemmin opiskelua ammattikorkeakoulussa, jos haluat syventää taitoja tai erikoistua.`;
+      reasoning = `Profiilistasi välittyy, että olet sellainen henkilö, joka nauttii käytännön tekemisestä ja konkreettisesta oppimisesta. Sinussa on halu oppia taitoja, joita voit heti käyttää työssä, mikä sopii hyvin ammatilliseen koulutukseen. Ammattikoulussa pääset heti työskentelemään oman alasi parissa ja opit käytännön työelämän taidot. Ammatillinen koulutus antaa sinulle valmiudet aloittaa työelämä nopeasti, mutta voit myös jatkaa myöhemmin opiskelua ammattikorkeakoulussa, jos haluat syventää taitoja tai erikoistua.`;
     } else {
-      reasoning = `Vastaustesi perusteella ammattikoulu voisi olla yksi vaihtoehto. Ammatillinen koulutus on hyvä valinta, jos haluat oppia konkreettisen ammatin taidot ja päästä nopeasti töihin. Ammattikoulussa pääset heti tekemään käytännön töitä ja saat konkreettista kokemusta työelämästä. Kannattaa tutustua eri aloihin ja miettiä, mikä ala voisi kiinnostaa sinua erityisesti.`;
+      reasoning = `Profiilistasi välittyy, että olet sellainen henkilö, joka arvostaa käytännön tekemistä ja konkreettisia taitoja. Ammatillinen koulutus on hyvä valinta, jos haluat oppia konkreettisen ammatin taidot ja päästä nopeasti töihin. Ammattikoulussa pääset heti tekemään käytännön töitä ja saat konkreettista kokemusta työelämästä. Kannattaa tutustua eri aloihin ja miettiä, mikä ala voisi kiinnostaa sinua erityisesti.`;
     }
   } else { // kansanopisto
     if (confidence === 'high') {
-      reasoning = `Vastaustesi perusteella kansanopisto voisi olla sinulle hyvä vaihtoehto. Näytät olevan vielä epävarma tulevaisuuden suunnitelmistasi, etkä ehkä tiedä vielä, mikä ala tai ammatti sinua kiinnostaisi eniten. Kansanopistossa voit tutustua eri aloihin rauhassa, kasvaa ihmisenä ja selkiyttää omaa suuntaasi ennen seuraavaa vaihetta. Tämä on erityisen hyvä valinta, jos tarvitset aikaa miettiä tulevaisuuttasi ilman paineita tai kiirettä. Kansanopisto antaa sinulle tilaa löytää oma polkusi ja voi auttaa löytämään intohimosi.`;
+      reasoning = `Profiilistasi välittyy, että olet sellainen henkilö, joka tarvitsee aikaa löytää oma polkusi. Sinussa on uteliaisuus eri asioita kohtaan, mutta vielä epävarmuus siitä, mikä ala tai ammatti sinua kiinnostaisi eniten. Kansanopistossa voit tutustua eri aloihin rauhassa, kasvaa ihmisenä ja selkiyttää omaa suuntaasi ennen seuraavaa vaihetta. Tämä on erityisen hyvä valinta, koska olet sellainen henkilö, joka arvostaa aikaa miettiä tulevaisuuttasi ilman paineita tai kiirettä. Kansanopisto antaa sinulle tilaa löytää oma polkusi ja voi auttaa löytämään intohimosi.`;
     } else {
-      reasoning = `Vastaustesi perusteella olet ehkä vielä epävarma tulevaisuuden suunnitelmistasi. Lukio ja ammattikoulu ovat molemmat mahdollisia vaihtoehtoja. Voit myös harkita kansanopistovuotta, jossa voit tutustua eri aloihin ja selkiyttää omaa suuntaasi rauhassa. Kansanopisto antaa sinulle aikaa miettiä ja löytää oman polkusi ilman kiirettä päätösten tekemiseen.`;
+      reasoning = `Profiilistasi välittyy, että olet sellainen henkilö, joka on vielä miettimässä tulevaisuuden suuntaa. Lukio ja ammattikoulu ovat molemmat mahdollisia vaihtoehtoja. Voit myös harkita kansanopistovuotta, jossa voit tutustua eri aloihin ja selkiyttää omaa suuntaasi rauhassa. Kansanopisto antaa sinulle aikaa miettiä ja löytää oman polkusi ilman kiirettä päätösten tekemiseen.`;
     }
   }
 
@@ -567,16 +567,7 @@ AMK-opinnot kestävät tyypillisesti 3,5-4,5 vuotta ja tarjoavat hyvät valmiude
     }
   }
 
-  // Add answer references to reasoning if we have key answers
-  if (topAnswers.length > 0 && cohort === 'TASO2') {
-    const answerRefs = topAnswers.map(a => {
-      const answerLevel = getAnswerLevel(a.score, cohort);
-      const questionRef = getQuestionReference(a.index, a.text, cohort);
-      return `${questionRef} (${answerLevel})`;
-    }).join(' ja ');
-    
-    reasoning = `Koska vastasit vahvasti että ${topAnswers[0].text.toLowerCase().replace('?', '')} (${getQuestionReference(topAnswers[0].index, topAnswers[0].text, cohort)}) ja ${topAnswers.length > 1 ? topAnswers[1].text.toLowerCase().replace('?', '') : 'muihin kysymyksiin'}, ${primary === 'yliopisto' ? 'yliopisto' : 'AMK'} sopii profiiliisi. Lisäksi vastauksesi siihen että ${topAnswers.length > 1 ? topAnswers[1].text.toLowerCase().replace('?', '') : 'muihin kysymyksiin'} tukee tätä valintaa. ` + reasoning;
-  }
+  // Note: Removed technical answer references - reasoning now uses personality-based narrative style
 
   return reasoning;
 }

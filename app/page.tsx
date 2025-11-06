@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { headers } from "next/headers"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import CategoryCard from "@/components/CategoryCard"
 import Logo from "@/components/Logo"
 import CallToActionSection from "@/components/CallToActionSection"
@@ -106,7 +106,7 @@ export default function HomePage() {
           <p className="text-xs sm:text-sm text-muted-foreground mt-6 flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
             <span className="flex items-center gap-1">
               <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-secondary" />
-              30 kysymystä
+              30 kysymystä • n. 5 minuuttia
             </span>
             <span>•</span>
             <span className="flex items-center gap-1">
@@ -167,6 +167,115 @@ export default function HomePage() {
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Saat personoidut urasuositukset ja konkreettiset seuraavat askeleet. Sun tulevaisuus alkaa tästä.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="esimerkkitulokset" className="py-20 bg-gradient-to-b from-muted/30 to-transparent">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">Esimerkkitulokset</h2>
+            <p className="text-base sm:text-lg text-muted-foreground">
+              Tällaisia henkilökohtaisia suosituksia saat testin jälkeen
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto space-y-6">
+            {/* Sample Education Path (YLA) */}
+            <Card className="border-2 border-green-200 bg-gradient-to-r from-green-50 to-blue-50">
+              <CardHeader>
+                <CardTitle className="text-xl">Sinun koulutuspolkusi</CardTitle>
+                <CardDescription>Esimerkki: Yläasteen oppilas</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Lukio</h3>
+                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                    Vahva suositus
+                  </span>
+                </div>
+                <div className="bg-white rounded-lg p-4 mb-4">
+                  <p className="text-gray-700 text-sm">
+                    Yleissivistävä koulutus, joka antaa valmiudet jatkaa opiskelua yliopistossa tai ammattikorkeakoulussa. Opiskelet laajasti eri aineita ja kehität opiskelutaitojasi.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4 mt-4 text-sm">
+                    <div>
+                      <span className="font-semibold text-gray-700">Kesto:</span>
+                      <span className="ml-2 text-gray-600">3 vuotta</span>
+                    </div>
+                    <div>
+                      <span className="font-semibold text-gray-700">Jatko-opinnot:</span>
+                      <div className="ml-2 text-gray-600">Yliopisto-opinnot, Ammattikorkeakouluopinnot</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-blue-50 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-700 mb-2 text-sm">Miksi tämä sopii sinulle:</h4>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    Profiilistasi välittyy, että olet sellainen henkilö, joka arvostaa monipuolista oppimista ja haluat pitää vaihtoehdot auki tulevaisuutta varten. Lukio tarjoaa juuri tämän mahdollisuuden.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Sample Career Match */}
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-2xl font-bold text-gray-400">#1</span>
+                      <CardTitle className="text-xl">Sairaanhoitaja</CardTitle>
+                    </div>
+                    <CardDescription className="capitalize text-sm">Auttaja</CardDescription>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-2xl font-bold text-green-600">85%</div>
+                    <div className="text-xs text-gray-500">yhteensopivuus</div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-4">
+                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                    Vahva suositus
+                  </span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2 text-sm">Miksi tämä sopii sinulle:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2 text-gray-600 text-sm">
+                      <span className="text-blue-500 mt-1">•</span>
+                      <span>Sinussa on vahva halu auttaa ja tukea muita ihmisiä, mikä tekee sinusta juuri sellaisen henkilön, joka viihtyy terveydenhuollossa.</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-gray-600 text-sm">
+                      <span className="text-blue-500 mt-1">•</span>
+                      <span>Profiilistasi välittyy, että arvostat merkityksellistä työtä ja haluat tehdä eron ihmisten elämässä.</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="flex flex-wrap gap-4 pt-4 text-sm text-gray-600 mt-4 border-t">
+                  <div className="flex items-center gap-1">
+                    <span className="font-medium">Palkka:</span>
+                    <span>3 200-4 500 €/kk</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="font-medium">Työllisyysnäkymä:</span>
+                    <span className="capitalize">erittäin hyvä</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* CTA */}
+            <div className="text-center pt-6">
+              <Button size="lg" asChild>
+                <Link href="/test">
+                  Aloita testi ja saat omat suosituksesi
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -327,7 +436,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="testimonials" className="py-20 mb-12 bg-gradient-to-b from-slate-50/50 to-white">
+      {/* Testimonials section - only visible on localhost */}
+      {isLocalhost && (
+        <section id="testimonials" className="py-20 mb-12 bg-gradient-to-b from-slate-50/50 to-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">Mitä muut sanoo</h2>
@@ -388,6 +499,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+      )}
 
         <CallToActionSection />
 

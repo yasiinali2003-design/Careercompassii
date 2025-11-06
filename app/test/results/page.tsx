@@ -480,6 +480,14 @@ function CareerMatchCard({
             )}
           </div>
         )}
+
+        {/* Visual hint for links */}
+        <div className="pt-2 border-t border-gray-200">
+          <p className="text-xs text-gray-500 flex items-center gap-1">
+            <span>ℹ️</span>
+            <span>Klikkaa ammattia nähdäksesi koulutuspolut ja työpaikat</span>
+          </p>
+        </div>
       </CardContent>
 
       <CardFooter>

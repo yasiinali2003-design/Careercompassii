@@ -429,7 +429,7 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
       </div>
       
       <p className="mt-4 text-sm text-slate-500">
-        30 kysymystä • Maksuton • Vastauksesi käsitellään luottamuksellisesti
+        30 kysymystä • n. 5 minuuttia • Maksuton • Vastauksesi käsitellään luottamuksellisesti
       </p>
       
       {hasSavedProgress && (
