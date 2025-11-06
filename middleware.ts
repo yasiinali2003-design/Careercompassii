@@ -91,12 +91,8 @@ export function middleware(request: NextRequest) {
   }
 
   // Site-wide password protection (via /site-auth page)
-  // TEMPORARILY DISABLED: Allow public access without password
-  // TODO: Re-enable when user requests it
-  const sitePasswordEnabled = false; // Temporarily disabled
-  
-  // ORIGINAL CODE (DISABLED - UNCOMMENT TO RE-ENABLE):
-  // const sitePasswordEnabled = !isLocalhost && isProduction && process.env.SITE_PASSWORD !== undefined && process.env.SITE_PASSWORD !== '';
+  // Only enable on production domain, not on localhost
+  const sitePasswordEnabled = !isLocalhost && isProduction && process.env.SITE_PASSWORD !== undefined && process.env.SITE_PASSWORD !== '';
   
   if (sitePasswordEnabled) {
     // Always allow access to site auth page and its API
