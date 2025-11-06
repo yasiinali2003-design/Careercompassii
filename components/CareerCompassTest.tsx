@@ -178,17 +178,26 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   const [selectedSetIndex, setSelectedSetIndex] = useState<number>(0); // For YLA question pool
   const [questionToOriginalMapping, setQuestionToOriginalMapping] = useState<Map<number, number>>(new Map()); // Maps displayed Q index to originalQ
   const [shuffledToOriginalQ, setShuffledToOriginalQ] = useState<number[]>([]); // Maps shuffled position -> originalQ (0-29)
+  const [qList, setQList] = useState<string[]>([]); // Shuffled questions for display
 
-  // Shuffle questions when group is selected
-  const qList = useMemo(() => {
-    if (!group) return [];
+  // Effect to select question set and prepare questions when group changes
+  useEffect(() => {
+    if (!group) {
+      setQList([]);
+      setShuffledToOriginalQ([]);
+      setOriginalIndices([]);
+      setShuffleKey('');
+      setSelectedSetIndex(0);
+      return;
+    }
     
+    let setIndex = 0;
     let questions: string[] = [];
     const mapping = new Map<number, number>(); // Maps displayed index to originalQ
     
     if (group === 'YLA' || group === 'TASO2' || group === 'NUORI') {
       // Use question pool system for YLA, TASO2, and NUORI
-      const setIndex = selectQuestionSet(group);
+      setIndex = selectQuestionSet(group);
       setSelectedSetIndex(setIndex);
       const mappings = getQuestionMappings(group, setIndex);
       
@@ -199,6 +208,9 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
         const originalQ = m.originalQ !== undefined ? m.originalQ : m.q;
         mapping.set(displayedIndex, originalQ);
       });
+    } else {
+      // Fallback for other cohorts (shouldn't happen, but safe)
+      questions = QUESTIONS[group] || [];
     }
     
     setQuestionToOriginalMapping(mapping);
@@ -230,7 +242,8 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
     }
     setShuffleKey(hash.toString(36));
     
-    return shuffled.map(q => q.text);
+    // Set the shuffled questions for display
+    setQList(shuffled.map(q => q.text));
   }, [group]);
   const total = qList.length;
 
@@ -614,6 +627,14 @@ const Summary = ({
     try {
       // Format answers for new scoring API
       // Use shuffledToOriginalQ to map shuffled positions to originalQ (0-29)
+      // Safety check: ensure shuffledToOriginalQ is properly initialized
+      if (!shuffledToOriginalQ || shuffledToOriginalQ.length === 0) {
+        console.error('[Test] shuffledToOriginalQ is not initialized properly');
+        setError("Sisäinen virhe: kysymysten kartoitus puuttuu. Yritä uudelleen tai päivitä sivu.");
+        setLoading(false);
+        return;
+      }
+      
       const formattedAnswers = answers.map((score, shuffledIndex) => ({
         questionIndex: shuffledToOriginalQ[shuffledIndex] ?? shuffledIndex,
         score: score || 3 // Use 3 (neutral) for unanswered questions
@@ -727,9 +748,9 @@ const Summary = ({
         console.log('[Test] Public flow response:', { success: data.success, hasTopCareers: !!data.topCareers });
         
         if (data.success) {
-          // Mark question set as used for YLA cohort
-          if (group === 'YLA') {
-            markSetAsUsed('YLA', selectedSetIndex);
+          // Mark question set as used for YLA, TASO2, and NUORI cohorts
+          if (group === 'YLA' || group === 'TASO2' || group === 'NUORI') {
+            markSetAsUsed(group, selectedSetIndex);
           }
           localStorage.setItem('careerTestResults', JSON.stringify(data));
           if (data.resultId) {
