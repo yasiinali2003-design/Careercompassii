@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import { selectQuestionSet, markSetAsUsed } from "@/lib/questionPool";
+import { getQuestionMappings } from "@/lib/scoring/dimensions";
 
 // ---------- QUESTIONS DATA ----------
 // YLA: Education path focus (Lukio vs. Ammattikoulu) + career preview
@@ -173,15 +175,36 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   const [hasLoadedProgress, setHasLoadedProgress] = useState(false);
   const [originalIndices, setOriginalIndices] = useState<number[]>([]); // For shuffle mapping
   const [shuffleKey, setShuffleKey] = useState<string>(''); // For verification
+  const [selectedSetIndex, setSelectedSetIndex] = useState<number>(0); // For YLA question pool
+  const [questionToOriginalMapping, setQuestionToOriginalMapping] = useState<Map<number, number>>(new Map()); // Maps displayed Q index to originalQ
+  const [shuffledToOriginalQ, setShuffledToOriginalQ] = useState<number[]>([]); // Maps shuffled position -> originalQ (0-29)
 
   // Shuffle questions when group is selected
   const qList = useMemo(() => {
     if (!group) return [];
     
-    const originalQs = QUESTIONS[group];
-    const qsWithIndices = originalQs.map((text, idx) => ({ q: idx, text }));
+    let questions: string[] = [];
+    const mapping = new Map<number, number>(); // Maps displayed index to originalQ
+    
+    if (group === 'YLA' || group === 'TASO2' || group === 'NUORI') {
+      // Use question pool system for YLA, TASO2, and NUORI
+      const setIndex = selectQuestionSet(group);
+      setSelectedSetIndex(setIndex);
+      const mappings = getQuestionMappings(group, setIndex);
+      
+      // Extract question texts and create mapping
+      questions = mappings.map(m => m.text);
+      mappings.forEach((m, displayedIndex) => {
+        // Map displayed index to originalQ (or q if originalQ doesn't exist)
+        const originalQ = m.originalQ !== undefined ? m.originalQ : m.q;
+        mapping.set(displayedIndex, originalQ);
+      });
+    }
+    
+    setQuestionToOriginalMapping(mapping);
     
     // Shuffle using Fisher-Yates
+    const qsWithIndices = questions.map((text, idx) => ({ q: idx, text }));
     const shuffled = [...qsWithIndices];
     
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -190,13 +213,20 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
     }
     
     // Create mapping from shuffled position -> original index
-    const mapping: number[] = shuffled.map(q => q.q);
-    setOriginalIndices(mapping);
+    const shuffledMapping: number[] = shuffled.map(q => q.q);
+    setOriginalIndices(shuffledMapping);
+    
+    // Create mapping from shuffled position -> originalQ (for Set 2/3)
+    const shuffledToOriginalQMapping: number[] = shuffled.map(q => {
+      const originalQ = mapping.get(q.q);
+      return originalQ !== undefined ? originalQ : q.q;
+    });
+    setShuffledToOriginalQ(shuffledToOriginalQMapping);
     
     // Generate simple shuffle key
     let hash = 0;
-    for (let i = 0; i < mapping.length; i++) {
-      hash = (hash + (mapping[i] * (i + 1))) % 2147483647;
+    for (let i = 0; i < shuffledMapping.length; i++) {
+      hash = (hash + (shuffledMapping[i] * (i + 1))) % 2147483647;
     }
     setShuffleKey(hash.toString(36));
     
@@ -345,7 +375,9 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
           questions={qList}
           answers={answers}
           originalIndices={originalIndices}
+          shuffledToOriginalQ={shuffledToOriginalQ}
           shuffleKey={shuffleKey}
+          selectedSetIndex={selectedSetIndex}
           onRestart={restart}
           onSend={sendToBackend}
           pin={pin}
@@ -543,7 +575,9 @@ const Summary = ({
   questions,
   answers,
   originalIndices,
+  shuffledToOriginalQ,
   shuffleKey,
+  selectedSetIndex,
   onRestart,
   onSend,
   pin,
@@ -553,7 +587,9 @@ const Summary = ({
   questions: string[];
   answers: number[];
   originalIndices: number[];
+  shuffledToOriginalQ: number[];
   shuffleKey: string;
+  selectedSetIndex: number;
   onRestart: () => void;
   onSend: () => void;
   pin?: string | null;
@@ -577,8 +613,9 @@ const Summary = ({
     
     try {
       // Format answers for new scoring API
-      const formattedAnswers = answers.map((score, index) => ({
-        questionIndex: index,
+      // Use shuffledToOriginalQ to map shuffled positions to originalQ (0-29)
+      const formattedAnswers = answers.map((score, shuffledIndex) => ({
+        questionIndex: shuffledToOriginalQ[shuffledIndex] ?? shuffledIndex,
         score: score || 3 // Use 3 (neutral) for unanswered questions
       }));
 
@@ -642,6 +679,10 @@ const Summary = ({
 
           if (resultsData.success) {
             console.log('[Test] Results saved successfully, navigating to results page');
+            // Mark question set as used for YLA, TASO2, and NUORI cohorts
+            if (group === 'YLA' || group === 'TASO2' || group === 'NUORI') {
+              markSetAsUsed(group, selectedSetIndex);
+            }
             // Save to localStorage and navigate
             localStorage.setItem('careerTestResults', JSON.stringify(scoreData));
             if (scoreData.resultId) {
@@ -686,6 +727,10 @@ const Summary = ({
         console.log('[Test] Public flow response:', { success: data.success, hasTopCareers: !!data.topCareers });
         
         if (data.success) {
+          // Mark question set as used for YLA cohort
+          if (group === 'YLA') {
+            markSetAsUsed('YLA', selectedSetIndex);
+          }
           localStorage.setItem('careerTestResults', JSON.stringify(data));
           if (data.resultId) {
             localStorage.setItem('lastTestResultId', data.resultId);

@@ -34,7 +34,8 @@ export type SubDimension =
 // ========== QUESTION MAPPING TYPES ==========
 
 export interface QuestionMapping {
-  q: number;                  // Question index (0-29)
+  q: number;                  // Question index (0-29 for Set 1, 30-59 for Set 2, 60-89 for Set 3)
+  originalQ?: number;         // Original question index (for Set 2/3, maps to Set 1 index 0-29)
   text: string;               // Question text in Finnish
   dimension: Dimension;       // Primary dimension
   subdimension: SubDimension; // Specific aspect being measured
