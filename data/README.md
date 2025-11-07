@@ -20,3 +20,4 @@ Expected structure for each row (`PointHistoryRow`):
 
 Run `tsx scripts/import-point-history.ts data/point-history-2024.json` to import the data into Supabase.
 
+

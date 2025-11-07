@@ -172,114 +172,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="esimerkkitulokset" className="py-20 bg-gradient-to-b from-muted/30 to-transparent">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">Esimerkkitulokset</h2>
-            <p className="text-base sm:text-lg text-muted-foreground">
-              Tällaisia henkilökohtaisia suosituksia saat testin jälkeen
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto space-y-6">
-            {/* Sample Education Path (YLA) */}
-            <Card className="border-2 border-green-200 bg-gradient-to-r from-green-50 to-blue-50">
-              <CardHeader>
-                <CardTitle className="text-xl">Sinun koulutuspolkusi</CardTitle>
-                <CardDescription>Esimerkki: Yläasteen oppilas</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Lukio</h3>
-                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                    Vahva suositus
-                  </span>
-                </div>
-                <div className="bg-white rounded-lg p-4 mb-4">
-                  <p className="text-gray-700 text-sm">
-                    Yleissivistävä koulutus, joka antaa valmiudet jatkaa opiskelua yliopistossa tai ammattikorkeakoulussa. Opiskelet laajasti eri aineita ja kehität opiskelutaitojasi.
-                  </p>
-                  <div className="grid grid-cols-2 gap-4 mt-4 text-sm">
-                    <div>
-                      <span className="font-semibold text-gray-700">Kesto:</span>
-                      <span className="ml-2 text-gray-600">3 vuotta</span>
-                    </div>
-                    <div>
-                      <span className="font-semibold text-gray-700">Jatko-opinnot:</span>
-                      <div className="ml-2 text-gray-600">Yliopisto-opinnot, Ammattikorkeakouluopinnot</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-blue-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-700 mb-2 text-sm">Miksi tämä sopii sinulle:</h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    Profiilistasi välittyy, että olet sellainen henkilö, joka arvostaa monipuolista oppimista ja haluat pitää vaihtoehdot auki tulevaisuutta varten. Lukio tarjoaa juuri tämän mahdollisuuden.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Sample Career Match */}
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-2xl font-bold text-gray-400">#1</span>
-                      <CardTitle className="text-xl">Sairaanhoitaja</CardTitle>
-                    </div>
-                    <CardDescription className="capitalize text-sm">Auttaja</CardDescription>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-green-600">85%</div>
-                    <div className="text-xs text-gray-500">yhteensopivuus</div>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="mb-4">
-                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                    Vahva suositus
-                  </span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-700 mb-2 text-sm">Miksi tämä sopii sinulle:</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-gray-600 text-sm">
-                      <span className="text-blue-500 mt-1">•</span>
-                      <span>Sinussa on vahva halu auttaa ja tukea muita ihmisiä, mikä tekee sinusta juuri sellaisen henkilön, joka viihtyy terveydenhuollossa.</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-gray-600 text-sm">
-                      <span className="text-blue-500 mt-1">•</span>
-                      <span>Profiilistasi välittyy, että arvostat merkityksellistä työtä ja haluat tehdä eron ihmisten elämässä.</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="flex flex-wrap gap-4 pt-4 text-sm text-gray-600 mt-4 border-t">
-                  <div className="flex items-center gap-1">
-                    <span className="font-medium">Palkka:</span>
-                    <span>3 200-4 500 €/kk</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <span className="font-medium">Työllisyysnäkymä:</span>
-                    <span className="capitalize">erittäin hyvä</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* CTA */}
-            <div className="text-center pt-6">
-              <Button size="lg" asChild>
-                <Link href="/test">
-                  Aloita testi ja saat omat suosituksesi
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       <section id="kenelle" className="py-20">
         <div className="container mx-auto px-4">
@@ -364,47 +257,6 @@ export default function HomePage() {
       </section>
 
 
-      <section className="py-20 bg-gradient-to-b from-muted/30 to-transparent">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card className="border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-out">
-              <CardContent className="p-6 sm:p-10">
-                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                  <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
-                    <GraduationCap className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
-                  </div>
-                  <div className="text-center sm:text-left">
-                    <h2 className="text-2xl sm:text-3xl font-bold mb-4">Opinto-ohjaajille</h2>
-                    <p className="text-sm sm:text-lg text-muted-foreground leading-relaxed mb-4">
-                      Tämä testi on kehitetty tukemaan opinto-ohjauksen työtä. Ohjaajat voivat hyödyntää tuloksia
-                      keskustelun pohjana, kun opiskelija pohtii vahvuuksiaan ja tulevaisuuden vaihtoehtoja.
-                    </p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-3">
-                        <span className="text-primary text-lg sm:text-xl">✓</span>
-                        <span className="text-xs sm:text-base text-muted-foreground">
-                          Auttaa opiskelijoita tunnistamaan vahvuuksiaan ja kiinnostuksen kohteitaan
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="text-primary text-lg sm:text-xl">✓</span>
-                        <span className="text-xs sm:text-base text-muted-foreground">
-                          Tarjoaa konkreettisen pohjan uraohjauskeskusteluille
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <span className="text-primary text-lg sm:text-xl">✓</span>
-                        <span className="text-xs sm:text-base text-muted-foreground">Säästää aikaa ja tekee ohjauksesta tehokkaampaa</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -455,7 +307,7 @@ export default function HomePage() {
                     </div>
                     <div className="flex-1">
                       <p className="text-gray-800 mb-6 font-medium leading-relaxed tracking-wide max-w-sm">
-                        "En tiennyt mitä haluan tehdä kun valmistun yläasteesta. Tää testi auttoi ymmärtämään mun vahvuuksia ja näyttää kiinnostavia opintovaihtoehtoja. Nyt tuntuu että mulla on selkeämpi kuva tulevaisuudesta!"
+                        &quot;En tiennyt mitä haluan tehdä kun valmistun yläasteesta. Tää testi auttoi ymmärtämään mun vahvuuksia ja näyttää kiinnostavia opintovaihtoehtoja. Nyt tuntuu että mulla on selkeämpi kuva tulevaisuudesta!&quot;
                       </p>
                       <p className="font-semibold text-gray-700 text-sm">Emma, 15</p>
                     </div>
@@ -472,7 +324,7 @@ export default function HomePage() {
                     </div>
                     <div className="flex-1">
                       <p className="text-gray-800 mb-6 font-medium leading-relaxed tracking-wide max-w-sm">
-                        "Olin epävarma mihin haluan hakea jatko-opintoihin. Testi selvensi mun ura-suuntaa ja antoi itseluottamusta tehdä päätöksiä. Nyt tiedän että olen valinnut oikean polun!"
+                        &quot;Olin epävarma mihin haluan hakea jatko-opintoihin. Testi selvensi mun ura-suuntaa ja antoi itseluottamusta tehdä päätöksiä. Nyt tiedän että olen valinnut oikean polun!&quot;
                       </p>
                       <p className="font-semibold text-gray-700 text-sm">Marcus, 17</p>
                     </div>
@@ -489,7 +341,7 @@ export default function HomePage() {
                     </div>
                     <div className="flex-1">
                       <p className="text-gray-800 mb-6 font-medium leading-relaxed tracking-wide max-w-sm">
-                        "Olin töissä alalla joka ei tuntunut omalta. Tää testi avasi silmäni uusiin mahdollisuuksiin ja auttoi löytämään uran joka oikeesti sopii mulle. Elämäni on muuttunut parempaan suuntaan!"
+                        &quot;Olin töissä alalla joka ei tuntunut omalta. Tää testi avasi silmäni uusiin mahdollisuuksiin ja auttoi löytämään uran joka oikeesti sopii mulle. Elämäni on muuttunut parempaan suuntaan!&quot;
                       </p>
                       <p className="font-semibold text-gray-700 text-sm">Sofia, 23</p>
                     </div>

@@ -27,7 +27,9 @@ export async function GET(request: NextRequest) {
     const limit = Math.min(parseInt(searchParams.get('limit') || '50'), 100);
     const offset = parseInt(searchParams.get('offset') || '0');
     const sort = searchParams.get('sort') || 'match';
-    const includeHistory = searchParams.get('history') === 'true';
+    const historyParam = searchParams.get('history') === 'true';
+    const includeHistory =
+      historyParam && process.env.NEXT_PUBLIC_ENABLE_POINT_HISTORY === 'true';
 
     if (!supabaseAdmin) {
       // Fallback to static data if Supabase not configured
@@ -59,13 +61,12 @@ export async function GET(request: NextRequest) {
     // Filter by points range
     // Include programs where: userPoints >= minPoints - 30 AND userPoints <= maxPoints + 20
     // This gives a realistic range: reach programs (30 points below) to safety programs (20 points above)
+    let broaderPointsFilter = false;
     if (points !== null) {
-      // Filter: min_points <= userPoints + 30 (user can reach programs up to 30 points above)
-      // AND max_points >= userPoints - 20 (or if no max_points, min_points <= userPoints + 30)
-      // Using AND logic: we need programs where userPoints falls within the program's range with tolerance
       query = query
-        .lte('min_points', points + 30)  // minPoints <= userPoints + 30 (reach programs)
-        .or(`max_points.gte.${points - 20},max_points.is.null`); // maxPoints >= userPoints - 20 OR no max (safety programs)
+        .lte('min_points', points + 30)
+        .or(`max_points.gte.${points - 20},max_points.is.null`);
+      broaderPointsFilter = true;
     }
 
     // Search in name, institution, or description
@@ -80,7 +81,10 @@ export async function GET(request: NextRequest) {
     }
 
     // Execute query
-    const { data: programs, error, count } = await query;
+    const { data: programsData, error, count } = await query;
+    let programs = programsData;
+    let totalCount = count || 0;
+    let careerRelaxed = false;
 
     if (error) {
       console.error('[API/StudyPrograms] Database error:', error);
@@ -90,13 +94,56 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    if (!programs) {
-      return NextResponse.json({
-        programs: [],
-        total: 0,
-        limit,
-        offset
-      });
+    if ((!programs || programs.length === 0) && careers.length > 0) {
+      let relaxedQuery = supabaseAdmin
+        .from('study_programs')
+        .select(includeHistory ? '*, point_history:study_program_point_history(*)' : '*', { count: 'exact' });
+
+      if (type) relaxedQuery = relaxedQuery.eq('institution_type', type);
+      if (field && field !== 'all') relaxedQuery = relaxedQuery.eq('field', field);
+      if (points !== null) {
+        relaxedQuery = relaxedQuery
+          .lte('min_points', points + 30)
+          .or(`max_points.gte.${points - 20},max_points.is.null`);
+      }
+      if (search) relaxedQuery = relaxedQuery.or(`name.ilike.%${search}%,institution.ilike.%${search}%,description.ilike.%${search}%`);
+
+      const relaxed = await relaxedQuery;
+      if (!relaxed.error && relaxed.data && relaxed.data.length > 0) {
+        programs = relaxed.data;
+        totalCount = relaxed.count || relaxed.data.length;
+        careerRelaxed = true;
+      }
+    }
+
+    if (!programs || programs.length === 0) {
+      if (points !== null && broaderPointsFilter) {
+        const fallbackQuery = supabaseAdmin
+          .from('study_programs')
+          .select(includeHistory ? '*, point_history:study_program_point_history(*)' : '*', { count: 'exact' })
+          .lte('min_points', points + 35)
+          .or(`max_points.gte.${points - 25},max_points.is.null`);
+
+        if (type) fallbackQuery.eq('institution_type', type);
+        if (field && field !== 'all') fallbackQuery.eq('field', field);
+        if (search) fallbackQuery.or(`name.ilike.%${search}%,institution.ilike.%${search}%,description.ilike.%${search}%`);
+        if (careers.length > 0) fallbackQuery.filter('related_careers', 'cs', `{${careers.join(',')}}`);
+
+        const fallback = await fallbackQuery;
+        if (!fallback.error && fallback.data) {
+          programs = fallback.data;
+          totalCount = fallback.count ?? fallback.data.length;
+        }
+      }
+
+      if (!programs || programs.length === 0) {
+        return NextResponse.json({
+          programs: [],
+          total: 0,
+          limit,
+          offset
+        });
+      }
     }
 
     // Sort programs
@@ -156,10 +203,11 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       programs: formatted,
-      total: count || sorted.length,
+      total: totalCount || sorted.length,
       limit,
       offset,
-      hasMore: (offset + limit) < (count || sorted.length)
+      hasMore: (offset + limit) < (totalCount || sorted.length),
+      metadata: { fallbackCount: 0, careerRelaxed }
     });
 
   } catch (error: any) {

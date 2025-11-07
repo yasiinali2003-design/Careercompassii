@@ -7,6 +7,12 @@ export interface SubjectVariant {
   description?: string;
 }
 
+export interface SubjectChoice {
+  id: string;
+  label: string;
+  description?: string;
+}
+
 export interface SubjectDefinition {
   key: string;
   label: string;
@@ -15,6 +21,8 @@ export interface SubjectDefinition {
   coefficient?: number;
   variants?: SubjectVariant[];
   defaultVariantKey?: string;
+  allowSubjectChoice?: boolean;
+  subjectChoices?: SubjectChoice[];
 }
 
 export const GRADE_OPTIONS: { value: GradeSymbol; label: string }[] = [
@@ -69,22 +77,61 @@ export const SUBJECT_DEFINITIONS: SubjectDefinition[] = [
   },
   {
     key: 'reaaliaineet',
-    label: 'Reaaliaineet',
+    label: 'Reaaliaine',
     required: false,
-    helperText: 'Syötä vahvin reaaliaineesi (esim. historia, fysiikka, biologia).',
-    coefficient: 1.0
+    helperText: 'Valitse ensin reaaliaine ja anna arvosana.',
+    coefficient: 1.0,
+    allowSubjectChoice: true,
+    subjectChoices: [
+      { id: 'biologia', label: 'Biologia' },
+      { id: 'maantiede', label: 'Maantiede' },
+      { id: 'yhteiskuntaoppi', label: 'Yhteiskuntaoppi' },
+      { id: 'historia', label: 'Historia' },
+      { id: 'psykologia', label: 'Psykologia' },
+      { id: 'filosofia', label: 'Filosofia' },
+      { id: 'uskonto-et', label: 'Uskonto / ET' },
+      { id: 'terveystieto', label: 'Terveystieto' },
+      { id: 'kemia', label: 'Kemia' },
+      { id: 'fysiikka', label: 'Fysiikka' }
+    ]
   },
   {
     key: 'reaali-2',
     label: 'Toinen reaaliaine',
     required: false,
-    coefficient: 1.0
+    coefficient: 1.0,
+    allowSubjectChoice: true,
+    subjectChoices: [
+      { id: 'biologia', label: 'Biologia' },
+      { id: 'maantiede', label: 'Maantiede' },
+      { id: 'yhteiskuntaoppi', label: 'Yhteiskuntaoppi' },
+      { id: 'historia', label: 'Historia' },
+      { id: 'psykologia', label: 'Psykologia' },
+      { id: 'filosofia', label: 'Filosofia' },
+      { id: 'uskonto-et', label: 'Uskonto / ET' },
+      { id: 'terveystieto', label: 'Terveystieto' },
+      { id: 'kemia', label: 'Kemia' },
+      { id: 'fysiikka', label: 'Fysiikka' }
+    ]
   },
   {
     key: 'reaali-3',
     label: 'Kolmas reaaliaine',
     required: false,
-    coefficient: 1.0
+    coefficient: 1.0,
+    allowSubjectChoice: true,
+    subjectChoices: [
+      { id: 'biologia', label: 'Biologia' },
+      { id: 'maantiede', label: 'Maantiede' },
+      { id: 'yhteiskuntaoppi', label: 'Yhteiskuntaoppi' },
+      { id: 'historia', label: 'Historia' },
+      { id: 'psykologia', label: 'Psykologia' },
+      { id: 'filosofia', label: 'Filosofia' },
+      { id: 'uskonto-et', label: 'Uskonto / ET' },
+      { id: 'terveystieto', label: 'Terveystieto' },
+      { id: 'kemia', label: 'Kemia' },
+      { id: 'fysiikka', label: 'Fysiikka' }
+    ]
   },
   {
     key: 'muu-kieli',

@@ -313,6 +313,29 @@ export default function ResultsPage() {
           </Card>
         )}
 
+        {/* Career Matches */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            {userProfile.cohort === 'YLA' ? 'Ammatteja tulevaisuudessa (esimerkkejä)' : 'Ammattiehdotukset vastaustesi perusteella'}
+          </h2>
+          {userProfile.cohort === 'YLA' && results.educationPath && (
+            <p className="text-gray-600 mb-6">
+              Näitä ammatteja voit harkita {getEducationPathTitle(results.educationPath.primary, userProfile.cohort).toLowerCase()}n jälkeen:
+            </p>
+          )}
+          
+          <div className="space-y-4">
+            {topCareers.slice(0, userProfile.cohort === 'YLA' ? 3 : 5).map((career, index) => (
+              <CareerMatchCard
+                key={career.slug}
+                career={career}
+                rank={index + 1}
+                ctaText={cohortCopy.ctaText}
+              />
+            ))}
+          </div>
+        </div>
+
         {/* Todistuspistelaskuri CTA for TASO2 users with yliopisto/AMK recommendation */}
         {userProfile.cohort === 'TASO2' &&
          results.educationPath &&
@@ -338,29 +361,6 @@ export default function ResultsPage() {
             </div>
           </div>
         )}
-
-        {/* Career Matches */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            {userProfile.cohort === 'YLA' ? 'Ammatteja tulevaisuudessa (esimerkkejä)' : 'Ammattiehdotukset vastaustesi perusteella'}
-          </h2>
-          {userProfile.cohort === 'YLA' && results.educationPath && (
-            <p className="text-gray-600 mb-6">
-              Näitä ammatteja voit harkita {getEducationPathTitle(results.educationPath.primary, userProfile.cohort).toLowerCase()}n jälkeen:
-            </p>
-          )}
-          
-          <div className="space-y-4">
-            {topCareers.slice(0, userProfile.cohort === 'YLA' ? 3 : 5).map((career, index) => (
-              <CareerMatchCard
-                key={career.slug}
-                career={career}
-                rank={index + 1}
-                ctaText={cohortCopy.ctaText}
-              />
-            ))}
-          </div>
-        </div>
 
         {/* Actions */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">

@@ -16,6 +16,8 @@ export interface StudyProgram {
   opintopolkuUrl?: string;
   description?: string;
   pointHistory?: StudyProgramHistory[];
+  reach?: boolean;
+  tags?: string[];
 }
 
 export interface StudyProgramHistory {
@@ -155,7 +157,7 @@ export const studyPrograms: StudyProgram[] = [
     field: 'kauppa',
     minPoints: 118.7,
     maxPoints: 140.0,
-    relatedCareers: ['liiketalousjohtaja', 'markkinointipäällikkö', 'yritysneuvoja', 'talousjohtaja'],
+    relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja', 'talousjohtaja'],
     description: 'Kauppatieteellinen koulutus, joka valmistaa liiketalouden asiantuntijoiksi.'
   },
   {
@@ -166,7 +168,7 @@ export const studyPrograms: StudyProgram[] = [
     field: 'kauppa',
     minPoints: 111.5,
     maxPoints: 130.0,
-    relatedCareers: ['liiketalousjohtaja', 'markkinointipäällikkö', 'yritysneuvoja'],
+    relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja'],
     description: 'Kauppatieteellinen koulutus, joka painottaa liiketoiminnan kehittämistä.'
   },
   {
@@ -177,7 +179,7 @@ export const studyPrograms: StudyProgram[] = [
     field: 'kauppa',
     minPoints: 30.0,
     maxPoints: 60.0,
-    relatedCareers: ['liiketalousjohtaja', 'markkinointipäällikkö', 'myyntipäällikkö'],
+    relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'myyntipaallikko'],
     description: 'AMK-koulutus, joka valmistaa liiketalouden ammattilaisiksi.'
   },
   {
@@ -188,7 +190,7 @@ export const studyPrograms: StudyProgram[] = [
     field: 'kauppa',
     minPoints: 111.5,
     maxPoints: 128.0,
-    relatedCareers: ['liiketalousjohtaja', 'markkinointipäällikkö', 'yritysneuvoja'],
+    relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja'],
     description: 'Kauppatieteellinen koulutus Turun yliopistossa.'
   },
 
@@ -201,7 +203,7 @@ export const studyPrograms: StudyProgram[] = [
     field: 'tekniikka',
     minPoints: 76.5,
     maxPoints: 95.0,
-    relatedCareers: ['konetekniikan-insinoori', 'automaatioteknikko', 'projektipäällikkö'],
+    relatedCareers: ['konetekniikan-insinoori', 'automaatioteknikko', 'projektipaallikko'],
     description: 'Konetekniikan koulutus, joka valmistaa diplomi-insinööreiksi.'
   },
   {
@@ -212,7 +214,7 @@ export const studyPrograms: StudyProgram[] = [
     field: 'tekniikka',
     minPoints: 72.0,
     maxPoints: 90.0,
-    relatedCareers: ['rakennusinsinoori', 'projektipäällikkö', 'rakennusmestari'],
+    relatedCareers: ['rakennusinsinoori', 'projektipaallikko', 'rakennusmestari'],
     description: 'Rakennustekniikan koulutus, joka valmistaa rakennusalan insinööreiksi.'
   },
   {
@@ -490,7 +492,7 @@ export const studyPrograms: StudyProgram[] = [
     field: 'kauppa',
     minPoints: 108.0,
     maxPoints: 125.0,
-    relatedCareers: ['liiketalousjohtaja', 'markkinointipäällikkö', 'yritysneuvoja'],
+    relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja'],
     description: 'Kauppatieteellinen koulutus Jyväskylässä.'
   },
   {
@@ -501,7 +503,7 @@ export const studyPrograms: StudyProgram[] = [
     field: 'kauppa',
     minPoints: 28.0,
     maxPoints: 58.0,
-    relatedCareers: ['liiketalousjohtaja', 'myyntipäällikkö', 'markkinointipäällikkö'],
+    relatedCareers: ['liiketalousjohtaja', 'myyntipaallikko', 'markkinointipaallikko'],
     description: 'Liiketalouden AMK-koulutus Tampereella.'
   },
   {
@@ -523,7 +525,7 @@ export const studyPrograms: StudyProgram[] = [
     field: 'kauppa',
     minPoints: 30.0,
     maxPoints: 60.0,
-    relatedCareers: ['markkinointipäällikkö', 'markkinointisuunnittelija', 'sosiaalisen-median-asiantuntija'],
+    relatedCareers: ['markkinointipaallikko', 'markkinointisuunnittelija', 'sosiaalisen-median-asiantuntija'],
     description: 'Markkinoinnin AMK-koulutus, joka painottaa digitaalista markkinointia.'
   },
 
@@ -547,7 +549,7 @@ export const studyPrograms: StudyProgram[] = [
     field: 'tekniikka',
     minPoints: 68.0,
     maxPoints: 85.0,
-    relatedCareers: ['rakennusinsinoori', 'projektipäällikkö'],
+    relatedCareers: ['rakennusinsinoori', 'projektipaallikko'],
     description: 'Rakennustekniikan koulutus Tampereella.'
   },
   {
@@ -676,7 +678,7 @@ export const studyPrograms: StudyProgram[] = [
     field: 'media',
     minPoints: 85.0,
     maxPoints: 102.0,
-    relatedCareers: ['viestintapäällikkö', 'markkinointipäällikkö', 'sisaltotuottaja'],
+    relatedCareers: ['viestintapaallikko', 'markkinointipaallikko', 'sisaltotuottaja'],
     description: 'Viestinnän koulutus, joka painottaa strategista viestintää.'
   },
   {
@@ -973,7 +975,7 @@ export const studyPrograms: StudyProgram[] = [
     field: 'palvelu',
     minPoints: 28.0,
     maxPoints: 58.0,
-    relatedCareers: ['matkailuneuvoja', 'hotellityöntekijä'],
+    relatedCareers: ['matkailuneuvoja', 'hotellityontekija'],
     description: 'Matkailun AMK-koulutus, joka valmistaa matkailualan ammattilaisiksi.'
   },
   {
@@ -984,7 +986,7 @@ export const studyPrograms: StudyProgram[] = [
     field: 'palvelu',
     minPoints: 26.0,
     maxPoints: 56.0,
-    relatedCareers: ['hotellityöntekijä', 'ravintolapäällikkö'],
+    relatedCareers: ['hotellityontekija', 'ravintolapaallikko'],
     description: 'Hotelli- ja ravintola-alan AMK-koulutus.'
   }
 ];
@@ -1046,18 +1048,18 @@ const CAREER_FIELD_MAP: Record<string, string[]> = {
   
   // Business careers
   'liiketalousjohtaja': ['kauppa'],
-  'markkinointipäällikkö': ['kauppa', 'media'],
+  'markkinointipaallikko': ['kauppa', 'media'],
   'yritysneuvoja': ['kauppa'],
   'talousjohtaja': ['kauppa'],
   'kirjanpitaja': ['kauppa'],
-  'myyntipäällikkö': ['kauppa'],
+  'myyntipaallikko': ['kauppa'],
   
   // Engineering careers
   'konetekniikan-insinoori': ['tekniikka'],
   'rakennusinsinoori': ['tekniikka', 'rakentaminen'],
   'sahkotekniikan-insinoori': ['tekniikka'],
   'automaatioteknikko': ['tekniikka'],
-  'projektipäällikkö': ['tekniikka', 'rakentaminen'],
+  'projektipaallikko': ['tekniikka', 'rakentaminen'],
   
   // Education careers
   'luokanopettaja': ['kasvatus'],

@@ -39,6 +39,7 @@ const validCareers = careersFI.filter(c => c && c.id);
 console.log(`CareersFI: Total=${careersFI.length}, Valid=${validCareers.length}, Invalid=${careersFI.length - validCareers.length}`);
 
 const careersData = validCareers.map(convertCareerFIToCareer);
+const totalCareerCount = careersData.length;
 
 const filterOptions = {
   industry: Array.from(new Set(careersData.flatMap(c => c.industry))),
@@ -205,7 +206,7 @@ export default function CareerCatalog() {
             Urakirjasto
           </h1>
           <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-            Selaa 175 erilaista ammattia eri aloilta ja löydä se ura, joka tuntuu aidosti omalta.
+            Selaa {totalCareerCount} erilaista ammattia eri aloilta ja löydä se ura, joka tuntuu aidosti omalta.
             Suodata tuloksia kiinnostuksen, koulutustason tai työskentelytavan mukaan.
           </p>
           

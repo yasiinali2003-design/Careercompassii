@@ -36,3 +36,4 @@ COMMENT ON COLUMN study_program_point_history.median_points IS 'Median accepted 
 COMMENT ON COLUMN study_program_point_history.max_points IS 'Highest accepted point total.';
 COMMENT ON COLUMN study_program_point_history.applicant_count IS 'Number of applicants in the certificate track.';
 
+

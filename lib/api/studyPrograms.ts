@@ -12,6 +12,10 @@ export interface StudyProgramsApiResponse {
   limit: number;
   offset: number;
   hasMore?: boolean;
+  metadata?: {
+    fallbackCount?: number;
+    careerRelaxed?: boolean;
+  };
 }
 
 export interface StudyProgramsQuery {
@@ -24,6 +28,9 @@ export interface StudyProgramsQuery {
   offset?: number;
   sort?: 'match' | 'points-low' | 'points-high' | 'name';
   includeHistory?: boolean;
+  includeReachPrograms?: boolean;
+  reachCount?: number;
+  reachDelta?: number;
 }
 
 /**
@@ -41,7 +48,10 @@ export async function fetchStudyPrograms(
     limit = 50,
     offset = 0,
     sort = 'match',
-    includeHistory = true
+    includeHistory = true,
+    includeReachPrograms = false,
+    reachCount = 5,
+    reachDelta = 10
   } = query;
 
   try {
@@ -56,6 +66,11 @@ export async function fetchStudyPrograms(
     params.set('offset', offset.toString());
     params.set('sort', sort);
     if (includeHistory) params.set('history', 'true');
+    if (includeReachPrograms) {
+      params.set('includeReach', 'true');
+      params.set('reachCount', reachCount.toString());
+      params.set('reachDelta', reachDelta.toString());
+    }
 
     // Try API first
     const response = await fetch(`/api/study-programs?${params.toString()}`);
@@ -91,19 +106,44 @@ function getStaticPrograms(query: StudyProgramsQuery): StudyProgramsApiResponse 
   }
 
   // Filter by points
+  let reachPrograms: StudyProgram[] = [];
   if (query.points !== undefined) {
-    filtered = filtered.filter(p => {
+    let programsByPoints = filtered.filter(p => {
       const min = p.minPoints;
       const max = p.maxPoints || min + 50;
       return query.points! >= min - 30 && query.points! <= max + 20;
     });
+
+    if (programsByPoints.length === 0) {
+      programsByPoints = filtered.filter(p => {
+        const min = p.minPoints;
+        const max = p.maxPoints || min + 50;
+        return query.points! >= min - 35 && query.points! <= max + 25;
+      });
+    }
+
+    filtered = programsByPoints;
+
+    if (query.includeReachPrograms) {
+      reachPrograms = staticPrograms
+        .filter(p => {
+          const min = p.minPoints;
+          const max = p.maxPoints || min + 50;
+          return query.points! >= min - (query.reachDelta ?? 10) && query.points! < min - 30;
+        })
+        .sort((a, b) => a.minPoints - b.minPoints)
+        .slice(0, query.reachCount ?? 5);
+    }
   }
 
   // Filter by careers
   if (query.careers && query.careers.length > 0) {
-    filtered = filtered.filter(p =>
+    const careerFiltered = filtered.filter(p =>
       p.relatedCareers.some(c => query.careers!.includes(c))
     );
+    if (careerFiltered.length > 0) {
+      filtered = careerFiltered;
+    }
   }
 
   // Search
@@ -139,13 +179,23 @@ function getStaticPrograms(query: StudyProgramsQuery): StudyProgramsApiResponse 
   const limit = query.limit || 50;
   const offset = query.offset || 0;
   const paginated = filtered.slice(offset, offset + limit);
+  const combined = [...paginated];
+
+  reachPrograms.forEach(program => {
+    if (!combined.some(p => p.id === program.id)) {
+      const existingTags = new Set(program.tags || []);
+      existingTags.add('reach');
+      combined.push({ ...program, reach: true, tags: Array.from(existingTags) });
+    }
+  });
 
   return {
-    programs: paginated,
-    total: filtered.length,
+    programs: combined,
+    total: filtered.length + reachPrograms.length,
     limit,
     offset,
-    hasMore: (offset + limit) < filtered.length
+    hasMore: (offset + limit) < filtered.length,
+    metadata: reachPrograms.length > 0 ? { fallbackCount: reachPrograms.length } : undefined
   };
 }
 

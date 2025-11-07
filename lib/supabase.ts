@@ -1,12 +1,20 @@
 /**
  * Supabase Client Configuration
- * 
+ *
  * This file exports Supabase clients for different contexts:
  * - Client-side (browser): Uses anon key
  * - Server-side (API routes): Uses service role key
  */
 
 import { createClient } from '@supabase/supabase-js';
+
+// Track whether we have already emitted configuration warnings
+let supabaseMissingLogged = false;
+let supabaseConfigLogged = false;
+let supabaseServiceWarned = false;
+let supabaseServiceKeyInvalidWarned = false;
+
+const isProduction = process.env.NODE_ENV === 'production';
 
 /**
  * Get Supabase URL and keys (lazy loaded to avoid build-time errors)
@@ -18,16 +26,22 @@ function getSupabaseConfig() {
 
   // Return null if not configured (allows build to succeed)
   if (!supabaseUrl || !supabaseAnonKey) {
-    console.warn('Supabase environment variables not configured');
+    if (!supabaseMissingLogged && !isProduction) {
+      supabaseMissingLogged = true;
+      console.warn('[Supabase] Environment variables not configured');
+    }
     return null;
   }
 
-  // Log what we have (in production, don't log keys)
-  console.log('[Supabase] Config check:', {
-    url: supabaseUrl ? 'Set' : 'Missing',
-    anonKey: supabaseAnonKey ? 'Set' : 'Missing',
-    serviceKey: supabaseServiceRoleKey ? 'Set' : 'Missing'
-  });
+  // Log what we have (avoid spamming output during production builds)
+  if (!supabaseConfigLogged && !isProduction) {
+    supabaseConfigLogged = true;
+    console.log('[Supabase] Config check:', {
+      url: supabaseUrl ? 'Set' : 'Missing',
+      anonKey: supabaseAnonKey ? 'Set' : 'Missing',
+      serviceKey: supabaseServiceRoleKey ? 'Set' : 'Missing'
+    });
+  }
 
   return { supabaseUrl, supabaseAnonKey, supabaseServiceRoleKey };
 }
@@ -53,17 +67,23 @@ export const supabase = (() => {
 export const supabaseAdmin = (() => {
   const config = getSupabaseConfig();
   if (!config || !config.supabaseServiceRoleKey) {
-    console.warn('[Supabase] Service role key not configured');
+    if (!supabaseServiceWarned && !isProduction) {
+      supabaseServiceWarned = true;
+      console.warn('[Supabase] Service role key not configured');
+    }
     // Return a mock client during build
     return null as any;
   }
-  
+
   // Validate key format (JWT should be ~200+ chars)
   if (config.supabaseServiceRoleKey.length < 50) {
-    console.error('[Supabase] Service role key appears to be invalid (too short)');
+    if (!supabaseServiceKeyInvalidWarned && !isProduction) {
+      supabaseServiceKeyInvalidWarned = true;
+      console.error('[Supabase] Service role key appears to be invalid (too short)');
+    }
     return null as any;
   }
-  
+
   return createClient(config.supabaseUrl, config.supabaseServiceRoleKey, {
     auth: {
       autoRefreshToken: false,
@@ -91,7 +111,7 @@ export interface TestResult {
   created_at?: string;
   cohort: 'YLA' | 'TASO2' | 'NUORI';
   school_code?: string | null;
-  
+
   // Education path (YLA only)
   education_path_primary?: 'lukio' | 'ammattikoulu' | 'kansanopisto' | null;
   education_path_scores?: {
@@ -99,14 +119,14 @@ export interface TestResult {
     ammattikoulu: number;
     kansanopisto: number;
   } | null;
-  
+
   // Top careers
   top_careers: Array<{
     slug: string;
     title: string;
     score: number;
   }>;
-  
+
   // User profile dimensions
   dimension_scores: {
     interests: number;
@@ -114,12 +134,12 @@ export interface TestResult {
     workstyle: number;
     context: number;
   };
-  
+
   // Feedback (collected later)
   satisfaction_rating?: number | null;
   feedback_text?: string | null;
   feedback_submitted_at?: string | null;
-  
+
   // Metadata
   time_spent_seconds?: number | null;
   completed?: boolean;

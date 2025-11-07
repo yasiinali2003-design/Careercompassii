@@ -14,6 +14,7 @@ import {
 export interface SubjectInput {
   grade?: GradeSymbol;
   variantKey?: string;
+  subjectId?: string;
 }
 
 export type SubjectInputs = Record<string, SubjectInput>;

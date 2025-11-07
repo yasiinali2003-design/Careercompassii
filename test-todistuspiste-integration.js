@@ -10,8 +10,8 @@ const mockStudyPrograms = [
     name: 'Tietojenkäsittelytiede',
     institution: 'Helsingin yliopisto',
     institutionType: 'yliopisto',
-    minPoints: 95.0,
-    maxPoints: 120.0,
+    minPoints: 25.0,
+    maxPoints: 45.0,
     relatedCareers: ['ohjelmistokehittaja', 'tietoturva-asiantuntija']
   },
   {
@@ -19,8 +19,8 @@ const mockStudyPrograms = [
     name: 'Lääketiede',
     institution: 'Helsingin yliopisto',
     institutionType: 'yliopisto',
-    minPoints: 188.3,
-    maxPoints: 200.0,
+    minPoints: 45.0,
+    maxPoints: 65.0,
     relatedCareers: ['laakari']
   },
   {
@@ -28,8 +28,8 @@ const mockStudyPrograms = [
     name: 'Tietotekniikka',
     institution: 'Metropolia Ammattikorkeakoulu',
     institutionType: 'amk',
-    minPoints: 45.0,
-    maxPoints: 75.0,
+    minPoints: 15.0,
+    maxPoints: 35.0,
     relatedCareers: ['ohjelmistokehittaja', 'verkkosuunnittelija']
   }
 ];

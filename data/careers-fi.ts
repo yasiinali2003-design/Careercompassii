@@ -1335,158 +1335,6 @@ export const careersData: CareerFI[] = [
     ]
   },
 {
-    id: "projektipäällikkö",
-    category: "johtaja",
-    title_fi: "Projektipäällikkö",
-    title_en: "Project Manager",
-    short_description: "Projektipäällikkö johtaa ja koordinoi projekteja alusta loppuun. Vastaa aikataulujen, budjettien ja tiimien hallinnasta sekä asiakkaiden kanssa kommunikoinnista.",
-    main_tasks: [
-      "Projektien suunnittelu ja aikataulutus",
-      "Tiimien johtaminen ja koordinointi",
-      "Budjettien hallinta ja seuranta",
-      "Asiakkaiden kanssa kommunikointi",
-      "Riskien hallinta ja ongelmien ratkaisu"
-    ],
-    impact: [
-      "Auttaa organisaatioita saavuttamaan tavoitteensa tehokkaasti",
-      "Varmistaa projektien onnistumisen ja laatutason",
-      "Kehittää tiimien yhteistyötä ja osaamista"
-    ],
-    education_paths: [
-      "AMK: Liiketalous, Projektinhallinta",
-      "Yliopisto: Kauppatieteiden maisteri",
-      "Projektinhallinnan sertifikaatit (PMP, PRINCE2)",
-      "Työkokemus + kurssit"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Johtaminen ja tiimityö",
-      "Projektinhallinta",
-      "Kommunikaatio ja neuvottelu",
-      "Ongelmanratkaisu",
-      "Aikataulutus ja budjetointi"
-    ],
-    tools_tech: [
-      "Microsoft Project",
-      "Jira, Trello",
-      "Slack, Teams",
-      "Excel, PowerPoint",
-      "Gantt-kaaviot"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 5200,
-      range: [4000, 7000],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Projektinhallinnan kysyntä kasvaa digitaalisen muutoksen ja monimutkaisten projektien myötä.",
-      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior projektipäällikkö",
-      "Projektikoordinaattori",
-      "Tiimipäällikkö"
-    ],
-    career_progression: [
-      "Senior projektipäällikkö",
-      "Program Manager",
-      "Portfolio Manager",
-      "Projektinhallinnan konsultti"
-    ],
-    typical_employers: [
-      "IT-yritykset",
-      "Rakennusyhtiöt",
-      "Konsultointiyritykset",
-      "Julkinen sektori"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: "Liiketalouden TES",
-    useful_links: [
-      { name: "Projektinhallinta.fi", url: "https://www.projektinhallinta.fi/" },
-      { name: "Opintopolku - Projektipäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Projektip%C3%A4%C3%A4llikk%C3%B6" }
-    ],
-    keywords: ["projektinhallinta", "johtaminen", "tiimityö", "budjetointi", "aikataulutus"],
-    study_length_estimate_months: 36
-  },
-{
-    id: "myyntipäällikkö",
-    category: "johtaja",
-    title_fi: "Myyntipäällikkö",
-    title_en: "Sales Manager",
-    short_description: "Myyntipäällikkö johtaa myyntitiimiä ja vastaa myyntitulosten saavuttamisesta. Työskentelee strategian, myyntiprosessien ja asiakassuhteiden parissa.",
-    main_tasks: [
-      "Myyntitiimin johtaminen ja kehittäminen",
-      "Myyntistrategioiden suunnittelu",
-      "Asiakassuhteiden hallinta",
-      "Myyntitulosten seuranta ja raportointi",
-      "Uusien myyntimahdollisuuksien tunnistaminen"
-    ],
-    impact: [
-      "Kasvattaa yrityksen liikevaihtoa ja kannattavuutta",
-      "Kehittää asiakaskokemusta ja tyytyväisyyttä",
-      "Rakentaa kestävää liiketoimintaa"
-    ],
-    education_paths: [
-      "AMK: Liiketalous, Markkinointi",
-      "Yliopisto: Kauppatieteiden maisteri",
-      "Myynti- ja markkinointikurssit",
-      "Työkokemus + sertifikaatit"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Myynti ja neuvottelu",
-      "Johtaminen ja tiimityö",
-      "Strateginen ajattelu",
-      "Asiakaspalvelu",
-      "Analyyttiset taidot"
-    ],
-    tools_tech: [
-      "CRM-järjestelmät",
-      "Salesforce, HubSpot",
-      "Excel, Power BI",
-      "Slack, Teams",
-      "LinkedIn Sales Navigator"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 4800,
-      range: [3500, 6500],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Myyntipäälliköiden kysyntä pysyy vakaana, erityisesti B2B-myynnissä ja digitaalisissa palveluissa.",
-      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Myyntiedustaja",
-      "Account Manager",
-      "Myyntikoordinaattori"
-    ],
-    career_progression: [
-      "Senior myyntipäällikkö",
-      "Myyntidirektori",
-      "Liiketoimintajohtaja",
-      "Oma yritys"
-    ],
-    typical_employers: [
-      "Teknologiayritykset",
-      "Konsultointiyritykset",
-      "Vähittäiskauppa",
-      "Palveluyritykset"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-    union_or_CBA: "Liiketalouden TES",
-    useful_links: [
-      { name: "Myynti.fi", url: "https://www.myynti.fi/" },
-      { name: "Opintopolku - Myyntipäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Myyntip%C3%A4%C3%A4llikk%C3%B6" }
-    ],
-    keywords: ["myynti", "johtaminen", "asiakassuhteet", "strategia", "tiimityö"],
-    study_length_estimate_months: 36
-  },
-{
     id: "henkilöstöpäällikkö",
     category: "johtaja",
     title_fi: "Henkilöstöpäällikkö",
@@ -1636,82 +1484,6 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Tuotantopäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tuotantop%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["tuotantotalous", "laadunhallinta", "johtaminen", "optimointi", "tehokkuus"],
-    study_length_estimate_months: 36
-  },
-{
-    id: "markkinointipäällikkö",
-    category: "johtaja",
-    title_fi: "Markkinointipäällikkö",
-    title_en: "Marketing Manager",
-    short_description: "Markkinointipäällikkö johtaa markkinointistrategioita ja kampanjoita. Vastaa brändin, asiakaskokemuksen ja markkina-aseman kehittämisestä.",
-    main_tasks: [
-      "Markkinointistrategioiden suunnittelu",
-      "Kampanjoiden johtaminen ja seuranta",
-      "Brändin kehittäminen",
-      "Digitaalisen markkinoinnin hallinta",
-      "Markkinatutkimuksen koordinointi"
-    ],
-    impact: [
-      "Kasvattaa yrityksen tunnettuutta ja markkinaosuutta",
-      "Parantaa asiakaskokemusta ja tyytyväisyyttä",
-      "Kehittää innovatiivisia markkinointiratkaisuja"
-    ],
-    education_paths: [
-      "AMK: Markkinointi, Liiketalous",
-      "Yliopisto: Kauppatieteiden maisteri",
-      "Markkinointikurssit ja sertifikaatit",
-      "Digitaalisen markkinoinnin koulutus"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Markkinointi ja brändi",
-      "Digitaalinen markkinointi",
-      "Strateginen ajattelu",
-      "Kreatiivisuus",
-      "Analyyttiset taidot"
-    ],
-    tools_tech: [
-      "Google Analytics, Ads",
-      "Facebook Ads Manager",
-      "HubSpot, Mailchimp",
-      "Adobe Creative Suite",
-      "Excel, Power BI"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 4400,
-      range: [3200, 6000],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Markkinointipäälliköiden kysyntä kasvaa digitaalisen markkinoinnin ja datan hyödyntämisen myötä.",
-      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Markkinointikoordinaattori",
-      "Digitaalisen markkinoinnin asiantuntija",
-      "Brändimanageri"
-    ],
-    career_progression: [
-      "Senior markkinointipäällikkö",
-      "Markkinointidirektori",
-      "CMO",
-      "Markkinointikonsultti"
-    ],
-    typical_employers: [
-      "Markkinointitoimistot",
-      "Teknologiayritykset",
-      "Vähittäiskauppa",
-      "Palveluyritykset"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: "Liiketalouden TES",
-    useful_links: [
-      { name: "Markkinointi.fi", url: "https://www.markkinointi.fi/" },
-      { name: "Opintopolku - Markkinointipäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Markkinointip%C3%A4%C3%A4llikk%C3%B6" }
-    ],
-    keywords: ["markkinointi", "brändi", "digitaalinen", "strategia", "kampanjat"],
     study_length_estimate_months: 36
   },
 {
@@ -2853,6 +2625,2104 @@ export const careersData: CareerFI[] = [
     ],
     keywords: ["sairaanhoito", "terveys", "potilaat", "hoito", "kuntoutus"],
     study_length_estimate_months: 42
+  },
+  {
+    id: "bioanalyytikko",
+    category: "auttaja",
+    title_fi: "Bioanalyytikko",
+    title_en: "Biomedical Laboratory Scientist",
+    short_description: "Bioanalyytikko suorittaa laboratoriotutkimuksia, jotka tukevat potilaiden diagnostiikkaa ja hoitoa. Työ on tarkkuutta vaativaa ja usein vuorotyötä sairaaloiden ja yksityisten laboratorioiden näytteenottopisteissä.",
+    main_tasks: [
+      "Potilasnäytteiden ottaminen ja vastaanottaminen",
+      "Laboratoriomittausten ja analyysien suorittaminen",
+      "Tulosten laadunvarmistus ja laitteiden kalibrointi",
+      "Infektio- ja työturvallisuuden varmistaminen",
+      "Yhteistyö lääkäreiden ja hoitajien kanssa"
+    ],
+    impact: [
+      "Mahdollistaa oikea-aikaisen diagnoosin",
+      "Parantaa hoitopäätösten laatua",
+      "Varmistaa potilasturvallisuuden laboratoriossa"
+    ],
+    education_paths: [
+      "AMK: Bioanalyytikko (AMK)",
+      "Erikoistumisopinnot: esim. verikeskus, genetiikka",
+      "Valvira: Bioanalyytikon laillistus"
+    ],
+    qualification_or_license: "Valvira – Bioanalyytikon laillistus",
+    core_skills: [
+      "Laboratoriomenetelmien hallinta",
+      "Huolellisuus ja laatutietoisuus",
+      "Hygieniaprotokollien noudattaminen",
+      "IT- ja analyysiohjelmistojen käyttö",
+      "Tiimityö ja selkeä kommunikointi"
+    ],
+    tools_tech: [
+      "Laboratorioautomaatio",
+      "Analysaattorit (esim. hematologia, kemia)",
+      "PCR- ja hematoanalyysilaitteet",
+      "Laboratorioinformaation järjestelmät",
+      "PPE ja näytteenottovälineet"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2800, 3800],
+      source: { name: "Tehy – Bioanalyytikon palkka", url: "https://www.tehy.fi/fi/tehylaisten-palkat/bioanalyytikon-palkka", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Laboratoriopalveluiden kysyntä kasvaa väestön ikääntyessä ja diagnostiikan kehittyessä.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/bioanalyytikko", year: 2025 }
+    },
+    entry_roles: [
+      "Bioanalyytikko",
+      "Laboratoriohoitaja",
+      "Näytteenottaja"
+    ],
+    career_progression: [
+      "Erikoislaboratoriohoitaja",
+      "Laadunhallinnan asiantuntija",
+      "Laboratoriopäällikkö",
+      "Diagnostiikan kehityspäällikkö"
+    ],
+    typical_employers: [
+      "Yliopistolliset sairaalat",
+      "Hyvinvointialueiden laboratoriot",
+      "Yksityiset laboratorioyritykset",
+      "Tutkimuslaitokset"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    union_or_CBA: "Tehy",
+    useful_links: [
+      { name: "Työmarkkinatori – Bioanalyytikko", url: "https://tyomarkkinatori.fi/ammatit/bioanalyytikko" },
+      { name: "Opintopolku – Bioanalyytikko", url: "https://opintopolku.fi/konfo/fi/haku/bioanalyytikko" }
+    ],
+    keywords: ["laboratorio", "diagnostiikka", "analytiikka", "näytteenotto", "terveydenhuolto"],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "kouluterveydenhoitaja",
+    category: "auttaja",
+    title_fi: "Kouluterveydenhoitaja",
+    title_en: "School Public Health Nurse",
+    short_description: "Kouluterveydenhoitaja tukee lasten ja nuorten hyvinvointia oppilaitoksissa. Työhön kuuluu terveystarkastukset, ennaltaehkäisevä neuvonta ja huoltajien kanssa tehtävä yhteistyö.",
+    main_tasks: [
+      "Terveystarkastusten ja rokotusten suunnittelu",
+      "Oppilaiden ja perheiden neuvonta",
+      "Moniammatilliset oppilashuoltoryhmät",
+      "Hyvinvointia edistävien ohjelmien toteutus",
+      "Kriisi- ja tukikeskustelut"
+    ],
+    impact: [
+      "Edistää nuorten kokonaisvaltaista hyvinvointia",
+      "Ehkäisee terveysongelmia varhaisessa vaiheessa",
+      "Rakentaa turvallista oppimisympäristöä"
+    ],
+    education_paths: [
+      "AMK: Terveydenhoitaja (AMK)",
+      "Erikoistumisopinnot: kouluterveydenhuolto",
+      "Valvira: Terveydenhoitajan laillistus"
+    ],
+    qualification_or_license: "Valvira – Terveydenhoitajan laillistus",
+    core_skills: [
+      "Ennaltaehkäisevä terveydenhoito",
+      "Vuorovaikutus nuorten ja huoltajien kanssa",
+      "Hyvinvointidatan hyödyntäminen",
+      "Ratkaisukeskeisyys",
+      "Verkosto- ja tiimityö"
+    ],
+    tools_tech: [
+      "Sähköiset potilastietojärjestelmät",
+      "Hyvinvointiseurannan mittarit",
+      "Rokotus- ja seulontavälineet",
+      "Digitaaliset oppilasterveysalustat",
+      "Tietoturvalliset viestintäkanavat"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3400,
+      range: [3100, 4100],
+      source: { name: "Tehy – Terveydenhoitajan palkka", url: "https://www.tehy.fi/fi/tehylaisten-palkat/terveydenhoitajan-palkka", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Hyvinvointialueet panostavat ennaltaehkäisevään työhön ja kouluterveydenhuollon resursseihin.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/kouluterveydenhoitaja", year: 2025 }
+    },
+    entry_roles: [
+      "Kouluterveydenhoitaja",
+      "Opiskeluterveydenhoitaja",
+      "Terveydenhoitajan sijainen"
+    ],
+    career_progression: [
+      "Hyvinvointikoordinaattori",
+      "Oppilashuollon esihenkilö",
+      "Terveyden edistämisen asiantuntija",
+      "Kouluterveydenhuollon kehittämispäällikkö"
+    ],
+    typical_employers: [
+      "Hyvinvointialueiden oppilashuolto",
+      "Kunnalliset ja yksityiset oppilaitokset",
+      "Opiskeluterveydenhuolto",
+      "Hyvinvointialueiden ehkäisevät palvelut"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tehy",
+    useful_links: [
+      { name: "Työmarkkinatori – Kouluterveydenhoitaja", url: "https://tyomarkkinatori.fi/ammatit/kouluterveydenhoitaja" },
+      { name: "Opintopolku – Terveydenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/terveydenhoitaja" }
+    ],
+    keywords: ["oppilashuolto", "ennaltaehkäisy", "nuoret", "terveyskasvatus", "hyvinvointi"],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "kotihoitaja",
+    category: "auttaja",
+    title_fi: "Kotihoitaja",
+    title_en: "Home Care Practical Nurse",
+    short_description: "Kotihoitaja tukee ikääntyvien ja toimintakyvyltään rajoittuneiden asiakkaiden arkea heidän omissa kodeissaan. Työhön kuuluu hoiva, lääkehoito, kuntouttava ohjaus ja läheisten kanssa tehtävä yhteistyö.",
+    main_tasks: [
+      "Päivittäisten toimien avustaminen (hygienia, ravitsemus)",
+      "Lääkkeiden jako ja vitaalielintoimintojen seuranta",
+      "Liikkumisen ja kotikuntoutuksen tukeminen",
+      "Turvapuhelin- ja etähoitovälineiden käyttö",
+      "Yhteistyö omaisten ja tiimin kanssa"
+    ],
+    impact: [
+      "Mahdollistaa kotona asumisen pidempään",
+      "Lisää asiakkaiden turvallisuuden tunnetta",
+      "Tukee omaishoitajia ja perheitä"
+    ],
+    education_paths: [
+      "Ammatillinen perustutkinto: Lähihoitaja",
+      "Ammattitutkinto: Kotihoidon ja vanhustyön erikoisosaamisala",
+      "Täydennyskoulutus: Lääkehoidon LOVe-koulutus"
+    ],
+    qualification_or_license: "Valvira – Sosiaali- ja terveydenhuollon ammattihenkilöiden rekisteröinti",
+    core_skills: [
+      "Asiakastyön empatia",
+      "Hyvä fyysinen kunto",
+      "Lääkehoidon perusteet",
+      "Omatoiminen työnsuunnittelu",
+      "Digitaaliset kotihoidon järjestelmät"
+    ],
+    tools_tech: [
+      "Kotihoidon mobiilikirjaus",
+      "Turvapuhelimet ja etäseurantalaitteet",
+      "Lääkeannosteluvälineet",
+      "Nostimet ja tukivälineet",
+      "Kotikäyntien ajanhallintajärjestelmät"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "A2" },
+    salary_eur_month: {
+      median: 2650,
+      range: [2400, 3100],
+      source: { name: "Tehy – Lähihoitajan palkka", url: "https://www.tehy.fi/fi/tehylaisten-palkat/lahihoitajan-palkka", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kotihoidon tarve kasvaa nopeasti väestön ikääntyessä ja palveluiden painopisteen siirtyessä kotiin.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/kotihoitaja", year: 2025 }
+    },
+    entry_roles: [
+      "Kotihoitaja",
+      "Lähihoitaja",
+      "Kotihoidon avustaja"
+    ],
+    career_progression: [
+      "Tiiminvetäjä kotihoidossa",
+      "Kotihoidon palveluohjaaja",
+      "Geronomi",
+      "Kotihoidon palvelupäällikkö"
+    ],
+    typical_employers: [
+      "Hyvinvointialueiden kotihoito",
+      "Yksityiset hoivayritykset",
+      "Kolmannen sektorin palveluntuottajat",
+      "Henkilökohtaisen avun palvelut"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    union_or_CBA: "SuPer",
+    useful_links: [
+      { name: "Työmarkkinatori – Kotihoitaja", url: "https://tyomarkkinatori.fi/ammatit/kotihoitaja" },
+      { name: "Opintopolku – Lähihoitaja", url: "https://opintopolku.fi/konfo/fi/haku/l%C3%A4hihoitaja" }
+    ],
+    keywords: ["kotihoito", "vanhuspalvelut", "hoiva", "asiakaslähtöisyys", "liikkuva työ"],
+    study_length_estimate_months: 36
+  },
+  {
+    id: "ravitsemusasiantuntija",
+    category: "auttaja",
+    title_fi: "Ravitsemusasiantuntija",
+    title_en: "Nutrition Specialist",
+    short_description: "Ravitsemusasiantuntija ohjaa yksilöitä ja yhteisöjä terveellisiin ruokavalintoihin, suunnittelee ruokapalveluita ja osallistuu ravitsemusohjelmien kehittämiseen. Työtä on terveydenhuollossa, kunnissa ja ruokapalvelualalla.",
+    main_tasks: [
+      "Ravitsemussuunnitelmien laatiminen eri kohderyhmille",
+      "Ravitsemuksen ja ruokapalvelujen kehittäminen organisaatioissa",
+      "Potilaiden ja asiakkaiden ravitsemusneuvonta",
+      "Ravitsemustiedon koulutus ja viestintä",
+      "Ravitsemuksen seuranta ja arviointi"
+    ],
+    impact: [
+      "Parantaa väestön ravitsemusta ja terveyttä",
+      "Vähentää elämäntapasairauksia",
+      "Tukee kestävän ruokajärjestelmän kehitystä"
+    ],
+    education_paths: [
+      "Yliopisto: Ravitsemustiede (Kand + Maisteri)",
+      "Ammatilliset täydennyskoulutukset (esim. elintarvike- ja terveysviestintä)",
+      "Tutkimus- ja kehitystyön opinnot"
+    ],
+    qualification_or_license: "Valvira – Laillistettu ravitsemusterapeutti (tarvittaessa)",
+    core_skills: [
+      "Ravitsemustieteen osaaminen",
+      "Analyysi- ja arviointitaidot",
+      "Viestintä ja koulutustaidot",
+      "Projektinhallinta",
+      "Yhteistyö moniammatillisissa tiimeissä"
+    ],
+    tools_tech: [
+      "Ravitsemus- ja ruokapalvelujärjestelmät",
+      "Ravitsemusanalyysin ohjelmistot",
+      "Seuranta- ja arviointityökalut",
+      "Digitaaliset hyvinvointisovellukset",
+      "Tietoturvalliset asiakastietojärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3400,
+      range: [3000, 4100],
+      source: { name: "Tehy – Ravitsemusterapeutin palkka", url: "https://www.tehy.fi/fi/tehylaisten-palkat/ravitsemusterapeutti", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Hyvinvointialueet ja ruokapalvelut hakevat ravitsemusasiantuntijoita terveellisten ja kestävien ruokavalioiden edistämiseen.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/ravitsemusasiantuntija", year: 2025 }
+    },
+    entry_roles: [
+      "Ravitsemusasiantuntija",
+      "Ravitsemusterapeutti",
+      "Ruokapalveluiden kehittäjä"
+    ],
+    career_progression: [
+      "Johtava ravitsemusasiantuntija",
+      "Hyvinvointiohjelmien projektipäällikkö",
+      "Tutkija",
+      "Konsultti tai yrittäjä"
+    ],
+    typical_employers: [
+      "Hyvinvointialueet ja sairaalat",
+      "Kunnalliset ruokapalvelut",
+      "Elintarvike- ja ravitsemusyritykset",
+      "Järjestöt ja tutkimuslaitokset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Tehy",
+    useful_links: [
+      { name: "Työmarkkinatori – Ravitsemusasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/ravitsemusasiantuntija" },
+      { name: "Opintopolku – Ravitsemustiede", url: "https://opintopolku.fi/konfo/fi/haku/ravitsemustiede" }
+    ],
+    keywords: ["ravitsemus", "hyvinvointi", "ruokapalvelut", "terveysviestintä", "kestävä ruokavalio"],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "tyopsykologi",
+    category: "auttaja",
+    title_fi: "Työpsykologi",
+    title_en: "Occupational Psychologist",
+    short_description: "Työpsykologi tukee työyhteisöjen hyvinvointia ja kehittää organisaatioiden toimintaa. Työhön kuuluu työkyvyn arviointi, työhyvinvointiohjelmien suunnittelu ja muutostilanteiden tuki.",
+    main_tasks: [
+      "Työkyvyn ja kuormituksen arviointi",
+      "Työyhteisöjen kehittämisprojektit",
+      "Stressinhallinnan ja palautumisen valmennus",
+      "Johtamisen ja tiimityön konsultointi",
+      "Työterveyshuollon moniammatillinen yhteistyö"
+    ],
+    impact: [
+      "Parantaa työntekijöiden hyvinvointia",
+      "Vähentää sairauspoissaoloja ja vaihtuvuutta",
+      "Tukee organisaatioiden muutoksia ja tuottavuutta"
+    ],
+    education_paths: [
+      "Yliopisto: Psykologian kand + maisteri",
+      "Työ- ja organisaatiopsykologian erikoistumiskoulutus",
+      "Työterveyshuollon pätevöityminen (tarpeen mukaan)"
+    ],
+    qualification_or_license: "Valvira – Laillistettu psykologi",
+    core_skills: [
+      "Organisaatiopsykologia",
+      "Data-analytiikka ja arviointi",
+      "Vuorovaikutus ja fasilitointi",
+      "Strateginen ajattelu",
+      "Eettinen päätöksenteko"
+    ],
+    tools_tech: [
+      "Hyvinvoinnin mittarit ja kyselytyökalut",
+      "HR-analytiikka",
+      "Valmennus- ja oppimisalustat",
+      "Videoneuvottelusovellukset",
+      "Psykologiset testit ja arvioinnit"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3600, 5200],
+      source: { name: "Työterveyslaitos – Työterveyshuollon palkkakatsaus", url: "https://www.ttl.fi/aiheet/tyoterveyshuolto", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Organisaatiot panostavat mielenterveyteen, työkykyyn ja muutostilanteiden tukeen.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/tyopsykologi", year: 2025 }
+    },
+    entry_roles: [
+      "Työpsykologi",
+      "Organisaatiokonsultti",
+      "Työhyvinvoinnin asiantuntija"
+    ],
+    career_progression: [
+      "Työterveyshuollon johtava psykologi",
+      "Hyvinvointiohjelmien johtaja",
+      "Organisaatiokehittäjä",
+      "Psykologiyrittäjä"
+    ],
+    typical_employers: [
+      "Työterveyshuoltoyritykset",
+      "Hyvinvointialueet",
+      "Keskisuuret ja suuret yritykset",
+      "Konsultointitoimistot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Psykologiliitto",
+    useful_links: [
+      { name: "Työmarkkinatori – Työpsykologi", url: "https://tyomarkkinatori.fi/ammatit/tyopsykologi" },
+      { name: "Opintopolku – Psykologi", url: "https://opintopolku.fi/konfo/fi/haku/psykologi" }
+    ],
+    keywords: ["työhyvinvointi", "psykologia", "organisaatiokehitys", "valmennus", "muutosjohtaminen"],
+    study_length_estimate_months: 72
+  },
+  {
+    id: "poliisi",
+    category: "auttaja",
+    title_fi: "Poliisi",
+    title_en: "Police Officer",
+    short_description: "Poliisi huolehtii yleisestä järjestyksestä ja turvallisuudesta, ennaltaehkäisee rikoksia ja tutkii rikostapauksia. Tehtävät vaihtelevat kenttätyöstä tutkintaan ja erikoisyksiköihin.",
+    main_tasks: [
+      "Partiointi ja hälytystehtävät",
+      "Rikosten ennaltaehkäisy ja selvittäminen",
+      "Liikennevalvonta ja turvajärjestelyt",
+      "Todisteiden kerääminen ja raportointi",
+      "Yhteistyö viranomaisten ja yhteisöjen kanssa"
+    ],
+    impact: [
+      "Lisää yhteiskunnan turvallisuutta",
+      "Rakentaa luottamusta kansalaisten ja viranomaisten välille",
+      "Pelastaa henkiä kiireellisissä tilanteissa"
+    ],
+    education_paths: [
+      "Poliisiammattikorkeakoulu: Poliisin perustutkinto",
+      "Erikoistumiskoulutukset (esim. rikostutkinta, liikenne, koiratoiminta)",
+      "Jatkuva täydennyskoulutus"
+    ],
+    qualification_or_license: "Poliisin perustutkinto (Polamk) ja virkaan nimitys",
+    core_skills: [
+      "Tilannetaju ja päätöksenteko",
+      "Vuorovaikutus ja neuvottelu",
+      "Fyysinen kunto",
+      "Lain tuntemus",
+      "Stressinsieto"
+    ],
+    tools_tech: [
+      "PolPIS- ja tietojärjestelmät",
+      "Hätäkeskus- ja viestintälaitteet",
+      "Turvallisuus- ja suojavarusteet",
+      "Ajoneuvo- ja erikoislaitteet",
+      "Toimintavälineet (esim. OC-sumutin, teleskooppipatukka)"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3600,
+      range: [3200, 4300],
+      source: { name: "Valtiokonttori – Poliisin palkka", url: "https://www.valtiokonttori.fi/palkkatilastot/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Poliisien rekrytointi pysyy tasaisena, mutta osa-alueilla on tarvetta uusille osaajille.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/poliisi", year: 2025 }
+    },
+    entry_roles: [
+      "Vanhempi konstaapeli",
+      "Kenttäpartio",
+      "Päivystystehtävät"
+    ],
+    career_progression: [
+      "Rikostutkija",
+      "Liikennepoliisi",
+      "Esihenkilö",
+      "Erikoisyksikön asiantuntija"
+    ],
+    typical_employers: [
+      "Poliisilaitokset",
+      "Keskusrikospoliisi",
+      "Rajavartiolaitos",
+      "Kansainväliset tehtävät (EU, UN)"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
+    union_or_CBA: "Poliisiammattijärjestö",
+    useful_links: [
+      { name: "Työmarkkinatori – Poliisi", url: "https://tyomarkkinatori.fi/ammatit/poliisi" },
+      { name: "Poliisi.fi – Poliisikoulutus", url: "https://www.poliisi.fi/ammattilaiseksi/poliisikoulutus" },
+      { name: "Opintopolku – Poliisi", url: "https://opintopolku.fi/konfo/fi/haku/poliisi" }
+    ],
+    keywords: ["turvallisuus", "järjestys", "rikostorjunta", "kenttätyö", "viranomais työ"],
+    study_length_estimate_months: 30
+  },
+  {
+    id: "rikostutkija",
+    category: "auttaja",
+    title_fi: "Rikostutkija",
+    title_en: "Criminal Investigator",
+    short_description: "Rikostutkija selvittää rikoksia keräämällä todisteita, kuulustelemalla osapuolia ja tekemällä yhteistyötä syyttäjien kanssa. Tehtävä vaatii analyyttisyyttä, tarkkuutta ja hyvää lain tuntemusta.",
+    main_tasks: [
+      "Rikospaikkojen tutkinta ja todisteiden keruu",
+      "Kuulustelut ja asiantuntijalausuntojen laadinta",
+      "Tekninen ja taloudellinen analyysi",
+      "Yhteistyö syyttäjien ja oikeuslaitoksen kanssa",
+      "Operatiivisten tutkintasuunnitelmien laatiminen"
+    ],
+    impact: [
+      "Selvittää rikoksia ja tuo oikeutta uhreille",
+      "Vahvistaa luottamusta oikeusjärjestelmään",
+      "Ehkäisee rikoksia analysoimalla toimintatapoja"
+    ],
+    education_paths: [
+      "Poliisiammattikorkeakoulu: Poliisin perustutkinto",
+      "Rikostutkinnan erikoistumiskoulutus (Polamk)",
+      "Mahdollinen oikeustieteellinen tai taloustieteellinen tausta"
+    ],
+    qualification_or_license: "Poliisin virkapätevyys ja erikoistumiskoulutus",
+    core_skills: [
+      "Analytiikka ja päättely",
+      "Tarkkuus ja systemaattisuus",
+      "Kuulustelutaidot",
+      "Lainsäädännön tuntemus",
+      "Teknisen ja digitaalisen aineiston käsittely"
+    ],
+    tools_tech: [
+      "Rikospaikkatutkimuksen välineet",
+      "Digitaalisen forensiikan ohjelmistot",
+      "Tietojärjestelmät (esim. Vitja)",
+      "Kuuntelu- ja valvontalaitteet",
+      "Laboratorio- ja DNA-analyysipalvelut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3900,
+      range: [3500, 4600],
+      source: { name: "Poliisiammattijärjestö – Palkkakartoitus", url: "https://www.pao.fi/fi/palkat", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Rikostutkijoita tarvitaan erityisesti talous- ja kyberrikollisuuden torjunnassa.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/rikostutkija", year: 2025 }
+    },
+    entry_roles: [
+      "Rikostutkija",
+      "Nuorempi rikostutkija",
+      "Tutkintasihteeri"
+    ],
+    career_progression: [
+      "Vanhempi rikostutkija",
+      "Talousrikostutkinnan asiantuntija",
+      "Tutkinnanjohtaja",
+      "Keskusrikospoliisin erikoisyksikkö"
+    ],
+    typical_employers: [
+      "Keskusrikospoliisi",
+      "Paikalliset poliisilaitokset",
+      "Tulli ja Rajavartiolaitos",
+      "Kansainväliset tutkintayksiköt"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Poliisiammattijärjestö",
+    useful_links: [
+      { name: "Työmarkkinatori – Rikostutkija", url: "https://tyomarkkinatori.fi/ammatit/rikostutkija" },
+      { name: "Poliisi.fi – Rikostutkijan ura", url: "https://www.poliisi.fi/ammattilaiseksi/rikostutkija" }
+    ],
+    keywords: ["rikostutkinta", "forensiikka", "todisteet", "analyysi", "oikeus"],
+    study_length_estimate_months: 36
+  },
+  {
+    id: "sotilas",
+    category: "auttaja",
+    title_fi: "Sotilas",
+    title_en: "Military Service Member",
+    short_description: "Sotilas toimii Puolustusvoimissa kansallisen turvallisuuden ja kriisinhallinnan tehtävissä. Työhön kuuluu harjoituksia, kansainvälisiä operaatioita ja kotimaan valmiuden ylläpitoa.",
+    main_tasks: [
+      "Harjoitusten ja valmiustehtävien suorittaminen",
+      "Kansainvälisiin ja kotimaisiin operaatioihin osallistuminen",
+      "Kaluston ja varusteiden ylläpito",
+      "Koulutus ja valmennus",
+      "Turvallisuus- ja vartiointitehtävät"
+    ],
+    impact: [
+      "Turvaa Suomen alueellista koskemattomuutta",
+      "Osallistuu kriisinhallintaan ja avustaa siviiliviranomaisia",
+      "Kehittää omaa ja joukkojen toimintakykyä"
+    ],
+    education_paths: [
+      "Varusmiespalvelus tai vapaaehtoinen asepalvelus",
+      "Sopimussotilaskoulutus",
+      "Aliupseerikoulu ja ammattialiupseerin tutkinto"
+    ],
+    qualification_or_license: "Puolustusvoimien valintaprosessi ja palveluskelpoisuus",
+    core_skills: [
+      "Fyysinen kunto ja kenttätaidot",
+      "Tiimityö ja johtaminen",
+      "Varusteiden ja asejärjestelmien hallinta",
+      "Nopea päätöksenteko",
+      "Stressinsieto"
+    ],
+    tools_tech: [
+      "Sotilasajoneuvot ja asejärjestelmät",
+      "Johtamis- ja viestiverkot",
+      "Yö- ja tarkka-ampujavälineet",
+      "Suojavarusteet",
+      "Simulaattorit ja koulutusjärjestelmät"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 2900,
+      range: [2600, 3400],
+      source: { name: "Puolustusvoimat – Palkkaesimerkit", url: "https://puolustusvoimat.fi/ura/palkkaus", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Puolustusvoimat rekrytoi jatkuvasti sopimussotilaita ja erikoisosaajia vahvistaakseen valmiutta.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/sotilas", year: 2025 }
+    },
+    entry_roles: [
+      "Sopimussotilas",
+      "Aliupseerioppilas",
+      "Varusmiesjohtaja"
+    ],
+    career_progression: [
+      "Ammattialiupseeri",
+      "Henkilöstöaliupseeri",
+      "Kouluttaja",
+      "Erikoisjoukkojen tehtävät"
+    ],
+    typical_employers: [
+      "Puolustusvoimien joukko-osastot",
+      "Kansainväliset kriisinhallintajoukot",
+      "Rajavartiolaitos",
+      "Euroopan ja Naton yhteistyöorganisaatiot"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    union_or_CBA: "Julkisalan koulutettujen neuvottelujärjestö (JUKO) / Pääesikunta",
+    useful_links: [
+      { name: "Työmarkkinatori – Sotilas", url: "https://tyomarkkinatori.fi/ammatit/sotilas" },
+      { name: "Puolustusvoimat – Ura", url: "https://puolustusvoimat.fi/ura" },
+      { name: "Opintopolku – Maanpuolustus", url: "https://opintopolku.fi/konfo/fi/haku/maanpuolustus" }
+    ],
+    keywords: ["puolustus", "kenttätyö", "valmius", "kansainväliset tehtävät", "johtaminen"],
+    study_length_estimate_months: 18
+  },
+  {
+    id: "upseeri",
+    category: "auttaja",
+    title_fi: "Upseeri",
+    title_en: "Officer",
+    short_description: "Upseeri johtaa joukkoja ja vastaa Puolustusvoimien operatiivisesta suunnittelusta, koulutuksesta ja hallinnosta. Tehtävä edellyttää vahvaa johtamisosaamista ja strategista ajattelua.",
+    main_tasks: [
+      "Joukkojen kouluttaminen ja johtaminen",
+      "Operaatioiden suunnittelu ja johtaminen",
+      "Henkilöstöhallinto ja esimiestyö",
+      "Kansainvälinen yhteistyö ja kriisinhallintatehtävät",
+      "Materiaalin ja logistiikan johtaminen"
+    ],
+    impact: [
+      "Vahvistaa Suomen puolustuskykyä",
+      "Johtaa joukkoja turvallisuustilanteissa",
+      "Kehittää Puolustusvoimien toimintaa ja strategiaa"
+    ],
+    education_paths: [
+      "Maanpuolustuskorkeakoulu: Kadettikurssi",
+      "Upseerien jatko- ja maisteriopinnot",
+      "Kansainväliset sotilasakatemiat (vaihto)"
+    ],
+    qualification_or_license: "Puolustusvoimien kadettikurssi ja virkaan nimitys",
+    core_skills: [
+      "Johtaminen ja esimiestyö",
+      "Strateginen ja taktinen ajattelu",
+      "Tilannekuvan muodostaminen",
+      "Vuorovaikutus kansainvälisissä ympäristöissä",
+      "Riskienhallinta"
+    ],
+    tools_tech: [
+      "Johtamisjärjestelmät",
+      "Simulaatiot ja sotapelit",
+      "Logistiikan hallintajärjestelmät",
+      "Kansainväliset viestikanavat",
+      "Analytiikka- ja raportointityökalut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 5600],
+      source: { name: "Puolustusvoimat – Upseerien palkkaus", url: "https://puolustusvoimat.fi/ura/palkkaus", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Upseereita tarvitaan sekä kotimaan valmiuteen että kansainvälisiin tehtäviin.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/upseeri", year: 2025 }
+    },
+    entry_roles: [
+      "Kadetti",
+      "Nuorempi upseeri",
+      "Joukkueenjohtaja"
+    ],
+    career_progression: [
+      "Komppanian päällikkö",
+      "Esikuntaupseeri",
+      "Joukko-osaston komentaja",
+      "Kansainvälisen operaation esikuntatehtävät"
+    ],
+    typical_employers: [
+      "Puolustusvoimat",
+      "Rajavartiolaitos",
+      "Kansainväliset sotilasorganisaatiot",
+      "Nato-yhteistyö"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    union_or_CBA: "Upseeriliitto",
+    useful_links: [
+      { name: "Työmarkkinatori – Upseeri", url: "https://tyomarkkinatori.fi/ammatit/upseeri" },
+      { name: "Puolustusvoimat – Kadettikoulu", url: "https://maanpuolustuskorkeakoulu.fi/kadettikurssi" },
+      { name: "Opintopolku – Upseerikoulutus", url: "https://opintopolku.fi/konfo/fi/haku/upseeri" }
+    ],
+    keywords: ["johtaminen", "puolustus", "strategia", "operaatiot", "kriisinhallinta"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "markkinointisuunnittelija",
+    category: "jarjestaja",
+    title_fi: "Markkinointisuunnittelija",
+    title_en: "Marketing Planner",
+    short_description: "Markkinointisuunnittelija analysoi asiakasdataa, suunnittelee kampanjoita ja koordinoi markkinoinnin toimenpiteitä. Työssä yhdistyvät luova suunnittelu ja mittareihin perustuva päätöksenteko.",
+    main_tasks: [
+      "Markkinointistrategian ja kampanjoiden suunnittelu",
+      "Asiakas- ja markkinadatan analysointi",
+      "Sisällöntuotannon koordinointi",
+      "Budjetin ja aikataulujen hallinta",
+      "Tulosten raportointi ja optimointi"
+    ],
+    impact: [
+      "Kasvattaa brändin näkyvyyttä ja myyntiä",
+      "Yhdistää asiakasymmärryksen ja luovan työn",
+      "Auttaa organisaatiota tekemään dataohjattuja päätöksiä"
+    ],
+    education_paths: [
+      "AMK: Liiketalouden tradenomi (markkinointi)",
+      "Yliopisto: Kauppatieteet (markkinointi)",
+      "Täydennys: Digimarkkinointi ja analytiikka"
+    ],
+    qualification_or_license: "Ei säädelty, vahva digimarkkinoinnin osaaminen suositeltavaa",
+    core_skills: [
+      "Markkinoinnin strategia",
+      "Data-analytiikka ja raportointi",
+      "Sisällön suunnittelu",
+      "Projektinhallinta",
+      "Yhteistyö ja viestintä"
+    ],
+    tools_tech: [
+      "Marketing automation -järjestelmät",
+      "CRM- ja asiakasanalytiikan työkalut",
+      "Mainosalustat (Google, Meta, LinkedIn)",
+      "Sisällönhallintajärjestelmät",
+      "BI- ja raportointityökalut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3700,
+      range: [3200, 4500],
+      source: { name: "Palta – Markkinoinnin palkkatiedot", url: "https://www.palta.fi/tilastot/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitalisaatio ja asiakasdatan hyödyntäminen lisäävät markkinointisuunnittelijoiden tarvetta.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/markkinointisuunnittelija", year: 2025 }
+    },
+    entry_roles: [
+      "Markkinointisuunnittelija",
+      "Markkinoinnin koordinaattori",
+      "Junior digital marketer"
+    ],
+    career_progression: [
+      "Markkinointipäällikkö",
+      "Growth marketing lead",
+      "Brand manager",
+      "Digimarkkinoinnin asiantuntija"
+    ],
+    typical_employers: [
+      "Kasvuyritykset ja startupit",
+      "Mainostoimistot",
+      "Vähittäiskauppa ja verkkokaupat",
+      "IT- ja SaaS-yritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Pro / Markkinointialan TES",
+    useful_links: [
+      { name: "Työmarkkinatori – Markkinointisuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/markkinointisuunnittelija" },
+      { name: "Opintopolku – Liiketalous (AMK)", url: "https://opintopolku.fi/konfo/fi/haku/liiketalous" }
+    ],
+    keywords: ["markkinointi", "data", "kampanjat", "digitaalinen", "strategia"],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "liikuntaneuvoja",
+    category: "auttaja",
+    title_fi: "Liikuntaneuvoja",
+    title_en: "Sports and Wellness Instructor",
+    short_description: "Liikuntaneuvoja motivoi asiakkaita aktiiviseen elämäntapaan, suunnittelee harjoitusohjelmia ja järjestää ryhmäliikuntaa. Työ on käytännönläheistä ja tapahtuu usein kunnissa, liikuntakeskuksissa ja järjestöissä.",
+    main_tasks: [
+      "Asiakaskohtaisten liikunta- ja hyvinvointiohjelmien laatiminen",
+      "Ryhmäliikuntatuntien vetäminen ja tapahtumien organisointi",
+      "Elämäntapamuutosten ohjaus ja seuranta",
+      "Yhteistyö terveys- ja nuorisopalvelujen kanssa",
+      "Turvallisuuden ja ensiavun varmistaminen harjoituksissa"
+    ],
+    impact: [
+      "Edistää väestön terveyttä ja toimintakykyä",
+      "Motivoi asiakkaita pysyviin elämäntapamuutoksiin",
+      "Vähentää terveysmenoja ennaltaehkäisevällä työllä"
+    ],
+    education_paths: [
+      "AMK: Liikunnanohjaaja (AMK)",
+      "Ammatillinen perustutkinto: Liikunnanohjauksen perustutkinto",
+      "Täydennyskoulutus (esim. erityisryhmien liikunta, personal training)"
+    ],
+    qualification_or_license: "EA- ja vesiturvallisuuskurssit suositeltavia",
+    core_skills: [
+      "Ohjaus ja motivointi",
+      "Harjoitusohjelmien suunnittelu",
+      "Vuorovaikutus eri ikäryhmien kanssa",
+      "Hyvinvointidatan tulkinta",
+      "Tapahtumien organisointi"
+    ],
+    tools_tech: [
+      "Liikuntatilojen varausjärjestelmät",
+      "Hyvinvointisovellukset",
+      "Kuntoiluvälineet ja -mittarit",
+      "Asiakashallintajärjestelmät",
+      "Verkko-ohjauksen välineet"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 2800,
+      range: [2500, 3300],
+      source: { name: "PAM – Liikunnanohjaajien palkkaus", url: "https://www.pam.fi/fi/tyoehdot/palkkaryhmat/liikunnanohjaajien-palkkaus.html", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Hyvinvointialueet ja kunnat panostavat ennaltaehkäisevään liikuntaneuvontaan.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/liikunnanohjaaja", year: 2025 }
+    },
+    entry_roles: [
+      "Liikuntaneuvoja",
+      "Ryhmäliikunnan ohjaaja",
+      "Hyvinvointiohjaaja"
+    ],
+    career_progression: [
+      "Hyvinvointikoordinaattori",
+      "Personal trainer -yrittäjä",
+      "Liikuntapalveluiden esihenkilö",
+      "Hyvinvointiohjelmien projektipäällikkö"
+    ],
+    typical_employers: [
+      "Hyvinvointialueiden liikuntapalvelut",
+      "Urheiluseurat ja järjestöt",
+      "Kuntokeskukset",
+      "Yritysten työhyvinvointipalvelut"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
+    union_or_CBA: "PAM / Liikunta-alan TES",
+    useful_links: [
+      { name: "Työmarkkinatori – Liikunnanohjaaja", url: "https://tyomarkkinatori.fi/ammatit/liikunnanohjaaja" },
+      { name: "Opintopolku – Liikunnanohjaaja", url: "https://opintopolku.fi/konfo/fi/haku/liikunnanohjaaja" }
+    ],
+    keywords: ["liikunta", "hyvinvointi", "ohjaus", "valmennus", "ennaltaehkäisy"],
+    study_length_estimate_months: 36
+  },
+  {
+    id: "liikuntaterapeutti",
+    category: "auttaja",
+    title_fi: "Liikuntaterapeutti",
+    title_en: "Exercise Therapist",
+    short_description: "Liikuntaterapeutti yhdistää liikunnan, kuntoutuksen ja terveydenhuollon. Työhön kuuluu yksilöllisten harjoitusohjelmien suunnittelu pitkäaikaissairaille, ikääntyville ja kuntoutujille.",
+    main_tasks: [
+      "Liikuntatarpeen arviointi ja testaukset",
+      "Yksilöllisten kuntoutusohjelmien laatiminen",
+      "Kuntoutujien ohjaus ja motivointi",
+      "Moniammatillinen yhteistyö lääkäreiden ja terapeuttien kanssa",
+      "Tulosten seuranta ja dokumentointi"
+    ],
+    impact: [
+      "Parantaa asiakkaiden toimintakykyä ja elämänlaatua",
+      "Ehkäisee sairauspoissaoloja ja toimintakyvyn heikkenemistä",
+      "Tukee terveydenhuollon kuntoutusprosesseja"
+    ],
+    education_paths: [
+      "AMK: Liikunnanohjaaja (AMK) + liikuntaterapian erikoistuminen",
+      "YAMK: Kuntoutuksen ylempi AMK",
+      "Täydennyskoulutus: liikuntalääketiede, erityisryhmien liikunta"
+    ],
+    qualification_or_license: "Valvira – Sosiaali- ja terveydenhuollon ammattihenkilö (kuntoutuksen ohjaaja)",
+    core_skills: [
+      "Kuntoutuksen periaatteet",
+      "Liikuntalääketieteen tuntemus",
+      "Motivaation tukeminen",
+      "Mittaus- ja arviointimenetelmät",
+      "Vuorovaikutus ja empatia"
+    ],
+    tools_tech: [
+      "Kuntoutuslaitteet ja -välineet",
+      "Liikunnan seurantateknologia",
+      "Fysiologiset mittarit",
+      "Sähköiset potilastietojärjestelmät",
+      "Etäkuntoutuksen alustat"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3400,
+      range: [3000, 4200],
+      source: { name: "Suomen Fysioterapeutit – Palkkasuositus", url: "https://www.fysioterapeutit.fi/tyo-ja-palkka/palkkasuositukset/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Ikääntyminen ja liikuntaan perustuva kuntoutus lisäävät liikuntaterapeuttien tarvetta.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/liikuntaterapeutti", year: 2025 }
+    },
+    entry_roles: [
+      "Liikuntaterapeutti",
+      "Kuntoutusohjaaja",
+      "Hyvinvointivalmentaja"
+    ],
+    career_progression: [
+      "Kuntoutuksen esihenkilö",
+      "Hyvinvointipalvelujen kehittäjä",
+      "Yrittäjä",
+      "Tutkimus- tai koulutustehtävät"
+    ],
+    typical_employers: [
+      "Hyvinvointialueiden kuntoutuspalvelut",
+      "Yksityiset kuntoutuskeskukset",
+      "Kuntoutuslaitokset ja kylpylät",
+      "Järjestöt ja hankkeet"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Tehy / Fysioterapeuttien TES",
+    useful_links: [
+      { name: "Työmarkkinatori – Liikuntaterapeutti", url: "https://tyomarkkinatori.fi/ammatit/liikuntaterapeutti" },
+      { name: "Opintopolku – Liikuntaterapeutti", url: "https://opintopolku.fi/konfo/fi/haku/liikuntaterapeutti" }
+    ],
+    keywords: ["kuntoutus", "liikuntalääketiede", "hyvinvointi", "ohjaus", "erityisryhmät"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "liiketalousjohtaja",
+    category: "johtaja",
+    title_fi: "Liiketalousjohtaja",
+    title_en: "Business Director",
+    short_description: "Liiketalousjohtaja vastaa yrityksen taloudesta, kasvusta ja strategisista investoinneista. Tehtävä edellyttää vahvaa liiketoimintaosaamista ja päätöksentekokykyä.",
+    main_tasks: [
+      "Strategian ja budjettien laatiminen",
+      "Taloudellisen suorituskyvyn seuranta",
+      "Yrityskauppojen ja investointien arviointi",
+      "Organisaation johtaminen ja esimiestyö",
+      "Sidosryhmä- ja hallitustyö"
+    ],
+    impact: [
+      "Suunnittelee yrityksen kasvun ja kannattavuuden",
+      "Tekee päätöksiä, jotka vaikuttavat työllisyyteen ja kilpailukykyyn",
+      "Rakentaa yrityksen pitkän aikavälin arvoa"
+    ],
+    education_paths: [
+      "Yliopisto: Kauppatieteiden maisteri",
+      "MBA- tai EMBA-ohjelmat",
+      "Johtamisen täydennyskoulutus"
+    ],
+    qualification_or_license: "Ei laillistusta, kokemus ja hallitustyöskentely ovat keskeisiä",
+    core_skills: [
+      "Strateginen johtaminen",
+      "Taloudellinen analyysi",
+      "Sidosryhmäviestintä",
+      "Neuvottelutaidot",
+      "Muutosjohtaminen"
+    ],
+    tools_tech: [
+      "ERP- ja taloushallinnon järjestelmät",
+      "BI- ja analytiikka-alustat",
+      "Budjetointi- ja suunnittelutyökalut",
+      "Sidosryhmähallinnan järjestelmät",
+      "Projektinhallinnan ohjelmistot"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "C1" },
+    salary_eur_month: {
+      median: 8200,
+      range: [6500, 11000],
+      source: { name: "EK – Johtajien palkkatilasto", url: "https://www.ek.fi/wp-content/uploads/2024/01/ek-johtajien-palkkatilasto-2023.pdf", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Kokeneille liiketoimintajohtajille on tarvetta erityisesti kasvuyrityksissä ja kansainvälisillä markkinoilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/liiketoimintajohtaja", year: 2025 }
+    },
+    entry_roles: [
+      "Liiketalousjohtaja",
+      "Business unit lead",
+      "Talouden kehitysjohtaja"
+    ],
+    career_progression: [
+      "Toimitusjohtaja",
+      "Hallituksen jäsen",
+      "Kansainvälisen liiketoiminnan johtaja",
+      "Yrittäjä"
+    ],
+    typical_employers: [
+      "Suuryritykset",
+      "Kasvavat pk-yritykset",
+      "Konsultti- ja pääomasijoitusyhtiöt",
+      "Julkiset organisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    union_or_CBA: "EK:n johto- ja asiantuntijasopimukset",
+    useful_links: [
+      { name: "Työmarkkinatori – Liiketoimintajohtaja", url: "https://tyomarkkinatori.fi/ammatit/liiketoimintajohtaja" },
+      { name: "Opintopolku – Kauppatieteet", url: "https://opintopolku.fi/konfo/fi/haku/kauppatieteet" }
+    ],
+    keywords: ["johtaminen", "strategia", "talous", "kasvu", "investoinnit"],
+    study_length_estimate_months: 72
+  },
+  {
+    id: "yritysneuvoja",
+    category: "jarjestaja",
+    title_fi: "Yritysneuvoja",
+    title_en: "Business Advisor",
+    short_description: "Yritysneuvoja tukee yrittäjiä ja yrityksiä liiketoiminnan kehittämisessä, rahoituksen hakemisessa ja kasvustrategioiden suunnittelussa.",
+    main_tasks: [
+      "Yritysten taloudellisen tilanteen analysointi",
+      "Liiketoimintasuunnitelmien ja budjettien sparraus",
+      "Rahoitus- ja tukimuotojen neuvonta",
+      "Koulutusten ja työpajojen järjestäminen",
+      "Verkostojen ja kumppanuuksien rakentaminen"
+    ],
+    impact: [
+      "Auttaa yrityksiä kasvamaan kestävästi",
+      "Ehkäisee yritysten taloudellisia vaikeuksia",
+      "Luo uusia työpaikkoja tukemalla yrittäjyyttä"
+    ],
+    education_paths: [
+      "AMK/Yliopisto: Kauppatieteet, liiketalous, yrittäjyys",
+      "Yritysneuvonnan erikoisammattitutkinto",
+      "Johto- ja taloushallinnon täydennyskoulutus"
+    ],
+    qualification_or_license: "Ei laillistusta, talous- ja rahoitusosaaminen keskeistä",
+    core_skills: [
+      "Talouden ja kannattavuuden analyysi",
+      "Neuvontataidot",
+      "Rahoituksen tuntemus",
+      "Verkostoituminen",
+      "Projektinhallinta"
+    ],
+    tools_tech: [
+      "Talousanalytiikan työkalut",
+      "CRM ja asiakashallinta",
+      "Rahoitushakemusalustat",
+      "Verkko-opintoympäristöt",
+      "Data-analyysiohjelmistot"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3500, 5200],
+      source: { name: "Suomen Ekonomit – Ansiotaso 2024", url: "https://www.ekonomit.fi/ansiotaso/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Yrityspalvelut ja kasvuyrittäjyys lisäävät kysyntää kokeneille neuvonantajille.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/yritysneuvoja", year: 2025 }
+    },
+    entry_roles: [
+      "Yritysneuvoja",
+      "Kehittämisasiantuntija",
+      "Startup-mentor"
+    ],
+    career_progression: [
+      "Yrityspalveluiden tiiminvetäjä",
+      "Kasvuyrityksen talousjohtaja",
+      "Konsultti / yrittäjä",
+      "Kaupunkien elinkeinojohtaja"
+    ],
+    typical_employers: [
+      "ELY-keskukset ja Kehitysyhtiöt",
+      "Yrityshautomot",
+      "Pankit ja rahoituslaitokset",
+      "Konsulttitalot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Pro / Asiantuntijatyön TES",
+    useful_links: [
+      { name: "Työmarkkinatori – Yritysneuvoja", url: "https://tyomarkkinatori.fi/ammatit/yritysneuvoja" },
+      { name: "Opintopolku – Kauppatieteet", url: "https://opintopolku.fi/konfo/fi/haku/kauppatieteet" }
+    ],
+    keywords: ["yrityskehitys", "rahoitus", "neuvonta", "kasvu", "verkostot"],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "sisaltotuottaja",
+    category: "luova",
+    title_fi: "Sisältötuottaja",
+    title_en: "Content Producer",
+    short_description: "Sisältötuottaja suunnittelee ja tuottaa monikanavaista sisältöä yritysten, järjestöjen ja mediatalojen tarpeisiin. Työssä yhdistyvät tarinankerronta, digitaaliset työkalut ja analytiikka.",
+    main_tasks: [
+      "Sisältöstrategian ja julkaisusuunnitelmien laatiminen",
+      "Teksti-, kuva- ja videotuotanto",
+      "Yhteistyö markkinoinnin, myynnin ja asiantuntijoiden kanssa",
+      "Julkaisujen mittaaminen ja optimointi",
+      "Kampanjoiden koordinointi eri kanavissa"
+    ],
+    impact: [
+      "Rakentaa brändin näkyvyyttä ja luottamusta",
+      "Tukee myyntiä ja asiakassuhteita",
+      "Viestii organisaation arvoista ja asiantuntemuksesta"
+    ],
+    education_paths: [
+      "AMK: Viestintä, media-ala",
+      "Yliopisto: Viestintä, media- ja kulttuuriala",
+      "Täydennyskoulutus: digiviestintä, SEO, videotuotanto"
+    ],
+    qualification_or_license: "Ei laillistusta, portfolion ja digiosaamisen merkitys suuri",
+    core_skills: [
+      "Tarinoiden rakentaminen",
+      "Digitaalinen viestintä",
+      "Hakukoneoptimointi",
+      "Projektinhallinta",
+      "Yhteistyö ja verkostoituminen"
+    ],
+    tools_tech: [
+      "Sisällönhallintajärjestelmät (CMS)",
+      "Adobe Creative Cloud, Canva",
+      "Video- ja podcast-työkalut",
+      "Analytiikka (Google Analytics, sosiaalisen median analytiikka)",
+      "SEO- ja avainsanatyökalut"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2700, 4000],
+      source: { name: "Pro – Viestintäalan palkkatilasto", url: "https://www.proliitto.fi/palkat/viestintäala", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitaalinen markkinointi ja omien kanavien sisällöntuotanto lisäävät kysyntää sisältöammattilaisille.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/sisaltotuottaja", year: 2025 }
+    },
+    entry_roles: [
+      "Sisältötuottaja",
+      "Copywriter",
+      "Sosiaalisen median tuottaja"
+    ],
+    career_progression: [
+      "Content lead",
+      "Head of content",
+      "Viestintäpäällikkö",
+      "Yrittäjä / konsultti"
+    ],
+    typical_employers: [
+      "Mediatalot",
+      "Markkinointi- ja viestintätoimistot",
+      "Yritysten in-house-tiimit",
+      "Järjestöt ja julkinen sektori"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Pro / Viestintäalan TES",
+    useful_links: [
+      { name: "Työmarkkinatori – Sisältötuottaja", url: "https://tyomarkkinatori.fi/ammatit/sisaltotuottaja" },
+      { name: "Opintopolku – Viestintä", url: "https://opintopolku.fi/konfo/fi/haku/viestinta" }
+    ],
+    keywords: ["sisältö", "viestintä", "tarinankerronta", "digitaalinen", "markkinointi"],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "myyntipaallikko",
+    category: "johtaja",
+    title_fi: "Myyntipäällikkö",
+    title_en: "Sales Manager",
+    short_description: "Myyntipäällikkö johtaa myyntitiimiä, kehittää myyntistrategiaa ja vastaa asiakassuhteiden kasvusta. Tehtävä on tulosvastuullinen ja vaatii sekä strategista että operatiivista osaamista.",
+    main_tasks: [
+      "Myyntisuunnitelmien ja tavoitteiden asettaminen",
+      "Myyntitiimin johtaminen ja valmentaminen",
+      "Keskeisten asiakassuhteiden hoito",
+      "Myyntiraportointi ja budjetin seuranta",
+      "Yhteistyö markkinoinnin ja tuotekehityksen kanssa"
+    ],
+    impact: [
+      "Kasvattaa yrityksen liikevaihtoa",
+      "Varmentaa asiakaspolun sujuvuuden",
+      "Auttaa tuotteita ja palveluja löytämään oikeat asiakkaat"
+    ],
+    education_paths: [
+      "AMK/Yliopisto: Liiketalous, myynti",
+      "Myynnin ja johtamisen erikoistumisopinnot",
+      "Myynnin valmennusohjelmat"
+    ],
+    qualification_or_license: "Ei laillistusta, vahva myyntikokemus keskeinen",
+    core_skills: [
+      "Myynti- ja neuvottelutaidot",
+      "Johtaminen ja motivointi",
+      "Talousosaaminen",
+      "Asiakassuhteiden hallinta",
+      "Analytiikka ja tavoitteiden seuranta"
+    ],
+    tools_tech: [
+      "CRM-järjestelmät",
+      "Myynnin automaatio",
+      "Budjetointi- ja raportointityökalut",
+      "Verkkokokousalustat",
+      "Analytiikka ja BI"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 5200,
+      range: [4200, 6800],
+      source: { name: "Palta – Myynnin johto", url: "https://www.palta.fi/tilastot/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "B2B-palvelujen ja kasvuyritysten myynnissä tarvitaan kokeneita myyntijohtajia.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/myyntipaallikko", year: 2025 }
+    },
+    entry_roles: [
+      "Myyntipäällikkö",
+      "Aluepäällikkö",
+      "Account manager"
+    ],
+    career_progression: [
+      "Myyntijohtaja",
+      "Liiketoimintajohtaja",
+      "Toimitusjohtaja",
+      "Yrittäjä"
+    ],
+    typical_employers: [
+      "Teknologia- ja teollisuusyritykset",
+      "Palveluyritykset",
+      "Kansainväliset konsernit",
+      "PK-yritykset ja startupit"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    union_or_CBA: "Palta / Johto ja asiantuntijatyö",
+    useful_links: [
+      { name: "Työmarkkinatori – Myyntipäällikkö", url: "https://tyomarkkinatori.fi/ammatit/myyntipaallikko" },
+      { name: "Opintopolku – Liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/liiketalous" }
+    ],
+    keywords: ["myynti", "johtaminen", "asiakashallinta", "kasvu", "strategia"],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "ohjelmistokehittaja",
+    category: "innovoija",
+    title_fi: "Ohjelmistokehittäjä",
+    title_en: "Software Developer",
+    short_description: "Ohjelmistokehittäjä suunnittelee ja rakentaa digitaalisia palveluja ja järjestelmiä. Työ vaatii ongelmanratkaisukykyä, ohjelmointitaitoja ja kykyä työskennellä tiiviissä yhteistyössä liiketoiminnan ja muotoilun kanssa.",
+    main_tasks: [
+      "Ohjelmiston suunnittelu ja toteutus",
+      "Koodin testaus ja laadunvarmistus",
+      "API- ja integraatiokehitys",
+      "Teknisten ratkaisujen dokumentointi",
+      "Yhteistyö tuote- ja design-tiimien kanssa"
+    ],
+    impact: [
+      "Mahdollistaa digitaaliset palvelut ja automaation",
+      "Ratkaisee käyttäjä- ja liiketoimintaongelmia",
+      "Skaalaa yritysten toimintaa globaalisti"
+    ],
+    education_paths: [
+      "AMK: Tietojenkäsittelyn tradenomi",
+      "Yliopisto: Tietojenkäsittelytiede",
+      "Ohjelmointi- ja cloud-sertifikaatit"
+    ],
+    qualification_or_license: "Ei laillistusta, osaamisen todentaminen portfolioilla ja sertifikaateilla",
+    core_skills: [
+      "Ohjelmointikielet (esim. TypeScript, Python, Java)",
+      "Versionhallinta ja DevOps",
+      "Tietokanta- ja API-osaaminen",
+      "Ongelmanratkaisu",
+      "Tiimityö ja ketterät menetelmät"
+    ],
+    tools_tech: [
+      "IDE:t (VS Code, IntelliJ)",
+      "Git ja CI/CD",
+      "Pilvipalvelut (AWS, Azure, GCP)",
+      "Konttiteknologiat",
+      "Testiautomaatio"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4700,
+      range: [3800, 6200],
+      source: { name: "Ohjelmistoala – Palkkakatsaus 2024", url: "https://ohjelmistoala.fi/palkkakatsaus", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitalisaatio ja tekoälyratkaisut lisäävät ohjelmistokehittäjien kysyntää kaikilla toimialoilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/ohjelmistokehittaja", year: 2025 }
+    },
+    entry_roles: [
+      "Ohjelmistokehittäjä",
+      "Full-stack developer",
+      "Backend developer"
+    ],
+    career_progression: [
+      "Lead developer",
+      "Arkkitehti",
+      "Tuotepäällikkö",
+      "CTO / tekninen perustaja"
+    ],
+    typical_employers: [
+      "Ohjelmistoyritykset",
+      "Kasvuyritykset ja startupit",
+      "Konsultti- ja integraatiotalot",
+      "Julkisen sektorin digihankkeet"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tietoala ry / Teknologiateollisuuden TES",
+    useful_links: [
+      { name: "Työmarkkinatori – Ohjelmistokehittäjä", url: "https://tyomarkkinatori.fi/ammatit/ohjelmistokehittaja" },
+      { name: "Opintopolku – Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/tietojenk%C3%A4sittely" }
+    ],
+    keywords: ["ohjelmointi", "ketterä", "pilvi", "devops", "tuotekehitys"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "tekoalyasiantuntija",
+    category: "visionaari",
+    title_fi: "Tekoälyasiantuntija",
+    title_en: "AI Specialist",
+    short_description: "Tekoälyasiantuntija suunnittelee ja toteuttaa keinoälyratkaisuja, jotka hyödyntävät dataa, koneoppimista ja automaatiota. Työ vaatii vahvaa analytiikkaa, ohjelmointia ja eettistä arviointia.",
+    main_tasks: [
+      "Koneoppimismallien suunnittelu ja koulutus",
+      "Datan esikäsittely ja ominaisuuksien rakentaminen",
+      "Mallien käyttöönotto ja monitorointi",
+      "Vaikutusten ja eettisten riskien arviointi",
+      "Yhteistyö tuote- ja liiketoimintatiimien kanssa"
+    ],
+    impact: [
+      "Automatisoi ja nopeuttaa päätöksentekoa",
+      "Luo uusia dataohjattuja palveluja",
+      "Parantaa organisaatioiden kilpailukykyä"
+    ],
+    education_paths: [
+      "Yliopisto: Tietotekniikka, data science, tekoäly",
+      "YAMK/DI: Koneoppiminen ja analytiikka",
+      "Sertifikaatit (esim. TensorFlow, AWS Machine Learning)"
+    ],
+    qualification_or_license: "Ei laillistusta, eettiset ohjeistot ja tietosuojakoulutus suositeltavia",
+    core_skills: [
+      "Koneoppimisen algoritmit",
+      "Data-analytiikka ja tilastotiede",
+      "Ohjelmointi (Python, R, SQL)",
+      "MLOps ja pilvi",
+      "Eettinen harkinta"
+    ],
+    tools_tech: [
+      "TensorFlow, PyTorch",
+      "Jupyter ja datanhallinta-alustat",
+      "Pilvipalveluiden ML-työkalut",
+      "Versionhallinta ja MLflow",
+      "Dataputkien orkestrointi"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 5400,
+      range: [4300, 7200],
+      source: { name: "Tech Talent – AI & Data Salaries 2024", url: "https://www.techtalent.fi/palkat", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Tekoälyratkaisut laajenevat julkiselle sektorille ja yrityksiin, mikä kasvattaa asiantuntijatarvetta.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/tekoalyasiantuntija", year: 2025 }
+    },
+    entry_roles: [
+      "Tekoälyasiantuntija",
+      "Data scientist",
+      "Machine learning engineer"
+    ],
+    career_progression: [
+      "Lead AI engineer",
+      "Head of AI",
+      "AI strategist",
+      "Tutkija / tohtoriopinnot"
+    ],
+    typical_employers: [
+      "Teknologia- ja peliyritykset",
+      "Finanssi- ja julkishallinnon organisaatiot",
+      "Tutkimuslaitokset",
+      "Konsultointiyritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tietoala ry",
+    useful_links: [
+      { name: "Työmarkkinatori – Tekoälyasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/tekoalyasiantuntija" },
+      { name: "Opintopolku – Tekoäly", url: "https://opintopolku.fi/konfo/fi/haku/teko%C3%A4ly" }
+    ],
+    keywords: ["tekoäly", "machine learning", "data", "automaatio", "analytiikka"],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "tietojarjestelma-arkkitehti",
+    category: "visionaari",
+    title_fi: "Tietojärjestelmäarkkitehti",
+    title_en: "Systems Architect",
+    short_description: "Tietojärjestelmäarkkitehti suunnittelee organisaation tietojärjestelmien kokonaisuuden, integraatiot ja teknisen arkkitehtuurin. Työ yhdistää teknisen syväosaamisen ja strategisen näkemyksen.",
+    main_tasks: [
+      "Järjestelmäkokonaisuuden arkkitehtuurin määrittely",
+      "Teknologisten ratkaisujen arviointi ja valinta",
+      "Integraatioiden ja rajapintojen suunnittelu",
+      "Tietoturvan ja tietosuojan varmistaminen",
+      "Teknisen tien roadmapin johtaminen"
+    ],
+    impact: [
+      "Varmentaa järjestelmien yhteen toimivuuden",
+      "Rakentaa skaalautuvia ja turvallisia ratkaisuja",
+      "Ohjaa teknologisia investointeja pitkällä aikavälillä"
+    ],
+    education_paths: [
+      "Yliopisto: Tietotekniikka, tietojärjestelmät",
+      "YAMK: ICT-arkkitehtuuri",
+      "Sertifikaatit (TOGAF, Azure/AWS Architect)"
+    ],
+    qualification_or_license: "Ei laillistusta, arkkitehtuuriviitekehysten sertifikaatit arvostettuja",
+    core_skills: [
+      "Arkkitehtuuriviitekehykset",
+      "Integraatio- ja pilviarkkitehtuuri",
+      "Tietoturva ja riskienhallinta",
+      "Sidosryhmäviestintä",
+      "Tekninen johtaminen"
+    ],
+    tools_tech: [
+      "Arkkitehtuurin mallinnustyökalut",
+      "Pilvialustat",
+      "API- ja integraatioalustat",
+      "DevOps- ja automaatioalustat",
+      "Tietoturva- ja monitorointityökalut"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "C1" },
+    salary_eur_month: {
+      median: 6000,
+      range: [5000, 7800],
+      source: { name: "Tietoala ry – Palkkatilasto 2024", url: "https://tietoala.fi/palkat", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Pilvisiirtymät ja integraatiotarpeet lisäävät kokeneiden arkkitehtien kysyntää.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/tietojarjestelma-arkkitehti", year: 2025 }
+    },
+    entry_roles: [
+      "Tietojärjestelmäarkkitehti",
+      "Solution architect",
+      "Integration architect"
+    ],
+    career_progression: [
+      "Chief architect",
+      "CTO",
+      "Enterprise architect",
+      "Konsultti / yrittäjä"
+    ],
+    typical_employers: [
+      "Suuret yritykset ja julkiset organisaatiot",
+      "Pilvi- ja integraatiokonsultit",
+      "Finanssi- ja terveyssektorin toimijat",
+      "Ohjelmistoyritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Tietoala ry",
+    useful_links: [
+      { name: "Työmarkkinatori – Tietojärjestelmäarkkitehti", url: "https://tyomarkkinatori.fi/ammatit/tietojarjestelma-arkkitehti" },
+      { name: "Opintopolku – Tietojärjestelmät", url: "https://opintopolku.fi/konfo/fi/haku/tietoj%C3%A4rjestelm%C3%A4t" }
+    ],
+    keywords: ["arkkitehtuuri", "pilvi", "integraatio", "tietoturva", "strategia"],
+    study_length_estimate_months: 66
+  },
+  {
+    id: "verkkosuunnittelija",
+    category: "luova",
+    title_fi: "Verkkosuunnittelija",
+    title_en: "Web Designer",
+    short_description: "Verkkosuunnittelija suunnittelee käyttäjäystävällisiä ja visuaalisesti kiinnostavia verkkopalveluja. Työ yhdistää UX-suunnittelun, käyttöliittymät, brandin ja saavutettavuuden.",
+    main_tasks: [
+      "Käyttäjäpolkujen ja wireframejen suunnittelu",
+      "Visuaalisten käyttöliittymien toteutus",
+      "Prototyyppien testaus käyttäjillä",
+      "Yhteistyö kehittäjien ja sisällöntuottajien kanssa",
+      "Saavutettavuuden ja responsiivisuuden varmistaminen"
+    ],
+    impact: [
+      "Parantaa palveluiden käytettävyyttä ja konversiota",
+      "Vahvistaa brändi-ilmettä digitaalisissa kanavissa",
+      "Tekee palveluista saavutettavia eri käyttäjäryhmille"
+    ],
+    education_paths: [
+      "AMK: Muotoilu ja palvelumuotoilu",
+      "AMK/Yliopisto: Digitaalinen viestintä, UX",
+      "Täydennyskoulutus: käyttöliittymäsuunnittelu, saavutettavuus"
+    ],
+    qualification_or_license: "Ei laillistusta, portfolion ja saavutettavuusosaamisen merkitys suuri",
+    core_skills: [
+      "Käyttäjäkeskeinen suunnittelu",
+      "Visuaalinen viestintä",
+      "Design systemien rakentaminen",
+      "Prototypointi",
+      "Saavutettavuus ja WCAG"
+    ],
+    tools_tech: [
+      "Figma, Sketch, Adobe XD",
+      "Design system -alustat",
+      "Käyttäjätestaustyökalut",
+      "Web-analytiikka",
+      "Perus-HTML/CSS"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3600,
+      range: [3000, 4600],
+      source: { name: "Graafinen Teollisuus – Digisuunnittelun palkat", url: "https://www.graafinen.fi/palkat", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digipalveluiden saavutettavuus- ja UX-vaatimukset lisäävät verkkosuunnittelijoiden kysyntää.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/verkkosuunnittelija", year: 2025 }
+    },
+    entry_roles: [
+      "Verkkosuunnittelija",
+      "UX/UI-designer",
+      "Digitaalisen palvelun suunnittelija"
+    ],
+    career_progression: [
+      "Lead product designer",
+      "Design manager",
+      "Palvelumuotoilija",
+      "Yrittäjä / konsultti"
+    ],
+    typical_employers: [
+      "Design- ja digitoimistot",
+      "Ohjelmistoyritykset",
+      "Media- ja viestintäorganisaatiot",
+      "Start-upit ja julkinen sektori"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Grafinet / Pro",
+    useful_links: [
+      { name: "Työmarkkinatori – Verkkosuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/verkkosuunnittelija" },
+      { name: "Opintopolku – UX", url: "https://opintopolku.fi/konfo/fi/haku/ux" }
+    ],
+    keywords: ["ux", "ui", "design", "saavutettavuus", "prototypointi"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "fyysikko",
+    category: "visionaari",
+    title_fi: "Fyysikko",
+    title_en: "Physicist",
+    short_description: "Fyysikko tutkii luonnon perusilmiöitä ja soveltaa fysiikan lakeja teknologiaan, energiaan ja terveydenhuoltoon. Työ voi olla tutkimusta, mallinnusta tai kokeellista kehitystä.",
+    main_tasks: [
+      "Tutkimuskysymysten määrittely ja mallintaminen",
+      "Kokeellisten mittausten suunnittelu ja toteutus",
+      "Datankeruu ja tulosten analyysi",
+      "Julkaisujen ja raporttien laatiminen",
+      "Yhteistyö insinöörien, kemistien ja datatieteilijöiden kanssa"
+    ],
+    impact: [
+      "Laajentaa ymmärrystä luonnonilmiöistä",
+      "Synnyttää uusia teknologioita ja energiaratkaisuja",
+      "Tukee lääketieteen, ilmastotieteen ja teollisuuden innovaatioita"
+    ],
+    education_paths: [
+      "Yliopisto: Fysiikan kand + maisteri",
+      "Tohtoriopinnot (suositeltavaa tutkimusuralla)",
+      "Energiatekniikan ja materiaalifysiikan erikoistumiset"
+    ],
+    qualification_or_license: "Ei laillistusta, tutkimustoiminnassa tohtoriopinnot arvostettuja",
+    core_skills: [
+      "Matemaattinen mallinnus",
+      "Kokeellinen mittaaminen",
+      "Data-analyysi ja ohjelmointi",
+      "Tieteellinen kirjoittaminen",
+      "Projektityö tutkimusympäristössä"
+    ],
+    tools_tech: [
+      "Simulointiohjelmistot",
+      "Laboratoriolaitteet",
+      "Python, Matlab",
+      "Data-analytiikka ja visualisointi",
+      "Tieteelliset julkaisuympäristöt"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "C1" },
+    salary_eur_month: {
+      median: 4300,
+      range: [3600, 5600],
+      source: { name: "Akava – Tutkijoiden palkat", url: "https://www.akava.fi/palkat", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Fysiikan osaajia tarvitaan energia-, teknologia- ja tutkimussektoreilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/fyysikko", year: 2025 }
+    },
+    entry_roles: [
+      "Tutkija",
+      "Laboratorioinsinööri",
+      "Mallinnusasiantuntija"
+    ],
+    career_progression: [
+      "Erikoistutkija",
+      "Teknologiajohtaja",
+      "Yliopistoprofessori",
+      "Tutkimus- ja kehitysjohtaja"
+    ],
+    typical_employers: [
+      "Tutkimuslaitokset ja yliopistot",
+      "Energia- ja teollisuusyritykset",
+      "Ilmatieteen ja avaruustutkimuksen organisaatiot",
+      "Lääketeollisuus ja sairaalafyysikot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Professoriliitto / Yksityisen tutkimussektorin TES",
+    useful_links: [
+      { name: "Työmarkkinatori – Fyysikko", url: "https://tyomarkkinatori.fi/ammatit/fyysikko" },
+      { name: "Opintopolku – Fysiikka", url: "https://opintopolku.fi/konfo/fi/haku/fysiikka" }
+    ],
+    keywords: ["fysiikka", "tutkimus", "mallinnus", "energia", "kvantti"],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "matemaatikko",
+    category: "visionaari",
+    title_fi: "Matemaatikko",
+    title_en: "Mathematician",
+    short_description: "Matemaatikko kehittää malleja ja algoritmeja, jotka ratkaisevat ongelmia taloudessa, teknologiassa, vakuutusalalla ja tutkimuksessa. Työ yhdistää teoreettisen ajattelun ja käytännön sovellukset.",
+    main_tasks: [
+      "Matemaattisten mallien rakentaminen",
+      "Tilastollinen ja numeerinen analyysi",
+      "Optimointi- ja ennustemallien kehittäminen",
+      "Tulosten visualisointi ja kommunikointi",
+      "Monialaisten projektien yhteistyö"
+    ],
+    impact: [
+      "Auttaa yrityksiä tekemään dataohjattuja päätöksiä",
+      "Mahdollistaa riskienhallinnan ja hinnoittelun",
+      "Tukee teknologisten ja tieteellisten innovaatioiden syntyä"
+    ],
+    education_paths: [
+      "Yliopisto: Matematiikan kand + maisteri",
+      "Sovellettu matematiikka / data science",
+      "Tohtoriopinnot tutkimusuralla"
+    ],
+    qualification_or_license: "Ei laillistusta, sertifikaatit (esim. finanssimatematiikka) hyödyllisiä",
+    core_skills: [
+      "Analyytinen ajattelu",
+      "Tilastotiede",
+      "Ohjelmointi (Python, R, Julia)",
+      "Ongelmanratkaisu",
+      "Selkeä viestintä"
+    ],
+    tools_tech: [
+      "Matemaattiset ohjelmistot (Matlab, Mathematica)",
+      "Tilastolliset paketit",
+      "Data-analytiikka",
+      "Simulointialustat",
+      "Versionhallinta"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 6000],
+      source: { name: "Suomen Ekonomit – Analytiikka-ammatit", url: "https://www.ekonomit.fi/ansiotaso/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Data-analytiikan ja finanssialan tarpeet kasvattavat matemaatikkojen kysyntää.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/matemaatikko", year: 2025 }
+    },
+    entry_roles: [
+      "Matemaatikko",
+      "Data-analyytikko",
+      "Riskianalyytikko"
+    ],
+    career_progression: [
+      "Lead data scientist",
+      "Riskienhallintajohtaja",
+      "Tutkimusprofessori",
+      "Quant-asiantuntija"
+    ],
+    typical_employers: [
+      "Vakuutus- ja pankkisektori",
+      "Teknologia- ja peliyritykset",
+      "Tutkimuslaitokset ja yliopistot",
+      "Julkinen sektori ja Tilastokeskus"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Suomen Ekonomit / Julkisen alan TES",
+    useful_links: [
+      { name: "Työmarkkinatori – Matemaatikko", url: "https://tyomarkkinatori.fi/ammatit/matemaatikko" },
+      { name: "Opintopolku – Matematiikka", url: "https://opintopolku.fi/konfo/fi/haku/matematiikka" }
+    ],
+    keywords: ["matematiikka", "tilastot", "mallinnus", "optimointi", "data"],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "biologi",
+    category: "ympariston-puolustaja",
+    title_fi: "Biologi",
+    title_en: "Biologist",
+    short_description: "Biologi tutkii elämänmuotoja, ekosysteemejä ja niiden vuorovaikutuksia. Työ voi painottua ympäristönsuojeluun, tutkimukseen, biotekniikkaan tai koulutukseen.",
+    main_tasks: [
+      "Kenttä- ja laboratoriotutkimusten suunnittelu",
+      "Näytteiden keruu ja analyysi",
+      "Biodiversiteetin seuranta",
+      "Tutkimustulosten raportointi ja viestintä",
+      "Ympäristönsuojelun ja bioteknologian hankkeet"
+    ],
+    impact: [
+      "Auttaa suojelemaan luontoa ja luonnonvaroja",
+      "Kehittää uusia bioteknologisia ratkaisuja",
+      "Tarjoaa tietoa ilmastonmuutoksen vaikutuksista"
+    ],
+    education_paths: [
+      "Yliopisto: Biologian kand + maisteri",
+      "Erikoistuminen (esim. ekologia, genetiikka, meri- tai ympäristöbiologia)",
+      "Tohtoriopinnot tutkimusuralla"
+    ],
+    qualification_or_license: "Ei laillistusta, erikoisaloilla (esim. laboratoriot) turvallisuuskoulutus pakollinen",
+    core_skills: [
+      "Kenttätyö ja havaintomenetelmät",
+      "Laboratoriotekniikat",
+      "Tilastollinen analyysi",
+      "Projektinhallinta",
+      "Viestintä ja ympäristökasvatus"
+    ],
+    tools_tech: [
+      "Laboratoriolaitteet",
+      "GIS ja paikkatietotyökalut",
+      "DNA-sekvensointi",
+      "Kenttätyökalut",
+      "Data-analytiikka"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4700],
+      source: { name: "Luonnontieteilijät – Palkkatutkimus", url: "https://www.luonnontieteilijät.fi/palkat", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Luonnon monimuotoisuuden seuranta ja vihreä siirtymä lisäävät biologien kysyntää.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/biologi", year: 2025 }
+    },
+    entry_roles: [
+      "Biologi",
+      "Ympäristöasiantuntija",
+      "Laboratoriobiologi"
+    ],
+    career_progression: [
+      "Erikoistutkija",
+      "Ympäristöjohtaja",
+      "Biotekniikkayrittäjä",
+      "Museon tai luontokeskuksen johtaja"
+    ],
+    typical_employers: [
+      "Luonnonvara- ja ympäristöviranomaiset",
+      "Biotekniikka- ja lääkeyritykset",
+      "Tutkimuslaitokset",
+      "Kunnat ja järjestöt"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Luonnontieteilijät ry",
+    useful_links: [
+      { name: "Työmarkkinatori – Biologi", url: "https://tyomarkkinatori.fi/ammatit/biologi" },
+      { name: "Opintopolku – Biologia", url: "https://opintopolku.fi/konfo/fi/haku/biologia" }
+    ],
+    keywords: ["biologia", "ympäristö", "ekologia", "laboratorio", "biodiversiteetti"],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "elintarviketutkija",
+    category: "innovoija",
+    title_fi: "Elintarviketutkija",
+    title_en: "Food Scientist",
+    short_description: "Elintarviketutkija kehittää uusia ruoka- ja juomatuotteita, varmistaa turvallisuuden ja tutkii ravitsemusvaikutuksia. Työ yhdistää kemian, biologian ja kuluttajatutkimuksen.",
+    main_tasks: [
+      "Elintarvikkeiden koostumuksen ja prosessien tutkiminen",
+      "Tuotekehitys ja reseptien optimointi",
+      "Laadunvalvonta ja turvallisuustestit",
+      "Ravitsemus- ja kuluttajatutkimukset",
+      "Raportointi viranomaisille ja yhteistyö tuotekehitystiimien kanssa"
+    ],
+    impact: [
+      "Parantaa elintarvikkeiden turvallisuutta ja laatua",
+      "Kehittää terveellisiä ja kestäviä tuotteita",
+      "Tukee ruokainnovaatioita ja viennin kasvua"
+    ],
+    education_paths: [
+      "Yliopisto: Elintarviketiede (kand + maisteri)",
+      "Erikoistuminen (esim. ravitsemus, prosessitekniikka)",
+      "Tohtoriopinnot tutkimuspainotteisissa tehtävissä"
+    ],
+    qualification_or_license: "Elintarvikealan hygienia- ja omavalvontakoulutus",
+    core_skills: [
+      "Kemian ja biologian osaaminen",
+      "Laboratoriotekniikat",
+      "Sensorinen arviointi",
+      "Projektinhallinta",
+      "Viranomaisvaatimusten tuntemus"
+    ],
+    tools_tech: [
+      "Elintarvikelaboratorion laitteet",
+      "Kromatografia ja spektrometria",
+      "Laadunhallintajärjestelmät",
+      "Data-analytiikka",
+      "Pilottilinjat ja prosessointilaitteet"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4000,
+      range: [3400, 5200],
+      source: { name: "Elintarviketeollisuusliitto – Palkkakatsaus", url: "https://www.etl.fi/palkat", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kestävän ruokajärjestelmän kehittäminen lisää elintarviketutkijoiden tarvetta.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/elintarviketutkija", year: 2025 }
+    },
+    entry_roles: [
+      "Elintarviketutkija",
+      "Tuotekehitysasiantuntija",
+      "Laadunvalvoja"
+    ],
+    career_progression: [
+      "Tuotekehityspäällikkö",
+      "Laadunhallintajohtaja",
+      "Ravitsemusasiantuntija",
+      "Tutkimusjohtaja"
+    ],
+    typical_employers: [
+      "Elintarviketeollisuuden yritykset",
+      "Tutkimuslaitokset ja yliopistot",
+      "Hyvinvointialueiden ravitsemuspalvelut",
+      "Startupit ja innovaatiohankkeet"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Luonnontieteilijät ry / Elintarvikealan TES",
+    useful_links: [
+      { name: "Työmarkkinatori – Elintarviketutkija", url: "https://tyomarkkinatori.fi/ammatit/elintarviketutkija" },
+      { name: "Opintopolku – Elintarviketiede", url: "https://opintopolku.fi/konfo/fi/haku/elintarviketiede" }
+    ],
+    keywords: ["elintarvikkeet", "ravitsemus", "tuotekehitys", "turvallisuus", "innovaatio"],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "asianajaja",
+    category: "jarjestaja",
+    title_fi: "Asianajaja",
+    title_en: "Attorney",
+    short_description: "Asianajaja edustaa asiakkaita oikeudellisissa asioissa, laatii sopimuksia ja neuvoo yrityksiä ja yksityishenkilöitä. Työ vaatii vahvaa oikeudellista osaamista, eettisyyttä ja esiintymistaitoja.",
+    main_tasks: [
+      "Asiakkaiden oikeudellinen neuvonta",
+      "Sopimusten ja asiakirjojen laatiminen",
+      "Edustaminen oikeudenkäynneissä ja sovitteluissa",
+      "Oikeudellisten riskien analysointi",
+      "Verkostointi ja asiakashankinta"
+    ],
+    impact: [
+      "Turvaa asiakkaiden oikeuksia ja varallisuutta",
+      "Ratkaisee riitoja ja ehkäisee juridisia riskejä",
+      "Vahvistaa oikeusjärjestelmän toimivuutta"
+    ],
+    education_paths: [
+      "Yliopisto: Oikeustieteen maisteri (OTM)",
+      "Oikeusnotaarin tutkinto (ON), jos aloittaa kandidaattitasolta",
+      "Asianajajatutkinto ja Asianajajaliiton jäsenyys"
+    ],
+    qualification_or_license: "Asianajajaliiton jäsenyys ja vähintään 4 vuoden työkokemus",
+    core_skills: [
+      "Lainsäädännön syvällinen tuntemus",
+      "Neuvottelu- ja esiintymistaidot",
+      "Analyyttinen ajattelu",
+      "Luottamuksellisuus ja eettisyys",
+      "Kirjallinen viestintä"
+    ],
+    tools_tech: [
+      "Oikeudelliset tietokannat",
+      "Asiakirjahallintajärjestelmät",
+      "Sopimusautomaatio",
+      "Etäneuvottelutyökalut",
+      "Ajan- ja laskutuksenhallinta"
+    ],
+    languages_required: { fi: "C2", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 6200,
+      range: [4500, 9200],
+      source: { name: "Asianajajaliitto – Palkkatutkimus", url: "https://www.asianajajaliitto.fi/fi/asianajaja/palkkatutkimus", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Yritysjuridiikan, riidanratkaisun ja perheoikeuden kysyntä pitää asianajajien tarpeen vakaana.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/asianajaja", year: 2025 }
+    },
+    entry_roles: [
+      "Asianajaja",
+      "Associate",
+      "Yritysjuristi"
+    ],
+    career_progression: [
+      "Partner",
+      "Yrityksen lakiasiainjohtaja",
+      "Välitys- ja sovittelupalveluiden asiantuntija",
+      "Tuomariura (täydentävien tutkintojen kautta)"
+    ],
+    typical_employers: [
+      "Asianajotoimistot",
+      "Yritysten lakiosastot",
+      "Kansainväliset organisaatiot",
+      "Konsultointiyritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Asianajajaliitto",
+    useful_links: [
+      { name: "Työmarkkinatori – Asianajaja", url: "https://tyomarkkinatori.fi/ammatit/asianajaja" },
+      { name: "Opintopolku – Oikeustiede", url: "https://opintopolku.fi/konfo/fi/haku/oikeustiede" }
+    ],
+    keywords: ["juridiikka", "oikeus", "sopimukset", "riidanratkaisu", "asiakastyö"],
+    study_length_estimate_months: 72
+  },
+  {
+    id: "oikeusneuvos",
+    category: "johtaja",
+    title_fi: "Oikeusneuvos",
+    title_en: "Supreme Court Justice",
+    short_description: "Oikeusneuvos toimii korkeimmassa oikeudessa ratkoen ennakkopäätösasioita, valvoen oikeudenmukaisuuden toteutumista ja kehittäen oikeuskäytäntöä.",
+    main_tasks: [
+      "Valituslupien käsittely ja ratkaisujen valmistelu",
+      "Oikeudellisten ennakkopäätösten tekeminen",
+      "Lainsäädännön tulkinnan yhtenäistäminen",
+      "Ratkaisujen perustelujen laatiminen",
+      "Osallistuminen oikeudenhallinnon kehittämiseen"
+    ],
+    impact: [
+      "Ohjaa koko oikeusjärjestelmän linjaa",
+      "Turvaa oikeusturvan viimeisenä muutoksenhakutuomioistuimena",
+      "Vaikuttaa yhteiskunnan oikeudenmukaisuuteen"
+    ],
+    education_paths: [
+      "OTM + pitkä kokemus (tuomioistuin, asianajaja, syyttäjä)",
+      "Tuomioistuinharjoittelu ja varatuomari",
+      "Laaja oikeudellinen asiantuntemus"
+    ],
+    qualification_or_license: "Tasavallan presidentin nimitys valtioneuvoston esityksestä",
+    core_skills: [
+      "Syvällinen oikeudellinen analyysi",
+      "Eettinen ja riippumaton päätöksenteko",
+      "Kirjallinen ja suullinen perustelu",
+      "Yhteiskunnan ja lainsäädännön tuntemus",
+      "Valtionhallinnon yhteistyö"
+    ],
+    tools_tech: [
+      "Oikeuskäytännön tietokannat",
+      "Sähköinen asiankäsittely",
+      "Laaja kirjasto- ja tutkimusinfra",
+      "Salassapidettävät tietojärjestelmät"
+    ],
+    languages_required: { fi: "C2", sv: "B2", en: "B2" },
+    salary_eur_month: {
+      median: 9000,
+      range: [8500, 9600],
+      source: { name: "Valtiokonttori – Valtion palkat", url: "https://www.valtiokonttori.fi/palkkatilastot/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Virkoja on rajallinen määrä, täytetään eläköitymisen myötä erittäin kokeneilla juristeilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/oikeusneuvos", year: 2025 }
+    },
+    entry_roles: [
+      "Oikeusneuvos",
+      "Korkeimman oikeuden jäsen"
+    ],
+    career_progression: [
+      "Korkeimman oikeuden puheenjohtaja",
+      "Kansainvälinen tuomioistuin",
+      "Oikeusministeriön asiantuntijatehtävät"
+    ],
+    typical_employers: [
+      "Korkein oikeus",
+      "Korkein hallinto-oikeus (vast.)",
+      "Kansainväliset tuomioistuimet"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tuomariliitto",
+    useful_links: [
+      { name: "Työmarkkinatori – Oikeusneuvos", url: "https://tyomarkkinatori.fi/ammatit/oikeusneuvos" }
+    ],
+    keywords: ["tuomari", "ennakkopäätös", "oikeusjärjestelmä", "lainsäädäntö", "johtaminen"],
+    study_length_estimate_months: 180
+  },
+  {
+    id: "notaari",
+    category: "jarjestaja",
+    title_fi: "Notaari",
+    title_en: "Law Clerk",
+    short_description: "Notaari toimii tuomioistuimissa ja viranomaisissa oikeudellisena valmistelijana. Työ on hyvää pohjaa juridiikan uralle ja kehittää oikeudellista analyysia ja asiakirjahallintaa.",
+    main_tasks: [
+      "Oikeus- ja hallintoasioiden valmistelu",
+      "Asiakirjojen laadinta ja tarkastus",
+      "Oikeuskäytännön ja lainsäädännön taustatyö",
+      "Istuntoihin liittyvät järjestelyt",
+      "Asiakaspalvelu ja tiedusteluihin vastaaminen"
+    ],
+    impact: [
+      "Varmistaa tuomioistuinkäsittelyn sujuvuuden",
+      "Parantaa päätösten laatua huolellisella taustatyöllä",
+      "Tarjoaa kansalaisille oikeusturvaa"
+    ],
+    education_paths: [
+      "Oikeusnotaarin tutkinto (ON)",
+      "Tuomioistuinharjoittelu (varatuomari)",
+      "Täydennyskoulutus julkishallinnon juridiikassa"
+    ],
+    qualification_or_license: "Oikeusnotaarin tutkinto riittää useimpiin notaari- ja esittelijätehtäviin",
+    core_skills: [
+      "Oikeudellinen kirjoittaminen",
+      "Tarkkuus ja organisointi",
+      "Tietojärjestelmien hallinta",
+      "Palveluhenkisyys",
+      "Monialainen yhteistyö"
+    ],
+    tools_tech: [
+      "Tuomioistuinten asianhallintajärjestelmät",
+      "Oikeustieteen tietokannat",
+      "Asiakirjahallinta",
+      "Sähköinen arkistointi",
+      "Turvaviestintä"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3600,
+      range: [3200, 4300],
+      source: { name: "Valtiokonttori – Oikeushallinto", url: "https://www.valtiokonttori.fi/palkkatilastot/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Tuomioistuimet ja viranomaiset tarvitsevat jatkuvasti notaaritason valmistelijoita.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/notaari", year: 2025 }
+    },
+    entry_roles: [
+      "Notaari",
+      "Esittelijä",
+      "Hallinnollinen lakimies"
+    ],
+    career_progression: [
+      "Tuomioistuinsihteeri",
+      "Syyttäjä / asianajaja (lisäopinnoilla)",
+      "Lainsäädäntöneuvos",
+      "Oikeusministeriön asiantuntija"
+    ],
+    typical_employers: [
+      "Tuomioistuimet",
+      "Oikeusministeriö ja aluehallinto",
+      "Syyttäjälaitos",
+      "Kunnat ja valtion virastot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Julkisalan koulutettujen neuvottelujärjestö (JUKO)",
+    useful_links: [
+      { name: "Työmarkkinatori – Notaari", url: "https://tyomarkkinatori.fi/ammatit/notaari" },
+      { name: "Opintopolku – Oikeustiede", url: "https://opintopolku.fi/konfo/fi/haku/oikeustiede" }
+    ],
+    keywords: ["oikeus", "tuomioistuin", "valmistelu", "asiakirjat", "julkishallinto"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "kustannustoimittaja",
+    category: "jarjestaja",
+    title_fi: "Kustannustoimittaja",
+    title_en: "Commissioning Editor",
+    short_description: "Kustannustoimittaja ohjaa kirjojen ja julkaisujen sisällöllistä kehitystä, editoi käsikirjoituksia ja vastaa aikatauluista. Työ vaatii kielenhallintaa, projektinhallintaa ja kirjallisuuden tuntemusta.",
+    main_tasks: [
+      "Käsikirjoitusten arviointi ja valinta",
+      "Sisällön editointi ja kieliasun hiominen",
+      "Kirjoittajien ja kääntäjien ohjaus",
+      "Julkaisuaikataulujen ja budjetin hallinta",
+      "Yhteistyö markkinoinnin ja jakelun kanssa"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaiden teosten julkaisemisen",
+      "Vaikuttaa kulttuuriin ja yhteiskunnalliseen keskusteluun",
+      "Auttaa kirjoittajia kehittämään teoksiaan"
+    ],
+    education_paths: [
+      "AMK/Yliopisto: Viestintä, kirjallisuus, suomen kieli",
+      "Kustannusalan täydennyskoulutus",
+      "Kääntäjän tai toimittajan opinnot"
+    ],
+    qualification_or_license: "Ei laillistusta, vahva kieli- ja kirjallisuusosaaminen tärkeää",
+    core_skills: [
+      "Kielen ja tyylin hallinta",
+      "Projektinhallinta",
+      "Kirjallisuus- ja kulttuurituntemus",
+      "Neuvottelutaidot",
+      "Saavutettavuus- ja tietosuojavaatimusten huomiointi"
+    ],
+    tools_tech: [
+      "Julkaisun hallintajärjestelmät",
+      "Tekstinkäsittely ja versionhallinta",
+      "Etäyhteistyötyökalut",
+      "Tyylintarkistus- ja kielentarkistusohjelmat",
+      "Digitaalisen julkaisemisen alustat"
+    ],
+    languages_required: { fi: "C2", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3400,
+      range: [3000, 4200],
+      source: { name: "Pro – Kustannusalan palkat", url: "https://www.proliitto.fi/palkat/kustannusala", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Painetun ja digitaalisen julkaisutoiminnan yhdistyminen pitää kustannustoimittajien tarpeen vakaana.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/kustannustoimittaja", year: 2025 }
+    },
+    entry_roles: [
+      "Kustannustoimittaja",
+      "Toimittaja",
+      "Projektikoordinaattori"
+    ],
+    career_progression: [
+      "Päätoimittaja",
+      "Julkaisupäällikkö",
+      "Kirjallisuusagentti",
+      "Oma kustannusyhtiö"
+    ],
+    typical_employers: [
+      "Kustantamot",
+      "Media- ja oppikirjayhtiöt",
+      "Hallintojulkaisut",
+      "Järjestöjen viestintä"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Pro / Viestintäalan TES",
+    useful_links: [
+      { name: "Työmarkkinatori – Kustannustoimittaja", url: "https://tyomarkkinatori.fi/ammatit/kustannustoimittaja" },
+      { name: "Opintopolku – Julkaisu- ja viestintäala", url: "https://opintopolku.fi/konfo/fi/haku/julkaisu" }
+    ],
+    keywords: ["kustannustoiminta", "kirjallisuus", "editointi", "projektinhallinta", "julkaisu"],
+    study_length_estimate_months: 48
   },
 {
     id: "luokanopettaja",
@@ -7639,7 +9509,7 @@ export const careersData: CareerFI[] = [
     ],
   },
 {
-    id: "viestintäpäällikkö",
+    id: "viestintapaallikko",
     category: "johtaja",
     title_fi: "Viestintäpäällikkö",
     title_en: "Communications Manager",
@@ -9371,7 +11241,7 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 24
   },
 {
-    id: "hotellityöntekijä",
+    id: "hotellityontekija",
     category: "auttaja",
     title_fi: "Hotellityöntekijä",
     title_en: "Hotel Worker",
@@ -10055,7 +11925,7 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 60
   },
 {
-    id: "lääkäri",
+    id: "laakari",
     category: "auttaja",
     title_fi: "Lääkäri",
     title_en: "Doctor",
@@ -10127,7 +11997,7 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 72
   },
 {
-    id: "hammaslääkäri",
+    id: "hammaslaakari",
     category: "auttaja",
     title_fi: "Hammaslääkäri",
     title_en: "Dentist",
@@ -10198,7 +12068,7 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 60
   },
 {
-    id: "eläinlääkäri",
+    id: "elainlaakari",
     category: "auttaja",
     title_fi: "Eläinlääkäri",
     title_en: "Veterinarian",
@@ -16114,6 +17984,763 @@ export const careersData: CareerFI[] = [
     ],
     keywords: ["ääniteknikko", "ääni", "miksaaminen", "masterointi", "media"],
     study_length_estimate_months: 42
+  }
+  ,
+  {
+    id: "asiakaspalveluvastaava",
+    category: "johtaja",
+    title_fi: "Asiakaspalveluvastaava",
+    title_en: "Customer Service Manager",
+    short_description: "Asiakaspalveluvastaava johtaa asiakaspalvelutiimiä, kehittää palveluprosesseja ja varmistaa asiakkaiden tyytyväisyyden yrityksen kanavissa.",
+    main_tasks: [
+      "Tiimin ohjaaminen ja rekrytointi",
+      "Asiakaspalvelun mittareiden seuranta ja raportointi",
+      "Palveluprosessien optimointi ja automaatio",
+      "Vaativien asiakastapausten ratkaiseminen",
+      "Yhteistyö myynnin, tuotannon ja tuotekehityksen kanssa"
+    ],
+    impact: [
+      "Parantaa asiakkaiden luottamusta ja sitoutumista",
+      "Tunnistaa palvelun kehityskohteet ajoissa",
+      "Auttaa yritystä kasvamaan hallitusti"
+    ],
+    education_paths: [
+      "AMK: Liiketalouden tradenomi (palveluliiketoiminta)",
+      "AMK: Myynti ja markkinointi",
+      "Yliopisto: Kauppatieteiden kandidaatti",
+      "Täydennyskoulutus: Customer experience -johtaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Tiimijohtaminen",
+      "Asiakaskokemus",
+      "Data-analyysi",
+      "Viestintä",
+      "Kriisinhallinta"
+    ],
+    tools_tech: [
+      "CRM-järjestelmät (Salesforce, HubSpot)",
+      "Palvelunhallintatyökalut (Zendesk, Freshdesk)",
+      "BI-raportointi (Power BI, Looker)",
+      "Palautekanavat ja NPS-mittarit",
+      "Yhteistyöalustat (Teams, Slack)"
+    ],
+    languages_required: { fi: "B2", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3900,
+      range: [3200, 5200],
+      source: {
+        name: "Palkkadata – Asiakaspalvelupäällikkö",
+        url: "https://www.palkkadata.fi/ammatti/asiakaspalvelupaallikko",
+        year: 2024
+      }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Asiakaskokemuksen merkitys kasvaa ja osaavia esihenkilöitä tarvitaan sekä digikanavissa että fyysisissä palvelupisteissä.",
+      source: {
+        name: "Työmarkkinatori – Asiakaspalvelun esihenkilöt",
+        url: "https://tyomarkkinatori.fi/ammattilistat/asiakaspalvelun-esihenkilot",
+        year: 2024
+      }
+    },
+    entry_roles: [
+      "Asiakaspalvelija",
+      "Tiiminvetäjä",
+      "Customer success specialist"
+    ],
+    career_progression: [
+      "Asiakaspalveluvastaava",
+      "Asiakaskokemuksen kehityspäällikkö",
+      "Palvelujohtaja",
+      "Customer Success Director"
+    ],
+    typical_employers: [
+      "Verkkokaupat",
+      "Finanssialan yritykset",
+      "Teknologiayritykset",
+      "Palvelukeskukset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Palvelualojen TES",
+    useful_links: [
+      { name: "Työmarkkinatori – Asiakaspalvelun esihenkilöt", url: "https://tyomarkkinatori.fi/ammattilistat/asiakaspalvelun-esihenkilot" },
+      { name: "Opintopolku – Liiketalouden koulutus", url: "https://opintopolku.fi/konfo/fi/haku/liiketalouden%20tradenomi" }
+    ],
+    keywords: ["asiakaskokemus", "customer success", "palvelujohtaminen", "CRM", "tiiminvetäjä"],
+    study_length_estimate_months: 36
+  },
+  {
+    id: "palvelumuotoilija",
+    category: "johtaja",
+    title_fi: "Palvelumuotoilija",
+    title_en: "Service Designer",
+    short_description: "Palvelumuotoilija suunnittelee ja kehittää palvelukokemuksia tutkimalla asiakkaiden tarpeita, fasilitoimalla työpajoja ja mallintamalla palvelupolkuja.",
+    main_tasks: [
+      "Asiakastutkimusten toteutus",
+      "Palvelupolkujen ja blueprintien laatiminen",
+      "Ideointien ja prototyyppien fasilitointi",
+      "Palvelukonseptien pilotointi",
+      "Vaikutusten mittaaminen ja raportointi"
+    ],
+    impact: [
+      "Parantaa asiakkaiden kokemusta ja sujuvuutta",
+      "Auttaa yrityksiä erottumaan kilpailussa",
+      "Vähentää turhaa työtä ja kustannuksia"
+    ],
+    education_paths: [
+      "AMK: Palvelumuotoilun tradenomi (esim. LAB AMK)",
+      "AMK: Muotoilun koulutusohjelma",
+      "Yliopisto: Muotoilun kandidaatti",
+      "Täydennyskoulutus: Service Design -opinnot (Metropolia)"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Design-ajattelu",
+      "Asiakastutkimus",
+      "Workshop-fasilitointi",
+      "Prototypointi",
+      "Visuaalinen viestintä"
+    ],
+    tools_tech: [
+      "Käyttökokemustyökalut (Figma, Sketch)",
+      "Yhteistyöalustat (Miro, Mural)",
+      "Journey mapping -työkalut",
+      "Palautteen analytiikka",
+      "Adobe Creative Cloud"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3400, 5800],
+      source: {
+        name: "Palkkadata – Palvelumuotoilija",
+        url: "https://www.palkkadata.fi/ammatti/palvelumuotoilija",
+        year: 2024
+      }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitalisaatio ja julkisten palveluiden uudistaminen lisäävät palvelumuotoilijoiden kysyntää.",
+      source: {
+        name: "Työmarkkinatori – Palvelumuotoilijat",
+        url: "https://tyomarkkinatori.fi/ammattilistat/palvelumuotoilijat",
+        year: 2024
+      }
+    },
+    entry_roles: [
+      "Junior palvelumuotoilija",
+      "UX-suunnittelija",
+      "Asiakaskokemusanalyytikko"
+    ],
+    career_progression: [
+      "Palvelumuotoilija",
+      "Lead Service Designer",
+      "Asiakaskokemuksen johtaja",
+      "Liiketoiminnan kehitysjohtaja"
+    ],
+    typical_employers: [
+      "Konsulttiyritykset",
+      "Julkiset palveluorganisaatiot",
+      "Finanssi- ja terveysalan yritykset",
+      "Digitoimistot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Suomen Muotoilijat Ornamo",
+    useful_links: [
+      { name: "Ornamo – Palvelumuotoilijat", url: "https://www.ornamo.fi/" },
+      { name: "Opintopolku – Palvelumuotoilu", url: "https://opintopolku.fi/konfo/fi/haku/palvelumuotoilu" }
+    ],
+    keywords: ["service design", "asiakaskokemus", "design-ajattelu", "palvelupolku", "kokeilukulttuuri"],
+    study_length_estimate_months: 36
+  },
+  {
+    id: "lattiasuunnittelija",
+    category: "rakentaja",
+    title_fi: "Lattiasuunnittelija",
+    title_en: "Floor Designer",
+    short_description: "Lattiasuunnittelija suunnittelee tilojen lattiapinnat, valitsee materiaalit ja koordinoi toteutuksen yhteistyössä rakennus- ja sisustusalan ammattilaisten kanssa.",
+    main_tasks: [
+      "Materiaalivaihtoehtojen kartoitus ja suositukset",
+      "Lattiapintojen mitoitus ja CAD-suunnittelu",
+      "Työmaiden ohjeistus ja aikataulutus",
+      "Kustannus- ja materiaalilaskelmat",
+      "Yhteistyö sisustusarkkitehtien ja urakoitsijoiden kanssa"
+    ],
+    impact: [
+      "Parantaa tilojen toimivuutta ja turvallisuutta",
+      "Vaikuttaa rakennusten energiatehokkuuteen ja elinkaareen",
+      "Auttaa asiakkaita tekemään kestäviä valintoja"
+    ],
+    education_paths: [
+      "Toinen aste: Sisustusalan perustutkinto",
+      "AMK: Sisustusarkkitehtuuri",
+      "AMK: Talotekniikka (sisäympäristöt)",
+      "Täydennyskoulutus: BIM- ja CAD-ohjelmat"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Materiaalituntemus",
+      "CAD-suunnittelu",
+      "Projektointi",
+      "Asiakaskonsultointi",
+      "Tilasuunnittelu"
+    ],
+    tools_tech: [
+      "AutoCAD",
+      "Revit",
+      "SketchUp",
+      "Materiaalikirjastot",
+      "Projektinhallintajärjestelmät"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3400,
+      range: [2800, 4800],
+      source: {
+        name: "Palkkadata – Sisustusarkkitehti",
+        url: "https://www.palkkadata.fi/ammatti/sisustusarkkitehti",
+        year: 2024
+      }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Korjausrakentaminen ja tilojen muunneltavuus ylläpitävät lattiasuunnittelun kysyntää.",
+      source: {
+        name: "Työmarkkinatori – Sisustusarkkitehdit",
+        url: "https://tyomarkkinatori.fi/ammattilistat/sisustusarkkitehdit",
+        year: 2024
+      }
+    },
+    entry_roles: [
+      "Sisustussuunnittelijan assistentti",
+      "Myymäläsuunnittelija",
+      "Materiaaliesittelijä"
+    ],
+    career_progression: [
+      "Lattiasuunnittelija",
+      "Projektipäällikkö (sisustus)",
+      "Sisustusarkkitehti",
+      "Konseptisuunnittelun johtaja"
+    ],
+    typical_employers: [
+      "Rakennusliikkeet",
+      "Sisustusliikkeet",
+      "Lattiapäällystysyritykset",
+      "Arkkitehtitoimistot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Suomen Sisustusarkkitehdit SIO",
+    useful_links: [
+      { name: "Sisustusarkkitehdit SIO", url: "https://www.sisustusarkkitehdit.fi/" },
+      { name: "Opintopolku – Sisustusalan perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/sisustusalan%20perustutkinto" }
+    ],
+    keywords: ["lattiapinnat", "sisustussuunnittelu", "materiaalisuunnittelu", "CAD", "tilaratkaisut"],
+    study_length_estimate_months: 36
+  },
+  {
+    id: "rakennusmateriaalimyyja",
+    category: "rakentaja",
+    title_fi: "Rakennusmateriaalimyyjä",
+    title_en: "Construction Materials Salesperson",
+    short_description: "Rakennusmateriaalimyyjä neuvoo rakentajia ja remontoijia, hinnoittelee toimitukset ja huolehtii varaston saatavuudesta rautakaupan tai tukun palveluksessa.",
+    main_tasks: [
+      "Asiakkaiden tarpeiden kartoittaminen ja tarjousten tekeminen",
+      "Materiaalien ja tuotteiden esittely",
+      "Varaston ja tilausten hallinta",
+      "Toimitusten koordinointi logistiikan kanssa",
+      "Yhteistyö valmistajien ja edustajien kanssa"
+    ],
+    impact: [
+      "Varmistaa oikeat materiaalit oikeaan aikaan",
+      "Tukee rakentamisen laatua ja turvallisuutta",
+      "Auttaa asiakkaita löytämään kustannustehokkaat ratkaisut"
+    ],
+    education_paths: [
+      "Toinen aste: Myynnin ja markkinoinnin perustutkinto",
+      "Toinen aste: Rakennusalan perustutkinto + myyntikoulutus",
+      "AMK: Liiketoiminnan logistiikka",
+      "Työpaikkakoulutus: Tuote- ja materiaalikoulutukset"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Materiaalituntemus",
+      "Ratkaisumyynti",
+      "Laskenta",
+      "Varastonhallinta",
+      "Asiakaspalvelu"
+    ],
+    tools_tech: [
+      "ERP-järjestelmät (SAP, Visma)",
+      "Hinnoittelutyökalut",
+      "Logistiikan seurantajärjestelmät",
+      "Microsoft Office",
+      "Verkkokauppa-alustat"
+    ],
+    languages_required: { fi: "B2", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3100,
+      range: [2600, 3800],
+      source: {
+        name: "Palkkadata – Rakennustarvikemyyjä",
+        url: "https://www.palkkadata.fi/ammatti/rakennustarvikemyyja",
+        year: 2024
+      }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Rakentamisen volyymi vaihtelee, mutta ammattimainen tuoteosaaminen on kilpailuetu rautakaupoissa.",
+      source: {
+        name: "Työmarkkinatori – Rakennusalan myyjät",
+        url: "https://tyomarkkinatori.fi/ammattilistat/rakennusalan-myyjat",
+        year: 2024
+      }
+    },
+    entry_roles: [
+      "Myyjä (rautakauppa)",
+      "Varastomyyjä",
+      "Rakennustarvikkeiden tuoteasiantuntija"
+    ],
+    career_progression: [
+      "Rakennusmateriaalimyyjä",
+      "Avainasiakaspäällikkö (rakennusala)",
+      "Myymäläpäällikkö",
+      "Aluepäällikkö"
+    ],
+    typical_employers: [
+      "Rautakauppaketjut",
+      "Rakennustarviketukut",
+      "Rakennusliikkeiden hankintatiimit",
+      "Verkkokaupat"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    union_or_CBA: "Kaupan TES",
+    useful_links: [
+      { name: "Kaupan liitto", url: "https://www.kauppa.fi/" },
+      { name: "Opintopolku – Myynnin ja markkinoinnin perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/myynnin%20ja%20markkinoinnin%20perustutkinto" }
+    ],
+    keywords: ["rakennustarvikkeet", "myynti", "asiakaspalvelu", "tarjouslaskenta", "logistiikka"],
+    study_length_estimate_months: 30
+  },
+  {
+    id: "rautakauppias",
+    category: "jarjestaja",
+    title_fi: "Rautakauppias",
+    title_en: "Hardware Store Manager",
+    short_description: "Rautakauppias vastaa rautakaupan yrittäjänä tai myymäläpäällikkönä myymälän kannattavuudesta, henkilöstöstä ja valikoimasta.",
+    main_tasks: [
+      "Myymälän toiminnan ja talouden johtaminen",
+      "Henkilöstön rekrytointi ja työvuorosuunnittelu",
+      "Valikoiman ja sesonkien suunnittelu",
+      "Paikallisen markkinoinnin toteutus",
+      "Yhteistyö tavarantoimittajien ja ketjun kanssa"
+    ],
+    impact: [
+      "Palvelee rakentajia ja kuluttajia paikallisesti",
+      "Pitää yllä alueen rakennus- ja remontointipalveluita",
+      "Työllistää oman yhteisön nuoria ja aikuisia"
+    ],
+    education_paths: [
+      "Toinen aste: Liiketoiminnan perustutkinto",
+      "AMK: Liiketalouden tradenomi (kaupan ala)",
+      "Yrittäjäkoulutus",
+      "Ketjukoulutukset rautakaupan toimintaan"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Yrittäjyys",
+      "Talouden hallinta",
+      "Henkilöstöjohtaminen",
+      "Asiakaspalvelu",
+      "Hankinta"
+    ],
+    tools_tech: [
+      "ERP- ja kassajärjestelmät",
+      "Varastonhallintaohjelmistot",
+      "Myyntianalytiikka",
+      "Markkinoinnin automaatio",
+      "HR- ja työvuorotyökalut"
+    ],
+    languages_required: { fi: "B2", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 4100,
+      range: [3000, 6000],
+      source: {
+        name: "Palkkadata – Myymäläpäällikkö (rautakauppa)",
+        url: "https://www.palkkadata.fi/ammatti/myymalapaallikko",
+        year: 2024
+      }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Rautakaupoissa tarvitaan laajaa tuotetuntemusta ja kustannusten hallintaa, vaikka verkkokauppa kasvaa.",
+      source: {
+        name: "Kaupan liitto – Rautakaupan näkymät",
+        url: "https://www.kauppa.fi/uutishuone/rautakauppa/",
+        year: 2024
+      }
+    },
+    entry_roles: [
+      "Myyjä rautakaupassa",
+      "Osastonhoitaja",
+      "Avainasiakaspäällikkö"
+    ],
+    career_progression: [
+      "Rautakauppias",
+      "Ketjuyrittäjä",
+      "Aluepäällikkö",
+      "Ketjujohtaja"
+    ],
+    typical_employers: [
+      "Rautakauppaketjut",
+      "Itsenäiset rautakaupat",
+      "Verkkorautakaupat",
+      "Rakennusalan jälleenmyynti"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
+    union_or_CBA: "Kaupan TES",
+    useful_links: [
+      { name: "K-Rauta – Yrittäjyys", url: "https://www.kesko.fi/ketjut/k-rauta/" },
+      { name: "Yrittäjät – Kaupan ala", url: "https://yrittajat.fi/yrittajan-abc/kaupan-ala/" }
+    ],
+    keywords: ["rautakauppa", "kaupan johto", "yrittäjyys", "hankinta", "myymälä"],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "biokaasuteknikko",
+    category: "ympariston-puolustaja",
+    title_fi: "Biokaasuteknikko",
+    title_en: "Biogas Technician",
+    short_description: "Biokaasuteknikko operoi ja ylläpitää biokaasulaitoksia, valvoo prosessin turvallisuutta ja optimoi energian tuotantoa uusiutuvista raaka-aineista.",
+    main_tasks: [
+      "Biokaasuprosessin valvonta ja ohjaus",
+      "Laitteiden huolto ja kunnossapito",
+      "Turvallisuus- ja ympäristömittausten tekeminen",
+      "Prosessidatan analysointi ja raportointi",
+      "Yhteistyö maatalous- ja jätehuoltopartnereiden kanssa"
+    ],
+    impact: [
+      "Lisää uusiutuvan energian tuotantoa",
+      "Hyödyntää jätteitä ja sivuvirtoja",
+      "Vähentää kasvihuonekaasupäästöjä"
+    ],
+    education_paths: [
+      "AMK: Energia- ja ympäristötekniikka",
+      "Toinen aste: Prosessiteollisuuden perustutkinto",
+      "Täydennyskoulutus: Biokaasulaitosoperaattori",
+      "YAMK: Kestävä kehitys ja biotalous"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Prosessitekniikka",
+      "Mittaus ja automaatio",
+      "Turvallisuuskoulutus",
+      "Analytiikka",
+      "Kunnossapito"
+    ],
+    tools_tech: [
+      "SCADA- ja automaatiojärjestelmät",
+      "Prosessimittarit",
+      "Kaasun puhdistuslaitteet",
+      "Laboratoriolaitteet",
+      "Huoltokirjaohjelmistot"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3400,
+      range: [2900, 4300],
+      source: {
+        name: "Palkkadata – Prosessinhoitaja",
+        url: "https://www.palkkadata.fi/ammatti/prosessinhoitaja",
+        year: 2024
+      }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Suomen biokaasuohjelma ja uudet laitokset lisäävät osaavan teknisen henkilöstön tarvetta.",
+      source: {
+        name: "Työmarkkinatori – Prosessinhoitajat, biotalous",
+        url: "https://tyomarkkinatori.fi/ammattilistat/prosessinhoitajat-biotalous",
+        year: 2024
+      }
+    },
+    entry_roles: [
+      "Prosessinhoitaja harjoittelija",
+      "Laborantti (biokaasu)",
+      "Kunnossapitoasentaja"
+    ],
+    career_progression: [
+      "Biokaasuteknikko",
+      "Biokaasulaitoksen työnjohtaja",
+      "Prosessipäällikkö",
+      "Energiatuotannon asiantuntija"
+    ],
+    typical_employers: [
+      "Energiayhtiöt",
+      "Maatilojen biokaasulaitokset",
+      "Jätehuoltoyhtiöt",
+      "Teolliset biokaasulaitokset"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    union_or_CBA: "Prosessiteollisuuden TES",
+    useful_links: [
+      { name: "Suomen Biokaasuyhdistys", url: "https://www.biokaasuyhdistys.fi/" },
+      { name: "Opintopolku – Energia- ja ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/energia-%20ja%20ympäristötekniikka" }
+    ],
+    keywords: ["biokaasu", "uusiutuva energia", "prosessitekniikka", "kestävä kehitys", "ympäristötekniikka"],
+    study_length_estimate_months: 36
+  },
+  {
+    id: "ymparisto-ohjelmoija",
+    category: "ympariston-puolustaja",
+    title_fi: "Ympäristöohjelmoija",
+    title_en: "Environmental Software Developer",
+    short_description: "Ympäristöohjelmoija kehittää ohjelmistoja ja datamalleja, jotka seuraavat ympäristövaikutuksia, tukevat päästöjen vähentämistä ja visualisoivat päätöksenteon kannalta tärkeää tietoa.",
+    main_tasks: [
+      "Ympäristödatan keruu- ja integraatioratkaisujen rakentaminen",
+      "Analytiikan ja simulointien toteutus",
+      "Visualisointien ja raporttien kehittäminen",
+      "Sensoriverkkojen ja IoT-ratkaisujen integrointi",
+      "Yhteistyö tutkijoiden ja viranomaisten kanssa"
+    ],
+    impact: [
+      "Auttaa organisaatioita seuraamaan ilmasto- ja ympäristötavoitteita",
+      "Mahdollistaa dataan perustuvan päätöksenteon",
+      "Nopeuttaa kestävien ratkaisujen käyttöönottoa"
+    ],
+    education_paths: [
+      "Yliopisto: Ympäristötekniikka + ohjelmistokehitys",
+      "AMK: Tietojenkäsittely (data-analytiikka)",
+      "AMK: Smart sustainable systems",
+      "Täydennyskoulutus: Ympäristödatan analytiikka"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Ohjelmistokehitys (Python, R)",
+      "Ympäristödatan analyysi",
+      "GIS-osaaminen",
+      "Pilvipalvelut",
+      "Sidosryhmäyhteistyö"
+    ],
+    tools_tech: [
+      "Python ja Pandas",
+      "GIS-ohjelmistot (QGIS)",
+      "IoT-sensorit",
+      "Power BI ja Tableau",
+      "Pilvipalvelut (AWS, Azure, GCP)"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4500,
+      range: [3500, 6200],
+      source: {
+        name: "Palkkadata – Data-analyytikko",
+        url: "https://www.palkkadata.fi/ammatti/data-analyytikko",
+        year: 2024
+      }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Ilmastoraportointi ja EU-sääntely lisäävät ympäristödatan ja analytiikan osaajien tarvetta.",
+      source: {
+        name: "Työmarkkinatori – Datanalyytikot",
+        url: "https://tyomarkkinatori.fi/ammattilistat/datanalyytikot",
+        year: 2024
+      }
+    },
+    entry_roles: [
+      "Junior data-analyytikko",
+      "Ohjelmistokehittäjä (ympäristö)",
+      "GIS-koordinaattori"
+    ],
+    career_progression: [
+      "Ympäristöohjelmoija",
+      "Lead data scientist (ympäristö)",
+      "Ympäristödata-asiantuntija",
+      "Kestävän kehityksen konsultti"
+    ],
+    typical_employers: [
+      "Konsulttitoimistot",
+      "Kunnat ja kaupungit",
+      "Energia- ja ympäristöalan yritykset",
+      "Tutkimuslaitokset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tietoala ry",
+    useful_links: [
+      { name: "Suomen ympäristökeskus SYKE", url: "https://www.syke.fi/fi-FI" },
+      { name: "Opintopolku – Ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/ymparistotekniikka" }
+    ],
+    keywords: ["ympäristodata", "ohjelmistokehitys", "ilmastotyö", "GIS", "data-analytiikka"],
+    study_length_estimate_months: 36
+  },
+  {
+    id: "kuvausassistentti",
+    category: "luova",
+    title_fi: "Kuvausassistentti",
+    title_en: "Camera Assistant",
+    short_description: "Kuvausassistentti tukee kuvaajaa elokuva- ja mainostuotannoissa huolehtimalla kalustosta, logistiikasta ja kuvauksen sujuvuudesta.",
+    main_tasks: [
+      "Kamerakaluston kokoaminen ja huolto",
+      "Kaapelien ja valojen asettelu",
+      "Kuvauspaikan valmistelu ja turvallisuuden varmistaminen",
+      "Kuvauskaluston logistiikan koordinointi",
+      "Yhteistyö kuvaajan ja tuotannon kanssa"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaan kuvauksen tiukoissa aikatauluissa",
+      "Huolehtii turvallisesta työympäristöstä kuvauksissa",
+      "Tukee luovan vision toteutumista"
+    ],
+    education_paths: [
+      "Toinen aste: Audiovisuaalisen viestinnän perustutkinto",
+      "AMK: Elokuva- ja TV-koulutus",
+      "Työharjoittelu tuotantoyhtiöissä",
+      "Täydennyskoulutus: Valo- ja kameratekniikan kurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Kameratekniikka",
+      "Kaluston hallinta",
+      "Nopeus ja ketteryys",
+      "Tiimityö",
+      "Aikataulutus"
+    ],
+    tools_tech: [
+      "Kamerakalusto (ARRI, RED)",
+      "Valaisimet",
+      "Grip-laitteet",
+      "Kommunikaatiolaitteet",
+      "Kuljetuskalusto"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 2900,
+      range: [2400, 3500],
+      source: {
+        name: "Palkkadata – Kuvausassistentti",
+        url: "https://www.palkkadata.fi/ammatti/kuvausassistentti",
+        year: 2024
+      }
+    },
+    job_outlook: {
+      status: "vaihtelee",
+      explanation: "Tuotantomäärät vaihtelevat kausittain, mutta kotimainen sisältötuotanto kasvaa suoratoistopalveluiden ansiosta.",
+      source: {
+        name: "Audiovisuaalisen alan tuotantotilastot",
+        url: "https://www.av-yleis.fi/tilastot/",
+        year: 2024
+      }
+    },
+    entry_roles: [
+      "Kuvausapulainen",
+      "Grip-trainee",
+      "Runner (tuotanto)"
+    ],
+    career_progression: [
+      "Kuvausassistentti",
+      "1st AC / fokuksen vetäjä",
+      "Kuvaussihteeri",
+      "Kuvaaja"
+    ],
+    typical_employers: [
+      "Tuotantoyhtiöt",
+      "Mainostoimistot",
+      "TV-kanavat",
+      "Freelance-tuotannot"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    union_or_CBA: "Suomen elokuva- ja mediatyöntekijät SET",
+    useful_links: [
+      { name: "SET – Mediatyöntekijät", url: "https://www.setry.fi/" },
+      { name: "Opintopolku – Audiovisuaalisen viestinnän perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/audiovisuaalisen%20viestinnan%20perustutkinto" }
+    ],
+    keywords: ["kuvaus", "elokuva", "kamera", "tuotanto", "AV-ala"],
+    study_length_estimate_months: 36
+  },
+  {
+    id: "baarimikko",
+    category: "auttaja",
+    title_fi: "Baarimikko",
+    title_en: "Bartender",
+    short_description: "Baarimikko valmistaa juomia, huolehtii baarin asiakaspalvelusta ja varmistaa anniskelun turvallisuuden ravintoloissa ja tapahtumissa.",
+    main_tasks: [
+      "Cocktailien ja juomien valmistus",
+      "Asiakaspalvelu ja myynti",
+      "Kassan ja maksutapahtumien hoitaminen",
+      "Varaston ja hygieniavaatimusten seuranta",
+      "Anniskelulainsäädännön noudattaminen"
+    ],
+    impact: [
+      "Luo elämyksiä asiakkaille",
+      "Edistää vastuullista anniskelua",
+      "Tukee matkailu- ja tapahtuma-alaa"
+    ],
+    education_paths: [
+      "Toinen aste: Ravintola- ja cateringalan perustutkinto (baaripalvelut)",
+      "Erikoisammattitutkinto: Baarimestari",
+      "Lyhytkurssit: Cocktail-tekniikat",
+      "Työkokemus ravintolassa"
+    ],
+    qualification_or_license: "Anniskelupassi",
+    core_skills: [
+      "Juomasekoitukset",
+      "Asiakaspalvelu",
+      "Nopeus ja tehokkuus",
+      "Annosvalvonta",
+      "Kassanhallinta"
+    ],
+    tools_tech: [
+      "Baarityökalut",
+      "POS-järjestelmät",
+      "Juomavaraston seuranta",
+      "Lasi- ja jäähdytyslaitteet",
+      "Hygieniavälineet"
+    ],
+    languages_required: { fi: "B1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 2600,
+      range: [2200, 3400],
+      source: {
+        name: "Palkkadata – Baarimikko",
+        url: "https://www.palkkadata.fi/ammatti/baarimikko",
+        year: 2024
+      }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Matkailu- ja ravintola-alan kysyntä elpyy ja osaavaa henkilökuntaa tarvitaan ympäri Suomen.",
+      source: {
+        name: "Työmarkkinatori – Ravintola- ja cateringalan työntekijät",
+        url: "https://tyomarkkinatori.fi/ammattilistat/ravintola-%20ja%20cateringalan-tyontekijat",
+        year: 2024
+      }
+    },
+    entry_roles: [
+      "Ravintola-apulainen",
+      "Tarjoilija",
+      "Barback"
+    ],
+    career_progression: [
+      "Baarimikko",
+      "Vuoropäällikkö",
+      "Baarimestari",
+      "Ravintolapäällikkö"
+    ],
+    typical_employers: [
+      "Hotellit",
+      "Baarit ja yökerhot",
+      "Risteily- ja tapahtumayhtiöt",
+      "Catering-yritykset"
+    ],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
+    union_or_CBA: "MaRa / PAM",
+    useful_links: [
+      { name: "Matkailu- ja Ravintolapalvelut MaRa", url: "https://www.mara.fi/" },
+      { name: "Opintopolku – Ravintola- ja cateringalan perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/ravintola-%20ja%20cateringalan%20perustutkinto" }
+    ],
+    keywords: ["baarityö", "cocktail", "ravintola", "anniskelu", "palvelu"],
+    study_length_estimate_months: 30
   }
 ];
 

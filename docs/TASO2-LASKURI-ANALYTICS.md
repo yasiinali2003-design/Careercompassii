@@ -39,3 +39,4 @@ Suositellut event-nimet (voit käyttää esim. Plausible, Google Analytics 4 tai
 - **Julkaisut**: dokumentoi päivityspäivä yläbanneriin (päivität `app/todistuspistelaskuri/page.tsx`).
 - **QA**: tarkista muutama ohjelma käsin (min/median/maksimi). Tee tarvittaessa vertailu Opetushallituksen sivuihin.
 
+

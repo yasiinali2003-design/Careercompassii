@@ -16,6 +16,7 @@ interface StudyProgramsListProps {
   points: number;
   careerSlugs: string[];
   educationType: 'yliopisto' | 'amk';
+  onOpenScenario?: () => void;
 }
 
 const FIELD_OPTIONS = [
@@ -51,7 +52,7 @@ const SORT_OPTIONS = [
 
 const FAVORITES_KEY = 'todistuspisteFavorites';
 
-export function StudyProgramsList({ points, careerSlugs, educationType }: StudyProgramsListProps) {
+export function StudyProgramsList({ points, careerSlugs, educationType, onOpenScenario }: StudyProgramsListProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [fieldFilter, setFieldFilter] = useState('all');
   const [sortBy, setSortBy] = useState('match');
@@ -62,15 +63,20 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
   const [error, setError] = useState<string | null>(null);
   const [total, setTotal] = useState(0);
   const [favorites, setFavorites] = useState<string[]>([]);
+  const [includeReach, setIncludeReach] = useState(false);
+  const [reachCount, setReachCount] = useState<number | null>(null);
+  const onlyReachPrograms = !loading && !error && programs.length > 0 && programs.every(program => program.reach || program.tags?.includes('reach'));
+  const [careerFilterRelaxed, setCareerFilterRelaxed] = useState(false);
 
   // Fetch programs from API
   useEffect(() => {
     async function loadPrograms() {
       setLoading(true);
       setError(null);
-      
+      setCareerFilterRelaxed(false);
+
       try {
-        const result = await fetchStudyPrograms({
+        const baseQuery = {
           points,
           type: educationType,
           field: fieldFilter !== 'all' ? fieldFilter : undefined,
@@ -79,10 +85,56 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
           sort: sortBy as 'match' | 'points-low' | 'points-high' | 'name',
           limit: 50,
           offset: 0
-        });
-        
-        setPrograms(result.programs);
-        setTotal(result.total);
+        } as const;
+
+        const result = await fetchStudyPrograms(baseQuery);
+
+        let combinedPrograms = [...result.programs];
+        let combinedTotal = result.total;
+        let reachAdded = result.metadata?.fallbackCount ?? 0;
+        let relaxedCareers = result.metadata?.careerRelaxed ?? false;
+
+        if (combinedPrograms.length === 0 && careerSlugs.length > 0) {
+          const relaxedResult = await fetchStudyPrograms({ ...baseQuery, careers: [] });
+          combinedPrograms = [...relaxedResult.programs];
+          combinedTotal = relaxedResult.total;
+          relaxedCareers = true;
+        }
+
+        if (includeReach && points !== undefined && points !== null) {
+          try {
+            const reachResult = await fetchStudyPrograms({
+              ...baseQuery,
+              points: points + 20,
+              sort: 'points-low',
+              includeReachPrograms: false,
+              careers: relaxedCareers ? [] : baseQuery.careers
+            });
+
+            const reachPrograms = reachResult.programs
+              .filter(program => program.minPoints > points)
+              .filter(program => !combinedPrograms.some(existing => existing.id === program.id))
+              .sort((a, b) => a.minPoints - b.minPoints)
+              .slice(0, 5)
+              .map(program => ({ ...program, reach: true }));
+
+            if (reachPrograms.length > 0) {
+              combinedPrograms = [...combinedPrograms, ...reachPrograms];
+              reachAdded += reachPrograms.length;
+            }
+          } catch (reachError) {
+            console.warn('[StudyProgramsList] Failed to load reach programs', reachError);
+          }
+        }
+
+        if (combinedTotal === 0 && reachAdded > 0) {
+          combinedTotal = reachAdded;
+        }
+
+        setPrograms(combinedPrograms);
+        setTotal(combinedTotal);
+        setReachCount(reachAdded > 0 ? reachAdded : null);
+        setCareerFilterRelaxed(relaxedCareers);
       } catch (err: any) {
         console.error('[StudyProgramsList] Error fetching programs:', err);
         setError('Koulutusohjelmien lataus epäonnistui. Yritä myöhemmin uudelleen.');
@@ -92,7 +144,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
     }
 
     loadPrograms();
-  }, [points, educationType, fieldFilter, searchQuery, sortBy, careerSlugs]);
+  }, [points, educationType, fieldFilter, searchQuery, sortBy, careerSlugs, includeReach]);
 
   useEffect(() => {
     try {
@@ -107,6 +159,25 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
       console.warn('[StudyProgramsList] Failed to load favorites from localStorage', error);
     }
   }, []);
+
+  useEffect(() => {
+    try {
+      const stored = sessionStorage.getItem('todistuspisteIncludeReach');
+      if (stored === 'true') {
+        setIncludeReach(true);
+      }
+    } catch (error) {
+      console.warn('[StudyProgramsList] Failed to read reach preference', error);
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      sessionStorage.setItem('todistuspisteIncludeReach', includeReach ? 'true' : 'false');
+    } catch (error) {
+      console.warn('[StudyProgramsList] Failed to persist reach preference', error);
+    }
+  }, [includeReach]);
 
   const toggleFavorite = (programId: string) => {
     setFavorites(prev => {
@@ -260,6 +331,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
                   setSearchQuery('');
                   setFieldFilter('all');
                   setSortBy('match');
+                  setIncludeReach(false);
                 }}
               >
                 Tyhjennä
@@ -268,18 +340,31 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
           </div>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-gray-600">
             <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 font-medium text-blue-700">
-              {loading ? 'Ladataan ohjelmia…' : `Näytetään ${Math.min(programs.length, 50)} / ${total} ohjelmaa`}
+              {loading ? 'Ladataan ohjelmia…' : `Näytetään ${programs.length} / ${total} ohjelmaa`}
             </span>
             <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1">
               <span className="h-2 w-2 rounded-full bg-blue-500" />
               {educationType === 'yliopisto' ? 'Yliopistohaku' : 'AMK-haku'}
             </span>
+            {includeReach && (
+              <span className="inline-flex items-center gap-2 rounded-full bg-amber-50 px-3 py-1 text-amber-800">
+                <span className="h-2 w-2 rounded-full bg-amber-500" />
+                Tavoiteohjelmat näkyvissä{reachCount !== null ? ` (${reachCount})` : ''}
+              </span>
+            )}
             {fieldFilter !== 'all' && (
               <span className="inline-flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1">
                 <span className="font-semibold">Ala:</span>
                 {FIELD_OPTIONS.find(f => f.value === fieldFilter)?.label || 'Kaikki'}
               </span>
             )}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setIncludeReach(prev => !prev)}
+            >
+              {includeReach ? 'Piilota tavoiteohjelmat' : 'Näytä tavoiteohjelmat'}
+            </Button>
           </div>
         </div>
 
@@ -324,13 +409,15 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
             </div>
             <h3 className="mt-4 text-lg font-semibold text-gray-900">Ei vielä sopivia tuloksia</h3>
             <p className="mt-2 text-sm text-gray-600 max-w-lg mx-auto">
-              Tarkista arvosanojen skenaariotyökalulla, voisiko pienikin parannus nostaa pisteitäsi. Voit myös vaihtaa AMK/Yliopisto-välilehteä tai laajentaa hakua eri alaan.
+              Tällä hetkellä pisteesi jäävät valittujen ohjelmien pisterajojen alle. Kokeile korottaa arvosanaa skenaariotyökalulla tai laajenna hakua – näytämme myös tavoitteellisia ohjelmia, jotka ovat lähellä nykyisiä pisteitäsi.
+              {careerFilterRelaxed && ' Esitämme seuraavaksi myös yleisiä ohjelmia ilman urasuositusrajausta, jotta löydät askelmerkit pisteiden nostamiseen.'}
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-3">
               <Button
                 variant="default"
                 size="sm"
                 onClick={() => {
+                  onOpenScenario?.();
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               >
@@ -343,11 +430,43 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
                   setSearchQuery('');
                   setFieldFilter('all');
                   setSortBy('match');
+                  setIncludeReach(false);
                 }}
               >
                 Tyhjennä suodattimet
               </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setIncludeReach(true)}
+              >
+                Näytä tavoiteohjelmat
+              </Button>
             </div>
+          </div>
+        )}
+
+        {!loading && !error && programs.length > 0 && (
+          <div className="rounded-lg border border-blue-100 bg-blue-50/60 px-4 py-3 text-xs text-blue-800 mb-4">
+            <p className="font-medium">Vinkki</p>
+            <p>
+              Voit käyttää skenaariotyökalua nähdäksesi, miten arvosanojen korottaminen vaikuttaisi pisteisiisi ja avaisi lisää ohjelmia. Jos etsit vanhoja tuloksia, tarkista että pisteesi on laskettu nykyisillä arvosanoilla.
+            </p>
+            {onlyReachPrograms && (
+              <p className="mt-2 text-amber-700">
+                Tällä hetkellä ohjelmat ovat tavoitetasoa. Nosta yhtä tai kahta arvosanaa skenaariotyökalulla – jo muutaman pisteen nousu avaa realistisia vaihtoehtoja.
+              </p>
+            )}
+            {careerFilterRelaxed && !onlyReachPrograms && (
+              <p className="mt-2 text-blue-700">
+                Näytämme nyt myös yleiset ohjelmat, koska urasuosituksiin sopivia ei löytynyt suoraan. Voit rajata hakua uudelleen, kun olet tarkentanut arvosanatavoitteita.
+              </p>
+            )}
+            {reachCount && reachCount > 0 && !onlyReachPrograms && includeReach && (
+              <p className="mt-2 text-amber-700">
+                Mukana myös tavoiteohjelmia pisteidesi yläpuolelta. Voit piilottaa ne yläpalkin painikkeesta, jos haluat keskittyä varmoihin vaihtoehtoihin.
+              </p>
+            )}
           </div>
         )}
 
@@ -357,6 +476,8 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
               const matchBadge = getMatchBadge(program);
               const historyConfidence = getHistoryConfidence(program);
               const chanceBadge = historyConfidence?.badge || getFallbackConfidenceBadge(program);
+              const isReachProgram = Boolean(program.reach || program.tags?.includes('reach'));
+              const reachGap = isReachProgram ? Math.max(0, program.minPoints - points) : 0;
               const isFavorite = favorites.includes(program.id);
               
               return (
@@ -399,6 +520,11 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
                                 {chanceBadge.text}
                               </span>
                             )}
+                            {isReachProgram && (
+                              <span className="px-2 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                                Tavoiteohjelma
+                              </span>
+                            )}
                             <span className="px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700">
                               {program.institutionType === 'yliopisto' ? 'Yliopisto' : 'AMK'}
                             </span>
@@ -427,6 +553,11 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
                         <p className="text-xs text-gray-500 mt-1">
                           Sinun pisteet: {formatPoints(points)}
                         </p>
+                        {isReachProgram && reachGap > 0 && (
+                          <p className="text-xs text-amber-700 mt-1">
+                            Tarvitset noin {reachGap.toFixed(1).replace('.', ',')} pistettä lisää saavuttaaksesi viime vuoden pisterajan.
+                          </p>
+                        )}
                         {historyConfidence?.detail && (
                           <p className="text-xs text-gray-500 mt-1">
                             {historyConfidence.detail}

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ExternalLink, GraduationCap, MapPin, Calendar, Users } from 'lucide-react';
 import { StudyProgram } from '@/lib/data/studyPrograms';
 import { formatPoints, getPointRangeCategory } from '@/lib/todistuspiste';
+import { careersData } from '@/data/careers-fi';
 import Link from 'next/link';
 
 interface ProgramDetailsModalProps {
@@ -14,6 +15,11 @@ interface ProgramDetailsModalProps {
   userPoints: number;
   careerSlugs: string[];
 }
+
+const CAREER_TITLE_BY_SLUG = careersData.reduce<Record<string, string>>((acc, career) => {
+  acc[career.id] = career.title_fi;
+  return acc;
+}, {});
 
 export function ProgramDetailsModal({ 
   program, 
@@ -143,20 +149,22 @@ export function ProgramDetailsModal({
               <div className="flex flex-wrap gap-2">
                 {program.relatedCareers.map((careerSlug, index) => {
                   const isMatched = careerSlugs.includes(careerSlug);
+                  const careerTitle = CAREER_TITLE_BY_SLUG[careerSlug] || careerSlug.split('-').map(word => 
+                    word.charAt(0).toUpperCase() + word.slice(1)
+                  ).join(' ');
                   return (
-                    <span
+                    <Link
                       key={index}
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      href={`/ammatit/${careerSlug}`}
+                      className={`px-3 py-1 rounded-full text-xs font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 ${
                         isMatched
-                          ? 'bg-green-100 text-green-800 border-2 border-green-300'
-                          : 'bg-gray-100 text-gray-700'
+                          ? 'bg-green-100 text-green-800 border-2 border-green-300 hover:bg-green-200'
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                     >
-                      {careerSlug.split('-').map(word => 
-                        word.charAt(0).toUpperCase() + word.slice(1)
-                      ).join(' ')}
-                      {isMatched && ' ✓'}
-                    </span>
+                      {careerTitle}
+                      {isMatched && <span className="ml-1">✓</span>}
+                    </Link>
                   );
                 })}
               </div>

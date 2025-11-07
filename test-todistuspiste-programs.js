@@ -84,6 +84,20 @@ function matchProgramsToCareers(programs, careerSlugs) {
   return scored.map(item => item.program);
 }
 
+function getReachPrograms(points, type, count = 3, delta = 15) {
+  let filtered = studyPrograms;
+
+  if (type) {
+    filtered = filtered.filter(p => p.institutionType === type);
+  }
+
+  return filtered
+    .filter(program => program.minPoints > points && program.minPoints <= points + delta)
+    .sort((a, b) => a.minPoints - b.minPoints)
+    .slice(0, count)
+    .map(program => ({ ...program, reach: true }));
+}
+
 function getPointRangeCategory(userPoints, minPoints, maxPoints) {
   const max = maxPoints || minPoints + 50;
   
@@ -160,6 +174,14 @@ console.log('User points: 10, Type: yliopisto');
 console.log('Expected: No programs (too low)');
 console.log('Result:', test6.length, 'programs');
 console.log('✅ PASS' + (test6.length === 0 ? '' : ' ❌ FAIL'));
+console.log('');
+
+// Test 7: Reach fallback suggestions
+console.log('Test 7: Reach fallback suggestions');
+const test7 = getReachPrograms(60, 'yliopisto', 2, 150);
+console.log('User points: 60, Type: yliopisto');
+console.log('Reach suggestions:', test7.map(p => `${p.name} (min ${p.minPoints})`));
+console.log('✅ PASS' + (test7.length > 0 ? '' : ' ❌ FAIL'));
 console.log('');
 
 console.log('✅ All program filtering tests completed!');

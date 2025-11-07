@@ -49,7 +49,7 @@ export function buildActionableNextSteps(points: number) {
   } else if (points >= 90) {
     steps.push('Pisteesi riittävät moniin AMK-ohjelmiin. Voit nostaa mahdollisuuksiasi vahvistamalla esimerkiksi kieli- tai reaaliaineita.');
   } else {
-    steps.push('Jos haluat laajentaa vaihtoehtoja, keskity nostamaan yhtä–kahta keskeistä arvosanaa. Hyödynnä skenaariotyökalua nähdäksesi vaikutuksen.');
+    steps.push('Jos haluat laajentaa vaihtoehtoja, keskity nostamaan 1–2 keskeistä arvosanaa. Hyödynnä skenaariotyökalua nähdäksesi vaikutuksen.');
   }
 
   steps.push('Merkitse sinua kiinnostavat ohjelmat suosikeiksi ja vertaile niiden vaatimuksia rauhassa.');

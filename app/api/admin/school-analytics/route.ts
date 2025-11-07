@@ -12,6 +12,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { calculateSchoolAnalytics, ClassWithResults } from '@/lib/schoolAnalytics';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 export async function GET(request: NextRequest) {
   try {
     // Check admin auth (similar to other admin endpoints)

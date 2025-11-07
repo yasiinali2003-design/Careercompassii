@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ArrowLeft, ExternalLink, GraduationCap, TrendingUp, Users, MapPin } from 'lucide-react';
 import { careersData as careersFI, CareerFI } from '@/data/careers-fi';
 import { Career } from '@/lib/types';
@@ -91,6 +92,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
   const decodedSlug = decodeURIComponent(params.slug);
   const career = getCareerBySlug(decodedSlug);
   const relatedCareers = career ? getRelatedCareers(career) : [];
+  const router = useRouter();
 
   if (!career) {
     return (
@@ -118,13 +120,14 @@ export default function CareerDetail({ params }: CareerDetailProps) {
             <Logo className="h-10 w-auto" />
           </Link>
           <div className="flex items-center gap-4">
-            <Link
-              href="/ammatit"
-              className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors"
+            <button
+              type="button"
+              onClick={() => router.back()}
+              className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white px-4 py-2 text-sm font-medium text-purple-700 transition-colors hover:bg-purple-100"
             >
               <ArrowLeft className="h-4 w-4" />
-              Takaisin Urakirjastoon
-            </Link>
+              Takaisin edelliseen näkymään
+            </button>
             <Link
               href="/"
               className="text-sm text-slate-600 hover:text-slate-800 transition-colors"

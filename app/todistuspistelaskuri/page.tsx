@@ -7,7 +7,9 @@ import { TodistuspisteCalculator } from '@/components/TodistuspisteCalculator';
 import { StudyProgramsList } from '@/components/StudyProgramsList';
 import { cn } from '@/lib/utils';
 import { buildSummaryNarrative, buildActionableNextSteps } from '@/lib/todistuspiste/narratives';
-import { SubjectInputs, TodistuspisteResult } from '@/lib/todistuspiste';
+import { SubjectInputs, TodistuspisteResult, formatPoints } from '@/lib/todistuspiste';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Check } from 'lucide-react';
 
 interface WizardStep {
   id: 'input' | 'results' | 'programs';
@@ -16,9 +18,9 @@ interface WizardStep {
 }
 
 const STEPS: WizardStep[] = [
-  { id: 'input', label: '1. Syötä arvosanasi', description: 'Valitse yo-arvosanat ja aineiden tasot.' },
-  { id: 'results', label: '2. Yhteenveto & skenaariot', description: 'Näet kokonaispisteesi ja voit kokeilla parannuksia.' },
-  { id: 'programs', label: '3. Sopivat koulutusohjelmat', description: 'Tutustu yliopisto- ja AMK-ohjelmiin, jotka tukevat vahvuuksiasi.' }
+  { id: 'input', label: '1. Syötä arvosanasi', description: 'Valitse yo-arvosanat ja tasot.' },
+  { id: 'results', label: '2. Yhteenveto & skenaariot', description: 'Katso pistesi ja testaa parannuksia.' },
+  { id: 'programs', label: '3. Sopivat koulutusohjelmat', description: 'Löydä jatko-opinnot vahvuuksiesi pohjalta.' }
 ];
 
 interface StoredResults {
@@ -41,6 +43,8 @@ export default function TodistuspistelaskuriPage() {
   const [storedResults, setStoredResults] = useState<StoredResults | null>(null);
   const [latestCalculatorInputs, setLatestCalculatorInputs] = useState<SubjectInputs | null>(null);
   const [latestCalculatorResult, setLatestCalculatorResult] = useState<TodistuspisteResult | null>(null);
+  const [maxUnlockedStep, setMaxUnlockedStep] = useState<number>(0);
+  const [forceScenarioOpen, setForceScenarioOpen] = useState(false);
 
   useEffect(() => {
     try {
@@ -73,14 +77,21 @@ export default function TodistuspistelaskuriPage() {
     setCalculatedPoints(points);
     setLatestCalculatorInputs(inputs);
     setLatestCalculatorResult(result);
-    if (currentStep === 'input') {
-      setCurrentStep('results');
-    }
+    setCurrentStep('results');
+    setMaxUnlockedStep(prev => Math.max(prev, 1));
     try {
       localStorage.setItem('todistuspistePoints', points.toString());
+      localStorage.setItem('todistuspisteInputs', JSON.stringify(inputs));
+      localStorage.setItem('todistuspisteResult', JSON.stringify(result));
     } catch (error) {
       console.warn('[TodistuspistelaskuriPage] Could not store points in localStorage', error);
     }
+  };
+
+  const handleScenarioRequest = () => {
+    setCurrentStep('input');
+    setMaxUnlockedStep(prev => Math.max(prev, 1));
+    setForceScenarioOpen(true);
   };
 
   useEffect(() => {
@@ -90,10 +101,28 @@ export default function TodistuspistelaskuriPage() {
         const parsed = Number(storedPoints);
         if (!isNaN(parsed)) {
           setCalculatedPoints(parsed);
+          setMaxUnlockedStep(prev => Math.max(prev, 1));
         }
       }
     } catch (error) {
       console.warn('[TodistuspistelaskuriPage] Could not restore stored points', error);
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      const storedInputs = localStorage.getItem('todistuspisteInputs');
+      if (storedInputs) {
+        const parsedInputs: SubjectInputs = JSON.parse(storedInputs);
+        setLatestCalculatorInputs(parsedInputs);
+      }
+      const storedResult = localStorage.getItem('todistuspisteResult');
+      if (storedResult) {
+        const parsedResult: TodistuspisteResult = JSON.parse(storedResult);
+        setLatestCalculatorResult(parsedResult);
+      }
+    } catch (error) {
+      console.warn('[TodistuspistelaskuriPage] Could not restore stored calculator data', error);
     }
   }, []);
 
@@ -102,35 +131,61 @@ export default function TodistuspistelaskuriPage() {
       <div className="container mx-auto px-4 py-10 max-w-6xl">
         <header className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-3">
-            <p className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-1 text-xs font-medium uppercase tracking-wider text-blue-700">
-              TASO2 laskuri • 2025 tiedot
-            </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-1 text-xs font-medium uppercase tracking-wider text-blue-700">
+              <span>TASO2 laskuri</span>
+              <span className="h-1 w-1 rounded-full bg-blue-300" />
+              <span>2025 tiedot</span>
+            </div>
             <h1 className="text-4xl font-bold text-gray-900">Todistuspistelaskuri + henkilökohtaiset polut</h1>
             <p className="text-lg text-gray-600 max-w-2xl">
               Laske yo-pisteesi, näe miten ne tukevat vahvuuksiasi ja löydä koulutusohjelmat, jotka sopivat testituloksiisi. Laskuri muistaa edistymisesi ja näyttää vaihtoehtoiset skenaariot.
             </p>
-            <div className="rounded-xl border border-gray-200 bg-white/80 p-4 text-xs text-gray-600">
-              <p className="flex flex-wrap items-center gap-2">
-                <span className="font-semibold text-gray-800">Tietolähteet ja päivitys:</span>
-                <span>Perustuu Opetushallituksen ja yliopistojen julkisiin todistusvalintatilastoihin (päivitetty 11/2025). Historiapisteet päivitämme kuukausittain.</span>
-              </p>
-              <p className="mt-2">
-                <span className="font-semibold text-gray-800">Huomio:</span> Palvelu on CareerCompassin itsenäisesti tuottama työkalu. Emme ole Opintopolun tai todistusvalinta.fi:n kanssa sidoksissa, ja laskelmat ovat suuntaa-antavia – tarkista aina viralliset rajat ennen hakua.
-              </p>
+            <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600">
+              <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1">
+                <span className="font-semibold text-gray-800">Päivitys:</span>
+                <span>11/2025</span>
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1">
+                <span className="font-semibold text-gray-800">Tietosuoja:</span>
+                <span>tiedot pysyvät selaimessa</span>
+              </span>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="outline" size="sm">Lisätiedot</Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Tietolähteet & käyttö</DialogTitle>
+                    <DialogDescription>
+                      <p className="mb-2">Laskuri perustuu Opetushallituksen ja yliopistojen julkisiin todistusvalintatilastoihin (päivitetty marraskuussa 2025). Historiapisteet päivitämme kuukausittain.</p>
+                      <p>Työkalu on CareerCompassin itsenäisesti kehittämä. Emme ole Opintopolun tai todistusvalinta.fi:n kanssa sidoksissa, ja laskelmat ovat suuntaa-antavia – tarkista aina viralliset rajat ennen hakua.</p>
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
             </div>
-            {storedResults?.userProfile?.topStrengths && storedResults.userProfile.topStrengths.length > 0 && (
-              <div className="flex flex-wrap gap-2 text-sm text-blue-800">
-                <span className="font-semibold text-blue-900">Vahvuutesi:</span>
-                {storedResults.userProfile.topStrengths.slice(0, 4).map((strength, index) => (
-                  <span key={index} className="rounded-full bg-blue-100 px-3 py-1">
-                    {strength}
-                  </span>
-                ))}
-              </div>
-            )}
+            {(() => {
+              const strengths = storedResults?.userProfile?.topStrengths ?? [];
+              if (strengths.length === 0) return null;
+              const shown = strengths.slice(0, 2);
+              const extra = strengths.length - shown.length;
+              return (
+                <div className="flex flex-wrap items-center gap-2 text-sm text-blue-800">
+                  <span className="font-semibold text-blue-900">Vahvuutesi:</span>
+                  {shown.map((strength, index) => (
+                    <span key={index} className="rounded-full bg-blue-100 px-3 py-1">
+                      {strength}
+                    </span>
+                  ))}
+                  {extra > 0 && (
+                    <span className="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-600">+{extra} lisää</span>
+                  )}
+                </div>
+              );
+            })()}
           </div>
-          <Link href="/" className="self-start lg:self-auto">
-            <Button variant="outline">Palaa etusivulle</Button>
+          <Link href="/test/results" className="self-start lg:self-auto">
+            <Button variant="outline">Palaa testitulokseen</Button>
           </Link>
         </header>
 
@@ -139,22 +194,36 @@ export default function TodistuspistelaskuriPage() {
           <ol className="grid gap-4 md:grid-cols-3">
             {STEPS.map((step, index) => {
               const isActive = currentStep === step.id;
-              const isCompleted = STEPS.findIndex(s => s.id === currentStep) > index;
+              const isUnlocked = index <= maxUnlockedStep;
+              const isCompleted = index < maxUnlockedStep;
               return (
-                <li key={step.id} className={cn('rounded-2xl border bg-white p-4 shadow-sm transition', isActive ? 'border-blue-400 shadow' : 'border-gray-200')}>
+                <li
+                  key={step.id}
+                  className={cn(
+                    'rounded-2xl border bg-white p-4 shadow-sm transition flex items-center gap-3',
+                    isActive ? 'border-blue-400 shadow' : 'border-gray-200',
+                    !isUnlocked && 'opacity-60'
+                  )}
+                >
+                  <span
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-blue-200 text-sm font-semibold text-blue-700"
+                    aria-hidden
+                  >
+                    {index + 1}
+                  </span>
                   <button
                     type="button"
                     className="w-full text-left"
                     onClick={() => {
-                      if (calculatedPoints !== null || step.id === 'input') {
+                      if (isUnlocked) {
                         setCurrentStep(step.id);
                       }
                     }}
-                    disabled={step.id !== 'input' && calculatedPoints === null}
+                    disabled={!isUnlocked}
                   >
                     <div className="flex items-center justify-between text-sm font-semibold text-gray-900">
                       <span>{step.label}</span>
-                      {isCompleted && <span className="text-green-600 text-xs">✔</span>}
+                      {isCompleted && <Check className="h-4 w-4 text-green-600" aria-hidden />}
                     </div>
                     <p className="mt-2 text-sm text-gray-600">{step.description}</p>
                   </button>
@@ -166,13 +235,60 @@ export default function TodistuspistelaskuriPage() {
 
         {/* Step content */}
         <div className="space-y-12">
-          {(currentStep === 'input' || currentStep === 'results' || currentStep === 'programs') && (
+          {currentStep === 'input' && (
             <section id="step-input">
-              <TodistuspisteCalculator onCalculate={handleCalculate} />
+              <TodistuspisteCalculator
+                onCalculate={handleCalculate}
+                forceOpenScenario={forceScenarioOpen}
+                onScenarioHandled={() => setForceScenarioOpen(false)}
+                initialInputs={latestCalculatorInputs}
+                initialResult={latestCalculatorResult}
+                onInputsChange={setLatestCalculatorInputs}
+              />
             </section>
           )}
 
-          {currentStep !== 'input' && calculatedPoints !== null && (
+          {currentStep === 'results' && calculatedPoints !== null && (
+            <section className="space-y-6">
+              <GuidanceSummary
+                points={calculatedPoints}
+                bonusPoints={latestCalculatorResult?.bonusPoints || 0}
+                strengths={storedResults?.userProfile?.topStrengths}
+                inputs={latestCalculatorInputs}
+                variant="compact"
+              />
+
+              <div className="rounded-2xl border border-blue-100 bg-blue-50/70 p-5 text-sm text-blue-900">
+                <p className="font-semibold">Mitä seuraavaksi?</p>
+                <ol className="mt-2 list-decimal space-y-1 pl-5 text-blue-800">
+                  <li>Tarkista arvosanat ja tee tarvittaessa muutoksia vaiheessa 1.</li>
+                  <li>Käytä skenaariotyökalua testataksesi, missä aineissa pienikin nousu tuo eniten pisteitä.</li>
+                  <li>Siirry koulutusohjelmiin ja vertaile vaihtoehtoja pisteidesi ja urasuositustesi perusteella.</li>
+                </ol>
+              </div>
+
+              <div className="flex flex-col gap-3 rounded-2xl border border-gray-200 bg-white/70 p-4 text-sm text-gray-700 md:flex-row md:items-center md:justify-between">
+                <span>Kun olet tyytyväinen pisteisiisi, voit avata sinulle räätälöidyt koulutusohjelmat.</span>
+                <Button
+                  size="lg"
+                  onClick={() => {
+                    setMaxUnlockedStep(2);
+                    setCurrentStep('programs');
+                  }}
+                >
+                  Siirry koulutusohjelmiin
+                </Button>
+              </div>
+            </section>
+          )}
+
+          {currentStep === 'programs' && calculatedPoints === null && (
+            <div className="rounded-lg border border-dashed border-blue-200 bg-white/70 p-6 text-center text-sm text-gray-600">
+              Laske pisteesi ensin, niin näytämme sinulle sopivat koulutusohjelmat.
+            </div>
+          )}
+
+          {currentStep === 'programs' && calculatedPoints !== null && (
             <section id="step-programs" className="space-y-6">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
@@ -208,9 +324,19 @@ export default function TodistuspistelaskuriPage() {
                   <p className="font-semibold text-purple-900 mb-2">Urasuosituksesi</p>
                   <div className="flex flex-wrap gap-2">
                     {storedResults.topCareers.slice(0, 4).map((career, idx) => (
-                      <span key={idx} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-purple-700 shadow-sm">
-                        {career?.title || 'Suosikki-ammatti'}
-                      </span>
+                      career?.slug ? (
+                        <Link
+                          key={career.slug}
+                          href={`/ammatit/${career.slug}`}
+                          className="rounded-full bg-white px-3 py-1 text-xs font-medium text-purple-700 shadow-sm transition-colors hover:bg-purple-100 hover:text-purple-900"
+                        >
+                          {career.title || 'Suosikki-ammatti'}
+                        </Link>
+                      ) : (
+                        <span key={idx} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-purple-700 shadow-sm">
+                          {career?.title || 'Suosikki-ammatti'}
+                        </span>
+                      )
                     ))}
                   </div>
                 </div>
@@ -227,14 +353,9 @@ export default function TodistuspistelaskuriPage() {
                 points={calculatedPoints}
                 careerSlugs={careerSlugs}
                 educationType={educationType}
+                onOpenScenario={handleScenarioRequest}
               />
             </section>
-          )}
-
-          {currentStep !== 'input' && calculatedPoints === null && (
-            <div className="rounded-lg border border-dashed border-blue-200 bg-white/70 p-6 text-center text-sm text-gray-600">
-              Laske pisteesi ensin, niin näytämme sinulle sopivat koulutusohjelmat.
-            </div>
           )}
         </div>
       </div>
@@ -247,29 +368,89 @@ interface GuidanceSummaryProps {
   bonusPoints: number;
   strengths?: string[];
   inputs: SubjectInputs | null;
+  variant?: 'full' | 'compact';
 }
 
-function GuidanceSummary({ points, bonusPoints, strengths, inputs }: GuidanceSummaryProps) {
+function GuidanceSummary({ points, bonusPoints, strengths, inputs, variant = 'full' }: GuidanceSummaryProps) {
   const summaryRaw = buildSummaryNarrative(inputs || {}, { totalPoints: points, bonusPoints, strengths });
   const summary = summaryRaw.length > 0 ? summaryRaw : `Pisteesi (${points.toFixed(2).replace('.', ',')}) antavat hyvän kuvan siitä, mihin koulutusohjelmiin kannattaa tarttua seuraavaksi.`;
   const nextSteps = buildActionableNextSteps(points);
+  const maxPoints = 200;
+  const percent = Math.max(0, Math.min(100, Math.round((points / maxPoints) * 100)));
+  const ringStyle = {
+    background: `conic-gradient(#2563eb ${percent}%, #c7d2fe ${percent}% 100%)`
+  };
+
+  if (variant === 'compact') {
+    return (
+      <div className="rounded-2xl border border-blue-100 bg-white p-5">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <p className="text-xs uppercase tracking-wide text-blue-600">Pisteesi tänään</p>
+            <p className="text-2xl font-semibold text-gray-900">
+              {formatPoints(points)} <span className="text-sm font-normal text-gray-500">p</span>
+            </p>
+            <p className="mt-1 text-xs text-gray-500">Bonuspisteet: +{bonusPoints.toFixed(0)}</p>
+          </div>
+          {strengths && strengths.length > 0 && (
+            <div className="flex flex-wrap gap-2 text-xs text-blue-700">
+              {strengths.slice(0, 2).map((strength, index) => (
+                <span key={index} className="rounded-full bg-blue-50 px-3 py-1">
+                  {strength}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+        <p className="mt-4 text-sm text-gray-700 leading-relaxed">{summary}</p>
+      </div>
+    );
+  }
 
   return (
-    <div className="grid gap-4 rounded-2xl border border-blue-200 bg-white p-6 md:grid-cols-2">
-      <div>
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">Mitä pisteesi kertovat</h3>
-        <p className="text-sm text-gray-700 leading-relaxed">{summary}</p>
+    <div className="grid gap-6 rounded-2xl border border-blue-200 bg-white p-6 md:grid-cols-[minmax(0,240px)_1fr]">
+      <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
+        <div className="relative h-28 w-28">
+          <div className="absolute inset-0 rounded-full" style={ringStyle} />
+          <div className="absolute inset-2 rounded-full bg-white shadow-inner flex flex-col items-center justify-center">
+            <span className="text-2xl font-bold text-blue-900">{formatPoints(points)}</span>
+            <span className="text-xs font-medium text-blue-600">pistettä</span>
+          </div>
+        </div>
+        <div className="space-y-1 text-sm text-gray-600">
+          <p><span className="font-semibold text-gray-900">Bonuspisteet:</span> +{bonusPoints.toFixed(0)}</p>
+          {strengths && strengths.length > 0 && (
+            <div className="flex flex-wrap items-center justify-center gap-2 md:justify-start">
+              {strengths.slice(0, 3).map((strength, index) => (
+                <span key={index} className="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-700">
+                  {strength}
+                </span>
+              ))}
+              {strengths.length > 3 && (
+                <span className="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-600">
+                  +{strengths.length - 3}
+                </span>
+              )}
+            </div>
+          )}
+        </div>
       </div>
-      <div>
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">Seuraavat askeleet</h3>
-        <ul className="space-y-2 text-sm text-gray-700">
-          {nextSteps.map((step, index) => (
-            <li key={index} className="flex gap-2">
-              <span className="text-blue-600">•</span>
-              <span>{step}</span>
-            </li>
-          ))}
-        </ul>
+      <div className="space-y-4">
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">Mitä pisteesi kertovat</h3>
+          <p className="text-sm text-gray-700 leading-relaxed">{summary}</p>
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">Seuraavat askeleet</h3>
+          <ul className="space-y-2 text-sm text-gray-700">
+            {nextSteps.map((step, index) => (
+              <li key={index} className="flex gap-2">
+                <span className="text-blue-600">•</span>
+                <span>{step}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -13,14 +13,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-2 text-sm text-gray-600 md:text-right">
-          <Link href="/todistuspistelaskuri" className="text-blue-600 hover:text-blue-700 font-medium">
-            Avaa todistuspistelaskuri erilliselle sivulle
-          </Link>
-          <span className="text-xs text-gray-500">
-            Voit tarkistaa pisteesi myöhemminkin ilman testituloksia
-          </span>
-        </div>
+        <div className="flex flex-col gap-2 text-sm text-gray-600 md:text-right" />
       </div>
     </footer>
   );
