@@ -7,6 +7,7 @@
  */
 
 import { createClient } from '@supabase/supabase-js';
+import { reportSupabaseIncident } from './monitoring';
 
 // Track whether we have already emitted configuration warnings
 let supabaseMissingLogged = false;
@@ -90,11 +91,28 @@ export const supabaseAdmin = (() => {
       persistSession: false
     },
     global: {
-      fetch: (...args) => {
-        return fetch(...args).catch((err) => {
+      fetch: async (...args) => {
+        const [input, init] = args;
+        const requestUrl = typeof input === 'string'
+          ? input
+          : input instanceof Request
+            ? input.url
+            : 'unknown';
+        const method = init?.method
+          ?? (input instanceof Request ? input.method : 'GET');
+
+        try {
+          return await fetch(...args);
+        } catch (err) {
+          const errorMessage = err instanceof Error ? err.message : String(err);
+          reportSupabaseIncident('supabase_fetch_error', errorMessage, {
+            url: requestUrl,
+            method,
+            isProduction
+          }).catch(() => {});
           console.error('[Supabase] Fetch error:', err);
           throw err;
-        });
+        }
       }
     },
     db: {

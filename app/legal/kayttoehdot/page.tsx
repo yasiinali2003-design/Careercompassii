@@ -6,7 +6,7 @@ export default function KayttoehdotPage() {
       <main className="flex-1">
         <div className="container mx-auto px-4 py-12 max-w-3xl">
           <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-primary">KÄYTTÖEHDOT — CareerCompassi Oy</h1>
-          <p className="text-sm text-muted-foreground mb-8">Versio 3.2 • Viimeksi päivitetty: [päivämäärä] • Y‑tunnus: [täydennä] • Rekisteröity tavaramerkki: [täydennä]</p>
+          <p className="text-sm text-muted-foreground mb-8">Versio 3.3 • Viimeksi päivitetty: 7.11.2025 • Y‑tunnus: [täydennä] • Rekisteröity tavaramerkki: [täydennä]</p>
           <div className="space-y-6 leading-relaxed text-base">
           <pre className="whitespace-pre-wrap font-sans text-[15px]">
 {`## 1 Johdanto
@@ -39,7 +39,7 @@ Käyttäjä sitoutuu olemaan: (i) kopioimatta tai tallentamatta testisisältöä
 CareerCompassi voi asettaa kohtuullisia käyttörajoituksia väärinkäytön estämiseksi. Ajantasaiset rajoitukset ilmoitetaan Palvelussa tai dokumentaatiossa ja niitä voidaan päivittää perustellusti (esim. kapasiteetti, väärinkäytökset).
 
 ## 9 Tietojen käsittely
-Tietosuojakäytännöt on kuvattu Tietosuojaselosteessa, joka on osa näitä Ehtoja. Oppilaitos toimii oppilaiden tietojen rekisterinpitäjänä; CareerCompassi toimii tietojen käsittelijänä oppilaitoksen lukuun ja rekisterinpitäjänä omille käyttäjätiedoilleen.
+Tietosuojakäytännöt on kuvattu Tietosuojaselosteessa, joka on osa näitä Ehtoja. Oppilaitos toimii oppilaiden tietojen rekisterinpitäjänä; CareerCompassi toimii tietojen käsittelijänä oppilaitoksen lukuun ja rekisterinpitäjänä omille käyttäjätiedoilleen. Testien luokkakoodit (class token) tallennetaan Supabase-postgres-tietokantaan hajautettuina ja PIN-koodit poistuvat automaattisesti 24 tunnin jälkeen.
 
 ## 10 Maksut ja laskutus
 Maksullisen Palvelun osalta: maksuehto 14 pv netto laskun päiväyksestä. Viivästyskorko 8 % + viitekorko; muistutuskulut lain mukaisesti. CareerCompassi voi keskeyttää käyttöoikeuden, jos maksu viivästyy yli 14 päivää. Hinnat ALV‑käytännön mukaisesti. Maksettuja maksuja ei palauteta, paitsi pakottavan lain tai olennaisen palveluvirheen tapauksissa.
@@ -60,7 +60,7 @@ Kuluttaja‑asiakkaalla on oikeus peruuttaa sopimus 14 päivän kuluessa sekä t
 Sovellettava laki: Suomen laki. Riidat pyritään ratkaisemaan neuvotteluin. Kuluttaja‑asiat: Kuluttajariitalautakunta tai Helsingin käräjäoikeus. B2B‑asiat: ensisijaisesti Helsingin käräjäoikeus. Ehtojen kieli on suomi; ristiriitatilanteessa suomenkielinen versio on ensisijainen.
 
 ## 16 Tietojen säilytys ja Premium‑ehdot
-Testitulokset säilytetään 3 vuotta testin suorituspäivästä. Premium‑oppilaitoksille säilytysaika on 5 vuotta sopimuksen mukaisesti. Pakettikohtaiset ehdot kuvataan hinnoittelusivulla ja/tai sopimuksessa.
+Testitulokset säilytetään 3 vuotta testin suorituspäivästä. Premium‑oppilaitoksille säilytysaika on 5 vuotta sopimuksen mukaisesti. Selainkohtaiset asetukset (esim. laskuri- ja testisyötteet) säilytetään käyttäjän omassa laitteessa localStoragessa eikä niitä toimiteta CareerCompassille. Pakettikohtaiset ehdot kuvataan hinnoittelusivulla ja/tai sopimuksessa.
 
 ## 17 API‑pääsy
 API ei ole oletuksena saatavilla. Premium‑oppilaitoksille voidaan tarjota rajattu luku‑API erillisellä sopimuksella (API‑avaimet, käyttörajoitukset, tietoturvavaatimukset).
