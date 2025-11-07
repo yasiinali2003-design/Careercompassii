@@ -4,9 +4,19 @@
  * Based on Finnish university admission system (2025)
  */
 
-export interface GradeInput {
-  [subject: string]: string; // Grade: L, E, M, C, B, A, I
+import {
+  SUBJECT_DEFINITIONS,
+  SubjectDefinition,
+  SubjectVariant,
+  GradeSymbol
+} from './todistuspiste/config';
+
+export interface SubjectInput {
+  grade?: GradeSymbol;
+  variantKey?: string;
 }
+
+export type SubjectInputs = Record<string, SubjectInput>;
 
 export interface TodistuspisteResult {
   totalPoints: number;
@@ -15,65 +25,102 @@ export interface TodistuspisteResult {
 }
 
 /**
- * Convert Finnish grade to points
+ * Convert Finnish grade to base points
  * L (laudatur) = 7, E (eximia) = 6, M (magna) = 5, C (cum laude) = 4, B (lubenter) = 3, A (approbatur) = 2, I (improbatur) = 0
  */
 export function getGradePoints(grade: string): number {
   const gradeMap: Record<string, number> = {
-    'L': 7,
-    'E': 6,
-    'M': 5,
-    'C': 4,
-    'B': 3,
-    'A': 2,
-    'I': 0,
-    'l': 7,
-    'e': 6,
-    'm': 5,
-    'c': 4,
-    'b': 3,
-    'a': 2,
-    'i': 0
+    L: 7,
+    E: 6,
+    M: 5,
+    C: 4,
+    B: 3,
+    A: 2,
+    I: 0,
+    l: 7,
+    e: 6,
+    m: 5,
+    c: 4,
+    b: 3,
+    a: 2,
+    i: 0
   };
-  
+
   return gradeMap[grade] ?? 0;
+}
+
+function resolveVariant(subject: SubjectDefinition, input: SubjectInput): SubjectVariant | undefined {
+  if (!subject.variants || subject.variants.length === 0) {
+    return undefined;
+  }
+
+  if (input.variantKey) {
+    const matching = subject.variants.find(variant => variant.key === input.variantKey);
+    if (matching) {
+      return matching;
+    }
+  }
+
+  if (subject.defaultVariantKey) {
+    const fallback = subject.variants.find(variant => variant.key === subject.defaultVariantKey);
+    if (fallback) {
+      return fallback;
+    }
+  }
+
+  return subject.variants[0];
+}
+
+function getSubjectCoefficient(subject: SubjectDefinition, variant?: SubjectVariant): number {
+  if (variant) {
+    return variant.coefficient;
+  }
+  if (subject.coefficient) {
+    return subject.coefficient;
+  }
+  return 1;
 }
 
 /**
  * Calculate bonus points based on mother tongue and mathematics
- * Bonus points: +2 for L in mother tongue (äidinkieli), +2 for L in mathematics
+ * Bonus points: +2 for L in mother tongue (äidinkieli) OR mathematics
  */
-export function calculateBonusPoints(grades: GradeInput): number {
-  const motherTongue = grades['äidinkieli'] || grades['Äidinkieli'] || grades['aidinkieli'];
-  const mathematics = grades['matematiikka'] || grades['Matematiikka'];
+export function calculateBonusPoints(grades: SubjectInputs): number {
+  const motherTongue = grades['äidinkieli'];
+  const mathematics = grades['matematiikka'];
 
-  const hasMotherTongueBonus = motherTongue && motherTongue.toUpperCase() === 'L';
-  const hasMathematicsBonus = mathematics && mathematics.toUpperCase() === 'L';
+  const hasMotherTongueBonus = motherTongue?.grade && motherTongue.grade.toUpperCase() === 'L';
+  const hasMathematicsBonus = mathematics?.grade && mathematics.grade.toUpperCase() === 'L';
 
   return hasMotherTongueBonus || hasMathematicsBonus ? 2 : 0;
 }
 
 /**
- * Calculate total todistuspisteet from grades
- * Sums all subject points + bonus points
+ * Calculate total todistuspisteet from subject inputs
+ * Sums all weighted subject points + bonus points
  */
-export function calculateTodistuspisteet(grades: GradeInput): TodistuspisteResult {
+export function calculateTodistuspisteet(grades: SubjectInputs): TodistuspisteResult {
   const subjectPoints: Record<string, number> = {};
   let totalPoints = 0;
-  
-  // Calculate points for each subject
-  for (const [subject, grade] of Object.entries(grades)) {
-    if (grade && grade.trim() !== '') {
-      const points = getGradePoints(grade.trim());
-      subjectPoints[subject] = points;
-      totalPoints += points;
+
+  SUBJECT_DEFINITIONS.forEach(subject => {
+    const input = grades[subject.key];
+    if (!input?.grade) {
+      return;
     }
-  }
-  
-  // Add bonus points
+
+    const variant = resolveVariant(subject, input);
+    const coefficient = getSubjectCoefficient(subject, variant);
+    const basePoints = getGradePoints(input.grade);
+    const weightedPoints = basePoints * coefficient;
+
+    subjectPoints[subject.key] = weightedPoints;
+    totalPoints += weightedPoints;
+  });
+
   const bonusPoints = calculateBonusPoints(grades);
   totalPoints += bonusPoints;
-  
+
   return {
     totalPoints,
     subjectPoints,

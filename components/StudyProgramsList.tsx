@@ -4,7 +4,8 @@ import { useState, useMemo, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { ExternalLink, GraduationCap, Search, Filter, ArrowUpDown, Info } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { ExternalLink, GraduationCap, Info, Search, SearchX, Star } from 'lucide-react';
 import { StudyProgram } from '@/lib/data/studyPrograms';
 import { getPointRangeCategory, formatPoints } from '@/lib/todistuspiste';
 import { ProgramDetailsModal } from '@/components/ProgramDetailsModal';
@@ -48,6 +49,8 @@ const SORT_OPTIONS = [
   { value: 'name', label: 'Nimi: A-Ö' }
 ];
 
+const FAVORITES_KEY = 'todistuspisteFavorites';
+
 export function StudyProgramsList({ points, careerSlugs, educationType }: StudyProgramsListProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [fieldFilter, setFieldFilter] = useState('all');
@@ -58,6 +61,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [total, setTotal] = useState(0);
+  const [favorites, setFavorites] = useState<string[]>([]);
 
   // Fetch programs from API
   useEffect(() => {
@@ -90,6 +94,33 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
     loadPrograms();
   }, [points, educationType, fieldFilter, searchQuery, sortBy, careerSlugs]);
 
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('todistuspisteFavorites');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          setFavorites(parsed);
+        }
+      }
+    } catch (error) {
+      console.warn('[StudyProgramsList] Failed to load favorites from localStorage', error);
+    }
+  }, []);
+
+  const toggleFavorite = (programId: string) => {
+    setFavorites(prev => {
+      const exists = prev.includes(programId);
+      const updated = exists ? prev.filter(id => id !== programId) : [...prev, programId];
+      try {
+        localStorage.setItem('todistuspisteFavorites', JSON.stringify(updated));
+      } catch (error) {
+        console.warn('[StudyProgramsList] Failed to persist favorites', error);
+      }
+      return updated;
+    });
+  };
+
   const getMatchBadge = (program: StudyProgram) => {
     const matchCount = program.relatedCareers.filter(slug => careerSlugs.includes(slug)).length;
     if (matchCount >= 2) {
@@ -100,7 +131,12 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
     return null;
   };
 
-  const getChanceBadge = (program: StudyProgram) => {
+  const formatPointValue = (value?: number | null) => {
+    if (value === null || value === undefined) return '—';
+    return formatPoints(value);
+  };
+
+  const getFallbackConfidenceBadge = (program: StudyProgram) => {
     const category = getPointRangeCategory(points, program.minPoints, program.maxPoints);
     switch (category) {
       case 'excellent':
@@ -116,6 +152,49 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
     }
   };
 
+  const getHistoryConfidence = (program: StudyProgram) => {
+    const latest = program.pointHistory?.[0];
+    if (!latest) return null;
+
+    const min = latest.minPoints ?? null;
+    const median = latest.medianPoints ?? min;
+    if (min === null && median === null) return null;
+
+    const baseline = median ?? min ?? 0;
+    const safeThreshold = baseline + 5;
+    const solidThreshold = (min ?? baseline) - 5;
+
+    if (points >= safeThreshold) {
+      return {
+        badge: { text: 'Vahva mahdollisuus (historia)', color: 'bg-green-100 text-green-800' },
+        detail: `Viimeisin pisteraja ${latest.year}: min ${formatPointValue(min)}, mediaani ${formatPointValue(latest.medianPoints)}.`,
+        history: latest
+      };
+    }
+
+    if (min !== null && points >= min) {
+      return {
+        badge: { text: 'Hyvä mahdollisuus (historia)', color: 'bg-blue-100 text-blue-800' },
+        detail: `Viimeisin pisteraja ${latest.year}: min ${formatPointValue(min)}, mediaani ${formatPointValue(latest.medianPoints)}.`,
+        history: latest
+      };
+    }
+
+    if (points >= solidThreshold) {
+      return {
+        badge: { text: 'Mahdollinen – vaatii lisäpanostusta', color: 'bg-yellow-100 text-yellow-800' },
+        detail: `Olet lähellä viime vuoden pisterajaa (${formatPointValue(min)}).`,
+        history: latest
+      };
+    }
+
+    return {
+      badge: { text: 'Haastava nykyisillä pisteillä', color: 'bg-orange-100 text-orange-800' },
+      detail: `Viime vuonna alimmat pisteet olivat ${formatPointValue(min)} (${latest.year}).`,
+      history: latest
+    };
+  };
+
   return (
     <Card className="mb-8">
       <CardHeader>
@@ -127,71 +206,96 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
       </CardHeader>
       <CardContent>
         {/* Search and Filter Controls */}
-        <div className="mb-6 space-y-4">
-          {/* Search Bar */}
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-            <Input
-              type="text"
-              placeholder="Etsi koulutusohjelmaa tai oppilaitosta..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10"
-            />
-          </div>
-          
-          {/* Filters Row */}
-          <div className="flex flex-col sm:flex-row gap-3">
-            {/* Field Filter */}
+        <div className="mb-8 rounded-2xl border border-gray-200 bg-white/80 p-4 shadow-sm">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="flex-1">
-              <label className="text-sm font-medium text-gray-700 mb-1 block">
-                Ala
-              </label>
-              <select
-                value={fieldFilter}
-                onChange={(e) => setFieldFilter(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
-              >
-                {FIELD_OPTIONS.map(option => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
+              <label className="text-sm font-semibold text-gray-800 mb-2 block">Hae ohjelmia</label>
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <Input
+                  type="text"
+                  placeholder="Etsi koulutusohjelmaa tai oppilaitosta..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10"
+                />
+              </div>
             </div>
-            
-            {/* Sort Filter */}
-            <div className="flex-1">
-              <label className="text-sm font-medium text-gray-700 mb-1 block">
-                Järjestä
-              </label>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+            <div className="flex w-full flex-col gap-3 md:w-auto md:flex-row md:items-end">
+              <div className="md:w-48">
+                <label className="text-sm font-semibold text-gray-800 mb-2 block">Ala</label>
+                <Select value={fieldFilter} onValueChange={setFieldFilter}>
+                  <SelectTrigger className="w-full text-sm">
+                    <SelectValue placeholder="Valitse ala" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {FIELD_OPTIONS.map(option => (
+                      <SelectItem key={option.value} value={option.value}>
+                        {option.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="md:w-56">
+                <label className="text-sm font-semibold text-gray-800 mb-2 block">Järjestä</label>
+                <Select value={sortBy} onValueChange={setSortBy}>
+                  <SelectTrigger className="w-full text-sm">
+                    <SelectValue placeholder="Valitse järjestys" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {SORT_OPTIONS.map(option => (
+                      <SelectItem key={option.value} value={option.value}>
+                        {option.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                className="md:self-center"
+                onClick={() => {
+                  setSearchQuery('');
+                  setFieldFilter('all');
+                  setSortBy('match');
+                }}
               >
-                {SORT_OPTIONS.map(option => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
+                Tyhjennä
+              </Button>
             </div>
           </div>
-          
-          {/* Results Count */}
-          {!loading && programs.length > 0 && (
-            <p className="text-sm text-gray-600">
-              Löytyi {total} koulutusohjelmaa
-              {total > programs.length && ` (näytetään ${programs.length} ensimmäistä)`}
-            </p>
-          )}
+          <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-gray-600">
+            <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 font-medium text-blue-700">
+              {loading ? 'Ladataan ohjelmia…' : `Näytetään ${Math.min(programs.length, 50)} / ${total} ohjelmaa`}
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1">
+              <span className="h-2 w-2 rounded-full bg-blue-500" />
+              {educationType === 'yliopisto' ? 'Yliopistohaku' : 'AMK-haku'}
+            </span>
+            {fieldFilter !== 'all' && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1">
+                <span className="font-semibold">Ala:</span>
+                {FIELD_OPTIONS.find(f => f.value === fieldFilter)?.label || 'Kaikki'}
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Loading State */}
         {loading && (
-          <div className="text-center py-8">
-            <p className="text-gray-600">Ladataan koulutusohjelmia...</p>
+          <div className="space-y-3">
+            {[...Array(3)].map((_, index) => (
+              <div key={index} className="animate-pulse rounded-2xl border border-gray-200 bg-gray-50 p-4">
+                <div className="h-4 w-1/3 rounded bg-gray-200" />
+                <div className="mt-3 h-3 w-full rounded bg-gray-200" />
+                <div className="mt-2 flex gap-2">
+                  <div className="h-4 w-24 rounded bg-gray-200" />
+                  <div className="h-4 w-28 rounded bg-gray-200" />
+                </div>
+              </div>
+            ))}
           </div>
         )}
 
@@ -214,24 +318,36 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
 
         {/* Programs List */}
         {!loading && !error && programs.length === 0 && (
-          <div className="text-center py-8">
-            <p className="text-gray-600 mb-2">
-              {searchQuery || fieldFilter !== 'all' 
-                ? 'Ei koulutusohjelmia löytynyt hakuehtojesi mukaan.'
-                : 'Valitettavasti emme löytäneet koulutusohjelmia, jotka sopisivat pisteisiisi.'}
+          <div className="text-center py-10">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-50 text-blue-500">
+              <SearchX className="h-8 w-8" />
+            </div>
+            <h3 className="mt-4 text-lg font-semibold text-gray-900">Ei vielä sopivia tuloksia</h3>
+            <p className="mt-2 text-sm text-gray-600 max-w-lg mx-auto">
+              Tarkista arvosanojen skenaariotyökalulla, voisiko pienikin parannus nostaa pisteitäsi. Voit myös vaihtaa AMK/Yliopisto-välilehteä tai laajentaa hakua eri alaan.
             </p>
-            {(searchQuery || fieldFilter !== 'all') && (
+            <div className="mt-4 flex flex-wrap justify-center gap-3">
+              <Button
+                variant="default"
+                size="sm"
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              >
+                Avaa skenaariotyökalu
+              </Button>
               <Button
                 variant="outline"
+                size="sm"
                 onClick={() => {
                   setSearchQuery('');
                   setFieldFilter('all');
+                  setSortBy('match');
                 }}
-                className="mt-4"
               >
                 Tyhjennä suodattimet
               </Button>
-            )}
+            </div>
           </div>
         )}
 
@@ -239,12 +355,14 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
           <div className="space-y-4">
             {programs.map((program) => {
               const matchBadge = getMatchBadge(program);
-              const chanceBadge = getChanceBadge(program);
+              const historyConfidence = getHistoryConfidence(program);
+              const chanceBadge = historyConfidence?.badge || getFallbackConfidenceBadge(program);
+              const isFavorite = favorites.includes(program.id);
               
               return (
                 <Card 
                 key={program.id} 
-                className="hover:shadow-md transition-shadow cursor-pointer"
+                className="transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
                 onClick={() => {
                   setSelectedProgram(program);
                   setIsModalOpen(true);
@@ -289,6 +407,17 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
                       </div>
                     </div>
                     <div className="flex flex-col items-end gap-2">
+                      <button
+                        type="button"
+                        className="inline-flex items-center gap-1 rounded-full border border-yellow-200 bg-yellow-50 px-3 py-1 text-xs font-medium text-yellow-700 hover:bg-yellow-100"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          toggleFavorite(program.id);
+                        }}
+                      >
+                        <Star className={`h-4 w-4 ${isFavorite ? 'fill-yellow-500 text-yellow-500' : 'text-yellow-500'}`} />
+                        {isFavorite ? 'Tallennettu' : 'Tallenna suosikiksi'}
+                      </button>
                       <div className="text-right">
                         <p className="text-sm text-gray-600">Pisterajat:</p>
                         <p className="text-lg font-semibold text-gray-900">
@@ -298,6 +427,17 @@ export function StudyProgramsList({ points, careerSlugs, educationType }: StudyP
                         <p className="text-xs text-gray-500 mt-1">
                           Sinun pisteet: {formatPoints(points)}
                         </p>
+                        {historyConfidence?.detail && (
+                          <p className="text-xs text-gray-500 mt-1">
+                            {historyConfidence.detail}
+                            {historyConfidence.history?.applicantCount ? ` Hakijoita: ${historyConfidence.history.applicantCount}.` : ''}
+                          </p>
+                        )}
+                        {historyConfidence && (
+                          <p className="text-xs text-gray-400 mt-1 italic">
+                            Päivitys: {historyConfidence.history?.year}. Lähde: Opetushallituksen todistusvalintatilastot 2025.
+                          </p>
+                        )}
                       </div>
                       {program.opintopolkuUrl && (
                         <Link href={program.opintopolkuUrl} target="_blank" rel="noopener noreferrer">

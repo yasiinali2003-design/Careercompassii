@@ -27,6 +27,7 @@ export async function GET(request: NextRequest) {
     const limit = Math.min(parseInt(searchParams.get('limit') || '50'), 100);
     const offset = parseInt(searchParams.get('offset') || '0');
     const sort = searchParams.get('sort') || 'match';
+    const includeHistory = searchParams.get('history') === 'true';
 
     if (!supabaseAdmin) {
       // Fallback to static data if Supabase not configured
@@ -43,7 +44,7 @@ export async function GET(request: NextRequest) {
     // Build query
     let query = supabaseAdmin
       .from('study_programs')
-      .select('*', { count: 'exact' });
+      .select(includeHistory ? '*, point_history:study_program_point_history(*)' : '*', { count: 'exact' });
 
     // Filter by institution type
     if (type) {
@@ -138,7 +139,19 @@ export async function GET(request: NextRequest) {
       maxPoints: p.max_points ? parseFloat(p.max_points.toString()) : undefined,
       relatedCareers: p.related_careers || [],
       opintopolkuUrl: p.opintopolku_url || undefined,
-      description: p.description || undefined
+      description: p.description || undefined,
+      pointHistory: includeHistory && p.point_history
+        ? (p.point_history as any[])
+            .map(entry => ({
+              year: entry.data_year,
+              minPoints: entry.min_points !== null ? parseFloat(entry.min_points.toString()) : null,
+              medianPoints: entry.median_points !== null ? parseFloat(entry.median_points.toString()) : null,
+              maxPoints: entry.max_points !== null ? parseFloat(entry.max_points.toString()) : null,
+              applicantCount: entry.applicant_count ?? null,
+              notes: entry.notes || undefined
+            }))
+            .sort((a, b) => b.year - a.year)
+        : undefined
     }));
 
     return NextResponse.json({

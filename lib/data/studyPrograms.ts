@@ -15,6 +15,16 @@ export interface StudyProgram {
   relatedCareers: string[]; // Career slugs that match this program
   opintopolkuUrl?: string;
   description?: string;
+  pointHistory?: StudyProgramHistory[];
+}
+
+export interface StudyProgramHistory {
+  year: number;
+  minPoints: number | null;
+  medianPoints?: number | null;
+  maxPoints?: number | null;
+  applicantCount?: number | null;
+  notes?: string;
 }
 
 /**

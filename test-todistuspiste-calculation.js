@@ -1,40 +1,120 @@
 /**
- * TEST: Todistuspiste Calculation Logic
- * Tests the grade-to-points conversion and bonus point calculation
+ * TEST: Todistuspiste Calculation Logic (TASO2 configuration)
+ * Mirrors the behaviour of lib/todistuspiste.ts with weighted subjects.
  */
 
-// Mock the calculation functions (simplified for Node.js testing)
+const SUBJECT_DEFINITIONS = [
+  { key: 'äidinkieli', label: 'Äidinkieli', required: true, coefficient: 1 },
+  {
+    key: 'matematiikka',
+    label: 'Matematiikka',
+    required: true,
+    variants: [
+      { key: 'pitka', label: 'Pitkä', coefficient: 1.5 },
+      { key: 'lyhyt', label: 'Lyhyt', coefficient: 1.0 }
+    ],
+    defaultVariantKey: 'pitka'
+  },
+  {
+    key: 'englanti',
+    label: 'Englanti',
+    required: true,
+    variants: [
+      { key: 'a', label: 'A-kieli', coefficient: 1.15 },
+      { key: 'b', label: 'B-kieli', coefficient: 1.0 }
+    ],
+    defaultVariantKey: 'a'
+  },
+  {
+    key: 'toinen-kotimainen',
+    label: 'Toinen kotimainen',
+    required: false,
+    variants: [
+      { key: 'a', label: 'A-kieli', coefficient: 1.1 },
+      { key: 'b', label: 'B-kieli', coefficient: 1.0 }
+    ],
+    defaultVariantKey: 'b'
+  },
+  { key: 'reaaliaineet', label: 'Reaaliaine', required: false, coefficient: 1 },
+  { key: 'reaali-2', label: 'Reaaliaine 2', required: false, coefficient: 1 },
+  { key: 'reaali-3', label: 'Reaaliaine 3', required: false, coefficient: 1 },
+  {
+    key: 'muu-kieli',
+    label: 'Muu vieras kieli',
+    required: false,
+    variants: [
+      { key: 'a', label: 'A-kieli', coefficient: 1.05 },
+      { key: 'b', label: 'B-kieli', coefficient: 1.0 }
+    ],
+    defaultVariantKey: 'b'
+  }
+];
+
 function getGradePoints(grade) {
   const gradeMap = {
-    'L': 7, 'E': 6, 'M': 5, 'C': 4, 'B': 3, 'A': 2, 'I': 0,
-    'l': 7, 'e': 6, 'm': 5, 'c': 4, 'b': 3, 'a': 2, 'i': 0
+    L: 7,
+    E: 6,
+    M: 5,
+    C: 4,
+    B: 3,
+    A: 2,
+    I: 0,
+    l: 7,
+    e: 6,
+    m: 5,
+    c: 4,
+    b: 3,
+    a: 2,
+    i: 0
   };
   return gradeMap[grade] ?? 0;
 }
 
-function calculateBonusPoints(grades) {
-  const motherTongue = grades['äidinkieli'] || grades['Äidinkieli'] || grades['aidinkieli'];
-  const mathematics = grades['matematiikka'] || grades['Matematiikka'];
-  const hasMotherTongueBonus = motherTongue && motherTongue.toUpperCase() === 'L';
-  const hasMathematicsBonus = mathematics && mathematics.toUpperCase() === 'L';
+function resolveVariant(subject, input) {
+  if (!subject.variants || subject.variants.length === 0) return undefined;
+  if (input.variantKey) {
+    const chosen = subject.variants.find(v => v.key === input.variantKey);
+    if (chosen) return chosen;
+  }
+  if (subject.defaultVariantKey) {
+    const defaultVariant = subject.variants.find(v => v.key === subject.defaultVariantKey);
+    if (defaultVariant) return defaultVariant;
+  }
+  return subject.variants[0];
+}
+
+function getCoefficient(subject, variant) {
+  if (variant) return variant.coefficient;
+  if (subject.coefficient) return subject.coefficient;
+  return 1;
+}
+
+function calculateBonusPoints(inputs) {
+  const motherTongue = inputs['äidinkieli'];
+  const mathematics = inputs['matematiikka'];
+  const hasMotherTongueBonus = motherTongue?.grade && motherTongue.grade.toUpperCase() === 'L';
+  const hasMathematicsBonus = mathematics?.grade && mathematics.grade.toUpperCase() === 'L';
   return hasMotherTongueBonus || hasMathematicsBonus ? 2 : 0;
 }
 
-function calculateTodistuspisteet(grades) {
+function calculateTodistuspisteet(inputs) {
   const subjectPoints = {};
   let totalPoints = 0;
-  
-  for (const [subject, grade] of Object.entries(grades)) {
-    if (grade && grade.trim() !== '') {
-      const points = getGradePoints(grade.trim());
-      subjectPoints[subject] = points;
-      totalPoints += points;
-    }
-  }
-  
-  const bonusPoints = calculateBonusPoints(grades);
+
+  SUBJECT_DEFINITIONS.forEach(subject => {
+    const input = inputs[subject.key];
+    if (!input || !input.grade) return;
+
+    const variant = resolveVariant(subject, input);
+    const coefficient = getCoefficient(subject, variant);
+    const weighted = getGradePoints(input.grade) * coefficient;
+    subjectPoints[subject.key] = weighted;
+    totalPoints += weighted;
+  });
+
+  const bonusPoints = calculateBonusPoints(inputs);
   totalPoints += bonusPoints;
-  
+
   return {
     totalPoints,
     subjectPoints,
@@ -42,127 +122,78 @@ function calculateTodistuspisteet(grades) {
   };
 }
 
-// Test Cases
-console.log('🧪 Testing Todistuspiste Calculation Logic\n');
+function round(value) {
+  return Math.round(value * 100) / 100;
+}
 
-// Test 1: Basic grade conversion
-console.log('Test 1: Basic grade conversion');
+// Test Cases
+console.log('🧪 Testing Todistuspiste Calculation Logic (weighted)\n');
+
+// Test 1: Weighted combination + bonus from äidinkieli
+console.log('Test 1: Weighted combination + bonus');
 const test1 = {
-  'äidinkieli': 'L',
-  'matematiikka': 'E',
-  'englanti': 'M',
-  'historia': 'C'
+  'äidinkieli': { grade: 'L' },
+  'matematiikka': { grade: 'E', variantKey: 'pitka' },
+  'englanti': { grade: 'M', variantKey: 'a' },
+  'reaaliaineet': { grade: 'C' }
 };
 const result1 = calculateTodistuspisteet(test1);
-console.log('Input:', test1);
-console.log('Expected: 7+6+5+4+2(bonus) = 24 points');
-console.log('Result:', result1.totalPoints, 'points');
-console.log('✅ PASS' + (result1.totalPoints === 24 ? '' : ' ❌ FAIL'));
+const expected1 = round(7 + 6 * 1.5 + 5 * 1.15 + 4 * 1 + 2);
+console.log('Result:', round(result1.totalPoints), 'Expected:', expected1);
+console.log('✅ PASS' + (round(result1.totalPoints) === expected1 ? '' : ' ❌ FAIL'));
 console.log('');
 
-// Test 2: All grades L (maximum)
-console.log('Test 2: All grades L (maximum)');
+// Test 2: Bonus triggered by matematiikka L (äidinkieli ei L)
+console.log('Test 2: Bonus from mathematics');
 const test2 = {
-  'äidinkieli': 'L',
-  'matematiikka': 'L',
-  'englanti': 'L',
-  'historia': 'L',
-  'fysiikka': 'L',
-  'kemia': 'L',
-  'biologia': 'L'
+  'äidinkieli': { grade: 'E' },
+  'matematiikka': { grade: 'L', variantKey: 'pitka' },
+  'englanti': { grade: 'M', variantKey: 'a' }
 };
 const result2 = calculateTodistuspisteet(test2);
-console.log('Input:', test2);
-console.log('Expected: 7*7 + 2(bonus) = 51 points');
-console.log('Result:', result2.totalPoints, 'points');
-console.log('✅ PASS' + (result2.totalPoints === 51 ? '' : ' ❌ FAIL'));
+const expected2 = round(6 + 7 * 1.5 + 5 * 1.15 + 2);
+console.log('Result:', round(result2.totalPoints), 'Expected:', expected2);
+console.log('✅ PASS' + (round(result2.totalPoints) === expected2 ? '' : ' ❌ FAIL'));
 console.log('');
 
-// Test 3: Average grades (C average)
-console.log('Test 3: Average grades (C average)');
-const test3 = {
-  'äidinkieli': 'C',
-  'matematiikka': 'C',
-  'englanti': 'C',
-  'historia': 'C',
-  'fysiikka': 'C',
-  'kemia': 'C'
-};
-const result3 = calculateTodistuspisteet(test3);
-console.log('Input:', test3);
-console.log('Expected: 4*6 = 24 points (no bonus)');
-console.log('Result:', result3.totalPoints, 'points');
-console.log('✅ PASS' + (result3.totalPoints === 24 ? '' : ' ❌ FAIL'));
+// Test 3: Variant impact (A-kieli vs B-kieli)
+console.log('Test 3: Variant coefficients');
+const variantA = calculateTodistuspisteet({ 'englanti': { grade: 'M', variantKey: 'a' } });
+const variantB = calculateTodistuspisteet({ 'englanti': { grade: 'M', variantKey: 'b' } });
+console.log('A-kieli points:', round(variantA.subjectPoints['englanti'] || 0));
+console.log('B-kieli points:', round(variantB.subjectPoints['englanti'] || 0));
+console.log('✅ PASS' + ((variantA.subjectPoints['englanti'] || 0) > (variantB.subjectPoints['englanti'] || 0) ? '' : ' ❌ FAIL'));
 console.log('');
 
-// Test 4: Bonus points only for äidinkieli L
-console.log('Test 4: Bonus points only for äidinkieli L');
+// Test 4: No bonus when ei L arvostelua
+console.log('Test 4: No bonus without L grades');
 const test4 = {
-  'äidinkieli': 'L',
-  'matematiikka': 'E',
-  'englanti': 'M'
+  'äidinkieli': { grade: 'C' },
+  'matematiikka': { grade: 'C', variantKey: 'lyhyt' },
+  'englanti': { grade: 'C', variantKey: 'b' }
 };
 const result4 = calculateTodistuspisteet(test4);
-console.log('Input:', test4);
-console.log('Expected: 7+6+5+2(bonus) = 20 points');
-console.log('Result:', result4.totalPoints, 'points');
-console.log('✅ PASS' + (result4.totalPoints === 20 ? '' : ' ❌ FAIL'));
+const expected4 = round(4 * 1 + 4 * 1 + 4 * 1);
+console.log('Result:', round(result4.totalPoints), 'Expected:', expected4);
+console.log('✅ PASS' + (round(result4.totalPoints) === expected4 ? '' : ' ❌ FAIL'));
 console.log('');
 
-// Test 5: Bonus points only for matematiikka L
-console.log('Test 5: Bonus points only for matematiikka L');
+// Test 5: Invalid grades default to 0
+console.log('Test 5: Invalid grade handling');
 const test5 = {
-  'äidinkieli': 'E',
-  'matematiikka': 'L',
-  'englanti': 'M'
+  'äidinkieli': { grade: 'X' },
+  'matematiikka': { grade: 'C', variantKey: 'lyhyt' }
 };
 const result5 = calculateTodistuspisteet(test5);
-console.log('Input:', test5);
-console.log('Expected: 6+7+5+2(bonus) = 20 points');
-console.log('Result:', result5.totalPoints, 'points');
-console.log('✅ PASS' + (result5.totalPoints === 20 ? '' : ' ❌ FAIL'));
+console.log('Result:', round(result5.totalPoints), 'Expected:', round(4));
+console.log('✅ PASS' + (round(result5.totalPoints) === round(4) ? '' : ' ❌ FAIL'));
 console.log('');
 
-// Test 6: Lowercase grades
-console.log('Test 6: Lowercase grades');
-const test6 = {
-  'äidinkieli': 'l',
-  'matematiikka': 'e',
-  'englanti': 'm'
-};
-const result6 = calculateTodistuspisteet(test6);
-console.log('Input:', test6);
-console.log('Expected: 7+6+5+2(bonus) = 20 points');
-console.log('Result:', result6.totalPoints, 'points');
-console.log('✅ PASS' + (result6.totalPoints === 20 ? '' : ' ❌ FAIL'));
-console.log('');
-
-// Test 7: Invalid grade handling
-console.log('Test 7: Invalid grade handling');
-const test7 = {
-  'äidinkieli': 'X',
-  'matematiikka': 'C',
-  'englanti': 'M'
-};
-const result7 = calculateTodistuspisteet(test7);
-console.log('Input:', test7);
-console.log('Expected: 0+4+5 = 9 points (invalid grade = 0)');
-console.log('Result:', result7.totalPoints, 'points');
-console.log('✅ PASS' + (result7.totalPoints === 9 ? '' : ' ❌ FAIL'));
-console.log('');
-
-// Test 8: Empty grades
-console.log('Test 8: Empty grades');
-const test8 = {
-  'äidinkieli': '',
-  'matematiikka': 'C',
-  'englanti': 'M'
-};
-const result8 = calculateTodistuspisteet(test8);
-console.log('Input:', test8);
-console.log('Expected: 0+4+5 = 9 points (empty = 0)');
-console.log('Result:', result8.totalPoints, 'points');
-console.log('✅ PASS' + (result8.totalPoints === 9 ? '' : ' ❌ FAIL'));
+// Test 6: Clearing subject (no grades) -> 0
+console.log('Test 6: Empty inputs');
+const result6 = calculateTodistuspisteet({});
+console.log('Result:', round(result6.totalPoints), 'Expected:', 0);
+console.log('✅ PASS' + (round(result6.totalPoints) === 0 ? '' : ' ❌ FAIL'));
 console.log('');
 
 console.log('✅ All calculation tests completed!');

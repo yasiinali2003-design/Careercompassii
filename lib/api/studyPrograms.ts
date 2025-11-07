@@ -3,7 +3,7 @@
  * Fetches study programs from API with fallback to static data
  */
 
-import { StudyProgram } from '@/lib/data/studyPrograms';
+import { StudyProgram, StudyProgramHistory } from '@/lib/data/studyPrograms';
 import { studyPrograms as staticPrograms } from '@/lib/data/studyPrograms';
 
 export interface StudyProgramsApiResponse {
@@ -23,6 +23,7 @@ export interface StudyProgramsQuery {
   limit?: number;
   offset?: number;
   sort?: 'match' | 'points-low' | 'points-high' | 'name';
+  includeHistory?: boolean;
 }
 
 /**
@@ -39,7 +40,8 @@ export async function fetchStudyPrograms(
     search,
     limit = 50,
     offset = 0,
-    sort = 'match'
+    sort = 'match',
+    includeHistory = true
   } = query;
 
   try {
@@ -53,6 +55,7 @@ export async function fetchStudyPrograms(
     params.set('limit', limit.toString());
     params.set('offset', offset.toString());
     params.set('sort', sort);
+    if (includeHistory) params.set('history', 'true');
 
     // Try API first
     const response = await fetch(`/api/study-programs?${params.toString()}`);

@@ -17,8 +17,6 @@ import Logo from '@/components/Logo';
 import { supabase } from '@/lib/supabase';
 import { ShareResults } from '@/components/ShareResults';
 import { getEducationPathDescription } from '@/lib/scoring/educationPath';
-import { TodistuspisteCalculator } from '@/components/TodistuspisteCalculator';
-import { StudyProgramsList } from '@/components/StudyProgramsList';
 
 // Types
 interface DimensionScores {
@@ -86,7 +84,6 @@ export default function ResultsPage() {
   const [results, setResults] = useState<ResultsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [calculatedPoints, setCalculatedPoints] = useState<number | null>(null);
 
   useEffect(() => {
     // Get results from localStorage (set by test component)
@@ -316,20 +313,30 @@ export default function ResultsPage() {
           </Card>
         )}
 
-        {/* Todistuspistelaskuri for TASO2 users with yliopisto/AMK recommendation */}
-        {userProfile.cohort === 'TASO2' && 
-         results.educationPath && 
+        {/* Todistuspistelaskuri CTA for TASO2 users with yliopisto/AMK recommendation */}
+        {userProfile.cohort === 'TASO2' &&
+         results.educationPath &&
          (results.educationPath.primary === 'yliopisto' || results.educationPath.primary === 'amk') && (
-          <>
-            <TodistuspisteCalculator onCalculate={setCalculatedPoints} />
-            {calculatedPoints !== null && (
-              <StudyProgramsList
-                points={calculatedPoints}
-                careerSlugs={topCareers.slice(0, 5).map(c => c.slug)}
-                educationType={results.educationPath.primary}
-              />
-            )}
-          </>
+          <div className="mb-10">
+            <div className="rounded-2xl border-2 border-blue-200 bg-gradient-to-r from-blue-50 via-white to-purple-50 p-6 shadow-sm">
+              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div className="md:max-w-2xl">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Laske todistuspisteesi seuraavaksi</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    Saat tarkemmat suositellut koulutusohjelmat laskemalla yo-todistuksesi pisteet. Laskuri yhdistää pisteesi ja tämän testin ammattilöydökset ja näyttää sinulle sopivimmat yliopisto- tai AMK-vaihtoehdot.
+                  </p>
+                </div>
+                <Link href="/todistuspistelaskuri" className="shrink-0">
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                    Avaa todistuspistelaskuri
+                  </Button>
+                </Link>
+              </div>
+              <p className="mt-4 text-sm text-gray-600">
+                Voit palata tähän näkymään milloin tahansa. Laskuri tallentaa pisteesi selaimeen, jotta voit vertailla ohjelmia rauhassa.
+              </p>
+            </div>
+          </div>
         )}
 
         {/* Career Matches */}
@@ -430,16 +437,10 @@ function CareerMatchCard({
     );
   };
 
-  const getMatchColor = (score: number) => {
-    if (score >= 70) return 'text-green-600';
-    if (score >= 60) return 'text-yellow-600';
-    return 'text-gray-600';
-  };
-
   return (
     <Card className="hover:shadow-lg transition-shadow">
       <CardHeader>
-        <div className="flex items-start justify-between">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
               <span className="text-2xl font-bold text-gray-400">#{rank}</span>
@@ -449,20 +450,14 @@ function CareerMatchCard({
               {career.category}
             </CardDescription>
           </div>
-          <div className="text-right">
-            <div className={`text-3xl font-bold ${getMatchColor(career.overallScore)}`}>
-              {career.overallScore}%
-            </div>
-            <div className="text-xs text-gray-500">yhteensopivuus</div>
+          <div className="md:text-right">
+            {getConfidenceBadge(career.confidence)}
           </div>
         </div>
       </CardHeader>
 
       <CardContent className="space-y-4">
-        {/* Confidence Badge */}
-        <div>
-          {getConfidenceBadge(career.confidence)}
-        </div>
+        {/* Confidence Badge already shown in header for clarity */}
 
         {/* Reasons */}
         {career.reasons && career.reasons.length > 0 && (
