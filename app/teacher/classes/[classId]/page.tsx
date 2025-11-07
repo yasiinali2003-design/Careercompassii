@@ -5,7 +5,7 @@
  * Shows PINs, name mapping, and results for a specific class
  */
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import TeacherClassManager from '@/components/TeacherClassManager';
 import TeacherNav from '@/components/TeacherNav';
 import TeacherFooter from '@/components/TeacherFooter';
@@ -19,11 +19,7 @@ export default function ClassDetailPage({
   const [classToken, setClassToken] = useState<string>('');
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchClassDetails();
-  }, [classId]);
-
-  const fetchClassDetails = async () => {
+  const fetchClassDetails = useCallback(async () => {
     try {
       const response = await fetch(`/api/classes/${classId}`);
       const data = await response.json();
@@ -37,7 +33,11 @@ export default function ClassDetailPage({
     } finally {
       setLoading(false);
     }
-  };
+  }, [classId]);
+
+  useEffect(() => {
+    fetchClassDetails();
+  }, [fetchClassDetails]);
 
   if (loading) {
     return (

@@ -174,7 +174,7 @@ export default function CategoryPageClient({
                   <h3 className="font-semibold mb-2">Miten työllisyysnäkymät määritetään?</h3>
                   <p className="text-muted-foreground text-sm">
                     Työllisyysnäkymät perustuvat Työmarkkinatorin ja muiden virallisten lähteiden tietoihin. 
-                    "Kasvaa" tarkoittaa, että alan kysyntä on kasvussa, "vakaa" että kysyntä pysyy samana.
+                    &quot;Kasvaa&quot; tarkoittaa, että alan kysyntä on kasvussa, &quot;vakaa&quot; että kysyntä pysyy samana.
                   </p>
                 </div>
                 <div>

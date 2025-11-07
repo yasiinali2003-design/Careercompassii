@@ -5,7 +5,7 @@
  * Handles: PIN generation, name mapping, comprehensive results viewing with analytics
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { 
   saveMappingToStorage, 
   loadMappingFromStorage,
@@ -218,6 +218,45 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
   const completionCheck = checkClassCompletion(pins.length, results.length);
   const atRiskStudents = results.filter(r => checkAtRiskStudent(r).shouldNotify);
 
+  const fetchPins = useCallback(async () => {
+    try {
+      const response = await fetch(`/api/classes/${classId}/pins`);
+      const data = await response.json();
+      if (data.success) {
+        setPins(data.pins.map((p: any) => p.pin));
+      }
+    } catch (error) {
+      console.error('Error fetching PINs:', error);
+    }
+  }, [classId]);
+
+  const loadNameMapping = useCallback(() => {
+    const mapping = loadMappingFromStorage(classId);
+    if (mapping) {
+      setNameMapping(mapping);
+    }
+  }, [classId]);
+
+  const fetchResults = useCallback(async () => {
+    setResultsLoading(true);
+    setResultsError(null);
+    try {
+      const response = await fetch(`/api/classes/${classId}/results`);
+      const data = await response.json();
+      if (data.success) {
+        setResults(data.results);
+      } else {
+        const errorMsg = data.error || 'Tulosten lataus epäonnistui';
+        const hint = data.hint || '';
+        setResultsError(`${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nRatkaisu: Päivitä sivu ja yritä uudelleen. Jos ongelma jatkuu, ota yhteyttä tukeen.`);
+      }
+    } catch (error) {
+      console.error('Error fetching results:', error);
+      setResultsError(`Verkkovirhe tuloksia ladattaessa.\n\nRatkaisu:\n1. Tarkista verkkoyhteys\n2. Päivitä sivu (F5)\n3. Odota hetki ja yritä uudelleen\n4. Jos ongelma jatkuu, ota yhteyttä tukeen: support@careercompassi.com`);
+    }
+    setResultsLoading(false);
+  }, [classId]);
+
   // Load existing PINs
   useEffect(() => {
     fetchPins();
@@ -239,46 +278,7 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
         setPackageInfo({ hasPremium: false, package: 'standard' });
       }
     })();
-  }, [classId]);
-
-  const fetchPins = async () => {
-    try {
-      const response = await fetch(`/api/classes/${classId}/pins`);
-      const data = await response.json();
-      if (data.success) {
-        setPins(data.pins.map((p: any) => p.pin));
-      }
-    } catch (error) {
-      console.error('Error fetching PINs:', error);
-    }
-  };
-
-  const loadNameMapping = () => {
-    const mapping = loadMappingFromStorage(classId);
-    if (mapping) {
-      setNameMapping(mapping);
-    }
-  };
-
-  const fetchResults = async () => {
-    setResultsLoading(true);
-    setResultsError(null);
-    try {
-      const response = await fetch(`/api/classes/${classId}/results`);
-      const data = await response.json();
-      if (data.success) {
-        setResults(data.results);
-      } else {
-        const errorMsg = data.error || 'Tulosten lataus epäonnistui';
-        const hint = data.hint || '';
-        setResultsError(`${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nRatkaisu: Päivitä sivu ja yritä uudelleen. Jos ongelma jatkuu, ota yhteyttä tukeen.`);
-      }
-    } catch (error) {
-      console.error('Error fetching results:', error);
-      setResultsError(`Verkkovirhe tuloksia ladattaessa.\n\nRatkaisu:\n1. Tarkista verkkoyhteys\n2. Päivitä sivu (F5)\n3. Odota hetki ja yritä uudelleen\n4. Jos ongelma jatkuu, ota yhteyttä tukeen: support@careercompassi.com`);
-    }
-    setResultsLoading(false);
-  };
+  }, [classId, fetchPins, fetchResults, loadNameMapping]);
 
   const validatePinCount = (value: string): boolean => {
     if (value === '') {

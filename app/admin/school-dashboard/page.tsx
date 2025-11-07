@@ -5,7 +5,7 @@
  * Shows aggregated analytics across all classes
  */
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Logo from '@/components/Logo';
 import Link from 'next/link';
@@ -54,11 +54,7 @@ export default function SchoolDashboardPage() {
   const [teacherId, setTeacherId] = useState('');
   const [since, setSince] = useState('');
 
-  useEffect(() => {
-    fetchAnalytics();
-  }, [teacherId, since]);
-
-  const fetchAnalytics = async () => {
+  const fetchAnalytics = useCallback(async () => {
     setLoading(true);
     setError(null);
     
@@ -80,7 +76,11 @@ export default function SchoolDashboardPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [since, teacherId]);
+
+  useEffect(() => {
+    fetchAnalytics();
+  }, [fetchAnalytics]);
 
   if (loading) {
     return (

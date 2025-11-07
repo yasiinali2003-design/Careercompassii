@@ -6,7 +6,7 @@
  * NO NAMES shown - completely anonymous
  */
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 export default function PublicClassResultsPage({
   params,
@@ -14,28 +14,21 @@ export default function PublicClassResultsPage({
   params: { classToken: string };
 }) {
   const { classToken } = params;
-  
-  // Check for reserved paths first - these should never reach this component
-  // but if they do (due to routing issues), return null immediately
-  const reservedPaths = ['legal', 'teacher', 'admin', 'api', 'test', 'ammatit', 'kategoriat', 'kouluille', 'meista'];
-  if (reservedPaths.includes(classToken.toLowerCase())) {
-    return null;
-  }
+
+  const reservedPaths = useMemo(
+    () => ['legal', 'teacher', 'admin', 'api', 'test', 'ammatit', 'kategoriat', 'kouluille', 'meista'],
+    []
+  );
+  const isReservedPath = reservedPaths.includes(classToken.toLowerCase());
 
   const [results, setResults] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetchResults();
-  }, [classToken]);
-
-  const fetchResults = async () => {
+  const fetchResults = useCallback(async () => {
     try {
-      const response = await fetch(
-        `/api/classes/${classToken}/results`
-      );
-      
+      const response = await fetch(`/api/classes/${classToken}/results`);
+
       const data = await response.json();
       if (data.success) {
         setResults(data.results);
@@ -48,7 +41,19 @@ export default function PublicClassResultsPage({
     } finally {
       setLoading(false);
     }
-  };
+  }, [classToken]);
+
+  useEffect(() => {
+    if (isReservedPath) {
+      setLoading(false);
+      return;
+    }
+    fetchResults();
+  }, [fetchResults, isReservedPath]);
+
+  if (isReservedPath) {
+    return null;
+  }
 
   if (loading) {
     return (
