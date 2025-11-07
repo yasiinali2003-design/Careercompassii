@@ -1,147 +1,161 @@
-# Next Steps - Question Pool Implementation
+# Next Steps - Todistuspistelaskuri Feature
 
-## ✅ Completed Work
+## ✅ What We've Completed
 
-1. **YLA Question Pool**: 90 questions (3 sets × 30 questions) ✓
-2. **TASO2 Question Pool**: 90 questions (3 sets × 30 questions) ✓
-3. **NUORI Question Pool**: 90 questions (3 sets × 30 questions) ✓
-4. **Automated Tests**: All passing ✓
-5. **Grammar Verification**: All cohorts verified ✓
-6. **Age-Appropriateness**: All cohorts verified ✓
-7. **Scoring Accuracy**: All cohorts verified ✓
+### Phase 1: Basic Calculator ✅
+- ✅ Todistuspiste calculation library
+- ✅ Initial 82 programs database
+- ✅ Grade input component
+- ✅ Programs display component
+- ✅ Integration into results page
+
+### Phase 2: Enhanced Features ✅
+- ✅ Search and filter functionality
+- ✅ Program details modal
+- ✅ Enhanced matching algorithm
+- ✅ Expanded to 82 programs
+
+### Phase 3: Database Migration ✅
+- ✅ Supabase database setup
+- ✅ API endpoints created
+- ✅ 250 new programs imported
+- ✅ Total: **332 programs** in database
+- ✅ All tests passing (100%)
 
 ## 🎯 Recommended Next Steps
 
-### Priority 1: Browser Testing (CRITICAL)
-**Why**: Automated tests verify logic, but real browser testing ensures:
-- localStorage works correctly in actual browser environment
-- Questions display properly
-- Set selection works as expected
-- User experience is smooth
+### Option 1: Verify & Test (Recommended First)
+**Priority: High | Time: 15-30 minutes**
 
-**Action Items**:
-- [ ] Start dev server: `npm run dev`
-- [ ] Test YLA cohort: Take test 3 times, verify different questions each time
-- [ ] Test TASO2 cohort: Take test 3 times, verify different questions each time
-- [ ] Test NUORI cohort: Take test 3 times, verify different questions each time
-- [ ] Verify localStorage persistence: Clear browser data, test again
-- [ ] Verify scoring consistency: Same answers should give same results across sets
-
-**Test Script** (can paste in browser console):
-```javascript
-// Check current question pool state
-const getUsedSets = (cohort) => {
-  const key = `careercompass-questionpool-${cohort}`;
-  const stored = localStorage.getItem(key);
-  return stored ? JSON.parse(stored).usedSets : [];
-};
-
-console.log('YLA used sets:', getUsedSets('YLA'));
-console.log('TASO2 used sets:', getUsedSets('TASO2'));
-console.log('NUORI used sets:', getUsedSets('NUORI'));
-
-// Reset question pool (for testing)
-const resetPool = (cohort) => {
-  localStorage.removeItem(`careercompass-questionpool-${cohort}`);
-  console.log(`Reset ${cohort} pool`);
-};
-```
-
-### Priority 2: End-to-End Testing
-**Why**: Ensure complete user flow works correctly
-
-**Action Items**:
-- [ ] Complete full test flow for each cohort
-- [ ] Verify results page displays correctly
-- [ ] Verify career recommendations are accurate
-- [ ] Verify education path recommendations are accurate
-- [ ] Test reset functionality (after 3 tests)
-
-### Priority 3: Edge Case Testing
-**Why**: Ensure robustness in production
-
-**Action Items**:
-- [ ] Test with cleared localStorage
-- [ ] Test with corrupted localStorage data
-- [ ] Test on different browsers (Chrome, Firefox, Safari)
-- [ ] Test on mobile devices
-- [ ] Test with disabled JavaScript (should gracefully degrade)
-
-### Priority 4: Deployment
-**Why**: Make the feature available to users
-
-**Action Items**:
-- [ ] Run final build: `npm run build`
-- [ ] Fix any build errors
-- [ ] Commit changes: `git add . && git commit -m "Add question pool system for all cohorts"`
-- [ ] Push to git: `git push`
-- [ ] Deploy to Vercel (automatic or manual)
-- [ ] Monitor for any production issues
-
-### Priority 5: Documentation (Optional)
-**Why**: Help future maintenance and understanding
-
-**Action Items**:
-- [ ] Document question pool system architecture
-- [ ] Document how to add new question sets
-- [ ] Create troubleshooting guide
-- [ ] Update README if needed
-
-## 📋 Quick Start Guide
-
-### To Test Manually:
-
-1. **Start Development Server**:
+1. **Restart Dev Server**
    ```bash
+   # Stop current server (Ctrl+C)
    npm run dev
    ```
 
-2. **Navigate to Test Page**:
-   - Go to `http://localhost:3000/test`
-   - Select a cohort (YLA, TASO2, or NUORI)
-   - Complete the test
+2. **Run Browser Tests**
+   - Open: `http://localhost:3000/test/results`
+   - Press F12 → Console
+   - Run: `test-browser-console.js`
+   - Verify all 10 tests pass
 
-3. **Take Test Multiple Times**:
-   - Complete test 3 times with the same cohort
-   - Each time you should see different questions (from different sets)
-   - Check browser console for localStorage state
+3. **Manual Feature Testing**
+   - Complete test as TASO2 user
+   - Verify Todistuspistelaskuri appears
+   - Test calculator functionality
+   - Verify programs display correctly
+   - Test filtering and search
 
-4. **Verify Scoring**:
-   - Answer questions consistently across multiple tests
-   - Results should be similar (accounting for question variation)
+**Why:** Ensures everything works before moving forward
 
-## 🔍 What to Look For
+---
 
-### Expected Behavior:
-- ✅ First test: Set 0 questions
-- ✅ Second test: Set 1 or Set 2 questions (different from Set 0)
-- ✅ Third test: Remaining set questions
-- ✅ Fourth test: Reset to Set 0 (or random from available sets)
-- ✅ Results remain consistent across sets
-- ✅ No console errors
-- ✅ Smooth user experience
+### Option 2: Balance Yliopisto/AMK Programs
+**Priority: Medium | Time: 1-2 hours**
 
-### Potential Issues:
-- ❌ Same questions appearing in multiple tests
-- ❌ localStorage not persisting
-- ❌ Scoring inconsistency across sets
-- ❌ Browser console errors
-- ❌ Questions not displaying correctly
+**Current:** 51 yliopisto vs 281 AMK (imbalanced)
 
-## 🚀 Ready to Deploy?
+**Action:**
+```bash
+# Fetch more yliopisto programs
+npx tsx scripts/scrape-opintopolku.ts --limit=200
+# Then update import to filter for 'yo' type only
+npx tsx scripts/import-from-opintopolku.ts --limit=150 --skip-existing
+```
 
-Before deploying, ensure:
-- [ ] All browser tests pass
-- [ ] No console errors
-- [ ] Scoring accuracy verified
-- [ ] User experience is smooth
-- [ ] Build succeeds without errors
+**Target:** ~150 yliopisto, ~200 AMK (more balanced)
 
-## 💡 Tips
+**Why:** Better coverage for users interested in universities
 
-- Use browser DevTools to inspect localStorage
-- Clear localStorage between test sessions if needed
-- Test on multiple browsers
-- Test with different cohorts
-- Monitor browser console for any errors
+---
 
+### Option 3: Refine Admission Points
+**Priority: Medium | Time: 2-3 hours**
+
+**Current:** Points are estimated based on field/institution averages
+
+**Action:**
+- Fetch actual 2025 admission points from Opintopolku detail pages
+- Update top 100 programs with accurate points
+- Keep estimates for rest (can refine later)
+
+**Why:** More accurate recommendations for users
+
+---
+
+### Option 4: Add Program Descriptions
+**Priority: Low | Time: 1-2 hours**
+
+**Current:** Descriptions truncated to 500 chars or missing
+
+**Action:**
+- Fetch full descriptions from Opintopolku
+- Add to transformer
+- Update existing programs
+
+**Why:** Better user experience, more information
+
+---
+
+### Option 5: Expand to 500+ Programs
+**Priority: Low | Time: 2-3 hours**
+
+**Current:** 332 programs
+
+**Action:**
+```bash
+npx tsx scripts/import-from-opintopolku.ts --limit=500 --skip-existing
+```
+
+**Why:** Even more comprehensive coverage
+
+---
+
+## 🎯 My Recommendation
+
+**Start with Option 1 (Verify & Test):**
+
+1. ✅ **Restart dev server** - Fixes build cache issue
+2. ✅ **Run browser tests** - Verifies API works
+3. ✅ **Manual testing** - Ensures feature works end-to-end
+
+**Then consider Option 2 (Balance Programs):**
+- Quick win (1-2 hours)
+- Improves feature quality
+- Better user experience
+
+**Why this order?**
+- Testing first ensures everything works
+- Balancing programs improves quality
+- Other options can wait
+
+---
+
+## 📋 Quick Action Plan
+
+### Immediate (Today):
+1. Restart dev server: `npm run dev`
+2. Run browser tests
+3. Manual feature test
+
+### Short-term (This Week):
+4. Add more yliopisto programs (balance ratio)
+5. Test with real users (if available)
+
+### Medium-term (Next Week):
+6. Refine admission points for top programs
+7. Add program descriptions
+8. Monitor usage and feedback
+
+---
+
+## 🚀 Ready to Proceed?
+
+**Which option would you like to tackle first?**
+
+1. **Test & Verify** (recommended)
+2. **Balance Programs** (quick win)
+3. **Refine Points** (quality improvement)
+4. **Something else?**
+
+Let me know and I'll help you implement it!

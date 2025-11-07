@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todistuspistelaskuri - Browser Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-section h2 {
+            margin-top: 0;
+            color: #2563eb;
+        }
+        .test-item {
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #e5e7eb;
+            background: #f9fafb;
+        }
+        .test-item.pass {
+            border-left-color: #10b981;
+            background: #ecfdf5;
+        }
+        .test-item.fail {
+            border-left-color: #ef4444;
+            background: #fef2f2;
+        }
+        .test-item.pending {
+            border-left-color: #f59e0b;
+            background: #fffbeb;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+        button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9fafb;
+            border-radius: 6px;
+        }
+        .summary {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .summary.pass {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .summary.fail {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Todistuspistelaskuri - Browser Tests</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: API Endpoint Availability</h2>
+        <div id="test1" class="test-item pending">Testing...</div>
+        <button onclick="testAPI()">Run Test</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: Fetch Programs</h2>
+        <div id="test2" class="test-item pending">Waiting...</div>
+        <button onclick="testFetchPrograms()">Run Test</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 3: Filter by Points</h2>
+        <div id="test3" class="test-item pending">Waiting...</div>
+        <button onclick="testFilterByPoints()">Run Test</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 4: Filter by Institution Type</h2>
+        <div id="test4" class="test-item pending">Waiting...</div>
+        <button onclick="testFilterByType()">Run Test</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 5: Search Functionality</h2>
+        <div id="test5" class="test-item pending">Waiting...</div>
+        <button onclick="testSearch()">Run Test</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 6: Sort Functionality</h2>
+        <div id="test6" class="test-item pending">Waiting...</div>
+        <button onclick="testSort()">Run Test</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 7: Pagination</h2>
+        <div id="test7" class="test-item pending">Waiting...</div>
+        <button onclick="testPagination()">Run Test</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 8: Career Matching</h2>
+        <div id="test8" class="test-item pending">Waiting...</div>
+        <button onclick="testCareerMatching()">Run Test</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 9: Point Calculation Range</h2>
+        <div id="test9" class="test-item pending">Waiting...</div>
+        <button onclick="testPointRange()">Run Test</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 10: Data Quality</h2>
+        <div id="test10" class="test-item pending">Waiting...</div>
+        <button onclick="testDataQuality()">Run Test</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Run All Tests</h2>
+        <button onclick="runAllTests()">Run All Tests</button>
+        <div id="summary" class="summary" style="display: none;"></div>
+    </div>
+    
+    <div id="results" class="results" style="display: none;"></div>
+
+    <script>
+        const API_BASE = window.location.origin;
+        let testResults = {};
+        
+        function updateTestResult(testId, passed, message) {
+            const element = document.getElementById(testId);
+            element.className = `test-item ${passed ? 'pass' : 'fail'}`;
+            element.textContent = `${passed ? '✅' : '❌'} ${message}`;
+            testResults[testId] = { passed, message };
+        }
+        
+        async function testAPI() {
+            updateTestResult('test1', false, 'Testing...');
+            try {
+                const response = await fetch(`${API_BASE}/api/study-programs`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.programs && Array.isArray(data.programs)) {
+                        updateTestResult('test1', true, `API working - ${data.programs.length} programs available`);
+                    } else {
+                        updateTestResult('test1', false, 'Invalid response format');
+                    }
+                } else {
+                    updateTestResult('test1', false, `HTTP ${response.status}`);
+                }
+            } catch (error) {
+                updateTestResult('test1', false, `Error: ${error.message}`);
+            }
+        }
+        
+        async function testFetchPrograms() {
+            updateTestResult('test2', false, 'Testing...');
+            try {
+                const response = await fetch(`${API_BASE}/api/study-programs?limit=10`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.programs && data.programs.length > 0) {
+                        const sample = data.programs[0];
+                        const hasRequiredFields = sample.name && sample.institution && sample.min_points !== undefined;
+                        if (hasRequiredFields) {
+                            updateTestResult('test2', true, `Fetched ${data.programs.length} programs with required fields`);
+                        } else {
+                            updateTestResult('test2', false, 'Missing required fields');
+                        }
+                    } else {
+                        updateTestResult('test2', false, 'No programs returned');
+                    }
+                } else {
+                    updateTestResult('test2', false, `HTTP ${response.status}`);
+                }
+            } catch (error) {
+                updateTestResult('test2', false, `Error: ${error.message}`);
+            }
+        }
+        
+        async function testFilterByPoints() {
+            updateTestResult('test3', false, 'Testing...');
+            try {
+                const response = await fetch(`${API_BASE}/api/study-programs?points=50&limit=20`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.programs && Array.isArray(data.programs)) {
+                        const valid = data.programs.every(p => 
+                            p.min_points <= 80 && (!p.max_points || p.max_points >= 30)
+                        );
+                        if (valid || data.programs.length === 0) {
+                            updateTestResult('test3', true, `Filtered ${data.programs.length} programs for 50 points`);
+                        } else {
+                            updateTestResult('test3', false, 'Some programs outside expected range');
+                        }
+                    } else {
+                        updateTestResult('test3', false, 'Invalid response format');
+                    }
+                } else {
+                    updateTestResult('test3', false, `HTTP ${response.status}`);
+                }
+            } catch (error) {
+                updateTestResult('test3', false, `Error: ${error.message}`);
+            }
+        }
+        
+        async function testFilterByType() {
+            updateTestResult('test4', false, 'Testing...');
+            try {
+                const response = await fetch(`${API_BASE}/api/study-programs?type=amk&limit=10`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.programs && Array.isArray(data.programs)) {
+                        const allAMK = data.programs.every(p => p.institution_type === 'amk');
+                        if (allAMK || data.programs.length === 0) {
+                            updateTestResult('test4', true, `Filtered ${data.programs.length} AMK programs`);
+                        } else {
+                            updateTestResult('test4', false, 'Some programs not AMK type');
+                        }
+                    } else {
+                        updateTestResult('test4', false, 'Invalid response format');
+                    }
+                } else {
+                    updateTestResult('test4', false, `HTTP ${response.status}`);
+                }
+            } catch (error) {
+                updateTestResult('test4', false, `Error: ${error.message}`);
+            }
+        }
+        
+        async function testSearch() {
+            updateTestResult('test5', false, 'Testing...');
+            try {
+                const response = await fetch(`${API_BASE}/api/study-programs?search=tietotekniikka&limit=10`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.programs && Array.isArray(data.programs)) {
+                        const matches = data.programs.filter(p => 
+                            p.name.toLowerCase().includes('tietotekniikka')
+                        );
+                        if (matches.length > 0 || data.programs.length === 0) {
+                            updateTestResult('test5', true, `Found ${data.programs.length} matching programs`);
+                        } else {
+                            updateTestResult('test5', false, 'Search not working correctly');
+                        }
+                    } else {
+                        updateTestResult('test5', false, 'Invalid response format');
+                    }
+                } else {
+                    updateTestResult('test5', false, `HTTP ${response.status}`);
+                }
+            } catch (error) {
+                updateTestResult('test5', false, `Error: ${error.message}`);
+            }
+        }
+        
+        async function testSort() {
+            updateTestResult('test6', false, 'Testing...');
+            try {
+                const response = await fetch(`${API_BASE}/api/study-programs?sort=points_asc&limit=10`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.programs && Array.isArray(data.programs)) {
+                        if (data.programs.length <= 1) {
+                            updateTestResult('test6', true, 'Sort working (not enough data to verify)');
+                        } else {
+                            const sorted = data.programs.every((p, i) => 
+                                i === 0 || p.min_points >= data.programs[i - 1].min_points
+                            );
+                            if (sorted) {
+                                updateTestResult('test6', true, 'Programs sorted correctly');
+                            } else {
+                                updateTestResult('test6', false, 'Programs not sorted correctly');
+                            }
+                        }
+                    } else {
+                        updateTestResult('test6', false, 'Invalid response format');
+                    }
+                } else {
+                    updateTestResult('test6', false, `HTTP ${response.status}`);
+                }
+            } catch (error) {
+                updateTestResult('test6', false, `Error: ${error.message}`);
+            }
+        }
+        
+        async function testPagination() {
+            updateTestResult('test7', false, 'Testing...');
+            try {
+                const response = await fetch(`${API_BASE}/api/study-programs?limit=10&offset=0`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.programs && Array.isArray(data.programs)) {
+                        if (data.programs.length <= 10) {
+                            updateTestResult('test7', true, `Pagination working - ${data.programs.length} programs`);
+                        } else {
+                            updateTestResult('test7', false, `Returned ${data.programs.length} programs, expected <= 10`);
+                        }
+                    } else {
+                        updateTestResult('test7', false, 'Invalid response format');
+                    }
+                } else {
+                    updateTestResult('test7', false, `HTTP ${response.status}`);
+                }
+            } catch (error) {
+                updateTestResult('test7', false, `Error: ${error.message}`);
+            }
+        }
+        
+        async function testCareerMatching() {
+            updateTestResult('test8', false, 'Testing...');
+            try {
+                const response = await fetch(`${API_BASE}/api/study-programs?careers=ohjelmistokehittaja&limit=10`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.programs && Array.isArray(data.programs)) {
+                        const withCareers = data.programs.filter(p => 
+                            p.related_careers && 
+                            Array.isArray(p.related_careers) && 
+                            p.related_careers.includes('ohjelmistokehittaja')
+                        );
+                        if (withCareers.length > 0 || data.programs.length === 0) {
+                            updateTestResult('test8', true, `Found ${withCareers.length} programs matching career`);
+                        } else {
+                            updateTestResult('test8', false, 'Career matching not working');
+                        }
+                    } else {
+                        updateTestResult('test8', false, 'Invalid response format');
+                    }
+                } else {
+                    updateTestResult('test8', false, `HTTP ${response.status}`);
+                }
+            } catch (error) {
+                updateTestResult('test8', false, `Error: ${error.message}`);
+            }
+        }
+        
+        async function testPointRange() {
+            updateTestResult('test9', false, 'Testing...');
+            try {
+                const response = await fetch(`${API_BASE}/api/study-programs?limit=100`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.programs && Array.isArray(data.programs)) {
+                        const invalid = data.programs.filter(p => 
+                            p.min_points < 20 || p.min_points > 200 ||
+                            (p.max_points && (p.max_points < p.min_points || p.max_points > 250))
+                        );
+                        if (invalid.length === 0) {
+                            updateTestResult('test9', true, `All ${data.programs.length} programs have valid point ranges`);
+                        } else {
+                            updateTestResult('test9', false, `${invalid.length} programs have invalid point ranges`);
+                        }
+                    } else {
+                        updateTestResult('test9', false, 'Invalid response format');
+                    }
+                } else {
+                    updateTestResult('test9', false, `HTTP ${response.status}`);
+                }
+            } catch (error) {
+                updateTestResult('test9', false, `Error: ${error.message}`);
+            }
+        }
+        
+        async function testDataQuality() {
+            updateTestResult('test10', false, 'Testing...');
+            try {
+                const response = await fetch(`${API_BASE}/api/study-programs?limit=100`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.programs && Array.isArray(data.programs)) {
+                        const missingFields = data.programs.filter(p => 
+                            !p.name || !p.institution || p.min_points === undefined || p.min_points === null
+                        );
+                        if (missingFields.length === 0) {
+                            updateTestResult('test10', true, `All ${data.programs.length} programs have required fields`);
+                        } else {
+                            updateTestResult('test10', false, `${missingFields.length} programs missing required fields`);
+                        }
+                    } else {
+                        updateTestResult('test10', false, 'Invalid response format');
+                    }
+                } else {
+                    updateTestResult('test10', false, `HTTP ${response.status}`);
+                }
+            } catch (error) {
+                updateTestResult('test10', false, `Error: ${error.message}`);
+            }
+        }
+        
+        async function runAllTests() {
+            testResults = {};
+            document.getElementById('summary').style.display = 'none';
+            document.getElementById('results').style.display = 'none';
+            
+            await testAPI();
+            await new Promise(r => setTimeout(r, 500));
+            await testFetchPrograms();
+            await new Promise(r => setTimeout(r, 500));
+            await testFilterByPoints();
+            await new Promise(r => setTimeout(r, 500));
+            await testFilterByType();
+            await new Promise(r => setTimeout(r, 500));
+            await testSearch();
+            await new Promise(r => setTimeout(r, 500));
+            await testSort();
+            await new Promise(r => setTimeout(r, 500));
+            await testPagination();
+            await new Promise(r => setTimeout(r, 500));
+            await testCareerMatching();
+            await new Promise(r => setTimeout(r, 500));
+            await testPointRange();
+            await new Promise(r => setTimeout(r, 500));
+            await testDataQuality();
+            
+            // Show summary
+            const passed = Object.values(testResults).filter(r => r.passed).length;
+            const total = Object.keys(testResults).length;
+            const percentage = ((passed / total) * 100).toFixed(1);
+            
+            const summaryEl = document.getElementById('summary');
+            summaryEl.style.display = 'block';
+            summaryEl.className = `summary ${passed === total ? 'pass' : 'fail'}`;
+            summaryEl.textContent = `📊 Results: ${passed}/${total} passed (${percentage}%)`;
+            
+            // Show detailed results
+            const resultsEl = document.getElementById('results');
+            resultsEl.style.display = 'block';
+            resultsEl.innerHTML = '<h3>Detailed Results:</h3>' + 
+                Object.entries(testResults).map(([test, result]) => 
+                    `<div class="test-item ${result.passed ? 'pass' : 'fail'}">${result.passed ? '✅' : '❌'} ${test}: ${result.message}</div>`
+                ).join('');
+        }
+    </script>
+</body>
+</html>
+

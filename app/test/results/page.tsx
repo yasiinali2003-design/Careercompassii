@@ -17,6 +17,8 @@ import Logo from '@/components/Logo';
 import { supabase } from '@/lib/supabase';
 import { ShareResults } from '@/components/ShareResults';
 import { getEducationPathDescription } from '@/lib/scoring/educationPath';
+import { TodistuspisteCalculator } from '@/components/TodistuspisteCalculator';
+import { StudyProgramsList } from '@/components/StudyProgramsList';
 
 // Types
 interface DimensionScores {
@@ -84,6 +86,7 @@ export default function ResultsPage() {
   const [results, setResults] = useState<ResultsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [calculatedPoints, setCalculatedPoints] = useState<number | null>(null);
 
   useEffect(() => {
     // Get results from localStorage (set by test component)
@@ -311,6 +314,22 @@ export default function ResultsPage() {
               </div>
             </CardContent>
           </Card>
+        )}
+
+        {/* Todistuspistelaskuri for TASO2 users with yliopisto/AMK recommendation */}
+        {userProfile.cohort === 'TASO2' && 
+         results.educationPath && 
+         (results.educationPath.primary === 'yliopisto' || results.educationPath.primary === 'amk') && (
+          <>
+            <TodistuspisteCalculator onCalculate={setCalculatedPoints} />
+            {calculatedPoints !== null && (
+              <StudyProgramsList
+                points={calculatedPoints}
+                careerSlugs={topCareers.slice(0, 5).map(c => c.slug)}
+                educationType={results.educationPath.primary}
+              />
+            )}
+          </>
         )}
 
         {/* Career Matches */}

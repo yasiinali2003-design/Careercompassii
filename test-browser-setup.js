@@ -1,0 +1,61 @@
+// Mock TASO2 results for browser testing
+const mockTASO2Results = {
+  success: true,
+  cohort: 'TASO2',
+  userProfile: {
+    cohort: 'TASO2',
+    dimensionScores: {
+      interests: 75,
+      values: 70,
+      workstyle: 65,
+      context: 60
+    },
+    topStrengths: ['analytical', 'technology', 'problem_solving']
+  },
+  topCareers: [
+    {
+      slug: 'ohjelmistokehittaja',
+      title: 'Ohjelmistokehittaja',
+      category: 'innovoija',
+      overallScore: 85,
+      dimensionScores: { interests: 80, values: 75, workstyle: 70, context: 65 },
+      reasons: ['Sinussa on vahva teknologinen uteliaisuus'],
+      confidence: 'high'
+    },
+    {
+      slug: 'tietoturva-asiantuntija',
+      title: 'Tietoturva-asiantuntija',
+      category: 'innovoija',
+      overallScore: 82,
+      dimensionScores: { interests: 78, values: 72, workstyle: 68, context: 64 },
+      reasons: ['Profiilistasi välittyy teknologinen kiinnostus'],
+      confidence: 'high'
+    },
+    {
+      slug: 'tekoalyasiantuntija',
+      title: 'Tekoälyasiantuntija',
+      category: 'innovoija',
+      overallScore: 80,
+      dimensionScores: { interests: 76, values: 70, workstyle: 66, context: 62 },
+      reasons: ['Olet kiinnostunut uusista teknologioista'],
+      confidence: 'high'
+    }
+  ],
+  educationPath: {
+    primary: 'yliopisto',
+    secondary: 'amk',
+    scores: { yliopisto: 75, amk: 65 },
+    reasoning: 'Vastaustesi perusteella yliopisto-opinnot sopivat sinulle erittäin hyvin.',
+    confidence: 'high'
+  },
+  cohortCopy: {
+    title: 'Sinun urasuosituksesi',
+    subtitle: 'Vastaustesi perusteella',
+    ctaText: 'Selaa ammatteja',
+    shareText: 'Katso urasuositukseni'
+  }
+};
+
+console.log('Mock TASO2 results created. Copy this to browser console:');
+console.log('localStorage.setItem("careerTestResults", JSON.stringify(' + JSON.stringify(mockTASO2Results) + '));');
+console.log('Then navigate to /test/results');

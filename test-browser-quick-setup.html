@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todistuspistelaskuri Test Setup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2563eb;
+        }
+        .scenario {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9fafb;
+            border-left: 4px solid #2563eb;
+            border-radius: 4px;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+        .code {
+            background: #1f2937;
+            color: #10b981;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .success {
+            color: #10b981;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Todistuspistelaskuri - Browser Test Setup</h1>
+        <p>Use this page to quickly set up test data for browser testing.</p>
+        
+        <div class="scenario">
+            <h2>Scenario 1: TASO2 User with Yliopisto Recommendation</h2>
+            <p>Technology-focused user with good grades, recommended for university.</p>
+            <button onclick="setScenario1()">Set Test Data</button>
+            <button onclick="goToResults()">Go to Results Page</button>
+        </div>
+        
+        <div class="scenario">
+            <h2>Scenario 2: TASO2 User with AMK Recommendation</h2>
+            <p>Healthcare-focused user, recommended for AMK.</p>
+            <button onclick="setScenario2()">Set Test Data</button>
+            <button onclick="goToResults()">Go to Results Page</button>
+        </div>
+        
+        <div class="scenario">
+            <h2>Scenario 3: YLA User (Should NOT See Calculator)</h2>
+            <p>Young student, should not see todistuspistelaskuri.</p>
+            <button onclick="setScenario3()">Set Test Data</button>
+            <button onclick="goToResults()">Go to Results Page</button>
+        </div>
+        
+        <div class="scenario">
+            <h2>Clear Test Data</h2>
+            <p>Remove all test data from localStorage.</p>
+            <button onclick="clearData()">Clear Data</button>
+        </div>
+        
+        <div id="status"></div>
+    </div>
+
+    <script>
+        const scenario1 = {
+            success: true,
+            cohort: 'TASO2',
+            userProfile: {
+                cohort: 'TASO2',
+                dimensionScores: {
+                    interests: 75,
+                    values: 70,
+                    workstyle: 65,
+                    context: 60
+                },
+                topStrengths: ['analytical', 'technology', 'problem_solving']
+            },
+            topCareers: [
+                {
+                    slug: 'ohjelmistokehittaja',
+                    title: 'Ohjelmistokehittaja',
+                    category: 'innovoija',
+                    overallScore: 85
+                },
+                {
+                    slug: 'tietoturva-asiantuntija',
+                    title: 'Tietoturva-asiantuntija',
+                    category: 'innovoija',
+                    overallScore: 82
+                },
+                {
+                    slug: 'tekoalyasiantuntija',
+                    title: 'Tekoälyasiantuntija',
+                    category: 'innovoija',
+                    overallScore: 80
+                }
+            ],
+            educationPath: {
+                primary: 'yliopisto',
+                secondary: 'amk',
+                scores: { yliopisto: 75, amk: 65 },
+                reasoning: 'Vastaustesi perusteella yliopisto-opinnot sopivat sinulle erittäin hyvin.',
+                confidence: 'high'
+            }
+        };
+
+        const scenario2 = {
+            success: true,
+            cohort: 'TASO2',
+            userProfile: {
+                cohort: 'TASO2',
+                dimensionScores: {
+                    interests: 70,
+                    values: 75,
+                    workstyle: 68,
+                    context: 65
+                }
+            },
+            topCareers: [
+                {
+                    slug: 'sairaanhoitaja',
+                    title: 'Sairaanhoitaja',
+                    category: 'auttaja',
+                    overallScore: 85
+                },
+                {
+                    slug: 'terveydenhoitaja',
+                    title: 'Terveydenhoitaja',
+                    category: 'auttaja',
+                    overallScore: 82
+                }
+            ],
+            educationPath: {
+                primary: 'amk',
+                secondary: 'yliopisto',
+                scores: { amk: 70, yliopisto: 60 },
+                reasoning: 'AMK-koulutus sopii sinulle hyvin.',
+                confidence: 'high'
+            }
+        };
+
+        const scenario3 = {
+            success: true,
+            cohort: 'YLA',
+            userProfile: {
+                cohort: 'YLA',
+                dimensionScores: {
+                    interests: 70,
+                    values: 65,
+                    workstyle: 60,
+                    context: 55
+                }
+            },
+            topCareers: [
+                {
+                    slug: 'luokanopettaja',
+                    title: 'Luokanopettaja',
+                    category: 'auttaja',
+                    overallScore: 80
+                }
+            ],
+            educationPath: {
+                primary: 'lukio',
+                secondary: 'ammattikoulu',
+                scores: { lukio: 70, ammattikoulu: 60 },
+                reasoning: 'Lukio sopii sinulle hyvin.',
+                confidence: 'high'
+            }
+        };
+
+        function setScenario1() {
+            localStorage.setItem('careerTestResults', JSON.stringify(scenario1));
+            showStatus('✅ Scenario 1 data set! (TASO2 + Yliopisto)', 'success');
+        }
+
+        function setScenario2() {
+            localStorage.setItem('careerTestResults', JSON.stringify(scenario2));
+            showStatus('✅ Scenario 2 data set! (TASO2 + AMK)', 'success');
+        }
+
+        function setScenario3() {
+            localStorage.setItem('careerTestResults', JSON.stringify(scenario3));
+            showStatus('✅ Scenario 3 data set! (YLA - calculator should NOT appear)', 'success');
+        }
+
+        function clearData() {
+            localStorage.removeItem('careerTestResults');
+            showStatus('✅ Test data cleared!', 'success');
+        }
+
+        function goToResults() {
+            window.location.href = 'http://localhost:3000/test/results';
+        }
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = `<p class="${type}">${message}</p>`;
+            setTimeout(() => {
+                statusDiv.innerHTML = '';
+            }, 3000);
+        }
+
+        // Check if data exists
+        window.onload = function() {
+            const existing = localStorage.getItem('careerTestResults');
+            if (existing) {
+                const data = JSON.parse(existing);
+                document.getElementById('status').innerHTML = 
+                    `<p><strong>Current test data:</strong> ${data.cohort} cohort, ${data.educationPath?.primary || 'N/A'} recommendation</p>`;
+            }
+        };
+    </script>
+</body>
+</html>
+
