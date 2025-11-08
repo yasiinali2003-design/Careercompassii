@@ -210,6 +210,8 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
   const [teacherEmail, setTeacherEmail] = useState<string>('');
   const [pinCount, setPinCount] = useState<string>('');
   const [pinCountError, setPinCountError] = useState<string>('');
+  const [selectedPinForPdf, setSelectedPinForPdf] = useState<string | null>(null);
+  const [pdfGenerationState, setPdfGenerationState] = useState<Record<string, 'idle' | 'loading' | 'success' | 'error'>>({});
 
   // Calculate analytics
   const analytics = calculateAnalytics(results);
@@ -217,6 +219,24 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
   // Check for notifications
   const completionCheck = checkClassCompletion(pins.length, results.length);
   const atRiskStudents = results.filter(r => checkAtRiskStudent(r).shouldNotify);
+
+  const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://careercompassii.vercel.app';
+  const studentTestLink = `${baseUrl}/${classToken}/test`;
+  const classResultsLink = `${baseUrl}/${classToken}`;
+
+  const handleCopyLink = useCallback((link: string, successMessage: string) => {
+    if (typeof navigator === 'undefined' || !navigator.clipboard) {
+      alert('Kopiointi ei ole tuettu tässä selaimessa. Kopioi linkki käsin.');
+      return;
+    }
+    navigator.clipboard.writeText(link)
+      .then(() => {
+        alert(successMessage);
+      })
+      .catch(() => {
+        alert('Linkin kopiointi epäonnistui. Yritä kopioida linkki käsin.');
+      });
+  }, []);
 
   const fetchPins = useCallback(async () => {
     try {
@@ -1495,15 +1515,41 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
         </div>
       )}
 
-      {/* Public Link */}
-      <div className="bg-gray-50 rounded-lg p-4">
-        <p className="font-semibold mb-2">Julkinen linkki (oppilaat):</p>
-        <p className="text-sm text-blue-600 break-all">
-          {typeof window !== 'undefined' ? window.location.origin : 'https://careercompassii.vercel.app'}/{classToken}
-        </p>
-        <p className="text-xs text-gray-600 mt-2">
-          Jaa tämä linkki oppilaille. He syöttävät PIN-koodin ja aloittavat testin.
-        </p>
+      {/* Public Links */}
+      <div className="bg-gray-50 rounded-lg p-4 space-y-4">
+        <div>
+          <p className="font-semibold mb-2">Oppilaiden testilinkki</p>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+            <p className="text-sm text-blue-600 break-all flex-1">{studentTestLink}</p>
+            <button
+              type="button"
+              onClick={() => handleCopyLink(studentTestLink, 'Oppilaiden testilinkki kopioitu leikepöydälle.')}
+              className="mt-2 sm:mt-0 text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200"
+            >
+              Kopioi linkki
+            </button>
+          </div>
+          <p className="text-xs text-gray-600 mt-2">
+            Oppilaat syöttävät PIN-koodinsa tällä sivulla ja pääsevät testiin.
+          </p>
+        </div>
+
+        <div className="border-t border-gray-200 pt-4">
+          <p className="font-semibold mb-2 text-sm">Luokan tulossivu</p>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+            <p className="text-sm text-blue-600 break-all flex-1">{classResultsLink}</p>
+            <button
+              type="button"
+              onClick={() => handleCopyLink(classResultsLink, 'Luokan tulossivu kopioitu leikepöydälle.')}
+              className="mt-2 sm:mt-0 text-xs bg-gray-200 text-gray-700 px-3 py-1 rounded hover:bg-gray-300"
+            >
+              Kopioi linkki
+            </button>
+          </div>
+          <p className="text-xs text-gray-600 mt-2">
+            Täältä näet anonyymit tulokset, kun oppilaat ovat tehneet testin.
+          </p>
+        </div>
       </div>
     </div>
   );
