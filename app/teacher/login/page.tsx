@@ -34,12 +34,18 @@ export default function TeacherLoginPage() {
     setLoading(true);
 
     try {
+      const normalized = password.trim();
+      if (!normalized) {
+        setError('Syötä opettajakoodi');
+        setLoading(false);
+        return;
+      }
       const response = await fetch('/api/teacher-auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ password: normalized }),
       });
 
       const data = await response.json();
@@ -49,7 +55,7 @@ export default function TeacherLoginPage() {
         router.push(returnTo);
         router.refresh(); // Ensure middleware recognizes the new cookie
       } else {
-        setError(data.error || 'Väärä salasana');
+        setError(data.error || 'Opettajakoodi ei kelpaa');
       }
     } catch (err) {
       setError('Verkkovirhe. Yritä uudelleen.');
