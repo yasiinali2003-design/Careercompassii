@@ -1,11 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const SITE_PASSWORD = process.env.SITE_PASSWORD || 'CCYHAHAIKUNZIBBI22!';
+const rawSitePassword = process.env.SITE_PASSWORD;
+const SITE_PASSWORD = rawSitePassword && rawSitePassword.trim() !== '' ? rawSitePassword : null;
 const COOKIE_NAME = 'site_auth';
 const COOKIE_VALUE = 'authenticated';
 
 export async function POST(request: NextRequest) {
   try {
+    if (!SITE_PASSWORD) {
+      return NextResponse.json({ success: true, disabled: true });
+    }
+
     const { password } = await request.json();
 
     if (!password) {
