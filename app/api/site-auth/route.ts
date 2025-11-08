@@ -15,7 +15,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (password === SITE_PASSWORD) {
+    const normalized = typeof password === 'string' ? password.trim() : '';
+
+    if (!normalized) {
+      return NextResponse.json(
+        { success: false, error: 'Salasana vaaditaan' },
+        { status: 400 }
+      );
+    }
+
+    if (normalized === SITE_PASSWORD) {
       // Set authentication cookie
       const response = NextResponse.json({ success: true });
       
