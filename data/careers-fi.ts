@@ -116,7 +116,7 @@ export const careersData: CareerFI[] = [
     keywords: ["graafinen suunnittelu", "brändi", "mainonta", "visuaalinen viestintä", "Adobe"],
     study_length_estimate_months: 42
   },
-{
+  {
     id: "muusikko",
     category: "luova",
     title_fi: "Muusikko",
@@ -193,7 +193,7 @@ export const careersData: CareerFI[] = [
       "Vaikuttaa ihmisten hyvinvointiin ja mielenterveyteen"
     ]
   },
-{
+  {
     id: "kameramies",
     category: "luova",
     title_fi: "Kameramies",
@@ -1334,7 +1334,7 @@ export const careersData: CareerFI[] = [
       "Valvoo rakennusmääräysten noudattamista"
     ]
   },
-{
+  {
     id: "henkilöstöpäällikkö",
     category: "johtaja",
     title_fi: "Henkilöstöpäällikkö",
