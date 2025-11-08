@@ -18742,6 +18742,2847 @@ export const careersData: CareerFI[] = [
     keywords: ["baarityö", "cocktail", "ravintola", "anniskelu", "palvelu"],
     study_length_estimate_months: 30
   }
+  {
+    id: "aktuaari",
+    category: "jarjestaja",
+    title_fi: "Aktuaari",
+    title_en: "Actuary",
+    short_description: "Aktuaari toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Aktuaari",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["aktuaari", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "arkkitehti",
+    category: "visionaari",
+    title_fi: "Arkkitehti",
+    title_en: "Architect",
+    short_description: "Arkkitehti toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Arkkitehti",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["arkkitehti", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "erikoislaakari",
+    category: "auttaja",
+    title_fi: "Erikoislaakari",
+    title_en: "Specialist Doctor",
+    short_description: "Erikoislaakari toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Erikoislaakari",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["erikoislaakari", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "erityispedagogi",
+    category: "auttaja",
+    title_fi: "Erityispedagogi",
+    title_en: "Special Education Specialist",
+    short_description: "Erityispedagogi toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Erityispedagogi",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["erityispedagogi", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "etiikan-asiantuntija",
+    category: "visionaari",
+    title_fi: "Etiikan Asiantuntija",
+    title_en: "Ethics Specialist",
+    short_description: "Etiikan Asiantuntija toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Etiikan Asiantuntija",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["etiikan-asiantuntija", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "filosofi",
+    category: "visionaari",
+    title_fi: "Filosofi",
+    title_en: "Philosopher",
+    short_description: "Filosofi toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Filosofi",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["filosofi", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "historioitsija",
+    category: "visionaari",
+    title_fi: "Historioitsija",
+    title_en: "Historian",
+    short_description: "Historioitsija toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Historioitsija",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["historioitsija", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "insinoori",
+    category: "innovoija",
+    title_fi: "Insinoori",
+    title_en: "Engineer",
+    short_description: "Insinoori toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Insinoori",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["insinoori", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "it-tukihenkilo",
+    category: "innovoija",
+    title_fi: "It Tukihenkilo",
+    title_en: "IT Support Specialist",
+    short_description: "It Tukihenkilo toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior It Tukihenkilo",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["it-tukihenkilo", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "journalisti",
+    category: "visionaari",
+    title_fi: "Journalisti",
+    title_en: "Journalist",
+    short_description: "Journalisti toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Journalisti",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["journalisti", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "kemiisti",
+    category: "innovoija",
+    title_fi: "Kemiisti",
+    title_en: "Chemist",
+    short_description: "Kemiisti toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Kemiisti",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["kemiisti", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "kirjanpitaja",
+    category: "jarjestaja",
+    title_fi: "Kirjanpitaja",
+    title_en: "Bookkeeper",
+    short_description: "Kirjanpitaja toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Kirjanpitaja",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["kirjanpitaja", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "konetekniikan-insinoori",
+    category: "innovoija",
+    title_fi: "Konetekniikan Insinoori",
+    title_en: "Mechanical Engineer",
+    short_description: "Konetekniikan Insinoori toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Konetekniikan Insinoori",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["konetekniikan-insinoori", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "koulupsykologi",
+    category: "auttaja",
+    title_fi: "Koulupsykologi",
+    title_en: "School Psychologist",
+    short_description: "Koulupsykologi toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Koulupsykologi",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["koulupsykologi", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "kriitikko",
+    category: "visionaari",
+    title_fi: "Kriitikko",
+    title_en: "Critic",
+    short_description: "Kriitikko toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Kriitikko",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["kriitikko", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "laatuasiantuntija",
+    category: "jarjestaja",
+    title_fi: "Laatuasiantuntija",
+    title_en: "Quality Specialist",
+    short_description: "Laatuasiantuntija toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Laatuasiantuntija",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["laatuasiantuntija", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "maatalousasiantuntija",
+    category: "ympariston-puolustaja",
+    title_fi: "Maatalousasiantuntija",
+    title_en: "Agricultural Specialist",
+    short_description: "Maatalousasiantuntija toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Maatalousasiantuntija",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["maatalousasiantuntija", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "maatalousinsinoori",
+    category: "ympariston-puolustaja",
+    title_fi: "Maatalousinsinoori",
+    title_en: "Agricultural Engineer",
+    short_description: "Maatalousinsinoori toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Maatalousinsinoori",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["maatalousinsinoori", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "markkinointipaallikko",
+    category: "johtaja",
+    title_fi: "Markkinointipaallikko",
+    title_en: "Marketing Manager",
+    short_description: "Markkinointipaallikko toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Markkinointipaallikko",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["markkinointipaallikko", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "matkailuneuvoja",
+    category: "visionaari",
+    title_fi: "Matkailuneuvoja",
+    title_en: "Tourism Advisor",
+    short_description: "Matkailuneuvoja toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Matkailuneuvoja",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["matkailuneuvoja", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "mediasuunnittelija",
+    category: "luova",
+    title_fi: "Mediasuunnittelija",
+    title_en: "Media Planner",
+    short_description: "Mediasuunnittelija toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Mediasuunnittelija",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["mediasuunnittelija", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "merenkulun-insinoori",
+    category: "innovoija",
+    title_fi: "Merenkulun Insinoori",
+    title_en: "Marine Engineer",
+    short_description: "Merenkulun Insinoori toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Merenkulun Insinoori",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["merenkulun-insinoori", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "merikapteeni",
+    category: "johtaja",
+    title_fi: "Merikapteeni",
+    title_en: "Sea Captain",
+    short_description: "Merikapteeni toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Merikapteeni",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["merikapteeni", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "metsainsinoori",
+    category: "ympariston-puolustaja",
+    title_fi: "Metsainsinoori",
+    title_en: "Forest Engineer",
+    short_description: "Metsainsinoori toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Metsainsinoori",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["metsainsinoori", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "metsatalousasiantuntija",
+    category: "ympariston-puolustaja",
+    title_fi: "Metsatalousasiantuntija",
+    title_en: "Forestry Specialist",
+    short_description: "Metsatalousasiantuntija toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Metsatalousasiantuntija",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["metsatalousasiantuntija", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "museoasiantuntija",
+    category: "visionaari",
+    title_fi: "Museoasiantuntija",
+    title_en: "Museum Specialist",
+    short_description: "Museoasiantuntija toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Museoasiantuntija",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["museoasiantuntija", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "projektipaallikko",
+    category: "jarjestaja",
+    title_fi: "Projektipaallikko",
+    title_en: "Project Manager",
+    short_description: "Projektipaallikko toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Projektipaallikko",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["projektipaallikko", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "rakennusarkkitehti",
+    category: "innovoija",
+    title_fi: "Rakennusarkkitehti",
+    title_en: "Architect",
+    short_description: "Rakennusarkkitehti toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Rakennusarkkitehti",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["rakennusarkkitehti", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "ravintolapaallikko",
+    category: "johtaja",
+    title_fi: "Ravintolapaallikko",
+    title_en: "Restaurant Manager",
+    short_description: "Ravintolapaallikko toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Ravintolapaallikko",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["ravintolapaallikko", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "sahkotekniikan-insinoori",
+    category: "innovoija",
+    title_fi: "Sahkotekniikan Insinoori",
+    title_en: "Electrical Engineer",
+    short_description: "Sahkotekniikan Insinoori toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Sahkotekniikan Insinoori",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["sahkotekniikan-insinoori", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "sosiaaliohjaja",
+    category: "auttaja",
+    title_fi: "Sosiaaliohjaja",
+    title_en: "Social Counsellor",
+    short_description: "Sosiaaliohjaja toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Sosiaaliohjaja",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["sosiaaliohjaja", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "sosiaalitutkija",
+    category: "visionaari",
+    title_fi: "Sosiaalitutkija",
+    title_en: "Social Researcher",
+    short_description: "Sosiaalitutkija toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Sosiaalitutkija",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["sosiaalitutkija", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "sosiaalityontekija",
+    category: "auttaja",
+    title_fi: "Sosiaalityontekija",
+    title_en: "Social Worker",
+    short_description: "Sosiaalityontekija toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Sosiaalityontekija",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["sosiaalityontekija", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "tilitoimiston-johtaja",
+    category: "johtaja",
+    title_fi: "Tilitoimiston Johtaja",
+    title_en: "Accounting Firm Manager",
+    short_description: "Tilitoimiston Johtaja toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Tilitoimiston Johtaja",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["tilitoimiston-johtaja", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "tutkija",
+    category: "visionaari",
+    title_fi: "Tutkija",
+    title_en: "Researcher",
+    short_description: "Tutkija toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Tutkija",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["tutkija", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "uutistoimittaja",
+    category: "visionaari",
+    title_fi: "Uutistoimittaja",
+    title_en: "News Reporter",
+    short_description: "Uutistoimittaja toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Uutistoimittaja",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["uutistoimittaja", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "valmentaja",
+    category: "auttaja",
+    title_fi: "Valmentaja",
+    title_en: "Coach",
+    short_description: "Valmentaja toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Valmentaja",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["valmentaja", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "visuaalinen-suunnittelija",
+    category: "luova",
+    title_fi: "Visuaalinen Suunnittelija",
+    title_en: "Visual Designer",
+    short_description: "Visuaalinen Suunnittelija toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Visuaalinen Suunnittelija",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["visuaalinen-suunnittelija", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "ymparistonsuojelun-asiantuntija",
+    category: "ympariston-puolustaja",
+    title_fi: "Ymparistonsuojelun Asiantuntija",
+    title_en: "Environmental Protection Specialist",
+    short_description: "Ymparistonsuojelun Asiantuntija toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Ymparistonsuojelun Asiantuntija",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["ymparistonsuojelun-asiantuntija", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "ymparistoteknikko",
+    category: "ympariston-puolustaja",
+    title_fi: "Ymparistoteknikko",
+    title_en: "Environmental Technician",
+    short_description: "Ymparistoteknikko toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    main_tasks: [
+      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
+      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
+      "Tekee yhteistyötä eri sidosryhmien kanssa",
+      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
+      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+    ],
+    impact: [
+      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
+      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+    ],
+    education_paths: [
+      "Yliopisto: Alan maisteriohjelma",
+      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
+      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Analyyttinen ajattelu",
+      "Projektinhallinta",
+      "Viestintä ja yhteistyö",
+      "Ratkaisukeskeisyys",
+      "Tietotekninen osaaminen"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Projektinhallintatyökalut",
+      "Data-analytiikkatyökalut",
+      "Alan erikoisohjelmistot",
+      "Raportointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5200],
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+    },
+    entry_roles: [
+      "Junior Ymparistoteknikko",
+      "Harjoittelija",
+      "Assistentti"
+    ],
+    career_progression: [
+      "Asiantuntija",
+      "Vanhempi asiantuntija",
+      "Johtava asiantuntija"
+    ],
+    typical_employers: [
+      "Kunnat ja hyvinvointialueet",
+      "Valtio ja virastot",
+      "Yksityiset yritykset",
+      "Järjestöt ja asiantuntijaorganisaatiot"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" }],
+    keywords: ["ymparistoteknikko", "asiantuntija", "kehittäminen"],
+    study_length_estimate_months: 48
+  },
+
 ];
 
 // Helper function to get careers by category

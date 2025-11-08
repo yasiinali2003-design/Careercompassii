@@ -3,15 +3,43 @@
  * Mirrors the behaviour of lib/todistuspiste.ts with weighted subjects.
  */
 
+const AMK_WEIGHTS_PITKA_LANGUAGE = { L: 46, E: 41, M: 34, C: 26, B: 18, A: 10 };
+const AMK_WEIGHTS_KESKIPITKA_LANGUAGE = { L: 38, E: 34, M: 26, C: 18, B: 12, A: 5 };
+const AMK_WEIGHTS_LYHYT_LANGUAGE = { L: 30, E: 27, M: 21, C: 15, B: 9, A: 3 };
+const AMK_WEIGHTS_REAALI = { L: 30, E: 27, M: 21, C: 15, B: 9, A: 3 };
+
 const SUBJECT_DEFINITIONS = [
-  { key: 'äidinkieli', label: 'Äidinkieli', required: true, coefficient: 1 },
+  {
+    key: 'äidinkieli',
+    label: 'Äidinkieli',
+    required: true,
+    coefficient: 1,
+    amkGradeWeights: {
+      L: 46,
+      E: 41,
+      M: 34,
+      C: 26,
+      B: 18,
+      A: 10
+    }
+  },
   {
     key: 'matematiikka',
     label: 'Matematiikka',
     required: true,
     variants: [
-      { key: 'pitka', label: 'Pitkä', coefficient: 1.5 },
-      { key: 'lyhyt', label: 'Lyhyt', coefficient: 1.0 }
+      {
+        key: 'pitka',
+        label: 'Pitkä',
+        coefficient: 1.5,
+        amkGradeWeights: { L: 46, E: 43, M: 40, C: 35, B: 27, A: 19 }
+      },
+      {
+        key: 'lyhyt',
+        label: 'Lyhyt',
+        coefficient: 1.0,
+        amkGradeWeights: { L: 40, E: 35, M: 27, C: 19, B: 13, A: 6 }
+      }
     ],
     defaultVariantKey: 'pitka'
   },
@@ -20,8 +48,8 @@ const SUBJECT_DEFINITIONS = [
     label: 'Englanti',
     required: true,
     variants: [
-      { key: 'a', label: 'A-kieli', coefficient: 1.15 },
-      { key: 'b', label: 'B-kieli', coefficient: 1.0 }
+      { key: 'a', label: 'A-kieli', coefficient: 1.15, amkGradeWeights: AMK_WEIGHTS_PITKA_LANGUAGE },
+      { key: 'b', label: 'B-kieli', coefficient: 1.0, amkGradeWeights: AMK_WEIGHTS_KESKIPITKA_LANGUAGE }
     ],
     defaultVariantKey: 'a'
   },
@@ -30,21 +58,21 @@ const SUBJECT_DEFINITIONS = [
     label: 'Toinen kotimainen',
     required: false,
     variants: [
-      { key: 'a', label: 'A-kieli', coefficient: 1.1 },
-      { key: 'b', label: 'B-kieli', coefficient: 1.0 }
+      { key: 'a', label: 'A-kieli', coefficient: 1.1, amkGradeWeights: AMK_WEIGHTS_PITKA_LANGUAGE },
+      { key: 'b', label: 'B-kieli', coefficient: 1.0, amkGradeWeights: AMK_WEIGHTS_KESKIPITKA_LANGUAGE }
     ],
     defaultVariantKey: 'b'
   },
-  { key: 'reaaliaineet', label: 'Reaaliaine', required: false, coefficient: 1 },
-  { key: 'reaali-2', label: 'Reaaliaine 2', required: false, coefficient: 1 },
-  { key: 'reaali-3', label: 'Reaaliaine 3', required: false, coefficient: 1 },
+  { key: 'reaaliaineet', label: 'Reaaliaine', required: false, coefficient: 1, amkGradeWeights: AMK_WEIGHTS_REAALI },
+  { key: 'reaali-2', label: 'Reaaliaine 2', required: false, coefficient: 1, amkGradeWeights: AMK_WEIGHTS_REAALI },
+  { key: 'reaali-3', label: 'Reaaliaine 3', required: false, coefficient: 1, amkGradeWeights: AMK_WEIGHTS_REAALI },
   {
     key: 'muu-kieli',
     label: 'Muu vieras kieli',
     required: false,
     variants: [
-      { key: 'a', label: 'A-kieli', coefficient: 1.05 },
-      { key: 'b', label: 'B-kieli', coefficient: 1.0 }
+      { key: 'a', label: 'A-kieli', coefficient: 1.05, amkGradeWeights: AMK_WEIGHTS_PITKA_LANGUAGE },
+      { key: 'b', label: 'B-kieli', coefficient: 1.0, amkGradeWeights: AMK_WEIGHTS_LYHYT_LANGUAGE }
     ],
     defaultVariantKey: 'b'
   }
@@ -57,7 +85,7 @@ const SCHEME_SETTINGS = {
   },
   amk: {
     maxSubjects: 5,
-    bonusPolicy: 'standard'
+    bonusPolicy: 'none'
   }
 };
 
@@ -105,6 +133,15 @@ function getCoefficient(subject, variant, scheme) {
   return 1;
 }
 
+function getGradeWeight(weights, grade) {
+  if (!weights) return null;
+  const upper = grade.toUpperCase();
+  if (Object.prototype.hasOwnProperty.call(weights, upper)) {
+    return weights[upper];
+  }
+  return null;
+}
+
 function calculateBonusPoints(inputs) {
   const motherTongue = inputs['äidinkieli'];
   const mathematics = inputs['matematiikka'];
@@ -120,14 +157,30 @@ function calculateTodistuspisteet(inputs) {
 function calculateTodistuspisteetWithOptions(inputs, { scheme = 'yliopisto' } = {}) {
   const subjectPoints = {};
   const weightedEntries = [];
+  let countedSubjects = [];
 
   SUBJECT_DEFINITIONS.forEach(subject => {
     const input = inputs[subject.key];
     if (!input || !input.grade) return;
 
     const variant = resolveVariant(subject, input);
-    const coefficient = getCoefficient(subject, variant, scheme);
-    const weighted = getGradePoints(input.grade) * coefficient;
+    const gradeSymbol = input.grade.toUpperCase();
+    let weighted = null;
+
+    if (scheme === 'amk') {
+      const direct =
+        getGradeWeight(variant?.amkGradeWeights, gradeSymbol) ??
+        getGradeWeight(subject.amkGradeWeights, gradeSymbol);
+      if (direct !== null) {
+        weighted = direct;
+      }
+    }
+
+    if (weighted === null) {
+      const coefficient = getCoefficient(subject, variant, scheme);
+      weighted = getGradePoints(gradeSymbol) * coefficient;
+    }
+
     subjectPoints[subject.key] = weighted;
     weightedEntries.push({ key: subject.key, points: weighted });
   });
@@ -140,8 +193,10 @@ function calculateTodistuspisteetWithOptions(inputs, { scheme = 'yliopisto' } = 
       .sort((a, b) => b.points - a.points)
       .slice(0, schemeSettings.maxSubjects);
     totalPoints = counted.reduce((sum, entry) => sum + entry.points, 0);
+    countedSubjects = counted.map(entry => entry.key);
   } else {
     totalPoints = weightedEntries.reduce((sum, entry) => sum + entry.points, 0);
+    countedSubjects = weightedEntries.map(entry => entry.key);
   }
 
   const bonusPoints = schemeSettings.bonusPolicy === 'standard' ? calculateBonusPoints(inputs) : 0;
@@ -152,7 +207,7 @@ function calculateTodistuspisteetWithOptions(inputs, { scheme = 'yliopisto' } = 
     subjectPoints,
     bonusPoints,
     scheme,
-    countedSubjects: weightedEntries.map(entry => entry.key)
+    countedSubjects
   };
 }
 
@@ -231,7 +286,7 @@ function runTodistuspisteCalculationTests() {
   console.log('');
 
   // Test 7: AMK scheme uses top-5 weighting and yields expected range
-  console.log('Test 7: AMK scheme top-5 aggregation');
+  console.log('Test 7: AMK scheme top-5 aggregation & divergence');
   const amkInputs = {
     'äidinkieli': { grade: 'L' },
     'matematiikka': { grade: 'L', variantKey: 'pitka' },
@@ -242,9 +297,15 @@ function runTodistuspisteCalculationTests() {
     'muu-kieli': { grade: 'C', variantKey: 'b' }
   };
   const amkResult = calculateTodistuspisteetWithOptions(amkInputs, { scheme: 'amk' });
-  console.log('AMK total points:', round(amkResult.totalPoints));
-  const amkPass = round(amkResult.totalPoints) <= 80 && round(amkResult.totalPoints) >= 30;
-  console.log('✅ PASS' + (amkPass ? '' : ' ❌ FAIL'));
+  const yliopistoResult = calculateTodistuspisteetWithOptions(amkInputs, { scheme: 'yliopisto' });
+  const expectedAmkTotal = 46 + 46 + 41 + 34 + 21; // top-5 weights per official table
+  console.log('AMK total points:', round(amkResult.totalPoints), 'Expected:', expectedAmkTotal);
+  const amkPass = round(amkResult.totalPoints) === expectedAmkTotal;
+  const divergencePass = round(amkResult.totalPoints) !== round(yliopistoResult.totalPoints);
+  console.log('✅ PASS' + (amkPass && divergencePass ? '' : ' ❌ FAIL'));
+  if (!divergencePass) {
+    console.log('   ⚠️ Expected AMK and yliopisto totals to diverge');
+  }
   console.log('');
 
   console.log('✅ All calculation tests completed!');

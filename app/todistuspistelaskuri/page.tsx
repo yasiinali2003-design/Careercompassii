@@ -421,7 +421,7 @@ function GuidanceSummary({ points, bonusPoints, strengths, inputs, variant = 'fu
   const summaryRaw = buildSummaryNarrative(inputs || {}, { totalPoints: points, bonusPoints, strengths });
   const summary = summaryRaw.length > 0 ? summaryRaw : `Pisteesi (${points.toFixed(2).replace('.', ',')}) antavat hyvän kuvan siitä, mihin koulutusohjelmiin kannattaa tarttua seuraavaksi.`;
   const nextSteps = buildActionableNextSteps(points, scheme);
-  const maxPoints = scheme === 'amk' ? 80 : 200;
+  const maxPoints = scheme === 'amk' ? 198 : 200;
   const percent = Math.max(0, Math.min(100, Math.round((points / maxPoints) * 100)));
   const ringStyle = {
     background: `conic-gradient(#2563eb ${percent}%, #c7d2fe ${percent}% 100%)`

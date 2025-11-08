@@ -65,22 +65,71 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
   const [favorites, setFavorites] = useState<string[]>([]);
   const [includeReach, setIncludeReach] = useState(false);
   const [reachCount, setReachCount] = useState<number | null>(null);
+  const [showAllCareers, setShowAllCareers] = useState(() => {
+    if (careerSlugs.length === 0) {
+      return true;
+    }
+    if (typeof window !== 'undefined') {
+      try {
+        const stored = sessionStorage.getItem('todistuspisteShowAllCareers');
+        if (stored === 'true') return true;
+        if (stored === 'false') return false;
+      } catch (error) {
+        console.warn('[StudyProgramsList] Failed to read career filter preference', error);
+      }
+    }
+    return false;
+  });
   const onlyReachPrograms = !loading && !error && programs.length > 0 && programs.every(program => program.reach || program.tags?.includes('reach'));
-  const [careerFilterRelaxed, setCareerFilterRelaxed] = useState(false);
+  const isCareerFilterRelaxed = showAllCareers && careerSlugs.length > 0;
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+    try {
+      sessionStorage.setItem('todistuspisteShowAllCareers', showAllCareers ? 'true' : 'false');
+    } catch (error) {
+      console.warn('[StudyProgramsList] Failed to persist career filter preference', error);
+    }
+  }, [showAllCareers]);
+
+  useEffect(() => {
+    if (careerSlugs.length === 0) {
+      if (!showAllCareers) {
+        setShowAllCareers(true);
+      }
+      return;
+    }
+    if (typeof window === 'undefined') {
+      return;
+    }
+    try {
+      const stored = sessionStorage.getItem('todistuspisteShowAllCareers');
+      if (stored === 'true' && !showAllCareers) {
+        setShowAllCareers(true);
+      } else if (stored === 'false' && showAllCareers) {
+        setShowAllCareers(false);
+      }
+    } catch (error) {
+      console.warn('[StudyProgramsList] Failed to restore showAllCareers preference', error);
+    }
+  }, [careerSlugs, showAllCareers]);
 
   // Fetch programs from API
   useEffect(() => {
     async function loadPrograms() {
       setLoading(true);
       setError(null);
-      setCareerFilterRelaxed(false);
 
       try {
+        const shouldRelaxCareers = showAllCareers || careerSlugs.length === 0;
+        const effectiveCareers = shouldRelaxCareers ? [] : careerSlugs;
         const baseQuery = {
           points,
           type: educationType,
           field: fieldFilter !== 'all' ? fieldFilter : undefined,
-          careers: careerSlugs,
+          careers: effectiveCareers,
           search: searchQuery.trim() || undefined,
           sort: sortBy as 'match' | 'points-low' | 'points-high' | 'name',
           limit: 50,
@@ -92,14 +141,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
         let combinedPrograms = [...result.programs];
         let combinedTotal = result.total;
         let reachAdded = result.metadata?.fallbackCount ?? 0;
-        let relaxedCareers = result.metadata?.careerRelaxed ?? false;
-
-        if (combinedPrograms.length === 0 && careerSlugs.length > 0) {
-          const relaxedResult = await fetchStudyPrograms({ ...baseQuery, careers: [] });
-          combinedPrograms = [...relaxedResult.programs];
-          combinedTotal = relaxedResult.total;
-          relaxedCareers = true;
-        }
+        const relaxedCareers = shouldRelaxCareers;
 
         if (includeReach && points !== undefined && points !== null) {
           try {
@@ -134,7 +176,6 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
         setPrograms(combinedPrograms);
         setTotal(combinedTotal);
         setReachCount(reachAdded > 0 ? reachAdded : null);
-        setCareerFilterRelaxed(relaxedCareers);
       } catch (err: any) {
         console.error('[StudyProgramsList] Error fetching programs:', err);
         setError('Koulutusohjelmien lataus epäonnistui. Yritä myöhemmin uudelleen.');
@@ -144,7 +185,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
     }
 
     loadPrograms();
-  }, [points, educationType, fieldFilter, searchQuery, sortBy, careerSlugs, includeReach]);
+  }, [points, educationType, fieldFilter, searchQuery, sortBy, careerSlugs, includeReach, showAllCareers]);
 
   useEffect(() => {
     try {
@@ -346,6 +387,12 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
               <span className="h-2 w-2 rounded-full bg-blue-500" />
               {educationType === 'yliopisto' ? 'Yliopistohaku' : 'AMK-haku'}
             </span>
+            {careerSlugs.length > 0 && (
+              <span className="inline-flex items-center gap-2 rounded-full bg-purple-50 px-3 py-1">
+                <span className="h-2 w-2 rounded-full bg-purple-500" />
+                {showAllCareers ? 'Kaikki alat näkyvissä' : 'Suositusalat (testituloksen mukaan)'}
+              </span>
+            )}
             {includeReach && (
               <span className="inline-flex items-center gap-2 rounded-full bg-amber-50 px-3 py-1 text-amber-800">
                 <span className="h-2 w-2 rounded-full bg-amber-500" />
@@ -365,6 +412,16 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
             >
               {includeReach ? 'Piilota tavoiteohjelmat' : 'Näytä tavoiteohjelmat'}
             </Button>
+            {careerSlugs.length > 0 && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setShowAllCareers(prev => !prev)}
+                className="md:self-center"
+              >
+                {showAllCareers ? 'Näytä vain suositusalat' : 'Näytä myös muut alat'}
+              </Button>
+            )}
           </div>
         </div>
 
@@ -410,7 +467,9 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
             <h3 className="mt-4 text-lg font-semibold text-gray-900">Ei vielä sopivia tuloksia</h3>
             <p className="mt-2 text-sm text-gray-600 max-w-lg mx-auto">
               Tällä hetkellä pisteesi jäävät valittujen ohjelmien pisterajojen alle. Kokeile korottaa arvosanaa skenaariotyökalulla tai laajenna hakua – näytämme myös tavoitteellisia ohjelmia, jotka ovat lähellä nykyisiä pisteitäsi.
-              {careerFilterRelaxed && ' Esitämme seuraavaksi myös yleisiä ohjelmia ilman urasuositusrajausta, jotta löydät askelmerkit pisteiden nostamiseen.'}
+              {careerSlugs.length > 0 && !showAllCareers
+                ? ' Voit halutessasi avata myös muut alat, jotka eivät suoraan kuulu urasuosituksiin.'
+                : ''}
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-3">
               <Button
@@ -442,6 +501,15 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
               >
                 Näytä tavoiteohjelmat
               </Button>
+              {careerSlugs.length > 0 && !showAllCareers && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setShowAllCareers(true)}
+                >
+                  Näytä myös muut alat
+                </Button>
+              )}
             </div>
           </div>
         )}
@@ -457,9 +525,9 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
                 Tällä hetkellä ohjelmat ovat tavoitetasoa. Nosta yhtä tai kahta arvosanaa skenaariotyökalulla – jo muutaman pisteen nousu avaa realistisia vaihtoehtoja.
               </p>
             )}
-            {careerFilterRelaxed && !onlyReachPrograms && (
+            {isCareerFilterRelaxed && !onlyReachPrograms && (
               <p className="mt-2 text-blue-700">
-                Näytämme nyt myös yleiset ohjelmat, koska urasuosituksiin sopivia ei löytynyt suoraan. Voit rajata hakua uudelleen, kun olet tarkentanut arvosanatavoitteita.
+                Näytetään myös muut alat suositusten lisäksi. Voit palata suppeampaan näkymään yllä olevalla painikkeella.
               </p>
             )}
             {reachCount && reachCount > 0 && !onlyReachPrograms && includeReach && (

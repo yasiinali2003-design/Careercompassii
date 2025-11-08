@@ -10,7 +10,8 @@ import {
   SubjectVariant,
   GradeSymbol,
   TodistuspisteScheme,
-  TODISTUSPISTE_SCHEME_SETTINGS
+  TODISTUSPISTE_SCHEME_SETTINGS,
+  GradeWeights
 } from './todistuspiste/config';
 
 export type { TodistuspisteScheme } from './todistuspiste/config';
@@ -84,6 +85,16 @@ function resolveVariant(subject: SubjectDefinition, input: SubjectInput): Subjec
   return subject.variants[0];
 }
 
+function getGradeWeight(weights: GradeWeights | undefined, grade: GradeSymbol): number | null {
+  if (!weights) {
+    return null;
+  }
+  if (grade in weights && typeof weights[grade] === 'number') {
+    return weights[grade] as number;
+  }
+  return null;
+}
+
 function getSubjectCoefficient(subject: SubjectDefinition, variant: SubjectVariant | undefined, scheme: TodistuspisteScheme): number {
   if (scheme === 'amk') {
     if (variant?.amkCoefficient !== undefined) {
@@ -132,10 +143,24 @@ export function calculateTodistuspisteet(grades: SubjectInputs, options: Calcula
       return;
     }
 
+    const gradeSymbol = input.grade.toUpperCase() as GradeSymbol;
     const variant = resolveVariant(subject, input);
-    const coefficient = getSubjectCoefficient(subject, variant, scheme);
-    const basePoints = getGradePoints(input.grade);
-    const weightedPoints = basePoints * coefficient;
+    let weightedPoints: number | null = null;
+
+    if (scheme === 'amk') {
+      const directPoints =
+        getGradeWeight(variant?.amkGradeWeights, gradeSymbol) ??
+        getGradeWeight(subject.amkGradeWeights, gradeSymbol);
+      if (directPoints !== null) {
+        weightedPoints = directPoints;
+      }
+    }
+
+    if (weightedPoints === null) {
+      const coefficient = getSubjectCoefficient(subject, variant, scheme);
+      const basePoints = getGradePoints(gradeSymbol);
+      weightedPoints = basePoints * coefficient;
+    }
 
     subjectPoints[subject.key] = weightedPoints;
     weightedEntries.push({ key: subject.key, points: weightedPoints });
