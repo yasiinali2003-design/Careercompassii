@@ -7,6 +7,7 @@ interface MonitoringPayload {
   context?: Record<string, any>;
   timestamp: string;
   environment: string;
+  text: string;
 }
 
 function buildPayload(event: string, severity: 'info' | 'warn' | 'error', message: string, context?: Record<string, any>): MonitoringPayload {
@@ -16,7 +17,8 @@ function buildPayload(event: string, severity: 'info' | 'warn' | 'error', messag
     message,
     context,
     timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV ?? 'development'
+    environment: process.env.NODE_ENV ?? 'development',
+    text: `[${severity.toUpperCase()}] ${event}: ${message}`
   };
 }
 
