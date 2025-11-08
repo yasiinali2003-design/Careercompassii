@@ -1,10 +1,25 @@
 export type GradeSymbol = 'L' | 'E' | 'M' | 'C' | 'B' | 'A' | 'I';
 
+export type TodistuspisteScheme = 'yliopisto' | 'amk';
+
+export const TODISTUSPISTE_SCHEMES: readonly TodistuspisteScheme[] = ['yliopisto', 'amk'] as const;
+
+export const TODISTUSPISTE_SCHEME_SETTINGS: Record<TodistuspisteScheme, { maxSubjects?: number; bonusPolicy: 'standard' | 'none' }> = {
+  yliopisto: {
+    bonusPolicy: 'standard'
+  },
+  amk: {
+    maxSubjects: 5,
+    bonusPolicy: 'standard'
+  }
+};
+
 export interface SubjectVariant {
   key: string;
   label: string;
   coefficient: number;
   description?: string;
+  amkCoefficient?: number;
 }
 
 export interface SubjectChoice {
@@ -19,6 +34,7 @@ export interface SubjectDefinition {
   required: boolean;
   helperText?: string;
   coefficient?: number;
+  amkCoefficient?: number;
   variants?: SubjectVariant[];
   defaultVariantKey?: string;
   allowSubjectChoice?: boolean;

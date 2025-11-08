@@ -10,14 +10,28 @@ import { supabaseAdmin } from '@/lib/supabase';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { password: accessCode } = body;
+    const { password: rawAccessCode } = body;
 
-    if (!accessCode || typeof accessCode !== 'string') {
+    if (!rawAccessCode || typeof rawAccessCode !== 'string') {
       return NextResponse.json(
         { success: false, error: 'Opettajakoodi vaaditaan' },
         { status: 400 }
       );
     }
+
+    const trimmedCode = rawAccessCode.trim();
+    if (!trimmedCode) {
+      return NextResponse.json(
+        { success: false, error: 'Opettajakoodi vaaditaan' },
+        { status: 400 }
+      );
+    }
+
+    const candidateCodes = Array.from(new Set([
+      trimmedCode,
+      trimmedCode.toUpperCase(),
+      trimmedCode.toLowerCase()
+    ])).filter(Boolean);
 
     // Check if Supabase is configured
     if (!supabaseAdmin) {
@@ -25,7 +39,7 @@ export async function POST(request: NextRequest) {
       
       // Fallback to environment variable if database not available
       const teacherAccessCode = process.env.TEACHER_ACCESS_CODE;
-      if (teacherAccessCode && accessCode === teacherAccessCode) {
+      if (teacherAccessCode && candidateCodes.includes(teacherAccessCode)) {
         const cookieStore = await cookies();
         cookieStore.set('teacher_auth_token', 'authenticated', {
           httpOnly: true,
@@ -69,27 +83,25 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Look up teacher by access code (trim and normalize)
-    const normalizedCode = accessCode.trim().toUpperCase();
-    console.log(`[Teacher Auth] Looking up code: "${normalizedCode}"`);
-    
+    console.log('[Teacher Auth] Looking up codes:', candidateCodes);
+
     const { data: teacher, error } = await supabaseAdmin
       .from('teachers')
       .select('id, name, email, school_name, access_code, is_active')
-      .eq('access_code', normalizedCode)
+      .in('access_code', candidateCodes)
       .eq('is_active', true)
-      .single();
+      .maybeSingle();
 
     console.log(`[Teacher Auth] Query result:`, { 
       found: !!teacher, 
       error: error?.message,
-      codeSearched: normalizedCode 
+      codeSearched: candidateCodes
     });
 
     if (error || !teacher) {
       console.error('[Teacher Auth] Teacher lookup failed:', error?.message || 'No teacher found');
       return NextResponse.json(
-        { success: false, error: 'Sisäänkirjautuminen epäonnistui' },
+        { success: false, error: 'Opettajakoodi ei kelpaa' },
         { status: 401 }
       );
     }

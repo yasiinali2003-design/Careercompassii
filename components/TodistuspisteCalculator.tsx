@@ -5,24 +5,34 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import {
-  calculateTodistuspisteet,
+  calculateTodistuspisteetForAllSchemes,
   formatPoints,
   SubjectInput,
   SubjectInputs,
-  TodistuspisteResult
+  TodistuspisteResult,
+  TodistuspisteResultsByScheme,
+  TodistuspisteScheme
 } from '@/lib/todistuspiste';
-import { SUBJECT_DEFINITIONS, GRADE_OPTIONS, type GradeSymbol, type SubjectDefinition } from '@/lib/todistuspiste/config';
+import {
+  SUBJECT_DEFINITIONS,
+  GRADE_OPTIONS,
+  TODISTUSPISTE_SCHEMES,
+  type GradeSymbol,
+  type SubjectDefinition
+} from '@/lib/todistuspiste/config';
 import { getImprovementSuggestions } from '@/lib/todistuspiste/insights';
 import { Info, Lightbulb, Sparkles } from 'lucide-react';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 
 interface TodistuspisteCalculatorProps {
-  onCalculate: (points: number, result: TodistuspisteResult, inputs: SubjectInputs) => void;
+  onCalculate: (results: TodistuspisteResultsByScheme, inputs: SubjectInputs) => void;
   forceOpenScenario?: boolean;
   onScenarioHandled?: () => void;
   initialInputs?: SubjectInputs | null;
-  initialResult?: TodistuspisteResult | null;
+  initialResultsByScheme?: Partial<TodistuspisteResultsByScheme> | null;
   onInputsChange?: (inputs: SubjectInputs) => void;
+  activeScheme: TodistuspisteScheme;
+  onSchemeChange?: (scheme: TodistuspisteScheme) => void;
 }
 
 export function TodistuspisteCalculator({
@@ -30,8 +40,10 @@ export function TodistuspisteCalculator({
   forceOpenScenario,
   onScenarioHandled,
   initialInputs,
-  initialResult,
-  onInputsChange
+  initialResultsByScheme,
+  onInputsChange,
+  activeScheme,
+  onSchemeChange
 }: TodistuspisteCalculatorProps) {
   const createInitialInputs = () => {
     const initial: SubjectInputs = {};
@@ -42,13 +54,25 @@ export function TodistuspisteCalculator({
   };
 
   const [inputs, setInputs] = useState<SubjectInputs>(createInitialInputs);
-  const [calculatedPoints, setCalculatedPoints] = useState<number | null>(null);
   const [validationError, setValidationError] = useState<string | null>(null);
-  const [latestResult, setLatestResult] = useState<TodistuspisteResult | null>(null);
+  const [latestResults, setLatestResults] = useState<TodistuspisteResultsByScheme | null>(null);
   const [isScenarioOpen, setIsScenarioOpen] = useState(false);
   const [scenarioSubject, setScenarioSubject] = useState<string>('');
   const [scenarioGrade, setScenarioGrade] = useState<GradeSymbol | 'none'>('none');
   const hasHydratedFromInitial = useRef(false);
+
+  const activeResult = useMemo(() => {
+    if (!latestResults) return null;
+    return latestResults[activeScheme] ?? null;
+  }, [latestResults, activeScheme]);
+
+  const calculatedPoints = activeResult?.totalPoints ?? null;
+
+  const emitSchemeChange = (scheme: TodistuspisteScheme) => {
+    if (onSchemeChange) {
+      onSchemeChange(scheme);
+    }
+  };
 
   useEffect(() => {
     if (hasHydratedFromInitial.current) {
@@ -64,26 +88,32 @@ export function TodistuspisteCalculator({
       setInputs(merged);
       onInputsChange?.(merged);
 
-      if (initialResult) {
-        setLatestResult(initialResult);
-        setCalculatedPoints(initialResult.totalPoints);
-      } else {
-        const recalculated = calculateTodistuspisteet(merged);
-        setLatestResult(recalculated);
-        setCalculatedPoints(recalculated.totalPoints);
+      const hydratedResults = calculateTodistuspisteetForAllSchemes(merged);
+
+      if (initialResultsByScheme) {
+        TODISTUSPISTE_SCHEMES.forEach(scheme => {
+          if (initialResultsByScheme[scheme]) {
+            hydratedResults[scheme] = initialResultsByScheme[scheme] as TodistuspisteResult;
+          }
+        });
       }
+
+      setLatestResults(hydratedResults);
       hasHydratedFromInitial.current = true;
-    } else if (initialResult && !latestResult) {
-      setLatestResult(initialResult);
-      setCalculatedPoints(initialResult.totalPoints);
+    } else if (initialResultsByScheme && !latestResults) {
+      const mergedResults: TodistuspisteResultsByScheme = {
+        yliopisto:
+          initialResultsByScheme.yliopisto ?? calculateTodistuspisteetForAllSchemes(createInitialInputs()).yliopisto,
+        amk: initialResultsByScheme.amk ?? calculateTodistuspisteetForAllSchemes(createInitialInputs()).amk
+      };
+      setLatestResults(mergedResults);
       hasHydratedFromInitial.current = true;
     }
-  }, [initialInputs, initialResult, latestResult, onInputsChange]);
+  }, [initialInputs, initialResultsByScheme, latestResults, onInputsChange]);
 
   const recalculate = (updatedInputs: SubjectInputs) => {
-    const result = calculateTodistuspisteet(updatedInputs);
-    setLatestResult(result);
-    setCalculatedPoints(result.totalPoints);
+    const allResults = calculateTodistuspisteetForAllSchemes(updatedInputs);
+    setLatestResults(allResults);
   };
 
   const subjectsWithGrades = useMemo(
@@ -91,26 +121,26 @@ export function TodistuspisteCalculator({
     [inputs]
   );
 
-  const baselinePoints = latestResult?.totalPoints ?? 0;
+  const baselinePoints = activeResult?.totalPoints ?? 0;
   const improvementSuggestions = useMemo(
-    () => (latestResult ? getImprovementSuggestions(inputs, latestResult) : []),
-    [inputs, latestResult]
+    () => (activeResult ? getImprovementSuggestions(inputs, activeResult) : []),
+    [inputs, activeResult]
   );
 
   const scenarioResult = useMemo(() => {
     if (!scenarioSubject || scenarioGrade === 'none') {
       return null;
     }
-    const base = inputs[scenarioSubject] || {};
     const updatedInputs: SubjectInputs = {
       ...inputs,
       [scenarioSubject]: {
-        ...base,
+        ...inputs[scenarioSubject] || {},
         grade: scenarioGrade
       }
     };
-    return calculateTodistuspisteet(updatedInputs);
-  }, [inputs, scenarioSubject, scenarioGrade]);
+    const scenarioResults = calculateTodistuspisteetForAllSchemes(updatedInputs);
+    return scenarioResults[activeScheme];
+  }, [activeScheme, inputs, scenarioSubject, scenarioGrade]);
 
   const scenarioDelta = scenarioResult ? scenarioResult.totalPoints - baselinePoints : 0;
 
@@ -163,15 +193,22 @@ export function TodistuspisteCalculator({
     }
 
     setValidationError(null);
-    const result = calculateTodistuspisteet(inputs);
-    setLatestResult(result);
-    setCalculatedPoints(result.totalPoints);
+    const allResults = calculateTodistuspisteetForAllSchemes(inputs);
+    setLatestResults(allResults);
     const snapshot = cloneInputs(inputs);
-    onCalculate(result.totalPoints, result, snapshot);
+    onCalculate(allResults, snapshot);
   };
 
-  const getPointsColor = (points: number | null) => {
+  const getPointsColor = (points: number | null, scheme: TodistuspisteScheme) => {
     if (points === null) return 'text-gray-500';
+    if (scheme === 'amk') {
+      if (points >= 70) return 'text-green-600 font-bold';
+      if (points >= 55) return 'text-green-500';
+      if (points >= 45) return 'text-blue-500';
+      if (points >= 35) return 'text-yellow-600';
+      return 'text-orange-500';
+    }
+
     if (points >= 150) return 'text-green-600 font-bold';
     if (points >= 120) return 'text-green-500';
     if (points >= 90) return 'text-blue-500';
@@ -287,26 +324,40 @@ export function TodistuspisteCalculator({
 
         {calculatedPoints !== null && (
           <div className={`rounded-xl border-2 bg-white p-4 ${
-            getPointsColor(calculatedPoints).includes('green')
+            getPointsColor(calculatedPoints, activeScheme).includes('green')
               ? 'border-green-200'
-              : getPointsColor(calculatedPoints).includes('blue')
+              : getPointsColor(calculatedPoints, activeScheme).includes('blue')
                 ? 'border-blue-200'
                 : 'border-yellow-200'
           }`}>
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">Todistuspisteet</p>
-                <p className={`text-3xl font-bold ${getPointsColor(calculatedPoints)}`}>
+                <p className={`text-3xl font-bold ${getPointsColor(calculatedPoints, activeScheme)}`}>
                   {formatPoints(calculatedPoints)} pistettä
                 </p>
               </div>
               <Sparkles className="h-6 w-6 text-yellow-500" />
             </div>
+            <div className="mt-4 inline-flex rounded-lg border border-gray-200 bg-gray-50 p-1 text-xs">
+              {TODISTUSPISTE_SCHEMES.map(scheme => (
+                <Button
+                  key={scheme}
+                  type="button"
+                  variant={activeScheme === scheme ? 'default' : 'ghost'}
+                  size="sm"
+                  className="rounded-md px-3 py-1"
+                  onClick={() => emitSchemeChange(scheme)}
+                >
+                  {scheme === 'yliopisto' ? 'Yliopisto' : 'AMK'}
+                </Button>
+              ))}
+            </div>
           </div>
         )}
 
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          {latestResult && improvementSuggestions.length > 0 && (
+          {activeResult && improvementSuggestions.length > 0 && (
             <div className="flex-1 rounded-2xl border border-green-200 bg-green-50/60 p-4">
               <h3 className="text-sm font-semibold text-gray-900 mb-2">Minne kannattaa panostaa?</h3>
               <ul className="space-y-1 text-xs text-gray-700">
@@ -407,7 +458,7 @@ export function TodistuspisteCalculator({
           </Button>
         </div>
 
-        {latestResult && improvementSuggestions.length > 0 && (
+        {activeResult && improvementSuggestions.length > 0 && (
           <div className="rounded-2xl border border-green-200 bg-green-50/60 p-4">
             <h3 className="text-sm font-semibold text-gray-900 mb-2">Vinkit pisteiden nostamiseen</h3>
             <ul className="space-y-1 text-xs text-gray-700">

@@ -8,8 +8,12 @@ import {
   SUBJECT_DEFINITIONS,
   SubjectDefinition,
   SubjectVariant,
-  GradeSymbol
+  GradeSymbol,
+  TodistuspisteScheme,
+  TODISTUSPISTE_SCHEME_SETTINGS
 } from './todistuspiste/config';
+
+export type { TodistuspisteScheme } from './todistuspiste/config';
 
 export interface SubjectInput {
   grade?: GradeSymbol;
@@ -23,7 +27,15 @@ export interface TodistuspisteResult {
   totalPoints: number;
   subjectPoints: Record<string, number>;
   bonusPoints: number;
+  scheme: TodistuspisteScheme;
+  countedSubjects: string[];
 }
+
+export interface CalculateTodistuspisteOptions {
+  scheme?: TodistuspisteScheme;
+}
+
+export type TodistuspisteResultsByScheme = Record<TodistuspisteScheme, TodistuspisteResult>;
 
 /**
  * Convert Finnish grade to base points
@@ -72,11 +84,20 @@ function resolveVariant(subject: SubjectDefinition, input: SubjectInput): Subjec
   return subject.variants[0];
 }
 
-function getSubjectCoefficient(subject: SubjectDefinition, variant?: SubjectVariant): number {
+function getSubjectCoefficient(subject: SubjectDefinition, variant: SubjectVariant | undefined, scheme: TodistuspisteScheme): number {
+  if (scheme === 'amk') {
+    if (variant?.amkCoefficient !== undefined) {
+      return variant.amkCoefficient;
+    }
+    if (subject.amkCoefficient !== undefined) {
+      return subject.amkCoefficient;
+    }
+  }
+
   if (variant) {
     return variant.coefficient;
   }
-  if (subject.coefficient) {
+  if (subject.coefficient !== undefined) {
     return subject.coefficient;
   }
   return 1;
@@ -100,9 +121,10 @@ export function calculateBonusPoints(grades: SubjectInputs): number {
  * Calculate total todistuspisteet from subject inputs
  * Sums all weighted subject points + bonus points
  */
-export function calculateTodistuspisteet(grades: SubjectInputs): TodistuspisteResult {
+export function calculateTodistuspisteet(grades: SubjectInputs, options: CalculateTodistuspisteOptions = {}): TodistuspisteResult {
+  const scheme: TodistuspisteScheme = options.scheme ?? 'yliopisto';
   const subjectPoints: Record<string, number> = {};
-  let totalPoints = 0;
+  const weightedEntries: Array<{ key: string; points: number }> = [];
 
   SUBJECT_DEFINITIONS.forEach(subject => {
     const input = grades[subject.key];
@@ -111,21 +133,46 @@ export function calculateTodistuspisteet(grades: SubjectInputs): TodistuspisteRe
     }
 
     const variant = resolveVariant(subject, input);
-    const coefficient = getSubjectCoefficient(subject, variant);
+    const coefficient = getSubjectCoefficient(subject, variant, scheme);
     const basePoints = getGradePoints(input.grade);
     const weightedPoints = basePoints * coefficient;
 
     subjectPoints[subject.key] = weightedPoints;
-    totalPoints += weightedPoints;
+    weightedEntries.push({ key: subject.key, points: weightedPoints });
   });
 
-  const bonusPoints = calculateBonusPoints(grades);
+  let totalPoints = 0;
+  let countedSubjects: string[] = [];
+  const schemeSettings = TODISTUSPISTE_SCHEME_SETTINGS[scheme];
+
+  if (schemeSettings.maxSubjects && schemeSettings.maxSubjects > 0) {
+    const counted = weightedEntries
+      .slice()
+      .sort((a, b) => b.points - a.points)
+      .slice(0, schemeSettings.maxSubjects);
+    totalPoints = counted.reduce((sum, entry) => sum + entry.points, 0);
+    countedSubjects = counted.map(entry => entry.key);
+  } else {
+    totalPoints = weightedEntries.reduce((sum, entry) => sum + entry.points, 0);
+    countedSubjects = weightedEntries.map(entry => entry.key);
+  }
+
+  const bonusPoints = schemeSettings.bonusPolicy === 'standard' ? calculateBonusPoints(grades) : 0;
   totalPoints += bonusPoints;
 
   return {
     totalPoints,
     subjectPoints,
-    bonusPoints
+    bonusPoints,
+    scheme,
+    countedSubjects
+  };
+}
+
+export function calculateTodistuspisteetForAllSchemes(grades: SubjectInputs): TodistuspisteResultsByScheme {
+  return {
+    yliopisto: calculateTodistuspisteet(grades, { scheme: 'yliopisto' }),
+    amk: calculateTodistuspisteet(grades, { scheme: 'amk' })
   };
 }
 

@@ -39,17 +39,29 @@ export function buildSummaryNarrative(inputs: SubjectInputs, context: NarrativeC
   return lines.join(' ');
 }
 
-export function buildActionableNextSteps(points: number) {
+export function buildActionableNextSteps(points: number, scheme: 'yliopisto' | 'amk' = 'yliopisto') {
   const steps: string[] = [];
 
-  if (points >= 160) {
-    steps.push('Voit tähdätä myös vaativimpiin yliopistokohteisiin – vertaile esimerkiksi diplomi-insinöörikoulutuksia tai lääketiedettä.');
-  } else if (points >= 120) {
-    steps.push('Olet vahvalla tasolla yliopistohakua varten. Tarkista kiinnostavat alat ja harjoittelumahdollisuudet Opintopolusta.');
-  } else if (points >= 90) {
-    steps.push('Pisteesi riittävät moniin AMK-ohjelmiin. Voit nostaa mahdollisuuksiasi vahvistamalla esimerkiksi kieli- tai reaaliaineita.');
+  if (scheme === 'amk') {
+    if (points >= 65) {
+      steps.push('Pisteesi riittävät useimpiin AMK-ohjelmiin – vertaile paikkakuntia ja erikoistumisalueita, jotka tukevat urasuunnitelmaasi.');
+    } else if (points >= 50) {
+      steps.push('Olet kilpailukykyinen moniin AMK-koulutuksiin. Tutki vaihtoehtoja ja tarkista viime vuosien pisterajat Opintopolusta.');
+    } else if (points >= 35) {
+      steps.push('Pisteesi riittävät osaan AMK-ohjelmista. Pienikin nousu esimerkiksi matematiikassa tai kielissä avaa lisää vaihtoehtoja.');
+    } else {
+      steps.push('Keskity nostamaan 1–2 keskeistä arvosanaa. Hyödynnä skenaariotyökalua nähdäksesi vaikutuksen AMK-valintaan.');
+    }
   } else {
-    steps.push('Jos haluat laajentaa vaihtoehtoja, keskity nostamaan 1–2 keskeistä arvosanaa. Hyödynnä skenaariotyökalua nähdäksesi vaikutuksen.');
+    if (points >= 160) {
+      steps.push('Voit tähdätä myös vaativimpiin yliopistokohteisiin – vertaile esimerkiksi diplomi-insinöörikoulutuksia tai lääketiedettä.');
+    } else if (points >= 120) {
+      steps.push('Olet vahvalla tasolla yliopistohakua varten. Tarkista kiinnostavat alat ja harjoittelumahdollisuudet Opintopolusta.');
+    } else if (points >= 90) {
+      steps.push('Pisteesi riittävät moniin AMK-ohjelmiin ja osaan yliopistokohteista. Voit vahvistaa mahdollisuuksia parantamalla yhtä kahta keskeistä ainetta.');
+    } else {
+      steps.push('Jos haluat laajentaa vaihtoehtoja, keskity nostamaan 1–2 keskeistä arvosanaa. Hyödynnä skenaariotyökalua nähdäksesi vaikutuksen.');
+    }
   }
 
   steps.push('Merkitse sinua kiinnostavat ohjelmat suosikeiksi ja vertaile niiden vaatimuksia rauhassa.');

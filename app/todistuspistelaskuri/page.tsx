@@ -7,7 +7,13 @@ import { TodistuspisteCalculator } from '@/components/TodistuspisteCalculator';
 import { StudyProgramsList } from '@/components/StudyProgramsList';
 import { cn } from '@/lib/utils';
 import { buildSummaryNarrative, buildActionableNextSteps } from '@/lib/todistuspiste/narratives';
-import { SubjectInputs, TodistuspisteResult, formatPoints } from '@/lib/todistuspiste';
+import {
+  SubjectInputs,
+  TodistuspisteResult,
+  TodistuspisteResultsByScheme,
+  TodistuspisteScheme,
+  formatPoints
+} from '@/lib/todistuspiste';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Check } from 'lucide-react';
 
@@ -37,14 +43,21 @@ interface StoredResults {
 
 export default function TodistuspistelaskuriPage() {
   const [currentStep, setCurrentStep] = useState<WizardStep['id']>('input');
-  const [calculatedPoints, setCalculatedPoints] = useState<number | null>(null);
-  const [educationType, setEducationType] = useState<'yliopisto' | 'amk'>('yliopisto');
+  const [resultsByScheme, setResultsByScheme] = useState<TodistuspisteResultsByScheme | null>(null);
+  const [educationType, setEducationType] = useState<TodistuspisteScheme>('yliopisto');
   const [careerSlugs, setCareerSlugs] = useState<string[]>([]);
   const [storedResults, setStoredResults] = useState<StoredResults | null>(null);
   const [latestCalculatorInputs, setLatestCalculatorInputs] = useState<SubjectInputs | null>(null);
-  const [latestCalculatorResult, setLatestCalculatorResult] = useState<TodistuspisteResult | null>(null);
+  const [latestCalculatorResults, setLatestCalculatorResults] = useState<TodistuspisteResultsByScheme | null>(null);
   const [maxUnlockedStep, setMaxUnlockedStep] = useState<number>(0);
   const [forceScenarioOpen, setForceScenarioOpen] = useState(false);
+
+  const activeResult = useMemo(() => {
+    if (!resultsByScheme) return null;
+    return resultsByScheme[educationType] ?? null;
+  }, [resultsByScheme, educationType]);
+
+  const calculatedPoints = activeResult?.totalPoints ?? null;
 
   useEffect(() => {
     try {
@@ -73,16 +86,19 @@ export default function TodistuspistelaskuriPage() {
     }
   }, []);
 
-  const handleCalculate = (points: number, result: TodistuspisteResult, inputs: SubjectInputs) => {
-    setCalculatedPoints(points);
+  const handleCalculate = (results: TodistuspisteResultsByScheme, inputs: SubjectInputs) => {
+    setResultsByScheme(results);
     setLatestCalculatorInputs(inputs);
-    setLatestCalculatorResult(result);
+    setLatestCalculatorResults(results);
     setCurrentStep('results');
     setMaxUnlockedStep(prev => Math.max(prev, 1));
     try {
-      localStorage.setItem('todistuspistePoints', points.toString());
+      localStorage.setItem('todistuspisteResultsByScheme', JSON.stringify(results));
       localStorage.setItem('todistuspisteInputs', JSON.stringify(inputs));
-      localStorage.setItem('todistuspisteResult', JSON.stringify(result));
+      // Legacy keys for backward compatibility
+      const yliopistoPoints = results.yliopisto.totalPoints;
+      localStorage.setItem('todistuspistePoints', yliopistoPoints.toString());
+      localStorage.setItem('todistuspisteResult', JSON.stringify(results.yliopisto));
     } catch (error) {
       console.warn('[TodistuspistelaskuriPage] Could not store points in localStorage', error);
     }
@@ -96,12 +112,31 @@ export default function TodistuspistelaskuriPage() {
 
   useEffect(() => {
     try {
-      const storedPoints = localStorage.getItem('todistuspistePoints');
-      if (storedPoints) {
-        const parsed = Number(storedPoints);
-        if (!isNaN(parsed)) {
-          setCalculatedPoints(parsed);
-          setMaxUnlockedStep(prev => Math.max(prev, 1));
+      const storedResultsByScheme = localStorage.getItem('todistuspisteResultsByScheme');
+      if (storedResultsByScheme) {
+        const parsed: TodistuspisteResultsByScheme = JSON.parse(storedResultsByScheme);
+        setResultsByScheme(parsed);
+        setLatestCalculatorResults(parsed);
+        setMaxUnlockedStep(prev => Math.max(prev, 1));
+      } else {
+        const storedPoints = localStorage.getItem('todistuspistePoints');
+        const storedResult = localStorage.getItem('todistuspisteResult');
+        if (storedPoints && storedResult) {
+          const parsedPoints = Number(storedPoints);
+          try {
+            const parsedResult: TodistuspisteResult = JSON.parse(storedResult);
+            const fallbackResults: TodistuspisteResultsByScheme = {
+              yliopisto: parsedResult,
+              amk: parsedResult
+            };
+            setResultsByScheme(fallbackResults);
+            setLatestCalculatorResults(fallbackResults);
+            if (!isNaN(parsedPoints)) {
+              setMaxUnlockedStep(prev => Math.max(prev, 1));
+            }
+          } catch (error) {
+            console.warn('[TodistuspistelaskuriPage] Failed to parse legacy todistuspiste data', error);
+          }
         }
       }
     } catch (error) {
@@ -116,10 +151,16 @@ export default function TodistuspistelaskuriPage() {
         const parsedInputs: SubjectInputs = JSON.parse(storedInputs);
         setLatestCalculatorInputs(parsedInputs);
       }
-      const storedResult = localStorage.getItem('todistuspisteResult');
-      if (storedResult) {
-        const parsedResult: TodistuspisteResult = JSON.parse(storedResult);
-        setLatestCalculatorResult(parsedResult);
+      const storedResultsByScheme = localStorage.getItem('todistuspisteResultsByScheme');
+      if (storedResultsByScheme) {
+        const parsedResults: TodistuspisteResultsByScheme = JSON.parse(storedResultsByScheme);
+        setLatestCalculatorResults(parsedResults);
+      } else {
+        const storedResult = localStorage.getItem('todistuspisteResult');
+        if (storedResult) {
+          const parsedResult: TodistuspisteResult = JSON.parse(storedResult);
+          setLatestCalculatorResults({ yliopisto: parsedResult, amk: parsedResult });
+        }
       }
     } catch (error) {
       console.warn('[TodistuspistelaskuriPage] Could not restore stored calculator data', error);
@@ -242,20 +283,23 @@ export default function TodistuspistelaskuriPage() {
                 forceOpenScenario={forceScenarioOpen}
                 onScenarioHandled={() => setForceScenarioOpen(false)}
                 initialInputs={latestCalculatorInputs}
-                initialResult={latestCalculatorResult}
+                initialResultsByScheme={latestCalculatorResults}
                 onInputsChange={setLatestCalculatorInputs}
+                activeScheme={educationType}
+                onSchemeChange={setEducationType}
               />
             </section>
           )}
 
-          {currentStep === 'results' && calculatedPoints !== null && (
+          {currentStep === 'results' && calculatedPoints !== null && activeResult && (
             <section className="space-y-6">
               <GuidanceSummary
                 points={calculatedPoints}
-                bonusPoints={latestCalculatorResult?.bonusPoints || 0}
+                bonusPoints={activeResult.bonusPoints || 0}
                 strengths={storedResults?.userProfile?.topStrengths}
                 inputs={latestCalculatorInputs}
                 variant="compact"
+                scheme={educationType}
               />
 
               <div className="rounded-2xl border border-blue-100 bg-blue-50/70 p-5 text-sm text-blue-900">
@@ -288,7 +332,7 @@ export default function TodistuspistelaskuriPage() {
             </div>
           )}
 
-          {currentStep === 'programs' && calculatedPoints !== null && (
+          {currentStep === 'programs' && calculatedPoints !== null && activeResult && (
             <section id="step-programs" className="space-y-6">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
@@ -344,9 +388,10 @@ export default function TodistuspistelaskuriPage() {
 
               <GuidanceSummary
                 points={calculatedPoints}
-                bonusPoints={latestCalculatorResult?.bonusPoints || 0}
+                bonusPoints={activeResult.bonusPoints || 0}
                 strengths={storedResults?.userProfile?.topStrengths}
                 inputs={latestCalculatorInputs}
+                scheme={educationType}
               />
 
               <StudyProgramsList
@@ -369,13 +414,14 @@ interface GuidanceSummaryProps {
   strengths?: string[];
   inputs: SubjectInputs | null;
   variant?: 'full' | 'compact';
+  scheme?: TodistuspisteScheme;
 }
 
-function GuidanceSummary({ points, bonusPoints, strengths, inputs, variant = 'full' }: GuidanceSummaryProps) {
+function GuidanceSummary({ points, bonusPoints, strengths, inputs, variant = 'full', scheme = 'yliopisto' }: GuidanceSummaryProps) {
   const summaryRaw = buildSummaryNarrative(inputs || {}, { totalPoints: points, bonusPoints, strengths });
   const summary = summaryRaw.length > 0 ? summaryRaw : `Pisteesi (${points.toFixed(2).replace('.', ',')}) antavat hyvän kuvan siitä, mihin koulutusohjelmiin kannattaa tarttua seuraavaksi.`;
-  const nextSteps = buildActionableNextSteps(points);
-  const maxPoints = 200;
+  const nextSteps = buildActionableNextSteps(points, scheme);
+  const maxPoints = scheme === 'amk' ? 80 : 200;
   const percent = Math.max(0, Math.min(100, Math.round((points / maxPoints) * 100)));
   const ringStyle = {
     background: `conic-gradient(#2563eb ${percent}%, #c7d2fe ${percent}% 100%)`

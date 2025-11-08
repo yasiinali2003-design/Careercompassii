@@ -1,5 +1,5 @@
 import { SUBJECT_DEFINITIONS, SubjectDefinition, SubjectVariant, GradeSymbol } from './config';
-import { SubjectInputs, calculateTodistuspisteet, getGradePoints } from '../todistuspiste';
+import { SubjectInputs, calculateTodistuspisteet, getGradePoints, TodistuspisteResult } from '../todistuspiste';
 
 const GRADE_ORDER: GradeSymbol[] = ['I', 'A', 'B', 'C', 'M', 'E', 'L'];
 
@@ -17,7 +17,7 @@ function getNextGrade(grade: GradeSymbol): GradeSymbol | null {
   return GRADE_ORDER[index + 1];
 }
 
-export function getImprovementSuggestions(inputs: SubjectInputs, result: { totalPoints: number; subjectPoints: Record<string, number> }) {
+export function getImprovementSuggestions(inputs: SubjectInputs, result: TodistuspisteResult) {
   const suggestions: string[] = [];
 
   SUBJECT_DEFINITIONS.forEach(subject => {
@@ -35,7 +35,7 @@ export function getImprovementSuggestions(inputs: SubjectInputs, result: { total
       }
     };
 
-    const simulated = calculateTodistuspisteet(simulatedInputs);
+    const simulated = calculateTodistuspisteet(simulatedInputs, { scheme: result.scheme });
     const delta = simulated.totalPoints - result.totalPoints;
 
     if (delta <= 0) return;
