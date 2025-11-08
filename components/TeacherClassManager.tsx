@@ -537,7 +537,11 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
               <h3 className="font-semibold mb-3">Luo PIN-koodit ({pins.length} kpl)</h3>
               <div className="grid grid-cols-4 gap-2">
                 {pins.map((pin, i) => (
-                  <div key={i} className="bg-white p-2 rounded border text-center font-mono text-sm">
+                  <div
+                    key={i}
+                    data-testid="pin-item"
+                    className="bg-white p-2 rounded border text-center font-mono text-sm"
+                  >
                     {pin}
                   </div>
                 ))}
@@ -1520,10 +1524,11 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
         <div>
           <p className="font-semibold mb-2">Oppilaiden testilinkki</p>
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
-            <p className="text-sm text-blue-600 break-all flex-1">{studentTestLink}</p>
+            <p data-testid="student-test-link" className="text-sm text-blue-600 break-all flex-1">{studentTestLink}</p>
             <button
               type="button"
               onClick={() => handleCopyLink(studentTestLink, 'Oppilaiden testilinkki kopioitu leikepöydälle.')}
+              data-testid="copy-student-test-link"
               className="mt-2 sm:mt-0 text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200"
             >
               Kopioi linkki
@@ -1537,10 +1542,11 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
         <div className="border-t border-gray-200 pt-4">
           <p className="font-semibold mb-2 text-sm">Luokan tulossivu</p>
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
-            <p className="text-sm text-blue-600 break-all flex-1">{classResultsLink}</p>
+            <p data-testid="class-results-link" className="text-sm text-blue-600 break-all flex-1">{classResultsLink}</p>
             <button
               type="button"
               onClick={() => handleCopyLink(classResultsLink, 'Luokan tulossivu kopioitu leikepöydälle.')}
+              data-testid="copy-class-results-link"
               className="mt-2 sm:mt-0 text-xs bg-gray-200 text-gray-700 px-3 py-1 rounded hover:bg-gray-300"
             >
               Kopioi linkki

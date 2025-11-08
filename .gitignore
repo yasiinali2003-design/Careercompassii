@@ -93,3 +93,10 @@ jspm_packages/
 # Backup files
 *.backup.ts
 *.backup.js
+
+# Playwright artifacts
+playwright-report/
+test-results/
+
+# Local mock database used by API fallbacks
+mock-db.json
