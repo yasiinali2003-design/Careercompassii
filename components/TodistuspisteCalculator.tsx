@@ -151,6 +151,13 @@ export function TodistuspisteCalculator({
     }
   }, [forceOpenScenario, onScenarioHandled]);
 
+  useEffect(() => {
+    if (!hasHydratedFromInitial.current) {
+      return;
+    }
+    onInputsChange?.(inputs);
+  }, [inputs, onInputsChange]);
+
   const updateSubject = (subjectKey: string, changes: Partial<SubjectInput>) => {
     setInputs(prev => {
       const updated: SubjectInputs = {
@@ -161,7 +168,6 @@ export function TodistuspisteCalculator({
         }
       };
       recalculate(updated);
-      onInputsChange?.(updated);
       return updated;
     });
   };
@@ -330,11 +336,11 @@ export function TodistuspisteCalculator({
                 ? 'border-blue-200'
                 : 'border-yellow-200'
           }`}>
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-gray-600">Todistuspisteet</p>
-                <p className={`text-3xl font-bold ${getPointsColor(calculatedPoints, activeScheme)}`}>
-                  {formatPoints(calculatedPoints)} pistettä
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">Todistuspisteet</p>
+              <p className={`text-3xl font-bold ${getPointsColor(calculatedPoints, activeScheme)}`}>
+                {formatPoints(calculatedPoints)} pistettä
                 </p>
               </div>
               <Sparkles className="h-6 w-6 text-yellow-500" />
@@ -353,6 +359,11 @@ export function TodistuspisteCalculator({
                 </Button>
               ))}
             </div>
+            {activeScheme === 'amk' && (
+              <p className="mt-3 text-xs text-gray-600">
+                AMK-laskuri käyttää aina parhaat 5 arvosanaa (Top 5) – pienikin parannus nostaa kokonaistasi heti.
+              </p>
+            )}
           </div>
         )}
 
@@ -603,4 +614,3 @@ function SubjectSection({ title, subtitle, subjects, inputs, onGrade, onVariant,
     </section>
   );
 }
-

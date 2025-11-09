@@ -15,6 +15,7 @@ import {
 } from './types';
 import { getQuestionMappings } from './dimensions';
 import { CAREER_VECTORS } from './careerVectors';
+import { RANKING_WEIGHTS, getDemandWeight, getDiversityKey } from './rankingConfig';
 import { careersData as careersFI } from '@/data/careers-fi';
 import { generatePersonalizedAnalysis } from './personalizedAnalysis';
 import { getAnswerLevel, getQuestionReference } from './languageHelpers';
@@ -651,7 +652,10 @@ function generateWorkstyleReason(subdimension: SubDimension, cohort: Cohort): st
 function generateCareerBenefit(careerFI: any, cohort: Cohort): string {
   // Use job outlook if available
   if (careerFI?.job_outlook?.status === "kasvaa") {
-    return "Työllistymisnäkymät ovat hyvät ja ala kasvaa.";
+    return "Ala kasvaa Suomessa juuri nyt, joten työllistymisnäkymät ovat erinomaiset.";
+  }
+  if (careerFI?.job_outlook?.status === "vakaa") {
+    return "Ala on vakaa ja työllistymismahdollisuudet säilyvät tasaisina myös talousvaihteluissa.";
   }
   
   // Use salary if above median
@@ -1186,16 +1190,28 @@ export function rankCareers(
     } as CareerMatch;
   });
   
-  // Step 6: Sort by score and return top N
-  // Prioritize careers from dominant category even if supplemented
+  const getMedianSalary = (career: CareerMatch): number => {
+    if (!career.salaryRange) return 0;
+    return (career.salaryRange[0] + career.salaryRange[1]) / 2;
+  };
+
+  // Step 6: Sort by dominant category, demand outlook and score
   const sortedCareers = scoredCareers.sort((a, b) => {
     // First prioritize by category match
     const aIsDominant = a.category === dominantCategory;
     const bIsDominant = b.category === dominantCategory;
     if (aIsDominant && !bIsDominant) return -1;
     if (!aIsDominant && bIsDominant) return 1;
+    // Then by demand outlook
+    const demandDiff = getDemandWeight(b.outlook) - getDemandWeight(a.outlook);
+    if (demandDiff !== 0) return demandDiff;
     // Then by score
-    return b.overallScore - a.overallScore;
+    const scoreDiff = b.overallScore - a.overallScore;
+    if (scoreDiff !== 0) return scoreDiff;
+    // Finally by salary potential to break ties
+    const salaryDiff = getMedianSalary(b) - getMedianSalary(a);
+    if (salaryDiff !== 0) return salaryDiff;
+    return a.title.localeCompare(b.title, 'fi');
   });
   
   // Step 7: Deduplicate by title (case-insensitive, ignoring hyphens and spaces)
@@ -1213,38 +1229,112 @@ export function rankCareers(
     return true;
   });
   
-  // Step 8: Dynamic count based on confidence levels
-  const highConfidence = deduplicatedCareers.filter(c => c.confidence === 'high');
-  const mediumConfidence = deduplicatedCareers.filter(c => c.confidence === 'medium');
-  
-  let dynamicLimit = limit;
-  
-  // Adjust count based on confidence distribution
-  if (highConfidence.length >= 5) {
-    // If we have many high-confidence matches, show more
-    dynamicLimit = Math.min(highConfidence.length, 7);
-  } else if (highConfidence.length >= 3 && mediumConfidence.length >= 3) {
-    // Mix of high and medium - show balanced count
-    dynamicLimit = Math.min(highConfidence.length + Math.floor(mediumConfidence.length / 2), 6);
-  } else if (highConfidence.length < 3 && mediumConfidence.length >= 5) {
-    // Mostly medium confidence - show more options
-    dynamicLimit = Math.min(mediumConfidence.length, 7);
+  // Step 8: Limit to top demand-driven matches (default max 5)
+  const dynamicLimit = Math.min(limit, 5);
+
+  const demandSortedPreferred = deduplicatedCareers
+    .filter(c => c.category === dominantCategory)
+    .sort((a, b) => {
+      const demandDiff = getDemandWeight(b.outlook) - getDemandWeight(a.outlook);
+      if (demandDiff !== 0) return demandDiff;
+      const scoreDiff = b.overallScore - a.overallScore;
+      if (scoreDiff !== 0) return scoreDiff;
+      const salaryDiff = getMedianSalary(b) - getMedianSalary(a);
+      if (salaryDiff !== 0) return salaryDiff;
+      return a.title.localeCompare(b.title, 'fi');
+    });
+
+  const demandSortedFallback = deduplicatedCareers
+    .filter(c => c.category !== dominantCategory)
+    .sort((a, b) => {
+      const demandDiff = getDemandWeight(b.outlook) - getDemandWeight(a.outlook);
+      if (demandDiff !== 0) return demandDiff;
+      const scoreDiff = b.overallScore - a.overallScore;
+      if (scoreDiff !== 0) return scoreDiff;
+      const salaryDiff = getMedianSalary(b) - getMedianSalary(a);
+      if (salaryDiff !== 0) return salaryDiff;
+      return a.title.localeCompare(b.title, 'fi');
+    });
+
+  const combinedResults = [...demandSortedPreferred, ...demandSortedFallback];
+
+  type RankedCandidate = {
+    career: CareerMatch;
+    key: string;
+    demandWeight: number;
+    rankScore: number;
+    priority: number;
+  };
+
+  const candidateEnvelopes: RankedCandidate[] = combinedResults.map(career => {
+    const key = getDiversityKey(career.title);
+    const demandWeight = getDemandWeight(career.outlook);
+    const demandBoost = demandWeight * RANKING_WEIGHTS.demandBoost;
+    const categoryBoost = career.category === dominantCategory ? RANKING_WEIGHTS.demandBoost : 0;
+    const rankScore = career.overallScore + demandBoost + categoryBoost;
+    return {
+      career,
+      key,
+      demandWeight,
+      rankScore,
+      priority: categoryBoost > 0 ? 1 : 0
+    };
+  });
+
+  candidateEnvelopes.sort((a, b) => {
+    if (a.priority !== b.priority) return b.priority - a.priority;
+    if (b.rankScore !== a.rankScore) return b.rankScore - a.rankScore;
+    const salaryDiff = getMedianSalary(b.career) - getMedianSalary(a.career);
+    if (salaryDiff !== 0) return salaryDiff;
+    return a.career.title.localeCompare(b.career.title, 'fi');
+  });
+
+  const diversityCounts = new Map<string, number>();
+  const selected: RankedCandidate[] = [];
+  const overflow: RankedCandidate[] = [];
+
+  for (const candidate of candidateEnvelopes) {
+    const count = diversityCounts.get(candidate.key) ?? 0;
+    if (count < RANKING_WEIGHTS.primaryDiversityLimit) {
+      diversityCounts.set(candidate.key, count + 1);
+      selected.push(candidate);
+    } else {
+      overflow.push(candidate);
+    }
   }
-  
-  // If we have enough careers from dominant category (3+), return only those
-  if (categoryCareers.length >= 3) {
-    const dominantOnly = deduplicatedCareers
-      .filter(c => c.category === dominantCategory)
-      .slice(0, dynamicLimit);
-    console.log(`[rankCareers] Returning ${dominantOnly.length} careers from dominant category "${dominantCategory}" (dynamic limit: ${dynamicLimit})`);
-    return dominantOnly;
+
+  for (const candidate of overflow) {
+    if (selected.length >= dynamicLimit) break;
+    const count = diversityCounts.get(candidate.key) ?? 0;
+    if (count < RANKING_WEIGHTS.fallbackDiversityLimit) {
+      diversityCounts.set(candidate.key, count + 1);
+      selected.push(candidate);
+    }
   }
-  
-  // Otherwise, return mixed results but prioritize dominant category
-  const finalResults = deduplicatedCareers.slice(0, dynamicLimit);
+
+  // If we still do not have enough results, append remaining overflow even if duplicates
+  let overflowIndex = 0;
+  while (selected.length < dynamicLimit && overflowIndex < overflow.length) {
+    const candidate = overflow[overflowIndex++];
+    selected.push(candidate);
+  }
+
+  const finalResults = selected
+    .sort((a, b) => {
+      if (a.priority !== b.priority) return b.priority - a.priority;
+      if (b.rankScore !== a.rankScore) return b.rankScore - a.rankScore;
+      const demandDiff = b.demandWeight - a.demandWeight;
+      if (demandDiff !== 0) return demandDiff;
+      const salaryDiff = getMedianSalary(b.career) - getMedianSalary(a.career);
+      if (salaryDiff !== 0) return salaryDiff;
+      return a.career.title.localeCompare(b.career.title, 'fi');
+    })
+    .slice(0, dynamicLimit)
+    .map(entry => entry.career);
   const resultCategories = finalResults.map(c => c.category);
-  console.log(`[rankCareers] Returning ${finalResults.length} careers with categories: ${resultCategories.join(', ')} (dynamic limit: ${dynamicLimit})`);
-  
+  const growthCount = finalResults.filter(c => c.outlook === 'kasvaa').length;
+  console.log(`[rankCareers] Returning ${finalResults.length} careers (dominant: ${dominantCategory}, kasvava ala: ${growthCount}) – categories: ${resultCategories.join(', ')}`);
+
   return finalResults;
 }
 

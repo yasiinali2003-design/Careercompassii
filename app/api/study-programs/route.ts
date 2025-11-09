@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
+import { getStaticPrograms, StudyProgramsQuery } from '@/lib/api/studyPrograms';
 
 /**
  * GET /api/study-programs
@@ -30,17 +31,39 @@ export async function GET(request: NextRequest) {
     const historyParam = searchParams.get('history') === 'true';
     const includeHistory =
       historyParam && process.env.NEXT_PUBLIC_ENABLE_POINT_HISTORY === 'true';
+    const includeReach = searchParams.get('includeReach') === 'true';
+    const reachCountParam = searchParams.get('reachCount');
+    const reachDeltaParam = searchParams.get('reachDelta');
+    const queryOptions: StudyProgramsQuery = {
+      points: points ?? undefined,
+      type: type ?? undefined,
+      field: field && field !== 'all' ? field : undefined,
+      careers,
+      search: search || undefined,
+      limit,
+      offset,
+      sort: sort as StudyProgramsQuery['sort'],
+      includeHistory,
+      includeReachPrograms: includeReach,
+      reachCount: reachCountParam ? parseInt(reachCountParam, 10) : undefined,
+      reachDelta: reachDeltaParam ? parseInt(reachDeltaParam, 10) : undefined
+    };
+
+    const respondWithStatic = () => {
+      const fallback = getStaticPrograms(queryOptions);
+      return NextResponse.json({
+        ...fallback,
+        metadata: {
+          ...(fallback.metadata || {}),
+          source: 'static'
+        }
+      });
+    };
 
     if (!supabaseAdmin) {
       // Fallback to static data if Supabase not configured
       console.warn('[API/StudyPrograms] Supabase not configured, using static data');
-      const { studyPrograms } = await import('@/lib/data/studyPrograms');
-      return NextResponse.json({
-        programs: studyPrograms.slice(offset, offset + limit),
-        total: studyPrograms.length,
-        limit,
-        offset
-      });
+      return respondWithStatic();
     }
 
     // Build query
@@ -137,12 +160,7 @@ export async function GET(request: NextRequest) {
       }
 
       if (!programs || programs.length === 0) {
-        return NextResponse.json({
-          programs: [],
-          total: 0,
-          limit,
-          offset
-        });
+        return respondWithStatic();
       }
     }
 
@@ -297,4 +315,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-

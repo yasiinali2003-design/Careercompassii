@@ -92,7 +92,7 @@ export async function fetchStudyPrograms(
 /**
  * Get programs from static data (fallback)
  */
-function getStaticPrograms(query: StudyProgramsQuery): StudyProgramsApiResponse {
+export function getStaticPrograms(query: StudyProgramsQuery): StudyProgramsApiResponse {
   let filtered = [...staticPrograms];
 
   // Filter by type
@@ -108,17 +108,24 @@ function getStaticPrograms(query: StudyProgramsQuery): StudyProgramsApiResponse 
   // Filter by points
   let reachPrograms: StudyProgram[] = [];
   if (query.points !== undefined) {
+    const lowerBuffer = 35;
+    const upperBuffer = 120;
+
     let programsByPoints = filtered.filter(p => {
       const min = p.minPoints;
-      const max = p.maxPoints || min + 50;
-      return query.points! >= min - 30 && query.points! <= max + 20;
+      const max = p.maxPoints ?? (min + 50);
+      const lowerPass = query.points! >= min - lowerBuffer;
+      const upperPass = query.points! <= max + upperBuffer;
+      return lowerPass && upperPass;
     });
 
     if (programsByPoints.length === 0) {
       programsByPoints = filtered.filter(p => {
         const min = p.minPoints;
-        const max = p.maxPoints || min + 50;
-        return query.points! >= min - 35 && query.points! <= max + 25;
+        const max = p.maxPoints ?? (min + 50);
+        const lowerPass = query.points! >= min - (lowerBuffer + 10);
+        const upperPass = query.points! <= max + (upperBuffer + 20);
+        return lowerPass && upperPass;
       });
     }
 
@@ -216,4 +223,3 @@ export async function fetchStudyProgramById(id: string): Promise<StudyProgram | 
   // Fallback to static data
   return staticPrograms.find(p => p.id === id) || null;
 }
-

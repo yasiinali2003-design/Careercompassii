@@ -68,6 +68,16 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### Teacher dashboard (local testing)
+
+The `/teacher/*` flow can be exercised locally without Supabase by providing an access code. During development the app falls back to the code `PLAYWRIGHT`, or you can set your own value via `.env.local`:
+
+```
+TEACHER_ACCESS_CODE=MY_SECRET_CODE
+```
+
+Use the same code on `/teacher/login` to unlock class management, PIN generation, and analytics tooling.
+
 ## 📱 Pages & Features
 
 ### Homepage (`/`)

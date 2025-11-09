@@ -67,3 +67,4 @@ Once connected:
 **Important**: The actual domain connection and password protection must be done through the Vercel web dashboard as they're not configurable via CLI. I've set up the technical preparation (robots.txt and noindex tags) to help keep it hidden.
 
 
+

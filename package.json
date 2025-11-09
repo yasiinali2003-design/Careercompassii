@@ -8,6 +8,7 @@
     "start": "next start",
     "provision:teachers": "node provision-teachers.js",
     "lint": "next lint",
+    "test": "npx ts-node --compiler-options '{\"module\":\"commonjs\"}' -r tsconfig-paths/register test-career-ranking.ts && node test-todistuspiste-calculation.js && node test-todistuspiste-complete.js",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui"
   },
@@ -42,6 +43,7 @@
     "pg": "^8.16.3",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

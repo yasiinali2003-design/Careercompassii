@@ -57,6 +57,12 @@ export default function HomePage() {
               Meistä
             </Link>
             <Link
+              href="/todistuspistelaskuri"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
+            >
+              Todistuspistelaskuri
+            </Link>
+            <Link
               href="/teacher/login"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
             >
@@ -392,5 +398,4 @@ export default function HomePage() {
     </div>
   )
 }
-
 
