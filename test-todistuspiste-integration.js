@@ -4,14 +4,16 @@
  */
 
 // Mock data
+const { calculateTodistuspisteetWithOptions } = require('./test-todistuspiste-calculation.js');
+
 const mockStudyPrograms = [
   {
     id: 'tietojenkäsittelytiede-helsinki',
     name: 'Tietojenkäsittelytiede',
     institution: 'Helsingin yliopisto',
     institutionType: 'yliopisto',
-    minPoints: 25.0,
-    maxPoints: 45.0,
+    minPoints: 95.0,
+    maxPoints: 120.0,
     relatedCareers: ['ohjelmistokehittaja', 'tietoturva-asiantuntija']
   },
   {
@@ -19,8 +21,8 @@ const mockStudyPrograms = [
     name: 'Lääketiede',
     institution: 'Helsingin yliopisto',
     institutionType: 'yliopisto',
-    minPoints: 45.0,
-    maxPoints: 65.0,
+    minPoints: 185.0,
+    maxPoints: 198.0,
     relatedCareers: ['laakari']
   },
   {
@@ -28,28 +30,15 @@ const mockStudyPrograms = [
     name: 'Tietotekniikka',
     institution: 'Metropolia Ammattikorkeakoulu',
     institutionType: 'amk',
-    minPoints: 15.0,
-    maxPoints: 35.0,
+    minPoints: 80.0,
+    maxPoints: 120.0,
     relatedCareers: ['ohjelmistokehittaja', 'verkkosuunnittelija']
   }
 ];
 
-// Mock calculation function
-function calculateTodistuspisteet(grades) {
-  const gradeMap = { 'L': 7, 'E': 6, 'M': 5, 'C': 4, 'B': 3, 'A': 2, 'I': 0 };
-  let total = 0;
-  let bonus = 0;
-  
-  for (const [subject, grade] of Object.entries(grades)) {
-    if (grade && grade.trim()) {
-      total += gradeMap[grade.toUpperCase()] || 0;
-    }
-  }
-  
-  if (grades['äidinkieli']?.toUpperCase() === 'L') bonus += 2;
-  if (grades['matematiikka']?.toUpperCase() === 'L') bonus += 2;
-  
-  return { totalPoints: total + bonus, bonusPoints: bonus };
+// Helper for calculation
+function calculateTodistuspisteet(inputs, scheme) {
+  return calculateTodistuspisteetWithOptions(inputs, { scheme });
 }
 
 // Mock filtering function
@@ -57,7 +46,7 @@ function getProgramsByPoints(points, type) {
   return mockStudyPrograms.filter(p => {
     if (type && p.institutionType !== type) return false;
     const max = p.maxPoints || p.minPoints + 50;
-    return points >= p.minPoints - 30 && points <= max + 20;
+    return points >= p.minPoints - 30 && points <= max + 120;
   });
 }
 
@@ -82,11 +71,21 @@ const grades1 = {
   'fysiikka': 'E',
   'kemia': 'M'
 };
-const result1 = calculateTodistuspisteet(grades1);
+const result1 = calculateTodistuspisteet(
+  {
+    'äidinkieli': { grade: 'E' },
+    'matematiikka': { grade: 'L', variantKey: 'pitka' },
+    'englanti': { grade: 'E', variantKey: 'a' },
+    'reaaliaineet': { grade: 'M' },
+    'reaali-2': { grade: 'E' },
+    'reaali-3': { grade: 'M' }
+  },
+  'yliopisto'
+);
 const programs1 = getProgramsByPoints(result1.totalPoints, 'yliopisto');
 const matched1 = matchProgramsToCareers(programs1, ['ohjelmistokehittaja', 'tietoturva-asiantuntija']);
 console.log('Grades:', grades1);
-console.log('Calculated points:', result1.totalPoints, '(bonus:', result1.bonusPoints + ')');
+console.log('Calculated points (yliopisto):', result1.totalPoints.toFixed(0));
 console.log('Filtered programs:', programs1.map(p => p.name));
 console.log('Matched programs:', matched1.map(p => `${p.name} (${p.matchCount} matches)`));
 console.log('✅ PASS' + (matched1.length > 0 && matched1[0].matchCount > 0 ? '' : ' ❌ FAIL'));
@@ -103,11 +102,22 @@ const grades2 = {
   'kemia': 'L',
   'biologia': 'L'
 };
-const result2 = calculateTodistuspisteet(grades2);
+const result2 = calculateTodistuspisteet(
+  {
+    'äidinkieli': { grade: 'L' },
+    'matematiikka': { grade: 'L', variantKey: 'pitka' },
+    'englanti': { grade: 'L', variantKey: 'a' },
+    'reaaliaineet': { grade: 'E' },
+    'reaali-2': { grade: 'L' },
+    'reaali-3': { grade: 'L' },
+    'muu-kieli': { grade: 'L', variantKey: 'a' }
+  },
+  'yliopisto'
+);
 const programs2 = getProgramsByPoints(result2.totalPoints, 'yliopisto');
 const matched2 = matchProgramsToCareers(programs2, ['laakari']);
 console.log('Grades:', grades2);
-console.log('Calculated points:', result2.totalPoints, '(bonus:', result2.bonusPoints + ')');
+console.log('Calculated points (yliopisto):', result2.totalPoints.toFixed(0));
 console.log('Filtered programs:', programs2.map(p => p.name));
 console.log('Matched programs:', matched2.map(p => `${p.name} (${p.matchCount} matches)`));
 console.log('✅ PASS' + (programs2.some(p => p.name === 'Lääketiede') ? '' : ' ❌ FAIL'));
@@ -122,11 +132,20 @@ const grades3 = {
   'historia': 'C',
   'fysiikka': 'C'
 };
-const result3 = calculateTodistuspisteet(grades3);
+const result3 = calculateTodistuspisteet(
+  {
+    'äidinkieli': { grade: 'C' },
+    'matematiikka': { grade: 'C', variantKey: 'lyhyt' },
+    'englanti': { grade: 'C', variantKey: 'b' },
+    'reaaliaineet': { grade: 'C' },
+    'reaali-2': { grade: 'C' }
+  },
+  'amk'
+);
 const programs3 = getProgramsByPoints(result3.totalPoints, 'amk');
 const matched3 = matchProgramsToCareers(programs3, ['ohjelmistokehittaja']);
 console.log('Grades:', grades3);
-console.log('Calculated points:', result3.totalPoints, '(bonus:', result3.bonusPoints + ')');
+console.log('Calculated points (AMK):', result3.totalPoints.toFixed(0));
 console.log('Filtered programs:', programs3.map(p => p.name));
 console.log('Matched programs:', matched3.map(p => `${p.name} (${p.matchCount} matches)`));
 console.log('✅ PASS' + (programs3.length > 0 ? '' : ' ❌ FAIL'));
@@ -139,10 +158,17 @@ const grades4 = {
   'matematiikka': 'A',
   'englanti': 'A'
 };
-const result4 = calculateTodistuspisteet(grades4);
+const result4 = calculateTodistuspisteet(
+  {
+    'äidinkieli': { grade: 'A' },
+    'matematiikka': { grade: 'A', variantKey: 'lyhyt' },
+    'englanti': { grade: 'A', variantKey: 'b' }
+  },
+  'amk'
+);
 const programs4 = getProgramsByPoints(result4.totalPoints, 'amk');
 console.log('Grades:', grades4);
-console.log('Calculated points:', result4.totalPoints);
+console.log('Calculated points (AMK):', result4.totalPoints.toFixed(0));
 console.log('Filtered programs:', programs4.length, 'programs');
 console.log('✅ PASS' + (programs4.length >= 0 ? '' : ' ❌ FAIL'));
 console.log('');

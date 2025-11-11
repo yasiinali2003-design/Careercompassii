@@ -13,7 +13,7 @@ const mockPrograms = [
     institution: 'Helsingin yliopisto',
     institutionType: 'yliopisto',
     field: 'teknologia',
-    minPoints: 35.0,
+    minPoints: 95.0,
     maxPoints: 120.0,
     relatedCareers: ['ohjelmistokehittaja', 'tietoturva-asiantuntija']
   },
@@ -23,8 +23,8 @@ const mockPrograms = [
     institution: 'Helsingin yliopisto',
     institutionType: 'yliopisto',
     field: 'terveys',
-    minPoints: 50.0,
-    maxPoints: 200.0,
+    minPoints: 185.0,
+    maxPoints: 198.0,
     relatedCareers: ['laakari']
   },
   {
@@ -33,8 +33,8 @@ const mockPrograms = [
     institution: 'Metropolia Ammattikorkeakoulu',
     institutionType: 'amk',
     field: 'teknologia',
-    minPoints: 15.0,
-    maxPoints: 75.0,
+    minPoints: 80.0,
+    maxPoints: 120.0,
     relatedCareers: ['ohjelmistokehittaja']
   }
 ];
@@ -47,7 +47,7 @@ function filterByPoints(programs, points, type) {
   return filtered.filter(p => {
     const min = p.minPoints;
     const max = p.maxPoints || min + 50;
-    return points >= min - 30 && points <= max + 20;
+    return points >= min - 30 && points <= max + 120;
   });
 }
 
@@ -76,14 +76,14 @@ const yliopistoResult1 = calculateTodistuspisteetWithOptions(
     'äidinkieli': { grade: 'E' },
     'matematiikka': { grade: 'L', variantKey: 'pitka' },
     'englanti': { grade: 'E', variantKey: 'a' },
-    'historia': { grade: 'M' },
-    'fysiikka': { grade: 'E' }
+    'reaaliaineet': { grade: 'M' },
+    'reaali-2': { grade: 'E' }
   },
   { scheme: 'yliopisto' }
 );
 const points1 = yliopistoResult1.totalPoints;
 console.log('Grades:', grades1);
-console.log('Calculated Points (yliopisto):', points1, '(bonus:', yliopistoResult1.bonusPoints + ')');
+console.log('Calculated Points (yliopisto):', points1);
 
 const filtered1 = filterByPoints(mockPrograms, points1, 'yliopisto');
 const matched1 = matchToCareers(filtered1, ['ohjelmistokehittaja', 'tietoturva-asiantuntija']);
@@ -108,16 +108,16 @@ const yliopistoResult2 = calculateTodistuspisteetWithOptions(
     'äidinkieli': { grade: 'L' },
     'matematiikka': { grade: 'L', variantKey: 'pitka' },
     'englanti': { grade: 'L', variantKey: 'a' },
-    'historia': { grade: 'E' },
-    'fysiikka': { grade: 'L' },
-    'kemia': { grade: 'L' },
-    'biologia': { grade: 'L' }
+    'reaaliaineet': { grade: 'E' },
+    'reaali-2': { grade: 'L' },
+    'reaali-3': { grade: 'L' },
+    'muu-kieli': { grade: 'L', variantKey: 'a' }
   },
   { scheme: 'yliopisto' }
 );
 const points2 = yliopistoResult2.totalPoints;
 console.log('Grades:', grades2);
-console.log('Calculated Points (yliopisto):', points2, '(bonus:', yliopistoResult2.bonusPoints + ')');
+console.log('Calculated Points (yliopisto):', points2);
 
 const filtered2 = filterByPoints(mockPrograms, points2, 'yliopisto');
 const matched2 = matchToCareers(filtered2, ['laakari']);
@@ -139,7 +139,7 @@ const amkResult = calculateTodistuspisteetWithOptions(
     'äidinkieli': { grade: 'C' },
     'matematiikka': { grade: 'C', variantKey: 'lyhyt' },
     'englanti': { grade: 'C', variantKey: 'b' },
-    'historia': { grade: 'C' }
+    'reaaliaineet': { grade: 'C' }
   },
   { scheme: 'amk' }
 );

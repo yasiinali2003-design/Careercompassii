@@ -8,7 +8,14 @@ I've added site-wide password protection to your website. Visitors will need to 
 
 ### 1. Local Development (.env.local)
 
-Create or update `.env.local` file in your project root:
+Create or update `.env.local` file in your project root. You can use any of the following variables—the first one found is used automatically (they are all trimmed and case-sensitive):
+
+- `SITE_PASSWORD` (recommended)
+- `ADMIN_SITE_PASSWORD`
+- `PLAYWRIGHT_SITE_PASSWORD`
+- `NEXT_PUBLIC_SITE_PASSWORD`
+
+Example:
 
 ```env
 SITE_PASSWORD=CCYHAHAIKUNZIBBI22!
@@ -39,7 +46,7 @@ Add the environment variable in Vercel:
 
 ## 🔒 Password
 
-Your site password is: `CCYHAHAIKUNZIBBI22!`
+Your default development password is still `CCYHAHAIKUNZIBBI22!`, and the Playwright test suite uses `playwright`. Those fallbacks are accepted automatically in non-production environments, so set a custom secret before deploying.
 
 **Important**: Keep this password secure! Store it only in environment variables, never in code.
 

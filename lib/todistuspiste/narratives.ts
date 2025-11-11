@@ -18,10 +18,6 @@ export function buildSummaryNarrative(inputs: SubjectInputs, context: NarrativeC
     lines.push(`Kokonaispistemääräsi on ${context.totalPoints.toFixed(2).replace('.', ',')} pistettä.`);
   }
 
-  if (context.bonusPoints > 0) {
-    lines.push('Sait +2 lisäpistettä, koska suoriuduit laudatur-tasolla äidinkielessä tai matematiikassa.');
-  }
-
   const highGrades = SUBJECT_DEFINITIONS.filter(subject => {
     const grade = inputs[subject.key]?.grade;
     return grade === 'L' || grade === 'E';
@@ -43,14 +39,14 @@ export function buildActionableNextSteps(points: number, scheme: 'yliopisto' | '
   const steps: string[] = [];
 
   if (scheme === 'amk') {
-    if (points >= 65) {
-      steps.push('Pisteesi riittävät useimpiin AMK-ohjelmiin – vertaile paikkakuntia ja erikoistumisalueita, jotka tukevat urasuunnitelmaasi.');
-    } else if (points >= 50) {
-      steps.push('Olet kilpailukykyinen moniin AMK-koulutuksiin. Tutki vaihtoehtoja ja tarkista viime vuosien pisterajat Opintopolusta.');
-    } else if (points >= 35) {
-      steps.push('Pisteesi riittävät osaan AMK-ohjelmista. Pienikin nousu esimerkiksi matematiikassa tai kielissä avaa lisää vaihtoehtoja.');
+    if (points >= 150) {
+      steps.push('Olet vahvasti kilpailukykyinen käytännössä kaikkiin AMK-ohjelmiin – vertaile paikkakuntia ja erikoistumisalueita, jotka tukevat urasuunnitelmaasi.');
+    } else if (points >= 120) {
+      steps.push('Pisteesi riittävät valtaosaan AMK-koulutuksista. Voit painottaa hakukohteita sijainnin tai erikoistumisen perusteella.');
+    } else if (points >= 90) {
+      steps.push('Olet realistisesti mukana useiden AMK-hakukohteiden kilpailussa. Tarkista kiinnostavien ohjelmien viime vuoden pisterajat.');
     } else {
-      steps.push('Keskity nostamaan 1–2 keskeistä arvosanaa. Hyödynnä skenaariotyökalua nähdäksesi vaikutuksen AMK-valintaan.');
+      steps.push('Pienikin nousu esimerkiksi äidinkielessä, matematiikassa tai kielissä avaa nopeasti lisää AMK-vaihtoehtoja – testaa skenaariotyökalulla missä parannus vaikuttaa eniten.');
     }
   } else {
     if (points >= 160) {
@@ -69,4 +65,3 @@ export function buildActionableNextSteps(points: number, scheme: 'yliopisto' | '
 
   return steps;
 }
-

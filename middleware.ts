@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { sitePasswordIsConfigured } from '@/lib/siteAuth';
 
 /**
  * Teacher Dashboard Protection Middleware
@@ -12,7 +13,9 @@ export function middleware(request: NextRequest) {
 
   // Admin-only protection: hide existence by returning 404 for non-admins
   // Only apply to page routes, not API routes (API routes handle their own auth)
-  if (pathname.startsWith('/admin') && !pathname.startsWith('/api/admin')) {
+  const disableAdminBasicAuth = process.env.NEXT_PUBLIC_DISABLE_ADMIN_BASIC_AUTH === 'true';
+
+  if (!disableAdminBasicAuth && pathname.startsWith('/admin') && !pathname.startsWith('/api/admin')) {
     // If a password is configured, enforce Basic Auth first
     const adminUser = process.env.ADMIN_USERNAME || 'admin';
     const adminPass = process.env.ADMIN_PASSWORD || '';
@@ -92,7 +95,7 @@ export function middleware(request: NextRequest) {
 
   // Site-wide password protection (via /site-auth page)
   // Only enable on production domain, not on localhost
-  const sitePasswordEnabled = !isLocalhost && isProduction && process.env.SITE_PASSWORD !== undefined && process.env.SITE_PASSWORD !== '';
+  const sitePasswordEnabled = !isLocalhost && isProduction && sitePasswordIsConfigured();
   
   if (sitePasswordEnabled) {
     // Always allow access to site auth page and its API
@@ -101,13 +104,23 @@ export function middleware(request: NextRequest) {
     }
 
     // Exclude routes that have their own auth or are needed for functionality
+    const segments = pathname.split('/').filter(Boolean);
+    const firstSegment = segments[0];
+    const base64UrlTokenRegex = /^[A-Za-z0-9_-]{16,}$/;
+    const looksLikeClassTokenRoute =
+      Boolean(firstSegment && base64UrlTokenRegex.test(firstSegment)) &&
+      (segments.length === 1 ||
+        (segments.length === 2 && (segments[1] === 'test' || segments[1].startsWith('reports') || segments[1] === 'results' || segments[1] === 'analytics')) ||
+        (segments.length > 2 && segments[1] === 'reports'));
+
     const isExcluded = 
       pathname.startsWith('/teacher') ||
       pathname.startsWith('/admin') ||
       pathname === '/kouluille' || // Already handled above
       (pathname.startsWith('/api') && pathname !== '/api/site-auth') ||
       pathname.startsWith('/_next') ||
-      pathname.startsWith('/favicon');
+      pathname.startsWith('/favicon') ||
+      looksLikeClassTokenRoute;
 
     if (!isExcluded) {
       // Check for site authentication cookie

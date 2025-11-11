@@ -208,17 +208,17 @@ export function TodistuspisteCalculator({
   const getPointsColor = (points: number | null, scheme: TodistuspisteScheme) => {
     if (points === null) return 'text-gray-500';
     if (scheme === 'amk') {
-      if (points >= 70) return 'text-green-600 font-bold';
-      if (points >= 55) return 'text-green-500';
-      if (points >= 45) return 'text-blue-500';
-      if (points >= 35) return 'text-yellow-600';
+      if (points >= 150) return 'text-green-600 font-bold';
+      if (points >= 120) return 'text-green-500';
+      if (points >= 90) return 'text-blue-500';
+      if (points >= 70) return 'text-yellow-600';
       return 'text-orange-500';
     }
 
-    if (points >= 150) return 'text-green-600 font-bold';
-    if (points >= 120) return 'text-green-500';
-    if (points >= 90) return 'text-blue-500';
-    if (points >= 60) return 'text-yellow-600';
+    if (points >= 175) return 'text-green-600 font-bold';
+    if (points >= 140) return 'text-green-500';
+    if (points >= 110) return 'text-blue-500';
+    if (points >= 80) return 'text-yellow-600';
     return 'text-orange-500';
   };
 
@@ -259,7 +259,8 @@ export function TodistuspisteCalculator({
               <div>
                 <p className="font-semibold">Pisteytyksen kaava</p>
                 <p className="mt-1 text-xs text-blue-800">
-                  L=7, E=6, M=5, C=4, B=3, A=2, I=0. Laudatur äidinkielessä tai matematiikassa tuo +2 bonuspistettä.
+                  Pisteet perustuvat Opetushallituksen todistusvalinnan taulukkoon (max 198 p). Äidinkieli ja pitkät kielet: L=46,
+                  reaaliaineet ja lyhyet kielet: L=30. Laskuri valitsee automaattisesti viisi parasta ainetta.
                 </p>
               </div>
             </div>
@@ -293,8 +294,8 @@ export function TodistuspisteCalculator({
                 <div className="rounded-2xl border border-blue-100 bg-blue-50/70 p-4 text-xs text-blue-900">
                   <p className="font-semibold text-blue-900">Miten reaaliaineet arvioidaan?</p>
                   <ul className="mt-2 space-y-1 list-disc list-inside">
-                    <li>Kaikki reaaliaineet pisteytetään samassa arvosana-asteikossa (I–L).</li>
-                    <li>Tehtävätyypit ja pisteytyksen painotukset vaihtelevat aineittain.</li>
+                    <li>Kaikki reaaliaineet pisteytetään samassa todistusvalinnan asteikossa (L=30, E=27 ...).</li>
+                    <li>Kaksi parasta reaaliaine- tai lisäkielivalintaa voidaan huomioida pisteissä.</li>
                     <li>Valitse alta se reaaliaine, jonka kirjoitit, jotta analyysimme pysyy tarkkana.</li>
                   </ul>
                 </div>

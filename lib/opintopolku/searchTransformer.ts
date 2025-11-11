@@ -4,7 +4,7 @@
  * to our StudyProgram format
  */
 
-import { StudyProgram } from '@/lib/data/studyPrograms';
+import { StudyProgram } from '@/lib/data/studyPrograms.types';
 
 export interface OpintopolkuSearchResult {
   oid: string;

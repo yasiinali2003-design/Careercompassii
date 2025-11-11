@@ -74,12 +74,11 @@ localStorage.setItem("careerTestResults", JSON.stringify({
 2. **Test Real-time Calculation:**
    - Enter grades: Äidinkieli=L, Matematiikka=E, Englanti=E
    - Points should update automatically
-   - Should show ~20-25 points (7+6+6+2 bonus = 21)
+   - Should show ~130 pistettä (46+43+41)
 
-3. **Test Bonus Points:**
-   - Enter L in Äidinkieli only → Should show +2 bonus
-   - Enter L in Matematiikka only → Should show +2 bonus
-   - Enter L in both → Should show +4 bonus total
+3. **Test Viiden Aineen Limitti:**
+   - Syötä arvosanat useampaan aineeseen (esim. lisää reaaliaineita ja kieliä)
+   - tarkista pisteyhteenveto → vain viisi parasta ainetta huomioidaan
 
 4. **Test Visual Feedback:**
    - Points should be color-coded (green for high, yellow for low)
@@ -251,7 +250,7 @@ localStorage.setItem("careerTestResults", JSON.stringify({
 
 ## Expected Results
 
-- **Calculation**: Accurate point calculation with bonus points
+- **Calculation**: Accurate point calculation with virallinen todistusvalinnan taulukko (max 198 p)
 - **Filtering**: Programs filtered by ±30 points from minimum
 - **Matching**: Programs prioritized by career matches
 - **UI/UX**: Clean, responsive, Finnish language throughout
@@ -270,4 +269,3 @@ localStorage.setItem("careerTestResults", JSON.stringify({
 - Calculator should be intuitive for young adults
 - Programs should be relevant to user's career recommendations
 - Links to Opintopolku should open in new tab
-

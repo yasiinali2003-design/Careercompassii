@@ -13,16 +13,13 @@
 
 | Test | Status | Notes |
 |------|--------|-------|
-| Basic grade conversion | ✅ PASS | L/E/M/C correctly converted to 7/6/5/4 |
-| Maximum points (all L) | ✅ PASS | **Note**: Result is 53, not 51 - CORRECT! Both äidinkieli and matematiikka L = +4 bonus (2+2) |
-| Average grades (C) | ✅ PASS | 4*6 = 24 points, no bonus |
-| Bonus for äidinkieli L | ✅ PASS | +2 bonus correctly applied |
-| Bonus for matematiikka L | ✅ PASS | +2 bonus correctly applied |
+| Basic grade conversion | ✅ PASS | Vastaa Opetushallituksen taulukkoa (esim. ÄI L = 46, reaali L = 30) |
+| Maximum points (all L) | ✅ PASS | Max 198 pistettä, vain viisi parasta ainetta huomioidaan |
+| Average grades (C) | ✅ PASS | C-arvosanat tuottavat ~60 pistettä |
+| Five-subject limit | ✅ PASS | Lisäaineet poistetaan laskennasta kun 5 paikkaa täynnä |
 | Lowercase grades | ✅ PASS | Case-insensitive handling works |
 | Invalid grade handling | ✅ PASS | Invalid grades default to 0 |
 | Empty grades | ✅ PASS | Empty strings handled correctly |
-
-**Key Finding**: Bonus points are +2 for EACH of äidinkieli L and matematiikka L, so maximum bonus is +4 (not +2). This is correct behavior.
 
 ---
 
@@ -151,7 +148,7 @@
 
 ## Known Behaviors (Not Bugs)
 
-1. **Bonus Points**: Maximum bonus is +4 (not +2) when both äidinkieli and matematiikka are L. This is correct.
+1. **Maksimipisteet**: Enimmäistulos (~198 p) syntyy aina viiden parhaan aineen summasta, vaikka useampia arvosanoja syötetään.
 
 2. **Empty Results**: Some integration tests show empty results because mock data is limited. With full database (~100 programs), these would return results.
 

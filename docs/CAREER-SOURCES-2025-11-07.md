@@ -21,3 +21,19 @@
 > Seuraava askel (Vaihe 2B): täydentää yllä olevista lähteistä yksityiskohtaiset sisällöt (kuvaus, tehtävät, palkka, näkymät, vahvuudet) ennen lisäämistä `data/careers-fi.ts` -tiedostoon.
 
 
+---
+
+### 2025-11-11 – Graafinen suunnittelija (päivitys)
+
+- **Työmarkkinatori sivu**: https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/graafinen-suunnittelija  
+  - Varmistettu palkkahaarukka: mediani 3 700 €, Tilastokeskuksen palkkarakennetilasto (päivityspäivä 30.1.2023).  
+  - Varmistettu koulutuspolku: Taiteiden ja suunnittelun korkeakoulut (TaK/TaM), medianomi (AMK), media-alan perustutkinto. Linkki Opintopolku-hakuun toimii.
+- **Työllisyys-/näkymätieto**: Työmarkkinatorin sivulla ei ole erillistä työllisyysnäkymäosiota tälle ammatille.  
+  - Ammattibarometri (TEM) -pdf/xlsx -aineistot eivät lataudu (DNS-virhe `ERR_NAME_NOT_RESOLVED`) työkalussa 11.11.2025.  
+  - Merkitty outlook-statuksen tarkistus **kesken**; tarvitsee varmistuksen lähimmän Ammattibarometri-julkaisun (2641 Viestintäalan asiantuntijat) pohjalta, kun lähde on uudelleen saavutettavissa.
+- **Seuraavat toimet**:  
+  - Nouda Ammattibarometri (syksy 2024 / kevät 2025) graafisille suunnittelijoille ja kirjaa status + lainaus.  
+  - Päivitä `job_outlook`-objekti `careers-fi.ts`-tiedostossa vastaamaan varmennettua tietoa.  
+  - Kirjaa lähde ja päiväys tähän lokiin.
+
+

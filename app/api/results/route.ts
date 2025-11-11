@@ -77,7 +77,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { pin, classToken, resultPayload } = validation.data;
+    const rawPin = validation.data.pin;
+    const rawClassToken = validation.data.classToken;
+    const resultPayload = validation.data.resultPayload;
+
+    const normalizedPin = rawPin.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+    const normalizedClassToken = rawClassToken.trim();
+
+    if (!normalizedPin || normalizedPin.length < 4 || normalizedPin.length > 6 || !normalizedClassToken) {
+      return NextResponse.json(
+        { success: false, error: 'Virheellinen PIN-koodi tai luokan tunniste' },
+        { status: 400 }
+      );
+    }
 
     if (!supabaseAdmin) {
       // Local mock: validate against mock-db.json (classes + pins) and store result
@@ -90,31 +102,31 @@ export async function POST(request: NextRequest) {
       } catch {}
 
       // Map classToken -> classId
-      const cls = (store.classes || []).find((c: any) => c.class_token === classToken);
+      const cls = (store.classes || []).find((c: any) => c.class_token === normalizedClassToken);
       const classId = cls?.id;
       const classPins: string[] = (classId && store.pins?.[classId]) || [];
-      if (!classId || !classPins.includes(pin)) {
+      if (!classId || !classPins.includes(normalizedPin)) {
         return NextResponse.json(
           { success: false, error: 'PIN does not exist for this class' },
           { status: 400 }
         );
       }
       store.results = store.results || [];
-      store.results.push({ class_id: classId, pin, result_payload: resultPayload, created_at: new Date().toISOString() });
+      store.results.push({ class_id: classId, pin: normalizedPin, result_payload: resultPayload, created_at: new Date().toISOString() });
       try { fs.writeFileSync(mockPath, JSON.stringify(store, null, 2)); } catch {}
       return NextResponse.json({ success: true, message: 'Result submitted successfully' });
     }
 
     // Validate PIN exists and belongs to class
-    console.log(`[API/Results] Validating PIN: ${pin} for class token: ${classToken}`);
+    console.log(`[API/Results] Validating PIN: ${normalizedPin} for class token: ${normalizedClassToken}`);
     let isValid = false;
     let classId = null;
 
     // Try RPC function first
     const { data: pinData, error: pinError } = await supabaseAdmin
       .rpc('validate_pin', {
-        p_pin: pin,
-        p_class_token: classToken
+        p_pin: normalizedPin,
+        p_class_token: normalizedClassToken
       });
 
     console.log(`[API/Results] RPC Response:`, { pinData, pinError: pinError?.message });
@@ -127,7 +139,7 @@ export async function POST(request: NextRequest) {
       const { data: classData } = await supabaseAdmin
         .from('classes')
         .select('id')
-        .eq('class_token', classToken)
+        .eq('class_token', normalizedClassToken)
         .single();
       
       if (classData) {
@@ -135,7 +147,7 @@ export async function POST(request: NextRequest) {
         const { data: pinExists } = await supabaseAdmin
           .from('pins')
           .select('id')
-          .eq('pin', pin)
+          .eq('pin', normalizedPin)
           .eq('class_id', classData.id)
           .limit(1);
         
@@ -161,7 +173,7 @@ export async function POST(request: NextRequest) {
     // Store result (no names, no PII)
     // Ensure classId is a valid UUID string (not just any string)
     const classIdUUID = classId; // Supabase Postgres should handle string UUID conversion
-    console.log(`[API/Results] About to insert result for PIN: ${pin}, classId: ${classIdUUID} (type: ${typeof classIdUUID}, length: ${classIdUUID?.length})`);
+    console.log(`[API/Results] About to insert result for PIN: ${normalizedPin}, classId: ${classIdUUID} (type: ${typeof classIdUUID}, length: ${classIdUUID?.length})`);
     
     // First, verify class exists
     const { data: classCheck } = await supabaseAdmin
@@ -183,7 +195,7 @@ export async function POST(request: NextRequest) {
       .from('results')
       .insert({
         class_id: classIdUUID,
-        pin,
+        pin: normalizedPin,
         result_payload: resultPayload
       })
       .select('id, class_id, pin, created_at');
@@ -197,7 +209,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log(`[API/Results] Stored result for PIN: ${pin} (class: ${classId})`);
+    console.log(`[API/Results] Stored result for PIN: ${normalizedPin} (class: ${classId})`);
     if (insertData && insertData.length > 0) {
       console.log(`[API/Results] Insert successful. ID: ${insertData[0].id}, class_id: ${insertData[0].class_id}, pin: ${insertData[0].pin}`);
     } else {

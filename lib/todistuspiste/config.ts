@@ -4,9 +4,13 @@ export type TodistuspisteScheme = 'yliopisto' | 'amk';
 
 export const TODISTUSPISTE_SCHEMES: readonly TodistuspisteScheme[] = ['yliopisto', 'amk'] as const;
 
-export const TODISTUSPISTE_SCHEME_SETTINGS: Record<TodistuspisteScheme, { maxSubjects?: number; bonusPolicy: 'standard' | 'none' }> = {
+export const TODISTUSPISTE_SCHEME_SETTINGS: Record<
+  TodistuspisteScheme,
+  { maxSubjects?: number; bonusPolicy: 'standard' | 'none' }
+> = {
   yliopisto: {
-    bonusPolicy: 'standard'
+    maxSubjects: 5,
+    bonusPolicy: 'none'
   },
   amk: {
     maxSubjects: 5,
@@ -23,6 +27,8 @@ export interface SubjectVariant {
   description?: string;
   amkCoefficient?: number;
   amkGradeWeights?: GradeWeights;
+  gradeWeights?: GradeWeights;
+  schemeGroup?: Partial<Record<TodistuspisteScheme, string>>;
 }
 
 export interface SubjectChoice {
@@ -39,6 +45,8 @@ export interface SubjectDefinition {
   coefficient?: number;
   amkCoefficient?: number;
   amkGradeWeights?: GradeWeights;
+  gradeWeights?: GradeWeights;
+  schemeGroup?: Partial<Record<TodistuspisteScheme, string>>;
   variants?: SubjectVariant[];
   defaultVariantKey?: string;
   allowSubjectChoice?: boolean;
@@ -55,19 +63,76 @@ export const GRADE_OPTIONS: { value: GradeSymbol; label: string }[] = [
   { value: 'I', label: 'I – Improbatur' }
 ];
 
+const GRADE_WEIGHT_TABLES = {
+  motherTongue: {
+    L: 46,
+    E: 41,
+    M: 34,
+    C: 26,
+    B: 18,
+    A: 10
+  } as GradeWeights,
+  mathLong: {
+    L: 46,
+    E: 43,
+    M: 40,
+    C: 35,
+    B: 27,
+    A: 19
+  } as GradeWeights,
+  mathShort: {
+    L: 40,
+    E: 35,
+    M: 27,
+    C: 19,
+    B: 13,
+    A: 6
+  } as GradeWeights,
+  languageLong: {
+    L: 46,
+    E: 41,
+    M: 34,
+    C: 26,
+    B: 18,
+    A: 10
+  } as GradeWeights,
+  languageMedium: {
+    L: 38,
+    E: 34,
+    M: 26,
+    C: 18,
+    B: 12,
+    A: 5
+  } as GradeWeights,
+  languageShort: {
+    L: 30,
+    E: 27,
+    M: 21,
+    C: 15,
+    B: 9,
+    A: 3
+  } as GradeWeights,
+  reaali: {
+    L: 30,
+    E: 27,
+    M: 21,
+    C: 15,
+    B: 9,
+    A: 3
+  } as GradeWeights
+};
+
 export const SUBJECT_DEFINITIONS: SubjectDefinition[] = [
   {
     key: 'äidinkieli',
     label: 'Äidinkieli',
     required: true,
     coefficient: 1,
-    amkGradeWeights: {
-      L: 46,
-      E: 41,
-      M: 34,
-      C: 26,
-      B: 18,
-      A: 10
+    gradeWeights: GRADE_WEIGHT_TABLES.motherTongue,
+    amkGradeWeights: GRADE_WEIGHT_TABLES.motherTongue,
+    schemeGroup: {
+      yliopisto: 'motherTongue',
+      amk: 'motherTongue'
     }
   },
   {
@@ -81,13 +146,11 @@ export const SUBJECT_DEFINITIONS: SubjectDefinition[] = [
         label: 'Pitkä matematiikka',
         coefficient: 1.5,
         description: 'Ylioppilaskokeen pitkä matematiikka',
-        amkGradeWeights: {
-          L: 46,
-          E: 43,
-          M: 40,
-          C: 35,
-          B: 27,
-          A: 19
+        gradeWeights: GRADE_WEIGHT_TABLES.mathLong,
+        amkGradeWeights: GRADE_WEIGHT_TABLES.mathLong,
+        schemeGroup: {
+          yliopisto: 'mathematics',
+          amk: 'mathematics'
         }
       },
       {
@@ -95,13 +158,11 @@ export const SUBJECT_DEFINITIONS: SubjectDefinition[] = [
         label: 'Lyhyt matematiikka',
         coefficient: 1.0,
         description: 'Ylioppilaskokeen lyhyt matematiikka',
-        amkGradeWeights: {
-          L: 40,
-          E: 35,
-          M: 27,
-          C: 19,
-          B: 13,
-          A: 6
+        gradeWeights: GRADE_WEIGHT_TABLES.mathShort,
+        amkGradeWeights: GRADE_WEIGHT_TABLES.mathShort,
+        schemeGroup: {
+          yliopisto: 'mathematics',
+          amk: 'mathematics'
         }
       }
     ],
@@ -117,26 +178,22 @@ export const SUBJECT_DEFINITIONS: SubjectDefinition[] = [
         key: 'a',
         label: 'A-kieli',
         coefficient: 1.15,
-        amkGradeWeights: {
-          L: 46,
-          E: 41,
-          M: 34,
-          C: 26,
-          B: 18,
-          A: 10
+        gradeWeights: GRADE_WEIGHT_TABLES.languageLong,
+        amkGradeWeights: GRADE_WEIGHT_TABLES.languageLong,
+        schemeGroup: {
+          yliopisto: 'primaryLanguage',
+          amk: 'primaryLanguage'
         }
       },
       {
         key: 'b',
         label: 'B-kieli',
         coefficient: 1.0,
-        amkGradeWeights: {
-          L: 38,
-          E: 34,
-          M: 26,
-          C: 18,
-          B: 12,
-          A: 5
+        gradeWeights: GRADE_WEIGHT_TABLES.languageMedium,
+        amkGradeWeights: GRADE_WEIGHT_TABLES.languageMedium,
+        schemeGroup: {
+          yliopisto: 'primaryLanguage',
+          amk: 'primaryLanguage'
         }
       }
     ],
@@ -152,26 +209,22 @@ export const SUBJECT_DEFINITIONS: SubjectDefinition[] = [
         key: 'a',
         label: 'A-kieli',
         coefficient: 1.1,
-        amkGradeWeights: {
-          L: 46,
-          E: 41,
-          M: 34,
-          C: 26,
-          B: 18,
-          A: 10
+        gradeWeights: GRADE_WEIGHT_TABLES.languageLong,
+        amkGradeWeights: GRADE_WEIGHT_TABLES.languageLong,
+        schemeGroup: {
+          yliopisto: 'primaryLanguage',
+          amk: 'primaryLanguage'
         }
       },
       {
         key: 'b',
         label: 'B-kieli',
         coefficient: 1.0,
-        amkGradeWeights: {
-          L: 38,
-          E: 34,
-          M: 26,
-          C: 18,
-          B: 12,
-          A: 5
+        gradeWeights: GRADE_WEIGHT_TABLES.languageMedium,
+        amkGradeWeights: GRADE_WEIGHT_TABLES.languageMedium,
+        schemeGroup: {
+          yliopisto: 'primaryLanguage',
+          amk: 'primaryLanguage'
         }
       }
     ],
@@ -183,13 +236,11 @@ export const SUBJECT_DEFINITIONS: SubjectDefinition[] = [
     required: false,
     helperText: 'Valitse ensin reaaliaine ja anna arvosana.',
     coefficient: 1.0,
-    amkGradeWeights: {
-      L: 30,
-      E: 27,
-      M: 21,
-      C: 15,
-      B: 9,
-      A: 3
+    gradeWeights: GRADE_WEIGHT_TABLES.reaali,
+    amkGradeWeights: GRADE_WEIGHT_TABLES.reaali,
+    schemeGroup: {
+      yliopisto: 'extra',
+      amk: 'extra'
     },
     allowSubjectChoice: true,
     subjectChoices: [
@@ -210,13 +261,11 @@ export const SUBJECT_DEFINITIONS: SubjectDefinition[] = [
     label: 'Toinen reaaliaine',
     required: false,
     coefficient: 1.0,
-    amkGradeWeights: {
-      L: 30,
-      E: 27,
-      M: 21,
-      C: 15,
-      B: 9,
-      A: 3
+    gradeWeights: GRADE_WEIGHT_TABLES.reaali,
+    amkGradeWeights: GRADE_WEIGHT_TABLES.reaali,
+    schemeGroup: {
+      yliopisto: 'extra',
+      amk: 'extra'
     },
     allowSubjectChoice: true,
     subjectChoices: [
@@ -237,13 +286,11 @@ export const SUBJECT_DEFINITIONS: SubjectDefinition[] = [
     label: 'Kolmas reaaliaine',
     required: false,
     coefficient: 1.0,
-    amkGradeWeights: {
-      L: 30,
-      E: 27,
-      M: 21,
-      C: 15,
-      B: 9,
-      A: 3
+    gradeWeights: GRADE_WEIGHT_TABLES.reaali,
+    amkGradeWeights: GRADE_WEIGHT_TABLES.reaali,
+    schemeGroup: {
+      yliopisto: 'extra',
+      amk: 'extra'
     },
     allowSubjectChoice: true,
     subjectChoices: [
@@ -269,26 +316,22 @@ export const SUBJECT_DEFINITIONS: SubjectDefinition[] = [
         key: 'a',
         label: 'A-kieli',
         coefficient: 1.05,
-        amkGradeWeights: {
-          L: 46,
-          E: 41,
-          M: 34,
-          C: 26,
-          B: 18,
-          A: 10
+        gradeWeights: GRADE_WEIGHT_TABLES.reaali,
+        amkGradeWeights: GRADE_WEIGHT_TABLES.reaali,
+        schemeGroup: {
+          yliopisto: 'extra',
+          amk: 'extra'
         }
       },
       {
         key: 'b',
         label: 'B-kieli',
         coefficient: 1.0,
-        amkGradeWeights: {
-          L: 30,
-          E: 27,
-          M: 21,
-          C: 15,
-          B: 9,
-          A: 3
+        gradeWeights: GRADE_WEIGHT_TABLES.reaali,
+        amkGradeWeights: GRADE_WEIGHT_TABLES.reaali,
+        schemeGroup: {
+          yliopisto: 'extra',
+          amk: 'extra'
         }
       }
     ],
@@ -303,4 +346,3 @@ export const SUBJECT_DEFINITION_MAP: Record<string, SubjectDefinition> = SUBJECT
   },
   {} as Record<string, SubjectDefinition>
 );
-

@@ -18,8 +18,14 @@ export default function StudentLoginPage({
   const [pin, setPin] = useState('');
   const [error, setError] = useState('');
 
+  const normalizePin = (value: string) =>
+    value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+
   const handleLogin = async () => {
-    if (!pin.trim()) {
+    const normalizedPin = normalizePin(pin);
+    const normalizedClassToken = classToken.trim();
+
+    if (!normalizedPin) {
       setError('Syötä PIN-koodi');
       return;
     }
@@ -31,14 +37,14 @@ export default function StudentLoginPage({
       const response = await fetch('/api/validate-pin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ pin, classToken }),
+        body: JSON.stringify({ pin: normalizedPin, classToken: normalizedClassToken }),
       });
       
       const data = await response.json();
       
       if (data.success && data.isValid) {
         // Redirect to test with PIN and classToken
-        router.push(`/test?pin=${pin}&classToken=${classToken}`);
+        router.push(`/test?pin=${normalizedPin}&classToken=${normalizedClassToken}`);
       } else {
         setError('PIN-koodi ei ole voimassa. Tarkista koodi ja kokeile uudelleen.');
       }
@@ -71,9 +77,9 @@ export default function StudentLoginPage({
                 id="pin"
                 type="text"
                 value={pin}
-                onChange={(e) => setPin(e.target.value.toUpperCase())}
+                onChange={(e) => setPin(normalizePin(e.target.value))}
                 placeholder="esim. A4K7"
-                maxLength={4}
+                maxLength={6}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-center font-mono text-2xl uppercase tracking-widest"
               />
               <p className="text-sm text-gray-500 mt-1">

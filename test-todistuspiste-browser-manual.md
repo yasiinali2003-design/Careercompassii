@@ -8,7 +8,7 @@
 3. **Test Steps**:
    - Enter grades: Äidinkieli: L, Matematiikka: E, Englanti: E, Historia: M, Fysiikka: E
    - Click "Laske pisteet"
-   - Verify: Points are calculated correctly (should be around 35-40 points)
+   - Verify: Points are calculated correctly (should be ~175–180 pistettä)
    - Verify: StudyProgramsList appears with matching programs
    - Verify: Programs are filtered by points and matched to career recommendations
 
@@ -18,7 +18,7 @@
 3. **Test Steps**:
    - Enter grades: Äidinkieli: C, Matematiikka: C, Englanti: C, Historia: C
    - Click "Laske pisteet"
-   - Verify: Points are calculated correctly (should be around 16-20 points)
+   - Verify: Points are calculated correctly (should be noin 60 pistettä)
    - Verify: StudyProgramsList appears with AMK programs only
    - Verify: Programs match career recommendations
 
@@ -26,7 +26,7 @@
 1. **Setup**: Enter excellent grades
 2. **Test Steps**:
    - Enter grades: All L (Laudatur)
-   - Verify: Points show as very high (50+)
+   - Verify: Points show as erittäin korkeat (190+)
    - Verify: Programs include high-demand programs like Lääketiede
    - Verify: Badge shows "Erinomainen mahdollisuus" for matching programs
 
@@ -34,15 +34,16 @@
 1. **Setup**: Enter low grades
 2. **Test Steps**:
    - Enter grades: All C or lower
-   - Verify: Points show as low (20-30)
+   - Verify: Points show as low (20–40 pistettä)
    - Verify: Programs are filtered to show realistic options
    - Verify: Badge shows "Realistinen mahdollisuus" or "Haastava" for programs
 
-### Scenario 5: Bonus Points
+### Scenario 5: Vain viisi parasta ainetta
 1. **Test Steps**:
-   - Enter L in Äidinkieli only → Verify: +2 bonus points
-   - Enter L in Matematiikka only → Verify: +2 bonus points
-   - Enter L in both → Verify: +4 bonus points total
+   - Syötä arvosanat kaikkiin aineisiin (esim. useita L/E arvosanoja)
+   - Click "Laske pisteet"
+   - Avaa pisteiden yhteenveto ja tarkista "lasketut aineet"
+   - Verify: Vain viisi ainetta näkyy laskennassa ja kokonaispisteet vastaavat näiden summaa (max 198 p)
 
 ### Scenario 6: Invalid Input Handling
 1. **Test Steps**:
@@ -65,9 +66,9 @@
 ## Expected Results Summary
 
 ✅ **Calculation Logic**:
-- Grade conversion: L=7, E=6, M=5, C=4, B=3, A=2, I=0
-- Bonus points: +2 for L in äidinkieli, +2 for L in matematiikka
-- Total = sum of all subject points + bonus points
+- Perustuu Opetushallituksen todistusvalinnan taulukkoon (maksimi 198 pistettä)
+- Pitkät kielet ja äidinkieli: L=46, reaaliaineet & lyhyet kielet: L=30
+- Laskuri huomioi automaattisesti viisi parasta ainetta (1 äidinkieli, 1 matematiikka, 1 pääkieli, 2 lisäainetta)
 
 ✅ **Program Filtering**:
 - Programs shown if user points are within 30 points of minimum (reach) or above minimum (realistic/good/excellent)
@@ -82,4 +83,3 @@
 - Real-time calculation as grades are entered
 - Clear visual feedback for point ranges
 - Links to Opintopolku for each program
-

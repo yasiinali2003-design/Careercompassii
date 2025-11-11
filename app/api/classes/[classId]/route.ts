@@ -29,14 +29,35 @@ export async function GET(
     }
 
     if (!supabaseAdmin) {
-      console.warn('[API/GetClass] Supabase not configured - returning mock response');
+      console.warn('[API/GetClass] Supabase not configured - using local mock store');
+      const fs = require('fs');
+      const path = require('path');
+      const mockPath = path.join(process.cwd(), 'mock-db.json');
+      let store: any = { classes: [], pins: {}, results: [] };
+      try {
+        if (fs.existsSync(mockPath)) {
+          store = JSON.parse(fs.readFileSync(mockPath, 'utf8')) || store;
+        }
+      } catch (error) {
+        console.warn('[API/GetClass] Failed to read mock-db.json:', error);
+      }
+
+      const cls = (store.classes || []).find((c: any) => String(c.id) === String(classId));
+
+      if (!cls) {
+        return NextResponse.json(
+          { success: false, error: 'Class not found' },
+          { status: 404 }
+        );
+      }
+
       return NextResponse.json({
         success: true,
         class: {
-          id: classId,
-          classToken: 'MOCK' + classId.substring(0, 8),
-          teacherId: 'mock-teacher',
-          createdAt: new Date().toISOString()
+          id: cls.id,
+          classToken: cls.class_token,
+          teacherId: cls.teacher_id || 'mock-teacher',
+          createdAt: cls.created_at || new Date().toISOString()
         }
       });
     }

@@ -16,6 +16,21 @@ import {
 
 export type { TodistuspisteScheme } from './todistuspiste/config';
 
+const SCHEME_GROUP_LIMITS: Record<TodistuspisteScheme, Record<string, number>> = {
+  yliopisto: {
+    motherTongue: 1,
+    mathematics: 1,
+    primaryLanguage: 1,
+    extra: 2
+  },
+  amk: {
+    motherTongue: 1,
+    mathematics: 1,
+    primaryLanguage: 1,
+    extra: 2
+  }
+};
+
 export interface SubjectInput {
   grade?: GradeSymbol;
   variantKey?: string;
@@ -85,6 +100,45 @@ function resolveVariant(subject: SubjectDefinition, input: SubjectInput): Subjec
   return subject.variants[0];
 }
 
+function getSchemeGroup(subject: SubjectDefinition, variant: SubjectVariant | undefined, scheme: TodistuspisteScheme) {
+  if (variant?.schemeGroup?.[scheme]) {
+    return variant.schemeGroup[scheme];
+  }
+  if (subject.schemeGroup?.[scheme]) {
+    return subject.schemeGroup[scheme];
+  }
+  return undefined;
+}
+
+function getGradeWeightForScheme(
+  subject: SubjectDefinition,
+  variant: SubjectVariant | undefined,
+  scheme: TodistuspisteScheme,
+  grade: GradeSymbol
+): number | null {
+  if (scheme === 'amk') {
+    const variantWeight = getGradeWeight(variant?.amkGradeWeights, grade);
+    if (variantWeight !== null) {
+      return variantWeight;
+    }
+    const subjectWeight = getGradeWeight(subject.amkGradeWeights, grade);
+    if (subjectWeight !== null) {
+      return subjectWeight;
+    }
+  }
+
+  const variantWeight = getGradeWeight(variant?.gradeWeights, grade);
+  if (variantWeight !== null) {
+    return variantWeight;
+  }
+  const subjectWeight = getGradeWeight(subject.gradeWeights, grade);
+  if (subjectWeight !== null) {
+    return subjectWeight;
+  }
+
+  return null;
+}
+
 function getGradeWeight(weights: GradeWeights | undefined, grade: GradeSymbol): number | null {
   if (!weights) {
     return null;
@@ -135,7 +189,7 @@ export function calculateBonusPoints(grades: SubjectInputs): number {
 export function calculateTodistuspisteet(grades: SubjectInputs, options: CalculateTodistuspisteOptions = {}): TodistuspisteResult {
   const scheme: TodistuspisteScheme = options.scheme ?? 'yliopisto';
   const subjectPoints: Record<string, number> = {};
-  const weightedEntries: Array<{ key: string; points: number }> = [];
+  const weightedEntries: Array<{ key: string; points: number; group?: string }> = [];
 
   SUBJECT_DEFINITIONS.forEach(subject => {
     const input = grades[subject.key];
@@ -145,16 +199,7 @@ export function calculateTodistuspisteet(grades: SubjectInputs, options: Calcula
 
     const gradeSymbol = input.grade.toUpperCase() as GradeSymbol;
     const variant = resolveVariant(subject, input);
-    let weightedPoints: number | null = null;
-
-    if (scheme === 'amk') {
-      const directPoints =
-        getGradeWeight(variant?.amkGradeWeights, gradeSymbol) ??
-        getGradeWeight(subject.amkGradeWeights, gradeSymbol);
-      if (directPoints !== null) {
-        weightedPoints = directPoints;
-      }
-    }
+    let weightedPoints: number | null = getGradeWeightForScheme(subject, variant, scheme, gradeSymbol);
 
     if (weightedPoints === null) {
       const coefficient = getSubjectCoefficient(subject, variant, scheme);
@@ -163,7 +208,11 @@ export function calculateTodistuspisteet(grades: SubjectInputs, options: Calcula
     }
 
     subjectPoints[subject.key] = weightedPoints;
-    weightedEntries.push({ key: subject.key, points: weightedPoints });
+    weightedEntries.push({
+      key: subject.key,
+      points: weightedPoints,
+      group: getSchemeGroup(subject, variant, scheme)
+    });
   });
 
   let totalPoints = 0;
@@ -171,12 +220,26 @@ export function calculateTodistuspisteet(grades: SubjectInputs, options: Calcula
   const schemeSettings = TODISTUSPISTE_SCHEME_SETTINGS[scheme];
 
   if (schemeSettings.maxSubjects && schemeSettings.maxSubjects > 0) {
-    const counted = weightedEntries
-      .slice()
-      .sort((a, b) => b.points - a.points)
-      .slice(0, schemeSettings.maxSubjects);
-    totalPoints = counted.reduce((sum, entry) => sum + entry.points, 0);
-    countedSubjects = counted.map(entry => entry.key);
+    const sorted = weightedEntries.slice().sort((a, b) => b.points - a.points);
+    const groupLimits = SCHEME_GROUP_LIMITS[scheme] || {};
+    const groupUsage: Record<string, number> = {};
+    const selected: Array<{ key: string; points: number; group?: string }> = [];
+
+    for (const entry of sorted) {
+      if (selected.length >= schemeSettings.maxSubjects) {
+        break;
+      }
+      const groupKey = entry.group || 'general';
+      const limit = groupLimits[groupKey];
+      if (limit !== undefined && (groupUsage[groupKey] ?? 0) >= limit) {
+        continue;
+      }
+      selected.push(entry);
+      groupUsage[groupKey] = (groupUsage[groupKey] ?? 0) + 1;
+    }
+
+    totalPoints = selected.reduce((sum, entry) => sum + entry.points, 0);
+    countedSubjects = selected.map(entry => entry.key);
   } else {
     totalPoints = weightedEntries.reduce((sum, entry) => sum + entry.points, 0);
     countedSubjects = weightedEntries.map(entry => entry.key);
@@ -251,4 +314,3 @@ export function getPointRangeCategory(userPoints: number, minPoints: number, max
 export function formatPoints(points: number): string {
   return points.toFixed(1).replace('.', ',');
 }
-

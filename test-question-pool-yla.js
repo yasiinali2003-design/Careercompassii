@@ -1,10 +1,18 @@
+require('ts-node/register');
+
 /**
  * COMPREHENSIVE TEST SCRIPT FOR YLA QUESTION POOL
  * Tests question set selection, mapping, and scoring accuracy
  */
 
-import { selectQuestionSet, markSetAsUsed, getUsedSets, resetQuestionPool, getAvailableSets } from './lib/questionPool.js';
-import { getQuestionMappings } from './lib/scoring/dimensions.js';
+const {
+  selectQuestionSet,
+  markSetAsUsed,
+  getUsedSets,
+  resetQuestionPool,
+  getAvailableSets
+} = require('./lib/questionPool');
+const { getQuestionMappings } = require('./lib/scoring/dimensions');
 
 // Helper to simulate localStorage (for Node.js environment)
 if (typeof localStorage === 'undefined') {

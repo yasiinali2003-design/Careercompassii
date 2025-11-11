@@ -4,21 +4,42 @@ import { supabaseAdmin } from '@/lib/supabase';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { pin, classToken } = body;
+    const rawPin = typeof body.pin === 'string' ? body.pin : '';
+    const rawClassToken = typeof body.classToken === 'string' ? body.classToken : '';
+
+    const pin = rawPin.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+    const classToken = rawClassToken.trim();
 
     // Validate input
-    if (!pin || !classToken) {
+    if (!pin || !classToken || pin.length < 4 || pin.length > 6) {
       return NextResponse.json(
-        { success: false, error: 'Puuttuva PIN-koodi tai luokka-tunniste' },
+        { success: false, error: 'Virheellinen PIN-koodi tai luokka-tunniste' },
         { status: 400 }
       );
     }
 
     if (!supabaseAdmin) {
-      return NextResponse.json(
-        { success: false, error: 'Tietokantaa ei ole määritelty' },
-        { status: 500 }
-      );
+      // Local mock mode: validate using mock-db.json just like the results endpoint
+      const mockPath = require('path').join(process.cwd(), 'mock-db.json');
+      const fs = require('fs');
+      let store: any = { classes: [], pins: {}, results: [] };
+      try {
+        if (fs.existsSync(mockPath)) {
+          store = JSON.parse(fs.readFileSync(mockPath, 'utf8')) || store;
+        }
+      } catch (error) {
+        console.warn('[API/ValidatePIN] Failed to read mock-db.json:', error);
+      }
+
+      const cls = (store.classes || []).find((c: any) => c.class_token === classToken);
+      const classId = cls?.id;
+      const classPins: string[] = (classId && store.pins?.[classId]) || [];
+      const isValid = Boolean(classId && classPins.includes(pin));
+
+      return NextResponse.json({
+        success: true,
+        isValid
+      });
     }
 
     // Validate PIN exists and belongs to class

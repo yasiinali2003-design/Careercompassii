@@ -109,7 +109,7 @@
 
 ## Known Behaviors
 
-1. **Test 2 Calculation**: Expected 51 but got 53 - This is CORRECT! Both äidinkieli and matematiikka are L, so bonus is +4 total.
+1. **Test 2 Calculation**: Maksimipisteet (~198) syntyvät viiden parhaan aineen summasta – tämä on odotettu lopputulos.
 
 2. **API Tests**: May show fallback behavior if database not set up - This is EXPECTED and correct.
 
@@ -158,4 +158,3 @@ The Todistuspistelaskuri feature is:
    - All code is ready
    - Database setup is optional (fallback works)
    - Monitor API performance
-

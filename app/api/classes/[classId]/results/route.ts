@@ -31,14 +31,6 @@ export async function GET(
       );
     }
 
-    if (!supabaseAdmin) {
-      console.warn('[API/Results] Supabase not configured - returning mock response');
-      return NextResponse.json({
-        success: true,
-        results: []
-      });
-    }
-
     // Verify teacher authentication and ownership
     const teacherId = request.cookies.get('teacher_id')?.value;
     
@@ -47,6 +39,45 @@ export async function GET(
         { success: false, error: 'Not authenticated' },
         { status: 401 }
       );
+    }
+
+    if (!supabaseAdmin) {
+      console.warn('[API/Results] Supabase not configured - using local mock store');
+      const fs = require('fs');
+      const path = require('path');
+      const mockPath = path.join(process.cwd(), 'mock-db.json');
+      let store: any = { classes: [], pins: {}, results: [] };
+      try {
+        if (fs.existsSync(mockPath)) {
+          store = JSON.parse(fs.readFileSync(mockPath, 'utf8')) || store;
+        }
+      } catch (error) {
+        console.warn('[API/Results] Failed to read mock-db.json:', error);
+      }
+
+      const cls = (store.classes || []).find((c: any) => String(c.id) === String(classId));
+      if (!cls) {
+        return NextResponse.json(
+          { success: false, error: 'Class not found' },
+          { status: 404 }
+        );
+      }
+
+      if (cls.teacher_id && cls.teacher_id !== teacherId) {
+        return NextResponse.json(
+          { success: false, error: 'Class not found or access denied' },
+          { status: 403 }
+        );
+      }
+
+      const results = (store.results || [])
+        .filter((r: any) => String(r.class_id) === String(classId))
+        .sort((a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+
+      return NextResponse.json({
+        success: true,
+        results
+      });
     }
 
     console.log(`[API/Results] Fetching for classId: ${classId} (type: ${typeof classId}, length: ${classId?.length})`);

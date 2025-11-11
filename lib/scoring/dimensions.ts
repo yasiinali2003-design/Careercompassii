@@ -21,7 +21,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Section 1: Learning Preferences (Q0-7)
   {
     q: 0,
-    text: "Pidätkö lukemisesta ja kirjojen lukemisesta?",
+    text: "Pidätkö lukemisesta ja tarinoista?",
     dimension: 'interests',
     subdimension: 'analytical',
     weight: 1.0,
@@ -30,7 +30,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 1,
-    text: "Tykkäätkö matikasta ja laskemisesta?",
+    text: "Pidätkö matematiikasta ja laskemisesta?",
     dimension: 'interests',
     subdimension: 'analytical',
     weight: 1.2,
@@ -39,7 +39,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 2,
-    text: "Haluaisitko oppia tekemällä ja kokeilemalla itse?",
+    text: "Opitko mieluummin tekemällä ja kokeilemalla itse?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.2,
@@ -48,7 +48,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 3,
-    text: "Pidätkö siitä, että voit opiskella monia eri aineita kerralla?",
+    text: "Pidätkö siitä, että opiskelet useita eri aineita?",
     dimension: 'interests',
     subdimension: 'analytical',
     weight: 1.0,
@@ -57,7 +57,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 4,
-    text: "Oletko hyvä muistamaan teorioita ja faktoja?",
+    text: "Onko sinun helppo muistaa teoriat ja faktat?",
     dimension: 'interests',
     subdimension: 'analytical',
     weight: 0.9,
@@ -66,7 +66,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 5,
-    text: "Tykkäätkö enemmän tekemällä oppimisesta kuin kuuntelemisesta?",
+    text: "Pidätkö enemmän itse tekemisestä kuin kuuntelemisesta?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.1,
@@ -75,7 +75,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 6,
-    text: "Kiinnostaako sinua tutkia ja selvittää asioita syvällisesti?",
+    text: "Pidätkö siitä, että selvität asiat kunnolla?",
     dimension: 'interests',
     subdimension: 'analytical',
     weight: 1.0,
@@ -84,7 +84,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 7,
-    text: "Haluaisitko oppia yhden tietyn ammatin taidot nopeasti?",
+    text: "Haluaisitko oppia yhden ammatin taidot nopeasti?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.2,
@@ -95,7 +95,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Section 2: Future Mindset (Q8-14)
   {
     q: 8,
-    text: "Tiedätkö jo nyt, mitä ammattia haluaisit tehdä aikuisena?",
+    text: "Tiedätkö jo, mitä ammattia haluaisit tehdä?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.0,
@@ -104,7 +104,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 9,
-    text: "Kuinka paljon haluat pitää eri vaihtoehdot avoinna tulevaisuutta varten?",
+    text: "Haluatko pitää monta vaihtoehtoa auki tulevaisuudessa?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.0,
@@ -113,7 +113,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 10,
-    text: "Kiinnostaako sinua ajatus yliopistossa opiskelusta tulevaisuudessa?",
+    text: "Kiinnostaako sinua ajatus yliopisto-opinnoista tulevaisuudessa?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.3,
@@ -122,7 +122,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 11,
-    text: "Haluaisitko aloittaa työnteon mahdollisimman aikaisin (n. 18-19v)?",
+    text: "Haluaisitko aloittaa työelämän pian, noin 18–19-vuotiaana?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.1,
@@ -131,7 +131,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 12,
-    text: "Oletko valmis opiskelemaan vielä monta vuotta ennen töiden aloittamista?",
+    text: "Onko sinusta ok opiskella vielä monta vuotta ennen töitä?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.2,
@@ -140,7 +140,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 13,
-    text: "Tuntuuko sinusta, että tiedät jo mitä haluat tehdä elämälläsi?",
+    text: "Tiedätkö jo, mitä haluaisit tehdä tulevaisuudessa?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 0.9,
@@ -149,7 +149,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 14,
-    text: "Haluaisitko kokeilla monia eri aloja ennen kuin päätät urasi?",
+    text: "Haluaisitko kokeilla monia aloja ennen kuin valitset urasi?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.0,
@@ -160,7 +160,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Section 3: Interest Areas (Q15-22)
   {
     q: 15,
-    text: "Kiinnostaako sinua tietokoneet, puhelimet ja teknologia?",
+    text: "Kiinnostaako sinua tietokoneet ja teknologia?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.2,
@@ -187,7 +187,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 18,
-    text: "Haluaisitko työskennellä ulkona ja olla tekemisissä luonnon kanssa?",
+    text: "Haluaisitko työskennellä ulkona luonnon keskellä?",
     dimension: 'interests',
     subdimension: 'environment',
     weight: 1.1,
@@ -196,7 +196,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 19,
-    text: "Haluaisitko olla johtaja ja tehdä tärkeitä päätöksiä?",
+    text: "Haluaisitko johtaa muita ja tehdä päätöksiä?",
     dimension: 'workstyle',
     subdimension: 'leadership',
     weight: 1.1,
@@ -205,7 +205,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 20,
-    text: "Kiinnostaako sinua rakentaminen ja asioiden korjaaminen?",
+    text: "Kiinnostaako sinua rakentaminen ja korjaaminen?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.2,
@@ -223,7 +223,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 22,
-    text: "Haluaisitko työskennellä myynnissä tai asiakkaiden palvelemisessa?",
+    text: "Haluaisitko työskennellä myynnissä tai asiakaspalvelussa?",
     dimension: 'values',
     subdimension: 'financial',
     weight: 1.0,
@@ -243,7 +243,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 24,
-    text: "Tykkäätkö tehdä asioita yksin ja itsenäisesti?",
+    text: "Tykkäätkö tehdä asioita itsenäisesti?",
     dimension: 'workstyle',
     subdimension: 'autonomy',
     weight: 0.9,
@@ -252,7 +252,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 25,
-    text: "Haluaisitko työskennellä ulkona luonnon keskellä?",
+    text: "Haluaisitko, että työsi olisi ulkona luonnossa?",
     dimension: 'context',
     subdimension: 'work_environment',
     weight: 1.1,
@@ -261,7 +261,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 26,
-    text: "Pidätkö säännöllisestä päivärytmistä ja toistuvista rutiineista?",
+    text: "Pidätkö selkeistä rutiineista ja aikatauluista?",
     dimension: 'workstyle',
     subdimension: 'structure',
     weight: 0.8,
@@ -270,7 +270,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 27,
-    text: "Kiinnostaako sinua matkustaminen ja eri maiden näkeminen?",
+    text: "Haluaisitko matkustaa ja nähdä eri maita?",
     dimension: 'values',
     subdimension: 'global',
     weight: 0.9,
@@ -279,7 +279,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 28,
-    text: "Haluaisitko työssä tavata paljon uusia ihmisiä joka päivä?",
+    text: "Pidätkö siitä, että tapaat työssä paljon uusia ihmisiä?",
     dimension: 'workstyle',
     subdimension: 'social',
     weight: 1.0,
@@ -365,7 +365,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 36,
     originalQ: 6,
-    text: "Haluaisitko oppia aiheesta syvällisesti?",
+    text: "Haluaisitko ymmärtää aiheen tosi hyvin?",
     dimension: 'interests',
     subdimension: 'analytical',
     weight: 1.0,
@@ -387,7 +387,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 38,
     originalQ: 8,
-    text: "Onko sinulla jo selkeä ajatus siitä, mitä haluaisit tehdä työksesi?",
+    text: "Onko sinulla jo ajatus siitä, mitä haluaisit tehdä työksesi?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.0,
@@ -397,7 +397,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 39,
     originalQ: 9,
-    text: "Haluatko pitää mahdollisimman monta polkua avoinna tulevaisuudessa?",
+    text: "Haluatko pitää monta polkua auki tulevaisuudessa?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.0,
@@ -417,7 +417,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 41,
     originalQ: 11,
-    text: "Haluaisitko päästä töihin mahdollisimman nuorena (esim. 18-19 vuotiaana)?",
+    text: "Haluaisitko aloittaa työelämän nuorena (esim. 18–19-vuotiaana)?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.1,
@@ -427,7 +427,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 42,
     originalQ: 12,
-    text: "Oletko ok sen kanssa, että opiskelut kestävät vielä vuosia ennen työelämään siirtymistä?",
+    text: "Onko sinusta ok, että opiskelut kestävät vielä vuosia ennen työelämään siirtymistä?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.2,
@@ -459,7 +459,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 45,
     originalQ: 15,
-    text: "Kiinnostaako sinua digitaalinen maailma ja älylaitteet?",
+    text: "Kiinnostaako sinua digitaaliset laitteet ja netti?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.2,
@@ -499,7 +499,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 49,
     originalQ: 19,
-    text: "Haluaisitko johtaa muita ja tehdä merkittäviä päätöksiä?",
+    text: "Haluaisitko johtaa muita ja tehdä tärkeitä päätöksiä?",
     dimension: 'workstyle',
     subdimension: 'leadership',
     weight: 1.1,
@@ -581,7 +581,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 57,
     originalQ: 27,
-    text: "Kiinnostaako sinua nähdä maailmaa ja eri kulttuureja työn kautta?",
+    text: "Haluaisitko nähdä maailmaa ja tutustua eri maihin työn kautta?",
     dimension: 'values',
     subdimension: 'global',
     weight: 0.9,
@@ -700,7 +700,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 68,
     originalQ: 8,
-    text: "Onko sinulla jo selkeä ajatus siitä, mitä ammattia haluaisit tehdä?",
+    text: "Onko sinulla jo ajatus siitä, mitä ammattia haluaisit tehdä?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.0,
@@ -710,7 +710,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 69,
     originalQ: 9,
-    text: "Kuinka tärkeää sinulle on pitää eri mahdollisuudet avoinna tulevaisuudessa?",
+    text: "Haluatko pitää monta vaihtoehtoa auki tulevaisuudessa?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.0,
@@ -720,7 +720,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 70,
     originalQ: 10,
-    text: "Kiinnostaako sinua valmistautua yliopisto-opinnoille tulevaisuudessa?",
+    text: "Kiinnostaako sinua ajatus opiskella yliopistossa tulevaisuudessa?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.3,
@@ -730,7 +730,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 71,
     originalQ: 11,
-    text: "Haluaisitko päästä työelämään mahdollisimman pian (noin 18-19 vuoden iässä)?",
+    text: "Haluaisitko aloittaa työelämän pian (noin 18–19 vuoden iässä)?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.1,
@@ -740,7 +740,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 72,
     originalQ: 12,
-    text: "Oletko ok sen kanssa, että opiskelut kestävät vielä vuosia ennen työelämään siirtymistä?",
+    text: "Onko sinusta ok, että opiskelut kestävät vielä vuosia ennen työelämää?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 1.2,
@@ -772,7 +772,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 75,
     originalQ: 15,
-    text: "Kiinnostaako sinua ohjelmointi, tietokoneet ja digitaalinen teknologia?",
+    text: "Kiinnostaako sinua ohjelmointi, tietokoneet ja digitaaliset jutut?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.2,
@@ -812,7 +812,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 79,
     originalQ: 19,
-    text: "Kiinnostaako sinua johtaminen ja merkittävien päätösten tekeminen?",
+    text: "Kiinnostaako sinua johtaminen ja tärkeiden päätösten tekeminen?",
     dimension: 'workstyle',
     subdimension: 'leadership',
     weight: 1.1,
@@ -842,7 +842,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 82,
     originalQ: 22,
-    text: "Kiinnostaako sinua asiakaspalvelu ja kaupankäynti?",
+    text: "Kiinnostaako sinua asiakaspalvelu ja myyminen?",
     dimension: 'values',
     subdimension: 'financial',
     weight: 1.0,
@@ -894,7 +894,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 87,
     originalQ: 27,
-    text: "Kiinnostaako sinua työskennellä kansainvälisesti ja matkustaa työn vuoksi?",
+    text: "Haluaisitko työskennellä myös ulkomailla ja matkustaa työn vuoksi?",
     dimension: 'values',
     subdimension: 'global',
     weight: 0.9,
@@ -930,7 +930,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   // Section 1: Tech & Digital (Q0-6)
   {
     q: 0,
-    text: "Kiinnostaako sinua koodaaminen ja ohjelmien tekeminen?",
+    text: "Kiinnostaako sinua koodaaminen tai omien ohjelmien tekeminen?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.5,
@@ -948,7 +948,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 2,
-    text: "Kiinnostaako sinua numeroiden ja tilastojen analysointi?",
+    text: "Pidätkö numeroiden ja tilastojen tutkimisesta?",
     dimension: 'interests',
     subdimension: 'analytical',
     weight: 1.2,
@@ -966,7 +966,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 4,
-    text: "Haluaisitko suunnitella nettisivuja tai mobiilisovelluksia?",
+    text: "Haluaisitko suunnitella verkkosivuja tai mobiilisovelluksia?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.3,
@@ -975,7 +975,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 5,
-    text: "Kiinnostaako sinua videopelit ja pelien tekeminen?",
+    text: "Kiinnostaako sinua videopelit tai niiden tekeminen?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.0,
@@ -984,7 +984,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 6,
-    text: "Haluaisitko suojella yrityksiä tietomurroilta ja hakkereilta?",
+    text: "Kiinnostaako sinua suojata tietoja hakkereilta ja tietomurroilta?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.1,
@@ -995,7 +995,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   // Section 2: People & Care (Q7-13)
   {
     q: 7,
-    text: "Haluaisitko auttaa ihmisiä heidän terveyden ja hyvinvoinnin kanssa?",
+    text: "Haluaisitko auttaa ihmisiä voimaan hyvin?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.4,
@@ -1004,7 +1004,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 8,
-    text: "Kiinnostaako sinua ymmärtää, miten ihmisten mieli ja ajatukset toimivat?",
+    text: "Kiinnostaako sinua ymmärtää, miten ihmisen mieli toimii?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.2,
@@ -1013,7 +1013,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 9,
-    text: "Haluaisitko opettaa tai kouluttaa muita ihmisiä?",
+    text: "Pidätkö ajatuksesta opettaa tai kouluttaa muita?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.3,
@@ -1022,7 +1022,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 10,
-    text: "Kiinnostaako sinua auttaa ihmisiä, joilla on vaikeuksia elämässä?",
+    text: "Haluaisitko tukea ihmisiä vaikeissa elämäntilanteissa?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.3,
@@ -1040,7 +1040,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 12,
-    text: "Haluaisitko huolehtia vanhuksista ja ikääntyneistä ihmisistä?",
+    text: "Haluaisitko olla tukena vanhuksille ja ikääntyneille?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.1,
@@ -1049,7 +1049,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 13,
-    text: "Kiinnostaako sinua neuvoa ja ohjata ihmisiä heidän valinnoissaan?",
+    text: "Pidätkö siitä, että autat ihmisiä tekemään hyviä valintoja?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.2,
@@ -1060,7 +1060,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   // Section 3: Creative & Business (Q14-20)
   {
     q: 14,
-    text: "Kiinnostaako sinua grafiikka, kuvat ja visuaalinen suunnittelu?",
+    text: "Kiinnostaako sinua grafiikka, kuvat tai visuaalinen suunnittelu?",
     dimension: 'interests',
     subdimension: 'creative',
     weight: 1.4,
@@ -1078,7 +1078,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 16,
-    text: "Kiinnostaako sinua sisustaminen ja tilojen suunnittelu?",
+    text: "Kiinnostaako sinua sisustaa tiloja ja suunnitella ympäristöjä?",
     dimension: 'interests',
     subdimension: 'creative',
     weight: 1.1,
@@ -1087,7 +1087,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 17,
-    text: "Haluaisitko kirjoittaa artikkeleita, blogeja tai kirjoja?",
+    text: "Pidätkö ajatuksesta kirjoittaa artikkeleita, blogeja tai tarinoita?",
     dimension: 'interests',
     subdimension: 'creative',
     weight: 1.2,
@@ -1105,7 +1105,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 19,
-    text: "Haluaisitko perustaa ja pyörittää omaa yritystä?",
+    text: "Haluaisitko joskus perustaa ja pyörittää omaa yritystä?",
     dimension: 'values',
     subdimension: 'entrepreneurship',
     weight: 1.3,
@@ -1114,7 +1114,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 20,
-    text: "Kiinnostaako sinua myynti ja asiakkaiden palveleminen?",
+    text: "Pidätkö myynnistä ja asiakkaiden kohtaamisesta?",
     dimension: 'workstyle',
     subdimension: 'social',
     weight: 1.1,
@@ -1134,7 +1134,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 22,
-    text: "Kiinnostaako sinua autot, moottorit ja ajoneuvot?",
+    text: "Kiinnostaako sinua autot, moottorit tai muut ajoneuvot?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.2,
@@ -1143,7 +1143,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 23,
-    text: "Haluaisitko asentaa sähköjä tai tehdä sähköasennuksia?",
+    text: "Haluaisitko tehdä sähkö- ja asennustöitä?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.2,
@@ -1152,7 +1152,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 24,
-    text: "Kiinnostaako sinua kasvattaa kasveja tai huolehtia eläimistä työksesi?",
+    text: "Kiinnostaako sinua hoitaa kasveja tai eläimiä työssäsi?",
     dimension: 'interests',
     subdimension: 'environment',
     weight: 1.2,
@@ -1170,7 +1170,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 26,
-    text: "Kiinnostaako sinua kuljettaa tavaroita tai ihmisiä?",
+    text: "Kiinnostaako sinua kuljettaa ihmisiä tai tavaroita paikasta toiseen?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 0.9,
@@ -1188,7 +1188,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 28,
-    text: "Kiinnostaako sinua puuntyöstö, metallintyöstö tai kangaspuut?",
+    text: "Kiinnostaako sinua puun, metallin tai tekstiilien käsityöt?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.1,
@@ -1197,7 +1197,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 29,
-    text: "Haluaisitko työskennellä laboratorioissa tai tehdä kokeita?",
+    text: "Haluaisitko työskennellä laboratoriossa ja tehdä kokeita?",
     dimension: 'interests',
     subdimension: 'analytical',
     weight: 1.2,
@@ -1214,7 +1214,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 30,
     originalQ: 0,
-    text: "Kiinnostaako sinua ohjelmointi ja sovellusten kehittäminen?",
+    text: "Kiinnostaako sinua ohjelmointi tai sovellusten kehittäminen?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.5,
@@ -1244,7 +1244,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 33,
     originalQ: 3,
-    text: "Tykkäätkö ratkaista teknisiä haasteita ja ongelmia?",
+    text: "Pidätkö teknisten haasteiden ratkaisemisesta?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.1,
@@ -1264,7 +1264,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 35,
     originalQ: 5,
-    text: "Kiinnostaako sinua peliteollisuus ja pelien kehittäminen?",
+    text: "Kiinnostaako sinua peliala tai pelien kehittäminen?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.0,
@@ -1274,7 +1274,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 36,
     originalQ: 6,
-    text: "Haluaisitko työskennellä tietoturvan parissa?",
+    text: "Kiinnostaako sinua työskennellä tietoturvan parissa?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.1,
@@ -1306,7 +1306,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 39,
     originalQ: 9,
-    text: "Haluaisitko työskennellä opetusalalla?",
+    text: "Haluaisitko työskennellä opetuksen parissa?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.3,
@@ -1326,7 +1326,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 41,
     originalQ: 11,
-    text: "Haluaisitko työskennellä nuorison tai lasten parissa?",
+    text: "Haluaisitko työskennellä nuorten tai lasten parissa?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.1,
@@ -1336,7 +1336,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 42,
     originalQ: 12,
-    text: "Haluaisitko työskennellä ikääntyneiden hoitotyössä?",
+    text: "Haluaisitko olla tukena ikääntyneille hoitotyössä?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.1,
@@ -1408,7 +1408,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 49,
     originalQ: 19,
-    text: "Haluaisitko yrittää ja perustaa oman yrityksen?",
+    text: "Haluaisitko joskus perustaa oman yrityksen?",
     dimension: 'values',
     subdimension: 'entrepreneurship',
     weight: 1.3,
@@ -1450,7 +1450,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 53,
     originalQ: 23,
-    text: "Haluaisitko työskennellä sähköasennuksissa ja sähkötyössä?",
+    text: "Haluaisitko tehdä sähköasennuksia ja sähkötyötä?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.2,
@@ -1527,7 +1527,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 60,
     originalQ: 0,
-    text: "Kiinnostaako sinua ohjelmistokehitys ja sovellusten luominen?",
+    text: "Kiinnostaako sinua ohjelmistokehitys tai sovellusten luominen?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.5,
@@ -1547,7 +1547,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 62,
     originalQ: 2,
-    text: "Kiinnostaako sinua data-analyysi ja tilastojen käsittely?",
+    text: "Pidätkö data-analyysista ja tilastojen käsittelystä?",
     dimension: 'interests',
     subdimension: 'analytical',
     weight: 1.2,
@@ -1557,7 +1557,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 63,
     originalQ: 3,
-    text: "Tykkäätkö ratkaista teknologisia ongelmia?",
+    text: "Pidätkö teknologisten ongelmien ratkaisemisesta?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.1,
@@ -1567,7 +1567,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 64,
     originalQ: 4,
-    text: "Haluaisitko suunnitella web- tai mobiilisovelluksia?",
+    text: "Haluaisitko suunnitella verkkosivuja tai mobiilisovelluksia?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.3,
@@ -1577,7 +1577,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 65,
     originalQ: 5,
-    text: "Kiinnostaako sinua pelikehitys ja peliteollisuus?",
+    text: "Kiinnostaako sinua pelikehitys tai peliala?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.0,
@@ -1587,7 +1587,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 66,
     originalQ: 6,
-    text: "Haluaisitko työskennellä kyberturvallisuuden parissa?",
+    text: "Kiinnostaako sinua työskennellä kyberturvallisuuden parissa?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.1,
@@ -1599,7 +1599,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 67,
     originalQ: 7,
-    text: "Haluaisitko auttaa ihmisiä terveyden ja hyvinvoinnin kysymyksissä?",
+    text: "Haluaisitko auttaa ihmisiä terveyteen ja hyvinvointiin liittyvissä asioissa?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.4,
@@ -1609,7 +1609,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 68,
     originalQ: 8,
-    text: "Kiinnostaako sinua ihmisten käyttäytymisen ja psykologian tutkiminen?",
+    text: "Kiinnostaako sinua ymmärtää, miten ihmisen mieli toimii?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.2,
@@ -1629,7 +1629,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 70,
     originalQ: 10,
-    text: "Kiinnostaako sinua sosiaalinen työ ja ihmisten auttaminen?",
+    text: "Kiinnostaako sinua sosiaaliala ja ihmisten tukeminen arjessa?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.3,
@@ -1649,7 +1649,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 72,
     originalQ: 12,
-    text: "Haluaisitko työskennellä vanhusten hoitotyössä?",
+    text: "Haluaisitko olla tukena ikääntyneille hoitotyössä?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.1,
@@ -1721,7 +1721,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 79,
     originalQ: 19,
-    text: "Haluaisitko perustaa ja johtaa omaa yritystä?",
+    text: "Haluaisitko joskus perustaa ja johtaa omaa yritystä?",
     dimension: 'values',
     subdimension: 'entrepreneurship',
     weight: 1.3,
@@ -1731,7 +1731,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 80,
     originalQ: 20,
-    text: "Kiinnostaako sinua asiakaspalvelu ja myyntityöskentely?",
+    text: "Pidätkö myyntityöstä ja asiakkaiden kohtaamisesta?",
     dimension: 'workstyle',
     subdimension: 'social',
     weight: 1.1,
@@ -1763,7 +1763,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 83,
     originalQ: 23,
-    text: "Haluaisitko työskennellä sähköasennuksissa?",
+    text: "Haluaisitko tehdä sähköasennuksia työksesi?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.2,
@@ -1793,7 +1793,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 86,
     originalQ: 26,
-    text: "Kiinnostaako sinua logistiikka ja kuljetus?",
+    text: "Kiinnostaako sinua logistiikka ja kuljetusala?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 0.9,
@@ -1813,7 +1813,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 88,
     originalQ: 28,
-    text: "Kiinnostaako sinua käsitöiden tekeminen ammatiksesi?",
+    text: "Kiinnostaako sinua käsityöt ammatissa?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.1,

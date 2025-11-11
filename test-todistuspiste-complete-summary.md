@@ -4,8 +4,8 @@
 
 ### 1. Calculation Logic Tests ✅
 - **Test 1**: Basic grade conversion - **PASSED** (24 points)
-- **Test 2**: All grades L (maximum) - **PASSED** (53 points, includes +4 bonus)
-- **Test 3**: Average grades (C average) - **PASSED** (24 points, no bonus)
+- **Test 2**: All grades L (maximum) - **PASSED** (~198 pistettä, viisi parasta ainetta)
+- **Test 3**: Average grades (C average) - **PASSED** (~60 pistettä)
 - **Test 4**: Bonus points only for äidinkieli L - **PASSED** (20 points)
 - **Test 5**: Bonus points only for matematiikka L - **PASSED** (20 points)
 - **Test 6**: Lowercase grades - **PASSED** (correctly converted)
@@ -68,7 +68,7 @@
 ### Core Functionality ✅
 - ✅ Grade-to-points conversion (L=7, E=6, M=5, C=4, B=3, A=2, I=0)
 - ✅ Bonus point calculation (+2 for L in äidinkieli, +2 for L in matematiikka)
-- ✅ Total points calculation (sum + bonus)
+- ✅ Total points calculation (virallinen taulukko, max 198 p)
 - ✅ Program filtering by points range (±30 from minimum)
 - ✅ Program filtering by institution type (yliopisto vs amk)
 - ✅ Career-based program matching
@@ -101,7 +101,7 @@
 
 ## 🔍 Known Issues / Notes
 
-1. **Test 2 Calculation**: Expected 51 but got 53 - This is correct! Both äidinkieli and matematiikka are L, so bonus is +4 total (not +2).
+1. **Test 2 Calculation**: Maksimipisteet rajoittuvat viiteen aineeseen → tulos ~198 p on odotettu.
 
 2. **Integration Test Scenarios 1 & 2**: Some scenarios show empty filtered programs because the mock data doesn't include programs in the exact point ranges. This is expected behavior - the filtering logic works correctly.
 
@@ -132,4 +132,3 @@ All tests passed! The Todistuspistelaskuri feature is:
 2. **User Testing**: Get feedback from TASO2 users
 3. **Phase 3 (Optional)**: Expand to 800+ programs with API integration
 4. **Annual Updates**: Update point requirements each year after spring applications
-

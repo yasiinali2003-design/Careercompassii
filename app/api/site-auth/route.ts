@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const SITE_PASSWORD = process.env.SITE_PASSWORD || 'CCYHAHAIKUNZIBBI22!';
+import { resolveSitePasswords, getDefaultSitePassword } from '@/lib/siteAuth';
+
 const COOKIE_NAME = 'site_auth';
 const COOKIE_VALUE = 'authenticated';
 
@@ -24,7 +25,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (normalized === SITE_PASSWORD) {
+    const allowedPasswords = resolveSitePasswords();
+
+    if (allowedPasswords.includes(normalized)) {
       // Set authentication cookie
       const response = NextResponse.json({ success: true });
       
@@ -38,6 +41,11 @@ export async function POST(request: NextRequest) {
 
       return response;
     } else {
+      const defaultPasswordHint =
+        process.env.NODE_ENV !== 'production' ? getDefaultSitePassword() : undefined;
+      if (defaultPasswordHint && normalized === defaultPasswordHint) {
+        console.warn('[Site Auth] Using default development password fallback.');
+      }
       return NextResponse.json(
         { success: false, error: 'Väärä salasana' },
         { status: 401 }

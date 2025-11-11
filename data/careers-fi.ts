@@ -81,9 +81,9 @@ export const careersData: CareerFI[] = [
     ],
     languages_required: { fi: "C1", sv: "B1", en: "B2" },
     salary_eur_month: {
-      median: 3200,
-      range: [2500, 4200],
-      source: { name: "TE-palvelut palkkatieto", url: "https://www.te-palvelut.fi/te/fi/tyonhakijalle/palkkatieto/", year: 2024 }
+      median: 3700,
+      range: [3588, 3711],
+      source: { name: "Työmarkkinatori / Tilastokeskuksen palkkarakennetilasto", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/graafinen-suunnittelija", year: 2023 }
     },
     job_outlook: {
       status: "kasvaa",

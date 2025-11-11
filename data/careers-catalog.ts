@@ -243,6 +243,412 @@ export const careersData: Career[] = [
     relatedSlugs: ["digitaalinen-markkinoija", "tuotepäällikkö", "myyntipäällikkö"]
   },
   {
+    slug: "dialyysihoitaja",
+    title: "Dialyysihoitaja",
+    summary: "Hoitaa munuaisten vajaatoimintaa sairastavia potilaita dialyysiyksiköissä ja varmistaa hoidon turvallisuuden.",
+    longDescription: "Dialyysihoitaja vastaa dialyysihoitoa saavien potilaiden hoidon suunnittelusta, toteutuksesta ja seurannasta. Työ sisältää dialyysilaitteiden käyttöä, potilaiden voinnin tarkkaa seurantaa, tiivistä yhteistyötä lääkärien ja laboratorion kanssa sekä potilaiden ja omaisten ohjausta hoidon eri vaiheissa.",
+    salaryMin: 3200,
+    salaryMax: 4800,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK"],
+    industry: ["Hoiva"],
+    personalityType: ["Auttaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Dialyysilaitteiden käyttö", "Hoitoteknologian hallinta", "Lääkehoito", "Hoidon dokumentointi", "Infektioiden ehkäisy"],
+    skillsSoft: ["Empatia", "Vuorovaikutus", "Stressinsieto", "Tiimityö", "Tarkkuus"],
+    dailyTasks: [
+      "Dialyysihoitojen käynnistäminen ja valvonta",
+      "Potilaiden vitaalitoimintojen seuranta",
+      "Hoitotoimenpiteiden kirjaaminen potilastietojärjestelmään",
+      "Potilaiden ja omaisten ohjaus ja neuvonta",
+      "Yhteistyö lääkäreiden ja muiden asiantuntijoiden kanssa"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Sairaanhoitaja (dialyysihoidon erikoistuminen)",
+        url: "https://opintopolku.fi/konfo/fi/haku/Sairaanhoitaja"
+      }
+    ],
+    relatedSlugs: ["sairaanhoitaja", "bioanalyytikko", "kouluterveydenhoitaja"]
+  },
+  {
+    slug: "sosiaaliohjaaja",
+    title: "Sosiaaliohjaaja",
+    summary: "Tukee eri elämäntilanteissa olevia asiakkaita sosiaalihuollon palveluissa ja ohjaa heitä arjen hallintaan.",
+    longDescription: "Sosiaaliohjaaja työskentelee hyvinvointialueilla, järjestöissä ja palvelulaitoksissa tarjoten neuvontaa, tukea ja ohjausta asiakkaille. Työ pitää sisällään palvelutarpeen arviointia, palvelusuunnitelmien laatimista, verkostotyötä sekä asiakkaiden toimintakyvyn vahvistamista ja arjen tukemista.",
+    salaryMin: 3000,
+    salaryMax: 4300,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Yliopisto"],
+    industry: ["Sosiaalityö"],
+    personalityType: ["Auttaja", "Järjestäjä"],
+    workMode: "Hybrid",
+    skillsHard: ["Sosiaalihuollon lainsäädäntö", "Palveluohjaus", "Dokumentointi", "Kriisityö", "Motivoiva haastattelu"],
+    skillsSoft: ["Vuorovaikutus", "Empatia", "Ratkaisukeskeisyys", "Moniammatillinen yhteistyö", "Kulttuurinen sensitiivisyys"],
+    dailyTasks: [
+      "Asiakkaiden palvelutarpeen kartoitus ja suunnitelmien laatiminen",
+      "Neuvonta ja ohjaus sosiaalipalveluissa",
+      "Verkostotyö eri viranomaisten ja järjestöjen kanssa",
+      "Asiakaskäyntien ja tapaamisten järjestäminen",
+      "Tilanteiden seuranta ja dokumentointi"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Sosiaalialan koulutus",
+        url: "https://opintopolku.fi/konfo/fi/haku/sosiaaliala"
+      }
+    ],
+    relatedSlugs: ["sosiaalityontekija", "kotihoitaja", "varhaiskasvatuksen-erityisopettaja"]
+  },
+  {
+    slug: "ohjelmistotestaja",
+    title: "Ohjelmistotestaja",
+    summary: "Varmistaa ohjelmistojen laadun suunnittelemalla ja toteuttamalla testejä sekä raportoimalla löydetyt virheet.",
+    longDescription: "Ohjelmistotestaja työskentelee osana kehitystiimiä suunnitellen manuaalisia ja automaattisia testejä, analysoiden testituloksia sekä dokumentoiden havaittuja virheitä. Tehtäviin kuuluu testauksen suunnittelu, regressiotestauksen toteutus, laadunvarmistuksen kehittäminen ja tiivis yhteistyö kehittäjien ja tuotepäälliköiden kanssa.",
+    salaryMin: 3200,
+    salaryMax: 5200,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Yliopisto", "Lyhytkoulutus"],
+    industry: ["Teknologia"],
+    personalityType: ["Innovoija", "Järjestäjä"],
+    workMode: "Hybrid",
+    skillsHard: ["Testaussuunnittelu", "Automaatiotestaus", "Ohjelmointi (Python, JavaScript)", "API-testaus", "Bugien raportointi"],
+    skillsSoft: ["Analyyttisyys", "Tarkkuus", "Kommunikaatio", "Ongelmanratkaisu", "Yhteistyö"],
+    dailyTasks: [
+      "Testitapausten suunnittelu ja priorisointi",
+      "Testiajojen suorittaminen ja tulosten analysointi",
+      "Virheiden raportointi ja seuranta",
+      "Laadunvarmistusprosessien kehittäminen",
+      "Automaatiotestien skriptaus ja ylläpito"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK/Yliopisto – Tietojenkäsittely",
+        url: "https://opintopolku.fi/konfo/fi/haku/tietojenk%C3%A4sittely"
+      }
+    ],
+    relatedSlugs: ["ohjelmistokehittaja", "devops-insinoori", "quality-assurance-asiantuntija"]
+  },
+  {
+    slug: "devops-insinoori",
+    title: "DevOps-insinööri",
+    summary: "Rakentaa ja ylläpitää jatkuvan toimituksen putkia, pilvi-infran automaatiota ja valvontaa.",
+    longDescription: "DevOps-insinööri yhdistää ohjelmistokehityksen ja infrastruktuurin hallinnan. Työ sisältää CI/CD-putkien rakentamista, infrastruktuurin automatisointia koodina, konttien ja orkestrointialustojen hallintaa, valvontaa sekä kehitys- ja tuotantoympäristöjen tukemista.",
+    salaryMin: 4200,
+    salaryMax: 6500,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Yliopisto"],
+    industry: ["Teknologia"],
+    personalityType: ["Innovoija", "Visionääri"],
+    workMode: "Hybrid",
+    skillsHard: ["CI/CD-automaatio", "Pilvipalvelut (AWS, Azure, GCP)", "Konttiteknologiat", "Infrastructure as Code", "Monitorointi"],
+    skillsSoft: ["Ongelmanratkaisu", "Kommunikaatio", "Tiimityö", "Jatkuva oppiminen", "Proaktiivisuus"],
+    dailyTasks: [
+      "CI/CD-putkien kehittäminen ja optimointi",
+      "Pilvi-infrastruktuurin konfigurointi koodina",
+      "Valvonnan ja hälytysjärjestelmien rakentaminen",
+      "Kehitystiimien tukeminen käyttöönotossa",
+      "Tietoturvan ja parhaiden käytäntöjen varmistaminen"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Tietotekniikan insinööri",
+        url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka"
+      }
+    ],
+    relatedSlugs: ["ohjelmistokehittaja", "cloud-arkkitehti", "systeemiasiantuntija"]
+  },
+  {
+    slug: "automekaanikko",
+    title: "Automekaanikko",
+    summary: "Huoltaa ja korjaa autoja sekä diagnosoi vikoja mekaanisissa ja sähköisissä järjestelmissä.",
+    longDescription: "Automekaanikko työskentelee korjaamoissa ja autoliikkeissä huolten, korjaten ja testaten ajoneuvoja. Työ sisältää mekaanisten ja sähköisten vikojen selvittämistä, varaosien ja kulutusosien vaihtoa, huolto-ohjelmien noudattamista sekä asiakaspalvelua ja työturvallisuudesta huolehtimista.",
+    salaryMin: 2600,
+    salaryMax: 4100,
+    outlook: "Vakaa",
+    educationLevel: ["Toinen aste", "Oppisopimus"],
+    industry: ["Rakentaminen", "Palveluala"],
+    personalityType: ["Rakentaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Mekaaninen osaaminen", "Vikadiagnostiikka", "Sähköiset järjestelmät", "Huolto-ohjelmat", "Työturvallisuus"],
+    skillsSoft: ["Asiakaspalvelu", "Huolellisuus", "Fyysinen kestävyys", "Itsenäisyys", "Tiimityö"],
+    dailyTasks: [
+      "Ajoneuvojen huolto-ohjelmien toteuttaminen",
+      "Vikojen diagnosointi testilaitteilla",
+      "Kulutusosien ja varaosien vaihtaminen",
+      "Huoltotietojen kirjaaminen järjestelmiin",
+      "Asiakkaiden neuvonta ja kustannusarvioiden laatiminen"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Toinen aste – Ajoneuvoalan perustutkinto",
+        url: "https://opintopolku.fi/konfo/fi/haku/ajoneuvoala"
+      }
+    ],
+    relatedSlugs: ["autonasentaja", "automaatioasentaja", "logistiikka-asentaja"]
+  },
+  {
+    slug: "optometristi",
+    title: "Optometristi",
+    summary: "Tutkii näköä, määrää silmälasit ja valvoo silmien terveyttä optikkoliikkeissä ja terveydenhuollossa.",
+    longDescription: "Optometristi tekee näöntutkimuksia, sovittaa silmälaseja ja piilolinssejä sekä tunnistaa silmäsairauksien ensioireita. Työhön kuuluu asiakaskohtaamisia, optisten laitteiden käyttöä, hoitosuositusten antamista sekä silmien terveyteen liittyvän tiedon jakamista eri ikäisille asiakkaille.",
+    salaryMin: 3200,
+    salaryMax: 4800,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Yliopisto"],
+    industry: ["Hyvinvointi", "Hoiva"],
+    personalityType: ["Auttaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Näöntutkimus", "Optometriset laitteet", "Piilolinssisovitus", "Silmäsairauksien tunnistus", "Lääkehoidon perusteet"],
+    skillsSoft: ["Empatia", "Asiakaspalvelu", "Kommunikaatio", "Tarkkuus", "Ratkaisukeskeisyys"],
+    dailyTasks: [
+      "Näöntarkastusten suunnittelu ja toteutus",
+      "Silmälasien ja piilolinssien määrääminen ja sovitus",
+      "Silmäsairauksien oireiden varhainen tunnistaminen",
+      "Asiakkaiden neuvonta ja hoito-ohjeiden laatiminen",
+      "Optisten laitteiden huolto ja kalibrointi"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Optometria",
+        url: "https://opintopolku.fi/konfo/fi/haku/Optometria"
+      }
+    ],
+    relatedSlugs: ["sairaanhoitaja", "ravitsemusterapeutti", "kouluterveydenhoitaja"]
+  },
+  {
+    slug: "cloud-arkkitehti",
+    title: "Cloud-arkkitehti",
+    summary: "Suunnittelee ja rakentaa pilvipohjaisia ratkaisuja sekä vastaa skaalautuvan infrastruktuurin turvallisuudesta.",
+    longDescription: "Cloud-arkkitehti vastaa pilviarkkitehtuurin suunnittelusta, palveluiden siirtämisestä pilveen ja ympäristöjen automatisoinnista. Hän optimoi kustannuksia, toteuttaa tietoturvaa, ohjaa kehitystiimejä ja varmistaa, että järjestelmät ovat skaalautuvia ja luotettavia liiketoiminnan tarpeisiin.",
+    salaryMin: 5200,
+    salaryMax: 8500,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Yliopisto"],
+    industry: ["Teknologia"],
+    personalityType: ["Innovoija", "Visionääri"],
+    workMode: "Hybrid",
+    skillsHard: ["Pilvipalvelut (AWS, Azure, GCP)", "Infrastructure as Code", "Konttiteknologiat", "Tietoturva", "DevOps-automaatio"],
+    skillsSoft: ["Strateginen ajattelu", "Kommunikaatio", "Ongelmanratkaisu", "Projektinhallinta", "Jatkuva oppiminen"],
+    dailyTasks: [
+      "Pilviarkkitehtuurin suunnittelu ja dokumentointi",
+      "CI/CD-putkien ja automaation toteutus",
+      "Tietoturvapolitiikkojen ja valvonnan kehittäminen",
+      "Kustannusten ja suorituskyvyn analysointi",
+      "Yhteistyö kehitys- ja liiketiimien kanssa"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK/Yliopisto – Tietojenkäsittely",
+        url: "https://opintopolku.fi/konfo/fi/haku/tietojenk%C3%A4sittely"
+      }
+    ],
+    relatedSlugs: ["devops-insinoori", "ohjelmistokehittaja", "tietoturvaanalyytikko"]
+  },
+  {
+    slug: "tietoturvaanalyytikko",
+    title: "Tietoturvaanalyytikko",
+    summary: "Seuraa ja analysoi kyberuhkia, suojaa organisaatioita ja reagoi tietoturvapoikkeamiin.",
+    longDescription: "Tietoturvaanalyytikko valvoo verkkoja ja järjestelmiä, tunnistaa poikkeamia sekä tutkii tietoturvaincidenttejä. Työ sisältää logien ja SIEM-järjestelmien analysointia, uhkien luokittelua, raportointia johdolle ja suositusten laatimista tietoturvan parantamiseksi.",
+    salaryMin: 4000,
+    salaryMax: 6800,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Yliopisto", "Lyhytkoulutus"],
+    industry: ["Teknologia", "Turvallisuus"],
+    personalityType: ["Innovoija", "Järjestäjä"],
+    workMode: "Hybrid",
+    skillsHard: ["Kyberturvallisuus", "SIEM-analytiikka", "Penetraatiotestaus", "Verkkoanalyysi", "Incident response"],
+    skillsSoft: ["Tarkkuus", "Analyyttisyys", "Kommunikaatio", "Stressinsieto", "Tiimityö"],
+    dailyTasks: [
+      "Tietoturvahälytysten seuranta ja analysointi",
+      "Incidenttien tutkinta ja juurisyiden selvitys",
+      "Tietoturvaraporttien ja -suositusten laatiminen",
+      "Tietoturvaprosessien ja valvonnan kehittäminen",
+      "Yhteistyö IT- ja liiketoimintatiimien kanssa"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK/Yliopisto – Kyberturvallisuus",
+        url: "https://opintopolku.fi/konfo/fi/haku/tietojenk%C3%A4sittely"
+      }
+    ],
+    relatedSlugs: ["devops-insinoori", "cloud-arkkitehti", "tietokoneasentaja"]
+  },
+  {
+    slug: "kiertotalousasiantuntija",
+    title: "Kiertotalousasiantuntija",
+    summary: "Kehittää kiertotalouden ratkaisuja ja auttaa organisaatioita vähentämään jätettä ja tehostamaan resurssien käyttöä.",
+    longDescription: "Kiertotalousasiantuntija suunnittelee kiertotalousstrategioita, kehittää kierrätys- ja uudelleenkäyttömalleja sekä ohjaa organisaatioita kestävän kehityksen tavoitteissa. Hän analysoi materiaalivirtoja, raportoi vaikutuksista, tekee yhteistyötä yritysten ja kuntien kanssa ja kouluttaa henkilöstöä.",
+    salaryMin: 3200,
+    salaryMax: 5500,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Yliopisto"],
+    industry: ["Ympäristö"],
+    personalityType: ["Ympäristön Puolustaja", "Visionääri"],
+    workMode: "Hybrid",
+    skillsHard: ["Kiertotalousmallit", "Resurssitehokkuusanalyysi", "Ympäristöraportointi", "Projektinhallinta", "Lainsäädännön tuntemus"],
+    skillsSoft: ["Viestintä", "Verkostoituminen", "Analyyttisyys", "Ratkaisukeskeisyys", "Vaikuttaminen"],
+    dailyTasks: [
+      "Kiertotalousstrategioiden suunnittelu ja toteutus",
+      "Materiaalivirtojen ja ympäristövaikutusten analysointi",
+      "Yhteistyö kuntien, yritysten ja järjestöjen kanssa",
+      "Raporttien ja vastuullisuusmittareiden laatiminen",
+      "Koulutusten ja työpajojen järjestäminen"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK/Yliopisto – Ympäristötekniikka",
+        url: "https://opintopolku.fi/konfo/fi/haku/ymp%C3%A4rist%C3%B6tekniikka"
+      }
+    ],
+    relatedSlugs: ["ymparistoasiantuntija", "ymparistovalvoja", "biokaasuteknikko"]
+  },
+  {
+    slug: "asiakkuusvastaava",
+    title: "Asiakkuusvastaava",
+    summary: "Rakentaa ja kehittää avainasiakassuhteita sekä varmistaa, että asiakkaiden tarpeet kääntyvät kannattavaksi liiketoiminnaksi.",
+    longDescription: "Asiakkuusvastaava vastaa strategisten asiakkaiden pitkäjänteisestä johtamisesta. Työhön kuuluu myynti- ja kasvusuunnitelmien laadinta, sopimusneuvottelut, palvelun koordinointi sekä sisäisten tiimien ohjaaminen. Asiakkuusvastaava toimii linkkinä asiakkaan ja organisaation välillä ja varmistaa, että yhteistyö tuottaa arvoa molemmille osapuolille.",
+    salaryMin: 3500,
+    salaryMax: 6200,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Yliopisto"],
+    industry: ["Liiketoiminta", "Palveluala"],
+    personalityType: ["Johtaja", "Järjestäjä"],
+    workMode: "Hybrid",
+    skillsHard: ["Myynti ja neuvottelu", "Asiakassuhteiden johtaminen", "Data-analyysi", "Liiketoiminnan suunnittelu", "CRM-järjestelmät"],
+    skillsSoft: ["Vuorovaikutus", "Luottamuksen rakentaminen", "Ratkaisukeskeisyys", "Organisointikyky", "Strateginen ajattelu"],
+    dailyTasks: [
+      "Laatii asiakaskohtaisia myynti- ja kasvusuunnitelmia",
+      "Neuvottelee sopimuksia ja hinnoittelua asiakkaiden kanssa",
+      "Koordinoi sisäisiä tiimejä asiakkaiden tarpeiden mukaan",
+      "Seuraa asiakastyytyväisyyttä ja tunnistaa lisämyyntimahdollisuuksia",
+      "Raportoi johdolle asiakkuuden tilanteesta ja tuloksista"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK/Yliopisto – Liiketalous",
+        url: "https://opintopolku.fi/konfo/fi/haku/liiketalous"
+      }
+    ],
+    relatedSlugs: ["tuotepaallikko", "myyntipaallikko", "palvelumuotoilija"]
+  },
+  {
+    slug: "tuotepaallikko",
+    title: "Tuotepäällikkö",
+    summary: "Johtaa tuotteen elinkaarta strategiasta lanseeraukseen ja varmistaa, että ratkaisu vastaa asiakkaiden tarpeisiin.",
+    longDescription: "Tuotepäällikkö vastaa tuotteen vision ja tiekartan laatimisesta, kehityksen koordinoinnista sekä tulosten seurannasta. Hän analysoi markkinoita, määrittää prioriteetteja kehitystiimille, tekee yhteistyötä markkinoinnin ja myynnin kanssa sekä huolehtii siitä, että tuotteen taloudelliset tavoitteet saavutetaan.",
+    salaryMin: 4200,
+    salaryMax: 6800,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Yliopisto"],
+    industry: ["Teknologia", "Liiketoiminta"],
+    personalityType: ["Johtaja", "Visionääri"],
+    workMode: "Hybrid",
+    skillsHard: ["Tuotestrategia", "Projektinhallinta", "Markkinatutkimus", "Taloudellinen analyysi", "Tekninen ymmärrys"],
+    skillsSoft: ["Priorisointi", "Johtaminen", "Kommunikaatio", "Analyyttisyys", "Asiakaskeskeisyys"],
+    dailyTasks: [
+      "Määrittää tuotteen vision ja kehitystiekartan",
+      "Priorisoi ominaisuuksia ja koordinoi kehitystiimin työtä",
+      "Kerää ja analysoi asiakaspalautetta ja markkinadataa",
+      "Suunnittelee julkaisujen aikataulut ja lanseeraukset",
+      "Yhteistyö myynnin, markkinoinnin ja tukitiimien kanssa"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK/Yliopisto – Tuotekehitys ja liiketoiminta",
+        url: "https://opintopolku.fi/konfo/fi/haku/tuotep%C3%A4%C3%A4llikk%C3%B6"
+      }
+    ],
+    relatedSlugs: ["asiakkuusvastaava", "markkinointipaallikko", "scrum-master"]
+  },
+  {
+    slug: "tietokoneasentaja",
+    title: "Tietokoneasentaja",
+    summary: "Asentaa ja huoltaa tietokoneita sekä varmistaa, että työasemat ja verkot toimivat ongelmitta.",
+    longDescription: "Tietokoneasentaja vastaa työasemien ja oheislaitteiden asennuksesta, käyttöjärjestelmien ja ohjelmistojen konfiguroinnista sekä verkkoyhteyksien käyttöönotosta. Hän diagnosoi ja korjaa laitteistovikoja, neuvoo käyttäjiä sekä tekee tiivistä yhteistyötä IT-tuen ja järjestelmäasiantuntijoiden kanssa.",
+    salaryMin: 2600,
+    salaryMax: 4200,
+    outlook: "Vakaa",
+    educationLevel: ["Toinen aste", "AMK"],
+    industry: ["Teknologia"],
+    personalityType: ["Rakentaja", "Järjestäjä"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Laitteistojen asennus", "Vikadiagnostiikka", "Verkkotekniikka", "Ohjelmistojen käyttöönotto", "Työturvallisuus"],
+    skillsSoft: ["Asiakaspalvelu", "Huolellisuus", "Ongelmanratkaisu", "Ajanhallinta", "Yhteistyö"],
+    dailyTasks: [
+      "Asentaa ja konfiguroi työasemia sekä oheislaitteita",
+      "Suorittaa laitteiden huoltotöitä ja vaihtaa kulutusosia",
+      "Ratkaisee käyttäjien teknisiä ongelmia ja neuvoo käytössä",
+      "Dokumentoi tehdyt toimenpiteet ja ylläpitää laiteinventaaria",
+      "Tekee yhteistyötä IT-tuen ja järjestelmäasiantuntijoiden kanssa"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Toinen aste – Tieto- ja viestintätekniikka",
+        url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka"
+      }
+    ],
+    relatedSlugs: ["it-tukihenkilo", "verkkosivustonhallintaja", "devops-insinoori"]
+  },
+  {
+    slug: "it-tukihenkilo",
+    title: "IT-tukihenkilö",
+    summary: "Auttaa käyttäjiä teknisissä ongelmissa, ylläpitää työasemia ja varmistaa palveluiden sujuvan toiminnan.",
+    longDescription: "IT-tukihenkilö tarjoaa lähitukea ja etätukea käyttäjille, ratkoo laitteisto- ja ohjelmisto-ongelmia sekä huolehtii työasemien ja mobiililaitteiden peruskunnosta. Työhön kuuluu tikettien käsittely, käyttöoikeuksien hallinta, ohjeiden laatiminen sekä yhteistyö muiden IT-tiimien kanssa palvelutason varmistamiseksi.",
+    salaryMin: 3000,
+    salaryMax: 5200,
+    outlook: "Vakaa",
+    educationLevel: ["Toinen aste", "AMK"],
+    industry: ["Teknologia", "Palveluala"],
+    personalityType: ["Järjestäjä", "Auttaja"],
+    workMode: "Hybrid",
+    skillsHard: ["Service desk -prosessit", "Laite- ja ohjelmistotuki", "Käyttöoikeuksien hallinta", "Etätukityökalut", "Tietoturvan perusteet"],
+    skillsSoft: ["Kuuntelutaito", "Kärsivällisyys", "Kommunikaatio", "Tilannetaju", "Järjestelmällisyys"],
+    dailyTasks: [
+      "Vastaa palvelupyyntöihin puhelimitse, chatissa ja tikettijärjestelmässä",
+      "Ratkaisee laite- ja ohjelmisto-ongelmia sekä eskaloi tarvittaessa",
+      "Asentaa ja päivittää työasemia, mobiililaitteita ja sovelluksia",
+      "Laatii ohjeita ja kouluttaa käyttäjiä perustoiminnoissa",
+      "Seuraa palvelutasoja ja raportoi havaituista trendeistä"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Tietotekniikka",
+        url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka"
+      }
+    ],
+    relatedSlugs: ["tietokoneasentaja", "verkkosivustonhallintaja", "tietoturvaanalyytikko"]
+  },
+  {
+    slug: "verkkosivustonhallintaja",
+    title: "Verkkosivustonhallintaja",
+    summary: "Ylläpitää ja kehittää organisaation verkkosivustoa varmistaen teknisen toimivuuden ja hyvän käyttökokemuksen.",
+    longDescription: "Verkkosivustonhallintaja vastaa verkkosivujen sisällön päivityksistä, sivuston teknisestä ylläpidosta sekä hakukoneoptimoinnista. Hän seuraa sivuston suorituskykyä, koordinoi kehityshankkeita, pitää huolta tietoturvasta ja toimii linkkinä sisällöntuottajien, kehittäjien ja markkinoinnin välillä.",
+    salaryMin: 2700,
+    salaryMax: 4200,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Lyhytkoulutus"],
+    industry: ["Teknologia", "Media"],
+    personalityType: ["Innovoija", "Järjestäjä"],
+    workMode: "Hybrid",
+    skillsHard: ["CMS-hallinta", "SEO", "HTML/CSS-perusteet", "Analytiikka", "Tietoturva"],
+    skillsSoft: ["Yhteistyö", "Organisointikyky", "Tarkkuus", "Viestintä", "Oppimishalu"],
+    dailyTasks: [
+      "Päivittää ja julkaisee verkkosisältöä CMS-järjestelmässä",
+      "Seuraa sivuston analytiikkaa ja raportoi kehitystarpeista",
+      "Ratkaisee sivuston teknisiä ongelmia ja koordinoi kehittäjien työtä",
+      "Optimoi hakukonenäkyvyyttä ja parantaa saavutettavuutta",
+      "Huolehtii sivuston tietoturvan ja varmuuskopioiden ajantasaisuudesta"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Tietojenkäsittely",
+        url: "https://opintopolku.fi/konfo/fi/haku/tietojenk%C3%A4sittely"
+      }
+    ],
+    relatedSlugs: ["ohjelmistotestaja", "it-tukihenkilo", "palvelumuotoilija"]
+  },
+  {
     slug: "psykologi",
     title: "Psykologi",
     summary: "Auttaa ihmisiä ymmärtämään käyttäytymistään ja tunteitaan.",
@@ -1350,6 +1756,171 @@ export const careersData: Career[] = [
       }
     ],
     relatedSlugs: ["musiikinopettaja", "säveltäjä", "tuottaja", "ääniteknikko"]
+  },
+  {
+    slug: "videonmuokkaaja",
+    title: "Videonmuokkaaja",
+    summary: "Leikkaa ja viimeistelee videoita eri kanaviin ja varmistaa, että tarina välittyy visuaalisesti vaikuttavasti.",
+    longDescription: "Videonmuokkaaja vastaa raakakuvamateriaalin leikkaamisesta, äänen ja visuaalisten tehosteiden lisäämisestä sekä lopullisen materiaalin viimeistelystä. Työhön kuuluu värimäärittely, graafisten elementtien ja musiikin sovittaminen sekä yhteistyö ohjaajien, tuottajien ja markkinointitiimien kanssa, jotta sisältö palvelee tilaajan tavoitteita aikataulussa.",
+    salaryMin: 2800,
+    salaryMax: 5000,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Yliopisto", "Lyhytkoulutus"],
+    industry: ["Media"],
+    personalityType: ["Luova", "Innovoija"],
+    workMode: "Hybrid",
+    skillsHard: ["Videon leikkausohjelmat (Premiere Pro, Final Cut Pro, DaVinci)", "Äänen käsittely", "Värimäärittely", "Graafisten elementtien rakentaminen", "Projektinhallinta"],
+    skillsSoft: ["Luovuus", "Tarkkuus", "Ajanhallinta", "Yhteistyö", "Stressinsieto"],
+    dailyTasks: [
+      "Kokoaa ja leikkaa raakakuvamateriaalin valmiiksi kokonaisuudeksi",
+      "Synkronoi äänen, musiikin ja tehosteet kuvaan",
+      "Tekee värimäärittelyä ja viimeistelee visuaalisen ilmeen",
+      "Iteroi versioita palautteen perusteella ja huolehtii aikatauluista",
+      "Tuottaa eri julkaisualustoille sopivia tiedostoversioita"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Medianomi",
+        url: "https://opintopolku.fi/konfo/fi/haku/Medianomi"
+      },
+      {
+        label: "Yliopisto – Elokuva ja televisio",
+        url: "https://opintopolku.fi/konfo/fi/haku/elokuva"
+      }
+    ],
+    relatedSlugs: ["livestream-tuottaja", "kuvausassistentti", "ääniteknikko", "tuotantokoordinaattori"]
+  },
+  {
+    slug: "tuotantokoordinaattori",
+    title: "Tuotantokoordinaattori",
+    summary: "Koordinoi media- ja viihdetuotantojen aikataulut, resurssit ja tiimien yhteistyön.",
+    longDescription: "Tuotantokoordinaattori varmistaa, että tuotannot etenevät suunnitellusti: hän laatii aikatauluja, huolehtii resurssien ja budjetin seurannasta, koordinoi kuvauksia sekä toimii linkkinä tuotannon eri osapuolten välillä. Työhön kuuluu myös sopimusten ja lupien hallinta sekä tuotantojen riskien ja muutosten ennakointi.",
+    salaryMin: 2800,
+    salaryMax: 4500,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Yliopisto"],
+    industry: ["Media"],
+    personalityType: ["Järjestäjä", "Johtaja"],
+    workMode: "Hybrid",
+    skillsHard: ["Projektinhallinta", "Budjetointi", "Tuotantokalenterit", "Sopimus- ja lupaprosessit", "Kommunikaatiotyökalut"],
+    skillsSoft: ["Organisointikyky", "Tilannetaju", "Vuorovaikutus", "Ratkaisukeskeisyys", "Stressinsieto"],
+    dailyTasks: [
+      "Laatii ja päivittää tuotantojen aikataulut ja tehtävälistat",
+      "Koordinoi tiimien ja alihankkijoiden yhteistyötä",
+      "Seuraa budjetin ja resurssien toteumaa sekä raportoi edistymisestä",
+      "Huolehtii sopimuksista, lupaprosesseista ja tuotannon logistiikasta",
+      "Ratkaisee äkillisiä muutoksia ja varmistaa tuotannon sujuvuuden"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Medianomi",
+        url: "https://opintopolku.fi/konfo/fi/haku/Medianomi"
+      },
+      {
+        label: "Yliopisto – Elokuva- ja televisiotuotanto",
+        url: "https://opintopolku.fi/konfo/fi/haku/elokuva"
+      }
+    ],
+    relatedSlugs: ["livestream-tuottaja", "videonmuokkaaja", "projektipäällikkö", "tuotepäällikkö"]
+  },
+  {
+    slug: "kuvausassistentti",
+    title: "Kuvausassistentti",
+    summary: "Tukee kuvaajaa huolehtimalla kalustosta, kuvauksen logistiikasta ja setin sujuvuudesta.",
+    longDescription: "Kuvausassistentti vastaa kuvaustilanteiden valmistelusta, kaluston kasaamisesta sekä turvallisesta käsittelystä. Hän tukee kameraosastoa fokusvedossa ja vaihtaa optiikkaa, huolehtii kaapeloinneista sekä varmistaa, että kuvauspaikka pysyy järjestyksessä ja aikataulussa. Tehtävässä tehdään tiivistä yhteistyötä kuvaajan, valoryhmän ja tuotannon kanssa.",
+    salaryMin: 2400,
+    salaryMax: 3500,
+    outlook: "Vakaa",
+    educationLevel: ["Toinen aste", "AMK"],
+    industry: ["Media"],
+    personalityType: ["Rakentaja", "Tiimipelaaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Kamerakaluston käsittely", "Valaisutekniikat", "Setin turvallisuus", "Logistiikan koordinointi", "Tekninen huolto"],
+    skillsSoft: ["Tiimityö", "Ketteryys", "Huolellisuus", "Kommunikaatio", "Fyysinen kestävyys"],
+    dailyTasks: [
+      "Kokoaa ja huoltaa kamera- ja valokaluston ennen kuvauksia",
+      "Asettaa kaapelit, valot ja tukirakenteet kuvauspaikalle",
+      "Avustaa kuvaajaa fokusvedossa ja optiikan vaihdoissa",
+      "Koordinoi kaluston logistiikkaa ja huolehtii turvallisuudesta",
+      "Purkaa kaluston ja palauttaa sen varastoon kuvauksien jälkeen"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Toinen aste – Audiovisuaalinen viestintä",
+        url: "https://opintopolku.fi/konfo/fi/haku/audiovisuaalisen%20viestinnan%20perustutkinto"
+      },
+      {
+        label: "AMK – Elokuva- ja TV-koulutus",
+        url: "https://opintopolku.fi/konfo/fi/haku/elokuva"
+      }
+    ],
+    relatedSlugs: ["videonmuokkaaja", "livestream-tuottaja", "tuotantokoordinaattori", "ääniteknikko"]
+  },
+  {
+    slug: "ääniteknikko",
+    title: "Ääniteknikko",
+    summary: "Huolehtii äänen tallennuksesta, miksaamisesta ja viimeistelystä tuotannoissa sekä tapahtumissa.",
+    longDescription: "Ääniteknikko valmistelee äänikaluston, huolehtii äänitysten teknisestä laadusta ja miksaa live- sekä studiotuotantoja. Työhön kuuluu mikrofonien, miksauspöytien ja ohjelmistojen käyttö, äänen monitorointi sekä yhteistyö ohjaajien, artistien ja teknisten tiimien kanssa sujuvan äänikokemuksen varmistamiseksi.",
+    salaryMin: 2800,
+    salaryMax: 4500,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Yliopisto", "Lyhytkoulutus"],
+    industry: ["Media"],
+    personalityType: ["Luova", "Tekninen toteuttaja"],
+    workMode: "Hybrid",
+    skillsHard: ["Äänitystekniikka", "Live- ja studiomiksaus", "Masterointi", "Äänityslaitteiden huolto", "Digitaalinen äänenkäsittely"],
+    skillsSoft: ["Kuuntelutaito", "Tarkkuus", "Ongelmanratkaisu", "Stressinsieto", "Tiimityö"],
+    dailyTasks: [
+      "Valmistelee äänitysympäristön ja kaluston tuotantoa varten",
+      "Miksaa ja monitoroi live- tai studioääntä reaaliajassa",
+      "Käsittelee ja masteroi tallenteita julkaisua varten",
+      "Huoltaa ja kalibroi mikrofoneja sekä äänityslaitteita",
+      "Yhteistyö ohjaajien, artistien ja muiden teknisten tiimien kanssa"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Äänitekniikka",
+        url: "https://opintopolku.fi/konfo/fi/haku/Medianomi"
+      },
+      {
+        label: "Yliopisto – Musiikkitiede",
+        url: "https://opintopolku.fi/konfo/fi/haku/musiikki"
+      }
+    ],
+    relatedSlugs: ["videonmuokkaaja", "livestream-tuottaja", "muusikko", "tuotantokoordinaattori"]
+  },
+  {
+    slug: "livestream-tuottaja",
+    title: "Livestream-tuottaja",
+    summary: "Suunnittelee ja toteuttaa live-suoratoistoja sekä kehittää vuorovaikutteista sisältöä eri alustoille.",
+    longDescription: "Livestream-tuottaja vastaa suoratoistojen konseptoinnista, teknisestä toteutuksesta ja laadunvalvonnasta. Hän rakentaa lähetysympäristön, hallitsee chat-yhteisöä ja analysoi katseludataa, jotta lähetykset palvelevat yleisöä ja liiketoimintaa. Työhön kuuluu myös yhteistyö markkinoinnin, kumppanien ja esiintyjien kanssa.",
+    salaryMin: 2500,
+    salaryMax: 4400,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Lyhytkoulutus"],
+    industry: ["Media", "Peliala"],
+    personalityType: ["Luova", "Visionääri"],
+    workMode: "Etä",
+    skillsHard: ["Livestream-ohjelmistot", "Monikameratuotanto", "Tekninen ongelmanratkaisu", "Yleisö- ja dataseuranta", "Sisältösuunnittelu"],
+    skillsSoft: ["Tilannetaju", "Yhteisönhallinta", "Kommunikaatio", "Luovuus", "Analyyttisyys"],
+    dailyTasks: [
+      "Konseptoi ja aikatauluttaa live-lähetyksiä eri alustoille",
+      "Rakentaa lähetysympäristön ja testaa teknisen kokonaisuuden",
+      "Operoi kameroita, ääntä ja grafiikkaa lähetyksen aikana",
+      "Moderatoi chatia ja reagoi yleisön palautteeseen reaaliajassa",
+      "Analysoi lähetyksistä kerättyä dataa ja kehittää uusia formaatteja"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Medianomi",
+        url: "https://opintopolku.fi/konfo/fi/haku/Medianomi"
+      },
+      {
+        label: "Lyhytkoulutus – Livestream ja videotuotanto",
+        url: "https://opintopolku.fi/konfo/fi/haku/livestream"
+      }
+    ],
+    relatedSlugs: ["videonmuokkaaja", "ääniteknikko", "tuotantokoordinaattori", "kuvausassistentti"]
   },
   {
     slug: "kirjailija",

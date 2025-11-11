@@ -1,39 +1,21 @@
 /**
  * STUDY PROGRAMS DATABASE
- * Contains study programs with todistusvalinta point requirements (2025 data)
- * Matches programs with related careers for personalized recommendations
+ * Combines curated todistusvalinta programs with transformed Opintopolku data
+ * to provide a comprehensive offline fallback when Supabase is unavailable.
  */
 
-export interface StudyProgram {
-  id: string;
-  name: string;
-  institution: string;
-  institutionType: 'yliopisto' | 'amk';
-  field: string; // teknologia, terveys, kauppa, tekniikka, kasvatus, oikeus, psykologia, etc.
-  minPoints: number; // Minimum points required (2025 data)
-  maxPoints?: number; // Maximum points (if available)
-  relatedCareers: string[]; // Career slugs that match this program
-  opintopolkuUrl?: string;
-  description?: string;
-  pointHistory?: StudyProgramHistory[];
-  reach?: boolean;
-  tags?: string[];
-}
+import type { StudyProgram } from './studyPrograms.types';
+export type { StudyProgram, StudyProgramHistory, LangLevel, Outlook, OutlookStatus, MoneyRange } from './studyPrograms.types';
 
-export interface StudyProgramHistory {
-  year: number;
-  minPoints: number | null;
-  medianPoints?: number | null;
-  maxPoints?: number | null;
-  applicantCount?: number | null;
-  notes?: string;
-}
+import rawOpintopolkuPrograms from '@/opintopolku-programs-raw.json';
+import type { OpintopolkuSearchResult } from '@/lib/opintopolku/searchTransformer';
+import { transformSearchResults } from '@/lib/opintopolku/searchTransformer';
+import { careersData } from '@/data/careers-fi';
 
 /**
- * Initial database with 20-30 popular programs covering major fields
- * Data from 2025 todistusvalinta results
+ * Curated baseline programs with verified todistusvalinta data.
  */
-export const studyPrograms: StudyProgram[] = [
+const manualStudyPrograms: StudyProgram[] = [
   // TECHNOLOGY PROGRAMS (5-7)
   {
     id: 'tietojenkäsittelytiede-helsinki',
@@ -990,6 +972,63 @@ export const studyPrograms: StudyProgram[] = [
     description: 'Hotelli- ja ravintola-alan AMK-koulutus.'
   }
 ];
+
+/**
+ * Automatically generated programs from Opintopolku search data.
+ * Provides a broad catalogue (~500+) when Supabase is not available.
+ */
+const generatedStudyPrograms: StudyProgram[] = (() => {
+  try {
+    const rawResults = rawOpintopolkuPrograms as OpintopolkuSearchResult[];
+    const careerMatches = careersData.map(career => ({
+      slug: career.id,
+      field: career.category,
+      name: career.title_fi || career.title_en || career.title || career.id
+    }));
+
+    const transformed = transformSearchResults(rawResults, careerMatches);
+    const unique = new Map<string, StudyProgram>();
+
+    for (const program of transformed) {
+      if (!program) continue;
+      if (!program.minPoints || Number.isNaN(program.minPoints)) continue;
+      if (!['yliopisto', 'amk'].includes(program.institutionType)) continue;
+      unique.set(program.id, program);
+    }
+
+    console.info(`[studyPrograms] Generated ${unique.size} programs from Opintopolku dataset`);
+
+    return Array.from(unique.values());
+  } catch (error) {
+    console.warn('[studyPrograms] Failed to generate Opintopolku-based programs:', error);
+    return [];
+  }
+})();
+
+/**
+ * Merge generated programs with manually curated baseline programs.
+ * Manually curated entries take precedence when IDs overlap.
+ */
+const studyProgramsMap = new Map<string, StudyProgram>();
+generatedStudyPrograms.forEach(program => {
+  studyProgramsMap.set(program.id, program);
+});
+manualStudyPrograms.forEach(program => {
+  studyProgramsMap.set(program.id, program);
+});
+
+const mergedStudyPrograms = Array.from(studyProgramsMap.values()).sort((a, b) => {
+  if (a.institutionType !== b.institutionType) {
+    return a.institutionType.localeCompare(b.institutionType);
+  }
+  return a.name.localeCompare(b.name, 'fi');
+});
+
+console.info(
+  `[studyPrograms] Offline fallback contains ${mergedStudyPrograms.length} programs (${generatedStudyPrograms.length} generated, ${manualStudyPrograms.length} curated)`
+);
+
+export const studyPrograms: StudyProgram[] = mergedStudyPrograms;
 
 /**
  * Get study programs filtered by points range
