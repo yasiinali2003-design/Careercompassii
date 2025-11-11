@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { Search, Filter, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { careersData as careersFI, CareerFI } from '@/data/careers-fi';
 import { careersData as catalogCareers } from '@/data/careers-catalog';
-import { Career, CareerFilters } from '@/lib/types';
+import { Career, CareerFilters, WorkMode, Outlook } from '@/lib/types';
 
 const convertCareerFIToCareer = (careerFI: CareerFI): Career => ({
   slug: careerFI.id,
@@ -65,10 +65,18 @@ const filterOptions = {
   educationLevel: Array.from(new Set(careersData.flatMap((c) => c.educationLevel || []))).filter(Boolean),
   personalityType: Array.from(new Set(careersData.flatMap((c) => c.personalityType || []))).filter(Boolean),
   workMode: Array.from(
-    new Set(careersData.map((c) => c.workMode).filter((mode): mode is string => Boolean(mode)))
+    new Set(
+      careersData
+        .map((c) => c.workMode)
+        .filter((mode): mode is WorkMode => Boolean(mode))
+    )
   ),
   outlook: Array.from(
-    new Set(careersData.map((c) => c.outlook).filter((outlook): outlook is string => Boolean(outlook)))
+    new Set(
+      careersData
+        .map((c) => c.outlook)
+        .filter((status): status is Outlook => Boolean(status))
+    )
   )
 };
 import Logo from '@/components/Logo';

@@ -39,6 +39,8 @@ export interface CareerFI {
   useful_links: { name: string; url: string }[];
   keywords?: string[];
   study_length_estimate_months?: number; // for sorting
+  related_careers?: string[];
+  title?: string;
 }
 
 export const careersData: CareerFI[] = [
