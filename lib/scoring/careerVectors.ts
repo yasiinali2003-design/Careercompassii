@@ -1178,7 +1178,7 @@ export const CAREER_VECTORS = [
   {
     "slug": "poliisi",
     "title": "Poliisi",
-    "category": "auttaja",
+    "category": "jarjestaja",
     "interests": {
       "technology": 0.5555555555555556,
       "people": 0.8,
@@ -1208,7 +1208,7 @@ export const CAREER_VECTORS = [
   {
     "slug": "rikostutkija",
     "title": "Rikostutkija",
-    "category": "auttaja",
+    "category": "jarjestaja",
     "interests": {
       "technology": 0.5555555555555556,
       "people": 0.8,
@@ -1238,7 +1238,7 @@ export const CAREER_VECTORS = [
   {
     "slug": "sotilas",
     "title": "Sotilas",
-    "category": "auttaja",
+    "category": "jarjestaja",
     "interests": {
       "technology": 0.5555555555555556,
       "people": 0.8,
@@ -1268,7 +1268,7 @@ export const CAREER_VECTORS = [
   {
     "slug": "upseeri",
     "title": "Upseeri",
-    "category": "auttaja",
+    "category": "jarjestaja",
     "interests": {
       "technology": 0.5555555555555556,
       "people": 0.8,
@@ -1878,6 +1878,7 @@ export const CAREER_VECTORS = [
       "business": 0,
       "environment": 0,
       "health": 0,
+      "education": 1,
       "innovation": 0
     },
     "workstyle": {
@@ -1967,7 +1968,7 @@ export const CAREER_VECTORS = [
       "hands_on": 0,
       "business": 0,
       "environment": 0,
-      "health": 0,
+      "health": 1,
       "innovation": 0
     },
     "workstyle": {
@@ -1998,6 +1999,7 @@ export const CAREER_VECTORS = [
       "business": 0,
       "environment": 0,
       "health": 0.8333333333333334,
+      "education": 1,
       "innovation": 0
     },
     "workstyle": {
@@ -3228,6 +3230,7 @@ export const CAREER_VECTORS = [
       "business": 0,
       "environment": 0.8333333333333334,
       "health": 0,
+      "education": 1,
       "innovation": 0
     },
     "workstyle": {
@@ -3258,6 +3261,7 @@ export const CAREER_VECTORS = [
       "business": 0,
       "environment": 0.8333333333333334,
       "health": 0,
+      "education": 1,
       "innovation": 0.8333333333333334
     },
     "workstyle": {
@@ -3288,6 +3292,7 @@ export const CAREER_VECTORS = [
       "business": 0,
       "environment": 0,
       "health": 0,
+      "education": 1,
       "innovation": 0
     },
     "workstyle": {
@@ -3318,6 +3323,7 @@ export const CAREER_VECTORS = [
       "business": 0,
       "environment": 0,
       "health": 0,
+      "education": 1,
       "innovation": 0.8333333333333334
     },
     "workstyle": {
@@ -3348,6 +3354,7 @@ export const CAREER_VECTORS = [
       "business": 0,
       "environment": 0,
       "health": 0,
+      "education": 1,
       "innovation": 0
     },
     "workstyle": {
@@ -3888,6 +3895,7 @@ export const CAREER_VECTORS = [
       "business": 0,
       "environment": 0,
       "health": 0,
+      "education": 0.8,
       "innovation": 0
     },
     "workstyle": {
@@ -4448,7 +4456,7 @@ export const CAREER_VECTORS = [
   {
     "slug": "hotellityontekija",
     "title": "Hotellityöntekijä",
-    "category": "auttaja",
+    "category": "jarjestaja",
     "interests": {
       "technology": 0.5555555555555556,
       "people": 1,
@@ -4478,7 +4486,7 @@ export const CAREER_VECTORS = [
   {
     "slug": "ravintolatyöntekijä",
     "title": "Ravintolatyöntekijä",
-    "category": "auttaja",
+    "category": "jarjestaja",
     "interests": {
       "technology": 0.5555555555555556,
       "people": 1,
@@ -4847,7 +4855,7 @@ export const CAREER_VECTORS = [
       "hands_on": 0,
       "business": 0,
       "environment": 0,
-      "health": 0,
+      "health": 1,
       "innovation": 0
     },
     "workstyle": {
@@ -4877,7 +4885,7 @@ export const CAREER_VECTORS = [
       "hands_on": 0,
       "business": 0,
       "environment": 0,
-      "health": 0,
+      "health": 1,
       "innovation": 0
     },
     "workstyle": {
@@ -6048,6 +6056,7 @@ export const CAREER_VECTORS = [
       "business": 0,
       "environment": 0,
       "health": 0,
+      "education": 1,
       "innovation": 0.8333333333333334
     },
     "workstyle": {
@@ -6167,7 +6176,7 @@ export const CAREER_VECTORS = [
       "hands_on": 0,
       "business": 0,
       "environment": 0,
-      "health": 0,
+      "health": 1,
       "innovation": 0
     },
     "workstyle": {
@@ -6398,7 +6407,7 @@ export const CAREER_VECTORS = [
   {
     "slug": "tarjoilija",
     "title": "Tarjoilija",
-    "category": "auttaja",
+    "category": "jarjestaja",
     "interests": {
       "technology": 0.5555555555555556,
       "people": 1,
@@ -6428,7 +6437,7 @@ export const CAREER_VECTORS = [
   {
     "slug": "kokki",
     "title": "Kokki",
-    "category": "auttaja",
+    "category": "jarjestaja",
     "interests": {
       "technology": 0.5555555555555556,
       "people": 0.8,
@@ -6587,7 +6596,7 @@ export const CAREER_VECTORS = [
       "hands_on": 0.6666666666666666,
       "business": 0,
       "environment": 0,
-      "health": 0,
+      "health": 1,
       "innovation": 0
     },
     "workstyle": {
@@ -7038,6 +7047,7 @@ export const CAREER_VECTORS = [
       "business": 0,
       "environment": 0,
       "health": 0,
+      "education": 1,
       "innovation": 0
     },
     "workstyle": {
@@ -7358,7 +7368,7 @@ export const CAREER_VECTORS = [
   {
     "slug": "baarimikko",
     "title": "Baarimikko",
-    "category": "auttaja",
+    "category": "jarjestaja",
     "interests": {
       "technology": 0.5555555555555556,
       "people": 1,
@@ -7488,6 +7498,7 @@ export const CAREER_VECTORS = [
       "business": 0,
       "environment": 0,
       "health": 0,
+      "education": 1,
       "innovation": 1
     },
     "workstyle": {
