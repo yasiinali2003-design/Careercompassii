@@ -127,7 +127,7 @@ The platform uses a sophisticated recommendation system that:
 
 ## 📊 Career Database
 
-Comprehensive database of 175+ Finnish careers including:
+Comprehensive database of 286 Finnish careers including:
 
 - **Salary Information**: Median and range data
 - **Job Outlook**: Future employment prospects

@@ -55,7 +55,7 @@ export default function PricingPage() {
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-green-500" size={20} />
-                  <span>175 eri ammattimahdollisuutta</span>
+                  <span>286 eri ammattimahdollisuutta</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-green-500" size={20} />

@@ -17,7 +17,7 @@ Based on your pricing page (`/kouluille`), here are the package differences:
 ### 🆓 Ilmainen (Free) - 0€/vuosi
 - ✅ Perus-urapolku-testi
 - ✅ Henkilökohtaiset tulokset
-- ✅ 175 eri ammattimahdollisuutta
+- ✅ 286 eri ammattimahdollisuutta
 - ✅ GDPR-yhteensopiva
 - ❌ **NO teacher dashboard**
 - ❌ **NO exports**
