@@ -977,7 +977,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 5,
     text: "Kiinnostaako sinua laki, oikeusjärjestelmä tai turvallisuusala?",
     dimension: 'interests',
-    subdimension: 'legal',
+    subdimension: 'analytical',
     weight: 1.1,
     reverse: false,
     notes: "Legal/law enforcement/security careers (replaces tech duplicate)"
@@ -1154,7 +1154,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 24,
     text: "Kiinnostaako sinua maatalous, karjanhoito tai eläinlääkintä?",
     dimension: 'interests',
-    subdimension: 'agriculture',
+    subdimension: 'nature',
     weight: 1.2,
     reverse: false,
     notes: "Agriculture/veterinary (more specific than Q25 environmental focus)"

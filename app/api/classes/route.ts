@@ -235,7 +235,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ success: true, classes: [] });
     }
 
-    const classIds = classes.map((cls) => cls.id);
+    const classIds = classes.map((cls: { id: string }) => cls.id);
 
     const { data: pinsData } = await supabaseAdmin
       .from('pins')
@@ -262,7 +262,7 @@ export async function GET(request: NextRequest) {
       resultsByClass.set(key, existing);
     });
 
-    const classesWithStats = classes.map((cls) => {
+    const classesWithStats = classes.map((cls: { id: string; class_token: string; created_at: string; updated_at: string }) => {
       const id = String(cls.id);
       const pinCount = pinsByClass.get(id) || 0;
       const classResults = resultsByClass.get(id) || [];
