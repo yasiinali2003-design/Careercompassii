@@ -34,115 +34,115 @@ const CATEGORY_SUBDIMENSION_WEIGHTS: Record<string, {
 }> = {
   auttaja: {
     interests: {
-      health: 1.6,
-      people: 1.5,
-      education: 1.4,
+      health: 2.8,        // BOOSTED: Strong healthcare signal
+      people: 2.5,        // BOOSTED: People-oriented work
+      education: 2.2,     // BOOSTED: Teaching/education
     },
     workstyle: {
-      teaching: 1.5,
-      teamwork: 1.3,
+      teaching: 2.5,      // BOOSTED: Teaching style
+      teamwork: 2.0,      // BOOSTED: Collaborative work
     },
     values: {
-      social_impact: 1.4,
-      impact: 1.3,
+      social_impact: 2.5, // BOOSTED: Helping motivation
+      impact: 2.2,        // BOOSTED: Making a difference
     },
   },
   luova: {
     interests: {
-      creative: 1.6,
-      arts_culture: 1.5,
-      writing: 1.5,
-      technology: 1.2,
+      creative: 2.8,      // BOOSTED: Strong creative signal
+      arts_culture: 2.5,  // BOOSTED: Arts/culture interest
+      writing: 2.5,       // BOOSTED: Writing/content
+      technology: 1.8,    // Moderate boost for digital creative
     },
     workstyle: {
-      independence: 1.3,
+      independence: 2.0,  // BOOSTED: Autonomous work
     },
     values: {
-      entrepreneurship: 1.2,
+      entrepreneurship: 1.8, // Moderate boost
     },
   },
   johtaja: {
     workstyle: {
-      leadership: 1.6,
-      organization: 1.4,
-      planning: 1.4,
+      leadership: 3.0,    // BOOSTED: Critical for leadership roles
+      organization: 2.5,  // BOOSTED: Organizational skills
+      planning: 2.5,      // BOOSTED: Strategic planning
     },
     values: {
-      advancement: 1.3,
-      financial: 1.2,
+      advancement: 2.2,   // BOOSTED: Career ambition
+      financial: 2.0,     // BOOSTED: Salary motivation
     },
     interests: {
-      business: 1.2,
+      business: 2.2,      // BOOSTED: Business interest
     },
   },
   innovoija: {
     interests: {
-      technology: 1.6,
-      innovation: 1.5,
-      analytical: 1.3,
-      business: 1.2,
+      technology: 3.0,    // BOOSTED: Critical tech signal
+      innovation: 2.8,    // BOOSTED: Innovation mindset
+      analytical: 2.5,    // BOOSTED: Analytical thinking
+      business: 2.0,      // BOOSTED: Business/tech combo
     },
     workstyle: {
-      problem_solving: 1.4,
+      problem_solving: 2.8, // BOOSTED: Problem-solving ability
     },
     values: {
-      entrepreneurship: 1.3,
+      entrepreneurship: 2.0, // BOOSTED: Startup mindset
     },
   },
   rakentaja: {
     interests: {
-      hands_on: 1.6,
-      technology: 1.2,
+      hands_on: 2.8,      // BOOSTED: Physical/manual work
+      technology: 2.0,    // BOOSTED: Technical skills
     },
     workstyle: {
-      precision: 1.5,
-      performance: 1.4,
+      precision: 2.5,     // BOOSTED: Attention to detail
+      performance: 2.5,   // BOOSTED: Results-oriented
     },
     values: {
-      stability: 1.2,
+      stability: 2.0,     // BOOSTED: Job security
     },
   },
   'ympariston-puolustaja': {
     interests: {
-      environment: 1.6,
-      nature: 1.5,
+      environment: 2.8,   // BOOSTED: Environmental passion
+      nature: 2.5,        // BOOSTED: Nature connection
     },
     context: {
-      outdoor: 1.4,
+      outdoor: 2.5,       // BOOSTED: Outdoor work preference
     },
     values: {
-      social_impact: 1.3,
+      social_impact: 2.5, // BOOSTED: Environmental impact
     },
     workstyle: {
-      planning: 1.2,
+      planning: 2.0,      // BOOSTED: Systematic approach
     },
   },
   visionaari: {
     workstyle: {
-      planning: 1.5,
-      leadership: 1.2,
+      planning: 2.8,      // BOOSTED: Strategic thinking
+      leadership: 2.5,    // BOOSTED: Visionary leadership
     },
     interests: {
-      innovation: 1.5,
-      analytical: 1.4,
+      innovation: 2.8,    // BOOSTED: Future-oriented
+      analytical: 2.5,    // BOOSTED: Data-driven decisions
     },
     values: {
-      global: 1.4,
-      career_clarity: 1.3,
+      global: 2.5,        // BOOSTED: Global perspective
+      career_clarity: 2.0, // BOOSTED: Clear direction
     },
   },
   jarjestaja: {
     workstyle: {
-      organization: 1.6,
-      structure: 1.5,
-      precision: 1.4,
+      organization: 3.0,  // BOOSTED: Critical organizational skills
+      structure: 2.8,     // BOOSTED: Systematic approach
+      precision: 2.5,     // BOOSTED: Detail-oriented
     },
     values: {
-      stability: 1.4,
-      career_clarity: 1.2,
+      stability: 2.5,     // BOOSTED: Preference for structure
+      career_clarity: 2.0, // BOOSTED: Clear career path
     },
     interests: {
-      business: 1.2,
+      business: 2.0,      // BOOSTED: Business operations
     },
   },
 };
@@ -176,16 +176,26 @@ export function computeUserVector(
   answers.forEach(answer => {
     const mapping = mappings.find(m => m.q === answer.questionIndex);
     if (!mapping) return;
-    
+
     const normalizedScore = normalizeAnswer(answer.score, mapping.reverse);
     const key = `${mapping.dimension}:${mapping.subdimension}`;
-    
+
     if (!subdimensionScores[key]) {
       subdimensionScores[key] = { sum: 0, count: 0, weight: 0 };
     }
-    
-    subdimensionScores[key].sum += normalizedScore * mapping.weight;
-    subdimensionScores[key].weight += mapping.weight;
+
+    // STRONG SIGNAL AMPLIFICATION: Boost high scores (4-5) to make them more prominent
+    let effectiveWeight = mapping.weight;
+    if (answer.score >= 4 && !mapping.reverse) {
+      // Score 4 → 1.5x weight, Score 5 → 2.0x weight
+      effectiveWeight = mapping.weight * (answer.score === 5 ? 2.0 : 1.5);
+    } else if (answer.score <= 2 && mapping.reverse) {
+      // For reverse questions, low scores are strong signals
+      effectiveWeight = mapping.weight * (answer.score === 1 ? 2.0 : 1.5);
+    }
+
+    subdimensionScores[key].sum += normalizedScore * effectiveWeight;
+    subdimensionScores[key].weight += effectiveWeight;
     subdimensionScores[key].count += 1;
   });
   
@@ -1157,10 +1167,10 @@ export function rankCareers(
       cohort,
       dominantCategory // Pass category for category-specific weighting
     );
-    
+
     // Get full career data
     const careerFI = careersFI.find(c => c && c.id === careerVector.slug);
-    
+
     // Generate reasons (with answers for enhanced personalization)
     const reasons = generateReasons(
       careerVector,
@@ -1170,10 +1180,10 @@ export function rankCareers(
       cohort,
       answers // Pass answers for enhanced reasons
     );
-    
+
     // Determine confidence
     const confidence = overallScore >= 75 ? 'high' : overallScore >= 60 ? 'medium' : 'low';
-    
+
     return {
       slug: careerVector.slug,
       title: careerVector.title,
@@ -1188,6 +1198,16 @@ export function rankCareers(
       ] : undefined,
       outlook: careerFI?.job_outlook?.status
     } as CareerMatch;
+  })
+  .filter(career => {
+    // MINIMUM THRESHOLD: Only show careers with at least 40% match
+    // This prevents showing careers that are clearly not a good fit
+    const MINIMUM_MATCH_THRESHOLD = 40;
+    if (career.overallScore < MINIMUM_MATCH_THRESHOLD) {
+      console.log(`[rankCareers] Filtered out ${career.title} (score: ${career.overallScore}% < ${MINIMUM_MATCH_THRESHOLD}%)`);
+      return false;
+    }
+    return true;
   });
   
   const getMedianSalary = (career: CareerMatch): number => {
