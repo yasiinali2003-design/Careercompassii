@@ -1207,6 +1207,36 @@ export function rankCareers(
       console.log(`[rankCareers] Filtered out ${career.title} (score: ${career.overallScore}% < ${MINIMUM_MATCH_THRESHOLD}%)`);
       return false;
     }
+
+    // SUBDIMENSION MISMATCH FILTER: If user has strong interest in a specific area,
+    // filter out careers with zero score in that area
+    const careerVector = careersToScore.find(cv => cv.slug === career.slug);
+    if (!careerVector) return true;
+
+    // Check healthcare mismatch
+    const userHealthScore = detailedScores.interests.health || 0;
+    const careerHealthScore = careerVector.interests?.health || 0;
+    if (userHealthScore >= 0.6 && careerHealthScore === 0 && career.category === 'auttaja') {
+      console.log(`[rankCareers] Filtered out ${career.title} (user wants healthcare ${userHealthScore.toFixed(2)} but career has health=0)`);
+      return false;
+    }
+
+    // Check technology mismatch
+    const userTechScore = detailedScores.interests.technology || 0;
+    const careerTechScore = careerVector.interests?.technology || 0;
+    if (userTechScore >= 0.6 && careerTechScore === 0 && career.category === 'innovoija') {
+      console.log(`[rankCareers] Filtered out ${career.title} (user wants tech ${userTechScore.toFixed(2)} but career has tech=0)`);
+      return false;
+    }
+
+    // Check creative mismatch
+    const userCreativeScore = detailedScores.interests.creative || 0;
+    const careerCreativeScore = careerVector.interests?.creative || 0;
+    if (userCreativeScore >= 0.6 && careerCreativeScore === 0 && career.category === 'luova') {
+      console.log(`[rankCareers] Filtered out ${career.title} (user wants creative ${userCreativeScore.toFixed(2)} but career has creative=0)`);
+      return false;
+    }
+
     return true;
   });
   

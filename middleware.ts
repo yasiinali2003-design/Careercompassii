@@ -81,7 +81,8 @@ export function middleware(request: NextRequest) {
 
   // Hide /kouluille page from public in production
   // Allow admin access in localhost
-  const isLocalhost = request.nextUrl.hostname === 'localhost' || request.nextUrl.hostname === '127.0.0.1';
+  const localHosts = new Set(['localhost', '127.0.0.1', '0.0.0.0', '::1']);
+  const isLocalhost = localHosts.has(request.nextUrl.hostname);
   const isProduction = request.nextUrl.hostname.includes('careercompassi.com') || request.nextUrl.hostname.includes('vercel.app');
 
   if (pathname === '/kouluille') {

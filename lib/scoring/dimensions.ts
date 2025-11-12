@@ -1850,10 +1850,10 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 1,
     text: "Haluaisitko työskennellä terveydenhuollossa ja hoivatyössä?",
     dimension: 'interests',
-    subdimension: 'people',
+    subdimension: 'health',     // FIXED: Was 'people', now 'health' for proper healthcare matching
     weight: 1.4,
     reverse: false,
-    notes: "Healthcare sector"
+    notes: "Healthcare sector - maps to health subdimension"
   },
   {
     q: 2,
@@ -1886,10 +1886,10 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 5,
     text: "Haluaisitko työskennellä opetusalalla ja kasvatuksessa?",
     dimension: 'interests',
-    subdimension: 'people',
+    subdimension: 'education',  // FIXED: Was 'people', now 'education' for proper teacher matching
     weight: 1.3,
     reverse: false,
-    notes: "Education sector"
+    notes: "Education sector - maps to education subdimension"
   },
   {
     q: 6,
