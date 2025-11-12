@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Search, Filter, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { careersData as careersFI, CareerFI } from '@/data/careers-fi';
-import { careersData as catalogCareers } from '@/data/careers-catalog';
 import { Career, CareerFilters, WorkMode, Outlook } from '@/lib/types';
 
 const convertCareerFIToCareer = (careerFI: CareerFI): Career => ({
@@ -39,25 +38,10 @@ const convertCareerFIToCareer = (careerFI: CareerFI): Career => ({
   relatedSlugs: Array.isArray(careerFI.related_careers) ? careerFI.related_careers : []
 });
 
-const fiCareers: Career[] = careersFI
+const careersData: Career[] = careersFI
   .filter((career): career is CareerFI => Boolean(career && career.id))
   .map(convertCareerFIToCareer);
 
-const mergedCareersMap = new Map<string, Career>();
-
-catalogCareers.forEach((career) => {
-  if (career && career.slug) {
-    mergedCareersMap.set(career.slug, career);
-  }
-});
-
-fiCareers.forEach((career) => {
-  if (!mergedCareersMap.has(career.slug)) {
-    mergedCareersMap.set(career.slug, career);
-  }
-});
-
-const careersData: Career[] = Array.from(mergedCareersMap.values());
 const totalCareerCount = careersData.length;
 
 const filterOptions = {
