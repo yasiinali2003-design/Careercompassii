@@ -927,7 +927,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
 // Focus: Career field exploration + skill/interest matching
 
 const TASO2_MAPPINGS: QuestionMapping[] = [
-  // Section 1: Tech & Digital (Q0-6)
+  // Section 1: Tech, Leadership & Diverse Interests (Q0-6)
   {
     q: 0,
     text: "Kiinnostaako sinua koodaaminen tai omien ohjelmien tekeminen?",
@@ -939,12 +939,12 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 1,
-    text: "Haluaisitko työskennellä tietokoneiden ja teknologian parissa?",
+    text: "Haluaisitko johtaa ryhmää tai projektia?",
     dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.3,
+    subdimension: 'leadership',
+    weight: 1.2,
     reverse: false,
-    notes: "Broader tech interest"
+    notes: "Leadership/management indicator (replaces tech duplicate)"
   },
   {
     q: 2,
@@ -957,12 +957,12 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 3,
-    text: "Pidätkö teknisten ongelmien ratkaisemisesta?",
+    text: "Haluaisitko työskennellä urheilun tai liikunnan parissa?",
     dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.1,
+    subdimension: 'sports',
+    weight: 1.2,
     reverse: false,
-    notes: "Problem-solving in tech context"
+    notes: "Sports/fitness careers (replaces tech duplicate)"
   },
   {
     q: 4,
@@ -975,12 +975,12 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 5,
-    text: "Kiinnostaako sinua videopelit tai niiden tekeminen?",
+    text: "Kiinnostaako sinua laki, oikeusjärjestelmä tai turvallisuusala?",
     dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.0,
+    subdimension: 'legal',
+    weight: 1.1,
     reverse: false,
-    notes: "Game industry interest"
+    notes: "Legal/law enforcement/security careers (replaces tech duplicate)"
   },
   {
     q: 6,
@@ -1049,12 +1049,12 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 13,
-    text: "Pidätkö siitä, että autat ihmisiä tekemään hyviä valintoja?",
+    text: "Kiinnostaako sinua tutkia terveyden ja sairauksien syitä?",
     dimension: 'interests',
-    subdimension: 'people',
+    subdimension: 'analytical',
     weight: 1.2,
     reverse: false,
-    notes: "Counseling/guidance careers"
+    notes: "Medical research/diagnostics (differentiated from Q7/Q10 helping focus)"
   },
   
   // Section 3: Creative & Business (Q14-20)
@@ -1152,12 +1152,12 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 24,
-    text: "Kiinnostaako sinua hoitaa kasveja tai eläimiä työssäsi?",
+    text: "Kiinnostaako sinua maatalous, karjanhoito tai eläinlääkintä?",
     dimension: 'interests',
-    subdimension: 'environment',
+    subdimension: 'agriculture',
     weight: 1.2,
     reverse: false,
-    notes: "Agriculture/animal care"
+    notes: "Agriculture/veterinary (more specific than Q25 environmental focus)"
   },
   {
     q: 25,
