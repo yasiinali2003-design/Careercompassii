@@ -6985,7 +6985,7 @@ export const CAREER_VECTORS = [
       "analytical": 0,
       "hands_on": 0,
       "business": 0,
-      "environment": 0,
+      "environment": 1,
       "health": 0,
       "innovation": 0.8333333333333334
     },
@@ -7887,7 +7887,7 @@ export const CAREER_VECTORS = [
       "analytical": 0,
       "hands_on": 0,
       "business": 0.8333333333333334,
-      "environment": 0,
+      "environment": 1,
       "health": 0,
       "innovation": 1
     },
@@ -7917,7 +7917,7 @@ export const CAREER_VECTORS = [
       "analytical": 0,
       "hands_on": 0,
       "business": 0.8333333333333334,
-      "environment": 0,
+      "environment": 1,
       "health": 0,
       "innovation": 1
     },
@@ -8097,7 +8097,7 @@ export const CAREER_VECTORS = [
       "analytical": 0,
       "hands_on": 0,
       "business": 0,
-      "environment": 0,
+      "environment": 1,
       "health": 0,
       "innovation": 1
     },
@@ -8127,7 +8127,7 @@ export const CAREER_VECTORS = [
       "analytical": 0,
       "hands_on": 0,
       "business": 0.8333333333333334,
-      "environment": 0,
+      "environment": 1,
       "health": 0,
       "innovation": 1
     },
@@ -8547,7 +8547,7 @@ export const CAREER_VECTORS = [
       "analytical": 0,
       "hands_on": 0,
       "business": 0,
-      "environment": 0,
+      "environment": 1,
       "health": 0,
       "innovation": 1
     },
@@ -8577,7 +8577,7 @@ export const CAREER_VECTORS = [
       "analytical": 0,
       "hands_on": 0,
       "business": 0,
-      "environment": 0,
+      "environment": 1,
       "health": 0,
       "innovation": 1
     },
