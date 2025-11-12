@@ -36,36 +36,6 @@ export const CAREER_VECTORS = [
     }
   },
   {
-    "slug": "sisallontuottaja",
-    "title": "Sisällöntuottaja",
-    "category": "luova",
-    "interests": {
-      "technology": 0.5555555555555556,
-      "people": 0,
-      "creative": 0.8,
-      "analytical": 0,
-      "hands_on": 0.6666666666666666,
-      "business": 0.8333333333333334,
-      "environment": 0,
-      "health": 0,
-      "innovation": 0
-    },
-    "workstyle": {
-      "teamwork": 0,
-      "independence": 0,
-      "leadership": 0,
-      "organization": 1,
-      "problem_solving": 0
-    },
-    "values": {
-      "growth": 0.5,
-      "impact": 0.9000000000000001
-    },
-    "context": {
-      "outdoor": 0
-    }
-  },
-  {
     "slug": "muusikko",
     "title": "Muusikko",
     "category": "luova",
@@ -336,36 +306,6 @@ export const CAREER_VECTORS = [
     }
   },
   {
-    "slug": "sahkonasentaja",
-    "title": "Sähköasentaja",
-    "category": "rakentaja",
-    "interests": {
-      "technology": 0.5555555555555556,
-      "people": 1,
-      "creative": 0.6666666666666666,
-      "analytical": 0,
-      "hands_on": 1,
-      "business": 0,
-      "environment": 0,
-      "health": 0,
-      "innovation": 0.8333333333333334
-    },
-    "workstyle": {
-      "teamwork": 0,
-      "independence": 0,
-      "leadership": 0,
-      "organization": 1,
-      "problem_solving": 1
-    },
-    "values": {
-      "growth": 0.5,
-      "impact": 0.9000000000000001
-    },
-    "context": {
-      "outdoor": 0
-    }
-  },
-  {
     "slug": "putkiasentaja",
     "title": "Putkiasentaja",
     "category": "rakentaja",
@@ -386,36 +326,6 @@ export const CAREER_VECTORS = [
       "leadership": 0,
       "organization": 0,
       "problem_solving": 1
-    },
-    "values": {
-      "growth": 0.5,
-      "impact": 0.9000000000000001
-    },
-    "context": {
-      "outdoor": 0
-    }
-  },
-  {
-    "slug": "puuseppa",
-    "title": "Puuseppä",
-    "category": "rakentaja",
-    "interests": {
-      "technology": 0.5555555555555556,
-      "people": 1,
-      "creative": 0.6666666666666666,
-      "analytical": 0,
-      "hands_on": 1,
-      "business": 0,
-      "environment": 0,
-      "health": 0,
-      "innovation": 0
-    },
-    "workstyle": {
-      "teamwork": 1,
-      "independence": 0,
-      "leadership": 0,
-      "organization": 1,
-      "problem_solving": 0
     },
     "values": {
       "growth": 0.5,
@@ -606,66 +516,6 @@ export const CAREER_VECTORS = [
     }
   },
   {
-    "slug": "projektipäällikkö",
-    "title": "Projektipäällikkö",
-    "category": "johtaja",
-    "interests": {
-      "technology": 0.5555555555555556,
-      "people": 0,
-      "creative": 0.6666666666666666,
-      "analytical": 0,
-      "hands_on": 0,
-      "business": 0,
-      "environment": 0,
-      "health": 0,
-      "innovation": 0
-    },
-    "workstyle": {
-      "teamwork": 1,
-      "independence": 0,
-      "leadership": 1,
-      "organization": 1,
-      "problem_solving": 1
-    },
-    "values": {
-      "growth": 0.5,
-      "impact": 0.9000000000000001
-    },
-    "context": {
-      "outdoor": 0
-    }
-  },
-  {
-    "slug": "myyntipäällikkö",
-    "title": "Myyntipäällikkö",
-    "category": "johtaja",
-    "interests": {
-      "technology": 0.5555555555555556,
-      "people": 1,
-      "creative": 0.6666666666666666,
-      "analytical": 0,
-      "hands_on": 0,
-      "business": 0.8333333333333334,
-      "environment": 0,
-      "health": 0,
-      "innovation": 0.8333333333333334
-    },
-    "workstyle": {
-      "teamwork": 1,
-      "independence": 0,
-      "leadership": 1,
-      "organization": 1,
-      "problem_solving": 0
-    },
-    "values": {
-      "growth": 0.5,
-      "impact": 0.9000000000000001
-    },
-    "context": {
-      "outdoor": 0
-    }
-  },
-  {
     "slug": "henkilöstöpäällikkö",
     "title": "Henkilöstöpäällikkö",
     "category": "johtaja",
@@ -716,36 +566,6 @@ export const CAREER_VECTORS = [
       "leadership": 1,
       "organization": 0.7,
       "problem_solving": 1
-    },
-    "values": {
-      "growth": 0.5,
-      "impact": 0.9000000000000001
-    },
-    "context": {
-      "outdoor": 0
-    }
-  },
-  {
-    "slug": "markkinointipäällikkö",
-    "title": "Markkinointipäällikkö",
-    "category": "johtaja",
-    "interests": {
-      "technology": 0.5555555555555556,
-      "people": 0.6666666666666666,
-      "creative": 0.6666666666666666,
-      "analytical": 0,
-      "hands_on": 0,
-      "business": 0.8333333333333334,
-      "environment": 0,
-      "health": 0,
-      "innovation": 0
-    },
-    "workstyle": {
-      "teamwork": 0,
-      "independence": 0,
-      "leadership": 1,
-      "organization": 1,
-      "problem_solving": 0
     },
     "values": {
       "growth": 0.5,
@@ -936,36 +756,6 @@ export const CAREER_VECTORS = [
     }
   },
   {
-    "slug": "tekoälyasiantuntija",
-    "title": "Tekoälyasiantuntija",
-    "category": "innovoija",
-    "interests": {
-      "technology": 1,
-      "people": 0,
-      "creative": 0.6666666666666666,
-      "analytical": 1,
-      "hands_on": 0,
-      "business": 0,
-      "environment": 0,
-      "health": 0,
-      "innovation": 0
-    },
-    "workstyle": {
-      "teamwork": 0,
-      "independence": 1,
-      "leadership": 0,
-      "organization": 1,
-      "problem_solving": 1
-    },
-    "values": {
-      "growth": 0.7,
-      "impact": 0.9000000000000001
-    },
-    "context": {
-      "outdoor": 0
-    }
-  },
-  {
     "slug": "pelisuunnittelija",
     "title": "Pelisuunnittelija",
     "category": "innovoija",
@@ -1043,36 +833,6 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 0,
       "independence": 1,
-      "leadership": 0,
-      "organization": 1,
-      "problem_solving": 1
-    },
-    "values": {
-      "growth": 0.7,
-      "impact": 0.9000000000000001
-    },
-    "context": {
-      "outdoor": 0
-    }
-  },
-  {
-    "slug": "energiainsinööri",
-    "title": "Energiainsinööri",
-    "category": "innovoija",
-    "interests": {
-      "technology": 0.7,
-      "people": 0,
-      "creative": 0.6666666666666666,
-      "analytical": 0.8333333333333334,
-      "hands_on": 0,
-      "business": 0,
-      "environment": 1,
-      "health": 0,
-      "innovation": 1
-    },
-    "workstyle": {
-      "teamwork": 0,
-      "independence": 0,
       "leadership": 0,
       "organization": 1,
       "problem_solving": 1
@@ -1249,6 +1009,846 @@ export const CAREER_VECTORS = [
       "environment": 0,
       "health": 1,
       "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "bioanalyytikko",
+    "title": "Bioanalyytikko",
+    "category": "auttaja",
+    "interests": {
+      "technology": 1,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0.8333333333333334,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "kouluterveydenhoitaja",
+    "title": "Kouluterveydenhoitaja",
+    "category": "auttaja",
+    "interests": {
+      "technology": 1,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 1,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "kotihoitaja",
+    "title": "Kotihoitaja",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 1,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "ravitsemusasiantuntija",
+    "title": "Ravitsemusasiantuntija",
+    "category": "auttaja",
+    "interests": {
+      "technology": 1,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0.8333333333333334,
+      "health": 1,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "tyopsykologi",
+    "title": "Työpsykologi",
+    "category": "auttaja",
+    "interests": {
+      "technology": 1,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 1,
+      "innovation": 0.8333333333333334
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 1,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "poliisi",
+    "title": "Poliisi",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 1
+    }
+  },
+  {
+    "slug": "rikostutkija",
+    "title": "Rikostutkija",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "sotilas",
+    "title": "Sotilas",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 1,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 1
+    }
+  },
+  {
+    "slug": "upseeri",
+    "title": "Upseeri",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0.8333333333333334,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 1,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "markkinointisuunnittelija",
+    "title": "Markkinointisuunnittelija",
+    "category": "jarjestaja",
+    "interests": {
+      "technology": 1,
+      "people": 0.6666666666666666,
+      "creative": 1,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0.8333333333333334,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "liikuntaneuvoja",
+    "title": "Liikuntaneuvoja",
+    "category": "auttaja",
+    "interests": {
+      "technology": 1,
+      "people": 1,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 1,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "liikuntaterapeutti",
+    "title": "Liikuntaterapeutti",
+    "category": "auttaja",
+    "interests": {
+      "technology": 1,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 1,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "liiketalousjohtaja",
+    "title": "Liiketalousjohtaja",
+    "category": "johtaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0,
+      "business": 1,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 1,
+      "organization": 0.7,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "yritysneuvoja",
+    "title": "Yritysneuvoja",
+    "category": "jarjestaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0.6666666666666666,
+      "business": 0.8333333333333334,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0.8333333333333334
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "sisaltotuottaja",
+    "title": "Sisältötuottaja",
+    "category": "luova",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.8,
+      "analytical": 0,
+      "hands_on": 0.6666666666666666,
+      "business": 1,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "myyntipaallikko",
+    "title": "Myyntipäällikkö",
+    "category": "johtaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.6666666666666666,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 1,
+      "environment": 0,
+      "health": 0.8333333333333334,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 1,
+      "organization": 0.7,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "ohjelmistokehittaja",
+    "title": "Ohjelmistokehittäjä",
+    "category": "innovoija",
+    "interests": {
+      "technology": 1,
+      "people": 0.6666666666666666,
+      "creative": 1,
+      "analytical": 0,
+      "hands_on": 0.6666666666666666,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0.8333333333333334
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "tekoalyasiantuntija",
+    "title": "Tekoälyasiantuntija",
+    "category": "visionaari",
+    "interests": {
+      "technology": 1,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0.6666666666666666,
+      "business": 0.8333333333333334,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "tietojarjestelma-arkkitehti",
+    "title": "Tietojärjestelmäarkkitehti",
+    "category": "visionaari",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 1,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "verkkosuunnittelija",
+    "title": "Verkkosuunnittelija",
+    "category": "luova",
+    "interests": {
+      "technology": 0,
+      "people": 0.6666666666666666,
+      "creative": 1,
+      "analytical": 0,
+      "hands_on": 0.6666666666666666,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "fyysikko",
+    "title": "Fyysikko",
+    "category": "visionaari",
+    "interests": {
+      "technology": 1,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 1,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0.8333333333333334,
+      "health": 0,
+      "innovation": 0.8333333333333334
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "matemaatikko",
+    "title": "Matemaatikko",
+    "category": "visionaari",
+    "interests": {
+      "technology": 1,
+      "people": 0,
+      "creative": 0,
+      "analytical": 1,
+      "hands_on": 0.6666666666666666,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "biologi",
+    "title": "Biologi",
+    "category": "ympariston-puolustaja",
+    "interests": {
+      "technology": 1,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 1,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0.8333333333333334,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 1
+    }
+  },
+  {
+    "slug": "elintarviketutkija",
+    "title": "Elintarviketutkija",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "asianajaja",
+    "title": "Asianajaja",
+    "category": "jarjestaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.6666666666666666,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "oikeusneuvos",
+    "title": "Oikeusneuvos",
+    "category": "johtaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 1,
+      "organization": 0.7,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "notaari",
+    "title": "Notaari",
+    "category": "jarjestaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "kustannustoimittaja",
+    "title": "Kustannustoimittaja",
+    "category": "jarjestaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0.8333333333333334
     },
     "workstyle": {
       "teamwork": 1,
@@ -2526,36 +3126,6 @@ export const CAREER_VECTORS = [
     }
   },
   {
-    "slug": "mobiilisovelluskehittaja",
-    "title": "Mobiilisovelluskehittäjä",
-    "category": "innovoija",
-    "interests": {
-      "technology": 1,
-      "people": 0,
-      "creative": 0.6666666666666666,
-      "analytical": 0,
-      "hands_on": 0,
-      "business": 0,
-      "environment": 0,
-      "health": 0,
-      "innovation": 0.8333333333333334
-    },
-    "workstyle": {
-      "teamwork": 0,
-      "independence": 0,
-      "leadership": 0,
-      "organization": 1,
-      "problem_solving": 1
-    },
-    "values": {
-      "growth": 0.7,
-      "impact": 0.9000000000000001
-    },
-    "context": {
-      "outdoor": 0
-    }
-  },
-  {
     "slug": "verkkoasiantuntija",
     "title": "Verkkoasiantuntija",
     "category": "innovoija",
@@ -2575,36 +3145,6 @@ export const CAREER_VECTORS = [
       "independence": 0,
       "leadership": 0,
       "organization": 1,
-      "problem_solving": 1
-    },
-    "values": {
-      "growth": 0.7,
-      "impact": 0.9000000000000001
-    },
-    "context": {
-      "outdoor": 0
-    }
-  },
-  {
-    "slug": "tekoaly-asiantuntija",
-    "title": "Tekoäly-asiantuntija",
-    "category": "innovoija",
-    "interests": {
-      "technology": 1,
-      "people": 0,
-      "creative": 0,
-      "analytical": 0.8333333333333334,
-      "hands_on": 0,
-      "business": 0,
-      "environment": 0,
-      "health": 0,
-      "innovation": 0
-    },
-    "workstyle": {
-      "teamwork": 0,
-      "independence": 0,
-      "leadership": 1,
-      "organization": 0,
       "problem_solving": 1
     },
     "values": {
@@ -2976,7 +3516,7 @@ export const CAREER_VECTORS = [
     }
   },
   {
-    "slug": "energiainsinoori",
+    "slug": "energiainsinööri",
     "title": "Energiainsinööri",
     "category": "innovoija",
     "interests": {
@@ -3216,7 +3756,7 @@ export const CAREER_VECTORS = [
     }
   },
   {
-    "slug": "viestintäpäällikkö",
+    "slug": "viestintapaallikko",
     "title": "Viestintäpäällikkö",
     "category": "johtaja",
     "interests": {
@@ -3802,7 +4342,7 @@ export const CAREER_VECTORS = [
     },
     "workstyle": {
       "teamwork": 0,
-      "independence": 0,
+      "independence": 1,
       "leadership": 0,
       "organization": 0,
       "problem_solving": 1
@@ -3839,36 +4379,6 @@ export const CAREER_VECTORS = [
     },
     "values": {
       "growth": 0.5,
-      "impact": 0.9000000000000001
-    },
-    "context": {
-      "outdoor": 0
-    }
-  },
-  {
-    "slug": "automaatioteknikko",
-    "title": "Automaatioteknikko",
-    "category": "innovoija",
-    "interests": {
-      "technology": 1,
-      "people": 0,
-      "creative": 0.6666666666666666,
-      "analytical": 0,
-      "hands_on": 0,
-      "business": 0,
-      "environment": 0,
-      "health": 0,
-      "innovation": 0
-    },
-    "workstyle": {
-      "teamwork": 1,
-      "independence": 1,
-      "leadership": 0,
-      "organization": 1,
-      "problem_solving": 1
-    },
-    "values": {
-      "growth": 0.7,
       "impact": 0.9000000000000001
     },
     "context": {
@@ -3936,7 +4446,7 @@ export const CAREER_VECTORS = [
     }
   },
   {
-    "slug": "hotellityöntekijä",
+    "slug": "hotellityontekija",
     "title": "Hotellityöntekijä",
     "category": "auttaja",
     "interests": {
@@ -4206,7 +4716,7 @@ export const CAREER_VECTORS = [
     }
   },
   {
-    "slug": "lääkäri",
+    "slug": "laakari",
     "title": "Lääkäri",
     "category": "auttaja",
     "interests": {
@@ -4236,7 +4746,7 @@ export const CAREER_VECTORS = [
     }
   },
   {
-    "slug": "hammaslääkäri",
+    "slug": "hammaslaakari",
     "title": "Hammaslääkäri",
     "category": "auttaja",
     "interests": {
@@ -4266,7 +4776,7 @@ export const CAREER_VECTORS = [
     }
   },
   {
-    "slug": "eläinlääkäri",
+    "slug": "elainlaakari",
     "title": "Eläinlääkäri",
     "category": "auttaja",
     "interests": {
@@ -5246,6 +5756,2826 @@ export const CAREER_VECTORS = [
       "leadership": 0,
       "organization": 1,
       "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "devops-insinööri",
+    "title": "DevOps-insinööri",
+    "category": "innovoija",
+    "interests": {
+      "technology": 1,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 1,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "automekaanikko",
+    "title": "Automekaanikko",
+    "category": "rakentaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0.7,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "ohjelmistotestaja",
+    "title": "Ohjelmistotestaja",
+    "category": "innovoija",
+    "interests": {
+      "technology": 1,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "ux-suunnittelija",
+    "title": "UX-suunnittelija",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 0,
+      "creative": 1,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "cloud-arkkitehti",
+    "title": "Cloud-arkkitehti",
+    "category": "innovoija",
+    "interests": {
+      "technology": 1,
+      "people": 0.6666666666666666,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0.6666666666666666,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "asiakkuusvastaava",
+    "title": "Asiakkuusvastaava",
+    "category": "johtaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0.6666666666666666,
+      "business": 0.8333333333333334,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0.8,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "sosiaaliohjaaja",
+    "title": "Sosiaaliohjaaja",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "terveydenhoitaja",
+    "title": "Terveydenhoitaja",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0.8333333333333334,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "dialyysihoitaja",
+    "title": "Dialyysihoitaja",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 1,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "varhaiskasvatuksen-erityisopettaja",
+    "title": "Varhaiskasvatuksen erityisopettaja",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0.8333333333333334
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "ui-suunnittelija",
+    "title": "UI-suunnittelija",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 0,
+      "creative": 1,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "tietoturvaanalyytikko",
+    "title": "Tietoturvaanalyytikko",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "tietokoneasentaja",
+    "title": "Tietokoneasentaja",
+    "category": "innovoija",
+    "interests": {
+      "technology": 1,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 1,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "optometristi",
+    "title": "Optometristi",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "ravitsemusterapeutti",
+    "title": "Ravitsemusterapeutti",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0.8333333333333334,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "putkityömies",
+    "title": "Putkityömies",
+    "category": "rakentaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0.7,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "automaatioteknikko",
+    "title": "Automaatioteknikko",
+    "category": "rakentaja",
+    "interests": {
+      "technology": 1,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0.7,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "kiertotalousasiantuntija",
+    "title": "Kiertotalousasiantuntija",
+    "category": "ympariston-puolustaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0.8333333333333334,
+      "environment": 1,
+      "health": 0,
+      "innovation": 0.8333333333333334
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "ympäristövalvonta",
+    "title": "Ympäristövalvonta",
+    "category": "ympariston-puolustaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0.8333333333333334,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "videonmuokkaaja",
+    "title": "Videonmuokkaaja",
+    "category": "luova",
+    "interests": {
+      "technology": 1,
+      "people": 0,
+      "creative": 0.8,
+      "analytical": 0,
+      "hands_on": 0.6666666666666666,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "tuotantokoordinaattori",
+    "title": "Tuotantokoordinaattori",
+    "category": "luova",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.8,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "tarjoilija",
+    "title": "Tarjoilija",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0.8333333333333334,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "kokki",
+    "title": "Kokki",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "oppilashuoltaja",
+    "title": "Oppilashuoltaja",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0.8333333333333334,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "hitsaaja",
+    "title": "Hitsaaja",
+    "category": "rakentaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 1,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "it-tukihenkilö",
+    "title": "IT-tukihenkilö",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "puheterapeutti",
+    "title": "Puheterapeutti",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0.8333333333333334,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "audiologi",
+    "title": "Audiologi",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0.6666666666666666,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "oppilashuoltotyöntekijä",
+    "title": "Oppilashuoltotyöntekijä",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0.8333333333333334,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "suuhygienisti",
+    "title": "Suuhygienisti",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 1,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "kotipalvelutyöntekijä",
+    "title": "Kotipalvelutyöntekijä",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0.8333333333333334,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "full-stack-kehittäjä",
+    "title": "Full-Stack-kehittäjä",
+    "category": "innovoija",
+    "interests": {
+      "technology": 1,
+      "people": 0.6666666666666666,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0.6666666666666666,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0.8333333333333334
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "sosiaalisen-median-asiantuntija",
+    "title": "Sosiaalisen median asiantuntija",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0.6666666666666666,
+      "business": 0.8333333333333334,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "urheiluvalmentaja",
+    "title": "Urheiluvalmentaja",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "lämpötekniikka-asentaja",
+    "title": "Lämpötekniikka-asentaja",
+    "category": "rakentaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0.7,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0.8333333333333334
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "ilmastoneuvonantaja",
+    "title": "Ilmastoneuvonantaja",
+    "category": "ympariston-puolustaja",
+    "interests": {
+      "technology": 0,
+      "people": 0.6666666666666666,
+      "creative": 0.6666666666666666,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 1,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "aikuiskouluttaja",
+    "title": "Aikuiskouluttaja",
+    "category": "jarjestaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "myyntityöntekijä",
+    "title": "Myyntityöntekijä",
+    "category": "johtaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0.6666666666666666,
+      "business": 0.8333333333333334,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0.8,
+      "organization": 0.7,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "reseptionisti",
+    "title": "Reseptionisti",
+    "category": "jarjestaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "verkkosivustonhallintaja",
+    "title": "Verkkosivustonhallintaja",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "vaihtoehtoinen-energia-insinööri",
+    "title": "Vaihtoehtoinen energia-insinööri",
+    "category": "ympariston-puolustaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0.8333333333333334
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "rakennustyönjohtaja",
+    "title": "Rakennustyönjohtaja",
+    "category": "rakentaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0.7,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 1,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "aineenopettaja",
+    "title": "Aineenopettaja",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "livestream-tuottaja",
+    "title": "Livestream-tuottaja",
+    "category": "luova",
+    "interests": {
+      "technology": 1,
+      "people": 0,
+      "creative": 1,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "hieroja",
+    "title": "Hieroja",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 1,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "ääniteknikko",
+    "title": "Ääniteknikko",
+    "category": "luova",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.6666666666666666,
+      "creative": 0.8,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "palvelumuotoilija",
+    "title": "Palvelumuotoilija",
+    "category": "johtaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 1,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 0,
+      "leadership": 0.8,
+      "organization": 0.7,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "lattiasuunnittelija",
+    "title": "Lattiasuunnittelija",
+    "category": "rakentaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.6666666666666666,
+      "creative": 1,
+      "analytical": 0,
+      "hands_on": 0.7,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "rakennusmateriaalimyyja",
+    "title": "Rakennusmateriaalimyyjä",
+    "category": "rakentaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0.7,
+      "business": 0.8333333333333334,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "rautakauppias",
+    "title": "Rautakauppias",
+    "category": "jarjestaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 1,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "biokaasuteknikko",
+    "title": "Biokaasuteknikko",
+    "category": "ympariston-puolustaja",
+    "interests": {
+      "technology": 1,
+      "people": 0,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0.8333333333333334,
+      "environment": 1,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "ymparisto-ohjelmoija",
+    "title": "Ympäristöohjelmoija",
+    "category": "ympariston-puolustaja",
+    "interests": {
+      "technology": 1,
+      "people": 0.6666666666666666,
+      "creative": 0,
+      "analytical": 0.8333333333333334,
+      "hands_on": 0.6666666666666666,
+      "business": 0,
+      "environment": 1,
+      "health": 0,
+      "innovation": 0.8333333333333334
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "kuvausassistentti",
+    "title": "Kuvausassistentti",
+    "category": "luova",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.8,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 0,
+      "leadership": 0,
+      "organization": 1,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "baarimikko",
+    "title": "Baarimikko",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 1,
+      "creative": 0,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0.8333333333333334,
+      "environment": 0,
+      "health": 0,
+      "innovation": 0
+    },
+    "workstyle": {
+      "teamwork": 0,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 0
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "aktuaari",
+    "title": "Aktuaari",
+    "category": "jarjestaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "arkkitehti",
+    "title": "Arkkitehti",
+    "category": "visionaari",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "erikoislaakari",
+    "title": "Erikoislaakari",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "erityispedagogi",
+    "title": "Erityispedagogi",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "etiikan-asiantuntija",
+    "title": "Etiikan Asiantuntija",
+    "category": "visionaari",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "filosofi",
+    "title": "Filosofi",
+    "category": "visionaari",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "historioitsija",
+    "title": "Historioitsija",
+    "category": "visionaari",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "insinoori",
+    "title": "Insinoori",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "it-tukihenkilo",
+    "title": "It Tukihenkilo",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "journalisti",
+    "title": "Journalisti",
+    "category": "visionaari",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "kemiisti",
+    "title": "Kemiisti",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "kirjanpitaja",
+    "title": "Kirjanpitaja",
+    "category": "jarjestaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "konetekniikan-insinoori",
+    "title": "Konetekniikan Insinoori",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "koulupsykologi",
+    "title": "Koulupsykologi",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "kriitikko",
+    "title": "Kriitikko",
+    "category": "visionaari",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "laatuasiantuntija",
+    "title": "Laatuasiantuntija",
+    "category": "jarjestaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "maatalousasiantuntija",
+    "title": "Maatalousasiantuntija",
+    "category": "ympariston-puolustaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0.8333333333333334,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "maatalousinsinoori",
+    "title": "Maatalousinsinoori",
+    "category": "ympariston-puolustaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0.8333333333333334,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "markkinointipaallikko",
+    "title": "Markkinointipaallikko",
+    "category": "johtaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0.8333333333333334,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0.8,
+      "organization": 0.7,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "matkailuneuvoja",
+    "title": "Matkailuneuvoja",
+    "category": "visionaari",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "mediasuunnittelija",
+    "title": "Mediasuunnittelija",
+    "category": "luova",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.8,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "merenkulun-insinoori",
+    "title": "Merenkulun Insinoori",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "merikapteeni",
+    "title": "Merikapteeni",
+    "category": "johtaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0.8,
+      "organization": 0.7,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "metsainsinoori",
+    "title": "Metsainsinoori",
+    "category": "ympariston-puolustaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "metsatalousasiantuntija",
+    "title": "Metsatalousasiantuntija",
+    "category": "ympariston-puolustaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0.8333333333333334,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "museoasiantuntija",
+    "title": "Museoasiantuntija",
+    "category": "visionaari",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "projektipaallikko",
+    "title": "Projektipaallikko",
+    "category": "jarjestaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "rakennusarkkitehti",
+    "title": "Rakennusarkkitehti",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0.6666666666666666,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "ravintolapaallikko",
+    "title": "Ravintolapaallikko",
+    "category": "johtaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0.8,
+      "organization": 0.7,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "sahkotekniikan-insinoori",
+    "title": "Sahkotekniikan Insinoori",
+    "category": "innovoija",
+    "interests": {
+      "technology": 0.7,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.7,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "sosiaaliohjaja",
+    "title": "Sosiaaliohjaja",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "sosiaalitutkija",
+    "title": "Sosiaalitutkija",
+    "category": "visionaari",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "sosiaalityontekija",
+    "title": "Sosiaalityontekija",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "tilitoimiston-johtaja",
+    "title": "Tilitoimiston Johtaja",
+    "category": "johtaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 1,
+      "organization": 0.7,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "tutkija",
+    "title": "Tutkija",
+    "category": "visionaari",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "uutistoimittaja",
+    "title": "Uutistoimittaja",
+    "category": "visionaari",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "valmentaja",
+    "title": "Valmentaja",
+    "category": "auttaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0.8,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "visuaalinen-suunnittelija",
+    "title": "Visuaalinen Suunnittelija",
+    "category": "luova",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 1,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "ymparistonsuojelun-asiantuntija",
+    "title": "Ymparistonsuojelun Asiantuntija",
+    "category": "ympariston-puolustaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
+    },
+    "values": {
+      "growth": 0.5,
+      "impact": 0.9000000000000001
+    },
+    "context": {
+      "outdoor": 0
+    }
+  },
+  {
+    "slug": "ymparistoteknikko",
+    "title": "Ymparistoteknikko",
+    "category": "ympariston-puolustaja",
+    "interests": {
+      "technology": 0.5555555555555556,
+      "people": 0,
+      "creative": 0.6666666666666666,
+      "analytical": 0,
+      "hands_on": 0,
+      "business": 0,
+      "environment": 0,
+      "health": 0,
+      "innovation": 1
+    },
+    "workstyle": {
+      "teamwork": 1,
+      "independence": 1,
+      "leadership": 0,
+      "organization": 0,
+      "problem_solving": 1
     },
     "values": {
       "growth": 0.5,
