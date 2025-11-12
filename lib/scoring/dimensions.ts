@@ -66,12 +66,12 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 5,
-    text: "Pidätkö enemmän itse tekemisestä kuin kuuntelemisesta?",
+    text: "Pidätkö työstä, jossa käytät käsiäsi ja työkaluja?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.1,
     reverse: false,
-    notes: "Ammattikoulu indicator (practical over theory)"
+    notes: "Manual/technical work indicator (differentiated from Q2)"
   },
   {
     q: 6,
@@ -140,12 +140,12 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 13,
-    text: "Tiedätkö jo, mitä haluaisit tehdä tulevaisuudessa?",
+    text: "Onko sinulla selkeä suunnitelma lukion tai ammattikoulun jälkeen?",
     dimension: 'values',
     subdimension: 'career_clarity',
     weight: 0.9,
     reverse: false,
-    notes: "Similar to Q8, lower weight to avoid over-weighting"
+    notes: "Post-secondary planning (more concrete than Q8)"
   },
   {
     q: 14,
@@ -214,12 +214,12 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 21,
-    text: "Haluaisitko auttaa sairaita tai loukkaantuneita ihmisiä?",
+    text: "Haluaisitko opettaa tai kouluttaa muita ihmisiä?",
     dimension: 'interests',
-    subdimension: 'people',
+    subdimension: 'education',
     weight: 1.2,
     reverse: false,
-    notes: "Healthcare indicator (overlaps Q16 but more specific)"
+    notes: "Teaching/education indicator (differentiated from Q16 care focus)"
   },
   {
     q: 22,
@@ -252,12 +252,12 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 25,
-    text: "Haluaisitko, että työsi olisi ulkona luonnossa?",
-    dimension: 'context',
-    subdimension: 'work_environment',
-    weight: 1.1,
+    text: "Pidätkö fyysisestä työstä, joka vaatii liikkumista?",
+    dimension: 'interests',
+    subdimension: 'hands_on',
+    weight: 1.0,
     reverse: false,
-    notes: "Outdoor work preference"
+    notes: "Physical/active work preference (differentiated from Q18 nature focus)"
   },
   {
     q: 26,
