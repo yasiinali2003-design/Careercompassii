@@ -1643,7 +1643,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 0,
-      "leadership": 0,
+      "leadership": 0.8,
       "organization": 1,
       "problem_solving": 1
     },
@@ -1673,7 +1673,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 0,
-      "leadership": 0,
+      "leadership": 0.8,
       "organization": 0,
       "problem_solving": 1
     },
@@ -2455,7 +2455,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 0,
       "independence": 0,
-      "leadership": 0,
+      "leadership": 0.8,
       "organization": 1,
       "problem_solving": 1
     },
@@ -2545,7 +2545,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 0,
       "independence": 0,
-      "leadership": 0,
+      "leadership": 0.8,
       "organization": 1,
       "problem_solving": 0
     },
@@ -2605,7 +2605,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 0,
       "independence": 0,
-      "leadership": 0,
+      "leadership": 0.8,
       "organization": 0,
       "problem_solving": 1
     },
@@ -2635,7 +2635,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 0,
-      "leadership": 0,
+      "leadership": 0.8,
       "organization": 1,
       "problem_solving": 0
     },
@@ -2695,7 +2695,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 0,
       "independence": 0,
-      "leadership": 0,
+      "leadership": 0.8,
       "organization": 0,
       "problem_solving": 1
     },
@@ -2725,7 +2725,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 0,
       "independence": 0,
-      "leadership": 0,
+      "leadership": 0.8,
       "organization": 0,
       "problem_solving": 1
     },
@@ -3630,7 +3630,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 0,
       "independence": 0,
-      "leadership": 0,
+      "leadership": 0.8,
       "organization": 1,
       "problem_solving": 1
     },
@@ -3991,7 +3991,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 0,
       "independence": 0,
-      "leadership": 0,
+      "leadership": 0.8,
       "organization": 1,
       "problem_solving": 1
     },
@@ -4613,7 +4613,7 @@ export const CAREER_VECTORS = [
       "creative": 0.6666666666666666,
       "analytical": 0.8333333333333334,
       "hands_on": 0,
-      "business": 0,
+      "business": 0.8,
       "environment": 0,
       "health": 0,
       "innovation": 0
@@ -4703,7 +4703,7 @@ export const CAREER_VECTORS = [
       "creative": 0,
       "analytical": 0.8333333333333334,
       "hands_on": 0,
-      "business": 0,
+      "business": 0.8,
       "environment": 0,
       "health": 0,
       "innovation": 0
@@ -7443,7 +7443,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 1,
-      "leadership": 0,
+      "leadership": 0.6,
       "organization": 0,
       "problem_solving": 1
     },
@@ -7534,7 +7534,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 1,
-      "leadership": 0,
+      "leadership": 0.6,
       "organization": 0,
       "problem_solving": 1
     },
@@ -7564,7 +7564,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 1,
-      "leadership": 0,
+      "leadership": 0.6,
       "organization": 0,
       "problem_solving": 1
     },
@@ -7594,7 +7594,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 1,
-      "leadership": 0,
+      "leadership": 0.6,
       "organization": 0,
       "problem_solving": 1
     },
@@ -7684,7 +7684,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 1,
-      "leadership": 0,
+      "leadership": 0.6,
       "organization": 0,
       "problem_solving": 1
     },
@@ -7834,7 +7834,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 1,
-      "leadership": 0,
+      "leadership": 0.6,
       "organization": 0,
       "problem_solving": 1
     },
@@ -7984,7 +7984,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 1,
-      "leadership": 0,
+      "leadership": 0.6,
       "organization": 0,
       "problem_solving": 1
     },
@@ -8164,7 +8164,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 1,
-      "leadership": 0,
+      "leadership": 0.6,
       "organization": 0,
       "problem_solving": 1
     },
@@ -8344,7 +8344,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 1,
-      "leadership": 0,
+      "leadership": 0.6,
       "organization": 0,
       "problem_solving": 1
     },
@@ -8434,7 +8434,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 1,
-      "leadership": 0,
+      "leadership": 0.6,
       "organization": 0,
       "problem_solving": 1
     },
@@ -8464,7 +8464,7 @@ export const CAREER_VECTORS = [
     "workstyle": {
       "teamwork": 1,
       "independence": 1,
-      "leadership": 0,
+      "leadership": 0.6,
       "organization": 0,
       "problem_solving": 1
     },
