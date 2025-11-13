@@ -22103,7 +22103,4567 @@ export const careersData: CareerFI[] = [
     keywords: ["ymparistoteknikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+,
 
+{
+    id: "product-manager",
+    category: "innovoija",
+    title_fi: "Tuotepäällikkö",
+    title_en: "Product Manager",
+    short_description: "Tuotepäällikkö määrittelee ja kehittää digitaalisia tuotteita vastaamaan käyttäjien tarpeita ja liiketoimintatavoitteita. Koordinoi kehitystiimejä ja tekee strategisia päätöksiä.",
+    main_tasks: [
+          "Tuotevision ja strategian määrittely",
+          "Kehitysjonon priorisointi ja roadmapin laatiminen",
+          "Käyttäjätarpeiden tutkiminen ja analysointi",
+          "Tiimien koordinointi ja päätöksenteko",
+          "Tuotteen menestyksen mittaaminen ja optimointi"
+    ],
+    impact: [
+          "Luo tuotteita jotka parantavat ihmisten arkea",
+          "Ohjaa teknologiakehitystä käyttäjälähtöisesti",
+          "Mahdollistaa liiketoiminnan kasvun ja innovaatiot"
+    ],
+    education_paths: [
+          "AMK: Tradenomi, tietotekniikka",
+          "Yliopisto: Kauppatieteiden tai tietotekniikan maisteri",
+          "Sertifikaatit: Product Management Professional, CSPO"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Tuotestrategia ja roadmap-suunnittelu",
+          "Käyttäjäkokemus ja UX/UI-ymmärrys",
+          "Data-analyysi ja mittarit",
+          "Sidosryhmähallinta ja viestintä",
+          "Ketterät menetelmät (Agile, Scrum)"
+    ],
+    tools_tech: [
+          "Jira",
+          "Figma",
+          "Google Analytics",
+          "Mixpanel",
+          "Productboard",
+          "Miro"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "C1" },
+    salary_eur_month: {
+      median: 5200,
+      range: [4500, 7000],
+      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitaalisten tuotteiden kasvu luo jatkuvasti kysyntää. Helsingin startup-sektori erityisen vahva.",
+      source: { name: "Business Finland", url: "https://www.businessfinland.fi/", year: 2024 }
+    },
+    entry_roles: [
+          "Associate Product Manager",
+          "Product Owner",
+          "Junior Product Manager"
+    ],
+    career_progression: [
+          "Senior Product Manager",
+          "Lead Product Manager",
+          "VP of Product",
+          "CPO"
+    ],
+    typical_employers: [
+          "Teknologiayritykset",
+          "Startup-yritykset",
+          "Digitaaliset palvelutalot",
+          "IT-konsultit"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "TEK - Tekniikan akateemiset",
+    useful_links: [
+          {
+                "name": "Product Management Finland",
+                "url": "https://www.productmanagement.fi/"
+          },
+          {
+                "name": "TEK Palkkavertailu",
+                "url": "https://www.tek.fi/fi/ura/palkkavertailu"
+          }
+    ],
+    related_careers: ["ux-researcher","scrum-master","business-analyst"],
+    study_length_estimate_months: 60
+  },
+
+{
+    id: "scrum-master",
+    category: "jarjestaja",
+    title_fi: "Scrum Master",
+    title_en: "Scrum Master",
+    short_description: "Scrum Master fasilitoi ketterää kehitystä ja varmistaa että tiimi työskentelee tehokkaasti Scrum-viitekehyksessä. Poistaa esteitä ja valmentaa tiimiä jatkuvaan parantamiseen.",
+    main_tasks: [
+          "Scrum-seremonioiden fasilitointi (daily, planning, retro)",
+          "Esteiden tunnistaminen ja poistaminen",
+          "Tiimin valmentaminen ketterissä menetelmissä",
+          "Prosessien jatkuva parantaminen",
+          "Yhteistyö Product Ownerin ja sidosryhmien kanssa"
+    ],
+    impact: [
+          "Parantaa tiimin tuottavuutta ja motivaatiota",
+          "Mahdollistaa nopeamman tuotekehityksen",
+          "Luo paremman työkult tuurin"
+    ],
+    education_paths: [
+          "Korkeakoulututkinto (ei tiukka vaatimus)",
+          "Sertifikaatit: CSM, PSM, SAFe Scrum Master"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Scrum ja ketterät menetelmät",
+          "Fasilitointi ja valmentaminen",
+          "Konfliktiratkaisu",
+          "Tiimidynamiikka ja motivointi",
+          "Prosessien kehittäminen"
+    ],
+    tools_tech: [
+          "Jira",
+          "Confluence",
+          "Miro",
+          "Azure DevOps"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4800,
+      range: [4000, 6500],
+      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Ketterän kehityksen yleistyminen lisää tarvetta kokeneil Scrum Mastereille.",
+      source: { name: "Traficom", url: "https://www.traficom.fi/", year: 2024 }
+    },
+    entry_roles: [
+          "Scrum Master"
+    ],
+    career_progression: [
+          "Senior Scrum Master",
+          "Agile Coach",
+          "Program Manager"
+    ],
+    typical_employers: [
+          "IT-yritykset",
+          "Digitaaliset palvelut",
+          "Konsulttitalot"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "TEK - Tekniikan akateemiset",
+    useful_links: [
+          {
+                "name": "Scrum.org",
+                "url": "https://www.scrum.org/"
+          },
+          {
+                "name": "Scrum Alliance",
+                "url": "https://www.scrumalliance.org/"
+          }
+    ],
+    related_careers: ["product-manager","project-coordinator"],
+    study_length_estimate_months: 48
+  },
+
+{
+    id: "devops-engineer",
+    category: "innovoija",
+    title_fi: "DevOps-insinööri",
+    title_en: "DevOps Engineer",
+    short_description: "DevOps-insinööri automatisoi ohjelmistokehityksen prosesseja ja ylläpitää IT-infrastruktuuria. Yhdistää kehityksen ja operatiivisen työn saumattomaksi kokonaisuudeksi.",
+    main_tasks: [
+          "CI/CD-putkistojen rakentaminen ja ylläpito",
+          "Infrastruktuurin automatisointi (Infrastructure as Code)",
+          "Pilvipalveluiden konfigurointi ja hallinta",
+          "Monitorointi- ja loggausjärjestelmien ylläpito",
+          "Tietoturvan ja skaalautuvuuden varmistaminen"
+    ],
+    impact: [
+          "Nopeuttaa ohjelmistojen julkaisusykliä",
+          "Vähentää manuaalista työtä automaation avulla",
+          "Parantaa järjestelmien luotettavuutta"
+    ],
+    education_paths: [
+          "AMK: Tietotekniikka, ohjelmistotekniikka",
+          "Yliopisto: Tietotekniikan DI",
+          "Sertifikaatit: AWS Certified, Kubernetes CKA"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Linux-järjestelmähallin ta",
+          "Pilvipalvelut (AWS, Azure, GCP)",
+          "Konttiteknologia (Docker, Kubernetes)",
+          "Automaatiotyökalut (Ansible, Terraform)",
+          "CI/CD (Jenkins, GitLab CI, GitHub Actions)"
+    ],
+    tools_tech: [
+          "Docker",
+          "Kubernetes",
+          "Terraform",
+          "AWS/Azure",
+          "Jenkins",
+          "Prometheus",
+          "Grafana"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "C1" },
+    salary_eur_month: {
+      median: 5400,
+      range: [4500, 7500],
+      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Pilvipalveluiden ja DevOps-kulttuurin yleistyminen luo vahvaa kysyntää.",
+      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+    },
+    entry_roles: [
+          "Junior DevOps Engineer",
+          "System Administrator"
+    ],
+    career_progression: [
+          "Senior DevOps Engineer",
+          "DevOps Lead",
+          "Site Reliability Engineer",
+          "Platform Engineer"
+    ],
+    typical_employers: [
+          "IT-yritykset",
+          "Pilvipalveluyritykset",
+          "Teknologiastartupit"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "TEK - Tekniikan akateemiset",
+    useful_links: [
+          {
+                "name": "DevOps Institute",
+                "url": "https://devopsinstitute.com/"
+          },
+          {
+                "name": "TEK Palkkavertailu",
+                "url": "https://www.tek.fi/fi/ura/palkkavertailu"
+          }
+    ],
+    related_careers: ["site-reliability-engineer","platform-engineer","backend-developer"],
+    study_length_estimate_months: 48
+  },
+
+{
+    id: "data-analyst",
+    category: "innovoija",
+    title_fi: "Data-analyytikko",
+    title_en: "Data Analyst",
+    short_description: "Data-analyytikko kerää, käsittelee ja analysoi dataa liiketoimintapäätösten tueksi. Muuttaa raakadatan ymmärrettäviksi raporteiksi ja visualisoinneiksi.",
+    main_tasks: [
+          "Datan kerääminen ja siivous",
+          "Tilastollinen analyysi ja raportointi",
+          "Visualisointien ja dashboardien luonti",
+          "Liiketoimintasuositusten antaminen datan pohjalta",
+          "SQL-kyselyiden kirjoittaminen"
+    ],
+    impact: [
+          "Tukee parempia liiketoimintapäätöksiä",
+          "Tunnistaa kasvumahdollisuuksia datasta",
+          "Tehostaa prosesseja analytiikan avulla"
+    ],
+    education_paths: [
+          "AMK: Tietojenkäsittely, liiketalous",
+          "Yliopisto: Tilastotiede, matematiikka, tietotekniikka",
+          "Bootcampit: Data Analytics intensiivikurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "SQL ja tietokannat",
+          "Excel ja taulukkolaskenta (edistynyt)",
+          "Visualisointityökalut (Tableau, Power BI)",
+          "Tilastollinen analyysi",
+          "Python/R-ohjelmointi"
+    ],
+    tools_tech: [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Power BI",
+          "Excel",
+          "Google Analytics"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4300,
+      range: [3500, 5500],
+      source: { name: "Tilastokeskus", url: "https://www.stat.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Data-ohjattu päätöksenteko yleistyy kaikilla aloilla.",
+      source: { name: "Business Finland", url: "https://www.businessfinland.fi/", year: 2024 }
+    },
+    entry_roles: [
+          "Junior Data Analyst",
+          "Data Analyst"
+    ],
+    career_progression: [
+          "Senior Data Analyst",
+          "Data Scientist",
+          "Analytics Manager"
+    ],
+    typical_employers: [
+          "IT-yritykset",
+          "Konsulttitalot",
+          "Kaupan alan yritykset",
+          "Rahoitusala"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "TEK - Tekniikan akateemiset / Toimihenkilöunioni",
+    useful_links: [
+          {
+                "name": "Tilastokeskus",
+                "url": "https://www.stat.fi/"
+          },
+          {
+                "name": "Data Science Society Finland",
+                "url": "https://www.datasciencesociety.fi/"
+          }
+    ],
+    related_careers: ["business-analyst","health-data-analyst"],
+    study_length_estimate_months: 36
+  },
+
+{
+    id: "ux-researcher",
+    category: "innovoija",
+    title_fi: "UX-tutkija",
+    title_en: "UX Researcher",
+    short_description: "UX-tutkija selvittää käyttäjien tarpeita, käyttäytymistä ja odotuksia tutkimusmenetelmin. Tuottaa oivalluksia tuotesuunnittelun ja kehityksen tueksi.",
+    main_tasks: [
+          "Käyttäjätutkimusten suunnittelu ja toteutus",
+          "Haastattelujen ja käytettävyystestien järjestäminen",
+          "Käyttäjäpersoonien ja customer journeyjen luonti",
+          "Tutkimustulosten analysointi ja raportointi",
+          "Yhteistyö suunnittelijoiden ja kehittäjien kanssa"
+    ],
+    impact: [
+          "Varmistaa että tuotteet vastaavat käyttäjien tarpeisiin",
+          "Säästää kehityskustannuksia oikeiden ratkaisujen avulla",
+          "Parantaa käyttäjäkokemusta ja asiakastyytyväisyyttä"
+    ],
+    education_paths: [
+          "Yliopisto: Kognitiotiede, psykologia, tietotekniikka",
+          "AMK: Medianomi (UX-suunnittelu)",
+          "Sertifikaatit: UX Research certifications"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Käyttäjätutkimusmenetelmät (haastattelut, testit, kyselyt)",
+          "Laadullinen ja määrällinen analyysi",
+          "Empatia ja vuorovaikutustaidot",
+          "Prototyyppien testaus",
+          "Raportointi ja storytelling"
+    ],
+    tools_tech: [
+          "UserTesting",
+          "Optimal Workshop",
+          "Miro",
+          "Figma",
+          "Google Forms",
+          "Dovetail"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 5800],
+      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Käyttäjälähtöinen suunnittelu arvostetaan yhä enemmän digitaalisessa tuotekehityksessä.",
+      source: { name: "Finnish UX Association", url: "https://www.uxfinland.fi/", year: 2024 }
+    },
+    entry_roles: [
+          "UX Researcher",
+          "Junior UX Researcher"
+    ],
+    career_progression: [
+          "Senior UX Researcher",
+          "Lead UX Researcher",
+          "Research Manager"
+    ],
+    typical_employers: [
+          "Teknologiayritykset",
+          "Digitaaliset palvelutalot",
+          "Konsulttitalot"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "TEK - Tekniikan akateemiset",
+    useful_links: [
+          {
+                "name": "UX Finland",
+                "url": "https://www.uxfinland.fi/"
+          },
+          {
+                "name": "Nielsen Norman Group",
+                "url": "https://www.nngroup.com/"
+          }
+    ],
+    related_careers: ["ui-ux-designer","product-manager"],
+    study_length_estimate_months: 60
+  },
+
+{
+    id: "growth-hacker",
+    category: "innovoija",
+    title_fi: "Kasvuhakkeri",
+    title_en: "Growth Hacker",
+    short_description: "Kasvuhakkeri keskittyy yrityksen nopean kasvun edistämiseen data-ohjattujen kokeilujen ja innovatiivisten markkinointitaktiikoiden avulla. Yhdistää markkinoinnin, datan ja teknologian.",
+    main_tasks: [
+          "Kasvukokeilujen suunnittelu ja toteutus (A/B-testit)",
+          "Konversiofunnelien optimointi",
+          "Viral-kasvun ja referral-ohjelmien rakentaminen",
+          "Käyttäjähankintakanavien testaaminen",
+          "Analytiikan ja mittareiden seuranta"
+    ],
+    impact: [
+          "Kiihdyttää yrityksen kasvua ja käyttäjähankintaa",
+          "Löytää kustannustehokkaita markkinointikanavia",
+          "Parantaa tuotteen käyttöönottoastetta"
+    ],
+    education_paths: [
+          "AMK/Yliopisto: Markkinointi, liiketalous, tietotekniikka",
+          "Bootcampit: Growth Hacking intensive courses",
+          "Itseopiskelu ja sertifikaatit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Kasvuhakkerointi ja kokeellinen markkinointi",
+          "Data-analyysi ja A/B-testaus",
+          "Digitaalinen markkinointi",
+          "SQL ja analytiikkatyökalut",
+          "Luova ongelmanratkaisu"
+    ],
+    tools_tech: [
+          "Google Analytics",
+          "Mixpanel",
+          "Optimizely",
+          "SQL",
+          "Facebook Ads",
+          "Google Ads",
+          "HubSpot"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "C1" },
+    salary_eur_month: {
+      median: 4800,
+      range: [4000, 6500],
+      source: { name: "Markkinointiviestinnän Toimistojen Liitto", url: "https://mtl.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Startup-sektori ja digitaalinen liiketoiminta kasvattavat kysyntää growth-osaamiselle.",
+      source: { name: "Business Finland", url: "https://www.businessfinland.fi/", year: 2024 }
+    },
+    entry_roles: [
+          "Growth Marketing Specialist",
+          "Digital Marketing Specialist"
+    ],
+    career_progression: [
+          "Senior Growth Hacker",
+          "Head of Growth",
+          "VP of Growth"
+    ],
+    typical_employers: [
+          "Startup-yritykset",
+          "Teknologiayritykset",
+          "SaaS-yritykset"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links: [
+          {
+                "name": "Growth Tribe",
+                "url": "https://growthtribe.io/"
+          },
+          {
+                "name": "Reforge",
+                "url": "https://www.reforge.com/"
+          }
+    ],
+    related_careers: ["product-manager","data-analyst","social-media-manager"],
+    study_length_estimate_months: 36
+  },
+
+{
+    id: "customer-success-manager",
+    category: "auttaja",
+    title_fi: "Asiakasmenestyksen asiantuntija",
+    title_en: "Customer Success Manager",
+    short_description: "Customer Success Manager varmistaa että asiakkaat saavuttavat tavoitteensa käyttäessään yrityksen tuotetta tai palvelua. Rakentaa pitkäaikaisia asiakassuhteita ja vähentää asiakaspoistumaa.",
+    main_tasks: [
+          "Asiakkaiden onboarding ja koulutus",
+          "Säännölliset asiakaspalaverit ja tukitoimenpiteet",
+          "Asiakastyytyväisyyden seuranta (NPS, CSAT)",
+          "Upsell- ja cross-sell-mahdollisuuksien tunnistaminen",
+          "Asiakaspalautteen kerääminen tuotekehitykseen"
+    ],
+    impact: [
+          "Varmistaa asiakkaiden menestyksen ja tyytyväisyyden",
+          "Vähentää asiakaspoistumaa (churn)",
+          "Kasvattaa asiakkuuksien arvoa"
+    ],
+    education_paths: [
+          "AMK/Yliopisto: Liiketalous, viestintä",
+          "Sertifikaatit: Customer Success certifications",
+          "Työkokemus asiakaspalvelusta tai myynnistä"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Asiakasymmärrys ja empatia",
+          "Vuorovaikutus- ja neuvottelutaidot",
+          "Ongelmanratkaisu",
+          "CRM-järjestelmät",
+          "Data-analyysi ja raportointi"
+    ],
+    tools_tech: [
+          "Salesforce",
+          "HubSpot",
+          "Intercom",
+          "Gainsight",
+          "Zendesk",
+          "Google Analytics"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "C1" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3500, 5500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "SaaS-liiketoiminnan kasvu lisää tarvetta Customer Success -rooleille.",
+      source: { name: "Business Finland", url: "https://www.businessfinland.fi/", year: 2024 }
+    },
+    entry_roles: [
+          "Customer Success Specialist",
+          "Customer Support Representative"
+    ],
+    career_progression: [
+          "Senior CSM",
+          "Customer Success Lead",
+          "VP of Customer Success"
+    ],
+    typical_employers: [
+          "SaaS-yritykset",
+          "Teknologiayritykset",
+          "B2B-palveluyritykset"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links: [
+          {
+                "name": "Customer Success Association",
+                "url": "https://www.customersuccess.org/"
+          },
+          {
+                "name": "Gainsight",
+                "url": "https://www.gainsight.com/"
+          }
+    ],
+    related_careers: ["account-executive","technical-support-specialist"],
+    study_length_estimate_months: 36
+  },
+
+{
+    id: "frontend-developer",
+    category: "innovoija",
+    title_fi: "Frontend-kehittäjä",
+    title_en: "Frontend Developer",
+    short_description: "Frontend-kehittäjä rakentaa verkkosivujen ja -sovellusten käyttöliittymät. Vastaa siitä, että käyttäjät voivat olla vuorovaikutuksessa sovelluksen kanssa sujuvasti ja visuaalisesti miellyttävästi.",
+    main_tasks: [
+          "Web-sovellusten käyttöliittymien ohjelmointi",
+          "Responsiivisten ja saavutettavien sivustojen rakentaminen",
+          "API-integraatiot backend-palveluihin",
+          "Suorituskyvyn optimointi",
+          "Yhteistyö suunnittelijoiden ja backend-kehittäjien kanssa"
+    ],
+    impact: [
+          "Luo käyttäjäystävällisiä digitaalisia kokemuksia",
+          "Mahdollistaa saavutettavan verkon kaikille",
+          "Parantaa liiketoiminnan digitaalista läsnäoloa"
+    ],
+    education_paths: [
+          "AMK: Tietotekniikka, ohjelmistotekniikka",
+          "Yliopisto: Tietotekniikan DI/kandidaatti",
+          "Bootcampit: Full Stack / Frontend Development"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "HTML, CSS, JavaScript/TypeScript",
+          "React, Vue, Angular (frontend-frameworkit)",
+          "Responsiivinen suunnittelu",
+          "Git versionhallinta",
+          "Web-saavutettavuus (WCAG)"
+    ],
+    tools_tech: [
+          "React",
+          "Vue.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Webpack",
+          "Git",
+          "Figma"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "C1" },
+    salary_eur_month: {
+      median: 4800,
+      range: [3800, 6500],
+      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitalisaatio ja web-sovellusten kysyntä kasvaa jatkuvasti.",
+      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+    },
+    entry_roles: [
+          "Junior Frontend Developer",
+          "Frontend Developer"
+    ],
+    career_progression: [
+          "Senior Frontend Developer",
+          "Lead Frontend Developer",
+          "Frontend Architect"
+    ],
+    typical_employers: [
+          "IT-yritykset",
+          "Digitaaliset palvelutalot",
+          "Startup-yritykset"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "TEK - Tekniikan akateemiset",
+    useful_links: [
+          {
+                "name": "MDN Web Docs",
+                "url": "https://developer.mozilla.org/"
+          },
+          {
+                "name": "Frontend Masters",
+                "url": "https://frontendmasters.com/"
+          }
+    ],
+    related_careers: ["ui-ux-designer","backend-developer"],
+    study_length_estimate_months: 36
+  },
+
+{
+    id: "backend-developer",
+    category: "innovoija",
+    title_fi: "Backend-kehittäjä",
+    title_en: "Backend Developer",
+    short_description: "Backend-kehittäjä rakentaa palvelinpuolen logiikan, tietokannat ja API:t. Vastaa siitä, että sovellukset toimivat tehokkaasti, turvallisesti ja skaalautuvasti.",
+    main_tasks: [
+          "Palvelinpuolen sovelluslogiikan ohjelmointi",
+          "Tietokantojen suunnittelu ja ylläpito",
+          "RESTful/GraphQL API:en rakentaminen",
+          "Integraatiot ulkoisiin järjestelmiin",
+          "Tietoturvan ja suorituskyvyn varmistaminen"
+    ],
+    impact: [
+          "Mahdollistaa toimivat ja luotettavat digitaaliset palvelut",
+          "Varmistaa tietoturvan ja yksityisyyden",
+          "Luo skaalautuvia ratkaisuja kasvavalle käyttäjämäärälle"
+    ],
+    education_paths: [
+          "AMK: Tietotekniikka, ohjelmistotekniikka",
+          "Yliopisto: Tietotekniikan DI/kandidaatti",
+          "Bootcampit: Full Stack / Backend Development"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Palvelinpuolen ohjelmointi (Node.js, Python, Java, Go)",
+          "Tietokannat (SQL, NoSQL)",
+          "API-suunnittelu ja toteutus",
+          "Tietoturva ja autentikointi",
+          "Pilvipalvelut (AWS, Azure, GCP)"
+    ],
+    tools_tech: [
+          "Node.js",
+          "Python",
+          "PostgreSQL",
+          "MongoDB",
+          "Docker",
+          "Redis",
+          "AWS/Azure"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "C1" },
+    salary_eur_month: {
+      median: 5000,
+      range: [4000, 7000],
+      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Backend-osaamisen kysyntä kasvaa digitaalisten palveluiden yleistyessä.",
+      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+    },
+    entry_roles: [
+          "Junior Backend Developer",
+          "Backend Developer"
+    ],
+    career_progression: [
+          "Senior Backend Developer",
+          "Lead Backend Developer",
+          "Backend Architect",
+          "Engineering Manager"
+    ],
+    typical_employers: [
+          "IT-yritykset",
+          "Teknologiastartupit",
+          "Rahoitusala",
+          "Julkinen sektori"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "TEK - Tekniikan akateemiset",
+    useful_links: [
+          {
+                "name": "TEK",
+                "url": "https://www.tek.fi/"
+          },
+          {
+                "name": "Stack Overflow",
+                "url": "https://stackoverflow.com/"
+          }
+    ],
+    related_careers: ["frontend-developer","devops-engineer","api-developer"],
+    study_length_estimate_months: 36
+  },
+
+{
+    id: "qa-engineer",
+    category: "innovoija",
+    title_fi: "Testausasiantuntija",
+    title_en: "QA Engineer",
+    short_description: "QA Engineer (Quality Assurance) varmistaa ohjelmistojen laadun testaamalla niitä systemaattisesti. Automatisoi testejä ja löytää virheet ennen tuotantoon viemistä.",
+    main_tasks: [
+          "Testaussuunnitelmien laatiminen",
+          "Automatisoidun testauksen rakentaminen ja ylläpito",
+          "Manuaalinen testaus ja bugien raportointi",
+          "Regressiotestaus julkaisujen yhteydessä",
+          "Yhteistyö kehittäjien kanssa laadun parantamiseksi"
+    ],
+    impact: [
+          "Varmistaa ohjelmistojen toimivuuden ja luotettavuuden",
+          "Estää bugien pääsyn tuotantoon",
+          "Parantaa käyttäjäkokemusta laadukkaiden tuotteiden avulla"
+    ],
+    education_paths: [
+          "AMK: Tietotekniikka, ohjelmistotekniikka",
+          "Yliopisto: Tietotekniikan tutkinto",
+          "Sertifikaatit: ISTQB Foundation/Advanced"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Testausmetodit ja -strategiat",
+          "Automaatiotestaus (Selenium, Cypress, Jest)",
+          "Testien suunnittelu ja dokumentointi",
+          "Bugien raportointi ja seuranta",
+          "Ohjelmointitaidot (Python, JavaScript)"
+    ],
+    tools_tech: [
+          "Selenium",
+          "Cypress",
+          "Jest",
+          "Jira",
+          "Postman",
+          "Git"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3500, 5500],
+      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Ohjelmistojen laadunvarmistus pysyy tärkeänä, mutta automatisointi muuttaa roolia.",
+      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+    },
+    entry_roles: [
+          "QA Tester",
+          "Junior QA Engineer"
+    ],
+    career_progression: [
+          "Senior QA Engineer",
+          "QA Lead",
+          "Test Automation Engineer",
+          "QA Manager"
+    ],
+    typical_employers: [
+          "IT-yritykset",
+          "Pelifirmat",
+          "Rahoitusala",
+          "Teleoperaattorit"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "TEK - Tekniikan akateemiset",
+    useful_links: [
+          {
+                "name": "ISTQB",
+                "url": "https://www.istqb.org/"
+          },
+          {
+                "name": "Test Automation University",
+                "url": "https://testautomationu.applitools.com/"
+          }
+    ],
+    related_careers: ["backend-developer","frontend-developer"],
+    study_length_estimate_months: 36
+  },
+
+{
+    id: "technical-writer",
+    category: "luova",
+    title_fi: "Tekninen kirjoittaja",
+    title_en: "Technical Writer",
+    short_description: "Tekninen kirjoittaja luo ymmärrettävää dokumentaatiota teknisistä tuotteista ja palveluista. Muuttaa monimutkaisen teknologian helposti omaksuttaviksi ohjeiksi ja oppaaksi.",
+    main_tasks: [
+          "API-dokumentaation ja kehittäjädokumenttien kirjoittaminen",
+          "Käyttöohjeiden ja oppaiden laatiminen",
+          "Release notes ja changelogs",
+          "Yhteistyö kehittäjien ja suunnittelijoiden kanssa",
+          "Dokumentaation ylläpito ja päivitys"
+    ],
+    impact: [
+          "Helpottaa tuotteiden käyttöönottoa ja käyttöä",
+          "Vähentää tukipyyntöjä selkeän dokumentaation avulla",
+          "Parantaa kehittäjäkokemusta teknisillä dokumenteilla"
+    ],
+    education_paths: [
+          "AMK/Yliopisto: Viestintä, kieli ja kulttuuri, tekninen viestintä",
+          "Tietotekniikka + kirjoitustaidot",
+          "Sertifikaatit: Technical Communication certifications"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Selkeä ja ytimekäs kirjoittaminen",
+          "Tekninen ymmärrys (ohjelmointi, API:t)",
+          "Dokumentointityökalut (Markdown, Docs-as-Code)",
+          "Informaatioarkkitehtuuri",
+          "Englannin kieli (erinomainen)"
+    ],
+    tools_tech: [
+          "Markdown",
+          "Git",
+          "Docs-as-Code tools",
+          "Confluence",
+          "ReadTheDocs",
+          "Swagger/OpenAPI"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "C2" },
+    salary_eur_month: {
+      median: 4000,
+      range: [3300, 5200],
+      source: { name: "Viestinnän ammattilaiset", url: "https://viestijat.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Teknisten tuotteiden dokumentointitarve kasvaa, erityisesti API-taloudessa.",
+      source: { name: "Write the Docs", url: "https://www.writethedocs.org/", year: 2024 }
+    },
+    entry_roles: [
+          "Technical Writer",
+          "Documentation Specialist"
+    ],
+    career_progression: [
+          "Senior Technical Writer",
+          "Lead Technical Writer",
+          "Documentation Manager"
+    ],
+    typical_employers: [
+          "IT-yritykset",
+          "SaaS-yritykset",
+          "Teknologiastartupit"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Viestinnän ammattilaiset",
+    useful_links: [
+          {
+                "name": "Write the Docs",
+                "url": "https://www.writethedocs.org/"
+          },
+          {
+                "name": "Society for Technical Communication",
+                "url": "https://www.stc.org/"
+          }
+    ],
+    related_careers: ["copywriter","content-strategist"],
+    study_length_estimate_months: 36
+  },
+
+{
+    id: "site-reliability-engineer",
+    category: "innovoija",
+    title_fi: "SRE-insinööri",
+    title_en: "Site Reliability Engineer",
+    short_description: "Site Reliability Engineer (SRE) yhdistää ohjelmistokehityksen ja järjestelmähallinnon pitääkseen palvelut luotettavina ja skaalautuvina. Keskittyy automaatioon ja järjestelmän seurantaan.",
+    main_tasks: [
+          "Tuotantoympäristön luotettavuuden varmistaminen",
+          "Monitoroinnin ja hälytysjärjestelmien ylläpito",
+          "Incidenttien ratkaisu ja post-mortem-analyysit",
+          "Kapasiteettisuunnittelu ja skaalautuvuus",
+          "Automaation rakentaminen manuaalisen työn vähentämiseksi"
+    ],
+    impact: [
+          "Varmistaa palveluiden jatkuva saatavuus (uptime)",
+          "Nopeuttaa vikojen korjaamista ja palautumista",
+          "Parantaa järjestelmien luotettavuutta ja suorituskykyä"
+    ],
+    education_paths: [
+          "AMK: Tietotekniikka",
+          "Yliopisto: Tietotekniikan DI",
+          "Sertifikaatit: AWS, Kubernetes, SRE-specific certs"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Linux-järjestelmähallinta",
+          "Ohjelmointi (Python, Go, Bash)",
+          "Pilvipalvelut (AWS, GCP, Azure)",
+          "Observability (Prometheus, Grafana, ELK)",
+          "Incident management"
+    ],
+    tools_tech: [
+          "Kubernetes",
+          "Terraform",
+          "Prometheus",
+          "Grafana",
+          "PagerDuty",
+          "AWS/GCP",
+          "Python"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "C1" },
+    salary_eur_month: {
+      median: 5800,
+      range: [4800, 8000],
+      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Pilvipalveluiden ja microservices-arkkitehtuurin yleistyminen lisää SRE-kysyntää.",
+      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+    },
+    entry_roles: [
+          "Junior SRE",
+          "System Administrator"
+    ],
+    career_progression: [
+          "Senior SRE",
+          "Staff SRE",
+          "SRE Manager",
+          "Principal Engineer"
+    ],
+    typical_employers: [
+          "Teknologiayritykset",
+          "Pilvipalveluyritykset",
+          "Rahoitusala"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: true, travel: "vähän" },
+    union_or_CBA: "TEK - Tekniikan akateemiset",
+    useful_links: [
+          {
+                "name": "Google SRE Book",
+                "url": "https://sre.google/books/"
+          },
+          {
+                "name": "SRE Weekly",
+                "url": "https://sreweekly.com/"
+          }
+    ],
+    related_careers: ["devops-engineer","platform-engineer"],
+    study_length_estimate_months: 48
+  },
+
+{
+    id: "solutions-architect",
+    category: "visionaari",
+    title_fi: "Ratkaisuarkkitehti",
+    title_en: "Solutions Architect",
+    short_description: "Ratkaisuarkkitehti suunnittelee kokonaisvaltaisia teknologiaratkaisuja liiketoiminnan tarpeisiin. Yhdistää teknisen osaamisen ja liiketoimintaymmärryksen.",
+    main_tasks: [
+          "Teknisten ratkaisujen arkkitehtuurin suunnittelu",
+          "Asiakkaiden liiketoimintatarpeiden kartoitus",
+          "Järjestelmäintegraatioiden suunnittelu",
+          "Teknisten ehdotusten ja dokumentaation laatiminen",
+          "Yhteistyö myynti- ja kehitystiimien kanssa"
+    ],
+    impact: [
+          "Mahdollistaa skaalautuvat ja tehokkaat IT-ratkaisut",
+          "Yhdistää liiketoimintatavoitteet teknologiaan",
+          "Ohjaa organisaation teknologiavalintoja"
+    ],
+    education_paths: [
+          "AMK: Tietotekniikka (+ työkokemus)",
+          "Yliopisto: Tietotekniikan DI",
+          "Sertifikaatit: AWS Solutions Architect, Azure Architect"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Arkkitehtuurisuunnittelu ja -mallit",
+          "Pilvipalvelut (AWS, Azure, GCP)",
+          "Liiketoimintaymmärrys",
+          "Stakeholder-hallinta",
+          "Tekninen dokumentointi"
+    ],
+    tools_tech: [
+          "AWS/Azure/GCP",
+          "Microservices",
+          "API Design",
+          "UML",
+          "Enterprise Architecture tools"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "C1" },
+    salary_eur_month: {
+      median: 6200,
+      range: [5000, 8500],
+      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitaalitransformaatio ja pilvisiirtymät lisäävät kysyntää arkkitehtiosaamiselle.",
+      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+    },
+    entry_roles: [
+          "Software Developer",
+          "System Engineer"
+    ],
+    career_progression: [
+          "Senior Solutions Architect",
+          "Enterprise Architect",
+          "Chief Architect"
+    ],
+    typical_employers: [
+          "IT-konsultit",
+          "Pilvipalveluyritykset",
+          "Suuryritykset"
+    ],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "TEK - Tekniikan akateemiset",
+    useful_links: [
+          {
+                "name": "AWS Architecture",
+                "url": "https://aws.amazon.com/architecture/"
+          },
+          {
+                "name": "The Open Group",
+                "url": "https://www.opengroup.org/"
+          }
+    ],
+    related_careers: ["platform-engineer","devops-engineer"],
+    study_length_estimate_months: 60
+  },
+
+{
+    id: "platform-engineer",
+    category: "innovoija",
+    title_fi: "Alustasuunnittelija",
+    title_en: "Platform Engineer",
+    short_description: "Platform Engineer rakentaa ja ylläpitää sisäisiä kehitysalustoja jotka mahdollistavat kehittäjien tehokkaan työskentelyn. Luo työkaluja ja infrastruktuuria kehitystiimeille.",
+    main_tasks: [
+          "Sisäisten kehitysalustojen (Internal Developer Platform) rakentaminen",
+          "CI/CD-putkistojen ja työkalujen kehittäminen",
+          "Infrastruktuurin automatisointi",
+          "Kehittäjäkokemuksen (Developer Experience) parantaminen",
+          "Dokumentaation ja tuen tarjoaminen kehittäjille"
+    ],
+    impact: [
+          "Nopeuttaa sovelluskehitystä ja deploymentteja",
+          "Parantaa kehittäjien tuottavuutta ja kokemusta",
+          "Standardisoi ja automatisoi kehitysprosesseja"
+    ],
+    education_paths: [
+          "AMK: Tietotekniikka",
+          "Yliopisto: Tietotekniikan DI",
+          "Sertifikaatit: Kubernetes, Terraform, Cloud certifications"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Kubernetes ja konttiteknologia",
+          "Infrastructure as Code (Terraform, Pulumi)",
+          "CI/CD-työkalut",
+          "Pilvipalvelut",
+          "Ohjelmointi (Python, Go)"
+    ],
+    tools_tech: [
+          "Kubernetes",
+          "Terraform",
+          "ArgoCD",
+          "GitHub Actions",
+          "AWS/Azure/GCP",
+          "Helm"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "C1" },
+    salary_eur_month: {
+      median: 5600,
+      range: [4700, 7500],
+      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Platform Engineering on nousussa DevOpsin seuraava evoluutio.",
+      source: { name: "Gartner", url: "https://www.gartner.com/", year: 2024 }
+    },
+    entry_roles: [
+          "DevOps Engineer",
+          "Site Reliability Engineer"
+    ],
+    career_progression: [
+          "Senior Platform Engineer",
+          "Platform Lead",
+          "Engineering Manager"
+    ],
+    typical_employers: [
+          "Teknologiayritykset",
+          "Startup-yritykset",
+          "Suuret IT-organisaatiot"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "TEK - Tekniikan akateemiset",
+    useful_links: [
+          {
+                "name": "Platform Engineering",
+                "url": "https://platformengineering.org/"
+          },
+          {
+                "name": "CNCF",
+                "url": "https://www.cncf.io/"
+          }
+    ],
+    related_careers: ["devops-engineer","site-reliability-engineer"],
+    study_length_estimate_months: 48
+  },
+
+{
+    id: "api-developer",
+    category: "innovoija",
+    title_fi: "API-kehittäjä",
+    title_en: "API Developer",
+    short_description: "API-kehittäjä suunnittelee ja toteuttaa rajapintoja (API) jotka mahdollistavat eri järjestelmien ja sovellusten välisen kommunikaation. Luo tehokkaita ja turvallisia API-ratkaisuja.",
+    main_tasks: [
+          "RESTful ja GraphQL API:en suunnittelu ja toteutus",
+          "API-dokumentaation laatiminen (OpenAPI/Swagger)",
+          "API-autentikoinnin ja -turvallisuuden varmistaminen",
+          "API:en versiointi ja ylläpito",
+          "Suorituskyvyn optimointi ja monitorointi"
+    ],
+    impact: [
+          "Mahdollistaa järjestelmien integroinnin",
+          "Luo uusia liiketoimintamahdollisuuksia API-taloudessa",
+          "Parantaa ohjelmistojen modulaarisuutta ja uudelleenkäytettävyyttä"
+    ],
+    education_paths: [
+          "AMK: Tietotekniikka, ohjelmistotekniikka",
+          "Yliopisto: Tietotekniikan tutkinto",
+          "Bootcampit: Backend Development"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Backend-ohjelmointi (Node.js, Python, Java)",
+          "REST ja GraphQL API-suunnittelu",
+          "API-dokumentointi (OpenAPI)",
+          "Tietoturva (OAuth, JWT)",
+          "Tietokannat ja data-mallinnus"
+    ],
+    tools_tech: [
+          "Node.js",
+          "Express/FastAPI",
+          "Postman",
+          "Swagger",
+          "MongoDB/PostgreSQL",
+          "Docker"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4800,
+      range: [3800, 6500],
+      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "API-talouden kasvu ja mikropalveluarkkitehtuurit lisäävät kysyntää.",
+      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+    },
+    entry_roles: [
+          "Junior Backend Developer",
+          "API Developer"
+    ],
+    career_progression: [
+          "Senior API Developer",
+          "API Architect",
+          "Backend Lead"
+    ],
+    typical_employers: [
+          "IT-yritykset",
+          "SaaS-yritykset",
+          "Rahoitusala",
+          "Integraatiopalvelut"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "TEK - Tekniikan akateemiset",
+    useful_links: [
+          {
+                "name": "OpenAPI Specification",
+                "url": "https://www.openapis.org/"
+          },
+          {
+                "name": "API Academy",
+                "url": "https://apiacademy.co/"
+          }
+    ],
+    related_careers: ["backend-developer","solutions-architect"],
+    study_length_estimate_months: 36
+  }
+,
+
+  {
+    id: "content-strategist",
+    category: "luova",
+    title_fi: "Sisältöstrategisti",
+    title_en: "Content Strategist",
+    short_description: "Sisältöstrategisti suunnittelee ja johtaa organisaation sisältötuotantoa. Varmistaa että sisältö tukee liiketoiminnan tavoitteita ja palvelee kohdeyleisöä tehokkaasti.",
+    main_tasks: [
+          "Sisältöstrategian suunnittelu ja toteutus",
+          "Kohdeyleis öiden tutkiminen ja määrittely",
+          "Sisältökalenterin ja julkaisuaikataulun hallinta",
+          "Sisältötiimin johtaminen ja koordinointi",
+          "Sisällön tehokkuuden mittaaminen ja optimointi"
+    ],
+    impact: [
+          "Vahvistaa brändin viestintää ja näkyvyyttä",
+          "Parantaa asiakasymmärrystä sisällön avulla",
+          "Kasvattaa liidejä ja konversioita"
+    ],
+    education_paths: [
+          "AMK: Medianomi, tradenomi (markkinointi)",
+          "Yliopisto: Viestinnän maisteri",
+          "Lisäkoulutus: Content Marketing sertifikaatit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Sisältömarkkinointi ja storytelling",
+          "SEO ja hakukoneoptimoin ti",
+          "Digitaalinen markkinointi",
+          "Analytiikka ja mittaaminen",
+          "Projektinhallinta"
+    ],
+    tools_tech: ["WordPress","HubSpot","Google Analytics","SEMrush","Ahrefs","Content Management Systems"],
+    languages_required: { fi: "C2", sv: "B1", en: "C1" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3500, 5500],
+      source: { name: "Viestinnän ammattilaiset", url: "https://viestijat.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Sisältömarkkinoinnin merkitys kasvaa jatkuvasti digitaalisessa liiketoiminnassa.",
+      source: { name: "MTL", url: "https://mtl.fi/", year: 2024 }
+    },
+    entry_roles: ["Content Writer","Content Coordinator","Junior Content Strategist"],
+    career_progression: ["Senior Content Strategist","Content Director","Head of Content"],
+    typical_employers: ["Mainostoimistot","Digitaaliset palvelutalot","Yritykset (sisäinen viestintä)","Media-alan yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Viestinnän ammattilaiset",
+    useful_links: [
+          {
+                "name": "Content Marketing Institute",
+                "url": "https://contentmarketinginstitute.com/"
+          },
+          {
+                "name": "Viestijät",
+                "url": "https://viestijat.fi/"
+          }
+    ],
+    keywords: ["sisältöstrategisti","content","markkinointi","viestintä"],
+    study_length_estimate_months: 36
+  },
+
+  {
+    id: "social-media-manager",
+    category: "luova",
+    title_fi: "Sosiaalisen median asiantuntija",
+    title_en: "Social Media Manager",
+    short_description: "Sosiaalisen median asiantuntija hallinnoi organisaation läsnäoloa sosiaalisessa mediassa. Luo sisältöä, rakentaa yhteisöjä ja mittaa some-toiminnan vaikuttavuutta.",
+    main_tasks: [
+          "Sosiaalisen median strategian suunnittelu ja toteutus",
+          "Sisällön luominen eri kanaviin (Instagram, LinkedIn, TikTok, X)",
+          "Yhteisön hallinnointi ja vuorovaikutus seuraajien kanssa",
+          "Sosiaalisen median mainonnan suunnittelu ja toteutus",
+          "Analytiikan seuranta ja raportointi"
+    ],
+    impact: [
+          "Kasvattaa brändin näkyvyyttä ja tunnettavuutta",
+          "Rakentaa yhteisöä brändin ympärille",
+          "Tuottaa liidejä ja myyntiä sosiaalisesta mediasta"
+    ],
+    education_paths: [
+          "AMK: Medianomi, tradenomi",
+          "Yliopisto: Viestintä, markkinointi",
+          "Sertifikaatit: Meta Blueprint, Google Digital Marketing"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Sosiaalisen median alustat ja algoritmit",
+          "Visuaalinen sisällöntuotanto (kuvat, videot)",
+          "Copywriting ja storytelling",
+          "Community management",
+          "Paid social advertising"
+    ],
+    tools_tech: ["Meta Business Suite","Hootsuite","Canva","Adobe Creative Suite","Later","Sprout Social"],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5000],
+      source: { name: "MTL", url: "https://mtl.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Sosiaalinen media on keskeinen markkinointikanava, joka vaatii jatkuvasti osaajia.",
+      source: { name: "IAB Finland", url: "https://www.iab.fi/", year: 2024 }
+    },
+    entry_roles: ["Social Media Coordinator","Social Media Specialist"],
+    career_progression: ["Senior Social Media Manager","Head of Social Media","Digital Marketing Manager"],
+    typical_employers: ["Mainostoimistot","Yritykset","Media-alan yritykset","Influencer-agentuurit"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Viestinnän ammattilaiset",
+    useful_links: [
+          {
+                "name": "Someco",
+                "url": "https://someco.fi/"
+          },
+          {
+                "name": "IAB Finland",
+                "url": "https://www.iab.fi/"
+          }
+    ],
+    keywords: ["some","sosiaalinen media","markkinointi","instagram"],
+    study_length_estimate_months: 36
+  },
+
+  {
+    id: "podcast-producer",
+    category: "luova",
+    title_fi: "Podcast-tuottaja",
+    title_en: "Podcast Producer",
+    short_description: "Podcast-tuottaja vastaa podcastien kokonaisvaltaisesta tuotannosta ideasta julkaisuun. Suunnittelee sisältöä, koordinoi nauhoituksia ja editoi jaksoja kuulijay stävällisiksi kokonaisuuksiksi.",
+    main_tasks: [
+          "Podcast-konseptien ideoi nti ja kehittäminen",
+          "Vieraiden varaaminen ja haastattelujen valmistelu",
+          "Äänitallenteiden nauhoitus ja editointi",
+          "Julkaisu ja jakelu podcast-alustoille",
+          "Kuulijoiden analytiikan seuranta ja sisällön optimointi"
+    ],
+    impact: [
+          "Luo mielenkiintoista äänis isältöä kuuntelijoille",
+          "Vahvistaa brändiä ja asiantuntijuutta",
+          "Tavoittaa yleisöjä uudella tavalla"
+    ],
+    education_paths: [
+          "AMK: Medianomi (äänituotanto, journalismi)",
+          "Yliopisto: Viestintä",
+          "Itseopiskelu ja podcastaus kurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Ääni editointi (Audition, Audacity, Logic Pro)",
+          "Haastattelutekniikka ja tarinankerronta",
+          "Äänentallennus ja mikrofoni tekniikka",
+          "Podcast-alustojen hallinta",
+          "Markkinointi ja yleisön kasvataminen"
+    ],
+    tools_tech: ["Adobe Audition","Audacity","Anchor/Spotify for Podcasters","Buzzsprout","Riverside.fm"],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3600,
+      range: [2800, 5000],
+      source: { name: "Journalistiliitto", url: "https://www.journalistiliitto.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Podcastien suosio kasvaa Suomessa, mikä luo kysyntää tuottajille.",
+      source: { name: "Kansallinen audiovisuaalinen instituutti", url: "https://kavi.fi/", year: 2024 }
+    },
+    entry_roles: ["Podcast Assistant","Audio Producer"],
+    career_progression: ["Senior Podcast Producer","Audio Director","Content Director"],
+    typical_employers: ["Media-alan yritykset","Mainostoimistot","Yritykset (branded podcasts)","Freelance"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Journalistiliitto",
+    useful_links: [
+          {
+                "name": "Podcast.fi",
+                "url": "https://podcast.fi/"
+          },
+          {
+                "name": "Pacific Content",
+                "url": "https://www.pacificcontent.com/"
+          }
+    ],
+    keywords: ["podcast","äänituotanto","media","haastattelut"],
+    study_length_estimate_months: 24
+  },
+
+  {
+    id: "video-editor",
+    category: "luova",
+    title_fi: "Videoleikkaaja",
+    title_en: "Video Editor",
+    short_description: "Videoleikkaaja muokkaa raakamateriaalia valmiiksi videosisällöksi. Yhdistää leikkauksen, äänen, grafiikat ja efektit kiinnostaviksi tarinoiksi.",
+    main_tasks: [
+          "Videomateriaalin leikkaaminen ja editointi",
+          "Värikorjaus ja greidaus",
+          "Äänen editointi ja miksaus",
+          "Grafiikkojen ja tekstien lisääminen",
+          "Valmiin sisällön viimeistely ja exporttaus"
+    ],
+    impact: [
+          "Luo visuaalisesti kiinnostavaa videosisältöä",
+          "Välittää tarinoita visuaalisuuden kautta",
+          "Tukee markkinointia ja viestintää"
+    ],
+    education_paths: [
+          "AMK: Medianomi (elokuva, televisio)",
+          "Yliopisto: Elokuvataide",
+          "Itseopiskelu ja online-kurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Videoeditointiohjelmistot (Premiere Pro, Final Cut Pro, DaVinci Resolve)",
+          "Värikorjaus ja greidaus",
+          "Ääniedit ointi",
+          "Motion graphics (After Effects)",
+          "Tarinankerronta ja rytmitys"
+    ],
+    tools_tech: ["Adobe Premiere Pro","DaVinci Resolve","Final Cut Pro","After Effects","Audition"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3500,
+      range: [2800, 5500],
+      source: { name: "Audiovisuaaliset tuottajat", url: "https://api.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Videosisällön kysyntä kasvaa jatkuvasti digitaalisissa kanavissa.",
+      source: { name: "Kansallinen audiovisuaalinen instituutti", url: "https://kavi.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Video Editor","Assistant Editor"],
+    career_progression: ["Senior Video Editor","Lead Editor","Post-Production Supervisor"],
+    typical_employers: ["Tuotantoyhtiöt","Mainostoimistot","Medi a-alan yritykset","Freelance"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Suomen elokuvatyöntekijät",
+    useful_links: [
+          {
+                "name": "SEL",
+                "url": "https://sel.fi/"
+          },
+          {
+                "name": "Kansallinen audiovisuaalinen instituutti",
+                "url": "https://kavi.fi/"
+          }
+    ],
+    keywords: ["videoleikkaus","editointi","premiere","video"],
+    study_length_estimate_months: 36
+  },
+
+  {
+    id: "community-manager",
+    category: "auttaja",
+    title_fi: "Yhteisöpäällikkö",
+    title_en: "Community Manager",
+    short_description: "Yhteisöpäällikkö rakentaa ja ylläpitää aktiivisia yhteisöjä brändin ympärille. Fasilitoi keskustelua, tukee jäseniä ja luo positiivista yhteisöhenkeä.",
+    main_tasks: [
+          "Online-yhteisön rakentaminen ja hallinnointi",
+          "Jäsenten aktivointi ja sitouttaminen",
+          "Tapahtumien ja aktiviteettien järjestäminen",
+          "Palautteen kerääminen ja välittäminen tuotekehitykseen",
+          "Yhteisön sääntöjen valvonta ja moderointi"
+    ],
+    impact: [
+          "Luo vahvan yhteisön brändin ympärille",
+          "Parantaa asiakasuskollisuutta",
+          "Tuottaa arvokasta palautetta tuotekehitykseen"
+    ],
+    education_paths: [
+          "AMK: Medianomi, tradenomi",
+          "Yliopisto: Viestintä, sosiologia",
+          "Community Management -kurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Yhteisön rakentaminen ja hallinnointi",
+          "Vuorovaikutustaidot ja empatia",
+          "Moderointi ja konfliktinhallinta",
+          "Tapahtumien järjestäminen",
+          "Analytiikka ja raportointi"
+    ],
+    tools_tech: ["Discord","Slack","Circle","Mighty Networks","Facebook Groups","Reddit"],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3700,
+      range: [3000, 5000],
+      source: { name: "Viestinnän ammattilaiset", url: "https://viestijat.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Yhteisötalous kasvaa, ja brändit tarvitsevat osaajia yhteisöjen hallintaan.",
+      source: { name: "Community Roundtable", url: "https://communityroundtable.com/", year: 2024 }
+    },
+    entry_roles: ["Community Coordinator","Community Moderator"],
+    career_progression: ["Senior Community Manager","Head of Community","Director of Community"],
+    typical_employers: ["Teknologiayritykset","SaaS-yritykset","Gaming-yritykset","Media-alan yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Viestinnän ammattilaiset",
+    useful_links: [
+          {
+                "name": "CMX Hub",
+                "url": "https://cmxhub.com/"
+          },
+          {
+                "name": "Community Management Finland",
+                "url": "https://www.facebook.com/groups/communitymanagementfinland"
+          }
+    ],
+    keywords: ["yhteisö","community","moderointi","some"],
+    study_length_estimate_months: 24
+  },
+
+  {
+    id: "brand-designer",
+    category: "luova",
+    title_fi: "Brändisuunnittelija",
+    title_en: "Brand Designer",
+    short_description: "Brändisuunnittelija luo visuaalisia identiteettejä brändeille. Suunnittelee logoja, värivalintoja, typografiaa ja visuaalista kieltä, joka erottaa brändin kilpailijoista.",
+    main_tasks: [
+          "Brändi-identiteetin suunnittelu (logo, värit, typografia)",
+          "Brand guidelinien ja visuaalisten sääntöjen laatiminen",
+          "Markkinointimateriaalien visuaalinen suunnittelu",
+          "Asiakastyöpajojen ja -esitysten fasilitointi",
+          "Visuaalisen brändi-ilmeen ylläpito ja kehittäminen"
+    ],
+    impact: [
+          "Luo tunnistettavan ja muistettavan visuaalisen ilmeen",
+          "Erottaa brändin kilpailijoista",
+          "Vahvistaa brändin arvoja visuaalisuuden kautta"
+    ],
+    education_paths: [
+          "AMK: Medianomi (graafinen suunnittelu)",
+          "Yliopisto: Taideteollinen korkeakoulu",
+          "Muotoilualan koulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Graafinen suunnittelu (Adobe Creative Suite)",
+          "Typografia ja layout",
+          "Brändistrategia ja -teoria",
+          "Asiakasymmärrys ja empatia",
+          "Esitystaidot"
+    ],
+    tools_tech: ["Adobe Illustrator","Adobe Photoshop","Figma","Adobe InDesign","Sketch"],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3900,
+      range: [3200, 5500],
+      source: { name: "Grafia", url: "https://www.grafia.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Brändisuunnittelijoita tarvitaan jatkuvasti, mutta kilpailu on kovaa.",
+      source: { name: "Grafia", url: "https://www.grafia.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Brand Designer","Graphic Designer"],
+    career_progression: ["Senior Brand Designer","Brand Design Lead","Creative Director"],
+    typical_employers: ["Mainostoimistot","Bränditoimistot","Yritykset (in-house)","Freelance"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Grafia",
+    useful_links: [
+          {
+                "name": "Grafia",
+                "url": "https://www.grafia.fi/"
+          },
+          {
+                "name": "ORNAMO",
+                "url": "https://www.ornamo.fi/"
+          }
+    ],
+    keywords: ["brändäys","logo","graafinen suunnittelu","visuaalinen"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "copywriter",
+    category: "luova",
+    title_fi: "Copywriter",
+    title_en: "Copywriter",
+    short_description: "Copywriter kirjoittaa myyntiin ja markkinointiin tähtäävää tekstiä. Luo iskulauseita, mainoksia, verkkosisältöä ja muuta kaupallista tekstiä joka vetoaa kohdeyleisöön.",
+    main_tasks: [
+          "Mainosten ja kampanjoiden tekstien kirjoittaminen",
+          "Verkkosivujen ja laskeutumissivujen copywriting",
+          "Sähköpostimarkkinoinnin tekstit",
+          "Sosiaalisen median sisältö jen copywriting",
+          "Brändiäänen ja -kielen kehittäminen"
+    ],
+    impact: [
+          "Kasvattaa myyntiä ja konversioita",
+          "Luo muistijäävää brändiviestintää",
+          "Vahvistaa brändin persoonallisuutta"
+    ],
+    education_paths: [
+          "AMK: Medianomi, tradenomi (markkinointi)",
+          "Yliopisto: Kieli ja viestintä",
+          "Copywriting-kurssit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Luova kirjoittaminen ja kielitaito",
+          "Myyntiviestinnän ymmärtäminen",
+          "SEO-copywriting",
+          "Kohdeyleisön ymmärtäminen",
+          "Brändiääni ja -kieli"
+    ],
+    tools_tech: ["Google Docs","Grammarly","Hemingway Editor","Content Management Systems"],
+    languages_required: { fi: "C2", sv: "B1", en: "C1" },
+    salary_eur_month: {
+      median: 3600,
+      range: [2800, 5200],
+      source: { name: "MTL", url: "https://mtl.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Laadukas copy on aina kysyttyä, mutta kilpailu on kovaa.",
+      source: { name: "Viestijät", url: "https://viestijat.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Copywriter","Content Writer"],
+    career_progression: ["Senior Copywriter","Creative Copywriter","Copy Chief"],
+    typical_employers: ["Mainostoimistot","Digitaaliset palvelutalot","Yritykset","Freelance"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Viestinnän ammattilaiset",
+    useful_links: [
+          {
+                "name": "Viestijät",
+                "url": "https://viestijat.fi/"
+          },
+          {
+                "name": "MTL",
+                "url": "https://mtl.fi/"
+          }
+    ],
+    keywords: ["copywriter","mainosteksti","copywriting","tekstit"],
+    study_length_estimate_months: 24
+  },
+
+  {
+    id: "motion-graphics-designer",
+    category: "luova",
+    title_fi: "Motion Graphics -suunnittelija",
+    title_en: "Motion Graphics Designer",
+    short_description: "Motion Graphics -suunnittelija luo animoitua grafiikkaa videoihin, mainoksiin ja digitaalisiin medioihin. Yhdistää graafisen suunnittelun ja animaation.",
+    main_tasks: [
+          "Animoidun grafiikan suunnittelu ja toteutus",
+          "Tekstianimaatiot ja typografia",
+          "Logoanimaatiot ja brändi-elementit",
+          "Selittävät videot ja infografiikka",
+          "Yhteistyö videoleikkaajien ja suunnittelijoiden kanssa"
+    ],
+    impact: [
+          "Luo visuaalisesti vaikuttavia animaatioita",
+          "Parantaa videoiden laatua ja mielenkiintoisuutta",
+          "Tekee monimutkaisista asioista ymmärrettäviä"
+    ],
+    education_paths: [
+          "AMK: Medianomi (graafinen suunnittelu, animaatio)",
+          "Yliopisto: Taideteollinen korkeakoulu",
+          "Online-kurssit (School of Motion yms.)"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Adobe After Effects",
+          "Cinema 4D tai Blender",
+          "Graafinen suunnittelu (Illustrator, Photoshop)",
+          "Animaation periaatteet",
+          "Luova ongelmanratkaisu"
+    ],
+    tools_tech: ["Adobe After Effects","Cinema 4D","Blender","Adobe Illustrator","Premiere Pro"],
+    languages_required: { fi: "B2", sv: "A2", en: "C1" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 5500],
+      source: { name: "Grafia", url: "https://www.grafia.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Videomarkkinoinnin kasvu lisää kysyntää motion graphics -osaajille.",
+      source: { name: "Kansallinen audiovisuaalinen instituutti", url: "https://kavi.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Motion Designer","Motion Graphics Artist"],
+    career_progression: ["Senior Motion Designer","Lead Motion Designer","Creative Director"],
+    typical_employers: ["Mainostoimistot","Tuotantoyhtiöt","Digitaaliset palvelutalot","Freelance"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Grafia",
+    useful_links: [
+          {
+                "name": "School of Motion",
+                "url": "https://www.schoolofmotion.com/"
+          },
+          {
+                "name": "Motionographer",
+                "url": "https://motionographer.com/"
+          }
+    ],
+    keywords: ["motion graphics","animaatio","after effects","video"],
+    study_length_estimate_months: 36
+  },
+
+  {
+    id: "ui-ux-designer",
+    category: "luova",
+    title_fi: "UI/UX-suunnittelija",
+    title_en: "UI/UX Designer",
+    short_description: "UI/UX-suunnittelija suunnittelee digitaalisten tuotteiden käyttöliittymiä ja käyttökokemuksia. Yhdistää estetiikan, käytettävyyden ja käyttäjäymmärryksen.",
+    main_tasks: [
+          "Käyttöliittymien visuaalinen suunnittelu",
+          "Käyttäjäpolkujen ja wireframein luonti",
+          "Prototyyppien tekeminen ja testaaminen",
+          "Design systemien rakentaminen",
+          "Yhteistyö kehittäjien ja tuotepäälliköiden kanssa"
+    ],
+    impact: [
+          "Luo intuitiivisia ja käyttäjäystävällisiä tuotteita",
+          "Parantaa käyttäjätyytyväisyyttä",
+          "Vähentää kehityskustannuksia hyvällä suunnittelulla"
+    ],
+    education_paths: [
+          "AMK: Medianomi (UX/UI-suunnittelu)",
+          "Yliopisto: Kognitiotiede, tietotekniikka",
+          "Bootcampit: UX/UI Design intensive"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "UI-suunnittelu (Figma, Sketch, Adobe XD)",
+          "UX-tutkimusmenetelmät",
+          "Prototyyppien tekeminen",
+          "Design systems ja komponenttikirjastot",
+          "Saavutettavuus (WCAG)"
+    ],
+    tools_tech: ["Figma","Sketch","Adobe XD","Miro","InVision","Principle"],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4300,
+      range: [3500, 5800],
+      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitaalisten tuotteiden kasvu luo vahvaa kysyntää UX/UI-suunnittelijoille.",
+      source: { name: "UX Finland", url: "https://www.uxfinland.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior UI/UX Designer","UI/UX Designer"],
+    career_progression: ["Senior UI/UX Designer","Lead Designer","Design Manager"],
+    typical_employers: ["Teknologiayritykset","Digitaaliset palvelutalot","Startup-yritykset","Konsulttitalot"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "TEK - Tekniikan akateemiset / Grafia",
+    useful_links: [
+          {
+                "name": "UX Finland",
+                "url": "https://www.uxfinland.fi/"
+          },
+          {
+                "name": "Figma Community",
+                "url": "https://www.figma.com/community"
+          }
+    ],
+    keywords: ["ui","ux","käyttöliittymä","figma"],
+    study_length_estimate_months: 36
+  },
+
+  {
+    id: "content-creator",
+    category: "luova",
+    title_fi: "Sisällöntuottaja",
+    title_en: "Content Creator",
+    short_description: "Sisällöntuottaja luo monipuolista digitaalista sisältöä eri kanaviin. Toimii usein itsenäisenä yrittäjänä tai freelancerina tuottaen videoita, kuvia, tekstejä ja podcasteja.",
+    main_tasks: [
+          "Sisältöideoiden kehittäminen ja suunnittelu",
+          "Videoiden, kuvien ja tekstien tuottaminen",
+          "Sisällön editointi ja julkaisu",
+          "Yhteisön rakentaminen ja vuorovaikutus",
+          "Yhteistyö brändien kanssa"
+    ],
+    impact: [
+          "Viihdy ttää ja inspiroi yleisöjä",
+          "Luo yhteisöjä kiinnostuksen kohteiden ympärille",
+          "Mahdollistaa brändien tavoittavan kohderyhmiä autentisesti"
+    ],
+    education_paths: [
+          "AMK: Medianomi",
+          "Yliopisto: Viestintä",
+          "Itseopiskelu ja luova kokeilu"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Sisällöntuotanto (video, kuva, teksti)",
+          "Sosiaalisen median alustat",
+          "Yhteisön rakentaminen",
+          "Henkilöbrändi ja autenttisuus",
+          "Liiketoiminta- ja neuvottelutaidot"
+    ],
+    tools_tech: ["Kamerat ja mikrofoni t","Adobe Creative Suite","CapCut","Canva","Sosiaalisen median alustat"],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3000,
+      range: [1000, 8000],
+      source: { name: "Yrittäjät", url: "https://www.yrittajat.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Creator-talous kasvaa, mutta tulot vaihtelevat suuresti.",
+      source: { name: "Influencer Marketing Hub", url: "https://influencermarketinghub.com/", year: 2024 }
+    },
+    entry_roles: ["Content Creator (oma kanava)"],
+    career_progression: ["Established Creator","Creator Agency Owner","Brand Partnerships Manager"],
+    typical_employers: ["Itsensä työllistäjä (freelance)","Creator-agentuurit","Media-alan yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [
+          {
+                "name": "Creator Economy Finland",
+                "url": "https://www.facebook.com/groups/creatoreconomyfinland"
+          },
+          {
+                "name": "Suomen Vaikuttajamarkkinoijat",
+                "url": "https://www.vaikuttajamarkkinoijat.fi/"
+          }
+    ],
+    keywords: ["content creator","sisällöntuottaja","influencer","some"],
+    study_length_estimate_months: 12
+  },
+
+  {
+    id: "influencer-marketing-specialist",
+    category: "luova",
+    title_fi: "Vaikuttajamarkkinoinnin asiantuntija",
+    title_en: "Influencer Marketing Specialist",
+    short_description: "Vaikuttajamarkkinoinnin asiantuntija suunnittelee ja toteuttaa brändin vaikuttajamarkkinointikampanjoita. Etsii sopivia vaikuttajia, neuvottelee yhteistöistä ja mittaa kampanjoiden tuloksia.",
+    main_tasks: [
+          "Vaikuttajamarkkinointistrategian suunnittelu",
+          "Sopivien vaikuttajien etsiminen ja kontaktointi",
+          "Kampanjabrief ien laatiminen ja neuvottelut",
+          "Kampanjoiden toteutuksen seuranta",
+          "Tulosten analysointi ja raportointi"
+    ],
+    impact: [
+          "Kasvattaa brändin näkyvyyttä ja tunnettavuutta",
+          "Tavoittaa kohderyhmiä autentisesti",
+          "Tuottaa konversioita ja myyntiä"
+    ],
+    education_paths: [
+          "AMK: Tradenomi (markkinointi), medianomi",
+          "Yliopisto: Markkinointi, viestintä",
+          "Vaikuttajamarkkinoinnin sertifikaatit"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Vaikuttajamarkkinoinnin ymmärrys",
+          "Sosiaalisen median alustat",
+          "Neuvottelutaidot",
+          "Projektijohtaminen",
+          "Analytiikka ja mittaaminen"
+    ],
+    tools_tech: ["Influencer marketing platforms (Matchmade, IndaHash)","Social listening tools","Analytics tools"],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4000,
+      range: [3200, 5500],
+      source: { name: "MTL", url: "https://mtl.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Vaikuttajamarkkinointi on kasvava markkinointikanava Suomessa.",
+      source: { name: "IAB Finland", url: "https://www.iab.fi/", year: 2024 }
+    },
+    entry_roles: ["Influencer Marketing Coordinator","Social Media Specialist"],
+    career_progression: ["Senior Influencer Marketing Specialist","Head of Influencer Marketing","Partnerships Director"],
+    typical_employers: ["Mainostoimistot","Vaikuttaja-agentuurit","Yritykset (in-house)","Media-alan yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links: [
+          {
+                "name": "Suomen Vaikuttajamarkkinoijat",
+                "url": "https://www.vaikuttajamarkkinoijat.fi/"
+          },
+          {
+                "name": "IAB Finland",
+                "url": "https://www.iab.fi/"
+          }
+    ],
+    keywords: ["vaikuttajamarkkinointi","influencer","some","kampanjat"],
+    study_length_estimate_months: 36
+  },
+
+  {
+    id: "digital-content-producer",
+    category: "luova",
+    title_fi: "Digitaalinen sisältötuottaja",
+    title_en: "Digital Content Producer",
+    short_description: "Digitaalinen sisältötuottaja vastaa digitaalisen sisällön kokonaisvaltaisesta tuotannosta. Koordinoi projekteja, hallinnoi aikatauluja ja varmistaa laadukkaan lopputuloksen.",
+    main_tasks: [
+          "Digitaalisten sisältöprojektien suunnittelu ja johtaminen",
+          "Tiimien koordinointi (kirjoittajat, graafikot, videograafit)",
+          "Aikataulu jen ja budjettien hallinta",
+          "Sisällön laadun varmistaminen",
+          "Asiakasyhteistyö ja palaverit"
+    ],
+    impact: [
+          "Varmistaa laadukkaan ja aikataulussa pysyvän sisältötuotannon",
+          "Koordinoi monialaisia tiimejä tehokkaasti",
+          "Tukee brändin sisältöstrategiaa"
+    ],
+    education_paths: [
+          "AMK: Medianomi, tradenomi",
+          "Yliopisto: Viestintä",
+          "Tuottajakoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+          "Projektinhallinta",
+          "Sisältötuotannon ymmärrys (video, kuva, teksti)",
+          "Tiimityö ja koordinointi",
+          "Budjetointi ja resurssointi",
+          "Asiakashallinta"
+    ],
+    tools_tech: ["Asana","Trello","Monday.com","Google Workspace","Slack"],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 4100,
+      range: [3400, 5500],
+      source: { name: "API", url: "https://api.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitaalisen sisällön tuotanto kasvaa, mikä luo kysyntää tuottajille.",
+      source: { name: "Viestijät", url: "https://viestijat.fi/", year: 2024 }
+    },
+    entry_roles: ["Content Coordinator","Production Assistant"],
+    career_progression: ["Senior Content Producer","Head of Content Production","Executive Producer"],
+    typical_employers: ["Mainostoimistot","Tuotantoyhtiöt","Media-alan yritykset","Yritykset (in-house)"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Audiovisuaaliset tuottajat",
+    useful_links: [
+          {
+                "name": "API",
+                "url": "https://api.fi/"
+          },
+          {
+                "name": "Viestijät",
+                "url": "https://viestijat.fi/"
+          }
+    ],
+    keywords: ["sisältötuotanto","tuottaja","digitaalinen","projektinhallinta"],
+    study_length_estimate_months: 36
+  }
+,
+
+{
+    id: "management-consultant",
+    category: "visionaari",
+    title_fi: "Liikkeenjohdon konsultti",
+    title_en: "Management Consultant",
+    short_description: "Liikkeenjohdon konsultti auttaa organisaatioita parantamaan suorituskykyä strategisten muutosten ja liiketoimintaprosessien kehittämisen kautta. Analysoi haasteita ja tarjoaa ratkaisuja.",
+    main_tasks:     [
+          "Organisaatioiden liiketoiminnan analysointi",
+          "Strategisten suositusten kehittäminen",
+          "Muutosprojektien johtaminen ja tukeminen",
+          "Sidosryhmien haastattelut ja workshopit",
+          "Implementoinnin tukeminen ja seuranta"
+    ],
+    impact:     [
+          "Auttaa yrityksiä kasvamaan ja menestymään",
+          "Tuo uusia näkökulmia haastaviin kysymyksiin",
+          "Parantaa organisaatioiden tehokkuutta"
+    ],
+    education_paths:     [
+          "Yliopisto: Kauppatieteiden maisteri",
+          "MBA-tutkinto suositeltava",
+          "Sertifikaatit: Management Consulting certifications"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+          "Strateginen ajattelu ja analyysi",
+          "Liiketoimintaprosessien ymmärrys",
+          "Projektin ja muutoksen johtaminen",
+          "Asiakasymmärrys ja viestintä",
+          "Presentation ja vaikuttaminen"
+    ],
+    tools_tech: ["PowerPoint","Excel","Tableau","SAP","Salesforce"],
+    languages_required: {"fi":"C1","sv":"B1","en":"C1"},
+    salary_eur_month: {
+      median: 5200,
+      range: [3800,7500],
+      source: {"name":"Palkka.fi","url":"https://www.palkka.fi/","year":2024}
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Konsultointialan kysyntä on vahvaa erityisesti digitalisaatioon ja transformaatioon liittyvissä projekteissa.",
+      source: {"name":"Management Events","url":"https://managementevents.com/","year":2024}
+    },
+    entry_roles: ["Junior Consultant","Business Analyst","Associate Consultant"],
+    career_progression: ["Senior Consultant","Manager","Senior Manager","Partner"],
+    typical_employers: ["Konsulttitalot (McKinsey, BCG, Accenture)","Big Four","Pienet konsulttitoimistot"],
+    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"paljon"},
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links:     [
+          {
+                "name": "Suomen Liikkeenjohdon Konsultit",
+                "url": "https://www.slkry.fi/"
+          },
+          {
+                "name": "Palkka.fi",
+                "url": "https://www.palkka.fi/"
+          }
+    ],
+    related_careers: ["business-analyst","strategy-consultant"],
+    study_length_estimate_months: 60
+  },
+
+{
+    id: "business-analyst",
+    category: "visionaari",
+    title_fi: "Liiketoiminta-analyytikko",
+    title_en: "Business Analyst",
+    short_description: "Liiketoiminta-analyytikko analysoi liiketoimintaprosesseja ja datan avulla tunnistaa kehitysmahdollisuuksia. Toimii siltalyp organisaation ja IT:n välillä.",
+    main_tasks:     [
+          "Liiketoimintaprosessien dokumentointi ja analysointi",
+          "Vaatimusten kerääminen ja määrittely",
+          "Datan analysointi ja raportointi",
+          "Sidosryhmien haastattelut ja työpajat",
+          "Suositusten ja ratkaisuehdotusten laatiminen"
+    ],
+    impact:     [
+          "Parantaa liiketoiminnan tehokkuutta",
+          "Mahdollistaa tietoon perustuvan päätöksenteon",
+          "Ohjaa teknologiainvestointeja oikeaan suuntaan"
+    ],
+    education_paths:     [
+          "AMK/Yliopisto: Kauppatieteet, tietotekniikka",
+          "Yliopisto: Kauppatieteiden maisteri",
+          "Sertifikaatit: CBAP, PMI-PBA"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+          "Prosessianalyysi ja mallintaminen",
+          "Vaatimusmäärittely ja dokumentointi",
+          "Data-analyysi ja SQL",
+          "Sidosryhmähal linta ja viestintä",
+          "Ongelmanratkaisu ja kriittinen ajattelu"
+    ],
+    tools_tech: ["Excel","Power BI","Tableau","JIRA","Confluence","SQL"],
+    languages_required: {"fi":"C1","sv":"B1","en":"B2"},
+    salary_eur_month: {
+      median: 4200,
+      range: [3200,5500],
+      source: {"name":"TEK Palkkavertailu","url":"https://www.tek.fi/fi/ura/palkkavertailu","year":2024}
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitalisaation ja data-analytiikan myötä business analyst -roolin kysyntä kasvaa jatkuvasti.",
+      source: {"name":"Business Finland","url":"https://www.businessfinland.fi/","year":2024}
+    },
+    entry_roles: ["Junior Business Analyst","Data Analyst","Process Analyst"],
+    career_progression: ["Senior Business Analyst","Lead Business Analyst","Business Architect"],
+    typical_employers: ["IT-yritykset","Konsulttitalot","Pankit","Suuryritykset"],
+    work_conditions: {"remote":"Kyllä","shift_work":false,"travel":"vähän"},
+    union_or_CBA: "Toimihenkilöunioni / TEK",
+    useful_links:     [
+          {
+                "name": "IIBA Finland",
+                "url": "https://finland.iiba.org/"
+          },
+          {
+                "name": "TEK Palkkavertailu",
+                "url": "https://www.tek.fi/fi/ura/palkkavertailu"
+          }
+    ],
+    related_careers: ["data-analyst","product-manager","management-consultant"],
+    study_length_estimate_months: 48
+  },
+
+{
+    id: "strategy-consultant",
+    category: "visionaari",
+    title_fi: "Strategiakonsultti",
+    title_en: "Strategy Consultant",
+    short_description: "Strategiakonsultti kehittää pitkän aikavälin liiketoimintastrategioita ja auttaa johtoa tekemään kriittisiä päätöksiä yrityksen suunnasta ja kasvusta.",
+    main_tasks:     [
+          "Strategisten vaihtoehtojen analysointi ja kehittäminen",
+          "Markkina- ja kilpailija-analyysit",
+          "Kasvustrategioiden suunnittelu",
+          "Johtoryhmän neuvonanto ja fasilitointi",
+          "Strategian implementoinnin tukeminen"
+    ],
+    impact:     [
+          "Ohjaa yritysten pitkän aikavälin menestystä",
+          "Auttaa tunnistamaan uusia kasvumahdollisuuksia",
+          "Tukee kriittisissä liiketoimintapäätöksissä"
+    ],
+    education_paths:     [
+          "Yliopisto: Kauppatieteiden maisteri",
+          "MBA erityisen suositeltava",
+          "Tohtorin tutkinto voi olla etu"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+          "Strateginen ajattelu ja visio",
+          "Taloudellinen analyysi",
+          "Markkinoiden ja kilpailun ymmärrys",
+          "Johtotason viestintä ja vaikuttaminen",
+          "Muutosjohtaminen"
+    ],
+    tools_tech: ["PowerPoint","Excel","Tableau","Market research tools"],
+    languages_required: {"fi":"C1","sv":"B1","en":"C2"},
+    salary_eur_month: {
+      median: 6000,
+      range: [4200,8500],
+      source: {"name":"Palkka.fi","url":"https://www.palkka.fi/","year":2024}
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Strategisen konsultoinnin kysyntä on vahvaa erityisesti teknologian ja kestävän kehityksen aloilla.",
+      source: {"name":"Suomen Liikkeenjohdon Konsultit","url":"https://www.slkry.fi/","year":2024}
+    },
+    entry_roles: ["Associate Strategy Consultant","Strategy Analyst"],
+    career_progression: ["Senior Strategy Consultant","Principal","Partner","Managing Partner"],
+    typical_employers: ["Top-tier konsulttitalot","Strategiaboutique-yritykset","In-house strategy teams"],
+    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"paljon"},
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links:     [
+          {
+                "name": "Suomen Liikkeenjohdon Konsultit",
+                "url": "https://www.slkry.fi/"
+          },
+          {
+                "name": "Management Events",
+                "url": "https://managementevents.com/"
+          }
+    ],
+    related_careers: ["management-consultant","business-development-manager"],
+    study_length_estimate_months: 60
+  },
+
+{
+    id: "sales-development-representative",
+    category: "johtaja",
+    title_fi: "Myyntikehitysedustaja",
+    title_en: "Sales Development Representative",
+    short_description: "Myyntikehitysedustaja tuottaa uusia myyntimahdollisuuksia, kvalifioi prospekteja ja luo yhteyksiä potentiaalisiin asiakkaisiin. Toimii ensimmäisenä kontaktipisteenä asiakkaille.",
+    main_tasks:     [
+          "Prospektien etsiminen ja yhteydenotot",
+          "Leadien kvalifiointi ja siirto myyntiin",
+          "Puhelinmyynti ja sähköpostiviestintä",
+          "CRM-järjestelmän päivittäminen",
+          "Myyntimahdollisuuksien seuranta"
+    ],
+    impact:     [
+          "Luo perustaa yrityksen kasvulle",
+          "Rakentaa asiakassuhteita alusta alkaen",
+          "Mahdollistaa myyntitiimin tehokkuuden"
+    ],
+    education_paths:     [
+          "AMK: Tradenomi",
+          "Yliopisto: Kauppatieteet",
+          "Kokemus voi korvata koulutuksen"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+          "Myyntitaidot ja asiakasymmärrys",
+          "Viestintä- ja vuorovaikutustaidot",
+          "Tavoitteellisuus ja sinnikkyys",
+          "CRM-järjestelmien hallinta",
+          "Prospektointi ja leadien generointi"
+    ],
+    tools_tech: ["Salesforce","HubSpot","LinkedIn Sales Navigator","Outreach"],
+    languages_required: {"fi":"C1","sv":"A2","en":"B2"},
+    salary_eur_month: {
+      median: 3400,
+      range: [2800,4500],
+      source: {"name":"Palkka.fi","url":"https://www.palkka.fi/","year":2024}
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "SaaS- ja B2B-yritysten kasvu luo jatkuvaa kysyntää SDR-rooleille.",
+      source: {"name":"Kaupan liitto","url":"https://kauppa.fi/","year":2024}
+    },
+    entry_roles: ["SDR","Inside Sales Representative","Lead Generation Specialist"],
+    career_progression: ["Senior SDR","Account Executive","Sales Manager"],
+    typical_employers: ["SaaS-yritykset","B2B-teknologiayritykset","Kasvuyritykset"],
+    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"vähän"},
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links:     [
+          {
+                "name": "Kaupan liitto",
+                "url": "https://kauppa.fi/"
+          },
+          {
+                "name": "Sales Academy Finland",
+                "url": "https://salesacademy.fi/"
+          }
+    ],
+    related_careers: ["account-executive","customer-success-manager"],
+    study_length_estimate_months: 36
+  },
+
+{
+    id: "account-executive",
+    category: "johtaja",
+    title_fi: "Vastuullinen myyntiedustaja",
+    title_en: "Account Executive",
+    short_description: "Vastuullinen myyntiedustaja vastaa asiakassuhteiden hallinnasta ja myynnin kasvattamisesta. Neuvottelee sopimuksia ja rakentaa pitkäaikaisia asiakassuhteita.",
+    main_tasks:     [
+          "Myyntineuvottelut ja sopimukset",
+          "Asiakassuhteiden rakentaminen ja hallinta",
+          "Myyntiprosessin läpivienti",
+          "Tarjousten laatiminen ja esittely",
+          "Myynnin raportointi ja ennustaminen"
+    ],
+    impact:     [
+          "Kasvattaa yrityksen liikevaihtoa",
+          "Rakentaa vahvoja asiakassuhteita",
+          "Tuo asiakastarpeet organisaatioon"
+    ],
+    education_paths:     [
+          "AMK: Tradenomi",
+          "Yliopisto: Kauppatieteet",
+          "Myyntikoulutus ja -sertifikaatit"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+          "Myyntitaidot ja neuvottelutaito",
+          "Asiakasymmärrys ja konsultoiva myynti",
+          "Esitys- ja viestintätaidot",
+          "Myyntiprosessien hallinta",
+          "Tavoitteellisuus ja tuloshakuisuus"
+    ],
+    tools_tech: ["Salesforce","HubSpot","LinkedIn","Zoom","PowerPoint"],
+    languages_required: {"fi":"C1","sv":"A2","en":"B2"},
+    salary_eur_month: {
+      median: 4300,
+      range: [3200,5800],
+      source: {"name":"Palkka.fi","url":"https://www.palkka.fi/","year":2024}
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "B2B-myynnin ammattilaisten kysyntä on vahvaa erityisesti teknologia- ja SaaS-sektoreilla.",
+      source: {"name":"Kaupan liitto","url":"https://kauppa.fi/","year":2024}
+    },
+    entry_roles: ["Junior Account Executive","Inside Sales Representative"],
+    career_progression: ["Senior AE","Key Account Manager","Sales Manager","Head of Sales"],
+    typical_employers: ["B2B-yritykset","Teknologiayritykset","Palveluyritykset"],
+    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"kohtalaisesti"},
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links:     [
+          {
+                "name": "Kaupan liitto",
+                "url": "https://kauppa.fi/"
+          },
+          {
+                "name": "Sales Academy Finland",
+                "url": "https://salesacademy.fi/"
+          }
+    ],
+    related_careers: ["sales-development-representative","business-development-manager"],
+    study_length_estimate_months: 36
+  },
+
+{
+    id: "operations-manager",
+    category: "jarjestaja",
+    title_fi: "Operatiivinen päällikkö",
+    title_en: "Operations Manager",
+    short_description: "Operatiivinen päällikkö johtaa organisaation päivittäisiä toimintoja, optimoi prosesseja ja varmistaa toiminnan tehokkuuden ja laadun.",
+    main_tasks:     [
+          "Päivittäisten toimintojen johtaminen ja valvonta",
+          "Prosessien kehittäminen ja optimointi",
+          "Resurssien hallinta ja budjetointi",
+          "Laatustandardien varmistaminen",
+          "Tiimien johtaminen ja kehittäminen"
+    ],
+    impact:     [
+          "Varmistaa sujuvan ja tehokkaan toiminnan",
+          "Parantaa toiminnan laatua ja kannattavuutta",
+          "Kehittää tiimien suorituskykyä"
+    ],
+    education_paths:     [
+          "AMK/Yliopisto: Kauppatieteet, tuotantotalous",
+          "Yliopisto: Kauppatieteiden maisteri",
+          "Johtamiskoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+          "Prosessien johtaminen ja kehittäminen",
+          "Projektinhallinta ja organisointi",
+          "Talouden ja budjetoinnin ymmärrys",
+          "Henkilöstöjohtaminen",
+          "Ongelmanratkaisu ja analyyttisyys"
+    ],
+    tools_tech: ["ERP-järjestelmät","Excel","Power BI","Project management tools"],
+    languages_required: {"fi":"C1","sv":"B1","en":"B2"},
+    salary_eur_month: {
+      median: 4900,
+      range: [3800,6500],
+      source: {"name":"Palkka.fi","url":"https://www.palkka.fi/","year":2024}
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Operatiivisten johtajien kysyntä on vakaata kaikilla toimialoilla.",
+      source: {"name":"EK","url":"https://ek.fi/","year":2024}
+    },
+    entry_roles: ["Operations Coordinator","Process Specialist","Team Lead"],
+    career_progression: ["Senior Operations Manager","Director of Operations","COO"],
+    typical_employers: ["Valmistusyritykset","Palveluyritykset","Logistiikkayritykset"],
+    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"vähän"},
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links:     [
+          {
+                "name": "Suomen Johtamisyhdistys",
+                "url": "https://johke.fi/"
+          },
+          {
+                "name": "EK",
+                "url": "https://ek.fi/"
+          }
+    ],
+    related_careers: ["project-coordinator","business-development-manager"],
+    study_length_estimate_months: 48
+  },
+
+{
+    id: "business-development-manager",
+    category: "johtaja",
+    title_fi: "Liiketoiminnan kehityspäällikkö",
+    title_en: "Business Development Manager",
+    short_description: "Liiketoiminnan kehityspäällikkö tunnistaa ja kehittää uusia liiketoimintamahdollisuuksia, kumppanuuksia ja kasvustrategioita organisaation kasvun vauhdittamiseksi.",
+    main_tasks:     [
+          "Uusien liiketoimintamahdollisuuksien tunnistaminen",
+          "Kumppanuuksien rakentaminen ja neuvottelut",
+          "Markkina-analyysit ja kasvustrategiat",
+          "Myynti- ja markkinointiyhteistyö",
+          "Liiketoiminnan kasvun mittaaminen"
+    ],
+    impact:     [
+          "Luo uusia liiketoimintamahdollisuuksia",
+          "Kasvattaa yrityksen markkina-asemaa",
+          "Rakentaa strategisia kumppanuuksia"
+    ],
+    education_paths:     [
+          "Yliopisto: Kauppatieteiden maisteri",
+          "MBA suositeltava",
+          "Kansainvälinen liiketoiminta"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+          "Liiketoiminnan kehittäminen ja strategia",
+          "Neuvottelutaidot ja verkostoituminen",
+          "Markkina- ja kilpailija-analyysi",
+          "Myynti- ja markkinointiosaaminen",
+          "Kumppanuuksien hallinta"
+    ],
+    tools_tech: ["CRM-järjestelmät","LinkedIn","Market research tools","PowerPoint"],
+    languages_required: {"fi":"C1","sv":"B1","en":"C1"},
+    salary_eur_month: {
+      median: 5300,
+      range: [4000,7000],
+      source: {"name":"Palkka.fi","url":"https://www.palkka.fi/","year":2024}
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kasvuhakuiset yritykset tarvitsevat jatkuvasti BD-ammattilaisia.",
+      source: {"name":"Business Finland","url":"https://www.businessfinland.fi/","year":2024}
+    },
+    entry_roles: ["Business Development Representative","Junior BD Manager"],
+    career_progression: ["Senior BD Manager","Head of Business Development","VP of Business Development"],
+    typical_employers: ["Kasvuyritykset","Teknologiayritykset","B2B-palveluyritykset"],
+    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"kohtalaisesti"},
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links:     [
+          {
+                "name": "Business Finland",
+                "url": "https://www.businessfinland.fi/"
+          },
+          {
+                "name": "EK",
+                "url": "https://ek.fi/"
+          }
+    ],
+    related_careers: ["account-executive","strategy-consultant"],
+    study_length_estimate_months: 60
+  },
+
+{
+    id: "project-coordinator",
+    category: "jarjestaja",
+    title_fi: "Projektikoordinaattori",
+    title_en: "Project Coordinator",
+    short_description: "Projektikoordinaattori tukee projektien toteutusta, hallinnoi aikatauluja ja resursseja sekä varmistaa projektin sujuvan etenemisen ja viestinnän.",
+    main_tasks:     [
+          "Projektin aikataulujen ja resurssien koordinointi",
+          "Projektidokumentaation ylläpito",
+          "Tiimin viestinnän ja kokousten fasilitointi",
+          "Projektin etenemisen seuranta ja raportointi",
+          "Sidosryhmäyhteistyö"
+    ],
+    impact:     [
+          "Varmistaa projektien sujuvan toteutuksen",
+          "Pitää tiimin informoituna ja synkronoituna",
+          "Tukee projektipäälliköitä operatiivisissa tehtävissä"
+    ],
+    education_paths:     [
+          "AMK: Tradenomi, projektihallinta",
+          "Yliopisto: Hallintotiede",
+          "Sertifikaatit: PRINCE2, PMI"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+          "Projektinhallinta ja koordinointi",
+          "Organisointitaidot ja aikataulutus",
+          "Viestintä ja sidosryhmähallinta",
+          "Dokumentointi ja raportointi",
+          "Joustavuus ja moniajo"
+    ],
+    tools_tech: ["MS Project","JIRA","Trello","Confluence","Excel","Teams"],
+    languages_required: {"fi":"C1","sv":"A2","en":"B2"},
+    salary_eur_month: {
+      median: 3400,
+      range: [2800,4200],
+      source: {"name":"Palkka.fi","url":"https://www.palkka.fi/","year":2024}
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Projektikoordinaattoreiden kysyntä on tasaista kaikilla toimialoilla.",
+      source: {"name":"PMI Finland","url":"https://pmi.fi/","year":2024}
+    },
+    entry_roles: ["Project Assistant","Junior Project Coordinator"],
+    career_progression: ["Senior Project Coordinator","Project Manager","Program Manager"],
+    typical_employers: ["Konsulttiyritykset","IT-yritykset","Rakennusyritykset","Julkinen sektori"],
+    work_conditions: {"remote":"Kyllä","shift_work":false,"travel":"vähän"},
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links:     [
+          {
+                "name": "PMI Finland",
+                "url": "https://pmi.fi/"
+          },
+          {
+                "name": "Projekti-instituutti",
+                "url": "https://www.projekti-instituutti.fi/"
+          }
+    ],
+    related_careers: ["operations-manager","scrum-master"],
+    study_length_estimate_months: 36
+  },
+
+{
+    id: "digital-transformation-consultant",
+    category: "visionaari",
+    title_fi: "Digitaalisen muutoksen konsultti",
+    title_en: "Digital Transformation Consultant",
+    short_description: "Digitaalisen muutoksen konsultti auttaa organisaatioita siirtymään digitaaliseen liiketoimintaan ja ottamaan käyttöön uusia teknologioita strategisesti.",
+    main_tasks:     [
+          "Digitaalisen kypsyyden arviointi",
+          "Digitalisaatiostrategian kehittäminen",
+          "Muutosprojektien johtaminen",
+          "Teknologiaratkaisujen arviointi ja valinta",
+          "Muutosjohtaminen ja koulutus"
+    ],
+    impact:     [
+          "Modernisoi organisaatioiden toimintatapoja",
+          "Mahdollistaa tehokkuuden ja kilpailukyvyn parantamisen",
+          "Auttaa hyödyntämään teknologian potentiaalin"
+    ],
+    education_paths:     [
+          "Yliopisto: Kauppatieteet tai tietotekniikka",
+          "Yhdistelmä liiketoiminta- ja IT-osaamista",
+          "MBA tai vastaava etu"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+          "Digitalisaation ja teknologian ymmärrys",
+          "Liiketoiminnan ja strategian osaaminen",
+          "Muutosjohtaminen",
+          "Projektin ja sidosryhmien hallinta",
+          "Konsultointi ja vaikuttaminen"
+    ],
+    tools_tech: ["Cloud platforms","Analytics tools","Collaboration tools","ERP/CRM systems"],
+    languages_required: {"fi":"C1","sv":"B1","en":"C1"},
+    salary_eur_month: {
+      median: 5600,
+      range: [4200,7500],
+      source: {"name":"TEK","url":"https://www.tek.fi/fi/ura/palkkavertailu","year":2024}
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitalisaation tarve kasvaa jatkuvasti kaikilla toimialoilla.",
+      source: {"name":"Business Finland","url":"https://www.businessfinland.fi/","year":2024}
+    },
+    entry_roles: ["Digital Consultant","Transformation Analyst"],
+    career_progression: ["Senior Consultant","Principal Consultant","Partner"],
+    typical_employers: ["Konsulttitalot","Big Four","Teknologiayritykset"],
+    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"kohtalaisesti"},
+    union_or_CBA: "TEK / Toimihenkilöunioni",
+    useful_links:     [
+          {
+                "name": "Business Finland",
+                "url": "https://www.businessfinland.fi/"
+          },
+          {
+                "name": "Digibarometri",
+                "url": "https://www.digibarometri.fi/"
+          }
+    ],
+    related_careers: ["management-consultant","business-analyst"],
+    study_length_estimate_months: 60
+  },
+
+{
+    id: "change-management-specialist",
+    category: "visionaari",
+    title_fi: "Muutosjohtamisen asiantuntija",
+    title_en: "Change Management Specialist",
+    short_description: "Muutosjohtamisen asiantuntija ohjaa organisaatioita läpi muutosprosessien ja varmistaa, että muutokset otetaan onnistuneesti käyttöön ja henkilöstö on sitoutunut.",
+    main_tasks:     [
+          "Muutostarpeiden analysointi",
+          "Muutosstrategian ja -suunnitelman laatiminen",
+          "Sidosryhmäanalyysi ja viestintäsuunnitelmat",
+          "Koulutuksen ja tuen järjestäminen",
+          "Muutoksen seuranta ja arviointi"
+    ],
+    impact:     [
+          "Varmistaa muutosten onnistumisen",
+          "Vähentää muutosvastarintaa",
+          "Tukee henkilöstön sitoutumista"
+    ],
+    education_paths:     [
+          "Yliopisto: Kauppatieteet, psykologia, organisaatiotutkimus",
+          "Muutosjohtamisen erikoiskoulutus",
+          "Sertifikaatit: Prosci, APMG"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+          "Muutosjohtaminen ja -mallit",
+          "Sidosryhmähallinta ja viestintä",
+          "Psykologinen ymmärrys",
+          "Projektin ja prosessien hallinta",
+          "Koulutus ja fasilitointi"
+    ],
+    tools_tech: ["Prosci ADKAR","Change management platforms","Survey tools","PowerPoint"],
+    languages_required: {"fi":"C1","sv":"B1","en":"B2"},
+    salary_eur_month: {
+      median: 5000,
+      range: [3800,6500],
+      source: {"name":"Palkka.fi","url":"https://www.palkka.fi/","year":2024}
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Organisaatiomuutokset ovat jatkuvia, luoden vakaata kysyntää muutosjohtamisen ammattilaisille.",
+      source: {"name":"EK","url":"https://ek.fi/","year":2024}
+    },
+    entry_roles: ["Change Analyst","Change Coordinator"],
+    career_progression: ["Senior Change Specialist","Change Manager","Head of Change"],
+    typical_employers: ["Konsulttiyritykset","Suuryritykset","Julkinen sektori"],
+    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"kohtalaisesti"},
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links:     [
+          {
+                "name": "Change Management Institute",
+                "url": "https://www.change-management-institute.com/"
+          },
+          {
+                "name": "Prosci",
+                "url": "https://www.prosci.com/"
+          }
+    ],
+    related_careers: ["management-consultant","digital-transformation-consultant"],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "mental-health-counselor",
+    category: "auttaja",
+    title_fi: "Mielenterveysohjaaja",
+    title_en: "Mental Health Counselor",
+    short_description: "Mielenter veysohjaaja tarjoaa tukea ja ohjausta mielenterveyden haasteissa kärsivien henkilöiden auttamiseksi. Työskentely perustuu kohtaamiseen, kuuntelemiseen ja asiakkaan voimavarojen tukemiseen.",
+    main_tasks:     [
+              "Asiakkaiden kohtaaminen ja tukikeskustelut",
+              "Kriisinhallinnan tukeminen",
+              "Verkostotyö muiden ammattilaisten kanssa",
+              "Hoitosuunnitelmien laatiminen",
+              "Ryhmätoiminnan ohjaaminen"
+    ],
+    impact:     [
+              "Tukee ihmisiä mielenterveyskriiseissä",
+              "Edistää toipumista ja hyvinvointia",
+              "Ehkäisee syrjäytymistä"
+    ],
+    education_paths:     [
+              "AMK: Sosiaalialan tutkinto",
+              "Yliopisto: Psykologia, sosiaalityö",
+              "Mielenterveystyön erikoiskoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Vuorovaikutus ja kuuntelutaidot",
+              "Kriisityöosaaminen",
+              "Empatia ja asiakasymmärrys",
+              "Verkostotyö",
+              "Dokumentointi"
+    ],
+    tools_tech: ["Asiakastietojärjestelmät","Terapeuttiset menetelmät","Arviointityökalut"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3500,
+      range: [2800,4500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Mielenterveyspalveluiden tarve kasvaa jatkuvasti.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Mental Health Counselor", "Trainee"],
+    career_progression: ["Senior Mental Health Counselor", "Lead", "Manager"],
+    typical_employers: ["Terveyskeskukset","Mielenterveysasemat","Yksityiset klinikat","Järjestöt"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Talentia",
+    useful_links: [
+      { name: "TEM", url: "https://tem.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "wellness-coach",
+    category: "auttaja",
+    title_fi: "Hyvinvointivalmentaja",
+    title_en: "Wellness Coach",
+    short_description: "Hyvinvointivalmentaja ohjaa asiakkaita kokonaisvaltaisessa hyvinvoinnissa. Työ keskittyy elämäntapojen muutokseen, terveystavoitteiden saavuttamiseen ja tasapainoisen elämän tukemiseen.",
+    main_tasks:     [
+              "Asiakkaiden hyvinvoinnin kartoitus",
+              "Yksilöllisten tavoitteiden asettaminen",
+              "Valmennussessiot ja seuranta",
+              "Ravinto- ja liikuntaneuvonta",
+              "Stressinhallintaohjaus"
+    ],
+    impact:     [
+              "Parantaa asiakkaiden elämänlaatua",
+              "Edistää terveellisiä elämäntapoja",
+              "Tukee kokonaisvaltaista hyvinvointia"
+    ],
+    education_paths:     [
+              "Terveysalan koulutus",
+              "Valmennuskoulutus",
+              "Ravitsemus- tai liikunta-alan tutkinto"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Valmentaminen ja motivointi",
+              "Hyvinvoinnin kokonaisymmärrys",
+              "Ravitsemus ja liikunta",
+              "Vuorovaikutustaidot",
+              "Tavoitteellisuus"
+    ],
+    tools_tech: ["Valmennustyökalut","Hyvinvointisovellukset","Mittaus- ja seurantalaitteet"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2500,4500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Hyvinvointivalmennan kysyntä kasvaa terveydenalan ja työpaikkojen tarpeissa.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Wellness Coach", "Trainee"],
+    career_progression: ["Senior Wellness Coach", "Lead", "Manager"],
+    typical_employers: ["Yksityisyrittäjyys","Hyvinvointikeskukset","Yritykset (työhyvinvointi)","Kuntosalit"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM", url: "https://tem.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 24
+  },
+  {
+    id: "occupational-health-specialist",
+    category: "auttaja",
+    title_fi: "Työterveysasiantuntija",
+    title_en: "Occupational Health Specialist",
+    short_description: "Työterveysasiantuntija edistää työntekijöiden terveyttä ja turvallisuutta. Työ sisältää työhyvinvointiohjelmien suunnittelun, työympäristön arvioinnin ja työterveysriskien tunnistamisen.",
+    main_tasks:     [
+              "Työterveysselvitysten tekeminen",
+              "Työhyvinvointiohjelmien kehittäminen",
+              "Työympäristön turvallisuuden arviointi",
+              "Työterveysneuvonta",
+              "Sairauspoissaolojen seuranta ja ehkäisy"
+    ],
+    impact:     [
+              "Parantaa työntekijöiden terveyttä ja työkykyä",
+              "Vähentää sairauspoissaoloja",
+              "Edistää turvallisia työympäristöjä"
+    ],
+    education_paths:     [
+              "AMK/Yliopisto: Terveysala",
+              "Työterveyshuollon erikoiskoulutus",
+              "Työterveyslääkärin tai -hoitajan pätevyys"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Työterveyslainsäädäntö",
+              "Terveys- ja turvallisuusosaaminen",
+              "Työhyvinvoinnin edistäminen",
+              "Neuvonta ja ohjaus",
+              "Riskien arviointi"
+    ],
+    tools_tech: ["Työterveystietojärjestelmät","Arviointityökalut","Terveysdata-analytiikka"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4100,
+      range: [3200,5200],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Työterveyspalveluiden kysyntä on vakaata työsuojelulain velvoitteiden vuoksi.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Occupational Health Specialist", "Trainee"],
+    career_progression: ["Senior Occupational Health Specialist", "Lead", "Manager"],
+    typical_employers: ["Työterveysasemat","Yritykset","Julkinen sektori","Yksityiset palveluntarjoajat"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tehy / Talentia",
+    useful_links: [
+      { name: "TEM", url: "https://tem.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "health-data-analyst",
+    category: "innovoija",
+    title_fi: "Terveystiedon analyytikko",
+    title_en: "Health Data Analyst",
+    short_description: "Terveystiedon analyytikko analysoi terveystietoa ja potilastietoja parantaakseen terveydenhuollon laatua, tehokkuutta ja päätöksentekoa. Työ yhdistää data-analyysin ja terveydenhuollon ymmärryksen.",
+    main_tasks:     [
+              "Terveystiedon kerääminen ja analysointi",
+              "Raporttien ja visualisointien laatiminen",
+              "Tietokantojen ylläpito",
+              "Datan laadun varmistaminen",
+              "Ennustavien mallien kehittäminen"
+    ],
+    impact:     [
+              "Parantaa terveydenhuollon laatua datalla",
+              "Tukee kliinistä päätöksentekoa",
+              "Optimoi resurssien käyttöä"
+    ],
+    education_paths:     [
+              "Yliopisto: Tilastotiede, terveysinformatiikka",
+              "AMK: Terveys- tai tietotekniikka",
+              "Data-analyysin koulutus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Data-analyysi ja tilastotiede",
+              "Terveystiedon ymmärrys",
+              "SQL ja tietokannat",
+              "Python/R-ohjelmointi",
+              "Visualisointi (Power BI, Tableau)"
+    ],
+    tools_tech: ["SQL","Python/R","Power BI","Tableau","SPSS","Terveystietojärjestelmät"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4300,
+      range: [3400,5500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Terveysdatan hyödyntäminen kasvaa voimakkaasti digitalisaation myötä.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Health Data Analyst", "Trainee"],
+    career_progression: ["Senior Health Data Analyst", "Lead", "Manager"],
+    typical_employers: ["Sairaalat","Tutkimuslaitokset","Healthtech-yritykset","Terveydenhuollon organisaatiot"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "TEK",
+    useful_links: [
+      { name: "TEM", url: "https://tem.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "nutrition-specialist",
+    category: "auttaja",
+    title_fi: "Ravitsemusasiantuntija",
+    title_en: "Nutrition Specialist",
+    short_description: "Ravitsemusasiantuntija neuvoo asiakkaita ravitsemukseen liittyvissä kysymyksissä. Työ sisältää yksilöllisten ravinto-ohjelmien suunnittelun ja ravitsemusneuvontaa.",
+    main_tasks:     [
+              "Yksilöllinen ravitsemusneuvonta",
+              "Ravinto-ohjelmien suunnittelu",
+              "Ravitsemustilan arviointi",
+              "Ravitsemusopetusmateriaalin laatiminen",
+              "Yhteistyö terveydenhuollon kanssa"
+    ],
+    impact:     [
+              "Parantaa asiakkaiden terveyttä ravinnolla",
+              "Ehkäisee ravitsemukseen liittyviä sairauksia",
+              "Tukee toipumista ja hyvinvointia"
+    ],
+    education_paths:     [
+              "AMK/Yliopisto: Ravitsemustiede",
+              "Kliinisen ravitsemusterapeutin koulutus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Ravitsemustieteen osaaminen",
+              "Asiakasneuvonta",
+              "Ravinto-ohjelmien suunnittelu",
+              "Terveys- ja sairaustietous",
+              "Vuorovaikutustaidot"
+    ],
+    tools_tech: ["Ravitsemuslaskentaohjelmat","Asiakastietojärjestelmät","Mittauslaitteet"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3500,
+      range: [2800,4500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Ravitsemusneuvonnan kysyntä kasvaa terveyden ja hyvinvoinnin merkityksen kasvaessa.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Nutrition Specialist", "Trainee"],
+    career_progression: ["Senior Nutrition Specialist", "Lead", "Manager"],
+    typical_employers: ["Terveyskeskukset","Sairaalat","Yksityiset klinikat","Urheiluseurat","Yksityisyrittäjyys"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Talentia",
+    useful_links: [
+      { name: "TEM", url: "https://tem.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "healthcare-coordinator",
+    category: "jarjestaja",
+    title_fi: "Terveydenhuollon koordinaattori",
+    title_en: "Healthcare Coordinator",
+    short_description: "Terveydenhuollon koordinaattori koordinoi potilaspalveluja ja hallinnoi ajanvarauksia. Varmistaa sujuvan hoidon toteutumisen ja asiakaspalvelun laadun.",
+    main_tasks:     [
+              "Ajanvarausten koordinointi",
+              "Potilaspalvelujen järjestäminen",
+              "Hoitopolkujen suunnittelu",
+              "Asiakaspalvelu ja neuvonta",
+              "Potilastietojen hallinta"
+    ],
+    impact:     [
+              "Varmistaa sujuvan potilaspolun",
+              "Parantaa asiakaskokemusta",
+              "Optimoi resurssien käyttöä"
+    ],
+    education_paths:     [
+              "AMK: Terveys- tai hallinto-ala",
+              "Toisen asteen tutkinto + kokemus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Koordinointi ja organisointi",
+              "Asiakaspalvelu",
+              "Terveydenhuoltoprosessit",
+              "Potilastietojärjestelmät",
+              "Viestintätaidot"
+    ],
+    tools_tech: ["Potilastietojärjestelmät","Ajanvarausjärjestelmät","Office-ohjelmat"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2700,4000],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Terveyspalveluiden koordinoinnin tarve on tasaista.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Healthcare Coordinator", "Trainee"],
+    career_progression: ["Senior Healthcare Coordinator", "Lead", "Manager"],
+    typical_employers: ["Terveyskeskukset","Sairaalat","Yksityiset klinikat","Terveysasemat"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Tehy / JHL",
+    useful_links: [
+      { name: "TEM", url: "https://tem.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 36
+  },
+  {
+    id: "international-sales-manager",
+    category: "johtaja",
+    title_fi: "Kansainvälisen myynnin päällikkö",
+    title_en: "International Sales Manager",
+    short_description: "Kansainvälisen myynnin päällikkö johtaa yrityksen vientiä ja kansainvälistä myyntitoimintaa. Rakentaa kumppanuuksia ja kasvattaa myyntiä ulkomaisilla markkinoilla.",
+    main_tasks:     [
+              "Kansainvälisen myynnin johtaminen",
+              "Vientiasiakkuuksien hallinta",
+              "Markkina-analyysit ja strategiat",
+              "Kansainvälisten kumppanuuksien rakentaminen",
+              "Myyntitiimin johtaminen"
+    ],
+    impact:     [
+              "Kasvattaa yrityksen kansainvälistä myyntiä",
+              "Avaa uusia markkinoita",
+              "Rakentaa globaaleja asiakassuhteita"
+    ],
+    education_paths:     [
+              "Yliopisto: Kauppatieteet",
+              "Kansainvälinen liiketoiminta",
+              "MBA etu"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Kansainvälinen myynti ja neuvottelu",
+              "Kulttuurinen kompetenssi",
+              "Vientitoiminnan ymmärrys",
+              "Strateginen ajattelu",
+              "Kielitaito"
+    ],
+    tools_tech: ["CRM (Salesforce)","LinkedIn","Market intelligence tools"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 5600,
+      range: [4200,7500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Suomalaisten yritysten kansainvälistyminen luo kysyntää.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior International Sales Manager", "Trainee"],
+    career_progression: ["Senior International Sales Manager", "Lead", "Manager"],
+    typical_employers: ["Vientiyritykset","Teknologiayritykset","Valmistusyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links: [
+      { name: "TEM", url: "https://tem.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "remote-team-lead",
+    category: "johtaja",
+    title_fi: "Etätiimin vetäjä",
+    title_en: "Remote Team Lead",
+    short_description: "Etätiimin vetäjä johtaa hajautettua tiimiä ja varmistaa tiimin tuottavuuden sekä hyvinvoinnin etätyöympäristössä. Koordinoi yhteistyötä ja kommunikaatiota.",
+    main_tasks:     [
+              "Hajautetun tiimin johtaminen",
+              "Etätyön koordinointi ja fasilitointi",
+              "Tiimin suorituskyvyn seuranta",
+              "Virtuaaliset kokoukset ja palaverit",
+              "Tiimin tuen ja kehityksen varmistaminen"
+    ],
+    impact:     [
+              "Mahdollistaa tehokkaan etätyön",
+              "Tukee tiimin hyvinvointia ja sitoutumista",
+              "Varmistaa tavoitteiden saavuttamisen"
+    ],
+    education_paths:     [
+              "Korkeakoulututkinto",
+              "Johtamiskoulutus",
+              "Etätyön johtamisen osaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Etäjohtaminen",
+              "Digitaalinen viestintä",
+              "Tiimin motivointi",
+              "Projektinhallinta",
+              "Konfliktien ratkaisu"
+    ],
+    tools_tech: ["Slack/Teams","Zoom","Jira","Asana","Miro"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4900,
+      range: [3800,6500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Etätyön yleistyminen luo kysyntää etäjohtamisosaamiselle.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Remote Team Lead", "Trainee"],
+    career_progression: ["Senior Remote Team Lead", "Lead", "Manager"],
+    typical_employers: ["Teknologiayritykset","Kansainväliset yritykset","Startup-yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links: [
+      { name: "TEM", url: "https://tem.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "localization-specialist",
+    category: "luova",
+    title_fi: "Lokalisointiasiantuntija",
+    title_en: "Localization Specialist",
+    short_description: "Lokalisointiasiantuntija mukauttaa sisältöä ja tuotteita eri markkinoille ja kulttuureille. Hallinnoi käännösprosesseja ja varmistaa kulttuurisen relevanssin.",
+    main_tasks:     [
+              "Lokalisointistrategioiden suunnittelu",
+              "Käännösten koordinointi ja laadunvarmistus",
+              "Kulttuurisen soveltuvuuden arviointi",
+              "Lokalisointiworkflowjen hallinta",
+              "Kieliteknologioiden hyödyntäminen"
+    ],
+    impact:     [
+              "Mahdollistaa globaalin laajentumisen",
+              "Varmistaa kulttuurisen relevanssin",
+              "Parantaa käyttäjäkokemusta eri markkinoilla"
+    ],
+    education_paths:     [
+              "Yliopisto: Kielitieteet, käännöstiede",
+              "Lokalisointikoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Lokalisointi ja käännös",
+              "Kulttuurinen ymmärrys",
+              "Projektinhallinta",
+              "CAT-työkalut",
+              "Laadunvarmistus"
+    ],
+    tools_tech: ["CAT tools (SDL Trados)","Translation Management Systems","Localization platforms"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000,5000],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Globaalin digitaalisen sisällön kasvu luo kysyntää.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Localization Specialist", "Trainee"],
+    career_progression: ["Senior Localization Specialist", "Lead", "Manager"],
+    typical_employers: ["Teknologiayritykset","Käännöstoimistot","Peliyritykset","Kansainväliset yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links: [
+      { name: "TEM", url: "https://tem.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "global-partnerships-manager",
+    category: "johtaja",
+    title_fi: "Globaalien kumppanuuksien päällikkö",
+    title_en: "Global Partnerships Manager",
+    short_description: "Globaalien kumppanuuksien päällikkö rakentaa ja ylläpitää strategisia kansainvälisiä kumppanuuksia. Neuvottelee sopimuksia ja kehittää yhteistyötä kasvun tukemiseksi.",
+    main_tasks:     [
+              "Strategisten kumppanuuksien tunnistaminen",
+              "Neuvottelut ja sopimusten teko",
+              "Kumppanuussuhteiden hallinta",
+              "Yhteismarkkinointialoitteet",
+              "Kumppanuusverkostojen laajentaminen"
+    ],
+    impact:     [
+              "Kasvattaa liiketoimintaa kumppanuuksilla",
+              "Avaa uusia markkinoita ja kanavia",
+              "Vahvistaa yrityksen markkina-asemaa"
+    ],
+    education_paths:     [
+              "Yliopisto: Kauppatieteet",
+              "Kansainvälinen liiketoiminta",
+              "MBA etu"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Strateginen kumppanuuksien hallinta",
+              "Neuvottelutaito",
+              "Verkostoituminen",
+              "Liiketoimintakehitys",
+              "Kansainvälinen kokemus"
+    ],
+    tools_tech: ["CRM","Partnership management platforms","LinkedIn"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 5300,
+      range: [4000,7000],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kumppanuusperusteinen kasvu on keskeinen strategia monelle yritykselle.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Global Partnerships Manager", "Trainee"],
+    career_progression: ["Senior Global Partnerships Manager", "Lead", "Manager"],
+    typical_employers: ["Teknologiayritykset","Kansainväliset yritykset","Startup-yritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links: [
+      { name: "TEM", url: "https://tem.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "technical-support-specialist",
+    category: "auttaja",
+    title_fi: "Teknisen tuen asiantuntija",
+    title_en: "Technical Support Specialist",
+    short_description: "Teknisen tuen asiantuntija auttaa asiakkaita teknisten ongelmien ratkaisemisessa. Tarjoaa teknistä tukea tuotteille ja palveluille eri kanavissa.",
+    main_tasks:     [
+              "Teknisten ongelmien diagnosointi ja ratkaisu",
+              "Asiakastuki puhelimitse, chatissa ja sähköpostitse",
+              "Dokumentaation päivittäminen",
+              "Ongelmien eskalointi kehitystiimille",
+              "Asiakastyytyväisyyden varmistaminen"
+    ],
+    impact:     [
+              "Ratkaisee asiakkaiden tekniset ongelmat",
+              "Parantaa asiakastyytyväisyyttä",
+              "Tuo asiakaspalautetta tuotekehitykseen"
+    ],
+    education_paths:     [
+              "AMK/Yliopisto: IT-ala",
+              "Tekninen koulutus",
+              "Kokemus voi korvata koulutuksen"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Tekninen ongelmanratkaisu",
+              "Asiakaspalvelu",
+              "IT-järjestelmien ymmärrys",
+              "Viestintätaidot",
+              "Kärsivällisyys ja empatia"
+    ],
+    tools_tech: ["Ticketing systems","Remote desktop tools","Knowledge bases","Chat platforms"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3500,
+      range: [2800,4500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Teknisen tuen tarve on jatkuvaa teknologian yleistyessä.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Technical Support Specialist", "Trainee"],
+    career_progression: ["Senior Technical Support Specialist", "Lead", "Manager"],
+    typical_employers: ["IT-yritykset","SaaS-yritykset","Telekommunikaatio","Tukikeskukset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "TEK / Toimihenkilöunioni",
+    useful_links: [
+      { name: "TEM", url: "https://tem.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 36
+  },
+  {
+    id: "translation-project-manager",
+    category: "jarjestaja",
+    title_fi: "Käännösprojektien päällikkö",
+    title_en: "Translation Project Manager",
+    short_description: "Käännösprojektien päällikkö hallinnoi käännösprojekteja, koordinoi kääntäjiä ja varmistaa laadun sekä aikataulujen toteutumisen.",
+    main_tasks:     [
+              "Käännösprojektien suunnittelu ja hallinta",
+              "Kääntäjien koordinointi ja valinta",
+              "Laadunvarmistus ja editointi",
+              "Asiakasviestintä ja tarjousten laatiminen",
+              "Aikataulujen ja budjettien seuranta"
+    ],
+    impact:     [
+              "Varmistaa laadukkaat käännökset",
+              "Mahdollistaa monikielisen viestinnän",
+              "Tukee kansainvälistä liiketoimintaa"
+    ],
+    education_paths:     [
+              "Yliopisto: Kielitieteet, käännöstiede",
+              "Projektinhallintakoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Projektinhallinta",
+              "Kielitaito (useita kieliä)",
+              "Laadunvarmistus",
+              "Asiakashallinta",
+              "CAT-työkalut"
+    ],
+    tools_tech: ["Project management tools","CAT tools","Translation Management Systems"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4000,
+      range: [3200,5200],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Käännöspalveluiden tarve on vakaata globalisaation myötä.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Translation Project Manager", "Trainee"],
+    career_progression: ["Senior Translation Project Manager", "Lead", "Manager"],
+    typical_employers: ["Käännöstoimistot","Kansainväliset yritykset","Lokalisointiyritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Toimihenkilöunioni",
+    useful_links: [
+      { name: "TEM", url: "https://tem.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "diversity-and-inclusion-specialist",
+    category: "auttaja",
+    title_fi: "Monimuotoisuus- ja yhdenvertaisuusasiantuntija",
+    title_en: "Diversity & Inclusion Specialist",
+    short_description: "Kehittää ja toteuttaa DEI-ohjelmia organisaatioissa. Edistää monimuotoisuutta, yhdenvertaisuutta ja osallisuutta työpaikoilla ja yhteiskunnassa.",
+    main_tasks:     [
+              "DEI-strategioiden kehittäminen",
+              "Henkilöstökoulutusten järjestäminen",
+              "Monimuotoisuusarvioinnit",
+              "Yhdenvertaisuussuunnitelmien laatiminen",
+              "Tasa-arvotoimenpiteiden seuranta"
+    ],
+    impact:     [
+              "Edistää yhdenvertaisuutta työelämässä",
+              "Tukee inklusiivista kulttuuria",
+              "Vähentää syrjintää ja ennakkoluuloja"
+    ],
+    education_paths:     [
+              "Yliopisto: Yhteiskuntatieteet, sosiologia",
+              "DEI-erikoiskoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Monimuotoisuusosaaminen",
+              "Koulutus ja fasilitointi",
+              "Yhdenvertaisuuslainsäädäntö",
+              "Muutosjohtaminen",
+              "Data-analyysi"
+    ],
+    tools_tech: ["Survey tools","Training platforms","Analytics"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3200,5500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "DEI-työn merkitys kasvaa organisaatioissa.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Diversity & Inclusion Specialist", "Trainee", "Coordinator"],
+    career_progression: ["Senior Diversity & Inclusion Specialist", "Lead", "Director"],
+    typical_employers: ["Yritykset","Julkinen sektori","Järjestöt","Konsulttiyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "social-justice-advocate",
+    category: "auttaja",
+    title_fi: "Sosiaalisen oikeudenmukaisuuden edistäjä",
+    title_en: "Social Justice Advocate",
+    short_description: "Ajaa heikommassa asemassa olevien ryhmien oikeuksia. Työskentelee yhteiskunnallisen oikeudenmukaisuuden ja tasa-arvon edistämiseksi.",
+    main_tasks:     [
+              "Vaikuttamistyö ja kampanjat",
+              "Haavoittuvien ryhmien tukeminen",
+              "Yhteiskunnallinen analyysi ja raportointi",
+              "Verkostotyö ja kumppanuudet",
+              "Tiedotus ja viestintä"
+    ],
+    impact:     [
+              "Edistää sosiaalista oikeudenmukaisuutta",
+              "Tuo marginalisoitujen ääniä esiin",
+              "Vaikuttaa yhteiskunnalliseen muutokseen"
+    ],
+    education_paths:     [
+              "Yliopisto: Yhteiskuntatieteet, oikeustiede, sosiaalityö"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Vaikuttamistyö",
+              "Yhteiskunnallinen ymmärrys",
+              "Viestintä",
+              "Verkostoituminen",
+              "Kriittinen ajattelu"
+    ],
+    tools_tech: ["Kampanjatyökalut","Sosiaalinen media","Advocacy platforms"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3500,
+      range: [2800,4500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Järjestösektorin kysyntä on tasaista.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Social Justice Advocate", "Trainee", "Coordinator"],
+    career_progression: ["Senior Social Justice Advocate", "Lead", "Director"],
+    typical_employers: ["Kansalaisjärjestöt","Ihmisoikeusjärjestöt","Säätiöt"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "community-organizer",
+    category: "auttaja",
+    title_fi: "Yhteisöaktivisti",
+    title_en: "Community Organizer",
+    short_description: "Mobilisoi yhteisöjä toimimaan yhdessä. Järjestää kampanjoita ja tapahtumia paikallisten ongelmien ratkaisemiseksi.",
+    main_tasks:     [
+              "Yhteisöjen mobilisoin ti",
+              "Kampanjoiden suunnittelu ja toteutus",
+              "Tapaamisten ja tapahtumien järjestäminen",
+              "Vapaaehtoisten koordinointi",
+              "Yhteistyö eri toimijoiden kanssa"
+    ],
+    impact:     [
+              "Vahvistaa yhteisöjä toimimaan yhdessä",
+              "Ratkaisee paikallisia ongelmia",
+              "Lisää osallisuutta ja vaikuttamista"
+    ],
+    education_paths:     [
+              "Yhteiskuntatieteet",
+              "Sosiaalityö",
+              "Kokemukseen perustuva osaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Yhteisötyö",
+              "Kampanjointi",
+              "Fasilitointi",
+              "Verkostoituminen",
+              "Viestintä"
+    ],
+    tools_tech: ["Organizing platforms","Social media","Event management tools"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3100,
+      range: [2500,4000],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Yhteisötyön tarve jatkuu erityisesti kaupungeissa.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Community Organizer", "Trainee", "Coordinator"],
+    career_progression: ["Senior Community Organizer", "Lead", "Director"],
+    typical_employers: ["Järjestöt","Paikallisyhteisöt","Kansalaisjärjestöt"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "nonprofit-program-coordinator",
+    category: "jarjestaja",
+    title_fi: "Järjestön ohjelmakoordinaattori",
+    title_en: "Nonprofit Program Coordinator",
+    short_description: "Koordinoi järjestön ohjelmia ja hankkeita. Hallinnoi projekteja ja varmistaa niiden vaikuttavuuden.",
+    main_tasks:     [
+              "Ohjelmien suunnittelu ja toteutus",
+              "Projektinhallinta",
+              "Rahoitushakemusten laatiminen",
+              "Kumppanuuksien koordinointi",
+              "Vaikuttavuuden mittaaminen ja raportointi"
+    ],
+    impact:     [
+              "Toteuttaa yhteiskunnallisesti vaikuttavia ohjelmia",
+              "Koordinoi resursseja tehokkaasti",
+              "Tukee järjestön mission toteutumista"
+    ],
+    education_paths:     [
+              "Yliopisto: Yhteiskuntatieteet, hallintotiede",
+              "Projektinhallintakoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Projektinhallinta",
+              "Rahoitushakemukset",
+              "Raportointi",
+              "Sidosryhmähallinta",
+              "Koordinointi"
+    ],
+    tools_tech: ["Project management tools","Reporting platforms","CRM"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3400,
+      range: [2800,4200],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Järjestösektorin ohjelmatoiminta jatkuu tasaisena.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Nonprofit Program Coordinator", "Trainee", "Coordinator"],
+    career_progression: ["Senior Nonprofit Program Coordinator", "Lead", "Director"],
+    typical_employers: ["Järjestöt","Säätiöt","Kansalaisjärjestöt"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "human-rights-researcher",
+    category: "visionaari",
+    title_fi: "Ihmisoikeustutkija",
+    title_en: "Human Rights Researcher",
+    short_description: "Tutkii ihmisoikeustilanteita ja dokumentoi loukkauksia. Tuottaa tutkimustietoa päätöksenteon ja vaikuttamisen tueksi.",
+    main_tasks:     [
+              "Ihmisoikeustilanteiden tutkiminen",
+              "Loukkausten dokumentointi",
+              "Raporttien ja analyysien laatiminen",
+              "Kenttätutkimus",
+              "Kansainvälinen yhteistyö"
+    ],
+    impact:     [
+              "Tuottaa tietoa ihmisoikeusloukkauks ista",
+              "Tukee oikeudenmukaisuuden toteutumista",
+              "Vaikuttaa politiikkaan ja lainsäädäntöön"
+    ],
+    education_paths:     [
+              "Yliopisto: Yhteiskuntatieteet, oikeustiede",
+              "Maisterin tutkinto"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Tutkimusosaaminen",
+              "Analyyttinen ajattelu",
+              "Raportointi",
+              "Kansainvälinen osaaminen",
+              "Dokumentointi"
+    ],
+    tools_tech: ["Research databases","Documentation tools","Statistical software"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000,5000],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Ihmisoikeustutkimuksen tarve jatkuu globaalisti.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Human Rights Researcher", "Trainee", "Coordinator"],
+    career_progression: ["Senior Human Rights Researcher", "Lead", "Director"],
+    typical_employers: ["Tutkimuslaitokset","Ihmisoikeusjärjestöt","Yliopistot","YK-järjestöt"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "accessibility-consultant",
+    category: "auttaja",
+    title_fi: "Esteettömyysasiantuntija",
+    title_en: "Accessibility Consultant",
+    short_description: "Neuvoo organisaatioita saavutettavuudessa ja esteettömyydessä. Varmistaa että palvelut ja ympäristöt ovat kaikkien saavutettavissa.",
+    main_tasks:     [
+              "Saavutettavuusarvioinnit",
+              "Esteettömyyssuunnitelmien laatiminen",
+              "WCAG-standardien soveltaminen",
+              "Koulutus ja neuvonta",
+              "Testausprosessien kehittäminen"
+    ],
+    impact:     [
+              "Parantaa palveluiden saavutettavuutta",
+              "Edistää yhdenvertaisuutta",
+              "Mahdollistaa osallistumisen kaikille"
+    ],
+    education_paths:     [
+              "Tekninen tai yhteiskuntatieteellinen koulutus",
+              "Saavutettavuuskoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "WCAG-standardit",
+              "Esteettömyysarviointi",
+              "Web-teknologiat",
+              "Käyttäjäymmärrys",
+              "Konsultointi"
+    ],
+    tools_tech: ["Accessibility testing tools","Screen readers","WCAG checkers"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4100,
+      range: [3200,5500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Saavutettavuusvaatimukset kasvavat lainsäädännön myötä.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Accessibility Consultant", "Trainee", "Coordinator"],
+    career_progression: ["Senior Accessibility Consultant", "Lead", "Director"],
+    typical_employers: ["IT-yritykset","Julkinen sektori","Konsulttiyritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "gender-equality-advisor",
+    category: "auttaja",
+    title_fi: "Tasa-arvoneuvoja",
+    title_en: "Gender Equality Advisor",
+    short_description: "Edistää sukupuolten tasa-arvoa. Kehittää tasa-arvo- ja yhdenvertaisuusohjelmia organisaatioissa.",
+    main_tasks:     [
+              "Tasa-arvosuunnitelmien laatiminen",
+              "Tasa-arvokoulutukset",
+              "Sukupuolivaikutusten arviointi",
+              "Palkkatasa-arvon edistäminen",
+              "Seuranta ja raportointi"
+    ],
+    impact:     [
+              "Edistää sukupuolten tasa-arvoa",
+              "Vähentää palkkaeroja",
+              "Tukee yhdenvertaista työelämää"
+    ],
+    education_paths:     [
+              "Yliopisto: Yhteiskuntatieteet, sukupuolentutkimus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Tasa-arvolainsäädäntö",
+              "Sukupuolten tasa-arvon ymmärrys",
+              "Koulutus",
+              "Data-analyysi",
+              "Konsultointi"
+    ],
+    tools_tech: ["Survey tools","Analytics","Reporting tools"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000,5000],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Tasa-arvotyö on lakisääteistä ja jatkuvaa.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Gender Equality Advisor", "Trainee", "Coordinator"],
+    career_progression: ["Senior Gender Equality Advisor", "Lead", "Director"],
+    typical_employers: ["Julkinen sektori","Yritykset","Järjestöt"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "youth-empowerment-coordinator",
+    category: "auttaja",
+    title_fi: "Nuorten voimaannuttamisen koordinaattori",
+    title_en: "Youth Empowerment Coordinator",
+    short_description: "Kehittää ja toteuttaa ohjelmia nuorten voimaannuttamiseksi. Tukee nuorten osallisuutta ja toimijuutta.",
+    main_tasks:     [
+              "Nuoriso-ohjelmien suunnittelu",
+              "Työpajojen ja tapahtumien järjestäminen",
+              "Nuorten ohjaus ja tukeminen",
+              "Verkostotyö",
+              "Osallisuuden edistäminen"
+    ],
+    impact:     [
+              "Vahvistaa nuorten osallisuutta",
+              "Tukee nuorten kehitystä ja hyvinvointia",
+              "Ehkäisee syrjäytymistä"
+    ],
+    education_paths:     [
+              "Kasvatustieteet",
+              "Nuorisotyö",
+              "Sosiaalityö"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Nuorisotyö",
+              "Ryhmänohjaus",
+              "Voimaannuttaminen",
+              "Verkostotyö",
+              "Projektinhallinta"
+    ],
+    tools_tech: ["Youth engagement platforms","Social media","Workshop tools"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3300,
+      range: [2700,4200],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Nuorisotyön tarve jatkuu tasaisena.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Youth Empowerment Coordinator", "Trainee", "Coordinator"],
+    career_progression: ["Senior Youth Empowerment Coordinator", "Lead", "Director"],
+    typical_employers: ["Nuorisojärjestöt","Kunnat","Kansalaisjärjestöt"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "sustainable-fashion-designer",
+    category: "luova",
+    title_fi: "Kestävän muodin suunnittelija",
+    title_en: "Sustainable Fashion Designer",
+    short_description: "Suunnittelee muotituotteita kestävyyden periaatteita noudattaen. Käyttää eettisiä materiaaleja ja tuotantotapoja.",
+    main_tasks:     [
+              "Kestävien vaatekokoelmien suunnittelu",
+              "Ympäristöystävällisten materiaalien valinta",
+              "Kierrätysmateriaalien hyödyntäminen",
+              "Eettisten tuotantotapojen varmistaminen",
+              "Trendie n ja kestävyyden yhdistäminen"
+    ],
+    impact:     [
+              "Vähentää muotiteollisuuden ympäristövaikutuksia",
+              "Edistää eettistä tuotantoa",
+              "Inspiroi kestäviin valintoihin"
+    ],
+    education_paths:     [
+              "Muotoilun tutkinto",
+              "Tekstiili- ja vaatetussuunnittelu"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Muotoilu ja suunnittelu",
+              "Kestävän kehityksen ymmärrys",
+              "Materiaalituntemus",
+              "Trenditietoisuus",
+              "Tuotantoprosessien ymmärrys"
+    ],
+    tools_tech: ["CAD software","Pattern making tools","Sustainable materials databases"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2500,4500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kestävän muodin kysyntä kasvaa kuluttajatietoisuuden myötä.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Sustainable Fashion Designer", "Trainee", "Coordinator"],
+    career_progression: ["Senior Sustainable Fashion Designer", "Lead", "Director"],
+    typical_employers: ["Muotiyritykset","Sustainable fashion brands","Yksityisyrittäjyys"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "circular-economy-specialist",
+    category: "ympariston-puolustaja",
+    title_fi: "Kiertotalouden asiantuntija",
+    title_en: "Circular Economy Specialist",
+    short_description: "Kehittää kiertotalousratkaisuja yrityksille. Edistää resurssitehokkuutta ja jätteen vähentämistä.",
+    main_tasks:     [
+              "Kiertotalousmallien kehittäminen",
+              "Materiaalivirtaanalyysit",
+              "Kierrätys- ja uusiokäyttöstrategiat",
+              "Liiketoimintamallien innovointi",
+              "Sidosryhmäyhteistyö"
+    ],
+    impact:     [
+              "Vähentää jätettä ja resurssien käyttöä",
+              "Luo uusia liiketoimintamahdollisuuksia",
+              "Edistää kestävää taloutta"
+    ],
+    education_paths:     [
+              "Ympäristötieteet",
+              "Tekniikka",
+              "Liiketoiminta"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Kiertotalouden ymmärrys",
+              "Liiketoimintakehitys",
+              "Ympäristöosaaminen",
+              "Prosessisuunnittelu",
+              "Konsultointi"
+    ],
+    tools_tech: ["Life cycle assessment tools","Material flow analysis","Business model canvas"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3200,5500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kiertotalous on keskeinen osa kestävyyssiirtymää.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Circular Economy Specialist", "Trainee", "Coordinator"],
+    career_progression: ["Senior Circular Economy Specialist", "Lead", "Director"],
+    typical_employers: ["Yritykset","Konsulttiyritykset","Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "ethical-brand-strategist",
+    category: "luova",
+    title_fi: "Eettisen brändin strategisti",
+    title_en: "Ethical Brand Strategist",
+    short_description: "Kehittää brändistrategioita eettisten arvojen pohjalta. Varmistaa vastuullisen viestinnän ja liiketoimintakäytännöt.",
+    main_tasks:     [
+              "Eettisten brändistrategioiden kehittäminen",
+              "Vastuullisuusviestinnän suunnittelu",
+              "Brändi-identiteetin rakentaminen",
+              "Sidosryhmäviestintä",
+              "Vastuullisuuden integrointi brändiin"
+    ],
+    impact:     [
+              "Edistää vastuullista liiketoimintaa",
+              "Rakentaa luottamusta kuluttajiin",
+              "Ohjaa eettisiin valintoihin"
+    ],
+    education_paths:     [
+              "Markkinointi",
+              "Viestintä",
+              "Liiketoiminta"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Brändistrategia",
+              "Vastuullisuusviestintä",
+              "Markkinointi",
+              "Eettinen ymmärrys",
+              "Luovuus"
+    ],
+    tools_tech: ["Brand strategy tools","Design tools","Social media platforms"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4500,
+      range: [3400,6000],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Vastuullisuus on keskeinen osa brändirakentamista.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Ethical Brand Strategist", "Trainee", "Coordinator"],
+    career_progression: ["Senior Ethical Brand Strategist", "Lead", "Director"],
+    typical_employers: ["Mainostoimistot","Yritykset","Konsulttiyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "green-building-designer",
+    category: "ympariston-puolustaja",
+    title_fi: "Ekologisen rakentamisen suunnittelija",
+    title_en: "Green Building Designer",
+    short_description: "Suunnittelee energiatehokkaita ja ympäristöystävällisiä rakennuksia. Soveltaa kestävän rakentamisen periaatteita.",
+    main_tasks:     [
+              "Ekologisten rakennusten suunnittelu",
+              "Energiatehokkuuden optimointi",
+              "Ympäristöystävällisten materiaalien valinta",
+              "LEED/BREEAM-sertifioinnit",
+              "Elinkaariarvioinnit"
+    ],
+    impact:     [
+              "Vähentää rakennusten ympäristövaikutuksia",
+              "Edistää energiatehokkuutta",
+              "Parantaa sisäilman laatua"
+    ],
+    education_paths:     [
+              "Arkkitehtuuri",
+              "Rakennustekniikka"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Ekologinen suunnittelu",
+              "Energiatehokkuus",
+              "Materiaalituntemus",
+              "Sertifiointistandardit",
+              "CAD-suunnittelu"
+    ],
+    tools_tech: ["CAD software","Energy simulation tools","BIM"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4400,
+      range: [3400,5800],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kestävä rakentaminen on kasvava trendi.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Green Building Designer", "Trainee", "Coordinator"],
+    career_progression: ["Senior Green Building Designer", "Lead", "Director"],
+    typical_employers: ["Arkkitehtitoimistot","Rakennusyritykset","Konsulttiyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "zero-waste-consultant",
+    category: "ympariston-puolustaja",
+    title_fi: "Nollajatetavoitteen konsultti",
+    title_en: "Zero Waste Consultant",
+    short_description: "Auttaa organisaatioita vähentämään jätettä ja siirtymään kohti nollajätettä. Kehittää jätestrategioita ja -prosesseja.",
+    main_tasks:     [
+              "Jätekartoitusten tekeminen",
+              "Nollajätestrategioiden kehittäminen",
+              "Kierrätysprosessien optimointi",
+              "Koulutus ja tiedotus",
+              "Jätemittareiden seuranta"
+    ],
+    impact:     [
+              "Vähentää jätteiden määrää",
+              "Edistää kiertotaloutta",
+              "Säästää kustannuksia ja resursseja"
+    ],
+    education_paths:     [
+              "Ympäristötieteet",
+              "Ympäristötekniikka"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Jätteenkäsittelyn ymmärrys",
+              "Kiertotalous",
+              "Prosessisuunnittelu",
+              "Konsultointi",
+              "Koulutus"
+    ],
+    tools_tech: ["Waste tracking tools","LCA software","Data analytics"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3900,
+      range: [3000,5200],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Jätteiden vähentäminen on keskeinen ympäristötavoite.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Zero Waste Consultant", "Trainee", "Coordinator"],
+    career_progression: ["Senior Zero Waste Consultant", "Lead", "Director"],
+    typical_employers: ["Konsulttiyritykset","Yritykset","Kunnat"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "sustainable-product-designer",
+    category: "luova",
+    title_fi: "Kestävän tuotesuunnittelun suunnittelija",
+    title_en: "Sustainable Product Designer",
+    short_description: "Suunnittelee tuotteita kestävyyden periaatteiden mukaisesti. Huomioi koko elinkaaren materiaalivalinnoista kierrätykseen.",
+    main_tasks:     [
+              "Kestävien tuotteiden suunnittelu",
+              "Elinkaariarv ioinnit",
+              "Ympäristöystävällisten materiaalien valinta",
+              "Kierrätettävyyden optimointi",
+              "Prototyyppien valmistus ja testaus"
+    ],
+    impact:     [
+              "Vähentää tuotteiden ympäristövaikutuksia",
+              "Edistää kiertotaloutta",
+              "Inspiroi kestäviin valintoihin"
+    ],
+    education_paths:     [
+              "Muotoilu",
+              "Tuotesuunnittelu",
+              "Teollinen muotoilu"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Tuotesuunnittelu",
+              "Kestävä kehitys",
+              "Materiaalituntemus",
+              "Prototypointi",
+              "CAD-suunnittelu"
+    ],
+    tools_tech: ["CAD software","3D printing","LCA tools"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4000,
+      range: [3000,5500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kestävä tuotesuunnittelu on kasvava ala.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Sustainable Product Designer", "Trainee", "Coordinator"],
+    career_progression: ["Senior Sustainable Product Designer", "Lead", "Director"],
+    typical_employers: ["Design-studiot","Yritykset","Yksityisyrittäjyys"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "ethical-sourcing-manager",
+    category: "jarjestaja",
+    title_fi: "Eettisen hankinnan päällikkö",
+    title_en: "Ethical Sourcing Manager",
+    short_description: "Varmistaa eettisen ja vastuullisen toimitusketjun. Hallinnoi hankintatoimintaa kestävyyden periaatteiden mukaisesti.",
+    main_tasks:     [
+              "Toimittajien eettisyyden arviointi",
+              "Vastuullisten hankintakriteerien kehittäminen",
+              "Toimittajasuhteiden hallinta",
+              "Auditointien koordinointi",
+              "Riskien arviointi ja hallinta"
+    ],
+    impact:     [
+              "Varmistaa eettisen toimitusketjun",
+              "Ehkäisee ihmisoikeusloukkauksia",
+              "Edistää vastuullista liiketoimintaa"
+    ],
+    education_paths:     [
+              "Liiketoiminta",
+              "Logistiikka",
+              "Vastuullisuuskoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Hankinta ja logistiikka",
+              "Eettinen ymmärrys",
+              "Toimittajahallinta",
+              "Auditiointi",
+              "Riskienhallinta"
+    ],
+    tools_tech: ["Procurement systems","Supplier databases","Audit tools"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4600,
+      range: [3500,6000],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Eettinen hankinta on keskeinen osa vastuullisuutta.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Ethical Sourcing Manager", "Trainee", "Coordinator"],
+    career_progression: ["Senior Ethical Sourcing Manager", "Lead", "Director"],
+    typical_employers: ["Vähittäiskauppa","Valmistusyritykset","Suuryritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "inclusive-content-creator",
+    category: "luova",
+    title_fi: "Inklusiivinen sisällöntuottaja",
+    title_en: "Inclusive Content Creator",
+    short_description: "Luo sisältöä joka edustaa monipuolisesti erilaisia ihmisiä. Edistää osallisuutta ja edustuksellisuutta mediassa.",
+    main_tasks:     [
+              "Inklusiivisen sisällön tuottaminen",
+              "Monipuolisen edustuksen varmistaminen",
+              "Sosiaalisen median sisällöt",
+              "Yhteistyö eri taustaisten ihmisten kanssa",
+              "Saavutettavuuden huomioiminen"
+    ],
+    impact:     [
+              "Lisää edustuksellisuutta mediassa",
+              "Edistää osallisuutta",
+              "Haastaa stereotypioita"
+    ],
+    education_paths:     [
+              "Viestintä",
+              "Media",
+              "Journalismi"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Sisällöntuotanto",
+              "Inklusiivisuus",
+              "Sosiaalinen media",
+              "Luovuus",
+              "Kulttuurinen herkkyys"
+    ],
+    tools_tech: ["Content creation tools","Social media platforms","Editing software"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3300,
+      range: [2500,4500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Inklusiivisen sisällön kysyntä kasvaa.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Inclusive Content Creator", "Trainee", "Coordinator"],
+    career_progression: ["Senior Inclusive Content Creator", "Lead", "Director"],
+    typical_employers: ["Mediatalot","Somekanavat","Yksityisyrittäjyys"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "cultural-sensitivity-consultant",
+    category: "auttaja",
+    title_fi: "Kulttuurisen sensitiivisyyden konsultti",
+    title_en: "Cultural Sensitivity Consultant",
+    short_description: "Neuvoo organisaatioita kulttuurisessa herkkyydessä. Auttaa välttämään kulttuurista loukkaavuutta ja edistää inklusiivisuutta.",
+    main_tasks:     [
+              "Kulttuurisen sensitiivisyyden arvioinnit",
+              "Koulutukset ja työpajat",
+              "Sisällön ja markkinoinnin tarkastus",
+              "Kulttuuristen konfliktien ratkaisu",
+              "Inklusiivisten käytäntöjen kehittäminen"
+    ],
+    impact:     [
+              "Ehkäisee kulttuurista loukkaavuutta",
+              "Edistää kulttuurista ymmärrystä",
+              "Tukee inklusiivista viestintää"
+    ],
+    education_paths:     [
+              "Kulttuuriantropologia",
+              "Kulttuurintutkimus",
+              "Viestintä"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Kulttuurinen kompetenssi",
+              "Konsultointi",
+              "Koulutus",
+              "Konfliktin ratkaisu",
+              "Viestintä"
+    ],
+    tools_tech: ["Training platforms","Cultural databases","Collaboration tools"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3200,5500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kulttuurisen sensitiivisyyden tarve kasvaa globalisaation myötä.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Cultural Sensitivity Consultant", "Trainee", "Coordinator"],
+    career_progression: ["Senior Cultural Sensitivity Consultant", "Lead", "Director"],
+    typical_employers: ["Konsulttiyritykset","Yritykset","Mediatalot"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "representation-editor",
+    category: "luova",
+    title_fi: "Edustuksellisuuden toimittaja",
+    title_en: "Representation Editor",
+    short_description: "Varmistaa monipuolisen edustuksen mediasisällössä. Tarkastaa ja kehittää sisältöä inklusiivisuuden näkökulmasta.",
+    main_tasks:     [
+              "Sisällön tarkastus edustuksellisuuden osalta",
+              "Editointi ja kehitysehdotukset",
+              "Diversiteetin varmistaminen",
+              "Yhteistyö sisällöntuottajien kanssa",
+              "Ohjeistusten laatiminen"
+    ],
+    impact:     [
+              "Varmistaa monipuolisen edustuksen",
+              "Ehkäisee stereotypioita",
+              "Edistää inklusiivista mediaa"
+    ],
+    education_paths:     [
+              "Journalismi",
+              "Viestintä",
+              "Media"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Editointi",
+              "Inklusiivisuus",
+              "Mediaymmärrys",
+              "Kriittinen ajattelu",
+              "Viestintä"
+    ],
+    tools_tech: ["Editing tools","Style guides","Collaboration platforms"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000,5000],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Edustuksellisuuden merkitys mediassa jatkuu.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Representation Editor", "Trainee", "Coordinator"],
+    career_progression: ["Senior Representation Editor", "Lead", "Director"],
+    typical_employers: ["Mediatalot","Kustantamot","Tuotantoyhtiöt"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "documentary-filmmaker-social-issues",
+    category: "luova",
+    title_fi: "Dokumentaristi (yhteiskunnalliset aiheet)",
+    title_en: "Documentary Filmmaker (Social Issues)",
+    short_description: "Luo dokumenttielokuvia yhteiskunnallisista aiheista. Tuo esiin tärkeitä sosiaalisia kysymyksiä ja tarinoita.",
+    main_tasks:     [
+              "Dokumenttien käsikirjoitus ja suunnittelu",
+              "Kuvaaminen ja haastattelut",
+              "Editointi ja post-tuotanto",
+              "Rahoituksen hakeminen",
+              "Levitys ja markkinointi"
+    ],
+    impact:     [
+              "Nostaa esiin tärkeitä yhteiskunnallisia aiheita",
+              "Antaa äänen marginalisoiduille",
+              "Edistää yhteiskunnallista muutosta"
+    ],
+    education_paths:     [
+              "Elokuvataide",
+              "Mediatuotanto",
+              "Journalismi"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Elokuvanteko",
+              "Tarinankerronta",
+              "Kuvaus ja editointi",
+              "Tutkimus",
+              "Projektinhallinta"
+    ],
+    tools_tech: ["Camera equipment","Editing software (Premiere, Final Cut)","Sound equipment"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3500,
+      range: [2500,5500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Dokumenttien kysyntä jatkuu striimipalveluiden myötä.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Documentary Filmmaker (Social Issues)", "Trainee", "Coordinator"],
+    career_progression: ["Senior Documentary Filmmaker (Social Issues)", "Lead", "Director"],
+    typical_employers: ["Tuotantoyhtiöt","Freelance","Mediatalot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "multicultural-marketing-specialist",
+    category: "luova",
+    title_fi: "Monikulttuurisen markkinoinnin asiantuntija",
+    title_en: "Multicultural Marketing Specialist",
+    short_description: "Kehittää markkinointistrategioita eri kulttuuritaustoille. Varmistaa kulttuurisesti relevantin ja kunnioittavan markkinoinnin.",
+    main_tasks:     [
+              "Monikulttuuristen markkinointistrategioiden kehittäminen",
+              "Kulttuurikohderyhmien tutkimus",
+              "Kampanjoiden suunnittelu ja toteutus",
+              "Kulttuurisen relevanssin varmistaminen",
+              "Yhteistyö diversit eettisten tiimien kanssa"
+    ],
+    impact:     [
+              "Tavoittaa monipuolisia kohderyhmiä",
+              "Edistää inklusiivista markkinointia",
+              "Kunnioittaa kulttuurisia eroja"
+    ],
+    education_paths:     [
+              "Markkinointi",
+              "Viestintä",
+              "Kulttuurintutkimus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Markkinointistrategia",
+              "Kulttuurinen kompetenssi",
+              "Kampanjointi",
+              "Data-analyysi",
+              "Luovuus"
+    ],
+    tools_tech: ["Marketing platforms","Analytics tools","Social media"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3200,5500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Monikulttuurinen markkinointi kasvaa väestön monimuotoistuessa.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Multicultural Marketing Specialist", "Trainee", "Coordinator"],
+    career_progression: ["Senior Multicultural Marketing Specialist", "Lead", "Director"],
+    typical_employers: ["Mainostoimistot","Yritykset","Mediayhtiöt"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "public-art-coordinator",
+    category: "luova",
+    title_fi: "Julkisen taiteen koordinaattori",
+    title_en: "Public Art Coordinator",
+    short_description: "Koordinoi julkisen taiteen hankkeita. Tekee yhteistyötä taiteilijoiden ja yhteisöjen kanssa tuodakseen taidetta julkisiin tiloihin.",
+    main_tasks:     [
+              "Julkisen taiteen projektien koordinointi",
+              "Taiteilijoiden valinta ja yhteistyö",
+              "Rahoituksen hakeminen",
+              "Lupaprosessien hoitaminen",
+              "Yhteisöosallistaminen"
+    ],
+    impact:     [
+              "Tuo taidetta kaikkien saataville",
+              "Elävöittää julkisia tiloja",
+              "Edistää kulttuurista osallisuutta"
+    ],
+    education_paths:     [
+              "Taidehallinto",
+              "Kulttuurituotanto",
+              "Taidehistoria"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Projektinhallinta",
+              "Taideymmärrys",
+              "Yhteisötyö",
+              "Rahoitushakemukset",
+              "Verkostoituminen"
+    ],
+    tools_tech: ["Project management tools","Budgeting tools","Communication platforms"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3500,
+      range: [2800,4500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Julkisen taiteen kysyntä jatkuu kaupungeissa.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Public Art Coordinator", "Trainee", "Coordinator"],
+    career_progression: ["Senior Public Art Coordinator", "Lead", "Director"],
+    typical_employers: ["Kunnat","Taidejärjestöt","Kulttuurilaitokset"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "cultural-events-producer",
+    category: "jarjestaja",
+    title_fi: "Kulttuuritapahtumien tuottaja",
+    title_en: "Cultural Events Producer",
+    short_description: "Suunnittelee ja tuottaa kulttuuritapahtumia ja festivaaleja. Koordinoi tapahtuman kaikki osa-alueet toteutuksesta markkinointiin.",
+    main_tasks:     [
+              "Tapahtumien suunnittelu ja tuotanto",
+              "Budjetti- ja resurssihallinta",
+              "Esiintyjien ja yhteistyökumppaneiden koordinointi",
+              "Markkinointi ja viestintä",
+              "Tapahtumalogistiikka"
+    ],
+    impact:     [
+              "Luo kulttuurisia kokemuksia",
+              "Tukee taidetta ja kulttuuria",
+              "Rakentaa yhteisöllisyyttä"
+    ],
+    education_paths:     [
+              "Kulttuurituotanto",
+              "Tapahtumatuotanto",
+              "Taidehallinto"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Tapahtumatuotanto",
+              "Projektinhallinta",
+              "Budjetointi",
+              "Markkinointi",
+              "Logistiikka"
+    ],
+    tools_tech: ["Event management software","Ticketing systems","Project tools"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3600,
+      range: [2800,5000],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Kulttuuritapahtumien kysyntä jatkuu tasaisena.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Cultural Events Producer", "Trainee", "Coordinator"],
+    career_progression: ["Senior Cultural Events Producer", "Lead", "Director"],
+    typical_employers: ["Tapahtumatuotantoyhtiöt","Kulttuurilaitokset","Freelance"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "art-therapy-facilitator",
+    category: "auttaja",
+    title_fi: "Taideterapian ohjaaja",
+    title_en: "Art Therapy Facilitator",
+    short_description: "Käyttää taidetta terapeuttisena välineenä. Ohjaa taideterapiasessioita mielenterveyden ja hyvinvoinnin edistämiseksi.",
+    main_tasks:     [
+              "Taideterapiasessioiden suunnittelu ja ohjaus",
+              "Asiakkaiden tukeminen taiteellisen ilmaisun kautta",
+              "Terapiasuunnitelmien laatiminen",
+              "Ryhmä- ja yksilöterapia",
+              "Moniammatillinen yhteistyö"
+    ],
+    impact:     [
+              "Edistää mielenterveyttä taiteen kautta",
+              "Tukee itseilmaisua ja käsittelyä",
+              "Parantaa hyvinvointia"
+    ],
+    education_paths:     [
+              "Taideterapian koulutus",
+              "Psykologia",
+              "Taidekasvatus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Taideterapia",
+              "Terapeuttiset menetelmät",
+              "Vuorovaikutustaidot",
+              "Empatia",
+              "Taiteellisuus"
+    ],
+    tools_tech: ["Art supplies","Therapeutic methods","Documentation tools"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3300,
+      range: [2700,4200],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Taidelähtöisten terapioiden kysyntä kasvaa.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Art Therapy Facilitator", "Trainee", "Coordinator"],
+    career_progression: ["Senior Art Therapy Facilitator", "Lead", "Director"],
+    typical_employers: ["Terveyskeskukset","Hoitolaitokset","Yksityisvastaanotto"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "community-arts-director",
+    category: "johtaja",
+    title_fi: "Yhteisötaiteen johtaja",
+    title_en: "Community Arts Director",
+    short_description: "Johtaa yhteisötaidehankkeita. Kehittää taideohjelmia jotka osallistavat paikallisia yhteisöjä ja edistävät kulttuurista osallisuutta.",
+    main_tasks:     [
+              "Yhteisötaideohjelmien johtaminen",
+              "Taiteilija- ja yhteisöyhteistyö",
+              "Rahoituksen hankkiminen",
+              "Strateginen suunnittelu",
+              "Vaikuttavuuden arviointi"
+    ],
+    impact:     [
+              "Demokratisoi taidetta",
+              "Rakentaa yhteisöjä taiteen kautta",
+              "Edistää kulttuurista osallisuutta"
+    ],
+    education_paths:     [
+              "Taidehallinto",
+              "Kulttuurituotanto",
+              "Taidekasvatus"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Johtaminen",
+              "Yhteisötyö",
+              "Taideymmärrys",
+              "Rahoitushakemukset",
+              "Strateginen suunnittelu"
+    ],
+    tools_tech: ["Project management","Fundraising platforms","Communication tools"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3200,5500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Yhteisötaiteen merkitys jatkuu kulttuuripolitiikassa.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Community Arts Director", "Trainee", "Coordinator"],
+    career_progression: ["Senior Community Arts Director", "Lead", "Director"],
+    typical_employers: ["Kulttuurilaitokset","Kunnat","Taidejärjestöt"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "museum-education-specialist",
+    category: "auttaja",
+    title_fi: "Museopedagogi",
+    title_en: "Museum Education Specialist",
+    short_description: "Kehittää ja toteuttaa opetusohjelmia museoissa. Tekee taidetta ja historiaa saavutettavaksi ja kiinnostavaksi kaikille.",
+    main_tasks:     [
+              "Museo-opetuksen suunnittelu ja toteutus",
+              "Oppilasryhmien ohjaus",
+              "Opetusmateriaalien kehittäminen",
+              "Työpajojen ja tapahtumien järjestäminen",
+              "Näyttelyiden pedagoginen suunnittelu"
+    ],
+    impact:     [
+              "Tekee kulttuuriperintöä saavutettavaksi",
+              "Edistää oppimista ja kiinnostusta",
+              "Tukee museokokemusta"
+    ],
+    education_paths:     [
+              "Kasvatustieteet",
+              "Taidehistoria",
+              "Museologia"
+    ],
+    qualification_or_license: null,
+    core_skills:     [
+              "Pedagogiikka",
+              "Ryhmänohjaus",
+              "Taide- ja kulttuuriymmärrys",
+              "Materiaalien tuottaminen",
+              "Viestintä"
+    ],
+    tools_tech: ["Educational tools","Digital learning platforms","Exhibition design tools"],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3500,
+      range: [2800,4500],
+      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Museo-opetuksen tarve jatkuu tasaisena.",
+      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Museum Education Specialist", "Trainee", "Coordinator"],
+    career_progression: ["Senior Museum Education Specialist", "Lead", "Director"],
+    typical_employers: ["Museot","Galleriat","Kulttuurilaitokset"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+    ],
+    study_length_estimate_months: 48
+  }
 ];
 
 // Helper function to get careers by category
