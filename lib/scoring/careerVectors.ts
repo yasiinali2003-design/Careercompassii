@@ -8611,24 +8611,36 @@ export const CAREER_VECTORS = [
       "creative": 0.5,
       "analytical": 0.8,
       "hands_on": 0,
-      "business": 0.9,
+      "business": 1,
       "environment": 0,
       "health": 0,
-      "innovation": 0.8
+      "innovation": 0.9
     },
     "workstyle": {
       "teamwork": 0.9,
       "independence": 0.5,
       "leadership": 0.8,
       "organization": 0.9,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.7,
+      "structure": 0.6,
+      "flexibility": 0.7,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.8
+      "impact": 0.8,
+      "financial": 0.8,
+      "social_impact": 0.7,
+      "stability": 0.6,
+      "advancement": 0.9,
+      "work_life_balance": 0.6,
+      "global": 0.8,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -8651,14 +8663,26 @@ export const CAREER_VECTORS = [
       "independence": 0.3,
       "leadership": 0.7,
       "organization": 1,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.5,
+      "structure": 0.8,
+      "flexibility": 0.7,
+      "variety": 0.6
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.7,
+      "social_impact": 0.5,
+      "stability": 0.7,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.6,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -8674,21 +8698,33 @@ export const CAREER_VECTORS = [
       "business": 0.3,
       "environment": 0,
       "health": 0,
-      "innovation": 0.8
+      "innovation": 0.9
     },
     "workstyle": {
       "teamwork": 0.7,
       "independence": 0.7,
       "leadership": 0.4,
       "organization": 0.8,
-      "problem_solving": 1
+      "problem_solving": 1,
+      "autonomy": 0.8,
+      "structure": 0.5,
+      "flexibility": 0.8,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.5
+      "impact": 0.5,
+      "financial": 0.8,
+      "social_impact": 0.4,
+      "stability": 0.6,
+      "advancement": 0.8,
+      "work_life_balance": 0.5,
+      "global": 0.7,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.9
     }
   },
   {
@@ -8696,12 +8732,12 @@ export const CAREER_VECTORS = [
     "title": "Data Analyst",
     "category": "innovoija",
     "interests": {
-      "technology": 0.8,
+      "technology": 0.9,
       "people": 0.4,
       "creative": 0.3,
       "analytical": 1,
       "hands_on": 0,
-      "business": 0.6,
+      "business": 0.7,
       "environment": 0,
       "health": 0,
       "innovation": 0.5
@@ -8711,14 +8747,26 @@ export const CAREER_VECTORS = [
       "independence": 0.7,
       "leadership": 0.3,
       "organization": 0.8,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.7,
+      "structure": 0.6,
+      "flexibility": 0.7,
+      "variety": 0.6
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.7,
+      "social_impact": 0.6,
+      "stability": 0.7,
+      "advancement": 0.8,
+      "work_life_balance": 0.7,
+      "global": 0.6,
+      "company_size": 0.6
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -8727,28 +8775,40 @@ export const CAREER_VECTORS = [
     "category": "innovoija",
     "interests": {
       "technology": 0.6,
-      "people": 0.9,
-      "creative": 0.6,
+      "people": 1,
+      "creative": 0.7,
       "analytical": 0.8,
       "hands_on": 0,
       "business": 0.4,
       "environment": 0,
       "health": 0,
-      "innovation": 0.6
+      "innovation": 0.7
     },
     "workstyle": {
       "teamwork": 0.8,
       "independence": 0.6,
       "leadership": 0.4,
       "organization": 0.7,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.7,
+      "structure": 0.5,
+      "flexibility": 0.8,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.7
+      "impact": 0.7,
+      "financial": 0.7,
+      "social_impact": 0.7,
+      "stability": 0.6,
+      "advancement": 0.8,
+      "work_life_balance": 0.7,
+      "global": 0.7,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -8759,26 +8819,38 @@ export const CAREER_VECTORS = [
       "technology": 0.8,
       "people": 0.5,
       "creative": 0.7,
-      "analytical": 0.9,
+      "analytical": 1,
       "hands_on": 0,
       "business": 1,
       "environment": 0,
       "health": 0,
-      "innovation": 0.9
+      "innovation": 1
     },
     "workstyle": {
       "teamwork": 0.7,
       "independence": 0.8,
       "leadership": 0.5,
       "organization": 0.6,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.8,
+      "structure": 0.3,
+      "flexibility": 0.9,
+      "variety": 0.9
     },
     "values": {
       "growth": 1,
-      "impact": 0.7
+      "impact": 0.7,
+      "financial": 0.7,
+      "social_impact": 0.4,
+      "stability": 0.4,
+      "advancement": 0.9,
+      "work_life_balance": 0.5,
+      "global": 0.7,
+      "company_size": 0.3
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -8791,7 +8863,7 @@ export const CAREER_VECTORS = [
       "creative": 0.4,
       "analytical": 0.5,
       "hands_on": 0,
-      "business": 0.7,
+      "business": 0.8,
       "environment": 0,
       "health": 0,
       "innovation": 0.3
@@ -8801,14 +8873,26 @@ export const CAREER_VECTORS = [
       "independence": 0.5,
       "leadership": 0.6,
       "organization": 0.8,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.6,
+      "structure": 0.6,
+      "flexibility": 0.7,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.8
+      "impact": 0.8,
+      "financial": 0.7,
+      "social_impact": 0.7,
+      "stability": 0.7,
+      "advancement": 0.8,
+      "work_life_balance": 0.6,
+      "global": 0.6,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.6
     }
   },
   {
@@ -8831,14 +8915,26 @@ export const CAREER_VECTORS = [
       "independence": 0.8,
       "leadership": 0.2,
       "organization": 0.6,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.7,
+      "structure": 0.5,
+      "flexibility": 0.8,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.5
+      "impact": 0.5,
+      "financial": 0.7,
+      "social_impact": 0.5,
+      "stability": 0.7,
+      "advancement": 0.8,
+      "work_life_balance": 0.7,
+      "global": 0.7,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -8861,14 +8957,26 @@ export const CAREER_VECTORS = [
       "independence": 0.9,
       "leadership": 0.2,
       "organization": 0.7,
-      "problem_solving": 1
+      "problem_solving": 1,
+      "autonomy": 0.8,
+      "structure": 0.6,
+      "flexibility": 0.8,
+      "variety": 0.6
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.5
+      "impact": 0.5,
+      "financial": 0.8,
+      "social_impact": 0.4,
+      "stability": 0.7,
+      "advancement": 0.8,
+      "work_life_balance": 0.7,
+      "global": 0.7,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.9
     }
   },
   {
@@ -8891,14 +8999,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.3,
       "organization": 0.9,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.6,
+      "structure": 0.7,
+      "flexibility": 0.7,
+      "variety": 0.5
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.6,
+      "social_impact": 0.5,
+      "stability": 0.7,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.6,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -8921,14 +9041,26 @@ export const CAREER_VECTORS = [
       "independence": 0.8,
       "leadership": 0.2,
       "organization": 0.9,
-      "problem_solving": 0.6
+      "problem_solving": 0.6,
+      "autonomy": 0.8,
+      "structure": 0.6,
+      "flexibility": 0.8,
+      "variety": 0.6
     },
     "values": {
       "growth": 0.5,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.6,
+      "social_impact": 0.6,
+      "stability": 0.7,
+      "advancement": 0.6,
+      "work_life_balance": 0.8,
+      "global": 0.6,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.9
     }
   },
   {
@@ -8951,14 +9083,26 @@ export const CAREER_VECTORS = [
       "independence": 0.8,
       "leadership": 0.4,
       "organization": 0.9,
-      "problem_solving": 1
+      "problem_solving": 1,
+      "autonomy": 0.8,
+      "structure": 0.6,
+      "flexibility": 0.7,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.7
+      "impact": 0.7,
+      "financial": 0.9,
+      "social_impact": 0.4,
+      "stability": 0.7,
+      "advancement": 0.8,
+      "work_life_balance": 0.5,
+      "global": 0.7,
+      "company_size": 0.6
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.9
     }
   },
   {
@@ -8981,14 +9125,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.7,
       "organization": 0.8,
-      "problem_solving": 1
+      "problem_solving": 1,
+      "autonomy": 0.8,
+      "structure": 0.6,
+      "flexibility": 0.7,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.8
+      "impact": 0.8,
+      "financial": 0.9,
+      "social_impact": 0.5,
+      "stability": 0.7,
+      "advancement": 0.9,
+      "work_life_balance": 0.6,
+      "global": 0.8,
+      "company_size": 0.6
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -9011,14 +9167,26 @@ export const CAREER_VECTORS = [
       "independence": 0.7,
       "leadership": 0.4,
       "organization": 0.8,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.8,
+      "structure": 0.6,
+      "flexibility": 0.7,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.7
+      "impact": 0.7,
+      "financial": 0.8,
+      "social_impact": 0.4,
+      "stability": 0.7,
+      "advancement": 0.8,
+      "work_life_balance": 0.6,
+      "global": 0.7,
+      "company_size": 0.6
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.9
     }
   },
   {
@@ -9041,14 +9209,26 @@ export const CAREER_VECTORS = [
       "independence": 0.8,
       "leadership": 0.3,
       "organization": 0.7,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.8,
+      "structure": 0.6,
+      "flexibility": 0.8,
+      "variety": 0.6
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.8,
+      "social_impact": 0.4,
+      "stability": 0.7,
+      "advancement": 0.8,
+      "work_life_balance": 0.7,
+      "global": 0.7,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.9
     }
   },
   {
@@ -9059,9 +9239,9 @@ export const CAREER_VECTORS = [
       "technology": 0.5,
       "people": 0.7,
       "creative": 0.9,
-      "analytical": 0.6,
+      "analytical": 0.7,
       "hands_on": 0,
-      "business": 0.7,
+      "business": 0.8,
       "environment": 0,
       "health": 0,
       "innovation": 0.6
@@ -9071,14 +9251,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.6,
       "organization": 0.8,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.8,
+      "structure": 0.4,
+      "flexibility": 0.9,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.7
+      "impact": 0.7,
+      "financial": 0.6,
+      "social_impact": 0.6,
+      "stability": 0.6,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.6,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -9087,8 +9279,8 @@ export const CAREER_VECTORS = [
     "category": "luova",
     "interests": {
       "technology": 0.6,
-      "people": 0.9,
-      "creative": 0.8,
+      "people": 1,
+      "creative": 0.9,
       "analytical": 0.5,
       "hands_on": 0,
       "business": 0.6,
@@ -9101,14 +9293,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.5,
       "organization": 0.7,
-      "problem_solving": 0.6
+      "problem_solving": 0.6,
+      "autonomy": 0.7,
+      "structure": 0.4,
+      "flexibility": 0.8,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.5,
+      "social_impact": 0.6,
+      "stability": 0.5,
+      "advancement": 0.7,
+      "work_life_balance": 0.6,
+      "global": 0.7,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -9131,14 +9335,26 @@ export const CAREER_VECTORS = [
       "independence": 0.7,
       "leadership": 0.5,
       "organization": 0.8,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.9,
+      "structure": 0.3,
+      "flexibility": 0.9,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.7
+      "impact": 0.7,
+      "financial": 0.5,
+      "social_impact": 0.7,
+      "stability": 0.4,
+      "advancement": 0.6,
+      "work_life_balance": 0.7,
+      "global": 0.6,
+      "company_size": 0.3
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -9161,14 +9377,26 @@ export const CAREER_VECTORS = [
       "independence": 0.8,
       "leadership": 0.2,
       "organization": 0.7,
-      "problem_solving": 0.6
+      "problem_solving": 0.6,
+      "autonomy": 0.8,
+      "structure": 0.4,
+      "flexibility": 0.8,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.5
+      "impact": 0.5,
+      "financial": 0.5,
+      "social_impact": 0.5,
+      "stability": 0.5,
+      "advancement": 0.6,
+      "work_life_balance": 0.6,
+      "global": 0.6,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -9191,14 +9419,26 @@ export const CAREER_VECTORS = [
       "independence": 0.5,
       "leadership": 0.6,
       "organization": 0.7,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.7,
+      "structure": 0.5,
+      "flexibility": 0.8,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.8
+      "impact": 0.8,
+      "financial": 0.5,
+      "social_impact": 0.7,
+      "stability": 0.6,
+      "advancement": 0.6,
+      "work_life_balance": 0.7,
+      "global": 0.7,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -9221,14 +9461,26 @@ export const CAREER_VECTORS = [
       "independence": 0.7,
       "leadership": 0.4,
       "organization": 0.7,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.9,
+      "structure": 0.3,
+      "flexibility": 0.9,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.7
+      "impact": 0.7,
+      "financial": 0.6,
+      "social_impact": 0.5,
+      "stability": 0.5,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.7,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -9251,14 +9503,26 @@ export const CAREER_VECTORS = [
       "independence": 0.8,
       "leadership": 0.3,
       "organization": 0.6,
-      "problem_solving": 0.6
+      "problem_solving": 0.6,
+      "autonomy": 0.9,
+      "structure": 0.3,
+      "flexibility": 0.9,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.5,
+      "social_impact": 0.5,
+      "stability": 0.5,
+      "advancement": 0.6,
+      "work_life_balance": 0.8,
+      "global": 0.6,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.9
     }
   },
   {
@@ -9281,14 +9545,26 @@ export const CAREER_VECTORS = [
       "independence": 0.8,
       "leadership": 0.3,
       "organization": 0.7,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.9,
+      "structure": 0.3,
+      "flexibility": 0.9,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.6,
+      "social_impact": 0.5,
+      "stability": 0.5,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.7,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -9311,14 +9587,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.4,
       "organization": 0.7,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.8,
+      "structure": 0.4,
+      "flexibility": 0.9,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.7
+      "impact": 0.7,
+      "financial": 0.7,
+      "social_impact": 0.7,
+      "stability": 0.6,
+      "advancement": 0.8,
+      "work_life_balance": 0.7,
+      "global": 0.7,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -9334,21 +9622,33 @@ export const CAREER_VECTORS = [
       "business": 0.6,
       "environment": 0,
       "health": 0,
-      "innovation": 0.7
+      "innovation": 0.8
     },
     "workstyle": {
       "teamwork": 0.5,
       "independence": 0.9,
       "leadership": 0.4,
       "organization": 0.6,
-      "problem_solving": 0.6
+      "problem_solving": 0.6,
+      "autonomy": 1.0,
+      "structure": 0.2,
+      "flexibility": 1.0,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.4,
+      "social_impact": 0.6,
+      "stability": 0.3,
+      "advancement": 0.7,
+      "work_life_balance": 0.8,
+      "global": 0.8,
+      "company_size": 0.2
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.9
     }
   },
   {
@@ -9371,14 +9671,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.5,
       "organization": 0.7,
-      "problem_solving": 0.6
+      "problem_solving": 0.6,
+      "autonomy": 0.8,
+      "structure": 0.3,
+      "flexibility": 0.9,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.6,
+      "social_impact": 0.5,
+      "stability": 0.5,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.8,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -9401,14 +9713,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.5,
       "organization": 0.8,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.8,
+      "structure": 0.4,
+      "flexibility": 0.9,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.5,
+      "social_impact": 0.6,
+      "stability": 0.5,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.7,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -9419,7 +9743,7 @@ export const CAREER_VECTORS = [
       "technology": 0.5,
       "people": 0.8,
       "creative": 0.5,
-      "analytical": 0.9,
+      "analytical": 1,
       "hands_on": 0,
       "business": 1,
       "environment": 0,
@@ -9431,14 +9755,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.8,
       "organization": 0.9,
-      "problem_solving": 1
+      "problem_solving": 1,
+      "autonomy": 0.7,
+      "structure": 0.6,
+      "flexibility": 0.5,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.9,
-      "impact": 0.8
+      "impact": 0.8,
+      "financial": 0.9,
+      "social_impact": 0.5,
+      "stability": 0.6,
+      "advancement": 0.9,
+      "work_life_balance": 0.4,
+      "global": 0.9,
+      "company_size": 0.7
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.5
     }
   },
   {
@@ -9446,12 +9782,12 @@ export const CAREER_VECTORS = [
     "title": "Business Analyst",
     "category": "visionaari",
     "interests": {
-      "technology": 0.6,
+      "technology": 0.7,
       "people": 0.6,
       "creative": 0.4,
       "analytical": 1,
       "hands_on": 0,
-      "business": 0.9,
+      "business": 1,
       "environment": 0,
       "health": 0,
       "innovation": 0.5
@@ -9461,14 +9797,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.5,
       "organization": 0.9,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.6,
+      "structure": 0.7,
+      "flexibility": 0.6,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.7
+      "impact": 0.7,
+      "financial": 0.7,
+      "social_impact": 0.5,
+      "stability": 0.7,
+      "advancement": 0.8,
+      "work_life_balance": 0.6,
+      "global": 0.7,
+      "company_size": 0.6
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.6
     }
   },
   {
@@ -9479,26 +9827,38 @@ export const CAREER_VECTORS = [
       "technology": 0.4,
       "people": 0.7,
       "creative": 0.6,
-      "analytical": 0.9,
+      "analytical": 1,
       "hands_on": 0,
       "business": 1,
       "environment": 0,
       "health": 0,
-      "innovation": 0.7
+      "innovation": 0.8
     },
     "workstyle": {
       "teamwork": 0.8,
       "independence": 0.6,
       "leadership": 0.9,
       "organization": 0.8,
-      "problem_solving": 1
+      "problem_solving": 1,
+      "autonomy": 0.7,
+      "structure": 0.6,
+      "flexibility": 0.5,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.9,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.9,
+      "social_impact": 0.5,
+      "stability": 0.6,
+      "advancement": 0.9,
+      "work_life_balance": 0.3,
+      "global": 0.9,
+      "company_size": 0.7
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.5
     }
   },
   {
@@ -9521,14 +9881,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.5,
       "organization": 0.7,
-      "problem_solving": 0.6
+      "problem_solving": 0.6,
+      "autonomy": 0.5,
+      "structure": 0.6,
+      "flexibility": 0.6,
+      "variety": 0.6
     },
     "values": {
       "growth": 0.9,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.6,
+      "social_impact": 0.3,
+      "stability": 0.5,
+      "advancement": 0.8,
+      "work_life_balance": 0.5,
+      "global": 0.5,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.5
     }
   },
   {
@@ -9551,14 +9923,26 @@ export const CAREER_VECTORS = [
       "independence": 0.7,
       "leadership": 0.6,
       "organization": 0.8,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.6,
+      "structure": 0.5,
+      "flexibility": 0.7,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.9,
-      "impact": 0.7
+      "impact": 0.7,
+      "financial": 0.8,
+      "social_impact": 0.4,
+      "stability": 0.6,
+      "advancement": 0.8,
+      "work_life_balance": 0.5,
+      "global": 0.6,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.5
     }
   },
   {
@@ -9581,14 +9965,26 @@ export const CAREER_VECTORS = [
       "independence": 0.5,
       "leadership": 0.8,
       "organization": 1,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.6,
+      "structure": 0.8,
+      "flexibility": 0.5,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.7
+      "impact": 0.7,
+      "financial": 0.7,
+      "social_impact": 0.5,
+      "stability": 0.7,
+      "advancement": 0.8,
+      "work_life_balance": 0.5,
+      "global": 0.6,
+      "company_size": 0.6
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.5
     }
   },
   {
@@ -9611,14 +10007,26 @@ export const CAREER_VECTORS = [
       "independence": 0.7,
       "leadership": 0.8,
       "organization": 0.8,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.7,
+      "structure": 0.5,
+      "flexibility": 0.7,
+      "variety": 0.8
     },
     "values": {
       "growth": 1,
-      "impact": 0.8
+      "impact": 0.8,
+      "financial": 0.8,
+      "social_impact": 0.4,
+      "stability": 0.6,
+      "advancement": 0.9,
+      "work_life_balance": 0.5,
+      "global": 0.8,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.5
     }
   },
   {
@@ -9641,14 +10049,26 @@ export const CAREER_VECTORS = [
       "independence": 0.4,
       "leadership": 0.5,
       "organization": 1,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.5,
+      "structure": 0.8,
+      "flexibility": 0.6,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.5,
+      "social_impact": 0.5,
+      "stability": 0.7,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.5,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.6
     }
   },
   {
@@ -9656,29 +10076,41 @@ export const CAREER_VECTORS = [
     "title": "Digital Transformation Consultant",
     "category": "visionaari",
     "interests": {
-      "technology": 0.8,
+      "technology": 0.9,
       "people": 0.7,
       "creative": 0.6,
       "analytical": 0.8,
       "hands_on": 0,
-      "business": 0.9,
+      "business": 1,
       "environment": 0,
       "health": 0,
-      "innovation": 0.9
+      "innovation": 1
     },
     "workstyle": {
       "teamwork": 0.8,
       "independence": 0.6,
       "leadership": 0.8,
       "organization": 0.8,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.7,
+      "structure": 0.6,
+      "flexibility": 0.6,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.9,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.9,
+      "social_impact": 0.6,
+      "stability": 0.6,
+      "advancement": 0.9,
+      "work_life_balance": 0.4,
+      "global": 0.8,
+      "company_size": 0.7
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.6
     }
   },
   {
@@ -9701,14 +10133,26 @@ export const CAREER_VECTORS = [
       "independence": 0.5,
       "leadership": 0.8,
       "organization": 0.9,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.7,
+      "structure": 0.6,
+      "flexibility": 0.7,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.7,
+      "social_impact": 0.7,
+      "stability": 0.6,
+      "advancement": 0.8,
+      "work_life_balance": 0.6,
+      "global": 0.7,
+      "company_size": 0.6
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.6
     }
   },
   {
@@ -9731,14 +10175,26 @@ export const CAREER_VECTORS = [
       "independence": 0.7,
       "leadership": 0.5,
       "organization": 0.7,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.7,
+      "structure": 0.6,
+      "flexibility": 0.7,
+      "variety": 0.6
     },
     "values": {
       "growth": 0.7,
-      "impact": 1
+      "impact": 1,
+      "financial": 0.5,
+      "social_impact": 0.9,
+      "stability": 0.7,
+      "advancement": 0.6,
+      "work_life_balance": 0.7,
+      "global": 0.4,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.5
     }
   },
   {
@@ -9761,14 +10217,26 @@ export const CAREER_VECTORS = [
       "independence": 0.8,
       "leadership": 0.6,
       "organization": 0.6,
-      "problem_solving": 0.6
+      "problem_solving": 0.6,
+      "autonomy": 0.9,
+      "structure": 0.3,
+      "flexibility": 0.9,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.4,
+      "social_impact": 0.8,
+      "stability": 0.5,
+      "advancement": 0.5,
+      "work_life_balance": 0.9,
+      "global": 0.5,
+      "company_size": 0.2
     },
     "context": {
-      "outdoor": 0.3
+      "outdoor": 0.3,
+      "work_environment": 0.6
     }
   },
   {
@@ -9791,14 +10259,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.6,
       "organization": 0.8,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.6,
+      "structure": 0.7,
+      "flexibility": 0.7,
+      "variety": 0.6
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.6,
+      "social_impact": 0.8,
+      "stability": 0.8,
+      "advancement": 0.6,
+      "work_life_balance": 0.8,
+      "global": 0.5,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.5
     }
   },
   {
@@ -9821,14 +10301,26 @@ export const CAREER_VECTORS = [
       "independence": 0.7,
       "leadership": 0.3,
       "organization": 0.8,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.7,
+      "structure": 0.7,
+      "flexibility": 0.7,
+      "variety": 0.6
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.8
+      "impact": 0.8,
+      "financial": 0.7,
+      "social_impact": 0.8,
+      "stability": 0.8,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.6,
+      "company_size": 0.6
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -9851,14 +10343,26 @@ export const CAREER_VECTORS = [
       "independence": 0.7,
       "leadership": 0.5,
       "organization": 0.7,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.8,
+      "structure": 0.5,
+      "flexibility": 0.8,
+      "variety": 0.6
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.5,
+      "social_impact": 0.8,
+      "stability": 0.6,
+      "advancement": 0.6,
+      "work_life_balance": 0.8,
+      "global": 0.5,
+      "company_size": 0.3
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.5
     }
   },
   {
@@ -9881,14 +10385,26 @@ export const CAREER_VECTORS = [
       "independence": 0.4,
       "leadership": 0.5,
       "organization": 1,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.5,
+      "structure": 0.7,
+      "flexibility": 0.6,
+      "variety": 0.6
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.5,
+      "social_impact": 0.8,
+      "stability": 0.7,
+      "advancement": 0.6,
+      "work_life_balance": 0.7,
+      "global": 0.4,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.5
     }
   },
   {
@@ -9911,14 +10427,26 @@ export const CAREER_VECTORS = [
       "independence": 0.7,
       "leadership": 0.8,
       "organization": 0.8,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.7,
+      "structure": 0.5,
+      "flexibility": 0.6,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.9,
-      "impact": 0.7
+      "impact": 0.7,
+      "financial": 0.8,
+      "social_impact": 0.4,
+      "stability": 0.6,
+      "advancement": 0.8,
+      "work_life_balance": 0.5,
+      "global": 0.9,
+      "company_size": 0.6
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.6
     }
   },
   {
@@ -9941,14 +10469,26 @@ export const CAREER_VECTORS = [
       "independence": 0.5,
       "leadership": 0.9,
       "organization": 0.9,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.7,
+      "structure": 0.6,
+      "flexibility": 0.9,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.8
+      "impact": 0.8,
+      "financial": 0.7,
+      "social_impact": 0.5,
+      "stability": 0.7,
+      "advancement": 0.8,
+      "work_life_balance": 0.7,
+      "global": 0.9,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.9
     }
   },
   {
@@ -9971,14 +10511,26 @@ export const CAREER_VECTORS = [
       "independence": 0.7,
       "leadership": 0.3,
       "organization": 0.8,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.8,
+      "structure": 0.5,
+      "flexibility": 0.9,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.6,
+      "social_impact": 0.6,
+      "stability": 0.7,
+      "advancement": 0.6,
+      "work_life_balance": 0.8,
+      "global": 0.9,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.9
     }
   },
   {
@@ -10001,14 +10553,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.8,
       "organization": 0.8,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.7,
+      "structure": 0.5,
+      "flexibility": 0.7,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.9,
-      "impact": 0.8
+      "impact": 0.8,
+      "financial": 0.8,
+      "social_impact": 0.6,
+      "stability": 0.6,
+      "advancement": 0.8,
+      "work_life_balance": 0.5,
+      "global": 1.0,
+      "company_size": 0.6
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.6
     }
   },
   {
@@ -10031,14 +10595,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.3,
       "organization": 0.8,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.5,
+      "structure": 0.7,
+      "flexibility": 0.7,
+      "variety": 0.6
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.7
+      "impact": 0.7,
+      "financial": 0.5,
+      "social_impact": 0.6,
+      "stability": 0.7,
+      "advancement": 0.6,
+      "work_life_balance": 0.7,
+      "global": 0.7,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -10061,14 +10637,26 @@ export const CAREER_VECTORS = [
       "independence": 0.5,
       "leadership": 0.6,
       "organization": 0.9,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.7,
+      "structure": 0.6,
+      "flexibility": 0.8,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.6,
+      "social_impact": 0.6,
+      "stability": 0.7,
+      "advancement": 0.7,
+      "work_life_balance": 0.8,
+      "global": 0.9,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -10091,14 +10679,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.4,
       "organization": 0.9,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.6,
+      "structure": 0.7,
+      "flexibility": 0.6,
+      "variety": 0.6
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.6
+      "impact": 0.6,
+      "financial": 0.6,
+      "social_impact": 0.4,
+      "stability": 0.7,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.8,
+      "company_size": 0.6
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.6
     }
   },
   {
@@ -10121,14 +10721,26 @@ export const CAREER_VECTORS = [
       "independence": 0.5,
       "leadership": 0.7,
       "organization": 0.8,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.7,
+      "structure": 0.5,
+      "flexibility": 0.8,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.8,
-      "impact": 1
+      "impact": 1,
+      "financial": 0.6,
+      "social_impact": 0.9,
+      "stability": 0.7,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.7,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -10151,14 +10763,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.7,
       "organization": 0.7,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.8,
+      "structure": 0.4,
+      "flexibility": 0.7,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 1
+      "impact": 1,
+      "financial": 0.4,
+      "social_impact": 1.0,
+      "stability": 0.5,
+      "advancement": 0.5,
+      "work_life_balance": 0.6,
+      "global": 0.7,
+      "company_size": 0.3
     },
     "context": {
-      "outdoor": 0.2
+      "outdoor": 0.2,
+      "work_environment": 0.6
     }
   },
   {
@@ -10181,14 +10805,26 @@ export const CAREER_VECTORS = [
       "independence": 0.5,
       "leadership": 0.8,
       "organization": 0.8,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.7,
+      "structure": 0.4,
+      "flexibility": 0.8,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 1
+      "impact": 1,
+      "financial": 0.3,
+      "social_impact": 0.9,
+      "stability": 0.4,
+      "advancement": 0.5,
+      "work_life_balance": 0.6,
+      "global": 0.5,
+      "company_size": 0.2
     },
     "context": {
-      "outdoor": 0.4
+      "outdoor": 0.4,
+      "work_environment": 0.4
     }
   },
   {
@@ -10197,7 +10833,7 @@ export const CAREER_VECTORS = [
     "category": "jarjestaja",
     "interests": {
       "technology": 0.4,
-      "people": 0.9,
+      "people": 1,
       "creative": 0.5,
       "analytical": 0.6,
       "hands_on": 0,
@@ -10211,14 +10847,26 @@ export const CAREER_VECTORS = [
       "independence": 0.5,
       "leadership": 0.6,
       "organization": 0.9,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.6,
+      "structure": 0.6,
+      "flexibility": 0.7,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.4,
+      "social_impact": 0.9,
+      "stability": 0.6,
+      "advancement": 0.6,
+      "work_life_balance": 0.7,
+      "global": 0.6,
+      "company_size": 0.3
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.5
     }
   },
   {
@@ -10227,7 +10875,7 @@ export const CAREER_VECTORS = [
     "category": "visionaari",
     "interests": {
       "technology": 0.4,
-      "people": 0.8,
+      "people": 0.9,
       "creative": 0.6,
       "analytical": 0.9,
       "hands_on": 0,
@@ -10241,14 +10889,26 @@ export const CAREER_VECTORS = [
       "independence": 0.8,
       "leadership": 0.6,
       "organization": 0.8,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.8,
+      "structure": 0.5,
+      "flexibility": 0.8,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.7,
-      "impact": 1
+      "impact": 1,
+      "financial": 0.5,
+      "social_impact": 1.0,
+      "stability": 0.6,
+      "advancement": 0.6,
+      "work_life_balance": 0.7,
+      "global": 0.9,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -10256,8 +10916,8 @@ export const CAREER_VECTORS = [
     "title": "Accessibility Consultant",
     "category": "auttaja",
     "interests": {
-      "technology": 0.7,
-      "people": 0.9,
+      "technology": 0.8,
+      "people": 1,
       "creative": 0.6,
       "analytical": 0.7,
       "hands_on": 0,
@@ -10271,14 +10931,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.6,
       "organization": 0.8,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.8,
+      "structure": 0.5,
+      "flexibility": 0.9,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.6,
+      "social_impact": 0.9,
+      "stability": 0.6,
+      "advancement": 0.7,
+      "work_life_balance": 0.8,
+      "global": 0.6,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.8
     }
   },
   {
@@ -10301,14 +10973,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.7,
       "organization": 0.8,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.7,
+      "structure": 0.5,
+      "flexibility": 0.8,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.7,
-      "impact": 1
+      "impact": 1,
+      "financial": 0.6,
+      "social_impact": 0.9,
+      "stability": 0.6,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.8,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.6
     }
   },
   {
@@ -10332,14 +11016,26 @@ export const CAREER_VECTORS = [
       "independence": 0.5,
       "leadership": 0.7,
       "organization": 0.8,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.7,
+      "structure": 0.5,
+      "flexibility": 0.7,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.4,
+      "social_impact": 0.9,
+      "stability": 0.6,
+      "advancement": 0.6,
+      "work_life_balance": 0.7,
+      "global": 0.6,
+      "company_size": 0.3
     },
     "context": {
-      "outdoor": 0.3
+      "outdoor": 0.3,
+      "work_environment": 0.5
     }
   },
   {
@@ -10353,23 +11049,35 @@ export const CAREER_VECTORS = [
       "analytical": 0.5,
       "hands_on": 0.7,
       "business": 0.6,
-      "environment": 0.9,
+      "environment": 1,
       "health": 0,
-      "innovation": 0.8
+      "innovation": 0.9
     },
     "workstyle": {
       "teamwork": 0.6,
       "independence": 0.8,
       "leadership": 0.4,
       "organization": 0.7,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.9,
+      "structure": 0.3,
+      "flexibility": 0.9,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.5,
+      "social_impact": 0.9,
+      "stability": 0.5,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.8,
+      "company_size": 0.3
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -10382,24 +11090,36 @@ export const CAREER_VECTORS = [
       "creative": 0.7,
       "analytical": 0.8,
       "hands_on": 0.3,
-      "business": 0.8,
+      "business": 0.9,
       "environment": 1,
       "health": 0,
-      "innovation": 0.9
+      "innovation": 1
     },
     "workstyle": {
       "teamwork": 0.8,
       "independence": 0.6,
       "leadership": 0.7,
       "organization": 0.8,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.7,
+      "structure": 0.5,
+      "flexibility": 0.8,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.6,
+      "social_impact": 0.9,
+      "stability": 0.6,
+      "advancement": 0.8,
+      "work_life_balance": 0.7,
+      "global": 0.9,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -10412,8 +11132,8 @@ export const CAREER_VECTORS = [
       "creative": 0.9,
       "analytical": 0.7,
       "hands_on": 0,
-      "business": 0.8,
-      "environment": 0.6,
+      "business": 0.9,
+      "environment": 0.8,
       "health": 0,
       "innovation": 0.7
     },
@@ -10422,14 +11142,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.6,
       "organization": 0.8,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.8,
+      "structure": 0.4,
+      "flexibility": 0.9,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.7,
+      "social_impact": 0.8,
+      "stability": 0.6,
+      "advancement": 0.8,
+      "work_life_balance": 0.7,
+      "global": 0.8,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -10445,21 +11177,33 @@ export const CAREER_VECTORS = [
       "business": 0.5,
       "environment": 1,
       "health": 0,
-      "innovation": 0.8
+      "innovation": 0.9
     },
     "workstyle": {
       "teamwork": 0.7,
       "independence": 0.7,
       "leadership": 0.5,
       "organization": 0.8,
-      "problem_solving": 0.9
+      "problem_solving": 0.9,
+      "autonomy": 0.7,
+      "structure": 0.6,
+      "flexibility": 0.7,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.7,
+      "social_impact": 0.9,
+      "stability": 0.7,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.7,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0.2
+      "outdoor": 0.2,
+      "work_environment": 0.6
     }
   },
   {
@@ -10472,7 +11216,7 @@ export const CAREER_VECTORS = [
       "creative": 0.7,
       "analytical": 0.7,
       "hands_on": 0.4,
-      "business": 0.7,
+      "business": 0.8,
       "environment": 1,
       "health": 0,
       "innovation": 0.8
@@ -10482,14 +11226,26 @@ export const CAREER_VECTORS = [
       "independence": 0.7,
       "leadership": 0.7,
       "organization": 0.8,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.9,
+      "structure": 0.3,
+      "flexibility": 0.9,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 1
+      "impact": 1,
+      "financial": 0.5,
+      "social_impact": 0.9,
+      "stability": 0.5,
+      "advancement": 0.7,
+      "work_life_balance": 0.8,
+      "global": 0.8,
+      "company_size": 0.3
     },
     "context": {
-      "outdoor": 0.3
+      "outdoor": 0.3,
+      "work_environment": 0.7
     }
   },
   {
@@ -10503,23 +11259,35 @@ export const CAREER_VECTORS = [
       "analytical": 0.7,
       "hands_on": 0.6,
       "business": 0.6,
-      "environment": 0.9,
+      "environment": 1,
       "health": 0,
-      "innovation": 0.9
+      "innovation": 1
     },
     "workstyle": {
       "teamwork": 0.7,
       "independence": 0.7,
       "leadership": 0.4,
       "organization": 0.7,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.8,
+      "structure": 0.4,
+      "flexibility": 0.9,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.8,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.6,
+      "social_impact": 0.9,
+      "stability": 0.6,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.8,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -10532,8 +11300,8 @@ export const CAREER_VECTORS = [
       "creative": 0.4,
       "analytical": 0.8,
       "hands_on": 0,
-      "business": 0.8,
-      "environment": 0.7,
+      "business": 0.9,
+      "environment": 0.9,
       "health": 0,
       "innovation": 0.5
     },
@@ -10542,14 +11310,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.7,
       "organization": 0.9,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.7,
+      "structure": 0.6,
+      "flexibility": 0.7,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.7,
+      "social_impact": 0.9,
+      "stability": 0.7,
+      "advancement": 0.7,
+      "work_life_balance": 0.6,
+      "global": 0.9,
+      "company_size": 0.6
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.6
     }
   },
   {
@@ -10572,14 +11352,26 @@ export const CAREER_VECTORS = [
       "independence": 0.8,
       "leadership": 0.5,
       "organization": 0.6,
-      "problem_solving": 0.6
+      "problem_solving": 0.6,
+      "autonomy": 0.9,
+      "structure": 0.2,
+      "flexibility": 1.0,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.4,
+      "social_impact": 0.8,
+      "stability": 0.4,
+      "advancement": 0.6,
+      "work_life_balance": 0.8,
+      "global": 0.7,
+      "company_size": 0.2
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.9
     }
   },
   {
@@ -10602,14 +11394,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.7,
       "organization": 0.7,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.8,
+      "structure": 0.4,
+      "flexibility": 0.9,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.6,
+      "social_impact": 0.8,
+      "stability": 0.6,
+      "advancement": 0.7,
+      "work_life_balance": 0.8,
+      "global": 0.9,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -10632,14 +11436,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.6,
       "organization": 0.8,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.8,
+      "structure": 0.4,
+      "flexibility": 0.8,
+      "variety": 0.8
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.5,
+      "social_impact": 0.8,
+      "stability": 0.6,
+      "advancement": 0.6,
+      "work_life_balance": 0.7,
+      "global": 0.7,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -10662,14 +11478,26 @@ export const CAREER_VECTORS = [
       "independence": 0.8,
       "leadership": 0.6,
       "organization": 0.7,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.9,
+      "structure": 0.2,
+      "flexibility": 0.9,
+      "variety": 1.0
     },
     "values": {
       "growth": 0.7,
-      "impact": 1
+      "impact": 1,
+      "financial": 0.4,
+      "social_impact": 0.9,
+      "stability": 0.3,
+      "advancement": 0.6,
+      "work_life_balance": 0.6,
+      "global": 0.8,
+      "company_size": 0.2
     },
     "context": {
-      "outdoor": 0.6
+      "outdoor": 0.6,
+      "work_environment": 0.6
     }
   },
   {
@@ -10692,14 +11520,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.6,
       "organization": 0.7,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.7,
+      "structure": 0.5,
+      "flexibility": 0.8,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.8
+      "impact": 0.8,
+      "financial": 0.6,
+      "social_impact": 0.7,
+      "stability": 0.6,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.9,
+      "company_size": 0.5
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.7
     }
   },
   {
@@ -10722,14 +11562,26 @@ export const CAREER_VECTORS = [
       "independence": 0.5,
       "leadership": 0.6,
       "organization": 0.8,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.7,
+      "structure": 0.5,
+      "flexibility": 0.8,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.6,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.5,
+      "social_impact": 0.8,
+      "stability": 0.6,
+      "advancement": 0.6,
+      "work_life_balance": 0.7,
+      "global": 0.6,
+      "company_size": 0.3
     },
     "context": {
-      "outdoor": 0.6
+      "outdoor": 0.6,
+      "work_environment": 0.5
     }
   },
   {
@@ -10752,14 +11604,26 @@ export const CAREER_VECTORS = [
       "independence": 0.5,
       "leadership": 0.7,
       "organization": 0.9,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.7,
+      "structure": 0.5,
+      "flexibility": 0.7,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.8
+      "impact": 0.8,
+      "financial": 0.5,
+      "social_impact": 0.7,
+      "stability": 0.5,
+      "advancement": 0.6,
+      "work_life_balance": 0.6,
+      "global": 0.7,
+      "company_size": 0.3
     },
     "context": {
-      "outdoor": 0.4
+      "outdoor": 0.4,
+      "work_environment": 0.4
     }
   },
   {
@@ -10782,14 +11646,26 @@ export const CAREER_VECTORS = [
       "independence": 0.7,
       "leadership": 0.6,
       "organization": 0.7,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.8,
+      "structure": 0.4,
+      "flexibility": 0.8,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.7,
-      "impact": 1
+      "impact": 1,
+      "financial": 0.5,
+      "social_impact": 0.9,
+      "stability": 0.6,
+      "advancement": 0.6,
+      "work_life_balance": 0.8,
+      "global": 0.5,
+      "company_size": 0.3
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.5
     }
   },
   {
@@ -10812,14 +11688,26 @@ export const CAREER_VECTORS = [
       "independence": 0.5,
       "leadership": 0.9,
       "organization": 0.8,
-      "problem_solving": 0.8
+      "problem_solving": 0.8,
+      "autonomy": 0.8,
+      "structure": 0.4,
+      "flexibility": 0.8,
+      "variety": 0.9
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.9
+      "impact": 0.9,
+      "financial": 0.5,
+      "social_impact": 0.8,
+      "stability": 0.6,
+      "advancement": 0.7,
+      "work_life_balance": 0.7,
+      "global": 0.6,
+      "company_size": 0.3
     },
     "context": {
-      "outdoor": 0.3
+      "outdoor": 0.3,
+      "work_environment": 0.5
     }
   },
   {
@@ -10843,14 +11731,26 @@ export const CAREER_VECTORS = [
       "independence": 0.6,
       "leadership": 0.6,
       "organization": 0.8,
-      "problem_solving": 0.7
+      "problem_solving": 0.7,
+      "autonomy": 0.7,
+      "structure": 0.6,
+      "flexibility": 0.7,
+      "variety": 0.7
     },
     "values": {
       "growth": 0.7,
-      "impact": 0.8
+      "impact": 0.8,
+      "financial": 0.5,
+      "social_impact": 0.8,
+      "stability": 0.7,
+      "advancement": 0.6,
+      "work_life_balance": 0.8,
+      "global": 0.5,
+      "company_size": 0.4
     },
     "context": {
-      "outdoor": 0
+      "outdoor": 0,
+      "work_environment": 0.4
     }
   }
 ];
