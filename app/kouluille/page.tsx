@@ -26,8 +26,11 @@ export default function PricingPage() {
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             CareerCompassi Kouluille
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Moderni ja helppokäyttöinen työohjauksen työkalu oppilaitoksille
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+            Moderni ja helppokäyttöinen uraohjaustyökalu oppilaitoksille
+          </p>
+          <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+            361 uramahdollisuutta koko Suomesta • 75 modernia tulevaisuuden ammattia • Edistyneet analytiikkatyökalut
           </p>
         </div>
 
@@ -55,7 +58,7 @@ export default function PricingPage() {
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-green-500" size={20} />
-                  <span>286 eri ammattimahdollisuutta</span>
+                  <span>361 eri ammattimahdollisuutta (sis. 75 modernia uraa)</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-green-500" size={20} />
@@ -101,11 +104,23 @@ export default function PricingPage() {
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-green-500" size={20} />
-                  <span>Perus CSV-vienti</span>
+                  <span>Yksityiskohtaiset CSV-vienti</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-green-500" size={20} />
-                  <span>Yksinkertaiset analyysit</span>
+                  <span>Edistyneet analytiikkatyökalut</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="mr-2 text-green-500" size={20} />
+                  <span>Ulottuvuuksien yksityiskohtainen erittely</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="mr-2 text-green-500" size={20} />
+                  <span>Koulutuspolkujen visualisointi</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="mr-2 text-green-500" size={20} />
+                  <span>Koko Suomen kattava urakartta</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-green-500" size={20} />
@@ -141,23 +156,27 @@ export default function PricingPage() {
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>PDF-raporttien generointi</span>
+                  <span>PDF-raporttien generointi (oppilas & luokka)</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>Vertailuanalyysit (luokat/ajanjaksot)</span>
+                  <span>Trendianalyysit ja vertailut ajanjaksolta</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>5 vuoden historiadata</span>
+                  <span>Luokkien väliset vertailuanalyysit</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>Nopea tuki ja käyttöohjeistus</span>
+                  <span>5 vuoden historiadata ja kehitysraportit</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
-                  <span>API-pääsy järjestelmiin</span>
+                  <span>Nopea tuki ja henkilökohtainen käyttöohjeistus</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="mr-2 text-blue-500" size={20} />
+                  <span>API-integraatiot koulujen järjestelmiin</span>
                 </li>
               </ul>
               <Button className="w-full bg-blue-600 hover:bg-blue-700">
@@ -207,8 +226,8 @@ export default function PricingPage() {
                   <tr className="bg-gray-50">
                     <td className="border p-3">Analyyttiset työkalut</td>
                     <td className="border p-3 text-center">—</td>
-                    <td className="border p-3 text-center">Perus</td>
-                    <td className="border p-3 text-center">Kehittyneet + vertailut</td>
+                    <td className="border p-3 text-center">Edistyneet</td>
+                    <td className="border p-3 text-center">Edistyneet + trendivertailut</td>
                   </tr>
                   <tr>
                     <td className="border p-3">PDF-raportit</td>
