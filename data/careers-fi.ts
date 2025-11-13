@@ -26664,7 +26664,7 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   }
-];
+] as CareerFI[];
 
 // Helper function to get careers by category
 export function getCareersByCategory(category: string): CareerFI[] {
