@@ -22110,7 +22110,7 @@ export const careersData: CareerFI[] = [
     category: "innovoija",
     title_fi: "Tuotepäällikkö",
     title_en: "Product Manager",
-    short_description: "Tuotepäällikkö määrittelee ja kehittää digitaalisia tuotteita vastaamaan käyttäjien tarpeita ja liiketoimintatavoitteita. Koordinoi kehitystiimejä ja tekee strategisia päätöksiä.",
+    short_description: "Tuotepäällikkö määrittelee ja kehittää digitaalisia tuotteita vastaamaan käyttäjien tarpeita ja liiketoimintatavoitteita. Helsingissä erityisen kysytty rooli startup- ja kasvuyrityksissa, jossa yhdistyvät teknologia, liiketoiminta ja käyttäjäymmärrys. Tarjoaa nopean urakehityksen ja mahdollisuuden vaikuttaa miljoonien käyttäjien arkeen.",
     main_tasks: [
           "Tuotevision ja strategian määrittely",
           "Kehitysjonon priorisointi ja roadmapin laatiminen",
@@ -22119,9 +22119,9 @@ export const careersData: CareerFI[] = [
           "Tuotteen menestyksen mittaaminen ja optimointi"
     ],
     impact: [
-          "Luo tuotteita jotka parantavat ihmisten arkea",
-          "Ohjaa teknologiakehitystä käyttäjälähtöisesti",
-          "Mahdollistaa liiketoiminnan kasvun ja innovaatiot"
+          "Luo tuotteita ja palveluita, joita sadat tuhannet ihmiset käyttävät päivittäin Suomessa ja kansainvälisesti",
+          "Ohjaa teknologiakehitystä käyttäjälähtöisesti ja vaikuttaa suoraan tuotteen menestykseen",
+          "Mahdollistaa liiketoiminnan nopean kasvun ja läpimurtoinnovaatiot Helsingin tech-ekosysteemissä"
     ],
     education_paths: [
           "AMK: Tradenomi, tietotekniikka",
@@ -22167,10 +22167,10 @@ export const careersData: CareerFI[] = [
           "CPO"
     ],
     typical_employers: [
-          "Teknologiayritykset",
-          "Startup-yritykset",
-          "Digitaaliset palvelutalot",
-          "IT-konsultit"
+          "Wolt, Supercell, Reaktor",
+          "Vincit, Futurice, Solita",
+          "Startup-yritykset ja kasvuyhtiöt",
+          "Digitaaliset palvelutalot ja IT-konsultit"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22193,7 +22193,7 @@ export const careersData: CareerFI[] = [
     category: "jarjestaja",
     title_fi: "Scrum Master",
     title_en: "Scrum Master",
-    short_description: "Scrum Master fasilitoi ketterää kehitystä ja varmistaa että tiimi työskentelee tehokkaasti Scrum-viitekehyksessä. Poistaa esteitä ja valmentaa tiimiä jatkuvaan parantamiseen.",
+    short_description: "Scrum Master fasilitoi ketterää kehitystä ja varmistaa että tiimi työskentelee tehokkaasti Scrum-viitekehyksessä. Helsingissä kasvava tarve osaavilla fasilitaattoreilla, jotka yhdistävät tiimivalmentamisen ja prosessikehittämisen. Täysin etätyömahdollisuus ja selkeä polku kohti Agile Coach -roolia.",
     main_tasks: [
           "Scrum-seremonioiden fasilitointi (daily, planning, retro)",
           "Esteiden tunnistaminen ja poistaminen",
@@ -22202,9 +22202,9 @@ export const careersData: CareerFI[] = [
           "Yhteistyö Product Ownerin ja sidosryhmien kanssa"
     ],
     impact: [
-          "Parantaa tiimin tuottavuutta ja motivaatiota",
-          "Mahdollistaa nopeamman tuotekehityksen",
-          "Luo paremman työkult tuurin"
+          "Parantaa tiimin tuottavuutta 20-30% tehokkaammalla yhteistyöllä ja motivaation kasvulla",
+          "Mahdollistaa 2-3x nopeamman tuotekehityksen ja julkaisusyklin ketterien käytäntöjen avulla",
+          "Luo modernin, oppivan työkulttuurin joka houkuttelee huippuosaajia"
     ],
     education_paths: [
           "Korkeakoulututkinto (ei tiukka vaatimus)",
@@ -22244,9 +22244,10 @@ export const careersData: CareerFI[] = [
           "Program Manager"
     ],
     typical_employers: [
-          "IT-yritykset",
-          "Digitaaliset palvelut",
-          "Konsulttitalot"
+          "Wolt, Supercell, Reaktor, Futurice",
+          "Vincit, Solita, Gofore",
+          "Startup-yritykset ja kasvuyhtiöt",
+          "Digitaaliset palvelutalot ja IT-konsultit"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22269,7 +22270,7 @@ export const careersData: CareerFI[] = [
     category: "innovoija",
     title_fi: "DevOps-insinööri",
     title_en: "DevOps Engineer",
-    short_description: "DevOps-insinööri automatisoi ohjelmistokehityksen prosesseja ja ylläpitää IT-infrastruktuuria. Yhdistää kehityksen ja operatiivisen työn saumattomaksi kokonaisuudeksi.",
+    short_description: "DevOps-insinööri automatisoi ohjelmistokehityksen prosesseja ja ylläpitää IT-infrastruktuuria pilvessä. Helsingissä erittäin kysytty osaaja, joka yhdistää teknisen syväosaamisen ja automaation business-vaikuttavuuteen. Tarjoaa joustavan etätyön ja kilpailukykyisen palkan 4500-7500€/kk.",
     main_tasks: [
           "CI/CD-putkistojen rakentaminen ja ylläpito",
           "Infrastruktuurin automatisointi (Infrastructure as Code)",
@@ -22278,9 +22279,9 @@ export const careersData: CareerFI[] = [
           "Tietoturvan ja skaalautuvuuden varmistaminen"
     ],
     impact: [
-          "Nopeuttaa ohjelmistojen julkaisusykliä",
-          "Vähentää manuaalista työtä automaation avulla",
-          "Parantaa järjestelmien luotettavuutta"
+          "Nopeuttaa ohjelmistojen julkaisusykliä viikoista minuutteihin automaation avulla",
+          "Vähentää manuaalista työtä 70-90% ja vapauttaa kehittäjien aikaa innovointiin",
+          "Parantaa järjestelmien luotettavuutta 99.9% uptime-tasolle ja mahdollistaa skaalautumisen miljoonille käyttäjille"
     ],
     education_paths: [
           "AMK: Tietotekniikka, ohjelmistotekniikka",
@@ -22326,9 +22327,10 @@ export const careersData: CareerFI[] = [
           "Platform Engineer"
     ],
     typical_employers: [
-          "IT-yritykset",
-          "Pilvipalveluyritykset",
-          "Teknologiastartupit"
+          "Wolt, Supercell, Smartly.io",
+          "Reaktor, Futurice, Vincit",
+          "Nordcloud, F-Secure, Aiven",
+          "Startup-yritykset ja kasvuyhtiöt"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22351,7 +22353,7 @@ export const careersData: CareerFI[] = [
     category: "innovoija",
     title_fi: "Data-analyytikko",
     title_en: "Data Analyst",
-    short_description: "Data-analyytikko kerää, käsittelee ja analysoi dataa liiketoimintapäätösten tueksi. Muuttaa raakadatan ymmärrettäviksi raporteiksi ja visualisoinneiksi.",
+    short_description: "Data-analyytikko kerää, käsittelee ja analysoi dataa liiketoimintapäätösten tueksi sekä muuttaa raakadatan ymmärrettäviksi raporteiksi ja visualisoinneiksi. Helsingissä kasvava kysyntä kaikilla aloilla - alkeistason aloituspalkka 3500€ ja nopea kehitys kohti senior-roolia. Täysin etätyömahdollisuus ja joustava työaika.",
     main_tasks: [
           "Datan kerääminen ja siivous",
           "Tilastollinen analyysi ja raportointi",
@@ -22360,9 +22362,9 @@ export const careersData: CareerFI[] = [
           "SQL-kyselyiden kirjoittaminen"
     ],
     impact: [
-          "Tukee parempia liiketoimintapäätöksiä",
-          "Tunnistaa kasvumahdollisuuksia datasta",
-          "Tehostaa prosesseja analytiikan avulla"
+          "Tukee parempia liiketoimintapäätöksiä, jotka voivat tuottaa miljoonia euroja lisäarvoa",
+          "Tunnistaa kasvumahdollisuuksia datasta ja ohjaa resursseja oikeisiin kohteisiin",
+          "Tehostaa prosesseja analytiikan avulla ja säästää yrityksen aikaa sekä kustannuksia merkittävästi"
     ],
     education_paths: [
           "AMK: Tietojenkäsittely, liiketalous",
@@ -22406,10 +22408,10 @@ export const careersData: CareerFI[] = [
           "Analytics Manager"
     ],
     typical_employers: [
-          "IT-yritykset",
-          "Konsulttitalot",
-          "Kaupan alan yritykset",
-          "Rahoitusala"
+          "Wolt, Supercell, Smartly.io",
+          "Reaktor, Vincit, Solita, Futurice",
+          "S-ryhmä, K-ryhmä, Veikkaus",
+          "Nordea, OP, Danske Bank"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset / Toimihenkilöunioni",
@@ -22432,7 +22434,7 @@ export const careersData: CareerFI[] = [
     category: "innovoija",
     title_fi: "UX-tutkija",
     title_en: "UX Researcher",
-    short_description: "UX-tutkija selvittää käyttäjien tarpeita, käyttäytymistä ja odotuksia tutkimusmenetelmin. Tuottaa oivalluksia tuotesuunnittelun ja kehityksen tueksi.",
+    short_description: "UX-tutkija selvittää käyttäjien tarpeita, käyttäytymistä ja odotuksia tutkimusmenetelmin sekä tuottaa oivalluksia tuotesuunnittelun tueksi. Helsingissä nouseva trendi käyttäjälähtöisessä suunnittelussa - yhdistää psykologian, tutkimuksen ja tuotekehityksen. Tarjoaa merkityksellisen työn ja suoran vaikutuksen tuotteen menestykseen.",
     main_tasks: [
           "Käyttäjätutkimusten suunnittelu ja toteutus",
           "Haastattelujen ja käytettävyystestien järjestäminen",
@@ -22441,9 +22443,9 @@ export const careersData: CareerFI[] = [
           "Yhteistyö suunnittelijoiden ja kehittäjien kanssa"
     ],
     impact: [
-          "Varmistaa että tuotteet vastaavat käyttäjien tarpeisiin",
-          "Säästää kehityskustannuksia oikeiden ratkaisujen avulla",
-          "Parantaa käyttäjäkokemusta ja asiakastyytyväisyyttä"
+          "Varmistaa että tuotteet vastaavat satojen tuhansien käyttäjien tarpeisiin ja odotuksiin",
+          "Säästää satoja tuhansia euroja kehityskustannuksia tunnistamalla oikeat ratkaisut ennen toteutusta",
+          "Parantaa käyttäjäkokemusta ja nostaa asiakastyytyväisyyttä 30-50% tutkittujen oivallusten avulla"
     ],
     education_paths: [
           "Yliopisto: Kognitiotiede, psykologia, tietotekniikka",
@@ -22487,9 +22489,10 @@ export const careersData: CareerFI[] = [
           "Research Manager"
     ],
     typical_employers: [
-          "Teknologiayritykset",
-          "Digitaaliset palvelutalot",
-          "Konsulttitalot"
+          "Wolt, Supercell, Smartly.io",
+          "Reaktor, Futurice, Vincit",
+          "Gofore, Solita, Nitor",
+          "UX-konsulttitalot ja startup-yritykset"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22512,7 +22515,7 @@ export const careersData: CareerFI[] = [
     category: "innovoija",
     title_fi: "Kasvuhakkeri",
     title_en: "Growth Hacker",
-    short_description: "Kasvuhakkeri keskittyy yrityksen nopean kasvun edistämiseen data-ohjattujen kokeilujen ja innovatiivisten markkinointitaktiikoiden avulla. Yhdistää markkinoinnin, datan ja teknologian.",
+    short_description: "Kasvuhakkeri keskittyy yrityksen nopean kasvun edistämiseen data-ohjattujen kokeilujen ja innovatiivisten markkinointitaktiikoiden avulla. Erityisen kysytty Helsingin startup-skenessä, jossa yhdistyvät markkinointi, data ja teknologia. Tarjoaa dynaamisen työympäristön ja mahdollisuuden 10x kasvuun.",
     main_tasks: [
           "Kasvukokeilujen suunnittelu ja toteutus (A/B-testit)",
           "Konversiofunnelien optimointi",
@@ -22521,9 +22524,9 @@ export const careersData: CareerFI[] = [
           "Analytiikan ja mittareiden seuranta"
     ],
     impact: [
-          "Kiihdyttää yrityksen kasvua ja käyttäjähankintaa",
-          "Löytää kustannustehokkaita markkinointikanavia",
-          "Parantaa tuotteen käyttöönottoastetta"
+          "Kiihdyttää yrityksen käyttäjäkasvua 10-50x nopeammaksi kokeellisen markkinoinnin avulla",
+          "Löytää kustannustehokkaita markkinointikanavia ja pudottaa asiakashankintakustannuksia 30-70%",
+          "Parantaa tuotteen käyttöönottoastetta ja aktivaatiota data-ohjattujen optimointien kautta"
     ],
     education_paths: [
           "AMK/Yliopisto: Markkinointi, liiketalous, tietotekniikka",
@@ -22568,9 +22571,10 @@ export const careersData: CareerFI[] = [
           "VP of Growth"
     ],
     typical_employers: [
-          "Startup-yritykset",
-          "Teknologiayritykset",
-          "SaaS-yritykset"
+          "Wolt, Swappie, Supermetrics",
+          "Smartly.io, Kry, Trella",
+          "Kasvavat SaaS-startupit",
+          "Digitaaliset palvelutalot"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -22593,7 +22597,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Asiakasmenestyksen asiantuntija",
     title_en: "Customer Success Manager",
-    short_description: "Customer Success Manager varmistaa että asiakkaat saavuttavat tavoitteensa käyttäessään yrityksen tuotetta tai palvelua. Rakentaa pitkäaikaisia asiakassuhteita ja vähentää asiakaspoistumaa.",
+    short_description: "Customer Success Manager varmistaa että asiakkaat saavuttavat tavoitteensa käyttäessään yrityksen tuotetta tai palvelua. Helsingissä kasvava SaaS-sektori luo jatkuvasti uusia mahdollisuuksia - rooli yhdistää asiakasymmärryksen, datan ja liiketoimintaosaamisen. Tarjoaa joustavan etätyön ja bonukset asiakasmenestyksestä.",
     main_tasks: [
           "Asiakkaiden onboarding ja koulutus",
           "Säännölliset asiakaspalaverit ja tukitoimenpiteet",
@@ -22602,9 +22606,9 @@ export const careersData: CareerFI[] = [
           "Asiakaspalautteen kerääminen tuotekehitykseen"
     ],
     impact: [
-          "Varmistaa asiakkaiden menestyksen ja tyytyväisyyden",
-          "Vähentää asiakaspoistumaa (churn)",
-          "Kasvattaa asiakkuuksien arvoa"
+          "Varmistaa satojen asiakkaiden menestyksen ja pitkäaikaiset asiakassuhteet",
+          "Vähentää asiakaspoistumaa 20-40% ja säästää merkittäviä määriä uushankinnan kustannuksia",
+          "Kasvattaa asiakkuuksien arvoa 30-50% upsellien ja laajennusten kautta"
     ],
     education_paths: [
           "AMK/Yliopisto: Liiketalous, viestintä",
@@ -22648,9 +22652,10 @@ export const careersData: CareerFI[] = [
           "VP of Customer Success"
     ],
     typical_employers: [
-          "SaaS-yritykset",
-          "Teknologiayritykset",
-          "B2B-palveluyritykset"
+          "Wolt, Supermetrics, Smartly.io",
+          "HubSpot, Salesforce (Helsinki)",
+          "SaaS-startupit ja kasvuyhtiöt",
+          "B2B-teknologiayritykset"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -22673,7 +22678,7 @@ export const careersData: CareerFI[] = [
     category: "innovoija",
     title_fi: "Frontend-kehittäjä",
     title_en: "Frontend Developer",
-    short_description: "Frontend-kehittäjä rakentaa verkkosivujen ja -sovellusten käyttöliittymät. Vastaa siitä, että käyttäjät voivat olla vuorovaikutuksessa sovelluksen kanssa sujuvasti ja visuaalisesti miellyttävästi.",
+    short_description: "Frontend-kehittäjä rakentaa verkkosivujen ja -sovellusten käyttöliittymät, jotka miljoonat käyttäjät näkevät päivittäin. Helsingissä erittäin kysytty osaaja - React-taidot avaavat ovia Woltin, Supercelliin ja lukuisiin startupeihin. Tarjoaa täysin etätyömahdollisuuden, joustavan työajan ja palkan 3800-6500€/kk.",
     main_tasks: [
           "Web-sovellusten käyttöliittymien ohjelmointi",
           "Responsiivisten ja saavutettavien sivustojen rakentaminen",
@@ -22682,9 +22687,9 @@ export const careersData: CareerFI[] = [
           "Yhteistyö suunnittelijoiden ja backend-kehittäjien kanssa"
     ],
     impact: [
-          "Luo käyttäjäystävällisiä digitaalisia kokemuksia",
-          "Mahdollistaa saavutettavan verkon kaikille",
-          "Parantaa liiketoiminnan digitaalista läsnäoloa"
+          "Luo käyttäjäystävällisiä digitaalisia kokemuksia, joita miljoonat ihmiset käyttävät päivittäin",
+          "Mahdollistaa saavutettavan verkon kaikille ja parantaa digital inclusion -tavoitteita",
+          "Parantaa liiketoiminnan tuloksia 20-40% optimoidulla käyttöliittymällä ja konversiolla"
     ],
     education_paths: [
           "AMK: Tietotekniikka, ohjelmistotekniikka",
@@ -22729,9 +22734,10 @@ export const careersData: CareerFI[] = [
           "Frontend Architect"
     ],
     typical_employers: [
-          "IT-yritykset",
-          "Digitaaliset palvelutalot",
-          "Startup-yritykset"
+          "Wolt, Supercell, Smartly.io",
+          "Reaktor, Futurice, Vincit, Solita",
+          "Verkkokaupat ja mediatalot (Sanoma, Alma)",
+          "Startup-yritykset ja kasvuyhtiöt"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22754,7 +22760,7 @@ export const careersData: CareerFI[] = [
     category: "innovoija",
     title_fi: "Backend-kehittäjä",
     title_en: "Backend Developer",
-    short_description: "Backend-kehittäjä rakentaa palvelinpuolen logiikan, tietokannat ja API:t. Vastaa siitä, että sovellukset toimivat tehokkaasti, turvallisesti ja skaalautuvasti.",
+    short_description: "Backend-kehittäjä rakentaa palvelinpuolen logiikan, tietokannat ja API:t, jotka käsittelevät miljoonien käyttäjien dataa. Helsingissä todella kysytty osaaja - Node.js, Python tai Java -taidot takaavat työn. Tarjoaa etätyömahdollisuuden, kilpailukykyisen palkan 4000-7000€/kk ja mahdollisuuden työskennellä kansainvälisten tiimien kanssa.",
     main_tasks: [
           "Palvelinpuolen sovelluslogiikan ohjelmointi",
           "Tietokantojen suunnittelu ja ylläpito",
@@ -22763,9 +22769,9 @@ export const careersData: CareerFI[] = [
           "Tietoturvan ja suorituskyvyn varmistaminen"
     ],
     impact: [
-          "Mahdollistaa toimivat ja luotettavat digitaaliset palvelut",
-          "Varmistaa tietoturvan ja yksityisyyden",
-          "Luo skaalautuvia ratkaisuja kasvavalle käyttäjämäärälle"
+          "Mahdollistaa toimivat ja luotettavat digitaaliset palvelut miljoonille käyttäjille 24/7",
+          "Varmistaa tietoturvan ja yksityisyyden GDPR-vaatimusten mukaisesti",
+          "Luo skaalautuvia ratkaisuja, jotka käsittelevät tuhansia pyyntöjä sekunnissa"
     ],
     education_paths: [
           "AMK: Tietotekniikka, ohjelmistotekniikka",
@@ -22811,10 +22817,10 @@ export const careersData: CareerFI[] = [
           "Engineering Manager"
     ],
     typical_employers: [
-          "IT-yritykset",
-          "Teknologiastartupit",
-          "Rahoitusala",
-          "Julkinen sektori"
+          "Wolt, Supercell, Smartly.io, Aiven",
+          "Reaktor, Futurice, Vincit, Solita",
+          "Nordea, OP, S-Pankki",
+          "Startup-yritykset ja kasvuyhtiöt"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22837,7 +22843,7 @@ export const careersData: CareerFI[] = [
     category: "innovoija",
     title_fi: "Testausasiantuntija",
     title_en: "QA Engineer",
-    short_description: "QA Engineer (Quality Assurance) varmistaa ohjelmistojen laadun testaamalla niitä systemaattisesti. Automatisoi testejä ja löytää virheet ennen tuotantoon viemistä.",
+    short_description: "QA Engineer (Quality Assurance) varmistaa ohjelmistojen laadun testaamalla niitä systemaattisesti ja automatisoimalla testejä. Helsingissä tasainen kysyntä erityisesti peliteollisuudessa (Supercell, Remedy) ja rahoitusalalla. Tarjoaa etätyömahdollisuuden, joustavan työajan ja hyvän sisääntuloväylän tech-alalle.",
     main_tasks: [
           "Testaussuunnitelmien laatiminen",
           "Automatisoidun testauksen rakentaminen ja ylläpito",
@@ -22846,9 +22852,9 @@ export const careersData: CareerFI[] = [
           "Yhteistyö kehittäjien kanssa laadun parantamiseksi"
     ],
     impact: [
-          "Varmistaa ohjelmistojen toimivuuden ja luotettavuuden",
-          "Estää bugien pääsyn tuotantoon",
-          "Parantaa käyttäjäkokemusta laadukkaiden tuotteiden avulla"
+          "Varmistaa ohjelmistojen toimivuuden ja luotettavuuden miljoonille loppukäyttäjille",
+          "Estää kriittisten bugien pääsyn tuotantoon ja säästää tuhansia euroja korjauskustannuksia",
+          "Parantaa käyttäjäkokemusta laadukkaiden ja bug-free tuotteiden avulla"
     ],
     education_paths: [
           "AMK: Tietotekniikka, ohjelmistotekniikka",
@@ -22893,10 +22899,10 @@ export const careersData: CareerFI[] = [
           "QA Manager"
     ],
     typical_employers: [
-          "IT-yritykset",
-          "Pelifirmat",
-          "Rahoitusala",
-          "Teleoperaattorit"
+          "Supercell, Remedy Entertainment, Rovio",
+          "Wolt, Smartly.io, Reaktor",
+          "Nordea, OP, S-Pankki",
+          "Elisa, Telia, DNA"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22919,7 +22925,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Tekninen kirjoittaja",
     title_en: "Technical Writer",
-    short_description: "Tekninen kirjoittaja luo ymmärrettävää dokumentaatiota teknisistä tuotteista ja palveluista. Muuttaa monimutkaisen teknologian helposti omaksuttaviksi ohjeiksi ja oppaaksi.",
+    short_description: "Tekninen kirjoittaja luo ymmärrettävää dokumentaatiota teknisistä tuotteista ja palveluista sekä muuttaa monimutkaisen teknologian helposti omaksuttaviksi ohjeiksi. Helsingissä kasvava kysyntä teknisille kirjoittajille, jotka yhdistävät teknisen ymmärryksen ja kirjoitustaidot. Tarjoaa täysin etätyömahdollisuuden ja mahdollisuuden työskennellä globaalien tuotteiden parissa.",
     main_tasks: [
           "API-dokumentaation ja kehittäjädokumenttien kirjoittaminen",
           "Käyttöohjeiden ja oppaiden laatiminen",
@@ -22928,9 +22934,9 @@ export const careersData: CareerFI[] = [
           "Dokumentaation ylläpito ja päivitys"
     ],
     impact: [
-          "Helpottaa tuotteiden käyttöönottoa ja käyttöä",
-          "Vähentää tukipyyntöjä selkeän dokumentaation avulla",
-          "Parantaa kehittäjäkokemusta teknisillä dokumenteilla"
+          "Helpottaa tuhansien kehittäjien työtä selkeällä API-dokumentaatiolla ja käyttöohjeilla",
+          "Vähentää tukipyyntöjä 30-50% selkeän dokumentaation avulla ja säästää yrityksen resursseja",
+          "Parantaa developer experience -tavoitteita ja houkuttelee käyttäjiä teknisille alustoille"
     ],
     education_paths: [
           "AMK/Yliopisto: Viestintä, kieli ja kulttuuri, tekninen viestintä",
@@ -22974,9 +22980,10 @@ export const careersData: CareerFI[] = [
           "Documentation Manager"
     ],
     typical_employers: [
-          "IT-yritykset",
-          "SaaS-yritykset",
-          "Teknologiastartupit"
+          "Wolt, Supermetrics, Smartly.io",
+          "Reaktor, Futurice, F-Secure",
+          "SaaS-yritykset ja API-yritykset",
+          "Kansainväliset teknologiayritykset"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Viestinnän ammattilaiset",
@@ -22999,7 +23006,7 @@ export const careersData: CareerFI[] = [
     category: "innovoija",
     title_fi: "SRE-insinööri",
     title_en: "Site Reliability Engineer",
-    short_description: "Site Reliability Engineer (SRE) yhdistää ohjelmistokehityksen ja järjestelmähallinnon pitääkseen palvelut luotettavina ja skaalautuvina. Keskittyy automaatioon ja järjestelmän seurantaan.",
+    short_description: "Site Reliability Engineer (SRE) yhdistää ohjelmistokehityksen ja järjestelmähallinnon pitääkseen palvelut luotettavina 24/7. Helsingissä todella kysytty huippuosaaja - SRE-rooli tarjoaa parhaat palkat tech-alalla (4800-8000€/kk) ja mahdollisuuden työskennellä kriittisten järjestelmien parissa. Vaatii päivystystä mutta tarjoaa etätyön ja kansainvälisen työympäristön.",
     main_tasks: [
           "Tuotantoympäristön luotettavuuden varmistaminen",
           "Monitoroinnin ja hälytysjärjestelmien ylläpito",
@@ -23008,9 +23015,9 @@ export const careersData: CareerFI[] = [
           "Automaation rakentaminen manuaalisen työn vähentämiseksi"
     ],
     impact: [
-          "Varmistaa palveluiden jatkuva saatavuus (uptime)",
-          "Nopeuttaa vikojen korjaamista ja palautumista",
-          "Parantaa järjestelmien luotettavuutta ja suorituskykyä"
+          "Varmistaa 99.99% uptime-tason ja palveluiden saatavuuden miljoonille käyttäjille 24/7",
+          "Nopeuttaa häiriötilanteiden korjaamista tunneista minuutteihin automatisoinnin avulla",
+          "Parantaa järjestelmien luotettavuutta ja skaalautuvuutta tuhansia pyyntöjä sekunnissa käsitteleviksi"
     ],
     education_paths: [
           "AMK: Tietotekniikka",
@@ -23056,9 +23063,10 @@ export const careersData: CareerFI[] = [
           "Principal Engineer"
     ],
     typical_employers: [
-          "Teknologiayritykset",
-          "Pilvipalveluyritykset",
-          "Rahoitusala"
+          "Wolt, Supercell, Aiven",
+          "F-Secure, Smartly.io, Unity",
+          "Nordcloud, Elisa, Telia",
+          "Rahoitusala ja fintech-yritykset"
     ],
     work_conditions: { remote: "Kyllä", shift_work: true, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -23081,7 +23089,7 @@ export const careersData: CareerFI[] = [
     category: "visionaari",
     title_fi: "Ratkaisuarkkitehti",
     title_en: "Solutions Architect",
-    short_description: "Ratkaisuarkkitehti suunnittelee kokonaisvaltaisia teknologiaratkaisuja liiketoiminnan tarpeisiin. Yhdistää teknisen osaamisen ja liiketoimintaymmärryksen.",
+    short_description: "Ratkaisuarkkitehti suunnittelee kokonaisvaltaisia teknologiaratkaisuja liiketoiminnan tarpeisiin yhdistäen teknisen osaamisen ja liiketoimintaymmärryksen. Helsingissä kysytty senior-tason rooli, joka tarjoaa erinomaisen palkan (5000-8500€/kk), hybridityön ja mahdollisuuden vaikuttaa merkittäviin teknologiavalintoihin.",
     main_tasks: [
           "Teknisten ratkaisujen arkkitehtuurin suunnittelu",
           "Asiakkaiden liiketoimintatarpeiden kartoitus",
@@ -23090,9 +23098,9 @@ export const careersData: CareerFI[] = [
           "Yhteistyö myynti- ja kehitystiimien kanssa"
     ],
     impact: [
-          "Mahdollistaa skaalautuvat ja tehokkaat IT-ratkaisut",
-          "Yhdistää liiketoimintatavoitteet teknologiaan",
-          "Ohjaa organisaation teknologiavalintoja"
+      "Mahdollistaa skaalautuvat IT-ratkaisut, jotka palvelevat tuhansia käyttäjiä Helsingin alueella ja kansainvälisesti",
+      "Yhdistää liiketoimintatavoitteet moderniin pilviteknologiaan ja säästää satoja tuhansia euroja infrastruktuurikustannuksia",
+      "Ohjaa organisaation digitaalitransformaatiota ja teknologiavalintoja pitkälle tulevaisuuteen"
     ],
     education_paths: [
           "AMK: Tietotekniikka (+ työkokemus)",
@@ -23135,11 +23143,12 @@ export const careersData: CareerFI[] = [
           "Chief Architect"
     ],
     typical_employers: [
-          "IT-konsultit",
-          "Pilvipalveluyritykset",
-          "Suuryritykset"
+      "Wolt, Supercell, Nokia",
+      "Reaktor, Accenture (Helsinki), Gofore",
+      "Nordea, OP, Kela",
+      "Suuryritykset ja julkinen sektori"
     ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "kohtalaisesti", environment: "Toimisto, etänä, asiakkaiden luona" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
     useful_links: [
           {
@@ -23160,7 +23169,7 @@ export const careersData: CareerFI[] = [
     category: "innovoija",
     title_fi: "Alustasuunnittelija",
     title_en: "Platform Engineer",
-    short_description: "Platform Engineer rakentaa ja ylläpitää sisäisiä kehitysalustoja jotka mahdollistavat kehittäjien tehokkaan työskentelyn. Luo työkaluja ja infrastruktuuria kehitystiimeille.",
+    short_description: "Platform Engineer rakentaa ja ylläpitää kehittäjäalustoja ja internal developer platforms (IDP), jotka mahdollistavat tiimien tehokkaan työskentelyn. Helsingissä kasvava kysyntä erityisesti skaalautuvissa yrityksissä - tarjoaa hyvän palkan (4500-7000€/kk), etätyön ja mahdollisuuden vaikuttaa satojen kehittäjien työhön.",
     main_tasks: [
           "Sisäisten kehitysalustojen (Internal Developer Platform) rakentaminen",
           "CI/CD-putkistojen ja työkalujen kehittäminen",
@@ -23169,9 +23178,9 @@ export const careersData: CareerFI[] = [
           "Dokumentaation ja tuen tarjoaminen kehittäjille"
     ],
     impact: [
-          "Nopeuttaa sovelluskehitystä ja deploymentteja",
-          "Parantaa kehittäjien tuottavuutta ja kokemusta",
-          "Standardisoi ja automatisoi kehitysprosesseja"
+      "Mahdollistaa satojen kehittäjien tehokkaan työskentelyn yhtenäisillä työkaluilla ja prosesseilla",
+      "Nopeuttaa uusien palveluiden lanseeraamista viikoista päiviin automatisoitujen alustojen avulla",
+      "Vähentää infrastruktuurikustannuksia 30-50% optimoiduilla pilviratkaisuilla"
     ],
     education_paths: [
           "AMK: Tietotekniikka",
@@ -23215,9 +23224,10 @@ export const careersData: CareerFI[] = [
           "Engineering Manager"
     ],
     typical_employers: [
-          "Teknologiayritykset",
-          "Startup-yritykset",
-          "Suuret IT-organisaatiot"
+      "Wolt, Supercell, Aiven",
+      "Smartly.io, Unity, F-Secure",
+      "Nordcloud, Reaktor, Futurice",
+      "Kasvavat teknologiayritykset"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -23240,7 +23250,7 @@ export const careersData: CareerFI[] = [
     category: "innovoija",
     title_fi: "API-kehittäjä",
     title_en: "API Developer",
-    short_description: "API-kehittäjä suunnittelee ja toteuttaa rajapintoja (API) jotka mahdollistavat eri järjestelmien ja sovellusten välisen kommunikaation. Luo tehokkaita ja turvallisia API-ratkaisuja.",
+    short_description: "API-kehittäjä suunnittelee ja toteuttaa rajapintoja, jotka yhdistävät järjestelmiä ja mahdollistavat integraatiot. Helsingissä kasvava kysyntä API-talouden myötä - RESTful ja GraphQL -osaaminen avaa ovia SaaS-yrityksiin. Tarjoaa etätyön, joustavan työajan ja palkan 4000-6500€/kk.",
     main_tasks: [
           "RESTful ja GraphQL API:en suunnittelu ja toteutus",
           "API-dokumentaation laatiminen (OpenAPI/Swagger)",
@@ -23249,9 +23259,9 @@ export const careersData: CareerFI[] = [
           "Suorituskyvyn optimointi ja monitorointi"
     ],
     impact: [
-          "Mahdollistaa järjestelmien integroinnin",
-          "Luo uusia liiketoimintamahdollisuuksia API-taloudessa",
-          "Parantaa ohjelmistojen modulaarisuutta ja uudelleenkäytettävyyttä"
+      "Luo rajapintoja, jotka palvelevat miljoonia API-kutsuja päivittäin luotettavasti ja nopeasti",
+      "Mahdollistaa integraatiot satoihin ulkoisiin järjestelmiin ja laajentaa tuotteen arvoa",
+      "Parantaa kehittäjäkokemusta hyvin dokumentoiduilla ja helppokäyttöisillä API:lla"
     ],
     education_paths: [
           "AMK: Tietotekniikka, ohjelmistotekniikka",
@@ -23295,10 +23305,10 @@ export const careersData: CareerFI[] = [
           "Backend Lead"
     ],
     typical_employers: [
-          "IT-yritykset",
-          "SaaS-yritykset",
-          "Rahoitusala",
-          "Integraatiopalvelut"
+      "Wolt, Supermetrics, Smartly.io",
+      "Reaktor, Futurice, Vincit",
+      "SaaS-yritykset ja API-alustat",
+      "Fintech ja integraatioyritykset"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -23322,7 +23332,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Sisältöstrategisti",
     title_en: "Content Strategist",
-    short_description: "Sisältöstrategisti suunnittelee ja johtaa organisaation sisältötuotantoa. Varmistaa että sisältö tukee liiketoiminnan tavoitteita ja palvelee kohdeyleisöä tehokkaasti.",
+    short_description: "Sisältöstrategisti suunnittelee ja johtaa organisaation sisältötuotantoa tavoitteellisesti yhdistäen markkinoinnin, brändin ja käyttäjäymmärryksen. Helsingissä kasvava kysyntä erityisesti digitaalisissa yrityksissä ja mediatalolissa. Tarjoaa hybridi/etätyön, luovan työympäristön ja palkan 3500-5500€/kk.",
     main_tasks: [
           "Sisältöstrategian suunnittelu ja toteutus",
           "Kohdeyleis öiden tutkiminen ja määrittely",
@@ -23331,9 +23341,9 @@ export const careersData: CareerFI[] = [
           "Sisällön tehokkuuden mittaaminen ja optimointi"
     ],
     impact: [
-          "Vahvistaa brändin viestintää ja näkyvyyttä",
-          "Parantaa asiakasymmärrystä sisällön avulla",
-          "Kasvattaa liidejä ja konversioita"
+      "Luo sisältöstrategioita, jotka tavoittavat satoja tuhansia ihmisiä digitaalisissa kanavissa",
+      "Kasvattaa brändin näkyvyyttä ja sitoutumista 30-50% strategisen sisällön avulla",
+      "Ohjaa sisältötuotantoa data-ohjautuvasti ja optimoi sisällön ROI:ta jatkuvasti"
     ],
     education_paths: [
           "AMK: Medianomi, tradenomi (markkinointi)",
@@ -23362,8 +23372,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Content Writer","Content Coordinator","Junior Content Strategist"],
     career_progression: ["Senior Content Strategist","Content Director","Head of Content"],
-    typical_employers: ["Mainostoimistot","Digitaaliset palvelutalot","Yritykset (sisäinen viestintä)","Media-alan yritykset"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Wolt, Sanoma Media, Alma Media",
+      "Mainostoimistot: hasan & partners, TBWA, Bob the Robot",
+      "Digitaaliset viestintätoimistot",
+      "Startup-yritykset ja kasvuyhtiöt"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Viestinnän ammattilaiset",
     useful_links: [
           {
@@ -23384,7 +23399,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Sosiaalisen median asiantuntija",
     title_en: "Social Media Manager",
-    short_description: "Sosiaalisen median asiantuntija hallinnoi organisaation läsnäoloa sosiaalisessa mediassa. Luo sisältöä, rakentaa yhteisöjä ja mittaa some-toiminnan vaikuttavuutta.",
+    short_description: "Some-asiantuntija vastaa yrityksen sosiaalisen median strategiasta, sisällöntuotannosta ja yhteisöjen hallinnasta kaikissa kanavissa. Helsingissä kysytty rooli, joka yhdistää luovuuden, datan ja yhteisöymmärryksen. Tarjoaa hybridityön, vapaan sisällöntuotannon ja palkan 3200-5000€/kk.",
     main_tasks: [
           "Sosiaalisen median strategian suunnittelu ja toteutus",
           "Sisällön luominen eri kanaviin (Instagram, LinkedIn, TikTok, X)",
@@ -23393,9 +23408,9 @@ export const careersData: CareerFI[] = [
           "Analytiikan seuranta ja raportointi"
     ],
     impact: [
-          "Kasvattaa brändin näkyvyyttä ja tunnettavuutta",
-          "Rakentaa yhteisöä brändin ympärille",
-          "Tuottaa liidejä ja myyntiä sosiaalisesta mediasta"
+      "Rakentaa ja kasvattaa sosiaalisen median yhteisöjä kymmeniin tai satoihin tuhansiin seuraajiin",
+      "Luo sisältöä, joka tavoittaa miljoonia näyttökertoja ja lisää bränditietoisuutta merkittävästi",
+      "Kasvattaa sitoutumista 40-60% strategisella yhteisöhallinnalla ja vuorovaikutuksella"
     ],
     education_paths: [
           "AMK: Medianomi, tradenomi",
@@ -23424,8 +23439,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Social Media Coordinator","Social Media Specialist"],
     career_progression: ["Senior Social Media Manager","Head of Social Media","Digital Marketing Manager"],
-    typical_employers: ["Mainostoimistot","Yritykset","Media-alan yritykset","Influencer-agentuurit"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Wolt, Sanoma Media, Yle",
+      "Mainostoimistot ja some-toimistot",
+      "Brand-yritykset ja verkkokaupat",
+      "Influencer-markkinointitoimistot"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Viestinnän ammattilaiset",
     useful_links: [
           {
@@ -23446,7 +23466,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Podcast-tuottaja",
     title_en: "Podcast Producer",
-    short_description: "Podcast-tuottaja vastaa podcastien kokonaisvaltaisesta tuotannosta ideasta julkaisuun. Suunnittelee sisältöä, koordinoi nauhoituksia ja editoi jaksoja kuulijay stävällisiksi kokonaisuuksiksi.",
+    short_description: "Podcast-tuottaja vastaa podcast-sarjojen konseptoinnista, tuotannosta ja julkaisemisesta sekä äänilaadun varmistamisesta. Helsingissä kasvava podcast-markkina luo mahdollisuuksia - rooli yhdistää tarinankerronnan, äänitaiteen ja mediatuotannon. Tarjoaa vapaan työajan, etätyön ja freelance-mahdollisuuksia.",
     main_tasks: [
           "Podcast-konseptien ideoi nti ja kehittäminen",
           "Vieraiden varaaminen ja haastattelujen valmistelu",
@@ -23455,9 +23475,9 @@ export const careersData: CareerFI[] = [
           "Kuulijoiden analytiikan seuranta ja sisällön optimointi"
     ],
     impact: [
-          "Luo mielenkiintoista äänis isältöä kuuntelijoille",
-          "Vahvistaa brändiä ja asiantuntijuutta",
-          "Tavoittaa yleisöjä uudella tavalla"
+      "Tuottaa podcasteja, joita kuunnellaan tuhansia kertoja viikossa Suomessa ja kansainvälisesti",
+      "Luo äänisisältöä, joka sitoutaa kuulijoita ja rakentaa uskollisia yhteisöjä",
+      "Mahdollistaa brändeille ja mediatalloille modernin tavan tavoittaa yleisöjä audiokanavisssa"
     ],
     education_paths: [
           "AMK: Medianomi (äänituotanto, journalismi)",
@@ -23486,7 +23506,12 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Podcast Assistant","Audio Producer"],
     career_progression: ["Senior Podcast Producer","Audio Director","Content Director"],
-    typical_employers: ["Media-alan yritykset","Mainostoimistot","Yritykset (branded podcasts)","Freelance"],
+    typical_employers: [
+      "Yle, Sanoma, Alma Media",
+      "Supla, Podme, Acast",
+      "Tuotantoyhtiöt ja mainostoimistot",
+      "Freelance ja omat projektit"
+    ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Journalistiliitto",
     useful_links: [
@@ -23508,7 +23533,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Videoleikkaaja",
     title_en: "Video Editor",
-    short_description: "Videoleikkaaja muokkaa raakamateriaalia valmiiksi videosisällöksi. Yhdistää leikkauksen, äänen, grafiikat ja efektit kiinnostaviksi tarinoiksi.",
+    short_description: "Videoleikkaaja leikkaa ja editoi videoita erilaisiin käyttötarkoituksiin yhdistäen teknisen osaamisen ja luovan tarinankerronnan. Helsingissä jatkuva kysyntä some-sisällölle, mainoksille ja streaming-sisällölle. Tarjoaa freelance-vapauden, luovan työn ja palkan 3000-5000€/kk.",
     main_tasks: [
           "Videomateriaalin leikkaaminen ja editointi",
           "Värikorjaus ja greidaus",
@@ -23517,9 +23542,9 @@ export const careersData: CareerFI[] = [
           "Valmiin sisällön viimeistely ja exporttaus"
     ],
     impact: [
-          "Luo visuaalisesti kiinnostavaa videosisältöä",
-          "Välittää tarinoita visuaalisuuden kautta",
-          "Tukee markkinointia ja viestintää"
+      "Luo videoita, jotka tavoittavat miljoonia katselukertoja YouTubessa, TikTokissa ja Instagramissa",
+      "Tuottaa markkinointivideoita, jotka kasvattavat konversiota 30-50% visuaalisen storytellingin avulla",
+      "Mahdollistaa brändeille modernin visuaalisen ilmaisun ja erottumisen sosiaalisessa mediassa"
     ],
     education_paths: [
           "AMK: Medianomi (elokuva, televisio)",
@@ -23548,8 +23573,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Video Editor","Assistant Editor"],
     career_progression: ["Senior Video Editor","Lead Editor","Post-Production Supervisor"],
-    typical_employers: ["Tuotantoyhtiöt","Mainostoimistot","Medi a-alan yritykset","Freelance"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Yle, Sanoma, Alma Media",
+      "Tuotantoyhtiöt: MRP, Solar Films",
+      "Mainostoimistot ja some-toimistot",
+      "Freelance-projektit ja YouTube-kanavat"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Suomen elokuvatyöntekijät",
     useful_links: [
           {
@@ -23570,7 +23600,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Yhteisöpäällikkö",
     title_en: "Community Manager",
-    short_description: "Yhteisöpäällikkö rakentaa ja ylläpitää aktiivisia yhteisöjä brändin ympärille. Fasilitoi keskustelua, tukee jäseniä ja luo positiivista yhteisöhenkeä.",
+    short_description: "Community Manager rakentaa ja ylläpitää verkkoyhteisöjä, moderoi keskusteluja ja luo yhteisöllisyyttä brändin ympärille. Helsingissä kysytty rooli gaming-, SaaS- ja lifestyle-yrityksissä, jotka arvostavat yhteisöjään. Tarjoaa etätyön, vapaan aikataulun ja palkan 3200-4800€/kk.",
     main_tasks: [
           "Online-yhteisön rakentaminen ja hallinnointi",
           "Jäsenten aktivointi ja sitouttaminen",
@@ -23579,9 +23609,9 @@ export const careersData: CareerFI[] = [
           "Yhteisön sääntöjen valvonta ja moderointi"
     ],
     impact: [
-          "Luo vahvan yhteisön brändin ympärille",
-          "Parantaa asiakasuskollisuutta",
-          "Tuottaa arvokasta palautetta tuotekehitykseen"
+      "Rakentaa aktiivisia verkkoyhteisöjä, joissa tuhannet jäsenet jakavat kokemuksia ja auttavat toisiaan",
+      "Kasvattaa yhteisön sitoutumista ja brändiuskollisuutta keskustelujen ja tapahtumien avulla",
+      "Vähentää asiakaspalvelukuormaa 20-40% aktiivisen peer-to-peer-tuen mahdollistamisella"
     ],
     education_paths: [
           "AMK: Medianomi, tradenomi",
@@ -23610,7 +23640,12 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Community Coordinator","Community Moderator"],
     career_progression: ["Senior Community Manager","Head of Community","Director of Community"],
-    typical_employers: ["Teknologiayritykset","SaaS-yritykset","Gaming-yritykset","Media-alan yritykset"],
+    typical_employers: [
+      "Supercell, Rovio, Unity",
+      "Wolt, Swappie, suomalaiset startupit",
+      "Discord-yhteisöt ja pelifirmat",
+      "SaaS-yritykset ja lifestyle-brändit"
+    ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Viestinnän ammattilaiset",
     useful_links: [
@@ -23632,7 +23667,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Brändisuunnittelija",
     title_en: "Brand Designer",
-    short_description: "Brändisuunnittelija luo visuaalisia identiteettejä brändeille. Suunnittelee logoja, värivalintoja, typografiaa ja visuaalista kieltä, joka erottaa brändin kilpailijoista.",
+    short_description: "Brändisuunnittelija luo ja kehittää visuaalisia brändi-identiteettejä, logoja ja designkieliä. Helsingissä kysytty rooli mainostoimistoissa ja startupeissa - yhdistää strategisen ajattelun ja visuaalisen suunnittelun. Tarjoaa luovan työympäristön, portfolion kasvun ja palkan 3200-5500€/kk.",
     main_tasks: [
           "Brändi-identiteetin suunnittelu (logo, värit, typografia)",
           "Brand guidelinien ja visuaalisten sääntöjen laatiminen",
@@ -23641,9 +23676,9 @@ export const careersData: CareerFI[] = [
           "Visuaalisen brändi-ilmeen ylläpito ja kehittäminen"
     ],
     impact: [
-          "Luo tunnistettavan ja muistettavan visuaalisen ilmeen",
-          "Erottaa brändin kilpailijoista",
-          "Vahvistaa brändin arvoja visuaalisuuden kautta"
+      "Luo visuaalisia identiteettejä brändeille, jotka tavoittavat satoja tuhansia ihmisiä päivittäin",
+      "Erottaa yritykset kilpailijoista vahvalla brändi-ilmeellä ja nostaa brändiarvoa",
+      "Mahdollistaa johdonmukaisen visuaalisen viestinnän kaikissa kosketuspisteissä"
     ],
     education_paths: [
           "AMK: Medianomi (graafinen suunnittelu)",
@@ -23672,8 +23707,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Brand Designer","Graphic Designer"],
     career_progression: ["Senior Brand Designer","Brand Design Lead","Creative Director"],
-    typical_employers: ["Mainostoimistot","Bränditoimistot","Yritykset (in-house)","Freelance"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Mainostoimistot: hasan & partners, TBWA, Bob the Robot",
+      "Design-toimistot: Werklig, Kuudes, Everpress",
+      "Startup-yritykset ja kasvuyhtiöt",
+      "Freelance ja omat projektit"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Grafia",
     useful_links: [
           {
@@ -23694,7 +23734,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Copywriter",
     title_en: "Copywriter",
-    short_description: "Copywriter kirjoittaa myyntiin ja markkinointiin tähtäävää tekstiä. Luo iskulauseita, mainoksia, verkkosisältöä ja muuta kaupallista tekstiä joka vetoaa kohdeyleisöön.",
+    short_description: "Mainoskirjoittaja kirjoittaa vaikuttavia ja myyviä tekstejä mainoksiin, verkkosivuille ja markkinointikampanjoihin. Helsingissä jatkuva kysyntä digitaalisen markkinoinnin kasvun myötä - luovat tekstintaidot avaavat ovia mainostoimistoihin. Tarjoaa luovan työn, hybridityön ja palkan 3200-5200€/kk.",
     main_tasks: [
           "Mainosten ja kampanjoiden tekstien kirjoittaminen",
           "Verkkosivujen ja laskeutumissivujen copywriting",
@@ -23703,9 +23743,9 @@ export const careersData: CareerFI[] = [
           "Brändiäänen ja -kielen kehittäminen"
     ],
     impact: [
-          "Kasvattaa myyntiä ja konversioita",
-          "Luo muistijäävää brändiviestintää",
-          "Vahvistaa brändin persoonallisuutta"
+      "Kirjoittaa markkinointitekstejä, jotka tavoittavat miljoonia ihmisiä ja kasvattavat myyntiä",
+      "Luo kampanjoita, jotka parantavat konversiota 20-50% vaikuttavalla copylla",
+      "Rakentaa brändiääntä ja viestii kohdeyleisölle resonoivalla tavalla"
     ],
     education_paths: [
           "AMK: Medianomi, tradenomi (markkinointi)",
@@ -23734,8 +23774,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Copywriter","Content Writer"],
     career_progression: ["Senior Copywriter","Creative Copywriter","Copy Chief"],
-    typical_employers: ["Mainostoimistot","Digitaaliset palvelutalot","Yritykset","Freelance"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Mainostoimistot: hasan & partners, TBWA, Bob the Robot",
+      "Digitoimistot: Kuulu, Idean, Avaus",
+      "Sisällöntuotantoyritykset",
+      "Freelance ja omat projektit"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Viestinnän ammattilaiset",
     useful_links: [
           {
@@ -23756,7 +23801,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Motion Graphics -suunnittelija",
     title_en: "Motion Graphics Designer",
-    short_description: "Motion Graphics -suunnittelija luo animoitua grafiikkaa videoihin, mainoksiin ja digitaalisiin medioihin. Yhdistää graafisen suunnittelun ja animaation.",
+    short_description: "Motion graphics -suunnittelija luo animoituja graafisia elementtejä videoihin, mainoksiin ja digitaaliseen sisältöön. Helsingissä kasvava kysyntä erityisesti some-sisällölle ja streaming-palveluihin. Tarjoaa luovan työympäristön, teknisen osaamisen kehityksen ja palkan 3200-5500€/kk.",
     main_tasks: [
           "Animoidun grafiikan suunnittelu ja toteutus",
           "Tekstianimaatiot ja typografia",
@@ -23765,9 +23810,9 @@ export const careersData: CareerFI[] = [
           "Yhteistyö videoleikkaajien ja suunnittelijoiden kanssa"
     ],
     impact: [
-          "Luo visuaalisesti vaikuttavia animaatioita",
-          "Parantaa videoiden laatua ja mielenkiintoisuutta",
-          "Tekee monimutkaisista asioista ymmärrettäviä"
+      "Luo animoituja grafiikkoja, jotka nähdään miljoonissa videoissa YouTubessa, TV:ssä ja streamingissä",
+      "Parantaa visuaalista storytellingiä ja tekee monimutkaisista asioista ymmärrettäviä animaatioilla",
+      "Kasvattaa videon katselumääriä 30-50% houkuttelevilla motion graphics -elementeillä"
     ],
     education_paths: [
           "AMK: Medianomi (graafinen suunnittelu, animaatio)",
@@ -23796,8 +23841,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Motion Designer","Motion Graphics Artist"],
     career_progression: ["Senior Motion Designer","Lead Motion Designer","Creative Director"],
-    typical_employers: ["Mainostoimistot","Tuotantoyhtiöt","Digitaaliset palvelutalot","Freelance"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Yle, MTV, Sanoma Media",
+      "Tuotantoyhtiöt ja mainostoimistot",
+      "Peliyhtiöt ja teknologiayritykset",
+      "Freelance ja omat projektit"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Grafia",
     useful_links: [
           {
@@ -23818,7 +23868,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "UI/UX-suunnittelija",
     title_en: "UI/UX Designer",
-    short_description: "UI/UX-suunnittelija suunnittelee digitaalisten tuotteiden käyttöliittymiä ja käyttökokemuksia. Yhdistää estetiikan, käytettävyyden ja käyttäjäymmärryksen.",
+    short_description: "UI/UX-suunnittelija suunnittelee käyttöliittymiä, jotka ovat sekä visuaalisesti houkuttelevia että helppokäyttöisiä. Helsingissä erittäin kysytty osaaja - Figma-taidot ja portfolio avaavat ovia startup-maailmaan. Tarjoaa etätyön, luovan vapauden ja palkan 3500-6000€/kk.",
     main_tasks: [
           "Käyttöliittymien visuaalinen suunnittelu",
           "Käyttäjäpolkujen ja wireframein luonti",
@@ -23827,9 +23877,9 @@ export const careersData: CareerFI[] = [
           "Yhteistyö kehittäjien ja tuotepäälliköiden kanssa"
     ],
     impact: [
-          "Luo intuitiivisia ja käyttäjäystävällisiä tuotteita",
-          "Parantaa käyttäjätyytyväisyyttä",
-          "Vähentää kehityskustannuksia hyvällä suunnittelulla"
+      "Suunnittelee käyttöliittymiä, joita miljoonat ihmiset käyttävät päivittäin Suomessa ja kansainvälisesti",
+      "Parantaa käyttäjäkokemusta ja konversiota 40-60% intuitiivisella suunnittelulla",
+      "Säästää kehitysaikaa ja -kustannuksia huolellisella suunnittelulla ennen toteutusta"
     ],
     education_paths: [
           "AMK: Medianomi (UX/UI-suunnittelu)",
@@ -23858,7 +23908,12 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior UI/UX Designer","UI/UX Designer"],
     career_progression: ["Senior UI/UX Designer","Lead Designer","Design Manager"],
-    typical_employers: ["Teknologiayritykset","Digitaaliset palvelutalot","Startup-yritykset","Konsulttitalot"],
+    typical_employers: [
+      "Wolt, Supercell, Smartly.io",
+      "Reaktor, Futurice, Vincit, Nordkapp",
+      "Digitoimistot ja UX-studiot",
+      "Startup-yritykset ja kasvuyhtiöt"
+    ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset / Grafia",
     useful_links: [
@@ -23880,7 +23935,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Sisällöntuottaja",
     title_en: "Content Creator",
-    short_description: "Sisällöntuottaja luo monipuolista digitaalista sisältöä eri kanaviin. Toimii usein itsenäisenä yrittäjänä tai freelancerina tuottaen videoita, kuvia, tekstejä ja podcasteja.",
+    short_description: "Sisällöntuottaja luo monipuolista sisältöä sosiaaliseen mediaan, blogihin ja muihin digitaalisiin kanaviin. Helsingissä kasvava creator economy luo mahdollisuuksia - voit työskennellä brändeille tai rakentaa omaa yleisöä. Tarjoaa luovan vapauden, joustavan työajan ja ansaintapotentiaalia.",
     main_tasks: [
           "Sisältöideoiden kehittäminen ja suunnittelu",
           "Videoiden, kuvien ja tekstien tuottaminen",
@@ -23889,9 +23944,9 @@ export const careersData: CareerFI[] = [
           "Yhteistyö brändien kanssa"
     ],
     impact: [
-          "Viihdy ttää ja inspiroi yleisöjä",
-          "Luo yhteisöjä kiinnostuksen kohteiden ympärille",
-          "Mahdollistaa brändien tavoittavan kohderyhmiä autentisesti"
+      "Luo sisältöä, joka tavoittaa kymmeniä tai satoja tuhansia seuraajia sosiaalisessa mediassa",
+      "Rakentaa brändipartnerships-tuloja ja creator-taloutta Suomessa",
+      "Vaikuttaa yleisön ostopäätöksiin ja trendeihin autenttisella sisällöllä"
     ],
     education_paths: [
           "AMK: Medianomi",
@@ -23920,8 +23975,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Content Creator (oma kanava)"],
     career_progression: ["Established Creator","Creator Agency Owner","Brand Partnerships Manager"],
-    typical_employers: ["Itsensä työllistäjä (freelance)","Creator-agentuurit","Media-alan yritykset"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+    typical_employers: [
+      "Brändit yhteistyökumppaneina",
+      "Influencer-markkinointitoimistot",
+      "Mediayhtiöt ja julkaisijat",
+      "Freelance ja oma yritystoiminta"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
           {
@@ -23942,7 +24002,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Vaikuttajamarkkinoinnin asiantuntija",
     title_en: "Influencer Marketing Specialist",
-    short_description: "Vaikuttajamarkkinoinnin asiantuntija suunnittelee ja toteuttaa brändin vaikuttajamarkkinointikampanjoita. Etsii sopivia vaikuttajia, neuvottelee yhteistöistä ja mittaa kampanjoiden tuloksia.",
+    short_description: "Vaikuttajamarkkinoinnin asiantuntija suunnittelee ja toteuttaa influencer-kampanjoita brändeille sekä hallitsee yhteistyökumppanuuksia. Helsingissä kasvava ala - rooli yhdistää markkinoinnin, somen ja ihmissuhteet. Tarjoaa hybridityön, luovan työn ja palkan 3200-5200€/kk.",
     main_tasks: [
           "Vaikuttajamarkkinointistrategian suunnittelu",
           "Sopivien vaikuttajien etsiminen ja kontaktointi",
@@ -23951,9 +24011,9 @@ export const careersData: CareerFI[] = [
           "Tulosten analysointi ja raportointi"
     ],
     impact: [
-          "Kasvattaa brändin näkyvyyttä ja tunnettavuutta",
-          "Tavoittaa kohderyhmiä autentisesti",
-          "Tuottaa konversioita ja myyntiä"
+      "Luo influencer-kampanjoita, jotka tavoittavat miljoonia ihmisiä orgaanisesti sosiaalisessa mediassa",
+      "Kasvattaa bränditietoisuutta 50-100% autenttisten influencer-yhteistöiden kautta",
+      "Tuottaa paremman ROI:n kuin perinteinen mainonta kohdennetulla influencer-markkinoinnilla"
     ],
     education_paths: [
           "AMK: Tradenomi (markkinointi), medianomi",
@@ -23982,8 +24042,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Influencer Marketing Coordinator","Social Media Specialist"],
     career_progression: ["Senior Influencer Marketing Specialist","Head of Influencer Marketing","Partnerships Director"],
-    typical_employers: ["Mainostoimistot","Vaikuttaja-agentuurit","Yritykset (in-house)","Media-alan yritykset"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Mediayhtiöt: United Influencers, Yksi Helsinki",
+      "Brändit: IVYREVEL, Lindex, Finnair",
+      "Mainostoimistot ja digitoimistot",
+      "Startup-yritykset ja lifestyle-brändit"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links: [
           {
@@ -24004,7 +24069,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Digitaalinen sisältötuottaja",
     title_en: "Digital Content Producer",
-    short_description: "Digitaalinen sisältötuottaja vastaa digitaalisen sisällön kokonaisvaltaisesta tuotannosta. Koordinoi projekteja, hallinnoi aikatauluja ja varmistaa laadukkaan lopputuloksen.",
+    short_description: "Digitaalisen sisällön tuottaja koordinoi ja tuottaa monipuolista digitaalista sisältöä eri kanaviin ja formaatteihin. Helsingissä kasvava kysyntä mediatalloissa ja yrityksissä, jotka panostavat sisältömarkkinointiin. Tarjoaa monipuolisen työn, hybridityön ja palkan 3200-5000€/kk.",
     main_tasks: [
           "Digitaalisten sisältöprojektien suunnittelu ja johtaminen",
           "Tiimien koordinointi (kirjoittajat, graafikot, videograafit)",
@@ -24013,9 +24078,9 @@ export const careersData: CareerFI[] = [
           "Asiakasyhteistyö ja palaverit"
     ],
     impact: [
-          "Varmistaa laadukkaan ja aikataulussa pysyvän sisältötuotannon",
-          "Koordinoi monialaisia tiimejä tehokkaasti",
-          "Tukee brändin sisältöstrategiaa"
+      "Tuottaa digitaalista sisältöä, joka tavoittaa satoja tuhansia ihmisiä kuukausittain",
+      "Koordinoi sisältötuotantoprojekteja, jotka tukevat liiketoimintatavoitteita ja brändiä",
+      "Kasvattaa sivuston liikennettä 30-50% strategisella sisältötuotannolla"
     ],
     education_paths: [
           "AMK: Medianomi, tradenomi",
@@ -24044,8 +24109,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Content Coordinator","Production Assistant"],
     career_progression: ["Senior Content Producer","Head of Content Production","Executive Producer"],
-    typical_employers: ["Mainostoimistot","Tuotantoyhtiöt","Media-alan yritykset","Yritykset (in-house)"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Sanoma Media, Alma Media, Yle",
+      "Brändit: IVYREVEL, Fazer, Paulig",
+      "Digitoimistot ja sisältötoimistot",
+      "Verkkokaupat ja mediayritykset"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Audiovisuaaliset tuottajat",
     useful_links: [
           {
@@ -24067,7 +24137,7 @@ export const careersData: CareerFI[] = [
     category: "visionaari",
     title_fi: "Liikkeenjohdon konsultti",
     title_en: "Management Consultant",
-    short_description: "Liikkeenjohdon konsultti auttaa organisaatioita parantamaan suorituskykyä strategisten muutosten ja liiketoimintaprosessien kehittämisen kautta. Analysoi haasteita ja tarjoaa ratkaisuja.",
+    short_description: "Liikkeenjohdon konsultti auttaa yrityksiä ratkaisemaan strategisia haasteita, parantamaan toimintaa ja kasvamaan. Helsingissä kysytty rooli Big4- ja strategiakonsulttitaloissa - tarjoaa nopean urakehityksen, kansainvälisiä projekteja ja hyvän palkan (4000-7000€/kk).",
     main_tasks:     [
           "Organisaatioiden liiketoiminnan analysointi",
           "Strategisten suositusten kehittäminen",
@@ -24075,10 +24145,10 @@ export const careersData: CareerFI[] = [
           "Sidosryhmien haastattelut ja workshopit",
           "Implementoinnin tukeminen ja seuranta"
     ],
-    impact:     [
-          "Auttaa yrityksiä kasvamaan ja menestymään",
-          "Tuo uusia näkökulmia haastaviin kysymyksiin",
-          "Parantaa organisaatioiden tehokkuutta"
+    impact: [
+      "Auttaa yrityksiä tekemään miljoonien eurojen päätöksiä strategian ja liiketoiminnan kehittämisessä",
+      "Ratkaisee monimutkaisia liiketoimintahaasteita data-analyysillä ja parhailla käytännöillä",
+      "Mahdollistaa organisaatiomuutoksia, jotka parantavat tehokkuutta 20-40%"
     ],
     education_paths:     [
           "Yliopisto: Kauppatieteiden maisteri",
@@ -24107,8 +24177,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Consultant","Business Analyst","Associate Consultant"],
     career_progression: ["Senior Consultant","Manager","Senior Manager","Partner"],
-    typical_employers: ["Konsulttitalot (McKinsey, BCG, Accenture)","Big Four","Pienet konsulttitoimistot"],
-    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"paljon"},
+    typical_employers: [
+      "McKinsey & Company (Helsinki)",
+      "Boston Consulting Group (Helsinki)",
+      "Deloitte, PwC, KPMG, EY",
+      "Accenture, Gofore, Reaktor"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links:     [
           {
@@ -24129,7 +24204,7 @@ export const careersData: CareerFI[] = [
     category: "visionaari",
     title_fi: "Liiketoiminta-analyytikko",
     title_en: "Business Analyst",
-    short_description: "Liiketoiminta-analyytikko analysoi liiketoimintaprosesseja ja datan avulla tunnistaa kehitysmahdollisuuksia. Toimii siltalyp organisaation ja IT:n välillä.",
+    short_description: "Liiketoiminta-analyytikko analysoi liiketoimintaprosesseja, kerää vaatimuksia ja yhdistää liiketoiminnan ja IT:n. Helsingissä kasvava kysyntä digitalisaatioprojekteissa - rooli yhdistää datan, prosessit ja ihmissuhteet. Tarjoaa etä/hybridityön ja palkan 3800-5500€/kk.",
     main_tasks:     [
           "Liiketoimintaprosessien dokumentointi ja analysointi",
           "Vaatimusten kerääminen ja määrittely",
@@ -24137,10 +24212,10 @@ export const careersData: CareerFI[] = [
           "Sidosryhmien haastattelut ja työpajat",
           "Suositusten ja ratkaisuehdotusten laatiminen"
     ],
-    impact:     [
-          "Parantaa liiketoiminnan tehokkuutta",
-          "Mahdollistaa tietoon perustuvan päätöksenteon",
-          "Ohjaa teknologiainvestointeja oikeaan suuntaan"
+    impact: [
+      "Tunnistaa tehostamismahdollisuuksia, jotka säästävät satoja tuhansia euroja vuosittain",
+      "Yhdistää liiketoimintatarpeet teknisiin ratkaisuihin ja varmistaa projektien onnistumisen",
+      "Parantaa liiketoimintaprosesseja data-analyysillä ja parhailla käytännöillä"
     ],
     education_paths:     [
           "AMK/Yliopisto: Kauppatieteet, tietotekniikka",
@@ -24169,8 +24244,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Business Analyst","Data Analyst","Process Analyst"],
     career_progression: ["Senior Business Analyst","Lead Business Analyst","Business Architect"],
-    typical_employers: ["IT-yritykset","Konsulttitalot","Pankit","Suuryritykset"],
-    work_conditions: {"remote":"Kyllä","shift_work":false,"travel":"vähän"},
+    typical_employers: [
+      "Wolt, Supercell, kasvuyhtiöt",
+      "Konsultit: Gofore, Solita, Tietoevry",
+      "Nordea, OP, S-ryhmä, K-ryhmä",
+      "Julkinen sektori ja suuryritykset"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: "Toimihenkilöunioni / TEK",
     useful_links:     [
           {
@@ -24191,7 +24271,7 @@ export const careersData: CareerFI[] = [
     category: "visionaari",
     title_fi: "Strategiakonsultti",
     title_en: "Strategy Consultant",
-    short_description: "Strategiakonsultti kehittää pitkän aikavälin liiketoimintastrategioita ja auttaa johtoa tekemään kriittisiä päätöksiä yrityksen suunnasta ja kasvusta.",
+    short_description: "Strategiakonsultti auttaa yrityksiä määrittelemään pitkän aikavälin strategioita ja tekemään kriittisiä liiketoimintapäätöksiä. Helsingissä huippurooli, joka vaatii korkeakoulututkinnon ja erinomaista analyyttistä ajattelua. Tarjoaa nopean urakehityksen, haastavat projektit ja palkan 4500-8000€/kk.",
     main_tasks:     [
           "Strategisten vaihtoehtojen analysointi ja kehittäminen",
           "Markkina- ja kilpailija-analyysit",
@@ -24199,10 +24279,10 @@ export const careersData: CareerFI[] = [
           "Johtoryhmän neuvonanto ja fasilitointi",
           "Strategian implementoinnin tukeminen"
     ],
-    impact:     [
-          "Ohjaa yritysten pitkän aikavälin menestystä",
-          "Auttaa tunnistamaan uusia kasvumahdollisuuksia",
-          "Tukee kriittisissä liiketoimintapäätöksissä"
+    impact: [
+      "Ohjaa yritysten strategisia päätöksiä, jotka vaikuttavat miljooniin euroihin ja tuhansiin työntekijöihin",
+      "Analysoi markkinoita ja kilpailijoita tukemaan menestyksekästä liiketoimintaa",
+      "Mahdollistaa uusien liiketoimintamahdollisuuksien tunnistamisen ja kasvun"
     ],
     education_paths:     [
           "Yliopisto: Kauppatieteiden maisteri",
@@ -24231,8 +24311,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Associate Strategy Consultant","Strategy Analyst"],
     career_progression: ["Senior Strategy Consultant","Principal","Partner","Managing Partner"],
-    typical_employers: ["Top-tier konsulttitalot","Strategiaboutique-yritykset","In-house strategy teams"],
-    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"paljon"},
+    typical_employers: [
+      "McKinsey & Company (Helsinki)",
+      "Boston Consulting Group (Helsinki)",
+      "Bain & Company (Helsinki)",
+      "Strategy& (PwC), Deloitte Strategy"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links:     [
           {
@@ -24253,7 +24338,7 @@ export const careersData: CareerFI[] = [
     category: "johtaja",
     title_fi: "Myyntikehitysedustaja",
     title_en: "Sales Development Representative",
-    short_description: "Myyntikehitysedustaja tuottaa uusia myyntimahdollisuuksia, kvalifioi prospekteja ja luo yhteyksiä potentiaalisiin asiakkaisiin. Toimii ensimmäisenä kontaktipisteenä asiakkaille.",
+    short_description: "SDR (Sales Development Representative) generoi liidejä, kvalifioi prospekteja ja varaa tapaamisia myyntitiimille. Helsingissä kysytty aloitusrooli SaaS-yrityksissä - tarjoaa hyvät ansaintamahdollisuudet bonuksilla (3000-5000€/kk) ja nopean polun myyntiin.",
     main_tasks:     [
           "Prospektien etsiminen ja yhteydenotot",
           "Leadien kvalifiointi ja siirto myyntiin",
@@ -24261,10 +24346,10 @@ export const careersData: CareerFI[] = [
           "CRM-järjestelmän päivittäminen",
           "Myyntimahdollisuuksien seuranta"
     ],
-    impact:     [
-          "Luo perustaa yrityksen kasvulle",
-          "Rakentaa asiakassuhteita alusta alkaen",
-          "Mahdollistaa myyntitiimin tehokkuuden"
+    impact: [
+      "Generoi satoja kvalifioituja liidejä kuukausittain, jotka muuttuvat arvokkaaksi asiakkuuksiksi",
+      "Mahdollistaa myyntitiimin fokuksen sulkemiseen ja kasvattaa myyntituloksia",
+      "Rakentaa myyntipipelineä, joka tukee yrityksen kasvutavoitteita"
     ],
     education_paths:     [
           "AMK: Tradenomi",
@@ -24293,8 +24378,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["SDR","Inside Sales Representative","Lead Generation Specialist"],
     career_progression: ["Senior SDR","Account Executive","Sales Manager"],
-    typical_employers: ["SaaS-yritykset","B2B-teknologiayritykset","Kasvuyritykset"],
-    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"vähän"},
+    typical_employers: [
+      "Wolt, Supermetrics, Smartly.io",
+      "SaaS-startupit ja kasvuyhtiöt",
+      "HubSpot, Salesforce (Helsinki)",
+      "B2B-teknologiayritykset"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links:     [
           {
@@ -24315,7 +24405,7 @@ export const careersData: CareerFI[] = [
     category: "johtaja",
     title_fi: "Vastuullinen myyntiedustaja",
     title_en: "Account Executive",
-    short_description: "Vastuullinen myyntiedustaja vastaa asiakassuhteiden hallinnasta ja myynnin kasvattamisesta. Neuvottelee sopimuksia ja rakentaa pitkäaikaisia asiakassuhteita.",
+    short_description: "Account Executive vastaa B2B-myynnistä, asiakassuhteiden rakentamisesta ja kauppojen sulkemisesta. Helsingissä kysytty rooli SaaS- ja tech-yrityksissä - tarjoaa erinomaisen palkan bonuksilla (4000-8000€/kk), etätyön ja selkeän urakehityksen.",
     main_tasks:     [
           "Myyntineuvottelut ja sopimukset",
           "Asiakassuhteiden rakentaminen ja hallinta",
@@ -24323,10 +24413,10 @@ export const careersData: CareerFI[] = [
           "Tarjousten laatiminen ja esittely",
           "Myynnin raportointi ja ennustaminen"
     ],
-    impact:     [
-          "Kasvattaa yrityksen liikevaihtoa",
-          "Rakentaa vahvoja asiakassuhteita",
-          "Tuo asiakastarpeet organisaatioon"
+    impact: [
+      "Myy ratkaisuja, jotka tuottavat satoja tuhansia euroja vuosittaisia sopimuksia",
+      "Rakentaa pitkäaikaisia asiakassuhteita ja luo arvoa molemmille osapuolille",
+      "Kasvattaa yrityksen liikevaihtoa 20-50% menestyksellisellä myynnillä"
     ],
     education_paths:     [
           "AMK: Tradenomi",
@@ -24355,8 +24445,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Account Executive","Inside Sales Representative"],
     career_progression: ["Senior AE","Key Account Manager","Sales Manager","Head of Sales"],
-    typical_employers: ["B2B-yritykset","Teknologiayritykset","Palveluyritykset"],
-    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"kohtalaisesti"},
+    typical_employers: [
+      "Wolt, Supermetrics, Smartly.io",
+      "HubSpot, Salesforce, Zendesk",
+      "SaaS-yritykset ja kasvuyhtiöt",
+      "B2B-teknologiayritykset"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links:     [
           {
@@ -24377,7 +24472,7 @@ export const careersData: CareerFI[] = [
     category: "jarjestaja",
     title_fi: "Operatiivinen päällikkö",
     title_en: "Operations Manager",
-    short_description: "Operatiivinen päällikkö johtaa organisaation päivittäisiä toimintoja, optimoi prosesseja ja varmistaa toiminnan tehokkuuden ja laadun.",
+    short_description: "Operations Manager vastaa liiketoiminnan operatiivisesta johtamisesta, prosessien kehittämisestä ja tehokkuudesta. Helsingissä kysytty rooli kasvuyhtiöissä, jotka skaalautuvat nopeasti. Tarjoaa monipuolisen työn, vastuuta ja palkan 4500-7000€/kk.",
     main_tasks:     [
           "Päivittäisten toimintojen johtaminen ja valvonta",
           "Prosessien kehittäminen ja optimointi",
@@ -24385,10 +24480,10 @@ export const careersData: CareerFI[] = [
           "Laatustandardien varmistaminen",
           "Tiimien johtaminen ja kehittäminen"
     ],
-    impact:     [
-          "Varmistaa sujuvan ja tehokkaan toiminnan",
-          "Parantaa toiminnan laatua ja kannattavuutta",
-          "Kehittää tiimien suorituskykyä"
+    impact: [
+      "Optimoi liiketoimintaprosesseja, jotka palvelevat tuhansia asiakkaita päivittäin",
+      "Parantaa operatiivista tehokkuutta 20-40% ja säästää merkittäviä kustannuksia",
+      "Mahdollistaa yrityksen skaalautumisen hallitusti ja kestävästi"
     ],
     education_paths:     [
           "AMK/Yliopisto: Kauppatieteet, tuotantotalous",
@@ -24417,8 +24512,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Operations Coordinator","Process Specialist","Team Lead"],
     career_progression: ["Senior Operations Manager","Director of Operations","COO"],
-    typical_employers: ["Valmistusyritykset","Palveluyritykset","Logistiikkayritykset"],
-    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"vähän"},
+    typical_employers: [
+      "Wolt, Swappie, kasvuyhtiöt",
+      "Verkkokaupat ja logistics-yritykset",
+      "Konsultit: Gofore, Solita",
+      "Suuryritykset ja julkinen sektori"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links:     [
           {
@@ -24439,7 +24539,7 @@ export const careersData: CareerFI[] = [
     category: "johtaja",
     title_fi: "Liiketoiminnan kehityspäällikkö",
     title_en: "Business Development Manager",
-    short_description: "Liiketoiminnan kehityspäällikkö tunnistaa ja kehittää uusia liiketoimintamahdollisuuksia, kumppanuuksia ja kasvustrategioita organisaation kasvun vauhdittamiseksi.",
+    short_description: "Business Development Manager etsii uusia liiketoimintamahdollisuuksia, kumppanuuksia ja kasvukanavia. Helsingissä kysytty rooli startup- ja kasvuyhtiöissä, jotka laajentuvat. Tarjoaa strategisen roolin, kansainväliset mahdollisuudet ja palkan 4000-7000€/kk.",
     main_tasks:     [
           "Uusien liiketoimintamahdollisuuksien tunnistaminen",
           "Kumppanuuksien rakentaminen ja neuvottelut",
@@ -24447,10 +24547,10 @@ export const careersData: CareerFI[] = [
           "Myynti- ja markkinointiyhteistyö",
           "Liiketoiminnan kasvun mittaaminen"
     ],
-    impact:     [
-          "Luo uusia liiketoimintamahdollisuuksia",
-          "Kasvattaa yrityksen markkina-asemaa",
-          "Rakentaa strategisia kumppanuuksia"
+    impact: [
+      "Tunnistaa ja luo uusia liiketoimintamahdollisuuksia, jotka tuottavat miljoonia euroja",
+      "Rakentaa strategisia kumppanuuksia, jotka laajentavat yrityksen markkina-aluetta",
+      "Kasvattaa liiketoimintaa 30-100% vuodessa uusien kanavien ja markkinoiden kautta"
     ],
     education_paths:     [
           "Yliopisto: Kauppatieteiden maisteri",
@@ -24479,8 +24579,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Business Development Representative","Junior BD Manager"],
     career_progression: ["Senior BD Manager","Head of Business Development","VP of Business Development"],
-    typical_employers: ["Kasvuyritykset","Teknologiayritykset","B2B-palveluyritykset"],
-    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"kohtalaisesti"},
+    typical_employers: [
+      "Wolt, Swappie, Supermetrics",
+      "Startup-yritykset ja kasvuyhtiöt",
+      "SaaS-yritykset ja teknologiayritykset",
+      "Kansainväliset yritykset (Helsinki)"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links:     [
           {
@@ -24501,7 +24606,7 @@ export const careersData: CareerFI[] = [
     category: "jarjestaja",
     title_fi: "Projektikoordinaattori",
     title_en: "Project Coordinator",
-    short_description: "Projektikoordinaattori tukee projektien toteutusta, hallinnoi aikatauluja ja resursseja sekä varmistaa projektin sujuvan etenemisen ja viestinnän.",
+    short_description: "Projektikoordinaattori koordinoi projekteja, aikatauluja ja resursseja varmistaen että projektit valmistuvat ajallaan ja budjetissa. Helsingissä kysytty aloitusrooli, joka tarjoaa polun projektipäällikkyteen. Tarjoaa monipuolisen työn, hybridityön ja palkan 3200-4500€/kk.",
     main_tasks:     [
           "Projektin aikataulujen ja resurssien koordinointi",
           "Projektidokumentaation ylläpito",
@@ -24509,10 +24614,10 @@ export const careersData: CareerFI[] = [
           "Projektin etenemisen seuranta ja raportointi",
           "Sidosryhmäyhteistyö"
     ],
-    impact:     [
-          "Varmistaa projektien sujuvan toteutuksen",
-          "Pitää tiimin informoituna ja synkronoituna",
-          "Tukee projektipäälliköitä operatiivisissa tehtävissä"
+    impact: [
+      "Koordinoi projekteja, jotka tuottavat satoja tuhansia euroja arvoa yritykselle",
+      "Varmistaa että projektit valmistuvat ajallaan ja budjetissa tehokkaalla koordinoinnilla",
+      "Mahdollistaa tiimien tehokkaan yhteistyön ja viestinnän"
     ],
     education_paths:     [
           "AMK: Tradenomi, projektihallinta",
@@ -24541,8 +24646,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Project Assistant","Junior Project Coordinator"],
     career_progression: ["Senior Project Coordinator","Project Manager","Program Manager"],
-    typical_employers: ["Konsulttiyritykset","IT-yritykset","Rakennusyritykset","Julkinen sektori"],
-    work_conditions: {"remote":"Kyllä","shift_work":false,"travel":"vähän"},
+    typical_employers: [
+      "Konsultit: Gofore, Solita, Reaktor",
+      "Rakennusala: YIT, Skanska",
+      "IT-yritykset ja digitoimistot",
+      "Julkinen sektori ja suuryritykset"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links:     [
           {
@@ -24563,7 +24673,7 @@ export const careersData: CareerFI[] = [
     category: "visionaari",
     title_fi: "Digitaalisen muutoksen konsultti",
     title_en: "Digital Transformation Consultant",
-    short_description: "Digitaalisen muutoksen konsultti auttaa organisaatioita siirtymään digitaaliseen liiketoimintaan ja ottamaan käyttöön uusia teknologioita strategisesti.",
+    short_description: "Digitaalisen transformaation konsultti auttaa yrityksiä modernisoimaan toimintaansa ja ottamaan käyttöön digitaalisia ratkaisuja. Helsingissä kasvava kysyntä julkisella ja yksityisellä sektorilla - rooli yhdistää strategian, teknologian ja muutosjohtamisen. Tarjoaa haastavat projektit ja palkan 4500-7500€/kk.",
     main_tasks:     [
           "Digitaalisen kypsyyden arviointi",
           "Digitalisaatiostrategian kehittäminen",
@@ -24571,10 +24681,10 @@ export const careersData: CareerFI[] = [
           "Teknologiaratkaisujen arviointi ja valinta",
           "Muutosjohtaminen ja koulutus"
     ],
-    impact:     [
-          "Modernisoi organisaatioiden toimintatapoja",
-          "Mahdollistaa tehokkuuden ja kilpailukyvyn parantamisen",
-          "Auttaa hyödyntämään teknologian potentiaalin"
+    impact: [
+      "Ohjaa organisaatioiden digitaalitransformaatioita, jotka vaikuttavat tuhansiin työntekijöihin",
+      "Modernisoi prosesseja ja järjestelmiä, jotka parantavat tehokkuutta 30-50%",
+      "Mahdollistaa uusien digitaalisten palveluiden käyttöönoton ja liiketoimintamallit"
     ],
     education_paths:     [
           "Yliopisto: Kauppatieteet tai tietotekniikka",
@@ -24603,8 +24713,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Digital Consultant","Transformation Analyst"],
     career_progression: ["Senior Consultant","Principal Consultant","Partner"],
-    typical_employers: ["Konsulttitalot","Big Four","Teknologiayritykset"],
-    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"kohtalaisesti"},
+    typical_employers: [
+      "Accenture, Deloitte, KPMG",
+      "Gofore, Solita, Tietoevry",
+      "McKinsey Digital, BCG Digital",
+      "Suuryritykset ja julkinen sektori"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: "TEK / Toimihenkilöunioni",
     useful_links:     [
           {
@@ -24625,7 +24740,7 @@ export const careersData: CareerFI[] = [
     category: "visionaari",
     title_fi: "Muutosjohtamisen asiantuntija",
     title_en: "Change Management Specialist",
-    short_description: "Muutosjohtamisen asiantuntija ohjaa organisaatioita läpi muutosprosessien ja varmistaa, että muutokset otetaan onnistuneesti käyttöön ja henkilöstö on sitoutunut.",
+    short_description: "Muutoksenhallinnan asiantuntija tukee organisaatioita suurissa muutoksissa, kouluttaa työntekijöitä ja varmistaa muutosten onnistumisen. Helsingissä kysyntää julkisella sektorilla ja suuryrityksissä - rooli yhdistää psykologian, viestinnän ja projektinhallinnan. Tarjoaa merkityksellisen työn ja palkan 3800-5800€/kk.",
     main_tasks:     [
           "Muutostarpeiden analysointi",
           "Muutosstrategian ja -suunnitelman laatiminen",
@@ -24633,10 +24748,10 @@ export const careersData: CareerFI[] = [
           "Koulutuksen ja tuen järjestäminen",
           "Muutoksen seuranta ja arviointi"
     ],
-    impact:     [
-          "Varmistaa muutosten onnistumisen",
-          "Vähentää muutosvastarintaa",
-          "Tukee henkilöstön sitoutumista"
+    impact: [
+      "Tukee tuhansia työntekijöitä muutoksissa ja vähentää muutosvastarintaa",
+      "Varmistaa että organisaatiomuutokset onnistuvat ja tuottavat halutun tuloksen",
+      "Parantaa muutosten läpimenoa 40-60% systemaattisella change managementilla"
     ],
     education_paths:     [
           "Yliopisto: Kauppatieteet, psykologia, organisaatiotutkimus",
@@ -24665,8 +24780,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Change Analyst","Change Coordinator"],
     career_progression: ["Senior Change Specialist","Change Manager","Head of Change"],
-    typical_employers: ["Konsulttiyritykset","Suuryritykset","Julkinen sektori"],
-    work_conditions: {"remote":"Osittain","shift_work":false,"travel":"kohtalaisesti"},
+    typical_employers: [
+      "Konsultit: Deloitte, KPMG, Gofore",
+      "Suuryritykset: Nokia, Elisa, Fortum",
+      "Julkinen sektori: Kela, Valtiokonttori",
+      "Organisaatiomuutosprojektit"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links:     [
           {
@@ -24686,7 +24806,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Mielenterveysohjaaja",
     title_en: "Mental Health Counselor",
-    short_description: "Mielenter veysohjaaja tarjoaa tukea ja ohjausta mielenterveyden haasteissa kärsivien henkilöiden auttamiseksi. Työskentely perustuu kohtaamiseen, kuuntelemiseen ja asiakkaan voimavarojen tukemiseen.",
+    short_description: "Mielenterveystyön ammattilainen tarjoaa terapiaa, neuvontaa ja tukea mielenterveyshaasteissa kärsiville. Helsingissä kasvava tarve erityisesti nuorille aikuisille suunnatuissa palveluissa. Tarjoaa merkityksellisen työn, joustavan työajan ja palkan 3200-4800€/kk.",
     main_tasks:     [
               "Asiakkaiden kohtaaminen ja tukikeskustelut",
               "Kriisinhallinnan tukeminen",
@@ -24694,10 +24814,10 @@ export const careersData: CareerFI[] = [
               "Hoitosuunnitelmien laatiminen",
               "Ryhmätoiminnan ohjaaminen"
     ],
-    impact:     [
-              "Tukee ihmisiä mielenterveyskriiseissä",
-              "Edistää toipumista ja hyvinvointia",
-              "Ehkäisee syrjäytymistä"
+    impact: [
+      "Auttaa satoja ihmisiä vuosittain mielenterveyshaasteiden kanssa ja parantaa heidän elämänlaatuaan",
+      "Tarjoaa terapiaa ja tukea, joka vähentää ahdistusta, masennusta ja stressiä",
+      "Mahdollistaa ihmisten palaamisen työelämään ja arkeen mielenterveyden parantumisen myötä"
     ],
     education_paths:     [
               "AMK: Sosiaalialan tutkinto",
@@ -24726,8 +24846,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Mental Health Counselor", "Trainee"],
     career_progression: ["Senior Mental Health Counselor", "Lead", "Manager"],
-    typical_employers: ["Terveyskeskukset","Mielenterveysasemat","Yksityiset klinikat","Järjestöt"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Helsingin kaupunki, HUS",
+      "Yksityiset terapiakeskukset: Psykologikeskus Vastaamo, Terveystalo",
+      "Työterveyspalvelut: Mehiläinen, Terveystalo",
+      "Yksityinen vastaanotto"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Talentia",
     useful_links: [
       { name: "TEM", url: "https://tem.fi/" },
@@ -24740,7 +24865,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Hyvinvointivalmentaja",
     title_en: "Wellness Coach",
-    short_description: "Hyvinvointivalmentaja ohjaa asiakkaita kokonaisvaltaisessa hyvinvoinnissa. Työ keskittyy elämäntapojen muutokseen, terveystavoitteiden saavuttamiseen ja tasapainoisen elämän tukemiseen.",
+    short_description: "Hyvinvointivalmentaja tukee asiakkaita tekemään terveellisiä elämäntapamuutoksia liikunnassa, ravinnossa ja stressinhallinnassa. Helsingissä kasvava wellness-trendi luo mahdollisuuksia - voit työskennellä yrityksille tai freelancerina. Tarjoaa joustavan työajan, merkityksellisen työn ja ansaintapotentiaalia.",
     main_tasks:     [
               "Asiakkaiden hyvinvoinnin kartoitus",
               "Yksilöllisten tavoitteiden asettaminen",
@@ -24748,10 +24873,10 @@ export const careersData: CareerFI[] = [
               "Ravinto- ja liikuntaneuvonta",
               "Stressinhallintaohjaus"
     ],
-    impact:     [
-              "Parantaa asiakkaiden elämänlaatua",
-              "Edistää terveellisiä elämäntapoja",
-              "Tukee kokonaisvaltaista hyvinvointia"
+    impact: [
+      "Auttaa satoja asiakkaita vuosittain tekemään kestäviä elämäntapamuutoksia ja parantamaan terveyttä",
+      "Tukee työhyvinvointia yrityksissä ja vähentää sairauspoissaoloja 15-30%",
+      "Mahdollistaa ihmisten terveellisemmän ja energisemmän elämän"
     ],
     education_paths:     [
               "Terveysalan koulutus",
@@ -24780,8 +24905,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Wellness Coach", "Trainee"],
     career_progression: ["Senior Wellness Coach", "Lead", "Manager"],
-    typical_employers: ["Yksityisyrittäjyys","Hyvinvointikeskukset","Yritykset (työhyvinvointi)","Kuntosalit"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Työterveyspalvelut: Mehiläinen, Terveystalo",
+      "Wellness-yritykset: Frank Body, Urban Sports Club",
+      "Yritykset hyvinvointipalveluina",
+      "Freelance ja oma yritystoiminta"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM", url: "https://tem.fi/" },
@@ -24794,7 +24924,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Työterveysasiantuntija",
     title_en: "Occupational Health Specialist",
-    short_description: "Työterveysasiantuntija edistää työntekijöiden terveyttä ja turvallisuutta. Työ sisältää työhyvinvointiohjelmien suunnittelun, työympäristön arvioinnin ja työterveysriskien tunnistamisen.",
+    short_description: "Työterveyshuollon ammattilainen huolehtii työntekijöiden terveydestä ja työhyvinvoinnista yrityksissä. Helsingissä jatkuva kysyntä erityisesti kasvuyhtiöissä, jotka panostavat henkilöstön hyvinvointiin. Tarjoaa vakaan työn, monipuoliset tehtävät ja palkan 3500-5000€/kk.",
     main_tasks:     [
               "Työterveysselvitysten tekeminen",
               "Työhyvinvointiohjelmien kehittäminen",
@@ -24802,10 +24932,10 @@ export const careersData: CareerFI[] = [
               "Työterveysneuvonta",
               "Sairauspoissaolojen seuranta ja ehkäisy"
     ],
-    impact:     [
-              "Parantaa työntekijöiden terveyttä ja työkykyä",
-              "Vähentää sairauspoissaoloja",
-              "Edistää turvallisia työympäristöjä"
+    impact: [
+      "Huolehtii tuhansien työntekijöiden terveydestä ja työhyvinvoinnista Helsingin alueella",
+      "Vähentää sairauspoissaoloja 20-40% ennaltaehkäisevällä työterveyshuollolla",
+      "Mahdollistaa terveellisemmän työympäristön ja paremman työkyvyn"
     ],
     education_paths:     [
               "AMK/Yliopisto: Terveysala",
@@ -24834,8 +24964,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Occupational Health Specialist", "Trainee"],
     career_progression: ["Senior Occupational Health Specialist", "Lead", "Manager"],
-    typical_employers: ["Työterveysasemat","Yritykset","Julkinen sektori","Yksityiset palveluntarjoajat"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Mehiläinen Työterveyspalvelut",
+      "Terveystalo, Pihlajalinna",
+      "Helsingin kaupunki",
+      "Suuryritykset (sisäinen työterveyshuolto)"
+    ],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: "Tehy / Talentia",
     useful_links: [
       { name: "TEM", url: "https://tem.fi/" },
@@ -24848,7 +24983,7 @@ export const careersData: CareerFI[] = [
     category: "innovoija",
     title_fi: "Terveystiedon analyytikko",
     title_en: "Health Data Analyst",
-    short_description: "Terveystiedon analyytikko analysoi terveystietoa ja potilastietoja parantaakseen terveydenhuollon laatua, tehokkuutta ja päätöksentekoa. Työ yhdistää data-analyysin ja terveydenhuollon ymmärryksen.",
+    short_description: "Terveysdatan analyytikko analysoi terveydenhuollon dataa parantaakseen hoitoprosesseja, potilasturvallisuutta ja päätöksentekoa. Helsingissä kasvava kysyntä julkisella ja yksityisellä terveydenhuollolla - rooli yhdistää data-analytiikan ja terveydenhuollon. Tarjoaa etätyön, merkityksellisen työn ja palkan 3800-5500€/kk.",
     main_tasks:     [
               "Terveystiedon kerääminen ja analysointi",
               "Raporttien ja visualisointien laatiminen",
@@ -24856,10 +24991,10 @@ export const careersData: CareerFI[] = [
               "Datan laadun varmistaminen",
               "Ennustavien mallien kehittäminen"
     ],
-    impact:     [
-              "Parantaa terveydenhuollon laatua datalla",
-              "Tukee kliinistä päätöksentekoa",
-              "Optimoi resurssien käyttöä"
+    impact: [
+      "Analysoi dataa, joka parantaa tuhansien potilaiden hoitoa ja turvallisuutta",
+      "Tunnistaa tehostamismahdollisuuksia, jotka säästävät satoja tuhansia euroja terveydenhuollossa",
+      "Tukee evidenssipohjaista päätöksentekoa ja parantaa hoitotuloksia"
     ],
     education_paths:     [
               "Yliopisto: Tilastotiede, terveysinformatiikka",
@@ -24888,8 +25023,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Health Data Analyst", "Trainee"],
     career_progression: ["Senior Health Data Analyst", "Lead", "Manager"],
-    typical_employers: ["Sairaalat","Tutkimuslaitokset","Healthtech-yritykset","Terveydenhuollon organisaatiot"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "HUS, Helsingin kaupunki",
+      "Mehiläinen, Terveystalo, Pihlajalinna",
+      "Kela, THL",
+      "Terveysteknologiayritykset"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK",
     useful_links: [
       { name: "TEM", url: "https://tem.fi/" },
@@ -24902,7 +25042,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Ravitsemusasiantuntija",
     title_en: "Nutrition Specialist",
-    short_description: "Ravitsemusasiantuntija neuvoo asiakkaita ravitsemukseen liittyvissä kysymyksissä. Työ sisältää yksilöllisten ravinto-ohjelmien suunnittelun ja ravitsemusneuvontaa.",
+    short_description: "Ravitsemusasiantuntija neuvoo asiakkaita terveellisessä ravitsemuksessa ja auttaa saavuttamaan terveystavoitteita. Helsingissä kasvava kysyntä yksityisellä sektorilla ja wellness-toimialalla. Tarjoaa joustavan työajan, asiakastyön ja ansaintapotentiaalia.",
     main_tasks:     [
               "Yksilöllinen ravitsemusneuvonta",
               "Ravinto-ohjelmien suunnittelu",
@@ -24910,10 +25050,10 @@ export const careersData: CareerFI[] = [
               "Ravitsemusopetusmateriaalin laatiminen",
               "Yhteistyö terveydenhuollon kanssa"
     ],
-    impact:     [
-              "Parantaa asiakkaiden terveyttä ravinnolla",
-              "Ehkäisee ravitsemukseen liittyviä sairauksia",
-              "Tukee toipumista ja hyvinvointia"
+    impact: [
+      "Auttaa satoja asiakkaita vuosittain saavuttamaan terveystavoitteita ravitsemuksen avulla",
+      "Tukee kroonisten sairauksien hallintaa ja ehkäisyä terveellisellä ruokavaliolla",
+      "Mahdollistaa terveellisemmän elämäntavan ja paremman energiatason"
     ],
     education_paths:     [
               "AMK/Yliopisto: Ravitsemustiede",
@@ -24941,8 +25081,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Nutrition Specialist", "Trainee"],
     career_progression: ["Senior Nutrition Specialist", "Lead", "Manager"],
-    typical_employers: ["Terveyskeskukset","Sairaalat","Yksityiset klinikat","Urheiluseurat","Yksityisyrittäjyys"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Terveystalo, Mehiläinen",
+      "Yksityinen vastaanotto",
+      "Urheiluseurat ja wellness-keskukset",
+      "Freelance ja ravitsemusneuvonta"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Talentia",
     useful_links: [
       { name: "TEM", url: "https://tem.fi/" },
@@ -24955,7 +25100,7 @@ export const careersData: CareerFI[] = [
     category: "jarjestaja",
     title_fi: "Terveydenhuollon koordinaattori",
     title_en: "Healthcare Coordinator",
-    short_description: "Terveydenhuollon koordinaattori koordinoi potilaspalveluja ja hallinnoi ajanvarauksia. Varmistaa sujuvan hoidon toteutumisen ja asiakaspalvelun laadun.",
+    short_description: "Terveydenhuollon koordinaattori koordinoi hoitoprosesseja, aikatauluja ja potilaspolkuja varmistaen sujuvan hoidon. Helsingissä kysyntää julkisella ja yksityisellä sektorilla - rooli yhdistää asiakaspalvelun, koordinoinnin ja terveydenhuollon. Tarjoaa vakaan työn ja palkan 3000-4200€/kk.",
     main_tasks:     [
               "Ajanvarausten koordinointi",
               "Potilaspalvelujen järjestäminen",
@@ -24963,10 +25108,10 @@ export const careersData: CareerFI[] = [
               "Asiakaspalvelu ja neuvonta",
               "Potilastietojen hallinta"
     ],
-    impact:     [
-              "Varmistaa sujuvan potilaspolun",
-              "Parantaa asiakaskokemusta",
-              "Optimoi resurssien käyttöä"
+    impact: [
+      "Koordinoi hoitopolkuja tuhansille potilaille vuosittain ja varmistaa sujuvan hoidon",
+      "Parantaa potilaskokemusta 30-50% tehokkaalla koordinoinnilla ja viestinnällä",
+      "Vähentää odotusaikoja ja tehostaa hoitoresurssien käyttöä"
     ],
     education_paths:     [
               "AMK: Terveys- tai hallinto-ala",
@@ -24994,7 +25139,12 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Healthcare Coordinator", "Trainee"],
     career_progression: ["Senior Healthcare Coordinator", "Lead", "Manager"],
-    typical_employers: ["Terveyskeskukset","Sairaalat","Yksityiset klinikat","Terveysasemat"],
+    typical_employers: [
+      "HUS, Helsingin kaupunki",
+      "Mehiläinen, Terveystalo, Pihlajalinna",
+      "Yksityiset sairaalat ja klinikat",
+      "Erikoissairaanhoidon yksiköt"
+    ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tehy / JHL",
     useful_links: [
@@ -25008,7 +25158,7 @@ export const careersData: CareerFI[] = [
     category: "johtaja",
     title_fi: "Kansainvälisen myynnin päällikkö",
     title_en: "International Sales Manager",
-    short_description: "Kansainvälisen myynnin päällikkö johtaa yrityksen vientiä ja kansainvälistä myyntitoimintaa. Rakentaa kumppanuuksia ja kasvattaa myyntiä ulkomaisilla markkinoilla.",
+    short_description: "Kansainvälisen myynnin päällikkö vastaa myynnistä kansainvälisillä markkinoilla, kumppanuuksista ja markkinalaajenuksesta. Helsingissä kysytty rooli kasvuyhtiöissä, jotka kansainvälistyvät - tarjoaa matkustusmahdollisuudet (20-40%), kielitaidon hyödyntämisen ja palkan 5000-8000€/kk.",
     main_tasks:     [
               "Kansainvälisen myynnin johtaminen",
               "Vientiasiakkuuksien hallinta",
@@ -25016,10 +25166,10 @@ export const careersData: CareerFI[] = [
               "Kansainvälisten kumppanuuksien rakentaminen",
               "Myyntitiimin johtaminen"
     ],
-    impact:     [
-              "Kasvattaa yrityksen kansainvälistä myyntiä",
-              "Avaa uusia markkinoita",
-              "Rakentaa globaaleja asiakassuhteita"
+    impact: [
+      "Kasvattaa kansainvälistä myyntiä ja tuo miljoonia euroja liikevaihtoa uusilta markkinoilta",
+      "Rakentaa strategisia kumppanuuksia, jotka avaavat uusia markkina-alueita",
+      "Mahdollistaa yrityksen kansainvälisen kasvun ja laajentumisen"
     ],
     education_paths:     [
               "Yliopisto: Kauppatieteet",
@@ -25048,8 +25198,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior International Sales Manager", "Trainee"],
     career_progression: ["Senior International Sales Manager", "Lead", "Manager"],
-    typical_employers: ["Vientiyritykset","Teknologiayritykset","Valmistusyritykset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Wolt, Supercell, Smartly.io",
+      "Suomalaiset kasvuyhtiöt (kv-ekspansio)",
+      "Kansainväliset yritykset (Helsinki-toimisto)",
+      "Export-yritykset ja SaaS-yritykset"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "paljon" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links: [
       { name: "TEM", url: "https://tem.fi/" },
@@ -25062,7 +25217,7 @@ export const careersData: CareerFI[] = [
     category: "johtaja",
     title_fi: "Etätiimin vetäjä",
     title_en: "Remote Team Lead",
-    short_description: "Etätiimin vetäjä johtaa hajautettua tiimiä ja varmistaa tiimin tuottavuuden sekä hyvinvoinnin etätyöympäristössä. Koordinoi yhteistyötä ja kommunikaatiota.",
+    short_description: "Etätiimin vetäjä johtaa hajautettua tiimiä, koordinoi työtä ja varmistaa tiimin tuottavuuden ja hyvinvoinnin. Helsingissä kasvava rooli, kun yhä useammat yritykset toimivat etänä tai hybridinä. Tarjoaa täyden etätyön, joustavan työajan ja palkan 4500-7000€/kk.",
     main_tasks:     [
               "Hajautetun tiimin johtaminen",
               "Etätyön koordinointi ja fasilitointi",
@@ -25070,10 +25225,10 @@ export const careersData: CareerFI[] = [
               "Virtuaaliset kokoukset ja palaverit",
               "Tiimin tuen ja kehityksen varmistaminen"
     ],
-    impact:     [
-              "Mahdollistaa tehokkaan etätyön",
-              "Tukee tiimin hyvinvointia ja sitoutumista",
-              "Varmistaa tavoitteiden saavuttamisen"
+    impact: [
+      "Johtaa hajautettua tiimiä, joka palvelee tuhansia asiakkaita tai käyttäjiä päivittäin",
+      "Varmistaa tiimin tuottavuuden ja motivaation etätyöympäristössä",
+      "Mahdollistaa tehokkaan globaalin yhteistyön ja innovaation"
     ],
     education_paths:     [
               "Korkeakoulututkinto",
@@ -25102,7 +25257,12 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Remote Team Lead", "Trainee"],
     career_progression: ["Senior Remote Team Lead", "Lead", "Manager"],
-    typical_employers: ["Teknologiayritykset","Kansainväliset yritykset","Startup-yritykset"],
+    typical_employers: [
+      "Wolt, Smartly.io, kansainväliset yritykset",
+      "Remote-first startupit",
+      "GitLab, Toggl, Buffer (Helsinki-työntekijät)",
+      "Konsultit: Reaktor, Futurice"
+    ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links: [
@@ -25116,7 +25276,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Lokalisointiasiantuntija",
     title_en: "Localization Specialist",
-    short_description: "Lokalisointiasiantuntija mukauttaa sisältöä ja tuotteita eri markkinoille ja kulttuureille. Hallinnoi käännösprosesseja ja varmistaa kulttuurisen relevanssin.",
+    short_description: "Lokalisointiasiantuntija mukauttaa tuotteita, sisältöjä ja käyttöliittymiä eri kielille ja kulttuureille. Helsingissä kysyntää peliyhtiöissä ja kansainvälisissä SaaS-yrityksissä - rooli yhdistää kielet, teknologian ja kulttuuriymmärryksen. Tarjoaa etätyön, kielten hyödyntämisen ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "Lokalisointistrategioiden suunnittelu",
               "Käännösten koordinointi ja laadunvarmistus",
@@ -25124,10 +25284,10 @@ export const careersData: CareerFI[] = [
               "Lokalisointiworkflowjen hallinta",
               "Kieliteknologioiden hyödyntäminen"
     ],
-    impact:     [
-              "Mahdollistaa globaalin laajentumisen",
-              "Varmistaa kulttuurisen relevanssin",
-              "Parantaa käyttäjäkokemusta eri markkinoilla"
+    impact: [
+      "Lokalisoi tuotteita, jotka tavoittavat miljoonia käyttäjiä ympäri maailmaa",
+      "Mahdollistaa tuotteiden menestyksen uusilla markkinoilla kulttuurisesti sopivalla lokalisoinnilla",
+      "Parantaa käyttäjäkokemusta 30-50% paikallisesti relevanteilla käännöksillä ja sisällöllä"
     ],
     education_paths:     [
               "Yliopisto: Kielitieteet, käännöstiede",
@@ -25155,7 +25315,12 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Localization Specialist", "Trainee"],
     career_progression: ["Senior Localization Specialist", "Lead", "Manager"],
-    typical_employers: ["Teknologiayritykset","Käännöstoimistot","Peliyritykset","Kansainväliset yritykset"],
+    typical_employers: [
+      "Supercell, Rovio, Remedy Entertainment",
+      "Wolt, Smartly.io (kansainväliset markkinat)",
+      "Käännöstoimistot: AAC Global, Semantix",
+      "SaaS-yritykset ja peliyhtiöt"
+    ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links: [
@@ -25169,7 +25334,7 @@ export const careersData: CareerFI[] = [
     category: "johtaja",
     title_fi: "Globaalien kumppanuuksien päällikkö",
     title_en: "Global Partnerships Manager",
-    short_description: "Globaalien kumppanuuksien päällikkö rakentaa ja ylläpitää strategisia kansainvälisiä kumppanuuksia. Neuvottelee sopimuksia ja kehittää yhteistyötä kasvun tukemiseksi.",
+    short_description: "Globaalien kumppanuuksien päällikkö rakentaa ja hallitsee strategisia kumppanuuksia kansainvälisesti. Helsingissä kysytty rooli kasvuyhtiöissä, jotka laajentuvat - tarjoaa kansainväliset matkat (30-50%), verkostoitumisen ja palkan 5500-8500€/kk.",
     main_tasks:     [
               "Strategisten kumppanuuksien tunnistaminen",
               "Neuvottelut ja sopimusten teko",
@@ -25177,10 +25342,10 @@ export const careersData: CareerFI[] = [
               "Yhteismarkkinointialoitteet",
               "Kumppanuusverkostojen laajentaminen"
     ],
-    impact:     [
-              "Kasvattaa liiketoimintaa kumppanuuksilla",
-              "Avaa uusia markkinoita ja kanavia",
-              "Vahvistaa yrityksen markkina-asemaa"
+    impact: [
+      "Rakentaa globaaleja kumppanuuksia, jotka tuottavat miljoonia euroja lisäarvoa",
+      "Laajentaa yrityksen markkina-aluetta strategisten kumppanuuksien kautta",
+      "Mahdollistaa kansainvälisen kasvun ja uudet liiketoimintamahdollisuudet"
     ],
     education_paths:     [
               "Yliopisto: Kauppatieteet",
@@ -25209,8 +25374,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Global Partnerships Manager", "Trainee"],
     career_progression: ["Senior Global Partnerships Manager", "Lead", "Manager"],
-    typical_employers: ["Teknologiayritykset","Kansainväliset yritykset","Startup-yritykset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Wolt, Supercell, Smartly.io",
+      "Slush, Business Finland",
+      "Kansainväliset yritykset (Helsinki)",
+      "Kasvuyhtiöt ja startup-yritykset"
+    ],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "paljon" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links: [
       { name: "TEM", url: "https://tem.fi/" },
@@ -25223,7 +25393,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Teknisen tuen asiantuntija",
     title_en: "Technical Support Specialist",
-    short_description: "Teknisen tuen asiantuntija auttaa asiakkaita teknisten ongelmien ratkaisemisessa. Tarjoaa teknistä tukea tuotteille ja palveluille eri kanavissa.",
+    short_description: "Teknisen tuen asiantuntija auttaa asiakkaita teknisten ongelmien ratkaisemisessa ja tuotteiden käytössä. Helsingissä jatkuva kysyntä SaaS- ja tech-yrityksissä - tarjoaa etätyön, joustavan työajan ja palkan 3000-4500€/kk.",
     main_tasks:     [
               "Teknisten ongelmien diagnosointi ja ratkaisu",
               "Asiakastuki puhelimitse, chatissa ja sähköpostitse",
@@ -25231,10 +25401,10 @@ export const careersData: CareerFI[] = [
               "Ongelmien eskalointi kehitystiimille",
               "Asiakastyytyväisyyden varmistaminen"
     ],
-    impact:     [
-              "Ratkaisee asiakkaiden tekniset ongelmat",
-              "Parantaa asiakastyytyväisyyttä",
-              "Tuo asiakaspalautetta tuotekehitykseen"
+    impact: [
+      "Auttaa tuhansia asiakkaita vuosittain ratkaisemaan teknisiä ongelmia ja parantaa asiakastyytyväisyyttä",
+      "Vähentää asiakaspoistumaa 20-30% nopealla ja laadukkaalla tuella",
+      "Kerää arvokasta asiakaspalautetta tuotekehitykseen"
     ],
     education_paths:     [
               "AMK/Yliopisto: IT-ala",
@@ -25263,7 +25433,12 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Technical Support Specialist", "Trainee"],
     career_progression: ["Senior Technical Support Specialist", "Lead", "Manager"],
-    typical_employers: ["IT-yritykset","SaaS-yritykset","Telekommunikaatio","Tukikeskukset"],
+    typical_employers: [
+      "Wolt, Supermetrics, Smartly.io",
+      "SaaS-yritykset ja teknologiayritykset",
+      "Kansainväliset yritykset (Helsinki-tuki)",
+      "Verkkokaupat ja digitaaliset palvelut"
+    ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK / Toimihenkilöunioni",
     useful_links: [
@@ -25277,7 +25452,7 @@ export const careersData: CareerFI[] = [
     category: "jarjestaja",
     title_fi: "Käännösprojektien päällikkö",
     title_en: "Translation Project Manager",
-    short_description: "Käännösprojektien päällikkö hallinnoi käännösprojekteja, koordinoi kääntäjiä ja varmistaa laadun sekä aikataulujen toteutumisen.",
+    short_description: "Käännösprojektipäällikkö koordinoi käännösprojekteja, hallitsee kääntäjiä ja varmistaa laadun ja aikataulut. Helsingissä kysyntää käännöstoimistoissa ja kansainvälisissä yrityksissä - tarjoaa etätyön, kielten hyödyntämisen ja palkan 3500-5000€/kk.",
     main_tasks:     [
               "Käännösprojektien suunnittelu ja hallinta",
               "Kääntäjien koordinointi ja valinta",
@@ -25285,10 +25460,10 @@ export const careersData: CareerFI[] = [
               "Asiakasviestintä ja tarjousten laatiminen",
               "Aikataulujen ja budjettien seuranta"
     ],
-    impact:     [
-              "Varmistaa laadukkaat käännökset",
-              "Mahdollistaa monikielisen viestinnän",
-              "Tukee kansainvälistä liiketoimintaa"
+    impact: [
+      "Koordinoi käännösprojekteja, jotka mahdollistavat tuotteiden lanseeraamisen uusille markkinoille",
+      "Varmistaa laadukkaat käännökset, jotka tukevat brändiä ja liiketoimintatavoitteita",
+      "Hallitsee monimutkaisia monikielisiä projekteja tehokkaasti"
     ],
     education_paths:     [
               "Yliopisto: Kielitieteet, käännöstiede",
@@ -25316,7 +25491,12 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Translation Project Manager", "Trainee"],
     career_progression: ["Senior Translation Project Manager", "Lead", "Manager"],
-    typical_employers: ["Käännöstoimistot","Kansainväliset yritykset","Lokalisointiyritykset"],
+    typical_employers: [
+      "Käännöstoimistot: AAC Global, Semantix",
+      "Supercell, Rovio, peliyhtiöt",
+      "Kansainväliset yritykset (Helsinki)",
+      "EU-toimielimet ja kansainväliset organisaatiot"
+    ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links: [
@@ -25330,7 +25510,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Monimuotoisuus- ja yhdenvertaisuusasiantuntija",
     title_en: "Diversity & Inclusion Specialist",
-    short_description: "Kehittää ja toteuttaa DEI-ohjelmia organisaatioissa. Edistää monimuotoisuutta, yhdenvertaisuutta ja osallisuutta työpaikoilla ja yhteiskunnassa.",
+    short_description: "Monimuotoisuuden ja osallisuuden asiantuntija edistää tasa-arvoa ja inklusiivisuutta työpaikoilla sekä kehittää D&I-strategioita. Helsingissä kasvava kysyntä erityisesti kansainvälisissä yrityksissä ja startup-sektorilla. Tarjoaa merkityksellisen työn, hybridityön ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "DEI-strategioiden kehittäminen",
               "Henkilöstökoulutusten järjestäminen",
@@ -25338,10 +25518,10 @@ export const careersData: CareerFI[] = [
               "Yhdenvertaisuussuunnitelmien laatiminen",
               "Tasa-arvotoimenpiteiden seuranta"
     ],
-    impact:     [
-              "Edistää yhdenvertaisuutta työelämässä",
-              "Tukee inklusiivista kulttuuria",
-              "Vähentää syrjintää ja ennakkoluuloja"
+    impact: [
+      "Edistää tasa-arvoa ja inklusiivisuutta organisaatioissa, jotka työllistävät tuhansia ihmisiä",
+      "Rakentaa monimuotoisempia tiimejä, jotka ovat 35% innovatiivisempia tutkimusten mukaan",
+      "Luo työkulttuureja, joissa kaikki voivat olla oma itsensä ja menestyä"
     ],
     education_paths:     [
               "Yliopisto: Yhteiskuntatieteet, sosiologia",
@@ -25369,8 +25549,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Diversity & Inclusion Specialist", "Trainee", "Coordinator"],
     career_progression: ["Senior Diversity & Inclusion Specialist", "Lead", "Director"],
-    typical_employers: ["Yritykset","Julkinen sektori","Järjestöt","Konsulttiyritykset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Wolt, Supercell, kansainväliset yritykset",
+      "Konsultit: Deloitte, KPMG, Accenture",
+      "Startup-yritykset ja kasvuyhtiöt",
+      "Julkinen sektori ja järjestöt"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -25383,7 +25568,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Sosiaalisen oikeudenmukaisuuden edistäjä",
     title_en: "Social Justice Advocate",
-    short_description: "Ajaa heikommassa asemassa olevien ryhmien oikeuksia. Työskentelee yhteiskunnallisen oikeudenmukaisuuden ja tasa-arvon edistämiseksi.",
+    short_description: "Sosiaalisen oikeudenmukaisuuden aktivisti edistää yhteiskunnallista oikeudenmukaisuutta, ihmisoikeuksia ja tasa-arvoa. Helsingissä mahdollisuuksia järjestöissä ja sosiaalisen sektorin organisaatioissa. Tarjoaa merkityksellisen työn, yhteiskunnallisen vaikuttamisen ja palkan 2800-4200€/kk.",
     main_tasks:     [
               "Vaikuttamistyö ja kampanjat",
               "Haavoittuvien ryhmien tukeminen",
@@ -25391,10 +25576,10 @@ export const careersData: CareerFI[] = [
               "Verkostotyö ja kumppanuudet",
               "Tiedotus ja viestintä"
     ],
-    impact:     [
-              "Edistää sosiaalista oikeudenmukaisuutta",
-              "Tuo marginalisoitujen ääniä esiin",
-              "Vaikuttaa yhteiskunnalliseen muutokseen"
+    impact: [
+      "Edistää sosiaalista oikeudenmukaisuutta ja ihmisoikeuksia Suomessa ja kansainvälisesti",
+      "Tukee haavoittuvassa asemassa olevia ryhmiä ja auttaa tuhansia ihmisiä vuosittain",
+      "Vaikuttaa yhteiskunnalliseen keskusteluun ja politiikkaan"
     ],
     education_paths:     [
               "Yliopisto: Yhteiskuntatieteet, oikeustiede, sosiaalityö"
@@ -25421,8 +25606,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Social Justice Advocate", "Trainee", "Coordinator"],
     career_progression: ["Senior Social Justice Advocate", "Lead", "Director"],
-    typical_employers: ["Kansalaisjärjestöt","Ihmisoikeusjärjestöt","Säätiöt"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Amnesty International Suomi",
+      "Plan International Finland",
+      "Suomen Punainen Risti",
+      "Kansalaisjärjestöt ja sosiaaliset yritykset"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -25435,7 +25625,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Yhteisöaktivisti",
     title_en: "Community Organizer",
-    short_description: "Mobilisoi yhteisöjä toimimaan yhdessä. Järjestää kampanjoita ja tapahtumia paikallisten ongelmien ratkaisemiseksi.",
+    short_description: "Yhteisöorganisaattori rakentaa ja mobilisoi yhteisöjä, järjestää tapahtumia ja edistää yhteiskunnallista muutosta. Helsingissä mahdollisuuksia järjestöissä, sosiaalisissa liikkeissä ja kaupunkiaktivismissa. Tarjoaa merkityksellisen työn, verkostoitumisen ja palkan 2800-4000€/kk.",
     main_tasks:     [
               "Yhteisöjen mobilisoin ti",
               "Kampanjoiden suunnittelu ja toteutus",
@@ -25443,10 +25633,10 @@ export const careersData: CareerFI[] = [
               "Vapaaehtoisten koordinointi",
               "Yhteistyö eri toimijoiden kanssa"
     ],
-    impact:     [
-              "Vahvistaa yhteisöjä toimimaan yhdessä",
-              "Ratkaisee paikallisia ongelmia",
-              "Lisää osallisuutta ja vaikuttamista"
+    impact: [
+      "Mobilisoi satoja tai tuhansia ihmisiä yhteisten tavoitteiden puolesta",
+      "Rakentaa vahvoja paikallisyhteisöjä ja edistää yhteiskunnallista muutosta",
+      "Järjestää tapahtumia ja kampanjoita, jotka tavoittavat laajat yleisöt"
     ],
     education_paths:     [
               "Yhteiskuntatieteet",
@@ -25475,8 +25665,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Community Organizer", "Trainee", "Coordinator"],
     career_progression: ["Senior Community Organizer", "Lead", "Director"],
-    typical_employers: ["Järjestöt","Paikallisyhteisöt","Kansalaisjärjestöt"],
-    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Kansalaisjärjestöt",
+      "Poliittiset liikkeet ja puolueet",
+      "Kaupunkiaktiivisuus ja yhteisötalot",
+      "Sosiaaliset yritykset"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -25489,7 +25684,7 @@ export const careersData: CareerFI[] = [
     category: "jarjestaja",
     title_fi: "Järjestön ohjelmakoordinaattori",
     title_en: "Nonprofit Program Coordinator",
-    short_description: "Koordinoi järjestön ohjelmia ja hankkeita. Hallinnoi projekteja ja varmistaa niiden vaikuttavuuden.",
+    short_description: "Järjestöjen ohjelmakoordinaattori koordinoi ja toteuttaa voittoa tavoittelemattomien järjestöjen ohjelmia ja projekteja. Helsingissä mahdollisuuksia laajassa järjestökentässä - rooli yhdistää projektinhallinnan ja yhteiskunnallisen vaikuttamisen. Tarjoaa merkityksellisen työn ja palkan 3000-4500€/kk.",
     main_tasks:     [
               "Ohjelmien suunnittelu ja toteutus",
               "Projektinhallinta",
@@ -25497,10 +25692,10 @@ export const careersData: CareerFI[] = [
               "Kumppanuuksien koordinointi",
               "Vaikuttavuuden mittaaminen ja raportointi"
     ],
-    impact:     [
-              "Toteuttaa yhteiskunnallisesti vaikuttavia ohjelmia",
-              "Koordinoi resursseja tehokkaasti",
-              "Tukee järjestön mission toteutumista"
+    impact: [
+      "Koordinoi ohjelmia, jotka auttavat tuhansia haavoittuvassa asemassa olevia ihmisiä",
+      "Toteuttaa projekteja, jotka edistävät sosiaalista oikeudenmukaisuutta ja hyvinvointia",
+      "Luo konkreettista muutosta yhteiskuntaan järjestötoiminnan kautta"
     ],
     education_paths:     [
               "Yliopisto: Yhteiskuntatieteet, hallintotiede",
@@ -25528,8 +25723,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Nonprofit Program Coordinator", "Trainee", "Coordinator"],
     career_progression: ["Senior Nonprofit Program Coordinator", "Lead", "Director"],
-    typical_employers: ["Järjestöt","Säätiöt","Kansalaisjärjestöt"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Suomen Punainen Risti",
+      "Plan International Finland",
+      "Kansainväliset kehitysjärjestöt",
+      "Sosiaaliset järjestöt ja yhteisöt"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -25542,7 +25742,7 @@ export const careersData: CareerFI[] = [
     category: "visionaari",
     title_fi: "Ihmisoikeustutkija",
     title_en: "Human Rights Researcher",
-    short_description: "Tutkii ihmisoikeustilanteita ja dokumentoi loukkauksia. Tuottaa tutkimustietoa päätöksenteon ja vaikuttamisen tueksi.",
+    short_description: "Ihmisoikeustutkija tutkii ihmisoikeusloukkauksia, laatii raportteja ja edistää ihmisoikeuksia tutkimuksen kautta. Helsingissä mahdollisuuksia yliopistoilla, järjestöissä ja tutkimuslaitoksilla. Tarjoaa merkityksellisen työn, akateemisen ympäristön ja palkan 3000-4500€/kk.",
     main_tasks:     [
               "Ihmisoikeustilanteiden tutkiminen",
               "Loukkausten dokumentointi",
@@ -25550,10 +25750,10 @@ export const careersData: CareerFI[] = [
               "Kenttätutkimus",
               "Kansainvälinen yhteistyö"
     ],
-    impact:     [
-              "Tuottaa tietoa ihmisoikeusloukkauks ista",
-              "Tukee oikeudenmukaisuuden toteutumista",
-              "Vaikuttaa politiikkaan ja lainsäädäntöön"
+    impact: [
+      "Tutkii ihmisoikeusloukkauksia ja tuottaa tietoa, joka vaikuttaa politiikkaan ja lainsäädäntöön",
+      "Edistää ihmisoikeuksia globaalisti tutkimuksen ja raportoinnin kautta",
+      "Tukee kansainvälisiä ihmisoikeusjärjestöjä evidenssipohjaisella tiedolla"
     ],
     education_paths:     [
               "Yliopisto: Yhteiskuntatieteet, oikeustiede",
@@ -25581,8 +25781,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Human Rights Researcher", "Trainee", "Coordinator"],
     career_progression: ["Senior Human Rights Researcher", "Lead", "Director"],
-    typical_employers: ["Tutkimuslaitokset","Ihmisoikeusjärjestöt","Yliopistot","YK-järjestöt"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Helsingin yliopisto, Åbo Akademi",
+      "Amnesty International",
+      "Ihmisoikeusliitto, Ihmisoikeuskeskus",
+      "Tutkimuslaitokset ja järjestöt"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -25595,7 +25800,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Esteettömyysasiantuntija",
     title_en: "Accessibility Consultant",
-    short_description: "Neuvoo organisaatioita saavutettavuudessa ja esteettömyydessä. Varmistaa että palvelut ja ympäristöt ovat kaikkien saavutettavissa.",
+    short_description: "Saavutettavuuskonsultti auttaa organisaatioita tekemään tuotteista, palveluista ja ympäristöistä saavutettavia kaikille. Helsingissä kasvava kysyntä digitaalisen saavutettavuuden ja esteettömyyden saralla. Tarjoaa merkityksellisen työn, etätyön ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "Saavutettavuusarvioinnit",
               "Esteettömyyssuunnitelmien laatiminen",
@@ -25603,10 +25808,10 @@ export const careersData: CareerFI[] = [
               "Koulutus ja neuvonta",
               "Testausprosessien kehittäminen"
     ],
-    impact:     [
-              "Parantaa palveluiden saavutettavuutta",
-              "Edistää yhdenvertaisuutta",
-              "Mahdollistaa osallistumisen kaikille"
+    impact: [
+      "Tekee tuotteista ja palveluista saavutettavia miljoonille käyttäjille, myös vammaisille",
+      "Edistää digitaalista inklusiivisuutta ja tasa-arvoa WCAG-standardien mukaisesti",
+      "Auttaa yrityksiä täyttämään saavutettavuusvaatimukset ja laajentamaan käyttäjäkuntaa"
     ],
     education_paths:     [
               "Tekninen tai yhteiskuntatieteellinen koulutus",
@@ -25634,8 +25839,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Accessibility Consultant", "Trainee", "Coordinator"],
     career_progression: ["Senior Accessibility Consultant", "Lead", "Director"],
-    typical_employers: ["IT-yritykset","Julkinen sektori","Konsulttiyritykset"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Wolt, digitaaliset palveluyritykset",
+      "Julkinen sektori: Kela, Digi- ja väestötietovirasto",
+      "Konsultit: Gofore, Solita",
+      "Saavutettavuuskonsulttitalot"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -25648,7 +25858,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Tasa-arvoneuvoja",
     title_en: "Gender Equality Advisor",
-    short_description: "Edistää sukupuolten tasa-arvoa. Kehittää tasa-arvo- ja yhdenvertaisuusohjelmia organisaatioissa.",
+    short_description: "Tasa-arvoneuvoja edistää sukupuolten tasa-arvoa organisaatioissa, laatii tasa-arvosuunnitelmia ja kouluttaa henkilöstöä. Helsingissä kysyntää julkisella sektorilla ja suuryrityksissä - rooli yhdistää tasa-arvotyön ja organisaatiokehittämisen. Tarjoaa merkityksellisen työn ja palkan 3200-4800€/kk.",
     main_tasks:     [
               "Tasa-arvosuunnitelmien laatiminen",
               "Tasa-arvokoulutukset",
@@ -25656,10 +25866,10 @@ export const careersData: CareerFI[] = [
               "Palkkatasa-arvon edistäminen",
               "Seuranta ja raportointi"
     ],
-    impact:     [
-              "Edistää sukupuolten tasa-arvoa",
-              "Vähentää palkkaeroja",
-              "Tukee yhdenvertaista työelämää"
+    impact: [
+      "Edistää sukupuolten tasa-arvoa organisaatioissa, jotka työllistävät tuhansia ihmisiä",
+      "Vähentää palkkaeroja ja edistää naisten urakehtystä johtotehtäviin",
+      "Luo tasa-arvoisempia ja inklusiivisempia työkulttuureja"
     ],
     education_paths:     [
               "Yliopisto: Yhteiskuntatieteet, sukupuolentutkimus"
@@ -25686,8 +25896,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Gender Equality Advisor", "Trainee", "Coordinator"],
     career_progression: ["Senior Gender Equality Advisor", "Lead", "Director"],
-    typical_employers: ["Julkinen sektori","Yritykset","Järjestöt"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Helsingin kaupunki, ministeriöt",
+      "Suuryritykset ja kansainväliset yritykset",
+      "Tasa-arvovaltuutetun toimisto",
+      "Konsultit ja järjestöt"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -25700,7 +25915,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Nuorten voimaannuttamisen koordinaattori",
     title_en: "Youth Empowerment Coordinator",
-    short_description: "Kehittää ja toteuttaa ohjelmia nuorten voimaannuttamiseksi. Tukee nuorten osallisuutta ja toimijuutta.",
+    short_description: "Nuorten voimaannuttamisen koordinaattori tukee nuoria kehittymään, löytämään vahvuutensa ja saavuttamaan tavoitteensa. Helsingissä mahdollisuuksia nuorisotyössä, järjestöissä ja kouluissa. Tarjoaa merkityksellisen työn, nuorten kanssa työskentelyn ja palkan 2800-4000€/kk.",
     main_tasks:     [
               "Nuoriso-ohjelmien suunnittelu",
               "Työpajojen ja tapahtumien järjestäminen",
@@ -25708,10 +25923,10 @@ export const careersData: CareerFI[] = [
               "Verkostotyö",
               "Osallisuuden edistäminen"
     ],
-    impact:     [
-              "Vahvistaa nuorten osallisuutta",
-              "Tukee nuorten kehitystä ja hyvinvointia",
-              "Ehkäisee syrjäytymistä"
+    impact: [
+      "Tukee satoja nuoria vuosittain löytämään tiensä ja voimaantumaan",
+      "Edistää nuorten hyvinvointia, kouluttautumista ja työllistymistä",
+      "Luo turvallisia tiloja ja yhteisöjä, joissa nuoret voivat kasvaa ja kehittyä"
     ],
     education_paths:     [
               "Kasvatustieteet",
@@ -25740,8 +25955,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Youth Empowerment Coordinator", "Trainee", "Coordinator"],
     career_progression: ["Senior Youth Empowerment Coordinator", "Lead", "Director"],
-    typical_employers: ["Nuorisojärjestöt","Kunnat","Kansalaisjärjestöt"],
-    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Helsingin kaupunki (nuorisopalvelut)",
+      "Nuorisotyön järjestöt: Allianssi, NMKY",
+      "Koulut ja oppilaitokset",
+      "Sosiaaliset yritykset ja yhteisöt"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -25754,7 +25974,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Kestävän muodin suunnittelija",
     title_en: "Sustainable Fashion Designer",
-    short_description: "Suunnittelee muotituotteita kestävyyden periaatteita noudattaen. Käyttää eettisiä materiaaleja ja tuotantotapoja.",
+    short_description: "Kestävän muodin suunnittelija suunnittelee vaatteita ja tuotteita, jotka ovat ekologisia, eettisiä ja kestäviä. Helsingissä kasvava sustainable fashion -sektori - rooli yhdistää muotoilun, kestävyyden ja etiikan. Tarjoaa luovan työn, yhteiskunnallisen vaikuttamisen ja ansaintapotentiaalia.",
     main_tasks:     [
               "Kestävien vaatekokoelmien suunnittelu",
               "Ympäristöystävällisten materiaalien valinta",
@@ -25762,10 +25982,10 @@ export const careersData: CareerFI[] = [
               "Eettisten tuotantotapojen varmistaminen",
               "Trendie n ja kestävyyden yhdistäminen"
     ],
-    impact:     [
-              "Vähentää muotiteollisuuden ympäristövaikutuksia",
-              "Edistää eettistä tuotantoa",
-              "Inspiroi kestäviin valintoihin"
+    impact: [
+      "Suunnittelee kestäviä vaatteita ja tuotteita, jotka vähentävät muotiteollisuuden ympäristövaikutuksia",
+      "Edistää circular fashion -taloutta ja vastuullista kulutusta",
+      "Luo ekologisia ja eettisiä brändejä, jotka inspiroivat muutokseen"
     ],
     education_paths:     [
               "Muotoilun tutkinto",
@@ -25793,8 +26013,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Sustainable Fashion Designer", "Trainee", "Coordinator"],
     career_progression: ["Senior Sustainable Fashion Designer", "Lead", "Director"],
-    typical_employers: ["Muotiyritykset","Sustainable fashion brands","Yksityisyrittäjyys"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Suomalaiset sustainable fashion -brändit: Makia, Pure Waste",
+      "Lindex (Conscious Collection), H&M (Conscious)",
+      "Freelance ja omat brändit",
+      "Kiertotalousyritykset"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -25807,7 +26032,7 @@ export const careersData: CareerFI[] = [
     category: "ympariston-puolustaja",
     title_fi: "Kiertotalouden asiantuntija",
     title_en: "Circular Economy Specialist",
-    short_description: "Kehittää kiertotalousratkaisuja yrityksille. Edistää resurssitehokkuutta ja jätteen vähentämistä.",
+    short_description: "Kiertotalouden asiantuntija kehittää kiertotaloussratkaisuja, auttaa yrityksiä siirtymään kiertotalouteen ja edistää resurssitehokkuutta. Helsingissä kasvava kysyntä erityisesti julkisella sektorilla ja kestävyysyrityksissä. Tarjoaa merkityksellisen työn, innovoinnin ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "Kiertotalousmallien kehittäminen",
               "Materiaalivirtaanalyysit",
@@ -25815,10 +26040,10 @@ export const careersData: CareerFI[] = [
               "Liiketoimintamallien innovointi",
               "Sidosryhmäyhteistyö"
     ],
-    impact:     [
-              "Vähentää jätettä ja resurssien käyttöä",
-              "Luo uusia liiketoimintamahdollisuuksia",
-              "Edistää kestävää taloutta"
+    impact: [
+      "Kehittää kiertotaloussratkaisuja, jotka vähentävät jätettä ja resurssien kulutusta merkittävästi",
+      "Auttaa yrityksiä säästämään satoja tuhansia euroja resurssitehokkuudella",
+      "Edistää Suomen kiertotaloustavoitteita ja ilmastotavoitteita"
     ],
     education_paths:     [
               "Ympäristötieteet",
@@ -25847,8 +26072,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Circular Economy Specialist", "Trainee", "Coordinator"],
     career_progression: ["Senior Circular Economy Specialist", "Lead", "Director"],
-    typical_employers: ["Yritykset","Konsulttiyritykset","Julkinen sektori"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Sitra, Motiva, Suomen ympäristökeskus",
+      "Helsingin kaupunki, valtio",
+      "Kiertotalousyritykset ja konsultit",
+      "Yritykset (kestävyysosastot)"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -25861,7 +26091,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Eettisen brändin strategisti",
     title_en: "Ethical Brand Strategist",
-    short_description: "Kehittää brändistrategioita eettisten arvojen pohjalta. Varmistaa vastuullisen viestinnän ja liiketoimintakäytännöt.",
+    short_description: "Eettisen brändin strategisti auttaa yrityksiä rakentamaan vastuullisia brändejä, jotka huomioivat ihmiset, ympäristön ja etiikan. Helsingissä kasvava kysyntä kuluttajien arvostaessa vastuullisuutta. Tarjoaa luovan työn, vaikuttamisen ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "Eettisten brändistrategioiden kehittäminen",
               "Vastuullisuusviestinnän suunnittelu",
@@ -25869,10 +26099,10 @@ export const careersData: CareerFI[] = [
               "Sidosryhmäviestintä",
               "Vastuullisuuden integrointi brändiin"
     ],
-    impact:     [
-              "Edistää vastuullista liiketoimintaa",
-              "Rakentaa luottamusta kuluttajiin",
-              "Ohjaa eettisiin valintoihin"
+    impact: [
+      "Rakentaa vastuullisia brändejä, jotka vaikuttavat satoihin tuhansiin kuluttajiin",
+      "Edistää eettistä liiketoimintaa ja vastuullista kulutusta",
+      "Ohjaa yrityksiä kohti kestävämpää ja eettisempää toimintaa"
     ],
     education_paths:     [
               "Markkinointi",
@@ -25901,8 +26131,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Ethical Brand Strategist", "Trainee", "Coordinator"],
     career_progression: ["Senior Ethical Brand Strategist", "Lead", "Director"],
-    typical_employers: ["Mainostoimistot","Yritykset","Konsulttiyritykset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Mainostoimistot ja brändikonsultit",
+      "Vastuullisuusyritykset ja -järjestöt",
+      "Startup-yritykset ja kasvuyhtiöt",
+      "Freelance ja omat projektit"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -25915,7 +26150,7 @@ export const careersData: CareerFI[] = [
     category: "ympariston-puolustaja",
     title_fi: "Ekologisen rakentamisen suunnittelija",
     title_en: "Green Building Designer",
-    short_description: "Suunnittelee energiatehokkaita ja ympäristöystävällisiä rakennuksia. Soveltaa kestävän rakentamisen periaatteita.",
+    short_description: "Vihreän rakentamisen suunnittelija suunnittelee energiatehokkaita ja kestäviä rakennuksia ja tiloja. Helsingissä jatkuva kysyntä erityisesti uudisrakentamisessa ja remonteissa - rooli yhdistää arkkitehtuurin ja kestävyyden. Tarjoaa merkityksellisen työn ja palkan 3800-6000€/kk.",
     main_tasks:     [
               "Ekologisten rakennusten suunnittelu",
               "Energiatehokkuuden optimointi",
@@ -25923,10 +26158,10 @@ export const careersData: CareerFI[] = [
               "LEED/BREEAM-sertifioinnit",
               "Elinkaariarvioinnit"
     ],
-    impact:     [
-              "Vähentää rakennusten ympäristövaikutuksia",
-              "Edistää energiatehokkuutta",
-              "Parantaa sisäilman laatua"
+    impact: [
+      "Suunnittelee energiatehokkaita rakennuksia, jotka vähentävät hiilijalanjälkeä 50-70%",
+      "Luo terveellisiä ja kestäviä tiloja, joissa tuhannet ihmiset asuvat ja työskentelevät",
+      "Edistää Suomen ilmastotavoitteita rakennusten energiatehokkuudella"
     ],
     education_paths:     [
               "Arkkitehtuuri",
@@ -25954,8 +26189,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Green Building Designer", "Trainee", "Coordinator"],
     career_progression: ["Senior Green Building Designer", "Lead", "Director"],
-    typical_employers: ["Arkkitehtitoimistot","Rakennusyritykset","Konsulttiyritykset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Arkkitehtitoimistot: Verstas, JKMM, Aalto University",
+      "Rakennusliikkeet: YIT, Skanska, NCC",
+      "Helsingin kaupunki (kaupunkisuunnittelu)",
+      "Kestävän rakentamisen konsultit"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -25968,7 +26208,7 @@ export const careersData: CareerFI[] = [
     category: "ympariston-puolustaja",
     title_fi: "Nollajatetavoitteen konsultti",
     title_en: "Zero Waste Consultant",
-    short_description: "Auttaa organisaatioita vähentämään jätettä ja siirtymään kohti nollajätettä. Kehittää jätestrategioita ja -prosesseja.",
+    short_description: "Zero waste -konsultti auttaa yrityksiä ja organisaatioita vähentämään jätettä ja siirtymään kohti nollajatetavoitetta. Helsingissä kasvava kiinnostus zero waste -elämäntapaan - rooli yhdistää kestävyyden ja liiketoiminnan. Tarjoaa merkityksellisen työn, vaikuttamisen ja ansaintapotentiaalia.",
     main_tasks:     [
               "Jätekartoitusten tekeminen",
               "Nollajätestrategioiden kehittäminen",
@@ -25976,10 +26216,10 @@ export const careersData: CareerFI[] = [
               "Koulutus ja tiedotus",
               "Jätemittareiden seuranta"
     ],
-    impact:     [
-              "Vähentää jätteiden määrää",
-              "Edistää kiertotaloutta",
-              "Säästää kustannuksia ja resursseja"
+    impact: [
+      "Auttaa yrityksiä vähentämään jätettä 70-90% ja säästämään merkittäviä kustannuksia",
+      "Edistää circular economy -tavoitteita ja nollajatetavoitetta",
+      "Inspiroi satoja ihmisiä ottamaan zero waste -elämäntavan käyttöön"
     ],
     education_paths:     [
               "Ympäristötieteet",
@@ -26007,8 +26247,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Zero Waste Consultant", "Trainee", "Coordinator"],
     career_progression: ["Senior Zero Waste Consultant", "Lead", "Director"],
-    typical_employers: ["Konsulttiyritykset","Yritykset","Kunnat"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Kiertotalousyritykset",
+      "Ravintolat ja hotellit (kestävyysneuvonta)",
+      "Helsingin kaupunki, jätehuoltoyritykset",
+      "Freelance ja omat projektit"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -26021,7 +26266,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Kestävän tuotesuunnittelun suunnittelija",
     title_en: "Sustainable Product Designer",
-    short_description: "Suunnittelee tuotteita kestävyyden periaatteiden mukaisesti. Huomioi koko elinkaaren materiaalivalinnoista kierrätykseen.",
+    short_description: "Kestävän tuotesuunnittelun suunnittelija kehittää tuotteita, jotka ovat ekologisia, kierrätettäviä ja eettisesti tuotettuja. Helsingissä kasvava kysyntä erityisesti muotoilutoimistoissa ja kestävissä brändeissä. Tarjoaa luovan työn, innovoinnin ja palkan 3200-5500€/kk.",
     main_tasks:     [
               "Kestävien tuotteiden suunnittelu",
               "Elinkaariarv ioinnit",
@@ -26029,10 +26274,10 @@ export const careersData: CareerFI[] = [
               "Kierrätettävyyden optimointi",
               "Prototyyppien valmistus ja testaus"
     ],
-    impact:     [
-              "Vähentää tuotteiden ympäristövaikutuksia",
-              "Edistää kiertotaloutta",
-              "Inspiroi kestäviin valintoihin"
+    impact: [
+      "Suunnittelee kestäviä tuotteita, joita tuhannet ihmiset käyttävät ja jotka vähentävät ympäristövaikutuksia",
+      "Edistää circular design -periaatteita ja tuotteiden kierrätettävyyttä",
+      "Luo innovatiivisia ratkaisuja, jotka yhdistävät design ja kestävyyden"
     ],
     education_paths:     [
               "Muotoilu",
@@ -26061,8 +26306,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Sustainable Product Designer", "Trainee", "Coordinator"],
     career_progression: ["Senior Sustainable Product Designer", "Lead", "Director"],
-    typical_employers: ["Design-studiot","Yritykset","Yksityisyrittäjyys"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Muotoilutoimistot: Aivan, Fjord, Idean",
+      "Kestävät brändit: Artek, Iittala, Marimekko",
+      "Startup-yritykset ja kiertotalousyritykset",
+      "Freelance ja omat projektit"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -26075,7 +26325,7 @@ export const careersData: CareerFI[] = [
     category: "jarjestaja",
     title_fi: "Eettisen hankinnan päällikkö",
     title_en: "Ethical Sourcing Manager",
-    short_description: "Varmistaa eettisen ja vastuullisen toimitusketjun. Hallinnoi hankintatoimintaa kestävyyden periaatteiden mukaisesti.",
+    short_description: "Eettisen hankinnan päällikkö vastaa yrityksen hankinnoista varmistaen, että tuotteet ja materiaalit hankitaan eettisesti ja kestävästi. Helsingissä kysyntää kaupan alalla ja suuryrityksissä. Tarjoaa vastuullisen työn, kansainväliset kontaktit ja palkan 4000-6500€/kk.",
     main_tasks:     [
               "Toimittajien eettisyyden arviointi",
               "Vastuullisten hankintakriteerien kehittäminen",
@@ -26083,10 +26333,10 @@ export const careersData: CareerFI[] = [
               "Auditointien koordinointi",
               "Riskien arviointi ja hallinta"
     ],
-    impact:     [
-              "Varmistaa eettisen toimitusketjun",
-              "Ehkäisee ihmisoikeusloukkauksia",
-              "Edistää vastuullista liiketoimintaa"
+    impact: [
+      "Varmistaa että yrityksen hankintaketjut ovat eettisiä ja kestäviä globaalisti",
+      "Parantaa työoloja tuhansille työntekijöille kehittyvissä maissa",
+      "Edistää vastuullista liiketoimintaa ja Fair Trade -periaatteita"
     ],
     education_paths:     [
               "Liiketoiminta",
@@ -26115,8 +26365,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Ethical Sourcing Manager", "Trainee", "Coordinator"],
     career_progression: ["Senior Ethical Sourcing Manager", "Lead", "Director"],
-    typical_employers: ["Vähittäiskauppa","Valmistusyritykset","Suuryritykset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "S-ryhmä, K-ryhmä, Kesko",
+      "Reima, Marimekko, Lindex",
+      "Suuryritykset (hankinnat)",
+      "Fair Trade -organisaatiot"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -26129,7 +26384,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Inklusiivinen sisällöntuottaja",
     title_en: "Inclusive Content Creator",
-    short_description: "Luo sisältöä joka edustaa monipuolisesti erilaisia ihmisiä. Edistää osallisuutta ja edustuksellisuutta mediassa.",
+    short_description: "Inklusiivinen sisällöntuottaja luo sisältöä, joka edustaa monimuotoisuutta ja inklusiivisuutta sekä tavoittaa laajat yleisöt. Helsingissä kasvava kysyntä erityisesti mediatalloissa ja brändeissä, jotka arvostavat diversiteettiä. Tarjoaa luovan työn, vaikuttamisen ja ansaintapotentiaalia.",
     main_tasks:     [
               "Inklusiivisen sisällön tuottaminen",
               "Monipuolisen edustuksen varmistaminen",
@@ -26137,10 +26392,10 @@ export const careersData: CareerFI[] = [
               "Yhteistyö eri taustaisten ihmisten kanssa",
               "Saavutettavuuden huomioiminen"
     ],
-    impact:     [
-              "Lisää edustuksellisuutta mediassa",
-              "Edistää osallisuutta",
-              "Haastaa stereotypioita"
+    impact: [
+      "Luo inklusiivista sisältöä, joka tavoittaa satoja tuhansia ihmisiä ja edistää representaatiota",
+      "Haastaa stereotypioita ja lisää monimuotoisuutta mediassa",
+      "Mahdollistaa aliedustettujen ryhmien näkyvyyden ja äänen kuulumisen"
     ],
     education_paths:     [
               "Viestintä",
@@ -26169,8 +26424,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Inclusive Content Creator", "Trainee", "Coordinator"],
     career_progression: ["Senior Inclusive Content Creator", "Lead", "Director"],
-    typical_employers: ["Mediatalot","Somekanavat","Yksityisyrittäjyys"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Yle, Sanoma Media, Alma Media",
+      "Brändit: IVYREVEL, Lindex",
+      "Mainostoimistot ja sisältötoimistot",
+      "Freelance ja omat kanavat"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -26183,7 +26443,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Kulttuurisen sensitiivisyyden konsultti",
     title_en: "Cultural Sensitivity Consultant",
-    short_description: "Neuvoo organisaatioita kulttuurisessa herkkyydessä. Auttaa välttämään kulttuurista loukkaavuutta ja edistää inklusiivisuutta.",
+    short_description: "Kulttuurisen sensitiivisyyden konsultti auttaa yrityksiä ymmärtämään kulttuurieroja ja kommunikoimaan kulttuurisesti sopivalla tavalla. Helsingissä kysyntää erityisesti kansainvälisissä yrityksissä ja kv-ekspansiossa. Tarjoaa kansainvälisen työn, kulttuurien ymmärtämisen ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "Kulttuurisen sensitiivisyyden arvioinnit",
               "Koulutukset ja työpajat",
@@ -26191,10 +26451,10 @@ export const careersData: CareerFI[] = [
               "Kulttuuristen konfliktien ratkaisu",
               "Inklusiivisten käytäntöjen kehittäminen"
     ],
-    impact:     [
-              "Ehkäisee kulttuurista loukkaavuutta",
-              "Edistää kulttuurista ymmärrystä",
-              "Tukee inklusiivista viestintää"
+    impact: [
+      "Auttaa yrityksiä välttämään kulttuurisia väärinymmärryksiä ja kommunikoimaan tehokkaasti globaalisti",
+      "Edistää kulttuurista inklusiivisuutta ja monimuotoisuutta organisaatioissa",
+      "Mahdollistaa menestyksekkään kansainvälisen liiketoiminnan"
     ],
     education_paths:     [
               "Kulttuuriantropologia",
@@ -26223,8 +26483,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Cultural Sensitivity Consultant", "Trainee", "Coordinator"],
     career_progression: ["Senior Cultural Sensitivity Consultant", "Lead", "Director"],
-    typical_employers: ["Konsulttiyritykset","Yritykset","Mediatalot"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Kansainväliset yritykset (Helsinki)",
+      "Konsultit: Deloitte, KPMG, Accenture",
+      "Käännöstoimistot ja lokalisointiyritykset",
+      "Freelance ja kulttuurikonsultit"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -26237,7 +26502,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Edustuksellisuuden toimittaja",
     title_en: "Representation Editor",
-    short_description: "Varmistaa monipuolisen edustuksen mediasisällössä. Tarkastaa ja kehittää sisältöä inklusiivisuuden näkökulmasta.",
+    short_description: "Representaatioeditori varmistaa että media-sisältö edustaa monimuotoisuutta autenttisets ja edustaa aliedustettuja ryhmiä. Helsingissä nouseva rooli mediatalloissa ja tuotantoyhtiöissä. Tarjoaa merkityksellisen työn, vaikuttamisen ja palkan 3200-5000€/kk.",
     main_tasks:     [
               "Sisällön tarkastus edustuksellisuuden osalta",
               "Editointi ja kehitysehdotukset",
@@ -26245,10 +26510,10 @@ export const careersData: CareerFI[] = [
               "Yhteistyö sisällöntuottajien kanssa",
               "Ohjeistusten laatiminen"
     ],
-    impact:     [
-              "Varmistaa monipuolisen edustuksen",
-              "Ehkäisee stereotypioita",
-              "Edistää inklusiivista mediaa"
+    impact: [
+      "Varmistaa että media-sisältö edustaa monimuotoisuutta ja tavoittaa satoja tuhansia katsojia",
+      "Lisää aliedustettujen ryhmien näkyvyyttä televisossa, elokuvissa ja mediassa",
+      "Haastaa stereotypioita ja edistää positiivista representaatiota"
     ],
     education_paths:     [
               "Journalismi",
@@ -26277,8 +26542,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Representation Editor", "Trainee", "Coordinator"],
     career_progression: ["Senior Representation Editor", "Lead", "Director"],
-    typical_employers: ["Mediatalot","Kustantamot","Tuotantoyhtiöt"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Yle, MTV, Sanoma Media",
+      "Tuotantoyhtiöt: Solar Films, MRP",
+      "Suoratoistopalvelut: Netflix, HBO Nordic",
+      "Mediayhtiöt ja elokuvatuotannot"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -26291,7 +26561,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Dokumentaristi (yhteiskunnalliset aiheet)",
     title_en: "Documentary Filmmaker (Social Issues)",
-    short_description: "Luo dokumenttielokuvia yhteiskunnallisista aiheista. Tuo esiin tärkeitä sosiaalisia kysymyksiä ja tarinoita.",
+    short_description: "Sosiaalisten aiheiden dokumentaristi tekee dokumentteja yhteiskunnallisista aiheista, ihmisoikeuksista ja sosiaalisesta oikeudenmukaisuudesta. Helsingissä mahdollisuuksia mediatalloissa, tuotantoyhtiöissä ja freelancerina. Tarjoaa merkityksellisen työn, tarinankerronnan ja ansaintapotentiaalia.",
     main_tasks:     [
               "Dokumenttien käsikirjoitus ja suunnittelu",
               "Kuvaaminen ja haastattelut",
@@ -26299,10 +26569,10 @@ export const careersData: CareerFI[] = [
               "Rahoituksen hakeminen",
               "Levitys ja markkinointi"
     ],
-    impact:     [
-              "Nostaa esiin tärkeitä yhteiskunnallisia aiheita",
-              "Antaa äänen marginalisoiduille",
-              "Edistää yhteiskunnallista muutosta"
+    impact: [
+      "Luo dokumentteja, jotka tavoittavat satoja tuhansia katsojia ja herättävät yhteiskunnallista keskustelua",
+      "Nostaa esiin tärkeitä sosiaalisia aiheita ja antaa äänen aliedustetuille",
+      "Vaikuttaa poliittiseen päätöksentekoon ja yhteiskunnalliseen muutokseen"
     ],
     education_paths:     [
               "Elokuvataide",
@@ -26331,8 +26601,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Documentary Filmmaker (Social Issues)", "Trainee", "Coordinator"],
     career_progression: ["Senior Documentary Filmmaker (Social Issues)", "Lead", "Director"],
-    typical_employers: ["Tuotantoyhtiöt","Freelance","Mediatalot"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Yle, MTV",
+      "Tuotantoyhtiöt: Oktober, Bufo",
+      "Kansainväliset dokumenttihankkeet",
+      "Freelance ja omat tuotannot"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -26345,7 +26620,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Monikulttuurisen markkinoinnin asiantuntija",
     title_en: "Multicultural Marketing Specialist",
-    short_description: "Kehittää markkinointistrategioita eri kulttuuritaustoille. Varmistaa kulttuurisesti relevantin ja kunnioittavan markkinoinnin.",
+    short_description: "Monikulttuurisen markkinoinnin asiantuntija suunnittelee markkinointikampanjoita, jotka tavoittavat monikulttuurisia yleisöjä ja huomioivat kulttuurierot. Helsingissä kasvava kysyntä kansainvälistyvissä yrityksissä. Tarjoaa kansainvälisen työn, luovuuden ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "Monikulttuuristen markkinointistrategioiden kehittäminen",
               "Kulttuurikohderyhmien tutkimus",
@@ -26353,10 +26628,10 @@ export const careersData: CareerFI[] = [
               "Kulttuurisen relevanssin varmistaminen",
               "Yhteistyö diversit eettisten tiimien kanssa"
     ],
-    impact:     [
-              "Tavoittaa monipuolisia kohderyhmiä",
-              "Edistää inklusiivista markkinointia",
-              "Kunnioittaa kulttuurisia eroja"
+    impact: [
+      "Luo markkinointikampanjoita, jotka tavoittavat satoja tuhansia monikulttuurisia kuluttajia",
+      "Edistää inklusiivista markkinointia ja monimuotoisuutta mainonnassa",
+      "Mahdollistaa brändien menestyksen monikulttuurisilla markkinoilla"
     ],
     education_paths:     [
               "Markkinointi",
@@ -26385,8 +26660,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Multicultural Marketing Specialist", "Trainee", "Coordinator"],
     career_progression: ["Senior Multicultural Marketing Specialist", "Lead", "Director"],
-    typical_employers: ["Mainostoimistot","Yritykset","Mediayhtiöt"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Mainostoimistot: hasan & partners, TBWA",
+      "Kansainväliset brändit (Helsinki)",
+      "Digitoimistot ja markkinointitoimistot",
+      "Freelance ja konsultit"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -26399,7 +26679,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Julkisen taiteen koordinaattori",
     title_en: "Public Art Coordinator",
-    short_description: "Koordinoi julkisen taiteen hankkeita. Tekee yhteistyötä taiteilijoiden ja yhteisöjen kanssa tuodakseen taidetta julkisiin tiloihin.",
+    short_description: "Julkisen taiteen koordinaattori organisoi ja koordinoi julkisia taideteoksia, muraaleja ja taide-installaatioita kaupunkitilassa. Helsingissä mahdollisuuksia kaupungin taidepalveluissa, kulttuurijärjestöissä ja kaupunkiaktiivisuudessa. Tarjoaa luovan työn, yhteisöllisyyden ja palkan 3000-4500€/kk.",
     main_tasks:     [
               "Julkisen taiteen projektien koordinointi",
               "Taiteilijoiden valinta ja yhteistyö",
@@ -26407,10 +26687,10 @@ export const careersData: CareerFI[] = [
               "Lupaprosessien hoitaminen",
               "Yhteisöosallistaminen"
     ],
-    impact:     [
-              "Tuo taidetta kaikkien saataville",
-              "Elävöittää julkisia tiloja",
-              "Edistää kulttuurista osallisuutta"
+    impact: [
+      "Koordinoi julkisia taideteoksia, jotka tavoittavat tuhansia ihmisiä päivittäin kaupungilla",
+      "Tekee taiteesta saavutettavaa kaikille ja demokratisoi taidekokemuksen",
+      "Luo viihtyisämpää ja inspiroivampaa kaupunkiympäristöä"
     ],
     education_paths:     [
               "Taidehallinto",
@@ -26439,8 +26719,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Public Art Coordinator", "Trainee", "Coordinator"],
     career_progression: ["Senior Public Art Coordinator", "Lead", "Director"],
-    typical_employers: ["Kunnat","Taidejärjestöt","Kulttuurilaitokset"],
-    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Helsingin kaupunki (kulttuuripalvelut)",
+      "Taidejärjestöt ja -säätiöt",
+      "Kaupunkiaktiivisuus ja yhteisötalot",
+      "Festivaalit ja tapahtumat"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -26453,7 +26738,7 @@ export const careersData: CareerFI[] = [
     category: "jarjestaja",
     title_fi: "Kulttuuritapahtumien tuottaja",
     title_en: "Cultural Events Producer",
-    short_description: "Suunnittelee ja tuottaa kulttuuritapahtumia ja festivaaleja. Koordinoi tapahtuman kaikki osa-alueet toteutuksesta markkinointiin.",
+    short_description: "Kulttuuritapahtumien tuottaja suunnittelee ja toteuttaa kulttuuritapahtumia, festivaaleja ja esityksiä. Helsingissä runsas tapahtumatarjonta luo mahdollisuuksia - rooli yhdistää luovuuden, tuotannon ja ihmissuhteet. Tarjoaa dynaamisen työn, verkostoitumisen ja palkan 3200-5000€/kk.",
     main_tasks:     [
               "Tapahtumien suunnittelu ja tuotanto",
               "Budjetti- ja resurssihallinta",
@@ -26461,10 +26746,10 @@ export const careersData: CareerFI[] = [
               "Markkinointi ja viestintä",
               "Tapahtumalogistiikka"
     ],
-    impact:     [
-              "Luo kulttuurisia kokemuksia",
-              "Tukee taidetta ja kulttuuria",
-              "Rakentaa yhteisöllisyyttä"
+    impact: [
+      "Tuottaa kulttuuritapahtumia, jotka tavoittavat tuhansia tai kymmeniä tuhansia kävijöitä",
+      "Tuo taidetta ja kulttuuria laajalle yleisölle ja edistää kulttuurista elämää",
+      "Luo yhteisöllisyyttä ja kohtaamispaikkoja ihmisille"
     ],
     education_paths:     [
               "Kulttuurituotanto",
@@ -26493,8 +26778,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Cultural Events Producer", "Trainee", "Coordinator"],
     career_progression: ["Senior Cultural Events Producer", "Lead", "Director"],
-    typical_employers: ["Tapahtumatuotantoyhtiöt","Kulttuurilaitokset","Freelance"],
-    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Helsingin kaupunki (kulttuuripalvelut)",
+      "Festivaalit: Flow Festival, Ruisrock, Provinssi",
+      "Kulttuuritalot: Savoy, Korjaamo, Oranssi",
+      "Tapahtumatuotantoyhtiöt"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -26507,7 +26797,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Taideterapian ohjaaja",
     title_en: "Art Therapy Facilitator",
-    short_description: "Käyttää taidetta terapeuttisena välineenä. Ohjaa taideterapiasessioita mielenterveyden ja hyvinvoinnin edistämiseksi.",
+    short_description: "Taideterapeutti käyttää taidetta terapeuttisena työvälineenä auttaakseen ihmisiä käsittelemään tunteita ja traumoja. Helsingissä kysyntää terapiakeskuksissa, sairaaloissa ja kuntoutuksessa. Tarjoaa merkityksellisen työn, luovuuden ja palkan 3000-4500€/kk.",
     main_tasks:     [
               "Taideterapiasessioiden suunnittelu ja ohjaus",
               "Asiakkaiden tukeminen taiteellisen ilmaisun kautta",
@@ -26515,10 +26805,10 @@ export const careersData: CareerFI[] = [
               "Ryhmä- ja yksilöterapia",
               "Moniammatillinen yhteistyö"
     ],
-    impact:     [
-              "Edistää mielenterveyttä taiteen kautta",
-              "Tukee itseilmaisua ja käsittelyä",
-              "Parantaa hyvinvointia"
+    impact: [
+      "Auttaa satoja ihmisiä vuosittain käsittelemään tunteita ja traumoja taiteen avulla",
+      "Tukee mielenterveyttä ja hyvinvointia luovilla menetelmillä",
+      "Tarjoaa vaihtoehtoisen terapeuttisen lähestymistavan haavoittuville ryhmille"
     ],
     education_paths:     [
               "Taideterapian koulutus",
@@ -26547,7 +26837,12 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Art Therapy Facilitator", "Trainee", "Coordinator"],
     career_progression: ["Senior Art Therapy Facilitator", "Lead", "Director"],
-    typical_employers: ["Terveyskeskukset","Hoitolaitokset","Yksityisvastaanotto"],
+    typical_employers: [
+      "HUS, Helsingin kaupunki",
+      "Terapiakeskukset ja kuntoutuslaitokset",
+      "Mielenterveysorganisaatiot",
+      "Yksityinen vastaanotto"
+    ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
@@ -26561,7 +26856,7 @@ export const careersData: CareerFI[] = [
     category: "johtaja",
     title_fi: "Yhteisötaiteen johtaja",
     title_en: "Community Arts Director",
-    short_description: "Johtaa yhteisötaidehankkeita. Kehittää taideohjelmia jotka osallistavat paikallisia yhteisöjä ja edistävät kulttuurista osallisuutta.",
+    short_description: "Yhteisötaiteen ohjaaja johtaa yhteisötaideprojekteja, jotka tuovat taidetta yhteisöihin ja osallistavat ihmisiä luovaan prosessiin. Helsingissä mahdollisuuksia yhteisötalloissa, kulttuurijärjestöissä ja kaupungilla. Tarjoaa merkityksellisen työn, luovuuden ja palkan 3000-4500€/kk.",
     main_tasks:     [
               "Yhteisötaideohjelmien johtaminen",
               "Taiteilija- ja yhteisöyhteistyö",
@@ -26569,10 +26864,10 @@ export const careersData: CareerFI[] = [
               "Strateginen suunnittelu",
               "Vaikuttavuuden arviointi"
     ],
-    impact:     [
-              "Demokratisoi taidetta",
-              "Rakentaa yhteisöjä taiteen kautta",
-              "Edistää kulttuurista osallisuutta"
+    impact: [
+      "Johtaa yhteisötaideprojekteja, jotka osallistavat satoja ihmisiä luovaan prosessiin",
+      "Luo yhteisöllisyyttä ja vahvistaa yhteisöjä taiteen avulla",
+      "Tekee taiteesta saavutettavaa kaikille ja edistää kulttuurista demokratiaa"
     ],
     education_paths:     [
               "Taidehallinto",
@@ -26601,8 +26896,13 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Community Arts Director", "Trainee", "Coordinator"],
     career_progression: ["Senior Community Arts Director", "Lead", "Director"],
-    typical_employers: ["Kulttuurilaitokset","Kunnat","Taidejärjestöt"],
-    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    typical_employers: [
+      "Helsingin kaupunki (kulttuuripalvelut)",
+      "Yhteisötalot: Stoa, Kanneltalo, Vuotalo",
+      "Taidejärjestöt ja -säätiöt",
+      "Nuorisotyön organisaatiot"
+    ],
+    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
       { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
@@ -26615,7 +26915,7 @@ export const careersData: CareerFI[] = [
     category: "auttaja",
     title_fi: "Museopedagogi",
     title_en: "Museum Education Specialist",
-    short_description: "Kehittää ja toteuttaa opetusohjelmia museoissa. Tekee taidetta ja historiaa saavutettavaksi ja kiinnostavaksi kaikille.",
+    short_description: "Museopedagogi suunnittelee ja toteuttaa opetus- ja opastusohjelmia museoissa sekä tekee taiteesta ja kulttuurista saavutettavaa kaikille. Helsingissä mahdollisuuksia lukuisissa museoissa ja kulttuurilaitoksissa. Tarjoaa merkityksellisen työn, taiteen parissa työskentelyn ja palkan 3000-4500€/kk.",
     main_tasks:     [
               "Museo-opetuksen suunnittelu ja toteutus",
               "Oppilasryhmien ohjaus",
@@ -26623,10 +26923,10 @@ export const careersData: CareerFI[] = [
               "Työpajojen ja tapahtumien järjestäminen",
               "Näyttelyiden pedagoginen suunnittelu"
     ],
-    impact:     [
-              "Tekee kulttuuriperintöä saavutettavaksi",
-              "Edistää oppimista ja kiinnostusta",
-              "Tukee museokokemusta"
+    impact: [
+      "Opettaa ja innostaa tuhansia kävijöitä vuosittain taiteesta ja kulttuurista",
+      "Tekee kulttuuriperinnöstä saavutettavaa ja ymmärrettävää kaikille ikäryhmille",
+      "Edistää kulttuurista sivistystä ja taidekasvatusta Suomessa"
     ],
     education_paths:     [
               "Kasvatustieteet",
@@ -26655,7 +26955,12 @@ export const careersData: CareerFI[] = [
     },
     entry_roles: ["Junior Museum Education Specialist", "Trainee", "Coordinator"],
     career_progression: ["Senior Museum Education Specialist", "Lead", "Director"],
-    typical_employers: ["Museot","Galleriat","Kulttuurilaitokset"],
+    typical_employers: [
+      "Kansallisgalleria (Ateneum, Kiasma)",
+      "Helsingin kaupunginmuseo",
+      "Suomen kansallismuseo",
+      "Yksityiset museot ja taidegalleriat"
+    ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
