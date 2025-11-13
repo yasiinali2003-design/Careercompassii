@@ -58,9 +58,9 @@ export const careersData: CareerFI[] = [
       "Asiakastyön koordinointi ja palautteen käsittely"
     ],
     impact: [
-      "Auttaa yrityksiä ja organisaatioita viestimään tehokkaasti",
-      "Parantaa käyttökokemusta ja saavutettavuutta",
-      "Luo tunnistettavaa visuaalista kulttuuria"
+      "Auttaa Suomessa yrityksiä ja organisaatioita viestimään tehokkaasti",
+      "Parantaa Suomessa käyttökokemusta ja saavutettavuutta",
+      "Luo Suomessa tunnistettavaa visuaalista kulttuuria"
     ],
     education_paths: [
       "AMK: Medianomi, Graafinen suunnittelu",
@@ -107,7 +107,11 @@ export const careersData: CareerFI[] = [
       "Mainostoimistot (julkinen/yksityinen)",
       "Julkaisuyhtiöt",
       "Yritysten markkinointiosastot",
-      "Freelance-työskentely"
+      "Freelance-työskentely",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Media-alan TES",
@@ -120,6 +124,8 @@ export const careersData: CareerFI[] = [
     keywords: ["graafinen suunnittelu", "brändi", "mainonta", "visuaalinen viestintä", "Adobe"],
     study_length_estimate_months: 42
   },
+
+
   {
     id: "muusikko",
     category: "luova",
@@ -196,9 +202,11 @@ export const careersData: CareerFI[] = [
     impact: [
       "Tuottaa iloa ja tunteita musiikin kautta",
       "Säilyttää ja välittää kulttuuriperintöä",
-      "Vaikuttaa ihmisten hyvinvointiin ja mielenterveyteen"
+      "Vaikuttaa Suomessa ihmisten hyvinvointiin ja mielenterveyteen"
     ]
   },
+
+
   {
     id: "kameramies",
     category: "luova",
@@ -259,7 +267,11 @@ export const careersData: CareerFI[] = [
       "TV-asemat",
       "Elokuvatuotantoyhtiöt",
       "Mainostoimistot",
-      "Itsenäinen työskentely"
+      "Itsenäinen työskentely",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "Media-alan TES",
@@ -272,11 +284,13 @@ export const careersData: CareerFI[] = [
     keywords: ["kamera", "kuvaus", "elokuva", "TV", "valaistus"],
     study_length_estimate_months: 36,
     impact: [
-      "Tuottaa visuaalista sisältöä joka vaikuttaa miljooniin ihmisiin",
+      "Tuottaa visuaalista sisältöä joka vaikuttaa Suomessa miljooniin ihmisiin",
       "Säilyttää ja välittää tärkeitä tarinoita ja tapahtumia",
-      "Vaikuttaa kulttuuriin ja yhteiskuntaan visuaalisella viestinnällä"
+      "Vaikuttaa Suomessa kulttuuriin ja yhteiskuntaan visuaalisella viestinnällä"
     ]
   },
+
+
 {
     id: "kirjailija",
     category: "luova",
@@ -351,11 +365,13 @@ export const careersData: CareerFI[] = [
     keywords: ["kirjoittaminen", "kirjallisuus", "romaani", "artikkeli", "käsikirjoitus"],
     study_length_estimate_months: 48,
     impact: [
-      "Vaikuttaa lukijoiden ajatteluun ja tunteisiin",
+      "Vaikuttaa Suomessa lukijoiden ajatteluun ja tunteisiin",
       "Säilyttää ja välittää kulttuuriperintöä",
       "Tarjoaa pakopaikan ja inspiraatiota miljoonille lukijoille"
     ]
   },
+
+
 {
     id: "muotoilija",
     category: "luova",
@@ -416,7 +432,11 @@ export const careersData: CareerFI[] = [
       "IT-yritykset",
       "Konsultointiyritykset",
       "Pankit ja vakuutusyhtiöt",
-      "Itsenäinen työskentely"
+      "Itsenäinen työskentely",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
@@ -429,11 +449,13 @@ export const careersData: CareerFI[] = [
     keywords: ["UX", "UI", "käyttöliittymä", "sovellus", "digitaalinen suunnittelu"],
     study_length_estimate_months: 42,
     impact: [
-      "Parantaa miljoonien käyttäjien digitaalista kokemusta",
+      "Parantaa Suomessa miljoonien käyttäjien digitaalista kokemusta",
       "Tehostaa työprosesseja ja vähentää virheitä",
-      "Vaikuttaa teknologian käyttöön ja hyväksyntään"
+      "Vaikuttaa Suomessa teknologian käyttöön ja hyväksyntään"
     ]
   },
+
+
 {
     id: "animaattori",
     category: "luova",
@@ -494,7 +516,11 @@ export const careersData: CareerFI[] = [
       "Elokuvastudiot",
       "Peliyritykset",
       "Mainostoimistot",
-      "Freelance-työskentely"
+      "Freelance-työskentely",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Media-alan TES",
@@ -507,11 +533,13 @@ export const careersData: CareerFI[] = [
     keywords: ["animaatio", "3D", "elokuva", "pelit", "digitaalinen taide"],
     study_length_estimate_months: 42,
     impact: [
-      "Luo visuaalisia tarinoita jotka viihdyttävät miljoonia",
-      "Vaikuttaa elokuvien ja pelien visuaaliseen laatuun",
-      "Edistää digitaalisen taiteen kehitystä"
+      "Luo Suomessa visuaalisia tarinoita jotka viihdyttävät miljoonia",
+      "Vaikuttaa Suomessa elokuvien ja pelien visuaaliseen laatuun",
+      "Edistää Suomessa digitaalisen taiteen kehitystä"
     ]
   },
+
+
 {
     id: "teatteriohjaaja",
     category: "luova",
@@ -587,9 +615,11 @@ export const careersData: CareerFI[] = [
     impact: [
       "Tuo kulttuurisia elämyksiä tuhansille katsojille",
       "Välittää tärkeitä viestejä ja tarinoita yhteiskunnalle",
-      "Tukee näyttelijöiden taiteellista kasvua"
+      "Tukee Suomessa näyttelijöiden taiteellista kasvua"
     ]
   },
+
+
 {
     id: "valokuvaaja",
     category: "luova",
@@ -650,7 +680,11 @@ export const careersData: CareerFI[] = [
       "Valokuvausstudiot",
       "Mainoskuvaus",
       "Lehdet ja mediat",
-      "Freelance-työskentely"
+      "Freelance-työskentely",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Media-alan TES",
@@ -664,10 +698,12 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36,
     impact: [
       "Ikuistaa tärkeitä hetkiä ja muistoja",
-      "Vaikuttaa visuaaliseen kulttuuriin ja mainontaan",
+      "Vaikuttaa Suomessa visuaaliseen kulttuuriin ja mainontaan",
       "Dokumentoi historiaa ja yhteiskuntaa"
     ]
   },
+
+
 {
     id: "pukusuunnittelija",
     category: "luova",
@@ -728,7 +764,11 @@ export const careersData: CareerFI[] = [
       "Teatterit",
       "Elokuvatuotannot",
       "Televisioyhtiöt",
-      "Freelance-työskentely"
+      "Freelance-työskentely",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Teatterin TES",
@@ -741,11 +781,13 @@ export const careersData: CareerFI[] = [
     keywords: ["pukusuunnittelu", "teatteri", "elokuva", "muoti", "historia"],
     study_length_estimate_months: 48,
     impact: [
-      "Luo visuaalista identiteettiä hahmoille ja esityksille",
+      "Luo Suomessa visuaalista identiteettiä hahmoille ja esityksille",
       "Välittää historiallista ja kulttuurista tietoa",
-      "Vaikuttaa yleisön kokemukseen ja eläytymiseen"
+      "Vaikuttaa Suomessa yleisön kokemukseen ja eläytymiseen"
     ]
   },
+
+
 {
     id: "rakennusmestari",
     category: "rakentaja",
@@ -806,7 +848,11 @@ export const careersData: CareerFI[] = [
       "Rakennusyhtiöt",
       "Asuntoyhtiöt",
       "Kunnat ja valtio",
-      "Oma yritys"
+      "Oma yritys",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusalan TES",
@@ -820,10 +866,12 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36,
     impact: [
       "Rakentaa koteja ja infrastruktuuria tuhansille ihmisille",
-      "Vaikuttaa kaupunkien kehitykseen ja muotoon",
+      "Vaikuttaa Suomessa kaupunkien kehitykseen ja muotoon",
       "Turvaa työntekijöiden turvallisuuden rakennustyömailla"
     ]
   },
+
+
 {
     id: "putkiasentaja",
     category: "rakentaja",
@@ -884,7 +932,11 @@ export const careersData: CareerFI[] = [
       "LVI-yhtiöt",
       "Rakennusyhtiöt",
       "Huoltoyritykset",
-      "Oma yritys"
+      "Oma yritys",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "LVI-alan TES",
@@ -898,10 +950,12 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36,
     impact: [
       "Turvaa veden saannin ja lämmityksen tuhansille kotitalouksille",
-      "Vaikuttaa energiatehokkuuteen ja ympäristöystävällisyyteen",
-      "Auttaa kunnostamaan vanhoja rakennuksia"
+      "Vaikuttaa Suomessa energiatehokkuuteen ja ympäristöystävällisyyteen",
+      "Auttaa Suomessa kunnostamaan vanhoja rakennuksia"
     ]
   },
+
+
 {
     id: "maalari",
     category: "rakentaja",
@@ -962,7 +1016,11 @@ export const careersData: CareerFI[] = [
       "Maalausyritykset",
       "Rakennusyhtiöt",
       "Huoltoyritykset",
-      "Oma yritys"
+      "Oma yritys",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Maalausalan TES",
@@ -975,11 +1033,13 @@ export const careersData: CareerFI[] = [
     keywords: ["maalaus", "värit", "pintakäsittely", "kunnostus", "viimeistely"],
     study_length_estimate_months: 24,
     impact: [
-      "Parantaa rakennusten ulkoasua ja kestävyyttä",
-      "Vaikuttaa kotien viihtyisyyteen ja tunnelmaan",
+      "Parantaa Suomessa rakennusten ulkoasua ja kestävyyttä",
+      "Vaikuttaa Suomessa kotien viihtyisyyteen ja tunnelmaan",
       "Suojaa rakenteita kosteudelta ja korroosiolta"
     ]
   },
+
+
 {
     id: "kattomestari",
     category: "rakentaja",
@@ -1040,7 +1100,11 @@ export const careersData: CareerFI[] = [
       "Kattomestariyritykset",
       "Rakennusyhtiöt",
       "Huoltoyritykset",
-      "Oma yritys"
+      "Oma yritys",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Kattomestarialan TES",
@@ -1055,9 +1119,11 @@ export const careersData: CareerFI[] = [
     impact: [
       "Turvaa rakennusten kestävän ja turvallisen katon",
       "Suojaa kotitalouksia sääolosuhteilta",
-      "Vaikuttaa rakennusten energiatehokkuuteen"
+      "Vaikuttaa Suomessa rakennusten energiatehokkuuteen"
     ]
   },
+
+
 {
     id: "lvi-asentaja",
     category: "rakentaja",
@@ -1118,7 +1184,11 @@ export const careersData: CareerFI[] = [
       "LVI-yritykset",
       "Rakennusyhtiöt",
       "Huoltoyritykset",
-      "Oma yritys"
+      "Oma yritys",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "LVI-alan TES",
@@ -1132,10 +1202,12 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36,
     impact: [
       "Varmistaa rakennusten energiatehokkuuden",
-      "Parantaa sisäilman laatua ja terveyttä",
-      "Auttaa vähentämään hiilijalanjälkeä"
+      "Parantaa Suomessa sisäilman laatua ja terveyttä",
+      "Auttaa Suomessa vähentämään hiilijalanjälkeä"
     ]
   },
+
+
 {
     id: "talonrakentaja",
     category: "rakentaja",
@@ -1196,7 +1268,11 @@ export const careersData: CareerFI[] = [
       "Rakennusyhtiöt",
       "Talonrakennusyritykset",
       "Kunnostusyritykset",
-      "Oma yritys"
+      "Oma yritys",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusalan TES",
@@ -1210,10 +1286,12 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36,
     impact: [
       "Rakentaa koteja ja tiloja tuhansille ihmisille",
-      "Vaikuttaa asuinympäristön laatuun",
-      "Luo työpaikkoja ja talouskasvua"
+      "Vaikuttaa Suomessa asuinympäristön laatuun",
+      "Luo Suomessa työpaikkoja ja talouskasvua"
     ]
   },
+
+
 {
     id: "betonityontekija",
     category: "rakentaja",
@@ -1274,7 +1352,11 @@ export const careersData: CareerFI[] = [
       "Rakennusyhtiöt",
       "Betonityöyritykset",
       "Infrastruktuuriyritykset",
-      "Oma yritys"
+      "Oma yritys",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusalan TES",
@@ -1288,10 +1370,12 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36,
     impact: [
       "Rakentaa kestäviä ja turvallisia rakenteita",
-      "Vaikuttaa infrastruktuurin laatuun",
-      "Luo perustan rakennuksille ja silloille"
+      "Vaikuttaa Suomessa infrastruktuurin laatuun",
+      "Luo Suomessa perustan rakennuksille ja silloille"
     ]
   },
+
+
 {
     id: "rakennusvalvoja",
     category: "rakentaja",
@@ -1352,7 +1436,11 @@ export const careersData: CareerFI[] = [
       "Kunnat",
       "Kaupungit",
       "Rakennusvalvontaviranomaiset",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Kunnallinen TES",
@@ -1370,6 +1458,8 @@ export const careersData: CareerFI[] = [
       "Valvoo rakennusmääräysten noudattamista"
     ]
   },
+
+
   {
     id: "henkilöstöpäällikkö",
     category: "johtaja",
@@ -1385,7 +1475,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Kehittää työntekijöiden hyvinvointia ja tyytyväisyyttä",
-      "Parantaa organisaation suorituskykyä",
+      "Parantaa Suomessa organisaation suorituskykyä",
       "Rakentaa inklusiivista työympäristöä"
     ],
     education_paths: [
@@ -1435,7 +1525,11 @@ export const careersData: CareerFI[] = [
       "Suuryritykset",
       "Konsultointiyritykset",
       "Julkinen sektori",
-      "Teknologiayritykset"
+      "Teknologiayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Liiketalouden TES",
@@ -1448,6 +1542,8 @@ export const careersData: CareerFI[] = [
     keywords: ["henkilöstöjohtaminen", "rekrytointi", "kehitys", "organisaatio", "työsuhteet"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "tuotantopäällikkö",
     category: "johtaja",
@@ -1462,7 +1558,7 @@ export const careersData: CareerFI[] = [
       "Kustannusten seuranta ja optimointi"
     ],
     impact: [
-      "Parantaa tuotannon tehokkuutta ja laatua",
+      "Parantaa Suomessa tuotannon tehokkuutta ja laatua",
       "Vähentää hukkaa ja ympäristövaikutuksia",
       "Turvaa työntekijöiden turvallisuuden"
     ],
@@ -1513,7 +1609,11 @@ export const careersData: CareerFI[] = [
       "Teollisuusyritykset",
       "Elintarviketeollisuus",
       "Autoteollisuus",
-      "Kemian teollisuus"
+      "Kemian teollisuus",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Teollisuuden TES",
@@ -1526,6 +1626,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tuotantotalous", "laadunhallinta", "johtaminen", "optimointi", "tehokkuus"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "talouspäällikkö",
     category: "johtaja",
@@ -1541,8 +1643,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa organisaation taloudellisen vakauden",
-      "Auttaa tekemään tietoisia sijoituspäätöksiä",
-      "Parantaa taloushallinnon tehokkuutta"
+      "Auttaa Suomessa tekemään tietoisia sijoituspäätöksiä",
+      "Parantaa Suomessa taloushallinnon tehokkuutta"
     ],
     education_paths: [
       "AMK: Liiketalous, Laskentatoimi",
@@ -1591,7 +1693,11 @@ export const careersData: CareerFI[] = [
       "Suuryritykset",
       "Konsultointiyritykset",
       "Pankit",
-      "Julkinen sektori"
+      "Julkinen sektori",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Liiketalouden TES",
@@ -1604,6 +1710,8 @@ export const careersData: CareerFI[] = [
     keywords: ["taloushallinto", "laskentatoimi", "budjetointi", "raportointi", "analyysi"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "asiakaspalvelupäällikkö",
     category: "johtaja",
@@ -1618,7 +1726,7 @@ export const careersData: CareerFI[] = [
       "Asiakastyytyväisyyden seuranta"
     ],
     impact: [
-      "Parantaa asiakaskokemusta ja tyytyväisyyttä",
+      "Parantaa Suomessa asiakaskokemusta ja tyytyväisyyttä",
       "Kasvattaa asiakasuskollisuutta",
       "Kehittää palvelukulttuuria"
     ],
@@ -1669,7 +1777,11 @@ export const careersData: CareerFI[] = [
       "Teknologiayritykset",
       "Vähittäiskauppa",
       "Palveluyritykset",
-      "Telekommunikaatio"
+      "Telekommunikaatio",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
     union_or_CBA: "Liiketalouden TES",
@@ -1682,6 +1794,8 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakaspalvelu", "johtaminen", "kokemus", "prosessit", "tiimityö"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "tietoturvapäällikkö",
     category: "johtaja",
@@ -1747,7 +1861,11 @@ export const careersData: CareerFI[] = [
       "Teknologiayritykset",
       "Pankit ja vakuutusyhtiöt",
       "Julkinen sektori",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "IT-alan TES",
@@ -1760,6 +1878,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tietoturva", "kyberturvallisuus", "riskienhallinta", "johtaminen", "teknologia"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "laadunpäällikkö",
     category: "johtaja",
@@ -1774,7 +1894,7 @@ export const careersData: CareerFI[] = [
       "Sertifikaattien hallinta"
     ],
     impact: [
-      "Parantaa tuotteiden ja palveluiden laatua",
+      "Parantaa Suomessa tuotteiden ja palveluiden laatua",
       "Vähentää virheitä ja hukkaa",
       "Kasvattaa asiakastyytyväisyyttä"
     ],
@@ -1825,7 +1945,11 @@ export const careersData: CareerFI[] = [
       "Teollisuusyritykset",
       "Elintarviketeollisuus",
       "Autoteollisuus",
-      "Palveluyritykset"
+      "Palveluyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teollisuuden TES",
@@ -1838,6 +1962,8 @@ export const careersData: CareerFI[] = [
     keywords: ["laadunhallinta", "prosessit", "standardit", "sertifikaatit", "optimointi"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "kehityspäällikkö",
     category: "johtaja",
@@ -1854,7 +1980,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Kehittää innovatiivisia ratkaisuja",
       "Kasvattaa organisaation kilpailukykyä",
-      "Edistää teknologian kehitystä"
+      "Edistää Suomessa teknologian kehitystä"
     ],
     education_paths: [
       "AMK: Tekniikka, Liiketalous",
@@ -1903,7 +2029,11 @@ export const careersData: CareerFI[] = [
       "Teknologiayritykset",
       "Teollisuusyritykset",
       "Konsultointiyritykset",
-      "Julkinen sektori"
+      "Julkinen sektori",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -1916,6 +2046,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kehitysjohtaminen", "innovaatio", "projektit", "tutkimus", "strategia"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "data-insinööri",
     category: "innovoija",
@@ -1930,8 +2062,8 @@ export const careersData: CareerFI[] = [
       "Skalautuvien järjestelmien rakentaminen"
     ],
     impact: [
-      "Auttaa organisaatioita hyödyntämään dataa tehokkaasti",
-      "Parantaa päätöksentekoa datan pohjalta",
+      "Auttaa Suomessa organisaatioita hyödyntämään dataa tehokkaasti",
+      "Parantaa Suomessa päätöksentekoa datan pohjalta",
       "Kehittää innovatiivisia dataratkaisuja"
     ],
     education_paths: [
@@ -1981,7 +2113,11 @@ export const careersData: CareerFI[] = [
       "Teknologiayritykset",
       "Pankit ja vakuutusyhtiöt",
       "E-commerce-yritykset",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
@@ -1994,6 +2130,8 @@ export const careersData: CareerFI[] = [
     keywords: ["data", "ohjelmointi", "cloud", "big data", "analytiikka"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "pelisuunnittelija",
     category: "innovoija",
@@ -2008,9 +2146,9 @@ export const careersData: CareerFI[] = [
       "Tiimin kanssa yhteistyö"
     ],
     impact: [
-      "Luo viihdyttäviä ja mieleenpainuvia pelejä",
+      "Luo Suomessa viihdyttäviä ja mieleenpainuvia pelejä",
       "Kehittää interaktiivista tarinankerrontaa",
-      "Vaikuttaa pelikulttuuriin ja teknologiaan"
+      "Vaikuttaa Suomessa pelikulttuuriin ja teknologiaan"
     ],
     education_paths: [
       "AMK: Medianomi, Pelisuunnittelu",
@@ -2072,6 +2210,8 @@ export const careersData: CareerFI[] = [
     keywords: ["pelisuunnittelu", "kreatiivisuus", "teknologia", "tarinankerronta", "interaktiivisuus"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "robotiikka-insinööri",
     category: "innovoija",
@@ -2086,8 +2226,8 @@ export const careersData: CareerFI[] = [
       "Testaus ja optimointi"
     ],
     impact: [
-      "Auttaa automatisoida teollisuusprosesseja",
-      "Parantaa työtehokkuutta ja turvallisuutta",
+      "Auttaa Suomessa automatisoida teollisuusprosesseja",
+      "Parantaa Suomessa työtehokkuutta ja turvallisuutta",
       "Kehittää innovatiivisia robotiikkaratkaisuja"
     ],
     education_paths: [
@@ -2137,7 +2277,11 @@ export const careersData: CareerFI[] = [
       "Teollisuusyritykset",
       "Autoteollisuus",
       "Tutkimuslaitokset",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -2150,6 +2294,8 @@ export const careersData: CareerFI[] = [
     keywords: ["robotiikka", "automaatio", "mekatroniikka", "ohjelmointi", "teollisuus"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "biotekniikka-insinööri",
     category: "innovoija",
@@ -2165,8 +2311,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Kehittää lääkkeitä ja hoitoja",
-      "Parantaa elintarvikkeiden laatua",
-      "Edistää kestävää kehitystä"
+      "Parantaa Suomessa elintarvikkeiden laatua",
+      "Edistää Suomessa kestävää kehitystä"
     ],
     education_paths: [
       "AMK: Biotekniikka, Kemiantekniikka",
@@ -2215,7 +2361,11 @@ export const careersData: CareerFI[] = [
       "Lääketeollisuus",
       "Elintarviketeollisuus",
       "Tutkimuslaitokset",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Kemian teollisuuden TES",
@@ -2228,6 +2378,8 @@ export const careersData: CareerFI[] = [
     keywords: ["biotekniikka", "biologia", "laboratorio", "tutkimus", "lääketeollisuus"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "nanotekniikka-insinööri",
     category: "innovoija",
@@ -2243,8 +2395,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Kehittää innovatiivisia materiaaleja",
-      "Parantaa teknologian suorituskykyä",
-      "Edistää tieteellistä tutkimusta"
+      "Parantaa Suomessa teknologian suorituskykyä",
+      "Edistää Suomessa tieteellistä tutkimusta"
     ],
     education_paths: [
       "AMK: Materiaalitekniikka, Fysiikka",
@@ -2293,7 +2445,11 @@ export const careersData: CareerFI[] = [
       "Tutkimuslaitokset",
       "Teknologiayritykset",
       "Lääketeollisuus",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -2306,6 +2462,8 @@ export const careersData: CareerFI[] = [
     keywords: ["nanotekniikka", "materiaalitekniikka", "fysiikka", "tutkimus", "innovointi"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "kvantti-insinööri",
     category: "innovoija",
@@ -2321,8 +2479,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Kehittää mullistavaa kvanttiteknologiaa",
-      "Parantaa tietoturvallisuutta",
-      "Edistää tieteellistä tutkimusta"
+      "Parantaa Suomessa tietoturvallisuutta",
+      "Edistää Suomessa tieteellistä tutkimusta"
     ],
     education_paths: [
       "AMK: Fysiikka, Tietojenkäsittely",
@@ -2371,7 +2529,11 @@ export const careersData: CareerFI[] = [
       "Tutkimuslaitokset",
       "Teknologiayritykset",
       "Pankit ja vakuutusyhtiöt",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "IT-alan TES",
@@ -2384,6 +2546,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kvanttiteknologia", "kvanttifysiikka", "ohjelmointi", "algoritmit", "tutkimus"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "blockchain-insinööri",
     category: "innovoija",
@@ -2399,8 +2563,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Kehittää hajautettuja ja turvallisia järjestelmiä",
-      "Parantaa läpinäkyvyyttä ja luottamusta",
-      "Edistää Web3-teknologian kehitystä"
+      "Parantaa Suomessa läpinäkyvyyttä ja luottamusta",
+      "Edistää Suomessa Web3-teknologian kehitystä"
     ],
     education_paths: [
       "AMK: Tietojenkäsittely, Kryptografia",
@@ -2449,7 +2613,11 @@ export const careersData: CareerFI[] = [
       "Teknologiayritykset",
       "Kryptovaluuttayritykset",
       "Pankit ja rahoitusyhtiöt",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
@@ -2462,6 +2630,8 @@ export const careersData: CareerFI[] = [
     keywords: ["blockchain", "kryptografia", "ohjelmointi", "Web3", "hajautetut järjestelmät"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "virtuaalitodellisuus-insinööri",
     category: "innovoija",
@@ -2476,8 +2646,8 @@ export const careersData: CareerFI[] = [
       "Käyttäjäkokemuksen optimointi"
     ],
     impact: [
-      "Luo immersiivisiä ja interaktiivisia kokemuksia",
-      "Parantaa koulutusta ja koulutusta",
+      "Luo Suomessa immersiivisiä ja interaktiivisia kokemuksia",
+      "Parantaa Suomessa koulutusta ja koulutusta",
       "Kehittää innovatiivisia VR/AR-ratkaisuja"
     ],
     education_paths: [
@@ -2540,6 +2710,8 @@ export const careersData: CareerFI[] = [
     keywords: ["VR", "AR", "virtuaalitodellisuus", "3D", "immersiivinen"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "automaatio-insinööri",
     category: "innovoija",
@@ -2555,7 +2727,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Automaattistaa teollisuusprosesseja",
-      "Parantaa tuotannon tehokkuutta",
+      "Parantaa Suomessa tuotannon tehokkuutta",
       "Vähentää virheitä ja hukkaa"
     ],
     education_paths: [
@@ -2605,7 +2777,11 @@ export const careersData: CareerFI[] = [
       "Teollisuusyritykset",
       "Autoteollisuus",
       "Elintarviketeollisuus",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -2618,6 +2794,8 @@ export const careersData: CareerFI[] = [
     keywords: ["automaatio", "PLC", "robotiikka", "IoT", "teollisuus"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "sairaanhoitaja",
     category: "auttaja",
@@ -2632,8 +2810,8 @@ export const careersData: CareerFI[] = [
       "Lääkäreiden kanssa yhteistyö"
     ],
     impact: [
-      "Parantaa potilaiden hyvinvointia ja kuntoutumista",
-      "Auttaa perheitä vaikeina aikoina",
+      "Parantaa Suomessa potilaiden hyvinvointia ja kuntoutumista",
+      "Auttaa Suomessa perheitä vaikeina aikoina",
       "Varmistaa turvallisen ja laadukkaan hoidon"
     ],
     education_paths: [
@@ -2683,7 +2861,11 @@ export const careersData: CareerFI[] = [
       "Sairaalat",
       "Terveyskeskukset",
       "Kotihoitopalvelut",
-      "Yksityiset terveyspalvelut"
+      "Yksityiset terveyspalvelut",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
@@ -2696,6 +2878,8 @@ export const careersData: CareerFI[] = [
     keywords: ["sairaanhoito", "terveys", "potilaat", "hoito", "kuntoutus"],
     study_length_estimate_months: 42
   },
+
+
   {
     id: "bioanalyytikko",
     category: "auttaja",
@@ -2711,7 +2895,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa oikea-aikaisen diagnoosin",
-      "Parantaa hoitopäätösten laatua",
+      "Parantaa Suomessa hoitopäätösten laatua",
       "Varmistaa potilasturvallisuuden laboratoriossa"
     ],
     education_paths: [
@@ -2760,7 +2944,11 @@ export const careersData: CareerFI[] = [
       "Yliopistolliset sairaalat",
       "Hyvinvointialueiden laboratoriot",
       "Yksityiset laboratorioyritykset",
-      "Tutkimuslaitokset"
+      "Tutkimuslaitokset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
@@ -2771,6 +2959,8 @@ export const careersData: CareerFI[] = [
     keywords: ["laboratorio", "diagnostiikka", "analytiikka", "näytteenotto", "terveydenhuolto"],
     study_length_estimate_months: 42
   },
+
+
   {
     id: "kouluterveydenhoitaja",
     category: "auttaja",
@@ -2785,7 +2975,7 @@ export const careersData: CareerFI[] = [
       "Kriisi- ja tukikeskustelut"
     ],
     impact: [
-      "Edistää nuorten kokonaisvaltaista hyvinvointia",
+      "Edistää Suomessa nuorten kokonaisvaltaista hyvinvointia",
       "Ehkäisee terveysongelmia varhaisessa vaiheessa",
       "Rakentaa turvallista oppimisympäristöä"
     ],
@@ -2835,7 +3025,11 @@ export const careersData: CareerFI[] = [
       "Hyvinvointialueiden oppilashuolto",
       "Kunnalliset ja yksityiset oppilaitokset",
       "Opiskeluterveydenhuolto",
-      "Hyvinvointialueiden ehkäisevät palvelut"
+      "Hyvinvointialueiden ehkäisevät palvelut",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tehy",
@@ -2846,6 +3040,8 @@ export const careersData: CareerFI[] = [
     keywords: ["oppilashuolto", "ennaltaehkäisy", "nuoret", "terveyskasvatus", "hyvinvointi"],
     study_length_estimate_months: 42
   },
+
+
   {
     id: "kotihoitaja",
     category: "auttaja",
@@ -2862,7 +3058,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Mahdollistaa kotona asumisen pidempään",
       "Lisää asiakkaiden turvallisuuden tunnetta",
-      "Tukee omaishoitajia ja perheitä"
+      "Tukee Suomessa omaishoitajia ja perheitä"
     ],
     education_paths: [
       "Ammatillinen perustutkinto: Lähihoitaja",
@@ -2910,7 +3106,11 @@ export const careersData: CareerFI[] = [
       "Hyvinvointialueiden kotihoito",
       "Yksityiset hoivayritykset",
       "Kolmannen sektorin palveluntuottajat",
-      "Henkilökohtaisen avun palvelut"
+      "Henkilökohtaisen avun palvelut",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "SuPer",
@@ -2921,6 +3121,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kotihoito", "vanhuspalvelut", "hoiva", "asiakaslähtöisyys", "liikkuva työ"],
     study_length_estimate_months: 36
   },
+
+
   {
     id: "ravitsemusasiantuntija",
     category: "auttaja",
@@ -2935,9 +3137,9 @@ export const careersData: CareerFI[] = [
       "Ravitsemuksen seuranta ja arviointi"
     ],
     impact: [
-      "Parantaa väestön ravitsemusta ja terveyttä",
+      "Parantaa Suomessa väestön ravitsemusta ja terveyttä",
       "Vähentää elämäntapasairauksia",
-      "Tukee kestävän ruokajärjestelmän kehitystä"
+      "Tukee Suomessa kestävän ruokajärjestelmän kehitystä"
     ],
     education_paths: [
       "Yliopisto: Ravitsemustiede (Kand + Maisteri)",
@@ -2985,7 +3187,11 @@ export const careersData: CareerFI[] = [
       "Hyvinvointialueet ja sairaalat",
       "Kunnalliset ruokapalvelut",
       "Elintarvike- ja ravitsemusyritykset",
-      "Järjestöt ja tutkimuslaitokset"
+      "Järjestöt ja tutkimuslaitokset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
@@ -2996,6 +3202,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ravitsemus", "hyvinvointi", "ruokapalvelut", "terveysviestintä", "kestävä ruokavalio"],
     study_length_estimate_months: 60
   },
+
+
   {
     id: "tyopsykologi",
     category: "auttaja",
@@ -3010,9 +3218,9 @@ export const careersData: CareerFI[] = [
       "Työterveyshuollon moniammatillinen yhteistyö"
     ],
     impact: [
-      "Parantaa työntekijöiden hyvinvointia",
+      "Parantaa Suomessa työntekijöiden hyvinvointia",
       "Vähentää sairauspoissaoloja ja vaihtuvuutta",
-      "Tukee organisaatioiden muutoksia ja tuottavuutta"
+      "Tukee Suomessa organisaatioiden muutoksia ja tuottavuutta"
     ],
     education_paths: [
       "Yliopisto: Psykologian kand + maisteri",
@@ -3060,7 +3268,11 @@ export const careersData: CareerFI[] = [
       "Työterveyshuoltoyritykset",
       "Hyvinvointialueet",
       "Keskisuuret ja suuret yritykset",
-      "Konsultointitoimistot"
+      "Konsultointitoimistot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Psykologiliitto",
@@ -3071,6 +3283,8 @@ export const careersData: CareerFI[] = [
     keywords: ["työhyvinvointi", "psykologia", "organisaatiokehitys", "valmennus", "muutosjohtaminen"],
     study_length_estimate_months: 72
   },
+
+
   {
     id: "poliisi",
     category: "auttaja",
@@ -3086,7 +3300,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Lisää yhteiskunnan turvallisuutta",
-      "Rakentaa luottamusta kansalaisten ja viranomaisten välille",
+      "Rakentaa luo Suomessattamusta kansalaisten ja viranomaisten välille",
       "Pelastaa henkiä kiireellisissä tilanteissa"
     ],
     education_paths: [
@@ -3135,7 +3349,11 @@ export const careersData: CareerFI[] = [
       "Poliisilaitokset",
       "Keskusrikospoliisi",
       "Rajavartiolaitos",
-      "Kansainväliset tehtävät (EU, UN)"
+      "Kansainväliset tehtävät (EU, UN)",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Poliisiammattijärjestö",
@@ -3147,6 +3365,8 @@ export const careersData: CareerFI[] = [
     keywords: ["turvallisuus", "järjestys", "rikostorjunta", "kenttätyö", "viranomais työ"],
     study_length_estimate_months: 30
   },
+
+
   {
     id: "rikostutkija",
     category: "auttaja",
@@ -3162,7 +3382,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Selvittää rikoksia ja tuo oikeutta uhreille",
-      "Vahvistaa luottamusta oikeusjärjestelmään",
+      "Vahvistaa luo Suomessattamusta oikeusjärjestelmään",
       "Ehkäisee rikoksia analysoimalla toimintatapoja"
     ],
     education_paths: [
@@ -3211,7 +3431,11 @@ export const careersData: CareerFI[] = [
       "Keskusrikospoliisi",
       "Paikalliset poliisilaitokset",
       "Tulli ja Rajavartiolaitos",
-      "Kansainväliset tutkintayksiköt"
+      "Kansainväliset tutkintayksiköt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Poliisiammattijärjestö",
@@ -3223,6 +3447,8 @@ export const careersData: CareerFI[] = [
     keywords: ["rikostutkinta", "forensiikka", "todisteet", "analyysi", "oikeus"],
     study_length_estimate_months: 36
   },
+
+
   {
     id: "sotilas",
     category: "auttaja",
@@ -3287,7 +3513,11 @@ export const careersData: CareerFI[] = [
       "Puolustusvoimien joukko-osastot",
       "Kansainväliset kriisinhallintajoukot",
       "Rajavartiolaitos",
-      "Euroopan ja Naton yhteistyöorganisaatiot"
+      "Euroopan ja Naton yhteistyöorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "Julkisalan koulutettujen neuvottelujärjestö (JUKO) / Pääesikunta",
@@ -3299,6 +3529,8 @@ export const careersData: CareerFI[] = [
     keywords: ["puolustus", "kenttätyö", "valmius", "kansainväliset tehtävät", "johtaminen"],
     study_length_estimate_months: 18
   },
+
+
   {
     id: "upseeri",
     category: "auttaja",
@@ -3363,7 +3595,11 @@ export const careersData: CareerFI[] = [
       "Puolustusvoimat",
       "Rajavartiolaitos",
       "Kansainväliset sotilasorganisaatiot",
-      "Nato-yhteistyö"
+      "Nato-yhteistyö",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Upseeriliitto",
@@ -3375,6 +3611,8 @@ export const careersData: CareerFI[] = [
     keywords: ["johtaminen", "puolustus", "strategia", "operaatiot", "kriisinhallinta"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "markkinointisuunnittelija",
     category: "jarjestaja",
@@ -3390,8 +3628,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Kasvattaa brändin näkyvyyttä ja myyntiä",
-      "Yhdistää asiakasymmärryksen ja luovan työn",
-      "Auttaa organisaatiota tekemään dataohjattuja päätöksiä"
+      "Yhdistää asiakasymmärryksen ja luo Suomessavan työn",
+      "Auttaa Suomessa organisaatiota tekemään dataohjattuja päätöksiä"
     ],
     education_paths: [
       "AMK: Liiketalouden tradenomi (markkinointi)",
@@ -3439,7 +3677,11 @@ export const careersData: CareerFI[] = [
       "Kasvuyritykset ja startupit",
       "Mainostoimistot",
       "Vähittäiskauppa ja verkkokaupat",
-      "IT- ja SaaS-yritykset"
+      "IT- ja SaaS-yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro / Markkinointialan TES",
@@ -3450,6 +3692,8 @@ export const careersData: CareerFI[] = [
     keywords: ["markkinointi", "data", "kampanjat", "digitaalinen", "strategia"],
     study_length_estimate_months: 42
   },
+
+
   {
     id: "liikuntaneuvoja",
     category: "auttaja",
@@ -3464,7 +3708,7 @@ export const careersData: CareerFI[] = [
       "Turvallisuuden ja ensiavun varmistaminen harjoituksissa"
     ],
     impact: [
-      "Edistää väestön terveyttä ja toimintakykyä",
+      "Edistää Suomessa väestön terveyttä ja toimintakykyä",
       "Motivoi asiakkaita pysyviin elämäntapamuutoksiin",
       "Vähentää terveysmenoja ennaltaehkäisevällä työllä"
     ],
@@ -3514,7 +3758,11 @@ export const careersData: CareerFI[] = [
       "Hyvinvointialueiden liikuntapalvelut",
       "Urheiluseurat ja järjestöt",
       "Kuntokeskukset",
-      "Yritysten työhyvinvointipalvelut"
+      "Yritysten työhyvinvointipalvelut",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "PAM / Liikunta-alan TES",
@@ -3525,6 +3773,8 @@ export const careersData: CareerFI[] = [
     keywords: ["liikunta", "hyvinvointi", "ohjaus", "valmennus", "ennaltaehkäisy"],
     study_length_estimate_months: 36
   },
+
+
   {
     id: "liikuntaterapeutti",
     category: "auttaja",
@@ -3539,9 +3789,9 @@ export const careersData: CareerFI[] = [
       "Tulosten seuranta ja dokumentointi"
     ],
     impact: [
-      "Parantaa asiakkaiden toimintakykyä ja elämänlaatua",
+      "Parantaa Suomessa asiakkaiden toimintakykyä ja elämänlaatua",
       "Ehkäisee sairauspoissaoloja ja toimintakyvyn heikkenemistä",
-      "Tukee terveydenhuollon kuntoutusprosesseja"
+      "Tukee Suomessa terveydenhuollon kuntoutusprosesseja"
     ],
     education_paths: [
       "AMK: Liikunnanohjaaja (AMK) + liikuntaterapian erikoistuminen",
@@ -3589,7 +3839,11 @@ export const careersData: CareerFI[] = [
       "Hyvinvointialueiden kuntoutuspalvelut",
       "Yksityiset kuntoutuskeskukset",
       "Kuntoutuslaitokset ja kylpylät",
-      "Järjestöt ja hankkeet"
+      "Järjestöt ja hankkeet",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy / Fysioterapeuttien TES",
@@ -3600,6 +3854,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kuntoutus", "liikuntalääketiede", "hyvinvointi", "ohjaus", "erityisryhmät"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "liiketalousjohtaja",
     category: "johtaja",
@@ -3664,7 +3920,11 @@ export const careersData: CareerFI[] = [
       "Suuryritykset",
       "Kasvavat pk-yritykset",
       "Konsultti- ja pääomasijoitusyhtiöt",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "EK:n johto- ja asiantuntijasopimukset",
@@ -3675,6 +3935,8 @@ export const careersData: CareerFI[] = [
     keywords: ["johtaminen", "strategia", "talous", "kasvu", "investoinnit"],
     study_length_estimate_months: 72
   },
+
+
   {
     id: "yritysneuvoja",
     category: "jarjestaja",
@@ -3689,9 +3951,9 @@ export const careersData: CareerFI[] = [
       "Verkostojen ja kumppanuuksien rakentaminen"
     ],
     impact: [
-      "Auttaa yrityksiä kasvamaan kestävästi",
+      "Auttaa Suomessa yrityksiä kasvamaan kestävästi",
       "Ehkäisee yritysten taloudellisia vaikeuksia",
-      "Luo uusia työpaikkoja tukemalla yrittäjyyttä"
+      "Luo Suomessa uusia työpaikkoja tukemalla yrittäjyyttä"
     ],
     education_paths: [
       "AMK/Yliopisto: Kauppatieteet, liiketalous, yrittäjyys",
@@ -3739,7 +4001,11 @@ export const careersData: CareerFI[] = [
       "ELY-keskukset ja Kehitysyhtiöt",
       "Yrityshautomot",
       "Pankit ja rahoituslaitokset",
-      "Konsulttitalot"
+      "Konsulttitalot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro / Asiantuntijatyön TES",
@@ -3750,6 +4016,8 @@ export const careersData: CareerFI[] = [
     keywords: ["yrityskehitys", "rahoitus", "neuvonta", "kasvu", "verkostot"],
     study_length_estimate_months: 60
   },
+
+
   {
     id: "sisaltotuottaja",
     category: "luova",
@@ -3764,8 +4032,8 @@ export const careersData: CareerFI[] = [
       "Kampanjoiden koordinointi eri kanavissa"
     ],
     impact: [
-      "Rakentaa brändin näkyvyyttä ja luottamusta",
-      "Tukee myyntiä ja asiakassuhteita",
+      "Rakentaa brändin näkyvyyttä ja luo Suomessattamusta",
+      "Tukee Suomessa myyntiä ja asiakassuhteita",
       "Viestii organisaation arvoista ja asiantuntemuksesta"
     ],
     education_paths: [
@@ -3814,7 +4082,11 @@ export const careersData: CareerFI[] = [
       "Mediatalot",
       "Markkinointi- ja viestintätoimistot",
       "Yritysten in-house-tiimit",
-      "Järjestöt ja julkinen sektori"
+      "Järjestöt ja julkinen sektori",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro / Viestintäalan TES",
@@ -3825,6 +4097,8 @@ export const careersData: CareerFI[] = [
     keywords: ["sisältö", "viestintä", "tarinankerronta", "digitaalinen", "markkinointi"],
     study_length_estimate_months: 42
   },
+
+
   {
     id: "myyntipaallikko",
     category: "johtaja",
@@ -3841,7 +4115,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Kasvattaa yrityksen liikevaihtoa",
       "Varmentaa asiakaspolun sujuvuuden",
-      "Auttaa tuotteita ja palveluja löytämään oikeat asiakkaat"
+      "Auttaa Suomessa tuotteita ja palveluja löytämään oikeat asiakkaat"
     ],
     education_paths: [
       "AMK/Yliopisto: Liiketalous, myynti",
@@ -3889,7 +4163,11 @@ export const careersData: CareerFI[] = [
       "Teknologia- ja teollisuusyritykset",
       "Palveluyritykset",
       "Kansainväliset konsernit",
-      "PK-yritykset ja startupit"
+      "PK-yritykset ja startupit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Palta / Johto ja asiantuntijatyö",
@@ -3900,6 +4178,8 @@ export const careersData: CareerFI[] = [
     keywords: ["myynti", "johtaminen", "asiakashallinta", "kasvu", "strategia"],
     study_length_estimate_months: 60
   },
+
+
   {
     id: "ohjelmistokehittaja",
     category: "innovoija",
@@ -3964,7 +4244,11 @@ export const careersData: CareerFI[] = [
       "Ohjelmistoyritykset",
       "Kasvuyritykset ja startupit",
       "Konsultti- ja integraatiotalot",
-      "Julkisen sektorin digihankkeet"
+      "Julkisen sektorin digihankkeet",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietoala ry / Teknologiateollisuuden TES",
@@ -3975,6 +4259,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ohjelmointi", "ketterä", "pilvi", "devops", "tuotekehitys"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "tekoalyasiantuntija",
     category: "visionaari",
@@ -3990,8 +4276,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Automatisoi ja nopeuttaa päätöksentekoa",
-      "Luo uusia dataohjattuja palveluja",
-      "Parantaa organisaatioiden kilpailukykyä"
+      "Luo Suomessa uusia dataohjattuja palveluja",
+      "Parantaa Suomessa organisaatioiden kilpailukykyä"
     ],
     education_paths: [
       "Yliopisto: Tietotekniikka, data science, tekoäly",
@@ -4039,7 +4325,11 @@ export const careersData: CareerFI[] = [
       "Teknologia- ja peliyritykset",
       "Finanssi- ja julkishallinnon organisaatiot",
       "Tutkimuslaitokset",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietoala ry",
@@ -4050,6 +4340,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tekoäly", "machine learning", "data", "automaatio", "analytiikka"],
     study_length_estimate_months: 60
   },
+
+
   {
     id: "tietojarjestelma-arkkitehti",
     category: "visionaari",
@@ -4114,7 +4406,11 @@ export const careersData: CareerFI[] = [
       "Suuret yritykset ja julkiset organisaatiot",
       "Pilvi- ja integraatiokonsultit",
       "Finanssi- ja terveyssektorin toimijat",
-      "Ohjelmistoyritykset"
+      "Ohjelmistoyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tietoala ry",
@@ -4125,6 +4421,8 @@ export const careersData: CareerFI[] = [
     keywords: ["arkkitehtuuri", "pilvi", "integraatio", "tietoturva", "strategia"],
     study_length_estimate_months: 66
   },
+
+
   {
     id: "verkkosuunnittelija",
     category: "luova",
@@ -4139,7 +4437,7 @@ export const careersData: CareerFI[] = [
       "Saavutettavuuden ja responsiivisuuden varmistaminen"
     ],
     impact: [
-      "Parantaa palveluiden käytettävyyttä ja konversiota",
+      "Parantaa Suomessa palveluiden käytettävyyttä ja konversiota",
       "Vahvistaa brändi-ilmettä digitaalisissa kanavissa",
       "Tekee palveluista saavutettavia eri käyttäjäryhmille"
     ],
@@ -4189,7 +4487,11 @@ export const careersData: CareerFI[] = [
       "Design- ja digitoimistot",
       "Ohjelmistoyritykset",
       "Media- ja viestintäorganisaatiot",
-      "Start-upit ja julkinen sektori"
+      "Start-upit ja julkinen sektori",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Grafinet / Pro",
@@ -4200,6 +4502,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ux", "ui", "design", "saavutettavuus", "prototypointi"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "fyysikko",
     category: "visionaari",
@@ -4214,9 +4518,9 @@ export const careersData: CareerFI[] = [
       "Yhteistyö insinöörien, kemistien ja datatieteilijöiden kanssa"
     ],
     impact: [
-      "Laajentaa ymmärrystä luonnonilmiöistä",
+      "Laajentaa ymmärrystä luo Suomessannonilmiöistä",
       "Synnyttää uusia teknologioita ja energiaratkaisuja",
-      "Tukee lääketieteen, ilmastotieteen ja teollisuuden innovaatioita"
+      "Tukee Suomessa lääketieteen, ilmastotieteen ja teollisuuden innovaatioita"
     ],
     education_paths: [
       "Yliopisto: Fysiikan kand + maisteri",
@@ -4264,7 +4568,11 @@ export const careersData: CareerFI[] = [
       "Tutkimuslaitokset ja yliopistot",
       "Energia- ja teollisuusyritykset",
       "Ilmatieteen ja avaruustutkimuksen organisaatiot",
-      "Lääketeollisuus ja sairaalafyysikot"
+      "Lääketeollisuus ja sairaalafyysikot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Professoriliitto / Yksityisen tutkimussektorin TES",
@@ -4275,6 +4583,8 @@ export const careersData: CareerFI[] = [
     keywords: ["fysiikka", "tutkimus", "mallinnus", "energia", "kvantti"],
     study_length_estimate_months: 60
   },
+
+
   {
     id: "matemaatikko",
     category: "visionaari",
@@ -4289,9 +4599,9 @@ export const careersData: CareerFI[] = [
       "Monialaisten projektien yhteistyö"
     ],
     impact: [
-      "Auttaa yrityksiä tekemään dataohjattuja päätöksiä",
+      "Auttaa Suomessa yrityksiä tekemään dataohjattuja päätöksiä",
       "Mahdollistaa riskienhallinnan ja hinnoittelun",
-      "Tukee teknologisten ja tieteellisten innovaatioiden syntyä"
+      "Tukee Suomessa teknologisten ja tieteellisten innovaatioiden syntyä"
     ],
     education_paths: [
       "Yliopisto: Matematiikan kand + maisteri",
@@ -4339,7 +4649,11 @@ export const careersData: CareerFI[] = [
       "Vakuutus- ja pankkisektori",
       "Teknologia- ja peliyritykset",
       "Tutkimuslaitokset ja yliopistot",
-      "Julkinen sektori ja Tilastokeskus"
+      "Julkinen sektori ja Tilastokeskus",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Suomen Ekonomit / Julkisen alan TES",
@@ -4350,6 +4664,8 @@ export const careersData: CareerFI[] = [
     keywords: ["matematiikka", "tilastot", "mallinnus", "optimointi", "data"],
     study_length_estimate_months: 60
   },
+
+
   {
     id: "biologi",
     category: "ympariston-puolustaja",
@@ -4364,7 +4680,7 @@ export const careersData: CareerFI[] = [
       "Ympäristönsuojelun ja bioteknologian hankkeet"
     ],
     impact: [
-      "Auttaa suojelemaan luontoa ja luonnonvaroja",
+      "Auttaa Suomessa suojelemaan luontoa ja luonnonvaroja",
       "Kehittää uusia bioteknologisia ratkaisuja",
       "Tarjoaa tietoa ilmastonmuutoksen vaikutuksista"
     ],
@@ -4414,7 +4730,11 @@ export const careersData: CareerFI[] = [
       "Luonnonvara- ja ympäristöviranomaiset",
       "Biotekniikka- ja lääkeyritykset",
       "Tutkimuslaitokset",
-      "Kunnat ja järjestöt"
+      "Kunnat ja järjestöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Luonnontieteilijät ry",
@@ -4425,6 +4745,8 @@ export const careersData: CareerFI[] = [
     keywords: ["biologia", "ympäristö", "ekologia", "laboratorio", "biodiversiteetti"],
     study_length_estimate_months: 60
   },
+
+
   {
     id: "elintarviketutkija",
     category: "innovoija",
@@ -4439,9 +4761,9 @@ export const careersData: CareerFI[] = [
       "Raportointi viranomaisille ja yhteistyö tuotekehitystiimien kanssa"
     ],
     impact: [
-      "Parantaa elintarvikkeiden turvallisuutta ja laatua",
+      "Parantaa Suomessa elintarvikkeiden turvallisuutta ja laatua",
       "Kehittää terveellisiä ja kestäviä tuotteita",
-      "Tukee ruokainnovaatioita ja viennin kasvua"
+      "Tukee Suomessa ruokainnovaatioita ja viennin kasvua"
     ],
     education_paths: [
       "Yliopisto: Elintarviketiede (kand + maisteri)",
@@ -4489,7 +4811,11 @@ export const careersData: CareerFI[] = [
       "Elintarviketeollisuuden yritykset",
       "Tutkimuslaitokset ja yliopistot",
       "Hyvinvointialueiden ravitsemuspalvelut",
-      "Startupit ja innovaatiohankkeet"
+      "Startupit ja innovaatiohankkeet",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Luonnontieteilijät ry / Elintarvikealan TES",
@@ -4500,6 +4826,8 @@ export const careersData: CareerFI[] = [
     keywords: ["elintarvikkeet", "ravitsemus", "tuotekehitys", "turvallisuus", "innovaatio"],
     study_length_estimate_months: 60
   },
+
+
   {
     id: "asianajaja",
     category: "jarjestaja",
@@ -4564,7 +4892,11 @@ export const careersData: CareerFI[] = [
       "Asianajotoimistot",
       "Yritysten lakiosastot",
       "Kansainväliset organisaatiot",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Asianajajaliitto",
@@ -4575,6 +4907,8 @@ export const careersData: CareerFI[] = [
     keywords: ["juridiikka", "oikeus", "sopimukset", "riidanratkaisu", "asiakastyö"],
     study_length_estimate_months: 72
   },
+
+
   {
     id: "oikeusneuvos",
     category: "johtaja",
@@ -4591,7 +4925,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Ohjaa koko oikeusjärjestelmän linjaa",
       "Turvaa oikeusturvan viimeisenä muutoksenhakutuomioistuimena",
-      "Vaikuttaa yhteiskunnan oikeudenmukaisuuteen"
+      "Vaikuttaa Suomessa yhteiskunnan oikeudenmukaisuuteen"
     ],
     education_paths: [
       "OTM + pitkä kokemus (tuomioistuin, asianajaja, syyttäjä)",
@@ -4635,7 +4969,11 @@ export const careersData: CareerFI[] = [
     typical_employers: [
       "Korkein oikeus",
       "Korkein hallinto-oikeus (vast.)",
-      "Kansainväliset tuomioistuimet"
+      "Kansainväliset tuomioistuimet",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tuomariliitto",
@@ -4646,6 +4984,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tuomari", "ennakkopäätös", "oikeusjärjestelmä", "lainsäädäntö", "johtaminen"],
     study_length_estimate_months: 180
   },
+
+
   {
     id: "notaari",
     category: "jarjestaja",
@@ -4661,7 +5001,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa tuomioistuinkäsittelyn sujuvuuden",
-      "Parantaa päätösten laatua huolellisella taustatyöllä",
+      "Parantaa Suomessa päätösten laatua huolellisella taustatyöllä",
       "Tarjoaa kansalaisille oikeusturvaa"
     ],
     education_paths: [
@@ -4710,7 +5050,11 @@ export const careersData: CareerFI[] = [
       "Tuomioistuimet",
       "Oikeusministeriö ja aluehallinto",
       "Syyttäjälaitos",
-      "Kunnat ja valtion virastot"
+      "Kunnat ja valtion virastot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Julkisalan koulutettujen neuvottelujärjestö (JUKO)",
@@ -4721,6 +5065,8 @@ export const careersData: CareerFI[] = [
     keywords: ["oikeus", "tuomioistuin", "valmistelu", "asiakirjat", "julkishallinto"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "kustannustoimittaja",
     category: "jarjestaja",
@@ -4736,8 +5082,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaiden teosten julkaisemisen",
-      "Vaikuttaa kulttuuriin ja yhteiskunnalliseen keskusteluun",
-      "Auttaa kirjoittajia kehittämään teoksiaan"
+      "Vaikuttaa Suomessa kulttuuriin ja yhteiskunnalliseen keskusteluun",
+      "Auttaa Suomessa kirjoittajia kehittämään teoksiaan"
     ],
     education_paths: [
       "AMK/Yliopisto: Viestintä, kirjallisuus, suomen kieli",
@@ -4785,7 +5131,11 @@ export const careersData: CareerFI[] = [
       "Kustantamot",
       "Media- ja oppikirjayhtiöt",
       "Hallintojulkaisut",
-      "Järjestöjen viestintä"
+      "Järjestöjen viestintä",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro / Viestintäalan TES",
@@ -4796,6 +5146,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kustannustoiminta", "kirjallisuus", "editointi", "projektinhallinta", "julkaisu"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "luokanopettaja",
     category: "auttaja",
@@ -4810,8 +5162,8 @@ export const careersData: CareerFI[] = [
       "Koulun toimintaan osallistuminen"
     ],
     impact: [
-      "Auttaa lapsia oppimaan ja kasvamaan",
-      "Vaikuttaa lasten tulevaisuuteen",
+      "Auttaa Suomessa lapsia oppimaan ja kasvamaan",
+      "Vaikuttaa Suomessa lasten tulevaisuuteen",
       "Rakentaa yhteiskunnan perustaa"
     ],
     education_paths: [
@@ -4874,6 +5226,8 @@ export const careersData: CareerFI[] = [
     keywords: ["opetus", "koulu", "lapset", "pedagogiikka", "kasvatus"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "sosiaalityöntekijä",
     category: "auttaja",
@@ -4888,8 +5242,8 @@ export const careersData: CareerFI[] = [
       "Dokumentaation ylläpito"
     ],
     impact: [
-      "Auttaa perheitä ja yksilöitä vaikeina aikoina",
-      "Parantaa lasten ja nuorten hyvinvointia",
+      "Auttaa Suomessa perheitä ja yksilöitä vaikeina aikoina",
+      "Parantaa Suomessa lasten ja nuorten hyvinvointia",
       "Vahvistaa yhteiskunnan koheesiota"
     ],
     education_paths: [
@@ -4939,7 +5293,11 @@ export const careersData: CareerFI[] = [
       "Kunnat",
       "Sosiaalipalvelut",
       "Lastensuojelu",
-      "Yksityiset palvelut"
+      "Yksityiset palvelut",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "JHL",
@@ -4952,6 +5310,8 @@ export const careersData: CareerFI[] = [
     keywords: ["sosiaalityö", "perheet", "lapset", "hyvinvointi", "tuki"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "psykologi",
     category: "auttaja",
@@ -4966,8 +5326,8 @@ export const careersData: CareerFI[] = [
       "Muiden ammattilaisten konsultointi"
     ],
     impact: [
-      "Parantaa ihmisten mielenterveyttä",
-      "Auttaa käsittelemään traumaattisia kokemuksia",
+      "Parantaa Suomessa ihmisten mielenterveyttä",
+      "Auttaa Suomessa käsittelemään traumaattisia kokemuksia",
       "Vahvistaa henkistä hyvinvointia"
     ],
     education_paths: [
@@ -5030,6 +5390,8 @@ export const careersData: CareerFI[] = [
     keywords: ["psykologia", "mielenterveys", "terapia", "hyvinvointi", "tutkimus"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "fysioterapeutti",
     category: "auttaja",
@@ -5044,8 +5406,8 @@ export const careersData: CareerFI[] = [
       "Potilaiden ja perheiden neuvominen"
     ],
     impact: [
-      "Auttaa potilaita palautumaan liikuntakykyyn",
-      "Parantaa elämänlaatua ja itsenäisyyttä",
+      "Auttaa Suomessa potilaita palautumaan liikuntakykyyn",
+      "Parantaa Suomessa elämänlaatua ja itsenäisyyttä",
       "Vähentää kipua ja toimintakyvyn heikkenemistä"
     ],
     education_paths: [
@@ -5095,7 +5457,11 @@ export const careersData: CareerFI[] = [
       "Sairaalat",
       "Terveyskeskukset",
       "Yksityiset klinikat",
-      "Urheiluseurat"
+      "Urheiluseurat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tehy",
@@ -5108,6 +5474,8 @@ export const careersData: CareerFI[] = [
     keywords: ["fysioterapia", "kuntoutus", "liikunta", "terapia", "palautuminen"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "lastentarhanopettaja",
     category: "auttaja",
@@ -5122,8 +5490,8 @@ export const careersData: CareerFI[] = [
       "Päiväkodin toimintaan osallistuminen"
     ],
     impact: [
-      "Auttaa lapsia oppimaan ja kasvamaan",
-      "Vaikuttaa lasten tulevaisuuteen",
+      "Auttaa Suomessa lapsia oppimaan ja kasvamaan",
+      "Vaikuttaa Suomessa lasten tulevaisuuteen",
       "Rakentaa yhteiskunnan perustaa"
     ],
     education_paths: [
@@ -5186,6 +5554,8 @@ export const careersData: CareerFI[] = [
     keywords: ["varhaiskasvatus", "lapset", "päiväkoti", "kasvatus", "oppiminen"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "kuntoutusohjaaja",
     category: "auttaja",
@@ -5200,8 +5570,8 @@ export const careersData: CareerFI[] = [
       "Muiden ammattilaisten kanssa yhteistyö"
     ],
     impact: [
-      "Auttaa ihmisiä palautumaan työkykyyn",
-      "Parantaa elämänlaatua ja itsenäisyyttä",
+      "Auttaa Suomessa ihmisiä palautumaan työkykyyn",
+      "Parantaa Suomessa elämänlaatua ja itsenäisyyttä",
       "Vähentää työkyvyttömyyttä"
     ],
     education_paths: [
@@ -5251,7 +5621,11 @@ export const careersData: CareerFI[] = [
       "Kuntoutuskeskukset",
       "Työkyvyn palvelut",
       "Sairaalat",
-      "Yksityiset palvelut"
+      "Yksityiset palvelut",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "JHL",
@@ -5264,6 +5638,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kuntoutus", "työkyky", "palautuminen", "ohjaus", "tuki"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "perhetyöntekijä",
     category: "auttaja",
@@ -5278,8 +5654,8 @@ export const careersData: CareerFI[] = [
       "Muiden palvelujen kanssa yhteistyö"
     ],
     impact: [
-      "Auttaa perheitä vaikeina aikoina",
-      "Parantaa lasten hyvinvointia",
+      "Auttaa Suomessa perheitä vaikeina aikoina",
+      "Parantaa Suomessa lasten hyvinvointia",
       "Vahvistaa perheiden toimintakykyä"
     ],
     education_paths: [
@@ -5329,7 +5705,11 @@ export const careersData: CareerFI[] = [
       "Kunnat",
       "Lastensuojelu",
       "Sosiaalipalvelut",
-      "Yksityiset palvelut"
+      "Yksityiset palvelut",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
     union_or_CBA: "JHL",
@@ -5342,6 +5722,8 @@ export const careersData: CareerFI[] = [
     keywords: ["perhetyö", "lapset", "perheet", "tuki", "hyvinvointi"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "vanhustenhoitaja",
     category: "auttaja",
@@ -5356,9 +5738,9 @@ export const careersData: CareerFI[] = [
       "Muiden ammattilaisten kanssa yhteistyö"
     ],
     impact: [
-      "Auttaa vanhuksia elämään itsenäisesti",
-      "Parantaa vanhusten elämänlaatua",
-      "Tukee perheitä hoitotehtävissä"
+      "Auttaa Suomessa vanhuksia elämään itsenäisesti",
+      "Parantaa Suomessa vanhusten elämänlaatua",
+      "Tukee Suomessa perheitä hoitotehtävissä"
     ],
     education_paths: [
       "Toinen aste: Vanhustenhoitaja",
@@ -5407,7 +5789,11 @@ export const careersData: CareerFI[] = [
       "Vanhainkodit",
       "Kotihoitopalvelut",
       "Yksityiset hoitopalvelut",
-      "Kunnat"
+      "Kunnat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
@@ -5420,6 +5806,8 @@ export const careersData: CareerFI[] = [
     keywords: ["vanhustenhoito", "vanhukset", "hoito", "itsenäisyys", "elämänlaatu"],
     study_length_estimate_months: 24
   },
+
+
 {
     id: "kriisityöntekijä",
     category: "auttaja",
@@ -5434,8 +5822,8 @@ export const careersData: CareerFI[] = [
       "Muiden ammattilaisten kanssa yhteistyö"
     ],
     impact: [
-      "Auttaa ihmisiä toipumaan kriisitilanteista",
-      "Parantaa mielenterveyttä ja hyvinvointia",
+      "Auttaa Suomessa ihmisiä toipumaan kriisitilanteista",
+      "Parantaa Suomessa mielenterveyttä ja hyvinvointia",
       "Vähentää pitkäaikaisia ongelmia"
     ],
     education_paths: [
@@ -5485,7 +5873,11 @@ export const careersData: CareerFI[] = [
       "Kriisikeskukset",
       "Mielenterveyspalvelut",
       "Sairaalat",
-      "Yksityiset klinikat"
+      "Yksityiset klinikat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
@@ -5498,6 +5890,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kriisityö", "trauma", "mielenterveys", "toipuminen", "tuki"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "ympäristöinsinööri",
     category: "ympariston-puolustaja",
@@ -5512,9 +5906,9 @@ export const careersData: CareerFI[] = [
       "Kestävän kehityksen edistäminen"
     ],
     impact: [
-      "Suojaa luontoa ja ympäristöä",
+      "Suojaa luo Suomessantoa ja ympäristöä",
       "Vähentää saasteita ja hiilijalanjälkeä",
-      "Edistää kestävää kehitystä"
+      "Edistää Suomessa kestävää kehitystä"
     ],
     education_paths: [
       "AMK: Ympäristötekniikka",
@@ -5563,7 +5957,11 @@ export const careersData: CareerFI[] = [
       "Konsultointiyritykset",
       "Teollisuusyritykset",
       "Julkinen sektori",
-      "Ympäristöorganisaatiot"
+      "Ympäristöorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -5576,6 +5974,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristö", "kestävä kehitys", "saasteet", "teknologia", "suojelu"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "ilmastotutkija",
     category: "ympariston-puolustaja",
@@ -5590,9 +5990,9 @@ export const careersData: CareerFI[] = [
       "Politiikkasuositusten antaminen"
     ],
     impact: [
-      "Auttaa ymmärtämään ilmastonmuutosta",
+      "Auttaa Suomessa ymmärtämään ilmastonmuutosta",
       "Kehittää ratkaisuja ilmastokriisiin",
-      "Vaikuttaa ilmastopolitiikkaan"
+      "Vaikuttaa Suomessa ilmastopolitiikkaan"
     ],
     education_paths: [
       "Yliopisto: Meteorologian maisteri",
@@ -5641,7 +6041,11 @@ export const careersData: CareerFI[] = [
       "Tutkimuslaitokset",
       "Yliopistot",
       "Ilmatieteen laitos",
-      "Kansainväliset organisaatiot"
+      "Kansainväliset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tutkijaliitto",
@@ -5654,6 +6058,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ilmasto", "tutkimus", "meteorologia", "ilmastonmuutos", "tiede"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "luonnonsuojelija",
     category: "ympariston-puolustaja",
@@ -5668,9 +6074,9 @@ export const careersData: CareerFI[] = [
       "Luonnonsuojeluhankkeiden koordinointi"
     ],
     impact: [
-      "Suojaa luontoa ja eläimiä",
-      "Säilyttää luonnon monimuotoisuutta",
-      "Edistää kestävää luonnonkäyttöä"
+      "Suojaa luo Suomessantoa ja eläimiä",
+      "Säilyttää luo Suomessannon monimuotoisuutta",
+      "Edistää Suomessa kestävää luonnonkäyttöä"
     ],
     education_paths: [
       "AMK: Ympäristötekniikka, Biologia",
@@ -5719,7 +6125,11 @@ export const careersData: CareerFI[] = [
       "Metsähallitus",
       "Kunnat",
       "Luonnonsuojelujärjestöt",
-      "Kansallispuistot"
+      "Kansallispuistot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
     union_or_CBA: "JHL",
@@ -5732,6 +6142,8 @@ export const careersData: CareerFI[] = [
     keywords: ["luonnonsuojelu", "luonto", "eläimet", "kasvit", "monimuotoisuus"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "uusiutuva-energia-insinööri",
     category: "ympariston-puolustaja",
@@ -5746,9 +6158,9 @@ export const careersData: CareerFI[] = [
       "Hiilijalanjäljen vähentäminen"
     ],
     impact: [
-      "Auttaa siirtymään kestävään energiaan",
+      "Auttaa Suomessa siirtymään kestävään energiaan",
       "Vähentää hiilijalanjälkeä",
-      "Parantaa energiatehokkuutta"
+      "Parantaa Suomessa energiatehokkuutta"
     ],
     education_paths: [
       "AMK: Energiatekniikka",
@@ -5797,7 +6209,11 @@ export const careersData: CareerFI[] = [
       "Energiayhtiöt",
       "Konsultointiyritykset",
       "Teollisuusyritykset",
-      "Julkinen sektori"
+      "Julkinen sektori",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -5810,6 +6226,8 @@ export const careersData: CareerFI[] = [
     keywords: ["uusiutuva energia", "aurinkoenergia", "tuulivoima", "energiatehokkuus", "kestävä kehitys"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "ympäristökasvattaja",
     category: "ympariston-puolustaja",
@@ -5826,7 +6244,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Kasvattaa ympäristötietoisuutta",
       "Opettaa kestävää elämäntapaa",
-      "Vaikuttaa tulevaisuuden sukupolviin"
+      "Vaikuttaa Suomessa tulevaisuuden sukupolviin"
     ],
     education_paths: [
       "AMK: Ympäristötekniikka, Kasvatustiede",
@@ -5888,6 +6306,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristökasvatus", "kestävä kehitys", "opetus", "tietoisuus", "kasvatus"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "vesi-insinööri",
     category: "ympariston-puolustaja",
@@ -5904,7 +6324,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Turvaa veden saannin ja laadun",
       "Suojaa vesistöjä saasteilta",
-      "Edistää kestävää vesitaloutta"
+      "Edistää Suomessa kestävää vesitaloutta"
     ],
     education_paths: [
       "AMK: Ympäristötekniikka, Kemiantekniikka",
@@ -5953,7 +6373,11 @@ export const careersData: CareerFI[] = [
       "Vesiyhtiöt",
       "Konsultointiyritykset",
       "Teollisuusyritykset",
-      "Julkinen sektori"
+      "Julkinen sektori",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -5966,6 +6390,8 @@ export const careersData: CareerFI[] = [
     keywords: ["vesiteknologia", "vesihuolto", "jätevesi", "vesitalous", "ympäristö"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "hiilijalanjälki-asiantuntija",
     category: "ympariston-puolustaja",
@@ -5981,8 +6407,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Vähentää hiilijalanjälkeä",
-      "Edistää ilmastoneutraaliutta",
-      "Auttaa siirtymään kestävään kehitykseen"
+      "Edistää Suomessa ilmastoneutraaliutta",
+      "Auttaa Suomessa siirtymään kestävään kehitykseen"
     ],
     education_paths: [
       "AMK: Ympäristötekniikka, Kestävän kehityksen",
@@ -6031,7 +6457,11 @@ export const careersData: CareerFI[] = [
       "Konsultointiyritykset",
       "Teollisuusyritykset",
       "Julkinen sektori",
-      "Ympäristöorganisaatiot"
+      "Ympäristöorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -6044,6 +6474,8 @@ export const careersData: CareerFI[] = [
     keywords: ["hiilijalanjälki", "ilmastoneutraali", "kestävä kehitys", "ilmasto", "hiilidioksidi"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "ympäristöjuristi",
     category: "ympariston-puolustaja",
@@ -6109,7 +6541,11 @@ export const careersData: CareerFI[] = [
       "Asianajotoimistot",
       "Ympäristöorganisaatiot",
       "Julkinen sektori",
-      "Teollisuusyritykset"
+      "Teollisuusyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Asianajajaliitto",
@@ -6122,6 +6558,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristöoikeus", "lainsäädäntö", "oikeustiede", "ympäristörikos", "kestävä kehitys"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "biologinen-monimuotoisuus-asiantuntija",
     category: "ympariston-puolustaja",
@@ -6138,7 +6576,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Suojaa eläinten ja kasvien monimuotoisuutta",
       "Säilyttää uhanalaisia lajeja",
-      "Edistää kestävää luonnonkäyttöä"
+      "Edistää Suomessa kestävää luonnonkäyttöä"
     ],
     education_paths: [
       "AMK: Biologia, Ympäristötekniikka",
@@ -6187,7 +6625,11 @@ export const careersData: CareerFI[] = [
       "Tutkimuslaitokset",
       "Metsähallitus",
       "Luonnonsuojelujärjestöt",
-      "Kansallispuistot"
+      "Kansallispuistot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
     union_or_CBA: "Tutkijaliitto",
@@ -6200,6 +6642,8 @@ export const careersData: CareerFI[] = [
     keywords: ["biologinen monimuotoisuus", "luonnonsuojelu", "eläimet", "kasvit", "uhanalaiset lajit"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "kestävän-kehityksen-koordinaattori",
     category: "ympariston-puolustaja",
@@ -6214,9 +6658,9 @@ export const careersData: CareerFI[] = [
       "Sidosryhmien kanssa yhteistyö"
     ],
     impact: [
-      "Edistää kestävää kehitystä",
+      "Edistää Suomessa kestävää kehitystä",
       "Vähentää ympäristövaikutuksia",
-      "Parantaa sosiaalista vastuuta"
+      "Parantaa Suomessa sosiaalista vastuuta"
     ],
     education_paths: [
       "AMK: Ympäristötekniikka, Kestävän kehityksen",
@@ -6265,7 +6709,11 @@ export const careersData: CareerFI[] = [
       "Teollisuusyritykset",
       "Konsultointiyritykset",
       "Julkinen sektori",
-      "Ympäristöorganisaatiot"
+      "Ympäristöorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -6278,6 +6726,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kestävä kehitys", "ympäristöystävällisyys", "sosiaalinen vastuu", "strategia", "raportointi"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "futuristi",
     category: "visionaari",
@@ -6292,9 +6742,9 @@ export const careersData: CareerFI[] = [
       "Tulevaisuuden visioiden luominen"
     ],
     impact: [
-      "Auttaa organisaatioita valmistautumaan tulevaisuuteen",
+      "Auttaa Suomessa organisaatioita valmistautumaan tulevaisuuteen",
       "Kehittää innovatiivisia ratkaisuja",
-      "Vaikuttaa strategiseen päätöksentekoon"
+      "Vaikuttaa Suomessa strategiseen päätöksentekoon"
     ],
     education_paths: [
       "Yliopisto: Futurologia, Strategia",
@@ -6343,7 +6793,11 @@ export const careersData: CareerFI[] = [
       "Konsultointiyritykset",
       "Teollisuusyritykset",
       "Julkinen sektori",
-      "Tutkimuslaitokset"
+      "Tutkimuslaitokset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -6356,6 +6810,8 @@ export const careersData: CareerFI[] = [
     keywords: ["futurologia", "trendit", "strategia", "innovaatio", "tulevaisuus"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "strategia-konsultti",
     category: "visionaari",
@@ -6370,9 +6826,9 @@ export const careersData: CareerFI[] = [
       "Strategioiden toteuttamisen tuki"
     ],
     impact: [
-      "Auttaa organisaatioita kehittymään",
+      "Auttaa Suomessa organisaatioita kehittymään",
       "Kehittää innovatiivisia strategioita",
-      "Vaikuttaa liiketoimintakehitykseen"
+      "Vaikuttaa Suomessa liiketoimintakehitykseen"
     ],
     education_paths: [
       "Yliopisto: Liiketaloustiede, Strategia",
@@ -6421,7 +6877,11 @@ export const careersData: CareerFI[] = [
       "Konsultointiyritykset",
       "Teollisuusyritykset",
       "Julkinen sektori",
-      "Pankit ja vakuutusyhtiöt"
+      "Pankit ja vakuutusyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -6434,6 +6894,8 @@ export const careersData: CareerFI[] = [
     keywords: ["strategia", "konsultointi", "liiketoimintakehitys", "muutos", "analyysi"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "innovaatiojohtaja",
     category: "visionaari",
@@ -6449,8 +6911,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Kehittää innovatiivisia ratkaisuja",
-      "Auttaa organisaatioita kehittymään",
-      "Vaikuttaa teknologian kehitykseen"
+      "Auttaa Suomessa organisaatioita kehittymään",
+      "Vaikuttaa Suomessa teknologian kehitykseen"
     ],
     education_paths: [
       "Yliopisto: Innovaatio, Teknologia",
@@ -6499,7 +6961,11 @@ export const careersData: CareerFI[] = [
       "Teollisuusyritykset",
       "Teknologiayritykset",
       "Konsultointiyritykset",
-      "Tutkimuslaitokset"
+      "Tutkimuslaitokset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -6512,6 +6978,8 @@ export const careersData: CareerFI[] = [
     keywords: ["innovaatio", "tutkimus", "kehitys", "teknologia", "strategia"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "tulevaisuuden-suunnittelija",
     category: "visionaari",
@@ -6526,9 +6994,9 @@ export const careersData: CareerFI[] = [
       "Tulevaisuuden visioiden kehittäminen"
     ],
     impact: [
-      "Auttaa organisaatioita valmistautumaan tulevaisuuteen",
+      "Auttaa Suomessa organisaatioita valmistautumaan tulevaisuuteen",
       "Kehittää strategisia suunnitelmia",
-      "Vaikuttaa pitkän aikavälin päätöksentekoon"
+      "Vaikuttaa Suomessa pitkän aikavälin päätöksentekoon"
     ],
     education_paths: [
       "Yliopisto: Futurologia, Strategia",
@@ -6577,7 +7045,11 @@ export const careersData: CareerFI[] = [
       "Julkinen sektori",
       "Konsultointiyritykset",
       "Teollisuusyritykset",
-      "Tutkimuslaitokset"
+      "Tutkimuslaitokset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -6590,6 +7062,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "suunnittelu", "strategia", "skenaariot", "trendit"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "digitaalinen-muutosjohtaja",
     category: "visionaari",
@@ -6604,9 +7078,9 @@ export const careersData: CareerFI[] = [
       "Sidosryhmien kanssa yhteistyö"
     ],
     impact: [
-      "Auttaa organisaatioita siirtymään digitaaliseen",
+      "Auttaa Suomessa organisaatioita siirtymään digitaaliseen",
       "Kehittää innovatiivisia teknologiaratkaisuja",
-      "Vaikuttaa liiketoimintakehitykseen"
+      "Vaikuttaa Suomessa liiketoimintakehitykseen"
     ],
     education_paths: [
       "Yliopisto: Tietojenkäsittely, Liiketalous",
@@ -6655,7 +7129,11 @@ export const careersData: CareerFI[] = [
       "Teknologiayritykset",
       "Teollisuusyritykset",
       "Konsultointiyritykset",
-      "Julkinen sektori"
+      "Julkinen sektori",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "IT-alan TES",
@@ -6668,6 +7146,8 @@ export const careersData: CareerFI[] = [
     keywords: ["digitaalinen muutos", "teknologia", "liiketoiminta", "strategia", "innovaatio"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "tulevaisuuden-tutkija",
     category: "visionaari",
@@ -6682,9 +7162,9 @@ export const careersData: CareerFI[] = [
       "Tulevaisuuden visioiden luominen"
     ],
     impact: [
-      "Auttaa ymmärtämään tulevaisuutta",
+      "Auttaa Suomessa ymmärtämään tulevaisuutta",
       "Kehittää tulevaisuuden skenaarioita",
-      "Vaikuttaa strategiseen päätöksentekoon"
+      "Vaikuttaa Suomessa strategiseen päätöksentekoon"
     ],
     education_paths: [
       "Yliopisto: Futurologia, Sosiologia",
@@ -6733,7 +7213,11 @@ export const careersData: CareerFI[] = [
       "Tutkimuslaitokset",
       "Yliopistot",
       "Konsultointiyritykset",
-      "Julkinen sektori"
+      "Julkinen sektori",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tutkijaliitto",
@@ -6746,6 +7230,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "tutkimus", "futurologia", "trendit", "skenaariot"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "strateginen-suunnittelija",
     category: "visionaari",
@@ -6760,9 +7246,9 @@ export const careersData: CareerFI[] = [
       "Strategioiden toteuttamisen tuki"
     ],
     impact: [
-      "Auttaa organisaatioita kehittymään",
+      "Auttaa Suomessa organisaatioita kehittymään",
       "Kehittää strategisia suunnitelmia",
-      "Vaikuttaa pitkän aikavälin päätöksentekoon"
+      "Vaikuttaa Suomessa pitkän aikavälin päätöksentekoon"
     ],
     education_paths: [
       "Yliopisto: Strategia, Liiketalous",
@@ -6811,7 +7297,11 @@ export const careersData: CareerFI[] = [
       "Julkinen sektori",
       "Konsultointiyritykset",
       "Teollisuusyritykset",
-      "Pankit ja vakuutusyhtiöt"
+      "Pankit ja vakuutusyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -6824,6 +7314,8 @@ export const careersData: CareerFI[] = [
     keywords: ["strategia", "suunnittelu", "analyysi", "tulevaisuus", "muutos"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "tulevaisuuden-visio-johtaja",
     category: "visionaari",
@@ -6838,9 +7330,9 @@ export const careersData: CareerFI[] = [
       "Visioiden toteuttamisen tuki"
     ],
     impact: [
-      "Auttaa organisaatioita kehittymään",
+      "Auttaa Suomessa organisaatioita kehittymään",
       "Kehittää tulevaisuuden visioita",
-      "Vaikuttaa strategiseen johtamiseen"
+      "Vaikuttaa Suomessa strategiseen johtamiseen"
     ],
     education_paths: [
       "Yliopisto: Johtaminen, Strategia",
@@ -6889,7 +7381,11 @@ export const careersData: CareerFI[] = [
       "Julkinen sektori",
       "Konsultointiyritykset",
       "Teollisuusyritykset",
-      "Pankit ja vakuutusyhtiöt"
+      "Pankit ja vakuutusyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -6902,6 +7398,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "visio", "johtaminen", "strategia", "muutos"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "tulevaisuuden-teknologia-asiantuntija",
     category: "visionaari",
@@ -6916,9 +7414,9 @@ export const careersData: CareerFI[] = [
       "Tulevaisuuden teknologiavisioiden luominen"
     ],
     impact: [
-      "Auttaa ymmärtämään teknologian kehitystä",
+      "Auttaa Suomessa ymmärtämään teknologian kehitystä",
       "Kehittää tulevaisuuden teknologiaskenaarioita",
-      "Vaikuttaa teknologian kehitykseen"
+      "Vaikuttaa Suomessa teknologian kehitykseen"
     ],
     education_paths: [
       "Yliopisto: Tietojenkäsittely, Teknologia",
@@ -6967,7 +7465,11 @@ export const careersData: CareerFI[] = [
       "Teknologiayritykset",
       "Tutkimuslaitokset",
       "Konsultointiyritykset",
-      "Teollisuusyritykset"
+      "Teollisuusyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "IT-alan TES",
@@ -6980,6 +7482,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "teknologia", "innovaatio", "tutkimus", "skenaariot"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "tulevaisuuden-yhteiskunta-asiantuntija",
     category: "visionaari",
@@ -6994,9 +7498,9 @@ export const careersData: CareerFI[] = [
       "Tulevaisuuden yhteiskuntavisioiden luominen"
     ],
     impact: [
-      "Auttaa ymmärtämään yhteiskunnan kehitystä",
+      "Auttaa Suomessa ymmärtämään yhteiskunnan kehitystä",
       "Kehittää tulevaisuuden yhteiskuntaskenaarioita",
-      "Vaikuttaa yhteiskuntapolitiikkaan"
+      "Vaikuttaa Suomessa yhteiskuntapolitiikkaan"
     ],
     education_paths: [
       "Yliopisto: Sosiologia, Futurologia",
@@ -7045,7 +7549,11 @@ export const careersData: CareerFI[] = [
       "Tutkimuslaitokset",
       "Yliopistot",
       "Julkinen sektori",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tutkijaliitto",
@@ -7058,6 +7566,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "yhteiskunta", "sosiologia", "futurologia", "tutkimus"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "tapahtumakoordinaattori",
     category: "jarjestaja",
@@ -7072,8 +7582,8 @@ export const careersData: CareerFI[] = [
       "Tapahtumien seuranta ja raportointi"
     ],
     impact: [
-      "Auttaa organisaatioita järjestämään tärkeitä tapahtumia",
-      "Parantaa asiakaskokemusta",
+      "Auttaa Suomessa organisaatioita järjestämään tärkeitä tapahtumia",
+      "Parantaa Suomessa asiakaskokemusta",
       "Varmistaa tapahtumien onnistumisen"
     ],
     education_paths: [
@@ -7123,7 +7633,11 @@ export const careersData: CareerFI[] = [
       "Tapahtumayritykset",
       "Konsultointiyritykset",
       "Julkinen sektori",
-      "Yhdistykset"
+      "Yhdistykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "paljon" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -7136,6 +7650,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tapahtumien järjestäminen", "koordinointi", "suunnittelu", "budjetti", "asiakaspalvelu"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "toimistosihteeri",
     category: "jarjestaja",
@@ -7150,8 +7666,8 @@ export const careersData: CareerFI[] = [
       "Kommunikaation koordinointi"
     ],
     impact: [
-      "Auttaa toimistoa toimimaan tehokkaasti",
-      "Parantaa asiakaskokemusta",
+      "Auttaa Suomessa toimistoa toimimaan tehokkaasti",
+      "Parantaa Suomessa asiakaskokemusta",
       "Varmistaa sujuvan kommunikaation"
     ],
     education_paths: [
@@ -7201,7 +7717,11 @@ export const careersData: CareerFI[] = [
       "Toimistot",
       "Yritykset",
       "Julkinen sektori",
-      "Yhdistykset"
+      "Yhdistykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
@@ -7214,6 +7734,8 @@ export const careersData: CareerFI[] = [
     keywords: ["toimistosihteeri", "hallinto", "kommunikaatio", "organisointi", "asiakaspalvelu"],
     study_length_estimate_months: 24
   },
+
+
 {
     id: "logistiikkakoordinaattori",
     category: "jarjestaja",
@@ -7228,8 +7750,8 @@ export const careersData: CareerFI[] = [
       "Logistiikan seuranta ja raportointi"
     ],
     impact: [
-      "Auttaa organisaatioita toimittamaan tavaroita tehokkaasti",
-      "Parantaa logistiikan tehokkuutta",
+      "Auttaa Suomessa organisaatioita toimittamaan tavaroita tehokkaasti",
+      "Parantaa Suomessa logistiikan tehokkuutta",
       "Varmistaa tavaroiden saannin"
     ],
     education_paths: [
@@ -7279,7 +7801,11 @@ export const careersData: CareerFI[] = [
       "Logistiikkayritykset",
       "Teollisuusyritykset",
       "Kauppayritykset",
-      "Julkinen sektori"
+      "Julkinen sektori",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -7292,6 +7818,8 @@ export const careersData: CareerFI[] = [
     keywords: ["logistiikka", "toimitusketju", "koordinointi", "varastointi", "kuljetus"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "henkilöstöasiantuntija",
     category: "jarjestaja",
@@ -7306,8 +7834,8 @@ export const careersData: CareerFI[] = [
       "Henkilöstöraporttien laatiminen"
     ],
     impact: [
-      "Auttaa organisaatioita hallitsemaan henkilöstöä",
-      "Parantaa työntekijöiden hyvinvointia",
+      "Auttaa Suomessa organisaatioita hallitsemaan henkilöstöä",
+      "Parantaa Suomessa työntekijöiden hyvinvointia",
       "Varmistaa työsuhteiden kunnollisen hoidon"
     ],
     education_paths: [
@@ -7357,7 +7885,11 @@ export const careersData: CareerFI[] = [
       "Yritykset",
       "Julkinen sektori",
       "Konsultointiyritykset",
-      "Yhdistykset"
+      "Yhdistykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
@@ -7370,6 +7902,8 @@ export const careersData: CareerFI[] = [
     keywords: ["henkilöstöhallinto", "työsuhteet", "henkilöstö", "hallinto", "työntekijät"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "taloushallinnon-asiantuntija",
     category: "jarjestaja",
@@ -7384,8 +7918,8 @@ export const careersData: CareerFI[] = [
       "Talousanalyysin tekeminen"
     ],
     impact: [
-      "Auttaa organisaatioita hallitsemaan taloutta",
-      "Parantaa taloushallinnon tehokkuutta",
+      "Auttaa Suomessa organisaatioita hallitsemaan taloutta",
+      "Parantaa Suomessa taloushallinnon tehokkuutta",
       "Varmistaa talousraporttien laatimisen"
     ],
     education_paths: [
@@ -7435,7 +7969,11 @@ export const careersData: CareerFI[] = [
       "Yritykset",
       "Julkinen sektori",
       "Konsultointiyritykset",
-      "Pankit ja vakuutusyhtiöt"
+      "Pankit ja vakuutusyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
@@ -7448,6 +7986,8 @@ export const careersData: CareerFI[] = [
     keywords: ["taloushallinto", "talousraportointi", "budjetti", "analyysi", "hallinto"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "laadunhallinnan-koordinaattori",
     category: "jarjestaja",
@@ -7462,8 +8002,8 @@ export const careersData: CareerFI[] = [
       "Laadunhallinnon kehittäminen"
     ],
     impact: [
-      "Auttaa organisaatioita varmistamaan laadun",
-      "Parantaa laadunhallinnon tehokkuutta",
+      "Auttaa Suomessa organisaatioita varmistamaan laadun",
+      "Parantaa Suomessa laadunhallinnon tehokkuutta",
       "Varmistaa laatustandardien noudattamisen"
     ],
     education_paths: [
@@ -7513,7 +8053,11 @@ export const careersData: CareerFI[] = [
       "Teollisuusyritykset",
       "Yritykset",
       "Julkinen sektori",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
@@ -7526,6 +8070,8 @@ export const careersData: CareerFI[] = [
     keywords: ["laadunhallinto", "laatustandardit", "koordinointi", "analyysi", "hallinto"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "asiakaspalvelun-koordinaattori",
     category: "jarjestaja",
@@ -7540,8 +8086,8 @@ export const careersData: CareerFI[] = [
       "Asiakaspalvelun kehittäminen"
     ],
     impact: [
-      "Auttaa organisaatioita palvelemaan asiakkaita",
-      "Parantaa asiakaskokemusta",
+      "Auttaa Suomessa organisaatioita palvelemaan asiakkaita",
+      "Parantaa Suomessa asiakaskokemusta",
       "Varmistaa asiakaspalvelun laadun"
     ],
     education_paths: [
@@ -7591,7 +8137,11 @@ export const careersData: CareerFI[] = [
       "Yritykset",
       "Julkinen sektori",
       "Konsultointiyritykset",
-      "Yhdistykset"
+      "Yhdistykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
@@ -7604,6 +8154,8 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakaspalvelu", "kommunikaatio", "koordinointi", "asiakkaat", "palvelu"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "tietohallinnon-koordinaattori",
     category: "jarjestaja",
@@ -7618,8 +8170,8 @@ export const careersData: CareerFI[] = [
       "Tietohallinnon raporttien laatiminen"
     ],
     impact: [
-      "Auttaa organisaatioita hallitsemaan tietoja",
-      "Parantaa tietohallinnon tehokkuutta",
+      "Auttaa Suomessa organisaatioita hallitsemaan tietoja",
+      "Parantaa Suomessa tietohallinnon tehokkuutta",
       "Varmistaa tietojen kunnollisen hallinnan"
     ],
     education_paths: [
@@ -7669,7 +8221,11 @@ export const careersData: CareerFI[] = [
       "Yritykset",
       "Julkinen sektori",
       "Konsultointiyritykset",
-      "Yhdistykset"
+      "Yhdistykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
@@ -7682,6 +8238,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tietohallinto", "dokumenttienhallinta", "koordinointi", "tiedot", "hallinto"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "hallinnon-koordinaattori",
     category: "jarjestaja",
@@ -7696,8 +8254,8 @@ export const careersData: CareerFI[] = [
       "Hallinnon kehittäminen"
     ],
     impact: [
-      "Auttaa organisaatioita toimimaan tehokkaasti",
-      "Parantaa hallinnon tehokkuutta",
+      "Auttaa Suomessa organisaatioita toimimaan tehokkaasti",
+      "Parantaa Suomessa hallinnon tehokkuutta",
       "Varmistaa hallinnon sujuvan toiminnan"
     ],
     education_paths: [
@@ -7747,7 +8305,11 @@ export const careersData: CareerFI[] = [
       "Yritykset",
       "Julkinen sektori",
       "Konsultointiyritykset",
-      "Yhdistykset"
+      "Yhdistykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
@@ -7760,6 +8322,8 @@ export const careersData: CareerFI[] = [
     keywords: ["hallinto", "organisointi", "koordinointi", "hallinto", "organisaatio"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "lapsenhoitaja",
     category: "auttaja",
@@ -7774,9 +8338,9 @@ export const careersData: CareerFI[] = [
       "Turvallisen ympäristön luominen"
     ],
     impact: [
-      "Tukee lasten terveellistä kehitystä",
+      "Tukee Suomessa lasten terveellistä kehitystä",
       "Mahdollistaa vanhempien työskentelyn",
-      "Luovat hyvän perustan oppimiselle"
+      "Luo Suomessavat hyvän perustan oppimiselle"
     ],
     education_paths: [
       "AMK: Varhaiskasvatus",
@@ -7825,7 +8389,11 @@ export const careersData: CareerFI[] = [
       "Päiväkodit",
       "Perhepäivähoito",
       "Kunnat",
-      "Yksityiset päiväkodit"
+      "Yksityiset päiväkodit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
@@ -7838,6 +8406,8 @@ export const careersData: CareerFI[] = [
     keywords: ["lapsenhoito", "päiväkoti", "kasvatus", "varhaiskasvatus", "perhepäivähoito"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "apteekkari",
     category: "auttaja",
@@ -7853,8 +8423,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa lääkkeiden turvallisen käytön",
-      "Auttaa ihmisiä saamaan oikeat lääkkeet",
-      "Tukee terveydenhuoltoa"
+      "Auttaa Suomessa ihmisiä saamaan oikeat lääkkeet",
+      "Tukee Suomessa terveydenhuoltoa"
     ],
     education_paths: [
       "Yliopisto: Farmacia",
@@ -7903,7 +8473,11 @@ export const careersData: CareerFI[] = [
       "Apteekit",
       "Sairaalat",
       "Lääketeollisuus",
-      "Valtio"
+      "Valtio",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Suomen Apteekkariliitto",
@@ -7916,6 +8490,8 @@ export const careersData: CareerFI[] = [
     keywords: ["apteekkari", "lääkkeet", "farmacia", "lääkeneuvonta", "apteekki"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "tietoturva-asiantuntija",
     category: "innovoija",
@@ -7932,7 +8508,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Suojaa organisaatioita kyberuhilta",
       "Varmistaa tietojen turvallisuuden",
-      "Auttaa yrityksiä säilyttämään luottamuksen"
+      "Auttaa Suomessa yrityksiä säilyttämään luottamuksen"
     ],
     education_paths: [
       "Yliopisto: Tietojenkäsittelytiede",
@@ -7981,7 +8557,11 @@ export const careersData: CareerFI[] = [
       "IT-yritykset",
       "Pankit ja vakuutusyhtiöt",
       "Valtio",
-      "Konsultointiyritykset"
+      "Konsultointiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
@@ -7994,6 +8574,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tietoturva", "kyberturvallisuus", "verkkoanalyysi", "penetraatiotestaus", "SIEM"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "tietokantasuunnittelija",
     category: "innovoija",
@@ -8009,7 +8591,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa tehokkaan tiedonhallinnan",
-      "Parantaa järjestelmien suorituskykyä",
+      "Parantaa Suomessa järjestelmien suorituskykyä",
       "Varmistaa tietojen eheyden"
     ],
     education_paths: [
@@ -8059,7 +8641,11 @@ export const careersData: CareerFI[] = [
       "IT-yritykset",
       "Pankit ja vakuutusyhtiöt",
       "Konsultointiyritykset",
-      "Valtio"
+      "Valtio",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
@@ -8072,6 +8658,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tietokanta", "SQL", "tietojen mallintaminen", "DBA", "tietokantojen optimointi"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "verkkoasiantuntija",
     category: "innovoija",
@@ -8137,7 +8725,11 @@ export const careersData: CareerFI[] = [
       "IT-yritykset",
       "Teleoperaattorit",
       "Konsultointiyritykset",
-      "Valtio"
+      "Valtio",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "IT-alan TES",
@@ -8150,6 +8742,8 @@ export const careersData: CareerFI[] = [
     keywords: ["verkot", "Cisco", "tietoverkot", "verkkoanalyysi", "NOC"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "rakennusinsinoori",
     category: "rakentaja",
@@ -8215,7 +8809,11 @@ export const careersData: CareerFI[] = [
       "Rakennusyhtiöt",
       "Suunnittelutoimistot",
       "Kunnat",
-      "Valtio"
+      "Valtio",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "RIL",
@@ -8228,6 +8826,8 @@ export const careersData: CareerFI[] = [
     keywords: ["rakennusinsinööri", "rakennustekniikka", "projektinhallinta", "BIM", "CAD"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "puuseppä",
     category: "rakentaja",
@@ -8243,7 +8843,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Rakentaa kestäviä puurakenteita",
-      "Luovat kauniita huonekaluja",
+      "Luo Suomessavat kauniita huonekaluja",
       "Ylläpitää perinteisiä käsitaitoja"
     ],
     education_paths: [
@@ -8293,7 +8893,11 @@ export const careersData: CareerFI[] = [
       "Puuntyöstöyritykset",
       "Rakennusyhtiöt",
       "Korjaustyöyritykset",
-      "Yksityisyrittäjät"
+      "Yksityisyrittäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusliitto",
@@ -8306,6 +8910,8 @@ export const careersData: CareerFI[] = [
     keywords: ["puuseppä", "puuntyöstö", "rakentaminen", "huonekalujen", "korjaus"],
     study_length_estimate_months: 24
   },
+
+
 {
     id: "opettaja",
     category: "auttaja",
@@ -8320,9 +8926,9 @@ export const careersData: CareerFI[] = [
       "Oppilaiden ohjaus ja tuki"
     ],
     impact: [
-      "Auttaa lapsia oppimaan ja kehittymään",
+      "Auttaa Suomessa lapsia oppimaan ja kehittymään",
       "Valmistaa nuoria tulevaisuuteen",
-      "Tukee oppilaiden henkistä kasvua"
+      "Tukee Suomessa oppilaiden henkistä kasvua"
     ],
     education_paths: [
       "Yliopisto: Kasvatustiede",
@@ -8384,6 +8990,8 @@ export const careersData: CareerFI[] = [
     keywords: ["opettaja", "pedagogiikka", "opetus", "koulu", "oppilaiden"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "varhaiskasvatuksen-opettaja",
     category: "auttaja",
@@ -8398,8 +9006,8 @@ export const careersData: CareerFI[] = [
       "Oppimisympäristön luominen"
     ],
     impact: [
-      "Tukee lasten varhaista kehitystä",
-      "Luovat hyvän perustan oppimiselle",
+      "Tukee Suomessa lasten varhaista kehitystä",
+      "Luo Suomessavat hyvän perustan oppimiselle",
       "Mahdollistaa vanhempien työskentelyn"
     ],
     education_paths: [
@@ -8449,7 +9057,11 @@ export const careersData: CareerFI[] = [
       "Päiväkodit",
       "Perhepäivähoito",
       "Kunnat",
-      "Yksityiset päiväkodit"
+      "Yksityiset päiväkodit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
@@ -8462,6 +9074,8 @@ export const careersData: CareerFI[] = [
     keywords: ["varhaiskasvatus", "päiväkoti", "lapsenkasvatus", "opetus", "kehitys"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "ammattikoulun-opettaja",
     category: "auttaja",
@@ -8477,8 +9091,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Valmistaa nuoria työelämään",
-      "Auttaa oppilaita löytämään ammatin",
-      "Tukee ammattitaitojen kehitystä"
+      "Auttaa Suomessa oppilaita löytämään ammatin",
+      "Tukee Suomessa ammattitaitojen kehitystä"
     ],
     education_paths: [
       "AMK: Ammattikoulun opettajankoulutus",
@@ -8540,6 +9154,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ammattikoulu", "opettaja", "ammattitaito", "työelämä", "koulutus"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "kielten-opettaja",
     category: "auttaja",
@@ -8554,9 +9170,9 @@ export const careersData: CareerFI[] = [
       "Oppilaiden motivointi"
     ],
     impact: [
-      "Auttaa oppilaita oppimaan uusia kieliä",
+      "Auttaa Suomessa oppilaita oppimaan uusia kieliä",
       "Laajentaa kulttuurien ymmärrystä",
-      "Valmistaa oppilaita kansainväliseen työelämään"
+      "Valmistaa oppilaita Suomessa ja Suomessa ja kansainväliseen työelämään"
     ],
     education_paths: [
       "Yliopisto: Kielten opettajankoulutus",
@@ -8618,6 +9234,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kielten opettaja", "vieraat kielet", "kulttuurit", "opetus", "kansainvälistyminen"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "erityisopettaja",
     category: "auttaja",
@@ -8632,8 +9250,8 @@ export const careersData: CareerFI[] = [
       "Oppilaiden motivointi"
     ],
     impact: [
-      "Auttaa oppilaita oppimisvaikeuksien kanssa",
-      "Tukee oppilaiden itsetuntoa",
+      "Auttaa Suomessa oppilaita oppimisvaikeuksien kanssa",
+      "Tukee Suomessa oppilaiden itsetuntoa",
       "Mahdollistaa tasavertaisen koulutuksen"
     ],
     education_paths: [
@@ -8696,6 +9314,8 @@ export const careersData: CareerFI[] = [
     keywords: ["erityisopettaja", "erityispedagogiikka", "oppimisvaikeudet", "henkilökohtainen tuki", "erityisopetus"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "kuorma-auton-kuljettaja",
     category: "rakentaja",
@@ -8711,7 +9331,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa tavaroiden kuljetuksen",
-      "Auttaa yrityksiä toimittamaan tuotteita",
+      "Auttaa Suomessa yrityksiä toimittamaan tuotteita",
       "Ylläpitää talouden pyöritystä"
     ],
     education_paths: [
@@ -8761,7 +9381,11 @@ export const careersData: CareerFI[] = [
       "Kuljetusyritykset",
       "Logistiikkayritykset",
       "Verkkokaupat",
-      "Teollisuusyritykset"
+      "Teollisuusyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "AKT",
@@ -8774,6 +9398,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kuorma-auto", "kuljettaja", "kuljetus", "logistiikka", "jakelu"],
     study_length_estimate_months: 12
   },
+
+
 {
     id: "varastotyöntekijä",
     category: "jarjestaja",
@@ -8789,7 +9415,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa tavaroiden oikeanlaisen varastoinnin",
-      "Auttaa yrityksiä toimittamaan tuotteita",
+      "Auttaa Suomessa yrityksiä toimittamaan tuotteita",
       "Ylläpitää varaston toimivuutta"
     ],
     education_paths: [
@@ -8839,7 +9465,11 @@ export const careersData: CareerFI[] = [
       "Varastoyritykset",
       "Verkkokaupat",
       "Teollisuusyritykset",
-      "Logistiikkayritykset"
+      "Logistiikkayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "AKT",
@@ -8852,6 +9482,8 @@ export const careersData: CareerFI[] = [
     keywords: ["varastointi", "logistiikka", "pakkaaminen", "hyllytys", "varasto"],
     study_length_estimate_months: 12
   },
+
+
 {
     id: "jakelukuljettaja",
     category: "rakentaja",
@@ -8867,7 +9499,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa tavaroiden toimituksen",
-      "Auttaa ihmisiä saamaan tuotteita",
+      "Auttaa Suomessa ihmisiä saamaan tuotteita",
       "Ylläpitää verkkokaupan toimivuutta"
     ],
     education_paths: [
@@ -8917,7 +9549,11 @@ export const careersData: CareerFI[] = [
       "Jakeluyritykset",
       "Verkkokaupat",
       "Posti",
-      "Kuljetusyritykset"
+      "Kuljetusyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
     union_or_CBA: "AKT",
@@ -8930,6 +9566,8 @@ export const careersData: CareerFI[] = [
     keywords: ["jakelu", "kuljettaja", "paketit", "kotitoimitus", "verkkokauppa"],
     study_length_estimate_months: 12
   },
+
+
 {
     id: "kuljetuskoordinaattori",
     category: "jarjestaja",
@@ -8945,8 +9583,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa tehokkaan kuljetuksen",
-      "Auttaa yrityksiä säästämään kustannuksia",
-      "Parantaa asiakaspalvelua"
+      "Auttaa Suomessa yrityksiä säästämään kustannuksia",
+      "Parantaa Suomessa asiakaspalvelua"
     ],
     education_paths: [
       "AMK: Logistiikka",
@@ -8995,7 +9633,11 @@ export const careersData: CareerFI[] = [
       "Kuljetusyritykset",
       "Logistiikkayritykset",
       "Teollisuusyritykset",
-      "Verkkokaupat"
+      "Verkkokaupat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "AKT",
@@ -9008,6 +9650,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kuljetus", "koordinointi", "logistiikka", "reittien optimointi", "kuljetusketju"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "sähköasentaja",
     category: "rakentaja",
@@ -9023,7 +9667,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa sähkön turvallisen käytön",
-      "Auttaa ihmisiä säästämään energiaa",
+      "Auttaa Suomessa ihmisiä säästämään energiaa",
       "Ylläpitää sähköjärjestelmien toimivuutta"
     ],
     education_paths: [
@@ -9073,7 +9717,11 @@ export const careersData: CareerFI[] = [
       "Sähköyritykset",
       "Rakennusyhtiöt",
       "Korjaustyöyritykset",
-      "Yksityisyrittäjät"
+      "Yksityisyrittäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Sähköliitto",
@@ -9086,6 +9734,8 @@ export const careersData: CareerFI[] = [
     keywords: ["sähköasentaja", "sähkötekniikka", "sähköjärjestelmät", "energiatehokkuus", "korjaus"],
     study_length_estimate_months: 24
   },
+
+
 {
     id: "energiainsinööri",
     category: "innovoija",
@@ -9101,8 +9751,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Kehittää kestäviä energiaratkaisuja",
-      "Auttaa yrityksiä säästämään energiaa",
-      "Tukee ilmastonmuutoksen torjuntaa"
+      "Auttaa Suomessa yrityksiä säästämään energiaa",
+      "Tukee Suomessa ilmastonmuutoksen torjuntaa"
     ],
     education_paths: [
       "Yliopisto: Energiatekniikka",
@@ -9151,7 +9801,11 @@ export const careersData: CareerFI[] = [
       "Energiayritykset",
       "Konsultointiyritykset",
       "Teollisuusyritykset",
-      "Valtio"
+      "Valtio",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Insöörit",
@@ -9164,6 +9818,8 @@ export const careersData: CareerFI[] = [
     keywords: ["energiainsinööri", "energiatehokkuus", "uusiutuva energia", "energiaratkaisut", "ilmastonmuutos"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "aurinkoenergia-asentaja",
     category: "rakentaja",
@@ -9178,8 +9834,8 @@ export const careersData: CareerFI[] = [
       "Turvallisuuden varmistaminen"
     ],
     impact: [
-      "Auttaa ihmisiä hyödyntämään aurinkoenergiaa",
-      "Tukee ilmastonmuutoksen torjuntaa",
+      "Auttaa Suomessa ihmisiä hyödyntämään aurinkoenergiaa",
+      "Tukee Suomessa ilmastonmuutoksen torjuntaa",
       "Vähentää fossiilisten polttoaineiden käyttöä"
     ],
     education_paths: [
@@ -9229,7 +9885,11 @@ export const careersData: CareerFI[] = [
       "Aurinkoenergiayritykset",
       "Sähköyritykset",
       "Rakennusyhtiöt",
-      "Yksityisyrittäjät"
+      "Yksityisyrittäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Sähköliitto",
@@ -9242,6 +9902,8 @@ export const careersData: CareerFI[] = [
     keywords: ["aurinkoenergia", "aurinkopaneelit", "uusiutuva energia", "energiatehokkuus", "ilmastonmuutos"],
     study_length_estimate_months: 24
   },
+
+
 {
     id: "energiakonsultti",
     category: "visionaari",
@@ -9256,8 +9918,8 @@ export const careersData: CareerFI[] = [
       "Energiakustannusten analysointi"
     ],
     impact: [
-      "Auttaa yrityksiä säästämään energiaa",
-      "Tukee kestävää kehitystä",
+      "Auttaa Suomessa yrityksiä säästämään energiaa",
+      "Tukee Suomessa kestävää kehitystä",
       "Vähentää hiilijalanjälkeä"
     ],
     education_paths: [
@@ -9307,7 +9969,11 @@ export const careersData: CareerFI[] = [
       "Konsultointiyritykset",
       "Energiayritykset",
       "Teollisuusyritykset",
-      "Valtio"
+      "Valtio",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Insöörit",
@@ -9320,6 +9986,8 @@ export const careersData: CareerFI[] = [
     keywords: ["energiakonsultti", "energiatehokkuus", "energiaratkaisut", "kestävää kehitystä", "hiilijalanjälki"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "energia-asiantuntija",
     category: "visionaari",
@@ -9334,8 +10002,8 @@ export const careersData: CareerFI[] = [
       "Energiatehokkuuden seuranta"
     ],
     impact: [
-      "Auttaa organisaatioita säästämään energiaa",
-      "Tukee kestävää kehitystä",
+      "Auttaa Suomessa organisaatioita säästämään energiaa",
+      "Tukee Suomessa kestävää kehitystä",
       "Vähentää hiilijalanjälkeä"
     ],
     education_paths: [
@@ -9385,7 +10053,11 @@ export const careersData: CareerFI[] = [
       "Energiayritykset",
       "Konsultointiyritykset",
       "Teollisuusyritykset",
-      "Valtio"
+      "Valtio",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Insöörit",
@@ -9398,6 +10070,8 @@ export const careersData: CareerFI[] = [
     keywords: ["energia-asiantuntija", "energiatehokkuus", "energiaratkaisut", "uusiutuva energia", "kestävää kehitystä"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "digitaalisen-markkinoinnin-asiantuntija",
     category: "innovoija",
@@ -9412,7 +10086,7 @@ export const careersData: CareerFI[] = [
       "Sisällöntuotannon koordinointi"
     ],
     impact: [
-      "Auttaa yrityksiä löytämään asiakkaitaan verkossa",
+      "Auttaa Suomessa yrityksiä löytämään asiakkaitaan verkossa",
       "Parantavat käyttökokemusta digitaalisissa palveluissa",
       "Tuovat tehokkuutta markkinointiin"
     ],
@@ -9463,7 +10137,11 @@ export const careersData: CareerFI[] = [
       "Markkinointitoimistot",
       "E-commerce yritykset",
       "Teknologia-alan yritykset",
-      "Mediayritykset"
+      "Mediayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
@@ -9474,6 +10152,8 @@ export const careersData: CareerFI[] = [
       { name: "Työmarkkinatori – Digitaalisen markkinoinnin asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/digitaalisen-markkinoinnin-asiantuntija" }
       ],
   },
+
+
 {
     id: "brändisuunnittelija",
     category: "luova",
@@ -9488,8 +10168,8 @@ export const careersData: CareerFI[] = [
       "Brändin ohjeistusten kehittäminen"
     ],
     impact: [
-      "Auttaa yrityksiä erottumaan kilpailijoista",
-      "Luovat tunnistettavia ja arvostettuja brändejä",
+      "Auttaa Suomessa yrityksiä erottumaan kilpailijoista",
+      "Luo Suomessavat tunnistettavia ja arvostettuja brändejä",
       "Parantavat kuluttajien kokemusta"
     ],
     education_paths: [
@@ -9539,7 +10219,11 @@ export const careersData: CareerFI[] = [
       "Suunnittelutoimistot",
       "Markkinointitoimistot",
       "Kuluttajayritykset",
-      "Teknologia-alan yritykset"
+      "Teknologia-alan yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Grafia",
@@ -9552,6 +10236,8 @@ export const careersData: CareerFI[] = [
     keywords: ["brändi", "logo", "visuaalinen identiteetti", "graafinen suunnittelu", "kreatiivisuus"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "ympäristöasiantuntija",
     category: "ympariston-puolustaja",
@@ -9566,8 +10252,8 @@ export const careersData: CareerFI[] = [
       "Ympäristöohjeistusten laatiminen"
     ],
     impact: [
-      "Suojelevat luontoa ja ympäristöä",
-      "Auttaa yrityksiä toimimaan vastuullisesti",
+      "Suojelevat luo Suomessantoa ja ympäristöä",
+      "Auttaa Suomessa yrityksiä toimimaan vastuullisesti",
       "Edistävät kestävää kehitystä"
     ],
     education_paths: [
@@ -9617,7 +10303,11 @@ export const careersData: CareerFI[] = [
       "Konsulttiyritykset",
       "Teollisuusyritykset",
       "Julkiset organisaatiot",
-      "Ympäristöliitot"
+      "Ympäristöliitot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
@@ -9630,6 +10320,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristö", "kestävää kehitystä", "ympäristönsuoja", "auditointi", "vastuullisuus"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "tuotesuunnittelija",
     category: "luova",
@@ -9645,7 +10337,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Parantavat käyttökokemusta tuotteissa ja palveluissa",
-      "Auttaa yrityksiä luomaan menestyviä tuotteita",
+      "Auttaa Suomessa yrityksiä luomaan menestyviä tuotteita",
       "Tehokkuutta käyttöliittymiin"
     ],
     education_paths: [
@@ -9695,7 +10387,11 @@ export const careersData: CareerFI[] = [
       "Teknologia-alan yritykset",
       "Suunnittelutoimistot",
       "Kuluttajayritykset",
-      "Startup-yritykset"
+      "Startup-yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Grafia",
@@ -9706,6 +10402,8 @@ export const careersData: CareerFI[] = [
       { name: "Työmarkkinatori – Tuotesuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/tuotesuunnittelija" }
       ],
   },
+
+
 {
     id: "viestintapaallikko",
     category: "johtaja",
@@ -9720,8 +10418,8 @@ export const careersData: CareerFI[] = [
       "Tiimin johtaminen"
     ],
     impact: [
-      "Auttaa organisaatioita kommunikoimaan tehokkaasti",
-      "Rakentavat luottamusta ja ymmärrystä",
+      "Auttaa Suomessa organisaatioita kommunikoimaan tehokkaasti",
+      "Rakentavat luo Suomessattamusta ja ymmärrystä",
       "Suojelevat organisaation mainetta"
     ],
     education_paths: [
@@ -9771,7 +10469,11 @@ export const careersData: CareerFI[] = [
       "Julkiset organisaatiot",
       "Suuryritykset",
       "Viestintätoimistot",
-      "Mediayritykset"
+      "Mediayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
@@ -9784,6 +10486,8 @@ export const careersData: CareerFI[] = [
     keywords: ["viestintä", "media", "julkisuus", "kriisiviestintä", "johtaminen"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "data-analyytikko",
     category: "innovoija",
@@ -9798,7 +10502,7 @@ export const careersData: CareerFI[] = [
       "Päätöksentekotuki"
     ],
     impact: [
-      "Auttaa organisaatioita tekemään datapohjaisia päätöksiä",
+      "Auttaa Suomessa organisaatioita tekemään datapohjaisia päätöksiä",
       "Parantavat tehokkuutta ja tuloksellisuutta",
       "Löytävät uusia liiketoimintamahdollisuuksia"
     ],
@@ -9849,7 +10553,11 @@ export const careersData: CareerFI[] = [
       "Teknologia-alan yritykset",
       "Konsulttiyritykset",
       "Finanssipalvelut",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
@@ -9860,6 +10568,8 @@ export const careersData: CareerFI[] = [
       { name: "Työmarkkinatori – Data-analyytikko", url: "https://tyomarkkinatori.fi/ammatit/data-analyytikko" }
       ],
   },
+
+
 {
     id: "hr-asiantuntija",
     category: "auttaja",
@@ -9874,7 +10584,7 @@ export const careersData: CareerFI[] = [
       "Henkilöstöpolitiikkojen kehittäminen"
     ],
     impact: [
-      "Auttaa organisaatioita löytämään oikeat henkilöt",
+      "Auttaa Suomessa organisaatioita löytämään oikeat henkilöt",
       "Kehittävät työntekijöiden osaamista",
       "Parantavat työympäristöä"
     ],
@@ -9925,7 +10635,11 @@ export const careersData: CareerFI[] = [
       "Suuryritykset",
       "Konsulttiyritykset",
       "Julkiset organisaatiot",
-      "Teknologia-alan yritykset"
+      "Teknologia-alan yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
@@ -9938,6 +10652,8 @@ export const careersData: CareerFI[] = [
     keywords: ["henkilöstö", "rekrytointi", "koulutus", "palkkaus", "työsuhteet"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "liiketoimintakehittäjä",
     category: "innovoija",
@@ -9952,8 +10668,8 @@ export const careersData: CareerFI[] = [
       "Kasvustrategioiden toteuttaminen"
     ],
     impact: [
-      "Auttaa yrityksiä kasvamaan ja menestymään",
-      "Luovat uusia työpaikkoja",
+      "Auttaa Suomessa yrityksiä kasvamaan ja menestymään",
+      "Luo Suomessavat uusia työpaikkoja",
       "Tuovat innovaatioita markkinoille"
     ],
     education_paths: [
@@ -10003,7 +10719,11 @@ export const careersData: CareerFI[] = [
       "Teknologia-alan yritykset",
       "Konsulttiyritykset",
       "Startup-yritykset",
-      "Suuryritykset"
+      "Suuryritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
@@ -10014,6 +10734,8 @@ export const careersData: CareerFI[] = [
       { name: "Työmarkkinatori – Liiketoimintakehittäjä", url: "https://tyomarkkinatori.fi/ammatit/liiketoimintakehittaja" }
       ],
   },
+
+
 {
     id: "koulutussuunnittelija",
     category: "auttaja",
@@ -10030,7 +10752,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Kehittävät työntekijöiden osaamista",
       "Parantavat organisaation suorituskykyä",
-      "Auttaa ihmisiä oppimaan uusia taitoja"
+      "Auttaa Suomessa ihmisiä oppimaan uusia taitoja"
     ],
     education_paths: [
       "Yliopisto: Kasvatustiede",
@@ -10092,6 +10814,8 @@ export const careersData: CareerFI[] = [
     keywords: ["koulutus", "oppiminen", "pedagogiikka", "materiaalit", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "tuotepäällikkö",
     category: "johtaja",
@@ -10106,7 +10830,7 @@ export const careersData: CareerFI[] = [
       "Tuotteen elinkaaren hallinta"
     ],
     impact: [
-      "Auttaa yrityksiä luomaan menestyviä tuotteita",
+      "Auttaa Suomessa yrityksiä luomaan menestyviä tuotteita",
       "Parantavat asiakaskokemusta",
       "Tuovat innovaatioita markkinoille"
     ],
@@ -10157,7 +10881,11 @@ export const careersData: CareerFI[] = [
       "Teknologia-alan yritykset",
       "Kuluttajayritykset",
       "Startup-yritykset",
-      "Suuryritykset"
+      "Suuryritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
@@ -10168,6 +10896,8 @@ export const careersData: CareerFI[] = [
       { name: "Työmarkkinatori – Tuotepäällikkö", url: "https://tyomarkkinatori.fi/ammatit/tuotepaallikko" }
       ],
   },
+
+
 {
     id: "konsultti",
     category: "innovoija",
@@ -10182,9 +10912,9 @@ export const careersData: CareerFI[] = [
       "Raporttien laatiminen"
     ],
     impact: [
-      "Auttaa organisaatioita parantamaan suorituskykyään",
+      "Auttaa Suomessa organisaatioita parantamaan suorituskykyään",
       "Tuovat uusia näkökulmia ja ratkaisuja",
-      "Luovat tehokkuutta ja tuloksellisuutta"
+      "Luo Suomessavat tehokkuutta ja tuloksellisuutta"
     ],
     education_paths: [
       "Kauppatieteiden maisteri",
@@ -10233,7 +10963,11 @@ export const careersData: CareerFI[] = [
       "Konsulttiyritykset",
       "Suuryritykset",
       "Julkiset organisaatiot",
-      "Startup-yritykset"
+      "Startup-yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Pro",
@@ -10246,6 +10980,8 @@ export const careersData: CareerFI[] = [
     keywords: ["konsultointi", "analyysi", "ratkaisut", "projektit", "asiantuntijuus"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "tutkimusasiantuntija",
     category: "visionaari",
@@ -10261,7 +10997,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Edistävät tieteellistä tietoa",
-      "Auttaa organisaatioita tekemään tutkimuspohjaisia päätöksiä",
+      "Auttaa Suomessa organisaatioita tekemään tutkimuspohjaisia päätöksiä",
       "Tuovat uusia löydöksiä ja innovaatioita"
     ],
     education_paths: [
@@ -10311,7 +11047,11 @@ export const careersData: CareerFI[] = [
       "Yliopistot",
       "Tutkimuslaitokset",
       "Konsulttiyritykset",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
@@ -10322,6 +11062,8 @@ export const careersData: CareerFI[] = [
       { name: "Työmarkkinatori – Tutkimusasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/tutkimusasiantuntija" }
       ],
   },
+
+
 {
     id: "laadunvalvonta-asiantuntija",
     category: "jarjestaja",
@@ -10337,7 +11079,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistavat tuotteiden ja palvelujen laadun",
-      "Auttaa organisaatioita parantamaan suorituskykyään",
+      "Auttaa Suomessa organisaatioita parantamaan suorituskykyään",
       "Suojelevat kuluttajia huonolaatuisilta tuotteilta"
     ],
     education_paths: [
@@ -10387,7 +11129,11 @@ export const careersData: CareerFI[] = [
       "Teollisuusyritykset",
       "Teknologia-alan yritykset",
       "Konsulttiyritykset",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
@@ -10400,6 +11146,8 @@ export const careersData: CareerFI[] = [
     keywords: ["laadunvalvonta", "testaus", "laatu", "analyysi", "prosessit"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "asiakasvastaava",
     category: "auttaja",
@@ -10415,8 +11163,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Parantavat asiakaskokemusta",
-      "Auttaa yrityksiä säilyttämään asiakkaitaan",
-      "Luovat pitkäaikaisia asiakassuhteita"
+      "Auttaa Suomessa yrityksiä säilyttämään asiakkaitaan",
+      "Luo Suomessavat pitkäaikaisia asiakassuhteita"
     ],
     education_paths: [
       "AMK: Liiketalous",
@@ -10465,7 +11213,11 @@ export const careersData: CareerFI[] = [
       "Palveluyritykset",
       "Teknologia-alan yritykset",
       "Kuluttajayritykset",
-      "Finanssipalvelut"
+      "Finanssipalvelut",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
@@ -10476,6 +11228,8 @@ export const careersData: CareerFI[] = [
       { name: "Työmarkkinatori – Asiakasvastaava", url: "https://tyomarkkinatori.fi/ammatit/asiakasvastaava" }
       ],
   },
+
+
 {
     id: "tietojärjestelmäasiantuntija",
     category: "innovoija",
@@ -10491,7 +11245,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistavat tietojärjestelmien toimivuuden",
-      "Auttaa organisaatioita käyttämään teknologiaa tehokkaasti",
+      "Auttaa Suomessa organisaatioita käyttämään teknologiaa tehokkaasti",
       "Parantavat työn tehokkuutta"
     ],
     education_paths: [
@@ -10541,7 +11295,11 @@ export const careersData: CareerFI[] = [
       "Teknologia-alan yritykset",
       "Konsulttiyritykset",
       "Julkiset organisaatiot",
-      "Suuryritykset"
+      "Suuryritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
@@ -10554,6 +11312,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tietojärjestelmät", "IT", "verkko", "ylläpito", "tuki"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "talousasiantuntija",
     category: "jarjestaja",
@@ -10568,7 +11328,7 @@ export const careersData: CareerFI[] = [
       "Talouskonsultointi"
     ],
     impact: [
-      "Auttaa organisaatioita hallitsemaan talouttaan",
+      "Auttaa Suomessa organisaatioita hallitsemaan talouttaan",
       "Varmistavat taloudellisen kestävyyden",
       "Parantavat taloudellista suorituskykyä"
     ],
@@ -10619,7 +11379,11 @@ export const careersData: CareerFI[] = [
       "Suuryritykset",
       "Konsulttiyritykset",
       "Julkiset organisaatiot",
-      "Finanssipalvelut"
+      "Finanssipalvelut",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
@@ -10632,6 +11396,8 @@ export const careersData: CareerFI[] = [
     keywords: ["talous", "budjetti", "raportointi", "analyysi", "hallinto"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "henkilöstökoordinaattori",
     category: "auttaja",
@@ -10646,7 +11412,7 @@ export const careersData: CareerFI[] = [
       "Henkilöstöviestintä"
     ],
     impact: [
-      "Auttaa organisaatioita löytämään oikeat henkilöt",
+      "Auttaa Suomessa organisaatioita löytämään oikeat henkilöt",
       "Kehittävät henkilöstöprosesseja",
       "Parantavat työympäristöä"
     ],
@@ -10697,7 +11463,11 @@ export const careersData: CareerFI[] = [
       "Suuryritykset",
       "Konsulttiyritykset",
       "Julkiset organisaatiot",
-      "Teknologia-alan yritykset"
+      "Teknologia-alan yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
@@ -10708,6 +11478,8 @@ export const careersData: CareerFI[] = [
       { name: "Työmarkkinatori – Henkilöstökoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/henkilostokoordinaattori" }
       ],
   },
+
+
 {
     id: "myyntiedustaja",
     category: "innovoija",
@@ -10722,8 +11494,8 @@ export const careersData: CareerFI[] = [
       "Asiakasviestintä"
     ],
     impact: [
-      "Auttaa yrityksiä kasvamaan ja menestymään",
-      "Luovat työpaikkoja ja talouskasvua",
+      "Auttaa Suomessa yrityksiä kasvamaan ja menestymään",
+      "Luo Suomessavat työpaikkoja ja talouskasvua",
       "Parantavat asiakaskokemusta"
     ],
     education_paths: [
@@ -10773,7 +11545,11 @@ export const careersData: CareerFI[] = [
       "Teknologia-alan yritykset",
       "Kuluttajayritykset",
       "Palveluyritykset",
-      "Teollisuusyritykset"
+      "Teollisuusyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
@@ -10786,6 +11562,8 @@ export const careersData: CareerFI[] = [
     keywords: ["myynti", "asiakkaat", "kommunikaatio", "neuvottelu", "tavoitteet"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "markkinointikoordinaattori",
     category: "innovoija",
@@ -10800,7 +11578,7 @@ export const careersData: CareerFI[] = [
       "Markkinointitulosten seuranta"
     ],
     impact: [
-      "Auttaa yrityksiä löytämään asiakkaitaan",
+      "Auttaa Suomessa yrityksiä löytämään asiakkaitaan",
       "Parantavat brändin tunnettuutta",
       "Tuovat tehokkuutta markkinointiin"
     ],
@@ -10851,7 +11629,11 @@ export const careersData: CareerFI[] = [
       "Markkinointitoimistot",
       "Kuluttajayritykset",
       "Teknologia-alan yritykset",
-      "Mediayritykset"
+      "Mediayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
@@ -10862,6 +11644,8 @@ export const careersData: CareerFI[] = [
       { name: "Työmarkkinatori – Markkinointikoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/markkinointikoordinaattori" }
       ],
   },
+
+
 {
     id: "projektikoordinaattori",
     category: "jarjestaja",
@@ -10876,7 +11660,7 @@ export const careersData: CareerFI[] = [
       "Asiakasviestintä"
     ],
     impact: [
-      "Auttaa organisaatioita toteuttamaan projekteja tehokkaasti",
+      "Auttaa Suomessa organisaatioita toteuttamaan projekteja tehokkaasti",
       "Varmistavat projektien onnistumisen",
       "Parantavat työprosesseja"
     ],
@@ -10927,7 +11711,11 @@ export const careersData: CareerFI[] = [
       "Konsulttiyritykset",
       "Teknologia-alan yritykset",
       "Rakennusyritykset",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
@@ -10940,6 +11728,8 @@ export const careersData: CareerFI[] = [
     keywords: ["projektinhallinta", "koordinointi", "aikataulu", "resurssit", "seuranta"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "asiakaspalveluedustaja",
     category: "auttaja",
@@ -10955,8 +11745,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Parantavat asiakaskokemusta",
-      "Auttaa yrityksiä säilyttämään asiakkaitaan",
-      "Luovat tyytyväisiä asiakkaita"
+      "Auttaa Suomessa yrityksiä säilyttämään asiakkaitaan",
+      "Luo Suomessavat tyytyväisiä asiakkaita"
     ],
     education_paths: [
       "AMK: Asiakaspalvelu",
@@ -11005,7 +11795,11 @@ export const careersData: CareerFI[] = [
       "Palveluyritykset",
       "Teknologia-alan yritykset",
       "Kuluttajayritykset",
-      "Finanssipalvelut"
+      "Finanssipalvelut",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
     union_or_CBA: "Pro",
@@ -11016,6 +11810,8 @@ export const careersData: CareerFI[] = [
       { name: "Työmarkkinatori – Asiakaspalveluedustaja", url: "https://tyomarkkinatori.fi/ammatit/asiakaspalveluedustaja" }
       ],
   },
+
+
 {
     id: "sisällöntuottaja",
     category: "luova",
@@ -11031,8 +11827,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Parantavat brändin tunnettuutta",
-      "Auttaa yrityksiä kommunikoimaan tehokkaasti",
-      "Luovat kiinnostavaa sisältöä"
+      "Auttaa Suomessa yrityksiä kommunikoimaan tehokkaasti",
+      "Luo Suomessavat kiinnostavaa sisältöä"
     ],
     education_paths: [
       "AMK: Viestintä",
@@ -11081,7 +11877,11 @@ export const careersData: CareerFI[] = [
       "Markkinointitoimistot",
       "Mediayritykset",
       "Kuluttajayritykset",
-      "Teknologia-alan yritykset"
+      "Teknologia-alan yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
@@ -11094,6 +11894,8 @@ export const careersData: CareerFI[] = [
     keywords: ["sisältö", "luovuus", "kirjoittaminen", "media", "markkinointi"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "mobiilisovelluskehittäjä",
     category: "innovoija",
@@ -11109,7 +11911,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Parantavat käyttökokemusta mobiililaitteissa",
-      "Auttaa yrityksiä tarjoamaan palveluja asiakkaille",
+      "Auttaa Suomessa yrityksiä tarjoamaan palveluja asiakkaille",
       "Tuovat innovaatioita mobiiliteknologiaan"
     ],
     education_paths: [
@@ -11159,7 +11961,11 @@ export const careersData: CareerFI[] = [
       "Teknologia-alan yritykset",
       "Startup-yritykset",
       "Konsulttiyritykset",
-      "Mediayritykset"
+      "Mediayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
@@ -11172,6 +11978,8 @@ export const careersData: CareerFI[] = [
     keywords: ["mobiilikehitys", "iOS", "Android", "React Native", "Flutter"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "tekoäly-asiantuntija",
     category: "innovoija",
@@ -11186,7 +11994,7 @@ export const careersData: CareerFI[] = [
       "Tekoälyratkaisujen toteuttaminen"
     ],
     impact: [
-      "Auttaa organisaatioita käyttämään tekoälyä tehokkaasti",
+      "Auttaa Suomessa organisaatioita käyttämään tekoälyä tehokkaasti",
       "Parantavat prosessien tehokkuutta",
       "Tuovat innovaatioita tekoälyteknologiaan"
     ],
@@ -11237,7 +12045,11 @@ export const careersData: CareerFI[] = [
       "Teknologia-alan yritykset",
       "Startup-yritykset",
       "Konsulttiyritykset",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
@@ -11250,6 +12062,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tekoäly", "koneoppiminen", "ohjelmointi", "algoritmit", "automaatio"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "tuotantoteknikko",
     category: "rakentaja",
@@ -11265,7 +12079,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa tehokkaan tuotannon",
-      "Auttaa yrityksiä säästämään kustannuksia",
+      "Auttaa Suomessa yrityksiä säästämään kustannuksia",
       "Ylläpitää tuotteiden laatua"
     ],
     education_paths: [
@@ -11315,7 +12129,11 @@ export const careersData: CareerFI[] = [
       "Teollisuusyritykset",
       "Automaatiotalot",
       "Konsultointiyritykset",
-      "Yksityisyrittäjät"
+      "Yksityisyrittäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Teollisuusliitto",
@@ -11328,6 +12146,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tuotantoteknikko", "tuotanto", "automaatio", "laitteiden huolto", "teollisuus"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "teollisuusinsinoori",
     category: "innovoija",
@@ -11343,8 +12163,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Kehittää tehokkaita teollisuusprosesseja",
-      "Auttaa yrityksiä säästämään kustannuksia",
-      "Parantaa tuotannon laatua"
+      "Auttaa Suomessa yrityksiä säästämään kustannuksia",
+      "Parantaa Suomessa tuotannon laatua"
     ],
     education_paths: [
       "Yliopisto: Teollisuustekniikka",
@@ -11393,7 +12213,11 @@ export const careersData: CareerFI[] = [
       "Teollisuusyritykset",
       "Konsultointiyritykset",
       "Valtio",
-      "Yksityisyrittäjät"
+      "Yksityisyrittäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Insöörit",
@@ -11406,6 +12230,8 @@ export const careersData: CareerFI[] = [
     keywords: ["teollisuusinsinööri", "teollisuustekniikka", "projektinhallinta", "tuotannon optimointi", "teollisuus"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "asiakaspalvelu-asiantuntija",
     category: "auttaja",
@@ -11420,9 +12246,9 @@ export const careersData: CareerFI[] = [
       "Asiakastyytyväisyyden seuranta"
     ],
     impact: [
-      "Auttaa asiakkaita saamaan apua",
-      "Parantaa asiakastyytyväisyyttä",
-      "Tukee yrityksen menestystä"
+      "Auttaa Suomessa asiakkaita saamaan apua",
+      "Parantaa Suomessa asiakastyytyväisyyttä",
+      "Tukee Suomessa yrityksen menestystä"
     ],
     education_paths: [
       "AMK: Liiketalous",
@@ -11471,7 +12297,11 @@ export const careersData: CareerFI[] = [
       "Palveluyritykset",
       "Verkkokaupat",
       "Pankit ja vakuutusyhtiöt",
-      "Teleoperaattorit"
+      "Teleoperaattorit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
     union_or_CBA: "PAM",
@@ -11484,6 +12314,8 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakaspalvelu", "asiakkaiden auttaminen", "kommunikaatio", "ongelmaratkaisu", "palvelutalous"],
     study_length_estimate_months: 24
   },
+
+
 {
     id: "hotellityontekija",
     category: "auttaja",
@@ -11498,9 +12330,9 @@ export const careersData: CareerFI[] = [
       "Palveluiden myynti"
     ],
     impact: [
-      "Auttaa asiakkaita viihtymään hotellissa",
-      "Parantaa hotellin mainetta",
-      "Tukee matkailualaa"
+      "Auttaa Suomessa asiakkaita viihtymään hotellissa",
+      "Parantaa Suomessa hotellin mainetta",
+      "Tukee Suomessa matkailualaa"
     ],
     education_paths: [
       "AMK: Matkailu",
@@ -11549,7 +12381,11 @@ export const careersData: CareerFI[] = [
       "Hotellit",
       "Matkailuyritykset",
       "Konsultointiyritykset",
-      "Yksityisyrittäjät"
+      "Yksityisyrittäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "PAM",
@@ -11562,6 +12398,8 @@ export const careersData: CareerFI[] = [
     keywords: ["hotellityöntekijä", "hotelli", "matkailu", "asiakaspalvelu", "palvelutalous"],
     study_length_estimate_months: 24
   },
+
+
 {
     id: "ravintolatyöntekijä",
     category: "auttaja",
@@ -11576,9 +12414,9 @@ export const careersData: CareerFI[] = [
       "Palveluiden myynti"
     ],
     impact: [
-      "Auttaa asiakkaita nauttimaan ruoasta",
-      "Parantaa ravintolan mainetta",
-      "Tukee ravintola-alaa"
+      "Auttaa Suomessa asiakkaita nauttimaan ruoasta",
+      "Parantaa Suomessa ravintolan mainetta",
+      "Tukee Suomessa ravintola-alaa"
     ],
     education_paths: [
       "AMK: Ravintola- ja catering",
@@ -11627,7 +12465,11 @@ export const careersData: CareerFI[] = [
       "Ravintolat",
       "Hotellit",
       "Konsultointiyritykset",
-      "Yksityisyrittäjät"
+      "Yksityisyrittäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "PAM",
@@ -11640,6 +12482,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ravintolatyöntekijä", "ravintola", "asiakaspalvelu", "ruokapalvelu", "palvelutalous"],
     study_length_estimate_months: 24
   },
+
+
 {
     id: "siivooja",
     category: "rakentaja",
@@ -11655,8 +12499,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa puhtaat ja terveelliset tilat",
-      "Auttaa ihmisiä viihtymään",
-      "Tukee terveyttä ja hyvinvointia"
+      "Auttaa Suomessa ihmisiä viihtymään",
+      "Tukee Suomessa terveyttä ja hyvinvointia"
     ],
     education_paths: [
       "Toinen aste: Siivous",
@@ -11705,7 +12549,11 @@ export const careersData: CareerFI[] = [
       "Siivousyritykset",
       "Hotellit",
       "Toimistot",
-      "Yksityisyrittäjät"
+      "Yksityisyrittäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "PAM",
@@ -11718,6 +12566,8 @@ export const careersData: CareerFI[] = [
     keywords: ["siivooja", "siivous", "puhtaus", "terveys", "palvelutalous"],
     study_length_estimate_months: 12
   },
+
+
 {
     id: "turvallisuusvastaava",
     category: "jarjestaja",
@@ -11733,8 +12583,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa tilojen ja henkilöiden turvallisuuden",
-      "Auttaa ihmisiä tuntemaan olonsa turvalliseksi",
-      "Tukee yhteiskunnan turvallisuutta"
+      "Auttaa Suomessa ihmisiä tuntemaan olonsa turvalliseksi",
+      "Tukee Suomessa yhteiskunnan turvallisuutta"
     ],
     education_paths: [
       "Toinen aste: Turvallisuus",
@@ -11783,7 +12633,11 @@ export const careersData: CareerFI[] = [
       "Turvallisuusyritykset",
       "Hotellit",
       "Toimistot",
-      "Yksityisyrittäjät"
+      "Yksityisyrittäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "PAM",
@@ -11796,6 +12650,8 @@ export const careersData: CareerFI[] = [
     keywords: ["turvallisuusvastaava", "turvallisuus", "valvonta", "turvallisuuspalvelu", "palvelutalous"],
     study_length_estimate_months: 12
   },
+
+
 {
     id: "pankkivirkailija",
     category: "jarjestaja",
@@ -11810,9 +12666,9 @@ export const careersData: CareerFI[] = [
       "Asiakirjojen käsittely"
     ],
     impact: [
-      "Auttaa asiakkaita hallitsemaan raha-asioitaan",
-      "Parantaa asiakastyytyväisyyttä",
-      "Tukee talouden pyöritystä"
+      "Auttaa Suomessa asiakkaita hallitsemaan raha-asioitaan",
+      "Parantaa Suomessa asiakastyytyväisyyttä",
+      "Tukee Suomessa talouden pyöritystä"
     ],
     education_paths: [
       "AMK: Liiketalous",
@@ -11861,7 +12717,11 @@ export const careersData: CareerFI[] = [
       "Pankit",
       "Rahoitusyhtiöt",
       "Konsultointiyritykset",
-      "Valtio"
+      "Valtio",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "PAM",
@@ -11874,6 +12734,8 @@ export const careersData: CareerFI[] = [
     keywords: ["pankkivirkailija", "pankki", "rahoitus", "asiakaspalvelu", "rahoituspalvelu"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "rahoitusneuvonantaja",
     category: "visionaari",
@@ -11888,9 +12750,9 @@ export const careersData: CareerFI[] = [
       "Rahoitusraporttien laatiminen"
     ],
     impact: [
-      "Auttaa asiakkaita hallitsemaan raha-asioitaan",
-      "Parantaa asiakastyytyväisyyttä",
-      "Tukee talouden pyöritystä"
+      "Auttaa Suomessa asiakkaita hallitsemaan raha-asioitaan",
+      "Parantaa Suomessa asiakastyytyväisyyttä",
+      "Tukee Suomessa talouden pyöritystä"
     ],
     education_paths: [
       "AMK: Rahoitus",
@@ -11939,7 +12801,11 @@ export const careersData: CareerFI[] = [
       "Pankit",
       "Rahoitusyhtiöt",
       "Konsultointiyritykset",
-      "Yksityisyrittäjät"
+      "Yksityisyrittäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "PAM",
@@ -11952,6 +12818,8 @@ export const careersData: CareerFI[] = [
     keywords: ["rahoitusneuvonantaja", "rahoitus", "neuvonta", "sijoitusneuvonta", "rahoituspalvelu"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "vakuutusasiamies",
     category: "jarjestaja",
@@ -11966,9 +12834,9 @@ export const careersData: CareerFI[] = [
       "Vakuutusraporttien laatiminen"
     ],
     impact: [
-      "Auttaa asiakkaita suojaamaan omaisuuttaan",
-      "Parantaa asiakastyytyväisyyttä",
-      "Tukee vakuutusalaa"
+      "Auttaa Suomessa asiakkaita suojaamaan omaisuuttaan",
+      "Parantaa Suomessa asiakastyytyväisyyttä",
+      "Tukee Suomessa vakuutusalaa"
     ],
     education_paths: [
       "AMK: Rahoitus",
@@ -12017,7 +12885,11 @@ export const careersData: CareerFI[] = [
       "Vakuutusyhtiöt",
       "Pankit",
       "Konsultointiyritykset",
-      "Yksityisyrittäjät"
+      "Yksityisyrittäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "PAM",
@@ -12030,6 +12902,8 @@ export const careersData: CareerFI[] = [
     keywords: ["vakuutusasiamies", "vakuutus", "myynti", "neuvonta", "vakuutuspalvelu"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "kirjanpitäjä",
     category: "jarjestaja",
@@ -12045,8 +12919,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa yritysten tarkat kirjanpitotiedot",
-      "Auttaa yrityksiä hallitsemaan raha-asioitaan",
-      "Tukee talouden pyöritystä"
+      "Auttaa Suomessa yrityksiä hallitsemaan raha-asioitaan",
+      "Tukee Suomessa talouden pyöritystä"
     ],
     education_paths: [
       "AMK: Liiketalous",
@@ -12095,7 +12969,11 @@ export const careersData: CareerFI[] = [
       "Kirjanpitotoimistot",
       "Yritykset",
       "Konsultointiyritykset",
-      "Yksityisyrittäjät"
+      "Yksityisyrittäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "PAM",
@@ -12108,6 +12986,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kirjanpitäjä", "kirjanpito", "rahoitus", "tilinpäätös", "verotiedot"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "rahoitusanalyytikko",
     category: "visionaari",
@@ -12122,9 +13002,9 @@ export const careersData: CareerFI[] = [
       "Rahoitusraporttien laatiminen"
     ],
     impact: [
-      "Auttaa asiakkaita tekemään sijoituspäätöksiä",
-      "Parantaa asiakastyytyväisyyttä",
-      "Tukee talouden pyöritystä"
+      "Auttaa Suomessa asiakkaita tekemään sijoituspäätöksiä",
+      "Parantaa Suomessa asiakastyytyväisyyttä",
+      "Tukee Suomessa talouden pyöritystä"
     ],
     education_paths: [
       "Yliopisto: Rahoitus",
@@ -12173,7 +13053,11 @@ export const careersData: CareerFI[] = [
       "Pankit",
       "Rahoitusyhtiöt",
       "Konsultointiyritykset",
-      "Yksityisyrittäjät"
+      "Yksityisyrittäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "PAM",
@@ -12186,6 +13070,8 @@ export const careersData: CareerFI[] = [
     keywords: ["rahoitusanalyytikko", "rahoitusanalyysi", "sijoitusanalyysi", "rahoitusmarkkinat", "rahoituspalvelu"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "laakari",
     category: "auttaja",
@@ -12201,8 +13087,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Pelastaa ihmishenkiä",
-      "Parantaa potilaiden elämänlaatua",
-      "Edistää kansanterveyttä"
+      "Parantaa Suomessa potilaiden elämänlaatua",
+      "Edistää Suomessa kansanterveyttä"
     ],
     education_paths: [
       "Yliopisto: Lääketiede (6v)"
@@ -12247,7 +13133,11 @@ export const careersData: CareerFI[] = [
       "Sairaalat",
       "Terveyskeskukset",
       "Yksityiset lääkäriasemat",
-      "Työterveyshuolto"
+      "Työterveyshuolto",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Lääkäriliitto",
@@ -12260,6 +13150,8 @@ export const careersData: CareerFI[] = [
     keywords: ["lääkäri", "terveydenhuolto", "diagnoosi", "hoito", "potilas"],
     study_length_estimate_months: 72
   },
+
+
 {
     id: "hammaslaakari",
     category: "auttaja",
@@ -12276,7 +13168,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Ylläpitää suun terveyttä",
       "Ehkäisee hammassairauksia",
-      "Parantaa elämänlaatua"
+      "Parantaa Suomessa elämänlaatua"
     ],
     education_paths: [
       "Yliopisto: Hammaslääketiede (5v)"
@@ -12320,7 +13212,11 @@ export const careersData: CareerFI[] = [
       "Terveyskeskukset",
       "Yksityiset hammaslääkäriasemat",
       "Sairaalat",
-      "Työterveyshuolto"
+      "Työterveyshuolto",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Hammaslääkäriliitto",
@@ -12333,6 +13229,8 @@ export const careersData: CareerFI[] = [
     keywords: ["hammaslääkäri", "suun terveys", "hammashoidot", "hampaiden korjaus"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "elainlaakari",
     category: "auttaja",
@@ -12349,7 +13247,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Ylläpitää eläinten terveyttä",
       "Ehkäisee eläintauteja",
-      "Edistää eläinten hyvinvointia"
+      "Edistää Suomessa eläinten hyvinvointia"
     ],
     education_paths: [
       "Yliopisto: Eläinlääketiede (6v)"
@@ -12393,7 +13291,11 @@ export const careersData: CareerFI[] = [
       "Eläinklinikat",
       "Maatilat",
       "Eläintarhat",
-      "Elintarvikevalvonta"
+      "Elintarvikevalvonta",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Eläinlääkäriliitto",
@@ -12406,6 +13308,8 @@ export const careersData: CareerFI[] = [
     keywords: ["eläinlääkäri", "eläinten hoito", "eläinlääketiede", "lemmikkieläimet"],
     study_length_estimate_months: 72
   },
+
+
 {
     id: "farmaseutti",
     category: "auttaja",
@@ -12422,7 +13326,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Varmistaa turvallisen lääkehoidon",
       "Neuvoo lääkkeiden käytössä",
-      "Edistää kansanterveyttä"
+      "Edistää Suomessa kansanterveyttä"
     ],
     education_paths: [
       "Yliopisto: Farmasian kandidaatti (3v)",
@@ -12466,7 +13370,11 @@ export const careersData: CareerFI[] = [
       "Apteekit",
       "Lääketeollisuus",
       "Sairaalat",
-      "Lääkeviranomainen"
+      "Lääkeviranomainen",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Farmasialiitto",
@@ -12479,6 +13387,8 @@ export const careersData: CareerFI[] = [
     keywords: ["farmaseutti", "apteekki", "lääkkeet", "lääkeneuvonta"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "röntgenhoitaja",
     category: "auttaja",
@@ -12494,7 +13404,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa tautien diagnosoinnin",
-      "Tukee hoitotyötä",
+      "Tukee Suomessa hoitotyötä",
       "Varmistaa laadukkaat kuvantamistutkimukset"
     ],
     education_paths: [
@@ -12539,7 +13449,11 @@ export const careersData: CareerFI[] = [
       "Sairaalat",
       "Terveyskeskukset",
       "Yksityiset kuvantamiskeskukset",
-      "Työterveyshuolto"
+      "Työterveyshuolto",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
@@ -12552,6 +13466,8 @@ export const careersData: CareerFI[] = [
     keywords: ["röntgenhoitaja", "kuvantaminen", "röntgen", "ultraääni"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "laboratoriohoitaja",
     category: "auttaja",
@@ -12567,8 +13483,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa tautien diagnosoinnin",
-      "Tukee hoitotyötä",
-      "Varmistaa luotettavat tutkimustulokset"
+      "Tukee Suomessa hoitotyötä",
+      "Varmistaa luo Suomessatettavat tutkimustulokset"
     ],
     education_paths: [
       "AMK: Bioanalytiikka (3,5v)"
@@ -12612,7 +13528,11 @@ export const careersData: CareerFI[] = [
       "Sairaalat",
       "Terveyskeskukset",
       "Yksityiset laboratoriot",
-      "Tutkimuslaitokset"
+      "Tutkimuslaitokset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
@@ -12625,6 +13545,8 @@ export const careersData: CareerFI[] = [
     keywords: ["laboratoriohoitaja", "bioanalytiikka", "laboratorio", "tutkimukset"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "lähihoitaja",
     category: "auttaja",
@@ -12639,8 +13561,8 @@ export const careersData: CareerFI[] = [
       "Asiakkaiden tukeminen"
     ],
     impact: [
-      "Parantaa asiakkaiden elämänlaatua",
-      "Tukee itsenäistä elämää",
+      "Parantaa Suomessa asiakkaiden elämänlaatua",
+      "Tukee Suomessa itsenäistä elämää",
       "Tarjoaa turvallista hoivaa"
     ],
     education_paths: [
@@ -12685,7 +13607,11 @@ export const careersData: CareerFI[] = [
       "Vanhaink odit",
       "Terveyskeskukset",
       "Kotihoito",
-      "Sairaalat"
+      "Sairaalat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
@@ -12698,6 +13624,8 @@ export const careersData: CareerFI[] = [
     keywords: ["lähihoitaja", "hoitotyö", "hoiva", "vanhusten hoito"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "ensihoitaja",
     category: "auttaja",
@@ -12714,7 +13642,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Pelastaa ihmishenkiä",
       "Tarjoaa nopean ensiavun",
-      "Tukee potilaiden kuntoutumista"
+      "Tukee Suomessa potilaiden kuntoutumista"
     ],
     education_paths: [
       "AMK: Ensihoitaja (3,5v)"
@@ -12758,7 +13686,11 @@ export const careersData: CareerFI[] = [
       "Pelastuslaitokset",
       "Sairaalat",
       "Yksityiset ambulanssipalvelut",
-      "Ensihoitoyksiköt"
+      "Ensihoitoyksiköt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "Tehy",
@@ -12771,6 +13703,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ensihoitaja", "ambulanssi", "ensihoito", "hätätilanteet"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "kätilö",
     category: "auttaja",
@@ -12785,8 +13719,8 @@ export const careersData: CareerFI[] = [
       "Raskausneuvonta"
     ],
     impact: [
-      "Tukee turvallista synnytystä",
-      "Edistää äidin ja lapsen terveyttä",
+      "Tukee Suomessa turvallista synnytystä",
+      "Edistää Suomessa äidin ja lapsen terveyttä",
       "Tarjoaa tukea perheille"
     ],
     education_paths: [
@@ -12831,7 +13765,11 @@ export const careersData: CareerFI[] = [
       "Sairaalat",
       "Neuvolat",
       "Synnytysosastot",
-      "Yksityiset äitiysklinikat"
+      "Yksityiset äitiysklinikat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
@@ -12844,6 +13782,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kätilö", "synnytys", "raskaus", "vastasyntyneet"],
     study_length_estimate_months: 54
   },
+
+
 {
     id: "mielenterveyshoitaja",
     category: "auttaja",
@@ -12858,8 +13798,8 @@ export const careersData: CareerFI[] = [
       "Perheiden tukeminen"
     ],
     impact: [
-      "Tukee mielenterveyttä",
-      "Auttaa kuntoutumisessa",
+      "Tukee Suomessa mielenterveyttä",
+      "Auttaa Suomessa kuntoutumisessa",
       "Ehkäisee mielenterveyskriisejä"
     ],
     education_paths: [
@@ -12904,7 +13844,11 @@ export const careersData: CareerFI[] = [
       "Psykiatriset osastot",
       "Mielenterveystoimistot",
       "Kriisikeskukset",
-      "Terveyskeskukset"
+      "Terveyskeskukset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
@@ -12917,6 +13861,8 @@ export const careersData: CareerFI[] = [
     keywords: ["mielenterveyshoitaja", "psykiatria", "mielenterveys", "kuntoutus"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "mainostoimiston-art-director",
     category: "luova",
@@ -12931,9 +13877,9 @@ export const careersData: CareerFI[] = [
       "Brändin visuaalisen identiteetin luominen"
     ],
     impact: [
-      "Luo vaikuttavia mainoskampanjoita",
-      "Auttaa brändejä erottumaan",
-      "Edistää visuaalista kulttuuria"
+      "Luo Suomessa vaikuttavia mainoskampanjoita",
+      "Auttaa Suomessa brändejä erottumaan",
+      "Edistää Suomessa visuaalista kulttuuria"
     ],
     education_paths: [
       "AMK: Graafinen suunnittelu",
@@ -12981,7 +13927,11 @@ export const careersData: CareerFI[] = [
       "Mainostoimistot",
       "Mediatalot",
       "Markkinointiyritykset",
-      "Yritykset"
+      "Yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
@@ -12994,6 +13944,8 @@ export const careersData: CareerFI[] = [
     keywords: ["art director", "mainonta", "graafinen suunnittelu", "luova", "visuaalinen"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "äänisuunnittelija",
     category: "luova",
@@ -13008,9 +13960,9 @@ export const careersData: CareerFI[] = [
       "Äänimaiseman rakentaminen"
     ],
     impact: [
-      "Luo ainutlaatuisia äänielämyksiä",
+      "Luo Suomessa ainutlaatuisia äänielämyksiä",
       "Tehostaa visuaalista sisältöä",
-      "Edistää audiovisuaalista kulttuuria"
+      "Edistää Suomessa audiovisuaalista kulttuuria"
     ],
     education_paths: [
       "AMK: Musiikkiteknologia",
@@ -13058,7 +14010,11 @@ export const careersData: CareerFI[] = [
       "Elokuvatuotannot",
       "Peliyritykset",
       "Äänitaltiot",
-      "Mainostoimistot"
+      "Mainostoimistot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Taiteilijaliitto",
@@ -13071,6 +14027,8 @@ export const careersData: CareerFI[] = [
     keywords: ["äänisuunnittelija", "ääni", "miksaus", "elokuva", "pelit"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "koreografi",
     category: "luova",
@@ -13085,9 +14043,9 @@ export const careersData: CareerFI[] = [
       "Luovien konseptien kehittäminen"
     ],
     impact: [
-      "Luo vaikuttavia tanssi-esityksiä",
-      "Edistää tanssitaidetta",
-      "Tukee tanssijoiden kehitystä"
+      "Luo Suomessa vaikuttavia tanssi-esityksiä",
+      "Edistää Suomessa tanssitaidetta",
+      "Tukee Suomessa tanssijoiden kehitystä"
     ],
     education_paths: [
       "AMK: Tanssipedagogi",
@@ -13133,7 +14091,11 @@ export const careersData: CareerFI[] = [
       "Teatterit",
       "Tanssiyhteet",
       "Tapahtumat",
-      "TV-tuotannot"
+      "TV-tuotannot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Taiteilijaliitto",
@@ -13146,6 +14108,8 @@ export const careersData: CareerFI[] = [
     keywords: ["koreografi", "tanssi", "esitys", "ohjaus", "luova"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "kuvataiteilija",
     category: "luova",
@@ -13160,8 +14124,8 @@ export const careersData: CareerFI[] = [
       "Yhteistyö gallerioiden kanssa"
     ],
     impact: [
-      "Luo kulttuurillisesti merkittäviä teoksia",
-      "Edistää visuaalista taidetta",
+      "Luo Suomessa kulttuurillisesti merkittäviä teoksia",
+      "Edistää Suomessa visuaalista taidetta",
       "Tarjoaa esteettisiä elämyksiä"
     ],
     education_paths: [
@@ -13222,6 +14186,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kuvataiteilija", "taide", "maalaus", "veisto", "luova"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "näyttelijä",
     category: "luova",
@@ -13236,8 +14202,8 @@ export const careersData: CareerFI[] = [
       "Yhteistyö ohjaajien kanssa"
     ],
     impact: [
-      "Luo viihdyttäviä esityksiä",
-      "Edistää teatteritaidetta",
+      "Luo Suomessa viihdyttäviä esityksiä",
+      "Edistää Suomessa teatteritaidetta",
       "Tarjoaa kulttuurillisia elämyksiä"
     ],
     education_paths: [
@@ -13284,7 +14250,11 @@ export const careersData: CareerFI[] = [
       "Teatterit",
       "Elokuvatuotannot",
       "TV-yhtiöt",
-      "Freelance"
+      "Freelance",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "Taiteilijaliitto",
@@ -13297,6 +14267,8 @@ export const careersData: CareerFI[] = [
     keywords: ["näyttelijä", "teatteri", "elokuva", "esiintyminen", "rooli"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "valosuunnittelija",
     category: "luova",
@@ -13311,9 +14283,9 @@ export const careersData: CareerFI[] = [
       "Yhteistyö ohjaajien kanssa"
     ],
     impact: [
-      "Luo vaikuttavia visuaalisia kokemuksia",
+      "Luo Suomessa vaikuttavia visuaalisia kokemuksia",
       "Tehostaa esityksiä",
-      "Edistää teknistä taidetta"
+      "Edistää Suomessa teknistä taidetta"
     ],
     education_paths: [
       "AMK: Esittävä taide",
@@ -13360,7 +14332,11 @@ export const careersData: CareerFI[] = [
       "Teatterit",
       "Konserttijärjestäjät",
       "Tapahtumat",
-      "AV-tuotantoyhtiöt"
+      "AV-tuotantoyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "Taiteilijaliitto",
@@ -13373,6 +14349,8 @@ export const careersData: CareerFI[] = [
     keywords: ["valosuunnittelija", "valotekniikka", "teatteri", "tapahtumat", "tekninen"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "käsikirjoittaja",
     category: "luova",
@@ -13387,9 +14365,9 @@ export const careersData: CareerFI[] = [
       "Yhteistyö ohjaajien kanssa"
     ],
     impact: [
-      "Luo viihdyttäviä tarinoita",
-      "Edistää audiovisuaalista kulttuuria",
-      "Tukee elokuva- ja TV-tuotantoja"
+      "Luo Suomessa viihdyttäviä tarinoita",
+      "Edistää Suomessa audiovisuaalista kulttuuria",
+      "Tukee Suomessa elokuva- ja TV-tuotantoja"
     ],
     education_paths: [
       "Yliopisto: Elokuva ja televisio",
@@ -13436,7 +14414,11 @@ export const careersData: CareerFI[] = [
       "Elokuvatuotannot",
       "TV-yhtiöt",
       "Suoratoistopalvelut",
-      "Peliyritykset"
+      "Peliyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Taiteilijaliitto",
@@ -13449,6 +14431,8 @@ export const careersData: CareerFI[] = [
     keywords: ["käsikirjoittaja", "elokuva", "TV", "kirjoittaminen", "tarina"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "tuottaja-media",
     category: "luova",
@@ -13465,7 +14449,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Mahdollistaa median tuotannon",
       "Varmistaa projektien onnistumisen",
-      "Tukee luovia tiimejä"
+      "Tukee Suomessa luovia tiimejä"
     ],
     education_paths: [
       "AMK: Elokuva ja televisio",
@@ -13512,7 +14496,11 @@ export const careersData: CareerFI[] = [
       "Elokuvatuotannot",
       "TV-yhtiöt",
       "Mainostoimistot",
-      "Tuotantoyhtiöt"
+      "Tuotantoyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
@@ -13525,6 +14513,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tuottaja", "media", "elokuva", "TV", "tuotanto"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "leikkausartisti",
     category: "luova",
@@ -13539,9 +14529,9 @@ export const careersData: CareerFI[] = [
       "Yhteistyö ohjaajien kanssa"
     ],
     impact: [
-      "Luo valmiin lopputuotteen",
+      "Luo Suomessa valmiin lopputuotteen",
       "Tehostaa tarinaa leikkauksella",
-      "Parantaa katselukokemusta"
+      "Parantaa Suomessa katselukokemusta"
     ],
     education_paths: [
       "AMK: Elokuva ja televisio",
@@ -13589,7 +14579,11 @@ export const careersData: CareerFI[] = [
       "Elokuvatuotannot",
       "TV-yhtiöt",
       "Mainostoimistot",
-      "Tuotantoyhtiöt"
+      "Tuotantoyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Taiteilijaliitto",
@@ -13602,6 +14596,8 @@ export const careersData: CareerFI[] = [
     keywords: ["leikkaaja", "videoeditoi nti", "jälkituotanto", "elokuva", "media"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "dokumentaristi",
     category: "luova",
@@ -13617,7 +14613,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Paljastaa tärkeitä totuuksia",
-      "Edistää yhteiskunnallista keskustelua",
+      "Edistää Suomessa yhteiskunnallista keskustelua",
       "Tallentaa historiaa"
     ],
     education_paths: [
@@ -13666,7 +14662,11 @@ export const careersData: CareerFI[] = [
       "TV-yhtiöt",
       "Tuotantoyhtiöt",
       "Suoratoistopalvelut",
-      "Freelance"
+      "Freelance",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Journalistiliitto",
@@ -13679,6 +14679,8 @@ export const careersData: CareerFI[] = [
     keywords: ["dokumentaristi", "dokumentti", "elokuva", "journalismi", "tutkiminen"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "podcast-tuottaja",
     category: "luova",
@@ -13693,8 +14695,8 @@ export const careersData: CareerFI[] = [
       "Julkaiseminen ja markkinointi"
     ],
     impact: [
-      "Luo kiinnostavaa äänis isältöä",
-      "Edistää äänikerrontaa",
+      "Luo Suomessa kiinnostavaa äänis isältöä",
+      "Edistää Suomessa äänikerrontaa",
       "Tarjoaa tietoa ja viihdettä"
     ],
     education_paths: [
@@ -13743,7 +14745,11 @@ export const careersData: CareerFI[] = [
       "Mediatalot",
       "Podcast-tuotantoyhtiöt",
       "Mainostoimistot",
-      "Freelance"
+      "Freelance",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Journalistiliitto",
@@ -13756,6 +14762,8 @@ export const careersData: CareerFI[] = [
     keywords: ["podcast", "tuottaja", "ääni", "editointi", "media"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "lavastaja",
     category: "luova",
@@ -13770,9 +14778,9 @@ export const careersData: CareerFI[] = [
       "Yhteistyö ohjaajien kanssa"
     ],
     impact: [
-      "Luo visuaalisesti vaikuttavia ympäristöjä",
-      "Tukee tarinaa lavasteilla",
-      "Edistää esitystaidetta"
+      "Luo Suomessa visuaalisesti vaikuttavia ympäristöjä",
+      "Tukee Suomessa tarinaa lavasteilla",
+      "Edistää Suomessa esitystaidetta"
     ],
     education_paths: [
       "AMK: Esittävä taide",
@@ -13820,7 +14828,11 @@ export const careersData: CareerFI[] = [
       "Teatterit",
       "Elokuvatuotannot",
       "TV-yhtiöt",
-      "Tapahtumat"
+      "Tapahtumat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Taiteilijaliitto",
@@ -13833,6 +14845,8 @@ export const careersData: CareerFI[] = [
     keywords: ["lavastaja", "lavasteet", "teatteri", "elokuva", "suunnittelu"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "ympäristötarkastaja",
     category: "ympariston-puolustaja",
@@ -13896,7 +14910,11 @@ export const careersData: CareerFI[] = [
       "Kunnat",
       "Kaupungit",
       "Ely-keskukset",
-      "Ympäristöviranomaiset"
+      "Ympäristöviranomaiset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Akava",
@@ -13909,6 +14927,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristö", "tarkastus", "valvonta", "ympäristönsuojelu"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "vesiensuojeluasiantuntija",
     category: "ympariston-puolustaja",
@@ -13972,7 +14992,11 @@ export const careersData: CareerFI[] = [
       "Kunnat",
       "Vesihuoltolaitokset",
       "Ympäristökonsultit",
-      "Ely-keskukset"
+      "Ely-keskukset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
@@ -13985,6 +15009,8 @@ export const careersData: CareerFI[] = [
     keywords: ["vesi", "vesiensuojelu", "vesihuolto", "ympäristö", "laatu"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "jätehuoltoasiantuntija",
     category: "ympariston-puolustaja",
@@ -13999,9 +15025,9 @@ export const careersData: CareerFI[] = [
       "Yhteistyö sidosryhmien kanssa"
     ],
     impact: [
-      "Edistää kierrätystä",
+      "Edistää Suomessa kierrätystä",
       "Vähentää jätteen määrää",
-      "Tukee kiertotaloutta"
+      "Tukee Suomessa kiertotaloutta"
     ],
     education_paths: [
       "AMK: Ympäristötekniikka",
@@ -14048,7 +15074,11 @@ export const careersData: CareerFI[] = [
       "Kunnat",
       "Jätehuoltoyritykset",
       "Kierrätysyritykset",
-      "Ympäristökonsultit"
+      "Ympäristökonsultit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
@@ -14061,6 +15091,8 @@ export const careersData: CareerFI[] = [
     keywords: ["jätehuolto", "kierrätys", "kiertotalous", "ympäristö", "kestävyys"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "metsänhoitaja",
     category: "ympariston-puolustaja",
@@ -14075,9 +15107,9 @@ export const careersData: CareerFI[] = [
       "Ympäristöarvojen turvaaminen"
     ],
     impact: [
-      "Edistää kestävää metsätaloutta",
+      "Edistää Suomessa kestävää metsätaloutta",
       "Suojelee metsien monimuotoisuutta",
-      "Tukee metsänomistajia"
+      "Tukee Suomessa metsänomistajia"
     ],
     education_paths: [
       "Yliopisto: Metsätieteet",
@@ -14124,7 +15156,11 @@ export const careersData: CareerFI[] = [
       "Metsäkeskukset",
       "Metsänhoitoyhdistykset",
       "Metsäyhtiöt",
-      "Yksityiset metsänomistajat"
+      "Yksityiset metsänomistajat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Akava",
@@ -14137,6 +15173,8 @@ export const careersData: CareerFI[] = [
     keywords: ["metsä", "metsätalous", "metsänhoito", "kestävyys", "ympäristö"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "toimitusjohtaja",
     category: "johtaja",
@@ -14152,8 +15190,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Ohjaa yrityksen suuntaa",
-      "Luo työpaikkoja",
-      "Vaikuttaa talouteen"
+      "Luo Suomessa työpaikkoja",
+      "Vaikuttaa Suomessa talouteen"
     ],
     education_paths: [
       "Yliopisto: Kauppatieteet",
@@ -14200,7 +15238,11 @@ export const careersData: CareerFI[] = [
       "Yritykset",
       "Konsernit",
       "Startup-yritykset",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: null,
@@ -14213,6 +15255,8 @@ export const careersData: CareerFI[] = [
     keywords: ["toimitusjohtaja", "CEO", "johtaminen", "strategia", "yritys"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "talousjohtaja",
     category: "johtaja",
@@ -14228,7 +15272,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa yrityksen taloudellisen terveyden",
-      "Tukee strategisia päätöksiä",
+      "Tukee Suomessa strategisia päätöksiä",
       "Hallitsee talousriskejä"
     ],
     education_paths: [
@@ -14276,7 +15320,11 @@ export const careersData: CareerFI[] = [
       "Yritykset",
       "Konsernit",
       "Pankit",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
@@ -14289,6 +15337,8 @@ export const careersData: CareerFI[] = [
     keywords: ["talousjohtaja", "CFO", "talous", "johtaminen", "strategia"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "teknologiajohtaja",
     category: "johtaja",
@@ -14304,7 +15354,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Ohjaa teknologista kehitystä",
-      "Edistää innovaatioita",
+      "Edistää Suomessa innovaatioita",
       "Varmistaa teknologisen kilpailukyvyn"
     ],
     education_paths: [
@@ -14352,7 +15402,11 @@ export const careersData: CareerFI[] = [
       "Teknologiayritykset",
       "Startup-yritykset",
       "Suuryritykset",
-      "Konsulttiyritykset"
+      "Konsulttiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
@@ -14365,6 +15419,8 @@ export const careersData: CareerFI[] = [
     keywords: ["CTO", "teknologiajohtaja", "IT", "johtaminen", "innovaatio"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "operatiivinen-johtaja",
     category: "johtaja",
@@ -14380,7 +15436,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa sujuvan toiminnan",
-      "Parantaa tehokkuutta",
+      "Parantaa Suomessa tehokkuutta",
       "Kehittää prosesseja"
     ],
     education_paths: [
@@ -14428,7 +15484,11 @@ export const careersData: CareerFI[] = [
       "Yritykset",
       "Teollisuusyritykset",
       "Palveluyritykset",
-      "Konsernit"
+      "Konsernit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
@@ -14441,6 +15501,8 @@ export const careersData: CareerFI[] = [
     keywords: ["COO", "operatiivinen", "johtaminen", "prosessit", "tehokkuus"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "liiketoimintajohtaja",
     category: "johtaja",
@@ -14504,7 +15566,11 @@ export const careersData: CareerFI[] = [
       "Yritykset",
       "Konsernit",
       "Kaupan alan yritykset",
-      "Teollisuusyritykset"
+      "Teollisuusyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Akava",
@@ -14517,6 +15583,8 @@ export const careersData: CareerFI[] = [
     keywords: ["liiketoimintajohtaja", "johtaminen", "strategia", "myynti", "kasvu"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "kirvesmies",
     category: "rakentaja",
@@ -14532,7 +15600,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Rakentaa turvallisia rakenteita",
-      "Luo kestäviä puutaloja",
+      "Luo Suomessa kestäviä puutaloja",
       "Korjaa vanhoja rakennuksia"
     ],
     education_paths: [
@@ -14580,7 +15648,11 @@ export const careersData: CareerFI[] = [
       "Rakennusyritykset",
       "Talotehtaat",
       "Remonttiyritykset",
-      "Itsensä työllistäjät"
+      "Itsensä työllistäjät",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusliitto",
@@ -14593,6 +15665,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kirvesmies", "rakentaminen", "puutyö", "talonrakennus", "korjaus"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "maanrakennuskoneen-kuljettaja",
     category: "rakentaja",
@@ -14608,8 +15682,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa rakentamisen",
-      "Luo infrastruktuuria",
-      "Tukee rakennusprojekteja"
+      "Luo Suomessa infrastruktuuria",
+      "Tukee Suomessa rakennusprojekteja"
     ],
     education_paths: [
       "Toinen aste: Kone- ja metalliala",
@@ -14656,7 +15730,11 @@ export const careersData: CareerFI[] = [
       "Rakennusyritykset",
       "Maanrakennusyritykset",
       "Kuntien tekninen osasto",
-      "Urakoitsijat"
+      "Urakoitsijat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
     union_or_CBA: "Rakennusliitto",
@@ -14669,6 +15747,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kaivukone", "maanrakennus", "koneen kuljettaja", "rakentaminen", "infrastruktuuri"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "tapahtumajärjestäjä",
     category: "jarjestaja",
@@ -14683,9 +15763,9 @@ export const careersData: CareerFI[] = [
       "Tapahtuman toteutus"
     ],
     impact: [
-      "Luo unohtumattomia kokemuksia",
-      "Tukee verkostoitumista",
-      "Edistää kulttuuria ja liiketoimintaa"
+      "Luo Suomessa unohtumattomia kokemuksia",
+      "Tukee Suomessa verkostoitumista",
+      "Edistää Suomessa kulttuuria ja liiketoimintaa"
     ],
     education_paths: [
       "AMK: Palveluiden tuottaminen",
@@ -14732,7 +15812,11 @@ export const careersData: CareerFI[] = [
       "Tapahtumayritykset",
       "Messuyritykset",
       "Hotellit",
-      "Kulttuuriorganisaatiot"
+      "Kulttuuriorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "PAM",
@@ -14745,6 +15829,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tapahtuma", "järjestäminen", "tapahtumajärjestäjä", "projektit", "koordinointi"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "tilauspalvelukoordinaattori",
     category: "jarjestaja",
@@ -14760,7 +15846,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa sujuvat toimitukset",
-      "Parantaa asiakastyytyväisyyttä",
+      "Parantaa Suomessa asiakastyytyväisyyttä",
       "Tehostaa tilausketjua"
     ],
     education_paths: [
@@ -14808,7 +15894,11 @@ export const careersData: CareerFI[] = [
       "Kaupan alan yritykset",
       "Logistiikkayritykset",
       "Verkkokaupat",
-      "Tukkuyritykset"
+      "Tukkuyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "PAM",
@@ -14821,6 +15911,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tilauspalvelu", "koordinointi", "tilaukset", "asiakaspalvelu", "toimitukset"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "devops-insinööri",
     category: "innovoija",
@@ -14835,8 +15927,8 @@ export const careersData: CareerFI[] = [
       "Turvallisuuden ja suorituskyvyn optimointi"
     ],
     impact: [
-      "Auttaa yrityksiä julkaisemaan tuotteita nopeammin ja turvallisemmin",
-      "Parantaa järjestelmien luotettavuutta",
+      "Auttaa Suomessa yrityksiä julkaisemaan tuotteita nopeammin ja turvallisemmin",
+      "Parantaa Suomessa järjestelmien luotettavuutta",
       "Vähentää manuaalista työtä automaatiolla"
     ],
     education_paths: [
@@ -14886,7 +15978,11 @@ export const careersData: CareerFI[] = [
       "IT-yritykset",
       "Teknologia-startupit",
       "Suuryritykset",
-      "Konsulttiyritykset"
+      "Konsulttiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
@@ -14899,6 +15995,8 @@ export const careersData: CareerFI[] = [
     keywords: ["devops", "cloud", "automaatio", "docker", "kubernetes", "ci/cd"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "automekaanikko",
     category: "rakentaja",
@@ -14915,7 +16013,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Varmistaa ajoneuvojen turvallisuuden",
       "Pitää liikenteen käynnissä",
-      "Auttaa ihmisiä päivittäisessä elämässä"
+      "Auttaa Suomessa ihmisiä päivittäisessä elämässä"
     ],
     education_paths: [
       "Toinen aste: Autokorjaajan perustutkinto",
@@ -14964,7 +16062,11 @@ export const careersData: CareerFI[] = [
       "Autokorjaamot",
       "Autoliikkeet",
       "Vakuutusyhtiöt",
-      "Oma yritys"
+      "Oma yritys",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Autoalan TES",
@@ -14977,6 +16079,8 @@ export const careersData: CareerFI[] = [
     keywords: ["automekaanikko", "autokorjaus", "huolto", "diagnostiikka", "mekaanikko"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "ohjelmistotestaja",
     category: "innovoija",
@@ -14993,7 +16097,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Varmistaa laadukkaat ohjelmistot käyttäjille",
       "Estää virheitä tuotannossa",
-      "Parantaa käyttökokemusta"
+      "Parantaa Suomessa käyttökokemusta"
     ],
     education_paths: [
       "AMK: Tietojenkäsittely, Ohjelmistotuotanto",
@@ -15042,7 +16146,11 @@ export const careersData: CareerFI[] = [
       "IT-yritykset",
       "Teknologia-startupit",
       "Konsulttiyritykset",
-      "Suuryritykset"
+      "Suuryritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
@@ -15055,6 +16163,8 @@ export const careersData: CareerFI[] = [
     keywords: ["testaus", "laadunvarmistus", "ohjelmistotestaus", "qa", "vikaraportointi"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "ux-suunnittelija",
     category: "innovoija",
@@ -15069,8 +16179,8 @@ export const careersData: CareerFI[] = [
       "Tiimin kanssa yhteistyö"
     ],
     impact: [
-      "Parantaa käyttökokemusta",
-      "Auttaa käyttäjiä löytämään tarvitsemansa nopeasti",
+      "Parantaa Suomessa käyttökokemusta",
+      "Auttaa Suomessa käyttäjiä löytämään tarvitsemansa nopeasti",
       "Kasvattaa käyttäjätyytyväisyyttä"
     ],
     education_paths: [
@@ -15120,7 +16230,11 @@ export const careersData: CareerFI[] = [
       "IT-yritykset",
       "Konsulttiyritykset",
       "Design-studiot",
-      "Suuryritykset"
+      "Suuryritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
@@ -15133,6 +16247,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ux", "käyttäjäkokemus", "käytettävyys", "suunnittelu", "user experience"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "cloud-arkkitehti",
     category: "innovoija",
@@ -15147,8 +16263,8 @@ export const careersData: CareerFI[] = [
       "Teknisten ratkaisujen kehittäminen"
     ],
     impact: [
-      "Auttaa yrityksiä siirtymään cloudiin",
-      "Parantaa järjestelmien skaalautuvuutta",
+      "Auttaa Suomessa yrityksiä siirtymään cloudiin",
+      "Parantaa Suomessa järjestelmien skaalautuvuutta",
       "Vähentää IT-kustannuksia"
     ],
     education_paths: [
@@ -15198,7 +16314,11 @@ export const careersData: CareerFI[] = [
       "IT-yritykset",
       "Konsulttiyritykset",
       "Suuryritykset",
-      "Cloud-palveluntarjoajat"
+      "Cloud-palveluntarjoajat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tietojenkäsittelyliitto",
@@ -15211,6 +16331,8 @@ export const careersData: CareerFI[] = [
     keywords: ["cloud", "arkkitehtuuri", "aws", "azure", "pilvipalvelut"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "asiakkuusvastaava",
     category: "johtaja",
@@ -15227,7 +16349,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Kasvattaa yrityksen liikevaihtoa",
       "Rakentaa pitkäaikaisia asiakassuhteita",
-      "Parantaa asiakastyytyväisyyttä"
+      "Parantaa Suomessa asiakastyytyväisyyttä"
     ],
     education_paths: [
       "AMK: Liiketalous, Markkinointi",
@@ -15276,7 +16398,11 @@ export const careersData: CareerFI[] = [
       "IT-yritykset",
       "Konsulttiyritykset",
       "Suuryritykset",
-      "Media-alan yritykset"
+      "Media-alan yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
@@ -15289,6 +16415,8 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakkuus", "myynti", "asiakassuhteet", "account management", "b2b"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "sosiaaliohjaaja",
     category: "auttaja",
@@ -15303,8 +16431,8 @@ export const careersData: CareerFI[] = [
       "Seuranta ja tuki"
     ],
     impact: [
-      "Auttaa ihmisiä vaikeina aikoina",
-      "Parantaa asiakkaiden hyvinvointia",
+      "Auttaa Suomessa ihmisiä vaikeina aikoina",
+      "Parantaa Suomessa asiakkaiden hyvinvointia",
       "Varmistaa että palvelut saavuttavat oikeat ihmiset"
     ],
     education_paths: [
@@ -15354,7 +16482,11 @@ export const careersData: CareerFI[] = [
       "Kunnat",
       "Kela",
       "Sosiaalialan organisaatiot",
-      "Nuorisopalvelut"
+      "Nuorisopalvelut",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "JHL",
@@ -15367,6 +16499,8 @@ export const careersData: CareerFI[] = [
     keywords: ["sosiaaliohjaaja", "ohjaus", "sosiaalipalvelut", "neuvonta", "sosionomi"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "terveydenhoitaja",
     category: "auttaja",
@@ -15382,8 +16516,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Ehkäisee sairauksia",
-      "Parantaa yhteisön terveyttä",
-      "Auttaa ihmisiä ylläpitämään hyvää terveyttä"
+      "Parantaa Suomessa yhteisön terveyttä",
+      "Auttaa Suomessa ihmisiä ylläpitämään hyvää terveyttä"
     ],
     education_paths: [
       "AMK: Terveydenhoitaja",
@@ -15445,6 +16579,8 @@ export const careersData: CareerFI[] = [
     keywords: ["terveydenhoitaja", "terveyden edistäminen", "ehkäisevä terveydenhuolto", "terveysneuvonta"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "dialyysihoitaja",
     category: "auttaja",
@@ -15459,9 +16595,9 @@ export const careersData: CareerFI[] = [
       "Hoitodokumentaation ylläpito"
     ],
     impact: [
-      "Pelastaa henkiä ja parantaa elämänlaatua",
-      "Auttaa potilaita selviytymään munuaissairaudesta",
-      "Tukee potilaita ja perheitä vaikeina aikoina"
+      "Pelastaa henkiä ja parantaa Suomessa elämänlaatua",
+      "Auttaa Suomessa potilaita selviytymään munuaissairaudesta",
+      "Tukee Suomessa potilaita ja perheitä vaikeina aikoina"
     ],
     education_paths: [
       "AMK: Sairaanhoitaja",
@@ -15510,7 +16646,11 @@ export const careersData: CareerFI[] = [
       "Sairaalat",
       "Erikoissairaanhoidon yksiköt",
       "Dialyysiklinikat",
-      "Yksityiset terveydenhuoltofirmat"
+      "Yksityiset terveydenhuoltofirmat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
@@ -15523,6 +16663,8 @@ export const careersData: CareerFI[] = [
     keywords: ["dialyysi", "sairaanhoitaja", "munuais", "hoito", "erikoissairaanhoito"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "varhaiskasvatuksen-erityisopettaja",
     category: "auttaja",
@@ -15537,9 +16679,9 @@ export const careersData: CareerFI[] = [
       "Seuranta ja arviointi"
     ],
     impact: [
-      "Auttaa lapsia kehittymään täysimääräisesti",
-      "Tukee perheitä ja vahvistaa lapsen mahdollisuuksia",
-      "Edistää inklusiivista varhaiskasvatusta"
+      "Auttaa Suomessa lapsia kehittymään täysimääräisesti",
+      "Tukee Suomessa perheitä ja vahvistaa lapsen mahdollisuuksia",
+      "Edistää Suomessa inklusiivista varhaiskasvatusta"
     ],
     education_paths: [
       "Yliopisto: Varhaiskasvatuksen erityisopettaja",
@@ -15601,6 +16743,8 @@ export const careersData: CareerFI[] = [
     keywords: ["erityisopettaja", "varhaiskasvatus", "erityistuki", "kehitysvamma", "oppimisvaikeudet"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "ui-suunnittelija",
     category: "innovoija",
@@ -15615,7 +16759,7 @@ export const careersData: CareerFI[] = [
       "Prototyyppien luominen"
     ],
     impact: [
-      "Parantaa käyttökokemusta",
+      "Parantaa Suomessa käyttökokemusta",
       "Tehokkaampi ja selkeämpi käyttöliittymä",
       "Kasvattaa käyttäjätyytyväisyyttä"
     ],
@@ -15666,7 +16810,11 @@ export const careersData: CareerFI[] = [
       "IT-yritykset",
       "Design-studiot",
       "Konsulttiyritykset",
-      "Suuryritykset"
+      "Suuryritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
@@ -15679,6 +16827,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ui", "käyttöliittymä", "visuaalinen suunnittelu", "design", "user interface"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "tietoturvaanalyytikko",
     category: "innovoija",
@@ -15744,7 +16894,11 @@ export const careersData: CareerFI[] = [
       "IT-yritykset",
       "Konsulttiyritykset",
       "Suuryritykset",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
@@ -15757,6 +16911,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tietoturva", "kyberturvallisuus", "analyysi", "tietoturvaincidentti", "soc"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "tietokoneasentaja",
     category: "innovoija",
@@ -15772,7 +16928,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa tietokoneiden ja verkkojen toimivuuden",
-      "Auttaa käyttäjiä teknisten ongelmien kanssa",
+      "Auttaa Suomessa käyttäjiä teknisten ongelmien kanssa",
       "Ylläpitää IT-infrastruktuuria"
     ],
     education_paths: [
@@ -15835,6 +16991,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tietokoneasentaja", "it-tuki", "tietokonekorjaus", "tietoverkot", "teknikko"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "optometristi",
     category: "auttaja",
@@ -15849,9 +17007,9 @@ export const careersData: CareerFI[] = [
       "Laitteiden käyttö"
     ],
     impact: [
-      "Parantaa ihmisten näköä",
+      "Parantaa Suomessa ihmisten näköä",
       "Tunnistaa silmäsairauksia varhaisessa vaiheessa",
-      "Auttaa ihmisiä paremmassa näössä"
+      "Auttaa Suomessa ihmisiä paremmassa näössä"
     ],
     education_paths: [
       "AMK: Optometria",
@@ -15900,7 +17058,11 @@ export const careersData: CareerFI[] = [
       "Silmälasekaupat",
       "Sairaalat",
       "Terveyskeskukset",
-      "Yksityiset optometriapalvelut"
+      "Yksityiset optometriapalvelut",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tehy",
@@ -15913,6 +17075,8 @@ export const careersData: CareerFI[] = [
     keywords: ["optometristi", "näkö", "silmälaseet", "silmätarkastus", "optometria"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "ravitsemusterapeutti",
     category: "auttaja",
@@ -15927,9 +17091,9 @@ export const careersData: CareerFI[] = [
       "Seuranta ja arviointi"
     ],
     impact: [
-      "Parantaa ihmisten terveyttä",
-      "Auttaa sairauksien hoidossa",
-      "Edistää terveellistä elämäntapaa"
+      "Parantaa Suomessa ihmisten terveyttä",
+      "Auttaa Suomessa sairauksien hoidossa",
+      "Edistää Suomessa terveellistä elämäntapaa"
     ],
     education_paths: [
       "AMK: Ravitsemusterapeutti",
@@ -15978,7 +17142,11 @@ export const careersData: CareerFI[] = [
       "Sairaalat",
       "Terveyskeskukset",
       "Yksityiset terveydenhuoltofirmat",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
@@ -15991,6 +17159,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ravitsemusterapeutti", "ravitsemusneuvonta", "ruokavalio", "terveys", "ravitsemustiede"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "putkityömies",
     category: "rakentaja",
@@ -16007,7 +17177,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Varmistaa veden saannin ja laadun",
       "Turvaa lämmityksen toimivuuden",
-      "Auttaa ihmisiä päivittäisessä elämässä"
+      "Auttaa Suomessa ihmisiä päivittäisessä elämässä"
     ],
     education_paths: [
       "Toinen aste: LVI-asentajan perustutkinto",
@@ -16056,7 +17226,11 @@ export const careersData: CareerFI[] = [
       "Rakennusyhtiöt",
       "LVI-yritykset",
       "Ylläpitoyritykset",
-      "Oma yritys"
+      "Oma yritys",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusliitto",
@@ -16069,6 +17243,8 @@ export const careersData: CareerFI[] = [
     keywords: ["putkityömies", "lvi", "putkisto", "vesihuolto", "lämmitys"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "automaatioteknikko",
     category: "rakentaja",
@@ -16083,9 +17259,9 @@ export const careersData: CareerFI[] = [
       "Koulutus ja dokumentointi"
     ],
     impact: [
-      "Parantaa teollisuuden tehokkuutta",
+      "Parantaa Suomessa teollisuuden tehokkuutta",
       "Vähentää manuaalista työtä",
-      "Parantaa laatua ja turvallisuutta"
+      "Parantaa Suomessa laatua ja turvallisuutta"
     ],
     education_paths: [
       "AMK: Automaatiotekniikka",
@@ -16134,7 +17310,11 @@ export const careersData: CareerFI[] = [
       "Teollisuusyritykset",
       "Automaatioyritykset",
       "Konsulttiyritykset",
-      "Suuryritykset"
+      "Suuryritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Insöörit",
@@ -16147,6 +17327,8 @@ export const careersData: CareerFI[] = [
     keywords: ["automaatio", "plc", "scada", "teollisuusautomaatio", "teknikko"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "kiertotalousasiantuntija",
     category: "ympariston-puolustaja",
@@ -16162,8 +17344,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Vähentää jätettä ja hiilijalanjälkeä",
-      "Parantaa resurssitehokkuutta",
-      "Edistää kestävää kehitystä"
+      "Parantaa Suomessa resurssitehokkuutta",
+      "Edistää Suomessa kestävää kehitystä"
     ],
     education_paths: [
       "AMK: Ympäristötekniikka, Kestävän kehityksen",
@@ -16212,7 +17394,11 @@ export const careersData: CareerFI[] = [
       "Ympäristöyritykset",
       "Kunnat",
       "Konsulttiyritykset",
-      "Suuryritykset"
+      "Suuryritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
@@ -16225,6 +17411,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kiertotalous", "kierrättäminen", "jätehuolto", "kestävän kehityksen", "ympäristö"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "ympäristövalvonta",
     category: "ympariston-puolustaja",
@@ -16290,7 +17478,11 @@ export const careersData: CareerFI[] = [
       "Kunnat",
       "Valvira",
       "Ympäristökeskus",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "JHL",
@@ -16303,6 +17495,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristövalvonta", "valvonta", "ympäristölainsäädäntö", "tarkastus", "ympäristö"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "videonmuokkaaja",
     category: "luova",
@@ -16317,9 +17511,9 @@ export const careersData: CareerFI[] = [
       "Lopullisen version renderöinti"
     ],
     impact: [
-      "Luo laadukkaita videoita",
-      "Parantaa visuaalista viestiä",
-      "Auttaa yrityksiä viestimään tehokkaasti"
+      "Luo Suomessa laadukkaita videoita",
+      "Parantaa Suomessa visuaalista viestiä",
+      "Auttaa Suomessa yrityksiä viestimään tehokkaasti"
     ],
     education_paths: [
       "AMK: Medianomi, Videonmuokkaus",
@@ -16368,7 +17562,11 @@ export const careersData: CareerFI[] = [
       "Elokuvastudiot",
       "Televisioyhtiöt",
       "Mainostoimistot",
-      "Freelance-työskentely"
+      "Freelance-työskentely",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
     union_or_CBA: "Media-alan TES",
@@ -16381,6 +17579,8 @@ export const careersData: CareerFI[] = [
     keywords: ["videonmuokkaus", "leikkaus", "video", "media", "editing"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "tuotantokoordinaattori",
     category: "luova",
@@ -16396,8 +17596,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa tuotantojen sujuvan toteutuksen",
-      "Auttaa tiimejä toimimaan tehokkaasti",
-      "Tukee luovan työn toteutusta"
+      "Auttaa Suomessa tiimejä toimimaan tehokkaasti",
+      "Tukee Suomessa luovan työn toteutusta"
     ],
     education_paths: [
       "AMK: Medianomi, Tuotantokoordinaattori",
@@ -16446,7 +17646,11 @@ export const careersData: CareerFI[] = [
       "Elokuvastudiot",
       "Televisioyhtiöt",
       "Mainostoimistot",
-      "Tapahtumayritykset"
+      "Tapahtumayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "paljon" },
     union_or_CBA: "Media-alan TES",
@@ -16459,6 +17663,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tuotantokoordinaattori", "media", "tuotanto", "koordinointi", "projektinhallinta"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "tarjoilija",
     category: "auttaja",
@@ -16473,9 +17679,9 @@ export const careersData: CareerFI[] = [
       "Kassan hoito"
     ],
     impact: [
-      "Luo mukavan ravintolakokemuksen",
-      "Auttaa ihmisiä nauttimaan ruokaillusta",
-      "Tukee ravintolatoimintaa"
+      "Luo Suomessa mukavan ravintolakokemuksen",
+      "Auttaa Suomessa ihmisiä nauttimaan ruokaillusta",
+      "Tukee Suomessa ravintolatoimintaa"
     ],
     education_paths: [
       "Toinen aste: Ravintolatyön perustutkinto",
@@ -16524,7 +17730,11 @@ export const careersData: CareerFI[] = [
       "Ravintolat",
       "Kahvilat",
       "Hotellit",
-      "Catering-yritykset"
+      "Catering-yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "PAM",
@@ -16537,6 +17747,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tarjoilija", "ravintola", "asiakaspalvelu", "palvelu", "ruokailu"],
     study_length_estimate_months: 24
   },
+
+
 {
     id: "kokki",
     category: "auttaja",
@@ -16551,9 +17763,9 @@ export const careersData: CareerFI[] = [
       "Turvallisuuden varmistaminen"
     ],
     impact: [
-      "Luo maukasta ruokaa",
+      "Luo Suomessa maukasta ruokaa",
       "Antaa ihmisille nautinnollisen ruokailukokemuksen",
-      "Edistää ruokakulttuuria"
+      "Edistää Suomessa ruokakulttuuria"
     ],
     education_paths: [
       "Toinen aste: Kokin perustutkinto",
@@ -16602,7 +17814,11 @@ export const careersData: CareerFI[] = [
       "Ravintolat",
       "Hotellit",
       "Catering-yritykset",
-      "Sairaalat"
+      "Sairaalat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "PAM",
@@ -16615,6 +17831,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kokki", "ruuanvalmistus", "keittiö", "ruoka", "ravintola"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "oppilashuoltaja",
     category: "auttaja",
@@ -16629,8 +17847,8 @@ export const careersData: CareerFI[] = [
       "Yhteistyö muiden ammattilaisten kanssa"
     ],
     impact: [
-      "Auttaa oppilaita onnistumaan koulussa",
-      "Tukee oppilaiden hyvinvointia",
+      "Auttaa Suomessa oppilaita onnistumaan koulussa",
+      "Tukee Suomessa oppilaiden hyvinvointia",
       "Varmistaa tasa-arvoisen koulutuksen"
     ],
     education_paths: [
@@ -16693,6 +17911,8 @@ export const careersData: CareerFI[] = [
     keywords: ["oppilashuoltaja", "koulu", "oppilaiden tuki", "hyvinvointi", "sosionomi"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "hitsaaja",
     category: "rakentaja",
@@ -16709,7 +17929,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Rakentaa ja korjaa rakenteita",
       "Varmistaa laadukkaat hitsaukset",
-      "Tukee teollisuutta ja rakentamista"
+      "Tukee Suomessa teollisuutta ja rakentamista"
     ],
     education_paths: [
       "Toinen aste: Hitsaajan perustutkinto",
@@ -16758,7 +17978,11 @@ export const careersData: CareerFI[] = [
       "Rakennusyhtiöt",
       "Metalliteollisuus",
       "Laivateollisuus",
-      "Oma yritys"
+      "Oma yritys",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusliitto",
@@ -16771,6 +17995,8 @@ export const careersData: CareerFI[] = [
     keywords: ["hitsaaja", "hitsaus", "metalli", "rakentaminen", "teollisuus"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "it-tukihenkilö",
     category: "innovoija",
@@ -16785,7 +18011,7 @@ export const careersData: CareerFI[] = [
       "Dokumentointi"
     ],
     impact: [
-      "Auttaa käyttäjiä työskentelemään tehokkaasti",
+      "Auttaa Suomessa käyttäjiä työskentelemään tehokkaasti",
       "Varmistaa järjestelmien toimivuuden",
       "Vähentää häiriöitä"
     ],
@@ -16849,6 +18075,8 @@ export const careersData: CareerFI[] = [
     keywords: ["it-tuki", "helpdesk", "tietotekniikka", "asiakaspalvelu", "tuki"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "puheterapeutti",
     category: "auttaja",
@@ -16863,9 +18091,9 @@ export const careersData: CareerFI[] = [
       "Viestintävälineiden käyttöönotto"
     ],
     impact: [
-      "Auttaa ihmisiä kommunikoimaan tehokkaasti",
-      "Parantaa elämänlaatua",
-      "Tukee oppimista ja sosiaalista vuorovaikutusta"
+      "Auttaa Suomessa ihmisiä kommunikoimaan tehokkaasti",
+      "Parantaa Suomessa elämänlaatua",
+      "Tukee Suomessa oppimista ja sosiaalista vuorovaikutusta"
     ],
     education_paths: [
       "Yliopisto: Puheterapia",
@@ -16914,7 +18142,11 @@ export const careersData: CareerFI[] = [
       "Sairaalat",
       "Terveyskeskukset",
       "Kunnat",
-      "Yksityiset terveydenhuoltofirmat"
+      "Yksityiset terveydenhuoltofirmat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
@@ -16927,6 +18159,8 @@ export const careersData: CareerFI[] = [
     keywords: ["puheterapeutti", "puhe", "kieli", "kommunikaatio", "logopedia"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "audiologi",
     category: "auttaja",
@@ -16941,9 +18175,9 @@ export const careersData: CareerFI[] = [
       "Kuulon häiriöiden diagnosointi"
     ],
     impact: [
-      "Parantaa ihmisten kuuloa",
-      "Auttaa kuulovammaisia kommunikoimaan",
-      "Parantaa elämänlaatua"
+      "Parantaa Suomessa ihmisten kuuloa",
+      "Auttaa Suomessa kuulovammaisia kommunikoimaan",
+      "Parantaa Suomessa elämänlaatua"
     ],
     education_paths: [
       "Yliopisto: Audiologia",
@@ -16992,7 +18226,11 @@ export const careersData: CareerFI[] = [
       "Sairaalat",
       "Terveyskeskukset",
       "Kuulolaiteliikkeet",
-      "Yksityiset terveydenhuoltofirmat"
+      "Yksityiset terveydenhuoltofirmat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
@@ -17005,6 +18243,8 @@ export const careersData: CareerFI[] = [
     keywords: ["audiologi", "kuulo", "kuulolaitteet", "kuulotarkastus", "kuulonkuntoutus"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "oppilashuoltotyöntekijä",
     category: "auttaja",
@@ -17019,8 +18259,8 @@ export const careersData: CareerFI[] = [
       "Yhteistyö muiden ammattilaisten kanssa"
     ],
     impact: [
-      "Auttaa oppilaita onnistumaan koulussa",
-      "Tukee oppilaiden hyvinvointia",
+      "Auttaa Suomessa oppilaita onnistumaan koulussa",
+      "Tukee Suomessa oppilaiden hyvinvointia",
       "Varmistaa tasa-arvoisen koulutuksen"
     ],
     education_paths: [
@@ -17083,6 +18323,8 @@ export const careersData: CareerFI[] = [
     keywords: ["oppilashuolto", "koulu", "oppilaiden tuki", "hyvinvointi", "sosionomi"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "suuhygienisti",
     category: "auttaja",
@@ -17097,9 +18339,9 @@ export const careersData: CareerFI[] = [
       "Röntgenkuvien ottaminen"
     ],
     impact: [
-      "Parantaa ihmisten suun terveyttä",
+      "Parantaa Suomessa ihmisten suun terveyttä",
       "Ehkäisee suutautia",
-      "Auttaa ihmisiä ylläpitämään hyvää suun terveyttä"
+      "Auttaa Suomessa ihmisiä ylläpitämään hyvää suun terveyttä"
     ],
     education_paths: [
       "AMK: Suuhygienisti",
@@ -17148,7 +18390,11 @@ export const careersData: CareerFI[] = [
       "Hammaslääkäriasemat",
       "Terveyskeskukset",
       "Sairaalat",
-      "Yksityiset hammaslääkäriasemat"
+      "Yksityiset hammaslääkäriasemat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tehy",
@@ -17161,6 +18407,8 @@ export const careersData: CareerFI[] = [
     keywords: ["suuhygienisti", "hammas", "suun terveys", "hammashoito", "suuhygienia"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "kotipalvelutyöntekijä",
     category: "auttaja",
@@ -17175,9 +18423,9 @@ export const careersData: CareerFI[] = [
       "Asiakkaan seuranta"
     ],
     impact: [
-      "Auttaa ihmisiä pysymään kotona",
-      "Parantaa elämänlaatua",
-      "Tukee perheitä"
+      "Auttaa Suomessa ihmisiä pysymään kotona",
+      "Parantaa Suomessa elämänlaatua",
+      "Tukee Suomessa perheitä"
     ],
     education_paths: [
       "Toinen aste: Sosiaali- ja terveysalan perustutkinto",
@@ -17226,7 +18474,11 @@ export const careersData: CareerFI[] = [
       "Kunnat",
       "Yksityiset palveluyritykset",
       "Kolmas sektori",
-      "Oma yritys"
+      "Oma yritys",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "JHL",
@@ -17239,6 +18491,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kotipalvelu", "kotihoito", "henkilökohtainen hoito", "ikääntyneet", "avustaja"],
     study_length_estimate_months: 24
   },
+
+
 {
     id: "full-stack-kehittäjä",
     category: "innovoija",
@@ -17253,9 +18507,9 @@ export const careersData: CareerFI[] = [
       "Deployment ja ylläpito"
     ],
     impact: [
-      "Luo kokonaisvaltaisia digitaalisia ratkaisuja",
-      "Parantaa käyttökokemusta",
-      "Auttaa yrityksiä digitaalisessa muutoksessa"
+      "Luo Suomessa kokonaisvaltaisia digitaalisia ratkaisuja",
+      "Parantaa Suomessa käyttökokemusta",
+      "Auttaa Suomessa yrityksiä digitaalisessa muutoksessa"
     ],
     education_paths: [
       "AMK: Tietojenkäsittely, Ohjelmistotuotanto",
@@ -17304,7 +18558,11 @@ export const careersData: CareerFI[] = [
       "IT-yritykset",
       "Teknologia-startupit",
       "Konsulttiyritykset",
-      "Suuryritykset"
+      "Suuryritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
@@ -17317,6 +18575,8 @@ export const careersData: CareerFI[] = [
     keywords: ["full-stack", "web-kehitys", "frontend", "backend", "fullstack"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "sosiaalisen-median-asiantuntija",
     category: "innovoija",
@@ -17332,8 +18592,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Kasvattaa brändin tunnettuutta",
-      "Parantaa asiakassuhteita",
-      "Auttaa yrityksiä viestimään tehokkaasti"
+      "Parantaa Suomessa asiakassuhteita",
+      "Auttaa Suomessa yrityksiä viestimään tehokkaasti"
     ],
     education_paths: [
       "AMK: Viestintä",
@@ -17382,7 +18642,11 @@ export const careersData: CareerFI[] = [
       "Markkinointitoimistot",
       "Media-yritykset",
       "IT-yritykset",
-      "Suuryritykset"
+      "Suuryritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Media-alan TES",
@@ -17395,6 +18659,8 @@ export const careersData: CareerFI[] = [
     keywords: ["sosiaalinen media", "sosiaalisen median markkinointi", "smm", "sisällöntuotanto", "yhteisö"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "urheiluvalmentaja",
     category: "auttaja",
@@ -17409,9 +18675,9 @@ export const careersData: CareerFI[] = [
       "Kisojen valmistelu"
     ],
     impact: [
-      "Auttaa urheilijoita saavuttamaan tavoitteensa",
-      "Parantaa urheilijoiden suorituskykyä",
-      "Edistää terveellistä liikuntaa"
+      "Auttaa Suomessa urheilijoita saavuttamaan tavoitteensa",
+      "Parantaa Suomessa urheilijoiden suorituskykyä",
+      "Edistää Suomessa terveellistä liikuntaa"
     ],
     education_paths: [
       "Yliopisto: Liikuntatiede",
@@ -17473,6 +18739,8 @@ export const careersData: CareerFI[] = [
     keywords: ["urheiluvalmentaja", "valmennus", "urheilu", "liikunta", "valmentaja"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "lämpötekniikka-asentaja",
     category: "rakentaja",
@@ -17488,7 +18756,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa talojen lämmityksen",
-      "Edistää uusiutuvaa energiaa",
+      "Edistää Suomessa uusiutuvaa energiaa",
       "Vähentää hiilijalanjälkeä"
     ],
     education_paths: [
@@ -17538,7 +18806,11 @@ export const careersData: CareerFI[] = [
       "LVI-yritykset",
       "Uusiutuvaa energiaa",
       "Rakennusyhtiöt",
-      "Oma yritys"
+      "Oma yritys",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusliitto",
@@ -17551,6 +18823,8 @@ export const careersData: CareerFI[] = [
     keywords: ["lämpötekniikka", "maalämpö", "kaukolämpö", "uusiutuva energia", "lvi"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "ilmastoneuvonantaja",
     category: "ympariston-puolustaja",
@@ -17566,8 +18840,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Vähentää hiilijalanjälkeä",
-      "Edistää kestävää kehitystä",
-      "Auttaa organisaatioita siirtymään vihreämpään toimintaan"
+      "Edistää Suomessa kestävää kehitystä",
+      "Auttaa Suomessa organisaatioita siirtymään vihreämpään toimintaan"
     ],
     education_paths: [
       "AMK: Ympäristötekniikka",
@@ -17616,7 +18890,11 @@ export const careersData: CareerFI[] = [
       "Konsulttiyritykset",
       "Suuryritykset",
       "Kunnat",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
@@ -17629,6 +18907,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ilmasto", "hiilijalanjälki", "kestävyys", "ilmastoneuvonta", "ympäristö"],
     study_length_estimate_months: 42
   },
+
+
 {
     id: "aikuiskouluttaja",
     category: "jarjestaja",
@@ -17643,9 +18923,9 @@ export const careersData: CareerFI[] = [
       "Oppimismateriaalien kehittäminen"
     ],
     impact: [
-      "Auttaa aikuisia kehittämään taitojaan",
-      "Tukee työelämässä pysymistä",
-      "Parantaa työllisyyttä"
+      "Auttaa Suomessa aikuisia kehittämään taitojaan",
+      "Tukee Suomessa työelämässä pysymistä",
+      "Parantaa Suomessa työllisyyttä"
     ],
     education_paths: [
       "Yliopisto: Kasvatustiede",
@@ -17707,6 +18987,8 @@ export const careersData: CareerFI[] = [
     keywords: ["aikuiskouluttaja", "aikuiskasvatus", "koulutus", "opetus", "työelämäkoulutus"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "myyntityöntekijä",
     category: "johtaja",
@@ -17721,9 +19003,9 @@ export const careersData: CareerFI[] = [
       "Asiakaspalvelu"
     ],
     impact: [
-      "Auttaa yrityksiä kasvattamaan myyntiä",
+      "Auttaa Suomessa yrityksiä kasvattamaan myyntiä",
       "Rakentaa asiakassuhteita",
-      "Parantaa brändin tunnettuutta"
+      "Parantaa Suomessa brändin tunnettuutta"
     ],
     education_paths: [
       "AMK: Myynti",
@@ -17772,7 +19054,11 @@ export const careersData: CareerFI[] = [
       "Vähittäiskaupat",
       "B2B-yritykset",
       "Telekommunikaatio",
-      "Palveluyritykset"
+      "Palveluyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "PAM",
@@ -17785,6 +19071,8 @@ export const careersData: CareerFI[] = [
     keywords: ["myynti", "myyntityöntekijä", "asiakaspalvelu", "kauppa", "myyntityö"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "reseptionisti",
     category: "jarjestaja",
@@ -17799,8 +19087,8 @@ export const careersData: CareerFI[] = [
       "Hallintotyöt"
     ],
     impact: [
-      "Luo hyvän ensivaikutelman",
-      "Auttaa asiakkaita",
+      "Luo Suomessa hyvän ensivaikutelman",
+      "Auttaa Suomessa asiakkaita",
       "Varmistaa sujuvan palvelun"
     ],
     education_paths: [
@@ -17850,7 +19138,11 @@ export const careersData: CareerFI[] = [
       "Hotellit",
       "Sairaalat",
       "Yritykset",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "JHL",
@@ -17863,6 +19155,8 @@ export const careersData: CareerFI[] = [
     keywords: ["reseptionisti", "vastaanotto", "asiakaspalvelu", "sekretariaatti", "palvelu"],
     study_length_estimate_months: 24
   },
+
+
 {
     id: "verkkosivustonhallintaja",
     category: "innovoija",
@@ -17878,8 +19172,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa verkkosivuston toimivuuden",
-      "Parantaa verkkosivuston näkyvyyttä",
-      "Auttaa yrityksiä viestimään verkossa"
+      "Parantaa Suomessa verkkosivuston näkyvyyttä",
+      "Auttaa Suomessa yrityksiä viestimään verkossa"
     ],
     education_paths: [
       "AMK: Tietojenkäsittely",
@@ -17928,7 +19222,11 @@ export const careersData: CareerFI[] = [
       "IT-yritykset",
       "Media-yritykset",
       "Suuryritykset",
-      "Konsulttiyritykset"
+      "Konsulttiyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
@@ -17941,6 +19239,8 @@ export const careersData: CareerFI[] = [
     keywords: ["verkkosivustonhallinta", "web", "cms", "seo", "verkkosivusto"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "vaihtoehtoinen-energia-insinööri",
     category: "ympariston-puolustaja",
@@ -17956,8 +19256,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Vähentää hiilijalanjälkeä",
-      "Edistää uusiutuvaa energiaa",
-      "Auttaa siirtymään vihreämpään energiaan"
+      "Edistää Suomessa uusiutuvaa energiaa",
+      "Auttaa Suomessa siirtymään vihreämpään energiaan"
     ],
     education_paths: [
       "AMK: Energiatekniikka",
@@ -18006,7 +19306,11 @@ export const careersData: CareerFI[] = [
       "Energiayritykset",
       "Konsulttiyritykset",
       "Suuryritykset",
-      "Julkiset organisaatiot"
+      "Julkiset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Insöörit",
@@ -18019,6 +19323,8 @@ export const careersData: CareerFI[] = [
     keywords: ["uusiutuva energia", "aurinkoenergia", "tuulienergia", "biokaasu", "energiainsinööri"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "rakennustyönjohtaja",
     category: "rakentaja",
@@ -18034,8 +19340,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa rakennusprojektien onnistumisen",
-      "Parantaa turvallisuutta",
-      "Auttaa rakentamaan kestävästi"
+      "Parantaa Suomessa turvallisuutta",
+      "Auttaa Suomessa rakentamaan kestävästi"
     ],
     education_paths: [
       "AMK: Rakennusinsinööri",
@@ -18084,7 +19390,11 @@ export const careersData: CareerFI[] = [
       "Rakennusyhtiöt",
       "Rakennuttajat",
       "Suuryritykset",
-      "Kunnat"
+      "Kunnat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
     union_or_CBA: "Rakennusliitto",
@@ -18097,6 +19407,8 @@ export const careersData: CareerFI[] = [
     keywords: ["rakennustyönjohtaja", "työnjohtaja", "rakennus", "projektinhallinta", "rakennusinsinööri"],
     study_length_estimate_months: 48
   },
+
+
 {
     id: "aineenopettaja",
     category: "auttaja",
@@ -18111,7 +19423,7 @@ export const careersData: CareerFI[] = [
       "Yhteistyö kollegoiden kanssa"
     ],
     impact: [
-      "Auttaa oppilaita oppimaan",
+      "Auttaa Suomessa oppilaita oppimaan",
       "Valmistaa oppilaita työelämään",
       "Kehittää oppilaiden taitoja"
     ],
@@ -18175,6 +19487,8 @@ export const careersData: CareerFI[] = [
     keywords: ["aineenopettaja", "opettaja", "opetus", "koulu", "pedagogiikka"],
     study_length_estimate_months: 60
   },
+
+
 {
     id: "livestream-tuottaja",
     category: "luova",
@@ -18189,9 +19503,9 @@ export const careersData: CareerFI[] = [
       "Sisällön kehittäminen"
     ],
     impact: [
-      "Luo kiinnostavaa suoratoistosisältöä",
+      "Luo Suomessa kiinnostavaa suoratoistosisältöä",
       "Rakentaa yhteisöä",
-      "Auttaa viestimään reaaliajassa"
+      "Auttaa Suomessa viestimään reaaliajassa"
     ],
     education_paths: [
       "AMK: Medianomi",
@@ -18240,7 +19554,11 @@ export const careersData: CareerFI[] = [
       "Media-yritykset",
       "Peliyhtiöt",
       "Yritykset",
-      "Freelance-työskentely"
+      "Freelance-työskentely",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: true, travel: "vähän" },
     union_or_CBA: "Media-alan TES",
@@ -18253,6 +19571,8 @@ export const careersData: CareerFI[] = [
     keywords: ["livestream", "suoratoisto", "streaming", "media", "tuottaja"],
     study_length_estimate_months: 36
   },
+
+
 {
     id: "hieroja",
     category: "auttaja",
@@ -18267,9 +19587,9 @@ export const careersData: CareerFI[] = [
       "Terveyden edistäminen"
     ],
     impact: [
-      "Auttaa ihmisiä rentoutumaan",
+      "Auttaa Suomessa ihmisiä rentoutumaan",
       "Lievittää kipuja",
-      "Parantaa hyvinvointia"
+      "Parantaa Suomessa hyvinvointia"
     ],
     education_paths: [
       "Toinen aste: Hieroja",
@@ -18318,7 +19638,11 @@ export const careersData: CareerFI[] = [
       "Hierontastudiot",
       "Kuntoutuskeskukset",
       "Hotellit",
-      "Oma yritys"
+      "Oma yritys",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
@@ -18331,6 +19655,8 @@ export const careersData: CareerFI[] = [
     keywords: ["hieroja", "hieronta", "rentoutus", "hyvinvointi", "terveys"],
     study_length_estimate_months: 24
   },
+
+
 {
     id: "ääniteknikko",
     category: "luova",
@@ -18345,9 +19671,9 @@ export const careersData: CareerFI[] = [
       "Äänenlaadun optimointi"
     ],
     impact: [
-      "Parantaa äänen laatua",
-      "Auttaa viestimään tehokkaasti",
-      "Luo ammattimaisen äänen"
+      "Parantaa Suomessa äänen laatua",
+      "Auttaa Suomessa viestimään tehokkaasti",
+      "Luo Suomessa ammattimaisen äänen"
     ],
     education_paths: [
       "AMK: Medianomi, Äänitekniikka",
@@ -18396,7 +19722,11 @@ export const careersData: CareerFI[] = [
       "Studiot",
       "Televisioyhtiöt",
       "Radioyhtiöt",
-      "Freelance-työskentely"
+      "Freelance-työskentely",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Musiikkialan TES",
@@ -18409,6 +19739,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ääniteknikko", "ääni", "miksaaminen", "masterointi", "media"],
     study_length_estimate_months: 42
   }
+
+
   ,
   {
     id: "asiakaspalveluvastaava",
@@ -18424,9 +19756,9 @@ export const careersData: CareerFI[] = [
       "Yhteistyö myynnin, tuotannon ja tuotekehityksen kanssa"
     ],
     impact: [
-      "Parantaa asiakkaiden luottamusta ja sitoutumista",
+      "Parantaa Suomessa asiakkaiden luottamusta ja sitoutumista",
       "Tunnistaa palvelun kehityskohteet ajoissa",
-      "Auttaa yritystä kasvamaan hallitusti"
+      "Auttaa Suomessa yritystä kasvamaan hallitusti"
     ],
     education_paths: [
       "AMK: Liiketalouden tradenomi (palveluliiketoiminta)",
@@ -18483,7 +19815,11 @@ export const careersData: CareerFI[] = [
       "Verkkokaupat",
       "Finanssialan yritykset",
       "Teknologiayritykset",
-      "Palvelukeskukset"
+      "Palvelukeskukset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Palvelualojen TES",
@@ -18494,6 +19830,8 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakaskokemus", "customer success", "palvelujohtaminen", "CRM", "tiiminvetäjä"],
     study_length_estimate_months: 36
   },
+
+
   {
     id: "palvelumuotoilija",
     category: "johtaja",
@@ -18508,8 +19846,8 @@ export const careersData: CareerFI[] = [
       "Vaikutusten mittaaminen ja raportointi"
     ],
     impact: [
-      "Parantaa asiakkaiden kokemusta ja sujuvuutta",
-      "Auttaa yrityksiä erottumaan kilpailussa",
+      "Parantaa Suomessa asiakkaiden kokemusta ja sujuvuutta",
+      "Auttaa Suomessa yrityksiä erottumaan kilpailussa",
       "Vähentää turhaa työtä ja kustannuksia"
     ],
     education_paths: [
@@ -18567,7 +19905,11 @@ export const careersData: CareerFI[] = [
       "Konsulttiyritykset",
       "Julkiset palveluorganisaatiot",
       "Finanssi- ja terveysalan yritykset",
-      "Digitoimistot"
+      "Digitoimistot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Suomen Muotoilijat Ornamo",
@@ -18580,6 +19922,8 @@ export const careersData: CareerFI[] = [
     keywords: ["service design", "asiakaskokemus", "design-ajattelu", "palvelupolku", "kokeilukulttuuri"],
     study_length_estimate_months: 36
   },
+
+
   {
     id: "lattiasuunnittelija",
     category: "rakentaja",
@@ -18594,9 +19938,9 @@ export const careersData: CareerFI[] = [
       "Yhteistyö sisustusarkkitehtien ja urakoitsijoiden kanssa"
     ],
     impact: [
-      "Parantaa tilojen toimivuutta ja turvallisuutta",
-      "Vaikuttaa rakennusten energiatehokkuuteen ja elinkaareen",
-      "Auttaa asiakkaita tekemään kestäviä valintoja"
+      "Parantaa Suomessa tilojen toimivuutta ja turvallisuutta",
+      "Vaikuttaa Suomessa rakennusten energiatehokkuuteen ja elinkaareen",
+      "Auttaa Suomessa asiakkaita tekemään kestäviä valintoja"
     ],
     education_paths: [
       "Toinen aste: Sisustusalan perustutkinto",
@@ -18653,7 +19997,11 @@ export const careersData: CareerFI[] = [
       "Rakennusliikkeet",
       "Sisustusliikkeet",
       "Lattiapäällystysyritykset",
-      "Arkkitehtitoimistot"
+      "Arkkitehtitoimistot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Suomen Sisustusarkkitehdit SIO",
@@ -18666,6 +20014,8 @@ export const careersData: CareerFI[] = [
     keywords: ["lattiapinnat", "sisustussuunnittelu", "materiaalisuunnittelu", "CAD", "tilaratkaisut"],
     study_length_estimate_months: 36
   },
+
+
   {
     id: "rakennusmateriaalimyyja",
     category: "rakentaja",
@@ -18681,8 +20031,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa oikeat materiaalit oikeaan aikaan",
-      "Tukee rakentamisen laatua ja turvallisuutta",
-      "Auttaa asiakkaita löytämään kustannustehokkaat ratkaisut"
+      "Tukee Suomessa rakentamisen laatua ja turvallisuutta",
+      "Auttaa Suomessa asiakkaita löytämään kustannustehokkaat ratkaisut"
     ],
     education_paths: [
       "Toinen aste: Myynnin ja markkinoinnin perustutkinto",
@@ -18739,7 +20089,11 @@ export const careersData: CareerFI[] = [
       "Rautakauppaketjut",
       "Rakennustarviketukut",
       "Rakennusliikkeiden hankintatiimit",
-      "Verkkokaupat"
+      "Verkkokaupat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Kaupan TES",
@@ -18752,6 +20106,8 @@ export const careersData: CareerFI[] = [
     keywords: ["rakennustarvikkeet", "myynti", "asiakaspalvelu", "tarjouslaskenta", "logistiikka"],
     study_length_estimate_months: 30
   },
+
+
   {
     id: "rautakauppias",
     category: "jarjestaja",
@@ -18825,7 +20181,11 @@ export const careersData: CareerFI[] = [
       "Rautakauppaketjut",
       "Itsenäiset rautakaupat",
       "Verkkorautakaupat",
-      "Rakennusalan jälleenmyynti"
+      "Rakennusalan jälleenmyynti",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Kaupan TES",
@@ -18839,6 +20199,8 @@ export const careersData: CareerFI[] = [
     keywords: ["rautakauppa", "kaupan johto", "yrittäjyys", "hankinta", "myymälä"],
     study_length_estimate_months: 42
   },
+
+
   {
     id: "biokaasuteknikko",
     category: "ympariston-puolustaja",
@@ -18912,7 +20274,11 @@ export const careersData: CareerFI[] = [
       "Energiayhtiöt",
       "Maatilojen biokaasulaitokset",
       "Jätehuoltoyhtiöt",
-      "Teolliset biokaasulaitokset"
+      "Teolliset biokaasulaitokset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Prosessiteollisuuden TES",
@@ -18925,6 +20291,8 @@ export const careersData: CareerFI[] = [
     keywords: ["biokaasu", "uusiutuva energia", "prosessitekniikka", "kestävä kehitys", "ympäristötekniikka"],
     study_length_estimate_months: 36
   },
+
+
   {
     id: "ymparisto-ohjelmoija",
     category: "ympariston-puolustaja",
@@ -18939,7 +20307,7 @@ export const careersData: CareerFI[] = [
       "Yhteistyö tutkijoiden ja viranomaisten kanssa"
     ],
     impact: [
-      "Auttaa organisaatioita seuraamaan ilmasto- ja ympäristötavoitteita",
+      "Auttaa Suomessa organisaatioita seuraamaan ilmasto- ja ympäristötavoitteita",
       "Mahdollistaa dataan perustuvan päätöksenteon",
       "Nopeuttaa kestävien ratkaisujen käyttöönottoa"
     ],
@@ -18998,7 +20366,11 @@ export const careersData: CareerFI[] = [
       "Konsulttitoimistot",
       "Kunnat ja kaupungit",
       "Energia- ja ympäristöalan yritykset",
-      "Tutkimuslaitokset"
+      "Tutkimuslaitokset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietoala ry",
@@ -19011,6 +20383,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristodata", "ohjelmistokehitys", "ilmastotyö", "GIS", "data-analytiikka"],
     study_length_estimate_months: 36
   },
+
+
   {
     id: "kuvausassistentti",
     category: "luova",
@@ -19027,7 +20401,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Mahdollistaa laadukkaan kuvauksen tiukoissa aikatauluissa",
       "Huolehtii turvallisesta työympäristöstä kuvauksissa",
-      "Tukee luovan vision toteutumista"
+      "Tukee Suomessa luovan vision toteutumista"
     ],
     education_paths: [
       "Toinen aste: Audiovisuaalisen viestinnän perustutkinto",
@@ -19084,7 +20458,11 @@ export const careersData: CareerFI[] = [
       "Tuotantoyhtiöt",
       "Mainostoimistot",
       "TV-kanavat",
-      "Freelance-tuotannot"
+      "Freelance-tuotannot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "Suomen elokuva- ja mediatyöntekijät SET",
@@ -19097,6 +20475,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kuvaus", "elokuva", "kamera", "tuotanto", "AV-ala"],
     study_length_estimate_months: 36
   },
+
+
   {
     id: "baarimikko",
     category: "auttaja",
@@ -19111,9 +20491,9 @@ export const careersData: CareerFI[] = [
       "Anniskelulainsäädännön noudattaminen"
     ],
     impact: [
-      "Luo elämyksiä asiakkaille",
-      "Edistää vastuullista anniskelua",
-      "Tukee matkailu- ja tapahtuma-alaa"
+      "Luo Suomessa elämyksiä asiakkaille",
+      "Edistää Suomessa vastuullista anniskelua",
+      "Tukee Suomessa matkailu- ja tapahtuma-alaa"
     ],
     education_paths: [
       "Toinen aste: Ravintola- ja cateringalan perustutkinto (baaripalvelut)",
@@ -19170,7 +20550,11 @@ export const careersData: CareerFI[] = [
       "Hotellit",
       "Baarit ja yökerhot",
       "Risteily- ja tapahtumayhtiöt",
-      "Catering-yritykset"
+      "Catering-yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "MaRa / PAM",
@@ -19183,6 +20567,8 @@ export const careersData: CareerFI[] = [
     keywords: ["baarityö", "cocktail", "ravintola", "anniskelu", "palvelu"],
     study_length_estimate_months: 30
   },
+
+
   {
     id: "aktuaari",
     category: "jarjestaja",
@@ -19198,7 +20584,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -19246,7 +20632,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -19256,6 +20646,8 @@ export const careersData: CareerFI[] = [
     keywords: ["aktuaari", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "arkkitehti",
     category: "visionaari",
@@ -19271,7 +20663,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -19319,7 +20711,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -19329,6 +20725,8 @@ export const careersData: CareerFI[] = [
     keywords: ["arkkitehti", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "erikoislaakari",
     category: "auttaja",
@@ -19344,7 +20742,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -19392,7 +20790,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -19402,6 +20804,8 @@ export const careersData: CareerFI[] = [
     keywords: ["erikoislaakari", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "erityispedagogi",
     category: "auttaja",
@@ -19417,7 +20821,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -19465,7 +20869,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -19475,6 +20883,8 @@ export const careersData: CareerFI[] = [
     keywords: ["erityispedagogi", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "etiikan-asiantuntija",
     category: "visionaari",
@@ -19490,7 +20900,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -19538,7 +20948,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -19548,6 +20962,8 @@ export const careersData: CareerFI[] = [
     keywords: ["etiikan-asiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "filosofi",
     category: "visionaari",
@@ -19563,7 +20979,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -19611,7 +21027,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -19621,6 +21041,8 @@ export const careersData: CareerFI[] = [
     keywords: ["filosofi", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "historioitsija",
     category: "visionaari",
@@ -19636,7 +21058,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -19684,7 +21106,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -19694,6 +21120,8 @@ export const careersData: CareerFI[] = [
     keywords: ["historioitsija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "insinoori",
     category: "innovoija",
@@ -19709,7 +21137,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -19757,7 +21185,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -19767,6 +21199,8 @@ export const careersData: CareerFI[] = [
     keywords: ["insinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "it-tukihenkilo",
     category: "innovoija",
@@ -19782,7 +21216,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -19830,7 +21264,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -19840,6 +21278,8 @@ export const careersData: CareerFI[] = [
     keywords: ["it-tukihenkilo", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "journalisti",
     category: "visionaari",
@@ -19855,7 +21295,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -19903,7 +21343,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -19913,6 +21357,8 @@ export const careersData: CareerFI[] = [
     keywords: ["journalisti", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "kemiisti",
     category: "innovoija",
@@ -19928,7 +21374,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -19976,7 +21422,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -19986,6 +21436,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kemiisti", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "kirjanpitaja",
     category: "jarjestaja",
@@ -20001,7 +21453,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20049,7 +21501,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -20059,6 +21515,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kirjanpitaja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "konetekniikan-insinoori",
     category: "innovoija",
@@ -20074,7 +21532,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20122,7 +21580,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -20132,6 +21594,8 @@ export const careersData: CareerFI[] = [
     keywords: ["konetekniikan-insinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "koulupsykologi",
     category: "auttaja",
@@ -20147,7 +21611,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20195,7 +21659,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -20205,6 +21673,8 @@ export const careersData: CareerFI[] = [
     keywords: ["koulupsykologi", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "kriitikko",
     category: "visionaari",
@@ -20220,7 +21690,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20268,7 +21738,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -20278,6 +21752,8 @@ export const careersData: CareerFI[] = [
     keywords: ["kriitikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "laatuasiantuntija",
     category: "jarjestaja",
@@ -20293,7 +21769,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20341,7 +21817,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -20351,6 +21831,8 @@ export const careersData: CareerFI[] = [
     keywords: ["laatuasiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "maatalousasiantuntija",
     category: "ympariston-puolustaja",
@@ -20366,7 +21848,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20414,7 +21896,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -20424,6 +21910,8 @@ export const careersData: CareerFI[] = [
     keywords: ["maatalousasiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "maatalousinsinoori",
     category: "ympariston-puolustaja",
@@ -20439,7 +21927,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20487,7 +21975,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -20497,6 +21989,8 @@ export const careersData: CareerFI[] = [
     keywords: ["maatalousinsinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "markkinointipaallikko",
     category: "johtaja",
@@ -20512,7 +22006,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20560,7 +22054,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -20570,6 +22068,8 @@ export const careersData: CareerFI[] = [
     keywords: ["markkinointipaallikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "matkailuneuvoja",
     category: "visionaari",
@@ -20585,7 +22085,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20633,7 +22133,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -20643,6 +22147,8 @@ export const careersData: CareerFI[] = [
     keywords: ["matkailuneuvoja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "mediasuunnittelija",
     category: "luova",
@@ -20658,7 +22164,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20706,7 +22212,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -20716,6 +22226,8 @@ export const careersData: CareerFI[] = [
     keywords: ["mediasuunnittelija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "merenkulun-insinoori",
     category: "innovoija",
@@ -20731,7 +22243,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20779,7 +22291,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -20789,6 +22305,8 @@ export const careersData: CareerFI[] = [
     keywords: ["merenkulun-insinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "merikapteeni",
     category: "johtaja",
@@ -20804,7 +22322,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20852,7 +22370,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -20862,6 +22384,8 @@ export const careersData: CareerFI[] = [
     keywords: ["merikapteeni", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "metsainsinoori",
     category: "ympariston-puolustaja",
@@ -20877,7 +22401,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20925,7 +22449,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -20935,6 +22463,8 @@ export const careersData: CareerFI[] = [
     keywords: ["metsainsinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "metsatalousasiantuntija",
     category: "ympariston-puolustaja",
@@ -20950,7 +22480,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -20998,7 +22528,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21008,6 +22542,8 @@ export const careersData: CareerFI[] = [
     keywords: ["metsatalousasiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "museoasiantuntija",
     category: "visionaari",
@@ -21023,7 +22559,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -21071,7 +22607,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21081,6 +22621,8 @@ export const careersData: CareerFI[] = [
     keywords: ["museoasiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "projektipaallikko",
     category: "jarjestaja",
@@ -21096,7 +22638,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -21144,7 +22686,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21154,6 +22700,8 @@ export const careersData: CareerFI[] = [
     keywords: ["projektipaallikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "rakennusarkkitehti",
     category: "innovoija",
@@ -21169,7 +22717,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -21217,7 +22765,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21227,6 +22779,8 @@ export const careersData: CareerFI[] = [
     keywords: ["rakennusarkkitehti", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "ravintolapaallikko",
     category: "johtaja",
@@ -21242,7 +22796,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -21290,7 +22844,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21300,6 +22858,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ravintolapaallikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "sahkotekniikan-insinoori",
     category: "innovoija",
@@ -21315,7 +22875,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -21363,7 +22923,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21373,6 +22937,8 @@ export const careersData: CareerFI[] = [
     keywords: ["sahkotekniikan-insinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "sosiaaliohjaja",
     category: "auttaja",
@@ -21388,7 +22954,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -21436,7 +23002,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21446,6 +23016,8 @@ export const careersData: CareerFI[] = [
     keywords: ["sosiaaliohjaja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "sosiaalitutkija",
     category: "visionaari",
@@ -21461,7 +23033,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -21509,7 +23081,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21519,6 +23095,8 @@ export const careersData: CareerFI[] = [
     keywords: ["sosiaalitutkija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "sosiaalityontekija",
     category: "auttaja",
@@ -21534,7 +23112,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -21582,7 +23160,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21592,6 +23174,8 @@ export const careersData: CareerFI[] = [
     keywords: ["sosiaalityontekija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "tilitoimiston-johtaja",
     category: "johtaja",
@@ -21607,7 +23191,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -21655,7 +23239,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21665,6 +23253,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tilitoimiston-johtaja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "tutkija",
     category: "visionaari",
@@ -21680,7 +23270,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -21728,7 +23318,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21738,6 +23332,8 @@ export const careersData: CareerFI[] = [
     keywords: ["tutkija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "uutistoimittaja",
     category: "visionaari",
@@ -21753,7 +23349,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -21801,7 +23397,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21811,6 +23411,8 @@ export const careersData: CareerFI[] = [
     keywords: ["uutistoimittaja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "valmentaja",
     category: "auttaja",
@@ -21826,7 +23428,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -21874,7 +23476,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21884,6 +23490,8 @@ export const careersData: CareerFI[] = [
     keywords: ["valmentaja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "visuaalinen-suunnittelija",
     category: "luova",
@@ -21899,7 +23507,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -21947,7 +23555,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -21957,6 +23569,8 @@ export const careersData: CareerFI[] = [
     keywords: ["visuaalinen-suunnittelija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "ymparistonsuojelun-asiantuntija",
     category: "ympariston-puolustaja",
@@ -21972,7 +23586,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -22020,7 +23634,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -22030,6 +23648,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ymparistonsuojelun-asiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "ymparistoteknikko",
     category: "ympariston-puolustaja",
@@ -22045,7 +23665,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee organisaatioita tekemään tietoon perustuvia päätöksiä",
+      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
       "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
     ],
     education_paths: [
@@ -22093,7 +23713,11 @@ export const careersData: CareerFI[] = [
       "Kunnat ja hyvinvointialueet",
       "Valtio ja virastot",
       "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot"
+      "Järjestöt ja asiantuntijaorganisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
@@ -22103,6 +23727,8 @@ export const careersData: CareerFI[] = [
     keywords: ["ymparistoteknikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
+
+
 ,
 
 {
@@ -22110,7 +23736,7 @@ export const careersData: CareerFI[] = [
     category: "innovoija",
     title_fi: "Tuotepäällikkö",
     title_en: "Product Manager",
-    short_description: "Tuotepäällikkö määrittelee ja kehittää digitaalisia tuotteita vastaamaan käyttäjien tarpeita ja liiketoimintatavoitteita. Helsingissä erityisen kysytty rooli startup- ja kasvuyrityksissa, jossa yhdistyvät teknologia, liiketoiminta ja käyttäjäymmärrys. Tarjoaa nopean urakehityksen ja mahdollisuuden vaikuttaa miljoonien käyttäjien arkeen.",
+    short_description: "Tuotepäällikkö määrittelee ja kehittää digitaalisia tuotteita vastaamaan käyttäjien tarpeita ja liiketoimintatavoitteita. Suomessa erityisen kysytty rooli startup- ja kasvuyrityksissa, jossa yhdistyvät teknologia, liiketoiminta ja käyttäjäymmärrys Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa nopean urakehityksen ja mahdollisuuden vaikuttaa miljoonien käyttäjien arkeen.",
     main_tasks: [
           "Tuotevision ja strategian määrittely",
           "Kehitysjonon priorisointi ja roadmapin laatiminen",
@@ -22119,9 +23745,9 @@ export const careersData: CareerFI[] = [
           "Tuotteen menestyksen mittaaminen ja optimointi"
     ],
     impact: [
-          "Luo tuotteita ja palveluita, joita sadat tuhannet ihmiset käyttävät päivittäin Suomessa ja kansainvälisesti",
-          "Ohjaa teknologiakehitystä käyttäjälähtöisesti ja vaikuttaa suoraan tuotteen menestykseen",
-          "Mahdollistaa liiketoiminnan nopean kasvun ja läpimurtoinnovaatiot Helsingin tech-ekosysteemissä"
+      "Luo tuotteita ja palveluita, joita sadat tuhannet ihmiset käyttävät päivittäin Suomessa ja kansainvälisesti",
+      "Ohjaa teknologiakehitystä käyttäjälähtöisesti ja vaikuttaa Suomessa suoraan tuotteen menestykseen",
+      "Mahdollistaa liiketoiminnan nopean kasvun ja läpimurtoinnovaatiot Helsingin tech-ekosysteemissä"
     ],
     education_paths: [
           "AMK: Tradenomi, tietotekniikka",
@@ -22167,10 +23793,14 @@ export const careersData: CareerFI[] = [
           "CPO"
     ],
     typical_employers: [
-          "Wolt, Supercell, Reaktor",
-          "Vincit, Futurice, Solita",
-          "Startup-yritykset ja kasvuyhtiöt",
-          "Digitaaliset palvelutalot ja IT-konsultit"
+      "Wolt, Supercell, Reaktor",
+      "Vincit, Futurice, Solita",
+      "Startup-yritykset ja kasvuyhtiöt",
+      "Digitaaliset palvelutalot ja IT-konsultit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Nitor (Turku)",
+      "Oulu Health Labs"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22188,12 +23818,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 60
   },
 
+
+
 {
     id: "scrum-master",
     category: "jarjestaja",
     title_fi: "Scrum Master",
     title_en: "Scrum Master",
-    short_description: "Scrum Master fasilitoi ketterää kehitystä ja varmistaa että tiimi työskentelee tehokkaasti Scrum-viitekehyksessä. Helsingissä kasvava tarve osaavilla fasilitaattoreilla, jotka yhdistävät tiimivalmentamisen ja prosessikehittämisen. Täysin etätyömahdollisuus ja selkeä polku kohti Agile Coach -roolia.",
+    short_description: "Scrum Master fasilitoi ketterää kehitystä ja varmistaa että tiimi työskentelee tehokkaasti Scrum-viitekehyksessä. Suomessa kasvava tarve osaavilla fasilitaattoreilla, jotka yhdistävät tiimivalmentamisen ja prosessikehittämisen Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Täysin etätyömahdollisuus ja selkeä polku kohti Agile Coach -roolia.",
     main_tasks: [
           "Scrum-seremonioiden fasilitointi (daily, planning, retro)",
           "Esteiden tunnistaminen ja poistaminen",
@@ -22202,9 +23834,9 @@ export const careersData: CareerFI[] = [
           "Yhteistyö Product Ownerin ja sidosryhmien kanssa"
     ],
     impact: [
-          "Parantaa tiimin tuottavuutta 20-30% tehokkaammalla yhteistyöllä ja motivaation kasvulla",
-          "Mahdollistaa 2-3x nopeamman tuotekehityksen ja julkaisusyklin ketterien käytäntöjen avulla",
-          "Luo modernin, oppivan työkulttuurin joka houkuttelee huippuosaajia"
+      "Parantaa Suomessa tiimin tuottavuutta 20-30% tehokkaammalla yhteistyöllä ja motivaation kasvulla",
+      "Mahdollistaa 2-3x nopeamman tuotekehityksen ja julkaisusyklin ketterien käytäntöjen avulla",
+      "Luo Suomessa modernin, oppivan työkulttuurin joka houkuttelee huippuosaajia"
     ],
     education_paths: [
           "Korkeakoulututkinto (ei tiukka vaatimus)",
@@ -22244,10 +23876,14 @@ export const careersData: CareerFI[] = [
           "Program Manager"
     ],
     typical_employers: [
-          "Wolt, Supercell, Reaktor, Futurice",
-          "Vincit, Solita, Gofore",
-          "Startup-yritykset ja kasvuyhtiöt",
-          "Digitaaliset palvelutalot ja IT-konsultit"
+      "Wolt, Supercell, Reaktor, Futurice",
+      "Vincit, Solita, Gofore",
+      "Startup-yritykset ja kasvuyhtiöt",
+      "Digitaaliset palvelutalot ja IT-konsultit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Nitor (Turku)",
+      "Oulu Health Labs"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22265,12 +23901,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 48
   },
 
+
+
 {
     id: "devops-engineer",
     category: "innovoija",
     title_fi: "DevOps-insinööri",
     title_en: "DevOps Engineer",
-    short_description: "DevOps-insinööri automatisoi ohjelmistokehityksen prosesseja ja ylläpitää IT-infrastruktuuria pilvessä. Helsingissä erittäin kysytty osaaja, joka yhdistää teknisen syväosaamisen ja automaation business-vaikuttavuuteen. Tarjoaa joustavan etätyön ja kilpailukykyisen palkan 4500-7500€/kk.",
+    short_description: "DevOps-insinööri automatisoi ohjelmistokehityksen prosesseja ja ylläpitää IT-infrastruktuuria pilvessä. Suomessa erittäin kysytty osaaja, joka yhdistää teknisen syväosaamisen ja automaation business-vaikuttavuuteen Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa joustavan etätyön ja kilpailukykyisen palkan 4500-7500€/kk.",
     main_tasks: [
           "CI/CD-putkistojen rakentaminen ja ylläpito",
           "Infrastruktuurin automatisointi (Infrastructure as Code)",
@@ -22279,9 +23917,9 @@ export const careersData: CareerFI[] = [
           "Tietoturvan ja skaalautuvuuden varmistaminen"
     ],
     impact: [
-          "Nopeuttaa ohjelmistojen julkaisusykliä viikoista minuutteihin automaation avulla",
-          "Vähentää manuaalista työtä 70-90% ja vapauttaa kehittäjien aikaa innovointiin",
-          "Parantaa järjestelmien luotettavuutta 99.9% uptime-tasolle ja mahdollistaa skaalautumisen miljoonille käyttäjille"
+      "Nopeuttaa ohjelmistojen julkaisusykliä viikoista minuutteihin automaation avulla",
+      "Vähentää manuaalista työtä 70-90% ja vapauttaa Suomessa kehittäjien aikaa innovointiin",
+      "Parantaa Suomessa järjestelmien luotettavuutta 99.9% uptime-tasolle ja mahdollistaa skaalautumisen miljoonille käyttäjille"
     ],
     education_paths: [
           "AMK: Tietotekniikka, ohjelmistotekniikka",
@@ -22327,10 +23965,14 @@ export const careersData: CareerFI[] = [
           "Platform Engineer"
     ],
     typical_employers: [
-          "Wolt, Supercell, Smartly.io",
-          "Reaktor, Futurice, Vincit",
-          "Nordcloud, F-Secure, Aiven",
-          "Startup-yritykset ja kasvuyhtiöt"
+      "Wolt, Supercell, Smartly.io",
+      "Reaktor, Futurice, Vincit",
+      "Nordcloud, F-Secure, Aiven",
+      "Startup-yritykset ja kasvuyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Nitor (Turku)",
+      "Oulu Health Labs"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22348,12 +23990,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 48
   },
 
+
+
 {
     id: "data-analyst",
     category: "innovoija",
     title_fi: "Data-analyytikko",
     title_en: "Data Analyst",
-    short_description: "Data-analyytikko kerää, käsittelee ja analysoi dataa liiketoimintapäätösten tueksi sekä muuttaa raakadatan ymmärrettäviksi raporteiksi ja visualisoinneiksi. Helsingissä kasvava kysyntä kaikilla aloilla - alkeistason aloituspalkka 3500€ ja nopea kehitys kohti senior-roolia. Täysin etätyömahdollisuus ja joustava työaika.",
+    short_description: "Data-analyytikko kerää, käsittelee ja analysoi dataa liiketoimintapäätösten tueksi sekä muuttaa raakadatan ymmärrettäviksi raporteiksi ja visualisoinneiksi. Suomessa kasvava kysyntä kaikilla aloilla - alkeistason aloituspalkka 3500€ ja nopea kehitys kohti senior-roolia Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Täysin etätyömahdollisuus ja joustava työaika.",
     main_tasks: [
           "Datan kerääminen ja siivous",
           "Tilastollinen analyysi ja raportointi",
@@ -22362,9 +24006,9 @@ export const careersData: CareerFI[] = [
           "SQL-kyselyiden kirjoittaminen"
     ],
     impact: [
-          "Tukee parempia liiketoimintapäätöksiä, jotka voivat tuottaa miljoonia euroja lisäarvoa",
-          "Tunnistaa kasvumahdollisuuksia datasta ja ohjaa resursseja oikeisiin kohteisiin",
-          "Tehostaa prosesseja analytiikan avulla ja säästää yrityksen aikaa sekä kustannuksia merkittävästi"
+      "Tukee Suomessa parempia liiketoimintapäätöksiä, jotka voivat tuottaa miljoonia euroja lisäarvoa",
+      "Tunnistaa kasvumahdollisuuksia datasta ja ohjaa resursseja oikeisiin kohteisiin",
+      "Tehostaa prosesseja analytiikan avulla ja säästää yrityksen aikaa sekä kustannuksia merkittävästi"
     ],
     education_paths: [
           "AMK: Tietojenkäsittely, liiketalous",
@@ -22408,10 +24052,14 @@ export const careersData: CareerFI[] = [
           "Analytics Manager"
     ],
     typical_employers: [
-          "Wolt, Supercell, Smartly.io",
-          "Reaktor, Vincit, Solita, Futurice",
-          "S-ryhmä, K-ryhmä, Veikkaus",
-          "Nordea, OP, Danske Bank"
+      "Wolt, Supercell, Smartly.io",
+      "Reaktor, Vincit, Solita, Futurice",
+      "S-ryhmä, K-ryhmä, Veikkaus",
+      "Nordea, OP, Danske Bank",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Nitor (Turku)",
+      "Oulu Health Labs"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset / Toimihenkilöunioni",
@@ -22429,12 +24077,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
 {
     id: "ux-researcher",
     category: "innovoija",
     title_fi: "UX-tutkija",
     title_en: "UX Researcher",
-    short_description: "UX-tutkija selvittää käyttäjien tarpeita, käyttäytymistä ja odotuksia tutkimusmenetelmin sekä tuottaa oivalluksia tuotesuunnittelun tueksi. Helsingissä nouseva trendi käyttäjälähtöisessä suunnittelussa - yhdistää psykologian, tutkimuksen ja tuotekehityksen. Tarjoaa merkityksellisen työn ja suoran vaikutuksen tuotteen menestykseen.",
+    short_description: "UX-tutkija selvittää käyttäjien tarpeita, käyttäytymistä ja odotuksia tutkimusmenetelmin sekä tuottaa oivalluksia tuotesuunnittelun tueksi. Suomessa nouseva trendi käyttäjälähtöisessä suunnittelussa - yhdistää psykologian, tutkimuksen ja tuotekehityksen Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn ja suoran vaikutuksen tuotteen menestykseen.",
     main_tasks: [
           "Käyttäjätutkimusten suunnittelu ja toteutus",
           "Haastattelujen ja käytettävyystestien järjestäminen",
@@ -22443,9 +24093,9 @@ export const careersData: CareerFI[] = [
           "Yhteistyö suunnittelijoiden ja kehittäjien kanssa"
     ],
     impact: [
-          "Varmistaa että tuotteet vastaavat satojen tuhansien käyttäjien tarpeisiin ja odotuksiin",
-          "Säästää satoja tuhansia euroja kehityskustannuksia tunnistamalla oikeat ratkaisut ennen toteutusta",
-          "Parantaa käyttäjäkokemusta ja nostaa asiakastyytyväisyyttä 30-50% tutkittujen oivallusten avulla"
+      "Varmistaa että tuotteet vastaavat satojen tuhansien käyttäjien tarpeisiin ja odotuksiin",
+      "Säästää satoja tuhansia euroja kehityskustannuksia tunnistamalla oikeat ratkaisut ennen toteutusta",
+      "Parantaa Suomessa käyttäjäkokemusta ja nostaa asiakastyytyväisyyttä 30-50% tutkittujen oivallusten avulla"
     ],
     education_paths: [
           "Yliopisto: Kognitiotiede, psykologia, tietotekniikka",
@@ -22489,10 +24139,13 @@ export const careersData: CareerFI[] = [
           "Research Manager"
     ],
     typical_employers: [
-          "Wolt, Supercell, Smartly.io",
-          "Reaktor, Futurice, Vincit",
-          "Gofore, Solita, Nitor",
-          "UX-konsulttitalot ja startup-yritykset"
+      "Wolt, Supercell, Smartly.io",
+      "Reaktor, Futurice, Vincit",
+      "Gofore, Solita, Nitor",
+      "UX-konsulttitalot ja startup-yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Oulu Health Labs"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22510,6 +24163,8 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 60
   },
 
+
+
 {
     id: "growth-hacker",
     category: "innovoija",
@@ -22524,9 +24179,9 @@ export const careersData: CareerFI[] = [
           "Analytiikan ja mittareiden seuranta"
     ],
     impact: [
-          "Kiihdyttää yrityksen käyttäjäkasvua 10-50x nopeammaksi kokeellisen markkinoinnin avulla",
-          "Löytää kustannustehokkaita markkinointikanavia ja pudottaa asiakashankintakustannuksia 30-70%",
-          "Parantaa tuotteen käyttöönottoastetta ja aktivaatiota data-ohjattujen optimointien kautta"
+      "Kiihdyttää yrityksen käyttäjäkasvua 10-50x nopeammaksi kokeellisen markkinoinnin avulla",
+      "Löytää kustannustehokkaita markkinointikanavia ja pudottaa asiakashankintakustannuksia 30-70%",
+      "Parantaa Suomessa tuotteen käyttöönottoastetta ja aktivaatiota data-ohjattujen optimointien kautta"
     ],
     education_paths: [
           "AMK/Yliopisto: Markkinointi, liiketalous, tietotekniikka",
@@ -22571,10 +24226,14 @@ export const careersData: CareerFI[] = [
           "VP of Growth"
     ],
     typical_employers: [
-          "Wolt, Swappie, Supermetrics",
-          "Smartly.io, Kry, Trella",
-          "Kasvavat SaaS-startupit",
-          "Digitaaliset palvelutalot"
+      "Wolt, Swappie, Supermetrics",
+      "Smartly.io, Kry, Trella",
+      "Kasvavat SaaS-startupit",
+      "Digitaaliset palvelutalot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -22592,12 +24251,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
 {
     id: "customer-success-manager",
     category: "auttaja",
     title_fi: "Asiakasmenestyksen asiantuntija",
     title_en: "Customer Success Manager",
-    short_description: "Customer Success Manager varmistaa että asiakkaat saavuttavat tavoitteensa käyttäessään yrityksen tuotetta tai palvelua. Helsingissä kasvava SaaS-sektori luo jatkuvasti uusia mahdollisuuksia - rooli yhdistää asiakasymmärryksen, datan ja liiketoimintaosaamisen. Tarjoaa joustavan etätyön ja bonukset asiakasmenestyksestä.",
+    short_description: "Customer Success Manager varmistaa että asiakkaat saavuttavat tavoitteensa käyttäessään yrityksen tuotetta tai palvelua. Suomessa kasvava SaaS-sektori luo jatkuvasti uusia mahdollisuuksia - rooli yhdistää asiakasymmärryksen, datan ja liiketoimintaosaamisen Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa joustavan etätyön ja bonukset asiakasmenestyksestä.",
     main_tasks: [
           "Asiakkaiden onboarding ja koulutus",
           "Säännölliset asiakaspalaverit ja tukitoimenpiteet",
@@ -22606,9 +24267,9 @@ export const careersData: CareerFI[] = [
           "Asiakaspalautteen kerääminen tuotekehitykseen"
     ],
     impact: [
-          "Varmistaa satojen asiakkaiden menestyksen ja pitkäaikaiset asiakassuhteet",
-          "Vähentää asiakaspoistumaa 20-40% ja säästää merkittäviä määriä uushankinnan kustannuksia",
-          "Kasvattaa asiakkuuksien arvoa 30-50% upsellien ja laajennusten kautta"
+      "Varmistaa satojen asiakkaiden menestyksen ja pitkäaikaiset asiakassuhteet",
+      "Vähentää asiakaspoistumaa 20-40% ja säästää merkittäviä määriä uushankinnan kustannuksia",
+      "Kasvattaa asiakkuuksien arvoa 30-50% upsellien ja laajennusten kautta"
     ],
     education_paths: [
           "AMK/Yliopisto: Liiketalous, viestintä",
@@ -22652,10 +24313,14 @@ export const careersData: CareerFI[] = [
           "VP of Customer Success"
     ],
     typical_employers: [
-          "Wolt, Supermetrics, Smartly.io",
-          "HubSpot, Salesforce (Helsinki)",
-          "SaaS-startupit ja kasvuyhtiöt",
-          "B2B-teknologiayritykset"
+      "Wolt, Supermetrics, Smartly.io",
+      "HubSpot, Salesforce (Helsinki)",
+      "SaaS-startupit ja kasvuyhtiöt",
+      "B2B-teknologiayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -22673,12 +24338,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
 {
     id: "frontend-developer",
     category: "innovoija",
     title_fi: "Frontend-kehittäjä",
     title_en: "Frontend Developer",
-    short_description: "Frontend-kehittäjä rakentaa verkkosivujen ja -sovellusten käyttöliittymät, jotka miljoonat käyttäjät näkevät päivittäin. Helsingissä erittäin kysytty osaaja - React-taidot avaavat ovia Woltin, Supercelliin ja lukuisiin startupeihin. Tarjoaa täysin etätyömahdollisuuden, joustavan työajan ja palkan 3800-6500€/kk.",
+    short_description: "Frontend-kehittäjä rakentaa verkkosivujen ja -sovellusten käyttöliittymät, jotka miljoonat käyttäjät näkevät päivittäin. Suomessa erittäin kysytty osaaja - React-taidot avaavat ovia Woltin, Supercelliin ja lukuisiin startupeihin Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa täysin etätyömahdollisuuden, joustavan työajan ja palkan 3800-6500€/kk.",
     main_tasks: [
           "Web-sovellusten käyttöliittymien ohjelmointi",
           "Responsiivisten ja saavutettavien sivustojen rakentaminen",
@@ -22687,9 +24354,9 @@ export const careersData: CareerFI[] = [
           "Yhteistyö suunnittelijoiden ja backend-kehittäjien kanssa"
     ],
     impact: [
-          "Luo käyttäjäystävällisiä digitaalisia kokemuksia, joita miljoonat ihmiset käyttävät päivittäin",
-          "Mahdollistaa saavutettavan verkon kaikille ja parantaa digital inclusion -tavoitteita",
-          "Parantaa liiketoiminnan tuloksia 20-40% optimoidulla käyttöliittymällä ja konversiolla"
+      "Luo Suomessa käyttäjäystävällisiä digitaalisia kokemuksia, joita miljoonat ihmiset käyttävät päivittäin",
+      "Mahdollistaa saavutettavan verkon kaikille ja parantaa Suomessa digital inclusion -tavoitteita",
+      "Parantaa Suomessa liiketoiminnan tuloksia 20-40% optimoidulla käyttöliittymällä ja konversiolla"
     ],
     education_paths: [
           "AMK: Tietotekniikka, ohjelmistotekniikka",
@@ -22734,10 +24401,14 @@ export const careersData: CareerFI[] = [
           "Frontend Architect"
     ],
     typical_employers: [
-          "Wolt, Supercell, Smartly.io",
-          "Reaktor, Futurice, Vincit, Solita",
-          "Verkkokaupat ja mediatalot (Sanoma, Alma)",
-          "Startup-yritykset ja kasvuyhtiöt"
+      "Wolt, Supercell, Smartly.io",
+      "Reaktor, Futurice, Vincit, Solita",
+      "Verkkokaupat ja mediatalot (Sanoma, Alma)",
+      "Startup-yritykset ja kasvuyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Nitor (Turku)",
+      "Oulu Health Labs"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22755,12 +24426,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
 {
     id: "backend-developer",
     category: "innovoija",
     title_fi: "Backend-kehittäjä",
     title_en: "Backend Developer",
-    short_description: "Backend-kehittäjä rakentaa palvelinpuolen logiikan, tietokannat ja API:t, jotka käsittelevät miljoonien käyttäjien dataa. Helsingissä todella kysytty osaaja - Node.js, Python tai Java -taidot takaavat työn. Tarjoaa etätyömahdollisuuden, kilpailukykyisen palkan 4000-7000€/kk ja mahdollisuuden työskennellä kansainvälisten tiimien kanssa.",
+    short_description: "Backend-kehittäjä rakentaa palvelinpuolen logiikan, tietokannat ja API:t, jotka käsittelevät miljoonien käyttäjien dataa. Suomessa todella kysytty osaaja - Node.js, Python tai Java -taidot takaavat työn Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa etätyömahdollisuuden, kilpailukykyisen palkan 4000-7000€/kk ja mahdollisuuden työskennellä kansainvälisten tiimien kanssa.",
     main_tasks: [
           "Palvelinpuolen sovelluslogiikan ohjelmointi",
           "Tietokantojen suunnittelu ja ylläpito",
@@ -22769,9 +24442,9 @@ export const careersData: CareerFI[] = [
           "Tietoturvan ja suorituskyvyn varmistaminen"
     ],
     impact: [
-          "Mahdollistaa toimivat ja luotettavat digitaaliset palvelut miljoonille käyttäjille 24/7",
-          "Varmistaa tietoturvan ja yksityisyyden GDPR-vaatimusten mukaisesti",
-          "Luo skaalautuvia ratkaisuja, jotka käsittelevät tuhansia pyyntöjä sekunnissa"
+      "Mahdollistaa toimivat ja luo Suomessatettavat digitaaliset palvelut miljoonille käyttäjille 24/7",
+      "Varmistaa tietoturvan ja yksityisyyden GDPR-vaatimusten mukaisesti",
+      "Luo Suomessa skaalautuvia ratkaisuja, jotka käsittelevät tuhansia pyyntöjä sekunnissa"
     ],
     education_paths: [
           "AMK: Tietotekniikka, ohjelmistotekniikka",
@@ -22817,10 +24490,14 @@ export const careersData: CareerFI[] = [
           "Engineering Manager"
     ],
     typical_employers: [
-          "Wolt, Supercell, Smartly.io, Aiven",
-          "Reaktor, Futurice, Vincit, Solita",
-          "Nordea, OP, S-Pankki",
-          "Startup-yritykset ja kasvuyhtiöt"
+      "Wolt, Supercell, Smartly.io, Aiven",
+      "Reaktor, Futurice, Vincit, Solita",
+      "Nordea, OP, S-Pankki",
+      "Startup-yritykset ja kasvuyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Nitor (Turku)",
+      "Oulu Health Labs"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22838,12 +24515,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
 {
     id: "qa-engineer",
     category: "innovoija",
     title_fi: "Testausasiantuntija",
     title_en: "QA Engineer",
-    short_description: "QA Engineer (Quality Assurance) varmistaa ohjelmistojen laadun testaamalla niitä systemaattisesti ja automatisoimalla testejä. Helsingissä tasainen kysyntä erityisesti peliteollisuudessa (Supercell, Remedy) ja rahoitusalalla. Tarjoaa etätyömahdollisuuden, joustavan työajan ja hyvän sisääntuloväylän tech-alalle.",
+    short_description: "QA Engineer (Quality Assurance) varmistaa ohjelmistojen laadun testaamalla niitä systemaattisesti ja automatisoimalla testejä. Suomessa tasainen kysyntä erityisesti peliteollisuudessa (Supercell, Remedy) ja rahoitusalalla Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa etätyömahdollisuuden, joustavan työajan ja hyvän sisääntuloväylän tech-alalle.",
     main_tasks: [
           "Testaussuunnitelmien laatiminen",
           "Automatisoidun testauksen rakentaminen ja ylläpito",
@@ -22852,9 +24531,9 @@ export const careersData: CareerFI[] = [
           "Yhteistyö kehittäjien kanssa laadun parantamiseksi"
     ],
     impact: [
-          "Varmistaa ohjelmistojen toimivuuden ja luotettavuuden miljoonille loppukäyttäjille",
-          "Estää kriittisten bugien pääsyn tuotantoon ja säästää tuhansia euroja korjauskustannuksia",
-          "Parantaa käyttäjäkokemusta laadukkaiden ja bug-free tuotteiden avulla"
+      "Varmistaa ohjelmistojen toimivuuden ja luo Suomessatettavuuden miljoonille loppukäyttäjille",
+      "Estää kriittisten bugien pääsyn tuotantoon ja säästää tuhansia euroja korjauskustannuksia",
+      "Parantaa Suomessa käyttäjäkokemusta laadukkaiden ja bug-free tuotteiden avulla"
     ],
     education_paths: [
           "AMK: Tietotekniikka, ohjelmistotekniikka",
@@ -22899,10 +24578,14 @@ export const careersData: CareerFI[] = [
           "QA Manager"
     ],
     typical_employers: [
-          "Supercell, Remedy Entertainment, Rovio",
-          "Wolt, Smartly.io, Reaktor",
-          "Nordea, OP, S-Pankki",
-          "Elisa, Telia, DNA"
+      "Supercell, Remedy Entertainment, Rovio",
+      "Wolt, Smartly.io, Reaktor",
+      "Nordea, OP, S-Pankki",
+      "Elisa, Telia, DNA",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -22920,12 +24603,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
 {
     id: "technical-writer",
     category: "luova",
     title_fi: "Tekninen kirjoittaja",
     title_en: "Technical Writer",
-    short_description: "Tekninen kirjoittaja luo ymmärrettävää dokumentaatiota teknisistä tuotteista ja palveluista sekä muuttaa monimutkaisen teknologian helposti omaksuttaviksi ohjeiksi. Helsingissä kasvava kysyntä teknisille kirjoittajille, jotka yhdistävät teknisen ymmärryksen ja kirjoitustaidot. Tarjoaa täysin etätyömahdollisuuden ja mahdollisuuden työskennellä globaalien tuotteiden parissa.",
+    short_description: "Tekninen kirjoittaja luo ymmärrettävää dokumentaatiota teknisistä tuotteista ja palveluista sekä muuttaa monimutkaisen teknologian helposti omaksuttaviksi ohjeiksi. Suomessa kasvava kysyntä teknisille kirjoittajille, jotka yhdistävät teknisen ymmärryksen ja kirjoitustaidot Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa täysin etätyömahdollisuuden ja mahdollisuuden työskennellä globaalien tuotteiden parissa.",
     main_tasks: [
           "API-dokumentaation ja kehittäjädokumenttien kirjoittaminen",
           "Käyttöohjeiden ja oppaiden laatiminen",
@@ -22934,9 +24619,9 @@ export const careersData: CareerFI[] = [
           "Dokumentaation ylläpito ja päivitys"
     ],
     impact: [
-          "Helpottaa tuhansien kehittäjien työtä selkeällä API-dokumentaatiolla ja käyttöohjeilla",
-          "Vähentää tukipyyntöjä 30-50% selkeän dokumentaation avulla ja säästää yrityksen resursseja",
-          "Parantaa developer experience -tavoitteita ja houkuttelee käyttäjiä teknisille alustoille"
+      "Helpottaa tuhansien kehittäjien työtä selkeällä API-dokumentaatiolla ja käyttöohjeilla",
+      "Vähentää tukipyyntöjä 30-50% selkeän dokumentaation avulla ja säästää yrityksen resursseja",
+      "Parantaa Suomessa developer experience -tavoitteita ja houkuttelee käyttäjiä teknisille alustoille"
     ],
     education_paths: [
           "AMK/Yliopisto: Viestintä, kieli ja kulttuuri, tekninen viestintä",
@@ -22980,10 +24665,14 @@ export const careersData: CareerFI[] = [
           "Documentation Manager"
     ],
     typical_employers: [
-          "Wolt, Supermetrics, Smartly.io",
-          "Reaktor, Futurice, F-Secure",
-          "SaaS-yritykset ja API-yritykset",
-          "Kansainväliset teknologiayritykset"
+      "Wolt, Supermetrics, Smartly.io",
+      "Reaktor, Futurice, F-Secure",
+      "SaaS-yritykset ja API-yritykset",
+      "Kansainväliset teknologiayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Viestinnän ammattilaiset",
@@ -23001,12 +24690,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
 {
     id: "site-reliability-engineer",
     category: "innovoija",
     title_fi: "SRE-insinööri",
     title_en: "Site Reliability Engineer",
-    short_description: "Site Reliability Engineer (SRE) yhdistää ohjelmistokehityksen ja järjestelmähallinnon pitääkseen palvelut luotettavina 24/7. Helsingissä todella kysytty huippuosaaja - SRE-rooli tarjoaa parhaat palkat tech-alalla (4800-8000€/kk) ja mahdollisuuden työskennellä kriittisten järjestelmien parissa. Vaatii päivystystä mutta tarjoaa etätyön ja kansainvälisen työympäristön.",
+    short_description: "Site Reliability Engineer (SRE) yhdistää ohjelmistokehityksen ja järjestelmähallinnon pitääkseen palvelut luotettavina 24/7. Suomessa todella kysytty huippuosaaja - SRE-rooli tarjoaa parhaat palkat tech-alalla (4800-8000€/kk) ja mahdollisuuden työskennellä kriittisten järjestelmien parissa Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Vaatii päivystystä mutta tarjoaa etätyön ja kansainvälisen työympäristön.",
     main_tasks: [
           "Tuotantoympäristön luotettavuuden varmistaminen",
           "Monitoroinnin ja hälytysjärjestelmien ylläpito",
@@ -23015,9 +24706,9 @@ export const careersData: CareerFI[] = [
           "Automaation rakentaminen manuaalisen työn vähentämiseksi"
     ],
     impact: [
-          "Varmistaa 99.99% uptime-tason ja palveluiden saatavuuden miljoonille käyttäjille 24/7",
-          "Nopeuttaa häiriötilanteiden korjaamista tunneista minuutteihin automatisoinnin avulla",
-          "Parantaa järjestelmien luotettavuutta ja skaalautuvuutta tuhansia pyyntöjä sekunnissa käsitteleviksi"
+      "Varmistaa 99.99% uptime-tason ja palveluiden saatavuuden miljoonille käyttäjille 24/7",
+      "Nopeuttaa häiriötilanteiden korjaamista tunneista minuutteihin automatisoinnin avulla",
+      "Parantaa Suomessa järjestelmien luotettavuutta ja skaalautuvuutta tuhansia pyyntöjä sekunnissa käsitteleviksi"
     ],
     education_paths: [
           "AMK: Tietotekniikka",
@@ -23063,10 +24754,14 @@ export const careersData: CareerFI[] = [
           "Principal Engineer"
     ],
     typical_employers: [
-          "Wolt, Supercell, Aiven",
-          "F-Secure, Smartly.io, Unity",
-          "Nordcloud, Elisa, Telia",
-          "Rahoitusala ja fintech-yritykset"
+      "Wolt, Supercell, Aiven",
+      "F-Secure, Smartly.io, Unity",
+      "Nordcloud, Elisa, Telia",
+      "Rahoitusala ja fintech-yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: true, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -23084,12 +24779,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 48
   },
 
+
+
 {
     id: "solutions-architect",
     category: "visionaari",
     title_fi: "Ratkaisuarkkitehti",
     title_en: "Solutions Architect",
-    short_description: "Ratkaisuarkkitehti suunnittelee kokonaisvaltaisia teknologiaratkaisuja liiketoiminnan tarpeisiin yhdistäen teknisen osaamisen ja liiketoimintaymmärryksen. Helsingissä kysytty senior-tason rooli, joka tarjoaa erinomaisen palkan (5000-8500€/kk), hybridityön ja mahdollisuuden vaikuttaa merkittäviin teknologiavalintoihin.",
+    short_description: "Ratkaisuarkkitehti suunnittelee kokonaisvaltaisia teknologiaratkaisuja liiketoiminnan tarpeisiin yhdistäen teknisen osaamisen ja liiketoimintaymmärryksen. Suomessa kysytty senior-tason rooli, joka tarjoaa erinomaisen palkan (5000-8500€/kk), hybridityön ja mahdollisuuden vaikuttaa merkittäviin teknologiavalintoihin. Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen.",
     main_tasks: [
           "Teknisten ratkaisujen arkkitehtuurin suunnittelu",
           "Asiakkaiden liiketoimintatarpeiden kartoitus",
@@ -23098,7 +24795,7 @@ export const careersData: CareerFI[] = [
           "Yhteistyö myynti- ja kehitystiimien kanssa"
     ],
     impact: [
-      "Mahdollistaa skaalautuvat IT-ratkaisut, jotka palvelevat tuhansia käyttäjiä Helsingin alueella ja kansainvälisesti",
+      "Mahdollistaa skaalautuvat IT-ratkaisut, jotka palvelevat tuhansia käyttäjiä Helsingin alueella ja Suomessa ja kansainvälisesti",
       "Yhdistää liiketoimintatavoitteet moderniin pilviteknologiaan ja säästää satoja tuhansia euroja infrastruktuurikustannuksia",
       "Ohjaa organisaation digitaalitransformaatiota ja teknologiavalintoja pitkälle tulevaisuuteen"
     ],
@@ -23146,7 +24843,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Supercell, Nokia",
       "Reaktor, Accenture (Helsinki), Gofore",
       "Nordea, OP, Kela",
-      "Suuryritykset ja julkinen sektori"
+      "Suuryritykset ja julkinen sektori",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "kohtalaisesti", environment: "Toimisto, etänä, asiakkaiden luona" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -23164,12 +24865,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 60
   },
 
+
+
 {
     id: "platform-engineer",
     category: "innovoija",
     title_fi: "Alustasuunnittelija",
     title_en: "Platform Engineer",
-    short_description: "Platform Engineer rakentaa ja ylläpitää kehittäjäalustoja ja internal developer platforms (IDP), jotka mahdollistavat tiimien tehokkaan työskentelyn. Helsingissä kasvava kysyntä erityisesti skaalautuvissa yrityksissä - tarjoaa hyvän palkan (4500-7000€/kk), etätyön ja mahdollisuuden vaikuttaa satojen kehittäjien työhön.",
+    short_description: "Platform Engineer rakentaa ja ylläpitää kehittäjäalustoja ja internal developer platforms (IDP), jotka mahdollistavat tiimien tehokkaan työskentelyn. Suomessa kasvava kysyntä erityisesti skaalautuvissa yrityksissä - tarjoaa hyvän palkan (4500-7000€/kk), etätyön ja mahdollisuuden vaikuttaa satojen kehittäjien työhön. Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen.",
     main_tasks: [
           "Sisäisten kehitysalustojen (Internal Developer Platform) rakentaminen",
           "CI/CD-putkistojen ja työkalujen kehittäminen",
@@ -23227,7 +24930,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Supercell, Aiven",
       "Smartly.io, Unity, F-Secure",
       "Nordcloud, Reaktor, Futurice",
-      "Kasvavat teknologiayritykset"
+      "Kasvavat teknologiayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -23245,12 +24952,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 48
   },
 
+
+
 {
     id: "api-developer",
     category: "innovoija",
     title_fi: "API-kehittäjä",
     title_en: "API Developer",
-    short_description: "API-kehittäjä suunnittelee ja toteuttaa rajapintoja, jotka yhdistävät järjestelmiä ja mahdollistavat integraatiot. Helsingissä kasvava kysyntä API-talouden myötä - RESTful ja GraphQL -osaaminen avaa ovia SaaS-yrityksiin. Tarjoaa etätyön, joustavan työajan ja palkan 4000-6500€/kk.",
+    short_description: "API-kehittäjä suunnittelee ja toteuttaa rajapintoja, jotka yhdistävät järjestelmiä ja mahdollistavat integraatiot. Suomessa kasvava kysyntä API-talouden myötä - RESTful ja GraphQL -osaaminen avaa ovia SaaS-yrityksiin Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa etätyön, joustavan työajan ja palkan 4000-6500€/kk.",
     main_tasks: [
           "RESTful ja GraphQL API:en suunnittelu ja toteutus",
           "API-dokumentaation laatiminen (OpenAPI/Swagger)",
@@ -23259,9 +24968,9 @@ export const careersData: CareerFI[] = [
           "Suorituskyvyn optimointi ja monitorointi"
     ],
     impact: [
-      "Luo rajapintoja, jotka palvelevat miljoonia API-kutsuja päivittäin luotettavasti ja nopeasti",
+      "Luo Suomessa rajapintoja, jotka palvelevat miljoonia API-kutsuja päivittäin luotettavasti ja nopeasti",
       "Mahdollistaa integraatiot satoihin ulkoisiin järjestelmiin ja laajentaa tuotteen arvoa",
-      "Parantaa kehittäjäkokemusta hyvin dokumentoiduilla ja helppokäyttöisillä API:lla"
+      "Parantaa Suomessa kehittäjäkokemusta hyvin dokumentoiduilla ja helppokäyttöisillä API:lla"
     ],
     education_paths: [
           "AMK: Tietotekniikka, ohjelmistotekniikka",
@@ -23308,7 +25017,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Supermetrics, Smartly.io",
       "Reaktor, Futurice, Vincit",
       "SaaS-yritykset ja API-alustat",
-      "Fintech ja integraatioyritykset"
+      "Fintech ja integraatioyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Nitor (Turku)",
+      "Oulu Health Labs"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset",
@@ -23325,6 +25038,8 @@ export const careersData: CareerFI[] = [
     related_careers: ["backend-developer","solutions-architect"],
     study_length_estimate_months: 36
   }
+
+
 ,
 
   {
@@ -23332,7 +25047,7 @@ export const careersData: CareerFI[] = [
     category: "luova",
     title_fi: "Sisältöstrategisti",
     title_en: "Content Strategist",
-    short_description: "Sisältöstrategisti suunnittelee ja johtaa organisaation sisältötuotantoa tavoitteellisesti yhdistäen markkinoinnin, brändin ja käyttäjäymmärryksen. Helsingissä kasvava kysyntä erityisesti digitaalisissa yrityksissä ja mediatalolissa. Tarjoaa hybridi/etätyön, luovan työympäristön ja palkan 3500-5500€/kk.",
+    short_description: "Sisältöstrategisti suunnittelee ja johtaa organisaation sisältötuotantoa tavoitteellisesti yhdistäen markkinoinnin, brändin ja käyttäjäymmärryksen. Suomessa kasvava kysyntä erityisesti digitaalisissa yrityksissä ja mediatalolissa Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa hybridi/etätyön, luovan työympäristön ja palkan 3500-5500€/kk.",
     main_tasks: [
           "Sisältöstrategian suunnittelu ja toteutus",
           "Kohdeyleis öiden tutkiminen ja määrittely",
@@ -23341,7 +25056,7 @@ export const careersData: CareerFI[] = [
           "Sisällön tehokkuuden mittaaminen ja optimointi"
     ],
     impact: [
-      "Luo sisältöstrategioita, jotka tavoittavat satoja tuhansia ihmisiä digitaalisissa kanavissa",
+      "Luo Suomessa sisältöstrategioita, jotka tavoittavat satoja tuhansia ihmisiä digitaalisissa kanavissa",
       "Kasvattaa brändin näkyvyyttä ja sitoutumista 30-50% strategisen sisällön avulla",
       "Ohjaa sisältötuotantoa data-ohjautuvasti ja optimoi sisällön ROI:ta jatkuvasti"
     ],
@@ -23376,7 +25091,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Sanoma Media, Alma Media",
       "Mainostoimistot: hasan & partners, TBWA, Bob the Robot",
       "Digitaaliset viestintätoimistot",
-      "Startup-yritykset ja kasvuyhtiöt"
+      "Startup-yritykset ja kasvuyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Viestinnän ammattilaiset",
@@ -23394,12 +25113,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
   {
     id: "social-media-manager",
     category: "luova",
     title_fi: "Sosiaalisen median asiantuntija",
     title_en: "Social Media Manager",
-    short_description: "Some-asiantuntija vastaa yrityksen sosiaalisen median strategiasta, sisällöntuotannosta ja yhteisöjen hallinnasta kaikissa kanavissa. Helsingissä kysytty rooli, joka yhdistää luovuuden, datan ja yhteisöymmärryksen. Tarjoaa hybridityön, vapaan sisällöntuotannon ja palkan 3200-5000€/kk.",
+    short_description: "Some-asiantuntija vastaa yrityksen sosiaalisen median strategiasta, sisällöntuotannosta ja yhteisöjen hallinnasta kaikissa kanavissa. Suomessa kysytty rooli, joka yhdistää luovuuden, datan ja yhteisöymmärryksen Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa hybridityön, vapaan sisällöntuotannon ja palkan 3200-5000€/kk.",
     main_tasks: [
           "Sosiaalisen median strategian suunnittelu ja toteutus",
           "Sisällön luominen eri kanaviin (Instagram, LinkedIn, TikTok, X)",
@@ -23409,7 +25130,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Rakentaa ja kasvattaa sosiaalisen median yhteisöjä kymmeniin tai satoihin tuhansiin seuraajiin",
-      "Luo sisältöä, joka tavoittaa miljoonia näyttökertoja ja lisää bränditietoisuutta merkittävästi",
+      "Luo Suomessa sisältöä, joka tavoittaa miljoonia näyttökertoja ja lisää bränditietoisuutta merkittävästi",
       "Kasvattaa sitoutumista 40-60% strategisella yhteisöhallinnalla ja vuorovaikutuksella"
     ],
     education_paths: [
@@ -23443,7 +25164,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Sanoma Media, Yle",
       "Mainostoimistot ja some-toimistot",
       "Brand-yritykset ja verkkokaupat",
-      "Influencer-markkinointitoimistot"
+      "Influencer-markkinointitoimistot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Viestinnän ammattilaiset",
@@ -23461,12 +25186,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
   {
     id: "podcast-producer",
     category: "luova",
     title_fi: "Podcast-tuottaja",
     title_en: "Podcast Producer",
-    short_description: "Podcast-tuottaja vastaa podcast-sarjojen konseptoinnista, tuotannosta ja julkaisemisesta sekä äänilaadun varmistamisesta. Helsingissä kasvava podcast-markkina luo mahdollisuuksia - rooli yhdistää tarinankerronnan, äänitaiteen ja mediatuotannon. Tarjoaa vapaan työajan, etätyön ja freelance-mahdollisuuksia.",
+    short_description: "Podcast-tuottaja vastaa podcast-sarjojen konseptoinnista, tuotannosta ja julkaisemisesta sekä äänilaadun varmistamisesta. Suomessa kasvava podcast-markkina luo mahdollisuuksia - rooli yhdistää tarinankerronnan, äänitaiteen ja mediatuotannon Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa vapaan työajan, etätyön ja freelance-mahdollisuuksia.",
     main_tasks: [
           "Podcast-konseptien ideoi nti ja kehittäminen",
           "Vieraiden varaaminen ja haastattelujen valmistelu",
@@ -23476,8 +25203,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Tuottaa podcasteja, joita kuunnellaan tuhansia kertoja viikossa Suomessa ja kansainvälisesti",
-      "Luo äänisisältöä, joka sitoutaa kuulijoita ja rakentaa uskollisia yhteisöjä",
-      "Mahdollistaa brändeille ja mediatalloille modernin tavan tavoittaa yleisöjä audiokanavisssa"
+      "Luo Suomessa äänisisältöä, joka sitoutaa kuulijoita ja rakentaa uskollisia yhteisöjä",
+      "Mahdollistaa brändeille ja mediatalloille modernin tavan tavoittaa Suomessa yleisöjä audiokanavisssa"
     ],
     education_paths: [
           "AMK: Medianomi (äänituotanto, journalismi)",
@@ -23510,7 +25237,11 @@ export const careersData: CareerFI[] = [
       "Yle, Sanoma, Alma Media",
       "Supla, Podme, Acast",
       "Tuotantoyhtiöt ja mainostoimistot",
-      "Freelance ja omat projektit"
+      "Freelance ja omat projektit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Journalistiliitto",
@@ -23528,12 +25259,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 24
   },
 
+
+
   {
     id: "video-editor",
     category: "luova",
     title_fi: "Videoleikkaaja",
     title_en: "Video Editor",
-    short_description: "Videoleikkaaja leikkaa ja editoi videoita erilaisiin käyttötarkoituksiin yhdistäen teknisen osaamisen ja luovan tarinankerronnan. Helsingissä jatkuva kysyntä some-sisällölle, mainoksille ja streaming-sisällölle. Tarjoaa freelance-vapauden, luovan työn ja palkan 3000-5000€/kk.",
+    short_description: "Videoleikkaaja leikkaa ja editoi videoita erilaisiin käyttötarkoituksiin yhdistäen teknisen osaamisen ja luovan tarinankerronnan. Suomessa jatkuva kysyntä some-sisällölle, mainoksille ja streaming-sisällölle Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa freelance-vapauden, luovan työn ja palkan 3000-5000€/kk.",
     main_tasks: [
           "Videomateriaalin leikkaaminen ja editointi",
           "Värikorjaus ja greidaus",
@@ -23542,7 +25275,7 @@ export const careersData: CareerFI[] = [
           "Valmiin sisällön viimeistely ja exporttaus"
     ],
     impact: [
-      "Luo videoita, jotka tavoittavat miljoonia katselukertoja YouTubessa, TikTokissa ja Instagramissa",
+      "Luo Suomessa videoita, jotka tavoittavat miljoonia katselukertoja YouTubessa, TikTokissa ja Instagramissa",
       "Tuottaa markkinointivideoita, jotka kasvattavat konversiota 30-50% visuaalisen storytellingin avulla",
       "Mahdollistaa brändeille modernin visuaalisen ilmaisun ja erottumisen sosiaalisessa mediassa"
     ],
@@ -23577,7 +25310,11 @@ export const careersData: CareerFI[] = [
       "Yle, Sanoma, Alma Media",
       "Tuotantoyhtiöt: MRP, Solar Films",
       "Mainostoimistot ja some-toimistot",
-      "Freelance-projektit ja YouTube-kanavat"
+      "Freelance-projektit ja YouTube-kanavat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Suomen elokuvatyöntekijät",
@@ -23595,12 +25332,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
   {
     id: "community-manager",
     category: "auttaja",
     title_fi: "Yhteisöpäällikkö",
     title_en: "Community Manager",
-    short_description: "Community Manager rakentaa ja ylläpitää verkkoyhteisöjä, moderoi keskusteluja ja luo yhteisöllisyyttä brändin ympärille. Helsingissä kysytty rooli gaming-, SaaS- ja lifestyle-yrityksissä, jotka arvostavat yhteisöjään. Tarjoaa etätyön, vapaan aikataulun ja palkan 3200-4800€/kk.",
+    short_description: "Community Manager rakentaa ja ylläpitää verkkoyhteisöjä, moderoi keskusteluja ja luo yhteisöllisyyttä brändin ympärille. Suomessa kysytty rooli gaming-, SaaS- ja lifestyle-yrityksissä, jotka arvostavat yhteisöjään Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa etätyön, vapaan aikataulun ja palkan 3200-4800€/kk.",
     main_tasks: [
           "Online-yhteisön rakentaminen ja hallinnointi",
           "Jäsenten aktivointi ja sitouttaminen",
@@ -23644,7 +25383,11 @@ export const careersData: CareerFI[] = [
       "Supercell, Rovio, Unity",
       "Wolt, Swappie, suomalaiset startupit",
       "Discord-yhteisöt ja pelifirmat",
-      "SaaS-yritykset ja lifestyle-brändit"
+      "SaaS-yritykset ja lifestyle-brändit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Viestinnän ammattilaiset",
@@ -23662,12 +25405,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 24
   },
 
+
+
   {
     id: "brand-designer",
     category: "luova",
     title_fi: "Brändisuunnittelija",
     title_en: "Brand Designer",
-    short_description: "Brändisuunnittelija luo ja kehittää visuaalisia brändi-identiteettejä, logoja ja designkieliä. Helsingissä kysytty rooli mainostoimistoissa ja startupeissa - yhdistää strategisen ajattelun ja visuaalisen suunnittelun. Tarjoaa luovan työympäristön, portfolion kasvun ja palkan 3200-5500€/kk.",
+    short_description: "Brändisuunnittelija luo ja kehittää visuaalisia brändi-identiteettejä, logoja ja designkieliä. Suomessa kysytty rooli mainostoimistoissa ja startupeissa - yhdistää strategisen ajattelun ja visuaalisen suunnittelun Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa luovan työympäristön, portfolion kasvun ja palkan 3200-5500€/kk.",
     main_tasks: [
           "Brändi-identiteetin suunnittelu (logo, värit, typografia)",
           "Brand guidelinien ja visuaalisten sääntöjen laatiminen",
@@ -23676,7 +25421,7 @@ export const careersData: CareerFI[] = [
           "Visuaalisen brändi-ilmeen ylläpito ja kehittäminen"
     ],
     impact: [
-      "Luo visuaalisia identiteettejä brändeille, jotka tavoittavat satoja tuhansia ihmisiä päivittäin",
+      "Luo Suomessa visuaalisia identiteettejä brändeille, jotka tavoittavat satoja tuhansia ihmisiä päivittäin",
       "Erottaa yritykset kilpailijoista vahvalla brändi-ilmeellä ja nostaa brändiarvoa",
       "Mahdollistaa johdonmukaisen visuaalisen viestinnän kaikissa kosketuspisteissä"
     ],
@@ -23711,7 +25456,11 @@ export const careersData: CareerFI[] = [
       "Mainostoimistot: hasan & partners, TBWA, Bob the Robot",
       "Design-toimistot: Werklig, Kuudes, Everpress",
       "Startup-yritykset ja kasvuyhtiöt",
-      "Freelance ja omat projektit"
+      "Freelance ja omat projektit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Grafia",
@@ -23729,12 +25478,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 42
   },
 
+
+
   {
     id: "copywriter",
     category: "luova",
     title_fi: "Copywriter",
     title_en: "Copywriter",
-    short_description: "Mainoskirjoittaja kirjoittaa vaikuttavia ja myyviä tekstejä mainoksiin, verkkosivuille ja markkinointikampanjoihin. Helsingissä jatkuva kysyntä digitaalisen markkinoinnin kasvun myötä - luovat tekstintaidot avaavat ovia mainostoimistoihin. Tarjoaa luovan työn, hybridityön ja palkan 3200-5200€/kk.",
+    short_description: "Mainoskirjoittaja kirjoittaa vaikuttavia ja myyviä tekstejä mainoksiin, verkkosivuille ja markkinointikampanjoihin. Suomessa jatkuva kysyntä digitaalisen markkinoinnin kasvun myötä - luovat tekstintaidot avaavat ovia mainostoimistoihin Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa luovan työn, hybridityön ja palkan 3200-5200€/kk.",
     main_tasks: [
           "Mainosten ja kampanjoiden tekstien kirjoittaminen",
           "Verkkosivujen ja laskeutumissivujen copywriting",
@@ -23744,7 +25495,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Kirjoittaa markkinointitekstejä, jotka tavoittavat miljoonia ihmisiä ja kasvattavat myyntiä",
-      "Luo kampanjoita, jotka parantavat konversiota 20-50% vaikuttavalla copylla",
+      "Luo Suomessa kampanjoita, jotka parantavat konversiota 20-50% vaikuttavalla copylla",
       "Rakentaa brändiääntä ja viestii kohdeyleisölle resonoivalla tavalla"
     ],
     education_paths: [
@@ -23778,7 +25529,11 @@ export const careersData: CareerFI[] = [
       "Mainostoimistot: hasan & partners, TBWA, Bob the Robot",
       "Digitoimistot: Kuulu, Idean, Avaus",
       "Sisällöntuotantoyritykset",
-      "Freelance ja omat projektit"
+      "Freelance ja omat projektit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Viestinnän ammattilaiset",
@@ -23796,12 +25551,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 24
   },
 
+
+
   {
     id: "motion-graphics-designer",
     category: "luova",
     title_fi: "Motion Graphics -suunnittelija",
     title_en: "Motion Graphics Designer",
-    short_description: "Motion graphics -suunnittelija luo animoituja graafisia elementtejä videoihin, mainoksiin ja digitaaliseen sisältöön. Helsingissä kasvava kysyntä erityisesti some-sisällölle ja streaming-palveluihin. Tarjoaa luovan työympäristön, teknisen osaamisen kehityksen ja palkan 3200-5500€/kk.",
+    short_description: "Motion graphics -suunnittelija luo animoituja graafisia elementtejä videoihin, mainoksiin ja digitaaliseen sisältöön. Suomessa kasvava kysyntä erityisesti some-sisällölle ja streaming-palveluihin Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa luovan työympäristön, teknisen osaamisen kehityksen ja palkan 3200-5500€/kk.",
     main_tasks: [
           "Animoidun grafiikan suunnittelu ja toteutus",
           "Tekstianimaatiot ja typografia",
@@ -23810,8 +25567,8 @@ export const careersData: CareerFI[] = [
           "Yhteistyö videoleikkaajien ja suunnittelijoiden kanssa"
     ],
     impact: [
-      "Luo animoituja grafiikkoja, jotka nähdään miljoonissa videoissa YouTubessa, TV:ssä ja streamingissä",
-      "Parantaa visuaalista storytellingiä ja tekee monimutkaisista asioista ymmärrettäviä animaatioilla",
+      "Luo Suomessa animoituja grafiikkoja, jotka nähdään miljoonissa videoissa YouTubessa, TV:ssä ja streamingissä",
+      "Parantaa Suomessa visuaalista storytellingiä ja tekee monimutkaisista asioista ymmärrettäviä animaatioilla",
       "Kasvattaa videon katselumääriä 30-50% houkuttelevilla motion graphics -elementeillä"
     ],
     education_paths: [
@@ -23845,7 +25602,11 @@ export const careersData: CareerFI[] = [
       "Yle, MTV, Sanoma Media",
       "Tuotantoyhtiöt ja mainostoimistot",
       "Peliyhtiöt ja teknologiayritykset",
-      "Freelance ja omat projektit"
+      "Freelance ja omat projektit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Grafia",
@@ -23863,12 +25624,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
   {
     id: "ui-ux-designer",
     category: "luova",
     title_fi: "UI/UX-suunnittelija",
     title_en: "UI/UX Designer",
-    short_description: "UI/UX-suunnittelija suunnittelee käyttöliittymiä, jotka ovat sekä visuaalisesti houkuttelevia että helppokäyttöisiä. Helsingissä erittäin kysytty osaaja - Figma-taidot ja portfolio avaavat ovia startup-maailmaan. Tarjoaa etätyön, luovan vapauden ja palkan 3500-6000€/kk.",
+    short_description: "UI/UX-suunnittelija suunnittelee käyttöliittymiä, jotka ovat sekä visuaalisesti houkuttelevia että helppokäyttöisiä. Suomessa erittäin kysytty osaaja - Figma-taidot ja portfolio avaavat ovia startup-maailmaan Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa etätyön, luovan vapauden ja palkan 3500-6000€/kk.",
     main_tasks: [
           "Käyttöliittymien visuaalinen suunnittelu",
           "Käyttäjäpolkujen ja wireframein luonti",
@@ -23878,7 +25641,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Suunnittelee käyttöliittymiä, joita miljoonat ihmiset käyttävät päivittäin Suomessa ja kansainvälisesti",
-      "Parantaa käyttäjäkokemusta ja konversiota 40-60% intuitiivisella suunnittelulla",
+      "Parantaa Suomessa käyttäjäkokemusta ja konversiota 40-60% intuitiivisella suunnittelulla",
       "Säästää kehitysaikaa ja -kustannuksia huolellisella suunnittelulla ennen toteutusta"
     ],
     education_paths: [
@@ -23912,7 +25675,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Supercell, Smartly.io",
       "Reaktor, Futurice, Vincit, Nordkapp",
       "Digitoimistot ja UX-studiot",
-      "Startup-yritykset ja kasvuyhtiöt"
+      "Startup-yritykset ja kasvuyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Nitor (Turku)",
+      "Oulu Health Labs"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset / Grafia",
@@ -23930,12 +25697,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
   {
     id: "content-creator",
     category: "luova",
     title_fi: "Sisällöntuottaja",
     title_en: "Content Creator",
-    short_description: "Sisällöntuottaja luo monipuolista sisältöä sosiaaliseen mediaan, blogihin ja muihin digitaalisiin kanaviin. Helsingissä kasvava creator economy luo mahdollisuuksia - voit työskennellä brändeille tai rakentaa omaa yleisöä. Tarjoaa luovan vapauden, joustavan työajan ja ansaintapotentiaalia.",
+    short_description: "Sisällöntuottaja luo monipuolista sisältöä sosiaaliseen mediaan, blogihin ja muihin digitaalisiin kanaviin. Suomessa kasvava creator economy luo mahdollisuuksia - voit työskennellä brändeille tai rakentaa omaa yleisöä Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa luovan vapauden, joustavan työajan ja ansaintapotentiaalia.",
     main_tasks: [
           "Sisältöideoiden kehittäminen ja suunnittelu",
           "Videoiden, kuvien ja tekstien tuottaminen",
@@ -23944,9 +25713,9 @@ export const careersData: CareerFI[] = [
           "Yhteistyö brändien kanssa"
     ],
     impact: [
-      "Luo sisältöä, joka tavoittaa kymmeniä tai satoja tuhansia seuraajia sosiaalisessa mediassa",
+      "Luo Suomessa sisältöä, joka tavoittaa kymmeniä tai satoja tuhansia seuraajia sosiaalisessa mediassa",
       "Rakentaa brändipartnerships-tuloja ja creator-taloutta Suomessa",
-      "Vaikuttaa yleisön ostopäätöksiin ja trendeihin autenttisella sisällöllä"
+      "Vaikuttaa Suomessa yleisön ostopäätöksiin ja trendeihin autenttisella sisällöllä"
     ],
     education_paths: [
           "AMK: Medianomi",
@@ -23979,7 +25748,11 @@ export const careersData: CareerFI[] = [
       "Brändit yhteistyökumppaneina",
       "Influencer-markkinointitoimistot",
       "Mediayhtiöt ja julkaisijat",
-      "Freelance ja oma yritystoiminta"
+      "Freelance ja oma yritystoiminta",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
@@ -23997,12 +25770,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 12
   },
 
+
+
   {
     id: "influencer-marketing-specialist",
     category: "luova",
     title_fi: "Vaikuttajamarkkinoinnin asiantuntija",
     title_en: "Influencer Marketing Specialist",
-    short_description: "Vaikuttajamarkkinoinnin asiantuntija suunnittelee ja toteuttaa influencer-kampanjoita brändeille sekä hallitsee yhteistyökumppanuuksia. Helsingissä kasvava ala - rooli yhdistää markkinoinnin, somen ja ihmissuhteet. Tarjoaa hybridityön, luovan työn ja palkan 3200-5200€/kk.",
+    short_description: "Vaikuttajamarkkinoinnin asiantuntija suunnittelee ja toteuttaa influencer-kampanjoita brändeille sekä hallitsee yhteistyökumppanuuksia. Suomessa kasvava ala - rooli yhdistää markkinoinnin, somen ja ihmissuhteet Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa hybridityön, luovan työn ja palkan 3200-5200€/kk.",
     main_tasks: [
           "Vaikuttajamarkkinointistrategian suunnittelu",
           "Sopivien vaikuttajien etsiminen ja kontaktointi",
@@ -24011,7 +25786,7 @@ export const careersData: CareerFI[] = [
           "Tulosten analysointi ja raportointi"
     ],
     impact: [
-      "Luo influencer-kampanjoita, jotka tavoittavat miljoonia ihmisiä orgaanisesti sosiaalisessa mediassa",
+      "Luo Suomessa influencer-kampanjoita, jotka tavoittavat miljoonia ihmisiä orgaanisesti sosiaalisessa mediassa",
       "Kasvattaa bränditietoisuutta 50-100% autenttisten influencer-yhteistöiden kautta",
       "Tuottaa paremman ROI:n kuin perinteinen mainonta kohdennetulla influencer-markkinoinnilla"
     ],
@@ -24046,7 +25821,11 @@ export const careersData: CareerFI[] = [
       "Mediayhtiöt: United Influencers, Yksi Helsinki",
       "Brändit: IVYREVEL, Lindex, Finnair",
       "Mainostoimistot ja digitoimistot",
-      "Startup-yritykset ja lifestyle-brändit"
+      "Startup-yritykset ja lifestyle-brändit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -24064,12 +25843,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
   {
     id: "digital-content-producer",
     category: "luova",
     title_fi: "Digitaalinen sisältötuottaja",
     title_en: "Digital Content Producer",
-    short_description: "Digitaalisen sisällön tuottaja koordinoi ja tuottaa monipuolista digitaalista sisältöä eri kanaviin ja formaatteihin. Helsingissä kasvava kysyntä mediatalloissa ja yrityksissä, jotka panostavat sisältömarkkinointiin. Tarjoaa monipuolisen työn, hybridityön ja palkan 3200-5000€/kk.",
+    short_description: "Digitaalisen sisällön tuottaja koordinoi ja tuottaa monipuolista digitaalista sisältöä eri kanaviin ja formaatteihin. Suomessa kasvava kysyntä mediatalloissa ja yrityksissä, jotka panostavat sisältömarkkinointiin Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa monipuolisen työn, hybridityön ja palkan 3200-5000€/kk.",
     main_tasks: [
           "Digitaalisten sisältöprojektien suunnittelu ja johtaminen",
           "Tiimien koordinointi (kirjoittajat, graafikot, videograafit)",
@@ -24078,7 +25859,7 @@ export const careersData: CareerFI[] = [
           "Asiakasyhteistyö ja palaverit"
     ],
     impact: [
-      "Tuottaa digitaalista sisältöä, joka tavoittaa satoja tuhansia ihmisiä kuukausittain",
+      "Tuottaa digitaalista sisältöä, joka tavoittaa Suomessa satoja tuhansia ihmisiä kuukausittain",
       "Koordinoi sisältötuotantoprojekteja, jotka tukevat liiketoimintatavoitteita ja brändiä",
       "Kasvattaa sivuston liikennettä 30-50% strategisella sisältötuotannolla"
     ],
@@ -24113,7 +25894,11 @@ export const careersData: CareerFI[] = [
       "Sanoma Media, Alma Media, Yle",
       "Brändit: IVYREVEL, Fazer, Paulig",
       "Digitoimistot ja sisältötoimistot",
-      "Verkkokaupat ja mediayritykset"
+      "Verkkokaupat ja mediayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Audiovisuaaliset tuottajat",
@@ -24130,6 +25915,8 @@ export const careersData: CareerFI[] = [
     keywords: ["sisältötuotanto","tuottaja","digitaalinen","projektinhallinta"],
     study_length_estimate_months: 36
   }
+
+
 ,
 
 {
@@ -24137,7 +25924,7 @@ export const careersData: CareerFI[] = [
     category: "visionaari",
     title_fi: "Liikkeenjohdon konsultti",
     title_en: "Management Consultant",
-    short_description: "Liikkeenjohdon konsultti auttaa yrityksiä ratkaisemaan strategisia haasteita, parantamaan toimintaa ja kasvamaan. Helsingissä kysytty rooli Big4- ja strategiakonsulttitaloissa - tarjoaa nopean urakehityksen, kansainvälisiä projekteja ja hyvän palkan (4000-7000€/kk).",
+    short_description: "Liikkeenjohdon konsultti auttaa yrityksiä ratkaisemaan strategisia haasteita, parantamaan toimintaa ja kasvamaan. Suomessa kysytty rooli Big4- ja strategiakonsulttitaloissa - tarjoaa nopean urakehityksen, kansainvälisiä projekteja ja hyvän palkan (4000-7000€/kk). Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen.",
     main_tasks:     [
           "Organisaatioiden liiketoiminnan analysointi",
           "Strategisten suositusten kehittäminen",
@@ -24146,7 +25933,7 @@ export const careersData: CareerFI[] = [
           "Implementoinnin tukeminen ja seuranta"
     ],
     impact: [
-      "Auttaa yrityksiä tekemään miljoonien eurojen päätöksiä strategian ja liiketoiminnan kehittämisessä",
+      "Auttaa Suomessa yrityksiä tekemään miljoonien eurojen päätöksiä strategian ja liiketoiminnan kehittämisessä",
       "Ratkaisee monimutkaisia liiketoimintahaasteita data-analyysillä ja parhailla käytännöillä",
       "Mahdollistaa organisaatiomuutoksia, jotka parantavat tehokkuutta 20-40%"
     ],
@@ -24181,7 +25968,11 @@ export const careersData: CareerFI[] = [
       "McKinsey & Company (Helsinki)",
       "Boston Consulting Group (Helsinki)",
       "Deloitte, PwC, KPMG, EY",
-      "Accenture, Gofore, Reaktor"
+      "Accenture, Gofore, Reaktor",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -24199,12 +25990,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 60
   },
 
+
+
 {
     id: "business-analyst",
     category: "visionaari",
     title_fi: "Liiketoiminta-analyytikko",
     title_en: "Business Analyst",
-    short_description: "Liiketoiminta-analyytikko analysoi liiketoimintaprosesseja, kerää vaatimuksia ja yhdistää liiketoiminnan ja IT:n. Helsingissä kasvava kysyntä digitalisaatioprojekteissa - rooli yhdistää datan, prosessit ja ihmissuhteet. Tarjoaa etä/hybridityön ja palkan 3800-5500€/kk.",
+    short_description: "Liiketoiminta-analyytikko analysoi liiketoimintaprosesseja, kerää vaatimuksia ja yhdistää liiketoiminnan ja IT:n. Suomessa kasvava kysyntä digitalisaatioprojekteissa - rooli yhdistää datan, prosessit ja ihmissuhteet Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa etä/hybridityön ja palkan 3800-5500€/kk.",
     main_tasks:     [
           "Liiketoimintaprosessien dokumentointi ja analysointi",
           "Vaatimusten kerääminen ja määrittely",
@@ -24215,7 +26008,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Tunnistaa tehostamismahdollisuuksia, jotka säästävät satoja tuhansia euroja vuosittain",
       "Yhdistää liiketoimintatarpeet teknisiin ratkaisuihin ja varmistaa projektien onnistumisen",
-      "Parantaa liiketoimintaprosesseja data-analyysillä ja parhailla käytännöillä"
+      "Parantaa Suomessa liiketoimintaprosesseja data-analyysillä ja parhailla käytännöillä"
     ],
     education_paths:     [
           "AMK/Yliopisto: Kauppatieteet, tietotekniikka",
@@ -24248,7 +26041,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Supercell, kasvuyhtiöt",
       "Konsultit: Gofore, Solita, Tietoevry",
       "Nordea, OP, S-ryhmä, K-ryhmä",
-      "Julkinen sektori ja suuryritykset"
+      "Julkinen sektori ja suuryritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: "Toimihenkilöunioni / TEK",
@@ -24266,12 +26063,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 48
   },
 
+
+
 {
     id: "strategy-consultant",
     category: "visionaari",
     title_fi: "Strategiakonsultti",
     title_en: "Strategy Consultant",
-    short_description: "Strategiakonsultti auttaa yrityksiä määrittelemään pitkän aikavälin strategioita ja tekemään kriittisiä liiketoimintapäätöksiä. Helsingissä huippurooli, joka vaatii korkeakoulututkinnon ja erinomaista analyyttistä ajattelua. Tarjoaa nopean urakehityksen, haastavat projektit ja palkan 4500-8000€/kk.",
+    short_description: "Strategiakonsultti auttaa yrityksiä määrittelemään pitkän aikavälin strategioita ja tekemään kriittisiä liiketoimintapäätöksiä. Suomessa huippurooli, joka vaatii korkeakoulututkinnon ja erinomaista analyyttistä ajattelua. Tarjoaa nopean urakehityksen, haastavat projektit ja palkan 4500-8000€/kk.",
     main_tasks:     [
           "Strategisten vaihtoehtojen analysointi ja kehittäminen",
           "Markkina- ja kilpailija-analyysit",
@@ -24315,7 +26114,11 @@ export const careersData: CareerFI[] = [
       "McKinsey & Company (Helsinki)",
       "Boston Consulting Group (Helsinki)",
       "Bain & Company (Helsinki)",
-      "Strategy& (PwC), Deloitte Strategy"
+      "Strategy& (PwC), Deloitte Strategy",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -24333,12 +26136,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 60
   },
 
+
+
 {
     id: "sales-development-representative",
     category: "johtaja",
     title_fi: "Myyntikehitysedustaja",
     title_en: "Sales Development Representative",
-    short_description: "SDR (Sales Development Representative) generoi liidejä, kvalifioi prospekteja ja varaa tapaamisia myyntitiimille. Helsingissä kysytty aloitusrooli SaaS-yrityksissä - tarjoaa hyvät ansaintamahdollisuudet bonuksilla (3000-5000€/kk) ja nopean polun myyntiin.",
+    short_description: "SDR (Sales Development Representative) generoi liidejä, kvalifioi prospekteja ja varaa tapaamisia myyntitiimille. Suomessa kysytty aloitusrooli SaaS-yrityksissä - tarjoaa hyvät ansaintamahdollisuudet bonuksilla (3000-5000€/kk) ja nopean polun myyntiin. Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen.",
     main_tasks:     [
           "Prospektien etsiminen ja yhteydenotot",
           "Leadien kvalifiointi ja siirto myyntiin",
@@ -24349,7 +26154,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Generoi satoja kvalifioituja liidejä kuukausittain, jotka muuttuvat arvokkaaksi asiakkuuksiksi",
       "Mahdollistaa myyntitiimin fokuksen sulkemiseen ja kasvattaa myyntituloksia",
-      "Rakentaa myyntipipelineä, joka tukee yrityksen kasvutavoitteita"
+      "Rakentaa myyntipipelineä, joka tukee Suomessa yrityksen kasvutavoitteita"
     ],
     education_paths:     [
           "AMK: Tradenomi",
@@ -24382,7 +26187,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Supermetrics, Smartly.io",
       "SaaS-startupit ja kasvuyhtiöt",
       "HubSpot, Salesforce (Helsinki)",
-      "B2B-teknologiayritykset"
+      "B2B-teknologiayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -24400,12 +26209,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
 {
     id: "account-executive",
     category: "johtaja",
     title_fi: "Vastuullinen myyntiedustaja",
     title_en: "Account Executive",
-    short_description: "Account Executive vastaa B2B-myynnistä, asiakassuhteiden rakentamisesta ja kauppojen sulkemisesta. Helsingissä kysytty rooli SaaS- ja tech-yrityksissä - tarjoaa erinomaisen palkan bonuksilla (4000-8000€/kk), etätyön ja selkeän urakehityksen.",
+    short_description: "Account Executive vastaa B2B-myynnistä, asiakassuhteiden rakentamisesta ja kauppojen sulkemisesta. Suomessa kysytty rooli SaaS- ja tech-yrityksissä - tarjoaa erinomaisen palkan bonuksilla (4000-8000€/kk), etätyön ja selkeän urakehityksen. Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen.",
     main_tasks:     [
           "Myyntineuvottelut ja sopimukset",
           "Asiakassuhteiden rakentaminen ja hallinta",
@@ -24415,7 +26226,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Myy ratkaisuja, jotka tuottavat satoja tuhansia euroja vuosittaisia sopimuksia",
-      "Rakentaa pitkäaikaisia asiakassuhteita ja luo arvoa molemmille osapuolille",
+      "Rakentaa pitkäaikaisia asiakassuhteita ja luo Suomessa arvoa molemmille osapuolille",
       "Kasvattaa yrityksen liikevaihtoa 20-50% menestyksellisellä myynnillä"
     ],
     education_paths:     [
@@ -24449,7 +26260,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Supermetrics, Smartly.io",
       "HubSpot, Salesforce, Zendesk",
       "SaaS-yritykset ja kasvuyhtiöt",
-      "B2B-teknologiayritykset"
+      "B2B-teknologiayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -24467,12 +26282,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
 {
     id: "operations-manager",
     category: "jarjestaja",
     title_fi: "Operatiivinen päällikkö",
     title_en: "Operations Manager",
-    short_description: "Operations Manager vastaa liiketoiminnan operatiivisesta johtamisesta, prosessien kehittämisestä ja tehokkuudesta. Helsingissä kysytty rooli kasvuyhtiöissä, jotka skaalautuvat nopeasti. Tarjoaa monipuolisen työn, vastuuta ja palkan 4500-7000€/kk.",
+    short_description: "Operations Manager vastaa liiketoiminnan operatiivisesta johtamisesta, prosessien kehittämisestä ja tehokkuudesta. Suomessa kysytty rooli kasvuyhtiöissä, jotka skaalautuvat nopeasti Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa monipuolisen työn, vastuuta ja palkan 4500-7000€/kk.",
     main_tasks:     [
           "Päivittäisten toimintojen johtaminen ja valvonta",
           "Prosessien kehittäminen ja optimointi",
@@ -24482,7 +26299,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Optimoi liiketoimintaprosesseja, jotka palvelevat tuhansia asiakkaita päivittäin",
-      "Parantaa operatiivista tehokkuutta 20-40% ja säästää merkittäviä kustannuksia",
+      "Parantaa Suomessa operatiivista tehokkuutta 20-40% ja säästää merkittäviä kustannuksia",
       "Mahdollistaa yrityksen skaalautumisen hallitusti ja kestävästi"
     ],
     education_paths:     [
@@ -24516,7 +26333,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Swappie, kasvuyhtiöt",
       "Verkkokaupat ja logistics-yritykset",
       "Konsultit: Gofore, Solita",
-      "Suuryritykset ja julkinen sektori"
+      "Suuryritykset ja julkinen sektori",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -24534,12 +26355,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 48
   },
 
+
+
 {
     id: "business-development-manager",
     category: "johtaja",
     title_fi: "Liiketoiminnan kehityspäällikkö",
     title_en: "Business Development Manager",
-    short_description: "Business Development Manager etsii uusia liiketoimintamahdollisuuksia, kumppanuuksia ja kasvukanavia. Helsingissä kysytty rooli startup- ja kasvuyhtiöissä, jotka laajentuvat. Tarjoaa strategisen roolin, kansainväliset mahdollisuudet ja palkan 4000-7000€/kk.",
+    short_description: "Business Development Manager etsii uusia liiketoimintamahdollisuuksia, kumppanuuksia ja kasvukanavia. Suomessa kysytty rooli startup- ja kasvuyhtiöissä, jotka laajentuvat Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa strategisen roolin, kansainväliset mahdollisuudet ja palkan 4000-7000€/kk.",
     main_tasks:     [
           "Uusien liiketoimintamahdollisuuksien tunnistaminen",
           "Kumppanuuksien rakentaminen ja neuvottelut",
@@ -24548,7 +26371,7 @@ export const careersData: CareerFI[] = [
           "Liiketoiminnan kasvun mittaaminen"
     ],
     impact: [
-      "Tunnistaa ja luo uusia liiketoimintamahdollisuuksia, jotka tuottavat miljoonia euroja",
+      "Tunnistaa ja luo Suomessa uusia liiketoimintamahdollisuuksia, jotka tuottavat miljoonia euroja",
       "Rakentaa strategisia kumppanuuksia, jotka laajentavat yrityksen markkina-aluetta",
       "Kasvattaa liiketoimintaa 30-100% vuodessa uusien kanavien ja markkinoiden kautta"
     ],
@@ -24583,7 +26406,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Swappie, Supermetrics",
       "Startup-yritykset ja kasvuyhtiöt",
       "SaaS-yritykset ja teknologiayritykset",
-      "Kansainväliset yritykset (Helsinki)"
+      "Kansainväliset yritykset (Helsinki)",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -24601,12 +26428,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 60
   },
 
+
+
 {
     id: "project-coordinator",
     category: "jarjestaja",
     title_fi: "Projektikoordinaattori",
     title_en: "Project Coordinator",
-    short_description: "Projektikoordinaattori koordinoi projekteja, aikatauluja ja resursseja varmistaen että projektit valmistuvat ajallaan ja budjetissa. Helsingissä kysytty aloitusrooli, joka tarjoaa polun projektipäällikkyteen. Tarjoaa monipuolisen työn, hybridityön ja palkan 3200-4500€/kk.",
+    short_description: "Projektikoordinaattori koordinoi projekteja, aikatauluja ja resursseja varmistaen että projektit valmistuvat ajallaan ja budjetissa. Suomessa kysytty aloitusrooli, joka tarjoaa polun projektipäällikkyteen Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa monipuolisen työn, hybridityön ja palkan 3200-4500€/kk.",
     main_tasks:     [
           "Projektin aikataulujen ja resurssien koordinointi",
           "Projektidokumentaation ylläpito",
@@ -24650,7 +26479,11 @@ export const careersData: CareerFI[] = [
       "Konsultit: Gofore, Solita, Reaktor",
       "Rakennusala: YIT, Skanska",
       "IT-yritykset ja digitoimistot",
-      "Julkinen sektori ja suuryritykset"
+      "Julkinen sektori ja suuryritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -24668,12 +26501,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 36
   },
 
+
+
 {
     id: "digital-transformation-consultant",
     category: "visionaari",
     title_fi: "Digitaalisen muutoksen konsultti",
     title_en: "Digital Transformation Consultant",
-    short_description: "Digitaalisen transformaation konsultti auttaa yrityksiä modernisoimaan toimintaansa ja ottamaan käyttöön digitaalisia ratkaisuja. Helsingissä kasvava kysyntä julkisella ja yksityisellä sektorilla - rooli yhdistää strategian, teknologian ja muutosjohtamisen. Tarjoaa haastavat projektit ja palkan 4500-7500€/kk.",
+    short_description: "Digitaalisen transformaation konsultti auttaa yrityksiä modernisoimaan toimintaansa ja ottamaan käyttöön digitaalisia ratkaisuja. Suomessa kasvava kysyntä julkisella ja yksityisellä sektorilla - rooli yhdistää strategian, teknologian ja muutosjohtamisen Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa haastavat projektit ja palkan 4500-7500€/kk.",
     main_tasks:     [
           "Digitaalisen kypsyyden arviointi",
           "Digitalisaatiostrategian kehittäminen",
@@ -24717,7 +26552,11 @@ export const careersData: CareerFI[] = [
       "Accenture, Deloitte, KPMG",
       "Gofore, Solita, Tietoevry",
       "McKinsey Digital, BCG Digital",
-      "Suuryritykset ja julkinen sektori"
+      "Suuryritykset ja julkinen sektori",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: "TEK / Toimihenkilöunioni",
@@ -24735,12 +26574,14 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 60
   },
 
+
+
 {
     id: "change-management-specialist",
     category: "visionaari",
     title_fi: "Muutosjohtamisen asiantuntija",
     title_en: "Change Management Specialist",
-    short_description: "Muutoksenhallinnan asiantuntija tukee organisaatioita suurissa muutoksissa, kouluttaa työntekijöitä ja varmistaa muutosten onnistumisen. Helsingissä kysyntää julkisella sektorilla ja suuryrityksissä - rooli yhdistää psykologian, viestinnän ja projektinhallinnan. Tarjoaa merkityksellisen työn ja palkan 3800-5800€/kk.",
+    short_description: "Muutoksenhallinnan asiantuntija tukee organisaatioita suurissa muutoksissa, kouluttaa työntekijöitä ja varmistaa muutosten onnistumisen. Suomessa kysyntää julkisella sektorilla ja suuryrityksissä - rooli yhdistää psykologian, viestinnän ja projektinhallinnan. Tarjoaa merkityksellisen työn ja palkan 3800-5800€/kk.",
     main_tasks:     [
           "Muutostarpeiden analysointi",
           "Muutosstrategian ja -suunnitelman laatiminen",
@@ -24749,9 +26590,9 @@ export const careersData: CareerFI[] = [
           "Muutoksen seuranta ja arviointi"
     ],
     impact: [
-      "Tukee tuhansia työntekijöitä muutoksissa ja vähentää muutosvastarintaa",
+      "Tukee Suomessa tuhansia työntekijöitä muutoksissa ja vähentää muutosvastarintaa",
       "Varmistaa että organisaatiomuutokset onnistuvat ja tuottavat halutun tuloksen",
-      "Parantaa muutosten läpimenoa 40-60% systemaattisella change managementilla"
+      "Parantaa Suomessa muutosten läpimenoa 40-60% systemaattisella change managementilla"
     ],
     education_paths:     [
           "Yliopisto: Kauppatieteet, psykologia, organisaatiotutkimus",
@@ -24784,7 +26625,11 @@ export const careersData: CareerFI[] = [
       "Konsultit: Deloitte, KPMG, Gofore",
       "Suuryritykset: Nokia, Elisa, Fortum",
       "Julkinen sektori: Kela, Valtiokonttori",
-      "Organisaatiomuutosprojektit"
+      "Organisaatiomuutosprojektit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -24801,12 +26646,14 @@ export const careersData: CareerFI[] = [
     related_careers: ["management-consultant","digital-transformation-consultant"],
     study_length_estimate_months: 60
   },
+
+
   {
     id: "mental-health-counselor",
     category: "auttaja",
     title_fi: "Mielenterveysohjaaja",
     title_en: "Mental Health Counselor",
-    short_description: "Mielenterveystyön ammattilainen tarjoaa terapiaa, neuvontaa ja tukea mielenterveyshaasteissa kärsiville. Helsingissä kasvava tarve erityisesti nuorille aikuisille suunnatuissa palveluissa. Tarjoaa merkityksellisen työn, joustavan työajan ja palkan 3200-4800€/kk.",
+    short_description: "Mielenterveystyön ammattilainen tarjoaa terapiaa, neuvontaa ja tukea mielenterveyshaasteissa kärsiville. Suomessa kasvava tarve erityisesti kaikille suunnatuissa palveluissa Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, joustavan työajan ja palkan 3200-4800€/kk.",
     main_tasks:     [
               "Asiakkaiden kohtaaminen ja tukikeskustelut",
               "Kriisinhallinnan tukeminen",
@@ -24815,7 +26662,7 @@ export const careersData: CareerFI[] = [
               "Ryhmätoiminnan ohjaaminen"
     ],
     impact: [
-      "Auttaa satoja ihmisiä vuosittain mielenterveyshaasteiden kanssa ja parantaa heidän elämänlaatuaan",
+      "Auttaa Suomessa satoja ihmisiä vuosittain mielenterveyshaasteiden kanssa ja parantaa heidän elämänlaatuaan",
       "Tarjoaa terapiaa ja tukea, joka vähentää ahdistusta, masennusta ja stressiä",
       "Mahdollistaa ihmisten palaamisen työelämään ja arkeen mielenterveyden parantumisen myötä"
     ],
@@ -24850,7 +26697,11 @@ export const careersData: CareerFI[] = [
       "Helsingin kaupunki, HUS",
       "Yksityiset terapiakeskukset: Psykologikeskus Vastaamo, Terveystalo",
       "Työterveyspalvelut: Mehiläinen, Terveystalo",
-      "Yksityinen vastaanotto"
+      "Yksityinen vastaanotto",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Talentia",
@@ -24860,12 +26711,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 42
   },
+
+
   {
     id: "wellness-coach",
     category: "auttaja",
     title_fi: "Hyvinvointivalmentaja",
     title_en: "Wellness Coach",
-    short_description: "Hyvinvointivalmentaja tukee asiakkaita tekemään terveellisiä elämäntapamuutoksia liikunnassa, ravinnossa ja stressinhallinnassa. Helsingissä kasvava wellness-trendi luo mahdollisuuksia - voit työskennellä yrityksille tai freelancerina. Tarjoaa joustavan työajan, merkityksellisen työn ja ansaintapotentiaalia.",
+    short_description: "Hyvinvointivalmentaja tukee asiakkaita tekemään terveellisiä elämäntapamuutoksia liikunnassa, ravinnossa ja stressinhallinnassa. Suomessa kasvava wellness-trendi luo mahdollisuuksia - voit työskennellä yrityksille tai freelancerina Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa joustavan työajan, merkityksellisen työn ja ansaintapotentiaalia.",
     main_tasks:     [
               "Asiakkaiden hyvinvoinnin kartoitus",
               "Yksilöllisten tavoitteiden asettaminen",
@@ -24874,8 +26727,8 @@ export const careersData: CareerFI[] = [
               "Stressinhallintaohjaus"
     ],
     impact: [
-      "Auttaa satoja asiakkaita vuosittain tekemään kestäviä elämäntapamuutoksia ja parantamaan terveyttä",
-      "Tukee työhyvinvointia yrityksissä ja vähentää sairauspoissaoloja 15-30%",
+      "Auttaa Suomessa satoja asiakkaita vuosittain tekemään kestäviä elämäntapamuutoksia ja parantamaan terveyttä",
+      "Tukee Suomessa työhyvinvointia yrityksissä ja vähentää sairauspoissaoloja 15-30%",
       "Mahdollistaa ihmisten terveellisemmän ja energisemmän elämän"
     ],
     education_paths:     [
@@ -24909,7 +26762,11 @@ export const careersData: CareerFI[] = [
       "Työterveyspalvelut: Mehiläinen, Terveystalo",
       "Wellness-yritykset: Frank Body, Urban Sports Club",
       "Yritykset hyvinvointipalveluina",
-      "Freelance ja oma yritystoiminta"
+      "Freelance ja oma yritystoiminta",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
@@ -24919,12 +26776,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 24
   },
+
+
   {
     id: "occupational-health-specialist",
     category: "auttaja",
     title_fi: "Työterveysasiantuntija",
     title_en: "Occupational Health Specialist",
-    short_description: "Työterveyshuollon ammattilainen huolehtii työntekijöiden terveydestä ja työhyvinvoinnista yrityksissä. Helsingissä jatkuva kysyntä erityisesti kasvuyhtiöissä, jotka panostavat henkilöstön hyvinvointiin. Tarjoaa vakaan työn, monipuoliset tehtävät ja palkan 3500-5000€/kk.",
+    short_description: "Työterveyshuollon ammattilainen huolehtii työntekijöiden terveydestä ja työhyvinvoinnista yrityksissä. Suomessa jatkuva kysyntä erityisesti kasvuyhtiöissä, jotka panostavat henkilöstön hyvinvointiin Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa vakaan työn, monipuoliset tehtävät ja palkan 3500-5000€/kk.",
     main_tasks:     [
               "Työterveysselvitysten tekeminen",
               "Työhyvinvointiohjelmien kehittäminen",
@@ -24968,7 +26827,11 @@ export const careersData: CareerFI[] = [
       "Mehiläinen Työterveyspalvelut",
       "Terveystalo, Pihlajalinna",
       "Helsingin kaupunki",
-      "Suuryritykset (sisäinen työterveyshuolto)"
+      "Suuryritykset (sisäinen työterveyshuolto)",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: "Tehy / Talentia",
@@ -24978,12 +26841,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "health-data-analyst",
     category: "innovoija",
     title_fi: "Terveystiedon analyytikko",
     title_en: "Health Data Analyst",
-    short_description: "Terveysdatan analyytikko analysoi terveydenhuollon dataa parantaakseen hoitoprosesseja, potilasturvallisuutta ja päätöksentekoa. Helsingissä kasvava kysyntä julkisella ja yksityisellä terveydenhuollolla - rooli yhdistää data-analytiikan ja terveydenhuollon. Tarjoaa etätyön, merkityksellisen työn ja palkan 3800-5500€/kk.",
+    short_description: "Terveysdatan analyytikko analysoi terveydenhuollon dataa parantaakseen hoitoprosesseja, potilasturvallisuutta ja päätöksentekoa. Suomessa kasvava kysyntä julkisella ja yksityisellä terveydenhuollolla - rooli yhdistää data-analytiikan ja terveydenhuollon Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa etätyön, merkityksellisen työn ja palkan 3800-5500€/kk.",
     main_tasks:     [
               "Terveystiedon kerääminen ja analysointi",
               "Raporttien ja visualisointien laatiminen",
@@ -24992,9 +26857,9 @@ export const careersData: CareerFI[] = [
               "Ennustavien mallien kehittäminen"
     ],
     impact: [
-      "Analysoi dataa, joka parantaa tuhansien potilaiden hoitoa ja turvallisuutta",
+      "Analysoi dataa, joka parantaa Suomessa tuhansien potilaiden hoitoa ja turvallisuutta",
       "Tunnistaa tehostamismahdollisuuksia, jotka säästävät satoja tuhansia euroja terveydenhuollossa",
-      "Tukee evidenssipohjaista päätöksentekoa ja parantaa hoitotuloksia"
+      "Tukee Suomessa evidenssipohjaista päätöksentekoa ja parantaa hoitotuloksia"
     ],
     education_paths:     [
               "Yliopisto: Tilastotiede, terveysinformatiikka",
@@ -25027,7 +26892,11 @@ export const careersData: CareerFI[] = [
       "HUS, Helsingin kaupunki",
       "Mehiläinen, Terveystalo, Pihlajalinna",
       "Kela, THL",
-      "Terveysteknologiayritykset"
+      "Terveysteknologiayritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK",
@@ -25037,12 +26906,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 60
   },
+
+
   {
     id: "nutrition-specialist",
     category: "auttaja",
     title_fi: "Ravitsemusasiantuntija",
     title_en: "Nutrition Specialist",
-    short_description: "Ravitsemusasiantuntija neuvoo asiakkaita terveellisessä ravitsemuksessa ja auttaa saavuttamaan terveystavoitteita. Helsingissä kasvava kysyntä yksityisellä sektorilla ja wellness-toimialalla. Tarjoaa joustavan työajan, asiakastyön ja ansaintapotentiaalia.",
+    short_description: "Ravitsemusasiantuntija neuvoo asiakkaita terveellisessä ravitsemuksessa ja auttaa saavuttamaan terveystavoitteita. Suomessa kasvava kysyntä yksityisellä sektorilla ja wellness-toimialalla Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa joustavan työajan, asiakastyön ja ansaintapotentiaalia.",
     main_tasks:     [
               "Yksilöllinen ravitsemusneuvonta",
               "Ravinto-ohjelmien suunnittelu",
@@ -25051,8 +26922,8 @@ export const careersData: CareerFI[] = [
               "Yhteistyö terveydenhuollon kanssa"
     ],
     impact: [
-      "Auttaa satoja asiakkaita vuosittain saavuttamaan terveystavoitteita ravitsemuksen avulla",
-      "Tukee kroonisten sairauksien hallintaa ja ehkäisyä terveellisellä ruokavaliolla",
+      "Auttaa Suomessa satoja asiakkaita vuosittain saavuttamaan terveystavoitteita ravitsemuksen avulla",
+      "Tukee Suomessa kroonisten sairauksien hallintaa ja ehkäisyä terveellisellä ruokavaliolla",
       "Mahdollistaa terveellisemmän elämäntavan ja paremman energiatason"
     ],
     education_paths:     [
@@ -25085,7 +26956,11 @@ export const careersData: CareerFI[] = [
       "Terveystalo, Mehiläinen",
       "Yksityinen vastaanotto",
       "Urheiluseurat ja wellness-keskukset",
-      "Freelance ja ravitsemusneuvonta"
+      "Freelance ja ravitsemusneuvonta",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Talentia",
@@ -25095,12 +26970,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 42
   },
+
+
   {
     id: "healthcare-coordinator",
     category: "jarjestaja",
     title_fi: "Terveydenhuollon koordinaattori",
     title_en: "Healthcare Coordinator",
-    short_description: "Terveydenhuollon koordinaattori koordinoi hoitoprosesseja, aikatauluja ja potilaspolkuja varmistaen sujuvan hoidon. Helsingissä kysyntää julkisella ja yksityisellä sektorilla - rooli yhdistää asiakaspalvelun, koordinoinnin ja terveydenhuollon. Tarjoaa vakaan työn ja palkan 3000-4200€/kk.",
+    short_description: "Terveydenhuollon koordinaattori koordinoi hoitoprosesseja, aikatauluja ja potilaspolkuja varmistaen sujuvan hoidon. Suomessa kysyntää julkisella ja yksityisellä sektorilla - rooli yhdistää asiakaspalvelun, koordinoinnin ja terveydenhuollon Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa vakaan työn ja palkan 3000-4200€/kk.",
     main_tasks:     [
               "Ajanvarausten koordinointi",
               "Potilaspalvelujen järjestäminen",
@@ -25110,7 +26987,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Koordinoi hoitopolkuja tuhansille potilaille vuosittain ja varmistaa sujuvan hoidon",
-      "Parantaa potilaskokemusta 30-50% tehokkaalla koordinoinnilla ja viestinnällä",
+      "Parantaa Suomessa potilaskokemusta 30-50% tehokkaalla koordinoinnilla ja viestinnällä",
       "Vähentää odotusaikoja ja tehostaa hoitoresurssien käyttöä"
     ],
     education_paths:     [
@@ -25143,7 +27020,11 @@ export const careersData: CareerFI[] = [
       "HUS, Helsingin kaupunki",
       "Mehiläinen, Terveystalo, Pihlajalinna",
       "Yksityiset sairaalat ja klinikat",
-      "Erikoissairaanhoidon yksiköt"
+      "Erikoissairaanhoidon yksiköt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tehy / JHL",
@@ -25153,12 +27034,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 36
   },
+
+
   {
     id: "international-sales-manager",
     category: "johtaja",
     title_fi: "Kansainvälisen myynnin päällikkö",
     title_en: "International Sales Manager",
-    short_description: "Kansainvälisen myynnin päällikkö vastaa myynnistä kansainvälisillä markkinoilla, kumppanuuksista ja markkinalaajenuksesta. Helsingissä kysytty rooli kasvuyhtiöissä, jotka kansainvälistyvät - tarjoaa matkustusmahdollisuudet (20-40%), kielitaidon hyödyntämisen ja palkan 5000-8000€/kk.",
+    short_description: "Kansainvälisen myynnin päällikkö vastaa myynnistä kansainvälisillä markkinoilla, kumppanuuksista ja markkinalaajenuksesta. Suomessa kysytty rooli kasvuyhtiöissä, jotka kansainvälistyvät - tarjoaa matkustusmahdollisuudet (20-40%), kielitaidon hyödyntämisen ja palkan 5000-8000€/kk. Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen.",
     main_tasks:     [
               "Kansainvälisen myynnin johtaminen",
               "Vientiasiakkuuksien hallinta",
@@ -25167,9 +27050,9 @@ export const careersData: CareerFI[] = [
               "Myyntitiimin johtaminen"
     ],
     impact: [
-      "Kasvattaa kansainvälistä myyntiä ja tuo miljoonia euroja liikevaihtoa uusilta markkinoilta",
+      "Kasvattaa Suomessa ja Suomessa ja kansainvälistä myyntiä ja tuo miljoonia euroja liikevaihtoa uusilta markkinoilta",
       "Rakentaa strategisia kumppanuuksia, jotka avaavat uusia markkina-alueita",
-      "Mahdollistaa yrityksen kansainvälisen kasvun ja laajentumisen"
+      "Mahdollistaa yrityksen Suomessa ja Suomessa ja kansainvälisen kasvun ja laajentumisen"
     ],
     education_paths:     [
               "Yliopisto: Kauppatieteet",
@@ -25202,7 +27085,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Supercell, Smartly.io",
       "Suomalaiset kasvuyhtiöt (kv-ekspansio)",
       "Kansainväliset yritykset (Helsinki-toimisto)",
-      "Export-yritykset ja SaaS-yritykset"
+      "Export-yritykset ja SaaS-yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "paljon" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -25212,12 +27099,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 60
   },
+
+
   {
     id: "remote-team-lead",
     category: "johtaja",
     title_fi: "Etätiimin vetäjä",
     title_en: "Remote Team Lead",
-    short_description: "Etätiimin vetäjä johtaa hajautettua tiimiä, koordinoi työtä ja varmistaa tiimin tuottavuuden ja hyvinvoinnin. Helsingissä kasvava rooli, kun yhä useammat yritykset toimivat etänä tai hybridinä. Tarjoaa täyden etätyön, joustavan työajan ja palkan 4500-7000€/kk.",
+    short_description: "Etätiimin vetäjä johtaa hajautettua tiimiä, koordinoi työtä ja varmistaa tiimin tuottavuuden ja hyvinvoinnin. Suomessa kasvava rooli, kun yhä useammat yritykset toimivat etänä tai hybridinä Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa täyden etätyön, joustavan työajan ja palkan 4500-7000€/kk.",
     main_tasks:     [
               "Hajautetun tiimin johtaminen",
               "Etätyön koordinointi ja fasilitointi",
@@ -25261,7 +27150,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Smartly.io, kansainväliset yritykset",
       "Remote-first startupit",
       "GitLab, Toggl, Buffer (Helsinki-työntekijät)",
-      "Konsultit: Reaktor, Futurice"
+      "Konsultit: Reaktor, Futurice",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -25271,12 +27164,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "localization-specialist",
     category: "luova",
     title_fi: "Lokalisointiasiantuntija",
     title_en: "Localization Specialist",
-    short_description: "Lokalisointiasiantuntija mukauttaa tuotteita, sisältöjä ja käyttöliittymiä eri kielille ja kulttuureille. Helsingissä kysyntää peliyhtiöissä ja kansainvälisissä SaaS-yrityksissä - rooli yhdistää kielet, teknologian ja kulttuuriymmärryksen. Tarjoaa etätyön, kielten hyödyntämisen ja palkan 3500-5500€/kk.",
+    short_description: "Lokalisointiasiantuntija mukauttaa tuotteita, sisältöjä ja käyttöliittymiä eri kielille ja kulttuureille. Suomessa kysyntää peliyhtiöissä ja kansainvälisissä SaaS-yrityksissä - rooli yhdistää kielet, teknologian ja kulttuuriymmärryksen Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa etätyön, kielten hyödyntämisen ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "Lokalisointistrategioiden suunnittelu",
               "Käännösten koordinointi ja laadunvarmistus",
@@ -25287,7 +27182,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Lokalisoi tuotteita, jotka tavoittavat miljoonia käyttäjiä ympäri maailmaa",
       "Mahdollistaa tuotteiden menestyksen uusilla markkinoilla kulttuurisesti sopivalla lokalisoinnilla",
-      "Parantaa käyttäjäkokemusta 30-50% paikallisesti relevanteilla käännöksillä ja sisällöllä"
+      "Parantaa Suomessa käyttäjäkokemusta 30-50% paikallisesti relevanteilla käännöksillä ja sisällöllä"
     ],
     education_paths:     [
               "Yliopisto: Kielitieteet, käännöstiede",
@@ -25319,7 +27214,11 @@ export const careersData: CareerFI[] = [
       "Supercell, Rovio, Remedy Entertainment",
       "Wolt, Smartly.io (kansainväliset markkinat)",
       "Käännöstoimistot: AAC Global, Semantix",
-      "SaaS-yritykset ja peliyhtiöt"
+      "SaaS-yritykset ja peliyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -25329,12 +27228,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "global-partnerships-manager",
     category: "johtaja",
     title_fi: "Globaalien kumppanuuksien päällikkö",
     title_en: "Global Partnerships Manager",
-    short_description: "Globaalien kumppanuuksien päällikkö rakentaa ja hallitsee strategisia kumppanuuksia kansainvälisesti. Helsingissä kysytty rooli kasvuyhtiöissä, jotka laajentuvat - tarjoaa kansainväliset matkat (30-50%), verkostoitumisen ja palkan 5500-8500€/kk.",
+    short_description: "Globaalien kumppanuuksien päällikkö rakentaa ja hallitsee strategisia kumppanuuksia kansainvälisesti. Suomessa kysytty rooli kasvuyhtiöissä, jotka laajentuvat - tarjoaa kansainväliset matkat (30-50%), verkostoitumisen ja palkan 5500-8500€/kk. Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen.",
     main_tasks:     [
               "Strategisten kumppanuuksien tunnistaminen",
               "Neuvottelut ja sopimusten teko",
@@ -25345,7 +27246,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Rakentaa globaaleja kumppanuuksia, jotka tuottavat miljoonia euroja lisäarvoa",
       "Laajentaa yrityksen markkina-aluetta strategisten kumppanuuksien kautta",
-      "Mahdollistaa kansainvälisen kasvun ja uudet liiketoimintamahdollisuudet"
+      "Mahdollistaa Suomessa ja Suomessa ja kansainvälisen kasvun ja uudet liiketoimintamahdollisuudet"
     ],
     education_paths:     [
               "Yliopisto: Kauppatieteet",
@@ -25378,7 +27279,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Supercell, Smartly.io",
       "Slush, Business Finland",
       "Kansainväliset yritykset (Helsinki)",
-      "Kasvuyhtiöt ja startup-yritykset"
+      "Kasvuyhtiöt ja startup-yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "paljon" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -25388,12 +27293,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 60
   },
+
+
   {
     id: "technical-support-specialist",
     category: "auttaja",
     title_fi: "Teknisen tuen asiantuntija",
     title_en: "Technical Support Specialist",
-    short_description: "Teknisen tuen asiantuntija auttaa asiakkaita teknisten ongelmien ratkaisemisessa ja tuotteiden käytössä. Helsingissä jatkuva kysyntä SaaS- ja tech-yrityksissä - tarjoaa etätyön, joustavan työajan ja palkan 3000-4500€/kk.",
+    short_description: "Teknisen tuen asiantuntija auttaa asiakkaita teknisten ongelmien ratkaisemisessa ja tuotteiden käytössä. Suomessa jatkuva kysyntä SaaS- ja tech-yrityksissä - tarjoaa etätyön, joustavan työajan ja palkan 3000-4500€/kk. Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen.",
     main_tasks:     [
               "Teknisten ongelmien diagnosointi ja ratkaisu",
               "Asiakastuki puhelimitse, chatissa ja sähköpostitse",
@@ -25402,7 +27309,7 @@ export const careersData: CareerFI[] = [
               "Asiakastyytyväisyyden varmistaminen"
     ],
     impact: [
-      "Auttaa tuhansia asiakkaita vuosittain ratkaisemaan teknisiä ongelmia ja parantaa asiakastyytyväisyyttä",
+      "Auttaa Suomessa tuhansia asiakkaita vuosittain ratkaisemaan teknisiä ongelmia ja parantaa asiakastyytyväisyyttä",
       "Vähentää asiakaspoistumaa 20-30% nopealla ja laadukkaalla tuella",
       "Kerää arvokasta asiakaspalautetta tuotekehitykseen"
     ],
@@ -25437,7 +27344,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Supermetrics, Smartly.io",
       "SaaS-yritykset ja teknologiayritykset",
       "Kansainväliset yritykset (Helsinki-tuki)",
-      "Verkkokaupat ja digitaaliset palvelut"
+      "Verkkokaupat ja digitaaliset palvelut",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK / Toimihenkilöunioni",
@@ -25447,12 +27358,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 36
   },
+
+
   {
     id: "translation-project-manager",
     category: "jarjestaja",
     title_fi: "Käännösprojektien päällikkö",
     title_en: "Translation Project Manager",
-    short_description: "Käännösprojektipäällikkö koordinoi käännösprojekteja, hallitsee kääntäjiä ja varmistaa laadun ja aikataulut. Helsingissä kysyntää käännöstoimistoissa ja kansainvälisissä yrityksissä - tarjoaa etätyön, kielten hyödyntämisen ja palkan 3500-5000€/kk.",
+    short_description: "Käännösprojektipäällikkö koordinoi käännösprojekteja, hallitsee kääntäjiä ja varmistaa laadun ja aikataulut. Suomessa kysyntää käännöstoimistoissa ja kansainvälisissä yrityksissä - tarjoaa etätyön, kielten hyödyntämisen ja palkan 3500-5000€/kk. Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen.",
     main_tasks:     [
               "Käännösprojektien suunnittelu ja hallinta",
               "Kääntäjien koordinointi ja valinta",
@@ -25495,7 +27408,11 @@ export const careersData: CareerFI[] = [
       "Käännöstoimistot: AAC Global, Semantix",
       "Supercell, Rovio, peliyhtiöt",
       "Kansainväliset yritykset (Helsinki)",
-      "EU-toimielimet ja kansainväliset organisaatiot"
+      "EU-toimielimet ja kansainväliset organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
@@ -25505,12 +27422,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "diversity-and-inclusion-specialist",
     category: "auttaja",
     title_fi: "Monimuotoisuus- ja yhdenvertaisuusasiantuntija",
     title_en: "Diversity & Inclusion Specialist",
-    short_description: "Monimuotoisuuden ja osallisuuden asiantuntija edistää tasa-arvoa ja inklusiivisuutta työpaikoilla sekä kehittää D&I-strategioita. Helsingissä kasvava kysyntä erityisesti kansainvälisissä yrityksissä ja startup-sektorilla. Tarjoaa merkityksellisen työn, hybridityön ja palkan 3500-5500€/kk.",
+    short_description: "Monimuotoisuuden ja osallisuuden asiantuntija edistää tasa-arvoa ja inklusiivisuutta työpaikoilla sekä kehittää D&I-strategioita. Suomessa kasvava kysyntä erityisesti kansainvälisissä yrityksissä ja startup-sektorilla Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, hybridityön ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "DEI-strategioiden kehittäminen",
               "Henkilöstökoulutusten järjestäminen",
@@ -25519,9 +27438,9 @@ export const careersData: CareerFI[] = [
               "Tasa-arvotoimenpiteiden seuranta"
     ],
     impact: [
-      "Edistää tasa-arvoa ja inklusiivisuutta organisaatioissa, jotka työllistävät tuhansia ihmisiä",
+      "Edistää Suomessa tasa-arvoa ja inklusiivisuutta organisaatioissa, jotka työllistävät tuhansia ihmisiä",
       "Rakentaa monimuotoisempia tiimejä, jotka ovat 35% innovatiivisempia tutkimusten mukaan",
-      "Luo työkulttuureja, joissa kaikki voivat olla oma itsensä ja menestyä"
+      "Luo Suomessa työkulttuureja, joissa kaikki voivat olla oma itsensä ja menestyä"
     ],
     education_paths:     [
               "Yliopisto: Yhteiskuntatieteet, sosiologia",
@@ -25553,7 +27472,11 @@ export const careersData: CareerFI[] = [
       "Wolt, Supercell, kansainväliset yritykset",
       "Konsultit: Deloitte, KPMG, Accenture",
       "Startup-yritykset ja kasvuyhtiöt",
-      "Julkinen sektori ja järjestöt"
+      "Julkinen sektori ja järjestöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -25563,12 +27486,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "social-justice-advocate",
     category: "auttaja",
     title_fi: "Sosiaalisen oikeudenmukaisuuden edistäjä",
     title_en: "Social Justice Advocate",
-    short_description: "Sosiaalisen oikeudenmukaisuuden aktivisti edistää yhteiskunnallista oikeudenmukaisuutta, ihmisoikeuksia ja tasa-arvoa. Helsingissä mahdollisuuksia järjestöissä ja sosiaalisen sektorin organisaatioissa. Tarjoaa merkityksellisen työn, yhteiskunnallisen vaikuttamisen ja palkan 2800-4200€/kk.",
+    short_description: "Sosiaalisen oikeudenmukaisuuden aktivisti edistää yhteiskunnallista oikeudenmukaisuutta, ihmisoikeuksia ja tasa-arvoa. Suomessa mahdollisuuksia järjestöissä ja sosiaalisen sektorin organisaatioissa Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, yhteiskunnallisen vaikuttamisen ja palkan 2800-4200€/kk.",
     main_tasks:     [
               "Vaikuttamistyö ja kampanjat",
               "Haavoittuvien ryhmien tukeminen",
@@ -25578,8 +27503,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Edistää sosiaalista oikeudenmukaisuutta ja ihmisoikeuksia Suomessa ja kansainvälisesti",
-      "Tukee haavoittuvassa asemassa olevia ryhmiä ja auttaa tuhansia ihmisiä vuosittain",
-      "Vaikuttaa yhteiskunnalliseen keskusteluun ja politiikkaan"
+      "Tukee Suomessa haavoittuvassa asemassa olevia ryhmiä ja auttaa tuhansia ihmisiä vuosittain",
+      "Vaikuttaa Suomessa yhteiskunnalliseen keskusteluun ja politiikkaan"
     ],
     education_paths:     [
               "Yliopisto: Yhteiskuntatieteet, oikeustiede, sosiaalityö"
@@ -25610,7 +27535,11 @@ export const careersData: CareerFI[] = [
       "Amnesty International Suomi",
       "Plan International Finland",
       "Suomen Punainen Risti",
-      "Kansalaisjärjestöt ja sosiaaliset yritykset"
+      "Kansalaisjärjestöt ja sosiaaliset yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -25620,12 +27549,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "community-organizer",
     category: "auttaja",
     title_fi: "Yhteisöaktivisti",
     title_en: "Community Organizer",
-    short_description: "Yhteisöorganisaattori rakentaa ja mobilisoi yhteisöjä, järjestää tapahtumia ja edistää yhteiskunnallista muutosta. Helsingissä mahdollisuuksia järjestöissä, sosiaalisissa liikkeissä ja kaupunkiaktivismissa. Tarjoaa merkityksellisen työn, verkostoitumisen ja palkan 2800-4000€/kk.",
+    short_description: "Yhteisöorganisaattori rakentaa ja mobilisoi yhteisöjä, järjestää tapahtumia ja edistää yhteiskunnallista muutosta. Suomessa mahdollisuuksia järjestöissä, sosiaalisissa liikkeissä ja kaupunkiaktivismissa Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, verkostoitumisen ja palkan 2800-4000€/kk.",
     main_tasks:     [
               "Yhteisöjen mobilisoin ti",
               "Kampanjoiden suunnittelu ja toteutus",
@@ -25635,7 +27566,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Mobilisoi satoja tai tuhansia ihmisiä yhteisten tavoitteiden puolesta",
-      "Rakentaa vahvoja paikallisyhteisöjä ja edistää yhteiskunnallista muutosta",
+      "Rakentaa vahvoja paikallisyhteisöjä ja edistää Suomessa yhteiskunnallista muutosta",
       "Järjestää tapahtumia ja kampanjoita, jotka tavoittavat laajat yleisöt"
     ],
     education_paths:     [
@@ -25669,7 +27600,11 @@ export const careersData: CareerFI[] = [
       "Kansalaisjärjestöt",
       "Poliittiset liikkeet ja puolueet",
       "Kaupunkiaktiivisuus ja yhteisötalot",
-      "Sosiaaliset yritykset"
+      "Sosiaaliset yritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -25679,12 +27614,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "nonprofit-program-coordinator",
     category: "jarjestaja",
     title_fi: "Järjestön ohjelmakoordinaattori",
     title_en: "Nonprofit Program Coordinator",
-    short_description: "Järjestöjen ohjelmakoordinaattori koordinoi ja toteuttaa voittoa tavoittelemattomien järjestöjen ohjelmia ja projekteja. Helsingissä mahdollisuuksia laajassa järjestökentässä - rooli yhdistää projektinhallinnan ja yhteiskunnallisen vaikuttamisen. Tarjoaa merkityksellisen työn ja palkan 3000-4500€/kk.",
+    short_description: "Järjestöjen ohjelmakoordinaattori koordinoi ja toteuttaa voittoa tavoittelemattomien järjestöjen ohjelmia ja projekteja. Suomessa mahdollisuuksia laajassa järjestökentässä - rooli yhdistää projektinhallinnan ja yhteiskunnallisen vaikuttamisen Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn ja palkan 3000-4500€/kk.",
     main_tasks:     [
               "Ohjelmien suunnittelu ja toteutus",
               "Projektinhallinta",
@@ -25695,7 +27632,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Koordinoi ohjelmia, jotka auttavat tuhansia haavoittuvassa asemassa olevia ihmisiä",
       "Toteuttaa projekteja, jotka edistävät sosiaalista oikeudenmukaisuutta ja hyvinvointia",
-      "Luo konkreettista muutosta yhteiskuntaan järjestötoiminnan kautta"
+      "Luo Suomessa konkreettista muutosta yhteiskuntaan järjestötoiminnan kautta"
     ],
     education_paths:     [
               "Yliopisto: Yhteiskuntatieteet, hallintotiede",
@@ -25727,7 +27664,11 @@ export const careersData: CareerFI[] = [
       "Suomen Punainen Risti",
       "Plan International Finland",
       "Kansainväliset kehitysjärjestöt",
-      "Sosiaaliset järjestöt ja yhteisöt"
+      "Sosiaaliset järjestöt ja yhteisöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -25737,12 +27678,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "human-rights-researcher",
     category: "visionaari",
     title_fi: "Ihmisoikeustutkija",
     title_en: "Human Rights Researcher",
-    short_description: "Ihmisoikeustutkija tutkii ihmisoikeusloukkauksia, laatii raportteja ja edistää ihmisoikeuksia tutkimuksen kautta. Helsingissä mahdollisuuksia yliopistoilla, järjestöissä ja tutkimuslaitoksilla. Tarjoaa merkityksellisen työn, akateemisen ympäristön ja palkan 3000-4500€/kk.",
+    short_description: "Ihmisoikeustutkija tutkii ihmisoikeusloukkauksia, laatii raportteja ja edistää ihmisoikeuksia tutkimuksen kautta. Suomessa mahdollisuuksia yliopistoilla, järjestöissä ja tutkimuslaitoksilla Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, akateemisen ympäristön ja palkan 3000-4500€/kk.",
     main_tasks:     [
               "Ihmisoikeustilanteiden tutkiminen",
               "Loukkausten dokumentointi",
@@ -25751,9 +27694,9 @@ export const careersData: CareerFI[] = [
               "Kansainvälinen yhteistyö"
     ],
     impact: [
-      "Tutkii ihmisoikeusloukkauksia ja tuottaa tietoa, joka vaikuttaa politiikkaan ja lainsäädäntöön",
-      "Edistää ihmisoikeuksia globaalisti tutkimuksen ja raportoinnin kautta",
-      "Tukee kansainvälisiä ihmisoikeusjärjestöjä evidenssipohjaisella tiedolla"
+      "Tutkii ihmisoikeusloukkauksia ja tuottaa tietoa, joka vaikuttaa Suomessa politiikkaan ja lainsäädäntöön",
+      "Edistää Suomessa ihmisoikeuksia globaalisti tutkimuksen ja raportoinnin kautta",
+      "Tukee Suomessa Suomessa ja Suomessa ja kansainvälisiä ihmisoikeusjärjestöjä evidenssipohjaisella tiedolla"
     ],
     education_paths:     [
               "Yliopisto: Yhteiskuntatieteet, oikeustiede",
@@ -25785,7 +27728,11 @@ export const careersData: CareerFI[] = [
       "Helsingin yliopisto, Åbo Akademi",
       "Amnesty International",
       "Ihmisoikeusliitto, Ihmisoikeuskeskus",
-      "Tutkimuslaitokset ja järjestöt"
+      "Tutkimuslaitokset ja järjestöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -25795,12 +27742,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "accessibility-consultant",
     category: "auttaja",
     title_fi: "Esteettömyysasiantuntija",
     title_en: "Accessibility Consultant",
-    short_description: "Saavutettavuuskonsultti auttaa organisaatioita tekemään tuotteista, palveluista ja ympäristöistä saavutettavia kaikille. Helsingissä kasvava kysyntä digitaalisen saavutettavuuden ja esteettömyyden saralla. Tarjoaa merkityksellisen työn, etätyön ja palkan 3500-5500€/kk.",
+    short_description: "Saavutettavuuskonsultti auttaa organisaatioita tekemään tuotteista, palveluista ja ympäristöistä saavutettavia kaikille. Suomessa kasvava kysyntä digitaalisen saavutettavuuden ja esteettömyyden saralla Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, etätyön ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "Saavutettavuusarvioinnit",
               "Esteettömyyssuunnitelmien laatiminen",
@@ -25810,8 +27759,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Tekee tuotteista ja palveluista saavutettavia miljoonille käyttäjille, myös vammaisille",
-      "Edistää digitaalista inklusiivisuutta ja tasa-arvoa WCAG-standardien mukaisesti",
-      "Auttaa yrityksiä täyttämään saavutettavuusvaatimukset ja laajentamaan käyttäjäkuntaa"
+      "Edistää Suomessa digitaalista inklusiivisuutta ja tasa-arvoa WCAG-standardien mukaisesti",
+      "Auttaa Suomessa yrityksiä täyttämään saavutettavuusvaatimukset ja laajentamaan käyttäjäkuntaa"
     ],
     education_paths:     [
               "Tekninen tai yhteiskuntatieteellinen koulutus",
@@ -25843,7 +27792,11 @@ export const careersData: CareerFI[] = [
       "Wolt, digitaaliset palveluyritykset",
       "Julkinen sektori: Kela, Digi- ja väestötietovirasto",
       "Konsultit: Gofore, Solita",
-      "Saavutettavuuskonsulttitalot"
+      "Saavutettavuuskonsulttitalot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Vincit (Tampere)",
+      "Nitor (Turku)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -25853,12 +27806,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "gender-equality-advisor",
     category: "auttaja",
     title_fi: "Tasa-arvoneuvoja",
     title_en: "Gender Equality Advisor",
-    short_description: "Tasa-arvoneuvoja edistää sukupuolten tasa-arvoa organisaatioissa, laatii tasa-arvosuunnitelmia ja kouluttaa henkilöstöä. Helsingissä kysyntää julkisella sektorilla ja suuryrityksissä - rooli yhdistää tasa-arvotyön ja organisaatiokehittämisen. Tarjoaa merkityksellisen työn ja palkan 3200-4800€/kk.",
+    short_description: "Tasa-arvoneuvoja edistää sukupuolten tasa-arvoa organisaatioissa, laatii tasa-arvosuunnitelmia ja kouluttaa henkilöstöä. Suomessa kysyntää julkisella sektorilla ja suuryrityksissä - rooli yhdistää tasa-arvotyön ja organisaatiokehittämisen. Tarjoaa merkityksellisen työn ja palkan 3200-4800€/kk.",
     main_tasks:     [
               "Tasa-arvosuunnitelmien laatiminen",
               "Tasa-arvokoulutukset",
@@ -25867,9 +27822,9 @@ export const careersData: CareerFI[] = [
               "Seuranta ja raportointi"
     ],
     impact: [
-      "Edistää sukupuolten tasa-arvoa organisaatioissa, jotka työllistävät tuhansia ihmisiä",
-      "Vähentää palkkaeroja ja edistää naisten urakehtystä johtotehtäviin",
-      "Luo tasa-arvoisempia ja inklusiivisempia työkulttuureja"
+      "Edistää Suomessa sukupuolten tasa-arvoa organisaatioissa, jotka työllistävät tuhansia ihmisiä",
+      "Vähentää palkkaeroja ja edistää Suomessa naisten urakehtystä johtotehtäviin",
+      "Luo Suomessa tasa-arvoisempia ja inklusiivisempia työkulttuureja"
     ],
     education_paths:     [
               "Yliopisto: Yhteiskuntatieteet, sukupuolentutkimus"
@@ -25900,7 +27855,11 @@ export const careersData: CareerFI[] = [
       "Helsingin kaupunki, ministeriöt",
       "Suuryritykset ja kansainväliset yritykset",
       "Tasa-arvovaltuutetun toimisto",
-      "Konsultit ja järjestöt"
+      "Konsultit ja järjestöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -25910,12 +27869,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "youth-empowerment-coordinator",
     category: "auttaja",
     title_fi: "Nuorten voimaannuttamisen koordinaattori",
     title_en: "Youth Empowerment Coordinator",
-    short_description: "Nuorten voimaannuttamisen koordinaattori tukee nuoria kehittymään, löytämään vahvuutensa ja saavuttamaan tavoitteensa. Helsingissä mahdollisuuksia nuorisotyössä, järjestöissä ja kouluissa. Tarjoaa merkityksellisen työn, nuorten kanssa työskentelyn ja palkan 2800-4000€/kk.",
+    short_description: "Nuorten voimaannuttamisen koordinaattori tukee nuoria kehittymään, löytämään vahvuutensa ja saavuttamaan tavoitteensa. Suomessa mahdollisuuksia nuorisotyössä, järjestöissä ja kouluissa. Tarjoaa merkityksellisen työn, nuorten kanssa työskentelyn ja palkan 2800-4000€/kk.",
     main_tasks:     [
               "Nuoriso-ohjelmien suunnittelu",
               "Työpajojen ja tapahtumien järjestäminen",
@@ -25924,9 +27885,9 @@ export const careersData: CareerFI[] = [
               "Osallisuuden edistäminen"
     ],
     impact: [
-      "Tukee satoja nuoria vuosittain löytämään tiensä ja voimaantumaan",
-      "Edistää nuorten hyvinvointia, kouluttautumista ja työllistymistä",
-      "Luo turvallisia tiloja ja yhteisöjä, joissa nuoret voivat kasvaa ja kehittyä"
+      "Tukee Suomessa satoja nuoria vuosittain löytämään tiensä ja voimaantumaan",
+      "Edistää Suomessa nuorten hyvinvointia, kouluttautumista ja työllistymistä",
+      "Luo Suomessa turvallisia tiloja ja yhteisöjä, joissa nuoret voivat kasvaa ja kehittyä"
     ],
     education_paths:     [
               "Kasvatustieteet",
@@ -25969,12 +27930,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "sustainable-fashion-designer",
     category: "luova",
     title_fi: "Kestävän muodin suunnittelija",
     title_en: "Sustainable Fashion Designer",
-    short_description: "Kestävän muodin suunnittelija suunnittelee vaatteita ja tuotteita, jotka ovat ekologisia, eettisiä ja kestäviä. Helsingissä kasvava sustainable fashion -sektori - rooli yhdistää muotoilun, kestävyyden ja etiikan. Tarjoaa luovan työn, yhteiskunnallisen vaikuttamisen ja ansaintapotentiaalia.",
+    short_description: "Kestävän muodin suunnittelija suunnittelee vaatteita ja tuotteita, jotka ovat ekologisia, eettisiä ja kestäviä. Suomessa kasvava sustainable fashion -sektori - rooli yhdistää muotoilun, kestävyyden ja etiikan Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa luovan työn, yhteiskunnallisen vaikuttamisen ja ansaintapotentiaalia.",
     main_tasks:     [
               "Kestävien vaatekokoelmien suunnittelu",
               "Ympäristöystävällisten materiaalien valinta",
@@ -25984,8 +27947,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Suunnittelee kestäviä vaatteita ja tuotteita, jotka vähentävät muotiteollisuuden ympäristövaikutuksia",
-      "Edistää circular fashion -taloutta ja vastuullista kulutusta",
-      "Luo ekologisia ja eettisiä brändejä, jotka inspiroivat muutokseen"
+      "Edistää Suomessa circular fashion -taloutta ja vastuullista kulutusta",
+      "Luo Suomessa ekologisia ja eettisiä brändejä, jotka inspiroivat muutokseen"
     ],
     education_paths:     [
               "Muotoilun tutkinto",
@@ -26017,7 +27980,11 @@ export const careersData: CareerFI[] = [
       "Suomalaiset sustainable fashion -brändit: Makia, Pure Waste",
       "Lindex (Conscious Collection), H&M (Conscious)",
       "Freelance ja omat brändit",
-      "Kiertotalousyritykset"
+      "Kiertotalousyritykset",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -26027,12 +27994,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "circular-economy-specialist",
     category: "ympariston-puolustaja",
     title_fi: "Kiertotalouden asiantuntija",
     title_en: "Circular Economy Specialist",
-    short_description: "Kiertotalouden asiantuntija kehittää kiertotaloussratkaisuja, auttaa yrityksiä siirtymään kiertotalouteen ja edistää resurssitehokkuutta. Helsingissä kasvava kysyntä erityisesti julkisella sektorilla ja kestävyysyrityksissä. Tarjoaa merkityksellisen työn, innovoinnin ja palkan 3500-5500€/kk.",
+    short_description: "Kiertotalouden asiantuntija kehittää kiertotaloussratkaisuja, auttaa yrityksiä siirtymään kiertotalouteen ja edistää resurssitehokkuutta. Suomessa kasvava kysyntä erityisesti julkisella sektorilla ja kestävyysyrityksissä Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, innovoinnin ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "Kiertotalousmallien kehittäminen",
               "Materiaalivirtaanalyysit",
@@ -26042,7 +28011,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Kehittää kiertotaloussratkaisuja, jotka vähentävät jätettä ja resurssien kulutusta merkittävästi",
-      "Auttaa yrityksiä säästämään satoja tuhansia euroja resurssitehokkuudella",
+      "Auttaa Suomessa yrityksiä säästämään satoja tuhansia euroja resurssitehokkuudella",
       "Edistää Suomen kiertotaloustavoitteita ja ilmastotavoitteita"
     ],
     education_paths:     [
@@ -26076,7 +28045,11 @@ export const careersData: CareerFI[] = [
       "Sitra, Motiva, Suomen ympäristökeskus",
       "Helsingin kaupunki, valtio",
       "Kiertotalousyritykset ja konsultit",
-      "Yritykset (kestävyysosastot)"
+      "Yritykset (kestävyysosastot)",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -26086,12 +28059,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "ethical-brand-strategist",
     category: "luova",
     title_fi: "Eettisen brändin strategisti",
     title_en: "Ethical Brand Strategist",
-    short_description: "Eettisen brändin strategisti auttaa yrityksiä rakentamaan vastuullisia brändejä, jotka huomioivat ihmiset, ympäristön ja etiikan. Helsingissä kasvava kysyntä kuluttajien arvostaessa vastuullisuutta. Tarjoaa luovan työn, vaikuttamisen ja palkan 3500-5500€/kk.",
+    short_description: "Eettisen brändin strategisti auttaa yrityksiä rakentamaan vastuullisia brändejä, jotka huomioivat ihmiset, ympäristön ja etiikan. Suomessa kasvava kysyntä kuluttajien arvostaessa vastuullisuutta Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa luovan työn, vaikuttamisen ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "Eettisten brändistrategioiden kehittäminen",
               "Vastuullisuusviestinnän suunnittelu",
@@ -26101,7 +28076,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Rakentaa vastuullisia brändejä, jotka vaikuttavat satoihin tuhansiin kuluttajiin",
-      "Edistää eettistä liiketoimintaa ja vastuullista kulutusta",
+      "Edistää Suomessa eettistä liiketoimintaa ja vastuullista kulutusta",
       "Ohjaa yrityksiä kohti kestävämpää ja eettisempää toimintaa"
     ],
     education_paths:     [
@@ -26135,7 +28110,11 @@ export const careersData: CareerFI[] = [
       "Mainostoimistot ja brändikonsultit",
       "Vastuullisuusyritykset ja -järjestöt",
       "Startup-yritykset ja kasvuyhtiöt",
-      "Freelance ja omat projektit"
+      "Freelance ja omat projektit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -26145,12 +28124,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "green-building-designer",
     category: "ympariston-puolustaja",
     title_fi: "Ekologisen rakentamisen suunnittelija",
     title_en: "Green Building Designer",
-    short_description: "Vihreän rakentamisen suunnittelija suunnittelee energiatehokkaita ja kestäviä rakennuksia ja tiloja. Helsingissä jatkuva kysyntä erityisesti uudisrakentamisessa ja remonteissa - rooli yhdistää arkkitehtuurin ja kestävyyden. Tarjoaa merkityksellisen työn ja palkan 3800-6000€/kk.",
+    short_description: "Vihreän rakentamisen suunnittelija suunnittelee energiatehokkaita ja kestäviä rakennuksia ja tiloja. Suomessa jatkuva kysyntä erityisesti uudisrakentamisessa ja remonteissa - rooli yhdistää arkkitehtuurin ja kestävyyden Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn ja palkan 3800-6000€/kk.",
     main_tasks:     [
               "Ekologisten rakennusten suunnittelu",
               "Energiatehokkuuden optimointi",
@@ -26160,7 +28141,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Suunnittelee energiatehokkaita rakennuksia, jotka vähentävät hiilijalanjälkeä 50-70%",
-      "Luo terveellisiä ja kestäviä tiloja, joissa tuhannet ihmiset asuvat ja työskentelevät",
+      "Luo Suomessa terveellisiä ja kestäviä tiloja, joissa tuhannet ihmiset asuvat ja työskentelevät",
       "Edistää Suomen ilmastotavoitteita rakennusten energiatehokkuudella"
     ],
     education_paths:     [
@@ -26193,7 +28174,11 @@ export const careersData: CareerFI[] = [
       "Arkkitehtitoimistot: Verstas, JKMM, Aalto University",
       "Rakennusliikkeet: YIT, Skanska, NCC",
       "Helsingin kaupunki (kaupunkisuunnittelu)",
-      "Kestävän rakentamisen konsultit"
+      "Kestävän rakentamisen konsultit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -26203,12 +28188,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "zero-waste-consultant",
     category: "ympariston-puolustaja",
     title_fi: "Nollajatetavoitteen konsultti",
     title_en: "Zero Waste Consultant",
-    short_description: "Zero waste -konsultti auttaa yrityksiä ja organisaatioita vähentämään jätettä ja siirtymään kohti nollajatetavoitetta. Helsingissä kasvava kiinnostus zero waste -elämäntapaan - rooli yhdistää kestävyyden ja liiketoiminnan. Tarjoaa merkityksellisen työn, vaikuttamisen ja ansaintapotentiaalia.",
+    short_description: "Zero waste -konsultti auttaa yrityksiä ja organisaatioita vähentämään jätettä ja siirtymään kohti nollajatetavoitetta. Suomessa kasvava kiinnostus zero waste -elämäntapaan - rooli yhdistää kestävyyden ja liiketoiminnan Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, vaikuttamisen ja ansaintapotentiaalia.",
     main_tasks:     [
               "Jätekartoitusten tekeminen",
               "Nollajätestrategioiden kehittäminen",
@@ -26217,8 +28204,8 @@ export const careersData: CareerFI[] = [
               "Jätemittareiden seuranta"
     ],
     impact: [
-      "Auttaa yrityksiä vähentämään jätettä 70-90% ja säästämään merkittäviä kustannuksia",
-      "Edistää circular economy -tavoitteita ja nollajatetavoitetta",
+      "Auttaa Suomessa yrityksiä vähentämään jätettä 70-90% ja säästämään merkittäviä kustannuksia",
+      "Edistää Suomessa circular economy -tavoitteita ja nollajatetavoitetta",
       "Inspiroi satoja ihmisiä ottamaan zero waste -elämäntavan käyttöön"
     ],
     education_paths:     [
@@ -26251,7 +28238,11 @@ export const careersData: CareerFI[] = [
       "Kiertotalousyritykset",
       "Ravintolat ja hotellit (kestävyysneuvonta)",
       "Helsingin kaupunki, jätehuoltoyritykset",
-      "Freelance ja omat projektit"
+      "Freelance ja omat projektit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -26261,12 +28252,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "sustainable-product-designer",
     category: "luova",
     title_fi: "Kestävän tuotesuunnittelun suunnittelija",
     title_en: "Sustainable Product Designer",
-    short_description: "Kestävän tuotesuunnittelun suunnittelija kehittää tuotteita, jotka ovat ekologisia, kierrätettäviä ja eettisesti tuotettuja. Helsingissä kasvava kysyntä erityisesti muotoilutoimistoissa ja kestävissä brändeissä. Tarjoaa luovan työn, innovoinnin ja palkan 3200-5500€/kk.",
+    short_description: "Kestävän tuotesuunnittelun suunnittelija kehittää tuotteita, jotka ovat ekologisia, kierrätettäviä ja eettisesti tuotettuja. Suomessa kasvava kysyntä erityisesti muotoilutoimistoissa ja kestävissä brändeissä Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa luovan työn, innovoinnin ja palkan 3200-5500€/kk.",
     main_tasks:     [
               "Kestävien tuotteiden suunnittelu",
               "Elinkaariarv ioinnit",
@@ -26276,8 +28269,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Suunnittelee kestäviä tuotteita, joita tuhannet ihmiset käyttävät ja jotka vähentävät ympäristövaikutuksia",
-      "Edistää circular design -periaatteita ja tuotteiden kierrätettävyyttä",
-      "Luo innovatiivisia ratkaisuja, jotka yhdistävät design ja kestävyyden"
+      "Edistää Suomessa circular design -periaatteita ja tuotteiden kierrätettävyyttä",
+      "Luo Suomessa innovatiivisia ratkaisuja, jotka yhdistävät design ja kestävyyden"
     ],
     education_paths:     [
               "Muotoilu",
@@ -26310,7 +28303,11 @@ export const careersData: CareerFI[] = [
       "Muotoilutoimistot: Aivan, Fjord, Idean",
       "Kestävät brändit: Artek, Iittala, Marimekko",
       "Startup-yritykset ja kiertotalousyritykset",
-      "Freelance ja omat projektit"
+      "Freelance ja omat projektit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -26320,12 +28317,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "ethical-sourcing-manager",
     category: "jarjestaja",
     title_fi: "Eettisen hankinnan päällikkö",
     title_en: "Ethical Sourcing Manager",
-    short_description: "Eettisen hankinnan päällikkö vastaa yrityksen hankinnoista varmistaen, että tuotteet ja materiaalit hankitaan eettisesti ja kestävästi. Helsingissä kysyntää kaupan alalla ja suuryrityksissä. Tarjoaa vastuullisen työn, kansainväliset kontaktit ja palkan 4000-6500€/kk.",
+    short_description: "Eettisen hankinnan päällikkö vastaa yrityksen hankinnoista varmistaen, että tuotteet ja materiaalit hankitaan eettisesti ja kestävästi. Suomessa kysyntää kaupan alalla ja suuryrityksissä Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa vastuullisen työn, kansainväliset kontaktit ja palkan 4000-6500€/kk.",
     main_tasks:     [
               "Toimittajien eettisyyden arviointi",
               "Vastuullisten hankintakriteerien kehittäminen",
@@ -26335,8 +28334,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Varmistaa että yrityksen hankintaketjut ovat eettisiä ja kestäviä globaalisti",
-      "Parantaa työoloja tuhansille työntekijöille kehittyvissä maissa",
-      "Edistää vastuullista liiketoimintaa ja Fair Trade -periaatteita"
+      "Parantaa Suomessa työoloja tuhansille työntekijöille kehittyvissä maissa",
+      "Edistää Suomessa vastuullista liiketoimintaa ja Fair Trade -periaatteita"
     ],
     education_paths:     [
               "Liiketoiminta",
@@ -26369,7 +28368,11 @@ export const careersData: CareerFI[] = [
       "S-ryhmä, K-ryhmä, Kesko",
       "Reima, Marimekko, Lindex",
       "Suuryritykset (hankinnat)",
-      "Fair Trade -organisaatiot"
+      "Fair Trade -organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: null,
@@ -26379,12 +28382,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "inclusive-content-creator",
     category: "luova",
     title_fi: "Inklusiivinen sisällöntuottaja",
     title_en: "Inclusive Content Creator",
-    short_description: "Inklusiivinen sisällöntuottaja luo sisältöä, joka edustaa monimuotoisuutta ja inklusiivisuutta sekä tavoittaa laajat yleisöt. Helsingissä kasvava kysyntä erityisesti mediatalloissa ja brändeissä, jotka arvostavat diversiteettiä. Tarjoaa luovan työn, vaikuttamisen ja ansaintapotentiaalia.",
+    short_description: "Inklusiivinen sisällöntuottaja luo sisältöä, joka edustaa monimuotoisuutta ja inklusiivisuutta sekä tavoittaa laajat yleisöt. Suomessa kasvava kysyntä erityisesti mediatalloissa ja brändeissä, jotka arvostavat diversiteettiä Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa luovan työn, vaikuttamisen ja ansaintapotentiaalia.",
     main_tasks:     [
               "Inklusiivisen sisällön tuottaminen",
               "Monipuolisen edustuksen varmistaminen",
@@ -26393,7 +28398,7 @@ export const careersData: CareerFI[] = [
               "Saavutettavuuden huomioiminen"
     ],
     impact: [
-      "Luo inklusiivista sisältöä, joka tavoittaa satoja tuhansia ihmisiä ja edistää representaatiota",
+      "Luo Suomessa inklusiivista sisältöä, joka tavoittaa satoja tuhansia ihmisiä ja edistää representaatiota",
       "Haastaa stereotypioita ja lisää monimuotoisuutta mediassa",
       "Mahdollistaa aliedustettujen ryhmien näkyvyyden ja äänen kuulumisen"
     ],
@@ -26428,7 +28433,11 @@ export const careersData: CareerFI[] = [
       "Yle, Sanoma Media, Alma Media",
       "Brändit: IVYREVEL, Lindex",
       "Mainostoimistot ja sisältötoimistot",
-      "Freelance ja omat kanavat"
+      "Freelance ja omat kanavat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
@@ -26438,12 +28447,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "cultural-sensitivity-consultant",
     category: "auttaja",
     title_fi: "Kulttuurisen sensitiivisyyden konsultti",
     title_en: "Cultural Sensitivity Consultant",
-    short_description: "Kulttuurisen sensitiivisyyden konsultti auttaa yrityksiä ymmärtämään kulttuurieroja ja kommunikoimaan kulttuurisesti sopivalla tavalla. Helsingissä kysyntää erityisesti kansainvälisissä yrityksissä ja kv-ekspansiossa. Tarjoaa kansainvälisen työn, kulttuurien ymmärtämisen ja palkan 3500-5500€/kk.",
+    short_description: "Kulttuurisen sensitiivisyyden konsultti auttaa yrityksiä ymmärtämään kulttuurieroja ja kommunikoimaan kulttuurisesti sopivalla tavalla. Suomessa kysyntää erityisesti kansainvälisissä yrityksissä ja kv-ekspansiossa Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa kansainvälisen työn, kulttuurien ymmärtämisen ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "Kulttuurisen sensitiivisyyden arvioinnit",
               "Koulutukset ja työpajat",
@@ -26452,9 +28463,9 @@ export const careersData: CareerFI[] = [
               "Inklusiivisten käytäntöjen kehittäminen"
     ],
     impact: [
-      "Auttaa yrityksiä välttämään kulttuurisia väärinymmärryksiä ja kommunikoimaan tehokkaasti globaalisti",
-      "Edistää kulttuurista inklusiivisuutta ja monimuotoisuutta organisaatioissa",
-      "Mahdollistaa menestyksekkään kansainvälisen liiketoiminnan"
+      "Auttaa Suomessa yrityksiä välttämään kulttuurisia väärinymmärryksiä ja kommunikoimaan tehokkaasti globaalisti",
+      "Edistää Suomessa kulttuurista inklusiivisuutta ja monimuotoisuutta organisaatioissa",
+      "Mahdollistaa menestyksekkään Suomessa ja Suomessa ja kansainvälisen liiketoiminnan"
     ],
     education_paths:     [
               "Kulttuuriantropologia",
@@ -26487,7 +28498,11 @@ export const careersData: CareerFI[] = [
       "Kansainväliset yritykset (Helsinki)",
       "Konsultit: Deloitte, KPMG, Accenture",
       "Käännöstoimistot ja lokalisointiyritykset",
-      "Freelance ja kulttuurikonsultit"
+      "Freelance ja kulttuurikonsultit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -26497,12 +28512,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "representation-editor",
     category: "luova",
     title_fi: "Edustuksellisuuden toimittaja",
     title_en: "Representation Editor",
-    short_description: "Representaatioeditori varmistaa että media-sisältö edustaa monimuotoisuutta autenttisets ja edustaa aliedustettuja ryhmiä. Helsingissä nouseva rooli mediatalloissa ja tuotantoyhtiöissä. Tarjoaa merkityksellisen työn, vaikuttamisen ja palkan 3200-5000€/kk.",
+    short_description: "Representaatioeditori varmistaa että media-sisältö edustaa monimuotoisuutta autenttisets ja edustaa aliedustettuja ryhmiä. Suomessa nouseva rooli mediatalloissa ja tuotantoyhtiöissä Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, vaikuttamisen ja palkan 3200-5000€/kk.",
     main_tasks:     [
               "Sisällön tarkastus edustuksellisuuden osalta",
               "Editointi ja kehitysehdotukset",
@@ -26511,9 +28528,9 @@ export const careersData: CareerFI[] = [
               "Ohjeistusten laatiminen"
     ],
     impact: [
-      "Varmistaa että media-sisältö edustaa monimuotoisuutta ja tavoittaa satoja tuhansia katsojia",
+      "Varmistaa että media-sisältö edustaa monimuotoisuutta ja tavoittaa Suomessa satoja tuhansia katsojia",
       "Lisää aliedustettujen ryhmien näkyvyyttä televisossa, elokuvissa ja mediassa",
-      "Haastaa stereotypioita ja edistää positiivista representaatiota"
+      "Haastaa stereotypioita ja edistää Suomessa positiivista representaatiota"
     ],
     education_paths:     [
               "Journalismi",
@@ -26546,7 +28563,11 @@ export const careersData: CareerFI[] = [
       "Yle, MTV, Sanoma Media",
       "Tuotantoyhtiöt: Solar Films, MRP",
       "Suoratoistopalvelut: Netflix, HBO Nordic",
-      "Mediayhtiöt ja elokuvatuotannot"
+      "Mediayhtiöt ja elokuvatuotannot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
@@ -26556,12 +28577,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "documentary-filmmaker-social-issues",
     category: "luova",
     title_fi: "Dokumentaristi (yhteiskunnalliset aiheet)",
     title_en: "Documentary Filmmaker (Social Issues)",
-    short_description: "Sosiaalisten aiheiden dokumentaristi tekee dokumentteja yhteiskunnallisista aiheista, ihmisoikeuksista ja sosiaalisesta oikeudenmukaisuudesta. Helsingissä mahdollisuuksia mediatalloissa, tuotantoyhtiöissä ja freelancerina. Tarjoaa merkityksellisen työn, tarinankerronnan ja ansaintapotentiaalia.",
+    short_description: "Sosiaalisten aiheiden dokumentaristi tekee dokumentteja yhteiskunnallisista aiheista, ihmisoikeuksista ja sosiaalisesta oikeudenmukaisuudesta. Suomessa mahdollisuuksia mediatalloissa, tuotantoyhtiöissä ja freelancerina Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, tarinankerronnan ja ansaintapotentiaalia.",
     main_tasks:     [
               "Dokumenttien käsikirjoitus ja suunnittelu",
               "Kuvaaminen ja haastattelut",
@@ -26570,9 +28593,9 @@ export const careersData: CareerFI[] = [
               "Levitys ja markkinointi"
     ],
     impact: [
-      "Luo dokumentteja, jotka tavoittavat satoja tuhansia katsojia ja herättävät yhteiskunnallista keskustelua",
+      "Luo Suomessa dokumentteja, jotka tavoittavat satoja tuhansia katsojia ja herättävät yhteiskunnallista keskustelua",
       "Nostaa esiin tärkeitä sosiaalisia aiheita ja antaa äänen aliedustetuille",
-      "Vaikuttaa poliittiseen päätöksentekoon ja yhteiskunnalliseen muutokseen"
+      "Vaikuttaa Suomessa poliittiseen päätöksentekoon ja yhteiskunnalliseen muutokseen"
     ],
     education_paths:     [
               "Elokuvataide",
@@ -26605,7 +28628,11 @@ export const careersData: CareerFI[] = [
       "Yle, MTV",
       "Tuotantoyhtiöt: Oktober, Bufo",
       "Kansainväliset dokumenttihankkeet",
-      "Freelance ja omat tuotannot"
+      "Freelance ja omat tuotannot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: null,
@@ -26615,12 +28642,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "multicultural-marketing-specialist",
     category: "luova",
     title_fi: "Monikulttuurisen markkinoinnin asiantuntija",
     title_en: "Multicultural Marketing Specialist",
-    short_description: "Monikulttuurisen markkinoinnin asiantuntija suunnittelee markkinointikampanjoita, jotka tavoittavat monikulttuurisia yleisöjä ja huomioivat kulttuurierot. Helsingissä kasvava kysyntä kansainvälistyvissä yrityksissä. Tarjoaa kansainvälisen työn, luovuuden ja palkan 3500-5500€/kk.",
+    short_description: "Monikulttuurisen markkinoinnin asiantuntija suunnittelee markkinointikampanjoita, jotka tavoittavat monikulttuurisia yleisöjä ja huomioivat kulttuurierot. Suomessa kasvava kysyntä kansainvälistyvissä yrityksissä Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa kansainvälisen työn, luovuuden ja palkan 3500-5500€/kk.",
     main_tasks:     [
               "Monikulttuuristen markkinointistrategioiden kehittäminen",
               "Kulttuurikohderyhmien tutkimus",
@@ -26629,8 +28658,8 @@ export const careersData: CareerFI[] = [
               "Yhteistyö diversit eettisten tiimien kanssa"
     ],
     impact: [
-      "Luo markkinointikampanjoita, jotka tavoittavat satoja tuhansia monikulttuurisia kuluttajia",
-      "Edistää inklusiivista markkinointia ja monimuotoisuutta mainonnassa",
+      "Luo Suomessa markkinointikampanjoita, jotka tavoittavat satoja tuhansia monikulttuurisia kuluttajia",
+      "Edistää Suomessa inklusiivista markkinointia ja monimuotoisuutta mainonnassa",
       "Mahdollistaa brändien menestyksen monikulttuurisilla markkinoilla"
     ],
     education_paths:     [
@@ -26664,7 +28693,11 @@ export const careersData: CareerFI[] = [
       "Mainostoimistot: hasan & partners, TBWA",
       "Kansainväliset brändit (Helsinki)",
       "Digitoimistot ja markkinointitoimistot",
-      "Freelance ja konsultit"
+      "Freelance ja konsultit",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -26674,12 +28707,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "public-art-coordinator",
     category: "luova",
     title_fi: "Julkisen taiteen koordinaattori",
     title_en: "Public Art Coordinator",
-    short_description: "Julkisen taiteen koordinaattori organisoi ja koordinoi julkisia taideteoksia, muraaleja ja taide-installaatioita kaupunkitilassa. Helsingissä mahdollisuuksia kaupungin taidepalveluissa, kulttuurijärjestöissä ja kaupunkiaktiivisuudessa. Tarjoaa luovan työn, yhteisöllisyyden ja palkan 3000-4500€/kk.",
+    short_description: "Julkisen taiteen koordinaattori organisoi ja koordinoi julkisia taideteoksia, muraaleja ja taide-installaatioita kaupunkitilassa. Suomessa mahdollisuuksia kaupungin taidepalveluissa, kulttuurijärjestöissä ja kaupunkiaktiivisuudessa Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa luovan työn, yhteisöllisyyden ja palkan 3000-4500€/kk.",
     main_tasks:     [
               "Julkisen taiteen projektien koordinointi",
               "Taiteilijoiden valinta ja yhteistyö",
@@ -26690,7 +28725,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Koordinoi julkisia taideteoksia, jotka tavoittavat tuhansia ihmisiä päivittäin kaupungilla",
       "Tekee taiteesta saavutettavaa kaikille ja demokratisoi taidekokemuksen",
-      "Luo viihtyisämpää ja inspiroivampaa kaupunkiympäristöä"
+      "Luo Suomessa viihtyisämpää ja inspiroivampaa kaupunkiympäristöä"
     ],
     education_paths:     [
               "Taidehallinto",
@@ -26723,7 +28758,11 @@ export const careersData: CareerFI[] = [
       "Helsingin kaupunki (kulttuuripalvelut)",
       "Taidejärjestöt ja -säätiöt",
       "Kaupunkiaktiivisuus ja yhteisötalot",
-      "Festivaalit ja tapahtumat"
+      "Festivaalit ja tapahtumat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -26733,12 +28772,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "cultural-events-producer",
     category: "jarjestaja",
     title_fi: "Kulttuuritapahtumien tuottaja",
     title_en: "Cultural Events Producer",
-    short_description: "Kulttuuritapahtumien tuottaja suunnittelee ja toteuttaa kulttuuritapahtumia, festivaaleja ja esityksiä. Helsingissä runsas tapahtumatarjonta luo mahdollisuuksia - rooli yhdistää luovuuden, tuotannon ja ihmissuhteet. Tarjoaa dynaamisen työn, verkostoitumisen ja palkan 3200-5000€/kk.",
+    short_description: "Kulttuuritapahtumien tuottaja suunnittelee ja toteuttaa kulttuuritapahtumia, festivaaleja ja esityksiä. Suomessa runsas tapahtumatarjonta luo mahdollisuuksia - rooli yhdistää luovuuden, tuotannon ja ihmissuhteet Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa dynaamisen työn, verkostoitumisen ja palkan 3200-5000€/kk.",
     main_tasks:     [
               "Tapahtumien suunnittelu ja tuotanto",
               "Budjetti- ja resurssihallinta",
@@ -26748,8 +28789,8 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Tuottaa kulttuuritapahtumia, jotka tavoittavat tuhansia tai kymmeniä tuhansia kävijöitä",
-      "Tuo taidetta ja kulttuuria laajalle yleisölle ja edistää kulttuurista elämää",
-      "Luo yhteisöllisyyttä ja kohtaamispaikkoja ihmisille"
+      "Tuo taidetta ja kulttuuria laajalle yleisölle ja edistää Suomessa kulttuurista elämää",
+      "Luo Suomessa yhteisöllisyyttä ja kohtaamispaikkoja ihmisille"
     ],
     education_paths:     [
               "Kulttuurituotanto",
@@ -26782,7 +28823,11 @@ export const careersData: CareerFI[] = [
       "Helsingin kaupunki (kulttuuripalvelut)",
       "Festivaalit: Flow Festival, Ruisrock, Provinssi",
       "Kulttuuritalot: Savoy, Korjaamo, Oranssi",
-      "Tapahtumatuotantoyhtiöt"
+      "Tapahtumatuotantoyhtiöt",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -26792,12 +28837,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "art-therapy-facilitator",
     category: "auttaja",
     title_fi: "Taideterapian ohjaaja",
     title_en: "Art Therapy Facilitator",
-    short_description: "Taideterapeutti käyttää taidetta terapeuttisena työvälineenä auttaakseen ihmisiä käsittelemään tunteita ja traumoja. Helsingissä kysyntää terapiakeskuksissa, sairaaloissa ja kuntoutuksessa. Tarjoaa merkityksellisen työn, luovuuden ja palkan 3000-4500€/kk.",
+    short_description: "Taideterapeutti käyttää taidetta terapeuttisena työvälineenä auttaakseen ihmisiä käsittelemään tunteita ja traumoja. Suomessa kysyntää terapiakeskuksissa, sairaaloissa ja kuntoutuksessa Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, luovuuden ja palkan 3000-4500€/kk.",
     main_tasks:     [
               "Taideterapiasessioiden suunnittelu ja ohjaus",
               "Asiakkaiden tukeminen taiteellisen ilmaisun kautta",
@@ -26806,8 +28853,8 @@ export const careersData: CareerFI[] = [
               "Moniammatillinen yhteistyö"
     ],
     impact: [
-      "Auttaa satoja ihmisiä vuosittain käsittelemään tunteita ja traumoja taiteen avulla",
-      "Tukee mielenterveyttä ja hyvinvointia luovilla menetelmillä",
+      "Auttaa Suomessa satoja ihmisiä vuosittain käsittelemään tunteita ja traumoja taiteen avulla",
+      "Tukee Suomessa mielenterveyttä ja hyvinvointia luovilla menetelmillä",
       "Tarjoaa vaihtoehtoisen terapeuttisen lähestymistavan haavoittuville ryhmille"
     ],
     education_paths:     [
@@ -26841,7 +28888,11 @@ export const careersData: CareerFI[] = [
       "HUS, Helsingin kaupunki",
       "Terapiakeskukset ja kuntoutuslaitokset",
       "Mielenterveysorganisaatiot",
-      "Yksityinen vastaanotto"
+      "Yksityinen vastaanotto",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
@@ -26851,12 +28902,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "community-arts-director",
     category: "johtaja",
     title_fi: "Yhteisötaiteen johtaja",
     title_en: "Community Arts Director",
-    short_description: "Yhteisötaiteen ohjaaja johtaa yhteisötaideprojekteja, jotka tuovat taidetta yhteisöihin ja osallistavat ihmisiä luovaan prosessiin. Helsingissä mahdollisuuksia yhteisötalloissa, kulttuurijärjestöissä ja kaupungilla. Tarjoaa merkityksellisen työn, luovuuden ja palkan 3000-4500€/kk.",
+    short_description: "Yhteisötaiteen ohjaaja johtaa yhteisötaideprojekteja, jotka tuovat taidetta yhteisöihin ja osallistavat ihmisiä luovaan prosessiin. Suomessa mahdollisuuksia yhteisötalloissa, kulttuurijärjestöissä ja kaupungilla Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, luovuuden ja palkan 3000-4500€/kk.",
     main_tasks:     [
               "Yhteisötaideohjelmien johtaminen",
               "Taiteilija- ja yhteisöyhteistyö",
@@ -26865,9 +28918,9 @@ export const careersData: CareerFI[] = [
               "Vaikuttavuuden arviointi"
     ],
     impact: [
-      "Johtaa yhteisötaideprojekteja, jotka osallistavat satoja ihmisiä luovaan prosessiin",
-      "Luo yhteisöllisyyttä ja vahvistaa yhteisöjä taiteen avulla",
-      "Tekee taiteesta saavutettavaa kaikille ja edistää kulttuurista demokratiaa"
+      "Johtaa yhteisötaideprojekteja, jotka osallistavat satoja ihmisiä luo Suomessavaan prosessiin",
+      "Luo Suomessa yhteisöllisyyttä ja vahvistaa yhteisöjä taiteen avulla",
+      "Tekee taiteesta saavutettavaa kaikille ja edistää Suomessa kulttuurista demokratiaa"
     ],
     education_paths:     [
               "Taidehallinto",
@@ -26900,7 +28953,11 @@ export const careersData: CareerFI[] = [
       "Helsingin kaupunki (kulttuuripalvelut)",
       "Yhteisötalot: Stoa, Kanneltalo, Vuotalo",
       "Taidejärjestöt ja -säätiöt",
-      "Nuorisotyön organisaatiot"
+      "Nuorisotyön organisaatiot",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
@@ -26910,12 +28967,14 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+
   {
     id: "museum-education-specialist",
     category: "auttaja",
     title_fi: "Museopedagogi",
     title_en: "Museum Education Specialist",
-    short_description: "Museopedagogi suunnittelee ja toteuttaa opetus- ja opastusohjelmia museoissa sekä tekee taiteesta ja kulttuurista saavutettavaa kaikille. Helsingissä mahdollisuuksia lukuisissa museoissa ja kulttuurilaitoksissa. Tarjoaa merkityksellisen työn, taiteen parissa työskentelyn ja palkan 3000-4500€/kk.",
+    short_description: "Museopedagogi suunnittelee ja toteuttaa opetus- ja opastusohjelmia museoissa sekä tekee taiteesta ja kulttuurista saavutettavaa kaikille. Suomessa mahdollisuuksia lukuisissa museoissa ja kulttuurilaitoksissa Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, taiteen parissa työskentelyn ja palkan 3000-4500€/kk.",
     main_tasks:     [
               "Museo-opetuksen suunnittelu ja toteutus",
               "Oppilasryhmien ohjaus",
@@ -26959,7 +29018,11 @@ export const careersData: CareerFI[] = [
       "Kansallisgalleria (Ateneum, Kiasma)",
       "Helsingin kaupunginmuseo",
       "Suomen kansallismuseo",
-      "Yksityiset museot ja taidegalleriat"
+      "Yksityiset museot ja taidegalleriat",
+      "Digitoimistot ympäri Suomen",
+      "Etätyö mahdollistaa työskentelyn mistä tahansa",
+      "Wolt (Helsinki)",
+      "Vincit (Tampere)"
     ],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
@@ -26969,6 +29032,8 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   }
+
+
 ] as CareerFI[];
 
 // Helper function to get careers by category
