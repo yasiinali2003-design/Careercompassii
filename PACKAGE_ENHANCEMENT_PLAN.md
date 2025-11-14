@@ -2,7 +2,7 @@
 *Created: 2025-11-14*
 
 ## Executive Summary
-Recommendations for enhancing CareerCompassi's Yläaste and Premium school packages to increase value and competitive differentiation before piloting.
+Recommendations for enhancing Urakompassi's Yläaste and Premium school packages to increase value and competitive differentiation before piloting.
 
 ---
 
@@ -306,7 +306,7 @@ POST /api/v1/classes - Create class
 - Custom color scheme
 - Custom domain (uraohjaus.koulu.fi)
 - Custom footer text
-- Remove "Powered by CareerCompassi"
+- Remove "Powered by Urakompassi"
 
 **Implementation**:
 - School settings page
@@ -431,7 +431,7 @@ Premium:
 ### Yläaste Package Pitch
 > **"Moderni uraohjaustyökalu koko Suomelle"**
 >
-> CareerCompassi tarjoaa peruskouluille kattavan uraohjausratkaisun 361 uravaihtoehdolla, mukaan lukien 75 tulevaisuuden ammattia. Opettajien hallintapaneeli helpottaa luokkien hallintaa ja tarjoaa edistyneet analytiikkatyökalut oppilaiden ohjaamiseen.
+> Urakompassi tarjoaa peruskouluille kattavan uraohjausratkaisun 361 uravaihtoehdolla, mukaan lukien 75 tulevaisuuden ammattia. Opettajien hallintapaneeli helpottaa luokkien hallintaa ja tarjoaa edistyneet analytiikkatyökalut oppilaiden ohjaamiseen.
 >
 > ✅ Helppokäyttöinen opettajien hallintapaneeli
 > ✅ 361 uramahdollisuutta koko Suomesta

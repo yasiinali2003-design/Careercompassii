@@ -11,7 +11,7 @@ export interface ReferralData {
 
 /**
  * Generate a unique referral code for a user
- * Format: CC-XXXX-XXXX (CareerCompassi prefix + 8 random alphanumeric)
+ * Format: CC-XXXX-XXXX (Urakompassi prefix + 8 random alphanumeric)
  */
 export function generateReferralCode(): string {
   const prefix = 'CC';
@@ -38,7 +38,7 @@ export function isValidReferralCode(code: string): boolean {
  * Create shareable URL with referral code
  */
 export function createReferralUrl(referralCode: string, baseUrl?: string): string {
-  const base = baseUrl || (typeof window !== 'undefined' ? window.location.origin : 'https://careercompassi.com');
+  const base = baseUrl || (typeof window !== 'undefined' ? window.location.origin : 'https://urakompassi.com');
   return `${base}/test?ref=${referralCode}`;
 }
 
@@ -123,6 +123,6 @@ export function createShareText(topCareers: string[], referralCode?: string): st
     return `${baseText}\n\nKokeile itse: ${createReferralUrl(referralCode)}`;
   }
   
-  return `${baseText}\n\nKokeile itse: https://careercompassi.com/test`;
+  return `${baseText}\n\nKokeile itse: https://urakompassi.com/test`;
 }
 

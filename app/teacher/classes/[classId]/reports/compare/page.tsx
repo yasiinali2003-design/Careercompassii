@@ -25,7 +25,7 @@ export default function CompareReport({ params, searchParams }: { params: { clas
         const checkRes = await fetch('/api/teacher-auth/package-check');
         const checkData = await checkRes.json();
         if (!checkData.hasPremium) {
-          setError('Vertailuanalyytiikka vaatii Premium-paketin. Ota yhteyttä tukeen: support@careercompassi.com');
+          setError('Vertailuanalyytiikka vaatii Premium-paketin. Ota yhteyttä tukeen: support@urakompassi.com');
           if (!cancelled) setLoading(false);
           return;
         }
@@ -145,7 +145,7 @@ export default function CompareReport({ params, searchParams }: { params: { clas
                     <p className="font-medium mb-1">{label}</p>
                     <div className="flex justify-between mb-1"><span>A: {Math.round(aVal)}%</span><span>B: {Math.round(bVal)}%</span></div>
                     <div className="w-full h-2 bg-gray-200 rounded mb-1">
-                      <div className="h-2 bg-blue-600 rounded" style={{ width: `${Math.min(Math.max(aVal,0),100)}%` }} />
+                      <div className="h-2 bg-primary rounded" style={{ width: `${Math.min(Math.max(aVal,0),100)}%` }} />
                     </div>
                     <div className="w-full h-2 bg-gray-200 rounded">
                       <div className="h-2 bg-green-600 rounded" style={{ width: `${Math.min(Math.max(bVal,0),100)}%` }} />

@@ -210,14 +210,14 @@ export function TodistuspisteCalculator({
     if (scheme === 'amk') {
       if (points >= 150) return 'text-green-600 font-bold';
       if (points >= 120) return 'text-green-500';
-      if (points >= 90) return 'text-blue-500';
+      if (points >= 90) return 'text-slate-500';
       if (points >= 70) return 'text-yellow-600';
       return 'text-orange-500';
     }
 
     if (points >= 175) return 'text-green-600 font-bold';
     if (points >= 140) return 'text-green-500';
-    if (points >= 110) return 'text-blue-500';
+    if (points >= 110) return 'text-slate-500';
     if (points >= 80) return 'text-yellow-600';
     return 'text-orange-500';
   };
@@ -244,7 +244,7 @@ export function TodistuspisteCalculator({
   };
 
   return (
-    <Card className="mb-8 border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-purple-50">
+    <Card className="mb-8 border-2 border-primary/20 bg-gradient-to-r from-slate-50 to-teal-50/20">
       <CardHeader>
         <CardTitle className="text-2xl">Todistuspistelaskuri</CardTitle>
         <CardDescription>
@@ -253,12 +253,12 @@ export function TodistuspisteCalculator({
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="grid gap-6 md:grid-cols-[260px,1fr]">
-          <aside className="space-y-4 rounded-2xl border border-blue-100 bg-blue-50/60 p-4 text-sm text-blue-900">
+          <aside className="space-y-4 rounded-2xl border border-blue-100 bg-slate-50/60 p-4 text-sm text-blue-900">
             <div className="flex items-start gap-2">
               <Info className="h-5 w-5 mt-0.5" />
               <div>
                 <p className="font-semibold">Pisteytyksen kaava</p>
-                <p className="mt-1 text-xs text-blue-800">
+                <p className="mt-1 text-xs text-primary">
                   Pisteet perustuvat Opetushallituksen todistusvalinnan taulukkoon (max 198 p). Äidinkieli ja pitkät kielet: L=46,
                   reaaliaineet ja lyhyet kielet: L=30. Laskuri valitsee automaattisesti viisi parasta ainetta.
                 </p>
@@ -268,7 +268,7 @@ export function TodistuspisteCalculator({
               <Lightbulb className="h-5 w-5 mt-0.5 text-yellow-600" />
               <div>
                 <p className="font-semibold">Muistutus</p>
-                <p className="mt-1 text-xs text-blue-800">
+                <p className="mt-1 text-xs text-primary">
                   Laskuri pyörii selaimessasi. Syötä vähintään pakolliset aineet, jotta näet skenaariot ja ohjelmasuositukset.
                 </p>
               </div>
@@ -291,7 +291,7 @@ export function TodistuspisteCalculator({
             />
             {realSubjects.length > 0 && (
               <div className="space-y-4">
-                <div className="rounded-2xl border border-blue-100 bg-blue-50/70 p-4 text-xs text-blue-900">
+                <div className="rounded-2xl border border-blue-100 bg-slate-50/70 p-4 text-xs text-blue-900">
                   <p className="font-semibold text-blue-900">Miten reaaliaineet arvioidaan?</p>
                   <ul className="mt-2 space-y-1 list-disc list-inside">
                     <li>Kaikki reaaliaineet pisteytetään samassa todistusvalinnan asteikossa (L=30, E=27 ...).</li>
@@ -334,7 +334,7 @@ export function TodistuspisteCalculator({
             getPointsColor(calculatedPoints, activeScheme).includes('green')
               ? 'border-green-200'
               : getPointsColor(calculatedPoints, activeScheme).includes('blue')
-                ? 'border-blue-200'
+                ? 'border-primary/20'
                 : 'border-yellow-200'
           }`}>
           <div className="flex items-center justify-between">
@@ -446,7 +446,7 @@ export function TodistuspisteCalculator({
                   </div>
                 </div>
                 {scenarioResult ? (
-                  <div className="rounded-xl border border-blue-200 bg-blue-50/60 p-4">
+                  <div className="rounded-xl border border-primary/20 bg-slate-50/60 p-4">
                     <p className="text-sm text-gray-600">Uudet pisteesi</p>
                     <p className="text-2xl font-semibold text-gray-900">
                       {formatPoints(scenarioResult.totalPoints)}
@@ -485,7 +485,7 @@ export function TodistuspisteCalculator({
         )}
 
         <div className="mt-6 pt-4 border-t border-gray-200">
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-4 mb-3">
+          <div className="bg-gradient-to-r from-slate-50 to-teal-50/20 rounded-lg p-4 mb-3">
             <p className="text-sm font-semibold text-gray-800 mb-2">Henkilökohtaiset suositukset ammattisi perusteella</p>
             <p className="text-xs text-gray-700">
               Näytämme koulutusohjelmia, jotka sopivat sekä pisteisiisi että testin perusteella saamiisi ammattisuosituksiin.
@@ -551,7 +551,7 @@ function SubjectSection({ title, subtitle, subjects, inputs, onGrade, onVariant,
                 </p>
                 {subject.helperText && <p className="text-xs text-gray-500 mt-1">{subject.helperText}</p>}
                 {subject.allowSubjectChoice && selectedChoice && (
-                  <p className="text-xs text-blue-700 mt-1">Valittu reaaliaine: {selectedChoice.label}</p>
+                  <p className="text-xs text-primary mt-1">Valittu reaaliaine: {selectedChoice.label}</p>
                 )}
               </div>
               {subject.allowSubjectChoice && subject.subjectChoices && (

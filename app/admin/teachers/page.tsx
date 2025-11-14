@@ -80,7 +80,7 @@ export default function AdminTeachersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20">
       <nav className="border-b border-gray-200 bg-white/80 backdrop-blur-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="hover:opacity-80 transition-opacity">
@@ -128,7 +128,7 @@ export default function AdminTeachersPage() {
                   onChange={(e) => setName(e.target.value)}
                   placeholder="esim. Matti Virtanen"
                   required
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
                 />
               </div>
 
@@ -142,7 +142,7 @@ export default function AdminTeachersPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="esim. matti.virtanen@koulu.fi"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
                 />
               </div>
 
@@ -156,7 +156,7 @@ export default function AdminTeachersPage() {
                   value={schoolName}
                   onChange={(e) => setSchoolName(e.target.value)}
                   placeholder="esim. Helsingin yläaste"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
                 />
               </div>
 
@@ -169,7 +169,7 @@ export default function AdminTeachersPage() {
                   value={packageType}
                   onChange={(e) => setPackageType(e.target.value as 'premium' | 'yläaste')}
                   required
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all bg-white"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all bg-white"
                 >
                   <option value="yläaste">Yläaste (Standard)</option>
                   <option value="premium">Premium</option>
@@ -201,7 +201,7 @@ export default function AdminTeachersPage() {
 
         {/* Display New Teacher Code */}
         {newTeacher && (
-          <Card className="mb-8 border-2 border-green-200 bg-gradient-to-r from-green-50 to-blue-50 shadow-lg">
+          <Card className="mb-8 border-2 border-green-200 bg-gradient-to-r from-green-50 to-teal-50/20 shadow-lg">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-green-800">
                 <Check className="h-5 w-5" />
@@ -258,8 +258,8 @@ export default function AdminTeachersPage() {
                 </div>
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <p className="text-sm text-blue-800">
+              <div className="bg-slate-50 border border-primary/20 rounded-lg p-4">
+                <p className="text-sm text-primary">
                   <strong>Vinkki:</strong> Kopioi opettajakoodi ja lähetä se opettajalle sähköpostitse
                   tai muulla turvallisella tavalla. Koodi on yksilöllinen ja voimassa heti.
                 </p>
@@ -269,11 +269,11 @@ export default function AdminTeachersPage() {
         )}
 
         {/* Info Card */}
-        <Card className="bg-blue-50 border-blue-200">
+        <Card className="bg-slate-50 border-primary/20">
           <CardContent className="pt-6">
             <div className="flex items-start gap-3">
-              <GraduationCap className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
-              <div className="text-sm text-blue-800">
+              <GraduationCap className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+              <div className="text-sm text-primary">
                 <p className="font-semibold mb-1">Mitä tapahtuu?</p>
                 <ul className="list-disc list-inside space-y-1">
                   <li>Jokainen opettaja saa oman yksilöllisen koodin</li>

@@ -1,13 +1,13 @@
-# 📘 CareerCompassi - Opettajan Asennusoppas
+# 📘 Urakompassi - Opettajan Asennusoppas
 
-Tervetuloa CareerCompassiin! Tämä oppas auttaa sinua käynnistämään urapolku-testin koulussasi nopeasti ja helposti.
+Tervetuloa Urakompassiin! Tämä oppas auttaa sinua käynnistämään urapolku-testin koulussasi nopeasti ja helposti.
 
 ---
 
 ## 🚀 Pika-aloitus (5 minuuttia)
 
 ### Vaihe 1: Hanki opettajakoodi
-1. Ota yhteyttä: [tuki@careercompassi.fi](mailto:tuki@careercompassi.fi)
+1. Ota yhteyttä: [tuki@urakompassi.fi](mailto:tuki@urakompassi.fi)
 2. Pyydä opettajakoodia
 3. Saat koodin sähköpostiin (tavallisesti 1-2 arkipäivää)
 
@@ -57,7 +57,7 @@ Tervetuloa CareerCompassiin! Tämä oppas auttaa sinua käynnistämään urapolk
 
 **Mikäli kirjautuminen ei onnistu:**
 - Tarkista että koodi on oikein kirjoitettu
-- Ota yhteyttä tukeen: tuki@careercompassi.fi
+- Ota yhteyttä tukeen: tuki@urakompassi.fi
 - Onnistumisen jälkeen näet opettajan hallintapaneelin
 
 ---
@@ -212,7 +212,7 @@ https://careercompassi.vercel.app/[luokan-token]/test
 **Ratkaisut:**
 1. Tarkista että koodi on oikein kirjoitettu (ei välilyöntejä)
 2. Kokeile kirjoittaa koodi uudelleen
-3. Jos ei toimi, ota yhteyttä tukeen: tuki@careercompassi.fi
+3. Jos ei toimi, ota yhteyttä tukeen: tuki@urakompassi.fi
 
 ### Ongelma: "PIN-koodi ei toimi"
 **Ratkaisut:**
@@ -268,7 +268,7 @@ https://careercompassi.vercel.app/[luokan-token]/test
 
 ### Tarvitsetko apua?
 
-**Sähköposti:** tuki@careercompassi.fi
+**Sähköposti:** tuki@urakompassi.fi
 - Vastausaika: 1-2 arkipäivää
 - Kirjoita suomeksi
 - Kerro ongelmasta mahdollisimman tarkasti
@@ -311,7 +311,7 @@ Kun ensimmäinen testi on tehty:
 
 **Viimeksi päivitetty:** 2025-01-29  
 **Versio:** 1.0  
-**Yhteystiedot:** tuki@careercompassi.fi
+**Yhteystiedot:** tuki@urakompassi.fi
 
 
 

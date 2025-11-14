@@ -199,7 +199,7 @@ export default function CareerCatalog() {
             {hasTestResults && (
               <Link
                 href="/test/results"
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm"
+                className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary transition-colors font-medium text-sm"
               >
                 📊 Katso tulokseni
               </Link>
@@ -386,7 +386,7 @@ export default function CareerCatalog() {
                       {career.educationLevel.slice(0, 2).map((level: string) => (
                         <span
                           key={level}
-                          className="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-full"
+                          className="px-3 py-1 bg-slate-50 text-primary text-xs rounded-full"
                         >
                           {level}
                         </span>
@@ -397,7 +397,7 @@ export default function CareerCatalog() {
                         </span>
                       )}
                       {career.outlook && (
-                        <span className="px-3 py-1 bg-purple-50 text-purple-700 text-xs rounded-full">
+                        <span className="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">
                           {career.outlook}
                         </span>
                       )}
@@ -448,7 +448,7 @@ export default function CareerCatalog() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-slate-600 leading-relaxed">
-              CareerCompassin Urakirjasto auttaa sinua löytämään ammatin, joka sopii omiin vahvuuksiisi ja kiinnostuksiisi.
+              Urakompassin Urakirjasto auttaa sinua löytämään ammatin, joka sopii omiin vahvuuksiisi ja kiinnostuksiisi.
               Selaa eri alojen uria, vertaile koulutusvaihtoehtoja ja löydä oma suuntasi.
             </p>
           </div>

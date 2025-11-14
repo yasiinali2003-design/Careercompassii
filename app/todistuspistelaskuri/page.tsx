@@ -168,11 +168,11 @@ export default function TodistuspistelaskuriPage() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen">
+    <div className="bg-gradient-to-br from-slate-50 via-white to-teal-50/20 min-h-screen">
       <div className="container mx-auto px-4 py-10 max-w-6xl">
         <header className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-1 text-xs font-medium uppercase tracking-wider text-blue-700">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white px-4 py-1 text-xs font-medium uppercase tracking-wider text-primary">
               <span>TASO2 laskuri</span>
               <span className="h-1 w-1 rounded-full bg-blue-300" />
               <span>2025 tiedot</span>
@@ -199,7 +199,7 @@ export default function TodistuspistelaskuriPage() {
                     <DialogTitle>Tietolähteet & käyttö</DialogTitle>
                     <DialogDescription>
                       <p className="mb-2">Laskuri perustuu Opetushallituksen ja yliopistojen julkisiin todistusvalintatilastoihin (päivitetty marraskuussa 2025). Historiapisteet päivitämme kuukausittain.</p>
-                      <p>Työkalu on CareerCompassin itsenäisesti kehittämä. Emme ole Opintopolun tai todistusvalinta.fi:n kanssa sidoksissa, ja laskelmat ovat suuntaa-antavia – tarkista aina viralliset rajat ennen hakua.</p>
+                      <p>Työkalu on Urakompassin itsenäisesti kehittämä. Emme ole Opintopolun tai todistusvalinta.fi:n kanssa sidoksissa, ja laskelmat ovat suuntaa-antavia – tarkista aina viralliset rajat ennen hakua.</p>
                     </DialogDescription>
                   </DialogHeader>
                 </DialogContent>
@@ -211,15 +211,15 @@ export default function TodistuspistelaskuriPage() {
               const shown = strengths.slice(0, 2);
               const extra = strengths.length - shown.length;
               return (
-                <div className="flex flex-wrap items-center gap-2 text-sm text-blue-800">
+                <div className="flex flex-wrap items-center gap-2 text-sm text-primary">
                   <span className="font-semibold text-blue-900">Vahvuutesi:</span>
                   {shown.map((strength, index) => (
-                    <span key={index} className="rounded-full bg-blue-100 px-3 py-1">
+                    <span key={index} className="rounded-full bg-primary/10 px-3 py-1">
                       {strength}
                     </span>
                   ))}
                   {extra > 0 && (
-                    <span className="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-600">+{extra} lisää</span>
+                    <span className="rounded-full bg-slate-50 px-3 py-1 text-xs text-primary">+{extra} lisää</span>
                   )}
                 </div>
               );
@@ -247,7 +247,7 @@ export default function TodistuspistelaskuriPage() {
                   )}
                 >
                   <span
-                    className="flex h-8 w-8 items-center justify-center rounded-full border border-blue-200 text-sm font-semibold text-blue-700"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-primary/20 text-sm font-semibold text-primary"
                     aria-hidden
                   >
                     {index + 1}
@@ -302,9 +302,9 @@ export default function TodistuspistelaskuriPage() {
                 scheme={educationType}
               />
 
-              <div className="rounded-2xl border border-blue-100 bg-blue-50/70 p-5 text-sm text-blue-900">
+              <div className="rounded-2xl border border-blue-100 bg-slate-50/70 p-5 text-sm text-blue-900">
                 <p className="font-semibold">Mitä seuraavaksi?</p>
-                <ol className="mt-2 list-decimal space-y-1 pl-5 text-blue-800">
+                <ol className="mt-2 list-decimal space-y-1 pl-5 text-primary">
                   <li>Tarkista arvosanat ja tee tarvittaessa muutoksia vaiheessa 1.</li>
                   <li>Käytä skenaariotyökalua testataksesi, missä aineissa pienikin nousu tuo eniten pisteitä.</li>
                   <li>Siirry koulutusohjelmiin ja vertaile vaihtoehtoja pisteidesi ja urasuositustesi perusteella.</li>
@@ -327,7 +327,7 @@ export default function TodistuspistelaskuriPage() {
           )}
 
           {currentStep === 'programs' && calculatedPoints === null && (
-            <div className="rounded-lg border border-dashed border-blue-200 bg-white/70 p-6 text-center text-sm text-gray-600">
+            <div className="rounded-lg border border-dashed border-primary/20 bg-white/70 p-6 text-center text-sm text-gray-600">
               Laske pisteesi ensin, niin näytämme sinulle sopivat koulutusohjelmat.
             </div>
           )}
@@ -364,7 +364,7 @@ export default function TodistuspistelaskuriPage() {
               </div>
 
               {storedResults?.topCareers && storedResults.topCareers.length > 0 && (
-                <div className="rounded-2xl border border-purple-200 bg-purple-50/70 p-4 text-sm text-purple-800">
+                <div className="rounded-2xl border border-secondary/20 bg-secondary/10/70 p-4 text-sm text-purple-800">
                   <p className="font-semibold text-purple-900 mb-2">Urasuosituksesi</p>
                   <div className="flex flex-wrap gap-2">
                     {storedResults.topCareers.slice(0, 4).map((career, idx) => (
@@ -372,12 +372,12 @@ export default function TodistuspistelaskuriPage() {
                         <Link
                           key={career.slug}
                           href={`/ammatit/${career.slug}`}
-                          className="rounded-full bg-white px-3 py-1 text-xs font-medium text-purple-700 shadow-sm transition-colors hover:bg-purple-100 hover:text-purple-900"
+                          className="rounded-full bg-white px-3 py-1 text-xs font-medium text-secondary shadow-sm transition-colors hover:bg-secondary/20 hover:text-purple-900"
                         >
                           {career.title || 'Suosikki-ammatti'}
                         </Link>
                       ) : (
-                        <span key={idx} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-purple-700 shadow-sm">
+                        <span key={idx} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-secondary shadow-sm">
                           {career?.title || 'Suosikki-ammatti'}
                         </span>
                       )
@@ -432,16 +432,16 @@ function GuidanceSummary({ points, bonusPoints, strengths, inputs, variant = 'fu
       <div className="rounded-2xl border border-blue-100 bg-white p-5">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <p className="text-xs uppercase tracking-wide text-blue-600">Pisteesi tänään</p>
+            <p className="text-xs uppercase tracking-wide text-primary">Pisteesi tänään</p>
             <p className="text-2xl font-semibold text-gray-900">
               {formatPoints(points)} <span className="text-sm font-normal text-gray-500">p</span>
             </p>
             <p className="mt-1 text-xs text-gray-500">Bonuspisteet: +{bonusPoints.toFixed(0)}</p>
           </div>
           {strengths && strengths.length > 0 && (
-            <div className="flex flex-wrap gap-2 text-xs text-blue-700">
+            <div className="flex flex-wrap gap-2 text-xs text-primary">
               {strengths.slice(0, 2).map((strength, index) => (
-                <span key={index} className="rounded-full bg-blue-50 px-3 py-1">
+                <span key={index} className="rounded-full bg-slate-50 px-3 py-1">
                   {strength}
                 </span>
               ))}
@@ -454,13 +454,13 @@ function GuidanceSummary({ points, bonusPoints, strengths, inputs, variant = 'fu
   }
 
   return (
-    <div className="grid gap-6 rounded-2xl border border-blue-200 bg-white p-6 md:grid-cols-[minmax(0,240px)_1fr]">
+    <div className="grid gap-6 rounded-2xl border border-primary/20 bg-white p-6 md:grid-cols-[minmax(0,240px)_1fr]">
       <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
         <div className="relative h-28 w-28">
           <div className="absolute inset-0 rounded-full" style={ringStyle} />
           <div className="absolute inset-2 rounded-full bg-white shadow-inner flex flex-col items-center justify-center">
             <span className="text-2xl font-bold text-blue-900">{formatPoints(points)}</span>
-            <span className="text-xs font-medium text-blue-600">pistettä</span>
+            <span className="text-xs font-medium text-primary">pistettä</span>
           </div>
         </div>
         <div className="space-y-1 text-sm text-gray-600">
@@ -468,12 +468,12 @@ function GuidanceSummary({ points, bonusPoints, strengths, inputs, variant = 'fu
           {strengths && strengths.length > 0 && (
             <div className="flex flex-wrap items-center justify-center gap-2 md:justify-start">
               {strengths.slice(0, 3).map((strength, index) => (
-                <span key={index} className="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-700">
+                <span key={index} className="rounded-full bg-slate-50 px-3 py-1 text-xs text-primary">
                   {strength}
                 </span>
               ))}
               {strengths.length > 3 && (
-                <span className="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-600">
+                <span className="rounded-full bg-slate-50 px-3 py-1 text-xs text-primary">
                   +{strengths.length - 3}
                 </span>
               )}
@@ -491,7 +491,7 @@ function GuidanceSummary({ points, bonusPoints, strengths, inputs, variant = 'fu
           <ul className="space-y-2 text-sm text-gray-700">
             {nextSteps.map((step, index) => (
               <li key={index} className="flex gap-2">
-                <span className="text-blue-600">•</span>
+                <span className="text-primary">•</span>
                 <span>{step}</span>
               </li>
             ))}

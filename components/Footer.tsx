@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container mx-auto px-4 py-8 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="text-sm font-semibold text-gray-900">
-            CareerCompassi • © 2025
+            Urakompassi • © 2025
           </p>
           <p className="text-sm text-gray-600">
             Tulevaisuus alkaa itsensä löytämisestä

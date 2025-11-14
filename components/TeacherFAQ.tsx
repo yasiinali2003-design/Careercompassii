@@ -21,7 +21,7 @@ export default function TeacherFAQ({ isOpen, onClose }: TeacherFAQProps) {
         },
         {
           q: "Voinko päivittää Standard-paketista Premium-pakettiin?",
-          a: "Kyllä! Ota yhteyttä pääkäyttäjään tai CareerCompassi-tukeen päivityksestä. Päivityksen jälkeen sinulla on välittömästi pääsy Premium-ominaisuuksiin, kuten vertailuanalyytiikkaan ja koulutason koostetietoihin."
+          a: "Kyllä! Ota yhteyttä pääkäyttäjään tai Urakompassi-tukeen päivityksestä. Päivityksen jälkeen sinulla on välittömästi pääsy Premium-ominaisuuksiin, kuten vertailuanalyytiikkaan ja koulutason koostetietoihin."
         }
       ]
     },
@@ -30,7 +30,7 @@ export default function TeacherFAQ({ isOpen, onClose }: TeacherFAQProps) {
       questions: [
         {
           q: "Miten luon opettajatilin?",
-          a: "Opettajatilit luodaan pääkäyttäjän toimesta. Ota yhteyttä koulusi pääkäyttäjään tai CareerCompassi-tukeen, jotta saat opettajakoodin. Kun olet saanut koodin, voit kirjautua opettajan hallintapaneeliin."
+          a: "Opettajatilit luodaan pääkäyttäjän toimesta. Ota yhteyttä koulusi pääkäyttäjään tai Urakompassi-tukeen, jotta saat opettajakoodin. Kun olet saanut koodin, voit kirjautua opettajan hallintapaneeliin."
         },
         {
           q: "Miten luon uuden luokan?",
@@ -51,7 +51,7 @@ export default function TeacherFAQ({ isOpen, onClose }: TeacherFAQProps) {
       questions: [
         {
           q: "Mitkä selaimet ovat tuettuja?",
-          a: "CareerCompassi toimii nykyaikaisilla selaimilla, kuten Chrome, Firefox, Safari ja Edge. Varmista, että selaimesi on ajan tasalla."
+          a: "Urakompassi toimii nykyaikaisilla selaimilla, kuten Chrome, Firefox, Safari ja Edge. Varmista, että selaimesi on ajan tasalla."
         },
         {
           q: "Mitä tehdä, jos oppilas ei pääse testiin PIN-koodilla?",
@@ -100,12 +100,12 @@ export default function TeacherFAQ({ isOpen, onClose }: TeacherFAQProps) {
           a: "Datan säilytyskäytännöt vaihtelevat paketista riippuen. Premium-paketeilla on tyypillisesti pidennetty säilytysaika. Ota yhteyttä tukeen saadaksesi tietoja pakettisi säilytyskäytännöistä."
         },
         {
-          q: "Onko CareerCompassi GDPR-yhteensopiva?",
-          a: "Kyllä. CareerCompassi noudattaa GDPR:ää. Katso yksityisyysselosteemme (Tietosuojaseloste) ja käyttöehdomme (Käyttöehdot) saadaksesi lisätietoja datan käsittelystä ja oppilaiden oikeuksista."
+          q: "Onko Urakompassi GDPR-yhteensopiva?",
+          a: "Kyllä. Urakompassi noudattaa GDPR:ää. Katso yksityisyysselosteemme (Tietosuojaseloste) ja käyttöehdomme (Käyttöehdot) saadaksesi lisätietoja datan käsittelystä ja oppilaiden oikeuksista."
         },
         {
           q: "Voinko poistaa oppilasdataa?",
-          a: "Ota yhteyttä pääkäyttäjääsi tai CareerCompassi-tukeen pyytääksesi datan poistamista GDPR-vaatimusten mukaisesti."
+          a: "Ota yhteyttä pääkäyttäjääsi tai Urakompassi-tukeen pyytääksesi datan poistamista GDPR-vaatimusten mukaisesti."
         },
         {
           q: "Missä oppilasdataa säilytetään?",
@@ -118,11 +118,11 @@ export default function TeacherFAQ({ isOpen, onClose }: TeacherFAQProps) {
       questions: [
         {
           q: "Miten paketin päivitykset toimivat?",
-          a: "Ota yhteyttä koulusi pääkäyttäjään tai CareerCompassi-myyntitiimiin päivityksestä. Päivityksen vahvistamisen jälkeen tilisi päivitetään ja Premium-ominaisuudet ovat saatavilla."
+          a: "Ota yhteyttä koulusi pääkäyttäjään tai Urakompassi-myyntitiimiin päivityksestä. Päivityksen vahvistamisen jälkeen tilisi päivitetään ja Premium-ominaisuudet ovat saatavilla."
         },
         {
           q: "Mitä tapahtuu, jos pääsyni vanhenee?",
-          a: "Ota yhteyttä pääkäyttäjääsi tai CareerCompassi-tukeen uusimaan pääsy. Historiallinen data säilytetään tyypillisesti pakettisi säilytyskäytännön mukaisesti."
+          a: "Ota yhteyttä pääkäyttäjääsi tai Urakompassi-tukeen uusimaan pääsy. Historiallinen data säilytetään tyypillisesti pakettisi säilytyskäytännön mukaisesti."
         },
         {
           q: "Voinko siirtyä Premium-paketista Standard-pakettiin?",
@@ -143,7 +143,7 @@ export default function TeacherFAQ({ isOpen, onClose }: TeacherFAQProps) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="border-b border-gray-200 px-6 py-4 flex items-center justify-between bg-gradient-to-r from-blue-50 to-purple-50">
+        <div className="border-b border-gray-200 px-6 py-4 flex items-center justify-between bg-gradient-to-r from-slate-50 to-teal-50/20">
           <h2 className="text-2xl font-bold text-gray-900">Usein kysytyt kysymykset (UKK)</h2>
           <Button
             variant="ghost"
@@ -167,7 +167,7 @@ export default function TeacherFAQ({ isOpen, onClose }: TeacherFAQProps) {
                   {category.questions.map((faq, faqIndex) => (
                     <div key={faqIndex} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                       <h4 className="font-semibold text-gray-900 mb-2 flex items-start">
-                        <span className="text-blue-600 mr-2">Q:</span>
+                        <span className="text-primary mr-2">Q:</span>
                         <span>{faq.q}</span>
                       </h4>
                       <p className="text-gray-700 ml-6 whitespace-pre-line">
@@ -185,7 +185,7 @@ export default function TeacherFAQ({ isOpen, onClose }: TeacherFAQProps) {
         {/* Footer */}
         <div className="border-t border-gray-200 px-6 py-4 bg-gray-50">
           <p className="text-sm text-gray-600 text-center">
-            Etsitkö lisää tukea? Ota yhteyttä pääkäyttäjääsi tai CareerCompassi-tukeen.
+            Etsitkö lisää tukea? Ota yhteyttä pääkäyttäjääsi tai Urakompassi-tukeen.
           </p>
         </div>
       </div>

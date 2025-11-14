@@ -34,16 +34,16 @@ const categoryIcons = {
 // Color psychology-based background colors for icon containers
 const categoryColors = {
   luova: {
-    bg: "bg-purple-50",
-    bgHover: "group-hover:bg-purple-100",
-    icon: "text-purple-600",
-    iconHover: "group-hover:text-purple-700"
+    bg: "bg-secondary/10",
+    bgHover: "group-hover:bg-secondary/20",
+    icon: "text-secondary",
+    iconHover: "group-hover:text-secondary"
   },
   johtaja: {
-    bg: "bg-blue-50",
-    bgHover: "group-hover:bg-blue-100", 
-    icon: "text-blue-600",
-    iconHover: "group-hover:text-blue-700"
+    bg: "bg-primary/10",
+    bgHover: "group-hover:bg-primary/20",
+    icon: "text-primary",
+    iconHover: "group-hover:text-primary"
   },
   innovoija: {
     bg: "bg-yellow-50",
@@ -64,16 +64,16 @@ const categoryColors = {
     iconHover: "group-hover:text-emerald-700"
   },
   "ympariston-puolustaja": {
-    bg: "bg-green-50",
-    bgHover: "group-hover:bg-green-100",
-    icon: "text-green-600",
-    iconHover: "group-hover:text-green-700"
+    bg: "bg-accent/10",
+    bgHover: "group-hover:bg-accent/20",
+    icon: "text-accent",
+    iconHover: "group-hover:text-accent"
   },
   visionaari: {
-    bg: "bg-indigo-50",
-    bgHover: "group-hover:bg-indigo-100",
-    icon: "text-indigo-600",
-    iconHover: "group-hover:text-indigo-700"
+    bg: "bg-primary/10",
+    bgHover: "group-hover:bg-primary/20",
+    icon: "text-primary",
+    iconHover: "group-hover:text-primary"
   },
   jarjestaja: {
     bg: "bg-stone-50",

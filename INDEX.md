@@ -1,4 +1,4 @@
-# CareerCompassi Enhancement System - Index
+# Urakompassi Enhancement System - Index
 
 ## Quick Navigation
 
@@ -245,7 +245,7 @@ To extend the employer database or add new industries:
 
 ## License
 
-Part of CareerCompassi project.
+Part of Urakompassi project.
 
 ---
 

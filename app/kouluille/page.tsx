@@ -11,7 +11,7 @@ import Logo from '@/components/Logo';
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-teal-50/20">
       <div className="container mx-auto px-4 py-16 max-w-6xl">
         {/* Back Button */}
         <div className="mb-8">
@@ -24,7 +24,7 @@ export default function PricingPage() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            CareerCompassi Kouluille
+            Urakompassi Kouluille
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
             Moderni ja helppokäyttöinen uraohjaustyökalu oppilaitoksille
@@ -49,19 +49,19 @@ export default function PricingPage() {
             <CardContent>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center">
-                  <Check className="mr-2 text-green-500" size={20} />
+                  <Check className="mr-2 text-accent" size={20} />
                   <span>Perus-urapolku-testi</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-green-500" size={20} />
+                  <Check className="mr-2 text-accent" size={20} />
                   <span>Henkilökohtaiset tulokset</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-green-500" size={20} />
+                  <Check className="mr-2 text-accent" size={20} />
                   <span>361 eri ammattimahdollisuutta (sis. 75 modernia uraa)</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-green-500" size={20} />
+                  <Check className="mr-2 text-accent" size={20} />
                   <span>GDPR-yhteensopiva</span>
                 </li>
               </ul>
@@ -74,9 +74,9 @@ export default function PricingPage() {
           </Card>
 
           {/* Tier 2: Yläaste */}
-          <Card className="border-2 border-green-500 relative">
+          <Card className="border-2 border-accent relative">
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+              <span className="bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold">
                 PERUSKOULUILLE
               </span>
             </div>
@@ -91,52 +91,52 @@ export default function PricingPage() {
             <CardContent>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center">
-                  <Check className="mr-2 text-green-500" size={20} />
+                  <Check className="mr-2 text-accent" size={20} />
                   <span>Kaikki ilmaiset ominaisuudet</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-green-500" size={20} />
+                  <Check className="mr-2 text-accent" size={20} />
                   <span>Opettajien hallintapaneeli</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-green-500" size={20} />
+                  <Check className="mr-2 text-accent" size={20} />
                   <span>PIN-koodien generointi</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-green-500" size={20} />
+                  <Check className="mr-2 text-accent" size={20} />
                   <span>Yksityiskohtaiset CSV-vienti</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-green-500" size={20} />
+                  <Check className="mr-2 text-accent" size={20} />
                   <span>Edistyneet analytiikkatyökalut</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-green-500" size={20} />
+                  <Check className="mr-2 text-accent" size={20} />
                   <span>Ulottuvuuksien yksityiskohtainen erittely</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-green-500" size={20} />
+                  <Check className="mr-2 text-accent" size={20} />
                   <span>Koulutuspolkujen visualisointi</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-green-500" size={20} />
+                  <Check className="mr-2 text-accent" size={20} />
                   <span>Koko Suomen kattava urakartta</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-green-500" size={20} />
+                  <Check className="mr-2 text-accent" size={20} />
                   <span>Sähköpostituki</span>
                 </li>
               </ul>
-              <Button className="w-full bg-green-600 hover:bg-green-700">
+              <Button className="w-full bg-accent hover:bg-accent/90">
                 Ota yhteyttä
               </Button>
             </CardContent>
           </Card>
 
           {/* Tier 3: Premium */}
-          <Card className="border-2 border-blue-500 relative">
+          <Card className="border-2 border-primary relative">
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+              <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
                 SUOSITELTU
               </span>
             </div>
@@ -151,39 +151,39 @@ export default function PricingPage() {
             <CardContent>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center">
-                  <Check className="mr-2 text-blue-500" size={20} />
+                  <Check className="mr-2 text-primary" size={20} />
                   <span>Kaikki Yläaste-ominaisuudet</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-blue-500" size={20} />
+                  <Check className="mr-2 text-primary" size={20} />
                   <span>Jopa 5 opettajaa per koulu (yhteistyö)</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-blue-500" size={20} />
+                  <Check className="mr-2 text-primary" size={20} />
                   <span>PDF-raporttien generointi (oppilas & luokka)</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-blue-500" size={20} />
+                  <Check className="mr-2 text-primary" size={20} />
                   <span>Trendianalyysit ja vertailut ajanjaksolta</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-blue-500" size={20} />
+                  <Check className="mr-2 text-primary" size={20} />
                   <span>Luokkien väliset vertailuanalyysit</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-blue-500" size={20} />
+                  <Check className="mr-2 text-primary" size={20} />
                   <span>5 vuoden historiadata ja kehitysraportit</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-blue-500" size={20} />
+                  <Check className="mr-2 text-primary" size={20} />
                   <span>Nopea tuki ja henkilökohtainen käyttöohjeistus</span>
                 </li>
                 <li className="flex items-center">
-                  <Check className="mr-2 text-blue-500" size={20} />
+                  <Check className="mr-2 text-primary" size={20} />
                   <span>API-integraatiot koulujen järjestelmiin</span>
                 </li>
               </ul>
-              <Button className="w-full bg-blue-600 hover:bg-blue-700">
+              <Button className="w-full bg-primary hover:bg-primary/90">
                 Ota yhteyttä
               </Button>
             </CardContent>
@@ -283,7 +283,7 @@ export default function PricingPage() {
                 Kokeile ilmaiseksi
               </Button>
             </Link>
-            <Button size="lg" className="bg-blue-600">
+            <Button size="lg" className="bg-primary">
               Ota yhteyttä
             </Button>
           </div>

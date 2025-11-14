@@ -91,7 +91,7 @@ export default function TeacherClassesPage() {
       <div className="space-y-1">
         <div className="h-2 rounded-full bg-gray-200 overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all"
+            className="h-full bg-gradient-to-r from-slate-500 to-teal-50/200 transition-all"
             style={{ width: `${safePercentage}%` }}
           />
         </div>
@@ -105,12 +105,12 @@ export default function TeacherClassesPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
         <TeacherNav />
         <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
           <h1 className="text-3xl font-bold mb-8">Omat luokat</h1>
           <div className="text-center py-12">
-            <div className="animate-spin h-8 w-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto"></div>
+            <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
           </div>
         </div>
         <TeacherFooter />
@@ -119,7 +119,7 @@ export default function TeacherClassesPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
       <TeacherNav />
       <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
         <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -129,7 +129,7 @@ export default function TeacherClassesPage() {
           </div>
           <Link
             href="/teacher/classes/new"
-            className="inline-flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+            className="inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary transition"
           >
             ➕ Luo uusi luokka
           </Link>
@@ -140,7 +140,7 @@ export default function TeacherClassesPage() {
             <p className="text-gray-600 mb-6">Sinulla ei ole vielä luokkia</p>
             <Link
               href="/teacher/classes/new"
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+              className="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary transition"
             >
               Luo uusi luokka
             </Link>
@@ -202,7 +202,7 @@ export default function TeacherClassesPage() {
                           const origin = typeof window !== 'undefined' ? window.location.origin : '';
                           handleCopyLink(`${origin}${studentTestPath}`);
                         }}
-                        className="text-blue-600 hover:underline"
+                        className="text-primary hover:underline"
                       >
                         Kopioi testilinkki
                       </button>
@@ -212,7 +212,7 @@ export default function TeacherClassesPage() {
                   <div className="pt-4 mt-auto flex flex-wrap gap-3">
                     <Link
                       href={`/teacher/classes/${classItem.id}`}
-                      className="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition"
+                      className="inline-flex items-center justify-center bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary transition"
                     >
                       Avaa luokka
                     </Link>

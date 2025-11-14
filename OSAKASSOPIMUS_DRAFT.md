@@ -6,7 +6,7 @@
 
 ## OSAKASSOPIMUS
 
-### CareerCompassi Oy
+### Urakompassi Oy
 
 **Osapuolten tiedot:**
 - [Nimi 1], henkilötunnus [XXX], osoite [XXX] - **Yksityishenkilö 1 (Tekninen toteutus/Ohjelmistokehitys)**
@@ -14,7 +14,7 @@
 - [Nimi 3], henkilötunnus [XXX], osoite [XXX] - **Yksityishenkilö 3 (Tutkimus)**
 
 **Yrityksen tiedot:**
-- Yrityksen nimi: CareerCompassi Oy
+- Yrityksen nimi: Urakompassi Oy
 - Y-tunnus: [XXX]
 - Rekisteröintipäivä: [XXX]
 - Yrityksen osoite: [XXX]

@@ -4,7 +4,7 @@
 - Removed `vercel.json` (fixed deployment error)
 - Fixed metadata configuration
 - Code pushed to GitHub
-- Domains added to Vercel: `careercompassi.com` and `www.careercompassi.com`
+- Domains added to Vercel: `urakompassi.com` and `www.urakompassi.com`
 
 ## 🔧 What You Need to Do Now:
 
@@ -26,7 +26,7 @@
 - `ns2.vercel-dns.com`
 
 **Steps:**
-1. Go to your domain registrar (where you bought careercompassi.com)
+1. Go to your domain registrar (where you bought urakompassi.com)
 2. Navigate to "Domain Nameservers" or "DNS Settings"
 3. Click "USE CUSTOM NAMESERVERS"
 4. Remove all 4 Google nameservers
@@ -51,8 +51,8 @@
 
 ### Step 5: Test Your Site
 After DNS propagates:
-- Visit `https://careercompassi.com` - should work
-- Visit `https://www.careercompassi.com` - should redirect or work
+- Visit `https://urakompassi.com` - should work
+- Visit `https://www.urakompassi.com` - should redirect or work
 - Both should have SSL certificates (HTTPS lock icon)
 
 ## 🔒 Password Protection (Optional)

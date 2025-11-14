@@ -123,7 +123,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
             <button
               type="button"
               onClick={() => router.back()}
-              className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white px-4 py-2 text-sm font-medium text-purple-700 transition-colors hover:bg-purple-100"
+              className="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-white px-4 py-2 text-sm font-medium text-secondary transition-colors hover:bg-secondary/20"
             >
               <ArrowLeft className="h-4 w-4" />
               Takaisin edelliseen näkymään
@@ -173,7 +173,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
               {career.educationLevel.map((level: string) => (
                 <span
                   key={level}
-                  className="px-4 py-2 bg-blue-50 text-blue-700 rounded-xl font-medium"
+                  className="px-4 py-2 bg-slate-50 text-primary rounded-xl font-medium"
                 >
                   <GraduationCap className="inline h-4 w-4 mr-2" />
                   {level}
@@ -185,7 +185,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                 </span>
               )}
               {career.outlook && (
-                <span className="px-4 py-2 bg-purple-50 text-purple-700 rounded-xl font-medium">
+                <span className="px-4 py-2 bg-secondary/10 text-secondary rounded-xl font-medium">
                   <TrendingUp className="inline h-4 w-4 mr-2" />
                   {career.outlook}
                 </span>
@@ -243,7 +243,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                       {career.industry.map((industry: string, index: number) => (
                         <span
                           key={index}
-                          className="px-3 py-1 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium"
+                          className="px-3 py-1 bg-slate-50 text-primary rounded-lg text-sm font-medium"
                         >
                           {industry}
                         </span>
@@ -265,7 +265,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                         {career.skillsHard.map((skill: string, index: number) => (
                           <span
                             key={index}
-                            className="px-3 py-2 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium"
+                            className="px-3 py-2 bg-slate-50 text-primary rounded-lg text-sm font-medium"
                           >
                             {skill}
                           </span>
@@ -367,7 +367,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
 
               {/* Liittyvät ammatit */}
               {relatedCareers.length > 0 && (
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl shadow-sm border border-slate-200 p-6">
+                <div className="bg-gradient-to-br from-slate-50 to-teal-50/20 rounded-2xl shadow-sm border border-slate-200 p-6">
                   <h3 className="text-lg font-bold text-slate-900 mb-4">
                     Tutustu myös näihin ammatteihin
                   </h3>
@@ -404,7 +404,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                     <div className="flex items-center justify-between mb-3">
                       <h4 className="font-bold text-slate-900">Työllisyysnäkymä 2025-2030</h4>
                       <div className={`px-4 py-2 rounded-full text-sm font-bold ${
-                        career.outlook === 'Kasvaa' ? 'bg-green-200 text-green-800' : 'bg-blue-200 text-blue-800'
+                        career.outlook === 'Kasvaa' ? 'bg-green-200 text-green-800' : 'bg-primary/20 text-primary'
                       }`}>
                         {career.outlook === 'Kasvaa' ? 'Kasvaa' : 'Vakaa'}
                       </div>
@@ -424,14 +424,14 @@ export default function CareerDetail({ params }: CareerDetailProps) {
               </div>
 
               {/* Compare Button */}
-              <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-6 text-white mb-6">
+              <div className="bg-gradient-to-r from-slate-500 to-pink-500 rounded-2xl p-6 text-white mb-6">
                 <h3 className="text-lg font-bold mb-2">Vertaa tätä ammattia muihin</h3>
-                <p className="text-purple-100 mb-4 text-sm">
+                <p className="text-secondary mb-4 text-sm">
                   Vertaa palkkaa, vaatimuksia ja työllisyysnäkymiä rinnakkain
                 </p>
                 <Link
                   href={`/ammatit/compare?careers=${career.slug}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-purple-600 rounded-xl hover:bg-purple-50 transition-colors font-medium"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-secondary rounded-xl hover:bg-secondary/10 transition-colors font-medium"
                 >
                   Siirry vertailuun
                   <ExternalLink className="h-4 w-4" />
@@ -441,14 +441,14 @@ export default function CareerDetail({ params }: CareerDetailProps) {
               {/* CTA */}
               <div className="bg-[#2563EB] rounded-2xl p-6 text-white">
                 <h3 className="text-lg font-bold mb-2">Etsi koulutuksia</h3>
-                <p className="text-blue-100 mb-4 text-sm">
+                <p className="text-primary mb-4 text-sm">
                   Löydä sopivia koulutusohjelmia Opintopolusta
                 </p>
                 <a
                   href="https://opintopolku.fi/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#2563EB] rounded-xl hover:bg-blue-50 transition-colors font-medium"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#2563EB] rounded-xl hover:bg-slate-50 transition-colors font-medium"
                 >
                   Etsi koulutuksia Opintopolussa
                   <ExternalLink className="h-4 w-4" />

@@ -1,4 +1,4 @@
-# Manual Testing Report - CareerCompassi
+# Manual Testing Report - Urakompassi
 
 **Date:** $(date)
 **Tester:** Automated Test Script + Manual Browser Testing

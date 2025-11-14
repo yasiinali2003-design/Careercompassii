@@ -1,4 +1,4 @@
-# KÄYTTÖEHDOT — CareerCompassi Oy
+# KÄYTTÖEHDOT — Urakompassi Oy
 
 Versio 3.2  
 Viimeksi päivitetty: [päivämäärä]  
@@ -9,10 +9,10 @@ Rekisteröity tavaramerkki: [täydennä]
 
 ## 1 Johdanto
 
-Nämä käyttöehdot (“Ehdot”) säätelevät CareerCompassi Oy:n (“CareerCompassi”, “me”) tarjoaman verkkopalvelun (“Palvelu”) käyttöä. Käyttämällä Palvelua hyväksyt nämä Ehdot kulloinkin voimassa olevina. Jos et hyväksy Ehtoja, älä käytä Palvelua. Palvelu on tekoälypohjainen urasuunnittelu- ja testijärjestelmä; tulokset ovat ohjeellisia eivätkä takaa tiettyä lopputulosta.
+Nämä käyttöehdot (“Ehdot”) säätelevät Urakompassi Oy:n (“Urakompassi”, “me”) tarjoaman verkkopalvelun (“Palvelu”) käyttöä. Käyttämällä Palvelua hyväksyt nämä Ehdot kulloinkin voimassa olevina. Jos et hyväksy Ehtoja, älä käytä Palvelua. Palvelu on tekoälypohjainen urasuunnittelu- ja testijärjestelmä; tulokset ovat ohjeellisia eivätkä takaa tiettyä lopputulosta.
 
 ## 2 Määritelmät
-“Palvelu”: CareerCompassin verkkopalvelu ja sen osat.  
+“Palvelu”: Urakompassin verkkopalvelu ja sen osat.  
 “Käyttäjä”: henkilö tai oppilaitos, joka käyttää Palvelua.  
 “Opettaja”: oppilaitoksen valtuuttama henkilö, joka hallinnoi testejä.  
 “Oppilaitos”: koulu tai muu organisaatio, joka hankkii käyttöoikeuden Palveluun.  
@@ -22,25 +22,25 @@ Nämä käyttöehdot (“Ehdot”) säätelevät CareerCompassi Oy:n (“CareerC
 Palvelua voivat käyttää vähintään 13‑vuotiaat. Alle 13‑vuotiaiden käyttö edellyttää huoltajan tai opettajan suostumusta ja valvontaa. Oppilaitos vastaa ikärajoista ja suostumuksista.
 
 ## 4 Sallitut käyttötarkoitukset
-Palvelu on tarkoitettu (i) henkilökohtaiseen urasuunnitteluun, (ii) opetuskäyttöön opettajan valvonnassa ja (iii) ammatilliseen ohjaukseen. Muu kaupallinen hyödyntäminen ilman CareerCompassin kirjallista lupaa on kielletty.
+Palvelu on tarkoitettu (i) henkilökohtaiseen urasuunnitteluun, (ii) opetuskäyttöön opettajan valvonnassa ja (iii) ammatilliseen ohjaukseen. Muu kaupallinen hyödyntäminen ilman Urakompassin kirjallista lupaa on kielletty.
 
 ## 5 Käyttöoikeuden sisältö
 Myönnämme ei‑yksinomaisen ja ei‑siirrettävän käyttöoikeuden Palveluun näiden Ehtojen mukaisesti. Käyttöoikeus ei anna omistusoikeutta Palvelun sisältöihin tai aineistoihin.
 
 ## 6 Immateriaalioikeudet
-Palvelun sisältö, testikysymykset, algoritmit, käyttöliittymä ja dokumentaatio ovat CareerCompassi Oy:n omaisuutta ja suojattuja lain mukaan. Yksityiskohtainen suoja on kuvattu Immateriaalioikeus- ja Kilpailijasuoja‑dokumentissa, joka on osa näitä Ehtoja. Reverse engineering ja datalouhinta on kielletty siltä osin kuin se ei perustu pakottavaan lakiin (esim. yhteentoimivuus).
+Palvelun sisältö, testikysymykset, algoritmit, käyttöliittymä ja dokumentaatio ovat Urakompassi Oy:n omaisuutta ja suojattuja lain mukaan. Yksityiskohtainen suoja on kuvattu Immateriaalioikeus- ja Kilpailijasuoja‑dokumentissa, joka on osa näitä Ehtoja. Reverse engineering ja datalouhinta on kielletty siltä osin kuin se ei perustu pakottavaan lakiin (esim. yhteentoimivuus).
 
 ## 7 Kielletty toiminta
 Käyttäjä sitoutuu olemaan: (i) kopioimatta tai tallentamatta testisisältöä, (ii) analysoimatta tai muokkaamatta algoritmeja, (iii) käyttämättä automatisoituja työkaluja (scraping, botit, data‑louhinta), (iv) hyödyntämättä Palvelua kilpailevan palvelun kehittämiseen, (v) kiertämättä teknisiä suojausmekanismeja.
 
 ## 8 Tekniset käyttörajoitukset
-CareerCompassi voi asettaa kohtuullisia käyttörajoituksia väärinkäytön estämiseksi. Ajantasaiset rajoitukset ilmoitetaan Palvelussa tai dokumentaatiossa ja niitä voidaan päivittää perustellusti (esim. kapasiteetti, väärinkäytökset).
+Urakompassi voi asettaa kohtuullisia käyttörajoituksia väärinkäytön estämiseksi. Ajantasaiset rajoitukset ilmoitetaan Palvelussa tai dokumentaatiossa ja niitä voidaan päivittää perustellusti (esim. kapasiteetti, väärinkäytökset).
 
 ## 9 Tietojen käsittely
-Tietosuojakäytännöt on kuvattu Tietosuojaselosteessa, joka on osa näitä Ehtoja. Oppilaitos toimii oppilaiden tietojen rekisterinpitäjänä; CareerCompassi toimii tietojen käsittelijänä oppilaitoksen lukuun ja rekisterinpitäjänä omille käyttäjätiedoilleen.
+Tietosuojakäytännöt on kuvattu Tietosuojaselosteessa, joka on osa näitä Ehtoja. Oppilaitos toimii oppilaiden tietojen rekisterinpitäjänä; Urakompassi toimii tietojen käsittelijänä oppilaitoksen lukuun ja rekisterinpitäjänä omille käyttäjätiedoilleen.
 
 ## 10 Maksut ja laskutus
-Maksullisen Palvelun osalta: maksuehto 14 pv netto laskun päiväyksestä. Viivästyskorko 8 % + viitekorko; muistutuskulut lain mukaisesti. CareerCompassi voi keskeyttää käyttöoikeuden, jos maksu viivästyy yli 14 päivää. Hinnat ALV‑käytännön mukaisesti. Maksettuja maksuja ei palauteta, paitsi pakottavan lain tai olennaisen palveluvirheen tapauksissa.
+Maksullisen Palvelun osalta: maksuehto 14 pv netto laskun päiväyksestä. Viivästyskorko 8 % + viitekorko; muistutuskulut lain mukaisesti. Urakompassi voi keskeyttää käyttöoikeuden, jos maksu viivästyy yli 14 päivää. Hinnat ALV‑käytännön mukaisesti. Maksettuja maksuja ei palauteta, paitsi pakottavan lain tai olennaisen palveluvirheen tapauksissa.
 
 ## 11 Palvelun saatavuus ja tuki
 Palvelu tarjotaan “best effort” ‑periaatteella. Suunnitelluista huoltotöistä ilmoitetaan etukäteen. Tuki vastaa sähköpostitse kahden arkipäivän kuluessa. Mahdolliset Premium‑tason tukietuudet kuvataan erillisissä palvelukuvauksissa.
@@ -49,7 +49,7 @@ Palvelu tarjotaan “best effort” ‑periaatteella. Suunnitelluista huoltotöi
 Voimme päivittää tai keskeyttää Palvelun tilapäisesti tai pysyvästi. Merkittävistä muutoksista ilmoitetaan kohtuullisessa ajassa Palvelussa tai sähköpostitse. Materiaalisiin sopimusehtoihin tehtävistä muutoksista ilmoitetaan 30 päivää etukäteen, ellei kyse ole lain tai tietoturvan edellyttämästä kiireellisestä muutoksesta.
 
 ## 13 Vastuunrajoitus
-Palvelu tarjotaan “sellaisenaan”. Emme takaa keskeytyksetöntä toimintaa tai tiettyä lopputulosta. CareerCompassin kokonaisvastuu rajoittuu määrään, joka vastaa viimeisen 12 kuukauden aikana maksettuja lisenssimaksuja, kuitenkin enintään [katto, esim. 20 000 €]. Rajoitus ei koske pakottavaa kuluttajansuojaa.
+Palvelu tarjotaan “sellaisenaan”. Emme takaa keskeytyksetöntä toimintaa tai tiettyä lopputulosta. Urakompassin kokonaisvastuu rajoittuu määrään, joka vastaa viimeisen 12 kuukauden aikana maksettuja lisenssimaksuja, kuitenkin enintään [katto, esim. 20 000 €]. Rajoitus ei koske pakottavaa kuluttajansuojaa.
 
 ## 14 Kuluttajien erityiset oikeudet
 Kuluttaja‑asiakkaalla on oikeus peruuttaa sopimus 14 päivän kuluessa sekä tehdä valitus kuluttajaviranomaiselle. Nämä oikeudet eivät koske oppilaitos- tai yritysasiakkaita.
@@ -70,8 +70,8 @@ Ilmoitamme tietoturvaloukkauksista ilman aiheetonta viivytystä ja viimeistään
 Voimme päivittää Ehtoja; uudet Ehdot tulevat voimaan ilmoitetusta päivästä. Palvelun käyttö muutosten jälkeen merkitsee hyväksymistä.
 
 ## 20 Yhteystiedot
-CareerCompassi Oy  
+Urakompassi Oy  
 Säterintie 6 C, [postinumero ja kaupunki], Finland  
 Y‑tunnus: [täydennä]  
-Sähköposti: support@careercompassi.com
+Sähköposti: support@urakompassi.com
 

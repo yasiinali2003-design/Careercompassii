@@ -53,7 +53,7 @@ export function ProgramDetailsModal({
       case 'excellent':
         return 'text-green-600';
       case 'good':
-        return 'text-blue-600';
+        return 'text-primary';
       case 'realistic':
         return 'text-yellow-600';
       case 'reach':
@@ -89,9 +89,9 @@ export function ProgramDetailsModal({
 
           {/* Key Information */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-blue-50 rounded-lg p-4">
+            <div className="bg-slate-50 rounded-lg p-4">
               <div className="flex items-center gap-2 mb-2">
-                <Calendar className="h-4 w-4 text-blue-600" />
+                <Calendar className="h-4 w-4 text-primary" />
                 <span className="text-sm font-semibold text-gray-700">Pisterajat</span>
               </div>
               <p className="text-lg font-bold text-gray-900">
@@ -116,7 +116,7 @@ export function ProgramDetailsModal({
 
           {/* Match Information */}
           {matchCount > 0 && (
-            <div className="bg-purple-50 rounded-lg p-4">
+            <div className="bg-secondary/10 rounded-lg p-4">
               <h3 className="font-semibold text-gray-900 mb-2">
                 Yhteensopivuus ammattisuosituksiesi kanssa
               </h3>

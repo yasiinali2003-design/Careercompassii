@@ -4,31 +4,32 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 200 20% 98%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
+    --primary: 197 46% 32%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 75% 60%;
     --secondary-foreground: 222.2 84% 4.9%;
     --muted: 210 40% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
+    --accent: 138 26% 39%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --ring: 197 46% 32%;
     --radius: 0.5rem;
-    
-    /* Brand colors for gradient */
-    --brand-blue: #2563EB;
-    --brand-purple: #A66CFF;
-    --base-white: #FFFFFF;
+
+    /* Brand colors - Nordic Trust palette */
+    --brand-blue: #2B5F75;
+    --brand-amber: #E8994A;
+    --brand-green: #4A7C59;
+    --base-white: #F8FAFB;
   }
 
   .dark {
@@ -61,7 +62,7 @@
   
   html, body {
     min-height: 100%;
-    background: #FFFFFF;
+    background: #F8FAFB;
   }
   
   body {
@@ -70,22 +71,13 @@
 }
 
 @layer components {
-  .glow-effect {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-  }
-  
-  .glow-effect:hover {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
-  }
-
-
   /* CTA blending effect */
   .cta-section {
     position: relative;
   }
 
   .cta-box {
-    background: #2563EB !important;
+    background: #2B5F75 !important;
     color: #fff !important;
     border-radius: 20px;
     border: none !important;

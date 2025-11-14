@@ -169,11 +169,11 @@ export default function SchoolPage() {
 
   if (loading && schools.length === 0) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
         <TeacherNav />
         <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
           <div className="text-center py-12">
-            <div className="animate-spin h-8 w-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto"></div>
+            <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
           </div>
         </div>
         <TeacherFooter />
@@ -182,7 +182,7 @@ export default function SchoolPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
       <TeacherNav />
       <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
         <h1 className="text-3xl font-bold mb-8">Koulun hallinta</h1>
@@ -200,7 +200,7 @@ export default function SchoolPage() {
                   onClick={() => selectSchool(school)}
                   className={`w-full text-left p-3 rounded-lg transition ${
                     selectedSchool?.school_id === school.school_id
-                      ? 'bg-blue-100 border-2 border-blue-500'
+                      ? 'bg-primary/10 border-2 border-primary'
                       : 'bg-gray-50 hover:bg-gray-100'
                   }`}
                 >
@@ -249,7 +249,7 @@ export default function SchoolPage() {
                         <span className="font-medium">Paketti:</span>{' '}
                         <span className="capitalize">{selectedSchool.package}</span>
                         {selectedSchool.package === 'premium' && (
-                          <span className="ml-2 text-xs bg-blue-600 text-white px-2 py-1 rounded">
+                          <span className="ml-2 text-xs bg-primary text-white px-2 py-1 rounded">
                             PREMIUM
                           </span>
                         )}
@@ -323,16 +323,16 @@ export default function SchoolPage() {
                   )}
 
                   {currentRole === 'admin' && selectedSchool.package !== 'premium' && (
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <div className="bg-slate-50 border border-primary/20 rounded-lg p-4">
                       <h4 className="font-semibold text-blue-900 mb-2">
                         Päivitä Premium-pakettiin
                       </h4>
-                      <p className="text-sm text-blue-800 mb-3">
+                      <p className="text-sm text-primary mb-3">
                         Premium-paketilla voit lisätä jopa 5 opettajaa yhteistyöhön.
                       </p>
                       <Button
                         onClick={() => router.push('/kouluille')}
-                        className="bg-blue-600 hover:bg-blue-700"
+                        className="bg-primary hover:bg-primary"
                       >
                         Tutustu Premium-pakettiin
                       </Button>

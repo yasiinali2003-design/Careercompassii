@@ -1,16 +1,16 @@
-# TIETOSUOJASELOSTE — CareerCompassi Oy
+# TIETOSUOJASELOSTE — Urakompassi Oy
 
-Versio 3.2  
-Viimeksi päivitetty: [päivämäärä]  
-Y‑tunnus: [täydennä]  
+Versio 3.2
+Viimeksi päivitetty: [päivämäärä]
+Y‑tunnus: [täydennä]
 Rekisteröity tavaramerkki: [täydennä]
 
 ---
 
 ## 1. Rekisterinpitäjä ja yhteystiedot
-CareerCompassi Oy, Säterintie 6 C, [postinumero ja kaupunki], Finland  
-Sähköposti: support@careercompassi.com  
-CareerCompassi toimii henkilötietojen käsittelijänä oppilaitosten puolesta sekä rekisterinpitäjänä omille käyttäjätiedoilleen. Oppilaitos on oppilaiden tietojen rekisterinpitäjä.
+Urakompassi Oy, Säterintie 6 C, [postinumero ja kaupunki], Finland
+Sähköposti: support@urakompassi.com
+Urakompassi toimii henkilötietojen käsittelijänä oppilaitosten puolesta sekä rekisterinpitäjänä omille käyttäjätiedoilleen. Oppilaitos on oppilaiden tietojen rekisterinpitäjä.
 
 ## 2. Käsittelyn tarkoitus ja oikeusperuste
 Käsittely koskee urapolku‑testipalvelua. Oikeusperusteet (GDPR 6 art.): suostumus (a), sopimus (b), lakisääteinen velvoite (c), oikeutettu etu (f) (esim. tietoturva ja väärinkäytösten estäminen).
@@ -23,10 +23,10 @@ Käsittely koskee urapolku‑testipalvelua. Oikeusperusteet (GDPR 6 art.): suost
 Testin toteutus ja tulosten laskenta; palvelun toiminnan, laadun ja turvallisuuden varmistaminen; algoritmien ja suositusten kehittäminen; anonymisoitu trendi‑ ja tilastodata. Ei markkinointia ilman nimenomaista suostumusta.
 
 ## 5. Datan omistajuus ja roolit
-Oppilaitos omistaa oppilaidensa henkilötiedot. CareerCompassi toimii käsittelijänä oppilaitoksen lukuun ja vastaa teknisestä tietoturvasta. Aggregoitu anonymisoitu data ja algoritmit ovat CareerCompassin omaisuutta.
+Oppilaitos omistaa oppilaidensa henkilötiedot. Urakompassi toimii käsittelijänä oppilaitoksen lukuun ja vastaa teknisestä tietoturvasta. Aggregoitu anonymisoitu data ja algoritmit ovat Urakompassin omaisuutta.
 
 ## 6. Luovutukset ja alikäsittelijät
-Tietoja ei luovuteta kolmansille, paitsi: Supabase (EU/Irlanti) pilvitietokanta ja autentikointi; lakisääteiset velvoitteet; oikeudellisten vaatimusten puolustaminen. Ajantasainen alikäsittelijälista ja DPA on saatavilla pyynnöstä: support@careercompassi.com. Tietoja ei siirretä EU/ETA‑alueen ulkopuolelle ilman asianmukaista suojamekanismia (esim. SCC).
+Tietoja ei luovuteta kolmansille, paitsi: Supabase (EU/Irlanti) pilvitietokanta ja autentikointi; lakisääteiset velvoitteet; oikeudellisten vaatimusten puolustaminen. Ajantasainen alikäsittelijälista ja DPA on saatavilla pyynnöstä: support@urakompassi.com. Tietoja ei siirretä EU/ETA‑alueen ulkopuolelle ilman asianmukaista suojamekanismia (esim. SCC).
 
 ## 7. Säilytys ja poistaminen
 Testitulokset: 3 vuotta suorituspäivästä; Premium‑oppilaitoksille 5 vuotta. Opettajien ja koulujen tiedot: käyttöoikeuden voimassaolo + 1 vuosi. Aggregoitu anonymisoitu data voidaan säilyttää toistaiseksi. Poistot toteutetaan automaattisissa sykleissä tai opettajan pyynnöstä luokkakohtaisesti.
@@ -53,8 +53,8 @@ Voimme päivittää tätä selostetta (esim. lakimuutokset, tekniset muutokset).
 Sovellettava laki: Suomen laki. Virallinen kieli on suomi; ristiriitatilanteessa suomenkielinen versio on ensisijainen.
 
 ## 15. Yhteystiedot
-CareerCompassi Oy, Säterintie 6 C, [postinumero ja kaupunki], Finland  
-Sähköposti: support@careercompassi.com
+Urakompassi Oy, Säterintie 6 C, [postinumero ja kaupunki], Finland  
+Sähköposti: support@urakompassi.com
 
 
 

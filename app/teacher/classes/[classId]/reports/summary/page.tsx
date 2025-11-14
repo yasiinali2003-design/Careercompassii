@@ -105,7 +105,7 @@ export default function ClassSummaryReport({ params }: { params: { classId: stri
           <button 
             onClick={handleDownloadPDF}
             disabled={generatingPDF || results.length === 0}
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {generatingPDF ? 'Luodaan PDF...' : '📥 Lataa PDF'}
           </button>
@@ -117,7 +117,7 @@ export default function ClassSummaryReport({ params }: { params: { classId: stri
           </button>
         </div>
         <header className="mb-6 border-b pb-4">
-          <h1 className="text-2xl font-bold">CareerCompassi - Luokan yhteenveto</h1>
+          <h1 className="text-2xl font-bold">Urakompassi - Luokan yhteenveto</h1>
           <p className="text-sm mt-1">Luokka: {classId.substring(0,8)} • Päivä: {new Date().toLocaleDateString('fi-FI')}</p>
           <p className="text-sm">Testejä yhteensä: {results.length}</p>
         </header>
@@ -156,7 +156,7 @@ export default function ClassSummaryReport({ params }: { params: { classId: stri
                   <div key={label} className="text-sm">
                     <div className="flex justify-between"><span>{label}</span><span>{Math.round(val)}%</span></div>
                     <div className="w-full h-2 bg-gray-200 rounded">
-                      <div className="h-2 bg-blue-600 rounded" style={{ width: `${Math.min(Math.max(val,0),100)}%` }} />
+                      <div className="h-2 bg-primary rounded" style={{ width: `${Math.min(Math.max(val,0),100)}%` }} />
                     </div>
                   </div>
                 ))}

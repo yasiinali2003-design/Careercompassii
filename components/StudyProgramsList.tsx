@@ -238,7 +238,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
     if (matchCount >= 2) {
       return { text: 'Erittäin hyvä yhteensopivuus', color: 'bg-green-100 text-green-800' };
     } else if (matchCount === 1) {
-      return { text: 'Hyvä yhteensopivuus', color: 'bg-blue-100 text-blue-800' };
+      return { text: 'Hyvä yhteensopivuus', color: 'bg-primary/10 text-primary' };
     }
     return null;
   };
@@ -254,7 +254,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
       case 'excellent':
         return { text: 'Erinomainen mahdollisuus', color: 'bg-green-100 text-green-800' };
       case 'good':
-        return { text: 'Hyvä mahdollisuus', color: 'bg-blue-100 text-blue-800' };
+        return { text: 'Hyvä mahdollisuus', color: 'bg-primary/10 text-primary' };
       case 'realistic':
         return { text: 'Realistinen mahdollisuus', color: 'bg-yellow-100 text-yellow-800' };
       case 'reach':
@@ -286,7 +286,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
 
     if (min !== null && points >= min) {
       return {
-        badge: { text: 'Hyvä mahdollisuus (historia)', color: 'bg-blue-100 text-blue-800' },
+        badge: { text: 'Hyvä mahdollisuus (historia)', color: 'bg-primary/10 text-primary' },
         detail: `Viimeisin pisteraja ${latest.year}: min ${formatPointValue(min)}, mediaani ${formatPointValue(latest.medianPoints)}.`,
         history: latest
       };
@@ -380,16 +380,16 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
             </div>
           </div>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-gray-600">
-            <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 font-medium text-blue-700">
+            <span className="inline-flex items-center gap-2 rounded-full bg-slate-50 px-3 py-1 font-medium text-primary">
               {loading ? 'Ladataan ohjelmia…' : `Näytetään ${programs.length} / ${total} ohjelmaa`}
             </span>
             <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1">
-              <span className="h-2 w-2 rounded-full bg-blue-500" />
+              <span className="h-2 w-2 rounded-full bg-slate-500" />
               {educationType === 'yliopisto' ? 'Yliopistohaku' : 'AMK-haku'}
             </span>
             {careerSlugs.length > 0 && (
-              <span className="inline-flex items-center gap-2 rounded-full bg-purple-50 px-3 py-1">
-                <span className="h-2 w-2 rounded-full bg-purple-500" />
+              <span className="inline-flex items-center gap-2 rounded-full bg-secondary/10 px-3 py-1">
+                <span className="h-2 w-2 rounded-full bg-secondary/100" />
                 {showAllCareers ? 'Kaikki alat näkyvissä' : 'Suositusalat (testituloksen mukaan)'}
               </span>
             )}
@@ -461,7 +461,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
         {/* Programs List */}
         {!loading && !error && programs.length === 0 && (
           <div className="text-center py-10">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-50 text-blue-500">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-slate-50 text-slate-500">
               <SearchX className="h-8 w-8" />
             </div>
             <h3 className="mt-4 text-lg font-semibold text-gray-900">Ei vielä sopivia tuloksia</h3>
@@ -515,7 +515,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
         )}
 
         {!loading && !error && programs.length > 0 && (
-          <div className="rounded-lg border border-blue-100 bg-blue-50/60 px-4 py-3 text-xs text-blue-800 mb-4">
+          <div className="rounded-lg border border-blue-100 bg-slate-50/60 px-4 py-3 text-xs text-primary mb-4">
             <p className="font-medium">Vinkki</p>
             <p>
               Voit käyttää skenaariotyökalua nähdäksesi, miten arvosanojen korottaminen vaikuttaisi pisteisiisi ja avaisi lisää ohjelmia. Jos etsit vanhoja tuloksia, tarkista että pisteesi on laskettu nykyisillä arvosanoilla.
@@ -526,7 +526,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
               </p>
             )}
             {isCareerFilterRelaxed && !onlyReachPrograms && (
-              <p className="mt-2 text-blue-700">
+              <p className="mt-2 text-primary">
                 Näytetään myös muut alat suositusten lisäksi. Voit palata suppeampaan näkymään yllä olevalla painikkeella.
               </p>
             )}

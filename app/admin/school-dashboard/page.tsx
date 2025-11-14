@@ -84,7 +84,7 @@ export default function SchoolDashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20">
         <div className="container mx-auto px-4 py-12">
           <div className="text-center">
             <p>Ladataan analytiikkaa...</p>
@@ -96,7 +96,7 @@ export default function SchoolDashboardPage() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20">
         <div className="container mx-auto px-4 py-12">
           <div className="text-center text-red-600">
             <AlertCircle className="h-12 w-12 mx-auto mb-4" />
@@ -112,7 +112,7 @@ export default function SchoolDashboardPage() {
 
   if (!analytics) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20">
         <div className="container mx-auto px-4 py-12">
           <div className="text-center">
             <p>Ei dataa saatavilla.</p>
@@ -123,7 +123,7 @@ export default function SchoolDashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20">
       <nav className="border-b border-gray-200 bg-white/80 backdrop-blur-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="hover:opacity-80 transition-opacity">
@@ -260,7 +260,7 @@ export default function SchoolDashboardPage() {
               <ul className="space-y-2">
                 {analytics.insights.map((insight, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="text-blue-600 mr-2">•</span>
+                    <span className="text-primary mr-2">•</span>
                     <span>{insight}</span>
                   </li>
                 ))}
@@ -287,7 +287,7 @@ export default function SchoolDashboardPage() {
                     <div className="flex items-center gap-4">
                       <div className="w-32 bg-gray-200 rounded-full h-2">
                         <div
-                          className="bg-blue-600 h-2 rounded-full"
+                          className="bg-primary h-2 rounded-full"
                           style={{ width: `${career.percentage}%` }}
                         />
                       </div>
@@ -340,7 +340,7 @@ export default function SchoolDashboardPage() {
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-3">
                           <div
-                            className="bg-blue-600 h-3 rounded-full"
+                            className="bg-primary h-3 rounded-full"
                             style={{ width: `${lukioPct}%` }}
                           />
                         </div>
@@ -368,7 +368,7 @@ export default function SchoolDashboardPage() {
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-3">
                           <div
-                            className="bg-purple-600 h-3 rounded-full"
+                            className="bg-secondary h-3 rounded-full"
                             style={{ width: `${kansanopistoPct}%` }}
                           />
                         </div>
@@ -402,7 +402,7 @@ export default function SchoolDashboardPage() {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3">
                     <div
-                      className="bg-blue-600 h-3 rounded-full"
+                      className="bg-primary h-3 rounded-full"
                       style={{ width: `${Math.min(Math.max(dim.value, 0), 100)}%` }}
                     />
                   </div>
@@ -427,7 +427,7 @@ export default function SchoolDashboardPage() {
                     <div className="flex items-center gap-4">
                       <div className="w-48 bg-gray-200 rounded-full h-2">
                         <div
-                          className="bg-blue-600 h-2 rounded-full"
+                          className="bg-primary h-2 rounded-full"
                           style={{
                             width: `${Math.min(
                               (month.tests / Math.max(...analytics.trends.byMonth.map((m) => m.tests || 1))) * 100,

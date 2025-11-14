@@ -26,8 +26,8 @@ export default function CareerCard({ career }: CareerCardProps) {
 
   const getOutlookColor = (status: string) => {
     switch (status) {
-      case "kasvaa": return "bg-green-100 text-green-800 border-green-200";
-      case "vakaa": return "bg-blue-100 text-blue-800 border-blue-200";
+      case "kasvaa": return "bg-accent/10 text-accent border-accent/20";
+      case "vakaa": return "bg-primary/10 text-primary border-primary/20";
       case "laskee": return "bg-red-100 text-red-800 border-red-200";
       case "vaihtelee": return "bg-yellow-100 text-yellow-800 border-yellow-200";
       default: return "bg-gray-100 text-gray-800 border-gray-200";
@@ -199,7 +199,7 @@ export default function CareerCard({ career }: CareerCardProps) {
                       className="h-6 w-6 p-0"
                     >
                       {copiedLink === 'salary' ? (
-                        <Check className="h-3 w-3 text-green-600" />
+                        <Check className="h-3 w-3 text-accent" />
                       ) : (
                         <Copy className="h-3 w-3" />
                       )}
@@ -237,7 +237,7 @@ export default function CareerCard({ career }: CareerCardProps) {
                       className="h-6 w-6 p-0"
                     >
                       {copiedLink === 'outlook' ? (
-                        <Check className="h-3 w-3 text-green-600" />
+                        <Check className="h-3 w-3 text-accent" />
                       ) : (
                         <Copy className="h-3 w-3" />
                       )}

@@ -210,4 +210,4 @@ If you encounter issues:
 
 ## License
 
-This script is part of the CareerCompassi project.
+This script is part of the Urakompassi project.

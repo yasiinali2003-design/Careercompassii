@@ -54,7 +54,7 @@ export default function StudentLoginPage({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-teal-50/20 p-8">
       <div className="max-w-md mx-auto mt-20">
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h1 className="text-3xl font-bold mb-2">Kirjaudu testiin</h1>
@@ -89,14 +89,14 @@ export default function StudentLoginPage({
 
             <button
               onClick={handleLogin}
-              className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+              className="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary transition font-semibold"
             >
               Aloita testi
             </button>
           </div>
 
-          <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <p className="text-sm text-blue-800">
+          <div className="mt-6 bg-slate-50 border border-primary/20 rounded-lg p-4">
+            <p className="text-sm text-primary">
               💡 <strong>Vinkki:</strong> Jos sinulla ei ole PIN-koodia, ota yhteyttä oppilaanumero-opettajaasi.
             </p>
           </div>

@@ -2,7 +2,7 @@
 
 ## Overview
 
-A comprehensive Node.js script system has been created to enhance all 361 careers in the CareerCompassi database to be Finland-wide and age-neutral.
+A comprehensive Node.js script system has been created to enhance all 361 careers in the Urakompassi database to be Finland-wide and age-neutral.
 
 ## Files Created
 
@@ -337,7 +337,7 @@ For issues or questions:
 
 ## License
 
-Part of CareerCompassi project.
+Part of Urakompassi project.
 
 ---
 

@@ -1,4 +1,4 @@
-# Legal Documents Review - CareerCompassi
+# Legal Documents Review - Urakompassi
 
 ## 📋 Dokumenttien yleisarvio
 
@@ -33,7 +33,7 @@ Dokumentit ovat **hyvin agressiivisia** ja **lakiyrityksen suunnittelemia**, mut
 
 ### 3. **GDPR-riskit**
 **Ongelma:**
-- Sanoo "aggregaatiot ja datarakenteet ovat CareerCompassin omaisuutta"
+- Sanoo "aggregaatiot ja datarakenteet ovat Urakompassin omaisuutta"
 - GDPR:ssä voi olla ristiriitoja, jos koululla on vastuu oppilaiden datasta
 - "Tietyt oikeudet eivät teknisesti toteudu" - ei ole GDPR-yhteensopivaa
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This automated Node.js script batch-enhances career data in the CareerCompassi platform by systematically updating career descriptions, impact statements, employer lists, and work conditions for 62 careers.
+This automated Node.js script batch-enhances career data in the Urakompassi platform by systematically updating career descriptions, impact statements, employer lists, and work conditions for 62 careers.
 
 ## Quick Start
 
@@ -234,4 +234,4 @@ For issues or questions about the script:
 
 ## License
 
-This script is part of the CareerCompassi project.
+This script is part of the Urakompassi project.

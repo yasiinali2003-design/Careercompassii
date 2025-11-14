@@ -344,10 +344,10 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
       {/* Progress Save Notification */}
       {showSaveNotification && (
         <div className="fixed top-4 right-4 z-50 animate-in slide-in-from-right duration-300">
-          <div className="rounded-lg bg-blue-50 border border-blue-200 px-4 py-3 shadow-lg">
+          <div className="rounded-lg bg-slate-50 border border-primary/20 px-4 py-3 shadow-lg">
             <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
-              <p className="text-sm text-blue-800 font-medium">
+              <div className="h-2 w-2 rounded-full bg-slate-500 animate-pulse"></div>
+              <p className="text-sm text-primary font-medium">
                 Tallensimme vastauksesi – voit jatkaa myöhemmin tästä kohdasta.
               </p>
             </div>
@@ -433,10 +433,10 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
       </p>
       
       {hasSavedProgress && (
-        <div className="mt-6 rounded-lg bg-blue-50 border border-blue-200 p-4">
+        <div className="mt-6 rounded-lg bg-slate-50 border border-primary/20 p-4">
           <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-            <p className="text-sm text-blue-800 font-medium">
+            <div className="h-2 w-2 rounded-full bg-slate-500"></div>
+            <p className="text-sm text-primary font-medium">
               Löysimme tallennetut vastauksesi – voit jatkaa siitä mihin jäit!
             </p>
           </div>
@@ -504,7 +504,7 @@ const RatingScale = ({ value, onChange }: { value: number; onChange: (val: numbe
           className={
             "rounded-xl border px-3 py-2 text-sm transition " +
             (value === idx + 1
-              ? "border-blue-600 bg-blue-50 font-semibold"
+              ? "border-primary bg-slate-50 font-semibold"
               : "border-slate-300 hover:bg-slate-50")
           }
         >
@@ -546,7 +546,7 @@ const QuestionScreen = ({
         </p>
         <div className="mt-4 h-2 w-full rounded-full bg-slate-200">
           <div
-            className="h-2 rounded-full bg-blue-600 transition-all duration-300"
+            className="h-2 rounded-full bg-primary transition-all duration-300"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -574,7 +574,7 @@ const QuestionScreen = ({
         <button
           onClick={onNext}
           disabled={answers[index] === 0}
-          className="rounded-xl bg-blue-600 px-6 py-2 text-white font-medium shadow hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="rounded-xl bg-primary px-6 py-2 text-white font-medium shadow hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {index === total - 1 ? "Valmis" : "Seuraava"}
         </button>
@@ -1121,7 +1121,7 @@ const Summary = ({
                     <h4 className="text-lg font-medium text-[#0F172A] mb-3">Alakohtaiset taidot</h4>
                     <div className="flex flex-wrap gap-2">
                       {skillsBreakdown.industry.map((skill: string, i: number) => (
-                        <span key={i} className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
+                        <span key={i} className="px-3 py-1 bg-secondary/20 text-purple-800 rounded-full text-sm font-medium">
                           {skill}
                         </span>
                       ))}
@@ -1343,7 +1343,7 @@ const Summary = ({
         <button 
           onClick={sendToBackend}
           disabled={loading}
-          className="w-full rounded-xl bg-blue-600 px-6 py-3 text-white font-medium shadow hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full rounded-xl bg-primary px-6 py-3 text-white font-medium shadow hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {loading ? "Analysoidaan vastauksiasi..." : "Saat henkilökohtaisen analyysin"}
         </button>

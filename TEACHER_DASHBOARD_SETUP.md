@@ -6,7 +6,7 @@ Run the SQL in your Supabase project to create the tables and policies.
 
 ### Instructions:
 1. Go to: https://supabase.com/dashboard
-2. Select your CareerCompassi project
+2. Select your Urakompassi project
 3. Go to **SQL Editor**
 4. Click **New Query**
 5. Copy ALL content from: `supabase-teacher-dashboard.sql`

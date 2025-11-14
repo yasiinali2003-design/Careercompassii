@@ -46,17 +46,17 @@ export async function generateMetadata({ params }: CareerPageProps): Promise<Met
   
   if (!career) {
     return {
-      title: 'Ammattia ei löytynyt | CareerCompassi',
-      description: 'Hakemaasi ammattia ei löytynyt CareerCompassin Urakirjastosta.',
+      title: 'Ammattia ei löytynyt | Urakompassi',
+      description: 'Hakemaasi ammattia ei löytynyt Urakompassin Urakirjastosta.',
     };
   }
 
   return {
-    title: `${career.title} | CareerCompassi`,
+    title: `${career.title} | Urakompassi`,
     description: career.summary,
     keywords: `${career.title}, ${career.industry.join(', ')}, ${career.educationLevel.join(', ')}, ura, ammatti`,
     openGraph: {
-      title: `${career.title} | CareerCompassi`,
+      title: `${career.title} | Urakompassi`,
       description: career.summary,
       type: 'article',
     },

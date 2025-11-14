@@ -61,7 +61,7 @@ export default function NewClassPage() {
 
   if (classData) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
         <TeacherNav />
         <div className="flex-1 max-w-4xl mx-auto p-8 w-full">
           <div className="bg-white rounded-xl shadow-lg p-8">
@@ -71,7 +71,7 @@ export default function NewClassPage() {
               
               <div>
                 <label className="font-semibold text-gray-700">Julkinen linkki (anonyymi):</label>
-                <p className="text-blue-600 font-mono text-sm bg-blue-50 p-2 rounded break-all">
+                <p className="text-primary font-mono text-sm bg-slate-50 p-2 rounded break-all">
                   https://careercompassii.vercel.app/{classData.classToken}
                 </p>
               </div>
@@ -86,7 +86,7 @@ export default function NewClassPage() {
             <div className="flex gap-4">
               <button
                 onClick={() => router.push(`/teacher/classes/${classData.classId}`)}
-                className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+                className="flex-1 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary transition"
               >
                 Siirry luokkahallintaan
               </button>
@@ -105,7 +105,7 @@ export default function NewClassPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
       <TeacherNav />
       <div className="flex-1 max-w-2xl mx-auto p-8 w-full">
         <div className="bg-white rounded-xl shadow-lg p-8">
@@ -122,7 +122,7 @@ export default function NewClassPage() {
                 <ol className="list-decimal list-inside space-y-1 ml-2">
                   <li>Tarkista verkkoyhteys ja yritä uudelleen</li>
                   <li>Varmista että olet kirjautunut sisään</li>
-                  <li>Jos ongelma jatkuu, ota yhteyttä tukeen: support@careercompassi.com</li>
+                  <li>Jos ongelma jatkuu, ota yhteyttä tukeen: support@urakompassi.com</li>
                 </ol>
                 <p className="mt-2">Tarvitsetko apua? Avaa FAQ-ikkuna yläpalkin kautta.</p>
               </div>
@@ -150,7 +150,7 @@ export default function NewClassPage() {
             <button
               onClick={handleCreate}
               disabled={loading}
-              className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
+              className="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed transition"
             >
               {loading ? 'Luodaan...' : 'Luo luokka'}
             </button>
@@ -165,9 +165,9 @@ export default function NewClassPage() {
 
           <div className="mt-8 space-y-4">
             
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div className="bg-slate-50 border border-primary/20 rounded-lg p-4">
               <h3 className="font-semibold text-blue-900 mb-2">Mitä tapahtuu?</h3>
-              <ul className="text-sm text-blue-800 space-y-1">
+              <ul className="text-sm text-primary space-y-1">
                 <li>1. Luo luokka → saat luokkatunnuksen ja julkisen linkin</li>
                 <li>2. Luo PIN-koodit → jaa oppilaille</li>
                 <li>3. Syötä nimilista (vain omalle laitteellesi)</li>

@@ -4,7 +4,7 @@ AI-powered career guidance platform for Finnish students and young adults.
 
 ## 🎯 Overview
 
-CareerCompassi is a modern web application that helps Finnish students and young adults discover their ideal career paths through AI-powered personality analysis and career matching. The platform provides personalized career recommendations based on comprehensive assessments.
+Urakompassi is a modern web application that helps Finnish students and young adults discover their ideal career paths through AI-powered personality analysis and career matching. The platform provides personalized career recommendations based on comprehensive assessments.
 
 ## ✨ Features
 
@@ -107,7 +107,7 @@ Use the same code on `/teacher/login` to unlock class management, PIN generation
 
 ## 🎨 Design Philosophy
 
-CareerCompassi follows a **professional, Scandinavian-minimal design** approach:
+Urakompassi follows a **professional, Scandinavian-minimal design** approach:
 
 - **Clean Typography**: Consistent font hierarchy
 - **Subtle Animations**: Smooth, professional transitions
@@ -174,4 +174,4 @@ Built by three 22-year-old developers who understand the challenges of career de
 
 ---
 
-**CareerCompassi** - Find your future vibe. 🧭
+**Urakompassi** - Find your future vibe. 🧭

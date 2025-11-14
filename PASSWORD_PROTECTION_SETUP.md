@@ -60,7 +60,7 @@ Your default development password is still `CCYHAHAIKUNZIBBI22!`, and the Playwr
 2. **Test production**:
    - Add `SITE_PASSWORD` to Vercel environment variables
    - Redeploy
-   - Visit `https://www.careercompassi.com` - should show password prompt
+   - Visit `https://www.urakompassi.com` - should show password prompt
 
 ## 🚫 Disable Password Protection
 

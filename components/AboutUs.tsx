@@ -254,7 +254,7 @@ const MissionIntro = () => (
       </h2>
       <div className="space-y-4 max-w-prose">
         <p className="text-[#334155] leading-relaxed text-lg">
-          CareerCompassin tehtävänä on auttaa nuoria tunnistamaan vahvuutensa ja löytämään oman suuntansa, sellaisen, joka tuntuu aidosti omalta.
+          Urakompassin tehtävänä on auttaa nuoria tunnistamaan vahvuutensa ja löytämään oman suuntansa, sellaisen, joka tuntuu aidosti omalta.
         </p>
         <p className="text-[#334155] leading-relaxed text-lg">
           Uskomme, että jokaisella on potentiaali rakentaa merkityksellinen tulevaisuus. Tarvitaan vain oikea kompassi näyttämään tie eteenpäin.
@@ -301,7 +301,7 @@ const ApproachSection = () => (
           Yhdistämme tekoälyn ja empatian.
         </p>
         <p className="text-[#334155] leading-relaxed text-lg">
-          CareerCompassi hyödyntää dataa ja modernia teknologiaa, mutta säilyttää aina inhimillisen näkökulman.
+          Urakompassi hyödyntää dataa ja modernia teknologiaa, mutta säilyttää aina inhimillisen näkökulman.
         </p>
         <p className="text-[#334155] leading-relaxed text-lg">
           Tekoäly analysoi vastauksia vertaamalla niitä tuhansiin uraprofiileihin ja löytää koulutuspolkuja, jotka vastaavat käyttäjän arvoja, kiinnostuksia ja vahvuuksia.
@@ -332,7 +332,7 @@ const MeistSection = () => (
           Olemme nähneet läheltä, kuinka monet ystävämme lähtivät opiskelemaan hyväksynnän tunteen tai sosiaalisen paineen vuoksi, eivät aidosta kiinnostuksesta.
         </p>
         <p className="text-[#334155] leading-relaxed text-lg">
-          CareerCompassin taustalla on aito halu ratkaista ongelma, jonka olemme itse kokeneet.
+          Urakompassin taustalla on aito halu ratkaista ongelma, jonka olemme itse kokeneet.
         </p>
         <p className="text-[#334155] leading-relaxed text-lg">
           Meidän vahvuutemme on syvä ymmärrys kohderyhmästä, motivaatio tehdä yhteiskunnallisesti merkittävää työtä ja into rakentaa ratkaisu, joka on sekä inhimillinen että teknisesti kehittynyt.
@@ -351,13 +351,13 @@ const ContactSection = () => (
       </h2>
       <div className="space-y-4 max-w-prose">
         <p className="text-[#334155] leading-relaxed text-lg">
-          <strong>Sähköposti:</strong> support@careercompassi.fi
+          <strong>Sähköposti:</strong> support@urakompassi.fi
         </p>
         <p className="text-[#334155] leading-relaxed text-lg">
-          <strong>Yhteistyö kouluille ja opettajille:</strong> Ota yhteyttä, jos haluat tuoda CareerCompassin osaksi opetusta tai opiskelijapalveluita.
+          <strong>Yhteistyö kouluille ja opettajille:</strong> Ota yhteyttä, jos haluat tuoda Urakompassin osaksi opetusta tai opiskelijapalveluita.
         </p>
         <p className="text-[#334155] leading-relaxed text-lg">
-          <strong>Verkkosivut:</strong> careercompassi.com
+          <strong>Verkkosivut:</strong> urakompassi.com
         </p>
       </div>
     </div>

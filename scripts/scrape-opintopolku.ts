@@ -69,7 +69,7 @@ async function fetchFromSearchEndpoint(
     const response = await fetch(url, {
       headers: {
         'Accept': 'application/json',
-        'User-Agent': 'Mozilla/5.0 (compatible; CareerCompassi/1.0)',
+        'User-Agent': 'Mozilla/5.0 (compatible; Urakompassi/1.0)',
         'Referer': 'https://opintopolku.fi/'
       }
     });

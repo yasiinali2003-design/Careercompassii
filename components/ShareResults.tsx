@@ -69,7 +69,7 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'CareerCompassi - Urapolku-testi',
+          title: 'Urakompassi - Urapolku-testi',
           text: shareText,
           url: referralUrl,
         });
@@ -100,7 +100,7 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
   };
 
   return (
-    <div className="mt-8 p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg border border-blue-200">
+    <div className="mt-8 p-6 bg-gradient-to-br from-slate-50 to-teal-50/20 rounded-lg border border-primary/20">
       <div className="text-center mb-4">
         <h3 className="text-lg font-semibold text-gray-900 mb-2">
           Jaa tuloksesi kavereiden kanssa
@@ -151,7 +151,7 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
           <Button
             onClick={handleShare}
             variant="default"
-            className="bg-blue-600 hover:bg-blue-700"
+            className="bg-primary hover:bg-primary"
           >
             <Share2 className="h-4 w-4 mr-2" />
             Jaa
@@ -164,7 +164,7 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
           variant="outline"
           className="bg-white hover:bg-gray-50"
         >
-          <Facebook className="h-4 w-4 mr-2 text-blue-600" />
+          <Facebook className="h-4 w-4 mr-2 text-primary" />
           Facebook
         </Button>
 
@@ -182,7 +182,7 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
           variant="outline"
           className="bg-white hover:bg-gray-50"
         >
-          <Linkedin className="h-4 w-4 mr-2 text-blue-700" />
+          <Linkedin className="h-4 w-4 mr-2 text-primary" />
           LinkedIn
         </Button>
       </div>

@@ -19,7 +19,7 @@ async function sendEmail(notification: EmailNotification): Promise<boolean> {
     // const { Resend } = require('resend');
     // const resend = new Resend(process.env.RESEND_API_KEY);
     // await resend.emails.send({
-    //   from: process.env.FROM_EMAIL || 'noreply@careercompassi.com',
+    //   from: process.env.FROM_EMAIL || 'noreply@urakompassi.com',
     //   to: notification.to,
     //   subject: notification.subject,
     //   html: notification.html,
@@ -32,7 +32,7 @@ async function sendEmail(notification: EmailNotification): Promise<boolean> {
     // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     // await sgMail.send({
     //   to: notification.to,
-    //   from: process.env.FROM_EMAIL || 'noreply@careercompassi.com',
+    //   from: process.env.FROM_EMAIL || 'noreply@urakompassi.com',
     //   subject: notification.subject,
     //   html: notification.html,
     //   text: notification.text,
@@ -51,7 +51,7 @@ async function sendEmail(notification: EmailNotification): Promise<boolean> {
     //   },
     // });
     // await transporter.sendMail({
-    //   from: process.env.FROM_EMAIL || 'noreply@careercompassi.com',
+    //   from: process.env.FROM_EMAIL || 'noreply@urakompassi.com',
     //   to: notification.to,
     //   subject: notification.subject,
     //   html: notification.html,

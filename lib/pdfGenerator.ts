@@ -77,7 +77,7 @@ export async function generateStudentPDF(data: StudentReportData): Promise<Blob>
   doc.setFontSize(20);
   doc.setTextColor(37, 99, 235); // Blue color
   doc.setFont('helvetica', 'bold');
-  doc.text('CareerCompassi', margin, yPos);
+  doc.text('Urakompassi', margin, yPos);
   
   yPos += 8;
   doc.setFontSize(14);
@@ -219,7 +219,7 @@ export async function generateStudentPDF(data: StudentReportData): Promise<Blob>
   doc.setFontSize(8);
   doc.setTextColor(150, 150, 150);
   doc.setFont('helvetica', 'italic');
-  doc.text('CareerCompassi - Urapolun löytäminen AI:n avulla', pageWidth / 2, footerY, { align: 'center' });
+  doc.text('Urakompassi - Urapolun löytäminen AI:n avulla', pageWidth / 2, footerY, { align: 'center' });
   doc.text(`Luotu: ${new Date().toLocaleDateString('fi-FI')}`, pageWidth / 2, footerY + 5, { align: 'center' });
 
   return doc.output('blob');
@@ -245,7 +245,7 @@ export async function generateClassSummaryPDF(data: ClassSummaryData): Promise<B
   doc.setFontSize(20);
   doc.setTextColor(37, 99, 235);
   doc.setFont('helvetica', 'bold');
-  doc.text('CareerCompassi', margin, yPos);
+  doc.text('Urakompassi', margin, yPos);
   
   yPos += 8;
   doc.setFontSize(14);
@@ -386,7 +386,7 @@ export async function generateClassSummaryPDF(data: ClassSummaryData): Promise<B
   doc.setFontSize(8);
   doc.setTextColor(150, 150, 150);
   doc.setFont('helvetica', 'italic');
-  doc.text('CareerCompassi - Urapolun löytäminen AI:n avulla', pageWidth / 2, footerY, { align: 'center' });
+  doc.text('Urakompassi - Urapolun löytäminen AI:n avulla', pageWidth / 2, footerY, { align: 'center' });
   doc.text(`Luotu: ${new Date().toLocaleDateString('fi-FI')}`, pageWidth / 2, footerY + 5, { align: 'center' });
 
   return doc.output('blob');
@@ -591,7 +591,7 @@ export async function generateParentReport(data: ParentReportData): Promise<Blob
   doc.setFontSize(8);
   doc.setTextColor(150, 150, 150);
   doc.setFont('helvetica', 'italic');
-  doc.text('CareerCompassi - Urapolun löytäminen AI:n avulla', pageWidth / 2, footerY, { align: 'center' });
+  doc.text('Urakompassi - Urapolun löytäminen AI:n avulla', pageWidth / 2, footerY, { align: 'center' });
   doc.text(`Luotu: ${new Date().toLocaleDateString('fi-FI')}`, pageWidth / 2, footerY + 5, { align: 'center' });
 
   return doc.output('blob');

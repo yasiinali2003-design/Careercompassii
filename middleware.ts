@@ -83,7 +83,7 @@ export function middleware(request: NextRequest) {
   // Allow admin access in localhost
   const localHosts = new Set(['localhost', '127.0.0.1', '0.0.0.0', '::1']);
   const isLocalhost = localHosts.has(request.nextUrl.hostname);
-  const isProduction = request.nextUrl.hostname.includes('careercompassi.com') || request.nextUrl.hostname.includes('vercel.app');
+  const isProduction = request.nextUrl.hostname.includes('urakompassi.com') || request.nextUrl.hostname.includes('vercel.app');
 
   if (pathname === '/kouluille') {
     if (isProduction) {

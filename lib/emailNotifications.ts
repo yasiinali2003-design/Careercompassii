@@ -70,7 +70,7 @@ export function generateClassCompletionEmail(data: ClassCompletionAlert): EmailN
     <body>
       <div class="container">
         <div class="header">
-          <h1>CareerCompassi</h1>
+          <h1>Urakompassi</h1>
           <p>Testin edistymisen ilmoitus</p>
         </div>
         <div class="content">
@@ -90,12 +90,12 @@ export function generateClassCompletionEmail(data: ClassCompletionAlert): EmailN
             <p>${data.totalStudents - data.completedStudents} oppilasta ei ole vielä suorittanut testiä.</p>
           `}
           
-          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://careercompassi.com'}/teacher/classes/${data.classId}" class="button">
+          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://urakompassi.com'}/teacher/classes/${data.classId}" class="button">
             Näytä tulokset →
           </a>
           
           <div class="footer">
-            <p>CareerCompassi - Urapolun löytäminen AI:n avulla</p>
+            <p>Urakompassi - Urapolun löytäminen AI:n avulla</p>
             <p>Tämä on automaattinen ilmoitus. Älä vastaa tähän viestiin.</p>
           </div>
         </div>
@@ -105,14 +105,14 @@ export function generateClassCompletionEmail(data: ClassCompletionAlert): EmailN
   `;
 
   const text = `
-CareerCompassi - Testin edistyminen
+Urakompassi - Testin edistyminen
 ${data.className}
 
 Testin suorittanut: ${data.completedStudents} / ${data.totalStudents} oppilasta (${completionPercent}%)
 
 ${isComplete ? '✅ Kaikki oppilaat ovat suorittaneet testin!' : `${data.totalStudents - data.completedStudents} oppilasta ei ole vielä suorittanut testiä.`}
 
-Näytä tulokset: ${process.env.NEXT_PUBLIC_APP_URL || 'https://careercompassi.com'}/teacher/classes/${data.classId}
+Näytä tulokset: ${process.env.NEXT_PUBLIC_APP_URL || 'https://urakompassi.com'}/teacher/classes/${data.classId}
   `;
 
   return {
@@ -165,12 +165,12 @@ export function generateAtRiskStudentEmail(data: AtRiskStudentAlert): EmailNotif
           
           <p><strong>Suositus:</strong> Ota yhteyttä oppilaaseen ja keskustele hänen kiinnostuksistaan ja tulevaisuudensuunnitelmistaan.</p>
           
-          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://careercompassi.com'}/teacher/classes/${data.classId}" class="button">
+          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://urakompassi.com'}/teacher/classes/${data.classId}" class="button">
             Näytä oppilaan raportti →
           </a>
           
           <div class="footer">
-            <p>CareerCompassi - Urapolun löytäminen AI:n avulla</p>
+            <p>Urakompassi - Urapolun löytäminen AI:n avulla</p>
             <p>Tämä on automaattinen ilmoitus. Älä vastaa tähän viestiin.</p>
           </div>
         </div>
@@ -180,7 +180,7 @@ export function generateAtRiskStudentEmail(data: AtRiskStudentAlert): EmailNotif
   `;
 
   const text = `
-CareerCompassi - Oppilaan tuki tarvitaan
+Urakompassi - Oppilaan tuki tarvitaan
 ${data.className}
 
 Oppilas: ${data.studentName}
@@ -191,7 +191,7 @@ ${reasonsList}
 
 Suositus: Ota yhteyttä oppilaaseen ja keskustele hänen kiinnostuksistaan.
 
-Näytä oppilaan raportti: ${process.env.NEXT_PUBLIC_APP_URL || 'https://careercompassi.com'}/teacher/classes/${data.classId}
+Näytä oppilaan raportti: ${process.env.NEXT_PUBLIC_APP_URL || 'https://urakompassi.com'}/teacher/classes/${data.classId}
   `;
 
   return {
@@ -268,12 +268,12 @@ export function generateWeeklySummaryEmail(data: WeeklySummary): EmailNotificati
             </div>
           ` : ''}
           
-          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://careercompassi.com'}/teacher/classes/${data.classId}" class="button">
+          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://urakompassi.com'}/teacher/classes/${data.classId}" class="button">
             Näytä kaikki tulokset →
           </a>
           
           <div class="footer">
-            <p>CareerCompassi - Urapolun löytäminen AI:n avulla</p>
+            <p>Urakompassi - Urapolun löytäminen AI:n avulla</p>
             <p>Tämä on automaattinen viikon yhteenveto. Älä vastaa tähän viestiin.</p>
           </div>
         </div>
@@ -283,7 +283,7 @@ export function generateWeeklySummaryEmail(data: WeeklySummary): EmailNotificati
   `;
 
   const text = `
-CareerCompassi - Viikon yhteenveto
+Urakompassi - Viikon yhteenveto
 ${data.className}
 ${data.weekStart} - ${data.weekEnd}
 
@@ -296,7 +296,7 @@ ${data.topCareers.length > 0 ? `Yleisimmät ammatit:\n${topCareersList}` : ''}
 
 ${data.atRiskStudents > 0 ? `⚠️ ${data.atRiskStudents} oppilasta tarvitsee tukea. Tarkista oppilaiden raportit.` : ''}
 
-Näytä kaikki tulokset: ${process.env.NEXT_PUBLIC_APP_URL || 'https://careercompassi.com'}/teacher/classes/${data.classId}
+Näytä kaikki tulokset: ${process.env.NEXT_PUBLIC_APP_URL || 'https://urakompassi.com'}/teacher/classes/${data.classId}
   `;
 
   return {

@@ -131,7 +131,7 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
           <button 
             onClick={handleDownloadPDF}
             disabled={generatingPDF || !result}
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {generatingPDF ? 'Luodaan PDF...' : '📥 Lataa PDF'}
           </button>
@@ -151,7 +151,7 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
         </div>
 
         {/* Teacher Notes Input */}
-        <div className="no-print mb-4 bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <div className="no-print mb-4 bg-slate-50 border border-primary/20 rounded-lg p-4">
           <label className="block text-sm font-semibold text-gray-700 mb-2">
             Opettajan huomiot (valinnainen):
           </label>
@@ -169,7 +169,7 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
         </div>
 
         <header className="mb-6 border-b pb-4">
-          <h1 className="text-2xl font-bold">CareerCompassi - Oppilaan raportti</h1>
+          <h1 className="text-2xl font-bold">Urakompassi - Oppilaan raportti</h1>
           <p className="text-sm mt-1">Luokka: {classId.substring(0, 8)} • PIN: {pin} • Päivä: {result ? new Date(result.created_at).toLocaleDateString('fi-FI') : ''}</p>
           <p className="text-sm">Nimi: {decodedName || '—'} • Kohortti: {cohort || '—'}</p>
         </header>
@@ -226,7 +226,7 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
                         <span>{Math.round(val)}%</span>
                       </div>
                       <div className="w-full h-2 bg-gray-200 rounded">
-                        <div className="h-2 bg-blue-600 rounded" style={{ width: `${Math.min(Math.max(val,0),100)}%` }} />
+                        <div className="h-2 bg-primary rounded" style={{ width: `${Math.min(Math.max(val,0),100)}%` }} />
                       </div>
                     </div>
                   );
@@ -236,7 +236,7 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
 
             <section>
               <h2 className="font-semibold text-lg mb-2">Huomautus</h2>
-              <p className="text-xs text-gray-600">Nimi on opettajan itse lisäämä paikallinen tieto eikä sitä tallenneta CareerCompassin palvelimille.</p>
+              <p className="text-xs text-gray-600">Nimi on opettajan itse lisäämä paikallinen tieto eikä sitä tallenneta Urakompassin palvelimille.</p>
             </section>
           </main>
         )}

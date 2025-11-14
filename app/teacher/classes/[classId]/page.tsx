@@ -41,10 +41,10 @@ export default function ClassDetailPage({
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
         <TeacherNav />
         <div className="flex-1 max-w-6xl mx-auto p-8 w-full text-center py-12">
-          <div className="animate-spin h-8 w-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto"></div>
+          <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
         </div>
         <TeacherFooter />
       </div>
@@ -52,7 +52,7 @@ export default function ClassDetailPage({
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
       <TeacherNav />
       <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
         <div className="bg-white rounded-xl shadow-lg p-8">

@@ -57,9 +57,9 @@ export default function PublicClassResultsPage({
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-8">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-teal-50/20 p-8">
         <div className="max-w-4xl mx-auto text-center py-12">
-          <div className="animate-spin h-8 w-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto"></div>
+          <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
         </div>
       </div>
     );
@@ -67,7 +67,7 @@ export default function PublicClassResultsPage({
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-8">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-teal-50/20 p-8">
         <div className="max-w-4xl mx-auto">
           <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
             <p className="text-red-800">{error}</p>
@@ -78,7 +78,7 @@ export default function PublicClassResultsPage({
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-teal-50/20 p-8">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h1 className="text-3xl font-bold mb-2">Luokantulokset</h1>
@@ -118,8 +118,8 @@ export default function PublicClassResultsPage({
             </div>
           )}
 
-          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <p className="text-sm text-blue-800">
+          <div className="mt-8 bg-slate-50 border border-primary/20 rounded-lg p-4">
+            <p className="text-sm text-primary">
               💡 <strong>Huomio:</strong> Kaikki tulokset ovat täysin anonyymeja. 
               Nimia eivät näy, eivätkä koskaan ole näkyneet tämän sivun yhteydessä.
             </p>

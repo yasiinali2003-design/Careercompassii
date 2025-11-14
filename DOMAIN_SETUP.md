@@ -1,4 +1,4 @@
-# Domain Setup Instructions for careercompassi.com
+# Domain Setup Instructions for urakompassi.com
 
 ## Step 1: Connect Domain in Vercel Dashboard
 
@@ -6,8 +6,8 @@
 2. Select your project: `careercompassii` (or similar)
 3. Go to **Settings** → **Domains**
 4. Click **Add Domain**
-5. Enter: `careercompassi.com`
-6. Also add: `www.careercompassi.com` (click Add again)
+5. Enter: `urakompassi.com`
+6. Also add: `www.urakompassi.com` (click Add again)
 
 ## Step 2: Configure DNS Records
 
@@ -15,7 +15,7 @@ You'll need to update DNS records at your domain registrar. Vercel will show you
 
 **Option A: Using Vercel Nameservers (Recommended)**
 - Copy the nameservers Vercel provides
-- Go to your domain registrar (where you bought careercompassi.com)
+- Go to your domain registrar (where you bought urakompassi.com)
 - Update nameservers to Vercel's nameservers
 
 **Option B: Using DNS Records**
@@ -37,8 +37,8 @@ Add these DNS records at your registrar:
 
 1. Wait for DNS propagation (can take up to 48 hours, usually much faster)
 2. Check SSL certificate (Vercel provides automatically)
-3. Visit `https://careercompassi.com` - you should see password prompt
-4. Visit `https://www.careercompassi.com` - should also work
+3. Visit `https://urakompassi.com` - you should see password prompt
+4. Visit `https://www.urakompassi.com` - should also work
 
 ## Step 5: Test
 

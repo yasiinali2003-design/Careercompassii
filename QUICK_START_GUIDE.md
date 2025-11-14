@@ -1,4 +1,4 @@
-# ⚡ CareerCompassi - Pika-aloitus (5 minuuttia)
+# ⚡ Urakompassi - Pika-aloitus (5 minuuttia)
 
 Tämä on nopea oppas ensimmäiseen testiin 5 minuutissa.
 
@@ -45,7 +45,7 @@ Katso: `TEACHER_SETUP_GUIDE.md` (yksityiskohtainen oppas)
 Katso: `FAQ.md` (usein kysytyt kysymykset)
 
 **Tarvitsetko tukea?**  
-Sähköposti: tuki@careercompassi.fi
+Sähköposti: tuki@urakompassi.fi
 
 ---
 

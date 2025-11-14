@@ -1,4 +1,4 @@
-# Step-by-Step Testing Guide for CareerCompassi
+# Step-by-Step Testing Guide for Urakompassi
 
 Follow these steps in order to test your website completely.
 

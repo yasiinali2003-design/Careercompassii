@@ -1,13 +1,13 @@
-# ❓ CareerCompassi - Usein Kysytyt Kysymykset (FAQ)
+# ❓ Urakompassi - Usein Kysytyt Kysymykset (FAQ)
 
-Täältä löydät vastaukset yleisimpiin kysymyksiin CareerCompassista.
+Täältä löydät vastaukset yleisimpiin kysymyksiin Urakompassista.
 
 ---
 
 ## 🚀 Aloittaminen
 
 ### Miten saan opettajakoodin?
-Ota yhteyttä sähköpostitse: **tuki@careercompassi.fi**  
+Ota yhteyttä sähköpostitse: **tuki@urakompassi.fi**  
 Lähetä pyyntö opettajakoodista, ja saat koodin 1-2 arkipäivän kuluessa.
 
 ### Mihin kirjaudun sisään?
@@ -219,7 +219,7 @@ Tämä estää väärinkäytön ja varmistaa järjestelmän sujuvan toiminnan.
 - API-pääsyn
 
 ### Voiko pakettia päivittää myöhemmin?
-Kyllä! Voit päivittää pakettia milloin tahansa. Ota yhteyttä: tuki@careercompassi.fi
+Kyllä! Voit päivittää pakettia milloin tahansa. Ota yhteyttä: tuki@urakompassi.fi
 
 ### Voiko pakettia alentaa?
 Jos haluat vaihtaa halvempaan pakettiin, ota yhteyttä tukeen. Muista että tämä voi rajoittaa käytettävissä olevia ominaisuuksia.
@@ -235,7 +235,7 @@ Ilmainen-paketti on täysin ilmainen yksityishenkilöille. Se sisältää:
 ## 🆘 Ongelmat ja Tuki
 
 ### Mihin otan yhteyttä jos minulla on ongelma?
-**Sähköposti:** tuki@careercompassi.fi  
+**Sähköposti:** tuki@urakompassi.fi  
 **Vastausaika:** 1-2 arkipäivää
 
 Kerro ongelmasta mahdollisimman tarkasti:
@@ -284,7 +284,7 @@ Nämä oppilaat hyötyvät:
 ### Missä voin lukea lisää?
 - **Asennusoppas:** Teacher Setup Guide
 - **Hinnoittelu:** /kouluille -sivulta
-- **Yhteydenotto:** tuki@careercompassi.fi
+- **Yhteydenotto:** tuki@urakompassi.fi
 
 ### Onko videotutorialeja tulossa?
 Kyllä! Videotutorialit ovat kehitysvaiheessa. Ilmoitamme niistä sähköpostitse kun ne ovat valmiit.
@@ -297,7 +297,7 @@ Ei. CareerCompass vaatii internet-yhteyden toimiaakseen, koska se on pilvipohjai
 ## ❓ Jos kysymystäsi ei vastattu?
 
 Ota rohkeasti yhteyttä!  
-**Sähköposti:** tuki@careercompassi.fi
+**Sähköposti:** tuki@urakompassi.fi
 
 Autamme mielellämme ja vastaamme myös uusiin kysymyksiin, joita voimme lisätä tähän FAQ:ään myöhemmin.
 

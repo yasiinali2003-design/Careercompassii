@@ -51,14 +51,14 @@ export default function TeacherFooter() {
             <p className="font-semibold mb-2 text-gray-900">Tuki</p>
             <p>
               <a 
-                href="mailto:support@careercompassi.com" 
+                href="mailto:support@urakompassi.com" 
                 className="text-gray-600 hover:text-gray-900 hover:underline transition-colors"
               >
-                support@careercompassi.com
+                support@urakompassi.com
               </a>
             </p>
             <p className="text-gray-500 mt-4">
-              Tulevaisuus alkaa itsensä löytämisestä • © 2025 CareerCompassi
+              Tulevaisuus alkaa itsensä löytämisestä • © 2025 Urakompassi
             </p>
           </div>
         </div>

@@ -66,7 +66,7 @@ export default function TeacherLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="mb-8 text-center">
@@ -78,11 +78,11 @@ export default function TeacherLoginPage() {
         </div>
 
         {/* Login Card */}
-        <Card className="shadow-lg border-2 border-blue-200">
+        <Card className="shadow-lg border-2 border-primary/20">
           <CardHeader className="space-y-1">
             <div className="flex items-center justify-center mb-2">
-              <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
-                <Lock className="h-6 w-6 text-blue-600" />
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <Lock className="h-6 w-6 text-primary" />
               </div>
             </div>
             <CardTitle className="text-2xl text-center">Kirjaudu sisään</CardTitle>
@@ -104,7 +104,7 @@ export default function TeacherLoginPage() {
                   placeholder="Syötä koodi"
                   required
                   autoFocus
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
                   disabled={loading}
                 />
               </div>
@@ -133,10 +133,10 @@ export default function TeacherLoginPage() {
             </form>
 
             <div className="mt-6 pt-6 border-t border-gray-200">
-              <div className="bg-blue-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4">
                 <div className="flex items-start gap-3">
-                  <GraduationCap className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                  <div className="text-sm text-blue-800">
+                  <GraduationCap className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div className="text-sm text-primary">
                     <p className="font-semibold mb-1">Opettajille</p>
                     <p>
                       Jos sinulla ei ole opettajakoodia, ota yhteyttä ylläpitoon tai tarkista

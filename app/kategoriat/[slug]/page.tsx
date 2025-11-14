@@ -64,12 +64,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   
   if (!categoryInfo) {
     return {
-      title: "Kategoria ei löytynyt - CareerCompassi",
+      title: "Kategoria ei löytynyt - Urakompassi",
     };
   }
 
   return {
-    title: `${categoryInfo.name_fi} – urat Suomessa | CareerCompassi`,
+    title: `${categoryInfo.name_fi} – urat Suomessa | Urakompassi`,
     description: `Löydä ${categoryInfo.name_fi.toLowerCase()}-alan urat Suomessa. Katso palkat, koulutusvaatimukset ja työllisyysnäkymät.`,
   };
 }

@@ -82,8 +82,6 @@ export default function HomePage() {
       </nav>
 
       <section className="container mx-auto px-4 py-20 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 gradient-animate opacity-30 blur-3xl" />
-
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 text-balance leading-tight text-primary">
             Tulevaisuutesi alkaa oivalluksesta.
@@ -305,11 +303,11 @@ export default function HomePage() {
               <p className="text-base sm:text-lg text-muted-foreground">Katso miten muut löysi oman juttunsa</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100/80 border border-purple-200/50 rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ease-in-out">
+              <Card className="bg-gradient-to-br from-slate-50 to-teal-50/30 border border-primary/20 rounded-2xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-3 mb-6">
-                    <div className="w-8 h-8 rounded-full bg-purple-200/60 flex items-center justify-center flex-shrink-0 mt-1">
-                      <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10z"/>
                       </svg>
                     </div>
@@ -322,11 +320,11 @@ export default function HomePage() {
                   </div>
                 </CardContent>
               </Card>
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100/80 border border-purple-200/50 rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ease-in-out">
+              <Card className="bg-gradient-to-br from-slate-50 to-teal-50/30 border border-primary/20 rounded-2xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-3 mb-6">
-                    <div className="w-8 h-8 rounded-full bg-purple-200/60 flex items-center justify-center flex-shrink-0 mt-1">
-                      <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10z"/>
                       </svg>
                     </div>
@@ -339,11 +337,11 @@ export default function HomePage() {
                   </div>
                 </CardContent>
               </Card>
-              <Card className="bg-gradient-to-br from-purple-50 to-purple-100/80 border border-purple-200/50 rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ease-in-out">
+              <Card className="bg-gradient-to-br from-slate-50 to-teal-50/30 border border-primary/20 rounded-2xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-3 mb-6">
-                    <div className="w-8 h-8 rounded-full bg-purple-200/60 flex items-center justify-center flex-shrink-0 mt-1">
-                      <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10z"/>
                       </svg>
                     </div>
@@ -391,8 +389,8 @@ export default function HomePage() {
             </div>
             <div className="text-sm">
               <p className="font-semibold mb-2">Tuki</p>
-              <p><a href="mailto:support@careercompassi.com" className="text-primary hover:underline">support@careercompassi.com</a></p>
-              <p className="text-muted-foreground mt-4">Tulevaisuus alkaa itsensä löytämisestä • © 2025 CareerCompassi</p>
+              <p><a href="mailto:support@urakompassi.com" className="text-primary hover:underline">support@urakompassi.com</a></p>
+              <p className="text-muted-foreground mt-4">Tulevaisuus alkaa itsensä löytämisestä • © 2025 Urakompassi</p>
             </div>
           </div>
         </div>

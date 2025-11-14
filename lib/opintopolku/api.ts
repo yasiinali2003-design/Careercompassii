@@ -113,7 +113,7 @@ export async function fetchOpintopolkuPrograms(
         const response = await fetch(url, {
           headers: {
             'Accept': 'application/json',
-            'User-Agent': 'CareerCompassi/1.0',
+            'User-Agent': 'Urakompassi/1.0',
             // Add API key if available from environment
             ...(process.env.OPINTOLPOLKU_API_KEY && {
               'Authorization': `Bearer ${process.env.OPINTOLPOLKU_API_KEY}`
@@ -208,7 +208,7 @@ export async function fetchAdmissionPoints(
           const response = await fetch(url, {
             headers: {
               'Accept': 'application/json',
-              'User-Agent': 'CareerCompassi/1.0',
+              'User-Agent': 'Urakompassi/1.0',
               // Add API key if available
               ...(process.env.OPINTOLPOLKU_API_KEY && {
                 'Authorization': `Bearer ${process.env.OPINTOLPOLKU_API_KEY}`

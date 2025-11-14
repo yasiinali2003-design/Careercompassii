@@ -167,4 +167,4 @@ CREATE TABLE public.school_teachers (
 This feature is **Premium only** (2,000€/year per school).
 
 ## Support
-For questions: support@careercompassi.com
+For questions: support@urakompassi.com

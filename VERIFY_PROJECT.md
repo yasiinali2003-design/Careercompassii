@@ -11,7 +11,7 @@ Your app is using Supabase project with reference: **`wpqlslwbyxhpreaglhui`**
 ## How to Find the Matching Project
 
 ### Option 1: Check Project URL in Dashboard
-1. Click on **"CareerCompassi prod"** project
+1. Click on **"Urakompassi prod"** project
 2. Go to **Settings** → **API**
 3. Look at the **Project URL** - it should contain: `wpqlslwbyxhpreaglhui`
 4. If it matches ✅ → Use this project
@@ -27,7 +27,7 @@ Your app is using Supabase project with reference: **`wpqlslwbyxhpreaglhui`**
 
 ## Quick Check
 
-1. Click on **"CareerCompassi prod"**
+1. Click on **"Urakompassi prod"**
 2. Look at the URL in your browser
 3. If you see `wpqlslwbyxhpreaglhui` anywhere → ✅ This is it!
 4. If not → Check **"careercompassii2"**

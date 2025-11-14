@@ -2,7 +2,7 @@
 
 ## 🎉 Implementation Summary
 
-The GDPR-compliant Teacher Dashboard for CareerCompassi is now fully implemented.
+The GDPR-compliant Teacher Dashboard for Urakompassi is now fully implemented.
 
 ---
 
