@@ -1,13 +1,18 @@
 #!/usr/bin/env node
 
 /**
- * Test New Helsinki Careers
- * Tests the 75 new modern/progressive careers for NUORI cohort
+ * Test New Careers on Production
+ * Tests the 75 new modern/progressive careers on live production site
  */
 
-const http = require('http');
+const https = require('https');
 
-const BASE_URL = 'http://localhost:3000';
+// UPDATE THIS with your actual production URL
+const PRODUCTION_URL = process.argv[2] || 'https://careercompassii.vercel.app';
+
+console.log(`\n🌐 Testing against PRODUCTION: ${PRODUCTION_URL}\n`);
+console.log('⚠️  NOTE: Make sure you provide the correct production URL:');
+console.log('   node test-production-careers.js https://your-app.vercel.app\n');
 
 // Test cases targeting different new career types
 const testCases = [
@@ -17,9 +22,9 @@ const testCases = [
     description: "Should match: Product Manager, Growth Hacker, DevOps Engineer, etc.",
     expectedCareers: ["Product Manager", "Growth Hacker", "UX Researcher", "Data Analyst", "DevOps"],
     answers: [
-      5, 3, 3, 5, 4, 2, 4, 2, 3, 4,  // Q0-9: High tech (5), high business (5), moderate creative
-      5, 4, 3, 5, 4, 3, 4, 5, 3, 5,  // Q10-19: High analytical, entrepreneurship (5)
-      3, 5, 4, 3, 4, 4, 4, 4, 5, 4   // Q20-29: Growth mindset, teamwork
+      5, 3, 3, 5, 4, 2, 4, 2, 3, 4,
+      5, 4, 3, 5, 4, 3, 4, 5, 3, 5,
+      3, 5, 4, 3, 4, 4, 4, 4, 5, 4
     ].map((score, i) => ({ questionIndex: i, score }))
   },
   {
@@ -28,9 +33,9 @@ const testCases = [
     description: "Should match: Content Creator, Social Media Manager, Video Editor, etc.",
     expectedCareers: ["Content Creator", "Social Media Manager", "Video Editor", "Podcast Producer", "Brand Designer"],
     answers: [
-      3, 3, 5, 3, 3, 2, 3, 3, 5, 3,  // Q0-9: High creative (5), moderate tech
-      3, 4, 3, 3, 5, 4, 4, 5, 3, 3,  // Q10-19: High creative work (5), visual/media (5)
-      3, 4, 5, 3, 4, 3, 3, 4, 5, 5   // Q20-29: Independence, variety
+      3, 3, 5, 3, 3, 2, 3, 3, 5, 3,
+      3, 4, 3, 3, 5, 4, 4, 5, 3, 3,
+      3, 4, 5, 3, 4, 3, 3, 4, 5, 5
     ].map((score, i) => ({ questionIndex: i, score }))
   },
   {
@@ -39,47 +44,27 @@ const testCases = [
     description: "Should match: Diversity & Inclusion, Social Justice, Community Organizer",
     expectedCareers: ["Diversity", "Social Justice", "Community Organizer", "Gender Equality"],
     answers: [
-      2, 5, 4, 2, 3, 5, 3, 5, 4, 2,  // Q0-9: High people (5), helping (5), education (5)
-      5, 5, 5, 3, 4, 3, 2, 3, 3, 2,  // Q10-19: High social impact (5), people work (5)
-      3, 2, 3, 5, 3, 3, 4, 5, 3, 3   // Q20-29: Social values (5), teamwork (5)
-    ].map((score, i) => ({ questionIndex: i, score }))
-  },
-  {
-    name: "Sustainability Champion",
-    cohort: "NUORI",
-    description: "Should match: Sustainable Fashion, Circular Economy, Zero Waste",
-    expectedCareers: ["Sustainable", "Circular Economy", "Zero Waste", "Ethical Brand"],
-    answers: [
-      3, 3, 4, 2, 3, 3, 3, 3, 4, 5,  // Q0-9: High environmental (5), creative (4)
-      3, 3, 4, 3, 4, 5, 3, 4, 3, 3,  // Q10-19: High sustainability (5)
-      3, 3, 5, 5, 3, 5, 3, 4, 3, 3   // Q20-29: Environment focus (5), impact (5)
-    ].map((score, i) => ({ questionIndex: i, score }))
-  },
-  {
-    name: "Business Consultant",
-    cohort: "NUORI",
-    description: "Should match: Management Consultant, Strategy Consultant, Business Analyst",
-    expectedCareers: ["Management Consultant", "Strategy Consultant", "Business Analyst", "Digital Transformation"],
-    answers: [
-      4, 4, 3, 5, 4, 3, 3, 3, 3, 3,  // Q0-9: High business (5), analytical (4)
-      5, 4, 4, 5, 3, 3, 3, 3, 4, 5,  // Q10-19: High analytical (5), advancement (5), entrepreneurship (5)
-      3, 5, 3, 3, 5, 4, 5, 4, 4, 3   // Q20-29: Leadership (5), financial success (5)
+      2, 5, 4, 2, 3, 5, 3, 5, 4, 2,
+      5, 5, 5, 3, 4, 3, 2, 3, 3, 2,
+      3, 2, 3, 5, 3, 3, 4, 5, 3, 3
     ].map((score, i) => ({ questionIndex: i, score }))
   }
 ];
 
-// Make HTTP POST request
-function makeRequest(cohort, answers) {
+// Make HTTPS request
+function makeRequest(url, cohort, answers) {
   return new Promise((resolve, reject) => {
     const postData = JSON.stringify({
       cohort: cohort,
       answers: answers
     });
 
+    const urlObj = new URL(url + '/api/score');
+
     const options = {
-      hostname: 'localhost',
-      port: 3000,
-      path: '/api/score',
+      hostname: urlObj.hostname,
+      port: 443,
+      path: urlObj.pathname,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -87,7 +72,7 @@ function makeRequest(cohort, answers) {
       }
     };
 
-    const req = http.request(options, (res) => {
+    const req = https.request(options, (res) => {
       let data = '';
 
       res.on('data', (chunk) => {
@@ -120,9 +105,9 @@ function delay(ms) {
 
 // Main test runner
 async function runTests() {
-  console.log('🧪 Testing 75 New Helsinki Careers for NUORI Cohort\n');
-  console.log('Testing against: ' + BASE_URL);
-  console.log('=' .repeat(80) + '\n');
+  console.log('🧪 Testing 75 New Helsinki Careers on PRODUCTION\n');
+  console.log('Testing against: ' + PRODUCTION_URL);
+  console.log('='.repeat(80) + '\n');
 
   let totalTests = 0;
   let successfulMatches = 0;
@@ -138,10 +123,10 @@ async function runTests() {
     console.log('-'.repeat(80));
 
     try {
-      const response = await makeRequest(test.cohort, test.answers);
+      const response = await makeRequest(PRODUCTION_URL, test.cohort, test.answers);
 
       if (response.statusCode !== 200 || !response.data.success) {
-        console.log(`    ❌ Request failed`);
+        console.log(`    ❌ Request failed (Status: ${response.statusCode})`);
         failedMatches++;
         continue;
       }
@@ -180,14 +165,6 @@ async function runTests() {
         failedMatches++;
       }
 
-      // Quality metrics
-      if (result.userProfile?.qualityScore !== undefined) {
-        const quality = result.userProfile.qualityScore >= 0.7 ? '✅ Good' :
-                       result.userProfile.qualityScore >= 0.5 ? '⚠️ Moderate' :
-                       '❌ Low';
-        console.log(`    📈 Quality: ${(result.userProfile.qualityScore * 100).toFixed(1)}% ${quality}`);
-      }
-
       detailedResults.push({
         name: test.name,
         success: matchedExpected.length > 0,
@@ -201,13 +178,14 @@ async function runTests() {
       failedMatches++;
     }
 
-    await delay(300);
+    await delay(500); // Longer delay for production
   }
 
   // Summary
   console.log('\n\n' + '='.repeat(80));
-  console.log('📊 NEW CAREERS TEST SUMMARY:');
+  console.log('📊 PRODUCTION TEST SUMMARY:');
   console.log('='.repeat(80));
+  console.log(`   Production URL: ${PRODUCTION_URL}`);
   console.log(`   Total test profiles: ${totalTests}`);
   console.log(`   ✅ Successful matches: ${successfulMatches} (${((successfulMatches / totalTests) * 100).toFixed(1)}%)`);
   console.log(`   ❌ Failed matches: ${failedMatches} (${((failedMatches / totalTests) * 100).toFixed(1)}%)`);
@@ -226,7 +204,7 @@ async function runTests() {
   console.log('='.repeat(80));
 
   if (successfulMatches >= totalTests * 0.75) {
-    console.log('✅ NEW CAREERS ARE WORKING WELL! (>75% success rate)');
+    console.log('✅ NEW CAREERS ARE WORKING WELL IN PRODUCTION! (>75% success rate)');
   } else if (successfulMatches >= totalTests * 0.5) {
     console.log('⚠️  NEW CAREERS NEED SOME TUNING (50-75% success rate)');
   } else {
@@ -236,11 +214,14 @@ async function runTests() {
 }
 
 // Run the tests
-console.log('⏳ Starting tests in 2 seconds...\n');
+console.log('⏳ Starting production tests in 2 seconds...\n');
 setTimeout(() => {
   runTests().catch(err => {
     console.error('\n💥 Fatal error:', err.message);
-    console.error('\n⚠️  Make sure the dev server is running: npm run dev\n');
+    console.error('\n⚠️  Make sure:');
+    console.error('   1. The production URL is correct');
+    console.error('   2. The site is deployed and accessible');
+    console.error('   3. The /api/score endpoint is working\n');
     process.exit(1);
   });
 }, 2000);

@@ -156,6 +156,10 @@ export default function PricingPage() {
                 </li>
                 <li className="flex items-center">
                   <Check className="mr-2 text-blue-500" size={20} />
+                  <span>Jopa 5 opettajaa per koulu (yhteistyö)</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="mr-2 text-blue-500" size={20} />
                   <span>PDF-raporttien generointi (oppilas & luokka)</span>
                 </li>
                 <li className="flex items-center">
@@ -216,6 +220,12 @@ export default function PricingPage() {
                     <td className="border p-3 text-center">—</td>
                     <td className="border p-3 text-center">✓</td>
                     <td className="border p-3 text-center">✓</td>
+                  </tr>
+                  <tr>
+                    <td className="border p-3">Opettajien määrä</td>
+                    <td className="border p-3 text-center">—</td>
+                    <td className="border p-3 text-center">1</td>
+                    <td className="border p-3 text-center">Jopa 5</td>
                   </tr>
                   <tr>
                     <td className="border p-3">CSV-vienti</td>
