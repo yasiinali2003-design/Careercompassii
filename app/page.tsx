@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import CategoryCard from "@/components/CategoryCard"
 import Logo from "@/components/Logo"
 import CallToActionSection from "@/components/CallToActionSection"
+import StatsSection from "@/components/StatsSection"
 import { getAllCategories } from "@/lib/categories"
 import {
   Sparkles,
@@ -21,6 +22,7 @@ import {
   Eye,
   ClipboardList,
   AlertCircle,
+  CheckCircle,
 } from "lucide-react"
 
 export default function HomePage() {
@@ -81,97 +83,164 @@ export default function HomePage() {
         </div>
       </nav>
 
-      <section className="container mx-auto px-4 py-20 md:py-32 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 text-balance leading-tight text-primary">
-            Tulevaisuutesi alkaa oivalluksesta.
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 text-pretty max-w-2xl mx-auto leading-relaxed">
-            Luotettava testi, joka auttaa sinua ymmärtämään vahvuuksiasi ja uramahdollisuuksia.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              asChild
-              className="text-base sm:text-lg h-12 sm:h-14 px-6 sm:px-8 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
-            >
-              <Link href="/test">
-                Aloita testi
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="text-base sm:text-lg h-12 sm:h-14 px-6 sm:px-8 border border-primary hover:bg-primary/10 font-semibold"
-            >
-              <Link href="#miten">Lue lisää</Link>
-            </Button>
+      {/* Hero Section */}
+      <section className="relative container mx-auto px-4 py-16 md:py-24 overflow-hidden">
+        {/* Subtle decorative elements */}
+        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10"></div>
+
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            {/* Accent line above heading */}
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-1 w-12 bg-gradient-to-r from-transparent via-primary to-primary rounded-full"></div>
+              <div className="h-1 w-12 bg-primary rounded-full"></div>
+              <div className="h-1 w-12 bg-gradient-to-r from-primary to-transparent rounded-full"></div>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-slate-900 leading-tight">
+              Löydä ura, joka sopii
+              <span className="text-primary"> juuri sinulle</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Vastaa 30 kysymykseen ja saat henkilökohtaiset urasuositukset 361 ammatin joukosta.
+              Luotettava, maksuton ja nopea – vain 5 minuuttia.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button
+                size="lg"
+                asChild
+                className="text-lg h-14 px-8 bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg hover:shadow-xl transition-all"
+              >
+                <Link href="/test">
+                  Aloita ilmainen testi
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="text-lg h-14 px-8 border-2 border-slate-200 hover:border-primary hover:bg-slate-50 font-semibold"
+              >
+                <Link href="/ammatit">Selaa ammatteja</Link>
+              </Button>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="flex items-center justify-center gap-6 text-sm text-slate-600 flex-wrap">
+              <span className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-accent" />
+                Maksuton
+              </span>
+              <span className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-accent" />
+                5 minuuttia
+              </span>
+              <span className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-accent" />
+                Tekoälypohjainen
+              </span>
+            </div>
           </div>
-          <p className="text-xs sm:text-sm text-muted-foreground mt-6 flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
-            <span className="flex items-center gap-1">
-              <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-secondary" />
-              30 kysymystä • n. 5 minuuttia
-            </span>
-            <span>•</span>
-            <span className="flex items-center gap-1">
-              <Heart className="h-3 w-3 sm:h-4 sm:w-4 text-secondary" />
-              Maksuton
-            </span>
-            <span>•</span>
-            <span className="flex items-center gap-1">
-              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-secondary" />
-              Tekoäly-powered
-            </span>
-          </p>
         </div>
       </section>
 
+      {/* Stats Section */}
+      <StatsSection />
+
       <section className="container mx-auto px-4 py-20">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">Mikä on sun vibe?</h2>
-          <p className="text-base sm:text-lg text-muted-foreground">Löydä persoonallisuustyyppi, joka vastaa sun energiaa</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+            Kahdeksan persoonallisuustyyppiä
+          </h2>
+          <p className="text-base sm:text-lg text-slate-600">
+            Löydä tyyppi, joka kuvaa parhaiten sinua ja töitä, jotka sopivat sinulle
+          </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
-          {categories.map((category) => (
-            <CategoryCard key={category.slug} category={category} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+          {categories.map((category, index) => (
+            <CategoryCard key={category.slug} category={category} index={index} />
           ))}
         </div>
       </section>
 
-      <section id="miten" className="py-20 bg-gradient-to-b from-transparent to-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">Miten se toimii?</h2>
-            <p className="text-base sm:text-lg text-muted-foreground">Kolme helppoa askelta unelma-urasi löytämiseen</p>
+      <section id="miten" className="relative py-20 bg-slate-50/50 overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(43, 95, 117) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
+
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            {/* Accent decoration */}
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="w-8 h-0.5 bg-secondary rounded-full"></div>
+              <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Prosessi</span>
+              <div className="w-8 h-0.5 bg-secondary rounded-full"></div>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-900">
+              Miten Urakompassi toimii?
+            </h2>
+            <p className="text-lg text-slate-600">
+              Kolme yksinkertaista vaihetta urasi löytämiseen
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
-            <div className="text-center group">
-              <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-lg bg-slate-100 group-hover:bg-primary group-hover:scale-105 text-slate-600 group-hover:text-white flex items-center justify-center text-2xl sm:text-3xl font-bold mx-auto mb-4 sm:mb-6 transition-all duration-300 ease-out">
-                1
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Step 1 */}
+            <div className="relative bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-md hover:border-primary/30 transition-all group">
+              {/* Step connector line - hidden on mobile */}
+              <div className="hidden md:block absolute top-12 -right-8 w-16 h-0.5 bg-gradient-to-r from-primary/20 to-transparent"></div>
+
+              <div className="flex items-center justify-center mb-6">
+                <div className="relative h-16 w-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                  <span className="text-3xl font-bold text-primary">01</span>
+                  {/* Subtle glow effect */}
+                  <div className="absolute inset-0 rounded-xl bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                </div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3">Tee testi</h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Vastaa kysymyksiin kiinnostuksistasi, arvoistasi ja persoonallisuudestasi.
+              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center group-hover:text-primary transition-colors">
+                Vastaa kysymyksiin
+              </h3>
+              <p className="text-slate-600 leading-relaxed text-center">
+                Käy läpi 30 huolellisesti laadittua kysymystä, jotka kartoittavat kiinnostuksen kohteitasi, arvojasi ja vahvuuksiasi.
               </p>
             </div>
-            <div className="text-center group">
-              <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-lg bg-slate-100 group-hover:bg-primary group-hover:scale-105 text-slate-600 group-hover:text-white flex items-center justify-center text-2xl sm:text-3xl font-bold mx-auto mb-4 sm:mb-6 transition-all duration-300 ease-out">
-                2
+
+            {/* Step 2 */}
+            <div className="relative bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-md hover:border-primary/30 transition-all group">
+              {/* Step connector line - hidden on mobile */}
+              <div className="hidden md:block absolute top-12 -right-8 w-16 h-0.5 bg-gradient-to-r from-primary/20 to-transparent"></div>
+
+              <div className="flex items-center justify-center mb-6">
+                <div className="relative h-16 w-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                  <span className="text-3xl font-bold text-primary">02</span>
+                  <div className="absolute inset-0 rounded-xl bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                </div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3">Tekoäly analysoi sut</h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Meidän älykäs tekoäly matchaa sun uniikin profiilin uroihin, jotka oikeesti sopii sulle.
+              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center group-hover:text-primary transition-colors">
+                Tekoäly analysoi vastauksesi
+              </h3>
+              <p className="text-slate-600 leading-relaxed text-center">
+                Edistynyt algoritmi analysoi profiilisi ja vertaa sitä 361 ammatin vaatimuksiin ja ominaisuuksiin.
               </p>
             </div>
-            <div className="text-center group">
-              <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-lg bg-slate-100 group-hover:bg-primary group-hover:scale-105 text-slate-600 group-hover:text-white flex items-center justify-center text-2xl sm:text-3xl font-bold mx-auto mb-4 sm:mb-6 transition-all duration-300 ease-out">
-                3
+
+            {/* Step 3 */}
+            <div className="relative bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-md hover:border-primary/30 transition-all group">
+              <div className="flex items-center justify-center mb-6">
+                <div className="relative h-16 w-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                  <span className="text-3xl font-bold text-primary">03</span>
+                  <div className="absolute inset-0 rounded-xl bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                </div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3">Saat sun polun</h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Saat personoidut urasuositukset ja konkreettiset seuraavat askeleet. Sun tulevaisuus alkaa tästä.
+              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center group-hover:text-primary transition-colors">
+                Saat henkilökohtaiset suositukset
+              </h3>
+              <p className="text-slate-600 leading-relaxed text-center">
+                Saat räätälöidyt urasuositukset ja selkeät ohjeet koulutuspoluista sekä seuraavista askeleista.
               </p>
             </div>
           </div>
@@ -180,116 +249,151 @@ export default function HomePage() {
 
       
 
-      <section id="kenelle" className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">Kenelle tämä on?</h2>
-            <p className="text-base sm:text-lg text-muted-foreground">Jos mietit sun tulevaisuutta, oot oikeessa paikassa</p>
+      <section id="kenelle" className="relative py-20 overflow-hidden">
+        {/* Subtle background elements */}
+        <div className="absolute top-10 left-1/4 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
+
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            {/* Accent decoration */}
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="w-8 h-0.5 bg-accent rounded-full"></div>
+              <span className="text-sm font-semibold text-accent uppercase tracking-wider">Kohderyhmät</span>
+              <div className="w-8 h-0.5 bg-accent rounded-full"></div>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-900">
+              Kenelle Urakompassi on tarkoitettu?
+            </h2>
+            <p className="text-lg text-slate-600">
+              Tuki urasuunnitteluun kaikissa elämänvaiheissa
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
-            <Card className="group border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 hover:border-primary/50 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-out">
-              <CardContent className="p-6 sm:p-8">
-                <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-3 sm:mb-4">
-                  <GraduationCap className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Yläasteen oppilaat */}
+            <div className="relative bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-md hover:border-primary/30 transition-all group">
+              {/* Subtle accent corner */}
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/10 to-transparent rounded-tr-2xl rounded-bl-full"></div>
+
+              <div className="flex items-center justify-center mb-6 relative">
+                <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                  <GraduationCap className="h-7 w-7 text-primary" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-3">Yläasteen oppilaat</h3>
-                <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">Löydä suunta, joka tuntuu omalta.</p>
-                <ul className="space-y-2 text-xs sm:text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Tutustu eri uravaihtoehtoihin</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Ymmärrä vahvuutesi</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Löydä opintopolku, joka tuntuu oikealta</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card className="group border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 hover:border-primary/50 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-out">
-              <CardContent className="p-6 sm:p-8">
-                <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-3 sm:mb-4">
-                  <Target className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center group-hover:text-primary transition-colors">
+                Yläasteen oppilaat
+              </h3>
+              <p className="text-slate-600 mb-6 leading-relaxed text-center">
+                Löydä suunta toisen asteen opintoihin ja tutki eri urapolkuja.
+              </p>
+              <ul className="space-y-3 text-sm text-slate-600">
+                <li className="flex items-start gap-3">
+                  <span className="text-primary mt-1 font-bold">✓</span>
+                  <span>Tutustu laajaan valikoimaan uroja ja ammatteja</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-primary mt-1 font-bold">✓</span>
+                  <span>Tunnista omat vahvuutesi ja kiinnostuksen kohteesi</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-primary mt-1 font-bold">✓</span>
+                  <span>Saat selkeän kuvan erilaisista koulutuspoluista</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Toisen asteen opiskelijat */}
+            <div className="relative bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-md hover:border-primary/30 transition-all group">
+              {/* Subtle accent corner */}
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-secondary/10 to-transparent rounded-tr-2xl rounded-bl-full"></div>
+
+              <div className="flex items-center justify-center mb-6 relative">
+                <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                  <Target className="h-7 w-7 text-primary" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-3">Toisen asteen opiskelijat</h3>
-                <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">Selvitä, mihin kiinnostuksesi johtavat.</p>
-                <ul className="space-y-2 text-xs sm:text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Tunnista kiinnostuksen kohteesi</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Selvitä, mihin ammattialoihin ne liittyvät</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Tee päätöksiä, jotka tuntuvat varmoilta</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card className="group border-2 border-primary/30 bg-gradient-to-br from-card to-primary/5 hover:border-primary/50 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-out">
-              <CardContent className="p-6 sm:p-8">
-                <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-3 sm:mb-4">
-                  <Users className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center group-hover:text-primary transition-colors">
+                Toisen asteen opiskelijat
+              </h3>
+              <p className="text-slate-600 mb-6 leading-relaxed text-center">
+                Tarkenna urasuunnitelmaasi ja löydä polku jatko-opintoihin.
+              </p>
+              <ul className="space-y-3 text-sm text-slate-600">
+                <li className="flex items-start gap-3">
+                  <span className="text-primary mt-1 font-bold">✓</span>
+                  <span>Selvitä, mihin ammattialoihin kiinnostuksesi johtavat</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-primary mt-1 font-bold">✓</span>
+                  <span>Vertaile eri koulutusvaihtoehtoja ja urapolkuja</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-primary mt-1 font-bold">✓</span>
+                  <span>Tee tietoon perustuvia päätöksiä tulevaisuudestasi</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Nuoret aikuiset */}
+            <div className="relative bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-md hover:border-primary/30 transition-all group">
+              {/* Subtle accent corner */}
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-accent/10 to-transparent rounded-tr-2xl rounded-bl-full"></div>
+
+              <div className="flex items-center justify-center mb-6 relative">
+                <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                  <Users className="h-7 w-7 text-primary" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-3">Nuoret aikuiset</h3>
-                <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">
-                  Tutustu uusiin mahdollisuuksiin ja löydä oma polkusi ilman stressiä.
-                </p>
-                <ul className="space-y-2 text-xs sm:text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Tutustu uusiin mahdollisuuksiin</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Hahmota oma vahvuusprofiilisi</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary">•</span>
-                    <span>Löydä seuraava askel ilman stressiä</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center group-hover:text-primary transition-colors">
+                Nuoret aikuiset
+              </h3>
+              <p className="text-slate-600 mb-6 leading-relaxed text-center">
+                Harkitse uudelleenkouluttautumista tai uran vaihtoa luottavaisin mielin.
+              </p>
+              <ul className="space-y-3 text-sm text-slate-600">
+                <li className="flex items-start gap-3">
+                  <span className="text-primary mt-1 font-bold">✓</span>
+                  <span>Tutki uusia uramahdollisuuksia ja aloja</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-primary mt-1 font-bold">✓</span>
+                  <span>Hahmota oma vahvuusprofiilisi ja soveltuvuutesi</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-primary mt-1 font-bold">✓</span>
+                  <span>Löydä seuraava askel selkeän analyysin avulla</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
 
-      <section className="py-20">
+      <section className="py-20 bg-slate-50/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Card className="border-2 border-accent/30 bg-gradient-to-br from-card to-accent/5">
-              <CardContent className="p-6 sm:p-10">
-                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                  <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
-                    <AlertCircle className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
-                  </div>
-                  <div className="text-center sm:text-left">
-                    <h2 className="text-xl sm:text-2xl font-bold mb-4">
-                      Tärkeä huomautus
-                    </h2>
-                    <div className="space-y-3 text-xs sm:text-base text-muted-foreground leading-relaxed">
-                      <p>
-                        Tämä testi on tarkoitettu <strong>ohjaukseen ja inspiraatioksi</strong>, ei lopulliseksi
-                        päätökseksi urastasi.
-                      </p>
-                      <p>
-                        Tulokset auttavat sinua pohtimaan vahvuuksiasi ja kiinnostuksen kohteitasi, mutta{" "}
-                        <strong>lopulliset valinnat ovat aina sinun</strong>.
-                      </p>
-                    </div>
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 sm:p-10">
+              <div className="flex items-start gap-6">
+                <div className="hidden sm:block w-1 h-24 bg-primary rounded-full flex-shrink-0"></div>
+                <div className="flex-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4">
+                    Miten testiä tulisi käyttää
+                  </h3>
+                  <div className="space-y-4 text-base text-slate-600 leading-relaxed">
+                    <p>
+                      Urakompassi on suunniteltu <strong className="text-slate-900">ohjaamaan ja inspiroimaan</strong> uravalinnassasi.
+                      Testi analysoi vahvuutesi ja kiinnostuksesi, antaen sinulle henkilökohtaisia suosituksia.
+                    </p>
+                    <p>
+                      Tulokset ovat <strong className="text-slate-900">lähtökohta keskustelulle</strong> – käytä niitä
+                      pohtiessasi omaa tulevaisuuttasi yhdessä opettajien, opinto-ohjaajien ja perheen kanssa.
+                    </p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -1,105 +1,67 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
 import { CategoryInfo } from "@/lib/categories";
-import { 
-  Palette, 
-  Users, 
-  Lightbulb, 
-  Hammer, 
-  Heart, 
-  Leaf, 
-  Eye, 
-  ClipboardList 
-} from "lucide-react";
 
 interface CategoryCardProps {
   category: CategoryInfo;
   className?: string;
+  index: number;
 }
 
-// Professional icon mapping
-const categoryIcons = {
-  luova: Palette,
-  johtaja: Users,
-  innovoija: Lightbulb,
-  rakentaja: Hammer,
-  auttaja: Heart,
-  "ympariston-puolustaja": Leaf,
-  visionaari: Eye,
-  jarjestaja: ClipboardList
-};
+export default function CategoryCard({ category, className = "", index }: CategoryCardProps) {
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-// Color psychology-based background colors for icon containers
-const categoryColors = {
-  luova: {
-    bg: "bg-secondary/10",
-    bgHover: "group-hover:bg-secondary/20",
-    icon: "text-secondary",
-    iconHover: "group-hover:text-secondary"
-  },
-  johtaja: {
-    bg: "bg-primary/10",
-    bgHover: "group-hover:bg-primary/20",
-    icon: "text-primary",
-    iconHover: "group-hover:text-primary"
-  },
-  innovoija: {
-    bg: "bg-yellow-50",
-    bgHover: "group-hover:bg-yellow-100",
-    icon: "text-yellow-600", 
-    iconHover: "group-hover:text-yellow-700"
-  },
-  rakentaja: {
-    bg: "bg-slate-50",
-    bgHover: "group-hover:bg-slate-100",
-    icon: "text-slate-600",
-    iconHover: "group-hover:text-slate-700"
-  },
-  auttaja: {
-    bg: "bg-emerald-50",
-    bgHover: "group-hover:bg-emerald-100",
-    icon: "text-emerald-600",
-    iconHover: "group-hover:text-emerald-700"
-  },
-  "ympariston-puolustaja": {
-    bg: "bg-accent/10",
-    bgHover: "group-hover:bg-accent/20",
-    icon: "text-accent",
-    iconHover: "group-hover:text-accent"
-  },
-  visionaari: {
-    bg: "bg-primary/10",
-    bgHover: "group-hover:bg-primary/20",
-    icon: "text-primary",
-    iconHover: "group-hover:text-primary"
-  },
-  jarjestaja: {
-    bg: "bg-stone-50",
-    bgHover: "group-hover:bg-stone-100",
-    icon: "text-stone-600",
-    iconHover: "group-hover:text-stone-700"
-  }
-};
+  // Format number with leading zero (01, 02, etc.)
+  const formattedNumber = String(index + 1).padStart(2, '0');
 
-export default function CategoryCard({ category, className = "" }: CategoryCardProps) {
-  const IconComponent = categoryIcons[category.slug as keyof typeof categoryIcons];
-  const colors = categoryColors[category.slug as keyof typeof categoryColors];
-  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Stagger the animation based on index
+          setTimeout(() => {
+            setIsVisible(true);
+          }, index * 150); // 150ms delay between each card
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [index]);
+
   return (
-    <Link href={`/ammatit?personalityType=${category.slug}`} className="block">
-      <Card className={`group hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50/50 cursor-pointer ${className}`}>
-        <CardContent className="p-4 sm:p-6 text-center">
-          <div className={`h-12 w-12 sm:h-14 sm:w-14 rounded-xl ${colors.bg} ${colors.bgHover} flex items-center justify-center mx-auto mb-3 sm:mb-4 transition-colors shadow-sm`}>
-            {IconComponent && (
-              <IconComponent className={`h-6 w-6 sm:h-7 sm:w-7 ${colors.icon} ${colors.iconHover} transition-colors`} />
-            )}
+    <div ref={cardRef}>
+      <Link href={`/ammatit?personalityType=${category.slug}`} className="block group">
+        <div
+          className={`bg-white border-2 border-slate-200 p-6 rounded-xl hover:border-primary transition-all duration-500 hover:shadow-sm ${className} ${
+            isVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <div className="flex items-start gap-4">
+            <span className="text-3xl font-bold text-primary group-hover:text-primary/80 transition-colors flex-shrink-0">
+              {formattedNumber}
+            </span>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">
+                {category.name_fi}
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                {category.description}
+              </p>
+            </div>
           </div>
-          <h3 className="text-base sm:text-lg font-semibold mb-2 text-slate-900">{category.name_fi}</h3>
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{category.description}</p>
-        </CardContent>
-      </Card>
-    </Link>
+        </div>
+      </Link>
+    </div>
   );
 }
