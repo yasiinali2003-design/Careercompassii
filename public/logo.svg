@@ -1,0 +1,44 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Compass Rose Design - Professional and Hand-crafted Look -->
+  
+  <!-- Outer circle with subtle texture -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#2B5F75" stroke-width="2" opacity="0.2"/>
+  
+  <!-- Main compass circle -->
+  <circle cx="100" cy="100" r="85" fill="#F8FAFB" stroke="#2B5F75" stroke-width="3"/>
+  
+  <!-- Compass needle pointing North -->
+  <g transform="translate(100, 100)">
+    <!-- North needle (pointing up) -->
+    <path d="M 0,-75 L -8,0 L 0,5 L 8,0 Z" fill="#D64545" stroke="#1F4756" stroke-width="1.5"/>
+    
+    <!-- South needle (pointing down) -->
+    <path d="M 0,75 L -8,0 L 0,-5 L 8,0 Z" fill="#2B5F75" stroke="#1F4756" stroke-width="1.5"/>
+    
+    <!-- Center circle -->
+    <circle cx="0" cy="0" r="12" fill="#E8994A" stroke="#1F4756" stroke-width="2"/>
+    <circle cx="0" cy="0" r="6" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Cardinal direction markers -->
+  <text x="100" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2B5F75" text-anchor="middle">N</text>
+  <text x="100" y="180" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2B5F75" text-anchor="middle">S</text>
+  <text x="30" y="105" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2B5F75" text-anchor="middle">W</text>
+  <text x="170" y="105" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2B5F75" text-anchor="middle">E</text>
+  
+  <!-- Decorative inner ring -->
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#4A7C59" stroke-width="1.5" opacity="0.4"/>
+  
+  <!-- Small decorative dots at 45-degree angles -->
+  <circle cx="100" cy="35" r="3" fill="#E8994A"/>
+  <circle cx="100" cy="165" r="3" fill="#E8994A"/>
+  <circle cx="35" cy="100" r="3" fill="#E8994A"/>
+  <circle cx="165" cy="100" r="3" fill="#E8994A"/>
+  
+  <!-- Subtle directional lines -->
+  <line x1="100" y1="100" x2="100" y2="40" stroke="#2B5F75" stroke-width="1" opacity="0.3"/>
+  <line x1="100" y1="100" x2="100" y2="160" stroke="#2B5F75" stroke-width="1" opacity="0.3"/>
+  <line x1="100" y1="100" x2="40" y2="100" stroke="#2B5F75" stroke-width="1" opacity="0.3"/>
+  <line x1="100" y1="100" x2="160" y2="100" stroke="#2B5F75" stroke-width="1" opacity="0.3"/>
+</svg>
+

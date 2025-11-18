@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urakompassi Logo Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #F8FAFB 0%, #E8F2F5 100%);
+            padding: 40px 20px;
+            color: #1F4756;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #2B5F75;
+            margin-bottom: 10px;
+            font-size: 36px;
+        }
+        
+        .subtitle {
+            color: #5A6E7A;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .logo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(43, 95, 117, 0.1);
+            text-align: center;
+        }
+        
+        .logo-card h2 {
+            color: #2B5F75;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .logo-preview {
+            background: #F8FAFB;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+        
+        .logo-preview.dark-bg {
+            background: #1F4756;
+        }
+        
+        .logo-preview.light-bg {
+            background: white;
+        }
+        
+        .logo-preview img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .logo-info {
+            text-align: left;
+            font-size: 14px;
+            color: #5A6E7A;
+        }
+        
+        .logo-info strong {
+            color: #2B5F75;
+        }
+        
+        .color-palette {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(43, 95, 117, 0.1);
+        }
+        
+        .color-swatch {
+            text-align: center;
+        }
+        
+        .color-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .color-label {
+            font-size: 12px;
+            color: #5A6E7A;
+            font-weight: 600;
+        }
+        
+        .color-code {
+            font-size: 11px;
+            color: #5A6E7A;
+            font-family: monospace;
+        }
+        
+        .usage-section {
+            margin-top: 60px;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(43, 95, 117, 0.1);
+        }
+        
+        .usage-section h2 {
+            color: #2B5F75;
+            margin-bottom: 20px;
+        }
+        
+        .usage-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .usage-section li {
+            padding: 10px 0;
+            border-bottom: 1px solid #E8F2F5;
+            color: #5A6E7A;
+        }
+        
+        .usage-section li:last-child {
+            border-bottom: none;
+        }
+        
+        .usage-section strong {
+            color: #2B5F75;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Urakompassi Logo Collection</h1>
+        <p class="subtitle">Professional compass-based logo designs for your brand</p>
+        
+        <div class="logo-grid">
+            <!-- Full Compass Logo -->
+            <div class="logo-card">
+                <h2>Full Compass Logo</h2>
+                <div class="logo-preview light-bg">
+                    <img src="logo.svg" alt="Urakompassi Full Logo">
+                </div>
+                <div class="logo-info">
+                    <strong>File:</strong> logo.svg<br>
+                    <strong>Size:</strong> 200×200px<br>
+                    <strong>Use:</strong> Primary logo, favicon, app icons<br>
+                    <strong>Features:</strong> Complete compass rose with N, S, E, W markers
+                </div>
+            </div>
+            
+            <!-- Simplified Icon -->
+            <div class="logo-card">
+                <h2>Simplified Icon</h2>
+                <div class="logo-preview light-bg">
+                    <img src="logo-icon.svg" alt="Urakompassi Icon">
+                </div>
+                <div class="logo-info">
+                    <strong>File:</strong> logo-icon.svg<br>
+                    <strong>Size:</strong> 120×120px<br>
+                    <strong>Use:</strong> Small icons, favicons, mobile apps<br>
+                    <strong>Features:</strong> Minimal compass with N marker
+                </div>
+            </div>
+            
+            <!-- Logo with Text -->
+            <div class="logo-card">
+                <h2>Logo + Text</h2>
+                <div class="logo-preview light-bg">
+                    <img src="logo-full.svg" alt="Urakompassi Full Logo with Text">
+                </div>
+                <div class="logo-info">
+                    <strong>File:</strong> logo-full.svg<br>
+                    <strong>Size:</strong> 300×80px<br>
+                    <strong>Use:</strong> Header navigation, marketing<br>
+                    <strong>Features:</strong> Compass icon + "Urakompassi" text
+                </div>
+            </div>
+            
+            <!-- Dark Version -->
+            <div class="logo-card">
+                <h2>Dark Background Version</h2>
+                <div class="logo-preview dark-bg">
+                    <img src="logo-dark.svg" alt="Urakompassi Dark Logo">
+                </div>
+                <div class="logo-info">
+                    <strong>File:</strong> logo-dark.svg<br>
+                    <strong>Size:</strong> 200×200px<br>
+                    <strong>Use:</strong> Light/colored backgrounds<br>
+                    <strong>Features:</strong> Dark background with amber accents
+                </div>
+            </div>
+            
+            <!-- Minimalist -->
+            <div class="logo-card">
+                <h2>Minimalist Logo</h2>
+                <div class="logo-preview light-bg">
+                    <img src="logo-simple.svg" alt="Urakompassi Simple Logo">
+                </div>
+                <div class="logo-info">
+                    <strong>File:</strong> logo-simple.svg<br>
+                    <strong>Size:</strong> 120×120px<br>
+                    <strong>Use:</strong> When minimal design needed<br>
+                    <strong>Features:</strong> Clean, simple compass
+                </div>
+            </div>
+        </div>
+        
+        <!-- Color Palette -->
+        <div class="color-palette">
+            <div class="color-swatch">
+                <div class="color-box" style="background: #2B5F75;"></div>
+                <div class="color-label">Primary</div>
+                <div class="color-code">#2B5F75</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #E8994A;"></div>
+                <div class="color-label">Secondary</div>
+                <div class="color-code">#E8994A</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #4A7C59;"></div>
+                <div class="color-label">Accent</div>
+                <div class="color-code">#4A7C59</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #F8FAFB;"></div>
+                <div class="color-label">Background</div>
+                <div class="color-code">#F8FAFB</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #1F4756;"></div>
+                <div class="color-label">Dark</div>
+                <div class="color-code">#1F4756</div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #D64545;"></div>
+                <div class="color-label">Accent Red</div>
+                <div class="color-code">#D64545</div>
+            </div>
+        </div>
+        
+        <!-- Usage Guidelines -->
+        <div class="usage-section">
+            <h2>Usage Guidelines</h2>
+            <ul>
+                <li><strong>Minimum Size:</strong> Logo should not be displayed smaller than 40px height</li>
+                <li><strong>Clear Space:</strong> Maintain at least 20% of logo height as clear space around it</li>
+                <li><strong>Background:</strong> Use logo-dark.svg on light/colored backgrounds</li>
+                <li><strong>Favicon:</strong> Use logo-icon.svg at 32×32px or 64×64px</li>
+                <li><strong>Print:</strong> Use SVG for scalability, or export PNG at 2x resolution</li>
+                <li><strong>Format:</strong> All logos are SVG format - scalable and editable</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

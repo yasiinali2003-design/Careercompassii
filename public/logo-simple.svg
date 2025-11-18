@@ -1,0 +1,20 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Minimalist Compass - Clean and Professional -->
+  
+  <!-- Outer ring -->
+  <circle cx="60" cy="60" r="55" fill="none" stroke="#2B5F75" stroke-width="2.5"/>
+  
+  <!-- Compass needle - simplified -->
+  <g transform="translate(60, 60)">
+    <!-- North (red) -->
+    <path d="M 0,-50 L -7,0 L 0,4 L 7,0 Z" fill="#D64545"/>
+    <!-- South (teal) -->
+    <path d="M 0,50 L -7,0 L 0,-4 L 7,0 Z" fill="#2B5F75"/>
+    <!-- Center -->
+    <circle cx="0" cy="0" r="9" fill="#E8994A"/>
+  </g>
+  
+  <!-- N marker only -->
+  <text x="60" y="22" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2B5F75" text-anchor="middle">N</text>
+</svg>
+
