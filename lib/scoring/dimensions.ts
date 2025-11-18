@@ -171,10 +171,10 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     q: 16,
     text: "Haluaisitko auttaa ja hoivata ihmisiä työssäsi?",
     dimension: 'interests',
-    subdimension: 'people',
+    subdimension: 'health',  // FIXED: Changed from 'people' to 'health' for proper healthcare matching
     weight: 1.3,
     reverse: false,
-    notes: "Care/helping professions (strong differentiator)"
+    notes: "Care/helping professions (strong differentiator) - maps to health subdimension"
   },
   {
     q: 17,
@@ -997,10 +997,10 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 7,
     text: "Haluaisitko auttaa ihmisiä voimaan hyvin?",
     dimension: 'interests',
-    subdimension: 'people',
+    subdimension: 'health',  // FIXED: Changed from 'people' to 'health' for proper healthcare matching
     weight: 1.4,
     reverse: false,
-    notes: "Healthcare/wellbeing careers (strong indicator)"
+    notes: "Healthcare/wellbeing careers (strong indicator) - maps to health subdimension"
   },
   {
     q: 8,

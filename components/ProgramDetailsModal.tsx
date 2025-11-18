@@ -155,7 +155,7 @@ export function ProgramDetailsModal({
                   return (
                     <Link
                       key={index}
-                      href={`/ammatit/${careerSlug}`}
+                      href={`/ammatit/${encodeURIComponent(careerSlug)}`}
                       className={`px-3 py-1 rounded-full text-xs font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 ${
                         isMatched
                           ? 'bg-green-100 text-green-800 border-2 border-green-300 hover:bg-green-200'

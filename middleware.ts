@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import crypto from 'crypto';
 import { sitePasswordIsConfigured } from '@/lib/siteAuth';
+import { isBotUserAgent, isSuspiciousRequest, shouldChallenge } from '@/lib/antiScraping';
+import { trackRequest, analyzeRequestPatterns, getIP } from '@/lib/botDetection';
 
 /**
  * Teacher Dashboard Protection Middleware
@@ -8,8 +11,73 @@ import { sitePasswordIsConfigured } from '@/lib/siteAuth';
  * Uses cookie-based authentication with teacher access code
  */
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  
+  // ANTI-SCRAPING PROTECTION LAYER 1: Bot Detection
+  // Skip bot detection for localhost (development) and static assets
+  const localHosts = new Set(['localhost', '127.0.0.1', '0.0.0.0', '::1']);
+  const isLocalhost = localHosts.has(request.nextUrl.hostname);
+  
+  const skipBotCheck = 
+    isLocalhost || // Skip all bot detection on localhost
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/api/teacher-auth') ||
+    pathname.startsWith('/api/site-auth') ||
+    pathname.startsWith('/favicon') ||
+    pathname.match(/\.(ico|png|jpg|jpeg|gif|svg|css|js|woff|woff2|ttf|eot)$/);
+  
+  if (!skipBotCheck) {
+    const userAgent = request.headers.get('user-agent');
+    
+    // Block known bots immediately (except search engines for SEO)
+    if (userAgent && isBotUserAgent(userAgent)) {
+      const isSearchEngine = /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandex/i.test(userAgent);
+      
+      if (!isSearchEngine) {
+        // Track and block
+        const ip = getIP(request);
+        await trackRequest(request, ip, pathname);
+        
+        return new NextResponse('Access Denied', {
+          status: 403,
+          headers: {
+            'X-Bot-Detected': 'true',
+            'Retry-After': '3600'
+          }
+        });
+      }
+    }
+    
+    // Check for suspicious request patterns
+    const suspicious = isSuspiciousRequest(request);
+    if (suspicious.suspicious) {
+      const ip = getIP(request);
+      await trackRequest(request, ip, pathname);
+      
+      // Analyze patterns
+      const analysis = await analyzeRequestPatterns(request, ip);
+      
+      if (analysis.action === 'block') {
+        return new NextResponse('Access Denied - Suspicious Activity Detected', {
+          status: 403,
+          headers: {
+            'X-Bot-Detected': 'true',
+            'X-Bot-Confidence': analysis.confidence.toString(),
+            'Retry-After': '3600'
+          }
+        });
+      }
+      
+      if (analysis.action === 'challenge') {
+        // Redirect to challenge page (we'll create this)
+        const challengeUrl = new URL('/challenge', request.url);
+        challengeUrl.searchParams.set('returnTo', pathname);
+        challengeUrl.searchParams.set('token', crypto.randomBytes(16).toString('hex'));
+        return NextResponse.redirect(challengeUrl);
+      }
+    }
+  }
 
   // Admin-only protection: hide existence by returning 404 for non-admins
   // Only apply to page routes, not API routes (API routes handle their own auth)
@@ -81,8 +149,6 @@ export function middleware(request: NextRequest) {
 
   // Hide /kouluille page from public in production
   // Allow admin access in localhost
-  const localHosts = new Set(['localhost', '127.0.0.1', '0.0.0.0', '::1']);
-  const isLocalhost = localHosts.has(request.nextUrl.hostname);
   const isProduction = request.nextUrl.hostname.includes('urakompassi.com') || request.nextUrl.hostname.includes('vercel.app');
 
   if (pathname === '/kouluille') {
@@ -136,8 +202,30 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // Allow all other routes
-  return NextResponse.next();
+  // ANTI-SCRAPING PROTECTION LAYER 2: Add Security Headers
+  const response = NextResponse.next();
+  
+  // Security headers to prevent scraping and attacks
+  response.headers.set('X-Content-Type-Options', 'nosniff');
+  response.headers.set('X-Frame-Options', 'DENY');
+  response.headers.set('X-XSS-Protection', '1; mode=block');
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  response.headers.set('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
+  
+  // Content Security Policy (adjust based on your needs)
+  response.headers.set(
+    'Content-Security-Policy',
+    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none';"
+  );
+  
+  // Prevent caching of sensitive pages
+  if (pathname.startsWith('/teacher') || pathname.startsWith('/admin') || pathname.startsWith('/api')) {
+    response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    response.headers.set('Pragma', 'no-cache');
+    response.headers.set('Expires', '0');
+  }
+  
+  return response;
 }
 
 export const config = {

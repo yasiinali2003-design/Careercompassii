@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { careersData as careersFI, CareerFI } from '@/data/careers-fi';
 import { Career } from '@/lib/types';
+import { careerSlugExists } from '@/lib/validateCareerLinks';
 
 // Convert CareerFI to Career format
 function convertCareerFIToCareer(careerFI: any): Career {
@@ -42,6 +43,15 @@ interface CareerPageProps {
 export async function generateMetadata({ params }: CareerPageProps): Promise<Metadata> {
   // Decode the slug to handle special characters properly
   const decodedSlug = decodeURIComponent(params.slug);
+  
+  // Validate slug exists
+  if (!careerSlugExists(decodedSlug)) {
+    return {
+      title: 'Ammattia ei löytynyt | Urakompassi',
+      description: 'Hakemaasi ammattia ei löytynyt Urakompassin Urakirjastosta.',
+    };
+  }
+  
   const career = getCareerBySlug(decodedSlug);
   
   if (!career) {

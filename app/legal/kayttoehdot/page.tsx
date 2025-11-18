@@ -6,7 +6,7 @@ export default function KayttoehdotPage() {
       <main className="flex-1">
         <div className="container mx-auto px-4 py-12 max-w-3xl">
           <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-primary">KÄYTTÖEHDOT — Urakompassi Oy</h1>
-          <p className="text-sm text-muted-foreground mb-8">Versio 3.3 • Viimeksi päivitetty: 7.11.2025 • Y‑tunnus: [täydennä] • Rekisteröity tavaramerkki: [täydennä]</p>
+          <p className="text-sm text-muted-foreground mb-8">Versio 3.3 • Viimeksi päivitetty: 7.11.2025 • Y‑tunnus: 3579081-5 • Rekisteröity tavaramerkki: [täydennä]</p>
           <div className="space-y-6 leading-relaxed text-base">
           <pre className="whitespace-pre-wrap font-sans text-[15px]">
 {`## 1 Johdanto
@@ -73,9 +73,9 @@ Voimme päivittää Ehtoja; uudet Ehdot tulevat voimaan ilmoitetusta päivästä
 
 ## 20 Yhteystiedot
 Urakompassi Oy
-Säterintie 6 C, [postinumero ja kaupunki], Finland
-Y‑tunnus: [täydennä]
-Sähköposti: support@urakompassi.com`}
+Säterintie 6, 00720 Helsinki, Finland
+Y‑tunnus: 3579081-5
+Sähköposti: support@urakompassi.fi`}
           </pre>
         </div>
         </div>

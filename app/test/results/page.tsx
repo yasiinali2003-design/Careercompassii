@@ -505,7 +505,7 @@ function CareerMatchCard({
       </CardContent>
 
       <CardFooter>
-        <Link href={`/ammatit/${career.slug}`} className="w-full">
+        <Link href={`/ammatit/${encodeURIComponent(career.slug)}`} className="w-full">
           <Button className="w-full" variant="default">
             {ctaText}
           </Button>

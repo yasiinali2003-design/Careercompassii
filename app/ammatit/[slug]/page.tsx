@@ -7,6 +7,7 @@ import { ArrowLeft, ExternalLink, GraduationCap, TrendingUp, Users, MapPin } fro
 import { careersData as careersFI, CareerFI } from '@/data/careers-fi';
 import { Career } from '@/lib/types';
 import Logo from '@/components/Logo';
+import { getValidatedRelatedCareers, careerSlugExists } from '@/lib/validateCareerLinks';
 
 // Convert CareerFI to Career format
 function convertCareerFIToCareer(careerFI: any): Career {
@@ -35,6 +36,10 @@ function convertCareerFIToCareer(careerFI: any): Career {
 }
 
 function getCareerBySlug(slug: string): Career | null {
+  // Validate slug exists before looking it up
+  if (!careerSlugExists(slug)) {
+    return null;
+  }
   const careerFI = careersFI.find(c => c && c.id === slug);
   return careerFI ? convertCareerFIToCareer(careerFI) : null;
 }
@@ -43,6 +48,23 @@ function getRelatedCareers(career: Career, limit: number = 6): Career[] {
   const careerFI = careersFI.find(c => c && c.id === career.slug);
   if (!careerFI) return [];
   
+  // First, try to use validated related_careers from data
+  const validatedRelatedSlugs = getValidatedRelatedCareers(career.slug);
+  if (validatedRelatedSlugs.length > 0) {
+    const relatedFromData = validatedRelatedSlugs
+      .map(slug => {
+        const relatedCareerFI = careersFI.find(c => c && c.id === slug);
+        return relatedCareerFI ? convertCareerFIToCareer(relatedCareerFI) : null;
+      })
+      .filter((c): c is Career => c !== null)
+      .slice(0, limit);
+    
+    if (relatedFromData.length > 0) {
+      return relatedFromData;
+    }
+  }
+  
+  // Fallback to algorithm-based matching if no related_careers defined
   // Same category - highest priority
   const sameCategory = careersFI
     .filter(c => c && c.category === careerFI.category && c.id !== careerFI.id)
@@ -88,12 +110,33 @@ interface CareerDetailProps {
 }
 
 export default function CareerDetail({ params }: CareerDetailProps) {
+  const router = useRouter();
+  
   // Decode the slug to handle special characters properly
   const decodedSlug = decodeURIComponent(params.slug);
+  
+  // Validate slug exists before proceeding
+  if (!careerSlugExists(decodedSlug)) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-[#F8FBFF] to-white flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-slate-900 mb-4">Ammattia ei löytynyt</h1>
+          <Link
+            href="/ammatit"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Takaisin Urakirjastoon
+          </Link>
+        </div>
+      </div>
+    );
+  }
+  
   const career = getCareerBySlug(decodedSlug);
   const relatedCareers = career ? getRelatedCareers(career) : [];
-  const router = useRouter();
 
+  // This should never happen due to validation above, but keep as safety check
   if (!career) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-[#F8FBFF] to-white flex items-center justify-center">
@@ -101,7 +144,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
           <h1 className="text-2xl font-bold text-slate-900 mb-4">Ammattia ei löytynyt</h1>
           <Link
             href="/ammatit"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#2563EB] text-white rounded-xl hover:bg-[#1D4ED8] transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             Takaisin Urakirjastoon
@@ -217,7 +260,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                   <ul className="space-y-3">
                     {career.dailyTasks.map((task: string, index: number) => (
                       <li key={index} className="flex items-start">
-                        <span className="text-[#2563EB] mr-3 mt-1 font-bold">•</span>
+                        <span className="text-primary mr-3 mt-1 font-bold">•</span>
                         <span className="text-slate-600 leading-relaxed">{task}</span>
                       </li>
                     ))}
@@ -352,7 +395,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                 {career.salaryMin && career.salaryMax && (
                   <div className="mb-4">
                     <p className="text-sm text-slate-600 mb-1">Palkkahaitari</p>
-                    <p className="text-xl font-bold text-[#2563EB]">
+                    <p className="text-xl font-bold text-primary">
                       {career.salaryMin}-{career.salaryMax} €/kk
                     </p>
                   </div>
@@ -380,16 +423,18 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                     </p>
                   </div>
                   <div className="grid grid-cols-1 gap-3">
-                    {relatedCareers.map((relatedCareer: Career) => (
-                      <Link
-                        key={relatedCareer.slug}
-                        href={`/ammatit/${relatedCareer.slug}`}
-                        className="block p-4 bg-white rounded-xl hover:shadow-md transition-all border border-slate-200"
-                      >
-                        <h4 className="font-semibold text-slate-900 mb-1">{relatedCareer.title}</h4>
-                        <p className="text-sm text-slate-600 line-clamp-2">{relatedCareer.summary}</p>
-                      </Link>
-                    ))}
+                    {relatedCareers
+                      .filter((relatedCareer: Career) => careerSlugExists(relatedCareer.slug))
+                      .map((relatedCareer: Career) => (
+                        <Link
+                          key={relatedCareer.slug}
+                          href={`/ammatit/${encodeURIComponent(relatedCareer.slug)}`}
+                          className="block p-4 bg-white rounded-xl hover:shadow-md transition-all border border-slate-200"
+                        >
+                          <h4 className="font-semibold text-slate-900 mb-1">{relatedCareer.title}</h4>
+                          <p className="text-sm text-slate-600 line-clamp-2">{relatedCareer.summary}</p>
+                        </Link>
+                      ))}
                   </div>
                 </div>
               )}
@@ -430,7 +475,7 @@ export default function CareerDetail({ params }: CareerDetailProps) {
                   Vertaa palkkaa, vaatimuksia ja työllisyysnäkymiä rinnakkain
                 </p>
                 <Link
-                  href={`/ammatit/compare?careers=${career.slug}`}
+                  href={`/ammatit/compare?careers=${encodeURIComponent(career.slug)}`}
                   className="inline-flex items-center gap-2 px-4 py-2 bg-white text-secondary rounded-xl hover:bg-secondary/10 transition-colors font-medium"
                 >
                   Siirry vertailuun
@@ -439,16 +484,16 @@ export default function CareerDetail({ params }: CareerDetailProps) {
               </div>
 
               {/* CTA */}
-              <div className="bg-[#2563EB] rounded-2xl p-6 text-white">
+              <div className="bg-primary rounded-2xl p-6 text-white">
                 <h3 className="text-lg font-bold mb-2">Etsi koulutuksia</h3>
-                <p className="text-primary mb-4 text-sm">
+                <p className="text-white/90 mb-4 text-sm">
                   Löydä sopivia koulutusohjelmia Opintopolusta
                 </p>
                 <a
                   href="https://opintopolku.fi/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-[#2563EB] rounded-xl hover:bg-slate-50 transition-colors font-medium"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white text-primary rounded-xl hover:bg-slate-50 transition-colors font-medium"
                 >
                   Etsi koulutuksia Opintopolussa
                   <ExternalLink className="h-4 w-4" />

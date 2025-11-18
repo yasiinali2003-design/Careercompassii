@@ -1,5 +1,62 @@
+# Anti-scraping robots.txt
+# Blocks all crawlers except search engines
+
 User-agent: *
 Disallow: /
+
+# Allow search engines (for SEO)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Block known scrapers explicitly
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# Block automation tools
+User-agent: curl
+Disallow: /
+
+User-agent: wget
+Disallow: /
+
+User-agent: python-requests
+Disallow: /
+
+User-agent: scrapy
+Disallow: /
+
+User-agent: selenium
+Disallow: /
+
+User-agent: headless
+Disallow: /
+
+# Crawl delay for all bots
+Crawl-delay: 10
 
 
 

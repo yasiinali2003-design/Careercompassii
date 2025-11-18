@@ -249,122 +249,162 @@ export default function HomePage() {
 
       
 
-      <section id="kenelle" className="relative py-20 overflow-hidden">
-        {/* Subtle background elements */}
-        <div className="absolute top-10 left-1/4 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
+      <section id="kenelle" className="relative py-24 bg-gradient-to-b from-white via-slate-50/30 to-white overflow-hidden">
+        {/* Decorative background pattern */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgb(43, 95, 117) 1px, transparent 0)`,
+          backgroundSize: '60px 60px'
+        }}></div>
+        
+        {/* Accent shapes */}
+        <div className="absolute top-20 right-10 w-96 h-96 bg-primary/3 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/3 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 relative">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            {/* Accent decoration */}
-            <div className="inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-0.5 bg-accent rounded-full"></div>
-              <span className="text-sm font-semibold text-accent uppercase tracking-wider">Kohderyhmät</span>
-              <div className="w-8 h-0.5 bg-accent rounded-full"></div>
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            {/* Different header style - more prominent */}
+            <div className="inline-block mb-6">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="h-1 w-16 bg-gradient-to-r from-transparent via-accent to-accent rounded-full"></div>
+                <span className="text-sm font-bold text-accent uppercase tracking-[0.15em] px-4 py-2 bg-accent/10 rounded-full">Kohderyhmät</span>
+                <div className="h-1 w-16 bg-gradient-to-r from-accent via-accent to-transparent rounded-full"></div>
+              </div>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-900">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-slate-900 leading-tight">
               Kenelle Urakompassi on tarkoitettu?
             </h2>
-            <p className="text-lg text-slate-600">
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
               Tuki urasuunnitteluun kaikissa elämänvaiheissa
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          
+          {/* Redesigned cards with distinct visual style */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Yläasteen oppilaat */}
-            <div className="relative bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-md hover:border-primary/30 transition-all group">
-              {/* Subtle accent corner */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/10 to-transparent rounded-tr-2xl rounded-bl-full"></div>
-
-              <div className="flex items-center justify-center mb-6 relative">
-                <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-                  <GraduationCap className="h-7 w-7 text-primary" />
+            <div className="group relative">
+              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 h-full flex flex-col">
+                {/* Icon with colored background */}
+                <div className="mb-6">
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 group-hover:from-primary/25 group-hover:to-primary/10 transition-all duration-300">
+                    <GraduationCap className="h-10 w-10 text-primary" />
+                  </div>
                 </div>
+                
+                <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors">
+                  Yläasteen oppilaat
+                </h3>
+                
+                <p className="text-slate-600 mb-6 leading-relaxed text-base">
+                  Löydä suunta toisen asteen opintoihin ja tutki eri urapolkuja.
+                </p>
+                
+                {/* Benefits with checkmark icons */}
+                <ul className="space-y-4 mt-auto">
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-primary" />
+                    </div>
+                    <span className="text-slate-700 leading-relaxed">Tutustu laajaan valikoimaan uroja ja ammatteja</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-primary" />
+                    </div>
+                    <span className="text-slate-700 leading-relaxed">Tunnista omat vahvuutesi ja kiinnostuksen kohteesi</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-primary" />
+                    </div>
+                    <span className="text-slate-700 leading-relaxed">Saat selkeän kuvan erilaisista koulutuspoluista</span>
+                  </li>
+                </ul>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center group-hover:text-primary transition-colors">
-                Yläasteen oppilaat
-              </h3>
-              <p className="text-slate-600 mb-6 leading-relaxed text-center">
-                Löydä suunta toisen asteen opintoihin ja tutki eri urapolkuja.
-              </p>
-              <ul className="space-y-3 text-sm text-slate-600">
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1 font-bold">✓</span>
-                  <span>Tutustu laajaan valikoimaan uroja ja ammatteja</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1 font-bold">✓</span>
-                  <span>Tunnista omat vahvuutesi ja kiinnostuksen kohteesi</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1 font-bold">✓</span>
-                  <span>Saat selkeän kuvan erilaisista koulutuspoluista</span>
-                </li>
-              </ul>
             </div>
 
             {/* Toisen asteen opiskelijat */}
-            <div className="relative bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-md hover:border-primary/30 transition-all group">
-              {/* Subtle accent corner */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-secondary/10 to-transparent rounded-tr-2xl rounded-bl-full"></div>
-
-              <div className="flex items-center justify-center mb-6 relative">
-                <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-                  <Target className="h-7 w-7 text-primary" />
+            <div className="group relative">
+              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 h-full flex flex-col">
+                {/* Icon with colored background */}
+                <div className="mb-6">
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary/15 to-secondary/5 group-hover:from-secondary/25 group-hover:to-secondary/10 transition-all duration-300">
+                    <Target className="h-10 w-10 text-secondary" />
+                  </div>
                 </div>
+                
+                <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-secondary transition-colors">
+                  Toisen asteen opiskelijat
+                </h3>
+                
+                <p className="text-slate-600 mb-6 leading-relaxed text-base">
+                  Tarkenna urasuunnitelmaasi ja löydä polku jatko-opintoihin.
+                </p>
+                
+                {/* Benefits with checkmark icons */}
+                <ul className="space-y-4 mt-auto">
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-secondary" />
+                    </div>
+                    <span className="text-slate-700 leading-relaxed">Selvitä, mihin ammattialoihin kiinnostuksesi johtavat</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-secondary" />
+                    </div>
+                    <span className="text-slate-700 leading-relaxed">Vertaile eri koulutusvaihtoehtoja ja urapolkuja</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-secondary" />
+                    </div>
+                    <span className="text-slate-700 leading-relaxed">Tee tietoon perustuvia päätöksiä tulevaisuudestasi</span>
+                  </li>
+                </ul>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center group-hover:text-primary transition-colors">
-                Toisen asteen opiskelijat
-              </h3>
-              <p className="text-slate-600 mb-6 leading-relaxed text-center">
-                Tarkenna urasuunnitelmaasi ja löydä polku jatko-opintoihin.
-              </p>
-              <ul className="space-y-3 text-sm text-slate-600">
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1 font-bold">✓</span>
-                  <span>Selvitä, mihin ammattialoihin kiinnostuksesi johtavat</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1 font-bold">✓</span>
-                  <span>Vertaile eri koulutusvaihtoehtoja ja urapolkuja</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1 font-bold">✓</span>
-                  <span>Tee tietoon perustuvia päätöksiä tulevaisuudestasi</span>
-                </li>
-              </ul>
             </div>
 
             {/* Nuoret aikuiset */}
-            <div className="relative bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-md hover:border-primary/30 transition-all group">
-              {/* Subtle accent corner */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-accent/10 to-transparent rounded-tr-2xl rounded-bl-full"></div>
-
-              <div className="flex items-center justify-center mb-6 relative">
-                <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-                  <Users className="h-7 w-7 text-primary" />
+            <div className="group relative">
+              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 h-full flex flex-col">
+                {/* Icon with colored background */}
+                <div className="mb-6">
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-accent/15 to-accent/5 group-hover:from-accent/25 group-hover:to-accent/10 transition-all duration-300">
+                    <Users className="h-10 w-10 text-accent" />
+                  </div>
                 </div>
+                
+                <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-accent transition-colors">
+                  Nuoret aikuiset
+                </h3>
+                
+                <p className="text-slate-600 mb-6 leading-relaxed text-base">
+                  Harkitse uudelleenkouluttautumista tai uran vaihtoa luottavaisin mielin.
+                </p>
+                
+                {/* Benefits with checkmark icons */}
+                <ul className="space-y-4 mt-auto">
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-accent" />
+                    </div>
+                    <span className="text-slate-700 leading-relaxed">Tutki uusia uramahdollisuuksia ja aloja</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-accent" />
+                    </div>
+                    <span className="text-slate-700 leading-relaxed">Hahmota oma vahvuusprofiilisi ja soveltuvuutesi</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-accent" />
+                    </div>
+                    <span className="text-slate-700 leading-relaxed">Löydä seuraava askel selkeän analyysin avulla</span>
+                  </li>
+                </ul>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3 text-center group-hover:text-primary transition-colors">
-                Nuoret aikuiset
-              </h3>
-              <p className="text-slate-600 mb-6 leading-relaxed text-center">
-                Harkitse uudelleenkouluttautumista tai uran vaihtoa luottavaisin mielin.
-              </p>
-              <ul className="space-y-3 text-sm text-slate-600">
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1 font-bold">✓</span>
-                  <span>Tutki uusia uramahdollisuuksia ja aloja</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1 font-bold">✓</span>
-                  <span>Hahmota oma vahvuusprofiilisi ja soveltuvuutesi</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1 font-bold">✓</span>
-                  <span>Löydä seuraava askel selkeän analyysin avulla</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>

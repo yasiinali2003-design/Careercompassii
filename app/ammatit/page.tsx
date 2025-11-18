@@ -217,7 +217,7 @@ export default function CareerCatalog() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-[#2563EB] mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
             Urakirjasto
           </h1>
           <p className="text-xl text-slate-600 mb-8 leading-relaxed">
@@ -233,7 +233,7 @@ export default function CareerCatalog() {
               placeholder="Hae ammatteja..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 text-lg"
+              className="w-full pl-12 pr-4 py-4 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 text-lg"
             />
           </div>
 
@@ -245,7 +245,7 @@ export default function CareerCatalog() {
             <Filter className="h-5 w-5" />
             Suodattimet
             {hasActiveFilters && (
-              <span className="bg-[#2563EB] text-white text-xs px-2 py-1 rounded-full">
+              <span className="bg-primary text-white text-xs px-2 py-1 rounded-full">
                 {Object.values(filters).filter((v: any) => Array.isArray(v) ? v.length > 0 : v !== undefined).length + (searchTerm ? 1 : 0)}
               </span>
             )}
@@ -277,7 +277,7 @@ export default function CareerCatalog() {
                               setFilters(prev => ({ ...prev, industry: current.filter((i: string) => i !== industry) }));
                             }
                           }}
-                          className="rounded border-slate-300 text-[#2563EB] focus:ring-[#2563EB]"
+                          className="rounded border-slate-300 text-primary focus:ring-primary"
                         />
                         <span className="ml-2 text-sm text-slate-600">{industry}</span>
                       </label>
@@ -304,7 +304,7 @@ export default function CareerCatalog() {
                               setFilters(prev => ({ ...prev, educationLevel: current.filter((l: string) => l !== level) }));
                             }
                           }}
-                          className="rounded border-slate-300 text-[#2563EB] focus:ring-[#2563EB]"
+                          className="rounded border-slate-300 text-primary focus:ring-primary"
                         />
                         <span className="ml-2 text-sm text-slate-600">{level}</span>
                       </label>
@@ -331,7 +331,7 @@ export default function CareerCatalog() {
                               setFilters(prev => ({ ...prev, personalityType: current.filter((t: string) => t !== type) }));
                             }
                           }}
-                          className="rounded border-slate-300 text-[#2563EB] focus:ring-[#2563EB]"
+                          className="rounded border-slate-300 text-primary focus:ring-primary"
                         />
                         <span className="ml-2 text-sm text-slate-600">{type}</span>
                       </label>
@@ -371,11 +371,11 @@ export default function CareerCatalog() {
               {displayedCareers.map((career: Career) => (
                 <Link
                   key={career.slug}
-                  href={`/ammatit/${career.slug}`}
+                  href={`/ammatit/${encodeURIComponent(career.slug)}`}
                   className="group block"
                 >
                   <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 hover:shadow-md hover:scale-[1.02] transition-all duration-300 h-full">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#2563EB] transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors">
                       {career.title}
                     </h3>
                     <p className="text-slate-600 mb-4 leading-relaxed">
@@ -403,7 +403,7 @@ export default function CareerCatalog() {
                       )}
                     </div>
 
-                    <div className="flex items-center text-[#2563EB] font-medium group-hover:underline">
+                    <div className="flex items-center text-primary font-medium group-hover:underline">
                       Lue lisää
                       <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -421,7 +421,7 @@ export default function CareerCatalog() {
               {hasActiveFilters && (
                 <button
                   onClick={clearFilters}
-                  className="mt-4 px-6 py-3 bg-[#2563EB] text-white rounded-xl hover:bg-[#1D4ED8] transition-colors"
+                  className="mt-4 px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors"
                 >
                   Tyhjennä suodattimet
                 </button>

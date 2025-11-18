@@ -292,7 +292,7 @@ export function computeCareerFit(
 
 /**
  * Calculate similarity between user and career subdimensions
- * Uses cosine similarity-like approach
+ * Uses cosine similarity-like approach with enhanced matching for key subdimensions
  * Supports optional weights for category-specific prioritization
  */
 function calculateSubdimensionSimilarity(
@@ -308,10 +308,18 @@ function calculateSubdimensionSimilarity(
   let userMagnitude = 0;
   let careerMagnitude = 0;
   
+  // Track strong matches for bonus scoring
+  const strongMatches: string[] = [];
+  
   allKeys.forEach(key => {
     const weight = weights?.[key] || 1.0; // Default weight is 1.0 if not specified
     const userScore = (userScores[key] || 0) * weight;
     const careerScore = (careerScores[key] || 0) * weight;
+    
+    // Track strong matches (both user and career have high scores)
+    if (userScore >= 0.6 && careerScore >= 0.6) {
+      strongMatches.push(key);
+    }
     
     dotProduct += userScore * careerScore;
     userMagnitude += userScore * userScore;
@@ -323,7 +331,19 @@ function calculateSubdimensionSimilarity(
   
   if (userMagnitude === 0 || careerMagnitude === 0) return 0;
   
-  return dotProduct / (userMagnitude * careerMagnitude);
+  let similarity = dotProduct / (userMagnitude * careerMagnitude);
+  
+  // ENHANCED MATCHING: Boost similarity when key subdimensions match strongly
+  // This helps healthcare careers match better when user has health interest
+  if (strongMatches.length > 0) {
+    // Bonus for each strong match (especially important ones like health, people)
+    const importantKeys = ['health', 'people', 'technology', 'creative', 'education'];
+    const importantMatches = strongMatches.filter(k => importantKeys.includes(k));
+    const bonus = Math.min(0.15, importantMatches.length * 0.05 + strongMatches.length * 0.02);
+    similarity = Math.min(1.0, similarity + bonus);
+  }
+  
+  return similarity;
 }
 
 // ========== STEP 4: GENERATE REASONS ==========
@@ -1045,51 +1065,127 @@ function determineDominantCategory(
     jarjestaja: 0
   };
   
-  // auttaja: people interest, impact values, teaching/motivation workstyle
-  categoryScores.auttaja += (interests.people || 0) * 1.0;
-  categoryScores.auttaja += (values.impact || 0) * 0.8;
-  categoryScores.auttaja += (workstyle.teaching || 0) * 0.7;
+  // auttaja: people interest, health interest, impact values, teaching/motivation workstyle (but NOT career_clarity or creative)
+  categoryScores.auttaja += (interests.people || 0) * 1.2;  // BOOSTED: Critical for helping professions
+  categoryScores.auttaja += (interests.health || 0) * 1.5;  // BOOSTED: Strong healthcare signal
+  categoryScores.auttaja += (interests.education || 0) * 1.0; // BOOSTED: Teaching/education
+  categoryScores.auttaja += (values.impact || 0) * 0.9;      // BOOSTED: Making a difference
+  categoryScores.auttaja += (workstyle.teaching || 0) * 0.8;  // BOOSTED: Teaching style
   categoryScores.auttaja += (workstyle.motivation || 0) * 0.7;
-  categoryScores.auttaja += (values.social_impact || 0) * 0.6;
+  categoryScores.auttaja += (values.social_impact || 0) * 0.8; // BOOSTED: Social impact motivation
+  // Penalize career_clarity and creative to avoid visionaari confusion
+  categoryScores.auttaja -= (values.career_clarity || 0) * 0.3;  // Penalize career_clarity to avoid visionaari confusion
+  categoryScores.auttaja -= (interests.creative || 0) * 0.2;  // Penalize creative to avoid visionaari confusion
   
-  // luova: creative interest, arts_culture, writing
-  categoryScores.luova += (interests.creative || 0) * 1.0;
-  categoryScores.luova += (interests.arts_culture || 0) * 0.8;
-  categoryScores.luova += (interests.writing || 0) * 0.7;
+  // luova: creative interest, arts_culture, writing (but NOT career_clarity or planning to avoid visionaari confusion)
+  categoryScores.luova += (interests.creative || 0) * 1.3;  // BOOSTED: Creative is key
+  categoryScores.luova += (interests.arts_culture || 0) * 0.9;  // BOOSTED: Arts/culture
+  categoryScores.luova += (interests.writing || 0) * 0.8;  // BOOSTED: Writing
+  // Penalize career_clarity and planning to avoid visionaari confusion
+  categoryScores.luova -= (values.career_clarity || 0) * 0.4;  // Penalize career_clarity to avoid visionaari confusion
+  categoryScores.luova -= (workstyle.planning || 0) * 0.3;  // Penalize planning to avoid visionaari confusion
   
-  // johtaja: leadership workstyle, organization, planning
-  categoryScores.johtaja += (workstyle.leadership || 0) * 1.0;
-  categoryScores.johtaja += (workstyle.organization || 0) * 0.8;
-  categoryScores.johtaja += (workstyle.planning || 0) * 0.7;
-  categoryScores.johtaja += (values.advancement || 0) * 0.6;
+  // johtaja: leadership workstyle, planning, global values (but NOT analytical or organization to avoid jarjestaja confusion)
+  categoryScores.johtaja += (workstyle.leadership || 0) * 1.3;  // BOOSTED: Leadership is key
+  categoryScores.johtaja += (workstyle.planning || 0) * 0.8;  // BOOSTED: Planning for leadership
+  categoryScores.johtaja += (values.global || 0) * 0.7;  // BOOSTED: Global vision for leadership
+  categoryScores.johtaja += (values.advancement || 0) * 0.8;  // BOOSTED: Advancement for leadership
+  categoryScores.johtaja += (values.entrepreneurship || 0) * 0.7;  // Entrepreneurship can indicate leadership
+  categoryScores.johtaja += (interests.leadership || 0) * 1.0;  // Leadership interest
+  // Penalize analytical, organization, and career_clarity to avoid jarjestaja/visionaari confusion
+  categoryScores.johtaja -= (interests.analytical || 0) * 0.3;  // Penalize analytical to avoid jarjestaja confusion
+  categoryScores.johtaja -= (workstyle.organization || 0) * 0.2;  // Slight penalty for organization to avoid jarjestaja confusion
+  categoryScores.johtaja -= (values.career_clarity || 0) * 0.3;  // Penalize career_clarity to avoid visionaari confusion
   
-  // innovoija: technology interest, innovation, problem_solving
-  categoryScores.innovoija += (interests.technology || 0) * 1.0;
-  categoryScores.innovoija += (interests.innovation || 0) * 0.8;
+  // innovoija: technology interest, innovation, problem_solving (but NOT analytical or organization)
+  categoryScores.innovoija += (interests.technology || 0) * 1.3;  // BOOSTED: Technology is key
+  categoryScores.innovoija += (interests.innovation || 0) * 0.9;  // BOOSTED: Innovation interest
   categoryScores.innovoija += (workstyle.problem_solving || 0) * 0.7;
-  categoryScores.innovoija += (values.entrepreneurship || 0) * 0.6;
+  categoryScores.innovoija += (values.entrepreneurship || 0) * 0.5;  // Entrepreneurship can also indicate innovation
+  // Penalize analytical and organization to avoid jarjestaja confusion
+  categoryScores.innovoija -= (interests.analytical || 0) * 0.3;  // Penalize analytical to avoid jarjestaja confusion
+  categoryScores.innovoija -= (workstyle.organization || 0) * 0.3;  // Penalize organization to avoid jarjestaja confusion
   
-  // rakentaja: hands_on interest, precision
-  categoryScores.rakentaja += (interests.hands_on || 0) * 1.0;
+  // Cohort-specific penalties for NUORI to avoid visionaari confusion
+  if (cohort === 'NUORI') {
+    categoryScores.innovoija -= (values.global || 0) * 0.5;  // Penalize global to avoid visionaari confusion (increased)
+    categoryScores.innovoija -= (values.advancement || 0) * 0.4;  // Penalize advancement to avoid visionaari confusion
+    categoryScores.innovoija -= (values.growth || 0) * 0.4;  // Penalize growth to avoid visionaari confusion
+    categoryScores.innovoija -= (workstyle.flexibility || 0) * 0.3;  // Penalize flexibility to avoid visionaari confusion
+  }
+  
+  // rakentaja: hands_on interest, precision (but NOT career_clarity, creative, analytical, environment, or people)
+  categoryScores.rakentaja += (interests.hands_on || 0) * 1.3;  // BOOSTED: Hands-on is key
   categoryScores.rakentaja += (workstyle.precision || 0) * 0.8;
   categoryScores.rakentaja += (workstyle.performance || 0) * 0.6;
+  // Penalize career_clarity, creative, analytical, environment, and people to avoid visionaari/jarjestaja/ympariston-puolustaja/auttaja confusion
+  categoryScores.rakentaja -= (values.career_clarity || 0) * 0.4;  // Penalize career_clarity to avoid visionaari confusion
+  categoryScores.rakentaja -= (interests.creative || 0) * 0.3;  // Penalize creative to avoid visionaari confusion
+  categoryScores.rakentaja -= (interests.analytical || 0) * 0.4;  // Penalize analytical to avoid jarjestaja confusion
+  categoryScores.rakentaja -= (interests.environment || 0) * 0.4;  // Penalize environment to avoid ympariston-puolustaja confusion
+  categoryScores.rakentaja -= (interests.people || 0) * 0.4;  // Penalize people to avoid auttaja confusion
   
-  // ympariston-puolustaja: environment interest, nature
-  categoryScores['ympariston-puolustaja'] += (interests.environment || 0) * 1.0;
-  categoryScores['ympariston-puolustaja'] += (interests.nature || 0) * 0.8;
-  categoryScores['ympariston-puolustaja'] += ((context?.outdoor || 0) * 0.6);
+  // ympariston-puolustaja: environment interest, nature, outdoor context, work_environment (but NOT career_clarity, analytical, organization, people, or health)
+  categoryScores['ympariston-puolustaja'] += (interests.environment || 0) * 1.3;  // BOOSTED: Environment is key
+  categoryScores['ympariston-puolustaja'] += (interests.nature || 0) * 1.1;  // BOOSTED: Nature interest
+  categoryScores['ympariston-puolustaja'] += ((context?.outdoor || 0) * 0.8);  // BOOSTED: Outdoor context
+  categoryScores['ympariston-puolustaja'] += ((context?.work_environment || 0) * 1.2);  // BOOSTED: Mobile/field work (outdoor context) - increased further for NUORI
+  // Penalize career_clarity, analytical, organization, people, health, and hands_on to avoid visionaari/jarjestaja/auttaja/rakentaja confusion
+  categoryScores['ympariston-puolustaja'] -= (values.career_clarity || 0) * 0.4;  // Penalize career_clarity to avoid visionaari confusion
+  categoryScores['ympariston-puolustaja'] -= (interests.analytical || 0) * 0.5;  // Penalize analytical to avoid jarjestaja confusion (increased)
+  categoryScores['ympariston-puolustaja'] -= (workstyle.organization || 0) * 0.5;  // Penalize organization to avoid jarjestaja confusion (increased)
+  categoryScores['ympariston-puolustaja'] -= (interests.people || 0) * 0.5;  // Penalize people to avoid auttaja confusion
+  categoryScores['ympariston-puolustaja'] -= (interests.health || 0) * 0.5;  // Penalize health to avoid auttaja confusion
+  categoryScores['ympariston-puolustaja'] -= (values.social_impact || 0) * 0.2;  // Penalize social_impact slightly to avoid auttaja confusion
+  categoryScores['ympariston-puolustaja'] -= (interests.hands_on || 0) * 0.5;  // Penalize hands_on to avoid rakentaja confusion (increased)
   
-  // visionaari: planning workstyle, innovation, global values
-  categoryScores.visionaari += (workstyle.planning || 0) * 0.8;
-  categoryScores.visionaari += (interests.innovation || 0) * 0.7;
-  categoryScores.visionaari += (values.global || 0) * 0.8;
-  categoryScores.visionaari += (values.career_clarity || 0) * 0.6;
+  // Cohort-specific penalties for NUORI to avoid visionaari confusion
+  if (cohort === 'NUORI') {
+    categoryScores['ympariston-puolustaja'] -= (values.global || 0) * 0.6;  // Penalize global to avoid visionaari confusion (increased)
+    categoryScores['ympariston-puolustaja'] -= (values.advancement || 0) * 0.5;  // Penalize advancement to avoid visionaari confusion
+    categoryScores['ympariston-puolustaja'] -= (values.growth || 0) * 0.5;  // Penalize growth to avoid visionaari confusion
+    categoryScores['ympariston-puolustaja'] -= (workstyle.flexibility || 0) * 0.4;  // Penalize flexibility to avoid visionaari confusion
+  }
   
-  // jarjestaja: organization, structure workstyle, precision
-  categoryScores.jarjestaja += (workstyle.organization || 0) * 0.9;
-  categoryScores.jarjestaja += (workstyle.structure || 0) * 0.8;
-  categoryScores.jarjestaja += (workstyle.precision || 0) * 0.7;
-  categoryScores.jarjestaja += (values.stability || 0) * 0.6;
+  // visionaari: planning workstyle, innovation, global values, career_clarity (but NOT leadership, analytical, hands-on, people, health, or creative)
+  // Cohort-specific signals for Visionaari:
+  // - YLA: career_clarity (values) - primary signal
+  // - TASO2: entrepreneurship (values) + technology (interests) - alternative signals since no career_clarity
+  // - NUORI: global (values) + advancement (values) + growth (values) + flexibility (workstyle) - alternative signals since no career_clarity
+  categoryScores.visionaari += (workstyle.planning || 0) * 1.5;  // BOOSTED: Planning is key for visionaari
+  categoryScores.visionaari += (interests.innovation || 0) * 1.2;  // BOOSTED: Innovation interest
+  categoryScores.visionaari += (values.global || 0) * 1.3;  // BOOSTED: Global values
+  categoryScores.visionaari += (values.career_clarity || 0) * 2.5;  // BOOSTED: Career clarity/planning (primary for YLA)
+  
+  // Cohort-specific alternative signals for TASO2 and NUORI
+  if (cohort === 'TASO2') {
+    // TASO2: entrepreneurship + technology (but not too strong to avoid innovoija/johtaja confusion)
+    categoryScores.visionaari += (values.entrepreneurship || 0) * 1.2;  // Entrepreneurship indicates vision/strategy
+    categoryScores.visionaari += (interests.technology || 0) * 0.8;  // Technology interest (but lower to avoid innovoija)
+  } else if (cohort === 'NUORI') {
+    // NUORI: global + advancement + growth + flexibility
+    categoryScores.visionaari += (values.global || 0) * 0.5;  // Additional boost for global (already boosted above)
+    categoryScores.visionaari += (values.advancement || 0) * 1.0;  // Advancement indicates vision/planning
+    categoryScores.visionaari += (values.growth || 0) * 0.9;  // Growth indicates vision/development
+    categoryScores.visionaari += (workstyle.flexibility || 0) * 0.8;  // Flexibility indicates adaptability/vision
+  }
+  
+  // Explicitly reduce leadership, analytical, hands-on, people, health, and creative weights to differentiate from johtaja/jarjestaja/rakentaja/auttaja/luova
+  categoryScores.visionaari -= (workstyle.leadership || 0) * 0.6;  // Penalize leadership to avoid johtaja confusion (increased)
+  categoryScores.visionaari -= (interests.leadership || 0) * 0.5;  // Penalize leadership interest (increased)
+  categoryScores.visionaari -= (interests.analytical || 0) * 0.6;  // Penalize analytical to avoid jarjestaja confusion (increased)
+  categoryScores.visionaari -= (workstyle.organization || 0) * 0.5;  // Penalize organization to avoid jarjestaja confusion (increased)
+  categoryScores.visionaari -= (interests.hands_on || 0) * 0.4;  // Penalize hands-on to avoid rakentaja confusion
+  categoryScores.visionaari -= (interests.people || 0) * 0.6;  // Penalize people to avoid auttaja confusion (increased)
+  categoryScores.visionaari -= (interests.health || 0) * 0.6;  // Penalize health to avoid auttaja confusion (increased)
+  categoryScores.visionaari -= (interests.creative || 0) * 0.4;  // Penalize creative to avoid luova confusion
+  
+  // jarjestaja: organization, structure workstyle, precision, analytical interest
+  categoryScores.jarjestaja += (workstyle.organization || 0) * 1.0;  // Critical for organization
+  categoryScores.jarjestaja += (workstyle.structure || 0) * 0.9;  // Structure is key
+  categoryScores.jarjestaja += (workstyle.precision || 0) * 0.8;  // Precision matters
+  categoryScores.jarjestaja += (values.stability || 0) * 0.7;  // Stability preference
+  categoryScores.jarjestaja += (interests.analytical || 0) * 1.0;  // Analytical thinking
   
   // Find category with highest score
   const dominantCategory = Object.entries(categoryScores)
@@ -1159,14 +1255,153 @@ export function rankCareers(
     console.log(`[rankCareers] Using only ${categoryCareers.length} careers from dominant category`);
   }
   
-  // Step 5: Score filtered careers
+  // Step 5: Score filtered careers with enhanced matching
   const scoredCareers = careersToScore.map(careerVector => {
-    const { overallScore, dimensionScores: dimScores } = computeCareerFit(
+    let { overallScore, dimensionScores: dimScores } = computeCareerFit(
       detailedScores,
       careerVector,
       cohort,
       dominantCategory // Pass category for category-specific weighting
     );
+
+    // ENHANCED MATCHING: Apply boosts BEFORE filtering
+    // This ensures careers that match key interests get proper scores
+    
+    // Healthcare boost: if user has strong health interest and career is healthcare
+    const userHealthScore = detailedScores.interests.health || 0;
+    const careerHealthScore = careerVector.interests?.health || 0;
+    if (userHealthScore >= 0.4 && careerHealthScore >= 0.7) {
+      // More aggressive boost for healthcare careers
+      const healthBoost = Math.min(30, userHealthScore * 50); // Up to 30% boost
+      overallScore = Math.min(100, overallScore + healthBoost);
+      console.log(`[rankCareers] Boosted ${careerVector.title} by ${healthBoost.toFixed(1)}% (health: ${userHealthScore.toFixed(2)} -> ${careerHealthScore.toFixed(2)}, base: ${(overallScore - healthBoost).toFixed(1)}%)`);
+    }
+    
+    // People boost: if user has strong people interest and career is people-oriented
+    const userPeopleScore = detailedScores.interests.people || 0;
+    const careerPeopleScore = careerVector.interests?.people || 0;
+    if (userPeopleScore >= 0.6 && careerPeopleScore >= 0.7 && dominantCategory === 'auttaja') {
+      const peopleBoost = Math.min(15, userPeopleScore * 25); // Up to 15% boost
+      overallScore = Math.min(100, overallScore + peopleBoost);
+    }
+    
+    // Education boost: if user has strong education interest and career is teaching
+    const userEducationScore = detailedScores.interests.education || 0;
+    const careerEducationScore = careerVector.interests?.education || 0;
+    if (userEducationScore >= 0.6 && careerEducationScore >= 0.7 && dominantCategory === 'auttaja') {
+      const educationBoost = Math.min(10, userEducationScore * 20); // Up to 10% boost
+      overallScore = Math.min(100, overallScore + educationBoost);
+    }
+    
+    // Technology boost: if user has strong tech interest and career is tech
+    const userTechScoreInnovoija = detailedScores.interests.technology || 0;
+    const careerTechScore = careerVector.interests?.technology || 0;
+    if (userTechScoreInnovoija >= 0.6 && careerTechScore >= 0.7 && dominantCategory === 'innovoija') {
+      const techBoost = Math.min(20, userTechScoreInnovoija * 35); // Up to 20% boost
+      overallScore = Math.min(100, overallScore + techBoost);
+    }
+    
+    // Creative boost: if user has strong creative interest and career is creative
+    const userCreativeScore = detailedScores.interests.creative || 0;
+    const careerCreativeScore = careerVector.interests?.creative || 0;
+    if (userCreativeScore >= 0.6 && careerCreativeScore >= 0.7 && dominantCategory === 'luova') {
+      const creativeBoost = Math.min(20, userCreativeScore * 35); // Up to 20% boost
+      overallScore = Math.min(100, overallScore + creativeBoost);
+    }
+    
+    // Environment boost: if user has strong environment interest and career is environment-oriented
+    const userEnvironmentScore = detailedScores.interests.environment || 0;
+    const careerEnvironmentScore = careerVector.interests?.environment || 0;
+    if (userEnvironmentScore >= 0.5 && careerEnvironmentScore >= 0.6 && dominantCategory === 'ympariston-puolustaja') {
+      const envBoost = Math.min(25, userEnvironmentScore * 40); // Up to 25% boost
+      overallScore = Math.min(100, overallScore + envBoost);
+    }
+    
+    // Analytical boost: if user has strong analytical interest and career is analytical/organizational
+    const userAnalyticalScore = detailedScores.interests.analytical || 0;
+    const careerAnalyticalScore = careerVector.interests?.analytical || 0;
+    if (userAnalyticalScore >= 0.5 && careerAnalyticalScore >= 0.6 && dominantCategory === 'jarjestaja') {
+      const analyticalBoost = Math.min(20, userAnalyticalScore * 35); // Up to 20% boost
+      overallScore = Math.min(100, overallScore + analyticalBoost);
+    }
+    
+    // Hands-on boost: if user has strong hands-on interest and career is hands-on/practical
+    const userHandsOnScore = detailedScores.interests.hands_on || 0;
+    const careerHandsOnScore = careerVector.interests?.hands_on || 0;
+    if (userHandsOnScore >= 0.5 && careerHandsOnScore >= 0.6 && dominantCategory === 'rakentaja') {
+      const handsOnBoost = Math.min(25, userHandsOnScore * 40); // Up to 25% boost
+      overallScore = Math.min(100, overallScore + handsOnBoost);
+    }
+    
+    // Leadership boost: if user has strong leadership workstyle/interest and career is leadership-oriented
+    const userLeadershipWorkstyle = detailedScores.workstyle?.leadership || 0;
+    const userLeadershipInterest = detailedScores.interests?.leadership || 0;
+    const careerLeadershipWorkstyle = careerVector.workstyle?.leadership || 0;
+    const combinedLeadership = Math.max(userLeadershipWorkstyle, userLeadershipInterest);
+    if (combinedLeadership >= 0.2 && careerLeadershipWorkstyle >= 0.4 && dominantCategory === 'johtaja') {
+      const leadershipBoost = Math.min(45, combinedLeadership * 80); // Up to 45% boost (increased further)
+      overallScore = Math.min(100, overallScore + leadershipBoost);
+    }
+    
+    // Planning boost: if user has strong career_clarity (planning) values and career is planning/vision-oriented
+    const userCareerClarity = detailedScores.values?.career_clarity || 0;
+    const userGlobalValues = detailedScores.values?.global || 0;
+    const userCreativeInterest = detailedScores.interests?.creative || 0;
+    const userEntrepreneurship = detailedScores.values?.entrepreneurship || 0;
+    const userTechScore = detailedScores.interests?.technology || 0;
+    const userAdvancement = detailedScores.values?.advancement || 0;
+    const userGrowth = detailedScores.values?.growth || 0;
+    const userFlexibility = detailedScores.workstyle?.flexibility || 0;
+    
+    if (dominantCategory === 'visionaari') {
+      // Boost for career_clarity (strongest signal for YLA)
+      if (userCareerClarity >= 0.3) {
+        const planningBoost = Math.min(40, userCareerClarity * 80); // Up to 40% boost for career_clarity
+        overallScore = Math.min(100, overallScore + planningBoost);
+      }
+      
+      // Cohort-specific boosts
+      if (cohort === 'TASO2') {
+        // TASO2: entrepreneurship + technology
+        if (userEntrepreneurship >= 0.4) {
+          const entrepreneurshipBoost = Math.min(35, userEntrepreneurship * 70); // Up to 35% boost
+          overallScore = Math.min(100, overallScore + entrepreneurshipBoost);
+        }
+        if (userTechScore >= 0.5) {
+          const techBoost = Math.min(25, userTechScore * 40); // Up to 25% boost
+          overallScore = Math.min(100, overallScore + techBoost);
+        }
+      } else if (cohort === 'NUORI') {
+        // NUORI: global + advancement + growth + flexibility
+        if (userGlobalValues >= 0.4) {
+          const globalBoost = Math.min(30, userGlobalValues * 50); // Up to 30% boost
+          overallScore = Math.min(100, overallScore + globalBoost);
+        }
+        if (userAdvancement >= 0.4) {
+          const advancementBoost = Math.min(30, userAdvancement * 50); // Up to 30% boost
+          overallScore = Math.min(100, overallScore + advancementBoost);
+        }
+        if (userGrowth >= 0.4) {
+          const growthBoost = Math.min(25, userGrowth * 45); // Up to 25% boost
+          overallScore = Math.min(100, overallScore + growthBoost);
+        }
+        if (userFlexibility >= 0.4) {
+          const flexibilityBoost = Math.min(20, userFlexibility * 40); // Up to 20% boost
+          overallScore = Math.min(100, overallScore + flexibilityBoost);
+        }
+      } else {
+        // YLA: creative interest (innovation/vision) - but only if career_clarity is also present to avoid luova confusion
+        if (userCreativeInterest >= 0.5 && userCareerClarity >= 0.2) {
+          const creativeBoost = Math.min(30, userCreativeInterest * 50); // Up to 30% boost for creative
+          overallScore = Math.min(100, overallScore + creativeBoost);
+        }
+        // Boost for global values (but lower to avoid johtaja confusion)
+        if (userGlobalValues >= 0.4 && userCareerClarity >= 0.2) {
+          const globalBoost = Math.min(20, userGlobalValues * 30); // Up to 20% boost for global
+          overallScore = Math.min(100, overallScore + globalBoost);
+        }
+      }
+    }
 
     // Get full career data
     const careerFI = careersFI.find(c => c && c.id === careerVector.slug);
@@ -1188,7 +1423,7 @@ export function rankCareers(
       slug: careerVector.slug,
       title: careerVector.title,
       category: careerVector.category,
-      overallScore,
+      overallScore: Math.round(overallScore),
       dimensionScores: dimScores,
       reasons: reasons.filter(r => r.length > 0),
       confidence,
@@ -1213,10 +1448,13 @@ export function rankCareers(
     const careerVector = careersToScore.find(cv => cv.slug === career.slug);
     if (!careerVector) return true;
 
-    // Check healthcare mismatch
+    // Check healthcare mismatch - filter out non-healthcare careers if user has very strong health interest
     const userHealthScore = detailedScores.interests.health || 0;
     const careerHealthScore = careerVector.interests?.health || 0;
-    if (userHealthScore >= 0.6 && careerHealthScore === 0 && career.category === 'auttaja') {
+    const userPeopleScore = detailedScores.interests.people || 0;
+    
+    // Filter out non-healthcare careers if user has very strong health interest (>=0.7)
+    if (userHealthScore >= 0.7 && careerHealthScore === 0 && career.category === 'auttaja') {
       console.log(`[rankCareers] Filtered out ${career.title} (user wants healthcare ${userHealthScore.toFixed(2)} but career has health=0)`);
       return false;
     }
@@ -1246,18 +1484,32 @@ export function rankCareers(
   };
 
   // Step 6: Sort by dominant category, demand outlook and score
+  // ENHANCED: Prioritize Finnish careers over English ones when scores are close
   const sortedCareers = scoredCareers.sort((a, b) => {
     // First prioritize by category match
     const aIsDominant = a.category === dominantCategory;
     const bIsDominant = b.category === dominantCategory;
     if (aIsDominant && !bIsDominant) return -1;
     if (!aIsDominant && bIsDominant) return 1;
+    
+    // ENHANCED: If both are in dominant category and scores are close, prioritize Finnish careers
+    const scoreDiff = b.overallScore - a.overallScore;
+    const isAFinnish = !/[A-Z]/.test(a.title.charAt(0)) || a.title.includes('ä') || a.title.includes('ö') || a.title.includes('å');
+    const isBFinnish = !/[A-Z]/.test(b.title.charAt(0)) || b.title.includes('ä') || b.title.includes('ö') || b.title.includes('å');
+    
+    // If scores are within 5%, prioritize Finnish careers
+    if (Math.abs(scoreDiff) <= 5 && aIsDominant && bIsDominant) {
+      if (isAFinnish && !isBFinnish) return -1;
+      if (!isAFinnish && isBFinnish) return 1;
+    }
+    
     // Then by demand outlook
     const demandDiff = getDemandWeight(b.outlook) - getDemandWeight(a.outlook);
     if (demandDiff !== 0) return demandDiff;
+    
     // Then by score
-    const scoreDiff = b.overallScore - a.overallScore;
     if (scoreDiff !== 0) return scoreDiff;
+    
     // Finally by salary potential to break ties
     const salaryDiff = getMedianSalary(b) - getMedianSalary(a);
     if (salaryDiff !== 0) return salaryDiff;
@@ -1282,12 +1534,22 @@ export function rankCareers(
   // Step 8: Limit to top demand-driven matches (default max 5)
   const dynamicLimit = Math.min(limit, 5);
 
-  const demandSortedPreferred = deduplicatedCareers
+    const demandSortedPreferred = deduplicatedCareers
     .filter(c => c.category === dominantCategory)
     .sort((a, b) => {
+      // ENHANCED: Prioritize Finnish careers when scores are close
+      const scoreDiff = b.overallScore - a.overallScore;
+      const isAFinnish = !/[A-Z]/.test(a.title.charAt(0)) || a.title.includes('ä') || a.title.includes('ö') || a.title.includes('å');
+      const isBFinnish = !/[A-Z]/.test(b.title.charAt(0)) || b.title.includes('ä') || b.title.includes('ö') || b.title.includes('å');
+      
+      // If scores are within 10%, prioritize Finnish careers
+      if (Math.abs(scoreDiff) <= 10) {
+        if (isAFinnish && !isBFinnish) return -1;
+        if (!isAFinnish && isBFinnish) return 1;
+      }
+      
       const demandDiff = getDemandWeight(b.outlook) - getDemandWeight(a.outlook);
       if (demandDiff !== 0) return demandDiff;
-      const scoreDiff = b.overallScore - a.overallScore;
       if (scoreDiff !== 0) return scoreDiff;
       const salaryDiff = getMedianSalary(b) - getMedianSalary(a);
       if (salaryDiff !== 0) return salaryDiff;
@@ -1321,7 +1583,12 @@ export function rankCareers(
     const demandWeight = getDemandWeight(career.outlook);
     const demandBoost = demandWeight * RANKING_WEIGHTS.demandBoost;
     const categoryBoost = career.category === dominantCategory ? RANKING_WEIGHTS.demandBoost : 0;
-    const rankScore = career.overallScore + demandBoost + categoryBoost;
+    
+    // ENHANCED: Boost Finnish careers to prioritize them over English ones
+    const isFinnish = !/[A-Z]/.test(career.title.charAt(0)) || career.title.includes('ä') || career.title.includes('ö') || career.title.includes('å');
+    const finnishBoost = isFinnish && career.category === dominantCategory ? 5 : 0; // Small boost for Finnish careers
+    
+    const rankScore = career.overallScore + demandBoost + categoryBoost + finnishBoost;
     return {
       career,
       key,

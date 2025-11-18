@@ -46,7 +46,11 @@ export default function ComparePage() {
     
     if (slugs.length > 0) {
       const careers = slugs
-        .map(slug => allCareers.find(c => c.slug === slug))
+        .map(slug => {
+          // Decode URL-encoded slugs
+          const decodedSlug = decodeURIComponent(slug);
+          return allCareers.find(c => c.slug === decodedSlug);
+        })
         .filter((c): c is Career => c !== undefined);
       setComparisons(careers);
     } else {
@@ -113,7 +117,7 @@ export default function ComparePage() {
                 placeholder="Etsi ammattia..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
               />
               
               {searchTerm && (
@@ -203,7 +207,7 @@ export default function ComparePage() {
                     </button>
                     <h2 className="text-xl font-bold text-slate-900 pr-8">{career.title}</h2>
                     <Link
-                      href={`/ammatit/${career.slug}`}
+                      href={`/ammatit/${encodeURIComponent(career.slug)}`}
                       className="text-sm text-primary hover:underline mt-2 inline-block"
                     >
                       Näytä lisää →

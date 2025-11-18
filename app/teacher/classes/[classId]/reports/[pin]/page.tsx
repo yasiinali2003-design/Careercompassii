@@ -2,6 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { generateStudentPDF, generateParentReport, downloadPDF, StudentReportData, ParentReportData } from "@/lib/pdfGenerator";
+import { Download, Printer, FileText, TrendingUp, Award, GraduationCap, Target } from "lucide-react";
+import Logo from "@/components/Logo";
+import Link from "next/link";
 
 interface ResultPayload {
   cohort?: string;
@@ -118,128 +121,254 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
   };
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-slate-50">
       <style>{`
         @page { size: A4; margin: 20mm 15mm; }
         @media print {
           .no-print { display: none; }
+          .print-bg-white { background: white !important; }
         }
       `}</style>
 
-      <div className="max-w-3xl mx-auto py-6">
-        <div className="no-print mb-4 flex justify-end gap-2">
-          <button 
-            onClick={handleDownloadPDF}
-            disabled={generatingPDF || !result}
-            className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {generatingPDF ? 'Luodaan PDF...' : '📥 Lataa PDF'}
-          </button>
-          <button 
-            onClick={handleDownloadParentPDF}
-            disabled={generatingParentPDF || !result}
-            className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {generatingParentPDF ? 'Luodaan PDF...' : '👨‍👩‍👧 Vanhempainraportti'}
-          </button>
-          <button 
-            onClick={() => window.print()} 
-            className="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50"
-          >
-            🖨️ Tulosta
-          </button>
+      <div className="max-w-4xl mx-auto py-6 px-4">
+        {/* Logo & Navigation - No Print */}
+        <div className="no-print mb-6">
+          <Link href={`/teacher/classes/${classId}`}>
+            <Logo className="h-10 w-auto" />
+          </Link>
         </div>
 
-        {/* Teacher Notes Input */}
-        <div className="no-print mb-4 bg-slate-50 border border-primary/20 rounded-lg p-4">
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            Opettajan huomiot (valinnainen):
+        {/* Action Toolbar - No Print */}
+        <div className="no-print mb-4 bg-white border-b border-slate-200 -mx-4 px-4 py-3 flex flex-wrap gap-2 justify-between items-center">
+          <Link href={`/teacher/classes/${classId}`} className="text-sm text-slate-600 hover:text-primary flex items-center gap-1">
+            ← Takaisin luokkaan
+          </Link>
+          <div className="flex gap-2">
+            <button
+              onClick={handleDownloadPDF}
+              disabled={generatingPDF || !result}
+              className="inline-flex items-center gap-1.5 bg-primary text-white px-4 py-2 text-sm font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <Download className="h-3.5 w-3.5" />
+              {generatingPDF ? 'Luodaan...' : 'PDF'}
+            </button>
+            <button
+              onClick={handleDownloadParentPDF}
+              disabled={generatingParentPDF || !result}
+              className="inline-flex items-center gap-1.5 bg-white border border-slate-300 text-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-50 disabled:opacity-50"
+            >
+              <FileText className="h-3.5 w-3.5" />
+              {generatingParentPDF ? 'Luodaan...' : 'Vanhemmille'}
+            </button>
+            <button
+              onClick={() => window.print()}
+              className="inline-flex items-center gap-1.5 bg-white border border-slate-300 text-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-50"
+            >
+              <Printer className="h-3.5 w-3.5" />
+              Tulosta
+            </button>
+          </div>
+        </div>
+
+        {/* Teacher Notes - No Print */}
+        <div className="no-print mb-4 bg-amber-50 border border-amber-200 p-4">
+          <label className="block text-sm font-medium text-slate-900 mb-2">
+            Opettajan huomiot (vanhempainraporttia varten)
           </label>
           <textarea
             value={teacherNotes}
             onChange={(e) => setTeacherNotes(e.target.value)}
-            placeholder="Kirjoita tähän huomioita, jotka haluat sisällyttää vanhempainraporttiin..."
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm resize-none"
-            rows={3}
+            placeholder="Kirjoita huomioita..."
+            className="w-full px-3 py-2 border border-slate-300 text-sm resize-none focus:outline-none focus:ring-1 focus:ring-primary"
+            rows={2}
             maxLength={500}
           />
-          <p className="text-xs text-gray-500 mt-1">
-            {teacherNotes.length}/500 merkkiä
-          </p>
+          <p className="text-xs text-slate-600 mt-1">{teacherNotes.length}/500</p>
         </div>
 
-        <header className="mb-6 border-b pb-4">
-          <h1 className="text-2xl font-bold">Urakompassi - Oppilaan raportti</h1>
-          <p className="text-sm mt-1">Luokka: {classId.substring(0, 8)} • PIN: {pin} • Päivä: {result ? new Date(result.created_at).toLocaleDateString('fi-FI') : ''}</p>
-          <p className="text-sm">Nimi: {decodedName || '—'} • Kohortti: {cohort || '—'}</p>
-        </header>
+        {/* Main Report Document */}
+        <div className="bg-white border border-slate-300 print-bg-white">
+          {/* Document Header */}
+          <div className="border-b-2 border-primary bg-white p-6">
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h1 className="text-2xl font-bold text-slate-900 mb-1">Urakompassi</h1>
+                <p className="text-sm text-slate-600">Oppilaan uraraportti</p>
+              </div>
+              <div className="text-right text-sm">
+                <p className="text-slate-600">Luotu: {result ? new Date(result.created_at).toLocaleDateString('fi-FI') : ''}</p>
+                <p className="text-slate-600">Tulostus: {new Date().toLocaleDateString('fi-FI')}</p>
+              </div>
+            </div>
 
-        {loading && <p>Ladataan...</p>}
-        {error && <p className="text-red-600">Virhe: {error}</p>}
-        {!loading && !result && !error && <p>Raporttia ei löytynyt.</p>}
+            {/* Student Info Table */}
+            <table className="w-full text-sm border-collapse">
+              <tbody>
+                <tr className="border-t border-slate-200">
+                  <td className="py-2 pr-4 font-medium text-slate-700 w-32">Luokka:</td>
+                  <td className="py-2 text-slate-900">{classId.substring(0, 8)}</td>
+                  <td className="py-2 pr-4 font-medium text-slate-700 w-32">PIN-koodi:</td>
+                  <td className="py-2 text-slate-900">{pin}</td>
+                </tr>
+                <tr className="border-t border-slate-200">
+                  <td className="py-2 pr-4 font-medium text-slate-700">Nimi:</td>
+                  <td className="py-2 text-slate-900">{decodedName || '—'}</td>
+                  <td className="py-2 pr-4 font-medium text-slate-700">Kohortti:</td>
+                  <td className="py-2 text-slate-900">{cohort || '—'}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-        {result && (
-          <main className="space-y-6">
-            <section>
-              <h2 className="font-semibold text-lg mb-2">Yhteenveto</h2>
-              <p className="text-sm">Alla on yhteenveto opiskelijan uraprofiilista ja suosituksista testin perusteella.</p>
-            </section>
-
-            <section>
-              <h2 className="font-semibold text-lg mb-2">Top 5 uraa</h2>
-              <ol className="list-decimal list-inside text-sm space-y-1">
-                {careers.slice(0, 5).map((c, i) => (
-                  <li key={i}>{c.title}{typeof c.score === 'number' ? ` (${Math.round(c.score * 100)}%)` : ''}</li>
-                ))}
-                {careers.length === 0 && <li>—</li>}
-              </ol>
-            </section>
-
-            {cohort === 'YLA' && (
-              <section>
-                <h2 className="font-semibold text-lg mb-2">Koulutuspolkusuositus (YLA)</h2>
-                <p className="text-sm">
-                  {(() => {
-                    if (!edu) return '—';
-                    const primary = edu.primary || edu.education_path_primary;
-                    if (!primary) return '—';
-                    const names: Record<string,string> = { lukio: 'Lukio', ammattikoulu: 'Ammattikoulu', kansanopisto: 'Kansanopisto' };
-                    const pathName = names[primary] || primary;
-                    const scores = edu.scores || edu.education_path_scores || {};
-                    const pct = scores[primary];
-                    return pct ? `${pathName} (${Math.round(pct)}%)` : pathName;
-                  })()}
-                </p>
-              </section>
+          {/* Content Area */}
+          <div className="p-8">
+            {loading && (
+              <div className="text-center py-12">
+                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary border-r-transparent"></div>
+                <p className="mt-4 text-slate-600">Ladataan raporttia...</p>
+              </div>
             )}
 
-            <section>
-              <h2 className="font-semibold text-lg mb-2">Dimensiot</h2>
-              <div className="space-y-2">
-                {['interests','values','workstyle','context'].map(key => {
-                  const label: Record<string,string> = { interests: 'Kiinnostukset', values: 'Arvot', workstyle: 'Työtapa', context: 'Konteksti' };
-                  const val = (dims as any)[key] || 0;
-                  return (
-                    <div key={key} className="text-sm">
-                      <div className="flex justify-between">
-                        <span>{label[key]}</span>
-                        <span>{Math.round(val)}%</span>
-                      </div>
-                      <div className="w-full h-2 bg-gray-200 rounded">
-                        <div className="h-2 bg-primary rounded" style={{ width: `${Math.min(Math.max(val,0),100)}%` }} />
+            {error && (
+              <div className="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
+                <p className="text-red-700 font-medium">Virhe: {error}</p>
+              </div>
+            )}
+
+            {!loading && !result && !error && (
+              <div className="text-center py-12">
+                <p className="text-slate-600">Raporttia ei löytynyt.</p>
+              </div>
+            )}
+
+            {result && (
+              <div className="space-y-8">
+                {/* Summary */}
+                <div className="border-l-4 border-primary pl-4 py-2 bg-slate-50">
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    Tämä raportti sisältää opiskelijan henkilökohtaiset urasuositukset 30 kysymyksen testin perusteella.
+                    Tulokset perustuvat analyysiin 361 eri ammatin joukosta.
+                  </p>
+                </div>
+
+                {/* Top Careers - Table Format */}
+                <div>
+                  <h2 className="text-lg font-bold text-slate-900 mb-3 pb-2 border-b-2 border-slate-200">
+                    Urasuositukset
+                  </h2>
+                  <table className="w-full text-sm border-collapse">
+                    <thead>
+                      <tr className="bg-slate-100 border-y border-slate-300">
+                        <th className="text-left py-2 px-3 font-semibold text-slate-700 w-12">#</th>
+                        <th className="text-left py-2 px-3 font-semibold text-slate-700">Ammatti</th>
+                        <th className="text-right py-2 px-3 font-semibold text-slate-700 w-24">Sopivuus</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {careers.slice(0, 5).map((c, i) => (
+                        <tr key={i} className="border-b border-slate-200 hover:bg-slate-50">
+                          <td className="py-3 px-3 font-bold text-primary">{i + 1}</td>
+                          <td className="py-3 px-3 font-medium text-slate-900">{c.title}</td>
+                          <td className="py-3 px-3 text-right">
+                            {typeof c.score === 'number' ? (
+                              <span className="inline-block px-2 py-1 bg-primary/10 text-primary font-semibold rounded">
+                                {Math.round(c.score * 100)}%
+                              </span>
+                            ) : '—'}
+                          </td>
+                        </tr>
+                      ))}
+                      {careers.length === 0 && (
+                        <tr>
+                          <td colSpan={3} className="py-8 px-3 text-center text-slate-500">
+                            Ei urasuosituksia saatavilla
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Education Path for YLA */}
+                {cohort === 'YLA' && (
+                  <div>
+                    <h2 className="text-lg font-bold text-slate-900 mb-3 pb-2 border-b-2 border-slate-200">
+                      Koulutuspolkusuositus <span className="text-sm font-normal text-slate-600">(Yläkoulu)</span>
+                    </h2>
+                    <div className="bg-amber-50 border border-amber-200 p-4">
+                      <div className="flex items-center justify-between">
+                        <span className="font-semibold text-slate-900">
+                          {(() => {
+                            if (!edu) return 'Ei suositusta saatavilla';
+                            const primary = edu.primary || edu.education_path_primary;
+                            if (!primary) return 'Ei suositusta saatavilla';
+                            const names: Record<string,string> = {
+                              lukio: 'Lukio',
+                              ammattikoulu: 'Ammattikoulu',
+                              kansanopisto: 'Kansanopisto'
+                            };
+                            return names[primary] || primary;
+                          })()}
+                        </span>
+                        {(() => {
+                          if (!edu) return null;
+                          const primary = edu.primary || edu.education_path_primary;
+                          if (!primary) return null;
+                          const scores = edu.scores || edu.education_path_scores || {};
+                          const pct = scores[primary];
+                          return pct ? (
+                            <span className="text-secondary font-bold">{Math.round(pct)}% sopivuus</span>
+                          ) : null;
+                        })()}
                       </div>
                     </div>
-                  );
-                })}
-              </div>
-            </section>
+                  </div>
+                )}
 
-            <section>
-              <h2 className="font-semibold text-lg mb-2">Huomautus</h2>
-              <p className="text-xs text-gray-600">Nimi on opettajan itse lisäämä paikallinen tieto eikä sitä tallenneta Urakompassin palvelimille.</p>
-            </section>
-          </main>
-        )}
+                {/* Dimensions - Bar Chart Style */}
+                <div>
+                  <h2 className="text-lg font-bold text-slate-900 mb-3 pb-2 border-b-2 border-slate-200">
+                    Profiilianalyysi
+                  </h2>
+                  <div className="space-y-4">
+                    {[
+                      { key: 'interests', label: 'Kiinnostuksen kohteet' },
+                      { key: 'values', label: 'Arvot ja motivaatio' },
+                      { key: 'workstyle', label: 'Työskentelytapa' },
+                      { key: 'context', label: 'Työympäristö' }
+                    ].map(({ key, label }) => {
+                      const val = (dims as any)[key] || 0;
+                      return (
+                        <div key={key}>
+                          <div className="flex items-center justify-between mb-1.5">
+                            <span className="text-sm font-medium text-slate-700">{label}</span>
+                            <span className="text-sm font-bold text-slate-900">{Math.round(val)}%</span>
+                          </div>
+                          <div className="w-full bg-slate-200 h-6 relative">
+                            <div
+                              className="absolute top-0 left-0 h-full bg-primary flex items-center justify-end pr-2"
+                              style={{ width: `${Math.min(Math.max(val, 0), 100)}%` }}
+                            >
+                              {val > 15 && <span className="text-xs font-medium text-white">{Math.round(val)}%</span>}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Footer Notice */}
+                <div className="border-t-2 border-slate-200 pt-4 mt-8">
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    <strong>Huomio:</strong> Oppilaan nimi on opettajan itse lisäämä paikallinen tieto eikä sitä tallenneta Urakompassin palvelimille.
+                    Kaikki henkilötiedot käsitellään luottamuksellisesti GDPR-säännösten mukaisesti.
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

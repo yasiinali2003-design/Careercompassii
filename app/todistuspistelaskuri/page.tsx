@@ -371,7 +371,7 @@ export default function TodistuspistelaskuriPage() {
                       career?.slug ? (
                         <Link
                           key={career.slug}
-                          href={`/ammatit/${career.slug}`}
+                          href={`/ammatit/${encodeURIComponent(career.slug)}`}
                           className="rounded-full bg-white px-3 py-1 text-xs font-medium text-secondary shadow-sm transition-colors hover:bg-secondary/20 hover:text-purple-900"
                         >
                           {career.title || 'Suosikki-ammatti'}

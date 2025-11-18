@@ -6,12 +6,13 @@ export default function TietosuojaPage() {
       <main className="flex-1">
         <div className="container mx-auto px-4 py-12 max-w-3xl">
           <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-primary">TIETOSUOJASELOSTE — Urakompassi Oy</h1>
-          <p className="text-sm text-muted-foreground mb-8">Versio 3.3 • Viimeksi päivitetty: 7.11.2025 • Y‑tunnus: [täydennä] • Rekisteröity tavaramerkki: [täydennä]</p>
+          <p className="text-sm text-muted-foreground mb-8">Versio 3.3 • Viimeksi päivitetty: 7.11.2025 • Y‑tunnus: 3579081-5 • Rekisteröity tavaramerkki: [täydennä]</p>
           <div className="space-y-6 leading-relaxed text-base">
           <pre className="whitespace-pre-wrap font-sans text-[15px]">
 {`## 1. Rekisterinpitäjä ja yhteystiedot
-Urakompassi Oy, Säterintie 6 C, [postinumero ja kaupunki], Finland
-Sähköposti: support@urakompassi.com
+Urakompassi Oy, Säterintie 6, 00720 Helsinki, Finland
+Y-tunnus: 3579081-5
+Sähköposti: support@urakompassi.fi
 Urakompassi toimii henkilötietojen käsittelijänä oppilaitosten puolesta sekä rekisterinpitäjänä omille käyttäjätiedoilleen. Oppilaitos on oppilaiden tietojen rekisterinpitäjä.
 
 ## 2. Käsittelyn tarkoitus ja oikeusperuste
@@ -28,7 +29,7 @@ Testin toteutus ja tulosten laskenta; palvelun toiminnan, laadun ja turvallisuud
 Oppilaitos omistaa oppilaidensa henkilötiedot. Urakompassi toimii käsittelijänä oppilaitoksen lukuun ja vastaa teknisestä tietoturvasta. Aggregoitu anonymisoitu data ja algoritmit ovat Urakompassin omaisuutta.
 
 ## 6. Luovutukset ja alikäsittelijät
-Tietoja ei luovuteta kolmansille, paitsi: Supabase (EU/Irlanti) pilvitietokanta ja autentikointi; lakisääteiset velvoitteet; oikeudellisten vaatimusten puolustaminen. Ajantasainen alikäsittelijälista ja DPA on saatavilla pyynnöstä: support@urakompassi.com. Tietoja ei siirretä EU/ETA‑alueen ulkopuolelle ilman asianmukaista suojamekanismia (esim. SCC).
+Tietoja ei luovuteta kolmansille, paitsi: Supabase (EU/Irlanti) pilvitietokanta ja autentikointi; lakisääteiset velvoitteet; oikeudellisten vaatimusten puolustaminen. Ajantasainen alikäsittelijälista ja DPA on saatavilla pyynnöstä: support@urakompassi.fi. Tietoja ei siirretä EU/ETA‑alueen ulkopuolelle ilman asianmukaista suojamekanismia (esim. SCC).
 
 ## 7. Säilytys ja poistaminen
 Testitulokset: 3 vuotta suorituspäivästä; Premium‑oppilaitoksille 5 vuotta. Luokkakoodit (class token) ja testitulosten viittaukset säilytetään Supabase-postgres-tietokannassa hajautettuina; PIN-koodit poistuvat automaattisesti 24 tunnin jälkeen. Opettajien ja koulujen tiedot: käyttöoikeuden voimassaolo + 1 vuosi. Aggregoitu anonymisoitu data voidaan säilyttää toistaiseksi. Poistot toteutetaan automaattisissa sykleissä tai opettajan pyynnöstä luokkakohtaisesti.
@@ -55,8 +56,9 @@ Voimme päivittää tätä selostetta (esim. lakimuutokset, tekniset muutokset).
 Sovellettava laki: Suomen laki. Virallinen kieli on suomi; ristiriitatilanteessa suomenkielinen versio on ensisijainen.
 
 ## 15. Yhteystiedot
-Urakompassi Oy, Säterintie 6 C, [postinumero ja kaupunki], Finland
-Sähköposti: support@urakompassi.com`}
+Urakompassi Oy, Säterintie 6, 00720 Helsinki, Finland
+Y-tunnus: 3579081-5
+Sähköposti: support@urakompassi.fi`}
           </pre>
         </div>
         </div>
