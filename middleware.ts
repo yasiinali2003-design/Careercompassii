@@ -17,7 +17,8 @@ export async function middleware(request: NextRequest) {
   // ANTI-SCRAPING PROTECTION LAYER 1: Bot Detection
   // Skip bot detection for localhost (development) and static assets
   const localHosts = new Set(['localhost', '127.0.0.1', '0.0.0.0', '::1']);
-  const isLocalhost = localHosts.has(request.nextUrl.hostname);
+  const hostname = request.nextUrl.hostname || '';
+  const isLocalhost = localHosts.has(hostname) || hostname.includes('localhost') || hostname.includes('127.0.0.1');
   
   const skipBotCheck = 
     isLocalhost || // Skip all bot detection on localhost

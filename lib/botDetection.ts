@@ -22,6 +22,11 @@ export async function trackRequest(
   ip: string,
   pathname: string
 ): Promise<void> {
+  // Skip tracking for localhost
+  if (ip === 'unknown' || ip === '127.0.0.1' || ip === '::1' || ip.includes('localhost')) {
+    return;
+  }
+  
   if (!supabaseAdmin) return;
   
   try {
@@ -54,6 +59,16 @@ export async function analyzeRequestPatterns(
   request: Request,
   ip: string
 ): Promise<BotDetectionResult> {
+  // Skip analysis for localhost
+  if (ip === 'unknown' || ip === '127.0.0.1' || ip === '::1' || ip.includes('localhost')) {
+    return {
+      isBot: false,
+      confidence: 0,
+      reasons: [],
+      action: 'allow'
+    };
+  }
+  
   const reasons: string[] = [];
   let confidence = 0;
   
@@ -136,6 +151,14 @@ export async function analyzeRequestPatterns(
  * Get IP from request
  */
 export function getIP(request: Request): string {
+  // Check if request is from localhost by checking hostname
+  const url = new URL(request.url);
+  const hostname = url.hostname || '';
+  const localHosts = ['localhost', '127.0.0.1', '0.0.0.0', '::1'];
+  if (localHosts.includes(hostname) || hostname.includes('localhost')) {
+    return '127.0.0.1';
+  }
+  
   const forwardedFor = request.headers.get('x-forwarded-for');
   const realIP = request.headers.get('x-real-ip');
   const cfConnectingIP = request.headers.get('cf-connecting-ip');

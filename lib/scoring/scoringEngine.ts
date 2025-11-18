@@ -1085,26 +1085,31 @@ function determineDominantCategory(
   categoryScores.luova -= (values.career_clarity || 0) * 0.4;  // Penalize career_clarity to avoid visionaari confusion
   categoryScores.luova -= (workstyle.planning || 0) * 0.3;  // Penalize planning to avoid visionaari confusion
   
-  // johtaja: leadership workstyle, planning, global values (but NOT analytical or organization to avoid jarjestaja confusion)
-  categoryScores.johtaja += (workstyle.leadership || 0) * 1.3;  // BOOSTED: Leadership is key
-  categoryScores.johtaja += (workstyle.planning || 0) * 0.8;  // BOOSTED: Planning for leadership
-  categoryScores.johtaja += (values.global || 0) * 0.7;  // BOOSTED: Global vision for leadership
-  categoryScores.johtaja += (values.advancement || 0) * 0.8;  // BOOSTED: Advancement for leadership
-  categoryScores.johtaja += (values.entrepreneurship || 0) * 0.7;  // Entrepreneurship can indicate leadership
-  categoryScores.johtaja += (interests.leadership || 0) * 1.0;  // Leadership interest
-  // Penalize analytical, organization, and career_clarity to avoid jarjestaja/visionaari confusion
-  categoryScores.johtaja -= (interests.analytical || 0) * 0.3;  // Penalize analytical to avoid jarjestaja confusion
-  categoryScores.johtaja -= (workstyle.organization || 0) * 0.2;  // Slight penalty for organization to avoid jarjestaja confusion
-  categoryScores.johtaja -= (values.career_clarity || 0) * 0.3;  // Penalize career_clarity to avoid visionaari confusion
+  // johtaja: leadership workstyle, planning, global values (but NOT analytical, organization, health, or people to avoid jarjestaja/auttaja confusion)
+  categoryScores.johtaja += (workstyle.leadership || 0) * 1.5;  // BOOSTED: Leadership is key (increased)
+  categoryScores.johtaja += (workstyle.planning || 0) * 0.9;  // BOOSTED: Planning for leadership (increased)
+  categoryScores.johtaja += (values.global || 0) * 0.8;  // BOOSTED: Global vision for leadership (increased)
+  categoryScores.johtaja += (values.advancement || 0) * 1.0;  // BOOSTED: Advancement for leadership (increased)
+  categoryScores.johtaja += (values.entrepreneurship || 0) * 0.9;  // Entrepreneurship can indicate leadership (increased)
+  categoryScores.johtaja += (interests.leadership || 0) * 1.2;  // Leadership interest (increased)
+  // Penalize analytical, organization, career_clarity, health, and people to avoid jarjestaja/visionaari/auttaja confusion
+  categoryScores.johtaja -= (interests.analytical || 0) * 0.4;  // Penalize analytical to avoid jarjestaja confusion (increased)
+  categoryScores.johtaja -= (workstyle.organization || 0) * 0.3;  // Penalize organization to avoid jarjestaja confusion (increased)
+  categoryScores.johtaja -= (values.career_clarity || 0) * 0.4;  // Penalize career_clarity to avoid visionaari confusion (increased)
+  categoryScores.johtaja -= (interests.health || 0) * 0.5;  // Penalize health to avoid auttaja confusion
+  categoryScores.johtaja -= (interests.people || 0) * 0.4;  // Penalize people to avoid auttaja confusion (but less than health)
+  categoryScores.johtaja -= (interests.education || 0) * 0.3;  // Penalize education to avoid auttaja confusion
   
-  // innovoija: technology interest, innovation, problem_solving (but NOT analytical or organization)
-  categoryScores.innovoija += (interests.technology || 0) * 1.3;  // BOOSTED: Technology is key
-  categoryScores.innovoija += (interests.innovation || 0) * 0.9;  // BOOSTED: Innovation interest
-  categoryScores.innovoija += (workstyle.problem_solving || 0) * 0.7;
-  categoryScores.innovoija += (values.entrepreneurship || 0) * 0.5;  // Entrepreneurship can also indicate innovation
-  // Penalize analytical and organization to avoid jarjestaja confusion
-  categoryScores.innovoija -= (interests.analytical || 0) * 0.3;  // Penalize analytical to avoid jarjestaja confusion
-  categoryScores.innovoija -= (workstyle.organization || 0) * 0.3;  // Penalize organization to avoid jarjestaja confusion
+  // innovoija: technology interest, innovation, problem_solving (but NOT analytical, organization, or leadership to avoid jarjestaja/johtaja confusion)
+  categoryScores.innovoija += (interests.technology || 0) * 1.5;  // BOOSTED: Technology is key (increased)
+  categoryScores.innovoija += (interests.innovation || 0) * 1.0;  // BOOSTED: Innovation interest (increased)
+  categoryScores.innovoija += (workstyle.problem_solving || 0) * 0.8;  // Increased
+  categoryScores.innovoija += (values.entrepreneurship || 0) * 0.6;  // Entrepreneurship can also indicate innovation (increased)
+  // Penalize analytical, organization, and leadership to avoid jarjestaja/johtaja confusion
+  categoryScores.innovoija -= (interests.analytical || 0) * 0.4;  // Penalize analytical to avoid jarjestaja confusion (increased)
+  categoryScores.innovoija -= (workstyle.organization || 0) * 0.4;  // Penalize organization to avoid jarjestaja confusion (increased)
+  categoryScores.innovoija -= (workstyle.leadership || 0) * 0.3;  // Penalize leadership to avoid johtaja confusion
+  categoryScores.innovoija -= (interests.leadership || 0) * 0.3;  // Penalize leadership interest to avoid johtaja confusion
   
   // Cohort-specific penalties for NUORI to avoid visionaari confusion
   if (cohort === 'NUORI') {
@@ -1180,12 +1185,17 @@ function determineDominantCategory(
   categoryScores.visionaari -= (interests.health || 0) * 0.6;  // Penalize health to avoid auttaja confusion (increased)
   categoryScores.visionaari -= (interests.creative || 0) * 0.4;  // Penalize creative to avoid luova confusion
   
-  // jarjestaja: organization, structure workstyle, precision, analytical interest
-  categoryScores.jarjestaja += (workstyle.organization || 0) * 1.0;  // Critical for organization
-  categoryScores.jarjestaja += (workstyle.structure || 0) * 0.9;  // Structure is key
-  categoryScores.jarjestaja += (workstyle.precision || 0) * 0.8;  // Precision matters
-  categoryScores.jarjestaja += (values.stability || 0) * 0.7;  // Stability preference
-  categoryScores.jarjestaja += (interests.analytical || 0) * 1.0;  // Analytical thinking
+  // jarjestaja: organization, structure workstyle, precision, analytical interest (but NOT health, people, or leadership to avoid auttaja/johtaja confusion)
+  categoryScores.jarjestaja += (workstyle.organization || 0) * 1.2;  // Critical for organization (increased)
+  categoryScores.jarjestaja += (workstyle.structure || 0) * 1.0;  // Structure is key (increased)
+  categoryScores.jarjestaja += (workstyle.precision || 0) * 0.9;  // Precision matters (increased)
+  categoryScores.jarjestaja += (values.stability || 0) * 0.8;  // Stability preference (increased)
+  categoryScores.jarjestaja += (interests.analytical || 0) * 1.2;  // Analytical thinking (increased)
+  // Penalize health, people, leadership to avoid auttaja/johtaja confusion
+  categoryScores.jarjestaja -= (interests.health || 0) * 0.4;  // Penalize health to avoid auttaja confusion
+  categoryScores.jarjestaja -= (interests.people || 0) * 0.3;  // Penalize people to avoid auttaja confusion
+  categoryScores.jarjestaja -= (workstyle.leadership || 0) * 0.4;  // Penalize leadership to avoid johtaja confusion
+  categoryScores.jarjestaja -= (interests.leadership || 0) * 0.3;  // Penalize leadership interest to avoid johtaja confusion
   
   // Find category with highest score
   const dominantCategory = Object.entries(categoryScores)
