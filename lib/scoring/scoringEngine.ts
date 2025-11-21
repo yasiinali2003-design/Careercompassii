@@ -1067,7 +1067,7 @@ function determineDominantCategory(
   
   // auttaja: people interest, health interest, impact values, teaching/motivation workstyle (but NOT career_clarity or creative)
   categoryScores.auttaja += (interests.people || 0) * 1.2;  // BOOSTED: Critical for helping professions
-  categoryScores.auttaja += (interests.health || 0) * 1.5;  // BOOSTED: Strong healthcare signal
+  categoryScores.auttaja += (interests.health || 0) * 2.8;  // BOOSTED: Strong healthcare signal (PHASE 7: Increased from 1.5)
   categoryScores.auttaja += (interests.education || 0) * 1.0; // BOOSTED: Teaching/education
   categoryScores.auttaja += (values.impact || 0) * 0.9;      // BOOSTED: Making a difference
   categoryScores.auttaja += (workstyle.teaching || 0) * 0.8;  // BOOSTED: Teaching style
@@ -1078,7 +1078,7 @@ function determineDominantCategory(
   categoryScores.auttaja -= (interests.creative || 0) * 0.2;  // Penalize creative to avoid visionaari confusion
   
   // luova: creative interest, arts_culture, writing (but NOT career_clarity or planning to avoid visionaari confusion)
-  categoryScores.luova += (interests.creative || 0) * 1.3;  // BOOSTED: Creative is key
+  categoryScores.luova += (interests.creative || 0) * 2.5;  // BOOSTED: Creative is key (PHASE 7: Increased from 1.3)
   categoryScores.luova += (interests.arts_culture || 0) * 0.9;  // BOOSTED: Arts/culture
   categoryScores.luova += (interests.writing || 0) * 0.8;  // BOOSTED: Writing
   // Penalize career_clarity and planning to avoid visionaari confusion
@@ -1101,10 +1101,10 @@ function determineDominantCategory(
   categoryScores.johtaja -= (interests.education || 0) * 0.3;  // Penalize education to avoid auttaja confusion
   
   // innovoija: technology interest, innovation, problem_solving (but NOT analytical, organization, or leadership to avoid jarjestaja/johtaja confusion)
-  categoryScores.innovoija += (interests.technology || 0) * 1.5;  // BOOSTED: Technology is key (increased)
-  categoryScores.innovoija += (interests.innovation || 0) * 1.0;  // BOOSTED: Innovation interest (increased)
-  categoryScores.innovoija += (workstyle.problem_solving || 0) * 0.8;  // Increased
-  categoryScores.innovoija += (values.entrepreneurship || 0) * 0.6;  // Entrepreneurship can also indicate innovation (increased)
+  categoryScores.innovoija += (interests.technology || 0) * 2.5;  // BOOSTED: Technology is key (PHASE 7: Increased from 1.5)
+  categoryScores.innovoija += (interests.innovation || 0) * 1.5;  // PHASE 7: Increased from 1.0 to compete with visionaari
+  categoryScores.innovoija += (workstyle.problem_solving || 0) * 1.0;  // PHASE 7: Increased from 0.8
+  categoryScores.innovoija += (values.entrepreneurship || 0) * 0.3;  // PHASE 7: Reduced from 0.6 to avoid visionaari confusion
   // Penalize analytical, organization, and leadership to avoid jarjestaja/johtaja confusion
   categoryScores.innovoija -= (interests.analytical || 0) * 0.4;  // Penalize analytical to avoid jarjestaja confusion (increased)
   categoryScores.innovoija -= (workstyle.organization || 0) * 0.4;  // Penalize organization to avoid jarjestaja confusion (increased)
@@ -1131,7 +1131,7 @@ function determineDominantCategory(
   categoryScores.rakentaja -= (interests.people || 0) * 0.4;  // Penalize people to avoid auttaja confusion
   
   // ympariston-puolustaja: environment interest, nature, outdoor context, work_environment (but NOT career_clarity, analytical, organization, people, or health)
-  categoryScores['ympariston-puolustaja'] += (interests.environment || 0) * 1.3;  // BOOSTED: Environment is key
+  categoryScores['ympariston-puolustaja'] += (interests.environment || 0) * 2.5;  // BOOSTED: Environment is key (PHASE 7: Increased from 1.3)
   categoryScores['ympariston-puolustaja'] += (interests.nature || 0) * 1.1;  // BOOSTED: Nature interest
   categoryScores['ympariston-puolustaja'] += ((context?.outdoor || 0) * 0.8);  // BOOSTED: Outdoor context
   categoryScores['ympariston-puolustaja'] += ((context?.work_environment || 0) * 1.2);  // BOOSTED: Mobile/field work (outdoor context) - increased further for NUORI
@@ -1157,10 +1157,10 @@ function determineDominantCategory(
   // - YLA: career_clarity (values) - primary signal
   // - TASO2: entrepreneurship (values) + technology (interests) - alternative signals since no career_clarity
   // - NUORI: global (values) + advancement (values) + growth (values) + flexibility (workstyle) - alternative signals since no career_clarity
-  categoryScores.visionaari += (workstyle.planning || 0) * 1.5;  // BOOSTED: Planning is key for visionaari
-  categoryScores.visionaari += (interests.innovation || 0) * 1.2;  // BOOSTED: Innovation interest
-  categoryScores.visionaari += (values.global || 0) * 1.3;  // BOOSTED: Global values
-  categoryScores.visionaari += (values.career_clarity || 0) * 2.5;  // BOOSTED: Career clarity/planning (primary for YLA)
+  categoryScores.visionaari += (workstyle.planning || 0) * 0.8;  // PHASE 7: Reduced from 1.5 to avoid overwhelming interests
+  categoryScores.visionaari += (interests.innovation || 0) * 0.6;  // PHASE 7: Reduced from 1.2 to avoid innovation=technology confusion
+  categoryScores.visionaari += (values.global || 0) * 1.0;  // PHASE 7: Reduced from 1.3
+  categoryScores.visionaari += (values.career_clarity || 0) * 0.5;  // PHASE 7: Reduced from 2.5 (via 1.0) to stop overwhelming interest signals
   
   // Cohort-specific alternative signals for TASO2 and NUORI
   if (cohort === 'TASO2') {
@@ -1184,6 +1184,7 @@ function determineDominantCategory(
   categoryScores.visionaari -= (interests.people || 0) * 0.6;  // Penalize people to avoid auttaja confusion (increased)
   categoryScores.visionaari -= (interests.health || 0) * 0.6;  // Penalize health to avoid auttaja confusion (increased)
   categoryScores.visionaari -= (interests.creative || 0) * 0.4;  // Penalize creative to avoid luova confusion
+  categoryScores.visionaari -= (interests.technology || 0) * 0.8;  // PHASE 7: Penalize technology to avoid innovoija confusion
   
   // jarjestaja: organization, structure workstyle, precision, analytical interest (but NOT health, people, or leadership to avoid auttaja/johtaja confusion)
   categoryScores.jarjestaja += (workstyle.organization || 0) * 1.2;  // Critical for organization (increased)
@@ -1198,9 +1199,25 @@ function determineDominantCategory(
   categoryScores.jarjestaja -= (interests.leadership || 0) * 0.3;  // Penalize leadership interest to avoid johtaja confusion
   
   // Find category with highest score
-  const dominantCategory = Object.entries(categoryScores)
-    .sort(([, a], [, b]) => b - a)[0][0];
-  
+  const sortedCategories = Object.entries(categoryScores)
+    .sort(([, a], [, b]) => b - a);
+
+  const dominantCategory = sortedCategories[0][0];
+
+  // PHASE 7: Debug logging to diagnose category selection
+  console.log(`[determineDominantCategory] PHASE 7 DEBUG - Category Scores:`);
+  sortedCategories.forEach(([cat, score]) => {
+    console.log(`  ${cat}: ${score.toFixed(2)}`);
+  });
+  console.log(`[determineDominantCategory] Selected: ${dominantCategory} (${categoryScores[dominantCategory].toFixed(2)})`);
+  console.log(`[determineDominantCategory] Input subdimensions:`, {
+    technology: interests.technology,
+    health: interests.health,
+    creative: interests.creative,
+    career_clarity: values.career_clarity,
+    planning: workstyle.planning
+  });
+
   return dominantCategory;
 }
 
@@ -1214,26 +1231,84 @@ function determineDominantCategory(
 export function rankCareers(
   answers: TestAnswer[],
   cohort: Cohort,
-  limit: number = 5
+  limit: number = 5,
+  currentOccupation?: string
 ): CareerMatch[] {
   // Step 1: Compute user vector
   const { dimensionScores, detailedScores } = computeUserVector(answers, cohort);
-  
+
+  // PHASE 5: Detect uncertainty for YLA cohort
+  // Count neutral answers (score = 3) to determine if user is uncertain
+  const neutralAnswerCount = answers.filter(a => a.score === 3).length;
+  const totalAnswers = answers.length;
+  const uncertaintyRate = neutralAnswerCount / totalAnswers;
+  const isUncertain = cohort === 'YLA' && uncertaintyRate >= 0.4; // 40%+ neutral answers
+
+  if (isUncertain) {
+    console.log(`[rankCareers] 🔍 UNCERTAINTY DETECTED for YLA cohort: ${neutralAnswerCount}/${totalAnswers} neutral answers (${(uncertaintyRate * 100).toFixed(1)}%)`);
+    console.log(`[rankCareers] 🌐 Broadening category exploration to help uncertain user`);
+  }
+
   // Step 2: Determine dominant category
   const dominantCategory = determineDominantCategory(detailedScores, cohort);
   console.log(`[rankCareers] Dominant category: ${dominantCategory}`);
-  
-  // Step 3: Filter careers to only those matching dominant category
-  const categoryCareers = CAREER_VECTORS.filter(
-    careerVector => careerVector.category === dominantCategory
-  );
-  console.log(`[rankCareers] Found ${categoryCareers.length} careers in category "${dominantCategory}"`);
-  
+
+  // Step 3: Filter careers based on uncertainty
+  // PHASE 5: If uncertain, include careers from top 3 categories instead of just dominant
+  // ALSO filter out current occupation if provided
+
+  let categoriesToInclude: string[];
+  if (isUncertain) {
+    // Calculate category scores for uncertain users
+    const { interests, values, workstyle, context } = detailedScores;
+    const categoryScores: Record<string, number> = {};
+    categoryScores.auttaja = (interests.people || 0) * 1.0 + (values.impact || 0) * 0.8;
+    categoryScores.luova = (interests.creative || 0) * 1.0 + (interests.arts_culture || 0) * 0.8;
+    categoryScores.johtaja = (workstyle.leadership || 0) * 1.0 + (workstyle.organization || 0) * 0.8;
+    categoryScores.innovoija = (interests.technology || 0) * 1.0 + (interests.innovation || 0) * 0.8;
+    categoryScores.rakentaja = (interests.hands_on || 0) * 1.0 + (workstyle.precision || 0) * 0.8;
+    categoryScores['ympariston-puolustaja'] = (interests.environment || 0) * 1.0 + (interests.nature || 0) * 0.8;
+    categoryScores.visionaari = (workstyle.planning || 0) * 0.8 + (values.global || 0) * 0.8;
+    categoryScores.jarjestaja = (workstyle.organization || 0) * 0.9 + (workstyle.structure || 0) * 0.8;
+
+    const allCategories = ['auttaja', 'luova', 'johtaja', 'innovoija', 'rakentaja',
+                          'ympariston-puolustaja', 'visionaari', 'jarjestaja'];
+    const sortedCategories = allCategories.sort((a, b) => categoryScores[b] - categoryScores[a]);
+
+    // Include top 3 categories for uncertain users
+    categoriesToInclude = sortedCategories.slice(0, 3);
+    console.log(`[rankCareers] 🌐 Including careers from top 3 categories: ${categoriesToInclude.join(', ')}`);
+  } else {
+    // Only include dominant category for certain users
+    categoriesToInclude = [dominantCategory];
+  }
+
+  const categoryCareers = CAREER_VECTORS.filter(careerVector => {
+    if (!categoriesToInclude.includes(careerVector.category)) return false;
+    // Filter out current occupation (fuzzy match on title)
+    if (currentOccupation && currentOccupation !== "none") {
+      const occupationLower = currentOccupation.toLowerCase().trim();
+      const titleLower = careerVector.title.toLowerCase();
+      // Simple fuzzy matching: check if occupation contains career title or vice versa
+      if (titleLower.includes(occupationLower) || occupationLower.includes(titleLower)) {
+        console.log(`[rankCareers] Filtering out current occupation: ${careerVector.title}`);
+        return false;
+      }
+    }
+    return true;
+  });
+
+  if (isUncertain) {
+    console.log(`[rankCareers] Found ${categoryCareers.length} careers across ${categoriesToInclude.length} categories for uncertain user`);
+  } else {
+    console.log(`[rankCareers] Found ${categoryCareers.length} careers in category "${dominantCategory}"`);
+  }
+
   // Step 4: If category has too few careers, supplement with next-best categories
   // But prioritize dominant category careers in final results
-  // Only supplement if dominant category has fewer than 3 careers
+  // Only supplement if dominant category has fewer than 3 careers (skip this for uncertain users as they already have multiple categories)
   let careersToScore = [...categoryCareers];
-  if (categoryCareers.length < 3) {
+  if (!isUncertain && categoryCareers.length < 3) {
     console.log(`[rankCareers] Category has only ${categoryCareers.length} careers, supplementing...`);
     // Recalculate category scores for supplementing
     const { interests, values, workstyle, context } = detailedScores;
@@ -1256,9 +1331,18 @@ export function rankCareers(
       if (careersToScore.length >= limit * 2) break; // Get enough for ranking
       if (category === dominantCategory) continue; // Already added
       
-      const additionalCareers = CAREER_VECTORS.filter(
-        cv => cv.category === category
-      );
+      const additionalCareers = CAREER_VECTORS.filter(cv => {
+        if (cv.category !== category) return false;
+        // Also filter out current occupation from supplemental careers
+        if (currentOccupation && currentOccupation !== "none") {
+          const occupationLower = currentOccupation.toLowerCase().trim();
+          const titleLower = cv.title.toLowerCase();
+          if (titleLower.includes(occupationLower) || occupationLower.includes(titleLower)) {
+            return false;
+          }
+        }
+        return true;
+      });
       careersToScore = [...careersToScore, ...additionalCareers];
     }
   } else {
@@ -1409,6 +1493,58 @@ export function rankCareers(
         if (userGlobalValues >= 0.4 && userCareerClarity >= 0.2) {
           const globalBoost = Math.min(20, userGlobalValues * 30); // Up to 20% boost for global
           overallScore = Math.min(100, overallScore + globalBoost);
+        }
+      }
+    }
+
+    // PHASE 2: Career Progression Boost
+    // Boost careers that are natural progressions from the user's current occupation
+    if (currentOccupation && currentOccupation !== "none") {
+      const careerFI_temp = careersFI.find(c => c && c.id === careerVector.slug);
+      if (careerFI_temp?.progression_from) {
+        // Check if current occupation is in the progression_from list
+        const occupationLower = currentOccupation.toLowerCase().trim();
+        const isProgression = careerFI_temp.progression_from.some(fromCareer => {
+          return occupationLower.includes(fromCareer.toLowerCase()) ||
+                 fromCareer.toLowerCase().includes(occupationLower);
+        });
+
+        if (isProgression) {
+          // Significant boost for natural career progression (up to 35%)
+          const progressionBoost = 35;
+          overallScore = Math.min(100, overallScore + progressionBoost);
+          console.log(`[rankCareers] 🔼 Career Progression Boost: ${careerVector.title} is a natural progression from ${currentOccupation} (+${progressionBoost}%, total: ${Math.min(100, overallScore).toFixed(1)}%)`);
+        }
+      }
+    }
+
+    // PHASE 3: Career Switching Intelligence (Transferable Skills Boost)
+    // Boost careers that share transferable skills with the user's current occupation
+    if (currentOccupation && currentOccupation !== "none") {
+      // Find current occupation's skills
+      const currentOccupationData = careersFI.find(c => {
+        if (!c || !c.id) return false;
+        const idLower = c.id.toLowerCase();
+        const occupationLower = currentOccupation.toLowerCase().trim();
+        return idLower.includes(occupationLower) || occupationLower.includes(idLower);
+      });
+
+      // Find target career's skills
+      const targetCareerData = careersFI.find(c => c && c.id === careerVector.slug);
+
+      if (currentOccupationData?.transferable_skills && targetCareerData?.transferable_skills) {
+        // Calculate skill overlap
+        const currentSkills = new Set(currentOccupationData.transferable_skills);
+        const targetSkills = targetCareerData.transferable_skills;
+
+        const overlappingSkills = targetSkills.filter(skill => currentSkills.has(skill));
+        const overlapPercentage = overlappingSkills.length / targetSkills.length;
+
+        // Apply boost based on skill overlap (up to 25% for high overlap)
+        if (overlapPercentage >= 0.3) { // At least 30% skill overlap
+          const skillBoost = Math.min(25, overlapPercentage * 40); // Up to 25% boost
+          overallScore = Math.min(100, overallScore + skillBoost);
+          console.log(`[rankCareers] 🔄 Career Switching Boost: ${careerVector.title} shares ${overlappingSkills.length}/${targetSkills.length} skills with ${currentOccupation} (${(overlapPercentage * 100).toFixed(0)}% overlap, +${skillBoost.toFixed(1)}%, total: ${Math.min(100, overallScore).toFixed(1)}%)`);
         }
       }
     }
@@ -1670,7 +1806,8 @@ export function rankCareers(
  */
 export function generateUserProfile(
   answers: TestAnswer[],
-  cohort: Cohort
+  cohort: Cohort,
+  currentOccupation?: string
 ): UserProfile {
   const { dimensionScores, detailedScores } = computeUserVector(answers, cohort);
   
@@ -1695,10 +1832,11 @@ export function generateUserProfile(
   
   // Generate personalized analysis text
   const personalizedText = generatePersonalizedAnalysis(userProfile, cohort);
-  
+
   return {
     ...userProfile,
-    personalizedAnalysis: personalizedText
+    personalizedAnalysis: personalizedText,
+    currentOccupation: currentOccupation || undefined
   };
 }
 
