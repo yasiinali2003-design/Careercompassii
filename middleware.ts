@@ -213,11 +213,20 @@ export async function middleware(request: NextRequest) {
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   response.headers.set('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
   
-  // Content Security Policy (adjust based on your needs)
-  response.headers.set(
-    'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none';"
-  );
+  // Content Security Policy - relaxed for localhost development
+  if (isLocalhost) {
+    // More permissive CSP for localhost to allow Next.js dev mode features
+    response.headers.set(
+      'Content-Security-Policy',
+      "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; style-src 'self' 'unsafe-inline' data:; img-src 'self' data: blob: https:; font-src 'self' data: blob:; connect-src 'self' ws: wss: http: https:; frame-ancestors 'none';"
+    );
+  } else {
+    // Strict CSP for production
+    response.headers.set(
+      'Content-Security-Policy',
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none';"
+    );
+  }
   
   // Prevent caching of sensitive pages
   if (pathname.startsWith('/teacher') || pathname.startsWith('/admin') || pathname.startsWith('/api')) {

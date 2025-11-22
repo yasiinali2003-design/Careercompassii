@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 20% 98%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 197 46% 32%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 75% 60%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 138 26% 39%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 197 46% 32%;
+    --radius: 0.5rem;
+
+    /* Brand colors - Nordic Trust palette */
+    --brand-blue: #2B5F75;
+    --brand-amber: #E8994A;
+    --brand-green: #4A7C59;
+    --base-white: #F8FAFB;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html, body {
+    min-height: 100%;
+    background: #F8FAFB;
+  }
+  
+  body {
+    @apply text-foreground;
+  }
+}
+
+@layer components {
+  /* CTA blending effect */
+  .cta-section {
+    position: relative;
+  }
+
+  .cta-box {
+    background: #2B5F75 !important;
+    color: #fff !important;
+    border-radius: 20px;
+    border: none !important;
+  }
+
+  /* Ensure CTA content is above the gradient */
+  .cta-content {
+    position: relative;
+  }
+
+  /* Enhanced content boxes for better readability */
+  .content-box {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Semi-transparent white sections */
+  .semi-transparent-white {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+}

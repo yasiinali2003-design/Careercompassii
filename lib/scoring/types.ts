@@ -89,6 +89,7 @@ export interface UserProfile {
   profileType?: string;              // e.g., "Tech-savvy Innovator"
   summary?: string;                  // Brief personality summary
   personalizedAnalysis?: string;     // 2-3 paragraph personalized text
+  currentOccupation?: string;        // Current career/occupation slug (for filtering)
 }
 
 // ========== CAREER MATCHING TYPES ==========

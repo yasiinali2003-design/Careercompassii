@@ -1051,8 +1051,29 @@ function determineDominantCategory(
   detailedScores: DetailedDimensionScores,
   cohort: Cohort
 ): string {
+  // STEP 1: Version verification for debugging
+  const SCORING_VERSION = "PHASE7_v1.0";
+  const PHASE7_WEIGHTS = {
+    auttaja_health: 2.8,
+    auttaja_people: 1.2,
+    luova_creative: 2.5,
+    innovoija_technology: 2.5,
+    innovoija_innovation: 1.5,
+    innovoija_problem_solving: 1.0,
+    innovoija_entrepreneurship: 0.3,
+    visionaari_planning: 0.8,
+    visionaari_innovation: 0.6,
+    visionaari_global: 1.0,
+    visionaari_career_clarity: 0.5,
+    visionaari_tech_penalty: -0.8,
+    ympariston_environment: 2.5
+  };
+  const WEIGHTS_HASH = JSON.stringify(PHASE7_WEIGHTS).length;
+
+  console.log(`[SCORING] Version: ${SCORING_VERSION}, Hash: ${WEIGHTS_HASH}, Cohort: ${cohort}`);
+
   const { interests, values, workstyle, context } = detailedScores;
-  
+
   // Calculate category scores based on subdimension patterns
   const categoryScores: Record<string, number> = {
     auttaja: 0,

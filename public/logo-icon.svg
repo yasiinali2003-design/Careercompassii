@@ -1,26 +1,67 @@
 <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-  <!-- Simplified Compass Icon - Clean and Modern -->
-  
-  <!-- Main compass circle -->
-  <circle cx="60" cy="60" r="55" fill="#F8FAFB" stroke="#2B5F75" stroke-width="3"/>
-  
-  <!-- Compass needle pointing North -->
+  <!-- Urakompassi - Simplified Icon Version -->
+
+  <defs>
+    <radialGradient id="iconBgGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#F8FAFB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8F1F5;stop-opacity:1" />
+    </radialGradient>
+
+    <filter id="iconShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="1" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="iconPathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A7C59;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#2B5F75;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Career pathway dots (8 directions) -->
+  <circle cx="60" cy="10" r="3" fill="#E8994A" opacity="0.7"/>
+  <circle cx="85" cy="18" r="3" fill="#4A7C59" opacity="0.7"/>
+  <circle cx="102" cy="35" r="3" fill="#E8994A" opacity="0.7"/>
+  <circle cx="110" cy="60" r="3" fill="#4A7C59" opacity="0.7"/>
+  <circle cx="102" cy="85" r="3" fill="#E8994A" opacity="0.7"/>
+  <circle cx="85" cy="102" r="3" fill="#4A7C59" opacity="0.7"/>
+  <circle cx="60" cy="110" r="3" fill="#E8994A" opacity="0.7"/>
+  <circle cx="35" cy="102" r="3" fill="#4A7C59" opacity="0.7"/>
+  <circle cx="18" cy="85" r="3" fill="#E8994A" opacity="0.7"/>
+  <circle cx="10" cy="60" r="3" fill="#4A7C59" opacity="0.7"/>
+  <circle cx="18" cy="35" r="3" fill="#E8994A" opacity="0.7"/>
+  <circle cx="35" cy="18" r="3" fill="#4A7C59" opacity="0.7"/>
+
+  <!-- Main compass -->
+  <circle cx="60" cy="60" r="52" fill="url(#iconBgGradient)" stroke="#2B5F75" stroke-width="3" filter="url(#iconShadow)"/>
+
+  <!-- Inner career pathway ring -->
+  <circle cx="60" cy="60" r="42" fill="none" stroke="url(#iconPathGradient)" stroke-width="1.5" stroke-dasharray="8 4" opacity="0.5"/>
+
+  <!-- Compass needle -->
   <g transform="translate(60, 60)">
-    <!-- North needle (pointing up) - Red -->
-    <path d="M 0,-45 L -6,0 L 0,3 L 6,0 Z" fill="#D64545" stroke="#1F4756" stroke-width="1.5"/>
-    
-    <!-- South needle (pointing down) - Teal -->
-    <path d="M 0,45 L -6,0 L 0,-3 L 6,0 Z" fill="#2B5F75" stroke="#1F4756" stroke-width="1.5"/>
-    
-    <!-- Center circle -->
-    <circle cx="0" cy="0" r="8" fill="#E8994A" stroke="#1F4756" stroke-width="2"/>
-    <circle cx="0" cy="0" r="4" fill="#FFFFFF"/>
+    <!-- North needle -->
+    <path d="M 0,-42 L -6,-3 L 0,5 L 6,-3 Z" fill="#D64545" stroke="#1F4756" stroke-width="1.5" filter="url(#iconShadow)"/>
+
+    <!-- South needle -->
+    <path d="M 0,42 L -6,3 L 0,-5 L 6,3 Z" fill="#2B5F75" stroke="#1F4756" stroke-width="1.5" filter="url(#iconShadow)"/>
+
+    <!-- East-West balance -->
+    <path d="M 30,0 L 3,-4 L -5,0 L 3,4 Z" fill="#4A7C59" stroke="#1F4756" stroke-width="1" opacity="0.7"/>
+    <path d="M -30,0 L -3,-4 L 5,0 L -3,4 Z" fill="#4A7C59" stroke="#1F4756" stroke-width="1" opacity="0.7"/>
+
+    <!-- Center hub -->
+    <circle cx="0" cy="0" r="9" fill="#E8994A" stroke="#1F4756" stroke-width="2"/>
+    <circle cx="0" cy="0" r="5" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="2" fill="#2B5F75"/>
   </g>
-  
-  <!-- Cardinal direction markers (simplified) -->
-  <text x="60" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2B5F75" text-anchor="middle">N</text>
-  
-  <!-- Decorative inner ring -->
-  <circle cx="60" cy="60" r="35" fill="none" stroke="#4A7C59" stroke-width="1.5" opacity="0.4"/>
+
 </svg>
 

@@ -959,10 +959,10 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 3,
     text: "Haluaisitko työskennellä urheilun tai liikunnan parissa?",
     dimension: 'interests',
-    subdimension: 'sports',
+    subdimension: 'hands_on',
     weight: 1.2,
     reverse: false,
-    notes: "Sports/fitness careers (replaces tech duplicate)"
+    notes: "Sports/fitness careers - physical/hands-on work (was: sports)"
   },
   {
     q: 4,
@@ -1868,10 +1868,10 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 3,
     text: "Haluaisitko työskennellä liike-elämässä ja johtamisessa?",
     dimension: 'interests',
-    subdimension: 'business',
+    subdimension: 'leadership',
     weight: 1.3,
     reverse: false,
-    notes: "Business/management"
+    notes: "Business/management - leadership interest (was: business)"
   },
   {
     q: 4,
@@ -1933,10 +1933,10 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 10,
     text: "Onko sinulle erittäin tärkeää ansaita hyvä palkka (yli 4000€/kk)?",
     dimension: 'values',
-    subdimension: 'financial',
-    weight: 1.2,
+    subdimension: 'advancement',
+    weight: 1.0,
     reverse: false,
-    notes: "Salary priority (high-paying careers)"
+    notes: "High salary priority - advancement value (was: financial)"
   },
   {
     q: 11,
@@ -1969,10 +1969,10 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 14,
     text: "Onko sinulle tärkeää, että sinulla on aikaa perheelle ja harrastuksille?",
     dimension: 'values',
-    subdimension: 'work_life_balance',
-    weight: 1.2,
+    subdimension: 'stability',
+    weight: 1.0,
     reverse: false,
-    notes: "Work-life balance priority"
+    notes: "Work-life balance priority - stability value (was: work_life_balance)"
   },
   {
     q: 15,
@@ -2034,19 +2034,19 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 21,
     text: "Onko sinulle tärkeää työskennellä isossa, tunnetussa yrityksessä?",
     dimension: 'values',
-    subdimension: 'company_size',
+    subdimension: 'stability',
     weight: 0.9,
     reverse: false,
-    notes: "Large company preference"
+    notes: "Large company preference - stability value (was: company_size)"
   },
   {
     q: 22,
     text: "Kiinnostaako sinua työskennellä pienessä startup-yrityksessä?",
     dimension: 'values',
-    subdimension: 'company_size',
+    subdimension: 'entrepreneurship',
     weight: 0.9,
-    reverse: true,
-    notes: "Startup preference (reverse of Q21)"
+    reverse: false,
+    notes: "Startup preference - entrepreneurship value (was: company_size)"
   },
   {
     q: 23,
@@ -2072,10 +2072,10 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 25,
     text: "Pidätkö siitä, että saat tehdä työsi itsenäisesti ilman jatkuvaa ohjausta?",
     dimension: 'workstyle',
-    subdimension: 'autonomy',
-    weight: 1.1,
+    subdimension: 'flexibility',
+    weight: 1.0,
     reverse: false,
-    notes: "Autonomy preference"
+    notes: "Autonomy preference - flexibility workstyle (was: autonomy)"
   },
   {
     q: 26,
@@ -2090,10 +2090,10 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 27,
     text: "Pidätkö tiimityöskentelystä ja yhteistyöstä kollegoiden kanssa?",
     dimension: 'workstyle',
-    subdimension: 'teamwork',
-    weight: 1.1,
+    subdimension: 'motivation',
+    weight: 0.9,
     reverse: false,
-    notes: "Collaboration preference"
+    notes: "Team collaboration - motivation workstyle (was: teamwork)"
   },
   {
     q: 28,
@@ -2108,10 +2108,10 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 29,
     text: "Pidätkö työstä, jossa jokainen päivä on erilainen ja yllättävä?",
     dimension: 'workstyle',
-    subdimension: 'variety',
+    subdimension: 'flexibility',
     weight: 1.0,
     reverse: false,
-    notes: "Variety/novelty preference"
+    notes: "Variety/novelty preference - flexibility workstyle (was: variety)"
   }
 ];
 

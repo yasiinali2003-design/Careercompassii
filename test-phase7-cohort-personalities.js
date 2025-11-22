@@ -1,0 +1,441 @@
+/**
+ * PHASE 7: Cohort-Specific Personality Testing
+ *
+ * Tests each cohort (YLA, TASO2, NUORI) with different personality types
+ * to validate the weight recalibration works across all user segments.
+ */
+
+const API_URL = 'http://localhost:3000/api/score';
+
+// Helper function to generate answer pattern
+function generateAnswers(scores) {
+  return scores.map((score, index) => ({ questionIndex: index, score }));
+}
+
+// ============================================================================
+// YLA COHORT TEST PROFILES (Upper Secondary School Students)
+// Q0-7: Learning preferences, Q8-14: Future mindset, Q15-22: Interests, Q23-29: Values
+// ============================================================================
+
+const YLA_PROFILES = [
+  {
+    id: "yla-tech-enthusiast",
+    name: "YLA: Technology Enthusiast",
+    cohort: "YLA",
+    description: "Strong technology interest, low people/health interest",
+    answers: generateAnswers([
+      // Q0-7: Learning - Analytical preference
+      4, 5, 4, 3, 3, 2, 3, 2,
+      // Q8-14: Future - Moderate career clarity
+      4, 3, 3, 3, 4, 3, 3,
+      // Q15-22: Interests - HIGH TECH, low health/creative
+      5, 1, 2, 2, 3, 3, 4, 4,  // Q15=5 (tech), Q16=1 (health)
+      // Q23-29: Values - Moderate
+      3, 3, 3, 3, 4, 3, 3
+    ]),
+    expectedCategory: "innovoija",
+    expectedCareers: ["Full Stack -kehittäjä", "DevOps-insinööri", "Koneoppimisasiantuntija"]
+  },
+  {
+    id: "yla-helper",
+    name: "YLA: Helper/Caregiver",
+    cohort: "YLA",
+    description: "Strong people/health interest, low technology interest",
+    answers: generateAnswers([
+      // Q0-7: Learning - Moderate, some hands-on
+      3, 3, 3, 4, 3, 3, 3, 3,
+      // Q8-14: Future - Some career clarity
+      3, 3, 3, 4, 3, 3, 3,
+      // Q15-22: Interests - HIGH HEALTH/PEOPLE, low tech
+      1, 5, 2, 2, 3, 3, 3, 4,  // Q15=1 (tech), Q16=5 (health)
+      // Q23-29: Values - High social impact
+      4, 4, 3, 3, 3, 4, 4
+    ]),
+    expectedCategory: "auttaja",
+    expectedCareers: ["Sairaanhoitaja", "Sosiaalityöntekijä", "Toimintaterapeutti", "Lastenhoitaja"]
+  },
+  {
+    id: "yla-creative",
+    name: "YLA: Creative Artist",
+    cohort: "YLA",
+    description: "Strong creative/arts interest, low analytical interest",
+    answers: generateAnswers([
+      // Q0-7: Learning - Low analytical, high hands-on
+      2, 2, 2, 5, 4, 4, 3, 3,
+      // Q8-14: Future - Uncertain, exploratory
+      2, 2, 3, 3, 2, 3, 3,
+      // Q15-22: Interests - HIGH CREATIVE, low tech/health
+      2, 1, 5, 2, 3, 3, 4, 4,  // Q17=5 (creative)
+      // Q23-29: Values - Freedom, expression
+      4, 3, 4, 3, 3, 3, 4
+    ]),
+    expectedCategory: "luova",
+    expectedCareers: ["Graafikko", "Sisällöntuottaja", "3D-taiteilija", "Podcast-tuottaja"]
+  },
+  {
+    id: "yla-environmental",
+    name: "YLA: Environmental Advocate",
+    cohort: "YLA",
+    description: "Strong environmental interest, sustainability focus",
+    answers: generateAnswers([
+      // Q0-7: Learning - Moderate
+      3, 3, 3, 3, 3, 3, 3, 3,
+      // Q8-14: Future - Strong values-driven
+      4, 3, 3, 3, 3, 4, 4,
+      // Q15-22: Interests - HIGH ENVIRONMENT, low tech/health
+      2, 2, 2, 5, 3, 3, 3, 4,  // Q18=5 (environment)
+      // Q23-29: Values - Sustainability, impact
+      5, 4, 3, 4, 3, 4, 5
+    ]),
+    expectedCategory: "ympariston-puolustaja",
+    expectedCareers: ["Ympäristöasiantuntija", "Kiertotalousasiantuntija", "ESG-analyytikko"]
+  },
+  {
+    id: "yla-organizer",
+    name: "YLA: Organizer/Planner",
+    cohort: "YLA",
+    description: "Strong organizational skills, detail-oriented",
+    answers: generateAnswers([
+      // Q0-7: Learning - HIGH analytical
+      5, 5, 5, 2, 2, 2, 3, 2,
+      // Q8-14: Future - Very clear, planned
+      5, 4, 4, 4, 5, 3, 3,
+      // Q15-22: Interests - LOW on all specific interests, moderate leadership
+      2, 2, 2, 2, 4, 3, 3, 3,  // Q19=4 (leadership)
+      // Q23-29: Values - Structure, stability
+      5, 4, 5, 3, 3, 5, 4
+    ]),
+    expectedCategory: "jarjestaja",
+    expectedCareers: ["Kirjanpitäjä", "Henkilöstöasiantuntija", "Projektipäällikkö"]
+  }
+];
+
+// ============================================================================
+// TASO2 COHORT TEST PROFILES (Vocational Students)
+// Similar structure but different career focus
+// ============================================================================
+
+const TASO2_PROFILES = [
+  {
+    id: "taso2-tech-builder",
+    name: "TASO2: Tech Builder",
+    cohort: "TASO2",
+    description: "Hands-on technology, building things",
+    answers: generateAnswers([
+      // Strong hands-on + technology
+      2, 3, 3, 5, 5, 4, 4, 4,  // Q0-7: Hands-on preference
+      3, 3, 3, 3, 3, 3, 3,      // Q8-14: Moderate planning
+      5, 1, 2, 2, 3, 5, 4, 4,  // Q15-22: Tech + building
+      3, 3, 3, 3, 4, 3, 3
+    ]),
+    expectedCategory: "innovoija",
+    expectedCareers: ["DevOps-insinööri", "Full Stack -kehittäjä", "Pilvipalveluarkkitehti"]
+  },
+  {
+    id: "taso2-healthcare-practical",
+    name: "TASO2: Practical Healthcare",
+    cohort: "TASO2",
+    description: "Hands-on healthcare, helping people",
+    answers: generateAnswers([
+      2, 3, 3, 5, 4, 4, 3, 4,
+      3, 3, 3, 4, 3, 3, 3,
+      1, 5, 2, 2, 3, 3, 4, 4,  // Q16=5 (health)
+      4, 4, 3, 3, 3, 4, 4
+    ]),
+    expectedCategory: "auttaja",
+    expectedCareers: ["Sairaanhoitaja", "Lähihoitaja", "Ensihoitaja"]
+  },
+  {
+    id: "taso2-craftsperson",
+    name: "TASO2: Craftsperson/Builder",
+    cohort: "TASO2",
+    description: "Physical work, building, fixing things",
+    answers: generateAnswers([
+      2, 2, 3, 5, 5, 5, 4, 4,
+      3, 3, 3, 3, 3, 3, 3,
+      2, 1, 2, 2, 3, 5, 4, 4,  // Q20=5 (building/fixing)
+      3, 3, 3, 3, 4, 3, 3
+    ]),
+    expectedCategory: "rakentaja",
+    expectedCareers: ["Sähköasentaja", "Rakennusmies", "Kirvesmies"]
+  },
+  {
+    id: "taso2-service-oriented",
+    name: "TASO2: Service Professional",
+    cohort: "TASO2",
+    description: "Customer service, hospitality focus",
+    answers: generateAnswers([
+      3, 3, 3, 4, 4, 3, 3, 3,
+      3, 3, 3, 4, 3, 3, 3,
+      2, 4, 3, 2, 3, 2, 4, 4,  // Q16=4 (people), moderate creative
+      4, 4, 3, 3, 3, 4, 4
+    ]),
+    expectedCategory: "auttaja",
+    expectedCareers: ["Asiakaspalvelija", "Hotelli- ja ravintola-alan", "Myyjä"]
+  }
+];
+
+// ============================================================================
+// NUORI COHORT TEST PROFILES (Young Adults - Career Switchers)
+// Q0-9: Career values, Q10-19: Work style, Q20-29: Interests
+// ============================================================================
+
+const NUORI_PROFILES = [
+  {
+    id: "nuori-tech-switcher",
+    name: "NUORI: Tech Career Switcher",
+    cohort: "NUORI",
+    description: "Switching to tech, strong learning motivation",
+    answers: generateAnswers([
+      // Q0-9: Values - Growth, innovation
+      4, 4, 5, 4, 3, 3, 4, 5, 4, 3,
+      // Q10-19: Workstyle - Problem-solving, flexible
+      4, 3, 4, 5, 3, 4, 3, 4, 3, 3,
+      // Q20-29: Interests - HIGH TECH
+      5, 1, 2, 2, 3, 3, 4, 4, 4, 3
+    ]),
+    expectedCategory: "innovoija",
+    expectedCareers: ["Full Stack -kehittäjä", "DevOps-insinööri", "Tuotepäällikkö"]
+  },
+  {
+    id: "nuori-leadership",
+    name: "NUORI: Leadership Focus",
+    cohort: "NUORI",
+    description: "Management, leadership ambitions",
+    answers: generateAnswers([
+      // Q0-9: Values - Advancement, impact
+      5, 4, 4, 5, 4, 3, 4, 4, 4, 3,
+      // Q10-19: Workstyle - HIGH LEADERSHIP
+      5, 4, 5, 4, 4, 4, 3, 3, 4, 3,
+      // Q20-29: Interests - Leadership, strategy
+      3, 2, 3, 2, 5, 3, 4, 4, 4, 3  // Q24=5 (leadership)
+    ]),
+    expectedCategory: "johtaja",
+    expectedCareers: ["Projektipäällikkö", "Tuotepäällikkö", "Liiketoimintakehittäjä"]
+  },
+  {
+    id: "nuori-social-impact",
+    name: "NUORI: Social Impact Worker",
+    cohort: "NUORI",
+    description: "NGO, social work, helping professions",
+    answers: generateAnswers([
+      // Q0-9: Values - HIGH SOCIAL IMPACT
+      5, 5, 3, 3, 5, 4, 4, 3, 4, 4,
+      // Q10-19: Workstyle - Empathy, teaching
+      4, 4, 3, 3, 4, 4, 4, 3, 3, 4,
+      // Q20-29: Interests - People, health
+      2, 5, 2, 2, 3, 3, 4, 4, 4, 3  // Q21=5 (people/health)
+    ]),
+    expectedCategory: "auttaja",
+    expectedCareers: ["Sosiaalityöntekijä", "Järjestötyöntekijä", "Ohjaaja"]
+  },
+  {
+    id: "nuori-creative-entrepreneur",
+    name: "NUORI: Creative Entrepreneur",
+    cohort: "NUORI",
+    description: "Freelance creative, entrepreneurial",
+    answers: generateAnswers([
+      // Q0-9: Values - Entrepreneurship, freedom
+      4, 4, 5, 3, 3, 5, 4, 4, 5, 3,
+      // Q10-19: Workstyle - Creative, flexible
+      3, 3, 4, 4, 5, 4, 3, 3, 3, 4,
+      // Q20-29: Interests - HIGH CREATIVE
+      2, 1, 5, 2, 3, 3, 4, 4, 4, 3  // Q22=5 (creative)
+    ]),
+    expectedCategory: "luova",
+    expectedCareers: ["Graafikko", "Sisällöntuottaja", "Verkkokurssien luoja"]
+  },
+  {
+    id: "nuori-strategic-planner",
+    name: "NUORI: Strategic Planner",
+    cohort: "NUORI",
+    description: "Strategy, consulting, high-level planning",
+    answers: generateAnswers([
+      // Q0-9: Values - Growth, advancement, global
+      5, 4, 4, 5, 3, 3, 5, 4, 4, 4,
+      // Q10-19: Workstyle - HIGH PLANNING, analytical
+      5, 5, 5, 4, 3, 3, 3, 4, 4, 3,
+      // Q20-29: Interests - Moderate across board, NOT tech-heavy
+      3, 2, 3, 2, 4, 3, 3, 3, 4, 3
+    ]),
+    expectedCategory: "visionaari",
+    expectedCareers: ["Liiketoimintakehittäjä", "Strateginen suunnittelija", "Konsultti"]
+  }
+];
+
+// ============================================================================
+// TEST EXECUTION
+// ============================================================================
+
+async function testProfile(profile) {
+  try {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        answers: profile.answers,
+        cohort: profile.cohort
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`API Error: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    // Analyze results
+    const topCategories = {};
+    data.topCareers.forEach(c => {
+      topCategories[c.category] = (topCategories[c.category] || 0) + 1;
+    });
+
+    const dominantCategory = Object.entries(topCategories)
+      .sort(([, a], [, b]) => b - a)[0][0];
+
+    const matchCount = profile.expectedCareers
+      ? data.topCareers.filter(c =>
+          profile.expectedCareers.some(exp => c.title.includes(exp) || exp.includes(c.title))
+        ).length
+      : 0;
+
+    const categoryMatch = dominantCategory === profile.expectedCategory;
+    const matchRate = profile.expectedCareers
+      ? (matchCount / profile.expectedCareers.length * 100).toFixed(1)
+      : 'N/A';
+
+    return {
+      profile,
+      dominantCategory,
+      categoryMatch,
+      matchCount,
+      matchRate,
+      topCareers: data.topCareers.map(c => c.title),
+      topStrengths: data.userProfile.topStrengths,
+      success: categoryMatch && matchCount >= 2
+    };
+
+  } catch (error) {
+    return {
+      profile,
+      error: error.message,
+      success: false
+    };
+  }
+}
+
+async function runAllTests() {
+  console.log('════════════════════════════════════════════════════════════════');
+  console.log('PHASE 7: COHORT-SPECIFIC PERSONALITY TESTING');
+  console.log('Testing weight recalibration across all cohorts and personality types');
+  console.log('════════════════════════════════════════════════════════════════\n');
+
+  const allProfiles = [
+    ...YLA_PROFILES,
+    ...TASO2_PROFILES,
+    ...NUORI_PROFILES
+  ];
+
+  const results = [];
+
+  for (const profile of allProfiles) {
+    console.log(`\nTesting: ${profile.name}`);
+    console.log(`Cohort: ${profile.cohort} | Expected: ${profile.expectedCategory}`);
+    console.log('─'.repeat(60));
+
+    const result = await testProfile(profile);
+    results.push(result);
+
+    if (result.error) {
+      console.log(`❌ ERROR: ${result.error}`);
+    } else {
+      const marker = result.categoryMatch ? '✅' : '❌';
+      console.log(`${marker} Category: ${result.dominantCategory} (expected: ${profile.expectedCategory})`);
+      console.log(`   Match Rate: ${result.matchRate}% (${result.matchCount}/${profile.expectedCareers?.length || 0})`);
+      console.log(`   Top Strengths: ${result.topStrengths.join(', ')}`);
+      console.log(`   Top 3 Careers: ${result.topCareers.slice(0, 3).join(', ')}`);
+    }
+  }
+
+  // ============================================================================
+  // SUMMARY STATISTICS
+  // ============================================================================
+
+  console.log('\n\n════════════════════════════════════════════════════════════════');
+  console.log('TEST SUMMARY');
+  console.log('════════════════════════════════════════════════════════════════\n');
+
+  const successfulTests = results.filter(r => r.success).length;
+  const totalTests = results.length;
+  const overallSuccessRate = (successfulTests / totalTests * 100).toFixed(1);
+
+  // By cohort
+  const cohortStats = {};
+  ['YLA', 'TASO2', 'NUORI'].forEach(cohort => {
+    const cohortResults = results.filter(r => r.profile.cohort === cohort);
+    const cohortSuccess = cohortResults.filter(r => r.success).length;
+    cohortStats[cohort] = {
+      total: cohortResults.length,
+      success: cohortSuccess,
+      rate: (cohortSuccess / cohortResults.length * 100).toFixed(1)
+    };
+  });
+
+  // By category
+  const categoryStats = {};
+  const categories = [...new Set(results.map(r => r.profile.expectedCategory))];
+  categories.forEach(cat => {
+    const catResults = results.filter(r => r.profile.expectedCategory === cat);
+    const catSuccess = catResults.filter(r => r.categoryMatch).length;
+    categoryStats[cat] = {
+      total: catResults.length,
+      success: catSuccess,
+      rate: (catSuccess / catResults.length * 100).toFixed(1)
+    };
+  });
+
+  console.log('OVERALL RESULTS:');
+  console.log(`  Total Tests: ${totalTests}`);
+  console.log(`  Successful: ${successfulTests}`);
+  console.log(`  Success Rate: ${overallSuccessRate}%`);
+  console.log(`  Target: 80%`);
+  console.log(`  ${overallSuccessRate >= 80 ? '✅ TARGET MET' : '⚠️ BELOW TARGET'}\n`);
+
+  console.log('BY COHORT:');
+  Object.entries(cohortStats).forEach(([cohort, stats]) => {
+    const marker = stats.rate >= 80 ? '✅' : '⚠️';
+    console.log(`  ${marker} ${cohort}: ${stats.success}/${stats.total} (${stats.rate}%)`);
+  });
+
+  console.log('\nBY CATEGORY:');
+  Object.entries(categoryStats).forEach(([cat, stats]) => {
+    const marker = stats.rate >= 80 ? '✅' : '⚠️';
+    console.log(`  ${marker} ${cat}: ${stats.success}/${stats.total} (${stats.rate}%)`);
+  });
+
+  console.log('\n════════════════════════════════════════════════════════════════');
+  console.log('DETAILED RESULTS BY PROFILE:');
+  console.log('════════════════════════════════════════════════════════════════\n');
+
+  results.forEach((result, index) => {
+    const marker = result.success ? '✅' : '❌';
+    console.log(`${marker} ${index + 1}. ${result.profile.name}`);
+    console.log(`   Expected: ${result.profile.expectedCategory} | Got: ${result.dominantCategory || 'ERROR'}`);
+    if (result.matchRate !== 'N/A') {
+      console.log(`   Career Match: ${result.matchRate}%`);
+    }
+  });
+
+  console.log('\n════════════════════════════════════════════════════════════════');
+  console.log('PHASE 7 VALIDATION COMPLETE');
+  console.log('════════════════════════════════════════════════════════════════\n');
+
+  // Exit code based on success
+  process.exit(overallSuccessRate >= 70 ? 0 : 1);
+}
+
+// Run tests
+runAllTests().catch(error => {
+  console.error('Fatal error:', error);
+  process.exit(1);
+});

@@ -171,6 +171,7 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   const [group, setGroup] = useState<GroupKey | null>(null);
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
+  const [currentOccupation, setCurrentOccupation] = useState<string>(""); // Current career/occupation for filtering
   const [showSaveNotification, setShowSaveNotification] = useState(false);
   const [hasLoadedProgress, setHasLoadedProgress] = useState(false);
   const [originalIndices, setOriginalIndices] = useState<number[]>([]); // For shuffle mapping
@@ -296,6 +297,8 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
     setGroup(g);
     setAnswers(Array(QUESTIONS[g].length).fill(0));
     setIndex(0);
+    // For NUORI cohort, skip to questions (occupation is optional)
+    // For other cohorts, go straight to questions
     setStep(2);
   };
 
@@ -363,7 +366,15 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
         <GroupSelect onChoose={chooseGroup} onBack={restart} />
       )}
 
-      {step === 2 && group && (
+      {step === 2 && group && index === 0 && group === "NUORI" && currentOccupation === "" && (
+        <OccupationInput
+          value={currentOccupation}
+          onChange={setCurrentOccupation}
+          onSkip={() => setCurrentOccupation("none")}
+        />
+      )}
+
+      {step === 2 && group && (index > 0 || group !== "NUORI" || currentOccupation !== "") && (
         <QuestionScreen
           title={
             group === "YLA"
@@ -395,6 +406,7 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
           onSend={sendToBackend}
           pin={pin}
           classToken={classToken}
+          currentOccupation={currentOccupation}
         />
       )}
     </div>
@@ -489,6 +501,47 @@ const GroupSelect = ({ onChoose, onBack }: { onChoose: (g: "YLA" | "TASO2" | "NU
     <button onClick={onBack} className="w-full rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-50">
       Takaisin
     </button>
+  </div>
+);
+
+const OccupationInput = ({ value, onChange, onSkip }: { value: string; onChange: (val: string) => void; onSkip: () => void }) => (
+  <div className="space-y-6">
+    <div className="text-center">
+      <h1 className="text-3xl font-bold">Mikä on nykyinen ammattisi tai työsi?</h1>
+      <p className="mt-2 text-slate-600">
+        Tämä auttaa meitä antamaan sinulle parempia suosituksia. Jos et ole töissä tai opiskelija, voit ohittaa tämän.
+      </p>
+    </div>
+
+    <div className="space-y-4">
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder="Esim. Sairaanhoitaja, Myyjä, Opiskelija..."
+        className="w-full rounded-xl border border-slate-300 px-4 py-3 text-lg focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+      />
+
+      <div className="flex gap-3">
+        <button
+          onClick={() => value.trim() && onChange(value.trim())}
+          disabled={!value.trim()}
+          className="flex-1 rounded-xl bg-primary px-4 py-3 font-semibold text-white transition hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Jatka
+        </button>
+        <button
+          onClick={onSkip}
+          className="flex-1 rounded-xl border border-slate-300 px-4 py-3 font-semibold transition hover:bg-slate-50"
+        >
+          Ohita
+        </button>
+      </div>
+    </div>
+
+    <p className="text-center text-sm text-slate-500">
+      Ammattisi auttaa meitä suodattamaan pois työsi, jotta näet uusia vaihtoehtoja.
+    </p>
   </div>
 );
 
@@ -595,6 +648,7 @@ const Summary = ({
   onSend,
   pin,
   classToken,
+  currentOccupation,
 }: {
   group: any;
   questions: string[];
@@ -607,6 +661,7 @@ const Summary = ({
   onSend: () => void;
   pin?: string | null;
   classToken?: string | null;
+  currentOccupation?: string;
 }) => {
   console.log('[Summary] Component rendered with props:', { pin, classToken, hasPin: !!pin, hasClassToken: !!classToken });
   
@@ -652,7 +707,8 @@ const Summary = ({
             cohort: group,
             answers: formattedAnswers,
             originalIndices,
-            shuffleKey
+            shuffleKey,
+            currentOccupation: currentOccupation || undefined
           }),
         });
         console.log('[Test] Score API response status:', scoreResponse.status);
@@ -731,7 +787,8 @@ const Summary = ({
             cohort: group,
             answers: formattedAnswers,
             originalIndices,
-            shuffleKey
+            shuffleKey,
+            currentOccupation: currentOccupation || undefined
           }),
         });
         

@@ -1,0 +1,196 @@
+════════════════════════════════════════════════════════════════
+PHASE 7: COHORT-SPECIFIC PERSONALITY TESTING
+Testing weight recalibration across all cohorts and personality types
+════════════════════════════════════════════════════════════════
+
+
+Testing: YLA: Technology Enthusiast
+Cohort: YLA | Expected: innovoija
+────────────────────────────────────────────────────────────
+❌ Category: visionaari (expected: innovoija)
+   Match Rate: 0.0% (0/3)
+   Top Strengths: Vahva teknologiakiinnostus, Kasvatus ja opetus, Analyyttinen ajattelu
+   Top 3 Careers: Tekoälyasiantuntija, Tietojärjestelmäarkkitehti, Solutions Architect
+
+Testing: YLA: Helper/Caregiver
+Cohort: YLA | Expected: auttaja
+────────────────────────────────────────────────────────────
+✅ Category: auttaja (expected: auttaja)
+   Match Rate: 0.0% (0/4)
+   Top Strengths: Terveysala, Autonomia, Tiimityöskentely
+   Top 3 Careers: Nutrition Specialist, Mental Health Counselor, Wellness Coach
+
+Testing: YLA: Creative Artist
+Cohort: YLA | Expected: luova
+────────────────────────────────────────────────────────────
+✅ Category: luova (expected: luova)
+   Match Rate: 0.0% (0/4)
+   Top Strengths: Luovuus ja innovatiivisuus, Kasvatus ja opetus, Tiimityöskentely
+   Top 3 Careers: UI/UX Designer, Content Strategist, Digital Content Producer
+
+Testing: YLA: Environmental Advocate
+Cohort: YLA | Expected: ympariston-puolustaja
+────────────────────────────────────────────────────────────
+✅ Category: ympariston-puolustaja (expected: ympariston-puolustaja)
+   Match Rate: 0.0% (0/3)
+   Top Strengths: Ympäristökiinnostus, Tiimityöskentely, Autonomia
+   Top 3 Careers: Circular Economy Specialist, Green Building Designer, Zero Waste Consultant
+
+Testing: YLA: Organizer/Planner
+Cohort: YLA | Expected: jarjestaja
+────────────────────────────────────────────────────────────
+✅ Category: jarjestaja (expected: jarjestaja)
+   Match Rate: 66.7% (2/3)
+   Top Strengths: Tiimityöskentely, Sosiaalisuus, Autonomia
+   Top 3 Careers: Ethical Sourcing Manager, Kirjanpitäjä, Henkilöstöasiantuntija
+
+Testing: TASO2: Tech Builder
+Cohort: TASO2 | Expected: innovoija
+────────────────────────────────────────────────────────────
+❌ Category: auttaja (expected: innovoija)
+   Match Rate: 0.0% (0/3)
+   Top Strengths: Urheilu, Sosiaalisuus, Terveysala
+   Top 3 Careers: Lääkäri, Työpsykologi, Röntgenhoitaja
+
+Testing: TASO2: Practical Healthcare
+Cohort: TASO2 | Expected: auttaja
+────────────────────────────────────────────────────────────
+✅ Category: auttaja (expected: auttaja)
+   Match Rate: 0.0% (0/3)
+   Top Strengths: Urheilu, Terveysala, Luonto
+   Top 3 Careers: Lääkäri, Eläinlääkäri, Röntgenhoitaja
+
+Testing: TASO2: Craftsperson/Builder
+Cohort: TASO2 | Expected: rakentaja
+────────────────────────────────────────────────────────────
+❌ Category: auttaja (expected: rakentaja)
+   Match Rate: 0.0% (0/3)
+   Top Strengths: Urheilu, Sosiaalisuus, Terveysala
+   Top 3 Careers: Eläinlääkäri, Röntgenhoitaja, Lääkäri
+
+Testing: TASO2: Service Professional
+Cohort: TASO2 | Expected: auttaja
+────────────────────────────────────────────────────────────
+✅ Category: auttaja (expected: auttaja)
+   Match Rate: 0.0% (0/3)
+   Top Strengths: Urheilu, Luonto, Käytännön tekeminen
+   Top 3 Careers: Röntgenhoitaja, Lääkäri, Työpsykologi
+
+Testing: NUORI: Tech Career Switcher
+Cohort: NUORI | Expected: innovoija
+────────────────────────────────────────────────────────────
+❌ Category: jarjestaja (expected: innovoija)
+   Match Rate: 0.0% (0/3)
+   Top Strengths: Analyyttinen ajattelu, Luovuus ja innovatiivisuus, Terveysala
+   Top 3 Careers: Ethical Sourcing Manager, Taloushallinnon asiantuntija, Kirjanpitäjä
+
+Testing: NUORI: Leadership Focus
+Cohort: NUORI | Expected: johtaja
+────────────────────────────────────────────────────────────
+❌ Category: auttaja (expected: johtaja)
+   Match Rate: 0.0% (0/3)
+   Top Strengths: Yritystoiminta ja liiketoiminta, Vahva teknologiakiinnostus, Terveysala
+   Top 3 Careers: Mental Health Counselor, Nutrition Specialist, Wellness Coach
+
+Testing: NUORI: Social Impact Worker
+Cohort: NUORI | Expected: auttaja
+────────────────────────────────────────────────────────────
+✅ Category: auttaja (expected: auttaja)
+   Match Rate: 0.0% (0/3)
+   Top Strengths: Vahva teknologiakiinnostus, Terveysala, Kasvatus ja opetus
+   Top 3 Careers: Mental Health Counselor, Nutrition Specialist, Wellness Coach
+
+Testing: NUORI: Creative Entrepreneur
+Cohort: NUORI | Expected: luova
+────────────────────────────────────────────────────────────
+❌ Category: auttaja (expected: luova)
+   Match Rate: 0.0% (0/3)
+   Top Strengths: Kasvatus ja opetus, Luovuus ja innovatiivisuus, Terveysala
+   Top 3 Careers: Mental Health Counselor, Nutrition Specialist, Wellness Coach
+
+Testing: NUORI: Strategic Planner
+Cohort: NUORI | Expected: visionaari
+────────────────────────────────────────────────────────────
+❌ Category: auttaja (expected: visionaari)
+   Match Rate: 0.0% (0/3)
+   Top Strengths: Yritystoiminta ja liiketoiminta, Analyyttinen ajattelu, Vahva teknologiakiinnostus
+   Top 3 Careers: Mental Health Counselor, Nutrition Specialist, Wellness Coach
+
+
+════════════════════════════════════════════════════════════════
+TEST SUMMARY
+════════════════════════════════════════════════════════════════
+
+OVERALL RESULTS:
+  Total Tests: 14
+  Successful: 1
+  Success Rate: 7.1%
+  Target: 80%
+  ⚠️ BELOW TARGET
+
+BY COHORT:
+  ⚠️ YLA: 1/5 (20.0%)
+  ⚠️ TASO2: 0/4 (0.0%)
+  ⚠️ NUORI: 0/5 (0.0%)
+
+BY CATEGORY:
+  ⚠️ innovoija: 0/3 (0.0%)
+  ✅ auttaja: 4/4 (100.0%)
+  ⚠️ luova: 1/2 (50.0%)
+  ✅ ympariston-puolustaja: 1/1 (100.0%)
+  ✅ jarjestaja: 1/1 (100.0%)
+  ⚠️ rakentaja: 0/1 (0.0%)
+  ⚠️ johtaja: 0/1 (0.0%)
+  ⚠️ visionaari: 0/1 (0.0%)
+
+════════════════════════════════════════════════════════════════
+DETAILED RESULTS BY PROFILE:
+════════════════════════════════════════════════════════════════
+
+❌ 1. YLA: Technology Enthusiast
+   Expected: innovoija | Got: visionaari
+   Career Match: 0.0%
+❌ 2. YLA: Helper/Caregiver
+   Expected: auttaja | Got: auttaja
+   Career Match: 0.0%
+❌ 3. YLA: Creative Artist
+   Expected: luova | Got: luova
+   Career Match: 0.0%
+❌ 4. YLA: Environmental Advocate
+   Expected: ympariston-puolustaja | Got: ympariston-puolustaja
+   Career Match: 0.0%
+✅ 5. YLA: Organizer/Planner
+   Expected: jarjestaja | Got: jarjestaja
+   Career Match: 66.7%
+❌ 6. TASO2: Tech Builder
+   Expected: innovoija | Got: auttaja
+   Career Match: 0.0%
+❌ 7. TASO2: Practical Healthcare
+   Expected: auttaja | Got: auttaja
+   Career Match: 0.0%
+❌ 8. TASO2: Craftsperson/Builder
+   Expected: rakentaja | Got: auttaja
+   Career Match: 0.0%
+❌ 9. TASO2: Service Professional
+   Expected: auttaja | Got: auttaja
+   Career Match: 0.0%
+❌ 10. NUORI: Tech Career Switcher
+   Expected: innovoija | Got: jarjestaja
+   Career Match: 0.0%
+❌ 11. NUORI: Leadership Focus
+   Expected: johtaja | Got: auttaja
+   Career Match: 0.0%
+❌ 12. NUORI: Social Impact Worker
+   Expected: auttaja | Got: auttaja
+   Career Match: 0.0%
+❌ 13. NUORI: Creative Entrepreneur
+   Expected: luova | Got: auttaja
+   Career Match: 0.0%
+❌ 14. NUORI: Strategic Planner
+   Expected: visionaari | Got: auttaja
+   Career Match: 0.0%
+
+════════════════════════════════════════════════════════════════
+PHASE 7 VALIDATION COMPLETE
+════════════════════════════════════════════════════════════════
+

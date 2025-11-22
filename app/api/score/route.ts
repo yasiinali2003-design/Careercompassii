@@ -89,20 +89,20 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    const { cohort, answers, originalIndices, shuffleKey } = body as ScoringRequest & { originalIndices?: number[]; shuffleKey?: string };
-    
+    const { cohort, answers, originalIndices, shuffleKey, currentOccupation } = body as ScoringRequest & { originalIndices?: number[]; shuffleKey?: string; currentOccupation?: string };
+
     // Unshuffle answers if shuffle was used
     let unshuffledAnswers = answers;
     if (originalIndices && shuffleKey) {
       unshuffledAnswers = unshuffleAnswers(answers, originalIndices);
-      console.log(`[API mocking: Unshuffling ${answers.length} answers`);
+      console.log(`[API] Unshuffling ${answers.length} answers`);
     }
-    
+
     // Run scoring algorithm with unshuffled answers
-    console.log(`[API] Scoring ${unshuffledAnswers.length} answers for cohort ${cohort}`);
-    
-    const topCareers = rankCareers(unshuffledAnswers, cohort, 5);
-    const userProfile = generateUserProfile(unshuffledAnswers, cohort);
+    console.log(`[API] Scoring ${unshuffledAnswers.length} answers for cohort ${cohort}`, currentOccupation ? `(filtering out: ${currentOccupation})` : '');
+
+    const topCareers = rankCareers(unshuffledAnswers, cohort, 5, currentOccupation);
+    const userProfile = generateUserProfile(unshuffledAnswers, cohort, currentOccupation);
     
     console.log(`[API] Top career: ${topCareers[0]?.title} (${topCareers[0]?.overallScore}%)`);
     

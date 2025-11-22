@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 1 Preview - Typography & Hero Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: #f8fafc;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .panel {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .panel h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid;
+        }
+        
+        .current h2 {
+            color: #dc2626;
+            border-color: #dc2626;
+        }
+        
+        .proposed h2 {
+            color: #10b981;
+            border-color: #10b981;
+        }
+        
+        .hero-preview {
+            background: linear-gradient(to bottom, #ffffff, #f8fafc);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .current .hero-preview {
+            border: 2px dashed #dc2626;
+        }
+        
+        .proposed .hero-preview {
+            border: 2px solid #10b981;
+        }
+        
+        .accent-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .accent-line div {
+            height: 4px;
+            border-radius: 2px;
+        }
+        
+        .accent-line .start {
+            width: 48px;
+            background: linear-gradient(to right, transparent, #3b82f6);
+        }
+        
+        .accent-line .middle {
+            width: 48px;
+            background: #3b82f6;
+        }
+        
+        .accent-line .end {
+            width: 48px;
+            background: linear-gradient(to right, #3b82f6, transparent);
+        }
+        
+        .accent-line-large .start,
+        .accent-line-large .middle,
+        .accent-line-large .end {
+            width: 64px;
+        }
+        
+        .hero-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .current .hero-title {
+            font-size: 2.5rem;
+            color: #1e293b;
+        }
+        
+        .proposed .hero-title {
+            font-size: 4rem;
+            color: #0f172a;
+        }
+        
+        .current .hero-title .primary {
+            color: #3b82f6;
+        }
+        
+        .proposed .hero-title .primary {
+            color: #3b82f6;
+            display: block;
+            margin-top: 0.5rem;
+        }
+        
+        .hero-subtitle {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+        
+        .current .hero-subtitle {
+            font-size: 1rem;
+        }
+        
+        .proposed .hero-subtitle {
+            font-size: 1.25rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .current .btn-primary {
+            background: #3b82f6;
+            color: white;
+            font-size: 1rem;
+            padding: 0.75rem 2rem;
+        }
+        
+        .proposed .btn-primary {
+            background: #3b82f6;
+            color: white;
+            font-size: 1.125rem;
+            padding: 1rem 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .current .btn-secondary {
+            background: white;
+            color: #1e293b;
+            border: 1px solid #cbd5e1;
+            font-size: 1rem;
+            padding: 0.75rem 2rem;
+        }
+        
+        .proposed .btn-secondary {
+            background: white;
+            color: #1e293b;
+            border: 2px solid #cbd5e1;
+            font-size: 1.125rem;
+            padding: 1rem 2.5rem;
+        }
+        
+        .trust-indicators {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .trust-icon {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #10b981;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+        }
+        
+        .proposed .trust-icon {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .changes-list {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .changes-list h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+        
+        .changes-list ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .changes-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+        
+        .changes-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .changes-list li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .code-comparison {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            overflow-x: auto;
+        }
+        
+        .code-comparison h3 {
+            color: #e2e8f0;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .code-comparison pre {
+            margin: 0;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            background: #fef3c7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .badge-high {
+            background: #dcfce7;
+            color: #166534;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Phase 1 Preview: Typography & Hero Section</h1>
+        
+        <div class="comparison">
+            <div class="panel current">
+                <h2>📄 Current Design</h2>
+                <div class="hero-preview">
+                    <div class="accent-line">
+                        <div class="start"></div>
+                        <div class="middle"></div>
+                        <div class="end"></div>
+                    </div>
+                    <h1 class="hero-title">
+                        Löydä ura, joka sopii <span class="primary">juuri sinulle</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Vastaa 30 kysymykseen ja saat henkilökohtaiset urasuositukset 361 ammatin joukosta.
+                        Luotettava, maksuton ja nopea – vain 5 minuuttia.
+                    </p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary">Aloita ilmainen testi</button>
+                        <button class="btn btn-secondary">Selaa ammatteja</button>
+                    </div>
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <div class="trust-icon">✓</div>
+                            <span>Maksuton</span>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">✓</div>
+                            <span>5 minuuttia</span>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">✓</div>
+                            <span>Tekoälypohjainen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel proposed">
+                <h2>✨ Proposed Design</h2>
+                <div class="hero-preview">
+                    <div class="accent-line accent-line-large">
+                        <div class="start"></div>
+                        <div class="middle"></div>
+                        <div class="end"></div>
+                    </div>
+                    <h1 class="hero-title">
+                        Löydä ura, joka sopii
+                        <span class="primary">juuri sinulle</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Vastaa 30 kysymykseen ja saat henkilökohtaiset urasuositukset 361 ammatin joukosta.<br>
+                        <strong>Luotettava, maksuton ja nopea</strong> – vain 5 minuuttia.
+                    </p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary">Aloita ilmainen testi</button>
+                        <button class="btn btn-secondary">Selaa ammatteja</button>
+                    </div>
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <div class="trust-icon">✓</div>
+                            <span><strong>Maksuton</strong></span>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">✓</div>
+                            <span><strong>5 minuuttia</strong></span>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">✓</div>
+                            <span><strong>Tekoälypohjainen</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="changes-list">
+            <h3>🎯 Key Changes <span class="badge badge-high">HIGH PRIORITY</span></h3>
+            <ul>
+                <li>
+                    <strong>Typography Size:</strong> Increase hero headline from ~48px to 64-72px (text-4xl → text-7xl/8xl)
+                </li>
+                <li>
+                    <strong>Split Text Effect:</strong> Break headline into two lines with emphasis on "juuri sinulle"
+                </li>
+                <li>
+                    <strong>Enhanced Spacing:</strong> Increase padding around hero (py-16 → py-32) and between elements
+                </li>
+                <li>
+                    <strong>Larger CTA Buttons:</strong> Increase button size (h-14 → h-16) and padding for better visibility
+                </li>
+                <li>
+                    <strong>Improved Subheadline:</strong> Larger text (text-lg → text-xl/2xl) with bold emphasis on key benefits
+                </li>
+                <li>
+                    <strong>Enhanced Trust Indicators:</strong> Larger icons and bolder text for better visibility
+                </li>
+                <li>
+                    <strong>Better Container Width:</strong> Increase max-width (max-w-5xl → max-w-6xl) for more breathing room
+                </li>
+            </ul>
+        </div>
+        
+        <div class="code-comparison">
+            <h3>📝 Code Changes Preview</h3>
+            <pre><code>// CURRENT (app/page.tsx - Hero Section)
+&lt;section className="relative container mx-auto px-4 py-16 md:py-24"&gt;
+  &lt;div className="max-w-5xl mx-auto"&gt;
+    &lt;h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"&gt;
+      Löydä ura, joka sopii
+      &lt;span className="text-primary"&gt; juuri sinulle&lt;/span&gt;
+    &lt;/h1&gt;
+    &lt;p className="text-lg sm:text-xl text-slate-600 mb-8"&gt;
+      Vastaa 30 kysymykseen...
+    &lt;/p&gt;
+    &lt;Button size="lg" className="h-14 px-8"&gt;
+      Aloita ilmainen testi
+    &lt;/Button&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+// PROPOSED (Phase 1)
+&lt;section className="relative container mx-auto px-4 py-20 md:py-32"&gt;
+  &lt;div className="max-w-6xl mx-auto"&gt;
+    &lt;div className="text-center mb-16"&gt;
+      &lt;div className="flex items-center justify-center gap-3 mb-8"&gt;
+        &lt;div className="h-1 w-16 bg-gradient-to-r from-transparent via-primary to-primary rounded-full"&gt;&lt;/div&gt;
+        &lt;div className="h-1 w-16 bg-primary rounded-full"&gt;&lt;/div&gt;
+        &lt;div className="h-1 w-16 bg-gradient-to-r from-primary to-transparent rounded-full"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 text-slate-900 leading-[1.1] tracking-tight"&gt;
+        &lt;span className="block"&gt;Löydä ura, joka sopii&lt;/span&gt;
+        &lt;span className="block text-primary mt-2"&gt;juuri sinulle&lt;/span&gt;
+      &lt;/h1&gt;
+      
+      &lt;p className="text-xl sm:text-2xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed"&gt;
+        Vastaa 30 kysymykseen ja saat henkilökohtaiset urasuositukset 361 ammatin joukosta.
+        &lt;br className="hidden sm:block" /&gt;
+        &lt;span className="font-semibold text-slate-900"&gt;Luotettava, maksuton ja nopea&lt;/span&gt; – vain 5 minuuttia.
+      &lt;/p&gt;
+      
+      &lt;Button size="lg" className="text-lg h-16 px-10 bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"&gt;
+        Aloita ilmainen testi
+      &lt;/Button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+        </div>
+        
+        <div style="background: #dcfce7; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; border-left: 4px solid #10b981;">
+            <h3 style="color: #166534; margin-bottom: 0.5rem;">✅ Legal Status</h3>
+            <p style="color: #166534; margin: 0;">
+                <strong>Safe to implement:</strong> Typography sizes, layout patterns, spacing values, and design principles are not copyrightable. We're using our own content, colors, and implementation.
+            </p>
+        </div>
+        
+        <div style="background: #dbeafe; padding: 1.5rem; border-radius: 8px; margin-top: 1rem; border-left: 4px solid #3b82f6;">
+            <h3 style="color: #1e40af; margin-bottom: 0.5rem;">⏱️ Estimated Time</h3>
+            <p style="color: #1e40af; margin: 0;">
+                <strong>1-2 hours</strong> - This includes updating the hero section, testing on different screen sizes, and making adjustments.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+

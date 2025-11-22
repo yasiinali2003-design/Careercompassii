@@ -8,9 +8,12 @@ interface LogoProps {
 }
 
 export default function Logo({ className = "h-10 w-auto", showTagline = false }: LogoProps) {
+  // Aggressive cache-busting with build timestamp
+  const cacheBuster = "20251119-v6";
+
   return (
     <img
-      src="/logo-full.svg"
+      src={`/logo-full.svg?v=${cacheBuster}`}
       alt="Urakompassi"
       className={className}
     />
