@@ -367,7 +367,7 @@ const ContactSection = () => (
 // Main AboutUs Component
 const AboutUs = () => {
   return (
-    <section className="relative bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-10 shadow-sm">
+    <section className="relative bg-[#1a1d23] rounded-2xl border border-white/20 p-6 md:p-10 shadow-sm">
       {/* Compass Background */}
       <CompassBackground />
 
