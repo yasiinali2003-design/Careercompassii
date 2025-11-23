@@ -168,26 +168,26 @@ export default function TodistuspistelaskuriPage() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-white to-teal-50/20 min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
       <div className="container mx-auto px-4 py-10 max-w-6xl">
         <header className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white px-4 py-1 text-xs font-medium uppercase tracking-wider text-primary">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-4 py-1 text-xs font-medium uppercase tracking-wider text-neutral-200">
               <span>TASO2 laskuri</span>
-              <span className="h-1 w-1 rounded-full bg-blue-300" />
+              <span className="h-1 w-1 rounded-full bg-[#E8994A]" />
               <span>2025 tiedot</span>
             </div>
-            <h1 className="text-4xl font-bold text-gray-900">Todistuspistelaskuri + henkilökohtaiset polut</h1>
-            <p className="text-lg text-gray-600 max-w-2xl">
+            <h1 className="text-4xl font-bold text-white">Todistuspistelaskuri + henkilökohtaiset polut</h1>
+            <p className="text-lg text-neutral-300 max-w-2xl">
               Laske yo-pisteesi, näe miten ne tukevat vahvuuksiasi ja löydä koulutusohjelmat, jotka sopivat testituloksiisi. Laskuri muistaa edistymisesi ja näyttää vaihtoehtoiset skenaariot.
             </p>
-            <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600">
-              <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1">
-                <span className="font-semibold text-gray-800">Päivitys:</span>
+            <div className="flex flex-wrap items-center gap-3 text-xs text-neutral-400">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm px-3 py-1">
+                <span className="font-semibold text-neutral-200">Päivitys:</span>
                 <span>11/2025</span>
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1">
-                <span className="font-semibold text-gray-800">Tietosuoja:</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm px-3 py-1">
+                <span className="font-semibold text-neutral-200">Tietosuoja:</span>
                 <span>tiedot pysyvät selaimessa</span>
               </span>
               <Dialog>
@@ -211,15 +211,15 @@ export default function TodistuspistelaskuriPage() {
               const shown = strengths.slice(0, 2);
               const extra = strengths.length - shown.length;
               return (
-                <div className="flex flex-wrap items-center gap-2 text-sm text-primary">
-                  <span className="font-semibold text-blue-900">Vahvuutesi:</span>
+                <div className="flex flex-wrap items-center gap-2 text-sm text-neutral-300">
+                  <span className="font-semibold text-white">Vahvuutesi:</span>
                   {shown.map((strength, index) => (
-                    <span key={index} className="rounded-full bg-primary/10 px-3 py-1">
+                    <span key={index} className="rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1">
                       {strength}
                     </span>
                   ))}
                   {extra > 0 && (
-                    <span className="rounded-full bg-slate-50 px-3 py-1 text-xs text-primary">+{extra} lisää</span>
+                    <span className="rounded-full bg-white/5 backdrop-blur-sm border border-white/20 px-3 py-1 text-xs text-neutral-400">+{extra} lisää</span>
                   )}
                 </div>
               );
@@ -241,13 +241,13 @@ export default function TodistuspistelaskuriPage() {
                 <li
                   key={step.id}
                   className={cn(
-                    'rounded-2xl border bg-white p-4 shadow-sm transition flex items-center gap-3',
-                    isActive ? 'border-blue-400 shadow' : 'border-gray-200',
+                    'rounded-2xl border bg-white/5 backdrop-blur-sm p-4 shadow-sm transition flex items-center gap-3',
+                    isActive ? 'border-[#2B5F75] shadow-lg' : 'border-white/20',
                     !isUnlocked && 'opacity-60'
                   )}
                 >
                   <span
-                    className="flex h-8 w-8 items-center justify-center rounded-full border border-primary/20 text-sm font-semibold text-primary"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm font-semibold text-white"
                     aria-hidden
                   >
                     {index + 1}
@@ -262,11 +262,11 @@ export default function TodistuspistelaskuriPage() {
                     }}
                     disabled={!isUnlocked}
                   >
-                    <div className="flex items-center justify-between text-sm font-semibold text-gray-900">
+                    <div className="flex items-center justify-between text-sm font-semibold text-white">
                       <span>{step.label}</span>
-                      {isCompleted && <Check className="h-4 w-4 text-green-600" aria-hidden />}
+                      {isCompleted && <Check className="h-4 w-4 text-[#4A7C59]" aria-hidden />}
                     </div>
-                    <p className="mt-2 text-sm text-gray-600">{step.description}</p>
+                    <p className="mt-2 text-sm text-neutral-300">{step.description}</p>
                   </button>
                 </li>
               );
@@ -302,16 +302,16 @@ export default function TodistuspistelaskuriPage() {
                 scheme={educationType}
               />
 
-              <div className="rounded-2xl border border-blue-100 bg-slate-50/70 p-5 text-sm text-blue-900">
-                <p className="font-semibold">Mitä seuraavaksi?</p>
-                <ol className="mt-2 list-decimal space-y-1 pl-5 text-primary">
+              <div className="rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm p-5 text-sm text-neutral-200">
+                <p className="font-semibold text-white">Mitä seuraavaksi?</p>
+                <ol className="mt-2 list-decimal space-y-1 pl-5 text-neutral-300">
                   <li>Tarkista arvosanat ja tee tarvittaessa muutoksia vaiheessa 1.</li>
                   <li>Käytä skenaariotyökalua testataksesi, missä aineissa pienikin nousu tuo eniten pisteitä.</li>
                   <li>Siirry koulutusohjelmiin ja vertaile vaihtoehtoja pisteidesi ja urasuositustesi perusteella.</li>
                 </ol>
               </div>
 
-              <div className="flex flex-col gap-3 rounded-2xl border border-gray-200 bg-white/70 p-4 text-sm text-gray-700 md:flex-row md:items-center md:justify-between">
+              <div className="flex flex-col gap-3 rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm p-4 text-sm text-neutral-300 md:flex-row md:items-center md:justify-between">
                 <span>Kun olet tyytyväinen pisteisiisi, voit avata sinulle räätälöidyt koulutusohjelmat.</span>
                 <Button
                   size="lg"
@@ -327,7 +327,7 @@ export default function TodistuspistelaskuriPage() {
           )}
 
           {currentStep === 'programs' && calculatedPoints === null && (
-            <div className="rounded-lg border border-dashed border-primary/20 bg-white/70 p-6 text-center text-sm text-gray-600">
+            <div className="rounded-lg border border-dashed border-white/20 bg-white/5 backdrop-blur-sm p-6 text-center text-sm text-neutral-300">
               Laske pisteesi ensin, niin näytämme sinulle sopivat koulutusohjelmat.
             </div>
           )}
@@ -336,12 +336,12 @@ export default function TodistuspistelaskuriPage() {
             <section id="step-programs" className="space-y-6">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <h2 className="text-2xl font-semibold text-gray-900">Sopivat koulutuspolut</h2>
-                  <p className="text-sm text-gray-600">
+                  <h2 className="text-2xl font-semibold text-white">Sopivat koulutuspolut</h2>
+                  <p className="text-sm text-neutral-300">
                     Valitse tarkasteltava suunta. Näet ohjelmia, jotka sopivat pisteisiisi ja testin perusteella saamiisi ammatteihin.
                   </p>
                 </div>
-                <div className="inline-flex rounded-lg border border-gray-200 bg-white p-1">
+                <div className="inline-flex rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm p-1">
                   <Button
                     type="button"
                     size="sm"
@@ -364,20 +364,20 @@ export default function TodistuspistelaskuriPage() {
               </div>
 
               {storedResults?.topCareers && storedResults.topCareers.length > 0 && (
-                <div className="rounded-2xl border border-secondary/20 bg-secondary/10/70 p-4 text-sm text-purple-800">
-                  <p className="font-semibold text-purple-900 mb-2">Urasuosituksesi</p>
+                <div className="rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm p-4 text-sm text-neutral-300">
+                  <p className="font-semibold text-white mb-2">Urasuosituksesi</p>
                   <div className="flex flex-wrap gap-2">
                     {storedResults.topCareers.slice(0, 4).map((career, idx) => (
                       career?.slug ? (
                         <Link
                           key={career.slug}
                           href={`/ammatit/${encodeURIComponent(career.slug)}`}
-                          className="rounded-full bg-white px-3 py-1 text-xs font-medium text-secondary shadow-sm transition-colors hover:bg-secondary/20 hover:text-purple-900"
+                          className="rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1 text-xs font-medium text-neutral-200 shadow-sm transition-colors hover:bg-white/20 hover:text-white"
                         >
                           {career.title || 'Suosikki-ammatti'}
                         </Link>
                       ) : (
-                        <span key={idx} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-secondary shadow-sm">
+                        <span key={idx} className="rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1 text-xs font-medium text-neutral-200 shadow-sm">
                           {career?.title || 'Suosikki-ammatti'}
                         </span>
                       )
@@ -461,51 +461,51 @@ function GuidanceSummary({ points, bonusPoints, strengths, inputs, variant = 'fu
 
   if (variant === 'compact') {
     return (
-      <div className="rounded-2xl border border-blue-100 bg-white p-5">
+      <div className="rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm p-5">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <p className="text-xs uppercase tracking-wide text-primary">Pisteesi tänään</p>
-            <p className="text-2xl font-semibold text-gray-900">
-              {formatPoints(points)} <span className="text-sm font-normal text-gray-500">p</span>
+            <p className="text-xs uppercase tracking-wide text-neutral-400">Pisteesi tänään</p>
+            <p className="text-2xl font-semibold text-white">
+              {formatPoints(points)} <span className="text-sm font-normal text-neutral-400">p</span>
             </p>
-            <p className="mt-1 text-xs text-gray-500">Bonuspisteet: +{bonusPoints.toFixed(0)}</p>
+            <p className="mt-1 text-xs text-neutral-400">Bonuspisteet: +{bonusPoints.toFixed(0)}</p>
           </div>
           {strengths && strengths.length > 0 && (
-            <div className="flex flex-wrap gap-2 text-xs text-primary">
+            <div className="flex flex-wrap gap-2 text-xs text-neutral-300">
               {strengths.slice(0, 2).map((strength, index) => (
-                <span key={index} className="rounded-full bg-slate-50 px-3 py-1">
+                <span key={index} className="rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1">
                   {strength}
                 </span>
               ))}
             </div>
           )}
         </div>
-        <p className="mt-4 text-sm text-gray-700 leading-relaxed">{summary}</p>
+        <p className="mt-4 text-sm text-neutral-300 leading-relaxed">{summary}</p>
       </div>
     );
   }
 
   return (
-    <div className="grid gap-6 rounded-2xl border border-primary/20 bg-white p-6 md:grid-cols-[minmax(0,240px)_1fr]">
+    <div className="grid gap-6 rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm p-6 md:grid-cols-[minmax(0,240px)_1fr]">
       <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
         <div className="relative h-28 w-28">
           <div className="absolute inset-0 rounded-full" style={ringStyle} />
-          <div className="absolute inset-2 rounded-full bg-white shadow-inner flex flex-col items-center justify-center">
-            <span className="text-2xl font-bold text-blue-900">{formatPoints(points)}</span>
-            <span className="text-xs font-medium text-primary">pistettä</span>
+          <div className="absolute inset-2 rounded-full bg-[#0f1419] shadow-inner flex flex-col items-center justify-center border border-white/20">
+            <span className="text-2xl font-bold text-white">{formatPoints(points)}</span>
+            <span className="text-xs font-medium text-neutral-400">pistettä</span>
           </div>
         </div>
-        <div className="space-y-1 text-sm text-gray-600">
-          <p><span className="font-semibold text-gray-900">Bonuspisteet:</span> +{bonusPoints.toFixed(0)}</p>
+        <div className="space-y-1 text-sm text-neutral-300">
+          <p><span className="font-semibold text-white">Bonuspisteet:</span> +{bonusPoints.toFixed(0)}</p>
           {strengths && strengths.length > 0 && (
             <div className="flex flex-wrap items-center justify-center gap-2 md:justify-start">
               {strengths.slice(0, 3).map((strength, index) => (
-                <span key={index} className="rounded-full bg-slate-50 px-3 py-1 text-xs text-primary">
+                <span key={index} className="rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1 text-xs text-neutral-200">
                   {strength}
                 </span>
               ))}
               {strengths.length > 3 && (
-                <span className="rounded-full bg-slate-50 px-3 py-1 text-xs text-primary">
+                <span className="rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1 text-xs text-neutral-200">
                   +{strengths.length - 3}
                 </span>
               )}
@@ -515,15 +515,15 @@ function GuidanceSummary({ points, bonusPoints, strengths, inputs, variant = 'fu
       </div>
       <div className="space-y-4">
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">Mitä pisteesi kertovat</h3>
-          <p className="text-sm text-gray-700 leading-relaxed">{summary}</p>
+          <h3 className="text-lg font-semibold text-white mb-2">Mitä pisteesi kertovat</h3>
+          <p className="text-sm text-neutral-300 leading-relaxed">{summary}</p>
         </div>
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">Seuraavat askeleet</h3>
-          <ul className="space-y-2 text-sm text-gray-700">
+          <h3 className="text-lg font-semibold text-white mb-2">Seuraavat askeleet</h3>
+          <ul className="space-y-2 text-sm text-neutral-300">
             {nextSteps.map((step, index) => (
               <li key={index} className="flex gap-2">
-                <span className="text-primary">•</span>
+                <span className="text-[#E8994A]">•</span>
                 <span>{step}</span>
               </li>
             ))}
