@@ -197,6 +197,88 @@ export default function ResultsPage() {
           </CardContent>
         </Card>
 
+        {/* Methodology Explanation Section */}
+        <Card className="mb-8 border-2 border-blue-200/50 bg-[#1a1d23]">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-xl">
+              <span className="text-2xl">💡</span>
+              Miten sait nämä tulokset?
+            </CardTitle>
+            <CardDescription>
+              Ymmärrä menetelmämme ja tulosten perusta
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-4 text-neutral-300 leading-relaxed">
+              <div className="bg-white/5 rounded-lg p-4">
+                <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
+                  <span>1.</span> Analysoimme vastauksesi neljään ulottuvuuteen
+                </h3>
+                <ul className="space-y-2 ml-6 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 mt-0.5">•</span>
+                    <div>
+                      <strong className="text-white">Kiinnostukset:</strong> Mitkä ala-alueet ja tehtävät motivoivat sinua eniten
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 mt-0.5">•</span>
+                    <div>
+                      <strong className="text-white">Arvot:</strong> Mitä pidät tärkeänä työssäsi ja urallasi
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 mt-0.5">•</span>
+                    <div>
+                      <strong className="text-white">Työtapa:</strong> Miten tykkäät työskennellä (itsenäisesti, tiimissä, luovasti)
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-400 mt-0.5">•</span>
+                    <div>
+                      <strong className="text-white">Työympäristö:</strong> Missä olosuhteissa viihdyt parhaiten
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-4">
+                <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
+                  <span>2.</span> Vertailimme profiiliasi 412 ammattiin
+                </h3>
+                <p className="text-sm ml-6">
+                  Jokaisella ammatilla on oma "profiili" joka kuvaa mitä vahvuuksia, arvoja ja kiinnostuksia se vaatii.
+                  Vertailimme sinun vastauksiasi kaikkiin ammatteihin ja valitsimme ne, jotka sopivat sinulle parhaiten.
+                </p>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-4">
+                <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
+                  <span>3.</span> Huomioimme Suomen työmarkkinat
+                </h3>
+                <p className="text-sm ml-6">
+                  Suosituksemme perustuvat <strong className="text-white">todellisiin ammatteihin Suomessa</strong>:
+                  palkkatasot, työllisyysnäkymät ja koulutuspolut ovat ajan tasalla. Kaikki data on peräisin
+                  luotettavista lähteistä kuten Opintopolku.fi ja TES-sopimusten palkkatiedoista.
+                </p>
+              </div>
+
+              <div className="bg-blue-500/10 border border-blue-400/30 rounded-lg p-4">
+                <h3 className="font-semibold text-blue-300 mb-2 flex items-center gap-2">
+                  <span>💭</span> Entä jos en ole samaa mieltä?
+                </h3>
+                <p className="text-sm text-neutral-300">
+                  Se on täysin normaalia! Testi antaa <strong className="text-white">suuntaa-antavia suosituksia</strong> vastaustesi perusteella.
+                  Sinä tunnet itsesi parhaiten. Käytä tuloksia <strong className="text-white">keskustelun pohjana</strong> opinto-ohjaajan,
+                  opettajan tai vanhempiesi kanssa. Jos jokin ammatti ei tunnu oikealta, se ei ole sinulle pakko -
+                  selaa kaikkia 412 ammattia <Link href="/ammatit" className="text-blue-400 hover:underline">Urakirjastosta</Link> ja
+                  löydä itsellesi sopivat vaihtoehdot!
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Education Path Recommendation (YLA and TASO2) */}
         {(userProfile.cohort === 'YLA' || userProfile.cohort === 'TASO2') && results.educationPath && (
           <Card className="mb-8 border-2 border-green-200 bg-gradient-to-r from-green-50 to-teal-50/20">

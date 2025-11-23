@@ -37,7 +37,7 @@ export default function HomePage() {
           </Link>
           <div className="flex items-center gap-8">
             <Link
-              href="#miten"
+              href="/menetelmä"
               className="text-sm font-medium text-neutral-300 hover:text-white transition-all duration-300 hover:scale-105 hidden sm:block"
             >
               Miten toimii
@@ -80,7 +80,7 @@ export default function HomePage() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-lg bg-white/10 border border-white/20 animate-fade-in-up">
               <Sparkles className="h-4 w-4 text-[#E8994A]" />
-              <span className="text-sm font-medium text-neutral-200">411 ammattia • 8 persoonallisuustyyppiä</span>
+              <span className="text-sm font-medium text-neutral-200">412 ammattia • 8 persoonallisuustyyppiä</span>
             </div>
 
             {/* Main headline */}
@@ -89,7 +89,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-neutral-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-              Tekoälypohjainen uratesti auttaa sinua löytämään oikean suunnan.
+              Monipuolinen uratesti, joka perustuu tutkittuun persoonallisuus- ja urapsykologiaan.
               <span className="block mt-2">Vastaa 30 kysymykseen ja saat henkilökohtaiset suositukset.</span>
             </p>
 
@@ -124,11 +124,11 @@ export default function HomePage() {
               </span>
               <span className="flex items-center gap-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-green-400"></div>
-                5 minuuttia
+                8-10 minuuttia
               </span>
               <span className="flex items-center gap-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-green-400"></div>
-                Tekoälypohjainen
+                Tutkittu menetelmä
               </span>
             </div>
           </div>

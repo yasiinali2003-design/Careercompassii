@@ -452,12 +452,12 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
           Vastaa 30 huolellisesti suunniteltuun kysymykseen, jotka kartoittavat kiinnostuksesi, arvosi ja vahvuutesi.
         </p>
         <p className="text-[#475569] leading-relaxed">
-          Tekoälymallimme analysoi vastauksesi ja tarjoaa henkilökohtaisia urasuosituksia, jotka perustuvat tutkittuun aineistoon ja nykyaikaiseen uratietoon.
+          Monipuolinen analyysimme perustuu tutkittuun persoonallisuus- ja urapsykologiaan ja tarjoaa henkilökohtaisia urasuosituksia Suomen työmarkkinoille.
         </p>
       </div>
       
       <p className="mt-4 text-sm text-slate-700">
-        30 kysymystä • n. 5 minuuttia • Maksuton • Vastauksesi käsitellään luottamuksellisesti
+        30 kysymystä • 8-10 minuuttia • Maksuton • Vastauksesi käsitellään luottamuksellisesti
       </p>
       
       {hasSavedProgress && (
