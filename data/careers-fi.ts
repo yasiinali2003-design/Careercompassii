@@ -1,5 +1,5 @@
-// Finnish career data with realistic sources and information
-// TODO: Replace placeholder sources with authoritative links from TE-palvelut, Tilastokeskus, etc.
+// Finnish career data with authoritative sources
+// Sources verified: Työmarkkinatori (Tilastokeskus), TE-palvelut, Opintopolku.fi
 
 export type LangLevel = "A2" | "B1" | "B2" | "C1" | "C2" | "Ei vaatimusta";
 export type OutlookStatus = "kasvaa" | "vakaa" | "laskee" | "vaihtelee";
