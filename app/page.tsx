@@ -95,9 +95,10 @@ export default function HomePage() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button
+                variant="primary"
                 size="lg"
                 asChild
-                className="group h-14 px-10 bg-neutral-900 hover:bg-neutral-800 text-white text-lg font-semibold rounded-lg shadow-lg transition-colors"
+                className="group h-14 px-10 text-lg font-semibold"
               >
                 <Link href="/test" className="flex items-center gap-2">
                   Aloita ilmainen testi
@@ -105,9 +106,10 @@ export default function HomePage() {
                 </Link>
               </Button>
               <Button
+                variant="secondary"
                 size="lg"
                 asChild
-                className="h-14 px-10 bg-neutral-900 hover:bg-neutral-800 text-white text-lg font-semibold rounded-lg shadow-lg transition-colors"
+                className="h-14 px-10 text-lg font-semibold"
               >
                 <Link href="/ammatit">Selaa ammatteja</Link>
               </Button>
