@@ -1132,12 +1132,16 @@ function determineDominantCategory(
   categoryScores.innovoija -= (workstyle.leadership || 0) * 0.3;  // Penalize leadership to avoid johtaja confusion
   categoryScores.innovoija -= (interests.leadership || 0) * 0.3;  // Penalize leadership interest to avoid johtaja confusion
   
-  // Cohort-specific penalties for NUORI to avoid visionaari confusion
+  // Cohort-specific adjustments for NUORI
   if (cohort === 'NUORI') {
-    categoryScores.innovoija -= (values.global || 0) * 0.5;  // Penalize global to avoid visionaari confusion (increased)
-    categoryScores.innovoija -= (values.advancement || 0) * 0.4;  // Penalize advancement to avoid visionaari confusion
-    categoryScores.innovoija -= (values.growth || 0) * 0.4;  // Penalize growth to avoid visionaari confusion
-    categoryScores.innovoija -= (workstyle.flexibility || 0) * 0.3;  // Penalize flexibility to avoid visionaari confusion
+    // BOOST innovoija for NUORI - young tech workers want growth AND advancement!
+    categoryScores.innovoija += (values.growth || 0) * 1.2;  // BOOST: Growth/learning is CORE to innovoija
+    categoryScores.innovoija += (interests.technology || 0) * 0.8;  // EXTRA BOOST: Technology for NUORI
+    // REMOVED advancement penalty - young tech workers DO want career advancement!
+    // categoryScores.innovoija -= (values.advancement || 0) * 0.4;
+    // Keep penalties to avoid visionaari confusion
+    categoryScores.innovoija -= (values.global || 0) * 0.5;  // Penalize global to avoid visionaari confusion
+    categoryScores.innovoija -= (workstyle.flexibility || 0) * 0.3;  // Penalize flexibility to avoid luova confusion
   }
   
   // rakentaja: hands_on interest, precision (but NOT career_clarity, creative, analytical, environment, or people)
@@ -1189,17 +1193,22 @@ function determineDominantCategory(
     categoryScores.visionaari += (values.entrepreneurship || 0) * 1.2;  // Entrepreneurship indicates vision/strategy
     categoryScores.visionaari += (interests.technology || 0) * 0.8;  // Technology interest (but lower to avoid innovoija)
   } else if (cohort === 'NUORI') {
-    // NUORI: global + advancement + growth + flexibility
-    categoryScores.visionaari += (values.global || 0) * 0.5;  // Additional boost for global (already boosted above)
-    categoryScores.visionaari += (values.advancement || 0) * 1.0;  // Advancement indicates vision/planning
+    // NUORI: global + advancement + growth + flexibility + entrepreneurship + analytical
+    categoryScores.visionaari += (values.global || 0) * 0.6;  // Additional boost for global (already boosted above)
+    categoryScores.visionaari += (values.advancement || 0) * 1.2;  // BOOSTED: Advancement indicates vision/planning (beat johtaja!)
     categoryScores.visionaari += (values.growth || 0) * 0.9;  // Growth indicates vision/development
     categoryScores.visionaari += (workstyle.flexibility || 0) * 0.8;  // Flexibility indicates adaptability/vision
+    categoryScores.visionaari += (values.entrepreneurship || 0) * 1.3;  // BOOSTED: Entrepreneurship for NUORI visionaari
+    categoryScores.visionaari += (interests.analytical || 0) * 1.0;  // BOOST analytical for NUORI - strategic planners ARE analytical!
   }
   
   // Explicitly reduce leadership, analytical, hands-on, people, health, and creative weights to differentiate from johtaja/jarjestaja/rakentaja/auttaja/luova
   categoryScores.visionaari -= (workstyle.leadership || 0) * 0.6;  // Penalize leadership to avoid johtaja confusion (increased)
   categoryScores.visionaari -= (interests.leadership || 0) * 0.5;  // Penalize leadership interest (increased)
-  categoryScores.visionaari -= (interests.analytical || 0) * 0.6;  // Penalize analytical to avoid jarjestaja confusion (increased)
+  // Don't penalize analytical for NUORI - strategic planners/consultants ARE analytical!
+  if (cohort !== 'NUORI') {
+    categoryScores.visionaari -= (interests.analytical || 0) * 0.6;  // Penalize analytical to avoid jarjestaja confusion (increased)
+  }
   categoryScores.visionaari -= (workstyle.organization || 0) * 0.5;  // Penalize organization to avoid jarjestaja confusion (increased)
   categoryScores.visionaari -= (interests.hands_on || 0) * 0.4;  // Penalize hands-on to avoid rakentaja confusion
   categoryScores.visionaari -= (interests.people || 0) * 0.6;  // Penalize people to avoid auttaja confusion (increased)
@@ -1235,8 +1244,15 @@ function determineDominantCategory(
     technology: interests.technology,
     health: interests.health,
     creative: interests.creative,
+    leadership: interests.leadership,
+    advancement: values.advancement,
+    growth: values.growth,
+    global: values.global,
+    entrepreneurship: values.entrepreneurship,
     career_clarity: values.career_clarity,
-    planning: workstyle.planning
+    planning: workstyle.planning,
+    leadershipWorkstyle: workstyle.leadership,
+    flexibility: workstyle.flexibility
   });
 
   return dominantCategory;

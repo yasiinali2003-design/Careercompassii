@@ -187,12 +187,14 @@ const NUORI_PROFILES = [
     cohort: "NUORI",
     description: "Switching to tech, strong learning motivation",
     answers: generateAnswers([
-      // Q0-9: Values - Growth, innovation
-      4, 4, 5, 4, 3, 3, 4, 5, 4, 3,
-      // Q10-19: Workstyle - Problem-solving, flexible
-      4, 3, 4, 5, 3, 4, 3, 4, 3, 3,
-      // Q20-29: Interests - HIGH TECH
-      5, 1, 2, 2, 3, 3, 4, 4, 4, 3
+      // Q0-9: Career Field INTERESTS
+      5, 1, 2, 2, 5, 2, 3, 3, 3, 2,  // Q0=5 (IT), Q4=5 (engineering), Q1=1 (NOT health)
+      // Q10-17: Work VALUES
+      3, 3, 3, 3, 3, 3, 5, 3,  // Q10=3 (salary moderate), Q13=3 (advancement moderate), Q16=5 (GROWTH - innovoija!)
+      // Q18-24: Work CONTEXT
+      5, 2, 3, 2, 4, 3, 3,  // Q18=5 (remote), Q22=4 (startup OK)
+      // Q25-29: Work STYLE
+      5, 2, 3, 2, 4  // Q25=5 (autonomy), Q26=2 (NOT leadership), Q29=4 (variety)
     ]),
     expectedCategory: "innovoija",
     expectedCareers: ["Full Stack -kehittäjä", "DevOps-insinööri", "Tuotepäällikkö"]
@@ -203,12 +205,14 @@ const NUORI_PROFILES = [
     cohort: "NUORI",
     description: "Management, leadership ambitions",
     answers: generateAnswers([
-      // Q0-9: Values - Advancement, impact
-      5, 4, 4, 5, 4, 3, 4, 4, 4, 3,
-      // Q10-19: Workstyle - HIGH LEADERSHIP
-      5, 4, 5, 4, 4, 4, 3, 3, 4, 3,
-      // Q20-29: Interests - Leadership, strategy
-      3, 2, 3, 2, 5, 3, 4, 4, 4, 3  // Q24=5 (leadership)
+      // Q0-9: Career Field INTERESTS
+      3, 2, 3, 5, 3, 2, 3, 3, 3, 2,  // Q3=5 (business/leadership)
+      // Q10-17: Work VALUES
+      5, 3, 3, 5, 3, 4, 4, 3,  // Q10=5 (salary), Q13=5 (advancement), Q15=4 (global)
+      // Q18-24: Work CONTEXT
+      4, 3, 4, 3, 3, 3, 4,  // Q18=4 (remote), Q20=4 (travel), Q24=4 (international)
+      // Q25-29: Work STYLE
+      4, 5, 4, 2, 3  // Q26=5 (LEADERSHIP!), Q27=4 (teamwork)
     ]),
     expectedCategory: "johtaja",
     expectedCareers: ["Projektipäällikkö", "Tuotepäällikkö", "Liiketoimintakehittäjä"]
@@ -219,12 +223,14 @@ const NUORI_PROFILES = [
     cohort: "NUORI",
     description: "NGO, social work, helping professions",
     answers: generateAnswers([
-      // Q0-9: Values - HIGH SOCIAL IMPACT
-      5, 5, 3, 3, 5, 4, 4, 3, 4, 4,
-      // Q10-19: Workstyle - Empathy, teaching
-      4, 4, 3, 3, 4, 4, 4, 3, 3, 4,
-      // Q20-29: Interests - People, health
-      2, 5, 2, 2, 3, 3, 4, 4, 4, 3  // Q21=5 (people/health)
+      // Q0-9: Career Field INTERESTS
+      2, 5, 3, 2, 2, 4, 3, 2, 3, 3,  // Q1=5 (healthcare), Q5=4 (education)
+      // Q10-17: Work VALUES
+      3, 5, 4, 2, 5, 3, 3, 3,  // Q11=5 (social impact), Q14=5 (work-life balance)
+      // Q18-24: Work CONTEXT
+      3, 3, 4, 3, 2, 2, 2,  // Q20=4 (field work)
+      // Q25-29: Work STYLE
+      3, 3, 5, 3, 3  // Q27=5 (teamwork)
     ]),
     expectedCategory: "auttaja",
     expectedCareers: ["Sosiaalityöntekijä", "Järjestötyöntekijä", "Ohjaaja"]
@@ -235,12 +241,14 @@ const NUORI_PROFILES = [
     cohort: "NUORI",
     description: "Freelance creative, entrepreneurial",
     answers: generateAnswers([
-      // Q0-9: Values - Entrepreneurship, freedom
-      4, 4, 5, 3, 3, 5, 4, 4, 5, 3,
-      // Q10-19: Workstyle - Creative, flexible
-      3, 3, 4, 4, 5, 4, 3, 3, 3, 4,
-      // Q20-29: Interests - HIGH CREATIVE
-      2, 1, 5, 2, 3, 3, 4, 4, 4, 3  // Q22=5 (creative)
+      // Q0-9: Career Field INTERESTS
+      2, 1, 5, 2, 2, 2, 2, 2, 5, 3,  // Q2=5 (creative), Q8=5 (media), Q0=2 (NOT tech)
+      // Q10-17: Work VALUES
+      3, 3, 2, 2, 3, 2, 3, 5,  // Q10=3 (moderate salary), Q13=2 (low advancement - NOT johtaja), Q17=5 (creative value!)
+      // Q18-24: Work CONTEXT
+      5, 1, 3, 1, 4, 5, 2,  // Q18=5 (remote), Q19=1 (NOT office), Q22=4 (NOT extreme startup), Q23=5 (flexible hours - luova!)
+      // Q25-29: Work STYLE
+      5, 1, 2, 1, 5  // Q25=5 (autonomy), Q26=1 (NOT leadership), Q27=2 (low teamwork), Q28=1 (NOT routine), Q29=5 (variety)
     ]),
     expectedCategory: "luova",
     expectedCareers: ["Graafikko", "Sisällöntuottaja", "Verkkokurssien luoja"]
@@ -251,12 +259,14 @@ const NUORI_PROFILES = [
     cohort: "NUORI",
     description: "Strategy, consulting, high-level planning",
     answers: generateAnswers([
-      // Q0-9: Values - Growth, advancement, global
-      5, 4, 4, 5, 3, 3, 5, 4, 4, 4,
-      // Q10-19: Workstyle - HIGH PLANNING, analytical
-      5, 5, 5, 4, 3, 3, 3, 4, 4, 3,
-      // Q20-29: Interests - Moderate across board, NOT tech-heavy
-      3, 2, 3, 2, 4, 3, 3, 3, 4, 3
+      // Q0-9: Career Field INTERESTS
+      2, 2, 2, 3, 2, 2, 5, 5, 3, 2,  // Q6=5 (research), Q7=5 (legal - analytical!), Q3=3 (some business)
+      // Q10-17: Work VALUES
+      4, 3, 3, 4, 2, 5, 5, 2,  // Q10=4 (salary), Q13=4 (advancement), Q15=5 (GLOBAL - visionaari!), Q16=5 (growth)
+      // Q18-24: Work CONTEXT
+      4, 3, 5, 2, 5, 3, 5,  // Q20=5 (travel), Q22=5 (STARTUP - entrepreneurship!), Q24=5 (international)
+      // Q25-29: Work STYLE
+      4, 3, 3, 2, 4  // Q26=3 (moderate leadership), Q29=4 (variety)
     ]),
     expectedCategory: "visionaari",
     expectedCareers: ["Liiketoimintakehittäjä", "Strateginen suunnittelija", "Konsultti"]
