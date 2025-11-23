@@ -249,20 +249,20 @@ const AnimatedSection = ({ children, className = "" }: { children: React.ReactNo
 const MissionIntro = () => (
   <AnimatedSection>
     <div className="mb-16">
-      <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+      <h2 className="text-2xl font-bold text-white mb-6">
         Missiomme
       </h2>
       <div className="space-y-4 max-w-prose">
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           Urakompassin tehtävänä on auttaa nuoria tunnistamaan vahvuutensa ja löytämään oman suuntansa, sellaisen, joka tuntuu aidosti omalta.
         </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           Uskomme, että jokaisella on potentiaali rakentaa merkityksellinen tulevaisuus. Tarvitaan vain oikea kompassi näyttämään tie eteenpäin.
         </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           Rakennamme tulevaisuutta, jossa jokaisella nuorella on mahdollisuus löytää oma polkunsa helposti, yksilöllisesti ja motivoivasti.
         </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           Autamme säästämään aikaa, tekemään rohkeita päätöksiä ja rakentamaan uraa ilman painetta tai epävarmuutta.
         </p>
       </div>
@@ -293,20 +293,20 @@ const MissionSection = () => (
 const ApproachSection = () => (
   <AnimatedSection>
     <div className="mb-8">
-      <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+      <h2 className="text-2xl font-bold text-white mb-6">
         Lähestymistapamme
       </h2>
       <div className="space-y-4 max-w-prose">
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           Yhdistämme tekoälyn ja empatian.
         </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           Urakompassi hyödyntää dataa ja modernia teknologiaa, mutta säilyttää aina inhimillisen näkökulman.
         </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           Tekoäly analysoi vastauksia vertaamalla niitä tuhansiin uraprofiileihin ja löytää koulutuspolkuja, jotka vastaavat käyttäjän arvoja, kiinnostuksia ja vahvuuksia.
         </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           Uskomme, että kun ymmärtää itseään paremmin, löytyy myös suunta, joka vie kohti merkityksellisempää elämää.
         </p>
       </div>
@@ -318,23 +318,23 @@ const ApproachSection = () => (
 const MeistSection = () => (
   <AnimatedSection>
     <div className="mb-16">
-      <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+      <h2 className="text-2xl font-bold text-white mb-6">
         Tiimimme
       </h2>
       <div className="space-y-4 max-w-prose">
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           Olemme kolme 22-vuotiasta, jotka ovat omistaneet kaiken aikansa tämän tuotteen kehittämiselle. Elämme samaa todellisuutta kuin ne nuoret, joita haluamme auttaa, ja ymmärrämme heidän haasteensa syvästi.
         </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           Olemme itse kokeneet, kuinka vaikeaa on löytää oma suunta ilman selkeää ohjausta ja kuinka paljon aikaa kuluu tietoa etsiessä eri aloista.
         </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           Olemme nähneet läheltä, kuinka monet ystävämme lähtivät opiskelemaan hyväksynnän tunteen tai sosiaalisen paineen vuoksi, eivät aidosta kiinnostuksesta.
         </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
-          Urakompassin taustalla on aito halu ratkaista ongelma, jonka olemme itse kokeneet.
+        <p className="text-neutral-300 leading-relaxed text-lg">
+          Urakompassin taustalla on aito halu ratkaisa ongelma, jonka olemme itse kokeneet.
         </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           Meidän vahvuutemme on syvä ymmärrys kohderyhmästä, motivaatio tehdä yhteiskunnallisesti merkittävää työtä ja into rakentaa ratkaisu, joka on sekä inhimillinen että teknisesti kehittynyt.
         </p>
       </div>
@@ -346,17 +346,17 @@ const MeistSection = () => (
 const ContactSection = () => (
   <AnimatedSection>
     <div className="mb-8">
-      <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
+      <h2 className="text-2xl font-bold text-white mb-6">
         Yhteystiedot
       </h2>
       <div className="space-y-4 max-w-prose">
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           <strong>Sähköposti:</strong> support@urakompassi.fi
         </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           <strong>Yhteistyö kouluille ja opettajille:</strong> Ota yhteyttä, jos haluat tuoda Urakompassin osaksi opetusta tai opiskelijapalveluita.
         </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
+        <p className="text-neutral-300 leading-relaxed text-lg">
           <strong>Verkkosivut:</strong> urakompassi.com
         </p>
       </div>
@@ -367,22 +367,22 @@ const ContactSection = () => (
 // Main AboutUs Component
 const AboutUs = () => {
   return (
-    <section className="relative bg-gradient-to-b from-[#E8EEFF] to-white rounded-2xl border border-slate-200 p-6 md:p-10 shadow-sm">
+    <section className="relative bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-10 shadow-sm">
       {/* Compass Background */}
       <CompassBackground />
-      
+
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto">
         {/* Main Missio Title */}
         <div className="text-center mb-12">
-          <h1 
-            className="font-bold text-[#2563EB] mb-6"
+          <h1
+            className="font-bold text-white mb-6"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 3rem)' }}
           >
             Meistä
           </h1>
           {/* Optional gradient line */}
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#2563EB]/40 to-transparent mx-auto"></div>
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#2B5F75]/40 to-transparent mx-auto"></div>
         </div>
         
         {/* Mission Content */}
