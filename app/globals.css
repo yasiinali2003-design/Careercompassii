@@ -89,19 +89,7 @@
 }
 
 @layer components {
-  /* Advanced animations inspired by dayos & clutch */
-  @keyframes float {
-    0%, 100% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-    33% {
-      transform: translate(30px, -30px) rotate(120deg);
-    }
-    66% {
-      transform: translate(-20px, 20px) rotate(240deg);
-    }
-  }
-
+  /* Minimal, purposeful animations for professional feel */
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -157,15 +145,6 @@
     }
   }
 
-  @keyframes pulse-glow {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-  }
-
   @keyframes shimmer {
     0% {
       background-position: -1000px 0;
@@ -182,23 +161,6 @@
     to {
       transform: rotate(360deg);
     }
-  }
-
-  @keyframes morph {
-    0%, 100% {
-      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    }
-    50% {
-      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-    }
-  }
-
-  .animate-float {
-    animation: float 20s ease-in-out infinite;
-  }
-
-  .animate-morph {
-    animation: morph 8s ease-in-out infinite;
   }
 
   .animate-rotate {
@@ -225,10 +187,6 @@
     animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
-  .animate-pulse-glow {
-    animation: pulse-glow 3s ease-in-out infinite;
-  }
-
   .animate-shimmer {
     animation: shimmer 3s infinite;
     background: linear-gradient(
@@ -238,35 +196,6 @@
       transparent 100%
     );
     background-size: 2000px 100%;
-  }
-
-  /* Stagger animation delays for sequential reveals */
-  .animation-delay-100 {
-    animation-delay: 100ms;
-  }
-
-  .animation-delay-200 {
-    animation-delay: 200ms;
-  }
-
-  .animation-delay-300 {
-    animation-delay: 300ms;
-  }
-
-  .animation-delay-400 {
-    animation-delay: 400ms;
-  }
-
-  .animation-delay-500 {
-    animation-delay: 500ms;
-  }
-
-  /* Modern gradient text */
-  .gradient-text {
-    background: linear-gradient(135deg, #2B5F75 0%, #4A7C59 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
 
   /* Glass morphism effect */
