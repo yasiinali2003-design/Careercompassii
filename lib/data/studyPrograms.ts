@@ -2,6 +2,11 @@
  * STUDY PROGRAMS DATABASE
  * Combines curated todistusvalinta programs with transformed Opintopolku data
  * to provide a comprehensive offline fallback when Supabase is unavailable.
+ *
+ * LAST UPDATED: November 2025
+ * - Updated yliopisto pisterajat with official 2025 todistusvalinta data
+ * - Sources: kauppatieteet.fi, oikeustieteet.fi, lääketieteelliset.fi, valmennuskeskus.fi
+ * - Data reflects final pisterajat published May-August 2025
  */
 
 import type { StudyProgram } from './studyPrograms.types';
@@ -74,6 +79,7 @@ const manualStudyPrograms: StudyProgram[] = [
   },
 
   // HEALTHCARE PROGRAMS (4-5)
+  // Updated with official 2025 todistusvalinta pisterajat (August 2025 final data)
   {
     id: 'lääketiede-helsinki',
     name: 'Lääketiede',
@@ -81,9 +87,15 @@ const manualStudyPrograms: StudyProgram[] = [
     institutionType: 'yliopisto',
     field: 'terveys',
     minPoints: 188.3,
-    maxPoints: 200.0,
+    maxPoints: 199.0,
     relatedCareers: ['laakari', 'erikoislaakari'],
-    description: 'Yliopistotason lääketieteen koulutus, joka valmistaa lääkäreiksi.'
+    description: 'Yliopistotason lääketieteen koulutus, joka valmistaa lääkäreiksi.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 188.3,
+      medianPoints: null,
+      applicantCount: null
+    }]
   },
   {
     id: 'lääketiede-tampere',
@@ -92,9 +104,66 @@ const manualStudyPrograms: StudyProgram[] = [
     institutionType: 'yliopisto',
     field: 'terveys',
     minPoints: 182.3,
-    maxPoints: 195.0,
+    maxPoints: 199.0,
     relatedCareers: ['laakari', 'erikoislaakari'],
-    description: 'Lääketieteen koulutus, joka painottaa potilastyötä ja käytännön taitoja.'
+    description: 'Lääketieteen koulutus, joka painottaa potilastyötä ja käytännön taitoja.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 182.3,
+      medianPoints: null,
+      applicantCount: null
+    }]
+  },
+  {
+    id: 'lääketiede-turku',
+    name: 'Lääketiede',
+    institution: 'Turun yliopisto',
+    institutionType: 'yliopisto',
+    field: 'terveys',
+    minPoints: 181.7,
+    maxPoints: 199.0,
+    relatedCareers: ['laakari', 'erikoislaakari'],
+    description: 'Lääketieteen koulutus Turun yliopistossa.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 181.7,
+      medianPoints: null,
+      applicantCount: null
+    }]
+  },
+  {
+    id: 'lääketiede-oulu',
+    name: 'Lääketiede',
+    institution: 'Oulun yliopisto',
+    institutionType: 'yliopisto',
+    field: 'terveys',
+    minPoints: 175.4,
+    maxPoints: 199.0,
+    relatedCareers: ['laakari', 'erikoislaakari'],
+    description: 'Lääketieteen koulutus Oulun yliopistossa.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 175.4,
+      medianPoints: null,
+      applicantCount: null
+    }]
+  },
+  {
+    id: 'lääketiede-ita-suomi',
+    name: 'Lääketiede',
+    institution: 'Itä-Suomen yliopisto',
+    institutionType: 'yliopisto',
+    field: 'terveys',
+    minPoints: 175.4,
+    maxPoints: 199.0,
+    relatedCareers: ['laakari', 'erikoislaakari'],
+    description: 'Lääketieteen koulutus Itä-Suomen yliopistossa.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 175.4,
+      medianPoints: null,
+      applicantCount: null
+    }]
   },
   {
     id: 'sairaanhoitaja-amk-helsinki',
@@ -131,16 +200,23 @@ const manualStudyPrograms: StudyProgram[] = [
   },
 
   // BUSINESS PROGRAMS (3-4)
+  // Updated with official May 2025 todistusvalinta pisterajat
   {
     id: 'kauppatiede-aalto',
     name: 'Kauppatiede',
     institution: 'Aalto-yliopisto',
     institutionType: 'yliopisto',
     field: 'kauppa',
-    minPoints: 118.7,
-    maxPoints: 140.0,
+    minPoints: 123.8,
+    maxPoints: 145.0,
     relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja', 'talousjohtaja'],
-    description: 'Kauppatieteellinen koulutus, joka valmistaa liiketalouden asiantuntijoiksi.'
+    description: 'Kauppatieteellinen koulutus, joka valmistaa liiketalouden asiantuntijoiksi.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 123.8,
+      medianPoints: null,
+      applicantCount: null
+    }]
   },
   {
     id: 'kauppatiede-tampere',
@@ -148,10 +224,16 @@ const manualStudyPrograms: StudyProgram[] = [
     institution: 'Tampereen yliopisto',
     institutionType: 'yliopisto',
     field: 'kauppa',
-    minPoints: 111.5,
-    maxPoints: 130.0,
+    minPoints: 116.6,
+    maxPoints: 135.0,
     relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja'],
-    description: 'Kauppatieteellinen koulutus, joka painottaa liiketoiminnan kehittämistä.'
+    description: 'Kauppatieteellinen koulutus, joka painottaa liiketoiminnan kehittämistä.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 116.6,
+      medianPoints: null,
+      applicantCount: null
+    }]
   },
   {
     id: 'liiketalous-amk-helsinki',
@@ -170,10 +252,67 @@ const manualStudyPrograms: StudyProgram[] = [
     institution: 'Turun yliopisto',
     institutionType: 'yliopisto',
     field: 'kauppa',
-    minPoints: 111.5,
-    maxPoints: 128.0,
+    minPoints: 117.9,
+    maxPoints: 135.0,
     relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja'],
-    description: 'Kauppatieteellinen koulutus Turun yliopistossa.'
+    description: 'Kauppatieteellinen koulutus Turun yliopistossa.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 117.9,
+      medianPoints: null,
+      applicantCount: null
+    }]
+  },
+  {
+    id: 'kauppatiede-jyvaskyla',
+    name: 'Kauppatiede',
+    institution: 'Jyväskylän yliopisto',
+    institutionType: 'yliopisto',
+    field: 'kauppa',
+    minPoints: 111.2,
+    maxPoints: 130.0,
+    relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja'],
+    description: 'Kauppatieteellinen koulutus Jyväskylän yliopistossa.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 111.2,
+      medianPoints: null,
+      applicantCount: null
+    }]
+  },
+  {
+    id: 'kauppatiede-hanken-helsinki',
+    name: 'Kauppatiede',
+    institution: 'Hanken, Helsinki',
+    institutionType: 'yliopisto',
+    field: 'kauppa',
+    minPoints: 113.3,
+    maxPoints: 132.0,
+    relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja'],
+    description: 'Kauppatieteellinen koulutus Hanken-kauppakorkeakoulussa Helsingissä.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 113.3,
+      medianPoints: null,
+      applicantCount: null
+    }]
+  },
+  {
+    id: 'kauppatiede-lut',
+    name: 'Kauppatiede',
+    institution: 'LUT-yliopisto',
+    institutionType: 'yliopisto',
+    field: 'kauppa',
+    minPoints: 106.5,
+    maxPoints: 125.0,
+    relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja'],
+    description: 'Kauppatieteellinen koulutus LUT-yliopistossa.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 106.5,
+      medianPoints: null,
+      applicantCount: null
+    }]
   },
 
   // ENGINEERING PROGRAMS (3-4)
@@ -258,16 +397,23 @@ const manualStudyPrograms: StudyProgram[] = [
   },
 
   // LAW PROGRAMS (2)
+  // Updated with official May 2025 todistusvalinta pisterajat
   {
     id: 'oikeustiede-helsinki',
     name: 'Oikeustiede',
     institution: 'Helsingin yliopisto',
     institutionType: 'yliopisto',
     field: 'oikeus',
-    minPoints: 133.6,
+    minPoints: 134.2,
     maxPoints: 150.0,
     relatedCareers: ['asianajaja', 'oikeusneuvos', 'notaari'],
-    description: 'Oikeustieteen koulutus, joka valmistaa juristeiksi.'
+    description: 'Oikeustieteen koulutus, joka valmistaa juristeiksi.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 134.2,
+      medianPoints: null,
+      applicantCount: null
+    }]
   },
   {
     id: 'oikeustiede-turku',
@@ -275,10 +421,50 @@ const manualStudyPrograms: StudyProgram[] = [
     institution: 'Turun yliopisto',
     institutionType: 'yliopisto',
     field: 'oikeus',
-    minPoints: 131.1,
+    minPoints: 132.1,
+    maxPoints: 148.0,
+    relatedCareers: ['asianajaja', 'oikeusneuvos'],
+    description: 'Oikeustieteen koulutus Turun yliopistossa.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 132.1,
+      medianPoints: null,
+      applicantCount: null
+    }]
+  },
+  {
+    id: 'oikeustiede-ita-suomi',
+    name: 'Oikeustiede',
+    institution: 'Itä-Suomen yliopisto',
+    institutionType: 'yliopisto',
+    field: 'oikeus',
+    minPoints: 127.8,
     maxPoints: 145.0,
     relatedCareers: ['asianajaja', 'oikeusneuvos'],
-    description: 'Oikeustieteen koulutus Turun yliopistossa.'
+    description: 'Oikeustieteen koulutus Itä-Suomen yliopistossa.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 127.8,
+      medianPoints: null,
+      applicantCount: null
+    }]
+  },
+  {
+    id: 'oikeustiede-lappi',
+    name: 'Oikeustiede',
+    institution: 'Lapin yliopisto',
+    institutionType: 'yliopisto',
+    field: 'oikeus',
+    minPoints: 122.9,
+    maxPoints: 142.0,
+    relatedCareers: ['asianajaja', 'oikeusneuvos'],
+    description: 'Oikeustieteen koulutus Lapin yliopistossa.',
+    pointHistory: [{
+      year: '2025',
+      minPoints: 122.9,
+      medianPoints: null,
+      applicantCount: null
+    }]
   },
 
   // PSYCHOLOGY PROGRAMS (2)
