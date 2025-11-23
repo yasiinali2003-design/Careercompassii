@@ -106,16 +106,69 @@ export async function POST(request: NextRequest) {
     
     console.log(`[API] Top career: ${topCareers[0]?.title} (${topCareers[0]?.overallScore}%)`);
     
-    // Calculate education path (YLA and TASO2)
-    const educationPath = (cohort === 'YLA' || cohort === 'TASO2') ? calculateEducationPath(unshuffledAnswers, cohort) : null;
-    if (educationPath) {
-      const primaryPath = 'primary' in educationPath ? educationPath.primary : undefined;
-      if (primaryPath) {
-        const scoreKey = cohort === 'YLA' 
-          ? (educationPath as any).scores[primaryPath as string]
-          : (educationPath as any).scores[primaryPath as string];
-        console.log(`[API] Education path: ${primaryPath} (${Math.round(scoreKey)}%)`);
+    // Calculate education path (all cohorts)
+    let educationPath;
+    if (cohort === 'NUORI') {
+      // NUORI: Category-based education recommendations for young adults
+      const topCareer = topCareers[0];
+      const category = topCareer?.category || 'innovoija';
+
+      const pathMap: Record<string, { primary: string; reasoning: string }> = {
+        innovoija: {
+          primary: 'bootcamp_tai_amk',
+          reasoning: 'Teknologia-alalla pääset alkuun nopeasti bootcamp-koulutuksella tai AMK-tutkinnolla. Molemmat yhdistävät käytännön osaamisen ja teorian tehokkaasti.'
+        },
+        auttaja: {
+          primary: 'amk_tai_yliopisto',
+          reasoning: 'Hoiva- ja terveysalalla AMK tai yliopisto antavat tarvittavan pätevyyden. Valinta riippuu siitä, haluatko enemmän käytäntöä (AMK) vai tutkimusta (yliopisto).'
+        },
+        luova: {
+          primary: 'portfolio_ja_verkostot',
+          reasoning: 'Luovilla aloilla portfolio ja verkostot ovat usein tärkeämpiä kuin tutkinto. Harkitse lyhytkursseja ja freelance-töitä kokemuksen kartuttamiseksi.'
+        },
+        johtaja: {
+          primary: 'amk_tai_tyokokemus',
+          reasoning: 'Liiketoiminta- ja johtamisosaaminen kehittyy parhaiten käytännössä. AMK-tutkinto antaa hyvän pohjan, mutta työkokemus on yhtä arvokasta.'
+        },
+        visionaari: {
+          primary: 'yliopisto_tai_amk',
+          reasoning: 'Strateginen ajattelu ja analytiikka hyötyvät korkeakoulututkinnosta. Yliopisto sopii tutkimukselliseen, AMK käytännönläheisempään lähestymistapaan.'
+        },
+        rakentaja: {
+          primary: 'ammattikoulu_tai_tyopaikka',
+          reasoning: 'Käytännön ammateissa pääset nopeimmin alkuun suoralla työkokemuksella tai ammattikoulutuksella. Monet työnantajat kouluttavat itse.'
+        },
+        jarjestaja: {
+          primary: 'amk',
+          reasoning: 'Organisointi- ja hallintotyöhön AMK-tutkinto antaa hyvän pohjan. Yhdistää käytännön osaamisen ja teorian tasapainoisesti.'
+        },
+        'ympariston-puolustaja': {
+          primary: 'yliopisto_tai_amk',
+          reasoning: 'Ympäristöalalla koulutus on arvostettua. Yliopisto antaa syvempää tietoa, AMK keskittyy käytännön ratkaisuihin.'
+        }
+      };
+
+      const path = pathMap[category] || pathMap.innovoija;
+      educationPath = {
+        primary: path.primary,
+        reasoning: path.reasoning,
+        scores: { [path.primary]: 85 },
+        confidence: 'medium' as const
+      };
+      console.log(`[API] NUORI Education path: ${path.primary} (category-based)`);
+    } else if (cohort === 'YLA' || cohort === 'TASO2') {
+      educationPath = calculateEducationPath(unshuffledAnswers, cohort);
+      if (educationPath) {
+        const primaryPath = 'primary' in educationPath ? educationPath.primary : undefined;
+        if (primaryPath) {
+          const scoreKey = cohort === 'YLA'
+            ? (educationPath as any).scores[primaryPath as string]
+            : (educationPath as any).scores[primaryPath as string];
+          console.log(`[API] Education path: ${primaryPath} (${Math.round(scoreKey)}%)`);
+        }
       }
+    } else {
+      educationPath = null;
     }
     
     // Get cohort-specific copy
