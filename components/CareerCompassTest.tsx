@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { selectQuestionSet, markSetAsUsed } from "@/lib/questionPool";
 import { getQuestionMappings } from "@/lib/scoring/dimensions";
+import { toast, Toaster } from "sonner";
 
 // ---------- QUESTIONS DATA ----------
 // YLA: Education path focus (Lukio vs. Ammattikoulu) + career preview
@@ -330,21 +331,37 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
       answers, // 1..5, 0 = ei vastattu
     };
     try {
-      await fetch("/api/analyze", {
+      const response = await fetch("/api/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      alert("Vastaukset lähetetty! Näytä käyttäjälle seuraava näkymä/raportti.");
+
+      if (response.ok) {
+        toast.success("Vastaukset lähetetty onnistuneesti!", {
+          description: "Siirrytään tulossivulle...",
+          duration: 3000,
+        });
+      } else {
+        toast.error("Lähetys epäonnistui", {
+          description: "Yritä uudelleen hetken kuluttua",
+          duration: 5000,
+        });
+      }
     } catch (e) {
       console.error(e);
-      alert("Lähetys epäonnistui. Tarkista backend /api/analyze.");
+      toast.error("Yhteysvirhe", {
+        description: "Tarkista internet-yhteytesi ja yritä uudelleen",
+        duration: 5000,
+      });
     }
   };
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10">
-      {/* Progress Save Notification */}
+    <>
+      <Toaster position="top-right" richColors closeButton />
+      <div className="mx-auto max-w-3xl px-4 py-10">
+        {/* Progress Save Notification */}
       {showSaveNotification && (
         <div className="fixed top-4 right-4 z-50 animate-in slide-in-from-right duration-300">
           <div className="rounded-lg bg-slate-50 border border-primary/20 px-4 py-3 shadow-lg">
@@ -440,7 +457,7 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
         </p>
       </div>
       
-      <p className="mt-4 text-sm text-slate-500">
+      <p className="mt-4 text-sm text-slate-700">
         30 kysymystä • n. 5 minuuttia • Maksuton • Vastauksesi käsitellään luottamuksellisesti
       </p>
       
@@ -539,7 +556,7 @@ const OccupationInput = ({ value, onChange, onSkip }: { value: string; onChange:
       </div>
     </div>
 
-    <p className="text-center text-sm text-slate-500">
+    <p className="text-center text-sm text-slate-700">
       Ammattisi auttaa meitä suodattamaan pois työsi, jotta näet uusia vaihtoehtoja.
     </p>
   </div>
@@ -555,9 +572,9 @@ const RatingScale = ({ value, onChange }: { value: number; onChange: (val: numbe
           type="button"
           onClick={() => onChange(idx + 1)}
           className={
-            "rounded-xl border px-3 py-2 text-sm transition " +
+            "rounded-xl border px-4 py-3.5 text-sm sm:text-base transition min-h-[44px] touch-manipulation " +
             (value === idx + 1
-              ? "border-primary bg-slate-50 font-semibold"
+              ? "border-primary bg-slate-50 font-semibold ring-2 ring-primary"
               : "border-slate-300 hover:bg-slate-50")
           }
         >
@@ -929,7 +946,7 @@ const Summary = ({
         </div>
 
         {/* Helper Text */}
-        <p className="text-xs text-white/70">
+        <p className="text-xs text-white/90">
           Linkit ohjaavat luotettuihin lähteisiin: Opintopolku (koulutukset) ja Työmarkkinatori (työpaikat). Molemmat linkit vievät pääsivulle, josta voit hakea sopivia mahdollisuuksia.
         </p>
       </div>
@@ -1397,21 +1414,39 @@ const Summary = ({
       <p className="mt-2 text-slate-600">Vastasit {answered}/{questions.length} kysymykseen.</p>
 
       <div className="mt-6">
-        <button 
+        <button
           onClick={sendToBackend}
           disabled={loading}
-          className="w-full rounded-xl bg-primary px-6 py-3 text-white font-medium shadow hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full rounded-xl bg-primary px-6 py-3 text-white font-medium shadow hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           {loading ? "Analysoidaan vastauksiasi..." : "Saat henkilökohtaisen analyysin"}
         </button>
-        
+
+        {loading && (
+          <div className="mt-4 rounded-xl bg-blue-50 border border-blue-200 p-4 animate-pulse">
+            <div className="flex items-start gap-3">
+              <div className="flex-shrink-0 mt-0.5">
+                <svg className="animate-spin h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+              </div>
+              <div className="flex-1">
+                <p className="text-blue-900 font-semibold">Analysoidaan vastauksiasi...</p>
+                <p className="text-sm text-blue-700 mt-1">Tämä kestää yleensä 3-5 sekuntia</p>
+                <p className="text-sm text-blue-800 font-medium mt-2">⚠️ Älä sulje sivua tai palaa takaisin</p>
+              </div>
+            </div>
+          </div>
+        )}
+
         {error && (
           <div className="mt-4 rounded-xl bg-red-50 border border-red-200 p-4">
             <p className="text-red-800 font-semibold mb-2">⚠️ Virhe vastausten lähetyksessä</p>
             <pre className="text-sm text-red-700 whitespace-pre-wrap mb-3">{error}</pre>
-            <button 
+            <button
               onClick={sendToBackend}
-              className="mt-2 text-sm bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+              className="mt-2 text-sm bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors"
             >
               Yritä uudelleen
             </button>
@@ -1437,9 +1472,10 @@ const Summary = ({
         </button>
       </div>
 
-      <p className="mt-4 text-xs text-slate-500">
+      <p className="mt-4 text-xs text-slate-700">
         Analyysi perustuu vastauksiisi ja tarjoaa henkilökohtaisia urasuosituksia.
       </p>
     </div>
+    </>
   );
 };

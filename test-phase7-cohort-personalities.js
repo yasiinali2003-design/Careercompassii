@@ -5,7 +5,7 @@
  * to validate the weight recalibration works across all user segments.
  */
 
-const API_URL = 'http://localhost:3000/api/score';
+const API_URL = process.env.TEST_URL || 'http://localhost:3001/api/score';
 
 // Helper function to generate answer pattern
 function generateAnswers(scores) {

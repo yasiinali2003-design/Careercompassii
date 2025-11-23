@@ -136,63 +136,81 @@ export default function GeminiCareerContent({
         <div className="prose prose-invert prose-lg max-w-none">
           <ReactMarkdown
             components={{
-              h1: ({ node, ...props }) => (
-                <motion.h1
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="text-3xl font-bold text-white mb-6 flex items-center gap-3"
-                  {...props}
-                />
-              ),
-              h2: ({ node, ...props }) => (
-                <motion.h2
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="text-2xl font-bold text-[#E8994A] mt-8 mb-4 flex items-center gap-2"
-                  {...props}
-                />
-              ),
-              h3: ({ node, ...props }) => (
-                <motion.h3
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="text-xl font-semibold text-[#2B5F75] mt-6 mb-3"
-                  {...props}
-                />
-              ),
-              p: ({ node, ...props }) => (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.1 }}
-                  className="text-gray-300 leading-relaxed mb-4"
-                  {...props}
-                />
-              ),
+              h1: ({ node, ...props }) => {
+                const { onDrag, onDragStart, onDragEnd, ...safeProps } = props as any;
+                return (
+                  <motion.h1
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className="text-3xl font-bold text-white mb-6 flex items-center gap-3"
+                    {...safeProps}
+                  />
+                );
+              },
+              h2: ({ node, ...props }) => {
+                const { onDrag, onDragStart, onDragEnd, ...safeProps } = props as any;
+                return (
+                  <motion.h2
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className="text-2xl font-bold text-[#E8994A] mt-8 mb-4 flex items-center gap-2"
+                    {...safeProps}
+                  />
+                );
+              },
+              h3: ({ node, ...props }) => {
+                const { onDrag, onDragStart, onDragEnd, ...safeProps } = props as any;
+                return (
+                  <motion.h3
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className="text-xl font-semibold text-[#2B5F75] mt-6 mb-3"
+                    {...safeProps}
+                  />
+                );
+              },
+              p: ({ node, ...props }) => {
+                const { onDrag, onDragStart, onDragEnd, ...safeProps } = props as any;
+                return (
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.1 }}
+                    className="text-gray-300 leading-relaxed mb-4"
+                    {...safeProps}
+                  />
+                );
+              },
               ul: ({ node, ...props }) => (
                 <ul className="space-y-2 my-4" {...props} />
               ),
-              li: ({ node, ...props }) => (
-                <motion.li
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="flex items-start gap-3 text-gray-300"
-                >
-                  <span className="text-[#E8994A] mt-1">▸</span>
-                  <span {...props} />
-                </motion.li>
-              ),
+              li: ({ node, ...props }) => {
+                const { onDrag, onDragStart, onDragEnd, ...safeProps } = props as any;
+                return (
+                  <motion.li
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className="flex items-start gap-3 text-gray-300"
+                  >
+                    <span className="text-[#E8994A] mt-1">▸</span>
+                    <span {...safeProps} />
+                  </motion.li>
+                );
+              },
               strong: ({ node, ...props }) => (
                 <strong className="text-[#E8994A] font-semibold" {...props} />
               ),
-              blockquote: ({ node, ...props }) => (
-                <motion.blockquote
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="border-l-4 border-[#2B5F75] pl-6 italic text-gray-400 my-6"
-                  {...props}
-                />
-              ),
+              blockquote: ({ node, ...props }) => {
+                const { onDrag, onDragStart, onDragEnd, ...safeProps } = props as any;
+                return (
+                  <motion.blockquote
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className="border-l-4 border-[#2B5F75] pl-6 italic text-gray-400 my-6"
+                    {...safeProps}
+                  />
+                );
+              },
               code: ({ node, ...props }) => (
                 <code
                   className="bg-white/5 px-2 py-1 rounded text-[#4A7C59] text-sm"
