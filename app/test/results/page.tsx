@@ -197,97 +197,15 @@ export default function ResultsPage() {
           </CardContent>
         </Card>
 
-        {/* Methodology Explanation Section */}
-        <Card className="mb-8 border-2 border-blue-200/50 bg-[#1a1d23]">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-xl">
-              <span className="text-2xl">💡</span>
-              Miten sait nämä tulokset?
-            </CardTitle>
-            <CardDescription>
-              Ymmärrä menetelmämme ja tulosten perusta
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-4 text-neutral-300 leading-relaxed">
-              <div className="bg-white/5 rounded-lg p-4">
-                <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
-                  <span>1.</span> Analysoimme vastauksesi neljään ulottuvuuteen
-                </h3>
-                <ul className="space-y-2 ml-6 text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-400 mt-0.5">•</span>
-                    <div>
-                      <strong className="text-white">Kiinnostukset:</strong> Mitkä ala-alueet ja tehtävät motivoivat sinua eniten
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-400 mt-0.5">•</span>
-                    <div>
-                      <strong className="text-white">Arvot:</strong> Mitä pidät tärkeänä työssäsi ja urallasi
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-400 mt-0.5">•</span>
-                    <div>
-                      <strong className="text-white">Työtapa:</strong> Miten tykkäät työskennellä (itsenäisesti, tiimissä, luovasti)
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-400 mt-0.5">•</span>
-                    <div>
-                      <strong className="text-white">Työympäristö:</strong> Missä olosuhteissa viihdyt parhaiten
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white/5 rounded-lg p-4">
-                <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
-                  <span>2.</span> Vertailimme profiiliasi 412 ammattiin
-                </h3>
-                <p className="text-sm ml-6">
-                  Jokaisella ammatilla on oma "profiili" joka kuvaa mitä vahvuuksia, arvoja ja kiinnostuksia se vaatii.
-                  Vertailimme sinun vastauksiasi kaikkiin ammatteihin ja valitsimme ne, jotka sopivat sinulle parhaiten.
-                </p>
-              </div>
-
-              <div className="bg-white/5 rounded-lg p-4">
-                <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
-                  <span>3.</span> Huomioimme Suomen työmarkkinat
-                </h3>
-                <p className="text-sm ml-6">
-                  Suosituksemme perustuvat <strong className="text-white">todellisiin ammatteihin Suomessa</strong>:
-                  palkkatasot, työllisyysnäkymät ja koulutuspolut ovat ajan tasalla. Kaikki data on peräisin
-                  luotettavista lähteistä kuten Opintopolku.fi ja TES-sopimusten palkkatiedoista.
-                </p>
-              </div>
-
-              <div className="bg-blue-500/10 border border-blue-400/30 rounded-lg p-4">
-                <h3 className="font-semibold text-blue-300 mb-2 flex items-center gap-2">
-                  <span>💭</span> Entä jos en ole samaa mieltä?
-                </h3>
-                <p className="text-sm text-neutral-300">
-                  Se on täysin normaalia! Testi antaa <strong className="text-white">suuntaa-antavia suosituksia</strong> vastaustesi perusteella.
-                  Sinä tunnet itsesi parhaiten. Käytä tuloksia <strong className="text-white">keskustelun pohjana</strong> opinto-ohjaajan,
-                  opettajan tai vanhempiesi kanssa. Jos jokin ammatti ei tunnu oikealta, se ei ole sinulle pakko -
-                  selaa kaikkia 412 ammattia <Link href="/ammatit" className="text-blue-400 hover:underline">Urakirjastosta</Link> ja
-                  löydä itsellesi sopivat vaihtoehdot!
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
         {/* Education Path Recommendation (YLA and TASO2) */}
         {(userProfile.cohort === 'YLA' || userProfile.cohort === 'TASO2') && results.educationPath && (
-          <Card className="mb-8 border-2 border-green-200 bg-gradient-to-r from-green-50 to-teal-50/20">
+          <Card className="mb-8 border-2 border-green-500/30 bg-[#1a1d23]">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-2xl">
+              <CardTitle className="flex items-center gap-2 text-2xl text-white">
                 Sinun koulutuspolkusi
               </CardTitle>
-              <CardDescription>
-                {userProfile.cohort === 'YLA' 
+              <CardDescription className="text-neutral-400">
+                {userProfile.cohort === 'YLA'
                   ? 'Vastaustesi perusteella sopiva jatko-opintovalinta'
                   : 'Vastaustesi perusteella sopiva jatko-opintosuunta'}
               </CardDescription>
@@ -307,16 +225,16 @@ export default function ResultsPage() {
                 </div>
 
                 {/* Path Description */}
-                <div className="bg-white rounded-lg p-4 mb-4">
+                <div className="bg-white/5 rounded-lg p-4 mb-4">
                   <p className="text-neutral-300 mb-4">{getEducationPathDescription(results.educationPath.primary, userProfile.cohort).description}</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <span className="font-semibold text-neutral-300">Kesto:</span>
-                      <span className="ml-2 text-neutral-400">{getEducationPathDescription(results.educationPath.primary, userProfile.cohort).duration}</span>
+                      <span className="font-semibold text-white">Kesto:</span>
+                      <span className="ml-2 text-neutral-300">{getEducationPathDescription(results.educationPath.primary, userProfile.cohort).duration}</span>
                     </div>
                     <div>
-                      <span className="font-semibold text-neutral-300">Jatko-opinnot:</span>
-                      <div className="ml-2 text-sm text-neutral-400">
+                      <span className="font-semibold text-white">Jatko-opinnot:</span>
+                      <div className="ml-2 text-sm text-neutral-300">
                         {getEducationPathDescription(results.educationPath.primary, userProfile.cohort).nextSteps.slice(0, 2).join(', ')}
                       </div>
                     </div>
@@ -324,17 +242,17 @@ export default function ResultsPage() {
                 </div>
 
                 {/* Reasoning */}
-                <div className="bg-slate-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-neutral-300 mb-2">Miksi tämä sopii sinulle:</h4>
+                <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/20">
+                  <h4 className="font-semibold text-white mb-2">Miksi tämä sopii sinulle:</h4>
                   <p className="text-neutral-300 leading-relaxed whitespace-pre-line">{results.educationPath.reasoning}</p>
                 </div>
 
                 {/* Secondary Path (if exists) */}
                 {results.educationPath.secondary && (
-                  <div className="mt-6 pt-6 border-t border-gray-200">
+                  <div className="mt-6 pt-6 border-t border-white/10">
                     <h4 className="font-semibold text-white mb-4 text-lg">Vaihtoehtoisesti harkitse:</h4>
-                    
-                    <div className="bg-gray-50 rounded-lg p-4">
+
+                    <div className="bg-white/5 rounded-lg p-4">
                       <div className="mb-3">
                         <h5 className="text-xl font-bold text-white">
                           {getEducationPathTitle(results.educationPath.secondary, userProfile.cohort)}
@@ -372,16 +290,16 @@ export default function ResultsPage() {
                       )}
 
                       {/* Secondary Path Description */}
-                      <div className="bg-white rounded-lg p-4 mb-3">
+                      <div className="bg-white/5 rounded-lg p-4 mb-3">
                         <p className="text-neutral-300 mb-4">{getEducationPathDescription(results.educationPath.secondary, userProfile.cohort).description}</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                           <div>
-                            <span className="font-semibold text-neutral-300">Kesto:</span>
-                            <span className="ml-2 text-neutral-400">{getEducationPathDescription(results.educationPath.secondary, userProfile.cohort).duration}</span>
+                            <span className="font-semibold text-white">Kesto:</span>
+                            <span className="ml-2 text-neutral-300">{getEducationPathDescription(results.educationPath.secondary, userProfile.cohort).duration}</span>
                           </div>
                           <div>
-                            <span className="font-semibold text-neutral-300">Jatko-opinnot:</span>
-                            <div className="ml-2 text-neutral-400">
+                            <span className="font-semibold text-white">Jatko-opinnot:</span>
+                            <div className="ml-2 text-neutral-300">
                               {getEducationPathDescription(results.educationPath.secondary, userProfile.cohort).nextSteps.slice(0, 2).join(', ')}
                             </div>
                           </div>

@@ -1,307 +1,94 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import { MessageSquare, ScanSearch, Target } from 'lucide-react';
 
-interface Step {
-  number: number;
-  icon: string;
-  title: string;
-  description: string;
-  color: string;
-}
-
-const steps: Step[] = [
+const steps = [
   {
     number: 1,
-    icon: "👁️",
-    title: "Vastaa kysymyksiin",
-    description: "30 huolellisesti laadittua kysymystä kartoittavat kiinnostuksen kohteitasi ja vahvuuksiasi.",
-    color: "#2B5F75",
+    icon: MessageSquare,
+    title: 'Vastaa 30 kysymykseen',
+    description: 'Kartoitamme kiinnostuksesi, arvosi, työskentelytapasi ja työympäristötoiveesi.',
+    color: '#2B5F75',
   },
   {
     number: 2,
-    icon: "📋",
-    title: "Tekoäly analysoi",
-    description: "Edistynyt algoritmi vertaa profiilisi 361 ammatin vaatimuksiin ja ominaisuuksiin.",
-    color: "#E8994A",
+    icon: ScanSearch,
+    title: 'Analysoimme profiilisi',
+    description: 'Vertaamme vastauksesi 412 ammatin vaatimuksiin ja ominaisuuksiin Suomen työmarkkinoilla.',
+    color: '#E8994A',
   },
   {
     number: 3,
-    icon: "📈",
-    title: "Saat suositukset",
-    description: "Räätälöidyt urasuositukset ja selkeät ohjeet koulutuspoluista ja seuraavista askeleista.",
-    color: "#4A7C59",
+    icon: Target,
+    title: 'Saat henkilökohtaiset suositukset',
+    description: 'Näet sopivimmat ammatit, koulutuspolut ja seuraavat askeleet perustuen vastauksiin.',
+    color: '#4A7C59',
   },
 ];
 
 export default function SnakeSteps() {
-  const [activeStep, setActiveStep] = useState(1);
-  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
-  const [isHovering, setIsHovering] = useState(false);
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
-
-  const activePathRef = useRef<SVGPathElement>(null);
-
-  // Auto-progress animation when section comes into view
-  useEffect(() => {
-    if (isInView) {
-      const sequence = async () => {
-        setActiveStep(1);
-        await new Promise(resolve => setTimeout(resolve, 800));
-        setActiveStep(2);
-        await new Promise(resolve => setTimeout(resolve, 800));
-        setActiveStep(3);
-      };
-      sequence();
-    }
-  }, [isInView]);
-
-  // Auto-loop when idle
-  useEffect(() => {
-    if (!isHovering && isInView) {
-      const interval = setInterval(() => {
-        setActiveStep((prev) => (prev === 3 ? 1 : prev + 1));
-      }, 3000);
-      return () => clearInterval(interval);
-    }
-  }, [isHovering, isInView]);
-
-  // Update SVG path animation
-  useEffect(() => {
-    if (activePathRef.current) {
-      const totalLength = activePathRef.current.getTotalLength();
-      const progress = (activeStep - 1) / (steps.length - 1);
-      activePathRef.current.style.strokeDasharray = `${totalLength}`;
-      activePathRef.current.style.strokeDashoffset = `${totalLength * (1 - progress)}`;
-    }
-  }, [activeStep]);
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative max-w-7xl mx-auto px-4 py-20"
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => {
-        setIsHovering(false);
-        setHoveredStep(null);
-      }}
-    >
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Kolme yksinkertaista vaihetta
-        </h2>
-        <p className="text-gray-400 text-lg">
-          Vie hiiri vaiheen päälle nähdäksesi lisätietoja
-        </p>
-      </motion.div>
+    <section className="relative py-24 bg-gradient-to-b from-[#0f1419]/50 to-[#0f1419]">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Näin Urakompassi toimii
+          </h2>
+          <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
+            Kolme vaihetta urasuuntasi löytämiseksi
+          </p>
+        </div>
 
-      {/* Snake Wrapper */}
-      <div className="relative px-4 pb-6 pt-10" style={{ minHeight: '400px' }}>
-        {/* SVG Snake Path */}
-        <svg
-          className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
-          viewBox="0 0 1200 260"
-          preserveAspectRatio="none"
-        >
-          {/* Grey background path */}
-          <path
-            d="M80 210 C 260 80 420 80 600 210 S 940 340 1120 210"
-            stroke="#222631"
-            strokeWidth="6"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-
-          {/* Active progress path */}
-          <path
-            ref={activePathRef}
-            d="M80 210 C 260 80 420 80 600 210 S 940 340 1120 210"
-            stroke="#4A7C59"
-            strokeWidth="6"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={{
-              transition: "stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
-            }}
-          />
-
-          {/* Dots at card centers */}
-          {[
-            { cx: 80, cy: 210, step: 1 },
-            { cx: 600, cy: 210, step: 2 },
-            { cx: 1120, cy: 210, step: 3 },
-          ].map(({ cx, cy, step }) => (
-            <motion.circle
-              key={step}
-              cx={cx}
-              cy={cy}
-              r={activeStep >= step ? 14 : 12}
-              fill="#020617"
-              stroke={activeStep >= step ? "#4A7C59" : "#222631"}
-              strokeWidth="4"
-              animate={{
-                r: activeStep >= step ? 14 : 12,
-                stroke: activeStep >= step ? "#4A7C59" : "#222631",
-              }}
-              transition={{ duration: 0.3 }}
-            />
-          ))}
-        </svg>
-
-        {/* Cards Grid - now with dots */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative z-10">
-          {steps.map((step, index) => {
-            const isExpanded = hoveredStep === step.number;
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          {steps.map((step) => {
+            const Icon = step.icon;
 
             return (
-              <motion.div
+              <article
                 key={step.number}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="flex items-center justify-center"
+                className="relative bg-[#1a1d23] rounded-2xl p-8 border border-white/10 transition-all duration-300 hover:border-white/20"
               >
-                <motion.article
-                  layout
-                  onMouseEnter={() => {
-                    setHoveredStep(step.number);
-                    setActiveStep(step.number);
-                  }}
-                  onMouseLeave={() => setHoveredStep(null)}
-                  onFocus={() => {
-                    setHoveredStep(step.number);
-                    setActiveStep(step.number);
-                  }}
-                  onBlur={() => setHoveredStep(null)}
-                  tabIndex={0}
-                  className={`
-                    relative cursor-pointer rounded-full
-                    bg-gradient-to-br from-[#1f2937] to-[#020617]
-                    border transition-all duration-500
-                    ${
-                      isExpanded
-                        ? "border-gray-500/80 shadow-2xl w-full md:w-80"
-                        : "border-[#242938] w-24 h-24 hover:scale-110"
-                    }
-                  `}
+                {/* Step number badge */}
+                <div className="absolute top-6 right-6 flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10">
+                  <span className="text-sm font-bold text-neutral-400">
+                    {step.number}
+                  </span>
+                </div>
+
+                {/* Icon */}
+                <div
+                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
                   style={{
-                    borderColor: isExpanded ? step.color : undefined,
+                    backgroundColor: `${step.color}15`,
+                    border: `2px solid ${step.color}40`
                   }}
                 >
-                  <AnimatePresence mode="wait">
-                    {!isExpanded ? (
-                      /* Collapsed Dot State */
-                      <motion.div
-                        key="dot"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="w-full h-full flex flex-col items-center justify-center p-4"
-                      >
-                        <motion.div
-                          whileHover={{ rotate: 360, scale: 1.2 }}
-                          transition={{ duration: 0.5 }}
-                          className="text-4xl mb-1"
-                        >
-                          {step.icon}
-                        </motion.div>
-                        <div
-                          className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold"
-                          style={{
-                            backgroundColor: `${step.color}33`,
-                            color: step.color,
-                          }}
-                        >
-                          {step.number}
-                        </div>
-                      </motion.div>
-                    ) : (
-                      /* Expanded Card State */
-                      <motion.div
-                        key="card"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="p-7 rounded-3xl"
-                      >
-                        {/* Number Badge */}
-                        <div
-                          className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold bg-[#0f172a]/90 border backdrop-blur-xl"
-                          style={{
-                            color: step.color,
-                            borderColor: `${step.color}66`,
-                          }}
-                        >
-                          {step.number}
-                        </div>
+                  <Icon
+                    className="w-7 h-7"
+                    style={{ color: step.color }}
+                  />
+                </div>
 
-                        {/* Icon */}
-                        <motion.div
-                          initial={{ rotate: 0 }}
-                          animate={{ rotate: 360 }}
-                          transition={{ duration: 0.5 }}
-                          className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 bg-[#0f172a]/90 border border-gray-700/25"
-                        >
-                          <span className="text-3xl">{step.icon}</span>
-                        </motion.div>
+                {/* Title with accent line */}
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  {step.title}
+                </h3>
+                <div
+                  className="w-12 h-1 rounded-full mb-4"
+                  style={{ backgroundColor: step.color }}
+                />
 
-                        {/* Title */}
-                        <h3 className="text-xl font-semibold text-white mb-3">
-                          {step.title}
-                        </h3>
-
-                        {/* Description */}
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                          {step.description}
-                        </p>
-
-                        {/* Active indicator bar */}
-                        <motion.div
-                          className="absolute bottom-0 left-0 h-1 rounded-full w-full"
-                          style={{ backgroundColor: step.color }}
-                          initial={{ scaleX: 0 }}
-                          animate={{ scaleX: 1 }}
-                          transition={{ duration: 0.3 }}
-                        />
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.article>
-              </motion.div>
+                {/* Description */}
+                <p className="text-neutral-300 text-base leading-relaxed">
+                  {step.description}
+                </p>
+              </article>
             );
           })}
         </div>
       </div>
-
-      {/* CTA Button */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        className="text-center mt-12"
-      >
-        <Link href="/test">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-gradient-to-r from-[#2B5F75] to-[#4A7C59] rounded-2xl text-white text-lg font-semibold shadow-lg hover:shadow-2xl transition-all"
-          >
-            Aloita testi →
-          </motion.button>
-        </Link>
-      </motion.div>
     </section>
   );
 }
