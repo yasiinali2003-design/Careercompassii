@@ -1144,16 +1144,17 @@ function determineDominantCategory(
     categoryScores.innovoija -= (workstyle.flexibility || 0) * 0.3;  // Penalize flexibility to avoid luova confusion
   }
   
-  // rakentaja: hands_on interest, precision (but NOT career_clarity, creative, analytical, environment, or people)
+  // rakentaja: hands_on interest, precision (but NOT career_clarity, creative, analytical, environment, people, or health)
   categoryScores.rakentaja += (interests.hands_on || 0) * 1.3;  // BOOSTED: Hands-on is key
   categoryScores.rakentaja += (workstyle.precision || 0) * 0.8;
   categoryScores.rakentaja += (workstyle.performance || 0) * 0.6;
-  // Penalize career_clarity, creative, analytical, environment, and people to avoid visionaari/jarjestaja/ympariston-puolustaja/auttaja confusion
+  // Penalize career_clarity, creative, analytical, environment, people, and health to avoid visionaari/jarjestaja/ympariston-puolustaja/auttaja confusion
   categoryScores.rakentaja -= (values.career_clarity || 0) * 0.4;  // Penalize career_clarity to avoid visionaari confusion
   categoryScores.rakentaja -= (interests.creative || 0) * 0.3;  // Penalize creative to avoid visionaari confusion
   categoryScores.rakentaja -= (interests.analytical || 0) * 0.4;  // Penalize analytical to avoid jarjestaja confusion
   categoryScores.rakentaja -= (interests.environment || 0) * 0.4;  // Penalize environment to avoid ympariston-puolustaja confusion
   categoryScores.rakentaja -= (interests.people || 0) * 0.4;  // Penalize people to avoid auttaja confusion
+  categoryScores.rakentaja -= (interests.health || 0) * 0.6;  // Penalize health to avoid auttaja confusion (nurses/caregivers aren't builders!)
   
   // ympariston-puolustaja: environment interest, nature, outdoor context, work_environment (but NOT career_clarity, analytical, organization, people, or health)
   categoryScores['ympariston-puolustaja'] += (interests.environment || 0) * 2.5;  // BOOSTED: Environment is key (PHASE 7: Increased from 1.3)

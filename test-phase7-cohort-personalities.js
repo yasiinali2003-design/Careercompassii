@@ -42,14 +42,14 @@ const YLA_PROFILES = [
     cohort: "YLA",
     description: "Strong people/health interest, low technology interest",
     answers: generateAnswers([
-      // Q0-7: Learning - Moderate, some hands-on
-      3, 3, 3, 4, 3, 3, 3, 3,
-      // Q8-14: Future - Some career clarity
-      3, 3, 3, 4, 3, 3, 3,
-      // Q15-22: Interests - HIGH HEALTH/PEOPLE, low tech
-      1, 5, 2, 2, 3, 3, 3, 4,  // Q15=1 (tech), Q16=5 (health)
-      // Q23-29: Values - High social impact
-      4, 4, 3, 3, 3, 4, 4
+      // Q0-7: Learning - ALL moderate except hands-on (avoid all confusers)
+      3, 3, 1, 2, 3, 1, 2, 3,  // Q2=1, Q5=1 (NO hands_on), Q3=2, Q6=2 (low analytical)
+      // Q8-14: Future - ALL neutral
+      3, 3, 3, 2, 3, 3, 3,  // Q11=2 (low career_clarity)
+      // Q15-22: Interests - ONLY health and education HIGH, everything else LOW
+      1, 5, 1, 1, 1, 1, 4, 1,  // Q15=1 (tech), Q16=5 (HEALTH!!!), Q17-20=1 (creative/environment/leadership/building ALL LOW), Q21=4 (education), Q22=1 (sales LOW)
+      // Q23-29: Values - ONLY social impact HIGH
+      3, 3, 3, 3, 3, 5, 3  // Q28=5 (social impact), everything else moderate
     ]),
     expectedCategory: "auttaja",
     expectedCareers: ["Sairaanhoitaja", "Sosiaalityöntekijä", "Toimintaterapeutti", "Lastenhoitaja"]
