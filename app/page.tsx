@@ -69,72 +69,62 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Hero Section - Premium animated design */}
-      <section className="relative container mx-auto px-6 pt-20 md:pt-32 pb-16 md:pb-24 overflow-hidden">
-        {/* Animated floating elements with morphing */}
-        <div className="absolute top-40 right-20 w-96 h-96 bg-gradient-to-br from-[#2B5F75]/10 to-[#4A7C59]/10 blur-3xl animate-float animate-morph"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-[#E8994A]/10 to-[#2B5F75]/10 blur-3xl animate-float animate-morph" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-[#4A7C59]/5 to-transparent blur-3xl animate-pulse-glow"></div>
-
-        {/* Animated grid pattern */}
-        <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(43 95 117) 1px, transparent 0)`,
-          backgroundSize: '48px 48px'
-        }}></div>
+      {/* Hero Section - Clean professional design */}
+      <section className="relative container mx-auto px-6 pt-20 md:pt-32 pb-16 md:pb-24">
+        {/* Subtle accent line (minimal decoration) */}
+        <div className="absolute top-0 right-0 w-px h-64 bg-gradient-to-b from-[#2B5F75]/50 to-transparent"></div>
 
         <div className="max-w-6xl mx-auto relative">
           <div className="text-center mb-16">
-            {/* Badge with animation */}
-            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 animate-fade-in-up">
-              <Sparkles className="h-4 w-4 text-[#E8994A] animate-pulse-glow" />
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-lg bg-white/10 border border-white/20 animate-fade-in-up">
+              <Sparkles className="h-4 w-4 text-[#E8994A]" />
               <span className="text-sm font-medium text-neutral-200">411 ammattia • 8 persoonallisuustyyppiä</span>
             </div>
 
-            {/* Main headline with staggered animation */}
+            {/* Main headline */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 text-white leading-[1.1] tracking-tight">
-              <span className="block animate-fade-in-up opacity-0 animation-delay-100" style={{animationFillMode: 'forwards'}}>Löydä ura, joka</span>
-              <span className="gradient-text block animate-fade-in-up opacity-0 animation-delay-200" style={{animationFillMode: 'forwards'}}>sopii sinulle</span>
+              Löydä ura, joka sopii sinulle
             </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-neutral-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light animate-fade-in-up opacity-0 animation-delay-300" style={{animationFillMode: 'forwards'}}>
+            <p className="text-lg sm:text-xl md:text-2xl text-neutral-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
               Tekoälypohjainen uratesti auttaa sinua löytämään oikean suunnan.
               <span className="block mt-2">Vastaa 30 kysymykseen ja saat henkilökohtaiset suositukset.</span>
             </p>
 
-            {/* CTAs - Premium animated buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up opacity-0 animation-delay-400" style={{animationFillMode: 'forwards'}}>
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button
                 size="lg"
                 asChild
-                className="group h-14 px-10 bg-neutral-900 hover:bg-neutral-800 text-white text-lg font-semibold rounded-full shadow-2xl hover:shadow-neutral-900/30 hover:scale-105 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden"
+                className="group h-14 px-10 bg-neutral-900 hover:bg-neutral-800 text-white text-lg font-semibold rounded-lg shadow-lg transition-colors"
               >
-                <Link href="/test" className="flex items-center gap-2 relative z-10">
+                <Link href="/test" className="flex items-center gap-2">
                   Aloita ilmainen testi
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-neutral-800 to-neutral-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
               <Button
                 size="lg"
                 asChild
-                className="h-14 px-10 bg-neutral-900 hover:bg-neutral-800 text-white text-lg font-semibold rounded-full shadow-2xl hover:shadow-neutral-900/30 hover:scale-105 hover:-translate-y-1 transition-all duration-500"
+                className="h-14 px-10 bg-neutral-900 hover:bg-neutral-800 text-white text-lg font-semibold rounded-lg shadow-lg transition-colors"
               >
                 <Link href="/ammatit">Selaa ammatteja</Link>
               </Button>
             </div>
 
-            {/* Trust indicators with staggered animation */}
-            <div className="flex items-center justify-center gap-8 text-sm text-neutral-400 flex-wrap animate-fade-in-up opacity-0 animation-delay-500" style={{animationFillMode: 'forwards'}}>
-              <span className="flex items-center gap-2 hover:text-neutral-200 transition-colors duration-300">
-                <div className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse-glow"></div>
+            {/* Trust indicators */}
+            <div className="flex items-center justify-center gap-8 text-sm text-neutral-400 flex-wrap">
+              <span className="flex items-center gap-2">
+                <div className="h-1.5 w-1.5 rounded-full bg-green-400"></div>
                 Maksuton
               </span>
-              <span className="flex items-center gap-2 hover:text-neutral-200 transition-colors duration-300">
-                <div className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse-glow"></div>
+              <span className="flex items-center gap-2">
+                <div className="h-1.5 w-1.5 rounded-full bg-green-400"></div>
                 5 minuuttia
               </span>
-              <span className="flex items-center gap-2 hover:text-neutral-200 transition-colors duration-300">
-                <div className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse-glow"></div>
+              <span className="flex items-center gap-2">
+                <div className="h-1.5 w-1.5 rounded-full bg-green-400"></div>
                 Tekoälypohjainen
               </span>
             </div>
