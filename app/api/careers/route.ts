@@ -17,7 +17,8 @@ export async function GET(request: NextRequest) {
     const search = searchParams.get('search');
     const cohort = searchParams.get('cohort');
 
-    let careers = careersData;
+    // Filter out invalid careers (missing id or title)
+    let careers = careersData.filter(c => c.id && c.title_fi);
 
     // Filter by category
     if (category && category !== 'all') {
