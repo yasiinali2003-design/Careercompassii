@@ -53,14 +53,6 @@ export default function HomePage() {
             >
               Meistä
             </Link>
-            {isLocalhost && (
-              <Link
-                href="/todistuspistelaskuri"
-                className="text-sm font-medium text-neutral-300 hover:text-white transition-all duration-300 hover:scale-105 hidden sm:block"
-              >
-                Todistuspistelaskuri
-              </Link>
-            )}
             <Link
               href="/teacher/login"
               className="text-sm font-medium text-neutral-300 hover:text-white transition-all duration-300 hover:scale-105 hidden sm:block"
