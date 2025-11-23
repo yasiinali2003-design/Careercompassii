@@ -2,6 +2,7 @@ import Link from "next/link"
 import { headers } from "next/headers"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Surface } from "@/components/ui/surface"
 import CategoryCard from "@/components/CategoryCard"
 import Logo from "@/components/Logo"
 import CallToActionSection from "@/components/CallToActionSection"
@@ -175,7 +176,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Student categories */}
-            <div className="content-box rounded-3xl p-10 card-hover">
+            <Surface variant="elevated" className="rounded-3xl p-10 transition-all duration-400 hover:translate-y-[-8px] hover:shadow-2xl">
               <div className="mb-6">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[#2B5F75]/10 to-[#2B5F75]/5">
                   <GraduationCap className="h-8 w-8 text-[#2B5F75]" />
@@ -204,9 +205,9 @@ export default function HomePage() {
                   <span className="text-neutral-300 text-sm">Saat selkeän kuvan erilaisista koulutuspoluista</span>
                 </li>
               </ul>
-            </div>
+            </Surface>
 
-            <div className="content-box rounded-3xl p-10 card-hover">
+            <Surface variant="elevated" className="rounded-3xl p-10 transition-all duration-400 hover:translate-y-[-8px] hover:shadow-2xl">
               <div className="mb-6">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[#E8994A]/10 to-[#E8994A]/5">
                   <Target className="h-8 w-8 text-[#E8994A]" />
@@ -235,9 +236,9 @@ export default function HomePage() {
                   <span className="text-neutral-300 text-sm">Tee tietoon perustuvia päätöksiä tulevaisuudestasi</span>
                 </li>
               </ul>
-            </div>
+            </Surface>
 
-            <div className="content-box rounded-3xl p-10 card-hover">
+            <Surface variant="elevated" className="rounded-3xl p-10 transition-all duration-400 hover:translate-y-[-8px] hover:shadow-2xl">
               <div className="mb-6">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[#4A7C59]/10 to-[#4A7C59]/5">
                   <Users className="h-8 w-8 text-[#4A7C59]" />
@@ -266,7 +267,7 @@ export default function HomePage() {
                   <span className="text-neutral-300 text-sm">Löydä seuraava askel selkeän analyysin avulla</span>
                 </li>
               </ul>
-            </div>
+            </Surface>
           </div>
         </div>
       </section>
