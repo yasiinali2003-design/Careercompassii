@@ -91,7 +91,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['laakari', 'erikoislaakari'],
     description: 'Yliopistotason lääketieteen koulutus, joka valmistaa lääkäreiksi.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 188.3,
       medianPoints: null,
       applicantCount: null
@@ -108,7 +108,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['laakari', 'erikoislaakari'],
     description: 'Lääketieteen koulutus, joka painottaa potilastyötä ja käytännön taitoja.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 182.3,
       medianPoints: null,
       applicantCount: null
@@ -125,7 +125,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['laakari', 'erikoislaakari'],
     description: 'Lääketieteen koulutus Turun yliopistossa.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 181.7,
       medianPoints: null,
       applicantCount: null
@@ -142,7 +142,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['laakari', 'erikoislaakari'],
     description: 'Lääketieteen koulutus Oulun yliopistossa.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 175.4,
       medianPoints: null,
       applicantCount: null
@@ -159,7 +159,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['laakari', 'erikoislaakari'],
     description: 'Lääketieteen koulutus Itä-Suomen yliopistossa.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 175.4,
       medianPoints: null,
       applicantCount: null
@@ -212,7 +212,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja', 'talousjohtaja'],
     description: 'Kauppatieteellinen koulutus, joka valmistaa liiketalouden asiantuntijoiksi.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 123.8,
       medianPoints: null,
       applicantCount: null
@@ -229,7 +229,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja'],
     description: 'Kauppatieteellinen koulutus, joka painottaa liiketoiminnan kehittämistä.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 116.6,
       medianPoints: null,
       applicantCount: null
@@ -257,7 +257,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja'],
     description: 'Kauppatieteellinen koulutus Turun yliopistossa.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 117.9,
       medianPoints: null,
       applicantCount: null
@@ -274,7 +274,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja'],
     description: 'Kauppatieteellinen koulutus Jyväskylän yliopistossa.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 111.2,
       medianPoints: null,
       applicantCount: null
@@ -291,7 +291,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja'],
     description: 'Kauppatieteellinen koulutus Hanken-kauppakorkeakoulussa Helsingissä.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 113.3,
       medianPoints: null,
       applicantCount: null
@@ -308,7 +308,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['liiketalousjohtaja', 'markkinointipaallikko', 'yritysneuvoja'],
     description: 'Kauppatieteellinen koulutus LUT-yliopistossa.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 106.5,
       medianPoints: null,
       applicantCount: null
@@ -409,7 +409,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['asianajaja', 'oikeusneuvos', 'notaari'],
     description: 'Oikeustieteen koulutus, joka valmistaa juristeiksi.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 134.2,
       medianPoints: null,
       applicantCount: null
@@ -426,7 +426,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['asianajaja', 'oikeusneuvos'],
     description: 'Oikeustieteen koulutus Turun yliopistossa.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 132.1,
       medianPoints: null,
       applicantCount: null
@@ -443,7 +443,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['asianajaja', 'oikeusneuvos'],
     description: 'Oikeustieteen koulutus Itä-Suomen yliopistossa.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 127.8,
       medianPoints: null,
       applicantCount: null
@@ -460,7 +460,7 @@ const manualStudyPrograms: StudyProgram[] = [
     relatedCareers: ['asianajaja', 'oikeusneuvos'],
     description: 'Oikeustieteen koulutus Lapin yliopistossa.',
     pointHistory: [{
-      year: '2025',
+      year: 2025,
       minPoints: 122.9,
       medianPoints: null,
       applicantCount: null

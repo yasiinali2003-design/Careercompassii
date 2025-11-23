@@ -2,8 +2,8 @@
  * Gap Analysis - Shows what grades need improvement to reach target programs
  */
 
-import { SubjectInputs, calculateTodistuspisteet, TodistuspisteScheme } from './index';
-import { SUBJECT_DEFINITIONS, GRADE_POINT_VALUES, GradeSymbol } from './config';
+import { SubjectInputs, calculateTodistuspisteet, TodistuspisteScheme } from '../todistuspiste';
+import { SUBJECT_DEFINITIONS, GradeSymbol } from './config';
 
 export interface GradeImprovement {
   subjectKey: string;
@@ -84,8 +84,8 @@ function getPossibleImprovements(
       }
     };
 
-    const currentCalc = calculateTodistuspisteet(inputs, scheme);
-    const newCalc = calculateTodistuspisteet(testInputs, scheme);
+    const currentCalc = calculateTodistuspisteet(inputs, { scheme });
+    const newCalc = calculateTodistuspisteet(testInputs, { scheme });
     const pointGain = newCalc.totalPoints - currentCalc.totalPoints;
 
     if (pointGain > 0) {
@@ -118,7 +118,7 @@ export function analyzeGap(
   targetPoints: number,
   scheme: TodistuspisteScheme = 'yliopisto'
 ): GapAnalysisResult {
-  const currentResult = calculateTodistuspisteet(inputs, scheme);
+  const currentResult = calculateTodistuspisteet(inputs, { scheme });
   const gap = targetPoints - currentResult.totalPoints;
 
   if (gap <= 0) {
@@ -169,7 +169,7 @@ export function analyzeGap(
       grade: improvement.suggestedGrade
     };
 
-    const testResult = calculateTodistuspisteet(testInputs, scheme);
+    const testResult = calculateTodistuspisteet(testInputs, { scheme });
     const actualGain = testResult.totalPoints - currentPoints;
 
     if (actualGain > 0) {

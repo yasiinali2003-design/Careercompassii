@@ -3,7 +3,7 @@
  * AI-powered suggestions for grade improvements based on effort and probability
  */
 
-import { SubjectInputs, calculateTodistuspisteet, TodistuspisteScheme } from './index';
+import { SubjectInputs, calculateTodistuspisteet, TodistuspisteScheme } from '../todistuspiste';
 import { SUBJECT_DEFINITIONS, GradeSymbol } from './config';
 import { analyzeGap, GradeImprovement } from './gapAnalysis';
 
@@ -28,7 +28,7 @@ export function generateSmartScenarios(
   targetPoints: number,
   scheme: TodistuspisteScheme = 'yliopisto'
 ): SmartScenario[] {
-  const currentResult = calculateTodistuspisteet(inputs, scheme);
+  const currentResult = calculateTodistuspisteet(inputs, { scheme });
   const gapAnalysis = analyzeGap(inputs, targetPoints, scheme);
 
   const scenarios: SmartScenario[] = [];
@@ -118,7 +118,7 @@ export function generateSmartScenarios(
       ...inputs,
       [bestNewSubject.key]: { grade: 'E' as GradeSymbol, ...inputs[bestNewSubject.key] }
     };
-    const testResult = calculateTodistuspisteet(testInputs, scheme);
+    const testResult = calculateTodistuspisteet(testInputs, { scheme });
     const potentialGain = testResult.totalPoints - currentResult.totalPoints;
 
     if (potentialGain > 0) {

@@ -399,6 +399,7 @@ export default function TodistuspistelaskuriPage() {
                 careerSlugs={careerSlugs}
                 educationType={educationType}
                 onOpenScenario={handleScenarioRequest}
+                userInputs={latestCalculatorInputs || undefined}
               />
             </section>
           )}

@@ -117,16 +117,25 @@ export interface TrendIndicator {
 }
 
 export function getTrendIndicator(
-  pointHistory: Array<{ year: string; minPoints: number }>
+  pointHistory: Array<{ year: string | number; minPoints: number | null }>
 ): TrendIndicator | null {
   if (!pointHistory || pointHistory.length < 2) {
     return null;
   }
 
-  // Sort by year descending
-  const sorted = [...pointHistory].sort((a, b) => b.year.localeCompare(a.year));
-  const latest = sorted[0].minPoints;
-  const previous = sorted[1].minPoints;
+  // Filter out entries with null minPoints and sort by year descending
+  const validHistory = pointHistory.filter(h => h.minPoints !== null);
+  if (validHistory.length < 2) {
+    return null;
+  }
+
+  const sorted = [...validHistory].sort((a, b) => {
+    const yearA = typeof a.year === 'string' ? a.year : String(a.year);
+    const yearB = typeof b.year === 'string' ? b.year : String(b.year);
+    return yearB.localeCompare(yearA);
+  });
+  const latest = sorted[0].minPoints!;
+  const previous = sorted[1].minPoints!;
   const change = latest - previous;
 
   if (Math.abs(change) < 2) {

@@ -7,9 +7,11 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ExternalLink, GraduationCap, Info, Search, SearchX, Star } from 'lucide-react';
 import { StudyProgram } from '@/lib/data/studyPrograms';
-import { getPointRangeCategory, formatPoints } from '@/lib/todistuspiste';
+import { getPointRangeCategory, formatPoints, SubjectInputs } from '@/lib/todistuspiste';
 import { ProgramDetailsModal } from '@/components/ProgramDetailsModal';
 import { fetchStudyPrograms } from '@/lib/api/studyPrograms';
+import { ProbabilityBadge } from '@/components/ProbabilityBadge';
+import { getTrendIndicator } from '@/lib/todistuspiste/probability';
 import Link from 'next/link';
 
 interface StudyProgramsListProps {
@@ -17,6 +19,7 @@ interface StudyProgramsListProps {
   careerSlugs: string[];
   educationType: 'yliopisto' | 'amk';
   onOpenScenario?: () => void;
+  userInputs?: SubjectInputs;
 }
 
 const FIELD_OPTIONS = [
@@ -52,7 +55,7 @@ const SORT_OPTIONS = [
 
 const FAVORITES_KEY = 'todistuspisteFavorites';
 
-export function StudyProgramsList({ points, careerSlugs, educationType, onOpenScenario }: StudyProgramsListProps) {
+export function StudyProgramsList({ points, careerSlugs, educationType, onOpenScenario, userInputs }: StudyProgramsListProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [fieldFilter, setFieldFilter] = useState('all');
   const [sortBy, setSortBy] = useState('match');
@@ -547,10 +550,12 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
               const isReachProgram = Boolean(program.reach || program.tags?.includes('reach'));
               const reachGap = isReachProgram ? Math.max(0, program.minPoints - points) : 0;
               const isFavorite = favorites.includes(program.id);
-              
+              const trend = getTrendIndicator(program.pointHistory || []);
+              const medianPoints = program.pointHistory?.[0]?.medianPoints ?? null;
+
               return (
-                <Card 
-                key={program.id} 
+                <Card
+                key={program.id}
                 className="transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
                 onClick={() => {
                   setSelectedProgram(program);
@@ -577,7 +582,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
                               {program.description}
                             </p>
                           )}
-                          <div className="flex flex-wrap gap-2 mb-2">
+                          <div className="flex flex-wrap gap-2 mb-3">
                             {matchBadge && (
                               <span className={`px-2 py-1 rounded-full text-xs font-medium ${matchBadge.color}`}>
                                 {matchBadge.text}
@@ -597,6 +602,28 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
                               {program.institutionType === 'yliopisto' ? 'Yliopisto' : 'AMK'}
                             </span>
                           </div>
+
+                          {/* Probability Indicator */}
+                          <div className="mb-3" onClick={(e) => e.stopPropagation()}>
+                            <ProbabilityBadge
+                              userPoints={points}
+                              programMinPoints={program.minPoints}
+                              programMedianPoints={medianPoints}
+                            />
+                          </div>
+
+                          {/* Trend Indicator */}
+                          {trend && (
+                            <div className="text-xs bg-gray-50 rounded px-3 py-2 mb-2">
+                              <span className="font-semibold">Trendi:</span>{' '}
+                              <span className={trend.color}>
+                                {trend.icon} {trend.label}
+                              </span>
+                              {trend.change > 0 && (
+                                <span className={trend.color}> ({trend.change > 0 ? '+' : ''}{trend.change.toFixed(1)} pistettä)</span>
+                              )}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
