@@ -358,9 +358,8 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   };
 
   return (
-    <>
+    <div className="mx-auto max-w-3xl px-4 py-10">
       <Toaster position="top-right" richColors closeButton />
-      <div className="mx-auto max-w-3xl px-4 py-10">
         {/* Progress Save Notification */}
       {showSaveNotification && (
         <div className="fixed top-4 right-4 z-50 animate-in slide-in-from-right duration-300">
@@ -1476,6 +1475,5 @@ const Summary = ({
         Analyysi perustuu vastauksiisi ja tarjoaa henkilökohtaisia urasuosituksia.
       </p>
     </div>
-    </>
   );
 };
