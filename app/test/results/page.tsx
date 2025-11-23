@@ -156,18 +156,6 @@ export default function ResultsPage() {
           <p className="text-xl text-gray-600 mb-6">
             {cohortCopy.subtitle}
           </p>
-
-          {/* Gemini 3 Enhancement Button */}
-          <Link href="/test/results/gemini">
-            <Button
-              className="bg-gradient-to-r from-[#2B5F75] to-[#4A7C59] hover:from-[#2B5F75]/90 hover:to-[#4A7C59]/90 text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
-            >
-              ✨ Kokeile Gemini 3 -tehostettua näkymää
-            </Button>
-          </Link>
-          <p className="text-sm text-gray-500 mt-2">
-            Interaktiivinen, animoitu näkymä generatiivisella tekoälyllä
-          </p>
         </div>
 
         {/* User Profile Summary */}
