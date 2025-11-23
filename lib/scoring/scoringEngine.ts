@@ -1094,6 +1094,12 @@ function determineDominantCategory(
   categoryScores.auttaja += (workstyle.teaching || 0) * 0.8;  // BOOSTED: Teaching style
   categoryScores.auttaja += (workstyle.motivation || 0) * 0.7;
   categoryScores.auttaja += (values.social_impact || 0) * 0.8; // BOOSTED: Social impact motivation
+
+  // YLA-specific boost for auttaja (middle schoolers with health/education interest)
+  if (cohort === 'YLA' && (interests.health || 0) > 0.6) {
+    categoryScores.auttaja += 3.0;  // Strong boost for YLA healthcare interest (beat jarjestaja!)
+  }
+
   // Penalize career_clarity and creative to avoid visionaari confusion
   categoryScores.auttaja -= (values.career_clarity || 0) * 0.3;  // Penalize career_clarity to avoid visionaari confusion
   categoryScores.auttaja -= (interests.creative || 0) * 0.2;  // Penalize creative to avoid visionaari confusion
@@ -1224,7 +1230,12 @@ function determineDominantCategory(
   categoryScores.jarjestaja += (values.stability || 0) * 0.8;  // Stability preference (increased)
   categoryScores.jarjestaja += (interests.analytical || 0) * 1.2;  // Analytical thinking (increased)
   // Penalize health, people, leadership to avoid auttaja/johtaja confusion
-  categoryScores.jarjestaja -= (interests.health || 0) * 0.4;  // Penalize health to avoid auttaja confusion
+  // STRONG penalty for HIGH health interest (healthcare workers are auttaja, not jarjestaja!)
+  if ((interests.health || 0) > 0.6) {
+    categoryScores.jarjestaja -= (interests.health || 0) * 3.0;  // Strong penalty for healthcare interest
+  } else {
+    categoryScores.jarjestaja -= (interests.health || 0) * 0.4;  // Small penalty for low health interest
+  }
   categoryScores.jarjestaja -= (interests.people || 0) * 0.3;  // Penalize people to avoid auttaja confusion
   categoryScores.jarjestaja -= (workstyle.leadership || 0) * 0.4;  // Penalize leadership to avoid johtaja confusion
   categoryScores.jarjestaja -= (interests.leadership || 0) * 0.3;  // Penalize leadership interest to avoid johtaja confusion

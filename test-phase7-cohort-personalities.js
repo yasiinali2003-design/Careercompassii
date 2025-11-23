@@ -42,14 +42,14 @@ const YLA_PROFILES = [
     cohort: "YLA",
     description: "Strong people/health interest, low technology interest",
     answers: generateAnswers([
-      // Q0-7: Learning - ALL moderate except hands-on (avoid all confusers)
-      3, 3, 1, 2, 3, 1, 2, 3,  // Q2=1, Q5=1 (NO hands_on), Q3=2, Q6=2 (low analytical)
-      // Q8-14: Future - ALL neutral
-      3, 3, 3, 2, 3, 3, 3,  // Q11=2 (low career_clarity)
-      // Q15-22: Interests - ONLY health and education HIGH, everything else LOW
-      1, 5, 1, 1, 1, 1, 4, 1,  // Q15=1 (tech), Q16=5 (HEALTH!!!), Q17-20=1 (creative/environment/leadership/building ALL LOW), Q21=4 (education), Q22=1 (sales LOW)
-      // Q23-29: Values - ONLY social impact HIGH
-      3, 3, 3, 3, 3, 5, 3  // Q28=5 (social impact), everything else moderate
+      // Q0-7: Learning - ALL 1 except hands-on (remove ALL analytical confusers!)
+      1, 1, 1, 1, 1, 1, 1, 1,  // Q3,Q4,Q6=1 (NO analytical!), Q2,Q5,Q7=1 (NO hands_on)
+      // Q8-14: Future - ALL 1 (NO career_clarity signals)
+      1, 1, 1, 1, 1, 1, 1,
+      // Q15-22: Interests - ONLY health and education HIGH, everything else 1
+      1, 5, 1, 1, 1, 1, 5, 1,  // Q15=1 (tech), Q16=5 (HEALTH!!!), Q17-20=1 (creative/environment/leadership/building ALL LOW), Q21=5 (education HIGH), Q22=1 (sales LOW)
+      // Q23-29: Values - ONLY social impact HIGH, structure=1 (NO jarjestaja signal!)
+      3, 3, 1, 1, 3, 5, 3  // Q25=1 (NO hands_on), Q26=1 (NO structure!), Q28=5 (social impact HIGH)
     ]),
     expectedCategory: "auttaja",
     expectedCareers: ["Sairaanhoitaja", "Sosiaalityöntekijä", "Toimintaterapeutti", "Lastenhoitaja"]
@@ -122,11 +122,14 @@ const TASO2_PROFILES = [
     cohort: "TASO2",
     description: "Hands-on technology, building things",
     answers: generateAnswers([
-      // Strong hands-on + technology
-      2, 3, 3, 5, 5, 4, 4, 4,  // Q0-7: Hands-on preference
-      3, 3, 3, 3, 3, 3, 3,      // Q8-14: Moderate planning
-      5, 1, 2, 2, 3, 5, 4, 4,  // Q15-22: Tech + building
-      3, 3, 3, 3, 4, 3, 3
+      // Q0-7: HIGH technology (Q0, Q4), LOW health (Q7), moderate analytical (Q2)
+      5, 2, 4, 2, 5, 2, 2, 1,  // Q0=5 (coding!), Q4=5 (web/mobile!), Q7=1 (NOT health), Q3=2 (NOT sports)
+      // Q8-14: LOW people/social
+      2, 2, 2, 2, 2, 3, 3,  // Q8-12 (people) ALL LOW
+      // Q15-22: LOW creative, LOW social, moderate building
+      2, 2, 2, 2, 2, 2, 3, 4,  // Q15-20 (creative/social) ALL LOW, Q21=3 (building), Q22=4 (automotive/hands-on)
+      // Q23-29: Moderate workstyle
+      3, 3, 3, 3, 3, 3, 3  // All moderate
     ]),
     expectedCategory: "innovoija",
     expectedCareers: ["DevOps-insinööri", "Full Stack -kehittäjä", "Pilvipalveluarkkitehti"]
@@ -137,10 +140,14 @@ const TASO2_PROFILES = [
     cohort: "TASO2",
     description: "Hands-on healthcare, helping people",
     answers: generateAnswers([
-      2, 3, 3, 5, 4, 4, 3, 4,
-      3, 3, 3, 4, 3, 3, 3,
-      1, 5, 2, 2, 3, 3, 4, 4,  // Q16=5 (health)
-      4, 4, 3, 3, 3, 4, 4
+      // Q0-7: LOW tech, HIGH health (Q7)
+      1, 2, 3, 2, 1, 2, 2, 5,  // Q0=1 (NO coding), Q4=1 (NO web dev), Q7=5 (health!!)
+      // Q8-14: HIGH people (Q8-12)
+      4, 4, 4, 4, 4, 3, 3,  // Q8-12 (people/helping) ALL HIGH
+      // Q15-22: LOW creative, moderate social
+      2, 2, 2, 2, 2, 3, 2, 2,  // Q15-19 (creative) LOW, Q20=3 (social moderate)
+      // Q23-29: Moderate workstyle
+      3, 3, 3, 3, 3, 3, 3
     ]),
     expectedCategory: "auttaja",
     expectedCareers: ["Sairaanhoitaja", "Lähihoitaja", "Ensihoitaja"]
@@ -151,10 +158,14 @@ const TASO2_PROFILES = [
     cohort: "TASO2",
     description: "Physical work, building, fixing things",
     answers: generateAnswers([
-      2, 2, 3, 5, 5, 5, 4, 4,
-      3, 3, 3, 3, 3, 3, 3,
-      2, 1, 2, 2, 3, 5, 4, 4,  // Q20=5 (building/fixing)
-      3, 3, 3, 3, 4, 3, 3
+      // Q0-7: LOW tech, LOW health, HIGH hands-on (Q3)
+      1, 2, 3, 5, 1, 2, 2, 1,  // Q0=1 (NO coding), Q3=5 (sports/physical!), Q4=1 (NO web), Q7=1 (NOT health)
+      // Q8-14: LOW people
+      2, 2, 2, 2, 2, 3, 3,  // Q8-12 (people) ALL LOW
+      // Q15-22: LOW creative, HIGH building (Q21, Q22)
+      2, 2, 2, 2, 2, 2, 5, 5,  // Q15-20 (creative/social) LOW, Q21=5 (construction!!), Q22=5 (automotive!!)
+      // Q23-29: Hands-on workstyle, LOW environment
+      3, 3, 1, 5, 5, 3, 4  // Q23-24=3, Q25=1 (NO environment!), Q26=5 (transportation/hands-on!!), Q27=5 (food/hands-on!), Q29=4 (performance)
     ]),
     expectedCategory: "rakentaja",
     expectedCareers: ["Sähköasentaja", "Rakennusmies", "Kirvesmies"]
