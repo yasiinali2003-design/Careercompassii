@@ -418,9 +418,40 @@ interface GuidanceSummaryProps {
 }
 
 function GuidanceSummary({ points, bonusPoints, strengths, inputs, variant = 'full', scheme = 'yliopisto' }: GuidanceSummaryProps) {
-  const summaryRaw = buildSummaryNarrative(inputs || {}, { totalPoints: points, bonusPoints, strengths });
+  // Get career test results from localStorage
+  const [careerContext, setCareerContext] = useState<{
+    topCareers?: Array<{ title?: string; category?: string }>;
+    category?: string;
+  } | null>(null);
+
+  useEffect(() => {
+    try {
+      const storedResultsRaw = localStorage.getItem('careerTestResults');
+      if (storedResultsRaw) {
+        const parsed = JSON.parse(storedResultsRaw);
+        setCareerContext({
+          topCareers: parsed?.topCareers || [],
+          category: parsed?.topCareers?.[0]?.category
+        });
+      }
+    } catch (error) {
+      console.warn('[GuidanceSummary] Failed to load career context', error);
+    }
+  }, []);
+
+  const summaryRaw = buildSummaryNarrative(inputs || {}, {
+    totalPoints: points,
+    bonusPoints,
+    strengths,
+    topCareers: careerContext?.topCareers,
+    category: careerContext?.category
+  });
   const summary = summaryRaw.length > 0 ? summaryRaw : `Pisteesi (${points.toFixed(2).replace('.', ',')}) antavat hyvän kuvan siitä, mihin koulutusohjelmiin kannattaa tarttua seuraavaksi.`;
-  const nextSteps = buildActionableNextSteps(points, scheme);
+  const nextSteps = buildActionableNextSteps(points, scheme, {
+    topCareers: careerContext?.topCareers,
+    category: careerContext?.category,
+    strengths
+  });
   const maxPoints = scheme === 'amk' ? 198 : 200;
   const percent = Math.max(0, Math.min(100, Math.round((points / maxPoints) * 100)));
   const ringStyle = {
