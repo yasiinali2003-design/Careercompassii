@@ -74,3 +74,4 @@ All logos are SVG format and can be edited:
 - Sizes are scalable (viewBox maintains aspect ratio)
 - Text can be modified in `logo-full.svg`
 
+

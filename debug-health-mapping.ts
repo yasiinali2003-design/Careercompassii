@@ -22,3 +22,4 @@ console.log('Health interest:', detailedScores.interests.health);
 console.log('People interest:', detailedScores.interests.people);
 console.log('All interests:', Object.entries(detailedScores.interests).filter(([, v]) => v > 0));
 
+

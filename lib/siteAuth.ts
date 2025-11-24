@@ -44,3 +44,4 @@ export function sitePasswordIsConfigured(): boolean {
 export function getDefaultSitePassword(): string {
   return DEFAULT_PASSWORD;
 }
+

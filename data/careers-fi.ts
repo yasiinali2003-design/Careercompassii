@@ -35762,6 +35762,1734 @@ export const careersData: CareerFI[] = [
     keywords: ["työelämä", "tulevaisuus", "HR"],
     study_length_estimate_months: 72
   },
+{
+  id: "regeneratiivisen-talouden-suunnittelija",
+  category: "visionaari",
+  title_fi: "Regeneratiivisen talouden suunnittelija",
+  title_en: "Regenerative Economy Designer",
+  short_description: "Regeneratiivisen talouden suunnittelija kehittää talousratkaisuja jotka palauttavat ekosysteemejä. Työ vaatii visionääristä ajattelua ja järjestelmäymmärrystä.",
+  main_tasks: [
+    "Regeneratiivisten talouskonseptien kehittäminen",
+    "Ekosysteemipalvelujen integrointi",
+    "Liiketoimintamallien innovointi",
+    "Vaikutusten mittaaminen",
+    "Sidosryhmäyhteistyö"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Ympäristötieteet tai taloustieteet",
+    "Regeneratiivisen talouden opinnot",
+    "Ekologisen talouden osaaminen"
+  ],
+  core_skills: [
+    "Regeneratiivinen talous",
+    "Järjestelmäajattelu",
+    "Ekologinen talous",
+    "Liiketoimintamallisuunnittelu",
+    "Vaikuttavuuden arviointi"
+  ],
+  tools_tech: [
+    "Ekosysteemipalvelujen arviointi",
+    "Vaikuttavuusmittarit",
+    "Liiketoimintasuunnittelutyökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "B2" },
+  salary_eur_month: {
+    median: 4800,
+    range: [4000, 6500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Regeneratiivisen talouden merkityksen kasvu luo kysyntää suunnittelijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Kestävyysasiantuntija", "Taloussuunnittelija"],
+  career_progression: ["Kestävyysjohtaja", "Strategiajohtaja"],
+  typical_employers: ["Konsulttiyritykset", "Järjestöt", "Innovaatioyritykset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["regeneratiivinen talous", "kestävyys", "ekosysteemi"],
+  study_length_estimate_months: 72
+},
+{
+  id: "datavirtojen-arkkitehti",
+  category: "visionaari",
+  title_fi: "Datavirtojen arkkitehti",
+  title_en: "Data Streams Architect",
+  short_description: "Datavirtojen arkkitehti suunnittelee tulevaisuuden dataratkaisuja. Työ vaatii teknologiaosaamista ja visionääristä ajattelua.",
+  main_tasks: [
+    "Datavirta-arkkitehtuurien suunnittelu",
+    "Reaaliaika-analytiikan kehittäminen",
+    "Dataekosysteemien rakentaminen",
+    "Teknologiavalinnat",
+    "Skaalautuvuuden varmistaminen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Tietotekniikan maisterin tutkinto",
+    "Data engineering -osaaminen",
+    "Arkkitehtuuriosaaminen"
+  ],
+  core_skills: [
+    "Data-arkkitehtuuri",
+    "Datavirrat",
+    "Reaaliaika-analytiikka",
+    "Pilvipalvelut",
+    "Skaalautuvuus"
+  ],
+  tools_tech: [
+    "Stream processing -alustat",
+    "Data pipeline -työkalut",
+    "Cloud platforms"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 6500,
+    range: [5500, 8500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Reaaliaika-datan merkityksen kasvu lisää kysyntää arkkitehdeille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Data Engineer", "Solution Architect"],
+  career_progression: ["Chief Data Officer", "CTO"],
+  typical_employers: ["Teknologiayritykset", "Datayritykset", "Suuryritykset"],
+  work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+  keywords: ["data", "arkkitehtuuri", "reaaliaika"],
+  study_length_estimate_months: 72
+},
+{
+  id: "vety-talouden-visionaari",
+  category: "visionaari",
+  title_fi: "Vetytalouden visionääri",
+  title_en: "Hydrogen Economy Visionary",
+  short_description: "Vetytalouden visionääri kehittää vetyteknologiaan perustuvia ratkaisuja. Työ vaatii teknologiaosaamista ja visionääristä ajattelua.",
+  main_tasks: [
+    "Vetytalouden strategioiden kehittäminen",
+    "Vetyteknologian sovellusten suunnittelu",
+    "Ekosysteemien rakentaminen",
+    "Kumppanuuksien koordinointi",
+    "Innovaatioiden kehittäminen"
+  ],
+  education_paths: [
+    "Korkeakoulututkinto: Energiatekniikan tai kemiantekniikan tutkinto",
+    "Vetyteknologian erikoistuminen",
+    "Energiatalouden osaaminen"
+  ],
+  core_skills: [
+    "Vetyteknologia",
+    "Energiatalous",
+    "Strateginen suunnittelu",
+    "Ekosysteemirakentaminen",
+    "Innovointi"
+  ],
+  tools_tech: [
+    "Energiamallinnustyökalut",
+    "Simulointiohjelmistot",
+    "Projektinhallintatyökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 5500,
+    range: [4500, 7500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Vetytalouden kehittyminen luo uusia mahdollisuuksia visionääreille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Energiatekniikan insinööri", "Tutkija"],
+  career_progression: ["Energiajohtaja", "CTO"],
+  typical_employers: ["Energiayritykset", "Teknologiayritykset", "Tutkimuslaitokset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["vetytalous", "energia", "kestävyys"],
+  study_length_estimate_months: 60
+},
+{
+  id: "digitaalisen-kaksosen-arkkitehti",
+  category: "visionaari",
+  title_fi: "Digitaalisen kaksosen arkkitehti",
+  title_en: "Digital Twin Architect",
+  short_description: "Digitaalisen kaksosen arkkitehti suunnittelee digitaalisia kaksosia fyysisille järjestelmille. Työ vaatii teknologiaosaamista ja visionääristä ajattelua.",
+  main_tasks: [
+    "Digitaalisten kaksosten arkkitehtuuri",
+    "IoT-integraatiot",
+    "Simulaatiomallien kehittäminen",
+    "Datan integrointi",
+    "Ennakoivan ylläpidon kehittäminen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Tekniikan alan maisterin tutkinto",
+    "IoT-osaaminen",
+    "Simulaatio-osaaminen"
+  ],
+  core_skills: [
+    "Digital twin -teknologia",
+    "IoT",
+    "Simulointi",
+    "Data-integraatio",
+    "Arkkitehtuuri"
+  ],
+  tools_tech: [
+    "Digital twin -alustat",
+    "IoT-alustat",
+    "Simulointiohjelmistot"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 6000,
+    range: [5000, 8000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Digitaalisten kaksosten yleistyminen lisää kysyntää arkkitehdeille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["IoT-insinööri", "Solution Architect"],
+  career_progression: ["CTO", "Tekninen johtaja"],
+  typical_employers: ["Teollisuusyritykset", "Teknologiayritykset", "Konsulttiyritykset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["digital twin", "IoT", "simulointi"],
+  study_length_estimate_months: 72
+},
+{
+  id: "kulttuurien-valisen-innovaation-asiantuntija",
+  category: "visionaari",
+  title_fi: "Kulttuurienvälisen innovaation asiantuntija",
+  title_en: "Cross-Cultural Innovation Specialist",
+  short_description: "Kulttuurienvälisen innovaation asiantuntija kehittää kulttuureja yhdistäviä innovaatioita. Työ vaatii kulttuuriosaamista ja visionääristä ajattelua.",
+  main_tasks: [
+    "Kulttuurienvälisten innovaatioiden kehittäminen",
+    "Globaalien trendien yhdistäminen",
+    "Monikulttuurisen yhteiskehittämisen fasilitointi",
+    "Kulttuurisen kontekstin ymmärtäminen",
+    "Innovaatioekosysteemien rakentaminen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Kulttuuriantropologia tai kansainvälinen liiketoiminta",
+    "Kulttuuriosaaminen",
+    "Innovaatiojohtamisen opinnot"
+  ],
+  core_skills: [
+    "Kulttuuriosaaminen",
+    "Innovaatiojohtaminen",
+    "Fasilitointi",
+    "Globaali ymmärrys",
+    "Yhteiskehittäminen"
+  ],
+  tools_tech: [
+    "Yhteiskehittämisalustat",
+    "Fasilitointityökalut",
+    "Kulttuurisen analyysin työkalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C2" },
+  salary_eur_month: {
+    median: 5000,
+    range: [4000, 7000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Globalisaatio ja kulttuurien kohtaaminen lisäävät kysyntää asiantuntijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Innovaatioasiantuntija", "Kulttuuriasiantuntija"],
+  career_progression: ["Innovaatiojohtaja", "Kansainvälisen liiketoiminnan johtaja"],
+  typical_employers: ["Kansainväliset yritykset", "Konsulttiyritykset", "Järjestöt"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+  keywords: ["kulttuuri", "innovaatio", "kansainvälisyys"],
+  study_length_estimate_months: 72
+},
+{
+  id: "nanoteknologian-visionaari",
+  category: "visionaari",
+  title_fi: "Nanoteknologian visionääri",
+  title_en: "Nanotechnology Visionary",
+  short_description: "Nanoteknologian visionääri kehittää nanoteknologian sovelluksia. Työ vaatii tieteellistä osaamista ja visionääristä ajattelua.",
+  main_tasks: [
+    "Nanoteknologian sovellusten kehittäminen",
+    "Nanorakenteiden suunnittelu",
+    "Tutkimus ja kehitys",
+    "Soveltava kehitys",
+    "Kaupallistaminen"
+  ],
+  education_paths: [
+    "Tohtorin tutkinto: Fysiikan tai kemiantekniikan tohtori",
+    "Nanoteknologian erikoistuminen",
+    "Post-doc tutkimus"
+  ],
+  core_skills: [
+    "Nanoteknologia",
+    "Nanomateriaali",
+    "Tutkimus",
+    "Innovointi",
+    "Soveltava kehitys"
+  ],
+  tools_tech: [
+    "Nanomittauslaitteet",
+    "Simulointityökalut",
+    "Tutkimustyökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C2" },
+  salary_eur_month: {
+    median: 6500,
+    range: [5500, 9000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Nanoteknologian sovellusten kehittyminen luo uusia mahdollisuuksia.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Tutkija", "Nanoteknologi"],
+  career_progression: ["Tutkimusjohtaja", "CTO"],
+  typical_employers: ["Tutkimuslaitokset", "Teknologiayritykset", "Yliopistot"],
+  work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+  keywords: ["nanoteknologia", "tutkimus", "innovaatio"],
+  study_length_estimate_months: 96
+},
+{
+  id: "edtech-visionaari",
+  category: "visionaari",
+  title_fi: "EdTech-visionääri",
+  title_en: "EdTech Visionary",
+  short_description: "EdTech-visionääri kehittää tulevaisuuden oppimisratkaisuja. Työ vaatii pedagogista ymmärrystä ja teknologiaosaamista.",
+  main_tasks: [
+    "Tulevaisuuden oppimisratkaisujen kehittäminen",
+    "Pedagogisten innovaatioiden suunnittelu",
+    "Oppimisanalytiikan hyödyntäminen",
+    "EdTech-strategioiden kehittäminen",
+    "Ekosysteemien rakentaminen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Kasvatustieteet tai tietotekniikka",
+    "EdTech-osaaminen",
+    "Pedagoginen osaaminen"
+  ],
+  core_skills: [
+    "EdTech",
+    "Pedagogiikka",
+    "Oppimisanalytiikka",
+    "Innovointi",
+    "Strateginen suunnittelu"
+  ],
+  tools_tech: [
+    "Oppimisalustat",
+    "Oppimisanalytiikkatyökalut",
+    "AI-pohjaiset oppimistyökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 5500,
+    range: [4500, 7500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Digitaalisen oppimisen kehittyminen lisää kysyntää EdTech-visionääreille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Opetussuunnittelija", "EdTech-asiantuntija"],
+  career_progression: ["Opetusjohtaja", "CPO"],
+  typical_employers: ["EdTech-yritykset", "Oppilaitokset", "Koulutusyritykset"],
+  work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["edtech", "oppiminen", "pedagogiikka"],
+  study_length_estimate_months: 72
+},
+{
+  id: "ilmastonmuutoksen-sopeutumissuunnittelija",
+  category: "visionaari",
+  title_fi: "Ilmastonmuutoksen sopeutumissuunnittelija",
+  title_en: "Climate Adaptation Planner",
+  short_description: "Ilmastonmuutoksen sopeutumissuunnittelija kehittää ilmastonmuutokseen sopeutumisratkaisuja. Työ vaatii visionääristä ajattelua ja ilmasto-osaamista.",
+  main_tasks: [
+    "Sopeutumisstrategioiden kehittäminen",
+    "Ilmastoriskien arviointi",
+    "Sopeutumistoimenpiteiden suunnittelu",
+    "Sidosryhmäyhteistyö",
+    "Rahoituksen hankkiminen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Ympäristötieteet tai vastaava",
+    "Ilmastonmuutoksen opinnot",
+    "Sopeutumissuunnittelun osaaminen"
+  ],
+  core_skills: [
+    "Ilmastonmuutoksen sopeutuminen",
+    "Riskiarviointi",
+    "Strateginen suunnittelu",
+    "Sidosryhmähallinta",
+    "Projektinhallinta"
+  ],
+  tools_tech: [
+    "Ilmastomallinnustyökalut",
+    "GIS-ohjelmat",
+    "Riskiarviointityökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "B2" },
+  salary_eur_month: {
+    median: 4800,
+    range: [4000, 6500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Ilmastonmuutoksen vaikutukset lisäävät sopeutumissuunnittelun tarvetta.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Ympäristösuunnittelija", "Ilmastoasiantuntija"],
+  career_progression: ["Kestävyysjohtaja", "Kehitysjohtaja"],
+  typical_employers: ["Kunnat", "Konsulttiyritykset", "Järjestöt"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["ilmastonmuutos", "sopeutuminen", "resilienssi"],
+  study_length_estimate_months: 72
+},
+{
+  id: "precision-agriculture-visionaari",
+  category: "visionaari",
+  title_fi: "Täsmäviljelyn visionääri",
+  title_en: "Precision Agriculture Visionary",
+  short_description: "Täsmäviljelyn visionääri kehittää teknologiapohjaisia maatalousratkaisuja. Työ vaatii maatalousosaamista ja teknologiaymmärrystä.",
+  main_tasks: [
+    "Täsmäviljelyratkaisujen kehittäminen",
+    "Teknologiasovellusten suunnittelu",
+    "Data-analytiikan hyödyntäminen",
+    "Innovaatioiden kehittäminen",
+    "Maatalouden modernisoiminen"
+  ],
+  education_paths: [
+    "Korkeakoulututkinto: Maataloustieteiden tai tietotekniikan tutkinto",
+    "Täsmäviljelyn erikoistuminen",
+    "AgTech-osaaminen"
+  ],
+  core_skills: [
+    "Täsmäviljely",
+    "Maataloustekn ologia",
+    "Data-analytiikka",
+    "IoT",
+    "Innovointi"
+  ],
+  tools_tech: [
+    "Maatalousteknologiat",
+    "IoT-sensorit",
+    "Data-analytiikkatyökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "B2" },
+  salary_eur_month: {
+    median: 5000,
+    range: [4000, 7000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Maatalouden teknologisoituminen lisää kysyntää täsmäviljelyn asiantuntijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Maatalousteknologi", "AgTech-asiantuntija"],
+  career_progression: ["Kehitysjohtaja", "CTO"],
+  typical_employers: ["AgTech-yritykset", "Maatalousyritykset", "Tutkimuslaitokset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["täsmäviljely", "maatalous", "teknologia"],
+  study_length_estimate_months: 60
+},
+{
+  id: "osallistavan-suunnittelun-asiantuntija",
+  category: "visionaari",
+  title_fi: "Osallistavan suunnittelun asiantuntija",
+  title_en: "Participatory Design Specialist",
+  short_description: "Osallistavan suunnittelun asiantuntija fasilitoi osallistavia suunnitteluprosesseja. Työ vaatii fasilitointitaitoja ja visionääristä ajattelua.",
+  main_tasks: [
+    "Osallistavan suunnittelun fasilitointi",
+    "Kansalaisosallistumisen edistäminen",
+    "Yhteiskehittämisen johtaminen",
+    "Demokratiainnovaatioiden kehittäminen",
+    "Menetelmien kehittäminen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Yhteiskuntatieteet tai muotoilu",
+    "Osallistavan suunnittelun koulutus",
+    "Fasilitoinnin osaaminen"
+  ],
+  core_skills: [
+    "Osallistava suunnittelu",
+    "Fasilitointi",
+    "Yhteiskehittäminen",
+    "Demokratiainnovaatio",
+    "Yhteisötyö"
+  ],
+  tools_tech: [
+    "Osallistamisen digitaaliset alustat",
+    "Fasilitointityökalut",
+    "Yhteistyötyökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B2", en: "B1" },
+  salary_eur_month: {
+    median: 4200,
+    range: [3500, 5500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Kansalaisosallistumisen merkityksen kasvu lisää kysyntää asiantuntijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Yhteisötyöntekijä", "Suunnittelija"],
+  career_progression: ["Kehityspäällikkö", "Demokratiajohtaja"],
+  typical_employers: ["Kunnat", "Järjestöt", "Konsulttiyritykset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["osallistaminen", "yhteiskehittäminen", "demokratia"],
+  study_length_estimate_months: 72
+},
+{
+  id: "seuraavan-sukupolven-energia-asiantuntija",
+  category: "visionaari",
+  title_fi: "Seuraavan sukupolven energia-asiantuntija",
+  title_en: "Next Generation Energy Specialist",
+  short_description: "Seuraavan sukupolven energia-asiantuntija kehittää innovatiivisia energiaratkaisuja. Työ vaatii energiaosaamista ja visionääristä ajattelua.",
+  main_tasks: [
+    "Uusien energiateknologioiden kehittäminen",
+    "Energiajärjestelmien suunnittelu",
+    "Innovaatioiden arviointi",
+    "Pilottiprojektien johtaminen",
+    "Strateginen suunnittelu"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Energiatekniikan maisterin tutkinto",
+    "Uusiutuvan energian erikoistuminen",
+    "Energiajärjestelmien osaaminen"
+  ],
+  core_skills: [
+    "Energiateknologia",
+    "Uusiutuva energia",
+    "Energiajärjestelmät",
+    "Innovointi",
+    "Strateginen suunnittelu"
+  ],
+  tools_tech: [
+    "Energiamallinnustyökalut",
+    "Simulointiohjelmistot",
+    "Projektinhallintatyökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 5500,
+    range: [4500, 7500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Energiamurros ja uudet energiateknologiat lisäävät kysyntää asiantuntijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Energiatekniikan insinööri", "Tutkija"],
+  career_progression: ["Energiajohtaja", "CTO"],
+  typical_employers: ["Energiayritykset", "Teknologiayritykset", "Tutkimuslaitokset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["energia", "uusiutuva", "innovaatio"],
+  study_length_estimate_months: 72
+},
+{
+  id: "post-growth-taloustieteilija",
+  category: "visionaari",
+  title_fi: "Kasvunjälkeisen talouden asiantuntija",
+  title_en: "Post-Growth Economy Specialist",
+  short_description: "Kasvunjälkeisen talouden asiantuntija kehittää vaihtoehtoisia talousmalleja. Työ vaatii talousosaamista ja visionääristä ajattelua.",
+  main_tasks: [
+    "Vaihtoehtoisten talousmallien kehittäminen",
+    "Hyvinvointitalouden tutkimus",
+    "Post-growth -strategioiden kehittäminen",
+    "Taloudellisten mittarien uudistaminen",
+    "Yhteiskunnallisen vaikuttamisen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Taloustieteen tai yhteiskuntatieteiden maisterin tutkinto",
+    "Ekologisen talouden opinnot",
+    "Hyvinvointitalouden osaaminen"
+  ],
+  core_skills: [
+    "Ekologinen taloustiede",
+    "Hyvinvointitalous",
+    "Talousmallisuunnittelu",
+    "Tutkimus",
+    "Vaikuttaminen"
+  ],
+  tools_tech: [
+    "Talousmallinnus työkalut",
+    "Hyvinvointimittarit",
+    "Tutkimustyökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 4500,
+    range: [3700, 6000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Kasvunjälkeisen talouden kiinnostus lisää kysyntää asiantuntijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Tutkija", "Talousasiantuntija"],
+  career_progression: ["Tutkimusjohtaja", "Strategiajohtaja"],
+  typical_employers: ["Tutkimuslaitokset", "Think tankit", "Järjestöt"],
+  work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["post-growth", "ekologinen talous", "hyvinvointi"],
+  study_length_estimate_months: 72
+},
+{
+  id: "eettisen-teknologian-kehittaja",
+  category: "visionaari",
+  title_fi: "Eettisen teknologian kehittäjä",
+  title_en: "Ethical Technology Developer",
+  short_description: "Eettisen teknologian kehittäjä varmistaa teknologian eettisyyden. Työ vaatii teknologiaosaamista ja eettistä ajattelua.",
+  main_tasks: [
+    "Eettisen teknologian kehittäminen",
+    "Teknologian eettinen arviointi",
+    "Eettisten periaatteiden implementointi",
+    "Teknologian vaikutusten arviointi",
+    "Koulutus ja konsultointi"
+  ],
+  education_paths: [
+    "Korkeakoulututkinto: Tietotekniikan tutkinto tai filosofia",
+    "Tekniikan etiikan opinnot",
+    "Teknologian kehitysosaaminen"
+  ],
+  core_skills: [
+    "Tekniikan etiikka",
+    "Teknologian kehitys",
+    "Eettinen arviointi",
+    "Vaikutusten arviointi",
+    "Konsultointi"
+  ],
+  tools_tech: [
+    "Kehitystyökalut",
+    "Eettisen arvioinnin työkalut",
+    "Dokumentointijärjestelmät"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 5200,
+    range: [4200, 7000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Teknologian eettisten kysymysten merkitys lisää kysyntää kehittäjille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Ohjelmistokehittäjä", "Etiikka-asiantuntija"],
+  career_progression: ["Chief Ethics Officer", "CTO"],
+  typical_employers: ["Teknologiayritykset", "Konsulttiyritykset", "Tutkimuslaitokset"],
+  work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+  keywords: ["etiikka", "teknologia", "kehitys"],
+  study_length_estimate_months: 60
+},
+{
+  id: "biodiverse-design-asiantuntija",
+  category: "visionaari",
+  title_fi: "Biodiversiteettisuunnittelija",
+  title_en: "Biodiversity Designer",
+  short_description: "Biodiversiteettisuunnittelija kehittää luonnon monimuotoisuutta tukevia ratkaisuja. Työ vaatii ekologista ymmärrystä ja visionääristä ajattelua.",
+  main_tasks: [
+    "Biodiversiteettiratkaisujen suunnittelu",
+    "Ekosysteemipalvelujen integrointi",
+    "Luontopohjaisten ratkaisujen kehittäminen",
+    "Lajiston suojelun edistäminen",
+    "Yhteistyö sidosryhmien kanssa"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Ekologian tai ympäristötieteiden maisterin tutkinto",
+    "Biodiversiteetin erikoistuminen",
+    "Suunnitteluosaaminen"
+  ],
+  core_skills: [
+    "Biodiversiteetti",
+    "Ekologia",
+    "Luontopohjaiset ratkaisut",
+    "Suunnittelu",
+    "Ekosysteemiajattelu"
+  ],
+  tools_tech: [
+    "GIS-ohjelmat",
+    "Ekologisen mallinnuksen työkalut",
+    "Biodiversiteettimittarit"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "B2" },
+  salary_eur_month: {
+    median: 4500,
+    range: [3700, 6000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Biodiversiteettikriisin huomioiminen lisää kysyntää suunnittelijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Ekologi", "Ympäristösuunnittelija"],
+  career_progression: ["Kestävyysjohtaja", "Ympäristöjohtaja"],
+  typical_employers: ["Konsulttiyritykset", "Kunnat", "Järjestöt"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["biodiversiteetti", "ekologia", "suojelu"],
+  study_length_estimate_months: 72
+},
+{
+  id: "teollisen-symbioosien-suunnittelija",
+  category: "visionaari",
+  title_fi: "Teollisen symbioosien suunnittelija",
+  title_en: "Industrial Symbiosis Designer",
+  short_description: "Teollisen symbioosien suunnittelija kehittää yritysten välistä resurssiyhteistyötä. Työ vaatii järjestelmäajattelua ja visionääristä otetta.",
+  main_tasks: [
+    "Teollisten symbioosien suunnittelu",
+    "Resurssivirtoje n optimointi",
+    "Yritysten välisen yhteistyön fasilitointi",
+    "Kiertotalousekosysteemien rakentaminen",
+    "Vaikutusten arviointi"
+  ],
+  education_paths: [
+    "Korkeakoulututkinto: Tekniikan tai ympäristötieteiden tutkinto",
+    "Teollisen ekologian opinnot",
+    "Kiertotalouden osaaminen"
+  ],
+  core_skills: [
+    "Teollinen ekologia",
+    "Kiertotalous",
+    "Järjestelmäajattelu",
+    "Resurssitehokkuus",
+    "Verkostoituminen"
+  ],
+  tools_tech: [
+    "Materiaalivirta-analyysityökalut",
+    "Järjestelmämallinnustyökalut",
+    "GIS-ohjelmat"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "B2" },
+  salary_eur_month: {
+    median: 4800,
+    range: [4000, 6500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Resurssitehokkuuden ja kiertotalouden merkitys lisää kysyntää suunnittelijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Kiertotalousasiantuntija", "Ympäristöinsinööri"],
+  career_progression: ["Kestävyysjohtaja", "Kehitysjohtaja"],
+  typical_employers: ["Teollisuusyritykset", "Konsulttiyritykset", "Kunnat"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["teollinen symbioosi", "kiertotalous", "resurssitehokkuus"],
+  study_length_estimate_months: 60
+},
+{
+  id: "seismic-resilience-suunnittelija",
+  category: "visionaari",
+  title_fi: "Resilienssisuunnittelija",
+  title_en: "Resilience Planner",
+  short_description: "Resilienssisuunnittelija kehittää yhteiskuntien ja järjestelmien selviytymiskykyä. Työ vaatii järjestelmäajattelua ja visionääristä otetta.",
+  main_tasks: [
+    "Resilienssistrategioiden kehittäminen",
+    "Kriisien ennakkoarviointi",
+    "Sopeutumiskyvyn vahvistaminen",
+    "Järjestelmien suunnittelu",
+    "Sidosryhmäyhteistyö"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Yhteiskuntatieteet tai vastaava",
+    "Resilienssisuunnittelun opinnot",
+    "Riskienhallinnan osaaminen"
+  ],
+  core_skills: [
+    "Resilienssi",
+    "Järjestelmäajattelu",
+    "Riskienhallinta",
+    "Strateginen suunnittelu",
+    "Kriisinhallinta"
+  ],
+  tools_tech: [
+    "Riskiarviointityökalut",
+    "Järjestelmämallinnustyökalut",
+    "Skenaariotyökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "B2" },
+  salary_eur_month: {
+    median: 4800,
+    range: [4000, 6500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Kriisien ja epävarmuuden kasvu lisää resilienssisuunnittelun tarvetta.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Riskienhallinnan asiantuntija", "Suunnittelija"],
+  career_progression: ["Riskienhallintajohtaja", "Strategiajohtaja"],
+  typical_employers: ["Kunnat", "Julkishallinto", "Konsulttiyritykset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["resilienssi", "kriisinhallinta", "sopeutumiskyky"],
+  study_length_estimate_months: 72
+},
+{
+  id: "neurodiverse-workplaces-asiantuntija",
+  category: "visionaari",
+  title_fi: "Neurodiversiteettiasiantuntija",
+  title_en: "Neurodiversity Specialist",
+  short_description: "Neurodiversiteettiasiantuntija kehittää neurokirjoa tukevia työympäristöjä. Työ vaatii visionääristä ajattelua ja ihmisten ymmärrystä.",
+  main_tasks: [
+    "Neurokirjoa tukevien työympäristöjen kehittäminen",
+    "Työpaikan saavutettavuuden parantaminen",
+    "Johtajien ja tiimien koulutus",
+    "Rekrytointikäytäntöjen uudistaminen",
+    "Työhyvinvoinnin edistäminen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Psykologia tai HR",
+    "Neurodiversiteetin osaaminen",
+    "Työympäristön kehittämisen opinnot"
+  ],
+  core_skills: [
+    "Neurodiversiteetti",
+    "HR-osaaminen",
+    "Saavutettavuus",
+    "Koulutus",
+    "Työhyvinvointi"
+  ],
+  tools_tech: [
+    "Saavutettavuuden arviointityökalut",
+    "HR-järjestelmät",
+    "Koulutusalustat"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "B2" },
+  salary_eur_month: {
+    median: 4500,
+    range: [3700, 6000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Neurodiversiteetin tunnistaminen ja arvostaminen lisäävät kysyntää asiantuntijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["HR-asiantuntija", "Työhyvinvoinnin asiantuntija"],
+  career_progression: ["HR-johtaja", "Kulttuurijohtaja"],
+  typical_employers: ["Yritykset", "Konsulttiyritykset", "Julkishallinto"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["neurodiversiteetti", "saavutettavuus", "työhyvinvointi"],
+  study_length_estimate_months: 72
+},
+{
+  id: "commons-talouden-kehittaja",
+  category: "visionaari",
+  title_fi: "Yhteisomistuutalouden kehittäjä",
+  title_en: "Commons Economy Developer",
+  short_description: "Yhteisomistustalouden kehittäjä kehittää yhteisomistukseen perustuvia talousratkaisuja. Työ vaatii visionääristä ajattelua ja talousosaamista.",
+  main_tasks: [
+    "Yhteisomistusmallien kehittäminen",
+    "Yhteisötalouden suunnittelu",
+    "Hallintomallien innovointi",
+    "Ekosysteemien rakentaminen",
+    "Vaikuttaminen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Taloustieteet tai yhteiskuntatieteet",
+    "Yhteisötalouden opinnot",
+    "Commons-talouden osaaminen"
+  ],
+  core_skills: [
+    "Commons-talous",
+    "Yhteisötalous",
+    "Hallintomallit",
+    "Innovointi",
+    "Vaikuttaminen"
+  ],
+  tools_tech: [
+    "Yhteisöalustat",
+    "Hallintojärjestelmät",
+    "Talousmallinnus työkalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 4200,
+    range: [3500, 5500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Vaihtoehtoisten omistus- ja hallintomallien kiinnostus lisää kysyntää kehittäjille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Yhteisökehittäjä", "Talousasiantuntija"],
+  career_progression: ["Kehitysjohtaja", "Strategiajohtaja"],
+  typical_employers: ["Järjestöt", "Osuuskunnat", "Tutkimuslaitokset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["commons", "yhteisomistus", "yhteisötalous"],
+  study_length_estimate_months: 72
+},
+{
+  id: "interspecies-design-asiantuntija",
+  category: "visionaari",
+  title_fi: "Lajien välisen suunnittelun asiantuntija",
+  title_en: "Interspecies Design Specialist",
+  short_description: "Lajien välisen suunnittelun asiantuntija kehittää ihmisen ja muiden lajien yhteiselon ratkaisuja. Työ vaatii visionääristä ajattelua ja ekologista ymmärrystä.",
+  main_tasks: [
+    "Lajien välisten suunnitteluratkaisujen kehittäminen",
+    "Multispecies design -menetelmien soveltaminen",
+    "Ympäristösuunnittelun kehittäminen",
+    "Tutkimus ja kehitys",
+    "Konseptisuunnittelu"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Muotoilu tai ekologia",
+    "Multispecies design -osaaminen",
+    "Ekologisen suunnittelun opinnot"
+  ],
+  core_skills: [
+    "Multispecies design",
+    "Ekologinen suunnittelu",
+    "Muotoilu",
+    "Tutkimus",
+    "Innovointi"
+  ],
+  tools_tech: [
+    "Suunnittelutyökalut",
+    "Ekologisen mallinnuksen työkalut",
+    "Visualisointiohjelmistot"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 4000,
+    range: [3300, 5500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Ekologisen kriisin tunnistaminen lisää lajien välisen suunnittelun kysyntää.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Muotoilija", "Ympäristösuunnittelija"],
+  career_progression: ["Design Lead", "Kehitysjohtaja"],
+  typical_employers: ["Muotoilutoimistot", "Tutkimuslaitokset", "Järjestöt"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["interspecies design", "ekologia", "muotoilu"],
+  study_length_estimate_months: 72
+},
+{
+  id: "transition-design-asiantuntija",
+  category: "visionaari",
+  title_fi: "Transitiomuotoilija",
+  title_en: "Transition Designer",
+  short_description: "Transitiomuotoilija kehittää yhteiskunnallisia siirtymiä tukevia ratkaisuja. Työ vaatii järjestelmäajattelua ja visionääristä otetta.",
+  main_tasks: [
+    "Transitiomuotoilun soveltaminen",
+    "Yhteiskunnallisten siirtymien fasilitointi",
+    "Visioiden ja roadmappien kehittäminen",
+    "Systeemisen muutoksen tukeminen",
+    "Sidosryhmien mobilisoiminen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Muotoilun tai yhteiskuntatieteiden maisterin tutkinto",
+    "Transitiomuotoilun opinnot",
+    "Järjestelmäajattelun osaaminen"
+  ],
+  core_skills: [
+    "Transitiomuotoilu",
+    "Järjestelmäajattelu",
+    "Fasilitointi",
+    "Strateginen suunnittelu",
+    "Muutosjohtaminen"
+  ],
+  tools_tech: [
+    "Muotoilutyökalut",
+    "Järjestelmämallinnustyökalut",
+    "Fasilitointialustat"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 4500,
+    range: [3700, 6000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Yhteiskunnallisten siirtymien tarve lisää kysyntää transitiomuotoilijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Muotoilija", "Yhteiskunnallinen kehittäjä"],
+  career_progression: ["Design Lead", "Strategiajohtaja"],
+  typical_employers: ["Muotoilutoimistot", "Konsulttiyritykset", "Järjestöt"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+  keywords: ["transition design", "muotoilu", "yhteiskunnallinen muutos"],
+  study_length_estimate_months: 72
+},
+{
+  id: "indigenous-knowledge-integrator",
+  category: "visionaari",
+  title_fi: "Alkuperäiskansojen tiedon integroija",
+  title_en: "Indigenous Knowledge Integrator",
+  short_description: "Alkuperäiskansojen tiedon integroija yhdistää perinteistä viisautta ja modernia tiedettä. Työ vaatii kulttuuriosaamista ja visionääristä ajattelua.",
+  main_tasks: [
+    "Perinteisen tiedon ja modernin tieteen yhdistäminen",
+    "Kulttuurisensitiivinen yhteistyö",
+    "Tiedonhallintamallien kehittäminen",
+    "Yhteiskehittämisen fasilitointi",
+    "Eettisten periaatteiden varmistaminen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Antropologia tai vastaava",
+    "Alkuperäiskansojen tutkimuksen opinnot",
+    "Kulttuurisen ymmärryksen osaaminen"
+  ],
+  core_skills: [
+    "Kulttuuriosaaminen",
+    "Perinteinen tieto",
+    "Yhteiskehittäminen",
+    "Etiikka",
+    "Fasilitointi"
+  ],
+  tools_tech: [
+    "Tiedonhallintajärjestelmät",
+    "Yhteistyöalustat",
+    "Dokumentointityökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 4200,
+    range: [3500, 5500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Perinteisen tiedon arvostuksen kasvu lisää kysyntää integroijille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Kulttuuriantropologi", "Tutkija"],
+  career_progression: ["Tutkimusjohtaja", "Kulttuurijohtaja"],
+  typical_employers: ["Tutkimuslaitokset", "Järjestöt", "Kansainväliset organisaatiot"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+  keywords: ["alkuperäiskansat", "perinteinen tieto", "kulttuurisensitiivisyys"],
+  study_length_estimate_months: 72
+},
+{
+  id: "biomimicry-specialist",
+  category: "visionaari",
+  title_fi: "Biomimikry-asiantuntija",
+  title_en: "Biomimicry Specialist",
+  short_description: "Biomimikry-asiantuntija kehittää luonnosta inspiroituvia ratkaisuja. Työ vaatii luontoymmärrystä ja visionääristä ajattelua.",
+  main_tasks: [
+    "Biomimikryratkaisujen kehittäminen",
+    "Luonnon toimintaperiaatteiden tutkimus",
+    "Innovaatioiden suunnittelu",
+    "Bioloogien ja insinöörien yhteistyön fasilitointi",
+    "Kestävien ratkaisujen kehittäminen"
+  ],
+  education_paths: [
+    "Korkeakoulututkinto: Biologia tai tekniikka",
+    "Biomimikryn erikoistuminen",
+    "Luonnon toimintaperiaatteiden osaaminen"
+  ],
+  core_skills: [
+    "Biomimikry",
+    "Biologia",
+    "Innovointi",
+    "Suunnittelu",
+    "Monitieteinen yhteistyö"
+  ],
+  tools_tech: [
+    "Biomimikrytietokannat",
+    "Suunnittelutyökalut",
+    "Simulointiohjelmistot"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 4800,
+    range: [4000, 6500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Kestävien ja luontopohjaisten ratkaisujen tarve lisää biomimikryn kysyntää.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Biologi", "Suunnittelija"],
+  career_progression: ["Innovaatiojohtaja", "Tutkimusjohtaja"],
+  typical_employers: ["Tuoteyritykset", "Tutkimuslaitokset", "Konsulttiyritykset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["biomimikry", "luonto", "innovaatio"],
+  study_length_estimate_months: 60
+},
+{
+  id: "regenerative-culture-builder",
+  category: "visionaari",
+  title_fi: "Regeneratiivisen kulttuurin rakentaja",
+  title_en: "Regenerative Culture Builder",
+  short_description: "Regeneratiivisen kulttuurin rakentaja kehittää yhteisöjä ja kulttuureita jotka tukevat uudistumista. Työ vaatii visionääristä ajattelua ja yhteisöosaamista.",
+  main_tasks: [
+    "Regeneratiivisten kulttuurien kehittäminen",
+    "Yhteisötyö ja fasilitointi",
+    "Arvo- ja kulttuurimuutoksen tukeminen",
+    "Osallistavien prosessien johtaminen",
+    "Resilienssin vahvistaminen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Yhteiskuntatieteet tai vastaava",
+    "Regeneratiivisen kulttuurin opinnot",
+    "Yhteisötyön osaaminen"
+  ],
+  core_skills: [
+    "Regeneratiivinen kulttuuri",
+    "Yhteisötyö",
+    "Fasilitointi",
+    "Kulttuurimuutos",
+    "Resilienssi"
+  ],
+  tools_tech: [
+    "Fasilitointityökalut",
+    "Yhteisöalustat",
+    "Prosessityökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "B2" },
+  salary_eur_month: {
+    median: 4000,
+    range: [3300, 5500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Yhteisöjen ja kulttuurien uudistumisen tarve lisää kysyntää rakentajille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Yhteisötyöntekijä", "Fasilitaattori"],
+  career_progression: ["Kulttuurijohtaja", "Kehitysjohtaja"],
+  typical_employers: ["Järjestöt", "Yhteisöt", "Konsulttiyritykset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+  keywords: ["regeneratiivinen kulttuuri", "yhteisö", "uudistuminen"],
+  study_length_estimate_months: 72
+},
+{
+  id: "whole-systems-designer",
+  category: "visionaari",
+  title_fi: "Kokonaisjärjestelmien suunnittelija",
+  title_en: "Whole Systems Designer",
+  short_description: "Kokonaisjärjestelmien suunnittelija kehittää kokonaisvaltaisia järjestelmäratkaisuja. Työ vaatii järjestelmäajattelua ja visionääristä otetta.",
+  main_tasks: [
+    "Kokonaisjärjestelmien suunnittelu",
+    "Järjestelmien vuorovaikutusten ymmärtäminen",
+    "Kompleksisten ongelmien ratkaiseminen",
+    "Systeemisen muutoksen suunnittelu",
+    "Sidosryhmien koordinointi"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Järjestelmätieteet tai vastaava",
+    "Järjestelmäajattelun opinnot",
+    "Kompleksisuuden osaaminen"
+  ],
+  core_skills: [
+    "Järjestelmäajattelu",
+    "Kompleksisuus",
+    "Kokonaisvaltainen suunnittelu",
+    "Systeeminen muutos",
+    "Fasilitointi"
+  ],
+  tools_tech: [
+    "Järjestelmämallinnustyökalut",
+    "Simulointiohjelmistot",
+    "Visualisointityökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 5500,
+    range: [4500, 7500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Kompleksisten ongelmien ratkaiseminen lisää järjestelmäsuunnittelijoiden kysyntää.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Järjestelmäasiantuntija", "Strateginen suunnittelija"],
+  career_progression: ["Strategiajohtaja", "Chief Systems Officer"],
+  typical_employers: ["Konsulttiyritykset", "Think tankit", "Suuryritykset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["järjestelmäajattelu", "kompleksisuus", "kokonaisvaltaisuus"],
+  study_length_estimate_months: 72
+},
+{
+  id: "urban-futures-asiantuntija",
+  category: "visionaari",
+  title_fi: "Kaupunkien tulevaisuuden asiantuntija",
+  title_en: "Urban Futures Specialist",
+  short_description: "Kaupunkien tulevaisuuden asiantuntija kehittää tulevaisuuden kaupunkiratkaisuja. Työ vaatii kaupunkisuunnittelun osaamista ja visionääristä ajattelua.",
+  main_tasks: [
+    "Tulevaisuuden kaupunkien suunnittelu",
+    "Kaupunkitrendien analysointi",
+    "Kestävien kaupunkiratkaisujen kehittäminen",
+    "Skenaariotyöskentely",
+    "Innovaatioiden edistäminen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Kaupunkisuunnittelu tai yhteiskuntatieteet",
+    "Tulevaisuudentutkimuksen opinnot",
+    "Kaupunkisuunnittelun osaaminen"
+  ],
+  core_skills: [
+    "Kaupunkisuunnittelu",
+    "Tulevaisuusajattelu",
+    "Skenaariosuunnittelu",
+    "Kestävyys",
+    "Innovointi"
+  ],
+  tools_tech: [
+    "GIS-ohjelmat",
+    "Kaupunkimallinnustyökalut",
+    "Skenaariotyökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 5000,
+    range: [4200, 6800],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Kaupungistuminen ja tulevaisuuden haasteet lisäävät kysyntää asiantuntijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Kaupunkisuunnittelija", "Tulevaisuustutkija"],
+  career_progression: ["Kehitysjohtaja", "Kaupunginjohtaja"],
+  typical_employers: ["Kunnat", "Konsulttiyritykset", "Tutkimuslaitokset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["kaupunki", "tulevaisuus", "suunnittelu"],
+  study_length_estimate_months: 72
+},
+{
+  id: "planetary-health-asiantuntija",
+  category: "visionaari",
+  title_fi: "Planeettaisen terveyden asiantuntija",
+  title_en: "Planetary Health Specialist",
+  short_description: "Planeettaisen terveyden asiantuntija kehittää ihmisten ja planeetan terveyden ratkaisuja. Työ vaatii kokonaisvaltaista ymmärrystä ja visionääristä ajattelua.",
+  main_tasks: [
+    "Planeettaisen terveyden ratkaisujen kehittäminen",
+    "One Health -lähestymistavan soveltaminen",
+    "Ekosysteemiterveyden edistäminen",
+    "Terveysvaikutusten arviointi",
+    "Poikkitieteellinen yhteistyö"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Lääketiede tai ympäristötieteet",
+    "Planeettaisen terveyden opinnot",
+    "One Health -osaaminen"
+  ],
+  core_skills: [
+    "Planeettainen terveys",
+    "One Health",
+    "Ekosysteemiterveys",
+    "Epidemiologia",
+    "Järjestelmäajattelu"
+  ],
+  tools_tech: [
+    "Terveysdata-analytiikka",
+    "Ekologiset mallinnustyökalut",
+    "GIS-ohjelmat"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 5500,
+    range: [4500, 7500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Planeettaisen terveyden merkityksen ymmärtäminen lisää kysyntää asiantuntijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Terveydenhuollon asiantuntija", "Ympäristöterveyden asiantuntija"],
+  career_progression: ["Terveysjohtaja", "Tutkimusjohtaja"],
+  typical_employers: ["Terveysjärjestöt", "Tutkimuslaitokset", "Kansainväliset organisaatiot"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+  keywords: ["planeettainen terveys", "one health", "ekosysteemiterveys"],
+  study_length_estimate_months: 84
+},
+{
+  id: "distributed-ledger-visionaari",
+  category: "visionaari",
+  title_fi: "Hajautettujen tietokantojen visionääri",
+  title_en: "Distributed Ledger Visionary",
+  short_description: "Hajautettujen tietokantojen visionääri kehittää blockchain-pohjaisia ratkaisuja. Työ vaatii teknologiaosaamista ja visionääristä ajattelua.",
+  main_tasks: [
+    "DLT-sovellusten kehittäminen",
+    "Hajautettujen järjestelmien suunnittelu",
+    "Konsensusmekanismien innovointi",
+    "Strateginen suunnittelu",
+    "Ekosysteemien rakentaminen"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Tietotekniikan maisterin tutkinto",
+    "Blockchain-teknologian erikoistuminen",
+    "Hajautettujen järjestelmien osaaminen"
+  ],
+  core_skills: [
+    "Blockchain",
+    "Distributed ledger",
+    "Hajautetut järjestelmät",
+    "Kryptografia",
+    "Strateginen ajattelu"
+  ],
+  tools_tech: [
+    "Blockchain-alustat",
+    "Smart contract -työkalut",
+    "Konsensusalgoritmit"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C2" },
+  salary_eur_month: {
+    median: 6500,
+    range: [5500, 9000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Hajautettujen teknologioiden kehittyminen luo kysyntää visionääreille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Blockchain-kehittäjä", "DLT-asiantuntija"],
+  career_progression: ["CTO", "Chief Architect"],
+  typical_employers: ["Blockchain-yritykset", "Fintech-yritykset", "Teknologiayritykset"],
+  work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["blockchain", "DLT", "hajautetut järjestelmät"],
+  study_length_estimate_months: 72
+},
+{
+  id: "post-anthropocentric-suunnittelija",
+  category: "visionaari",
+  title_fi: "Jälkiantroposentrinen suunnittelija",
+  title_en: "Post-Anthropocentric Designer",
+  short_description: "Jälkiantroposentrinen suunnittelija kehittää ihmiskeskeisyyden ylittäviä ratkaisuja. Työ vaatii filosofista ymmärrystä ja visionääristä ajattelua.",
+  main_tasks: [
+    "Jälkiantroposentrisen suunnittelun soveltaminen",
+    "More-than-human design -lähestymistapa",
+    "Ekologisten ja eettisten periaatteiden integrointi",
+    "Konseptikehitys",
+    "Kriittinen suunnittelu"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Muotoilu tai filosofia",
+    "Post-anthropocentric design -opinnot",
+    "Spekulatiivisen suunnittelun osaaminen"
+  ],
+  core_skills: [
+    "Post-anthropocentric design",
+    "Filosofia",
+    "Muotoilu",
+    "Kriittinen ajattelu",
+    "Konseptikehitys"
+  ],
+  tools_tech: [
+    "Muotoilutyökalut",
+    "Visualisointiohjelmistot",
+    "Spekulatiivisen suunnittelun työkalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 4000,
+    range: [3300, 5500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Ekologisen kriisin tunnistaminen lisää jälkiantroposentrisen suunnittelun kysyntää.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Muotoilija", "Konseptisuunnittelija"],
+  career_progression: ["Design Lead", "Creative Director"],
+  typical_employers: ["Muotoilutoimistot", "Tutkimuslaitokset", "Taideyritykset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["post-anthropocentric", "more-than-human", "filosofia"],
+  study_length_estimate_months: 72
+},
+{
+  id: "attention-economy-asiantuntija",
+  category: "visionaari",
+  title_fi: "Huomiotalouden asiantuntija",
+  title_en: "Attention Economy Specialist",
+  short_description: "Huomiotalouden asiantuntija kehittää eettisiä huomiotalouden ratkaisuja. Työ vaatii digitaalista ymmärrystä ja visionääristä ajattelua.",
+  main_tasks: [
+    "Huomiotalouden analysointi",
+    "Eettisten suunnitteluperiaatteiden kehittäminen",
+    "Käyttäjähyvinvoinnin edistäminen",
+    "Humane technology -lähestymistapa",
+    "Konsultointi ja koulutus"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Psykologia tai mediatiede",
+    "Huomiotalouden opinnot",
+    "UX-etiikan osaaminen"
+  ],
+  core_skills: [
+    "Huomiotalous",
+    "UX-etiikka",
+    "Käyttäytymispsykologia",
+    "Humane technology",
+    "Konsultointi"
+  ],
+  tools_tech: [
+    "UX-analytiikkatyökalut",
+    "Käyttäytymisanalyysityökalut",
+    "Eettisen arvioinnin työkalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 5200,
+    range: [4200, 7000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Digitaalisen hyvinvoinnin merkitys lisää kysyntää huomiotalouden asiantuntijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["UX-suunnittelija", "Digitaalisen hyvinvoinnin asiantuntija"],
+  career_progression: ["Chief Experience Officer", "Ethics Lead"],
+  typical_employers: ["Teknologiayritykset", "Konsulttiyritykset", "Tutkimuslaitokset"],
+  work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["huomiotalous", "humane technology", "digitaalinen hyvinvointi"],
+  study_length_estimate_months: 72
+},
+{
+  id: "computational-creativity-asiantuntija",
+  category: "visionaari",
+  title_fi: "Laskennallisen luovuuden asiantuntija",
+  title_en: "Computational Creativity Specialist",
+  short_description: "Laskennallisen luovuuden asiantuntija kehittää AI-pohjaisia luovia järjestelmiä. Työ vaatii teknologiaosaamista ja luovaa ajattelua.",
+  main_tasks: [
+    "Luovien AI-järjestelmien kehittäminen",
+    "Generatiivisen taiteen sovellusten luominen",
+    "Ihmisen ja AI:n yhteisluomisen fasilitointi",
+    "Tutkimus ja kehitys",
+    "Taiteilijoiden ja teknologien yhteistyö"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Tietotekniikan tai taiteen maisterin tutkinto",
+    "AI-osaaminen",
+    "Luovan koodauksen osaaminen"
+  ],
+  core_skills: [
+    "Laskennallinen luovuus",
+    "AI ja koneoppiminen",
+    "Generatiivinen taide",
+    "Luova koodaus",
+    "Ihmisen ja AI:n yhteistyö"
+  ],
+  tools_tech: [
+    "AI/ML-frameworkit",
+    "Generatiiviset mallit",
+    "Luovan koodauksen työkalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 5800,
+    range: [4800, 8000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Generatiivisen AI:n kehittyminen luo kysyntää laskennallisen luovuuden asiantuntijoille.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["AI-kehittäjä", "Creative technologist"],
+  career_progression: ["AI Lead", "Creative Director"],
+  typical_employers: ["Teknologiayritykset", "Mediatalot", "Peliyritykset"],
+  work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+  keywords: ["laskennallinen luovuus", "generatiivinen AI", "taide"],
+  study_length_estimate_months: 72
+},
+{
+  id: "anticipatory-governance-asiantuntija",
+  category: "visionaari",
+  title_fi: "Ennakoivan hallinnon asiantuntija",
+  title_en: "Anticipatory Governance Specialist",
+  short_description: "Ennakoivan hallinnon asiantuntija kehittää tulevaisuutta ennakoivia hallintomalleja. Työ vaatii strategista ajattelua ja hallinnon ymmärrystä.",
+  main_tasks: [
+    "Ennakoivan hallinnon mallien kehittäminen",
+    "Tulevaisuuskuvien integrointi päätöksentekoon",
+    "Joustavien hallintojärjestelmien suunnittelu",
+    "Skenaarioharjoitusten fasilitointi",
+    "Poliittinen neuvonanto"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Hallintotieteet tai vastaava",
+    "Tulevaisuudentutkimuksen opinnot",
+    "Hallintomallisuunnittelun osaaminen"
+  ],
+  core_skills: [
+    "Ennakoiva hallinto",
+    "Tulevaisuusajattelu",
+    "Hallintomallit",
+    "Skenaariotyöskentely",
+    "Strateginen neuvonanto"
+  ],
+  tools_tech: [
+    "Skenaariotyökalut",
+    "Hallintomallinnustyökalut",
+    "Päätöksenteon tukilaitteet"
+  ],
+  languages_required: { fi: "C1", sv: "B2", en: "C1" },
+  salary_eur_month: {
+    median: 5500,
+    range: [4500, 7500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Nopeat muutokset lisäävät ennakoivan hallinnon tarvetta.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Tulevaisuustutkija", "Strategiaasiantuntija"],
+  career_progression: ["Strategiajohtaja", "Hallintojohtaja"],
+  typical_employers: ["Julkishallinto", "Kansainväliset organisaatiot", "Think tankit"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+  keywords: ["ennakoiva hallinto", "tulevaisuus", "päätöksenteko"],
+  study_length_estimate_months: 72
+},
+{
+  id: "experiential-futures-suunnittelija",
+  category: "visionaari",
+  title_fi: "Kokemuksellisen tulevaisuuden suunnittelija",
+  title_en: "Experiential Futures Designer",
+  short_description: "Kokemuksellisen tulevaisuuden suunnittelija luo koettavia tulevaisuusskenaarioita. Työ vaatii luovuutta ja tulevaisuusajattelua.",
+  main_tasks: [
+    "Kokemuksellisten tulevaisuusskenaarioiden luominen",
+    "Tulevaisuusinstallaa tioiden suunnittelu",
+    "Spekulatiivisen muotoilun soveltaminen",
+    "Työpajojen fasilitointi",
+    "Tulevaisuuden konkretisointi"
+  ],
+  education_paths: [
+    "Korkeakoulututkinto: Muotoilun tai tulevaisuudentutkimuksen tutkinto",
+    "Experiential futures -osaaminen",
+    "Spekulatiivisen muotoilun osaaminen"
+  ],
+  core_skills: [
+    "Experiential futures",
+    "Spekulatiivinen muotoilu",
+    "Fasilitointi",
+    "Installaatiosuunnittelu",
+    "Tulevaisuusajattelu"
+  ],
+  tools_tech: [
+    "Muotoilutyökalut",
+    "Prototyyppaustyökalut",
+    "Installaatiosuunnittelutyökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 4500,
+    range: [3700, 6000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Tulevaisuuden konkretisoinnin tarve lisää kokemuksellisen tulevaisuuden suunnittelijoiden kysyntää.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Muotoilija", "Tulevaisuustutkija"],
+  career_progression: ["Design Lead", "Innovaatiojohtaja"],
+  typical_employers: ["Muotoilutoimistot", "Innovaatiokeskukset", "Konsulttiyritykset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+  keywords: ["experiential futures", "spekulatiivinen muotoilu", "tulevaisuus"],
+  study_length_estimate_months: 60
+},
+{
+  id: "solarpunk-visionaari",
+  category: "visionaari",
+  title_fi: "Solarpunk-visionääri",
+  title_en: "Solarpunk Visionary",
+  short_description: "Solarpunk-visionääri kehittää optimistisia ja kestäviä tulevaisuusvisioita. Työ vaatii luovuutta ja kestävyysosaamista.",
+  main_tasks: [
+    "Solarpunk-tulevaisuuskuvien kehittäminen",
+    "Optimististen skenaarioiden luominen",
+    "Kestävien teknologiaratkaisujen visiointi",
+    "Yhteisöllisten tulevaisuuksien suunnittelu",
+    "Kulttuurisen muutoksen inspirointi"
+  ],
+  education_paths: [
+    "Korkeakoulututkinto: Muotoilu, ympäristötieteet tai tulevaisuudentutkimus",
+    "Solarpunk-liikkeen ymmärrys",
+    "Kestävän kehityksen osaaminen"
+  ],
+  core_skills: [
+    "Solarpunk",
+    "Tulevaisuusvisiointi",
+    "Kestävyys",
+    "Yhteisöllisyys",
+    "Luovuus"
+  ],
+  tools_tech: [
+    "Visualisointityökalut",
+    "Muotoilutyökalut",
+    "Tarinankerronta-alustat"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 4000,
+    range: [3300, 5500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Tarve optimistisille tulevaisuuskuville lisää solarpunk-visionäärien kysyntää.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Muotoilija", "Tulevaisuustutkija"],
+  career_progression: ["Creative Director", "Innovaatiojohtaja"],
+  typical_employers: ["Muotoilutoimistot", "Järjestöt", "Innovaatioyritykset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+  keywords: ["solarpunk", "optimistinen tulevaisuus", "kestävyys"],
+  study_length_estimate_months: 60
+},
+{
+  id: "sensorinen-teknologia-visionaari",
+  category: "visionaari",
+  title_fi: "Sensorisen teknologian visionääri",
+  title_en: "Sensory Technology Visionary",
+  short_description: "Sensorisen teknologian visionääri kehittää uusia aistimuskokemuksia teknologian avulla. Työ vaatii teknologiaosaamista ja luovaa ajattelua.",
+  main_tasks: [
+    "Sensoristen teknologioiden kehittäminen",
+    "Haptiikan ja kinestetiikan hyödyntäminen",
+    "Multisensoristen kokemusten suunnittelu",
+    "Immersion teknologioiden innovointi",
+    "Tutkimus ja kehitys"
+  ],
+  education_paths: [
+    "Korkeakoulututkinto: Tietotekniikan tai muotoilun tutkinto",
+    "Sensorisen teknologian erikoistuminen",
+    "HCI-osaaminen"
+  ],
+  core_skills: [
+    "Sensorinen teknologia",
+    "Haptiikka",
+    "Human-computer interaction",
+    "UX-suunnittelu",
+    "Innovointi"
+  ],
+  tools_tech: [
+    "Sensori teknologia",
+    "Haptiset laitteet",
+    "VR/AR-alustat"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 5500,
+    range: [4500, 7500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Immersion teknologioiden kehittyminen lisää sensorisen teknologian kysyntää.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["UX-suunnittelija", "Interaction designer"],
+  career_progression: ["Design Lead", "CTO"],
+  typical_employers: ["Teknologiayritykset", "Peliyritykset", "VR/AR-yritykset"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+  keywords: ["sensorinen teknologia", "haptiikka", "immersio"],
+  study_length_estimate_months: 60
+},
+{
+  id: "slow-technology-asiantuntija",
+  category: "visionaari",
+  title_fi: "Hitaan teknologian asiantuntija",
+  title_en: "Slow Technology Specialist",
+  short_description: "Hitaan teknologian asiantuntija kehittää harkittuja ja kestäviä teknologiaratkaisuja. Työ vaatii eettistä ajattelua ja visionääristä otetta.",
+  main_tasks: [
+    "Hitaan teknologian periaatteiden soveltaminen",
+    "Kestävien teknologiaratkaisujen kehittäminen",
+    "Harkitun suunnittelun edistäminen",
+    "Teknologian hyvinvointivaikutusten arviointi",
+    "Konsultointi ja koulutus"
+  ],
+  education_paths: [
+    "Korkeakoulututkinto: Tietotekniikan tai filosofian tutkinto",
+    "Teknologian etiikan opinnot",
+    "Kestävän teknologian osaaminen"
+  ],
+  core_skills: [
+    "Slow technology",
+    "Teknologian etiikka",
+    "Kestävä suunnittelu",
+    "Hyvinvointi",
+    "Harkittu innovointi"
+  ],
+  tools_tech: [
+    "Eettisen arvioinnin työkalut",
+    "Suunnittelutyökalut",
+    "Hyvinvointianalytiikka"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C1" },
+  salary_eur_month: {
+    median: 4800,
+    range: [4000, 6500],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Teknologian haittavaikutusten tunnistaminen lisää hitaan teknologian kysyntää.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["UX-suunnittelija", "Teknologian etiikka-asiantuntija"],
+  career_progression: ["Chief Ethics Officer", "Design Lead"],
+  typical_employers: ["Teknologiayritykset", "Konsulttiyritykset", "Tutkimuslaitokset"],
+  work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+  keywords: ["slow technology", "etiikka", "hyvinvointi"],
+  study_length_estimate_months: 60
+},
+{
+  id: "cognitive-liberty-asiantuntija",
+  category: "visionaari",
+  title_fi: "Kognitiivisen vapauden asiantuntija",
+  title_en: "Cognitive Liberty Specialist",
+  short_description: "Kognitiivisen vapauden asiantuntija puolustaa ajattelun vapautta teknologian aikakaudella. Työ vaatii eettistä ymmärrystä ja visionääristä ajattelua.",
+  main_tasks: [
+    "Kognitiivisen vapauden puolustaminen",
+    "Neurotekn ologian eettinen arviointi",
+    "Ajattelun autonomian edistäminen",
+    "Lakien ja säädösten kehittäminen",
+    "Koulutus ja tiedotus"
+  ],
+  education_paths: [
+    "Ylempi korkeakoulututkinto: Filosofia, oikeustiede tai neurotiede",
+    "Kognitiivisen vapauden opinnot",
+    "Neurotieteen etiikan osaaminen"
+  ],
+  core_skills: [
+    "Kognitiivinen vapaus",
+    "Neuroetu ikka",
+    "Ihmisoikeudet",
+    "Lakiosaaminen",
+    "Eettinen ajattelu"
+  ],
+  tools_tech: [
+    "Eettisen arvioinnin työkalut",
+    "Lakianalyysi työkalut",
+    "Tutkimustyökalut"
+  ],
+  languages_required: { fi: "C1", sv: "B1", en: "C2" },
+  salary_eur_month: {
+    median: 5000,
+    range: [4000, 7000],
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  job_outlook: {
+    status: "kasvaa",
+    explanation: "Neurotekn ologian kehittyminen lisää kognitiivisen vapauden asiantuntijoiden tarvetta.",
+    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+  },
+  entry_roles: ["Etiikka-asiantuntija", "Ihmisoikeusasiantuntija"],
+  career_progression: ["Chief Ethics Officer", "Lakiasiainjohtaja"],
+  typical_employers: ["Järjestöt", "Tutkimuslaitokset", "Kansainväliset organisaatiot"],
+  work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+  keywords: ["kognitiivinen vapaus", "neuroetiikka", "ihmisoikeudet"],
+  study_length_estimate_months: 84
+},
 
   {
     id: "tapahtumakoordinaattori",
@@ -39823,6 +41551,1518 @@ export const careersData: CareerFI[] = [
   },
 
   {
+    id: "devops-insinoori",
+    category: "innovoija",
+    title_fi: "DevOps-insinööri",
+    title_en: "DevOps Engineer",
+    short_description: "DevOps-insinööri yhdistää kehitys- ja tuotantoprosesseja. Työ vaatii teknistä osaamista ja prosessiosaamista.",
+    main_tasks: [
+      "CI/CD-putkistojen rakentaminen",
+      "Infrastruktuurin automatisointi",
+      "Tuotantoympäristöjen hallinta",
+      "Monitorointi ja lokitus",
+      "Kehittäjien tukeminen"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tutkinto",
+      "DevOps-sertifikaatit",
+      "Ohjelmistokehityskokemus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "DevOps",
+      "CI/CD",
+      "Kontittaminen",
+      "Pilvipalvelut",
+      "Automatisointi"
+    ],
+    tools_tech: [
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "Terraform"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 5000,
+      range: [4200, 6500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "DevOps-kulttuurin yleistyminen lisää kysyntää DevOps-insinööreille."
+    },
+    entry_roles: ["Järjestelmäylläpitäjä", "Ohjelmistokehittäjä"],
+    career_progression: ["Senior DevOps Engineer", "Platform Engineer"],
+    typical_employers: ["IT-yritykset", "Teknologiayritykset", "Startup-yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["DevOps", "CI/CD", "automatisointi"],
+    study_length_estimate_months: 48
+  },
+
+  {
+    id: "cloud-arkkitehti",
+    category: "innovoija",
+    title_fi: "Pilviarkkitehti",
+    title_en: "Cloud Architect",
+    short_description: "Pilviarkkitehti suunnittelee pilviratkaisuja. Työ vaatii teknistä osaamista ja arkkitehtuuriymmärrystä.",
+    main_tasks: [
+      "Pilvi-arkkitehtuurien suunnittelu",
+      "Pilviratkaisujen valinta",
+      "Skaalautuvuuden varmistaminen",
+      "Kustannusoptimointi",
+      "Turvallisuusarkkitehtuuri"
+    ],
+    impact: [],
+    education_paths: [
+      "Ylempi korkeakoulututkinto: Tietotekniikan maisterin tutkinto",
+      "Pilvisertifikaatit (AWS, Azure, GCP)",
+      "Arkkitehtuurikokemus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Pilvi-arkkitehtuuri",
+      "AWS/Azure/GCP",
+      "Skaalautuvuus",
+      "Turvallisuus",
+      "Kustannusoptimointi"
+    ],
+    tools_tech: [
+      "AWS",
+      "Azure",
+      "Google Cloud",
+      "Terraform"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 6000,
+      range: [5000, 8500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Pilvisiirtymä lisää kysyntää pilviarkkitehdeille."
+    },
+    entry_roles: ["Cloud Engineer", "Solution Architect"],
+    career_progression: ["Principal Architect", "CTO"],
+    typical_employers: ["IT-yritykset", "Konsulttiyritykset", "Suuryritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["pilvi", "arkkitehtuuri", "AWS"],
+    study_length_estimate_months: 72
+  },
+
+  {
+    id: "full-stack-kehittaja",
+    category: "innovoija",
+    title_fi: "Full Stack -kehittäjä",
+    title_en: "Full Stack Developer",
+    short_description: "Full Stack -kehittäjä hallitsee sekä frontend- että backend-kehityksen. Työ vaatii laaja-alaista ohjelmointiosaamista.",
+    main_tasks: [
+      "Web-sovellusten kehittäminen",
+      "Frontend-kehitys",
+      "Backend-kehitys",
+      "Tietokantojen suunnittelu",
+      "API-kehitys"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tutkinto",
+      "Ohjelmointikurssit",
+      "Portfolio projekteista"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "JavaScript/TypeScript",
+      "React/Angular/Vue",
+      "Node.js/Python/Java",
+      "Tietokannat",
+      "REST/GraphQL"
+    ],
+    tools_tech: [
+      "Git",
+      "VS Code",
+      "Docker",
+      "Postman"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Web-sovellusten jatkuva kysyntä lisää Full Stack -kehittäjien tarvetta."
+    },
+    entry_roles: ["Junior Developer", "Frontend Developer"],
+    career_progression: ["Senior Full Stack Developer", "Tech Lead"],
+    typical_employers: ["IT-yritykset", "Startup-yritykset", "Digitoimistot"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["full stack", "web-kehitys", "JavaScript"],
+    study_length_estimate_months: 48
+  },
+
+  {
+    id: "blockchain-kehittaja",
+    category: "innovoija",
+    title_fi: "Blockchain-kehittäjä",
+    title_en: "Blockchain Developer",
+    short_description: "Blockchain-kehittäjä kehittää hajautettuja sovelluksia. Työ vaatii blockchain-osaamista ja ohjelmointitaitoja.",
+    main_tasks: [
+      "Älykkäiden sopimusten kehittäminen",
+      "Blockchain-sovellusten rakentaminen",
+      "DApp-kehitys",
+      "Konsensusmekanismien implementointi",
+      "Turvallisuusarviointi"
+    ],
+    impact: [],
+    education_paths: [
+      "Korkeakoulututkinto: Tietotekniikan tutkinto",
+      "Blockchain-sertifikaatit",
+      "Kryptografian osaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Blockchain",
+      "Smart contracts",
+      "Solidity/Rust",
+      "Kryptografia",
+      "DApp-kehitys"
+    ],
+    tools_tech: [
+      "Ethereum",
+      "Solidity",
+      "Web3.js",
+      "Truffle"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 6 },
+    salary_eur_month: {
+      median: 5500,
+      range: [4500, 8000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Blockchain-teknologian kehittyminen lisää kysyntää kehittäjille."
+    },
+    entry_roles: ["Junior Blockchain Developer", "Smart Contract Developer"],
+    career_progression: ["Senior Blockchain Developer", "Blockchain Architect"],
+    typical_employers: ["Blockchain-yritykset", "Fintech-yritykset", "Kryptoyritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["blockchain", "smart contracts", "Web3"],
+    study_length_estimate_months: 60
+  },
+
+  {
+    id: "iot-insinoori",
+    category: "innovoija",
+    title_fi: "IoT-insinööri",
+    title_en: "IoT Engineer",
+    short_description: "IoT-insinööri kehittää esineiden internetin ratkaisuja. Työ vaatii embedded-osaamista ja verkko-osaamista.",
+    main_tasks: [
+      "IoT-laitteiden kehittäminen",
+      "Sensorien integrointi",
+      "Verkkoprotokollien implementointi",
+      "Datankeruun suunnittelu",
+      "Edge computing"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Sulautettujen järjestelmien tai tietotekniikan tutkinto",
+      "IoT-sertifikaatit",
+      "Embedded-osaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "IoT",
+      "Embedded systems",
+      "Sensorit",
+      "Verkkoprotokollat",
+      "Edge computing"
+    ],
+    tools_tech: [
+      "Arduino",
+      "Raspberry Pi",
+      "MQTT",
+      "AWS IoT"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 4 },
+    salary_eur_month: {
+      median: 4800,
+      range: [4000, 6500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "IoT-laitteiden yleistyminen lisää IoT-insinöörien kysyntää."
+    },
+    entry_roles: ["Embedded Developer", "Junior IoT Engineer"],
+    career_progression: ["Senior IoT Engineer", "IoT Architect"],
+    typical_employers: ["IoT-yritykset", "Teknologiayritykset", "Teollisuusyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["IoT", "embedded", "sensorit"],
+    study_length_estimate_months: 48
+  },
+
+  {
+    id: "robotiikka-insinoori",
+    category: "innovoija",
+    title_fi: "Robotiikka-insinööri",
+    title_en: "Robotics Engineer",
+    short_description: "Robotiikka-insinööri kehittää robotteja ja automaatiojärjestelmiä. Työ vaatii mekaniikkaa, elektroniikkaa ja ohjelmointia.",
+    main_tasks: [
+      "Robottien suunnittelu ja kehitys",
+      "Ohjausjärjestelmien ohjelmointi",
+      "Sensorien integrointi",
+      "Tekoälyn soveltaminen",
+      "Testaus ja validointi"
+    ],
+    impact: [],
+    education_paths: [
+      "Ylempi korkeakoulututkinto: Automaatiotekniikan tai robotiikan maisterin tutkinto",
+      "Robotiikan erikoistuminen",
+      "Mekaniikka- ja elektroniikkaosaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Robotiikka",
+      "Automaatio",
+      "Ohjelmointi (Python, C++)",
+      "Mekaniikka",
+      "Koneoppiminen"
+    ],
+    tools_tech: [
+      "ROS",
+      "MATLAB",
+      "CAD-ohjelmat",
+      "Simulointityökalut"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 5200,
+      range: [4500, 7000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Automaation ja robotiikan kehittyminen lisää insinöörien kysyntää."
+    },
+    entry_roles: ["Junior Robotics Engineer", "Automaatioinsinööri"],
+    career_progression: ["Senior Robotics Engineer", "Robotics Architect"],
+    typical_employers: ["Robotiikkayritykset", "Teollisuusyritykset", "Tutkimuslaitokset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["robotiikka", "automaatio", "ROS"],
+    study_length_estimate_months: 72
+  },
+
+  {
+    id: "vr-ar-kehittaja",
+    category: "innovoija",
+    title_fi: "VR/AR-kehittäjä",
+    title_en: "VR/AR Developer",
+    short_description: "VR/AR-kehittäjä luo virtuaali- ja lisättyjen todellisuuksien sovelluksia. Työ vaatii 3D-osaamista ja ohjelmointitaitoja.",
+    main_tasks: [
+      "VR/AR-sovellusten kehittäminen",
+      "3D-ympäristöjen luominen",
+      "Vuorovaikutuksen suunnittelu",
+      "Optimointi ja suorituskyky",
+      "Käyttäjäkokemuksen kehittäminen"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Peliteknologian tai tietotekniikan tutkinto",
+      "VR/AR-kurssit",
+      "3D-osaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "VR/AR",
+      "Unity/Unreal Engine",
+      "3D-ohjelmointi",
+      "C#/C++",
+      "Spatiaalinen suunnittelu"
+    ],
+    tools_tech: [
+      "Unity",
+      "Unreal Engine",
+      "Oculus SDK",
+      "ARKit/ARCore"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "VR/AR-teknologioiden yleistyminen lisää kehittäjien kysyntää."
+    },
+    entry_roles: ["Junior VR Developer", "3D-ohjelmoija"],
+    career_progression: ["Senior VR/AR Developer", "XR Lead"],
+    typical_employers: ["Peliyritykset", "Teknologiayritykset", "Koulutusyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["VR", "AR", "Unity"],
+    study_length_estimate_months: 48
+  },
+
+  {
+    id: "bioinformatiikko",
+    category: "innovoija",
+    title_fi: "Bioinformatiikko",
+    title_en: "Bioinformatician",
+    short_description: "Bioinformatiikko analysoi biologista dataa tietojenkäsittelyn menetelmin. Työ vaatii biologian ja ohjelmoinnin osaamista.",
+    main_tasks: [
+      "Genomidatan analysointi",
+      "Bioinformatiikka-algoritmien kehittäminen",
+      "Sekvensointidatan käsittely",
+      "Tilastollinen analyysi",
+      "Tietokantojen hallinta"
+    ],
+    impact: [],
+    education_paths: [
+      "Ylempi korkeakoulututkinto: Bioinformatiikan tai biotieteiden maisterin tutkinto",
+      "Ohjelmoinnin osaaminen",
+      "Tilastotieteen opinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Bioinformatiikka",
+      "Ohjelmointi (Python, R)",
+      "Tilastotiede",
+      "Genomitiede",
+      "Tietokannat"
+    ],
+    tools_tech: [
+      "Python",
+      "R",
+      "Bioconductor",
+      "BLAST"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 6 },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 6500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Genomitutkimuksen ja personoidun lääketieteen kehitys lisää kysyntää."
+    },
+    entry_roles: ["Bioinformatiikan tutkija", "Data Analyst"],
+    career_progression: ["Senior Bioinformatician", "Bioinformatics Lead"],
+    typical_employers: ["Tutkimuslaitokset", "Bioteknologiayritykset", "Yliopistot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["bioinformatiikka", "genomiikka", "data-analyysi"],
+    study_length_estimate_months: 72
+  },
+
+  {
+    id: "pelitekninen-suunnittelija",
+    category: "innovoija",
+    title_fi: "Pelitekninen suunnittelija",
+    title_en: "Technical Game Designer",
+    short_description: "Pelitekninen suunnittelija yhdistää pelimekaniikan suunnittelun ja teknisen toteutuksen. Työ vaatii peliosaamista ja ohjelmointitaitoja.",
+    main_tasks: [
+      "Pelimekaniikkojen suunnittelu",
+      "Prototyyppien ohjelmointi",
+      "Pelilogiikan implementointi",
+      "Työkalujen kehittäminen",
+      "Balanssi ja tuning"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Peliteknologian tutkinto",
+      "Pelisuunnittelun opinnot",
+      "Ohjelmointiosaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Pelisuunnittelu",
+      "Ohjelmointi (C#, C++)",
+      "Unity/Unreal Engine",
+      "Pelimekaniikka",
+      "Prototyyppaus"
+    ],
+    tools_tech: [
+      "Unity",
+      "Unreal Engine",
+      "Visual scripting",
+      "Git"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 4200,
+      range: [3500, 5500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Peliteollisuuden kasvu lisää peliteknisten suunnittelijoiden kysyntää."
+    },
+    entry_roles: ["Junior Game Designer", "Gameplay Programmer"],
+    career_progression: ["Senior Technical Designer", "Lead Designer"],
+    typical_employers: ["Peliyritykset", "Pelistudiot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["pelisuunnittelu", "pelimekaniikka", "Unity"],
+    study_length_estimate_months: 48
+  },
+
+  {
+    id: "quantum-computing-engineer",
+    category: "innovoija",
+    title_fi: "Kvanttilaskenta-insinööri",
+    title_en: "Quantum Computing Engineer",
+    short_description: "Kvanttilaskenta-insinööri kehittää kvanttitietokoneohjelmia. Työ vaatii kvanttimekaniikan ja ohjelmoinnin osaamista.",
+    main_tasks: [
+      "Kvanttialgoritmien kehittäminen",
+      "Kvanttipiirien suunnittelu",
+      "Kvanttisovellusten ohjelmointi",
+      "Kvanttivirheiden korjaus",
+      "Tutkimus ja kehitys"
+    ],
+    impact: [],
+    education_paths: [
+      "Tohtorin tutkinto: Fysiikan tai tietotekniikan tohtori",
+      "Kvanttilaskennan erikoistuminen",
+      "Kvanttimekaniikan osaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Kvanttilaskenta",
+      "Kvanttialgoritmi",
+      "Kvanttimekaniikka",
+      "Ohjelmointi (Python, Q#)",
+      "Matematiikka"
+    ],
+    tools_tech: [
+      "Qiskit",
+      "Cirq",
+      "Q#",
+      "Quantum simulators"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 6 },
+    salary_eur_month: {
+      median: 6500,
+      range: [5500, 9500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kvanttitietokoneiden kehittyminen luo kysyntää kvantti-insinööreille."
+    },
+    entry_roles: ["Quantum Researcher", "Quantum Software Developer"],
+    career_progression: ["Senior Quantum Engineer", "Quantum Architect"],
+    typical_employers: ["Tutkimuslaitokset", "Teknologiayritykset", "Yliopistot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["kvanttilaskenta", "quantum", "algoritmi"],
+    study_length_estimate_months: 96
+  },
+
+  {
+    id: "edge-computing-specialist",
+    category: "innovoija",
+    title_fi: "Edge computing -asiantuntija",
+    title_en: "Edge Computing Specialist",
+    short_description: "Edge computing -asiantuntija kehittää laitepään laskentaratkaisuja. Työ vaatii hajautettujen järjestelmien osaamista.",
+    main_tasks: [
+      "Edge-ratkaisujen kehittäminen",
+      "Hajautettujen sovellusten suunnittelu",
+      "Laitepään optimointi",
+      "Latenssin minimointi",
+      "IoT-integraatiot"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tutkinto",
+      "Edge computing -osaaminen",
+      "Hajautettujen järjestelmien osaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Edge computing",
+      "Hajautetut järjestelmät",
+      "IoT",
+      "Optimointi",
+      "Verkko-osaaminen"
+    ],
+    tools_tech: [
+      "Azure IoT Edge",
+      "AWS Greengrass",
+      "Kubernetes Edge",
+      "MQTT"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 5200,
+      range: [4500, 7000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Edge computing-tarpeen kasvu lisää asiantuntijoiden kysyntää."
+    },
+    entry_roles: ["IoT Engineer", "Cloud Engineer"],
+    career_progression: ["Senior Edge Specialist", "Edge Architect"],
+    typical_employers: ["Teknologiayritykset", "IoT-yritykset", "Telco-operaattorit"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["edge computing", "IoT", "hajautetut järjestelmät"],
+    study_length_estimate_months: 48
+  },
+
+  {
+    id: "api-designer",
+    category: "innovoija",
+    title_fi: "API-suunnittelija",
+    title_en: "API Designer",
+    short_description: "API-suunnittelija suunnittelee sovelluskehittäjärajapintoja. Työ vaatii teknistä osaamista ja suunnittelutaitoja.",
+    main_tasks: [
+      "API-arkkitehtuurin suunnittelu",
+      "REST/GraphQL API -kehitys",
+      "API-dokumentaation laatiminen",
+      "Versionhallinta",
+      "Kehittäjäkokemuksen optimointi"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tutkinto",
+      "API-suunnittelun osaaminen",
+      "Backend-kehityskokemus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "API-suunnittelu",
+      "REST/GraphQL",
+      "OpenAPI",
+      "Backend-kehitys",
+      "Dokumentointi"
+    ],
+    tools_tech: [
+      "Postman",
+      "Swagger",
+      "GraphQL",
+      "API Gateway"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 4800,
+      range: [4000, 6500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "API-talouden kasvu lisää API-suunnittelijoiden kysyntää."
+    },
+    entry_roles: ["Backend Developer", "Integration Developer"],
+    career_progression: ["Senior API Designer", "API Architect"],
+    typical_employers: ["IT-yritykset", "Teknologiayritykset", "Fintech"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["API", "REST", "GraphQL"],
+    study_length_estimate_months: 48
+  },
+
+  {
+    id: "microservices-architect",
+    category: "innovoija",
+    title_fi: "Mikropalveluarkkitehti",
+    title_en: "Microservices Architect",
+    short_description: "Mikropalveluarkkitehti suunnittelee mikropalveluarkkitehtuureja. Työ vaatii arkkitehtuuriosaamista ja hajautettujen järjestelmien ymmärrystä.",
+    main_tasks: [
+      "Mikropalveluarkkitehtuurin suunnittelu",
+      "Palveluiden rajausten määrittely",
+      "Kommunikaatiomallien suunnittelu",
+      "Skaalautuvuuden varmistaminen",
+      "Teknologiavalinnat"
+    ],
+    impact: [],
+    education_paths: [
+      "Ylempi korkeakoulututkinto: Tietotekniikan maisterin tutkinto",
+      "Arkkitehtuuriosaaminen",
+      "Mikropalvelukokemus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Mikropalveluarkkitehtuuri",
+      "Hajautetut järjestelmät",
+      "Domain-driven design",
+      "Kontittaminen",
+      "API-suunnittelu"
+    ],
+    tools_tech: [
+      "Docker",
+      "Kubernetes",
+      "Service mesh",
+      "Message queues"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 6200,
+      range: [5200, 8500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Mikropalveluiden yleistyminen lisää arkkitehtien kysyntää."
+    },
+    entry_roles: ["Backend Developer", "Solution Architect"],
+    career_progression: ["Principal Architect", "CTO"],
+    typical_employers: ["IT-yritykset", "Suuryritykset", "Fintech"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["mikropalvelut", "arkkitehtuuri", "hajautetut järjestelmät"],
+    study_length_estimate_months: 72
+  },
+
+  {
+    id: "mlops-insinoori",
+    category: "innovoija",
+    title_fi: "MLOps-insinööri",
+    title_en: "MLOps Engineer",
+    short_description: "MLOps-insinööri operationalisoi koneoppimismalleja. Työ vaatii DevOps-osaamista ja ML-ymmärrystä.",
+    main_tasks: [
+      "ML-putkistojen rakentaminen",
+      "Mallien tuotantoonvienti",
+      "Mallien monitorointi",
+      "Automaattinen uudelleenkoulutus",
+      "ML-infrastruktuurin hallinta"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tutkinto",
+      "DevOps-osaaminen",
+      "Koneoppimisen perusymmärrys"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "MLOps",
+      "DevOps",
+      "Koneoppiminen",
+      "CI/CD",
+      "Pilvipalvelut"
+    ],
+    tools_tech: [
+      "MLflow",
+      "Kubeflow",
+      "TensorFlow Serving",
+      "Docker"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 5500,
+      range: [4800, 7500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "ML-mallien tuotantoonviennin tarve lisää MLOps-insinöörien kysyntää."
+    },
+    entry_roles: ["DevOps Engineer", "Data Engineer"],
+    career_progression: ["Senior MLOps Engineer", "ML Platform Engineer"],
+    typical_employers: ["AI-yritykset", "Teknologiayritykset", "Datayritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["MLOps", "koneoppiminen", "DevOps"],
+    study_length_estimate_months: 48
+  },
+
+  {
+    id: "serverless-architect",
+    category: "innovoija",
+    title_fi: "Serverless-arkkitehti",
+    title_en: "Serverless Architect",
+    short_description: "Serverless-arkkitehti suunnittelee palvelimettomia ratkaisuja. Työ vaatii pilvi-osaamista ja arkkitehtuuriymmärrystä.",
+    main_tasks: [
+      "Serverless-arkkitehtuurin suunnittelu",
+      "FaaS-ratkaisujen kehittäminen",
+      "Event-driven architectures",
+      "Kustannusoptimointi",
+      "Skaalautuvuuden varmistaminen"
+    ],
+    impact: [],
+    education_paths: [
+      "Korkeakoulututkinto: Tietotekniikan tutkinto",
+      "Pilvisertifikaatit",
+      "Serverless-kokemus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Serverless",
+      "AWS Lambda/Azure Functions",
+      "Event-driven architecture",
+      "Pilvi-arkkitehtuuri",
+      "Infrastructure as Code"
+    ],
+    tools_tech: [
+      "AWS Lambda",
+      "Azure Functions",
+      "Serverless Framework",
+      "Terraform"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 5800,
+      range: [5000, 8000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Serverless-arkkitehtuurien yleistyminen lisää arkkitehtien kysyntää."
+    },
+    entry_roles: ["Cloud Developer", "Backend Developer"],
+    career_progression: ["Senior Serverless Architect", "Cloud Architect"],
+    typical_employers: ["IT-yritykset", "Startup-yritykset", "Konsulttiyritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["serverless", "FaaS", "pilvi"],
+    study_length_estimate_months: 60
+  },
+
+  {
+    id: "chatbot-kehittaja",
+    category: "innovoija",
+    title_fi: "Chatbot-kehittäjä",
+    title_en: "Chatbot Developer",
+    short_description: "Chatbot-kehittäjä luo keskustelurobotteja. Työ vaatii NLP-osaamista ja ohjelmointitaitoja.",
+    main_tasks: [
+      "Chatbottien kehittäminen",
+      "Keskustelupuiden suunnittelu",
+      "NLP-mallien integrointi",
+      "Tekoälyintegraatiot",
+      "Testaus ja optimointi"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tutkinto",
+      "NLP-osaaminen",
+      "Ohjelmointiosaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Chatbot-kehitys",
+      "NLP",
+      "Keskustelumuotoilu",
+      "Ohjelmointi (Python)",
+      "AI-integraatiot"
+    ],
+    tools_tech: [
+      "Dialogflow",
+      "Rasa",
+      "Microsoft Bot Framework",
+      "OpenAI API"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Chatbottien yleistyminen asiakaspalvelussa lisää kehittäjien kysyntää."
+    },
+    entry_roles: ["Junior Chatbot Developer", "NLP Developer"],
+    career_progression: ["Senior Chatbot Developer", "Conversational AI Lead"],
+    typical_employers: ["IT-yritykset", "Asiakaspalveluyritykset", "AI-yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["chatbot", "NLP", "keskustelurobotti"],
+    study_length_estimate_months: 48
+  },
+
+  {
+    id: "low-code-developer",
+    category: "innovoija",
+    title_fi: "Low-code-kehittäjä",
+    title_en: "Low-Code Developer",
+    short_description: "Low-code-kehittäjä rakentaa sovelluksia low-code-alustoilla. Työ vaatii liiketoimintaymmärrystä ja teknistä osaamista.",
+    main_tasks: [
+      "Sovellusten kehittäminen low-code-alustoilla",
+      "Liiketoimintaprosessien automatisointi",
+      "Integraatioiden rakentaminen",
+      "Käyttäjien kouluttaminen",
+      "Ratkaisujen ylläpito"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tai liiketalouden tutkinto",
+      "Low-code-sertifikaatit",
+      "Liiketoimintaymmärrys"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Low-code-alustat",
+      "Liiketoimintaprosessit",
+      "Integraatiot",
+      "Käyttöliittymäsuunnittelu",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "Power Platform",
+      "OutSystems",
+      "Mendix",
+      "Appian"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 4 },
+    salary_eur_month: {
+      median: 4200,
+      range: [3500, 5500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Low-code-alustojen yleistyminen lisää kehittäjien kysyntää."
+    },
+    entry_roles: ["Citizen Developer", "Business Analyst"],
+    career_progression: ["Senior Low-Code Developer", "Solution Architect"],
+    typical_employers: ["Yritykset", "Konsulttiyritykset", "IT-yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["low-code", "automaatio", "Power Platform"],
+    study_length_estimate_months: 36
+  },
+
+  {
+    id: "progressive-web-app-developer",
+    category: "innovoija",
+    title_fi: "PWA-kehittäjä",
+    title_en: "Progressive Web App Developer",
+    short_description: "PWA-kehittäjä kehittää progressiivisia web-sovelluksia. Työ vaatii web-kehityksen osaamista ja modernien teknologioiden ymmärrystä.",
+    main_tasks: [
+      "PWA-sovellusten kehittäminen",
+      "Offline-toimintojen implementointi",
+      "Service workersien kehitys",
+      "Suorituskyvyn optimointi",
+      "Responsiivinen suunnittelu"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tutkinto",
+      "Web-kehitysosaaminen",
+      "PWA-teknologiat"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "PWA",
+      "JavaScript/TypeScript",
+      "Service Workers",
+      "Web APIs",
+      "Responsiivinen suunnittelu"
+    ],
+    tools_tech: [
+      "JavaScript frameworks",
+      "Workbox",
+      "Lighthouse",
+      "Webpack"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "PWA:n yleistyminen mobiilisovellusten vaihtoehtona lisää kysyntää."
+    },
+    entry_roles: ["Frontend Developer", "Web Developer"],
+    career_progression: ["Senior PWA Developer", "Frontend Architect"],
+    typical_employers: ["Digitoimistot", "IT-yritykset", "Startup-yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["PWA", "web-kehitys", "offline"],
+    study_length_estimate_months: 48
+  },
+
+  {
+    id: "rpa-kehittaja",
+    category: "innovoija",
+    title_fi: "RPA-kehittäjä",
+    title_en: "RPA Developer",
+    short_description: "RPA-kehittäjä automatisoi liiketoimintaprosesseja robotiikan avulla. Työ vaatii prosessiymmärrystä ja ohjelmointitaitoja.",
+    main_tasks: [
+      "RPA-bottien kehittäminen",
+      "Prosessien automatisointi",
+      "Bottien ylläpito",
+      "Prosessianalyysi",
+      "Integraatioiden rakentaminen"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tai liiketalouden tutkinto",
+      "RPA-sertifikaatit (UiPath, Blue Prism)",
+      "Prosessiosaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "RPA",
+      "Prosessiautomatisointi",
+      "Ohjelmointi",
+      "Prosessianalyysi",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "UiPath",
+      "Blue Prism",
+      "Automation Anywhere",
+      "Power Automate"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 4 },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Prosessiautomatisoinnin tarve lisää RPA-kehittäjien kysyntää."
+    },
+    entry_roles: ["Junior RPA Developer", "Process Analyst"],
+    career_progression: ["Senior RPA Developer", "Automation Architect"],
+    typical_employers: ["Yritykset", "Konsulttiyritykset", "IT-palveluyritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["RPA", "automatio", "prosessit"],
+    study_length_estimate_months: 36
+  },
+
+  {
+    id: "webassembly-developer",
+    category: "innovoija",
+    title_fi: "WebAssembly-kehittäjä",
+    title_en: "WebAssembly Developer",
+    short_description: "WebAssembly-kehittäjä kehittää suorituskykyisiä web-sovelluksia. Työ vaatii matalan tason ohjelmointiosaamista ja web-teknologioiden ymmärrystä.",
+    main_tasks: [
+      "WebAssembly-moduulien kehittäminen",
+      "Suorituskyvyn optimointi",
+      "Natiivin koodin kääntäminen WebAssemblyiksi",
+      "JavaScript-integraatiot",
+      "Porttaus ja migraatiot"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tutkinto",
+      "C/C++/Rust-osaaminen",
+      "Web-kehitysosaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "WebAssembly",
+      "C/C++/Rust",
+      "JavaScript",
+      "Suorituskyvyn optimointi",
+      "Matalan tason ohjelmointi"
+    ],
+    tools_tech: [
+      "Emscripten",
+      "wasm-pack",
+      "LLVM",
+      "WebAssembly Studio"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 5200,
+      range: [4500, 7000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "WebAssemblyn yleistyminen lisää erikoisosaamisen kysyntää."
+    },
+    entry_roles: ["C/C++ Developer", "Web Developer"],
+    career_progression: ["Senior WebAssembly Developer", "Performance Engineer"],
+    typical_employers: ["Teknologiayritykset", "Peliyritykset", "Web-yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["WebAssembly", "WASM", "suorituskyky"],
+    study_length_estimate_months: 60
+  },
+
+  {
+    id: "platform-insinoori",
+    category: "innovoija",
+    title_fi: "Platform-insinööri",
+    title_en: "Platform Engineer",
+    short_description: "Platform-insinööri rakentaa ja ylläpitää kehitysalustoja. Työ vaatii laaja-alaista teknistä osaamista ja automaatio-osaamista.",
+    main_tasks: [
+      "Kehitysalustojen rakentaminen",
+      "Sisäisten työkalujen kehittäminen",
+      "Infrastruktuurin automatisointi",
+      "Kehittäjäkokemuksen parantaminen",
+      "Platform-palveluiden tarjoaminen"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tutkinto",
+      "DevOps-osaaminen",
+      "Laaja tekninen osaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Platform engineering",
+      "DevOps",
+      "Infrastruktuurin automatisointi",
+      "Kubernetes",
+      "Internal developer platforms"
+    ],
+    tools_tech: [
+      "Kubernetes",
+      "Terraform",
+      "ArgoCD",
+      "Backstage"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 5500,
+      range: [4800, 7500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Platform engineering -trendin kasvu lisää insinöörien kysyntää."
+    },
+    entry_roles: ["DevOps Engineer", "Site Reliability Engineer"],
+    career_progression: ["Senior Platform Engineer", "Platform Architect"],
+    typical_employers: ["Teknologiayritykset", "Suuryritykset", "IT-yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["platform engineering", "DevOps", "IDP"],
+    study_length_estimate_months: 60
+  },
+
+  {
+    id: "site-reliability-engineer",
+    category: "innovoija",
+    title_fi: "Site Reliability Engineer (SRE)",
+    title_en: "Site Reliability Engineer",
+    short_description: "SRE varmistaa järjestelmien luotettavuuden ja suorituskyvyn. Työ vaatii järjestelmäosaamista ja ohjelmointitaitoja.",
+    main_tasks: [
+      "Järjestelmien luotettavuuden varmistaminen",
+      "Monitoroinnin ja hälytysten kehittäminen",
+      "Incident management",
+      "Kapasiteetin suunnittelu",
+      "Automaation kehittäminen"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tutkinto",
+      "Järjestelmäylläpidon osaaminen",
+      "Ohjelmointiosaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Site reliability engineering",
+      "Järjestelmähallinta",
+      "Ohjelmointi",
+      "Monitorointi",
+      "Incident management"
+    ],
+    tools_tech: [
+      "Prometheus",
+      "Grafana",
+      "Kubernetes",
+      "Terraform"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 5500,
+      range: [4800, 7500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Järjestelmien luotettavuuden merkitys lisää SRE:iden kysyntää."
+    },
+    entry_roles: ["Systems Administrator", "DevOps Engineer"],
+    career_progression: ["Senior SRE", "Principal SRE"],
+    typical_employers: ["Teknologiayritykset", "Suuryritykset", "SaaS-yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: true, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["SRE", "luotettavuus", "järjestelmät"],
+    study_length_estimate_months: 60
+  },
+
+  {
+    id: "embedded-linux-engineer",
+    category: "innovoija",
+    title_fi: "Embedded Linux -insinööri",
+    title_en: "Embedded Linux Engineer",
+    short_description: "Embedded Linux -insinööri kehittää sulautettuja Linux-järjestelmiä. Työ vaatii Linux-osaamista ja embedded-osaamista.",
+    main_tasks: [
+      "Embedded Linux -järjestelmien kehittäminen",
+      "Ydin ja ajurien kehitys",
+      "Board support packagen kehitys",
+      "Bootloaderin konfigurointi",
+      "Järjestelmän optimointi"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Sulautettujen järjestelmien tai tietotekniikan tutkinto",
+      "Linux-osaaminen",
+      "C/C++-ohjelmointi"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Embedded Linux",
+      "Linux kernel",
+      "Device drivers",
+      "C/C++",
+      "Hardware-ymmärrys"
+    ],
+    tools_tech: [
+      "Yocto",
+      "Buildroot",
+      "U-Boot",
+      "GCC"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 5000,
+      range: [4200, 6800],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "IoT-laitteiden yleistyminen lisää Embedded Linux -osaamisen kysyntää."
+    },
+    entry_roles: ["Embedded Developer", "Linux Developer"],
+    career_progression: ["Senior Embedded Engineer", "Embedded Architect"],
+    typical_employers: ["IoT-yritykset", "Laitevalmistajat", "Teollisuusyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["embedded Linux", "kernel", "IoT"],
+    study_length_estimate_months: 60
+  },
+
+  {
+    id: "game-engine-developer",
+    category: "innovoija",
+    title_fi: "Pelimoottori kehittäjä",
+    title_en: "Game Engine Developer",
+    short_description: "Pelimoottori kehittäjä kehittää ja ylläpitää pelimoottoreja. Työ vaatii syvällistä ohjelmointiosaamista ja grafiikkaosaamista.",
+    main_tasks: [
+      "Pelimoottorin kehittäminen",
+      "Renderöintijärjestelmän kehitys",
+      "Fysiikkamoottorin kehitys",
+      "Työkalujen kehittäminen",
+      "Suorituskyvyn optimointi"
+    ],
+    impact: [],
+    education_paths: [
+      "Ylempi korkeakoulututkinto: Tietotekniikan maisterin tutkinto",
+      "Peliteknologian erikoistuminen",
+      "C++-osaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Pelimoottori kehitys",
+      "C++",
+      "3D-grafiikka",
+      "Fysiikka-moottorit",
+      "Optimointi"
+    ],
+    tools_tech: [
+      "OpenGL/Vulkan",
+      "DirectX",
+      "C++",
+      "Git"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 6 },
+    salary_eur_month: {
+      median: 5500,
+      range: [4800, 7500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Peliteollisuuden jatkuva tarve pelimoottorikehittäjille ylläpitää kysyntää."
+    },
+    entry_roles: ["Graphics Programmer", "Gameplay Programmer"],
+    career_progression: ["Senior Engine Developer", "Technical Director"],
+    typical_employers: ["Peliyritykset", "Pelimoottoriyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["pelimoottori", "C++", "grafiikka"],
+    study_length_estimate_months: 72
+  },
+
+  {
+    id: "network-automation-engineer",
+    category: "innovoija",
+    title_fi: "Verkkoautomaatio-insinööri",
+    title_en: "Network Automation Engineer",
+    short_description: "Verkkoautomaatio-insinööri automatisoi verkkoinfrastruktuuria. Työ vaatii verkko-osaamista ja ohjelmointitaitoja.",
+    main_tasks: [
+      "Verkkojen automatisointi",
+      "Network as Code",
+      "Konfiguraationhallinta",
+      "Verkon monitorointi",
+      "Automaattinen verkon provisionointi"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tutkinto",
+      "Verkko-sertifikaatit (CCNA, CCNP)",
+      "Ohjelmointiosaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Verkkoautomaatio",
+      "Verkkotekniikka",
+      "Python",
+      "Infrastructure as Code",
+      "Network APIs"
+    ],
+    tools_tech: [
+      "Ansible",
+      "Terraform",
+      "Python",
+      "Netmiko"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 5200,
+      range: [4500, 7000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Verkkojen automatisoinnin tarve lisää insinöörien kysyntää."
+    },
+    entry_roles: ["Network Engineer", "Systems Engineer"],
+    career_progression: ["Senior Network Automation Engineer", "Network Architect"],
+    typical_employers: ["Teleoperaattorit", "Suuryritykset", "IT-palveluyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["verkkoautomaatio", "Network as Code", "Python"],
+    study_length_estimate_months: 60
+  },
+
+  {
+    id: "observability-engineer",
+    category: "innovoija",
+    title_fi: "Observability-insinööri",
+    title_en: "Observability Engineer",
+    short_description: "Observability-insinööri rakentaa järjestelmien havainnointi ratkaisuja. Työ vaatii monitorointi- ja data-analyysi osaamista.",
+    main_tasks: [
+      "Observability-alustojen rakentaminen",
+      "Metriikoiden, lokien ja tracien keräys",
+      "Hälytysjärjestelmien kehittäminen",
+      "Dashboardien luominen",
+      "Distributed tracing"
+    ],
+    impact: [],
+    education_paths: [
+      "AMK: Tietotekniikan tutkinto",
+      "Monitorointiosaaminen",
+      "Data-analyysi osaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Observability",
+      "Monitorointi",
+      "Distributed tracing",
+      "Metriikat ja lokit",
+      "Data-analyysi"
+    ],
+    tools_tech: [
+      "Prometheus",
+      "Grafana",
+      "Jaeger",
+      "ELK Stack"
+    ],
+    languages_required: { fi: 5, sv: 2, en: 5 },
+    salary_eur_month: {
+      median: 5200,
+      range: [4500, 7000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Mikropalveluiden ja hajautettujen järjestelmien yleistyminen lisää kysyntää."
+    },
+    entry_roles: ["Site Reliability Engineer", "DevOps Engineer"],
+    career_progression: ["Senior Observability Engineer", "Platform Engineer"],
+    typical_employers: ["Teknologiayritykset", "SaaS-yritykset", "IT-yritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["observability", "monitorointi", "tracing"],
+    study_length_estimate_months: 48
+  },
+
+  {
+    id: "3d-tulostus-insinoori",
+    category: "innovoija",
+    title_fi: "3D-tulostusingsinööri",
+    title_en: "3D Printing Engineer",
+    short_description: "3D-tulostusingsinööri kehittää additiivisen valmistuksen prosesseja ja sovelluksia. Työ vaatii materiaalitekniikan ja CAD-suunnittelun osaamista.",
+    main_tasks: [
+      "3D-tulostusprosessien kehittäminen",
+      "Materiaalien testaus ja valinta",
+      "Tuotantolinjojen optimointi",
+      "Prototyyppien valmistus",
+      "Laadunvalvonta ja vianmääritys"
+    ],
+    impact: [],
+    education_paths: [
+      "DI: Konetekniikka tai materiaalitekniikka",
+      "AMK: Tuotantotekniikka tai koneensuunnittelu",
+      "3D-tulostuksen erikoistumiskoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Additiivinen valmistus",
+      "Materiaalitekniikka",
+      "CAD-suunnittelu",
+      "Prosessioptimoiniti",
+      "Laadunvalvonta"
+    ],
+    tools_tech: [
+      "CAD-ohjelmistot",
+      "3D-tulostimet",
+      "Materiaalitestauslaitteet",
+      "Simulointiohjelmistot"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 5 },
+    salary_eur_month: {
+      median: 4800,
+      range: [4000, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Additiivisen valmistuksen yleistyminen teollisuudessa lisää asiantuntijoiden kysyntää."
+    },
+    entry_roles: ["Junior 3D-tulostusingsinööri", "Tuotantoteknikko"],
+    career_progression: ["Senior 3D-tulostusingsinööri", "Additiivisen valmistuksen päällikkö"],
+    typical_employers: ["Valmistusteollisuus", "Prototyyppivalmistajat", "Teknologiayritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["3D-tulostus", "additiivinen valmistus", "materiaalitekniikka"],
+    study_length_estimate_months: 60
+  },
+
+  {
+    id: "neurotech-insinoori",
+    category: "innovoija",
+    title_fi: "Neurotekniikka-insinööri",
+    title_en: "Neurotechnology Engineer",
+    short_description: "Neurotekniikka-insinööri kehittää aivoja ja hermostoa mittaavia ja stimuloivia laitteita. Työ yhdistää tekniikan, lääketieteen ja neurotieteen.",
+    main_tasks: [
+      "Neurolääketieteellisten laitteiden kehitys",
+      "Aivoimpulssi-rajapintojen suunnittelu",
+      "Signaalinkäsittelyalgoritmien kehittäminen",
+      "Kliininen testaus ja validointi",
+      "Yhteistyö lääketieteellisten tutkijoiden kanssa"
+    ],
+    impact: [],
+    education_paths: [
+      "DI: Biolääketieteellinen tekniikka tai sähkötekniikka",
+      "Neurotieteen lisäopinnot",
+      "Lääketieteellisten laitteiden kehityskokemus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Neurotekniikka",
+      "Signaalinkäsittely",
+      "Biolääketieteellinen tekniikka",
+      "Laitteiston suunnittelu",
+      "Tietosuoja ja etiikka"
+    ],
+    tools_tech: [
+      "EEG/MEG-järjestelmät",
+      "MATLAB",
+      "Python (neurosignaalit)",
+      "Embedded-järjestelmät"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 6 },
+    salary_eur_month: {
+      median: 5500,
+      range: [4500, 7000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Neurotekniikan sovellukset lääketieteessä ja hyvinvointiteknologiassa kasvavat voimakkaasti."
+    },
+    entry_roles: ["Junior neurotekniikka-insinööri", "Biolääketieteellinen tutkija"],
+    career_progression: ["Senior neurotekniikka-insinööri", "Neurotekniikan tutkimusjohtaja"],
+    typical_employers: ["Lääketieteelliset laitevalmistajat", "Yliopistot", "Neurotekniikan startup-yritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["neurotekniikka", "aivot", "biolääketiede"],
+    study_length_estimate_months: 60
+  },
+
+  {
     id: "toimitusketjuanalyytikko",
     category: "jarjestaja",
     title_fi: "Toimitusketjuanalyytikko",
@@ -39903,6 +43143,2613 @@ export const careersData: CareerFI[] = [
       "project_management"
     ],
     study_length_estimate_months: 48
+  },
+  {
+    id: "projektipaallikkö-rakennus",
+    category: "jarjestaja",
+    title_fi: "Projektipäällikkö (rakennus)",
+    title_en: "Construction Project Manager",
+    short_description: "Rakennusprojektipäällikkö johtaa rakennushankkeita suunnittelusta toteutukseen. Työ vaatii teknistä osaamista ja organisointikykyä.",
+    main_tasks: [
+      "Rakennusprojektien johtaminen",
+      "Aikataulujen ja budjettien hallinta",
+      "Urakoitsijoiden koordinointi",
+      "Laadunvarmistus",
+      "Asiakasyhteistyö"
+    ],
+    education_paths: [
+      "DI: Rakennustekniikka",
+      "AMK: Rakennusmestari tai rakennusinsinööri",
+      "Projektinhallinnan koulutus"
+    ],
+    core_skills: [
+      "Projektinhallinta",
+      "Rakennustekniikka",
+      "Budjetointi",
+      "Johtaminen",
+      "Riskienhallinta"
+    ],
+    tools_tech: [
+      "Projektisuunnitteluohjelmat",
+      "CAD",
+      "BIM-järjestelmät"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 5200,
+      range: [4500, 6500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Rakennushankkeiden kasvu ylläpitää projektipäälliköiden kysyntää."
+    },
+    entry_roles: ["Projekti-insinööri", "Työmaainsinööri"],
+    career_progression: ["Senior projektipäällikkö", "Tuotantopäällikkö"],
+    typical_employers: ["Rakennusyritykset", "Projektinjohtoyritykset", "Kiinteistökehittäjät"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "tuotantopaallikkö-teollisuus",
+    category: "jarjestaja",
+    title_fi: "Tuotantopäällikkö (teollisuus)",
+    title_en: "Production Manager (Industry)",
+    short_description: "Teollisuuden tuotantopäällikkö vastaa tuotantoprosessien tehokkaasta johtamisesta. Työ vaatii teknistä osaamista ja organisointitaitoja.",
+    main_tasks: [
+      "Tuotannon suunnittelu ja johtaminen",
+      "Henkilöstön johtaminen",
+      "Tuotantomäärien optimointi",
+      "Laadunvalvonta",
+      "Turvallisuuden varmistaminen"
+    ],
+    education_paths: [
+      "DI: Tuotantotalous tai konetekniikka",
+      "AMK: Tuotantotekniikka",
+      "Johtamiskoulutus"
+    ],
+    core_skills: [
+      "Tuotannonohjaus",
+      "Lean-menetelmät",
+      "Henkilöstöjohtaminen",
+      "Laatujärjestelmät",
+      "Prosessioptimointii"
+    ],
+    tools_tech: [
+      "ERP-järjestelmät",
+      "Tuotannonohjausjärjestelmät",
+      "Lean-työkalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 5500,
+      range: [4800, 7000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Teollisuuden jatkuva tarve tehokkaalle tuotannonohjaukselle ylläpitää kysyntää."
+    },
+    entry_roles: ["Tuotantoesimies", "Tuotantosuunnittelija"],
+    career_progression: ["Tuotantojohtaja", "Tehdaspäällikkö"],
+    typical_employers: ["Valmistusteollisuus", "Prosessiteollisuus", "Teknologiayritykset"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "logistics-coordinator",
+    category: "jarjestaja",
+    title_fi: "Logistiikkakoordinaattori",
+    title_en: "Logistics Coordinator",
+    short_description: "Logistiikkakoordinaattori hallinnoi tavaroiden liikkumista ja varastointia. Työ vaatii organisointikykyä ja analyyttistä ajattelua.",
+    main_tasks: [
+      "Kuljetusten koordinointi",
+      "Varastonhallinta",
+      "Toimittajasuhteiden hoito",
+      "Toimitusketjun optimointi",
+      "Raportointii ja analysointi"
+    ],
+    education_paths: [
+      "AMK: Logistiikka tai liiketalous",
+      "Logistiikan erikoiskoulutus",
+      "Kuljetusalan tutkinto"
+    ],
+    core_skills: [
+      "Logistiikka",
+      "Toimitusketjun hallinta",
+      "Varastointi",
+      "Analytiikka",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "WMS-järjestelmät",
+      "TMS-järjestelmät",
+      "Excel"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 5000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Verkkokaupan kasvu ja toimitusketjujen monimutkaisuus lisäävät logistiikan ammattilaisten kysyntää."
+    },
+    entry_roles: ["Varastotyöntekijä", "Logistiikka-assistentti"],
+    career_progression: ["Logistiikkapäällikkö", "Toimitusketjupäällikkö"],
+    typical_employers: ["Logistiikkayritykset", "Kaupan alan yritykset", "Valmistava teollisuus"],
+    work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "event-coordinator",
+    category: "jarjestaja",
+    title_fi: "Tapahtumakoordinaattori",
+    title_en: "Event Coordinator",
+    short_description: "Tapahtumakoordinaattori järjestää ja koordinoi erilaisia tapahtumia. Työ vaatii organisointikykyä ja ihmissuhdetaitoja.",
+    main_tasks: [
+      "Tapahtumien suunnittelu",
+      "Toimittajien koordinointi",
+      "Aikataulujen hallinta",
+      "Budjetointi",
+      "Tapahtumapäivän koordinointi"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai matkailualaa",
+      "Tapahtumatuotannon koulutus",
+      "Projektijohtamisen opinnot"
+    ],
+    core_skills: [
+      "Tapahtumatuotanto",
+      "Projektinhallinta",
+      "Asiakaspalvelu",
+      "Budjetointi",
+      "Neuvottelutaidot"
+    ],
+    tools_tech: [
+      "Tapahtumahallintatyökalut",
+      "Projektinhallintatyökalut",
+      "Sosiaalinen media"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 3500,
+      range: [2800, 4500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Tapahtuma-alan elpyminen pandemiasta ja kokousmatkailun kasvu lisäävät kysyntää."
+    },
+    entry_roles: ["Tapahtumaassistentti", "Tapahtumavastaava"],
+    career_progression: ["Tapahtumapäällikkö", "Tapahtumajohtaja"],
+    typical_employers: ["Tapahtumatoimistot", "Yritykset", "Järjestöt"],
+    work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "facility-manager",
+    category: "jarjestaja",
+    title_fi: "Kiinteistöpäällikkö",
+    title_en: "Facility Manager",
+    short_description: "Kiinteistöpäällikkö vastaa kiinteistöjen kunnossapidosta ja hallinnasta. Työ vaatii teknistä osaamista ja organisointikykyä.",
+    main_tasks: [
+      "Kiinteistöjen ylläpito",
+      "Kunnossapidon suunnittelu",
+      "Budjetointi",
+      "Urakoitsijoiden hallinta",
+      "Turvallisuudesta huolehtiminen"
+    ],
+    education_paths: [
+      "AMK: Kiinteistöjohtaminen tai rakennustekniikka",
+      "LKV-tutkinto",
+      "Kiinteistöalan erikoiskoulutus"
+    ],
+    core_skills: [
+      "Kiinteistöhallinta",
+      "Kunnossapitosuunnittelu",
+      "Budjetointi",
+      "Tekninen osaaminen",
+      "Sopimusten hallinta"
+    ],
+    tools_tech: [
+      "Kiinteistönhallintajärjestelmät",
+      "Budjetointiohjelmistot",
+      "CAD"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 3 },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 5500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Kiinteistöjen jatkuva ylläpitotarve varmistaa ammattilaisten kysynnän."
+    },
+    entry_roles: ["Isännöitsijä", "Kiinteistöesimies"],
+    career_progression: ["Senior kiinteistöpäällikkö", "Kiinteistöjohtaja"],
+    typical_employers: ["Kiinteistöyhtiöt", "Isännöintiyhtiöt", "Suuryritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "procurement-specialist",
+    category: "jarjestaja",
+    title_fi: "Hankinta-asiantuntija",
+    title_en: "Procurement Specialist",
+    short_description: "Hankinta-asiantuntija vastaa organisaation hankinnoista ja toimittajasuhteista. Työ vaatii neuvottelutaitoja ja analyyttistä osaamista.",
+    main_tasks: [
+      "Hankintojen suunnittelu",
+      "Toimittajaneuvottelut",
+      "Sopimusten hallinta",
+      "Kustannusanalyysit",
+      "Toimittajasuhteiden kehittäminen"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai logistiikka",
+      "Hankintatoimen erikoiskoulutus",
+      "SILF-tutkinto"
+    ],
+    core_skills: [
+      "Hankintatoimi",
+      "Neuvottelutaidot",
+      "Sopimusten hallinta",
+      "Analytiikka",
+      "Toimittajahallinta"
+    ],
+    tools_tech: [
+      "Hankintajärjestelmät",
+      "ERP-järjestelmät",
+      "Excel"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 4200,
+      range: [3500, 5500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Hankintojen strateginen merkitys kasvaa, mikä lisää asiantuntijoiden kysyntää."
+    },
+    entry_roles: ["Ostaja", "Hankinta-assistentti"],
+    career_progression: ["Senior hankinta-asiantuntija", "Hankintapäällikkö"],
+    typical_employers: ["Suuryritykset", "Julkinen sektori", "Hankintapalveluyritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "operations-manager",
+    category: "jarjestaja",
+    title_fi: "Toimintapäällikkö",
+    title_en: "Operations Manager",
+    short_description: "Toimintapäällikkö vastaa organisaation operatiivisen toiminnan johtamisesta. Työ vaatii laaja-alaista osaamista ja johtamistaitoja.",
+    main_tasks: [
+      "Operatiivisen toiminnan johtaminen",
+      "Prosessien kehittäminen",
+      "Henkilöstön johtaminen",
+      "Budjetointi ja raportointi",
+      "Laadunvarmistus"
+    ],
+    education_paths: [
+      "DI: Tuotantotalous",
+      "KTM: Liiketalous",
+      "AMK: Liiketalous tai tekniikka + johtamiskoulutus"
+    ],
+    core_skills: [
+      "Operatiivinen johtaminen",
+      "Prosessien kehittäminen",
+      "Henkilöstöjohtaminen",
+      "Taloudellinen ymmärrys",
+      "Strateginen ajattelu"
+    ],
+    tools_tech: [
+      "ERP-järjestelmät",
+      "Prosessinhallintatyökalut",
+      "Raportointiohjelmistot"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 5 },
+    salary_eur_month: {
+      median: 5800,
+      range: [5000, 7500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Organisaatioiden jatkuva tarve tehokkaille toimintapäälliköille ylläpitää kysyntää."
+    },
+    entry_roles: ["Toimistopaallikkö", "Osastopäällikkö"],
+    career_progression: ["COO", "Toimitusjohtaja"],
+    typical_employers: ["Kaikki suuret organisaatiot", "Palveluyritykset", "Tuotantoyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "quality-manager",
+    category: "jarjestaja",
+    title_fi: "Laatupäällikkö",
+    title_en: "Quality Manager",
+    short_description: "Laatupäällikkö vastaa organisaation laatujärjestelmästä ja laadun kehittämisestä. Työ vaatii järjestelmällisyyttä ja analyyttistä osaamista.",
+    main_tasks: [
+      "Laatujärjestelmän ylläpito",
+      "Laatuauditoinnit",
+      "Sertifiointien hallinta",
+      "Laatupoikkeamien käsittely",
+      "Jatkuvan parantamisen johtaminen"
+    ],
+    education_paths: [
+      "DI tai AMK: Tekniikka tai liiketalous",
+      "Laatujärjestelmien koulutus",
+      "Auditoija-koulutus"
+    ],
+    core_skills: [
+      "Laatujärjestelmät (ISO)",
+      "Auditointi",
+      "Prosessien kehittäminen",
+      "Six Sigma",
+      "Analytiikka"
+    ],
+    tools_tech: [
+      "Laatujärjestelmäohjelmistot",
+      "Tilastolliset analyysityökalut",
+      "Dokumentinhallintajärjestelmät"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 4800,
+      range: [4000, 6000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Laatustandardien vaatimukset ylläpitävät laatupäälliköiden kysyntää."
+    },
+    entry_roles: ["Laatuinsinööri", "Laatukoordinaattori"],
+    career_progression: ["Senior laatupäällikkö", "Laatujohtaja"],
+    typical_employers: ["Teollisuus", "Palveluyritykset", "Terveydenhuolto"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "change-manager",
+    category: "jarjestaja",
+    title_fi: "Muutospäällikkö",
+    title_en: "Change Manager",
+    short_description: "Muutospäällikkö johtaa organisaatiomuutoksia ja varmistaa niiden onnistumisen. Työ vaatii ihmistuntemusta ja projektinhallintaa.",
+    main_tasks: [
+      "Muutosprojektien johtaminen",
+      "Muutosviestintä",
+      "Sidosryhmien sitouttaminen",
+      "Muutosvaikutusten arviointi",
+      "Koulutuksen koordinointi"
+    ],
+    education_paths: [
+      "KTM tai AMK: Liiketalous",
+      "Muutosjohtamisen koulutus",
+      "Projektinhallinnan koulutus"
+    ],
+    core_skills: [
+      "Muutosjohtaminen",
+      "Projektinhallinta",
+      "Viestintä",
+      "Sidosryhmäjohtaminen",
+      "Valmennus"
+    ],
+    tools_tech: [
+      "Muutoshallintatyökalut",
+      "Projektinhallintatyökalut",
+      "Viestintäalustat"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 5000,
+      range: [4200, 6500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Organisaatioiden jatkuva muutostarve lisää muutospäälliköiden kysyntää."
+    },
+    entry_roles: ["Muutoskonsultti", "Projektikoordinaattori"],
+    career_progression: ["Senior muutospäällikkö", "Kehitysjohtaja"],
+    typical_employers: ["Suuryritykset", "Konsulttitoimistot", "Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "process-manager",
+    category: "jarjestaja",
+    title_fi: "Prosessipäällikkö",
+    title_en: "Process Manager",
+    short_description: "Prosessipäällikkö vastaa liiketoimintaprosessien kehittämisestä ja optimoinnista. Työ vaatii analyyttistä ajattelua ja järjestelmällisyyttä.",
+    main_tasks: [
+      "Prosessien kuvaaminen ja analysointi",
+      "Prosessien kehittäminen",
+      "Mittareiden määrittely ja seuranta",
+      "Prosessimuutosten johtaminen",
+      "Henkilöstön koulutus"
+    ],
+    education_paths: [
+      "DI: Tuotantotalous",
+      "KTM tai AMK: Liiketalous",
+      "Prosessijohtamisen koulutus"
+    ],
+    core_skills: [
+      "Prosessijohtaminen",
+      "Lean ja Six Sigma",
+      "Analytiikka",
+      "Prosessimallinnus",
+      "Muutosjohtaminen"
+    ],
+    tools_tech: [
+      "Prosessimallinnustyökalut",
+      "BPM-järjestelmät",
+      "Analytiikkatyökalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 5200,
+      range: [4500, 6500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Organisaatioiden tehokkuustavoitteet lisäävät prosessipäälliköiden kysyntää."
+    },
+    entry_roles: ["Prosessisuunnittelija", "Prosessikonsultti"],
+    career_progression: ["Senior prosessipäällikkö", "Prosessijohtaja"],
+    typical_employers: ["Suuryritykset", "Konsulttitoimistot", "Palvelukeskukset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "compliance-manager",
+    category: "jarjestaja",
+    title_fi: "Compliance-päällikkö",
+    title_en: "Compliance Manager",
+    short_description: "Compliance-päällikkö varmistaa, että organisaatio noudattaa lakeja ja määräyksiä. Työ vaatii juridista ymmärrystä ja järjestelmällisyyttä.",
+    main_tasks: [
+      "Compliance-ohjelmien ylläpito",
+      "Riskiarviointii",
+      "Koulutuksen järjestäminen",
+      "Sisäiset tarkastukset",
+      "Raportointii viranomaisille"
+    ],
+    education_paths: [
+      "OTM: Oikeustiede",
+      "KTM tai AMK: Liiketalous + compliance-koulutus",
+      "Compliance-sertifikaatti"
+    ],
+    core_skills: [
+      "Compliance-johtaminen",
+      "Riskienhallinta",
+      "Juridinen ymmärrys",
+      "Auditointi",
+      "Viestintä"
+    ],
+    tools_tech: [
+      "Compliance-järjestelmät",
+      "Riskienhallintatyökalut",
+      "Dokumentinhallinta"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 5 },
+    salary_eur_month: {
+      median: 5500,
+      range: [4500, 7000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Sääntelyn lisääntyminen kasvattaa compliance-asiantuntijoiden kysyntää."
+    },
+    entry_roles: ["Compliance-asiantuntija", "Riskienhallinta-asiantuntija"],
+    career_progression: ["Senior compliance-päällikkö", "Chief Compliance Officer"],
+    typical_employers: ["Pankit", "Vakuutusyhtiöt", "Suuryritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "office-manager",
+    category: "jarjestaja",
+    title_fi: "Toimistopäällikkö",
+    title_en: "Office Manager",
+    short_description: "Toimistopäällikkö vastaa toimiston sujuvasta toiminnasta ja hallinnollisista tehtävistä. Työ vaatii organisointikykyä ja monipuolista osaamista.",
+    main_tasks: [
+      "Toimiston päivittäinen johtaminen",
+      "Hallinnollisten prosessien hoito",
+      "Tilojen ja hankintojen hallinta",
+      "Henkilöstön tukeminen",
+      "Tapahtumien ja kokousten järjestäminen"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai hallinto",
+      "Tradenomi",
+      "Sihteerikoulutus"
+    ],
+    core_skills: [
+      "Hallinto",
+      "Organisointi",
+      "Asiakaspalvelu",
+      "Taloushallinto",
+      "Viestintä"
+    ],
+    tools_tech: [
+      "Office 365",
+      "Toimistohallintajärjestelmät",
+      "Taloushallinto-ohjelmat"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4800],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Toimistojen jatkuva tarve hallinnolliselle johdolle ylläpitää kysyntää."
+    },
+    entry_roles: ["Toimistoassistentti", "Hallintovirkailija"],
+    career_progression: ["Senior toimistopäällikkö", "Hallintopäällikkö"],
+    typical_employers: ["Kaikki toimistot", "Palveluyritykset", "Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "warehouse-manager",
+    category: "jarjestaja",
+    title_fi: "Varastopäällikkö",
+    title_en: "Warehouse Manager",
+    short_description: "Varastopäällikkö johtaa varaston toimintaa ja henkilöstöä. Työ vaatii logistista osaamista ja johtamistaitoja.",
+    main_tasks: [
+      "Varaston toiminnan johtaminen",
+      "Henkilöstön johtaminen",
+      "Varastonohjausjärjestelmien käyttö",
+      "Turvallisuuden varmistaminen",
+      "Varaston optimointi"
+    ],
+    education_paths: [
+      "AMK: Logistiikka",
+      "Varastonhallinnan koulutus",
+      "Esimiesvalmennus"
+    ],
+    core_skills: [
+      "Varastonhallinta",
+      "Logistiikka",
+      "Henkilöstöjohtaminen",
+      "WMS-järjestelmät",
+      "Turvallisuus"
+    ],
+    tools_tech: [
+      "WMS-järjestelmät",
+      "Trukkiliikenne",
+      "Varastointijärjestelmät"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 3 },
+    salary_eur_month: {
+      median: 4000,
+      range: [3400, 5000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Verkkokaupan kasvu ja logistiikan kehitys lisäävät varastopäälliköiden kysyntää."
+    },
+    entry_roles: ["Varastoesimies", "Varastotyöntekijä"],
+    career_progression: ["Logistiikkapäällikkö", "Jakelukeskuspäällikkö"],
+    typical_employers: ["Logistiikkayritykset", "Kaupan alan yritykset", "Valmistava teollisuus"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "service-manager",
+    category: "jarjestaja",
+    title_fi: "Palvelupäällikkö",
+    title_en: "Service Manager",
+    short_description: "Palvelupäällikkö johtaa palveluorganisaatiota ja varmistaa asiakastyytyväisyyden. Työ vaatii johtamistaitoja ja asiakasymmärrystä.",
+    main_tasks: [
+      "Palveluorganisaation johtaminen",
+      "Palveluprosessien kehittäminen",
+      "Asiakastyytyväisyyden seuranta",
+      "Henkilöstön johtaminen",
+      "Budjetointi ja raportointi"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai palvelutuotanto",
+      "Palvelujohtamisen koulutus",
+      "Esimiesvalmennus"
+    ],
+    core_skills: [
+      "Palvelujohtaminen",
+      "Asiakaskokemus",
+      "Henkilöstöjohtaminen",
+      "Prosessienkehittäminen",
+      "Taloudellinen ymmärrys"
+    ],
+    tools_tech: [
+      "CRM-järjestelmät",
+      "Palvelunhallintatyökalut",
+      "Asiakaspalautejärjestelmät"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 5800],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Palvelutalouden kasvu lisää palvelupäälliköiden kysyntää."
+    },
+    entry_roles: ["Palveluesimies", "Asiakaspalvelupäällikkö"],
+    career_progression: ["Palvelujohtaja", "Customer Experience Director"],
+    typical_employers: ["Palveluyritykset", "Kauppa", "Terveydenhuolto"],
+    work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "scheduling-coordinator",
+    category: "jarjestaja",
+    title_fi: "Aikataulukoordinaattori",
+    title_en: "Scheduling Coordinator",
+    short_description: "Aikataulukoordinaattori hallinnoi resurssien ja töiden aikataulutusta. Työ vaatii organisointikykyä ja analyyttistä ajattelua.",
+    main_tasks: [
+      "Resurssien aikataulutus",
+      "Työvuorojen suunnittelu",
+      "Kapasiteetin hallinta",
+      "Aikataulukonfliktien ratkaiseminen",
+      "Raportointii"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai tekniikka",
+      "Projektihallinnan koulutus",
+      "Resurssienhallinnan koulutus"
+    ],
+    core_skills: [
+      "Aikataulutus",
+      "Resurssien hallinta",
+      "Analytiikka",
+      "Ongelmanratkaisu",
+      "Viestintä"
+    ],
+    tools_tech: [
+      "Aikataulutusohjelmistot",
+      "ERP-järjestelmät",
+      "Excel"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 3 },
+    salary_eur_month: {
+      median: 3500,
+      range: [3000, 4500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Resurssienhallinnan tarve ylläpitää aikataulukoordinaattoreiden kysyntää."
+    },
+    entry_roles: ["Aikatauluassistentti", "Koordinaattori"],
+    career_progression: ["Senior aikataulukoordinaattori", "Resurssipäällikkö"],
+    typical_employers: ["Teollisuus", "Palveluyritykset", "Terveydenhuolto"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "inventory-manager",
+    category: "jarjestaja",
+    title_fi: "Varastonhallintapäällikkö",
+    title_en: "Inventory Manager",
+    short_description: "Varastonhallintapäällikkö optimoi varastotasoja ja hallinnoi varastoja. Työ vaatii analyyttistä osaamista ja logistista ymmärrystä.",
+    main_tasks: [
+      "Varastotasojen optimointi",
+      "Inventaarioiden hallinta",
+      "Tilausten koordinointi",
+      "Varastokustannusten hallinta",
+      "Analytiikka ja raportointi"
+    ],
+    education_paths: [
+      "AMK: Logistiikka tai liiketalous",
+      "Varastonhallinnan koulutus",
+      "Supply chain -koulutus"
+    ],
+    core_skills: [
+      "Varastonhallinta",
+      "Analytiikka",
+      "Ennustaminen",
+      "Logistiikka",
+      "Excel ja tietojärjestelmät"
+    ],
+    tools_tech: [
+      "WMS-järjestelmät",
+      "ERP-järjestelmät",
+      "Excel ja analytiikkatyökalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 4200,
+      range: [3500, 5500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Varastojen tehokas hallinta on kriittistä, mikä lisää asiantuntijoiden kysyntää."
+    },
+    entry_roles: ["Varastosuunnittelija", "Varastokoordinaattori"],
+    career_progression: ["Senior varastonhallintapäällikkö", "Supply chain päällikkö"],
+    typical_employers: ["Kaupan alan yritykset", "Valmistava teollisuus", "Logistiikkayritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "records-manager",
+    category: "jarjestaja",
+    title_fi: "Arkistonhoitaja",
+    title_en: "Records Manager",
+    short_description: "Arkistonhoitaja hallinnoi organisaation asiakirjoja ja tietoa. Työ vaatii järjestelmällisyyttä ja tiedonhallinnan osaamista.",
+    main_tasks: [
+      "Asiakirjojen hallinta",
+      "Arkistointijärjestelmien ylläpito",
+      "Tietosuojan varmistaminen",
+      "Hävitysprosessien hallinta",
+      "Koulutuksen järjestäminen"
+    ],
+    education_paths: [
+      "FM: Arkistoala tai informaatiotutkimus",
+      "AMK: Liiketalous + arkistointikoulutus",
+      "Tiedonhallinnan erikoiskoulutus"
+    ],
+    core_skills: [
+      "Arkistointi",
+      "Tiedonhallinta",
+      "Tietosuoja",
+      "Dokumentinhallinta",
+      "Järjestelmällisyys"
+    ],
+    tools_tech: [
+      "Dokumentinhallintajärjestelmät",
+      "Arkistointiohjelmistot",
+      "Metatiedon hallinta"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 3 },
+    salary_eur_month: {
+      median: 3600,
+      range: [3000, 4500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Tiedon lisääntyminen ja sääntelyt ylläpitävät arkistonhoitajien kysyntää."
+    },
+    entry_roles: ["Arkistoassistentti", "Dokumenttikoordinaattori"],
+    career_progression: ["Senior arkistonhoitaja", "Tiedonhallinnapäällikkö"],
+    typical_employers: ["Julkinen sektori", "Suuryritykset", "Terveydenhuolto"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "travel-coordinator",
+    category: "jarjestaja",
+    title_fi: "Matkakoordinaattori",
+    title_en: "Travel Coordinator",
+    short_description: "Matkakoordinaattori järjestää ja hallinnoi organisaation matkustusta. Työ vaatii organisointikykyä ja asiakaspalvelutaitoja.",
+    main_tasks: [
+      "Matkojen järjestäminen",
+      "Matkakustannusten hallinta",
+      "Matkustuspolitiikan noudattaminen",
+      "Toimittajasuhteiden hoito",
+      "Matkaraportointi"
+    ],
+    education_paths: [
+      "AMK: Matkailu tai liiketalous",
+      "Matkakoordinaattorin koulutus",
+      "Asiakaspalvelukoulutus"
+    ],
+    core_skills: [
+      "Matkapalvelut",
+      "Koordinointi",
+      "Asiakaspalvelu",
+      "Budjetointi",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "Matkavarausjärjestelmät",
+      "Kustannusseurantajärjestelmät",
+      "Office-ohjelmat"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 5 },
+    salary_eur_month: {
+      median: 3400,
+      range: [2800, 4200],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Liikematkailun elpyminen pandemian jälkeen lisää matkakoordinaattoreiden kysyntää."
+    },
+    entry_roles: ["Matkapalveluneuvoja", "Matka-assistentti"],
+    career_progression: ["Senior matkakoordinaattori", "Travel Manager"],
+    typical_employers: ["Suuryritykset", "Matkatoimistot", "Konsernit"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "training-coordinator",
+    category: "jarjestaja",
+    title_fi: "Koulutuskoordinaattori",
+    title_en: "Training Coordinator",
+    short_description: "Koulutuskoordinaattori järjestää ja hallinnoi organisaation koulutusohjelmia. Työ vaatii organisointikykyä ja pedagogista ymmärrystä.",
+    main_tasks: [
+      "Koulutusten suunnittelu ja järjestäminen",
+      "Kouluttajien koordinointi",
+      "Koulutusmateriaalien hallinta",
+      "Osallistujahallinta",
+      "Koulutusten arviointi ja raportointi"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai kasvatusala",
+      "Koulutuksen suunnittelun opinnot",
+      "HR-koulutus"
+    ],
+    core_skills: [
+      "Koulutuksen suunnittelu",
+      "Koordinointi",
+      "Projektinhallinta",
+      "Pedagoginen osaaminen",
+      "Viestintä"
+    ],
+    tools_tech: [
+      "LMS-järjestelmät",
+      "Koulutushallintatyökalut",
+      "Virtuaalialustat"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 3600,
+      range: [3000, 4500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Jatkuvan oppimisen tarve lisää koulutuskoordinaattoreiden kysyntää."
+    },
+    entry_roles: ["Koulutusassistentti", "Koulutussuunnittelija"],
+    career_progression: ["Senior koulutuskoordinaattori", "Koulutuspäällikkö"],
+    typical_employers: ["Suuryritykset", "Koulutusyritykset", "Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "fleet-manager",
+    category: "jarjestaja",
+    title_fi: "Kalustonhallintapäällikkö",
+    title_en: "Fleet Manager",
+    short_description: "Kalustonhallintapäällikkö vastaa organisaation ajoneuvokalustosta. Työ vaatii logistista osaamista ja kustannustietoisuutta.",
+    main_tasks: [
+      "Ajoneuvokkaluston hallinta",
+      "Huoltojen koordinointi",
+      "Kustannusseuranta",
+      "Leasing-sopimusten hallinta",
+      "Ajoneuvopolitiikan kehittäminen"
+    ],
+    education_paths: [
+      "AMK: Logistiikka tai liiketalous",
+      "Kalustonhallinnan koulutus",
+      "Autoalan koulutus"
+    ],
+    core_skills: [
+      "Kalustonhallinta",
+      "Logistiikka",
+      "Kustannushallinta",
+      "Sopimusten hallinta",
+      "Analytiikka"
+    ],
+    tools_tech: [
+      "Kalustonhallintajärjestelmät",
+      "Telematiikka",
+      "Kustannusseurantaohjelmat"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 3 },
+    salary_eur_month: {
+      median: 4000,
+      range: [3400, 5000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Organisaatioiden tarpeet ajoneuvokkalustolla ylläpitävät päälliköiden kysyntää."
+    },
+    entry_roles: ["Kalustokoordinaattori", "Logistiikkakoordinaattori"],
+    career_progression: ["Senior kalustonhallintapäällikkö", "Logistiikkapäällikkö"],
+    typical_employers: ["Kuljetusyritykset", "Suuryritykset", "Autovuokraamot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "admin-systems-coordinator",
+    category: "jarjestaja",
+    title_fi: "Hallintojärjestelmäkoordinaattori",
+    title_en: "Administrative Systems Coordinator",
+    short_description: "Hallintojärjestelmäkoordinaattori vastaa hallinnollisten järjestelmien käytöstä ja kehittämisestä. Työ vaatii IT-ymmärrystä ja prosessiosaamista.",
+    main_tasks: [
+      "Hallintojärjestelmien ylläpito",
+      "Käyttäjätuki",
+      "Prosessien kehittäminen",
+      "Koulutuksen järjestäminen",
+      "Järjestelmäintegraatiot"
+    ],
+    education_paths: [
+      "AMK: Tietojenkäsittely tai liiketalous",
+      "Tietojärjestelmien koulutus",
+      "Prosessijohtamisen opinnot"
+    ],
+    core_skills: [
+      "Tietojärjestelmät",
+      "Prosessit",
+      "IT-tuki",
+      "Projektinhallinta",
+      "Koulutus"
+    ],
+    tools_tech: [
+      "ERP-järjestelmät",
+      "Hallintojärjestelmät",
+      "Office 365"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4800],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitalisaatio lisää hallintojärjestelmien asiantuntijoiden tarvetta."
+    },
+    entry_roles: ["IT-tukihenkilö", "Järjestelmäassistentti"],
+    career_progression: ["Senior koordinaattori", "Järjestelmäpäällikkö"],
+    typical_employers: ["Suuryritykset", "Julkinen sektori", "Palvelukeskukset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "resource-planner",
+    category: "jarjestaja",
+    title_fi: "Resurssisuunnittelija",
+    title_en: "Resource Planner",
+    short_description: "Resurssisuunnittelija optimoi henkilöstön ja muiden resurssien käyttöä. Työ vaatii analyyttistä ajattelua ja suunnitteluosaamista.",
+    main_tasks: [
+      "Resurssien suunnittelu",
+      "Kapasiteetin hallinta",
+      "Ennustaminen",
+      "Raportointi ja analytiikka",
+      "Yhteistyö projektipäälliköiden kanssa"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai tuotantotalous",
+      "Resurssisuunnittelun koulutus",
+      "Projektinhallinnan opinnot"
+    ],
+    core_skills: [
+      "Resurssisuunnittelu",
+      "Analytiikka",
+      "Ennustaminen",
+      "Excel ja järjestelmät",
+      "Projektinhallinta"
+    ],
+    tools_tech: [
+      "Resurssisuunnitteluohjelmat",
+      "ERP-järjestelmät",
+      "Excel ja analytiikkatyökalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 3900,
+      range: [3300, 5000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Resurssien tehokas hallinta on kriittistä, mikä lisää suunnittelijoiden kysyntää."
+    },
+    entry_roles: ["Suunnitteluassistentti", "Projektikoordinaattori"],
+    career_progression: ["Senior resurssisuunnittelija", "Resurssipäällikkö"],
+    typical_employers: ["Konsulttitoimistot", "IT-yritykset", "Projektiyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "vendor-manager",
+    category: "jarjestaja",
+    title_fi: "Toimittajapäällikkö",
+    title_en: "Vendor Manager",
+    short_description: "Toimittajapäällikkö hallinnoi organisaation toimittajasuhteita. Työ vaatii neuvottelutaitoja ja strategista ajattelua.",
+    main_tasks: [
+      "Toimittajasuhteiden hallinta",
+      "Sopimusneuvottelut",
+      "Toimittajien arviointi",
+      "Riskienhallinta",
+      "Kustannusoptimointi"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai logistiikka",
+      "Hankintatoimen erikoiskoulutus",
+      "SILF-tutkinto"
+    ],
+    core_skills: [
+      "Toimittajahallinta",
+      "Neuvottelutaidot",
+      "Sopimusten hallinta",
+      "Riskienhallinta",
+      "Analytiikka"
+    ],
+    tools_tech: [
+      "Vendor management -järjestelmät",
+      "ERP-järjestelmät",
+      "Contract management -työkalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 5 },
+    salary_eur_month: {
+      median: 5000,
+      range: [4200, 6500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Toimittajaverkon hallinnan strateginen merkitys kasvaa, lisäten kysyntää."
+    },
+    entry_roles: ["Toimittaja-asiantuntija", "Hankinta-asiantuntija"],
+    career_progression: ["Senior toimittajapäällikkö", "Hankintojohtaja"],
+    typical_employers: ["Suuryritykset", "IT-yritykset", "Valmistava teollisuus"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "data-governance-coordinator",
+    category: "jarjestaja",
+    title_fi: "Tiedonhallintakoordinaattori",
+    title_en: "Data Governance Coordinator",
+    short_description: "Tiedonhallintakoordinaattori vastaa organisaation datan hallinnasta ja laadusta. Työ vaatii järjestelmällisyyttä ja analyyttistä osaamista.",
+    main_tasks: [
+      "Tiedonhallinnan periaatteiden määrittely",
+      "Datan laadun valvonta",
+      "Tietosuojan varmistaminen",
+      "Metadatan hallinta",
+      "Koulutuksen järjestäminen"
+    ],
+    education_paths: [
+      "AMK: Tietojenkäsittely tai liiketalous",
+      "Data governance -koulutus",
+      "Tietosuojakoulutus"
+    ],
+    core_skills: [
+      "Tiedonhallinta",
+      "Tietosuoja (GDPR)",
+      "Datan laatu",
+      "Analytiikka",
+      "Prosessit"
+    ],
+    tools_tech: [
+      "Data governance -työkalut",
+      "Master data management -järjestelmät",
+      "Tietomallinnustyökalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 5 },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 5800],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Datan merkityksen kasvu ja sääntely lisäävät tiedonhallinnan asiantuntijoiden kysyntää."
+    },
+    entry_roles: ["Data quality analyst", "Tietosuoja-asiantuntija"],
+    career_progression: ["Senior coordinator", "Data governance manager"],
+    typical_employers: ["Suuryritykset", "Pankit", "Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "contract-administrator",
+    category: "jarjestaja",
+    title_fi: "Sopimushallinnoija",
+    title_en: "Contract Administrator",
+    short_description: "Sopimushallinnoija hallinnoi organisaation sopimuksia. Työ vaatii tarkkuutta ja juridista ymmärrystä.",
+    main_tasks: [
+      "Sopimusten hallinta",
+      "Sopimustietojen ylläpito",
+      "Sopimusten uusimisen koordinointi",
+      "Sopimusriskien tunnistaminen",
+      "Raportointii"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai oikeudellinen ala",
+      "Sopimushallinnan koulutus",
+      "Juridinen lisäkoulutus"
+    ],
+    core_skills: [
+      "Sopimusten hallinta",
+      "Juridinen ymmärrys",
+      "Järjestelmällisyys",
+      "Tarkkuus",
+      "Viestintä"
+    ],
+    tools_tech: [
+      "Contract management -järjestelmät",
+      "Dokumentinhallinta",
+      "Office-ohjelmat"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4800],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Sopimusten lisääntyminen ja monimutkaisuus kasvattavat hallinnoijien kysyntää."
+    },
+    entry_roles: ["Sopimusassistentti", "Hallinnollinen assistentti"],
+    career_progression: ["Senior sopimushallinnoija", "Sopimuspäällikkö"],
+    typical_employers: ["Suuryritykset", "Julkinen sektori", "Konsulttitoimistot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "meeting-coordinator",
+    category: "jarjestaja",
+    title_fi: "Kokouskoordinaattori",
+    title_en: "Meeting Coordinator",
+    short_description: "Kokouskoordinaattori järjestää ja koordinoi organisaation kokouksia. Työ vaatii organisointikykyä ja palveluhenkisyyttä.",
+    main_tasks: [
+      "Kokousten järjestäminen",
+      "Kokoustilojen varaaminen",
+      "Osallistujahalliinta",
+      "Teknisten järjestelyjen koordinointi",
+      "Kokousmateriaalien valmistelu"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai hallinto",
+      "Assistentin koulutus",
+      "Tapahtumatuotannon opinnot"
+    ],
+    core_skills: [
+      "Kokouksien järjestäminen",
+      "Koordinointi",
+      "Asiakaspalvelu",
+      "Office-ohjelmat",
+      "Organisointi"
+    ],
+    tools_tech: [
+      "Kokousvarausjärjestelmät",
+      "Teams/Zoom",
+      "Office 365"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 3200,
+      range: [2700, 4000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Kokouksien järjestäjien tarve jatkuu hybridityön aikakaudella."
+    },
+    entry_roles: ["Toimistoassistentti", "Vastaanottovirkailija"],
+    career_progression: ["Senior kokouskoordinaattori", "Tapahtumakoordinaattori"],
+    typical_employers: ["Suuryritykset", "Julkinen sektori", "Tapahtumayritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "workflow-coordinator",
+    category: "jarjestaja",
+    title_fi: "Työnkulkukoordinaattori",
+    title_en: "Workflow Coordinator",
+    short_description: "Työnkulkukoordinaattori optimoi työprosesseja ja työnkulkuja. Työ vaatii prosessiymmärrystä ja järjestelmällisyyttä.",
+    main_tasks: [
+      "Työnkulkujen analysointi",
+      "Prosessien optimointi",
+      "Työkalujen käyttöönoton tuki",
+      "Koulutuksen järjestäminen",
+      "Tehokkuuden seuranta"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai tuotantotalous",
+      "Prosessijohtamisen koulutus",
+      "Lean-koulutus"
+    ],
+    core_skills: [
+      "Prosessianalyysi",
+      "Työnkulkujen optimointi",
+      "Lean-menetelmät",
+      "Projektinhallinta",
+      "Koulutus"
+    ],
+    tools_tech: [
+      "Workflow management -työkalut",
+      "Prosessimallinnusohjelmat",
+      "Projektinhallintatyökalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4800],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Tehokkuuden parantamisen tarve lisää työnkulkukoordinaattoreiden kysyntää."
+    },
+    entry_roles: ["Prosessiassistentti", "Koordinaattori"],
+    career_progression: ["Senior workflow coordinator", "Prosessipäällikkö"],
+    typical_employers: ["Palveluyritykset", "Tuotantoyritykset", "Konsulttitoimistot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "business-continuity-planner",
+    category: "jarjestaja",
+    title_fi: "Toiminnan jatkuvuuden suunnittelija",
+    title_en: "Business Continuity Planner",
+    short_description: "Toiminnan jatkuvuuden suunnittelija varmistaa organisaation häiriöttömän toiminnan kriisitilanteissa. Työ vaatii analyyttistä ajattelua ja riskienhallinnan osaamista.",
+    main_tasks: [
+      "Jatkuvuussuunnitelmien laatiminen",
+      "Riskiarvioinnit",
+      "Harjoitusten järjestäminen",
+      "Kriisinhallintavalmiuden ylläpito",
+      "Toipumisstrategioiden kehittäminen"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai turvallisuusala",
+      "Business continuity -sertifikaatti",
+      "Riskienhallinnan koulutus"
+    ],
+    core_skills: [
+      "Toiminnan jatkuvuussuunnittelu",
+      "Riskienhallinta",
+      "Kriisinhallinta",
+      "Analytiikka",
+      "Projektin hallinta"
+    ],
+    tools_tech: [
+      "BCM-järjestelmät",
+      "Riskienhallintatyökalut",
+      "Dokumentinhallinta"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 4800,
+      range: [4000, 6000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kriisien ja häiriöiden lisääntyminen kasvattaa jatkuvuussuunnittelijoiden kysyntää."
+    },
+    entry_roles: ["Riskienhallinnan asiantuntija", "Turvallisuuskoordinaattori"],
+    career_progression: ["Senior BCM-suunnittelija", "Riskienhallintapäällikkö"],
+    typical_employers: ["Suuryritykset", "Pankit", "Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "portfolio-manager-projects",
+    category: "jarjestaja",
+    title_fi: "Portfoliopäällikkö (projektit)",
+    title_en: "Portfolio Manager (Projects)",
+    short_description: "Projektien portfoliopäällikkö hallinnoi organisaation projektisalkkua. Työ vaatii strategista ajattelua ja projektiosaamista.",
+    main_tasks: [
+      "Projektiportfolion hallinta",
+      "Projektien priorisointi",
+      "Resurssien allokointi",
+      "Portfolio-raportointi",
+      "Strategian toteuttamisen varmistaminen"
+    ],
+    education_paths: [
+      "DI tai KTM: Tuotantotalous tai liiketalous",
+      "Projektinhallinnan sertifikaatti (PMP/PRINCE2)",
+      "Portfolio management -koulutus"
+    ],
+    core_skills: [
+      "Portfolionhallinta",
+      "Strateginen ajattelu",
+      "Projektinhallinta",
+      "Resurssien hallinta",
+      "Analytiikka"
+    ],
+    tools_tech: [
+      "Portfolio management -työkalut",
+      "Projektihallintatyökalut",
+      "BI-työkalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 5 },
+    salary_eur_month: {
+      median: 6000,
+      range: [5000, 8000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Strateginen projektinhallinnan tarve lisää portfoliopäälliköiden kysyntää."
+    },
+    entry_roles: ["Projektipäällikkö", "PMO-koordinaattori"],
+    career_progression: ["Senior portfoliopäällikkö", "PMO Director"],
+    typical_employers: ["Suuryritykset", "Konsulttitoimistot", "Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "pmo-coordinator",
+    category: "jarjestaja",
+    title_fi: "PMO-koordinaattori",
+    title_en: "PMO Coordinator",
+    short_description: "PMO-koordinaattori tukee projektihallintatoimiston toimintaa. Työ vaatii projektinhallinta-osaamista ja organisointikykyä.",
+    main_tasks: [
+      "Projektien tukeminen",
+      "Projektimenetelmien ylläpito",
+      "Raportoinnin koordinointi",
+      "Projektityökalujen hallinta",
+      "Koulutuksen järjestäminen"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai tekniikka",
+      "Projektinhallinnan koulutus",
+      "PMO-sertifikaatti"
+    ],
+    core_skills: [
+      "Projektinhallinta",
+      "PMO-prosessit",
+      "Koordinointi",
+      "Raportointi",
+      "Työkalujen hallinta"
+    ],
+    tools_tech: [
+      "Projektihallintatyökalut",
+      "PMO-järjestelmät",
+      "Office 365"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 4000,
+      range: [3400, 5000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Projektitoimistojen yleistyminen lisää PMO-koordinaattoreiden kysyntää."
+    },
+    entry_roles: ["Projektiassistentti", "Projektikoordinaattori"],
+    career_progression: ["Senior PMO-koordinaattori", "PMO-päällikkö"],
+    typical_employers: ["Suuryritykset", "IT-yritykset", "Konsulttitoimistot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "materials-planner",
+    category: "jarjestaja",
+    title_fi: "Materiaalisuunnittelija",
+    category_en: "Materials Planner",
+    short_description: "Materiaalisuunnittelija vastaa tuotantomateriaalien saatavuudesta. Työ vaatii logistista osaamista ja tarkkuutta.",
+    main_tasks: [
+      "Materiaalien tarvesuunnittelu",
+      "Tilausten tekeminen",
+      "Toimitusaikojen seuranta",
+      "Varastotasojen optimointi",
+      "Toimittajayhteistyö"
+    ],
+    education_paths: [
+      "AMK: Logistiikka tai tuotantotalous",
+      "Materiaalihallinnan koulutus",
+      "Supply chain -opinnot"
+    ],
+    core_skills: [
+      "Materiaalisuunnittelu",
+      "ERP-järjestelmät",
+      "Logistiikka",
+      "Analytiikka",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "ERP-järjestelmät",
+      "MRP-järjestelmät",
+      "Excel"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 3700,
+      range: [3100, 4700],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Tuotannon materiaalihallinnan tarve ylläpitää suunnittelijoiden kysyntää."
+    },
+    entry_roles: ["Varastotyöntekijä", "Logistiikkaassistentti"],
+    career_progression: ["Senior materiaalisuunnittelija", "Materiaalihal lintapäällikkö"],
+    typical_employers: ["Valmistava teollisuus", "Tuotantoyritykset", "Logistiikkayritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "capacity-planner",
+    category: "jarjestaja",
+    title_fi: "Kapasiteettisuunnittelija",
+    title_en: "Capacity Planner",
+    short_description: "Kapasiteettisuunnittelija optimoi tuotannon tai palvelun kapasiteettia. Työ vaatii analyyttistä ajattelua ja suunnitteluosaamista.",
+    main_tasks: [
+      "Kapasiteetin suunnittelu",
+      "Ennusteiden laatiminen",
+      "Kuormituksen hallinta",
+      "Pullonkaulojen tunnistaminen",
+      "Investointitarpeiden arviointi"
+    ],
+    education_paths: [
+      "AMK: Tuotantotalous tai liiketalous",
+      "Kapasiteettisuunnittelun koulutus",
+      "Analytiikan opinnot"
+    ],
+    core_skills: [
+      "Kapasiteettisuunnittelu",
+      "Ennustaminen",
+      "Analytiikka",
+      "Tuotannonohjaus",
+      "Excel ja järjestelmät"
+    ],
+    tools_tech: [
+      "ERP-järjestelmät",
+      "Kapasiteettisuunnitteluohjelmat",
+      "Excel ja analytiikkatyökalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 4000,
+      range: [3400, 5200],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kapasiteetin optimoinnin tarve teollisuudessa ja palveluissa lisää kysyntää."
+    },
+    entry_roles: ["Tuotantosuunnittelija", "Suunnitteluassistentti"],
+    career_progression: ["Senior kapasiteettisuunnittelija", "Tuotantosuunnittelupäällikkö"],
+    typical_employers: ["Valmistava teollisuus", "Telekommunikaatio", "Palvelukeskukset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "transportation-coordinator",
+    category: "jarjestaja",
+    title_fi: "Kuljetuskoordinaattori",
+    title_en: "Transportation Coordinator",
+    short_description: "Kuljetuskoordinaattori järjestää ja koordinoi kuljetuksia. Työ vaatii logistista osaamista ja organisointikykyä.",
+    main_tasks: [
+      "Kuljetusten suunnittelu ja koordinointi",
+      "Kuljetusyritysten hallinta",
+      "Reittien optimointi",
+      "Kuljetuskustannusten seuranta",
+      "Toimitusaikojen valvonta"
+    ],
+    education_paths: [
+      "AMK: Logistiikka",
+      "Kuljetusalan koulutus",
+      "Liikenteenohjauksen opinnot"
+    ],
+    core_skills: [
+      "Kuljetusten koordinointi",
+      "Logistiikka",
+      "Reittioptimointi",
+      "Ongelmanratkaisu",
+      "Viestintä"
+    ],
+    tools_tech: [
+      "TMS-järjestelmät",
+      "Reittioptimoinniohjelmistot",
+      "GPS-seurantajärjestelmät"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 3600,
+      range: [3000, 4500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Verkkokaupan kasvu ja kuljetusalan kehitys lisäävät koordinaattoreiden kysyntää."
+    },
+    entry_roles: ["Kuljetusassistentti", "Lähetyskoordinaattori"],
+    career_progression: ["Senior kuljetuskoordinaattori", "Kuljetuspäällikkö"],
+    typical_employers: ["Kuljetusyritykset", "Logistiikkayritykset", "Kaupan alan yritykset"],
+    work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "lab-manager",
+    category: "jarjestaja",
+    title_fi: "Laboratoriopäällikkö",
+    title_en: "Laboratory Manager",
+    short_description: "Laboratoriopäällikkö johtaa laboratorion toimintaa ja henkilöstöä. Työ vaatii tieteellistä osaamista ja johtamistaitoja.",
+    main_tasks: [
+      "Laboratorion toiminnan johtaminen",
+      "Laadunvarmistus",
+      "Henkilöstön johtaminen",
+      "Laitteiden ja materiaalien hallinta",
+      "Turvallisuudesta huolehtiminen"
+    ],
+    education_paths: [
+      "FM tai FT: Luonnontieteet",
+      "Laboratorioalan erikoistumiskoulutus",
+      "Johtamiskoulutus"
+    ],
+    core_skills: [
+      "Laboratoriokäytännöt",
+      "Laadunvarmistus",
+      "Henkilöstöjohtaminen",
+      "Turvallisuus",
+      "Budjetointi"
+    ],
+    tools_tech: [
+      "Laboratoriolaitteet",
+      "LIMS-järjestelmät",
+      "Laatujärjestelmät"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 5 },
+    salary_eur_month: {
+      median: 4800,
+      range: [4000, 6000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Laboratorioiden jatkuva tarve johdolle ylläpitää kysyntää."
+    },
+    entry_roles: ["Laborantti", "Tutkija"],
+    career_progression: ["Senior laboratoriopäällikkö", "Laboratoriojohtaja"],
+    typical_employers: ["Terveydenhuolto", "Yliopistot", "Tutkimuslaitokset"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "maintenance-planner",
+    category: "jarjestaja",
+    title_fi: "Kunnossapitosuunnittelija",
+    title_en: "Maintenance Planner",
+    short_description: "Kunnossapitosuunnittelija suunnittelee ja koordinoi laitteiden ja koneiden huoltoa. Työ vaatii teknistä osaamista ja suunnittelutaitoja.",
+    main_tasks: [
+      "Kunnossapidon suunnittelu",
+      "Huoltoohjelmien laatiminen",
+      "Resurssien koordinointi",
+      "Varaosahalinta",
+      "Seisokkien suunnittelu"
+    ],
+    education_paths: [
+      "AMK: Konetekniikka tai sähkötekniikka",
+      "Kunnossapidon erikoiskoulutus",
+      "Suunnittelijan opinnot"
+    ],
+    core_skills: [
+      "Kunnossapitosuunnittelu",
+      "Tekninen osaaminen",
+      "Projektinhallinta",
+      "CMMS-järjestelmät",
+      "Analytiikka"
+    ],
+    tools_tech: [
+      "CMMS-järjestelmät",
+      "ERP-järjestelmät",
+      "CAD"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 4200,
+      range: [3600, 5200],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Laitteiden kunnossapidon tarve ylläpitää suunnittelijoiden kysyntää."
+    },
+    entry_roles: ["Kunnossapitoasentaja", "Huoltoteknikko"],
+    career_progression: ["Senior kunnossapitosuunnittelija", "Kunnossapitopäällikkö"],
+    typical_employers: ["Teollisuus", "Prosessiteollisuus", "Kiinteistöyhtiöt"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 48
+  },
+  {
+    id: "store-manager",
+    category: "jarjestaja",
+    title_fi: "Myymäläpäällikkö",
+    title_en: "Store Manager",
+    short_description: "Myymäläpäällikkö johtaa myymälän toimintaa ja henkilöstöä. Työ vaatii johtamistaitoja ja kaupallista osaamista.",
+    main_tasks: [
+      "Myymälän toiminnan johtaminen",
+      "Henkilöstön johtaminen",
+      "Myynnin ja tuloksen seuranta",
+      "Asiakaspalvelun varmistaminen",
+      "Varastonhallinta"
+    ],
+    education_paths: [
+      "AMK: Liiketalous",
+      "Merkonomi",
+      "Johtamiskoulutus"
+    ],
+    core_skills: [
+      "Kaupan johtaminen",
+      "Henkilöstöjohtaminen",
+      "Asiakaspalvelu",
+      "Myynti",
+      "Budjetointi"
+    ],
+    tools_tech: [
+      "Kassajärjestelmät",
+      "Varastonhallintajärjestelmät",
+      "Myyntiraportointityökalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 3 },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 5000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Kaupan alan jatkuva tarve myymäläpäälliköille ylläpitää kysyntää."
+    },
+    entry_roles: ["Myyjä", "Vuoropäällikkö"],
+    career_progression: ["Aluejohtaja", "Myyntijohtaja"],
+    typical_employers: ["Kaupan alan yritykset", "Vähittäiskauppa", "Erikoisliikkeet"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "production-scheduler",
+    category: "jarjestaja",
+    title_fi: "Tuotantoaikatauluttaja",
+    title_en: "Production Scheduler",
+    short_description: "Tuotantoaikatauluttaja suunnittelee ja aikatauluttaa tuotantoa. Työ vaatii analyyttistä ajattelua ja järjestelmäosaamista.",
+    main_tasks: [
+      "Tuotannon aikataulutus",
+      "Kapasiteetin hallinta",
+      "Tilausten priorisointi",
+      "Materiaalitarpeiden koordinointi",
+      "Seuranta ja raportointi"
+    ],
+    education_paths: [
+      "AMK: Tuotantotalous tai konetekniikka",
+      "Tuotannonohjauksen koulutus",
+      "ERP-järjestelmäkoulutus"
+    ],
+    core_skills: [
+      "Tuotannon aikataulutus",
+      "ERP-järjestelmät",
+      "Analytiikka",
+      "Ongelmanratkaisu",
+      "Viestintä"
+    ],
+    tools_tech: [
+      "ERP-järjestelmät",
+      "APS-järjestelmät",
+      "Excel"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 3 },
+    salary_eur_month: {
+      median: 3900,
+      range: [3300, 5000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Tuotannon tehostamisen tarve ylläpitää aikatauluttajien kysyntää."
+    },
+    entry_roles: ["Tuotantosuunnittelija", "Tuotantoassistentti"],
+    career_progression: ["Senior aikatauluttaja", "Tuotannonsuunnittelupäällikkö"],
+    typical_employers: ["Valmistava teollisuus", "Tuotantoyritykset", "Prosessiteollisuus"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "demand-planner",
+    category: "jarjestaja",
+    title_fi: "Kysynnän suunnittelija",
+    title_en: "Demand Planner",
+    short_description: "Kysynnän suunnittelija ennustaa tuotteiden kysyntää. Työ vaatii analyyttistä osaamista ja ymmärrystä markkinadynamiikasta.",
+    main_tasks: [
+      "Kysyntäennusteiden laatiminen",
+      "Myyntidatan analysointi",
+      "Yhteistyö myynnin ja tuotannon kanssa",
+      "Varastotasojen optimointi",
+      "Trendianalyysi"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai logistiikka",
+      "Demand planning -koulutus",
+      "Tilastotieteen opinnot"
+    ],
+    core_skills: [
+      "Kysyntäennustaminen",
+      "Analytiikka",
+      "Tilastotiede",
+      "Excel ja BI-työkalut",
+      "Supply chain -ymmärrys"
+    ],
+    tools_tech: [
+      "Demand planning -ohjelmistot",
+      "ERP-järjestelmät",
+      "BI-työkalut ja Excel"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 4200,
+      range: [3500, 5500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Ennustamisen merkitys toimitusketjuissa lisää kysyntäsuunnittelijoiden tarvetta."
+    },
+    entry_roles: ["Kysyntäanalyytikko", "Supply chain -assistentti"],
+    career_progression: ["Senior demand planner", "Supply chain päällikkö"],
+    typical_employers: ["Valmistava teollisuus", "Kaupan alan yritykset", "FMCG-yritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "lean-coordinator",
+    category: "jarjestaja",
+    title_fi: "Lean-koordinaattori",
+    title_en: "Lean Coordinator",
+    short_description: "Lean-koordinaattori edistää lean-filosofiaa ja jatkuvaa parantamista organisaatiossa. Työ vaatii prosessiosaamista ja valmentavataitoja.",
+    main_tasks: [
+      "Lean-aloitteiden koordinointi",
+      "Jatkuvan parantamisen edistäminen",
+      "Työpajojen järjestäminen",
+      "Lean-työkalujen kouluttaminen",
+      "Parannusten mittaaminen"
+    ],
+    education_paths: [
+      "AMK: Tuotantotalous tai liiketalous",
+      "Lean-sertifikaatti (Green/Black Belt)",
+      "Six Sigma -koulutus"
+    ],
+    core_skills: [
+      "Lean-menetelmät",
+      "Six Sigma",
+      "Prosessienkehittäminen",
+      "Valmennus",
+      "Muutosjohtaminen"
+    ],
+    tools_tech: [
+      "Lean-työkalut (5S, Kaizen, Value Stream Mapping)",
+      "Prosessimallinnustyökalut",
+      "Mittaristot"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 4200,
+      range: [3600, 5500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Jatkuvan parantamisen tarve lisää lean-koordinaattoreiden kysyntää."
+    },
+    entry_roles: ["Prosessiassistentti", "Kehitysinsinööri"],
+    career_progression: ["Senior lean-koordinaattori", "Kehityspäällikkö"],
+    typical_employers: ["Valmistava teollisuus", "Palveluyritykset", "Terveydenhuolto"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "import-export-coordinator",
+    category: "jarjestaja",
+    title_fi: "Tuonti-vientikoordinaattori",
+    title_en: "Import/Export Coordinator",
+    short_description: "Tuonti-vientikoordinaattori hallinnoi kansainvälisiä tavaratoimituksia. Työ vaatii logistista osaamista ja tullikäytäntöjen tuntemusta.",
+    main_tasks: [
+      "Tuonti- ja vientilähetysten koordinointi",
+      "Tullausasiakirjojen valmistelu",
+      "Kuljetusten järjestäminen",
+      "Toimittajayhteistyö",
+      "Compliance-varmistus"
+    ],
+    education_paths: [
+      "AMK: Kansainvälinen kauppa tai logistiikka",
+      "Tullikäytäntöjen koulutus",
+      "Logistiikan erikoiskoulutus"
+    ],
+    core_skills: [
+      "Tuonti-vienti",
+      "Tullikäytännöt",
+      "Logistiikka",
+      "Dokumenttien hallinta",
+      "Kansainvälinen kauppa"
+    ],
+    tools_tech: [
+      "Tullausjärjestelmät",
+      "Logistiikkajärjestelmät",
+      "Dokumentinhallinta"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 5 },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4800],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Kansainvälisen kaupan jatkuvuus ylläpitää koordinaattoreiden kysyntää."
+    },
+    entry_roles: ["Logistiikkaassistentti", "Tullausassistentti"],
+    career_progression: ["Senior tuonti-vientikoordinaattori", "Logistiikkapäällikkö"],
+    typical_employers: ["Kauppayritykset", "Logistiikkayritykset", "Valmistava teollisuus"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "shift-supervisor",
+    category: "jarjestaja",
+    title_fi: "Vuoroesimies",
+    title_en: "Shift Supervisor",
+    short_description: "Vuoroesimies johtaa työvuoroa ja vastaa toiminnan sujuvuudesta. Työ vaatii johtamistaitoja ja operatiivista osaamista.",
+    main_tasks: [
+      "Vuoron johtaminen",
+      "Henkilöstön ohjaus",
+      "Tuotannon tai palvelun varmistaminen",
+      "Ongelmatilanteista huolehtiminen",
+      "Raportointi"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai tekniikka",
+      "Esimieskoulutus",
+      "Alan ammattitutkinto"
+    ],
+    core_skills: [
+      "Esimiestyö",
+      "Operatiivinen johtaminen",
+      "Ongelmanratkaisu",
+      "Viestintä",
+      "Tiimityö"
+    ],
+    tools_tech: [
+      "Tuotanto/palvelujärjestelmät",
+      "Viestintävälineet",
+      "Raportointityökalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 3 },
+    salary_eur_month: {
+      median: 3600,
+      range: [3000, 4500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Vuorotyötä tekevien organisaatioiden tarve esimie hille ylläpitää kysyntää."
+    },
+    entry_roles: ["Työntekijä", "Vuorovastaava"],
+    career_progression: ["Työnjohtaja", "Tuotantopäällikkö"],
+    typical_employers: ["Teollisuus", "Terveydenhuolto", "Palveluyritykset"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "release-manager",
+    category: "jarjestaja",
+    title_fi: "Release Manager",
+    title_en: "Release Manager",
+    short_description: "Release Manager koordinoi ohjelmistojulkaisuja. Työ vaatii ohjelmistokehityksen ymmärrystä ja projektinhallintaa.",
+    main_tasks: [
+      "Julkaisujen suunnittelu",
+      "Release-prosessin koordinointi",
+      "Riskienhallinta",
+      "Tiimien välinen yhteistyö",
+      "Julkaisujen dokumentointi"
+    ],
+    education_paths: [
+      "AMK: Tietojenkäsittely",
+      "Ohjelmistokehityksen kokemus",
+      "Release management -koulutus"
+    ],
+    core_skills: [
+      "Release management",
+      "CI/CD",
+      "Projektinhallinta",
+      "Riskienhallinta",
+      "Ohjelmistokehitysprosessit"
+    ],
+    tools_tech: [
+      "Jenkins",
+      "GitLab/GitHub",
+      "Jira",
+      "CI/CD-työkalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 5 },
+    salary_eur_month: {
+      median: 5200,
+      range: [4500, 6500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Ohjelmistojulkaisujen lisääntyminen ja monimutkaisuus lisäävät release managereiden kysyntää."
+    },
+    entry_roles: ["Build Engineer", "DevOps Engineer"],
+    career_progression: ["Senior Release Manager", "Engineering Manager"],
+    typical_employers: ["Ohjelmistotalot", "IT-yritykset", "Teknologiayritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "configuration-manager",
+    category: "jarjestaja",
+    title_fi: "Konfiguraationhallintapäällikkö",
+    title_en: "Configuration Manager",
+    short_description: "Konfiguraationhallintapäällikkö hallinnoi tuotteiden ja järjestelmien konfiguraatioita. Työ vaatii järjestelmällisyyttä ja teknistä ymmärrystä.",
+    main_tasks: [
+      "Konfiguraationhallinta",
+      "Versioiden hallinta",
+      "Muutostenhallinta",
+      "Dokumentaation ylläpito",
+      "Auditoinnit"
+    ],
+    education_paths: [
+      "AMK: Tietojenkäsittely tai tekniikka",
+      "Konfiguraationhallinnan koulutus",
+      "ITIL-sertifikaatti"
+    ],
+    core_skills: [
+      "Konfiguraationhallinta",
+      "Versionhallinta",
+      "Muutostenhallinta",
+      "Dokumentointi",
+      "Järjestelmällisyys"
+    ],
+    tools_tech: [
+      "Git",
+      "Konfiguraationhallintatyökalut",
+      "CMDB"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 5500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Järjestelmien konfiguraationhallinnan tarve ylläpitää ammattilaisten kysyntää."
+    },
+    entry_roles: ["IT-koordinaattori", "Systems Administrator"],
+    career_progression: ["Senior Configuration Manager", "IT Service Manager"],
+    typical_employers: ["IT-yritykset", "Teollisuus", "Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "asset-manager",
+    category: "jarjestaja",
+    title_fi: "Omaisuudenhallintapäällikkö",
+    title_en: "Asset Manager",
+    short_description: "Omaisuudenhallintapäällikkö hallinnoi organisaation omaisuutta ja investointeja. Työ vaatii taloudellista ymmärrystä ja suunnitteluosaamista.",
+    main_tasks: [
+      "Omaisuuden hallinnointi",
+      "Investointisuunnittelu",
+      "Elinkaarihalinta",
+      "Kustannusoptimointi",
+      "Raportointi"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai tekniikka",
+      "Asset management -koulutus",
+      "Kiinteistöalan opinnot"
+    ],
+    core_skills: [
+      "Omaisuudenhallinta",
+      "Taloudellinen analyysi",
+      "Elinkaarihallinta",
+      "Strateginen suunnittelu",
+      "Riskienhallinta"
+    ],
+    tools_tech: [
+      "Asset management -järjestelmät",
+      "ERP-järjestelmät",
+      "Analytiikkatyökalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 5000,
+      range: [4200, 6500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Omaisuuden tehokkaan hallinnan tarve ylläpitää päälliköiden kysyntää."
+    },
+    entry_roles: ["Asset Coordinator", "Kiinteistöasiantuntija"],
+    career_progression: ["Senior Asset Manager", "Director of Asset Management"],
+    typical_employers: ["Kiinteistöyhtiöt", "Teollisuus", "Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "product-owner",
+    category: "jarjestaja",
+    title_fi: "Product Owner",
+    title_en: "Product Owner",
+    short_description: "Product Owner määrittelee tuotteen kehityssuunnan ja hallinnoi product backlogia. Työ vaatii tuoteymmärrystä ja asiakaslähtöisyyttä.",
+    main_tasks: [
+      "Product backlogin hallinta",
+      "User storyjen kirjoittaminen",
+      "Prioriteettien määrittely",
+      "Sidosryhmäviestintä",
+      "Tuotevision kirkastaminen"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai tietojenkäsittely",
+      "Product Owner -sertifikaatti (CSPO/PSPO)",
+      "Tuotejohtamisen koulutus"
+    ],
+    core_skills: [
+      "Product ownership",
+      "Scrum",
+      "Asiakasymmärrys",
+      "Priorisointi",
+      "Viestintä"
+    ],
+    tools_tech: [
+      "Jira",
+      "Confluence",
+      "Product management -työkalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 5 },
+    salary_eur_month: {
+      median: 5200,
+      range: [4500, 7000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Ketterän tuotekehityksen yleistyminen lisää Product Ownerien kysyntää."
+    },
+    entry_roles: ["Product Analyst", "Junior Product Owner"],
+    career_progression: ["Senior Product Owner", "Product Manager"],
+    typical_employers: ["IT-yritykset", "Ohjelmistotalot", "Digitaaliset palvelut"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "service-delivery-manager",
+    category: "jarjestaja",
+    title_fi: "Palveluntoimituspäällikkö",
+    title_en: "Service Delivery Manager",
+    short_description: "Palveluntoimituspäällikkö vastaa IT-palveluiden toimittamisesta asiakkaille. Työ vaatii IT-osaamista ja asiakasjohtamista.",
+    main_tasks: [
+      "Palvelutoimituksen johtaminen",
+      "Asiakassuhteiden hallinta",
+      "SLA-tavoitteiden seuranta",
+      "Palvelun laadun varmistaminen",
+      "Tiimien koordinointi"
+    ],
+    education_paths: [
+      "AMK: Tietojenkäsittely tai liiketalous",
+      "ITIL-sertifikaatti",
+      "Service management -koulutus"
+    ],
+    core_skills: [
+      "Service delivery",
+      "ITIL",
+      "Asiakashallinta",
+      "SLA-hallinta",
+      "Projektin hallinta"
+    ],
+    tools_tech: [
+      "Service management -työkalut",
+      "ITSM-järjestelmät",
+      "Raportointityökalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 5 },
+    salary_eur_month: {
+      median: 5500,
+      range: [4800, 7000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "IT-palveluiden kasvu lisää palveluntoimituspäälliköiden kysyntää."
+    },
+    entry_roles: ["Service Coordinator", "IT Service Manager"],
+    career_progression: ["Senior Service Delivery Manager", "Head of Service Delivery"],
+    typical_employers: ["IT-palveluyritykset", "Konsulttitoimistot", "Suuryritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "program-coordinator",
+    category: "jarjestaja",
+    title_fi: "Ohjelmakoordinaattori",
+    title_en: "Program Coordinator",
+    short_description: "Ohjelmakoordinaattori tukee ohjelmien hallintaa ja koordinoi useita projekteja. Työ vaatii projektinhallintaosaamista ja organisointikykyä.",
+    main_tasks: [
+      "Ohjelman projektien koordinointi",
+      "Resurssien hallinta",
+      "Raportoinnin koordinointi",
+      "Sidosryhmäviestintä",
+      "Ohjelman dokumentointi"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai tekniikka",
+      "Projektinhallinnan koulutus",
+      "Program management -opinnot"
+    ],
+    core_skills: [
+      "Ohjelmakoordinointi",
+      "Projektinhallinta",
+      "Resurssien hallinta",
+      "Viestintä",
+      "Raportointi"
+    ],
+    tools_tech: [
+      "Program management -työkalut",
+      "Projektihallintatyökalut",
+      "Office 365"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 4200,
+      range: [3600, 5500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Moniprojektiympäristöjen yleistyminen lisää ohjelmakoordinaattoreiden kysyntää."
+    },
+    entry_roles: ["Projektikoordinaattori", "Projektiassistentti"],
+    career_progression: ["Senior Program Coordinator", "Program Manager"],
+    typical_employers: ["Suuryritykset", "Konsulttitoimistot", "Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "operations-coordinator",
+    category: "jarjestaja",
+    title_fi: "Toimintokoordinaattori",
+    title_en: "Operations Coordinator",
+    short_description: "Toimintokoordinaattori tukee operatiivista toimintaa ja koordinoi päivittäisiä prosesseja. Työ vaatii organisointikykyä ja monialaista osaamista.",
+    main_tasks: [
+      "Päivittäisten operaatioiden koordinointi",
+      "Prosessien tukeminen",
+      "Raportoinnin valmistelu",
+      "Tiedonkulun varmistaminen",
+      "Ongelmatilanteiden käsittely"
+    ],
+    education_paths: [
+      "AMK: Liiketalous",
+      "Tradenomi",
+      "Hallinnon koulutus"
+    ],
+    core_skills: [
+      "Koordinointi",
+      "Organisointi",
+      "Prosessit",
+      "Viestintä",
+      "Ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "Office 365",
+      "ERP-järjestelmät",
+      "Projektinhallintatyökalut"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 4 },
+    salary_eur_month: {
+      median: 3500,
+      range: [3000, 4500],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Operatiivisen tuen tarve ylläpitää koordinaattoreiden kysyntää."
+    },
+    entry_roles: ["Toimistoassistentti", "Hallinnollinen assistentti"],
+    career_progression: ["Senior Operations Coordinator", "Operations Manager"],
+    typical_employers: ["Kaikki toimialat", "Palveluyritykset", "Tuotantoyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "regulatory-affairs-specialist",
+    category: "jarjestaja",
+    title_fi: "Viranomaisasioiden asiantuntija",
+    title_en: "Regulatory Affairs Specialist",
+    short_description: "Viranomaisasioiden asiantuntija hallinnoi tuotteiden viranomaisvaatimuksia ja -hyväksyntöjä. Työ vaatii sääntelytuntemusta ja järjestelmällisyyttä.",
+    main_tasks: [
+      "Viranomaislupien hallinta",
+      "Säännöstenmukaisuuden varmistaminen",
+      "Dokumentaation valmistelu",
+      "Viranomaisyhteistyö",
+      "Seuranta ja raportointi"
+    ],
+    education_paths: [
+      "FM tai FT: Luonnontieteet tai farmaseutiikka",
+      "Regulatory affairs -koulutus",
+      "Laadunvarmistuksen opinnot"
+    ],
+    core_skills: [
+      "Regulatory affairs",
+      "Sääntelytuntemus",
+      "Dokumentointi",
+      "Projektinhallinta",
+      "Viestintä"
+    ],
+    tools_tech: [
+      "Dokumentinhallintajärjestelmät",
+      "Regulatory management -työkalut",
+      "Viranomaistietokannat"
+    ],
+    languages_required: { fi: 5, sv: 3, en: 5 },
+    salary_eur_month: {
+      median: 4800,
+      range: [4000, 6000],
+      source: "Ammattinetti, 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Sääntelyn lisääntyminen kasvattaa regulatory affairs -asiantuntijoiden kysyntää."
+    },
+    entry_roles: ["Regulatory Affairs Assistant", "Quality Specialist"],
+    career_progression: ["Senior Regulatory Affairs Specialist", "Regulatory Affairs Manager"],
+    typical_employers: ["Lääketeollisuus", "Lääkinnälliset laitteet", "Elintarviketeollisuus"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    study_length_estimate_months: 60
+  },
+  {
+    id: "onboarding-coordinator",
+    category: "jarjestaja",
+    title_fi: "Perehdytyskoordinaattori",
+    title_en: "Onboarding Coordinator",
+    short_description: "Perehdytyskoordinaattori vastaa uusien työntekijöiden perehdytysprosessista. Työ vaatii organisointikykyä ja ihmissuhdetaitoja.",
+    main_tasks: [
+      "Perehdytysprosessin suunnittelu ja toteutus",
+      "Uusien työntekijöiden vastaanotto",
+      "Perehdytysmateriaalien valmistelu",
+      "Yhteyshenkilöiden koordinointi",
+      "Palautteen kerääminen ja prosessin kehittäminen"
+    ],
+    education_paths: [
+      "AMK: Liiketalous tai henkilöstöhallinto",
+      "HR-koulutus",
+      "Perehdytyksen erikoiskoulutus"
+    ],
+    core_skills: [
+      "Perehdytys",
+      "Koordinointi",
+      "Henkilöstöhallinto",
+      "Viestintä",
+      "Prosessienkehittäminen"
+    ],
+    tools_tech: [
+      "HR-järjestelmät",
+      "LMS-alustat",
+      "Office 365"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3600,
+      range: [3000, 4500],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Työvoiman vaihtuvuus ja laadukkaan perehdytyksen tarve lisäävät koordinaattoreiden kysyntää.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["HR-assistentti", "Perehdyttäjä"],
+    career_progression: ["Senior perehdytyskoordinaattori", "HR-päällikkö"],
+    typical_employers: ["Suuryritykset", "Kasvuyritykset", "Henkilöstöpalveluyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["perehdytys", "onboarding", "HR"],
+    study_length_estimate_months: 42
+  },
+  {
+    id: "knowledge-management-coordinator",
+    category: "jarjestaja",
+    title_fi: "Tiedonhallinnan koordinaattori",
+    title_en: "Knowledge Management Coordinator",
+    short_description: "Tiedonhallinnan koordinaattori kehittää ja ylläpitää organisaation tiedonhallintaa. Työ vaatii järjestelmällisyyttä ja viestintätaitoja.",
+    main_tasks: [
+      "Tiedonhallintajärjestelmien ylläpito",
+      "Tietosisältöjen organisointi",
+      "Tiedon jakamisen edistäminen",
+      "Koulutuksen järjestäminen",
+      "Best practice -käytäntöjen dokumentointi"
+    ],
+    education_paths: [
+      "AMK: Tietojenkäsittely, kirjasto- tai informaatioala",
+      "Tiedonhallinnan koulutus",
+      "Viestinnän opinnot"
+    ],
+    core_skills: [
+      "Tiedonhallinta",
+      "Dokumentointi",
+      "Viestintä",
+      "Järjestelmät",
+      "Koulutus"
+    ],
+    tools_tech: [
+      "SharePoint",
+      "Confluence",
+      "Wikijärjestelmät",
+      "Dokumentinhallintajärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4800],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Tiedon merkityksen kasvu organisaatioissa lisää tiedonhallinnan koordinaattoreiden kysyntää.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Dokumenttikoordinaattori", "Tietoasiantuntija"],
+    career_progression: ["Senior knowledge management coordinator", "Knowledge Management Manager"],
+    typical_employers: ["Suuryritykset", "Konsulttitoimistot", "Julkinen sektori"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    impact: [],
+    qualification_or_license: null,
+    union_or_CBA: null,
+    useful_links: [],
+    transferable_skills: [],
+    keywords: ["tiedonhallinta", "knowledge management", "dokumentointi"],
+    study_length_estimate_months: 42
   },
 
   {
@@ -39987,6 +45834,1428 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
+
+  {
+    id: "motion-designer",
+    category: "luova",
+    title_fi: "Motion Designer",
+    title_en: "Motion Designer",
+    short_description: "Motion designer luo liikkuvaa grafiikkaa ja animaatioita. Työ vaatii luovuutta ja teknistä osaamista.",
+    main_tasks: [
+      "Animaatioiden suunnittelu ja toteutus",
+      "Liikkuvan grafiikan luominen",
+      "Visuaalisten efektien tekeminen",
+      "Asiakasyhteistyö",
+      "Konseptien kehittäminen"
+    ],
+    education_paths: [
+      "AMK: Mediatekniikan tai graafisen suunnittelun tutkinto",
+      "Animaation erikoistuminen",
+      "Motion design -portfolio"
+    ],
+    core_skills: [
+      "Animaatio",
+      "Liikkuva grafiikka",
+      "Visuaalinen suunnittelu",
+      "Tarinankerronta",
+      "Tekninen osaaminen"
+    ],
+    tools_tech: [
+      "After Effects",
+      "Cinema 4D",
+      "Adobe Creative Suite"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 3 },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 5000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitaalisen sisällön kysyntä lisää motion designereiden tarvetta.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Junior Motion Designer", "Graafinen suunnittelija"],
+    career_progression: ["Senior Motion Designer", "Creative Director"],
+    typical_employers: ["Mainostoimistot", "Tuotantoyhtiöt", "Mediatalot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    keywords: ["animaatio", "motion graphics", "visuaalinen suunnittelu"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "sound-designer",
+    category: "luova",
+    title_fi: "Äänisuunnittelija",
+    title_en: "Sound Designer",
+    short_description: "Äänisuunnittelija luo ja muokkaa ääniefektejä ja äänimaisemia. Työ vaatii luovuutta ja teknistä osaamista.",
+    main_tasks: [
+      "Ääniefektien luominen",
+      "Äänimaisemien suunnittelu",
+      "Äänitys ja editointi",
+      "Foley-äänet",
+      "Asiakasyhteistyö"
+    ],
+    education_paths: [
+      "AMK: Musiikkiteknologian tai äänitaiteen tutkinto",
+      "Äänisuunnittelun erikoistuminen",
+      "Portfolio ja demo"
+    ],
+    core_skills: [
+      "Äänisuunnittelu",
+      "Äänitys",
+      "Audioeditoi nti",
+      "Luova ajattelu",
+      "Tekninen osaaminen"
+    ],
+    tools_tech: [
+      "Pro Tools",
+      "Ableton Live",
+      "Logic Pro"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 3 },
+    salary_eur_month: {
+      median: 3500,
+      range: [3000, 5000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Äänisuunnittelun jatkuva tarve elokuvassa, peleissä ja mediassa ylläpitää kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Äänitysassistentti", "Junior Sound Designer"],
+    career_progression: ["Senior Sound Designer", "Audio Director"],
+    typical_employers: ["Äänistudiot", "Peliyritykset", "Elokuvatuotannot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    keywords: ["äänisuunnittelu", "äänitys", "audio"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "kirjailija-luova",
+    category: "luova",
+    title_fi: "Kirjailija",
+    title_en: "Author",
+    short_description: "Kirjailija kirjoittaa kaunokirjallisuutta tai tietokirjoja. Työ vaatii luovuutta ja kirjoittamisen taitoa.",
+    main_tasks: [
+      "Teosten kirjoittaminen",
+      "Tutkimustyö",
+      "Käsikirjoitusten editointi",
+      "Kustantajayhteistyö",
+      "Markkinointi ja esiintymiset"
+    ],
+    education_paths: [
+      "Ylempi korkeakoulututkinto: Kirjallisuus tai vastaava",
+      "Kirjoittamisen opinnot",
+      "Portfolio julkaisuista"
+    ],
+    core_skills: [
+      "Luova kirjoittaminen",
+      "Tarinankerronta",
+      "Tutkimus",
+      "Editointi",
+      "Itseohjautuvuus"
+    ],
+    tools_tech: [
+      "Tekstinkäsittelyohjelmat",
+      "Kirjoitussovellukset",
+      "Tutkimustyökalut"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 3 },
+    salary_eur_month: {
+      median: 2800,
+      range: [1500, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Kirjallisuuden jatkuva kysyntä ylläpitää kirjailijoiden tarvetta.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Freelance-kirjoittaja", "Kolumnisti"],
+    career_progression: ["Bestseller-kirjailija", "Monitoimijakirjailija"],
+    typical_employers: ["Kustantamot", "Itsenäinen yrittäjä"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    keywords: ["kirjoittaminen", "kirjallisuus", "tarinankerronta"],
+    study_length_estimate_months: 60
+  },
+
+  {
+    id: "stand-up-koomikko",
+    category: "luova",
+    title_fi: "Stand-up-koomikko",
+    title_en: "Stand-up Comedian",
+    short_description: "Stand-up-koomikko esiintyy komiikkaohjelmissa. Työ vaatii luovuutta ja esiintymistaitoja.",
+    main_tasks: [
+      "Komediaohjelman kirjoittaminen",
+      "Esiintymiset",
+      "Materiaalin testaaminen",
+      "Markkinointi",
+      "Kiertuesuunnittelu"
+    ],
+    education_paths: [
+      "Ei välttämätöntä muodollista koulutusta",
+      "Stand-up-kurssit",
+      "Esiintymiskokemus"
+    ],
+    core_skills: [
+      "Huumori",
+      "Esiintyminen",
+      "Kirjoittaminen",
+      "Yleisön lukeminen",
+      "Improvisointi"
+    ],
+    tools_tech: [
+      "Äänentoisto",
+      "Sosiaalisen median alustat",
+      "Videotuotantotyökalut"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 3 },
+    salary_eur_month: {
+      median: 2500,
+      range: [1000, 8000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Viihteen jatkuva kysyntä ylläpitää koomikoiden tarvetta.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Avoin mikrofonija", "Esikoomikko"],
+    career_progression: ["Headliner", "TV-koomikko"],
+    typical_employers: ["Itsenäinen yrittäjä", "Viihdetoimistot"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    keywords: ["stand-up", "komedia", "esiintyminen"],
+    study_length_estimate_months: 12
+  },
+
+  {
+    id: "podcast-tuottaja",
+    category: "luova",
+    title_fi: "Podcast-tuottaja",
+    title_en: "Podcast Producer",
+    short_description: "Podcast-tuottaja tuottaa ja editoi podcast-ohjelmia. Työ vaatii luovuutta ja teknistä osaamista.",
+    main_tasks: [
+      "Podcastien suunnittelu",
+      "Sisällöntuotanto",
+      "Äänitys ja editointi",
+      "Haastattelujen tekeminen",
+      "Markkinointi ja jakelu"
+    ],
+    education_paths: [
+      "AMK: Viestinnän tai median tutkinto",
+      "Podcast-tuotannon opinnot",
+      "Portfolio podcasteista"
+    ],
+    core_skills: [
+      "Sisällöntuotanto",
+      "Ääniedit ointi",
+      "Haastattelutaidot",
+      "Tarinankerronta",
+      "Markkinointi"
+    ],
+    tools_tech: [
+      "Audacity",
+      "Adobe Audition",
+      "Podcast-jakelualustat"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 3 },
+    salary_eur_month: {
+      median: 3200,
+      range: [2500, 5000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Podcastien suosion kasvu lisää tuottajien kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Podcast-assistentti", "Freelance-tuottaja"],
+    career_progression: ["Senior Producer", "Podcast Network Lead"],
+    typical_employers: ["Mediatalot", "Tuotantoyhtiöt", "Itsenäinen yrittäjä"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    keywords: ["podcast", "ääni", "sisällöntuotanto"],
+    study_length_estimate_months: 36
+  },
+
+  {
+    id: "kayttoliittymasuunnittelija",
+    category: "luova",
+    title_fi: "Käyttöliittymäsuunnittelija (UI)",
+    title_en: "UI Designer",
+    short_description: "Käyttöliittymäsuunnittelija suunnittelee digitaalisten tuotteiden visuaalisen ilmeen. Työ vaatii luovuutta ja käyttäjäymmärrystä.",
+    main_tasks: [
+      "Käyttöliittymien visuaalinen suunnittelu",
+      "Design systemien kehittäminen",
+      "Prototyyppien luominen",
+      "Yhteistyö UX-suunnittelijoiden kanssa",
+      "Designin testaaminen"
+    ],
+    education_paths: [
+      "AMK: Graafisen suunnittelun tai muotoilun tutkinto",
+      "UI-suunnittelun opinnot",
+      "Portfolio projekteista"
+    ],
+    core_skills: [
+      "UI-suunnittelu",
+      "Visuaalinen suunnittelu",
+      "Typografia",
+      "Värit ja layout",
+      "Design systems"
+    ],
+    tools_tech: [
+      "Figma",
+      "Sketch",
+      "Adobe XD"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 3 },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 5500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitaalisten tuotteiden kysyntä lisää UI-suunnittelijoiden tarvetta.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Junior UI Designer", "Graafinen suunnittelija"],
+    career_progression: ["Senior UI Designer", "Design Lead"],
+    typical_employers: ["Teknologiayritykset", "Digitoimistot", "Tuoteyritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    keywords: ["UI", "käyttöliittymä", "visuaalinen suunnittelu"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "brandi-identiteettisuunnittelija",
+    category: "luova",
+    title_fi: "Brändi-identiteettisuunnittelija",
+    title_en: "Brand Identity Designer",
+    short_description: "Brändi-identiteettisuunnittelija luo yritysten visuaalisia identiteettejä. Työ vaatii luovuutta ja strategista ajattelua.",
+    main_tasks: [
+      "Brändi-identiteetin suunnittelu",
+      "Logojen ja visuaalisten elementtien luominen",
+      "Brändiohjeistojen laatiminen",
+      "Asiakasyhteistyö",
+      "Konseptien kehittäminen"
+    ],
+    education_paths: [
+      "AMK: Graafisen suunnittelun tutkinto",
+      "Brändäyksen opinnot",
+      "Portfolio brändi-identiteeteistä"
+    ],
+    core_skills: [
+      "Brändisuunnittelu",
+      "Graafinen suunnittelu",
+      "Strateginen ajattelu",
+      "Visuaalinen identiteetti",
+      "Typografia"
+    ],
+    tools_tech: [
+      "Adobe Illustrator",
+      "Adobe InDesign",
+      "Figma"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 3 },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 5500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Yritysten tarve vahvoille brändeille ylläpitää kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Graafinen suunnittelija", "Junior Brand Designer"],
+    career_progression: ["Senior Brand Designer", "Creative Director"],
+    typical_employers: ["Brändätoimistot", "Mainostoimistot", "Yritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    keywords: ["brändi", "identiteetti", "visuaalinen suunnittelu"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "sisustusarkkitehti-luova",
+    category: "luova",
+    title_fi: "Sisustusarkkitehti",
+    title_en: "Interior Architect",
+    short_description: "Sisustusarkkitehti suunnittelee sisätiloja. Työ vaatii luovuutta ja teknistä osaamista.",
+    main_tasks: [
+      "Sisätilojen suunnittelu",
+      "Tilasuunnitelmien laatiminen",
+      "Materiaalivalinnat",
+      "Asiakasyhteistyö",
+      "3D-visualisoinnit"
+    ],
+    education_paths: [
+      "AMK: Sisustusarkkitehtuurin tutkinto",
+      "Arkkitehtuurin opinnot",
+      "Portfolio projekteista"
+    ],
+    core_skills: [
+      "Sisustussuunnittelu",
+      "Tilasuunnittelu",
+      "Materiaaliosaaminen",
+      "3D-visualisointi",
+      "Asiakaspalvelu"
+    ],
+    tools_tech: [
+      "AutoCAD",
+      "SketchUp",
+      "3D-mallinnusohjelmat"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 2 },
+    salary_eur_month: {
+      median: 3500,
+      range: [3000, 5000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Rakentamisen ja remontoinnin jatkuva tarve ylläpitää kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Junior sisustusarkkitehti", "Suunnitteluassistentti"],
+    career_progression: ["Senior sisustusarkkitehti", "Oman toimiston omistaja"],
+    typical_employers: ["Arkkitehtitoimistot", "Sisustusliikkeet", "Itsenäinen yrittäjä"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    keywords: ["sisustus", "suunnittelu", "tilat"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "tattoo-artisti",
+    category: "luova",
+    title_fi: "Tatuoija",
+    title_en: "Tattoo Artist",
+    short_description: "Tatuoija luo pysyviä taidetoeja ihmisten iholle. Työ vaatii taiteellista osaamista ja tarkkuutta.",
+    main_tasks: [
+      "Tatuointien suunnittelu",
+      "Tatuointien tekeminen",
+      "Asiakasneuvonta",
+      "Hygieniasta huolehtiminen",
+      "Portfolio n ylläpito"
+    ],
+    education_paths: [
+      "Oppisopimuskoulutus",
+      "Tatuointikurssit",
+      "Taiteellinen portfolio"
+    ],
+    core_skills: [
+      "Piirtäminen",
+      "Tatuointitekniikka",
+      "Asiakaspalvelu",
+      "Hygienia",
+      "Taiteellinen näkemys"
+    ],
+    tools_tech: [
+      "Tatuointikoneet",
+      "Neulatarvikkeet",
+      "Suunnitteluohjelmat"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 2 },
+    salary_eur_month: {
+      median: 3000,
+      range: [2000, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Tatuointien jatkuva suosio ylläpitää kysyntää tatuoijoille.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Tatuoijan oppipoika", "Junior tatuoija"],
+    career_progression: ["Senior tatuoija", "Oman studion omistaja"],
+    typical_employers: ["Tatuointistudiot", "Itsenäinen yrittäjä"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    keywords: ["tatuointi", "taide", "kehotaide"],
+    study_length_estimate_months: 24
+  },
+
+  {
+    id: "tyylisuunnittelija",
+    category: "luova",
+    title_fi: "Stylist",
+    title_en: "Stylist",
+    short_description: "Stylist suunnittelee ja toteuttaa tyylikokonaisuuksia. Työ vaatii luovuutta ja muotitajua.",
+    main_tasks: [
+      "Tyylikokonaisuuksien suunnittelu",
+      "Vaatteiden ja asusteiden valinta",
+      "Kuvausten tyylittely",
+      "Asiakasneuvonta",
+      "Trendien seuraaminen"
+    ],
+    education_paths: [
+      "AMK: Vaatetussuunnittelun tai muodin tutkinto",
+      "Stylistin kurssit",
+      "Portfolio projekteista"
+    ],
+    core_skills: [
+      "Muotitaju",
+      "Värien ja materiaalien yhdistäminen",
+      "Asiakaspalvelu",
+      "Trendien tuntemus",
+      "Visuaalinen ilmaisu"
+    ],
+    tools_tech: [
+      "Pukuvarastot",
+      "Suunnitteluohjelmat",
+      "Sosiaalisen median alustat"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 3 },
+    salary_eur_month: {
+      median: 2800,
+      range: [2200, 4500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Muoti- ja mediateollisuuden jatkuva tarve ylläpitää kysyntää stylisteille.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Stylistin assistentti", "Freelance stylist"],
+    career_progression: ["Senior stylist", "Fashion Editor"],
+    typical_employers: ["Muotitalot", "Mainostoimistot", "Mediat"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    keywords: ["styling", "muoti", "tyyli"],
+    study_length_estimate_months: 36
+  },
+
+  {
+    id: "kirjojen-kuvittaja",
+    category: "luova",
+    title_fi: "Kirjojen kuvittaja",
+    title_en: "Book Illustrator",
+    short_description: "Kirjojen kuvittaja luo kuvituksia kirjoihin. Työ vaatii piirtämisen taitoa ja luovuutta.",
+    main_tasks: [
+      "Kuvitusten suunnittelu",
+      "Kuvien piirtäminen ja maalaaminen",
+      "Kustantajayhteistyö",
+      "Taiteellisten konseptien kehittäminen",
+      "Portfolion ylläpito"
+    ],
+    education_paths: [
+      "AMK: Kuvituksen tai graafisen suunnittelun tutkinto",
+      "Taidekoulu",
+      "Portfolio kuvituksista"
+    ],
+    core_skills: [
+      "Piirtäminen",
+      "Kuvittaminen",
+      "Tarinankerronta visuaalisesti",
+      "Digitaalinen tai perinteinen media",
+      "Luova ajattelu"
+    ],
+    tools_tech: [
+      "Adobe Photoshop",
+      "Procreate",
+      "Perinteiset piirtovälineet"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 2 },
+    salary_eur_month: {
+      median: 2500,
+      range: [1800, 4500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Kirjojen ja lasten kirjojen jatkuva kysyntä ylläpitää kuvittajien tarvetta.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Freelance-kuvittaja", "Graafinen suunnittelija"],
+    career_progression: ["Kokenut kuvittaja", "Taideohjaaja"],
+    typical_employers: ["Kustantamot", "Mainostoimistot", "Itsenäinen yrittäjä"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    keywords: ["kuvitus", "piirtäminen", "kirjat"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "keramiikkataiteilija",
+    category: "luova",
+    title_fi: "Keramiikkataiteilija",
+    title_en: "Ceramic Artist",
+    short_description: "Keramiikkataiteilija luo keraamisia taideteoksia ja tuotteita. Työ vaatii käsityötaitoja ja taiteellista näkemystä.",
+    main_tasks: [
+      "Keraamisten teosten suunnittelu",
+      "Savitöiden tekeminen",
+      "Polttaminen ja lasittaminen",
+      "Teosten myyminen",
+      "Näyttelyiden järjestäminen"
+    ],
+    education_paths: [
+      "AMK: Keramiikka- ja lasitaiteen tutkinto",
+      "Käsityökoulut",
+      "Portfolio teoksista"
+    ],
+    core_skills: [
+      "Keramiikka",
+      "Savityöskentely",
+      "Polttaminen",
+      "Taiteellinen näkemys",
+      "Käsityötaidot"
+    ],
+    tools_tech: [
+      "Dreijat",
+      "Keramiikkauunit",
+      "Lasittausvälineet"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 2 },
+    salary_eur_month: {
+      median: 2200,
+      range: [1500, 4000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Käsityön ja taiteen arvostus ylläpitää keramiikka taiteilijoi den kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Keramiikkaharjoittelija", "Tyhjää topaopiskelija"],
+    career_progression: ["Tunnettu keramiikkataiteilija", "Tyhjää tonomistatuutto-opettaja"],
+    typical_employers: ["Itsenäinen yrittäjä", "Taidegalleriat", "Käsityöläisyritykset"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    keywords: ["keramiikka", "taide", "käsityö"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "tekstiili taiteilija",
+    category: "luova",
+    title_fi: "Tekstiilitaiteilija",
+    title_en: "Textile Artist",
+    short_description: "Tekstiilitaiteilija luo tekstiilitaidetta ja -tuotteita. Työ vaatii käsityötaitoja ja luovuutta.",
+    main_tasks: [
+      "Tekstiiliteosten suunnittelu",
+      "Kudonta, neulominen tai ompelu",
+      "Kuvioiden ja värien suunnittelu",
+      "Teosten myyminen",
+      "Näyttelyiden järjestäminen"
+    ],
+    education_paths: [
+      "AMK: Tekstiilitaiteen tutkinto",
+      "Käsityökoulut",
+      "Portfolio teoksista"
+    ],
+    core_skills: [
+      "Tekstiilityö",
+      "Kudonta",
+      "Neulominen",
+      "Väri- ja kuv iostuunnittelu",
+      "Taiteellinen näkemys"
+    ],
+    tools_tech: [
+      "Kangaspuut",
+      "Ompelu koneet",
+      "Käsityövälineet"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 2 },
+    salary_eur_month: {
+      median: 2200,
+      range: [1500, 4000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Käsityön ja perinteen arvostus ylläpitää tekstiilitaiteilijoiden kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Tekstiiliharjoittelija", "Käsityön opettaja"],
+    career_progression: ["Tunnettu tekstiilitaiteilija", "Oma studio"],
+    typical_employers: ["Itsenäinen yrittäjä", "Taidegalleriat", "Käsityöläisyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    keywords: ["tekstiili", "taide", "käsityö"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "lasitaiteilija",
+    category: "luova",
+    title_fi: "Lasitaiteilija",
+    title_en: "Glass Artist",
+    short_description: "Lasitaiteilija luo lasitaideteoksia ja -tuotteita. Työ vaatii käsityötaitoja ja teknistä osaamista.",
+    main_tasks: [
+      "Lasiteosten suunnittelu",
+      "Lasin puhaltaminen tai muokkaaminen",
+      "Lasitöiden viimeistely",
+      "Teosten myyminen",
+      "Näyttelyiden järjestäminen"
+    ],
+    education_paths: [
+      "AMK: Lasitaiteen tutkinto",
+      "Lasityökoulut",
+      "Portfolio teoksista"
+    ],
+    core_skills: [
+      "Lasityöskentely",
+      "Lasin puhallus",
+      "Tekninen osaaminen",
+      "Taiteellinen näkemys",
+      "Turvallisuus"
+    ],
+    tools_tech: [
+      "Lasipuhallusvälineet",
+      "Uunit",
+      "Hiomatyökalut"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 2 },
+    salary_eur_month: {
+      median: 2500,
+      range: [1800, 4500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Käsityön ja designin arvostus ylläpitää lasitaiteilijoiden kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Lasityöharjoittelija", "Assistentti"],
+    career_progression: ["Tunnettu lasitaiteilija", "Oma studio"],
+    typical_employers: ["Itsenäinen yrittäjä", "Lasistu diot", "Taidegalleriat"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    keywords: ["lasi", "taide", "käsityö"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "nahkataiteilija",
+    category: "luova",
+    title_fi: "Nahkataiteilija",
+    title_en: "Leather Artist",
+    short_description: "Nahkataiteilija luo nahkatuotteita ja -taidetta. Työ vaatii käsityötaitoja ja luovuutta.",
+    main_tasks: [
+      "Nahkatuotteiden suunnittelu",
+      "Nahkan leikkaaminen ja ompelu",
+      "Koristelutyöt",
+      "Tuotteiden myyminen",
+      "Asiakastilaustyöt"
+    ],
+    education_paths: [
+      "Käsityökoulut",
+      "Nahkatyön kurssit",
+      "Portfolio töistä"
+    ],
+    core_skills: [
+      "Nahkatyö",
+      "Ompelu",
+      "Suunnittelu",
+      "Käsityötaidot",
+      "Asiakaspalvelu"
+    ],
+    tools_tech: [
+      "Nahkatyökalut",
+      "Ompelu koneet",
+      "Punoksivälineet"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 2 },
+    salary_eur_month: {
+      median: 2400,
+      range: [1800, 4000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Käsityön arvostus ja ainutlaatuisten tuotteiden kysyntä ylläpitävät tarvetta.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Nahkatyöharjoittelija", "Käsityöläinen"],
+    career_progression: ["Kokenut nahkataiteilija", "Oma yritys"],
+    typical_employers: ["Itsenäinen yrittäjä", "Käsityöläisyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    keywords: ["nahka", "käsityö", "taide"],
+    study_length_estimate_months: 24
+  },
+
+  {
+    id: "korusuunnittelija-taiteilija",
+    category: "luova",
+    title_fi: "Korusuunnittelija-taiteilija",
+    title_en: "Jewelry Artist",
+    short_description: "Korusuunnittelija-taiteilija luo taiteellisia koruja. Työ vaatii käsityötaitoja ja luovuutta.",
+    main_tasks: [
+      "Korujen suunnittelu",
+      "Korujen valmistaminen",
+      "Metallityöt ja hitsaus",
+      "Tuotteiden myyminen",
+      "Näyttelyiden järjestäminen"
+    ],
+    education_paths: [
+      "AMK: Kulta- ja hopeasepän tutkinto",
+      "Taidekoulu",
+      "Portfolio teoksista"
+    ],
+    core_skills: [
+      "Korujen valmistaminen",
+      "Metallityö",
+      "Suunnittelu",
+      "Taiteellinen näkemys",
+      "Tarkkuus"
+    ],
+    tools_tech: [
+      "Kultasepän työkalut",
+      "Hitsausvälineet",
+      "Hiomatyökalut"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 2 },
+    salary_eur_month: {
+      median: 2600,
+      range: [2000, 5000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Ainutlaatuisten ja käsinteht yjen korujen kysyntä ylläpitää tarvetta.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Koruharjoittelija", "Kultasepän assistentti"],
+    career_progression: ["Tunnettu korutaiteilija", "Oma koruliike"],
+    typical_employers: ["Itsenäinen yrittäjä", "Koruliikkeet", "Taidegalleriat"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    keywords: ["korut", "taide", "käsityö"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "tanssinopettaja-luova",
+    category: "luova",
+    title_fi: "Tanssinopettaja",
+    title_en: "Dance Teacher",
+    short_description: "Tanssinopettaja opettaa tanssia eri tyylejä. Työ vaatii tanssitaitoja ja pedagogista osaamista.",
+    main_tasks: [
+      "Tanssituntien opettaminen",
+      "Koreografioiden suunnittelu",
+      "Oppilaiden ohjaaminen",
+      "Esitysten valmistelu",
+      "Tanssikoulu n hallinta"
+    ],
+    education_paths: [
+      "AMK: Tanssinopettajan tutkinto",
+      "Tanssipedagogiikan opinnot",
+      "Tanssijan ura"
+    ],
+    core_skills: [
+      "Tanssi",
+      "Opettaminen",
+      "Koreografia",
+      "Pedagogiikka",
+      "Esiintyminen"
+    ],
+    tools_tech: [
+      "Äänentoistojärjestelmät",
+      "Peililuokat",
+      "Tanssilattiaat"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 2 },
+    salary_eur_month: {
+      median: 2800,
+      range: [2200, 4000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Tanssin harrastuksen suosio ylläpitää tanssinopettajien kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Tanssinopettajan assistentti", "Freelance-opettaja"],
+    career_progression: ["Senior-opettaja", "Tanssikoulun omistaja"],
+    typical_employers: ["Tanssikoulut", "Kulttuurikeskukset", "Itsenäinen yrittäjä"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    keywords: ["tanssi", "opettaminen", "koreografia"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "teatteriohjaaja",
+    category: "luova",
+    title_fi: "Teatteriohjaaja",
+    title_en: "Theater Director",
+    short_description: "Teatteriohjaaja ohjaa teatteriesityksiä. Työ vaatii luovuutta ja ohjaamisen taitoja.",
+    main_tasks: [
+      "Esitysten ohjaaminen",
+      "Näyttelijöiden ohjaus",
+      "Tulkintojen kehittäminen",
+      "Yhteistyö taiteellisen tiimin kanssa",
+      "Esityskokonaisuuksien luominen"
+    ],
+    education_paths: [
+      "YK: Teatteriohjaajan tutkinto (Taideyliopisto)",
+      "Teatteritaiteen opinnot",
+      "Ohjauskokemus"
+    ],
+    core_skills: [
+      "Ohjaaminen",
+      "Dramaturgia",
+      "Näyttelijöiden ohjaus",
+      "Taiteellinen visio",
+      "Yhteistyötaidot"
+    ],
+    tools_tech: [
+      "Käsikirjoitusanalyysi",
+      "Lavastussuunnittelu",
+      "Visualisointityökalut"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 3 },
+    salary_eur_month: {
+      median: 3500,
+      range: [2500, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Teatteritaiteen jatkuva kysyntä ylläpitää ohjaajien tarvetta.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Apulaisohjaaja", "Freelance-ohjaaja"],
+    career_progression: ["Senior-ohjaaja", "Taiteellinen johtaja"],
+    typical_employers: ["Teatterit", "Freelance", "Kulttuurilaitokset"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
+    keywords: ["teatteri", "ohjaaminen", "esitykset"],
+    study_length_estimate_months: 60
+  },
+
+  {
+    id: "graafinen-taiteilija",
+    category: "luova",
+    title_fi: "Graafinen taiteilija",
+    title_en: "Graphic Artist",
+    short_description: "Graafinen taiteilija luo taiteellisia graafisia teoksia. Työ vaatii taiteellista osaamista ja teknistä taitoa.",
+    main_tasks: [
+      "Graafisten teosten suunnittelu",
+      "Painografiikan tekeminen",
+      "Teosten editointi",
+      "Näyttelyiden järjestäminen",
+      "Teosten myyminen"
+    ],
+    education_paths: [
+      "AMK: Graafisen taiteen tutkinto",
+      "Taidekoulu",
+      "Portfolio teoksista"
+    ],
+    core_skills: [
+      "Graafinen taide",
+      "Painografiikka",
+      "Taiteellinen näkemys",
+      "Tekninen osaaminen",
+      "Luovuus"
+    ],
+    tools_tech: [
+      "Painopaineet",
+      "Grafiikkaohjelmat",
+      "Perinteiset grafiikan työkalut"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 2 },
+    salary_eur_month: {
+      median: 2400,
+      range: [1800, 4500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Taiteen arvostus ja kokoelmat ylläpitävät graafisten taiteilijoiden kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Taideopiskelija", "Freelance-taiteilija"],
+    career_progression: ["Tunnettu taiteilija", "Taideohjaaja"],
+    typical_employers: ["Itsenäinen yrittäjä", "Taidegalleriat", "Taidekoulut"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    keywords: ["grafiikka", "taide", "painotaide"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "elokuvaleikkaaja",
+    category: "luova",
+    title_fi: "Elokuvaleikkaaja",
+    title_en: "Film Editor",
+    short_description: "Elokuvaleikkaaja leikkaa ja koostaa elokuvamateriaalia. Työ vaatii teknistä osaamista ja tarinallista ymmärrystä.",
+    main_tasks: [
+      "Elokuvien leikkaaminen",
+      "Materiaalin koostaminen",
+      "Tarinan rakentaminen",
+      "Yhteistyö ohjaajan kanssa",
+      "Visuaalisten efektien integrointi"
+    ],
+    education_paths: [
+      "AMK: Elokuvan ja television tutkinto",
+      "Leikkauksen erikoistuminen",
+      "Portfolio leikkaustöistä"
+    ],
+    core_skills: [
+      "Elokuvaleikkaus",
+      "Tarinankerronta",
+      "Tekninen osaaminen",
+      "Rytmitaju",
+      "Visuaalinen ajattelu"
+    ],
+    tools_tech: [
+      "Avid Media Composer",
+      "Adobe Premiere Pro",
+      "DaVinci Resolve"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 3 },
+    salary_eur_month: {
+      median: 3800,
+      range: [3000, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Audiovisuaalisen sisällön kysyntä lisää leikkaajien tarvetta.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Leikkausassistentti", "Junior Editor"],
+    career_progression: ["Senior Editor", "Post-production Supervisor"],
+    typical_employers: ["Tuotantoyhtiöt", "Mainostoimistot", "Freelance"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    keywords: ["leikkaus", "elokuva", "editointi"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "installaatiotaiteilija",
+    category: "luova",
+    title_fi: "Installaatiotaiteilija",
+    title_en: "Installation Artist",
+    short_description: "Installaatiotaiteilija luo tilallisia taideteoksia. Työ vaatii konseptuaalista ajattelua ja toteuttamisen taitoja.",
+    main_tasks: [
+      "Installaatioiden suunnittelu",
+      "Teosten rakentaminen ja asentaminen",
+      "Tilallisten kokemusten luominen",
+      "Näyttelyiden järjestäminen",
+      "Konseptien kehittäminen"
+    ],
+    education_paths: [
+      "YK: Kuvataiteilijan tutkinto",
+      "Taideakatemia",
+      "Portfolio teoksista"
+    ],
+    core_skills: [
+      "Installaatiotaide",
+      "Konseptuaalinen ajattelu",
+      "Tilallinen ymmärrys",
+      "Rakentamisen taidot",
+      "Taiteellinen visio"
+    ],
+    tools_tech: [
+      "Rakennustyökalut",
+      "Valaistus",
+      "Multimedia-teknologia"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 4 },
+    salary_eur_month: {
+      median: 2800,
+      range: [1800, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Nykytaiteen ja installaatioiden kiinnostus ylläpitää kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Nouseva taiteilija", "Taideassis tentti"],
+    career_progression: ["Tunnettu installaatiotaiteilija", "Kansainvälinen taiteilija"],
+    typical_employers: ["Itsenäinen yrittäjä", "Taidegalleriat", "Museot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    keywords: ["installaatio", "nykytaide", "tilat"],
+    study_length_estimate_months: 60
+  },
+
+  {
+    id: "performanssitaiteilija",
+    category: "luova",
+    title_fi: "Performanssitaiteilija",
+    title_en: "Performance Artist",
+    short_description: "Performanssitaiteilija luo live-taiteellisia esityksiä. Työ vaatii rohkeutta ja taiteellista ilmaisua.",
+    main_tasks: [
+      "Performanssien suunnittelu",
+      "Live-esitysten toteuttaminen",
+      "Konseptuaalisen taiteen luominen",
+      "Yleisön kanssa vuorovaikutus",
+      "Dokumentointi"
+    ],
+    education_paths: [
+      "YK: Kuvataiteilijan tai esittävän taiteen tutkinto",
+      "Taideakatemia",
+      "Portfolio esityksistä"
+    ],
+    core_skills: [
+      "Performanssitaide",
+      "Esiintyminen",
+      "Konseptuaalinen ajattelu",
+      "Rohkeus",
+      "Taiteellinen ilmaisu"
+    ],
+    tools_tech: [
+      "Videodokumentointi",
+      "Äänentoisto",
+      "Valaistus"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 4 },
+    salary_eur_month: {
+      median: 2200,
+      range: [1200, 5000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Nykytaiteen ja performanssin kiinnostus ylläpitää kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Nouseva taiteilija", "Kollektiivitaiteilija"],
+    career_progression: ["Tunnettu performanssitaiteilija", "Kansainvälinen taiteilija"],
+    typical_employers: ["Itsenäinen yrittäjä", "Taidegalleriat", "Tapahtumajärjestäjät"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    keywords: ["performanssi", "nykytaide", "live-taide"],
+    study_length_estimate_months: 60
+  },
+
+  {
+    id: "digitaalinen-taiteilija",
+    category: "luova",
+    title_fi: "Digitaalinen taiteilija",
+    title_en: "Digital Artist",
+    short_description: "Digitaalinen taiteilija luo digitaalista taidetta. Työ vaatii teknistä osaamista ja taiteellista näkemystä.",
+    main_tasks: [
+      "Digitaalisten teosten luominen",
+      "3D-mallinnous ja -animaatio",
+      "Generatiivisen taiteen kehittäminen",
+      "NFT-taiteen luominen",
+      "Näyttelyiden järjestäminen"
+    ],
+    education_paths: [
+      "AMK: Median tai taiteen tutkinto",
+      "Digitaalisen taiteen opinnot",
+      "Portfolio teoksista"
+    ],
+    core_skills: [
+      "Digitaalinen taide",
+      "3D-mallinnus",
+      "Taiteellinen näkemys",
+      "Tekninen osaaminen",
+      "Uusien teknologioiden hyödyntäminen"
+    ],
+    tools_tech: [
+      "Blender",
+      "Adobe Creative Suite",
+      "Generatiiviset työkalut"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 4 },
+    salary_eur_month: {
+      median: 3200,
+      range: [2200, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitaalisen taiteen ja NFT:iden suosio lisää kysyntää digitaalisille taiteilijoille.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Junior digitaalinen taiteilija", "3D-artisti"],
+    career_progression: ["Senior digitaalinen taiteilija", "Art Director"],
+    typical_employers: ["Peliyritykset", "Mainostoimistot", "Itsenäinen yrittäjä"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    keywords: ["digitaalinen taide", "3D", "NFT"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "street-art-taiteilija",
+    category: "luova",
+    title_fi: "Street art -taiteilija",
+    title_en: "Street Artist",
+    short_description: "Street art -taiteilija luo katutaidetta ja muraaleja. Työ vaatii taiteellista osaamista ja rohkeutta.",
+    main_tasks: [
+      "Muraalien ja katutaiteen luominen",
+      "Teosten suunnittelu",
+      "Seinämaalausten toteuttaminen",
+      "Sosiaalisen median markkinointi",
+      "Asiakastilaustyöt"
+    ],
+    education_paths: [
+      "Taidekoulu (ei välttämätön)",
+      "Street art -kurssit",
+      "Portfolio teoksista"
+    ],
+    core_skills: [
+      "Katutaide",
+      "Maalaaminen",
+      "Graffiti-tekniikat",
+      "Visuaalinen ilmaisu",
+      "Uskallus"
+    ],
+    tools_tech: [
+      "Spraymaalauit",
+      "Maalausvälineet",
+      "Suunnitteluohjelmat"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 3 },
+    salary_eur_month: {
+      median: 2600,
+      range: [1500, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Katutaiteen kasvava arvostus ja muraalien kysyntä lisäävät tarvetta.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Nouseva street art -taiteilija", "Graffititaiteilija"],
+    career_progression: ["Tunnettu street art -taiteilija", "Muraalitaiteilija"],
+    typical_employers: ["Itsenäinen yrittäjä", "Kaupungit", "Yritykset"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
+    keywords: ["street art", "muraalit", "katutaide"],
+    study_length_estimate_months: 24
+  },
+
+  {
+    id: "konsepti-taiteilija",
+    category: "luova",
+    title_fi: "Konsepti taiteilija",
+    title_en: "Concept Artist",
+    short_description: "Konseptitaiteilija luo visuaalisia konsepteja peleihin ja elokuviin. Työ vaatii luovuutta ja teknistä osaamista.",
+    main_tasks: [
+      "Konseptikuvien piirtäminen",
+      "Hahmojen ja ympäristöjen suunnittelu",
+      "Visuaalisen ilmeen kehittäminen",
+      "Yhteistyö pelinkehittäjien kanssa",
+      "Iteratiivinen suunnittelu"
+    ],
+    education_paths: [
+      "AMK: Pelituotannon tai graafisen suunnittelun tutkinto",
+      "Konseptitaiteen opinnot",
+      "Portfolio teoksista"
+    ],
+    core_skills: [
+      "Konseptitaide",
+      "Piirtäminen",
+      "3D-mallinnus",
+      "Visuaalinen suunnittelu",
+      "Luova ongelmanratkaisu"
+    ],
+    tools_tech: [
+      "Photoshop",
+      "Procreate",
+      "3D-mallinnusohjelmat"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 4 },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 6000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Peliteollisuuden ja elokuvatuotantojen kasvu lisää konseptiitaiteilijoiden kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Junior Concept Artist", "2D-artisti"],
+    career_progression: ["Senior Concept Artist", "Art Director"],
+    typical_employers: ["Peliyritykset", "Elokuvatoptutuannot", "Animaatiostudiot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    keywords: ["konsepti", "taide", "pelit"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "typo graphinen-suunnittelija",
+    category: "luova",
+    title_fi: "Typografinen suunnittelija",
+    title_en: "Typographic Designer",
+    short_description: "Typografinen suunnittelija erikoistuu kirjasintyyppeihin ja typografiaan. Työ vaatii yksityiskohtien silmää ja muotoilutaitoja.",
+    main_tasks: [
+      "Typografian suunnittelu",
+      "Kirjasintyyppien luominen",
+      "Tekstin asettelun suunnittelu",
+      "Typografisten järjestelmien kehittäminen",
+      "Asiakasprojektit"
+    ],
+    education_paths: [
+      "AMK: Graafisen suunnittelun tutkinto",
+      "Typografian erikoistuminen",
+      "Portfolio töistä"
+    ],
+    core_skills: [
+      "Typografia",
+      "Kirjasintyyppien suunnittelu",
+      "Asettelun suunnittelu",
+      "Yksityiskohdat",
+      "Visuaalinen hierarkia"
+    ],
+    tools_tech: [
+      "Adobe InDesign",
+      "Glyphs",
+      "FontLab"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 3 },
+    salary_eur_month: {
+      median: 3600,
+      range: [3000, 5500],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Typografian jatkuva tarve julkaisuissa ja brändäyksessä ylläpitää kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Graafinen suunnittelija", "Junior Type Designer"],
+    career_progression: ["Senior Type Designer", "Typographic Director"],
+    typical_employers: ["Suunnittelutoimistot", "Kustantamot", "Itsenäinen yrittäjä"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    keywords: ["typografia", "kirjasintyypit", "suunnittelu"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "pakkasuunnittelija-luova",
+    category: "luova",
+    title_fi: "Pakkaussuunnittelija",
+    title_en: "Packaging Designer",
+    short_description: "Pakkaussuunnittelija suunnittelee tuotteiden pakkauksia. Työ vaatii luovuutta ja teknistä ymmärrystä.",
+    main_tasks: [
+      "Pakkausten visuaalinen suunnittelu",
+      "Rakenteellinen suunnittelu",
+      "Materiaalivalinnat",
+      "Brändi-identiteetin toteutus",
+      "Prototyyppien valmistus"
+    ],
+    education_paths: [
+      "AMK: Pakkaussuunnittelun tai graafisen suunnittelun tutkinto",
+      "Pakkausteknologian opinnot",
+      "Portfolio projekteista"
+    ],
+    core_skills: [
+      "Pakkaussuunnittelu",
+      "Graafinen suunnittelu",
+      "3D-suunnittelu",
+      "Materiaaliosaaminen",
+      "Brändisuunnittelu"
+    ],
+    tools_tech: [
+      "Adobe Illustrator",
+      "CAD-ohjelmat",
+      "3D-mallinnusohjelmat"
+    ],
+    languages_required: { fi: 4, sv: 2, en: 3 },
+    salary_eur_month: {
+      median: 3500,
+      range: [3000, 5000],
+      source: "Ammattinetti 2024"
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Tuotteiden pakkausten jatkuva tarve ylläpitää pakkaussuunnittelijoiden kysyntää.",
+      source: "Ammattinetti 2024"
+    },
+    entry_roles: ["Junior pakkaussuunnittelija", "Graafinen suunnittelija"],
+    career_progression: ["Senior pakkaussuunnittelija", "Packaging Design Lead"],
+    typical_employers: ["Suunnittelutoimistot", "Tuoteyritykset", "Pakkausyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    keywords: ["pakkaus", "suunnittelu", "brändi"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "character-designer",
+    category: "luova",
+    title_fi: "Hahmosuunnittelija",
+    title_en: "Character Designer",
+    short_description: "Hahmosuunnittelija luo hahmoja peleihin, elokuviin ja animaatioihin. Työ vaatii piirtämisen taitoa ja luovuutta.",
+    main_tasks: [
+      "Hahmojen suunnittelu",
+      "Hahmojen visuaalisen ilmeen kehittäminen",
+      "Persoonallisuuksien visualisointi",
+      "Yhteistyö tarinankertojan kanssa",
+      "Hahmoarkistojen luominen"
+    ],
+    education_paths: [
+      "AMK: Animaation tai graafisen suunnittelun tutkinto",
+      "Hahmosuunnittelun opinnot",
+      "Portfolio hahmosuunnitelmista"
+    ],
+    core_skills: [
+      "Hahmosuunnittelu",
+      "Piirtäminen",
+      "Anatomiatieto",
+      "Tarinankerronta",
+      "Visuaalinen ilmaisu"
+    ],
+    tools_tech: [
+      "Photoshop",
+      "Procreate",
+      "3D-mallinnusohjelmat"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "C1" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 5500],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Peliteollisuuden ja animaatioiden kasvu lisää hahmosuunnittelijoiden kysyntää.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior Character Designer", "2D-artisti"],
+    career_progression: ["Senior Character Designer", "Character Art Director"],
+    typical_employers: ["Peliyritykset", "Animaatiostudiot", "Elokuvatuotannot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    keywords: ["hahmosuunnittelu", "piirtäminen", "pelit"],
+    study_length_estimate_months: 42
+  },
+
+  {
+    id: "valo-suunnittelija-taide",
+    category: "luova",
+    title_fi: "Valosuunnittelija (taide)",
+    title_en: "Lighting Designer (Art)",
+    short_description: "Valosuunnittelija luo valolla taiteellisia kokemuksia. Työ vaatii teknistä osaamista ja taiteellista näkemystä.",
+    main_tasks: [
+      "Valaistuksen suunnittelu esityksiin",
+      "Taiteellisten valoinstallaatioiden luominen",
+      "Tekninen toteutus",
+      "Yhteistyö ohjaajien ja muiden taiteilijoiden kanssa",
+      "Valaistuksen ohjelmointi"
+    ],
+    education_paths: [
+      "AMK: Valo- ja äänisuunnittelun tutkinto",
+      "Teatteritekniikan opinnot",
+      "Portfolio projekteista"
+    ],
+    core_skills: [
+      "Valosuunnittelu",
+      "Tekninen osaaminen",
+      "Taiteellinen näkemys",
+      "Värien ymmärrys",
+      "Valotekniikka"
+    ],
+    tools_tech: [
+      "Valaimet",
+      "Valo-ohjauskonsolit",
+      "Suunnitteluohjelmat"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2700, 4500],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Esitysten ja tapahtumien jatkuva tarve ylläpitää valosuunnittelijoiden kysyntää.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Valoteknikko", "Assistentti"],
+    career_progression: ["Senior valosuunnittelija", "Valaistuksen taiteellinen johtaja"],
+    typical_employers: ["Teatterit", "Tapahtumayritykset", "Freelance"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
+    keywords: ["valo", "valaistus", "taide"],
+    study_length_estimate_months: 42
+  },
+
 
   {
     id: "etaterveys-koordinaattori",

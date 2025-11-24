@@ -54,3 +54,4 @@ run().catch(error => {
   console.error('❌ Career demand ranking test failed:', error.message);
   process.exitCode = 1;
 });
+

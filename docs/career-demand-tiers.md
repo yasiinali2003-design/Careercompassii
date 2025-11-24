@@ -39,3 +39,4 @@ When you ingest fresh career data:
 2. Run `npm test` to ensure `test-career-ranking.ts` and the todistuspiste suites pass.
 3. If a status changes category (e.g. from `supistuu` to `vakaa`), update the table above to keep the
    documentation aligned with live data.
+

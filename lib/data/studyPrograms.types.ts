@@ -38,3 +38,4 @@ export interface StudyProgram {
   reach?: boolean;
   tags?: string[];
 }
+
