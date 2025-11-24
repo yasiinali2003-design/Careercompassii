@@ -1,0 +1,3850 @@
+{
+  "results": [
+    {
+      "profileId": 1,
+      "profileName": "Healthcare Helper",
+      "cohort": "TASO2",
+      "expectedCategory": "auttaja",
+      "topCategory": "innovoija",
+      "topMatchScore": 65,
+      "top5Careers": [
+        {
+          "title": "Tekoäly-asiantuntija",
+          "category": "innovoija",
+          "score": 65
+        },
+        {
+          "title": "Nanotekniikka-insinööri",
+          "category": "innovoija",
+          "score": 65
+        },
+        {
+          "title": "IT-tukihenkilö",
+          "category": "innovoija",
+          "score": 60
+        },
+        {
+          "title": "Cloud-arkkitehti",
+          "category": "innovoija",
+          "score": 63
+        },
+        {
+          "title": "Tietoturvaanalyytikko",
+          "category": "innovoija",
+          "score": 63
+        }
+      ],
+      "categoryScores": {
+        "innovoija": 65
+      }
+    },
+    {
+      "profileId": 2,
+      "profileName": "Natural Teacher",
+      "cohort": "TASO2",
+      "expectedCategory": "auttaja",
+      "topCategory": "luova",
+      "topMatchScore": 64,
+      "top5Careers": [
+        {
+          "title": "Brändisuunnittelija",
+          "category": "luova",
+          "score": 64
+        },
+        {
+          "title": "Ääniteknikko",
+          "category": "luova",
+          "score": 64
+        },
+        {
+          "title": "Sisältötuottaja",
+          "category": "luova",
+          "score": 61
+        },
+        {
+          "title": "UI/UX Designer",
+          "category": "luova",
+          "score": 65
+        },
+        {
+          "title": "Tuotemuotoilija",
+          "category": "luova",
+          "score": 65
+        }
+      ],
+      "categoryScores": {
+        "luova": 65
+      }
+    },
+    {
+      "profileId": 3,
+      "profileName": "Social Impact Advocate",
+      "cohort": "NUORI",
+      "expectedCategory": "auttaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 89
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 87
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 86
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 80
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 4,
+      "profileName": "Auttaja Variant 1",
+      "cohort": "YLA",
+      "expectedCategory": "auttaja",
+      "topCategory": "johtaja",
+      "topMatchScore": 76,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 76
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 73
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 49
+        },
+        {
+          "title": "Digital Content Producer",
+          "category": "luova",
+          "score": 46
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 76,
+        "rakentaja": 73,
+        "luova": 50
+      }
+    },
+    {
+      "profileId": 5,
+      "profileName": "Auttaja Variant 2",
+      "cohort": "TASO2",
+      "expectedCategory": "auttaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 6,
+      "profileName": "Auttaja Variant 3",
+      "cohort": "NUORI",
+      "expectedCategory": "auttaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 97,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 92
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 78
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 97
+      }
+    },
+    {
+      "profileId": 7,
+      "profileName": "Auttaja Variant 4",
+      "cohort": "YLA",
+      "expectedCategory": "auttaja",
+      "topCategory": "johtaja",
+      "topMatchScore": 75,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 75
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 72
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 52
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Ethical Brand Strategist",
+          "category": "luova",
+          "score": 46
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 75,
+        "rakentaja": 72,
+        "luova": 52
+      }
+    },
+    {
+      "profileId": 8,
+      "profileName": "Auttaja Variant 5",
+      "cohort": "TASO2",
+      "expectedCategory": "auttaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 9,
+      "profileName": "Auttaja Variant 6",
+      "cohort": "NUORI",
+      "expectedCategory": "auttaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 100,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 100
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 99
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 98
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 71
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 100
+      }
+    },
+    {
+      "profileId": 10,
+      "profileName": "Auttaja Variant 7",
+      "cohort": "YLA",
+      "expectedCategory": "auttaja",
+      "topCategory": "johtaja",
+      "topMatchScore": 75,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 75
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 72
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 52
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 49
+        },
+        {
+          "title": "Ethical Brand Strategist",
+          "category": "luova",
+          "score": 46
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 75,
+        "rakentaja": 72,
+        "luova": 52
+      }
+    },
+    {
+      "profileId": 11,
+      "profileName": "Auttaja Variant 8",
+      "cohort": "TASO2",
+      "expectedCategory": "auttaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 12,
+      "profileName": "Auttaja Variant 9",
+      "cohort": "NUORI",
+      "expectedCategory": "auttaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 100,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 100
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 99
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 70
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 100
+      }
+    },
+    {
+      "profileId": 13,
+      "profileName": "Hands-On Builder",
+      "cohort": "TASO2",
+      "expectedCategory": "rakentaja",
+      "topCategory": "luova",
+      "topMatchScore": 64,
+      "top5Careers": [
+        {
+          "title": "Brändisuunnittelija",
+          "category": "luova",
+          "score": 64
+        },
+        {
+          "title": "Ääniteknikko",
+          "category": "luova",
+          "score": 64
+        },
+        {
+          "title": "Podcast Producer",
+          "category": "luova",
+          "score": 65
+        },
+        {
+          "title": "Sisällöntuottaja",
+          "category": "luova",
+          "score": 60
+        },
+        {
+          "title": "Ethical Brand Strategist",
+          "category": "luova",
+          "score": 64
+        }
+      ],
+      "categoryScores": {
+        "luova": 65
+      }
+    },
+    {
+      "profileId": 14,
+      "profileName": "Technical Tradesperson",
+      "cohort": "TASO2",
+      "expectedCategory": "rakentaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 60,
+      "top5Careers": [
+        {
+          "title": "Accessibility Consultant",
+          "category": "auttaja",
+          "score": 60
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 55
+        },
+        {
+          "title": "Sosiaalityöntekijä",
+          "category": "auttaja",
+          "score": 55
+        },
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 54
+        },
+        {
+          "title": "Diversity & Inclusion Specialist",
+          "category": "auttaja",
+          "score": 59
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 60
+      }
+    },
+    {
+      "profileId": 15,
+      "profileName": "Production Worker",
+      "cohort": "YLA",
+      "expectedCategory": "rakentaja",
+      "topCategory": "innovoija",
+      "topMatchScore": 95,
+      "top5Careers": [
+        {
+          "title": "Biotekniikka-insinööri",
+          "category": "innovoija",
+          "score": 95
+        },
+        {
+          "title": "Health Data Analyst",
+          "category": "innovoija",
+          "score": 100
+        },
+        {
+          "title": "Site Reliability Engineer",
+          "category": "innovoija",
+          "score": 91
+        },
+        {
+          "title": "Backend Developer",
+          "category": "innovoija",
+          "score": 90
+        },
+        {
+          "title": "Product Manager",
+          "category": "innovoija",
+          "score": 83
+        }
+      ],
+      "categoryScores": {
+        "innovoija": 100
+      }
+    },
+    {
+      "profileId": 16,
+      "profileName": "Rakentaja Variant 1",
+      "cohort": "YLA",
+      "expectedCategory": "rakentaja",
+      "topCategory": "johtaja",
+      "topMatchScore": 76,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 76
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 73
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Digital Content Producer",
+          "category": "luova",
+          "score": 46
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 76,
+        "rakentaja": 73,
+        "luova": 50
+      }
+    },
+    {
+      "profileId": 17,
+      "profileName": "Rakentaja Variant 2",
+      "cohort": "TASO2",
+      "expectedCategory": "rakentaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 18,
+      "profileName": "Rakentaja Variant 3",
+      "cohort": "NUORI",
+      "expectedCategory": "rakentaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 93,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 93
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 93
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 91
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 79
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 93
+      }
+    },
+    {
+      "profileId": 19,
+      "profileName": "Rakentaja Variant 4",
+      "cohort": "YLA",
+      "expectedCategory": "rakentaja",
+      "topCategory": "johtaja",
+      "topMatchScore": 75,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 75
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 73
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 52
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 51
+        },
+        {
+          "title": "Digital Content Producer",
+          "category": "luova",
+          "score": 47
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 75,
+        "rakentaja": 73,
+        "luova": 52
+      }
+    },
+    {
+      "profileId": 20,
+      "profileName": "Rakentaja Variant 5",
+      "cohort": "TASO2",
+      "expectedCategory": "rakentaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 21,
+      "profileName": "Rakentaja Variant 6",
+      "cohort": "NUORI",
+      "expectedCategory": "rakentaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 93,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 93
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 93
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 91
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 79
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 93
+      }
+    },
+    {
+      "profileId": 22,
+      "profileName": "Rakentaja Variant 7",
+      "cohort": "YLA",
+      "expectedCategory": "rakentaja",
+      "topCategory": "johtaja",
+      "topMatchScore": 75,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 75
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 72
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 52
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Ethical Brand Strategist",
+          "category": "luova",
+          "score": 47
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 75,
+        "rakentaja": 72,
+        "luova": 52
+      }
+    },
+    {
+      "profileId": 23,
+      "profileName": "Rakentaja Variant 8",
+      "cohort": "TASO2",
+      "expectedCategory": "rakentaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 24,
+      "profileName": "Rakentaja Variant 9",
+      "cohort": "NUORI",
+      "expectedCategory": "rakentaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 97,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 93
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 80
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 97
+      }
+    },
+    {
+      "profileId": 25,
+      "profileName": "Tech Innovator",
+      "cohort": "NUORI",
+      "expectedCategory": "innovoija",
+      "topCategory": "auttaja",
+      "topMatchScore": 98,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 98
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 93
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 80
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 98
+      }
+    },
+    {
+      "profileId": 26,
+      "profileName": "Engineering Thinker",
+      "cohort": "TASO2",
+      "expectedCategory": "innovoija",
+      "topCategory": "auttaja",
+      "topMatchScore": 84,
+      "top5Careers": [
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 84
+        },
+        {
+          "title": "Sosiaalityöntekijä",
+          "category": "auttaja",
+          "score": 83
+        },
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 82
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 82
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 82
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 84
+      }
+    },
+    {
+      "profileId": 27,
+      "profileName": "Innovoija Variant 1",
+      "cohort": "YLA",
+      "expectedCategory": "innovoija",
+      "topCategory": "johtaja",
+      "topMatchScore": 74,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 74
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 72
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 53
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Ethical Brand Strategist",
+          "category": "luova",
+          "score": 47
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 74,
+        "rakentaja": 72,
+        "luova": 53
+      }
+    },
+    {
+      "profileId": 28,
+      "profileName": "Innovoija Variant 2",
+      "cohort": "TASO2",
+      "expectedCategory": "innovoija",
+      "topCategory": "auttaja",
+      "topMatchScore": 84,
+      "top5Careers": [
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 84
+        },
+        {
+          "title": "Sosiaalityöntekijä",
+          "category": "auttaja",
+          "score": 83
+        },
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 82
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 82
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 82
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 84
+      }
+    },
+    {
+      "profileId": 29,
+      "profileName": "Innovoija Variant 3",
+      "cohort": "NUORI",
+      "expectedCategory": "innovoija",
+      "topCategory": "auttaja",
+      "topMatchScore": 97,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 93
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 79
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 97
+      }
+    },
+    {
+      "profileId": 30,
+      "profileName": "Innovoija Variant 4",
+      "cohort": "YLA",
+      "expectedCategory": "innovoija",
+      "topCategory": "johtaja",
+      "topMatchScore": 74,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 74
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 72
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 53
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Ethical Brand Strategist",
+          "category": "luova",
+          "score": 47
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 74,
+        "rakentaja": 72,
+        "luova": 53
+      }
+    },
+    {
+      "profileId": 31,
+      "profileName": "Innovoija Variant 5",
+      "cohort": "TASO2",
+      "expectedCategory": "innovoija",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 32,
+      "profileName": "Innovoija Variant 6",
+      "cohort": "NUORI",
+      "expectedCategory": "innovoija",
+      "topCategory": "auttaja",
+      "topMatchScore": 97,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 95
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 93
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 80
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 97
+      }
+    },
+    {
+      "profileId": 33,
+      "profileName": "Innovoija Variant 7",
+      "cohort": "YLA",
+      "expectedCategory": "innovoija",
+      "topCategory": "johtaja",
+      "topMatchScore": 76,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 76
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 73
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 52
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Ethical Brand Strategist",
+          "category": "luova",
+          "score": 46
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 76,
+        "rakentaja": 73,
+        "luova": 52
+      }
+    },
+    {
+      "profileId": 34,
+      "profileName": "Innovoija Variant 8",
+      "cohort": "TASO2",
+      "expectedCategory": "innovoija",
+      "topCategory": "auttaja",
+      "topMatchScore": 85,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 85
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 85
+        },
+        {
+          "title": "Sosiaalityöntekijä",
+          "category": "auttaja",
+          "score": 85
+        },
+        {
+          "title": "Perhetyöntekijä",
+          "category": "auttaja",
+          "score": 85
+        },
+        {
+          "title": "Lähihoitaja",
+          "category": "auttaja",
+          "score": 85
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 85
+      }
+    },
+    {
+      "profileId": 35,
+      "profileName": "Innovoija Variant 9",
+      "cohort": "NUORI",
+      "expectedCategory": "innovoija",
+      "topCategory": "auttaja",
+      "topMatchScore": 99,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 99
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 98
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 95
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 79
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 99
+      }
+    },
+    {
+      "profileId": 36,
+      "profileName": "Innovoija Variant 10",
+      "cohort": "YLA",
+      "expectedCategory": "innovoija",
+      "topCategory": "johtaja",
+      "topMatchScore": 75,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 75
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 72
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 52
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Ethical Brand Strategist",
+          "category": "luova",
+          "score": 47
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 75,
+        "rakentaja": 72,
+        "luova": 52
+      }
+    },
+    {
+      "profileId": 37,
+      "profileName": "Creative Designer",
+      "cohort": "NUORI",
+      "expectedCategory": "luova",
+      "topCategory": "auttaja",
+      "topMatchScore": 99,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 99
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 98
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 95
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 72
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 99
+      }
+    },
+    {
+      "profileId": 38,
+      "profileName": "Content Creator",
+      "cohort": "NUORI",
+      "expectedCategory": "luova",
+      "topCategory": "auttaja",
+      "topMatchScore": 99,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 99
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 80
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 99
+      }
+    },
+    {
+      "profileId": 39,
+      "profileName": "Luova Variant 1",
+      "cohort": "YLA",
+      "expectedCategory": "luova",
+      "topCategory": "johtaja",
+      "topMatchScore": 74,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 74
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 72
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 52
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Ethical Brand Strategist",
+          "category": "luova",
+          "score": 47
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 74,
+        "rakentaja": 72,
+        "luova": 52
+      }
+    },
+    {
+      "profileId": 40,
+      "profileName": "Luova Variant 2",
+      "cohort": "TASO2",
+      "expectedCategory": "luova",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 41,
+      "profileName": "Luova Variant 3",
+      "cohort": "NUORI",
+      "expectedCategory": "luova",
+      "topCategory": "auttaja",
+      "topMatchScore": 100,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 100
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 99
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 72
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 100
+      }
+    },
+    {
+      "profileId": 42,
+      "profileName": "Luova Variant 4",
+      "cohort": "YLA",
+      "expectedCategory": "luova",
+      "topCategory": "johtaja",
+      "topMatchScore": 75,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 75
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 72
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 52
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Digital Content Producer",
+          "category": "luova",
+          "score": 47
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 75,
+        "rakentaja": 72,
+        "luova": 52
+      }
+    },
+    {
+      "profileId": 43,
+      "profileName": "Luova Variant 5",
+      "cohort": "TASO2",
+      "expectedCategory": "luova",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 44,
+      "profileName": "Luova Variant 6",
+      "cohort": "NUORI",
+      "expectedCategory": "luova",
+      "topCategory": "auttaja",
+      "topMatchScore": 98,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 98
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 95
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 93
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 79
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 98
+      }
+    },
+    {
+      "profileId": 45,
+      "profileName": "Luova Variant 7",
+      "cohort": "YLA",
+      "expectedCategory": "luova",
+      "topCategory": "johtaja",
+      "topMatchScore": 75,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 75
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 72
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 52
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 49
+        },
+        {
+          "title": "Ethical Brand Strategist",
+          "category": "luova",
+          "score": 46
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 75,
+        "rakentaja": 72,
+        "luova": 52
+      }
+    },
+    {
+      "profileId": 46,
+      "profileName": "Luova Variant 8",
+      "cohort": "TASO2",
+      "expectedCategory": "luova",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 47,
+      "profileName": "Luova Variant 9",
+      "cohort": "NUORI",
+      "expectedCategory": "luova",
+      "topCategory": "auttaja",
+      "topMatchScore": 100,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 100
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 100
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 98
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 73
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 100
+      }
+    },
+    {
+      "profileId": 48,
+      "profileName": "Luova Variant 10",
+      "cohort": "YLA",
+      "expectedCategory": "luova",
+      "topCategory": "johtaja",
+      "topMatchScore": 76,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 76
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 72
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 47
+        },
+        {
+          "title": "Ethical Brand Strategist",
+          "category": "luova",
+          "score": 46
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 76,
+        "rakentaja": 72,
+        "luova": 50
+      }
+    },
+    {
+      "profileId": 49,
+      "profileName": "Team Leader",
+      "cohort": "NUORI",
+      "expectedCategory": "johtaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 98,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 98
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 95
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 93
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 80
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 98
+      }
+    },
+    {
+      "profileId": 50,
+      "profileName": "Johtaja Variant 1",
+      "cohort": "TASO2",
+      "expectedCategory": "johtaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 51,
+      "profileName": "Johtaja Variant 2",
+      "cohort": "NUORI",
+      "expectedCategory": "johtaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 97,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 92
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 80
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 97
+      }
+    },
+    {
+      "profileId": 52,
+      "profileName": "Johtaja Variant 3",
+      "cohort": "TASO2",
+      "expectedCategory": "johtaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 53,
+      "profileName": "Johtaja Variant 4",
+      "cohort": "NUORI",
+      "expectedCategory": "johtaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 97,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 92
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 79
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 97
+      }
+    },
+    {
+      "profileId": 54,
+      "profileName": "Johtaja Variant 5",
+      "cohort": "TASO2",
+      "expectedCategory": "johtaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 55,
+      "profileName": "Johtaja Variant 6",
+      "cohort": "NUORI",
+      "expectedCategory": "johtaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 97,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 92
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 80
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 97
+      }
+    },
+    {
+      "profileId": 56,
+      "profileName": "Johtaja Variant 7",
+      "cohort": "TASO2",
+      "expectedCategory": "johtaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 57,
+      "profileName": "Johtaja Variant 8",
+      "cohort": "NUORI",
+      "expectedCategory": "johtaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 97,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 92
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 80
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 97
+      }
+    },
+    {
+      "profileId": 58,
+      "profileName": "Johtaja Variant 9",
+      "cohort": "TASO2",
+      "expectedCategory": "johtaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 59,
+      "profileName": "Johtaja Variant 10",
+      "cohort": "NUORI",
+      "expectedCategory": "johtaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 94,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 91
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 78
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 94
+      }
+    },
+    {
+      "profileId": 60,
+      "profileName": "Johtaja Variant 11",
+      "cohort": "TASO2",
+      "expectedCategory": "johtaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 61,
+      "profileName": "Startup Founder",
+      "cohort": "NUORI",
+      "expectedCategory": "visionaari",
+      "topCategory": "auttaja",
+      "topMatchScore": 99,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 99
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 99
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 95
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 79
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 99
+      }
+    },
+    {
+      "profileId": 62,
+      "profileName": "Visionääri Variant 1",
+      "cohort": "TASO2",
+      "expectedCategory": "visionaari",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 63,
+      "profileName": "Visionääri Variant 2",
+      "cohort": "NUORI",
+      "expectedCategory": "visionaari",
+      "topCategory": "auttaja",
+      "topMatchScore": 99,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 99
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 98
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 95
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 69
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 99
+      }
+    },
+    {
+      "profileId": 64,
+      "profileName": "Visionääri Variant 3",
+      "cohort": "TASO2",
+      "expectedCategory": "visionaari",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 65,
+      "profileName": "Visionääri Variant 4",
+      "cohort": "NUORI",
+      "expectedCategory": "visionaari",
+      "topCategory": "auttaja",
+      "topMatchScore": 96,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 92
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 77
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 96
+      }
+    },
+    {
+      "profileId": 66,
+      "profileName": "Visionääri Variant 5",
+      "cohort": "TASO2",
+      "expectedCategory": "visionaari",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 67,
+      "profileName": "Visionääri Variant 6",
+      "cohort": "NUORI",
+      "expectedCategory": "visionaari",
+      "topCategory": "auttaja",
+      "topMatchScore": 98,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 98
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 95
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 68
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 98
+      }
+    },
+    {
+      "profileId": 68,
+      "profileName": "Visionääri Variant 7",
+      "cohort": "TASO2",
+      "expectedCategory": "visionaari",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 69,
+      "profileName": "Visionääri Variant 8",
+      "cohort": "NUORI",
+      "expectedCategory": "visionaari",
+      "topCategory": "auttaja",
+      "topMatchScore": 100,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 100
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 99
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 99
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 71
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 100
+      }
+    },
+    {
+      "profileId": 70,
+      "profileName": "Visionääri Variant 9",
+      "cohort": "TASO2",
+      "expectedCategory": "visionaari",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 71,
+      "profileName": "Visionääri Variant 10",
+      "cohort": "NUORI",
+      "expectedCategory": "visionaari",
+      "topCategory": "auttaja",
+      "topMatchScore": 98,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 98
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 97
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 69
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 98
+      }
+    },
+    {
+      "profileId": 72,
+      "profileName": "Visionääri Variant 11",
+      "cohort": "TASO2",
+      "expectedCategory": "visionaari",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 73,
+      "profileName": "Detail-Oriented Admin",
+      "cohort": "TASO2",
+      "expectedCategory": "jarjestaja",
+      "topCategory": "luova",
+      "topMatchScore": 65,
+      "top5Careers": [
+        {
+          "title": "Äänisuunnittelija",
+          "category": "luova",
+          "score": 65
+        },
+        {
+          "title": "Ääniteknikko",
+          "category": "luova",
+          "score": 65
+        },
+        {
+          "title": "Sisällöntuottaja",
+          "category": "luova",
+          "score": 63
+        },
+        {
+          "title": "Sisältötuottaja",
+          "category": "luova",
+          "score": 62
+        },
+        {
+          "title": "Ethical Brand Strategist",
+          "category": "luova",
+          "score": 65
+        }
+      ],
+      "categoryScores": {
+        "luova": 65
+      }
+    },
+    {
+      "profileId": 74,
+      "profileName": "Järjestäjä Variant 1",
+      "cohort": "YLA",
+      "expectedCategory": "jarjestaja",
+      "topCategory": "johtaja",
+      "topMatchScore": 76,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 76
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 73
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 51
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Digital Content Producer",
+          "category": "luova",
+          "score": 46
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 76,
+        "rakentaja": 73,
+        "luova": 51
+      }
+    },
+    {
+      "profileId": 75,
+      "profileName": "Järjestäjä Variant 2",
+      "cohort": "TASO2",
+      "expectedCategory": "jarjestaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 76,
+      "profileName": "Järjestäjä Variant 3",
+      "cohort": "NUORI",
+      "expectedCategory": "jarjestaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 89,
+      "top5Careers": [
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 89
+        },
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 88
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 85
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 84
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 73
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 89
+      }
+    },
+    {
+      "profileId": 77,
+      "profileName": "Järjestäjä Variant 4",
+      "cohort": "YLA",
+      "expectedCategory": "jarjestaja",
+      "topCategory": "johtaja",
+      "topMatchScore": 76,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 76
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 73
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 51
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 49
+        },
+        {
+          "title": "Digital Content Producer",
+          "category": "luova",
+          "score": 46
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 76,
+        "rakentaja": 73,
+        "luova": 51
+      }
+    },
+    {
+      "profileId": 78,
+      "profileName": "Järjestäjä Variant 5",
+      "cohort": "TASO2",
+      "expectedCategory": "jarjestaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 79,
+      "profileName": "Järjestäjä Variant 6",
+      "cohort": "NUORI",
+      "expectedCategory": "jarjestaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 86,
+      "top5Careers": [
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 86
+        },
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 85
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 83
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 81
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 73
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 86
+      }
+    },
+    {
+      "profileId": 80,
+      "profileName": "Järjestäjä Variant 7",
+      "cohort": "YLA",
+      "expectedCategory": "jarjestaja",
+      "topCategory": "johtaja",
+      "topMatchScore": 76,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 76
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 74
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 49
+        },
+        {
+          "title": "Digital Content Producer",
+          "category": "luova",
+          "score": 46
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 76,
+        "rakentaja": 74,
+        "luova": 50
+      }
+    },
+    {
+      "profileId": 81,
+      "profileName": "Järjestäjä Variant 8",
+      "cohort": "TASO2",
+      "expectedCategory": "jarjestaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 82,
+      "profileName": "Järjestäjä Variant 9",
+      "cohort": "NUORI",
+      "expectedCategory": "jarjestaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 86,
+      "top5Careers": [
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 86
+        },
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 85
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 82
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 81
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 72
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 86
+      }
+    },
+    {
+      "profileId": 83,
+      "profileName": "Järjestäjä Variant 10",
+      "cohort": "YLA",
+      "expectedCategory": "jarjestaja",
+      "topCategory": "johtaja",
+      "topMatchScore": 76,
+      "top5Careers": [
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 76
+        },
+        {
+          "title": "Siivooja",
+          "category": "rakentaja",
+          "score": 73
+        },
+        {
+          "title": "Sustainable Product Designer",
+          "category": "luova",
+          "score": 52
+        },
+        {
+          "title": "Video Editor",
+          "category": "luova",
+          "score": 50
+        },
+        {
+          "title": "Ethical Brand Strategist",
+          "category": "luova",
+          "score": 46
+        }
+      ],
+      "categoryScores": {
+        "johtaja": 76,
+        "rakentaja": 73,
+        "luova": 52
+      }
+    },
+    {
+      "profileId": 84,
+      "profileName": "Järjestäjä Variant 11",
+      "cohort": "TASO2",
+      "expectedCategory": "jarjestaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 85,
+      "profileName": "Eco Warrior",
+      "cohort": "NUORI",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 95,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 95
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 95
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 93
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 91
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 79
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 95
+      }
+    },
+    {
+      "profileId": 86,
+      "profileName": "Ympäristön Puolustaja Variant 1",
+      "cohort": "TASO2",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 75,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 75
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 75
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 75
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 75
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 75
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 75
+      }
+    },
+    {
+      "profileId": 87,
+      "profileName": "Ympäristön Puolustaja Variant 2",
+      "cohort": "NUORI",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 94,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 93
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 91
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 79
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 94
+      }
+    },
+    {
+      "profileId": 88,
+      "profileName": "Ympäristön Puolustaja Variant 3",
+      "cohort": "TASO2",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 75,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 75
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 75
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 75
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 75
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 75
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 75
+      }
+    },
+    {
+      "profileId": 89,
+      "profileName": "Ympäristön Puolustaja Variant 4",
+      "cohort": "NUORI",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 96,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 95
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 92
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 79
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 96
+      }
+    },
+    {
+      "profileId": 90,
+      "profileName": "Ympäristön Puolustaja Variant 5",
+      "cohort": "TASO2",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 70,
+      "top5Careers": [
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 70
+        },
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 69
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 69
+        },
+        {
+          "title": "Sosiaalityöntekijä",
+          "category": "auttaja",
+          "score": 69
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 68
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 70
+      }
+    },
+    {
+      "profileId": 91,
+      "profileName": "Ympäristön Puolustaja Variant 6",
+      "cohort": "NUORI",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 87,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 87
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 87
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 84
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 83
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 72
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 87
+      }
+    },
+    {
+      "profileId": 92,
+      "profileName": "Ympäristön Puolustaja Variant 7",
+      "cohort": "TASO2",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 75,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 75
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 75
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 75
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 75
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 75
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 75
+      }
+    },
+    {
+      "profileId": 93,
+      "profileName": "Ympäristön Puolustaja Variant 8",
+      "cohort": "NUORI",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 85,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 85
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 83
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 82
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 81
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 74
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 85
+      }
+    },
+    {
+      "profileId": 94,
+      "profileName": "Ympäristön Puolustaja Variant 9",
+      "cohort": "TASO2",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 95,
+      "profileName": "Ympäristön Puolustaja Variant 10",
+      "cohort": "NUORI",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 96,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 96
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 95
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 94
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 92
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 79
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 96
+      }
+    },
+    {
+      "profileId": 96,
+      "profileName": "Ympäristön Puolustaja Variant 11",
+      "cohort": "TASO2",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCategory": "auttaja",
+      "topMatchScore": 70,
+      "top5Careers": [
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 70
+        },
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 69
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 69
+        },
+        {
+          "title": "Sosiaalityöntekijä",
+          "category": "auttaja",
+          "score": 69
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 68
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 70
+      }
+    },
+    {
+      "profileId": 97,
+      "profileName": "Balanced Multi-talent",
+      "cohort": "NUORI",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 87
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 87
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 87
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 59
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 98,
+      "profileName": "Conflicting Interests",
+      "cohort": "TASO2",
+      "topCategory": "auttaja",
+      "topMatchScore": 90,
+      "top5Careers": [
+        {
+          "title": "Lääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Eläinlääkäri",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Työpsykologi",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Kriisityöntekijä",
+          "category": "auttaja",
+          "score": 90
+        },
+        {
+          "title": "Röntgenhoitaja",
+          "category": "auttaja",
+          "score": 90
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 90
+      }
+    },
+    {
+      "profileId": 99,
+      "profileName": "Low Engagement",
+      "cohort": "YLA",
+      "topCategory": "innovoija",
+      "topMatchScore": 93,
+      "top5Careers": [
+        {
+          "title": "Health Data Analyst",
+          "category": "innovoija",
+          "score": 93
+        },
+        {
+          "title": "Myyntipäällikkö",
+          "category": "johtaja",
+          "score": 78
+        },
+        {
+          "title": "Biotekniikka-insinööri",
+          "category": "innovoija",
+          "score": 70
+        },
+        {
+          "title": "Site Reliability Engineer",
+          "category": "innovoija",
+          "score": 48
+        },
+        {
+          "title": "Backend Developer",
+          "category": "innovoija",
+          "score": 48
+        }
+      ],
+      "categoryScores": {
+        "innovoija": 93,
+        "johtaja": 78
+      }
+    },
+    {
+      "profileId": 100,
+      "profileName": "High Engagement",
+      "cohort": "NUORI",
+      "topCategory": "auttaja",
+      "topMatchScore": 100,
+      "top5Careers": [
+        {
+          "title": "Nutrition Specialist",
+          "category": "auttaja",
+          "score": 100
+        },
+        {
+          "title": "Art Therapy Facilitator",
+          "category": "auttaja",
+          "score": 99
+        },
+        {
+          "title": "Mental Health Counselor",
+          "category": "auttaja",
+          "score": 98
+        },
+        {
+          "title": "Wellness Coach",
+          "category": "auttaja",
+          "score": 95
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja",
+          "score": 79
+        }
+      ],
+      "categoryScores": {
+        "auttaja": 100
+      }
+    }
+  ],
+  "summary": {
+    "totalProfiles": 100,
+    "categoryDistribution": {
+      "innovoija": 3,
+      "luova": 3,
+      "auttaja": 76,
+      "johtaja": 18
+    },
+    "averageTopMatchScore": 87.3,
+    "uniqueCareersInTop5": {},
+    "expectedMatchAccuracy": 7.291666666666667,
+    "timestamp": "2025-11-23T17:11:25.193Z"
+  }
+}
