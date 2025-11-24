@@ -37,7 +37,7 @@ export default function HomePage() {
           </Link>
           <div className="flex items-center gap-8">
             <Link
-              href="/menetelmä"
+              href="/#miten"
               className="text-sm font-medium text-neutral-300 hover:text-white transition-all duration-300 hover:scale-105 hidden sm:block"
             >
               Miten toimii
@@ -77,12 +77,6 @@ export default function HomePage() {
 
         <div className="max-w-6xl mx-auto relative">
           <div className="text-center mb-16">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-lg bg-white/10 border border-white/20 animate-fade-in-up">
-              <Sparkles className="h-4 w-4 text-[#E8994A]" />
-              <span className="text-sm font-medium text-neutral-200">412 ammattia • 8 persoonallisuustyyppiä</span>
-            </div>
-
             {/* Main headline */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 text-white leading-[1.1] tracking-tight">
               Löydä ura, joka sopii sinulle
