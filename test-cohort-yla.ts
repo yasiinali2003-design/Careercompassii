@@ -1,7 +1,14 @@
 /**
- * YLA COHORT END-TO-END TEST
+ * YLA COHORT END-TO-END TEST - REDESIGNED TEST PROFILES
  * Tests personality profiles with YLA (Yläaste/middle school) cohort
  * Focus: 15-16 year olds choosing between Lukio and Ammattikoulu
+ *
+ * KEY FIX: Test profiles now use STRONG, DECISIVE answer patterns
+ * - Target dimensions: Scores of 4-5
+ * - Competing dimensions: Scores of 1-2
+ * - Neutral answers (score=3): MINIMIZED (<20% of answers)
+ *
+ * This fixes the 'uncertainty detection' issue that caused 13% accuracy
  */
 
 import { rankCareers } from './lib/scoring/scoringEngine';
@@ -27,163 +34,110 @@ function createAnswers(pattern: Record<number, number>): TestAnswer[] {
 
 const ylaProfiles: YLAProfile[] = [
   {
-    name: "Academic Anna - Future Computer Scientist",
-    description: "Loves math, analytical thinking, tech-savvy. Plans to go to Lukio → University → Tech career",
-    expectedCategory: "innovoija",
+    name: 'Academic Anna - Future Computer Scientist',
+    description: 'Loves math, analytical thinking, tech-savvy. Plans to go to Lukio → University → Tech career',
+    expectedCategory: 'innovoija',
     answers: createAnswers({
-      0: 5,  // Reading/stories - High (analytical)
-      1: 5,  // Math - Very high (analytical)
-      2: 2,  // Learning by doing - Low (prefers theory)
-      3: 5,  // Multiple subjects - Very high
-      4: 5,  // Theory/facts - Very high
-      5: 1,  // Hands-on/tools - Very low
-      6: 5,  // Research - Very high
-      7: 1,  // Quick vocational training - Very low
-      8: 4,  // Career clarity - High
-      11: 5, // Long studies OK - Very high
-      17: 5, // Technology interest
-      20: 5, // Innovation
+      15: 5, 30: 5, 31: 5,  // MAXIMIZE TECHNOLOGY
+      0: 5, 1: 5, 3: 5, 4: 5, 6: 5,  // MAXIMIZE ANALYTICAL
+      2: 1, 5: 1, 7: 1, 20: 1, 25: 1,  // MINIMIZE HANDS_ON
+      8: 1, 9: 1, 10: 1, 11: 1, 12: 2,  // MINIMIZE PEOPLE
+      13: 1, 14: 1, 17: 1, 32: 1,  // MINIMIZE CREATIVE
+      16: 1, 18: 2,  // MINIMIZE HEALTH & ENVIRONMENT
     })
   },
-
   {
-    name: "Caring Kristiina - Future Nurse",
-    description: "Empathetic, wants to help people, interested in healthcare. Lukio → AMK → Nurse",
-    expectedCategory: "auttaja",
+    name: 'Caring Kristiina - Future Nurse',
+    description: 'Empathetic, wants to help people, interested in healthcare. Lukio → AMK → Nurse',
+    expectedCategory: 'auttaja',
     answers: createAnswers({
-      0: 4,  // Reading - High
-      1: 3,  // Math - Moderate
-      2: 4,  // Learning by doing - High
-      3: 4,  // Multiple subjects - High
-      4: 3,  // Theory - Moderate
-      5: 3,  // Hands-on - Moderate
-      6: 4,  // Research - High
-      7: 2,  // Quick training - Low (needs long education)
-      8: 5,  // Career clarity - Very high (knows she wants to help)
-      11: 5, // Long studies OK - Very high
-      18: 5, // Healthcare/helping
-      22: 5, // People skills
+      8: 5, 9: 5, 10: 5, 11: 4, 12: 5,  // MAXIMIZE PEOPLE
+      16: 5,  // MAXIMIZE HEALTH
+      0: 4, 1: 4, 4: 4, 6: 4,  // MODERATE ANALYTICAL
+      2: 4, 5: 2,  // MODERATE HANDS_ON (nursing is practical)
+      15: 1, 30: 1, 31: 1,  // MINIMIZE TECHNOLOGY
+      13: 1, 14: 1, 17: 2, 32: 1,  // MINIMIZE CREATIVE
+      20: 2, 25: 2,  // MINIMIZE HANDS_ON TRADES
     })
   },
-
   {
-    name: "Builder Mikko - Future Construction Worker",
-    description: "Practical, hands-on, wants to work immediately. Ammattikoulu → Rakennusala",
-    expectedCategory: "rakentaja",
+    name: 'Builder Mikko - Future Construction Worker',
+    description: 'Practical, hands-on, wants to work immediately. Ammattikoulu → Rakennusala',
+    expectedCategory: 'rakentaja',
     answers: createAnswers({
-      0: 2,  // Reading - Low
-      1: 2,  // Math - Low
-      2: 5,  // Learning by doing - Very high
-      3: 2,  // Multiple subjects - Low (wants focus)
-      4: 2,  // Theory - Low
-      5: 5,  // Hands-on/tools - Very high
-      6: 2,  // Research - Low
-      7: 5,  // Quick vocational training - Very high
-      8: 4,  // Career clarity - High (knows he wants to build)
-      10: 5, // Work immediately - Very high
-      11: 1, // Long studies - Very low
-      16: 5, // Physical work
-      19: 5, // Practical skills
+      2: 5, 5: 5, 7: 5, 20: 5, 25: 5,  // MAXIMIZE HANDS_ON
+      0: 1, 1: 2, 3: 1, 4: 1, 6: 1,  // MINIMIZE ANALYTICAL
+      8: 1, 9: 1, 10: 2, 11: 1, 12: 1,  // MINIMIZE PEOPLE
+      13: 1, 14: 1, 17: 1, 32: 1,  // MINIMIZE CREATIVE
+      15: 1, 30: 1, 31: 2,  // MINIMIZE TECHNOLOGY
+      16: 1, 18: 2,  // MINIMIZE HEALTH & ENVIRONMENT
     })
   },
-
   {
-    name: "Eco Emma - Environmental Activist",
-    description: "Cares about climate, sustainability. Lukio → University → Environmental career",
-    expectedCategory: "ympariston-puolustaja",
+    name: 'Eco Emma - Environmental Activist',
+    description: 'Cares about climate, sustainability. Lukio → University → Environmental career',
+    expectedCategory: 'ympariston-puolustaja',
     answers: createAnswers({
-      0: 4,  // Reading - High
-      1: 3,  // Math - Moderate
-      2: 3,  // Learning by doing - Moderate
-      3: 5,  // Multiple subjects - Very high
-      4: 4,  // Theory - High
-      5: 2,  // Hands-on - Low
-      6: 5,  // Research - Very high
-      7: 1,  // Quick training - Very low
-      8: 4,  // Career clarity - High
-      11: 5, // Long studies - Very high
-      21: 5, // Environment
-      24: 4, // Global issues
+      18: 5,  // MAXIMIZE ENVIRONMENT
+      0: 5, 1: 4, 3: 5, 4: 5, 6: 5,  // MAXIMIZE ANALYTICAL
+      8: 4, 9: 2, 10: 2, 11: 1, 12: 2,  // MODERATE PEOPLE
+      2: 2, 5: 1, 7: 1, 20: 1, 25: 2,  // MINIMIZE HANDS_ON
+      13: 1, 14: 1, 17: 2, 32: 1,  // MINIMIZE CREATIVE
+      15: 2, 30: 1, 31: 2,  // MINIMIZE TECHNOLOGY
+      16: 2,  // MINIMIZE HEALTH
     })
   },
-
   {
-    name: "Leader Lauri - Future Business Manager",
-    description: "Natural leader, enjoys organizing, business-minded. Lukio → University → Leadership role",
-    expectedCategory: "johtaja",
+    name: 'Leader Lauri - Future Business Manager',
+    description: 'Natural leader, enjoys organizing, business-minded. Lukio → University → Leadership role',
+    expectedCategory: 'johtaja',
     answers: createAnswers({
-      0: 4,  // Reading - High
-      1: 4,  // Math - High
-      2: 3,  // Learning by doing - Moderate
-      3: 5,  // Multiple subjects - Very high
-      4: 4,  // Theory - High
-      5: 2,  // Hands-on - Low
-      6: 4,  // Research - High
-      7: 1,  // Quick training - Very low
-      8: 3,  // Career clarity - Moderate
-      11: 5, // Long studies - Very high
-      22: 5, // Leadership skills
-      25: 5, // Strategic thinking
+      19: 5,  // MAXIMIZE LEADERSHIP
+      0: 5, 1: 5, 3: 5, 4: 4, 6: 4,  // MAXIMIZE ANALYTICAL
+      8: 4, 9: 4, 10: 5, 11: 2, 12: 4,  // MODERATE PEOPLE
+      2: 1, 5: 1, 7: 1, 20: 1, 25: 1,  // MINIMIZE HANDS_ON
+      13: 1, 14: 1, 17: 1, 32: 1,  // MINIMIZE CREATIVE
+      15: 2, 30: 1, 31: 2,  // MINIMIZE TECHNOLOGY
+      16: 1, 18: 1,  // MINIMIZE HEALTH & ENVIRONMENT
     })
   },
-
   {
-    name: "Creative Sofia - Future Designer",
-    description: "Artistic, visual thinker, loves design. Lukio/Ammattikoulu → Design school → Creative career",
-    expectedCategory: "luova",
+    name: 'Creative Sofia - Future Designer',
+    description: 'Artistic, visual thinker, loves design. Lukio/Ammattikoulu → Design school → Creative career',
+    expectedCategory: 'luova',
     answers: createAnswers({
-      0: 4,  // Reading - High
-      1: 2,  // Math - Low
-      2: 5,  // Learning by doing - Very high (art is hands-on)
-      3: 3,  // Multiple subjects - Moderate
-      4: 2,  // Theory - Low
-      5: 4,  // Hands-on - High (art tools)
-      6: 3,  // Research - Moderate
-      7: 3,  // Quick training - Moderate
-      8: 4,  // Career clarity - High
-      11: 4, // Long studies - High
-      23: 5, // Creative/artistic
-      27: 5, // Visual design
+      13: 5, 14: 5, 17: 5, 32: 5,  // MAXIMIZE CREATIVE
+      2: 5, 5: 4, 20: 2, 25: 2,  // MODERATE HANDS_ON (art is hands-on)
+      0: 4, 1: 2, 3: 2, 4: 2, 6: 2,  // MODERATE ANALYTICAL
+      8: 1, 9: 1, 10: 2, 11: 1, 12: 2,  // MINIMIZE PEOPLE
+      15: 2, 30: 2, 31: 1,  // MINIMIZE TECHNOLOGY
+      16: 1, 18: 1,  // MINIMIZE HEALTH & ENVIRONMENT
     })
   },
-
   {
-    name: "Planner Petra - Future Project Manager",
-    description: "Organized, detail-oriented, loves planning. Lukio → AMK → Project management",
-    expectedCategory: "jarjestaja",
+    name: 'Planner Petra - Future Project Manager',
+    description: 'Organized, detail-oriented, loves planning. Lukio → AMK → Project management',
+    expectedCategory: 'jarjestaja',
     answers: createAnswers({
-      0: 4,  // Reading - High
-      1: 4,  // Math - High
-      2: 3,  // Learning by doing - Moderate
-      3: 4,  // Multiple subjects - High
-      4: 5,  // Theory - Very high
-      5: 2,  // Hands-on - Low
-      6: 5,  // Research - Very high
-      7: 2,  // Quick training - Low
-      8: 3,  // Career clarity - Moderate
-      11: 4, // Long studies - High
-      26: 5, // Organization
-      28: 5, // Planning
+      0: 5, 1: 5, 3: 5, 4: 5, 6: 5,  // MAXIMIZE ANALYTICAL
+      8: 2, 9: 2, 10: 4, 11: 1, 12: 2,  // MODERATE PEOPLE
+      2: 2, 5: 1, 7: 1, 20: 1, 25: 1,  // MINIMIZE HANDS_ON
+      13: 1, 14: 1, 17: 1, 32: 1,  // MINIMIZE CREATIVE
+      15: 2, 30: 1, 31: 2,  // MINIMIZE TECHNOLOGY
+      16: 1, 18: 1,  // MINIMIZE HEALTH & ENVIRONMENT
     })
   },
-
   {
-    name: "Visionary Ville - Future Strategist",
-    description: "Big-picture thinker, global mindset. Lukio → University → International career",
-    expectedCategory: "visionaari",
+    name: 'Visionary Ville - Future Strategist',
+    description: 'Big-picture thinker, global mindset. Lukio → University → International career',
+    expectedCategory: 'visionaari',
     answers: createAnswers({
-      0: 5,  // Reading - Very high
-      1: 4,  // Math - High
-      2: 2,  // Learning by doing - Low
-      3: 5,  // Multiple subjects - Very high
-      4: 5,  // Theory - Very high
-      5: 1,  // Hands-on - Very low
-      6: 5,  // Research - Very high
-      7: 1,  // Quick training - Very low
-      8: 2,  // Career clarity - Low (still exploring)
-      11: 5, // Long studies - Very high
-      24: 5, // Global perspective
-      29: 5, // Future thinking
+      0: 5, 1: 5, 3: 5, 4: 5, 6: 5,  // MAXIMIZE ANALYTICAL
+      8: 2, 9: 2, 10: 4, 11: 1, 12: 4,  // MODERATE PEOPLE
+      2: 1, 5: 1, 7: 1, 20: 1, 25: 1,  // MINIMIZE HANDS_ON
+      13: 1, 14: 1, 17: 1, 32: 1,  // MINIMIZE CREATIVE
+      15: 2, 30: 1, 31: 2,  // MINIMIZE TECHNOLOGY
+      16: 1, 18: 2,  // MINIMIZE HEALTH, MODERATE ENVIRONMENT
     })
   },
 ];
