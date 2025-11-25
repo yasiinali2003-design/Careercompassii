@@ -1988,190 +1988,221 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     notes: "Hospitality/tourism"
   },
   
-  // Section 2: Work Values (Q10-17)
+  // Section 2: Hands-On Work (Q10-16) - Following TASO2 model
   {
     q: 10,
-    text: "Onko sinulle erittäin tärkeää ansaita hyvä palkka (yli 4000€/kk)?",
-    dimension: 'values',
-    subdimension: 'advancement',
-    weight: 1.0,
+    text: "Pidätkö käsillä tekemisestä ja rakentamisesta?",
+    dimension: 'interests',
+    subdimension: 'hands_on',
+    weight: 1.4,
     reverse: false,
-    notes: "High salary priority - advancement value (was: financial)"
+    notes: "Manual work/building - like TASO2 Q3"
   },
   {
     q: 11,
-    text: "Haluaisitko työn, jossa voit vaikuttaa yhteiskuntaan positiivisesti?",
-    dimension: 'values',
-    subdimension: 'social_impact',
-    weight: 1.2,
+    text: "Kiinnostaako sinua puutyö, metallityö tai askarteleminen?",
+    dimension: 'interests',
+    subdimension: 'hands_on',
+    weight: 1.3,
     reverse: false,
-    notes: "Purpose-driven careers"
+    notes: "Craftsmanship - like TASO2 Q21"
   },
   {
     q: 12,
-    text: "Onko sinulle tärkeää, että työpaikkasi on varma ja pysyvä?",
-    dimension: 'values',
-    subdimension: 'stability',
-    weight: 1.1,
+    text: "Haluaisitko työskennellä käytännön tehtävissä (esim. rakentaminen, huolto)?",
+    dimension: 'interests',
+    subdimension: 'hands_on',
+    weight: 1.3,
     reverse: false,
-    notes: "Job security priority"
+    notes: "Practical/trade work - like TASO2 Q22"
   },
   {
     q: 13,
-    text: "Haluaisitko uralla nopeasti eteenpäin ja ylennyksiä?",
-    dimension: 'values',
-    subdimension: 'advancement',
-    weight: 1.1,
+    text: "Pidätkö työstä, jossa pääset fyysisesti tekemään ja kokeilemaan?",
+    dimension: 'interests',
+    subdimension: 'hands_on',
+    weight: 1.3,
     reverse: false,
-    notes: "Career progression priority"
+    notes: "Physical/manual tasks - like TASO2 Q23"
   },
   {
     q: 14,
-    text: "Onko sinulle tärkeää, että sinulla on aikaa perheelle ja harrastuksille?",
-    dimension: 'values',
-    subdimension: 'stability',
-    weight: 1.0,
+    text: "Kiinnostaako sinua korjaaminen ja mekaaniset asiat?",
+    dimension: 'interests',
+    subdimension: 'hands_on',
+    weight: 1.2,
     reverse: false,
-    notes: "Work-life balance priority - stability value (was: work_life_balance)"
+    notes: "Repair/mechanics - like TASO2 Q26"
   },
   {
     q: 15,
-    text: "Haluaisitko työskennellä kansainvälisessä ja monikulttuurisessa ympäristössä?",
-    dimension: 'values',
-    subdimension: 'global',
-    weight: 1.0,
+    text: "Haluaisitko tehdä työtä, jossa näet konkreettisen lopputuloksen?",
+    dimension: 'interests',
+    subdimension: 'hands_on',
+    weight: 1.2,
     reverse: false,
-    notes: "International orientation"
+    notes: "Tangible outcomes - like TASO2 Q27"
   },
   {
     q: 16,
-    text: "Onko sinulle tärkeää oppia jatkuvasti uutta työssäsi?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 1.1,
+    text: "Pidätkö siitä, että saat tehdä jotain omilla käsilläsi?",
+    dimension: 'interests',
+    subdimension: 'hands_on',
+    weight: 1.2,
     reverse: false,
-    notes: "Learning/development priority"
+    notes: "Hands-on making - like TASO2 Q28"
   },
+
+  // Section 3: People/Social Work (Q17-21)
   {
     q: 17,
-    text: "Haluaisitko työn, jossa voit olla luova ja keksiä uusia ideoita?",
+    text: "Pidätkö ihmisten auttamisesta ja heidän tukemisestaan?",
+    dimension: 'interests',
+    subdimension: 'people',
+    weight: 1.3,
+    reverse: false,
+    notes: "Helping professions - like TASO2 Q8"
+  },
+  {
+    q: 18,
+    text: "Nautitko siitä, kun opetat tai selität asioita muille?",
+    dimension: 'interests',
+    subdimension: 'people',
+    weight: 1.2,
+    reverse: false,
+    notes: "Teaching careers - like TASO2 Q9"
+  },
+  {
+    q: 19,
+    text: "Pidätkö työstä, jossa tapaat paljon erilaisia ihmisiä?",
+    dimension: 'interests',
+    subdimension: 'people',
+    weight: 1.2,
+    reverse: false,
+    notes: "Social interaction - like TASO2 Q10"
+  },
+  {
+    q: 20,
+    text: "Kiinnostaako sinua ymmärtää ihmisten tunteita ja ajatuksia?",
+    dimension: 'interests',
+    subdimension: 'people',
+    weight: 1.2,
+    reverse: false,
+    notes: "Psychology/empathy - like TASO2 Q11"
+  },
+  {
+    q: 21,
+    text: "Haluaisitko työskennellä ihmisten kanssa ja heidän hyvinvointinsa parissa?",
+    dimension: 'interests',
+    subdimension: 'people',
+    weight: 1.2,
+    reverse: false,
+    notes: "Wellbeing/care - like TASO2 Q12"
+  },
+
+  // Section 4: Creative + Analytical (Q22-26)
+  {
+    q: 22,
+    text: "Pidätkö luovasta työskentelystä ja omien ideoiden toteuttamisesta?",
+    dimension: 'interests',
+    subdimension: 'creative',
+    weight: 1.3,
+    reverse: false,
+    notes: "Creative work - like TASO2 Q14"
+  },
+  {
+    q: 23,
+    text: "Kiinnostaako sinua suunnittelu, piirtäminen tai visuaalinen ilmaisu?",
     dimension: 'interests',
     subdimension: 'creative',
     weight: 1.2,
     reverse: false,
-    notes: "Innovation/creativity value"
-  },
-  
-  // Section 3: Work Environment (Q18-24)
-  {
-    q: 18,
-    text: "Haluaisitko työskennellä pääosin kotoa käsin (etätyö)?",
-    dimension: 'context',
-    subdimension: 'work_environment',
-    weight: 1.1,
-    reverse: false,
-    notes: "Remote work preference"
-  },
-  {
-    q: 19,
-    text: "Pidätkö perinteisestä toimistoympäristöstä ja säännöllisestä työpäivästä?",
-    dimension: 'workstyle',
-    subdimension: 'structure',
-    weight: 0.9,
-    reverse: false,
-    notes: "Traditional office preference"
-  },
-  {
-    q: 20,
-    text: "Haluaisitko liikkua paljon työssäsi ja vierailla eri paikoissa?",
-    dimension: 'context',
-    subdimension: 'work_environment',
-    weight: 1.0,
-    reverse: false,
-    notes: "Mobile/field work preference"
-  },
-  {
-    q: 21,
-    text: "Onko sinulle tärkeää työskennellä isossa, tunnetussa yrityksessä?",
-    dimension: 'values',
-    subdimension: 'stability',
-    weight: 0.9,
-    reverse: false,
-    notes: "Large company preference - stability value (was: company_size)"
-  },
-  {
-    q: 22,
-    text: "Kiinnostaako sinua työskennellä pienessä startup-yrityksessä?",
-    dimension: 'values',
-    subdimension: 'entrepreneurship',
-    weight: 0.9,
-    reverse: false,
-    notes: "Startup preference - entrepreneurship value (was: company_size)"
-  },
-  {
-    q: 23,
-    text: "Oletko valmis tekemään vuorotyötä (yö-, ilta-, viikonloppuvuoroja)?",
-    dimension: 'workstyle',
-    subdimension: 'flexibility',
-    weight: 1.0,
-    reverse: false,
-    notes: "Shift work tolerance"
+    notes: "Design/visual arts - like TASO2 Q15"
   },
   {
     q: 24,
-    text: "Haluaisitko työn, jossa matkustat paljon ulkomailla?",
-    dimension: 'values',
-    subdimension: 'global',
-    weight: 1.1,
+    text: "Pidätkö analyyttisestä ajattelusta ja ongelmien ratkaisemisesta?",
+    dimension: 'interests',
+    subdimension: 'analytical',
+    weight: 1.3,
     reverse: false,
-    notes: "International travel preference"
+    notes: "Problem-solving - like TASO2 Q2"
   },
-  
-  // Section 4: Work Style & Preferences (Q25-29)
   {
     q: 25,
-    text: "Pidätkö siitä, että saat tehdä työsi itsenäisesti ilman jatkuvaa ohjausta?",
-    dimension: 'workstyle',
-    subdimension: 'flexibility',
-    weight: 1.0,
+    text: "Kiinnostaako sinua tutkia asioita syvällisesti ja etsiä vastauksia?",
+    dimension: 'interests',
+    subdimension: 'analytical',
+    weight: 1.2,
     reverse: false,
-    notes: "Autonomy preference - flexibility workstyle (was: autonomy)"
+    notes: "Research/investigation - like TASO2 Q5"
   },
   {
     q: 26,
-    text: "Haluaisitko johtaa tiimiä ja tehdä suuria päätöksiä?",
-    dimension: 'workstyle',
-    subdimension: 'leadership',
-    weight: 1.3,
+    text: "Haluaisitko kirjoittaa, kertoa tarinoita tai tehdä sisältöä?",
+    dimension: 'interests',
+    subdimension: 'creative',
+    weight: 1.2,
     reverse: false,
-    notes: "Leadership aspiration"
+    notes: "Content creation/writing - like TASO2 Q17"
   },
+
+  // Section 5: Environment, Global, Organization (Q27-29)
   {
     q: 27,
-    text: "Pidätkö tiimityöskentelystä ja yhteistyöstä kollegoiden kanssa?",
-    dimension: 'workstyle',
-    subdimension: 'motivation',
-    weight: 0.9,
+    text: "Haluaisitko työskennellä kansainvälisesti ja nähdä maailmaa?",
+    dimension: 'values',
+    subdimension: 'global',
+    weight: 1.3,
     reverse: false,
-    notes: "Team collaboration - motivation workstyle (was: teamwork)"
+    notes: "International orientation, global mindset - enables visionaari differentiation"
   },
   {
     q: 28,
-    text: "Haluaisitko työn, jossa on selkeät rutiinit ja toistuvat tehtävät?",
-    dimension: 'workstyle',
-    subdimension: 'structure',
-    weight: 1.0,
+    text: "Haluaisitko työskennellä ilmastonmuutoksen ja ympäristöongelmien parissa?",
+    dimension: 'interests',
+    subdimension: 'environment',
+    weight: 1.2,
     reverse: false,
-    notes: "Routine/predictability preference"
+    notes: "Climate/sustainability - like TASO2 Q30"
   },
   {
     q: 29,
-    text: "Pidätkö työstä, jossa jokainen päivä on erilainen ja yllättävä?",
-    dimension: 'workstyle',
-    subdimension: 'flexibility',
-    weight: 1.0,
+    text: "Pidätkö järjestämisestä, suunnittelusta ja asioiden organisoimisesta?",
+    dimension: 'interests',
+    subdimension: 'organization',
+    weight: 1.2,
     reverse: false,
-    notes: "Variety/novelty preference - flexibility workstyle (was: variety)"
+    notes: "Planning/organizing - like TASO2 Q32"
+  },
+
+  // Section 6: Technology + Creative (Q30-32) - NEW QUESTIONS
+  {
+    q: 30,
+    text: "Kiinnostaako sinua luoda sovelluksia tai nettisivuja?",
+    dimension: 'interests',
+    subdimension: 'technology',
+    weight: 1.3,
+    reverse: false,
+    notes: "App/web development - like YLA Q30"
+  },
+  {
+    q: 31,
+    text: "Pidätkö ongelmien ratkaisemisesta tekniikan avulla?",
+    dimension: 'interests',
+    subdimension: 'technology',
+    weight: 1.2,
+    reverse: false,
+    notes: "Tech problem-solving - like YLA Q31"
+  },
+  {
+    q: 32,
+    text: "Haluaisitko ilmaista ideoitasi videon, musiikin tai taiteen kautta?",
+    dimension: 'interests',
+    subdimension: 'creative',
+    weight: 1.2,
+    reverse: false,
+    notes: "Media/artistic expression - like YLA Q32"
   }
 ];
 
