@@ -1,668 +1,321 @@
-# Pilot Readiness Assessment: Functional Evaluation
-**Date:** 2025-11-23
-**Focus:** Functionality, Logic, User Experience (Excluding Visual Design)
+# PILOT READINESS ASSESSMENT - BRUTAL HONESTY EDITION
+
+**Date:** January 25, 2025  
+**Methodology:** End-to-end testing with 26 personality profiles across 3 cohorts
 
 ---
 
-## Executive Summary
+## EXECUTIVE SUMMARY
 
-**Pilot Readiness Verdict: READY WITH MINOR IMPROVEMENTS** ✅
+### Test Results
 
-Your platform demonstrates **strong functional foundations** with:
-- ✅ **100% validated scoring algorithm** (9/9 test scenarios passing)
-- ✅ **412 comprehensive career profiles** with detailed Finnish labor market data
-- ✅ **Multi-cohort system** (YLA, TASO2, NUORI) with age-appropriate content
-- ✅ **Complete end-to-end user journey** from test to results to career exploration
-- ✅ **Todistuspistelaskuri** calculator with scenario planning
-- ✅ **Teacher dashboard** with class management functionality
+| Cohort | Accuracy | Status | Pilot Ready? |
+|--------|----------|--------|--------------|
+| **TASO2** (16-19, vocational) | **100%** (10/10) | ✅ PRODUCTION READY | **YES** |
+| **YLA** (15-16, middle school) | **13%** (1/8) | ❌ BROKEN | **NO** |
+| **NUORI** (16-20, young adults) | **0%** (0/8) | ❌ CATASTROPHIC | **NO** |
 
-**Recommendation:** Pilot-ready for controlled rollout with real users. A few functional enhancements would strengthen the experience, but none are blockers.
+### The Verdict
 
----
+**You have ONE working cohort out of three.**
 
-## 1. Evaluation by User Perspective
-
-### 👨‍🎓 REAL STUDENT (Age 13-25)
-
-#### Usability & Clarity: ⭐⭐⭐⭐ (4/5)
-
-**What Works:**
-- **Test flow is intuitive**: 30 questions organized by sections with clear progress tracking
-- **Age-appropriate questions**: YLA questions about "lukio vs ammattikoulu", TASO2 about specific career interests, NUORI about professional goals
-- **Results are actionable**: Personality type + top 5 career matches + education path recommendation
-- **Career discovery is engaging**: 412 careers with searchable/filterable Urakirjasto
-- **Todistuspistelaskuri provides real value**: Calculate YO points for both yliopisto and AMK, test "what-if" scenarios
-
-**Clarity Issues:**
-1. **Test duration confusion**: Homepage says "5 minuuttia" but 30 questions realistically takes 8-12 minutes
-2. **No test preview**: Students don't know what types of questions to expect before starting
-3. **Cannot save test progress**: If browser closes, must restart (critical for mobile users)
-4. **Education path logic unclear**: YLA students see "Lukio" recommendation but don't understand *why* vs ammattikoulu
-5. **Career matching opacity**: Results show careers but students can't see *which answers* led to which careers
-
-#### Features Truly Helpful: ⭐⭐⭐⭐⭐ (5/5)
-
-**Personality Test:**
-- ✅ Multi-dimensional scoring (interests, values, workstyle, context)
-- ✅ 8 personality types (LUOVA, JOHTAJA, INNOVOIJA, etc.)
-- ✅ Confidence scoring (high/medium/low)
-- ✅ Personalized analysis text
-- ✅ Top 5 career recommendations
-
-**Urakirjasto (Career Library):**
-- ✅ 412 Finnish careers with accurate labor market data
-- ✅ Salary ranges, job outlook, education paths
-- ✅ Skills required (hard + soft)
-- ✅ Opintopolku.fi integration links
-- ✅ Category-based browsing (8 personality types)
-- ✅ Search & filter functionality
-
-**Todistuspistelaskuri:**
-- ✅ YO matriculation exam point calculator
-- ✅ Dual calculation (yliopisto + AMK schemes)
-- ✅ Scenario planning ("what if I retake exam?")
-- ✅ Integration with test results (suggests programs based on career interests)
-- ✅ 3-step wizard (input → results → programs)
-
-**Real-World Value:**
-- Student can take test → get personality type → see matching careers → calculate YO points → find study programs → make informed decisions
-- **This is a complete career planning journey.**
-
-#### Logic Strength for Pilot: ⭐⭐⭐⭐⭐ (5/5)
-
-- **Scoring algorithm: VALIDATED** (100% test pass rate)
-- **Data quality: EXCELLENT** (412 careers with comprehensive Finnish data)
-- **User flow: COMPLETE** (home → test → results → careers → calculator → programs)
-- **Cohort system: FUNCTIONAL** (age-appropriate questions and content)
-
-#### Must-Fix Before Pilot:
-
-1. **🔴 CRITICAL: Add test progress saving**
-   - Mobile users lose progress if app backgrounds
-   - LocalStorage-based solution needed
-   - **Impact:** High abandonment rate on mobile
-
-2. **🟡 IMPORTANT: Fix test duration expectation**
-   - Change "5 minutes" to "8-10 minutes"
-   - **Impact:** User frustration when test takes longer
-
-3. **🟡 IMPORTANT: Add test question preview**
-   - Show example questions before starting
-   - **Impact:** Reduces user anxiety
-
-#### Can Wait Until After Visual Redesign:
-
-- Test result detailed explanations (why this career matches)
-- Career comparison tool (side-by-side)
-- Progress badges/gamification
-- Social sharing enhancements
+**✅ TASO2 is production-ready** - Pilot immediately with vocational students  
+**❌ YLA needs questionnaire redesign** - 2-3 weeks to fix  
+**❌ NUORI is fundamentally broken** - 1-2 months complete redesign required
 
 ---
 
-### 👪 PARENT
+## TASO2 - THE SUCCESS STORY ✅
 
-#### Usability & Clarity: ⭐⭐⭐⭐ (4/5)
+**100% Accuracy** - All 10 personality profiles matched correctly
 
-**What Works:**
-- **Clear value proposition**: Homepage explains how test helps with career planning
-- **Transparent about purpose**: "Ohjaamaan ja inspiroimaan" - not claiming to be definitive
-- **Data-driven**: Shows salary ranges, job outlook, education requirements
-- **Actionable next steps**: Links to Opintopolku, specific programs
-
-**Clarity Issues:**
-1. **No explanation of methodology**: Parents want to know "is this science-based?"
-2. **Missing trust signals**: No mentions of psychometric validation, test development process
-3. **Unclear about data freshness**: When was career data last updated? (2024 sources in code)
-4. **No guidance on how to discuss results**: Parents need help interpreting results with their child
-
-#### Features Truly Helpful: ⭐⭐⭐⭐⭐ (5/5)
-
-**For Supporting Their Child:**
-- ✅ Comprehensive career information (parents can research alongside child)
-- ✅ Realistic salary expectations (helps financial planning)
-- ✅ Clear education paths (parents understand pathway from school → career)
-- ✅ YO point calculator (helps with exam preparation strategy)
-
-**Practical Value:**
-- Parent can review results with child and have informed conversations
-- Can use Todistuspistelaskuri to plan study strategy
-- Can explore multiple career options together using Urakirjasto
-
-#### Logic Strength for Pilot: ⭐⭐⭐⭐ (4/5)
-
-- **Career data is credible** (Finnish sources, realistic salaries)
-- **Education paths are accurate** (links to actual Opintopolku programs)
-- **Scoring seems fair** (100% validation, multi-dimensional)
-
-**Missing:**
-- Transparency about test methodology
-- Information about data sources
-- Guidance on how to use results
-
-#### Must-Fix Before Pilot:
-
-1. **🟡 IMPORTANT: Add "About the Test" page**
-   - Explain scoring methodology
-   - Show data sources and update frequency
-   - Build trust with transparency
-   - **Impact:** Parents need to trust tool before letting child use it
-
-2. **🟡 IMPORTANT: Add parent guidance**
-   - "How to discuss results with your child"
-   - "What to do next" action plan
-   - **Impact:** Increases parent confidence in tool
-
-#### Can Wait:
-
-- PDF export of results for parent-child discussion
-- Email results to parent
-- Detailed psychometric validation documentation
-
----
-
-### 👩‍🏫 TEACHER / GUIDANCE COUNSELOR
-
-#### Usability & Clarity: ⭐⭐⭐⭐⭐ (5/5)
-
-**What Works:**
-- **Class management system exists**: Teachers can create classes, get class codes
-- **PIN-based student access**: Students use 6-digit PIN to take test under teacher supervision
-- **Results tracking**: Teachers can see class-level analytics
-- **Integration-ready**: Could be used as part of career counseling curriculum
-
-**Excellent for Classroom Use:**
-- Teacher creates class → shares PIN/link → students take test → teacher reviews aggregate results
-- Can be used for group discussions about career paths
-- Todistuspistelaskuri useful for YO exam planning sessions
-
-#### Features Truly Helpful: ⭐⭐⭐⭐⭐ (5/5)
-
-**For Career Counseling:**
-- ✅ Comprehensive tool covering entire career planning journey
-- ✅ Finnish-language content with local labor market data
-- ✅ Multiple entry points (individual students or class-based)
-- ✅ Results can be shared/discussed in counseling sessions
-- ✅ Urakirjasto serves as teaching resource (411 careers)
-
-**Practical Value:**
-- Counselor can use test results as conversation starter
-- Can identify patterns across class (e.g., many students interested in tech)
-- Can use Todistuspistelaskuri to explain YO point system
-- Can direct students to specific careers in Urakirjasto
-
-#### Logic Strength for Pilot: ⭐⭐⭐⭐⭐ (5/5)
-
-- **Teacher dashboard is functional** (class management, PIN system)
-- **Results are appropriate for counseling** (not overly prescriptive, encourages exploration)
-- **Content aligns with Finnish education system** (lukio, ammattikoulu, YO points)
-
-#### Must-Fix Before Pilot:
-
-1. **🟡 IMPORTANT: Add class analytics dashboard**
-   - Aggregate view of class results
-   - Common career interests across class
-   - Distribution of personality types
-   - **Impact:** Increases teacher adoption (need to see value for whole class)
-
-2. **🟡 IMPORTANT: Add teacher guidance materials**
-   - Lesson plan suggestions
-   - Discussion questions for each personality type
-   - How to interpret results with students
-   - **Impact:** Teachers need scaffolding to use tool effectively
-
-3. **🟢 NICE-TO-HAVE: Add export functionality**
-   - Export class results to CSV/Excel
-   - Print-friendly result summaries
-   - **Impact:** Useful for school reporting/documentation
-
-#### Can Wait:
-
-- Integration with school systems (Wilma, etc.)
-- Multi-year tracking (follow student progress over time)
-- Comparison with national averages
-- Custom question banks for specific schools
-
----
-
-### 🌐 FIRST-TIME VISITOR
-
-#### Usability & Clarity: ⭐⭐⭐⭐ (4/5)
-
-**What Works:**
-- **Clear landing page**: Headline "Löydä ura, joka sopii sinulle" is compelling
-- **Value proposition is obvious**: "30 kysymystä → henkilökohtaiset suositukset"
-- **Multiple entry points**: Can start test immediately OR browse careers first
-- **Trust indicators present**: "Maksuton, 5 minuuttia, Tekoälypohjainen"
-- **Target audience clearly defined**: Three cards for YLA/TASO2/NUORI students
-
-**Clarity Issues:**
-1. **"Tekoälypohjainen" might be misleading**: Scoring algorithm is rule-based (dimensions + weights), not ML/AI
-2. **No demo/preview**: Visitor can't see what test looks like without starting
-3. **Missing social proof**: No testimonials, usage stats, or validation from schools/counselors
-4. **Unclear data privacy**: First-time visitor doesn't know if their data is stored, shared, etc.
-
-#### Experience is Usable and Clear: ⭐⭐⭐⭐ (4/5)
-
-**Navigation:**
-- Home → Test → Results → Urakirjasto → Todistuspistelaskuri
-- **Flow is logical and intuitive**
-
-**Information Architecture:**
-- Categories (8 personality types) clearly presented
-- Career library well-organized
-- Test flow has clear progress indicators
-
-**Accessibility:**
-- Supports multiple age groups (13-25+)
-- Finnish language throughout
-- Mobile-responsive design (code shows responsive breakpoints)
-
-#### Must-Fix Before Pilot:
-
-1. **🟡 IMPORTANT: Add test demo/preview**
-   - Show 3-5 example questions
-   - "Take a peek before you start"
-   - **Impact:** Reduces friction to start test
-
-2. **🟡 IMPORTANT: Clarify "Tekoälypohjainen" claim**
-   - Either remove AI claim OR explain it's "AI-powered career matching"
-   - Be transparent about methodology
-   - **Impact:** Maintains trust, avoids misleading claims
-
-3. **🟢 NICE-TO-HAVE: Add social proof**
-   - "Used by X students"
-   - Testimonials from students/teachers
-   - School partnerships (if any)
-   - **Impact:** Builds credibility
-
-#### Can Wait:
-
-- Video tour of platform
-- FAQ section
-- Live chat support
-- Multilingual support (Swedish, English)
-
----
-
-## 2. Functional Strengths (What's Ready for Pilot)
-
-### ✅ Core Functionality: EXCELLENT
-
-1. **Scoring Algorithm**
-   - 100% test validation (9/9 scenarios passing)
-   - Multi-dimensional analysis (interests, values, workstyle, context)
-   - Age-appropriate cohorts (YLA, TASO2, NUORI)
-   - Confidence scoring for results
-
-2. **Career Database**
-   - 412 comprehensive Finnish career profiles
-   - Accurate salary data (2024 sources)
-   - Job outlook information
-   - Education path requirements
-   - Skills mapping (hard + soft)
-   - Opintopolku integration
-
-3. **User Flow**
-   - Complete journey: Test → Results → Career Exploration → Planning
-   - Multiple entry points (individual, class-based, teacher-led)
-   - LocalStorage-based persistence (basic)
-   - Results sharing functionality
-
-4. **Supporting Tools**
-   - Todistuspistelaskuri (YO point calculator)
-   - Urakirjasto (career library with search/filter)
-   - Teacher dashboard with class management
-   - Category-based career browsing
-
-### ✅ Data Quality: EXCELLENT
-
-- **Careers:** Comprehensive Finnish data with realistic expectations
-- **Salaries:** Accurate ranges based on 2024 TES agreements
-- **Education paths:** Correctly mapped to Finnish system (lukio, AMK, yliopisto)
-- **Study programs:** Integration with Opintopolku API
-
-### ✅ Technical Implementation: SOLID
-
-- **Next.js 14** with App Router (modern, performant)
-- **TypeScript** throughout (type safety)
-- **Supabase** backend (scalable database)
-- **Responsive design** (works on mobile/tablet/desktop)
-- **LocalStorage** for client-side persistence
-- **No major bugs** identified in code review
-
----
-
-## 3. Functional Issues That Must Be Fixed
-
-### 🔴 CRITICAL (Block Pilot)
-
-**None identified.** Core functionality is solid enough for controlled pilot.
-
-### 🟡 IMPORTANT (Fix Before Wider Rollout)
-
-1. **Test Progress Saving**
-   - **Issue:** No automatic save during test
-   - **Impact:** Users lose progress if browser closes
-   - **Fix:** Add auto-save to localStorage every N questions
-   - **Effort:** 2-4 hours
-   - **Location:** `components/CareerCompassTest.tsx`
-
-2. **Test Duration Accuracy**
-   - **Issue:** Claims "5 minuuttia" but takes 8-12 minutes
-   - **Impact:** User frustration
-   - **Fix:** Change to "8-10 minuuttia" or "noin 10 minuuttia"
-   - **Effort:** 5 minutes
-   - **Location:** `app/page.tsx` line 127
-
-3. **Education Path Explanation**
-   - **Issue:** Students see "Lukio" recommendation but don't know why
-   - **Impact:** Confusion about recommendation logic
-   - **Fix:** Add "Miksi?" explanation with 2-3 bullet points
-   - **Effort:** 4-6 hours (requires design of explanation logic)
-   - **Location:** `app/test/results/page.tsx`
-
-4. **Trust & Transparency**
-   - **Issue:** No explanation of test methodology
-   - **Impact:** Parents/teachers hesitant to trust tool
-   - **Fix:** Add "Tietoa testistä" page with methodology, data sources, validation
-   - **Effort:** 6-8 hours
-   - **Location:** New page `app/about/page.tsx`
-
-5. **Class Analytics for Teachers**
-   - **Issue:** Teachers can create classes but can't see aggregate results
-   - **Impact:** Limited value for teacher adoption
-   - **Fix:** Add dashboard showing class-level stats
-   - **Effort:** 12-16 hours
-   - **Location:** `app/admin/school-dashboard/page.tsx` (exists but needs enhancement)
-
-### 🟢 NICE-TO-HAVE (Can Wait)
-
-1. Test question preview/demo
-2. Career comparison tool
-3. PDF export of results
-4. Parent guidance materials
-5. Social proof (testimonials, usage stats)
-6. Detailed career matching explanations
-7. Progress badges/gamification
-
----
-
-## 4. Logic & Algorithm Strength
-
-### Scoring Algorithm: ⭐⭐⭐⭐⭐ (5/5)
-
-**Validation:**
-- ✅ 100% test pass rate (9/9 scenarios)
-- ✅ YLA cohort: 3/3 passing (Creative, Practical, Helping students)
-- ✅ TASO2 cohort: 3/3 passing (Tech, Healthcare, Business students)
-- ✅ NUORI cohort: 3/3 passing (IT, Healthcare, Creative professionals)
-
-**Methodology:**
-- Multi-dimensional scoring (4 primary dimensions)
-- 30+ subdimensions mapped to specific questions
-- Weight-based category scoring (e.g., RAKENTAJA requires hands_on: 2.8x)
-- Confidence scoring based on score distribution
-
-**Strengths:**
-- Age-appropriate question sets for each cohort
-- Differentiated scoring logic (YLA focuses on education path, NUORI on careers)
-- Handles edge cases (JARJESTAJA category with no career matches)
-
-**Weaknesses:**
-- No user control over result interpretation
-- Cannot see which answers influenced which recommendations
-- No "retake test" with same profile saved
-
-### Career Matching: ⭐⭐⭐⭐⭐ (5/5)
-
-**Logic:**
-- Careers pre-categorized into 8 personality types
-- Matching based on category + subdimension fit scores
-- Multi-factor scoring (interests + values + workstyle + context)
-- 40% minimum threshold filter
-
-**Strengths:**
-- Returns top 5 careers with confidence scores
-- Provides reasons for each match
-- Balances "safe" matches with exploratory suggestions
-
-**Data Quality:**
-- 412 careers with comprehensive Finnish data
-- Accurate salary ranges (2024 TES sources)
-- Realistic job outlook ("Kasvaa" / "Vakaa")
-- Valid education paths
-
-### User Flow Logic: ⭐⭐⭐⭐ (4/5)
-
-**Complete Journey:**
+### Test Results
 ```
-Home → Test (30Q) → Results (Personality + Careers) →
-→ Urakirjasto (Explore 412 careers) →
-→ Todistuspistelaskuri (Calculate YO points) →
-→ Study Programs (Find jatko-opinnot)
+✅ Tech Innovator → innovoija
+✅ Caring Nurse → auttaja (healthcare)
+✅ Construction Engineer → rakentaja
+✅ Environmental Activist → ympariston-puolustaja
+✅ Business Leader → johtaja
+✅ Creative Designer → luova
+✅ Strategic Visionary → visionaari
+✅ Project Coordinator → jarjestaja
+✅ Balanced Professional → auttaja (acceptable)
+✅ Artistic Teacher → auttaja
+```
+
+### Why It Works
+
+1. **Direct career-interest questions:** "Kiinnostaako sinua koodaaminen?" (Are you interested in coding?)
+2. **Strong subdimension coverage:** hands_on (7q), creative (5q), people (5q), technology (3q)
+3. **Aligned with career vectors:** 9/17 subdimensions covered = 53% (best of all cohorts)
+4. **Added missing dimensions:** Q30-32 added specifically for environment, global, organization
+
+### Career Recommendations (Sample)
+
+**Caring Nurse profile:**
+- Sairaanhoitaja, Kouluterveydenhoitaja, Työpsykologi ✅ **EXCELLENT**
+
+**Tech Innovator profile:**
+- IT/software development careers ✅ **APPROPRIATE**
+
+### Minor Issues (Non-Blocking)
+- Some duplicate career entries in database
+- A few careers missing Finnish translations
+- **Fix timeline:** 1-2 days database cleanup
+
+### RECOMMENDATION: **PILOT TASO2 IMMEDIATELY** ✅
+
+**Target:** 10-20 vocational students  
+**Timeline:** Start this week  
+**Confidence:** HIGH - 100% accuracy, sensible recommendations  
+**Risk:** LOW - worst case is minor misalignment
+
+---
+
+## YLA - THE BROKEN COMPASS ❌
+
+**13% Accuracy** - Only 1 correct match out of 8
+
+### Test Results
+```
+❌ Academic Anna (CS) → Expected innovoija, Got luova
+❌ Future Nurse → Expected auttaja, Got ympariston-puolustaja  
+❌ Builder → Expected rakentaja, Got johtaja
+❌ Eco Activist → Expected ympariston-puolustaja, Got innovoija
+❌ Business Leader → Expected johtaja, Got luova
+❌ Designer → Expected luova, Got visionaari
+✅ Planner → Expected jarjestaja, Got jarjestaja (ONLY SUCCESS)
+❌ Visionary → Expected visionaari, Got innovoija
+```
+
+### Why It Fails
+
+**Root Cause: Misaligned Question Taxonomy**
+
+**YLA's mistakes:**
+- ❌ NO "people" subdimension (uses "health" instead) → Cannot identify nurses/teachers
+- ❌ Only 1 question on creative/technology/health → Insufficient signal
+- ❌ 7 questions wasted on "career_clarity" (future aspirations) → Doesn't predict aptitudes
+- ❌ Custom taxonomy (autonomy, career_clarity, financial) doesn't match career vectors
+
+**Example failure: Future Nurse profile**
+- High on health ✓
+- But NO people dimension ✗
+- Result: Matched to environmental careers ❌
+
+### RECOMMENDATION: **DO NOT PILOT YLA** ❌
+
+**Required fixes:**
+1. Add 5 "people" questions (helping, teaching, social interaction)
+2. Increase creative questions from 1 to 5
+3. Increase technology questions from 1 to 3
+4. Remove 5 of the 7 "career_clarity" questions
+
+**Timeline:** 2-3 weeks (redesign + retest)  
+**Target accuracy before pilot:** 80%+
+
+---
+
+## NUORI - THE CATASTROPHIC FAILURE ❌❌❌
+
+**0% Accuracy** - ZERO correct matches out of 8
+
+### Test Results
+```
+❌ ALL 8 profiles mismatched - results are random
+```
+
+### Why It Catastrophically Fails
+
+**Root Cause: MEASURING WRONG CONSTRUCT**
+
+NUORI measures **WORK VALUES** (salary, work-life balance) instead of **CAREER INTERESTS** (creative, analytical, hands-on).
+
+**Breakdown:**
+- 20/30 questions (67%) measure VALUES: salary, job security, work-life balance, remote work
+- Only 10/30 questions (33%) measure INTERESTS: tech, healthcare, creative
+
+**The Problem:**
+- Career vectors expect: "Does this person enjoy creative work?"
+- NUORI provides: "Does this person want work-life balance?"
+- **These are different constructs** - like using personality test to predict math ability
+
+**Example: Designer Diana**
+- High creative interest ✓
+- High work-life balance preference ✓
+- Algorithm tried to map work-life balance → career interests
+- Result: Matched to "jarjestaja" (organizer) instead of "luova" (creative) ❌
+
+### RECOMMENDATION: **DO NOT PILOT NUORI** ❌❌
+
+**This is not fixable with parameter tuning.**
+
+**Required actions:**
+1. **Throw away** 20 values questions
+2. **Replace with** interest questions following TASO2 model
+3. Ask "What do you enjoy?" not "What benefits do you want?"
+
+**Timeline:** 1-2 months (complete redesign + validation)
+
+**Alternative:** Drop NUORI entirely - TASO2 already covers 16-19 (overlaps with NUORI's 16-20 range)
+
+---
+
+## SCORING ALGORITHM ANALYSIS
+
+### Status: **PRODUCTION READY** ✅
+
+```typescript
+// All 8 categories use identical 3.0× multipliers - simple and fair
+categoryScores.auttaja += (interests.people || 0) * 3.0;
+categoryScores.luova += (interests.creative || 0) * 3.0;
+categoryScores.johtaja += (interests.leadership || workstyle.leadership || 0) * 3.0;
+categoryScores.innovoija += (interests.technology || 0) * 3.0;
+categoryScores.rakentaja += (interests.hands_on || 0) * 3.0;
+categoryScores['ympariston-puolustaja'] += (interests.environment || 0) * 3.0;
+categoryScores.visionaari += (values.global || values.career_clarity || 0) * 3.0;
+categoryScores.jarjestaja += (interests.analytical || workstyle.organization || 0) * 3.0;
 ```
 
 **Strengths:**
-- Each step has clear next action
-- Multiple entry points (test-first OR explore-first)
-- LocalStorage preserves user progress between pages
-- Results link back to relevant features
+- Simple, transparent, fair
+- No complex penalties or normalization
+- Achieves 100% accuracy on TASO2
+- Fallback patterns handle missing subdimensions gracefully
 
-**Weaknesses:**
-- Cannot easily revisit/modify test answers
-- No guided "tour" for first-time users
-- Jump from results to calculator not intuitive
-- No onboarding for Urakirjasto filters
+**Verdict:** Algorithm is sound. Problems are in questionnaire design, not scoring logic.
 
 ---
 
-## 5. Content Quality & Practical Value
+## SUBDIMENSION COVERAGE ANALYSIS
 
-### Urakirjasto (Career Library): ⭐⭐⭐⭐⭐ (5/5)
+Career vectors expect 17 subdimensions:
+`analytical, business, creative, environment, growth, hands_on, health, impact, independence, innovation, leadership, organization, outdoor, people, problem_solving, teamwork, technology`
 
-**Content Quality:**
-- ✅ 412 Finnish careers (comprehensive coverage)
-- ✅ Detailed descriptions (tasks, skills, education, salary)
-- ✅ Accurate data sources (TES agreements, Opintopolku, Työmarkkinatori)
-- ✅ Realistic expectations (not inflated or misleading)
+### Coverage Comparison
 
-**Practical Value:**
-- Student can research specific careers in depth
-- Compare salary ranges across careers
-- Understand education requirements
-- See skills needed (technical + soft skills)
-- Direct links to Opintopolku programs
+|  | YLA | TASO2 | NUORI |
+|---|---|---|---|
+| **Coverage** | 8/17 (47%) | 9/17 (53%) | 7/17 (41%) |
+| **Accuracy** | 13% | 100% | 0% |
+| **Key strength** | analytical (5q), hands_on (5q) | creative (5q), hands_on (7q), people (5q) | None |
+| **Fatal flaw** | Missing "people" dimension | None | Measures VALUES not INTERESTS |
 
-**Search & Discovery:**
-- Text search by career name
-- Filter by category, education level, work mode, salary, outlook
-- Browse by personality type
-- Related careers suggestions
+### The Pattern
 
-### Todistuspistelaskuri: ⭐⭐⭐⭐⭐ (5/5)
+**TASO2 succeeds** because it:
+- Covers most critical dimensions with multiple questions
+- Uses direct interest questions
+- Aligns subdimensions with career vector expectations
 
-**Functionality:**
-- Calculate YO matriculation exam points
-- Dual schemes (yliopisto + AMK)
-- Scenario planning ("what if I retake?")
-- Shows min/max/average study program requirements
+**YLA fails** because:
+- Missing "people" dimension entirely
+- Most dimensions have only 1 question (too sparse)
+- 7 questions wasted on "career_clarity"
 
-**Practical Value:**
-- **Critical for YO students:** Helps plan exam strategy
-- **Directly actionable:** Shows what scores needed for target programs
-- **Integrated with test results:** Suggests programs matching career interests
-- **Saves time:** No need to manually calculate or find programs elsewhere
-
-**Logic Strength:**
-- Accurate YO point calculation formulas
-- Correct valinta-piste schemes for 2024-2025
-- Realistic program requirements from Opintopolku
-
-### Education Path Recommendations: ⭐⭐⭐⭐ (4/5)
-
-**For YLA Students:**
-- Recommends Lukio vs Ammattikoulu vs Kansanopisto
-- Based on academic orientation, hands-on preference, career clarity
-- Provides confidence score
-
-**For TASO2 Students:**
-- Recommends Yliopisto vs AMK
-- Based on analytical strength, theoretical interest, career goals
-
-**Strengths:**
-- Age-appropriate recommendations
-- Considers multiple factors (not just grades)
-- Explains reasoning (basic)
-
-**Weaknesses:**
-- Limited explanation of "why"
-- No guidance on "what if I'm not sure?"
-- Doesn't account for grades/academic performance
+**NUORI fails** because:
+- 67% of questions measure work values, not career interests
+- Fundamental construct mismatch - cannot be fixed with weighting
 
 ---
 
-## 6. Pilot Readiness by Feature
+## PILOT READINESS CHECKLIST
 
-| Feature | Functional Readiness | Must Fix Before Pilot | Comments |
-|---------|---------------------|----------------------|----------|
-| **Personality Test** | ✅ Ready | Test progress saving | Core logic validated (100%) |
-| **Test Results** | ✅ Ready | Add "why" explanations | Results are accurate & actionable |
-| **Urakirjasto** | ✅ Ready | None | 412 careers, excellent data quality |
-| **Todistuspistelaskuri** | ✅ Ready | None | Critical tool, works perfectly |
-| **Education Path** | ✅ Ready | Better explanations | Recommendations are sound |
-| **Teacher Dashboard** | ⚠️ Partial | Class analytics needed | Basic functionality exists |
-| **Career Matching** | ✅ Ready | None | Algorithm is validated |
-| **Study Programs** | ✅ Ready | None | Opintopolku integration works |
-| **About/Trust** | ❌ Missing | Create "About" page | Critical for parent trust |
+### TASO2 ✅
+- [x] 100% accuracy
+- [x] Career recommendations aligned
+- [x] Target audience appropriate
+- [x] 760 careers available
+- [ ] Database cleanup (optional, not blocking)
+- [ ] User testing with 5-10 students (recommended)
 
----
+**GO/NO-GO: GO ✅**
 
-## 7. Recommended Pilot Strategy
+### YLA ❌
+- [ ] 13% accuracy (FAILING)
+- [ ] Missing "people" subdimension
+- [ ] Only 1q on creative/tech/health
+- [ ] 7 wasted questions on "career_clarity"
 
-### Phase 1: Internal Testing (2 weeks)
-- Test with friends/family (ages 13-25)
-- Fix any critical bugs discovered
-- Gather feedback on clarity and flow
+**GO/NO-GO: NO GO ❌**  
+**Fix timeline:** 2-3 weeks
 
-### Phase 2: Controlled Pilot (4-6 weeks)
-- Partner with 1-2 schools (50-100 students)
-- Teacher-led classroom use
-- Collect feedback from students, teachers, parents
-- Monitor completion rates, time-to-complete, result satisfaction
+### NUORI ❌❌
+- [ ] 0% accuracy (CATASTROPHIC)
+- [ ] Measures wrong construct (values not interests)
+- [ ] Requires complete redesign
 
-### Phase 3: Iterate (2 weeks)
-- Address feedback from Phase 2
-- Fix priority issues
-- Add requested features
-
-### Phase 4: Expanded Pilot (8 weeks)
-- Open to 5-10 schools (500-1000 students)
-- Individual student access + class-based
-- Full analytics and tracking
-- Prepare for public launch
+**GO/NO-GO: NO GO ❌❌**  
+**Fix timeline:** 1-2 months OR drop cohort
 
 ---
 
-## 8. FINAL VERDICT: PILOT READINESS
+## FINAL RECOMMENDATIONS
 
-### Overall Functional Readiness: ⭐⭐⭐⭐ (4/5)
+### Immediate (This Week)
+1. ✅ **Pilot TASO2** with 10-20 vocational students
+2. 🛠️ **Pause YLA** development - schedule redesign
+3. 🚫 **Stop NUORI** development - complete redesign or drop
 
-**RECOMMENDATION: GO FOR PILOT** ✅
+### Short-Term (2-4 Weeks)
+1. **TASO2:** Scale to 50-100 users, clean database
+2. **YLA:** Redesign questionnaire, retest, aim for 80%+
+3. **NUORI:** Decision point - keep or drop?
 
-**Why You're Ready:**
-1. ✅ **Core functionality is solid** (test → results → careers → planning)
-2. ✅ **Scoring algorithm is validated** (100% test pass rate)
-3. ✅ **Content quality is excellent** (412 careers, accurate data)
-4. ✅ **Complete user journey exists** (no dead ends)
-5. ✅ **Value proposition is clear** (helps with career planning)
-6. ✅ **Three critical tools work** (test, urakirjasto, pistelaskuri)
-
-**Why You're Not Perfect (But Still Pilot-Ready):**
-1. ⚠️ Some UX friction (test saving, unclear explanations)
-2. ⚠️ Missing trust signals (about page, methodology)
-3. ⚠️ Teacher features partially complete (analytics needed)
-4. ⚠️ Limited guidance for users (onboarding, help)
-
-**But These Are Not Blockers Because:**
-- Pilot is for *learning*, not perfection
-- Real user feedback will guide improvements
-- Core functionality works reliably
-- No data loss or major bugs
+### Long-Term (1-3 Months)
+1. **Strategy:** Consider consolidating to 2 cohorts (YLA + TASO2)
+2. **Quality:** Add user feedback loop, A/B testing
+3. **Scale:** Partner with vocational schools
 
 ---
 
-## 9. Priority Action Items Before Pilot Launch
+## THE BRUTAL TRUTH
 
-### Must Do (Week 1):
-1. ✅ Add auto-save to test (prevent progress loss)
-2. ✅ Change "5 minutes" to "8-10 minutes"
-3. ✅ Create "Tietoa testistä" page (methodology, trust)
-4. ✅ Add basic class analytics for teachers
+### What's Working ✅
+- TASO2 is production-ready (100% accuracy)
+- Scoring algorithm is sound
+- Career database is comprehensive (760 careers)
+- 8 career archetypes are well-defined
 
-### Should Do (Week 2):
-5. ✅ Add test question preview/demo
-6. ✅ Improve education path explanations ("Miksi?")
-7. ✅ Add parent guidance section
-8. ✅ Review and test on mobile devices
+### What's Broken ❌
+- YLA gives wrong guidance 87% of the time
+- NUORI produces random results (0% accuracy)
+- 2 out of 3 cohorts cannot be piloted
 
-### Nice to Do (Week 3):
-9. ⚪ Add social proof (if available)
-10. ⚪ Create teacher lesson plan guide
-11. ⚪ Add FAQ section
-12. ⚪ Implement basic analytics tracking
+### What This Means
 
----
+**You have one working product: TASO2.**
 
-## 10. What Makes This Platform Special
+Don't rush to deploy broken cohorts because you've already built them.
 
-### Unique Strengths for Finnish Market:
-
-1. **Comprehensive Finnish Focus**
-   - All 412 careers are Finnish-specific
-   - Salary data from Finnish TES agreements
-   - Education paths match Finnish system precisely
-   - Opintopolku integration (official Finnish service)
-
-2. **Complete Lifecycle Coverage**
-   - Personality test → Career discovery → YO planning → Study program selection
-   - **No other Finnish tool does all of this**
-
-3. **Multi-Cohort Sophistication**
-   - Age-appropriate questions (13-16, 16-19, 20+)
-   - Different recommendation logic per age group
-   - Education path recommendations evolve with age
-
-4. **Practical Action Tools**
-   - Todistuspistelaskuri addresses real pain point (YO point confusion)
-   - Urakirjasto provides research platform (not just test results)
-   - Direct links to programs (reduces friction)
-
-5. **Teacher Integration**
-   - Class management (rare in career tools)
-   - PIN-based access (works in classroom)
-   - Can be part of career counseling curriculum
+**Focus on quality over quantity** - one excellent product beats three mediocre ones.
 
 ---
 
-## Conclusion
+## FINAL VERDICT
 
-**Your platform is functionally ready for a controlled pilot.**
+### Is Your Test Ready for Piloting?
 
-The core functionality works reliably, the content is high-quality, and the user journey is complete. While there are UX improvements to make (test saving, better explanations, trust signals), these are not blockers for learning from real users.
+**TASO2: YES ✅** - Pilot immediately with confidence  
+**YLA: NO ❌** - Fix first (2-3 weeks)  
+**NUORI: NO ❌❌** - Complete redesign or drop (1-2 months)
 
-**Recommended Next Steps:**
-1. Implement the "Must Do" fixes (1 week)
-2. Recruit 1-2 pilot schools (1-2 weeks)
-3. Launch controlled pilot (4-6 weeks)
-4. Collect feedback and iterate
-5. Visual redesign can happen in parallel or after pilot data
+### Overall Grade
 
-**Key Success Metrics for Pilot:**
-- Test completion rate (target: >70%)
-- Student satisfaction with results (target: >4/5)
-- Teacher adoption (target: >50% use in counseling)
-- Parent trust (target: >60% would recommend)
-- Career exploration (target: >40% visit Urakirjasto)
-- Planning action (target: >30% use Todistuspistelaskuri)
+**B+ (TASO2 alone)** - Excellent single-cohort product  
+**D (All 3 cohorts)** - 1 out of 3 working is not acceptable
 
-**You've built something valuable. Now go test it with real users.** 🚀
+### My Honest Recommendation
+
+**Pivot your strategy:**
+
+1. This week: Pilot TASO2 with vocational schools
+2. This month: Fix YLA questionnaire
+3. Next month: Decide if NUORI is needed
+
+**One excellent product beats three broken ones.**
+
+---
+
+**Assessment completed:** January 25, 2025  
+**Next review:** After TASO2 pilot (2-4 weeks)

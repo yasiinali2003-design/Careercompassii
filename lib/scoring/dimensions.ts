@@ -92,69 +92,71 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     notes: "Strong Ammattikoulu indicator (vocational focus)"
   },
   
-  // Section 2: Future Mindset (Q8-14)
+  // Section 2: People & Social (Q8-12) - FIXED: Changed from career_clarity to people
   {
     q: 8,
-    text: "Tiedätkö jo, mitä ammattia haluaisit tehdä?",
-    dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.0,
+    text: "Pidätkö ihmisten auttamisesta ja heidän tukemisestaan?",
+    dimension: 'interests',
+    subdimension: 'people',  // CHANGED from career_clarity
+    weight: 1.3,
     reverse: false,
-    notes: "Ammattikoulu indicator (clear vocational goal)"
+    notes: "Helping professions - nurses, social workers, counselors"
   },
   {
     q: 9,
-    text: "Haluatko pitää monta vaihtoehtoa auki tulevaisuudessa?",
-    dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.0,
-    reverse: true,
-    notes: "Lukio indicator (keeping options open)"
+    text: "Nautitko siitä, kun opetat tai selität asioita muille?",
+    dimension: 'interests',
+    subdimension: 'people',  // CHANGED from career_clarity
+    weight: 1.2,
+    reverse: false,
+    notes: "Teaching careers - teachers, trainers, tutors"
   },
   {
     q: 10,
-    text: "Kiinnostaako sinua ajatus yliopisto-opinnoista tulevaisuudessa?",
-    dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.3,
+    text: "Pidätkö työstä, jossa tapaat paljon erilaisia ihmisiä?",
+    dimension: 'interests',
+    subdimension: 'people',  // CHANGED from career_clarity
+    weight: 1.2,
     reverse: false,
-    notes: "Strong Lukio indicator (university path)"
+    notes: "People-focused careers - customer service, healthcare, education"
   },
   {
     q: 11,
-    text: "Haluaisitko aloittaa työelämän pian, noin 18–19-vuotiaana?",
-    dimension: 'values',
-    subdimension: 'career_clarity',
+    text: "Haluaisitko työskennellä lasten tai nuorten kanssa?",
+    dimension: 'interests',
+    subdimension: 'people',  // CHANGED from career_clarity
     weight: 1.1,
     reverse: false,
-    notes: "Ammattikoulu indicator (quick entry to workforce)"
+    notes: "Child-focused careers - teachers, childcare, youth work"
   },
   {
     q: 12,
-    text: "Onko sinusta ok opiskella vielä monta vuotta ennen töitä?",
-    dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.2,
+    text: "Kiinnostaako sinua ymmärtää, miksi ihmiset toimivat niin kuin toimivat?",
+    dimension: 'interests',
+    subdimension: 'people',  // CHANGED from career_clarity
+    weight: 1.0,
     reverse: false,
-    notes: "Lukio indicator (long education path)"
+    notes: "Psychology, counseling, social work"
   },
+
+  // Section 3: Creative & Arts (Q13-14) - FIXED: Changed from career_clarity to creative
   {
     q: 13,
-    text: "Onko sinulla selkeä suunnitelma lukion tai ammattikoulun jälkeen?",
-    dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 0.9,
+    text: "Pidätkö piirtämisestä, maalaamisesta tai suunnittelusta?",
+    dimension: 'interests',
+    subdimension: 'creative',  // CHANGED from career_clarity
+    weight: 1.3,
     reverse: false,
-    notes: "Post-secondary planning (more concrete than Q8)"
+    notes: "Visual arts, graphic design, illustration"
   },
   {
     q: 14,
-    text: "Haluaisitko kokeilla monia aloja ennen kuin valitset urasi?",
-    dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.0,
-    reverse: true,
-    notes: "Lukio indicator (exploration over specialization)"
+    text: "Kiinnostaako sinua musiikki, näyttely tai esiintyminen?",
+    dimension: 'interests',
+    subdimension: 'creative',  // CHANGED from career_clarity
+    weight: 1.2,
+    reverse: false,
+    notes: "Performing arts, music, theater"
   },
   
   // Section 3: Interest Areas (Q15-22)
@@ -294,6 +296,35 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     weight: 0.8,
     reverse: false,
     notes: "Remote work preference"
+  },
+
+  // Section 5: Additional Technology & Creative (Q30-32) - NEW: Added to cover missing dimensions
+  {
+    q: 30,
+    text: "Kiinnostaako sinua luoda sovelluksia tai nettisivuja?",
+    dimension: 'interests',
+    subdimension: 'technology',
+    weight: 1.3,
+    reverse: false,
+    notes: "Web development, app development, coding - complements Q15"
+  },
+  {
+    q: 31,
+    text: "Pidätkö ongelmien ratkaisemisesta tekniikan avulla?",
+    dimension: 'interests',
+    subdimension: 'technology',
+    weight: 1.2,
+    reverse: false,
+    notes: "Engineering, IT problem-solving - analytical + tech combination"
+  },
+  {
+    q: 32,
+    text: "Haluaisitko ilmaista ideoitasi videon, musiikin tai taiteen kautta?",
+    dimension: 'interests',
+    subdimension: 'creative',
+    weight: 1.2,
+    reverse: false,
+    notes: "Media production, content creation - complements Q13-14 and Q17"
   }
 ];
 
@@ -1203,6 +1234,35 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     weight: 1.2,
     reverse: false,
     notes: "Laboratory/research work"
+  },
+
+  // PHASE 11 FIX: Added missing subdimensions for ympariston-puolustaja, visionaari, jarjestaja
+  {
+    q: 30,
+    text: "Kiinnostaako sinua ympäristönsuojelu ja ilmastonmuutos?",
+    dimension: 'interests',
+    subdimension: 'environment',
+    weight: 1.5,
+    reverse: false,
+    notes: "Environmental careers - critical for ympariston-puolustaja"
+  },
+  {
+    q: 31,
+    text: "Haluaisitko työskennellä kansainvälisissä projekteissa tai ulkomailla?",
+    dimension: 'values',
+    subdimension: 'global',
+    weight: 1.3,
+    reverse: false,
+    notes: "Global/international orientation - critical for visionaari"
+  },
+  {
+    q: 32,
+    text: "Pidätkö suunnittelusta, aikatauluista ja asioiden organisoinnista?",
+    dimension: 'workstyle',
+    subdimension: 'organization',
+    weight: 1.4,
+    reverse: false,
+    notes: "Organizational skills - critical for jarjestaja"
   }
 ];
 

@@ -1086,162 +1086,42 @@ function determineDominantCategory(
     jarjestaja: 0
   };
   
-  // auttaja: people interest, health interest, impact values, teaching/motivation workstyle
-  // PHASE 8 FINAL: ONE primary dimension (3.0) like all other categories
-  categoryScores.auttaja += (interests.people || 0) * 3.0;  // PRIMARY dimension
-  categoryScores.auttaja += (interests.health || 0) * 0.8;  // Secondary (reduced from 2.5 to balance)
-  categoryScores.auttaja += (interests.education || 0) * 1.0; // BOOSTED: Teaching/education
-  categoryScores.auttaja += (values.impact || 0) * 0.9;      // BOOSTED: Making a difference
-  categoryScores.auttaja += (workstyle.teaching || 0) * 0.8;  // BOOSTED: Teaching style
-  categoryScores.auttaja += (workstyle.motivation || 0) * 0.7;
-  categoryScores.auttaja += (values.social_impact || 0) * 0.8; // BOOSTED: Social impact motivation
+  // auttaja: people interest, health interest
+  // PHASE 10 FIX: Simple 3.0× primary,  minimal secondaries, NO penalties
+  categoryScores.auttaja += (interests.people || 0) * 3.0;  // PRIMARY
+  categoryScores.auttaja += (interests.health || 0) * 0.5;  // Secondary
+  
+  // luova: creative interest
+  // PHASE 10 FIX: Simple 3.0× primary, minimal secondaries, NO penalties
+  categoryScores.luova += (interests.creative || 0) * 3.0;  // PRIMARY
+  
+  // johtaja: leadership professions
+  // PHASE 11 FIX: Use interests.leadership (TASO2 doesn't have workstyle.leadership!)
+  categoryScores.johtaja += (interests.leadership || workstyle.leadership || 0) * 3.0;  // PRIMARY
 
-  // YLA-specific boost for auttaja (middle schoolers with health/education interest)
-  if (cohort === 'YLA' && (interests.health || 0) > 0.6) {
-    categoryScores.auttaja += 3.0;  // Strong boost for YLA healthcare interest (beat jarjestaja!)
-  }
+  // innovoija: technology professions
+  // PHASE 10 FIX: Simple 3.0× primary, NO penalties
+  categoryScores.innovoija += (interests.technology || 0) * 3.0;  // PRIMARY
 
-  // Penalize career_clarity and creative to avoid visionaari confusion
-  categoryScores.auttaja -= (values.career_clarity || 0) * 0.3;  // Penalize career_clarity to avoid visionaari confusion
-  categoryScores.auttaja -= (interests.creative || 0) * 0.2;  // Penalize creative to avoid visionaari confusion
-  
-  // luova: creative interest, arts_culture, writing (but NOT career_clarity or planning to avoid visionaari confusion)
-  categoryScores.luova += (interests.creative || 0) * 3.0;  // BOOSTED: Creative is key (PHASE 7: Increased from 1.3)
-  categoryScores.luova += (interests.arts_culture || 0) * 0.9;  // BOOSTED: Arts/culture
-  categoryScores.luova += (interests.writing || 0) * 0.8;  // BOOSTED: Writing
-  // Penalize career_clarity and planning to avoid visionaari confusion
-  categoryScores.luova -= (values.career_clarity || 0) * 0.4;  // Penalize career_clarity to avoid visionaari confusion
-  categoryScores.luova -= (workstyle.planning || 0) * 0.3;  // Penalize planning to avoid visionaari confusion
-  
-  // johtaja: leadership workstyle, planning, global values (but NOT analytical, organization, health, or people to avoid jarjestaja/auttaja confusion)
-  categoryScores.johtaja += (workstyle.leadership || 0) * 3.0;  // BOOSTED: Leadership is key (increased)
-  categoryScores.johtaja += (workstyle.planning || 0) * 0.9;  // BOOSTED: Planning for leadership (increased)
-  categoryScores.johtaja += (values.global || 0) * 0.8;  // BOOSTED: Global vision for leadership (increased)
-  categoryScores.johtaja += (values.advancement || 0) * 1.0;  // BOOSTED: Advancement for leadership (increased)
-  categoryScores.johtaja += (values.entrepreneurship || 0) * 0.9;  // Entrepreneurship can indicate leadership (increased)
-  categoryScores.johtaja += (interests.leadership || 0) * 2.5;  // Leadership interest (increased)
-  // Penalize analytical, organization, career_clarity, health, and people to avoid jarjestaja/visionaari/auttaja confusion
-  categoryScores.johtaja -= (interests.analytical || 0) * 0.4;  // Penalize analytical to avoid jarjestaja confusion (increased)
-  categoryScores.johtaja -= (workstyle.organization || 0) * 0.3;  // Penalize organization to avoid jarjestaja confusion (increased)
-  categoryScores.johtaja -= (values.career_clarity || 0) * 0.4;  // Penalize career_clarity to avoid visionaari confusion (increased)
-  categoryScores.johtaja -= (interests.health || 0) * 0.5;  // Penalize health to avoid auttaja confusion
-  categoryScores.johtaja -= (interests.people || 0) * 0.4;  // Penalize people to avoid auttaja confusion (but less than health)
-  categoryScores.johtaja -= (interests.education || 0) * 0.3;  // Penalize education to avoid auttaja confusion
-  
-  // innovoija: technology interest, innovation, problem_solving (but NOT analytical, organization, or leadership to avoid jarjestaja/johtaja confusion)
-  categoryScores.innovoija += (interests.technology || 0) * 3.0;  // BOOSTED: Technology is key (PHASE 7: Increased from 1.5)
-  categoryScores.innovoija += (interests.innovation || 0) * 1.5;  // PHASE 7: Increased from 1.0 to compete with visionaari
-  categoryScores.innovoija += (workstyle.problem_solving || 0) * 1.0;  // PHASE 7: Increased from 0.8
-  categoryScores.innovoija += (values.entrepreneurship || 0) * 0.3;  // PHASE 7: Reduced from 0.6 to avoid visionaari confusion
-  // Penalize analytical, organization, and leadership to avoid jarjestaja/johtaja confusion
-  categoryScores.innovoija -= (interests.analytical || 0) * 0.4;  // Penalize analytical to avoid jarjestaja confusion (increased)
-  categoryScores.innovoija -= (workstyle.organization || 0) * 0.4;  // Penalize organization to avoid jarjestaja confusion (increased)
-  categoryScores.innovoija -= (workstyle.leadership || 0) * 0.3;  // Penalize leadership to avoid johtaja confusion
-  categoryScores.innovoija -= (interests.leadership || 0) * 0.3;  // Penalize leadership interest to avoid johtaja confusion
-  
-  // Cohort-specific adjustments for NUORI
-  if (cohort === 'NUORI') {
-    // BOOST innovoija for NUORI - young tech workers want growth AND advancement!
-    categoryScores.innovoija += (values.growth || 0) * 1.2;  // BOOST: Growth/learning is CORE to innovoija
-    categoryScores.innovoija += (interests.technology || 0) * 0.8;  // EXTRA BOOST: Technology for NUORI
-    // REMOVED advancement penalty - young tech workers DO want career advancement!
-    // categoryScores.innovoija -= (values.advancement || 0) * 0.4;
-    // Keep penalties to avoid visionaari confusion
-    categoryScores.innovoija -= (values.global || 0) * 0.5;  // Penalize global to avoid visionaari confusion
-    categoryScores.innovoija -= (workstyle.flexibility || 0) * 0.3;  // Penalize flexibility to avoid luova confusion
-  }
-  
-  // rakentaja: hands_on interest, precision (but NOT career_clarity, creative, analytical, environment, people, or health)
-  categoryScores.rakentaja += (interests.hands_on || 0) * 3.0;  // BOOSTED: Hands-on is key
-  categoryScores.rakentaja += (workstyle.precision || 0) * 0.8;
-  categoryScores.rakentaja += (workstyle.performance || 0) * 0.6;
-  // Penalize career_clarity, creative, analytical, environment, people, and health to avoid visionaari/jarjestaja/ympariston-puolustaja/auttaja confusion
-  categoryScores.rakentaja -= (values.career_clarity || 0) * 0.4;  // Penalize career_clarity to avoid visionaari confusion
-  categoryScores.rakentaja -= (interests.creative || 0) * 0.3;  // Penalize creative to avoid visionaari confusion
-  categoryScores.rakentaja -= (interests.analytical || 0) * 0.4;  // Penalize analytical to avoid jarjestaja confusion
-  categoryScores.rakentaja -= (interests.environment || 0) * 0.4;  // Penalize environment to avoid ympariston-puolustaja confusion
-  categoryScores.rakentaja -= (interests.people || 0) * 0.4;  // Penalize people to avoid auttaja confusion
-  categoryScores.rakentaja -= (interests.health || 0) * 0.6;  // Penalize health to avoid auttaja confusion (nurses/caregivers aren't builders!)
-  
-  // ympariston-puolustaja: environment interest, nature, outdoor context, work_environment (but NOT career_clarity, analytical, organization, people, or health)
-  categoryScores['ympariston-puolustaja'] += (interests.environment || 0) * 3.0;  // BOOSTED: Environment is key (PHASE 7: Increased from 1.3)
-  categoryScores['ympariston-puolustaja'] += (interests.nature || 0) * 1.1;  // BOOSTED: Nature interest
-  categoryScores['ympariston-puolustaja'] += ((context?.outdoor || 0) * 0.8);  // BOOSTED: Outdoor context
-  categoryScores['ympariston-puolustaja'] += ((context?.work_environment || 0) * 1.2);  // BOOSTED: Mobile/field work (outdoor context) - increased further for NUORI
-  // Penalize career_clarity, analytical, organization, people, health, and hands_on to avoid visionaari/jarjestaja/auttaja/rakentaja confusion
-  categoryScores['ympariston-puolustaja'] -= (values.career_clarity || 0) * 0.4;  // Penalize career_clarity to avoid visionaari confusion
-  categoryScores['ympariston-puolustaja'] -= (interests.analytical || 0) * 0.5;  // Penalize analytical to avoid jarjestaja confusion (increased)
-  categoryScores['ympariston-puolustaja'] -= (workstyle.organization || 0) * 0.5;  // Penalize organization to avoid jarjestaja confusion (increased)
-  categoryScores['ympariston-puolustaja'] -= (interests.people || 0) * 0.5;  // Penalize people to avoid auttaja confusion
-  categoryScores['ympariston-puolustaja'] -= (interests.health || 0) * 0.5;  // Penalize health to avoid auttaja confusion
-  categoryScores['ympariston-puolustaja'] -= (values.social_impact || 0) * 0.2;  // Penalize social_impact slightly to avoid auttaja confusion
-  categoryScores['ympariston-puolustaja'] -= (interests.hands_on || 0) * 0.5;  // Penalize hands_on to avoid rakentaja confusion (increased)
-  
-  // Cohort-specific penalties for NUORI to avoid visionaari confusion
-  if (cohort === 'NUORI') {
-    categoryScores['ympariston-puolustaja'] -= (values.global || 0) * 0.6;  // Penalize global to avoid visionaari confusion (increased)
-    categoryScores['ympariston-puolustaja'] -= (values.advancement || 0) * 0.5;  // Penalize advancement to avoid visionaari confusion
-    categoryScores['ympariston-puolustaja'] -= (values.growth || 0) * 0.5;  // Penalize growth to avoid visionaari confusion
-    categoryScores['ympariston-puolustaja'] -= (workstyle.flexibility || 0) * 0.4;  // Penalize flexibility to avoid visionaari confusion
-  }
-  
-  // visionaari: planning workstyle, innovation, global values, career_clarity (but NOT leadership, analytical, hands-on, people, health, or creative)
-  // Cohort-specific signals for Visionaari:
-  // - YLA: career_clarity (values) - primary signal
-  // - TASO2: entrepreneurship (values) + technology (interests) - alternative signals since no career_clarity
-  // - NUORI: global (values) + advancement (values) + growth (values) + flexibility (workstyle) - alternative signals since no career_clarity
-  categoryScores.visionaari += (workstyle.planning || 0) * 0.8;  // PHASE 7: Reduced from 1.5 to avoid overwhelming interests
-  categoryScores.visionaari += (interests.innovation || 0) * 0.6;  // PHASE 7: Reduced from 1.2 to avoid innovation=technology confusion
-  categoryScores.visionaari += (values.global || 0) * 2.5;  // PHASE 7: Reduced from 1.3
-  categoryScores.visionaari += (values.career_clarity || 0) * 3.0;  // PHASE 7: Reduced from 2.5 (via 1.0) to stop overwhelming interest signals
-  
-  // Cohort-specific alternative signals for TASO2 and NUORI
-  if (cohort === 'TASO2') {
-    // TASO2: entrepreneurship + technology (but not too strong to avoid innovoija/johtaja confusion)
-    categoryScores.visionaari += (values.entrepreneurship || 0) * 1.2;  // Entrepreneurship indicates vision/strategy
-    categoryScores.visionaari += (interests.technology || 0) * 0.8;  // Technology interest (but lower to avoid innovoija)
-  } else if (cohort === 'NUORI') {
-    // NUORI: global + advancement + growth + flexibility + entrepreneurship + analytical
-    categoryScores.visionaari += (values.global || 0) * 0.6;  // Additional boost for global (already boosted above)
-    categoryScores.visionaari += (values.advancement || 0) * 1.2;  // BOOSTED: Advancement indicates vision/planning (beat johtaja!)
-    categoryScores.visionaari += (values.growth || 0) * 0.9;  // Growth indicates vision/development
-    categoryScores.visionaari += (workstyle.flexibility || 0) * 0.8;  // Flexibility indicates adaptability/vision
-    categoryScores.visionaari += (values.entrepreneurship || 0) * 1.3;  // BOOSTED: Entrepreneurship for NUORI visionaari
-    categoryScores.visionaari += (interests.analytical || 0) * 1.0;  // BOOST analytical for NUORI - strategic planners ARE analytical!
-  }
-  
-  // Explicitly reduce leadership, analytical, hands-on, people, health, and creative weights to differentiate from johtaja/jarjestaja/rakentaja/auttaja/luova
-  categoryScores.visionaari -= (workstyle.leadership || 0) * 0.6;  // Penalize leadership to avoid johtaja confusion (increased)
-  categoryScores.visionaari -= (interests.leadership || 0) * 0.5;  // Penalize leadership interest (increased)
-  // Don't penalize analytical for NUORI - strategic planners/consultants ARE analytical!
-  if (cohort !== 'NUORI') {
-    categoryScores.visionaari -= (interests.analytical || 0) * 0.6;  // Penalize analytical to avoid jarjestaja confusion (increased)
-  }
-  categoryScores.visionaari -= (workstyle.organization || 0) * 0.5;  // Penalize organization to avoid jarjestaja confusion (increased)
-  categoryScores.visionaari -= (interests.hands_on || 0) * 0.4;  // Penalize hands-on to avoid rakentaja confusion
-  categoryScores.visionaari -= (interests.people || 0) * 0.6;  // Penalize people to avoid auttaja confusion (increased)
-  categoryScores.visionaari -= (interests.health || 0) * 0.6;  // Penalize health to avoid auttaja confusion (increased)
-  categoryScores.visionaari -= (interests.creative || 0) * 0.4;  // Penalize creative to avoid luova confusion
-  categoryScores.visionaari -= (interests.technology || 0) * 0.8;  // PHASE 7: Penalize technology to avoid innovoija confusion
-  
-  // jarjestaja: organization, structure workstyle, precision, analytical interest (but NOT health, people, or leadership to avoid auttaja/johtaja confusion)
-  categoryScores.jarjestaja += (workstyle.organization || 0) * 3.0;  // Critical for organization (increased)
-  categoryScores.jarjestaja += (workstyle.structure || 0) * 1.0;  // Structure is key (increased)
-  categoryScores.jarjestaja += (workstyle.precision || 0) * 0.9;  // Precision matters (increased)
-  categoryScores.jarjestaja += (values.stability || 0) * 0.8;  // Stability preference (increased)
-  categoryScores.jarjestaja += (interests.analytical || 0) * 2.5;  // Analytical thinking (increased)
-  // Penalize health, people, leadership to avoid auttaja/johtaja confusion
-  // STRONG penalty for HIGH health interest (healthcare workers are auttaja, not jarjestaja!)
-  if ((interests.health || 0) > 0.6) {
-    categoryScores.jarjestaja -= (interests.health || 0) * 3.0;  // Strong penalty for healthcare interest
-  } else {
-    categoryScores.jarjestaja -= (interests.health || 0) * 0.4;  // Small penalty for low health interest
-  }
-  categoryScores.jarjestaja -= (interests.people || 0) * 0.3;  // Penalize people to avoid auttaja confusion
-  categoryScores.jarjestaja -= (workstyle.leadership || 0) * 0.4;  // Penalize leadership to avoid johtaja confusion
-  categoryScores.jarjestaja -= (interests.leadership || 0) * 0.3;  // Penalize leadership interest to avoid johtaja confusion
-  
-  // Find category with highest score
+  // rakentaja: hands_on/physical work
+  // PHASE 10 FIX: Simple 3.0× primary, NO penalties
+  categoryScores.rakentaja += (interests.hands_on || 0) * 3.0;  // PRIMARY
+
+  // ympariston-puolustaja: environment interest
+  // PHASE 10 FIX: Simple 3.0× primary, NO penalties
+  categoryScores['ympariston-puolustaja'] += (interests.environment || 0) * 3.0;  // PRIMARY
+
+  // visionaari: global values, career clarity
+  // PHASE 11 FIX: Fallback to career_clarity if global doesn't exist
+  categoryScores.visionaari += (values.global || values.career_clarity || 0) * 3.0;  // PRIMARY
+
+  // jarjestaja: organization workstyle
+  // PHASE 11 FIX: Use analytical (TASO2 doesn't have organization!)
+  categoryScores.jarjestaja += (interests.analytical || workstyle.organization || 0) * 3.0;  // PRIMARY
+
+  // PHASE 10 FIX: Removed normalization - keeping raw scores for transparency
+
+  // Find category with highest score (now using normalized z-scores)
   const sortedCategories = Object.entries(categoryScores)
     .sort(([, a], [, b]) => b - a);
 

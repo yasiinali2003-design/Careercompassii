@@ -33,16 +33,15 @@ const personalityProfiles: PersonalityProfile[] = [
     description: "Loves coding, innovation, and technology. High tech affinity, creative problem-solving.",
     expectedCategory: "innovoija",
     answers: createAnswers({
-      0: 5,  // Technology interest - Very high
-      1: 5,  // Innovation - Very high
-      2: 4,  // Problem solving
-      3: 2,  // People interaction - Low (prefers machines)
-      4: 4,  // Learning new things
-      10: 5, // Analytical thinking
-      11: 4, // Independence
-      15: 5, // Technical tools
-      20: 2, // Routine work - Dislikes
-      25: 4, // Future-focused
+      0: 5,  // Q0: Technology/coding - Very high
+      1: 1,  // Q1: Leadership - Very low (NOT a leader, just a techie)
+      2: 5,  // Q2: Numbers/stats - High (analytical)
+      3: 1,  // Q3: Sports/physical - Low
+      4: 5,  // Q4: Web/mobile dev - Very high
+      6: 5,  // Q6: Cybersecurity - Very high
+      7: 1,  // Q7: Helping people - Low
+      8: 1,  // Q8: Psychology - Low
+      9: 1,  // Q9: Teaching - Low
     })
   },
 
