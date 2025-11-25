@@ -132,8 +132,9 @@ const ylaProfiles: YLAProfile[] = [
     description: 'Big-picture thinker, global mindset. Lukio → University → International career',
     expectedCategory: 'visionaari',
     answers: createAnswers({
+      27: 5,  // MAXIMIZE GLOBAL (travel/international mindset) - differentiates from jarjestaja
       0: 5, 1: 5, 3: 5, 4: 5, 6: 5,  // MAXIMIZE ANALYTICAL
-      8: 2, 9: 2, 10: 4, 11: 1, 12: 4,  // MODERATE PEOPLE
+      8: 1, 9: 1, 10: 2, 11: 1, 12: 2,  // MINIMIZE PEOPLE (differentiate from jarjestaja)
       2: 1, 5: 1, 7: 1, 20: 1, 25: 1,  // MINIMIZE HANDS_ON
       13: 1, 14: 1, 17: 1, 32: 1,  // MINIMIZE CREATIVE
       15: 2, 30: 1, 31: 2,  // MINIMIZE TECHNOLOGY
