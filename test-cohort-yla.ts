@@ -1,7 +1,7 @@
 /**
  * YLA COHORT END-TO-END TEST - REDESIGNED TEST PROFILES
  * Tests personality profiles with YLA (Yläaste/middle school) cohort
- * Focus: 15-16 year olds choosing between Lukio and Ammattikoulu
+ * Focus: 13-16 year olds choosing between Lukio and Ammattikoulu
  *
  * KEY FIX: Test profiles now use STRONG, DECISIVE answer patterns
  * - Target dimensions: Scores of 4-5
@@ -145,7 +145,7 @@ const ylaProfiles: YLAProfile[] = [
 
 console.log('='.repeat(80));
 console.log('YLA COHORT END-TO-END TEST');
-console.log('Testing 15-16 year olds choosing education paths');
+console.log('Testing 13-16 year olds choosing education paths');
 console.log('='.repeat(80));
 console.log('');
 
