@@ -113,7 +113,7 @@ function generateKeywords(career: CareerFI): string {
   const catKeywords = categoryKeywords[career.category] || [];
   keywords.push(...catKeywords);
 
-  return [...new Set(keywords)]
+  return Array.from(new Set(keywords))
     .filter(Boolean)
     .join(', ');
 }
