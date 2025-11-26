@@ -351,7 +351,7 @@ export function TodistuspisteCalculator({
                 <Button
                   key={scheme}
                   type="button"
-                  variant={activeScheme === scheme ? 'default' : 'ghost'}
+                  variant={activeScheme === scheme ? 'primary' : 'ghost'}
                   size="sm"
                   className="rounded-md px-3 py-1"
                   onClick={() => emitSchemeChange(scheme)}
