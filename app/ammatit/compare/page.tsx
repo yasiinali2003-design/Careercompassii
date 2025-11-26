@@ -9,6 +9,10 @@ import Logo from '@/components/Logo';
 
 // Force dynamic rendering to avoid build-time errors with window/localStorage
 export const dynamic = 'force-dynamic';
+export const dynamicParams = true;
+export async function generateStaticParams() {
+  return [];
+}
 // Convert CareerFI to Career format
 function convertCareerFIToCareer(careerFI: any): Career {
   return {
