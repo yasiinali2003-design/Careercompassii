@@ -614,11 +614,17 @@ const QuestionScreen = ({
         <p className="mt-2 text-slate-600">
           Kysymys {index + 1} / {total}
         </p>
-        <div className="mt-4 h-2 w-full rounded-full bg-slate-200">
-          <div
-            className="h-2 rounded-full bg-primary transition-all duration-300"
-            style={{ width: `${progress}%` }}
-          />
+        <div className="mt-4 space-y-2">
+          <div className="flex items-center justify-between text-sm font-medium">
+            <span className="text-slate-600">{Math.round(progress)}% valmis</span>
+            <span className="text-primary">{total - (index + 1)} jäljellä</span>
+          </div>
+          <div className="h-3 w-full rounded-full bg-slate-200 shadow-inner">
+            <div
+              className="h-3 rounded-full bg-gradient-to-r from-primary to-secondary transition-all duration-300 shadow-sm"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
         </div>
       </div>
 

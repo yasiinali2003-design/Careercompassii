@@ -1,53 +1,63 @@
 'use client'
 
-import { Briefcase, GraduationCap, TrendingUp } from 'lucide-react'
+import { Target, Compass, Rocket } from 'lucide-react'
 
-interface StatCardProps {
+interface BenefitCardProps {
   icon: React.ReactNode
-  value: string
-  label: string
+  title: string
+  description: string
+  iconBg: string
+  iconColor: string
 }
 
-function StatCard({ icon, value, label }: StatCardProps) {
+function BenefitCard({ icon, title, description, iconBg, iconColor }: BenefitCardProps) {
   return (
-    <div className="relative bg-gradient-to-br from-[#1f2937] to-[#020617] rounded-2xl p-6 border border-[#242938] shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group hover:border-[#2B5F75]/50">
-      {/* Accent border on hover */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2B5F75] via-[#E8994A] to-[#4A7C59] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-
-      <div className="flex items-center gap-4">
-        <div className="h-12 w-12 rounded-xl bg-[#2B5F75]/10 flex items-center justify-center text-[#2B5F75] group-hover:bg-[#2B5F75]/20 transition-colors border border-[#2B5F75]/20">
-          {icon}
-        </div>
-        <div>
-          <div className="text-3xl font-bold text-white">
-            {value}
-          </div>
-          <div className="text-sm text-gray-400">{label}</div>
-        </div>
+    <div className="text-center p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+      <div className={`w-16 h-16 mx-auto mb-4 ${iconBg} rounded-full flex items-center justify-center ${iconColor}`}>
+        {icon}
       </div>
+      <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+      <p className="text-neutral-300 text-sm leading-relaxed">
+        {description}
+      </p>
     </div>
   )
 }
 
 export default function StatsSection() {
   return (
-    <section className="py-12 bg-gradient-to-b from-[#0f1419]/80 to-transparent">
+    <section className="py-16 bg-gradient-to-b from-[#0f1419] to-[#1a1d23]">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <StatCard
-            icon={<Briefcase className="h-6 w-6" />}
-            value="760"
-            label="Eri ammattia"
+        <h2 className="text-3xl font-bold text-center text-white mb-3">
+          Miten Urakompassi auttaa
+        </h2>
+        <p className="text-center text-neutral-300 mb-12 max-w-2xl mx-auto">
+          Löydä sinulle sopiva urapolku kolmessa vaiheessa
+        </p>
+
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <BenefitCard
+            icon={<Target className="w-8 h-8" />}
+            iconBg="bg-[#2B5F75]/10"
+            iconColor="text-[#2B5F75]"
+            title="Löydä vahvuutesi"
+            description="30 kysymystä paljastavat kiinnostuksesi, taitosi ja työskentelytyyppisi"
           />
-          <StatCard
-            icon={<GraduationCap className="h-6 w-6" />}
-            value="8"
-            label="Koulutustasoa"
+
+          <BenefitCard
+            icon={<Compass className="w-8 h-8" />}
+            iconBg="bg-[#E8994A]/10"
+            iconColor="text-[#E8994A]"
+            title="Vertaile 760 uraa"
+            description="Tarkastele palkkoja, työnäkymiä ja koulutuspolkuja eri ammattivaihtoehdoissa"
           />
-          <StatCard
-            icon={<TrendingUp className="h-6 w-6" />}
-            value="30"
-            label="Kysymystä testissä"
+
+          <BenefitCard
+            icon={<Rocket className="w-8 h-8" />}
+            iconBg="bg-[#4A7C59]/10"
+            iconColor="text-[#4A7C59]"
+            title="Aloita haku"
+            description="Saat suorat linkit koulutusohjelmiin, pisterajoihin ja hakuohjeisiin"
           />
         </div>
       </div>

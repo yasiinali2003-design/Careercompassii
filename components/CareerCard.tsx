@@ -48,21 +48,27 @@ export default function CareerCard({ career }: CareerCardProps) {
     <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
       <CardContent className="p-6">
         {/* Header */}
-        <div className="flex justify-between items-start mb-4">
-          <div className="flex-1">
-            <h3 className="text-xl font-bold mb-2">{career.title_fi}</h3>
-            <p className="text-muted-foreground mb-3">{career.short_description}</p>
-          </div>
-          <div className="flex flex-col items-end gap-2 ml-4">
-            {/* Salary - muted and secondary */}
-            <div className="text-right">
-              <div className="text-sm text-neutral-500">
-                Palkka (mediaani): {career.salary_eur_month.median.toLocaleString('fi-FI')} €/kk
-              </div>
-            </div>
-            <div className={`px-2 py-1 rounded-full text-xs font-medium border ${getOutlookColor(career.job_outlook.status)}`}>
+        <div className="mb-6">
+          {/* Title and job outlook badge */}
+          <div className="flex items-start justify-between gap-4 mb-3">
+            <h3 className="text-2xl font-bold text-slate-900 flex-1 leading-tight">{career.title_fi}</h3>
+            <div className={`px-3 py-1.5 rounded-full text-sm font-semibold border ${getOutlookColor(career.job_outlook.status)} shrink-0`}>
               {getOutlookLabel(career.job_outlook.status)}
             </div>
+          </div>
+
+          {/* Description */}
+          <p className="text-slate-600 mb-4 leading-relaxed">{career.short_description}</p>
+
+          {/* Salary - more prominent */}
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium text-slate-700">Palkka:</span>
+            <span className="text-lg font-bold text-slate-900">
+              {career.salary_eur_month.median.toLocaleString('fi-FI')} €/kk
+            </span>
+            <span className="text-sm text-slate-500">
+              ({career.salary_eur_month.range[0].toLocaleString('fi-FI')} - {career.salary_eur_month.range[1].toLocaleString('fi-FI')})
+            </span>
           </div>
         </div>
 

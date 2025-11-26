@@ -106,45 +106,68 @@ export default function ComparePage() {
           </div>
 
           {/* Empty State */}
-          <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
-            <h1 className="text-3xl font-bold text-slate-900 mb-4">
-              Vertaile ammatteja
-            </h1>
-            <p className="text-slate-600 mb-8">
-              Valitse ammatteja Urakirjastosta vertaillaksesi niitä rinnakkain
-            </p>
-            
-            {/* Search */}
-            <div className="max-w-md mx-auto mb-8">
-              <input
-                type="text"
-                placeholder="Etsi ammattia..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              
-              {searchTerm && (
-                <div className="mt-4 bg-white border border-slate-200 rounded-xl shadow-lg max-h-96 overflow-y-auto">
-                  {filteredCareers.slice(0, 10).map(career => (
-                    <div
-                      key={career.slug}
-                      onClick={() => addCareer(career)}
-                      className="p-3 hover:bg-slate-50 cursor-pointer border-b border-slate-100 last:border-b-0"
-                    >
-                      <div className="font-medium text-slate-900">{career.title}</div>
-                      <div className="text-sm text-slate-600 line-clamp-1">{career.summary}</div>
-                    </div>
-                  ))}
+          <div className="bg-white rounded-2xl shadow-lg p-12 text-center border border-slate-100">
+            <div className="max-w-2xl mx-auto">
+              <div className="mb-6">
+                <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center">
+                  <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
                 </div>
-              )}
-            </div>
+                <h1 className="text-3xl font-bold text-slate-900 mb-3">
+                  Vertaile ammatteja
+                </h1>
+                <p className="text-lg text-slate-600 mb-6">
+                  Vertaile palkkoja, työnäkymiä ja koulutuspolkuja rinnakkain
+                </p>
+              </div>
 
-            <Link href="/ammatit">
-              <button className="bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary transition-colors">
-                Siirry Urakirjastoon
-              </button>
-            </Link>
+              {/* Search */}
+              <div className="mb-8">
+                <div className="relative">
+                  <svg className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                  <input
+                    type="text"
+                    placeholder="Etsi ammattia nimellä..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-12 pr-4 py-4 border border-slate-300 rounded-xl text-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  />
+                </div>
+
+                {searchTerm && filteredCareers.length > 0 && (
+                  <div className="mt-4 bg-white border border-slate-200 rounded-xl shadow-lg max-h-96 overflow-y-auto text-left">
+                    {filteredCareers.slice(0, 10).map(career => (
+                      <div
+                        key={career.slug}
+                        onClick={() => addCareer(career)}
+                        className="p-4 hover:bg-slate-50 cursor-pointer border-b border-slate-100 last:border-b-0 transition-colors"
+                      >
+                        <div className="font-semibold text-slate-900 mb-1">{career.title}</div>
+                        <div className="text-sm text-slate-600 line-clamp-2">{career.summary}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {searchTerm && filteredCareers.length === 0 && (
+                  <div className="mt-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                    <p className="text-slate-600">Ei hakutuloksia haulle "{searchTerm}"</p>
+                  </div>
+                )}
+              </div>
+
+              <div className="pt-4 border-t border-slate-200">
+                <p className="text-sm text-slate-600 mb-4">Tai selaa koko urakirjastoa</p>
+                <Link href="/ammatit">
+                  <button className="bg-primary text-white px-8 py-3 rounded-xl hover:bg-primary/90 transition-all shadow-sm hover:shadow-md font-medium">
+                    Siirry Urakirjastoon
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
