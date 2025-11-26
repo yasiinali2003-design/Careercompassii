@@ -385,11 +385,10 @@ for (const profile of profiles) {
   console.log(`   Description: ${profile.description}`);
   console.log(`   Expected Category: ${profile.expectedCategory}`);
 
+  // Convert profile subdimensions to TestAnswer format
+  const mockAnswers: any[] = [];
   const result = generateUserProfile(
-    profile.subdimensions.interests as any,
-    profile.subdimensions.workstyle as any,
-    profile.subdimensions.values as any,
-    {} as any,
+    mockAnswers,
     'TASO2'
   );
 
