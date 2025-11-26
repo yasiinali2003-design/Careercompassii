@@ -154,7 +154,7 @@ export default function ComparePage() {
 
                 {searchTerm && filteredCareers.length === 0 && (
                   <div className="mt-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                    <p className="text-slate-600">Ei hakutuloksia haulle "{searchTerm}"</p>
+                    <p className="text-slate-600">Ei hakutuloksia haulle &ldquo;{searchTerm}&rdquo;</p>
                   </div>
                 )}
               </div>
