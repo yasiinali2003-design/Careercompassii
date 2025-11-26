@@ -4,7 +4,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { selectQuestionSet, markSetAsUsed } from "@/lib/questionPool";
 import { getQuestionMappings } from "@/lib/scoring/dimensions";
 import { toast, Toaster } from "sonner";
-import Todistuspistelaskuri, { checkCareerEligibility } from './Todistuspistelaskuri';
+import Todistuspistelaskuri from './Todistuspistelaskuri';
 
 // ---------- QUESTIONS DATA ----------
 // YLA: Education path focus (Lukio vs. Ammattikoulu) + career preview
@@ -1357,24 +1357,8 @@ const Summary = ({
               >
                 <div className="flex items-start justify-between gap-2 mb-3">
                   <h3 className="text-xl font-semibold text-[#0F172A] flex-1">{career.title_fi}</h3>
-                  {group === 'TASO2' && calculatorPoints > 0 && (
-                    <span className="text-2xl flex-shrink-0">
-                      {checkCareerEligibility(calculatorPoints, career).icon}
-                    </span>
-                  )}
                 </div>
                 <p className="text-[#475569] text-sm mb-4 leading-relaxed">{career.short_description}</p>
-
-                {/* Grade Eligibility Message for TASO2 */}
-                {group === 'TASO2' && calculatorPoints > 0 && (
-                  <div className={`mb-4 px-3 py-2 rounded-lg text-sm ${
-                    checkCareerEligibility(calculatorPoints, career).eligible
-                      ? 'bg-green-50 text-green-800 border border-green-200'
-                      : 'bg-orange-50 text-orange-800 border border-orange-200'
-                  }`}>
-                    {checkCareerEligibility(calculatorPoints, career).message}
-                  </div>
-                )}
 
                 <div className="space-y-3">
                   <div>
