@@ -36,7 +36,7 @@ export default function StatsSection() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <StatCard
             icon={<Briefcase className="h-6 w-6" />}
-            value="361"
+            value="760"
             label="Eri ammattia"
           />
           <StatCard

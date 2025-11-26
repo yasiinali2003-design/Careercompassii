@@ -178,7 +178,7 @@ export function ABTestDashboard() {
             <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
               <p className="text-sm text-amber-800">
                 <strong>Goal:</strong> With 95 careers in each category, we expect a more balanced distribution
-                compared to the previous 77% "auttaja" dominance.
+                compared to the previous 77% &quot;auttaja&quot; dominance.
               </p>
             </div>
           </CardContent>
