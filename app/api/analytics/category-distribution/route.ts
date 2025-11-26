@@ -89,7 +89,7 @@ export async function GET(request: NextRequest) {
     const categoryDistribution: Record<string, number> = {};
     const cohortBreakdown: Record<string, number> = {};
 
-    data?.forEach((row) => {
+    data?.forEach((row: { dominant_category: string; cohort: string }) => {
       // Count dominant categories
       categoryDistribution[row.dominant_category] =
         (categoryDistribution[row.dominant_category] || 0) + 1;
