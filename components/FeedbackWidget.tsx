@@ -96,7 +96,7 @@ export function FeedbackWidget({ cohort, dominantCategory, recommendedCareers }:
             {[1, 2, 3, 4, 5].map((rating) => (
               <Button
                 key={rating}
-                variant={selectedRating === rating ? 'default' : 'outline'}
+                variant={selectedRating === rating ? 'primary' : 'outline'}
                 size="lg"
                 onClick={() => setSelectedRating(rating)}
                 className="w-12 h-12"
