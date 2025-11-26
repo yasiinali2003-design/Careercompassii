@@ -35,7 +35,9 @@ function convertCareerFIToCareer(careerFI: any): Career {
   };
 }
 
-const allCareers = careersFI.filter(c => c && c.id).map(convertCareerFIToCareer);
+const allCareers = careersFI
+  .filter(c => c && c.id && c.title_fi)
+  .map(convertCareerFIToCareer);
 
 export default function ComparePage() {
   const [comparisons, setComparisons] = useState<Career[]>([]);
@@ -87,8 +89,8 @@ export default function ComparePage() {
     setComparisons(comparisons.filter(c => c.slug !== slug));
   };
 
-  const filteredCareers = allCareers.filter(c => 
-    c.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+  const filteredCareers = allCareers.filter(c =>
+    c.title && c.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
     !comparisons.find(comp => comp.slug === c.slug)
   );
 
