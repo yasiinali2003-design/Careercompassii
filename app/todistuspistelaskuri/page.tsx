@@ -345,7 +345,7 @@ export default function TodistuspistelaskuriPage() {
                   <Button
                     type="button"
                     size="sm"
-                    variant={educationType === 'yliopisto' ? 'default' : 'ghost'}
+                    variant={educationType === 'yliopisto' ? 'primary' : 'ghost'}
                     className="rounded-md px-4"
                     onClick={() => setEducationType('yliopisto')}
                   >
@@ -354,7 +354,7 @@ export default function TodistuspistelaskuriPage() {
                   <Button
                     type="button"
                     size="sm"
-                    variant={educationType === 'amk' ? 'default' : 'ghost'}
+                    variant={educationType === 'amk' ? 'primary' : 'ghost'}
                     className="rounded-md px-4"
                     onClick={() => setEducationType('amk')}
                   >
