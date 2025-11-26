@@ -7,6 +7,8 @@ import { careersData as careersFI } from '@/data/careers-fi';
 import { Career } from '@/lib/types';
 import Logo from '@/components/Logo';
 
+// Force dynamic rendering to avoid build-time errors with window/localStorage
+export const dynamic = 'force-dynamic';
 // Convert CareerFI to Career format
 function convertCareerFIToCareer(careerFI: any): Career {
   return {
