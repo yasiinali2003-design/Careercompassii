@@ -171,7 +171,6 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   type GroupKey = "YLA" | "TASO2" | "NUORI";
   const [step, setStep] = useState<0 | 1 | 2 | 3>(0); // 0: landing, 1: group select, 2: questions, 3: summary
   const [group, setGroup] = useState<GroupKey | null>(null);
-  const [calculatorPoints, setCalculatorPoints] = useState<number>(0);
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [currentOccupation, setCurrentOccupation] = useState<string>(""); // Current career/occupation for filtering
@@ -1331,7 +1330,7 @@ const Summary = ({
         {group === 'TASO2' && (
           <Todistuspistelaskuri
             onCalculate={(points, exams) => {
-              setCalculatorPoints(points);
+              // Calculator points stored but not currently used
             }}
           />
         )}
