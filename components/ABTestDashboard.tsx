@@ -55,11 +55,11 @@ export function ABTestDashboard() {
         variant: 'treatment',
         totalUsers: treatmentData.length,
         avgRating: treatmentData.length > 0
-          ? treatmentData.reduce((sum, row) => sum + row.rating, 0) / treatmentData.length
+          ? treatmentData.reduce((sum: number, row: { rating: number }) => sum + row.rating, 0) / treatmentData.length
           : 0,
         categoryDistribution: calculateCategoryDistribution(treatmentData),
         satisfactionRate: treatmentData.length > 0
-          ? (treatmentData.filter(row => row.rating >= 4).length / treatmentData.length) * 100
+          ? (treatmentData.filter((row: { rating: number }) => row.rating >= 4).length / treatmentData.length) * 100
           : 0
       };
 
