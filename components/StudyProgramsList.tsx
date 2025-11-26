@@ -476,7 +476,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-3">
               <Button
-                variant="default"
+                variant="primary"
                 size="sm"
                 onClick={() => {
                   onOpenScenario?.();
