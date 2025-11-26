@@ -150,7 +150,7 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
         {typeof navigator !== 'undefined' && 'share' in navigator && (
           <Button
             onClick={handleShare}
-            variant="default"
+            variant="primary"
             className="bg-primary hover:bg-primary"
           >
             <Share2 className="h-4 w-4 mr-2" />
