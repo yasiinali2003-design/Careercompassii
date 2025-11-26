@@ -1116,8 +1116,8 @@ function determineDominantCategory(
   // Visionaari = strategic, big-picture thinkers with global mindset
   // NOTE: YLA Q27 maps to values.global, TASO2 Q31 & NUORI Q15/24 map to interests.global
   const globalScore = (values.global || interests.global || 0);
-  categoryScores.visionaari += globalScore * 5.0;  // PRIMARY: global perspective (boosted for YLA's 1q imbalance)
-  categoryScores.visionaari += (interests.analytical || 0) * 0.8;  // SECONDARY: strategic thinking
+  categoryScores.visionaari += globalScore * 1.5;  // PRIMARY: global perspective (reduced after YLA question fixes)
+  categoryScores.visionaari += (interests.analytical || 0) * 1.5;  // SECONDARY: strategic thinking
 
   // jarjestaja: organization workstyle
   // PHASE 11 FIX: Use analytical (TASO2 doesn't have organization!)
