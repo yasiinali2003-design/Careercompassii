@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { selectQuestionSet, markSetAsUsed } from "@/lib/questionPool";
 import { getQuestionMappings } from "@/lib/scoring/dimensions";
 import { toast, Toaster } from "sonner";
+import Todistuspistelaskuri, { checkCareerEligibility } from './Todistuspistelaskuri';
 
 // ---------- QUESTIONS DATA ----------
 // YLA: Education path focus (Lukio vs. Ammattikoulu) + career preview
@@ -170,6 +171,7 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   type GroupKey = "YLA" | "TASO2" | "NUORI";
   const [step, setStep] = useState<0 | 1 | 2 | 3>(0); // 0: landing, 1: group select, 2: questions, 3: summary
   const [group, setGroup] = useState<GroupKey | null>(null);
+  const [calculatorPoints, setCalculatorPoints] = useState<number>(0);
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [currentOccupation, setCurrentOccupation] = useState<string>(""); // Current career/occupation for filtering
@@ -1325,6 +1327,15 @@ const Summary = ({
           </div>
         </div>
 
+        {/* Grade Calculator - TASO2 ONLY */}
+        {group === 'TASO2' && (
+          <Todistuspistelaskuri
+            onCalculate={(points, exams) => {
+              setCalculatorPoints(points);
+            }}
+          />
+        )}
+
         {/* Career Recommendations */}
         <div className="rounded-3xl bg-[#2563EB] p-8 shadow-lg">
           <h2 className="text-3xl font-bold text-white mb-8">Suosittelemme sinulle nämä ammatit</h2>
@@ -1345,9 +1356,27 @@ const Summary = ({
                   }
                 }}
               >
-                <h3 className="text-xl font-semibold text-[#0F172A] mb-3">{career.title_fi}</h3>
+                <div className="flex items-start justify-between gap-2 mb-3">
+                  <h3 className="text-xl font-semibold text-[#0F172A] flex-1">{career.title_fi}</h3>
+                  {group === 'TASO2' && calculatorPoints > 0 && (
+                    <span className="text-2xl flex-shrink-0">
+                      {checkCareerEligibility(calculatorPoints, career).icon}
+                    </span>
+                  )}
+                </div>
                 <p className="text-[#475569] text-sm mb-4 leading-relaxed">{career.short_description}</p>
-                
+
+                {/* Grade Eligibility Message for TASO2 */}
+                {group === 'TASO2' && calculatorPoints > 0 && (
+                  <div className={`mb-4 px-3 py-2 rounded-lg text-sm ${
+                    checkCareerEligibility(calculatorPoints, career).eligible
+                      ? 'bg-green-50 text-green-800 border border-green-200'
+                      : 'bg-orange-50 text-orange-800 border border-orange-200'
+                  }`}>
+                    {checkCareerEligibility(calculatorPoints, career).message}
+                  </div>
+                )}
+
                 <div className="space-y-3">
                   <div>
                     <span className="text-xs font-medium text-[#475569] uppercase tracking-wide">Palkka</span>
