@@ -1111,9 +1111,13 @@ function determineDominantCategory(
   // PHASE 10 FIX: Simple 3.0× primary, NO penalties
   categoryScores['ympariston-puolustaja'] += (interests.environment || 0) * 3.0;  // PRIMARY
 
-  // visionaari: global values, career clarity
-  // PHASE 11 FIX: Fallback to career_clarity if global doesn't exist
-  categoryScores.visionaari += (values.global || values.career_clarity || 0) * 3.0;  // PRIMARY
+  // visionaari: global perspective, strategic thinking
+  // SURGICAL FIX (Option A): Check BOTH values.global (YLA) and interests.global (TASO2/NUORI)
+  // Visionaari = strategic, big-picture thinkers with global mindset
+  // NOTE: YLA Q27 maps to values.global, TASO2 Q31 & NUORI Q15/24 map to interests.global
+  const globalScore = (values.global || interests.global || 0);
+  categoryScores.visionaari += globalScore * 5.0;  // PRIMARY: global perspective (boosted for YLA's 1q imbalance)
+  categoryScores.visionaari += (interests.analytical || 0) * 0.8;  // SECONDARY: strategic thinking
 
   // jarjestaja: organization workstyle
   // PHASE 11 FIX: Use analytical (TASO2 doesn't have organization!)
