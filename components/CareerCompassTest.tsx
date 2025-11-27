@@ -5,6 +5,7 @@ import { selectQuestionSet, markSetAsUsed } from "@/lib/questionPool";
 import { getQuestionMappings } from "@/lib/scoring/dimensions";
 import { toast, Toaster } from "sonner";
 import Todistuspistelaskuri from './Todistuspistelaskuri';
+import { validateResponseQuality, getSeverityColor, getQualityWarningMessage, type ResponseQualityMetrics } from "@/lib/scoring/responseValidation";
 
 // ---------- QUESTIONS DATA ----------
 // YLA: Education path focus (Lukio vs. Ammattikoulu) + career preview
@@ -693,15 +694,28 @@ const Summary = ({
   const [error, setError] = useState<string | null>(null);
   const [selectedCareer, setSelectedCareer] = useState<any>(null);
   const [careerCache, setCareerCache] = useState<{ [key: string]: any }>({});
+  const [showValidationWarning, setShowValidationWarning] = useState(false);
+  const [validationMetrics, setValidationMetrics] = useState<any>(null);
 
   const payload = useMemo(() => ({ group, questions, answers }), [group, questions, answers]);
   const answered = answers.filter((a) => a > 0).length;
 
   const sendToBackend = async () => {
     console.log('[Test] Starting sendToBackend with props:', { pin, verifyPin: !!pin, classToken, verifyClassToken: !!classToken });
+
+    // Validate response quality BEFORE processing
+    const validation = validateResponseQuality(answers.filter(a => a > 0));
+
+    // Show warning if quality is low, but allow proceeding
+    if (validation.qualityScore < 70 && validation.warnings.length > 0) {
+      setValidationMetrics(validation);
+      setShowValidationWarning(true);
+      // User can dismiss warning and proceed
+    }
+
     setLoading(true);
     setError(null);
-    
+
     try {
       // Format answers for new scoring API
       // Use shuffledToOriginalQ to map shuffled positions to originalQ (0-29)
@@ -1267,8 +1281,29 @@ const Summary = ({
   };
 
   if (analysis) {
+    // Check if validation metrics exist and display warning
+    const qualityWarning = validationMetrics ? getQualityWarningMessage(validationMetrics) : null;
+
     return (
       <div className="space-y-6">
+        {/* Data Quality Warning Banner */}
+        {qualityWarning && (
+          <div className="rounded-2xl border-2 border-orange-300 bg-orange-50 p-6 shadow-sm">
+            <div className="flex items-start gap-3">
+              <svg className="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-orange-900 mb-2">Huomio vastausten laadusta</h3>
+                <p className="text-orange-800 mb-3">{qualityWarning}</p>
+                <div className="flex gap-2 text-sm">
+                  <span className="text-orange-700">Laatupisteet: <strong>{validationMetrics.qualityScore}/100</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* AI Analysis Summary */}
         <div className="rounded-3xl bg-[#2563EB] p-8 shadow-lg">
           <div className="mb-6">
@@ -1438,6 +1473,62 @@ const Summary = ({
         >
           {loading ? "Analysoidaan vastauksiasi..." : "Saat henkilökohtaisen analyysin"}
         </button>
+
+        {/* Validation Warning Modal */}
+        {showValidationWarning && validationMetrics && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="flex-shrink-0 mt-1">
+                  <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-slate-900">Huomio vastauksistasi</h3>
+                  <p className="text-sm text-slate-600 mt-1">
+                    Havaitsimme joitakin epätavallisia vastausmalleja, jotka voivat vaikuttaa tulosten tarkkuuteen.
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-3 mb-6">
+                {validationMetrics.warnings.map((warning: any, idx: number) => (
+                  <div
+                    key={idx}
+                    className={`rounded-lg border p-3 ${getSeverityColor(warning.severity)}`}
+                  >
+                    <p className="font-semibold text-sm mb-1">{warning.message}</p>
+                    <p className="text-xs opacity-90">{warning.suggestion}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-6">
+                <p className="text-sm text-blue-900">
+                  <strong>Laatupisteet: {validationMetrics.qualityScore}/100</strong>
+                  <br />
+                  Voit jatkaa analysointiin tai aloittaa testin alusta saadaksesi tarkempia tuloksia.
+                </p>
+              </div>
+
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setShowValidationWarning(false)}
+                  className="flex-1 rounded-xl bg-primary px-4 py-3 text-white font-semibold hover:bg-primary/90 transition-colors"
+                >
+                  Ymmärrän, jatka
+                </button>
+                <button
+                  onClick={onRestart}
+                  className="flex-1 rounded-xl border-2 border-slate-300 px-4 py-3 text-slate-700 font-semibold hover:bg-slate-50 transition-colors"
+                >
+                  Aloita alusta
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {loading && (
           <div className="mt-4 rounded-xl bg-blue-50 border border-blue-200 p-4 animate-pulse">
