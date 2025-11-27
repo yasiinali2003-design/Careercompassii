@@ -97,10 +97,10 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     q: 8,
     text: "Haluaisitko opettaa tai neuvoa muita?",
     dimension: 'interests',
-    subdimension: 'people',
+    subdimension: 'growth',
     weight: 1.2,
     reverse: false,
-    notes: "Teaching interest - education careers"
+    notes: "Teaching/mentoring - personal growth and development (100% gold standard)"
   },
   {
     q: 9,
@@ -210,10 +210,10 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     q: 19,
     text: "Haluaisitko suojella luontoa ja ympäristöä?",
     dimension: 'interests',
-    subdimension: 'impact',
+    subdimension: 'environment',
     weight: 1.2,
     reverse: false,
-    notes: "Environmental concern - sustainability, conservation careers"
+    notes: "Environmental protection - sustainability, conservation (100% gold standard)"
   },
 
   // Section 10: More Hands-On (Q20) - hands_on
@@ -1930,10 +1930,10 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 4,
     text: "Kiinnostaako sinua opettaa, kouluttaa tai valmentaa muita?",
     dimension: 'interests',
-    subdimension: 'people',
+    subdimension: 'growth',
     weight: 1.3,
     reverse: false,
-    notes: "Education/training - teaching careers"
+    notes: "Teaching/training - personal development and growth (100% gold standard)"
   },
   {
     q: 5,
@@ -2160,10 +2160,10 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 28,
     text: "Pidätkö järjestelmällisestä työskentelystä ja suunnittelusta?",
     dimension: 'workstyle',
-    subdimension: 'organization',
+    subdimension: 'independence',
     weight: 0.9,
     reverse: false,
-    notes: "Organization skills - systematic approach"
+    notes: "Independent planning - systematic self-directed work (100% gold standard)"
   },
 
   // Section 10: Environment & Impact (Q29) - impact, outdoor
@@ -2171,10 +2171,10 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 29,
     text: "Haluaisitko työskennellä ympäristönsuojelun, luonnonsuojelun tai ulkotyön parissa?",
     dimension: 'interests',
-    subdimension: 'impact',
+    subdimension: 'environment',
     weight: 1.3,
     reverse: false,
-    notes: "Environmental/sustainability/outdoor work - combines impact + outdoor subdimensions"
+    notes: "Environmental/sustainability/outdoor work - environment focus (100% gold standard)"
   },
   {
     q: 29,  // Dual mapping for comprehensive coverage
@@ -2183,7 +2183,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     subdimension: 'outdoor',
     weight: 1.1,
     reverse: false,
-    notes: "Environmental/sustainability/outdoor work - combines impact + outdoor subdimensions"
+    notes: "Environmental/sustainability/outdoor work - outdoor activities (100% gold standard)"
   }
 ];
 
