@@ -14,40 +14,66 @@ import { validateResponseQuality, getSeverityColor, getQualityWarningMessage, ty
 
 const QUESTIONS = {
   YLA: [
-    // Section 1: Learning Preferences (Q1-8)
-    "Pidätkö lukemisesta ja tarinoista?",
-    "Pidätkö matematiikasta ja laskemisesta?",
-    "Opitko mieluummin tekemällä ja kokeilemalla itse?",
-    "Pidätkö siitä, että opiskelet useita eri aineita?",
-    "Onko sinun helppo muistaa teoriat ja faktat?",
-    "Pidätkö enemmän itse tekemisestä kuin kuuntelemisesta?",
-    "Pidätkö siitä, että selvität asiat kunnolla?",
-    "Haluaisitko oppia yhden ammatin taidot nopeasti?",
-    // Section 2: Future Mindset (Q9-15)
-    "Tiedätkö jo, mitä ammattia haluaisit tehdä?",
-    "Haluatko pitää monta vaihtoehtoa auki tulevaisuudessa?",
-    "Kiinnostaako sinua ajatus yliopisto-opinnoista tulevaisuudessa?",
-    "Haluaisitko aloittaa työelämän pian, noin 18–19-vuotiaana?",
-    "Onko sinusta ok opiskella vielä monta vuotta ennen töitä?",
-    "Tiedätkö jo, mitä haluaisit tehdä tulevaisuudessa?",
-    "Haluaisitko kokeilla monia aloja ennen kuin valitset urasi?",
-    // Section 3: Interest Areas (Q16-23)
-    "Kiinnostaako sinua tietokoneet ja teknologia?",
-    "Haluaisitko auttaa ja hoivata ihmisiä työssäsi?",
-    "Pidätkö piirtämisestä, musiikista tai muusta luovasta tekemisestä?",
-    "Haluaisitko työskennellä ulkona luonnon keskellä?",
-    "Haluaisitko johtaa muita ja tehdä päätöksiä?",
-    "Kiinnostaako sinua rakentaminen ja korjaaminen?",
-    "Haluaisitko auttaa sairaita tai loukkaantuneita ihmisiä?",
-    "Haluaisitko työskennellä myynnissä tai asiakaspalvelussa?",
-    // Section 4: Work Style (Q24-30)
-    "Pidätkö työskentelystä ryhmässä muiden kanssa?",
-    "Tykkäätkö tehdä asioita itsenäisesti?",
-    "Haluaisitko, että työsi olisi ulkona luonnossa?",
-    "Pidätkö selkeistä rutiineista ja aikatauluista?",
-    "Haluaisitko matkustaa ja nähdä eri maita?",
-    "Pidätkö siitä, että tapaat työssä paljon uusia ihmisiä?",
-    "Haluaisitko tehdä töitä kotona tietokoneen ääressä?"
+    // REDESIGNED: Interest-based questions for Lukio vs Ammattikoulu path + career exploration
+    // Section 1: Learning & Thinking (Q0-6) - analytical, hands_on, technology, problem_solving
+    "Pidätkö lukemisesta ja kirjoittamisesta?", // Q0: analytical
+    "Pidätkö matematiikasta ja laskemisesta?", // Q1: analytical
+    "Opitko parhaiten tekemällä ja kokeilemalla?", // Q2: hands_on
+    "Kiinnostaako sinua tietokoneet ja ohjelmointi?", // Q3: technology
+    "Pidätkö pulmien ja ongelmien ratkaisemisesta?", // Q4: problem_solving
+    "Haluaisitko tutkia ja selvittää, miten asiat toimivat?", // Q5: problem_solving
+    "Tykkäätkö miettiä ja pohtia asioita tarkkaan?", // Q6: analytical
+
+    // Section 2: People & Helping (Q7-9) - people
+    "Pidätkö ihmisten auttamisesta ja tukemisesta?", // Q7: people
+    "Haluaisitko opettaa tai neuvoa muita?", // Q8: people
+    "Kiinnostaako sinua ymmärtää ihmisten tunteita ja ajatuksia?", // Q9: people
+
+    // Section 3: Creative & Expression (Q10-12) - creative
+    "Pidätkö piirtämisestä, maalaamisesta tai suunnittelusta?", // Q10: creative
+    "Kiinnostaako sinua musiikki, näytteleminen tai tanssi?", // Q11: creative
+    "Haluaisitko luoda videoita, kuvia tai muuta sisältöä?", // Q12: creative
+
+    // Section 4: Healthcare & Well-being (Q13) - health
+    "Haluaisitko auttaa sairaita tai loukkaantuneita ihmisiä?", // Q13: health
+
+    // Section 5: Business & Entrepreneurship (Q14) - business
+    "Kiinnostaako sinua myynti ja asiakaspalvelu?", // Q14: business
+
+    // Section 6: Leadership (Q15) - leadership
+    "Haluaisitko johtaa ryhmää tai projektia?", // Q15: leadership
+
+    // Section 7: Hands-On & Practical Work (Q16) - hands_on
+    "Pidätkö käytännön töistä, kuten rakentamisesta tai korjaamisesta?", // Q16: hands_on
+
+    // Section 8: Technology & Innovation (Q17-18) - technology, innovation
+    "Haluaisitko työskennellä tekniikan ja laitteiden parissa?", // Q17: technology
+    "Pidätkö uusien ideoiden keksimisestä?", // Q18: innovation
+
+    // Section 9: Impact & Environment (Q19) - impact
+    "Haluaisitko suojella luontoa ja ympäristöä?", // Q19: impact
+
+    // Section 10: More Hands-On (Q20) - hands_on
+    "Kiinnostaako sinua autot, moottorit tai ajoneuvot?", // Q20: hands_on
+
+    // Section 11: People & Health (Q21-22) - people, health
+    "Haluaisitko työskennellä lasten tai nuorten kanssa?", // Q21: people
+    "Kiinnostaako sinua terveys ja liikunta?", // Q22: health
+
+    // Section 12: Workstyle (Q23-24) - teamwork, independence
+    "Pidätkö työskentelystä ryhmässä muiden kanssa?", // Q23: teamwork
+    "Tykkäätkö tehdä asioita itsenäisesti?", // Q24: independence
+
+    // Section 13: More Hands-On (Q25) - hands_on
+    "Pidätkö fyysisestä työstä ja liikkumisesta?", // Q25: hands_on
+
+    // Section 14: Business & Innovation (Q26-27) - business, innovation
+    "Haluaisitko perustaa oman yrityksen joskus?", // Q26: business
+    "Kiinnostaako sinua kehittää uusia tuotteita tai palveluita?", // Q27: innovation
+
+    // Section 15: Organization & Outdoor (Q28-29) - organization, outdoor
+    "Pidätkö järjestyksestä ja suunnittelusta?", // Q28: organization
+    "Haluaisitko työskennellä ulkona luonnossa?" // Q29: outdoor
   ],
   TASO2: [
     // Section 1: Tech & Digital (Q1-7)
@@ -86,40 +112,56 @@ const QUESTIONS = {
     "Haluaisitko työskennellä laboratoriossa ja tehdä kokeita?"
   ],
   NUORI: [
-    // Section 1: Career Fields (Q1-10)
-    "Kiinnostaako sinua IT-ala ja digitaaliset ratkaisut?",
-    "Haluaisitko työskennellä terveydenhuollossa ja hoivatyössä?",
-    "Kiinnostaako sinua luovat alat ja sisällöntuotanto?",
-    "Haluaisitko työskennellä liike-elämässä ja johtamisessa?",
-    "Kiinnostaako sinua tekniikka ja insinöörityö?",
-    "Haluaisitko työskennellä opetusalalla ja kasvatuksessa?",
-    "Kiinnostaako sinua tutkimustyö ja tieteellinen työ?",
-    "Haluaisitko työskennellä oikeusalalla tai lakimiehen tehtävissä?",
-    "Kiinnostaako sinua media, journalismi ja viestintä?",
-    "Haluaisitko työskennellä matkailualalla tai ravintola-alalla?",
-    // Section 2: Work Values (Q11-18)
-    "Onko sinulle erittäin tärkeää ansaita hyvä palkka (yli 4000€/kk)?",
-    "Haluaisitko työn, jossa voit vaikuttaa yhteiskuntaan positiivisesti?",
-    "Onko sinulle tärkeää, että työpaikkasi on varma ja pysyvä?",
-    "Haluaisitko uralla nopeasti eteenpäin ja ylennyksiä?",
-    "Onko sinulle tärkeää, että sinulla on aikaa perheelle ja harrastuksille?",
-    "Haluaisitko työskennellä kansainvälisessä ja monikulttuurisessa ympäristössä?",
-    "Onko sinulle tärkeää oppia jatkuvasti uutta työssäsi?",
-    "Haluaisitko työn, jossa voit olla luova ja keksiä uusia ideoita?",
-    // Section 3: Work Environment (Q19-25)
-    "Haluaisitko työskennellä pääosin kotoa käsin (etätyö)?",
-    "Pidätkö perinteisestä toimistoympäristöstä ja säännöllisestä työpäivästä?",
-    "Haluaisitko liikkua paljon työssäsi ja vierailla eri paikoissa?",
-    "Onko sinulle tärkeää työskennellä isossa, tunnetussa yrityksessä?",
-    "Kiinnostaako sinua työskennellä pienessä startup-yrityksessä?",
-    "Oletko valmis tekemään vuorotyötä (yö-, ilta-, viikonloppuvuoroja)?",
-    "Haluaisitko työn, jossa matkustat paljon ulkomailla?",
-    // Section 4: Work Style & Preferences (Q26-30)
-    "Pidätkö siitä, että saat tehdä työsi itsenäisesti ilman jatkuvaa ohjausta?",
-    "Haluaisitko johtaa tiimiä ja tehdä suuria päätöksiä?",
-    "Pidätkö tiimityöskentelystä ja yhteistyöstä kollegoiden kanssa?",
-    "Haluaisitko työn, jossa on selkeät rutiinit ja toistuvat tehtävät?",
-    "Pidätkö työstä, jossa jokainen päivä on erilainen ja yllättävä?"
+    // REDESIGNED: Interest-based questions for career matching (NOT values)
+    // Section 1: Technology & Digital (Q0-2) - technology
+    "Kiinnostaako sinua ohjelmointi ja sovelluskehitys?", // Q0: technology
+    "Haluaisitko työskennellä tietoturvan ja kyberturvallisuuden parissa?", // Q1: technology
+    "Kiinnostaako sinua data-analyysi ja koneoppiminen?", // Q2: technology
+
+    // Section 2: People & Care (Q3-5) - people
+    "Haluaisitko auttaa ihmisiä heidän terveydessään ja hyvinvoinnissaan?", // Q3: people
+    "Kiinnostaako sinua opettaa, kouluttaa tai valmentaa muita?", // Q4: people
+    "Haluaisitko tukea ihmisiä henkisesti vaikeissa tilanteissa?", // Q5: people
+
+    // Section 3: Creative & Design (Q6-9) - creative
+    "Kiinnostaako sinua graafinen suunnittelu ja visuaalinen ilme?", // Q6: creative
+    "Haluaisitko työskennellä sisällöntuotannon tai median parissa?", // Q7: creative
+    "Pidätkö kirjoittamisesta, journalismista tai viestinnästä?", // Q8: creative
+    "Kiinnostaako sinua valokuvaus, video tai äänisuunnittelu?", // Q9: creative
+
+    // Section 4: Business & Leadership (Q10-13) - business, leadership
+    "Haluaisitko työskennellä myynnissä tai asiakaspalvelussa?", // Q10: business
+    "Kiinnostaako sinua perustaa ja johtaa omaa yritystä?", // Q11: business
+    "Haluaisitko johtaa tiimiä tai projektia?", // Q12: leadership
+    "Kiinnostaako sinua strateginen suunnittelu ja päätöksenteko?", // Q13: leadership
+
+    // Section 5: Hands-On & Technical (Q14-17) - hands_on
+    "Haluaisitko työskennellä rakentamisen tai korjaamisen parissa?", // Q14: hands_on
+    "Kiinnostaako sinua autot, koneet tai tekniset laitteet?", // Q15: hands_on
+    "Haluaisitko tehdä sähkö- tai asennustöitä?", // Q16: hands_on
+    "Kiinnostaako sinua valmistaa tai rakentaa asioita käsilläsi?", // Q17: hands_on
+
+    // Section 6: Analytical & Research (Q18-20) - analytical
+    "Pidätkö tiedon analysoinnista ja tutkimisesta?", // Q18: analytical
+    "Kiinnostaako sinua tieteellinen tutkimus tai laboratoriotyö?", // Q19: analytical
+    "Haluaisitko työskennellä lakiasioiden tai oikeusjärjestelmän parissa?", // Q20: analytical
+
+    // Section 7: Healthcare & Fitness (Q21-22) - health
+    "Haluaisitko työskennellä terveydenhuollossa hoitajana tai lääkärinä?", // Q21: health
+    "Kiinnostaako sinua liikunta, urheilu tai fysioterapia?", // Q22: health
+
+    // Section 8: Innovation & Problem-Solving (Q23-26) - innovation, problem_solving
+    "Pidätkö uusien ratkaisujen ja tuotteiden kehittämisestä?", // Q23: innovation
+    "Kiinnostaako sinua startup-kulttuuri ja innovaatiot?", // Q24: innovation
+    "Haluaisitko ratkaista monimutkaisia teknisiä ongelmia?", // Q25: problem_solving
+    "Pidätkö haastavien ongelmien selvittämisestä?", // Q26: problem_solving
+
+    // Section 9: Workstyle (Q27-28) - teamwork, organization
+    "Pidätkö tiimityöskentelystä ja yhteistyöstä?", // Q27: teamwork
+    "Pidätkö järjestelmällisestä työskentelystä ja suunnittelusta?", // Q28: organization
+
+    // Section 10: Environment & Outdoor (Q29) - impact/outdoor combined
+    "Haluaisitko työskennellä ympäristönsuojelun, luonnonsuojelun tai ulkotyön parissa?" // Q29: impact + outdoor (combined)
   ]
 };
 
