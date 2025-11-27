@@ -11,25 +11,25 @@ import Logo from '@/components/Logo';
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-teal-50/20">
+    <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
       <div className="container mx-auto px-4 py-16 max-w-6xl">
         {/* Back Button */}
         <div className="mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors">
+          <Link href="/" className="inline-flex items-center gap-2 text-neutral-300 hover:text-white transition-colors">
             <ArrowLeft className="h-4 w-4" />
             Takaisin etusivulle
           </Link>
         </div>
-        
+
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl font-bold text-white mb-6">
             Urakompassi Kouluille
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-4">
             Moderni ja helppokäyttöinen uraohjaustyökalu oppilaitoksille
           </p>
-          <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+          <p className="text-lg text-neutral-400 max-w-3xl mx-auto">
             361 uramahdollisuutta koko Suomesta • 75 modernia tulevaisuuden ammattia • Edistyneet analytiikkatyökalut
           </p>
         </div>
@@ -271,10 +271,10 @@ export default function PricingPage() {
 
         {/* CTA */}
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-3xl font-bold mb-4 text-white">
             Valmis aloittamaan?
           </h2>
-          <p className="text-gray-600 mb-8">
+          <p className="text-neutral-300 mb-8">
             Ota yhteyttä niin järjestämme keskustelun ja demo-session
           </p>
           <div className="flex gap-4 justify-center">

@@ -84,10 +84,10 @@ export default function SchoolDashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20">
+      <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
         <div className="container mx-auto px-4 py-12">
           <div className="text-center">
-            <p>Ladataan analytiikkaa...</p>
+            <p className="text-neutral-300">Ladataan analytiikkaa...</p>
           </div>
         </div>
       </div>
@@ -96,9 +96,9 @@ export default function SchoolDashboardPage() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20">
+      <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
         <div className="container mx-auto px-4 py-12">
-          <div className="text-center text-red-600">
+          <div className="text-center text-red-400">
             <AlertCircle className="h-12 w-12 mx-auto mb-4" />
             <p>Virhe: {error}</p>
             <Button onClick={fetchAnalytics} className="mt-4">
@@ -112,10 +112,10 @@ export default function SchoolDashboardPage() {
 
   if (!analytics) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20">
+      <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
         <div className="container mx-auto px-4 py-12">
           <div className="text-center">
-            <p>Ei dataa saatavilla.</p>
+            <p className="text-neutral-300">Ei dataa saatavilla.</p>
           </div>
         </div>
       </div>
@@ -123,8 +123,8 @@ export default function SchoolDashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20">
-      <nav className="border-b border-gray-200 bg-white/80 backdrop-blur-xl sticky top-0 z-50">
+    <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
+      <nav className="border-b border-white/20 bg-black/40 backdrop-blur-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <Logo className="h-10 w-auto" />
@@ -146,10 +146,10 @@ export default function SchoolDashboardPage() {
 
       <div className="container mx-auto px-4 py-12 max-w-7xl">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-4xl font-bold text-white mb-2">
             Koulun analytiikka
           </h1>
-          <p className="text-gray-600">
+          <p className="text-neutral-300">
             Yhteenveto kaikista luokista ja oppilaiden testeistä
           </p>
         </div>
