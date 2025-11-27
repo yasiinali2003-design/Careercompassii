@@ -218,7 +218,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     q: 21,
     text: "Haluaisitko opettaa tai kouluttaa muita ihmisiä?",
     dimension: 'interests',
-    subdimension: 'education',
+    subdimension: 'people',
     weight: 1.2,
     reverse: false,
     notes: "Teaching/education indicator (differentiated from Q16 care focus)"
@@ -227,7 +227,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     q: 22,
     text: "Haluaisitko työskennellä myynnissä tai asiakaspalvelussa?",
     dimension: 'values',
-    subdimension: 'financial',
+    subdimension: 'business',
     weight: 1.0,
     reverse: false,
     notes: "Business/entrepreneurship orientation"
@@ -247,7 +247,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     q: 24,
     text: "Tykkäätkö tehdä asioita itsenäisesti?",
     dimension: 'workstyle',
-    subdimension: 'autonomy',
+    subdimension: 'independence',
     weight: 0.9,
     reverse: false,
     notes: "Independence preference"
@@ -265,7 +265,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     q: 26,
     text: "Pidätkö selkeistä rutiineista ja aikatauluista?",
     dimension: 'workstyle',
-    subdimension: 'structure',
+    subdimension: 'organization',
     weight: 0.8,
     reverse: false,
     notes: "Routine/structure preference"
@@ -274,8 +274,8 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     q: 27,
     text: "Haluaisitko matkustaa ja nähdä eri maita?",
     dimension: 'values',
-    subdimension: 'global',
-    weight: 0.9,
+    subdimension: 'environment',
+    weight: 0.1,
     reverse: false,
     notes: "International orientation"
   },
@@ -283,7 +283,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     q: 28,
     text: "Pidätkö siitä, että tapaat työssä paljon uusia ihmisiä?",
     dimension: 'workstyle',
-    subdimension: 'social',
+    subdimension: 'teamwork',
     weight: 1.0,
     reverse: false,
     notes: "Social interaction preference"
@@ -292,7 +292,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     q: 29,
     text: "Haluaisitko tehdä töitä kotona tietokoneen ääressä?",
     dimension: 'context',
-    subdimension: 'work_environment',
+    subdimension: 'independence',
     weight: 0.8,
     reverse: false,
     notes: "Remote work preference"
@@ -303,7 +303,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     q: 30,
     text: "Kiinnostaako sinua luoda sovelluksia tai nettisivuja?",
     dimension: 'interests',
-    subdimension: 'technology',
+    subdimension: 'innovation', // ALREADY_FIXED_YLA_Q30,
     weight: 1.3,
     reverse: false,
     notes: "Web development, app development, coding - complements Q15"
@@ -348,7 +348,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 1,
     text: "Pidätkö matematiikasta ja ongelmien ratkaisemisesta?",
     dimension: 'interests',
-    subdimension: 'analytical',
+    subdimension: 'problem_solving',
     weight: 1.2,
     reverse: false,
     notes: "Equivalent to Q1, STEM indicator - can lead to either Lukio or technical Ammattikoulu"
@@ -420,8 +420,8 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 8,
     text: "Onko sinulla jo ajatus siitä, mitä haluaisit tehdä työksesi?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.0,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q8, Ammattikoulu indicator (clear vocational goal)"
   },
@@ -430,8 +430,8 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 9,
     text: "Haluatko pitää monta polkua auki tulevaisuudessa?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.0,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: true,
     notes: "Equivalent to Q9, Lukio indicator (keeping options open)"
   },
@@ -440,8 +440,8 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 10,
     text: "Kiinnostaako sinua opiskella yliopistossa tulevaisuudessa?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.3,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q10, Strong Lukio indicator (university path)"
   },
@@ -450,8 +450,8 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 11,
     text: "Haluaisitko aloittaa työelämän nuorena (esim. 18–19-vuotiaana)?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.1,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q11, Ammattikoulu indicator (quick entry to workforce)"
   },
@@ -460,8 +460,8 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 12,
     text: "Onko sinusta ok, että opiskelut kestävät vielä vuosia ennen työelämään siirtymistä?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.2,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q12, Lukio indicator (long education path)"
   },
@@ -470,8 +470,8 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 13,
     text: "Tuntuuko sinusta, että sinulla on jo suunnitelma siitä, mitä haluat tehdä?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 0.9,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q13, Similar to Q8, lower weight to avoid over-weighting"
   },
@@ -480,8 +480,8 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 14,
     text: "Haluaisitko tutustua eri aloihin ennen kuin valitset urasi?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.0,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: true,
     notes: "Equivalent to Q14, Lukio indicator (exploration over specialization)"
   },
@@ -522,7 +522,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 18,
     text: "Pidätkö ajatuksesta työskennellä ulkona luonnon parissa?",
     dimension: 'interests',
-    subdimension: 'environment',
+    subdimension: 'impact', // ALREADY_FIXED_YLA_Q48,
     weight: 1.1,
     reverse: false,
     notes: "Equivalent to Q18, Outdoor/environmental careers"
@@ -562,7 +562,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 22,
     text: "Kiinnostaako sinua työskennellä asiakkaiden kanssa tai myydä asioita?",
     dimension: 'values',
-    subdimension: 'financial',
+    subdimension: 'business',
     weight: 1.0,
     reverse: false,
     notes: "Equivalent to Q22, Business/entrepreneurship orientation"
@@ -584,7 +584,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 24,
     text: "Tykkäätkö siitä, että saat tehdä asioita omalla tavallasi?",
     dimension: 'workstyle',
-    subdimension: 'autonomy',
+    subdimension: 'independence',
     weight: 0.9,
     reverse: false,
     notes: "Equivalent to Q24, Independence preference"
@@ -593,8 +593,8 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     q: 55,
     originalQ: 25,
     text: "Kiinnostaako sinua työskennellä luonnossa ja ulkoilmassa?",
-    dimension: 'context',
-    subdimension: 'work_environment',
+    dimension: 'interests',
+    subdimension: 'outdoor',
     weight: 1.1,
     reverse: false,
     notes: "Equivalent to Q25, Outdoor work preference"
@@ -604,7 +604,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 26,
     text: "Pidätkö selkeästä rutiinista ja säännöllisestä työrytmistä?",
     dimension: 'workstyle',
-    subdimension: 'structure',
+    subdimension: 'organization',
     weight: 0.8,
     reverse: false,
     notes: "Equivalent to Q26, Routine/structure preference"
@@ -614,8 +614,8 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 27,
     text: "Haluaisitko nähdä maailmaa ja tutustua eri maihin työn kautta?",
     dimension: 'values',
-    subdimension: 'global',
-    weight: 0.9,
+    subdimension: 'environment',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q27, International orientation"
   },
@@ -624,7 +624,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 28,
     text: "Haluaisitko työssäsi päivittäin tavata ja keskustella uusien ihmisten kanssa?",
     dimension: 'workstyle',
-    subdimension: 'social',
+    subdimension: 'teamwork',
     weight: 1.0,
     reverse: false,
     notes: "Equivalent to Q28, Social interaction preference"
@@ -634,7 +634,7 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 29,
     text: "Kiinnostaako sinua työskennellä etänä kotoa käsin tietokoneen ääressä?",
     dimension: 'context',
-    subdimension: 'work_environment',
+    subdimension: 'independence',
     weight: 0.8,
     reverse: false,
     notes: "Equivalent to Q29, Remote work preference"
@@ -733,8 +733,8 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 8,
     text: "Onko sinulla jo ajatus siitä, mitä ammattia haluaisit tehdä?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.0,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q8, Ammattikoulu indicator (clear vocational goal)"
   },
@@ -743,8 +743,8 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 9,
     text: "Haluatko pitää monta vaihtoehtoa auki tulevaisuudessa?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.0,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: true,
     notes: "Equivalent to Q9, Lukio indicator (keeping options open)"
   },
@@ -753,8 +753,8 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 10,
     text: "Kiinnostaako sinua ajatus opiskella yliopistossa tulevaisuudessa?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.3,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q10, Strong Lukio indicator (university path)"
   },
@@ -763,8 +763,8 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 11,
     text: "Haluaisitko aloittaa työelämän pian (noin 18–19 vuoden iässä)?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.1,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q11, Ammattikoulu indicator (quick entry to workforce)"
   },
@@ -773,8 +773,8 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 12,
     text: "Onko sinusta ok, että opiskelut kestävät vielä vuosia ennen työelämää?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.2,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q12, Lukio indicator (long education path)"
   },
@@ -783,8 +783,8 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 13,
     text: "Tuntuuko sinusta, että sinulla on jo ajatus siitä, mitä haluat tehdä aikuisena?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 0.9,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q13, Similar to Q8, lower weight to avoid over-weighting"
   },
@@ -793,8 +793,8 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 14,
     text: "Haluaisitko tutustua useisiin eri aloihin ennen kuin teet uran päätöksen?",
     dimension: 'values',
-    subdimension: 'career_clarity',
-    weight: 1.0,
+    subdimension: 'growth',
+    weight: 0.1,
     reverse: true,
     notes: "Equivalent to Q14, Lukio indicator (exploration over specialization)"
   },
@@ -875,7 +875,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 22,
     text: "Kiinnostaako sinua asiakaspalvelu ja myyminen?",
     dimension: 'values',
-    subdimension: 'financial',
+    subdimension: 'business',
     weight: 1.0,
     reverse: false,
     notes: "Equivalent to Q22, Business/entrepreneurship orientation"
@@ -897,7 +897,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 24,
     text: "Tykkäätkö siitä, että saat tehdä asioita omalla tavallasi?",
     dimension: 'workstyle',
-    subdimension: 'autonomy',
+    subdimension: 'independence',
     weight: 0.9,
     reverse: false,
     notes: "Equivalent to Q24, Independence preference"
@@ -906,8 +906,8 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     q: 85,
     originalQ: 25,
     text: "Haluaisitko työskennellä pääosin ulkoilmassa ja luonnossa?",
-    dimension: 'context',
-    subdimension: 'work_environment',
+    dimension: 'interests',
+    subdimension: 'outdoor',
     weight: 1.1,
     reverse: false,
     notes: "Equivalent to Q25, Outdoor work preference"
@@ -917,7 +917,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 26,
     text: "Pidätkö siitä, kun työ on säännöllistä ja ennustettavaa?",
     dimension: 'workstyle',
-    subdimension: 'structure',
+    subdimension: 'organization',
     weight: 0.8,
     reverse: false,
     notes: "Equivalent to Q26, Routine/structure preference"
@@ -927,8 +927,8 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 27,
     text: "Haluaisitko työskennellä myös ulkomailla ja matkustaa työn vuoksi?",
     dimension: 'values',
-    subdimension: 'global',
-    weight: 0.9,
+    subdimension: 'environment',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q27, International orientation"
   },
@@ -937,7 +937,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 28,
     text: "Haluaisitko työssäsi päivittäin olla tekemisissä monien ihmisten kanssa?",
     dimension: 'workstyle',
-    subdimension: 'social',
+    subdimension: 'teamwork',
     weight: 1.0,
     reverse: false,
     notes: "Equivalent to Q28, Social interaction preference"
@@ -947,7 +947,7 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 29,
     text: "Pidätkö ajatuksesta työskennellä etänä kotoa käsin?",
     dimension: 'context',
-    subdimension: 'work_environment',
+    subdimension: 'independence',
     weight: 0.8,
     reverse: false,
     notes: "Equivalent to Q29, Remote work preference"
@@ -999,7 +999,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 4,
     text: "Haluaisitko suunnitella verkkosivuja tai mobiilisovelluksia?",
     dimension: 'interests',
-    subdimension: 'technology',
+    subdimension: 'innovation',
     weight: 1.3,
     reverse: false,
     notes: "Specific tech field (design/dev)"
@@ -1138,7 +1138,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 19,
     text: "Haluaisitko joskus perustaa ja pyörittää omaa yritystä?",
     dimension: 'values',
-    subdimension: 'entrepreneurship',
+    subdimension: 'business',
     weight: 1.3,
     reverse: false,
     notes: "Entrepreneurship orientation"
@@ -1147,7 +1147,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 20,
     text: "Pidätkö myynnistä ja asiakkaiden kohtaamisesta?",
     dimension: 'workstyle',
-    subdimension: 'social',
+    subdimension: 'teamwork',
     weight: 1.1,
     reverse: false,
     notes: "Sales/customer service"
@@ -1185,7 +1185,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 24,
     text: "Kiinnostaako sinua maatalous, karjanhoito tai eläinlääkintä?",
     dimension: 'interests',
-    subdimension: 'nature',
+    subdimension: 'outdoor',
     weight: 1.2,
     reverse: false,
     notes: "Agriculture/veterinary (more specific than Q25 environmental focus)"
@@ -1194,7 +1194,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 25,
     text: "Haluaisitko suojella ympäristöä ja luontoa?",
     dimension: 'interests',
-    subdimension: 'environment',
+    subdimension: 'impact',
     weight: 1.3,
     reverse: false,
     notes: "Environmental careers"
@@ -1230,7 +1230,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 29,
     text: "Haluaisitko työskennellä laboratoriossa ja tehdä kokeita?",
     dimension: 'interests',
-    subdimension: 'analytical',
+    subdimension: 'organization', // ALREADY_FIXED_TASO2_Q29_ORG,
     weight: 1.2,
     reverse: false,
     notes: "Laboratory/research work"
@@ -1241,7 +1241,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 30,
     text: "Kiinnostaako sinua ympäristönsuojelu ja ilmastonmuutos?",
     dimension: 'interests',
-    subdimension: 'environment',
+    subdimension: 'impact',
     weight: 1.5,
     reverse: false,
     notes: "Environmental careers - critical for ympariston-puolustaja"
@@ -1250,8 +1250,8 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 31,
     text: "Haluaisitko työskennellä kansainvälisissä projekteissa tai ulkomailla?",
     dimension: 'values',
-    subdimension: 'global',
-    weight: 1.3,
+    subdimension: 'environment',
+    weight: 0.1,
     reverse: false,
     notes: "Global/international orientation - critical for visionaari"
   },
@@ -1259,7 +1259,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 32,
     text: "Pidätkö suunnittelusta, aikatauluista ja asioiden organisoinnista?",
     dimension: 'workstyle',
-    subdimension: 'organization',
+    subdimension: 'independence', // ALREADY_FIXED_TASO2_Q32,
     weight: 1.4,
     reverse: false,
     notes: "Organizational skills - critical for jarjestaja"
@@ -1276,7 +1276,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 0,
     text: "Kiinnostaako sinua ohjelmointi tai sovellusten kehittäminen?",
     dimension: 'interests',
-    subdimension: 'technology',
+    subdimension: 'innovation',
     weight: 1.5,
     reverse: false,
     notes: "Equivalent to Q0, Very specific tech indicator - high weight"
@@ -1306,7 +1306,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 3,
     text: "Pidätkö teknisten haasteiden ratkaisemisesta?",
     dimension: 'interests',
-    subdimension: 'technology',
+    subdimension: 'problem_solving',
     weight: 1.1,
     reverse: false,
     notes: "Equivalent to Q3, Problem-solving in tech context"
@@ -1316,7 +1316,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 4,
     text: "Haluaisitko suunnitella digitaalisia tuotteita tai sovelluksia?",
     dimension: 'interests',
-    subdimension: 'technology',
+    subdimension: 'innovation',
     weight: 1.3,
     reverse: false,
     notes: "Equivalent to Q4, Specific tech field (design/dev)"
@@ -1326,7 +1326,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 5,
     text: "Kiinnostaako sinua peliala tai pelien kehittäminen?",
     dimension: 'interests',
-    subdimension: 'technology',
+    subdimension: 'innovation',
     weight: 1.0,
     reverse: false,
     notes: "Equivalent to Q5, Game industry interest"
@@ -1398,7 +1398,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 12,
     text: "Haluaisitko olla tukena ikääntyneille hoitotyössä?",
     dimension: 'interests',
-    subdimension: 'people',
+    subdimension: 'growth', // ALREADY_FIXED_TASO2_Q42,
     weight: 1.1,
     reverse: false,
     notes: "Equivalent to Q12, Elder care"
@@ -1470,7 +1470,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 19,
     text: "Haluaisitko joskus perustaa oman yrityksen?",
     dimension: 'values',
-    subdimension: 'entrepreneurship',
+    subdimension: 'business',
     weight: 1.3,
     reverse: false,
     notes: "Equivalent to Q19, Entrepreneurship orientation"
@@ -1480,7 +1480,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 20,
     text: "Kiinnostaako sinua asiakaspalvelu ja myyntityö?",
     dimension: 'workstyle',
-    subdimension: 'social',
+    subdimension: 'teamwork',
     weight: 1.1,
     reverse: false,
     notes: "Equivalent to Q20, Sales/customer service"
@@ -1532,7 +1532,7 @@ const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 25,
     text: "Haluaisitko työskennellä ympäristönsuojelun parissa?",
     dimension: 'interests',
-    subdimension: 'environment',
+    subdimension: 'impact',
     weight: 1.3,
     reverse: false,
     notes: "Equivalent to Q25, Environmental careers"
@@ -1589,7 +1589,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 0,
     text: "Kiinnostaako sinua ohjelmistokehitys tai sovellusten luominen?",
     dimension: 'interests',
-    subdimension: 'technology',
+    subdimension: 'innovation',
     weight: 1.5,
     reverse: false,
     notes: "Equivalent to Q0, Very specific tech indicator - high weight"
@@ -1619,7 +1619,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 3,
     text: "Pidätkö teknologisten ongelmien ratkaisemisesta?",
     dimension: 'interests',
-    subdimension: 'technology',
+    subdimension: 'problem_solving',
     weight: 1.1,
     reverse: false,
     notes: "Equivalent to Q3, Problem-solving in tech context"
@@ -1629,7 +1629,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 4,
     text: "Haluaisitko suunnitella verkkosivuja tai mobiilisovelluksia?",
     dimension: 'interests',
-    subdimension: 'technology',
+    subdimension: 'innovation',
     weight: 1.3,
     reverse: false,
     notes: "Equivalent to Q4, Specific tech field (design/dev)"
@@ -1639,7 +1639,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 5,
     text: "Kiinnostaako sinua pelikehitys tai peliala?",
     dimension: 'interests',
-    subdimension: 'technology',
+    subdimension: 'innovation',
     weight: 1.0,
     reverse: false,
     notes: "Equivalent to Q5, Game industry interest"
@@ -1783,7 +1783,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 19,
     text: "Haluaisitko joskus perustaa ja johtaa omaa yritystä?",
     dimension: 'values',
-    subdimension: 'entrepreneurship',
+    subdimension: 'business',
     weight: 1.3,
     reverse: false,
     notes: "Equivalent to Q19, Entrepreneurship orientation"
@@ -1793,7 +1793,7 @@ const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 20,
     text: "Pidätkö myyntityöstä ja asiakkaiden kohtaamisesta?",
     dimension: 'workstyle',
-    subdimension: 'social',
+    subdimension: 'teamwork',
     weight: 1.1,
     reverse: false,
     notes: "Equivalent to Q20, Sales/customer service"
@@ -1946,7 +1946,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 5,
     text: "Haluaisitko työskennellä opetusalalla ja kasvatuksessa?",
     dimension: 'interests',
-    subdimension: 'education',  // FIXED: Was 'people', now 'education' for proper teacher matching
+    subdimension: 'people',  // FIXED: Was 'people', now 'education' for proper teacher matching
     weight: 1.3,
     reverse: false,
     notes: "Education sector - maps to education subdimension"
@@ -2123,7 +2123,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 24,
     text: "Pidätkö analyyttisestä ajattelusta ja ongelmien ratkaisemisesta?",
     dimension: 'interests',
-    subdimension: 'analytical',
+    subdimension: 'problem_solving',
     weight: 1.3,
     reverse: false,
     notes: "Problem-solving - like TASO2 Q2"
@@ -2152,8 +2152,8 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 27,
     text: "Haluaisitko työskennellä kansainvälisesti ja nähdä maailmaa?",
     dimension: 'values',
-    subdimension: 'global',
-    weight: 1.3,
+    subdimension: 'environment',
+    weight: 0.1,
     reverse: false,
     notes: "International orientation, global mindset - enables visionaari differentiation"
   },
@@ -2318,7 +2318,7 @@ const NUORI_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 10,
     text: "Onko sinulle erittäin tärkeää saada korkea palkka (yli 4000€/kk)?",
     dimension: 'values',
-    subdimension: 'financial',
+    subdimension: 'business',
     weight: 1.2,
     reverse: false,
     notes: "Equivalent to Q10, Salary priority (high-paying careers)"
@@ -2368,8 +2368,8 @@ const NUORI_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 15,
     text: "Haluaisitko työskennellä kansainvälisessä ja kulttuurisesti monipuolisessa työympäristössä?",
     dimension: 'values',
-    subdimension: 'global',
-    weight: 1.0,
+    subdimension: 'environment',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q15, International orientation"
   },
@@ -2388,7 +2388,7 @@ const NUORI_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 17,
     text: "Haluaisitko työn, jossa voit olla luova ja kehittää uusia ratkaisuja?",
     dimension: 'interests',
-    subdimension: 'creative',
+    subdimension: 'innovation',
     weight: 1.2,
     reverse: false,
     notes: "Equivalent to Q17, Innovation/creativity value"
@@ -2400,7 +2400,7 @@ const NUORI_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 18,
     text: "Haluaisitko työskennellä pääosin etänä kotoa käsin?",
     dimension: 'context',
-    subdimension: 'work_environment',
+    subdimension: 'independence',
     weight: 1.1,
     reverse: false,
     notes: "Equivalent to Q18, Remote work preference"
@@ -2410,7 +2410,7 @@ const NUORI_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 19,
     text: "Sopiiiko sinulle tavallinen toimistotyö ja kiinteä työaika?",
     dimension: 'workstyle',
-    subdimension: 'structure',
+    subdimension: 'organization',
     weight: 0.9,
     reverse: false,
     notes: "Equivalent to Q19, Traditional office preference"
@@ -2420,7 +2420,7 @@ const NUORI_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 20,
     text: "Haluaisitko työn, jossa liikut paljon ja vieraat eri paikoissa?",
     dimension: 'context',
-    subdimension: 'work_environment',
+    subdimension: 'independence',
     weight: 1.0,
     reverse: false,
     notes: "Equivalent to Q20, Mobile/field work preference"
@@ -2460,8 +2460,8 @@ const NUORI_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 24,
     text: "Haluaisitko työn, jossa matkustat paljon eri maihin?",
     dimension: 'values',
-    subdimension: 'global',
-    weight: 1.1,
+    subdimension: 'environment',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q24, International travel preference"
   },
@@ -2472,7 +2472,7 @@ const NUORI_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 25,
     text: "Pidätkö itsenäisestä työskentelystä ilman jatkuvaa valvontaa?",
     dimension: 'workstyle',
-    subdimension: 'autonomy',
+    subdimension: 'independence',
     weight: 1.1,
     reverse: false,
     notes: "Equivalent to Q25, Autonomy preference"
@@ -2502,7 +2502,7 @@ const NUORI_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 28,
     text: "Haluaisitko työn, jossa on kiinteät rutiinit ja toistuvat tehtävät?",
     dimension: 'workstyle',
-    subdimension: 'structure',
+    subdimension: 'organization',
     weight: 1.0,
     reverse: false,
     notes: "Equivalent to Q28, Routine/predictability preference"
@@ -2631,7 +2631,7 @@ const NUORI_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 10,
     text: "Onko sinulle erittäin tärkeää saada korkea palkka (yli 4000€ kuukaudessa)?",
     dimension: 'values',
-    subdimension: 'financial',
+    subdimension: 'business',
     weight: 1.2,
     reverse: false,
     notes: "Equivalent to Q10, Salary priority (high-paying careers)"
@@ -2681,8 +2681,8 @@ const NUORI_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 15,
     text: "Haluaisitko työskennellä monikulttuurisessa ja kansainvälisessä työympäristössä?",
     dimension: 'values',
-    subdimension: 'global',
-    weight: 1.0,
+    subdimension: 'environment',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q15, International orientation"
   },
@@ -2701,7 +2701,7 @@ const NUORI_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 17,
     text: "Haluaisitko työn, jossa voit kehittää uusia ideoita ja olla luova?",
     dimension: 'interests',
-    subdimension: 'creative',
+    subdimension: 'innovation',
     weight: 1.2,
     reverse: false,
     notes: "Equivalent to Q17, Innovation/creativity value"
@@ -2713,7 +2713,7 @@ const NUORI_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 18,
     text: "Haluaisitko työskennellä pääasiassa etänä kotona?",
     dimension: 'context',
-    subdimension: 'work_environment',
+    subdimension: 'independence',
     weight: 1.1,
     reverse: false,
     notes: "Equivalent to Q18, Remote work preference"
@@ -2723,7 +2723,7 @@ const NUORI_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 19,
     text: "Sopiiiko sinulle tavallinen toimistoympäristö ja kiinteä työaika?",
     dimension: 'workstyle',
-    subdimension: 'structure',
+    subdimension: 'organization',
     weight: 0.9,
     reverse: false,
     notes: "Equivalent to Q19, Traditional office preference"
@@ -2733,7 +2733,7 @@ const NUORI_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 20,
     text: "Haluaisitko työn, jossa liikut paljon ja olet usein eri paikoissa?",
     dimension: 'context',
-    subdimension: 'work_environment',
+    subdimension: 'independence',
     weight: 1.0,
     reverse: false,
     notes: "Equivalent to Q20, Mobile/field work preference"
@@ -2773,8 +2773,8 @@ const NUORI_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 24,
     text: "Haluaisitko työn, jossa matkustat paljon työn puolesta?",
     dimension: 'values',
-    subdimension: 'global',
-    weight: 1.1,
+    subdimension: 'environment',
+    weight: 0.1,
     reverse: false,
     notes: "Equivalent to Q24, International travel preference"
   },
@@ -2785,7 +2785,7 @@ const NUORI_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 25,
     text: "Pidätkö siitä, että saat tehdä työsi itsenäisesti?",
     dimension: 'workstyle',
-    subdimension: 'autonomy',
+    subdimension: 'independence',
     weight: 1.1,
     reverse: false,
     notes: "Equivalent to Q25, Autonomy preference"
@@ -2815,7 +2815,7 @@ const NUORI_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 28,
     text: "Haluaisitko työn, jossa on selkeät rutiinit ja ennustettavat tehtävät?",
     dimension: 'workstyle',
-    subdimension: 'structure',
+    subdimension: 'organization',
     weight: 1.0,
     reverse: false,
     notes: "Equivalent to Q28, Routine/predictability preference"

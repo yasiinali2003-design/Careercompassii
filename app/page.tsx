@@ -299,21 +299,20 @@ export default function HomePage() {
       {/* Footer - Clean, minimal */}
       <footer className="border-t border-white/10 py-12 bg-[#0f1419]">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
             <div className="flex flex-col gap-2">
               <Logo className="h-8 w-auto" />
-              <div className="flex gap-4 text-sm mt-4">
+              <p className="text-neutral-500 mt-4 text-sm">Tulevaisuus alkaa itsensä löytämisestä</p>
+            </div>
+            <div className="text-sm">
+              <p className="font-semibold mb-3 text-white">Kouluille</p>
+              <ul className="space-y-2">
+                <li><Link href="/kouluille" className="text-neutral-400 hover:text-white transition-colors">Hinnoittelu</Link></li>
+                <li><Link href="/teacher/login" className="text-neutral-400 hover:text-white transition-colors">Opettajan kirjautuminen</Link></li>
                 {isLocalhost && (
-                  <Link href="/kouluille" className="text-neutral-400 hover:text-white transition-colors">
-                    Kouluille
-                  </Link>
+                  <li><Link href="/admin/school-dashboard" className="text-neutral-400 hover:text-white transition-colors">Koulun analytiikka</Link></li>
                 )}
-                {process.env.NEXT_PUBLIC_SHOW_ADMIN === 'true' && (
-                  <Link href="/admin/teachers" className="text-neutral-400 hover:text-white transition-colors">
-                    Admin
-                  </Link>
-                )}
-              </div>
+              </ul>
             </div>
             <div className="text-sm">
               <p className="font-semibold mb-3 text-white">Laki ja tietosuoja</p>
@@ -326,7 +325,7 @@ export default function HomePage() {
             <div className="text-sm">
               <p className="font-semibold mb-3 text-white">Tuki</p>
               <p><a href="mailto:support@urakompassi.com" className="text-neutral-400 hover:text-white transition-colors">support@urakompassi.com</a></p>
-              <p className="text-neutral-500 mt-6">Tulevaisuus alkaa itsensä löytämisestä • © 2025 Urakompassi</p>
+              <p className="text-neutral-500 mt-6">Urakompassi © 2025 | All rights reserved</p>
             </div>
           </div>
         </div>
