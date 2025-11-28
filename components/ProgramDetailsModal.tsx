@@ -59,7 +59,7 @@ export function ProgramDetailsModal({
       case 'reach':
         return 'text-orange-600';
       default:
-        return 'text-gray-600';
+        return 'text-neutral-300';
     }
   };
 
@@ -83,7 +83,7 @@ export function ProgramDetailsModal({
           {program.description && (
             <div>
               <h3 className="font-semibold text-gray-900 mb-2">Kuvaus</h3>
-              <p className="text-gray-700 leading-relaxed">{program.description}</p>
+              <p className="text-neutral-200 leading-relaxed">{program.description}</p>
             </div>
           )}
 
@@ -92,13 +92,13 @@ export function ProgramDetailsModal({
             <div className="bg-slate-50 rounded-lg p-4">
               <div className="flex items-center gap-2 mb-2">
                 <Calendar className="h-4 w-4 text-primary" />
-                <span className="text-sm font-semibold text-gray-700">Pisterajat</span>
+                <span className="text-sm font-semibold text-neutral-200">Pisterajat</span>
               </div>
               <p className="text-lg font-bold text-gray-900">
                 {formatPoints(program.minPoints)}
                 {program.maxPoints && ` - ${formatPoints(program.maxPoints)}`}
               </p>
-              <p className="text-xs text-gray-600 mt-1">
+              <p className="text-xs text-neutral-300 mt-1">
                 Sinun pisteet: {formatPoints(userPoints)}
               </p>
             </div>
@@ -106,7 +106,7 @@ export function ProgramDetailsModal({
             <div className="bg-green-50 rounded-lg p-4">
               <div className="flex items-center gap-2 mb-2">
                 <Users className="h-4 w-4 text-green-600" />
-                <span className="text-sm font-semibold text-gray-700">Mahdollisuus</span>
+                <span className="text-sm font-semibold text-neutral-200">Mahdollisuus</span>
               </div>
               <p className={`text-lg font-bold ${getChanceColor()}`}>
                 {getChanceText()}
@@ -120,7 +120,7 @@ export function ProgramDetailsModal({
               <h3 className="font-semibold text-gray-900 mb-2">
                 Yhteensopivuus ammattisuosituksiesi kanssa
               </h3>
-              <p className="text-gray-700">
+              <p className="text-neutral-200">
                 Tämä koulutusohjelma sopii {matchCount} {matchCount === 1 ? 'ammattisuosituksellesi' : 'ammattisuosituksellesi'}.
                 {matchCount >= 2 && ' Tämä on erittäin hyvä yhteensopivuus!'}
               </p>
@@ -128,7 +128,7 @@ export function ProgramDetailsModal({
           )}
 
           {/* Institution Type */}
-          <div className="flex items-center gap-2 text-sm text-gray-600">
+          <div className="flex items-center gap-2 text-sm text-neutral-300">
             <MapPin className="h-4 w-4" />
             <span>
               <strong>Oppilaitostyyppi:</strong> {program.institutionType === 'yliopisto' ? 'Yliopisto' : 'Ammattikorkeakoulu'}
@@ -136,7 +136,7 @@ export function ProgramDetailsModal({
           </div>
 
           {/* Field */}
-          <div className="flex items-center gap-2 text-sm text-gray-600">
+          <div className="flex items-center gap-2 text-sm text-neutral-300">
             <span>
               <strong>Ala:</strong> {program.field.charAt(0).toUpperCase() + program.field.slice(1)}
             </span>
@@ -159,7 +159,7 @@ export function ProgramDetailsModal({
                       className={`px-3 py-1 rounded-full text-xs font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 ${
                         isMatched
                           ? 'bg-green-100 text-green-800 border-2 border-green-300 hover:bg-green-200'
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          : 'bg-neutral-800/30 text-neutral-200 hover:bg-neutral-700/40'
                       }`}
                     >
                       {careerTitle}
@@ -187,7 +187,7 @@ export function ProgramDetailsModal({
           </div>
 
           {/* Additional Info */}
-          <div className="bg-gray-50 rounded-lg p-4 text-xs text-gray-600">
+          <div className="bg-neutral-900/20 rounded-lg p-4 text-xs text-neutral-300">
             <p>
               <strong>Huomio:</strong> Pisterajat perustuvat vuoden 2025 todistusvalinnan tietoihin. 
               Tarkat pisterajat voivat vaihdella vuosittain. Tarkista aina viralliset tiedot Opintopolusta ennen hakemista.

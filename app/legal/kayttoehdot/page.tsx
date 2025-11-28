@@ -2,13 +2,13 @@ import Link from 'next/link';
 
 export default function KayttoehdotPage() {
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col">
+    <div className="min-h-screen text-white flex flex-col">
       <main className="flex-1">
         <div className="container mx-auto px-4 py-12 max-w-3xl">
-          <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-primary">KÄYTTÖEHDOT — Urakompassi Oy</h1>
-          <p className="text-sm text-muted-foreground mb-8">Versio 3.3 • Viimeksi päivitetty: 7.11.2025 • Y‑tunnus: 3579081-5 • Rekisteröity tavaramerkki: [täydennä]</p>
+          <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-white">KÄYTTÖEHDOT — Urakompassi Oy</h1>
+          <p className="text-sm text-neutral-400 mb-8">Versio 3.3 • Viimeksi päivitetty: 7.11.2025 • Y‑tunnus: 3579081-5 • Rekisteröity tavaramerkki: [täydennä]</p>
           <div className="space-y-6 leading-relaxed text-base">
-          <pre className="whitespace-pre-wrap font-sans text-[15px]">
+          <pre className="whitespace-pre-wrap font-sans text-[15px] text-neutral-200">
 {`## 1 Johdanto
 
 Nämä käyttöehdot (“Ehdot”) säätelevät Urakompassi Oy:n (“Urakompassi”, “me”) tarjoaman verkkopalvelun (“Palvelu”) käyttöä. Käyttämällä Palvelua hyväksyt nämä Ehdot kulloinkin voimassa olevina. Jos et hyväksy Ehtoja, älä käytä Palvelua. Palvelu on tekoälypohjainen urasuunnittelu- ja testijärjestelmä; tulokset ovat ohjeellisia eivätkä takaa tiettyä lopputulosta.
@@ -80,24 +80,24 @@ Sähköposti: support@urakompassi.fi`}
         </div>
         </div>
       </main>
-      <footer className="border-t border-gray-200 py-6 bg-gray-50 mt-auto">
+      <footer className="border-t border-white/10 py-6 mt-auto">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
             <Link 
               href="/" 
-              className="text-primary hover:underline font-medium"
+              className="text-white hover:text-neutral-300 hover:underline font-medium"
             >
               ← Palaa etusivulle
             </Link>
-            <div className="flex items-center gap-4 text-gray-600">
-              <Link href="/legal/tietosuojaseloste" className="hover:text-gray-900 hover:underline">
+            <div className="flex items-center gap-4 text-neutral-300">
+              <Link href="/legal/tietosuojaseloste" className="hover:text-white hover:underline">
                 Tietosuojaseloste
               </Link>
-              <Link href="/legal/immateriaalioikeus-ja-kilpailijasuoja" className="hover:text-gray-900 hover:underline">
+              <Link href="/legal/immateriaalioikeus-ja-kilpailijasuoja" className="hover:text-white hover:underline">
                 Immateriaalioikeus- ja kilpailijansuoja
               </Link>
             </div>
-            <p className="text-gray-500">© 2025 Urakompassi</p>
+            <p className="text-neutral-400">© 2025 Urakompassi</p>
           </div>
         </div>
       </footer>

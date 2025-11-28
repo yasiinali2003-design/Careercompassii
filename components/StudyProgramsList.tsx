@@ -382,11 +382,11 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
               </Button>
             </div>
           </div>
-          <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-gray-600">
+          <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-neutral-300">
             <span className="inline-flex items-center gap-2 rounded-full bg-slate-50 px-3 py-1 font-medium text-primary">
               {loading ? 'Ladataan ohjelmia…' : `Näytetään ${programs.length} / ${total} ohjelmaa`}
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1">
+            <span className="inline-flex items-center gap-2 rounded-full bg-neutral-800/30 px-3 py-1">
               <span className="h-2 w-2 rounded-full bg-slate-500" />
               {educationType === 'yliopisto' ? 'Yliopistohaku' : 'AMK-haku'}
             </span>
@@ -403,7 +403,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
               </span>
             )}
             {fieldFilter !== 'all' && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1">
+              <span className="inline-flex items-center gap-1 rounded-full bg-neutral-800/30 px-3 py-1">
                 <span className="font-semibold">Ala:</span>
                 {FIELD_OPTIONS.find(f => f.value === fieldFilter)?.label || 'Kaikki'}
               </span>
@@ -432,12 +432,12 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
         {loading && (
           <div className="space-y-3">
             {[...Array(3)].map((_, index) => (
-              <div key={index} className="animate-pulse rounded-2xl border border-gray-200 bg-gray-50 p-4">
-                <div className="h-4 w-1/3 rounded bg-gray-200" />
-                <div className="mt-3 h-3 w-full rounded bg-gray-200" />
+              <div key={index} className="animate-pulse rounded-2xl border border-gray-200 bg-neutral-900/20 p-4">
+                <div className="h-4 w-1/3 rounded bg-neutral-700/40" />
+                <div className="mt-3 h-3 w-full rounded bg-neutral-700/40" />
                 <div className="mt-2 flex gap-2">
-                  <div className="h-4 w-24 rounded bg-gray-200" />
-                  <div className="h-4 w-28 rounded bg-gray-200" />
+                  <div className="h-4 w-24 rounded bg-neutral-700/40" />
+                  <div className="h-4 w-28 rounded bg-neutral-700/40" />
                 </div>
               </div>
             ))}
@@ -468,7 +468,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
               <SearchX className="h-8 w-8" />
             </div>
             <h3 className="mt-4 text-lg font-semibold text-gray-900">Ei vielä sopivia tuloksia</h3>
-            <p className="mt-2 text-sm text-gray-600 max-w-lg mx-auto">
+            <p className="mt-2 text-sm text-neutral-300 max-w-lg mx-auto">
               Tällä hetkellä pisteesi jäävät valittujen ohjelmien pisterajojen alle. Kokeile korottaa arvosanaa skenaariotyökalulla tai laajenna hakua – näytämme myös tavoitteellisia ohjelmia, jotka ovat lähellä nykyisiä pisteitäsi.
               {careerSlugs.length > 0 && !showAllCareers
                 ? ' Voit halutessasi avata myös muut alat, jotka eivät suoraan kuulu urasuosituksiin.'
@@ -574,11 +574,11 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
                             </h3>
                             <Info className="h-4 w-4 text-gray-400" />
                           </div>
-                          <p className="text-sm text-gray-600 mb-2">
+                          <p className="text-sm text-neutral-300 mb-2">
                             {program.institution}
                           </p>
                           {program.description && (
-                            <p className="text-sm text-gray-700 mb-3">
+                            <p className="text-sm text-neutral-200 mb-3">
                               {program.description}
                             </p>
                           )}
@@ -598,7 +598,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
                                 Tavoiteohjelma
                               </span>
                             )}
-                            <span className="px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700">
+                            <span className="px-2 py-1 rounded-full text-xs font-medium bg-neutral-800/30 text-neutral-200">
                               {program.institutionType === 'yliopisto' ? 'Yliopisto' : 'AMK'}
                             </span>
                           </div>
@@ -614,7 +614,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
 
                           {/* Trend Indicator */}
                           {trend && (
-                            <div className="text-xs bg-gray-50 rounded px-3 py-2 mb-2">
+                            <div className="text-xs bg-neutral-900/20 rounded px-3 py-2 mb-2">
                               <span className="font-semibold">Trendi:</span>{' '}
                               <span className={trend.color}>
                                 {trend.icon} {trend.label}
@@ -640,12 +640,12 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
                         {isFavorite ? 'Tallennettu' : 'Tallenna suosikiksi'}
                       </button>
                       <div className="text-right">
-                        <p className="text-sm text-gray-600">Pisterajat:</p>
+                        <p className="text-sm text-neutral-300">Pisterajat:</p>
                         <p className="text-lg font-semibold text-gray-900">
                           {formatPoints(program.minPoints)}
                           {program.maxPoints && ` - ${formatPoints(program.maxPoints)}`}
                         </p>
-                        <p className="text-xs text-gray-500 mt-1">
+                        <p className="text-xs text-neutral-400 mt-1">
                           Sinun pisteet: {formatPoints(points)}
                         </p>
                         {isReachProgram && reachGap > 0 && (
@@ -654,7 +654,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
                           </p>
                         )}
                         {historyConfidence?.detail && (
-                          <p className="text-xs text-gray-500 mt-1">
+                          <p className="text-xs text-neutral-400 mt-1">
                             {historyConfidence.detail}
                             {historyConfidence.history?.applicantCount ? ` Hakijoita: ${historyConfidence.history.applicantCount}.` : ''}
                           </p>
@@ -682,7 +682,7 @@ export function StudyProgramsList({ points, careerSlugs, educationType, onOpenSc
             
             {total > programs.length && (
               <div className="mt-4 text-center">
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-neutral-300">
                   Näytetään {programs.length} ensimmäistä {total} koulutusohjelmasta. Löydät lisää koulutusohjelmia{' '}
                   <Link href="https://opintopolku.fi" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                     Opintopolusta

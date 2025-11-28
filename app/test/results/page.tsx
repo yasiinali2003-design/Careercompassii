@@ -107,7 +107,7 @@ export default function ResultsPage() {
   // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419] flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-neutral-300">Analysoidaan tuloksiasi...</p>
@@ -119,7 +119,7 @@ export default function ResultsPage() {
   // Error state
   if (error || !results) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419] flex items-center justify-center p-4">
+      <div className="min-h-screen flex items-center justify-center p-4">
         <Card className="max-w-md">
           <CardHeader>
             <CardTitle>Virhe</CardTitle>
@@ -138,7 +138,7 @@ export default function ResultsPage() {
   const { userProfile, topCareers, cohortCopy } = results;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         
         {/* Logo - Top Left */}
@@ -176,7 +176,7 @@ export default function ResultsPage() {
         </div>
 
         {/* User Profile Summary */}
-        <Card className="mb-8 border-2 border-white/20 bg-[#1a1d23]">
+        <Card className="mb-8 border-2 border-white/20 bg-[#11161D]">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               Sinun profiilisi
@@ -216,7 +216,7 @@ export default function ResultsPage() {
 
         {/* Education Path Recommendation (YLA and TASO2) */}
         {(userProfile.cohort === 'YLA' || userProfile.cohort === 'TASO2') && results.educationPath && (
-          <Card className="mb-8 border-2 border-green-500/30 bg-[#1a1d23]">
+          <Card className="mb-8 border-2 border-green-500/30 bg-[#11161D]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-2xl text-white">
                 Sinun koulutuspolkusi
@@ -358,7 +358,7 @@ export default function ResultsPage() {
          results.educationPath &&
          (results.educationPath.primary === 'yliopisto' || results.educationPath.primary === 'amk') && (
           <div className="mb-10">
-            <div className="rounded-2xl border-2 border-white/20 bg-[#1a1d23] p-6 shadow-sm">
+            <div className="rounded-2xl border-2 border-white/20 bg-[#11161D] p-6 shadow-sm">
               <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <div className="md:max-w-2xl">
                   <h3 className="text-2xl font-bold text-white mb-2">Laske todistuspisteesi seuraavaksi</h3>
@@ -417,7 +417,7 @@ function DimensionBar({ label, score, color }: { label: string; score: number; c
         <span className="font-medium text-neutral-300">{label}</span>
         <span className="text-neutral-400">{percentage}%</span>
       </div>
-      <div className="w-full bg-gray-200 rounded-full h-2.5">
+      <div className="w-full bg-neutral-700/40 rounded-full h-2.5">
         <div
           className={`${color} h-2.5 rounded-full transition-all duration-500`}
           style={{ width: `${percentage}%` }}
@@ -440,7 +440,7 @@ function CareerMatchCard({
     const styles = {
       high: 'bg-green-100 text-green-800',
       medium: 'bg-yellow-100 text-yellow-800',
-      low: 'bg-gray-100 text-white'
+      low: 'bg-neutral-800/30 text-white'
     };
     const labels = {
       high: 'Vahva suositus',
@@ -514,7 +514,7 @@ function CareerMatchCard({
 
         {/* Visual hint for links */}
         <div className="pt-2 border-t border-gray-200">
-          <p className="text-xs text-gray-500 flex items-center gap-1">
+          <p className="text-xs text-neutral-400 flex items-center gap-1">
             <span>ℹ️</span>
             <span>Klikkaa ammattia nähdäksesi koulutuspolut ja työpaikat</span>
           </p>
@@ -602,7 +602,7 @@ function FeedbackSection() {
 
   if (submitted) {
     return (
-      <Card className="mt-12 border-2 border-green-200 bg-gradient-to-r from-green-50 to-teal-50/20">
+      <Card className="mt-12 border-2 border-green-300/50 bg-white/5 backdrop-blur-sm">
         <CardContent className="py-8">
           <div className="text-center">
             <div className="text-4xl mb-3">✅</div>
@@ -619,7 +619,7 @@ function FeedbackSection() {
   }
 
   return (
-    <Card className="mt-12 border-2 border-white/20 bg-[#1a1d23]">
+    <Card className="mt-12 border-2 border-white/20 bg-[#11161D]">
       <CardHeader>
         <CardTitle className="text-2xl">
           Kerro meille mielipiteesi
@@ -667,7 +667,7 @@ function FeedbackSection() {
           <div className="animate-in fade-in slide-in-from-top-2 duration-300">
             <label className="block text-base font-semibold text-white mb-2">
               Mikä oli parasta? Mitä voisimme parantaa?
-              <span className="text-sm font-normal text-gray-500 ml-2">(valinnainen)</span>
+              <span className="text-sm font-normal text-neutral-400 ml-2">(valinnainen)</span>
             </label>
             
             <textarea
@@ -679,7 +679,7 @@ function FeedbackSection() {
               className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all resize-none"
             />
             
-            <div className="text-sm text-gray-500 mt-1 text-right">
+            <div className="text-sm text-neutral-400 mt-1 text-right">
               {feedbackText.length}/500 merkkiä
             </div>
           </div>
@@ -742,7 +742,7 @@ function getEducationPathConfidenceBadge(confidence: 'high' | 'medium' | 'low') 
   const styles = {
     high: 'bg-green-100 text-green-800',
     medium: 'bg-yellow-100 text-yellow-800',
-    low: 'bg-gray-100 text-white'
+    low: 'bg-neutral-800/30 text-white'
   };
   const labels = {
     high: 'Vahva suositus',

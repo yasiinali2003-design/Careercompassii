@@ -84,7 +84,7 @@ export default function SchoolDashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
+      <div className="min-h-screen">
         <div className="container mx-auto px-4 py-12">
           <div className="text-center">
             <p className="text-neutral-300">Ladataan analytiikkaa...</p>
@@ -96,7 +96,7 @@ export default function SchoolDashboardPage() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
+      <div className="min-h-screen">
         <div className="container mx-auto px-4 py-12">
           <div className="text-center text-red-400">
             <AlertCircle className="h-12 w-12 mx-auto mb-4" />
@@ -112,7 +112,7 @@ export default function SchoolDashboardPage() {
 
   if (!analytics) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
+      <div className="min-h-screen">
         <div className="container mx-auto px-4 py-12">
           <div className="text-center">
             <p className="text-neutral-300">Ei dataa saatavilla.</p>
@@ -123,8 +123,8 @@ export default function SchoolDashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
-      <nav className="border-b border-white/20 bg-black/40 backdrop-blur-xl sticky top-0 z-50">
+    <div className="min-h-screen">
+      <nav className="border-b border-white/10 bg-[#05070B]/95 backdrop-blur-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <Logo className="h-10 w-auto" />
@@ -281,17 +281,17 @@ export default function SchoolDashboardPage() {
                 {analytics.topCareers.map((career, index) => (
                   <div key={index} className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <span className="text-sm font-medium text-gray-500 w-6">{index + 1}.</span>
+                      <span className="text-sm font-medium text-neutral-400 w-6">{index + 1}.</span>
                       <span className="font-medium">{career.name}</span>
                     </div>
                     <div className="flex items-center gap-4">
-                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                      <div className="w-32 bg-neutral-700/40 rounded-full h-2">
                         <div
                           className="bg-primary h-2 rounded-full"
                           style={{ width: `${career.percentage}%` }}
                         />
                       </div>
-                      <span className="text-sm text-gray-600 w-16 text-right">
+                      <span className="text-sm text-neutral-300 w-16 text-right">
                         {career.count} ({career.percentage}%)
                       </span>
                     </div>
@@ -299,7 +299,7 @@ export default function SchoolDashboardPage() {
                 ))}
               </div>
             ) : (
-              <p className="text-gray-500">Ei dataa saatavilla.</p>
+              <p className="text-neutral-400">Ei dataa saatavilla.</p>
             )}
           </CardContent>
         </Card>
@@ -334,11 +334,11 @@ export default function SchoolDashboardPage() {
                       <div>
                         <div className="flex justify-between mb-1">
                           <span className="text-sm font-medium">Lukio</span>
-                          <span className="text-sm text-gray-600">
+                          <span className="text-sm text-neutral-300">
                             {analytics.educationPathDistribution.lukio} ({lukioPct}%)
                           </span>
                         </div>
-                        <div className="w-full bg-gray-200 rounded-full h-3">
+                        <div className="w-full bg-neutral-700/40 rounded-full h-3">
                           <div
                             className="bg-primary h-3 rounded-full"
                             style={{ width: `${lukioPct}%` }}
@@ -348,11 +348,11 @@ export default function SchoolDashboardPage() {
                       <div>
                         <div className="flex justify-between mb-1">
                           <span className="text-sm font-medium">Ammattikoulu</span>
-                          <span className="text-sm text-gray-600">
+                          <span className="text-sm text-neutral-300">
                             {analytics.educationPathDistribution.ammattikoulu} ({ammattikouluPct}%)
                           </span>
                         </div>
-                        <div className="w-full bg-gray-200 rounded-full h-3">
+                        <div className="w-full bg-neutral-700/40 rounded-full h-3">
                           <div
                             className="bg-green-600 h-3 rounded-full"
                             style={{ width: `${ammattikouluPct}%` }}
@@ -362,11 +362,11 @@ export default function SchoolDashboardPage() {
                       <div>
                         <div className="flex justify-between mb-1">
                           <span className="text-sm font-medium">Kansanopisto</span>
-                          <span className="text-sm text-gray-600">
+                          <span className="text-sm text-neutral-300">
                             {analytics.educationPathDistribution.kansanopisto} ({kansanopistoPct}%)
                           </span>
                         </div>
-                        <div className="w-full bg-gray-200 rounded-full h-3">
+                        <div className="w-full bg-neutral-700/40 rounded-full h-3">
                           <div
                             className="bg-secondary h-3 rounded-full"
                             style={{ width: `${kansanopistoPct}%` }}
@@ -398,9 +398,9 @@ export default function SchoolDashboardPage() {
                 <div key={dim.label}>
                   <div className="flex justify-between mb-1">
                     <span className="text-sm font-medium">{dim.label}</span>
-                    <span className="text-sm text-gray-600">{Math.round(dim.value)}%</span>
+                    <span className="text-sm text-neutral-300">{Math.round(dim.value)}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div className="w-full bg-neutral-700/40 rounded-full h-3">
                     <div
                       className="bg-primary h-3 rounded-full"
                       style={{ width: `${Math.min(Math.max(dim.value, 0), 100)}%` }}
@@ -425,7 +425,7 @@ export default function SchoolDashboardPage() {
                   <div key={index} className="flex items-center justify-between">
                     <span className="text-sm font-medium">{month.month}</span>
                     <div className="flex items-center gap-4">
-                      <div className="w-48 bg-gray-200 rounded-full h-2">
+                      <div className="w-48 bg-neutral-700/40 rounded-full h-2">
                         <div
                           className="bg-primary h-2 rounded-full"
                           style={{
@@ -436,7 +436,7 @@ export default function SchoolDashboardPage() {
                           }}
                         />
                       </div>
-                      <span className="text-sm text-gray-600 w-12 text-right">{month.tests}</span>
+                      <span className="text-sm text-neutral-300 w-12 text-right">{month.tests}</span>
                     </div>
                   </div>
                 ))}
@@ -462,7 +462,7 @@ export default function SchoolDashboardPage() {
                     <div key={index}>
                       <div className="flex justify-between mb-2">
                         <span className="font-medium">{year.year}</span>
-                        <span className="text-sm text-gray-600">{year.tests} testiä</span>
+                        <span className="text-sm text-neutral-300">{year.tests} testiä</span>
                       </div>
                       {total > 0 && (
                         <div className="grid grid-cols-3 gap-2 text-xs">

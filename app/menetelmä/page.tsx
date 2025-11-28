@@ -6,7 +6,7 @@ import { CheckCircle, ArrowRight, Target, Users, Brain, TrendingUp, Shield, Data
 
 export default function MethodologyPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
+    <div className="min-h-screen">
       {/* Navigation */}
       <nav className="nav-blur sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
@@ -39,7 +39,7 @@ export default function MethodologyPage() {
         <div className="max-w-4xl mx-auto space-y-8">
 
           {/* Overview */}
-          <Card className="border-2 border-white/20 bg-[#1a1d23]">
+          <Card className="border-2 border-white/20 bg-[#11161D]">
             <CardHeader>
               <CardTitle className="text-3xl flex items-center gap-3">
                 <Brain className="h-8 w-8 text-blue-400" />
@@ -59,7 +59,7 @@ export default function MethodologyPage() {
           </Card>
 
           {/* Step-by-Step Process */}
-          <Card className="border-2 border-white/20 bg-[#1a1d23]">
+          <Card className="border-2 border-white/20 bg-[#11161D]">
             <CardHeader>
               <CardTitle className="text-3xl flex items-center gap-3">
                 <Target className="h-8 w-8 text-green-400" />
@@ -129,10 +129,10 @@ export default function MethodologyPage() {
               <div className="bg-white/5 rounded-lg p-6">
                 <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-2">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-500 text-white text-sm">3</span>
-                  Vertailemme profiiliasi 412 ammattiin
+                  Vertailemme profiiliasi 760 ammattiin
                 </h3>
                 <p className="text-neutral-300 mb-4">
-                  Meillä on <strong className="text-white">412 suomalaista ammattia</strong> tietokannassa.
+                  Meillä on <strong className="text-white">760 suomalaista ammattia</strong> tietokannassa.
                   Jokaisella ammatilla on oma profiili, joka kuvaa:
                 </p>
                 <ul className="space-y-2 ml-6">
@@ -186,7 +186,7 @@ export default function MethodologyPage() {
           </Card>
 
           {/* Data Sources */}
-          <Card className="border-2 border-white/20 bg-[#1a1d23]">
+          <Card className="border-2 border-white/20 bg-[#11161D]">
             <CardHeader>
               <CardTitle className="text-3xl flex items-center gap-3">
                 <Database className="h-8 w-8 text-yellow-400" />
@@ -232,7 +232,7 @@ export default function MethodologyPage() {
           </Card>
 
           {/* Trust & Privacy */}
-          <Card className="border-2 border-white/20 bg-[#1a1d23]">
+          <Card className="border-2 border-white/20 bg-[#11161D]">
             <CardHeader>
               <CardTitle className="text-3xl flex items-center gap-3">
                 <Shield className="h-8 w-8 text-blue-400" />
@@ -262,7 +262,7 @@ export default function MethodologyPage() {
           </Card>
 
           {/* Limitations */}
-          <Card className="border-2 border-yellow-200/50 bg-[#1a1d23]">
+          <Card className="border-2 border-yellow-200/50 bg-[#11161D]">
             <CardHeader>
               <CardTitle className="text-3xl flex items-center gap-3">
                 <TrendingUp className="h-8 w-8 text-yellow-400" />

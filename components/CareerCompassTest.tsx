@@ -485,30 +485,30 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
 
   return (
     <div 
-      className={`rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-800 ease-in-out ${
+      className={`rounded-3xl border border-white/20 bg-white/5 backdrop-blur-sm p-8 shadow-sm transition-all duration-800 ease-in-out ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2.5'
       }`}
     >
-      <h1 className="text-3xl font-bold tracking-tight text-[#2563EB]">Löydä urasuuntasi</h1>
+      <h1 className="text-3xl font-bold tracking-tight text-white">Löydä urasuuntasi</h1>
       
       <div className="mt-4 space-y-3">
-        <p className="text-[#475569] leading-relaxed">
+        <p className="text-neutral-300 leading-relaxed">
           Vastaa 30 huolellisesti suunniteltuun kysymykseen, jotka kartoittavat kiinnostuksesi, arvosi ja vahvuutesi.
         </p>
-        <p className="text-[#475569] leading-relaxed">
+        <p className="text-neutral-300 leading-relaxed">
           Monipuolinen analyysimme perustuu tutkittuun persoonallisuus- ja urapsykologiaan ja tarjoaa henkilökohtaisia urasuosituksia Suomen työmarkkinoille.
         </p>
       </div>
       
-      <p className="mt-4 text-sm text-slate-700">
+      <p className="mt-4 text-sm text-neutral-400">
         30 kysymystä • 8-10 minuuttia • Maksuton • Vastauksesi käsitellään luottamuksellisesti
       </p>
       
       {hasSavedProgress && (
-        <div className="mt-6 rounded-lg bg-slate-50 border border-primary/20 p-4">
+        <div className="mt-6 rounded-lg bg-white/5 border border-white/20 p-4">
           <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-slate-500"></div>
-            <p className="text-sm text-primary font-medium">
+            <div className="h-2 w-2 rounded-full bg-[#2B5F75]"></div>
+            <p className="text-sm text-white font-medium">
               Löysimme tallennetut vastauksesi – voit jatkaa siitä mihin jäit!
             </p>
           </div>
@@ -527,17 +527,17 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
 };
 
 const GroupCard = ({ title, desc, onClick }: { title: string; desc: string; onClick: () => void }) => (
-  <button onClick={onClick} className="flex w-full flex-col items-start rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm transition hover:shadow-md">
-    <h3 className="text-xl font-semibold">{title}</h3>
-    <p className="mt-1 text-slate-600">{desc}</p>
+  <button onClick={onClick} className="flex w-full flex-col items-start rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm p-6 text-left shadow-sm transition hover:shadow-md hover:bg-white/10">
+    <h3 className="text-xl font-semibold text-white">{title}</h3>
+    <p className="mt-1 text-neutral-300">{desc}</p>
   </button>
 );
 
 const GroupSelect = ({ onChoose, onBack }: { onChoose: (g: "YLA" | "TASO2" | "NUORI") => void; onBack: () => void }) => (
   <div className="space-y-6">
     <div className="text-center">
-      <h1 className="text-3xl font-bold">Valitse ikäryhmäsi</h1>
-      <p className="mt-2 text-slate-600">Tämä auttaa meitä antamaan sinulle sopivimmat kysymykset</p>
+      <h1 className="text-3xl font-bold text-white">Valitse ikäryhmäsi</h1>
+      <p className="mt-2 text-neutral-300">Tämä auttaa meitä antamaan sinulle sopivimmat kysymykset</p>
     </div>
 
     <div className="grid gap-4">
@@ -671,8 +671,8 @@ const QuestionScreen = ({
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-        <h2 className="text-xl font-semibold mb-6">{questions[index]}</h2>
+      <div className="rounded-3xl border border-white/20 bg-white/5 backdrop-blur-sm p-8 shadow-sm">
+        <h2 className="text-xl font-semibold mb-6 text-white">{questions[index]}</h2>
         <RatingScale value={answers[index]} onChange={onAnswer} />
       </div>
 
@@ -680,13 +680,13 @@ const QuestionScreen = ({
         <button
           onClick={onPrev}
           disabled={index === 0}
-          className="rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="rounded-xl border border-white/20 px-4 py-2 text-white hover:bg-white/10 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Edellinen
         </button>
         <button
           onClick={onRestart}
-          className="rounded-xl px-4 py-2 text-slate-700 hover:bg-slate-50"
+          className="rounded-xl px-4 py-2 text-neutral-300 hover:bg-white/10"
         >
           Aloita alusta
         </button>
@@ -972,7 +972,7 @@ const Summary = ({
               onKeyDown={handleTabKeyDown}
               className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
                 activeTab === 'education'
-                  ? 'bg-white text-[#2563EB] shadow-sm'
+                  ? 'bg-white/10 text-white shadow-sm border border-white/20'
                   : 'text-white/80 hover:text-white'
               }`}
             >
@@ -986,7 +986,7 @@ const Summary = ({
               onKeyDown={handleTabKeyDown}
               className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
                 activeTab === 'jobs'
-                  ? 'bg-white text-[#2563EB] shadow-sm'
+                  ? 'bg-white/10 text-white shadow-sm border border-white/20'
                   : 'text-white/80 hover:text-white'
               }`}
             >
@@ -998,7 +998,7 @@ const Summary = ({
           <button
             onClick={openLink}
             aria-label={`Avaa ${linkType} ${sourceName}`}
-            className="px-6 py-2 bg-white text-[#2563EB] font-semibold rounded-xl hover:bg-white/90 transition-colors flex items-center gap-2"
+            className="px-6 py-2 bg-white/10 text-white border border-white/20 font-semibold rounded-xl hover:bg-white/20 transition-colors flex items-center gap-2"
           >
             Avaa
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1143,10 +1143,10 @@ const Summary = ({
           {/* Close Button */}
           <button
             onClick={closeCareerDetail}
-            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/90 hover:bg-white shadow-lg transition-colors"
+            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 shadow-lg transition-colors"
             aria-label="Sulje"
           >
-            <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -1173,26 +1173,26 @@ const Summary = ({
             {/* Key Info Grid */}
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               {/* Salary */}
-              <div className="bg-white rounded-xl p-6">
-                <h3 className="text-sm font-semibold text-[#0F172A] uppercase tracking-wide mb-3">Palkka</h3>
-                <p className="text-2xl font-bold text-[#2563EB] mb-2">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wide mb-3">Palkka</h3>
+                <p className="text-2xl font-bold text-[#2B5F75] mb-2">
                   {career.salary_eur_month.median}€/kk
                 </p>
-                <p className="text-sm text-[#475569]">
+                <p className="text-sm text-neutral-300">
                   Alue: {career.salary_eur_month.range[0]}€ - {career.salary_eur_month.range[1]}€
                 </p>
               </div>
 
               {/* Job Outlook */}
-              <div className="bg-white rounded-xl p-6">
-                <h3 className="text-sm font-semibold text-[#0F172A] uppercase tracking-wide mb-3">Työllisyysnäkymät</h3>
-                <p className="text-sm text-[#475569] leading-relaxed">{career.job_outlook.explanation}</p>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wide mb-3">Työllisyysnäkymät</h3>
+                <p className="text-sm text-neutral-300 leading-relaxed">{career.job_outlook.explanation}</p>
               </div>
 
               {/* Work Environment */}
-              <div className="bg-white rounded-xl p-6">
-                <h3 className="text-sm font-semibold text-[#0F172A] uppercase tracking-wide mb-3">Työympäristö</h3>
-                <p className="text-sm text-[#475569] leading-relaxed">{details.workEnvironment}</p>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wide mb-3">Työympäristö</h3>
+                <p className="text-sm text-neutral-300 leading-relaxed">{details.workEnvironment}</p>
               </div>
             </div>
 
@@ -1201,9 +1201,9 @@ const Summary = ({
               <h3 className="text-2xl font-semibold text-white mb-4">Koulutus</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {career.education_paths.map((path: string, i: number) => (
-                  <div key={i} className="flex items-start gap-3 p-4 bg-white rounded-lg">
-                    <span className="text-[#2563EB] mt-1 font-bold">•</span>
-                    <span className="text-[#475569]">{path}</span>
+                  <div key={i} className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg">
+                    <span className="text-[#2B5F75] mt-1 font-bold">•</span>
+                    <span className="text-neutral-300">{path}</span>
                   </div>
                 ))}
               </div>
@@ -1214,9 +1214,9 @@ const Summary = ({
               <h3 className="text-2xl font-semibold text-white mb-4">Keskeiset tehtävät / vastuut</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {career.main_tasks.map((task: string, i: number) => (
-                  <div key={i} className="flex items-start gap-3 p-4 bg-white rounded-lg">
-                    <span className="text-[#2563EB] mt-1 font-bold">•</span>
-                    <span className="text-[#475569]">{task}</span>
+                  <div key={i} className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg">
+                    <span className="text-[#2B5F75] mt-1 font-bold">•</span>
+                    <span className="text-neutral-300">{task}</span>
                   </div>
                 ))}
               </div>
@@ -1227,8 +1227,8 @@ const Summary = ({
               <h3 className="text-2xl font-semibold text-white mb-4">Tärkeimmät taidot</h3>
               <div className="space-y-6">
                 {skillsBreakdown.technical.length > 0 && (
-                  <div className="bg-white rounded-xl p-6">
-                    <h4 className="text-lg font-medium text-[#0F172A] mb-3">Tekniset taidot</h4>
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                    <h4 className="text-lg font-medium text-white mb-3">Tekniset taidot</h4>
                     <div className="flex flex-wrap gap-2">
                       {skillsBreakdown.technical.map((skill: string, i: number) => (
                         <span key={i} className="px-3 py-1 bg-[#2563EB]/10 text-[#2563EB] rounded-full text-sm font-medium">
@@ -1240,8 +1240,8 @@ const Summary = ({
                 )}
                 
                 {skillsBreakdown.soft.length > 0 && (
-                  <div className="bg-white rounded-xl p-6">
-                    <h4 className="text-lg font-medium text-[#0F172A] mb-3">Ihmistaidot</h4>
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                    <h4 className="text-lg font-medium text-white mb-3">Ihmistaidot</h4>
                     <div className="flex flex-wrap gap-2">
                       {skillsBreakdown.soft.map((skill: string, i: number) => (
                         <span key={i} className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
@@ -1253,8 +1253,8 @@ const Summary = ({
                 )}
                 
                 {skillsBreakdown.industry.length > 0 && (
-                  <div className="bg-white rounded-xl p-6">
-                    <h4 className="text-lg font-medium text-[#0F172A] mb-3">Alakohtaiset taidot</h4>
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                    <h4 className="text-lg font-medium text-white mb-3">Alakohtaiset taidot</h4>
                     <div className="flex flex-wrap gap-2">
                       {skillsBreakdown.industry.map((skill: string, i: number) => (
                         <span key={i} className="px-3 py-1 bg-secondary/20 text-purple-800 rounded-full text-sm font-medium">
@@ -1270,24 +1270,24 @@ const Summary = ({
             {/* Career Path */}
             <div className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">Urapolku & etenemismahdollisuudet</h3>
-              <div className="bg-white rounded-xl p-6">
-                <p className="text-[#475569] leading-relaxed text-lg">{details.careerPath}</p>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                <p className="text-neutral-300 leading-relaxed text-lg">{details.careerPath}</p>
               </div>
             </div>
 
             {/* Industry Insights */}
             <div className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">Alan kehitys</h3>
-              <div className="bg-white rounded-xl p-6">
-                <p className="text-[#475569] leading-relaxed text-lg">{details.industryInsights}</p>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                <p className="text-neutral-300 leading-relaxed text-lg">{details.industryInsights}</p>
               </div>
             </div>
 
             {/* Future Prospects */}
             <div className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">Tulevaisuuden näkymät</h3>
-              <div className="bg-white rounded-xl p-6">
-                <p className="text-[#475569] leading-relaxed text-lg">{details.futureProspects}</p>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                <p className="text-neutral-300 leading-relaxed text-lg">{details.futureProspects}</p>
               </div>
             </div>
 
@@ -1302,10 +1302,10 @@ const Summary = ({
                     <button
                       key={i}
                       onClick={() => openCareerDetail(relatedCareer)}
-                      className="text-left p-4 rounded-xl border border-white/20 bg-white hover:border-[#2563EB] hover:shadow-lg transition-all duration-200"
+                      className="text-left p-4 rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm hover:border-[#2B5F75] hover:bg-white/10 hover:shadow-lg transition-all duration-200"
                     >
-                      <h4 className="font-semibold text-[#0F172A] mb-2">{relatedCareer.title_fi}</h4>
-                      <p className="text-sm text-[#475569]">{relatedCareer.short_description}</p>
+                      <h4 className="font-semibold text-white mb-2">{relatedCareer.title_fi}</h4>
+                      <p className="text-sm text-neutral-300">{relatedCareer.short_description}</p>
                       <div className="mt-2 text-xs text-[#2563EB] font-medium">Klikkaa nähdäksesi lisätietoja →</div>
                     </button>
                   ))}
@@ -1426,7 +1426,7 @@ const Summary = ({
             {analysis.recommendations.map((career: any, i: number) => (
               <div 
                 key={i} 
-                className="rounded-[20px] bg-white p-6 shadow-[0_8px_20px_rgba(0,0,0,0.08)] hover:scale-[1.03] hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] transition-all duration-300 ease-in-out cursor-pointer"
+                className="rounded-[20px] bg-white/5 backdrop-blur-sm border border-white/10 p-6 shadow-[0_8px_20px_rgba(0,0,0,0.3)] hover:scale-[1.03] hover:shadow-[0_12px_28px_rgba(0,0,0,0.4)] hover:bg-white/10 transition-all duration-300 ease-in-out cursor-pointer"
                 onClick={() => openCareerDetail(career)}
                 role="button"
                 tabIndex={0}
@@ -1439,21 +1439,21 @@ const Summary = ({
                 }}
               >
                 <div className="flex items-start justify-between gap-2 mb-3">
-                  <h3 className="text-xl font-semibold text-[#0F172A] flex-1">{career.title_fi}</h3>
+                  <h3 className="text-xl font-semibold text-white flex-1">{career.title_fi}</h3>
                 </div>
-                <p className="text-[#475569] text-sm mb-4 leading-relaxed">{career.short_description}</p>
+                <p className="text-neutral-300 text-sm mb-4 leading-relaxed">{career.short_description}</p>
 
                 <div className="space-y-3">
                   <div>
-                    <span className="text-xs font-medium text-[#475569] uppercase tracking-wide">Palkka</span>
-                    <p className="text-sm text-[#475569]">
+                    <span className="text-xs font-medium text-neutral-400 uppercase tracking-wide">Palkka</span>
+                    <p className="text-sm text-neutral-300">
                       {career.salary_eur_month.median}€/kk (alue: {career.salary_eur_month.range[0]}-{career.salary_eur_month.range[1]}€)
                     </p>
                   </div>
                   
                   <div>
-                    <span className="text-xs font-medium text-[#475569] uppercase tracking-wide">Työllisyysnäkymät</span>
-                    <p className="text-sm text-[#475569]">{career.job_outlook.explanation}</p>
+                    <span className="text-xs font-medium text-neutral-400 uppercase tracking-wide">Työllisyysnäkymät</span>
+                    <p className="text-sm text-neutral-300">{career.job_outlook.explanation}</p>
                   </div>
                   
                   <div>

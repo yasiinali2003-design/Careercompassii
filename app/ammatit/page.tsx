@@ -188,9 +188,9 @@ export default function CareerCatalog() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
+    <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="border-b border-white/10 bg-[#0f1419]/80 backdrop-blur-xl sticky top-0 z-50">
+      <nav className="border-b border-white/10 bg-[#05070B]/95 backdrop-blur-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <Logo className="h-10 w-auto" />

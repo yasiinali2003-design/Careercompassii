@@ -61,17 +61,17 @@ export default function NewClassPage() {
 
   if (classData) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
+      <div className="min-h-screen flex flex-col">
         <TeacherNav />
         <div className="flex-1 max-w-4xl mx-auto p-8 w-full">
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h1 className="text-3xl font-bold mb-6">Luokka luotu!</h1>
+          <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg p-8">
+            <h1 className="text-3xl font-bold mb-6 text-white">Luokka luotu!</h1>
             
             <div className="space-y-4 mb-8">
               
               <div>
-                <label className="font-semibold text-gray-700">Julkinen linkki (anonyymi):</label>
-                <p className="text-primary font-mono text-sm bg-slate-50 p-2 rounded break-all">
+                <label className="font-semibold text-neutral-200">Julkinen linkki (anonyymi):</label>
+                <p className="text-primary font-mono text-sm bg-white/5 backdrop-blur-sm border border-white/10 p-2 rounded break-all">
                   https://careercompassii.vercel.app/{classData.classToken}
                 </p>
               </div>
@@ -92,7 +92,7 @@ export default function NewClassPage() {
               </button>
               <button
                 onClick={() => setClassData(null)}
-                className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition"
+                className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-neutral-900/20 transition"
               >
                 Luo toinen luokka
               </button>
@@ -105,11 +105,11 @@ export default function NewClassPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
+    <div className="min-h-screen flex flex-col">
       <TeacherNav />
       <div className="flex-1 max-w-2xl mx-auto p-8 w-full">
-        <div className="bg-white rounded-xl shadow-lg p-8">
-          <h1 className="text-3xl font-bold mb-6">Luo uusi luokka</h1>
+        <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg p-8">
+          <h1 className="text-3xl font-bold mb-6 text-white">Luo uusi luokka</h1>
           
           {error && (
             <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
@@ -131,7 +131,7 @@ export default function NewClassPage() {
 
           <div className="space-y-4">
             <div>
-              <label htmlFor="teacherId" className="block font-semibold text-gray-700 mb-2">
+              <label htmlFor="teacherId" className="block font-semibold text-neutral-200 mb-2">
                 Opettajan tunnus
               </label>
               <input
@@ -142,7 +142,7 @@ export default function NewClassPage() {
                 placeholder="esim. matti-opettaja"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-neutral-400 mt-1">
                 Tunnus auttaa tunnistamaan sinut omistajaksi
               </p>
             </div>
@@ -157,7 +157,7 @@ export default function NewClassPage() {
 
             <button
               onClick={() => router.push('/teacher/classes')}
-              className="w-full border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition"
+              className="w-full border border-gray-300 text-neutral-200 px-6 py-3 rounded-lg hover:bg-neutral-900/20 transition"
             >
               Peruuta
             </button>

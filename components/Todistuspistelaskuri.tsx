@@ -115,11 +115,11 @@ export default function Todistuspistelaskuri({ onCalculate }: Todistuspistelasku
   const hasAnyExams = completedCount > 0;
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
+    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-lg p-6 mb-8">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="text-xl font-bold text-[#0F172A]">
+          <h3 className="text-xl font-bold text-white">
             📊 Todistuspistelaskuri
           </h3>
           <p className="text-sm text-[#475569] mt-1">

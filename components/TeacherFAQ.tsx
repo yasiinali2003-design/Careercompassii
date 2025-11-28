@@ -139,17 +139,17 @@ export default function TeacherFAQ({ isOpen, onClose }: TeacherFAQProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm" onClick={onClose}>
       <div 
-        className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col m-4"
+        className="bg-[#1a1d23] rounded-xl border border-white/10 shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col m-4"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="border-b border-gray-200 px-6 py-4 flex items-center justify-between bg-gradient-to-r from-slate-50 to-teal-50/20">
+        <div className="border-b border-white/10 px-6 py-4 flex items-center justify-between bg-gradient-to-r from-[#2B5F75]/20 to-[#4A7C59]/10">
           <h2 className="text-2xl font-bold text-gray-900">Usein kysytyt kysymykset (UKK)</h2>
           <Button
             variant="ghost"
             size="icon"
             onClick={onClose}
-            className="hover:bg-gray-100"
+            className="hover:bg-neutral-800/30"
           >
             <X className="h-5 w-5" />
           </Button>
@@ -165,12 +165,12 @@ export default function TeacherFAQ({ isOpen, onClose }: TeacherFAQProps) {
                 </h3>
                 <div className="space-y-4">
                   {category.questions.map((faq, faqIndex) => (
-                    <div key={faqIndex} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                    <div key={faqIndex} className="bg-neutral-900/20 rounded-lg p-4 border border-gray-200">
                       <h4 className="font-semibold text-gray-900 mb-2 flex items-start">
                         <span className="text-primary mr-2">Q:</span>
                         <span>{faq.q}</span>
                       </h4>
-                      <p className="text-gray-700 ml-6 whitespace-pre-line">
+                      <p className="text-neutral-200 ml-6 whitespace-pre-line">
                         <span className="text-green-600 font-medium">A: </span>
                         {faq.a}
                       </p>
@@ -183,8 +183,8 @@ export default function TeacherFAQ({ isOpen, onClose }: TeacherFAQProps) {
         </div>
 
         {/* Footer */}
-        <div className="border-t border-gray-200 px-6 py-4 bg-gray-50">
-          <p className="text-sm text-gray-600 text-center">
+        <div className="border-t border-gray-200 px-6 py-4 bg-neutral-900/20">
+          <p className="text-sm text-neutral-300 text-center">
             Etsitkö lisää tukea? Ota yhteyttä pääkäyttäjääsi tai Urakompassi-tukeen.
           </p>
         </div>

@@ -57,7 +57,7 @@ export default function PublicClassResultsPage({
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-teal-50/20 p-8">
+      <div className="min-h-screen p-8">
         <div className="max-w-4xl mx-auto text-center py-12">
           <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
         </div>
@@ -67,10 +67,10 @@ export default function PublicClassResultsPage({
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-teal-50/20 p-8">
+      <div className="min-h-screen p-8">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-            <p className="text-red-800">{error}</p>
+          <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-6 text-center">
+            <p className="text-red-300">{error}</p>
           </div>
         </div>
       </div>
@@ -78,21 +78,21 @@ export default function PublicClassResultsPage({
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-teal-50/20 p-8">
+    <div className="min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-xl shadow-lg p-8">
+        <div className="bg-[#1a1d23] rounded-xl shadow-lg border border-white/10 p-8">
           <h1 className="text-3xl font-bold mb-2">Luokantulokset</h1>
-          <p className="text-gray-600 mb-6">Anonyymit testitulokset</p>
+          <p className="text-neutral-300 mb-6">Anonyymit testitulokset</p>
 
           {results.length === 0 ? (
-            <div className="text-center py-12 text-gray-600">
+            <div className="text-center py-12 text-neutral-300">
               Tuloksia ei vielä saatavilla
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50">
+                  <tr className="bg-white/5">
                     <th className="border p-3 text-left">PIN</th>
                     <th className="border p-3 text-left">Suosituin ammatti</th>
                     <th className="border p-3 text-left">Päivämäärä</th>
@@ -118,7 +118,7 @@ export default function PublicClassResultsPage({
             </div>
           )}
 
-          <div className="mt-8 bg-slate-50 border border-primary/20 rounded-lg p-4">
+          <div className="mt-8 bg-[#1a1d23]/50 border border-white/10 rounded-lg p-4">
             <p className="text-sm text-primary">
               💡 <strong>Huomio:</strong> Kaikki tulokset ovat täysin anonyymeja. 
               Nimia eivät näy, eivätkä koskaan ole näkyneet tämän sivun yhteydessä.

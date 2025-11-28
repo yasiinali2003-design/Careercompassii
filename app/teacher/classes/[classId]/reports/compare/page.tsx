@@ -76,7 +76,7 @@ export default function CompareReport({ params, searchParams }: { params: { clas
   function delta(a: number, b: number) { return Math.round((a - b)); }
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen text-white">
       <style>{`@page { size: A4; margin: 20mm 15mm; } @media print { .no-print { display:none } }`}</style>
       <div className="max-w-4xl mx-auto py-6">
         <div className="no-print mb-4 flex justify-between items-center gap-2 flex-wrap">
@@ -144,10 +144,10 @@ export default function CompareReport({ params, searchParams }: { params: { clas
                   <div key={label}>
                     <p className="font-medium mb-1">{label}</p>
                     <div className="flex justify-between mb-1"><span>A: {Math.round(aVal)}%</span><span>B: {Math.round(bVal)}%</span></div>
-                    <div className="w-full h-2 bg-gray-200 rounded mb-1">
+                    <div className="w-full h-2 bg-neutral-700/40 rounded mb-1">
                       <div className="h-2 bg-primary rounded" style={{ width: `${Math.min(Math.max(aVal,0),100)}%` }} />
                     </div>
-                    <div className="w-full h-2 bg-gray-200 rounded">
+                    <div className="w-full h-2 bg-neutral-700/40 rounded">
                       <div className="h-2 bg-green-600 rounded" style={{ width: `${Math.min(Math.max(bVal,0),100)}%` }} />
                     </div>
                   </div>

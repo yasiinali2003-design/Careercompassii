@@ -168,7 +168,7 @@ export default function TodistuspistelaskuriPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-10 max-w-6xl">
         <header className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-3">
@@ -490,7 +490,7 @@ function GuidanceSummary({ points, bonusPoints, strengths, inputs, variant = 'fu
       <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
         <div className="relative h-28 w-28">
           <div className="absolute inset-0 rounded-full" style={ringStyle} />
-          <div className="absolute inset-2 rounded-full bg-[#0f1419] shadow-inner flex flex-col items-center justify-center border border-white/20">
+          <div className="absolute inset-2 rounded-full bg-[#0B0F14] shadow-inner flex flex-col items-center justify-center border border-white/20">
             <span className="text-2xl font-bold text-white">{formatPoints(points)}</span>
             <span className="text-xs font-medium text-neutral-400">pistettä</span>
           </div>

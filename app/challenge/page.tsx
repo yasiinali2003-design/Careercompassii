@@ -47,8 +47,8 @@ export default function ChallengePage() {
   }, [returnTo, router]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50">
-      <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="max-w-md w-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg p-8 text-center">
         <div className="mb-6">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
             <svg

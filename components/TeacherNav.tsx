@@ -26,7 +26,7 @@ export default function TeacherNav() {
 
   return (
     <>
-      <nav className="border-b border-gray-200 bg-white/80 backdrop-blur-xl sticky top-0 z-50 mb-8">
+      <nav className="border-b border-white/10 bg-[#05070B]/95 backdrop-blur-xl sticky top-0 z-50 mb-8">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <Logo className="h-10 w-auto" />
@@ -36,7 +36,7 @@ export default function TeacherNav() {
               onClick={() => setFaqOpen(true)}
               variant="ghost"
               size="sm"
-              className="text-gray-600 hover:text-gray-900"
+              className="text-neutral-300 hover:text-gray-900"
               title="Tuki ja UKK"
             >
               <HelpCircle className="h-5 w-5" />
@@ -45,7 +45,7 @@ export default function TeacherNav() {
               onClick={handleLogout}
               variant="ghost"
               size="sm"
-              className="text-gray-600 hover:text-gray-900"
+              className="text-neutral-300 hover:text-gray-900"
             >
               <LogOut className="h-4 w-4 mr-2" />
               Kirjaudu ulos

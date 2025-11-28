@@ -96,7 +96,7 @@ export default function ComparePage() {
 
   if (comparisons.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20">
+      <div className="min-h-screen">
         <div className="container mx-auto px-4 py-8 max-w-6xl">
           {/* Logo */}
           <div className="mb-8">
@@ -106,7 +106,7 @@ export default function ComparePage() {
           </div>
 
           {/* Empty State */}
-          <div className="bg-white rounded-2xl shadow-lg p-12 text-center border border-slate-100">
+          <div className="bg-[#1a1d23] rounded-2xl shadow-lg border border-white/10 p-12 text-center border border-white/10">
             <div className="max-w-2xl mx-auto">
               <div className="mb-6">
                 <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center">
@@ -114,10 +114,10 @@ export default function ComparePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
-                <h1 className="text-3xl font-bold text-slate-900 mb-3">
+                <h1 className="text-3xl font-bold text-white mb-3">
                   Vertaile ammatteja
                 </h1>
-                <p className="text-lg text-slate-600 mb-6">
+                <p className="text-lg text-neutral-300 mb-6">
                   Vertaile palkkoja, työnäkymiä ja koulutuspolkuja rinnakkain
                 </p>
               </div>
@@ -138,29 +138,29 @@ export default function ComparePage() {
                 </div>
 
                 {searchTerm && filteredCareers.length > 0 && (
-                  <div className="mt-4 bg-white border border-slate-200 rounded-xl shadow-lg max-h-96 overflow-y-auto text-left">
+                  <div className="mt-4 bg-[#1a1d23]/80 border border-white/10 rounded-xl shadow-lg max-h-96 overflow-y-auto text-left">
                     {filteredCareers.slice(0, 10).map(career => (
                       <div
                         key={career.slug}
                         onClick={() => addCareer(career)}
-                        className="p-4 hover:bg-slate-50 cursor-pointer border-b border-slate-100 last:border-b-0 transition-colors"
+                        className="p-4 hover:bg-white/5 cursor-pointer border-b border-white/10 last:border-b-0 transition-colors"
                       >
-                        <div className="font-semibold text-slate-900 mb-1">{career.title}</div>
-                        <div className="text-sm text-slate-600 line-clamp-2">{career.summary}</div>
+                        <div className="font-semibold text-white mb-1">{career.title}</div>
+                        <div className="text-sm text-neutral-300 line-clamp-2">{career.summary}</div>
                       </div>
                     ))}
                   </div>
                 )}
 
                 {searchTerm && filteredCareers.length === 0 && (
-                  <div className="mt-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                    <p className="text-slate-600">Ei hakutuloksia haulle &ldquo;{searchTerm}&rdquo;</p>
+                  <div className="mt-4 p-4 bg-[#1a1d23]/50 rounded-xl border border-white/10">
+                    <p className="text-neutral-300">Ei hakutuloksia haulle &ldquo;{searchTerm}&rdquo;</p>
                   </div>
                 )}
               </div>
 
-              <div className="pt-4 border-t border-slate-200">
-                <p className="text-sm text-slate-600 mb-4">Tai selaa koko urakirjastoa</p>
+              <div className="pt-4 border-t border-white/10">
+                <p className="text-sm text-neutral-300 mb-4">Tai selaa koko urakirjastoa</p>
                 <Link href="/ammatit">
                   <button className="bg-primary text-white px-8 py-3 rounded-xl hover:bg-primary/90 transition-all shadow-sm hover:shadow-md font-medium">
                     Siirry Urakirjastoon
@@ -175,7 +175,7 @@ export default function ComparePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         {/* Header */}
         <div className="mb-8">
@@ -183,7 +183,7 @@ export default function ComparePage() {
             <Logo className="h-12 w-auto" />
           </Link>
           <div className="flex items-center justify-between">
-            <h1 className="text-4xl font-bold text-slate-900">
+            <h1 className="text-4xl font-bold text-white">
               Vertaile ammatteja ({comparisons.length})
             </h1>
             <Link href="/ammatit">
@@ -202,22 +202,22 @@ export default function ComparePage() {
               {/* First Column - Labels */}
               <div className="space-y-4">
                 <div className="h-20"></div>
-                <div className="h-32 bg-white rounded-xl shadow-sm border border-slate-200 p-4 flex items-center">
+                <div className="h-32 bg-[#1a1d23]/60 rounded-xl shadow-sm border border-white/10 p-4 flex items-center">
                   <span className="font-semibold text-slate-700">Yleiskuvaus</span>
                 </div>
-                <div className="h-24 bg-white rounded-xl shadow-sm border border-slate-200 p-4 flex items-center">
+                <div className="h-24 bg-[#1a1d23]/60 rounded-xl shadow-sm border border-white/10 p-4 flex items-center">
                   <span className="font-semibold text-slate-700">Palkka</span>
                 </div>
-                <div className="h-24 bg-white rounded-xl shadow-sm border border-slate-200 p-4 flex items-center">
+                <div className="h-24 bg-[#1a1d23]/60 rounded-xl shadow-sm border border-white/10 p-4 flex items-center">
                   <span className="font-semibold text-slate-700">Työllisyysnäkymä</span>
                 </div>
-                <div className="h-24 bg-white rounded-xl shadow-sm border border-slate-200 p-4 flex items-center">
+                <div className="h-24 bg-[#1a1d23]/60 rounded-xl shadow-sm border border-white/10 p-4 flex items-center">
                   <span className="font-semibold text-slate-700">Koulutus</span>
                 </div>
-                <div className="h-32 bg-white rounded-xl shadow-sm border border-slate-200 p-4 flex items-center">
+                <div className="h-32 bg-[#1a1d23]/60 rounded-xl shadow-sm border border-white/10 p-4 flex items-center">
                   <span className="font-semibold text-slate-700">Taidot</span>
                 </div>
-                <div className="h-32 bg-white rounded-xl shadow-sm border border-slate-200 p-4 flex items-center">
+                <div className="h-32 bg-[#1a1d23]/60 rounded-xl shadow-sm border border-white/10 p-4 flex items-center">
                   <span className="font-semibold text-slate-700">Työskentelytapa</span>
                 </div>
               </div>
@@ -225,14 +225,14 @@ export default function ComparePage() {
               {/* Career Columns */}
               {comparisons.map((career, index) => (
                 <div key={career.slug} className="space-y-4">
-                  <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-6 relative">
+                  <div className="bg-[#1a1d23] rounded-xl shadow-lg border border-white/10 border border-white/10 p-6 relative">
                     <button
                       onClick={() => removeCareer(career.slug)}
                       className="absolute top-4 right-4 text-slate-400 hover:text-red-600"
                     >
                       <X className="h-5 w-5" />
                     </button>
-                    <h2 className="text-xl font-bold text-slate-900 pr-8">{career.title}</h2>
+                    <h2 className="text-xl font-bold text-white pr-8">{career.title}</h2>
                     <Link
                       href={`/ammatit/${encodeURIComponent(career.slug)}`}
                       className="text-sm text-primary hover:underline mt-2 inline-block"
@@ -242,19 +242,19 @@ export default function ComparePage() {
                   </div>
 
                   {/* Yleiskuvaus */}
-                  <div className="h-32 bg-white rounded-xl shadow-sm border border-slate-200 p-4">
-                    <p className="text-sm text-slate-600 line-clamp-4">{career.summary}</p>
+                  <div className="h-32 bg-[#1a1d23]/60 rounded-xl shadow-sm border border-white/10 p-4">
+                    <p className="text-sm text-neutral-300 line-clamp-4">{career.summary}</p>
                   </div>
 
                   {/* Palkka */}
-                  <div className="h-24 bg-white rounded-xl shadow-sm border border-slate-200 p-4 flex items-center">
-                    <span className="text-lg font-bold text-slate-900">
+                  <div className="h-24 bg-[#1a1d23]/60 rounded-xl shadow-sm border border-white/10 p-4 flex items-center">
+                    <span className="text-lg font-bold text-white">
                       {career.salaryMin}-{career.salaryMax} €/kk
                     </span>
                   </div>
 
                   {/* Työllisyysnäkymä */}
-                  <div className="h-24 bg-white rounded-xl shadow-sm border border-slate-200 p-4 flex items-center">
+                  <div className="h-24 bg-[#1a1d23]/60 rounded-xl shadow-sm border border-white/10 p-4 flex items-center">
                     <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                       career.outlook === 'Kasvaa' 
                         ? 'bg-green-100 text-green-800' 
@@ -265,7 +265,7 @@ export default function ComparePage() {
                   </div>
 
                   {/* Koulutus */}
-                  <div className="h-24 bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+                  <div className="h-24 bg-[#1a1d23]/60 rounded-xl shadow-sm border border-white/10 p-4">
                     <div className="flex flex-wrap gap-2">
                       {career.educationLevel.slice(0, 2).map((level, i) => (
                         <span key={i} className="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">
@@ -276,7 +276,7 @@ export default function ComparePage() {
                   </div>
 
                   {/* Taidot */}
-                  <div className="h-32 bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+                  <div className="h-32 bg-[#1a1d23]/60 rounded-xl shadow-sm border border-white/10 p-4">
                     <div className="flex flex-wrap gap-2">
                       {career.skillsHard?.slice(0, 4).map((skill, i) => (
                         <span key={i} className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">
@@ -287,8 +287,8 @@ export default function ComparePage() {
                   </div>
 
                   {/* Työskentelytapa */}
-                  <div className="h-32 bg-white rounded-xl shadow-sm border border-slate-200 p-4">
-                    <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+                  <div className="h-32 bg-[#1a1d23]/60 rounded-xl shadow-sm border border-white/10 p-4">
+                    <span className="px-3 py-1 bg-neutral-800/30 text-neutral-200 rounded-full text-sm">
                       {career.workMode}
                     </span>
                   </div>
@@ -298,10 +298,10 @@ export default function ComparePage() {
               {/* Add More Column */}
               {comparisons.length < 5 && (
                 <div className="space-y-4">
-                  <div className="bg-gradient-to-br from-slate-50 to-teal-50/20 rounded-xl shadow-sm border-2 border-dashed border-blue-300 p-6 flex items-center justify-center min-h-[200px]">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl shadow-sm border-2 border-dashed border-white/20 p-6 flex items-center justify-center min-h-[200px]">
                     <div className="text-center">
                       <Plus className="h-12 w-12 text-primary mx-auto mb-3" />
-                      <p className="text-sm text-slate-600 mb-3">Lisää ammatti</p>
+                      <p className="text-sm text-neutral-300 mb-3">Lisää ammatti</p>
                       <input
                         type="text"
                         placeholder="Etsi..."
@@ -310,14 +310,14 @@ export default function ComparePage() {
                         className="w-full px-3 py-2 border border-slate-300 rounded-lg mb-2"
                       />
                       {searchTerm && (
-                        <div className="bg-white border border-slate-200 rounded-lg shadow-lg max-h-64 overflow-y-auto">
+                        <div className="bg-[#1a1d23]/80 border border-white/10 rounded-lg shadow-lg max-h-64 overflow-y-auto">
                           {filteredCareers.slice(0, 5).map(career => (
                             <div
                               key={career.slug}
                               onClick={() => addCareer(career)}
-                              className="p-2 hover:bg-slate-50 cursor-pointer border-b border-slate-100 last:border-b-0"
+                              className="p-2 hover:bg-white/5 cursor-pointer border-b border-white/10 last:border-b-0"
                             >
-                              <div className="text-sm font-medium text-slate-900">{career.title}</div>
+                              <div className="text-sm font-medium text-white">{career.title}</div>
                             </div>
                           ))}
                         </div>

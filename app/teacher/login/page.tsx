@@ -66,7 +66,7 @@ export default function TeacherLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20 flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="mb-8 text-center">
@@ -74,7 +74,7 @@ export default function TeacherLoginPage() {
             <Logo className="h-12 w-auto mx-auto mb-4" />
           </Link>
           <h1 className="text-2xl font-bold text-gray-900">Opettajien hallintapaneeli</h1>
-          <p className="text-sm text-gray-600 mt-2">Kirjaudu sisään opettajakoodilla</p>
+          <p className="text-sm text-neutral-300 mt-2">Kirjaudu sisään opettajakoodilla</p>
         </div>
 
         {/* Login Card */}
@@ -93,7 +93,7 @@ export default function TeacherLoginPage() {
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="password" className="block text-sm font-medium text-neutral-200 mb-2">
                   Opettajakoodi
                 </label>
                 <input
@@ -133,7 +133,7 @@ export default function TeacherLoginPage() {
             </form>
 
             <div className="mt-6 pt-6 border-t border-gray-200">
-              <div className="bg-slate-50 rounded-lg p-4">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4">
                 <div className="flex items-start gap-3">
                   <GraduationCap className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div className="text-sm text-primary">
@@ -150,7 +150,7 @@ export default function TeacherLoginPage() {
             <div className="mt-4 text-center">
               <Link
                 href="/"
-                className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-sm text-neutral-300 hover:text-gray-900 transition-colors"
               >
                 ← Takaisin etusivulle
               </Link>
@@ -160,7 +160,7 @@ export default function TeacherLoginPage() {
 
         {/* Security Notice */}
         <div className="mt-6 text-center">
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-neutral-400">
             Tämä alue on suojattu. Vain opettajilla on pääsy.
           </p>
         </div>

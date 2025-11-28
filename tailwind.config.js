@@ -50,6 +50,18 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        'urak-bg': '#0B1015',
+        'urak-surface': '#13171D',
+        'urak-border': '#1E242D',
+        'urak-accent-blue': '#4BA3E3',
+        'urak-accent-green': '#55C89D',
+        'urak-text-primary': '#F1F5F9',
+        'urak-text-secondary': '#CBD5E1',
+        'urak-text-muted': '#94A3B8',
+      },
+      fontFamily: {
+        heading: ['"Public Sans"', 'system-ui', 'sans-serif'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

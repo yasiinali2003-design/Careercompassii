@@ -41,7 +41,7 @@ export function SmartScenariosModal({
       case 'easy': return 'bg-green-100 text-green-800 border-green-300';
       case 'medium': return 'bg-yellow-100 text-yellow-800 border-yellow-300';
       case 'hard': return 'bg-red-100 text-red-800 border-red-300';
-      default: return 'bg-gray-100 text-gray-800 border-gray-300';
+      default: return 'bg-neutral-800/30 text-gray-800 border-gray-300';
     }
   };
 
@@ -59,14 +59,14 @@ export function SmartScenariosModal({
           <DialogTitle className="text-xl font-bold">
             Reitit ohjelmaan: {programName}
           </DialogTitle>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-neutral-300">
             Valitse itsellesi sopivin tie tavoitteeseen. Jokaisessa reitissä näkyy tarvittavat parannukset ja arvioitu onnistumistodennäköisyys.
           </p>
         </DialogHeader>
 
         {scenarios.length === 0 ? (
           <div className="text-center py-8">
-            <p className="text-gray-600">Ei saatavilla skenaarioita tällä hetkellä.</p>
+            <p className="text-neutral-300">Ei saatavilla skenaarioita tällä hetkellä.</p>
           </div>
         ) : (
           <div className="space-y-4 mt-4">

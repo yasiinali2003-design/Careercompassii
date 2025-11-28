@@ -80,8 +80,8 @@ export default function AdminTeachersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50/20">
-      <nav className="border-b border-gray-200 bg-white/80 backdrop-blur-xl sticky top-0 z-50">
+    <div className="min-h-screen">
+      <nav className="border-b border-white/10 bg-[#05070B]/95 backdrop-blur-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <Logo className="h-10 w-auto" />
@@ -99,7 +99,7 @@ export default function AdminTeachersPage() {
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
             Opettajakoodien hallinta
           </h1>
-          <p className="text-gray-600">
+          <p className="text-neutral-300">
             Luo yksilöllisiä opettajakoodeja jokaiselle opettajalle
           </p>
         </div>
@@ -118,7 +118,7 @@ export default function AdminTeachersPage() {
           <CardContent>
             <form onSubmit={handleGenerate} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-neutral-200 mb-2">
                   Nimi <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -133,7 +133,7 @@ export default function AdminTeachersPage() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-neutral-200 mb-2">
                   Sähköposti (valinnainen)
                 </label>
                 <input
@@ -147,7 +147,7 @@ export default function AdminTeachersPage() {
               </div>
 
               <div>
-                <label htmlFor="schoolName" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="schoolName" className="block text-sm font-medium text-neutral-200 mb-2">
                   Koulu (valinnainen)
                 </label>
                 <input
@@ -161,7 +161,7 @@ export default function AdminTeachersPage() {
               </div>
 
               <div>
-                <label htmlFor="package" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="package" className="block text-sm font-medium text-neutral-200 mb-2">
                   Paketti <span className="text-red-500">*</span>
                 </label>
                 <select
@@ -169,12 +169,12 @@ export default function AdminTeachersPage() {
                   value={packageType}
                   onChange={(e) => setPackageType(e.target.value as 'premium' | 'yläaste')}
                   required
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all bg-white"
+                  className="w-full px-4 py-3 border-2 border-white/20 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all bg-white/5 backdrop-blur-sm text-white"
                 >
                   <option value="yläaste">Yläaste (Standard)</option>
                   <option value="premium">Premium</option>
                 </select>
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="text-xs text-neutral-400 mt-1">
                   {packageType === 'premium' 
                     ? 'Premium: API-pääsy, 5v säilytys, vertailuanalyytiikka, PDF-raportit'
                     : 'Yläaste: Perustoiminnot, 3v säilytys'}
@@ -201,7 +201,7 @@ export default function AdminTeachersPage() {
 
         {/* Display New Teacher Code */}
         {newTeacher && (
-          <Card className="mb-8 border-2 border-green-200 bg-gradient-to-r from-green-50 to-teal-50/20 shadow-lg">
+          <Card className="mb-8 border-2 border-green-300/50 bg-white/5 backdrop-blur-sm shadow-lg">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-green-800">
                 <Check className="h-5 w-5" />
@@ -209,30 +209,30 @@ export default function AdminTeachersPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="bg-white rounded-lg p-6 border-2 border-green-300">
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border-2 border-green-300/50 p-6">
                 <div className="space-y-3">
                   <div>
-                    <label className="text-sm font-medium text-gray-600">Nimi:</label>
+                    <label className="text-sm font-medium text-neutral-300">Nimi:</label>
                     <p className="text-lg font-semibold text-gray-900">{newTeacher.name}</p>
                   </div>
                   {newTeacher.email && (
                     <div>
-                      <label className="text-sm font-medium text-gray-600">Sähköposti:</label>
+                      <label className="text-sm font-medium text-neutral-300">Sähköposti:</label>
                       <p className="text-lg text-gray-900">{newTeacher.email}</p>
                     </div>
                   )}
                   {newTeacher.school_name && (
                     <div>
-                      <label className="text-sm font-medium text-gray-600">Koulu:</label>
+                      <label className="text-sm font-medium text-neutral-300">Koulu:</label>
                       <p className="text-lg text-gray-900">{newTeacher.school_name}</p>
                     </div>
                   )}
                   <div className="pt-4 border-t border-gray-200">
-                    <label className="text-sm font-medium text-gray-600 block mb-2">
+                    <label className="text-sm font-medium text-neutral-300 block mb-2">
                       Opettajakoodi:
                     </label>
                     <div className="flex items-center gap-3">
-                      <code className="flex-1 px-4 py-3 bg-gray-100 border-2 border-gray-300 rounded-lg text-2xl font-bold text-gray-900 tracking-wider font-mono">
+                      <code className="flex-1 px-4 py-3 bg-neutral-800/30 border-2 border-gray-300 rounded-lg text-2xl font-bold text-gray-900 tracking-wider font-mono">
                         {newTeacher.access_code}
                       </code>
                       <Button
@@ -258,7 +258,7 @@ export default function AdminTeachersPage() {
                 </div>
               </div>
 
-              <div className="bg-slate-50 border border-primary/20 rounded-lg p-4">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg p-4">
                 <p className="text-sm text-primary">
                   <strong>Vinkki:</strong> Kopioi opettajakoodi ja lähetä se opettajalle sähköpostitse
                   tai muulla turvallisella tavalla. Koodi on yksilöllinen ja voimassa heti.
@@ -269,7 +269,7 @@ export default function AdminTeachersPage() {
         )}
 
         {/* Info Card */}
-        <Card className="bg-slate-50 border-primary/20">
+        <Card className="bg-white/5 backdrop-blur-sm border-white/20">
           <CardContent className="pt-6">
             <div className="flex items-start gap-3">
               <GraduationCap className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />

@@ -36,9 +36,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fi">
-      <body className={inter.className}>
-        <div className="min-h-screen flex flex-col bg-white">
+    <html lang="fi" className="dark">
+      <body className={`${inter.className} min-h-screen`}>
+        <div className="min-h-screen flex flex-col">
           <main className="flex-1">{children}</main>
           <Footer />
         </div>

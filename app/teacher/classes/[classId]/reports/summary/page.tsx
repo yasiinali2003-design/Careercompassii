@@ -98,7 +98,7 @@ export default function ClassSummaryReport({ params }: { params: { classId: stri
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen">
       <style>{`
         @page { size: A4; margin: 20mm 15mm; }
         @media print {
@@ -116,7 +116,7 @@ export default function ClassSummaryReport({ params }: { params: { classId: stri
         </div>
 
         {/* Action Toolbar */}
-        <div className="no-print mb-4 bg-white border-b border-slate-200 -mx-4 px-4 py-3 flex flex-wrap gap-2 justify-between items-center">
+        <div className="no-print mb-4 bg-white/5 backdrop-blur-sm border-b border-white/10 -mx-4 px-4 py-3 flex flex-wrap gap-2 justify-between items-center">
           <Link href={`/teacher/classes/${classId}`} className="text-sm text-slate-600 hover:text-primary flex items-center gap-1">
             ← Takaisin luokkaan
           </Link>
@@ -131,7 +131,7 @@ export default function ClassSummaryReport({ params }: { params: { classId: stri
             </button>
             <button
               onClick={() => window.print()}
-              className="inline-flex items-center gap-1.5 bg-white border border-slate-300 text-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-50"
+              className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 text-sm font-medium hover:bg-white/20"
             >
               <Printer className="h-3.5 w-3.5" />
               Tulosta
@@ -140,9 +140,9 @@ export default function ClassSummaryReport({ params }: { params: { classId: stri
         </div>
 
         {/* Main Document */}
-        <div className="bg-white border border-slate-300 print-bg-white">
+        <div className="bg-white/5 backdrop-blur-sm border border-white/20 print-bg-white">
           {/* Header */}
-          <div className="border-b-2 border-primary bg-white p-6">
+          <div className="border-b-2 border-primary bg-white/5 backdrop-blur-sm print-bg-white p-6">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h1 className="text-2xl font-bold text-slate-900 mb-1">Urakompassi</h1>
@@ -201,7 +201,7 @@ export default function ClassSummaryReport({ params }: { params: { classId: stri
                       {analytics.topCareers.map((c, i) => {
                         const percentage = results.length > 0 ? ((c.count / results.length) * 100).toFixed(0) : 0;
                         return (
-                          <tr key={i} className="border-b border-slate-200 hover:bg-slate-50">
+                          <tr key={i} className="border-b border-white/10 hover:bg-white/5">
                             <td className="py-3 px-3 font-bold text-primary">{i + 1}</td>
                             <td className="py-3 px-3 text-slate-900">{c.name}</td>
                             <td className="py-3 px-3 text-right font-semibold">{c.count}</td>

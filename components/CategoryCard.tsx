@@ -41,21 +41,21 @@ export default function CategoryCard({ category, className = "", index }: Catego
     <div ref={cardRef}>
       <Link href={`/ammatit?personalityType=${category.slug}`} className="block group">
         <div
-          className={`bg-white border-2 border-slate-200 p-6 rounded-xl hover:border-primary transition-all duration-500 hover:shadow-sm ${className} ${
+          className={`bg-[#11161f] ring-1 ring-white/5 rounded-xl py-6 px-6 shadow-[0_0_24px_rgba(0,0,0,0.25)] hover:ring-white/10 transition-all duration-200 ${className} ${
             isVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-8'
           }`}
         >
           <div className="flex items-start gap-4">
-            <span className="text-3xl font-bold text-primary group-hover:text-primary/80 transition-colors flex-shrink-0">
+            <span className="text-xs font-medium text-white/70 bg-white/5 px-2 py-1 rounded-md flex-shrink-0">
               {formattedNumber}
             </span>
             <div className="flex-1 min-w-0">
-              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">
+              <h3 className="text-lg font-semibold text-white">
                 {category.name_fi}
               </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-sm text-gray-400 mt-1">
                 {category.description}
               </p>
             </div>

@@ -41,7 +41,7 @@ export default function ClassDetailPage({
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
+      <div className="min-h-screen flex flex-col">
         <TeacherNav />
         <div className="flex-1 max-w-6xl mx-auto p-8 w-full text-center py-12">
           <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
@@ -52,12 +52,12 @@ export default function ClassDetailPage({
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
+    <div className="min-h-screen flex flex-col">
       <TeacherNav />
       <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
-        <div className="bg-white rounded-xl shadow-lg p-8">
+        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-lg p-8">
           <h1 className="text-3xl font-bold mb-6">Luokkahallinta</h1>
-          <p className="text-gray-600 mb-8">Luokka: {classId.substring(0, 8)}</p>
+          <p className="text-neutral-300 mb-8">Luokka: {classId.substring(0, 8)}</p>
           
           <TeacherClassManager classId={classId} classToken={classToken} />
         </div>

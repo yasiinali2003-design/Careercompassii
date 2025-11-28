@@ -100,7 +100,7 @@ export function ABTestDashboard() {
     return (
       <Card>
         <CardContent className="pt-6">
-          <p className="text-center text-gray-500">Loading metrics...</p>
+          <p className="text-center text-neutral-400">Loading metrics...</p>
         </CardContent>
       </Card>
     );
@@ -131,19 +131,19 @@ export function ABTestDashboard() {
                 <p className="text-3xl font-bold text-blue-600">
                   {metrics.treatment.totalUsers}
                 </p>
-                <p className="text-sm text-gray-600">Total Feedback</p>
+                <p className="text-sm text-neutral-300">Total Feedback</p>
               </div>
               <div className="text-center p-4 bg-green-50 rounded-lg">
                 <p className="text-3xl font-bold text-green-600">
                   {metrics.treatment.avgRating.toFixed(2)}
                 </p>
-                <p className="text-sm text-gray-600">Avg Rating (1-5)</p>
+                <p className="text-sm text-neutral-300">Avg Rating (1-5)</p>
               </div>
               <div className="text-center p-4 bg-purple-50 rounded-lg">
                 <p className="text-3xl font-bold text-purple-600">
                   {metrics.treatment.satisfactionRate.toFixed(0)}%
                 </p>
-                <p className="text-sm text-gray-600">Satisfaction Rate</p>
+                <p className="text-sm text-neutral-300">Satisfaction Rate</p>
               </div>
             </div>
 
@@ -155,11 +155,11 @@ export function ABTestDashboard() {
                   .sort(([, a], [, b]) => b - a)
                   .map(([category, percentage]) => (
                     <div key={category} className="flex items-center gap-3">
-                      <div className="w-32 text-sm text-gray-600 capitalize">
+                      <div className="w-32 text-sm text-neutral-300 capitalize">
                         {category.replace(/-/g, ' ')}
                       </div>
                       <div className="flex-1">
-                        <div className="h-6 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="h-6 bg-neutral-700/40 rounded-full overflow-hidden">
                           <div
                             className="h-full bg-blue-500 transition-all"
                             style={{ width: `${percentage}%` }}
@@ -194,23 +194,23 @@ export function ABTestDashboard() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-3 gap-4">
-              <div className="text-center p-4 bg-gray-50 rounded-lg">
-                <p className="text-3xl font-bold text-gray-600">
+              <div className="text-center p-4 bg-neutral-900/20 rounded-lg">
+                <p className="text-3xl font-bold text-neutral-300">
                   {metrics.control.totalUsers}
                 </p>
-                <p className="text-sm text-gray-600">Total Feedback</p>
+                <p className="text-sm text-neutral-300">Total Feedback</p>
               </div>
-              <div className="text-center p-4 bg-gray-50 rounded-lg">
-                <p className="text-3xl font-bold text-gray-600">
+              <div className="text-center p-4 bg-neutral-900/20 rounded-lg">
+                <p className="text-3xl font-bold text-neutral-300">
                   {metrics.control.avgRating.toFixed(2)}
                 </p>
-                <p className="text-sm text-gray-600">Avg Rating (1-5)</p>
+                <p className="text-sm text-neutral-300">Avg Rating (1-5)</p>
               </div>
-              <div className="text-center p-4 bg-gray-50 rounded-lg">
-                <p className="text-3xl font-bold text-gray-600">
+              <div className="text-center p-4 bg-neutral-900/20 rounded-lg">
+                <p className="text-3xl font-bold text-neutral-300">
                   {metrics.control.satisfactionRate.toFixed(0)}%
                 </p>
-                <p className="text-sm text-gray-600">Satisfaction Rate</p>
+                <p className="text-sm text-neutral-300">Satisfaction Rate</p>
               </div>
             </div>
           </CardContent>
@@ -221,7 +221,7 @@ export function ABTestDashboard() {
       {!metrics.treatment?.totalUsers && (
         <Card>
           <CardContent className="pt-6">
-            <p className="text-center text-gray-500">
+            <p className="text-center text-neutral-400">
               No feedback data yet. Users need to complete the career test and submit feedback.
             </p>
           </CardContent>

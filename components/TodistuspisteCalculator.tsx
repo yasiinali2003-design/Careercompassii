@@ -206,7 +206,7 @@ export function TodistuspisteCalculator({
   };
 
   const getPointsColor = (points: number | null, scheme: TodistuspisteScheme) => {
-    if (points === null) return 'text-gray-500';
+    if (points === null) return 'text-neutral-400';
     if (scheme === 'amk') {
       if (points >= 150) return 'text-green-600 font-bold';
       if (points >= 120) return 'text-green-500';
@@ -330,7 +330,7 @@ export function TodistuspisteCalculator({
         )}
 
         {calculatedPoints !== null && (
-          <div className={`rounded-xl border-2 bg-white p-4 ${
+          <div className={`rounded-xl border-2 bg-white/5 backdrop-blur-sm border-white/20 p-4 ${
             getPointsColor(calculatedPoints, activeScheme).includes('green')
               ? 'border-green-200'
               : getPointsColor(calculatedPoints, activeScheme).includes('blue')
@@ -339,14 +339,14 @@ export function TodistuspisteCalculator({
           }`}>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-600">Todistuspisteet</p>
+              <p className="text-sm text-neutral-300">Todistuspisteet</p>
               <p className={`text-3xl font-bold ${getPointsColor(calculatedPoints, activeScheme)}`}>
                 {formatPoints(calculatedPoints)} pistettä
                 </p>
               </div>
               <Sparkles className="h-6 w-6 text-yellow-500" />
             </div>
-            <div className="mt-4 inline-flex rounded-lg border border-gray-200 bg-gray-50 p-1 text-xs">
+            <div className="mt-4 inline-flex rounded-lg border border-gray-200 bg-neutral-900/20 p-1 text-xs">
               {TODISTUSPISTE_SCHEMES.map(scheme => (
                 <Button
                   key={scheme}
@@ -361,7 +361,7 @@ export function TodistuspisteCalculator({
               ))}
             </div>
             {activeScheme === 'amk' && (
-              <p className="mt-3 text-xs text-gray-600">
+              <p className="mt-3 text-xs text-neutral-300">
                 AMK-laskuri käyttää aina parhaat 5 arvosanaa (Top 5) – pienikin parannus nostaa kokonaistasi heti.
               </p>
             )}
@@ -372,7 +372,7 @@ export function TodistuspisteCalculator({
           {activeResult && improvementSuggestions.length > 0 && (
             <div className="flex-1 rounded-2xl border border-green-200 bg-green-50/60 p-4">
               <h3 className="text-sm font-semibold text-gray-900 mb-2">Minne kannattaa panostaa?</h3>
-              <ul className="space-y-1 text-xs text-gray-700">
+              <ul className="space-y-1 text-xs text-neutral-200">
                 {improvementSuggestions.slice(0, 3).map((suggestion, index) => (
                   <li key={index} className="flex gap-2">
                     <span className="text-green-600">•</span>
@@ -398,7 +398,7 @@ export function TodistuspisteCalculator({
               <div className="space-y-4">
                 <div className="grid gap-3 md:grid-cols-2">
                   <div>
-                    <label className="text-sm font-medium text-gray-700 mb-2 block">Aine</label>
+                    <label className="text-sm font-medium text-neutral-200 mb-2 block">Aine</label>
                     <Select
                       value={scenarioSubject || 'placeholder'}
                       onValueChange={value => {
@@ -425,7 +425,7 @@ export function TodistuspisteCalculator({
                     </Select>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-700 mb-2 block">Uusi arvosana</label>
+                    <label className="text-sm font-medium text-neutral-200 mb-2 block">Uusi arvosana</label>
                     <Select
                       value={scenarioGrade}
                       onValueChange={value => setScenarioGrade(value as GradeSymbol | 'none')}
@@ -447,17 +447,17 @@ export function TodistuspisteCalculator({
                 </div>
                 {scenarioResult ? (
                   <div className="rounded-xl border border-primary/20 bg-slate-50/60 p-4">
-                    <p className="text-sm text-gray-600">Uudet pisteesi</p>
+                    <p className="text-sm text-neutral-300">Uudet pisteesi</p>
                     <p className="text-2xl font-semibold text-gray-900">
                       {formatPoints(scenarioResult.totalPoints)}
                       <span className={`text-base font-medium ml-2 ${scenarioDelta >= 0 ? 'text-green-600' : 'text-red-600'}`}>
                         {scenarioDelta >= 0 ? '+' : ''}{scenarioDelta.toFixed(2).replace('.', ',')}
                       </span>
                     </p>
-                    <p className="text-xs text-gray-500 mt-1">Nykyiset pisteesi: {formatPoints(baselinePoints)}.</p>
+                    <p className="text-xs text-neutral-400 mt-1">Nykyiset pisteesi: {formatPoints(baselinePoints)}.</p>
                   </div>
                 ) : (
-                  <p className="text-sm text-gray-600">Valitse aine ja arvosana nähdäksesi muutoksen.</p>
+                  <p className="text-sm text-neutral-300">Valitse aine ja arvosana nähdäksesi muutoksen.</p>
                 )}
               </div>
             </DialogContent>
@@ -473,7 +473,7 @@ export function TodistuspisteCalculator({
         {activeResult && improvementSuggestions.length > 0 && (
           <div className="rounded-2xl border border-green-200 bg-green-50/60 p-4">
             <h3 className="text-sm font-semibold text-gray-900 mb-2">Vinkit pisteiden nostamiseen</h3>
-            <ul className="space-y-1 text-xs text-gray-700">
+            <ul className="space-y-1 text-xs text-neutral-200">
               {improvementSuggestions.map((suggestion, index) => (
                 <li key={index} className="flex gap-2">
                   <span className="text-green-600">•</span>
@@ -487,11 +487,11 @@ export function TodistuspisteCalculator({
         <div className="mt-6 pt-4 border-t border-gray-200">
           <div className="bg-gradient-to-r from-slate-50 to-teal-50/20 rounded-lg p-4 mb-3">
             <p className="text-sm font-semibold text-gray-800 mb-2">Henkilökohtaiset suositukset ammattisi perusteella</p>
-            <p className="text-xs text-gray-700">
+            <p className="text-xs text-neutral-200">
               Näytämme koulutusohjelmia, jotka sopivat sekä pisteisiisi että testin perusteella saamiisi ammattisuosituksiin.
             </p>
           </div>
-          <p className="text-xs text-gray-500 italic text-center">
+          <p className="text-xs text-neutral-400 italic text-center">
             Laskelmat perustuvat julkisiin todistusvalinnan tietoihin (2025). Tarkat pisterajat voivat vaihdella. Tarkista aina viralliset tiedot{' '}
             <a href="https://opintopolku.fi" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
               Opintopolusta
@@ -528,7 +528,7 @@ function SubjectSection({ title, subtitle, subjects, inputs, onGrade, onVariant,
     <section className="space-y-3">
       <div>
         <h3 className="text-sm font-semibold text-gray-900">{title}</h3>
-        {subtitle && <p className="text-xs text-gray-500 mt-1">{subtitle}</p>}
+        {subtitle && <p className="text-xs text-neutral-400 mt-1">{subtitle}</p>}
       </div>
       <div className="grid gap-3 md:grid-cols-2">
         {subjects.map(subject => {
@@ -549,7 +549,7 @@ function SubjectSection({ title, subtitle, subjects, inputs, onGrade, onVariant,
                   {subject.label}
                   {subject.required && <span className="text-red-500 ml-1">*</span>}
                 </p>
-                {subject.helperText && <p className="text-xs text-gray-500 mt-1">{subject.helperText}</p>}
+                {subject.helperText && <p className="text-xs text-neutral-400 mt-1">{subject.helperText}</p>}
                 {subject.allowSubjectChoice && selectedChoice && (
                   <p className="text-xs text-primary mt-1">Valittu reaaliaine: {selectedChoice.label}</p>
                 )}

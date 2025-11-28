@@ -11,7 +11,7 @@ import Logo from '@/components/Logo';
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f1419] via-[#1a1d23] to-[#0f1419]">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-16 max-w-6xl">
         {/* Back Button */}
         <div className="mb-8">
@@ -43,7 +43,7 @@ export default function PricingPage() {
               <CardDescription>Yksityiskäyttäjille</CardDescription>
               <div className="mt-4">
                 <span className="text-4xl font-bold">0€</span>
-                <span className="text-gray-600">/vuosi</span>
+                <span className="text-neutral-400">/vuosi</span>
               </div>
             </CardHeader>
             <CardContent>
@@ -85,7 +85,7 @@ export default function PricingPage() {
               <CardDescription>7.-9. luokat</CardDescription>
               <div className="mt-4">
                 <span className="text-4xl font-bold">1 200€</span>
-                <span className="text-gray-600">/vuosi</span>
+                <span className="text-neutral-400">/vuosi</span>
               </div>
             </CardHeader>
             <CardContent>
@@ -145,7 +145,7 @@ export default function PricingPage() {
               <CardDescription>Lukio & Ammattikoulu</CardDescription>
               <div className="mt-4">
                 <span className="text-4xl font-bold">2 000€</span>
-                <span className="text-gray-600">/vuosi</span>
+                <span className="text-neutral-400">/vuosi</span>
               </div>
             </CardHeader>
             <CardContent>
@@ -201,7 +201,7 @@ export default function PricingPage() {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50">
+                  <tr className="bg-neutral-900/20">
                     <th className="border p-3 text-left">Ominaisuus</th>
                     <th className="border p-3 text-center">Ilmainen</th>
                     <th className="border p-3 text-center">Yläaste</th>
@@ -215,7 +215,7 @@ export default function PricingPage() {
                     <td className="border p-3 text-center">✓</td>
                     <td className="border p-3 text-center">✓</td>
                   </tr>
-                  <tr className="bg-gray-50">
+                  <tr className="bg-neutral-900/20">
                     <td className="border p-3">Opettajien hallintapaneeli</td>
                     <td className="border p-3 text-center">—</td>
                     <td className="border p-3 text-center">✓</td>
@@ -233,7 +233,7 @@ export default function PricingPage() {
                     <td className="border p-3 text-center">✓</td>
                     <td className="border p-3 text-center">✓</td>
                   </tr>
-                  <tr className="bg-gray-50">
+                  <tr className="bg-neutral-900/20">
                     <td className="border p-3">Analyyttiset työkalut</td>
                     <td className="border p-3 text-center">—</td>
                     <td className="border p-3 text-center">Edistyneet</td>
@@ -245,7 +245,7 @@ export default function PricingPage() {
                     <td className="border p-3 text-center">—</td>
                     <td className="border p-3 text-center">✓</td>
                   </tr>
-                  <tr className="bg-gray-50">
+                  <tr className="bg-neutral-900/20">
                     <td className="border p-3">Tietojen säilytys</td>
                     <td className="border p-3 text-center">—</td>
                     <td className="border p-3 text-center">1 vuosi</td>
@@ -257,7 +257,7 @@ export default function PricingPage() {
                     <td className="border p-3 text-center">Sähköposti</td>
                     <td className="border p-3 text-center">Nopea tuki ja käyttöohjeistus</td>
                   </tr>
-                  <tr className="bg-gray-50">
+                  <tr className="bg-neutral-900/20">
                     <td className="border p-3">API-pääsy</td>
                     <td className="border p-3 text-center">—</td>
                     <td className="border p-3 text-center">—</td>

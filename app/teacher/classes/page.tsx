@@ -89,13 +89,13 @@ export default function TeacherClassesPage() {
 
     return (
       <div className="space-y-1">
-        <div className="h-2 rounded-full bg-gray-200 overflow-hidden">
+        <div className="h-2 rounded-full bg-neutral-700/40 overflow-hidden">
           <div
             className="h-full bg-gradient-to-r from-slate-500 to-teal-50/200 transition-all"
             style={{ width: `${safePercentage}%` }}
           />
         </div>
-        <div className="flex items-center justify-between text-xs text-gray-600">
+        <div className="flex items-center justify-between text-xs text-neutral-300">
           <span>Valmiina</span>
           <span>{safePercentage}%</span>
         </div>
@@ -105,10 +105,10 @@ export default function TeacherClassesPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
+      <div className="min-h-screen flex flex-col">
         <TeacherNav />
         <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
-          <h1 className="text-3xl font-bold mb-8">Omat luokat</h1>
+          <h1 className="text-3xl font-bold mb-8 text-white">Omat luokat</h1>
           <div className="text-center py-12">
             <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
           </div>
@@ -119,13 +119,13 @@ export default function TeacherClassesPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
+    <div className="min-h-screen flex flex-col">
       <TeacherNav />
       <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
         <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold mb-2">Omat luokat</h1>
-            <p className="text-gray-600">Yleisnäkymä luokkien etenemisestä ja ilmoituksista</p>
+            <h1 className="text-3xl font-bold mb-2 text-white">Omat luokat</h1>
+            <p className="text-neutral-300">Yleisnäkymä luokkien etenemisestä ja ilmoituksista</p>
           </div>
           <Link
             href="/teacher/classes/new"
@@ -136,8 +136,8 @@ export default function TeacherClassesPage() {
         </div>
 
         {classes.length === 0 ? (
-          <div className="bg-white rounded-xl shadow p-12 text-center">
-            <p className="text-gray-600 mb-6">Sinulla ei ole vielä luokkia</p>
+          <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow p-12 text-center">
+            <p className="text-neutral-300 mb-6">Sinulla ei ole vielä luokkia</p>
             <Link
               href="/teacher/classes/new"
               className="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary transition"
@@ -161,14 +161,14 @@ export default function TeacherClassesPage() {
               return (
                 <div
                   key={classItem.id}
-                  className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 space-y-5 flex flex-col"
+                  className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-sm p-6 space-y-5 flex flex-col"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <h2 className="text-xl font-semibold text-gray-900">
+                      <h2 className="text-xl font-semibold text-white">
                         Luokka {classItem.id.substring(0, 8)}
                       </h2>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-neutral-400">
                         Luotu {formatDate(classItem.created_at)}
                       </p>
                     </div>
@@ -181,21 +181,21 @@ export default function TeacherClassesPage() {
 
                   {renderProgressBar(completionRate)}
 
-                  <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+                  <div className="grid grid-cols-2 gap-4 text-sm text-neutral-300">
                     <div>
-                      <p className="font-semibold text-gray-700">Suoritetut testit</p>
+                      <p className="font-semibold text-neutral-200">Suoritetut testit</p>
                       <p>{completed} / {totalPins}</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-700">Kesken</p>
+                      <p className="font-semibold text-neutral-200">Kesken</p>
                       <p>{pending}</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-700">Viimeisin tulos</p>
+                      <p className="font-semibold text-neutral-200">Viimeisin tulos</p>
                       <p>{lastSubmission}</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-700">PIN-linkki</p>
+                      <p className="font-semibold text-neutral-200">PIN-linkki</p>
                       <button
                         type="button"
                         onClick={() => {
@@ -220,7 +220,7 @@ export default function TeacherClassesPage() {
                       href={classResultsPath}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-200 transition"
+                      className="inline-flex items-center justify-center bg-neutral-800/30 text-neutral-200 px-4 py-2 rounded-lg text-sm font-medium hover:bg-neutral-700/40 transition"
                     >
                       Näytä tulossivu
                     </Link>

@@ -105,17 +105,17 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
         <h3 className="text-lg font-semibold text-gray-900 mb-2">
           Jaa tuloksesi kavereiden kanssa
         </h3>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-neutral-300">
           Auta muita löytämään oma urapolku-testin avulla
         </p>
       </div>
 
       {/* Referral Code */}
       {referralCode && (
-        <div className="mb-4 p-4 bg-white rounded-lg border border-gray-200">
+        <div className="mb-4 p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
           <div className="flex items-center justify-between gap-3">
             <div className="flex-1">
-              <label className="text-xs font-medium text-gray-500 mb-1 block">
+              <label className="text-xs font-medium text-neutral-400 mb-1 block">
                 Sinun suosituslinkkisi:
               </label>
               <div className="text-sm font-mono text-gray-800 break-all">
@@ -162,7 +162,7 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
         <Button
           onClick={shareToFacebook}
           variant="outline"
-          className="bg-white hover:bg-gray-50"
+          className="bg-white/10 hover:bg-white/20 border border-white/20"
         >
           <Facebook className="h-4 w-4 mr-2 text-primary" />
           Facebook
@@ -171,7 +171,7 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
         <Button
           onClick={shareToTwitter}
           variant="outline"
-          className="bg-white hover:bg-gray-50"
+          className="bg-white/10 hover:bg-white/20 border border-white/20"
         >
           <Twitter className="h-4 w-4 mr-2 text-blue-400" />
           Twitter
@@ -180,7 +180,7 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
         <Button
           onClick={shareToLinkedIn}
           variant="outline"
-          className="bg-white hover:bg-gray-50"
+          className="bg-white/10 hover:bg-white/20 border border-white/20"
         >
           <Linkedin className="h-4 w-4 mr-2 text-primary" />
           LinkedIn
@@ -188,7 +188,7 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
       </div>
 
       {/* Info Text */}
-      <p className="text-xs text-gray-500 text-center mt-4">
+      <p className="text-xs text-neutral-400 text-center mt-4">
         Kun joku käyttää sinun linkkiäsi, se auttaa meitä auttamaan enemmän ihmisiä löytämään oman urapolunsa.
       </p>
     </div>

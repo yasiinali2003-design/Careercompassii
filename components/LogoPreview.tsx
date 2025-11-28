@@ -55,12 +55,12 @@ export default function LogoPreview() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#F8FAFB] to-[#E8F2F5] p-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#0B0F14] to-[#11161D] p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-[#2B5F75] mb-2">
+        <h1 className="text-4xl font-bold text-white mb-2">
           Urakompassi Logo Collection
         </h1>
-        <p className="text-lg text-[#5A6E7A] mb-10">
+        <p className="text-lg text-neutral-300 mb-10">
           Professional compass-based logo designs for your brand
         </p>
 
@@ -69,9 +69,9 @@ export default function LogoPreview() {
           {logos.map((logo, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
             >
-              <h2 className="text-xl font-semibold text-[#2B5F75] mb-4">
+              <h2 className="text-xl font-semibold text-white mb-4">
                 {logo.name}
               </h2>
               <div
@@ -87,18 +87,18 @@ export default function LogoPreview() {
                   onClick={() => setSelectedLogo(logo.file)}
                 />
               </div>
-              <div className="text-sm text-[#5A6E7A] space-y-1">
+              <div className="text-sm text-neutral-300 space-y-1">
                 <p>
-                  <strong className="text-[#2B5F75]">File:</strong> {logo.file}
+                  <strong className="text-white">File:</strong> {logo.file}
                 </p>
                 <p>
-                  <strong className="text-[#2B5F75]">Size:</strong> {logo.size}
+                  <strong className="text-white">Size:</strong> {logo.size}
                 </p>
                 <p>
-                  <strong className="text-[#2B5F75]">Use:</strong> {logo.use}
+                  <strong className="text-white">Use:</strong> {logo.use}
                 </p>
                 <p>
-                  <strong className="text-[#2B5F75]">Features:</strong>{" "}
+                  <strong className="text-white">Features:</strong>{" "}
                   {logo.features}
                 </p>
               </div>
@@ -108,7 +108,7 @@ export default function LogoPreview() {
 
         {/* Color Palette */}
         <div className="bg-white rounded-xl p-8 shadow-lg mb-8">
-          <h2 className="text-2xl font-semibold text-[#2B5F75] mb-6">
+          <h2 className="text-2xl font-semibold text-white mb-6">
             Brand Colors
           </h2>
           <div className="flex flex-wrap gap-6">
@@ -121,10 +121,10 @@ export default function LogoPreview() {
                     border: color.border ? "1px solid #E0E0E0" : "none",
                   }}
                 />
-                <div className="text-sm font-semibold text-[#2B5F75]">
+                <div className="text-sm font-semibold text-white">
                   {color.name}
                 </div>
-                <div className="text-xs text-[#5A6E7A] font-mono">
+                <div className="text-xs text-neutral-300 font-mono">
                   {color.code}
                 </div>
               </div>
@@ -134,32 +134,32 @@ export default function LogoPreview() {
 
         {/* Usage Guidelines */}
         <div className="bg-white rounded-xl p-8 shadow-lg">
-          <h2 className="text-2xl font-semibold text-[#2B5F75] mb-4">
+          <h2 className="text-2xl font-semibold text-white mb-4">
             Usage Guidelines
           </h2>
-          <ul className="space-y-3 text-[#5A6E7A]">
+          <ul className="space-y-3 text-neutral-300">
             <li>
-              <strong className="text-[#2B5F75]">Minimum Size:</strong> Logo
+              <strong className="text-white">Minimum Size:</strong> Logo
               should not be displayed smaller than 40px height
             </li>
             <li>
-              <strong className="text-[#2B5F75]">Clear Space:</strong> Maintain
+              <strong className="text-white">Clear Space:</strong> Maintain
               at least 20% of logo height as clear space around it
             </li>
             <li>
-              <strong className="text-[#2B5F75]">Background:</strong> Use
+              <strong className="text-white">Background:</strong> Use
               logo-dark.svg on light/colored backgrounds
             </li>
             <li>
-              <strong className="text-[#2B5F75]">Favicon:</strong> Use
+              <strong className="text-white">Favicon:</strong> Use
               logo-icon.svg at 32×32px or 64×64px
             </li>
             <li>
-              <strong className="text-[#2B5F75]">Print:</strong> Use SVG for
+              <strong className="text-white">Print:</strong> Use SVG for
               scalability, or export PNG at 2x resolution
             </li>
             <li>
-              <strong className="text-[#2B5F75]">Format:</strong> All logos are
+              <strong className="text-white">Format:</strong> All logos are
               SVG format - scalable and editable
             </li>
           </ul>

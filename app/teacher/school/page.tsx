@@ -169,7 +169,7 @@ export default function SchoolPage() {
 
   if (loading && schools.length === 0) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
+      <div className="min-h-screen flex flex-col">
         <TeacherNav />
         <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
           <div className="text-center py-12">
@@ -182,7 +182,7 @@ export default function SchoolPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-teal-50/20">
+    <div className="min-h-screen flex flex-col">
       <TeacherNav />
       <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
         <h1 className="text-3xl font-bold mb-8">Koulun hallinta</h1>
@@ -201,14 +201,14 @@ export default function SchoolPage() {
                   className={`w-full text-left p-3 rounded-lg transition ${
                     selectedSchool?.school_id === school.school_id
                       ? 'bg-primary/10 border-2 border-primary'
-                      : 'bg-gray-50 hover:bg-gray-100'
+                      : 'bg-neutral-900/20 hover:bg-neutral-800/30'
                   }`}
                 >
                   <div className="font-semibold">{school.school_name}</div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-neutral-300">
                     {school.package} • {school.teacher_count} opettajaa
                   </div>
-                  <div className="text-xs text-gray-500 mt-1">
+                  <div className="text-xs text-neutral-400 mt-1">
                     Rooli: {school.role}
                   </div>
                 </button>
@@ -238,13 +238,13 @@ export default function SchoolPage() {
             </CardHeader>
             <CardContent>
               {!selectedSchool ? (
-                <p className="text-gray-600">Valitse koulu vasemmalta</p>
+                <p className="text-neutral-300">Valitse koulu vasemmalta</p>
               ) : (
                 <div className="space-y-6">
                   {/* School Info */}
                   <div>
                     <h3 className="font-semibold mb-2">Koulun tiedot</h3>
-                    <div className="bg-gray-50 p-4 rounded-lg space-y-2">
+                    <div className="bg-neutral-900/20 p-4 rounded-lg space-y-2">
                       <div>
                         <span className="font-medium">Paketti:</span>{' '}
                         <span className="capitalize">{selectedSchool.package}</span>
@@ -271,11 +271,11 @@ export default function SchoolPage() {
                       {teachers.map((teacher) => (
                         <div
                           key={teacher.id}
-                          className="flex items-center justify-between bg-gray-50 p-3 rounded-lg"
+                          className="flex items-center justify-between bg-neutral-900/20 p-3 rounded-lg"
                         >
                           <div>
                             <div className="font-medium">{teacher.teacher_id}</div>
-                            <div className="text-sm text-gray-600">
+                            <div className="text-sm text-neutral-300">
                               {teacher.role} • Liittyi{' '}
                               {new Date(teacher.joined_at).toLocaleDateString('fi-FI')}
                             </div>
@@ -323,7 +323,7 @@ export default function SchoolPage() {
                   )}
 
                   {currentRole === 'admin' && selectedSchool.package !== 'premium' && (
-                    <div className="bg-slate-50 border border-primary/20 rounded-lg p-4">
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg p-4">
                       <h4 className="font-semibold text-blue-900 mb-2">
                         Päivitä Premium-pakettiin
                       </h4>

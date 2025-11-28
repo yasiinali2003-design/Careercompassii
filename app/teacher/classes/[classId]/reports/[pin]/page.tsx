@@ -121,7 +121,7 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen">
       <style>{`
         @page { size: A4; margin: 20mm 15mm; }
         @media print {
@@ -139,8 +139,8 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
         </div>
 
         {/* Action Toolbar - No Print */}
-        <div className="no-print mb-4 bg-white border-b border-slate-200 -mx-4 px-4 py-3 flex flex-wrap gap-2 justify-between items-center">
-          <Link href={`/teacher/classes/${classId}`} className="text-sm text-slate-600 hover:text-primary flex items-center gap-1">
+        <div className="no-print mb-4 bg-white/5 backdrop-blur-sm border-b border-white/10 -mx-4 px-4 py-3 flex flex-wrap gap-2 justify-between items-center">
+          <Link href={`/teacher/classes/${classId}`} className="text-sm text-neutral-300 hover:text-white flex items-center gap-1">
             ← Takaisin luokkaan
           </Link>
           <div className="flex gap-2">
@@ -155,14 +155,14 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
             <button
               onClick={handleDownloadParentPDF}
               disabled={generatingParentPDF || !result}
-              className="inline-flex items-center gap-1.5 bg-white border border-slate-300 text-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-50 disabled:opacity-50"
+              className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 text-sm font-medium hover:bg-white/20 disabled:opacity-50"
             >
               <FileText className="h-3.5 w-3.5" />
               {generatingParentPDF ? 'Luodaan...' : 'Vanhemmille'}
             </button>
             <button
               onClick={() => window.print()}
-              className="inline-flex items-center gap-1.5 bg-white border border-slate-300 text-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-50"
+              className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 text-sm font-medium hover:bg-white/20"
             >
               <Printer className="h-3.5 w-3.5" />
               Tulosta
@@ -187,9 +187,9 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
         </div>
 
         {/* Main Report Document */}
-        <div className="bg-white border border-slate-300 print-bg-white">
+        <div className="bg-white/5 backdrop-blur-sm border border-white/20 print-bg-white">
           {/* Document Header */}
-          <div className="border-b-2 border-primary bg-white p-6">
+          <div className="border-b-2 border-primary bg-white/5 backdrop-blur-sm print-bg-white p-6">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h1 className="text-2xl font-bold text-slate-900 mb-1">Urakompassi</h1>
@@ -244,7 +244,7 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
             {result && (
               <div className="space-y-8">
                 {/* Summary */}
-                <div className="border-l-4 border-primary pl-4 py-2 bg-slate-50">
+                <div className="border-l-4 border-primary pl-4 py-2 bg-white/5 backdrop-blur-sm print-bg-white">
                   <p className="text-sm text-slate-700 leading-relaxed">
                     Tämä raportti sisältää opiskelijan henkilökohtaiset urasuositukset 30 kysymyksen testin perusteella.
                     Tulokset perustuvat analyysiin 361 eri ammatin joukosta.
@@ -266,7 +266,7 @@ export default function StudentReportPage({ params, searchParams }: { params: { 
                     </thead>
                     <tbody>
                       {careers.slice(0, 5).map((c, i) => (
-                        <tr key={i} className="border-b border-slate-200 hover:bg-slate-50">
+                        <tr key={i} className="border-b border-white/10 hover:bg-white/5">
                           <td className="py-3 px-3 font-bold text-primary">{i + 1}</td>
                           <td className="py-3 px-3 font-medium text-slate-900">{c.title}</td>
                           <td className="py-3 px-3 text-right">

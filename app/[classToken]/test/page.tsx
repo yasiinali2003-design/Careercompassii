@@ -54,23 +54,23 @@ export default function StudentLoginPage({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-teal-50/20 p-8">
+    <div className="min-h-screen p-8">
       <div className="max-w-md mx-auto mt-20">
-        <div className="bg-white rounded-xl shadow-lg p-8">
+        <div className="bg-[#1a1d23] rounded-xl shadow-lg border border-white/10 p-8">
           <h1 className="text-3xl font-bold mb-2">Kirjaudu testiin</h1>
-          <p className="text-gray-600 mb-6">
+          <p className="text-neutral-300 mb-6">
             Syötä oppilaanunnesi antama PIN-koodi
           </p>
 
           {error && (
-            <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-              <p className="text-red-800">{error}</p>
+            <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-4 mb-6">
+              <p className="text-red-300">{error}</p>
             </div>
           )}
 
           <div className="space-y-4">
             <div>
-              <label htmlFor="pin" className="block font-semibold text-gray-700 mb-2">
+              <label htmlFor="pin" className="block font-semibold text-neutral-200 mb-2">
                 PIN-koodi
               </label>
               <input
@@ -82,7 +82,7 @@ export default function StudentLoginPage({
                 maxLength={6}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-center font-mono text-2xl uppercase tracking-widest"
               />
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-neutral-400 mt-1">
                 Anna oppilaanumero-opettajasi antama PIN-koodi
               </p>
             </div>
@@ -95,7 +95,7 @@ export default function StudentLoginPage({
             </button>
           </div>
 
-          <div className="mt-6 bg-slate-50 border border-primary/20 rounded-lg p-4">
+          <div className="mt-6 bg-[#1a1d23]/50 border border-white/10 rounded-lg p-4">
             <p className="text-sm text-primary">
               💡 <strong>Vinkki:</strong> Jos sinulla ei ole PIN-koodia, ota yhteyttä oppilaanumero-opettajaasi.
             </p>

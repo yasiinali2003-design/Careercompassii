@@ -459,7 +459,7 @@ export default function HomePage() {
                       <p className="text-gray-800 mb-6 font-medium leading-relaxed tracking-wide max-w-sm">
                         &quot;En tiennyt mitä haluan tehdä kun valmistun yläasteesta. Tää testi auttoi ymmärtämään mun vahvuuksia ja näyttää kiinnostavia opintovaihtoehtoja. Nyt tuntuu että mulla on selkeämpi kuva tulevaisuudesta!&quot;
                       </p>
-                      <p className="font-semibold text-gray-700 text-sm">Emma, 15</p>
+                      <p className="font-semibold text-neutral-200 text-sm">Emma, 15</p>
                     </div>
                   </div>
                 </CardContent>
@@ -476,7 +476,7 @@ export default function HomePage() {
                       <p className="text-gray-800 mb-6 font-medium leading-relaxed tracking-wide max-w-sm">
                         &quot;Olin epävarma mihin haluan hakea jatko-opintoihin. Testi selvensi mun ura-suuntaa ja antoi itseluottamusta tehdä päätöksiä. Nyt tiedän että olen valinnut oikean polun!&quot;
                       </p>
-                      <p className="font-semibold text-gray-700 text-sm">Marcus, 17</p>
+                      <p className="font-semibold text-neutral-200 text-sm">Marcus, 17</p>
                     </div>
                   </div>
                 </CardContent>
@@ -493,7 +493,7 @@ export default function HomePage() {
                       <p className="text-gray-800 mb-6 font-medium leading-relaxed tracking-wide max-w-sm">
                         &quot;Olin töissä alalla joka ei tuntunut omalta. Tää testi avasi silmäni uusiin mahdollisuuksiin ja auttoi löytämään uran joka oikeesti sopii mulle. Elämäni on muuttunut parempaan suuntaan!&quot;
                       </p>
-                      <p className="font-semibold text-gray-700 text-sm">Sofia, 23</p>
+                      <p className="font-semibold text-neutral-200 text-sm">Sofia, 23</p>
                     </div>
                   </div>
                 </CardContent>

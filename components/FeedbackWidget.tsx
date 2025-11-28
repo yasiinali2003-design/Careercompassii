@@ -91,7 +91,7 @@ export function FeedbackWidget({ cohort, dominantCategory, recommendedCareers }:
       <CardContent className="space-y-4">
         {/* Rating Scale */}
         <div className="flex flex-col items-center space-y-2">
-          <p className="text-sm text-gray-600">Arvostele suositukset:</p>
+          <p className="text-sm text-neutral-300">Arvostele suositukset:</p>
           <div className="flex gap-2">
             {[1, 2, 3, 4, 5].map((rating) => (
               <Button
@@ -105,7 +105,7 @@ export function FeedbackWidget({ cohort, dominantCategory, recommendedCareers }:
               </Button>
             ))}
           </div>
-          <div className="flex justify-between w-full text-xs text-gray-500 px-2">
+          <div className="flex justify-between w-full text-xs text-neutral-400 px-2">
             <span>Ei lainkaan hyödyllinen</span>
             <span>Erittäin hyödyllinen</span>
           </div>
@@ -124,7 +124,7 @@ export function FeedbackWidget({ cohort, dominantCategory, recommendedCareers }:
             className="w-full min-h-[80px] p-2 border rounded-md resize-none focus:ring-2 focus:ring-blue-500"
             maxLength={500}
           />
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-neutral-400">
             {feedbackText.length}/500 merkkiä
           </p>
         </div>
@@ -140,7 +140,7 @@ export function FeedbackWidget({ cohort, dominantCategory, recommendedCareers }:
 
         {/* Debug Info (only in development) */}
         {process.env.NODE_ENV === 'development' && (
-          <div className="mt-4 p-3 bg-gray-100 rounded text-xs">
+          <div className="mt-4 p-3 bg-neutral-800/30 rounded text-xs">
             <p className="font-semibold mb-1">Debug Info:</p>
             <p>Dominant Category: {dominantCategory}</p>
             <p>Cohort: {cohort}</p>
