@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Surface } from "@/components/ui/surface"
-import CategoryCard from "@/components/CategoryCard"
 import Logo from "@/components/Logo"
 import ScrollNav from "@/components/ScrollNav"
 import CallToActionSection from "@/components/CallToActionSection"
@@ -130,21 +129,51 @@ export default function HomePage() {
       {/* Miten Urakompassi auttaa */}
       <WhySection />
 
-      {/* Category Section - Premium Nordic SaaS Design */}
-      <AnimatedSection className="mx-auto max-w-7xl px-6 py-16 md:py-20 lg:py-24">
-        <div className="max-w-4xl mx-auto text-center mb-10">
-          <span className="text-sm font-semibold text-[#E8994A] uppercase tracking-wider mb-2 block">Persoonallisuustyypit</span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white leading-tight">
-            Kahdeksan ainutlaatuista<br/>tyyppiä
-          </h2>
-          <p className="text-lg sm:text-xl text-neutral-300 max-w-2xl mx-auto">
-            Löydä tyyppi, joka kuvaa parhaiten sinua ja töitä, jotka sopivat sinulle
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {categories.map((category, index) => (
-            <CategoryCard key={category.slug} category={category} index={index} />
-          ))}
+      {/* Category Section - Two-Column Layout */}
+      <AnimatedSection className="max-w-6xl mx-auto px-6 py-16 md:py-20">
+        <div className="grid gap-10 md:grid-cols-[minmax(0,1.2fr),minmax(0,2fr)] items-start">
+          {/* Left Column: Heading and Description */}
+          <div>
+            <span className="text-sm font-semibold text-[#E8994A] uppercase tracking-wider mb-2 block">Persoonallisuustyypit</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white leading-tight text-left">
+              Kahdeksan ainutlaatuista tyyppiä
+            </h2>
+            <p className="mt-3 text-sm md:text-base text-urak-text-secondary">
+              Löydä tyyppi, joka kuvaa parhaiten sinua ja töitä, jotka sopivat sinulle
+            </p>
+            <p className="mt-4 text-xs md:text-sm text-urak-text-muted">
+              Jokainen tyyppi edustaa erilaista lähestymistapaa työhön ja uraan
+            </p>
+          </div>
+          
+          {/* Right Column: Types Panel */}
+          <div className="rounded-3xl border border-white/5 bg-white/5 bg-gradient-to-b from-white/[0.05] to-white/0 backdrop-blur-xl shadow-[0_18px_50px_rgba(0,0,0,0.45)] divide-y divide-white/5">
+            {categories.map((category, index) => {
+              const formattedNumber = String(index + 1).padStart(2, '0');
+              
+              return (
+                <button
+                  key={category.slug}
+                  className="group flex w-full items-center gap-4 px-5 py-4 md:px-6 md:py-5 text-left transition-colors hover:bg-white/5"
+                >
+                  {/* Number Pill */}
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-urak-bg text-xs font-semibold text-urak-text-secondary ring-1 ring-white/10 group-hover:text-urak-accent-blue group-hover:ring-urak-accent-blue/60 flex-shrink-0">
+                    {formattedNumber}
+                  </div>
+                  
+                  {/* Type Name and Descriptor */}
+                  <div className="flex-1 min-w-0">
+                    <div className="text-sm md:text-base font-semibold text-urak-text-primary">
+                      {category.name_fi}
+                    </div>
+                    <div className="text-xs md:text-sm text-urak-text-secondary mt-0.5">
+                      {category.description}
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </AnimatedSection>
 

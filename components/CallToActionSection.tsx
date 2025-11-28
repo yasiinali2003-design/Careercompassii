@@ -1,31 +1,52 @@
 "use client";
 
 import Link from "next/link";
-import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { AnimatedCard } from "@/components/ui/AnimatedCard";
-import { PrimaryButton } from "@/components/ui/PrimaryButton";
-import { ArrowRight } from "lucide-react";
 
 export default function CallToActionSection() {
   return (
-    <AnimatedSection className="py-16 md:py-20 lg:py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <AnimatedCard className="bg-[#11161f] rounded-xl ring-1 ring-white/5 p-8 md:p-12 max-w-3xl mx-auto text-center shadow-[0_0_24px_rgba(0,0,0,0.25)] hover:bg-white/[0.03]">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
-            Valmiina tuntemaan itsesi?
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl mb-8 text-gray-300 leading-relaxed max-w-2xl mx-auto">
-            Tunne itsesi ja löydä polkusi. Tee testi nyt ja saa henkilökohtaisia ohjauksia, jotka auttavat miettimään oman suuntasi.
-          </p>
-          <PrimaryButton href="/test" className="group inline-flex items-center gap-2 px-8 py-4 text-base">
-            Aloita testi
-            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </PrimaryButton>
-          <p className="text-xs sm:text-sm text-gray-400 mt-6">
-            30 kysymystä • Maksuton • Tekoäly-powered
-          </p>
-        </AnimatedCard>
+    <section className="py-16 md:py-20">
+      <div className="relative mx-auto max-w-5xl px-6">
+        {/* Subtle Radial Glow Background */}
+        <div className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-64 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_rgba(56,189,248,0.18),_transparent_60%)]" />
+
+        {/* Content Layout */}
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          {/* Left Block - Text */}
+          <div className="flex-1">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-urak-text-primary">
+              Valmiina tuntemaan itsesi?
+            </h2>
+            <p className="mt-3 text-sm md:text-base text-urak-text-secondary">
+              Tunne itsesi ja löydä polkusi. Tee testi nyt ja saa henkilökohtaisia ohjauksia, jotka auttavat miettimään oman suuntasi.
+            </p>
+          </div>
+
+          {/* Right Block - Button + Pills */}
+          <div className="flex flex-col items-start md:items-end gap-4">
+            {/* Primary Button */}
+            <Link
+              href="/test"
+              className="inline-flex items-center justify-center rounded-full bg-urak-accent-blue px-7 py-3 text-sm font-medium text-urak-bg hover:bg-urak-accent-blue/90 transition"
+            >
+              Aloita testi
+              <span className="ml-2 text-base">→</span>
+            </Link>
+
+            {/* Pills */}
+            <div className="flex flex-wrap gap-2 text-[11px] font-medium text-urak-text-muted">
+              <span className="rounded-full border border-urak-border/70 bg-urak-bg/60 px-3 py-1">
+                30 kysymystä
+              </span>
+              <span className="rounded-full border border-urak-border/70 bg-urak-bg/60 px-3 py-1">
+                Noin 10–15 minuuttia
+              </span>
+              <span className="rounded-full border border-urak-border/70 bg-urak-bg/60 px-3 py-1">
+                Tutkimuspohjainen menetelmä
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
-    </AnimatedSection>
+    </section>
   );
 }

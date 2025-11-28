@@ -3,10 +3,10 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Logo from '@/components/Logo';
-import { GraduationCap, Lock, ArrowRight } from 'lucide-react';
+import ScrollNav from '@/components/ScrollNav';
+import { AnimatedSection } from '@/components/ui/AnimatedSection';
+import { GraduationCap, Lock, ArrowRight, ArrowLeft } from 'lucide-react';
 
 export default function TeacherLoginPage() {
   const router = useRouter();
@@ -66,34 +66,41 @@ export default function TeacherLoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        {/* Logo */}
-        <div className="mb-8 text-center">
-          <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
-            <Logo className="h-12 w-auto mx-auto mb-4" />
-          </Link>
-          <h1 className="text-2xl font-bold text-gray-900">Opettajien hallintapaneeli</h1>
-          <p className="text-sm text-neutral-300 mt-2">Kirjaudu sisään opettajakoodilla</p>
-        </div>
+    <div className="min-h-screen bg-transparent">
+      <ScrollNav />
 
-        {/* Login Card */}
-        <Card className="shadow-lg border-2 border-primary/20">
-          <CardHeader className="space-y-1">
-            <div className="flex items-center justify-center mb-2">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <Lock className="h-6 w-6 text-primary" />
+      <AnimatedSection className="min-h-[calc(100vh-80px)] flex items-center justify-center px-4 py-16 md:py-24">
+        <div className="w-full max-w-md">
+          {/* Logo */}
+          <div className="mb-10 text-center">
+            <Link href="/" className="inline-block hover:opacity-80 transition-opacity mb-6">
+              <Logo className="h-12 w-auto mx-auto" />
+            </Link>
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">Opettajien hallintapaneeli</h1>
+            <p className="text-sm text-urak-text-secondary">Kirjaudu sisään opettajakoodilla</p>
+          </div>
+
+          {/* Login Card */}
+          <div className="bg-urak-surface/70 border border-urak-border/60 rounded-3xl px-6 py-8 md:px-8 md:py-10 shadow-lg shadow-black/25">
+            {/* Lock Icon */}
+            <div className="flex items-center justify-center mb-6">
+              <div className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center p-3">
+                <Lock className="h-5 w-5 text-urak-accent-blue" />
               </div>
             </div>
-            <CardTitle className="text-2xl text-center">Kirjaudu sisään</CardTitle>
-            <CardDescription className="text-center">
-              Syötä opettajakoodi päästäksesi hallintapaneeliin
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
+
+            {/* Title */}
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-semibold text-white mb-2">Kirjaudu sisään</h2>
+              <p className="text-sm text-urak-text-secondary">
+                Syötä opettajakoodi päästäksesi hallintapaneeliin
+              </p>
+            </div>
+
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-neutral-200 mb-2">
+                <label htmlFor="password" className="block text-sm text-urak-text-secondary mb-2">
                   Opettajakoodi
                 </label>
                 <input
@@ -104,21 +111,20 @@ export default function TeacherLoginPage() {
                   placeholder="Syötä koodi"
                   required
                   autoFocus
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
+                  className="w-full px-4 py-3 bg-white/5 border border-urak-border rounded-xl focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/40 text-white placeholder:text-gray-500 transition-all"
                   disabled={loading}
                 />
               </div>
 
               {error && (
-                <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-                  <p className="text-sm text-red-800">{error}</p>
+                <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
+                  <p className="text-sm text-red-400">{error}</p>
                 </div>
               )}
 
-              <Button
+              <button
                 type="submit"
-                className="w-full"
-                size="lg"
+                className="w-full flex items-center justify-center gap-2 bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-urak-bg font-medium rounded-full py-3 text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={loading}
               >
                 {loading ? (
@@ -126,18 +132,19 @@ export default function TeacherLoginPage() {
                 ) : (
                   <>
                     Kirjaudu sisään
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="h-4 w-4" />
                   </>
                 )}
-              </Button>
+              </button>
             </form>
 
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4">
+            {/* Opettajille Info Box */}
+            <div className="mt-8 pt-8 border-t border-urak-border/40">
+              <div className="bg-urak-surface/40 border border-urak-border/40 rounded-2xl p-4">
                 <div className="flex items-start gap-3">
-                  <GraduationCap className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div className="text-sm text-primary">
-                    <p className="font-semibold mb-1">Opettajille</p>
+                  <GraduationCap className="h-4 w-4 text-urak-accent-blue mt-0.5 flex-shrink-0" />
+                  <div className="text-xs md:text-sm text-urak-text-secondary">
+                    <p className="font-semibold text-white mb-1">Opettajille</p>
                     <p>
                       Jos sinulla ei ole opettajakoodia, ota yhteyttä ylläpitoon tai tarkista
                       sähköpostistasi koodi.
@@ -147,24 +154,26 @@ export default function TeacherLoginPage() {
               </div>
             </div>
 
-            <div className="mt-4 text-center">
+            {/* Back Link */}
+            <div className="mt-6 text-center">
               <Link
                 href="/"
-                className="text-sm text-neutral-300 hover:text-gray-900 transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-urak-text-muted hover:text-white transition-colors"
               >
-                ← Takaisin etusivulle
+                <ArrowLeft className="h-4 w-4" />
+                Takaisin etusivulle
               </Link>
             </div>
-          </CardContent>
-        </Card>
+          </div>
 
-        {/* Security Notice */}
-        <div className="mt-6 text-center">
-          <p className="text-xs text-neutral-400">
-            Tämä alue on suojattu. Vain opettajilla on pääsy.
-          </p>
+          {/* Security Notice */}
+          <div className="mt-8 text-center">
+            <p className="text-xs text-urak-text-muted">
+              Tämä alue on suojattu. Vain opettajilla on pääsy.
+            </p>
+          </div>
         </div>
-      </div>
+      </AnimatedSection>
     </div>
   );
 }
