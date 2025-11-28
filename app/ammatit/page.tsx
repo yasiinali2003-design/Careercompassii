@@ -3,9 +3,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { Search, Filter, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { Search, ChevronRight, X, ChevronDown } from 'lucide-react';
 import { careersData as careersFI, CareerFI } from '@/data/careers-fi';
 import { Career, CareerFilters, WorkMode, Outlook } from '@/lib/types';
+import ScrollNav from '@/components/ScrollNav';
+import { AnimatedSection } from '@/components/ui/AnimatedSection';
+import { AnimatedCard } from '@/components/ui/AnimatedCard';
 
 const convertCareerFIToCareer = (careerFI: CareerFI): Career => ({
   slug: careerFI.id,
@@ -45,30 +48,28 @@ const careersData: Career[] = careersFI
 const totalCareerCount = careersData.length;
 
 const filterOptions = {
-  industry: Array.from(new Set(careersData.flatMap((c) => c.industry || []))).filter(Boolean),
-  educationLevel: Array.from(new Set(careersData.flatMap((c) => c.educationLevel || []))).filter(Boolean),
-  personalityType: Array.from(new Set(careersData.flatMap((c) => c.personalityType || []))).filter(Boolean),
+  industry: Array.from(new Set(careersData.flatMap((c) => c.industry || []))).filter(Boolean).sort(),
+  educationLevel: Array.from(new Set(careersData.flatMap((c) => c.educationLevel || []))).filter(Boolean).sort(),
+  personalityType: Array.from(new Set(careersData.flatMap((c) => c.personalityType || []))).filter(Boolean).sort(),
   workMode: Array.from(
     new Set(
       careersData
         .map((c) => c.workMode)
         .filter((mode): mode is WorkMode => Boolean(mode))
     )
-  ),
+  ).sort(),
   outlook: Array.from(
     new Set(
       careersData
         .map((c) => c.outlook)
         .filter((status): status is Outlook => Boolean(status))
     )
-  )
+  ).sort()
 };
-import Logo from '@/components/Logo';
 
 export default function CareerCatalog() {
   const searchParams = useSearchParams();
   
-  // Parse URL parameters
   const initialFilters: CareerFilters = {
     search: searchParams.get('search') || undefined,
     industry: searchParams.get('industry')?.split(',') || undefined,
@@ -79,22 +80,14 @@ export default function CareerCatalog() {
     salaryMin: searchParams.get('salaryMin') ? parseInt(searchParams.get('salaryMin')!) : undefined,
     salaryMax: searchParams.get('salaryMax') ? parseInt(searchParams.get('salaryMax')!) : undefined,
   };
+  
   const [searchTerm, setSearchTerm] = useState(initialFilters.search || '');
   const [filters, setFilters] = useState<CareerFilters>(initialFilters);
-  const [showFilters, setShowFilters] = useState(false);
-  const [visibleCareers, setVisibleCareers] = useState(12);
-  const [hasTestResults, setHasTestResults] = useState(false);
-
-  // Check if user has test results saved
-  useEffect(() => {
-    const results = localStorage.getItem('careerTestResults');
-    setHasTestResults(!!results);
-  }, []);
+  const [visibleCareers, setVisibleCareers] = useState(24);
 
   // Filter careers based on search and filters
   const filteredCareers = useMemo(() => {
     return careersData.filter((career: Career) => {
-      // Search filter
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
         const matchesSearch = 
@@ -104,7 +97,6 @@ export default function CareerCatalog() {
         if (!matchesSearch) return false;
       }
 
-      // Industry filter
       if (filters.industry && filters.industry.length > 0) {
         const hasMatchingIndustry = career.industry.some((ind: string) => 
           filters.industry!.includes(ind)
@@ -112,7 +104,6 @@ export default function CareerCatalog() {
         if (!hasMatchingIndustry) return false;
       }
 
-      // Education level filter
       if (filters.educationLevel && filters.educationLevel.length > 0) {
         const hasMatchingEducation = career.educationLevel.some((edu: string) => 
           filters.educationLevel!.includes(edu)
@@ -120,7 +111,6 @@ export default function CareerCatalog() {
         if (!hasMatchingEducation) return false;
       }
 
-      // Personality type filter
       if (filters.personalityType && filters.personalityType.length > 0) {
         const hasMatchingPersonality = career.personalityType.some((personality: string) => 
           filters.personalityType!.includes(personality)
@@ -128,21 +118,18 @@ export default function CareerCatalog() {
         if (!hasMatchingPersonality) return false;
       }
 
-      // Work mode filter
       if (filters.workMode && filters.workMode.length > 0) {
         if (career.workMode && !filters.workMode.includes(career.workMode)) {
           return false;
         }
       }
 
-      // Outlook filter
       if (filters.outlook && filters.outlook.length > 0) {
         if (career.outlook && !filters.outlook.includes(career.outlook)) {
           return false;
         }
       }
 
-      // Salary filter
       if (filters.salaryMin && career.salaryMax && career.salaryMax < filters.salaryMin) {
         return false;
       }
@@ -176,7 +163,7 @@ export default function CareerCatalog() {
   const clearFilters = () => {
     setSearchTerm('');
     setFilters({});
-    setVisibleCareers(12);
+    setVisibleCareers(24);
   };
 
   const hasActiveFilters = searchTerm || Object.values(filters).some((value: any) => 
@@ -184,276 +171,238 @@ export default function CareerCatalog() {
   );
 
   const loadMoreCareers = () => {
-    setVisibleCareers(prev => Math.min(prev + 12, filteredCareers.length));
+    setVisibleCareers(prev => Math.min(prev + 24, filteredCareers.length));
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Navigation */}
-      <nav className="border-b border-white/10 bg-[#05070B]/95 backdrop-blur-xl sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="hover:opacity-80 transition-opacity">
-            <Logo className="h-10 w-auto" />
-          </Link>
-          <div className="flex items-center gap-4">
-            {hasTestResults && (
-              <Link
-                href="/test/results"
-                className="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg hover:bg-white/20 transition-colors font-medium text-sm"
-              >
-                Katso tulokseni
-              </Link>
-            )}
-            <Link
-              href="/"
-              className="text-sm text-neutral-300 hover:text-white transition-colors"
-            >
-              Takaisin etusivulle
-            </Link>
-          </div>
-        </div>
-      </nav>
+    <div className="min-h-screen bg-transparent">
+      <ScrollNav />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20">
+      <AnimatedSection className="max-w-7xl mx-auto px-6 py-16 md:py-20 lg:py-24">
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
             Urakirjasto
           </h1>
-          <p className="text-xl text-neutral-300 mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             Selaa {totalCareerCount} erilaista ammattia eri aloilta ja löydä se ura, joka tuntuu aidosti omalta.
-            Suodata tuloksia kiinnostuksen, koulutustason tai työskentelytavan mukaan.
           </p>
           
           {/* Search Input */}
           <div className="relative max-w-2xl mx-auto mb-8">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-neutral-400 h-5 w-5" />
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
             <input
               type="text"
               placeholder="Hae ammatteja..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 border border-white/20 bg-white/5 backdrop-blur-sm rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#2B5F75] text-lg text-white placeholder:text-neutral-400"
+              className="w-full pl-12 pr-4 py-4 bg-[#11161f] border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/50 text-base text-white placeholder:text-gray-500"
             />
           </div>
 
-          {/* Filter Toggle */}
-          <button
-            onClick={() => setShowFilters(!showFilters)}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/10 transition-colors text-white"
-          >
-            <Filter className="h-5 w-5" />
-            Suodattimet
-            {hasActiveFilters && (
-              <span className="bg-[#2B5F75] text-white text-xs px-2 py-1 rounded-full">
-                {Object.values(filters).filter((v: any) => Array.isArray(v) ? v.length > 0 : v !== undefined).length + (searchTerm ? 1 : 0)}
-              </span>
-            )}
-            {showFilters ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-          </button>
-        </div>
+          {/* Filter Row */}
+          <div className="max-w-6xl mx-auto px-6 mt-6">
+            <div className="flex flex-wrap items-center gap-3">
+              {/* Ala Dropdown */}
+              <div className="relative">
+                <select
+                  value={filters.industry?.[0] || ''}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setFilters(prev => ({ 
+                      ...prev, 
+                      industry: value ? [value] : undefined 
+                    }));
+                  }}
+                  className="bg-[#11161f] border border-white/10 rounded-full px-4 py-2 pr-8 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue appearance-none transition-colors hover:border-white/20 cursor-pointer"
+                  aria-label="Valitse toimiala"
+                >
+                  <option value="">Kaikki alat</option>
+                  {filterOptions.industry.map((industry: string) => (
+                    <option key={industry} value={industry}>{industry}</option>
+                  ))}
+                </select>
+                <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-xs text-gray-400">
+                  <ChevronDown className="h-3 w-3" />
+                </span>
+              </div>
 
-        {/* Filters Panel */}
-        {showFilters && (
-          <div className="max-w-6xl mx-auto mb-12">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl shadow-sm border border-white/20 p-6">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Industry Filter */}
-                <div>
-                  <label className="block text-sm font-semibold text-white mb-3">
-                    Toimiala
-                  </label>
-                  <div className="space-y-2">
-                    {filterOptions.industry.map((industry: string) => (
-                      <label key={industry} className="flex items-center">
-                        <input
-                          type="checkbox"
-                          checked={filters.industry?.includes(industry) || false}
-                          onChange={(e) => {
-                            const current = filters.industry || [];
-                            if (e.target.checked) {
-                              setFilters(prev => ({ ...prev, industry: [...current, industry] }));
-                            } else {
-                              setFilters(prev => ({ ...prev, industry: current.filter((i: string) => i !== industry) }));
-                            }
-                          }}
-                          className="rounded border-white/20 text-[#2B5F75] focus:ring-[#2B5F75] bg-white/5"
-                        />
-                        <span className="ml-2 text-sm text-neutral-300">{industry}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
+              {/* Koulutustaso Dropdown */}
+              <div className="relative">
+                <select
+                  value={filters.educationLevel?.[0] || ''}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setFilters(prev => ({ 
+                      ...prev, 
+                      educationLevel: value ? [value] : undefined 
+                    }));
+                  }}
+                  className="bg-[#11161f] border border-white/10 rounded-full px-4 py-2 pr-8 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue appearance-none transition-colors hover:border-white/20 cursor-pointer"
+                  aria-label="Valitse koulutustaso"
+                >
+                  <option value="">Kaikki koulutustasot</option>
+                  {filterOptions.educationLevel.map((level: string) => (
+                    <option key={level} value={level}>{level}</option>
+                  ))}
+                </select>
+                <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-xs text-gray-400">
+                  <ChevronDown className="h-3 w-3" />
+                </span>
+              </div>
 
-                {/* Education Level Filter */}
-                <div>
-                  <label className="block text-sm font-semibold text-white mb-3">
-                    Koulutustaso
-                  </label>
-                  <div className="space-y-2">
-                    {filterOptions.educationLevel.map((level: string) => (
-                      <label key={level} className="flex items-center">
-                        <input
-                          type="checkbox"
-                          checked={filters.educationLevel?.includes(level) || false}
-                          onChange={(e) => {
-                            const current = filters.educationLevel || [];
-                            if (e.target.checked) {
-                              setFilters(prev => ({ ...prev, educationLevel: [...current, level] }));
-                            } else {
-                              setFilters(prev => ({ ...prev, educationLevel: current.filter((l: string) => l !== level) }));
-                            }
-                          }}
-                          className="rounded border-white/20 text-[#2B5F75] focus:ring-[#2B5F75] bg-white/5"
-                        />
-                        <span className="ml-2 text-sm text-neutral-300">{level}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
+              {/* Persoonallisuustyypit Dropdown */}
+              <div className="relative">
+                <select
+                  value={filters.personalityType?.[0] || ''}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setFilters(prev => ({ 
+                      ...prev, 
+                      personalityType: value ? [value] : undefined 
+                    }));
+                  }}
+                  className="bg-[#11161f] border border-white/10 rounded-full px-4 py-2 pr-8 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue appearance-none transition-colors hover:border-white/20 cursor-pointer"
+                  aria-label="Valitse persoonallisuustyyppi"
+                >
+                  <option value="">Kaikki tyypit</option>
+                  {filterOptions.personalityType.map((type: string) => (
+                    <option key={type} value={type}>{type}</option>
+                  ))}
+                </select>
+                <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-xs text-gray-400">
+                  <ChevronDown className="h-3 w-3" />
+                </span>
+              </div>
 
-                {/* Personality Type Filter */}
-                <div>
-                  <label className="block text-sm font-semibold text-white mb-3">
-                    Persoonallisuustyyppi
-                  </label>
-                  <div className="space-y-2">
-                    {filterOptions.personalityType.map((type: string) => (
-                      <label key={type} className="flex items-center">
-                        <input
-                          type="checkbox"
-                          checked={filters.personalityType?.includes(type) || false}
-                          onChange={(e) => {
-                            const current = filters.personalityType || [];
-                            if (e.target.checked) {
-                              setFilters(prev => ({ ...prev, personalityType: [...current, type] }));
-                            } else {
-                              setFilters(prev => ({ ...prev, personalityType: current.filter((t: string) => t !== type) }));
-                            }
-                          }}
-                          className="rounded border-white/20 text-[#2B5F75] focus:ring-[#2B5F75] bg-white/5"
-                        />
-                        <span className="ml-2 text-sm text-neutral-300">{type}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
+              {/* Työllisyysnäkymä Dropdown */}
+              <div className="relative">
+                <select
+                  value={filters.outlook?.[0] || ''}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setFilters(prev => ({ 
+                      ...prev, 
+                      outlook: value ? [value] : undefined 
+                    }));
+                  }}
+                  className="bg-[#11161f] border border-white/10 rounded-full px-4 py-2 pr-8 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue appearance-none transition-colors hover:border-white/20 cursor-pointer"
+                  aria-label="Valitse työllisyysnäkymä"
+                >
+                  <option value="">Kaikki näkymät</option>
+                  {filterOptions.outlook.map((outlook: string) => (
+                    <option key={outlook} value={outlook}>{outlook}</option>
+                  ))}
+                </select>
+                <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-xs text-gray-400">
+                  <ChevronDown className="h-3 w-3" />
+                </span>
               </div>
 
               {/* Clear Filters Button */}
               {hasActiveFilters && (
-                <div className="mt-6 pt-6 border-t border-white/20">
-                  <button
-                    onClick={clearFilters}
-                    className="inline-flex items-center gap-2 px-4 py-2 text-sm text-neutral-300 hover:text-white transition-colors"
-                  >
-                    <X className="h-4 w-4" />
-                    Tyhjennä suodattimet
-                  </button>
-                </div>
+                <button
+                  onClick={clearFilters}
+                  className="inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors"
+                  aria-label="Tyhjennä suodattimet"
+                >
+                  <X className="h-4 w-4" />
+                  Tyhjennä
+                </button>
               )}
             </div>
-          </div>
-        )}
 
-        {/* Results Count */}
-        <div className="max-w-6xl mx-auto mb-8">
-          <p className="text-neutral-300">
-            {filteredCareers.length} ammattia löytyi
-            {hasActiveFilters && ' valittujen suodattimien mukaan'}
-          </p>
+            {/* Result Count */}
+            <p className="mt-4 text-sm text-gray-400 text-center">
+              {filteredCareers.length} ammattia löytyi
+              {hasActiveFilters && ' valittujen suodattimien mukaan'}
+            </p>
+          </div>
         </div>
 
         {/* Career Grid */}
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {displayedCareers.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {displayedCareers.map((career: Career) => (
-                <Link
-                  key={career.slug}
-                  href={`/ammatit/${encodeURIComponent(career.slug)}`}
-                  className="group block"
-                >
-                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl shadow-sm border border-white/20 p-6 hover:shadow-md hover:bg-white/10 hover:scale-[1.02] transition-all duration-300 h-full">
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#E8994A] transition-colors">
-                      {career.title}
-                    </h3>
-                    <p className="text-neutral-300 mb-4 leading-relaxed">
-                      {career.summary}
-                    </p>
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
+                {displayedCareers.map((career: Career, index: number) => (
+                  <AnimatedCard
+                    key={career.slug}
+                    delay={index * 0.05}
+                    className="bg-[#11161f] rounded-xl ring-1 ring-white/5 p-5 hover:bg-white/[0.03]"
+                  >
+                    <Link href={`/ammatit/${encodeURIComponent(career.slug)}`} className="block group">
+                      <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-urak-accent-blue transition-colors">
+                        {career.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 mb-4 leading-relaxed line-clamp-2">
+                        {career.summary}
+                      </p>
 
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {career.educationLevel.slice(0, 2).map((level: string) => (
-                        <span
-                          key={level}
-                          className="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 text-neutral-200 text-xs rounded-full"
-                        >
-                          {level}
-                        </span>
-                      ))}
-                      {career.salaryMin && career.salaryMax && (
-                        <span className="px-3 py-1 bg-[#4A7C59]/20 text-[#4A7C59] border border-[#4A7C59]/30 text-xs rounded-full">
-                          {career.salaryMin}-{career.salaryMax} €/kk
-                        </span>
-                      )}
-                      {career.outlook && (
-                        <span className="px-3 py-1 bg-[#2B5F75]/20 text-[#2B5F75] border border-[#2B5F75]/30 text-xs rounded-full">
-                          {career.outlook}
-                        </span>
-                      )}
-                    </div>
+                      {/* Tag Pills */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {career.industry.slice(0, 1).map((industry: string) => (
+                          <span
+                            key={industry}
+                            className="text-xs bg-white/5 text-urak-text-secondary rounded-full px-2 py-1"
+                          >
+                            {industry}
+                          </span>
+                        ))}
+                        {career.educationLevel.slice(0, 1).map((level: string) => (
+                          <span
+                            key={level}
+                            className="text-xs bg-white/5 text-urak-text-secondary rounded-full px-2 py-1"
+                          >
+                            {level}
+                          </span>
+                        ))}
+                        {career.outlook && (
+                          <span className="text-xs bg-white/5 text-urak-text-secondary rounded-full px-2 py-1">
+                            {career.outlook}
+                          </span>
+                        )}
+                      </div>
 
-                    <div className="flex items-center text-[#E8994A] font-medium group-hover:underline">
-                      Lue lisää
-                      <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
+                      {/* Link */}
+                      <div className="flex items-center text-sm text-urak-accent-blue font-medium group-hover:underline">
+                        Katso ammatti
+                        <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </Link>
+                  </AnimatedCard>
+                ))}
+              </div>
+
+              {/* Load More Button */}
+              {displayedCareers.length < filteredCareers.length && (
+                <div className="text-center">
+                  <button
+                    onClick={loadMoreCareers}
+                    className="px-6 py-3 bg-[#11161f] border border-white/10 rounded-xl hover:bg-white/[0.03] hover:border-white/20 transition-all text-white font-medium"
+                  >
+                    Näytä lisää ({filteredCareers.length - displayedCareers.length} jäljellä)
+                  </button>
+                </div>
+              )}
+            </>
           ) : (
-            <div className="text-center py-12">
-              <p className="text-neutral-300 text-lg">
-                Ei osumia näillä suodattimilla. Poista joitain suodattimia tai kokeile toista hakusanaa.
+            <div className="text-center py-16">
+              <p className="text-gray-400 text-lg mb-4">
+                Ei osumia näillä suodattimilla.
               </p>
               {hasActiveFilters && (
                 <button
                   onClick={clearFilters}
-                  className="mt-4 px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-xl hover:bg-white/20 transition-colors"
+                  className="px-6 py-3 bg-[#11161f] border border-white/10 rounded-xl hover:bg-white/[0.03] transition-all text-white font-medium"
                 >
                   Tyhjennä suodattimet
                 </button>
               )}
             </div>
           )}
-
-          {/* Load More Button */}
-          {displayedCareers.length < filteredCareers.length && (
-            <div className="text-center">
-              <button
-                onClick={loadMoreCareers}
-                className="px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/10 hover:border-white/30 transition-colors font-medium text-white"
-              >
-                Näytä lisää ({filteredCareers.length - displayedCareers.length} jäljellä)
-              </button>
-            </div>
-          )}
         </div>
-      </section>
-
-      {/* SEO Footer */}
-      <section className="bg-white/5 backdrop-blur-sm py-12 border-t border-white/10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-neutral-300 leading-relaxed">
-              Urakompassin Urakirjasto auttaa sinua löytämään ammatin, joka sopii omiin vahvuuksiisi ja kiinnostuksiisi.
-              Selaa eri alojen uria, vertaile koulutusvaihtoehtoja ja löydä oma suuntasi.
-            </p>
-          </div>
-        </div>
-      </section>
+      </AnimatedSection>
     </div>
   );
 }

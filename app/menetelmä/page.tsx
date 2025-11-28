@@ -80,21 +80,21 @@ export default function MethodologyPage() {
                   ja ne kartoittavat:
                 </p>
                 <ul className="space-y-2 ml-6">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-neutral-300"><strong className="text-white">Kiinnostukset:</strong> Mitkä aihepiirit ja tehtävät motivoivat sinua (esim. teknologia, ihmiset, luovuus)</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 mt-[2px] text-urak-accent-blue/70 flex-shrink-0" />
+                    <span className="text-urak-text-secondary"><strong className="text-white">Kiinnostukset:</strong> Mitkä aihepiirit ja tehtävät motivoivat sinua (esim. teknologia, ihmiset, luovuus)</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-neutral-300"><strong className="text-white">Arvot:</strong> Mitä pidät tärkeänä urallasi (esim. palkka, turvallisuus, vaikuttavuus)</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 mt-[2px] text-urak-accent-blue/70 flex-shrink-0" />
+                    <span className="text-urak-text-secondary"><strong className="text-white">Arvot:</strong> Mitä pidät tärkeänä urallasi (esim. palkka, turvallisuus, vaikuttavuus)</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-neutral-300"><strong className="text-white">Työtapa:</strong> Miten tykkäät työskennellä (esim. itsenäisesti vs. tiimissä, käytännössä vs. teoriassa)</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 mt-[2px] text-urak-accent-blue/70 flex-shrink-0" />
+                    <span className="text-urak-text-secondary"><strong className="text-white">Työtapa:</strong> Miten tykkäät työskennellä (esim. itsenäisesti vs. tiimissä, käytännössä vs. teoriassa)</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-neutral-300"><strong className="text-white">Työympäristö:</strong> Missä olosuhteissa viihdyt (esim. toimisto, kenttä, etätyö)</span>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 mt-[2px] text-urak-accent-blue/70 flex-shrink-0" />
+                    <span className="text-urak-text-secondary"><strong className="text-white">Työympäristö:</strong> Missä olosuhteissa viihdyt (esim. toimisto, kenttä, etätyö)</span>
                   </li>
                 </ul>
               </div>
@@ -200,31 +200,31 @@ export default function MethodologyPage() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3 bg-white/5 rounded-lg p-4">
-                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="h-4 w-4 mt-[2px] text-urak-accent-blue/70 flex-shrink-0" />
                   <div>
                     <strong className="text-white">Opintopolku.fi</strong>
-                    <p className="text-sm text-neutral-300 mt-1">Koulutuspolut ja jatko-opintovaihtoehdot</p>
+                    <p className="text-sm text-urak-text-secondary mt-1">Koulutuspolut ja jatko-opintovaihtoehdot</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3 bg-white/5 rounded-lg p-4">
-                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="h-4 w-4 mt-[2px] text-urak-accent-blue/70 flex-shrink-0" />
                   <div>
                     <strong className="text-white">TES-sopimukset</strong>
-                    <p className="text-sm text-neutral-300 mt-1">Todelliset palkkatasot Suomessa</p>
+                    <p className="text-sm text-urak-text-secondary mt-1">Todelliset palkkatasot Suomessa</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3 bg-white/5 rounded-lg p-4">
-                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="h-4 w-4 mt-[2px] text-urak-accent-blue/70 flex-shrink-0" />
                   <div>
                     <strong className="text-white">Tilastokeskus & TE-palvelut</strong>
-                    <p className="text-sm text-neutral-300 mt-1">Työllisyysnäkymät ja työmarkkinatrendit</p>
+                    <p className="text-sm text-urak-text-secondary mt-1">Työllisyysnäkymät ja työmarkkinatrendit</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3 bg-white/5 rounded-lg p-4">
-                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="h-4 w-4 mt-[2px] text-urak-accent-blue/70 flex-shrink-0" />
                   <div>
                     <strong className="text-white">Tutkittu urapsykologia</strong>
-                    <p className="text-sm text-neutral-300 mt-1">Holland-malli, Big Five -persoonallisuusteoria, Strong Interest Inventory</p>
+                    <p className="text-sm text-urak-text-secondary mt-1">Holland-malli, Big Five -persoonallisuusteoria, Strong Interest Inventory</p>
                   </div>
                 </li>
               </ul>
@@ -242,20 +242,20 @@ export default function MethodologyPage() {
             <CardContent className="space-y-4 text-neutral-300 leading-relaxed">
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                  <span><strong className="text-white">Vastauksiasi ei tallenneta pysyvästi</strong> (vain väliaikaisesti selaimeen, jotta voit jatkaa myöhemmin)</span>
+                  <CheckCircle className="h-4 w-4 mt-[2px] text-urak-accent-blue/70 flex-shrink-0" />
+                  <span className="text-urak-text-secondary"><strong className="text-white">Vastauksiasi ei tallenneta pysyvästi</strong> (vain väliaikaisesti selaimeen, jotta voit jatkaa myöhemmin)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                  <span><strong className="text-white">Ei henkilötietoja</strong> – et anna nimeä, sähköpostia tai muita tunnistetietoja</span>
+                  <CheckCircle className="h-4 w-4 mt-[2px] text-urak-accent-blue/70 flex-shrink-0" />
+                  <span className="text-urak-text-secondary"><strong className="text-white">Ei henkilötietoja</strong> – et anna nimeä, sähköpostia tai muita tunnistetietoja</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                  <span><strong className="text-white">GDPR-yhteensopiva</strong> – noudatamme EU:n tietosuoja-asetusta</span>
+                  <CheckCircle className="h-4 w-4 mt-[2px] text-urak-accent-blue/70 flex-shrink-0" />
+                  <span className="text-urak-text-secondary"><strong className="text-white">GDPR-yhteensopiva</strong> – noudatamme EU:n tietosuoja-asetusta</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                  <span><strong className="text-white">Ei myyntia kolmansille osapuolille</strong> – dataa ei jaeta</span>
+                  <CheckCircle className="h-4 w-4 mt-[2px] text-urak-accent-blue/70 flex-shrink-0" />
+                  <span className="text-urak-text-secondary"><strong className="text-white">Ei myyntia kolmansille osapuolille</strong> – dataa ei jaeta</span>
                 </li>
               </ul>
             </CardContent>
