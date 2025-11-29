@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Logo from "@/components/Logo";
+import { Logo } from "@/components/Logo";
 
 export default function ScrollNav() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,12 +30,14 @@ export default function ScrollNav() {
       }}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between relative z-10">
-        <Link
-          href="/"
-          className="hover:opacity-80 transition-all duration-300 hover:scale-105 flex items-center gap-2"
-        >
-          <Logo className="h-10 w-auto" />
-        </Link>
+        <div className="flex items-center">
+          <div className="hidden sm:block">
+            <Logo />
+          </div>
+          <div className="sm:hidden">
+            <Logo variant="iconOnly" />
+          </div>
+        </div>
         <div className="flex items-center gap-8">
           <Link
             href="/#miten"

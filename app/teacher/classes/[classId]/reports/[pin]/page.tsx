@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { generateStudentPDF, generateParentReport, downloadPDF, StudentReportData, ParentReportData } from "@/lib/pdfGenerator";
 import { Download, Printer, FileText, TrendingUp, Award, GraduationCap, Target } from "lucide-react";
-import Logo from "@/components/Logo";
+import { Logo } from "@/components/Logo";
 import Link from "next/link";
 
 interface ResultPayload {

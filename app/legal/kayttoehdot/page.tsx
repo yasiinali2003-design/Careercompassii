@@ -68,10 +68,30 @@ API ei ole oletuksena saatavilla. Premium‑oppilaitoksille voidaan tarjota raja
 ## 18 Tietoturvapoikkeamat
 Ilmoitamme tietoturvaloukkauksista ilman aiheetonta viivytystä ja viimeistään 72 tunnin kuluessa, mikäli sovellettava laki sitä edellyttää ja tieto koskee rekisterinpitäjän vastuulla olevaa henkilötietoa.
 
-## 19 Ehtojen muutokset
+## 19 Tietojenkäsittelysopimus (DPA)
+
+Oppilaitosten kanssa voidaan tehdä erillinen tietojenkäsittelysopimus (DPA), joka määrittää tarkemmin Urakompassin käsittelijäroolin, turvatoimenpiteet, alihankkijat sekä käsittelyn rajaukset. Mikäli DPA:ta ei tehdä, tämä Tietosuojaseloste ja Käyttöehdot täyttävät GDPR 28 artiklan vaatimukset.
+
+## 20 Varautuminen ja jatkuvuudenhallinta
+
+Urakompassilla on käytössä varautumis- ja jatkuvuudenhallintamenettelyt, jotka sisältävät säännölliset varmuuskopiot, palvelinympäristön valvonnan, vähintään 99,5 %:n tavoitekäyttöasteen sekä häiriötilanteiden ilmoitusprosessin. Kriittiset häiriöt pyritään korjaamaan viipymättä ja muut viat kohtuullisessa ajassa.
+
+## 21 Opettajan vastuu
+
+Opettaja vastaa siitä, että oppilaat käyttävät Palvelua näiden ehtojen, ohjeiden ja voimassa olevan lainsäädännön mukaisesti. Urakompassi ei vastaa vahingoista, jotka johtuvat virheellisestä ohjeistuksesta, oppilaan väärinkäytöksestä tai Palvelun käytöstä vastoin annettuja ohjeita.
+
+## 22 Kansainväliset siirrot
+
+Tietoja ei siirretä EU/ETA-alueen ulkopuolelle ilman lainmukaista siirtomekanismia, kuten Euroopan komission hyväksymiä vakiosopimuslausekkeita (SCC), TI-arviota tai muuta soveltuvaa suojausmekanismia. Kaikki tietojen siirrot dokumentoidaan ja toteutetaan GDPR:n vaatimusten mukaisesti.
+
+## 23 EU/ETA-alueen ulkopuoliset siirrot
+
+Urakompassi ei siirrä henkilötietoja EU/ETA-alueen ulkopuolelle ilman asianmukaista siirtoperustetta. Mikäli siirto on välttämätön, käytämme Euroopan komission hyväksymiä vakiosopimuslausekkeita (SCC), tietoturvavaatimusten mukaista suojaustasoa sekä dokumentoitua siirtovaikutusten arviointia (TIA/TI).
+
+## 24 Ehtojen muutokset
 Voimme päivittää Ehtoja; uudet Ehdot tulevat voimaan ilmoitetusta päivästä. Palvelun käyttö muutosten jälkeen merkitsee hyväksymistä.
 
-## 20 Yhteystiedot
+## 25 Yhteystiedot
 Urakompassi Oy
 Säterintie 6, 00720 Helsinki, Finland
 Y‑tunnus: 3579081-5

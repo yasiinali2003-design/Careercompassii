@@ -20,36 +20,40 @@ Dokumentti koskee kaikkia Urakompassin palveluja ja sisältöjä. Kaikki aineist
 3.2 Algoritmit ja tekninen ratkaisu: pisteytys‑ ja suositusalgoritmit, tietokantarakenteet ja rajapinnat, käyttöliittymän toteutus ja käyttölogiikka.
 3.3 Liiketoimintadata ja analytiikka: aggregoidut tilastot, trendianalyysit ja palvelun optimoinnissa käytettävät pseudonymisoidut tietoaineistot. Kaikki edellä mainittu on Urakompassin liikesalaisuutta.
 
-## 4 Kielletty toiminta
+## 4 Käytön valvonta ja opettajavastuu
+
+Oppilaitoksen henkilöstö (kuten opettajat) vastaa siitä, että oppilaat eivät tallenna, kopioi, analysoi tai jaa Palvelun sisältöjä ilman lupaa. Kaikki luvaton kopiointi, testaamisen manipulointi ja algoritmien kehittämiseen tähtäävä käyttö on kielletty. Urakompassilla on oikeus estää käyttö tai sulkea tili väärinkäytösepäilyissä.
+
+## 5 Kielletty toiminta
 Ilman kirjallista lupaa on kiellettyä: (i) kopioida, tallentaa tai julkaista aineistoja, (ii) purkaa, muokata tai käänteisesti tutkia (“reverse engineerata”) koodia tai algoritmeja muutoin kuin pakottavan lain (esim. yhteentoimivuus) sallimissa rajoissa, (iii) automatisoida tiedonkeruuta (scraping, botit, data‑louhinta), (iv) hyödyntää Palvelua kilpailevan tuotteen tai tutkimuksen kehittämiseen, (v) kiertää turva‑ tai käyttörajoituksia, (vi) integroida Palvelua tai sen osia muihin järjestelmiin ilman erillistä sopimusta.
 
-## 5 Tekniset suojatoimet
+## 6 Tekniset suojatoimet
 Kysymysten ja vastausten satunnaistus, kohtuulliset käyttörajoitukset, IP‑tason väärinkäytösten tunnistus, lokit teknisenä todisteena, palvelinpuoliset algoritmi- ja datarakennesuojaukset. Julkiset rajapinnat vain sopimuksella.
 
-## 6 API ja integraatiot
+## 7 API ja integraatiot
 API ei ole oletuksena saatavilla. Premium‑oppilaitoksille voidaan myöntää rajattu luku‑API erillissopimuksella (API‑avaimet, käyttörajoitukset, tietoturva, auditoitavuus).
 
-## 7 Rikkomusten seuraamukset
-7.1 Välittömät toimet: pääsyn rajoitus/esto, tilin tai IP‑osoitteen jäädytys, käyttöoikeuden poisto, oikeudelliset toimet.
-7.2 Oikeudelliset toimet: vahingonkorvaus tekijänoikeuden/liikesalaisuuden loukkauksesta, kieltohakemus, rikosilmoitus lain sallimissa rajoissa, kulujen korvaus.
-7.3 Todisteet: tekniset lokit, IP‑tiedot ja käyttöhistoria muodostavat hyväksyttävän todisteaineiston.
+## 8 Rikkomusten seuraamukset
+8.1 Välittömät toimet: pääsyn rajoitus/esto, tilin tai IP‑osoitteen jäädytys, käyttöoikeuden poisto, oikeudelliset toimet.
+8.2 Oikeudelliset toimet: vahingonkorvaus tekijänoikeuden/liikesalaisuuden loukkauksesta, kieltohakemus, rikosilmoitus lain sallimissa rajoissa, kulujen korvaus.
+8.3 Todisteet: tekniset lokit, IP‑tiedot ja käyttöhistoria muodostavat hyväksyttävän todisteaineiston.
 
-## 8 Aggregoitu data ja tilastot
+## 9 Aggregoitu data ja tilastot
 Yksittäinen käyttäjä omistaa omat testituloksensa. Aggregoitu ja anonymisoitu data sekä analytiikka ovat Urakompassin omaisuutta. Koulut saavat hyödyntää luokkakohtaisia anonymisoituja tuloksia opetustoiminnan tukena. Aggregoitua dataa ei saa jakaa kilpaileville toimijoille tai käyttää tuotekehityksessä ilman Urakompassin lupaa.
 
-## 9 Tietojen säilyttäminen rikkomustilanteissa
+## 10 Tietojen säilyttäminen rikkomustilanteissa
 Rikkomusepäilyihin liittyviä lokitietoja säilytetään vähintään 2 vuotta havainnosta. Oikeudellisissa menettelyissä tietoja säilytetään lain tai viranomaismääräysten edellyttämän ajan.
 
-## 10 Sovellettava laki ja riidanratkaisu
+## 11 Sovellettava laki ja riidanratkaisu
 Suomen laki. Riidat ensisijaisesti neuvotteluin; jos sovintoa ei synny, B2B‑asiat Helsingin käräjäoikeus. Kuluttaja‑asiat: Kuluttajariitalautakunta tai Helsingin käräjäoikeus.
 
-## 11 Kieli ja suhde muihin dokumentteihin
+## 12 Kieli ja suhde muihin dokumentteihin
 Virallinen kieli on suomi; ristiriitatilanteissa suomenkielinen versio on ensisijainen. Tämä dokumentti on erottamaton osa Käyttöehtoja. Ristiriidassa sovelletaan säännöstä, joka ei riko pakottavaa lakia ja turvaa laillisesti Urakompassin immateriaalioikeudet laajasti.
 
-## 12 Muutokset
+## 13 Muutokset
 Urakompassi voi päivittää tätä dokumenttia teknisten tai oikeudellisten muutosten yhteydessä. Uusi versio tulee voimaan julkaisupäivästä ja korvaa aiemman.
 
-## 13 Yhteystiedot
+## 14 Yhteystiedot
 Urakompassi Oy, Säterintie 6, 00720 Helsinki, Finland
 Y-tunnus: 3579081-5
 Sähköposti: support@urakompassi.fi`}

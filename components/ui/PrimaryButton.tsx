@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ReactNode, ButtonHTMLAttributes } from "react";
 
-interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface PrimaryButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onDrag' | 'onDragEnd' | 'onDragStart'> {
   children: ReactNode;
   asChild?: boolean;
   href?: string;
@@ -33,7 +33,7 @@ export function PrimaryButton({ children, className = "", href, asChild, ...prop
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
       className={buttonClasses}
-      {...props}
+      {...(props as any)}
     >
       {children}
     </motion.button>

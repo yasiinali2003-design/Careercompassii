@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import Logo from '@/components/Logo';
+import { Logo } from '@/components/Logo';
 import { LogOut, HelpCircle } from 'lucide-react';
 import TeacherFAQ from '@/components/TeacherFAQ';
 

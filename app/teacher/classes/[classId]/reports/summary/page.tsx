@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { generateClassSummaryPDF, downloadPDF, ClassSummaryData } from "@/lib/pdfGenerator";
 import { Download, Printer } from "lucide-react";
-import Logo from "@/components/Logo";
+import { Logo } from "@/components/Logo";
 import Link from "next/link";
 
 export default function ClassSummaryReport({ params }: { params: { classId: string } }) {

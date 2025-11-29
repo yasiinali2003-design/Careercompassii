@@ -198,9 +198,9 @@ const FUTURE_ADVICE = {
     "Kannattaa nostaa nämä vahvuudet esiin myös hakemuksissa, CV:ssä ja haastatteluissa. Ne ovat juuri niitä ominaisuuksia, joita oppilaitokset ja työnantajat etsivät, ja niiden tiedostaminen antaa sinulle selvän edun."
   ],
   NUORI: [
-    "Kun rakennat urapolkuasi ja teet seuraavia valintoja, kannattaa etsiä tehtäviä ja organisaatioita, joissa pääset hyödyntämään näitä vahvuuksia strategisesti. Vahvuutesi antavat sinulle kilpailuedun työmarkkinoilla ja auttavat erottumaan muista ehdokkaista positiivisella tavalla.",
-    "Näiden vahvuuksien tiedostaminen auttaa sinua suuntaamaan urasi sellaisille poluille, joissa voit hyödyntää potentiaaliasi täysimääräisesti. Kun tunnistat omat vahvuutesi, voit rakentaa uraa strategisesti ja tehdä valintoja, jotka tukevat pitkän aikavälin tavoitteitasi.",
-    "Kannattaa hyödyntää näitä vahvuuksia aktiivisesti työhakemuksissa, verkostoitumisessa ja urakehityksessä. Ne ovat juuri niitä ominaisuuksia, joita organisaatiot arvostavat johtotehtävissä ja asiantuntija rooleissa, ja niiden avulla voit rakentaa merkittävän uran."
+    "Nämä vahvuudet voivat antaa uusia näkökulmia siihen, millaisissa ympäristöissä saattaisit viihtyä. Ne eivät rajoita valintojasi, vaan avaavat mahdollisuuksia pohtia erilaisia tehtäviä ja organisaatioita.",
+    "Näiden vahvuuksien tiedostaminen voi auttaa sinua pohtimaan erilaisia urapolkuja. Kun tunnistat omat vahvuutesi, voit miettiä, millaisissa ympäristöissä ne saattaisivat tulla hyödyksi.",
+    "Nämä vahvuudet voivat olla hyödyksi työhakemuksissa, verkostoitumisessa ja urakehityksessä. Ne ovat ominaisuuksia, joita monet organisaatiot arvostavat, ja niiden avulla voit pohtia erilaisia uramahdollisuuksia."
   ]
 };
 
@@ -208,19 +208,19 @@ const FUTURE_ADVICE = {
 
 const RECOMMENDATION_INTROS = {
   YLA: [
-    "Näiden vahvuuksien ja kiinnostusten pohjalta alla näet muutamia ammatteja, jotka voisivat sopia sinulle. Muista, että nämä ovat vain ideoita ja esimerkkejä. Sinä päätät oman polkusi, ja tulevaisuudessa voit yhdistää kiinnostuksen kohteesi monin eri tavoin!",
-    "Olemme valinneet alla sinulle tutustuttavaksi muutamia ammatteja, jotka sopivat profiiliisi. Nämä ovat ehdotuksia, ei valmiita ratkaisuja. Tutki rohkeasti myös muita vaihtoehtoja ja anna itsellesi aikaa löytää se polku, joka tuntuu juuri sinun omalta!",
-    "Alla näet ammattiehdotuksia, jotka perustuvat vastauksiin. Ne on valittu sen mukaan, missä pääsisit hyödyntämään vahvuuksiasi. Pidä nämä suuntaa-antavina ideoina. Lopullinen valinta ja päätös omasta tulevaisuudesta on aina sinun!"
+    "Vastaustesi perusteella profiilistasi nousee esiin seuraavia vahvuuksia ja kiinnostuksia. Alla näet muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa. Nämä ovat esimerkkejä — ei listoja ammateista, joita sinun tulisi hakea.",
+    "Valitsimme muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa. Nämä voivat antaa uusia näkökulmia siihen, millaisissa ympäristöissä saattaisit viihtyä. Ne eivät rajoita valintojasi.",
+    "Alla näet ammattiehdotuksia, jotka perustuvat vastauksiin. Ne on valittu sen mukaan, missä vahvuutesi saattaisivat tulla hyödyksi. Pidä nämä keskustelun avaavina ideoina. Mikään yksittäinen polku ei ole 'oikea' tai 'väärä'. Tarkoitus on avata uusia näkökulmia."
   ],
   TASO2: [
-    "Näiden vahvuuksien ja ominaisuuksien pohjalta alla näet ammattiehdotuksia, jotka vastaavat profiiliasi. Nämä ovat suosituksia, joita voit käyttää oman urasuunnittelusi tukena ja inspiraationa. Ne voivat auttaa hahmottamaan, millaisilla aloilla pääsisit hyödyntämään vahvuuksiasi parhaiten.",
-    "Alla olevat ammatit on valittu vastaamaan profiiliasi ja vahvuuksiasi. Ne voivat olla sopiva lähtökohta oman urapolun kartoittamiseen ja jatko-opintojen suunnitteluun. Lopullinen päätös on tietenkin aina sinun, ja nämä toimivat parhaiten ideoina ja suuntaviivoina.",
-    "Olemme koonneet alla ammattiehdotuksia, jotka sopivat vahvuuksiisi ja kiinnostuksen kohteisiisi. Käytä niitä urasuunnittelun tukena ja inspiraationa. Tutki myös muita mielenkiintoisia vaihtoehtoja. Polkuja on monia, ja voit löytää juuri sinulle sopivan yhdistelmän!"
+    "Vastaustesi perusteella profiilistasi nousee esiin seuraavia vahvuuksia ja kiinnostuksia. Alla näet ammattiehdotuksia, jotka voivat sopia yhteen profiilisi kanssa. Nämä ovat esimerkkejä — ei listoja ammateista, joita sinun tulisi hakea. Ne voivat auttaa hahmottamaan, millaisilla aloilla vahvuutesi saattaisivat tulla hyödyksi.",
+    "Valitsimme muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa. Ne voivat antaa uusia näkökulmia siihen, millaisissa ympäristöissä saattaisit viihtyä. Ne eivät rajoita valintojasi. Mikään yksittäinen polku ei ole 'oikea' tai 'väärä'. Tarkoitus on avata uusia näkökulmia.",
+    "Alla näet ammattiehdotuksia, jotka perustuvat vastauksiin. Ne voivat olla keskustelun avaavia ideoita urasuunnittelun ja jatko-opintojen pohtimiseen. Tutki myös muita mielenkiintoisia vaihtoehtoja. Polkuja on monia, ja voit pohtia erilaisia yhdistelmiä."
   ],
   NUORI: [
-    "Näiden vahvuuksien ja ammatillisen profiilisi pohjalta alla näet urasuosituksia, jotka vastaavat ominaisuuksiasi. Nämä ovat ammatteja, joissa pääsisit hyödyntämään potentiaaliasi täysimääräisesti ja rakentamaan merkityksellistä uraa. Ne toimivat lähtökohtana urapolkusi suunnittelulle, mutta lopullinen valinta on luonnollisesti aina sinun.",
-    "Alla näet ammattiehdotuksia, jotka vastaavat profiiliasi ja vahvuuksiasi. Nämä ovat suosituksia urasuunnittelun ja seuraavien urasiirtojen tueksi, ei lopullisia ratkaisuja. Ne voivat auttaa hahmottamaan, millaisilla poluilla voisit hyödyntää osaamistasi parhaiten ja rakentaa uraa, joka on linjassa arvojesi kanssa.",
-    "Olemme valinneet alla urasuosituksia, jotka perustuvat vahvuuksiisi ja ammatilliseen profiiliisi. Ne tarjoavat suuntaa uravalinnalle ja seuraavien askelten suunnitteluun. Käytä niitä inspiraationa ja tutki myös muita kiinnostavja mahdollisuuksia. Päätös on aina sinun käsissäsi, ja voit rakentaa uraa strategisesti omien tavoitteidesi mukaan."
+    "Vastaustesi perusteella profiilistasi nousee esiin seuraavia vahvuuksia ja kiinnostuksia. Alla näet muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa. Nämä ovat esimerkkejä — ei listoja ammateista, joita sinun tulisi hakea. Ne voivat antaa uusia näkökulmia siihen, millaisissa ympäristöissä saattaisit viihtyä.",
+    "Valitsimme muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa. Ne voivat olla keskustelun avaavia ideoita urasuunnittelun pohtimiseen. Ne eivät rajoita valintojasi. Ne voivat auttaa hahmottamaan, millaisilla poluilla vahvuutesi saattaisivat tulla hyödyksi.",
+    "Alla näet ammattiehdotuksia, jotka perustuvat vastauksiin. Ne voivat tarjota näkökulmia uravalinnan pohtimiseen. Käytä niitä keskustelun avaavina ideoina ja tutki myös muita kiinnostavia mahdollisuuksia. Mikään yksittäinen polku ei ole 'oikea' tai 'väärä'. Tarkoitus on avata uusia näkökulmia."
   ]
 };
 

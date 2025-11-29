@@ -4,25 +4,25 @@ import Link from "next/link";
 
 export default function CallToActionSection() {
   return (
-    <section className="py-16 md:py-20">
-      <div className="relative mx-auto max-w-5xl px-6">
+    <section className="py-32">
+      <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
         {/* Subtle Radial Glow Background */}
         <div className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-64 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_rgba(56,189,248,0.18),_transparent_60%)]" />
 
         {/* Content Layout */}
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <div className="max-w-4xl flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           {/* Left Block - Text */}
-          <div className="flex-1">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-urak-text-primary">
+          <div className="flex-1 max-w-[720px]">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-urak-text-primary mb-4">
               Valmiina tuntemaan itsesi?
             </h2>
-            <p className="mt-3 text-sm md:text-base text-urak-text-secondary">
+            <p className="text-sm md:text-base text-urak-text-secondary leading-relaxed">
               Tunne itsesi ja löydä polkusi. Tee testi nyt ja saa henkilökohtaisia ohjauksia, jotka auttavat miettimään oman suuntasi.
             </p>
           </div>
 
           {/* Right Block - Button + Pills */}
-          <div className="flex flex-col items-start md:items-end gap-4">
+          <div className="flex flex-col items-start md:items-end gap-3">
             {/* Primary Button */}
             <Link
               href="/test"

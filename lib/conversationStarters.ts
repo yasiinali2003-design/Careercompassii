@@ -47,8 +47,8 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
     );
     
     talkingPoints.push(
-      `Testin mukaan ${topCareer.title} sopii sinulle hyvin (${Math.round((topCareer.score || 0) * 100)}% yhteensopivuus)`,
-      `Jos haluat tutustua ${topCareer.title} -uraan tarkemmin, voimme etsiä yhdessä lisätietoa`
+      `Profiilistasi nousee esiin kiinnostusta ${topCareer.title} -tyyppisiin ammatteihin`,
+      `Voit tutustua ${topCareer.title} -uraan tarkemmin, jos se kiinnostaa sinua`
     );
     
     actionItems.push(
@@ -72,7 +72,7 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
       `Missä olet havainnut olevasi erityisen kiinnostunut?`
     );
     talkingPoints.push(
-      `Sinulla on selkeät kiinnostukset, mikä on hyvä lähtökohta urapolun suunnittelulle`
+      `Sinulla on monipuolisia kiinnostuksia — hyvä pohja keskustelulle`
     );
   } else if (dimensions.interests < 50) {
     questions.push(
@@ -80,7 +80,7 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
       `Onko sinulla jokin aihe, jota haluaisit tutkia tarkemmin?`
     );
     talkingPoints.push(
-      `Yhdessä voimme löytää sinulle kiinnostavia aihealueita ja urasuuntia`
+      `On täysin normaalia, ettei kaikkea vielä tiedä. Voimme yhdessä pohtia erilaisia mahdollisuuksia`
     );
     actionItems.push(
       `Etsi yhdessä oppilaan kanssa erilaisia aktiviteetteja ja kiinnostuksen kohteita`,
@@ -94,7 +94,7 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
       `Mikä työssä on sinulle tärkeintä - palkka, merkityksellisyys vai jotain muuta?`
     );
     talkingPoints.push(
-      `Sinulla on selkeät arvot, jotka ohjaavat valintojasi. Tämä auttaa löytämään merkityksellisen uran`
+      `Sinulla on selkeät arvot, jotka voivat antaa uusia näkökulmia siihen, millaisissa ympäristöissä saattaisit viihtyä`
     );
   }
 
@@ -104,7 +104,7 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
       `Miten haluaisit oppia uutta?`
     );
     talkingPoints.push(
-      `Sinä olet käytännönläheinen oppija - tämä sopii hyvin moniin ammatteihin`
+      `Profiilistasi nousee esiin kiinnostusta käytännönläheiseen oppimiseen — tämä voi avata monia mahdollisuuksia`
     );
   } else if (dimensions.workstyle < 50) {
     questions.push(
@@ -112,7 +112,7 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
       `Sopisiko sinulle lukio tai akateeminen ura?`
     );
     talkingPoints.push(
-      `Sinulla on taipumus teoreettiseen oppimiseen - tämä avaa mahdollisuudet korkeakouluun`
+      `Profiilistasi nousee esiin kiinnostusta teoreettiseen oppimiseen — tämä voi avata mahdollisuuksia korkeakouluun`
     );
   }
 
@@ -132,8 +132,8 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
     );
     
     talkingPoints.push(
-      `Testin mukaan ${pathName} voisi sopia sinulle hyvin`,
-      `Voimme keskustella ${pathName === 'Lukio' ? 'lukion' : pathName === 'Ammattikoulu' ? 'ammattikoulun' : 'kansanopiston'} vaihtoehdoista ja mahdollisuuksista`
+      `Profiilistasi nousee esiin kiinnostusta ${pathName === 'Lukio' ? 'lukio' : pathName === 'Ammattikoulu' ? 'ammattikoulu' : 'kansanopisto'}-tyyppiseen oppimiseen`,
+      `Voit tutustua ${pathName === 'Lukio' ? 'lukion' : pathName === 'Ammattikoulu' ? 'ammattikoulun' : 'kansanopiston'} vaihtoehtoihin ja pohtia, mitä ne voisivat tarjota sinulle`
     );
     
     actionItems.push(
@@ -163,8 +163,8 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
   const avgScore = (dimensions.interests + dimensions.values + dimensions.workstyle + dimensions.context) / 4;
   if (avgScore < 50) {
     talkingPoints.push(
-      `Voimme yhdessä löytää sinulle sopivia urasuuntia ja kiinnostuksen kohteita`,
-      `On täysin normaalia, että kaikki eivät vielä tiedä mitä haluavat tehdä`
+      `Profiilissa ei nouse yhtä selkeää suuntaa — tämä on normaalia`,
+      `On täysin normaalia, ettei kaikkea vielä tiedä. Voimme yhdessä pohtia erilaisia mahdollisuuksia`
     );
     actionItems.push(
       `Seuraa oppilaan kehitystä ja tarjoa tukea tarvittaessa`,
@@ -190,14 +190,14 @@ export function generateParentMeetingTalkingPoints(profile: StudentProfile): str
   if (topCareers.length > 0) {
     const topCareer = topCareers[0];
     points.push(
-      `${profile.name}:n testin mukaan ${topCareer.title} sopii hänelle hyvin (${Math.round((topCareer.score || 0) * 100)}% yhteensopivuus)`,
-      `Testi näyttää, että ${profile.name} on kiinnostunut useista eri uravalinnoista, mikä on hyvä merkki`
+      `${profile.name}:n profiilista nousee esiin kiinnostusta ${topCareer.title} -tyyppisiin ammatteihin`,
+      `Profiilista nousee esiin monipuolisia kiinnostuksia — hyvä pohja keskustelulle`
     );
   }
 
   if (dimensions.interests > 60) {
     points.push(
-      `${profile.name}:lla on selkeät kiinnostukset, mikä auttaa urapolun suunnittelussa`
+      `${profile.name}:lla on monipuolisia kiinnostuksia — hyvä pohja keskustelulle`
     );
   }
 
@@ -209,16 +209,16 @@ export function generateParentMeetingTalkingPoints(profile: StudentProfile): str
     };
     const pathName = pathNames[educationPath.primary] || educationPath.primary;
     points.push(
-      `Testin mukaan ${pathName} voisi sopia ${profile.name}:lle hyvin`,
-      `Suosittelemme keskustelemaan ${pathName.toLowerCase()}n vaihtoehdoista`
+      `Profiilista nousee esiin kiinnostusta ${pathName === 'Lukio' ? 'lukio' : pathName === 'Ammattikoulu' ? 'ammattikoulu' : 'kansanopisto'}-tyyppiseen oppimiseen`,
+      `Voitte keskustella ${pathName.toLowerCase()}n vaihtoehdoista ja pohtia, mitä ne voisivat tarjota`
     );
   }
 
   const avgScore = (dimensions.interests + dimensions.values + dimensions.workstyle + dimensions.context) / 4;
   if (avgScore < 50) {
     points.push(
-      `${profile.name} tarvitsee vielä tukea kiinnostuksen kohteiden löytämisessä - tämä on täysin normaalia`,
-      `Voimme yhdessä auttaa ${profile.name}a löytämään sopivia urasuuntia`
+      `Profiilissa ei nouse yhtä selkeää suuntaa — tämä on normaalia`,
+      `On täysin normaalia, ettei kaikkea vielä tiedä. Voimme yhdessä pohtia erilaisia mahdollisuuksia`
     );
   }
 

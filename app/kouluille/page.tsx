@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, ArrowLeft } from 'lucide-react';
-import Logo from '@/components/Logo';
+import { Logo } from '@/components/Logo';
 
 export default function PricingPage() {
   return (

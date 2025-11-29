@@ -13,7 +13,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import Logo from '@/components/Logo';
+import { Logo } from '@/components/Logo';
 import { supabase } from '@/lib/supabase';
 import { ShareResults } from '@/components/ShareResults';
 import { getEducationPathDescription } from '@/lib/scoring/educationPath';
@@ -157,10 +157,10 @@ export default function ResultsPage() {
               </svg>
             </div>
             <h2 className="text-2xl font-bold text-white mb-2">
-              Testi suoritettu
+              Testi suoritettu — Olet ottanut tärkeän askeleen kohti oman tulevaisuutesi pohtimista.
             </h2>
-            <p className="text-neutral-400 max-w-xl mx-auto">
-              Olet ottanut tärkeän askeleen kohti tulevaisuuttasi
+            <p className="text-neutral-400 max-w-xl mx-auto mt-4">
+              Tulokset eivät ole suosituksia tai päätöksiä puolestasi, vaan ne on tarkoitettu tukemaan keskustelua opinto-ohjaajan, opettajan tai muun luotettavan aikuisen kanssa.
             </p>
           </div>
         </div>
@@ -179,7 +179,7 @@ export default function ResultsPage() {
         <Card className="mb-8 border-2 border-white/20 bg-[#11161D]">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              Sinun profiilisi
+              Profiilisi
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -195,8 +195,8 @@ export default function ResultsPage() {
             {/* Top Strengths */}
             {userProfile.topStrengths && userProfile.topStrengths.length > 0 && (
               <div className="mb-6">
-                <h3 className="font-semibold text-neutral-300 mb-3">Vahvuutesi:</h3>
-                <div className="flex flex-wrap gap-2">
+                <h3 className="font-semibold text-neutral-300 mb-3">Vastaustesi perusteella profiilistasi nousee esiin seuraavia vahvuuksia ja kiinnostuksia:</h3>
+                <div className="flex flex-wrap gap-2 mb-3">
                   {userProfile.topStrengths.map((strength, i) => (
                     <span
                       key={i}
@@ -206,6 +206,7 @@ export default function ResultsPage() {
                     </span>
                   ))}
                 </div>
+                <p className="text-sm text-neutral-400 italic">Nämä havainnot voivat antaa uusia näkökulmia siihen, millaisissa ympäristöissä saattaisit viihtyä. Ne eivät rajoita valintojasi.</p>
               </div>
             )}
 
@@ -219,12 +220,12 @@ export default function ResultsPage() {
           <Card className="mb-8 border-2 border-green-500/30 bg-[#11161D]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-2xl text-white">
-                Sinun koulutuspolkusi
+                Koulutuspolut
               </CardTitle>
               <CardDescription className="text-neutral-400">
                 {userProfile.cohort === 'YLA'
-                  ? 'Vastaustesi perusteella sopiva jatko-opintovalinta'
-                  : 'Vastaustesi perusteella sopiva jatko-opintosuunta'}
+                  ? 'Tämä vaihtoehto voi olla kiinnostava tutustua, jos koet tärkeäksi esimerkiksi…'
+                  : 'Tämä vaihtoehto voi olla kiinnostava tutustua, jos koet tärkeäksi esimerkiksi…'}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -260,14 +261,14 @@ export default function ResultsPage() {
 
                 {/* Reasoning */}
                 <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/20">
-                  <h4 className="font-semibold text-white mb-2">Miksi tämä sopii sinulle:</h4>
+                  <h4 className="font-semibold text-white mb-2">Mikä tässä voi kiinnostaa:</h4>
                   <p className="text-neutral-300 leading-relaxed whitespace-pre-line">{results.educationPath.reasoning}</p>
                 </div>
 
                 {/* Secondary Path (if exists) */}
                 {results.educationPath.secondary && (
                   <div className="mt-6 pt-6 border-t border-white/10">
-                    <h4 className="font-semibold text-white mb-4 text-lg">Vaihtoehtoisesti harkitse:</h4>
+                    <h4 className="font-semibold text-white mb-4 text-lg">Voit myös tutustua tähän vaihtoehtoon:</h4>
 
                     <div className="bg-white/5 rounded-lg p-4">
                       <div className="mb-3">
@@ -281,12 +282,12 @@ export default function ResultsPage() {
                         <div className="mb-4">
                           {results.educationPath.primary === 'lukio' && results.educationPath.secondary === 'ammattikoulu' && (
                             <p className="text-neutral-300 mb-4">
-                              Vaihtoehtoisesti harkitse myös ammattikoulua. Vaikka vastauksesi viittaavat enemmän lukioon, ammattikoulu voisi sopia sinulle erityisesti jos löydät konkreettisen alan, joka kiinnostaa sinua. Ammattikoulussa pääset heti tekemään käytännön töitä ja saat arvokasta työkokemusta jo opiskelun aikana. Myös ammattikoulusta voit jatkaa myöhemmin ammattikorkeakouluun, joten polut eivät ole toisiaan poissulkevia. Molemmat polut ovat hyviä vaihtoehtoja - kannattaa tutustua molempiin ennen päätöksen tekemistä.
+                              Voit myös tutustua ammattikouluun. Tämä vaihtoehto voi olla kiinnostava, jos koet tärkeäksi esimerkiksi käytännönläheistä oppimista ja konkreettista työtä. Ammattikoulussa pääset tekemään käytännön töitä ja saat työkokemusta jo opiskelun aikana. Myös ammattikoulusta voit jatkaa myöhemmin ammattikorkeakouluun. Mikään yksittäinen polku ei ole 'oikea' tai 'väärä'. Tarkoitus on avata uusia näkökulmia.
                             </p>
                           )}
                           {results.educationPath.primary === 'ammattikoulu' && results.educationPath.secondary === 'lukio' && (
                             <p className="text-neutral-300 mb-4">
-                              Vaihtoehtoisesti harkitse myös lukiota. Vaikka vastauksesi viittaavat enemmän ammattikouluun, lukio voisi sopia sinulle erityisesti jos haluat pitää vaihtoehdot auki ja jatkaa opiskelua myöhemmin yliopistossa tai ammattikorkeakoulussa. Lukiossa saat laajemman yleissivistyksen ja vahvemmat opiskelutaidot, mikä avaa monia mahdollisuuksia tulevaisuudessa. Myös lukiosta voit aina suorittaa ammatillisen koulutuksen myöhemmin, jos haluat. Molemmat polut ovat hyviä vaihtoehtoja - kannattaa tutustua molempiin ennen päätöksen tekemistä.
+                              Voit myös tutustua lukioon. Tämä vaihtoehto voi olla kiinnostava, jos koet tärkeäksi esimerkiksi laajempaa yleissivistystä ja mahdollisuutta pitää vaihtoehdot auki. Lukiossa saat vahvemmat opiskelutaidot, mikä voi avata monia mahdollisuuksia tulevaisuudessa. Myös lukiosta voit suorittaa ammatillisen koulutuksen myöhemmin. Mikään yksittäinen polku ei ole 'oikea' tai 'väärä'. Tarkoitus on avata uusia näkökulmia.
                             </p>
                           )}
                         </div>
@@ -300,7 +301,7 @@ export default function ResultsPage() {
                           )}
                           {results.educationPath.primary === 'amk' && results.educationPath.secondary === 'yliopisto' && (
                             <p className="text-neutral-300 mb-4">
-                              Vaihtoehtoisesti harkitse myös yliopisto-opintoja. Vaikka vastauksesi viittaavat enemmän AMK-koulutukseen, yliopisto voisi sopia sinulle erityisesti jos haluat syvempää teoreettista tietämystä tai harkitset tutkijauran tielle menemistä. Molemmat polut ovat hyviä vaihtoehtoja - kannattaa tutustua molempiin ennen päätöksen tekemistä.
+                              Voit myös tutustua yliopisto-opintoihin. Tämä vaihtoehto voi olla kiinnostava, jos koet tärkeäksi esimerkiksi syvempää teoreettista tietämystä tai tutkijauran pohtimista. Mikään yksittäinen polku ei ole 'oikea' tai 'väärä'. Tarkoitus on avata uusia näkökulmia.
                             </p>
                           )}
                         </div>
@@ -332,12 +333,17 @@ export default function ResultsPage() {
 
         {/* Career Matches */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-white mb-6">
-            {userProfile.cohort === 'YLA' ? 'Ammatteja tulevaisuudessa (esimerkkejä)' : 'Ammattiehdotukset vastaustesi perusteella'}
+            <h2 className="text-2xl font-bold text-white mb-6">
+            {userProfile.cohort === 'YLA' ? 'Ammatteja tulevaisuudessa (esimerkkejä)' : 'Valitsimme muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa'}
           </h2>
           {userProfile.cohort === 'YLA' && results.educationPath && (
             <p className="text-neutral-400 mb-6">
-              Näitä ammatteja voit harkita {getEducationPathTitle(results.educationPath.primary, userProfile.cohort).toLowerCase()}n jälkeen:
+              Voit tutustua näihin ammatteihin, jos {getEducationPathTitle(results.educationPath.primary, userProfile.cohort).toLowerCase()} kiinnostaa sinua:
+            </p>
+          )}
+          {userProfile.cohort !== 'YLA' && (
+            <p className="text-neutral-400 mb-6 text-sm italic">
+              Ammattiehdotukset ovat esimerkkejä — ei listoja ammateista, joita sinun tulisi hakea.
             </p>
           )}
           
@@ -363,7 +369,7 @@ export default function ResultsPage() {
                 <div className="md:max-w-2xl">
                   <h3 className="text-2xl font-bold text-white mb-2">Laske todistuspisteesi seuraavaksi</h3>
                   <p className="text-neutral-300 leading-relaxed">
-                    Saat tarkemmat suositellut koulutusohjelmat laskemalla yo-todistuksesi pisteet. Laskuri yhdistää pisteesi ja tämän testin ammattilöydökset ja näyttää sinulle sopivimmat yliopisto- tai AMK-vaihtoehdot.
+                    Voit tutustua koulutusohjelmiin laskemalla yo-todistuksesi pisteet. Laskuri yhdistää pisteesi ja tämän testin havainnot ja näyttää sinulle yliopisto- tai AMK-vaihtoehtoja, joihin voit tutustua.
                   </p>
                 </div>
                 <Link href="/todistuspistelaskuri" className="shrink-0">
@@ -443,9 +449,9 @@ function CareerMatchCard({
       low: 'bg-neutral-800/30 text-white'
     };
     const labels = {
-      high: 'Vahva suositus',
-      medium: 'Hyvä vaihtoehto',
-      low: 'Mahdollinen vaihtoehto'
+      high: 'Vahva yhteensopivuus',
+      medium: 'Hyvä yhteensopivuus',
+      low: 'Mahdollinen yhteensopivuus'
     };
     return (
       <span className={`px-3 py-1 rounded-full text-xs font-medium ${styles[confidence as keyof typeof styles]}`}>
@@ -479,7 +485,7 @@ function CareerMatchCard({
         {/* Reasons */}
         {career.reasons && career.reasons.length > 0 && (
           <div>
-            <h4 className="font-semibold text-neutral-300 mb-2">Miksi tämä sopii sinulle:</h4>
+            <h4 className="font-semibold text-neutral-300 mb-2">Miksi tämä voi kiinnostaa:</h4>
             <ul className="space-y-2">
               {career.reasons.map((reason, i) => (
                 <li key={i} className="flex items-start gap-2 text-neutral-400">

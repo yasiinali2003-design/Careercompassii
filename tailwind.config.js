@@ -58,6 +58,14 @@ module.exports = {
         'urak-text-primary': '#F1F5F9',
         'urak-text-secondary': '#CBD5E1',
         'urak-text-muted': '#94A3B8',
+        // New logo color tokens
+        'uk-bg': '#050B17',
+        'uk-icon-navy': '#0A253B',
+        'uk-icon-navy-light': '#123350',
+        'uk-blue': '#1E8BFF',
+        'uk-blue-soft': '#79B8FF',
+        'uk-red': '#FF5A4D',
+        'uk-needle-blue': '#46B4FF',
       },
       fontFamily: {
         heading: ['"Public Sans"', 'system-ui', 'sans-serif'],

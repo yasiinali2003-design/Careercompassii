@@ -485,24 +485,36 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
 
   return (
     <div 
-      className={`rounded-3xl border border-white/20 bg-white/5 backdrop-blur-sm p-8 shadow-sm transition-all duration-800 ease-in-out ${
+      className={`relative rounded-3xl border border-white/20 bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-sm p-8 md:p-10 shadow-sm transition-all duration-800 ease-in-out ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2.5'
       }`}
     >
-      <h1 className="text-3xl font-bold tracking-tight text-white">Löydä urasuuntasi</h1>
+      <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Löydä tulevaisuutesi suunta</h1>
       
-      <div className="mt-4 space-y-3">
-        <p className="text-neutral-300 leading-relaxed">
+      <div className="mt-5 md:mt-6 space-y-3">
+        <p className="text-neutral-300 leading-relaxed text-base md:text-lg">
           Vastaa 30 huolellisesti suunniteltuun kysymykseen, jotka kartoittavat kiinnostuksesi, arvosi ja vahvuutesi.
         </p>
-        <p className="text-neutral-300 leading-relaxed">
-          Monipuolinen analyysimme perustuu tutkittuun persoonallisuus- ja urapsykologiaan ja tarjoaa henkilökohtaisia urasuosituksia Suomen työmarkkinoille.
+        <p className="text-neutral-300 leading-relaxed text-base md:text-lg">
+          Analyysimme perustuu tutkittuun persoonallisuus- ja urapsykologiaan ja tarjoaa sinulle henkilökohtaisia urasuosituksia Suomen työmarkkinoille.
         </p>
       </div>
       
-      <p className="mt-4 text-sm text-neutral-400">
-        30 kysymystä • 8-10 minuuttia • Maksuton • Vastauksesi käsitellään luottamuksellisesti
-      </p>
+      {/* Modern tag-style chips */}
+      <div className="mt-6 flex flex-wrap gap-2">
+        <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-neutral-300">
+          30 kysymystä
+        </span>
+        <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-neutral-300">
+          10–15 minuuttia
+        </span>
+        <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-neutral-300">
+          Maksuton
+        </span>
+        <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-neutral-300">
+          Luottamuksellinen
+        </span>
+      </div>
       
       {hasSavedProgress && (
         <div className="mt-6 rounded-lg bg-white/5 border border-white/20 p-4">
@@ -515,13 +527,15 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
         </div>
       )}
       
-      <button 
-        onClick={onStart} 
-        className="mt-8 w-full rounded-2xl bg-[#2563EB] px-6 py-3 text-white font-semibold shadow hover:bg-[#1D4ED8] transition-colors duration-200 flex items-center justify-center gap-2"
-      >
-        {hasSavedProgress ? "Jatka testiä" : "Aloita testi"}
-        <span className="text-lg">→</span>
-      </button>
+      <div className="mt-8 flex justify-center">
+        <button 
+          onClick={onStart} 
+          className="relative rounded-full bg-[#2563EB] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-[#2563EB]/30 hover:bg-[#1D4ED8] hover:shadow-xl hover:shadow-[#2563EB]/40 transition-all duration-200 flex items-center justify-center gap-2"
+        >
+          {hasSavedProgress ? "Jatka testiä" : "Aloita ilmainen testi"}
+          <span className="text-lg">→</span>
+        </button>
+      </div>
     </div>
   );
 };
@@ -1371,7 +1385,7 @@ const Summary = ({
 
           {/* Strengths */}
           <div className="mb-8">
-            <h3 className="text-xl font-semibold text-white mb-4">Vahvuutesi</h3>
+            <h3 className="text-xl font-semibold text-white mb-4">Vastaustesi perusteella profiilistasi nousee esiin seuraavia vahvuuksia ja kiinnostuksia</h3>
             <div className="grid gap-3">
               {analysis.aiAnalysis.strengths.map((strength: string, i: number) => (
                 <div key={i} className="flex items-start gap-3">
@@ -1384,7 +1398,7 @@ const Summary = ({
 
           {/* Career Advice */}
           <div className="mb-8">
-            <h3 className="text-xl font-semibold text-white mb-4">Urasuositukset</h3>
+            <h3 className="text-xl font-semibold text-white mb-4">Uranäkökulmia</h3>
             <div className="grid gap-3">
               {analysis.aiAnalysis.careerAdvice.map((advice: string, i: number) => (
                 <div key={i} className="flex items-start gap-3">
@@ -1397,7 +1411,7 @@ const Summary = ({
 
           {/* Next Steps */}
           <div>
-            <h3 className="text-xl font-semibold text-white mb-4">Seuraavat askeleet</h3>
+            <h3 className="text-xl font-semibold text-white mb-4">Keskustelun avaamiseen</h3>
             <div className="grid gap-3">
               {analysis.aiAnalysis.nextSteps.map((step: string, i: number) => (
                 <div key={i} className="flex items-start gap-3">
@@ -1420,7 +1434,8 @@ const Summary = ({
 
         {/* Career Recommendations */}
         <div className="rounded-3xl bg-[#2563EB] p-8 shadow-lg">
-          <h2 className="text-3xl font-bold text-white mb-8">Suosittelemme sinulle nämä ammatit</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Valitsimme muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa</h2>
+          <p className="text-white/80 text-sm mb-8">Ammattiehdotukset ovat esimerkkejä — ei listoja ammateista, joita sinun tulisi hakea.</p>
           
           <div className="grid gap-6 md:grid-cols-2">
             {analysis.recommendations.map((career: any, i: number) => (

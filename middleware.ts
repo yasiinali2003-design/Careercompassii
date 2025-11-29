@@ -80,11 +80,21 @@ export async function middleware(request: NextRequest) {
     }
   }
 
+  // Block analytics API for GDPR compliance - admin should only generate teacher codes
+  if (pathname.startsWith('/api/admin/school-analytics')) {
+    return new NextResponse('Not Found', { status: 404 });
+  }
+
   // Admin-only protection: hide existence by returning 404 for non-admins
   // Only apply to page routes, not API routes (API routes handle their own auth)
   const disableAdminBasicAuth = process.env.NEXT_PUBLIC_DISABLE_ADMIN_BASIC_AUTH === 'true';
 
   if (!disableAdminBasicAuth && pathname.startsWith('/admin') && !pathname.startsWith('/api/admin')) {
+    // Allow /admin/login to pass through without auth
+    if (pathname === '/admin/login') {
+      return NextResponse.next();
+    }
+    
     // If a password is configured, enforce Basic Auth first
     const adminUser = process.env.ADMIN_USERNAME || 'admin';
     const adminPass = process.env.ADMIN_PASSWORD || '';
@@ -93,12 +103,19 @@ export async function middleware(request: NextRequest) {
       const auth = request.headers.get('authorization') || '';
       const expected = 'Basic ' + Buffer.from(`${adminUser}:${adminPass}`).toString('base64');
       if (auth !== expected) {
-        return new NextResponse('Authentication required', {
-          status: 401,
-          headers: { 'WWW-Authenticate': 'Basic realm="Admin", charset="UTF-8"' }
-        });
+        // Check for admin cookie instead
+        const adminCookie = request.cookies.get('admin_auth');
+        if (adminCookie?.value === 'yes') {
+          basicAuthed = true;
+        } else {
+          return new NextResponse('Authentication required', {
+            status: 401,
+            headers: { 'WWW-Authenticate': 'Basic realm="Admin", charset="UTF-8"' }
+          });
+        }
+      } else {
+        basicAuthed = true;
       }
-      basicAuthed = true;
     }
 
     const teacherToken = request.cookies.get('teacher_auth_token');

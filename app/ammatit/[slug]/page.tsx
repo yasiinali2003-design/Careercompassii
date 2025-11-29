@@ -236,12 +236,12 @@ export default function CareerDetail({ params }: CareerDetailProps) {
             )}
 
             {/* Kenelle tämä sopii? */}
-            {(career.skillsSoft.length > 0 || career.personalityType.length > 0) && (
+            {((career.skillsSoft && career.skillsSoft.length > 0) || career.personalityType.length > 0) && (
               <section className="mb-8">
                 <h2 className="text-lg font-semibold text-white mt-8 mb-3">
                   Kenelle tämä sopii?
                 </h2>
-                {career.skillsSoft.length > 0 && (
+                {career.skillsSoft && career.skillsSoft.length > 0 && (
                   <div className="mb-4">
                     <p className="text-base text-gray-300 leading-relaxed mb-2">
                       Tärkeimmät taidot:

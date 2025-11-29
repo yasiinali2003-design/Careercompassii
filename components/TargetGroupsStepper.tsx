@@ -83,23 +83,20 @@ export default function TargetGroupsStepper() {
   };
 
   return (
-    <section className="py-16 md:py-20">
-      <div className="mx-auto max-w-5xl px-6">
+    <section className="py-32">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8">
         {/* Heading and Subtitle - Left-aligned */}
-        <div className="mb-10">
-          <span className="text-sm font-semibold text-urak-accent-green uppercase tracking-wider mb-2 block">
-            Kohderyhmät
-          </span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white leading-tight">
+        <div className="max-w-4xl mb-16">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
             Kenelle Urakompassi on tarkoitettu?
           </h2>
-          <p className="text-lg sm:text-xl text-gray-400 max-w-2xl">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-[720px]">
             Tuki urasuunnitteluun kaikissa elämänvaiheissa
           </p>
         </div>
 
         {/* Text Block - No Card Container */}
-        <div className="max-w-4xl mx-auto px-6 mt-8">
+        <div className="max-w-4xl">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={activeIndex}
@@ -114,23 +111,18 @@ export default function TargetGroupsStepper() {
               }}
               style={{ willChange: "opacity, transform" }}
             >
-              {/* Label */}
-              <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-urak-text-muted mb-1">
-                KOHDERYHMÄ
-              </p>
-
               {/* Title */}
-              <h3 className="text-2xl md:text-3xl font-semibold text-urak-text-primary">
+              <h3 className="text-2xl md:text-3xl font-semibold text-urak-text-primary mb-4">
                 {currentGroup.title}
               </h3>
 
               {/* Intro */}
-              <p className="mt-2 text-sm md:text-base text-urak-text-secondary">
+              <p className="mb-8 text-sm md:text-base text-urak-text-secondary max-w-[720px]">
                 {currentGroup.intro}
               </p>
 
               {/* Bullet Points */}
-              <ul className="mt-4 space-y-2.5 text-sm md:text-base text-urak-text-secondary">
+              <ul className="space-y-3 text-sm md:text-base text-urak-text-secondary max-w-[720px]">
                 {currentGroup.points.map((point, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 mt-[2px] text-urak-accent-blue/70 flex-shrink-0" />
@@ -143,7 +135,7 @@ export default function TargetGroupsStepper() {
         </div>
 
         {/* Navigation Controls - Below Text Block */}
-        <div className="mt-6 flex items-center justify-center gap-4">
+        <div className="mt-10 flex items-center justify-center gap-4">
           {/* Prev Button */}
           <button
             onClick={goToPrev}

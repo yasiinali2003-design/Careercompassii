@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import Logo from "@/components/Logo"
+import { Logo } from "@/components/Logo"
 import { CheckCircle, ArrowRight, Target, Users, Brain, TrendingUp, Shield, Database } from "lucide-react"
 
 export default function MethodologyPage() {
@@ -177,7 +177,7 @@ export default function MethodologyPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-400 mt-0.5">•</span>
-                    <span className="text-neutral-300"><strong className="text-white">Suosittelemme koulutuspolun</strong> (lukio/ammattikoulu/yliopisto/AMK) iän ja vastaustesi perusteella</span>
+                    <span className="text-neutral-300"><strong className="text-white">Esittelemme koulutuspolkuja</strong> (lukio/ammattikoulu/yliopisto/AMK), joihin voit tutustua iän ja vastaustesi perusteella</span>
                   </li>
                 </ul>
               </div>

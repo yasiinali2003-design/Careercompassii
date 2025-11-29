@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import Logo from '@/components/Logo';
+import { Logo } from '@/components/Logo';
 import ScrollNav from '@/components/ScrollNav';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { GraduationCap, Lock, ArrowRight, ArrowLeft } from 'lucide-react';

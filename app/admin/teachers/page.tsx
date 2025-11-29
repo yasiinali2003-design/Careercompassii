@@ -8,7 +8,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import Logo from '@/components/Logo';
+import { Logo } from '@/components/Logo';
 import Link from 'next/link';
 import { GraduationCap, Copy, Check, Plus } from 'lucide-react';
 

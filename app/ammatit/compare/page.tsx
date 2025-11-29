@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowLeft, X, Plus, TrendingUp } from 'lucide-react';
 import { careersData as careersFI } from '@/data/careers-fi';
 import { Career } from '@/lib/types';
-import Logo from '@/components/Logo';
+import { Logo } from '@/components/Logo';
 
 // Force dynamic rendering to avoid build-time errors with window/localStorage
 export const dynamic = 'force-dynamic';

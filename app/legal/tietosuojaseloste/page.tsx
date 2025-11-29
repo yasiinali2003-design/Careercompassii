@@ -31,31 +31,57 @@ Oppilaitos omistaa oppilaidensa henkilötiedot. Urakompassi toimii käsittelijä
 ## 6. Luovutukset ja alikäsittelijät
 Tietoja ei luovuteta kolmansille, paitsi: Supabase (EU/Irlanti) pilvitietokanta ja autentikointi; lakisääteiset velvoitteet; oikeudellisten vaatimusten puolustaminen. Ajantasainen alikäsittelijälista ja DPA on saatavilla pyynnöstä: support@urakompassi.fi. Tietoja ei siirretä EU/ETA‑alueen ulkopuolelle ilman asianmukaista suojamekanismia (esim. SCC).
 
-## 7. Säilytys ja poistaminen
+## 7. EU/ETA-alueen ulkopuoliset siirrot
+
+Urakompassi ei siirrä henkilötietoja EU/ETA-alueen ulkopuolelle ilman asianmukaista siirtoperustetta. Mikäli siirto on välttämätön, käytämme Euroopan komission hyväksymiä vakiosopimuslausekkeita (SCC), tietoturvavaatimusten mukaista suojaustasoa sekä dokumentoitua siirtovaikutusten arviointia (TIA/TI).
+
+## 8. Tietojenkäsittelysopimus (DPA)
+
+Oppilaitosten kanssa voidaan tehdä erillinen tietojenkäsittelysopimus (DPA), joka määrittää tarkemmin Urakompassin käsittelijäroolin, turvatoimenpiteet, alihankkijat sekä käsittelyn rajaukset. Mikäli DPA:ta ei tehdä, tämä Tietosuojaseloste ja Käyttöehdot täyttävät GDPR 28 artiklan vaatimukset.
+
+## 9. Säilytys ja poistaminen
 Testitulokset: 3 vuotta suorituspäivästä; Premium‑oppilaitoksille 5 vuotta. Luokkakoodit (class token) ja testitulosten viittaukset säilytetään Supabase-postgres-tietokannassa hajautettuina; PIN-koodit poistuvat automaattisesti 24 tunnin jälkeen. Opettajien ja koulujen tiedot: käyttöoikeuden voimassaolo + 1 vuosi. Aggregoitu anonymisoitu data voidaan säilyttää toistaiseksi. Poistot toteutetaan automaattisissa sykleissä tai opettajan pyynnöstä luokkakohtaisesti.
 
-## 8. Rekisteröidyn oikeudet
+## 10. Rekisteröidyn oikeudet
 Oikeus saada tietoa, tarkastaa, oikaista, poistaa, rajoittaa tai vastustaa käsittelyä sekä siirtää tiedot. Oppilaat käyttävät oikeuksiaan oppilaitoksen kautta. Opettajat ja muut käyttäjät voivat olla suoraan yhteydessä tukeen. Koska oppilastiedot ovat pseudonymisoituja, kaikkia oikeuksia ei aina voida kohdentaa yksittäiseen henkilöön.
 
-## 9. Turvallisuustoimenpiteet
+## 11. Automaattinen päätöksenteko ja profilointi (GDPR 22)
+
+Palvelu hyödyntää automatisoitua analyysiä testivastauksista tuottaakseen käyttäjälle suuntaa-antavia koulutus- ja urasuosituksia. Analyysi perustuu tutkittuun persoonallisuus- ja urapsykologiaan sekä ennalta määriteltyyn algoritmiseen pisteytysmenetelmään.
+
+Automaattisen analyysin tulokset ovat ohjeellisia eivätkä muodosta oikeusvaikutuksia tai sitovia päätöksiä käyttäjää koskien.
+
+Käyttäjällä on oikeus:
+
+pyytää selitys siitä, miten hänen tietojaan on käsitelty
+
+saada yleiskuva algoritmisesta logiikasta
+
+vastustaa profilointia
+
+pyytää manuaalista arviointia
+
+Yhteydenotot: support@urakompassi.fi
+
+## 12. Turvallisuustoimenpiteet
 TLS 1.3, AES‑256 levossa, vähimmän oikeuden periaate, käyttö- ja pääsylokit, säännölliset varmuuskopiot ja haavoittuvuustestaukset, tietoturvapolitiikan auditointi vuosittain. Tietoturvaloukkauksista ilmoitetaan ilman aiheetonta viivytystä ja tarvittaessa 72 h kuluessa.
 
-## 10. Evästeet ja seuranta
+## 13. Evästeet ja seuranta
 Käytetään vain välttämättömiä evästeitä (esim. autentikointi- ja istuntoevästeet). Ei kolmannen osapuolen seurantaa. Selainkohtaiset asetukset (esim. viimeisimmät testitulokset, todistuspiste-laskurin syötteet ja skenaariotyökalun tila) tallennetaan selaimen localStorageen käyttäjän päätelaitteelle; tietoja ei lähetetä palvelimelle. Jos analytiikka otetaan käyttöön, siitä ilmoitetaan erillisessä evästekäytännössä.
 
-## 11. Lasten tietosuoja
+## 14. Lasten tietosuoja
 Palvelu on tarkoitettu vähintään 13‑vuotiaille. Alle 13‑vuotiaat voivat käyttää Palvelua vain huoltajan tai opettajan valvonnassa. Oppilaitos vastaa tarvittavista suostumuksista ja ohjeistuksesta.
 
-## 12. Valvontaviranomainen ja valitusoikeus
+## 15. Valvontaviranomainen ja valitusoikeus
 Tietosuojavaltuutetun toimisto, Lintulahdenkatu 4, 00530 Helsinki, https://tietosuoja.fi.
 
-## 13. Muutokset selosteeseen
+## 16. Muutokset selosteeseen
 Voimme päivittää tätä selostetta (esim. lakimuutokset, tekniset muutokset). Uusi versio julkaistaan verkkosivuilla ja päiväys päivitetään.
 
-## 14. Sovellettava laki ja kieli
+## 17. Sovellettava laki ja kieli
 Sovellettava laki: Suomen laki. Virallinen kieli on suomi; ristiriitatilanteessa suomenkielinen versio on ensisijainen.
 
-## 15. Yhteystiedot
+## 18. Yhteystiedot
 Urakompassi Oy, Säterintie 6, 00720 Helsinki, Finland
 Y-tunnus: 3579081-5
 Sähköposti: support@urakompassi.fi`}

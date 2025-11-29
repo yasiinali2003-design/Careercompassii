@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Users, TrendingUp, GraduationCap, Briefcase, AlertCircle } from "lucide-react";
 import { CategoryInfo } from "@/lib/categories";
 import { CareerFI } from "@/data/careers-fi";
-import Logo from "@/components/Logo";
+import { Logo } from "@/components/Logo";
 import { FilterOptions, filterCareers, sortCareers, filtersToSearchParams } from "@/utils/filters";
 import Filters from "@/components/Filters";
 import CareerCard from "@/components/CareerCard";

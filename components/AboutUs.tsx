@@ -1,428 +1,146 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
-
-// CompassBackground Component - SVG compass with subtle animation
-const CompassBackground = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-
-  useEffect(() => {
-    // Check for reduced motion preference
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReducedMotion(mediaQuery.matches);
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!prefersReducedMotion) {
-        setMousePosition({
-          x: (e.clientX / window.innerWidth - 0.5) * 12, // Max 12px parallax
-          y: (e.clientY / window.innerHeight - 0.5) * 12,
-        });
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [prefersReducedMotion]);
-
-  return (
-    <>
-      {/* Desktop Compass */}
-      <div
-        className="absolute -top-24 -right-24 w-96 h-96 opacity-12 pointer-events-none hidden md:block"
-        style={{
-          transform: prefersReducedMotion
-            ? "none"
-            : `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-          transition: prefersReducedMotion ? "none" : "transform 0.1s ease-out",
-        }}
-        aria-hidden="true"
-      >
-        <svg
-          viewBox="0 0 400 400"
-          className="w-full h-full"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Outer circle */}
-          <circle
-            cx="200"
-            cy="200"
-            r="180"
-            stroke="#1E6F73"
-            strokeWidth="1"
-            opacity="0.3"
-          />
-          
-          {/* Inner circle */}
-          <circle
-            cx="200"
-            cy="200"
-            r="120"
-            stroke="#1E6F73"
-            strokeWidth="0.5"
-            opacity="0.2"
-          />
-          
-          {/* Cardinal directions */}
-          <line
-            x1="200"
-            y1="20"
-            x2="200"
-            y2="380"
-            stroke="#1E6F73"
-            strokeWidth="1"
-            opacity="0.4"
-          />
-          <line
-            x1="20"
-            y1="200"
-            x2="380"
-            y2="200"
-            stroke="#1E6F73"
-            strokeWidth="1"
-            opacity="0.4"
-          />
-          
-          {/* Diagonal lines */}
-          <line
-            x1="141.4"
-            y1="141.4"
-            x2="258.6"
-            y2="258.6"
-            stroke="#1E6F73"
-            strokeWidth="0.5"
-            opacity="0.2"
-          />
-          <line
-            x1="258.6"
-            y1="141.4"
-            x2="141.4"
-            y2="258.6"
-            stroke="#1E6F73"
-            strokeWidth="0.5"
-            opacity="0.2"
-          />
-          
-          {/* Compass needle */}
-          <g opacity="0.6">
-            <path
-              d="M200 200 L200 60 L195 70 L200 200 Z"
-              fill="#1E6F73"
-            />
-            <path
-              d="M200 200 L200 60 L205 70 L200 200 Z"
-              fill="#1E6F73"
-            />
-          </g>
-          
-          {/* Center dot */}
-          <circle
-            cx="200"
-            cy="200"
-            r="3"
-            fill="#1E6F73"
-            opacity="0.5"
-          />
-          
-          {/* Degree markers */}
-          {Array.from({ length: 8 }, (_, i) => {
-            const angle = (i * 45) * (Math.PI / 180);
-            const x1 = 200 + Math.cos(angle) * 160;
-            const y1 = 200 + Math.sin(angle) * 160;
-            const x2 = 200 + Math.cos(angle) * 170;
-            const y2 = 200 + Math.sin(angle) * 170;
-            
-            return (
-              <line
-                key={i}
-                x1={x1}
-                y1={y1}
-                x2={x2}
-                y2={y2}
-                stroke="#1E6F73"
-                strokeWidth="0.5"
-                opacity="0.15"
-              />
-            );
-          })}
-        </svg>
-      </div>
-      
-      {/* Mobile Compass - Simplified */}
-      <div
-        className="absolute -top-12 -right-12 w-48 h-48 opacity-8 pointer-events-none md:hidden"
-        aria-hidden="true"
-      >
-        <svg
-          viewBox="0 0 200 200"
-          className="w-full h-full"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Simplified mobile compass - only cardinal directions */}
-          <circle
-            cx="100"
-            cy="100"
-            r="80"
-            stroke="#1E6F73"
-            strokeWidth="1"
-            opacity="0.2"
-          />
-          
-          {/* Cardinal directions only */}
-          <line
-            x1="100"
-            y1="20"
-            x2="100"
-            y2="180"
-            stroke="#1E6F73"
-            strokeWidth="1"
-            opacity="0.3"
-          />
-          <line
-            x1="20"
-            y1="100"
-            x2="180"
-            y2="100"
-            stroke="#1E6F73"
-            strokeWidth="1"
-            opacity="0.3"
-          />
-          
-          {/* Simple needle */}
-          <path
-            d="M100 100 L100 30 L95 40 L100 100 Z"
-            fill="#1E6F73"
-            opacity="0.4"
-          />
-          
-          {/* Center dot */}
-          <circle
-            cx="100"
-            cy="100"
-            r="2"
-            fill="#1E6F73"
-            opacity="0.4"
-          />
-        </svg>
-      </div>
-    </>
-  );
-};
-
-// AnimatedSection Component for scroll animations
-const AnimatedSection = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ease-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      } ${className}`}
-    >
-      {children}
-    </div>
-  );
-};
-
-// MissionIntro Component
-const MissionIntro = () => (
-  <AnimatedSection>
-    <div className="mb-16">
-      <h2 className="text-2xl font-bold text-white mb-6">
-        Missiomme
-      </h2>
-      <div className="space-y-4 max-w-prose">
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          Urakompassin tehtävänä on auttaa nuoria tunnistamaan vahvuutensa ja löytämään oman suuntansa, sellaisen, joka tuntuu aidosti omalta.
-        </p>
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          Uskomme, että jokaisella on potentiaali rakentaa merkityksellinen tulevaisuus. Tarvitaan vain oikea kompassi näyttämään tie eteenpäin.
-        </p>
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          Rakennamme tulevaisuutta, jossa jokaisella nuorella on mahdollisuus löytää oma polkunsa helposti, yksilöllisesti ja motivoivasti.
-        </p>
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          Autamme säästämään aikaa, tekemään rohkeita päätöksiä ja rakentamaan uraa ilman painetta tai epävarmuutta.
-        </p>
-      </div>
-    </div>
-  </AnimatedSection>
-);
-
-// MissionSection Component
-const MissionSection = () => (
-  <AnimatedSection>
-    <div className="mb-16">
-      <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
-        Meidän tehtävämme
-      </h2>
-      <div className="space-y-4 max-w-prose">
-        <p className="text-[#334155] leading-relaxed text-lg">
-          Rakennamme tulevaisuutta, jossa jokaisella nuorella on mahdollisuus löytää oma polkunsa helposti, yksilöllisesti ja motivoivasti.
-        </p>
-        <p className="text-[#334155] leading-relaxed text-lg">
-          Autamme nuoria säästämään aikaa, tekemään rohkeita päätöksiä ja rakentamaan uraa, joka tuntuu omalta ilman painetta tai epävarmuutta.
-        </p>
-      </div>
-    </div>
-  </AnimatedSection>
-);
-
-// ApproachSection Component
-const ApproachSection = () => (
-  <AnimatedSection>
-    <div className="mb-8">
-      <h2 className="text-2xl font-bold text-white mb-6">
-        Lähestymistapamme
-      </h2>
-      <div className="space-y-4 max-w-prose">
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          Yhdistämme tekoälyn ja empatian.
-        </p>
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          Urakompassi hyödyntää dataa ja modernia teknologiaa, mutta säilyttää aina inhimillisen näkökulman.
-        </p>
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          Tekoäly analysoi vastauksia vertaamalla niitä tuhansiin uraprofiileihin ja löytää koulutuspolkuja, jotka vastaavat käyttäjän arvoja, kiinnostuksia ja vahvuuksia.
-        </p>
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          Uskomme, että kun ymmärtää itseään paremmin, löytyy myös suunta, joka vie kohti merkityksellisempää elämää.
-        </p>
-      </div>
-    </div>
-  </AnimatedSection>
-);
-
-// Meistä Section Component
-const MeistSection = () => (
-  <AnimatedSection>
-    <div className="mb-16">
-      <h2 className="text-2xl font-bold text-white mb-6">
-        Tiimimme
-      </h2>
-      <div className="space-y-4 max-w-prose">
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          Olemme kolme 22-vuotiasta, jotka ovat omistaneet kaiken aikansa tämän tuotteen kehittämiselle. Elämme samaa todellisuutta kuin ne nuoret, joita haluamme auttaa, ja ymmärrämme heidän haasteensa syvästi.
-        </p>
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          Olemme itse kokeneet, kuinka vaikeaa on löytää oma suunta ilman selkeää ohjausta ja kuinka paljon aikaa kuluu tietoa etsiessä eri aloista.
-        </p>
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          Olemme nähneet läheltä, kuinka monet ystävämme lähtivät opiskelemaan hyväksynnän tunteen tai sosiaalisen paineen vuoksi, eivät aidosta kiinnostuksesta.
-        </p>
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          Urakompassin taustalla on aito halu ratkaisa ongelma, jonka olemme itse kokeneet.
-        </p>
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          Meidän vahvuutemme on syvä ymmärrys kohderyhmästä, motivaatio tehdä yhteiskunnallisesti merkittävää työtä ja into rakentaa ratkaisu, joka on sekä inhimillinen että teknisesti kehittynyt.
-        </p>
-      </div>
-    </div>
-  </AnimatedSection>
-);
-
-// Contact Section Component
-const ContactSection = () => (
-  <AnimatedSection>
-    <div className="mb-8">
-      <h2 className="text-2xl font-bold text-white mb-6">
-        Yhteystiedot
-      </h2>
-      <div className="space-y-4 max-w-prose">
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          <strong>Sähköposti:</strong> support@urakompassi.fi
-        </p>
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          <strong>Yhteistyö kouluille ja opettajille:</strong> Ota yhteyttä, jos haluat tuoda Urakompassin osaksi opetusta tai opiskelijapalveluita.
-        </p>
-        <p className="text-neutral-300 leading-relaxed text-lg">
-          <strong>Verkkosivut:</strong> urakompassi.com
-        </p>
-      </div>
-    </div>
-  </AnimatedSection>
-);
+import React from "react";
+import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 // Main AboutUs Component
 const AboutUs = () => {
   return (
-    <section className="relative bg-[#1a1d23] rounded-2xl border border-white/20 p-6 md:p-10 shadow-sm">
-      {/* Compass Background */}
-      <CompassBackground />
+    <div className="max-w-5xl mx-auto px-6 lg:px-0">
+      {/* Minimal Nordic-style header */}
+      <AnimatedSection>
+        <section className="pt-20 lg:pt-28 pb-12">
+          <p className="text-base lg:text-lg tracking-[0.25em] text-sky-400 uppercase font-medium">
+            MEISTÄ
+          </p>
+        </section>
+      </AnimatedSection>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto">
-        {/* Main Missio Title */}
-        <div className="text-center mb-12">
-          <h1
-            className="font-bold text-white mb-6"
-            style={{ fontSize: 'clamp(2.5rem, 5vw, 3rem)' }}
-          >
-            Meistä
-          </h1>
-          {/* Optional gradient line */}
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#2B5F75]/40 to-transparent mx-auto"></div>
+      {/* Two-column text layout */}
+      <AnimatedSection delay={0.1}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+          {/* Column 1: Missiomme & Lähestymistapamme */}
+          <div className="space-y-0">
+            {/* Missiomme */}
+            <section className="pb-10">
+              <h2 className="text-xl font-semibold mb-4 text-slate-50">
+                Missiomme
+              </h2>
+              <div className="space-y-4">
+                <p className="text-base leading-relaxed text-slate-200">
+                  UraKompassi on kotimainen palvelu, joka tukee nuoria heidän
+                  etsiessään suuntaa opinnoilleen ja tulevaisuudelleen. Tavoitteenamme
+                  on auttaa käyttäjiä ymmärtämään paremmin omia vahvuuksiaan,
+                  kiinnostuksen kohteitaan ja arvojaan, jotta uravalinnoista tulee
+                  selkeämpiä ja vähemmän kuormittavia.
+                </p>
+                <p className="text-base leading-relaxed text-slate-200">
+                  Uskomme, että jokainen nuori hyötyy siitä, että voi pysähtyä
+                  tarkastelemaan itseään ilman suorituspaineita tai vertailua muihin.
+                  Meidän tehtävämme on tarjota turvallinen ja selkeä kokonaisuus,
+                  joka tukee päätöksentekoa ja auttaa rakentamaan luottamusta omaan
+                  osaamiseen.
+                </p>
+              </div>
+            </section>
+
+            {/* Divider */}
+            <div className="border-t border-slate-800/80 my-10 lg:hidden" />
+
+            {/* Lähestymistapamme */}
+            <section className="pt-10 lg:pt-0 lg:mt-10 lg:border-t lg:border-slate-800/80">
+              <h2 className="text-xl font-semibold mb-4 text-slate-50">
+                Lähestymistapamme
+              </h2>
+              <div className="space-y-4">
+                <p className="text-base leading-relaxed text-slate-200">
+                  Hyödynnämme modernia analytiikkaa ja tutkittuun uraohjaukseen
+                  perustuvaa arviointia. Palvelumme vertailee käyttäjän antamia
+                  vastauksia laajaan ura- ja koulutusprofiilien tietopohjaan ja
+                  muodostaa niiden perusteella yksilöllisiä näkemyksiä ja
+                  vaihtoehtoja.
+                </p>
+                <p className="text-base leading-relaxed text-slate-200">
+                  Taustalla oleva käsittely on automatisoitua, mutta varsinainen
+                  käyttökokemus on suunniteltu selkeäksi, rauhalliseksi ja käyttäjää
+                  kunnioittavaksi. Tavoitteena on tarjota luotettavaa ja helposti
+                  omaksuttavaa tukea opinto- ja urapohdintoihin ilman kiirettä tai
+                  ylimääräistä stressiä.
+                </p>
+              </div>
+            </section>
+          </div>
+
+          {/* Column 2: Keitä olemme & Yhteystiedot */}
+          <div className="space-y-0">
+            {/* Keitä olemme */}
+            <section className="pb-10">
+              <h2 className="text-xl font-semibold mb-4 text-slate-50">
+                Keitä olemme
+              </h2>
+              <div className="space-y-4">
+                <p className="text-base leading-relaxed text-slate-200">
+                  Olemme suomalainen tiimi, joka keskittyy kehittämään ratkaisuja
+                  nuorten hyvinvoinnin ja koulutuspolkujen tukemiseksi.
+                  Ymmärrämme, millaisia paineita uravalinnat voivat aiheuttaa, ja
+                  haluamme tarjota työkalun, joka tekee päätöksenteosta selkeämpää,
+                  hallittavampaa ja luotettavampaa.
+                </p>
+                <p className="text-base leading-relaxed text-slate-200">
+                  Käytämme nykyaikaisia analyysimenetelmiä, mutta suunnittelun
+                  lähtökohtana on aina käyttäjän kokemus: palvelun tulee olla
+                  turvallinen, selkeä ja helposti lähestyttävä. Tavoitteenamme on
+                  lisätä nuorten itsevarmuutta ja auttaa heitä tekemään perusteltuja,
+                  tietoon pohjautuvia valintoja.
+                </p>
+              </div>
+            </section>
+
+            {/* Divider */}
+            <div className="border-t border-slate-800/80 my-10" />
+
+            {/* Yhteystiedot */}
+            <section className="pt-10">
+              <h2 className="text-xl font-semibold mb-4 text-slate-50">
+                Yhteystiedot
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <p className="text-sm font-medium text-slate-300 mb-2">Sähköposti</p>
+                  <a 
+                    href="mailto:info@urakompassi.fi" 
+                    className="text-sky-400 hover:text-sky-300 font-medium transition-colors"
+                  >
+                    info@urakompassi.fi
+                  </a>
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-slate-300 mb-2">Verkkosivut</p>
+                  <a 
+                    href="https://urakompassi.fi" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-sky-400 hover:text-sky-300 font-medium transition-colors"
+                  >
+                    urakompassi.fi
+                  </a>
+                </div>
+                <div className="mt-6">
+                  <p className="text-sm font-semibold text-slate-200 mb-2">
+                    Yhteistyö oppilaitosten ja ohjaajien kanssa
+                  </p>
+                  <p className="text-base leading-relaxed text-slate-300">
+                    Ota yhteyttä, jos haluat tuoda UraKompassin osaksi
+                    oppilaitoksen ohjaus- tai opiskelijapalveluita.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
-        
-        {/* Mission Content */}
-        <div className="space-y-12">
-          <MissionIntro />
-          <ApproachSection />
-          <MeistSection />
-          <ContactSection />
-        </div>
-      </div>
-    </section>
+      </AnimatedSection>
+    </div>
   );
 };
 
 export default AboutUs;
-
-/* 
-DESIGN NOTES & CUSTOMIZATION:
-
-1. COMPASS OPACITY: Adjust the opacity class on CompassBackground (currently "opacity-12")
-   - Range: opacity-10 (0.1) to opacity-18 (0.18)
-   - Current: opacity-12 = 0.12
-
-2. ACCENT COLOR: Change #1E6F73 throughout the component
-   - Alternative: #1C3B5A (navy)
-   - Search for "#1E6F73" and replace with your chosen color
-
-3. MOTION SPEED: Adjust parallax intensity
-   - Current: max 12px movement
-   - Change the multiplier in setMousePosition (currently * 12)
-
-4. COMPASS SIZE: Modify the container dimensions
-   - Current: w-96 h-96 (384px)
-   - Adjust: w-80 h-80 (smaller) or w-[28rem] h-[28rem] (larger)
-
-5. POSITIONING: Change compass placement
-   - Current: -top-24 -right-24
-   - Alternatives: -top-16 -left-16, -bottom-24 -right-24, etc.
-
-6. REDUCED MOTION: Automatically respects prefers-reduced-motion
-   - No additional configuration needed
-   - Animation disabled when user prefers reduced motion
-*/

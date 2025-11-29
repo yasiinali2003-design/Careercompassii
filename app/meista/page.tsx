@@ -1,19 +1,41 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
 import AboutUs from "@/components/AboutUs"
-import Logo from "@/components/Logo"
+import { Logo } from "@/components/Logo"
 
 export default function MeistaPage() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setScrolled(scrollPosition > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="min-h-screen">
-      {/* Navigation */}
-      <nav className="border-b border-white/10 bg-[#05070B]/95 backdrop-blur-xl sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="hover:opacity-80 transition-opacity">
-            <Logo className="h-10 w-auto" />
-          </Link>
-          <Button variant="outline" asChild>
+    <div className="min-h-screen bg-transparent">
+      {/* Navigation - Blends with page background */}
+      <nav
+        className="sticky top-0 z-50 animate-fade-in-down border-b transition-all duration-300"
+        style={{
+          background: "transparent",
+          backgroundColor: scrolled ? "rgba(11, 16, 21, 0.95)" : "transparent",
+          backdropFilter: scrolled ? "blur(10px)" : "none",
+          WebkitBackdropFilter: scrolled ? "blur(10px)" : "none",
+          borderColor: scrolled ? "rgba(255, 255, 255, 0.1)" : "transparent",
+        }}
+      >
+        <div className="container mx-auto px-6 py-4 flex items-center justify-between relative z-10">
+          <Logo />
+          <Button variant="outline" asChild className="border-urak-border/70 bg-urak-bg/70 hover:bg-urak-surface hover:border-urak-border">
             <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Takaisin
@@ -23,10 +45,8 @@ export default function MeistaPage() {
       </nav>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-12 md:py-20">
-        <div className="max-w-4xl mx-auto">
-          <AboutUs />
-        </div>
+      <main>
+        <AboutUs />
       </main>
     </div>
   )

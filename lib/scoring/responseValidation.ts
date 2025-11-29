@@ -209,7 +209,7 @@ export function getQualityWarningMessage(metrics: ResponseQualityMetrics): strin
   if (metrics.qualityScore >= 70) return null; // Good quality, no warning needed
 
   if (metrics.qualityScore < 40) {
-    return 'Huomio: Vastauksesi osoittavat epätavallista mallia, mikä voi heikentää tulosten luotettavuutta. Suosittelemme testin uudelleen suorittamista tarkempien tulosten saamiseksi.';
+    return 'Huomio: Vastauksesi osoittavat epätavallista mallia, mikä voi heikentää tulosten luotettavuutta. Voit halutessasi suorittaa testin uudelleen, jos haluat pohtia tuloksia tarkemmin.';
   }
 
   if (metrics.qualityScore < 60) {

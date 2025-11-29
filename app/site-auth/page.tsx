@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { AlertCircle } from 'lucide-react';
-import Logo from '@/components/Logo';
+import { Logo } from '@/components/Logo';
 
 export default function SiteAuthPage() {
   const [password, setPassword] = useState('');
