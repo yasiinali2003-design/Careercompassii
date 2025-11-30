@@ -175,9 +175,10 @@ export default function HomePage() {
               const formattedNumber = String(index + 1).padStart(2, '0');
               
               return (
-                <button
+                <Link
                   key={category.slug}
-                  className="group flex w-full items-center gap-4 px-6 py-5 md:px-8 md:py-6 text-left transition-colors hover:bg-white/5"
+                  href={`/ammatit?personalityType=${encodeURIComponent(category.slug)}`}
+                  className="group flex w-full items-center gap-4 px-6 py-5 md:px-8 md:py-6 text-left transition-colors hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm"
                 >
                   {/* Number Pill */}
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-urak-bg text-xs font-semibold text-urak-text-secondary ring-1 ring-white/10 group-hover:text-urak-accent-blue group-hover:ring-urak-accent-blue/60 flex-shrink-0">
@@ -186,14 +187,14 @@ export default function HomePage() {
                   
                   {/* Type Name and Descriptor */}
                   <div className="flex-1 min-w-0">
-                    <div className="text-sm md:text-base font-semibold text-urak-text-primary">
+                    <div className="text-sm md:text-base font-semibold text-urak-text-primary group-hover:text-white transition-colors">
                       {category.name_fi}
                     </div>
                     <div className="text-xs md:text-sm text-urak-text-secondary mt-1">
                       {category.description}
                     </div>
                   </div>
-                </button>
+                </Link>
               );
             })}
           </div>

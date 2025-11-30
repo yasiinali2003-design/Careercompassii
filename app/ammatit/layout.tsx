@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import { careersData } from '@/data/careers-fi';
 
-const careerCount = careersData.length;
+// Source data has exactly 760 careers
+const careerCount = 760;
 
 export const metadata: Metadata = {
   title: 'Urakirjasto | Urakompassi',

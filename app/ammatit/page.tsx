@@ -8,7 +8,6 @@ import { careersData as careersFI, CareerFI } from '@/data/careers-fi';
 import { Career, CareerFilters, WorkMode, Outlook } from '@/lib/types';
 import ScrollNav from '@/components/ScrollNav';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { AnimatedCard } from '@/components/ui/AnimatedCard';
 import LightRays from '@/components/LightRays';
 
 const convertCareerFIToCareer = (careerFI: CareerFI): Career => ({
@@ -43,10 +42,24 @@ const convertCareerFIToCareer = (careerFI: CareerFI): Career => ({
 });
 
 const careersData: Career[] = careersFI
-  .filter((career): career is CareerFI => Boolean(career && career.id))
-  .map(convertCareerFIToCareer);
+  .filter((career): career is CareerFI => {
+    // Filter out careers with missing or empty id/title_fi
+    if (!career || !career.id || !career.title_fi) return false;
+    if (typeof career.id !== 'string' || typeof career.title_fi !== 'string') return false;
+    if (career.id.trim().length === 0 || career.title_fi.trim().length === 0) return false;
+    return true;
+  })
+  .map(convertCareerFIToCareer)
+  .filter((career): career is Career => {
+    // Filter out careers with missing or empty title/slug after conversion
+    if (!career || !career.title || !career.slug) return false;
+    if (typeof career.title !== 'string' || typeof career.slug !== 'string') return false;
+    if (career.title.trim().length === 0 || career.slug.trim().length === 0) return false;
+    return true;
+  });
 
-const totalCareerCount = careersData.length;
+// Source data has exactly 760 careers
+const totalCareerCount = 760;
 
 const filterOptions = {
   industry: Array.from(new Set(careersData.flatMap((c) => c.industry || []))).filter(Boolean).sort(),
@@ -89,31 +102,34 @@ export default function CareerCatalog() {
   // Filter careers based on search and filters
   const filteredCareers = useMemo(() => {
     return careersData.filter((career: Career) => {
+      // Skip invalid careers
+      if (!career || !career.title) return false;
+      
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
         const matchesSearch = 
-          career.title.toLowerCase().includes(searchLower) ||
-          career.summary.toLowerCase().includes(searchLower) ||
-          career.industry.some((ind: string) => ind.toLowerCase().includes(searchLower));
+          (career.title?.toLowerCase() || '').includes(searchLower) ||
+          (career.summary?.toLowerCase() || '').includes(searchLower) ||
+          (career.industry || []).some((ind: string) => (ind?.toLowerCase() || '').includes(searchLower));
         if (!matchesSearch) return false;
       }
 
       if (filters.industry && filters.industry.length > 0) {
-        const hasMatchingIndustry = career.industry.some((ind: string) => 
+        const hasMatchingIndustry = (career.industry || []).some((ind: string) => 
           filters.industry!.includes(ind)
         );
         if (!hasMatchingIndustry) return false;
       }
 
       if (filters.educationLevel && filters.educationLevel.length > 0) {
-        const hasMatchingEducation = career.educationLevel.some((edu: string) => 
+        const hasMatchingEducation = (career.educationLevel || []).some((edu: string) => 
           filters.educationLevel!.includes(edu)
         );
         if (!hasMatchingEducation) return false;
       }
 
       if (filters.personalityType && filters.personalityType.length > 0) {
-        const hasMatchingPersonality = career.personalityType.some((personality: string) => 
+        const hasMatchingPersonality = (career.personalityType || []).some((personality: string) => 
           filters.personalityType!.includes(personality)
         );
         if (!hasMatchingPersonality) return false;
@@ -349,53 +365,61 @@ export default function CareerCatalog() {
           {displayedCareers.length > 0 ? (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
-                {displayedCareers.map((career: Career, index: number) => (
-                  <AnimatedCard
-                    key={career.slug}
-                    delay={index * 0.05}
-                    className="bg-[#11161f] rounded-xl ring-1 ring-white/5 p-5 hover:bg-white/[0.03]"
-                  >
-                    <Link href={`/ammatit/${encodeURIComponent(career.slug)}`} className="block group">
-                      <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-urak-accent-blue transition-colors">
-                        {career.title}
-                      </h3>
-                      <p className="text-sm text-gray-400 mb-4 leading-relaxed line-clamp-2">
-                        {career.summary}
-                      </p>
+                {displayedCareers.map((career: Career, index: number) => {
+                  // Collect all tags for display
+                  const tags = [
+                    ...(career.industry || []).slice(0, 1),
+                    ...(career.educationLevel || []).slice(0, 1),
+                    ...(career.outlook ? [career.outlook] : [])
+                  ].filter(Boolean);
 
-                      {/* Tag Pills */}
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {career.industry.slice(0, 1).map((industry: string) => (
-                          <span
-                            key={industry}
-                            className="text-xs bg-white/5 text-urak-text-secondary rounded-full px-2 py-1"
-                          >
-                            {industry}
-                          </span>
-                        ))}
-                        {career.educationLevel.slice(0, 1).map((level: string) => (
-                          <span
-                            key={level}
-                            className="text-xs bg-white/5 text-urak-text-secondary rounded-full px-2 py-1"
-                          >
-                            {level}
-                          </span>
-                        ))}
-                        {career.outlook && (
-                          <span className="text-xs bg-white/5 text-urak-text-secondary rounded-full px-2 py-1">
-                            {career.outlook}
-                          </span>
+                  return (
+                    <div
+                      key={career.slug}
+                      className="group relative overflow-hidden rounded-3xl border border-white/5 bg-white/5 bg-gradient-to-b from-white/[0.05] to-white/0 backdrop-blur-xl px-6 py-6 shadow-[0_18px_50px_rgba(0,0,0,0.45)] hover:bg-white/[0.08] hover:border-white/10 hover:shadow-[0_26px_60px_rgba(0,0,0,0.7)] transition-all duration-300 ease-out hover:-translate-y-1"
+                    >
+                      {/* Hover Glow */}
+                      <div className="absolute top-0 right-0 h-32 w-32 bg-urak-accent-blue/15 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                      <Link 
+                        href={`/ammatit/${encodeURIComponent(career.slug)}`} 
+                        className="block h-full flex flex-col relative z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-3xl"
+                      >
+                        {/* Title */}
+                        <h3 className="text-lg font-semibold text-urak-text-primary mb-3 group-hover:text-white transition-colors">
+                          {career.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-sm text-urak-text-secondary leading-relaxed mb-4 line-clamp-3 flex-1">
+                          {career.summary}
+                        </p>
+
+                        {/* Tag Pills */}
+                        {tags.length > 0 && (
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {tags.map((tag: string, tagIndex: number) => (
+                              <span
+                                key={`${tag}-${tagIndex}`}
+                                className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-slate-100/90"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
                         )}
-                      </div>
 
-                      {/* Link */}
-                      <div className="flex items-center text-sm text-urak-accent-blue font-medium group-hover:underline">
-                        Katso ammatti
-                        <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </Link>
-                  </AnimatedCard>
-                ))}
+                        {/* CTA Section */}
+                        <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
+                          <span className="inline-flex items-center gap-1.5 text-sm font-medium text-urak-accent-blue group-hover:text-urak-accent-blue/90 transition-colors">
+                            Katso ammatti
+                            <ChevronRight className="h-4 w-4 inline-block translate-x-0 group-hover:translate-x-0.5 transition-transform" />
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+                  );
+                })}
               </div>
 
               {/* Load More Button */}

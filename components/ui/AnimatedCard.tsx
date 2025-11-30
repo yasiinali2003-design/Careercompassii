@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, useState, useEffect } from "react";
 
 interface AnimatedCardProps {
   children: ReactNode;
@@ -10,21 +10,28 @@ interface AnimatedCardProps {
 }
 
 export function AnimatedCard({ children, delay = 0, className = "" }: AnimatedCardProps) {
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    // Trigger animation after component mounts
+    const timer = setTimeout(() => {
+      setHasAnimated(true);
+    }, delay * 1000);
+    return () => clearTimeout(timer);
+  }, [delay]);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15, margin: "-50px" }}
+      animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{
         duration: 0.4,
         ease: [0.25, 0.1, 0.25, 1],
-        delay,
       }}
       whileHover={{
         y: -4,
-        transition: { duration: 0.25, ease: [0.25, 0.1, 0.25, 1] },
+        transition: { duration: 0.2, ease: [0.25, 0.1, 0.25, 1] },
       }}
-      style={{ willChange: "opacity, transform" }}
       className={`group ${className}`}
     >
       {children}
