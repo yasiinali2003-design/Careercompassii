@@ -2,10 +2,7 @@
 
 /**
  * CAREER TEST RESULTS PAGE
- * Displays personalized career recommendations after test completion
- * YLA: Education path recommendation + career preview
- * TASO2: Post-secondary education path recommendation + career recommendations
- * NUORI: Career recommendations
+ * Redesigned to match landing page style with celebration overlay and new layout
  */
 
 import { useEffect, useState } from 'react';
@@ -13,10 +10,17 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Logo } from '@/components/Logo';
 import { supabase } from '@/lib/supabase';
 import { ShareResults } from '@/components/ShareResults';
-import { getEducationPathDescription } from '@/lib/scoring/educationPath';
+import { motion } from 'framer-motion';
+
+// New components
+import { ResultsCelebrationOverlay } from '@/components/results/ResultsCelebrationOverlay';
+import { ResultPageLayout } from '@/components/results/ResultPageLayout';
+import { ResultHero } from '@/components/results/ResultHero';
+import { ProfileSection } from '@/components/results/ProfileSection';
+import { NextStepsSection } from '@/components/results/NextStepsSection';
+import { CareerRecommendationsSection } from '@/components/results/CareerRecommendationsSection';
 
 // Types
 interface DimensionScores {
@@ -69,7 +73,7 @@ interface ResultsData {
   cohort: string;
   userProfile: UserProfile;
   topCareers: CareerMatch[];
-  educationPath?: EducationPathResult;  // For YLA and TASO2
+  educationPath?: EducationPathResult;
   cohortCopy: {
     title: string;
     subtitle: string;
@@ -84,6 +88,8 @@ export default function ResultsPage() {
   const [results, setResults] = useState<ResultsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [showCelebration, setShowCelebration] = useState(true);
+  const [contentVisible, setContentVisible] = useState(false);
 
   useEffect(() => {
     // Get results from localStorage (set by test component)
@@ -104,13 +110,18 @@ export default function ResultsPage() {
     }
   }, []);
 
+  const handleCelebrationComplete = () => {
+    setShowCelebration(false);
+    setContentVisible(true);
+  };
+
   // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-[#0B1015]">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-neutral-300">Analysoidaan tuloksiasi...</p>
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-cyan-400 mx-auto mb-4"></div>
+          <p className="text-slate-300">Analysoidaan tuloksiasi...</p>
         </div>
       </div>
     );
@@ -119,15 +130,15 @@ export default function ResultsPage() {
   // Error state
   if (error || !results) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4">
-        <Card className="max-w-md">
+      <div className="min-h-screen flex items-center justify-center p-4 bg-[#0B1015]">
+        <Card className="max-w-md border-white/20 bg-[#11161D]">
           <CardHeader>
-            <CardTitle>Virhe</CardTitle>
-            <CardDescription>{error || 'Jotain meni pieleen'}</CardDescription>
+            <CardTitle className="text-white">Virhe</CardTitle>
+            <CardDescription className="text-slate-400">{error || 'Jotain meni pieleen'}</CardDescription>
           </CardHeader>
           <CardFooter>
             <Link href="/test">
-              <Button>Palaa testiin</Button>
+              <Button className="bg-cyan-500 hover:bg-cyan-600">Palaa testiin</Button>
             </Link>
           </CardFooter>
         </Card>
@@ -135,406 +146,180 @@ export default function ResultsPage() {
     );
   }
 
-  const { userProfile, topCareers, cohortCopy } = results;
+  const { userProfile, topCareers, cohortCopy, educationPath } = results;
 
-  return (
-    <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
-        
-        {/* Logo - Top Left */}
-        <div className="mb-8">
-          <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
-            <Logo className="h-12 w-auto" />
-          </Link>
-        </div>
+  // Ensure topCareers is a valid array and filter out any invalid entries
+  const validTopCareers = Array.isArray(topCareers) 
+    ? topCareers.filter((c: any) => {
+        // Comprehensive check: ensure c exists, is an object, and has required properties
+        return c && 
+               typeof c === 'object' && 
+               c !== null &&
+               typeof c.slug === 'string' && 
+               c.slug.length > 0 &&
+               typeof c.title === 'string' && 
+               c.title.length > 0 &&
+               Array.isArray(c.reasons);
+      })
+    : [];
 
-        {/* Celebration Banner */}
-        <div className="mb-12 text-center">
-          <div className="inline-block mb-6">
-            <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center">
-              <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <h2 className="text-2xl font-bold text-white mb-2">
-              Testi suoritettu — Olet ottanut tärkeän askeleen kohti oman tulevaisuutesi pohtimista.
-            </h2>
-            <p className="text-neutral-400 max-w-xl mx-auto mt-4">
-              Tulokset eivät ole suosituksia tai päätöksiä puolestasi, vaan ne on tarkoitettu tukemaan keskustelua opinto-ohjaajan, opettajan tai muun luotettavan aikuisen kanssa.
-            </p>
-          </div>
-        </div>
-
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">
-            {cohortCopy.title}
-          </h1>
-          <p className="text-xl text-neutral-300 mb-6">
-            {cohortCopy.subtitle}
-          </p>
-        </div>
-
-        {/* User Profile Summary */}
-        <Card className="mb-8 border-2 border-white/20 bg-[#11161D]">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              Profiilisi
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            {/* Personalized Analysis Text */}
-            {userProfile.personalizedAnalysis && (
-              <div className="mb-6">
-                <div className="text-neutral-300 leading-relaxed space-y-4 whitespace-pre-line">
-                  {userProfile.personalizedAnalysis}
-                </div>
-              </div>
-            )}
-
-            {/* Top Strengths */}
-            {userProfile.topStrengths && userProfile.topStrengths.length > 0 && (
-              <div className="mb-6">
-                <h3 className="font-semibold text-neutral-300 mb-3">Vastaustesi perusteella profiilistasi nousee esiin seuraavia vahvuuksia ja kiinnostuksia:</h3>
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {userProfile.topStrengths.map((strength, i) => (
-                    <span
-                      key={i}
-                      className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
-                    >
-                      {strength}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-sm text-neutral-400 italic">Nämä havainnot voivat antaa uusia näkökulmia siihen, millaisissa ympäristöissä saattaisit viihtyä. Ne eivät rajoita valintojasi.</p>
-              </div>
-            )}
-
-            {/* Dimension Scores - Hidden from user */}
-            {/* Users don't need to see raw dimension scores */}
-          </CardContent>
-        </Card>
-
-        {/* Education Path Recommendation (YLA and TASO2) */}
-        {(userProfile.cohort === 'YLA' || userProfile.cohort === 'TASO2') && results.educationPath && (
-          <Card className="mb-8 border-2 border-green-500/30 bg-[#11161D]">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-2xl text-white">
-                Koulutuspolut
-              </CardTitle>
-              <CardDescription className="text-neutral-400">
-                {userProfile.cohort === 'YLA'
-                  ? 'Tämä vaihtoehto voi olla kiinnostava tutustua, jos koet tärkeäksi esimerkiksi…'
-                  : 'Tämä vaihtoehto voi olla kiinnostava tutustua, jos koet tärkeäksi esimerkiksi…'}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {/* Primary Path */}
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-white">
-                    {getEducationPathTitle(results.educationPath.primary, userProfile.cohort)}
-                  </h3>
-                </div>
-
-                {/* Confidence Badge */}
-                <div className="mb-4">
-                  {getEducationPathConfidenceBadge(results.educationPath.confidence)}
-                </div>
-
-                {/* Path Description */}
-                <div className="bg-white/5 rounded-lg p-4 mb-4">
-                  <p className="text-neutral-300 mb-4">{getEducationPathDescription(results.educationPath.primary, userProfile.cohort).description}</p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <span className="font-semibold text-white">Kesto:</span>
-                      <span className="ml-2 text-neutral-300">{getEducationPathDescription(results.educationPath.primary, userProfile.cohort).duration}</span>
-                    </div>
-                    <div>
-                      <span className="font-semibold text-white">Jatko-opinnot:</span>
-                      <div className="ml-2 text-sm text-neutral-300">
-                        {getEducationPathDescription(results.educationPath.primary, userProfile.cohort).nextSteps.slice(0, 2).join(', ')}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Reasoning */}
-                <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/20">
-                  <h4 className="font-semibold text-white mb-2">Mikä tässä voi kiinnostaa:</h4>
-                  <p className="text-neutral-300 leading-relaxed whitespace-pre-line">{results.educationPath.reasoning}</p>
-                </div>
-
-                {/* Secondary Path (if exists) */}
-                {results.educationPath.secondary && (
-                  <div className="mt-6 pt-6 border-t border-white/10">
-                    <h4 className="font-semibold text-white mb-4 text-lg">Voit myös tutustua tähän vaihtoehtoon:</h4>
-
-                    <div className="bg-white/5 rounded-lg p-4">
-                      <div className="mb-3">
-                        <h5 className="text-xl font-bold text-white">
-                          {getEducationPathTitle(results.educationPath.secondary, userProfile.cohort)}
-                        </h5>
-                      </div>
-
-                      {/* Alternative Analysis Text */}
-                      {userProfile.cohort === 'YLA' && (
-                        <div className="mb-4">
-                          {results.educationPath.primary === 'lukio' && results.educationPath.secondary === 'ammattikoulu' && (
-                            <p className="text-neutral-300 mb-4">
-                              Voit myös tutustua ammattikouluun. Tämä vaihtoehto voi olla kiinnostava, jos koet tärkeäksi esimerkiksi käytännönläheistä oppimista ja konkreettista työtä. Ammattikoulussa pääset tekemään käytännön töitä ja saat työkokemusta jo opiskelun aikana. Myös ammattikoulusta voit jatkaa myöhemmin ammattikorkeakouluun. Mikään yksittäinen polku ei ole 'oikea' tai 'väärä'. Tarkoitus on avata uusia näkökulmia.
-                            </p>
-                          )}
-                          {results.educationPath.primary === 'ammattikoulu' && results.educationPath.secondary === 'lukio' && (
-                            <p className="text-neutral-300 mb-4">
-                              Voit myös tutustua lukioon. Tämä vaihtoehto voi olla kiinnostava, jos koet tärkeäksi esimerkiksi laajempaa yleissivistystä ja mahdollisuutta pitää vaihtoehdot auki. Lukiossa saat vahvemmat opiskelutaidot, mikä voi avata monia mahdollisuuksia tulevaisuudessa. Myös lukiosta voit suorittaa ammatillisen koulutuksen myöhemmin. Mikään yksittäinen polku ei ole 'oikea' tai 'väärä'. Tarkoitus on avata uusia näkökulmia.
-                            </p>
-                          )}
-                        </div>
-                      )}
-                      {userProfile.cohort === 'TASO2' && (
-                        <div className="mb-4">
-                          {results.educationPath.primary === 'yliopisto' && results.educationPath.secondary === 'amk' && (
-                            <p className="text-neutral-300 mb-4">
-                              Vaihtoehtoisesti harkitse myös ammattikorkeakoulua. Vaikka vastauksesi viittaavat enemmän yliopistoon, AMK voisi sopia sinulle erityisesti jos haluat konkreettisemman työelämäkytköksen ja nopeamman työllistymisen. Molemmat polut ovat hyviä vaihtoehtoja - kannattaa tutustua molempiin ennen päätöksen tekemistä.
-                            </p>
-                          )}
-                          {results.educationPath.primary === 'amk' && results.educationPath.secondary === 'yliopisto' && (
-                            <p className="text-neutral-300 mb-4">
-                              Voit myös tutustua yliopisto-opintoihin. Tämä vaihtoehto voi olla kiinnostava, jos koet tärkeäksi esimerkiksi syvempää teoreettista tietämystä tai tutkijauran pohtimista. Mikään yksittäinen polku ei ole 'oikea' tai 'väärä'. Tarkoitus on avata uusia näkökulmia.
-                            </p>
-                          )}
-                        </div>
-                      )}
-
-                      {/* Secondary Path Description */}
-                      <div className="bg-white/5 rounded-lg p-4 mb-3">
-                        <p className="text-neutral-300 mb-4">{getEducationPathDescription(results.educationPath.secondary, userProfile.cohort).description}</p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                          <div>
-                            <span className="font-semibold text-white">Kesto:</span>
-                            <span className="ml-2 text-neutral-300">{getEducationPathDescription(results.educationPath.secondary, userProfile.cohort).duration}</span>
-                          </div>
-                          <div>
-                            <span className="font-semibold text-white">Jatko-opinnot:</span>
-                            <div className="ml-2 text-neutral-300">
-                              {getEducationPathDescription(results.educationPath.secondary, userProfile.cohort).nextSteps.slice(0, 2).join(', ')}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-        )}
-
-        {/* Career Matches */}
-        <div className="mb-8">
-            <h2 className="text-2xl font-bold text-white mb-6">
-            {userProfile.cohort === 'YLA' ? 'Ammatteja tulevaisuudessa (esimerkkejä)' : 'Valitsimme muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa'}
-          </h2>
-          {userProfile.cohort === 'YLA' && results.educationPath && (
-            <p className="text-neutral-400 mb-6">
-              Voit tutustua näihin ammatteihin, jos {getEducationPathTitle(results.educationPath.primary, userProfile.cohort).toLowerCase()} kiinnostaa sinua:
-            </p>
-          )}
-          {userProfile.cohort !== 'YLA' && (
-            <p className="text-neutral-400 mb-6 text-sm italic">
-              Ammattiehdotukset ovat esimerkkejä — ei listoja ammateista, joita sinun tulisi hakea.
-            </p>
-          )}
-          
-          <div className="space-y-4">
-            {topCareers.slice(0, userProfile.cohort === 'YLA' ? 3 : 5).map((career, index) => (
-              <CareerMatchCard
-                key={career.slug}
-                career={career}
-                rank={index + 1}
-                ctaText={cohortCopy.ctaText}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Todistuspistelaskuri CTA for TASO2 users with yliopisto/AMK recommendation */}
-        {userProfile.cohort === 'TASO2' &&
-         results.educationPath &&
-         (results.educationPath.primary === 'yliopisto' || results.educationPath.primary === 'amk') && (
-          <div className="mb-10">
-            <div className="rounded-2xl border-2 border-white/20 bg-[#11161D] p-6 shadow-sm">
-              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                <div className="md:max-w-2xl">
-                  <h3 className="text-2xl font-bold text-white mb-2">Laske todistuspisteesi seuraavaksi</h3>
-                  <p className="text-neutral-300 leading-relaxed">
-                    Voit tutustua koulutusohjelmiin laskemalla yo-todistuksesi pisteet. Laskuri yhdistää pisteesi ja tämän testin havainnot ja näyttää sinulle yliopisto- tai AMK-vaihtoehtoja, joihin voit tutustua.
-                  </p>
-                </div>
-                <Link href="/todistuspistelaskuri" className="shrink-0">
-                  <Button size="lg" className="bg-primary hover:bg-primary">
-                    Avaa todistuspistelaskuri
-                  </Button>
-                </Link>
-              </div>
-              <p className="mt-4 text-sm text-neutral-400">
-                Voit palata tähän näkymään milloin tahansa. Laskuri tallentaa pisteesi selaimeen, jotta voit vertailla ohjelmia rauhassa.
-              </p>
-            </div>
-          </div>
-        )}
-
-        {/* Actions */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
-          <Link href="/ammatit">
-            <Button size="lg" variant="outline">
-              Selaa kaikkia ammatteja
-            </Button>
-          </Link>
-          <Link href="/test">
-            <Button size="lg">
-              Tee testi uudelleen
-            </Button>
-          </Link>
-        </div>
-
-        {/* Share */}
-        <ShareResults 
-          topCareers={results.topCareers.map(c => ({ title: c.title }))} 
-          cohort={results.cohort}
-        />
-
-        {/* Feedback Section */}
-        <FeedbackSection />
-      </div>
-    </div>
-  );
-}
-
-// ========== COMPONENTS ==========
-
-function DimensionBar({ label, score, color }: { label: string; score: number; color: string }) {
-  const percentage = Math.round(score * 100);
-  
-  return (
-    <div>
-      <div className="flex justify-between text-sm mb-1">
-        <span className="font-medium text-neutral-300">{label}</span>
-        <span className="text-neutral-400">{percentage}%</span>
-      </div>
-      <div className="w-full bg-neutral-700/40 rounded-full h-2.5">
-        <div
-          className={`${color} h-2.5 rounded-full transition-all duration-500`}
-          style={{ width: `${percentage}%` }}
-        ></div>
-      </div>
-    </div>
-  );
-}
-
-function CareerMatchCard({ 
-  career, 
-  rank, 
-  ctaText 
-}: { 
-  career: CareerMatch; 
-  rank: number; 
-  ctaText: string;
-}) {
-  const getConfidenceBadge = (confidence: string) => {
-    const styles = {
-      high: 'bg-green-100 text-green-800',
-      medium: 'bg-yellow-100 text-yellow-800',
-      low: 'bg-neutral-800/30 text-white'
-    };
-    const labels = {
-      high: 'Vahva yhteensopivuus',
-      medium: 'Hyvä yhteensopivuus',
-      low: 'Mahdollinen yhteensopivuus'
-    };
-    return (
-      <span className={`px-3 py-1 rounded-full text-xs font-medium ${styles[confidence as keyof typeof styles]}`}>
-        {labels[confidence as keyof typeof labels]}
-      </span>
-    );
+  // Map cohort to cohortType
+  const cohortTypeMap: Record<string, 'nuoriAikuinen' | 'ylaste' | 'toinenAste'> = {
+    'NUORI': 'nuoriAikuinen',
+    'YLA': 'ylaste',
+    'TASO2': 'toinenAste',
   };
+  const cohortType = cohortTypeMap[userProfile.cohort] || 'nuoriAikuinen';
+
+  // Determine sections for navigation
+  const sections = [
+    { id: 'profiili', label: 'Profiilisi' },
+    ...(educationPath && cohortType !== 'nuoriAikuinen' ? [{ id: 'koulutus', label: 'Koulutus' }] : []),
+    { id: 'ammatit', label: 'Ammattisuositukset' },
+  ];
 
   return (
-    <Card className="hover:shadow-lg transition-shadow">
-      <CardHeader>
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
-          <div className="flex-1">
-            <div className="flex items-center gap-3 mb-2">
-              <span className="text-2xl font-bold text-gray-400">#{rank}</span>
-              <CardTitle className="text-2xl">{career.title}</CardTitle>
-            </div>
-            <CardDescription className="capitalize text-sm">
-              {career.category}
-            </CardDescription>
-          </div>
-          <div className="md:text-right">
-            {getConfidenceBadge(career.confidence)}
-          </div>
-        </div>
-      </CardHeader>
+    <>
+      {/* Celebration Overlay */}
+      {showCelebration && (
+        <ResultsCelebrationOverlay
+          onComplete={handleCelebrationComplete}
+          disabled={false} // Set to true to disable for debugging
+        />
+      )}
 
-      <CardContent className="space-y-4">
-        {/* Confidence Badge already shown in header for clarity */}
+      {/* Main Content */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: contentVisible ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <ResultPageLayout cohortType={cohortType} sections={sections}>
+          {/* Hero Section */}
+          <ResultHero
+            cohortType={cohortType}
+            cohortLabel={cohortCopy.title}
+            title={cohortCopy.title}
+            subtitle={cohortCopy.subtitle}
+          />
 
-        {/* Reasons */}
-        {career.reasons && career.reasons.length > 0 && (
-          <div>
-            <h4 className="font-semibold text-neutral-300 mb-2">Miksi tämä voi kiinnostaa:</h4>
-            <ul className="space-y-2">
-              {career.reasons.map((reason, i) => (
-                <li key={i} className="flex items-start gap-2 text-neutral-400">
-                  <span className="text-slate-500 mt-1">•</span>
-                  <span>{reason}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+          {/* Profile Section */}
+          {userProfile.personalizedAnalysis && (
+            <ProfileSection
+              profileText={userProfile.personalizedAnalysis}
+              strengths={userProfile.topStrengths || []}
+            />
+          )}
 
-        {/* Dimension Breakdown - Hidden from user */}
-        {/* Users don't need to see technical dimension scores */}
+          {/* Education Path Section (YLA and TASO2) */}
+          {educationPath && (userProfile.cohort === 'YLA' || userProfile.cohort === 'TASO2') && (
+            <NextStepsSection
+              educationPath={educationPath}
+              cohort={userProfile.cohort as 'YLA' | 'TASO2'}
+            />
+          )}
 
-        {/* Salary & Outlook */}
-        {(career.salaryRange || career.outlook) && (
-          <div className="flex flex-wrap gap-4 pt-2 text-sm text-neutral-400">
-            {career.salaryRange && (
-              <div className="flex items-center gap-1">
-                <span className="font-medium">Palkka:</span>
-                <span>{career.salaryRange[0]}-{career.salaryRange[1]} €/kk</span>
+          {/* Career Recommendations */}
+          <CareerRecommendationsSection
+            careers={validTopCareers}
+            cohortType={cohortType}
+          />
+
+          {/* Todistuspistelaskuri CTA for TASO2 users */}
+          {userProfile.cohort === 'TASO2' &&
+           educationPath &&
+           (educationPath.primary === 'yliopisto' || educationPath.primary === 'amk') && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="mb-16"
+            >
+              <div className="
+                rounded-xl
+                border border-white/10
+                bg-gradient-to-b from-white/6 via-white/3 to-white/2
+                backdrop-blur-xl
+                shadow-[0_18px_50px_rgba(0,0,0,0.45)]
+                p-6 md:p-8
+              ">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                  <div className="md:max-w-2xl">
+                    <h3 className="text-2xl font-bold text-white mb-2">Laske todistuspisteesi seuraavaksi</h3>
+                    <p className="text-slate-300 leading-relaxed">
+                      Voit tutustua koulutusohjelmiin laskemalla yo-todistuksesi pisteet. Laskuri yhdistää pisteesi ja tämän testin havainnot ja näyttää sinulle yliopisto- tai AMK-vaihtoehtoja, joihin voit tutustua.
+                    </p>
+                  </div>
+                  <Link href="/todistuspistelaskuri" className="shrink-0">
+                    <Button className="bg-cyan-500 hover:bg-cyan-600 text-white">
+                      Avaa todistuspistelaskuri
+                    </Button>
+                  </Link>
+                </div>
+                <p className="mt-4 text-sm text-slate-400">
+                  Voit palata tähän näkymään milloin tahansa. Laskuri tallentaa pisteesi selaimeen, jotta voit vertailla ohjelmia rauhassa.
+                </p>
               </div>
-            )}
-            {career.outlook && (
-              <div className="flex items-center gap-1">
-                <span className="font-medium">Työllisyysnäkymä:</span>
-                <span className="capitalize">{career.outlook}</span>
-              </div>
-            )}
-          </div>
-        )}
+            </motion.div>
+          )}
 
-        {/* Visual hint for links */}
-        <div className="pt-2 border-t border-gray-200">
-          <p className="text-xs text-neutral-400 flex items-center gap-1">
-            <span>ℹ️</span>
-            <span>Klikkaa ammattia nähdäksesi koulutuspolut ja työpaikat</span>
-          </p>
-        </div>
-      </CardContent>
+          {/* Actions */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12 mb-12"
+          >
+            <Link href="/ammatit">
+              <button
+                className="
+                  rounded-full
+                  border border-white/20
+                  bg-white/5
+                  backdrop-blur-sm
+                  px-6 py-3
+                  text-sm md:text-base font-medium text-white
+                  transition
+                  hover:bg-white/10
+                  hover:border-white/30
+                "
+              >
+                Selaa kaikkia ammatteja
+              </button>
+            </Link>
+            <Link href="/test">
+              <button
+                className="
+                  group
+                  relative inline-flex items-center justify-center
+                  rounded-full
+                  bg-gradient-to-r from-sky-500 to-blue-500
+                  px-6 py-3
+                  text-sm md:text-base font-semibold text-white
+                  shadow-[0_18px_40px_rgba(37,99,235,0.6)]
+                  transition
+                  hover:shadow-[0_20px_45px_rgba(37,99,235,0.65)]
+                  hover:scale-[1.01]
+                "
+              >
+                Tee testi uudelleen
+              </button>
+            </Link>
+          </motion.div>
 
-      <CardFooter>
-        <Link href={`/ammatit/${encodeURIComponent(career.slug)}`} className="w-full">
-          <Button className="w-full">
-            {ctaText}
-          </Button>
-        </Link>
-      </CardFooter>
-    </Card>
+          {/* Share */}
+          <ShareResults 
+            topCareers={validTopCareers
+              .filter(c => c && c.title)
+              .map(c => ({ title: c.title }))} 
+            cohort={results.cohort}
+          />
+
+          {/* Feedback Section */}
+          <FeedbackSection />
+        </ResultPageLayout>
+      </motion.div>
+    </>
   );
 }
 
@@ -556,11 +341,9 @@ function FeedbackSection() {
     setIsSubmitting(true);
 
     try {
-      // Get result ID from localStorage
       const resultId = localStorage.getItem('lastTestResultId');
       
       if (resultId && supabase) {
-        // Save to Supabase
         const { error } = await supabase
           .from('test_results')
           .update({
@@ -572,16 +355,9 @@ function FeedbackSection() {
         
         if (error) {
           console.error('Error saving feedback to Supabase:', error);
-        } else {
-          console.log('Feedback saved to Supabase for result ID:', resultId);
         }
-      } else if (!supabase) {
-        console.warn('Supabase not configured, feedback saved only to localStorage');
-      } else {
-        console.warn('No result ID found, feedback not saved to database');
       }
       
-      // Also save to localStorage as backup
       const feedbackData = {
         rating,
         text: feedbackText.trim() || null,
@@ -598,12 +374,10 @@ function FeedbackSection() {
 
     setIsSubmitting(false);
     setSubmitted(true);
-    // Keep the thank you message permanently - don't reset
   };
 
   const handleSkip = () => {
     setSubmitted(true);
-    // Keep the thank you message permanently - don't reset
   };
 
   if (submitted) {
@@ -615,7 +389,7 @@ function FeedbackSection() {
             <h3 className="text-2xl font-bold text-white mb-2">
               Kiitos palautteesta!
             </h3>
-            <p className="text-neutral-400 leading-relaxed max-w-xl mx-auto">
+            <p className="text-slate-400 leading-relaxed max-w-xl mx-auto">
               Palautteesi auttaa meitä parantamaan testiä ja auttamaan vielä paremmin tulevia oppilaita.
             </p>
           </div>
@@ -627,16 +401,15 @@ function FeedbackSection() {
   return (
     <Card className="mt-12 border-2 border-white/20 bg-[#11161D]">
       <CardHeader>
-        <CardTitle className="text-2xl">
+        <CardTitle className="text-2xl text-white">
           Kerro meille mielipiteesi
         </CardTitle>
-        <CardDescription>
+        <CardDescription className="text-slate-400">
           Palautteesi auttaa meitä kehittämään testiä
         </CardDescription>
       </CardHeader>
 
       <CardContent className="space-y-6">
-        {/* Star Rating */}
         <div>
           <label className="block text-lg font-semibold text-white mb-3">
             Oliko testi hyödyllinen?
@@ -650,7 +423,7 @@ function FeedbackSection() {
                 onClick={() => setRating(star)}
                 onMouseEnter={() => setHoveredRating(star)}
                 onMouseLeave={() => setHoveredRating(null)}
-                className="text-4xl transition-all duration-150 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+                className="text-4xl transition-all duration-150 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 rounded"
                 aria-label={`${star} tähteä`}
               >
                 {(hoveredRating !== null ? star <= hoveredRating : star <= (rating || 0)) ? (
@@ -662,18 +435,17 @@ function FeedbackSection() {
             ))}
           </div>
 
-          <div className="flex justify-between text-sm text-neutral-400 mt-1">
+          <div className="flex justify-between text-sm text-slate-400 mt-1">
             <span>Ei lainkaan</span>
             <span>Erittäin hyödyllinen</span>
           </div>
         </div>
 
-        {/* Text Feedback - Shows after rating is selected */}
         {rating !== null && (
           <div className="animate-in fade-in slide-in-from-top-2 duration-300">
             <label className="block text-base font-semibold text-white mb-2">
               Mikä oli parasta? Mitä voisimme parantaa?
-              <span className="text-sm font-normal text-neutral-400 ml-2">(valinnainen)</span>
+              <span className="text-sm font-normal text-slate-400 ml-2">(valinnainen)</span>
             </label>
             
             <textarea
@@ -682,23 +454,22 @@ function FeedbackSection() {
               maxLength={500}
               rows={4}
               placeholder=""
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all resize-none"
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-400 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all resize-none bg-white/5 text-white placeholder:text-slate-500"
             />
             
-            <div className="text-sm text-neutral-400 mt-1 text-right">
+            <div className="text-sm text-slate-400 mt-1 text-right">
               {feedbackText.length}/500 merkkiä
             </div>
           </div>
         )}
 
-        {/* Buttons */}
         {rating !== null && (
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <Button
               onClick={handleSubmit}
               disabled={isSubmitting}
               size="lg"
-              className="flex-1"
+              className="flex-1 bg-cyan-500 hover:bg-cyan-600"
             >
               {isSubmitting ? 'Lähetetään...' : 'Lähetä palaute'}
             </Button>
@@ -707,58 +478,17 @@ function FeedbackSection() {
               disabled={isSubmitting}
               size="lg"
               variant="outline"
-              className="flex-1 sm:flex-none"
+              className="flex-1 sm:flex-none border-white/20 text-white hover:bg-white/10"
             >
               Ohita
             </Button>
           </div>
         )}
 
-        {/* Helper text */}
-        <div className="text-sm text-neutral-400 text-center pt-2">
+        <div className="text-sm text-slate-400 text-center pt-2">
           ✨ Palautteesi auttaa meitä parantamaan testiä! Kaikki palaute on anonyymiä.
         </div>
       </CardContent>
     </Card>
   );
 }
-
-// ========== EDUCATION PATH HELPERS ==========
-
-function getEducationPathTitle(path: string, cohort?: string): string {
-  // TASO2 paths
-  if (path === 'yliopisto' || path === 'amk') {
-    const taso2Titles: Record<string, string> = {
-      yliopisto: 'Yliopisto-opinnot',
-      amk: 'Ammattikorkeakoulu'
-    };
-    return taso2Titles[path] || path;
-  }
-  
-  // YLA paths
-  const ylaTitles: Record<string, string> = {
-    lukio: 'Lukio',
-    ammattikoulu: 'Ammattikoulu',
-    kansanopisto: 'Kansanopisto'
-  };
-  return ylaTitles[path] || path;
-}
-
-function getEducationPathConfidenceBadge(confidence: 'high' | 'medium' | 'low') {
-  const styles = {
-    high: 'bg-green-100 text-green-800',
-    medium: 'bg-yellow-100 text-yellow-800',
-    low: 'bg-neutral-800/30 text-white'
-  };
-  const labels = {
-    high: 'Vahva suositus',
-    medium: 'Hyvä vaihtoehto',
-    low: 'Mahdollinen vaihtoehto'
-  };
-  return (
-    <span className={`px-3 py-1 rounded-full text-xs font-medium ${styles[confidence]}`}>
-      {labels[confidence]}
-    </span>
-  );
-}
-

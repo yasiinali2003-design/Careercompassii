@@ -18,25 +18,15 @@ export function Footer() {
               hahmottamaan vahvuuksiaan ja suuntautumisvaihtoehtojaan.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-10 text-sm text-urak-text-secondary md:grid-cols-3">
+          <div className="grid grid-cols-2 gap-10 text-sm text-urak-text-secondary md:grid-cols-2">
             <div>
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-urak-text-muted">
                 Palvelu
               </p>
               <ul className="space-y-2.5">
                 <li><a href="/kouluille" className="hover:text-white transition-colors">Kouluille</a></li>
-                <li><a href="/kouluille" className="hover:text-white transition-colors">Hinnoittelu</a></li>
                 <li><a href="/teacher/login" className="hover:text-white transition-colors">Opettajille</a></li>
                 <li><a href="/admin/school-dashboard" className="hover:text-white transition-colors">Admin</a></li>
-              </ul>
-            </div>
-            <div>
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-urak-text-muted">
-                Tieto
-              </p>
-              <ul className="space-y-2.5">
-                <li><a href="#research" className="hover:text-white transition-colors">Tutkimuspohja</a></li>
-                <li><a href="#faq" className="hover:text-white transition-colors">Usein kysytyt</a></li>
               </ul>
             </div>
             <div>
@@ -51,7 +41,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 flex flex-col gap-4 border-t border-urak-border/60 pt-6 text-xs text-urak-text-muted md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} Urakompassi. Kaikki oikeudet pidätetään.</p>
+          <p>© {new Date().getFullYear()} Urakompassi. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="/legal/tietosuojaseloste" className="hover:text-urak-text-secondary transition-colors">Tietosuojaseloste</a>
             <a href="/legal/immateriaalioikeus-ja-kilpailijasuoja" className="hover:text-urak-text-secondary transition-colors">Immateriaalioikeus- ja kilpailijansuoja</a>

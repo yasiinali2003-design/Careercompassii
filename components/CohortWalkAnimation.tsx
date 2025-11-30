@@ -157,7 +157,8 @@ export function CohortWalkAnimation({
       const walkSegment = COHORT_WALK_SEGMENTS[activeCohort];
       if (lottieRef.current?.playSegments) {
         // Play just the first frame (marker to same marker = single frame)
-        lottieRef.current.playSegments([walkSegment, walkSegment], true);
+        // Type assertion: lottie-react accepts string marker names
+        lottieRef.current.playSegments([walkSegment as any, walkSegment as any], true);
         lottieRef.current.pause();
       }
       previousCohortRef.current = activeCohort;
@@ -173,7 +174,7 @@ export function CohortWalkAnimation({
         // Note: If your Lottie file uses markers, pass marker names as strings
         // If it uses frame numbers, you'll need to convert markers to frame numbers
         // Example with frame numbers: lottieRef.current.playSegments([120, 180], true);
-        lottieRef.current.playSegments([walkSegment, walkSegment], true);
+        lottieRef.current.playSegments([walkSegment as any, walkSegment as any], true);
       }
     } else if (segments.length === 2) {
       // Transition + walk segment
@@ -183,7 +184,7 @@ export function CohortWalkAnimation({
         // Play transition, then walk segment (no loop initially)
         // Note: playSegments accepts marker names (strings) or frame numbers (numbers)
         lottieRef.current.playSegments(
-          [transitionSegment, walkSegment],
+          [transitionSegment as any, walkSegment as any],
           false
         );
 
@@ -195,7 +196,7 @@ export function CohortWalkAnimation({
         const timeout = setTimeout(() => {
           if (lottieRef.current?.playSegments) {
             // Start looping the walk segment
-            lottieRef.current.playSegments([walkSegment, walkSegment], true);
+            lottieRef.current.playSegments([walkSegment as any, walkSegment as any], true);
           }
         }, transitionDuration);
 
@@ -246,7 +247,7 @@ export function CohortWalkAnimation({
         className
       )}
       aria-hidden="true"
-      animate={isReducedMotion || prefersReducedMotion ? {} : floatAnimation}
+      animate={isReducedMotion || prefersReducedMotion ? {} : (floatAnimation as any)}
     >
       <Lottie
         lottieRef={lottieRef}

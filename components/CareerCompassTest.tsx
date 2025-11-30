@@ -219,6 +219,7 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   const [currentOccupation, setCurrentOccupation] = useState<string>(""); // Current career/occupation for filtering
   const [showSaveNotification, setShowSaveNotification] = useState(false);
   const [hasLoadedProgress, setHasLoadedProgress] = useState(false);
+  const [hasShownSaveNotification, setHasShownSaveNotification] = useState(false);
   const [originalIndices, setOriginalIndices] = useState<number[]>([]); // For shuffle mapping
   const [shuffleKey, setShuffleKey] = useState<string>(''); // For verification
   const [selectedSetIndex, setSelectedSetIndex] = useState<number>(0); // For YLA question pool
@@ -290,6 +291,23 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
     
     // Set the shuffled questions for display
     setQList(shuffled.map(q => q.text));
+    
+    // Ensure answers array matches the actual number of questions
+    const actualQuestionCount = shuffled.length;
+    setAnswers(prev => {
+      if (prev.length !== actualQuestionCount) {
+        // Resize answers array to match question count
+        const resized = [...prev];
+        while (resized.length < actualQuestionCount) {
+          resized.push(0); // Add unanswered slots
+        }
+        while (resized.length > actualQuestionCount) {
+          resized.pop(); // Remove extra slots
+        }
+        return resized;
+      }
+      return prev;
+    });
   }, [group]);
   const total = qList.length;
 
@@ -300,8 +318,15 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
       setStep(saved.step);
       setGroup(saved.group);
       setIndex(saved.index ?? 0);
-      setAnswers(saved.answers ?? []);
+      const loadedAnswers = saved.answers ?? [];
+      setAnswers(loadedAnswers);
       setHasLoadedProgress(true);
+      
+      // If user already has answers saved, mark notification as shown
+      // so it won't show again when they continue answering
+      if (loadedAnswers.length > 0) {
+        setHasShownSaveNotification(true);
+      }
       
       // Show notification that progress was loaded
       setTimeout(() => {
@@ -316,13 +341,16 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
     if (step > 0) { // Only save if test has started
       saveProgress({ step, group, index, answers });
       
-      // Show save notification (but not on initial load)
-      if (hasLoadedProgress && (step === 2 || step === 3)) {
+      // Show save notification only once after the first answer
+      // Check if we're in question step (step === 2) and have at least one answer
+      // and haven't shown the notification yet
+      if (step === 2 && answers.length > 0 && !hasShownSaveNotification) {
         setShowSaveNotification(true);
+        setHasShownSaveNotification(true); // Mark as shown so it won't show again
         setTimeout(() => setShowSaveNotification(false), 3000);
       }
     }
-  }, [step, group, index, answers, hasLoadedProgress]);
+  }, [step, group, index, answers, hasShownSaveNotification]);
 
   // Save progress before page unload
   useEffect(() => {
@@ -407,10 +435,18 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
         {/* Progress Save Notification */}
       {showSaveNotification && (
         <div className="fixed top-4 right-4 z-50 animate-in slide-in-from-right duration-300">
-          <div className="rounded-lg bg-slate-50 border border-primary/20 px-4 py-3 shadow-lg">
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-slate-500 animate-pulse"></div>
-              <p className="text-sm text-primary font-medium">
+          <div className="
+            relative
+            rounded-xl
+            border border-cyan-400/20
+            bg-gradient-to-b from-white/8 via-white/5 to-white/3
+            backdrop-blur-xl
+            px-4 py-3
+            shadow-[0_8px_32px_rgba(0,0,0,0.4)]
+          ">
+            <div className="flex items-center gap-3">
+              <div className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></div>
+              <p className="text-sm text-cyan-300 font-medium">
                 Tallensimme vastauksesi – voit jatkaa myöhemmin tästä kohdasta.
               </p>
             </div>
@@ -483,60 +519,102 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
     return () => clearTimeout(timer);
   }, []);
 
+  const featureChips = ['30 kysymystä', '10–15 minuuttia', 'Maksuton', 'Luottamuksellinen'];
+
   return (
-    <div 
-      className={`relative rounded-3xl border border-white/20 bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-sm p-8 md:p-10 shadow-sm transition-all duration-800 ease-in-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2.5'
-      }`}
-    >
-      <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Löydä tulevaisuutesi suunta</h1>
-      
-      <div className="mt-5 md:mt-6 space-y-3">
-        <p className="text-neutral-300 leading-relaxed text-base md:text-lg">
-          Vastaa 30 huolellisesti suunniteltuun kysymykseen, jotka kartoittavat kiinnostuksesi, arvosi ja vahvuutesi.
-        </p>
-        <p className="text-neutral-300 leading-relaxed text-base md:text-lg">
-          Analyysimme perustuu tutkittuun persoonallisuus- ja urapsykologiaan ja tarjoaa sinulle henkilökohtaisia urasuosituksia Suomen työmarkkinoille.
-        </p>
-      </div>
-      
-      {/* Modern tag-style chips */}
-      <div className="mt-6 flex flex-wrap gap-2">
-        <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-neutral-300">
-          30 kysymystä
-        </span>
-        <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-neutral-300">
-          10–15 minuuttia
-        </span>
-        <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-neutral-300">
-          Maksuton
-        </span>
-        <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-neutral-300">
-          Luottamuksellinen
-        </span>
-      </div>
-      
-      {hasSavedProgress && (
-        <div className="mt-6 rounded-lg bg-white/5 border border-white/20 p-4">
-          <div className="flex items-center gap-2">
-            <div className="h-2 w-2 rounded-full bg-[#2B5F75]"></div>
-            <p className="text-sm text-white font-medium">
-              Löysimme tallennetut vastauksesi – voit jatkaa siitä mihin jäit!
-            </p>
+    <section className="flex justify-center px-4 py-24">
+      <div
+        className={`
+          relative
+          max-w-4xl w-full
+          overflow-hidden
+          rounded-[32px]
+          border border-cyan-400/10
+          bg-gradient-to-b from-white/6 via-white/3 to-white/2
+          bg-clip-padding
+          backdrop-blur-xl
+          shadow-[0_24px_80px_rgba(0,0,0,0.65)]
+          px-8 py-10 md:px-12 md:py-14
+          transition-all duration-800 ease-in-out
+          ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2.5'}
+        `}
+      >
+        {/* Top glow effect */}
+        <div className="pointer-events-none absolute inset-x-8 -top-32 h-40 rounded-full bg-gradient-to-b from-cyan-300/25 to-transparent blur-3xl" />
+
+        <div className="relative space-y-6">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
+            Löydä tulevaisuutesi suunta
+          </h2>
+
+          <p className="text-base md:text-lg text-slate-100/90">
+            Vastaa 30 huolellisesti suunniteltuun kysymykseen, jotka kartoittavat
+            kiinnostuksesi, arvosi ja vahvuutesi.
+          </p>
+
+          <p className="text-base md:text-lg text-slate-200/80">
+            Analyysimme perustuu tutkittuun persoonallisuus- ja urapsykologiaan ja
+            tarjoaa sinulle henkilökohtaisia urasuosituksia Suomen työmarkkinoille.
+          </p>
+
+          <div className="flex flex-wrap gap-2 pt-2">
+            {featureChips.map((label) => (
+              <span
+                key={label}
+                className="
+                  inline-flex items-center
+                  rounded-full
+                  border border-white/12
+                  bg-white/4
+                  px-3 py-1.5
+                  text-xs font-medium
+                  text-slate-100/90
+                "
+              >
+                {label}
+              </span>
+            ))}
+          </div>
+
+          {hasSavedProgress && (
+            <div className="rounded-lg bg-white/5 border border-white/20 p-4">
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 rounded-full bg-[#2B5F75]"></div>
+                <p className="text-sm text-white font-medium">
+                  Löysimme tallennetut vastauksesi – voit jatkaa siitä mihin jäit!
+                </p>
+              </div>
+            </div>
+          )}
+
+          <div className="pt-4">
+            <button
+              type="button"
+              onClick={onStart}
+              className="
+                group
+                relative inline-flex items-center justify-center
+                rounded-full
+                bg-gradient-to-r from-sky-500 to-blue-500
+                px-8 py-3
+                text-sm md:text-base font-semibold text-white
+                shadow-[0_18px_40px_rgba(37,99,235,0.6)]
+                transition
+                hover:shadow-[0_20px_45px_rgba(37,99,235,0.65)]
+                hover:scale-[1.01]
+                focus-visible:outline-none
+                focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+              "
+            >
+              {hasSavedProgress ? "Jatka testiä" : "Aloita ilmainen testi"}
+              <span className="ml-2 inline-block translate-x-0 transition-transform group-hover:translate-x-0.5">
+                →
+              </span>
+            </button>
           </div>
         </div>
-      )}
-      
-      <div className="mt-8 flex justify-center">
-        <button 
-          onClick={onStart} 
-          className="relative rounded-full bg-[#2563EB] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-[#2563EB]/30 hover:bg-[#1D4ED8] hover:shadow-xl hover:shadow-[#2563EB]/40 transition-all duration-200 flex items-center justify-center gap-2"
-        >
-          {hasSavedProgress ? "Jatka testiä" : "Aloita ilmainen testi"}
-          <span className="text-lg">→</span>
-        </button>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -579,44 +657,94 @@ const GroupSelect = ({ onChoose, onBack }: { onChoose: (g: "YLA" | "TASO2" | "NU
 );
 
 const OccupationInput = ({ value, onChange, onSkip }: { value: string; onChange: (val: string) => void; onSkip: () => void }) => (
-  <div className="space-y-6">
-    <div className="text-center">
-      <h1 className="text-3xl font-bold">Mikä on nykyinen ammattisi tai työsi?</h1>
-      <p className="mt-2 text-slate-600">
-        Tämä auttaa meitä antamaan sinulle parempia suosituksia. Jos et ole töissä tai opiskelija, voit ohittaa tämän.
-      </p>
-    </div>
+  <section className="flex justify-center px-4 py-24">
+    <div
+      className="
+        relative
+        max-w-4xl w-full
+        overflow-hidden
+        rounded-[32px]
+        border border-cyan-400/10
+        bg-gradient-to-b from-white/6 via-white/3 to-white/2
+        bg-clip-padding
+        backdrop-blur-xl
+        shadow-[0_24px_80px_rgba(0,0,0,0.65)]
+        px-8 py-10 md:px-12 md:py-14
+      "
+    >
+      {/* Top glow effect */}
+      <div className="pointer-events-none absolute inset-x-8 -top-32 h-40 rounded-full bg-gradient-to-b from-cyan-300/25 to-transparent blur-3xl" />
 
-    <div className="space-y-4">
-      <input
-        type="text"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder="Esim. Sairaanhoitaja, Myyjä, Opiskelija..."
-        className="w-full rounded-xl border border-slate-300 px-4 py-3 text-lg focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-      />
+      <div className="relative space-y-6">
+        <div className="text-center">
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
+            Mikä on nykyinen ammattisi tai työsi?
+          </h1>
+          <p className="mt-3 text-base md:text-lg text-slate-200/80">
+            Tämä auttaa meitä antamaan sinulle parempia suosituksia. Jos et ole töissä tai opiskelija, voit ohittaa tämän.
+          </p>
+        </div>
 
-      <div className="flex gap-3">
-        <button
-          onClick={() => value.trim() && onChange(value.trim())}
-          disabled={!value.trim()}
-          className="flex-1 rounded-xl bg-primary px-4 py-3 font-semibold text-white transition hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          Jatka
-        </button>
-        <button
-          onClick={onSkip}
-          className="flex-1 rounded-xl border border-slate-300 px-4 py-3 font-semibold transition hover:bg-slate-50"
-        >
-          Ohita
-        </button>
+        <div className="space-y-4">
+          <input
+            type="text"
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            placeholder="Esim. Sairaanhoitaja, Myyjä, Opiskelija..."
+            className="w-full rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm px-4 py-3 text-lg text-white placeholder:text-slate-400 focus:border-cyan-400/40 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 focus:bg-white/8 transition-colors"
+          />
+
+          <div className="flex gap-3">
+            <button
+              onClick={() => value.trim() && onChange(value.trim())}
+              disabled={!value.trim()}
+              className="
+                group
+                flex-1
+                relative inline-flex items-center justify-center
+                rounded-full
+                bg-gradient-to-r from-sky-500 to-blue-500
+                px-6 py-3
+                text-sm md:text-base font-semibold text-white
+                shadow-[0_18px_40px_rgba(37,99,235,0.6)]
+                transition
+                hover:shadow-[0_20px_45px_rgba(37,99,235,0.65)]
+                hover:scale-[1.01]
+                focus-visible:outline-none
+                focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+                disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-[0_18px_40px_rgba(37,99,235,0.6)]
+              "
+            >
+              Jatka
+            </button>
+            <button
+              onClick={onSkip}
+              className="
+                flex-1
+                rounded-full
+                border border-white/20
+                bg-white/5
+                backdrop-blur-sm
+                px-6 py-3
+                text-sm md:text-base font-semibold text-white
+                transition
+                hover:bg-white/10
+                hover:border-white/30
+                focus-visible:outline-none
+                focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+              "
+            >
+              Ohita
+            </button>
+          </div>
+        </div>
+
+        <p className="text-center text-sm text-slate-300/70">
+          Ammattisi auttaa meitä suodattamaan pois työsi, jotta näet uusia vaihtoehtoja.
+        </p>
       </div>
     </div>
-
-    <p className="text-center text-sm text-slate-700">
-      Ammattisi auttaa meitä suodattamaan pois työsi, jotta näet uusia vaihtoehtoja.
-    </p>
-  </div>
+  </section>
 );
 
 const RatingScale = ({ value, onChange }: { value: number; onChange: (val: number) => void }) => {
@@ -1518,21 +1646,151 @@ const Summary = ({
   }
 
   return (
-    <div className="rounded-3xl border border-white/20 bg-white/5 backdrop-blur-sm p-8 shadow-lg">
-      <h2 className="text-2xl font-bold text-white mb-3">Kiitos vastauksista!</h2>
-      <p className="text-urak-text-secondary mb-8">Vastasit {answered}/{questions.length} kysymykseen.</p>
+    <div>
+    <section className="flex justify-center px-4 py-24">
+      <div
+        className="
+          relative
+          max-w-4xl w-full
+          overflow-hidden
+          rounded-[32px]
+          border border-cyan-400/10
+          bg-gradient-to-b from-white/6 via-white/3 to-white/2
+          bg-clip-padding
+          backdrop-blur-xl
+          shadow-[0_24px_80px_rgba(0,0,0,0.65)]
+          px-8 py-10 md:px-12 md:py-14
+        "
+      >
+        {/* Top glow effect */}
+        <div className="pointer-events-none absolute inset-x-8 -top-32 h-40 rounded-full bg-gradient-to-b from-cyan-300/25 to-transparent blur-3xl" />
 
-      <div className="space-y-6">
-        <button
-          onClick={sendToBackend}
-          disabled={loading}
-          className="w-full rounded-xl bg-urak-accent-blue px-6 py-4 text-white font-semibold shadow-lg hover:bg-urak-accent-blue/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-        >
-          {loading ? "Analysoidaan vastauksiasi..." : "Saat henkilökohtaisen analyysin"}
-        </button>
+        <div className="relative space-y-6">
+          {/* Header */}
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-3">
+              Kiitos vastauksista!
+            </h2>
+            <p className="text-base md:text-lg text-slate-200/80">
+              Vastasit {answered}/{questions.length} kysymykseen.
+            </p>
+          </div>
 
-        {/* Validation Warning Modal */}
-        {showValidationWarning && validationMetrics && (
+          {/* Main CTA */}
+          <div className="pt-2">
+            <button
+              onClick={sendToBackend}
+              disabled={loading}
+              className="
+                group
+                w-full
+                relative inline-flex items-center justify-center
+                rounded-full
+                bg-gradient-to-r from-sky-500 to-blue-500
+                px-8 py-4
+                text-sm md:text-base font-semibold text-white
+                shadow-[0_18px_40px_rgba(37,99,235,0.6)]
+                transition
+                hover:shadow-[0_20px_45px_rgba(37,99,235,0.65)]
+                hover:scale-[1.01]
+                focus-visible:outline-none
+                focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+                disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-[0_18px_40px_rgba(37,99,235,0.6)]
+              "
+            >
+              {loading ? "Analysoidaan vastauksiasi..." : "Saat henkilökohtaisen analyysin"}
+              {!loading && (
+                <span className="ml-2 inline-block translate-x-0 transition-transform group-hover:translate-x-0.5">
+                  →
+                </span>
+              )}
+            </button>
+          </div>
+
+          {/* Loading State */}
+          {loading && (
+            <div className="rounded-xl bg-urak-accent-blue/10 border border-urak-accent-blue/30 p-4">
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 mt-0.5">
+                  <svg className="animate-spin h-5 w-5 text-urak-accent-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <p className="text-white font-semibold">Analysoidaan vastauksiasi...</p>
+                  <p className="text-sm text-urak-text-secondary mt-1">Tämä kestää yleensä 3-5 sekuntia</p>
+                  <p className="text-sm text-urak-accent-blue font-medium mt-2">⚠️ Älä sulje sivua tai palaa takaisin</p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Error State */}
+          {error && (
+            <div className="rounded-xl bg-red-500/10 border border-red-500/30 p-4">
+              <p className="text-red-300 font-semibold mb-2">⚠️ Virhe vastausten lähetyksessä</p>
+              <pre className="text-sm text-red-200 whitespace-pre-wrap mb-3">{error}</pre>
+              <button
+                onClick={sendToBackend}
+                className="mt-2 text-sm bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
+              >
+                Yritä uudelleen
+              </button>
+            </div>
+          )}
+
+          {/* Secondary Actions */}
+          <div className="flex flex-wrap gap-3 justify-center pt-2">
+            <button
+              onClick={() => {
+                const file = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+                const url = URL.createObjectURL(file);
+                const a = document.createElement("a");
+                a.href = url; a.download = "vastaukset.json"; a.click();
+                URL.revokeObjectURL(url);
+              }}
+              className="
+                rounded-full
+                border border-white/20
+                bg-white/5
+                backdrop-blur-sm
+                px-5 py-2.5
+                text-sm font-medium text-white
+                transition
+                hover:bg-white/10
+                hover:border-white/30
+                focus-visible:outline-none
+                focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+              "
+            >
+              Lataa vastaukset
+            </button>
+            <button 
+              onClick={onRestart} 
+              className="
+                rounded-full
+                px-5 py-2.5
+                text-sm font-medium text-slate-300/80
+                transition
+                hover:text-white
+                focus-visible:outline-none
+                focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+              "
+            >
+              Aloita alusta
+            </button>
+          </div>
+
+          {/* Footer Text */}
+          <p className="text-center text-sm text-slate-300/70 leading-relaxed pt-2">
+            Analyysi perustuu vastauksiisi ja tarjoaa henkilökohtaisia urasuosituksia.
+          </p>
+        </div>
+      </div>
+    </section>
+    {/* Validation Warning Modal */}
+    {showValidationWarning && validationMetrics && (
           <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
             <div className="bg-urak-surface border border-white/20 rounded-2xl shadow-2xl max-w-md w-full p-6">
               <div className="flex items-start gap-3 mb-4">
@@ -1586,63 +1844,6 @@ const Summary = ({
             </div>
           </div>
         )}
-
-        {loading && (
-          <div className="rounded-xl bg-urak-accent-blue/10 border border-urak-accent-blue/30 p-4">
-            <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 mt-0.5">
-                <svg className="animate-spin h-5 w-5 text-urak-accent-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-              </div>
-              <div className="flex-1">
-                <p className="text-white font-semibold">Analysoidaan vastauksiasi...</p>
-                <p className="text-sm text-urak-text-secondary mt-1">Tämä kestää yleensä 3-5 sekuntia</p>
-                <p className="text-sm text-urak-accent-blue font-medium mt-2">⚠️ Älä sulje sivua tai palaa takaisin</p>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {error && (
-          <div className="rounded-xl bg-red-500/10 border border-red-500/30 p-4">
-            <p className="text-red-300 font-semibold mb-2">⚠️ Virhe vastausten lähetyksessä</p>
-            <pre className="text-sm text-red-200 whitespace-pre-wrap mb-3">{error}</pre>
-            <button
-              onClick={sendToBackend}
-              className="mt-2 text-sm bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
-            >
-              Yritä uudelleen
-            </button>
-          </div>
-        )}
-      </div>
-
-      <div className="mt-8 flex flex-wrap gap-3">
-        <button
-          onClick={() => {
-            const file = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-            const url = URL.createObjectURL(file);
-            const a = document.createElement("a");
-            a.href = url; a.download = "vastaukset.json"; a.click();
-            URL.revokeObjectURL(url);
-          }}
-          className="rounded-xl border border-white/20 bg-white/5 px-4 py-2.5 text-urak-text-secondary hover:bg-white/10 hover:text-white transition-colors"
-        >
-          Lataa vastaukset
-        </button>
-        <button 
-          onClick={onRestart} 
-          className="rounded-xl px-4 py-2.5 text-urak-text-secondary hover:text-white transition-colors"
-        >
-          Aloita alusta
-        </button>
-      </div>
-
-      <p className="mt-6 text-xs text-urak-text-muted leading-relaxed">
-        Analyysi perustuu vastauksiisi ja tarjoaa henkilökohtaisia urasuosituksia.
-      </p>
     </div>
   );
 };
