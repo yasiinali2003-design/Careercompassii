@@ -631,8 +631,8 @@ const RatingScale = ({ value, onChange }: { value: number; onChange: (val: numbe
           className={
             "rounded-xl border px-4 py-3.5 text-sm sm:text-base transition min-h-[44px] touch-manipulation " +
             (value === idx + 1
-              ? "border-primary bg-slate-50 font-semibold ring-2 ring-primary"
-              : "border-slate-300 hover:bg-slate-50")
+              ? "border-urak-accent-blue bg-urak-accent-blue/10 text-white font-semibold ring-2 ring-urak-accent-blue/30 shadow-lg"
+              : "border-white/20 bg-white/5 text-urak-text-secondary hover:bg-white/10 hover:border-white/30")
           }
         >
           {label}
@@ -1518,32 +1518,32 @@ const Summary = ({
   }
 
   return (
-    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 className="text-2xl font-bold">Kiitos vastauksista!</h2>
-      <p className="mt-2 text-slate-600">Vastasit {answered}/{questions.length} kysymykseen.</p>
+    <div className="rounded-3xl border border-white/20 bg-white/5 backdrop-blur-sm p-8 shadow-lg">
+      <h2 className="text-2xl font-bold text-white mb-3">Kiitos vastauksista!</h2>
+      <p className="text-urak-text-secondary mb-8">Vastasit {answered}/{questions.length} kysymykseen.</p>
 
-      <div className="mt-6">
+      <div className="space-y-6">
         <button
           onClick={sendToBackend}
           disabled={loading}
-          className="w-full rounded-xl bg-primary px-6 py-3 text-white font-medium shadow hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="w-full rounded-xl bg-urak-accent-blue px-6 py-4 text-white font-semibold shadow-lg hover:bg-urak-accent-blue/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           {loading ? "Analysoidaan vastauksiasi..." : "Saat henkilökohtaisen analyysin"}
         </button>
 
         {/* Validation Warning Modal */}
         {showValidationWarning && validationMetrics && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6">
+          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+            <div className="bg-urak-surface border border-white/20 rounded-2xl shadow-2xl max-w-md w-full p-6">
               <div className="flex items-start gap-3 mb-4">
                 <div className="flex-shrink-0 mt-1">
-                  <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-slate-900">Huomio vastauksistasi</h3>
-                  <p className="text-sm text-slate-600 mt-1">
+                  <h3 className="text-lg font-bold text-white">Huomio vastauksistasi</h3>
+                  <p className="text-sm text-urak-text-secondary mt-1">
                     Havaitsimme joitakin epätavallisia vastausmalleja, jotka voivat vaikuttaa tulosten tarkkuuteen.
                   </p>
                 </div>
@@ -1555,15 +1555,15 @@ const Summary = ({
                     key={idx}
                     className={`rounded-lg border p-3 ${getSeverityColor(warning.severity)}`}
                   >
-                    <p className="font-semibold text-sm mb-1">{warning.message}</p>
-                    <p className="text-xs opacity-90">{warning.suggestion}</p>
+                    <p className="font-semibold text-sm mb-1 text-white">{warning.message}</p>
+                    <p className="text-xs text-urak-text-secondary opacity-90">{warning.suggestion}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-6">
-                <p className="text-sm text-blue-900">
-                  <strong>Laatupisteet: {validationMetrics.qualityScore}/100</strong>
+              <div className="bg-urak-accent-blue/10 border border-urak-accent-blue/30 rounded-lg p-4 mb-6">
+                <p className="text-sm text-urak-text-secondary">
+                  <strong className="text-white">Laatupisteet: {validationMetrics.qualityScore}/100</strong>
                   <br />
                   Voit jatkaa analysointiin tai aloittaa testin alusta saadaksesi tarkempia tuloksia.
                 </p>
@@ -1572,13 +1572,13 @@ const Summary = ({
               <div className="flex gap-3">
                 <button
                   onClick={() => setShowValidationWarning(false)}
-                  className="flex-1 rounded-xl bg-primary px-4 py-3 text-white font-semibold hover:bg-primary/90 transition-colors"
+                  className="flex-1 rounded-xl bg-urak-accent-blue px-4 py-3 text-white font-semibold hover:bg-urak-accent-blue/90 transition-colors"
                 >
                   Ymmärrän, jatka
                 </button>
                 <button
                   onClick={onRestart}
-                  className="flex-1 rounded-xl border-2 border-slate-300 px-4 py-3 text-slate-700 font-semibold hover:bg-slate-50 transition-colors"
+                  className="flex-1 rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-urak-text-secondary font-semibold hover:bg-white/10 transition-colors"
                 >
                   Aloita alusta
                 </button>
@@ -1588,30 +1588,30 @@ const Summary = ({
         )}
 
         {loading && (
-          <div className="mt-4 rounded-xl bg-blue-50 border border-blue-200 p-4 animate-pulse">
+          <div className="rounded-xl bg-urak-accent-blue/10 border border-urak-accent-blue/30 p-4">
             <div className="flex items-start gap-3">
               <div className="flex-shrink-0 mt-0.5">
-                <svg className="animate-spin h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <svg className="animate-spin h-5 w-5 text-urak-accent-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
               </div>
               <div className="flex-1">
-                <p className="text-blue-900 font-semibold">Analysoidaan vastauksiasi...</p>
-                <p className="text-sm text-blue-700 mt-1">Tämä kestää yleensä 3-5 sekuntia</p>
-                <p className="text-sm text-blue-800 font-medium mt-2">⚠️ Älä sulje sivua tai palaa takaisin</p>
+                <p className="text-white font-semibold">Analysoidaan vastauksiasi...</p>
+                <p className="text-sm text-urak-text-secondary mt-1">Tämä kestää yleensä 3-5 sekuntia</p>
+                <p className="text-sm text-urak-accent-blue font-medium mt-2">⚠️ Älä sulje sivua tai palaa takaisin</p>
               </div>
             </div>
           </div>
         )}
 
         {error && (
-          <div className="mt-4 rounded-xl bg-red-50 border border-red-200 p-4">
-            <p className="text-red-800 font-semibold mb-2">⚠️ Virhe vastausten lähetyksessä</p>
-            <pre className="text-sm text-red-700 whitespace-pre-wrap mb-3">{error}</pre>
+          <div className="rounded-xl bg-red-500/10 border border-red-500/30 p-4">
+            <p className="text-red-300 font-semibold mb-2">⚠️ Virhe vastausten lähetyksessä</p>
+            <pre className="text-sm text-red-200 whitespace-pre-wrap mb-3">{error}</pre>
             <button
               onClick={sendToBackend}
-              className="mt-2 text-sm bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors"
+              className="mt-2 text-sm bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
             >
               Yritä uudelleen
             </button>
@@ -1619,7 +1619,7 @@ const Summary = ({
         )}
       </div>
 
-      <div className="mt-6 flex flex-wrap gap-2">
+      <div className="mt-8 flex flex-wrap gap-3">
         <button
           onClick={() => {
             const file = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
@@ -1628,16 +1628,19 @@ const Summary = ({
             a.href = url; a.download = "vastaukset.json"; a.click();
             URL.revokeObjectURL(url);
           }}
-          className="rounded-xl border border-slate-300 px-4 py-2"
+          className="rounded-xl border border-white/20 bg-white/5 px-4 py-2.5 text-urak-text-secondary hover:bg-white/10 hover:text-white transition-colors"
         >
           Lataa vastaukset
         </button>
-        <button onClick={onRestart} className="rounded-xl px-4 py-2 text-slate-700 hover:bg-slate-50">
+        <button 
+          onClick={onRestart} 
+          className="rounded-xl px-4 py-2.5 text-urak-text-secondary hover:text-white transition-colors"
+        >
           Aloita alusta
         </button>
       </div>
 
-      <p className="mt-4 text-xs text-slate-700">
+      <p className="mt-6 text-xs text-urak-text-muted leading-relaxed">
         Analyysi perustuu vastauksiisi ja tarjoaa henkilökohtaisia urasuosituksia.
       </p>
     </div>

@@ -15,6 +15,7 @@ import { AnimatedCard } from "@/components/ui/AnimatedCard"
 import { PrimaryButton } from "@/components/ui/PrimaryButton"
 import { SecondaryButton } from "@/components/ui/SecondaryButton"
 import TargetGroupsStepper from "@/components/TargetGroupsStepper"
+import { ScrollGradientBackground } from "@/components/ScrollGradientBackground"
 import {
   Target,
   Users,
@@ -31,13 +32,29 @@ export default function HomePage() {
   const categories = getAllCategories();
 
   return (
-    <div className="min-h-screen bg-transparent">
+    <div className="min-h-screen bg-transparent relative">
+      {/* Full-page scroll gradient background */}
+      <ScrollGradientBackground
+        fromColor="#0f172a"
+        toColor="#0f766e"
+        startRange={0}
+        endRange={0.4}
+        speed={0.4}
+        intensity={0.6}
+        noiseAmount={0.05}
+        className="fixed inset-0 z-0 pointer-events-none"
+      />
+      
+      {/* Content wrapper with z-index to ensure content is above background */}
+      <div className="relative z-10">
+
       {/* Navigation - Transparent header that adapts on scroll */}
       <ScrollNav />
 
       {/* Hero Section - Premium Nordic SaaS Design */}
-      <AnimatedSection className="relative mx-auto px-6 sm:px-8 pt-32 pb-32 bg-transparent">
-        <div className="max-w-4xl mx-auto relative">
+      <AnimatedSection className="relative mx-auto px-6 sm:px-8 pt-32 pb-32 bg-transparent overflow-hidden">
+        {/* Hero Content */}
+        <div className="max-w-4xl mx-auto relative z-10">
           <motion.div
             className="text-center"
             initial="hidden"
@@ -212,6 +229,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       <CallToActionSection />
+      </div>
     </div>
   )
 }

@@ -4,7 +4,10 @@ import Link from "next/link";
 
 export default function CallToActionSection() {
   return (
-    <section className="py-32">
+    <section className="relative py-32">
+      {/* Very subtle overlay to blend with beams - lighter than before */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020817]/20 to-transparent pointer-events-none -z-10" />
+      
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
         {/* Subtle Radial Glow Background */}
         <div className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-64 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_rgba(56,189,248,0.18),_transparent_60%)]" />
