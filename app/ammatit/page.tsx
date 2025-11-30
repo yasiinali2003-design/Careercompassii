@@ -9,6 +9,7 @@ import { Career, CareerFilters, WorkMode, Outlook } from '@/lib/types';
 import ScrollNav from '@/components/ScrollNav';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { AnimatedCard } from '@/components/ui/AnimatedCard';
+import LightRays from '@/components/LightRays';
 
 const convertCareerFIToCareer = (careerFI: CareerFI): Career => ({
   slug: careerFI.id,
@@ -175,11 +176,34 @@ export default function CareerCatalog() {
   };
 
   return (
-    <div className="min-h-screen bg-transparent">
+    <div className="min-h-screen bg-transparent relative">
       <ScrollNav />
 
-      {/* Hero Section */}
-      <AnimatedSection className="max-w-7xl mx-auto px-6 py-16 md:py-20 lg:py-24">
+      {/* Full-page LightRays Background */}
+      <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#22c1c3"
+          raysSpeed={0.8}
+          lightSpread={0.9}
+          rayLength={1.4}
+          followMouse={true}
+          mouseInfluence={0.15}
+          noiseAmount={0.07}
+          distortion={0.03}
+          saturation={1.0}
+          fadeDistance={1.0}
+          className="custom-rays"
+        />
+      </div>
+      
+      {/* Gradient Overlay - subtle blend with rays */}
+      <div className="fixed inset-0 bg-gradient-to-b from-[#020817]/60 via-[#020817]/30 to-[#020817]/70 pointer-events-none z-0" />
+
+      {/* Content Wrapper */}
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <AnimatedSection className="max-w-7xl mx-auto px-6 py-16 md:py-20 lg:py-24">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
             Urakirjasto
@@ -403,6 +427,7 @@ export default function CareerCatalog() {
           )}
         </div>
       </AnimatedSection>
+      </div>
     </div>
   );
 }

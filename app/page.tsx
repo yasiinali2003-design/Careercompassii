@@ -52,14 +52,13 @@ export default function HomePage() {
       <ScrollNav />
 
       {/* Hero Section - Premium Nordic SaaS Design */}
-      <AnimatedSection className="relative mx-auto px-6 sm:px-8 pt-32 pb-32 bg-transparent overflow-hidden">
+      <div className="relative mx-auto px-6 sm:px-8 pt-32 pb-32 bg-transparent overflow-hidden">
         {/* Hero Content */}
         <div className="max-w-4xl mx-auto relative z-10">
           <motion.div
             className="text-center"
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            animate="visible"
             variants={{
               hidden: {},
               visible: {
@@ -140,7 +139,7 @@ export default function HomePage() {
             </motion.div>
           </motion.div>
         </div>
-      </AnimatedSection>
+      </div>
 
       {/* How it works - Snake Steps with animated path */}
       <section id="miten" className="relative overflow-hidden">
