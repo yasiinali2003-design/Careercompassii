@@ -206,7 +206,7 @@ export default function MetodologiaPage() {
                     Kiinnostuspohjaiset kysymykset
                   </h3>
                   <p className="text-base text-urak-text-secondary leading-relaxed mb-4">
-                    UraKompassin kysymykset kartoittavat nuoren kiinnostuksen kohteita eri alueilla: analyyttinen ajattelu, luovuus, käytännön tekeminen, teknologia, ihmisten auttaminen, ympäristö ja johtaminen. Kysymykset on muotoiltu suoraan: "Kiinnostaako sinua...?" tai "Pidätkö...?".
+                    UraKompassin kysymykset kartoittavat nuoren kiinnostuksen kohteita eri alueilla: analyyttinen ajattelu, luovuus, käytännön tekeminen, teknologia, ihmisten auttaminen, ympäristö ja johtaminen. Kysymykset on muotoiltu suoraan: &ldquo;Kiinnostaako sinua...?&rdquo; tai &ldquo;Pidätkö...?&rdquo;.
                   </p>
                   <p className="text-base text-urak-text-secondary leading-relaxed">
                     Nuoren vastaukset muodostavat hänen henkilökohtaisen kiinnostusprofiilins, jota verrataan 760 ammatin vaatimuksiin ja ominaisuuksiin. Vertailu perustuu matemaattiseen samankaltaisuuden laskentaan, joka löytää parhaat vastineet nuoren profiilille.
