@@ -39,7 +39,7 @@ Käyttäjä sitoutuu olemaan: (i) kopioimatta tai tallentamatta testisisältöä
 Urakompassi voi asettaa kohtuullisia käyttörajoituksia väärinkäytön estämiseksi. Ajantasaiset rajoitukset ilmoitetaan Palvelussa tai dokumentaatiossa ja niitä voidaan päivittää perustellusti (esim. kapasiteetti, väärinkäytökset).
 
 ## 9 Tietojen käsittely
-Tietosuojakäytännöt on kuvattu Tietosuojaselosteessa, joka on osa näitä Ehtoja. Oppilaitos toimii oppilaiden tietojen rekisterinpitäjänä; Urakompassi toimii tietojen käsittelijänä oppilaitoksen lukuun ja rekisterinpitäjänä omille käyttäjätiedoilleen. Testien luokkakoodit (class token) tallennetaan Supabase-postgres-tietokantaan hajautettuina ja PIN-koodit poistuvat automaattisesti 24 tunnin jälkeen.
+Tietosuojakäytännöt on kuvattu Tietosuojaselosteessa, joka on osa näitä Ehtoja. Oppilaitos toimii oppilaiden tietojen rekisterinpitäjänä; Urakompassi toimii tietojen käsittelijänä oppilaitoksen lukuun ja rekisterinpitäjänä omille käyttäjätiedoilleen. Testien luokkakoodit (class token) tallennetaan turvallisessa pilvitietokannassa hajautettuina ja PIN-koodit poistuvat automaattisesti 24 tunnin jälkeen.
 
 ## 10 Maksut ja laskutus
 Maksullisen Palvelun osalta: maksuehto 14 pv netto laskun päiväyksestä. Viivästyskorko 8 % + viitekorko; muistutuskulut lain mukaisesti. Urakompassi voi keskeyttää käyttöoikeuden, jos maksu viivästyy yli 14 päivää. Hinnat ALV‑käytännön mukaisesti. Maksettuja maksuja ei palauteta, paitsi pakottavan lain tai olennaisen palveluvirheen tapauksissa.

@@ -4,8 +4,18 @@ import { requirePremium } from '@/lib/teacherPackage';
 
 export async function GET(request: NextRequest) {
   try {
-    const apiKey = request.headers.get('x-api-key') || request.nextUrl.searchParams.get('api_key');
+    // SECURITY: Only accept API keys via x-api-key header (not query parameters)
+    // Query parameters expose secrets in browser history, server logs, and referrer headers
+    const apiKey = request.headers.get('x-api-key');
     const expected = process.env.SCHOOL_API_KEY;
+
+    if (!apiKey) {
+      return NextResponse.json({
+        success: false,
+        error: 'API-avain puuttuu. Lisää x-api-key header pyyntöön.'
+      }, { status: 401 });
+    }
+
     if (!expected || apiKey !== expected) {
       return NextResponse.json({ success: false, error: 'Ei käyttöoikeutta' }, { status: 401 });
     }

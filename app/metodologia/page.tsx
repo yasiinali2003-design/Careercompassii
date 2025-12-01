@@ -11,7 +11,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const navigationItems = [
   { id: "mita-mittaamme", label: "Mitä mittaamme" },
-  { id: "teoreettinen-tausta", label: "Teoreettinen tausta" },
+  { id: "teoreettinen-tausta", label: "Miten menetelmä toimii" },
   { id: "miten-testi", label: "Miten testi on rakennettu" },
   { id: "tulosten-tulkinta", label: "Tulosten tulkinta" },
   { id: "tietosuoja", label: "Tietosuoja" },
@@ -94,10 +94,10 @@ export default function MetodologiaPage() {
                 Metodologia
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Tutkimuspohjainen menetelmä uravalintojen tueksi
+                Kiinnostuksiin perustuva menetelmä uravalintojen tueksi
               </h1>
               <p className="text-lg md:text-xl text-urak-text-secondary leading-relaxed max-w-3xl">
-                UraKompassi yhdistää vuosikymmenten urapsykologisen tutkimuksen ja käytännön kokemuksen suomalaisesta kouluarjesta. Menetelmä ei korvaa opinto-ohjaajaa vaan kokoaa nuoren ajatukset, vahvuudet ja kiinnostuksen kohteet yhteen raporttiin, joka toimii lähtökohtana ohjauskeskustelulle.
+                UraKompassi kartoittaa nuoren kiinnostuksen kohteet ja vertaa niitä 760 ammatin vaatimuksiin Suomen työmarkkinoilla. Menetelmä ei korvaa opinto-ohjaajaa vaan kokoaa nuoren kiinnostuksen kohteet ja vahvuudet yhteen raporttiin, joka toimii lähtökohtana ohjauskeskustelulle.
               </p>
             </section>
           </AnimatedSection>
@@ -197,47 +197,57 @@ export default function MetodologiaPage() {
               role="article"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-                Mihin tutkimukseen menetelmämme perustuu?
+                Miten menetelmä toimii?
               </h2>
 
               <div className="space-y-8">
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-3">
-                    Hollannin RIASEC-malli
+                    Kiinnostuspohjaiset kysymykset
                   </h3>
                   <p className="text-base text-urak-text-secondary leading-relaxed mb-4">
-                    RIASEC (Realistic, Investigative, Artistic, Social, Enterprising, Conventional) on yksi maailman käytetyimmistä urapsykologian malleista. Se luokittelee ihmiset kuuteen tyyppiin kiinnostuksen kohteiden ja työskentelytapojen perusteella. UraKompassi laajentaa tätä perusmallia kahdeksaan tyyppiin, jotta se paremmin vastaa suomalaista koulu- ja työelämää.
+                    UraKompassin kysymykset kartoittavat nuoren kiinnostuksen kohteita eri alueilla: analyyttinen ajattelu, luovuus, käytännön tekeminen, teknologia, ihmisten auttaminen, ympäristö ja johtaminen. Kysymykset on muotoiltu suoraan: "Kiinnostaako sinua...?" tai "Pidätkö...?".
                   </p>
                   <p className="text-base text-urak-text-secondary leading-relaxed">
-                    Kahdeksan tyyppiä ovat:
-                  </p>
-                  <ol className="list-decimal list-inside space-y-2 mt-3 text-base text-urak-text-secondary leading-relaxed ml-4">
-                    <li>Luova – Taiteilijat, suunnittelijat, sisällöntuottajat</li>
-                    <li>Johtaja – Yrittäjät, managerit, vaikuttajat</li>
-                    <li>Innovoija – Tech-rakentajat, ongelmanratkaisijat</li>
-                    <li>Rakentaja – Käytännön tekijät, käsityöläiset</li>
-                    <li>Auttaja – Hoitajat, opettajat, puolustajat</li>
-                    <li>Ympäristön Puolustaja – Vihreät ajattelijat, kestävän kehityksen tekijät</li>
-                    <li>Visionääri – Tulevaisuuden näkijät, strategit</li>
-                    <li>Järjestäjä – Koordinaattorit, projektipäälliköt</li>
-                  </ol>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    Big Five -persoonallisuustutkimus
-                  </h3>
-                  <p className="text-base text-urak-text-secondary leading-relaxed">
-                    Big Five -mallissa mitataan viittä persoonallisuuden ulottuvuutta: avoimuus kokemuksille, tunnollisuus, ekstraversio, sovinnollisuus ja neuroottisuus. UraKompassi hyödyntää erityisesti avoimuuden ja tunnollisuuden ulottuvuuksia, koska ne korreloivat vahvasti uravalintojen kanssa.
+                    Nuoren vastaukset muodostavat hänen henkilökohtaisen kiinnostusprofiilins, jota verrataan 760 ammatin vaatimuksiin ja ominaisuuksiin. Vertailu perustuu matemaattiseen samankaltaisuuden laskentaan, joka löytää parhaat vastineet nuoren profiilille.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-3">
-                    Positiivinen nuorisokehitys ja motivaatio
+                    Ikäryhmäkohtaiset testit
+                  </h3>
+                  <p className="text-base text-urak-text-secondary leading-relaxed mb-4">
+                    UraKompassi käyttää kolmea eri testiä eri ikäryhmille:
+                  </p>
+                  <ul className="space-y-3 text-base text-urak-text-secondary leading-relaxed ml-4">
+                    <li className="flex items-start gap-3">
+                      <span className="text-urak-accent-blue mt-1">•</span>
+                      <div>
+                        <strong className="text-white">Yläaste (13-15 v):</strong> 30 kysymystä, jotka kartoittavat peruskiinnostuksen alueita ja oppimistyylejä
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-urak-accent-blue mt-1">•</span>
+                      <div>
+                        <strong className="text-white">Toisen asteen opiskelijat (16-18 v):</strong> 33 kysymystä, jotka keskittyvät tarkemmin uravalintoihin ja käytännön työtehtäviin
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-urak-accent-blue mt-1">•</span>
+                      <div>
+                        <strong className="text-white">Nuoret aikuiset (19-21 v):</strong> 30 kysymystä, jotka kartoittavat sekä kiinnostuksen kohteita että työelämän arvoja
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-3">
+                    Positiivinen lähestymistapa
                   </h3>
                   <p className="text-base text-urak-text-secondary leading-relaxed">
-                    Menetelmämme perustuu myös positiivisen nuorisokehityksen ja motivaatiopsykologian tutkimukseen. Keskiössä on nuoren oma kokemus ja vahvuuksien tunnistaminen, ei puutteiden korostaminen. Tavoitteena on auttaa nuorta löytämään itselleen sopivia polkuja, ei rajoittaa vaihtoehtoja.
+                    Keskiössä on nuoren oma kokemus ja vahvuuksien tunnistaminen, ei puutteiden korostaminen. Tavoitteena on auttaa nuorta löytämään itselleen sopivia polkuja, ei rajoittaa vaihtoehtoja. Tulokset tarjoavat lähtökohdan keskustelulle, eivät lopullista vastausta.
                   </p>
                 </div>
               </div>

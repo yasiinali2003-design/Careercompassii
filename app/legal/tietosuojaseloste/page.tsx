@@ -29,7 +29,7 @@ Testin toteutus ja tulosten laskenta; palvelun toiminnan, laadun ja turvallisuud
 Oppilaitos omistaa oppilaidensa henkilötiedot. Urakompassi toimii käsittelijänä oppilaitoksen lukuun ja vastaa teknisestä tietoturvasta. Aggregoitu anonymisoitu data ja algoritmit ovat Urakompassin omaisuutta.
 
 ## 6. Luovutukset ja alikäsittelijät
-Tietoja ei luovuteta kolmansille, paitsi: Supabase (EU/Irlanti) pilvitietokanta ja autentikointi; lakisääteiset velvoitteet; oikeudellisten vaatimusten puolustaminen. Ajantasainen alikäsittelijälista ja DPA on saatavilla pyynnöstä: info@urakompassi.fi. Tietoja ei siirretä EU/ETA‑alueen ulkopuolelle ilman asianmukaista suojamekanismia (esim. SCC).
+Tietoja ei luovuteta kolmansille, paitsi: käytämme turvallisia kolmannen osapuolen pilvipalveluja tietojen tallentamiseen (kaikki tiedot tallennetaan salattuina EU-alueen palvelimille ja niitä suojataan alan standardien mukaisilla turvatoimilla); lakisääteiset velvoitteet; oikeudellisten vaatimusten puolustaminen. Ajantasainen alikäsittelijälista ja DPA on saatavilla pyynnöstä: info@urakompassi.fi. Tietoja ei siirretä EU/ETA‑alueen ulkopuolelle ilman asianmukaista suojamekanismia (esim. SCC).
 
 ## 7. EU/ETA-alueen ulkopuoliset siirrot
 
@@ -40,7 +40,7 @@ Urakompassi ei siirrä henkilötietoja EU/ETA-alueen ulkopuolelle ilman asianmuk
 Oppilaitosten kanssa voidaan tehdä erillinen tietojenkäsittelysopimus (DPA), joka määrittää tarkemmin Urakompassin käsittelijäroolin, turvatoimenpiteet, alihankkijat sekä käsittelyn rajaukset. Mikäli DPA:ta ei tehdä, tämä Tietosuojaseloste ja Käyttöehdot täyttävät GDPR 28 artiklan vaatimukset.
 
 ## 9. Säilytys ja poistaminen
-Testitulokset: 3 vuotta suorituspäivästä; Premium‑oppilaitoksille 5 vuotta. Luokkakoodit (class token) ja testitulosten viittaukset säilytetään Supabase-postgres-tietokannassa hajautettuina; PIN-koodit poistuvat automaattisesti 24 tunnin jälkeen. Opettajien ja koulujen tiedot: käyttöoikeuden voimassaolo + 1 vuosi. Aggregoitu anonymisoitu data voidaan säilyttää toistaiseksi. Poistot toteutetaan automaattisissa sykleissä tai opettajan pyynnöstä luokkakohtaisesti.
+Testitulokset: 3 vuotta suorituspäivästä; Premium‑oppilaitoksille 5 vuotta. Luokkakoodit (class token) ja testitulosten viittaukset säilytetään turvallisessa pilvitietokannassa hajautettuina; PIN-koodit poistuvat automaattisesti 24 tunnin jälkeen. Opettajien ja koulujen tiedot: käyttöoikeuden voimassaolo + 1 vuosi. Aggregoitu anonymisoitu data voidaan säilyttää toistaiseksi. Poistot toteutetaan automaattisissa sykleissä tai opettajan pyynnöstä luokkakohtaisesti.
 
 ## 10. Rekisteröidyn oikeudet
 Oikeus saada tietoa, tarkastaa, oikaista, poistaa, rajoittaa tai vastustaa käsittelyä sekä siirtää tiedot. Oppilaat käyttävät oikeuksiaan oppilaitoksen kautta. Opettajat ja muut käyttäjät voivat olla suoraan yhteydessä tukeen. Koska oppilastiedot ovat pseudonymisoituja, kaikkia oikeuksia ei aina voida kohdentaa yksittäiseen henkilöön.

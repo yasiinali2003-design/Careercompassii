@@ -2,7 +2,6 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import { selectQuestionSet, markSetAsUsed } from "@/lib/questionPool";
-import { getQuestionMappings } from "@/lib/scoring/dimensions";
 import { toast, Toaster } from "sonner";
 import Todistuspistelaskuri from './Todistuspistelaskuri';
 import { validateResponseQuality, getSeverityColor, getQualityWarningMessage, type ResponseQualityMetrics } from "@/lib/scoring/responseValidation";
@@ -210,6 +209,34 @@ function loadProgress() {
   }
 }
 
+// ---------- API FETCH FUNCTION ----------
+/**
+ * Fetches questions from the secure backend API
+ * This protects business logic by keeping weights, subdimensions, and mappings server-side
+ */
+interface QuestionResponse {
+  index: number;
+  text: string;
+  originalQ?: number;
+}
+
+async function fetchQuestions(cohort: string, setIndex: number): Promise<QuestionResponse[]> {
+  try {
+    const response = await fetch(`/api/questions?cohort=${cohort}&setIndex=${setIndex}`);
+    const data = await response.json();
+
+    if (!data.success) {
+      console.error('[CareerCompassTest] API error:', data.error);
+      throw new Error(data.error || 'Failed to fetch questions');
+    }
+
+    return data.questions;
+  } catch (error) {
+    console.error('[CareerCompassTest] Failed to fetch questions:', error);
+    throw error;
+  }
+}
+
 // ---------- MAIN COMPONENT ----------
 export default function CareerCompassTest({ pin, classToken }: { pin?: string | null; classToken?: string | null } = {}) {
   type GroupKey = "YLA" | "TASO2" | "NUORI";
@@ -238,77 +265,91 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
       setSelectedSetIndex(0);
       return;
     }
-    
-    let setIndex = 0;
-    let questions: string[] = [];
-    const mapping = new Map<number, number>(); // Maps displayed index to originalQ
-    
-    if (group === 'YLA' || group === 'TASO2' || group === 'NUORI') {
-      // Use question pool system for YLA, TASO2, and NUORI
-      setIndex = selectQuestionSet(group);
-      setSelectedSetIndex(setIndex);
-      const mappings = getQuestionMappings(group, setIndex);
-      
-      // Extract question texts and create mapping
-      questions = mappings.map(m => m.text);
-      mappings.forEach((m, displayedIndex) => {
-        // Map displayed index to originalQ (or q if originalQ doesn't exist)
-        const originalQ = m.originalQ !== undefined ? m.originalQ : m.q;
-        mapping.set(displayedIndex, originalQ);
-      });
-    } else {
-      // Fallback for other cohorts (shouldn't happen, but safe)
-      questions = QUESTIONS[group] || [];
-    }
-    
-    setQuestionToOriginalMapping(mapping);
-    
-    // Shuffle using Fisher-Yates
-    const qsWithIndices = questions.map((text, idx) => ({ q: idx, text }));
-    const shuffled = [...qsWithIndices];
-    
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    
-    // Create mapping from shuffled position -> original index
-    const shuffledMapping: number[] = shuffled.map(q => q.q);
-    setOriginalIndices(shuffledMapping);
-    
-    // Create mapping from shuffled position -> originalQ (for Set 2/3)
-    const shuffledToOriginalQMapping: number[] = shuffled.map(q => {
-      const originalQ = mapping.get(q.q);
-      return originalQ !== undefined ? originalQ : q.q;
-    });
-    setShuffledToOriginalQ(shuffledToOriginalQMapping);
-    
-    // Generate simple shuffle key
-    let hash = 0;
-    for (let i = 0; i < shuffledMapping.length; i++) {
-      hash = (hash + (shuffledMapping[i] * (i + 1))) % 2147483647;
-    }
-    setShuffleKey(hash.toString(36));
-    
-    // Set the shuffled questions for display
-    setQList(shuffled.map(q => q.text));
-    
-    // Ensure answers array matches the actual number of questions
-    const actualQuestionCount = shuffled.length;
-    setAnswers(prev => {
-      if (prev.length !== actualQuestionCount) {
-        // Resize answers array to match question count
-        const resized = [...prev];
-        while (resized.length < actualQuestionCount) {
-          resized.push(0); // Add unanswered slots
+
+    // Async function to load questions
+    const loadQuestions = async () => {
+      let setIndex = 0;
+      let questions: string[] = [];
+      const mapping = new Map<number, number>(); // Maps displayed index to originalQ
+
+      if (group === 'YLA' || group === 'TASO2' || group === 'NUORI') {
+        // Use question pool system for YLA, TASO2, and NUORI
+        setIndex = selectQuestionSet(group);
+        setSelectedSetIndex(setIndex);
+
+        try {
+          // Fetch questions from secure API (protects business logic)
+          const apiQuestions = await fetchQuestions(group, setIndex);
+
+          // Extract question texts and create mapping
+          questions = apiQuestions.map(q => q.text);
+          apiQuestions.forEach((q, displayedIndex) => {
+            // Map displayed index to originalQ (or index if originalQ doesn't exist)
+            const originalQ = q.originalQ !== undefined ? q.originalQ : q.index;
+            mapping.set(displayedIndex, originalQ);
+          });
+        } catch (error) {
+          console.error('[CareerCompassTest] Failed to load questions, using fallback:', error);
+          // Fallback to hardcoded questions if API fails
+          questions = QUESTIONS[group] || [];
         }
-        while (resized.length > actualQuestionCount) {
-          resized.pop(); // Remove extra slots
-        }
-        return resized;
+      } else {
+        // Fallback for other cohorts (shouldn't happen, but safe)
+        questions = QUESTIONS[group] || [];
       }
-      return prev;
-    });
+
+      setQuestionToOriginalMapping(mapping);
+
+      // Shuffle using Fisher-Yates
+      const qsWithIndices = questions.map((text, idx) => ({ q: idx, text }));
+      const shuffled = [...qsWithIndices];
+
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+
+      // Create mapping from shuffled position -> original index
+      const shuffledMapping: number[] = shuffled.map(q => q.q);
+      setOriginalIndices(shuffledMapping);
+
+      // Create mapping from shuffled position -> originalQ (for Set 2/3)
+      const shuffledToOriginalQMapping: number[] = shuffled.map(q => {
+        const originalQ = mapping.get(q.q);
+        return originalQ !== undefined ? originalQ : q.q;
+      });
+      setShuffledToOriginalQ(shuffledToOriginalQMapping);
+
+      // Generate simple shuffle key
+      let hash = 0;
+      for (let i = 0; i < shuffledMapping.length; i++) {
+        hash = (hash + (shuffledMapping[i] * (i + 1))) % 2147483647;
+      }
+      setShuffleKey(hash.toString(36));
+
+      // Set the shuffled questions for display
+      setQList(shuffled.map(q => q.text));
+
+      // Ensure answers array matches the actual number of questions
+      const actualQuestionCount = shuffled.length;
+      setAnswers(prev => {
+        if (prev.length !== actualQuestionCount) {
+          // Resize answers array to match question count
+          const resized = [...prev];
+          while (resized.length < actualQuestionCount) {
+            resized.push(0); // Add unanswered slots
+          }
+          while (resized.length > actualQuestionCount) {
+            resized.pop(); // Remove extra slots
+          }
+          return resized;
+        }
+        return prev;
+      });
+    };
+
+    // Call the async function
+    loadQuestions();
   }, [group]);
   const total = qList.length;
 

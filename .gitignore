@@ -93,6 +93,11 @@ jspm_packages/
 # Backup files
 *.backup.ts
 *.backup.js
+*.backup
+*.bak
+*~
+.env*.backup
+.env*.bak
 
 # Playwright artifacts
 playwright-report/
