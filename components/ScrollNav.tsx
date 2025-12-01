@@ -26,7 +26,7 @@ export default function ScrollNav() {
     <nav
       className="sticky top-0 z-50 animate-fade-in-down border-b transition-all duration-300"
       style={{
-        background: scrolled 
+        backgroundColor: scrolled 
           ? "rgba(11, 16, 21, 0.95)" 
           : (isLandingPage || isUrakirjastoPage)
             ? "transparent" 
