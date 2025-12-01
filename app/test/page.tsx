@@ -34,7 +34,7 @@ export default function TestPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  console.log('[TestPage] URL params:', { pin, classToken, allParams: searchParams?.toString() });
+  // Removed console.log for production
 
   return (
     <div className="min-h-screen bg-transparent">
@@ -51,7 +51,11 @@ export default function TestPage() {
       >
         <div className="container mx-auto px-6 py-4 flex items-center justify-between relative z-10">
           <Logo />
-          <Button variant="outline" asChild>
+          <Button 
+            variant="outline" 
+            asChild
+            className="border-white/10 bg-white/5 hover:bg-white/10 text-white"
+          >
             <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Takaisin

@@ -122,7 +122,7 @@ export default function NewClassPage() {
                 <ol className="list-decimal list-inside space-y-1 ml-2">
                   <li>Tarkista verkkoyhteys ja yritä uudelleen</li>
                   <li>Varmista että olet kirjautunut sisään</li>
-                  <li>Jos ongelma jatkuu, ota yhteyttä tukeen: support@urakompassi.com</li>
+                  <li>Jos ongelma jatkuu, ota yhteyttä tukeen: info@urakompassi.fi</li>
                 </ol>
                 <p className="mt-2">Tarvitsetko apua? Avaa FAQ-ikkuna yläpalkin kautta.</p>
               </div>

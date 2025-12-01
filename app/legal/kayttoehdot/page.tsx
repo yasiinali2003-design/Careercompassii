@@ -95,7 +95,7 @@ Voimme päivittää Ehtoja; uudet Ehdot tulevat voimaan ilmoitetusta päivästä
 Urakompassi Oy
 Säterintie 6, 00720 Helsinki, Finland
 Y‑tunnus: 3579081-5
-Sähköposti: support@urakompassi.fi`}
+Sähköposti: info@urakompassi.fi`}
           </pre>
         </div>
         </div>

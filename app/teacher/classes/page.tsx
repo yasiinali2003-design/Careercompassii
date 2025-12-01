@@ -89,13 +89,13 @@ export default function TeacherClassesPage() {
 
     return (
       <div className="space-y-1">
-        <div className="h-2 rounded-full bg-neutral-700/40 overflow-hidden">
+        <div className="h-2 rounded-full bg-white/10 overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-slate-500 to-teal-50/200 transition-all"
+            className="h-full bg-gradient-to-r from-urak-accent-blue to-urak-accent-green transition-all"
             style={{ width: `${safePercentage}%` }}
           />
         </div>
-        <div className="flex items-center justify-between text-xs text-neutral-300">
+        <div className="flex items-center justify-between text-xs text-urak-text-secondary">
           <span>Valmiina</span>
           <span>{safePercentage}%</span>
         </div>
@@ -110,7 +110,7 @@ export default function TeacherClassesPage() {
         <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
           <h1 className="text-3xl font-bold mb-8 text-white">Omat luokat</h1>
           <div className="text-center py-12">
-            <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
+            <div className="animate-spin h-8 w-8 border-4 border-urak-accent-blue border-t-transparent rounded-full mx-auto"></div>
           </div>
         </div>
         <TeacherFooter />
@@ -125,11 +125,11 @@ export default function TeacherClassesPage() {
         <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold mb-2 text-white">Omat luokat</h1>
-            <p className="text-neutral-300">Yleisnäkymä luokkien etenemisestä ja ilmoituksista</p>
+            <p className="text-urak-text-secondary">Yleisnäkymä luokkien etenemisestä ja ilmoituksista</p>
           </div>
           <Link
             href="/teacher/classes/new"
-            className="inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary transition"
+            className="inline-flex items-center justify-center bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white px-6 py-3 rounded-lg transition-colors"
           >
             ➕ Luo uusi luokka
           </Link>
@@ -137,10 +137,10 @@ export default function TeacherClassesPage() {
 
         {classes.length === 0 ? (
           <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow p-12 text-center">
-            <p className="text-neutral-300 mb-6">Sinulla ei ole vielä luokkia</p>
+            <p className="text-urak-text-secondary mb-6">Sinulla ei ole vielä luokkia</p>
             <Link
               href="/teacher/classes/new"
-              className="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary transition"
+              className="inline-block bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white px-6 py-3 rounded-lg transition-colors"
             >
               Luo uusi luokka
             </Link>
@@ -168,7 +168,7 @@ export default function TeacherClassesPage() {
                       <h2 className="text-xl font-semibold text-white">
                         Luokka {classItem.id.substring(0, 8)}
                       </h2>
-                      <p className="text-sm text-neutral-400">
+                      <p className="text-sm text-urak-text-muted">
                         Luotu {formatDate(classItem.created_at)}
                       </p>
                     </div>
@@ -183,26 +183,26 @@ export default function TeacherClassesPage() {
 
                   <div className="grid grid-cols-2 gap-4 text-sm text-neutral-300">
                     <div>
-                      <p className="font-semibold text-neutral-200">Suoritetut testit</p>
-                      <p>{completed} / {totalPins}</p>
+                      <p className="font-semibold text-urak-text-primary">Suoritetut testit</p>
+                      <p className="text-urak-text-secondary">{completed} / {totalPins}</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-neutral-200">Kesken</p>
-                      <p>{pending}</p>
+                      <p className="font-semibold text-urak-text-primary">Kesken</p>
+                      <p className="text-urak-text-secondary">{pending}</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-neutral-200">Viimeisin tulos</p>
-                      <p>{lastSubmission}</p>
+                      <p className="font-semibold text-urak-text-primary">Viimeisin tulos</p>
+                      <p className="text-urak-text-secondary">{lastSubmission}</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-neutral-200">PIN-linkki</p>
+                      <p className="font-semibold text-urak-text-primary">PIN-linkki</p>
                       <button
                         type="button"
                         onClick={() => {
                           const origin = typeof window !== 'undefined' ? window.location.origin : '';
                           handleCopyLink(`${origin}${studentTestPath}`);
                         }}
-                        className="text-primary hover:underline"
+                        className="text-urak-accent-blue hover:text-urak-accent-blue/80 transition-colors"
                       >
                         Kopioi testilinkki
                       </button>
@@ -212,7 +212,7 @@ export default function TeacherClassesPage() {
                   <div className="pt-4 mt-auto flex flex-wrap gap-3">
                     <Link
                       href={`/teacher/classes/${classItem.id}`}
-                      className="inline-flex items-center justify-center bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary transition"
+                      className="inline-flex items-center justify-center bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                     >
                       Avaa luokka
                     </Link>
@@ -220,7 +220,7 @@ export default function TeacherClassesPage() {
                       href={classResultsPath}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center bg-neutral-800/30 text-neutral-200 px-4 py-2 rounded-lg text-sm font-medium hover:bg-neutral-700/40 transition"
+                      className="inline-flex items-center justify-center bg-white/5 border border-white/10 hover:bg-white/10 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                     >
                       Näytä tulossivu
                     </Link>

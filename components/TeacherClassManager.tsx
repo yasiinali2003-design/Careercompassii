@@ -15,6 +15,10 @@ import {
 import { generateStudentPDF, generateClassSummaryPDF, downloadPDF } from '@/lib/pdfGenerator';
 import { checkClassCompletion, checkAtRiskStudent, triggerNotification } from '@/lib/notificationTriggers';
 import { generateConversationStarters, generateParentMeetingTalkingPoints } from '@/lib/conversationStarters';
+import { ErrorMessage } from '@/components/ui/ErrorMessage';
+import { SuccessMessage } from '@/components/ui/SuccessMessage';
+import { Tooltip } from '@/components/ui/Tooltip';
+import { useNotification } from '@/components/ui/useNotification';
 
 interface Props {
   classId: string;
@@ -212,6 +216,8 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
   const [pinCountError, setPinCountError] = useState<string>('');
   const [selectedPinForPdf, setSelectedPinForPdf] = useState<string | null>(null);
   const [pdfGenerationState, setPdfGenerationState] = useState<Record<string, 'idle' | 'loading' | 'success' | 'error'>>({});
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const { showSuccess, showError, showInfo } = useNotification();
 
   // Calculate analytics
   const analytics = calculateAnalytics(results);
@@ -224,19 +230,19 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
   const studentTestLink = `${baseUrl}/${classToken}/test`;
   const classResultsLink = `${baseUrl}/${classToken}`;
 
-  const handleCopyLink = useCallback((link: string, successMessage: string) => {
+  const handleCopyLink = useCallback((link: string, successText: string) => {
     if (typeof navigator === 'undefined' || !navigator.clipboard) {
-      alert('Kopiointi ei ole tuettu tässä selaimessa. Kopioi linkki käsin.');
+      showError('Kopiointi ei ole tuettu tässä selaimessa. Kopioi linkki käsin.');
       return;
     }
     navigator.clipboard.writeText(link)
       .then(() => {
-        alert(successMessage);
+        showSuccess(successText);
       })
       .catch(() => {
-        alert('Linkin kopiointi epäonnistui. Yritä kopioida linkki käsin.');
+        showError('Linkin kopiointi epäonnistui. Yritä kopioida linkki käsin.');
       });
-  }, []);
+  }, [showSuccess, showError]);
 
   const fetchPins = useCallback(async () => {
     try {
@@ -268,11 +274,11 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
       } else {
         const errorMsg = data.error || 'Tulosten lataus epäonnistui';
         const hint = data.hint || '';
-        setResultsError(`${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nRatkaisu: Päivitä sivu ja yritä uudelleen. Jos ongelma jatkuu, ota yhteyttä tukeen.`);
+        setResultsError(`Tuloksia ei voitu ladata.\n\n${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nYritä päivittää sivu (F5) tai ota yhteyttä tukeen: info@urakompassi.fi`);
       }
     } catch (error) {
       console.error('Error fetching results:', error);
-      setResultsError(`Verkkovirhe tuloksia ladattaessa.\n\nRatkaisu:\n1. Tarkista verkkoyhteys\n2. Päivitä sivu (F5)\n3. Odota hetki ja yritä uudelleen\n4. Jos ongelma jatkuu, ota yhteyttä tukeen: support@urakompassi.com`);
+      setResultsError(`Verkkovirhe tuloksia ladattaessa.\n\nTarkista verkkoyhteytesi ja päivitä sivu. Jos ongelma jatkuu, ota yhteyttä: info@urakompassi.fi`);
     }
     setResultsLoading(false);
   }, [classId]);
@@ -362,12 +368,12 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
         setPins(data.pins);
       } else {
         const errorMsg = data.error || 'PIN-koodien luominen epäonnistui';
-        const recovery = data.hint || 'Tarkista verkkoyhteys ja yritä uudelleen. Jos ongelma jatkuu, tarkista että luokka on olemassa.';
-        alert(`${errorMsg}\n\nRatkaisu: ${recovery}\n\nTarvitsetko apua? Avaa FAQ-ikkuna yläpalkin kautta.`);
+        const recovery = data.hint || 'Tarkista verkkoyhteys ja yritä uudelleen.';
+        showError(`${errorMsg}\n\n${recovery}\n\nJos ongelma jatkuu, ota yhteyttä: info@urakompassi.fi`);
       }
     } catch (error) {
       console.error('Error generating PINs:', error);
-      alert(`Verkkovirhe PIN-koodien luonnissa.\n\nRatkaisu:\n1. Tarkista verkkoyhteys\n2. Päivitä sivu ja yritä uudelleen\n3. Jos ongelma jatkuu, ota yhteyttä tukeen: support@urakompassi.com\n\nTarvitsetko apua? Avaa FAQ-ikkuna yläpalkin kautta.`);
+      showError(`Verkkovirhe PIN-koodien luonnissa.\n\nTarkista verkkoyhteytesi ja päivitä sivu. Jos ongelma jatkuu, ota yhteyttä: info@urakompassi.fi`);
     } finally {
       setLoading(false);
     }
@@ -386,7 +392,7 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
         exportMappingAsFile(nameMapping, passphrase, classId);
       } catch (error) {
         console.error('Export error:', error);
-        alert(`Nimilistan vienti epäonnistui.\n\nRatkaisu:\n1. Tarkista että salasana on vähintään 8 merkkiä\n2. Kokeile lyhyempää salasanaa\n3. Jos ongelma jatkuu, kopioi nimilista manuaalisesti\n\nTarvitsetko apua? Avaa FAQ-ikkuna yläpalkin kautta.`);
+        showError(`Nimilistan vienti epäonnistui.\n\nVarmista että salasana on vähintään 8 merkkiä. Jos ongelma jatkuu, kopioi nimilista manuaalisesti.`);
       }
     }
   };
@@ -402,10 +408,10 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
       const mapping = await importMappingFromFile(file, passphrase);
       setNameMapping(mapping);
       saveMappingToStorage(classId, mapping);
-      alert('Nimilista tuotu onnistuneesti!');
+      showSuccess('Nimilista tuotu onnistuneesti!');
     } catch (error) {
       console.error('Import error:', error);
-      alert(`Nimilistan tuonti epäonnistui.\n\nMahdolliset syyt:\n• Väärä salasana - käytä samaa salasanaa, jota käytit viennissä\n• Viallinen tiedosto - varmista että tiedosto on oikea JSON-tiedosto\n• Tiedosto on korruptoitunut\n\nRatkaisu:\n1. Tarkista salasana\n2. Lataa tiedosto uudelleen ja yritä uudelleen\n3. Jos tiedosto on menetetty, syötä nimet manuaalisesti\n\nTarvitsetko apua? Avaa FAQ-ikkuna yläpalkin kautta.`);
+      showError(`Nimilistan tuonti epäonnistui.\n\nMahdolliset syyt:\n• Väärä salasana - käytä samaa salasanaa, jota käytit viennissä\n• Viallinen tiedosto - varmista että tiedosto on oikea JSON-tiedosto\n\nTarkista salasana ja yritä uudelleen. Jos tiedosto on menetetty, syötä nimet manuaalisesti.`);
     }
   };
 
@@ -445,44 +451,44 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
   return (
     <div className="space-y-6">
       {/* Tabs */}
-      <div className="border-b border-gray-200">
+      <div className="border-b border-white/10">
         <div className="flex space-x-4">
           <button
             onClick={() => setActiveTab('pins')}
-            className={`py-2 px-4 font-medium ${
+            className={`py-2 px-4 font-medium transition-colors ${
               activeTab === 'pins'
-                ? 'border-b-2 border-primary text-primary'
-                : 'text-neutral-400 hover:text-neutral-200'
+                ? 'border-b-2 border-urak-accent-blue text-urak-accent-blue'
+                : 'text-urak-text-secondary hover:text-urak-text-primary'
             }`}
           >
             PIN-koodit
           </button>
           <button
             onClick={() => setActiveTab('names')}
-            className={`py-2 px-4 font-medium ${
+            className={`py-2 px-4 font-medium transition-colors ${
               activeTab === 'names'
-                ? 'border-b-2 border-primary text-primary'
-                : 'text-neutral-400 hover:text-neutral-200'
+                ? 'border-b-2 border-urak-accent-blue text-urak-accent-blue'
+                : 'text-urak-text-secondary hover:text-urak-text-primary'
             }`}
           >
             Nimilista
           </button>
           <button
             onClick={() => setActiveTab('results')}
-            className={`py-2 px-4 font-medium ${
+            className={`py-2 px-4 font-medium transition-colors ${
               activeTab === 'results'
-                ? 'border-b-2 border-primary text-primary'
-                : 'text-neutral-400 hover:text-neutral-200'
+                ? 'border-b-2 border-urak-accent-blue text-urak-accent-blue'
+                : 'text-urak-text-secondary hover:text-urak-text-primary'
             }`}
           >
             Tulokset ({filteredResults.length})
           </button>
           <button
             onClick={() => setActiveTab('analytics')}
-            className={`py-2 px-4 font-medium ${
+            className={`py-2 px-4 font-medium transition-colors ${
               activeTab === 'analytics'
-                ? 'border-b-2 border-primary text-primary'
-                : 'text-neutral-400 hover:text-neutral-200'
+                ? 'border-b-2 border-urak-accent-blue text-urak-accent-blue'
+                : 'text-urak-text-secondary hover:text-urak-text-primary'
             }`}
           >
             Analyysi
@@ -495,9 +501,12 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
         <div className="space-y-4">
           <div className="flex gap-4 items-start">
             <div className="flex-1">
-              <label htmlFor="pinCount" className="block text-sm font-medium text-neutral-200 mb-2">
-                PIN-koodien määrä
-              </label>
+              <div className="flex items-center gap-2 mb-2">
+                <label htmlFor="pinCount" className="block text-sm font-medium text-urak-text-primary">
+                  PIN-koodien määrä
+                </label>
+                <Tooltip content="Luo PIN-koodit oppilaille. Jokainen oppilas tarvitsee oman PIN-koodin kirjautuakseen testiin. Koodit poistuvat automaattisesti 24 tunnin jälkeen." />
+              </div>
               <input
                 id="pinCount"
                 type="text"
@@ -511,21 +520,21 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                 }}
                 placeholder="Kirjoita PIN-koodien määrä (1-100)"
                 disabled={loading}
-                className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed ${
-                  pinCountError ? 'border-red-500' : 'border-gray-300'
+                className={`w-full px-4 py-3 bg-white/5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/40 text-white placeholder:text-gray-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all ${
+                  pinCountError ? 'border-red-500/50' : 'border-white/10'
                 }`}
                 min="1"
                 max="100"
               />
               {pinCountError && (
-                <p className="mt-1 text-sm text-red-600">{pinCountError}</p>
+                <p className="mt-2 text-sm text-red-400">{pinCountError}</p>
               )}
             </div>
             <div className="flex items-end">
               <button
                 onClick={handleGeneratePins}
                 disabled={loading || !pinCount || !!pinCountError}
-                className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                className="bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-urak-bg font-medium px-6 py-3 rounded-full disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap transition-all"
               >
                 {loading ? 'Luodaan...' : 'Luo PIN-koodit'}
               </button>
@@ -533,14 +542,17 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
           </div>
 
           {pins.length > 0 && (
-            <div className="bg-neutral-900/20 rounded-lg p-4">
-              <h3 className="font-semibold mb-3">Luo PIN-koodit ({pins.length} kpl)</h3>
-              <div className="grid grid-cols-4 gap-2">
+            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="font-semibold text-urak-text-primary">Luodut PIN-koodit ({pins.length} kpl)</h3>
+                <Tooltip content="Kopioi PIN-koodit ja jaa ne oppilaille. Voit myös ladata ne CSV-tiedostona." />
+              </div>
+              <div className="grid grid-cols-4 gap-2 mb-4">
                 {pins.map((pin, i) => (
                   <div
                     key={i}
                     data-testid="pin-item"
-                    className="bg-white p-2 rounded border text-center font-mono text-sm"
+                    className="bg-white/10 border border-white/20 p-3 rounded-lg text-center font-mono text-sm text-white"
                   >
                     {pin}
                   </div>
@@ -555,17 +567,18 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                   a.href = url;
                   a.download = `pins-${classId.substring(0, 8)}.csv`;
                   a.click();
+                  showSuccess('PIN-koodit ladattu CSV-tiedostona');
                 }}
-                className="mt-4 text-primary hover:underline"
+                className="text-urak-accent-blue hover:text-urak-accent-blue/80 transition-colors text-sm font-medium"
               >
                 Lataa CSV-muodossa
               </button>
             </div>
           )}
 
-          <div className="bg-slate-50 border border-primary/20 rounded-lg p-4">
-            <p className="text-sm text-primary">
-              <strong>Vinkki:</strong> Tulosta tai tallenna PIN-koodit turvallisesti. 
+          <div className="bg-urak-surface/50 border border-urak-border/60 rounded-xl p-4">
+            <p className="text-sm text-urak-text-secondary">
+              <strong className="text-urak-text-primary">Vinkki:</strong> Tulosta tai tallenna PIN-koodit turvallisesti. 
               Jaa ne oppilaille, jotta he voivat kirjautua testiin.
             </p>
           </div>
@@ -576,20 +589,26 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
       {activeTab === 'names' && (
         <div className="space-y-4">
           {pins.length === 0 ? (
-            <p className="text-neutral-300">Luo ensin PIN-koodit</p>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
+              <p className="text-urak-text-secondary">Luo ensin PIN-koodit</p>
+              <Tooltip content="PIN-koodit tarvitaan ennen nimilistan syöttämistä. Luo PIN-koodit 'PIN-koodit' välilehdeltä." />
+            </div>
           ) : (
             <>
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                <p className="text-sm text-yellow-800">
-                  <strong>Turvallisuus:</strong> Nimet tallennetaan VAIN omalle laitteellesi. 
-                  Nimet eivät koskaan poistu tältä selaimelta.
-                </p>
+              <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-4">
+                <div className="flex items-start gap-2">
+                  <p className="text-sm text-yellow-400 flex-1">
+                    <strong className="text-yellow-300">Turvallisuus:</strong> Nimet tallennetaan VAIN omalle laitteellesi. 
+                    Nimet eivät koskaan poistu tältä selaimelta.
+                  </p>
+                  <Tooltip content="Nimilista tallennetaan selaimen localStorageen. Tietoja ei lähetetä palvelimelle, joten ne ovat täysin yksityisiä." />
+                </div>
               </div>
 
               <div className="space-y-2 max-h-96 overflow-y-auto">
                 {pins.map((pin) => (
                   <div key={pin} className="flex gap-4 items-center">
-                    <span className="font-mono text-sm bg-neutral-800/30 px-3 py-2 rounded w-24 text-center">
+                    <span className="font-mono text-sm bg-white/10 border border-white/20 px-3 py-2 rounded-lg w-24 text-center text-white">
                       {pin}
                     </span>
                     <input
@@ -597,28 +616,34 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                       value={nameMapping[pin] || ''}
                       onChange={(e) => updateNameMapping(pin, e.target.value)}
                       placeholder="Oppilaan nimi"
-                      className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      className="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/40 text-white placeholder:text-gray-500 transition-all"
                     />
                   </div>
                 ))}
               </div>
 
               <div className="flex gap-4 pt-4">
-                <button
-                  onClick={handleExport}
-                  className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary"
-                >
-                  Vie salattuna
-                </button>
-                <label className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 cursor-pointer inline-block">
-                  Tuo salattua
-                  <input
-                    type="file"
-                    onChange={handleImport}
-                    className="hidden"
-                    accept=".json"
-                  />
-                </label>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={handleExport}
+                    className="bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white px-6 py-3 rounded-lg transition-colors"
+                  >
+                    Vie salattuna
+                  </button>
+                  <Tooltip content="Vie nimilista salattuna tiedostona. Tarvitset salasanan tiedoston avaamiseen. Tiedosto tallennetaan omalle laitteellesi." />
+                </div>
+                <div className="flex items-center gap-2">
+                  <label className="bg-urak-accent-green hover:bg-urak-accent-green/90 text-white px-6 py-3 rounded-lg cursor-pointer inline-block transition-colors">
+                    Tuo salattua
+                    <input
+                      type="file"
+                      onChange={handleImport}
+                      className="hidden"
+                      accept=".json"
+                    />
+                  </label>
+                  <Tooltip content="Tuo aiemmin viedtyn nimilistan. Tarvitset saman salasanan, jota käytit viennissä." />
+                </div>
               </div>
             </>
           )}
@@ -629,18 +654,22 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
       {activeTab === 'results' && (
         <div className="space-y-4">
           {results.length === 0 ? (
-            <p className="text-neutral-300">Tuloksia ei vielä saatavilla</p>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-8 text-center">
+              <p className="text-urak-text-secondary">Tuloksia ei vielä saatavilla</p>
+              <p className="text-sm text-urak-text-muted mt-2">Oppilaat voivat aloittaa testin PIN-koodilla</p>
+            </div>
           ) : (
             <>
               {/* Filters and View Controls */}
-              <div className="bg-neutral-900/20 rounded-lg p-4 space-y-3">
+              <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-4">
                 <div className="flex flex-wrap gap-4 items-center">
-                  <div>
-                    <label className="text-sm font-medium text-neutral-200 mr-2">Kohortti:</label>
+                  <div className="flex items-center gap-2">
+                    <label className="text-sm font-medium text-urak-text-primary">Kohortti:</label>
+                    <Tooltip content="Suodata tulokset oppilastyypin mukaan: YLA (yläaste), TASO2 (toinen aste), NUORI (nuoret aikuiset)" />
                     <select
                       value={filterCohort}
                       onChange={(e) => setFilterCohort(e.target.value)}
-                      className="px-3 py-1 border border-gray-300 rounded-lg"
+                      className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/40"
                     >
                       <option value="all">Kaikki</option>
                       <option value="YLA">YLA</option>
@@ -772,7 +801,7 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                               }
                             }}
                             disabled={sendingNotification}
-                            className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50 text-sm"
+                            className="bg-urak-accent-green hover:bg-urak-accent-green/90 text-white px-4 py-2 rounded-lg disabled:opacity-50 text-sm transition-colors"
                           >
                             {sendingNotification ? 'Lähetetään...' : '📧 Lähetä sähköposti'}
                           </button>
@@ -782,11 +811,14 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                   )}
                   
                   {atRiskStudents.length > 0 && (
-                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                      <h3 className="font-semibold text-yellow-800 mb-2">
-                        ⚠️ {atRiskStudents.length} oppilasta tarvitsee tukea
-                      </h3>
-                      <p className="text-sm text-yellow-700 mb-3">
+                    <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-6">
+                      <div className="flex items-start gap-2 mb-3">
+                        <h3 className="font-semibold text-yellow-300 mb-2 flex-1">
+                          ⚠️ {atRiskStudents.length} oppilasta tarvitsee tukea
+                        </h3>
+                        <Tooltip content="Nämä oppilaat saavat alhaiset tulokset tai eivät ole vielä tehneet testiä. He tarvitsevat erityistä ohjausta ja tukea." />
+                      </div>
+                      <p className="text-sm text-yellow-400 mb-4">
                         Seuraavat oppilaat tarvitsevat erityistä huomiota ja ohjausta:
                       </p>
                       <div className="space-y-2 mb-3">
@@ -794,8 +826,8 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                           const check = checkAtRiskStudent(result);
                           const name = nameMapping[result.pin] || result.pin;
                           return (
-                            <div key={result.pin} className="bg-white p-2 rounded text-sm">
-                              <strong>{name}</strong> ({result.pin}) - {check.data?.reasons[0] || 'Tarvitsee tukea'}
+                            <div key={result.pin} className="bg-white/5 border border-white/10 p-3 rounded-lg text-sm text-urak-text-secondary">
+                              <strong className="text-urak-text-primary">{name}</strong> ({result.pin}) - {check.data?.reasons[0] || 'Tarvitsee tukea'}
                             </div>
                           );
                         })}
@@ -817,12 +849,12 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                                 classId,
                               });
                               if (success) {
-                                alert('Ilmoitus lähetetty onnistuneesti!');
+                                showSuccess('Ilmoitus lähetetty onnistuneesti!');
                               } else {
-                                alert('Ilmoituksen lähetys epäonnistui.');
+                                showError('Ilmoituksen lähetys epäonnistui. Tarkista sähköpostiasetukset.');
                               }
                             } catch (error) {
-                              alert('Virhe ilmoituksen lähetyksessä.');
+                              showError('Virhe ilmoituksen lähetyksessä. Yritä uudelleen.');
                             } finally {
                               setSendingNotification(false);
                             }
@@ -837,10 +869,13 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                   )}
                   
                   {!teacherEmail && (
-                    <div className="bg-slate-50 border border-primary/20 rounded-lg p-3">
-                      <p className="text-sm text-primary">
-                        💡 <strong>Vinkki:</strong> Syötä sähköpostiosoitteesi saadaksesi automaattisia ilmoituksia oppilaiden edistymisestä.
-                      </p>
+                    <div className="bg-urak-surface/50 border border-urak-border/60 rounded-xl p-4">
+                      <div className="flex items-start gap-2 mb-3">
+                        <p className="text-sm text-urak-text-secondary flex-1">
+                          <strong className="text-urak-text-primary">Vinkki:</strong> Syötä sähköpostiosoitteesi saadaksesi automaattisia ilmoituksia oppilaiden edistymisestä.
+                        </p>
+                        <Tooltip content="Sähköpostiosoitteella saat ilmoituksia, kun oppilaat tarvitsevat huomiota tai kun luokka on valmis." />
+                      </div>
                       <input
                         type="email"
                         placeholder="sähköposti@esimerkki.fi"
@@ -849,7 +884,7 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                           setTeacherEmail(e.target.value);
                           localStorage.setItem(`teacher_email_${classId}`, e.target.value);
                         }}
-                        className="mt-2 px-3 py-2 border border-blue-300 rounded-lg w-full max-w-md"
+                        className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl w-full max-w-md text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/40 transition-all"
                       />
                     </div>
                   )}
@@ -859,21 +894,34 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
               {/* Status */}
               <div aria-live="polite" className="text-sm">
                 {resultsLoading && (
-                  <div className="text-neutral-300">Ladataan tuloksia...</div>
+                  <div className="text-urak-text-secondary flex items-center gap-2">
+                    <div className="animate-spin h-4 w-4 border-2 border-urak-accent-blue border-t-transparent rounded-full"></div>
+                    Ladataan tuloksia...
+                  </div>
                 )}
                 {!resultsLoading && results.length === 0 && !resultsError && (
-                  <div className="text-neutral-300">Tuloksia ei vielä saatavilla. Oppilaat voivat aloittaa testin PIN-koodilla.</div>
+                  <div className="text-urak-text-secondary">Tuloksia ei vielä saatavilla. Oppilaat voivat aloittaa testin PIN-koodilla.</div>
                 )}
                 {resultsError && (
-                  <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-4">
-                    <p className="text-red-800 font-semibold mb-2">⚠️ Virhe tuloksia ladattaessa</p>
-                    <pre className="text-sm text-red-700 whitespace-pre-wrap">{resultsError}</pre>
+                  <div className="mt-4">
+                    <ErrorMessage 
+                      message={resultsError}
+                      onDismiss={() => setResultsError(null)}
+                    />
                     <button
                       onClick={fetchResults}
-                      className="mt-3 text-sm bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+                      className="mt-3 text-sm bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white px-4 py-2 rounded-lg transition-colors"
                     >
                       Yritä uudelleen
                     </button>
+                  </div>
+                )}
+                {successMessage && (
+                  <div className="mt-4">
+                    <SuccessMessage 
+                      message={successMessage}
+                      onDismiss={() => setSuccessMessage(null)}
+                    />
                   </div>
                 )}
               </div>
@@ -980,10 +1028,10 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                       a.download = `raportti-${name.replace(/\s+/g, '-')}-${result.pin}.txt`;
                       a.click();
                     });
-                    alert(`Ladattu ${filteredResults.length} raporttia`);
+                    showSuccess(`Ladattu ${filteredResults.length} raporttia`);
                     setExporting(false);
                   }}
-                  className="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-purple-700 disabled:opacity-50"
+                  className="bg-urak-surface border border-white/10 hover:bg-white/5 text-white px-6 py-3 rounded-lg disabled:opacity-50 transition-colors"
                 >
                   Lataa yksittäiset raportit
                 </button>
@@ -1002,7 +1050,7 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                         : filteredResults;
                       
                       if (studentsToProcess.length === 0) {
-                        alert('Valitse oppilaat tai poista valinnat ladataksesi kaikki.');
+                        showInfo('Valitse oppilaat tai poista valinnat ladataksesi kaikki.');
                         return;
                       }
 
@@ -1046,15 +1094,15 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                         }
                       }
                       
-                      alert(`Ladattu ${studentsToProcess.length} PDF-raporttia onnistuneesti!`);
+                      showSuccess(`Ladattu ${studentsToProcess.length} PDF-raporttia onnistuneesti!`);
                     } catch (error) {
                       console.error('Error generating PDFs:', error);
-                      alert('PDF-raporttien luominen epäonnistui. Yritä uudelleen.');
+                      showError('PDF-raporttien luominen epäonnistui. Yritä uudelleen.');
                     } finally {
                       setGeneratingPDFs(false);
                     }
                   }}
-                  className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary disabled:opacity-50"
+                  className="bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white px-6 py-3 rounded-lg disabled:opacity-50 transition-colors"
                 >
                   {generatingPDFs ? 'Luodaan PDF...' : '📥 Lataa PDF-raportit'}
                 </button>
@@ -1080,7 +1128,7 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                       downloadPDF(blob, filename);
                     } catch (error) {
                       console.error('Error generating PDF:', error);
-                      alert('PDF:n luominen epäonnistui. Yritä uudelleen.');
+                      showError('PDF:n luominen epäonnistui. Yritä uudelleen.');
                     } finally {
                       setGeneratingPDFs(false);
                     }
@@ -1126,17 +1174,17 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
               {/* Results Display */}
               {viewMode === 'table' ? (
                <div className="overflow-x-auto">
-                 <table role="table" aria-label="Oppilastulokset" className="w-full border-collapse border border-gray-300">
+                 <table role="table" aria-label="Oppilastulokset" className="w-full border-collapse border border-white/10">
                     <thead>
-                      <tr className="bg-neutral-900/20">
-                       <th scope="col" className="border p-2 text-left">Nimi</th>
-                       <th scope="col" className="border p-2 text-left">PIN</th>
-                       <th scope="col" className="border p-2 text-left">Aikana</th>
-                       <th scope="col" className="border p-2 text-left">Yleissuositus</th>
-                       <th scope="col" className="border p-2 text-left">Top 1-3</th>
-                       <th scope="col" className="border p-2 text-left">Kohortti</th>
-                       <th scope="col" className="border p-2 text-left">Suositus</th>
-                       <th scope="col" className="border p-2 text-left">Profiili</th>
+                      <tr className="bg-white/5">
+                       <th scope="col" className="border border-white/10 p-3 text-left text-sm font-semibold text-urak-text-primary">Nimi</th>
+                       <th scope="col" className="border border-white/10 p-3 text-left text-sm font-semibold text-urak-text-primary">PIN</th>
+                       <th scope="col" className="border border-white/10 p-3 text-left text-sm font-semibold text-urak-text-primary">Aikana</th>
+                       <th scope="col" className="border border-white/10 p-3 text-left text-sm font-semibold text-urak-text-primary">Yleissuositus</th>
+                       <th scope="col" className="border border-white/10 p-3 text-left text-sm font-semibold text-urak-text-primary">Top 1-3</th>
+                       <th scope="col" className="border border-white/10 p-3 text-left text-sm font-semibold text-urak-text-primary">Kohortti</th>
+                       <th scope="col" className="border border-white/10 p-3 text-left text-sm font-semibold text-urak-text-primary">Suositus</th>
+                       <th scope="col" className="border border-white/10 p-3 text-left text-sm font-semibold text-urak-text-primary">Profiili</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -1172,18 +1220,18 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                         })();
                         
                         return (
-                          <tr key={i} className={`hover:bg-neutral-900/20 ${needsAttention ? 'bg-yellow-50' : ''}`}>
-                            <td className="border p-2 font-medium">
+                          <tr key={i} className={`hover:bg-white/5 transition-colors ${needsAttention ? 'bg-yellow-500/5' : ''}`}>
+                            <td className="border border-white/10 p-3 font-medium text-urak-text-primary">
                               {nameMapping[result.pin] || '—'}
                               {needsAttention && (
-                                <span className="ml-2 text-xs bg-orange-200 text-orange-800 px-2 py-0.5 rounded">Tarvitsee tukea</span>
+                                <span className="ml-2 text-xs bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded-full">Tarvitsee tukea</span>
                               )}
                             </td>
-                            <td className="border p-2 font-mono text-sm">{result.pin}</td>
-                            <td className="border p-2 text-sm">
+                            <td className="border border-white/10 p-3 font-mono text-sm text-urak-text-secondary">{result.pin}</td>
+                            <td className="border border-white/10 p-3 text-sm text-urak-text-secondary">
                               {new Date(result.created_at).toLocaleDateString('fi-FI')}
                             </td>
-                            <td className="border p-2 text-sm">
+                            <td className="border border-white/10 p-3 text-sm text-urak-text-secondary">
                               {(() => {
                                 const scores = (payload?.dimension_scores || payload?.dimensionScores) as Record<string, number> || {};
                                 const avg = Object.values(scores).length > 0 
@@ -1197,17 +1245,17 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                                 return 'Alhainen';
                               })()}
                             </td>
-                            <td className="border p-2 text-sm">
+                            <td className="border border-white/10 p-3 text-sm text-urak-text-secondary">
                               <div className="flex flex-col gap-1">
                                 {topCareers.slice(0, 3).map((career: any, idx: number) => (
                                   <span key={idx} className="text-xs">
                                     {idx + 1}. {career.title}
                                   </span>
                                 ))}
-                                {topCareers.length === 0 && <span className="text-gray-400">—</span>}
+                                {topCareers.length === 0 && <span className="text-urak-text-muted">—</span>}
                               </div>
                             </td>
-                            <td className="border p-2 text-sm">{cohort || '—'}</td>
+                            <td className="border border-white/10 p-3 text-sm text-urak-text-secondary">{cohort || '—'}</td>
                             <td className="border p-2 text-sm font-medium">{getEducationPathDisplay()}</td>
                             <td className="border p-2 text-xs text-neutral-300 max-w-xs">{profile}</td>
                           </tr>
@@ -1250,25 +1298,25 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                             <div className="flex items-center gap-2">
                               <h3 className="font-bold text-lg">{name}</h3>
                               {needsAttention && (
-                                <span className="text-xs bg-orange-200 text-orange-800 px-2 py-0.5 rounded">Tarvitsee tukea</span>
+                                <span className="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded-full">Tarvitsee tukea</span>
                               )}
                             </div>
-                            <p className="text-sm text-neutral-300">PIN: {result.pin} • {new Date(result.created_at).toLocaleDateString('fi-FI')} • {cohort}</p>
+                            <p className="text-sm text-urak-text-secondary">PIN: {result.pin} • {new Date(result.created_at).toLocaleDateString('fi-FI')} • {cohort}</p>
                           </div>
                         </div>
                         
                         <div className="mb-4">
-                          <p className="text-sm font-medium text-neutral-200 mb-2">Profiili:</p>
-                          <p className="text-sm text-neutral-300">{profile}</p>
+                          <p className="text-sm font-medium text-urak-text-primary mb-2">Profiili:</p>
+                          <p className="text-sm text-urak-text-secondary leading-relaxed">{profile}</p>
                         </div>
                         
                         <div className="mb-4">
-                          <p className="text-sm font-medium text-neutral-200 mb-2">Oppimisprofiili:</p>
+                          <p className="text-sm font-medium text-urak-text-primary mb-2">Oppimisprofiili:</p>
                           <div className="space-y-2">
                             {dimensionBars.map((dim, idx) => {
                               const diff = dim.value - dim.classAvg;
                               const diffLabel = diff > 5 ? 'Yli keskiarvon' : diff < -5 ? 'Alle keskiarvon' : 'Keskiarvo';
-                              const diffColor = diff > 5 ? 'text-green-600' : diff < -5 ? 'text-orange-600' : 'text-neutral-300';
+                              const diffColor = diff > 5 ? 'text-urak-accent-green' : diff < -5 ? 'text-yellow-400' : 'text-urak-text-secondary';
                               
                               // Plain language interpretation
                               let interpretation = '';
@@ -1280,15 +1328,15 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                               
                               return (
                                 <div key={idx} className="flex items-center gap-3">
-                                  <span className="text-sm w-24">{dim.label}:</span>
-                                  <div className="flex-1 bg-neutral-700/40 rounded-full h-3 relative">
+                                  <span className="text-sm w-24 text-urak-text-primary">{dim.label}:</span>
+                                  <div className="flex-1 bg-white/10 rounded-full h-3 relative">
                                     <div 
-                                      className="bg-slate-500 h-3 rounded-full transition-all"
+                                      className="bg-urak-accent-blue h-3 rounded-full transition-all"
                                       style={{ width: `${Math.min(dim.value, 100)}%` }}
                                     />
                                   </div>
                                   {interpretation && (
-                                    <span className="text-xs text-neutral-300 w-32">{interpretation}</span>
+                                    <span className="text-xs text-urak-text-secondary w-32">{interpretation}</span>
                                   )}
                                   <span className={`text-xs ${diffColor} w-20`}>
                                     {diffLabel}
@@ -1300,15 +1348,15 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                         </div>
                         
                         <div>
-                          <p className="text-sm font-medium text-neutral-200 mb-2">Top 5 uraa:</p>
+                          <p className="text-sm font-medium text-urak-text-primary mb-2">Top 5 uraa:</p>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                             {topCareers.slice(0, 5).map((career: any, idx: number) => (
-                              <div key={idx} className="bg-neutral-900/20 p-2 rounded text-sm">
-                                <span className="font-medium">{idx + 1}. {career.title}</span>
-                                <span className="text-neutral-300 ml-2">({Math.round(career.score * 100)}%)</span>
+                              <div key={idx} className="bg-white/5 border border-white/10 p-3 rounded-lg text-sm">
+                                <span className="font-medium text-urak-text-primary">{idx + 1}. {career.title}</span>
+                                <span className="text-urak-text-secondary ml-2">({Math.round(career.score * 100)}%)</span>
                               </div>
                             ))}
-                            {topCareers.length === 0 && <span className="text-gray-400">Ei tuloksia</span>}
+                            {topCareers.length === 0 && <span className="text-urak-text-muted">Ei tuloksia</span>}
                           </div>
                         </div>
                         
@@ -1331,20 +1379,23 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                           return (
                             <div className="mt-4 border-t pt-4">
                               <div className="flex items-center justify-between mb-3">
-                                <h4 className="font-semibold text-gray-800">💬 Keskustelunavaukset</h4>
-                                <button
-                                  onClick={() => {
-                                    const text = `KESKUSTELUNAVAUKSET - ${name}\n\n` +
-                                      `KYSYMYKSET:\n${starters.questions.map((q, i) => `${i + 1}. ${q}`).join('\n')}\n\n` +
-                                      `KESKUSTELUPISTEET:\n${starters.talkingPoints.map((tp, i) => `${i + 1}. ${tp}`).join('\n')}\n\n` +
-                                      `TOIMINTAKOHDAT:\n${starters.actionItems.map((ai, i) => `${i + 1}. ${ai}`).join('\n')}`;
-                                    navigator.clipboard.writeText(text);
-                                    alert('Kopioitu leikepöydälle!');
-                                  }}
-                                  className="text-xs bg-primary/10 text-primary px-3 py-1 rounded hover:bg-primary/20"
-                                >
-                                  Kopioi teksti
-                                </button>
+                                <h4 className="font-semibold text-urak-text-primary">💬 Keskustelunavaukset</h4>
+                                <div className="flex items-center gap-2">
+                                  <Tooltip content="Kopioi keskustelunavaukset leikepöydälle. Voit käyttää niitä ohjauskeskustelussa oppilaan kanssa." />
+                                  <button
+                                    onClick={() => {
+                                      const text = `KESKUSTELUNAVAUKSET - ${name}\n\n` +
+                                        `KYSYMYKSET:\n${starters.questions.map((q, i) => `${i + 1}. ${q}`).join('\n')}\n\n` +
+                                        `KESKUSTELUPISTEET:\n${starters.talkingPoints.map((tp, i) => `${i + 1}. ${tp}`).join('\n')}\n\n` +
+                                        `TOIMINTAKOHDAT:\n${starters.actionItems.map((ai, i) => `${i + 1}. ${ai}`).join('\n')}`;
+                                      navigator.clipboard.writeText(text);
+                                      showSuccess('Kopioitu leikepöydälle!');
+                                    }}
+                                    className="text-xs bg-urak-accent-blue/10 text-urak-accent-blue px-3 py-1 rounded-lg hover:bg-urak-accent-blue/20 transition-colors"
+                                  >
+                                    Kopioi teksti
+                                  </button>
+                                </div>
                               </div>
                               
                               <div className="space-y-3">
@@ -1498,8 +1549,11 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
           )}
 
           {/* Cohort Distribution */}
-          <div className="bg-white border border-gray-300 rounded-lg p-6">
-            <h2 className="text-xl font-bold mb-4">Kohorttijakauma</h2>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <h2 className="text-xl font-bold text-urak-text-primary">Kohorttijakauma</h2>
+              <Tooltip content="Näyttää kuinka monta oppilasta on kustakin kohortista (YLA, TASO2, NUORI)" />
+            </div>
             <div className="grid grid-cols-3 gap-4">
               {Object.entries(analytics.cohortDistribution).map(([cohort, count]) => {
                 const cohortNames: Record<string, string> = {
@@ -1508,9 +1562,9 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                   'NUORI': 'Nuori aikuinen'
                 };
                 return (
-                  <div key={cohort} className="text-center p-4 bg-neutral-900/20 rounded-lg">
-                    <div className="text-2xl font-bold">{count}</div>
-                    <div className="text-sm text-neutral-300">{cohortNames[cohort] || cohort}</div>
+                  <div key={cohort} className="text-center p-4 bg-white/5 border border-white/10 rounded-lg">
+                    <div className="text-2xl font-bold text-urak-text-primary">{count}</div>
+                    <div className="text-sm text-urak-text-secondary">{cohortNames[cohort] || cohort}</div>
                   </div>
                 );
               })}
@@ -1520,39 +1574,45 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
       )}
 
       {/* Public Links */}
-      <div className="bg-neutral-900/20 rounded-lg p-4 space-y-4">
+      <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-6">
         <div>
-          <p className="font-semibold mb-2">Oppilaiden testilinkki</p>
+          <div className="flex items-center gap-2 mb-3">
+            <p className="font-semibold text-urak-text-primary">Oppilaiden testilinkki</p>
+            <Tooltip content="Jaa tämä linkki oppilaille. He syöttävät PIN-koodinsa ja pääsevät testiin." />
+          </div>
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
-            <p data-testid="student-test-link" className="text-sm text-primary break-all flex-1">{studentTestLink}</p>
+            <p data-testid="student-test-link" className="text-sm text-urak-accent-blue break-all flex-1 font-mono bg-white/5 p-3 rounded-lg border border-white/10">{studentTestLink}</p>
             <button
               type="button"
               onClick={() => handleCopyLink(studentTestLink, 'Oppilaiden testilinkki kopioitu leikepöydälle.')}
               data-testid="copy-student-test-link"
-              className="mt-2 sm:mt-0 text-xs bg-primary/10 text-primary px-3 py-1 rounded hover:bg-primary/20"
+              className="mt-2 sm:mt-0 text-xs bg-urak-accent-blue/10 text-urak-accent-blue px-4 py-2 rounded-lg hover:bg-urak-accent-blue/20 transition-colors whitespace-nowrap"
             >
               Kopioi linkki
             </button>
           </div>
-          <p className="text-xs text-neutral-300 mt-2">
+          <p className="text-xs text-urak-text-muted mt-2">
             Oppilaat syöttävät PIN-koodinsa tällä sivulla ja pääsevät testiin.
           </p>
         </div>
 
-        <div className="border-t border-gray-200 pt-4">
-          <p className="font-semibold mb-2 text-sm">Luokan tulossivu</p>
+        <div className="border-t border-white/10 pt-6">
+          <div className="flex items-center gap-2 mb-3">
+            <p className="font-semibold mb-2 text-sm text-urak-text-primary">Luokan tulossivu</p>
+            <Tooltip content="Jaa tämä linkki huoltajille tai muille sidosryhmille. Näyttää anonyymit tulokset kun oppilaat ovat tehneet testin." />
+          </div>
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
-            <p data-testid="class-results-link" className="text-sm text-primary break-all flex-1">{classResultsLink}</p>
+            <p data-testid="class-results-link" className="text-sm text-urak-accent-blue break-all flex-1 font-mono bg-white/5 p-3 rounded-lg border border-white/10">{classResultsLink}</p>
             <button
               type="button"
               onClick={() => handleCopyLink(classResultsLink, 'Luokan tulossivu kopioitu leikepöydälle.')}
               data-testid="copy-class-results-link"
-              className="mt-2 sm:mt-0 text-xs bg-neutral-700/40 text-neutral-200 px-3 py-1 rounded hover:bg-gray-300"
+              className="mt-2 sm:mt-0 text-xs bg-white/5 border border-white/10 text-white px-4 py-2 rounded-lg hover:bg-white/10 transition-colors whitespace-nowrap"
             >
               Kopioi linkki
             </button>
           </div>
-          <p className="text-xs text-neutral-300 mt-2">
+          <p className="text-xs text-urak-text-muted mt-2">
             Täältä näet anonyymit tulokset, kun oppilaat ovat tehneet testin.
           </p>
         </div>

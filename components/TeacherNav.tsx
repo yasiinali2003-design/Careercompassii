@@ -36,7 +36,7 @@ export default function TeacherNav() {
               onClick={() => setFaqOpen(true)}
               variant="ghost"
               size="sm"
-              className="text-neutral-300 hover:text-gray-900"
+              className="text-urak-text-secondary hover:text-urak-text-primary"
               title="Tuki ja UKK"
             >
               <HelpCircle className="h-5 w-5" />
@@ -45,7 +45,7 @@ export default function TeacherNav() {
               onClick={handleLogout}
               variant="ghost"
               size="sm"
-              className="text-neutral-300 hover:text-gray-900"
+              className="text-urak-text-secondary hover:text-urak-text-primary"
             >
               <LogOut className="h-4 w-4 mr-2" />
               Kirjaudu ulos

@@ -25,7 +25,7 @@ export default function CompareReport({ params, searchParams }: { params: { clas
         const checkRes = await fetch('/api/teacher-auth/package-check');
         const checkData = await checkRes.json();
         if (!checkData.hasPremium) {
-          setError('Vertailuanalyytiikka vaatii Premium-paketin. Ota yhteyttä tukeen: support@urakompassi.com');
+          setError('Vertailuanalyytiikka vaatii Premium-paketin. Ota yhteyttä tukeen: info@urakompassi.fi');
           if (!cancelled) setLoading(false);
           return;
         }

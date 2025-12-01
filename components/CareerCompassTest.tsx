@@ -6,6 +6,8 @@ import { getQuestionMappings } from "@/lib/scoring/dimensions";
 import { toast, Toaster } from "sonner";
 import Todistuspistelaskuri from './Todistuspistelaskuri';
 import { validateResponseQuality, getSeverityColor, getQualityWarningMessage, type ResponseQualityMetrics } from "@/lib/scoring/responseValidation";
+import { ErrorMessage } from '@/components/ui/ErrorMessage';
+import { SuccessMessage } from '@/components/ui/SuccessMessage';
 
 // ---------- QUESTIONS DATA ----------
 // YLA: Education path focus (Lukio vs. Ammattikoulu) + career preview
@@ -547,12 +549,12 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
             Löydä tulevaisuutesi suunta
           </h2>
 
-          <p className="text-base md:text-lg text-slate-100/90">
+          <p className="text-base md:text-lg text-urak-text-secondary">
             Vastaa 30 huolellisesti suunniteltuun kysymykseen, jotka kartoittavat
             kiinnostuksesi, arvosi ja vahvuutesi.
           </p>
 
-          <p className="text-base md:text-lg text-slate-200/80">
+          <p className="text-base md:text-lg text-urak-text-secondary">
             Analyysimme perustuu tutkittuun persoonallisuus- ja urapsykologiaan ja
             tarjoaa sinulle henkilökohtaisia urasuosituksia Suomen työmarkkinoille.
           </p>
@@ -568,7 +570,7 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
                   bg-white/4
                   px-3 py-1.5
                   text-xs font-medium
-                  text-slate-100/90
+                  text-urak-text-secondary
                 "
               >
                 {label}
@@ -621,7 +623,7 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
 const GroupCard = ({ title, desc, onClick }: { title: string; desc: string; onClick: () => void }) => (
   <button onClick={onClick} className="flex w-full flex-col items-start rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm p-6 text-left shadow-sm transition hover:shadow-md hover:bg-white/10">
     <h3 className="text-xl font-semibold text-white">{title}</h3>
-    <p className="mt-1 text-neutral-300">{desc}</p>
+    <p className="mt-1 text-urak-text-secondary">{desc}</p>
   </button>
 );
 
@@ -629,7 +631,7 @@ const GroupSelect = ({ onChoose, onBack }: { onChoose: (g: "YLA" | "TASO2" | "NU
   <div className="space-y-6">
     <div className="text-center">
       <h1 className="text-3xl font-bold text-white">Valitse ikäryhmäsi</h1>
-      <p className="mt-2 text-neutral-300">Tämä auttaa meitä antamaan sinulle sopivimmat kysymykset</p>
+      <p className="mt-2 text-urak-text-secondary">Tämä auttaa meitä antamaan sinulle sopivimmat kysymykset</p>
     </div>
 
     <div className="grid gap-4">
@@ -650,7 +652,7 @@ const GroupSelect = ({ onChoose, onBack }: { onChoose: (g: "YLA" | "TASO2" | "NU
       />
     </div>
 
-    <button onClick={onBack} className="w-full rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-50">
+    <button onClick={onBack} className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white hover:bg-white/10 transition-colors">
       Takaisin
     </button>
   </div>
@@ -680,7 +682,7 @@ const OccupationInput = ({ value, onChange, onSkip }: { value: string; onChange:
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
             Mikä on nykyinen ammattisi tai työsi?
           </h1>
-          <p className="mt-3 text-base md:text-lg text-slate-200/80">
+          <p className="mt-3 text-base md:text-lg text-urak-text-secondary">
             Tämä auttaa meitä antamaan sinulle parempia suosituksia. Jos et ole töissä tai opiskelija, voit ohittaa tämän.
           </p>
         </div>
@@ -691,7 +693,7 @@ const OccupationInput = ({ value, onChange, onSkip }: { value: string; onChange:
             value={value}
             onChange={(e) => onChange(e.target.value)}
             placeholder="Esim. Sairaanhoitaja, Myyjä, Opiskelija..."
-            className="w-full rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm px-4 py-3 text-lg text-white placeholder:text-slate-400 focus:border-cyan-400/40 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 focus:bg-white/8 transition-colors"
+            className="w-full rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm px-4 py-3 text-lg text-white placeholder:text-gray-500 focus:border-urak-accent-blue/40 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/20 focus:bg-white/8 transition-colors"
           />
 
           <div className="flex gap-3">
@@ -739,7 +741,7 @@ const OccupationInput = ({ value, onChange, onSkip }: { value: string; onChange:
           </div>
         </div>
 
-        <p className="text-center text-sm text-slate-300/70">
+        <p className="text-center text-sm text-urak-text-muted">
           Ammattisi auttaa meitä suodattamaan pois työsi, jotta näet uusia vaihtoehtoja.
         </p>
       </div>
@@ -796,17 +798,17 @@ const QuestionScreen = ({
     <div className="space-y-6">
       <div className="text-center">
         <h1 className="text-2xl font-bold">{title}</h1>
-        <p className="mt-2 text-slate-600">
+        <p className="mt-2 text-urak-text-secondary">
           Kysymys {index + 1} / {total}
         </p>
         <div className="mt-4 space-y-2">
           <div className="flex items-center justify-between text-sm font-medium">
-            <span className="text-slate-600">{Math.round(progress)}% valmis</span>
-            <span className="text-primary">{total - (index + 1)} jäljellä</span>
+            <span className="text-urak-text-secondary">{Math.round(progress)}% valmis</span>
+            <span className="text-urak-accent-blue">{total - (index + 1)} jäljellä</span>
           </div>
-          <div className="h-3 w-full rounded-full bg-slate-200 shadow-inner">
+          <div className="h-3 w-full rounded-full bg-white/10 shadow-inner">
             <div
-              className="h-3 rounded-full bg-gradient-to-r from-primary to-secondary transition-all duration-300 shadow-sm"
+              className="h-3 rounded-full bg-gradient-to-r from-urak-accent-blue to-urak-accent-green transition-all duration-300 shadow-sm"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -828,14 +830,14 @@ const QuestionScreen = ({
         </button>
         <button
           onClick={onRestart}
-          className="rounded-xl px-4 py-2 text-neutral-300 hover:bg-white/10"
+          className="rounded-xl px-4 py-2 text-urak-text-secondary hover:bg-white/10 transition-colors"
         >
           Aloita alusta
         </button>
         <button
           onClick={onNext}
           disabled={answers[index] === 0}
-          className="rounded-xl bg-primary px-6 py-2 text-white font-medium shadow hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed"
+          className="rounded-xl bg-urak-accent-blue hover:bg-urak-accent-blue/90 px-6 py-2 text-white font-medium shadow hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           {index === total - 1 ? "Valmis" : "Seuraava"}
         </button>
@@ -991,7 +993,7 @@ const Summary = ({
             console.error('[Test] Failed to save results:', resultsData.error);
             const errorMsg = resultsData.error || "Tulosten tallentaminen epäonnistui";
             const hint = resultsData.hint || '';
-            setError(`${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nRatkaisu:\n1. Tarkista verkkoyhteys\n2. Älä poistu tältä sivulta\n3. Yritä lähettää vastaukset uudelleen\n4. Jos ongelma jatkuu, ota yhteyttä opettajaan.`);
+            setError(`Tulosten tallentaminen epäonnistui.\n\n${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nTarkista verkkoyhteytesi ja yritä uudelleen. Älä poistu tältä sivulta. Jos ongelma jatkuu, ota yhteyttä opettajaan.`);
           }
         } else {
             const errorMsg = scoreData.error || "Analyysi epäonnistui";
@@ -1317,10 +1319,10 @@ const Summary = ({
               {/* Salary */}
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <h3 className="text-sm font-semibold text-white uppercase tracking-wide mb-3">Palkka</h3>
-                <p className="text-2xl font-bold text-[#2B5F75] mb-2">
+                <p className="text-2xl font-bold text-urak-accent-blue mb-2">
                   {career.salary_eur_month.median}€/kk
                 </p>
-                <p className="text-sm text-neutral-300">
+                <p className="text-sm text-urak-text-secondary">
                   Alue: {career.salary_eur_month.range[0]}€ - {career.salary_eur_month.range[1]}€
                 </p>
               </div>
@@ -1328,13 +1330,13 @@ const Summary = ({
               {/* Job Outlook */}
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <h3 className="text-sm font-semibold text-white uppercase tracking-wide mb-3">Työllisyysnäkymät</h3>
-                <p className="text-sm text-neutral-300 leading-relaxed">{career.job_outlook.explanation}</p>
+                <p className="text-sm text-urak-text-secondary leading-relaxed">{career.job_outlook.explanation}</p>
               </div>
 
               {/* Work Environment */}
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <h3 className="text-sm font-semibold text-white uppercase tracking-wide mb-3">Työympäristö</h3>
-                <p className="text-sm text-neutral-300 leading-relaxed">{details.workEnvironment}</p>
+                <p className="text-sm text-urak-text-secondary leading-relaxed">{details.workEnvironment}</p>
               </div>
             </div>
 
@@ -1344,8 +1346,8 @@ const Summary = ({
               <div className="grid md:grid-cols-2 gap-4">
                 {career.education_paths.map((path: string, i: number) => (
                   <div key={i} className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg">
-                    <span className="text-[#2B5F75] mt-1 font-bold">•</span>
-                    <span className="text-neutral-300">{path}</span>
+                    <span className="text-urak-accent-blue mt-1 font-bold">•</span>
+                    <span className="text-urak-text-secondary">{path}</span>
                   </div>
                 ))}
               </div>
@@ -1357,8 +1359,8 @@ const Summary = ({
               <div className="grid md:grid-cols-2 gap-4">
                 {career.main_tasks.map((task: string, i: number) => (
                   <div key={i} className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg">
-                    <span className="text-[#2B5F75] mt-1 font-bold">•</span>
-                    <span className="text-neutral-300">{task}</span>
+                    <span className="text-urak-accent-blue mt-1 font-bold">•</span>
+                    <span className="text-urak-text-secondary">{task}</span>
                   </div>
                 ))}
               </div>
@@ -1373,7 +1375,7 @@ const Summary = ({
                     <h4 className="text-lg font-medium text-white mb-3">Tekniset taidot</h4>
                     <div className="flex flex-wrap gap-2">
                       {skillsBreakdown.technical.map((skill: string, i: number) => (
-                        <span key={i} className="px-3 py-1 bg-[#2563EB]/10 text-[#2563EB] rounded-full text-sm font-medium">
+                        <span key={i} className="px-3 py-1 bg-urak-accent-blue/20 text-urak-accent-blue rounded-full text-sm font-medium">
                           {skill}
                         </span>
                       ))}
@@ -1386,7 +1388,7 @@ const Summary = ({
                     <h4 className="text-lg font-medium text-white mb-3">Ihmistaidot</h4>
                     <div className="flex flex-wrap gap-2">
                       {skillsBreakdown.soft.map((skill: string, i: number) => (
-                        <span key={i} className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                        <span key={i} className="px-3 py-1 bg-urak-accent-green/20 text-urak-accent-green rounded-full text-sm font-medium">
                           {skill}
                         </span>
                       ))}
@@ -1413,7 +1415,7 @@ const Summary = ({
             <div className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">Urapolku & etenemismahdollisuudet</h3>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                <p className="text-neutral-300 leading-relaxed text-lg">{details.careerPath}</p>
+                <p className="text-urak-text-secondary leading-relaxed text-lg">{details.careerPath}</p>
               </div>
             </div>
 
@@ -1421,7 +1423,7 @@ const Summary = ({
             <div className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">Alan kehitys</h3>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                <p className="text-neutral-300 leading-relaxed text-lg">{details.industryInsights}</p>
+                <p className="text-urak-text-secondary leading-relaxed text-lg">{details.industryInsights}</p>
               </div>
             </div>
 
@@ -1429,7 +1431,7 @@ const Summary = ({
             <div className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">Tulevaisuuden näkymät</h3>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                <p className="text-neutral-300 leading-relaxed text-lg">{details.futureProspects}</p>
+                <p className="text-urak-text-secondary leading-relaxed text-lg">{details.futureProspects}</p>
               </div>
             </div>
 
@@ -1447,7 +1449,7 @@ const Summary = ({
                       className="text-left p-4 rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm hover:border-[#2B5F75] hover:bg-white/10 hover:shadow-lg transition-all duration-200"
                     >
                       <h4 className="font-semibold text-white mb-2">{relatedCareer.title_fi}</h4>
-                      <p className="text-sm text-neutral-300">{relatedCareer.short_description}</p>
+                      <p className="text-sm text-urak-text-secondary">{relatedCareer.short_description}</p>
                       <div className="mt-2 text-xs text-[#2563EB] font-medium">Klikkaa nähdäksesi lisätietoja →</div>
                     </button>
                   ))}
@@ -1584,19 +1586,19 @@ const Summary = ({
                 <div className="flex items-start justify-between gap-2 mb-3">
                   <h3 className="text-xl font-semibold text-white flex-1">{career.title_fi}</h3>
                 </div>
-                <p className="text-neutral-300 text-sm mb-4 leading-relaxed">{career.short_description}</p>
+                <p className="text-urak-text-secondary text-sm mb-4 leading-relaxed">{career.short_description}</p>
 
                 <div className="space-y-3">
                   <div>
-                    <span className="text-xs font-medium text-neutral-400 uppercase tracking-wide">Palkka</span>
-                    <p className="text-sm text-neutral-300">
+                    <span className="text-xs font-medium text-urak-text-muted uppercase tracking-wide">Palkka</span>
+                    <p className="text-sm text-urak-text-secondary">
                       {career.salary_eur_month.median}€/kk (alue: {career.salary_eur_month.range[0]}-{career.salary_eur_month.range[1]}€)
                     </p>
                   </div>
                   
                   <div>
-                    <span className="text-xs font-medium text-neutral-400 uppercase tracking-wide">Työllisyysnäkymät</span>
-                    <p className="text-sm text-neutral-300">{career.job_outlook.explanation}</p>
+                    <span className="text-xs font-medium text-urak-text-muted uppercase tracking-wide">Työllisyysnäkymät</span>
+                    <p className="text-sm text-urak-text-secondary">{career.job_outlook.explanation}</p>
                   </div>
                   
                   <div>
@@ -1612,7 +1614,7 @@ const Summary = ({
                   </div>
                 </div>
                 
-                <div className="mt-6 pt-4 border-t border-slate-200">
+                <div className="mt-6 pt-4 border-t border-white/10">
                   <span className="text-sm text-[#2563EB] font-medium hover:underline">Klikkaa nähdäksesi lisätietoja →</span>
                 </div>
               </div>
@@ -1630,11 +1632,11 @@ const Summary = ({
               a.href = url; a.download = "ura-analyysi.json"; a.click();
               URL.revokeObjectURL(url);
             }}
-            className="rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-50"
+            className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white hover:bg-white/10 transition-colors"
           >
             Lataa analyysi
           </button>
-          <button onClick={onRestart} className="rounded-xl px-4 py-2 text-slate-700 hover:bg-slate-50">
+          <button onClick={onRestart} className="rounded-xl px-4 py-3 text-urak-text-secondary hover:bg-white/10 transition-colors">
             Aloita alusta
           </button>
         </div>
@@ -1671,7 +1673,7 @@ const Summary = ({
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-3">
               Kiitos vastauksista!
             </h2>
-            <p className="text-base md:text-lg text-slate-200/80">
+            <p className="text-base md:text-lg text-urak-text-secondary">
               Vastasit {answered}/{questions.length} kysymykseen.
             </p>
           </div>
@@ -1728,12 +1730,14 @@ const Summary = ({
 
           {/* Error State */}
           {error && (
-            <div className="rounded-xl bg-red-500/10 border border-red-500/30 p-4">
-              <p className="text-red-300 font-semibold mb-2">⚠️ Virhe vastausten lähetyksessä</p>
-              <pre className="text-sm text-red-200 whitespace-pre-wrap mb-3">{error}</pre>
+            <div className="mb-6">
+              <ErrorMessage 
+                message={error}
+                onDismiss={() => setError(null)}
+              />
               <button
                 onClick={sendToBackend}
-                className="mt-2 text-sm bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
+                className="mt-4 text-sm bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white px-6 py-3 rounded-lg transition-colors"
               >
                 Yritä uudelleen
               </button>
@@ -1771,7 +1775,7 @@ const Summary = ({
               className="
                 rounded-full
                 px-5 py-2.5
-                text-sm font-medium text-slate-300/80
+                text-sm font-medium text-urak-text-secondary
                 transition
                 hover:text-white
                 focus-visible:outline-none
@@ -1783,7 +1787,7 @@ const Summary = ({
           </div>
 
           {/* Footer Text */}
-          <p className="text-center text-sm text-slate-300/70 leading-relaxed pt-2">
+          <p className="text-center text-sm text-urak-text-muted leading-relaxed pt-2">
             Analyysi perustuu vastauksiisi ja tarjoaa henkilökohtaisia urasuosituksia.
           </p>
         </div>

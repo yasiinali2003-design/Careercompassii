@@ -51,10 +51,10 @@ export default function TeacherFooter() {
             <p className="font-semibold mb-2 text-gray-900">Tuki</p>
             <p>
               <a 
-                href="mailto:support@urakompassi.com" 
+                href="mailto:info@urakompassi.fi" 
                 className="text-neutral-300 hover:text-gray-900 hover:underline transition-colors"
               >
-                support@urakompassi.com
+                info@urakompassi.fi
               </a>
             </p>
             <p className="text-neutral-400 mt-4">

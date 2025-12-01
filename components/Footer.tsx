@@ -35,7 +35,7 @@ export function Footer() {
               </p>
               <ul className="space-y-2.5">
                 <li>info@urakompassi.fi</li>
-                <li>Helsinki, Suomi</li>
+                <li>Säterintie 6, 00720 Helsinki</li>
               </ul>
             </div>
           </div>
@@ -43,6 +43,7 @@ export function Footer() {
         <div className="mt-12 flex flex-col gap-4 border-t border-urak-border/60 pt-6 text-xs text-urak-text-muted md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Urakompassi. All rights reserved.</p>
           <div className="flex gap-6">
+            <a href="/metodologia" className="hover:text-urak-text-secondary transition-colors">Tutkimuspohja</a>
             <a href="/legal/tietosuojaseloste" className="hover:text-urak-text-secondary transition-colors">Tietosuojaseloste</a>
             <a href="/legal/immateriaalioikeus-ja-kilpailijasuoja" className="hover:text-urak-text-secondary transition-colors">Immateriaalioikeus- ja kilpailijansuoja</a>
             <a href="/legal/kayttoehdot" className="hover:text-urak-text-secondary transition-colors">Käyttöehdot</a>

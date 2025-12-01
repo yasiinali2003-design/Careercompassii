@@ -12,7 +12,7 @@ export default function TietosuojaPage() {
 {`## 1. Rekisterinpitäjä ja yhteystiedot
 Urakompassi Oy, Säterintie 6, 00720 Helsinki, Finland
 Y-tunnus: 3579081-5
-Sähköposti: support@urakompassi.fi
+Sähköposti: info@urakompassi.fi
 Urakompassi toimii henkilötietojen käsittelijänä oppilaitosten puolesta sekä rekisterinpitäjänä omille käyttäjätiedoilleen. Oppilaitos on oppilaiden tietojen rekisterinpitäjä.
 
 ## 2. Käsittelyn tarkoitus ja oikeusperuste
@@ -29,7 +29,7 @@ Testin toteutus ja tulosten laskenta; palvelun toiminnan, laadun ja turvallisuud
 Oppilaitos omistaa oppilaidensa henkilötiedot. Urakompassi toimii käsittelijänä oppilaitoksen lukuun ja vastaa teknisestä tietoturvasta. Aggregoitu anonymisoitu data ja algoritmit ovat Urakompassin omaisuutta.
 
 ## 6. Luovutukset ja alikäsittelijät
-Tietoja ei luovuteta kolmansille, paitsi: Supabase (EU/Irlanti) pilvitietokanta ja autentikointi; lakisääteiset velvoitteet; oikeudellisten vaatimusten puolustaminen. Ajantasainen alikäsittelijälista ja DPA on saatavilla pyynnöstä: support@urakompassi.fi. Tietoja ei siirretä EU/ETA‑alueen ulkopuolelle ilman asianmukaista suojamekanismia (esim. SCC).
+Tietoja ei luovuteta kolmansille, paitsi: Supabase (EU/Irlanti) pilvitietokanta ja autentikointi; lakisääteiset velvoitteet; oikeudellisten vaatimusten puolustaminen. Ajantasainen alikäsittelijälista ja DPA on saatavilla pyynnöstä: info@urakompassi.fi. Tietoja ei siirretä EU/ETA‑alueen ulkopuolelle ilman asianmukaista suojamekanismia (esim. SCC).
 
 ## 7. EU/ETA-alueen ulkopuoliset siirrot
 
@@ -61,7 +61,7 @@ vastustaa profilointia
 
 pyytää manuaalista arviointia
 
-Yhteydenotot: support@urakompassi.fi
+Yhteydenotot: info@urakompassi.fi
 
 ## 12. Turvallisuustoimenpiteet
 TLS 1.3, AES‑256 levossa, vähimmän oikeuden periaate, käyttö- ja pääsylokit, säännölliset varmuuskopiot ja haavoittuvuustestaukset, tietoturvapolitiikan auditointi vuosittain. Tietoturvaloukkauksista ilmoitetaan ilman aiheetonta viivytystä ja tarvittaessa 72 h kuluessa.
@@ -84,7 +84,7 @@ Sovellettava laki: Suomen laki. Virallinen kieli on suomi; ristiriitatilanteessa
 ## 18. Yhteystiedot
 Urakompassi Oy, Säterintie 6, 00720 Helsinki, Finland
 Y-tunnus: 3579081-5
-Sähköposti: support@urakompassi.fi`}
+Sähköposti: info@urakompassi.fi`}
           </pre>
         </div>
         </div>

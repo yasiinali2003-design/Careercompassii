@@ -395,13 +395,42 @@ export default function CareerCatalog() {
                           {career.summary}
                         </p>
 
+                        {/* Quick Info Row */}
+                        <div className="mb-4 space-y-2">
+                          {/* Salary */}
+                          {career.salaryMin && career.salaryMax && (
+                            <div className="flex items-center gap-2 text-xs text-urak-text-muted">
+                              <span className="font-medium text-urak-text-secondary">Palkka:</span>
+                              <span>{career.salaryMin}€ - {career.salaryMax}€/kk</span>
+                            </div>
+                          )}
+                          
+                          {/* Education Level */}
+                          {career.educationLevel && career.educationLevel.length > 0 && (
+                            <div className="flex items-center gap-2 text-xs text-urak-text-muted">
+                              <span className="font-medium text-urak-text-secondary">Koulutus:</span>
+                              <span>{career.educationLevel.slice(0, 2).join(', ')}{career.educationLevel.length > 2 ? '...' : ''}</span>
+                            </div>
+                          )}
+                          
+                          {/* Outlook */}
+                          {career.outlook && (
+                            <div className="flex items-center gap-2 text-xs">
+                              <span className="font-medium text-urak-text-secondary">Työllisyys:</span>
+                              <span className={`${career.outlook === 'Kasvaa' ? 'text-urak-accent-green' : 'text-urak-text-muted'}`}>
+                                {career.outlook}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+
                         {/* Tag Pills */}
                         {tags.length > 0 && (
                           <div className="flex flex-wrap gap-2 mb-4">
                             {tags.map((tag: string, tagIndex: number) => (
                               <span
                                 key={`${tag}-${tagIndex}`}
-                                className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-slate-100/90"
+                                className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-urak-text-secondary"
                               >
                                 {tag}
                               </span>

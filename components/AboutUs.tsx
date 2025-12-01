@@ -115,6 +115,12 @@ const AboutUs = () => {
                   </a>
                 </div>
                 <div>
+                  <p className="text-sm font-medium text-slate-300 mb-2">Osoite</p>
+                  <p className="text-sky-400 font-medium">
+                    Säterintie 6, 00720 Helsinki
+                  </p>
+                </div>
+                <div>
                   <p className="text-sm font-medium text-slate-300 mb-2">Verkkosivut</p>
                   <a 
                     href="https://urakompassi.fi" 
