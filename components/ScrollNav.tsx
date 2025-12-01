@@ -1,12 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
 
 export default function ScrollNav() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isLandingPage = pathname === "/";
+  const isUrakirjastoPage = pathname === "/ammatit" || pathname?.startsWith("/ammatit/");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,8 +26,11 @@ export default function ScrollNav() {
     <nav
       className="sticky top-0 z-50 animate-fade-in-down border-b transition-all duration-300"
       style={{
-        background: "transparent",
-        backgroundColor: scrolled ? "rgba(11, 16, 21, 0.95)" : "transparent",
+        background: scrolled 
+          ? "rgba(11, 16, 21, 0.95)" 
+          : (isLandingPage || isUrakirjastoPage)
+            ? "transparent" 
+            : "rgba(11, 16, 21, 0.98)",
         backdropFilter: scrolled ? "blur(10px)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(10px)" : "none",
         borderColor: scrolled ? "rgba(255, 255, 255, 0.1)" : "transparent",

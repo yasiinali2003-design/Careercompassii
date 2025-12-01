@@ -2,12 +2,12 @@ import React from "react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-teal-800/30 bg-transparent relative">
+    <footer className="border-t border-teal-800/30 bg-transparent relative snap-start">
       {/* Semi-transparent overlay to ensure text readability while showing beams */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#020817]/80 via-[#0f766e]/60 to-[#0f766e]/80 pointer-events-none -z-10" />
       
       {/* Footer Content */}
-      <div className="mx-auto max-w-6xl px-8 sm:px-10 py-12 md:py-16 relative z-10">
+      <div className="mx-auto max-w-6xl px-8 sm:px-10 py-12 md:py-16 relative z-10 w-full">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <h3 className="font-heading text-lg font-semibold mb-4">

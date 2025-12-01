@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
@@ -31,6 +32,32 @@ import {
 export default function HomePage() {
   const categories = getAllCategories();
 
+  // Apply snap scroll only to this page
+  useEffect(() => {
+    const htmlElement = document.documentElement;
+    // Only apply on desktop (768px+)
+    const mediaQuery = window.matchMedia('(min-width: 768px)');
+    
+    const applySnapScroll = () => {
+      if (mediaQuery.matches) {
+        htmlElement.style.scrollSnapType = 'y mandatory';
+      } else {
+        htmlElement.style.scrollSnapType = '';
+      }
+    };
+    
+    applySnapScroll();
+    mediaQuery.addEventListener('change', applySnapScroll);
+    
+    return () => {
+      // Remove snap scroll when leaving the page
+      htmlElement.style.scrollSnapType = '';
+      mediaQuery.removeEventListener('change', applySnapScroll);
+      // Also scroll to top when unmounting
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-transparent relative">
       {/* Full-page scroll gradient background */}
@@ -52,7 +79,8 @@ export default function HomePage() {
       <ScrollNav />
 
       {/* Hero Section - Premium Nordic SaaS Design */}
-      <div className="relative mx-auto px-6 sm:px-8 pt-32 pb-32 bg-transparent overflow-hidden">
+      <section className="min-h-screen snap-start flex items-center justify-center pt-24 md:pt-28">
+        <div className="relative mx-auto px-6 sm:px-8 w-full bg-transparent overflow-hidden">
         {/* Hero Content */}
         <div className="max-w-4xl mx-auto relative z-10">
           <motion.div
@@ -140,20 +168,32 @@ export default function HomePage() {
           </motion.div>
         </div>
       </div>
+      </section>
 
       {/* How it works - Snake Steps with animated path */}
-      <section id="miten" className="relative overflow-hidden">
-        <SnakeSteps />
+      <section id="miten" className="min-h-screen snap-start flex items-center justify-center">
+        <div className="w-full">
+          <SnakeSteps />
+        </div>
       </section>
 
       {/* Target audience - Stepper Component */}
-      <TargetGroupsStepper />
+      <section className="min-h-screen snap-start flex items-center justify-center">
+        <div className="w-full">
+          <TargetGroupsStepper />
+        </div>
+      </section>
 
       {/* Miten Urakompassi auttaa */}
-      <WhySection />
+      <section className="min-h-screen snap-start flex items-center justify-center">
+        <div className="w-full">
+          <WhySection />
+        </div>
+      </section>
 
       {/* Category Section - Two-Column Layout */}
-      <AnimatedSection className="max-w-6xl mx-auto px-6 sm:px-8 py-32">
+      <section className="min-h-screen snap-start flex items-center justify-center">
+        <AnimatedSection className="max-w-6xl mx-auto px-6 sm:px-8 py-32 w-full">
         <div className="grid gap-12 md:grid-cols-[minmax(0,1.1fr),minmax(0,1.9fr)] items-start">
           {/* Left Column: Heading and Description */}
           <div>
@@ -199,36 +239,44 @@ export default function HomePage() {
             })}
           </div>
         </div>
-      </AnimatedSection>
+        </AnimatedSection>
+      </section>
 
       {/* Editorial info block - Premium Nordic Design */}
-      <AnimatedSection className="py-32">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="flex items-start gap-8 max-w-[820px]">
-            {/* Vertical accent line */}
-            <div className="bg-urak-accent-green/40 w-1 rounded-full flex-shrink-0 self-stretch min-h-[140px]" />
-            
-            {/* Content */}
-            <div className="flex-1 py-2">
-              <h3 className="text-2xl md:text-3xl font-semibold text-white mb-8">
-                Miten testiä tulisi käyttää
-              </h3>
-              <div className="text-base md:text-lg text-urak-text-secondary leading-relaxed space-y-6 max-w-[720px]">
-                <p>
-                  Urakompassi on suunniteltu <strong className="font-semibold text-white">ohjaamaan ja inspiroimaan</strong> uravalinnassasi.
-                  Testi analysoi vahvuutesi ja kiinnostuksesi, antaen sinulle henkilökohtaiset suositukset.
-                </p>
-                <p>
-                  Tulokset ovat <strong className="font-semibold text-white">lähtökohta keskustelulle</strong> – käytä niitä
-                  pohtiessasi omaa tulevaisuuttasi yhdessä opettajien, opinto-ohjaajien ja perheen kanssa.
-                </p>
+      <section className="min-h-screen snap-start flex items-center justify-center">
+        <AnimatedSection className="py-32 w-full">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8">
+            <div className="flex items-start gap-8 max-w-[820px]">
+              {/* Vertical accent line */}
+              <div className="bg-urak-accent-green/40 w-1 rounded-full flex-shrink-0 self-stretch min-h-[140px]" />
+              
+              {/* Content */}
+              <div className="flex-1 py-2">
+                <h3 className="text-2xl md:text-3xl font-semibold text-white mb-8">
+                  Miten testiä tulisi käyttää
+                </h3>
+                <div className="text-base md:text-lg text-urak-text-secondary leading-relaxed space-y-6 max-w-[720px]">
+                  <p>
+                    Urakompassi on suunniteltu <strong className="font-semibold text-white">ohjaamaan ja inspiroimaan</strong> uravalinnassasi.
+                    Testi analysoi vahvuutesi ja kiinnostuksesi, antaen sinulle henkilökohtaiset suositukset.
+                  </p>
+                  <p>
+                    Tulokset ovat <strong className="font-semibold text-white">lähtökohta keskustelulle</strong> – käytä niitä
+                    pohtiessasi omaa tulevaisuuttasi yhdessä opettajien, opinto-ohjaajien ja perheen kanssa.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </AnimatedSection>
+        </AnimatedSection>
+      </section>
 
-      <CallToActionSection />
+      {/* Call to Action - Snaps into view */}
+      <section className="min-h-screen snap-start flex items-center justify-center py-16 md:py-20">
+        <div className="w-full">
+          <CallToActionSection />
+        </div>
+      </section>
       </div>
     </div>
   )
