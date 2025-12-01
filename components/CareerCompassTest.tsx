@@ -7,7 +7,6 @@ import { toast, Toaster } from "sonner";
 import Todistuspistelaskuri from './Todistuspistelaskuri';
 import { validateResponseQuality, getSeverityColor, getQualityWarningMessage, type ResponseQualityMetrics } from "@/lib/scoring/responseValidation";
 import { ErrorMessage } from '@/components/ui/ErrorMessage';
-import { SuccessMessage } from '@/components/ui/SuccessMessage';
 
 // ---------- QUESTIONS DATA ----------
 // YLA: Education path focus (Lukio vs. Ammattikoulu) + career preview

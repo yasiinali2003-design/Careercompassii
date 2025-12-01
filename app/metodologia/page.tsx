@@ -402,7 +402,7 @@ export default function MetodologiaPage() {
                   Oppilaan vastaukset ovat yksityisiä. Opettaja näkee oppilaan tulokset opettajan työpöydässä, mutta oppilas itse päättää, haluaako hän jakaa tuloksensa muille.
                 </p>
                 <p>
-                  UraKompassi näkee vain anonymisoituja, aggregoituja tietoja (esim. "45% yläasteen oppilaista vastasi näin"). Emme myy eikä jaa oppilaiden henkilötietoja kolmansille osapuolille.
+                  UraKompassi näkee vain anonymisoituja, aggregoituja tietoja (esim. &quot;45% yläasteen oppilaista vastasi näin&quot;). Emme myy eikä jaa oppilaiden henkilötietoja kolmansille osapuolille.
                 </p>
                 <p>
                   Opettajien työpöydässä käytetään PIN-koodeja, jotta oppilaat voivat kirjautua ilman henkilötietojen syöttämistä. Tämä varmistaa GDPR-yhteensopivuuden ja auttaa kouluja noudattamaan tietosuoja-asetusta.
