@@ -43,9 +43,12 @@ export async function GET(request: NextRequest) {
       console.log(`[API] Cohort filter requested: ${cohort} (not yet implemented)`);
     }
 
+    // Enhanced caching: 1 hour cache, 2 hours stale-while-revalidate
     return NextResponse.json(careers, {
       headers: {
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200'
+        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200',
+        'CDN-Cache-Control': 'public, s-maxage=3600',
+        'Vercel-CDN-Cache-Control': 'public, s-maxage=3600'
       }
     });
 

@@ -98,15 +98,26 @@ export default function CareerCatalog() {
   const [searchTerm, setSearchTerm] = useState(initialFilters.search || '');
   const [filters, setFilters] = useState<CareerFilters>(initialFilters);
   const [visibleCareers, setVisibleCareers] = useState(24);
+  
+  // Debounce search for better performance
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(searchTerm);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearchTerm(searchTerm);
+      setVisibleCareers(24); // Reset pagination when search changes
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
 
-  // Filter careers based on search and filters
+  // Filter careers based on search and filters (use debounced search)
   const filteredCareers = useMemo(() => {
     return careersData.filter((career: Career) => {
       // Skip invalid careers
       if (!career || !career.title) return false;
       
-      if (searchTerm) {
-        const searchLower = searchTerm.toLowerCase();
+      if (debouncedSearchTerm) {
+        const searchLower = debouncedSearchTerm.toLowerCase();
         const matchesSearch = 
           (career.title?.toLowerCase() || '').includes(searchLower) ||
           (career.summary?.toLowerCase() || '').includes(searchLower) ||
@@ -156,7 +167,7 @@ export default function CareerCatalog() {
 
       return true;
     });
-  }, [searchTerm, filters]);
+  }, [debouncedSearchTerm, filters]);
 
   const displayedCareers = filteredCareers.slice(0, visibleCareers);
 

@@ -92,22 +92,97 @@ export default function ResultsPage() {
   const [contentVisible, setContentVisible] = useState(false);
 
   useEffect(() => {
-    // Get results from localStorage (set by test component)
-    const storedResults = localStorage.getItem('careerTestResults');
-    
-    if (storedResults) {
-      try {
-        const data = JSON.parse(storedResults);
-        setResults(data);
-        setLoading(false);
-      } catch (err) {
-        setError('Virhe tulosten lataamisessa');
-        setLoading(false);
+    const loadResults = async () => {
+      // First, try localStorage (set by test component)
+      const storedResults = localStorage.getItem('careerTestResults');
+      
+      if (storedResults) {
+        try {
+          const data = JSON.parse(storedResults);
+          setResults(data);
+          setLoading(false);
+          return;
+        } catch (err) {
+          console.error('[Results] Error parsing localStorage:', err);
+        }
       }
-    } else {
+      
+      // If localStorage is empty, try to fetch from database using resultId
+      const resultId = localStorage.getItem('lastTestResultId');
+      if (resultId && supabase) {
+        try {
+          console.log('[Results] Fetching results from database with resultId:', resultId);
+          const { data: dbResult, error: dbError } = await supabase
+            .from('test_results')
+            .select('*')
+            .eq('id', resultId)
+            .single();
+          
+          if (dbError) {
+            console.error('[Results] Database error:', dbError);
+          } else if (dbResult) {
+            // Transform database result to match ResultsData format
+            const transformedResult: ResultsData = {
+              success: true,
+              cohort: dbResult.cohort,
+              userProfile: {
+                cohort: dbResult.cohort,
+                dimensionScores: dbResult.dimension_scores || {
+                  interests: 0,
+                  values: 0,
+                  workstyle: 0,
+                  context: 0
+                },
+                topStrengths: [], // Not stored in DB
+                personalizedAnalysis: null // Not stored in DB
+              },
+              topCareers: (dbResult.top_careers || []).map((c: any) => ({
+                slug: c.slug,
+                title: c.title,
+                category: '', // Not stored in DB
+                overallScore: c.score || 0,
+                dimensionScores: {
+                  interests: 0,
+                  values: 0,
+                  workstyle: 0,
+                  context: 0
+                },
+                reasons: [],
+                confidence: 'medium' as const,
+                salaryRange: undefined,
+                outlook: undefined
+              })),
+              educationPath: dbResult.education_path_primary ? {
+                primary: dbResult.education_path_primary,
+                scores: dbResult.education_path_scores || {},
+                reasoning: '',
+                confidence: 'medium' as const
+              } : undefined,
+              cohortCopy: {
+                title: '',
+                subtitle: '',
+                ctaText: '',
+                shareText: ''
+              }
+            };
+            
+            // Save to localStorage for future visits
+            localStorage.setItem('careerTestResults', JSON.stringify(transformedResult));
+            setResults(transformedResult);
+            setLoading(false);
+            return;
+          }
+        } catch (err) {
+          console.error('[Results] Error fetching from database:', err);
+        }
+      }
+      
+      // If both localStorage and database fail, show error
       setError('Tuloksia ei löytynyt. Tee testi uudelleen.');
       setLoading(false);
-    }
+    };
+    
+    loadResults();
   }, []);
 
   const handleCelebrationComplete = () => {

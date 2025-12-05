@@ -91,11 +91,26 @@ export async function POST(request: NextRequest) {
     
     const { cohort, answers, originalIndices, shuffleKey, currentOccupation } = body as ScoringRequest & { originalIndices?: number[]; shuffleKey?: string; currentOccupation?: string };
 
-    // Unshuffle answers if shuffle was used
+    // IMPORTANT: Answers are already mapped to originalQ indices by the client
+    // The client sends questionIndex as the originalQ (0-29 for YLA/TASO2/NUORI), not shuffled position
+    // So we don't need to unshuffle - answers are already in correct order
+    // Verify: answers should have questionIndex values that match originalQ (0-29 range)
     let unshuffledAnswers = answers;
-    if (originalIndices && shuffleKey) {
+    
+    // Check if answers appear to be in shuffled format (questionIndex matches array position)
+    // vs originalQ format (questionIndex is 0-29 but not sequential)
+    const isShuffledFormat = answers.length > 0 && 
+      answers.every((a, idx) => a.questionIndex === idx);
+    
+    if (isShuffledFormat && originalIndices && shuffleKey && originalIndices.length > 0) {
+      // Legacy: if client sends shuffled positions, unshuffle them
+      console.log(`[API] Legacy unshuffle detected, unshuffling ${answers.length} answers`);
       unshuffledAnswers = unshuffleAnswers(answers, originalIndices);
-      console.log(`[API] Unshuffling ${answers.length} answers`);
+    } else {
+      // Modern flow: answers already have correct questionIndex (originalQ)
+      console.log(`[API] Using answers directly (already mapped to originalQ): ${answers.length} answers`);
+      console.log(`[API] Sample answer indices:`, answers.slice(0, 5).map(a => a.questionIndex));
+      unshuffledAnswers = answers;
     }
 
     // Run scoring algorithm with unshuffled answers

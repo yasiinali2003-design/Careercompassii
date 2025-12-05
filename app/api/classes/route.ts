@@ -215,11 +215,13 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ success: true, classes: [] });
     }
 
+    // Optimize query: only fetch what we need, limit if needed
     const { data, error } = await supabaseAdmin
       .from('classes')
       .select('id, class_token, created_at, updated_at')
       .eq('teacher_id', teacherId)
-      .order('created_at', { ascending: false });
+      .order('created_at', { ascending: false })
+      .limit(100); // Reasonable limit for most teachers
 
     if (error) {
       console.error('[API/Classes] Error fetching classes:', error);

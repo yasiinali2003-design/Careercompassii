@@ -30,6 +30,9 @@ interface TeacherClass {
 export default function TeacherClassesPage() {
   const [classes, setClasses] = useState<TeacherClass[]>([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(false);
+  const ITEMS_PER_PAGE = 12; // Show 12 classes per page
 
   const handleCopyLink = useCallback((link: string) => {
     if (typeof navigator === 'undefined' || !navigator.clipboard) {
@@ -46,11 +49,20 @@ export default function TeacherClassesPage() {
   useEffect(() => {
     async function fetchClasses() {
       try {
+        setLoading(true);
         const response = await fetch('/api/classes');
         const data = await response.json();
 
         if (data.success && Array.isArray(data.classes)) {
-          setClasses(data.classes);
+          // Sort by most recent first
+          const sortedClasses = data.classes.sort((a: TeacherClass, b: TeacherClass) => 
+            new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+          );
+          
+          // Paginate client-side (for now - can be moved to server if needed)
+          const paginatedClasses = sortedClasses.slice(0, page * ITEMS_PER_PAGE);
+          setClasses(paginatedClasses);
+          setHasMore(sortedClasses.length > paginatedClasses.length);
         } else {
           console.error('Failed to fetch classes:', data.error);
         }
@@ -62,7 +74,7 @@ export default function TeacherClassesPage() {
     }
 
     fetchClasses();
-  }, []);
+  }, [page]);
 
   const formatDate = (isoDate: string) => {
     try {
@@ -146,8 +158,9 @@ export default function TeacherClassesPage() {
             </Link>
           </div>
         ) : (
-          <div className="grid gap-6 md:grid-cols-2">
-            {classes.map((classItem) => {
+          <>
+            <div className="grid gap-6 md:grid-cols-2">
+              {classes.map((classItem) => {
               const stats = classItem.stats;
               const completed = stats?.completedResults ?? 0;
               const totalPins = stats?.totalPins ?? 0;
@@ -228,7 +241,20 @@ export default function TeacherClassesPage() {
                 </div>
               );
             })}
-          </div>
+            </div>
+            
+            {/* Load More Button */}
+            {hasMore && (
+              <div className="mt-8 text-center">
+                <button
+                  onClick={() => setPage(prev => prev + 1)}
+                  className="px-6 py-3 bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white rounded-lg transition-colors font-medium"
+                >
+                  Näytä lisää luokkia
+                </button>
+              </div>
+            )}
+          </>
         )}
       </div>
       <TeacherFooter />

@@ -948,7 +948,8 @@ const Summary = ({
 
     try {
       // Format answers for new scoring API
-      // Use shuffledToOriginalQ to map shuffled positions to originalQ (0-29)
+      // IMPORTANT: Map shuffled answers back to original question indices
+      // shuffledToOriginalQ maps: shuffled position -> originalQ (0-29 for YLA/TASO2/NUORI)
       // Safety check: ensure shuffledToOriginalQ is properly initialized
       if (!shuffledToOriginalQ || shuffledToOriginalQ.length === 0) {
         console.error('[Test] shuffledToOriginalQ is not initialized properly');
@@ -957,10 +958,29 @@ const Summary = ({
         return;
       }
       
-      const formattedAnswers = answers.map((score, shuffledIndex) => ({
-        questionIndex: shuffledToOriginalQ[shuffledIndex] ?? shuffledIndex,
-        score: score || 3 // Use 3 (neutral) for unanswered questions
-      }));
+      // Map each answer from shuffled position to original question index
+      // shuffledIndex = position in shuffled array (0, 1, 2, ...)
+      // shuffledToOriginalQ[shuffledIndex] = original question index (0-29)
+      const formattedAnswers = answers.map((score, shuffledIndex) => {
+        const originalQIndex = shuffledToOriginalQ[shuffledIndex];
+        if (originalQIndex === undefined || originalQIndex === null) {
+          console.warn(`[Test] Missing mapping for shuffled index ${shuffledIndex}, using fallback`);
+          return {
+            questionIndex: shuffledIndex,
+            score: score || 3
+          };
+        }
+        return {
+          questionIndex: originalQIndex, // This is the originalQ (0-29)
+          score: score || 3 // Use 3 (neutral) for unanswered questions
+        };
+      });
+      
+      console.log('[Test] Formatted answers:', {
+        totalAnswers: formattedAnswers.length,
+        sample: formattedAnswers.slice(0, 3),
+        shuffledToOriginalQSample: shuffledToOriginalQ.slice(0, 3)
+      });
 
       // If PIN and classToken are provided, save to teacher's class
       if (pin && classToken) {
@@ -1028,9 +1048,19 @@ const Summary = ({
               markSetAsUsed(group, selectedSetIndex);
             }
             // Save to localStorage and navigate
-            localStorage.setItem('careerTestResults', JSON.stringify(scoreData));
-            if (scoreData.resultId) {
-              localStorage.setItem('lastTestResultId', scoreData.resultId);
+            // Save results with answers for verification
+            // Include resultId from resultsData if available (for PIN users)
+            const resultsWithAnswers = {
+              ...scoreData,
+              originalAnswers: formattedAnswers, // Store original answers for verification
+              cohort: group,
+              timestamp: new Date().toISOString(),
+              resultId: resultsData.resultId || scoreData.resultId // Use resultId from results API if available
+            };
+            localStorage.setItem('careerTestResults', JSON.stringify(resultsWithAnswers));
+            const finalResultId = resultsData.resultId || scoreData.resultId;
+            if (finalResultId) {
+              localStorage.setItem('lastTestResultId', finalResultId);
             }
             window.location.href = '/test/results';
           } else {
@@ -1076,7 +1106,14 @@ const Summary = ({
           if (group === 'YLA' || group === 'TASO2' || group === 'NUORI') {
             markSetAsUsed(group, selectedSetIndex);
           }
-          localStorage.setItem('careerTestResults', JSON.stringify(data));
+          // Save results with answers for verification
+          const resultsWithAnswers = {
+            ...data,
+            originalAnswers: formattedAnswers, // Store original answers for verification
+            cohort: group,
+            timestamp: new Date().toISOString()
+          };
+          localStorage.setItem('careerTestResults', JSON.stringify(resultsWithAnswers));
           if (data.resultId) {
             localStorage.setItem('lastTestResultId', data.resultId);
           }

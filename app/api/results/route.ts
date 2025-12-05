@@ -210,15 +210,18 @@ export async function POST(request: NextRequest) {
     }
 
     console.log(`[API/Results] Stored result for PIN: ${normalizedPin} (class: ${classId})`);
+    let resultId = null;
     if (insertData && insertData.length > 0) {
-      console.log(`[API/Results] Insert successful. ID: ${insertData[0].id}, class_id: ${insertData[0].class_id}, pin: ${insertData[0].pin}`);
+      resultId = insertData[0].id;
+      console.log(`[API/Results] Insert successful. ID: ${resultId}, class_id: ${insertData[0].class_id}, pin: ${insertData[0].pin}`);
     } else {
       console.log(`[API/Results] Insert returned no data!`);
     }
 
     return NextResponse.json({
       success: true,
-      message: 'Result submitted successfully'
+      message: 'Result submitted successfully',
+      resultId: resultId // Include resultId so client can store it for later retrieval
     });
 
   } catch (error) {
