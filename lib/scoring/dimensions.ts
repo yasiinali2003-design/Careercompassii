@@ -297,6 +297,15 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     reverse: false,
     notes: "Product development - R&D, startup interest"
   },
+  {
+    q: 27,  // Dual mapping: also contributes to global perspective for visionaari
+    text: "Kiinnostaako sinua kehittää uusia tuotteita tai palveluita?",
+    dimension: 'values',
+    subdimension: 'global',
+    weight: 0.8,
+    reverse: false,
+    notes: "Innovation often involves global perspective - visionaari indicator"
+  },
 
   // Section 15: Organization & Outdoor (Q28-29) - organization, outdoor
   {
@@ -1241,10 +1250,10 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     q: 31,
     text: "Haluaisitko työskennellä kansainvälisissä projekteissa tai ulkomailla?",
     dimension: 'values',
-    subdimension: 'environment',
-    weight: 0.1,
+    subdimension: 'global',
+    weight: 1.2,
     reverse: false,
-    notes: "Global/international orientation - critical for visionaari"
+    notes: "Global/international orientation - critical for visionaari (FIXED: was environment with low weight, now global with proper weight)"
   },
   {
     q: 32,

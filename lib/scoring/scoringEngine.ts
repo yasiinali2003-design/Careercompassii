@@ -1121,8 +1121,29 @@ function determineDominantCategory(
   }
   
   // luova: creative interest
-  // PHASE 10 FIX: Simple 3.0× primary, minimal secondaries, NO penalties
-  categoryScores.luova += (interests.creative || 0) * 3.0;  // PRIMARY
+  // STRENGTHENED: Higher multiplier to ensure luova wins over visionaari when creative is high
+  const luovaCreative = (interests.creative || 0);
+  const luovaGlobal = (values.global || interests.global || 0);
+  const luovaPlanning = (workstyle.planning || 0);
+  
+  // luova = high creative AND (low global OR low planning) - distinct from visionaari
+  if (luovaCreative >= 0.6) {
+    if (luovaGlobal < 0.5 && luovaPlanning < 0.5) {
+      // Strong luova: high creative, low global/planning
+      categoryScores.luova += luovaCreative * 5.0;  // Increased from 3.0
+      categoryScores.luova += (interests.innovation || 0) * 2.0;  // SECONDARY: innovation
+    } else {
+      // Moderate luova: high creative but some global/planning
+      categoryScores.luova += luovaCreative * 4.0;  // Still strong
+      categoryScores.luova += (interests.innovation || 0) * 1.5;
+    }
+  } else if (luovaCreative >= 0.5) {
+    // Moderate creative
+    categoryScores.luova += luovaCreative * 3.5;
+  } else {
+    // Low creative
+    categoryScores.luova += luovaCreative * 2.5;
+  }
   
   // johtaja: leadership professions
   // FIXED: Require BOTH leadership AND business/advancement (not just organization)
@@ -1163,12 +1184,24 @@ function determineDominantCategory(
   }
 
   // innovoija: technology professions
-  // PHASE 10 FIX: Simple 3.0× primary, NO penalties
-  categoryScores.innovoija += (interests.technology || 0) * 3.0;  // PRIMARY
+  // STRENGTHENED: Higher multiplier, but penalize if hands_on is high (that's rakentaja, not innovoija)
+  const innovoijaTech = (interests.technology || 0);
+  const innovoijaHandsOn = (interests.hands_on || 0);
+  
+  categoryScores.innovoija += innovoijaTech * 3.0;  // PRIMARY
   // Only boost if technology is HIGH (avoid false positives)
-  if ((interests.technology || 0) >= 0.6) {
+  if (innovoijaTech >= 0.6) {
     categoryScores.innovoija += (interests.innovation || 0) * 2.0;  // SECONDARY: innovation (only if tech is high)
     categoryScores.innovoija += (interests.problem_solving || 0) * 1.5;  // SECONDARY: problem-solving
+  }
+  
+  // STRONG penalty for very high hands_on (should be rakentaja, not innovoija)
+  // Only penalize if hands_on is very high (>= 0.6) to avoid catching tech personalities with moderate hands_on
+  if (innovoijaHandsOn >= 0.6) {
+    categoryScores.innovoija *= 0.3;  // STRONG penalty for very high hands_on
+  } else if (innovoijaHandsOn >= 0.5 && innovoijaTech < 0.6) {
+    // Moderate hands_on + moderate tech = likely rakentaja
+    categoryScores.innovoija *= 0.5;  // Moderate penalty
   }
 
   // rakentaja: hands_on/physical work
@@ -1225,7 +1258,10 @@ function determineDominantCategory(
   const visionaariGlobal = (values.global || interests.global || 0);
   const visionaariPlanning = (workstyle.planning || 0); // Now properly mapped in NUORI Q13/Q28
   const visionaariInnovation = (interests.innovation || 0);
-  const visionaariOrg = (workstyle.organization || workstyle.structure || 0);
+  // For cohorts without organization (NUORI), use analytical as proxy (not planning, since planning is shared with visionaari)
+  const visionaariOrgBase = (workstyle.organization || workstyle.structure || 0);
+  const visionaariOrgProxy = visionaariOrgBase > 0 ? visionaariOrgBase : (interests.analytical || 0) * 0.9;
+  const visionaariOrg = visionaariOrgBase > 0 ? visionaariOrgBase : visionaariOrgProxy;
   const visionaariLeadership = (interests.leadership || workstyle.leadership || 0);
   const visionaariTech = (interests.technology || 0);
   const visionaariCreative = (interests.creative || 0);
@@ -1233,13 +1269,32 @@ function determineDominantCategory(
   const visionaariHandsOn = (interests.hands_on || 0);
   
   // visionaari requires HIGH global AND (planning OR innovation) BUT NOT high organization (that's jarjestaja) AND NOT high leadership (that's johtaja) AND NOT high tech (that's innovoija) AND NOT high people (that's auttaja) AND NOT high hands_on (that's rakentaja)
-  // CRITICAL: If organization is high (>= 0.5), this is jarjestaja, NOT visionaari - set score to near zero IMMEDIATELY
+  // CRITICAL: If organization is high (>= 0.4), this is jarjestaja, NOT visionaari - set score to near zero IMMEDIATELY
   // This is the PRIMARY differentiator - jarjestaja has high organization, visionaari does NOT
   // Check this BEFORE calculating base score to prevent false positives
-  if (visionaariOrg >= 0.5) {
+  // Also check: if analytical is high (>= 0.5) AND organization is moderate (>= 0.3), it's jarjestaja, not visionaari
+  const visionaariAnalytical = (interests.analytical || 0);
+  
+  if (visionaariOrg >= 0.4) {
     // High organization = jarjestaja, not visionaari - give minimal score only
-    categoryScores.visionaari = (visionaariGlobal || 0) * 0.3;  // Minimal score - this is clearly jarjestaja
+    categoryScores.visionaari = (visionaariGlobal || 0) * 0.05;  // Extremely low score - this is clearly jarjestaja
     // Skip all other visionaari calculations - this is clearly jarjestaja
+  } else if (visionaariAnalytical >= 0.4 && visionaariOrg >= 0.3 && visionaariGlobal < 0.5) {
+    // Moderate analytical + moderate organization + low global = jarjestaja (systematic/analytical planning)
+    categoryScores.visionaari = (visionaariGlobal || 0) * 0.02;  // Near zero score - this is jarjestaja
+    // Skip visionaari calculations
+  } else if (visionaariAnalytical >= 0.5 && visionaariOrg >= 0.3) {
+    // High analytical + moderate organization = jarjestaja, not visionaari
+    categoryScores.visionaari = (visionaariGlobal || 0) * 0.02;  // Near zero score - analytical + organized = jarjestaja
+    // Skip visionaari calculations
+  } else if (visionaariOrg >= 0.3 && visionaariPlanning >= 0.5 && visionaariGlobal < 0.5) {
+    // Moderate organization + high planning + LOW global = jarjestaja (systematic planning), not visionaari (strategic/global planning)
+    categoryScores.visionaari = (visionaariGlobal || 0) * 0.1;  // Very low score - systematic planning without global = jarjestaja
+    // Skip visionaari calculations
+  } else if (visionaariPlanning >= 0.5 && visionaariGlobal < 0.5 && visionaariAnalytical >= 0.4) {
+    // High planning + low global + moderate analytical = jarjestaja (systematic/analytical planning), not visionaari
+    categoryScores.visionaari = (visionaariGlobal || 0) * 0.1;  // Very low score - analytical planning without global = jarjestaja
+    // Skip visionaari calculations
   } else {
     // Low organization - proceed with visionaari calculation
     // FIXED: Require HIGH global (>= 0.5) to prevent false positives from dual mappings
@@ -1304,9 +1359,42 @@ function determineDominantCategory(
         penaltyMultiplier *= 0.6;  // Penalty for high hands_on
       }
       
-      // Penalty for high creative (should be luova, not visionaari)
-      if (visionaariCreative >= 0.6 && visionaariGlobal < 0.4) {
-        penaltyMultiplier *= 0.7;  // Penalty for high creative without global
+      // STRONG penalty for high creative (should be luova, not visionaari)
+      // Even if global is present, high creative without strong global/planning = luova, not visionaari
+      if (visionaariCreative >= 0.6) {
+        if (visionaariGlobal < 0.5 || visionaariPlanning < 0.5) {
+          // High creative without strong global/planning = luova, not visionaari
+          penaltyMultiplier *= 0.2;  // VERY STRONG penalty
+        } else {
+          // High creative with strong global/planning - moderate penalty
+          penaltyMultiplier *= 0.6;  // Moderate penalty
+        }
+      } else if (visionaariCreative >= 0.5) {
+        // Moderate creative - apply penalty if global/planning not strong
+        if (visionaariGlobal < 0.5 || visionaariPlanning < 0.5) {
+          penaltyMultiplier *= 0.4;  // Strong penalty
+        }
+      }
+      
+      // STRONG penalty for high analytical (should be jarjestaja, not visionaari)
+      // High analytical + planning = jarjestaja (systematic/analytical planning), not visionaari (strategic/global planning)
+      if (visionaariAnalytical >= 0.5) {
+        if (visionaariGlobal < 0.5) {
+          // High analytical + low global = jarjestaja, not visionaari
+          penaltyMultiplier *= 0.05;  // EXTREMELY STRONG penalty (was 0.1)
+        } else if (visionaariGlobal < 0.6) {
+          // High analytical + moderate global = likely jarjestaja
+          penaltyMultiplier *= 0.1;  // VERY STRONG penalty (was 0.2)
+        } else {
+          // High analytical + high global - moderate penalty
+          penaltyMultiplier *= 0.4;  // Moderate penalty (was 0.5)
+        }
+      } else if (visionaariAnalytical >= 0.4 && visionaariGlobal < 0.5) {
+        // Moderate analytical + low global = jarjestaja
+        penaltyMultiplier *= 0.15;  // STRONG penalty (was 0.3)
+      } else if (visionaariAnalytical >= 0.4 && visionaariOrg >= 0.3 && visionaariGlobal < 0.5) {
+        // Moderate analytical + moderate organization + low global = jarjestaja
+        penaltyMultiplier *= 0.05;  // EXTREMELY STRONG penalty
       }
       
       // Apply penalties
@@ -1325,23 +1413,48 @@ function determineDominantCategory(
   const jarjestajaBusiness = (interests.business || values.advancement || 0);
   const jarjestajaPeople = (interests.people || 0);
   const jarjestajaPlanning = (workstyle.planning || 0);
+  const jarjestajaGlobal = (values.global || interests.global || 0);
+  const jarjestajaAnalytical = (interests.analytical || 0);
   
-  // jarjestaja = high organization BUT low leadership/business AND low people (distinct from johtaja and auttaja)
+  // CRITICAL FIX: NUORI doesn't have organization/structure in workstyle, so use analytical as proxy (not planning, since planning is shared with visionaari)
+  // For NUORI, jarjestaja = high analytical + low global (systematic/analytical planning, not strategic/global planning)
+  // Only use analytical, not planning, to avoid catching visionaari personalities
+  // BUT: if technology is high, it's innovoija, not jarjestaja - exclude from proxy
+  // BUT: if hands_on is high, it's rakentaja, not jarjestaja - exclude from proxy
+  const jarjestajaTech = (interests.technology || 0);
+  const jarjestajaHandsOn = (interests.hands_on || 0);
+  const jarjestajaOrgProxy = jarjestajaOrg > 0 ? jarjestajaOrg : (jarjestajaTech < 0.5 && jarjestajaHandsOn < 0.5 ? (interests.analytical || 0) * 0.9 : 0);
+  
+  // jarjestaja = high organization AND analytical BUT low leadership/business AND low people AND low global (distinct from johtaja, auttaja, and visionaari)
   // STRENGTHENED: Higher multipliers to ensure jarjestaja wins over visionaari when organization is high
-  if (jarjestajaOrg >= 0.5 && jarjestajaLeadership < 0.4 && jarjestajaBusiness < 0.4 && jarjestajaPeople < 0.4) {
-    // Strong jarjestaja signal: highly organized but not a leader, not business-focused, not people-focused
-    categoryScores.jarjestaja += jarjestajaOrg * 6.0;  // PRIMARY: organization/structure (increased from 5.0)
-    categoryScores.jarjestaja += jarjestajaPlanning * 3.0;  // SECONDARY: planning (systematic planning, increased from 2.5)
-    categoryScores.jarjestaja += (interests.analytical || 0) * 3.5;  // SECONDARY: analytical (increased from 3.0)
-    categoryScores.jarjestaja += (workstyle.precision || 0) * 3.0;  // SECONDARY: precision (increased from 2.5)
-  } else if (jarjestajaOrg >= 0.4 && jarjestajaPeople < 0.4 && (jarjestajaLeadership < 0.5 || jarjestajaBusiness < 0.5)) {
+  // CRITICAL: High organization + high analytical = jarjestaja, regardless of planning/global
+  // BUT: if technology is high, it's innovoija, not jarjestaja
+  // BUT: if hands_on is high, it's rakentaja, not jarjestaja
+  // Lowered thresholds to catch more cases
+  // Use proxy for cohorts without organization (NUORI)
+  const effectiveJarjestajaOrg = jarjestajaOrg > 0 ? jarjestajaOrg : jarjestajaOrgProxy;
+  
+  // Exclude high-tech personalities from jarjestaja (they're innovoija)
+  if (jarjestajaTech >= 0.5) {
+    // High technology = innovoija, not jarjestaja - skip jarjestaja calculation
+    categoryScores.jarjestaja = (interests.analytical || 0) * 0.5;  // Minimal score
+  } else if (jarjestajaHandsOn >= 0.5) {
+    // High hands_on = rakentaja, not jarjestaja - skip jarjestaja calculation
+    categoryScores.jarjestaja = (interests.analytical || 0) * 0.5;  // Minimal score
+  } else if (effectiveJarjestajaOrg >= 0.3 && jarjestajaAnalytical >= 0.4 && jarjestajaLeadership < 0.4 && jarjestajaBusiness < 0.4 && jarjestajaPeople < 0.4 && jarjestajaGlobal < 0.6) {
+    // Strong jarjestaja signal: organized + analytical but not a leader, not business-focused, not people-focused, not global
+    categoryScores.jarjestaja += effectiveJarjestajaOrg * 15.0;  // PRIMARY: organization/structure (increased from 12.0)
+    categoryScores.jarjestaja += jarjestajaAnalytical * 8.0;  // PRIMARY: analytical (increased from 7.0)
+    categoryScores.jarjestaja += jarjestajaPlanning * 5.0;  // SECONDARY: planning (systematic planning, increased from 4.5)
+    categoryScores.jarjestaja += (workstyle.precision || 0) * 5.0;  // SECONDARY: precision (increased from 4.5)
+  } else if (effectiveJarjestajaOrg >= 0.3 && jarjestajaAnalytical >= 0.3 && jarjestajaPeople < 0.4 && jarjestajaGlobal < 0.6 && (jarjestajaLeadership < 0.5 || jarjestajaBusiness < 0.5)) {
     // Moderate jarjestaja: organized, not people-focused (but may have some leadership/business)
-    categoryScores.jarjestaja += jarjestajaOrg * 4.5;  // Increased from 3.5
+    categoryScores.jarjestaja += effectiveJarjestajaOrg * 4.5;  // Increased from 3.5
     categoryScores.jarjestaja += jarjestajaPlanning * 2.5;  // Increased from 2.0
     categoryScores.jarjestaja += (interests.analytical || 0) * 3.0;  // Increased from 2.5
-  } else if (jarjestajaOrg >= 0.3 && jarjestajaPeople < 0.4) {
+  } else if (effectiveJarjestajaOrg >= 0.3 && jarjestajaPeople < 0.4) {
     // Weak jarjestaja: some organization, not people-focused
-    categoryScores.jarjestaja += jarjestajaOrg * 3.0;  // Increased from 2.5
+    categoryScores.jarjestaja += effectiveJarjestajaOrg * 3.0;  // Increased from 2.5
     categoryScores.jarjestaja += (interests.analytical || 0) * 2.5;  // Increased from 2.0
   } else {
     // Very weak jarjestaja: just analytical
@@ -1367,25 +1480,25 @@ function determineDominantCategory(
   const dominantCategory = sortedCategories[0][0];
 
   // PHASE 7: Debug logging to diagnose category selection
-  console.log(`[determineDominantCategory] PHASE 7 DEBUG - Category Scores:`);
-  sortedCategories.forEach(([cat, score]) => {
-    console.log(`  ${cat}: ${score.toFixed(2)}`);
-  });
-  console.log(`[determineDominantCategory] Selected: ${dominantCategory} (${categoryScores[dominantCategory].toFixed(2)})`);
-  console.log(`[determineDominantCategory] Input subdimensions:`, {
-    technology: interests.technology,
-    health: interests.health,
-    creative: interests.creative,
-    leadership: interests.leadership,
-    advancement: values.advancement,
-    growth: values.growth,
-    global: values.global,
-    entrepreneurship: values.entrepreneurship,
-    career_clarity: values.career_clarity,
-    planning: workstyle.planning,
-    leadershipWorkstyle: workstyle.leadership,
-    flexibility: workstyle.flexibility
-  });
+  // Only log for failing cases to reduce noise
+  const shouldLog = cohort === 'NUORI' && (categoryScores.jarjestaja > 0 || categoryScores.visionaari > 0);
+  if (shouldLog) {
+    console.log(`[determineDominantCategory] PHASE 7 DEBUG - Category Scores:`);
+    sortedCategories.forEach(([cat, score]) => {
+      console.log(`  ${cat}: ${score.toFixed(2)}`);
+    });
+    console.log(`[determineDominantCategory] Selected: ${dominantCategory} (${categoryScores[dominantCategory].toFixed(2)})`);
+    console.log(`[determineDominantCategory] Key subdimensions:`, {
+      organization: workstyle.organization,
+      structure: workstyle.structure,
+      analytical: interests.analytical,
+      planning: workstyle.planning,
+      global: values.global || interests.global,
+      leadership: interests.leadership,
+      business: interests.business,
+      people: interests.people
+    });
+  }
 
   return dominantCategory;
 }
