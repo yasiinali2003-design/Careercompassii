@@ -2014,11 +2014,20 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
   {
     q: 13,
     text: "Kiinnostaako sinua strateginen suunnittelu ja päätöksenteko?",
-    dimension: 'interests',
-    subdimension: 'leadership',
-    weight: 1.2,
+    dimension: 'workstyle',
+    subdimension: 'planning',
+    weight: 1.5,
     reverse: false,
-    notes: "Strategic planning - executive thinking"
+    notes: "Strategic planning - visionaari indicator (FIXED: was leadership, now planning)"
+  },
+  {
+    q: 13,  // Dual mapping: also contributes to global perspective for visionaari
+    text: "Kiinnostaako sinua strateginen suunnittelu ja päätöksenteko?",
+    dimension: 'values',
+    subdimension: 'global',
+    weight: 0.3,  // REDUCED from 0.8: Lower weight to prevent false positives - strategic planning alone shouldn't trigger visionaari without explicit global interest
+    reverse: false,
+    notes: "Strategic thinking often involves global perspective - visionaari indicator (but lower weight to avoid false positives)"
   },
 
   // Section 5: Hands-On & Technical (Q14-17) - hands_on
@@ -2160,10 +2169,10 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 28,
     text: "Pidätkö järjestelmällisestä työskentelystä ja suunnittelusta?",
     dimension: 'workstyle',
-    subdimension: 'independence',
-    weight: 0.9,
+    subdimension: 'planning',
+    weight: 1.3,
     reverse: false,
-    notes: "Independent planning - systematic self-directed work (100% gold standard)"
+    notes: "Systematic planning - jarjestaja/visionaari indicator (FIXED: was independence, now planning)"
   },
 
   // Section 10: Environment & Impact (Q29) - impact, outdoor
@@ -2349,10 +2358,10 @@ const NUORI_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 15,
     text: "Haluaisitko työskennellä kansainvälisessä ja kulttuurisesti monipuolisessa työympäristössä?",
     dimension: 'values',
-    subdimension: 'environment',
-    weight: 0.1,
+    subdimension: 'global',
+    weight: 1.2,
     reverse: false,
-    notes: "Equivalent to Q15, International orientation"
+    notes: "Equivalent to Q15, International orientation - visionaari indicator (FIXED: was environment with low weight, now global with proper weight)"
   },
   {
     q: 46,
@@ -2441,10 +2450,10 @@ const NUORI_MAPPINGS_SET2: QuestionMapping[] = [
     originalQ: 24,
     text: "Haluaisitko työn, jossa matkustat paljon eri maihin?",
     dimension: 'values',
-    subdimension: 'environment',
-    weight: 0.1,
+    subdimension: 'global',
+    weight: 1.1,
     reverse: false,
-    notes: "Equivalent to Q24, International travel preference"
+    notes: "Equivalent to Q24, International travel preference - visionaari indicator (FIXED: was environment with low weight, now global with proper weight)"
   },
   
   // Section 4: Work Style & Preferences (Q55-59) → Original Q25-29
@@ -2662,10 +2671,10 @@ const NUORI_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 15,
     text: "Haluaisitko työskennellä monikulttuurisessa ja kansainvälisessä työympäristössä?",
     dimension: 'values',
-    subdimension: 'environment',
-    weight: 0.1,
+    subdimension: 'global',
+    weight: 1.2,
     reverse: false,
-    notes: "Equivalent to Q15, International orientation"
+    notes: "Equivalent to Q15, International orientation - visionaari indicator (FIXED: was environment with low weight, now global with proper weight)"
   },
   {
     q: 76,
@@ -2754,10 +2763,10 @@ const NUORI_MAPPINGS_SET3: QuestionMapping[] = [
     originalQ: 24,
     text: "Haluaisitko työn, jossa matkustat paljon työn puolesta?",
     dimension: 'values',
-    subdimension: 'environment',
-    weight: 0.1,
+    subdimension: 'global',
+    weight: 1.1,
     reverse: false,
-    notes: "Equivalent to Q24, International travel preference"
+    notes: "Equivalent to Q24, International travel preference - visionaari indicator (FIXED: was environment with low weight, now global with proper weight)"
   },
   
   // Section 4: Work Style & Preferences (Q85-89) → Original Q25-29

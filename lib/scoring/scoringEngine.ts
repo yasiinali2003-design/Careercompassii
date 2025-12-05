@@ -173,10 +173,13 @@ export function computeUserVector(
   const subdimensionScores: Record<string, { sum: number; count: number; weight: number }> = {};
   
   // Aggregate answers by subdimension
+  // CRITICAL FIX: Process ALL mappings for each question (handles dual mappings like Q13 → planning + global)
   answers.forEach(answer => {
-    const mapping = mappings.find(m => m.q === answer.questionIndex);
-    if (!mapping) return;
+    const questionMappings = mappings.filter(m => m.q === answer.questionIndex);
+    if (questionMappings.length === 0) return;
 
+    // Process each mapping for this question (dual mappings are now handled correctly)
+    questionMappings.forEach(mapping => {
     const normalizedScore = normalizeAnswer(answer.score, mapping.reverse);
     const key = `${mapping.dimension}:${mapping.subdimension}`;
 
@@ -197,6 +200,7 @@ export function computeUserVector(
     subdimensionScores[key].sum += normalizedScore * effectiveWeight;
     subdimensionScores[key].weight += effectiveWeight;
     subdimensionScores[key].count += 1;
+    });
   });
   
   // Calculate detailed scores (subdimension level)
@@ -1087,41 +1091,272 @@ function determineDominantCategory(
   };
   
   // auttaja: people interest, health interest
+  // FIXED: Strengthen auttaja, require people AND (health OR impact) AND low organization (distinct from jarjestaja)
   // PHASE 10 FIX: Simple 3.0× primary,  minimal secondaries, NO penalties
-  categoryScores.auttaja += (interests.people || 0) * 3.0;  // PRIMARY
-  categoryScores.auttaja += (interests.health || 0) * 0.5;  // Secondary
+  const auttajaPeople = (interests.people || 0);
+  const auttajaHealth = (interests.health || 0);
+  const auttajaImpact = (values.impact || 0);
+  const auttajaOrg = (workstyle.organization || workstyle.structure || 0);
+  
+  // auttaja = high people AND (health OR impact) AND low organization (distinct from jarjestaja)
+  if (auttajaPeople >= 0.5 && (auttajaHealth >= 0.4 || auttajaImpact >= 0.4) && auttajaOrg < 0.5) {
+    // Strong auttaja signal: people-focused, helping-oriented, not highly organized
+    categoryScores.auttaja += auttajaPeople * 4.0;  // PRIMARY: people (increased)
+    categoryScores.auttaja += auttajaHealth * 2.0;  // SECONDARY: health
+    categoryScores.auttaja += auttajaImpact * 2.0;  // SECONDARY: impact
+  } else if (auttajaPeople >= 0.5) {
+    // Moderate auttaja: people-focused (but may have some organization)
+    categoryScores.auttaja += auttajaPeople * 3.5;
+    categoryScores.auttaja += auttajaHealth * 1.5;
+    categoryScores.auttaja += auttajaImpact * 1.5;
+  } else {
+    // Weak auttaja: some people interest
+    categoryScores.auttaja += auttajaPeople * 2.5;
+    categoryScores.auttaja += auttajaHealth * 1.0;
+  }
+  
+  // Penalty for high organization (should be jarjestaja, not auttaja)
+  if (auttajaOrg >= 0.6) {
+    categoryScores.auttaja *= 0.5;  // Penalty for high organization
+  }
   
   // luova: creative interest
   // PHASE 10 FIX: Simple 3.0× primary, minimal secondaries, NO penalties
   categoryScores.luova += (interests.creative || 0) * 3.0;  // PRIMARY
   
   // johtaja: leadership professions
+  // FIXED: Require BOTH leadership AND business/advancement (not just organization)
   // PHASE 11 FIX: Use interests.leadership (TASO2 doesn't have workstyle.leadership!)
-  categoryScores.johtaja += (interests.leadership || workstyle.leadership || 0) * 3.0;  // PRIMARY
+  const johtajaLeadership = (interests.leadership || workstyle.leadership || 0);
+  const johtajaBusiness = (interests.business || values.advancement || 0);
+  const johtajaOrg = (workstyle.organization || workstyle.structure || 0);
+  const johtajaPeople = (interests.people || 0);
+  
+  // johtaja = high leadership AND business BUT NOT high organization without leadership (that's jarjestaja) AND NOT high people (that's auttaja)
+  // STRENGTHENED: Higher multipliers to ensure johtaja wins over visionaari when leadership is high
+  if (johtajaLeadership >= 0.6 && johtajaBusiness >= 0.5) {
+    // Strong johtaja signal: high leadership AND business
+    categoryScores.johtaja += johtajaLeadership * 5.0;  // Increased from 4.0
+    categoryScores.johtaja += johtajaBusiness * 4.0;  // Increased from 3.0
+    categoryScores.johtaja += (workstyle.organization || 0) * 2.0;  // SECONDARY: organization (increased from 1.5)
+    categoryScores.johtaja += (workstyle.planning || 0) * 2.0;  // SECONDARY: planning (strategic planning)
+  } else if (johtajaLeadership >= 0.5 && johtajaBusiness >= 0.4) {
+    // Moderate johtaja: both present but lower
+    categoryScores.johtaja += johtajaLeadership * 4.0;  // Increased from 3.0
+    categoryScores.johtaja += johtajaBusiness * 3.0;  // Increased from 2.0
+  } else if (johtajaLeadership >= 0.7) {
+    // Very high leadership alone: moderate johtaja
+    categoryScores.johtaja += johtajaLeadership * 3.5;  // Increased from 2.5
+  } else {
+    // Low leadership: minimal johtaja
+    categoryScores.johtaja += johtajaLeadership * 1.5;  // Increased from 1.0
+  }
+  
+  // Penalty for high organization WITHOUT high leadership (should be jarjestaja, not johtaja)
+  if (johtajaOrg >= 0.6 && johtajaLeadership < 0.5) {
+    categoryScores.johtaja *= 0.3;  // Strong penalty for high organization without leadership
+  }
+  
+  // Penalty for high people WITHOUT high leadership (should be auttaja, not johtaja)
+  if (johtajaPeople >= 0.6 && johtajaLeadership < 0.5) {
+    categoryScores.johtaja *= 0.4;  // Penalty for high people without leadership
+  }
 
   // innovoija: technology professions
   // PHASE 10 FIX: Simple 3.0× primary, NO penalties
   categoryScores.innovoija += (interests.technology || 0) * 3.0;  // PRIMARY
+  // Only boost if technology is HIGH (avoid false positives)
+  if ((interests.technology || 0) >= 0.6) {
+    categoryScores.innovoija += (interests.innovation || 0) * 2.0;  // SECONDARY: innovation (only if tech is high)
+    categoryScores.innovoija += (interests.problem_solving || 0) * 1.5;  // SECONDARY: problem-solving
+  }
 
   // rakentaja: hands_on/physical work
+  // FIXED: Require hands_on AND NOT global/planning (distinguish from visionaari)
   // PHASE 10 FIX: Simple 3.0× primary, NO penalties
-  categoryScores.rakentaja += (interests.hands_on || 0) * 3.0;  // PRIMARY
+  const rakentajaHandsOn = (interests.hands_on || 0);
+  const rakentajaGlobal = (values.global || interests.global || 0);
+  const rakentajaPlanning = (workstyle.planning || 0);
+  
+  // rakentaja = high hands_on AND low global/planning (distinct from visionaari)
+  if (rakentajaHandsOn >= 0.5 && rakentajaGlobal < 0.4 && rakentajaPlanning < 0.4) {
+    // Strong rakentaja signal: hands-on but not global/strategic
+    categoryScores.rakentaja += rakentajaHandsOn * 3.5;  // Increased
+  } else if (rakentajaHandsOn >= 0.5) {
+    // Moderate rakentaja: hands-on (but may have some global/planning)
+    categoryScores.rakentaja += rakentajaHandsOn * 2.5;
+  } else {
+    // Weak rakentaja: some hands-on interest
+    categoryScores.rakentaja += rakentajaHandsOn * 2.0;
+  }
+  
+  // Penalty for high global/planning (should be visionaari, not rakentaja)
+  if (rakentajaGlobal >= 0.5 || rakentajaPlanning >= 0.5) {
+    categoryScores.rakentaja *= 0.3;  // Strong penalty for high global/planning
+  }
 
   // ympariston-puolustaja: environment interest
+  // FIXED: Require environment AND NOT global (distinguish from visionaari)
   // PHASE 10 FIX: Simple 3.0× primary, NO penalties
-  categoryScores['ympariston-puolustaja'] += (interests.environment || 0) * 3.0;  // PRIMARY
+  const envScore = (interests.environment || 0);
+  const globalScore = (values.global || interests.global || 0);
+  
+  // ympariston-puolustaja = high environment AND low global (distinct from visionaari)
+  if (envScore >= 0.5 && globalScore < 0.3) {
+    // Strong ympariston-puolustaja signal: environmental but not global
+    categoryScores['ympariston-puolustaja'] += envScore * 3.5;  // Increased
+  } else if (envScore >= 0.5) {
+    // Moderate ympariston-puolustaja: environmental (but may have some global)
+    categoryScores['ympariston-puolustaja'] += envScore * 2.5;
+  } else {
+    // Weak ympariston-puolustaja: some environment interest
+    categoryScores['ympariston-puolustaja'] += envScore * 2.0;
+  }
+  
+  // Penalty for high global (should be visionaari, not ympariston-puolustaja)
+  if (globalScore >= 0.5) {
+    categoryScores['ympariston-puolustaja'] *= 0.3;  // Strong penalty for high global
+  }
 
   // visionaari: global perspective, strategic thinking
-  // SURGICAL FIX (Option A): Check BOTH values.global (YLA) and interests.global (TASO2/NUORI)
+  // FIXED: Now uses proper global/planning questions (NUORI Q13/Q15/Q24 fixed)
   // Visionaari = strategic, big-picture thinkers with global mindset
-  // NOTE: YLA Q27 maps to values.global, TASO2 Q31 & NUORI Q15/24 map to interests.global
-  const globalScore = (values.global || interests.global || 0);
-  categoryScores.visionaari += globalScore * 1.5;  // PRIMARY: global perspective (reduced after YLA question fixes)
-  categoryScores.visionaari += (interests.analytical || 0) * 1.5;  // SECONDARY: strategic thinking
+  // NOTE: YLA Q27 maps to values.global, TASO2 Q31 maps to interests.global, NUORI Q15/Q24 now map to values.global (FIXED)
+  const visionaariGlobal = (values.global || interests.global || 0);
+  const visionaariPlanning = (workstyle.planning || 0); // Now properly mapped in NUORI Q13/Q28
+  const visionaariInnovation = (interests.innovation || 0);
+  const visionaariOrg = (workstyle.organization || workstyle.structure || 0);
+  const visionaariLeadership = (interests.leadership || workstyle.leadership || 0);
+  const visionaariTech = (interests.technology || 0);
+  const visionaariCreative = (interests.creative || 0);
+  const visionaariPeople = (interests.people || 0);
+  const visionaariHandsOn = (interests.hands_on || 0);
+  
+  // visionaari requires HIGH global AND (planning OR innovation) BUT NOT high organization (that's jarjestaja) AND NOT high leadership (that's johtaja) AND NOT high tech (that's innovoija) AND NOT high people (that's auttaja) AND NOT high hands_on (that's rakentaja)
+  // CRITICAL: If organization is high (>= 0.5), this is jarjestaja, NOT visionaari - set score to near zero IMMEDIATELY
+  // This is the PRIMARY differentiator - jarjestaja has high organization, visionaari does NOT
+  // Check this BEFORE calculating base score to prevent false positives
+  if (visionaariOrg >= 0.5) {
+    // High organization = jarjestaja, not visionaari - give minimal score only
+    categoryScores.visionaari = (visionaariGlobal || 0) * 0.3;  // Minimal score - this is clearly jarjestaja
+    // Skip all other visionaari calculations - this is clearly jarjestaja
+  } else {
+    // Low organization - proceed with visionaari calculation
+    // FIXED: Require HIGH global (>= 0.5) to prevent false positives from dual mappings
+    // Calculate base score first, then apply penalties
+    let visionaariBaseScore = 0;
+    
+    // CRITICAL: Require HIGH global (>= 0.5) - but penalize if global comes ONLY from dual mapping (Q13)
+    // This prevents jarjestaja/johtaja personalities with planning but low global from being misclassified
+    // The dual mapping (Q13 → global) has reduced weight (0.3), so it alone shouldn't trigger visionaari
+    // For NUORI, Q15/Q24 don't map to global in main set, so we rely on Q13's dual mapping + other signals
+    // But we penalize if global is moderate (0.5-0.6) without strong planning/innovation
+    if (visionaariGlobal >= 0.5) {
+      if (visionaariPlanning >= 0.5 || visionaariInnovation >= 0.4) {
+      // Strong visionaari signal: HIGH global + strategic
+        visionaariBaseScore += visionaariGlobal * 6.0;
+        visionaariBaseScore += Math.max(visionaariPlanning, visionaariInnovation * 0.8) * 5.0;
+        visionaariBaseScore += visionaariInnovation * 3.0;
+      } else if (visionaariPlanning >= 0.4 || visionaariInnovation >= 0.3) {
+        // Moderate visionaari: HIGH global + planning/innovation
+        visionaariBaseScore += visionaariGlobal * 4.5;
+        visionaariBaseScore += Math.max(visionaariPlanning, visionaariInnovation * 0.8) * 3.5;
+      } else {
+        // Very high global alone: moderate visionaari
+        visionaariBaseScore += visionaariGlobal * 4.0;
+      }
+      
+      // Penalty if global is moderate (0.5-0.6) without VERY high planning/innovation - likely false positive from dual mapping
+      if (visionaariGlobal >= 0.5 && visionaariGlobal < 0.6 && visionaariPlanning < 0.6 && visionaariInnovation < 0.5) {
+        // Moderate global from dual mapping alone (without strong planning/innovation) = likely NOT visionaari
+        visionaariBaseScore *= 0.2;  // VERY STRONG penalty - reduce score significantly (was 0.3)
+      }
+      
+      // Apply penalties (organization already checked above, so we only check other conflicts)
+      let penaltyMultiplier = 1.0;
+      
+      // Penalty for moderate organization (already checked for >= 0.5 above)
+      if (visionaariOrg >= 0.4 && visionaariOrg < 0.5) {
+        penaltyMultiplier *= 0.6;  // Moderate penalty for moderate organization
+      }
+      
+      // STRONG penalty for high leadership (should be johtaja, not visionaari)
+      if (visionaariLeadership >= 0.6) {
+        penaltyMultiplier *= 0.2;  // VERY STRONG penalty for high leadership (was 0.5)
+      } else if (visionaariLeadership >= 0.5) {
+        penaltyMultiplier *= 0.4;  // STRONG penalty (was 0.7)
+      }
+      
+      // Penalty for high tech (should be innovoija, not visionaari)
+      if (visionaariTech >= 0.6) {
+        penaltyMultiplier *= 0.6;  // Penalty for high tech
+      }
+      
+      // Penalty for high people (should be auttaja, not visionaari)
+      if (visionaariPeople >= 0.6) {
+        penaltyMultiplier *= 0.5;  // Strong penalty for high people
+      } else if (visionaariPeople >= 0.5) {
+        penaltyMultiplier *= 0.7;  // Moderate penalty
+      }
+      
+      // Penalty for high hands_on (should be rakentaja, not visionaari)
+      if (visionaariHandsOn >= 0.6) {
+        penaltyMultiplier *= 0.6;  // Penalty for high hands_on
+      }
+      
+      // Penalty for high creative (should be luova, not visionaari)
+      if (visionaariCreative >= 0.6 && visionaariGlobal < 0.4) {
+        penaltyMultiplier *= 0.7;  // Penalty for high creative without global
+      }
+      
+      // Apply penalties
+      categoryScores.visionaari = visionaariBaseScore * penaltyMultiplier;
+      
+      // Very low analytical weight to avoid jarjestaja/innovoija confusion
+      categoryScores.visionaari += (interests.analytical || 0) * 0.1;  // LOW: avoid confusion
+    }
+  }
 
   // jarjestaja: organization workstyle
+  // FIXED: Strengthen jarjestaja, require organization/structure AND low leadership/business AND low people (distinct from auttaja)
   // PHASE 11 FIX: Use analytical (TASO2 doesn't have organization!)
-  categoryScores.jarjestaja += (interests.analytical || workstyle.organization || 0) * 3.0;  // PRIMARY
+  const jarjestajaOrg = Math.max(workstyle.organization || 0, workstyle.structure || 0);
+  const jarjestajaLeadership = (interests.leadership || workstyle.leadership || 0);
+  const jarjestajaBusiness = (interests.business || values.advancement || 0);
+  const jarjestajaPeople = (interests.people || 0);
+  const jarjestajaPlanning = (workstyle.planning || 0);
+  
+  // jarjestaja = high organization BUT low leadership/business AND low people (distinct from johtaja and auttaja)
+  // STRENGTHENED: Higher multipliers to ensure jarjestaja wins over visionaari when organization is high
+  if (jarjestajaOrg >= 0.5 && jarjestajaLeadership < 0.4 && jarjestajaBusiness < 0.4 && jarjestajaPeople < 0.4) {
+    // Strong jarjestaja signal: highly organized but not a leader, not business-focused, not people-focused
+    categoryScores.jarjestaja += jarjestajaOrg * 6.0;  // PRIMARY: organization/structure (increased from 5.0)
+    categoryScores.jarjestaja += jarjestajaPlanning * 3.0;  // SECONDARY: planning (systematic planning, increased from 2.5)
+    categoryScores.jarjestaja += (interests.analytical || 0) * 3.5;  // SECONDARY: analytical (increased from 3.0)
+    categoryScores.jarjestaja += (workstyle.precision || 0) * 3.0;  // SECONDARY: precision (increased from 2.5)
+  } else if (jarjestajaOrg >= 0.4 && jarjestajaPeople < 0.4 && (jarjestajaLeadership < 0.5 || jarjestajaBusiness < 0.5)) {
+    // Moderate jarjestaja: organized, not people-focused (but may have some leadership/business)
+    categoryScores.jarjestaja += jarjestajaOrg * 4.5;  // Increased from 3.5
+    categoryScores.jarjestaja += jarjestajaPlanning * 2.5;  // Increased from 2.0
+    categoryScores.jarjestaja += (interests.analytical || 0) * 3.0;  // Increased from 2.5
+  } else if (jarjestajaOrg >= 0.3 && jarjestajaPeople < 0.4) {
+    // Weak jarjestaja: some organization, not people-focused
+    categoryScores.jarjestaja += jarjestajaOrg * 3.0;  // Increased from 2.5
+    categoryScores.jarjestaja += (interests.analytical || 0) * 2.5;  // Increased from 2.0
+  } else {
+    // Very weak jarjestaja: just analytical
+    categoryScores.jarjestaja += (interests.analytical || 0) * 2.0;  // Increased from 1.5
+  }
+  
+  // Strong penalty for high leadership/business (should be johtaja, not jarjestaja)
+  if (jarjestajaLeadership >= 0.5 || jarjestajaBusiness >= 0.5) {
+    categoryScores.jarjestaja *= 0.3;  // Stronger penalty for high leadership/business
+  }
+  
+  // Strong penalty for high people (should be auttaja, not jarjestaja)
+  if (jarjestajaPeople >= 0.5) {
+    categoryScores.jarjestaja *= 0.2;  // Stronger penalty for high people (auttaja indicator)
+  }
 
   // PHASE 10 FIX: Removed normalization - keeping raw scores for transparency
 
