@@ -1,0 +1,101 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="200" height="200" fill="#0B1015"/>
+  
+  <!-- Glow effects -->
+  <defs>
+    <!-- Ring glow -->
+    <radialGradient id="ringGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#00D9FF;stop-opacity:0.2" />
+    </radialGradient>
+    
+    <!-- Needle glow -->
+    <linearGradient id="needleGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00B8E6;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <!-- Background light streaks -->
+    <linearGradient id="streakGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#00B8E6;stop-opacity:0.1" />
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background light streaks (upper right) -->
+  <ellipse cx="160" cy="40" rx="35" ry="25" fill="url(#streakGradient)" opacity="0.5"/>
+  <ellipse cx="170" cy="50" rx="20" ry="15" fill="url(#streakGradient)" opacity="0.3"/>
+  
+  <!-- Main circular ring - glowing cyan, interrupted -->
+  <circle
+    cx="100"
+    cy="100"
+    r="75"
+    fill="none"
+    stroke="#00D9FF"
+    stroke-width="5"
+    stroke-linecap="round"
+    opacity="0.95"
+    filter="url(#glow)"
+  />
+  
+  <!-- Inner ring highlight -->
+  <circle
+    cx="100"
+    cy="100"
+    r="70"
+    fill="none"
+    stroke="#00D9FF"
+    stroke-width="1.5"
+    opacity="0.4"
+  />
+  
+  <!-- Compass needle/arrow - diagonal from top-right to bottom-left -->
+  <!-- Rotated -45 degrees to go from top-right to bottom-left -->
+  <g transform="translate(100, 100) rotate(-45)">
+    <!-- Main needle body (elongated arrow shape) -->
+    <path
+      d="M -65 -10 L 55 -10 L 45 0 L 55 10 L -65 10 Z"
+      fill="url(#needleGlow)"
+      filter="url(#glow)"
+      opacity="0.95"
+    />
+    
+    <!-- Sharp point (left end - pointing direction) -->
+    <path
+      d="M -65 -10 L -75 0 L -65 10 Z"
+      fill="#00D9FF"
+      filter="url(#glow)"
+    />
+    
+    <!-- Fanned tail (right end - broader, slightly fanned) -->
+    <path
+      d="M 45 -10 L 55 -15 L 60 0 L 55 15 L 45 10 Z"
+      fill="#00B8E6"
+      filter="url(#glow)"
+      opacity="0.85"
+    />
+    
+    <!-- Center highlight on needle -->
+    <ellipse cx="0" cy="0" rx="3" ry="8" fill="#00D9FF" opacity="0.6"/>
+  </g>
+  
+  <!-- Additional glow around needle intersection -->
+  <circle
+    cx="100"
+    cy="100"
+    r="8"
+    fill="url(#ringGlow)"
+    opacity="0.6"
+  />
+</svg>

@@ -100,16 +100,20 @@ const QUESTIONS = {
     "Kiinnostaako sinua valokuvaus tai videoiden tekeminen?",
     "Haluaisitko joskus perustaa ja pyörittää omaa yritystä?",
     "Pidätkö myynnistä ja asiakkaiden kohtaamisesta?",
-    // Section 4: Hands-On & Practical (Q22-30)
+    // Section 4: Hands-On & Practical (Q21-29)
     "Haluaisitko rakentaa taloja tai korjata rakennuksia?",
     "Kiinnostaako sinua autot, moottorit tai muut ajoneuvot?",
     "Haluaisitko tehdä sähkö- ja asennustöitä?",
-    "Kiinnostaako sinua hoitaa kasveja tai eläimiä työssäsi?",
+    "Kiinnostaako sinua maatalous, karjanhoito tai eläinlääkintä?",
     "Haluaisitko suojella ympäristöä ja luontoa?",
     "Kiinnostaako sinua kuljettaa ihmisiä tai tavaroita paikasta toiseen?",
-    "Haluaisitko valmistaa ruokaa tai leipoa työksesi?",
+    "Haluaisitko valmistaa ruokaa tai leipoa ammatiksesi?",
     "Kiinnostaako sinua puun, metallin tai tekstiilien käsityöt?",
-    "Haluaisitko työskennellä laboratoriossa ja tehdä kokeita?"
+    "Haluaisitko työskennellä laboratoriossa ja tehdä kokeita?",
+    // Section 5: Additional Questions (Q30-32)
+    "Kiinnostaako sinua ympäristönsuojelu ja ilmastonmuutos?",
+    "Haluaisitko työskennellä kansainvälisissä projekteissa tai ulkomailla?",
+    "Pidätkö suunnittelusta, aikatauluista ja asioiden organisoinnista?"
   ],
   NUORI: [
     // REDESIGNED: Interest-based questions for career matching (NOT values)
