@@ -99,6 +99,12 @@ export default function ResultsPage() {
       if (storedResults) {
         try {
           const data = JSON.parse(storedResults);
+          // Validate and clean topCareers array
+          if (data.topCareers && Array.isArray(data.topCareers)) {
+            data.topCareers = data.topCareers.filter((c: any) => 
+              c && typeof c === 'object' && c !== null && c.slug && c.title
+            );
+          }
           setResults(data);
           setLoading(false);
           return;
@@ -134,24 +140,26 @@ export default function ResultsPage() {
                   context: 0
                 },
                 topStrengths: [], // Not stored in DB
-                personalizedAnalysis: null // Not stored in DB
+                personalizedAnalysis: undefined // Not stored in DB
               },
-              topCareers: (dbResult.top_careers || []).map((c: any) => ({
-                slug: c.slug,
-                title: c.title,
-                category: '', // Not stored in DB
-                overallScore: c.score || 0,
-                dimensionScores: {
-                  interests: 0,
-                  values: 0,
-                  workstyle: 0,
-                  context: 0
-                },
-                reasons: [],
-                confidence: 'medium' as const,
-                salaryRange: undefined,
-                outlook: undefined
-              })),
+              topCareers: (dbResult.top_careers || [])
+                .filter((c: any) => c && typeof c === 'object' && c.slug && c.title)
+                .map((c: any) => ({
+                  slug: c.slug,
+                  title: c.title,
+                  category: '', // Not stored in DB
+                  overallScore: c.score || 0,
+                  dimensionScores: {
+                    interests: 0,
+                    values: 0,
+                    workstyle: 0,
+                    context: 0
+                  },
+                  reasons: [],
+                  confidence: 'medium' as const,
+                  salaryRange: undefined,
+                  outlook: undefined
+                })),
               educationPath: dbResult.education_path_primary ? {
                 primary: dbResult.education_path_primary,
                 scores: dbResult.education_path_scores || {},

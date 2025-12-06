@@ -987,6 +987,10 @@ const Summary = ({
         console.log('[Test] PIN detected, saving to teacher class:', { pin, classToken });
         // First get the results by calling /api/score
         console.log('[Test] Calling /api/score with:', { cohort: group, answersCount: formattedAnswers.length });
+        // Add timeout to prevent infinite loading
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+        
         const scoreResponse = await fetch("/api/score", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -997,11 +1001,32 @@ const Summary = ({
             shuffleKey,
             currentOccupation: currentOccupation || undefined
           }),
+          signal: controller.signal
+        }).catch((error) => {
+          clearTimeout(timeoutId);
+          if (error.name === 'AbortError') {
+            throw new Error('Pyyntö kesti liian kauan. Yritä uudelleen.');
+          }
+          throw error;
         });
+        clearTimeout(timeoutId);
         console.log('[Test] Score API response status:', scoreResponse.status);
         
-        const scoreData = await scoreResponse.json();
+        if (!scoreResponse.ok) {
+          const errorText = await scoreResponse.text().catch(() => 'Unknown error');
+          console.error('[Test] Score API error response:', errorText);
+          throw new Error(`Palvelinvirhe (${scoreResponse.status}): ${errorText}`);
+        }
+        
+        const scoreData = await scoreResponse.json().catch((error) => {
+          console.error('[Test] Failed to parse score response:', error);
+          throw new Error('Vastauksen jäsennys epäonnistui. Yritä uudelleen.');
+        });
         console.log('[Test] Score API response data:', scoreData);
+        
+        if (!scoreData) {
+          throw new Error('Vastauksen jäsennys epäonnistui - tyhjä vastaus.');
+        }
         
         if (scoreData.success) {
           // Now save to /api/results with PIN
@@ -1027,6 +1052,10 @@ const Summary = ({
             payloadKeys: Object.keys(resultPayload) 
           });
 
+          // Add timeout for results API call too
+          const resultsController = new AbortController();
+          const resultsTimeoutId = setTimeout(() => resultsController.abort(), 30000);
+          
           const resultsResponse = await fetch("/api/results", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -1035,11 +1064,32 @@ const Summary = ({
               classToken,
               resultPayload
             }),
+            signal: resultsController.signal
+          }).catch((error) => {
+            clearTimeout(resultsTimeoutId);
+            if (error.name === 'AbortError') {
+              throw new Error('Tulosten tallentaminen kesti liian kauan. Yritä uudelleen.');
+            }
+            throw error;
           });
+          clearTimeout(resultsTimeoutId);
           console.log('[Test] Results API response status:', resultsResponse.status);
 
-          const resultsData = await resultsResponse.json();
+          if (!resultsResponse.ok) {
+            const errorText = await resultsResponse.text().catch(() => 'Unknown error');
+            console.error('[Test] Results API error response:', errorText);
+            throw new Error(`Tulosten tallentaminen epäonnistui (${resultsResponse.status}): ${errorText}`);
+          }
+
+          const resultsData = await resultsResponse.json().catch((error) => {
+            console.error('[Test] Failed to parse results response:', error);
+            throw new Error('Tulosten vastauksen jäsennys epäonnistui. Yritä uudelleen.');
+          });
           console.log('[Test] Results API response:', resultsData);
+
+          if (!resultsData) {
+            throw new Error('Tulosten vastauksen jäsennys epäonnistui - tyhjä vastaus.');
+          }
 
           if (resultsData.success) {
             console.log('[Test] Results saved successfully, navigating to results page');
@@ -1068,15 +1118,23 @@ const Summary = ({
             const errorMsg = resultsData.error || "Tulosten tallentaminen epäonnistui";
             const hint = resultsData.hint || '';
             setError(`Tulosten tallentaminen epäonnistui.\n\n${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nTarkista verkkoyhteytesi ja yritä uudelleen. Älä poistu tältä sivulta. Jos ongelma jatkuu, ota yhteyttä opettajaan.`);
+            setLoading(false);
+            return;
           }
         } else {
             const errorMsg = scoreData.error || "Analyysi epäonnistui";
             const hint = scoreData.hint || '';
             setError(`${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nRatkaisu:\n1. Tarkista että vastasit kaikkiin kysymyksiin\n2. Tarkista verkkoyhteys\n3. Yritä lähettää vastaukset uudelleen\n4. Jos ongelma jatkuu, ota yhteyttä opettajaan.`);
+            setLoading(false);
+            return;
         }
       } else {
         console.log('[Test] No PIN, regular public flow');
         // Regular public flow (no PIN)
+        // Add timeout to prevent infinite loading
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+        
         const response = await fetch("/api/score", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -1087,18 +1145,43 @@ const Summary = ({
             shuffleKey,
             currentOccupation: currentOccupation || undefined
           }),
+          signal: controller.signal
+        }).catch((error) => {
+          clearTimeout(timeoutId);
+          if (error.name === 'AbortError') {
+            throw new Error('Pyyntö kesti liian kauan. Yritä uudelleen.');
+          }
+          throw error;
         });
+        clearTimeout(timeoutId);
         
         if (!response.ok) {
           console.error('[Test] API response not OK:', response.status, response.statusText);
-          const errorData = await response.json().catch(() => ({ error: 'Verkkovirhe' }));
+          const errorText = await response.text().catch(() => 'Unknown error');
+          let errorData;
+          try {
+            errorData = JSON.parse(errorText);
+          } catch {
+            errorData = { error: errorText || 'Verkkovirhe' };
+          }
           const errorMsg = errorData.error || `Palvelinvirhe (${response.status})`;
           const hint = errorData.hint || '';
           setError(`${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nRatkaisu:\n1. Tarkista verkkoyhteys\n2. Odota hetki ja yritä uudelleen\n3. Älä poistu tältä sivulta - vastauksesi tallennetaan\n4. Jos ongelma jatkuu, ota yhteyttä opettajaan.`);
+          setLoading(false);
           return;
         }
         
-        const data = await response.json();
+        const data = await response.json().catch((error) => {
+          console.error('[Test] Failed to parse response:', error);
+          setError('Vastauksen jäsennys epäonnistui. Yritä uudelleen.');
+          setLoading(false);
+          return; // Don't throw - error is already handled
+        });
+        
+        if (!data) {
+          // If data is null/undefined due to parsing error, stop here
+          return;
+        }
         console.log('[Test] Public flow response:', { success: data.success, hasTopCareers: !!data.topCareers });
         
         if (data.success) {
@@ -1123,6 +1206,8 @@ const Summary = ({
           const errorMsg = data.error || data.details || "Analyysi epäonnistui";
           const hint = data.hint || '';
           setError(`${errorMsg}${hint ? `\n\n${hint}` : ''}\n\nRatkaisu:\n1. Tarkista että vastasit kaikkiin kysymyksiin\n2. Tarkista verkkoyhteys\n3. Odota hetki ja yritä lähettää vastaukset uudelleen\n4. Älä poistu tältä sivulta - vastauksesi tallennetaan automaattisesti\n5. Jos ongelma jatkuu, ota yhteyttä opettajaan.`);
+          setLoading(false);
+          return;
         }
       }
     } catch (e) {
@@ -1134,10 +1219,12 @@ const Summary = ({
   };
 
   const openCareerDetail = (career: any) => {
+    if (!career || typeof career !== 'object') return;
     setSelectedCareer(career);
     // Cache the career data for faster reopens
-    if (!careerCache[career.id]) {
-      setCareerCache(prev => ({ ...prev, [career.id]: career }));
+    const careerKey = career.id || career.slug || `career-${Date.now()}`;
+    if (careerKey && !careerCache[careerKey]) {
+      setCareerCache(prev => ({ ...prev, [careerKey]: career }));
     }
   };
 
@@ -1242,18 +1329,38 @@ const Summary = ({
 
   // Career Detail Modal Component
   const CareerDetailModal = ({ career }: { career: any }) => {
+    // Safety check: return early if career is invalid
+    if (!career || typeof career !== 'object') {
+      return null;
+    }
+    
     // Generate comprehensive career information
     const generateCareerDetails = (career: any) => {
+      if (!career || typeof career !== 'object') {
+        return {
+          introduction: 'Ammatti',
+          careerPath: '',
+          workEnvironment: '',
+          skillsBreakdown: { technical: [], soft: [], industry: [] },
+          industryInsights: '',
+          futureProspects: ''
+        };
+      }
+      
+      const title = career.title_fi || career.title || 'Ammatti';
+      const description = career.short_description || '';
+      const category = career.category || '';
+      
       const careerDetails = {
         // Enhanced introduction
-        introduction: `${career.title_fi} on ${career.category === 'luova' ? 'luova' : 
-          career.category === 'johtaja' ? 'johtamispainotteinen' :
-          career.category === 'innovoija' ? 'innovaatiopainotteinen' :
-          career.category === 'rakentaja' ? 'käytännönläheinen' :
-          career.category === 'auttaja' ? 'ihmiskeskeinen' :
-          career.category === 'ympariston-puolustaja' ? 'vastuullinen' :
-          career.category === 'visionaari' ? 'strateginen' :
-          career.category === 'jarjestaja' ? 'järjestelmällinen' : 'monipuolinen'} ammatti, joka ${career.short_description.toLowerCase()}`,
+        introduction: `${title} on ${category === 'luova' ? 'luova' : 
+          category === 'johtaja' ? 'johtamispainotteinen' :
+          category === 'innovoija' ? 'innovaatiopainotteinen' :
+          category === 'rakentaja' ? 'käytännönläheinen' :
+          category === 'auttaja' ? 'ihmiskeskeinen' :
+          category === 'ympariston-puolustaja' ? 'vastuullinen' :
+          category === 'visionaari' ? 'strateginen' :
+          category === 'jarjestaja' ? 'järjestelmällinen' : 'monipuolinen'} ammatti${description ? `, joka ${description.toLowerCase()}` : ''}`,
         
         // Detailed career path
         careerPath: generateCareerPath(career),
@@ -1305,19 +1412,20 @@ const Summary = ({
     };
 
     const generateSkillsBreakdown = (career: any) => {
+      const keywords = Array.isArray(career?.keywords) ? career.keywords : [];
       return {
-        technical: career.keywords.filter((skill: string) => 
-          ['ohjelmointi', 'teknologia', 'analyysi', 'suunnittelu', 'kehitys'].some(tech => 
+        technical: keywords.filter((skill: string) => 
+          skill && typeof skill === 'string' && ['ohjelmointi', 'teknologia', 'analyysi', 'suunnittelu', 'kehitys'].some(tech => 
             skill.toLowerCase().includes(tech)
           )
         ),
-        soft: career.keywords.filter((skill: string) => 
-          ['kommunikaatio', 'johtaminen', 'tiimityö', 'kreatiivisuus', 'ongelmanratkaisu'].some(soft => 
+        soft: keywords.filter((skill: string) => 
+          skill && typeof skill === 'string' && ['kommunikaatio', 'johtaminen', 'tiimityö', 'kreatiivisuus', 'ongelmanratkaisu'].some(soft => 
             skill.toLowerCase().includes(soft)
           )
         ),
-        industry: career.keywords.filter((skill: string) => 
-          !['ohjelmointi', 'teknologia', 'analyysi', 'suunnittelu', 'kehitys', 'kommunikaatio', 'johtaminen', 'tiimityö', 'kreatiivisuus', 'ongelmanratkaisu'].some(general => 
+        industry: keywords.filter((skill: string) => 
+          skill && typeof skill === 'string' && !['ohjelmointi', 'teknologia', 'analyysi', 'suunnittelu', 'kehitys', 'kommunikaatio', 'johtaminen', 'tiimityö', 'kreatiivisuus', 'ongelmanratkaisu'].some(general => 
             skill.toLowerCase().includes(general)
           )
         )
@@ -1379,40 +1487,46 @@ const Summary = ({
           <div className="p-8">
             {/* Header */}
             <div className="mb-8">
-              <h1 className="text-4xl font-bold text-white mb-4">{career.title_fi}</h1>
+              <h1 className="text-4xl font-bold text-white mb-4">{career?.title_fi || career?.title || 'Ammatti'}</h1>
               <p className="text-xl text-white/90 leading-relaxed mb-4">{details.introduction}</p>
               
               {/* Category Badge */}
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium">
-                {career.category === 'luova' ? '🎨 Luova' :
-                 career.category === 'johtaja' ? '👑 Johtaminen' :
-                 career.category === 'innovoija' ? '💡 Innovaatio' :
-                 career.category === 'rakentaja' ? '🔨 Rakentaminen' :
-                 career.category === 'auttaja' ? '🤝 Auttaminen' :
-                 career.category === 'ympariston-puolustaja' ? '🌱 Ympäristö' :
-                 career.category === 'visionaari' ? '🔮 Visionääri' :
-                 career.category === 'jarjestaja' ? '📋 Järjestäminen' : '💼 Ammatti'}
+                {(career?.category || '') === 'luova' ? '🎨 Luova' :
+                 career?.category === 'johtaja' ? '👑 Johtaminen' :
+                 career?.category === 'innovoija' ? '💡 Innovaatio' :
+                 career?.category === 'rakentaja' ? '🔨 Rakentaminen' :
+                 career?.category === 'auttaja' ? '🤝 Auttaminen' :
+                 career?.category === 'ympariston-puolustaja' ? '🌱 Ympäristö' :
+                 career?.category === 'visionaari' ? '🔮 Visionääri' :
+                 career?.category === 'jarjestaja' ? '📋 Järjestäminen' : '💼 Ammatti'}
               </div>
             </div>
 
             {/* Key Info Grid */}
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               {/* Salary */}
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                <h3 className="text-sm font-semibold text-white uppercase tracking-wide mb-3">Palkka</h3>
-                <p className="text-2xl font-bold text-urak-accent-blue mb-2">
-                  {career.salary_eur_month.median}€/kk
-                </p>
-                <p className="text-sm text-urak-text-secondary">
-                  Alue: {career.salary_eur_month.range[0]}€ - {career.salary_eur_month.range[1]}€
-                </p>
-              </div>
+              {career?.salary_eur_month && (
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                  <h3 className="text-sm font-semibold text-white uppercase tracking-wide mb-3">Palkka</h3>
+                  <p className="text-2xl font-bold text-urak-accent-blue mb-2">
+                    {career.salary_eur_month.median || career.salary_eur_month.range?.[0] || 'N/A'}€/kk
+                  </p>
+                  {career.salary_eur_month.range && career.salary_eur_month.range[0] && career.salary_eur_month.range[1] && (
+                    <p className="text-sm text-urak-text-secondary">
+                      Alue: {career.salary_eur_month.range[0]}€ - {career.salary_eur_month.range[1]}€
+                    </p>
+                  )}
+                </div>
+              )}
 
               {/* Job Outlook */}
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                <h3 className="text-sm font-semibold text-white uppercase tracking-wide mb-3">Työllisyysnäkymät</h3>
-                <p className="text-sm text-urak-text-secondary leading-relaxed">{career.job_outlook.explanation}</p>
-              </div>
+              {career?.job_outlook?.explanation && (
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                  <h3 className="text-sm font-semibold text-white uppercase tracking-wide mb-3">Työllisyysnäkymät</h3>
+                  <p className="text-sm text-urak-text-secondary leading-relaxed">{career.job_outlook.explanation}</p>
+                </div>
+              )}
 
               {/* Work Environment */}
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
@@ -1422,30 +1536,34 @@ const Summary = ({
             </div>
 
             {/* Education */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-semibold text-white mb-4">Koulutus</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                {career.education_paths.map((path: string, i: number) => (
-                  <div key={i} className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg">
-                    <span className="text-urak-accent-blue mt-1 font-bold">•</span>
-                    <span className="text-urak-text-secondary">{path}</span>
-                  </div>
-                ))}
+            {Array.isArray(career?.education_paths) && career.education_paths.length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-2xl font-semibold text-white mb-4">Koulutus</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {career.education_paths.map((path: string, i: number) => (
+                    <div key={i} className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg">
+                      <span className="text-urak-accent-blue mt-1 font-bold">•</span>
+                      <span className="text-urak-text-secondary">{path}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Main Tasks */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-semibold text-white mb-4">Keskeiset tehtävät / vastuut</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                {career.main_tasks.map((task: string, i: number) => (
-                  <div key={i} className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg">
-                    <span className="text-urak-accent-blue mt-1 font-bold">•</span>
-                    <span className="text-urak-text-secondary">{task}</span>
-                  </div>
-                ))}
+            {Array.isArray(career?.main_tasks) && career.main_tasks.length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-2xl font-semibold text-white mb-4">Keskeiset tehtävät / vastuut</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {career.main_tasks.map((task: string, i: number) => (
+                    <div key={i} className="flex items-start gap-3 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg">
+                      <span className="text-urak-accent-blue mt-1 font-bold">•</span>
+                      <span className="text-urak-text-secondary">{task}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Skills Breakdown */}
             <div className="mb-8">
@@ -1520,20 +1638,29 @@ const Summary = ({
             <div className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">Liittyvät ammatit</h3>
               <div className="grid md:grid-cols-2 gap-4">
-                {analysis?.recommendations
-                  .filter((rec: any) => rec.id !== career.id)
+                {(Array.isArray(analysis?.recommendations) ? analysis.recommendations : [])
+                  .filter((rec: any) => {
+                    if (!rec || typeof rec !== 'object' || !career || typeof career !== 'object') return false;
+                    const recId = rec.id || rec.slug;
+                    const careerId = career.id || career.slug;
+                    return recId && careerId && recId !== careerId;
+                  })
                   .slice(0, 4)
-                  .map((relatedCareer: any, i: number) => (
-                    <button
-                      key={i}
-                      onClick={() => openCareerDetail(relatedCareer)}
-                      className="text-left p-4 rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm hover:border-[#2B5F75] hover:bg-white/10 hover:shadow-lg transition-all duration-200"
-                    >
-                      <h4 className="font-semibold text-white mb-2">{relatedCareer.title_fi}</h4>
-                      <p className="text-sm text-urak-text-secondary">{relatedCareer.short_description}</p>
-                      <div className="mt-2 text-xs text-[#2563EB] font-medium">Klikkaa nähdäksesi lisätietoja →</div>
-                    </button>
-                  ))}
+                  .map((relatedCareer: any, i: number) => {
+                    if (!relatedCareer || typeof relatedCareer !== 'object' || !relatedCareer.title_fi) return null;
+                    const relatedKey = relatedCareer.id || relatedCareer.slug || `related-${i}`;
+                    return (
+                      <button
+                        key={relatedKey || i}
+                        onClick={() => openCareerDetail(relatedCareer)}
+                        className="text-left p-4 rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm hover:border-[#2B5F75] hover:bg-white/10 hover:shadow-lg transition-all duration-200"
+                      >
+                        <h4 className="font-semibold text-white mb-2">{relatedCareer.title_fi}</h4>
+                        <p className="text-sm text-urak-text-secondary">{relatedCareer.short_description || ''}</p>
+                        <div className="mt-2 text-xs text-[#2563EB] font-medium">Klikkaa nähdäksesi lisätietoja →</div>
+                      </button>
+                    );
+                  })}
               </div>
             </div>
 
@@ -1649,14 +1776,25 @@ const Summary = ({
           <p className="text-white/80 text-sm mb-8">Ammattiehdotukset ovat esimerkkejä — ei listoja ammateista, joita sinun tulisi hakea.</p>
           
           <div className="grid gap-6 md:grid-cols-2">
-            {analysis.recommendations.map((career: any, i: number) => (
+            {(Array.isArray(analysis?.recommendations) ? analysis.recommendations : []).map((career: any, i: number) => {
+              if (!career || typeof career !== 'object') return null;
+              const careerId = career.id || career.slug || `career-${i}`;
+              const selectedId = selectedCareer && typeof selectedCareer === 'object' ? (selectedCareer.id || selectedCareer.slug) : null;
+              const title = career.title_fi || career.title || 'Ammatti';
+              const description = career.short_description || '';
+              const salary = career.salary_eur_month?.median || career.salary_eur_month?.range?.[0] || 'N/A';
+              const salaryRange = career.salary_eur_month?.range || [0, 0];
+              const jobOutlook = career.job_outlook?.explanation || '';
+              const educationPaths = Array.isArray(career.education_paths) ? career.education_paths : [];
+              
+              return (
               <div 
-                key={i} 
+                key={careerId || i} 
                 className="rounded-[20px] bg-white/5 backdrop-blur-sm border border-white/10 p-6 shadow-[0_8px_20px_rgba(0,0,0,0.3)] hover:scale-[1.03] hover:shadow-[0_12px_28px_rgba(0,0,0,0.4)] hover:bg-white/10 transition-all duration-300 ease-in-out cursor-pointer"
                 onClick={() => openCareerDetail(career)}
                 role="button"
                 tabIndex={0}
-                aria-expanded={selectedCareer?.id === career.id}
+                aria-expanded={selectedId === careerId}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
@@ -1665,41 +1803,50 @@ const Summary = ({
                 }}
               >
                 <div className="flex items-start justify-between gap-2 mb-3">
-                  <h3 className="text-xl font-semibold text-white flex-1">{career.title_fi}</h3>
+                  <h3 className="text-xl font-semibold text-white flex-1">{title}</h3>
                 </div>
-                <p className="text-urak-text-secondary text-sm mb-4 leading-relaxed">{career.short_description}</p>
+                {description && (
+                  <p className="text-urak-text-secondary text-sm mb-4 leading-relaxed">{description}</p>
+                )}
 
                 <div className="space-y-3">
-                  <div>
-                    <span className="text-xs font-medium text-urak-text-muted uppercase tracking-wide">Palkka</span>
-                    <p className="text-sm text-urak-text-secondary">
-                      {career.salary_eur_month.median}€/kk (alue: {career.salary_eur_month.range[0]}-{career.salary_eur_month.range[1]}€)
-                    </p>
-                  </div>
+                  {salary !== 'N/A' && (
+                    <div>
+                      <span className="text-xs font-medium text-urak-text-muted uppercase tracking-wide">Palkka</span>
+                      <p className="text-sm text-urak-text-secondary">
+                        {salary}€/kk {salaryRange[0] > 0 && salaryRange[1] > 0 && `(alue: ${salaryRange[0]}-${salaryRange[1]}€)`}
+                      </p>
+                    </div>
+                  )}
                   
-                  <div>
-                    <span className="text-xs font-medium text-urak-text-muted uppercase tracking-wide">Työllisyysnäkymät</span>
-                    <p className="text-sm text-urak-text-secondary">{career.job_outlook.explanation}</p>
-                  </div>
+                  {jobOutlook && (
+                    <div>
+                      <span className="text-xs font-medium text-urak-text-muted uppercase tracking-wide">Työllisyysnäkymät</span>
+                      <p className="text-sm text-urak-text-secondary">{jobOutlook}</p>
+                    </div>
+                  )}
                   
-                  <div>
-                    <span className="text-xs font-medium text-[#475569] uppercase tracking-wide">Koulutus</span>
-                    <ul className="text-sm text-[#475569] space-y-1">
-                      {career.education_paths.map((path: string, j: number) => (
-                        <li key={j} className="flex items-start gap-1">
-                          <span className="text-[#475569] mt-1">•</span>
-                          <span>{path}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {educationPaths.length > 0 && (
+                    <div>
+                      <span className="text-xs font-medium text-[#475569] uppercase tracking-wide">Koulutus</span>
+                      <ul className="text-sm text-[#475569] space-y-1">
+                        {educationPaths.map((path: string, j: number) => (
+                          <li key={j} className="flex items-start gap-1">
+                            <span className="text-[#475569] mt-1">•</span>
+                            <span>{path}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="mt-6 pt-4 border-t border-white/10">
                   <span className="text-sm text-[#2563EB] font-medium hover:underline">Klikkaa nähdäksesi lisätietoja →</span>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 

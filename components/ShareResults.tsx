@@ -47,7 +47,9 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
     setShareUrl(currentUrl);
   }, []);
 
-  const careerTitles = topCareers.map(c => c.title);
+  const careerTitles = (Array.isArray(topCareers) ? topCareers : [])
+    .filter(c => c && typeof c === 'object' && c.title)
+    .map(c => c.title);
   const shareText = referralCode 
     ? createShareText(careerTitles, referralCode)
     : createShareText(careerTitles);
