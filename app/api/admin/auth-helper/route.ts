@@ -8,8 +8,12 @@ export async function POST(request: NextRequest) {
   try {
     const { password } = await request.json();
     
-    const adminPass = process.env.ADMIN_PASSWORD || '';
-    const expectedPassword = adminPass || 'CCYHAHAIKUNZIBBI22!';
+    const expectedPassword = process.env.ADMIN_PASSWORD;
+
+    if (!expectedPassword) {
+      console.error('[Admin Auth] ADMIN_PASSWORD environment variable not set');
+      return NextResponse.json({ success: false, error: 'Server configuration error' }, { status: 500 });
+    }
     
     if (password === expectedPassword) {
       const response = NextResponse.json({ success: true });

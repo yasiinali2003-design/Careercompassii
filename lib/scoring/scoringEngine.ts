@@ -4594,7 +4594,23 @@ export function rankCareers(
   } else {
     console.log(`[rankCareers] Using only ${categoryCareers.length} careers from dominant category`);
   }
-  
+
+  // SAFETY: If careersToScore is somehow empty (all filtered out), use ALL careers as fallback
+  if (careersToScore.length === 0) {
+    console.log(`[rankCareers] ⚠️ No careers to score after filtering! Using all careers as fallback...`);
+    careersToScore = CAREER_VECTORS.filter(cv => {
+      // Still filter out current occupation
+      if (currentOccupation && currentOccupation !== "none") {
+        const occupationLower = currentOccupation.toLowerCase().trim();
+        const titleLower = cv.title.toLowerCase();
+        if (titleLower.includes(occupationLower) || occupationLower.includes(titleLower)) {
+          return false;
+        }
+      }
+      return true;
+    });
+  }
+
   // Step 5: Score filtered careers with enhanced matching
   const scoredCareers = careersToScore.map(careerVector => {
     let { overallScore, dimensionScores: dimScores } = computeCareerFit(
@@ -4876,6 +4892,50 @@ export function rankCareers(
     if (!career.salaryRange) return 0;
     return (career.salaryRange[0] + career.salaryRange[1]) / 2;
   };
+
+  // SAFETY FALLBACK: If ALL careers were filtered out due to threshold,
+  // return the top-scoring careers without threshold filtering
+  if (scoredCareers.length === 0) {
+    console.log(`[rankCareers] ⚠️ All careers filtered out! Applying fallback...`);
+    // Re-score without threshold filtering - take top careers regardless of score
+    const fallbackCareers = careersToScore.map(careerVector => {
+      const { overallScore, dimensionScores: dimScores } = computeCareerFit(
+        detailedScores,
+        careerVector,
+        cohort,
+        dominantCategory
+      );
+      const careerFI = careersFI.find(c => c && c.id === careerVector.slug);
+      const reasons = generateReasons(
+        careerVector,
+        careerFI,
+        detailedScores,
+        dimScores,
+        cohort,
+        answers
+      );
+      const confidence = overallScore >= 75 ? 'high' : overallScore >= 60 ? 'medium' : 'low';
+      return {
+        slug: careerVector.slug,
+        title: careerVector.title,
+        category: careerVector.category,
+        overallScore: Math.round(overallScore),
+        dimensionScores: dimScores,
+        reasons: reasons.filter(r => r.length > 0),
+        confidence,
+        salaryRange: careerFI ? [
+          careerFI.salary_eur_month?.range?.[0] || 2500,
+          careerFI.salary_eur_month?.range?.[1] || 4000
+        ] : undefined,
+        outlook: careerFI?.job_outlook?.status
+      } as CareerMatch;
+    })
+    .sort((a, b) => b.overallScore - a.overallScore)
+    .slice(0, limit);
+
+    console.log(`[rankCareers] Fallback returning ${fallbackCareers.length} careers (top by score, no threshold)`);
+    return fallbackCareers;
+  }
 
   // Step 6: Sort by dominant category, demand outlook and score
   // ENHANCED: Prioritize Finnish careers over English ones when scores are close
