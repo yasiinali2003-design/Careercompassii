@@ -6733,88 +6733,7 @@ export const careersData: CareerFI[] = [
   },
 
 
-{
-    id: "futuristi",
-    category: "visionaari",
-    title_fi: "Futuristi",
-    title_en: "Futurist",
-    short_description: "Futuristi tutkii tulevaisuuden trendejä ja kehittää skenaarioita. Työskentelee strategisen suunnittelun ja innovaation parissa.",
-    main_tasks: [
-      "Tulevaisuuden trendien tutkiminen",
-      "Skenaarioiden kehittäminen",
-      "Strategisen suunnittelun tuki",
-      "Innovaatioiden ennustaminen",
-      "Tulevaisuuden visioiden luominen"
-    ],
-    impact: [
-      "Auttaa Suomessa organisaatioita valmistautumaan tulevaisuuteen",
-      "Kehittää innovatiivisia ratkaisuja",
-      "Vaikuttaa Suomessa strategiseen päätöksentekoon"
-    ],
-    education_paths: [
-      "Yliopisto: Futurologia, Strategia",
-      "AMK: Innovaatio, Strategia",
-      "Futurologian erikoiskurssit",
-      "Strategisen suunnittelun koulutus"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Futurologia ja trendianalyysi",
-      "Strateginen ajattelu",
-      "Innovaatio",
-      "Kommunikaatio",
-      "Tutkimusmenetelmät"
-    ],
-    tools_tech: [
-      "Trendianalyysityökalut",
-      "Skenaariotyökalut",
-      "Tutkimusohjelmistot",
-      "Excel, Power BI",
-      "Sosiaalinen media"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 4500,
-      range: [3500, 6000],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Futuristien kysyntä kasvaa strategisen suunnittelun ja innovaation myötä.",
-      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior futuristi",
-      "Trendianalyytikko",
-      "Strategian tutkija"
-    ],
-    career_progression: [
-      "Senior futuristi",
-      "Strategian johtaja",
-      "Innovaatiojohtaja",
-      "Futurologian konsultti"
-    ],
-    typical_employers: [
-      "Konsultointiyritykset",
-      "Teollisuusyritykset",
-      "Julkinen sektori",
-      "Tutkimuslaitokset",
-      "Digitoimistot ympäri Suomen",
-      "Etätyö mahdollistaa työskentelyn mistä tahansa",
-      "Wolt (Helsinki)",
-      "Vincit (Tampere)"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: "Teknologiateollisuuden TES",
-    useful_links: [
-      { name: "Futurologia.fi", url: "https://www.futurologia.fi/" },
-      { name: "Opintopolku - Futuristi", url: "https://opintopolku.fi/konfo/fi/haku/Futuristi" },
-    
-      { name: "Työmarkkinatori – Futuristi", url: "https://tyomarkkinatori.fi/ammatit/futuristi" }
-      ],
-    keywords: ["futurologia", "trendit", "strategia", "innovaatio", "tulevaisuus"],
-    study_length_estimate_months: 48
-  },
+
 
 
 {
@@ -24176,9 +24095,9 @@ export const careersData: CareerFI[] = [
 {
     id: "growth-hacker",
     category: "innovoija",
-    title_fi: "Kasvuhakkeri",
+    title_fi: "Kasvuasiantuntija",
     title_en: "Growth Hacker",
-    short_description: "Kasvuhakkeri keskittyy yrityksen nopean kasvun edistämiseen data-ohjattujen kokeilujen ja innovatiivisten markkinointitaktiikoiden avulla. Erityisen kysytty Helsingin startup-skenessä, jossa yhdistyvät markkinointi, data ja teknologia. Tarjoaa dynaamisen työympäristön ja mahdollisuuden 10x kasvuun.",
+    short_description: "Kasvuasiantuntija keskittyy yrityksen nopean kasvun edistämiseen data-ohjattujen kokeilujen ja innovatiivisten markkinointitaktiikoiden avulla. Erityisen kysytty Helsingin startup-skenessä, jossa yhdistyvät markkinointi, data ja teknologia. Tarjoaa dynaamisen työympäristön ja mahdollisuuden 10x kasvuun.",
     main_tasks: [
           "Kasvukokeilujen suunnittelu ja toteutus (A/B-testit)",
           "Konversiofunnelien optimointi",
@@ -24198,7 +24117,7 @@ export const careersData: CareerFI[] = [
     ],
     qualification_or_license: null,
     core_skills: [
-          "Kasvuhakkerointi ja kokeellinen markkinointi",
+          "Kasvu ja kokeellinen markkinointi",
           "Data-analyysi ja A/B-testaus",
           "Digitaalinen markkinointi",
           "SQL ja analytiikkatyökalut",
@@ -29744,9 +29663,9 @@ export const careersData: CareerFI[] = [
 {
     id: "kettera-valmentaja",
     category: "johtaja",
-    title_fi: "Ketterä valmentaja",
+    title_fi: "Agile-valmentaja",
     title_en: "Agile Coach",
-    short_description: "Ketterä valmentaja auttaa organisaatioita ja tiimejä omaksumaan ketteriä työtapoja. Toimii valmentajana, fasilitaattorina ja muutosagenttina.",
+    short_description: "Agile-valmentaja auttaa organisaatioita ja tiimejä omaksumaan ketteriä työtapoja. Toimii valmentajana, fasilitaattorina ja muutosagenttina.",
     main_tasks: [
       "Tiimien ja organisaation agile-valmennus",
       "Scrum- ja Kanban-prosessien fasilitointi",
@@ -30347,7 +30266,7 @@ export const careersData: CareerFI[] = [
 {
     id: "kasvuhakkeri",
     category: "visionaari",
-    title_fi: "Kasvuhakkeri",
+    title_fi: "Kasvuasiantuntija",
     title_en: "Growth Hacker",
     short_description: "Kasvuhakkeri yhdistää markkinoinnin, datan ja teknologian kasvattaakseen yrityksen käyttäjämääriä ja myyntiä. Keskittyy nopeaan kokeiluun ja mitattaviin tuloksiin.",
     main_tasks: [
@@ -35859,54 +35778,6 @@ export const careersData: CareerFI[] = [
   study_length_estimate_months: 72
 },
 {
-  id: "vety-talouden-visionaari",
-  category: "visionaari",
-  title_fi: "Vetytalouden visionääri",
-  title_en: "Hydrogen Economy Visionary",
-  short_description: "Vetytalouden visionääri kehittää vetyteknologiaan perustuvia ratkaisuja. Työ vaatii teknologiaosaamista ja visionääristä ajattelua.",
-  main_tasks: [
-    "Vetytalouden strategioiden kehittäminen",
-    "Vetyteknologian sovellusten suunnittelu",
-    "Ekosysteemien rakentaminen",
-    "Kumppanuuksien koordinointi",
-    "Innovaatioiden kehittäminen"
-  ],
-  education_paths: [
-    "Korkeakoulututkinto: Energiatekniikan tai kemiantekniikan tutkinto",
-    "Vetyteknologian erikoistuminen",
-    "Energiatalouden osaaminen"
-  ],
-  core_skills: [
-    "Vetyteknologia",
-    "Energiatalous",
-    "Strateginen suunnittelu",
-    "Ekosysteemirakentaminen",
-    "Innovointi"
-  ],
-  tools_tech: [
-    "Energiamallinnustyökalut",
-    "Simulointiohjelmistot",
-    "Projektinhallintatyökalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 5500,
-    range: [4500, 7500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Vetytalouden kehittyminen luo uusia mahdollisuuksia visionääreille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  entry_roles: ["Energiatekniikan insinööri", "Tutkija"],
-  career_progression: ["Energiajohtaja", "CTO"],
-  typical_employers: ["Energiayritykset", "Teknologiayritykset", "Tutkimuslaitokset"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["vetytalous", "energia", "kestävyys"],
-  study_length_estimate_months: 60
-},
-{
   id: "digitaalisen-kaksosen-arkkitehti",
   category: "visionaari",
   title_fi: "Digitaalisen kaksosen arkkitehti",
@@ -36000,102 +35871,6 @@ export const careersData: CareerFI[] = [
   typical_employers: ["Kansainväliset yritykset", "Konsulttiyritykset", "Järjestöt"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
   keywords: ["kulttuuri", "innovaatio", "kansainvälisyys"],
-  study_length_estimate_months: 72
-},
-{
-  id: "nanoteknologian-visionaari",
-  category: "visionaari",
-  title_fi: "Nanoteknologian visionääri",
-  title_en: "Nanotechnology Visionary",
-  short_description: "Nanoteknologian visionääri kehittää nanoteknologian sovelluksia. Työ vaatii tieteellistä osaamista ja visionääristä ajattelua.",
-  main_tasks: [
-    "Nanoteknologian sovellusten kehittäminen",
-    "Nanorakenteiden suunnittelu",
-    "Tutkimus ja kehitys",
-    "Soveltava kehitys",
-    "Kaupallistaminen"
-  ],
-  education_paths: [
-    "Tohtorin tutkinto: Fysiikan tai kemiantekniikan tohtori",
-    "Nanoteknologian erikoistuminen",
-    "Post-doc tutkimus"
-  ],
-  core_skills: [
-    "Nanoteknologia",
-    "Nanomateriaali",
-    "Tutkimus",
-    "Innovointi",
-    "Soveltava kehitys"
-  ],
-  tools_tech: [
-    "Nanomittauslaitteet",
-    "Simulointityökalut",
-    "Tutkimustyökalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C2" },
-  salary_eur_month: {
-    median: 6500,
-    range: [5500, 9000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Nanoteknologian sovellusten kehittyminen luo uusia mahdollisuuksia.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  entry_roles: ["Tutkija", "Nanoteknologi"],
-  career_progression: ["Tutkimusjohtaja", "CTO"],
-  typical_employers: ["Tutkimuslaitokset", "Teknologiayritykset", "Yliopistot"],
-  work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
-  keywords: ["nanoteknologia", "tutkimus", "innovaatio"],
-  study_length_estimate_months: 96
-},
-{
-  id: "edtech-visionaari",
-  category: "visionaari",
-  title_fi: "EdTech-visionääri",
-  title_en: "EdTech Visionary",
-  short_description: "EdTech-visionääri kehittää tulevaisuuden oppimisratkaisuja. Työ vaatii pedagogista ymmärrystä ja teknologiaosaamista.",
-  main_tasks: [
-    "Tulevaisuuden oppimisratkaisujen kehittäminen",
-    "Pedagogisten innovaatioiden suunnittelu",
-    "Oppimisanalytiikan hyödyntäminen",
-    "EdTech-strategioiden kehittäminen",
-    "Ekosysteemien rakentaminen"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Kasvatustieteet tai tietotekniikka",
-    "EdTech-osaaminen",
-    "Pedagoginen osaaminen"
-  ],
-  core_skills: [
-    "EdTech",
-    "Pedagogiikka",
-    "Oppimisanalytiikka",
-    "Innovointi",
-    "Strateginen suunnittelu"
-  ],
-  tools_tech: [
-    "Oppimisalustat",
-    "Oppimisanalytiikkatyökalut",
-    "AI-pohjaiset oppimistyökalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 5500,
-    range: [4500, 7500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Digitaalisen oppimisen kehittyminen lisää kysyntää EdTech-visionääreille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  entry_roles: ["Opetussuunnittelija", "EdTech-asiantuntija"],
-  career_progression: ["Opetusjohtaja", "CPO"],
-  typical_employers: ["EdTech-yritykset", "Oppilaitokset", "Koulutusyritykset"],
-  work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["edtech", "oppiminen", "pedagogiikka"],
   study_length_estimate_months: 72
 },
 {
@@ -36288,54 +36063,6 @@ export const careersData: CareerFI[] = [
   typical_employers: ["Energiayritykset", "Teknologiayritykset", "Tutkimuslaitokset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
   keywords: ["energia", "uusiutuva", "innovaatio"],
-  study_length_estimate_months: 72
-},
-{
-  id: "post-growth-taloustieteilija",
-  category: "visionaari",
-  title_fi: "Kasvunjälkeisen talouden asiantuntija",
-  title_en: "Post-Growth Economy Specialist",
-  short_description: "Kasvunjälkeisen talouden asiantuntija kehittää vaihtoehtoisia talousmalleja. Työ vaatii talousosaamista ja visionääristä ajattelua.",
-  main_tasks: [
-    "Vaihtoehtoisten talousmallien kehittäminen",
-    "Hyvinvointitalouden tutkimus",
-    "Post-growth -strategioiden kehittäminen",
-    "Taloudellisten mittarien uudistaminen",
-    "Yhteiskunnallisen vaikuttamisen"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Taloustieteen tai yhteiskuntatieteiden maisterin tutkinto",
-    "Ekologisen talouden opinnot",
-    "Hyvinvointitalouden osaaminen"
-  ],
-  core_skills: [
-    "Ekologinen taloustiede",
-    "Hyvinvointitalous",
-    "Talousmallisuunnittelu",
-    "Tutkimus",
-    "Vaikuttaminen"
-  ],
-  tools_tech: [
-    "Talousmallinnus työkalut",
-    "Hyvinvointimittarit",
-    "Tutkimustyökalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 4500,
-    range: [3700, 6000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Kasvunjälkeisen talouden kiinnostus lisää kysyntää asiantuntijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  entry_roles: ["Tutkija", "Talousasiantuntija"],
-  career_progression: ["Tutkimusjohtaja", "Strategiajohtaja"],
-  typical_employers: ["Tutkimuslaitokset", "Think tankit", "Järjestöt"],
-  work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["post-growth", "ekologinen talous", "hyvinvointi"],
   study_length_estimate_months: 72
 },
 {
@@ -36624,54 +36351,6 @@ export const careersData: CareerFI[] = [
   typical_employers: ["Järjestöt", "Osuuskunnat", "Tutkimuslaitokset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
   keywords: ["commons", "yhteisomistus", "yhteisötalous"],
-  study_length_estimate_months: 72
-},
-{
-  id: "interspecies-design-asiantuntija",
-  category: "visionaari",
-  title_fi: "Lajien välisen suunnittelun asiantuntija",
-  title_en: "Interspecies Design Specialist",
-  short_description: "Lajien välisen suunnittelun asiantuntija kehittää ihmisen ja muiden lajien yhteiselon ratkaisuja. Työ vaatii visionääristä ajattelua ja ekologista ymmärrystä.",
-  main_tasks: [
-    "Lajien välisten suunnitteluratkaisujen kehittäminen",
-    "Multispecies design -menetelmien soveltaminen",
-    "Ympäristösuunnittelun kehittäminen",
-    "Tutkimus ja kehitys",
-    "Konseptisuunnittelu"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Muotoilu tai ekologia",
-    "Multispecies design -osaaminen",
-    "Ekologisen suunnittelun opinnot"
-  ],
-  core_skills: [
-    "Multispecies design",
-    "Ekologinen suunnittelu",
-    "Muotoilu",
-    "Tutkimus",
-    "Innovointi"
-  ],
-  tools_tech: [
-    "Suunnittelutyökalut",
-    "Ekologisen mallinnuksen työkalut",
-    "Visualisointiohjelmistot"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 4000,
-    range: [3300, 5500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Ekologisen kriisin tunnistaminen lisää lajien välisen suunnittelun kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  entry_roles: ["Muotoilija", "Ympäristösuunnittelija"],
-  career_progression: ["Design Lead", "Kehitysjohtaja"],
-  typical_employers: ["Muotoilutoimistot", "Tutkimuslaitokset", "Järjestöt"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["interspecies design", "ekologia", "muotoilu"],
   study_length_estimate_months: 72
 },
 {
@@ -37011,54 +36690,6 @@ export const careersData: CareerFI[] = [
   study_length_estimate_months: 84
 },
 {
-  id: "distributed-ledger-visionaari",
-  category: "visionaari",
-  title_fi: "Hajautettujen tietokantojen visionääri",
-  title_en: "Distributed Ledger Visionary",
-  short_description: "Hajautettujen tietokantojen visionääri kehittää blockchain-pohjaisia ratkaisuja. Työ vaatii teknologiaosaamista ja visionääristä ajattelua.",
-  main_tasks: [
-    "DLT-sovellusten kehittäminen",
-    "Hajautettujen järjestelmien suunnittelu",
-    "Konsensusmekanismien innovointi",
-    "Strateginen suunnittelu",
-    "Ekosysteemien rakentaminen"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Tietotekniikan maisterin tutkinto",
-    "Blockchain-teknologian erikoistuminen",
-    "Hajautettujen järjestelmien osaaminen"
-  ],
-  core_skills: [
-    "Blockchain",
-    "Distributed ledger",
-    "Hajautetut järjestelmät",
-    "Kryptografia",
-    "Strateginen ajattelu"
-  ],
-  tools_tech: [
-    "Blockchain-alustat",
-    "Smart contract -työkalut",
-    "Konsensusalgoritmit"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C2" },
-  salary_eur_month: {
-    median: 6500,
-    range: [5500, 9000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Hajautettujen teknologioiden kehittyminen luo kysyntää visionääreille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  entry_roles: ["Blockchain-kehittäjä", "DLT-asiantuntija"],
-  career_progression: ["CTO", "Chief Architect"],
-  typical_employers: ["Blockchain-yritykset", "Fintech-yritykset", "Teknologiayritykset"],
-  work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["blockchain", "DLT", "hajautetut järjestelmät"],
-  study_length_estimate_months: 72
-},
-{
   id: "post-anthropocentric-suunnittelija",
   category: "visionaari",
   title_fi: "Jälkiantroposentrinen suunnittelija",
@@ -37296,54 +36927,6 @@ export const careersData: CareerFI[] = [
   typical_employers: ["Muotoilutoimistot", "Innovaatiokeskukset", "Konsulttiyritykset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
   keywords: ["experiential futures", "spekulatiivinen muotoilu", "tulevaisuus"],
-  study_length_estimate_months: 60
-},
-{
-  id: "solarpunk-visionaari",
-  category: "visionaari",
-  title_fi: "Solarpunk-visionääri",
-  title_en: "Solarpunk Visionary",
-  short_description: "Solarpunk-visionääri kehittää optimistisia ja kestäviä tulevaisuusvisioita. Työ vaatii luovuutta ja kestävyysosaamista.",
-  main_tasks: [
-    "Solarpunk-tulevaisuuskuvien kehittäminen",
-    "Optimististen skenaarioiden luominen",
-    "Kestävien teknologiaratkaisujen visiointi",
-    "Yhteisöllisten tulevaisuuksien suunnittelu",
-    "Kulttuurisen muutoksen inspirointi"
-  ],
-  education_paths: [
-    "Korkeakoulututkinto: Muotoilu, ympäristötieteet tai tulevaisuudentutkimus",
-    "Solarpunk-liikkeen ymmärrys",
-    "Kestävän kehityksen osaaminen"
-  ],
-  core_skills: [
-    "Solarpunk",
-    "Tulevaisuusvisiointi",
-    "Kestävyys",
-    "Yhteisöllisyys",
-    "Luovuus"
-  ],
-  tools_tech: [
-    "Visualisointityökalut",
-    "Muotoilutyökalut",
-    "Tarinankerronta-alustat"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 4000,
-    range: [3300, 5500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Tarve optimistisille tulevaisuuskuville lisää solarpunk-visionäärien kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-  entry_roles: ["Muotoilija", "Tulevaisuustutkija"],
-  career_progression: ["Creative Director", "Innovaatiojohtaja"],
-  typical_employers: ["Muotoilutoimistot", "Järjestöt", "Innovaatioyritykset"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["solarpunk", "optimistinen tulevaisuus", "kestävyys"],
   study_length_estimate_months: 60
 },
 {

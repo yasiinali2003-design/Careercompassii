@@ -129,10 +129,10 @@ export default function MethodologyPage() {
               <div className="bg-white/5 rounded-lg p-6">
                 <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-2">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-500 text-white text-sm">3</span>
-                  Vertailemme profiiliasi 760 ammattiin
+                  Vertailemme profiiliasi 752 ammattiin
                 </h3>
                 <p className="text-neutral-300 mb-4">
-                  Meillä on <strong className="text-white">760 suomalaista ammattia</strong> tietokannassa.
+                  Meillä on <strong className="text-white">752 suomalaista ammattia</strong> tietokannassa.
                   Jokaisella ammatilla on oma profiili, joka kuvaa:
                 </p>
                 <ul className="space-y-2 ml-6">
