@@ -163,3 +163,12 @@ export function useScrollGradient({
   return color;
 }
 
+
+
+
+
+
+
+
+
+

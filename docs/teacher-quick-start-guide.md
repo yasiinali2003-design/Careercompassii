@@ -161,3 +161,12 @@ V: Paina "Vie CSV" -nappia luokkahallinnassa.
 
 *Tämä opas päivittyy säännöllisesti. Viimeisin päivitys: 2025*
 
+
+
+
+
+
+
+
+
+

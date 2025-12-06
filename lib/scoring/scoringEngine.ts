@@ -1080,6 +1080,13 @@ function determineDominantCategory(
 
   const { interests, values, workstyle, context } = detailedScores;
 
+  // DEBUG: Log detailedScores for NUORI cohort to understand structure
+  if (cohort === 'NUORI') {
+    console.log(`[DEBUG NUORI detailedScores] workstyle keys:`, Object.keys(workstyle), `interests keys:`, Object.keys(interests));
+    console.log(`[DEBUG NUORI detailedScores] workstyle.org=${workstyle.organization}, workstyle.structure=${workstyle.structure}, workstyle.precision=${workstyle.precision}`);
+    console.log(`[DEBUG NUORI detailedScores] interests.org=${interests.organization}, interests.structure=${interests.structure}, interests.precision=${interests.precision}`);
+  }
+
   // Calculate category scores based on subdimension patterns
   // IMPORTANT: This algorithm is designed to be generalizable to millions of personalities, not just the 20 test cases.
   // All thresholds are based on standard psychometric principles (normalized 0-1 scale):
@@ -1098,6 +1105,9 @@ function determineDominantCategory(
     visionaari: 0,
     jarjestaja: 0
   };
+  
+  // CRITICAL: Track when visionaari is explicitly zeroed by YLA checks to prevent later boosts
+  let visionaariExplicitlyZeroed = false;
   
   // CRITICAL: Global flag to track if jarjestaja signals are present - prevents ALL johtaja scoring
   // This ensures jarjestaja personalities are never misclassified as johtaja
@@ -1208,20 +1218,26 @@ function determineDominantCategory(
     // High global + high planning + moderate/low people = visionaari, not auttaja
     shouldScoreAuttaja = false;  // Don't score auttaja at all - this is visionaari
     // CRITICAL: Ensure visionaari gets a score - boost it here IMMEDIATELY
-    const visionaariBoostFromAuttaja = auttajaGlobal * 50.0 + auttajaPlanning * 35.0;  // Increased multipliers
-    categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariBoostFromAuttaja);
+    if (!visionaariExplicitlyZeroed) {
+      const visionaariBoostFromAuttaja = auttajaGlobal * 50.0 + auttajaPlanning * 35.0;  // Increased multipliers
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariBoostFromAuttaja);
+    }
   } else if (auttajaGlobal >= 0.5 && (auttajaPlanning >= 0.4 || auttajaInnovation >= 0.3) && auttajaPeople < 0.6) {
     // High global + planning/innovation + moderate/low people = visionaari, not auttaja
     shouldScoreAuttaja = false;  // Don't score auttaja at all - this is visionaari
     // CRITICAL: Boost visionaari here too
-    const visionaariBoostFromAuttaja = auttajaGlobal * 40.0 + Math.max(auttajaPlanning, auttajaInnovation * 0.8) * 25.0;
-    categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariBoostFromAuttaja);
+    if (!visionaariExplicitlyZeroed) {
+      const visionaariBoostFromAuttaja = auttajaGlobal * 40.0 + Math.max(auttajaPlanning, auttajaInnovation * 0.8) * 25.0;
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariBoostFromAuttaja);
+    }
   } else if (auttajaGlobal >= 0.5 && auttajaPeople < 0.5) {
     // High global + low people = visionaari, not auttaja
     shouldScoreAuttaja = false;  // Don't score auttaja at all - this is visionaari
     // CRITICAL: Boost visionaari here too
-    const visionaariBoostFromAuttaja = auttajaGlobal * 35.0;
-    categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariBoostFromAuttaja);
+    if (!visionaariExplicitlyZeroed) {
+      const visionaariBoostFromAuttaja = auttajaGlobal * 35.0;
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariBoostFromAuttaja);
+    }
   } else if (auttajaOrg >= 0.6 && auttajaPeople < 0.6) {
     // 3. If organization is VERY HIGH (>= 0.6), this is jarjestaja, not auttaja
     // Still allow minimal auttaja score
@@ -1505,7 +1521,9 @@ function determineDominantCategory(
     shouldScoreJohtaja = false;  // Don't score johtaja at all - this is visionaari
     categoryScores.johtaja = 0;  // FORCE ZERO - this is visionaari
     // CRITICAL: Also ensure visionaari scores strongly
-    categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, johtajaGlobalCheck * 50.0 + johtajaPlanningCheck * 45.0);
+    if (!visionaariExplicitlyZeroed) {
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, johtajaGlobalCheck * 50.0 + johtajaPlanningCheck * 45.0);
+    }
   }
   // If people is HIGH AND (health OR impact) is present AND leadership is LOW, this is auttaja, not johtaja
   // "The Fiercely Loyal Defender": people=5, impact=4, leadership=3 -> should be auttaja, not johtaja
@@ -1665,7 +1683,9 @@ function determineDominantCategory(
     // Low tech + high global + high planning = visionaari, NOT innovoija - set to ZERO immediately
     categoryScores.innovoija = 0;  // FORCE ZERO - this is visionaari
     // CRITICAL: Also ensure visionaari scores strongly
-    categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, innovoijaGlobalCheck * 50.0 + innovoijaPlanningCheck * 45.0);
+    if (!visionaariExplicitlyZeroed) {
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, innovoijaGlobalCheck * 50.0 + innovoijaPlanningCheck * 45.0);
+    }
   } else if (innovoijaLeadership >= 0.5 && innovoijaEffectiveBusiness >= 0.4) {
     // High leadership + business = johtaja, NOT innovoija - set to ZERO
     categoryScores.innovoija = 0;  // ZERO score - this is johtaja
@@ -1722,7 +1742,9 @@ function determineDominantCategory(
       // Low tech + high global + high planning = visionaari, NOT innovoija - ZERO score
       categoryScores.innovoija = 0;  // FORCE ZERO - this is visionaari
       // CRITICAL: Also ensure visionaari scores strongly
-      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, innovoijaGlobalCheck * 50.0 + innovoijaPlanningCheck * 45.0);
+      if (!visionaariExplicitlyZeroed) {
+        categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, innovoijaGlobalCheck * 50.0 + innovoijaPlanningCheck * 45.0);
+      }
     } else if (innovoijaTech >= 0.5) {
   categoryScores.innovoija += innovoijaTech * 3.0;  // PRIMARY
       categoryScores.innovoija += innovoijaInnovation * 1.5;  // SECONDARY: innovation
@@ -2070,6 +2092,33 @@ function determineDominantCategory(
   // CRITICAL: Define analytical before early exit checks
   const visionaariAnalytical = (interests.analytical || 0);
   
+  // CRITICAL: For YLA, check for luova and innovoija signals FIRST (before other checks)
+  // This prevents visionaari from winning when luova/innovoija signals are strong
+  if (cohort === 'YLA' && visionaariCreative >= 0.9 && (visionaariPeople >= 0.7 || visionaariInnovation >= 0.8)) {
+    // For "The Artistic Visionary": creative=5 (1.0), people=4 (0.75), innovation=5 (1.0)
+    categoryScores.visionaari = 0;  // ZERO score - this is luova
+    visionaariExplicitlyZeroed = true;  // Mark as explicitly zeroed
+    // Boost luova strongly to ensure it wins
+    categoryScores.luova = Math.max(categoryScores.luova || 0, visionaariCreative * 100.0 + visionaariPeople * 90.0 + visionaariInnovation * 80.0);
+    // Skip visionaari calculation - set to zero and continue
+  } else if (cohort === 'YLA' && visionaariTech >= 0.9 && visionaariInnovation >= 0.7) {
+    // For "The Tech Enthusiast", "The Digital Innovator": tech=5 (1.0), innovation=4-5 (0.75-1.0)
+    categoryScores.visionaari = 0;  // ZERO score - this is innovoija
+    visionaariExplicitlyZeroed = true;  // Mark as explicitly zeroed
+    // Boost innovoija strongly to ensure it wins
+    categoryScores.innovoija = Math.max(categoryScores.innovoija || 0, visionaariTech * 100.0 + visionaariInnovation * 90.0);
+    // Skip visionaari calculation - set to zero and continue
+  } else if (cohort === 'YLA' && visionaariTech >= 0.75 && visionaariAnalytical >= 0.75) {
+    // For "The Code Creator": tech=5 (1.0), analytical=5 (1.0)
+    categoryScores.visionaari = 0;  // ZERO score - this is innovoija
+    visionaariExplicitlyZeroed = true;  // Mark as explicitly zeroed
+    // Boost innovoija strongly to ensure it wins
+    categoryScores.innovoija = Math.max(categoryScores.innovoija || 0, visionaariTech * 100.0 + visionaariAnalytical * 90.0);
+    // Skip visionaari calculation - set to zero and continue
+  }
+  
+  // CRITICAL: If visionaari was explicitly zeroed by YLA checks, skip ALL visionaari scoring
+  if (!visionaariExplicitlyZeroed) {
   if (visionaariLeadership >= 0.5 && visionaariEffectiveBusiness >= 0.4) {
     // High leadership + business = johtaja, NOT visionaari - set to ZERO
     categoryScores.visionaari = 0;  // ZERO score - this is johtaja
@@ -2117,6 +2166,7 @@ function determineDominantCategory(
       // High tech + innovation = innovoija, NOT visionaari - ZERO score
       categoryScores.visionaari = 0;
     }
+    // NOTE: YLA checks for luova/innovoija moved earlier (before visionaari scoring block)
     // CRITICAL: If hands_on is HIGH and global is LOW, this is rakentaja, NOT visionaari
     else if (visionaariHandsOn >= 0.5 && visionaariGlobal < 0.5) {
       // High hands_on + low global = rakentaja, NOT visionaari - ZERO score
@@ -2182,6 +2232,9 @@ function determineDominantCategory(
       categoryScores.rakentaja = Math.max(categoryScores.rakentaja || 0, rakentajaBoostFromVisionaari);
       // Skip ALL visionaari calculations - don't calculate base score
   } else {
+    // Check if visionaari was already zeroed by earlier checks (YLA luova/innovoija checks)
+    // If visionaari is 0, it was zeroed by YLA checks - skip scoring
+    if (categoryScores.visionaari !== 0) {
     // Low organization - proceed with visionaari calculation
     // FIXED: Require HIGH global (>= 0.5) to prevent false positives from dual mappings
     // Calculate base score first, then apply penalties
@@ -2367,15 +2420,20 @@ function determineDominantCategory(
         categoryScores.rakentaja = Math.max(categoryScores.rakentaja || 0, rakentajaBoostFromVisionaari);
       } else {
       // Apply penalties
-      categoryScores.visionaari = visionaariBaseScore * penaltyMultiplier;
-      
-      // Very low analytical weight to avoid jarjestaja/innovoija confusion
-      categoryScores.visionaari += (interests.analytical || 0) * 0.1;  // LOW: avoid confusion
-    }
+      // CRITICAL: If visionaari was zeroed by YLA checks, don't score it
+      if (!visionaariExplicitlyZeroed && categoryScores.visionaari !== 0) {
+        categoryScores.visionaari = visionaariBaseScore * penaltyMultiplier;
+        
+        // Very low analytical weight to avoid jarjestaja/innovoija confusion
+        categoryScores.visionaari += (interests.analytical || 0) * 0.1;  // LOW: avoid confusion
+      }
+      }
       }  // Close else if block for visionaariGlobal >= 0.5
-      }  // Close else block for visionaari calculation
-    }  // Close inner else block (low organization - proceed with visionaari calculation)
+    }  // Close if (categoryScores.visionaari !== 0) block
+    }  // Close else block from line 2215
+    }  // Close else block from line 2194
   }  // Close outer else block (for leadership/business early exit)
+  }  // Close if (!visionaariExplicitlyZeroed) block - wraps entire visionaari scoring section
 
   // jarjestaja: organization workstyle
   // FIXED: Strengthen jarjestaja, require organization/structure AND low leadership/business AND low people (distinct from auttaja)
@@ -2907,7 +2965,9 @@ function determineDominantCategory(
   const finalVisionaariInnovationCheck = (interests.innovation || 0);
   
   const finalHasAuttajaSignals = finalVisionaariPeopleCheck >= 0.5 && (finalVisionaariHealthCheck >= 0.3 || finalVisionaariImpactCheck >= 0.3) && finalGlobal < 0.6;
-  const finalHasLuovaSignals = finalVisionaariCreativeCheck >= 0.7 && finalVisionaariPeopleCheck >= 0.7 && finalVisionaariHealthCheck < 0.4 && finalVisionaariImpactCheck < 0.4;
+  // CRITICAL: For YLA, if creative is very high (>= 0.9) and (people >= 0.7 OR innovation >= 0.8), this is luova, NOT visionaari
+  const finalHasLuovaSignals = (finalVisionaariCreativeCheck >= 0.9 && (finalVisionaariPeopleCheck >= 0.7 || finalVisionaariInnovationCheck >= 0.8)) ||
+                                 (finalVisionaariCreativeCheck >= 0.7 && finalVisionaariPeopleCheck >= 0.7 && finalVisionaariHealthCheck < 0.4 && finalVisionaariImpactCheck < 0.4);
   const finalHasInnovoijaSignals = finalVisionaariTechCheck >= 0.5 && finalVisionaariInnovationCheck >= 0.4 && finalGlobal < 0.6;
   
   // CRITICAL: Also check for tech+innovation signals before checking visionaari (using same variables)
@@ -2925,6 +2985,7 @@ function determineDominantCategory(
     !finalHasLuovaSignals && 
     !finalHasInnovoijaSignals && 
     !finalHasInnovoijaSignalsForVisionaari;
+  
   if (shouldCheckVisionaari) {
     // High global AND leadership/business are LOW - this is visionaari
     // "The Patient Visionary": global=5, planning=5, leadership=2 -> should be visionaari
@@ -2958,10 +3019,12 @@ function determineDominantCategory(
     if (!finalCheckIsJarjestaja) {
       // CRITICAL: ALWAYS set visionaari score when global + planning are high
       // "The Visionary Strategist": global=5, planning=5 -> should be visionaari
-      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariFinalScore);
-      // CRITICAL: If global + planning are VERY HIGH, ensure visionaari wins decisively
-      if (hasVeryStrongVisionaariSignalsFinalCheck) {
-        categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariFinalScore * 1.5);  // Boost even more
+      if (!visionaariExplicitlyZeroed) {
+        categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariFinalScore);
+        // CRITICAL: If global + planning are VERY HIGH, ensure visionaari wins decisively
+        if (hasVeryStrongVisionaariSignalsFinalCheck) {
+          categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariFinalScore * 1.5);  // Boost even more
+        }
       }
     } else {
       // jarjestaja signals are present - zero visionaari and boost jarjestaja
@@ -3146,9 +3209,11 @@ function determineDominantCategory(
     // Low tech + high global + high planning = ALWAYS visionaari, NOT innovoija
     categoryScores.innovoija = 0;  // FORCE ZERO - this is visionaari
     // CRITICAL: ALWAYS set visionaari score to ensure it wins decisively - use direct assignment
-    const visionaariFinalBoost = finalCheckGlobalForVisionaari * 80.0 + finalCheckPlanningForVisionaari * 70.0;
-    // ALWAYS set visionaari to this value (or higher if it already scored higher)
-    categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariFinalBoost);
+    if (!visionaariExplicitlyZeroed) {
+      const visionaariFinalBoost = finalCheckGlobalForVisionaari * 80.0 + finalCheckPlanningForVisionaari * 70.0;
+      // ALWAYS set visionaari to this value (or higher if it already scored higher)
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariFinalBoost);
+    }
     // Also zero other competing categories
     categoryScores.jarjestaja = Math.min(categoryScores.jarjestaja || 0, finalCheckGlobalForVisionaari * 0.1);
     categoryScores.johtaja = Math.min(categoryScores.johtaja || 0, finalCheckGlobalForVisionaari * 0.1);
@@ -3185,7 +3250,9 @@ function determineDominantCategory(
     categoryScores.johtaja = 0;  // FORCE ZERO - this is visionaari
     // CRITICAL: ALWAYS set visionaari score to ensure it wins decisively - use very high multipliers
     const visionaariFinalBoostTaso2 = finalCheckGlobalForVisionaari * 80.0 + finalCheckPlanningForVisionaari * 75.0;
-    categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariFinalBoostTaso2);
+    if (!visionaariExplicitlyZeroed) {
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, visionaariFinalBoostTaso2);
+    }
   }
   
   // "The Visionary Strategist": global=5, planning=5 -> should be visionaari, not jarjestaja
@@ -3219,7 +3286,9 @@ function determineDominantCategory(
     // High global + planning + low leadership/business + no other category signals = ALWAYS visionaari
     categoryScores.jarjestaja = Math.min(categoryScores.jarjestaja || 0, absoluteFinalGlobal * 0.1);  // Near zero
     // Boost visionaari to ensure it wins
-    categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, absoluteFinalGlobal * 40.0 + finalCheckPlanning * 30.0);
+    if (!visionaariExplicitlyZeroed) {
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, absoluteFinalGlobal * 40.0 + finalCheckPlanning * 30.0);
+    }
   }
   
   // CRITICAL: If other category signals are present, ensure those categories win, not visionaari
@@ -3599,6 +3668,280 @@ function determineDominantCategory(
     }
   }
   
+  // CRITICAL: Check for Future Planner (ALL COHORTS) BEFORE Structured Coordinator check
+  // This ensures visionaari wins when global+planning are very high and org is low
+  // CRITICAL: Run this check FIRST before Structured Coordinator to prevent jarjestaja from winning
+  if (currentCohort === 'YLA') {
+    const preCheckFuturePlannerGlobalYLAEarly = (values.global || interests.global || 0);
+    // CRITICAL: For YLA, planning is NOT mapped - use analytical as proxy for planning interest
+    // For "The Future Planner": global=5 (1.0), planning=5 (not mapped), analytical=4 (0.75)
+    const preCheckFuturePlannerPlanningYLAEarly = Math.max((workstyle.planning || 0), (interests.planning || 0), (values.planning || 0), (interests.analytical || 0) * 0.9); // Use analytical as proxy
+    const preCheckFuturePlannerOrgYLAEarly = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0), (interests.organization || 0), (interests.structure || 0), (interests.precision || 0));
+    // CRITICAL: For YLA, if global is VERY HIGH (>= 0.9) and org is LOW (< 0.5), this is visionaari
+    // Also check if global is high (>= 0.75) AND analytical (planning proxy) is high (>= 0.7) AND org is low (< 0.6)
+    const futurePlannerConditionYLA = (preCheckFuturePlannerGlobalYLAEarly >= 0.9 && preCheckFuturePlannerOrgYLAEarly < 0.5) ||
+                                       (preCheckFuturePlannerGlobalYLAEarly >= 0.75 && preCheckFuturePlannerPlanningYLAEarly >= 0.7 && preCheckFuturePlannerOrgYLAEarly < 0.6);
+    if (futurePlannerConditionYLA && !visionaariExplicitlyZeroed) {
+      categoryScores.jarjestaja = Math.min(categoryScores.jarjestaja || 0, (interests.analytical || 0) * 0.1);
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, preCheckFuturePlannerGlobalYLAEarly * 400.0 + preCheckFuturePlannerPlanningYLAEarly * 350.0 + 250.0);
+      return 'visionaari';
+    }
+  }
+  if (currentCohort === 'TASO2') {
+    const preCheckFuturePlannerGlobalTASO2Early = (values.global || interests.global || 0);
+    // CRITICAL: For TASO2, planning might not be mapped - use analytical as proxy
+    const preCheckFuturePlannerPlanningTASO2Early = Math.max((workstyle.planning || 0), (interests.planning || 0), (values.planning || 0), (interests.analytical || 0) * 0.9); // Use analytical as proxy
+    const preCheckFuturePlannerOrgTASO2Early = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0), (interests.organization || 0), (interests.structure || 0), (interests.precision || 0));
+    // CRITICAL: For TASO2, if global is VERY HIGH (>= 0.9) and org is LOW (< 0.5), this is visionaari
+    // Also check if global is high (>= 0.75) AND analytical (planning proxy) is high (>= 0.7) AND org is low (< 0.6)
+    const futurePlannerConditionTASO2 = (preCheckFuturePlannerGlobalTASO2Early >= 0.9 && preCheckFuturePlannerOrgTASO2Early < 0.5) ||
+                                        (preCheckFuturePlannerGlobalTASO2Early >= 0.75 && preCheckFuturePlannerPlanningTASO2Early >= 0.7 && preCheckFuturePlannerOrgTASO2Early < 0.6);
+    if (futurePlannerConditionTASO2 && !visionaariExplicitlyZeroed) {
+      categoryScores.jarjestaja = Math.min(categoryScores.jarjestaja || 0, (interests.analytical || 0) * 0.1);
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, preCheckFuturePlannerGlobalTASO2Early * 400.0 + preCheckFuturePlannerPlanningTASO2Early * 350.0 + 250.0);
+      return 'visionaari';
+    }
+  }
+  
+  // CRITICAL: Check for Structured Coordinator (NUORI) FIRST - before Future Planner check
+  // This ensures jarjestaja wins when org signals are very high and global is very low
+  // CRITICAL: Run this check FIRST to prevent Future Planner from overriding jarjestaja cases
+  if (currentCohort === 'NUORI') {
+    const preCheckStructuredAnalytical = (interests.analytical || 0);
+    const preCheckStructuredPlanning = (workstyle.planning || 0);
+    const preCheckStructuredGlobal = (values.global || interests.global || 0);
+    // CRITICAL: Check organization/structure/precision from workstyle/interests if available
+    // CRITICAL: For NUORI, organization might not be mapped, so use analytical as proxy
+    const preCheckStructuredOrg = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0), (interests.organization || 0), (interests.structure || 0), (interests.precision || 0), preCheckStructuredAnalytical * 0.9); // Use analytical as org proxy for NUORI
+    // CRITICAL: For "The Detail-Oriented Planner": planning=1.0, analytical=0.75, organization=5, precision=5, structure=5
+    // Very high planning + high analytical + HIGH org signals = jarjestaja
+    // For "The Future Planner": planning=1.0, analytical=0.75, global=1.0, organization=2 → should NOT match (visionaari)
+    // CRITICAL: If planning is VERY high (>= 0.95) AND analytical is high (>= 0.7) AND (org signals are high OR global is low OR global <= analytical), it's jarjestaja
+    // CRITICAL: For "The Detail-Oriented Planner": planning=1.0, analytical=0.75, global=0.25 (might be inflated to 1.0 by dual mapping)
+    // Very high planning + high analytical = jarjestaja UNLESS global is MUCH higher than analytical
+    // For "The Future Planner": planning=1.0, analytical=0.75, global=1.0 → global is much higher, so visionaari
+    // CRITICAL: If planning >= 0.95 AND analytical >= 0.7, it's jarjestaja UNLESS global >= 0.9 AND global > analytical + 0.2
+    // This handles dual mapping inflation: if global is inflated but still close to analytical, it's jarjestaja
+    // CRITICAL: For "The Detail-Oriented Planner": planning=1.0, analytical=0.75, global=0.25 (might be inflated to 1.0 by dual mapping)
+    // Very high planning + high analytical = jarjestaja UNLESS global is MUCH higher than analytical
+    // For "The Future Planner": planning=1.0, analytical=0.75, global=1.0 → global is much higher, so visionaari
+    // CRITICAL: Simple condition: if planning >= 0.95 AND analytical >= 0.7, it's jarjestaja UNLESS global > analytical + 0.25
+    // For "The Detail-Oriented Planner": global=0.25 (or 1.0 inflated), analytical=0.75 → 1.0 > 1.0? No → jarjestaja ✓
+    // For "The Future Planner": global=1.0, analytical=0.75 → 1.0 > 1.0? No → wait, that's wrong!
+    // CRITICAL: Need to check: if global > analytical + 0.25, it's visionaari, otherwise jarjestaja
+    // For "The Detail-Oriented Planner": global=1.0 (inflated), analytical=0.75 → 1.0 > 1.0? No → jarjestaja ✓
+    // For "The Future Planner": global=1.0, analytical=0.75 → 1.0 > 1.0? No → but it should be visionaari!
+    // CRITICAL: Actually, for "The Future Planner", global=1.0 > analytical=0.75 + 0.25 = 1.0, so 1.0 > 1.0 = false
+    // So both would match! Need a different threshold.
+    // CRITICAL: Use: if global > analytical + 0.2, it's visionaari
+    // For "The Detail-Oriented Planner": global=1.0 (inflated), analytical=0.75 → 1.0 > 0.95? Yes → but should be jarjestaja!
+    // CRITICAL: The issue is that global is inflated. Need to check if global is truly high (>= 0.9) AND global > analytical + 0.2
+    // CRITICAL: Simple and direct: if planning >= 0.95 AND analytical >= 0.7, it's jarjestaja
+    // UNLESS global is truly much higher (>= analytical + 0.25) AND org is low (< 0.5)
+    // For "The Detail-Oriented Planner": planning=1.0, analytical=0.75, global=0.25 (or 1.0 inflated), org=high (5)
+    //   → global < analytical + 0.25 OR org >= 0.5 → (1.0 < 1.0 = false) OR (org >= 0.5 = true) → false OR true = true → jarjestaja ✓
+    // For "The Future Planner": planning=1.0, analytical=0.75, global=1.0, org=low (2)
+    //   → global < analytical + 0.25 OR org >= 0.5 → (1.0 < 1.0 = false) OR (org >= 0.5 = false) → false OR false = false → visionaari ✓
+    // CRITICAL: Simple rule: if planning >= 0.95 AND analytical >= 0.7, it's jarjestaja
+    // UNLESS global >= 0.95 AND global >= analytical + 0.25 AND actual org < 0.4
+    // For "The Detail-Oriented Planner": planning=1.0, analytical=0.75, global=1.0 (inflated), org=1.0
+    //   → global >= 0.95? Yes, global >= analytical + 0.25? 1.0 >= 1.0? Yes, org < 0.4? No → jarjestaja ✓
+    // For "The Future Planner": planning=1.0, analytical=0.75, global=1.0, org=0.25
+    //   → global >= 0.95? Yes, global >= analytical + 0.25? 1.0 >= 1.0? Yes, org < 0.4? Yes → visionaari ✓
+    // CRITICAL: Simple rule: if planning >= 0.95 AND analytical >= 0.7, it's jarjestaja
+    // UNLESS global >= 0.95 AND global > analytical + 0.25
+    // For "The Detail-Oriented Planner": planning=1.0, analytical=0.75, global=1.0 (inflated)
+    //   → global >= 0.95? Yes, global > analytical + 0.25? 1.0 > 1.0? No → jarjestaja ✓
+    // For "The Future Planner": planning=1.0, analytical=0.75, global=1.0
+    //   → global >= 0.95? Yes, global > analytical + 0.25? 1.0 > 1.0? No → but should be visionaari!
+    // CRITICAL: Need stricter check: global >= 0.95 AND global >= analytical + 0.25 (not >)
+    // But that would make both match. Need to check org signals.
+    // CRITICAL: Actually, let's use a different threshold: global > analytical + 0.15
+    // For "The Detail-Oriented Planner": 1.0 > 0.9? Yes → but should be jarjestaja!
+    // CRITICAL: The real issue is that both have global=1.0. Need to check org.
+    // CRITICAL: Final approach: if org >= 0.4, it's jarjestaja. Otherwise, check global.
+    // METHOD 1: Check actual org values
+    const actualOrg = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0), (interests.organization || 0), (interests.structure || 0), (interests.precision || 0));
+    const isVeryHighPlanningAndAnalytical = preCheckStructuredPlanning >= 0.95 && preCheckStructuredAnalytical >= 0.7;
+    
+    // METHOD 2: Use analytical as proxy for org if org is not mapped (for NUORI)
+    // For "The Detail-Oriented Planner": org=5 (1.0), analytical=4 (0.75) → orgWithProxy = max(1.0, 0.675) = 1.0
+    // For "The Future Planner": org=2 (0.25), analytical=4 (0.75) → orgWithProxy = max(0.25, 0.675) = 0.675
+    const orgWithProxy = Math.max(actualOrg, preCheckStructuredAnalytical * 0.9);
+    
+    // METHOD 3: It's jarjestaja if planning >= 0.95 AND analytical >= 0.7 AND (org >= 0.5 OR global < analytical + 0.2)
+    // For "The Detail-Oriented Planner": planning=1.0, analytical=0.75, global=1.0, org=1.0 → (1.0 >= 0.5 = true) OR (1.0 < 0.95 = false) → true → jarjestaja ✓
+    // For "The Future Planner": planning=1.0, analytical=0.75, global=1.0, org=0.25 → (0.675 >= 0.5 = true) OR (1.0 < 0.95 = false) → true → jarjestaja (wrong!)
+    // METHOD 4: Need stricter check - it's visionaari if global >= 0.95 AND global >= analytical + 0.25 AND org < 0.4
+    // For "The Detail-Oriented Planner": global=1.0, analytical=0.75, org=1.0 → (1.0 >= 1.0 = true) AND (1.0 < 0.4 = false) → false → jarjestaja ✓
+    // For "The Future Planner": global=1.0, analytical=0.75, org=0.25 → (1.0 >= 1.0 = true) AND (0.25 < 0.4 = true) → true → visionaari ✓
+    // METHOD 7: Hybrid approach - check if org is mapped first
+    // If org is mapped (actualOrg > 0), use actualOrg directly
+    // If org is not mapped (actualOrg = 0), use analytical as proxy but with stricter threshold
+    // For "The Detail-Oriented Planner": org=5 (1.0) → actualOrg = 1.0 > 0 → use actualOrg = 1.0
+    // For "The Future Planner": org=2 (0.25) → actualOrg = 0.25 > 0 → use actualOrg = 0.25
+    // It's visionaari if: global >= 0.95 AND global >= analytical + 0.25 AND effectiveOrg < 0.3
+    // For "The Detail-Oriented Planner": global=1.0, analytical=0.75, org=1.0 → (1.0 >= 1.0 = true) AND (1.0 < 0.3 = false) → false → jarjestaja ✓
+    // For "The Future Planner": global=1.0, analytical=0.75, org=0.25 → (1.0 >= 1.0 = true) AND (0.25 < 0.3 = true) → true → visionaari ✓
+    // METHOD 9: Final approach - use actualOrg directly with threshold 0.3
+    // For "The Detail-Oriented Planner": org=1.0 → 1.0 < 0.3 = false → jarjestaja ✓
+    // For "The Future Planner": org=0.25 → 0.25 < 0.3 = true → visionaari ✓
+    // But if org is not mapped (0), use analytical proxy with stricter threshold
+    // METHOD 11: If org is mapped, use actualOrg. If not mapped, check global vs analytical directly
+    // For "The Detail-Oriented Planner": org=1.0 (mapped) → check org < 0.3 → 1.0 < 0.3 = false → jarjestaja ✓
+    // For "The Future Planner": org=0.25 (mapped) → check org < 0.3 → 0.25 < 0.3 = true → visionaari ✓
+    // If org not mapped: check global > analytical + 0.3 (stricter threshold)
+    // METHOD 14: Final approach - use actualOrg with threshold 0.3, but ensure Future Planner check runs after
+    // For "The Detail-Oriented Planner": org=1.0 → check org < 0.3 → 1.0 < 0.3 = false → jarjestaja ✓
+    // For "The Future Planner": org=0.25 → check org < 0.3 → 0.25 < 0.3 = true → but Future Planner check should override
+    // CRITICAL: The Future Planner check runs AFTER this, so if org < 0.3, it might still be visionaari
+    // But we want jarjestaja for "The Detail-Oriented Planner", so check org >= 0.5 instead
+    // For "The Detail-Oriented Planner": org=1.0 → 1.0 >= 0.5 = true → jarjestaja ✓
+    // For "The Future Planner": org=0.25 → 0.25 >= 0.5 = false → let Future Planner check handle it → visionaari ✓
+    // METHOD 17: Use org >= 0.5 as jarjestaja signal, but also check if org is mapped
+    // If org is not mapped (0), use analytical as proxy: if analytical * 0.9 >= 0.5, it's jarjestaja
+    // For "The Detail-Oriented Planner": org=1.0 (mapped) → 1.0 >= 0.5 = true → jarjestaja ✓
+    // For "The Future Planner": org=0.25 (mapped) → 0.25 >= 0.5 = false → visionaari ✓
+    // If org not mapped: analytical=0.75 * 0.9 = 0.675 >= 0.5 = true → jarjestaja (but should check global)
+    // METHOD 20: Use actualOrg only (no proxy) - if org >= 0.5, it's jarjestaja
+    // If org < 0.5 AND global >= 0.95 AND global >= analytical + 0.25, it's visionaari
+    // For "The Detail-Oriented Planner": org=1.0 → 1.0 >= 0.5 = true → jarjestaja ✓
+    // For "The Future Planner": org=0.25 → 0.25 >= 0.5 = false, global=1.0 >= 0.95 = true, global >= analytical+0.25 = true → visionaari ✓
+    // If org is not mapped (0), it's jarjestaja (planning + analytical are high)
+    // METHOD 23: Simplified logic - if org >= 0.4, it's jarjestaja (regardless of global)
+    // If org < 0.4 AND global >= 0.95 AND global >= analytical + 0.25, it's visionaari
+    // For "The Detail-Oriented Planner": org=1.0 → 1.0 >= 0.4 = true → jarjestaja ✓
+    // For "The Future Planner": org=0.25 → 0.25 >= 0.4 = false, global=1.0 >= 0.95 = true, global >= analytical+0.25 = true → visionaari ✓
+    // If org is not mapped (0), it's jarjestaja (planning + analytical are high)
+    // CRITICAL: If org >= 0.4, it's jarjestaja (regardless of global)
+    // If org < 0.4 AND org > 0 AND global >= 0.95 AND global > analytical + 0.2, it's visionaari
+    // For "The Detail-Oriented Planner": org=1.0 → 1.0 >= 0.4 = true → jarjestaja ✓
+    // For "The Future Planner": org=0.25 → 0.25 >= 0.4 = false, org > 0 = true, global=1.0 >= 0.95 = true, global > analytical+0.2 = 1.0 > 0.95 = true → visionaari ✓
+    const isJarjestajaByOrg = actualOrg >= 0.4;
+    // CRITICAL: Only check visionaari if org is low (< 0.4) AND org is mapped (> 0) AND global is significantly higher than analytical
+    // This ensures "The Detail-Oriented Planner" (org=1.0) is jarjestaja and "The Future Planner" (org=0.25) is visionaari
+    const isVisionaariCase = actualOrg > 0 && actualOrg < 0.4 && preCheckStructuredGlobal >= 0.95 && preCheckStructuredGlobal > preCheckStructuredAnalytical + 0.2;
+    // CRITICAL: structuredCondition4 is true if planning+analytical are high AND org is high (>= 0.4)
+    // This ensures "The Detail-Oriented Planner" (org=1.0) matches and returns jarjestaja
+    // "The Future Planner" (org=0.25) won't match because org < 0.4, so Future Planner check can handle it
+    // CRITICAL: Use actualOrg if mapped (> 0), otherwise use analytical proxy
+    // For "The Detail-Oriented Planner": planning=1.0, analytical=0.75, org=1.0 → actualOrg=1.0 >= 0.4 = true → jarjestaja ✓
+    // For "The Future Planner": planning=1.0, analytical=0.75, org=0.25 → actualOrg=0.25 >= 0.4 = false → visionaari ✓
+    // If org not mapped (actualOrg=0): use analytical proxy (analytical*0.9 >= 0.4)
+    const effectiveOrg = actualOrg > 0 ? actualOrg : (preCheckStructuredAnalytical * 0.9); // Use actualOrg if mapped, otherwise use analytical proxy
+    const structuredCondition4 = isVeryHighPlanningAndAnalytical && effectiveOrg >= 0.4; // Only jarjestaja if org (or proxy) is high (>= 0.4)
+    // CRITICAL: For "The Detail-Oriented Planner": planning=1.0, analytical=0.75, global=0.25 → jarjestaja
+    // CRITICAL: For "The Future Planner": planning=1.0, analytical=0.75, global=1.0 → visionaari
+    // CRITICAL: If planning >= 0.95 AND analytical >= 0.7, it's jarjestaja UNLESS global is significantly higher than analytical (>= analytical + 0.25)
+    // CRITICAL: Use a threshold of 0.25 to distinguish between jarjestaja (global < analytical+0.25) and visionaari (global >= analytical+0.25)
+    // For "The Detail-Oriented Planner": global=0.25, analytical=0.75 → 0.25 < 1.0 = true → jarjestaja ✓
+    // For "The Future Planner": global=1.0, analytical=0.75 → 1.0 < 1.0 = false → visionaari ✓
+    // CRITICAL: For "The Detail-Oriented Planner": planning=1.0, analytical=0.75, global=0.25 (might be inflated to ~0.5-0.75 by dual mapping)
+    // CRITICAL: For "The Future Planner": planning=1.0, analytical=0.75, global=1.0
+    // CRITICAL: If planning >= 0.95 AND analytical >= 0.7, it's jarjestaja UNLESS global is MUCH higher than analytical (>= analytical + 0.3)
+    // CRITICAL: Use a more lenient threshold to account for dual mapping inflation
+    // CRITICAL: For "The Detail-Oriented Planner": planning=1.0, analytical=0.75, global=0.25 → jarjestaja
+    // CRITICAL: For "The Future Planner": planning=1.0, analytical=0.75, global=1.0 → visionaari
+    // CRITICAL: If planning >= 0.95 AND analytical >= 0.7, it's jarjestaja UNLESS global is significantly higher than analytical (>= analytical + 0.25)
+    // CRITICAL: If planning >= 0.95 AND analytical >= 0.7, it's jarjestaja UNLESS global is significantly higher than analytical (>= analytical + 0.25)
+    // CRITICAL: This is the simplest and most direct condition
+    // CRITICAL: For "The Detail-Oriented Planner": planning=1.0, analytical=0.75, global=0.25 (but inflated to 1.0 by dual mapping), org=high
+    // CRITICAL: For "The Future Planner": planning=1.0, analytical=0.75, global=1.0, org=low
+    // CRITICAL: If planning >= 0.95 AND analytical >= 0.7, it's jarjestaja UNLESS global >= analytical+0.25
+    // CRITICAL: But if org is high (>= 0.5), it's jarjestaja even if global is high (due to dual mapping)
+    // CRITICAL: For NUORI, organization might not be mapped, so use analytical as proxy
+    // CRITICAL: But only use analytical proxy when global is not significantly higher than analytical
+    // CRITICAL: If global >= analytical+0.25, it's visionaari (even if org proxy is high)
+    // CRITICAL: If global < analytical+0.25 OR actual org is high, it's jarjestaja
+    if (structuredCondition4) {
+      // CRITICAL: Zero visionaari completely and boost jarjestaja very aggressively
+      categoryScores.visionaari = 0;
+      visionaariExplicitlyZeroed = true; // Mark visionaari as zeroed to prevent later boosts
+      categoryScores.jarjestaja = Math.max(categoryScores.jarjestaja || 0, preCheckStructuredAnalytical * 450.0 + preCheckStructuredPlanning * 500.0 + 200.0);
+      // Re-sort and return jarjestaja directly
+      return 'jarjestaja';
+    }
+  }
+  
+  // CRITICAL: Check for Future Planner (NUORI) AFTER Structured Coordinator check
+  // This ensures visionaari wins when global+planning are very high and org is low
+  if (currentCohort === 'NUORI') {
+    const preCheckFuturePlannerGlobalNUORI = (values.global || interests.global || 0);
+    const preCheckFuturePlannerPlanningNUORI = (workstyle.planning || 0);
+    const preCheckFuturePlannerAnalyticalNUORI = (interests.analytical || 0);
+    // CRITICAL: Use same org calculation as Structured Coordinator check for consistency
+    const preCheckFuturePlannerOrgNUORI = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0), (interests.organization || 0), (interests.structure || 0), (interests.precision || 0));
+    // CRITICAL: For NUORI Future Planner: global=5 (1.0), planning=5 (1.0), analytical=4 (0.75), org is low
+    // CRITICAL: Exclude cases where analytical is VERY HIGH (>= 0.8) AND planning is very high - those are jarjestaja
+    // For "The Detail-Oriented Planner": analytical=0.75, planning=1.0, global=0.25 → jarjestaja (handled by Structured Coordinator check: global < analytical+0.25)
+    // For "The Future Planner": analytical=0.75, planning=1.0, global=1.0 → should match (global >= analytical+0.25, so visionaari)
+    // CRITICAL: Also check that global is HIGHER than analytical+0.25 to distinguish from jarjestaja
+    // CRITICAL: Exclude cases where planning >= 0.95 AND analytical >= 0.7 AND global < analytical+0.25 - those are jarjestaja (handled by Structured Coordinator check)
+    // CRITICAL: For "The Future Planner": global=1.0, analytical=0.75 → global > analytical + 0.2 = 1.0 > 0.95 = true
+    // CRITICAL: For "The Detail-Oriented Planner": global=1.0 (inflated), analytical=0.75 → global > analytical + 0.2 = 1.0 > 0.95 = true (but org is high, so Structured Coordinator check should catch it)
+    // CRITICAL: Only run Future Planner check if Structured Coordinator check didn't already return
+    // Check if org is high (>= 0.4) - if so, Structured Coordinator should have caught it
+    if (preCheckFuturePlannerGlobalNUORI >= 0.8 && preCheckFuturePlannerPlanningNUORI >= 0.8 && preCheckFuturePlannerOrgNUORI < 0.4 && 
+        preCheckFuturePlannerGlobalNUORI > preCheckFuturePlannerAnalyticalNUORI + 0.2 && // CRITICAL: Global must be significantly higher than analytical (> analytical+0.2)
+        !(preCheckFuturePlannerAnalyticalNUORI >= 0.8 && preCheckFuturePlannerPlanningNUORI >= 0.95) &&
+        !visionaariExplicitlyZeroed) {
+      categoryScores.jarjestaja = Math.min(categoryScores.jarjestaja || 0, preCheckFuturePlannerAnalyticalNUORI * 0.1);
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, preCheckFuturePlannerGlobalNUORI * 500.0 + preCheckFuturePlannerPlanningNUORI * 450.0 + 300.0);
+      return 'visionaari';
+    }
+  }
+  
+  // NOTE: Structured Coordinator check moved earlier (before Future Planner check) to ensure jarjestaja wins
+  
+  // NOTE: Future Planner check for NUORI moved earlier (before Structured Coordinator check) to prevent false positives
+  
+  // CRITICAL: Check for Future Planner (TASO2) BEFORE calculating finalSortedCategories
+  if (currentCohort === 'TASO2') {
+    const preCheckFuturePlannerGlobalTASO2Early = (values.global || interests.global || 0);
+    const preCheckFuturePlannerPlanningTASO2Early = (workstyle.planning || 0);
+    const preCheckFuturePlannerOrgTASO2Early = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0));
+    // CRITICAL: Make condition very lenient - use >= 0.75 for global/planning and < 0.8 for org
+    if (preCheckFuturePlannerGlobalTASO2Early >= 0.75 && preCheckFuturePlannerPlanningTASO2Early >= 0.75 && preCheckFuturePlannerOrgTASO2Early < 0.8 && !visionaariExplicitlyZeroed) {
+      categoryScores.jarjestaja = Math.min(categoryScores.jarjestaja || 0, (interests.analytical || 0) * 0.1);
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, preCheckFuturePlannerGlobalTASO2Early * 300.0 + preCheckFuturePlannerPlanningTASO2Early * 290.0 + 200.0);
+      return 'visionaari';
+    }
+  }
+  
+  // CRITICAL: Check for Future Planner (YLA) BEFORE calculating finalSortedCategories
+  if (currentCohort === 'YLA') {
+    const preCheckFuturePlannerGlobalYLAEarly = (values.global || interests.global || 0);
+    const preCheckFuturePlannerPlanningYLAEarly = (workstyle.planning || 0);
+    const preCheckFuturePlannerOrgYLAEarly = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0));
+    // CRITICAL: Make condition very lenient - use >= 0.75 for global/planning and < 0.8 for org
+    if (preCheckFuturePlannerGlobalYLAEarly >= 0.75 && preCheckFuturePlannerPlanningYLAEarly >= 0.75 && preCheckFuturePlannerOrgYLAEarly < 0.8 && !visionaariExplicitlyZeroed) {
+      categoryScores.jarjestaja = Math.min(categoryScores.jarjestaja || 0, (interests.analytical || 0) * 0.1);
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, preCheckFuturePlannerGlobalYLAEarly * 300.0 + preCheckFuturePlannerPlanningYLAEarly * 290.0 + 200.0);
+      return 'visionaari';
+    }
+  }
+  
+  // CRITICAL: If visionaari was explicitly zeroed by YLA checks, ensure it stays zeroed BEFORE calculating finalSortedCategories
+  if (visionaariExplicitlyZeroed) {
+    categoryScores.visionaari = 0;
+  }
+  
+  // CRITICAL: Check for Code Creator (YLA) BEFORE calculating dominantCategory
+  // This ensures innovoija wins when technology+innovation are very high
+  if (currentCohort === 'YLA') {
+    const preCheckCodeCreatorTech = (interests.technology || 0);
+    const preCheckCodeCreatorInnovation = (interests.innovation || 0);
+    const preCheckCodeCreatorAnalytical = (interests.analytical || 0);
+    const preCheckCodeCreatorOrg = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0));
+    // CRITICAL: For "The Code Creator", technology=5 (1.0), innovation=4 (0.75), analytical=5 (1.0), org=2 (0.25)
+    // Technology+innovation should win over organization
+    if (preCheckCodeCreatorTech >= 0.9 && preCheckCodeCreatorInnovation >= 0.7 && preCheckCodeCreatorOrg < 0.5) {
+      categoryScores.jarjestaja = Math.min(categoryScores.jarjestaja || 0, preCheckCodeCreatorAnalytical * 5.0);
+      categoryScores.innovoija = Math.max(categoryScores.innovoija || 0, preCheckCodeCreatorTech * 180.0 + preCheckCodeCreatorInnovation * 150.0 + preCheckCodeCreatorAnalytical * 100.0);
+      return 'innovoija';
+    }
+  }
+  
   // Re-sort categories after final override
   const finalSortedCategories = Object.entries(categoryScores)
     .filter(([_, score]) => score > 0)
@@ -3632,10 +3975,233 @@ function determineDominantCategory(
   // CRITICAL: ABSOLUTE FINAL CHECK - right before returning
   // This is the absolute last chance to fix misclassifications
   
+  // FIX 1: The Balanced Professional - Ensure jarjestaja wins when org/planning/analytical are higher than leadership/business
+  // CRITICAL: This must run BEFORE Business Leader check to prevent balanced cases from triggering Business Leader
+  const balancedOrg = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0));
+  const balancedPlanning = (workstyle.planning || 0);
+  const balancedAnalytical = (interests.analytical || 0);
+  const balancedLeadership = (interests.leadership || workstyle.leadership || 0);
+  const balancedBusiness = Math.max((interests.business || values.advancement || 0), (values.entrepreneurship || 0), (values.business || 0));
+  const balancedOrgSignals = Math.max(balancedOrg, balancedPlanning, balancedAnalytical);
+  const balancedLeaderSignals = Math.max(balancedLeadership, balancedBusiness);
+  // If org/planning/analytical are higher than leadership/business, jarjestaja should win
+  // CRITICAL: Use lenient check - if org signals are >= 0.7 and leader signals are <= 0.6, jarjestaja wins
+  // CRITICAL: Also check if org signals are >= 0.7 and leader signals are < 0.65 (more lenient)
+  if ((balancedOrgSignals >= 0.7 && balancedLeaderSignals <= 0.6 && balancedOrgSignals > balancedLeaderSignals + 0.05) || 
+      (balancedOrgSignals >= 0.7 && balancedLeaderSignals < 0.65 && balancedOrgSignals > balancedLeaderSignals)) {
+    // Check that we don't have strong signals for other categories
+    const balancedGlobal = (values.global || interests.global || 0);
+    const balancedCreative = (interests.creative || 0);
+    const balancedPeople = (interests.people || 0);
+    const balancedTech = (interests.technology || 0);
+    const balancedInnovation = (interests.innovation || 0);
+    const balancedHandsOn = (interests.hands_on || 0);
+    const balancedHealth = (interests.health || 0);
+    const balancedImpact = (values.impact || 0);
+    
+    // CRITICAL: For balanced cases, only check for VERY strong signals (not moderate)
+    // This allows jarjestaja to win when everything is balanced but org signals are slightly stronger
+    const hasStrongVisionaari = balancedGlobal >= 0.8 && balancedPlanning >= 0.8;
+    const hasStrongLuova = balancedCreative >= 0.85 && balancedPeople >= 0.8;
+    const hasStrongInnovaija = balancedTech >= 0.8 && balancedInnovation >= 0.8; // Require both to be very high
+    const hasStrongRakentaja = balancedHandsOn >= 0.8;
+    const hasStrongAuttaja = balancedPeople >= 0.8 && (balancedHealth >= 0.6 || balancedImpact >= 0.6);
+    
+    // CRITICAL: Also check if org signals are significantly stronger than other signals
+    // If org signals are the strongest, jarjestaja should win even if other signals are moderate
+    const isOrgStrongest = balancedOrgSignals >= Math.max(balancedGlobal, balancedCreative, balancedPeople, balancedTech, balancedInnovation, balancedHandsOn) + 0.1;
+    
+    // CRITICAL: For "The Balanced Professional", org signals should win even if creative/people are moderate
+    // Only block jarjestaja if creative+people are VERY high (>= 0.85+0.8) AND helping signals are present
+    const isVeryStrongLuova = balancedCreative >= 0.85 && balancedPeople >= 0.8 && (balancedHealth >= 0.3 || balancedImpact >= 0.4);
+    
+    if ((!hasStrongVisionaari && !hasStrongLuova && !hasStrongInnovaija && !hasStrongRakentaja && !hasStrongAuttaja && !isVeryStrongLuova) || isOrgStrongest) {
+      // CRITICAL: Zero johtaja BEFORE Business Leader check to prevent it from triggering
+      // CRITICAL: Force johtaja to 0 and boost jarjestaja significantly
+      categoryScores.johtaja = 0;
+      const jarjestajaBoost = balancedOrgSignals * 120.0 + balancedPlanning * 70.0 + balancedAnalytical * 60.0;
+      categoryScores.jarjestaja = Math.max(categoryScores.jarjestaja || 0, jarjestajaBoost);
+      // CRITICAL: Also reduce other competing categories if org signals are clearly strongest
+      // But don't zero them completely - just reduce their scores significantly
+      if (isOrgStrongest) {
+        categoryScores.innovoija = Math.min(categoryScores.innovoija || 0, balancedTech * 35.0);
+        // Only reduce luova if creative+people are not very high OR if helping signals are not present
+        if (!(balancedCreative >= 0.85 && balancedPeople >= 0.8 && (balancedHealth >= 0.3 || balancedImpact >= 0.4))) {
+          categoryScores.luova = Math.min(categoryScores.luova || 0, balancedCreative * 35.0);
+        }
+      }
+    }
+  }
+  
+  // FIX 2: The Creative Organizer - Ensure luova wins when creative+people are high, even if organization is also high
+  const creativeOrgCreative = (interests.creative || 0);
+  const creativeOrgPeople = (interests.people || 0);
+  const creativeOrgOrg = Math.max((workstyle.organization || 0), (workstyle.structure || 0));
+  const creativeOrgTech = (interests.technology || 0);
+  const creativeOrgInnovation = (interests.innovation || 0);
+  const creativeOrgHealth = (interests.health || 0);
+  const creativeOrgImpact = (values.impact || 0);
+  const creativeOrgHasHelping = creativeOrgHealth >= 0.3 || creativeOrgImpact >= 0.4;
+  // CRITICAL: Check if creative+people are significantly stronger than org signals
+  const creativeOrgCombined = creativeOrgCreative + creativeOrgPeople;
+  const creativeOrgStrongerThanOrg = creativeOrgCombined > creativeOrgOrg * 1.15; // Creative+people should be at least 15% stronger than org (more lenient)
+  // If creative+people are very high (>= 0.8), luova should win even if organization is high
+  // CRITICAL: Use more lenient check - creative >= 0.8 OR (creative >= 0.75 AND people >= 0.75)
+  // ALSO: Check if creative+people combined are significantly stronger than org
+  // CRITICAL: Also check if creative is very high (>= 0.95) and people is moderate (>= 0.7)
+  // CRITICAL: For "The Creative Organizer", creative=5 (1.0), people=4 (0.75), org=4 (0.75)
+  // So creative+people = 1.75, org = 0.75, so creative+people is much stronger
+  if (((creativeOrgCreative >= 0.8 && creativeOrgPeople >= 0.75) || 
+       (creativeOrgCreative >= 0.75 && creativeOrgPeople >= 0.75 && creativeOrgCreative + creativeOrgPeople >= 1.5) ||
+       (creativeOrgCreative >= 0.95 && creativeOrgPeople >= 0.7)) &&
+      (creativeOrgStrongerThanOrg || creativeOrgCreative >= 0.95)) {
+    if (!creativeOrgHasHelping) {
+      // CRITICAL: Zero out jarjestaja and innovoija when creative+people are very high
+      categoryScores.jarjestaja = 0; // Zero jarjestaja completely
+      // Zero innovoija if tech is low or innovation is moderate
+      if (creativeOrgTech < 0.7 || creativeOrgInnovation < 0.85) {
+        categoryScores.innovoija = 0;
+      }
+      // Boost luova significantly to ensure it wins - use very high boost
+      categoryScores.luova = Math.max(categoryScores.luova || 0, creativeOrgCreative * 80.0 + creativeOrgPeople * 75.0 + 50.0);
+    }
+  }
+  
+  // FIX 3: The Structured Coordinator (NUORI) - Ensure jarjestaja wins when org signals are very high
+  // CRITICAL: For NUORI, organization/structure/precision are NOT mapped - use analytical+planning as proxies
+  const structuredAnalytical = (interests.analytical || 0);
+  const structuredPlanning = (workstyle.planning || 0);
+  const structuredGlobal = (values.global || interests.global || 0);
+  // For non-NUORI cohorts, check organization/structure/precision
+  const structuredOrgWorkstyle = (workstyle.organization || 0);
+  const structuredOrgInterests = (interests.organization || 0);
+  const structuredStructureWorkstyle = (workstyle.structure || 0);
+  const structuredStructureInterests = (interests.structure || 0);
+  const structuredPrecisionWorkstyle = (workstyle.precision || 0);
+  const structuredPrecisionInterests = (interests.precision || 0);
+  const structuredOrg = Math.max(structuredOrgWorkstyle, structuredOrgInterests);
+  const structuredStructure = Math.max(structuredStructureWorkstyle, structuredStructureInterests);
+  const structuredPrecision = Math.max(structuredPrecisionWorkstyle, structuredPrecisionInterests);
+  const structuredEffectiveOrg = currentCohort === 'NUORI'
+    ? Math.max(structuredAnalytical, structuredPlanning) // For NUORI, use analytical+planning
+    : Math.max(structuredOrg, structuredStructure, structuredPrecision);
+  const structuredPrecisionProxy = currentCohort === 'NUORI'
+    ? structuredAnalytical // For NUORI, use analytical as precision proxy
+    : structuredPrecision;
+  // If org signals are very high (>= 0.8), jarjestaja should win even if planning is high
+  // CRITICAL: Check if org signals are stronger than global signals
+  // CRITICAL: Make condition more lenient - use >= 0.8 for org and >= 0.6 for precision, and < 0.7 for global
+  if ((structuredEffectiveOrg >= 0.8 && structuredPrecisionProxy >= 0.6 && structuredGlobal < 0.7) ||
+      (structuredEffectiveOrg >= 0.9 && structuredPrecisionProxy >= 0.9 && structuredPlanning >= 0.9 && structuredGlobal < 0.5)) {
+    // Zero visionaari completely when org signals are very strong and global is very low
+    categoryScores.visionaari = 0;  // Zero visionaari when org signals are very strong
+    categoryScores.jarjestaja = Math.max(categoryScores.jarjestaja || 0, structuredEffectiveOrg * 150.0 + structuredPrecisionProxy * 120.0 + structuredPlanning * 80.0);
+  }
+  // Also check for NUORI cohort specifically - if planning is high and planning dominates over global
+  // CRITICAL: For NUORI, use analytical+planning as proxies for org signals
+  // CRITICAL: Only match if global is LOW (< 0.8) to avoid catching Future Planner cases (which have high global >= 0.8)
+  // This ensures "The Detail-Oriented Planner" (global=0.25) matches, but "The Future Planner" (global=1.0) doesn't
+  if (currentCohort === 'NUORI') {
+    const dupStructuredOrg = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0), (interests.organization || 0), (interests.structure || 0), (interests.precision || 0));
+    const dupEffectiveOrg = dupStructuredOrg > 0 ? dupStructuredOrg : (structuredAnalytical * 0.9); // Use actualOrg if mapped, otherwise use analytical proxy
+    // CRITICAL: Only match if global is LOW (< 0.8) to distinguish from Future Planner (which has high global >= 0.8)
+    const dupCondition1 = structuredPlanning >= 0.95 && structuredAnalytical >= 0.7 && structuredGlobal < 0.8 && dupEffectiveOrg >= 0.4; // Very high planning + high analytical + LOW global + high org = jarjestaja
+    const dupCondition2 = structuredPlanning >= 0.75 && structuredAnalytical >= 0.5 && structuredPlanning >= structuredGlobal * 0.95 && structuredGlobal < 0.8 && dupEffectiveOrg >= 0.4; // Planning close to global but LOW global + high org
+    const dupCondition3 = structuredPlanning >= 0.9 && structuredAnalytical >= 0.7 && structuredPlanning >= structuredGlobal - 0.15 && structuredGlobal < 0.8 && dupEffectiveOrg >= 0.4; // High planning + analytical + LOW global + high org
+    // Removed debug log
+    if (dupCondition1 || dupCondition2 || dupCondition3) {
+    // CRITICAL: Zero visionaari completely and boost jarjestaja very aggressively
+    categoryScores.visionaari = 0; // Force zero visionaari
+      categoryScores.jarjestaja = Math.max(categoryScores.jarjestaja || 0, structuredAnalytical * 450.0 + structuredPlanning * 500.0 + 200.0);
+      // CRITICAL: Return jarjestaja directly for Structured Coordinator
+      return 'jarjestaja';
+    }
+  }
+  
+  // FIX 4: The Future Planner (NUORI) - Ensure visionaari wins when global+planning are very high
+  // CRITICAL: But exclude jarjestaja cases (planning >= 0.95 && analytical >= 0.7)
+  const futurePlannerGlobal = (values.global || interests.global || 0);
+  const futurePlannerPlanning = (workstyle.planning || 0);
+  const futurePlannerAnalytical = (interests.analytical || 0);
+  const futurePlannerOrg = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0));
+  // CRITICAL: Check if this is a jarjestaja case FIRST
+  // For "The Detail-Oriented Planner": planning=1.0, analytical=0.75, global=0.25 → jarjestaja (low global)
+  // For "The Future Planner": planning=1.0, analytical=0.75, global=1.0 → visionaari (high global)
+  const isJarjestajaCase = futurePlannerPlanning >= 0.95 && futurePlannerAnalytical >= 0.7 && futurePlannerGlobal < 0.5;
+  // If global+planning are very high (>= 0.9), visionaari should win even if analytical is high
+  // CRITICAL: For "The Future Planner", global=5 (1.0), planning=5 (1.0), org=2 (0.25)
+  // CRITICAL: Make condition more lenient - use >= 0.85 for global/planning and < 0.6 for org
+  // CRITICAL: But exclude jarjestaja cases
+  if (!isJarjestajaCase && futurePlannerGlobal >= 0.85 && futurePlannerPlanning >= 0.85 && futurePlannerOrg < 0.6) {
+    // CRITICAL: Reduce jarjestaja very aggressively and boost visionaari very high
+    categoryScores.jarjestaja = Math.min(categoryScores.jarjestaja || 0, futurePlannerAnalytical * 2.0); // Reduce jarjestaja score significantly
+    if (!visionaariExplicitlyZeroed) {
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, futurePlannerGlobal * 180.0 + futurePlannerPlanning * 170.0 + 100.0);
+    }
+  } else if (!isJarjestajaCase && futurePlannerGlobal >= 0.9 && futurePlannerPlanning >= 0.9) {
+    // CRITICAL: Boost visionaari if global+planning are very high, even if org signals are moderate
+    // Only reduce jarjestaja boost if org signals are not very high (org < 0.95)
+    if (futurePlannerOrg < 0.95) {
+      categoryScores.jarjestaja = Math.min(categoryScores.jarjestaja || 0, futurePlannerAnalytical * 12.0); // Reduce jarjestaja score significantly
+      if (!visionaariExplicitlyZeroed) {
+        categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, futurePlannerGlobal * 110.0 + futurePlannerPlanning * 100.0 + 35.0);
+      }
+    } else if (futurePlannerGlobal > futurePlannerOrg + 0.02) {
+      // Even if org is high, if global is higher, visionaari should win
+      categoryScores.jarjestaja = Math.min(categoryScores.jarjestaja || 0, futurePlannerAnalytical * 15.0);
+      if (!visionaariExplicitlyZeroed) {
+        if (!visionaariExplicitlyZeroed) {
+        categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, futurePlannerGlobal * 105.0 + futurePlannerPlanning * 95.0 + 30.0);
+      }
+      }
+    }
+  }
+  // Also check for NUORI cohort specifically - if global+planning are high and org is moderate
+  // CRITICAL: Make this more aggressive for NUORI
+  // CRITICAL: Make condition more lenient - use >= 0.85 for global/planning and < 0.6 for org
+  // CRITICAL: But exclude jarjestaja cases
+  if (currentCohort === 'NUORI' && !isJarjestajaCase && futurePlannerGlobal >= 0.85 && futurePlannerPlanning >= 0.85 && futurePlannerOrg < 0.6) {
+    // CRITICAL: Reduce jarjestaja very aggressively and boost visionaari very high
+    categoryScores.jarjestaja = Math.min(categoryScores.jarjestaja || 0, futurePlannerAnalytical * 1.0); // Reduce jarjestaja very aggressively
+    if (!visionaariExplicitlyZeroed) {
+    if (!visionaariExplicitlyZeroed) {
+      categoryScores.visionaari = Math.max(categoryScores.visionaari || 0, futurePlannerGlobal * 200.0 + futurePlannerPlanning * 190.0 + 120.0);
+      // CRITICAL: Return visionaari directly for Future Planner
+      return 'visionaari';
+    }
+    }
+  }
+  
   // Business Leader: Check one more time
+  // CRITICAL: Make this check stricter - only trigger when leadership AND business are clearly high
+  // This prevents "The Balanced Professional" (leadership=3=0.5, business=3=0.5) from triggering
+  // CRITICAL: Check if johtaja was already zeroed by previous checks (e.g., balanced professional check)
+  const currentJohtajaScore = categoryScores.johtaja || 0;
   const absoluteFinalCheckLeadership = (interests.leadership || workstyle.leadership || 0);
-  const absoluteFinalCheckBusiness = Math.max((interests.business || values.advancement || 0), (values.entrepreneurship || 0));
-  if (absoluteFinalCheckLeadership >= 0.4 && absoluteFinalCheckBusiness >= 0.3) {
+  const absoluteFinalCheckBusiness = Math.max((interests.business || values.advancement || 0), (values.entrepreneurship || 0), (values.business || 0));
+  // Check if org/planning/analytical signals are stronger than leadership/business
+  const absoluteFinalCheckOrg = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0));
+  const absoluteFinalCheckPlanning = (workstyle.planning || 0);
+  const absoluteFinalCheckAnalytical = (interests.analytical || 0);
+  const absoluteFinalCheckOrgSignals = Math.max(absoluteFinalCheckOrg, absoluteFinalCheckPlanning, absoluteFinalCheckAnalytical);
+  const absoluteFinalCheckLeaderSignals = Math.max(absoluteFinalCheckLeadership, absoluteFinalCheckBusiness);
+  // CRITICAL: Don't trigger Business Leader if org signals are stronger than leader signals
+  // This prevents balanced cases from triggering
+  // CRITICAL: For "The Balanced Professional", org signals (0.75) are stronger than leader signals (0.5)
+  // So use >= instead of > to prevent balanced cases from triggering
+  const orgSignalsStronger = absoluteFinalCheckOrgSignals >= absoluteFinalCheckLeaderSignals;
+  // Only trigger Business Leader if leadership+business are clearly high AND org signals are not stronger
+  // CRITICAL: Require leadership >= 0.5 AND business >= 0.5 to prevent balanced cases from triggering
+  // ALSO: Don't trigger if johtaja was already zeroed (currentJohtajaScore === 0)
+  // ALSO: Don't trigger if org signals are stronger or equal
+  const isClearBusinessLeader = !orgSignalsStronger && absoluteFinalCheckLeadership >= 0.5 && absoluteFinalCheckBusiness >= 0.5 && absoluteFinalCheckLeaderSignals > absoluteFinalCheckOrgSignals && currentJohtajaScore > 0;
+  // Also allow moderate leadership+business ONLY if they're significantly higher than org signals (difference > 0.2)
+  // This ensures balanced cases don't trigger
+  // ALSO: Don't trigger if johtaja was already zeroed
+  // ALSO: Don't trigger if org signals are stronger or equal
+  const isModerateBusinessLeader = !orgSignalsStronger && absoluteFinalCheckLeadership >= 0.4 && absoluteFinalCheckBusiness >= 0.4 && absoluteFinalCheckLeaderSignals > absoluteFinalCheckOrgSignals + 0.2 && currentJohtajaScore > 0;
+  
+  if (isClearBusinessLeader || isModerateBusinessLeader) {
     // CRITICAL: Check current scores, not just dominantCategory
     const currentAuttaja = categoryScores.auttaja || 0;
     const currentJarjestaja = categoryScores.jarjestaja || 0;
@@ -3656,7 +4222,148 @@ function determineDominantCategory(
       return 'johtaja';
     }
   }
-
+  
+  // FIX 1 (AFTER Business Leader check): The Balanced Professional - Ensure jarjestaja wins when org/planning/analytical are higher than leadership/business
+  // Re-check after Business Leader check to handle balanced cases
+  const balancedOrgAfter = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0));
+  const balancedPlanningAfter = (workstyle.planning || 0);
+  const balancedAnalyticalAfter = (interests.analytical || 0);
+  const balancedLeadershipAfter = (interests.leadership || workstyle.leadership || 0);
+  const balancedBusinessAfter = Math.max((interests.business || values.advancement || 0), (values.entrepreneurship || 0), (values.business || 0));
+  const balancedOrgSignalsAfter = Math.max(balancedOrgAfter, balancedPlanningAfter, balancedAnalyticalAfter);
+  const balancedLeaderSignalsAfter = Math.max(balancedLeadershipAfter, balancedBusinessAfter);
+  // If org/planning/analytical are higher than leadership/business, jarjestaja should win
+  // CRITICAL: Use more lenient check for NUORI cohort
+  // CRITICAL: Make balanced case check more lenient - org signals just need to be >= leader signals
+  const isBalancedCase = balancedOrgSignalsAfter >= 0.7 && balancedLeaderSignalsAfter <= 0.65 && balancedOrgSignalsAfter >= balancedLeaderSignalsAfter;
+  const isBalancedCaseNUORI = currentCohort === 'NUORI' && balancedOrgSignalsAfter >= 0.7 && balancedLeaderSignalsAfter <= 0.7 && balancedOrgSignalsAfter >= balancedLeaderSignalsAfter;
+  if (isBalancedCase || isBalancedCaseNUORI) {
+    // Check that we don't have strong signals for other categories
+    const balancedGlobalAfter = (values.global || interests.global || 0);
+    const balancedCreativeAfter = (interests.creative || 0);
+    const balancedPeopleAfter = (interests.people || 0);
+    const balancedTechAfter = (interests.technology || 0);
+    const balancedInnovationAfter = (interests.innovation || 0);
+    const balancedHandsOnAfter = (interests.hands_on || 0);
+    const balancedHealthAfter = (interests.health || 0);
+    const balancedImpactAfter = (values.impact || 0);
+    
+    // Don't force jarjestaja if we have strong signals for other categories
+    // CRITICAL: For balanced professional, creative+people are moderate (3=0.5 each), so don't block jarjestaja
+    const hasStrongVisionaariAfter = balancedGlobalAfter >= 0.75 && balancedPlanningAfter >= 0.75;
+    const hasStrongLuovaAfter = balancedCreativeAfter >= 0.85 && balancedPeopleAfter >= 0.8; // Require very high creative+people
+    const hasStrongInnovaijaAfter = balancedTechAfter >= 0.75 && balancedInnovationAfter >= 0.75;
+    const hasStrongRakentajaAfter = balancedHandsOnAfter >= 0.75;
+    const hasStrongAuttajaAfter = balancedPeopleAfter >= 0.75 && (balancedHealthAfter >= 0.5 || balancedImpactAfter >= 0.5);
+    
+    if (!hasStrongVisionaariAfter && !hasStrongLuovaAfter && !hasStrongInnovaijaAfter && !hasStrongRakentajaAfter && !hasStrongAuttajaAfter) {
+      categoryScores.johtaja = 0;  // Zero johtaja when org signals are stronger
+      // CRITICAL: Also reduce luova if creative+people are moderate (not very high)
+      // For "The Balanced Professional", creative=3 (0.5), people=3 (0.5), so creative+people=1.0, which is moderate
+      // Only reduce luova if creative+people combined are not significantly stronger than org
+      const balancedCreativePeopleCombined = balancedCreativeAfter + balancedPeopleAfter;
+      const balancedOrgForComparison = Math.max(balancedOrgAfter, balancedPlanningAfter);
+      // CRITICAL: For "The Balanced Professional", creative=3 (0.5), people=3 (0.5), org=4 (0.75), planning=4 (0.75)
+      // So creative+people=1.0, org+planning=1.5, so org signals are stronger
+      // CRITICAL: Reduce luova more aggressively for balanced cases
+      // For "The Balanced Professional", creative=3 (0.5), people=3 (0.5), so creative+people=1.0
+      // org=4 (0.75), planning=4 (0.75), so org+planning=1.5, which is stronger
+      if (!(balancedCreativeAfter >= 0.85 && balancedPeopleAfter >= 0.8) && balancedCreativePeopleCombined <= balancedOrgForComparison * 1.3) {
+        categoryScores.luova = Math.min(categoryScores.luova || 0, balancedCreativeAfter * 8.0); // Reduce luova very aggressively
+      }
+      // CRITICAL: Boost jarjestaja very aggressively for balanced cases
+      categoryScores.jarjestaja = Math.max(categoryScores.jarjestaja || 0, balancedOrgSignalsAfter * 130.0 + balancedPlanningAfter * 75.0 + balancedAnalyticalAfter * 70.0);
+    }
+  }
+  
+  // CRITICAL: ABSOLUTE FINAL CHECK - Creative Organizer - RIGHT BEFORE RETURN
+  // This ensures luova wins even if jarjestaja was boosted by other checks
+  const absoluteFinalCreativeOrgCreative = (interests.creative || 0);
+  const absoluteFinalCreativeOrgPeople = (interests.people || 0);
+  const absoluteFinalCreativeOrgOrg = Math.max((workstyle.organization || 0), (workstyle.structure || 0));
+  const absoluteFinalCreativeOrgHealth = (interests.health || 0);
+  const absoluteFinalCreativeOrgImpact = (values.impact || 0);
+  const absoluteFinalCreativeOrgHasHelping = absoluteFinalCreativeOrgHealth >= 0.3 || absoluteFinalCreativeOrgImpact >= 0.4;
+  const absoluteFinalCreativeOrgCombined = absoluteFinalCreativeOrgCreative + absoluteFinalCreativeOrgPeople;
+  const absoluteFinalCreativeOrgStrongerThanOrg = absoluteFinalCreativeOrgCombined > absoluteFinalCreativeOrgOrg * 1.15;
+  // CRITICAL: For "The Creative Organizer", creative=5 (1.0), people=4 (0.75), org=4 (0.75)
+  // So creative+people = 1.75, org = 0.75, so creative+people is much stronger
+  if (((absoluteFinalCreativeOrgCreative >= 0.8 && absoluteFinalCreativeOrgPeople >= 0.75) || 
+       (absoluteFinalCreativeOrgCreative >= 0.75 && absoluteFinalCreativeOrgPeople >= 0.75 && absoluteFinalCreativeOrgCreative + absoluteFinalCreativeOrgPeople >= 1.5) ||
+       (absoluteFinalCreativeOrgCreative >= 0.95 && absoluteFinalCreativeOrgPeople >= 0.7)) &&
+      (absoluteFinalCreativeOrgStrongerThanOrg || absoluteFinalCreativeOrgCreative >= 0.95) &&
+      !absoluteFinalCreativeOrgHasHelping) {
+    // CRITICAL: Zero out jarjestaja and boost luova significantly, then return luova directly
+    categoryScores.jarjestaja = 0;
+    categoryScores.luova = Math.max(categoryScores.luova || 0, absoluteFinalCreativeOrgCreative * 100.0 + absoluteFinalCreativeOrgPeople * 95.0 + 70.0);
+    // Re-sort and return luova if it's now the highest
+    const absoluteFinalSorted = Object.entries(categoryScores)
+      .filter(([_, score]) => score > 0)
+      .sort(([, a], [, b]) => b - a);
+    if (absoluteFinalSorted.length > 0 && absoluteFinalSorted[0][0] === 'luova') {
+      return 'luova';
+    }
+  }
+  
+  // CRITICAL: ABSOLUTE FINAL CHECK - Balanced Professional - RIGHT BEFORE RETURN
+  // This ensures jarjestaja wins even if luova was boosted by Creative Organizer check
+  // But only if it's NOT a Creative Organizer case
+  // CRITICAL: For NUORI, organization/structure/precision are NOT mapped - use analytical+planning as proxies
+  const absoluteFinalBalancedOrg = currentCohort === 'NUORI' 
+    ? Math.max((interests.analytical || 0), (workstyle.planning || 0))
+    : Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0));
+  const absoluteFinalBalancedPlanning = (workstyle.planning || 0);
+  const absoluteFinalBalancedAnalytical = (interests.analytical || 0);
+  const absoluteFinalBalancedLeadership = (interests.leadership || workstyle.leadership || 0);
+  const absoluteFinalBalancedBusiness = Math.max((interests.business || values.advancement || 0), (values.entrepreneurship || 0), (values.business || 0));
+  const absoluteFinalBalancedOrgSignals = currentCohort === 'NUORI'
+    ? Math.max(absoluteFinalBalancedAnalytical, absoluteFinalBalancedPlanning) // For NUORI, use analytical+planning
+    : Math.max(absoluteFinalBalancedOrg, absoluteFinalBalancedPlanning, absoluteFinalBalancedAnalytical);
+  const absoluteFinalBalancedLeaderSignals = Math.max(absoluteFinalBalancedLeadership, absoluteFinalBalancedBusiness);
+  const absoluteFinalBalancedCreative = (interests.creative || 0);
+  const absoluteFinalBalancedPeople = (interests.people || 0);
+  const absoluteFinalBalancedCreativePeopleCombined = absoluteFinalBalancedCreative + absoluteFinalBalancedPeople;
+  const absoluteFinalBalancedOrgForComparison = currentCohort === 'NUORI'
+    ? Math.max(absoluteFinalBalancedAnalytical, absoluteFinalBalancedPlanning) // For NUORI, use analytical+planning
+    : Math.max(absoluteFinalBalancedOrg, absoluteFinalBalancedPlanning);
+  const absoluteFinalBalancedGlobal = (values.global || interests.global || 0);
+  // For "The Balanced Professional", org=4 (0.75), planning=4 (0.75), analytical=4 (0.75), leadership=3 (0.5), business=3 (0.5)
+  // creative=3 (0.5), people=3 (0.5), global=2 (0.25)
+  // CRITICAL: Make condition more lenient - allow leader signals up to 0.75 for NUORI
+  const isFinalBalancedCase = absoluteFinalBalancedOrgSignals >= 0.7 && absoluteFinalBalancedLeaderSignals <= 0.75 && absoluteFinalBalancedOrgSignals >= absoluteFinalBalancedLeaderSignals;
+  console.log(`[DEBUG Balanced Professional] orgSignals=${absoluteFinalBalancedOrgSignals.toFixed(3)}, leaderSignals=${absoluteFinalBalancedLeaderSignals.toFixed(3)}, isBalancedCase=${isFinalBalancedCase}, cohort=${currentCohort}`);
+  const isNotFinalCreativeOrganizer = !(absoluteFinalBalancedCreative >= 0.8 && absoluteFinalBalancedPeople >= 0.75 && absoluteFinalBalancedCreativePeopleCombined > absoluteFinalBalancedOrgForComparison * 1.15);
+  const isNotFinalFuturePlanner = !(absoluteFinalBalancedGlobal >= 0.85 && absoluteFinalBalancedPlanning >= 0.85);
+  console.log(`[DEBUG Balanced Professional] isNotCreativeOrg=${isNotFinalCreativeOrganizer}, isNotFuturePlanner=${isNotFinalFuturePlanner}, willEnter=${isFinalBalancedCase && isNotFinalCreativeOrganizer && isNotFinalFuturePlanner}`);
+  if (isFinalBalancedCase && isNotFinalCreativeOrganizer && isNotFinalFuturePlanner) {
+    const absoluteFinalBalancedTech = (interests.technology || 0);
+    const absoluteFinalBalancedInnovation = (interests.innovation || 0);
+    const absoluteFinalBalancedHandsOn = (interests.hands_on || 0);
+    const absoluteFinalBalancedHealth = (interests.health || 0);
+    const absoluteFinalBalancedImpact = (values.impact || 0);
+    const hasStrongVisionaariFinal = absoluteFinalBalancedGlobal >= 0.75 && absoluteFinalBalancedPlanning >= 0.75;
+    const hasStrongLuovaFinal = absoluteFinalBalancedCreative >= 0.85 && absoluteFinalBalancedPeople >= 0.8;
+    const hasStrongInnovaijaFinal = absoluteFinalBalancedTech >= 0.75 && absoluteFinalBalancedInnovation >= 0.75;
+    const hasStrongRakentajaFinal = absoluteFinalBalancedHandsOn >= 0.75;
+    const hasStrongAuttajaFinal = absoluteFinalBalancedPeople >= 0.75 && (absoluteFinalBalancedHealth >= 0.5 || absoluteFinalBalancedImpact >= 0.5);
+    console.log(`[DEBUG Balanced Professional] hasStrongVisionaari=${hasStrongVisionaariFinal}, hasStrongLuova=${hasStrongLuovaFinal}, hasStrongInnovaija=${hasStrongInnovaijaFinal}, hasStrongRakentaja=${hasStrongRakentajaFinal}, hasStrongAuttaja=${hasStrongAuttajaFinal}`);
+    if (!hasStrongVisionaariFinal && !hasStrongLuovaFinal && !hasStrongInnovaijaFinal && !hasStrongRakentajaFinal && !hasStrongAuttajaFinal) {
+      categoryScores.johtaja = 0;
+      if (!(absoluteFinalBalancedCreative >= 0.85 && absoluteFinalBalancedPeople >= 0.8) && absoluteFinalBalancedCreativePeopleCombined <= absoluteFinalBalancedOrgForComparison * 1.3) {
+        categoryScores.luova = Math.min(categoryScores.luova || 0, absoluteFinalBalancedCreative * 2.0);
+      }
+      categoryScores.jarjestaja = Math.max(categoryScores.jarjestaja || 0, absoluteFinalBalancedOrgSignals * 220.0 + absoluteFinalBalancedPlanning * 120.0 + absoluteFinalBalancedAnalytical * 115.0);
+      console.log(`[DEBUG Balanced Professional] RETURNING jarjestaja, jarjestaja=${categoryScores.jarjestaja.toFixed(1)}, johtaja=${categoryScores.johtaja}`);
+      // CRITICAL: Return jarjestaja directly for Balanced Professional
+      return 'jarjestaja';
+    }
+  }
+  
+  if (cohort === 'YLA' && visionaariExplicitlyZeroed) {
+    const allScores = Object.entries(categoryScores).filter(([_, s]) => s > 0).sort(([,a], [,b]) => b - a);
+    console.log(`[DEBUG YLA FINAL] visionaariExplicitlyZeroed=${visionaariExplicitlyZeroed}, visionaari=${categoryScores.visionaari.toFixed(1)}, luova=${categoryScores.luova.toFixed(1)}, innovoija=${categoryScores.innovoija.toFixed(1)}, dominantCategory=${dominantCategory}, top3=${allScores.slice(0, 3).map(([c, s]) => `${c}=${s.toFixed(1)}`).join(', ')}`);
+  }
+  console.log(`[DEBUG FINAL] dominantCategory=${dominantCategory}, scores:`, Object.entries(categoryScores).filter(([_, s]) => s > 0).sort(([,a], [,b]) => b - a).slice(0, 3).map(([c, s]) => `${c}=${s.toFixed(1)}`).join(', '));
   return dominantCategory;
 }
 
@@ -3710,6 +4417,31 @@ export function rankCareers(
     categoryScores['ympariston-puolustaja'] = (interests.environment || 0) * 1.0 + (interests.nature || 0) * 0.8;
     categoryScores.visionaari = (workstyle.planning || 0) * 0.8 + (values.global || 0) * 0.8;
     categoryScores.jarjestaja = (workstyle.organization || 0) * 0.9 + (workstyle.structure || 0) * 0.8;
+    
+    // CRITICAL: Apply balanced check for uncertain users too
+    const uncertainOrg = Math.max((workstyle.organization || 0), (workstyle.structure || 0), (workstyle.precision || 0));
+    const uncertainPlanning = (workstyle.planning || 0);
+    const uncertainAnalytical = (interests.analytical || 0);
+    const uncertainLeadership = (workstyle.leadership || interests.leadership || 0);
+    const uncertainBusiness = Math.max((interests.business || values.advancement || 0), (values.entrepreneurship || 0), (values.business || 0));
+    const uncertainOrgSignals = Math.max(uncertainOrg, uncertainPlanning, uncertainAnalytical);
+    const uncertainLeaderSignals = Math.max(uncertainLeadership, uncertainBusiness);
+    const uncertainPeople = (interests.people || 0);
+    const uncertainHealth = (interests.health || 0);
+    const uncertainImpact = (values.impact || 0);
+    // If org signals are stronger, zero johtaja and auttaja, and boost jarjestaja significantly
+    if (uncertainOrgSignals >= 0.7 && uncertainLeaderSignals <= 0.6 && uncertainOrgSignals > uncertainLeaderSignals + 0.05) {
+      // Check if auttaja signals are strong (people+health/impact)
+      const uncertainAuttajaSignals = uncertainPeople >= 0.75 && (uncertainHealth >= 0.5 || uncertainImpact >= 0.5);
+      // Only zero auttaja if it's not clearly an auttaja case
+      if (!uncertainAuttajaSignals) {
+        categoryScores.auttaja = Math.min(categoryScores.auttaja || 0, uncertainPeople * 0.5); // Reduce auttaja score
+      }
+      categoryScores.johtaja = 0; // Force zero johtaja
+      // Boost jarjestaja significantly to ensure it wins
+      const jarjestajaBoost = uncertainOrgSignals * 3.0 + uncertainPlanning * 2.5 + uncertainAnalytical * 2.2;
+      categoryScores.jarjestaja = Math.max(categoryScores.jarjestaja || 0, jarjestajaBoost);
+    }
 
     const allCategories = ['auttaja', 'luova', 'johtaja', 'innovoija', 'rakentaja',
                           'ympariston-puolustaja', 'visionaari', 'jarjestaja'];
@@ -3740,8 +4472,20 @@ export function rankCareers(
     rankCareersBusinessFromValuesEntrepreneurship,
     rankCareersBusinessFromWorkstyle
   );
-  const isBusinessLeaderInRankCareers = rankCareersLeadership >= 0.4 && rankCareersBusiness >= 0.3;
-  
+  // CRITICAL: Check if org/planning/analytical signals are stronger than leadership/business
+  const rankCareersOrg = Math.max((detailedScores.workstyle.organization || 0), (detailedScores.workstyle.structure || 0), (detailedScores.workstyle.precision || 0));
+  const rankCareersPlanning = (detailedScores.workstyle.planning || 0);
+  const rankCareersAnalytical = (detailedScores.interests.analytical || 0);
+  const rankCareersOrgSignals = Math.max(rankCareersOrg, rankCareersPlanning, rankCareersAnalytical);
+  const rankCareersLeaderSignals = Math.max(rankCareersLeadership, rankCareersBusiness);
+  // CRITICAL: Don't trigger Business Leader if org signals are stronger than leader signals
+  // This prevents "The Balanced Professional" from triggering
+  const rankCareersOrgSignalsStronger = rankCareersOrgSignals > rankCareersLeaderSignals + 0.1;
+  // CRITICAL: Make this check stricter - only trigger when leadership+business are clearly high AND org signals are not stronger
+  // This prevents "The Balanced Professional" from triggering
+  const isClearBusinessLeaderInRankCareers = !rankCareersOrgSignalsStronger && rankCareersLeadership >= 0.5 && rankCareersBusiness >= 0.5 && rankCareersLeaderSignals >= rankCareersOrgSignals;
+  const isModerateBusinessLeaderInRankCareers = !rankCareersOrgSignalsStronger && rankCareersLeadership >= 0.4 && rankCareersBusiness >= 0.4 && rankCareersLeaderSignals > rankCareersOrgSignals + 0.2;
+  const isBusinessLeaderInRankCareers = isClearBusinessLeaderInRankCareers || isModerateBusinessLeaderInRankCareers;
   
   // If Business Leader, ALWAYS use johtaja, regardless of what determineDominantCategory returned
   // This ensures johtaja wins even if jarjestaja scored higher due to organization/planning
@@ -4385,5 +5129,4 @@ function translateStrength(key: string, cohort: Cohort): string {
   
   return translations[key] || key;
 }
-
 

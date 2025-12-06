@@ -598,5 +598,605 @@
     "matchScore": 100,
     "passed": true,
     "categoryScores": {}
+  },
+  {
+    "personality": "The Reserved Analyst",
+    "cohort": "YLA",
+    "expectedCategory": "jarjestaja",
+    "actualCategory": "jarjestaja",
+    "topCareer": "Taloushallinnon asiantuntija",
+    "matchScore": 81,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Reserved Analyst",
+    "cohort": "TASO2",
+    "expectedCategory": "jarjestaja",
+    "actualCategory": "jarjestaja",
+    "topCareer": "Kirjanpitäjä",
+    "matchScore": 86,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Reserved Analyst",
+    "cohort": "NUORI",
+    "expectedCategory": "jarjestaja",
+    "actualCategory": "jarjestaja",
+    "topCareer": "Kirjanpitäjä",
+    "matchScore": 81,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Bold Trailblazer",
+    "cohort": "YLA",
+    "expectedCategory": "johtaja",
+    "actualCategory": "ympariston-puolustaja",
+    "topCareer": "Kiertotalousasiantuntija",
+    "matchScore": 98,
+    "passed": false,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Bold Trailblazer",
+    "cohort": "TASO2",
+    "expectedCategory": "johtaja",
+    "actualCategory": "johtaja",
+    "topCareer": "Viestintäjohtaja",
+    "matchScore": 93,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Bold Trailblazer",
+    "cohort": "NUORI",
+    "expectedCategory": "johtaja",
+    "actualCategory": "johtaja",
+    "topCareer": "Myyntipäällikkö",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Gentle Harmonizer",
+    "cohort": "YLA",
+    "expectedCategory": "auttaja",
+    "actualCategory": "auttaja",
+    "topCareer": "Työpsykologi",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Gentle Harmonizer",
+    "cohort": "TASO2",
+    "expectedCategory": "auttaja",
+    "actualCategory": "auttaja",
+    "topCareer": "Työpsykologi",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Gentle Harmonizer",
+    "cohort": "NUORI",
+    "expectedCategory": "auttaja",
+    "actualCategory": "auttaja",
+    "topCareer": "Kriisityöntekijä",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Methodical Craftsman",
+    "cohort": "YLA",
+    "expectedCategory": "rakentaja",
+    "actualCategory": "rakentaja",
+    "topCareer": "Siivooja",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Methodical Craftsman",
+    "cohort": "TASO2",
+    "expectedCategory": "rakentaja",
+    "actualCategory": "rakentaja",
+    "topCareer": "Siivooja",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Methodical Craftsman",
+    "cohort": "NUORI",
+    "expectedCategory": "rakentaja",
+    "actualCategory": "rakentaja",
+    "topCareer": "Siivooja",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Abstract Dreamer",
+    "cohort": "YLA",
+    "expectedCategory": "luova",
+    "actualCategory": "luova",
+    "topCareer": "Sisällöntuottaja",
+    "matchScore": 89,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Abstract Dreamer",
+    "cohort": "TASO2",
+    "expectedCategory": "luova",
+    "actualCategory": "luova",
+    "topCareer": "Sisällöntuottaja",
+    "matchScore": 84,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Abstract Dreamer",
+    "cohort": "NUORI",
+    "expectedCategory": "luova",
+    "actualCategory": "luova",
+    "topCareer": "3D-taiteilija",
+    "matchScore": 72,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Practical Protector",
+    "cohort": "YLA",
+    "expectedCategory": "rakentaja",
+    "actualCategory": "rakentaja",
+    "topCareer": "Siivooja",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Practical Protector",
+    "cohort": "TASO2",
+    "expectedCategory": "rakentaja",
+    "actualCategory": "rakentaja",
+    "topCareer": "Siivooja",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Practical Protector",
+    "cohort": "NUORI",
+    "expectedCategory": "rakentaja",
+    "actualCategory": "rakentaja",
+    "topCareer": "Siivooja",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Social Strategist",
+    "cohort": "YLA",
+    "expectedCategory": "johtaja",
+    "actualCategory": "johtaja",
+    "topCareer": "Tekoälyjohtaja",
+    "matchScore": 99,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Social Strategist",
+    "cohort": "TASO2",
+    "expectedCategory": "johtaja",
+    "actualCategory": "johtaja",
+    "topCareer": "Kehityspäällikkö",
+    "matchScore": 63,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Social Strategist",
+    "cohort": "NUORI",
+    "expectedCategory": "johtaja",
+    "actualCategory": "johtaja",
+    "topCareer": "Liiketoiminnan kehityspäällikkö",
+    "matchScore": 79,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Determined Survivor",
+    "cohort": "YLA",
+    "expectedCategory": "rakentaja",
+    "actualCategory": "rakentaja",
+    "topCareer": "Siivooja",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Determined Survivor",
+    "cohort": "TASO2",
+    "expectedCategory": "rakentaja",
+    "actualCategory": "rakentaja",
+    "topCareer": "Siivooja",
+    "matchScore": 96,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Determined Survivor",
+    "cohort": "NUORI",
+    "expectedCategory": "rakentaja",
+    "actualCategory": "rakentaja",
+    "topCareer": "Siivooja",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Nurturing Mentor",
+    "cohort": "YLA",
+    "expectedCategory": "auttaja",
+    "actualCategory": "auttaja",
+    "topCareer": "Työpsykologi",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Nurturing Mentor",
+    "cohort": "TASO2",
+    "expectedCategory": "auttaja",
+    "actualCategory": "auttaja",
+    "topCareer": "Työpsykologi",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Nurturing Mentor",
+    "cohort": "NUORI",
+    "expectedCategory": "auttaja",
+    "actualCategory": "auttaja",
+    "topCareer": "Kriisityöntekijä",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Unconventional Rebel",
+    "cohort": "YLA",
+    "expectedCategory": "luova",
+    "actualCategory": "luova",
+    "topCareer": "Sisällöntuottaja",
+    "matchScore": 93,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Unconventional Rebel",
+    "cohort": "TASO2",
+    "expectedCategory": "luova",
+    "actualCategory": "luova",
+    "topCareer": "Sisällöntuottaja",
+    "matchScore": 88,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Unconventional Rebel",
+    "cohort": "NUORI",
+    "expectedCategory": "luova",
+    "actualCategory": "luova",
+    "topCareer": "3D-taiteilija",
+    "matchScore": 78,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Ambitious Networker",
+    "cohort": "YLA",
+    "expectedCategory": "johtaja",
+    "actualCategory": "ympariston-puolustaja",
+    "topCareer": "Kiertotalousasiantuntija",
+    "matchScore": 100,
+    "passed": false,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Ambitious Networker",
+    "cohort": "TASO2",
+    "expectedCategory": "johtaja",
+    "actualCategory": "johtaja",
+    "topCareer": "Kehityspäällikkö",
+    "matchScore": 64,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Ambitious Networker",
+    "cohort": "NUORI",
+    "expectedCategory": "johtaja",
+    "actualCategory": "johtaja",
+    "topCareer": "Liiketoiminnan kehityspäällikkö",
+    "matchScore": 80,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Soft-Spoken Healer",
+    "cohort": "YLA",
+    "expectedCategory": "auttaja",
+    "actualCategory": "auttaja",
+    "topCareer": "Työpsykologi",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Soft-Spoken Healer",
+    "cohort": "TASO2",
+    "expectedCategory": "auttaja",
+    "actualCategory": "auttaja",
+    "topCareer": "Työpsykologi",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Soft-Spoken Healer",
+    "cohort": "NUORI",
+    "expectedCategory": "auttaja",
+    "actualCategory": "auttaja",
+    "topCareer": "Työpsykologi",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Curious Wanderer",
+    "cohort": "YLA",
+    "expectedCategory": "visionaari",
+    "actualCategory": "visionaari",
+    "topCareer": "Visiointiasiantuntija",
+    "matchScore": 66,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Curious Wanderer",
+    "cohort": "TASO2",
+    "expectedCategory": "visionaari",
+    "actualCategory": "visionaari",
+    "topCareer": "Nanoteknologian visionääri",
+    "matchScore": 53,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Curious Wanderer",
+    "cohort": "NUORI",
+    "expectedCategory": "visionaari",
+    "actualCategory": "visionaari",
+    "topCareer": "Kasvunjälkeisen talouden asiantuntija",
+    "matchScore": 73,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Structured Traditionalist",
+    "cohort": "YLA",
+    "expectedCategory": "jarjestaja",
+    "actualCategory": "jarjestaja",
+    "topCareer": "Kirjanpitäjä",
+    "matchScore": 77,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Structured Traditionalist",
+    "cohort": "TASO2",
+    "expectedCategory": "jarjestaja",
+    "actualCategory": "jarjestaja",
+    "topCareer": "Kirjanpitäjä",
+    "matchScore": 86,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Structured Traditionalist",
+    "cohort": "NUORI",
+    "expectedCategory": "jarjestaja",
+    "actualCategory": "jarjestaja",
+    "topCareer": "Kirjanpitäjä",
+    "matchScore": 81,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Analytical Leader",
+    "cohort": "YLA",
+    "expectedCategory": "johtaja",
+    "actualCategory": "jarjestaja",
+    "topCareer": "Prosessipäällikkö",
+    "matchScore": 84,
+    "passed": false,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Analytical Leader",
+    "cohort": "TASO2",
+    "expectedCategory": "johtaja",
+    "actualCategory": "johtaja",
+    "topCareer": "Viestintäjohtaja",
+    "matchScore": 88,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Analytical Leader",
+    "cohort": "NUORI",
+    "expectedCategory": "johtaja",
+    "actualCategory": "johtaja",
+    "topCareer": "Myyntipäällikkö",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Playful Joker",
+    "cohort": "YLA",
+    "expectedCategory": "luova",
+    "actualCategory": "auttaja",
+    "topCareer": "Työpsykologi",
+    "matchScore": 100,
+    "passed": false,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Playful Joker",
+    "cohort": "TASO2",
+    "expectedCategory": "luova",
+    "actualCategory": "luova",
+    "topCareer": "Sisällöntuottaja",
+    "matchScore": 84,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Playful Joker",
+    "cohort": "NUORI",
+    "expectedCategory": "luova",
+    "actualCategory": "auttaja",
+    "topCareer": "Kriisityöntekijä",
+    "matchScore": 100,
+    "passed": false,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Sensitive Artist",
+    "cohort": "YLA",
+    "expectedCategory": "luova",
+    "actualCategory": "luova",
+    "topCareer": "Sisällöntuottaja",
+    "matchScore": 89,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Sensitive Artist",
+    "cohort": "TASO2",
+    "expectedCategory": "luova",
+    "actualCategory": "luova",
+    "topCareer": "Sisällöntuottaja",
+    "matchScore": 84,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Sensitive Artist",
+    "cohort": "NUORI",
+    "expectedCategory": "luova",
+    "actualCategory": "luova",
+    "topCareer": "3D-taiteilija",
+    "matchScore": 72,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Ambivalent Explorer",
+    "cohort": "YLA",
+    "expectedCategory": "visionaari",
+    "actualCategory": "visionaari",
+    "topCareer": "Visiointiasiantuntija",
+    "matchScore": 67,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Ambivalent Explorer",
+    "cohort": "TASO2",
+    "expectedCategory": "visionaari",
+    "actualCategory": "visionaari",
+    "topCareer": "Visiointiasiantuntija",
+    "matchScore": 84,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Ambivalent Explorer",
+    "cohort": "NUORI",
+    "expectedCategory": "visionaari",
+    "actualCategory": "visionaari",
+    "topCareer": "Kestävän kehityksen strategisti",
+    "matchScore": 67,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Assertive Realist",
+    "cohort": "YLA",
+    "expectedCategory": "rakentaja",
+    "actualCategory": "rakentaja",
+    "topCareer": "Siivooja",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Assertive Realist",
+    "cohort": "TASO2",
+    "expectedCategory": "rakentaja",
+    "actualCategory": "rakentaja",
+    "topCareer": "Siivooja",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Assertive Realist",
+    "cohort": "NUORI",
+    "expectedCategory": "rakentaja",
+    "actualCategory": "rakentaja",
+    "topCareer": "Siivooja",
+    "matchScore": 100,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Visionary Storyteller",
+    "cohort": "YLA",
+    "expectedCategory": "visionaari",
+    "actualCategory": "visionaari",
+    "topCareer": "Visiointiasiantuntija",
+    "matchScore": 70,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Visionary Storyteller",
+    "cohort": "TASO2",
+    "expectedCategory": "visionaari",
+    "actualCategory": "visionaari",
+    "topCareer": "Visiointiasiantuntija",
+    "matchScore": 86,
+    "passed": true,
+    "categoryScores": {}
+  },
+  {
+    "personality": "The Visionary Storyteller",
+    "cohort": "NUORI",
+    "expectedCategory": "visionaari",
+    "actualCategory": "visionaari",
+    "topCareer": "Kestävän kehityksen strategisti",
+    "matchScore": 68,
+    "passed": true,
+    "categoryScores": {}
   }
 ]
