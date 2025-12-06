@@ -93,17 +93,24 @@ export default function ResultsPage() {
 
   useEffect(() => {
     const loadResults = async () => {
+      // Get resultId from localStorage - this is the key to consistent results
+      const resultId = localStorage.getItem('lastTestResultId');
+
       // First, try localStorage (set by test component)
       const storedResults = localStorage.getItem('careerTestResults');
-      
+
       if (storedResults) {
         try {
           const data = JSON.parse(storedResults);
           // Validate and clean topCareers array
           if (data.topCareers && Array.isArray(data.topCareers)) {
-            data.topCareers = data.topCareers.filter((c: any) => 
+            data.topCareers = data.topCareers.filter((c: any) =>
               c && typeof c === 'object' && c !== null && c.slug && c.title
             );
+          }
+          // Ensure the stored results have a resultId for consistency
+          if (resultId && !data.resultId) {
+            data.resultId = resultId;
           }
           setResults(data);
           setLoading(false);
@@ -112,84 +119,131 @@ export default function ResultsPage() {
           console.error('[Results] Error parsing localStorage:', err);
         }
       }
-      
-      // If localStorage is empty, try to fetch from database using resultId
-      const resultId = localStorage.getItem('lastTestResultId');
-      if (resultId && supabase) {
+
+      // If localStorage is empty, try to fetch from API using resultId
+      // This fetches the EXACT stored results, not recalculated ones
+      if (resultId) {
         try {
-          console.log('[Results] Fetching results from database with resultId:', resultId);
-          const { data: dbResult, error: dbError } = await supabase
-            .from('test_results')
-            .select('*')
-            .eq('id', resultId)
-            .single();
-          
-          if (dbError) {
-            console.error('[Results] Database error:', dbError);
-          } else if (dbResult) {
-            // Transform database result to match ResultsData format
-            const transformedResult: ResultsData = {
-              success: true,
-              cohort: dbResult.cohort,
-              userProfile: {
+          console.log('[Results] Fetching stored results from API with resultId:', resultId);
+          const response = await fetch(`/api/score/${resultId}`);
+
+          if (response.ok) {
+            const apiResult = await response.json();
+
+            if (apiResult.success) {
+              console.log('[Results] Successfully loaded stored results from API');
+              // Validate and clean topCareers array
+              if (apiResult.topCareers && Array.isArray(apiResult.topCareers)) {
+                apiResult.topCareers = apiResult.topCareers.filter((c: any) =>
+                  c && typeof c === 'object' && c !== null && c.slug && c.title
+                );
+              }
+              // Save to localStorage for future visits
+              localStorage.setItem('careerTestResults', JSON.stringify(apiResult));
+              setResults(apiResult);
+              setLoading(false);
+              return;
+            }
+          } else {
+            console.error('[Results] API returned error status:', response.status);
+          }
+        } catch (err) {
+          console.error('[Results] Error fetching from API:', err);
+        }
+
+        // Fallback: try direct Supabase if API fails
+        if (supabase) {
+          try {
+            console.log('[Results] Fallback: Fetching from Supabase directly');
+            const { data: dbResult, error: dbError } = await supabase
+              .from('test_results')
+              .select('*')
+              .eq('id', resultId)
+              .single();
+
+            if (dbError) {
+              console.error('[Results] Database error:', dbError);
+            } else if (dbResult) {
+              // Check if full_results is available (new format)
+              if (dbResult.full_results) {
+                console.log('[Results] Using full_results from database');
+                const fullResults = dbResult.full_results;
+                // Validate and clean topCareers array
+                if (fullResults.topCareers && Array.isArray(fullResults.topCareers)) {
+                  fullResults.topCareers = fullResults.topCareers.filter((c: any) =>
+                    c && typeof c === 'object' && c !== null && c.slug && c.title
+                  );
+                }
+                localStorage.setItem('careerTestResults', JSON.stringify(fullResults));
+                setResults(fullResults);
+                setLoading(false);
+                return;
+              }
+
+              // Legacy: Transform database result to match ResultsData format
+              console.log('[Results] Using legacy format from database');
+              const transformedResult: ResultsData = {
+                success: true,
                 cohort: dbResult.cohort,
-                dimensionScores: dbResult.dimension_scores || {
-                  interests: 0,
-                  values: 0,
-                  workstyle: 0,
-                  context: 0
-                },
-                topStrengths: [], // Not stored in DB
-                personalizedAnalysis: undefined // Not stored in DB
-              },
-              topCareers: (dbResult.top_careers || [])
-                .filter((c: any) => c && typeof c === 'object' && c.slug && c.title)
-                .map((c: any) => ({
-                  slug: c.slug,
-                  title: c.title,
-                  category: '', // Not stored in DB
-                  overallScore: c.score || 0,
-                  dimensionScores: {
+                userProfile: {
+                  cohort: dbResult.cohort,
+                  dimensionScores: dbResult.dimension_scores || {
                     interests: 0,
                     values: 0,
                     workstyle: 0,
                     context: 0
                   },
-                  reasons: [],
-                  confidence: 'medium' as const,
-                  salaryRange: undefined,
-                  outlook: undefined
-                })),
-              educationPath: dbResult.education_path_primary ? {
-                primary: dbResult.education_path_primary,
-                scores: dbResult.education_path_scores || {},
-                reasoning: '',
-                confidence: 'medium' as const
-              } : undefined,
-              cohortCopy: {
-                title: '',
-                subtitle: '',
-                ctaText: '',
-                shareText: ''
-              }
-            };
-            
-            // Save to localStorage for future visits
-            localStorage.setItem('careerTestResults', JSON.stringify(transformedResult));
-            setResults(transformedResult);
-            setLoading(false);
-            return;
+                  topStrengths: [],
+                  personalizedAnalysis: undefined
+                },
+                topCareers: (dbResult.top_careers || [])
+                  .filter((c: any) => c && typeof c === 'object' && c.slug && c.title)
+                  .map((c: any) => ({
+                    slug: c.slug,
+                    title: c.title,
+                    category: '',
+                    overallScore: c.score || 0,
+                    dimensionScores: {
+                      interests: 0,
+                      values: 0,
+                      workstyle: 0,
+                      context: 0
+                    },
+                    reasons: [],
+                    confidence: 'medium' as const,
+                    salaryRange: undefined,
+                    outlook: undefined
+                  })),
+                educationPath: dbResult.education_path_primary ? {
+                  primary: dbResult.education_path_primary,
+                  scores: dbResult.education_path_scores || {},
+                  reasoning: '',
+                  confidence: 'medium' as const
+                } : undefined,
+                cohortCopy: {
+                  title: '',
+                  subtitle: '',
+                  ctaText: '',
+                  shareText: ''
+                }
+              };
+
+              localStorage.setItem('careerTestResults', JSON.stringify(transformedResult));
+              setResults(transformedResult);
+              setLoading(false);
+              return;
+            }
+          } catch (err) {
+            console.error('[Results] Error fetching from database:', err);
           }
-        } catch (err) {
-          console.error('[Results] Error fetching from database:', err);
         }
       }
-      
+
       // If both localStorage and database fail, show error
       setError('Tuloksia ei löytynyt. Tee testi uudelleen.');
       setLoading(false);
     };
-    
+
     loadResults();
   }, []);
 

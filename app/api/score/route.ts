@@ -190,9 +190,35 @@ export async function POST(request: NextRequest) {
     const cohortCopy = COHORT_COPY[cohort];
     
     // Save to Supabase (skip if not configured)
+    // Store COMPLETE results including all career details, analysis, and education path
     let resultId: string | null = null;
     if (supabaseAdmin) {
       try {
+        // Store the FULL results so they can be retrieved exactly as shown
+        const fullResults = {
+          success: true,
+          cohort,
+          userProfile: {
+            dimensionScores: userProfile.dimensionScores,
+            topStrengths: userProfile.topStrengths,
+            cohort: userProfile.cohort,
+            personalizedAnalysis: userProfile.personalizedAnalysis
+          },
+          topCareers: topCareers.map(career => ({
+            slug: career.slug,
+            title: career.title,
+            category: career.category,
+            overallScore: career.overallScore,
+            dimensionScores: career.dimensionScores,
+            reasons: career.reasons,
+            confidence: career.confidence,
+            salaryRange: career.salaryRange,
+            outlook: career.outlook
+          })),
+          educationPath: educationPath || null,
+          cohortCopy: COHORT_COPY[cohort]
+        };
+
         const testResult = {
           cohort,
           school_code: body.schoolCode || null,
@@ -205,15 +231,17 @@ export async function POST(request: NextRequest) {
           })),
           dimension_scores: userProfile.dimensionScores,
           time_spent_seconds: body.timeSpentSeconds || null,
-          completed: true
+          completed: true,
+          // Store complete results as JSON for exact retrieval
+          full_results: fullResults
         };
-        
+
         const { data, error } = await supabaseAdmin
           .from('test_results')
           .insert(testResult)
           .select('id')
           .single();
-        
+
         if (error) {
           console.error('[API] Error saving to Supabase:', error);
         } else if (data) {
