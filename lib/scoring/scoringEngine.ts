@@ -1995,7 +1995,12 @@ function determineDominantCategory(
   // FIXED: Require environment AND NOT global (distinguish from visionaari)
   // FIXED: Also require NOT high leadership/business (distinguish from johtaja)
   // CRITICAL: This category MUST be excluded when leadership/business are high (johtaja indicator)
-  const envScore = (interests.environment || 0);
+  // CRITICAL: TASO2 maps environmental questions to 'impact' subdimension, not 'environment'
+  // Use max of environment, impact, and outdoor as environmental signal
+  const envEnvironment = (interests.environment || 0);
+  const envImpact = (values.impact || interests.impact || 0);
+  const envOutdoor = (interests.outdoor || context.outdoor || 0);
+  const envScore = Math.max(envEnvironment, envImpact * 0.9, envOutdoor * 0.8);  // Combine all environmental signals
   const globalScore = (values.global || interests.global || 0);
   const envLeadership = (interests.leadership || workstyle.leadership || 0);
   const envBusiness = (interests.business || values.advancement || 0);
@@ -2017,9 +2022,12 @@ function determineDominantCategory(
   let shouldScoreYmparistonPuolustaja = true;
   
   // CRITICAL: "The Calculated Risk-Taker" has leadership=5, business=5, entrepreneurship=4
-  // These normalize to 1.0, 1.0, 0.8 - ANY of these > 0 means johtaja
-  if (envLeadership > 0 || envBusiness > 0 || envEntrepreneurship > 0) {
-    // ANY leadership/business/entrepreneurship = johtaja, not ympariston-puolustaja - keep at ZERO
+  // These normalize to 1.0, 1.0, 0.8 - high signals mean johtaja, not ympariston-puolustaja
+  // FIXED: Allow low signals (< 0.25) - only block if leadership/business/entrepreneurship is significant
+  // Score of 1 on a 1-5 scale normalizes to 0.0, score of 2 normalizes to 0.25
+  const envJohtajaThreshold = 0.25;  // Allow scores up to 2 without blocking
+  if (envLeadership >= envJohtajaThreshold || envBusiness >= envJohtajaThreshold || envEntrepreneurship >= envJohtajaThreshold) {
+    // Significant leadership/business/entrepreneurship = johtaja, not ympariston-puolustaja - keep at ZERO
     // Skip all other ympariston-puolustaja calculations - this is clearly johtaja
     // DO NOT score ympariston-puolustaja at all
     shouldScoreYmparistonPuolustaja = false;
@@ -4637,10 +4645,17 @@ export function rankCareers(
     }
     
     // Environment boost: if user has strong environment interest and career is environment-oriented
+    // CRITICAL: TASO2 maps environmental questions to 'impact' subdimension, not 'environment'
+    // Use max of environment, impact, and outdoor as environmental signal (same logic as category detection)
     const userEnvironmentScore = detailedScores.interests.environment || 0;
+    const userImpactScore = detailedScores.values?.impact || detailedScores.interests?.impact || 0;
+    const userOutdoorScore = detailedScores.interests?.outdoor || detailedScores.context?.outdoor || 0;
+    const userEffectiveEnvScore = Math.max(userEnvironmentScore, userImpactScore, userOutdoorScore);
     const careerEnvironmentScore = careerVector.interests?.environment || 0;
-    if (userEnvironmentScore >= 0.5 && careerEnvironmentScore >= 0.6 && dominantCategory === 'ympariston-puolustaja') {
-      const envBoost = Math.min(25, userEnvironmentScore * 40); // Up to 25% boost
+    const careerImpactScore = careerVector.values?.impact || 0;
+    const careerEffectiveEnvScore = Math.max(careerEnvironmentScore, careerImpactScore);
+    if (userEffectiveEnvScore >= 0.5 && careerEffectiveEnvScore >= 0.6 && dominantCategory === 'ympariston-puolustaja') {
+      const envBoost = Math.min(35, userEffectiveEnvScore * 50); // Up to 35% boost for environmental match
       overallScore = Math.min(100, overallScore + envBoost);
     }
     
