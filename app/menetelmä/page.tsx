@@ -305,7 +305,7 @@ export default function MethodologyPage() {
               Valmis löytämään urapolkusi?
             </h2>
             <p className="text-xl text-neutral-300 mb-8">
-              Testi kestää 8-10 minuuttia ja on täysin maksuton
+              Testi kestää noin 5 minuuttia ja on täysin maksuton
             </p>
             <Link href="/test">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg">

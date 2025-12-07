@@ -53,7 +53,7 @@ Kyllä! CareerCompass on suunniteltu noudattamaan GDPR-säädöksiä:
 ## 🧪 Testin tekeminen
 
 ### Kuinka kauan testi kestää?
-Testi kestää noin **10-15 minuuttia** per oppilas. Testissä on 30 kysymystä.
+Testi kestää noin **5 minuuttia** per oppilas. Testissä on 30 kysymystä.
 
 ### Miten monta oppilasta voi tehdä testin samaan aikaan?
 **Rajoittamatonta määrää!** Jokainen oppilas käyttää omaa PIN-koodiaan, joten testit ovat itsenäisiä.
