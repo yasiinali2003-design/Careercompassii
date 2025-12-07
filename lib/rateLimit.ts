@@ -8,8 +8,8 @@ import crypto from 'crypto';
 
 // Rate limit configuration
 const RATE_LIMIT_CONFIG = {
-  maxRequestsPerHour: process.env.NODE_ENV === 'development' ? 1000 : 10, // Max 10 tests per hour per IP (1000 in dev)
-  maxRequestsPerDay: process.env.NODE_ENV === 'development' ? 10000 : 50,  // Max 50 tests per day per IP (10000 in dev)
+  maxRequestsPerHour: process.env.NODE_ENV === 'development' ? 100000 : 10, // Max 10 tests per hour per IP (unlimited in dev for testing)
+  maxRequestsPerDay: process.env.NODE_ENV === 'development' ? 1000000 : 50,  // Max 50 tests per day per IP (unlimited in dev for testing)
   windowHours: 1,          // 1 hour window for hourly limit
   windowDays: 24           // 24 hour window for daily limit
 };

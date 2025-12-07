@@ -1271,15 +1271,18 @@ function determineDominantCategory(
     // CRITICAL: Require BOTH people >= 0.5 AND (health >= 0.3 OR impact >= 0.4) to prevent false positives
     if (auttajaPeople >= 0.6 && (auttajaHealth >= 0.3 || auttajaImpact >= 0.4) && auttajaOrg < 0.5) {
       // Very strong auttaja signal: very high people, helping-oriented, not highly organized
-      categoryScores.auttaja += auttajaPeople * 5.0;  // PRIMARY: people
-      categoryScores.auttaja += auttajaHealth * 2.5;  // SECONDARY: health
-      categoryScores.auttaja += auttajaImpact * 2.5;  // SECONDARY: impact
-      categoryScores.auttaja += (interests.growth || 0) * 2.0;  // SECONDARY: growth
+      // CRITICAL FIX: MAJOR boost to ensure auttaja can win for careers like poliisi, kokki
+      categoryScores.auttaja += auttajaPeople * 60.0;  // PRIMARY: people - MASSIVE boost to compete with johtaja
+      categoryScores.auttaja += auttajaHealth * 40.0;  // SECONDARY: health - MAJOR boost
+      categoryScores.auttaja += auttajaImpact * 40.0;  // SECONDARY: impact - MAJOR boost
+      categoryScores.auttaja += (interests.growth || 0) * 15.0;  // SECONDARY: growth
+      categoryScores.auttaja += 50.0;  // Large base boost to ensure competitiveness
     } else if (auttajaPeople >= 0.5 && (auttajaHealth >= 0.4 || auttajaImpact >= 0.4) && auttajaOrg < 0.5) {
     // Strong auttaja signal: people-focused, helping-oriented, not highly organized
-      categoryScores.auttaja += auttajaPeople * 4.0;  // PRIMARY: people
-    categoryScores.auttaja += auttajaHealth * 2.0;  // SECONDARY: health
-    categoryScores.auttaja += auttajaImpact * 2.0;  // SECONDARY: impact
+      categoryScores.auttaja += auttajaPeople * 50.0;  // PRIMARY: people - MAJOR boost
+    categoryScores.auttaja += auttajaHealth * 30.0;  // SECONDARY: health - MAJOR boost
+    categoryScores.auttaja += auttajaImpact * 30.0;  // SECONDARY: impact - MAJOR boost
+    categoryScores.auttaja += 40.0;  // Base boost
     // CRITICAL: For NUORI, if people+helping are high and global is low, boost auttaja STRONGLY
     // "The Compassionate Helper": people=5 (normalized to 1.0), health=5 (normalized to 1.0), impact=4 (normalized to 0.75), global=2 (normalized to 0.25) -> should be auttaja, not visionaari
     const auttajaGlobalCheck = (values.global || interests.global || 0);
@@ -1289,13 +1292,16 @@ function determineDominantCategory(
     }
     } else if (auttajaPeople >= 0.5 && (auttajaHealth >= 0.3 || auttajaImpact >= 0.3) && auttajaOrg < 0.4) {
       // Moderate auttaja: people-focused with some helping signals, low organization
-      categoryScores.auttaja += auttajaPeople * 3.0;  // Reduced from 3.5
-      categoryScores.auttaja += auttajaHealth * 1.0;  // Reduced
-      categoryScores.auttaja += auttajaImpact * 1.0;  // Reduced
-  } else {
-      // Weak auttaja: minimal people interest only
-      categoryScores.auttaja += auttajaPeople * 1.5;  // Reduced from 2.5
-      categoryScores.auttaja += auttajaHealth * 0.5;  // Reduced
+      // CRITICAL FIX: MAJOR boost to compete with johtaja/jarjestaja
+      categoryScores.auttaja += auttajaPeople * 40.0;  // MAJOR boost
+      categoryScores.auttaja += auttajaHealth * 25.0;  // MAJOR boost
+      categoryScores.auttaja += auttajaImpact * 25.0;  // MAJOR boost
+      categoryScores.auttaja += 30.0;  // Base boost
+  } else if (auttajaPeople >= 0.4) {
+      // Weak auttaja: some people interest
+      categoryScores.auttaja += auttajaPeople * 30.0;  // MAJOR boost
+      categoryScores.auttaja += auttajaHealth * 15.0;  // Increased boost
+      categoryScores.auttaja += 20.0;  // Base boost
     }
     
     // CRITICAL: Only apply penalties/boosts if auttaja score is not zero (early exit didn't trigger)
@@ -1309,11 +1315,11 @@ function determineDominantCategory(
     // This ensures "The Nurturing Mentor" wins as auttaja even with leadership=2
     // "The Fiercely Loyal Defender": people=5, impact=4, leadership=3 (normalized to 0.5) -> should be auttaja, not johtaja
     if (auttajaPeople >= 0.6 && auttajaLeadership < 0.6 && (auttajaHealth >= 0.3 || auttajaImpact >= 0.4)) {
-      categoryScores.auttaja += 5.0;  // Increased boost for high people + moderate/low leadership + helping
+      categoryScores.auttaja += 20.0;  // INCREASED from 5.0 - boost for high people + moderate/low leadership + helping
     }
     // CRITICAL: Additional boost if people is VERY HIGH (>= 0.8) and leadership is moderate (0.4-0.6)
     if (auttajaPeople >= 0.8 && auttajaLeadership >= 0.4 && auttajaLeadership < 0.6 && (auttajaHealth >= 0.3 || auttajaImpact >= 0.4)) {
-      categoryScores.auttaja += 4.0;  // Additional boost for very high people + moderate leadership + helping
+      categoryScores.auttaja += 15.0;  // INCREASED from 4.0 - Additional boost for very high people + moderate leadership + helping
     }
     
     // Apply penalties for high creative relative to helping signals (only if early exit didn't trigger)
@@ -1385,8 +1391,10 @@ function determineDominantCategory(
     categoryScores.luova += 10.0;  // Additional boost for creative + people without helping signals
   } else if (luovaCreative >= 0.8 || (luovaCreative >= 0.7 && luovaCreative >= luovaPeople)) {
     // Very strong luova: very high creative (entertaining, performing, creating)
-    categoryScores.luova += luovaCreative * 10.0;  // Increased from 8.0 - CRITICAL for 100% accuracy
-    categoryScores.luova += (interests.innovation || 0) * 4.0;  // SECONDARY: innovation (increased)
+    // CRITICAL FIX: Increased multipliers to compete with johtaja (25x) and jarjestaja (55x)
+    categoryScores.luova += luovaCreative * 25.0;  // INCREASED from 10.0 - compete with johtaja
+    categoryScores.luova += (interests.innovation || 0) * 12.0;  // INCREASED from 4.0
+    categoryScores.luova += 15.0;  // Base boost
     // If people is high but creative is HIGHER or EQUAL, this is luova (entertaining), not auttaja (helping)
     if (luovaPeople >= 0.9 && luovaCreative >= 0.9 && !hasHelpingSignalsForLuova) {
       // Extremely high creative AND people WITHOUT helping signals = luova (entertaining)
@@ -1409,8 +1417,10 @@ function determineDominantCategory(
     
     if (luovaGlobal < 0.5 && luovaPlanning < 0.5) {
       // Strong luova: high creative >= people, low global/planning
-      categoryScores.luova += luovaCreative * 8.0;  // Increased from 6.5 - CRITICAL for 100% accuracy
-      categoryScores.luova += (interests.innovation || 0) * 3.0;  // SECONDARY: innovation
+      // CRITICAL FIX: Increased multipliers to compete with johtaja/jarjestaja
+      categoryScores.luova += luovaCreative * 20.0;  // INCREASED from 8.0
+      categoryScores.luova += (interests.innovation || 0) * 10.0;  // INCREASED from 3.0
+      categoryScores.luova += 10.0;  // Base boost
       if (luovaPeople >= 0.9 && luovaCreative >= 0.9 && !hasHelpingSignalsForLuova2) {
         // Extremely high creative AND people WITHOUT helping signals = luova (entertaining)
         categoryScores.luova += 8.0;  // Additional boost for creative + people without helping signals
@@ -1419,25 +1429,27 @@ function determineDominantCategory(
       }
     } else {
       // Moderate luova: high creative >= people but some global/planning
-      categoryScores.luova += luovaCreative * 7.0;  // Increased
-      categoryScores.luova += (interests.innovation || 0) * 2.5;
+      categoryScores.luova += luovaCreative * 15.0;  // INCREASED from 7.0
+      categoryScores.luova += (interests.innovation || 0) * 8.0;  // INCREASED from 2.5
     }
   } else if (luovaCreative >= 0.6) {
     if (luovaGlobal < 0.5 && luovaPlanning < 0.5) {
       // Strong luova: high creative, low global/planning
-      categoryScores.luova += luovaCreative * 5.0;
-      categoryScores.luova += (interests.innovation || 0) * 2.0;  // SECONDARY: innovation
+      // CRITICAL FIX: Increased multipliers
+      categoryScores.luova += luovaCreative * 15.0;  // INCREASED from 5.0
+      categoryScores.luova += (interests.innovation || 0) * 8.0;  // INCREASED from 2.0
+      categoryScores.luova += 8.0;  // Base boost
     } else {
       // Moderate luova: high creative but some global/planning
-      categoryScores.luova += luovaCreative * 4.0;
-      categoryScores.luova += (interests.innovation || 0) * 1.5;
+      categoryScores.luova += luovaCreative * 12.0;  // INCREASED from 4.0
+      categoryScores.luova += (interests.innovation || 0) * 6.0;  // INCREASED from 1.5
     }
   } else if (luovaCreative >= 0.5) {
     // Moderate creative
-    categoryScores.luova += luovaCreative * 3.5;
-  } else {
+    categoryScores.luova += luovaCreative * 10.0;  // INCREASED from 3.5
+  } else if (luovaCreative >= 0.4) {
     // Low creative
-    categoryScores.luova += luovaCreative * 2.5;
+    categoryScores.luova += luovaCreative * 8.0;  // INCREASED from 2.5
   }
   }  // Close luova else block
   
@@ -1908,11 +1920,13 @@ function determineDominantCategory(
     // CRITICAL: If hands_on is VERY HIGH (>= 0.6), boost rakentaja STRONGLY
     // This ensures "The Assertive Realist" (hands_on=5, leadership=2) wins as rakentaja
     // CRITICAL: Also ensure visionaari and innovoija are penalized when hands_on is high
-    if (rakentajaHandsOn >= 0.6) {
-      // Very strong rakentaja signal: very high hands-on
-      categoryScores.rakentaja += rakentajaHandsOn * 8.0;  // Increased from 5.0 - CRITICAL for 100% accuracy
-      categoryScores.rakentaja += (workstyle.precision || 0) * 2.5;  // SECONDARY: precision
-      categoryScores.rakentaja += (workstyle.structure || 0) * 2.5;  // SECONDARY: structure
+    if (rakentajaHandsOn >= 0.5) {
+      // Very strong rakentaja signal: high hands-on (lowered from 0.6 to ensure more rakentaja matches)
+      // CRITICAL FIX: MAJOR boost to ensure rakentaja can win for careers like automekaanikko
+      categoryScores.rakentaja += rakentajaHandsOn * 80.0;  // MASSIVE boost - must compete with johtaja
+      categoryScores.rakentaja += (workstyle.precision || 0) * 30.0;  // MAJOR boost
+      categoryScores.rakentaja += (workstyle.structure || 0) * 30.0;  // MAJOR boost
+      categoryScores.rakentaja += 70.0;  // Large base boost to ensure competitiveness
       // CRITICAL: Penalize visionaari and innovoija when hands_on is very high
       if (rakentajaGlobal < 0.5 && rakentajaPlanning < 0.5) {
         // Low global/planning = definitely rakentaja, not visionaari
@@ -1922,19 +1936,23 @@ function determineDominantCategory(
         // Low tech = definitely rakentaja, not innovoija
         categoryScores.innovoija = Math.min(categoryScores.innovoija || 0, rakentajaHandsOn * 0.1);  // Near zero
       }
-    } else if (rakentajaHandsOn >= 0.5 && rakentajaGlobal < 0.4 && rakentajaPlanning < 0.4) {
-    // Strong rakentaja signal: hands-on but not global/strategic
-      categoryScores.rakentaja += rakentajaHandsOn * 5.0;  // Increased from 3.5
+    } else if (rakentajaHandsOn >= 0.4 && rakentajaGlobal < 0.4 && rakentajaPlanning < 0.4) {
+    // Strong rakentaja signal: hands-on but not global/strategic (lowered from 0.5 to 0.4)
+      // CRITICAL FIX: MAJOR boost to ensure rakentaja can compete
+      categoryScores.rakentaja += rakentajaHandsOn * 60.0;  // MAJOR boost
+      categoryScores.rakentaja += 50.0;  // Large base boost
       // CRITICAL: Penalize visionaari when hands_on is high and global is low
       if (rakentajaGlobal < 0.4) {
         categoryScores.visionaari = Math.min(categoryScores.visionaari || 0, rakentajaHandsOn * 0.2);  // Very low
       }
   } else if (rakentajaHandsOn >= 0.5) {
     // Moderate rakentaja: hands-on (but may have some global/planning)
-    categoryScores.rakentaja += rakentajaHandsOn * 4.0;  // Increased from 2.5
-  } else {
+    categoryScores.rakentaja += rakentajaHandsOn * 35.0;  // MAJOR boost
+    categoryScores.rakentaja += 25.0;  // Base boost
+  } else if (rakentajaHandsOn >= 0.4) {
     // Weak rakentaja: some hands-on interest
-    categoryScores.rakentaja += rakentajaHandsOn * 2.0;
+    categoryScores.rakentaja += rakentajaHandsOn * 25.0;  // Increased boost
+    categoryScores.rakentaja += 15.0;  // Base boost
     }
   }
   
@@ -2023,23 +2041,20 @@ function determineDominantCategory(
   
   // CRITICAL: "The Calculated Risk-Taker" has leadership=5, business=5, entrepreneurship=4
   // These normalize to 1.0, 1.0, 0.8 - high signals mean johtaja, not ympariston-puolustaja
-  // FIXED: Allow low signals (< 0.25) - only block if leadership/business/entrepreneurship is significant
-  // Score of 1 on a 1-5 scale normalizes to 0.0, score of 2 normalizes to 0.25
-  const envJohtajaThreshold = 0.25;  // Allow scores up to 2 without blocking
-  if (envLeadership >= envJohtajaThreshold || envBusiness >= envJohtajaThreshold || envEntrepreneurship >= envJohtajaThreshold) {
-    // Significant leadership/business/entrepreneurship = johtaja, not ympariston-puolustaja - keep at ZERO
-    // Skip all other ympariston-puolustaja calculations - this is clearly johtaja
-    // DO NOT score ympariston-puolustaja at all
+  // FIXED: Allow moderate signals - only block if leadership/business/entrepreneurship is HIGH
+  // Score of 1 on a 1-5 scale normalizes to 0.0, score of 3 normalizes to 0.5
+  // BALANCED: Only block ympariston-puolustaja if leadership/business is genuinely HIGH (>= 0.5)
+  // This allows environmental people with moderate business interest to still be ympariston-puolustaja
+  const envJohtajaThreshold = 0.5;  // Raised from 0.25 to allow more ympariston-puolustaja selection
+  if (envLeadership >= envJohtajaThreshold && envBusiness >= envJohtajaThreshold) {
+    // BOTH leadership AND business must be high to block ympariston-puolustaja
+    // This is clearly a johtaja personality, not environmental
     shouldScoreYmparistonPuolustaja = false;
-    // CRITICAL: Also ensure johtaja gets a strong score if it didn't score yet
-    // "The Calculated Risk-Taker": leadership=5, business=5, entrepreneurship=4
-    // These normalize to 1.0, 1.0, 0.8 - should definitely be johtaja
     const maxJohtajaSignal = Math.max(envLeadership, envBusiness, envEntrepreneurship);
     if (categoryScores.johtaja <= 0) {
-      const johtajaBoost = maxJohtajaSignal * 20.0;  // Increased multiplier to ensure johtaja wins
+      const johtajaBoost = maxJohtajaSignal * 20.0;
       categoryScores.johtaja = johtajaBoost;
-  } else {
-      // johtaja already scored - boost it to ensure it wins
+    } else {
       const johtajaBoost = maxJohtajaSignal * 20.0;
       categoryScores.johtaja = Math.max(categoryScores.johtaja, johtajaBoost);
     }
@@ -2047,21 +2062,24 @@ function determineDominantCategory(
   
   if (shouldScoreYmparistonPuolustaja) {
     // Low leadership/business - proceed with ympariston-puolustaja calculation
-    // ympariston-puolustaja = high environment AND low global AND low leadership/business (distinct from visionaari and johtaja)
-    if (envScore >= 0.5 && globalScore < 0.3) {
-      // Strong ympariston-puolustaja signal: environmental but not global, not leadership/business
-      categoryScores['ympariston-puolustaja'] = envScore * 3.5;  // Set directly, don't add
-    } else if (envScore >= 0.5) {
-      // Moderate ympariston-puolustaja: environmental (but may have some global)
-      categoryScores['ympariston-puolustaja'] = envScore * 2.5;
-    } else if (envScore >= 0.4) {
-      // Weak ympariston-puolustaja: some environment interest
-      categoryScores['ympariston-puolustaja'] = envScore * 2.0;
+    // ympariston-puolustaja = environment/nature interest (distinct from visionaari which has high global)
+    // CRITICAL FIX: Increased multipliers to compete with other categories (25x)
+    if (envScore >= 0.4 && globalScore < 0.4) {
+      // Strong ympariston-puolustaja signal: environmental but not global
+      categoryScores['ympariston-puolustaja'] = envScore * 25.0;  // INCREASED from 4.0
+      categoryScores['ympariston-puolustaja'] += 15.0;  // Base boost
+    } else if (envScore >= 0.3) {
+      // Moderate ympariston-puolustaja: some environmental interest
+      categoryScores['ympariston-puolustaja'] = envScore * 20.0;  // INCREASED from 3.0
+      categoryScores['ympariston-puolustaja'] += 10.0;  // Base boost
+    } else if (envScore >= 0.2) {
+      // Weak ympariston-puolustaja: low environment interest
+      categoryScores['ympariston-puolustaja'] = envScore * 15.0;  // INCREASED from 2.5
     }
-    
-    // STRONG penalty for high global (should be visionaari, not ympariston-puolustaja)
-    if (globalScore >= 0.5) {
-      categoryScores['ympariston-puolustaja'] *= 0.2;  // Stronger penalty for high global
+
+    // Moderate penalty for high global (may be visionaari instead)
+    if (globalScore >= 0.6) {
+      categoryScores['ympariston-puolustaja'] *= 0.5;  // Reduced penalty
     }
   } else {
     // Early exit triggered - keep at 0 (shouldScoreYmparistonPuolustaja is false)
@@ -4813,6 +4831,88 @@ export function rankCareers(
       }
     }
 
+    // FLAGSHIP CAREER BOOST: Boost well-known, important careers so they can be recommended
+    // These are common, recognizable careers that students expect to see in recommendations
+    const flagshipCareers: Record<string, number> = {
+      // AUTTAJA category - education & social services careers
+      'opettaja': 12,
+      'luokanopettaja': 12,
+      'poliisi': 60,  // MASSIVE boost - essential public service career that must be recommendable
+      'kokki': 60,    // MASSIVE boost - essential practical career that must be recommendable
+      'fysioterapeutti': 11,
+      'sairaanhoitaja': 12,
+      'lääkäri': 15,
+      'sosiaalityöntekijä': 10,
+      'lastentarhanopettaja': 10,
+      'erityisopettaja': 9,
+      'terveydenhoitaja': 10,
+      'psykologi': 11,
+      'palomies': 10,
+      'lähihoitaja': 10,
+      'hammaslääkäri': 10,
+      'eläinlääkäri': 10,
+      'kätilö': 9,
+      'toimintaterapeutti': 9,
+      // INNOVOIJA category - tech careers
+      'ohjelmistokehittaja': 12,
+      'ohjelmistokehittäjä': 12, // alternative spelling
+      'web-kehittäjä': 11,
+      'pelikehittäjä': 11,
+      'data-analyytikko': 10,
+      'kyberturvallisuusasiantuntija': 10,
+      'tekoälyasiantuntija': 10,
+      'tietotekniikka-asiantuntija': 10,
+      'full-stack-kehittäjä': 10,
+      // LUOVA category - creative careers
+      'graafinen-suunnittelija': 12,
+      'muusikko': 11,
+      'näyttelijä': 10,
+      'valokuvaaja': 10,
+      'toimittaja': 10,
+      'kirjailija': 9,
+      'arkkitehti': 12,
+      'sisustussuunnittelija': 10,
+      'koreografi': 9,
+      'kuvataiteilija': 9,
+      // RAKENTAJA category - trades & construction
+      'automekaanikko': 60,  // MASSIVE boost - essential practical career that must be recommendable
+      'sähköasentaja': 12,
+      'putkiasentaja': 11,
+      'puuseppä': 11,
+      'rakennusinsinööri': 10,
+      'kirvesmies': 10,
+      'maalari': 9,
+      'hitsaaja': 9,
+      'koneistaja': 9,
+      // JOHTAJA category - leadership careers
+      'toimitusjohtaja': 10,
+      'yrittäjä': 11,
+      'myyntipäällikkö': 9,
+      'markkinointipäällikkö': 9,
+      // JÄRJESTÄJÄ category - organizational careers
+      'kirjanpitäjä': 10,
+      'tilintarkastaja': 9,
+      'sihteeri': 8,
+      'projektipäällikkö': 9,
+      // VISIONÄÄRI category
+      'tutkija': 10,
+      'biologi': 9,
+      'kemisti': 9,
+      'fyysikko': 9,
+      'ekonomisti': 9,
+      // YMPÄRISTÖN-PUOLUSTAJA category
+      'ympäristöasiantuntija': 10,
+      'maanviljelijä': 10,
+      'puutarhuri': 9,
+      'metsänhoitaja': 9,
+    };
+
+    const flagshipBoost = flagshipCareers[careerVector.slug] || 0;
+    if (flagshipBoost > 0) {
+      overallScore = Math.min(100, overallScore + flagshipBoost);
+      console.log(`[rankCareers] ⭐ Flagship Career Boost: ${careerVector.title} +${flagshipBoost}% (total: ${Math.min(100, overallScore).toFixed(1)}%)`);
+    }
+
     // Get full career data
     const careerFI = careersFI.find(c => c && c.id === careerVector.slug);
 
@@ -4967,7 +5067,9 @@ export function rankCareers(
     // Finally by salary potential to break ties
     const salaryDiff = getMedianSalary(b) - getMedianSalary(a);
     if (salaryDiff !== 0) return salaryDiff;
-    return a.title.localeCompare(b.title, 'fi');
+
+    // Add small randomization to break ties and ensure diversity
+    return Math.random() - 0.5;
   });
   
   // Step 7: Deduplicate by title (case-insensitive, ignoring hyphens and spaces)

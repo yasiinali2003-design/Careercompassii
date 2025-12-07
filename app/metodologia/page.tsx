@@ -97,7 +97,7 @@ export default function MetodologiaPage() {
                 Kiinnostuksiin perustuva menetelmä uravalintojen tueksi
               </h1>
               <p className="text-lg md:text-xl text-urak-text-secondary leading-relaxed max-w-3xl">
-                UraKompassi kartoittaa nuoren kiinnostuksen kohteet ja vertaa niitä 752 ammatin vaatimuksiin Suomen työmarkkinoilla. Menetelmä ei korvaa opinto-ohjaajaa vaan kokoaa nuoren kiinnostuksen kohteet ja vahvuudet yhteen raporttiin, joka toimii lähtökohtana ohjauskeskustelulle.
+                UraKompassi kartoittaa nuoren kiinnostuksen kohteet ja vertaa niitä 738 ammatin vaatimuksiin Suomen työmarkkinoilla. Menetelmä ei korvaa opinto-ohjaajaa vaan kokoaa nuoren kiinnostuksen kohteet ja vahvuudet yhteen raporttiin, joka toimii lähtökohtana ohjauskeskustelulle.
               </p>
             </section>
           </AnimatedSection>
@@ -175,7 +175,7 @@ export default function MetodologiaPage() {
                 </li>
               </ul>
               <p className="text-base text-urak-text-secondary leading-relaxed">
-                Nämä neljä ulottuvuutta muodostavat yhdessä nuoren henkilökohtaisen profiilin, joka vertaillaan 752 ammatin vaatimuksiin ja ominaisuuksiin Suomen työmarkkinoilla.
+                Nämä neljä ulottuvuutta muodostavat yhdessä nuoren henkilökohtaisen profiilin, joka vertaillaan 738 ammatin vaatimuksiin ja ominaisuuksiin Suomen työmarkkinoilla.
               </p>
             </motion.section>
           </AnimatedSection>
@@ -209,7 +209,7 @@ export default function MetodologiaPage() {
                     UraKompassin kysymykset kartoittavat nuoren kiinnostuksen kohteita eri alueilla: analyyttinen ajattelu, luovuus, käytännön tekeminen, teknologia, ihmisten auttaminen, ympäristö ja johtaminen. Kysymykset on muotoiltu suoraan: &ldquo;Kiinnostaako sinua...?&rdquo; tai &ldquo;Pidätkö...?&rdquo;.
                   </p>
                   <p className="text-base text-urak-text-secondary leading-relaxed">
-                    Nuoren vastaukset muodostavat hänen henkilökohtaisen kiinnostusprofiilins, jota verrataan 752 ammatin vaatimuksiin ja ominaisuuksiin. Vertailu perustuu matemaattiseen samankaltaisuuden laskentaan, joka löytää parhaat vastineet nuoren profiilille.
+                    Nuoren vastaukset muodostavat hänen henkilökohtaisen kiinnostusprofiilins, jota verrataan 738 ammatin vaatimuksiin ja ominaisuuksiin. Vertailu perustuu matemaattiseen samankaltaisuuden laskentaan, joka löytää parhaat vastineet nuoren profiilille.
                   </p>
                 </div>
 
