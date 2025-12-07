@@ -6,12 +6,12 @@ export default function KayttoehdotPage() {
       <main className="flex-1">
         <div className="container mx-auto px-4 py-12 max-w-3xl">
           <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-white">KÄYTTÖEHDOT — Urakompassi Oy</h1>
-          <p className="text-sm text-neutral-400 mb-8">Versio 3.3 • Viimeksi päivitetty: 7.11.2025 • Y‑tunnus: 3579081-5 • Rekisteröity tavaramerkki: [täydennä]</p>
+          <p className="text-sm text-neutral-400 mb-8">Versio 3.4 • Viimeksi päivitetty: 12.2025 • Y‑tunnus: 3579081-5</p>
           <div className="space-y-6 leading-relaxed text-base">
           <pre className="whitespace-pre-wrap font-sans text-[15px] text-neutral-200">
 {`## 1 Johdanto
 
-Nämä käyttöehdot (“Ehdot”) säätelevät Urakompassi Oy:n (“Urakompassi”, “me”) tarjoaman verkkopalvelun (“Palvelu”) käyttöä. Käyttämällä Palvelua hyväksyt nämä Ehdot kulloinkin voimassa olevina. Jos et hyväksy Ehtoja, älä käytä Palvelua. Palvelu on tekoälypohjainen urasuunnittelu- ja testijärjestelmä; tulokset ovat ohjeellisia eivätkä takaa tiettyä lopputulosta.
+Nämä käyttöehdot (“Ehdot”) säätelevät Urakompassi Oy:n (“Urakompassi”, “me”) tarjoaman verkkopalvelun (“Palvelu”) käyttöä. Käyttämällä Palvelua hyväksyt nämä Ehdot kulloinkin voimassa olevina. Jos et hyväksy Ehtoja, älä käytä Palvelua. Palvelu on tutkimuspohjainen urasuunnittelu- ja testijärjestelmä; tulokset ovat ohjeellisia eivätkä takaa tiettyä lopputulosta.
 
 ## 2 Määritelmät
 “Palvelu”: Urakompassin verkkopalvelu ja sen osat.
@@ -51,7 +51,7 @@ Palvelu tarjotaan “best effort” ‑periaatteella. Suunnitelluista huoltotöi
 Voimme päivittää tai keskeyttää Palvelun tilapäisesti tai pysyvästi. Merkittävistä muutoksista ilmoitetaan kohtuullisessa ajassa Palvelussa tai sähköpostitse. Materiaalisiin sopimusehtoihin tehtävistä muutoksista ilmoitetaan 30 päivää etukäteen, ellei kyse ole lain tai tietoturvan edellyttämästä kiireellisestä muutoksesta.
 
 ## 13 Vastuunrajoitus
-Palvelu tarjotaan “sellaisenaan”. Emme takaa keskeytyksetöntä toimintaa tai tiettyä lopputulosta. Urakompassin kokonaisvastuu rajoittuu määrään, joka vastaa viimeisen 12 kuukauden aikana maksettuja lisenssimaksuja, kuitenkin enintään [katto, esim. 20 000 €]. Rajoitus ei koske pakottavaa kuluttajansuojaa.
+Palvelu tarjotaan “sellaisenaan”. Emme takaa keskeytyksetöntä toimintaa tai tiettyä lopputulosta. Urakompassin kokonaisvastuu rajoittuu määrään, joka vastaa viimeisen 12 kuukauden aikana maksettuja lisenssimaksuja, kuitenkin enintään 10 000 €. Rajoitus ei koske pakottavaa kuluttajansuojaa.
 
 ## 14 Kuluttajien erityiset oikeudet
 Kuluttaja‑asiakkaalla on oikeus peruuttaa sopimus 14 päivän kuluessa sekä tehdä valitus kuluttajaviranomaiselle. Nämä oikeudet eivät koske oppilaitos- tai yritysasiakkaita.

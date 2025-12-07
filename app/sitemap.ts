@@ -1,6 +1,6 @@
 /**
  * SITEMAP GENERATOR
- * Generates sitemap.xml for all 760 career pages
+ * Generates sitemap.xml for all career pages
  * Helps search engines discover and index all new careers
  */
 
@@ -38,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // All career pages (760 careers)
+  // All career pages
   const careerPages = generateCareersSitemap();
 
   // Category pages

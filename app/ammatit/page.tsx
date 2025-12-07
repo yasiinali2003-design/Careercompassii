@@ -58,8 +58,8 @@ const careersData: Career[] = careersFI
     return true;
   });
 
-// Source data has exactly 760 careers
-const totalCareerCount = 760;
+// Source data has over 700 Finnish careers
+const totalCareerCount = 'Yli 700 suomalaista ammattia';
 
 const filterOptions = {
   industry: Array.from(new Set(careersData.flatMap((c) => c.industry || []))).filter(Boolean).sort(),
@@ -365,8 +365,9 @@ export default function CareerCatalog() {
 
             {/* Result Count */}
             <p className="mt-4 text-sm text-gray-400 text-center">
-              {filteredCareers.length} ammattia löytyi
-              {hasActiveFilters && ' valittujen suodattimien mukaan'}
+              {hasActiveFilters
+                ? `Ammatteja löytyi valittujen suodattimien mukaan`
+                : `Selaa satoja ammatteja`}
             </p>
           </div>
         </div>
@@ -469,7 +470,7 @@ export default function CareerCatalog() {
                     onClick={loadMoreCareers}
                     className="px-6 py-3 bg-[#11161f] border border-white/10 rounded-xl hover:bg-white/[0.03] hover:border-white/20 transition-all text-white font-medium"
                   >
-                    Näytä lisää ({filteredCareers.length - displayedCareers.length} jäljellä)
+                    Näytä lisää ammatteja
                   </button>
                 </div>
               )}

@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   return {
-    title: `${categoryInfo.name_fi} – urat Suomessa | Urakompassi`,
+    title: `${categoryInfo.name_fi}-urat Suomessa | Urakompassi`,
     description: `Löydä ${categoryInfo.name_fi.toLowerCase()}-alan urat Suomessa. Katso palkat, koulutusvaatimukset ja työllisyysnäkymät.`,
   };
 }

@@ -48,7 +48,7 @@ export default function MethodologyPage() {
             </CardHeader>
             <CardContent className="space-y-4 text-neutral-300 leading-relaxed">
               <p>
-                Urakompassi on <strong className="text-white">tiet eelliseen psykologiaan perustuva uraohjaustyökalu</strong>,
+                Urakompassi on <strong className="text-white">tieteelliseen psykologiaan perustuva uraohjaustyökalu</strong>,
                 joka auttaa oppilaita ja nuoria löytämään heille sopivat urapolut Suomen työmarkkinoilla.
               </p>
               <p>
@@ -106,7 +106,7 @@ export default function MethodologyPage() {
                   Laskemme vahvuusprofiilisi
                 </h3>
                 <p className="text-neutral-300 mb-4">
-                  Vastauksesi muunnetaan <strong className="text-white">monidimensionaaliseksi profiil iksi</strong>,
+                  Vastauksesi muunnetaan <strong className="text-white">monidimensionaaliseksi profiiliksi</strong>,
                   joka kuvaa:
                 </p>
                 <ul className="space-y-2 ml-6">
@@ -129,10 +129,10 @@ export default function MethodologyPage() {
               <div className="bg-white/5 rounded-lg p-6">
                 <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-2">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-500 text-white text-sm">3</span>
-                  Vertailemme profiiliasi 738 ammattiin
+                  Vertailemme profiiliasi satoihin ammatteihin
                 </h3>
                 <p className="text-neutral-300 mb-4">
-                  Meillä on <strong className="text-white">738 suomalaista ammattia</strong> tietokannassa.
+                  Meillä on <strong className="text-white">yli 700 suomalaista ammattia</strong> tietokannassa.
                   Jokaisella ammatilla on oma profiili, joka kuvaa:
                 </p>
                 <ul className="space-y-2 ml-6">

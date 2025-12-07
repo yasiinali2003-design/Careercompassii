@@ -6,7 +6,7 @@ export default function TietosuojaPage() {
       <main className="flex-1">
         <div className="container mx-auto px-4 py-12 max-w-3xl">
           <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-white">TIETOSUOJASELOSTE — Urakompassi Oy</h1>
-          <p className="text-sm text-neutral-400 mb-8">Versio 3.3 • Viimeksi päivitetty: 7.11.2025 • Y‑tunnus: 3579081-5 • Rekisteröity tavaramerkki: [täydennä]</p>
+          <p className="text-sm text-neutral-400 mb-8">Versio 3.4 • Viimeksi päivitetty: 12.2025 • Y‑tunnus: 3579081-5</p>
           <div className="space-y-6 leading-relaxed text-base">
           <pre className="whitespace-pre-wrap font-sans text-[15px] text-neutral-200">
 {`## 1. Rekisterinpitäjä ja yhteystiedot

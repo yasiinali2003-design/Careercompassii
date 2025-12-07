@@ -1,12 +1,19 @@
 /**
  * DEBUG ENDPOINT - Check if site password is configured
- * REMOVE THIS FILE AFTER DEBUGGING
+ * LOCALHOST ONLY - Returns 404 in production
  */
 
 import { NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
 import { sitePasswordIsConfigured } from '@/lib/siteAuth';
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  // Security: Only allow on localhost
+  const host = request.headers.get('host') || '';
+  if (!host.includes('localhost') && !host.includes('127.0.0.1')) {
+    return new NextResponse('Not Found', { status: 404 });
+  }
+
   const isConfigured = sitePasswordIsConfigured();
 
   return NextResponse.json({

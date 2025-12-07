@@ -98,7 +98,7 @@ export default function CategoryPageClient({
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-4">
             <h1 className="text-4xl md:text-5xl font-bold">
-              {categoryInfo.name_fi} – urat Suomessa
+              {categoryInfo.name_fi}-urat Suomessa
             </h1>
           </div>
           <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
@@ -125,7 +125,7 @@ export default function CategoryPageClient({
           <div className="lg:col-span-3">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold">
-                Urat ({filteredCareers.length})
+                Urat
               </h2>
               {filteredCareers.length !== careers.length && (
                 <Button variant="outline" size="sm" onClick={handleReset}>

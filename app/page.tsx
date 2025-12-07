@@ -37,7 +37,7 @@ export default function HomePage() {
     const htmlElement = document.documentElement;
     // Only apply on desktop (768px+)
     const mediaQuery = window.matchMedia('(min-width: 768px)');
-    
+
     const applySnapScroll = () => {
       if (mediaQuery.matches) {
         htmlElement.style.scrollSnapType = 'y mandatory';
@@ -45,10 +45,10 @@ export default function HomePage() {
         htmlElement.style.scrollSnapType = '';
       }
     };
-    
+
     applySnapScroll();
     mediaQuery.addEventListener('change', applySnapScroll);
-    
+
     return () => {
       // Remove snap scroll when leaving the page
       htmlElement.style.scrollSnapType = '';

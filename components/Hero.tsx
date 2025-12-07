@@ -27,7 +27,7 @@ export function Hero() {
         </div>
 
         <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-urak-text-muted">
-          <span>✔ Noin 10–15 minuutin testi</span>
+          <span>✔ Noin 5 minuutin testi</span>
           <span>✔ Selkeä raportti vahvuuksista</span>
           <span>✔ Rakennettu Suomessa</span>
         </div>

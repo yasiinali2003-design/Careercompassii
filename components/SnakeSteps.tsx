@@ -12,7 +12,7 @@ const steps = [
   {
     number: 2,
     title: 'Analysoimme profiilisi',
-    description: 'Vertaamme vastauksesi 760 ammatin vaatimuksiin ja ominaisuuksiin Suomen työmarkkinoilla.',
+    description: 'Vertaamme vastauksesi yli 700 ammatin vaatimuksiin ja ominaisuuksiin Suomen työmarkkinoilla.',
   },
   {
     number: 3,

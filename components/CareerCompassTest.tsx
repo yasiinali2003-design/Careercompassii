@@ -565,7 +565,7 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
     return () => clearTimeout(timer);
   }, []);
 
-  const featureChips = ['30 kysymystä', '10–15 minuuttia', 'Maksuton', 'Luottamuksellinen'];
+  const featureChips = ['30 kysymystä', 'Noin 5 minuuttia', 'Maksuton', 'Luottamuksellinen'];
 
   return (
     <section className="flex justify-center px-4 py-24">

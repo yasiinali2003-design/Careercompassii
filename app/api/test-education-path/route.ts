@@ -1,6 +1,12 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { calculateEducationPath } from '@/lib/scoring/educationPath';
-import { TestAnswer, Cohort } from '@/lib/scoring/types';
+import { TestAnswer } from '@/lib/scoring/types';
+
+// Helper: localhost check
+function isLocalhost(request: NextRequest): boolean {
+  const host = request.headers.get('host') || '';
+  return host.includes('localhost') || host.includes('127.0.0.1');
+}
 
 // Helper function to create test answers
 function createTestAnswers(pattern: {
@@ -47,9 +53,14 @@ function createTestAnswers(pattern: {
   return answers;
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  // Security: Only allow on localhost
+  if (!isLocalhost(request)) {
+    return new NextResponse('Not Found', { status: 404 });
+  }
+
   const testResults: any[] = [];
-  
+
   // Test 1: High confidence Lukio with significant Ammattikoulu score
   const test1 = createTestAnswers({
     reading: 5,

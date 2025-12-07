@@ -1,6 +1,6 @@
 /**
  * SEO METADATA GENERATOR FOR CAREER PAGES
- * Generates optimized metadata for all 760 careers
+ * Generates optimized metadata for all careers
  */
 
 import { careersData, CareerFI } from '@/data/careers-fi';

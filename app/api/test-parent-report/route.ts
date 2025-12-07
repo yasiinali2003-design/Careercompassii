@@ -1,12 +1,19 @@
 /**
  * API Test Endpoint for Parent Report PDF Generation
  * POST /api/test-parent-report
+ * LOCALHOST ONLY - Returns 404 in production
  */
 
 import { NextRequest, NextResponse } from 'next/server';
 import { generateParentReport, ParentReportData } from '@/lib/pdfGenerator';
 
 export async function POST(request: NextRequest) {
+  // Security: Only allow on localhost
+  const host = request.headers.get('host') || '';
+  if (!host.includes('localhost') && !host.includes('127.0.0.1')) {
+    return new NextResponse('Not Found', { status: 404 });
+  }
+
   try {
     const { testCase } = await request.json();
     

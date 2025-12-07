@@ -1,6 +1,12 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  // Security: Only allow on localhost
+  const host = request.headers.get('host') || '';
+  if (!host.includes('localhost') && !host.includes('127.0.0.1')) {
+    return new NextResponse('Not Found', { status: 404 });
+  }
+
   return NextResponse.json({
     supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL ? '✅ Set' : '❌ Missing',
     supabaseAnonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? '✅ Set' : '❌ Missing',

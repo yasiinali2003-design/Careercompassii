@@ -10,7 +10,7 @@ export function CallToAction() {
               Valmiina ottamaan seuraavan askeleen?
             </h2>
             <p className="mt-2 max-w-xl text-sm text-urak-text-secondary md:text-base">
-              Noin 10–15 minuutin testi antaa nuorelle selkeämmän kuvan
+              Noin 5 minuutin testi antaa nuorelle selkeämmän kuvan
               vahvuuksista, kiinnostuksenkohteista ja mahdollisista
               suuntautumisvaihtoehdoista.
             </p>

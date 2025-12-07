@@ -35,7 +35,7 @@ export default function CallToActionSection() {
                 30 kysymystä
               </span>
               <span className="rounded-full border border-urak-border/70 bg-urak-bg/60 px-3 py-1">
-                Noin 10–15 minuuttia
+                Noin 5 minuuttia
               </span>
               <span className="rounded-full border border-urak-border/70 bg-urak-bg/60 px-3 py-1">
                 Tutkimuspohjainen menetelmä

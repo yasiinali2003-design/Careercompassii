@@ -48,7 +48,7 @@ export default function StatsSection() {
             icon={<Compass className="w-8 h-8" />}
             iconBg="bg-[#E8994A]/10"
             iconColor="text-[#E8994A]"
-            title="Vertaile 760 uraa"
+            title="Vertaile yli 700 uraa"
             description="Tarkastele palkkoja, työnäkymiä ja koulutuspolkuja eri ammattivaihtoehdoissa"
           />
 

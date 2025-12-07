@@ -1,12 +1,18 @@
 /**
  * Debug endpoint for teacher classes
  * Check if Supabase and tables are configured correctly
+ * LOCALHOST ONLY - Returns 404 in production
  */
 
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  // Security: Only allow on localhost
+  const host = request.headers.get('host') || '';
+  if (!host.includes('localhost') && !host.includes('127.0.0.1')) {
+    return new NextResponse('Not Found', { status: 404 });
+  }
   const checks = {
     supabaseConfigured: !!supabaseAdmin,
     tablesExist: false,

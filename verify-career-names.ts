@@ -31,7 +31,7 @@ const usOnlyCareers = [
 
 // Check each career
 console.log('🔍 CAREER NAME & AVAILABILITY VERIFICATION\n');
-console.log('Checking all 760 careers...\n');
+console.log('Checking all careers...\n');
 
 let checked = 0;
 let withIssues = 0;

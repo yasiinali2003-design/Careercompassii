@@ -1,6 +1,12 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { rankCareers } from '@/lib/scoring/scoringEngine';
 import { TestAnswer, Cohort } from '@/lib/scoring/types';
+
+// Helper: localhost check
+function isLocalhost(request: NextRequest): boolean {
+  const host = request.headers.get('host') || '';
+  return host.includes('localhost') || host.includes('127.0.0.1');
+}
 
 // Create realistic test answers that map to specific categories
 function createTestAnswers(pattern: 'people' | 'creative' | 'leadership' | 'technology' | 'hands_on'): TestAnswer[] {
@@ -95,7 +101,12 @@ function runSingleTest(profile: typeof testProfiles[0], runNumber: number) {
   return results;
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  // Security: Only allow on localhost
+  if (!isLocalhost(request)) {
+    return new NextResponse('Not Found', { status: 404 });
+  }
+
   const iterations = 3;
   const allResults: any[] = [];
   const summary: Record<string, { passed: number; failed: number; total: number }> = {};
