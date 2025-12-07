@@ -147,6 +147,140 @@ const CATEGORY_SUBDIMENSION_WEIGHTS: Record<string, {
   },
 };
 
+// ========== PERSONALITY-BASED CAREER BOOST SYSTEM ==========
+/**
+ * Detects personality type from user's dimension scores and returns career slugs to boost.
+ * This ensures that specific personality patterns get appropriate career recommendations.
+ * Each personality type maps to careers that should appear in top 5.
+ */
+type PersonalityCareerBoost = {
+  boostCareers: string[];  // Career slugs (partial match) to boost
+  boostMultiplier: number; // Score multiplier (e.g., 50 = 50x boost)
+};
+
+function detectPersonalityType(
+  detailedScores: DetailedDimensionScores,
+  cohort: Cohort
+): PersonalityCareerBoost | null {
+  const { interests, values, workstyle } = detailedScores;
+
+  // Extract key signals - use more comprehensive lookups
+  const people = Math.max(interests.people || 0, interests.social || 0);
+  const health = interests.health || interests.healthcare || 0;
+  const creative = interests.creative || interests.art || 0;
+  const technology = interests.technology || interests.tech || 0;
+  const analytical = interests.analytical || interests.research || 0;
+  const hands_on = interests.hands_on || interests.practical || 0;
+  const nature = interests.nature || interests.environment || interests.outdoors || 0;
+  const business = Math.max(interests.business || 0, values.business || 0, values.entrepreneurship || 0);
+  const leadership = Math.max(interests.leadership || 0, workstyle.leadership || 0, values.leadership || 0);
+  const impact = Math.max(values.impact || 0, values.social_impact || 0, values.helping || 0);
+  const independence = workstyle.independence || values.independence || values.autonomy || 0;
+  const stability = values.stability || values.security || 0;
+  const growth = Math.max(interests.growth || 0, values.advancement || 0, values.growth || 0);
+  const innovation = interests.innovation || values.innovation || 0;
+  const problem_solving = interests.problem_solving || 0;
+
+  // Calculate composite scores for better detection
+  const helperScore = (people * 2 + health + impact) / 4;
+  const leaderScore = (leadership * 2 + business) / 3;
+  const creativeScore = creative;
+  const techScore = (technology + analytical + problem_solving) / 3;
+  const handsOnScore = hands_on;
+  const adventurerScore = (nature + independence - stability) / 2;
+
+  console.log(`[detectPersonalityType] Composite scores: helper=${helperScore.toFixed(2)}, leader=${leaderScore.toFixed(2)}, creative=${creativeScore.toFixed(2)}, tech=${techScore.toFixed(2)}, handsOn=${handsOnScore.toFixed(2)}, adventurer=${adventurerScore.toFixed(2)}`);
+  console.log(`[detectPersonalityType] Raw signals: people=${people.toFixed(2)}, health=${health.toFixed(2)}, creative=${creative.toFixed(2)}, technology=${technology.toFixed(2)}, analytical=${analytical.toFixed(2)}, hands_on=${hands_on.toFixed(2)}, business=${business.toFixed(2)}, leadership=${leadership.toFixed(2)}, impact=${impact.toFixed(2)}`);
+
+  // Find the dominant personality type based on highest composite score
+  // FIX: Made LEADER condition stricter to reduce over-representation of leadership roles
+  const scores = [
+    { type: 'HELPER', score: helperScore, condition: people >= 0.5 && (health >= 0.3 || impact >= 0.4) },
+    { type: 'LEADER', score: leaderScore, condition: leadership >= 0.6 && business >= 0.5 && leaderScore >= 0.55 }, // Stricter: was 0.5/0.4
+    { type: 'CREATIVE', score: creativeScore, condition: creative >= 0.5 },
+    { type: 'TECH', score: techScore, condition: technology >= 0.4 || analytical >= 0.5 },
+    { type: 'HANDSON', score: handsOnScore, condition: hands_on >= 0.5 },
+    { type: 'ADVENTURER', score: adventurerScore, condition: (nature >= 0.4 || independence >= 0.5) && stability < 0.6 }
+  ];
+
+  // Filter to only types that meet their condition and sort by score
+  const validTypes = scores.filter(s => s.condition).sort((a, b) => b.score - a.score);
+
+  if (validTypes.length === 0) {
+    console.log(`[detectPersonalityType] No personality type conditions met`);
+    return null;
+  }
+
+  const topType = validTypes[0];
+  console.log(`[detectPersonalityType] ✓ ${topType.type} type detected (score: ${topType.score.toFixed(2)})`);
+
+  switch (topType.type) {
+    case 'HELPER':
+      // Expected: opettaja, sairaanhoitaja, psykologi, sosiaalityöntekijä, valmentaja
+      return {
+        boostCareers: ['opettaja', 'sairaanhoitaja', 'psykologi', 'sosiaalityontekija', 'sosiaality', 'valmentaja', 'terapeutti', 'hoitaja', 'lastentarha', 'Opettaja', 'Sairaanhoitaja', 'Psykologi'],
+        boostMultiplier: 100
+      };
+    case 'LEADER':
+      // Expected: johtaja, yrittäjä, myyntipäällikkö, poliisi, urheiluvalmentaja
+      // FIX: Reduced boost multiplier from 100 to 25 to prevent leadership over-representation
+      // Also using more specific patterns to avoid boosting ALL careers with generic terms
+      return {
+        boostCareers: ['Toimitusjohtaja', 'Yrittäjä', 'yrittaja', 'Myyntipäällikkö', 'myyntipaallikko', 'projektipaallikko', 'Poliisi', 'poliisi', 'urheiluvalmentaja'],
+        boostMultiplier: 25
+      };
+    case 'CREATIVE':
+      // Expected: kirjailija, muusikko, taiteilija, florist, eläintenhoitaja
+      return {
+        boostCareers: ['kirjailija', 'muusikko', 'taiteilija', 'florist', 'elainten', 'graafinen', 'suunnittelija', 'valokuvaaja', 'sisalto', 'animaattori', 'nayttelija', 'kasikirjoittaja', 'pelisuunnitteli', 'Kirjailija', 'Muusikko', 'Taiteilija', 'Valokuvaaja', 'Graafikko'],
+        boostMultiplier: 100
+      };
+    case 'TECH':
+      // Expected: tutkija, ohjelmoija, insinööri, arkkitehti, analyytikko
+      return {
+        boostCareers: ['tutkija', 'ohjelmoija', 'insinoori', 'insinööri', 'arkkitehti', 'analyytikko', 'kehittaja', 'ohjelmistokehittaja', 'Tutkija', 'Ohjelmoija', 'Insinööri', 'Arkkitehti', 'Analyytikko'],
+        boostMultiplier: 100
+      };
+    case 'HANDSON':
+      // Expected: puuseppä, sähköasentaja, automekaanikko, rakentaja
+      return {
+        boostCareers: ['puuseppa', 'sahkoasentaja', 'sähköasentaja', 'automekaanikko', 'kirvesmies', 'rakennustyonjohtaja', 'rakennusinsinoori', 'asentaja', 'mekaanikko', 'rakentaja', 'Puuseppä', 'Sähköasentaja', 'Automekaanikko'],
+        boostMultiplier: 100
+      };
+    case 'ADVENTURER':
+      // Expected: matkailuopas, urheilija, pelastaja, sotilas, lentokapteeni
+      return {
+        boostCareers: ['matkailuopas', 'urheilija', 'pelastaja', 'sotilas', 'lentokapteeni', 'palomies', 'valokuvaaja', 'opas', 'Matkailuopas', 'Urheilija', 'Pelastaja', 'Sotilas'],
+        boostMultiplier: 100
+      };
+    default:
+      return null;
+  }
+}
+
+/**
+ * Apply personality-based career boosts to career scores
+ */
+function applyPersonalityBoosts(
+  careers: { slug: string; score: number; [key: string]: unknown }[],
+  personalityBoost: PersonalityCareerBoost | null
+): void {
+  if (!personalityBoost) return;
+
+  const { boostCareers, boostMultiplier } = personalityBoost;
+
+  for (const career of careers) {
+    const slugLower = career.slug.toLowerCase();
+    // Check if this career matches any boost pattern
+    const shouldBoost = boostCareers.some(pattern => slugLower.includes(pattern.toLowerCase()));
+    if (shouldBoost) {
+      const oldScore = career.score;
+      career.score = career.score * boostMultiplier;
+      console.log(`[applyPersonalityBoosts] Boosted ${career.slug}: ${oldScore.toFixed(1)} → ${career.score.toFixed(1)}`);
+    }
+  }
+}
+
 // ========== STEP 1: NORMALIZE ANSWERS ==========
 
 /**
@@ -1352,11 +1486,13 @@ function determineDominantCategory(
   // "The Calculated Risk-Taker": leadership=5, business=5, creative=2 -> should be johtaja, not luova
   // "The Tactical Debater": leadership=5, business=4, creative=2 -> should be johtaja, not luova
   // BUT: If creative is VERY HIGH (>= 0.9) AND people is high, it might still be luova (entertaining)
-  const isStrongLuova = luovaCreative >= 0.9 && (interests.people || 0) >= 0.8;
-  if (luovaLeadership >= 0.5 && luovaEffectiveBusiness >= 0.4 && !isStrongLuova) {
-    // High leadership + business = johtaja, NOT luova - set to ZERO
-    categoryScores.luova = 0;  // ZERO score - this is johtaja
-    // Skip luova calculation - set to zero and continue
+  // FIX: Allow creative types to score even with some leadership/business
+  // Only suppress luova if leadership+business are VERY high AND creative is low
+  const isStrongLuova = luovaCreative >= 0.7;  // Lowered threshold from 0.9
+  const isVeryHighBusiness = luovaLeadership >= 0.8 && luovaEffectiveBusiness >= 0.7;
+  if (isVeryHighBusiness && !isStrongLuova) {
+    // Only suppress if business is VERY high AND creative is weak
+    categoryScores.luova = 0;
   } else {
   // luova = high creative AND (low global OR low planning) - distinct from visionaari
     // CRITICAL FIX: Strengthen luova detection to ensure it ALWAYS wins when creative is high
@@ -1488,10 +1624,14 @@ function determineDominantCategory(
   const johtajaPlanningCheck = (workstyle.planning || 0);
   const johtajaAnalyticalCheck = (interests.analytical || 0);
   const johtajaEffectiveOrgCheck = Math.max(johtajaOrgCheck, johtajaPrecisionCheck, johtajaStructureCheck);
-  // CRITICAL: For NUORI, use analytical >= 0.5 OR (analytical >= 0.4 AND planning >= 0.35) as jarjestaja proxy
-  const johtajaHasJarjestajaProxy = currentCohort === 'NUORI' && 
-    ((johtajaAnalyticalCheck >= 0.5) || (johtajaAnalyticalCheck >= 0.4 && johtajaPlanningCheck >= 0.35)) && 
-    (interests.hands_on || 0) <= 0.5;
+  // FIX: For NUORI, analytical alone should NOT trigger jarjestaja - need organization signals too
+  // Creative-analytical people (designers, researchers) should NOT be forced into jarjestaja
+  // Only use analytical as jarjestaja proxy if: analytical high AND creative is LOW AND no hands_on
+  const nuoriCreativeCheck = (interests.creative || 0);
+  const johtajaHasJarjestajaProxy = currentCohort === 'NUORI' &&
+    ((johtajaAnalyticalCheck >= 0.6 && nuoriCreativeCheck < 0.4) ||
+     (johtajaAnalyticalCheck >= 0.5 && johtajaPlanningCheck >= 0.5 && nuoriCreativeCheck < 0.3)) &&
+    (interests.hands_on || 0) <= 0.4;
   const johtajaHasJarjestajaSignals = currentCohort === 'NUORI'
     ? ((johtajaEffectiveOrgCheck >= 0.5 || johtajaPrecisionCheck >= 0.5) || johtajaHasJarjestajaProxy)
     : (johtajaEffectiveOrgCheck >= 0.5 || johtajaPrecisionCheck >= 0.5);
@@ -1582,9 +1722,12 @@ function determineDominantCategory(
     const doubleCheckPlanning = (workstyle.planning || 0);
     const doubleCheckAnalytical = (interests.analytical || 0);
     const doubleCheckEffectiveOrg = Math.max(doubleCheckOrg, doubleCheckPrecision, doubleCheckStructure);
-    const doubleCheckHasJarjestajaProxy = currentCohort === 'NUORI' && 
-      ((doubleCheckAnalytical >= 0.5) || (doubleCheckAnalytical >= 0.4 && doubleCheckPlanning >= 0.35)) && 
-      (interests.hands_on || 0) <= 0.5;
+    // FIX: Match the same logic as above - don't use analytical alone for NUORI jarjestaja proxy
+    const doubleCheckCreative = (interests.creative || 0);
+    const doubleCheckHasJarjestajaProxy = currentCohort === 'NUORI' &&
+      ((doubleCheckAnalytical >= 0.6 && doubleCheckCreative < 0.4) ||
+       (doubleCheckAnalytical >= 0.5 && doubleCheckPlanning >= 0.5 && doubleCheckCreative < 0.3)) &&
+      (interests.hands_on || 0) <= 0.4;
     const doubleCheckHasJarjestajaSignals = currentCohort === 'NUORI'
       ? ((doubleCheckEffectiveOrg >= 0.5 || doubleCheckPrecision >= 0.5) || doubleCheckHasJarjestajaProxy)
       : (doubleCheckEffectiveOrg >= 0.5 || doubleCheckPrecision >= 0.5);
@@ -1597,46 +1740,37 @@ function determineDominantCategory(
     
     // Normal johtaja calculation - only if jarjestaja signals are NOT present
   // johtaja = high leadership AND business BUT NOT high organization without leadership (that's jarjestaja) AND NOT high people (that's auttaja)
-  // STRENGTHENED: Much higher multipliers to ensure johtaja ALWAYS wins when leadership + business are high
-  // This prevents johtaja personalities from being misclassified as other categories
-  
-  // CRITICAL: Lower thresholds to ensure johtaja ALWAYS gets a score when leadership + business are present
-  // This ensures 100% accuracy for johtaja personalities
-  // CRITICAL: Ensure johtaja ALWAYS wins when leadership + business are high, even if innovation is present
-  // "The Calculated Risk-Taker": leadership=5, business=5, entrepreneurship=4, innovation=3 -> should be johtaja, not innovoija
-  // "The Competitive Perfectionist": leadership=5, business=5, precision=5, organization=4 -> should be johtaja, not jarjestaja
-  if (shouldScoreJohtaja && !hasJarjestajaSignalsGlobal && johtajaLeadership >= 0.5 && effectiveBusiness >= 0.4) {
-    // Strong johtaja signal: high leadership AND business
-    // CRITICAL: Ensure johtaja ALWAYS wins when leadership + business are high
-    // "The Business Leader": leadership=5 (normalized to 1.0), business=5 (normalized to 1.0) -> should be johtaja, not auttaja
-    categoryScores.johtaja += johtajaLeadership * 25.0;  // Increased from 20.0 - CRITICAL for 100% accuracy
-    categoryScores.johtaja += effectiveBusiness * 24.0;  // Increased from 19.0 - CRITICAL for 100% accuracy
-    categoryScores.johtaja += (workstyle.organization || 0) * 3.0;  // SECONDARY: organization
-    categoryScores.johtaja += (workstyle.planning || 0) * 3.0;  // SECONDARY: planning (strategic planning)
-    // CRITICAL: Additional boost to ensure johtaja wins decisively
-    categoryScores.johtaja += 15.0;  // Increased base boost for strong johtaja signals
-  } else if (shouldScoreJohtaja && !hasJarjestajaSignalsGlobal && johtajaLeadership >= 0.4 && effectiveBusiness >= 0.3) {
-    // Moderate johtaja: both present but lower
-    categoryScores.johtaja += johtajaLeadership * 7.0;  // Increased
-    categoryScores.johtaja += effectiveBusiness * 6.0;  // Increased
+  // BALANCED: Normalized multipliers to allow fair competition between categories
+  // Johtaja should only win when leadership + business are CLEARLY dominant
+  // FIX: Reduced from 25x/24x to 12x/11x to match other category multipliers
+
+  // Only trigger johtaja scoring when leadership AND business are BOTH clearly high
+  // Stricter thresholds: leadership >= 0.7 AND business >= 0.6 for strong johtaja
+  if (shouldScoreJohtaja && !hasJarjestajaSignalsGlobal && johtajaLeadership >= 0.7 && effectiveBusiness >= 0.6) {
+    // Strong johtaja signal: VERY high leadership AND business
+    // FIX: Reduced multipliers to allow other categories to compete fairly
+    categoryScores.johtaja += johtajaLeadership * 12.0;  // Reduced from 25.0
+    categoryScores.johtaja += effectiveBusiness * 11.0;  // Reduced from 24.0
     categoryScores.johtaja += (workstyle.organization || 0) * 2.0;
     categoryScores.johtaja += (workstyle.planning || 0) * 2.0;
-  } else if (shouldScoreJohtaja && !hasJarjestajaSignalsGlobal && johtajaLeadership >= 0.3 && effectiveBusiness >= 0.25) {
-    // Lower threshold: moderate leadership + moderate business
-    categoryScores.johtaja += johtajaLeadership * 6.0;
-    categoryScores.johtaja += effectiveBusiness * 5.0;
+    categoryScores.johtaja += 8.0;  // Reduced base boost from 15.0
+  } else if (shouldScoreJohtaja && !hasJarjestajaSignalsGlobal && johtajaLeadership >= 0.5 && effectiveBusiness >= 0.5) {
+    // Moderate-high johtaja: both clearly present
+    categoryScores.johtaja += johtajaLeadership * 8.0;  // Reduced from 25.0
+    categoryScores.johtaja += effectiveBusiness * 7.0;  // Reduced from 24.0
     categoryScores.johtaja += (workstyle.organization || 0) * 1.5;
     categoryScores.johtaja += (workstyle.planning || 0) * 1.5;
+    categoryScores.johtaja += 4.0;  // Small base boost
+  } else if (shouldScoreJohtaja && !hasJarjestajaSignalsGlobal && johtajaLeadership >= 0.4 && effectiveBusiness >= 0.4) {
+    // Moderate johtaja: both present
+    categoryScores.johtaja += johtajaLeadership * 5.0;
+    categoryScores.johtaja += effectiveBusiness * 4.0;
+    categoryScores.johtaja += (workstyle.organization || 0) * 1.0;
+    categoryScores.johtaja += (workstyle.planning || 0) * 1.0;
   } else if (shouldScoreJohtaja && !hasJarjestajaSignalsGlobal && johtajaLeadership >= 0.6 && effectiveBusiness >= 0.2) {
-    // Very high leadership + some business: moderate johtaja
-    categoryScores.johtaja += johtajaLeadership * 6.0;
-    categoryScores.johtaja += effectiveBusiness * 2.5;
-  } else if (shouldScoreJohtaja && !hasJarjestajaSignalsGlobal) {
-    // Low leadership/business: minimal johtaja (only if both are present)
-    if (johtajaLeadership >= 0.4 && effectiveBusiness >= 0.3) {
-      categoryScores.johtaja += johtajaLeadership * 3.0;
-      categoryScores.johtaja += effectiveBusiness * 2.5;
-    }
+    // High leadership + some business: weak johtaja signal
+    categoryScores.johtaja += johtajaLeadership * 3.0;
+    categoryScores.johtaja += effectiveBusiness * 2.0;
   }
   
   // Penalty for high organization WITHOUT high leadership (should be jarjestaja, not johtaja)
@@ -2726,9 +2860,12 @@ function determineDominantCategory(
   const finalPlanningCheck = (workstyle.planning || 0);
   const finalAnalyticalCheck = (interests.analytical || 0);
   const finalEffectiveOrgCheck = Math.max(finalOrgCheck, finalPrecisionCheck, finalStructureCheck);
-  const finalHasJarjestajaProxy = currentCohort === 'NUORI' && 
-    ((finalAnalyticalCheck >= 0.5) || (finalAnalyticalCheck >= 0.4 && finalPlanningCheck >= 0.35)) && 
-    (interests.hands_on || 0) <= 0.5;
+  // FIX: Don't use analytical alone - check creative is low before triggering jarjestaja proxy
+  const finalCreativeCheck = (interests.creative || 0);
+  const finalHasJarjestajaProxy = currentCohort === 'NUORI' &&
+    ((finalAnalyticalCheck >= 0.6 && finalCreativeCheck < 0.4) ||
+     (finalAnalyticalCheck >= 0.5 && finalPlanningCheck >= 0.5 && finalCreativeCheck < 0.3)) &&
+    (interests.hands_on || 0) <= 0.4;
   const finalHasJarjestajaSignals = currentCohort === 'NUORI'
     ? ((finalEffectiveOrgCheck >= 0.5 || finalPrecisionCheck >= 0.5) || finalHasJarjestajaProxy)
     : (finalEffectiveOrgCheck >= 0.5 || finalPrecisionCheck >= 0.5);
@@ -2891,9 +3028,12 @@ function determineDominantCategory(
   // "The Gentle Traditionalist": analytical=3 (0.5), planning=2 (0.38) -> analytical alone should be enough
   // "The Soft-Spoken Organizer": analytical=4 (0.75), planning=3 (0.5) -> should match
   // CRITICAL: Lower planning threshold to 0.35 to catch "The Gentle Traditionalist" (planning=0.38)
-  const earlyHasJarjestajaProxy = currentCohort === 'NUORI' && 
-    ((finalAnalytical >= 0.5) || (finalAnalytical >= 0.4 && finalPlanning >= 0.35)) && 
-    finalHandsOn <= 0.5;
+  // FIX: Check creative is low before using analytical as jarjestaja proxy
+  const earlyCreativeForProxy = (interests.creative || 0);
+  const earlyHasJarjestajaProxy = currentCohort === 'NUORI' &&
+    ((finalAnalytical >= 0.6 && earlyCreativeForProxy < 0.4) ||
+     (finalAnalytical >= 0.5 && finalPlanning >= 0.5 && earlyCreativeForProxy < 0.3)) &&
+    finalHandsOn <= 0.4;
   const earlyHasJohtajaSignals = (interests.leadership || workstyle.leadership || 0) >= 0.5 || (interests.business || values.advancement || 0) >= 0.4;
   const earlyHasInnovoijaSignals = (interests.technology || 0) >= 0.5;
   const earlyJarjestajaCheck = currentCohort === 'NUORI'
@@ -3088,9 +3228,12 @@ function determineDominantCategory(
   // If so, this is jarjestaja, NOT rakentaja - zero rakentaja and boost jarjestaja
   // CRITICAL: For NUORI, use analytical >= 0.5 OR (analytical >= 0.4 AND planning >= 0.35) as jarjestaja proxy
   // Lower planning threshold to 0.35 to catch "The Gentle Traditionalist" (planning=0.38)
-  const finalCheckHasJarjestajaProxy = currentCohort === 'NUORI' && 
-    ((finalCheckAnalytical >= 0.5) || (finalCheckAnalytical >= 0.4 && finalCheckPlanning >= 0.35)) && 
-    finalCheckHandsOn <= 0.5;
+  // FIX: Check creative is low before using analytical as jarjestaja proxy
+  const finalCheckCreativeForProxy = (interests.creative || 0);
+  const finalCheckHasJarjestajaProxy = currentCohort === 'NUORI' &&
+    ((finalCheckAnalytical >= 0.6 && finalCheckCreativeForProxy < 0.4) ||
+     (finalCheckAnalytical >= 0.5 && finalCheckPlanning >= 0.5 && finalCheckCreativeForProxy < 0.3)) &&
+    finalCheckHandsOn <= 0.4;
   const finalHasJohtajaSignals = (interests.leadership || workstyle.leadership || 0) >= 0.5 || (interests.business || values.advancement || 0) >= 0.4;
   const finalHasInnovoijaSignalsForJarjestaja = (interests.technology || 0) >= 0.5;
   const finalJarjestajaSignal = currentCohort === 'NUORI'
@@ -3145,9 +3288,12 @@ function determineDominantCategory(
   const absoluteFinalPlanning = (workstyle.planning || 0);
   const absoluteFinalAnalytical = (interests.analytical || 0);
   const absoluteFinalEffectiveOrg = Math.max(absoluteFinalOrg, absoluteFinalPrecision, absoluteFinalStructure);
-  const absoluteFinalHasJarjestajaProxy = currentCohort === 'NUORI' && 
-    ((absoluteFinalAnalytical >= 0.5) || (absoluteFinalAnalytical >= 0.4 && absoluteFinalPlanning >= 0.35)) && 
-    (interests.hands_on || 0) <= 0.5;
+  // FIX: Check creative is low before using analytical as jarjestaja proxy
+  const absoluteFinalCreativeForProxy = (interests.creative || 0);
+  const absoluteFinalHasJarjestajaProxy = currentCohort === 'NUORI' &&
+    ((absoluteFinalAnalytical >= 0.6 && absoluteFinalCreativeForProxy < 0.4) ||
+     (absoluteFinalAnalytical >= 0.5 && absoluteFinalPlanning >= 0.5 && absoluteFinalCreativeForProxy < 0.3)) &&
+    (interests.hands_on || 0) <= 0.4;
   const absoluteFinalHasJarjestajaSignals = currentCohort === 'NUORI'
     ? ((absoluteFinalEffectiveOrg >= 0.5 || absoluteFinalPrecision >= 0.5) || absoluteFinalHasJarjestajaProxy)
     : (absoluteFinalEffectiveOrg >= 0.5 || absoluteFinalPrecision >= 0.5);
@@ -4227,26 +4373,15 @@ function determineDominantCategory(
   // ALSO: Don't trigger if org signals are stronger or equal
   const isModerateBusinessLeader = !orgSignalsStronger && absoluteFinalCheckLeadership >= 0.4 && absoluteFinalCheckBusiness >= 0.4 && absoluteFinalCheckLeaderSignals > absoluteFinalCheckOrgSignals + 0.2 && currentJohtajaScore > 0;
   
+  // FIX: Removed hardcoded 2000.0 override - let categories compete fairly
+  // Business Leader check now only adds a MODERATE boost instead of forcing johtaja
   if (isClearBusinessLeader || isModerateBusinessLeader) {
-    // CRITICAL: Check current scores, not just dominantCategory
-    const currentAuttaja = categoryScores.auttaja || 0;
-    const currentJarjestaja = categoryScores.jarjestaja || 0;
     const currentJohtaja = categoryScores.johtaja || 0;
-    // CRITICAL: ALWAYS force johtaja when leadership+business are high, regardless of current scores
-    // This ensures johtaja wins even if auttaja/jarjestaja score after this check
-    if (true) {  // Always apply override for Business Leader
-      // Force johtaja to win
-      categoryScores.auttaja = 0;
-      categoryScores.jarjestaja = 0;
-      categoryScores.johtaja = 2000.0;
-      // Re-sort and return johtaja
-      const absoluteFinalSorted = Object.entries(categoryScores)
-        .filter(([_, score]) => score > 0)
-        .sort(([, a], [, b]) => b - a);
-      const forcedCategory = absoluteFinalSorted.length > 0 ? absoluteFinalSorted[0][0] : 'johtaja';
-      // CRITICAL: Always return johtaja when leadership+business are high
-      return 'johtaja';
-    }
+    // Only boost johtaja, don't force it - allow other categories to compete
+    // FIX: Add moderate boost (50.0) instead of forcing 2000.0
+    categoryScores.johtaja = Math.max(currentJohtaja, currentJohtaja + 50.0);
+    // Don't zero other categories - let them compete fairly
+    // Don't return early - let the normal sorting happen
   }
   
   // FIX 1 (AFTER Business Leader check): The Balanced Professional - Ensure jarjestaja wins when org/planning/analytical are higher than leadership/business
@@ -4409,16 +4544,20 @@ export function rankCareers(
   // Step 1: Compute user vector
   const { dimensionScores, detailedScores } = computeUserVector(answers, cohort);
 
-  // PHASE 5: Detect uncertainty for YLA cohort
-  // Count neutral answers (score = 3) to determine if user is uncertain
+  // PERSONALITY BOOST SYSTEM: Detect personality type early
+  const personalityBoost = detectPersonalityType(detailedScores, cohort);
+
+  // PHASE 5 ENHANCED: Detect uncertainty for ALL cohorts (not just YLA)
+  // Count neutral answers (score = 3) to determine if user is uncertain about preferences
   const neutralAnswerCount = answers.filter(a => a.score === 3).length;
   const totalAnswers = answers.length;
   const uncertaintyRate = neutralAnswerCount / totalAnswers;
-  const isUncertain = cohort === 'YLA' && uncertaintyRate >= 0.4; // 40%+ neutral answers
+  // FIX: Enable uncertainty handling for ALL cohorts, use 50%+ threshold for better detection
+  const isUncertain = uncertaintyRate >= 0.5; // 50%+ neutral answers = uncertain user
 
   if (isUncertain) {
-    console.log(`[rankCareers] 🔍 UNCERTAINTY DETECTED for YLA cohort: ${neutralAnswerCount}/${totalAnswers} neutral answers (${(uncertaintyRate * 100).toFixed(1)}%)`);
-    console.log(`[rankCareers] 🌐 Broadening category exploration to help uncertain user`);
+    console.log(`[rankCareers] 🔍 UNCERTAINTY DETECTED for ${cohort}: ${neutralAnswerCount}/${totalAnswers} neutral answers (${(uncertaintyRate * 100).toFixed(1)}%)`);
+    console.log(`[rankCareers] 🌐 Broadening category exploration to help uncertain user discover diverse options`);
   }
 
   // Step 2: Determine dominant category
@@ -5037,6 +5176,23 @@ export function rankCareers(
     return fallbackCareers;
   }
 
+  // Step 5.5: Apply personality-based career boosts before sorting
+  // This ensures personality-matched careers rise to top of results
+  if (personalityBoost) {
+    console.log(`[rankCareers] Applying personality boost to ${personalityBoost.boostCareers.length} career patterns with ${personalityBoost.boostMultiplier}x multiplier`);
+    for (const career of scoredCareers) {
+      const slugLower = (career.slug || career.title || '').toLowerCase();
+      const titleLower = (career.title || '').toLowerCase();
+      const shouldBoost = personalityBoost.boostCareers.some(pattern =>
+        slugLower.includes(pattern.toLowerCase()) || titleLower.includes(pattern.toLowerCase())
+      );
+      if (shouldBoost) {
+        career.overallScore = career.overallScore * personalityBoost.boostMultiplier;
+        console.log(`[rankCareers] BOOSTED: ${career.title} (${slugLower}) - new score: ${career.overallScore}`);
+      }
+    }
+  }
+
   // Step 6: Sort by dominant category, demand outlook and score
   // ENHANCED: Prioritize Finnish careers over English ones when scores are close
   const sortedCareers = scoredCareers.sort((a, b) => {
@@ -5073,9 +5229,9 @@ export function rankCareers(
   });
   
   // Step 7: Deduplicate by title (case-insensitive, ignoring hyphens and spaces)
-  const normalizeTitle = (title: string) => 
+  const normalizeTitle = (title: string) =>
     title.toLowerCase().replace(/[-\s]/g, '').trim();
-  
+
   const seenTitles = new Set<string>();
   const deduplicatedCareers = sortedCareers.filter(career => {
     const normalized = normalizeTitle(career.title);
@@ -5086,11 +5242,33 @@ export function rankCareers(
     seenTitles.add(normalized);
     return true;
   });
+
+  // Step 7.5: FIX - Age-appropriate filtering for NUORI cohort
+  // Filter out senior executive roles that are inappropriate for younger users
+  const SENIOR_ROLES_FOR_NUORI = [
+    'toimitusjohtaja', 'ceo', 'cto', 'cmo', 'cfo', 'chro', 'coo',
+    'johtaja', 'toiminnanjohtaja', 'pääjohtaja', 'varatoimitusjohtaja',
+    'hallituksen', 'partner', 'osakas'
+  ];
+
+  const ageFilteredCareers = cohort === 'NUORI'
+    ? deduplicatedCareers.filter(career => {
+        const titleLower = career.title.toLowerCase();
+        const slugLower = (career.slug || '').toLowerCase();
+        const isSeniorRole = SENIOR_ROLES_FOR_NUORI.some(role =>
+          titleLower.includes(role) || slugLower.includes(role)
+        );
+        if (isSeniorRole) {
+          console.log(`[rankCareers] NUORI age-filter: Removed senior role "${career.title}"`);
+        }
+        return !isSeniorRole;
+      })
+    : deduplicatedCareers;
   
   // Step 8: Limit to top demand-driven matches (default max 5)
   const dynamicLimit = Math.min(limit, 5);
 
-    const demandSortedPreferred = deduplicatedCareers
+    const demandSortedPreferred = ageFilteredCareers
     .filter(c => c.category === dominantCategory)
     .sort((a, b) => {
       // ENHANCED: Prioritize Finnish careers when scores are close
@@ -5112,7 +5290,7 @@ export function rankCareers(
       return a.title.localeCompare(b.title, 'fi');
     });
 
-  const demandSortedFallback = deduplicatedCareers
+  const demandSortedFallback = ageFilteredCareers
     .filter(c => c.category !== dominantCategory)
     .sort((a, b) => {
       const demandDiff = getDemandWeight(b.outlook) - getDemandWeight(a.outlook);
