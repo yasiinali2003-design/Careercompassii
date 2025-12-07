@@ -85,62 +85,14 @@ export async function middleware(request: NextRequest) {
     return new NextResponse('Not Found', { status: 404 });
   }
 
-  // Admin-only protection: hide existence by returning 404 for non-admins
-  // Only apply to page routes, not API routes (API routes handle their own auth)
-  const disableAdminBasicAuth = process.env.NEXT_PUBLIC_DISABLE_ADMIN_BASIC_AUTH === 'true';
-
-  if (!disableAdminBasicAuth && pathname.startsWith('/admin') && !pathname.startsWith('/api/admin')) {
-    // Allow /admin/login to pass through without auth
-    if (pathname === '/admin/login') {
-      return NextResponse.next();
-    }
-    
-    // If a password is configured, enforce Basic Auth first
-    const adminUser = process.env.ADMIN_USERNAME || 'admin';
-    const adminPass = process.env.ADMIN_PASSWORD || '';
-    let basicAuthed = false;
-    if (adminPass) {
-      const auth = request.headers.get('authorization') || '';
-      const expected = 'Basic ' + Buffer.from(`${adminUser}:${adminPass}`).toString('base64');
-      if (auth !== expected) {
-        // Check for admin cookie instead
-        const adminCookie = request.cookies.get('admin_auth');
-        if (adminCookie?.value === 'yes') {
-          basicAuthed = true;
-        } else {
-          return new NextResponse('Authentication required', {
-            status: 401,
-            headers: { 'WWW-Authenticate': 'Basic realm="Admin", charset="UTF-8"' }
-          });
-        }
-      } else {
-        basicAuthed = true;
-      }
-    }
-
-    const teacherToken = request.cookies.get('teacher_auth_token');
-    const teacherId = request.cookies.get('teacher_id');
-    const adminId = process.env.ADMIN_TEACHER_ID || '';
-    const isAuthed = teacherToken && teacherToken.value === 'authenticated';
-    const isAdmin = teacherId && adminId && teacherId.value === adminId;
-
-    // Allow access if either Basic Auth is valid OR user is the admin teacher
-    if (!(basicAuthed || (isAuthed && isAdmin))) {
+  // Admin pages: completely hidden in production, accessible only on localhost
+  if (pathname.startsWith('/admin') && !pathname.startsWith('/api/admin')) {
+    // In production: hide completely (404)
+    if (!isLocalhost) {
       return new NextResponse('Not Found', { status: 404 });
     }
-
-    // If authenticated via Basic Auth, mint a short-lived admin session cookie
-    const response = NextResponse.next();
-    if (basicAuthed) {
-      response.cookies.set('admin_auth', 'yes', {
-        httpOnly: true,
-        sameSite: 'strict',
-        secure: process.env.NODE_ENV === 'production',
-        maxAge: 60 * 60 * 8, // 8 hours
-        path: '/',
-      });
-    }
-    return response;
+    // On localhost: allow access without authentication
+    return NextResponse.next();
   }
 
   // Only protect /teacher/* routes (except /teacher/login and /api/teacher-auth)
