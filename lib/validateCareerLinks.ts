@@ -8,7 +8,7 @@ import { careersData } from '../data/careers-fi';
  * Get all valid career slugs
  */
 export function getAllValidCareerSlugs(): Set<string> {
-  return new Set(careersData.map(career => career.id));
+  return new Set(careersData.filter(career => career && career.id).map(career => career.id));
 }
 
 /**
@@ -18,7 +18,7 @@ export function validateRelatedCareers(careerId: string): {
   valid: string[];
   invalid: string[];
 } {
-  const career = careersData.find(c => c.id === careerId);
+  const career = careersData.find(c => c && c.id === careerId);
   if (!career || !career.related_careers) {
     return { valid: [], invalid: [] };
   }
@@ -58,11 +58,11 @@ export function validateAllCareerLinks(): {
   const invalidLinks: Array<{ careerId: string; invalidSlugs: string[] }> = [];
 
   careersData.forEach(career => {
-    if (career.related_careers && career.related_careers.length > 0) {
+    if (career && career.related_careers && career.related_careers.length > 0) {
       const invalid = career.related_careers.filter(
         slug => !validSlugs.has(slug)
       );
-      
+
       if (invalid.length > 0) {
         invalidLinks.push({
           careerId: career.id,
@@ -73,8 +73,8 @@ export function validateAllCareerLinks(): {
   });
 
   return {
-    total: careersData.length,
-    withRelated: careersData.filter(c => c.related_careers && c.related_careers.length > 0).length,
+    total: careersData.filter(c => c).length,
+    withRelated: careersData.filter(c => c && c.related_careers && c.related_careers.length > 0).length,
     invalidLinks
   };
 }
@@ -83,7 +83,7 @@ export function validateAllCareerLinks(): {
  * Get career by slug with validation
  */
 export function getCareerBySlug(slug: string) {
-  return careersData.find(c => c.id === slug);
+  return careersData.find(c => c && c.id === slug);
 }
 
 /**
