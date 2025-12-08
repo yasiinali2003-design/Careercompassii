@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { ArrowLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import { careersData as careersFI, CareerFI } from '@/data/careers-fi';
 import { Career } from '@/lib/types';
@@ -106,15 +106,24 @@ function getOutlookBgColor(outlook: string): string {
   return outlook === 'Kasvaa' ? 'bg-urak-accent-green/20' : 'bg-gray-400/20';
 }
 
-interface CareerDetailProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default function CareerDetail({ params }: CareerDetailProps) {
+export default function CareerDetail() {
   const router = useRouter();
-  const decodedSlug = decodeURIComponent(params.slug);
+  const params = useParams();
+  const slug = params?.slug;
+
+  // Handle case where slug is not available yet or is an array
+  if (!slug || Array.isArray(slug)) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-transparent">
+        <div className="text-center">
+          <div className="animate-spin h-8 w-8 border-2 border-urak-accent-blue border-t-transparent rounded-full mx-auto mb-4"></div>
+          <p className="text-gray-400">Ladataan...</p>
+        </div>
+      </div>
+    );
+  }
+
+  const decodedSlug = decodeURIComponent(slug);
   
   if (!careerSlugExists(decodedSlug)) {
     return (
@@ -156,6 +165,17 @@ export default function CareerDetail({ params }: CareerDetailProps) {
   return (
     <div className="min-h-screen bg-transparent">
       <ScrollNav />
+
+      {/* Back Button */}
+      <div className="max-w-6xl mx-auto px-6 pt-6">
+        <button
+          onClick={() => router.back()}
+          className="inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Takaisin
+        </button>
+      </div>
 
       {/* Breadcrumb */}
       <AnimatedSection className="max-w-6xl mx-auto px-6 py-6">

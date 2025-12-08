@@ -15,7 +15,6 @@ import { ShareResults } from '@/components/ShareResults';
 import { motion } from 'framer-motion';
 
 // New components
-import { ResultsCelebrationOverlay } from '@/components/results/ResultsCelebrationOverlay';
 import { ResultPageLayout } from '@/components/results/ResultPageLayout';
 import { ResultHero } from '@/components/results/ResultHero';
 import { ProfileSection } from '@/components/results/ProfileSection';
@@ -88,8 +87,7 @@ export default function ResultsPage() {
   const [results, setResults] = useState<ResultsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [showCelebration, setShowCelebration] = useState(true);
-  const [contentVisible, setContentVisible] = useState(false);
+  const [contentVisible, setContentVisible] = useState(true);
 
   useEffect(() => {
     const loadResults = async () => {
@@ -247,11 +245,6 @@ export default function ResultsPage() {
     loadResults();
   }, []);
 
-  const handleCelebrationComplete = () => {
-    setShowCelebration(false);
-    setContentVisible(true);
-  };
-
   // Loading state
   if (loading) {
     return (
@@ -317,14 +310,6 @@ export default function ResultsPage() {
 
   return (
     <>
-      {/* Celebration Overlay */}
-      {showCelebration && (
-        <ResultsCelebrationOverlay
-          onComplete={handleCelebrationComplete}
-          disabled={false} // Set to true to disable for debugging
-        />
-      )}
-
       {/* Main Content */}
       <motion.div
         initial={{ opacity: 0 }}

@@ -702,96 +702,111 @@ const GroupSelect = ({ onChoose, onBack }: { onChoose: (g: "YLA" | "TASO2" | "NU
   </div>
 );
 
-const OccupationInput = ({ value, onChange, onSkip }: { value: string; onChange: (val: string) => void; onSkip: () => void }) => (
-  <section className="flex justify-center px-4 py-24">
-    <div
-      className="
-        relative
-        max-w-4xl w-full
-        overflow-hidden
-        rounded-[32px]
-        border border-cyan-400/10
-        bg-gradient-to-b from-white/6 via-white/3 to-white/2
-        bg-clip-padding
-        backdrop-blur-xl
-        shadow-[0_24px_80px_rgba(0,0,0,0.65)]
-        px-8 py-10 md:px-12 md:py-14
-      "
-    >
-      {/* Top glow effect */}
-      <div className="pointer-events-none absolute inset-x-8 -top-32 h-40 rounded-full bg-gradient-to-b from-cyan-300/25 to-transparent blur-3xl" />
+const OccupationInput = ({ value, onChange, onSkip }: { value: string; onChange: (val: string) => void; onSkip: () => void }) => {
+  const [localValue, setLocalValue] = useState(value);
 
-      <div className="relative space-y-6">
-        <div className="text-center">
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
-            Mikä on nykyinen ammattisi tai työsi?
-          </h1>
-          <p className="mt-3 text-base md:text-lg text-urak-text-secondary">
-            Tämä auttaa meitä antamaan sinulle parempia suosituksia. Jos et ole töissä tai opiskelija, voit ohittaa tämän.
+  const handleSubmit = () => {
+    if (localValue.trim()) {
+      onChange(localValue.trim());
+    }
+  };
+
+  return (
+    <section className="flex justify-center px-4 py-24">
+      <div
+        className="
+          relative
+          max-w-4xl w-full
+          overflow-hidden
+          rounded-[32px]
+          border border-cyan-400/10
+          bg-gradient-to-b from-white/6 via-white/3 to-white/2
+          bg-clip-padding
+          backdrop-blur-xl
+          shadow-[0_24px_80px_rgba(0,0,0,0.65)]
+          px-8 py-10 md:px-12 md:py-14
+        "
+      >
+        {/* Top glow effect */}
+        <div className="pointer-events-none absolute inset-x-8 -top-32 h-40 rounded-full bg-gradient-to-b from-cyan-300/25 to-transparent blur-3xl" />
+
+        <div className="relative space-y-6">
+          <div className="text-center">
+            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
+              Mikä on nykyinen ammattisi tai työsi?
+            </h1>
+            <p className="mt-3 text-base md:text-lg text-urak-text-secondary">
+              Tämä auttaa meitä antamaan sinulle parempia suosituksia. Jos et ole töissä tai opiskelija, voit ohittaa tämän.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <input
+              type="text"
+              value={localValue}
+              onChange={(e) => setLocalValue(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && localValue.trim()) {
+                  handleSubmit();
+                }
+              }}
+              placeholder="Esim. Sairaanhoitaja, Myyjä, Opiskelija..."
+              className="w-full rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm px-4 py-3 text-lg text-white placeholder:text-gray-500 focus:border-urak-accent-blue/40 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/20 focus:bg-white/8 transition-colors"
+            />
+
+            <div className="flex gap-3">
+              <button
+                onClick={handleSubmit}
+                disabled={!localValue.trim()}
+                className="
+                  group
+                  flex-1
+                  relative inline-flex items-center justify-center
+                  rounded-full
+                  bg-gradient-to-r from-sky-500 to-blue-500
+                  px-6 py-3
+                  text-sm md:text-base font-semibold text-white
+                  shadow-[0_18px_40px_rgba(37,99,235,0.6)]
+                  transition
+                  hover:shadow-[0_20px_45px_rgba(37,99,235,0.65)]
+                  hover:scale-[1.01]
+                  focus-visible:outline-none
+                  focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+                  disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-[0_18px_40px_rgba(37,99,235,0.6)]
+                "
+              >
+                Jatka
+              </button>
+              <button
+                onClick={onSkip}
+                className="
+                  flex-1
+                  rounded-full
+                  border border-white/20
+                  bg-white/5
+                  backdrop-blur-sm
+                  px-6 py-3
+                  text-sm md:text-base font-semibold text-white
+                  transition
+                  hover:bg-white/10
+                  hover:border-white/30
+                  focus-visible:outline-none
+                  focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+                "
+              >
+                Ohita
+              </button>
+            </div>
+          </div>
+
+          <p className="text-center text-sm text-urak-text-muted">
+            Ammattisi auttaa meitä suodattamaan pois työsi, jotta näet uusia vaihtoehtoja.
           </p>
         </div>
-
-        <div className="space-y-4">
-          <input
-            type="text"
-            value={value}
-            onChange={(e) => onChange(e.target.value)}
-            placeholder="Esim. Sairaanhoitaja, Myyjä, Opiskelija..."
-            className="w-full rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm px-4 py-3 text-lg text-white placeholder:text-gray-500 focus:border-urak-accent-blue/40 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/20 focus:bg-white/8 transition-colors"
-          />
-
-          <div className="flex gap-3">
-            <button
-              onClick={() => value.trim() && onChange(value.trim())}
-              disabled={!value.trim()}
-              className="
-                group
-                flex-1
-                relative inline-flex items-center justify-center
-                rounded-full
-                bg-gradient-to-r from-sky-500 to-blue-500
-                px-6 py-3
-                text-sm md:text-base font-semibold text-white
-                shadow-[0_18px_40px_rgba(37,99,235,0.6)]
-                transition
-                hover:shadow-[0_20px_45px_rgba(37,99,235,0.65)]
-                hover:scale-[1.01]
-                focus-visible:outline-none
-                focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
-                disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-[0_18px_40px_rgba(37,99,235,0.6)]
-              "
-            >
-              Jatka
-            </button>
-            <button
-              onClick={onSkip}
-              className="
-                flex-1
-                rounded-full
-                border border-white/20
-                bg-white/5
-                backdrop-blur-sm
-                px-6 py-3
-                text-sm md:text-base font-semibold text-white
-                transition
-                hover:bg-white/10
-                hover:border-white/30
-                focus-visible:outline-none
-                focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
-              "
-            >
-              Ohita
-            </button>
-          </div>
-        </div>
-
-        <p className="text-center text-sm text-urak-text-muted">
-          Ammattisi auttaa meitä suodattamaan pois työsi, jotta näet uusia vaihtoehtoja.
-        </p>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const RatingScale = ({ value, onChange }: { value: number; onChange: (val: number) => void }) => {
   const labels = ["Ei lainkaan", "Vähän", "Kohtalaisesti", "Paljon", "Erittäin paljon"];
