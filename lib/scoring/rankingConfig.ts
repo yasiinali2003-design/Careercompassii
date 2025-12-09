@@ -17,6 +17,20 @@ export const RANKING_WEIGHTS = {
 
 const GENERIC_TITLE_SUFFIXES = ['asiantuntija', 'insinööri', 'suunnittelija', 'koordinaattori'];
 
+// Päällikkö variants that should be limited in results (max 1 in top 5)
+const PAALLIKO_VARIANTS = ['päällikkö', 'paalliko', 'paallikkö'];
+
+/**
+ * Check if a career title is a päällikkö variant
+ */
+export function isPaallikkoVariant(title: string): boolean {
+  const normalized = title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  return PAALLIKO_VARIANTS.some(variant => {
+    const normalizedVariant = variant.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    return normalized.includes(normalizedVariant);
+  });
+}
+
 export function getDemandWeight(status?: string): number {
   if (!status) return DEMAND_WEIGHTS.vakaa;
   return DEMAND_WEIGHTS[status] ?? DEMAND_WEIGHTS.vakaa;

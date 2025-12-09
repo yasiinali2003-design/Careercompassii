@@ -241,13 +241,15 @@ export default function CareerCatalog() {
           
           {/* Search Input */}
           <div className="relative max-w-2xl mx-auto mb-8">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+            <label htmlFor="career-search" className="sr-only">Hae ammatteja</label>
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" aria-hidden="true" />
             <input
+              id="career-search"
               type="text"
               placeholder="Hae ammatteja..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 bg-[#11161f] border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/50 text-base text-white placeholder:text-gray-500"
+              className="w-full pl-12 pr-4 py-4 bg-[#11161f] border border-white/10 rounded-2xl focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/50 text-base text-white placeholder:text-slate-400"
             />
           </div>
 

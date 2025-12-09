@@ -56,8 +56,8 @@ module.exports = {
         'urak-accent-blue': '#4BA3E3',
         'urak-accent-green': '#55C89D',
         'urak-text-primary': '#F1F5F9',
-        'urak-text-secondary': '#CBD5E1',
-        'urak-text-muted': '#94A3B8',
+        'urak-text-secondary': '#D1D5DB', // Improved contrast: gray-300
+        'urak-text-muted': '#A1A7B4', // Improved contrast for WCAG AA
         // New logo color tokens
         'uk-bg': '#050B17',
         'uk-icon-navy': '#0A253B',
@@ -94,12 +94,30 @@ module.exports = {
             "background-size": "200% 200%",
             "background-position": "right center"
           }
+        },
+        "compass-spin": {
+          "0%": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(90deg)" },
+          "50%": { transform: "rotate(180deg)" },
+          "75%": { transform: "rotate(270deg)" },
+          "100%": { transform: "rotate(360deg)" }
+        },
+        "compass-needle": {
+          "0%, 100%": { transform: "rotate(-15deg)" },
+          "50%": { transform: "rotate(15deg)" }
+        },
+        "pulse-glow": {
+          "0%, 100%": { opacity: 0.4, transform: "scale(1)" },
+          "50%": { opacity: 0.8, transform: "scale(1.05)" }
         }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "gradient-animate": "gradient-animate 3s ease infinite"
+        "gradient-animate": "gradient-animate 3s ease infinite",
+        "compass-spin": "compass-spin 2s ease-in-out infinite",
+        "compass-needle": "compass-needle 1s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite"
       },
     },
   },
