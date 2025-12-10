@@ -1,8 +1,25 @@
 import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function IpSuojaPage() {
   return (
     <div className="min-h-screen text-white flex flex-col">
+      {/* Back Navigation */}
+      <nav className="sticky top-0 z-50 border-b border-white/10 bg-urak-bg/95 backdrop-blur-sm">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <Link href="/" className="text-lg font-semibold text-white hover:opacity-80">
+            Urakompassi
+          </Link>
+          <Button variant="outline" asChild className="border-urak-border/70 bg-urak-bg/70 hover:bg-urak-surface hover:border-urak-border">
+            <Link href="/">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Takaisin
+            </Link>
+          </Button>
+        </div>
+      </nav>
+
       <main className="flex-1">
         <div className="container mx-auto px-4 py-12 max-w-3xl">
           <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-white">IMMATERIAALIOIKEUS- JA KILPAILIJASUOJA — Urakompassi Oy</h1>
@@ -61,27 +78,6 @@ Sähköposti: info@urakompassi.fi`}
         </div>
         </div>
       </main>
-      <footer className="border-t border-white/10 py-6 mt-auto">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-            <Link 
-              href="/" 
-              className="text-white hover:text-neutral-300 hover:underline font-medium"
-            >
-              ← Palaa etusivulle
-            </Link>
-            <div className="flex items-center gap-4 text-neutral-300">
-              <Link href="/legal/kayttoehdot" className="hover:text-white hover:underline">
-                Käyttöehdot
-              </Link>
-              <Link href="/legal/tietosuojaseloste" className="hover:text-white hover:underline">
-                Tietosuojaseloste
-              </Link>
-            </div>
-            <p className="text-neutral-400">© 2025 Urakompassi</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

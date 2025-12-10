@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { safeGetItem, safeSetItem } from '@/lib/safeStorage';
 
 // Finnish matriculation exam grades and points
 const EXAM_GRADES = {
@@ -57,26 +58,26 @@ interface TodistuspistelaskuriProps {
 }
 
 export default function Todistuspistelaskuri({ onCalculate }: TodistuspistelaskuriProps) {
-  const [selectedExams, setSelectedExams] = useState<Record<string, ExamGrade>>(() => {
-    // Load from localStorage if available
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('yoExamResults');
-      if (saved) {
-        try {
-          return JSON.parse(saved);
-        } catch {
-          return {};
-        }
-      }
+  const [selectedExams, setSelectedExams] = useState<Record<string, ExamGrade>>({});
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  // Load from localStorage after hydration
+  useEffect(() => {
+    const saved = safeGetItem<Record<string, ExamGrade>>('yoExamResults', {});
+    if (saved) {
+      setSelectedExams(saved);
     }
-    return {};
-  });
+    setIsHydrated(true);
+  }, []);
 
   const [expanded, setExpanded] = useState(false);
   const [totalPoints, setTotalPoints] = useState(0);
 
   // Calculate total points
   useEffect(() => {
+    // Skip if not hydrated yet
+    if (!isHydrated) return;
+
     let points = 0;
     const completedExams: ExamResult[] = [];
 
@@ -93,16 +94,14 @@ export default function Todistuspistelaskuri({ onCalculate }: Todistuspistelasku
 
     setTotalPoints(points);
 
-    // Save to localStorage
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('yoExamResults', JSON.stringify(selectedExams));
-    }
+    // Save to localStorage with safe wrapper
+    safeSetItem('yoExamResults', selectedExams);
 
     // Notify parent
     if (onCalculate) {
       onCalculate(points, completedExams);
     }
-  }, [selectedExams, onCalculate]);
+  }, [selectedExams, onCalculate, isHydrated]);
 
   const updateGrade = (subjectId: string, grade: ExamGrade) => {
     setSelectedExams(prev => ({

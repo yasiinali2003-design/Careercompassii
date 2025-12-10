@@ -56,8 +56,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Parse and validate request
-    const body = await request.json();
+    // Parse and validate request with error handling for malformed JSON
+    let body;
+    try {
+      body = await request.json();
+    } catch (parseError) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Invalid JSON format in request'
+        },
+        { status: 400 }
+      );
+    }
     const validation = SubmitResultSchema.safeParse(body);
 
     if (!validation.success) {

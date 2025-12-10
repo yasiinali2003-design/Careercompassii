@@ -3,6 +3,8 @@
  * Tracks referrals and generates referral codes for word-of-mouth growth
  */
 
+import { safeGetItem, safeSetItem } from './safeStorage';
+
 export interface ReferralData {
   referralCode: string;
   referrerUserId?: string;
@@ -63,12 +65,7 @@ export function extractReferralCodeFromUrl(): string | null {
  */
 export function storeReferralData(data: ReferralData): void {
   if (typeof window === 'undefined') return;
-  
-  try {
-    localStorage.setItem('careerCompassiReferral', JSON.stringify(data));
-  } catch (error) {
-    console.error('Failed to store referral data:', error);
-  }
+  safeSetItem('careerCompassiReferral', data);
 }
 
 /**
@@ -76,17 +73,7 @@ export function storeReferralData(data: ReferralData): void {
  */
 export function getStoredReferralData(): ReferralData | null {
   if (typeof window === 'undefined') return null;
-  
-  try {
-    const stored = localStorage.getItem('careerCompassiReferral');
-    if (stored) {
-      return JSON.parse(stored);
-    }
-  } catch (error) {
-    console.error('Failed to retrieve referral data:', error);
-  }
-  
-  return null;
+  return safeGetItem<ReferralData>('careerCompassiReferral', null);
 }
 
 /**
@@ -94,20 +81,15 @@ export function getStoredReferralData(): ReferralData | null {
  */
 export async function trackReferral(referralCode: string, userId?: string): Promise<boolean> {
   try {
-    // In the future, this would send to an API endpoint
-    // For now, we'll just log it
-    console.log('Referral tracked:', { referralCode, userId, timestamp: new Date().toISOString() });
-    
-    // Store locally for now
+    // Store locally for now (in the future, send to an API endpoint)
     storeReferralData({
       referralCode,
       referrerUserId: userId,
       timestamp: new Date().toISOString(),
     });
-    
+
     return true;
-  } catch (error) {
-    console.error('Failed to track referral:', error);
+  } catch {
     return false;
   }
 }

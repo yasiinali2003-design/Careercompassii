@@ -1,12 +1,14 @@
 /**
  * CLIENT-SIDE CRYPTO UTILITIES FOR TEACHER NAME MAPPING
- * 
- * IMPORTANT: 
+ *
+ * IMPORTANT:
  * - All encryption/decryption happens CLIENT-SIDE only
  * - Never sent to server
  * - AES-GCM encryption for security
  * - Uses Web Crypto API (native browser)
  */
+
+import { safeGetItem, safeSetItem, safeRemoveItem } from './safeStorage';
 
 const ALGORITHM = 'AES-GCM';
 const KEY_LENGTH = 256;
@@ -158,11 +160,9 @@ export async function decryptMapping(
  * Save name mapping to localStorage
  */
 export function saveMappingToStorage(classId: string, mapping: Record<string, string>): void {
-  try {
-    const key = `cc:class:${classId}:mapping`;
-    localStorage.setItem(key, JSON.stringify(mapping));
-  } catch (error) {
-    console.error('[TeacherCrypto] Failed to save to localStorage:', error);
+  const key = `cc:class:${classId}:mapping`;
+  const success = safeSetItem(key, mapping);
+  if (!success) {
     throw new Error('Failed to save mapping to browser storage');
   }
 }
@@ -171,27 +171,16 @@ export function saveMappingToStorage(classId: string, mapping: Record<string, st
  * Load name mapping from localStorage
  */
 export function loadMappingFromStorage(classId: string): Record<string, string> | null {
-  try {
-    const key = `cc:class:${classId}:mapping`;
-    const stored = localStorage.getItem(key);
-    if (!stored) return null;
-    return JSON.parse(stored) as Record<string, string>;
-  } catch (error) {
-    console.error('[TeacherCrypto] Failed to load from localStorage:', error);
-    return null;
-  }
+  const key = `cc:class:${classId}:mapping`;
+  return safeGetItem<Record<string, string>>(key, null);
 }
 
 /**
  * Delete name mapping from localStorage
  */
 export function deleteMappingFromStorage(classId: string): void {
-  try {
-    const key = `cc:class:${classId}:mapping`;
-    localStorage.removeItem(key);
-  } catch (error) {
-    console.error('[TeacherCrypto] Failed to delete from localStorage:', error);
-  }
+  const key = `cc:class:${classId}:mapping`;
+  safeRemoveItem(key);
 }
 
 /**

@@ -5,6 +5,7 @@
  */
 
 import { Cohort } from './scoring/types';
+import { safeGetItem, safeSetItem, safeRemoveItem } from './safeStorage';
 
 const STORAGE_KEY_PREFIX = 'careercompass-questionpool-';
 
@@ -32,53 +33,40 @@ function getStorageKey(cohort: Cohort): string {
  * Get used sets for a cohort from localStorage
  */
 export function getUsedSets(cohort: Cohort): number[] {
-  try {
-    const key = getStorageKey(cohort);
-    const stored = localStorage.getItem(key);
-    if (!stored) return [];
-    
-    const data: QuestionPoolData = JSON.parse(stored);
-    
-    // Validate data structure
-    if (!data.usedSets || !Array.isArray(data.usedSets)) {
-      return [];
-    }
-    
-    return data.usedSets;
-  } catch (error) {
-    console.warn('Failed to get used sets from localStorage:', error);
-    // Clear corrupted data
-    try {
-      localStorage.removeItem(getStorageKey(cohort));
-    } catch {}
+  const key = getStorageKey(cohort);
+  const data = safeGetItem<QuestionPoolData>(key, null);
+
+  if (!data) return [];
+
+  // Validate data structure
+  if (!data.usedSets || !Array.isArray(data.usedSets)) {
+    safeRemoveItem(key);
     return [];
   }
+
+  return data.usedSets;
 }
 
 /**
  * Mark a set as used for a cohort
  */
 export function markSetAsUsed(cohort: Cohort, setIndex: number): void {
-  try {
-    const key = getStorageKey(cohort);
-    const usedSets = getUsedSets(cohort);
-    
-    // Add to used sets if not already present
-    if (!usedSets.includes(setIndex)) {
-      usedSets.push(setIndex);
-    }
-    
-    const data: QuestionPoolData = {
-      cohort,
-      usedSets,
-      lastUsed: Date.now(),
-      version: '1.0'
-    };
-    
-    localStorage.setItem(key, JSON.stringify(data));
-  } catch (error) {
-    console.warn('Failed to mark set as used:', error);
+  const key = getStorageKey(cohort);
+  const usedSets = getUsedSets(cohort);
+
+  // Add to used sets if not already present
+  if (!usedSets.includes(setIndex)) {
+    usedSets.push(setIndex);
   }
+
+  const data: QuestionPoolData = {
+    cohort,
+    usedSets,
+    lastUsed: Date.now(),
+    version: '1.0'
+  };
+
+  safeSetItem(key, data);
 }
 
 /**
@@ -122,12 +110,8 @@ export function selectQuestionSet(cohort: Cohort): number {
  * Reset question pool for a cohort (clear all used sets)
  */
 export function resetQuestionPool(cohort: Cohort): void {
-  try {
-    const key = getStorageKey(cohort);
-    localStorage.removeItem(key);
-  } catch (error) {
-    console.warn('Failed to reset question pool:', error);
-  }
+  const key = getStorageKey(cohort);
+  safeRemoveItem(key);
 }
 
 /**

@@ -6,6 +6,12 @@ import { toast, Toaster } from "sonner";
 import Todistuspistelaskuri from './Todistuspistelaskuri';
 import { validateResponseQuality, getSeverityColor, getQualityWarningMessage, type ResponseQualityMetrics } from "@/lib/scoring/responseValidation";
 import { ErrorMessage } from '@/components/ui/ErrorMessage';
+import { safeGetItem, safeSetItem, safeRemoveItem, safeSetString, isLocalStorageAvailable } from '@/lib/safeStorage';
+
+// Debug logging only in development
+const isDev = process.env.NODE_ENV !== 'production';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const debugLog = (...args: any[]) => { if (isDev) console.log(...args); };
 
 // ---------- QUESTIONS DATA ----------
 // YLA: Education path focus (Lukio vs. Ammattikoulu) + career preview
@@ -173,44 +179,27 @@ const QUESTIONS = {
 const STORAGE_KEY = "careercompass-progress";
 
 function saveProgress(state: any) {
-  try {
-    // Add timestamp for debugging
-    const dataToSave = {
-      ...state,
-      timestamp: Date.now(),
-      version: "1.0" // For future compatibility
-    };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
-  } catch (error) {
-    console.warn("Failed to save progress to localStorage:", error);
-    // Could implement fallback to sessionStorage or other storage methods
-  }
+  // Add timestamp for debugging
+  const dataToSave = {
+    ...state,
+    timestamp: Date.now(),
+    version: "1.0" // For future compatibility
+  };
+  safeSetItem(STORAGE_KEY, dataToSave);
 }
 
 function loadProgress() {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (!saved) return null;
-    
-    const parsed = JSON.parse(saved);
-    
-    // Check if data is not too old (optional: expire after 30 days)
-    const thirtyDaysAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
-    if (parsed.timestamp && parsed.timestamp < thirtyDaysAgo) {
-      console.log("Saved progress is too old, clearing...");
-      localStorage.removeItem(STORAGE_KEY);
-      return null;
-    }
-    
-    return parsed;
-  } catch (error) {
-    console.warn("Failed to load progress from localStorage:", error);
-    // Clear corrupted data
-    try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch {}
+  const parsed = safeGetItem<{ timestamp?: number; [key: string]: any }>(STORAGE_KEY, null);
+  if (!parsed) return null;
+
+  // Check if data is not too old (optional: expire after 30 days)
+  const thirtyDaysAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
+  if (parsed.timestamp && parsed.timestamp < thirtyDaysAgo) {
+    safeRemoveItem(STORAGE_KEY);
     return null;
   }
+
+  return parsed;
 }
 
 // ---------- API FETCH FUNCTION ----------
@@ -1122,10 +1111,10 @@ const Summary = ({
               timestamp: new Date().toISOString(),
               resultId: resultsData.resultId || scoreData.resultId // Use resultId from results API if available
             };
-            localStorage.setItem('careerTestResults', JSON.stringify(resultsWithAnswers));
+            safeSetItem('careerTestResults', resultsWithAnswers);
             const finalResultId = resultsData.resultId || scoreData.resultId;
             if (finalResultId) {
-              localStorage.setItem('lastTestResultId', finalResultId);
+              safeSetString('lastTestResultId', finalResultId);
             }
             window.location.href = '/test/results';
           } else {
@@ -1211,9 +1200,9 @@ const Summary = ({
             cohort: group,
             timestamp: new Date().toISOString()
           };
-          localStorage.setItem('careerTestResults', JSON.stringify(resultsWithAnswers));
+          safeSetItem('careerTestResults', resultsWithAnswers);
           if (data.resultId) {
-            localStorage.setItem('lastTestResultId', data.resultId);
+            safeSetString('lastTestResultId', data.resultId);
           }
           window.location.href = '/test/results';
         } else {

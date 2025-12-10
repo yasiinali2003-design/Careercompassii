@@ -188,8 +188,8 @@ export function searchParamsToFilters(searchParams: URLSearchParams): { filters:
     education: searchParams.get("education") || "Ei tutkintovaatimusta",
     remote: searchParams.get("remote") || "Kyllä",
     outlook: searchParams.get("outlook") || "Kaikki",
-    salaryMin: parseInt(searchParams.get("salaryMin") || "0"),
-    salaryMax: parseInt(searchParams.get("salaryMax") || "12000")
+    salaryMin: parseInt(searchParams.get("salaryMin") || "0", 10),
+    salaryMax: parseInt(searchParams.get("salaryMax") || "12000", 10)
   };
   
   const sortBy = searchParams.get("sort") || "popular";

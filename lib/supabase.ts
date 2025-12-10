@@ -50,12 +50,13 @@ function getSupabaseConfig() {
 /**
  * Client-side Supabase client (uses anon key)
  * Use this in React components and client-side code
+ * Note: May be null if Supabase is not configured - always check before use
  */
-export const supabase = (() => {
+export const supabase: ReturnType<typeof createClient> | null = (() => {
   const config = getSupabaseConfig();
   if (!config) {
-    // Return a mock client during build
-    return null as any;
+    // Return null during build or when not configured
+    return null;
   }
   return createClient(config.supabaseUrl, config.supabaseAnonKey);
 })();
@@ -64,16 +65,17 @@ export const supabase = (() => {
  * Server-side Supabase client (uses service role key)
  * Use this in API routes and server-side code
  * Has full access to database (bypasses Row Level Security)
+ * Note: May be null if Supabase is not configured - always check before use
  */
-export const supabaseAdmin = (() => {
+export const supabaseAdmin: ReturnType<typeof createClient> | null = (() => {
   const config = getSupabaseConfig();
   if (!config || !config.supabaseServiceRoleKey) {
     if (!supabaseServiceWarned && !isProduction) {
       supabaseServiceWarned = true;
       console.warn('[Supabase] Service role key not configured');
     }
-    // Return a mock client during build
-    return null as any;
+    // Return null during build or when not configured
+    return null;
   }
 
   // Validate key format (JWT should be ~200+ chars)
@@ -82,7 +84,7 @@ export const supabaseAdmin = (() => {
       supabaseServiceKeyInvalidWarned = true;
       console.error('[Supabase] Service role key appears to be invalid (too short)');
     }
-    return null as any;
+    return null;
   }
 
   return createClient(config.supabaseUrl, config.supabaseServiceRoleKey, {

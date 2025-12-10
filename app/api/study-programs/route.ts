@@ -25,8 +25,8 @@ export async function GET(request: NextRequest) {
     const field = searchParams.get('field');
     const careers = searchParams.get('careers')?.split(',').filter(Boolean) || [];
     const search = searchParams.get('search');
-    const limit = Math.min(parseInt(searchParams.get('limit') || '50'), 100);
-    const offset = parseInt(searchParams.get('offset') || '0');
+    const limit = Math.min(parseInt(searchParams.get('limit') || '50', 10), 100);
+    const offset = parseInt(searchParams.get('offset') || '0', 10);
     const sort = searchParams.get('sort') || 'match';
     const historyParam = searchParams.get('history') === 'true';
     const includeHistory =

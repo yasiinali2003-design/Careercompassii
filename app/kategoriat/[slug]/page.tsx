@@ -42,8 +42,8 @@ export default function CategoryPage({ params, searchParams }: CategoryPageProps
     education: searchParams.education || "Ei tutkintovaatimusta",
     remote: searchParams.remote || "Kaikki",
     outlook: searchParams.outlook || "Kaikki",
-    salaryMin: parseInt(searchParams.salaryMin || "0"),
-    salaryMax: parseInt(searchParams.salaryMax || "12000")
+    salaryMin: parseInt(searchParams.salaryMin || "0", 10),
+    salaryMax: parseInt(searchParams.salaryMax || "12000", 10)
   };
 
   const sortBy = searchParams.sort || "popular";

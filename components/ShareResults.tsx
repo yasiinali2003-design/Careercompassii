@@ -7,13 +7,14 @@
 
 import { useState, useEffect } from 'react';
 import { Share2, Copy, Check, Facebook, Twitter, Linkedin } from 'lucide-react';
-import { 
-  generateReferralCode, 
-  createReferralUrl, 
+import {
+  generateReferralCode,
+  createReferralUrl,
   createShareText,
   trackReferral,
-  extractReferralCodeFromUrl 
+  extractReferralCodeFromUrl
 } from '@/lib/referralSystem';
+import { safeGetString, safeSetString } from '@/lib/safeStorage';
 
 interface ShareResultsProps {
   topCareers: Array<{ title: string }>;
@@ -27,13 +28,13 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
 
   useEffect(() => {
     // Generate or retrieve referral code
-    const storedCode = localStorage.getItem('careerCompassiUserReferralCode');
+    const storedCode = safeGetString('careerCompassiUserReferralCode');
     if (storedCode) {
       setReferralCode(storedCode);
     } else {
       const newCode = generateReferralCode();
       setReferralCode(newCode);
-      localStorage.setItem('careerCompassiUserReferralCode', newCode);
+      safeSetString('careerCompassiUserReferralCode', newCode);
     }
 
     // Check if user came from a referral link
@@ -61,8 +62,8 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
       await navigator.clipboard.writeText(referralUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy:', err);
+    } catch {
+      // Failed to copy to clipboard - silently fail
     }
   };
 
@@ -74,9 +75,8 @@ export function ShareResults({ topCareers, cohort }: ShareResultsProps) {
           text: shareText,
           url: referralUrl,
         });
-      } catch (err) {
-        // User cancelled or error occurred
-        console.log('Share cancelled or failed');
+      } catch {
+        // User cancelled or error occurred - silently fail
       }
     } else {
       // Fallback to copy

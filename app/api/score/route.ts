@@ -74,8 +74,19 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // Parse request body
-    const body = await request.json();
+    // Parse request body with error handling for malformed JSON
+    let body;
+    try {
+      body = await request.json();
+    } catch (parseError) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Virheellinen JSON-muoto pyyntöä'
+        },
+        { status: 400 }
+      );
+    }
     
     // Validate input
     const validation = validateRequest(body);

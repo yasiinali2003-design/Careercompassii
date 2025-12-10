@@ -5,6 +5,8 @@
  * Users are randomly assigned to control (old) or treatment (new) groups
  */
 
+import { safeGetString, safeSetString, safeRemoveItem } from '../safeStorage';
+
 export type ABTestVariant = 'control' | 'treatment';
 
 export interface ABTestConfig {
@@ -76,26 +78,23 @@ export function getOrAssignABTestVariant(): ABTestVariant {
   const TEST_USER_ID_KEY = 'ab_test_user_id';
 
   // Check for existing variant
-  const existingVariant = localStorage.getItem(STORAGE_KEY) as ABTestVariant | null;
+  const existingVariant = safeGetString(STORAGE_KEY) as ABTestVariant | null;
   if (existingVariant && (existingVariant === 'control' || existingVariant === 'treatment')) {
     return existingVariant;
   }
 
   // Get or create a unique user ID for this session
-  let userId = localStorage.getItem(TEST_USER_ID_KEY);
+  let userId = safeGetString(TEST_USER_ID_KEY);
   if (!userId) {
     userId = `user_${Date.now()}_${Math.random().toString(36).substring(7)}`;
-    localStorage.setItem(TEST_USER_ID_KEY, userId);
+    safeSetString(TEST_USER_ID_KEY, userId);
   }
 
   // Assign variant
   const variant = assignABTestVariant(userId, CATEGORY_EXPANSION_TEST);
 
   // Store variant
-  localStorage.setItem(STORAGE_KEY, variant);
-
-  // Log assignment
-  console.log(`[A/B TEST] User assigned to variant: ${variant}`);
+  safeSetString(STORAGE_KEY, variant);
 
   return variant;
 }
@@ -125,8 +124,10 @@ export function logABTestEvent(
     timestamp: new Date().toISOString()
   };
 
-  // Log to console
-  console.log('[A/B TEST EVENT]', event);
+  // Log to console in development only
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[A/B TEST EVENT]', event);
+  }
 
   // In production, send to analytics service
   if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
@@ -143,7 +144,6 @@ export function logABTestEvent(
 export function resetABTestAssignment() {
   if (typeof window === 'undefined') return;
 
-  localStorage.removeItem('ab_test_variant');
-  localStorage.removeItem('ab_test_user_id');
-  console.log('[A/B TEST] Assignment reset');
+  safeRemoveItem('ab_test_variant');
+  safeRemoveItem('ab_test_user_id');
 }

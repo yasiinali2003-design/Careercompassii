@@ -13,6 +13,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { supabase } from '@/lib/supabase';
 import { ShareResults } from '@/components/ShareResults';
 import { motion } from 'framer-motion';
+import { safeGetItem, safeGetString, safeSetItem, safeSetString } from '@/lib/safeStorage';
 
 // New components
 import { ResultPageLayout } from '@/components/results/ResultPageLayout';
@@ -92,10 +93,10 @@ export default function ResultsPage() {
   useEffect(() => {
     const loadResults = async () => {
       // Get resultId from localStorage - this is the key to consistent results
-      const resultId = localStorage.getItem('lastTestResultId');
+      const resultId = safeGetString('lastTestResultId');
 
       // First, try localStorage (set by test component)
-      const storedResults = localStorage.getItem('careerTestResults');
+      const storedResults = safeGetString('careerTestResults');
 
       if (storedResults) {
         try {
@@ -137,7 +138,7 @@ export default function ResultsPage() {
                 );
               }
               // Save to localStorage for future visits
-              localStorage.setItem('careerTestResults', JSON.stringify(apiResult));
+              safeSetString('careerTestResults', JSON.stringify(apiResult));
               setResults(apiResult);
               setLoading(false);
               return;
@@ -172,7 +173,7 @@ export default function ResultsPage() {
                     c && typeof c === 'object' && c !== null && c.slug && c.title
                   );
                 }
-                localStorage.setItem('careerTestResults', JSON.stringify(fullResults));
+                safeSetString('careerTestResults', JSON.stringify(fullResults));
                 setResults(fullResults);
                 setLoading(false);
                 return;
@@ -226,7 +227,7 @@ export default function ResultsPage() {
                 }
               };
 
-              localStorage.setItem('careerTestResults', JSON.stringify(transformedResult));
+              safeSetString('careerTestResults', JSON.stringify(transformedResult));
               setResults(transformedResult);
               setLoading(false);
               return;
@@ -463,8 +464,8 @@ function FeedbackSection() {
     setIsSubmitting(true);
 
     try {
-      const resultId = localStorage.getItem('lastTestResultId');
-      
+      const resultId = safeGetString('lastTestResultId');
+
       if (resultId && supabase) {
         const { error } = await supabase
           .from('test_results')
@@ -474,21 +475,21 @@ function FeedbackSection() {
             feedback_submitted_at: new Date().toISOString()
           })
           .eq('id', resultId);
-        
+
         if (error) {
           console.error('Error saving feedback to Supabase:', error);
         }
       }
-      
+
       const feedbackData = {
         rating,
         text: feedbackText.trim() || null,
         timestamp: new Date().toISOString(),
         resultId
       };
-      const existingFeedback = JSON.parse(localStorage.getItem('testFeedback') || '[]');
+      const existingFeedback = safeGetItem<Array<typeof feedbackData>>('testFeedback', []) || [];
       existingFeedback.push(feedbackData);
-      localStorage.setItem('testFeedback', JSON.stringify(existingFeedback));
+      safeSetItem('testFeedback', existingFeedback);
       
     } catch (error) {
       console.error('Error submitting feedback:', error);

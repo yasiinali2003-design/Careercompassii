@@ -91,8 +91,8 @@ export default function CareerCatalog() {
     personalityType: searchParams.get('personalityType')?.split(',') || undefined,
     workMode: searchParams.get('workMode')?.split(',') || undefined,
     outlook: searchParams.get('outlook')?.split(',') || undefined,
-    salaryMin: searchParams.get('salaryMin') ? parseInt(searchParams.get('salaryMin')!) : undefined,
-    salaryMax: searchParams.get('salaryMax') ? parseInt(searchParams.get('salaryMax')!) : undefined,
+    salaryMin: searchParams.get('salaryMin') ? parseInt(searchParams.get('salaryMin')!, 10) : undefined,
+    salaryMax: searchParams.get('salaryMax') ? parseInt(searchParams.get('salaryMax')!, 10) : undefined,
   };
   
   const [searchTerm, setSearchTerm] = useState(initialFilters.search || '');

@@ -26,6 +26,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Check if supabase client is available
+    if (!supabase) {
+      return NextResponse.json(
+        { error: 'Database not configured' },
+        { status: 500 }
+      );
+    }
+
     // Store analytics data
     const { error } = await supabase.from('category_analytics').insert({
       cohort,
@@ -34,10 +42,12 @@ export async function POST(request: NextRequest) {
       recommended_careers,
       user_subdimensions,
       created_at: new Date().toISOString()
-    });
+    } as any);
 
     if (error) {
-      console.error('Error storing analytics:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error storing analytics:', error);
+      }
       return NextResponse.json(
         { error: 'Failed to store analytics' },
         { status: 500 }
@@ -45,8 +55,7 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Error in category-distribution API:', error);
+  } catch {
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -57,8 +66,16 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const days = parseInt(searchParams.get('days') || '30');
+    const days = parseInt(searchParams.get('days') || '30', 10);
     const cohort = searchParams.get('cohort');
+
+    // Check if supabase client is available
+    if (!supabase) {
+      return NextResponse.json(
+        { error: 'Database not configured' },
+        { status: 500 }
+      );
+    }
 
     // Calculate date range
     const startDate = new Date();
@@ -77,7 +94,9 @@ export async function GET(request: NextRequest) {
     const { data, error } = await query;
 
     if (error) {
-      console.error('Error fetching analytics:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error fetching analytics:', error);
+      }
       return NextResponse.json(
         { error: 'Failed to fetch analytics' },
         { status: 500 }
@@ -119,8 +138,7 @@ export async function GET(request: NextRequest) {
       auttajaPercentage: categoryPercentages['auttaja'] || 0,
       isBalanced: calculateBalanceScore(categoryPercentages)
     });
-  } catch (error) {
-    console.error('Error in GET category-distribution API:', error);
+  } catch {
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

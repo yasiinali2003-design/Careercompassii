@@ -34,6 +34,15 @@ export function FeedbackWidget({ cohort, dominantCategory, recommendedCareers }:
     setIsSubmitting(true);
 
     try {
+      // Check if supabase client is available
+      if (!supabase) {
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Supabase client not available');
+        }
+        setFeedbackSubmitted(true);
+        return;
+      }
+
       // Log feedback to Supabase
       const { error } = await supabase.from('career_feedback').insert({
         cohort,
@@ -49,20 +58,27 @@ export function FeedbackWidget({ cohort, dominantCategory, recommendedCareers }:
       });
 
       if (error) {
-        console.error('Error submitting feedback:', error);
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Error submitting feedback:', error);
+        }
       } else {
         setFeedbackSubmitted(true);
 
-        // Also log to console for immediate visibility
-        console.log('[FEEDBACK] User Rating:', selectedRating);
-        console.log('[FEEDBACK] Dominant Category:', dominantCategory);
-        console.log('[FEEDBACK] Career Distribution:', recommendedCareers.reduce((acc, career) => {
-          acc[career.category] = (acc[career.category] || 0) + 1;
-          return acc;
-        }, {} as Record<string, number>));
+        // Log to console for visibility in development only
+        if (process.env.NODE_ENV === 'development') {
+          console.log('[FEEDBACK] User Rating:', selectedRating);
+          console.log('[FEEDBACK] Dominant Category:', dominantCategory);
+          console.log('[FEEDBACK] Career Distribution:', recommendedCareers.reduce((acc, career) => {
+            acc[career.category] = (acc[career.category] || 0) + 1;
+            return acc;
+          }, {} as Record<string, number>));
+        }
       }
-    } catch (err) {
-      console.error('Error submitting feedback:', err);
+    } catch {
+      // Silently fail in production, log in development
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error submitting feedback');
+      }
     } finally {
       setIsSubmitting(false);
     }
