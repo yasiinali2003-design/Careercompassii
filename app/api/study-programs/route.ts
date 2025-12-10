@@ -165,7 +165,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Sort programs
-    let sorted = [...programs];
+    let sorted = [...programs] as any[];
     
     if (sort === 'points-low') {
       sorted.sort((a, b) => a.min_points - b.min_points);
@@ -288,7 +288,7 @@ export async function POST(request: NextRequest) {
         opintopolku_url: opintopolkuUrl || null,
         description: description || null,
         data_year: 2025
-      }, {
+      } as any, {
         onConflict: 'id'
       })
       .select()

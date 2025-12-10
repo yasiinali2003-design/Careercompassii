@@ -105,7 +105,7 @@ export async function POST(request: NextRequest) {
 
       const { data, error } = await supabaseAdmin
         .from('teachers')
-        .insert(insertData)
+        .insert(insertData as any)
         .select('id, name, email, school_name, access_code, package, created_at')
         .single();
 
@@ -130,17 +130,17 @@ export async function POST(request: NextRequest) {
               school_name: schoolName || null,
               access_code: accessCode,
               is_active: true,
-            })
+            } as any)
             .select('id, name, email, school_name, access_code, created_at')
             .single();
-          
+
           if (fallbackError) {
             return NextResponse.json(
               { success: false, error: 'Failed to create teacher account', details: fallbackError.message, hint: 'Run migration: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';' },
               { status: 500 }
             );
           }
-          
+
           return NextResponse.json({
             success: true,
             teacher: fallbackData,
@@ -148,11 +148,11 @@ export async function POST(request: NextRequest) {
             warning: 'Package column missing. Run: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';'
           });
         }
-        
+
         return NextResponse.json(
-          { 
-            success: false, 
-            error: 'Failed to create teacher account', 
+          {
+            success: false,
+            error: 'Failed to create teacher account',
             details: error.message || JSON.stringify(error),
             code: error.code,
             hint: error.message?.includes('column "package"') || error.message?.includes("'package' column") || error.code === '42703' || error.code === 'PGRST204'
@@ -181,12 +181,12 @@ export async function POST(request: NextRequest) {
       access_code: accessCode,
       is_active: true,
     };
-    
+
     insertData.package = normalizedPackage;
 
     const { data, error } = await supabaseAdmin
       .from('teachers')
-      .insert(insertData)
+      .insert(insertData as any)
       .select('id, name, email, school_name, access_code, package, created_at')
       .single();
 
@@ -211,17 +211,17 @@ export async function POST(request: NextRequest) {
             school_name: schoolName || null,
             access_code: accessCode,
             is_active: true,
-          })
+          } as any)
           .select('id, name, email, school_name, access_code, created_at')
           .single();
-        
+
         if (fallbackError) {
           return NextResponse.json(
             { success: false, error: 'Failed to create teacher account', details: fallbackError.message, hint: 'Run migration: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';' },
             { status: 500 }
           );
         }
-        
+
         return NextResponse.json({
           success: true,
           teacher: fallbackData,

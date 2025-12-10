@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
       .select('id, name, email, school_name, access_code, is_active')
       .in('access_code', candidateCodes)
       .eq('is_active', true)
-      .maybeSingle();
+      .maybeSingle() as { data: { id: string; name: string; email: string; school_name: string; access_code: string; is_active: boolean } | null; error: any };
 
     console.log(`[Teacher Auth] Query result:`, { 
       found: !!teacher, 
@@ -145,7 +145,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Update last login timestamp (non-blocking, errors are ignored)
-    supabaseAdmin
+    (supabaseAdmin as any)
       .from('teachers')
       .update({ last_login: new Date().toISOString() })
       .eq('id', teacher.id)

@@ -68,7 +68,7 @@ async function testDatabaseConnectivity() {
   try {
     // Try to create a test class (will be deleted)
     const testTeacherId = '00000000-0000-0000-0000-000000000000'; // Dummy UUID
-    const { data: insertData, error: insertError } = await supabaseAdmin
+    const { data: insertData, error: insertError } = await (supabaseAdmin as any)
       .from('classes')
       .insert({
         teacher_id: testTeacherId,

@@ -77,12 +77,12 @@ export async function checkRateLimit(request: Request): Promise<{ limit: boolean
     const dayAgo = new Date(now.getTime() - RATE_LIMIT_CONFIG.windowDays * 60 * 60 * 1000);
     
     // Query rate limit table
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await (supabaseAdmin as any)
       .from('rate_limits')
       .select('*')
       .eq('hashed_ip', hashedIP)
       .gte('created_at', dayAgo.toISOString())
-      .order('created_at', { ascending: false });
+      .order('created_at', { ascending: false }) as { data: Array<{ created_at: string }> | null; error: any };
     
     if (error) {
       console.error('[RateLimit] Error querying rate limits:', error);
@@ -133,7 +133,7 @@ export async function checkRateLimit(request: Request): Promise<{ limit: boolean
     }
     
     // All good! Record this request
-    await supabaseAdmin
+    await (supabaseAdmin as any)
       .from('rate_limits')
       .insert({
         hashed_ip: hashedIP,
@@ -163,7 +163,7 @@ export async function cleanupRateLimits(): Promise<void> {
     const cutoff = new Date();
     cutoff.setDate(cutoff.getDate() - 7); // Keep 7 days of history
     
-    await supabaseAdmin
+    await (supabaseAdmin as any)
       .from('rate_limits')
       .delete()
       .lt('created_at', cutoff.toISOString());

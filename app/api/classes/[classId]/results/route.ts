@@ -125,7 +125,7 @@ export async function GET(
         .from('teachers')
         .select('id, package')
         .eq('id', teacherId)
-        .single();
+        .single() as { data: { id: string; package?: string } | null; error: any };
       if (!tErr && t?.package && String(t.package).toLowerCase() === 'premium') {
         retentionYears = 5;
       }

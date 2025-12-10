@@ -44,7 +44,7 @@ export function FeedbackWidget({ cohort, dominantCategory, recommendedCareers }:
       }
 
       // Log feedback to Supabase
-      const { error } = await supabase.from('career_feedback').insert({
+      const { error } = await (supabase as any).from('career_feedback').insert({
         cohort,
         dominant_category: dominantCategory,
         rating: selectedRating,

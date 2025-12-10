@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Get schools using helper function
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await (supabaseAdmin as any)
       .rpc('get_teacher_schools', { p_teacher_id: teacherId });
 
     if (error) {
@@ -98,7 +98,7 @@ export async function POST(request: NextRequest) {
         name,
         package: pkg,
         max_teachers: maxTeachers
-      })
+      } as any)
       .select('id, name, package, max_teachers, created_at')
       .single();
 
@@ -111,25 +111,26 @@ export async function POST(request: NextRequest) {
     }
 
     // Add creator as admin
+    const schoolData = school as { id: string; name: string; package: string; max_teachers: number; created_at: string };
     const { error: memberError } = await supabaseAdmin
       .from('school_teachers')
       .insert({
-        school_id: school.id,
+        school_id: schoolData.id,
         teacher_id: teacherId,
         role: 'admin'
-      });
+      } as any);
 
     if (memberError) {
       console.error('[API/Schools] Error adding admin:', memberError);
       // Rollback: delete school
-      await supabaseAdmin.from('schools').delete().eq('id', school.id);
+      await supabaseAdmin.from('schools').delete().eq('id', schoolData.id)
       return NextResponse.json(
         { success: false, error: 'Failed to add admin to school' },
         { status: 500 }
       );
     }
 
-    console.log(`[API/Schools] Created school: ${school.id} by ${teacherId}`);
+    console.log(`[API/Schools] Created school: ${schoolData.id} by ${teacherId}`);
 
     return NextResponse.json({
       success: true,

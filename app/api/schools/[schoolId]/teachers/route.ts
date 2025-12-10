@@ -46,7 +46,7 @@ export async function GET(
       .select('role')
       .eq('school_id', schoolId)
       .eq('teacher_id', teacherId)
-      .single();
+      .single() as { data: { role: string } | null; error: any };
 
     if (!membership) {
       return NextResponse.json(
@@ -134,7 +134,7 @@ export async function POST(
       .select('role')
       .eq('school_id', schoolId)
       .eq('teacher_id', teacherId)
-      .single();
+      .single() as { data: { role: string } | null; error: any };
 
     if (!inviter || inviter.role !== 'admin') {
       return NextResponse.json(
@@ -144,7 +144,7 @@ export async function POST(
     }
 
     // Check if school can add more teachers
-    const { data: canAdd } = await supabaseAdmin
+    const { data: canAdd } = await (supabaseAdmin as any)
       .rpc('can_add_teacher', { p_school_id: schoolId });
 
     if (!canAdd) {
@@ -162,7 +162,7 @@ export async function POST(
         teacher_id: newTeacherId,
         role,
         invited_by: teacherId
-      })
+      } as any)
       .select('id, teacher_id, role, joined_at')
       .single();
 
@@ -241,7 +241,7 @@ export async function DELETE(
       .select('role')
       .eq('school_id', schoolId)
       .eq('teacher_id', teacherId)
-      .single();
+      .single() as { data: { role: string } | null; error: any };
 
     if (!remover || remover.role !== 'admin') {
       return NextResponse.json(
@@ -262,7 +262,7 @@ export async function DELETE(
       .select('role')
       .eq('school_id', schoolId)
       .eq('teacher_id', teacherIdToRemove)
-      .single();
+      .single() as { data: { role: string } | null; error: any };
 
     if (targetMember?.role === 'admin' && admins && admins.length <= 1) {
       return NextResponse.json(

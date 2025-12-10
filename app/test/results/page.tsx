@@ -158,15 +158,15 @@ export default function ResultsPage() {
               .from('test_results')
               .select('*')
               .eq('id', resultId)
-              .single();
+              .single() as { data: any; error: any };
 
             if (dbError) {
               console.error('[Results] Database error:', dbError);
             } else if (dbResult) {
               // Check if full_results is available (new format)
-              if (dbResult.full_results) {
+              if ((dbResult as any).full_results) {
                 console.log('[Results] Using full_results from database');
-                const fullResults = dbResult.full_results;
+                const fullResults = (dbResult as any).full_results;
                 // Validate and clean topCareers array
                 if (fullResults.topCareers && Array.isArray(fullResults.topCareers)) {
                   fullResults.topCareers = fullResults.topCareers.filter((c: any) =>
@@ -467,7 +467,7 @@ function FeedbackSection() {
       const resultId = safeGetString('lastTestResultId');
 
       if (resultId && supabase) {
-        const { error } = await supabase
+        const { error } = await (supabase as any)
           .from('test_results')
           .update({
             satisfaction_rating: rating,

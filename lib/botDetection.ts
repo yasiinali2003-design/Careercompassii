@@ -41,10 +41,10 @@ export async function trackRequest(
       .digest('hex');
     
     // Store request metadata (only basic fields that exist in rate_limits table)
-    await supabaseAdmin.from('rate_limits').insert({
+    await (supabaseAdmin as any).from('rate_limits').insert({
       hashed_ip: hashedIP,
       created_at: new Date().toISOString()
-      // Note: Additional fields (fingerprint, user_agent_hash, pathname, suspicious) 
+      // Note: Additional fields (fingerprint, user_agent_hash, pathname, suspicious)
       // can be added to the database schema if needed for enhanced tracking
     });
   } catch (error) {

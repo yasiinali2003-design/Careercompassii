@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
     let isValid = false;
     
     // Try RPC function first
-    const { data: pinData, error: pinError } = await supabaseAdmin
+    const { data: pinData, error: pinError } = await (supabaseAdmin as any)
       .rpc('validate_pin', {
         p_pin: pin,
         p_class_token: classToken
@@ -59,14 +59,14 @@ export async function POST(request: NextRequest) {
     // If RPC fails, use fallback direct query
     if (pinError) {
       console.log('[API/ValidatePIN] RPC function failed or not found, using fallback');
-      
+
       // Get class by token
       const { data: classData } = await supabaseAdmin
         .from('classes')
         .select('id')
         .eq('class_token', classToken)
-        .single();
-      
+        .single() as { data: { id: string } | null; error: any };
+
       if (classData) {
         // Check if PIN exists for this class
         const { data: pinExists } = await supabaseAdmin
@@ -74,15 +74,15 @@ export async function POST(request: NextRequest) {
           .select('id')
           .eq('pin', pin)
           .eq('class_id', classData.id)
-          .limit(1);
-        
-        isValid = (pinExists && pinExists.length > 0);
+          .limit(1) as { data: any[] | null; error: any };
+
+        isValid = Boolean(pinExists && pinExists.length > 0);
         console.log(`[API/ValidatePIN] Fallback validation result: ${isValid}`);
       } else {
         console.log('[API/ValidatePIN] Class not found');
       }
-    } else if (pinData && pinData.length > 0) {
-      isValid = Boolean(pinData[0]?.is_valid);
+    } else if (pinData && (pinData as any[]).length > 0) {
+      isValid = Boolean((pinData as any[])[0]?.is_valid);
       console.log(`[API/ValidatePIN] RPC validation result: ${isValid}`);
     }
 

@@ -34,8 +34,13 @@ export function ABTestDashboard() {
 
   const loadMetrics = async () => {
     try {
+      if (!supabase) {
+        console.error('Supabase client not available');
+        setLoading(false);
+        return;
+      }
       // Fetch feedback data from Supabase
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('career_feedback')
         .select('*')
         .order('created_at', { ascending: false });

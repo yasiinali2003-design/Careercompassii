@@ -52,34 +52,34 @@ export async function POST(request: NextRequest) {
         .insert({
           teacher_id: teacherId,
           class_token: classToken
-        })
+        } as any)
         .select('id, class_token, created_at')
-        .single();
+        .single() as { data: { id: string; class_token: string; created_at: string } | null; error: any };
 
-      if (error) {
+      if (error || !data) {
         console.error('[API/Classes] Supabase error:', error);
-        console.error('[API/Classes] Error code:', error.code);
-        console.error('[API/Classes] Error message:', error.message);
-        console.error('[API/Classes] Error details:', error.details);
-        
+        console.error('[API/Classes] Error code:', error?.code);
+        console.error('[API/Classes] Error message:', error?.message);
+        console.error('[API/Classes] Error details:', error?.details);
+
         // Check if it's a table missing error
-        if (error.code === 'PGRST116' || error.message?.includes('does not exist')) {
+        if (error?.code === 'PGRST116' || error?.message?.includes('does not exist')) {
           return NextResponse.json(
-            { 
-              success: false, 
+            {
+              success: false,
               error: 'Database tables not created yet',
               hint: 'Run the SQL file in Supabase: supabase-teacher-dashboard-fixed.sql',
-              details: error.message
+              details: error?.message
             },
             { status: 500 }
           );
         }
 
         return NextResponse.json(
-          { 
-            success: false, 
+          {
+            success: false,
             error: 'Failed to create class',
-            details: error.message,
+            details: error?.message,
             hint: 'Check Vercel logs for more details'
           },
           { status: 500 }

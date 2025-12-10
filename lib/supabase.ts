@@ -116,9 +116,6 @@ export const supabaseAdmin: ReturnType<typeof createClient> | null = (() => {
           throw err;
         }
       }
-    },
-    db: {
-      schema: 'public'
     }
   });
 })();

@@ -134,7 +134,7 @@ export async function POST(request: NextRequest) {
     let classId = null;
 
     // Try RPC function first
-    const { data: pinData, error: pinError } = await supabaseAdmin
+    const { data: pinData, error: pinError } = await (supabaseAdmin as any)
       .rpc('validate_pin', {
         p_pin: normalizedPin,
         p_class_token: normalizedClassToken
@@ -145,14 +145,14 @@ export async function POST(request: NextRequest) {
     // If RPC fails, use fallback direct query
     if (pinError) {
       console.log('[API/Results] RPC function failed or not found, using fallback');
-      
+
       // Get class by token
       const { data: classData } = await supabaseAdmin
         .from('classes')
         .select('id')
         .eq('class_token', normalizedClassToken)
-        .single();
-      
+        .single() as { data: { id: string } | null; error: any };
+
       if (classData) {
         // Check if PIN exists for this class
         const { data: pinExists } = await supabaseAdmin
@@ -160,9 +160,9 @@ export async function POST(request: NextRequest) {
           .select('id')
           .eq('pin', normalizedPin)
           .eq('class_id', classData.id)
-          .limit(1);
-        
-        isValid = (pinExists && pinExists.length > 0);
+          .limit(1) as { data: Array<{ id: string }> | null; error: any };
+
+        isValid = !!(pinExists && pinExists.length > 0);
         classId = String(classData.id); // Ensure string type for consistency
         console.log(`[API/Results] Fallback validation: isValid=${isValid}, classId=${classId} (type: ${typeof classId})`);
       } else {
@@ -208,8 +208,8 @@ export async function POST(request: NextRequest) {
         class_id: classIdUUID,
         pin: normalizedPin,
         result_payload: resultPayload
-      })
-      .select('id, class_id, pin, created_at');
+      } as any)
+      .select('id, class_id, pin, created_at') as { data: Array<{ id: string; class_id: string; pin: string; created_at: string }> | null; error: any };
 
     if (insertError) {
       console.error('[API/Results] Error storing result:', insertError);

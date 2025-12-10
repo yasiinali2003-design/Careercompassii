@@ -15,7 +15,7 @@ export async function getTeacherPackage(teacherId: string): Promise<PackageType>
   }
 
   try {
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await (supabaseAdmin as any)
       .from('teachers')
       .select('package')
       .eq('id', teacherId)
@@ -25,7 +25,7 @@ export async function getTeacherPackage(teacherId: string): Promise<PackageType>
       return 'standard'; // Default to standard on error
     }
 
-    const pkg = String(data.package || '').toLowerCase();
+    const pkg = String((data as { package: string }).package || '').toLowerCase();
     return pkg === 'premium' ? 'premium' : 'standard';
   } catch {
     return 'standard';

@@ -249,9 +249,9 @@ export async function POST(request: NextRequest) {
 
         const { data, error } = await supabaseAdmin
           .from('test_results')
-          .insert(testResult)
+          .insert(testResult as any)
           .select('id')
-          .single();
+          .single() as { data: { id: string } | null; error: any };
 
         if (error) {
           console.error('[API] Error saving to Supabase:', error);

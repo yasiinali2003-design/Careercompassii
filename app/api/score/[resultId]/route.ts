@@ -43,7 +43,7 @@ export async function GET(
       .from('test_results')
       .select('id, cohort, full_results, dimension_scores, top_careers, education_path_primary, education_path_scores, created_at')
       .eq('id', resultId)
-      .single();
+      .single() as { data: { id: string; cohort: string; full_results: any; dimension_scores: any; top_careers: any; education_path_primary: any; education_path_scores: any; created_at: string } | null; error: any };
 
     if (error) {
       console.error('[API] Error fetching result:', error);

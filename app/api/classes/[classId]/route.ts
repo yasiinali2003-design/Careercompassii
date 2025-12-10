@@ -67,9 +67,9 @@ export async function GET(
       .from('classes')
       .select('id, class_token, teacher_id, created_at')
       .eq('id', classId)
-      .single();
+      .single() as { data: { id: string; class_token: string; teacher_id: string; created_at: string } | null; error: any };
 
-    if (error) {
+    if (error || !data) {
       console.error('[API/GetClass] Error:', error);
       return NextResponse.json(
         { success: false, error: 'Class not found' },
