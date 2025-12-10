@@ -61,9 +61,42 @@ const careersData: Career[] = careersFI
 // Source data has over 700 Finnish careers
 const totalCareerCount = 'Yli 700 suomalaista ammattia';
 
+// Simplified education level categories for the dropdown
+const EDUCATION_CATEGORIES = [
+  { value: 'peruskoulu', label: 'Peruskoulu', keywords: ['peruskoulu', 'perusaste'] },
+  { value: 'ammatillinen', label: 'Ammatillinen koulutus', keywords: ['ammattitutkinto', 'ammatillinen', 'ammattikoulutus', 'oppisopimus'] },
+  { value: 'lukio', label: 'Lukio', keywords: ['lukio', 'ylioppilastutkinto'] },
+  { value: 'amk', label: 'AMK-tutkinto', keywords: ['amk', 'ammattikorkeakoulu'] },
+  { value: 'yliopisto', label: 'Yliopisto', keywords: ['yliopisto', 'kandidaatti', 'maisteri', 'tohtori', 'di'] },
+  { value: 'erikoistuminen', label: 'Erikoistumiskoulutus', keywords: ['erikoistumis', 'erikoisammatti', 'jatkokoulutus'] },
+];
+
+// Function to map detailed education path to simplified category
+function getEducationCategory(educationPath: string): string | null {
+  const lowerPath = educationPath.toLowerCase();
+  for (const cat of EDUCATION_CATEGORIES) {
+    if (cat.keywords.some(keyword => lowerPath.includes(keyword))) {
+      return cat.value;
+    }
+  }
+  return null;
+}
+
+// Function to check if a career matches an education category
+function careerMatchesEducationCategory(career: typeof careersData[0], categoryValue: string): boolean {
+  const educationPaths = career.educationLevel || [];
+  const category = EDUCATION_CATEGORIES.find(c => c.value === categoryValue);
+  if (!category) return false;
+
+  return educationPaths.some(path => {
+    const lowerPath = path.toLowerCase();
+    return category.keywords.some(keyword => lowerPath.includes(keyword));
+  });
+}
+
 const filterOptions = {
   industry: Array.from(new Set(careersData.flatMap((c) => c.industry || []))).filter(Boolean).sort(),
-  educationLevel: Array.from(new Set(careersData.flatMap((c) => c.educationLevel || []))).filter(Boolean).sort(),
+  educationLevel: EDUCATION_CATEGORIES, // Use simplified categories
   personalityType: Array.from(new Set(careersData.flatMap((c) => c.personalityType || []))).filter(Boolean).sort(),
   workMode: Array.from(
     new Set(
@@ -133,8 +166,9 @@ export default function CareerCatalog() {
       }
 
       if (filters.educationLevel && filters.educationLevel.length > 0) {
-        const hasMatchingEducation = (career.educationLevel || []).some((edu: string) => 
-          filters.educationLevel!.includes(edu)
+        // Use keyword-based category matching for simplified dropdown
+        const hasMatchingEducation = filters.educationLevel.some((categoryValue: string) =>
+          careerMatchesEducationCategory(career, categoryValue)
         );
         if (!hasMatchingEducation) return false;
       }
@@ -286,17 +320,17 @@ export default function CareerCatalog() {
                   value={filters.educationLevel?.[0] || ''}
                   onChange={(e) => {
                     const value = e.target.value;
-                    setFilters(prev => ({ 
-                      ...prev, 
-                      educationLevel: value ? [value] : undefined 
+                    setFilters(prev => ({
+                      ...prev,
+                      educationLevel: value ? [value] : undefined
                     }));
                   }}
                   className="bg-[#11161f] border border-white/10 rounded-full px-4 py-2 pr-8 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue appearance-none transition-colors hover:border-white/20 cursor-pointer"
                   aria-label="Valitse koulutustaso"
                 >
                   <option value="">Kaikki koulutustasot</option>
-                  {filterOptions.educationLevel.map((level: string) => (
-                    <option key={level} value={level}>{level}</option>
+                  {filterOptions.educationLevel.map((cat) => (
+                    <option key={cat.value} value={cat.value}>{cat.label}</option>
                   ))}
                 </select>
                 <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-xs text-gray-400">
