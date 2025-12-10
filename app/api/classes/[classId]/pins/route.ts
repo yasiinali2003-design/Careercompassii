@@ -114,7 +114,7 @@ export async function POST(
       pin
     }));
 
-    const { error: insertError } = await supabaseAdmin
+    const { error: insertError } = await (supabaseAdmin as any)
       .from('pins')
       .insert(pinsToInsert);
 
