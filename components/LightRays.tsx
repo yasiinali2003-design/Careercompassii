@@ -347,8 +347,9 @@ export default function LightRays({
     followMouse,
     mouseInfluence,
     noiseAmount,
-    distortion,
-    isVisible
+    distortion
+    // Note: isVisible intentionally excluded - handled by separate effect
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   ]);
 
   useEffect(() => {

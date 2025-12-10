@@ -25,6 +25,7 @@ export default function GeminiCareerContent({
 
   useEffect(() => {
     generateContent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [career, userContext]);
 
   const generateContent = async () => {

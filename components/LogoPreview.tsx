@@ -80,6 +80,7 @@ export default function LogoPreview() {
                   backgroundColor: logo.darkBg ? "#1F4756" : "#F8FAFB",
                 }}
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={logo.file}
                   alt={logo.name}

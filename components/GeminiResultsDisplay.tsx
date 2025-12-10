@@ -49,6 +49,7 @@ export default function GeminiResultsDisplay({
     if (onGenerateUI && analysisData) {
       generateDynamicUI();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onGenerateUI, analysisData]);
 
   const generateDynamicUI = async () => {

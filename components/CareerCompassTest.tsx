@@ -10,8 +10,7 @@ import { safeGetItem, safeSetItem, safeRemoveItem, safeSetString, isLocalStorage
 
 // Debug logging only in development
 const isDev = process.env.NODE_ENV !== 'production';
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const debugLog = (...args: any[]) => { if (isDev) console.log(...args); };
+const debugLog = (...args: unknown[]) => { if (isDev) console.log(...args); };
 
 // ---------- QUESTIONS DATA ----------
 // YLA: Education path focus (Lukio vs. Ammattikoulu) + career preview

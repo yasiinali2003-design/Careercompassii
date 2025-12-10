@@ -37,6 +37,7 @@ export default function GeminiCareerPathVisualization({
 
   useEffect(() => {
     generateVisualization();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userGoals, currentSkills]);
 
   const generateVisualization = async () => {

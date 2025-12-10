@@ -29,6 +29,7 @@ export function ABTestDashboard() {
 
   useEffect(() => {
     loadMetrics();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadMetrics = async () => {
