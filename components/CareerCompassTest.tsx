@@ -1110,12 +1110,24 @@ const Summary = ({
               timestamp: new Date().toISOString(),
               resultId: resultsData.resultId || scoreData.resultId // Use resultId from results API if available
             };
-            safeSetItem('careerTestResults', resultsWithAnswers);
+
+            // IMPORTANT: Save to localStorage BEFORE navigating to ensure persistence
+            // Use safeSetString with JSON.stringify for reliable synchronous storage
+            const resultsJson = JSON.stringify(resultsWithAnswers);
+            const savedResults = safeSetString('careerTestResults', resultsJson);
             const finalResultId = resultsData.resultId || scoreData.resultId;
-            if (finalResultId) {
-              safeSetString('lastTestResultId', finalResultId);
+            const savedResultId = finalResultId ? safeSetString('lastTestResultId', finalResultId) : true;
+
+            // Verify storage succeeded before navigating
+            if (!savedResults || !savedResultId) {
+              console.error('[Test] Failed to save results to localStorage');
+              // Still navigate - results should be retrievable from database
             }
-            window.location.href = '/test/results';
+
+            // Small delay to ensure localStorage write completes
+            setTimeout(() => {
+              window.location.href = '/test/results';
+            }, 50);
           } else {
             console.error('[Test] Failed to save results:', resultsData.error);
             const errorMsg = resultsData.error || "Tulosten tallentaminen epäonnistui";
@@ -1199,11 +1211,23 @@ const Summary = ({
             cohort: group,
             timestamp: new Date().toISOString()
           };
-          safeSetItem('careerTestResults', resultsWithAnswers);
-          if (data.resultId) {
-            safeSetString('lastTestResultId', data.resultId);
+
+          // IMPORTANT: Save to localStorage BEFORE navigating to ensure persistence
+          // Use safeSetString with JSON.stringify for reliable synchronous storage
+          const resultsJson = JSON.stringify(resultsWithAnswers);
+          const savedResults = safeSetString('careerTestResults', resultsJson);
+          const savedResultId = data.resultId ? safeSetString('lastTestResultId', data.resultId) : true;
+
+          // Verify storage succeeded before navigating
+          if (!savedResults || !savedResultId) {
+            console.error('[Test] Failed to save results to localStorage');
+            // Still navigate - results should be retrievable from database
           }
-          window.location.href = '/test/results';
+
+          // Small delay to ensure localStorage write completes
+          setTimeout(() => {
+            window.location.href = '/test/results';
+          }, 50);
         } else {
           console.error('[Test] Score API failed:', data);
           const errorMsg = data.error || data.details || "Analyysi epäonnistui";

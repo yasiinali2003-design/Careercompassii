@@ -1302,48 +1302,33 @@ function determineDominantCategory(
 
     console.log(`[NUORI EARLY EXIT CHECK] isStrongTech=${isStrongTechProfile}, isStrongHelper=${isStrongHelperProfile}, isStrongCreative=${isStrongCreativeProfile}, isStrongHandsOn=${isStrongHandsOnProfile}, isStrongLeader=${isStrongLeaderProfile}`);
 
-    // Determine if we should early exit
-    // Priority: Tech > Helper > Creative > HandsOn > Leader
-    if (isStrongTechProfile && !isStrongHelperProfile && !isStrongCreativeProfile && !isStrongLeaderProfile) {
-      // Clear IT/Tech profile -> innovoija
-      console.log(`[NUORI EARLY EXIT] RETURNING innovoija (strong tech profile)`);
-      return 'innovoija';
-    }
+    // SCORE-BASED APPROACH: Find which profile is strongest for NUORI
+    // This replaces the old precedence-based system that caused misclassifications
+    const nuoriProfileScores = [
+      { name: 'innovoija', score: isStrongTechProfile ? techStrength : 0 },
+      { name: 'auttaja', score: isStrongHelperProfile ? helperStrength : 0 },
+      { name: 'luova', score: isStrongCreativeProfile ? creativeStrength : 0 },
+      { name: 'rakentaja', score: isStrongHandsOnProfile ? handsOnStrength : 0 },
+      { name: 'johtaja', score: isStrongLeaderProfile ? leaderStrength : 0 }
+    ].filter(p => p.score > 0).sort((a, b) => b.score - a.score);
 
-    if (isStrongHelperProfile && !isStrongTechProfile && !isStrongCreativeProfile && !isStrongLeaderProfile) {
-      // Clear Helper/Healthcare profile -> auttaja
-      console.log(`[NUORI EARLY EXIT] RETURNING auttaja (strong helper profile)`);
-      return 'auttaja';
-    }
+    console.log(`[NUORI EARLY EXIT CHECK] Profile scores: ${nuoriProfileScores.map(p => `${p.name}=${p.score.toFixed(2)}`).join(', ')}`);
 
-    if (isStrongCreativeProfile && !isStrongTechProfile && !isStrongHelperProfile && !isStrongLeaderProfile) {
-      // Clear Creative profile -> luova
-      console.log(`[NUORI EARLY EXIT] RETURNING luova (strong creative profile)`);
-      return 'luova';
-    }
+    // If we have a clear winner, early exit
+    if (nuoriProfileScores.length > 0) {
+      const topProfile = nuoriProfileScores[0];
+      const secondProfile = nuoriProfileScores[1];
 
-    if (isStrongHandsOnProfile && !isStrongTechProfile && !isStrongHelperProfile && !isStrongCreativeProfile && !isStrongLeaderProfile) {
-      // Clear Hands-on profile -> rakentaja
-      console.log(`[NUORI EARLY EXIT] RETURNING rakentaja (strong hands-on profile)`);
-      return 'rakentaja';
-    }
-
-    if (isStrongLeaderProfile && !isStrongTechProfile && !isStrongHelperProfile) {
-      // Clear Leader profile -> johtaja
-      console.log(`[NUORI EARLY EXIT] RETURNING johtaja (strong leader profile)`);
-      return 'johtaja';
-    }
-
-    // Handle combined profiles - tech + helper (e.g., medical tech)
-    if (isStrongTechProfile && isStrongHelperProfile) {
-      // Prioritize based on which is stronger
-      if (techStrength > helperStrength) {
-        console.log(`[NUORI EARLY EXIT] RETURNING innovoija (tech > helper in combined profile)`);
-        return 'innovoija';
-      } else {
-        console.log(`[NUORI EARLY EXIT] RETURNING auttaja (helper >= tech in combined profile)`);
-        return 'auttaja';
+      // Early exit if top profile is clearly dominant (no second or 0.3+ lead)
+      if (!secondProfile || topProfile.score >= secondProfile.score + 0.3) {
+        console.log(`[NUORI EARLY EXIT] RETURNING ${topProfile.name} (dominant profile, score=${topProfile.score.toFixed(2)})`);
+        return topProfile.name;
       }
+
+      // For close scores, still return the highest scoring profile
+      // This ensures the strongest signal wins even if margins are slim
+      console.log(`[NUORI EARLY EXIT] RETURNING ${topProfile.name} (strongest profile, score=${topProfile.score.toFixed(2)}, runner-up=${secondProfile.name}=${secondProfile.score.toFixed(2)})`);
+      return topProfile.name;
     }
 
     // If no early exit, continue with normal logic
@@ -1380,20 +1365,31 @@ function determineDominantCategory(
     console.log(`[YLA EARLY EXIT CHECK] techStrength=${techStrengthYLA.toFixed(3)}, creativeStrength=${creativeStrengthYLA.toFixed(3)}, helperStrength=${helperStrengthYLA.toFixed(3)}, handsOnStrength=${handsOnStrengthYLA.toFixed(3)}`);
 
     // YLA EARLY EXIT CONDITIONS:
-    // 1. Strong hands-on profile (Onni: hands_on=high, tech can be high too but for machinery not IT)
-    // Check this FIRST because hands-on kids often score high on "tech/devices" for machinery
-    const isYLAStrongHandsOnProfile = (ylaHandsOn >= 0.6) ||
-                                       (handsOnStrengthYLA >= 1.4 && ylaHandsOn >= 0.4) ||
-                                       (ylaHandsOn >= 0.5 && ylaTech >= 0.5 && ylaInnovation < 0.4); // Tech + hands-on = mechanics
+    // CRITICAL FIX: Use RELATIVE comparison instead of strict precedence
+    // The key distinction between tech innovator and hands-on builder is INNOVATION
+    // Tech innovators have: tech + innovation + problem_solving
+    // Builders have: hands_on + tech (for machinery) but LOW innovation
 
-    // 2. Strong tech/innovation profile (Veeti: tech=high, innovation=high, problem_solving=high)
-    // BUT only if NOT primarily hands-on (to distinguish Veeti from Onni)
-    // Key difference: Veeti has innovation, Onni doesn't
-    const isYLAStrongTechProfile = !isYLAStrongHandsOnProfile && (
+    // 1. Strong tech/innovation profile (Veeti/Matti: tech=high, innovation=high, problem_solving=high)
+    // Key signal: INNOVATION distinguishes software dev from mechanic
+    const isYLAStrongTechProfile = (
                                     (ylaTech >= 0.7 && ylaInnovation >= 0.3) ||
                                     (ylaTech >= 0.5 && ylaInnovation >= 0.5) ||
                                     (ylaTech >= 0.4 && ylaInnovation >= 0.4 && ylaProblemSolving >= 0.5) ||
                                     (techStrengthYLA >= 1.8 && ylaTech >= 0.4 && ylaInnovation >= 0.3));
+
+    // 2. Strong hands-on profile (Onni: hands_on=high, tech for machinery not IT)
+    // ONLY classify as hands-on if:
+    // - hands_on is clearly dominant OR
+    // - tech is high BUT innovation is LOW (mechanics use tech without innovation)
+    const isYLAStrongHandsOnProfile = (
+                                       // Pure hands-on (no tech competition)
+                                       (ylaHandsOn >= 0.6 && ylaTech < 0.4) ||
+                                       (ylaHandsOn >= 0.7 && ylaInnovation < 0.4) ||
+                                       // Mixed hands-on + tech: only if LOW innovation (mechanic not coder)
+                                       (ylaHandsOn >= 0.5 && ylaTech >= 0.5 && ylaInnovation < 0.3) ||
+                                       // Hands-on clearly stronger than tech+innovation combined
+                                       (handsOnStrengthYLA >= 1.4 && handsOnStrengthYLA > techStrengthYLA + 0.3));
 
     // 3. Strong creative profile
     const isYLAStrongCreativeProfile = (ylaCreative >= 0.7) || (creativeStrengthYLA >= 1.3 && ylaCreative >= 0.5);
@@ -1406,28 +1402,54 @@ function determineDominantCategory(
 
     console.log(`[YLA EARLY EXIT CHECK] isStrongTech=${isYLAStrongTechProfile}, isStrongCreative=${isYLAStrongCreativeProfile}, isStrongHelper=${isYLAStrongHelperProfile}, isStrongHandsOn=${isYLAStrongHandsOnProfile}, isStrongLeader=${isYLAStrongLeaderProfile}`);
 
-    // Early exit for tech/innovation YLA profiles (like Veeti)
-    if (isYLAStrongTechProfile && !isYLAStrongHelperProfile && !isYLAStrongCreativeProfile && !isYLAStrongLeaderProfile) {
-      console.log(`[YLA EARLY EXIT] RETURNING innovoija (strong tech profile - like gaming/coding teen)`);
-      return 'innovoija';
-    }
+    // SCORE-BASED APPROACH: Find which profile is strongest
+    const ylaProfileScores = [
+      { name: 'innovoija', score: isYLAStrongTechProfile ? techStrengthYLA : 0 },
+      { name: 'luova', score: isYLAStrongCreativeProfile ? creativeStrengthYLA : 0 },
+      { name: 'auttaja', score: isYLAStrongHelperProfile ? helperStrengthYLA : 0 },
+      { name: 'rakentaja', score: isYLAStrongHandsOnProfile ? handsOnStrengthYLA : 0 },
+      { name: 'johtaja', score: isYLAStrongLeaderProfile ? leaderStrengthYLA : 0 }
+    ].filter(p => p.score > 0).sort((a, b) => b.score - a.score);
 
-    // Early exit for creative YLA profiles (like Ella)
-    if (isYLAStrongCreativeProfile && !isYLAStrongTechProfile && !isYLAStrongHelperProfile && !isYLAStrongLeaderProfile) {
-      console.log(`[YLA EARLY EXIT] RETURNING luova (strong creative profile)`);
-      return 'luova';
-    }
+    console.log(`[YLA EARLY EXIT CHECK] Profile scores: ${ylaProfileScores.map(p => `${p.name}=${p.score.toFixed(2)}`).join(', ')}`);
 
-    // Early exit for helper YLA profiles (like Aino)
-    if (isYLAStrongHelperProfile && !isYLAStrongTechProfile && !isYLAStrongCreativeProfile && !isYLAStrongLeaderProfile) {
-      console.log(`[YLA EARLY EXIT] RETURNING auttaja (strong helper profile)`);
-      return 'auttaja';
-    }
+    // If we have a clear winner (no other profile competing), early exit
+    if (ylaProfileScores.length > 0) {
+      const topProfile = ylaProfileScores[0];
+      const secondProfile = ylaProfileScores[1];
 
-    // Early exit for hands-on YLA profiles (like Onni)
-    if (isYLAStrongHandsOnProfile && !isYLAStrongTechProfile && !isYLAStrongHelperProfile && !isYLAStrongCreativeProfile && !isYLAStrongLeaderProfile) {
-      console.log(`[YLA EARLY EXIT] RETURNING rakentaja (strong hands-on profile)`);
-      return 'rakentaja';
+      // Early exit if top profile is clearly dominant (no second or 0.3+ lead)
+      if (!secondProfile || topProfile.score >= secondProfile.score + 0.3) {
+        console.log(`[YLA EARLY EXIT] RETURNING ${topProfile.name} (dominant profile, score=${topProfile.score.toFixed(2)})`);
+        return topProfile.name;
+      }
+
+      // CRITICAL: When creative is VERY high (>= 0.7) and clearly dominates tech,
+      // prioritize luova over innovoija even if techStrengthYLA is inflated by innovation/problem_solving
+      // This handles creative people who might answer "new ideas" (innovation) highly but don't code
+      // Key insight: If creative is very high and creative > tech (raw scores), this is a creative person
+      if (isYLAStrongCreativeProfile && ylaCreative >= 0.7 && ylaCreative > ylaTech) {
+        console.log(`[YLA EARLY EXIT] RETURNING luova (strong creative=${ylaCreative.toFixed(2)} dominates tech=${ylaTech.toFixed(2)})`);
+        return 'luova';
+      }
+
+      // If tech is strongest even with competition, still return innovoija
+      if (topProfile.name === 'innovoija') {
+        console.log(`[YLA EARLY EXIT] RETURNING innovoija (strongest tech profile, score=${topProfile.score.toFixed(2)})`);
+        return 'innovoija';
+      }
+
+      // If creative is strongest, return luova
+      if (topProfile.name === 'luova') {
+        console.log(`[YLA EARLY EXIT] RETURNING luova (strongest creative profile, score=${topProfile.score.toFixed(2)})`);
+        return 'luova';
+      }
+
+      // If helper is strongest and passes threshold, return auttaja
+      if (topProfile.name === 'auttaja') {
+        console.log(`[YLA EARLY EXIT] RETURNING auttaja (strongest helper profile, score=${topProfile.score.toFixed(2)})`);
+        return 'auttaja';
+      }
     }
 
     // If no early exit, continue with normal logic
@@ -4929,10 +4951,14 @@ export function rankCareers(
     rankCareersBusinessFromWorkstyle
   );
   // CRITICAL: Check if org/planning/analytical signals are stronger than leadership/business
+  // Include values.security and values.stability - these are KEY Järjestäjä indicators
   const rankCareersOrg = Math.max((detailedScores.workstyle.organization || 0), (detailedScores.workstyle.structure || 0), (detailedScores.workstyle.precision || 0));
   const rankCareersPlanning = (detailedScores.workstyle.planning || 0);
   const rankCareersAnalytical = (detailedScores.interests.analytical || 0);
-  const rankCareersOrgSignals = Math.max(rankCareersOrg, rankCareersPlanning, rankCareersAnalytical);
+  // Järjestäjä-specific: high security and stability are strong indicators of järjestäjä personality
+  const rankCareersSecurity = (detailedScores.values?.security || 0);
+  const rankCareersStability = (detailedScores.values?.stability || 0);
+  const rankCareersOrgSignals = Math.max(rankCareersOrg, rankCareersPlanning, rankCareersAnalytical, rankCareersSecurity, rankCareersStability);
   const rankCareersLeaderSignals = Math.max(rankCareersLeadership, rankCareersBusiness);
   // CRITICAL: Don't trigger Business Leader if org signals are stronger than leader signals
   // This prevents "The Balanced Professional" from triggering
@@ -4951,118 +4977,216 @@ export function rankCareers(
     categoriesToInclude = ['johtaja']; // Force only johtaja
   }
 
-  const categoryCareers = CAREER_VECTORS.filter(careerVector => {
-    if (!categoriesToInclude.includes(careerVector.category)) return false;
-    // CRITICAL: For Business Leader, NEVER include auttaja or jarjestaja careers
-    if (isBusinessLeaderInRankCareers && (careerVector.category === 'auttaja' || careerVector.category === 'jarjestaja')) {
-      return false; // Skip competing categories
-    }
-    // Filter out current occupation (fuzzy match on title)
-    if (currentOccupation && currentOccupation !== "none") {
-      const occupationLower = currentOccupation.toLowerCase().trim();
-      const titleLower = careerVector.title.toLowerCase();
-      // Simple fuzzy matching: check if occupation contains career title or vice versa
-      if (titleLower.includes(occupationLower) || occupationLower.includes(titleLower)) {
-        console.log(`[rankCareers] Filtering out current occupation: ${careerVector.title}`);
-        return false;
-      }
-    }
-    return true;
-  });
+  // ENVIRONMENTAL SCIENTIST DETECTION
+  // Check for strong environmental/nature/impact signals
+  const rankCareersEnvironment = detailedScores.interests.environment || 0;
+  const rankCareersImpact = detailedScores.values?.impact || detailedScores.interests?.impact || 0;
+  const rankCareersOutdoor = detailedScores.interests?.outdoor || detailedScores.context?.outdoor || 0;
+  const rankCareersNature = detailedScores.interests?.nature || 0;
+  const rankCareersSustainability = detailedScores.values?.sustainability || 0;
+  const rankCareersResearch = detailedScores.interests?.research || detailedScores.interests?.analytical || 0;
+  // Environmental signal: max of all environment-related dimensions
+  const rankCareersEnvSignal = Math.max(rankCareersEnvironment, rankCareersImpact, rankCareersOutdoor, rankCareersNature, rankCareersSustainability);
+  // Check if hands-on/building signals are stronger (would indicate rakentaja instead)
+  const rankCareersHandsOn = detailedScores.interests?.hands_on || 0;
+  const rankCareersPractical = detailedScores.workstyle?.practical || 0;
+  const rankCareersBuildSignal = Math.max(rankCareersHandsOn, rankCareersPractical);
+  // Check if people/helping signals are strong (would indicate auttaja instead)
+  const rankCareersPeople = detailedScores.interests?.people || 0;
+  const rankCareersHealth = detailedScores.interests?.health || 0;
+  const rankCareersCaring = detailedScores.values?.helping || detailedScores.values?.caring || 0;
+  const rankCareersAuttajaSignal = Math.max(rankCareersPeople, rankCareersHealth, rankCareersCaring);
+  // Environmental Scientist: strong env signal (>=0.7), not dominated by auttaja/people signals or rakentaja signals
+  // STRICTER: Only trigger when env is the STRONGEST signal
+  const isEnvironmentalScientist = rankCareersEnvSignal >= 0.7 &&
+                                    rankCareersEnvSignal > rankCareersBuildSignal + 0.1 &&
+                                    rankCareersEnvSignal > rankCareersAuttajaSignal + 0.1 &&
+                                    rankCareersEnvSignal > rankCareersLeaderSignals + 0.1;
+  console.log(`[rankCareers] Environmental signals: env=${rankCareersEnvSignal.toFixed(2)}, build=${rankCareersBuildSignal.toFixed(2)}, auttaja=${rankCareersAuttajaSignal.toFixed(2)}, isEnvSci=${isEnvironmentalScientist}`);
 
-  if (isUncertain) {
-    console.log(`[rankCareers] Found ${categoryCareers.length} careers across ${categoriesToInclude.length} categories for uncertain user`);
-  } else {
-    console.log(`[rankCareers] Found ${categoryCareers.length} careers in category "${dominantCategory}"`);
-  }
+  // ACCOUNTANT/ADMINISTRATOR (JÄRJESTÄJÄ) DETECTION
+  // Järjestäjä profile: HIGH structure + stability + security, LOW people/health (not auttaja)
+  // The key distinction: Järjestäjä wants ORDER/SYSTEMS, Auttaja wants PEOPLE/HELPING
+  const rankCareersCreative = detailedScores.interests?.creative || detailedScores.interests?.artistic || 0;
+  const rankCareersTechSignal = detailedScores.interests?.technology || 0;
+  // Critical: Check if this is actually a helping profile (would be Auttaja)
+  // Use existing rankCareersPeople and rankCareersHealth from above, plus check social dimension
+  const rankCareersSocial = detailedScores.interests?.social || 0;
+  const isStrongAuttajaProfile = rankCareersAuttajaSignal >= 0.5 || (rankCareersPeople >= 0.6 && rankCareersHealth >= 0.4) || (rankCareersSocial >= 0.6 && rankCareersCaring >= 0.5);
 
-  // Step 4: If category has too few careers, supplement with next-best categories
-  // But prioritize dominant category careers in final results
-  // Only supplement if dominant category has fewer than 3 careers (skip this for uncertain users as they already have multiple categories)
-  let careersToScore = [...categoryCareers];
-  if (!isUncertain && categoryCareers.length < 3) {
-    console.log(`[rankCareers] Category has only ${categoryCareers.length} careers, supplementing...`);
-    // CRITICAL: Use determineDominantCategory result, don't recalculate
-    // The dominantCategory already has all the overrides applied
-    // Just use it directly to avoid recalculating without overrides
-    
-    // Recalculate category scores for supplementing (but respect dominantCategory)
-    const { interests, values, workstyle, context } = detailedScores;
-    const categoryScores: Record<string, number> = {};
-    categoryScores.auttaja = (interests.people || 0) * 1.0 + (values.impact || 0) * 0.8;
-    categoryScores.luova = (interests.creative || 0) * 1.0 + (interests.arts_culture || 0) * 0.8;
-    categoryScores.johtaja = (workstyle.leadership || 0) * 1.0 + (workstyle.organization || 0) * 0.8;
-    categoryScores.innovoija = (interests.technology || 0) * 1.0 + (interests.innovation || 0) * 0.8;
-    categoryScores.rakentaja = (interests.hands_on || 0) * 1.0 + (workstyle.precision || 0) * 0.8;
-    // Simple scoring for uncertain users - no early exit checks needed here
-    categoryScores['ympariston-puolustaja'] = (interests.environment || 0) * 1.0 + (interests.nature || 0) * 0.8;
-    categoryScores.visionaari = (workstyle.planning || 0) * 0.8 + (values.global || 0) * 0.8;
-    categoryScores.jarjestaja = (workstyle.organization || 0) * 0.9 + (workstyle.structure || 0) * 0.8;
-    
-    // CRITICAL FIX: Apply same STRICTER overrides as determineDominantCategory
-    // Business Leader: Only zero auttaja and jarjestaja if leadership+business are VERY HIGH
-    // Previous thresholds (0.4/0.3) were triggering for almost everyone
-    const supplementLeadership = (interests.leadership || workstyle.leadership || 0);
-    const supplementBusiness = Math.max((interests.business || values.advancement || 0), (values.entrepreneurship || 0));
-    // NEW: Use same strict thresholds as main logic (0.75/0.7)
-    if (supplementLeadership >= 0.75 && supplementBusiness >= 0.7) {
-      categoryScores.auttaja = 0;
-      categoryScores.jarjestaja = 0;
-      categoryScores.johtaja = Math.max(categoryScores.johtaja || 0, 20.0); // Reduced from 2000 to 20 - still wins but not absurdly
-    }
-    
-    const allCategories = ['auttaja', 'luova', 'johtaja', 'innovoija', 'rakentaja', 
-                          'ympariston-puolustaja', 'visionaari', 'jarjestaja'];
-    const sortedCategories = allCategories.sort((a, b) => categoryScores[b] - categoryScores[a]);
-    
-    // Add careers from next-best categories until we have enough for ranking
-    // CRITICAL: Always prioritize dominantCategory, even if recalculated scores differ
-    // CRITICAL: For Business Leader, NEVER add auttaja or jarjestaja careers
-    // Use the already calculated supplementLeadership and supplementBusiness
-    // FIXED: Use same strict thresholds (0.75/0.7) as main logic
-    const isBusinessLeaderCase = supplementLeadership >= 0.75 && supplementBusiness >= 0.7;
-    
-    for (const category of sortedCategories) {
-      if (careersToScore.length >= limit * 2) break; // Get enough for ranking
-      if (category === dominantCategory) continue; // Already added
-      // CRITICAL: For Business Leader, skip auttaja and jarjestaja
-      if (isBusinessLeaderCase && (category === 'auttaja' || category === 'jarjestaja')) {
-        continue; // Skip competing categories
-      }
-      
-      const additionalCareers = CAREER_VECTORS.filter(cv => {
-        if (cv.category !== category) return false;
-        // Also filter out current occupation from supplemental careers
-        if (currentOccupation && currentOccupation !== "none") {
-          const occupationLower = currentOccupation.toLowerCase().trim();
-          const titleLower = cv.title.toLowerCase();
-          if (titleLower.includes(occupationLower) || occupationLower.includes(titleLower)) {
-            return false;
-          }
-        }
-        return true;
-      });
-      careersToScore = [...careersToScore, ...additionalCareers];
-    }
-  } else {
-    console.log(`[rankCareers] Using only ${categoryCareers.length} careers from dominant category`);
-  }
+  // NEW: Direct Järjestäjä signal - check for Järjestäjä personality indicators
+  // For YLA cohort, security/stability VALUES are not directly measured, so we use proxy signals:
+  // - HIGH organization (Q28 workstyle:organization) - indicates preference for order
+  // - LOW creative/innovation signals - distinguishes from creative careers
+  // - HIGH structure (same as organization) - indicates preference for structured work
+  const isHighSecurityStability = rankCareersSecurity >= 0.8 && rankCareersStability >= 0.8;
 
-  // SAFETY: If careersToScore is somehow empty (all filtered out), use ALL careers as fallback
-  if (careersToScore.length === 0) {
-    console.log(`[rankCareers] ⚠️ No careers to score after filtering! Using all careers as fallback...`);
-    careersToScore = CAREER_VECTORS.filter(cv => {
-      // Still filter out current occupation
+  // Alternative path for YLA: HIGH organization + structure as proxy for security/stability
+  // This person values ORDER and STRUCTURE over INNOVATION and CREATIVITY
+  const rawInnovation = detailedScores.interests?.innovation || 0;
+
+  // JÄRJESTÄJÄ PROXY DETECTION for YLA: Use organization as proxy for security/stability
+  // The Järjestäjä profile wants ORDER, STRUCTURE, and STABILITY - all captured by high organization
+  const hasHighOrganization = rankCareersOrg >= 0.8 || (rankCareersOrg >= 0.7 && rankCareersPlanning >= 0.7);
+  const hasLowCreativity = rankCareersCreative < 0.3;
+  const hasLowInnovation = rawInnovation < 0.5;
+
+  // Traditional path: High security+stability VALUES (if available in cohort)
+  const hasJarjestajaValueProfile = isHighSecurityStability && hasLowCreativity && hasLowInnovation;
+
+  // PROXY path (for YLA): High organization + structure + low creativity/innovation
+  // This captures "I like order and planning, not creative or innovative work"
+  const hasJarjestajaProxyProfile = hasHighOrganization && hasLowCreativity && hasLowInnovation;
+
+  console.log(`[rankCareers] 🔍 JÄRJESTÄJÄ VALUE CHECK: security=${rankCareersSecurity.toFixed(2)}, stability=${rankCareersStability.toFixed(2)}, org=${rankCareersOrg.toFixed(2)}, planning=${rankCareersPlanning.toFixed(2)}, creative=${rankCareersCreative.toFixed(2)}, innovation=${rawInnovation.toFixed(2)}, isHighSecStab=${isHighSecurityStability}, hasHighOrg=${hasHighOrganization}, hasJarjestajaValueProfile=${hasJarjestajaValueProfile}, hasJarjestajaProxyProfile=${hasJarjestajaProxyProfile}`);
+
+  // SIMPLE JÄRJESTÄJÄ OVERRIDE: If someone has the Järjestäjä profile (either traditional or proxy),
+  // they are DEFINITELY Järjestäjä - no matter what other signals say
+  // This is the "accountant who doesn't want to lead but wants job security" profile
+  const isDefinitelyJarjestaja = (hasJarjestajaValueProfile || hasJarjestajaProxyProfile) &&
+                                  !isStrongAuttajaProfile && // Not helping-focused
+                                  rankCareersEnvSignal < 0.6 && // Not environmental
+                                  !isBusinessLeaderInRankCareers; // Not business leader
+  console.log(`[rankCareers] 🔍 DEFINITELY JÄRJESTÄJÄ: hasValueProfile=${hasJarjestajaValueProfile}, hasProxyProfile=${hasJarjestajaProxyProfile}, !isStrongAuttaja=${!isStrongAuttajaProfile}, envSignal<0.6=${rankCareersEnvSignal < 0.6} (${rankCareersEnvSignal.toFixed(2)}), !isBizLeader=${!isBusinessLeaderInRankCareers}, RESULT=${isDefinitelyJarjestaja}`)
+
+  // Järjestäjä detection:
+  // 1. High org signals (>= 0.5) - captures structure, planning, organization
+  // 2. Org signals stronger than leadership OR has Järjestäjä value profile (security+stability) OR is definitely järjestäjä
+  // 3. NOT auttaja profile - critical exclusion for people/health focused profiles
+  // 4. Low creativity - distinguishes from luova
+  // 5. Moderate or low tech - distinguishes from innovoija (but allow moderate tech)
+  // 6. Org signals must be clearly dominant over auttaja signals (unless definite Järjestäjä)
+  // Key insight: Järjestäjä can have SOME tech interest (3/5), but not HIGH tech (4-5/5)
+  // Key insight 2: Järjestäjä can have moderate business interest (4/5), but their security/stability VALUES take priority
+  const isAccountantAdmin = isDefinitelyJarjestaja || // New: Simple definite detection takes priority
+                            (rankCareersOrgSignals >= 0.5 &&
+                            (rankCareersOrgSignalsStronger || hasJarjestajaValueProfile) && // Org signals beat leadership OR has Järjestäjä values
+                            !isBusinessLeaderInRankCareers && // Not business leader
+                            !isStrongAuttajaProfile && // NOT auttaja (people/health focused)
+                            rankCareersAuttajaSignal < rankCareersOrgSignals - 0.1 && // Org must clearly beat auttaja
+                            rankCareersCreative < 0.5 && // Not creative (stricter)
+                            rankCareersEnvSignal < rankCareersOrgSignals && // Not environmental
+                            rankCareersTechSignal <= 0.65); // Allow moderate tech (3/5), exclude high tech (4-5/5)
+  console.log(`[rankCareers] Järjestäjä signals: orgSignals=${rankCareersOrgSignals.toFixed(2)}, orgStrongerThanLeader=${rankCareersOrgSignalsStronger}, auttaja=${rankCareersAuttajaSignal.toFixed(2)}, isStrongAuttaja=${isStrongAuttajaProfile}, creative=${rankCareersCreative.toFixed(2)}, tech=${rankCareersTechSignal.toFixed(2)}, isDefinitelyJarjestaja=${isDefinitelyJarjestaja}, isAccountantAdmin=${isAccountantAdmin}`);
+
+  // STRATEGIC CONSULTANT (VISIONAARI) DETECTION
+  // Check for strong strategic/visionary/business strategy signals
+  const rankCareersStrategy = detailedScores.interests?.strategy || detailedScores.workstyle?.strategy || 0;
+  const rankCareersInnovation = detailedScores.interests?.innovation || 0;
+  const rankCareersInfluence = detailedScores.values?.influence || detailedScores.workstyle?.influence || 0;
+  const rankCareersVision = detailedScores.interests?.vision || detailedScores.workstyle?.vision || 0;
+  const rankCareersConsulting = detailedScores.interests?.consulting || 0;
+  // Strategic signal: max of strategy-related dimensions
+  const rankCareersStrategySignal = Math.max(rankCareersStrategy, rankCareersInnovation, rankCareersInfluence, rankCareersVision, rankCareersConsulting);
+  // Tech signal to distinguish from innovoija (use the same one defined above for järjestäjä)
+  // Strategic Consultant: strong strategy + business, NOT dominated by tech or org (which would be innovoija/jarjestaja)
+  // STRICTER: Only trigger when strategy is clearly dominant over other signals AND not jarjestaja
+  const isStrategicConsultant = rankCareersStrategySignal >= 0.6 &&
+                                 rankCareersBusiness >= 0.5 &&
+                                 !isBusinessLeaderInRankCareers && // Not business leader
+                                 !isAccountantAdmin && // NOT accountant/admin (would be jarjestaja)
+                                 rankCareersTechSignal < 0.6 && // Not tech-focused (would be innovoija)
+                                 rankCareersStrategySignal > rankCareersOrgSignals; // Strategy must be stronger than org signals
+  console.log(`[rankCareers] Strategic signals: strategy=${rankCareersStrategySignal.toFixed(2)}, business=${rankCareersBusiness.toFixed(2)}, tech=${rankCareersTechSignal.toFixed(2)}, org=${rankCareersOrgSignals.toFixed(2)}, isStrategicConsultant=${isStrategicConsultant}`);
+
+  // Score ALL 700+ careers for comprehensive recommendations
+  // BUT: For certain strong profile types (Business Leader, etc.), use category filtering
+  // to ensure accurate matches
+  let careersToScore: typeof CAREER_VECTORS;
+  let useStrictCategoryFiltering = false;
+
+  // STRICT FILTERING: When user has a very clear profile, only include relevant categories
+  // This prevents generic high-scoring careers from dominating
+  if (isBusinessLeaderInRankCareers) {
+    useStrictCategoryFiltering = true;
+    careersToScore = CAREER_VECTORS.filter(careerVector => {
+      // Only include johtaja category for Business Leaders
+      if (careerVector.category !== 'johtaja') return false;
+      // Filter out current occupation
       if (currentOccupation && currentOccupation !== "none") {
         const occupationLower = currentOccupation.toLowerCase().trim();
-        const titleLower = cv.title.toLowerCase();
+        const titleLower = careerVector.title.toLowerCase();
         if (titleLower.includes(occupationLower) || occupationLower.includes(titleLower)) {
           return false;
         }
       }
       return true;
     });
+    console.log(`[rankCareers] 🎯 BUSINESS LEADER DETECTED: Filtering to ${careersToScore.length} johtaja careers only`);
+  } else if (isEnvironmentalScientist) {
+    useStrictCategoryFiltering = true;
+    careersToScore = CAREER_VECTORS.filter(careerVector => {
+      // Only include ympariston-puolustaja category for Environmental Scientists
+      if (careerVector.category !== 'ympariston-puolustaja') return false;
+      // Filter out current occupation
+      if (currentOccupation && currentOccupation !== "none") {
+        const occupationLower = currentOccupation.toLowerCase().trim();
+        const titleLower = careerVector.title.toLowerCase();
+        if (titleLower.includes(occupationLower) || occupationLower.includes(titleLower)) {
+          return false;
+        }
+      }
+      return true;
+    });
+    console.log(`[rankCareers] 🌿 ENVIRONMENTAL SCIENTIST DETECTED: Filtering to ${careersToScore.length} ympariston-puolustaja careers only`);
+  } else if (isAccountantAdmin) {
+    useStrictCategoryFiltering = true;
+    careersToScore = CAREER_VECTORS.filter(careerVector => {
+      // Only include jarjestaja category for Accountants/Administrators
+      if (careerVector.category !== 'jarjestaja') return false;
+      // Filter out current occupation
+      if (currentOccupation && currentOccupation !== "none") {
+        const occupationLower = currentOccupation.toLowerCase().trim();
+        const titleLower = careerVector.title.toLowerCase();
+        if (titleLower.includes(occupationLower) || occupationLower.includes(titleLower)) {
+          return false;
+        }
+      }
+      return true;
+    });
+    console.log(`[rankCareers] 📊 ACCOUNTANT/ADMIN DETECTED: Filtering to ${careersToScore.length} jarjestaja careers only`);
+  } else if (isStrategicConsultant) {
+    useStrictCategoryFiltering = true;
+    careersToScore = CAREER_VECTORS.filter(careerVector => {
+      // Only include visionaari category for Strategic Consultants
+      if (careerVector.category !== 'visionaari') return false;
+      // Filter out current occupation
+      if (currentOccupation && currentOccupation !== "none") {
+        const occupationLower = currentOccupation.toLowerCase().trim();
+        const titleLower = careerVector.title.toLowerCase();
+        if (titleLower.includes(occupationLower) || occupationLower.includes(titleLower)) {
+          return false;
+        }
+      }
+      return true;
+    });
+    console.log(`[rankCareers] 🎯 STRATEGIC CONSULTANT DETECTED: Filtering to ${careersToScore.length} visionaari careers only`);
+  } else {
+    // Default: Score all careers
+    careersToScore = CAREER_VECTORS.filter(careerVector => {
+      // Only filter out current occupation (fuzzy match on title)
+      if (currentOccupation && currentOccupation !== "none") {
+        const occupationLower = currentOccupation.toLowerCase().trim();
+        const titleLower = careerVector.title.toLowerCase();
+        if (titleLower.includes(occupationLower) || occupationLower.includes(titleLower)) {
+          console.log(`[rankCareers] Filtering out current occupation: ${careerVector.title}`);
+          return false;
+        }
+      }
+      return true;
+    });
+    console.log(`[rankCareers] Scoring ALL ${careersToScore.length} careers (dominant category hint: "${dominantCategory}")`);
   }
+
+  // SAFETY: If careersToScore is somehow empty (all filtered out), use ALL careers
+  if (careersToScore.length === 0) {
+    console.log(`[rankCareers] ⚠️ No careers to score after filtering! Using all ${CAREER_VECTORS.length} careers...`);
+    careersToScore = CAREER_VECTORS;
+  }
+
+  // HYBRID APPROACH: Apply category boost to careers in the dominant category
+  // Increased from 15 to 20 for better category alignment
+  const DOMINANT_CATEGORY_BOOST = 20; // 20% boost to careers in dominant category
 
   // Step 5: Score filtered careers with enhanced matching
   const scoredCareers = careersToScore.map(careerVector => {
@@ -5073,9 +5197,16 @@ export function rankCareers(
       dominantCategory // Pass category for category-specific weighting
     );
 
+    // DOMINANT CATEGORY BOOST: Prioritize careers in the detected dominant category
+    // This ensures the user gets careers from their best-fit category while still
+    // allowing great matches from other categories to compete
+    if (careerVector.category === dominantCategory) {
+      overallScore = Math.min(100, overallScore + DOMINANT_CATEGORY_BOOST);
+    }
+
     // ENHANCED MATCHING: Apply boosts BEFORE filtering
     // This ensures careers that match key interests get proper scores
-    
+
     // Healthcare boost: if user has strong health interest and career is healthcare
     const userHealthScore = detailedScores.interests.health || 0;
     const careerHealthScore = careerVector.interests?.health || 0;
@@ -5087,9 +5218,10 @@ export function rankCareers(
     }
     
     // People boost: if user has strong people interest and career is people-oriented
+    // Now based on career's own category, not user's dominant category
     const userPeopleScore = detailedScores.interests.people || 0;
     const careerPeopleScore = careerVector.interests?.people || 0;
-    if (userPeopleScore >= 0.6 && careerPeopleScore >= 0.7 && dominantCategory === 'auttaja') {
+    if (userPeopleScore >= 0.6 && careerPeopleScore >= 0.7 && careerVector.category === 'auttaja') {
       const peopleBoost = Math.min(15, userPeopleScore * 25); // Up to 15% boost
       overallScore = Math.min(100, overallScore + peopleBoost);
     }
@@ -5100,19 +5232,19 @@ export function rankCareers(
     // Technology boost: if user has strong tech interest and career is tech
     const userTechScoreInnovoija = detailedScores.interests.technology || 0;
     const careerTechScore = careerVector.interests?.technology || 0;
-    if (userTechScoreInnovoija >= 0.6 && careerTechScore >= 0.7 && dominantCategory === 'innovoija') {
+    if (userTechScoreInnovoija >= 0.6 && careerTechScore >= 0.7 && careerVector.category === 'innovoija') {
       const techBoost = Math.min(20, userTechScoreInnovoija * 35); // Up to 20% boost
       overallScore = Math.min(100, overallScore + techBoost);
     }
-    
+
     // Creative boost: if user has strong creative interest and career is creative
     const userCreativeScore = detailedScores.interests.creative || 0;
     const careerCreativeScore = careerVector.interests?.creative || 0;
-    if (userCreativeScore >= 0.6 && careerCreativeScore >= 0.7 && dominantCategory === 'luova') {
+    if (userCreativeScore >= 0.6 && careerCreativeScore >= 0.7 && careerVector.category === 'luova') {
       const creativeBoost = Math.min(20, userCreativeScore * 35); // Up to 20% boost
       overallScore = Math.min(100, overallScore + creativeBoost);
     }
-    
+
     // Environment boost: if user has strong environment interest and career is environment-oriented
     // CRITICAL: TASO2 maps environmental questions to 'impact' subdimension, not 'environment'
     // Use max of environment, impact, and outdoor as environmental signal (same logic as category detection)
@@ -5123,40 +5255,42 @@ export function rankCareers(
     const careerEnvironmentScore = careerVector.interests?.environment || 0;
     const careerImpactScore = careerVector.values?.impact || 0;
     const careerEffectiveEnvScore = Math.max(careerEnvironmentScore, careerImpactScore);
-    if (userEffectiveEnvScore >= 0.5 && careerEffectiveEnvScore >= 0.6 && dominantCategory === 'ympariston-puolustaja') {
+    if (userEffectiveEnvScore >= 0.5 && careerEffectiveEnvScore >= 0.6 && careerVector.category === 'ympariston-puolustaja') {
       const envBoost = Math.min(35, userEffectiveEnvScore * 50); // Up to 35% boost for environmental match
       overallScore = Math.min(100, overallScore + envBoost);
     }
-    
+
     // Analytical boost: if user has strong analytical interest and career is analytical/organizational
     const userAnalyticalScore = detailedScores.interests.analytical || 0;
     const careerAnalyticalScore = careerVector.interests?.analytical || 0;
-    if (userAnalyticalScore >= 0.5 && careerAnalyticalScore >= 0.6 && dominantCategory === 'jarjestaja') {
+    if (userAnalyticalScore >= 0.5 && careerAnalyticalScore >= 0.6 && careerVector.category === 'jarjestaja') {
       const analyticalBoost = Math.min(20, userAnalyticalScore * 35); // Up to 20% boost
       overallScore = Math.min(100, overallScore + analyticalBoost);
     }
-    
+
     // Hands-on boost: if user has strong hands-on interest and career is hands-on/practical
     const userHandsOnScore = detailedScores.interests.hands_on || 0;
     const careerHandsOnScore = careerVector.interests?.hands_on || 0;
-    if (userHandsOnScore >= 0.5 && careerHandsOnScore >= 0.6 && dominantCategory === 'rakentaja') {
+    if (userHandsOnScore >= 0.5 && careerHandsOnScore >= 0.6 && careerVector.category === 'rakentaja') {
       const handsOnBoost = Math.min(25, userHandsOnScore * 40); // Up to 25% boost
       overallScore = Math.min(100, overallScore + handsOnBoost);
     }
     
     // Leadership boost: if user has strong leadership workstyle/interest and career is leadership-oriented
+    // Now based on career's own category, not user's dominant category
     const userLeadershipWorkstyle = detailedScores.workstyle?.leadership || 0;
     const userLeadershipInterest = detailedScores.interests?.leadership || 0;
     const careerLeadershipWorkstyle = careerVector.workstyle?.leadership || 0;
     const combinedLeadership = Math.max(userLeadershipWorkstyle, userLeadershipInterest);
     // REDUCED: Leadership boost from 45% to 25% to prevent päällikkö over-recommendation
     // Also increased threshold from 0.2 to 0.5 to require stronger leadership signal
-    if (combinedLeadership >= 0.5 && careerLeadershipWorkstyle >= 0.5 && dominantCategory === 'johtaja') {
+    if (combinedLeadership >= 0.5 && careerLeadershipWorkstyle >= 0.5 && careerVector.category === 'johtaja') {
       const leadershipBoost = Math.min(25, combinedLeadership * 40); // REDUCED: Was 45% max, now 25% max
       overallScore = Math.min(100, overallScore + leadershipBoost);
     }
-    
+
     // Planning boost: if user has strong career_clarity (planning) values and career is planning/vision-oriented
+    // Now based on career's own category, not user's dominant category
     const userCareerClarity = detailedScores.values?.career_clarity || 0;
     const userGlobalValues = detailedScores.values?.global || 0;
     const userCreativeInterest = detailedScores.interests?.creative || 0;
@@ -5165,14 +5299,14 @@ export function rankCareers(
     const userAdvancement = detailedScores.values?.advancement || 0;
     const userGrowth = detailedScores.values?.growth || 0;
     const userFlexibility = detailedScores.workstyle?.flexibility || 0;
-    
-    if (dominantCategory === 'visionaari') {
+
+    if (careerVector.category === 'visionaari') {
       // Boost for career_clarity (strongest signal for YLA)
       if (userCareerClarity >= 0.3) {
         const planningBoost = Math.min(40, userCareerClarity * 80); // Up to 40% boost for career_clarity
         overallScore = Math.min(100, overallScore + planningBoost);
       }
-      
+
       // Cohort-specific boosts
       if (cohort === 'TASO2') {
         // TASO2: entrepreneurship + technology

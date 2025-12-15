@@ -376,7 +376,7 @@ export function TodistuspisteCalculator({
                 {improvementSuggestions.slice(0, 3).map((suggestion, index) => (
                   <li key={index} className="flex gap-2">
                     <span className="text-green-600">•</span>
-                    <span dangerouslySetInnerHTML={{ __html: suggestion }} />
+                    <span>{suggestion}</span>
                   </li>
                 ))}
               </ul>
@@ -477,7 +477,7 @@ export function TodistuspisteCalculator({
               {improvementSuggestions.map((suggestion, index) => (
                 <li key={index} className="flex gap-2">
                   <span className="text-green-600">•</span>
-                  <span dangerouslySetInnerHTML={{ __html: suggestion }} />
+                  <span>{suggestion}</span>
                 </li>
               ))}
             </ul>

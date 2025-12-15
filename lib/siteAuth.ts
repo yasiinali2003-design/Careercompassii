@@ -1,5 +1,7 @@
-const DEFAULT_PASSWORD = 'CCYHAHAIKUNZIBBI22!';
-const DEV_FALLBACK_PASSWORD = 'playwright';
+/**
+ * Site authentication utilities
+ * Passwords are configured via environment variables only - no hardcoded defaults
+ */
 
 interface ResolveOptions {
   includeDevelopmentDefaults?: boolean;
@@ -29,9 +31,12 @@ export function resolveSitePasswords(options: ResolveOptions = {}): string[] {
 
   const unique = new Set<string>(envCandidates);
 
-  if (includeDevelopmentDefaults) {
-    unique.add(DEFAULT_PASSWORD);
-    unique.add(DEV_FALLBACK_PASSWORD);
+  // In development, also accept dev fallback password from env if set
+  if (includeDevelopmentDefaults && process.env.DEV_SITE_PASSWORD) {
+    const devPassword = normalize(process.env.DEV_SITE_PASSWORD);
+    if (devPassword) {
+      unique.add(devPassword);
+    }
   }
 
   return Array.from(unique.values());
@@ -41,7 +46,8 @@ export function sitePasswordIsConfigured(): boolean {
   return resolveSitePasswords({ includeDevelopmentDefaults: false }).length > 0;
 }
 
-export function getDefaultSitePassword(): string {
-  return DEFAULT_PASSWORD;
+export function getDefaultSitePassword(): string | null {
+  const passwords = resolveSitePasswords({ includeDevelopmentDefaults: false });
+  return passwords.length > 0 ? passwords[0] : null;
 }
 
