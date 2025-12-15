@@ -15915,8 +15915,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
       { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
-      { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" },
-    
+      { name: "Opintopolku - DevOps", url: "https://opintopolku.fi/konfo/fi/haku/DevOps" },
       { name: "Työmarkkinatori – DevOps-insinööri", url: "https://tyomarkkinatori.fi/ammatit/devops-insinoori" }
       ],
     keywords: ["devops", "cloud", "automaatio", "docker", "kubernetes", "ci/cd"],
@@ -16083,8 +16082,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
       { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
-      { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" },
-    
+      { name: "Opintopolku - Ohjelmistotestaus", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistotestaus" },
       { name: "Työmarkkinatori – Ohjelmistotestaja", url: "https://tyomarkkinatori.fi/ammatit/ohjelmistotestaja" }
       ],
     keywords: ["testaus", "laadunvarmistus", "ohjelmistotestaus", "qa", "vikaraportointi"],
@@ -16167,8 +16165,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
       { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
-      { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" },
-    
+      { name: "Opintopolku - UX-suunnittelu", url: "https://opintopolku.fi/konfo/fi/haku/UX%20suunnittelu" },
       { name: "Työmarkkinatori – UX-suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/ux-suunnittelija" }
       ],
     keywords: ["ux", "käyttäjäkokemus", "käytettävyys", "suunnittelu", "user experience"],
@@ -16251,8 +16248,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
       { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
-      { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" },
-    
+      { name: "Opintopolku - Pilvipalvelut", url: "https://opintopolku.fi/konfo/fi/haku/pilvipalvelut" },
       { name: "Työmarkkinatori – Cloud-arkkitehti", url: "https://tyomarkkinatori.fi/ammatit/cloud-arkkitehti" }
       ],
     keywords: ["cloud", "arkkitehtuuri", "aws", "azure", "pilvipalvelut"],
@@ -16747,8 +16743,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
       { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
-      { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" },
-    
+      { name: "Opintopolku - UI-suunnittelu", url: "https://opintopolku.fi/konfo/fi/haku/UI%20suunnittelu" },
       { name: "Työmarkkinatori – UI-suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/ui-suunnittelija" }
       ],
     keywords: ["ui", "käyttöliittymä", "visuaalinen suunnittelu", "design", "user interface"],
@@ -17499,8 +17494,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Media-alan TES",
     useful_links: [
       { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/" },
-      { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" },
-    
+      { name: "Opintopolku - Videotuotanto", url: "https://opintopolku.fi/konfo/fi/haku/videotuotanto" },
       { name: "Työmarkkinatori – Videonmuokkaaja", url: "https://tyomarkkinatori.fi/ammatit/videonmuokkaaja" }
       ],
     keywords: ["videonmuokkaus", "leikkaus", "video", "media", "editing"],
@@ -30689,91 +30683,6 @@ export const careersData: CareerFI[] = [
   },
 
 {
-    id: "podcast-tuottaja",
-    category: "luova",
-    title_fi: "Podcast-tuottaja",
-    title_en: "Podcast Producer",
-    short_description: "Podcast-tuottaja tuottaa äänimuotoista sisältöä podcasteihin. Vastaa sisällön suunnittelusta, äänityksen koordinoinnista, editoinnista ja julkaisemisesta.",
-    main_tasks: [
-      "Podcastin konseptin kehittäminen",
-      "Vieraiden etsiminen ja haastattelujen koordinointi",
-      "Äänittäminen ja tekninen toteutus",
-      "Ääniediting ja jälkikäsittely",
-      "Julkaiseminen ja markkinointi"
-    ],
-    impact: [
-      "Luo kuunneltavaa ja viihdyttävää sisältöä",
-      "Jakaa tietoa ja tarinoita laajalle yleisölle",
-      "Tukee podcast-kulttuurin kasvua Suomessa"
-    ],
-    education_paths: [
-      "AMK: Medianomi",
-      "Kokemus: Äänituotanto + portfolio",
-      "Itseopiskeltu: Podcast-kurssit + oma podcast"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Ääniediting",
-      "Haastattelutaidot",
-      "Storytelling",
-      "Tekninen osaaminen",
-      "Projektinhallinta",
-      "Markkinointi"
-    ],
-    tools_tech: [
-      "Adobe Audition",
-      "Audacity, GarageBand",
-      "Mikrofonit ja äänityslaitteet",
-      "Podcast hosting (Anchor, Buzzsprout)",
-      "Social media tools"
-    ],
-    languages_required: { fi: "C2", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 3400,
-      range: [2500, 5000],
-      source: { name: "Palkka.fi (vaihtelee)", url: "https://www.palkka.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Podcast-kulutus kasvaa, yritysten ja median tarve podcast-tuottajille lisääntyy.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Podcast Assistant",
-      "Audio Editor",
-      "Freelance Producer"
-    ],
-    career_progression: [
-      "Podcast Producer",
-      "Senior Producer",
-      "Head of Podcasting",
-      "Content Director"
-    ],
-    transferable_skills: [
-      "audio_production",
-      "interviewing",
-      "storytelling",
-      "editing",
-      "project_management",
-      "marketing"
-    ],
-    typical_employers: [
-      "Media-yhtiöt (Yle, Sanoma)",
-      "Podcast-studiot",
-      "Markkinointitoimistot",
-      "Yritykset (branded podcasts)",
-      "Itsenäinen yrittäjä"
-    ],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Podcast-yhdistys", url: "https://podcastyhdistys.fi/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
-    ],
-    study_length_estimate_months: 24
-  },
-
-{
     id: "liikkuvan-kuvan-suunnittelija",
     category: "luova",
     title_fi: "Liikkuvan kuvan suunnittelija",
@@ -41181,7 +41090,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["IT-yritykset", "Teknologiayritykset", "Startup-yritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - DevOps", url: "https://opintopolku.fi/konfo/fi/haku/DevOps" },
+      { name: "Työmarkkinatori – DevOps-insinööri", url: "https://tyomarkkinatori.fi/ammatit/devops-insinoori" }
+    ],
     transferable_skills: [],
     keywords: ["DevOps", "CI/CD", "automatisointi"],
     study_length_estimate_months: 48
@@ -41235,7 +41147,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["IT-yritykset", "Konsulttiyritykset", "Suuryritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Pilvipalvelut", url: "https://opintopolku.fi/konfo/fi/haku/pilvipalvelut" },
+      { name: "Työmarkkinatori – Pilviarkkitehti", url: "https://tyomarkkinatori.fi/ammatit/pilviarkkitehti" }
+    ],
     transferable_skills: [],
     keywords: ["pilvi", "arkkitehtuuri", "AWS"],
     study_length_estimate_months: 72
@@ -41289,7 +41204,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["IT-yritykset", "Startup-yritykset", "Digitoimistot"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Ohjelmistokehitys", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistokehitys" },
+      { name: "Työmarkkinatori – Full Stack -kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/full-stack-kehittaja" }
+    ],
     transferable_skills: [],
     keywords: ["full stack", "web-kehitys", "JavaScript"],
     study_length_estimate_months: 48
@@ -41343,7 +41261,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Blockchain-yritykset", "Fintech-yritykset", "Kryptoyritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" },
+      { name: "Työmarkkinatori – Blockchain-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/blockchain-kehittaja" }
+    ],
     transferable_skills: [],
     keywords: ["blockchain", "smart contracts", "Web3"],
     study_length_estimate_months: 60
@@ -41397,7 +41318,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["IoT-yritykset", "Teknologiayritykset", "Teollisuusyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Sulautetut järjestelmät", url: "https://opintopolku.fi/konfo/fi/haku/sulautetut%20j%C3%A4rjestelm%C3%A4t" },
+      { name: "Työmarkkinatori – IoT-insinööri", url: "https://tyomarkkinatori.fi/ammatit/iot-insinoori" }
+    ],
     transferable_skills: [],
     keywords: ["IoT", "embedded", "sensorit"],
     study_length_estimate_months: 48
@@ -41451,7 +41375,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Robotiikkayritykset", "Teollisuusyritykset", "Tutkimuslaitokset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Automaatiotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/automaatiotekniikka" },
+      { name: "Työmarkkinatori – Robotiikka-insinööri", url: "https://tyomarkkinatori.fi/ammatit/robotiikka-insinoori" }
+    ],
     transferable_skills: [],
     keywords: ["robotiikka", "automaatio", "ROS"],
     study_length_estimate_months: 72
@@ -41505,7 +41432,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Peliyritykset", "Teknologiayritykset", "Koulutusyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Peliteknologia", url: "https://opintopolku.fi/konfo/fi/haku/peliteknologia" },
+      { name: "Työmarkkinatori – VR/AR-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/vr-ar-kehittaja" }
+    ],
     transferable_skills: [],
     keywords: ["VR", "AR", "Unity"],
     study_length_estimate_months: 48
@@ -41559,7 +41489,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Tutkimuslaitokset", "Bioteknologiayritykset", "Yliopistot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Bioinformatiikka", url: "https://opintopolku.fi/konfo/fi/haku/bioinformatiikka" },
+      { name: "Työmarkkinatori – Bioinformatiikko", url: "https://tyomarkkinatori.fi/ammatit/bioinformatiikko" }
+    ],
     transferable_skills: [],
     keywords: ["bioinformatiikka", "genomiikka", "data-analyysi"],
     study_length_estimate_months: 72
@@ -41613,7 +41546,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Peliyritykset", "Pelistudiot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Pelisuunnittelu", url: "https://opintopolku.fi/konfo/fi/haku/pelisuunnittelu" },
+      { name: "Työmarkkinatori – Pelitekninen suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/pelitekninen-suunnittelija" }
+    ],
     transferable_skills: [],
     keywords: ["pelisuunnittelu", "pelimekaniikka", "Unity"],
     study_length_estimate_months: 48
@@ -41667,7 +41603,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Tutkimuslaitokset", "Teknologiayritykset", "Yliopistot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Fysiikka", url: "https://opintopolku.fi/konfo/fi/haku/fysiikka" },
+      { name: "Työmarkkinatori – Kvanttilaskenta-insinööri", url: "https://tyomarkkinatori.fi/ammatit/kvanttilaskenta-insinoori" }
+    ],
     transferable_skills: [],
     keywords: ["kvanttilaskenta", "quantum", "algoritmi"],
     study_length_estimate_months: 96
@@ -41721,7 +41660,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Teknologiayritykset", "IoT-yritykset", "Telco-operaattorit"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" },
+      { name: "Työmarkkinatori – Edge computing -asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/edge-computing-specialist" }
+    ],
     transferable_skills: [],
     keywords: ["edge computing", "IoT", "hajautetut järjestelmät"],
     study_length_estimate_months: 48
@@ -41775,7 +41717,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["IT-yritykset", "Teknologiayritykset", "Fintech"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Ohjelmistokehitys", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistokehitys" },
+      { name: "Työmarkkinatori – API-suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/api-designer" }
+    ],
     transferable_skills: [],
     keywords: ["API", "REST", "GraphQL"],
     study_length_estimate_months: 48
@@ -41829,7 +41774,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["IT-yritykset", "Suuryritykset", "Fintech"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Ohjelmistoarkkitehtuuri", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistoarkkitehtuuri" },
+      { name: "Työmarkkinatori – Mikropalveluarkkitehti", url: "https://tyomarkkinatori.fi/ammatit/microservices-architect" }
+    ],
     transferable_skills: [],
     keywords: ["mikropalvelut", "arkkitehtuuri", "hajautetut järjestelmät"],
     study_length_estimate_months: 72
@@ -41883,7 +41831,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["AI-yritykset", "Teknologiayritykset", "Datayritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Koneoppiminen", url: "https://opintopolku.fi/konfo/fi/haku/koneoppiminen" },
+      { name: "Työmarkkinatori – MLOps-insinööri", url: "https://tyomarkkinatori.fi/ammatit/mlops-insinoori" }
+    ],
     transferable_skills: [],
     keywords: ["MLOps", "koneoppiminen", "DevOps"],
     study_length_estimate_months: 48
@@ -41937,7 +41888,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["IT-yritykset", "Startup-yritykset", "Konsulttiyritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Pilvipalvelut", url: "https://opintopolku.fi/konfo/fi/haku/pilvipalvelut" },
+      { name: "Työmarkkinatori – Serverless-arkkitehti", url: "https://tyomarkkinatori.fi/ammatit/serverless-architect" }
+    ],
     transferable_skills: [],
     keywords: ["serverless", "FaaS", "pilvi"],
     study_length_estimate_months: 60
@@ -41991,7 +41945,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["IT-yritykset", "Asiakaspalveluyritykset", "AI-yritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tekoäly", url: "https://opintopolku.fi/konfo/fi/haku/teko%C3%A4ly" },
+      { name: "Työmarkkinatori – Chatbot-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/chatbot-kehittaja" }
+    ],
     transferable_skills: [],
     keywords: ["chatbot", "NLP", "keskustelurobotti"],
     study_length_estimate_months: 48
@@ -42045,7 +42002,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Yritykset", "Konsulttiyritykset", "IT-yritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Liiketoiminta", url: "https://opintopolku.fi/konfo/fi/haku/liiketoiminta" },
+      { name: "Työmarkkinatori – Low-code-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/low-code-developer" }
+    ],
     transferable_skills: [],
     keywords: ["low-code", "automaatio", "Power Platform"],
     study_length_estimate_months: 36
@@ -42099,7 +42059,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Digitoimistot", "IT-yritykset", "Startup-yritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Web-kehitys", url: "https://opintopolku.fi/konfo/fi/haku/web-kehitys" },
+      { name: "Työmarkkinatori – PWA-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/progressive-web-app-developer" }
+    ],
     transferable_skills: [],
     keywords: ["PWA", "web-kehitys", "offline"],
     study_length_estimate_months: 48
@@ -42153,7 +42116,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Yritykset", "Konsulttiyritykset", "IT-palveluyritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Automaatio", url: "https://opintopolku.fi/konfo/fi/haku/automaatio" },
+      { name: "Työmarkkinatori – RPA-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/rpa-kehittaja" }
+    ],
     transferable_skills: [],
     keywords: ["RPA", "automatio", "prosessit"],
     study_length_estimate_months: 36
@@ -42207,7 +42173,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Teknologiayritykset", "Peliyritykset", "Web-yritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Ohjelmointi", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmointi" },
+      { name: "Työmarkkinatori – WebAssembly-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/webassembly-developer" }
+    ],
     transferable_skills: [],
     keywords: ["WebAssembly", "WASM", "suorituskyky"],
     study_length_estimate_months: 60
@@ -42261,7 +42230,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Teknologiayritykset", "Suuryritykset", "IT-yritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - DevOps", url: "https://opintopolku.fi/konfo/fi/haku/DevOps" },
+      { name: "Työmarkkinatori – Platform-insinööri", url: "https://tyomarkkinatori.fi/ammatit/platform-insinoori" }
+    ],
     transferable_skills: [],
     keywords: ["platform engineering", "DevOps", "IDP"],
     study_length_estimate_months: 60
@@ -42315,7 +42287,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Teknologiayritykset", "Suuryritykset", "SaaS-yritykset"],
     work_conditions: { remote: "Kyllä", shift_work: true, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" },
+      { name: "Työmarkkinatori – Site Reliability Engineer", url: "https://tyomarkkinatori.fi/ammatit/site-reliability-engineer" }
+    ],
     transferable_skills: [],
     keywords: ["SRE", "luotettavuus", "järjestelmät"],
     study_length_estimate_months: 60
@@ -42369,7 +42344,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["IoT-yritykset", "Laitevalmistajat", "Teollisuusyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Sulautetut järjestelmät", url: "https://opintopolku.fi/konfo/fi/haku/sulautetut%20j%C3%A4rjestelm%C3%A4t" },
+      { name: "Työmarkkinatori – Embedded Linux -insinööri", url: "https://tyomarkkinatori.fi/ammatit/embedded-linux-engineer" }
+    ],
     transferable_skills: [],
     keywords: ["embedded Linux", "kernel", "IoT"],
     study_length_estimate_months: 60
@@ -42423,7 +42401,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Peliyritykset", "Pelimoottoriyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Peliohjelmointi", url: "https://opintopolku.fi/konfo/fi/haku/peliohjelmointi" },
+      { name: "Työmarkkinatori – Pelimoottorikehittäjä", url: "https://tyomarkkinatori.fi/ammatit/game-engine-developer" }
+    ],
     transferable_skills: [],
     keywords: ["pelimoottori", "C++", "grafiikka"],
     study_length_estimate_months: 72
@@ -42477,7 +42458,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Teleoperaattorit", "Suuryritykset", "IT-palveluyritykset"],
     work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tietoverkot", url: "https://opintopolku.fi/konfo/fi/haku/tietoverkot" },
+      { name: "Työmarkkinatori – Verkkoautomaatio-insinööri", url: "https://tyomarkkinatori.fi/ammatit/network-automation-engineer" }
+    ],
     transferable_skills: [],
     keywords: ["verkkoautomaatio", "Network as Code", "Python"],
     study_length_estimate_months: 60
@@ -42531,7 +42515,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Teknologiayritykset", "SaaS-yritykset", "IT-yritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" },
+      { name: "Työmarkkinatori – Observability-insinööri", url: "https://tyomarkkinatori.fi/ammatit/observability-engineer" }
+    ],
     transferable_skills: [],
     keywords: ["observability", "monitorointi", "tracing"],
     study_length_estimate_months: 48
@@ -42585,7 +42572,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Valmistusteollisuus", "Prototyyppivalmistajat", "Teknologiayritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Konetekniikka", url: "https://opintopolku.fi/konfo/fi/haku/konetekniikka" },
+      { name: "Työmarkkinatori – 3D-tulostusingsinööri", url: "https://tyomarkkinatori.fi/ammatit/3d-tulostus-insinoori" }
+    ],
     transferable_skills: [],
     keywords: ["3D-tulostus", "additiivinen valmistus", "materiaalitekniikka"],
     study_length_estimate_months: 60
@@ -42639,7 +42629,10 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Lääketieteelliset laitevalmistajat", "Yliopistot", "Neurotekniikan startup-yritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Biolääketieteellinen tekniikka", url: "https://opintopolku.fi/konfo/fi/haku/biol%C3%A4%C3%A4ketieteellinen%20tekniikka" },
+      { name: "Työmarkkinatori – Neurotekniikka-insinööri", url: "https://tyomarkkinatori.fi/ammatit/neurotech-insinoori" }
+    ],
     transferable_skills: [],
     keywords: ["neurotekniikka", "aivot", "biolääketiede"],
     study_length_estimate_months: 60
@@ -42774,7 +42767,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Rakennustekniikka", url: "https://opintopolku.fi/konfo/fi/haku/rakennustekniikka" },
+      { name: "Työmarkkinatori – Projektipäällikkö (rakennus)", url: "https://tyomarkkinatori.fi/ammatit/projektipaallikkö-rakennus" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 48
   },
@@ -42825,7 +42821,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tuotantotalous", url: "https://opintopolku.fi/konfo/fi/haku/tuotantotalous" },
+      { name: "Työmarkkinatori – Tuotantopäällikkö", url: "https://tyomarkkinatori.fi/ammatit/tuotantopaallikkö-teollisuus" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 48
   },
@@ -42876,7 +42875,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
+      { name: "Työmarkkinatori – Logistiikkakoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/logistics-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -42927,7 +42929,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tapahtumatuotanto", url: "https://opintopolku.fi/konfo/fi/haku/tapahtumatuotanto" },
+      { name: "Työmarkkinatori – Tapahtumakoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/event-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -42978,7 +42983,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Kiinteistöjohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/kiinteist%C3%B6johtaminen" },
+      { name: "Työmarkkinatori – Kiinteistöpäällikkö", url: "https://tyomarkkinatori.fi/ammatit/facility-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43029,7 +43037,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Hankintatoimi", url: "https://opintopolku.fi/konfo/fi/haku/hankintatoimi" },
+      { name: "Työmarkkinatori – Hankinta-asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/procurement-specialist" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43080,7 +43091,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tuotantotalous", url: "https://opintopolku.fi/konfo/fi/haku/tuotantotalous" },
+      { name: "Työmarkkinatori – Toimintapäällikkö", url: "https://tyomarkkinatori.fi/ammatit/operations-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 60
   },
@@ -43131,7 +43145,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Laatujohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/laatujohtaminen" },
+      { name: "Työmarkkinatori – Laatupäällikkö", url: "https://tyomarkkinatori.fi/ammatit/quality-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 48
   },
@@ -43182,7 +43199,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Muutosjohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/muutosjohtaminen" },
+      { name: "Työmarkkinatori – Muutospäällikkö", url: "https://tyomarkkinatori.fi/ammatit/change-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 60
   },
@@ -43233,7 +43253,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Prosessijohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/prosessijohtaminen" },
+      { name: "Työmarkkinatori – Prosessipäällikkö", url: "https://tyomarkkinatori.fi/ammatit/process-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 60
   },
@@ -43284,7 +43307,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Riskienhallinta", url: "https://opintopolku.fi/konfo/fi/haku/riskienhallinta" },
+      { name: "Työmarkkinatori – Compliance-päällikkö", url: "https://tyomarkkinatori.fi/ammatit/compliance-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 60
   },
@@ -43335,7 +43361,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/liiketalous" },
+      { name: "Työmarkkinatori – Toimistopäällikkö", url: "https://tyomarkkinatori.fi/ammatit/office-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43386,7 +43415,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
+      { name: "Työmarkkinatori – Varastopäällikkö", url: "https://tyomarkkinatori.fi/ammatit/warehouse-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43437,7 +43469,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Palvelujohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/palvelujohtaminen" },
+      { name: "Työmarkkinatori – Palvelupäällikkö", url: "https://tyomarkkinatori.fi/ammatit/service-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43488,7 +43523,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta" },
+      { name: "Työmarkkinatori – Aikataulukoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/scheduling-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43539,7 +43577,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
+      { name: "Työmarkkinatori – Varastonhallintapäällikkö", url: "https://tyomarkkinatori.fi/ammatit/inventory-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43590,7 +43631,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Arkistointi", url: "https://opintopolku.fi/konfo/fi/haku/arkistointi" },
+      { name: "Työmarkkinatori – Arkistonhoitaja", url: "https://tyomarkkinatori.fi/ammatit/records-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 60
   },
@@ -43641,7 +43685,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Matkailu", url: "https://opintopolku.fi/konfo/fi/haku/matkailu" },
+      { name: "Työmarkkinatori – Matkakoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/travel-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43692,7 +43739,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Koulutus ja kehittäminen", url: "https://opintopolku.fi/konfo/fi/haku/koulutus%20kehitt%C3%A4minen" },
+      { name: "Työmarkkinatori – Koulutuskoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/training-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43743,7 +43793,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
+      { name: "Työmarkkinatori – Kalustonhallintapäällikkö", url: "https://tyomarkkinatori.fi/ammatit/fleet-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43794,7 +43847,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tietojärjestelmät", url: "https://opintopolku.fi/konfo/fi/haku/tietoj%C3%A4rjestelm%C3%A4t" },
+      { name: "Työmarkkinatori – Hallintojärjestelmäkoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/admin-systems-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43845,7 +43901,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tuotantotalous", url: "https://opintopolku.fi/konfo/fi/haku/tuotantotalous" },
+      { name: "Työmarkkinatori – Resurssisuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/resource-planner" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43896,7 +43955,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Hankintatoimi", url: "https://opintopolku.fi/konfo/fi/haku/hankintatoimi" },
+      { name: "Työmarkkinatori – Toimittajapäällikkö", url: "https://tyomarkkinatori.fi/ammatit/vendor-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43947,7 +44009,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tiedonhallinta", url: "https://opintopolku.fi/konfo/fi/haku/tiedonhallinta" },
+      { name: "Työmarkkinatori – Tiedonhallintakoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/data-governance-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -43998,7 +44063,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Sopimushallinta", url: "https://opintopolku.fi/konfo/fi/haku/sopimushallinta" },
+      { name: "Työmarkkinatori – Sopimushallinnoija", url: "https://tyomarkkinatori.fi/ammatit/contract-administrator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44049,7 +44117,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tapahtumatuotanto", url: "https://opintopolku.fi/konfo/fi/haku/tapahtumatuotanto" },
+      { name: "Työmarkkinatori – Kokouskoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/meeting-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44100,7 +44171,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Prosessien johtaminen", url: "https://opintopolku.fi/konfo/fi/haku/prosessien%20johtaminen" },
+      { name: "Työmarkkinatori – Työnkulkukoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/workflow-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44151,7 +44225,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Riskienhallinta", url: "https://opintopolku.fi/konfo/fi/haku/riskienhallinta" },
+      { name: "Työmarkkinatori – Toiminnan jatkuvuuden suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/business-continuity-planner" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44202,7 +44279,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta" },
+      { name: "Työmarkkinatori – Portfoliopäällikkö", url: "https://tyomarkkinatori.fi/ammatit/portfolio-manager-projects" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 60
   },
@@ -44253,7 +44333,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta" },
+      { name: "Työmarkkinatori – PMO-koordinaattori", url: "https://tyomarkkinatori.fi/ammatit/pmo-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44304,7 +44387,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
+      { name: "Työmarkkinatori – Materiaalisuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/materials-planner" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44355,7 +44441,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tuotantotalous", url: "https://opintopolku.fi/konfo/fi/haku/tuotantotalous" },
+      { name: "Työmarkkinatori – Kapasiteettisuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/capacity-planner" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44406,7 +44495,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Kuljetusala", url: "https://opintopolku.fi/konfo/fi/haku/kuljetusala" },
+      { name: "Työmarkkinatori – Kuljetuskoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/transportation-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44457,7 +44549,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Laboratorioala", url: "https://opintopolku.fi/konfo/fi/haku/laboratorioala" },
+      { name: "Työmarkkinatori – Laboratoriopäällikkö", url: "https://tyomarkkinatori.fi/ammatit/lab-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 60
   },
@@ -44508,7 +44603,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Kunnossapito", url: "https://opintopolku.fi/konfo/fi/haku/kunnossapito" },
+      { name: "Työmarkkinatori – Kunnossapitosuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/maintenance-planner" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 48
   },
@@ -44559,7 +44657,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Kaupan ala", url: "https://opintopolku.fi/konfo/fi/haku/kaupan%20ala" },
+      { name: "Työmarkkinatori – Myymäläpäällikkö", url: "https://tyomarkkinatori.fi/ammatit/store-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44610,7 +44711,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tuotannonohjaus", url: "https://opintopolku.fi/konfo/fi/haku/tuotannonohjaus" },
+      { name: "Työmarkkinatori – Tuotantoaikatauluttaja", url: "https://tyomarkkinatori.fi/ammatit/production-scheduler" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44661,7 +44765,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Toimitusketjun hallinta", url: "https://opintopolku.fi/konfo/fi/haku/toimitusketjun%20hallinta" },
+      { name: "Työmarkkinatori – Kysynnän suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/demand-planner" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44712,7 +44819,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Lean-johtaminen", url: "https://opintopolku.fi/konfo/fi/haku/lean" },
+      { name: "Työmarkkinatori – Lean-koordinaattori", url: "https://tyomarkkinatori.fi/ammatit/lean-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44763,7 +44873,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Kansainvälinen kauppa", url: "https://opintopolku.fi/konfo/fi/haku/kansainv%C3%A4linen%20kauppa" },
+      { name: "Työmarkkinatori – Tuonti-vientikoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/import-export-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44814,7 +44927,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Esimiestyö", url: "https://opintopolku.fi/konfo/fi/haku/esimiesty%C3%B6" },
+      { name: "Työmarkkinatori – Vuoroesimies", url: "https://tyomarkkinatori.fi/ammatit/shift-supervisor" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44866,7 +44982,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Ohjelmistokehitys", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistokehitys" },
+      { name: "Työmarkkinatori – Release Manager", url: "https://tyomarkkinatori.fi/ammatit/release-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44917,7 +45036,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - IT-palveluhallinta", url: "https://opintopolku.fi/konfo/fi/haku/IT-palveluhallinta" },
+      { name: "Työmarkkinatori – Konfiguraationhallintapäällikkö", url: "https://tyomarkkinatori.fi/ammatit/configuration-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -44968,7 +45090,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Kiinteistöjohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/kiinteist%C3%B6johtaminen" },
+      { name: "Työmarkkinatori – Omaisuudenhallintapäällikkö", url: "https://tyomarkkinatori.fi/ammatit/asset-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -45019,7 +45144,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tuotehallinta", url: "https://opintopolku.fi/konfo/fi/haku/tuotehallinta" },
+      { name: "Työmarkkinatori – Product Owner", url: "https://tyomarkkinatori.fi/ammatit/product-owner" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -45070,7 +45198,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - IT-palveluhallinta", url: "https://opintopolku.fi/konfo/fi/haku/IT-palveluhallinta" },
+      { name: "Työmarkkinatori – Palveluntoimituspäällikkö", url: "https://tyomarkkinatori.fi/ammatit/service-delivery-manager" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -45121,7 +45252,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta" },
+      { name: "Työmarkkinatori – Ohjelmakoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/program-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -45172,7 +45306,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/liiketalous" },
+      { name: "Työmarkkinatori – Toimintokoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/operations-coordinator" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 42
   },
@@ -45223,7 +45360,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Regulatory affairs", url: "https://opintopolku.fi/konfo/fi/haku/regulatory%20affairs" },
+      { name: "Työmarkkinatori – Viranomaisasioiden asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/regulatory-affairs-specialist" }
+    ],
     transferable_skills: [],
     study_length_estimate_months: 60
   },
@@ -45275,7 +45415,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Henkilöstöhallinto", url: "https://opintopolku.fi/konfo/fi/haku/henkil%C3%B6st%C3%B6hallinto" },
+      { name: "Työmarkkinatori – Perehdytyskoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/onboarding-coordinator" }
+    ],
     transferable_skills: [],
     keywords: ["perehdytys", "onboarding", "HR"],
     study_length_estimate_months: 42
@@ -45329,7 +45472,10 @@ export const careersData: CareerFI[] = [
     impact: [],
     qualification_or_license: null,
     union_or_CBA: null,
-    useful_links: [],
+    useful_links: [
+      { name: "Opintopolku - Tiedonhallinta", url: "https://opintopolku.fi/konfo/fi/haku/tiedonhallinta" },
+      { name: "Työmarkkinatori – Tiedonhallinnan koordinaattori", url: "https://tyomarkkinatori.fi/ammatit/knowledge-management-coordinator" }
+    ],
     transferable_skills: [],
     keywords: ["tiedonhallinta", "knowledge management", "dokumentointi"],
     study_length_estimate_months: 42
@@ -45612,55 +45758,6 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     keywords: ["stand-up", "komedia", "esiintyminen"],
     study_length_estimate_months: 12
-  },
-
-  {
-    id: "podcast-tuottaja",
-    category: "luova",
-    title_fi: "Podcast-tuottaja",
-    title_en: "Podcast Producer",
-    short_description: "Podcast-tuottaja tuottaa ja editoi podcast-ohjelmia. Työ vaatii luovuutta ja teknistä osaamista.",
-    main_tasks: [
-      "Podcastien suunnittelu",
-      "Sisällöntuotanto",
-      "Äänitys ja editointi",
-      "Haastattelujen tekeminen",
-      "Markkinointi ja jakelu"
-    ],
-    education_paths: [
-      "AMK: Viestinnän tai median tutkinto",
-      "Podcast-tuotannon opinnot",
-      "Portfolio podcasteista"
-    ],
-    core_skills: [
-      "Sisällöntuotanto",
-      "Ääniedit ointi",
-      "Haastattelutaidot",
-      "Tarinankerronta",
-      "Markkinointi"
-    ],
-    tools_tech: [
-      "Audacity",
-      "Adobe Audition",
-      "Podcast-jakelualustat"
-    ],
-    languages_required: { fi: 4, sv: 2, en: 3 },
-    salary_eur_month: {
-      median: 3200,
-      range: [2500, 5000],
-      source: "Ammattinetti 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Podcastien suosion kasvu lisää tuottajien kysyntää.",
-      source: "Ammattinetti 2024"
-    },
-    entry_roles: ["Podcast-assistentti", "Freelance-tuottaja"],
-    career_progression: ["Senior Producer", "Podcast Network Lead"],
-    typical_employers: ["Mediatalot", "Tuotantoyhtiöt", "Itsenäinen yrittäjä"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    keywords: ["podcast", "ääni", "sisällöntuotanto"],
-    study_length_estimate_months: 36
   },
 
   {
