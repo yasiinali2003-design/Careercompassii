@@ -8,7 +8,7 @@ import { MetadataRoute } from 'next';
 import { generateCareersSitemap } from '@/lib/seo/careerMetadata';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://careercompass.fi';
+  const baseUrl = 'https://urakompassi.fi';
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [

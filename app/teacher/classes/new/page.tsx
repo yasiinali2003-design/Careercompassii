@@ -72,7 +72,7 @@ export default function NewClassPage() {
               <div>
                 <label className="font-semibold text-neutral-200">Julkinen linkki (anonyymi):</label>
                 <p className="text-primary font-mono text-sm bg-white/5 backdrop-blur-sm border border-white/10 p-2 rounded break-all">
-                  https://careercompassii.vercel.app/{classData.classToken}
+                  https://urakompassi.fi/{classData.classToken}
                 </p>
               </div>
               

@@ -6,7 +6,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://careercompass.fi';
+  const baseUrl = 'https://urakompassi.fi';
 
   return {
     rules: [

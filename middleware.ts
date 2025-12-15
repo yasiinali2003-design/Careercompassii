@@ -119,7 +119,7 @@ export async function middleware(request: NextRequest) {
 
   // Hide /kouluille page from public in production
   // Allow admin access in localhost
-  const isProduction = request.nextUrl.hostname.includes('urakompassi.com') || request.nextUrl.hostname.includes('vercel.app');
+  const isProduction = request.nextUrl.hostname.includes('urakompassi.fi') || request.nextUrl.hostname.includes('vercel.app');
 
   if (pathname === '/kouluille') {
     if (isProduction) {
