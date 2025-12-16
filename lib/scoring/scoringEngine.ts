@@ -4857,6 +4857,149 @@ export function rankCareers(
   // Step 1: Compute user vector
   const { dimensionScores, detailedScores } = computeUserVector(answers, cohort);
 
+  // ============================================================================
+  // YLA COHORT SIMPLE PATH: For 13-15 year old students, use SIMPLE interest-based matching
+  // Skip all complex personality detection that causes mismatches for young students
+  // ============================================================================
+  if (cohort === 'YLA') {
+    console.log(`[rankCareers] 🎓 YLA COHORT: Using SIMPLE interest-based matching for young students`);
+
+    // Extract key interests from detailedScores - USE ACTUAL YLA SUBDIMENSION KEYS
+    const interests = detailedScores.interests || {};
+    const values = detailedScores.values || {};
+    const workstyle = detailedScores.workstyle || {};
+
+    // Log what we're actually seeing in detailedScores for debugging
+    console.log(`[rankCareers] YLA interests:`, JSON.stringify(interests));
+    console.log(`[rankCareers] YLA values:`, JSON.stringify(values));
+    console.log(`[rankCareers] YLA workstyle:`, JSON.stringify(workstyle));
+
+    // Calculate simple category affinity scores using ACTUAL YLA subdimension keys:
+    // From dimensions.ts YLA_MAPPINGS: analytical, hands_on, technology, problem_solving, people, creative, health, business, leadership, innovation, environment, teamwork, independence, organization, outdoor
+    const categoryAffinities: Record<string, number> = {
+      // LUOVA: creative + innovation (Q10-12, Q20)
+      luova: (interests.creative || 0) * 2.0 + (interests.innovation || 0) * 1.0,
+
+      // INNOVOIJA: technology + analytical + problem_solving (Q3, Q0-1, Q4-6)
+      innovoija: (interests.technology || 0) * 2.0 + (interests.analytical || 0) * 1.0 + (interests.problem_solving || 0) * 1.0,
+
+      // AUTTAJA: people + health (Q7-9, Q13, Q22)
+      auttaja: (interests.people || 0) * 2.0 + (interests.health || 0) * 1.5 + (values.impact || 0) * 0.8,
+
+      // JOHTAJA: leadership + business (Q15, Q14, Q27)
+      johtaja: (interests.leadership || workstyle.leadership || 0) * 2.0 + (interests.business || 0) * 1.5,
+
+      // RAKENTAJA: hands_on + outdoor (Q2, Q17, Q26, Q29)
+      rakentaja: (interests.hands_on || 0) * 2.0 + (interests.outdoor || workstyle.outdoor || 0) * 1.5 + (interests.environment || 0) * 0.5,
+
+      // YMPARISTON-PUOLUSTAJA: environment + outdoor (Q19, Q29)
+      'ympariston-puolustaja': (interests.environment || 0) * 2.0 + (interests.outdoor || workstyle.outdoor || 0) * 1.0,
+
+      // VISIONAARI: innovation + analytical + problem_solving (creative thinking)
+      visionaari: (interests.innovation || 0) * 1.5 + (interests.analytical || 0) * 1.0 + (interests.problem_solving || 0) * 0.8,
+
+      // JARJESTAJA: organization + analytical (planning, structure)
+      jarjestaja: (workstyle.organization || interests.organization || 0) * 2.0 + (interests.analytical || 0) * 0.8
+    };
+
+    console.log(`[rankCareers] YLA category affinities:`, JSON.stringify(categoryAffinities, null, 2));
+
+    // Find the dominant category based on simple affinity
+    const sortedCategories = Object.entries(categoryAffinities)
+      .sort(([, a], [, b]) => b - a);
+    const ylaDominantCategory = sortedCategories[0][0];
+    const ylaTopCategories = sortedCategories.slice(0, 3).map(([cat]) => cat);
+
+    console.log(`[rankCareers] YLA dominant category: ${ylaDominantCategory}, top 3: ${ylaTopCategories.join(', ')}`);
+
+    // Score ALL careers without complex filtering
+    const scoredCareers: CareerMatch[] = [];
+
+    for (const careerVector of CAREER_VECTORS) {
+      // Skip current occupation
+      if (currentOccupation && currentOccupation !== "none") {
+        const occupationLower = currentOccupation.toLowerCase().trim();
+        const titleLower = careerVector.title.toLowerCase();
+        if (titleLower.includes(occupationLower) || occupationLower.includes(titleLower)) {
+          continue;
+        }
+      }
+
+      // Simple scoring: base score + category boost + interest alignment
+      let baseScore = 50; // Start with neutral score
+
+      // MAJOR boost for matching category
+      const careerCategory = careerVector.category;
+      if (careerCategory === ylaDominantCategory) {
+        baseScore += 35; // Big boost for matching dominant category
+      } else if (ylaTopCategories.includes(careerCategory)) {
+        baseScore += 20; // Medium boost for top 3 categories
+      }
+
+      // Interest alignment bonus (based on career interests matching user interests)
+      // FIXED: Access careerVector.interests NOT careerVector.dimensions
+      const careerInterests = careerVector.interests || {};
+      const careerWorkstyle = careerVector.workstyle || {};
+      let interestBonus = 0;
+
+      // Creative alignment - normalize career values (0-1) to match user scores (0-5)
+      if (careerInterests.creative && interests.creative) {
+        interestBonus += careerInterests.creative * interests.creative * 4;
+      }
+      // Technology alignment
+      if (careerInterests.technology && interests.technology) {
+        interestBonus += careerInterests.technology * interests.technology * 4;
+      }
+      // People alignment
+      if (careerInterests.people && interests.people) {
+        interestBonus += careerInterests.people * interests.people * 4;
+      }
+      // Hands-on alignment
+      if (careerInterests.hands_on && interests.hands_on) {
+        interestBonus += careerInterests.hands_on * interests.hands_on * 4;
+      }
+      // Environment alignment
+      if (careerInterests.environment && (interests.environment || interests.nature)) {
+        interestBonus += careerInterests.environment * Math.max(interests.environment || 0, interests.nature || 0) * 4;
+      }
+      // Health alignment
+      if (careerInterests.health && interests.health) {
+        interestBonus += careerInterests.health * interests.health * 4;
+      }
+      // Leadership alignment
+      if (careerWorkstyle.leadership && (workstyle.leadership || interests.leadership)) {
+        interestBonus += careerWorkstyle.leadership * Math.max(workstyle.leadership || 0, interests.leadership || 0) * 3;
+      }
+
+      const totalScore = Math.min(100, baseScore + interestBonus);
+
+      scoredCareers.push({
+        ...careerVector,
+        overallScore: Math.round(totalScore),
+        dimensionScores: {
+          interests: Math.round(totalScore),
+          workstyle: Math.round(totalScore * 0.9),
+          values: Math.round(totalScore * 0.8),
+          context: Math.round(totalScore * 0.7)
+        },
+        confidence: totalScore >= 80 ? 'high' : totalScore >= 60 ? 'medium' : 'low',
+        reasons: [`Matches your interest in ${ylaDominantCategory}`],
+        category: careerCategory
+      });
+    }
+
+    // Sort by score and return top N
+    scoredCareers.sort((a, b) => b.overallScore - a.overallScore);
+    const topYLACareers = scoredCareers.slice(0, limit);
+
+    console.log(`[rankCareers] YLA top ${limit} careers:`, topYLACareers.map(c => `${c.title} (${c.overallScore}%) - ${c.category}`).join(', '));
+
+    return topYLACareers;
+  }
+  // ============================================================================
+  // END YLA SIMPLE PATH
+  // ============================================================================
+
   // PERSONALITY BOOST SYSTEM: Detect personality type early
   const personalityBoost = detectPersonalityType(detailedScores, cohort);
 
@@ -5014,6 +5157,28 @@ export function rankCareers(
   const rankCareersSocial = detailedScores.interests?.social || 0;
   const isStrongAuttajaProfile = rankCareersAuttajaSignal >= 0.5 || (rankCareersPeople >= 0.6 && rankCareersHealth >= 0.4) || (rankCareersSocial >= 0.6 && rankCareersCaring >= 0.5);
 
+  // NEW: AUTTAJA (HELPER) DETECTION - for people with strong helping/health signals
+  // These people want to HELP OTHERS, not organize systems like Järjestäjä
+  // Critical for TASO2 cohort where Q7-12 are health-focused questions
+  // IMPORTANT: Must NOT trigger for johtaja profiles who have people skills but want to LEAD
+  // Key distinction: Auttaja has health+people but NOT leadership; Johtaja has leadership+business+people
+  // Use existing rankCareersLeadership from line 5082 (no redeclaration needed)
+  // Check if health/caring signals DOMINATE over leadership - this distinguishes auttaja from johtaja
+  const isHealthDominant = (rankCareersHealth >= 0.6 || rankCareersCaring >= 0.5) &&
+                           (rankCareersHealth > rankCareersLeadership + 0.1 || rankCareersCaring > rankCareersLeadership + 0.1);
+  const isDefinitelyAuttaja = (
+    // Strong health signal (>= 0.6) indicates healthcare/helping focus
+    (rankCareersHealth >= 0.6 && rankCareersPeople >= 0.4) ||
+    // Strong people + health combined signal
+    (rankCareersPeople >= 0.5 && rankCareersHealth >= 0.5) ||
+    // Strong caring + social combined signal
+    (rankCareersCaring >= 0.5 && rankCareersSocial >= 0.5) ||
+    // Strong auttaja signal overall (0.6 threshold)
+    rankCareersAuttajaSignal >= 0.6
+  ) && !isBusinessLeaderInRankCareers && isHealthDominant; // Health/caring must dominate over leadership
+
+  console.log(`[rankCareers] 🏥 AUTTAJA CHECK: health=${rankCareersHealth.toFixed(2)}, people=${rankCareersPeople.toFixed(2)}, caring=${rankCareersCaring.toFixed(2)}, social=${rankCareersSocial.toFixed(2)}, leadership=${rankCareersLeadership.toFixed(2)}, auttajaSignal=${rankCareersAuttajaSignal.toFixed(2)}, isHealthDominant=${isHealthDominant}, isStrongAuttaja=${isStrongAuttajaProfile}, isDefinitelyAuttaja=${isDefinitelyAuttaja}`);
+
   // NEW: Direct Järjestäjä signal - check for Järjestäjä personality indicators
   // For YLA cohort, security/stability VALUES are not directly measured, so we use proxy signals:
   // - HIGH organization (Q28 workstyle:organization) - indicates preference for order
@@ -5095,9 +5260,20 @@ export function rankCareers(
   let careersToScore: typeof CAREER_VECTORS;
   let useStrictCategoryFiltering = false;
 
+  // CRITICAL FIX: For YLA cohort (13-15 year olds), NEVER use strict category filtering
+  // Young students are exploring career options and shouldn't be locked into narrow categories
+  // The detection thresholds (isBusinessLeader, isAccountantAdmin, etc.) are too aggressive
+  // for this age group and cause mismatches (e.g., creative students getting accountant careers)
+  const disableStrictFilteringForYLA = cohort === 'YLA';
+
+  if (disableStrictFilteringForYLA) {
+    console.log(`[rankCareers] 🎓 YLA COHORT: Strict category filtering DISABLED for young students`);
+  }
+
   // STRICT FILTERING: When user has a very clear profile, only include relevant categories
   // This prevents generic high-scoring careers from dominating
-  if (isBusinessLeaderInRankCareers) {
+  // DISABLED for YLA cohort - see above
+  if (!disableStrictFilteringForYLA && isBusinessLeaderInRankCareers) {
     useStrictCategoryFiltering = true;
     careersToScore = CAREER_VECTORS.filter(careerVector => {
       // Only include johtaja category for Business Leaders
@@ -5113,7 +5289,7 @@ export function rankCareers(
       return true;
     });
     console.log(`[rankCareers] 🎯 BUSINESS LEADER DETECTED: Filtering to ${careersToScore.length} johtaja careers only`);
-  } else if (isEnvironmentalScientist) {
+  } else if (!disableStrictFilteringForYLA && isEnvironmentalScientist) {
     useStrictCategoryFiltering = true;
     careersToScore = CAREER_VECTORS.filter(careerVector => {
       // Only include ympariston-puolustaja category for Environmental Scientists
@@ -5129,7 +5305,24 @@ export function rankCareers(
       return true;
     });
     console.log(`[rankCareers] 🌿 ENVIRONMENTAL SCIENTIST DETECTED: Filtering to ${careersToScore.length} ympariston-puolustaja careers only`);
-  } else if (isAccountantAdmin) {
+  } else if (!disableStrictFilteringForYLA && isDefinitelyAuttaja) {
+    // AUTTAJA DETECTION - MUST come BEFORE järjestäjä to prioritize helping professions
+    useStrictCategoryFiltering = true;
+    careersToScore = CAREER_VECTORS.filter(careerVector => {
+      // Only include auttaja category for Helper/Healthcare profiles
+      if (careerVector.category !== 'auttaja') return false;
+      // Filter out current occupation
+      if (currentOccupation && currentOccupation !== "none") {
+        const occupationLower = currentOccupation.toLowerCase().trim();
+        const titleLower = careerVector.title.toLowerCase();
+        if (titleLower.includes(occupationLower) || occupationLower.includes(titleLower)) {
+          return false;
+        }
+      }
+      return true;
+    });
+    console.log(`[rankCareers] 🏥 AUTTAJA (HELPER) DETECTED: Filtering to ${careersToScore.length} auttaja careers only`);
+  } else if (!disableStrictFilteringForYLA && isAccountantAdmin) {
     useStrictCategoryFiltering = true;
     careersToScore = CAREER_VECTORS.filter(careerVector => {
       // Only include jarjestaja category for Accountants/Administrators
@@ -5145,7 +5338,7 @@ export function rankCareers(
       return true;
     });
     console.log(`[rankCareers] 📊 ACCOUNTANT/ADMIN DETECTED: Filtering to ${careersToScore.length} jarjestaja careers only`);
-  } else if (isStrategicConsultant) {
+  } else if (!disableStrictFilteringForYLA && isStrategicConsultant) {
     useStrictCategoryFiltering = true;
     careersToScore = CAREER_VECTORS.filter(careerVector => {
       // Only include visionaari category for Strategic Consultants
