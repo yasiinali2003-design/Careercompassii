@@ -188,12 +188,12 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Section 8: Technology & Innovation (Q17-18) - technology, innovation
   {
     q: 17,
-    text: "Haluaisitko työskennellä tekniikan ja laitteiden parissa?",
+    text: "Kiinnostaako sinua tekniikka ja laitteiden toiminta?",
     dimension: 'interests',
     subdimension: 'technology',
     weight: 1.2,
     reverse: false,
-    notes: "Technical work - engineering, IT, technical trades"
+    notes: "Technical interest - engineering, IT, technical trades (age-appropriate)"
   },
   {
     q: 18,
@@ -230,12 +230,12 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Section 11: People & Health (Q21-22) - people, health
   {
     q: 21,
-    text: "Haluaisitko työskennellä lasten tai nuorten kanssa?",
+    text: "Pidätkö lasten tai nuorempien oppilaiden auttamisesta?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.1,
     reverse: false,
-    notes: "Child/youth work - teaching, childcare, youth work"
+    notes: "Child/youth work - teaching, childcare, youth work (age-appropriate)"
   },
   {
     q: 22,
@@ -319,12 +319,12 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 29,
-    text: "Haluaisitko työskennellä ulkona luonnossa?",
+    text: "Pidätkö ulkona olemisesta ja luonnossa liikkumisesta?",
     dimension: 'interests',
     subdimension: 'outdoor',
     weight: 1.1,
     reverse: false,
-    notes: "Outdoor work - agriculture, forestry, environmental careers"
+    notes: "Outdoor interest - agriculture, forestry, environmental careers (age-appropriate)"
   }
 ];
 
@@ -632,12 +632,12 @@ const YLA_MAPPINGS_SET2: QuestionMapping[] = [
   {
     q: 59,
     originalQ: 29,
-    text: "Kiinnostaako sinua työskennellä etänä kotoa käsin tietokoneen ääressä?",
+    text: "Tykkäätkö tehdä koulutehtäviä ja projekteja tietokoneella kotona?",
     dimension: 'context',
     subdimension: 'independence',
     weight: 0.8,
     reverse: false,
-    notes: "Equivalent to Q29, Remote work preference"
+    notes: "Equivalent to Q29, Digital/independent work preference (age-appropriate for 13-15)"
   }
 ];
 
@@ -945,12 +945,12 @@ const YLA_MAPPINGS_SET3: QuestionMapping[] = [
   {
     q: 89,
     originalQ: 29,
-    text: "Pidätkö ajatuksesta työskennellä etänä kotoa käsin?",
+    text: "Pidätkö ajatuksesta opiskella ja tehdä projekteja kotona itsenäisesti?",
     dimension: 'context',
     subdimension: 'independence',
     weight: 0.8,
     reverse: false,
-    notes: "Equivalent to Q29, Remote work preference"
+    notes: "Equivalent to Q29, Independent study preference (age-appropriate for 13-15)"
   }
 ];
 
