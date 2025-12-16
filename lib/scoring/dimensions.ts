@@ -297,15 +297,6 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     reverse: false,
     notes: "Product development - R&D, startup interest"
   },
-  {
-    q: 27,  // Dual mapping: also contributes to global perspective for visionaari
-    text: "Kiinnostaako sinua kehittää uusia tuotteita tai palveluita?",
-    dimension: 'values',
-    subdimension: 'global',
-    weight: 0.8,
-    reverse: false,
-    notes: "Innovation often involves global perspective - visionaari indicator"
-  },
 
   // Section 15: Organization & Outdoor (Q28-29) - organization, outdoor
   {
@@ -1234,35 +1225,6 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     weight: 1.2,
     reverse: false,
     notes: "Laboratory/research work"
-  },
-
-  // PHASE 11 FIX: Added missing subdimensions for ympariston-puolustaja, visionaari, jarjestaja
-  {
-    q: 30,
-    text: "Kiinnostaako sinua ympäristönsuojelu ja ilmastonmuutos?",
-    dimension: 'interests',
-    subdimension: 'impact',
-    weight: 1.5,
-    reverse: false,
-    notes: "Environmental careers - critical for ympariston-puolustaja"
-  },
-  {
-    q: 31,
-    text: "Haluaisitko työskennellä kansainvälisissä projekteissa tai ulkomailla?",
-    dimension: 'values',
-    subdimension: 'global',
-    weight: 1.2,
-    reverse: false,
-    notes: "Global/international orientation - critical for visionaari (FIXED: was environment with low weight, now global with proper weight)"
-  },
-  {
-    q: 32,
-    text: "Pidätkö suunnittelusta, aikatauluista ja asioiden organisoinnista?",
-    dimension: 'workstyle',
-    subdimension: 'independence', // ALREADY_FIXED_TASO2_Q32,
-    weight: 1.4,
-    reverse: false,
-    notes: "Organizational skills - critical for jarjestaja"
   }
 ];
 
@@ -2029,15 +1991,6 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     reverse: false,
     notes: "Strategic planning - visionaari indicator (FIXED: was leadership, now planning)"
   },
-  {
-    q: 13,  // Dual mapping: also contributes to global perspective for visionaari
-    text: "Kiinnostaako sinua strateginen suunnittelu ja päätöksenteko?",
-    dimension: 'values',
-    subdimension: 'global',
-    weight: 0.3,  // REDUCED from 0.8: Lower weight to prevent false positives - strategic planning alone shouldn't trigger visionaari without explicit global interest
-    reverse: false,
-    notes: "Strategic thinking often involves global perspective - visionaari indicator (but lower weight to avoid false positives)"
-  },
 
   // Section 5: Hands-On & Technical (Q14-17) - hands_on
   {
@@ -2193,15 +2146,6 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     weight: 1.3,
     reverse: false,
     notes: "Environmental/sustainability/outdoor work - environment focus (100% gold standard)"
-  },
-  {
-    q: 29,  // Dual mapping for comprehensive coverage
-    text: "Haluaisitko työskennellä ympäristönsuojelun, luonnonsuojelun tai ulkotyön parissa?",
-    dimension: 'interests',
-    subdimension: 'outdoor',
-    weight: 1.1,
-    reverse: false,
-    notes: "Environmental/sustainability/outdoor work - outdoor activities (100% gold standard)"
   }
 ];
 
