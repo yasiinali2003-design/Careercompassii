@@ -38,6 +38,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fi" className="dark">
+      <head>
+        {/* Inline script to prevent scroll restoration flash on landing page */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                if (typeof window !== 'undefined' && window.location.pathname === '/') {
+                  if ('scrollRestoration' in history) {
+                    history.scrollRestoration = 'manual';
+                  }
+                  window.scrollTo(0, 0);
+                  document.documentElement.scrollTop = 0;
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={`${inter.className} min-h-screen`}>
         {/* Skip to content link for accessibility */}
         <a

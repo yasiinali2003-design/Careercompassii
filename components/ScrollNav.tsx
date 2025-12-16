@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -11,12 +11,51 @@ export default function ScrollNav() {
   const pathname = usePathname();
   const isLandingPage = pathname === "/";
   const isUrakirjastoPage = pathname === "/ammatit" || pathname?.startsWith("/ammatit/");
+  const hasScrolledToTop = useRef(false);
+
+  // Force scroll to top on landing page - runs before paint
+  useLayoutEffect(() => {
+    if (isLandingPage && typeof window !== 'undefined' && !hasScrolledToTop.current) {
+      // Disable browser's automatic scroll restoration globally
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      // Force scroll to top immediately and synchronously
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      hasScrolledToTop.current = true;
+      // Also set scrolled state based on actual position
+      setScrolled(window.scrollY > 50);
+    }
+  }, [isLandingPage]);
+
+  // Also run on first paint to catch any timing issues
+  useEffect(() => {
+    if (isLandingPage && typeof window !== 'undefined') {
+      // Double-check we're at top after hydration
+      const checkAndScroll = () => {
+        if (window.scrollY > 0) {
+          window.scrollTo(0, 0);
+          setScrolled(false);
+        }
+      };
+      // Run immediately
+      checkAndScroll();
+      // And after a small delay to catch late scroll restoration
+      const timeoutId = setTimeout(checkAndScroll, 50);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [isLandingPage]);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setScrolled(scrollPosition > 50);
     };
+
+    // Check initial scroll position
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
