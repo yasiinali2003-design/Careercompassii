@@ -5260,20 +5260,12 @@ export function rankCareers(
   let careersToScore: typeof CAREER_VECTORS;
   let useStrictCategoryFiltering = false;
 
-  // CRITICAL FIX: For YLA cohort (13-15 year olds), NEVER use strict category filtering
-  // Young students are exploring career options and shouldn't be locked into narrow categories
-  // The detection thresholds (isBusinessLeader, isAccountantAdmin, etc.) are too aggressive
-  // for this age group and cause mismatches (e.g., creative students getting accountant careers)
-  const disableStrictFilteringForYLA = cohort === 'YLA';
-
-  if (disableStrictFilteringForYLA) {
-    console.log(`[rankCareers] 🎓 YLA COHORT: Strict category filtering DISABLED for young students`);
-  }
+  // NOTE: YLA cohort is handled via early return above (around line 4864), so this code
+  // only executes for TASO2 and NUORI cohorts. No need for YLA-specific checks here.
 
   // STRICT FILTERING: When user has a very clear profile, only include relevant categories
   // This prevents generic high-scoring careers from dominating
-  // DISABLED for YLA cohort - see above
-  if (!disableStrictFilteringForYLA && isBusinessLeaderInRankCareers) {
+  if (isBusinessLeaderInRankCareers) {
     useStrictCategoryFiltering = true;
     careersToScore = CAREER_VECTORS.filter(careerVector => {
       // Only include johtaja category for Business Leaders
@@ -5289,7 +5281,7 @@ export function rankCareers(
       return true;
     });
     console.log(`[rankCareers] 🎯 BUSINESS LEADER DETECTED: Filtering to ${careersToScore.length} johtaja careers only`);
-  } else if (!disableStrictFilteringForYLA && isEnvironmentalScientist) {
+  } else if (isEnvironmentalScientist) {
     useStrictCategoryFiltering = true;
     careersToScore = CAREER_VECTORS.filter(careerVector => {
       // Only include ympariston-puolustaja category for Environmental Scientists
@@ -5305,7 +5297,7 @@ export function rankCareers(
       return true;
     });
     console.log(`[rankCareers] 🌿 ENVIRONMENTAL SCIENTIST DETECTED: Filtering to ${careersToScore.length} ympariston-puolustaja careers only`);
-  } else if (!disableStrictFilteringForYLA && isDefinitelyAuttaja) {
+  } else if (isDefinitelyAuttaja) {
     // AUTTAJA DETECTION - MUST come BEFORE järjestäjä to prioritize helping professions
     useStrictCategoryFiltering = true;
     careersToScore = CAREER_VECTORS.filter(careerVector => {
@@ -5322,7 +5314,7 @@ export function rankCareers(
       return true;
     });
     console.log(`[rankCareers] 🏥 AUTTAJA (HELPER) DETECTED: Filtering to ${careersToScore.length} auttaja careers only`);
-  } else if (!disableStrictFilteringForYLA && isAccountantAdmin) {
+  } else if (isAccountantAdmin) {
     useStrictCategoryFiltering = true;
     careersToScore = CAREER_VECTORS.filter(careerVector => {
       // Only include jarjestaja category for Accountants/Administrators
@@ -5338,7 +5330,7 @@ export function rankCareers(
       return true;
     });
     console.log(`[rankCareers] 📊 ACCOUNTANT/ADMIN DETECTED: Filtering to ${careersToScore.length} jarjestaja careers only`);
-  } else if (!disableStrictFilteringForYLA && isStrategicConsultant) {
+  } else if (isStrategicConsultant) {
     useStrictCategoryFiltering = true;
     careersToScore = CAREER_VECTORS.filter(careerVector => {
       // Only include visionaari category for Strategic Consultants
