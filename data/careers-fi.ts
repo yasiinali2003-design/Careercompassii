@@ -443,7 +443,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "UX Finland", url: "https://www.uxfinland.fi/" },
+      { name: "UX Finland", url: "https://uxfinland.org/" },
       { name: "Opintopolku - Tuotemuotoilija", url: "https://opintopolku.fi/konfo/fi/haku/Tuotemuotoilija" },
     
       { name: "Työmarkkinatori – Tuotemuotoilija", url: "https://tyomarkkinatori.fi/ammatit/muotoilija" }
@@ -24048,7 +24048,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Käyttäjälähtöinen suunnittelu arvostetaan yhä enemmän digitaalisessa tuotekehityksessä.",
-      source: { name: "Finnish UX Association", url: "https://www.uxfinland.fi/", year: 2024 }
+      source: { name: "Finnish UX Association", url: "https://uxfinland.org/", year: 2024 }
     },
     entry_roles: [
           "UX Researcher",
@@ -24073,7 +24073,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
           {
                 "name": "UX Finland",
-                "url": "https://www.uxfinland.fi/"
+                "url": "https://uxfinland.org/"
           },
           {
                 "name": "Nielsen Norman Group",
@@ -24952,8 +24952,8 @@ export const careersData: CareerFI[] = [
                 "url": "https://www.openapis.org/"
           },
           {
-                "name": "API Academy",
-                "url": "https://apiacademy.co/"
+                "name": "Swagger API Documentation",
+                "url": "https://swagger.io/docs/"
           }
     ],
     related_careers: ["backend-developer","solutions-architect"],
@@ -25095,8 +25095,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Viestinnän ammattilaiset",
     useful_links: [
           {
-                "name": "Someco",
-                "url": "https://someco.fi/"
+                "name": "Markkinointi & Mainonta",
+                "url": "https://www.marmai.fi/"
           },
           {
                 "name": "IAB Finland",
@@ -25168,8 +25168,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Journalistiliitto",
     useful_links: [
           {
-                "name": "Podcast.fi",
-                "url": "https://podcast.fi/"
+                "name": "Yle Areena Podcastit",
+                "url": "https://areena.yle.fi/podcastit"
           },
           {
                 "name": "Pacific Content",
@@ -25588,7 +25588,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitaalisten tuotteiden kasvu luo vahvaa kysyntää UX/UI-suunnittelijoille.",
-      source: { name: "UX Finland", url: "https://www.uxfinland.fi/", year: 2024 }
+      source: { name: "UX Finland", url: "https://uxfinland.org/", year: 2024 }
     },
     entry_roles: ["Junior UI/UX Designer","UI/UX Designer"],
     career_progression: ["Senior UI/UX Designer","Lead Designer","Design Manager"],
@@ -25607,7 +25607,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
           {
                 "name": "UX Finland",
-                "url": "https://www.uxfinland.fi/"
+                "url": "https://uxfinland.org/"
           },
           {
                 "name": "Figma Community",
@@ -26122,8 +26122,8 @@ export const careersData: CareerFI[] = [
                 "url": "https://kauppa.fi/"
           },
           {
-                "name": "Sales Academy Finland",
-                "url": "https://salesacademy.fi/"
+                "name": "Myynnin ja markkinoinnin ammattilaiset MMA",
+                "url": "https://www.mma.fi/"
           }
     ],
     related_careers: ["account-executive","customer-success-manager"],
@@ -26195,8 +26195,8 @@ export const careersData: CareerFI[] = [
                 "url": "https://kauppa.fi/"
           },
           {
-                "name": "Sales Academy Finland",
-                "url": "https://salesacademy.fi/"
+                "name": "Myynnin ja markkinoinnin ammattilaiset MMA",
+                "url": "https://www.mma.fi/"
           }
     ],
     related_careers: ["sales-development-representative","business-development-manager"],

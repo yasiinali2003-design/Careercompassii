@@ -65,7 +65,7 @@ export function Logo({ variant = "default", className, href = "/" }: LogoProps) 
           priority
         />
       </div>
-      <span className="text-xl font-bold text-[#00D9FF] leading-none h-10 flex items-center" style={{ paddingTop: '2px' }}>Urakompassi</span>
+      <span className="font-body text-xl font-bold text-[#00D9FF] leading-none h-10 flex items-center" style={{ paddingTop: '2px' }}>Urakompassi</span>
     </Link>
   );
 }

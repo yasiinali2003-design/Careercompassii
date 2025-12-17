@@ -11,7 +11,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-8 sm:px-10 py-12 md:py-16 relative z-10 w-full">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <h3 className="font-heading text-lg font-semibold mb-4">
+            <h3 className="font-body text-lg font-semibold mb-4">
               Urakompassi
             </h3>
             <p className="text-sm text-slate-300 leading-relaxed">

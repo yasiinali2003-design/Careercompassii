@@ -53,7 +53,7 @@ module.exports = {
         'urak-bg': '#0B1015',
         'urak-surface': '#13171D',
         'urak-border': '#1E242D',
-        'urak-accent-blue': '#4BA3E3',
+        'urak-accent-blue': '#3B8AC7',
         'urak-accent-green': '#55C89D',
         'urak-text-primary': '#F1F5F9',
         'urak-text-secondary': '#D1D5DB', // Improved contrast: gray-300

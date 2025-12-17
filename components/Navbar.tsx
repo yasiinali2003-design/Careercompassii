@@ -9,7 +9,7 @@ export function Navbar() {
             <span className="text-lg font-semibold text-urak-accent-blue">U</span>
           </div>
           <div>
-            <span className="font-heading text-lg font-semibold tracking-tight">
+            <span className="font-body text-lg font-semibold tracking-tight">
               Urakompassi
             </span>
             <p className="text-xs text-urak-text-muted">
