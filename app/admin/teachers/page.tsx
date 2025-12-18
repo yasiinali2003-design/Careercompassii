@@ -5,7 +5,8 @@
  * Generate individual access codes for teachers
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Logo } from '@/components/Logo';
@@ -22,6 +23,8 @@ interface Teacher {
 }
 
 export default function AdminTeachersPage() {
+  const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [schoolName, setSchoolName] = useState('');
@@ -30,6 +33,34 @@ export default function AdminTeachersPage() {
   const [error, setError] = useState('');
   const [newTeacher, setNewTeacher] = useState<Teacher | null>(null);
   const [copied, setCopied] = useState(false);
+
+  // Check authentication on mount
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        // Try to access the API - it returns 404 if not authenticated
+        const response = await fetch('/api/teachers/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: '' }), // Empty name to trigger validation, not creation
+        });
+
+        // If we get 404, we're not authenticated
+        if (response.status === 404) {
+          router.push('/admin/login');
+          return;
+        }
+
+        // Any other response means we're authenticated (even validation errors)
+        setIsAuthenticated(true);
+      } catch {
+        // Network error - redirect to login
+        router.push('/admin/login');
+      }
+    };
+
+    checkAuth();
+  }, [router]);
 
   const handleGenerate = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,6 +109,18 @@ export default function AdminTeachersPage() {
       console.error('Failed to copy:', err);
     }
   };
+
+  // Show loading state while checking authentication
+  if (isAuthenticated === null) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-neutral-400">Tarkistetaan käyttöoikeuksia...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen">
@@ -128,7 +171,7 @@ export default function AdminTeachersPage() {
                   onChange={(e) => setName(e.target.value)}
                   placeholder="esim. Matti Virtanen"
                   required
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
+                  className="w-full px-4 py-3 border-2 border-white/20 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all bg-white/5 backdrop-blur-sm text-white placeholder:text-neutral-500"
                 />
               </div>
 
@@ -142,7 +185,7 @@ export default function AdminTeachersPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="esim. matti.virtanen@koulu.fi"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
+                  className="w-full px-4 py-3 border-2 border-white/20 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all bg-white/5 backdrop-blur-sm text-white placeholder:text-neutral-500"
                 />
               </div>
 
@@ -156,7 +199,7 @@ export default function AdminTeachersPage() {
                   value={schoolName}
                   onChange={(e) => setSchoolName(e.target.value)}
                   placeholder="esim. Helsingin yläaste"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all"
+                  className="w-full px-4 py-3 border-2 border-white/20 rounded-lg focus:border-primary focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all bg-white/5 backdrop-blur-sm text-white placeholder:text-neutral-500"
                 />
               </div>
 

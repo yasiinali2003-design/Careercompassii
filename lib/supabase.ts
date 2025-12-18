@@ -78,11 +78,14 @@ export const supabaseAdmin: ReturnType<typeof createClient> | null = (() => {
     return null;
   }
 
-  // Validate key format (JWT should be ~200+ chars)
-  if (config.supabaseServiceRoleKey.length < 50) {
+  // Validate key format - accept both JWT format (~200+ chars) and sb_secret_ format (~40 chars)
+  const isJwtFormat = config.supabaseServiceRoleKey.length > 100;
+  const isSecretFormat = config.supabaseServiceRoleKey.startsWith('sb_secret_') || config.supabaseServiceRoleKey.startsWith('sbp_');
+
+  if (!isJwtFormat && !isSecretFormat) {
     if (!supabaseServiceKeyInvalidWarned && !isProduction) {
       supabaseServiceKeyInvalidWarned = true;
-      console.error('[Supabase] Service role key appears to be invalid (too short)');
+      console.error('[Supabase] Service role key appears to be invalid (unrecognized format)');
     }
     return null;
   }
