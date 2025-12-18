@@ -14,14 +14,13 @@ import path from 'path';
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { teacherId } = body;
+    // Get authenticated teacher ID from cookie (secure - can't be spoofed)
+    const teacherId = request.cookies.get('teacher_id')?.value;
 
-    // Validate input
-    if (!teacherId || typeof teacherId !== 'string') {
+    if (!teacherId) {
       return NextResponse.json(
-        { success: false, error: 'Missing or invalid teacherId' },
-        { status: 400 }
+        { success: false, error: 'Not authenticated' },
+        { status: 401 }
       );
     }
 

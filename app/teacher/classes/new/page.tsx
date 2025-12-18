@@ -31,26 +31,21 @@ interface ClassData {
 
 export default function NewClassPage() {
   const router = useRouter();
-  const [teacherId, setTeacherId] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [classData, setClassData] = useState<ClassData | null>(null);
   const [copied, setCopied] = useState(false);
 
   const handleCreate = async () => {
-    if (!teacherId.trim()) {
-      setError('Syötä opettajan tunnus');
-      return;
-    }
-
     setLoading(true);
     setError(null);
 
     try {
+      // Teacher ID comes from authenticated session cookie - no need to send it
       const response = await fetch('/api/classes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ teacherId })
+        body: JSON.stringify({})
       });
 
       const data = await response.json();
@@ -223,21 +218,10 @@ export default function NewClassPage() {
                 </div>
               )}
 
-              {/* Teacher ID input */}
-              <div>
-                <label htmlFor="teacherId" className="block text-sm font-medium text-urak-text-secondary mb-2">
-                  Opettajan tunnus
-                </label>
-                <input
-                  id="teacherId"
-                  type="text"
-                  value={teacherId}
-                  onChange={(e) => setTeacherId(e.target.value)}
-                  placeholder="esim. matti-opettaja"
-                  className="w-full px-4 py-3 bg-white/5 border border-urak-border rounded-xl text-white placeholder:text-urak-text-muted focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/40 focus:border-urak-accent-blue/40 transition-all"
-                />
-                <p className="text-sm text-urak-text-muted mt-2">
-                  Tunnus auttaa tunnistamaan sinut omistajaksi
+              {/* Info text */}
+              <div className="bg-urak-accent-blue/10 border border-urak-accent-blue/20 rounded-xl p-4">
+                <p className="text-sm text-urak-text-secondary">
+                  Luokka liitetään automaattisesti tilillesi. Vain sinä näet luokan tulokset.
                 </p>
               </div>
 
