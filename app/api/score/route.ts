@@ -247,11 +247,25 @@ export async function POST(request: NextRequest) {
           full_results: fullResults
         };
 
-        const { data, error } = await supabaseAdmin
+        // Try to insert with full_results first, fall back to without if column doesn't exist
+        let { data, error } = await supabaseAdmin
           .from('test_results')
           .insert(testResult as any)
           .select('id')
           .single() as { data: { id: string } | null; error: any };
+
+        // If the error is about missing full_results column, retry without it
+        if (error?.code === 'PGRST204' && error?.message?.includes('full_results')) {
+          console.log('[API] full_results column not found, retrying without it');
+          const { full_results, ...testResultWithoutFullResults } = testResult;
+          const retryResult = await supabaseAdmin
+            .from('test_results')
+            .insert(testResultWithoutFullResults as any)
+            .select('id')
+            .single() as { data: { id: string } | null; error: any };
+          data = retryResult.data;
+          error = retryResult.error;
+        }
 
         if (error) {
           console.error('[API] Error saving to Supabase:', error);
