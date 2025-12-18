@@ -80,20 +80,36 @@ export async function GET(
       });
     }
 
-    console.log(`[API/Results] Fetching for classId: ${classId} (type: ${typeof classId}, length: ${classId?.length})`);
-    
+    console.log(`[API/Results] Fetching for classId: ${classId} (type: ${typeof classId}, length: ${classId?.length}), teacherId: ${teacherId}`);
+
     // First, check if class exists AND belongs to this teacher
     const { data: classData, error: classError } = await supabaseAdmin
       .from('classes')
       .select('id, teacher_id, class_token, created_at')
       .eq('id', classId)
-      .eq('teacher_id', teacherId)
-      .single();
-    
-    if (classError || !classData) {
-      console.error('[API/Results] Class not found or access denied:', classError?.message);
+      .maybeSingle() as { data: { id: string; teacher_id: string | null; class_token: string; created_at: string } | null; error: any };
+
+    if (classError) {
+      console.error('[API/Results] Class query error:', classError?.message);
       return NextResponse.json(
-        { success: false, error: 'Class not found or access denied' },
+        { success: false, error: 'Database error' },
+        { status: 500 }
+      );
+    }
+
+    if (!classData) {
+      console.error('[API/Results] Class not found:', classId);
+      return NextResponse.json(
+        { success: false, error: 'Class not found' },
+        { status: 404 }
+      );
+    }
+
+    // Check ownership - allow if teacher_id matches OR if teacher_id is null (legacy classes)
+    if (classData.teacher_id && classData.teacher_id !== teacherId) {
+      console.error('[API/Results] Access denied - teacher mismatch:', { classTeacher: classData.teacher_id, requestTeacher: teacherId });
+      return NextResponse.json(
+        { success: false, error: 'Access denied' },
         { status: 403 }
       );
     }
@@ -145,7 +161,7 @@ export async function GET(
     // If that fails, try fetching all and filtering (fallback debug method)
     if ((!data || data.length === 0) && !error) {
       console.log(`[API/Results] Query with .eq() returned 0 results. Trying fallback: fetch all then filter...`);
-      const { data: allData, error: allError } = await supabaseAdmin
+      const { data: allData } = await supabaseAdmin
         .from('results')
         .select('*')
         .order('created_at', { ascending: false });
