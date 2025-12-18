@@ -3,13 +3,25 @@
 /**
  * Create New Class Page
  * Teacher creates a class and generates PINs
+ * Uses UraKompassi design system colors
  */
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { generateClassToken } from '@/lib/teacherCrypto';
-import TeacherNav from '@/components/TeacherNav';
-import TeacherFooter from '@/components/TeacherFooter';
+import DashboardLayout from '@/components/dashboard/DashboardLayout';
+import {
+  ArrowLeft,
+  Copy,
+  Check,
+  ExternalLink,
+  AlertTriangle,
+  CheckCircle2,
+  Loader2,
+  BookOpen,
+  Users,
+  ClipboardList,
+  BarChart3
+} from 'lucide-react';
 
 interface ClassData {
   classId: string;
@@ -23,6 +35,7 @@ export default function NewClassPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [classData, setClassData] = useState<ClassData | null>(null);
+  const [copied, setCopied] = useState(false);
 
   const handleCreate = async () => {
     if (!teacherId.trim()) {
@@ -59,126 +72,262 @@ export default function NewClassPage() {
     }
   };
 
+  const handleCopyLink = () => {
+    if (classData) {
+      navigator.clipboard.writeText(`https://urakompassi.fi/${classData.classToken}`);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  // Success state - class created
   if (classData) {
     return (
-      <div className="min-h-screen flex flex-col">
-        <TeacherNav />
-        <div className="flex-1 max-w-4xl mx-auto p-8 w-full">
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg p-8">
-            <h1 className="text-3xl font-bold mb-6 text-white">Luokka luotu!</h1>
-            
-            <div className="space-y-4 mb-8">
-              
+      <DashboardLayout
+        title="Luokka luotu!"
+        subtitle="Uusi luokka on valmis käytettäväksi"
+      >
+        {/* Back button */}
+        <button
+          onClick={() => router.push('/teacher/classes')}
+          className="flex items-center gap-2 text-urak-text-secondary hover:text-white mb-6 transition-colors group"
+        >
+          <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+          <span className="text-sm">Takaisin luokkalistaan</span>
+        </button>
+
+        {/* Success card */}
+        <div className="max-w-2xl">
+          <div className="bg-urak-surface border border-urak-border rounded-2xl overflow-hidden">
+            {/* Success header */}
+            <div className="bg-urak-accent-blue/10 px-6 py-5 border-b border-urak-border">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-urak-accent-blue/20 flex items-center justify-center">
+                  <CheckCircle2 className="h-5 w-5 text-urak-accent-blue" />
+                </div>
+                <div>
+                  <h2 className="text-lg font-semibold text-white">Luokka luotu onnistuneesti!</h2>
+                  <p className="text-sm text-urak-text-muted">Voit nyt jakaa linkin oppilaille</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 space-y-6">
+              {/* Public link */}
               <div>
-                <label className="font-semibold text-neutral-200">Julkinen linkki (anonyymi):</label>
-                <p className="text-primary font-mono text-sm bg-white/5 backdrop-blur-sm border border-white/10 p-2 rounded break-all">
-                  https://urakompassi.fi/{classData.classToken}
-                </p>
+                <label className="block text-sm font-medium text-urak-text-secondary mb-2">
+                  Julkinen linkki (anonyymi)
+                </label>
+                <div className="flex items-center gap-2">
+                  <div className="flex-1 bg-white/5 border border-urak-border rounded-xl px-4 py-3">
+                    <code className="text-urak-accent-blue text-sm font-mono break-all">
+                      https://urakompassi.fi/{classData.classToken}
+                    </code>
+                  </div>
+                  <button
+                    onClick={handleCopyLink}
+                    className="flex items-center gap-2 px-4 py-3 bg-urak-accent-blue/10 hover:bg-urak-accent-blue/20 border border-urak-accent-blue/20 rounded-xl text-urak-accent-blue transition-colors"
+                  >
+                    {copied ? (
+                      <Check className="h-5 w-5" />
+                    ) : (
+                      <Copy className="h-5 w-5" />
+                    )}
+                  </button>
+                </div>
               </div>
-              
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                <p className="text-sm text-yellow-800">
-                  ⚠️ Tallenna tämä linkki turvallisesti. Oppilaat tarvitsevat sen nähdäkseen tuloksensa.
-                </p>
-              </div>
-            </div>
 
-            <div className="flex gap-4">
-              <button
-                onClick={() => router.push(`/teacher/classes/${classData.classId}`)}
-                className="flex-1 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary transition"
-              >
-                Siirry luokkahallintaan
-              </button>
-              <button
-                onClick={() => setClassData(null)}
-                className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-neutral-900/20 transition"
-              >
-                Luo toinen luokka
-              </button>
+              {/* Warning */}
+              <div className="bg-white/5 border border-urak-border rounded-xl p-4">
+                <div className="flex items-start gap-3">
+                  <AlertTriangle className="h-5 w-5 text-urak-text-secondary flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-urak-text-secondary">
+                    Tallenna tämä linkki turvallisesti. Oppilaat tarvitsevat sen nähdäkseen tuloksensa.
+                  </p>
+                </div>
+              </div>
+
+              {/* Actions */}
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <button
+                  onClick={() => router.push(`/teacher/classes/${classData.classId}`)}
+                  className="flex-1 flex items-center justify-center gap-2 bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white px-6 py-3 rounded-xl font-medium transition-all"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  Siirry luokkahallintaan
+                </button>
+                <button
+                  onClick={() => setClassData(null)}
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-urak-border rounded-xl text-urak-text-secondary transition-colors"
+                >
+                  Luo toinen luokka
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <TeacherFooter />
-      </div>
+      </DashboardLayout>
     );
   }
 
+  // Create form
   return (
-    <div className="min-h-screen flex flex-col">
-      <TeacherNav />
-      <div className="flex-1 max-w-2xl mx-auto p-8 w-full">
-        <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg p-8">
-          <h1 className="text-3xl font-bold mb-6 text-white">Luo uusi luokka</h1>
-          
-          {error && (
-            <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-              <p className="text-red-800 font-semibold mb-2">⚠️ {error}</p>
-              <p className="text-red-700 text-sm mb-3">
-                Luokan luominen epäonnistui.
+    <DashboardLayout
+      title="Luo uusi luokka"
+      subtitle="Luo luokka ja jaa PIN-koodit oppilaille"
+    >
+      {/* Back button */}
+      <button
+        onClick={() => router.push('/teacher/classes')}
+        className="flex items-center gap-2 text-urak-text-secondary hover:text-white mb-6 transition-colors group"
+      >
+        <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+        <span className="text-sm">Takaisin luokkalistaan</span>
+      </button>
+
+      <div className="grid lg:grid-cols-3 gap-6">
+        {/* Main form */}
+        <div className="lg:col-span-2">
+          <div className="bg-urak-surface border border-urak-border rounded-2xl overflow-hidden">
+            {/* Header */}
+            <div className="bg-urak-accent-blue/10 px-6 py-4 border-b border-urak-border">
+              <h2 className="text-lg font-semibold text-white">Luokan tiedot</h2>
+              <p className="text-sm text-urak-text-muted mt-0.5">
+                Syötä tiedot uuden luokan luomiseksi
               </p>
-              <div className="text-sm text-red-700 space-y-1">
-                <p className="font-semibold">Ratkaisu:</p>
-                <ol className="list-decimal list-inside space-y-1 ml-2">
-                  <li>Tarkista verkkoyhteys ja yritä uudelleen</li>
-                  <li>Varmista että olet kirjautunut sisään</li>
-                  <li>Jos ongelma jatkuu, ota yhteyttä tukeen: info@urakompassi.fi</li>
-                </ol>
-                <p className="mt-2">Tarvitsetko apua? Avaa FAQ-ikkuna yläpalkin kautta.</p>
+            </div>
+
+            {/* Form content */}
+            <div className="p-6 space-y-6">
+              {/* Error message */}
+              {error && (
+                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4">
+                  <div className="flex items-start gap-3">
+                    <AlertTriangle className="h-5 w-5 text-red-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-sm font-medium text-red-300">{error}</p>
+                      <p className="text-sm text-red-200/60 mt-1">
+                        Luokan luominen epäonnistui. Tarkista tiedot ja yritä uudelleen.
+                      </p>
+                      <div className="text-sm text-red-200/60 mt-3 space-y-1">
+                        <p className="font-medium">Ratkaisu:</p>
+                        <ol className="list-decimal list-inside space-y-1 ml-2">
+                          <li>Tarkista verkkoyhteys ja yritä uudelleen</li>
+                          <li>Varmista että olet kirjautunut sisään</li>
+                          <li>Jos ongelma jatkuu, ota yhteyttä tukeen: info@urakompassi.fi</li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Teacher ID input */}
+              <div>
+                <label htmlFor="teacherId" className="block text-sm font-medium text-urak-text-secondary mb-2">
+                  Opettajan tunnus
+                </label>
+                <input
+                  id="teacherId"
+                  type="text"
+                  value={teacherId}
+                  onChange={(e) => setTeacherId(e.target.value)}
+                  placeholder="esim. matti-opettaja"
+                  className="w-full px-4 py-3 bg-white/5 border border-urak-border rounded-xl text-white placeholder:text-urak-text-muted focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/40 focus:border-urak-accent-blue/40 transition-all"
+                />
+                <p className="text-sm text-urak-text-muted mt-2">
+                  Tunnus auttaa tunnistamaan sinut omistajaksi
+                </p>
               </div>
-            </div>
-          )}
 
-          <div className="space-y-4">
-            <div>
-              <label htmlFor="teacherId" className="block font-semibold text-neutral-200 mb-2">
-                Opettajan tunnus
-              </label>
-              <input
-                id="teacherId"
-                type="text"
-                value={teacherId}
-                onChange={(e) => setTeacherId(e.target.value)}
-                placeholder="esim. matti-opettaja"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-              <p className="text-sm text-neutral-400 mt-1">
-                Tunnus auttaa tunnistamaan sinut omistajaksi
-              </p>
-            </div>
+              {/* Submit button */}
+              <button
+                onClick={handleCreate}
+                disabled={loading}
+                className="w-full flex items-center justify-center gap-2 bg-urak-accent-blue hover:bg-urak-accent-blue/90 disabled:bg-urak-accent-blue/50 text-white px-6 py-3.5 rounded-xl font-medium transition-all disabled:cursor-not-allowed"
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                    <span>Luodaan...</span>
+                  </>
+                ) : (
+                  <span>Luo luokka</span>
+                )}
+              </button>
 
-            <button
-              onClick={handleCreate}
-              disabled={loading}
-              className="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed transition"
-            >
-              {loading ? 'Luodaan...' : 'Luo luokka'}
-            </button>
-
-            <button
-              onClick={() => router.push('/teacher/classes')}
-              className="w-full border border-gray-300 text-neutral-200 px-6 py-3 rounded-lg hover:bg-neutral-900/20 transition"
-            >
-              Peruuta
-            </button>
-          </div>
-
-          <div className="mt-8 space-y-4">
-            
-            <div className="bg-slate-50 border border-primary/20 rounded-lg p-4">
-              <h3 className="font-semibold text-blue-900 mb-2">Mitä tapahtuu?</h3>
-              <ul className="text-sm text-primary space-y-1">
-                <li>1. Luo luokka → saat luokkatunnuksen ja julkisen linkin</li>
-                <li>2. Luo PIN-koodit → jaa oppilaille</li>
-                <li>3. Syötä nimilista (vain omalle laitteellesi)</li>
-                <li>4. Tarkastele tuloksia nimillä yhdistettynä</li>
-              </ul>
-            </div>
+              {/* Cancel button */}
+              <button
+                onClick={() => router.push('/teacher/classes')}
+                className="w-full flex items-center justify-center px-6 py-3 bg-white/5 hover:bg-white/10 border border-urak-border rounded-xl text-urak-text-secondary transition-colors"
+              >
+                Peruuta
+              </button>
             </div>
           </div>
         </div>
-        <TeacherFooter />
-      </div>
-    );
-  }
 
+        {/* Info sidebar */}
+        <div className="lg:col-span-1">
+          <div className="bg-urak-surface border border-urak-border rounded-2xl overflow-hidden">
+            <div className="bg-urak-accent-blue/10 px-5 py-4 border-b border-urak-border">
+              <h3 className="font-semibold text-white">Miten tämä toimii?</h3>
+            </div>
+            <div className="p-5">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="h-8 w-8 rounded-lg bg-urak-accent-blue/10 flex items-center justify-center flex-shrink-0">
+                    <BookOpen className="h-4 w-4 text-urak-accent-blue" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-white">1. Luo luokka</p>
+                    <p className="text-xs text-urak-text-muted mt-0.5">
+                      Saat luokkatunnuksen ja julkisen linkin
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="h-8 w-8 rounded-lg bg-urak-accent-blue/10 flex items-center justify-center flex-shrink-0">
+                    <Users className="h-4 w-4 text-urak-accent-blue" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-white">2. Luo PIN-koodit</p>
+                    <p className="text-xs text-urak-text-muted mt-0.5">
+                      Jaa PIN-koodit oppilaille
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="h-8 w-8 rounded-lg bg-urak-accent-blue/10 flex items-center justify-center flex-shrink-0">
+                    <ClipboardList className="h-4 w-4 text-urak-accent-blue" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-white">3. Syötä nimilista</p>
+                    <p className="text-xs text-urak-text-muted mt-0.5">
+                      Vain omalle laitteellesi
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="h-8 w-8 rounded-lg bg-urak-accent-blue/10 flex items-center justify-center flex-shrink-0">
+                    <BarChart3 className="h-4 w-4 text-urak-accent-blue" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-white">4. Seuraa tuloksia</p>
+                    <p className="text-xs text-urak-text-muted mt-0.5">
+                      Tarkastele tuloksia nimillä yhdistettynä
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </DashboardLayout>
+  );
+}

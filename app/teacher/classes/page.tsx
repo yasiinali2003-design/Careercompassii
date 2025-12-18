@@ -2,13 +2,26 @@
 
 /**
  * Teacher Classes Page
- * Dashboard overview of all classes
+ * Professional dashboard overview of all classes
+ * Inspired by Dashly X design
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
-import TeacherNav from '@/components/TeacherNav';
-import TeacherFooter from '@/components/TeacherFooter';
+import DashboardLayout from '@/components/dashboard/DashboardLayout';
+import ClassCard from '@/components/dashboard/ClassCard';
+import StatsCard from '@/components/dashboard/StatsCard';
+import {
+  Users,
+  CheckCircle,
+  Clock,
+  Plus,
+  Search,
+  SlidersHorizontal,
+  LayoutGrid,
+  List,
+  TrendingUp,
+} from 'lucide-react';
 
 interface ClassStats {
   totalPins: number;
@@ -30,21 +43,9 @@ interface TeacherClass {
 export default function TeacherClassesPage() {
   const [classes, setClasses] = useState<TeacherClass[]>([]);
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(false);
-  const ITEMS_PER_PAGE = 12; // Show 12 classes per page
-
-  const handleCopyLink = useCallback((link: string) => {
-    if (typeof navigator === 'undefined' || !navigator.clipboard) {
-      alert('Kopiointi ei ole tuettu tässä selaimessa. Kopioi linkki käsin.');
-      return;
-    }
-
-    navigator.clipboard
-      .writeText(link)
-      .then(() => alert('Linkki kopioitu leikepöydälle.'))
-      .catch(() => alert('Linkin kopiointi epäonnistui. Yritä kopioida linkki käsin.'));
-  }, []);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'completion'>('newest');
 
   useEffect(() => {
     async function fetchClasses() {
@@ -54,15 +55,7 @@ export default function TeacherClassesPage() {
         const data = await response.json();
 
         if (data.success && Array.isArray(data.classes)) {
-          // Sort by most recent first
-          const sortedClasses = data.classes.sort((a: TeacherClass, b: TeacherClass) => 
-            new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-          );
-          
-          // Paginate client-side (for now - can be moved to server if needed)
-          const paginatedClasses = sortedClasses.slice(0, page * ITEMS_PER_PAGE);
-          setClasses(paginatedClasses);
-          setHasMore(sortedClasses.length > paginatedClasses.length);
+          setClasses(data.classes);
         } else {
           console.error('Failed to fetch classes:', data.error);
         }
@@ -74,190 +67,221 @@ export default function TeacherClassesPage() {
     }
 
     fetchClasses();
-  }, [page]);
+  }, []);
 
-  const formatDate = (isoDate: string) => {
-    try {
-      return new Date(isoDate).toLocaleDateString('fi-FI');
-    } catch {
-      return isoDate;
+  // Calculate overall stats
+  const overallStats = useMemo(() => {
+    const totalClasses = classes.length;
+    const totalStudents = classes.reduce((acc, c) => acc + (c.stats?.totalPins ?? 0), 0);
+    const completedTests = classes.reduce((acc, c) => acc + (c.stats?.completedResults ?? 0), 0);
+    const pendingTests = classes.reduce((acc, c) => acc + (c.stats?.pendingCount ?? 0), 0);
+    const avgCompletion = totalClasses > 0
+      ? Math.round(classes.reduce((acc, c) => acc + (c.stats?.completionRate ?? 0), 0) / totalClasses)
+      : 0;
+
+    return { totalClasses, totalStudents, completedTests, pendingTests, avgCompletion };
+  }, [classes]);
+
+  // Filter and sort classes
+  const filteredClasses = useMemo(() => {
+    let result = [...classes];
+
+    // Filter by search
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      result = result.filter(c =>
+        c.id.toLowerCase().includes(query) ||
+        c.class_token.toLowerCase().includes(query)
+      );
     }
-  };
 
-  const formatDateTime = (isoDate: string | null | undefined) => {
-    if (!isoDate) return 'Ei vielä tuloksia';
-    try {
-      return new Date(isoDate).toLocaleString('fi-FI', {
-        dateStyle: 'short',
-        timeStyle: 'short',
-      });
-    } catch {
-      return isoDate;
-    }
-  };
+    // Sort
+    result.sort((a, b) => {
+      if (sortBy === 'newest') {
+        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+      } else if (sortBy === 'oldest') {
+        return new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
+      } else {
+        return (b.stats?.completionRate ?? 0) - (a.stats?.completionRate ?? 0);
+      }
+    });
 
-  const renderProgressBar = (percentage: number) => {
-    const safePercentage = Math.max(0, Math.min(percentage, 100));
-
-    return (
-      <div className="space-y-1">
-        <div className="h-2 rounded-full bg-white/10 overflow-hidden">
-          <div
-            className="h-full bg-gradient-to-r from-urak-accent-blue to-urak-accent-green transition-all"
-            style={{ width: `${safePercentage}%` }}
-          />
-        </div>
-        <div className="flex items-center justify-between text-xs text-urak-text-secondary">
-          <span>Valmiina</span>
-          <span>{safePercentage}%</span>
-        </div>
-      </div>
-    );
-  };
+    return result;
+  }, [classes, searchQuery, sortBy]);
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col">
-        <TeacherNav />
-        <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
-          <h1 className="text-3xl font-bold mb-8 text-white">Omat luokat</h1>
-          <div className="text-center py-12">
-            <div className="animate-spin h-8 w-8 border-4 border-urak-accent-blue border-t-transparent rounded-full mx-auto"></div>
+      <DashboardLayout title="Luokat" subtitle="Ladataan...">
+        <div className="flex items-center justify-center py-20">
+          <div className="flex flex-col items-center gap-4">
+            <div className="h-10 w-10 border-4 border-urak-accent-blue border-t-transparent rounded-full animate-spin" />
+            <p className="text-urak-text-muted text-sm">Ladataan luokkia...</p>
           </div>
         </div>
-        <TeacherFooter />
-      </div>
+      </DashboardLayout>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <TeacherNav />
-      <div className="flex-1 max-w-6xl mx-auto p-8 w-full">
-        <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div>
-            <h1 className="text-3xl font-bold mb-2 text-white">Omat luokat</h1>
-            <p className="text-urak-text-secondary">Yleisnäkymä luokkien etenemisestä ja ilmoituksista</p>
-          </div>
-          <Link
-            href="/teacher/classes/new"
-            className="inline-flex items-center justify-center bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white px-6 py-3 rounded-lg transition-colors"
-          >
-            ➕ Luo uusi luokka
-          </Link>
-        </div>
-
-        {classes.length === 0 ? (
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow p-12 text-center">
-            <p className="text-urak-text-secondary mb-6">Sinulla ei ole vielä luokkia</p>
-            <Link
-              href="/teacher/classes/new"
-              className="inline-block bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white px-6 py-3 rounded-lg transition-colors"
-            >
-              Luo uusi luokka
-            </Link>
-          </div>
-        ) : (
-          <>
-            <div className="grid gap-6 md:grid-cols-2">
-              {classes.map((classItem) => {
-              const stats = classItem.stats;
-              const completed = stats?.completedResults ?? 0;
-              const totalPins = stats?.totalPins ?? 0;
-              const pending = stats?.pendingCount ?? Math.max(totalPins - completed, 0);
-              const completionRate = stats?.completionRate ?? 0;
-              const atRiskCount = stats?.atRiskCount ?? 0;
-              const lastSubmission = formatDateTime(stats?.lastSubmission);
-              const studentTestPath = `/${classItem.class_token}/test`;
-              const classResultsPath = `/${classItem.class_token}`;
-
-              return (
-                <div
-                  key={classItem.id}
-                  className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-sm p-6 space-y-5 flex flex-col"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <h2 className="text-xl font-semibold text-white">
-                        Luokka {classItem.id.substring(0, 8)}
-                      </h2>
-                      <p className="text-sm text-urak-text-muted">
-                        Luotu {formatDate(classItem.created_at)}
-                      </p>
-                    </div>
-                    {atRiskCount > 0 && (
-                      <span className="inline-flex items-center gap-1 bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full">
-                        ⚠️ {atRiskCount} tarvitsee huomiota
-                      </span>
-                    )}
-                  </div>
-
-                  {renderProgressBar(completionRate)}
-
-                  <div className="grid grid-cols-2 gap-4 text-sm text-neutral-300">
-                    <div>
-                      <p className="font-semibold text-urak-text-primary">Suoritetut testit</p>
-                      <p className="text-urak-text-secondary">{completed} / {totalPins}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-urak-text-primary">Kesken</p>
-                      <p className="text-urak-text-secondary">{pending}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-urak-text-primary">Viimeisin tulos</p>
-                      <p className="text-urak-text-secondary">{lastSubmission}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-urak-text-primary">PIN-linkki</p>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          const origin = typeof window !== 'undefined' ? window.location.origin : '';
-                          handleCopyLink(`${origin}${studentTestPath}`);
-                        }}
-                        className="text-urak-accent-blue hover:text-urak-accent-blue/80 transition-colors"
-                      >
-                        Kopioi testilinkki
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 mt-auto flex flex-wrap gap-3">
-                    <Link
-                      href={`/teacher/classes/${classItem.id}`}
-                      className="inline-flex items-center justify-center bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                    >
-                      Avaa luokka
-                    </Link>
-                    <Link
-                      href={classResultsPath}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center bg-white/5 border border-white/10 hover:bg-white/10 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                    >
-                      Näytä tulossivu
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-            </div>
-            
-            {/* Load More Button */}
-            {hasMore && (
-              <div className="mt-8 text-center">
-                <button
-                  onClick={() => setPage(prev => prev + 1)}
-                  className="px-6 py-3 bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white rounded-lg transition-colors font-medium"
-                >
-                  Näytä lisää luokkia
-                </button>
-              </div>
-            )}
-          </>
-        )}
+    <DashboardLayout
+      title="Luokat"
+      subtitle="Hallitse luokkia ja seuraa oppilaiden etenemistä"
+      actions={
+        <Link
+          href="/teacher/classes/new"
+          className="flex items-center gap-2 bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white text-sm font-medium px-4 py-2 rounded-xl transition-colors"
+        >
+          <Plus className="h-4 w-4" />
+          <span className="hidden sm:inline">Luo luokka</span>
+        </Link>
+      }
+    >
+      {/* Stats overview */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <StatsCard
+          title="Luokkia yhteensä"
+          value={overallStats.totalClasses}
+          icon={LayoutGrid}
+          variant="primary"
+        />
+        <StatsCard
+          title="Oppilaita"
+          value={overallStats.totalStudents}
+          icon={Users}
+          variant="default"
+        />
+        <StatsCard
+          title="Valmiit testit"
+          value={overallStats.completedTests}
+          icon={CheckCircle}
+          variant="success"
+        />
+        <StatsCard
+          title="Keskimääräinen valmius"
+          value={`${overallStats.avgCompletion}%`}
+          icon={TrendingUp}
+          variant="default"
+          subtitle={`${overallStats.pendingTests} kesken`}
+        />
       </div>
-      <TeacherFooter />
-    </div>
+
+      {/* Filters and search */}
+      <div className="bg-urak-surface rounded-2xl border border-urak-border p-4 mb-6">
+        <div className="flex flex-col sm:flex-row gap-4">
+          {/* Search */}
+          <div className="flex-1 relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-urak-text-muted" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Hae luokkaa..."
+              className="w-full pl-10 pr-4 py-2.5 bg-white/5 border border-urak-border rounded-xl text-sm text-white placeholder:text-urak-text-muted focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/30 focus:border-urak-accent-blue/50 transition-all"
+            />
+          </div>
+
+          {/* Sort */}
+          <div className="flex items-center gap-2">
+            <SlidersHorizontal className="h-4 w-4 text-urak-text-muted" />
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value as 'newest' | 'oldest' | 'completion')}
+              className="bg-white/5 border border-urak-border rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/30 cursor-pointer"
+            >
+              <option value="newest">Uusin ensin</option>
+              <option value="oldest">Vanhin ensin</option>
+              <option value="completion">Valmiusaste</option>
+            </select>
+          </div>
+
+          {/* View mode toggle */}
+          <div className="flex items-center bg-white/5 border border-urak-border rounded-xl p-1">
+            <button
+              onClick={() => setViewMode('grid')}
+              className={`p-2 rounded-lg transition-colors ${
+                viewMode === 'grid'
+                  ? 'bg-urak-accent-blue/20 text-urak-accent-blue'
+                  : 'text-urak-text-muted hover:text-white'
+              }`}
+            >
+              <LayoutGrid className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => setViewMode('list')}
+              className={`p-2 rounded-lg transition-colors ${
+                viewMode === 'list'
+                  ? 'bg-urak-accent-blue/20 text-urak-accent-blue'
+                  : 'text-urak-text-muted hover:text-white'
+              }`}
+            >
+              <List className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Classes grid/list */}
+      {filteredClasses.length === 0 ? (
+        <div className="bg-urak-surface rounded-2xl border border-urak-border p-12 text-center">
+          {classes.length === 0 ? (
+            <>
+              <div className="w-16 h-16 bg-urak-accent-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <LayoutGrid className="h-8 w-8 text-urak-accent-blue" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Ei vielä luokkia
+              </h3>
+              <p className="text-urak-text-muted text-sm mb-6 max-w-md mx-auto">
+                Aloita luomalla ensimmäinen luokka. Oppilaat voivat tehdä testin käyttämällä luokan linkkiä.
+              </p>
+              <Link
+                href="/teacher/classes/new"
+                className="inline-flex items-center gap-2 bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-white text-sm font-medium px-6 py-3 rounded-xl transition-colors"
+              >
+                <Plus className="h-4 w-4" />
+                Luo ensimmäinen luokka
+              </Link>
+            </>
+          ) : (
+            <>
+              <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Search className="h-8 w-8 text-urak-text-muted" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">
+                Ei hakutuloksia
+              </h3>
+              <p className="text-urak-text-muted text-sm">
+                Kokeile eri hakusanaa
+              </p>
+            </>
+          )}
+        </div>
+      ) : (
+        <div className={
+          viewMode === 'grid'
+            ? 'grid gap-4 sm:grid-cols-2 xl:grid-cols-3'
+            : 'flex flex-col gap-3'
+        }>
+          {filteredClasses.map((classItem) => (
+            <ClassCard
+              key={classItem.id}
+              id={classItem.id}
+              classToken={classItem.class_token}
+              createdAt={classItem.created_at}
+              stats={classItem.stats}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Results count */}
+      {filteredClasses.length > 0 && (
+        <div className="mt-6 text-center">
+          <p className="text-sm text-urak-text-muted">
+            Näytetään {filteredClasses.length} / {classes.length} luokkaa
+          </p>
+        </div>
+      )}
+    </DashboardLayout>
   );
 }
