@@ -4878,62 +4878,112 @@ export function rankCareers(
   // Calculate category affinities based on subdimension strengths (vahvuudet)
   // These weights align with what the personality analysis emphasizes
   // IMPORTANT: Weights are calibrated to ensure proper category differentiation
+  // TARGET: 100% alignment between profile types and expected categories
+
+  // Helper function to get max value from multiple possible keys
+  const getMax = (...vals: (number | undefined)[]) => Math.max(...vals.map(v => v || 0));
+
+  // Extract key subdimensions with fallbacks
+  const creative = interests.creative || 0;
+  const technology = interests.technology || 0;
+  const people = interests.people || 0;
+  const hands_on = interests.hands_on || 0;
+  const analytical = interests.analytical || 0;
+  const leadership = getMax(interests.leadership, workstyle.leadership);
+  const environment = getMax(interests.environment, interests.impact, interests.outdoor);
+  const health = interests.health || 0;
+  const business = getMax(interests.business, values.business);
+  const innovation = interests.innovation || 0;
+  const problem_solving = interests.problem_solving || 0;
+  const growth = interests.growth || 0;
+  const planning = workstyle.planning || 0;
+  const organization = getMax(workstyle.organization, workstyle.structure);
+  const outdoor = getMax(interests.outdoor, workstyle.outdoor);
+
   const categoryAffinities: Record<string, number> = {
     // LUOVA: creative expression and artistic interests
-    // BOOSTED: Higher base weight to compete with innovoija
-    luova: (interests.creative || 0) * 3.5 +
+    // Priority: creative > innovation (only if creative is strong)
+    luova: creative * 4.0 +
            (interests.arts_culture || 0) * 2.5 +
            (interests.writing || 0) * 2.0 +
-           (interests.innovation || 0) * 0.5 +
-           // Penalty when technology is high (should be innovoija)
-           ((interests.technology || 0) > 0.6 ? -1.0 : 0),
+           // Small innovation bonus only if creative is dominant
+           (creative > 0.5 ? innovation * 0.8 : 0) +
+           // Penalty when technology dominates creative
+           (technology > creative + 0.2 ? -2.0 : 0),
 
     // INNOVOIJA: technology, analytical thinking, problem-solving
-    // REDUCED: Lower weights to allow other categories to compete
-    innovoija: (interests.technology || 0) * 2.2 +
-               (interests.analytical || 0) * 1.2 +
-               (interests.problem_solving || 0) * 1.2 +
-               (interests.innovation || 0) * 1.0,
+    // Priority: technology > analytical > problem_solving
+    innovoija: technology * 3.0 +
+               analytical * 1.5 +
+               problem_solving * 1.5 +
+               innovation * 1.2 +
+               // Penalty when creative dominates (should be luova)
+               (creative > technology + 0.2 ? -1.5 : 0) +
+               // Penalty when hands_on dominates (should be rakentaja)
+               (hands_on > technology + 0.2 ? -1.5 : 0),
 
     // AUTTAJA: people-oriented, helping, healthcare
-    auttaja: (interests.people || 0) * 2.8 +
-             (interests.health || 0) * 2.5 +
-             (values.impact || values.social_impact || 0) * 1.8 +
-             (interests.education || 0) * 1.2 +
-             (workstyle.teaching || 0) * 1.5,
+    // Priority: people + health + growth
+    auttaja: people * 3.5 +
+             health * 3.0 +
+             growth * 2.0 +
+             (values.impact || values.social_impact || 0) * 1.5 +
+             // Penalty when technology dominates (should be innovoija)
+             (technology > people + 0.3 ? -2.0 : 0) +
+             // Penalty when hands_on is much stronger (should be rakentaja)
+             (hands_on > people + health + 0.3 ? -1.5 : 0),
 
     // JOHTAJA: leadership, business, advancement
-    johtaja: (interests.leadership || workstyle.leadership || 0) * 2.8 +
-             (interests.business || values.business || 0) * 2.2 +
+    // Priority: leadership > business
+    johtaja: leadership * 4.0 +
+             business * 3.0 +
              (values.advancement || 0) * 1.5 +
-             (values.entrepreneurship || 0) * 1.2,
+             (values.entrepreneurship || 0) * 1.5 +
+             // Penalty when creative dominates (should be luova)
+             (creative > leadership + 0.3 ? -1.5 : 0),
 
     // RAKENTAJA: hands-on work, practical skills
-    // BOOSTED: Higher base weight to compete with innovoija
-    rakentaja: (interests.hands_on || 0) * 3.5 +
+    // Priority: hands_on > outdoor (without environment focus)
+    // CRITICAL: Must beat auttaja when hands_on is the primary trait
+    rakentaja: hands_on * 4.5 +
                (workstyle.precision || 0) * 2.0 +
                (workstyle.performance || 0) * 1.5 +
-               (interests.outdoor || workstyle.outdoor || 0) * 1.5 +
-               // Penalty when technology AND innovation are high (should be innovoija)
-               ((interests.technology || 0) > 0.5 && (interests.innovation || 0) > 0.4 ? -1.5 : 0),
+               // Outdoor contributes only if environment is not dominant
+               (environment < hands_on ? outdoor * 1.5 : 0) +
+               // Penalty when technology AND innovation dominate (should be innovoija)
+               (technology > hands_on + 0.2 && innovation > 0.4 ? -2.5 : 0) +
+               // Penalty when people/health dominate (should be auttaja)
+               (people + health > hands_on + 0.4 ? -2.0 : 0),
 
     // YMPARISTON-PUOLUSTAJA: environment, nature, sustainability
-    'ympariston-puolustaja': (interests.environment || 0) * 3.0 +
-                              (interests.nature || 0) * 2.5 +
-                              (interests.outdoor || workstyle.outdoor || 0) * 1.8 +
-                              (values.social_impact || 0) * 1.0,
+    // Priority: environment > outdoor > impact
+    // CRITICAL: Must beat auttaja when environment is the primary trait
+    'ympariston-puolustaja': environment * 4.5 +
+                              (interests.nature || 0) * 3.0 +
+                              outdoor * 2.5 +
+                              (values.social_impact || 0) * 1.5 +
+                              // Penalty when people/health dominate (should be auttaja)
+                              (people + health > environment + outdoor + 0.3 ? -2.5 : 0) +
+                              // Penalty when hands_on dominates without environment (should be rakentaja)
+                              (hands_on > environment + 0.3 && environment < 0.4 ? -2.0 : 0),
 
     // VISIONAARI: strategic thinking, global perspective, planning
-    visionaari: (values.global || interests.global || 0) * 2.5 +
-                (workstyle.planning || 0) * 2.0 +
-                (interests.innovation || 0) * 0.8 +
-                (values.career_clarity || 0) * 1.0,
+    // Priority: planning + global perspective
+    visionaari: (values.global || interests.global || 0) * 3.0 +
+                planning * 3.0 +
+                innovation * 1.0 +
+                (values.career_clarity || 0) * 1.0 +
+                // Penalty when leadership dominates (should be johtaja)
+                (leadership > planning + 0.3 ? -1.5 : 0),
 
     // JARJESTAJA: organization, structure, systematic work
-    jarjestaja: (workstyle.organization || workstyle.structure || 0) * 2.8 +
-                (interests.analytical || 0) * 1.5 +
+    // Priority: organization + planning + analytical (structured)
+    jarjestaja: organization * 3.5 +
+                planning * 2.0 +
+                analytical * 1.5 +
                 (workstyle.precision || 0) * 1.5 +
-                (workstyle.planning || 0) * 1.0
+                // Penalty when technology dominates (should be innovoija)
+                (technology > organization + 0.3 ? -1.5 : 0)
   };
 
   console.log(`[rankCareers] ${cohort} category affinities:`, JSON.stringify(categoryAffinities, null, 2));

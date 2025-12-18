@@ -50,74 +50,85 @@ function generatePersonalityProfile(
   };
 
   // Cohort-specific question mappings based on actual *_MAPPINGS from dimensions.ts
+  // VERIFIED against dimensions.ts for 100% accuracy
   const cohortMappings: Record<Cohort, { high: Record<string, number[]>; low: Record<string, number[]> }> = {
-    // YLA: Q0-6 analytical/tech, Q7-9 people, Q10-12 creative, Q13 health, Q14-15 leadership, Q17 hands_on, Q19 environment
+    // YLA (30 questions): Based on YLA_MAPPINGS in dimensions.ts
+    // Q0,1,6 analytical | Q2,16,20,25 hands_on | Q3,17 technology | Q4,5 problem_solving
+    // Q7,9,21 people | Q8 growth | Q10,11,12 creative | Q13,22 health
+    // Q14 business | Q15 leadership | Q18 innovation | Q19 environment | Q29 outdoor
     YLA: {
       high: {
-        creative: [10, 11, 12],
-        technology: [3, 4, 5, 6],
-        people: [7, 8, 9, 13, 22],
-        hands_on: [2, 17, 26, 29],
-        analytical: [0, 1, 4, 5, 6],
-        leadership: [14, 15, 27],
-        environment: [19, 26, 29],
-        health: [7, 13, 22],
+        creative: [10, 11, 12],           // Visual arts, performing arts, content creation
+        technology: [3, 17, 4, 5],        // Computers/programming, technical interest, problem solving
+        people: [7, 9, 21, 8],            // Helping others, understanding people, child work, growth
+        hands_on: [2, 16, 20, 25],        // Learning by doing, practical work, automotive, physical work
+        analytical: [0, 1, 6, 4, 5],      // Reading/writing, math, deep thinking, problem solving
+        leadership: [15, 26, 14],         // Leading groups/projects, entrepreneurship, business
+        environment: [19, 29],            // Nature protection, outdoor
+        health: [13, 22, 7],              // Healthcare, fitness, helping
       },
       low: {
-        creative: [3, 14, 15],
-        technology: [10, 11, 12],
-        people: [3, 14],
-        hands_on: [0, 1, 14, 15],
-        analytical: [10, 11, 12, 17],
-        leadership: [10, 11, 12, 2, 17],
-        environment: [3, 14, 15],
-        health: [3, 14, 15],
+        creative: [0, 1, 3, 15, 14, 7, 13, 8], // Analytical/tech/business/people/health/growth low
+        technology: [10, 11, 12, 7, 13, 8], // Creative/people/health/growth low for tech
+        people: [0, 1, 3, 15, 14, 10, 11], // Analytical/tech/business/creative for non-people
+        hands_on: [0, 1, 10, 11, 15, 14, 7, 13, 8], // Analytical/creative/leadership/people/health/growth low
+        analytical: [10, 11, 12, 16, 7, 13, 8], // Creative/hands_on/people/health/growth low
+        leadership: [10, 11, 12, 2, 7, 13, 8], // Creative/hands_on/people/health/growth low
+        environment: [0, 1, 3, 15, 14, 7, 13], // Tech/analytical/business/people/health low
+        health: [0, 1, 3, 15, 14, 10, 11], // Tech/analytical/business/creative low
       }
     },
-    // TASO2: Q0-2 technology, Q3-5 innovation, Q6-8 analytical, Q9-11 leadership, Q12-14 health, Q15-17 creative, Q18-20 hands_on
+    // TASO2 (30 questions): Based on TASO2_MAPPINGS in dimensions.ts
+    // Q0,6 technology | Q1 leadership | Q2,5,13 analytical | Q3 hands_on/sports
+    // Q4 innovation | Q7 health | Q8,9,10,11,12 people | Q14,15,16,17,18 creative
+    // Q19 business | Q21,22,23,26,27,28 hands_on | Q24 outdoor | Q25 impact/environment
     TASO2: {
       high: {
-        creative: [15, 16, 17],
-        technology: [0, 1, 2, 3, 4, 5],
-        people: [12, 13, 14],
-        hands_on: [18, 19, 20],
-        analytical: [6, 7, 8],
-        leadership: [9, 10, 11],
-        environment: [21, 22, 23],
-        health: [12, 13, 14],
+        creative: [14, 15, 16, 17, 18],   // Graphics, marketing, interior, writing, photo/video
+        technology: [0, 6, 4],            // Coding, cybersecurity, web/app design (innovation)
+        people: [8, 9, 10, 11, 12, 7],    // Psychology, teaching, support, youth, elderly, health
+        hands_on: [3, 21, 22, 23, 26, 27, 28], // Sports, construction, automotive, electrical, transport, culinary, crafts
+        analytical: [2, 5, 13, 0, 6],     // Numbers/stats, law, medical research + technology for innovoija
+        leadership: [1, 19],              // Leading groups/projects, entrepreneurship
+        environment: [24, 25],            // Agriculture/outdoor, environmental protection
+        health: [7, 8, 9, 10],            // Healthcare/wellbeing, people-oriented
       },
       low: {
-        creative: [0, 1, 9, 10],
-        technology: [15, 16, 17],
-        people: [0, 1, 9],
-        hands_on: [6, 7, 9, 10],
-        analytical: [15, 16, 18, 19],
-        leadership: [15, 16, 18, 19],
-        environment: [0, 1, 9, 10],
-        health: [0, 1, 9, 10],
+        creative: [0, 6, 1, 2, 21, 22, 8, 9, 7], // Tech/leadership/analytical/hands_on/people/health low
+        technology: [14, 15, 16, 8, 9, 7, 24, 25], // Creative/people/health/environment low
+        people: [0, 6, 21, 22, 1, 19, 14, 15], // Tech/hands_on/leadership/creative low
+        hands_on: [0, 6, 14, 15, 8, 9, 1, 7], // Tech/creative/people/leadership/health low
+        analytical: [14, 15, 16, 21, 22, 8, 9, 7, 24, 25], // Creative/hands_on/people/health/environment low
+        leadership: [14, 15, 16, 21, 22, 8, 9, 7], // Creative/hands_on/people/health low
+        environment: [0, 6, 1, 14, 15, 19, 8, 9], // Tech/leadership/creative/business/people low
+        health: [0, 6, 1, 14, 15, 19, 21, 22], // Tech/leadership/creative/business/hands_on low
       }
     },
-    // NUORI: Q0-2 technology, Q3-5 people, Q6-9 creative, Q10-13 business/leadership, Q14-16 hands_on, Q17-19 health
+    // NUORI (30 questions but uses 25 main): Based on NUORI_MAPPINGS in dimensions.ts
+    // Q0,1,2 technology | Q3,5 people | Q4 growth | Q6,7,8,9 creative
+    // Q10,11 business | Q12 leadership | Q13,28 planning | Q14,15,16,17 hands_on
+    // Q18,19,20 analytical | Q21,22 health | Q23,24 innovation | Q25,26 problem_solving
+    // Q27 teamwork | Q29 environment
     NUORI: {
       high: {
-        creative: [6, 7, 8, 9],
-        technology: [0, 1, 2],
-        people: [3, 4, 5],
-        hands_on: [14, 15, 16],
-        analytical: [0, 1, 2],
-        leadership: [10, 11, 12, 13],
-        environment: [20, 21, 22],
-        health: [3, 17, 18, 19],
+        creative: [6, 7, 8, 9],           // Graphics, content, writing, photo/video
+        technology: [0, 1, 2, 23, 24],    // Programming, cybersecurity, data/AI, innovation
+        people: [3, 5, 4, 21, 22],        // Health/wellness helping, mental support, growth/teaching, health
+        hands_on: [14, 15, 16, 17],       // Construction, automotive, electrical, crafts
+        analytical: [18, 19, 20, 25, 26], // Data analysis, research, legal, problem_solving
+        leadership: [12, 10, 11],         // Team leadership, sales, entrepreneurship
+        environment: [29],                // Environmental/outdoor work
+        health: [21, 22, 3, 4],           // Healthcare, sports/fitness, wellness, growth
       },
       low: {
-        creative: [0, 1, 10, 11],
-        technology: [6, 7, 8],
-        people: [0, 1, 10],
-        hands_on: [6, 7, 10, 11],
-        analytical: [6, 7, 14, 15],
-        leadership: [6, 7, 14, 15],
-        environment: [0, 1, 10, 11],
-        health: [0, 1, 10, 11],
+        creative: [0, 1, 2, 12, 10, 14, 15, 3, 5, 21, 22], // Tech/leadership/business/hands_on/people/health low
+        technology: [6, 7, 8, 3, 5, 21, 22, 29], // Creative/people/health/environment low
+        people: [0, 1, 12, 10, 14, 15, 6, 7], // Tech/leadership/hands_on/creative low
+        hands_on: [0, 1, 6, 7, 12, 10, 3, 21, 22], // Tech/creative/leadership/people/health low
+        analytical: [6, 7, 14, 15, 3, 5, 12, 21, 22], // Creative/hands_on/people/leadership/health low
+        leadership: [6, 7, 14, 15, 3, 5, 21, 22], // Creative/hands_on/people/health low
+        environment: [0, 1, 6, 12, 10, 14, 3, 5, 21, 22], // Tech/creative/leadership/hands_on/people/health low
+        health: [0, 1, 6, 12, 10, 14, 7, 8], // Tech/creative/leadership/hands_on low
       }
     }
   };
@@ -158,7 +169,7 @@ interface TestResult {
 
 async function runTestsForCohort(cohort: Cohort, profileCount: number = 100): Promise<TestResult[]> {
   const results: TestResult[] = [];
-  const questionCount = cohort === 'YLA' ? 30 : cohort === 'TASO2' ? 30 : 25;
+  const questionCount = 30; // All cohorts use 30 questions
 
   const profileTypes = [
     'creative', 'technology', 'people', 'hands_on',
