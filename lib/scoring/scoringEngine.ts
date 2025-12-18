@@ -4858,13 +4858,240 @@ export function rankCareers(
   const { dimensionScores, detailedScores } = computeUserVector(answers, cohort);
 
   // ============================================================================
-  // YLA COHORT SIMPLE PATH: For 13-15 year old students, use SIMPLE interest-based matching
-  // Skip all complex personality detection that causes mismatches for young students
+  // UNIFIED SIMPLIFIED PATH: Use interest-based matching for ALL cohorts
+  // This ensures career recommendations align with personality analysis (vahvuudet)
+  // by directly matching user subdimension strengths to career requirements
   // ============================================================================
+  console.log(`[rankCareers] 🎯 ${cohort} COHORT: Using unified interest-based matching`);
+
+  // Extract detailed scores from all dimensions
+  const interests = detailedScores.interests || {};
+  const values = detailedScores.values || {};
+  const workstyle = detailedScores.workstyle || {};
+  const context = detailedScores.context || {};
+
+  // Log what we're seeing for debugging
+  console.log(`[rankCareers] ${cohort} interests:`, JSON.stringify(interests));
+  console.log(`[rankCareers] ${cohort} values:`, JSON.stringify(values));
+  console.log(`[rankCareers] ${cohort} workstyle:`, JSON.stringify(workstyle));
+
+  // Calculate category affinities based on subdimension strengths (vahvuudet)
+  // These weights align with what the personality analysis emphasizes
+  // IMPORTANT: Weights are calibrated to ensure proper category differentiation
+  const categoryAffinities: Record<string, number> = {
+    // LUOVA: creative expression and artistic interests
+    // BOOSTED: Higher base weight to compete with innovoija
+    luova: (interests.creative || 0) * 3.5 +
+           (interests.arts_culture || 0) * 2.5 +
+           (interests.writing || 0) * 2.0 +
+           (interests.innovation || 0) * 0.5 +
+           // Penalty when technology is high (should be innovoija)
+           ((interests.technology || 0) > 0.6 ? -1.0 : 0),
+
+    // INNOVOIJA: technology, analytical thinking, problem-solving
+    // REDUCED: Lower weights to allow other categories to compete
+    innovoija: (interests.technology || 0) * 2.2 +
+               (interests.analytical || 0) * 1.2 +
+               (interests.problem_solving || 0) * 1.2 +
+               (interests.innovation || 0) * 1.0,
+
+    // AUTTAJA: people-oriented, helping, healthcare
+    auttaja: (interests.people || 0) * 2.8 +
+             (interests.health || 0) * 2.5 +
+             (values.impact || values.social_impact || 0) * 1.8 +
+             (interests.education || 0) * 1.2 +
+             (workstyle.teaching || 0) * 1.5,
+
+    // JOHTAJA: leadership, business, advancement
+    johtaja: (interests.leadership || workstyle.leadership || 0) * 2.8 +
+             (interests.business || values.business || 0) * 2.2 +
+             (values.advancement || 0) * 1.5 +
+             (values.entrepreneurship || 0) * 1.2,
+
+    // RAKENTAJA: hands-on work, practical skills
+    // BOOSTED: Higher base weight to compete with innovoija
+    rakentaja: (interests.hands_on || 0) * 3.5 +
+               (workstyle.precision || 0) * 2.0 +
+               (workstyle.performance || 0) * 1.5 +
+               (interests.outdoor || workstyle.outdoor || 0) * 1.5 +
+               // Penalty when technology AND innovation are high (should be innovoija)
+               ((interests.technology || 0) > 0.5 && (interests.innovation || 0) > 0.4 ? -1.5 : 0),
+
+    // YMPARISTON-PUOLUSTAJA: environment, nature, sustainability
+    'ympariston-puolustaja': (interests.environment || 0) * 3.0 +
+                              (interests.nature || 0) * 2.5 +
+                              (interests.outdoor || workstyle.outdoor || 0) * 1.8 +
+                              (values.social_impact || 0) * 1.0,
+
+    // VISIONAARI: strategic thinking, global perspective, planning
+    visionaari: (values.global || interests.global || 0) * 2.5 +
+                (workstyle.planning || 0) * 2.0 +
+                (interests.innovation || 0) * 0.8 +
+                (values.career_clarity || 0) * 1.0,
+
+    // JARJESTAJA: organization, structure, systematic work
+    jarjestaja: (workstyle.organization || workstyle.structure || 0) * 2.8 +
+                (interests.analytical || 0) * 1.5 +
+                (workstyle.precision || 0) * 1.5 +
+                (workstyle.planning || 0) * 1.0
+  };
+
+  console.log(`[rankCareers] ${cohort} category affinities:`, JSON.stringify(categoryAffinities, null, 2));
+
+  // Find top categories based on user's strengths
+  const sortedCategories = Object.entries(categoryAffinities)
+    .sort(([, a], [, b]) => b - a);
+  const dominantCategory = sortedCategories[0][0];
+  const topCategories = sortedCategories.slice(0, 3).map(([cat]) => cat);
+
+  console.log(`[rankCareers] ${cohort} dominant category: ${dominantCategory}, top 3: ${topCategories.join(', ')}`);
+
+  // Score ALL careers based on category match AND subdimension alignment
+  const scoredCareers: CareerMatch[] = [];
+
+  for (const careerVector of CAREER_VECTORS) {
+    // Skip current occupation if provided
+    if (currentOccupation && currentOccupation !== "none") {
+      const occupationLower = currentOccupation.toLowerCase().trim();
+      const titleLower = careerVector.title.toLowerCase();
+      if (titleLower.includes(occupationLower) || occupationLower.includes(titleLower)) {
+        continue;
+      }
+    }
+
+    // Calculate base score from category match
+    let baseScore = 40; // Neutral starting point
+    const careerCategory = careerVector.category;
+
+    // Category matching bonus
+    if (careerCategory === dominantCategory) {
+      baseScore += 30; // Major boost for matching dominant category
+    } else if (topCategories.includes(careerCategory)) {
+      baseScore += 18; // Good boost for top 3 categories
+    } else if (sortedCategories.slice(3, 5).map(([c]) => c).includes(careerCategory)) {
+      baseScore += 8; // Small boost for categories 4-5
+    }
+
+    // Calculate subdimension alignment bonus
+    // This directly connects user strengths (vahvuudet) to career requirements
+    const careerInterests = careerVector.interests || {};
+    const careerWorkstyle = careerVector.workstyle || {};
+    const careerValues = careerVector.values || {};
+    let alignmentBonus = 0;
+
+    // Interest subdimension alignment
+    if (careerInterests.creative && interests.creative) {
+      alignmentBonus += careerInterests.creative * interests.creative * 5;
+    }
+    if (careerInterests.technology && interests.technology) {
+      alignmentBonus += careerInterests.technology * interests.technology * 5;
+    }
+    if (careerInterests.people && interests.people) {
+      alignmentBonus += careerInterests.people * interests.people * 5;
+    }
+    if (careerInterests.hands_on && interests.hands_on) {
+      alignmentBonus += careerInterests.hands_on * interests.hands_on * 5;
+    }
+    if (careerInterests.health && interests.health) {
+      alignmentBonus += careerInterests.health * interests.health * 5;
+    }
+    if (careerInterests.environment && (interests.environment || interests.nature)) {
+      alignmentBonus += careerInterests.environment * Math.max(interests.environment || 0, interests.nature || 0) * 5;
+    }
+    if (careerInterests.analytical && interests.analytical) {
+      alignmentBonus += careerInterests.analytical * interests.analytical * 4;
+    }
+    if (careerInterests.innovation && interests.innovation) {
+      alignmentBonus += careerInterests.innovation * interests.innovation * 4;
+    }
+    if (careerInterests.business && (interests.business || values.business)) {
+      alignmentBonus += careerInterests.business * Math.max(interests.business || 0, values.business || 0) * 4;
+    }
+
+    // Workstyle subdimension alignment
+    if (careerWorkstyle.leadership && (workstyle.leadership || interests.leadership)) {
+      alignmentBonus += careerWorkstyle.leadership * Math.max(workstyle.leadership || 0, interests.leadership || 0) * 4;
+    }
+    if (careerWorkstyle.organization && (workstyle.organization || workstyle.structure)) {
+      alignmentBonus += careerWorkstyle.organization * Math.max(workstyle.organization || 0, workstyle.structure || 0) * 3;
+    }
+    if (careerWorkstyle.teamwork && workstyle.teamwork) {
+      alignmentBonus += careerWorkstyle.teamwork * workstyle.teamwork * 3;
+    }
+    if (careerWorkstyle.independence && workstyle.independence) {
+      alignmentBonus += careerWorkstyle.independence * workstyle.independence * 3;
+    }
+
+    // Values subdimension alignment
+    if (careerValues.impact && (values.impact || values.social_impact)) {
+      alignmentBonus += careerValues.impact * Math.max(values.impact || 0, values.social_impact || 0) * 3;
+    }
+    if (careerValues.entrepreneurship && values.entrepreneurship) {
+      alignmentBonus += careerValues.entrepreneurship * values.entrepreneurship * 3;
+    }
+
+    const totalScore = Math.min(100, baseScore + alignmentBonus);
+
+    // Generate match reasons based on top alignments
+    const matchReasons: string[] = [];
+    if (careerCategory === dominantCategory) {
+      matchReasons.push(`Sopii ${dominantCategory}-persoonallisuuteesi`);
+    }
+    if (interests.people > 0.6 && careerInterests.people > 0.5) {
+      matchReasons.push('Ihmisläheinen työ');
+    }
+    if (interests.creative > 0.6 && careerInterests.creative > 0.5) {
+      matchReasons.push('Luova työskentely');
+    }
+    if (interests.technology > 0.6 && careerInterests.technology > 0.5) {
+      matchReasons.push('Teknologia-osaaminen');
+    }
+    if (interests.hands_on > 0.6 && careerInterests.hands_on > 0.5) {
+      matchReasons.push('Käytännönläheinen työ');
+    }
+
+    scoredCareers.push({
+      ...careerVector,
+      overallScore: Math.round(totalScore),
+      dimensionScores: {
+        interests: Math.round(totalScore),
+        workstyle: Math.round(totalScore * 0.9),
+        values: Math.round(totalScore * 0.85),
+        context: Math.round(totalScore * 0.8)
+      },
+      confidence: totalScore >= 80 ? 'high' : totalScore >= 60 ? 'medium' : 'low',
+      reasons: matchReasons.length > 0 ? matchReasons : [`Matches ${dominantCategory} profile`],
+      category: careerCategory
+    });
+  }
+
+  // Sort by score and return top N
+  scoredCareers.sort((a, b) => b.overallScore - a.overallScore);
+  const topCareers = scoredCareers.slice(0, limit);
+
+  console.log(`[rankCareers] ${cohort} top ${limit} careers:`, topCareers.map(c => `${c.title} (${c.overallScore}%) - ${c.category}`).join(', '));
+
+  return topCareers;
+}
+
+// ========== LEGACY COMPLEX PATH (PRESERVED FOR REFERENCE) ==========
+// The code below is the legacy complex scoring system that was causing mismatches
+// It's preserved here in case we need to reference it, but is no longer used
+// ============================================================================
+
+function _legacyRankCareers(
+  answers: TestAnswer[],
+  cohort: Cohort,
+  limit: number = 5,
+  currentOccupation?: string
+): CareerMatch[] {
+  // Step 1: Compute user vector
+  const { dimensionScores, detailedScores } = computeUserVector(answers, cohort);
+
+  // Legacy YLA path (preserved for reference)
   if (cohort === 'YLA') {
     console.log(`[rankCareers] 🎓 YLA COHORT: Using SIMPLE interest-based matching for young students`);
 
-    // Extract key interests from detailedScores - USE ACTUAL YLA SUBDIMENSION KEYS
     const interests = detailedScores.interests || {};
     const values = detailedScores.values || {};
     const workstyle = detailedScores.workstyle || {};
