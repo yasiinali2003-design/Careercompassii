@@ -573,85 +573,236 @@ AMK-opinnot kestävät tyypillisesti 3,5-4,5 vuotta ja tarjoavat hyvät valmiude
 }
 
 /**
- * Get education path description for UI
- * Supports both YLA and TASO2 paths
+ * Extended education path description interface
  */
-export function getEducationPathDescription(path: EducationPath, cohort?: Cohort): {
+export interface EducationPathDescriptionExtended {
   title: string;
   description: string;
   duration: string;
   nextSteps: string[];
-} {
-  // TASO2 paths
+  // Extended fields for comprehensive information
+  studyStyle: string;
+  strengths: string[];
+  considerations: string[];
+  careerExamples: string[];
+  applicationInfo: string;
+  financialInfo: string;
+  typicalWeek?: string;
+}
+
+/**
+ * Get education path description for UI
+ * Supports both YLA and TASO2 paths with comprehensive details
+ */
+export function getEducationPathDescription(path: EducationPath, cohort?: Cohort): EducationPathDescriptionExtended {
+  // TASO2 paths - Higher education choices
   if (path === 'yliopisto' || path === 'amk') {
     switch (path) {
       case 'yliopisto':
         return {
           title: 'Yliopisto-opinnot',
           description: 'Akateeminen korkeakoulututkinto, joka tarjoaa syvällistä teoreettista tietämystä ja vahvoja akateemisia taitoja. Tämä vaihtoehto voi olla kiinnostava tutustua, jos koet tärkeäksi esimerkiksi tutkimusmielisyyttä ja analyyttistä ajattelua.',
-          duration: '3-5 vuotta (kandidaatti)',
+          duration: '3-5 vuotta (kandidaatti + maisteri)',
+          studyStyle: 'Itsenäistä opiskelua, luentoja, seminaareja ja tutkielmia. Painotus teoreettisessa ymmärryksessä ja tieteellisessä ajattelussa. Opiskelutahti on joustavampi kuin AMK:ssa.',
+          strengths: [
+            'Syvällinen teoreettinen osaaminen',
+            'Tutkimustaidot ja kriittinen ajattelu',
+            'Laaja akateeminen verkosto',
+            'Mahdollisuus tohtorin tutkintoon',
+            'Kansainväliset vaihto-ohjelmat'
+          ],
+          considerations: [
+            'Vaatii vahvaa itseohjautuvuutta',
+            'Vähemmän käytännön harjoittelua',
+            'Pidempi opiskeluaika ennen työelämää',
+            'Pääsykokeet voivat olla kilpailtuja'
+          ],
+          careerExamples: [
+            'Tutkija tai tiedemies',
+            'Lääkäri tai juristi',
+            'Opettaja (aineenopettaja)',
+            'Ekonomisti tai analyytikko',
+            'IT-arkkitehti tai data scientist'
+          ],
           nextSteps: [
-            'Maisterin tutkinto',
-            'Tohtorin tutkinto',
-            'Tutkijaura',
-            'Erikoistuneet työtehtävät'
-          ]
+            'Maisterin tutkinto (2 vuotta)',
+            'Tohtorin tutkinto (4 vuotta)',
+            'Tutkijaura yliopistossa',
+            'Erikoistuneet asiantuntijatehtävät'
+          ],
+          applicationInfo: 'Haku yhteishaussa Opintopolussa keväisin. Useimmissa ohjelmissa pääsykoe tai todistusvalinta. Valmistaudu pääsykokeisiin ajoissa - kursseja ja materiaaleja saatavilla.',
+          financialInfo: 'Opiskelu on maksutonta. Opintotuki noin 250-350€/kk + asumistuki. Opintolaina mahdollinen (650€/kk). Kesätyöt ja osa-aikatyöt yleisiä.',
+          typicalWeek: 'Noin 10-20h luentoja, loput itsenäistä opiskelua. Tenttikaudet intensiivisiä. Paljon vapautta aikatauluttaa omaa opiskelua.'
         };
-      
+
       case 'amk':
         return {
           title: 'Ammattikorkeakoulu',
           description: 'Käytännönläheinen korkeakoulututkinto, joka yhdistää teoreettista tietämystä ja konkreettista työelämän taitoa. Opiskelutapa on käytännönläheinen ja työelämäprojekteja on runsaasti.',
           duration: '3,5-4,5 vuotta',
+          studyStyle: 'Projektioppimista, ryhmätöitä ja käytännön harjoituksia. Tiivis yhteistyö yritysten kanssa. Pakollinen työharjoittelu (30 op) osana opintoja.',
+          strengths: [
+            'Käytännönläheinen oppiminen',
+            'Vahvat työelämäyhteydet',
+            'Harjoittelu osana opintoja',
+            'Nopea työllistyminen (85-95%)',
+            'Projektit oikeiden yritysten kanssa'
+          ],
+          considerations: [
+            'Strukturoidumpi opintoaikataulu',
+            'Enemmän ryhmätyötä',
+            'Vähemmän tutkimuspainotusta',
+            'Joillakin aloilla tiukempi läsnäolovaatimus'
+          ],
+          careerExamples: [
+            'Sairaanhoitaja tai terveydenhoitaja',
+            'Insinööri (rakennus, kone, IT)',
+            'Tradenomi (liiketalous)',
+            'Sosionomi',
+            'Fysioterapeutti'
+          ],
           nextSteps: [
             'Suora työllistyminen',
-            'Ylempi AMK-tutkinto',
-            'Yliopisto-opinnot',
-            'Erikoistuminen työelämässä'
-          ]
+            'Ylempi AMK-tutkinto (YAMK)',
+            'Yliopisto-opinnot (siltaopinnot)',
+            'Erikoistumiskoulutukset'
+          ],
+          applicationInfo: 'Haku yhteishaussa Opintopolussa keväisin ja syksyisin. Valinta todistuspisteillä, pääsykokeilla tai AMK-valintakokeella. Joillakin aloilla soveltuvuustestit.',
+          financialInfo: 'Opiskelu on maksutonta. Opintotuki noin 250-350€/kk + asumistuki. Opintolaina mahdollinen. Harjoittelusta usein palkka (noin 1000-1500€/kk).',
+          typicalWeek: 'Noin 25-35h kontaktiopetusta ja projektityötä. Säännöllisempi lukujärjestys kuin yliopistossa. Harjoittelujaksot työpaikoilla.'
         };
     }
   }
 
-  // YLA paths
+  // YLA paths - Post-basic education choices
   switch (path) {
     case 'lukio':
       return {
         title: 'Lukio',
-        description: 'Yleissivistävä koulutus, joka antaa valmiudet jatkaa opiskelua yliopistossa tai ammattikorkeakoulussa. Opiskelet laajasti eri aineita ja kehität opiskelutaitojasi.',
+        description: 'Yleissivistävä koulutus, joka antaa valmiudet jatkaa opiskelua yliopistossa tai ammattikorkeakoulussa. Opiskelet laajasti eri aineita ja kehität akateemisia taitojasi.',
         duration: '3 vuotta',
+        studyStyle: 'Kurssimuotoista opiskelua, kokeita ja esseitä. Valitset itse kursseja kiinnostuksesi mukaan. Ylioppilaskirjoitukset lopussa.',
+        strengths: [
+          'Laaja yleissivistys',
+          'Pitää vaihtoehdot auki',
+          'Hyvä pohja korkeakouluun',
+          'Kehittää opiskelutaitoja',
+          'Ylioppilastutkinto arvostettu'
+        ],
+        considerations: [
+          'Paljon teoriaopiskelua',
+          'Ylioppilaskokeiden paine',
+          'Ei anna ammattia suoraan',
+          'Vaatii jatko-opiskelua työllistymiseen'
+        ],
+        careerExamples: [
+          'Kaikki yliopisto- ja AMK-ammatit',
+          'Lääkäri, juristi, opettaja',
+          'Insinööri, tradenomi',
+          'Tutkija, taiteilija',
+          'Yrittäjä'
+        ],
         nextSteps: [
           'Yliopisto-opinnot',
           'Ammattikorkeakouluopinnot',
-          'Ammatillinen koulutus (voit suorittaa myöhemmin)'
-        ]
+          'Ammatillinen koulutus',
+          'Välivuosi / työkokemus'
+        ],
+        applicationInfo: 'Haku yhteishaussa keväällä 9. luokan aikana. Valinta peruskoulun päättötodistuksen keskiarvon perusteella. Joissain lukioissa pääsykoe tai painotukset.',
+        financialInfo: 'Opiskelu on maksutonta. Oppikirjat ja materiaalit maksavat noin 300-500€/vuosi. Alle 17-vuotiaat asuvat yleensä kotona.',
+        typicalWeek: 'Noin 30-35h oppitunteja. Kotitehtäviä ja kokeisiin valmistautumista. Valinnaisuus lisääntyy yläluokilla.'
       };
-    
+
     case 'ammattikoulu':
       return {
         title: 'Ammattikoulu',
-        description: 'Ammatillinen koulutus, jossa opit tietyn ammatin taidot käytännössä. Saat työelämävalmiudet ja voit aloittaa työt heti valmistuttuasi.',
-        duration: '3 vuotta',
+        description: 'Ammatillinen koulutus, jossa opit tietyn ammatin taidot käytännössä. Saat työelämävalmiudet ja voit aloittaa työt heti valmistuttuasi tai jatkaa opiskelua.',
+        duration: '2-3 vuotta',
+        studyStyle: 'Käytännön tekemistä, työssäoppimista ja projekteja. Opit oikeissa työympäristöissä. Vähemmän perinteistä luokkaopetusta.',
+        strengths: [
+          'Käytännön ammattitaito',
+          'Nopea työllistyminen',
+          'Työssäoppiminen oikeissa työpaikoissa',
+          'Voi työllistyä jo opintojen aikana',
+          'Mahdollisuus jatkaa AMK:hon'
+        ],
+        considerations: [
+          'Valittava ala aikaisin',
+          'Ylioppilastutkintoa ei saa automaattisesti',
+          'Joidenkin alojen työllisyystilanne vaihtelee',
+          'Alan vaihto voi vaatia uudet opinnot'
+        ],
+        careerExamples: [
+          'Sähköasentaja tai putkimies',
+          'Lähihoitaja',
+          'Kokki tai tarjoilija',
+          'Automekaanikko',
+          'Datanomi (IT-ala)',
+          'Parturi-kampaaja',
+          'Rakennustyöntekijä'
+        ],
         nextSteps: [
-          'Työelämä (välittömästi)',
-          'Ammattikorkeakouluopinnot (myöhemmin)',
-          'Erikoistumiskoulutukset'
-        ]
+          'Työelämä heti valmistuttua',
+          'AMK-opinnot (hakukelpoisuus)',
+          'Erikoisammattitutkinto',
+          'Yrittäjyys omalla alalla'
+        ],
+        applicationInfo: 'Haku yhteishaussa keväällä. Valinta peruskoulun päättötodistuksen ja mahdollisten pääsykokeiden perusteella. Joillakin aloilla soveltuvuustestit.',
+        financialInfo: 'Opiskelu on maksutonta. Työvaatteet ja välineet joillakin aloilla itse hankittava. Työssäoppimisesta voi saada palkkaa.',
+        typicalWeek: 'Vaihtelee aloittain. Noin 25-30h opetusta + työssäoppimista. Paljon käytännön harjoituksia pajoissa ja työpaikoilla.'
       };
-    
+
     case 'kansanopisto':
       return {
         title: 'Kansanopisto',
-        description: 'Vapaan sivistystyön oppilaitoksissa voit tutustua eri aloihin, kasvaa ihmisenä ja selkiyttää tulevaisuuden suunnitelmiasi. Hyvä välivuoden vaihtoehto ennen lukiota tai ammattikoulua.',
+        description: 'Vapaan sivistystyön oppilaitoksissa voit tutustua eri aloihin, kasvaa ihmisenä ja selkiyttää tulevaisuuden suunnitelmiasi. Hyvä välivuoden vaihtoehto, jos et ole varma suunnastasi.',
         duration: '1 vuosi (yleensä)',
+        studyStyle: 'Yhteisöllistä opiskelua internaatissa (asuntola). Erikoistut valitsemallesi linjalle: taide, musiikki, urheilu, kielet, media jne.',
+        strengths: [
+          'Aikaa miettiä tulevaisuutta',
+          'Uudet ystävät ympäri Suomen',
+          'Kehityt ihmisenä ja itsenäistyt',
+          'Kokeile uusia asioita',
+          'Ei paineita tai kokeita',
+          'Voi parantaa arvosanoja'
+        ],
+        considerations: [
+          'Ei anna ammattia',
+          'Viivästyttää varsinaisia opintoja',
+          'Asuntolassa asuminen ei sovi kaikille',
+          'Maksullinen (mutta tuettu)'
+        ],
+        careerExamples: [
+          'Ei suoraan ammattiin',
+          'Hyvä pohja taidealoille',
+          'Valmistautuminen pääsykokeisiin',
+          'Verkostoituminen ja itsetuntemus'
+        ],
         nextSteps: [
-          'Lukio',
-          'Ammattikoulu',
-          'Työelämä',
-          'Lisää kansanopisto-opintoja'
-        ]
+          'Lukio (selkeytynein tavoittein)',
+          'Ammattikoulu (löydettyäsi alan)',
+          'Suora työelämä',
+          'Toinen kansanopistovuosi (eri linja)'
+        ],
+        applicationInfo: 'Haku suoraan kansanopistoihin ympäri vuoden. Ei pääsykokeita useimmille linjoille. Valinta hakemuksen ja motivaation perusteella.',
+        financialInfo: 'Lukukausimaksu noin 100-500€/kk sisältäen asumisen ja ruoan. Opintotuki mahdollinen. KELAn opintotukea voi saada myös kansanopisto-opintoihin.',
+        typicalWeek: 'Vaihtelee linjan mukaan. Asut kampuksella muiden opiskelijoiden kanssa. Vapaa-ajan aktiviteetteja ja yhteisöllisyyttä paljon.'
       };
   }
+
+  // Fallback (should never reach here)
+  return {
+    title: path,
+    description: 'Koulutuspolun tiedot puuttuvat.',
+    duration: 'Ei tiedossa',
+    studyStyle: '',
+    strengths: [],
+    considerations: [],
+    careerExamples: [],
+    nextSteps: [],
+    applicationInfo: '',
+    financialInfo: ''
+  };
 }
 
 
