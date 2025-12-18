@@ -16,7 +16,6 @@ import {
   Clock,
   TrendingUp,
   AlertCircle,
-  Briefcase,
   FileText,
   Wallet,
   Calendar,
@@ -210,22 +209,6 @@ function EducationPathCard({
                 </li>
               ))}
             </ul>
-          </InfoSection>
-        )}
-
-        {/* Career Examples */}
-        {pathDesc.careerExamples && pathDesc.careerExamples.length > 0 && (
-          <InfoSection icon={Briefcase} title="Esimerkkiammatteja">
-            <div className="flex flex-wrap gap-2">
-              {pathDesc.careerExamples.map((career, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full text-sm text-cyan-200"
-                >
-                  {career}
-                </span>
-              ))}
-            </div>
           </InfoSection>
         )}
 
