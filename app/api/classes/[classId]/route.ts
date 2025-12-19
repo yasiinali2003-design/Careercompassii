@@ -23,7 +23,7 @@ export async function GET(
 
     if (!classId) {
       return NextResponse.json(
-        { success: false, error: 'Missing classId' },
+        { success: false, error: 'Luokan tunniste puuttuu' },
         { status: 400 }
       );
     }
@@ -46,7 +46,7 @@ export async function GET(
 
       if (!cls) {
         return NextResponse.json(
-          { success: false, error: 'Class not found' },
+          { success: false, error: 'Luokkaa ei löydy' },
           { status: 404 }
         );
       }
@@ -72,7 +72,7 @@ export async function GET(
     if (error || !data) {
       console.error('[API/GetClass] Error:', error);
       return NextResponse.json(
-        { success: false, error: 'Class not found' },
+        { success: false, error: 'Luokkaa ei löydy' },
         { status: 404 }
       );
     }
@@ -90,7 +90,7 @@ export async function GET(
   } catch (error) {
     console.error('[API/GetClass] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }

@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
     
     if (!validPackages.includes(normalizedPackage) && normalizedPackage !== 'standard') {
       return NextResponse.json(
-        { success: false, error: 'Invalid package type. Must be "premium" or "yläaste"/"standard"' },
+        { success: false, error: 'Virheellinen pakettityyppi. Sallitut: "premium" tai "yläaste"/"standard"' },
         { status: 400 }
       );
     }
@@ -136,7 +136,7 @@ export async function POST(request: NextRequest) {
 
           if (fallbackError) {
             return NextResponse.json(
-              { success: false, error: 'Failed to create teacher account', details: fallbackError.message, hint: 'Run migration: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';' },
+              { success: false, error: 'Opettajatilin luominen epäonnistui', details: fallbackError.message, hint: 'Run migration: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';' },
               { status: 500 }
             );
           }
@@ -144,7 +144,7 @@ export async function POST(request: NextRequest) {
           return NextResponse.json({
             success: true,
             teacher: fallbackData,
-            message: 'Teacher account created (package column not found - run migration)',
+            message: 'Opettajatili luotu (paketti-sarake puuttuu - suorita migraatio)',
             warning: 'Package column missing. Run: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';'
           });
         }
@@ -152,7 +152,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json(
           {
             success: false,
-            error: 'Failed to create teacher account',
+            error: 'Opettajatilin luominen epäonnistui',
             details: error.message || JSON.stringify(error),
             code: error.code,
             hint: error.message?.includes('column "package"') || error.message?.includes("'package' column") || error.code === '42703' || error.code === 'PGRST204'
@@ -166,7 +166,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({
         success: true,
         teacher: data,
-        message: 'Teacher account created successfully',
+        message: 'Opettajatili luotu onnistuneesti',
       });
     }
 
@@ -217,7 +217,7 @@ export async function POST(request: NextRequest) {
 
         if (fallbackError) {
           return NextResponse.json(
-            { success: false, error: 'Failed to create teacher account', details: fallbackError.message, hint: 'Run migration: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';' },
+            { success: false, error: 'Opettajatilin luominen epäonnistui', details: fallbackError.message, hint: 'Run migration: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';' },
             { status: 500 }
           );
         }
@@ -225,7 +225,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({
           success: true,
           teacher: fallbackData,
-          message: 'Teacher account created (package column not found - run migration)',
+          message: 'Opettajatili luotu (paketti-sarake puuttuu - suorita migraatio)',
           warning: 'Package column missing. Run: ALTER TABLE teachers ADD COLUMN package TEXT DEFAULT \'standard\';'
         });
       }
@@ -233,7 +233,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { 
           success: false, 
-          error: 'Failed to create teacher account', 
+          error: 'Opettajatilin luominen epäonnistui', 
           details: error.message || JSON.stringify(error),
           code: error.code,
           hint: isPackageColumnError2
@@ -247,12 +247,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       teacher: data,
-      message: 'Teacher account created successfully',
+      message: 'Opettajatili luotu onnistuneesti',
     });
   } catch (error) {
     console.error('[API/Teachers] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }

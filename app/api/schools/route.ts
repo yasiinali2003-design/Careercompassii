@@ -18,14 +18,14 @@ export async function GET(request: NextRequest) {
 
     if (!teacherId) {
       return NextResponse.json(
-        { success: false, error: 'Not authenticated' },
+        { success: false, error: 'Ei kirjautunut' },
         { status: 401 }
       );
     }
 
     if (!supabaseAdmin) {
       return NextResponse.json(
-        { success: false, error: 'Database not configured' },
+        { success: false, error: 'Tietokanta ei ole määritetty' },
         { status: 500 }
       );
     }
@@ -37,7 +37,7 @@ export async function GET(request: NextRequest) {
     if (error) {
       console.error('[API/Schools] Error fetching schools:', error);
       return NextResponse.json(
-        { success: false, error: 'Failed to fetch schools' },
+        { success: false, error: 'Koulujen haku epäonnistui' },
         { status: 500 }
       );
     }
@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('[API/Schools] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }
@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
 
     if (!teacherId) {
       return NextResponse.json(
-        { success: false, error: 'Not authenticated' },
+        { success: false, error: 'Ei kirjautunut' },
         { status: 401 }
       );
     }
@@ -76,14 +76,14 @@ export async function POST(request: NextRequest) {
 
     if (!name || typeof name !== 'string') {
       return NextResponse.json(
-        { success: false, error: 'School name is required' },
+        { success: false, error: 'Koulun nimi on pakollinen' },
         { status: 400 }
       );
     }
 
     if (!supabaseAdmin) {
       return NextResponse.json(
-        { success: false, error: 'Database not configured' },
+        { success: false, error: 'Tietokanta ei ole määritetty' },
         { status: 500 }
       );
     }
@@ -105,7 +105,7 @@ export async function POST(request: NextRequest) {
     if (schoolError || !school) {
       console.error('[API/Schools] Error creating school:', schoolError);
       return NextResponse.json(
-        { success: false, error: 'Failed to create school' },
+        { success: false, error: 'Koulun luominen epäonnistui' },
         { status: 500 }
       );
     }
@@ -125,7 +125,7 @@ export async function POST(request: NextRequest) {
       // Rollback: delete school
       await supabaseAdmin.from('schools').delete().eq('id', schoolData.id)
       return NextResponse.json(
-        { success: false, error: 'Failed to add admin to school' },
+        { success: false, error: 'Ylläpitäjän lisääminen kouluun epäonnistui' },
         { status: 500 }
       );
     }
@@ -140,7 +140,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('[API/Schools] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }

@@ -16,10 +16,12 @@ interface QuestionPoolData {
   version: string; // Version for future compatibility
 }
 
+// Now using single set of 30 unique questions per cohort
+// No more repetitive "equivalent" sets
 const QUESTION_SETS_PER_COHORT: Record<Cohort, number> = {
-  YLA: 3,      // Set 0, 1, 2
-  TASO2: 3,    // Set 0, 1, 2
-  NUORI: 3     // Set 0, 1, 2
+  YLA: 1,      // Single set of 30 unique questions
+  TASO2: 1,    // Single set of 30 unique questions
+  NUORI: 1     // Single set of 30 unique questions
 };
 
 /**

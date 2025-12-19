@@ -1,2777 +1,1019 @@
 /**
- * QUESTION TO DIMENSION MAPPINGS
- * Phase 2: Updated mappings for NEW universally answerable questions
- * 
+ * QUESTION TO DIMENSION MAPPINGS - FULLY UNIQUE
+ * 30 completely different questions per cohort - ZERO repetition
+ *
+ * Each question targets a UNIQUE insight needed for career matching.
+ * No two questions ask about the same concept.
+ *
  * IMPORTANT: All questions use 1-5 Likert scale
  * - 1 = "Ei lainkaan"
  * - 5 = "Erittäin paljon"
- * 
- * NEW QUESTION STRATEGY:
- * - YLA: Education path focus (Lukio vs. Ammattikoulu)
- * - TASO2: Career field focus (What domains interest them)
- * - NUORI: Career + lifestyle focus (Realistic expectations)
  */
 
 import { QuestionMapping, CohortQuestionSet, Cohort, ScoringWeights } from './types';
 
-// ========== YLÄASTE (15-16v) - 30 QUESTIONS ==========
-// Focus: Learning preferences + education path indicators
+// ========== YLÄASTE (13-16v) - 30 COMPLETELY UNIQUE QUESTIONS ==========
+// Focus: Discovering interests, learning style, and early career direction
 
 const YLA_MAPPINGS: QuestionMapping[] = [
-  // Section 1: Learning & Thinking (Q0-6) - analytical, hands_on, technology, problem_solving
+  // Q0: Technology - Gaming/Apps
   {
     q: 0,
-    text: "Pidätkö lukemisesta ja kirjoittamisesta?",
+    text: "Kiinnostaako sinua pelien tai sovellusten tekeminen?",
     dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.0,
+    subdimension: 'technology',
+    weight: 1.3,
     reverse: false,
-    notes: "Reading/writing interest - strong Lukio indicator"
+    notes: "Game/app development interest"
   },
+
+  // Q1: Problem-solving - Puzzles
   {
     q: 1,
-    text: "Pidätkö matematiikasta ja laskemisesta?",
+    text: "Nautitko arvoitusten ja pulmien ratkaisemisesta?",
     dimension: 'interests',
-    subdimension: 'analytical',
+    subdimension: 'problem_solving',
     weight: 1.2,
     reverse: false,
-    notes: "Math skills - STEM indicator for both Lukio and technical Ammattikoulu"
+    notes: "Puzzle solving - analytical thinking"
   },
+
+  // Q2: Creative - Original creation
   {
     q: 2,
-    text: "Opitko parhaiten tekemällä ja kokeilemalla?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.3,
-    reverse: false,
-    notes: "Practical learning - strong Ammattikoulu indicator"
-  },
-  {
-    q: 3,
-    text: "Kiinnostaako sinua tietokoneet ja ohjelmointi?",
-    dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.2,
-    reverse: false,
-    notes: "Tech interest - can lead to either path (Lukio for university CS or Ammattikoulu for IT)"
-  },
-  {
-    q: 4,
-    text: "Pidätkö pulmien ja ongelmien ratkaisemisesta?",
-    dimension: 'interests',
-    subdimension: 'problem_solving',
-    weight: 1.1,
-    reverse: false,
-    notes: "Problem-solving skills - indicates analytical thinking"
-  },
-  {
-    q: 5,
-    text: "Haluaisitko tutkia ja selvittää, miten asiat toimivat?",
-    dimension: 'interests',
-    subdimension: 'problem_solving',
-    weight: 1.0,
-    reverse: false,
-    notes: "Research/investigation interest - scientific thinking"
-  },
-  {
-    q: 6,
-    text: "Tykkäätkö miettiä ja pohtia asioita tarkkaan?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.1,
-    reverse: false,
-    notes: "Deep thinking - age-appropriate language for 13-15 year olds"
-  },
-
-  // Section 2: People & Helping (Q7-9) - people
-  {
-    q: 7,
-    text: "Pidätkö ihmisten auttamisesta ja tukemisesta?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.3,
-    reverse: false,
-    notes: "Helping others - social work, counseling, healthcare paths"
-  },
-  {
-    q: 8,
-    text: "Haluaisitko opettaa tai neuvoa muita?",
-    dimension: 'interests',
-    subdimension: 'growth',
-    weight: 1.2,
-    reverse: false,
-    notes: "Teaching/mentoring - personal growth and development (100% gold standard)"
-  },
-  {
-    q: 9,
-    text: "Kiinnostaako sinua ymmärtää ihmisten tunteita ja ajatuksia?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.1,
-    reverse: false,
-    notes: "Psychological understanding - psychology, social work"
-  },
-
-  // Section 3: Creative & Expression (Q10-12) - creative
-  {
-    q: 10,
-    text: "Pidätkö piirtämisestä, maalaamisesta tai suunnittelusta?",
+    text: "Tykkäätkö keksiä omia tarinoita, piirroksia tai musiikkia?",
     dimension: 'interests',
     subdimension: 'creative',
-    weight: 1.3,
-    reverse: false,
-    notes: "Visual arts - design careers, both paths available"
-  },
-  {
-    q: 11,
-    text: "Kiinnostaako sinua musiikki, näytteleminen tai tanssi?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.2,
-    reverse: false,
-    notes: "Performing arts - entertainment, music careers"
-  },
-  {
-    q: 12,
-    text: "Haluaisitko luoda videoita, kuvia tai muuta sisältöä?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.3,
-    reverse: false,
-    notes: "Content creation - modern creative expression"
-  },
-
-  // Section 4: Healthcare & Well-being (Q13) - health
-  {
-    q: 13,
-    text: "Haluaisitko auttaa sairaita tai loukkaantuneita ihmisiä?",
-    dimension: 'interests',
-    subdimension: 'health',
     weight: 1.4,
     reverse: false,
-    notes: "Healthcare interest - nursing, medicine paths"
+    notes: "Original creative expression"
   },
 
-  // Section 5: Business & Entrepreneurship (Q14) - business
+  // Q3: Hands-on - Building/fixing
   {
-    q: 14,
-    text: "Kiinnostaako sinua myynti ja asiakaspalvelu?",
-    dimension: 'interests',
-    subdimension: 'business',
-    weight: 1.1,
-    reverse: false,
-    notes: "Business interest - sales, customer service careers"
-  },
-
-  // Section 6: Leadership (Q15) - leadership
-  {
-    q: 15,
-    text: "Haluaisitko johtaa ryhmää tai projektia?",
-    dimension: 'interests',
-    subdimension: 'leadership',
-    weight: 1.2,
-    reverse: false,
-    notes: "Leadership interest - management potential"
-  },
-
-  // Section 7: Hands-On & Practical Work (Q16) - hands_on
-  {
-    q: 16,
-    text: "Pidätkö käytännön töistä, kuten rakentamisesta tai korjaamisesta?",
+    q: 3,
+    text: "Onko sinusta kivaa rakentaa tai korjata jotain käsilläsi?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.3,
     reverse: false,
-    notes: "Manual work - trades, construction, strong Ammattikoulu indicator"
+    notes: "Manual work - trades indicator"
   },
 
-  // Section 8: Technology & Innovation (Q17-18) - technology, innovation
+  // Q4: Environment - Nature/animals
   {
-    q: 17,
-    text: "Kiinnostaako sinua tekniikka ja laitteiden toiminta?",
-    dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.2,
-    reverse: false,
-    notes: "Technical interest - engineering, IT, technical trades (age-appropriate)"
-  },
-  {
-    q: 18,
-    text: "Pidätkö uusien ideoiden keksimisestä?",
-    dimension: 'interests',
-    subdimension: 'innovation',
-    weight: 1.1,
-    reverse: false,
-    notes: "Innovation interest - creative problem-solving"
-  },
-
-  // Section 9: Impact & Environment (Q19) - impact
-  {
-    q: 19,
-    text: "Haluaisitko suojella luontoa ja ympäristöä?",
+    q: 4,
+    text: "Haluaisitko tehdä jotain luonnon ja eläinten hyväksi?",
     dimension: 'interests',
     subdimension: 'environment',
     weight: 1.2,
     reverse: false,
-    notes: "Environmental protection - sustainability, conservation (100% gold standard)"
+    notes: "Environmental care"
   },
 
-  // Section 10: More Hands-On (Q20) - hands_on
+  // Q5: Health - Human body
   {
-    q: 20,
-    text: "Kiinnostaako sinua autot, moottorit tai ajoneuvot?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
-    reverse: false,
-    notes: "Automotive interest - mechanics, engineering"
-  },
-
-  // Section 11: People & Health (Q21-22) - people, health
-  {
-    q: 21,
-    text: "Pidätkö lasten tai nuorempien oppilaiden auttamisesta?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.1,
-    reverse: false,
-    notes: "Child/youth work - teaching, childcare, youth work (age-appropriate)"
-  },
-  {
-    q: 22,
-    text: "Kiinnostaako sinua terveys ja liikunta?",
+    q: 5,
+    text: "Kiinnostaako sinua tietää, miten ihmiskeho toimii?",
     dimension: 'interests',
     subdimension: 'health',
+    weight: 1.3,
+    reverse: false,
+    notes: "Biology/health interest"
+  },
+
+  // Q6: Business - Selling/trading
+  {
+    q: 6,
+    text: "Oletko koskaan myynyt tai vaihtanut jotain kavereiden kanssa?",
+    dimension: 'interests',
+    subdimension: 'business',
+    weight: 1.1,
+    reverse: false,
+    notes: "Trading/selling aptitude"
+  },
+
+  // Q7: Science - Experiments
+  {
+    q: 7,
+    text: "Haluaisitko tehdä kokeita ja selvittää miten asiat toimivat?",
+    dimension: 'interests',
+    subdimension: 'analytical',
     weight: 1.2,
     reverse: false,
-    notes: "Health/fitness interest - sports, physical therapy, wellness"
+    notes: "Scientific experimentation"
   },
 
-  // Section 12: Workstyle (Q23-24) - teamwork, independence
+  // Q8: Sports - Physical activity
   {
-    q: 23,
-    text: "Pidätkö työskentelystä ryhmässä muiden kanssa?",
-    dimension: 'workstyle',
-    subdimension: 'teamwork',
-    weight: 1.0,
-    reverse: false,
-    notes: "Teamwork preference - collaborative work style"
-  },
-  {
-    q: 24,
-    text: "Tykkäätkö tehdä asioita itsenäisesti?",
-    dimension: 'workstyle',
-    subdimension: 'independence',
-    weight: 0.9,
-    reverse: false,
-    notes: "Independence preference - autonomous work style"
-  },
-
-  // Section 13: More Hands-On (Q25) - hands_on
-  {
-    q: 25,
-    text: "Pidätkö fyysisestä työstä ja liikkumisesta?",
+    q: 8,
+    text: "Onko liikunta ja urheilu tärkeä osa elämääsi?",
     dimension: 'interests',
     subdimension: 'hands_on',
     weight: 1.1,
     reverse: false,
-    notes: "Physical work - active careers, trades"
+    notes: "Sports/fitness interest"
   },
 
-  // Section 14: Business & Innovation (Q26-27) - business, innovation
+  // Q9: Teaching - Explaining to others
   {
-    q: 26,
-    text: "Haluaisitko perustaa oman yrityksen joskus?",
+    q: 9,
+    text: "Tykkäätkö selittää asioita muille ja auttaa heitä ymmärtämään?",
     dimension: 'interests',
-    subdimension: 'business',
+    subdimension: 'growth',
     weight: 1.3,
     reverse: false,
-    notes: "Entrepreneurship - business ownership interest"
+    notes: "Teaching aptitude"
   },
+
+  // Q10: Food - Cooking
   {
-    q: 27,
-    text: "Kiinnostaako sinua kehittää uusia tuotteita tai palveluita?",
+    q: 10,
+    text: "Kiinnostaako sinua ruoanlaitto ja uusien reseptien kokeilu?",
+    dimension: 'interests',
+    subdimension: 'creative',
+    weight: 1.1,
+    reverse: false,
+    notes: "Culinary interest"
+  },
+
+  // Q11: Innovation - New ideas
+  {
+    q: 11,
+    text: "Keksitkö usein uusia tapoja tehdä asioita?",
     dimension: 'interests',
     subdimension: 'innovation',
     weight: 1.2,
     reverse: false,
-    notes: "Product development - R&D, startup interest"
+    notes: "Innovation mindset"
   },
 
-  // Section 15: Organization & Outdoor (Q28-29) - organization, outdoor
+  // Q12: Social - Emotional support
+  {
+    q: 12,
+    text: "Haluaisitko auttaa kaveria, jolla on paha mieli?",
+    dimension: 'interests',
+    subdimension: 'people',
+    weight: 1.3,
+    reverse: false,
+    notes: "Emotional support - care indicator"
+  },
+
+  // Q13: Leadership - Group decisions
+  {
+    q: 13,
+    text: "Pidätkö siitä, kun saat päättää mitä ryhmä tekee?",
+    dimension: 'interests',
+    subdimension: 'leadership',
+    weight: 1.2,
+    reverse: false,
+    notes: "Leadership potential"
+  },
+
+  // Q14: Languages - Foreign languages
+  {
+    q: 14,
+    text: "Kiinnostaako sinua oppia vieraita kieliä?",
+    dimension: 'interests',
+    subdimension: 'analytical',
+    weight: 1.0,
+    reverse: false,
+    notes: "Language learning interest"
+  },
+
+  // Q15: Workstyle - Team preference
+  {
+    q: 15,
+    text: "Tykkäätkö tehdä ryhmätöitä kavereiden kanssa?",
+    dimension: 'workstyle',
+    subdimension: 'teamwork',
+    weight: 1.0,
+    reverse: false,
+    notes: "Collaboration preference - 5=team"
+  },
+
+  // Q16: Workstyle - Structure
+  {
+    q: 16,
+    text: "Pidätkö siitä, kun tiedät tarkalleen mitä pitää tehdä?",
+    dimension: 'workstyle',
+    subdimension: 'organization',
+    weight: 0.9,
+    reverse: false,
+    notes: "Structure preference"
+  },
+
+  // Q17: Workstyle - Outdoor
+  {
+    q: 17,
+    text: "Haluaisitko työskennellä mieluummin ulkona kuin sisällä?",
+    dimension: 'workstyle',
+    subdimension: 'outdoor',
+    weight: 1.1,
+    reverse: false,
+    notes: "Outdoor work preference"
+  },
+
+  // Q18: Workstyle - Focus
+  {
+    q: 18,
+    text: "Pystytkö keskittymään pitkään samaan tehtävään?",
+    dimension: 'workstyle',
+    subdimension: 'precision',
+    weight: 0.9,
+    reverse: false,
+    notes: "Focus ability"
+  },
+
+  // Q19: Workstyle - Variety
+  {
+    q: 19,
+    text: "Pidätkö siitä, kun jokainen päivä on erilainen?",
+    dimension: 'workstyle',
+    subdimension: 'flexibility',
+    weight: 0.9,
+    reverse: false,
+    notes: "Variety preference"
+  },
+
+  // Q20: Workstyle - Pressure
+  {
+    q: 20,
+    text: "Pystytkö toimimaan hyvin, vaikka olisi kiire?",
+    dimension: 'workstyle',
+    subdimension: 'performance',
+    weight: 0.8,
+    reverse: false,
+    notes: "Pressure handling"
+  },
+
+  // Q21: Workstyle - Public speaking
+  {
+    q: 21,
+    text: "Uskaltaisitko puhua luokan edessä?",
+    dimension: 'workstyle',
+    subdimension: 'social',
+    weight: 1.0,
+    reverse: false,
+    notes: "Public speaking comfort"
+  },
+
+  // Q22: Workstyle - Taking initiative
+  {
+    q: 22,
+    text: "Aloitatko usein itse uusia projekteja tai aktiviteetteja?",
+    dimension: 'workstyle',
+    subdimension: 'independence',
+    weight: 1.0,
+    reverse: false,
+    notes: "Initiative taking"
+  },
+
+  // Q23: Values - Helping society
+  {
+    q: 23,
+    text: "Onko sinulle tärkeää, että työsi auttaa yhteiskuntaa?",
+    dimension: 'values',
+    subdimension: 'impact',
+    weight: 1.2,
+    reverse: false,
+    notes: "Social impact value"
+  },
+
+  // Q24: Values - Money
+  {
+    q: 24,
+    text: "Haluaisitko ansaita paljon rahaa aikuisena?",
+    dimension: 'values',
+    subdimension: 'financial',
+    weight: 1.0,
+    reverse: false,
+    notes: "Financial motivation"
+  },
+
+  // Q25: Values - Recognition
+  {
+    q: 25,
+    text: "Haluaisitko olla tunnettu jostain erityisestä?",
+    dimension: 'values',
+    subdimension: 'advancement',
+    weight: 0.9,
+    reverse: false,
+    notes: "Recognition desire"
+  },
+
+  // Q26: Values - Free time
+  {
+    q: 26,
+    text: "Onko sinulle tärkeää, että jää aikaa harrastuksille?",
+    dimension: 'values',
+    subdimension: 'work_life_balance',
+    weight: 1.0,
+    reverse: false,
+    notes: "Balance priority"
+  },
+
+  // Q27: Values - Own boss
+  {
+    q: 27,
+    text: "Haluaisitko olla oma pomosi joskus?",
+    dimension: 'values',
+    subdimension: 'entrepreneurship',
+    weight: 1.2,
+    reverse: false,
+    notes: "Entrepreneurial drive"
+  },
+
+  // Q28: Values - Travel
   {
     q: 28,
-    text: "Pidätkö järjestyksestä ja suunnittelusta?",
-    dimension: 'workstyle',
-    subdimension: 'organization',
+    text: "Haluaisitko matkustaa työn takia eri maihin?",
+    dimension: 'values',
+    subdimension: 'global',
     weight: 0.9,
     reverse: false,
-    notes: "Organization skills - structured work preference"
+    notes: "International work preference"
   },
+
+  // Q29: Values - Stability
   {
     q: 29,
-    text: "Pidätkö ulkona olemisesta ja luonnossa liikkumisesta?",
-    dimension: 'interests',
-    subdimension: 'outdoor',
-    weight: 1.1,
+    text: "Onko sinulle tärkeää tietää, mitä teet viiden vuoden päästä?",
+    dimension: 'values',
+    subdimension: 'stability',
+    weight: 1.0,
     reverse: false,
-    notes: "Outdoor interest - agriculture, forestry, environmental careers (age-appropriate)"
+    notes: "Stability preference"
   }
 ];
 
-// ========== YLÄASTE SET 2 (Q30-Q59) - EQUIVALENT QUESTIONS ==========
-// Each question maps to original Q0-Q29, maintaining same dimension, subdimension, weight, and reverse
-
-const YLA_MAPPINGS_SET2: QuestionMapping[] = [
-  // Section 1: Learning Preferences (Q30-37) → Original Q0-7
-  {
-    q: 30,
-    originalQ: 0,
-    text: "Tykkäätkö tutustua uusiin tarinoihin ja teksteihin?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q0, Strong indicator for Lukio path (academic orientation)"
-  },
-  {
-    q: 31,
-    originalQ: 1,
-    text: "Pidätkö matematiikasta ja ongelmien ratkaisemisesta?",
-    dimension: 'interests',
-    subdimension: 'problem_solving',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q1, STEM indicator - can lead to either Lukio or technical Ammattikoulu"
-  },
-  {
-    q: 32,
-    originalQ: 2,
-    text: "Kiinnostaako sinua oppia asioita käytännössä tekemällä?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q2, Strong indicator for Ammattikoulu (practical learning)"
-  },
-  {
-    q: 33,
-    originalQ: 3,
-    text: "Kiinnostaako sinua opiskella yhtä aikaa useita eri oppiaineita?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q3, Lukio indicator (broad curriculum)"
-  },
-  {
-    q: 34,
-    originalQ: 4,
-    text: "Muistatko helposti oppimasi asiat ja selitykset?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 0.9,
-    reverse: false,
-    notes: "Equivalent to Q4, Academic strength indicator"
-  },
-  {
-    q: 35,
-    originalQ: 5,
-    text: "Pidätkö enemmän kokeilemisesta kuin vain kuuntelemisesta?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q5, Ammattikoulu indicator (practical over theory)"
-  },
-  {
-    q: 36,
-    originalQ: 6,
-    text: "Haluaisitko ymmärtää aiheen tosi hyvin?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q6, Research/academic orientation"
-  },
-  {
-    q: 37,
-    originalQ: 7,
-    text: "Haluaisitko keskittyä nopeasti yhteen ammattiin ja sen taitoihin?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q7, Strong Ammattikoulu indicator (vocational focus)"
-  },
-  
-  // Section 2: Future Mindset (Q38-44) → Original Q8-14
-  {
-    q: 38,
-    originalQ: 8,
-    text: "Onko sinulla jo ajatus siitä, mitä haluaisit tehdä työksesi?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: false,
-    notes: "Equivalent to Q8, Ammattikoulu indicator (clear vocational goal)"
-  },
-  {
-    q: 39,
-    originalQ: 9,
-    text: "Haluatko pitää monta polkua auki tulevaisuudessa?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: true,
-    notes: "Equivalent to Q9, Lukio indicator (keeping options open)"
-  },
-  {
-    q: 40,
-    originalQ: 10,
-    text: "Kiinnostaako sinua opiskella yliopistossa tulevaisuudessa?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: false,
-    notes: "Equivalent to Q10, Strong Lukio indicator (university path)"
-  },
-  {
-    q: 41,
-    originalQ: 11,
-    text: "Haluaisitko aloittaa työelämän nuorena (esim. 18–19-vuotiaana)?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: false,
-    notes: "Equivalent to Q11, Ammattikoulu indicator (quick entry to workforce)"
-  },
-  {
-    q: 42,
-    originalQ: 12,
-    text: "Onko sinusta ok, että opiskelut kestävät vielä vuosia ennen työelämään siirtymistä?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: false,
-    notes: "Equivalent to Q12, Lukio indicator (long education path)"
-  },
-  {
-    q: 43,
-    originalQ: 13,
-    text: "Tuntuuko sinusta, että sinulla on jo suunnitelma siitä, mitä haluat tehdä?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: false,
-    notes: "Equivalent to Q13, Similar to Q8, lower weight to avoid over-weighting"
-  },
-  {
-    q: 44,
-    originalQ: 14,
-    text: "Haluaisitko tutustua eri aloihin ennen kuin valitset urasi?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: true,
-    notes: "Equivalent to Q14, Lukio indicator (exploration over specialization)"
-  },
-  
-  // Section 3: Interest Areas (Q45-52) → Original Q15-22
-  {
-    q: 45,
-    originalQ: 15,
-    text: "Kiinnostaako sinua digitaaliset laitteet ja netti?",
-    dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q15, Tech career indicator"
-  },
-  {
-    q: 46,
-    originalQ: 16,
-    text: "Haluaisitko työskennellä auttamassa ja tukemassa muita ihmisiä?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q16, Care/helping professions (strong differentiator)"
-  },
-  {
-    q: 47,
-    originalQ: 17,
-    text: "Kiinnostaako sinua luoda asioita, kuten piirtäminen, musiikki tai taide?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q17, Creative careers (strong differentiator)"
-  },
-  {
-    q: 48,
-    originalQ: 18,
-    text: "Pidätkö ajatuksesta työskennellä ulkona luonnon parissa?",
-    dimension: 'interests',
-    subdimension: 'impact', // ALREADY_FIXED_YLA_Q48,
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q18, Outdoor/environmental careers"
-  },
-  {
-    q: 49,
-    originalQ: 19,
-    text: "Haluaisitko johtaa muita ja tehdä tärkeitä päätöksiä?",
-    dimension: 'workstyle',
-    subdimension: 'leadership',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q19, Leadership orientation"
-  },
-  {
-    q: 50,
-    originalQ: 20,
-    text: "Kiinnostaako sinua käytännön työt, kuten rakentaminen ja korjaaminen?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q20, Technical/trades careers"
-  },
-  {
-    q: 51,
-    originalQ: 21,
-    text: "Haluaisitko auttaa ihmisiä, jotka ovat sairaita tai loukkaantuneita?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q21, Healthcare indicator (overlaps Q16 but more specific)"
-  },
-  {
-    q: 52,
-    originalQ: 22,
-    text: "Kiinnostaako sinua työskennellä asiakkaiden kanssa tai myydä asioita?",
-    dimension: 'values',
-    subdimension: 'business',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q22, Business/entrepreneurship orientation"
-  },
-  
-  // Section 4: Work Style (Q53-59) → Original Q23-29
-  {
-    q: 53,
-    originalQ: 23,
-    text: "Tykkäätkö työskennellä muiden kanssa tiimissä?",
-    dimension: 'workstyle',
-    subdimension: 'teamwork',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q23, Teamwork preference"
-  },
-  {
-    q: 54,
-    originalQ: 24,
-    text: "Tykkäätkö siitä, että saat tehdä asioita omalla tavallasi?",
-    dimension: 'workstyle',
-    subdimension: 'independence',
-    weight: 0.9,
-    reverse: false,
-    notes: "Equivalent to Q24, Independence preference"
-  },
-  {
-    q: 55,
-    originalQ: 25,
-    text: "Kiinnostaako sinua työskennellä luonnossa ja ulkoilmassa?",
-    dimension: 'interests',
-    subdimension: 'outdoor',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q25, Outdoor work preference"
-  },
-  {
-    q: 56,
-    originalQ: 26,
-    text: "Pidätkö selkeästä rutiinista ja säännöllisestä työrytmistä?",
-    dimension: 'workstyle',
-    subdimension: 'organization',
-    weight: 0.8,
-    reverse: false,
-    notes: "Equivalent to Q26, Routine/structure preference"
-  },
-  {
-    q: 57,
-    originalQ: 27,
-    text: "Haluaisitko nähdä maailmaa ja tutustua eri maihin työn kautta?",
-    dimension: 'values',
-    subdimension: 'environment',
-    weight: 0.1,
-    reverse: false,
-    notes: "Equivalent to Q27, International orientation"
-  },
-  {
-    q: 58,
-    originalQ: 28,
-    text: "Haluaisitko työssäsi päivittäin tavata ja keskustella uusien ihmisten kanssa?",
-    dimension: 'workstyle',
-    subdimension: 'teamwork',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q28, Social interaction preference"
-  },
-  {
-    q: 59,
-    originalQ: 29,
-    text: "Tykkäätkö tehdä koulutehtäviä ja projekteja tietokoneella kotona?",
-    dimension: 'context',
-    subdimension: 'independence',
-    weight: 0.8,
-    reverse: false,
-    notes: "Equivalent to Q29, Digital/independent work preference (age-appropriate for 13-15)"
-  }
-];
-
-// ========== YLÄASTE SET 3 (Q60-Q89) - EQUIVALENT QUESTIONS ==========
-// Each question maps to original Q0-Q29, maintaining same dimension, subdimension, weight, and reverse
-
-const YLA_MAPPINGS_SET3: QuestionMapping[] = [
-  // Section 1: Learning Preferences (Q60-67) → Original Q0-7
-  {
-    q: 60,
-    originalQ: 0,
-    text: "Luetko mielelläsi kirjoja tai artikkeleita vapaa-ajallasi?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q0, Strong indicator for Lukio path (academic orientation)"
-  },
-  {
-    q: 61,
-    originalQ: 1,
-    text: "Tykkäätkö laskemisesta ja matemaattisista tehtävistä?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q1, STEM indicator - can lead to either Lukio or technical Ammattikoulu"
-  },
-  {
-    q: 62,
-    originalQ: 2,
-    text: "Pidätkö siitä, kun saat kokeilla ja testata asioita itse?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q2, Strong indicator for Ammattikoulu (practical learning)"
-  },
-  {
-    q: 63,
-    originalQ: 3,
-    text: "Kiinnostaako sinua opiskella laajasti eri aiheita samanaikaisesti?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q3, Lukio indicator (broad curriculum)"
-  },
-  {
-    q: 64,
-    originalQ: 4,
-    text: "Muistatko helposti oppimasi teoreettiset asiat ja faktat?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 0.9,
-    reverse: false,
-    notes: "Equivalent to Q4, Academic strength indicator"
-  },
-  {
-    q: 65,
-    originalQ: 5,
-    text: "Pidätkö enemmän käytännön harjoituksista kuin vain teoriaa kuuntelemisesta?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q5, Ammattikoulu indicator (practical over theory)"
-  },
-  {
-    q: 66,
-    originalQ: 6,
-    text: "Kiinnostaako sinua syventyä aiheisiin ja ymmärtää niitä paremmin?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q6, Research/academic orientation"
-  },
-  {
-    q: 67,
-    originalQ: 7,
-    text: "Haluaisitko keskittyä nopeasti yhteen ammattiin ja sen käytännön taitoihin?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q7, Strong Ammattikoulu indicator (vocational focus)"
-  },
-  
-  // Section 2: Future Mindset (Q68-74) → Original Q8-14
-  {
-    q: 68,
-    originalQ: 8,
-    text: "Onko sinulla jo ajatus siitä, mitä ammattia haluaisit tehdä?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: false,
-    notes: "Equivalent to Q8, Ammattikoulu indicator (clear vocational goal)"
-  },
-  {
-    q: 69,
-    originalQ: 9,
-    text: "Haluatko pitää monta vaihtoehtoa auki tulevaisuudessa?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: true,
-    notes: "Equivalent to Q9, Lukio indicator (keeping options open)"
-  },
-  {
-    q: 70,
-    originalQ: 10,
-    text: "Kiinnostaako sinua ajatus opiskella yliopistossa tulevaisuudessa?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: false,
-    notes: "Equivalent to Q10, Strong Lukio indicator (university path)"
-  },
-  {
-    q: 71,
-    originalQ: 11,
-    text: "Haluaisitko aloittaa työelämän pian (noin 18–19 vuoden iässä)?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: false,
-    notes: "Equivalent to Q11, Ammattikoulu indicator (quick entry to workforce)"
-  },
-  {
-    q: 72,
-    originalQ: 12,
-    text: "Onko sinusta ok, että opiskelut kestävät vielä vuosia ennen työelämää?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: false,
-    notes: "Equivalent to Q12, Lukio indicator (long education path)"
-  },
-  {
-    q: 73,
-    originalQ: 13,
-    text: "Tuntuuko sinusta, että sinulla on jo ajatus siitä, mitä haluat tehdä aikuisena?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: false,
-    notes: "Equivalent to Q13, Similar to Q8, lower weight to avoid over-weighting"
-  },
-  {
-    q: 74,
-    originalQ: 14,
-    text: "Haluaisitko tutustua useisiin eri aloihin ennen kuin teet uran päätöksen?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 0.1,
-    reverse: true,
-    notes: "Equivalent to Q14, Lukio indicator (exploration over specialization)"
-  },
-  
-  // Section 3: Interest Areas (Q75-82) → Original Q15-22
-  {
-    q: 75,
-    originalQ: 15,
-    text: "Kiinnostaako sinua ohjelmointi, tietokoneet ja digitaaliset jutut?",
-    dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q15, Tech career indicator"
-  },
-  {
-    q: 76,
-    originalQ: 16,
-    text: "Haluaisitko auttaa ihmisiä, joilla on oikea tarve apua?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q16, Care/helping professions (strong differentiator)"
-  },
-  {
-    q: 77,
-    originalQ: 17,
-    text: "Kiinnostaako sinua luoda asioita, kuten piirtäminen, musiikki tai taide?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q17, Creative careers (strong differentiator)"
-  },
-  {
-    q: 78,
-    originalQ: 18,
-    text: "Haluaisitko työskennellä ulkoilmassa ja olla tekemisissä luonnon kanssa?",
-    dimension: 'interests',
-    subdimension: 'environment',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q18, Outdoor/environmental careers"
-  },
-  {
-    q: 79,
-    originalQ: 19,
-    text: "Kiinnostaako sinua johtaminen ja tärkeiden päätösten tekeminen?",
-    dimension: 'workstyle',
-    subdimension: 'leadership',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q19, Leadership orientation"
-  },
-  {
-    q: 80,
-    originalQ: 20,
-    text: "Kiinnostaako sinua käytännön työt, kuten rakennustyöt ja laitteiden korjaus?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q20, Technical/trades careers"
-  },
-  {
-    q: 81,
-    originalQ: 21,
-    text: "Haluaisitko työskennellä terveydenhuollossa auttamassa ihmisiä?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q21, Healthcare indicator (overlaps Q16 but more specific)"
-  },
-  {
-    q: 82,
-    originalQ: 22,
-    text: "Kiinnostaako sinua asiakaspalvelu ja myyminen?",
-    dimension: 'values',
-    subdimension: 'business',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q22, Business/entrepreneurship orientation"
-  },
-  
-  // Section 4: Work Style (Q83-89) → Original Q23-29
-  {
-    q: 83,
-    originalQ: 23,
-    text: "Pidätkö yhteistyöstä ja työskentelystä muiden kanssa?",
-    dimension: 'workstyle',
-    subdimension: 'teamwork',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q23, Teamwork preference"
-  },
-  {
-    q: 84,
-    originalQ: 24,
-    text: "Tykkäätkö siitä, että saat tehdä asioita omalla tavallasi?",
-    dimension: 'workstyle',
-    subdimension: 'independence',
-    weight: 0.9,
-    reverse: false,
-    notes: "Equivalent to Q24, Independence preference"
-  },
-  {
-    q: 85,
-    originalQ: 25,
-    text: "Haluaisitko työskennellä pääosin ulkoilmassa ja luonnossa?",
-    dimension: 'interests',
-    subdimension: 'outdoor',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q25, Outdoor work preference"
-  },
-  {
-    q: 86,
-    originalQ: 26,
-    text: "Pidätkö siitä, kun työ on säännöllistä ja ennustettavaa?",
-    dimension: 'workstyle',
-    subdimension: 'organization',
-    weight: 0.8,
-    reverse: false,
-    notes: "Equivalent to Q26, Routine/structure preference"
-  },
-  {
-    q: 87,
-    originalQ: 27,
-    text: "Haluaisitko työskennellä myös ulkomailla ja matkustaa työn vuoksi?",
-    dimension: 'values',
-    subdimension: 'environment',
-    weight: 0.1,
-    reverse: false,
-    notes: "Equivalent to Q27, International orientation"
-  },
-  {
-    q: 88,
-    originalQ: 28,
-    text: "Haluaisitko työssäsi päivittäin olla tekemisissä monien ihmisten kanssa?",
-    dimension: 'workstyle',
-    subdimension: 'teamwork',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q28, Social interaction preference"
-  },
-  {
-    q: 89,
-    originalQ: 29,
-    text: "Pidätkö ajatuksesta opiskella ja tehdä projekteja kotona itsenäisesti?",
-    dimension: 'context',
-    subdimension: 'independence',
-    weight: 0.8,
-    reverse: false,
-    notes: "Equivalent to Q29, Independent study preference (age-appropriate for 13-15)"
-  }
-];
-
-// ========== TOISEN ASTEEN OPISKELIJAT (17-19v) - 30 QUESTIONS ==========
-// Focus: Career field exploration + skill/interest matching
+// ========== TASO2 (16-19v) - 30 COMPLETELY UNIQUE QUESTIONS ==========
+// Focus: Vocational interests and practical career direction
 
 const TASO2_MAPPINGS: QuestionMapping[] = [
-  // Section 1: Tech, Leadership & Diverse Interests (Q0-6)
+  // Q0: IT/Software
   {
     q: 0,
-    text: "Kiinnostaako sinua koodaaminen tai omien ohjelmien tekeminen?",
+    text: "Kiinnostaako sinua ohjelmointi tai IT-alan työ?",
     dimension: 'interests',
     subdimension: 'technology',
-    weight: 1.5,
+    weight: 1.4,
     reverse: false,
-    notes: "Very specific tech indicator - high weight"
+    notes: "Software/IT careers"
   },
+
+  // Q1: Healthcare
   {
     q: 1,
-    text: "Haluaisitko johtaa ryhmää tai projektia?",
+    text: "Haluaisitko hoitaa sairaita tai vanhuksia?",
     dimension: 'interests',
-    subdimension: 'leadership',
-    weight: 1.2,
+    subdimension: 'health',
+    weight: 1.4,
     reverse: false,
-    notes: "Leadership/management indicator (replaces tech duplicate)"
+    notes: "Healthcare/nursing"
   },
+
+  // Q2: Construction
   {
     q: 2,
-    text: "Pidätkö numeroiden ja tilastojen tutkimisesta?",
+    text: "Kiinnostaako sinua rakennusala tai remontointi?",
     dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.2,
+    subdimension: 'hands_on',
+    weight: 1.3,
     reverse: false,
-    notes: "Data/analytical careers"
+    notes: "Construction trades"
   },
+
+  // Q3: Automotive
   {
     q: 3,
-    text: "Haluaisitko työskennellä urheilun tai liikunnan parissa?",
+    text: "Haluaisitko korjata autoja tai koneita?",
     dimension: 'interests',
     subdimension: 'hands_on',
-    weight: 1.2,
+    weight: 1.3,
     reverse: false,
-    notes: "Sports/fitness careers - physical/hands-on work (was: sports)"
+    notes: "Automotive/mechanical"
   },
+
+  // Q4: Restaurant/Hospitality
   {
     q: 4,
-    text: "Haluaisitko suunnitella verkkosivuja tai mobiilisovelluksia?",
+    text: "Kiinnostaako sinua ravintola-ala ja ruoan valmistus?",
     dimension: 'interests',
-    subdimension: 'innovation',
-    weight: 1.3,
+    subdimension: 'creative',
+    weight: 1.2,
     reverse: false,
-    notes: "Specific tech field (design/dev)"
+    notes: "Hospitality/culinary"
   },
+
+  // Q5: Beauty
   {
     q: 5,
-    text: "Kiinnostaako sinua laki, oikeusjärjestelmä tai turvallisuusala?",
+    text: "Haluaisitko työskennellä kampaamossa tai kauneusalalla?",
     dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.1,
+    subdimension: 'creative',
+    weight: 1.2,
     reverse: false,
-    notes: "Legal/law enforcement/security careers (replaces tech duplicate)"
+    notes: "Beauty/hairdressing"
   },
+
+  // Q6: Childcare
   {
     q: 6,
-    text: "Kiinnostaako sinua suojata tietoja hakkereilta ja tietomurroilta?",
+    text: "Kiinnostaako sinua pienten lasten hoito ja kasvatus?",
     dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.1,
+    subdimension: 'people',
+    weight: 1.3,
     reverse: false,
-    notes: "Cybersecurity interest"
+    notes: "Childcare/early education"
   },
-  
-  // Section 2: People & Care (Q7-13)
+
+  // Q7: Security
   {
     q: 7,
-    text: "Haluaisitko auttaa ihmisiä voimaan hyvin?",
+    text: "Haluaisitko työskennellä turvallisuus- tai pelastusalalla?",
     dimension: 'interests',
-    subdimension: 'health',  // FIXED: Changed from 'people' to 'health' for proper healthcare matching
-    weight: 1.4,
+    subdimension: 'leadership',
+    weight: 1.1,
     reverse: false,
-    notes: "Healthcare/wellbeing careers (strong indicator) - maps to health subdimension"
+    notes: "Security/rescue sector"
   },
+
+  // Q8: Transport/Logistics
   {
     q: 8,
-    text: "Kiinnostaako sinua ymmärtää, miten ihmisen mieli toimii?",
+    text: "Kiinnostaako sinua kuljettajan työ tai logistiikka?",
     dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.2,
+    subdimension: 'hands_on',
+    weight: 1.1,
     reverse: false,
-    notes: "Psychology/social work indicator"
+    notes: "Transport/logistics"
   },
+
+  // Q9: Sales/Retail
   {
     q: 9,
-    text: "Pidätkö ajatuksesta opettaa tai kouluttaa muita?",
+    text: "Tykkäätkö palvella asiakkaita ja myydä tuotteita?",
     dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.3,
+    subdimension: 'business',
+    weight: 1.2,
     reverse: false,
-    notes: "Education careers"
+    notes: "Sales/retail"
   },
+
+  // Q10: Electrical
   {
     q: 10,
-    text: "Haluaisitko tukea ihmisiä vaikeissa elämäntilanteissa?",
+    text: "Kiinnostaako sinua sähkötyöt tai tekniset asennukset?",
     dimension: 'interests',
-    subdimension: 'people',
+    subdimension: 'technology',
     weight: 1.3,
     reverse: false,
-    notes: "Social work/counseling"
+    notes: "Electrical/technical"
   },
+
+  // Q11: Agriculture/Forestry
   {
     q: 11,
-    text: "Haluaisitko työskennellä lasten tai nuorten kanssa?",
+    text: "Haluaisitko työskennellä maatalouden tai metsäalan parissa?",
     dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.1,
+    subdimension: 'environment',
+    weight: 1.2,
     reverse: false,
-    notes: "Youth work/education"
+    notes: "Agriculture/forestry"
   },
+
+  // Q12: Design/Media
   {
     q: 12,
-    text: "Haluaisitko olla tukena vanhuksille ja ikääntyneille?",
+    text: "Kiinnostaako sinua graafinen suunnittelu tai media-ala?",
     dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.1,
+    subdimension: 'creative',
+    weight: 1.3,
     reverse: false,
-    notes: "Elder care"
+    notes: "Design/media"
   },
+
+  // Q13: Office/Admin
   {
     q: 13,
-    text: "Kiinnostaako sinua tutkia terveyden ja sairauksien syitä?",
+    text: "Haluaisitko tehdä toimistotyötä ja hallinnollisia tehtäviä?",
     dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.2,
+    subdimension: 'business',
+    weight: 1.1,
     reverse: false,
-    notes: "Medical research/diagnostics (differentiated from Q7/Q10 helping focus)"
+    notes: "Office/admin work"
   },
-  
-  // Section 3: Creative & Business (Q14-20)
+
+  // Q14: Social work
   {
     q: 14,
-    text: "Kiinnostaako sinua grafiikka, kuvat tai visuaalinen suunnittelu?",
+    text: "Kiinnostaako sinua tukea ihmisiä vaikeissa elämäntilanteissa?",
     dimension: 'interests',
-    subdimension: 'creative',
+    subdimension: 'people',
     weight: 1.4,
     reverse: false,
-    notes: "Visual design careers (strong indicator)"
+    notes: "Social work"
   },
+
+  // Q15: Physical work preference
   {
     q: 15,
-    text: "Haluaisitko työskennellä mainonnan ja markkinoinnin parissa?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.2,
+    text: "Haluaisitko työn jossa liikut ja teet fyysistä työtä?",
+    dimension: 'workstyle',
+    subdimension: 'hands_on',
+    weight: 1.1,
     reverse: false,
-    notes: "Marketing/advertising"
+    notes: "Physical work preference - 5=physical"
   },
+
+  // Q16: Shift work
   {
     q: 16,
-    text: "Kiinnostaako sinua sisustaa tiloja ja suunnitella ympäristöjä?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.1,
+    text: "Sopisivatko vuorotyöt sinulle (illat, viikonloput)?",
+    dimension: 'workstyle',
+    subdimension: 'flexibility',
+    weight: 0.9,
     reverse: false,
-    notes: "Interior design"
+    notes: "Shift work acceptance"
   },
+
+  // Q17: Customer interaction
   {
     q: 17,
-    text: "Pidätkö ajatuksesta kirjoittaa artikkeleita, blogeja tai tarinoita?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.2,
+    text: "Haluatko tavata uusia ihmisiä työssäsi päivittäin?",
+    dimension: 'workstyle',
+    subdimension: 'social',
+    weight: 1.0,
     reverse: false,
-    notes: "Writing/journalism"
+    notes: "Customer interaction"
   },
+
+  // Q18: Precision
   {
     q: 18,
-    text: "Kiinnostaako sinua valokuvaus tai videoiden tekeminen?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.3,
+    text: "Oletko tarkka ja huolellinen yksityiskohdissa?",
+    dimension: 'workstyle',
+    subdimension: 'precision',
+    weight: 1.0,
     reverse: false,
-    notes: "Visual content creation"
+    notes: "Attention to detail"
   },
+
+  // Q19: Responsibility
   {
     q: 19,
-    text: "Haluaisitko joskus perustaa ja pyörittää omaa yritystä?",
-    dimension: 'values',
-    subdimension: 'business',
-    weight: 1.3,
+    text: "Haluatko ottaa vastuuta ja tehdä itsenäisiä päätöksiä?",
+    dimension: 'workstyle',
+    subdimension: 'leadership',
+    weight: 1.1,
     reverse: false,
-    notes: "Entrepreneurship orientation"
+    notes: "Responsibility-taking"
   },
+
+  // Q20: Teamwork
   {
     q: 20,
-    text: "Pidätkö myynnistä ja asiakkaiden kohtaamisesta?",
+    text: "Tykkäätkö työskennellä tiimissä muiden kanssa?",
     dimension: 'workstyle',
     subdimension: 'teamwork',
-    weight: 1.1,
+    weight: 1.0,
     reverse: false,
-    notes: "Sales/customer service"
+    notes: "Team preference - 5=team"
   },
-  
-  // Section 4: Hands-On & Practical (Q21-29)
+
+  // Q21: Problem-solving at work
   {
     q: 21,
-    text: "Haluaisitko rakentaa taloja tai korjata rakennuksia?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.3,
+    text: "Pidätkö haastavien teknisten ongelmien ratkaisemisesta?",
+    dimension: 'workstyle',
+    subdimension: 'problem_solving',
+    weight: 1.1,
     reverse: false,
-    notes: "Construction/building trades"
+    notes: "Technical problem-solving"
   },
+
+  // Q22: Routine tolerance
   {
     q: 22,
-    text: "Kiinnostaako sinua autot, moottorit tai muut ajoneuvot?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
+    text: "Sopiiko sinulle työ jossa tehtävät toistuvat samanlaisina?",
+    dimension: 'workstyle',
+    subdimension: 'structure',
+    weight: 0.8,
     reverse: false,
-    notes: "Automotive/mechanics"
+    notes: "Routine tolerance"
   },
+
+  // Q23: Job security
   {
     q: 23,
-    text: "Haluaisitko tehdä sähkö- ja asennustöitä?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
+    text: "Onko sinulle tärkeää vakaa ja varma työpaikka?",
+    dimension: 'values',
+    subdimension: 'stability',
+    weight: 1.1,
     reverse: false,
-    notes: "Electrical trades"
+    notes: "Job security priority"
   },
+
+  // Q24: Salary
   {
     q: 24,
-    text: "Kiinnostaako sinua maatalous, karjanhoito tai eläinlääkintä?",
-    dimension: 'interests',
-    subdimension: 'outdoor',
-    weight: 1.2,
+    text: "Kuinka tärkeää sinulle on hyvä palkka?",
+    dimension: 'values',
+    subdimension: 'financial',
+    weight: 1.0,
     reverse: false,
-    notes: "Agriculture/veterinary (more specific than Q25 environmental focus)"
+    notes: "Salary importance"
   },
+
+  // Q25: Meaningful work
   {
     q: 25,
-    text: "Haluaisitko suojella ympäristöä ja luontoa?",
-    dimension: 'interests',
+    text: "Haluatko työn joka tuntuu merkitykselliseltä?",
+    dimension: 'values',
     subdimension: 'impact',
-    weight: 1.3,
+    weight: 1.2,
     reverse: false,
-    notes: "Environmental careers"
+    notes: "Meaning in work"
   },
+
+  // Q26: Career advancement
   {
     q: 26,
-    text: "Kiinnostaako sinua kuljettaa ihmisiä tai tavaroita paikasta toiseen?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 0.9,
+    text: "Onko sinulle tärkeää edetä uralla ja saada ylennyksiä?",
+    dimension: 'values',
+    subdimension: 'advancement',
+    weight: 1.0,
     reverse: false,
-    notes: "Transportation/logistics"
+    notes: "Career advancement"
   },
+
+  // Q27: Work-life balance
   {
     q: 27,
-    text: "Haluaisitko valmistaa ruokaa tai leipoa ammatiksesi?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
+    text: "Haluatko työn joka jättää aikaa perheelle ja vapaa-ajalle?",
+    dimension: 'values',
+    subdimension: 'work_life_balance',
     weight: 1.1,
     reverse: false,
-    notes: "Culinary careers"
+    notes: "Balance priority"
   },
+
+  // Q28: Own business
   {
     q: 28,
-    text: "Kiinnostaako sinua puun, metallin tai tekstiilien käsityöt?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.1,
+    text: "Haluaisitko perustaa oman yrityksen tulevaisuudessa?",
+    dimension: 'values',
+    subdimension: 'entrepreneurship',
+    weight: 1.3,
     reverse: false,
-    notes: "Craft/artisan trades"
+    notes: "Entrepreneurial drive"
   },
+
+  // Q29: Travel
   {
     q: 29,
-    text: "Haluaisitko työskennellä laboratoriossa ja tehdä kokeita?",
-    dimension: 'interests',
-    subdimension: 'organization', // ALREADY_FIXED_TASO2_Q29_ORG,
-    weight: 1.2,
-    reverse: false,
-    notes: "Laboratory/research work"
-  }
-];
-
-// ========== TOISEN ASTEEN OPISKELIJAT SET 2 (Q30-Q59) - EQUIVALENT QUESTIONS ==========
-// Each question maps to original Q0-Q29, maintaining same dimension, subdimension, weight, and reverse
-
-const TASO2_MAPPINGS_SET2: QuestionMapping[] = [
-  // Section 1: Tech & Digital (Q30-36) → Original Q0-6
-  {
-    q: 30,
-    originalQ: 0,
-    text: "Kiinnostaako sinua ohjelmointi tai sovellusten kehittäminen?",
-    dimension: 'interests',
-    subdimension: 'innovation',
-    weight: 1.5,
-    reverse: false,
-    notes: "Equivalent to Q0, Very specific tech indicator - high weight"
-  },
-  {
-    q: 31,
-    originalQ: 1,
-    text: "Haluaisitko työskennellä digitaalisten järjestelmien ja teknologian parissa?",
-    dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q1, Broader tech interest"
-  },
-  {
-    q: 32,
-    originalQ: 2,
-    text: "Kiinnostaako sinua datan ja tilastojen tutkiminen?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q2, Data/analytical careers"
-  },
-  {
-    q: 33,
-    originalQ: 3,
-    text: "Pidätkö teknisten haasteiden ratkaisemisesta?",
-    dimension: 'interests',
-    subdimension: 'problem_solving',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q3, Problem-solving in tech context"
-  },
-  {
-    q: 34,
-    originalQ: 4,
-    text: "Haluaisitko suunnitella digitaalisia tuotteita tai sovelluksia?",
-    dimension: 'interests',
-    subdimension: 'innovation',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q4, Specific tech field (design/dev)"
-  },
-  {
-    q: 35,
-    originalQ: 5,
-    text: "Kiinnostaako sinua peliala tai pelien kehittäminen?",
-    dimension: 'interests',
-    subdimension: 'innovation',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q5, Game industry interest"
-  },
-  {
-    q: 36,
-    originalQ: 6,
-    text: "Kiinnostaako sinua työskennellä tietoturvan parissa?",
-    dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q6, Cybersecurity interest"
-  },
-  
-  // Section 2: People & Care (Q37-43) → Original Q7-13
-  {
-    q: 37,
-    originalQ: 7,
-    text: "Haluaisitko työskennellä terveydenhuollossa auttamassa ihmisiä?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.4,
-    reverse: false,
-    notes: "Equivalent to Q7, Healthcare/wellbeing careers (strong indicator)"
-  },
-  {
-    q: 38,
-    originalQ: 8,
-    text: "Kiinnostaako sinua psykologia ja ihmisen käyttäytymisen ymmärtäminen?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q8, Psychology/social work indicator"
-  },
-  {
-    q: 39,
-    originalQ: 9,
-    text: "Haluaisitko työskennellä opetuksen parissa?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q9, Education careers"
-  },
-  {
-    q: 40,
-    originalQ: 10,
-    text: "Kiinnostaako sinua sosiaalityö ja ihmisten tukeminen?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q10, Social work/counseling"
-  },
-  {
-    q: 41,
-    originalQ: 11,
-    text: "Haluaisitko työskennellä nuorten tai lasten parissa?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q11, Youth work/education"
-  },
-  {
-    q: 42,
-    originalQ: 12,
-    text: "Haluaisitko olla tukena ikääntyneille hoitotyössä?",
-    dimension: 'interests',
-    subdimension: 'growth', // ALREADY_FIXED_TASO2_Q42,
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q12, Elder care"
-  },
-  {
-    q: 43,
-    originalQ: 13,
-    text: "Kiinnostaako sinua ohjaus- ja neuvontatyö?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q13, Counseling/guidance careers"
-  },
-  
-  // Section 3: Creative & Business (Q44-50) → Original Q14-20
-  {
-    q: 44,
-    originalQ: 14,
-    text: "Kiinnostaako sinua visuaalinen suunnittelu ja kuvituksien tekeminen?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.4,
-    reverse: false,
-    notes: "Equivalent to Q14, Visual design careers (strong indicator)"
-  },
-  {
-    q: 45,
-    originalQ: 15,
-    text: "Haluaisitko työskennellä markkinoinnin ja brändäyksen parissa?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q15, Marketing/advertising"
-  },
-  {
-    q: 46,
-    originalQ: 16,
-    text: "Kiinnostaako sinua arkkitehtuuri ja tilasuunnittelu?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q16, Interior design"
-  },
-  {
-    q: 47,
-    originalQ: 17,
-    text: "Haluaisitko kirjoittaa ja tuottaa tekstiä ammatiksesi?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q17, Writing/journalism"
-  },
-  {
-    q: 48,
-    originalQ: 18,
-    text: "Kiinnostaako sinua media-ala ja videotuotanto?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q18, Visual content creation"
-  },
-  {
-    q: 49,
-    originalQ: 19,
-    text: "Haluaisitko joskus perustaa oman yrityksen?",
+    text: "Haluaisitko työn jossa pääsee matkustamaan?",
     dimension: 'values',
-    subdimension: 'business',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q19, Entrepreneurship orientation"
-  },
-  {
-    q: 50,
-    originalQ: 20,
-    text: "Kiinnostaako sinua asiakaspalvelu ja myyntityö?",
-    dimension: 'workstyle',
-    subdimension: 'teamwork',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q20, Sales/customer service"
-  },
-  
-  // Section 4: Hands-On & Practical (Q51-59) → Original Q21-29
-  {
-    q: 51,
-    originalQ: 21,
-    text: "Haluaisitko työskennellä rakennusalalla?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q21, Construction/building trades"
-  },
-  {
-    q: 52,
-    originalQ: 22,
-    text: "Kiinnostaako sinua autot, koneet ja tekniikka?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q22, Automotive/mechanics"
-  },
-  {
-    q: 53,
-    originalQ: 23,
-    text: "Haluaisitko tehdä sähköasennuksia ja sähkötyötä?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q23, Electrical trades"
-  },
-  {
-    q: 54,
-    originalQ: 24,
-    text: "Kiinnostaako sinua maatalous tai eläinten hoito?",
-    dimension: 'interests',
-    subdimension: 'environment',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q24, Agriculture/animal care"
-  },
-  {
-    q: 55,
-    originalQ: 25,
-    text: "Haluaisitko työskennellä ympäristönsuojelun parissa?",
-    dimension: 'interests',
-    subdimension: 'impact',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q25, Environmental careers"
-  },
-  {
-    q: 56,
-    originalQ: 26,
-    text: "Kiinnostaako sinua logistiikka ja kuljetusala?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
+    subdimension: 'global',
     weight: 0.9,
     reverse: false,
-    notes: "Equivalent to Q26, Transportation/logistics"
-  },
-  {
-    q: 57,
-    originalQ: 27,
-    text: "Haluaisitko työskennellä ravintola-alalla tai leipomossa?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q27, Culinary careers"
-  },
-  {
-    q: 58,
-    originalQ: 28,
-    text: "Kiinnostaako sinua käsityöt ja käsitöiden tekeminen?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q28, Craft/artisan trades"
-  },
-  {
-    q: 59,
-    originalQ: 29,
-    text: "Haluaisitko tehdä tutkimustyötä tai kokeita laboratoriossa?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q29, Laboratory/research work"
+    notes: "Travel preference"
   }
 ];
 
-// ========== TOISEN ASTEEN OPISKELIJAT SET 3 (Q60-Q89) - EQUIVALENT QUESTIONS ==========
-// Each question maps to original Q0-Q29, maintaining same dimension, subdimension, weight, and reverse
-
-const TASO2_MAPPINGS_SET3: QuestionMapping[] = [
-  // Section 1: Tech & Digital (Q60-66) → Original Q0-6
-  {
-    q: 60,
-    originalQ: 0,
-    text: "Kiinnostaako sinua ohjelmistokehitys tai sovellusten luominen?",
-    dimension: 'interests',
-    subdimension: 'innovation',
-    weight: 1.5,
-    reverse: false,
-    notes: "Equivalent to Q0, Very specific tech indicator - high weight"
-  },
-  {
-    q: 61,
-    originalQ: 1,
-    text: "Haluaisitko työskennellä IT-alalla ja teknologiaprojekteissa?",
-    dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q1, Broader tech interest"
-  },
-  {
-    q: 62,
-    originalQ: 2,
-    text: "Pidätkö data-analyysista ja tilastojen käsittelystä?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q2, Data/analytical careers"
-  },
-  {
-    q: 63,
-    originalQ: 3,
-    text: "Pidätkö teknologisten ongelmien ratkaisemisesta?",
-    dimension: 'interests',
-    subdimension: 'problem_solving',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q3, Problem-solving in tech context"
-  },
-  {
-    q: 64,
-    originalQ: 4,
-    text: "Haluaisitko suunnitella verkkosivuja tai mobiilisovelluksia?",
-    dimension: 'interests',
-    subdimension: 'innovation',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q4, Specific tech field (design/dev)"
-  },
-  {
-    q: 65,
-    originalQ: 5,
-    text: "Kiinnostaako sinua pelikehitys tai peliala?",
-    dimension: 'interests',
-    subdimension: 'innovation',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q5, Game industry interest"
-  },
-  {
-    q: 66,
-    originalQ: 6,
-    text: "Kiinnostaako sinua työskennellä kyberturvallisuuden parissa?",
-    dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q6, Cybersecurity interest"
-  },
-  
-  // Section 2: People & Care (Q67-73) → Original Q7-13
-  {
-    q: 67,
-    originalQ: 7,
-    text: "Haluaisitko auttaa ihmisiä terveyteen ja hyvinvointiin liittyvissä asioissa?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.4,
-    reverse: false,
-    notes: "Equivalent to Q7, Healthcare/wellbeing careers (strong indicator)"
-  },
-  {
-    q: 68,
-    originalQ: 8,
-    text: "Kiinnostaako sinua ymmärtää, miten ihmisen mieli toimii?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q8, Psychology/social work indicator"
-  },
-  {
-    q: 69,
-    originalQ: 9,
-    text: "Haluaisitko työskennellä koulutuksen ja opetuksen parissa?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q9, Education careers"
-  },
-  {
-    q: 70,
-    originalQ: 10,
-    text: "Kiinnostaako sinua sosiaaliala ja ihmisten tukeminen arjessa?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q10, Social work/counseling"
-  },
-  {
-    q: 71,
-    originalQ: 11,
-    text: "Haluaisitko työskennellä nuorten tai lasten kanssa?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q11, Youth work/education"
-  },
-  {
-    q: 72,
-    originalQ: 12,
-    text: "Haluaisitko olla tukena ikääntyneille hoitotyössä?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q12, Elder care"
-  },
-  {
-    q: 73,
-    originalQ: 13,
-    text: "Kiinnostaako sinua ohjaustyö ja ihmisten neuvominen?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q13, Counseling/guidance careers"
-  },
-  
-  // Section 3: Creative & Business (Q74-80) → Original Q14-20
-  {
-    q: 74,
-    originalQ: 14,
-    text: "Kiinnostaako sinua visuaalinen ilmaisu ja graafinen suunnittelu?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.4,
-    reverse: false,
-    notes: "Equivalent to Q14, Visual design careers (strong indicator)"
-  },
-  {
-    q: 75,
-    originalQ: 15,
-    text: "Haluaisitko työskennellä markkinoinnin ja myynnin parissa?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q15, Marketing/advertising"
-  },
-  {
-    q: 76,
-    originalQ: 16,
-    text: "Kiinnostaako sinua tilojen suunnittelu ja sisustaminen?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q16, Interior design"
-  },
-  {
-    q: 77,
-    originalQ: 17,
-    text: "Haluaisitko kirjoittaa ja tuottaa sisältöä ammatiksesi?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q17, Writing/journalism"
-  },
-  {
-    q: 78,
-    originalQ: 18,
-    text: "Kiinnostaako sinua media-ala ja videotuotanto?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q18, Visual content creation"
-  },
-  {
-    q: 79,
-    originalQ: 19,
-    text: "Haluaisitko joskus perustaa ja johtaa omaa yritystä?",
-    dimension: 'values',
-    subdimension: 'business',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q19, Entrepreneurship orientation"
-  },
-  {
-    q: 80,
-    originalQ: 20,
-    text: "Pidätkö myyntityöstä ja asiakkaiden kohtaamisesta?",
-    dimension: 'workstyle',
-    subdimension: 'teamwork',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q20, Sales/customer service"
-  },
-  
-  // Section 4: Hands-On & Practical (Q81-89) → Original Q21-29
-  {
-    q: 81,
-    originalQ: 21,
-    text: "Haluaisitko työskennellä rakennustyössä?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q21, Construction/building trades"
-  },
-  {
-    q: 82,
-    originalQ: 22,
-    text: "Kiinnostaako sinua autotekniikka ja ajoneuvojen kunnossapito?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q22, Automotive/mechanics"
-  },
-  {
-    q: 83,
-    originalQ: 23,
-    text: "Haluaisitko tehdä sähköasennuksia työksesi?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q23, Electrical trades"
-  },
-  {
-    q: 84,
-    originalQ: 24,
-    text: "Kiinnostaako sinua maatalous tai eläintenhoito?",
-    dimension: 'interests',
-    subdimension: 'environment',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q24, Agriculture/animal care"
-  },
-  {
-    q: 85,
-    originalQ: 25,
-    text: "Haluaisitko työskennellä ympäristönsuojelussa?",
-    dimension: 'interests',
-    subdimension: 'environment',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q25, Environmental careers"
-  },
-  {
-    q: 86,
-    originalQ: 26,
-    text: "Kiinnostaako sinua logistiikka ja kuljetusala?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 0.9,
-    reverse: false,
-    notes: "Equivalent to Q26, Transportation/logistics"
-  },
-  {
-    q: 87,
-    originalQ: 27,
-    text: "Haluaisitko työskennellä keittiössä tai leipomossa?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q27, Culinary careers"
-  },
-  {
-    q: 88,
-    originalQ: 28,
-    text: "Kiinnostaako sinua käsityöt ammatissa?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q28, Craft/artisan trades"
-  },
-  {
-    q: 89,
-    originalQ: 29,
-    text: "Haluaisitko tehdä tutkimustyötä tai kokeita?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q29, Laboratory/research work"
-  }
-];
-
-// ========== NUORET AIKUISET (20-25v) - 30 QUESTIONS ==========
-// Focus: Career + lifestyle fit + realistic expectations
+// ========== NUORI (18-25v) - 30 COMPLETELY UNIQUE QUESTIONS ==========
+// Focus: Career development and realistic expectations
 
 const NUORI_MAPPINGS: QuestionMapping[] = [
-  // Section 1: Technology & Digital (Q0-2) - technology
+  // Q0: Software/Data
   {
     q: 0,
-    text: "Kiinnostaako sinua ohjelmointi ja sovelluskehitys?",
+    text: "Kiinnostaako sinua ohjelmistokehitys tai data-analytiikka?",
     dimension: 'interests',
     subdimension: 'technology',
-    weight: 1.5,
+    weight: 1.4,
     reverse: false,
-    notes: "Programming/software development - high tech indicator"
+    notes: "Software/data careers"
   },
+
+  // Q1: Healthcare
   {
     q: 1,
-    text: "Haluaisitko työskennellä tietoturvan ja kyberturvallisuuden parissa?",
+    text: "Haluaisitko työskennellä terveydenhuollossa tai lääkealalla?",
     dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.3,
+    subdimension: 'health',
+    weight: 1.4,
     reverse: false,
-    notes: "Cybersecurity - specialized tech field"
+    notes: "Healthcare sector"
   },
+
+  // Q2: Finance/Accounting
   {
     q: 2,
-    text: "Kiinnostaako sinua data-analyysi ja koneoppiminen?",
+    text: "Kiinnostaako sinua talous, rahoitus tai kirjanpito?",
     dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.4,
+    subdimension: 'business',
+    weight: 1.3,
     reverse: false,
-    notes: "Data science/AI - emerging tech field"
+    notes: "Finance/accounting"
   },
 
-  // Section 2: People & Care (Q3-5) - people
+  // Q3: Creative industries
   {
     q: 3,
-    text: "Haluaisitko auttaa ihmisiä heidän terveydessään ja hyvinvoinnissaan?",
+    text: "Haluaisitko työskennellä luovalla alalla kuten mainonta tai design?",
     dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.4,
+    subdimension: 'creative',
+    weight: 1.3,
     reverse: false,
-    notes: "Healthcare/wellness - helping professions"
+    notes: "Creative industries"
   },
+
+  // Q4: Engineering/R&D
   {
     q: 4,
-    text: "Kiinnostaako sinua opettaa, kouluttaa tai valmentaa muita?",
+    text: "Kiinnostaako sinua insinöörityö tai tuotekehitys?",
     dimension: 'interests',
-    subdimension: 'growth',
+    subdimension: 'innovation',
     weight: 1.3,
     reverse: false,
-    notes: "Teaching/training - personal development and growth (100% gold standard)"
+    notes: "Engineering/R&D"
   },
+
+  // Q5: Education/Training
   {
     q: 5,
-    text: "Haluaisitko tukea ihmisiä henkisesti vaikeissa tilanteissa?",
+    text: "Haluaisitko opettaa, kouluttaa tai valmentaa muita?",
     dimension: 'interests',
-    subdimension: 'people',
+    subdimension: 'growth',
     weight: 1.3,
     reverse: false,
-    notes: "Counseling/social work - psychological support"
+    notes: "Education sector"
   },
 
-  // Section 3: Creative & Design (Q6-9) - creative
+  // Q6: HR/Recruitment
   {
     q: 6,
-    text: "Kiinnostaako sinua graafinen suunnittelu ja visuaalinen ilme?",
+    text: "Kiinnostaako sinua henkilöstöhallinto ja rekrytointi?",
     dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.4,
+    subdimension: 'people',
+    weight: 1.2,
     reverse: false,
-    notes: "Graphic design - visual communication"
+    notes: "HR/people management"
   },
+
+  // Q7: Legal
   {
     q: 7,
-    text: "Haluaisitko työskennellä sisällöntuotannon tai median parissa?",
+    text: "Haluaisitko työskennellä lakialalla tai oikeudellisissa tehtävissä?",
     dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.3,
+    subdimension: 'analytical',
+    weight: 1.2,
     reverse: false,
-    notes: "Content creation/media - digital content"
+    notes: "Legal sector"
   },
+
+  // Q8: Sales/Marketing
   {
     q: 8,
-    text: "Pidätkö kirjoittamisesta, journalismista tai viestinnästä?",
+    text: "Kiinnostaako sinua myynti, markkinointi tai brändin rakentaminen?",
     dimension: 'interests',
-    subdimension: 'creative',
+    subdimension: 'business',
     weight: 1.2,
     reverse: false,
-    notes: "Writing/journalism - communication careers"
+    notes: "Sales/marketing"
   },
+
+  // Q9: Research/Science
   {
     q: 9,
-    text: "Kiinnostaako sinua valokuvaus, video tai äänisuunnittelu?",
+    text: "Haluaisitko tehdä tutkimustyötä ja kehittää uutta tietoa?",
     dimension: 'interests',
-    subdimension: 'creative',
+    subdimension: 'analytical',
     weight: 1.3,
     reverse: false,
-    notes: "Photography/video/audio - multimedia production"
+    notes: "Research/science"
   },
 
-  // Section 4: Business & Leadership (Q10-13) - business, leadership
+  // Q10: Project Management
   {
     q: 10,
-    text: "Haluaisitko työskennellä myynnissä tai asiakaspalvelussa?",
+    text: "Kiinnostaako sinua projektien johtaminen ja koordinointi?",
     dimension: 'interests',
-    subdimension: 'business',
-    weight: 1.2,
+    subdimension: 'leadership',
+    weight: 1.3,
     reverse: false,
-    notes: "Sales/customer service - business interaction"
+    notes: "Project management"
   },
+
+  // Q11: Sustainability
   {
     q: 11,
-    text: "Kiinnostaako sinua perustaa ja johtaa omaa yritystä?",
+    text: "Haluaisitko työskennellä kestävän kehityksen tai ympäristöalan parissa?",
     dimension: 'interests',
-    subdimension: 'business',
-    weight: 1.4,
+    subdimension: 'environment',
+    weight: 1.2,
     reverse: false,
-    notes: "Entrepreneurship - business ownership"
+    notes: "Sustainability sector"
   },
+
+  // Q12: Remote work
   {
     q: 12,
-    text: "Haluaisitko johtaa tiimiä tai projektia?",
-    dimension: 'interests',
-    subdimension: 'leadership',
-    weight: 1.3,
+    text: "Haluaisitko tehdä töitä etänä kotoa käsin?",
+    dimension: 'workstyle',
+    subdimension: 'independence',
+    weight: 1.0,
     reverse: false,
-    notes: "Team leadership - management"
+    notes: "Remote work preference"
   },
+
+  // Q13: Management aspiration
   {
     q: 13,
-    text: "Kiinnostaako sinua strateginen suunnittelu ja päätöksenteko?",
+    text: "Näetkö itsesi esimiehenä tai tiiminvetäjänä tulevaisuudessa?",
     dimension: 'workstyle',
-    subdimension: 'planning',
-    weight: 1.5,
+    subdimension: 'leadership',
+    weight: 1.2,
     reverse: false,
-    notes: "Strategic planning - visionaari indicator (FIXED: was leadership, now planning)"
+    notes: "Management aspiration"
   },
 
-  // Section 5: Hands-On & Technical (Q14-17) - hands_on
+  // Q14: Team preference
   {
     q: 14,
-    text: "Haluaisitko työskennellä rakentamisen tai korjaamisen parissa?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.3,
+    text: "Nautitko tiimityöskentelystä ja yhteistyöstä muiden kanssa?",
+    dimension: 'workstyle',
+    subdimension: 'teamwork',
+    weight: 1.0,
     reverse: false,
-    notes: "Construction/repair - building trades"
+    notes: "Collaboration style - 5=team"
   },
+
+  // Q15: Structure preference
   {
     q: 15,
-    text: "Kiinnostaako sinua autot, koneet tai tekniset laitteet?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
+    text: "Pidätkö siitä, kun työpäivällä on selkeä rakenne ja aikataulu?",
+    dimension: 'workstyle',
+    subdimension: 'structure',
+    weight: 0.9,
     reverse: false,
-    notes: "Automotive/mechanical - technical trades"
+    notes: "Structure preference - 5=structured"
   },
+
+  // Q16: Client-facing
   {
     q: 16,
-    text: "Haluaisitko tehdä sähkö- tai asennustöitä?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
+    text: "Viihdytkö asiakasrajapinnassa ja neuvotteluissa?",
+    dimension: 'workstyle',
+    subdimension: 'social',
+    weight: 1.1,
     reverse: false,
-    notes: "Electrical work - skilled trades"
+    notes: "Client-facing work"
   },
+
+  // Q17: Strategic thinking
   {
     q: 17,
-    text: "Kiinnostaako sinua valmistaa tai rakentaa asioita käsilläsi?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.1,
-    reverse: false,
-    notes: "Craftsmanship - manual creation"
-  },
-
-  // Section 6: Analytical & Research (Q18-20) - analytical
-  {
-    q: 18,
-    text: "Pidätkö tiedon analysoinnista ja tutkimisesta?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.3,
-    reverse: false,
-    notes: "Data analysis/research - analytical thinking"
-  },
-  {
-    q: 19,
-    text: "Kiinnostaako sinua tieteellinen tutkimus tai laboratoriotyö?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.2,
-    reverse: false,
-    notes: "Scientific research - laboratory work"
-  },
-  {
-    q: 20,
-    text: "Haluaisitko työskennellä lakiasioiden tai oikeusjärjestelmän parissa?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.1,
-    reverse: false,
-    notes: "Legal work - law/justice system"
-  },
-
-  // Section 7: Healthcare & Fitness (Q21-22) - health
-  {
-    q: 21,
-    text: "Haluaisitko työskennellä terveydenhuollossa hoitajana tai lääkärinä?",
-    dimension: 'interests',
-    subdimension: 'health',
-    weight: 1.5,
-    reverse: false,
-    notes: "Healthcare professions - medical careers"
-  },
-  {
-    q: 22,
-    text: "Kiinnostaako sinua liikunta, urheilu tai fysioterapia?",
-    dimension: 'interests',
-    subdimension: 'health',
-    weight: 1.2,
-    reverse: false,
-    notes: "Sports/fitness/physical therapy - wellness careers"
-  },
-
-  // Section 8: Innovation & Problem-Solving (Q23-26) - innovation, problem_solving
-  {
-    q: 23,
-    text: "Pidätkö uusien ratkaisujen ja tuotteiden kehittämisestä?",
-    dimension: 'interests',
-    subdimension: 'innovation',
-    weight: 1.3,
-    reverse: false,
-    notes: "Product development - R&D"
-  },
-  {
-    q: 24,
-    text: "Kiinnostaako sinua startup-kulttuuri ja innovaatiot?",
-    dimension: 'interests',
-    subdimension: 'innovation',
-    weight: 1.2,
-    reverse: false,
-    notes: "Startup culture - entrepreneurial innovation"
-  },
-  {
-    q: 25,
-    text: "Haluaisitko ratkaista monimutkaisia teknisiä ongelmia?",
-    dimension: 'interests',
-    subdimension: 'problem_solving',
-    weight: 1.3,
-    reverse: false,
-    notes: "Technical problem-solving - engineering"
-  },
-  {
-    q: 26,
-    text: "Pidätkö haastavien ongelmien selvittämisestä?",
-    dimension: 'interests',
-    subdimension: 'problem_solving',
-    weight: 1.2,
-    reverse: false,
-    notes: "Complex problem-solving - analytical challenges"
-  },
-
-  // Section 9: Workstyle (Q27-28) - teamwork, organization
-  {
-    q: 27,
-    text: "Pidätkö tiimityöskentelystä ja yhteistyöstä?",
-    dimension: 'workstyle',
-    subdimension: 'teamwork',
-    weight: 1.0,
-    reverse: false,
-    notes: "Teamwork - collaborative work style"
-  },
-  {
-    q: 28,
-    text: "Pidätkö järjestelmällisestä työskentelystä ja suunnittelusta?",
+    text: "Nautitko strategisesta suunnittelusta ja kokonaisuuksien hallinnasta?",
     dimension: 'workstyle',
     subdimension: 'planning',
-    weight: 1.3,
+    weight: 1.2,
     reverse: false,
-    notes: "Systematic planning - jarjestaja/visionaari indicator (FIXED: was independence, now planning)"
+    notes: "Strategic thinking"
   },
 
-  // Section 10: Environment & Impact (Q29) - impact, outdoor
+  // Q18: Detail orientation
+  {
+    q: 18,
+    text: "Oletko huolellinen yksityiskohtien kanssa työssäsi?",
+    dimension: 'workstyle',
+    subdimension: 'precision',
+    weight: 0.9,
+    reverse: false,
+    notes: "Detail orientation - 5=details"
+  },
+
+  // Q19: Work pace
+  {
+    q: 19,
+    text: "Viihdytkö nopeatahtisessa ja kiireisessä työympäristössä?",
+    dimension: 'workstyle',
+    subdimension: 'performance',
+    weight: 0.9,
+    reverse: false,
+    notes: "Pace preference - 5=fast"
+  },
+
+  // Q20: Salary priority
+  {
+    q: 20,
+    text: "Kuinka tärkeää sinulle on korkea palkkataso?",
+    dimension: 'values',
+    subdimension: 'financial',
+    weight: 1.1,
+    reverse: false,
+    notes: "Salary priority"
+  },
+
+  // Q21: Work-life balance
+  {
+    q: 21,
+    text: "Onko työn ja vapaa-ajan tasapaino sinulle erityisen tärkeää?",
+    dimension: 'values',
+    subdimension: 'work_life_balance',
+    weight: 1.2,
+    reverse: false,
+    notes: "Balance priority"
+  },
+
+  // Q22: Career advancement
+  {
+    q: 22,
+    text: "Haluatko edetä urallasi nopeasti ja saada vastuuta?",
+    dimension: 'values',
+    subdimension: 'advancement',
+    weight: 1.1,
+    reverse: false,
+    notes: "Career growth"
+  },
+
+  // Q23: Social impact
+  {
+    q: 23,
+    text: "Onko sinulle tärkeää tehdä yhteiskunnallisesti merkityksellistä työtä?",
+    dimension: 'values',
+    subdimension: 'social_impact',
+    weight: 1.2,
+    reverse: false,
+    notes: "Social impact"
+  },
+
+  // Q24: Job security
+  {
+    q: 24,
+    text: "Kuinka tärkeää sinulle on työpaikan pysyvyys ja varmuus?",
+    dimension: 'values',
+    subdimension: 'stability',
+    weight: 1.0,
+    reverse: false,
+    notes: "Job security"
+  },
+
+  // Q25: Learning opportunities
+  {
+    q: 25,
+    text: "Haluatko työn jossa opit jatkuvasti uutta?",
+    dimension: 'values',
+    subdimension: 'growth',
+    weight: 1.2,
+    reverse: false,
+    notes: "Learning opportunities"
+  },
+
+  // Q26: Autonomy
+  {
+    q: 26,
+    text: "Onko sinulle tärkeää saada päättää itse miten teet työsi?",
+    dimension: 'values',
+    subdimension: 'autonomy',
+    weight: 1.1,
+    reverse: false,
+    notes: "Work autonomy"
+  },
+
+  // Q27: Entrepreneurship
+  {
+    q: 27,
+    text: "Näetkö itsesi yrittäjänä tai freelancerina tulevaisuudessa?",
+    dimension: 'values',
+    subdimension: 'entrepreneurship',
+    weight: 1.3,
+    reverse: false,
+    notes: "Entrepreneurial interest"
+  },
+
+  // Q28: International work
+  {
+    q: 28,
+    text: "Haluaisitko tehdä kansainvälistä työtä tai työskennellä ulkomailla?",
+    dimension: 'values',
+    subdimension: 'global',
+    weight: 1.0,
+    reverse: false,
+    notes: "International orientation"
+  },
+
+  // Q29: Company culture
   {
     q: 29,
-    text: "Haluaisitko työskennellä ympäristönsuojelun, luonnonsuojelun tai ulkotyön parissa?",
-    dimension: 'interests',
-    subdimension: 'environment',
-    weight: 1.3,
-    reverse: false,
-    notes: "Environmental/sustainability/outdoor work - environment focus (100% gold standard)"
-  }
-];
-
-// ========== NUORET AIKUISET SET 2 (Q30-Q59) - EQUIVALENT QUESTIONS ==========
-// Each question maps to original Q0-Q29, maintaining same dimension, subdimension, weight, and reverse
-
-const NUORI_MAPPINGS_SET2: QuestionMapping[] = [
-  // Section 1: Career Fields (Q30-39) → Original Q0-9
-  {
-    q: 30,
-    originalQ: 0,
-    text: "Kiinnostaako sinua teknologia ja digitaaliset alustat?",
-    dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.4,
-    reverse: false,
-    notes: "Equivalent to Q0, Tech industry interest"
-  },
-  {
-    q: 31,
-    originalQ: 1,
-    text: "Haluaisitko työskennellä hoiva- ja terveysalalla?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.4,
-    reverse: false,
-    notes: "Equivalent to Q1, Healthcare sector"
-  },
-  {
-    q: 32,
-    originalQ: 2,
-    text: "Kiinnostaako sinua luova työ ja sisällöntuotanto?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.4,
-    reverse: false,
-    notes: "Equivalent to Q2, Creative industries"
-  },
-  {
-    q: 33,
-    originalQ: 3,
-    text: "Haluaisitko työskennellä liike-elämässä ja johtotehtävissä?",
-    dimension: 'interests',
-    subdimension: 'business',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q3, Business/management"
-  },
-  {
-    q: 34,
-    originalQ: 4,
-    text: "Kiinnostaako sinua tekniikka ja tekninen työ?",
-    dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q4, Engineering"
-  },
-  {
-    q: 35,
-    originalQ: 5,
-    text: "Haluaisitko työskennellä koulutuksen ja opetuksen parissa?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q5, Education sector"
-  },
-  {
-    q: 36,
-    originalQ: 6,
-    text: "Kiinnostaako sinua tutkimus ja tieteellinen työskentely?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q6, Research/academic careers"
-  },
-  {
-    q: 37,
-    originalQ: 7,
-    text: "Haluaisitko työskennellä lakiasianajossa tai juridiikassa?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q7, Legal sector"
-  },
-  {
-    q: 38,
-    originalQ: 8,
-    text: "Kiinnostaako sinua mediatyö ja kommunikaatio?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q8, Media/communications"
-  },
-  {
-    q: 39,
-    originalQ: 9,
-    text: "Haluaisitko työskennellä matkailu- tai palvelualalla?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q9, Hospitality/tourism"
-  },
-  
-  // Section 2: Work Values (Q40-47) → Original Q10-17
-  {
-    q: 40,
-    originalQ: 10,
-    text: "Onko sinulle erittäin tärkeää saada korkea palkka (yli 4000€/kk)?",
+    text: "Onko työpaikan ilmapiiri ja kulttuuri sinulle erityisen tärkeää?",
     dimension: 'values',
-    subdimension: 'business',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q10, Salary priority (high-paying careers)"
-  },
-  {
-    q: 41,
-    originalQ: 11,
-    text: "Haluaisitko työn, jossa voit tehdä hyvää yhteiskunnalle?",
-    dimension: 'values',
-    subdimension: 'impact',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q11, Purpose-driven careers"
-  },
-  {
-    q: 42,
-    originalQ: 12,
-    text: "Onko sinulle tärkeää työpaikan vakaus ja pysyvyys?",
-    dimension: 'values',
-    subdimension: 'environment',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q12, Job security priority"
-  },
-  {
-    q: 43,
-    originalQ: 13,
-    text: "Haluaisitko uralla nopeasti etenevä ja yleneevä työ?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q13, Career progression priority"
-  },
-  {
-    q: 44,
-    originalQ: 14,
-    text: "Onko sinulle tärkeää, että työ mahdollistaa hyvän työ-perhe-tasapainon?",
-    dimension: 'values',
-    subdimension: 'environment',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q14, Work-life balance priority"
-  },
-  {
-    q: 45,
-    originalQ: 15,
-    text: "Haluaisitko työskennellä kansainvälisessä ja kulttuurisesti monipuolisessa työympäristössä?",
-    dimension: 'values',
-    subdimension: 'global',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q15, International orientation - visionaari indicator (FIXED: was environment with low weight, now global with proper weight)"
-  },
-  {
-    q: 46,
-    originalQ: 16,
-    text: "Onko sinulle tärkeää kehittyä ja oppia uutta työssäsi jatkuvasti?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q16, Learning/development priority"
-  },
-  {
-    q: 47,
-    originalQ: 17,
-    text: "Haluaisitko työn, jossa voit olla luova ja kehittää uusia ratkaisuja?",
-    dimension: 'interests',
-    subdimension: 'innovation',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q17, Innovation/creativity value"
-  },
-  
-  // Section 3: Work Environment (Q48-54) → Original Q18-24
-  {
-    q: 48,
-    originalQ: 18,
-    text: "Haluaisitko työskennellä pääosin etänä kotoa käsin?",
-    dimension: 'context',
-    subdimension: 'independence',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q18, Remote work preference"
-  },
-  {
-    q: 49,
-    originalQ: 19,
-    text: "Sopiiiko sinulle tavallinen toimistotyö ja kiinteä työaika?",
-    dimension: 'workstyle',
-    subdimension: 'organization',
-    weight: 0.9,
-    reverse: false,
-    notes: "Equivalent to Q19, Traditional office preference"
-  },
-  {
-    q: 50,
-    originalQ: 20,
-    text: "Haluaisitko työn, jossa liikut paljon ja vieraat eri paikoissa?",
-    dimension: 'context',
-    subdimension: 'independence',
+    subdimension: 'social',
     weight: 1.0,
     reverse: false,
-    notes: "Equivalent to Q20, Mobile/field work preference"
-  },
-  {
-    q: 51,
-    originalQ: 21,
-    text: "Onko sinulle tärkeää työskennellä suuressa, tunnettavassa organisaatiossa?",
-    dimension: 'values',
-    subdimension: 'environment',
-    weight: 0.9,
-    reverse: false,
-    notes: "Equivalent to Q21, Large company preference"
-  },
-  {
-    q: 52,
-    originalQ: 22,
-    text: "Kiinnostaako sinua työskennellä uudessa startup-yrityksessä?",
-    dimension: 'values',
-    subdimension: 'environment',
-    weight: 0.9,
-    reverse: true,
-    notes: "Equivalent to Q22, Startup preference (reverse of Q21)"
-  },
-  {
-    q: 53,
-    originalQ: 23,
-    text: "Oletko valmis tekemään epäsäännöllisiä työvuoroja (yö-, ilta-, viikonlopputyötä)?",
-    dimension: 'workstyle',
-    subdimension: 'independence',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q23, Shift work tolerance"
-  },
-  {
-    q: 54,
-    originalQ: 24,
-    text: "Haluaisitko työn, jossa matkustat paljon eri maihin?",
-    dimension: 'values',
-    subdimension: 'global',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q24, International travel preference - visionaari indicator (FIXED: was environment with low weight, now global with proper weight)"
-  },
-  
-  // Section 4: Work Style & Preferences (Q55-59) → Original Q25-29
-  {
-    q: 55,
-    originalQ: 25,
-    text: "Pidätkö itsenäisestä työskentelystä ilman jatkuvaa valvontaa?",
-    dimension: 'workstyle',
-    subdimension: 'independence',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q25, Autonomy preference"
-  },
-  {
-    q: 56,
-    originalQ: 26,
-    text: "Haluaisitko olla vastuussa tiimistä ja tehdä merkittäviä päätöksiä?",
-    dimension: 'workstyle',
-    subdimension: 'leadership',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q26, Leadership aspiration"
-  },
-  {
-    q: 57,
-    originalQ: 27,
-    text: "Pidätkö yhteistyöstä ja tiimityöskentelystä?",
-    dimension: 'workstyle',
-    subdimension: 'teamwork',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q27, Collaboration preference"
-  },
-  {
-    q: 58,
-    originalQ: 28,
-    text: "Haluaisitko työn, jossa on kiinteät rutiinit ja toistuvat tehtävät?",
-    dimension: 'workstyle',
-    subdimension: 'organization',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q28, Routine/predictability preference"
-  },
-  {
-    q: 59,
-    originalQ: 29,
-    text: "Pidätkö työstä, jossa jokainen päivä tuo uusia haasteita ja vaihtelua?",
-    dimension: 'workstyle',
-    subdimension: 'independence',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q29, Variety/novelty preference"
-  }
-];
-
-// ========== NUORET AIKUISET SET 3 (Q60-Q89) - EQUIVALENT QUESTIONS ==========
-// Each question maps to original Q0-Q29, maintaining same dimension, subdimension, weight, and reverse
-
-const NUORI_MAPPINGS_SET3: QuestionMapping[] = [
-  // Section 1: Career Fields (Q60-69) → Original Q0-9
-  {
-    q: 60,
-    originalQ: 0,
-    text: "Kiinnostaako sinua tietotekniikka ja digitaaliset alustat?",
-    dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.4,
-    reverse: false,
-    notes: "Equivalent to Q0, Tech industry interest"
-  },
-  {
-    q: 61,
-    originalQ: 1,
-    text: "Haluaisitko työskennellä terveys- ja hoivapalveluissa?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.4,
-    reverse: false,
-    notes: "Equivalent to Q1, Healthcare sector"
-  },
-  {
-    q: 62,
-    originalQ: 2,
-    text: "Kiinnostaako sinua luova ala ja sisällöntuotanto?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.4,
-    reverse: false,
-    notes: "Equivalent to Q2, Creative industries"
-  },
-  {
-    q: 63,
-    originalQ: 3,
-    text: "Haluaisitko työskennellä liiketoiminnassa ja johtamisessa?",
-    dimension: 'interests',
-    subdimension: 'business',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q3, Business/management"
-  },
-  {
-    q: 64,
-    originalQ: 4,
-    text: "Kiinnostaako sinua tekniikka ja tekninen suunnittelu?",
-    dimension: 'interests',
-    subdimension: 'technology',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q4, Engineering"
-  },
-  {
-    q: 65,
-    originalQ: 5,
-    text: "Haluaisitko työskennellä koulutuksessa ja kasvatuksessa?",
-    dimension: 'interests',
-    subdimension: 'people',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q5, Education sector"
-  },
-  {
-    q: 66,
-    originalQ: 6,
-    text: "Kiinnostaako sinua tutkimus ja akateeminen työ?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q6, Research/academic careers"
-  },
-  {
-    q: 67,
-    originalQ: 7,
-    text: "Haluaisitko työskennellä oikeustieteessä tai lakiasialassa?",
-    dimension: 'interests',
-    subdimension: 'analytical',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q7, Legal sector"
-  },
-  {
-    q: 68,
-    originalQ: 8,
-    text: "Kiinnostaako sinua mediatyö ja viestintäala?",
-    dimension: 'interests',
-    subdimension: 'creative',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q8, Media/communications"
-  },
-  {
-    q: 69,
-    originalQ: 9,
-    text: "Haluaisitko työskennellä palvelu- tai matkailualalla?",
-    dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q9, Hospitality/tourism"
-  },
-  
-  // Section 2: Work Values (Q70-77) → Original Q10-17
-  {
-    q: 70,
-    originalQ: 10,
-    text: "Onko sinulle erittäin tärkeää saada korkea palkka (yli 4000€ kuukaudessa)?",
-    dimension: 'values',
-    subdimension: 'business',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q10, Salary priority (high-paying careers)"
-  },
-  {
-    q: 71,
-    originalQ: 11,
-    text: "Haluaisitko työn, jossa voit vaikuttaa positiivisesti yhteiskuntaan?",
-    dimension: 'values',
-    subdimension: 'impact',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q11, Purpose-driven careers"
-  },
-  {
-    q: 72,
-    originalQ: 12,
-    text: "Onko sinulle tärkeää työpaikan turvallisuus ja varmuus?",
-    dimension: 'values',
-    subdimension: 'environment',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q12, Job security priority"
-  },
-  {
-    q: 73,
-    originalQ: 13,
-    text: "Haluaisitko uralla nopeasti kehittyvän ja yleneevän työn?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q13, Career progression priority"
-  },
-  {
-    q: 74,
-    originalQ: 14,
-    text: "Onko sinulle tärkeää, että työ antaa tilaa perheelle ja harrastuksille?",
-    dimension: 'values',
-    subdimension: 'environment',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q14, Work-life balance priority"
-  },
-  {
-    q: 75,
-    originalQ: 15,
-    text: "Haluaisitko työskennellä monikulttuurisessa ja kansainvälisessä työympäristössä?",
-    dimension: 'values',
-    subdimension: 'global',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q15, International orientation - visionaari indicator (FIXED: was environment with low weight, now global with proper weight)"
-  },
-  {
-    q: 76,
-    originalQ: 16,
-    text: "Onko sinulle tärkeää jatkuva oppiminen ja kehitys työssäsi?",
-    dimension: 'values',
-    subdimension: 'growth',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q16, Learning/development priority"
-  },
-  {
-    q: 77,
-    originalQ: 17,
-    text: "Haluaisitko työn, jossa voit kehittää uusia ideoita ja olla luova?",
-    dimension: 'interests',
-    subdimension: 'innovation',
-    weight: 1.2,
-    reverse: false,
-    notes: "Equivalent to Q17, Innovation/creativity value"
-  },
-  
-  // Section 3: Work Environment (Q78-84) → Original Q18-24
-  {
-    q: 78,
-    originalQ: 18,
-    text: "Haluaisitko työskennellä pääasiassa etänä kotona?",
-    dimension: 'context',
-    subdimension: 'independence',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q18, Remote work preference"
-  },
-  {
-    q: 79,
-    originalQ: 19,
-    text: "Sopiiiko sinulle tavallinen toimistoympäristö ja kiinteä työaika?",
-    dimension: 'workstyle',
-    subdimension: 'organization',
-    weight: 0.9,
-    reverse: false,
-    notes: "Equivalent to Q19, Traditional office preference"
-  },
-  {
-    q: 80,
-    originalQ: 20,
-    text: "Haluaisitko työn, jossa liikut paljon ja olet usein eri paikoissa?",
-    dimension: 'context',
-    subdimension: 'independence',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q20, Mobile/field work preference"
-  },
-  {
-    q: 81,
-    originalQ: 21,
-    text: "Onko sinulle tärkeää työskennellä suuressa, tunnettavassa yrityksessä?",
-    dimension: 'values',
-    subdimension: 'environment',
-    weight: 0.9,
-    reverse: false,
-    notes: "Equivalent to Q21, Large company preference"
-  },
-  {
-    q: 82,
-    originalQ: 22,
-    text: "Kiinnostaako sinua työskennellä nuoresta startup-yrityksestä?",
-    dimension: 'values',
-    subdimension: 'environment',
-    weight: 0.9,
-    reverse: true,
-    notes: "Equivalent to Q22, Startup preference (reverse of Q21)"
-  },
-  {
-    q: 83,
-    originalQ: 23,
-    text: "Oletko valmis tekemään vuorotyötä (yö-, ilta- ja viikonlopputyötä)?",
-    dimension: 'workstyle',
-    subdimension: 'independence',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q23, Shift work tolerance"
-  },
-  {
-    q: 84,
-    originalQ: 24,
-    text: "Haluaisitko työn, jossa matkustat paljon työn puolesta?",
-    dimension: 'values',
-    subdimension: 'global',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q24, International travel preference - visionaari indicator (FIXED: was environment with low weight, now global with proper weight)"
-  },
-  
-  // Section 4: Work Style & Preferences (Q85-89) → Original Q25-29
-  {
-    q: 85,
-    originalQ: 25,
-    text: "Pidätkö siitä, että saat tehdä työsi itsenäisesti?",
-    dimension: 'workstyle',
-    subdimension: 'independence',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q25, Autonomy preference"
-  },
-  {
-    q: 86,
-    originalQ: 26,
-    text: "Haluaisitko johtaa muita ja tehdä merkittäviä päätöksiä työssäsi?",
-    dimension: 'workstyle',
-    subdimension: 'leadership',
-    weight: 1.3,
-    reverse: false,
-    notes: "Equivalent to Q26, Leadership aspiration"
-  },
-  {
-    q: 87,
-    originalQ: 27,
-    text: "Pidätkö yhteistyöstä ja tiimityöskentelystä kollegoiden kanssa?",
-    dimension: 'workstyle',
-    subdimension: 'teamwork',
-    weight: 1.1,
-    reverse: false,
-    notes: "Equivalent to Q27, Collaboration preference"
-  },
-  {
-    q: 88,
-    originalQ: 28,
-    text: "Haluaisitko työn, jossa on selkeät rutiinit ja ennustettavat tehtävät?",
-    dimension: 'workstyle',
-    subdimension: 'organization',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q28, Routine/predictability preference"
-  },
-  {
-    q: 89,
-    originalQ: 29,
-    text: "Pidätkö työstä, jossa jokainen päivä on erilainen ja tuo uusia haasteita?",
-    dimension: 'workstyle',
-    subdimension: 'independence',
-    weight: 1.0,
-    reverse: false,
-    notes: "Equivalent to Q29, Variety/novelty preference"
+    notes: "Culture importance"
   }
 ];
 
@@ -2784,45 +1026,7 @@ export const QUESTION_MAPPINGS: CohortQuestionSet = {
 };
 
 export function getQuestionMappings(cohort: Cohort, setIndex: number = 0): QuestionMapping[] {
-  if (cohort === 'YLA') {
-    switch (setIndex) {
-      case 0:
-        return YLA_MAPPINGS;
-      case 1:
-        return YLA_MAPPINGS_SET2;
-      case 2:
-        return YLA_MAPPINGS_SET3;
-      default:
-        return YLA_MAPPINGS;
-    }
-  }
-  
-  if (cohort === 'TASO2') {
-    switch (setIndex) {
-      case 0:
-        return TASO2_MAPPINGS;
-      case 1:
-        return TASO2_MAPPINGS_SET2;
-      case 2:
-        return TASO2_MAPPINGS_SET3;
-      default:
-        return TASO2_MAPPINGS;
-    }
-  }
-  
-  if (cohort === 'NUORI') {
-    switch (setIndex) {
-      case 0:
-        return NUORI_MAPPINGS;
-      case 1:
-        return NUORI_MAPPINGS_SET2;
-      case 2:
-        return NUORI_MAPPINGS_SET3;
-      default:
-        return NUORI_MAPPINGS;
-    }
-  }
-  
+  // Single set of unique questions per cohort
   return QUESTION_MAPPINGS[cohort];
 }
 
@@ -2830,21 +1034,21 @@ export function getQuestionMappings(cohort: Cohort, setIndex: number = 0): Quest
 
 export const COHORT_WEIGHTS: Record<Cohort, ScoringWeights> = {
   YLA: {
-    interests: 0.35,    // Career interests are important
-    values: 0.30,       // Education path values (career clarity, exploration)
-    workstyle: 0.20,    // Work preferences matter but less critical
-    context: 0.15       // Environment least critical for YLA
+    interests: 0.40,
+    values: 0.25,
+    workstyle: 0.20,
+    context: 0.15
   },
   TASO2: {
-    interests: 0.45,    // Primary focus on career field interest
-    values: 0.25,       // Values are important (entrepreneurship, impact)
-    workstyle: 0.20,    // Work style matters
-    context: 0.10       // Environment less critical
+    interests: 0.45,
+    values: 0.25,
+    workstyle: 0.20,
+    context: 0.10
   },
   NUORI: {
-    interests: 0.35,    // Career field interest
-    values: 0.35,       // Values very important (salary, balance, growth)
-    workstyle: 0.20,    // Work style matters
-    context: 0.10       // Environment considerations
+    interests: 0.35,
+    values: 0.35,
+    workstyle: 0.20,
+    context: 0.10
   }
 };

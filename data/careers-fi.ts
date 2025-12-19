@@ -8264,7 +8264,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Tukee Suomessa lasten terveellistä kehitystä",
       "Mahdollistaa vanhempien työskentelyn",
-      "Luo Suomessavat hyvän perustan oppimiselle"
+      "Luovat hyvän perustan oppimiselle"
     ],
     education_paths: [
       "AMK: Varhaiskasvatus",
@@ -8767,7 +8767,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Rakentaa kestäviä puurakenteita",
-      "Luo Suomessavat kauniita huonekaluja",
+      "Luovat kauniita huonekaluja",
       "Ylläpitää perinteisiä käsitaitoja"
     ],
     education_paths: [
@@ -8931,7 +8931,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Tukee Suomessa lasten varhaista kehitystä",
-      "Luo Suomessavat hyvän perustan oppimiselle",
+      "Luovat hyvän perustan oppimiselle",
       "Mahdollistaa vanhempien työskentelyn"
     ],
     education_paths: [
@@ -10093,7 +10093,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Auttaa Suomessa yrityksiä erottumaan kilpailijoista",
-      "Luo Suomessavat tunnistettavia ja arvostettuja brändejä",
+      "Luovat tunnistettavia ja arvostettuja brändejä",
       "Parantavat kuluttajien kokemusta"
     ],
     education_paths: [
@@ -10594,7 +10594,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Auttaa Suomessa yrityksiä kasvamaan ja menestymään",
-      "Luo Suomessavat uusia työpaikkoja",
+      "Luovat uusia työpaikkoja",
       "Tuovat innovaatioita markkinoille"
     ],
     education_paths: [
@@ -10839,7 +10839,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Auttaa Suomessa organisaatioita parantamaan suorituskykyään",
       "Tuovat uusia näkökulmia ja ratkaisuja",
-      "Luo Suomessavat tehokkuutta ja tuloksellisuutta"
+      "Luovat tehokkuutta ja tuloksellisuutta"
     ],
     education_paths: [
       "Kauppatieteiden maisteri",
@@ -11089,7 +11089,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Parantavat asiakaskokemusta",
       "Auttaa Suomessa yrityksiä säilyttämään asiakkaitaan",
-      "Luo Suomessavat pitkäaikaisia asiakassuhteita"
+      "Luovat pitkäaikaisia asiakassuhteita"
     ],
     education_paths: [
       "AMK: Liiketalous",
@@ -11420,7 +11420,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Auttaa Suomessa yrityksiä kasvamaan ja menestymään",
-      "Luo Suomessavat työpaikkoja ja talouskasvua",
+      "Luovat työpaikkoja ja talouskasvua",
       "Parantavat asiakaskokemusta"
     ],
     education_paths: [
@@ -11671,7 +11671,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Parantavat asiakaskokemusta",
       "Auttaa Suomessa yrityksiä säilyttämään asiakkaitaan",
-      "Luo Suomessavat tyytyväisiä asiakkaita"
+      "Luovat tyytyväisiä asiakkaita"
     ],
     education_paths: [
       "AMK: Asiakaspalvelu",
@@ -11753,7 +11753,7 @@ export const careersData: CareerFI[] = [
     impact: [
       "Parantavat brändin tunnettuutta",
       "Auttaa Suomessa yrityksiä kommunikoimaan tehokkaasti",
-      "Luo Suomessavat kiinnostavaa sisältöä"
+      "Luovat kiinnostavaa sisältöä"
     ],
     education_paths: [
       "AMK: Viestintä",

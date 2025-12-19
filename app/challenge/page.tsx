@@ -38,7 +38,7 @@ export default function ChallengePage() {
           router.push(returnTo);
         }, 500);
       } catch (err) {
-        setError('Verification failed. Please enable JavaScript and try again.');
+        setError('Vahvistus epäonnistui. Varmista, että JavaScript on käytössä ja yritä uudelleen.');
         setLoading(false);
       }
     }
@@ -72,12 +72,12 @@ export default function ChallengePage() {
             </svg>
           </div>
           <h1 className="text-2xl font-bold text-slate-900 mb-2">
-            Verifying Access
+            Vahvistetaan pääsyä
           </h1>
           <p className="text-slate-600">
             {loading
-              ? 'Please wait while we verify your browser...'
-              : error || 'Redirecting...'}
+              ? 'Odota hetki, vahvistamme selaimesi...'
+              : error || 'Uudelleenohjataan...'}
           </p>
         </div>
         
@@ -86,7 +86,7 @@ export default function ChallengePage() {
             onClick={() => window.location.reload()}
             className="w-full"
           >
-            Try Again
+            Yritä uudelleen
           </Button>
         )}
       </div>

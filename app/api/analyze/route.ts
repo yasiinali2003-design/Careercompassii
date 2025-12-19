@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
 
     if (!group || !questions || !answers) {
       return NextResponse.json(
-        { error: 'Missing required fields: group, questions, answers' },
+        { error: 'Pakolliset kentät puuttuvat: group, questions, answers' },
         { status: 400 }
       );
     }
@@ -74,9 +74,9 @@ export async function POST(request: NextRequest) {
     if (!validation.isValid) {
       return NextResponse.json({
         success: false,
-        error: 'Invalid answers',
+        error: 'Virheelliset vastaukset',
         message: validation.reason,
-        suggestion: 'Please retake the test and provide thoughtful answers to get meaningful career recommendations.'
+        suggestion: 'Ole hyvä ja tee testi uudelleen ja anna harkittuja vastauksia saadaksesi merkityksellisiä urasuosituksia.'
       }, { status: 400 });
     }
 
@@ -133,7 +133,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Analysis error:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }

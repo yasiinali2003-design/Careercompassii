@@ -504,22 +504,23 @@ export function generateReasons(
   answers?: TestAnswer[]
 ): string[] {
   const reasons: string[] = [];
-  
+  const careerTitle = careerFI?.title_fi || careerFI?.title || career?.title || "Tämä ammatti";
+
   // Find top user strengths
   const topUserInterests = getTopScores(userDetailed.interests, 2);
   const topUserWorkstyle = getTopScores(userDetailed.workstyle, 2);
   const topUserValues = getTopScores(userDetailed.values, 2);
-  
+
   // Find top career characteristics
   const topCareerInterests = getTopScores(career.interests, 2);
   const topCareerWorkstyle = getTopScores(career.workstyle, 2);
-  
-  // Reason 1: Interest match (personality-based narrative)
+
+  // Reason 1: Interest match (personality-based narrative with career context)
   if (dimensionScores.interests >= 70) {
-    const matchedInterest = topUserInterests.find(([key]) => 
+    const matchedInterest = topUserInterests.find(([key]) =>
       topCareerInterests.some(([careerKey]) => careerKey === key)
     );
-    
+
     if (matchedInterest) {
       const subdim = matchedInterest[0] as SubDimension;
       reasons.push(generatePersonalityInterestReason(subdim, cohort));
@@ -527,34 +528,43 @@ export function generateReasons(
       reasons.push(generatePersonalityInterestReason(topCareerInterests[0][0] as SubDimension, cohort));
     }
   }
-  
-  // Reason 2: Workstyle match (personality-based narrative)
-  if (dimensionScores.workstyle >= 65) {
-    const matchedWorkstyle = topUserWorkstyle.find(([key]) => 
+
+  // Reason 2: Career-specific task reason - what you'll actually DO
+  const taskReason = generateCareerSpecificTaskReason(careerFI, userDetailed, cohort);
+  if (taskReason) {
+    reasons.push(taskReason);
+  }
+
+  // Reason 3: Career-specific benefit - impact/meaning/outlook
+  reasons.push(generatePersonalityCareerBenefit(careerFI, cohort));
+
+  // Reason 4: Values match (if strong and we need more reasons)
+  if (reasons.length < 3 && dimensionScores.values >= 65 && topUserValues.length > 0) {
+    const topValue = topUserValues[0][0] as SubDimension;
+    reasons.push(generatePersonalityValuesReason(topValue, cohort));
+  }
+
+  // Reason 5: Workstyle match (if strong and we need more reasons)
+  if (reasons.length < 3 && dimensionScores.workstyle >= 65) {
+    const matchedWorkstyle = topUserWorkstyle.find(([key]) =>
       topCareerWorkstyle.some(([careerKey]) => careerKey === key)
     );
-    
+
     if (matchedWorkstyle) {
       const subdim = matchedWorkstyle[0] as SubDimension;
       reasons.push(generatePersonalityWorkstyleReason(subdim, cohort));
     }
   }
-  
-  // Reason 3: Values match (if strong) - personality-based
-  if (dimensionScores.values >= 65 && topUserValues.length > 0) {
-    const topValue = topUserValues[0][0] as SubDimension;
-    reasons.push(generatePersonalityValuesReason(topValue, cohort));
-  }
-  
-  // Reason 4: Career-specific benefit (personality-based)
-  reasons.push(generatePersonalityCareerBenefit(careerFI, cohort));
-  
+
   // Ensure we have at least 2 reasons
   if (reasons.length < 2) {
     reasons.push(generatePersonalityGenericReason(career.category, cohort));
   }
-  
-  return reasons.slice(0, 3); // Max 3 reasons
+
+  // Filter out empty strings and duplicates
+  const filteredReasons = reasons.filter((r, i) => r && reasons.indexOf(r) === i);
+
+  return filteredReasons.slice(0, 3); // Max 3 reasons
 }
 
 // ========== REASON TEMPLATES ==========
@@ -1102,23 +1112,39 @@ function generatePersonalityValuesReason(subdimension: SubDimension, cohort: Coh
 }
 
 function generatePersonalityCareerBenefit(careerFI: any, cohort: Cohort): string {
+  const careerTitle = careerFI?.title_fi || careerFI?.title || "Tämä ammatti";
+
+  // Use impact field if available - this explains why the career matters
+  if (careerFI?.impact && careerFI.impact.length > 0) {
+    const impactReason = careerFI.impact[Math.floor(Math.random() * careerFI.impact.length)];
+    // Clean up the impact text (remove "Suomessa" prefix if present for better flow)
+    const cleanedImpact = impactReason.replace(/^Auttaa Suomessa /i, 'Auttaa ').replace(/^Parantaa Suomessa /i, 'Parantaa ').replace(/^Luo Suomessa /i, 'Luo ');
+    return `${careerTitle}na pääset tekemään merkityksellistä työtä: ${cleanedImpact.charAt(0).toLowerCase() + cleanedImpact.slice(1)}`;
+  }
+
   // Use job outlook if available
   if (careerFI?.job_outlook?.status === "kasvaa") {
-    return "Tämä ammatti tarjoaa hyvät työllistymisnäkymät ja ala kasvaa, mikä tarkoittaa että löydät varmasti työpaikan tulevaisuudessa.";
+    return `${careerTitle} tarjoaa hyvät työllistymisnäkymät ja ala kasvaa, mikä tarkoittaa että löydät varmasti työpaikan tulevaisuudessa.`;
   }
-  
+
   // Use salary if above median
   if (careerFI?.salary_eur_month?.median >= 3500) {
-    return "Ammatti tarjoaa hyvät ansiomahdollisuudet, mikä mahdollistaa vakaata taloudellista tulevaisuutta.";
+    return `${careerTitle} tarjoaa hyvät ansiomahdollisuudet, mikä mahdollistaa vakaata taloudellista tulevaisuutta.`;
   }
-  
-  // Generic benefits
+
+  // Use main_tasks if available
+  if (careerFI?.main_tasks && careerFI.main_tasks.length > 0) {
+    const task = careerFI.main_tasks[0];
+    return `${careerTitle}na pääset keskittymään esimerkiksi: ${task.charAt(0).toLowerCase() + task.slice(1)}`;
+  }
+
+  // Generic benefits with career title
   const genericBenefits = [
-    "Tämä ammatti tarjoaa monipuolisia mahdollisuuksia kehittyä ja kasvaa ammatillisesti.",
-    "Ura tarjoaa hyvät mahdollisuudet oppia uutta ja kehittää osaamistasi jatkuvasti.",
-    "Ammatti mahdollistaa merkityksellisen työn tekemisen ja henkilökohtaista kasvua."
+    `${careerTitle} tarjoaa monipuolisia mahdollisuuksia kehittyä ja kasvaa ammatillisesti.`,
+    `${careerTitle}na pääset oppimaan jatkuvasti uutta ja kehittämään osaamistasi.`,
+    `${careerTitle} mahdollistaa merkityksellisen työn tekemisen ja henkilökohtaista kasvua.`
   ];
-  
+
   return genericBenefits[Math.floor(Math.random() * genericBenefits.length)];
 }
 
@@ -1173,6 +1199,52 @@ function generatePersonalityGenericReason(category: string, cohort: Cohort): str
   ];
   
   return options[Math.floor(Math.random() * options.length)];
+}
+
+/**
+ * Generate a career-specific reason about what the user will actually DO in this role
+ * Uses main_tasks and core_skills from careerFI
+ */
+function generateCareerSpecificTaskReason(careerFI: any, userDetailed: DetailedDimensionScores, cohort: Cohort): string {
+  const careerTitle = careerFI?.title_fi || careerFI?.title || "Tämä ammatti";
+
+  // Get user's top strengths to personalize the task description
+  const topUserInterests = getTopScores(userDetailed.interests, 1);
+  const topUserWorkstyle = getTopScores(userDetailed.workstyle, 1);
+
+  // Use main_tasks to describe what the user will do
+  if (careerFI?.main_tasks && careerFI.main_tasks.length >= 2) {
+    const tasks = careerFI.main_tasks.slice(0, 2);
+    const formattedTasks = tasks.map((t: string) => t.charAt(0).toLowerCase() + t.slice(1)).join(' ja ');
+
+    // Add personalized touch based on user's top strength
+    if (topUserInterests.length > 0) {
+      const topInterest = topUserInterests[0][0];
+      const interestMap: Record<string, string> = {
+        technology: "tekninen lahjakkuutesi",
+        people: "ihmissuhdetaitosi",
+        creative: "luovuutesi",
+        analytical: "analyyttinen ajattelutapasi",
+        hands_on: "käytännön osaamisesi",
+        business: "liiketoimintaosaamisesi",
+        health: "halusi auttaa ihmisiä",
+        innovation: "innovatiivinen ajattelutapasi"
+      };
+
+      const strengthText = interestMap[topInterest] || "vahvuutesi";
+      return `${careerTitle}na pääset hyödyntämään ${strengthText} tehtävissä kuten ${formattedTasks}.`;
+    }
+
+    return `${careerTitle}na päivittäisiisi kuuluu ${formattedTasks}.`;
+  }
+
+  // Use core_skills if main_tasks not available
+  if (careerFI?.core_skills && careerFI.core_skills.length >= 2) {
+    const skills = careerFI.core_skills.slice(0, 2).join(' ja ');
+    return `Tässä työssä pääset kehittämään taitoja kuten ${skills.toLowerCase()}.`;
+  }
+
+  return "";
 }
 
 // ========== HELPER FUNCTIONS ==========
@@ -1392,7 +1464,13 @@ function determineDominantCategory(
                                        (handsOnStrengthYLA >= 1.4 && handsOnStrengthYLA > techStrengthYLA + 0.3));
 
     // 3. Strong creative profile
+    // CRITICAL FIX: Creative should be strong when creative is HIGH, regardless of hands_on
+    // A creative artist (creative=0.9, hands_on=0.57) should NOT become a construction worker
     const isYLAStrongCreativeProfile = (ylaCreative >= 0.7) || (creativeStrengthYLA >= 1.3 && ylaCreative >= 0.5);
+
+    // CRITICAL: If creative is VERY HIGH (>= 0.8), it should ALWAYS dominate over moderate hands_on
+    // This prevents "Elias the creative artist" from becoming "Elias the construction worker"
+    const creativeOverridesHandsOn = ylaCreative >= 0.8 && ylaCreative > ylaHandsOn;
 
     // 4. Strong helper profile
     const isYLAStrongHelperProfile = (ylaPeople >= 0.7 && ylaHealth >= 0.4) || (helperStrengthYLA >= 1.8 && ylaHealth >= 0.3);
@@ -1401,13 +1479,24 @@ function determineDominantCategory(
     const isYLAStrongLeaderProfile = (ylaLeadership >= 0.7 && ylaBusiness >= 0.5 && ylaTech < 0.5);
 
     console.log(`[YLA EARLY EXIT CHECK] isStrongTech=${isYLAStrongTechProfile}, isStrongCreative=${isYLAStrongCreativeProfile}, isStrongHelper=${isYLAStrongHelperProfile}, isStrongHandsOn=${isYLAStrongHandsOnProfile}, isStrongLeader=${isYLAStrongLeaderProfile}`);
+    console.log(`[YLA EARLY EXIT CHECK] creativeOverridesHandsOn=${creativeOverridesHandsOn}, creative=${ylaCreative.toFixed(2)}, handsOn=${ylaHandsOn.toFixed(2)}`);
+
+    // CRITICAL EARLY EXIT: If creative is VERY HIGH and dominates hands_on, return luova IMMEDIATELY
+    // This MUST happen BEFORE the score-based approach to prevent rakentaja from winning
+    // "Elias the creative artist" (creative=0.9, hands_on=0.57) should ALWAYS be luova, not rakentaja
+    if (creativeOverridesHandsOn) {
+      console.log(`[YLA EARLY EXIT] RETURNING luova (creative=${ylaCreative.toFixed(2)} >> handsOn=${ylaHandsOn.toFixed(2)})`);
+      return 'luova';
+    }
 
     // SCORE-BASED APPROACH: Find which profile is strongest
+    // CRITICAL FIX: If creative overrides hands_on, don't let rakentaja score at all
+    const effectiveHandsOnProfile = creativeOverridesHandsOn ? false : isYLAStrongHandsOnProfile;
     const ylaProfileScores = [
       { name: 'innovoija', score: isYLAStrongTechProfile ? techStrengthYLA : 0 },
       { name: 'luova', score: isYLAStrongCreativeProfile ? creativeStrengthYLA : 0 },
       { name: 'auttaja', score: isYLAStrongHelperProfile ? helperStrengthYLA : 0 },
-      { name: 'rakentaja', score: isYLAStrongHandsOnProfile ? handsOnStrengthYLA : 0 },
+      { name: 'rakentaja', score: effectiveHandsOnProfile ? handsOnStrengthYLA : 0 },
       { name: 'johtaja', score: isYLAStrongLeaderProfile ? leaderStrengthYLA : 0 }
     ].filter(p => p.score > 0).sort((a, b) => b.score - a.score);
 
@@ -1424,12 +1513,12 @@ function determineDominantCategory(
         return topProfile.name;
       }
 
-      // CRITICAL: When creative is VERY high (>= 0.7) and clearly dominates tech,
-      // prioritize luova over innovoija even if techStrengthYLA is inflated by innovation/problem_solving
+      // CRITICAL: When creative is VERY high (>= 0.7) and clearly dominates tech OR hands_on,
+      // prioritize luova over innovoija/rakentaja
       // This handles creative people who might answer "new ideas" (innovation) highly but don't code
-      // Key insight: If creative is very high and creative > tech (raw scores), this is a creative person
-      if (isYLAStrongCreativeProfile && ylaCreative >= 0.7 && ylaCreative > ylaTech) {
-        console.log(`[YLA EARLY EXIT] RETURNING luova (strong creative=${ylaCreative.toFixed(2)} dominates tech=${ylaTech.toFixed(2)})`);
+      // Key insight: If creative is very high and creative > tech AND creative > hands_on, this is a creative person
+      if (isYLAStrongCreativeProfile && ylaCreative >= 0.7 && ylaCreative > ylaTech && ylaCreative > ylaHandsOn) {
+        console.log(`[YLA EARLY EXIT] RETURNING luova (strong creative=${ylaCreative.toFixed(2)} dominates tech=${ylaTech.toFixed(2)} and handsOn=${ylaHandsOn.toFixed(2)})`);
         return 'luova';
       }
 
@@ -4900,16 +4989,25 @@ export function rankCareers(
   const organization = getMax(workstyle.organization, workstyle.structure);
   const outdoor = getMax(interests.outdoor, workstyle.outdoor);
 
+  // CRITICAL FIX: When creative is VERY HIGH (>= 0.8), it should ALWAYS dominate over moderate hands_on
+  // This prevents "Elias the creative artist" (creative=0.9, hands_on=0.57) from becoming "Elias the construction worker"
+  const creativeOverridesHandsOn = creative >= 0.8 && creative > hands_on;
+  const creativeBonus = creativeOverridesHandsOn ? 15.0 : 0; // Massive bonus to ensure creative wins
+  const handsOnPenaltyForCreative = creativeOverridesHandsOn ? -10.0 : 0; // Penalty for rakentaja when creative dominates
+
   const categoryAffinities: Record<string, number> = {
     // LUOVA: creative expression and artistic interests
     // Priority: creative > innovation (only if creative is strong)
+    // CRITICAL: When creative >= 0.8 AND creative > hands_on, add massive bonus to ensure luova wins
     luova: creative * 4.0 +
            (interests.arts_culture || 0) * 2.5 +
            (interests.writing || 0) * 2.0 +
            // Small innovation bonus only if creative is dominant
            (creative > 0.5 ? innovation * 0.8 : 0) +
            // Penalty when technology dominates creative
-           (technology > creative + 0.2 ? -2.0 : 0),
+           (technology > creative + 0.2 ? -2.0 : 0) +
+           // CRITICAL: Massive bonus when creative >> hands_on (artist, not builder)
+           creativeBonus,
 
     // INNOVOIJA: technology, analytical thinking, problem-solving
     // Priority: technology > analytical > problem_solving
@@ -4945,6 +5043,7 @@ export function rankCareers(
     // RAKENTAJA: hands-on work, practical skills
     // Priority: hands_on > outdoor (without environment focus)
     // CRITICAL: Must beat auttaja when hands_on is the primary trait
+    // CRITICAL: Must NOT beat luova when creative >> hands_on (artist, not builder)
     rakentaja: hands_on * 4.5 +
                (workstyle.precision || 0) * 2.0 +
                (workstyle.performance || 0) * 1.5 +
@@ -4953,7 +5052,9 @@ export function rankCareers(
                // Penalty when technology AND innovation dominate (should be innovoija)
                (technology > hands_on + 0.2 && innovation > 0.4 ? -2.5 : 0) +
                // Penalty when people/health dominate (should be auttaja)
-               (people + health > hands_on + 0.4 ? -2.0 : 0),
+               (people + health > hands_on + 0.4 ? -2.0 : 0) +
+               // CRITICAL: Penalty when creative >> hands_on (artist, not builder)
+               handsOnPenaltyForCreative,
 
     // YMPARISTON-PUOLUSTAJA: environment, nature, sustainability
     // Priority: environment > outdoor > impact
@@ -5072,6 +5173,30 @@ export function rankCareers(
       alignmentBonus += careerWorkstyle.independence * workstyle.independence * 3;
     }
 
+    // CRITICAL FIX: Penalty for social mismatch (introvert getting social careers)
+    // If user has LOW teamwork/social (< 0.4) AND career requires HIGH teamwork/people/social (> 0.5)
+    // This prevents "Matti the introverted coder" from getting marketing/sales careers
+    const userTeamwork = workstyle.teamwork || 0;
+    const userSocial = workstyle.social || 0;
+    const careerTeamwork = careerWorkstyle.teamwork || 0;
+    const careerPeople = careerInterests.people || 0;
+    const careerSocial = careerWorkstyle.social || 0;
+    const isIntroverted = userTeamwork < 0.4 && userSocial < 0.5;
+    const careerIsSocial = careerTeamwork > 0.5 || careerPeople > 0.5 || careerSocial > 0.6;
+
+    if (isIntroverted && careerIsSocial) {
+      // Strong penalty for introverts getting social careers
+      const socialMismatch = Math.max(careerTeamwork - userTeamwork, careerPeople - (interests.people || 0), careerSocial - userSocial);
+      alignmentBonus -= socialMismatch * 15; // Significant penalty
+    }
+
+    // BONUS: If user prefers independence (high independence, low teamwork), boost independent careers
+    const userIndependence = workstyle.independence || 0;
+    const careerIndependence = careerWorkstyle.independence || 0;
+    if (userIndependence > 0.6 && userTeamwork < 0.4 && careerIndependence > 0.5) {
+      alignmentBonus += (userIndependence + careerIndependence) * 4; // Bonus for matching independence
+    }
+
     // Values subdimension alignment
     if (careerValues.impact && (values.impact || values.social_impact)) {
       alignmentBonus += careerValues.impact * Math.max(values.impact || 0, values.social_impact || 0) * 3;
@@ -5082,35 +5207,34 @@ export function rankCareers(
 
     const totalScore = Math.min(100, baseScore + alignmentBonus);
 
-    // Generate match reasons based on top alignments
-    const matchReasons: string[] = [];
-    if (careerCategory === dominantCategory) {
-      matchReasons.push(`Sopii ${dominantCategory}-persoonallisuuteesi`);
-    }
-    if (interests.people > 0.6 && careerInterests.people > 0.5) {
-      matchReasons.push('Ihmisläheinen työ');
-    }
-    if (interests.creative > 0.6 && careerInterests.creative > 0.5) {
-      matchReasons.push('Luova työskentely');
-    }
-    if (interests.technology > 0.6 && careerInterests.technology > 0.5) {
-      matchReasons.push('Teknologia-osaaminen');
-    }
-    if (interests.hands_on > 0.6 && careerInterests.hands_on > 0.5) {
-      matchReasons.push('Käytännönläheinen työ');
-    }
+    // Generate comprehensive match reasons using the enhanced generateReasons function
+    // Find the careerFI data for this career to get detailed information (using slug or title)
+    const careerFI = careersFI.find(c => c && (c.id === careerVector.slug || c.title_fi === careerVector.title));
+
+    // Build dimension scores for reason generation
+    const careerDimensionScores = {
+      interests: Math.round(totalScore),
+      workstyle: Math.round(totalScore * 0.9),
+      values: Math.round(totalScore * 0.85),
+      context: Math.round(totalScore * 0.8)
+    };
+
+    // Generate enhanced, career-specific reasons
+    const matchReasons = generateReasons(
+      careerVector,
+      careerFI,
+      detailedScores,
+      careerDimensionScores,
+      cohort,
+      answers
+    );
 
     scoredCareers.push({
       ...careerVector,
       overallScore: Math.round(totalScore),
-      dimensionScores: {
-        interests: Math.round(totalScore),
-        workstyle: Math.round(totalScore * 0.9),
-        values: Math.round(totalScore * 0.85),
-        context: Math.round(totalScore * 0.8)
-      },
+      dimensionScores: careerDimensionScores,
       confidence: totalScore >= 80 ? 'high' : totalScore >= 60 ? 'medium' : 'low',
-      reasons: matchReasons.length > 0 ? matchReasons : [`Matches ${dominantCategory} profile`],
+      reasons: matchReasons.length > 0 ? matchReasons : [`Ammatti sopii profiiliisi`],
       category: careerCategory
     });
   }

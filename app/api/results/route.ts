@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { 
           success: false, 
-          error: rateLimitCheck.message || 'Too many requests',
+          error: rateLimitCheck.message || 'Liian monta pyyntöä',
           code: 'RATE_LIMIT_EXCEEDED'
         },
         { 
@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           success: false,
-          error: 'Invalid JSON format in request'
+          error: 'Virheellinen JSON-muoto pyynnössä'
         },
         { status: 400 }
       );
@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { 
           success: false, 
-          error: 'Invalid request data',
+          error: 'Virheellinen pyyntödata',
           details: validation.error.issues.map(issue => ({
             path: issue.path.join('.'),
             message: issue.message,
@@ -118,14 +118,14 @@ export async function POST(request: NextRequest) {
       const classPins: string[] = (classId && store.pins?.[classId]) || [];
       if (!classId || !classPins.includes(normalizedPin)) {
         return NextResponse.json(
-          { success: false, error: 'PIN does not exist for this class' },
+          { success: false, error: 'PIN-koodia ei löydy tälle luokalle' },
           { status: 400 }
         );
       }
       store.results = store.results || [];
       store.results.push({ class_id: classId, pin: normalizedPin, result_payload: resultPayload, created_at: new Date().toISOString() });
       try { fs.writeFileSync(mockPath, JSON.stringify(store, null, 2)); } catch {}
-      return NextResponse.json({ success: true, message: 'Result submitted successfully' });
+      return NextResponse.json({ success: true, message: 'Tulos tallennettu onnistuneesti' });
     }
 
     // Validate PIN exists and belongs to class
@@ -196,7 +196,7 @@ export async function POST(request: NextRequest) {
     if (!classCheck) {
       console.error(`[API/Results] Class ID ${classIdUUID} does not exist in database!`);
       return NextResponse.json(
-        { success: false, error: 'Class not found' },
+        { success: false, error: 'Luokkaa ei löydy' },
         { status: 400 }
       );
     }
@@ -215,7 +215,7 @@ export async function POST(request: NextRequest) {
       console.error('[API/Results] Error storing result:', insertError);
       console.error('[API/Results] Error details:', JSON.stringify(insertError, null, 2));
       return NextResponse.json(
-        { success: false, error: 'Failed to store result', details: insertError.message },
+        { success: false, error: 'Tuloksen tallentaminen epäonnistui', details: insertError.message },
         { status: 500 }
       );
     }
@@ -231,14 +231,14 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Result submitted successfully',
+      message: 'Tulos tallennettu onnistuneesti',
       resultId: resultId // Include resultId so client can store it for later retrieval
     });
 
   } catch (error) {
     console.error('[API/Results] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }

@@ -54,119 +54,86 @@ export function calculateEducationPath(answers: TestAnswer[], cohort: Cohort): E
 
 /**
  * Calculate education path recommendation for YLA cohort
- * 
- * LOGIC:
- * - Lukio: High analytical interest, wants to keep options open, interested in university
- * - Ammattikoulu: High hands-on interest, wants specific career early, practical learning
- * - Kansanopisto: Unclear goals, needs exploration, alternative path
+ *
+ * LOGIC (based on career profile, NOT specific questions):
+ * - Lukio: High technology, analytical, innovation OR creative → academic path
+ * - Ammattikoulu: High hands-on, low technology → practical path
+ * - Kansanopisto: Mixed signals, unclear direction → exploration path
  */
 function calculateYLAPath(answers: TestAnswer[]): YLAEducationPathResult | null {
 
-  // Get relevant answers (Q0-14: Learning Preferences + Future Mindset)
-  const relevantAnswers = answers.filter(a => a.questionIndex <= 14);
-  
-  if (relevantAnswers.length === 0) {
+  if (answers.length === 0) {
     return null;
   }
 
-  // Normalize scores to 0-1
-  const normalized = relevantAnswers.map(a => ({
-    index: a.questionIndex,
-    score: (a.score - 1) / 4  // 1-5 → 0-1
-  }));
+  // Calculate profile scores from all answers using YLA mappings
+  const mappings = getQuestionMappings('YLA');
 
-  // Calculate path scores based on question patterns
+  // Aggregate scores by subdimension
+  const subdimensionScores: Record<string, { total: number; count: number }> = {};
+
+  answers.forEach(answer => {
+    const mapping = mappings.find(m => m.q === answer.questionIndex);
+    if (mapping && mapping.subdimension) {
+      const normalized = (answer.score - 1) / 4; // 1-5 → 0-1
+      if (!subdimensionScores[mapping.subdimension]) {
+        subdimensionScores[mapping.subdimension] = { total: 0, count: 0 };
+      }
+      subdimensionScores[mapping.subdimension].total += normalized;
+      subdimensionScores[mapping.subdimension].count += 1;
+    }
+  });
+
+  // Get average scores for key subdimensions
+  const getAvg = (sub: string) => {
+    const data = subdimensionScores[sub];
+    return data && data.count > 0 ? data.total / data.count : 0;
+  };
+
+  const technology = getAvg('technology');
+  const analytical = getAvg('analytical');
+  const innovation = getAvg('innovation');
+  const problem_solving = getAvg('problem_solving');
+  const hands_on = getAvg('hands_on');
+  const creative = getAvg('creative');
+  const people = getAvg('people');
+  const health = getAvg('health');
+  const outdoor = getAvg('outdoor');
+  const stability = getAvg('stability');
+  const entrepreneurship = getAvg('entrepreneurship');
+
+  // Calculate path scores based on career profile
   let lukioScore = 0;
   let ammattikouluScore = 0;
   let kansanopistoScore = 0;
 
-  normalized.forEach(({ index, score }) => {
-    switch (index) {
-      // Q0: Lukeminen → Lukio
-      case 0:
-        lukioScore += score * 1.2;
-        break;
-      
-      // Q1: Matikka → Lukio (but also technical Ammattikoulu)
-      case 1:
-        lukioScore += score * 1.0;
-        ammattikouluScore += score * 0.5;
-        break;
-      
-      // Q2: Oppiminen tekemällä → Ammattikoulu
-      case 2:
-        ammattikouluScore += score * 1.3;
-        break;
-      
-      // Q3: Monta ainetta → Lukio
-      case 3:
-        lukioScore += score * 1.1;
-        break;
-      
-      // Q4: Muistaminen teoriat → Lukio
-      case 4:
-        lukioScore += score * 0.9;
-        break;
-      
-      // Q5: Käytännön harjoitukset → Ammattikoulu
-      case 5:
-        ammattikouluScore += score * 1.2;
-        break;
-      
-      // Q6: Tutkiminen syvällisesti → Lukio
-      case 6:
-        lukioScore += score * 1.0;
-        break;
-      
-      // Q7: Yhden ammatin taidot nopeasti → Ammattikoulu
-      case 7:
-        ammattikouluScore += score * 1.4;
-        break;
-      
-      // Q8: Tiedän jo ammatin → Ammattikoulu
-      case 8:
-        ammattikouluScore += score * 1.2;
-        kansanopistoScore += (1 - score) * 0.8; // Low score → unsure → Kansanopisto
-        break;
-      
-      // Q9: Pitää vaihtoehdot auki → Lukio
-      case 9:
-        lukioScore += score * 1.3;
-        ammattikouluScore += (1 - score) * 0.5; // Reverse
-        break;
-      
-      // Q10: Yliopisto-opiskelu → Lukio (STRONG indicator)
-      case 10:
-        lukioScore += score * 1.5;
-        break;
-      
-      // Q11: Aloittaa työt aikaisin → Ammattikoulu
-      case 11:
-        ammattikouluScore += score * 1.3;
-        break;
-      
-      // Q12: Valmis opiskelemaan kauan → Lukio
-      case 12:
-        lukioScore += score * 1.3;
-        ammattikouluScore += (1 - score) * 0.5; // Reverse
-        break;
-      
-      // Q13: Tiedän mitä haluan → Ammattikoulu
-      case 13:
-        ammattikouluScore += score * 1.0;
-        kansanopistoScore += (1 - score) * 0.7; // Low score → unsure
-        break;
-      
-      // Q14: Kokeilla monta alaa → Lukio
-      case 14:
-        lukioScore += score * 1.2;
-        ammattikouluScore += (1 - score) * 0.5; // Reverse
-        break;
-    }
-  });
+  // LUKIO indicators: tech, analytical, innovation, creative (academic paths)
+  // Tech-focused students (like Matti the coder) should go to Lukio → Yliopisto/AMK
+  lukioScore += technology * 2.5;       // Strong tech → lukio for IT/CS studies
+  lukioScore += analytical * 2.0;       // Analytical → lukio for academic path
+  lukioScore += innovation * 1.5;       // Innovation → lukio for research/design
+  lukioScore += problem_solving * 1.5;  // Problem solving → lukio
+  lukioScore += creative * 1.0;         // Creative → lukio for art/design studies
+
+  // AMMATTIKOULU indicators: hands-on, outdoor, stability preference
+  ammattikouluScore += hands_on * 2.5;   // Hands-on → ammattikoulu
+  ammattikouluScore += outdoor * 1.5;    // Outdoor work → ammattikoulu
+  ammattikouluScore += stability * 1.0;  // Wants job security → ammattikoulu
+  ammattikouluScore += (1 - analytical) * 0.8; // Not analytical → ammattikoulu
+
+  // KANSANOPISTO: unclear direction, mixed signals
+  // If both lukio and ammattikoulu scores are low, kansanopisto is good
+  const isUnclear = lukioScore < 4 && ammattikouluScore < 4;
+  if (isUnclear) {
+    kansanopistoScore += 3.0;
+  }
+  // If there's strong entrepreneurship but unclear academic path
+  if (entrepreneurship > 0.6 && technology < 0.5 && hands_on < 0.5) {
+    kansanopistoScore += 1.5;
+  }
 
   // Normalize to 0-100
-  const maxPossibleScore = 15; // Rough estimate of max cumulative weight
+  const maxPossibleScore = 10;
   lukioScore = Math.min(100, (lukioScore / maxPossibleScore) * 100);
   ammattikouluScore = Math.min(100, (ammattikouluScore / maxPossibleScore) * 100);
   kansanopistoScore = Math.min(100, (kansanopistoScore / maxPossibleScore) * 100);

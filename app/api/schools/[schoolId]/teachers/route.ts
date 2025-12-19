@@ -28,14 +28,14 @@ export async function GET(
 
     if (!teacherId) {
       return NextResponse.json(
-        { success: false, error: 'Not authenticated' },
+        { success: false, error: 'Ei kirjautunut' },
         { status: 401 }
       );
     }
 
     if (!supabaseAdmin) {
       return NextResponse.json(
-        { success: false, error: 'Database not configured' },
+        { success: false, error: 'Tietokanta ei ole määritetty' },
         { status: 500 }
       );
     }
@@ -50,7 +50,7 @@ export async function GET(
 
     if (!membership) {
       return NextResponse.json(
-        { success: false, error: 'Access denied' },
+        { success: false, error: 'Pääsy estetty' },
         { status: 403 }
       );
     }
@@ -65,7 +65,7 @@ export async function GET(
     if (error) {
       console.error('[API/Schools/Teachers] Error fetching teachers:', error);
       return NextResponse.json(
-        { success: false, error: 'Failed to fetch teachers' },
+        { success: false, error: 'Opettajien haku epäonnistui' },
         { status: 500 }
       );
     }
@@ -79,7 +79,7 @@ export async function GET(
   } catch (error) {
     console.error('[API/Schools/Teachers] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }
@@ -99,7 +99,7 @@ export async function POST(
 
     if (!teacherId) {
       return NextResponse.json(
-        { success: false, error: 'Not authenticated' },
+        { success: false, error: 'Ei kirjautunut' },
         { status: 401 }
       );
     }
@@ -109,21 +109,21 @@ export async function POST(
 
     if (!newTeacherId || typeof newTeacherId !== 'string') {
       return NextResponse.json(
-        { success: false, error: 'Teacher ID is required' },
+        { success: false, error: 'Opettajan tunniste on pakollinen' },
         { status: 400 }
       );
     }
 
     if (!['admin', 'teacher', 'viewer'].includes(role)) {
       return NextResponse.json(
-        { success: false, error: 'Invalid role' },
+        { success: false, error: 'Virheellinen rooli' },
         { status: 400 }
       );
     }
 
     if (!supabaseAdmin) {
       return NextResponse.json(
-        { success: false, error: 'Database not configured' },
+        { success: false, error: 'Tietokanta ei ole määritetty' },
         { status: 500 }
       );
     }
@@ -138,7 +138,7 @@ export async function POST(
 
     if (!inviter || inviter.role !== 'admin') {
       return NextResponse.json(
-        { success: false, error: 'Only admins can invite teachers' },
+        { success: false, error: 'Vain ylläpitäjät voivat kutsua opettajia' },
         { status: 403 }
       );
     }
@@ -149,7 +149,7 @@ export async function POST(
 
     if (!canAdd) {
       return NextResponse.json(
-        { success: false, error: 'School has reached maximum teacher limit' },
+        { success: false, error: 'Koulu on saavuttanut maksimiopettajamäärän' },
         { status: 400 }
       );
     }
@@ -171,13 +171,13 @@ export async function POST(
 
       if (error.code === '23505') { // Unique constraint violation
         return NextResponse.json(
-          { success: false, error: 'Teacher already belongs to this school' },
+          { success: false, error: 'Opettaja kuuluu jo tähän kouluun' },
           { status: 400 }
         );
       }
 
       return NextResponse.json(
-        { success: false, error: 'Failed to add teacher' },
+        { success: false, error: 'Opettajan lisääminen epäonnistui' },
         { status: 500 }
       );
     }
@@ -192,7 +192,7 @@ export async function POST(
   } catch (error) {
     console.error('[API/Schools/Teachers] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }
@@ -216,21 +216,21 @@ export async function DELETE(
 
     if (!teacherId) {
       return NextResponse.json(
-        { success: false, error: 'Not authenticated' },
+        { success: false, error: 'Ei kirjautunut' },
         { status: 401 }
       );
     }
 
     if (!teacherIdToRemove) {
       return NextResponse.json(
-        { success: false, error: 'Teacher ID to remove is required' },
+        { success: false, error: 'Poistettavan opettajan tunniste on pakollinen' },
         { status: 400 }
       );
     }
 
     if (!supabaseAdmin) {
       return NextResponse.json(
-        { success: false, error: 'Database not configured' },
+        { success: false, error: 'Tietokanta ei ole määritetty' },
         { status: 500 }
       );
     }
@@ -245,7 +245,7 @@ export async function DELETE(
 
     if (!remover || remover.role !== 'admin') {
       return NextResponse.json(
-        { success: false, error: 'Only admins can remove teachers' },
+        { success: false, error: 'Vain ylläpitäjät voivat poistaa opettajia' },
         { status: 403 }
       );
     }
@@ -266,7 +266,7 @@ export async function DELETE(
 
     if (targetMember?.role === 'admin' && admins && admins.length <= 1) {
       return NextResponse.json(
-        { success: false, error: 'Cannot remove the last admin' },
+        { success: false, error: 'Viimeistä ylläpitäjää ei voi poistaa' },
         { status: 400 }
       );
     }
@@ -281,7 +281,7 @@ export async function DELETE(
     if (error) {
       console.error('[API/Schools/Teachers] Error removing teacher:', error);
       return NextResponse.json(
-        { success: false, error: 'Failed to remove teacher' },
+        { success: false, error: 'Opettajan poistaminen epäonnistui' },
         { status: 500 }
       );
     }
@@ -290,13 +290,13 @@ export async function DELETE(
 
     return NextResponse.json({
       success: true,
-      message: 'Teacher removed successfully'
+      message: 'Opettaja poistettu onnistuneesti'
     });
 
   } catch (error) {
     console.error('[API/Schools/Teachers] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }

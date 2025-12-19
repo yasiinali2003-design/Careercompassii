@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   title: 'Urakompassi - Löydä tulevaisuutesi vibe',
   description: 'Hauska ja luotettava testi, joka auttaa sinua ymmärtämään vahvuuksiasi ja uramahdollisuuksia.',
   ...(metadataBase && { metadataBase }),
+  icons: {
+    icon: [
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   robots: {
     index: false,
     follow: false,

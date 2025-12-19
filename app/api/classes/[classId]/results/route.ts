@@ -26,7 +26,7 @@ export async function GET(
 
     if (!classId) {
       return NextResponse.json(
-        { success: false, error: 'Missing classId' },
+        { success: false, error: 'Luokan tunniste puuttuu' },
         { status: 400 }
       );
     }
@@ -36,7 +36,7 @@ export async function GET(
     
     if (!teacherId) {
       return NextResponse.json(
-        { success: false, error: 'Not authenticated' },
+        { success: false, error: 'Ei kirjautunut' },
         { status: 401 }
       );
     }

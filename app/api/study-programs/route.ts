@@ -112,7 +112,7 @@ export async function GET(request: NextRequest) {
     if (error) {
       console.error('[API/StudyPrograms] Database error:', error);
       return NextResponse.json(
-        { error: 'Failed to fetch study programs', details: error.message },
+        { error: 'Koulutusohjelmien haku epäonnistui', details: error.message },
         { status: 500 }
       );
     }
@@ -231,7 +231,7 @@ export async function GET(request: NextRequest) {
   } catch (error: any) {
     console.error('[API/StudyPrograms] Unexpected error:', error);
     return NextResponse.json(
-      { error: 'Internal server error', details: error.message },
+      { error: 'Sisäinen palvelinvirhe', details: error.message },
       { status: 500 }
     );
   }
@@ -262,14 +262,14 @@ export async function POST(request: NextRequest) {
     // Validate required fields
     if (!id || !name || !institution || !institutionType || !field || minPoints === undefined) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'Pakolliset kentät puuttuvat' },
         { status: 400 }
       );
     }
 
     if (!supabaseAdmin) {
       return NextResponse.json(
-        { error: 'Database not configured' },
+        { error: 'Tietokanta ei ole määritetty' },
         { status: 500 }
       );
     }
@@ -297,7 +297,7 @@ export async function POST(request: NextRequest) {
     if (error) {
       console.error('[API/StudyPrograms] Insert error:', error);
       return NextResponse.json(
-        { error: 'Failed to save study program', details: error.message },
+        { error: 'Koulutusohjelman tallennus epäonnistui', details: error.message },
         { status: 500 }
       );
     }
@@ -310,7 +310,7 @@ export async function POST(request: NextRequest) {
   } catch (error: any) {
     console.error('[API/StudyPrograms] Unexpected error:', error);
     return NextResponse.json(
-      { error: 'Internal server error', details: error.message },
+      { error: 'Sisäinen palvelinvirhe', details: error.message },
       { status: 500 }
     );
   }

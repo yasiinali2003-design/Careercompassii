@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     // Validate required fields
     if (!cohort || !dominant_category || !recommended_careers) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'Pakolliset kentät puuttuvat' },
         { status: 400 }
       );
     }
@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     // Check if supabase client is available
     if (!supabase) {
       return NextResponse.json(
-        { error: 'Database not configured' },
+        { error: 'Tietokanta ei ole määritetty' },
         { status: 500 }
       );
     }
@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
         console.error('Error storing analytics:', error);
       }
       return NextResponse.json(
-        { error: 'Failed to store analytics' },
+        { error: 'Analytiikan tallennus epäonnistui' },
         { status: 500 }
       );
     }
@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true });
   } catch {
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }
@@ -72,7 +72,7 @@ export async function GET(request: NextRequest) {
     // Check if supabase client is available
     if (!supabase) {
       return NextResponse.json(
-        { error: 'Database not configured' },
+        { error: 'Tietokanta ei ole määritetty' },
         { status: 500 }
       );
     }
@@ -98,7 +98,7 @@ export async function GET(request: NextRequest) {
         console.error('Error fetching analytics:', error);
       }
       return NextResponse.json(
-        { error: 'Failed to fetch analytics' },
+        { error: 'Analytiikan haku epäonnistui' },
         { status: 500 }
       );
     }
@@ -140,7 +140,7 @@ export async function GET(request: NextRequest) {
     });
   } catch {
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }

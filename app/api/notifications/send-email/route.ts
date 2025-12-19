@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
 
     if (!type || !data) {
       return NextResponse.json(
-        { success: false, error: 'Missing type or data' },
+        { success: false, error: 'Tyyppi tai data puuttuu' },
         { status: 400 }
       );
     }
@@ -99,7 +99,7 @@ export async function POST(request: NextRequest) {
         break;
       default:
         return NextResponse.json(
-          { success: false, error: 'Invalid notification type' },
+          { success: false, error: 'Virheellinen ilmoitustyyppi' },
           { status: 400 }
         );
     }
@@ -109,18 +109,18 @@ export async function POST(request: NextRequest) {
     if (success) {
       return NextResponse.json({
         success: true,
-        message: 'Email sent successfully'
+        message: 'Sähköposti lähetetty onnistuneesti'
       });
     } else {
       return NextResponse.json(
-        { success: false, error: 'Failed to send email' },
+        { success: false, error: 'Sähköpostin lähetys epäonnistui' },
         { status: 500 }
       );
     }
   } catch (error) {
     console.error('Error in send-email API:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }

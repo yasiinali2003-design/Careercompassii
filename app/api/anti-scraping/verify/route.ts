@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
     const tokenData = validTokens.get(token);
     if (!tokenData || tokenData.expires < Date.now()) {
       return NextResponse.json(
-        { success: false, error: 'Invalid or expired token' },
+        { success: false, error: 'Virheellinen tai vanhentunut tunnus' },
         { status: 403 }
       );
     }
@@ -54,12 +54,12 @@ export async function POST(request: NextRequest) {
     }
     
     return NextResponse.json(
-      { success: false, error: 'Invalid challenge' },
+      { success: false, error: 'Virheellinen haaste' },
       { status: 403 }
     );
   } catch (error) {
     return NextResponse.json(
-      { success: false, error: 'Invalid request' },
+      { success: false, error: 'Virheellinen pyyntö' },
       { status: 400 }
     );
   }

@@ -17,7 +17,7 @@ export async function GET(
 
     if (!resultId) {
       return NextResponse.json(
-        { success: false, error: 'Missing resultId' },
+        { success: false, error: 'Tuloksen tunniste puuttuu' },
         { status: 400 }
       );
     }
@@ -26,14 +26,14 @@ export async function GET(
     const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
     if (!uuidRegex.test(resultId)) {
       return NextResponse.json(
-        { success: false, error: 'Invalid resultId format' },
+        { success: false, error: 'Virheellinen tunnisteen muoto' },
         { status: 400 }
       );
     }
 
     if (!supabaseAdmin) {
       return NextResponse.json(
-        { success: false, error: 'Database not configured' },
+        { success: false, error: 'Tietokanta ei ole määritetty' },
         { status: 503 }
       );
     }
@@ -48,14 +48,14 @@ export async function GET(
     if (error) {
       console.error('[API] Error fetching result:', error);
       return NextResponse.json(
-        { success: false, error: 'Result not found' },
+        { success: false, error: 'Tulosta ei löydy' },
         { status: 404 }
       );
     }
 
     if (!data) {
       return NextResponse.json(
-        { success: false, error: 'Result not found' },
+        { success: false, error: 'Tulosta ei löydy' },
         { status: 404 }
       );
     }
@@ -117,7 +117,7 @@ export async function GET(
   } catch (error) {
     console.error('[API] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }

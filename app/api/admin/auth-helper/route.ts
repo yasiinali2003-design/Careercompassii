@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
 
     if (!expectedPassword) {
       console.error('[Admin Auth] ADMIN_PASSWORD environment variable not set');
-      return NextResponse.json({ success: false, error: 'Server configuration error' }, { status: 500 });
+      return NextResponse.json({ success: false, error: 'Palvelimen asetusvirhe' }, { status: 500 });
     }
     
     if (password === expectedPassword) {
@@ -49,9 +49,9 @@ export async function POST(request: NextRequest) {
       return response;
     }
     
-    return NextResponse.json({ success: false, error: 'Invalid password' }, { status: 401 });
+    return NextResponse.json({ success: false, error: 'Virheellinen salasana' }, { status: 401 });
   } catch (error) {
-    return NextResponse.json({ success: false, error: 'Invalid request' }, { status: 400 });
+    return NextResponse.json({ success: false, error: 'Virheellinen pyyntö' }, { status: 400 });
   }
 }
 

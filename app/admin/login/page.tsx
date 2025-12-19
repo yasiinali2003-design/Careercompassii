@@ -32,10 +32,10 @@ export default function AdminLoginPage() {
         router.push('/admin/teachers');
         router.refresh();
       } else {
-        setError(data.error || 'Invalid password');
+        setError(data.error || 'Virheellinen salasana');
       }
     } catch (err) {
-      setError('Network error. Please try again.');
+      setError('Verkkovirhe. Yritä uudelleen.');
       console.error('Login error:', err);
     } finally {
       setLoading(false);
@@ -49,22 +49,22 @@ export default function AdminLoginPage() {
           <Link href="/" className="inline-block hover:opacity-80 transition-opacity mb-4">
             <Logo className="h-12 w-auto mx-auto" />
           </Link>
-          <h1 className="text-2xl font-bold text-white">Admin Login</h1>
-          <p className="text-sm text-urak-text-secondary mt-2">Enter admin password</p>
+          <h1 className="text-2xl font-bold text-white">Ylläpitäjän kirjautuminen</h1>
+          <p className="text-sm text-urak-text-secondary mt-2">Syötä ylläpitäjän salasana</p>
         </div>
 
         <div className="bg-urak-surface/70 border border-urak-border/60 rounded-3xl px-6 py-8 md:px-8 md:py-10 shadow-lg">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="password" className="block text-sm text-urak-text-secondary mb-2">
-                Admin Password
+                Salasana
               </label>
               <input
                 id="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter password"
+                placeholder="Syötä salasana"
                 required
                 autoFocus
                 className="w-full px-4 py-3 rounded-xl bg-white/5 border border-urak-border focus:ring-2 focus:ring-urak-accent-blue/40 focus:outline-none transition-all text-white placeholder:text-urak-text-muted"
@@ -83,7 +83,7 @@ export default function AdminLoginPage() {
               disabled={loading}
               className="w-full rounded-full bg-urak-accent-blue px-7 py-3 text-sm font-medium text-urak-bg hover:bg-urak-accent-blue/90 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? 'Logging in...' : 'Login'}
+              {loading ? 'Kirjaudutaan...' : 'Kirjaudu'}
             </button>
           </form>
 
@@ -92,7 +92,7 @@ export default function AdminLoginPage() {
               href="/"
               className="text-sm text-urak-text-muted hover:text-white transition-colors"
             >
-              ← Back to home
+              ← Takaisin etusivulle
             </Link>
           </div>
         </div>

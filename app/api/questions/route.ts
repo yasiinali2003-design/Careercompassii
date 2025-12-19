@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json(
         {
           success: false,
-          error: 'Invalid or missing cohort parameter'
+          error: 'Virheellinen tai puuttuva kohortti-parametri'
         },
         { status: 400 }
       );
@@ -55,7 +55,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        error: 'Internal server error'
+        error: 'Sisäinen palvelinvirhe'
       },
       { status: 500 }
     );

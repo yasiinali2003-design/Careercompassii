@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
 
     if (!teacherId) {
       return NextResponse.json(
-        { success: false, error: 'Not authenticated' },
+        { success: false, error: 'Ei kirjautunut' },
         { status: 401 }
       );
     }
@@ -66,8 +66,8 @@ export async function POST(request: NextRequest) {
           return NextResponse.json(
             {
               success: false,
-              error: 'Database tables not created yet',
-              hint: 'Run the SQL file in Supabase: supabase-teacher-dashboard-fixed.sql',
+              error: 'Tietokantatauluja ei ole vielä luotu',
+              hint: 'Suorita SQL-tiedosto Supabasessa: supabase-teacher-dashboard-fixed.sql',
               details: error?.message
             },
             { status: 500 }
@@ -77,9 +77,9 @@ export async function POST(request: NextRequest) {
         return NextResponse.json(
           {
             success: false,
-            error: 'Failed to create class',
+            error: 'Luokan luominen epäonnistui',
             details: error?.message,
-            hint: 'Check Vercel logs for more details'
+            hint: 'Tarkista Vercel-lokit saadaksesi lisätietoja'
           },
           { status: 500 }
         );
@@ -98,7 +98,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { 
           success: false, 
-          error: 'Database connection failed',
+          error: 'Tietokantayhteys epäonnistui',
           details: err instanceof Error ? err.message : String(err)
         },
         { status: 500 }
@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('[API/Classes] Unexpected error:', error);
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
     );
   }
@@ -126,7 +126,7 @@ export async function GET(request: NextRequest) {
 
     if (!teacherId) {
       return NextResponse.json(
-        { success: false, error: 'Not authenticated' },
+        { success: false, error: 'Ei kirjautunut' },
         { status: 401 }
       );
     }

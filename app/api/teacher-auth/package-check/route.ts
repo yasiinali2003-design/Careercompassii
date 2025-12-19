@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
 
     if (!teacherId) {
       return NextResponse.json(
-        { success: false, hasPremium: false, error: 'Not authenticated' },
+        { success: false, hasPremium: false, error: 'Ei kirjautunut' },
         { status: 401 }
       );
     }
@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('[Package Check] Error:', error);
     return NextResponse.json(
-      { success: false, hasPremium: false, error: 'Internal error' },
+      { success: false, hasPremium: false, error: 'Sisäinen virhe' },
       { status: 500 }
     );
   }

@@ -1487,7 +1487,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     slug: "elainlaakari",
     title: "Eläinlääkäri",
     category: "auttaja",
-    interests: { technology: 0.47, people: 0.95, creative: 0.56, analytical: 0.27, hands_on: 0.56, business: 0.1, environment: 0.34, health: 0.71, education: 0.49, innovation: 0.25, arts_culture: 0.55, sports: 0.37, nature: 0.5, writing: 0.14 },
+    interests: { technology: 0.47, people: 0.85, creative: 0.56, analytical: 0.45, hands_on: 0.56, business: 0.1, environment: 0.85, health: 0.80, education: 0.49, innovation: 0.25, arts_culture: 0.55, sports: 0.37, nature: 0.90, writing: 0.14 },
     workstyle: { teamwork: 0.67, independence: 0.13, leadership: 0.19, organization: 0.29, planning: 0.2, problem_solving: 0.62, precision: 0.31, performance: 0.41, teaching: 0.78, motivation: 0.81, autonomy: 0.38, social: 0.95, structure: 0.51, flexibility: 0.54, variety: 0.76 },
     values: { growth: 0.61, impact: 0.58, global: 0.27, career_clarity: 0.7, financial: 0.3, entrepreneurship: 0.32, social_impact: 0.94, stability: 0.6, advancement: 0.29, work_life_balance: 0.94, company_size: 0.52 },
     context: { outdoor: 0.56, international: 0.63, work_environment: 0.85 }
@@ -6374,7 +6374,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     slug: "karjanhoitaja",
     title: "Karjanhoitaja",
     category: "rakentaja",
-    interests: { technology: 0.2, people: 0.66, creative: 0.46, analytical: 0.36, hands_on: 0.95, business: 0.46, environment: 0.69, health: 0.23, education: 0.13, innovation: 0.1, arts_culture: 0.1, sports: 0.4, nature: 0.58, writing: 0.34 },
+    interests: { technology: 0.2, people: 0.66, creative: 0.46, analytical: 0.36, hands_on: 0.95, business: 0.46, environment: 0.85, health: 0.35, education: 0.13, innovation: 0.1, arts_culture: 0.1, sports: 0.4, nature: 0.90, writing: 0.34 },
     workstyle: { teamwork: 0.89, independence: 0.46, leadership: 0.12, organization: 0.42, planning: 0.61, problem_solving: 0.61, precision: 0.65, performance: 0.4, teaching: 0.19, motivation: 0.47, autonomy: 0.63, social: 0.28, structure: 0.63, flexibility: 0.28, variety: 0.65 },
     values: { growth: 0.71, impact: 0.52, global: 0.1, career_clarity: 0.77, financial: 0.5, entrepreneurship: 0.6, social_impact: 0.23, stability: 0.86, advancement: 0.64, work_life_balance: 0.79, company_size: 0.22 },
     context: { outdoor: 0.5, international: 0.39, work_environment: 0.48 }
