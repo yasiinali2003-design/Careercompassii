@@ -60,7 +60,9 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     notes: "Manual work - trades indicator"
   },
 
-  // Q4: Environment - Nature/animals
+  // Q4: Environment - Nature/animals - DUAL MAPPING
+  // FIXED: Animals = auttaja (vets, animal care), Nature = ympäristön-puolustaja
+  // Sara (animal lover/vet) should get auttaja, not just ympäristön-puolustaja
   {
     q: 4,
     text: "Haluaisitko tehdä jotain luonnon ja eläinten hyväksi?",
@@ -68,7 +70,16 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     subdimension: 'environment',
     weight: 1.2,
     reverse: false,
-    notes: "Environmental care"
+    notes: "Environmental care - nature aspect"
+  },
+  {
+    q: 4,
+    text: "Haluaisitko tehdä jotain luonnon ja eläinten hyväksi?",
+    dimension: 'interests',
+    subdimension: 'health',
+    weight: 1.0,
+    reverse: false,
+    notes: "Animal care aspect - for vets and animal health careers (auttaja)"
   },
 
   // Q5: Health - Human body
@@ -105,14 +116,16 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   },
 
   // Q8: Sports - Physical activity
+  // FIXED: Sports maps to health (for fitness/sports careers) NOT hands_on
+  // Athletes like Onni who help teammates should get auttaja, not rakentaja
   {
     q: 8,
     text: "Onko liikunta ja urheilu tärkeä osa elämääsi?",
     dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.1,
+    subdimension: 'health',
+    weight: 1.3,
     reverse: false,
-    notes: "Sports/fitness interest"
+    notes: "Sports/fitness interest - maps to health for sports/fitness careers"
   },
 
   // Q9: Teaching - Explaining to others
@@ -684,28 +697,47 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
 
 // ========== NUORI (18-25v) - 30 COMPLETELY UNIQUE QUESTIONS ==========
 // Focus: Career development and realistic expectations
+// FIXED: Added dual mappings for better career matching
 
 const NUORI_MAPPINGS: QuestionMapping[] = [
-  // Q0: Software/Data
+  // Q0: Software/Data - DUAL: technology + analytical
   {
     q: 0,
     text: "Kiinnostaako sinua ohjelmistokehitys tai data-analytiikka?",
     dimension: 'interests',
     subdimension: 'technology',
-    weight: 1.4,
+    weight: 1.6,
     reverse: false,
     notes: "Software/data careers"
   },
+  {
+    q: 0,
+    text: "Kiinnostaako sinua ohjelmistokehitys tai data-analytiikka?",
+    dimension: 'interests',
+    subdimension: 'analytical',
+    weight: 1.2,
+    reverse: false,
+    notes: "Software/data careers - analytical aspect"
+  },
 
-  // Q1: Healthcare
+  // Q1: Healthcare - DUAL: health + people (CRITICAL for auttaja)
   {
     q: 1,
     text: "Haluaisitko työskennellä terveydenhuollossa tai lääkealalla?",
     dimension: 'interests',
     subdimension: 'health',
-    weight: 1.4,
+    weight: 2.0,
     reverse: false,
-    notes: "Healthcare sector"
+    notes: "Healthcare sector - PRIMARY"
+  },
+  {
+    q: 1,
+    text: "Haluaisitko työskennellä terveydenhuollossa tai lääkealalla?",
+    dimension: 'interests',
+    subdimension: 'people',
+    weight: 1.5,
+    reverse: false,
+    notes: "Healthcare sector - people aspect"
   },
 
   // Q2: Finance/Accounting
@@ -714,7 +746,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Kiinnostaako sinua talous, rahoitus tai kirjanpito?",
     dimension: 'interests',
     subdimension: 'business',
-    weight: 1.3,
+    weight: 1.5,
     reverse: false,
     notes: "Finance/accounting"
   },
@@ -725,40 +757,58 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Haluaisitko työskennellä luovalla alalla kuten mainonta tai design?",
     dimension: 'interests',
     subdimension: 'creative',
-    weight: 1.3,
+    weight: 1.6,
     reverse: false,
     notes: "Creative industries"
   },
 
-  // Q4: Engineering/R&D
+  // Q4: Engineering/R&D - DUAL: innovation + hands_on
   {
     q: 4,
     text: "Kiinnostaako sinua insinöörityö tai tuotekehitys?",
     dimension: 'interests',
     subdimension: 'innovation',
-    weight: 1.3,
+    weight: 1.5,
     reverse: false,
     notes: "Engineering/R&D"
   },
+  {
+    q: 4,
+    text: "Kiinnostaako sinua insinöörityö tai tuotekehitys?",
+    dimension: 'interests',
+    subdimension: 'hands_on',
+    weight: 1.2,
+    reverse: false,
+    notes: "Engineering - hands-on aspect"
+  },
 
-  // Q5: Education/Training
+  // Q5: Education/Training - DUAL: growth + people
   {
     q: 5,
     text: "Haluaisitko opettaa, kouluttaa tai valmentaa muita?",
     dimension: 'interests',
     subdimension: 'growth',
-    weight: 1.3,
+    weight: 1.5,
     reverse: false,
     notes: "Education sector"
   },
+  {
+    q: 5,
+    text: "Haluaisitko opettaa, kouluttaa tai valmentaa muita?",
+    dimension: 'interests',
+    subdimension: 'people',
+    weight: 1.3,
+    reverse: false,
+    notes: "Education - people aspect"
+  },
 
-  // Q6: HR/Recruitment
+  // Q6: HR/Recruitment - people focus
   {
     q: 6,
     text: "Kiinnostaako sinua henkilöstöhallinto ja rekrytointi?",
     dimension: 'interests',
     subdimension: 'people',
-    weight: 1.2,
+    weight: 1.5,
     reverse: false,
     notes: "HR/people management"
   },
@@ -769,20 +819,29 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Haluaisitko työskennellä lakialalla tai oikeudellisissa tehtävissä?",
     dimension: 'interests',
     subdimension: 'analytical',
-    weight: 1.2,
+    weight: 1.3,
     reverse: false,
     notes: "Legal sector"
   },
 
-  // Q8: Sales/Marketing
+  // Q8: Sales/Marketing - DUAL: business + leadership
   {
     q: 8,
     text: "Kiinnostaako sinua myynti, markkinointi tai brändin rakentaminen?",
     dimension: 'interests',
     subdimension: 'business',
-    weight: 1.2,
+    weight: 1.4,
     reverse: false,
     notes: "Sales/marketing"
+  },
+  {
+    q: 8,
+    text: "Kiinnostaako sinua myynti, markkinointi tai brändin rakentaminen?",
+    dimension: 'interests',
+    subdimension: 'leadership',
+    weight: 1.0,
+    reverse: false,
+    notes: "Sales/marketing - leadership aspect"
   },
 
   // Q9: Research/Science
@@ -791,31 +850,49 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Haluaisitko tehdä tutkimustyötä ja kehittää uutta tietoa?",
     dimension: 'interests',
     subdimension: 'analytical',
-    weight: 1.3,
+    weight: 1.5,
     reverse: false,
     notes: "Research/science"
   },
 
-  // Q10: Project Management
+  // Q10: Project Management - DUAL: leadership + business
   {
     q: 10,
     text: "Kiinnostaako sinua projektien johtaminen ja koordinointi?",
     dimension: 'interests',
     subdimension: 'leadership',
-    weight: 1.3,
+    weight: 1.6,
     reverse: false,
     notes: "Project management"
   },
+  {
+    q: 10,
+    text: "Kiinnostaako sinua projektien johtaminen ja koordinointi?",
+    dimension: 'interests',
+    subdimension: 'business',
+    weight: 1.2,
+    reverse: false,
+    notes: "Project management - business aspect"
+  },
 
-  // Q11: Sustainability
+  // Q11: Sustainability - DUAL: environment + nature
   {
     q: 11,
     text: "Haluaisitko työskennellä kestävän kehityksen tai ympäristöalan parissa?",
     dimension: 'interests',
     subdimension: 'environment',
-    weight: 1.2,
+    weight: 1.5,
     reverse: false,
     notes: "Sustainability sector"
+  },
+  {
+    q: 11,
+    text: "Haluaisitko työskennellä kestävän kehityksen tai ympäristöalan parissa?",
+    dimension: 'interests',
+    subdimension: 'nature',
+    weight: 1.2,
+    reverse: false,
+    notes: "Sustainability - nature aspect"
   },
 
   // Q12: Remote work
@@ -824,31 +901,49 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Haluaisitko tehdä töitä etänä kotoa käsin?",
     dimension: 'workstyle',
     subdimension: 'independence',
-    weight: 1.0,
+    weight: 1.2,
     reverse: false,
     notes: "Remote work preference"
   },
 
-  // Q13: Management aspiration
+  // Q13: Management aspiration - DUAL: leadership + business
   {
     q: 13,
     text: "Näetkö itsesi esimiehenä tai tiiminvetäjänä tulevaisuudessa?",
     dimension: 'workstyle',
     subdimension: 'leadership',
-    weight: 1.2,
+    weight: 1.6,
     reverse: false,
     notes: "Management aspiration"
   },
+  {
+    q: 13,
+    text: "Näetkö itsesi esimiehenä tai tiiminvetäjänä tulevaisuudessa?",
+    dimension: 'interests',
+    subdimension: 'leadership',
+    weight: 1.4,
+    reverse: false,
+    notes: "Management - interest aspect"
+  },
 
-  // Q14: Team preference
+  // Q14: Team preference - people oriented
   {
     q: 14,
     text: "Nautitko tiimityöskentelystä ja yhteistyöstä muiden kanssa?",
     dimension: 'workstyle',
     subdimension: 'teamwork',
-    weight: 1.0,
+    weight: 1.2,
     reverse: false,
     notes: "Collaboration style - 5=team"
+  },
+  {
+    q: 14,
+    text: "Nautitko tiimityöskentelystä ja yhteistyöstä muiden kanssa?",
+    dimension: 'interests',
+    subdimension: 'people',
+    weight: 1.0,
+    reverse: false,
+    notes: "Team - people aspect"
   },
 
   // Q15: Structure preference
@@ -857,18 +952,18 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Pidätkö siitä, kun työpäivällä on selkeä rakenne ja aikataulu?",
     dimension: 'workstyle',
     subdimension: 'structure',
-    weight: 0.9,
+    weight: 1.0,
     reverse: false,
     notes: "Structure preference - 5=structured"
   },
 
-  // Q16: Client-facing
+  // Q16: Client-facing - social skills
   {
     q: 16,
     text: "Viihdytkö asiakasrajapinnassa ja neuvotteluissa?",
     dimension: 'workstyle',
     subdimension: 'social',
-    weight: 1.1,
+    weight: 1.3,
     reverse: false,
     notes: "Client-facing work"
   },
@@ -879,7 +974,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Nautitko strategisesta suunnittelusta ja kokonaisuuksien hallinnasta?",
     dimension: 'workstyle',
     subdimension: 'planning',
-    weight: 1.2,
+    weight: 1.4,
     reverse: false,
     notes: "Strategic thinking"
   },
@@ -890,7 +985,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Oletko huolellinen yksityiskohtien kanssa työssäsi?",
     dimension: 'workstyle',
     subdimension: 'precision',
-    weight: 0.9,
+    weight: 1.0,
     reverse: false,
     notes: "Detail orientation - 5=details"
   },
@@ -901,7 +996,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Viihdytkö nopeatahtisessa ja kiireisessä työympäristössä?",
     dimension: 'workstyle',
     subdimension: 'performance',
-    weight: 0.9,
+    weight: 1.0,
     reverse: false,
     notes: "Pace preference - 5=fast"
   },
@@ -912,7 +1007,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Kuinka tärkeää sinulle on korkea palkkataso?",
     dimension: 'values',
     subdimension: 'financial',
-    weight: 1.1,
+    weight: 1.2,
     reverse: false,
     notes: "Salary priority"
   },
@@ -923,31 +1018,49 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Onko työn ja vapaa-ajan tasapaino sinulle erityisen tärkeää?",
     dimension: 'values',
     subdimension: 'work_life_balance',
-    weight: 1.2,
+    weight: 1.3,
     reverse: false,
     notes: "Balance priority"
   },
 
-  // Q22: Career advancement
+  // Q22: Career advancement - DUAL: advancement + leadership
   {
     q: 22,
     text: "Haluatko edetä urallasi nopeasti ja saada vastuuta?",
     dimension: 'values',
     subdimension: 'advancement',
-    weight: 1.1,
+    weight: 1.3,
     reverse: false,
     notes: "Career growth"
   },
+  {
+    q: 22,
+    text: "Haluatko edetä urallasi nopeasti ja saada vastuuta?",
+    dimension: 'workstyle',
+    subdimension: 'leadership',
+    weight: 1.0,
+    reverse: false,
+    notes: "Career growth - leadership aspect"
+  },
 
-  // Q23: Social impact
+  // Q23: Social impact - CRITICAL for auttaja
   {
     q: 23,
     text: "Onko sinulle tärkeää tehdä yhteiskunnallisesti merkityksellistä työtä?",
     dimension: 'values',
     subdimension: 'social_impact',
-    weight: 1.2,
+    weight: 1.6,
     reverse: false,
     notes: "Social impact"
+  },
+  {
+    q: 23,
+    text: "Onko sinulle tärkeää tehdä yhteiskunnallisesti merkityksellistä työtä?",
+    dimension: 'values',
+    subdimension: 'impact',
+    weight: 1.4,
+    reverse: false,
+    notes: "Social impact - impact aspect"
   },
 
   // Q24: Job security
@@ -956,7 +1069,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Kuinka tärkeää sinulle on työpaikan pysyvyys ja varmuus?",
     dimension: 'values',
     subdimension: 'stability',
-    weight: 1.0,
+    weight: 1.2,
     reverse: false,
     notes: "Job security"
   },
@@ -967,7 +1080,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Haluatko työn jossa opit jatkuvasti uutta?",
     dimension: 'values',
     subdimension: 'growth',
-    weight: 1.2,
+    weight: 1.3,
     reverse: false,
     notes: "Learning opportunities"
   },
@@ -978,20 +1091,29 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Onko sinulle tärkeää saada päättää itse miten teet työsi?",
     dimension: 'values',
     subdimension: 'autonomy',
-    weight: 1.1,
+    weight: 1.2,
     reverse: false,
     notes: "Work autonomy"
   },
 
-  // Q27: Entrepreneurship
+  // Q27: Entrepreneurship - DUAL: entrepreneurship + business
   {
     q: 27,
     text: "Näetkö itsesi yrittäjänä tai freelancerina tulevaisuudessa?",
     dimension: 'values',
     subdimension: 'entrepreneurship',
-    weight: 1.3,
+    weight: 1.5,
     reverse: false,
     notes: "Entrepreneurial interest"
+  },
+  {
+    q: 27,
+    text: "Näetkö itsesi yrittäjänä tai freelancerina tulevaisuudessa?",
+    dimension: 'interests',
+    subdimension: 'business',
+    weight: 1.2,
+    reverse: false,
+    notes: "Entrepreneurship - business aspect"
   },
 
   // Q28: International work
@@ -1000,18 +1122,18 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Haluaisitko tehdä kansainvälistä työtä tai työskennellä ulkomailla?",
     dimension: 'values',
     subdimension: 'global',
-    weight: 1.0,
+    weight: 1.2,
     reverse: false,
     notes: "International orientation"
   },
 
-  // Q29: Company culture
+  // Q29: Company culture - social aspect
   {
     q: 29,
     text: "Onko työpaikan ilmapiiri ja kulttuuri sinulle erityisen tärkeää?",
     dimension: 'values',
     subdimension: 'social',
-    weight: 1.0,
+    weight: 1.1,
     reverse: false,
     notes: "Culture importance"
   }

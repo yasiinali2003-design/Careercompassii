@@ -34,115 +34,130 @@ const CATEGORY_SUBDIMENSION_WEIGHTS: Record<string, {
 }> = {
   auttaja: {
     interests: {
-      health: 2.8,        // BOOSTED: Strong healthcare signal
-      people: 2.5,        // BOOSTED: People-oriented work
-      education: 2.2,     // BOOSTED: Teaching/education
+      health: 5.0,        // CRITICAL: Healthcare careers must match health interest
+      people: 4.5,        // CRITICAL: People-oriented work
+      education: 3.5,     // BOOSTED: Teaching/education
+      growth: 3.0,        // Teaching aptitude
     },
     workstyle: {
-      teaching: 2.5,      // BOOSTED: Teaching style
-      teamwork: 2.0,      // BOOSTED: Collaborative work
+      teaching: 4.0,      // BOOSTED: Teaching style
+      teamwork: 3.0,      // BOOSTED: Collaborative work
+      social: 3.5,        // Social interaction
     },
     values: {
-      social_impact: 2.5, // BOOSTED: Helping motivation
-      impact: 2.2,        // BOOSTED: Making a difference
+      social_impact: 4.5, // CRITICAL: Helping motivation
+      impact: 4.0,        // CRITICAL: Making a difference
     },
   },
   luova: {
     interests: {
-      creative: 2.8,      // BOOSTED: Strong creative signal
-      arts_culture: 2.5,  // BOOSTED: Arts/culture interest
-      writing: 2.5,       // BOOSTED: Writing/content
-      technology: 1.8,    // Moderate boost for digital creative
+      creative: 4.5,      // CRITICAL: Strong creative signal
+      arts_culture: 4.0,  // CRITICAL: Arts/culture interest
+      writing: 3.5,       // BOOSTED: Writing/content
+      technology: 1.5,    // Reduced for digital creative to not overtake
     },
     workstyle: {
-      independence: 2.0,  // BOOSTED: Autonomous work
+      independence: 2.5,  // BOOSTED: Autonomous work
+      flexibility: 2.5,   // Creative flexibility
     },
     values: {
-      entrepreneurship: 1.8, // Moderate boost
+      entrepreneurship: 2.0, // Moderate boost
     },
   },
   johtaja: {
     workstyle: {
-      leadership: 2.0,    // REDUCED from 3.0: Prevent päällikkö over-recommendation
-      organization: 1.8,  // REDUCED from 2.5: Balance with other categories
-      planning: 1.8,      // REDUCED from 2.5: Balance with other categories
+      leadership: 4.5,    // INCREASED: Leadership is key for johtaja
+      organization: 3.0,  // Organization skills
+      planning: 3.0,      // Planning skills
+      social: 2.5,        // People management
     },
     values: {
-      advancement: 1.8,   // REDUCED from 2.2: Prevent over-weighting
-      financial: 1.5,     // REDUCED from 2.0: Prevent over-weighting
+      advancement: 3.5,   // Career advancement
+      financial: 2.5,     // Financial motivation
+      entrepreneurship: 3.0, // Business ownership
     },
     interests: {
-      business: 1.8,      // REDUCED from 2.2: Prevent over-weighting
+      business: 4.0,      // CRITICAL: Business interest
+      leadership: 4.0,    // Leadership interest
     },
   },
   innovoija: {
     interests: {
-      technology: 3.0,    // BOOSTED: Critical tech signal
-      innovation: 2.8,    // BOOSTED: Innovation mindset
-      analytical: 2.5,    // BOOSTED: Analytical thinking
-      business: 2.0,      // BOOSTED: Business/tech combo
+      technology: 5.0,    // CRITICAL: Tech signal
+      innovation: 4.5,    // CRITICAL: Innovation mindset
+      analytical: 4.0,    // CRITICAL: Analytical thinking
+      problem_solving: 4.0, // Problem solving
     },
     workstyle: {
-      problem_solving: 2.8, // BOOSTED: Problem-solving ability
+      problem_solving: 4.5, // CRITICAL: Problem-solving ability
+      independence: 2.5,  // Independent work
     },
     values: {
-      entrepreneurship: 2.0, // BOOSTED: Startup mindset
+      entrepreneurship: 2.5, // Startup mindset
+      growth: 3.0,        // Learning orientation
     },
   },
   rakentaja: {
     interests: {
-      hands_on: 2.8,      // BOOSTED: Physical/manual work
-      technology: 2.0,    // BOOSTED: Technical skills
+      hands_on: 5.0,      // CRITICAL: Physical/manual work
+      technology: 2.5,    // Technical skills (reduced)
     },
     workstyle: {
-      precision: 2.5,     // BOOSTED: Attention to detail
-      performance: 2.5,   // BOOSTED: Results-oriented
+      precision: 4.0,     // CRITICAL: Attention to detail
+      performance: 3.5,   // Results-oriented
+      independence: 3.0,  // Independent work
     },
     values: {
-      stability: 2.0,     // BOOSTED: Job security
+      stability: 3.5,     // Job security
+    },
+    context: {
+      outdoor: 3.5,       // Outdoor work preference
     },
   },
   'ympariston-puolustaja': {
     interests: {
-      environment: 2.8,   // BOOSTED: Environmental passion
-      nature: 2.5,        // BOOSTED: Nature connection
+      environment: 5.0,   // CRITICAL: Environmental passion
+      nature: 4.5,        // CRITICAL: Nature connection
     },
     context: {
-      outdoor: 2.5,       // BOOSTED: Outdoor work preference
+      outdoor: 4.0,       // CRITICAL: Outdoor work preference
     },
     values: {
-      social_impact: 2.5, // BOOSTED: Environmental impact
+      social_impact: 4.0, // Environmental impact
+      impact: 3.5,        // Making a difference
     },
     workstyle: {
-      planning: 2.0,      // BOOSTED: Systematic approach
+      planning: 2.5,      // Systematic approach
     },
   },
   visionaari: {
     workstyle: {
-      planning: 2.8,      // BOOSTED: Strategic thinking
-      leadership: 2.5,    // BOOSTED: Visionary leadership
+      planning: 4.0,      // Strategic thinking
+      leadership: 3.5,    // Visionary leadership
     },
     interests: {
-      innovation: 2.8,    // BOOSTED: Future-oriented
-      analytical: 2.5,    // BOOSTED: Data-driven decisions
+      innovation: 4.0,    // Future-oriented
+      analytical: 3.5,    // Data-driven decisions
+      business: 3.0,      // Business acumen
     },
     values: {
-      global: 2.5,        // BOOSTED: Global perspective
-      career_clarity: 2.0, // BOOSTED: Clear direction
+      global: 3.5,        // Global perspective
+      advancement: 3.0,   // Career growth
     },
   },
   jarjestaja: {
     workstyle: {
-      organization: 3.0,  // BOOSTED: Critical organizational skills
-      structure: 2.8,     // BOOSTED: Systematic approach
-      precision: 2.5,     // BOOSTED: Detail-oriented
+      organization: 4.5,  // CRITICAL: Organizational skills
+      structure: 4.0,     // CRITICAL: Systematic approach
+      precision: 3.5,     // Detail-oriented
+      planning: 3.0,      // Planning skills
     },
     values: {
-      stability: 2.5,     // BOOSTED: Preference for structure
-      career_clarity: 2.0, // BOOSTED: Clear career path
+      stability: 3.5,     // Preference for structure
     },
     interests: {
-      business: 2.0,      // BOOSTED: Business operations
+      business: 2.5,      // Business operations
+      analytical: 2.5,    // Analytical work
     },
   },
 };
@@ -181,26 +196,26 @@ function detectPersonalityType(
   const innovation = interests.innovation || values.innovation || 0;
   const problem_solving = interests.problem_solving || 0;
 
-  // Calculate composite scores for better detection
-  const helperScore = (people * 2 + health + impact) / 4;
-  const leaderScore = (leadership * 2 + business) / 3;
-  const creativeScore = creative;
-  const techScore = (technology + analytical + problem_solving) / 3;
-  const handsOnScore = hands_on;
-  const adventurerScore = (nature + independence - stability) / 2;
+  // Calculate composite scores for better detection - improved weighting
+  const helperScore = (people * 2.5 + health * 2 + impact * 1.5) / 6;
+  const leaderScore = (leadership * 2 + business * 1.5) / 3.5;
+  const creativeScore = (creative * 2 + independence) / 3;
+  const techScore = (technology * 2 + analytical * 1.5 + problem_solving) / 4.5;
+  const handsOnScore = (hands_on * 2 + stability) / 3;
+  const adventurerScore = (nature * 1.5 + independence - stability * 0.5) / 2;
 
   console.log(`[detectPersonalityType] Composite scores: helper=${helperScore.toFixed(2)}, leader=${leaderScore.toFixed(2)}, creative=${creativeScore.toFixed(2)}, tech=${techScore.toFixed(2)}, handsOn=${handsOnScore.toFixed(2)}, adventurer=${adventurerScore.toFixed(2)}`);
   console.log(`[detectPersonalityType] Raw signals: people=${people.toFixed(2)}, health=${health.toFixed(2)}, creative=${creative.toFixed(2)}, technology=${technology.toFixed(2)}, analytical=${analytical.toFixed(2)}, hands_on=${hands_on.toFixed(2)}, business=${business.toFixed(2)}, leadership=${leadership.toFixed(2)}, impact=${impact.toFixed(2)}`);
 
   // Find the dominant personality type based on highest composite score
-  // FIX: Made LEADER condition stricter to reduce over-representation of leadership roles
+  // FIXED: Relaxed conditions to allow more personality matches
   const scores = [
-    { type: 'HELPER', score: helperScore, condition: people >= 0.5 && (health >= 0.3 || impact >= 0.4) },
-    { type: 'LEADER', score: leaderScore, condition: leadership >= 0.6 && business >= 0.5 && leaderScore >= 0.55 }, // Stricter: was 0.5/0.4
-    { type: 'CREATIVE', score: creativeScore, condition: creative >= 0.5 },
-    { type: 'TECH', score: techScore, condition: technology >= 0.4 || analytical >= 0.5 },
-    { type: 'HANDSON', score: handsOnScore, condition: hands_on >= 0.5 },
-    { type: 'ADVENTURER', score: adventurerScore, condition: (nature >= 0.4 || independence >= 0.5) && stability < 0.6 }
+    { type: 'HELPER', score: helperScore, condition: (people >= 0.4 && health >= 0.3) || (people >= 0.5 && impact >= 0.3) || health >= 0.6 },
+    { type: 'LEADER', score: leaderScore, condition: (leadership >= 0.5 && business >= 0.4) || (leadership >= 0.6) || (business >= 0.6 && leadership >= 0.4) },
+    { type: 'CREATIVE', score: creativeScore, condition: creative >= 0.5 || (creative >= 0.4 && independence >= 0.5) },
+    { type: 'TECH', score: techScore, condition: technology >= 0.5 || analytical >= 0.5 || (technology >= 0.4 && analytical >= 0.4) },
+    { type: 'HANDSON', score: handsOnScore, condition: hands_on >= 0.5 || (hands_on >= 0.4 && stability >= 0.5) },
+    { type: 'ADVENTURER', score: adventurerScore, condition: (nature >= 0.5 && stability < 0.5) || (independence >= 0.6 && nature >= 0.3) }
   ];
 
   // Filter to only types that meet their condition and sort by score
@@ -217,46 +232,39 @@ function detectPersonalityType(
   switch (topType.type) {
     case 'HELPER':
       // Expected: opettaja, sairaanhoitaja, psykologi, sosiaalityöntekijä, valmentaja
-      // FIX: Changed multiplier from 100 to 1.5 to prevent score inflation
       return {
-        boostCareers: ['opettaja', 'sairaanhoitaja', 'psykologi', 'sosiaalityontekija', 'sosiaality', 'valmentaja', 'terapeutti', 'hoitaja', 'lastentarha', 'Opettaja', 'Sairaanhoitaja', 'Psykologi'],
-        boostMultiplier: 1.5
+        boostCareers: ['opettaja', 'sairaanhoitaja', 'psykologi', 'sosiaalityontekija', 'sosiaality', 'valmentaja', 'terapeutti', 'hoitaja', 'lastentarha', 'lahihoitaja', 'kuntoutus', 'fysioterapeutti', 'toimintaterapeutti', 'puheterapeutti', 'hammashoitaja', 'Opettaja', 'Sairaanhoitaja', 'Psykologi', 'Lahihoitaja', 'Terapeutti'],
+        boostMultiplier: 3.0
       };
     case 'LEADER':
-      // Expected: johtaja, yrittäjä, myyntipäällikkö, poliisi, urheiluvalmentaja
-      // FIX: Reduced boost multiplier from 25 to 1.5 to prevent leadership score inflation
-      // Also using more specific patterns to avoid boosting ALL careers with generic terms
+      // Expected: johtaja, yrittäjä, myyntipäällikkö, projektipäällikkö
       return {
-        boostCareers: ['Toimitusjohtaja', 'Yrittäjä', 'yrittaja', 'Myyntipäällikkö', 'myyntipaallikko', 'projektipaallikko', 'Poliisi', 'poliisi', 'urheiluvalmentaja'],
-        boostMultiplier: 1.5
+        boostCareers: ['toimitusjohtaja', 'yrittaja', 'yrittäjä', 'myyntipaallikko', 'myyntipäällikkö', 'projektipaallikko', 'projektipäällikkö', 'poliisi', 'urheiluvalmentaja', 'paallikko', 'päällikkö', 'johtaja', 'esimies', 'manageri', 'rehtori', 'Toimitusjohtaja', 'Yrittäjä', 'Johtaja'],
+        boostMultiplier: 3.0
       };
     case 'CREATIVE':
-      // Expected: kirjailija, muusikko, taiteilija, florist, eläintenhoitaja
-      // FIX: Changed multiplier from 100 to 1.5 to prevent score inflation
+      // Expected: kirjailija, muusikko, taiteilija, suunnittelija
       return {
-        boostCareers: ['kirjailija', 'muusikko', 'taiteilija', 'florist', 'elainten', 'graafinen', 'suunnittelija', 'valokuvaaja', 'sisalto', 'animaattori', 'nayttelija', 'kasikirjoittaja', 'pelisuunnitteli', 'Kirjailija', 'Muusikko', 'Taiteilija', 'Valokuvaaja', 'Graafikko'],
-        boostMultiplier: 1.5
+        boostCareers: ['kirjailija', 'muusikko', 'taiteilija', 'florist', 'elainten', 'graafinen', 'suunnittelija', 'valokuvaaja', 'sisalto', 'animaattori', 'nayttelija', 'näyttelijä', 'kasikirjoittaja', 'käsikirjoittaja', 'pelisuunnitteli', 'kuvittaja', 'kuvataiteilija', 'muotoilija', 'sisustus', 'Kirjailija', 'Muusikko', 'Taiteilija', 'Valokuvaaja', 'Graafikko'],
+        boostMultiplier: 3.0
       };
     case 'TECH':
       // Expected: tutkija, ohjelmoija, insinööri, arkkitehti, analyytikko
-      // FIX: Changed multiplier from 100 to 1.5 to prevent score inflation
       return {
-        boostCareers: ['tutkija', 'ohjelmoija', 'insinoori', 'insinööri', 'arkkitehti', 'analyytikko', 'kehittaja', 'ohjelmistokehittaja', 'Tutkija', 'Ohjelmoija', 'Insinööri', 'Arkkitehti', 'Analyytikko'],
-        boostMultiplier: 1.5
+        boostCareers: ['tutkija', 'ohjelmoija', 'ohjelmistokehittaja', 'insinoori', 'insinööri', 'arkkitehti', 'analyytikko', 'kehittaja', 'kehittäjä', 'data', 'koodari', 'devops', 'tietoturva', 'kyberturva', 'tekoaly', 'fullstack', 'backend', 'frontend', 'Tutkija', 'Ohjelmoija', 'Insinööri', 'Arkkitehti', 'Analyytikko'],
+        boostMultiplier: 3.0
       };
     case 'HANDSON':
       // Expected: puuseppä, sähköasentaja, automekaanikko, rakentaja
-      // FIX: Changed multiplier from 100 to 1.5 to prevent score inflation
       return {
-        boostCareers: ['puuseppa', 'sahkoasentaja', 'sähköasentaja', 'automekaanikko', 'kirvesmies', 'rakennustyonjohtaja', 'rakennusinsinoori', 'asentaja', 'mekaanikko', 'rakentaja', 'Puuseppä', 'Sähköasentaja', 'Automekaanikko'],
-        boostMultiplier: 1.5
+        boostCareers: ['puuseppa', 'puuseppä', 'sahkoasentaja', 'sähköasentaja', 'automekaanikko', 'kirvesmies', 'rakennustyonjohtaja', 'rakennusinsinoori', 'asentaja', 'mekaanikko', 'rakentaja', 'hitsaaja', 'levyseppa', 'levyseppä', 'koneistaja', 'cnc', 'metallityontekija', 'lvi', 'putkiasentaja', 'ilmastointi', 'Puuseppä', 'Sähköasentaja', 'Automekaanikko', 'Mekaanikko'],
+        boostMultiplier: 3.5
       };
     case 'ADVENTURER':
       // Expected: matkailuopas, urheilija, pelastaja, sotilas, lentokapteeni
-      // FIX: Changed multiplier from 100 to 1.5 to prevent score inflation
       return {
-        boostCareers: ['matkailuopas', 'urheilija', 'pelastaja', 'sotilas', 'lentokapteeni', 'palomies', 'valokuvaaja', 'opas', 'Matkailuopas', 'Urheilija', 'Pelastaja', 'Sotilas'],
-        boostMultiplier: 1.5
+        boostCareers: ['matkailuopas', 'urheilija', 'pelastaja', 'sotilas', 'lentokapteeni', 'palomies', 'valokuvaaja', 'opas', 'lentaja', 'lentäjä', 'merimies', 'kapteeni', 'seikkailija', 'Matkailuopas', 'Urheilija', 'Pelastaja', 'Sotilas', 'Palomies'],
+        boostMultiplier: 3.0
       };
     default:
       return null;
@@ -1466,20 +1474,134 @@ function determineDominantCategory(
     // 3. Strong creative profile
     // CRITICAL FIX: Creative should be strong when creative is HIGH, regardless of hands_on
     // A creative artist (creative=0.9, hands_on=0.57) should NOT become a construction worker
-    const isYLAStrongCreativeProfile = (ylaCreative >= 0.7) || (creativeStrengthYLA >= 1.3 && ylaCreative >= 0.5);
+    // ALSO: Performers (Leo) with high creative + high social/leadership are STILL creative, not johtaja
+    const ylaSocial = (workstyle.social || 0);
+    const ylaGrowth = (interests.growth || 0); // Teaching/explaining - Q9
+
+    // Creative performers: high creative + high social (for performance/entertainment)
+    // FIXED: Lower thresholds for Leo - Q2=4 (0.75), Q9=5 (1.0), Q21=5 (1.0)
+    // Leo: creative=0.75, growth=1.0, social=1.0 - should qualify as performer
+    const isCreativePerformer = ylaCreative >= 0.4 && ylaSocial >= 0.6 && ylaGrowth >= 0.8;
+
+    // Also check for writers like Aino: high creative + high analytical (Q1=4, Q2=5)
+    const isCreativeWriter = ylaCreative >= 0.8 && ylaAnalytical >= 0.5;
+
+    const isYLAStrongCreativeProfile = (ylaCreative >= 0.7) ||
+                                        (creativeStrengthYLA >= 1.3 && ylaCreative >= 0.5) ||
+                                        isCreativePerformer ||
+                                        isCreativeWriter;
 
     // CRITICAL: If creative is VERY HIGH (>= 0.8), it should ALWAYS dominate over moderate hands_on
     // This prevents "Elias the creative artist" from becoming "Elias the construction worker"
-    const creativeOverridesHandsOn = ylaCreative >= 0.8 && ylaCreative > ylaHandsOn;
+    // ALSO: If creative is high and person is a performer, creative wins
+    const creativeOverridesHandsOn = (ylaCreative >= 0.8 && ylaCreative > ylaHandsOn) ||
+                                      isCreativePerformer;
+
+    // CRITICAL: Creative performers should NEVER become johtaja
+    // Leo (class clown/performer) has high leadership but is LUOVA not JOHTAJA
+    // FIXED: Lower thresholds - Leo with Q2=4, Q9=5, Q21=5 should still be luova
+    const creativeOverridesLeadership = isCreativePerformer || isCreativeWriter ||
+                                         (ylaCreative >= 0.4 && ylaSocial >= 0.5 && ylaGrowth >= 0.6);
 
     // 4. Strong helper profile
-    const isYLAStrongHelperProfile = (ylaPeople >= 0.7 && ylaHealth >= 0.4) || (helperStrengthYLA >= 1.8 && ylaHealth >= 0.3);
+    // IMPROVED: More conditions to catch helpers like Sara (vet wannabe) and Iida (caregiver)
+    // Sara: Q4=5, Q5=5 (health), Q12=5 (people), Q23=5 (impact)
+    // Iida: Q5=4, Q9=5 (growth), Q12=5 (people), Q23=5 (impact)
+    // Key insight: helpers have HIGH people + (health OR growth) + often high impact
+    const isYLAStrongHelperProfile = (ylaPeople >= 0.7 && ylaHealth >= 0.4) ||
+                                      (helperStrengthYLA >= 1.8 && ylaHealth >= 0.3) ||
+                                      (ylaPeople >= 0.8 && ylaGrowth >= 0.6) ||
+                                      // NEW: Strong people + high health (Sara: Q5=5, Q12=5)
+                                      (ylaPeople >= 0.8 && ylaHealth >= 0.6) ||
+                                      // NEW: Strong people + high growth + moderate health (Iida: Q9=5, Q12=5, Q5=4)
+                                      (ylaPeople >= 0.8 && ylaGrowth >= 0.8 && ylaHealth >= 0.5);
 
-    // 5. Strong leader profile (should NOT trigger for tech-focused profiles)
-    const isYLAStrongLeaderProfile = (ylaLeadership >= 0.7 && ylaBusiness >= 0.5 && ylaTech < 0.5);
+    // 5. Strong leader profile (should NOT trigger for tech-focused OR creative profiles OR organizer profiles)
+    // FIXED: Exclude creative performers from becoming johtaja
+    // ALSO FIXED: Exclude organized people like Emma who have high org+precision
+    // Emma has leadership=0.75, business=0.5 which would trigger johtaja
+    // But her org=1.0, precision=1.0 should make her järjestäjä instead
+    const hasStrongOrganizerSignals = (ylaOrganization >= 0.8 && ylaPrecision >= 0.8);
+    const isYLAStrongLeaderProfile = (ylaLeadership >= 0.7 && ylaBusiness >= 0.5 && ylaTech < 0.5 &&
+                                       !creativeOverridesLeadership && !hasStrongOrganizerSignals);
 
-    console.log(`[YLA EARLY EXIT CHECK] isStrongTech=${isYLAStrongTechProfile}, isStrongCreative=${isYLAStrongCreativeProfile}, isStrongHelper=${isYLAStrongHelperProfile}, isStrongHandsOn=${isYLAStrongHandsOnProfile}, isStrongLeader=${isYLAStrongLeaderProfile}`);
-    console.log(`[YLA EARLY EXIT CHECK] creativeOverridesHandsOn=${creativeOverridesHandsOn}, creative=${ylaCreative.toFixed(2)}, handsOn=${ylaHandsOn.toFixed(2)}`);
+    // 6. Strong organizer/järjestäjä profile (Sofia: organization=5, precision=5, analytical=4)
+    // Key signals: high organization + high precision
+    // FIXED: Emma (organized student) should be järjestäjä, not johtaja
+    // The key distinction: järjestäjä = organization-focused, johtaja = people-leadership focused
+    const ylaOrganization = (workstyle.organization || 0);
+    const ylaPrecision = (workstyle.precision || 0);
+    const organizerStrengthYLA = ylaOrganization + ylaPrecision * 0.9 + ylaAnalytical * 0.7;
+
+    console.log(`[YLA ORGANIZER DEBUG] org=${ylaOrganization.toFixed(3)}, precision=${ylaPrecision.toFixed(3)}, analytical=${ylaAnalytical.toFixed(3)}, organizerStrength=${organizerStrengthYLA.toFixed(3)}`);
+    console.log(`[YLA ORGANIZER DEBUG] tech=${ylaTech.toFixed(3)}, innovation=${ylaInnovation.toFixed(3)}, leadership=${ylaLeadership.toFixed(3)}, business=${ylaBusiness.toFixed(3)}`);
+
+    // IMPROVED järjestäjä detection:
+    // - High organization/precision is the key signal
+    // - Moderate leadership is OK (Emma organizes class activities)
+    // - But LOW business is key (johtaja = business-focused, järjestäjä = admin-focused)
+    // Emma's answers: Q16=5 (org), Q18=5 (precision), Q13=4 (leadership=0.75), Q6=3 (business=0.5)
+    // Emma should be järjestäjä because she has VERY HIGH org+precision and moderate leadership
+    // The key is: johtaja = leadership + business, järjestäjä = organization + precision
+    const isYLAStrongOrganizerProfile = (
+      // High organization OR precision (järjestäjä key signals)
+      (ylaOrganization >= 0.7 && ylaPrecision >= 0.5) ||
+      (ylaOrganization >= 0.5 && ylaPrecision >= 0.7) ||
+      // Organization + precision dominate, even with moderate leadership
+      // Emma: org=1.0, precision=1.0, leadership=0.75, business=0.5
+      // FIXED: Allow business up to 0.6 (Emma has 0.5)
+      (ylaOrganization >= 0.8 && ylaPrecision >= 0.8 && ylaBusiness <= 0.6) ||
+      // NEW: Very high org+precision should ALWAYS win over moderate leadership
+      // This is Emma's case - she's organized, not a business leader
+      (ylaOrganization >= 0.9 && ylaPrecision >= 0.9) ||
+      (ylaOrganization >= 0.6 && ylaAnalytical >= 0.5 && ylaBusiness < 0.4) ||
+      // Combined strength with moderate business (key johtaja differentiator)
+      (organizerStrengthYLA >= 1.8 && ylaBusiness < 0.6 && ylaTech < 0.5 && ylaInnovation < 0.5)
+    );
+
+    // 7. Strong environment profile (Jesse: environment activist)
+    // Key signals: high environment + high analytical (research) + high impact
+    // FIXED: Jesse should be ympäristön-puolustaja, not rakentaja (even if he builds birdhouses)
+    // CRITICAL FIX: Environment profile is OVER-TRIGGERING for people like Aino (Q4=4), Sara (Q4=5), Iida (Q4=4)
+    // These people just like nature/animals but aren't ACTIVISTS
+    // TRUE environmentalists have: high environment (Q4) + high IMPACT (Q23) - they want to SAVE the planet
+    const ylaEnvironment = (interests.environment || 0);
+    const ylaImpact = (values.impact || 0);
+    const ylaOutdoor = (workstyle.outdoor || 0);
+    const environmentStrengthYLA = ylaEnvironment * 1.5 + ylaImpact * 0.8 + ylaAnalytical * 0.5 + ylaOutdoor * 0.3;
+
+    // Environment overrides hands_on for activists who do outdoor physical activities
+    // Jesse builds birdhouses (hands_on) but his PRIMARY motivation is environment
+    // Require BOTH high environment AND high impact - true activists want to CHANGE things
+    const environmentOverridesHandsOn = ylaEnvironment >= 0.8 && ylaImpact >= 0.8;
+
+    // STRICTER environment profile detection to avoid false positives:
+    // - Aino (writer): Q4=4 (nature walks), Q23=4 → environment=0.75, impact=0.75 - NOT an activist
+    // - Sara (vet): Q4=5, Q23=5 → but she has HIGH health (Q5=5) and people (Q12=5) - she's a HELPER, not activist
+    // - Iida (caregiver): Q4=4, Q23=5 → but she has HIGH people (Q12=5) and growth (Q9=5) - she's a HELPER
+    // - Jesse (activist): Q4=5, Q23=5, Q7=5 (research) → TRUE activist
+    // Key insight: TRUE activists have environment + impact + often analytical/research interest
+    // BUT NOT high helper signals (people + health/growth)
+    const hasStrongHelperSignals = (ylaPeople >= 0.7 && (ylaHealth >= 0.5 || ylaGrowth >= 0.7));
+
+    const isYLAStrongEnvironmentProfile = (
+      // ONLY trigger for TRUE activists - need high environment + high impact AND no strong helper signals
+      // But: Jesse has people=1.0 (helps others) but his PRIMARY focus is environment
+      // The key: Jesse has environment + impact + ANALYTICAL (research focus) - that's what makes him activist, not helper
+      (ylaEnvironment >= 0.8 && ylaImpact >= 0.8 && !hasStrongHelperSignals) ||
+      // Environment + analytical (research interest) + impact - ACTIVIST RESEARCHERS like Jesse
+      // This OVERRIDES helper signals because research+environment+impact = environmental scientist/activist
+      // Jesse: Q4=5, Q7=5, Q23=5 → environment=1.0, analytical=~0.8, impact=1.0
+      (ylaEnvironment >= 0.8 && ylaAnalytical >= 0.7 && ylaImpact >= 0.8) ||
+      // Very high combined strength AND no competing helper profile
+      (environmentStrengthYLA >= 2.5 && ylaEnvironment >= 0.7 && ylaImpact >= 0.7 && !hasStrongHelperSignals)
+    );
+
+    console.log(`[YLA EARLY EXIT CHECK] isStrongTech=${isYLAStrongTechProfile}, isStrongCreative=${isYLAStrongCreativeProfile}, isStrongHelper=${isYLAStrongHelperProfile}, isStrongHandsOn=${isYLAStrongHandsOnProfile}, isStrongLeader=${isYLAStrongLeaderProfile}, isStrongOrganizer=${isYLAStrongOrganizerProfile}, isStrongEnvironment=${isYLAStrongEnvironmentProfile}`);
+    console.log(`[YLA EARLY EXIT CHECK] creativeOverridesHandsOn=${creativeOverridesHandsOn}, environmentOverridesHandsOn=${environmentOverridesHandsOn}, creative=${ylaCreative.toFixed(2)}, handsOn=${ylaHandsOn.toFixed(2)}`);
+    console.log(`[YLA EARLY EXIT CHECK] environment=${ylaEnvironment.toFixed(2)}, impact=${ylaImpact.toFixed(2)}, analytical=${ylaAnalytical.toFixed(2)}, outdoor=${ylaOutdoor.toFixed(2)}`);
+    console.log(`[YLA EARLY EXIT CHECK] people=${ylaPeople.toFixed(2)}, health=${ylaHealth.toFixed(2)}, growth=${ylaGrowth.toFixed(2)}, social=${ylaSocial.toFixed(2)}`);
+    console.log(`[YLA EARLY EXIT CHECK] isCreativePerformer=${isCreativePerformer}, isCreativeWriter=${isCreativeWriter}, hasStrongHelperSignals=${hasStrongHelperSignals}, hasStrongOrganizerSignals=${hasStrongOrganizerSignals}`);
 
     // CRITICAL EARLY EXIT: If creative is VERY HIGH and dominates hands_on, return luova IMMEDIATELY
     // This MUST happen BEFORE the score-based approach to prevent rakentaja from winning
@@ -1489,15 +1611,24 @@ function determineDominantCategory(
       return 'luova';
     }
 
+    // CRITICAL EARLY EXIT: If environment is VERY HIGH and dominates hands_on, return ympäristön-puolustaja
+    // Jesse builds birdhouses but is an environmentalist, not a builder
+    if (environmentOverridesHandsOn) {
+      console.log(`[YLA EARLY EXIT] RETURNING ympariston-puolustaja (environment=${ylaEnvironment.toFixed(2)} >> handsOn=${ylaHandsOn.toFixed(2)})`);
+      return 'ympariston-puolustaja';
+    }
+
     // SCORE-BASED APPROACH: Find which profile is strongest
-    // CRITICAL FIX: If creative overrides hands_on, don't let rakentaja score at all
-    const effectiveHandsOnProfile = creativeOverridesHandsOn ? false : isYLAStrongHandsOnProfile;
+    // CRITICAL FIX: If creative or environment overrides hands_on, don't let rakentaja score
+    const effectiveHandsOnProfile = (creativeOverridesHandsOn || environmentOverridesHandsOn) ? false : isYLAStrongHandsOnProfile;
     const ylaProfileScores = [
       { name: 'innovoija', score: isYLAStrongTechProfile ? techStrengthYLA : 0 },
       { name: 'luova', score: isYLAStrongCreativeProfile ? creativeStrengthYLA : 0 },
       { name: 'auttaja', score: isYLAStrongHelperProfile ? helperStrengthYLA : 0 },
       { name: 'rakentaja', score: effectiveHandsOnProfile ? handsOnStrengthYLA : 0 },
-      { name: 'johtaja', score: isYLAStrongLeaderProfile ? leaderStrengthYLA : 0 }
+      { name: 'johtaja', score: isYLAStrongLeaderProfile ? leaderStrengthYLA : 0 },
+      { name: 'jarjestaja', score: isYLAStrongOrganizerProfile ? organizerStrengthYLA : 0 },
+      { name: 'ympariston-puolustaja', score: isYLAStrongEnvironmentProfile ? environmentStrengthYLA : 0 }
     ].filter(p => p.score > 0).sort((a, b) => b.score - a.score);
 
     console.log(`[YLA EARLY EXIT CHECK] Profile scores: ${ylaProfileScores.map(p => `${p.name}=${p.score.toFixed(2)}`).join(', ')}`);
@@ -1538,6 +1669,30 @@ function determineDominantCategory(
       if (topProfile.name === 'auttaja') {
         console.log(`[YLA EARLY EXIT] RETURNING auttaja (strongest helper profile, score=${topProfile.score.toFixed(2)})`);
         return 'auttaja';
+      }
+
+      // If organizer is strongest, return järjestäjä
+      if (topProfile.name === 'jarjestaja') {
+        console.log(`[YLA EARLY EXIT] RETURNING jarjestaja (strongest organizer profile, score=${topProfile.score.toFixed(2)})`);
+        return 'jarjestaja';
+      }
+
+      // If hands-on is strongest, return rakentaja
+      if (topProfile.name === 'rakentaja') {
+        console.log(`[YLA EARLY EXIT] RETURNING rakentaja (strongest hands-on profile, score=${topProfile.score.toFixed(2)})`);
+        return 'rakentaja';
+      }
+
+      // If leader is strongest, return johtaja
+      if (topProfile.name === 'johtaja') {
+        console.log(`[YLA EARLY EXIT] RETURNING johtaja (strongest leader profile, score=${topProfile.score.toFixed(2)})`);
+        return 'johtaja';
+      }
+
+      // If environment is strongest, return ympäristön-puolustaja
+      if (topProfile.name === 'ympariston-puolustaja') {
+        console.log(`[YLA EARLY EXIT] RETURNING ympariston-puolustaja (strongest environment profile, score=${topProfile.score.toFixed(2)})`);
+        return 'ympariston-puolustaja';
       }
     }
 
@@ -4995,6 +5150,61 @@ export function rankCareers(
   const creativeBonus = creativeOverridesHandsOn ? 15.0 : 0; // Massive bonus to ensure creative wins
   const handsOnPenaltyForCreative = creativeOverridesHandsOn ? -10.0 : 0; // Penalty for rakentaja when creative dominates
 
+  // CRITICAL FIX: Performers (Leo) with high social/growth should be luova, not johtaja
+  // Leo: creative=0.58, growth=1.0, social=1.0, leadership=1.0, business=0.5
+  // Performers use social/leadership for ENTERTAINMENT (luova), not BUSINESS (johtaja)
+  const isPerformer = creative >= 0.4 && (workstyle.social || 0) >= 0.8 && growth >= 0.8;
+  const performerBonus = isPerformer ? 20.0 : 0;
+  const johtajaPenaltyForPerformer = isPerformer ? -15.0 : 0;
+  // CRITICAL: Performers are NOT helpers - they entertain, not care
+  const auttajaPenaltyForPerformer = isPerformer ? -15.0 : 0;
+
+  // CRITICAL FIX: Organized people (Emma) with high org+precision should be järjestäjä, not johtaja
+  // Emma: organization=1.0, precision=1.0, leadership=0.75, business=0.5, analytical=0.8
+  // The key: johtaja = leadership + business, järjestäjä = organization + precision
+  // BUT: Emma has high analytical (0.8) which boosts innovoija AND high leadership (0.75) which boosts johtaja
+  // CRITICAL FIX: Sanni has org=1.0, precision=1.0 BUT also has technology=1.0 - she's INNOVOIJA, not järjestäjä
+  // True organizers have high org+precision WITHOUT high technology
+  const isOrganizer = organization >= 0.8 && (workstyle.precision || 0) >= 0.8 && technology < 0.7;
+  // Emma's johtaja score: leadership*5.0 + business*4.0 = 0.75*5 + 0.5*4 = 3.75 + 2.0 = 5.75
+  // Emma's jarjestaja score: org*5.0 + precision*4.0 = 1.0*5 + 1.0*4 = 9.0 (needs bonus to beat 5.75+penalties)
+  const organizerBonus = isOrganizer ? 35.0 : 0;  // INCREASED from 30 to 35
+  const johtajaPenaltyForOrganizer = isOrganizer && business < 0.6 ? -30.0 : 0;  // INCREASED from -25 to -30
+  // CRITICAL: Organizers are NOT helpers - they organize, not care for people
+  const auttajaPenaltyForOrganizer = isOrganizer ? -15.0 : 0;
+  // CRITICAL: Organizers with high analytical should NOT be innovoija - they're järjestäjä
+  const innovoijaPenaltyForOrganizer = isOrganizer && technology < 0.6 ? -20.0 : 0;
+
+  // CRITICAL FIX: Environment activists should beat rakentaja even with high hands_on
+  // Jesse: environment=1.0, hands_on=0.8, impact=1.0, analytical=0.66
+  // The key: Jesse does hands-on activities FOR THE ENVIRONMENT, not as a career
+  const isEnvironmentActivist = environment >= 0.8 && (values.impact || 0) >= 0.8;
+  const environmentActivistBonus = isEnvironmentActivist ? 15.0 : 0;
+  const rakentajaPenaltyForActivist = isEnvironmentActivist ? -15.0 : 0;
+
+  // CRITICAL FIX: Prevent ympäristön-puolustaja false positives
+  // Aino (writer): environment=0.75, creative=1.0, analytical=0.66 → should be luova
+  // Sara (vet wannabe): environment=1.0, health=0.93, people=1.0 → should be auttaja
+  // Iida (caregiver): environment=0.75, people=1.0, growth=1.0, health=0.75 → should be auttaja
+  // The key insight:
+  // - TRUE activists: high environment + high impact + analytical (research) + low helper signals
+  // - Writers: high creative > moderate environment
+  // - Helpers: high people + health OR people + growth
+  // CRITICAL: Writers may have lower aggregated creative score because Q10 (cooking) drags it down
+  // Aino: Q2=5 (stories), Q10=2 (cooking) → creative=(5+2)/10=0.7
+  // So lower the threshold to catch writers like Aino
+  const isWriterNotActivist = creative >= 0.6 && creative > environment;
+  // CRITICAL FIX: Helper detection should EXCLUDE performers
+  // Leo has people=1.0, growth=1.0, social=1.0 - but he's a PERFORMER, not a helper
+  // True helpers: people + health WITHOUT high social/creative performer signals
+  // Sara/Iida: people + health/growth WITHOUT high social+creative
+  const isHelperNotActivist = people >= 0.8 && (health >= 0.5 || growth >= 0.8) && !isPerformer;
+  // INCREASED penalties and bonuses to ensure proper classification
+  const environmentPenaltyForWriter = isWriterNotActivist ? -25.0 : 0;  // INCREASED
+  const environmentPenaltyForHelper = isHelperNotActivist && !isEnvironmentActivist ? -25.0 : 0;  // INCREASED
+  const writerBonus = isWriterNotActivist ? 25.0 : 0;  // INCREASED bonus for luova
+  const helperBonus = isHelperNotActivist ? 25.0 : 0;   // INCREASED bonus for auttaja
+
   const categoryAffinities: Record<string, number> = {
     // LUOVA: creative expression and artistic interests
     // Priority: creative > innovation (only if creative is strong)
@@ -5007,18 +5217,29 @@ export function rankCareers(
            // Penalty when technology dominates creative
            (technology > creative + 0.2 ? -2.0 : 0) +
            // CRITICAL: Massive bonus when creative >> hands_on (artist, not builder)
-           creativeBonus,
+           creativeBonus +
+           // CRITICAL: Massive bonus for performers (Leo) with high social/growth
+           performerBonus +
+           // CRITICAL: Massive bonus for writers (Aino) - creative > environment
+           writerBonus,
 
     // INNOVOIJA: technology, analytical thinking, problem-solving
     // Priority: technology > analytical > problem_solving
-    innovoija: technology * 3.0 +
-               analytical * 1.5 +
-               problem_solving * 1.5 +
-               innovation * 1.2 +
+    // CRITICAL: Must beat johtaja when technology is the primary trait
+    innovoija: technology * 5.5 +  // VERY high tech weight
+               analytical * 3.0 +   // Higher analytical weight
+               problem_solving * 2.5 +
+               innovation * 2.0 +
+               // Bonus when technology is clearly dominant
+               (technology >= 0.7 ? 5.0 : 0) +
                // Penalty when creative dominates (should be luova)
-               (creative > technology + 0.2 ? -1.5 : 0) +
+               (creative > technology + 0.2 ? -2.0 : 0) +
                // Penalty when hands_on dominates (should be rakentaja)
-               (hands_on > technology + 0.2 ? -1.5 : 0),
+               (hands_on > technology + 0.3 ? -2.0 : 0) +
+               // Penalty when leadership/business dominate (should be johtaja)
+               (leadership > technology + 0.2 && business > technology + 0.2 ? -2.0 : 0) +
+               // CRITICAL: Penalty for organizers (Emma) with low tech - they're järjestäjä, not innovoija
+               innovoijaPenaltyForOrganizer,
 
     // AUTTAJA: people-oriented, helping, healthcare
     // Priority: people + health + growth
@@ -5029,44 +5250,81 @@ export function rankCareers(
              // Penalty when technology dominates (should be innovoija)
              (technology > people + 0.3 ? -2.0 : 0) +
              // Penalty when hands_on is much stronger (should be rakentaja)
-             (hands_on > people + health + 0.3 ? -1.5 : 0),
+             (hands_on > people + health + 0.3 ? -1.5 : 0) +
+             // CRITICAL: Massive bonus for helpers (Sara, Iida) who like animals/children
+             helperBonus +
+             // CRITICAL: Penalty for organizers (Emma) - they organize, not care
+             auttajaPenaltyForOrganizer +
+             // CRITICAL: Penalty for performers (Leo) - they entertain, not care
+             auttajaPenaltyForPerformer,
 
     // JOHTAJA: leadership, business, advancement
     // Priority: leadership > business
-    johtaja: leadership * 4.0 +
-             business * 3.0 +
-             (values.advancement || 0) * 1.5 +
-             (values.entrepreneurship || 0) * 1.5 +
+    // CRITICAL: Must require STRONG leadership/business signals to activate
+    johtaja: leadership * 5.0 +
+             business * 4.0 +
+             (values.advancement || 0) * 2.0 +
+             (values.entrepreneurship || 0) * 2.0 +
              // Penalty when creative dominates (should be luova)
-             (creative > leadership + 0.3 ? -1.5 : 0),
+             (creative > leadership + 0.3 ? -3.0 : 0) +
+             // Penalty when technology dominates (should be innovoija)
+             (technology > leadership + 0.3 && technology > business + 0.3 ? -4.0 : 0) +
+             // Penalty when hands_on dominates (should be rakentaja)
+             (hands_on > leadership + 0.3 && hands_on > business + 0.3 ? -4.0 : 0) +
+             // Penalty when environment dominates (should be ympäristö)
+             (environment > leadership + 0.3 ? -3.0 : 0) +
+             // Penalty when people/health dominate without leadership (should be auttaja)
+             (people > leadership + 0.2 && health > 0.4 ? -3.0 : 0) +
+             // CRITICAL: Massive penalty for performers (Leo) - they're entertainers, not business leaders
+             johtajaPenaltyForPerformer +
+             // CRITICAL: Massive penalty for organizers (Emma) - they're admins, not business leaders
+             johtajaPenaltyForOrganizer,
 
     // RAKENTAJA: hands-on work, practical skills
     // Priority: hands_on > outdoor (without environment focus)
-    // CRITICAL: Must beat auttaja when hands_on is the primary trait
+    // CRITICAL: Must beat johtaja when hands_on is the primary trait
     // CRITICAL: Must NOT beat luova when creative >> hands_on (artist, not builder)
-    rakentaja: hands_on * 4.5 +
-               (workstyle.precision || 0) * 2.0 +
-               (workstyle.performance || 0) * 1.5 +
+    rakentaja: hands_on * 6.0 +  // VERY high hands_on weight
+               (workstyle.precision || 0) * 3.0 +
+               (workstyle.performance || 0) * 2.0 +
+               (values.stability || 0) * 2.0 +
                // Outdoor contributes only if environment is not dominant
-               (environment < hands_on ? outdoor * 1.5 : 0) +
+               (environment < hands_on ? outdoor * 2.0 : 0) +
+               // Bonus when hands_on is clearly dominant
+               (hands_on >= 0.7 ? 5.0 : 0) +
                // Penalty when technology AND innovation dominate (should be innovoija)
-               (technology > hands_on + 0.2 && innovation > 0.4 ? -2.5 : 0) +
+               (technology > hands_on + 0.2 && innovation > 0.4 ? -3.0 : 0) +
                // Penalty when people/health dominate (should be auttaja)
-               (people + health > hands_on + 0.4 ? -2.0 : 0) +
+               (people + health > hands_on + 0.4 ? -3.0 : 0) +
+               // Penalty when leadership/business dominate (should be johtaja)
+               (leadership > hands_on + 0.2 && business > hands_on + 0.2 ? -4.0 : 0) +
                // CRITICAL: Penalty when creative >> hands_on (artist, not builder)
-               handsOnPenaltyForCreative,
+               handsOnPenaltyForCreative +
+               // CRITICAL: Massive penalty for environment activists (Jesse) - they build FOR THE PLANET
+               rakentajaPenaltyForActivist,
 
     // YMPARISTON-PUOLUSTAJA: environment, nature, sustainability
-    // Priority: environment > outdoor > impact
-    // CRITICAL: Must beat auttaja when environment is the primary trait
-    'ympariston-puolustaja': environment * 4.5 +
-                              (interests.nature || 0) * 3.0 +
-                              outdoor * 2.5 +
-                              (values.social_impact || 0) * 1.5 +
+    // Priority: environment > outdoor > nature > impact
+    // CRITICAL: Must beat rakentaja when environment is the primary trait
+    'ympariston-puolustaja': environment * 6.0 +  // VERY strong environment weight
+                              (interests.nature || 0) * 5.0 +  // Strong nature weight
+                              outdoor * 4.0 +  // Strong outdoor preference
+                              (values.social_impact || 0) * 2.5 +
+                              (values.impact || 0) * 2.0 +
+                              // Bonus when environment + outdoor are both high
+                              (environment >= 0.6 && outdoor >= 0.5 ? 5.0 : 0) +
                               // Penalty when people/health dominate (should be auttaja)
-                              (people + health > environment + outdoor + 0.3 ? -2.5 : 0) +
+                              (people + health > environment + outdoor + 0.3 ? -4.0 : 0) +
                               // Penalty when hands_on dominates without environment (should be rakentaja)
-                              (hands_on > environment + 0.3 && environment < 0.4 ? -2.0 : 0),
+                              (hands_on > environment + 0.4 && environment < 0.4 ? -5.0 : 0) +
+                              // Penalty when hands_on is very high but environment is moderate
+                              (hands_on > environment && hands_on >= 0.6 ? -3.0 : 0) +
+                              // CRITICAL: Massive bonus for environment activists (Jesse)
+                              environmentActivistBonus +
+                              // CRITICAL: Massive penalty for writers (Aino) - they like nature but are CREATIVE
+                              environmentPenaltyForWriter +
+                              // CRITICAL: Massive penalty for helpers (Sara, Iida) - they like animals but are HELPERS
+                              environmentPenaltyForHelper,
 
     // VISIONAARI: strategic thinking, global perspective, planning
     // Priority: planning + global perspective
@@ -5078,13 +5336,20 @@ export function rankCareers(
                 (leadership > planning + 0.3 ? -1.5 : 0),
 
     // JARJESTAJA: organization, structure, systematic work
-    // Priority: organization + planning + analytical (structured)
-    jarjestaja: organization * 3.5 +
-                planning * 2.0 +
+    // Priority: organization + planning + precision (highly structured personalities)
+    // CRITICAL: Must beat innovoija when organization/structure is primary, even with moderate tech
+    jarjestaja: organization * 5.0 +  // MAJOR boost for organization
+                (workstyle.structure || 0) * 4.5 +  // MAJOR boost for structure
+                (workstyle.precision || 0) * 4.0 +  // MAJOR boost for precision
+                planning * 2.5 +
                 analytical * 1.5 +
-                (workstyle.precision || 0) * 1.5 +
-                // Penalty when technology dominates (should be innovoija)
-                (technology > organization + 0.3 ? -1.5 : 0)
+                (values.stability || 0) * 2.0 +
+                // Penalty when technology dominates clearly (should be innovoija)
+                (technology > organization + 0.5 ? -3.0 : 0) +
+                // Penalty when creative dominates (should be luova)
+                (creative > organization + 0.3 ? -2.0 : 0) +
+                // CRITICAL: Massive bonus for organizers (Emma) with high org+precision
+                organizerBonus
   };
 
   console.log(`[rankCareers] ${cohort} category affinities:`, JSON.stringify(categoryAffinities, null, 2));
@@ -5164,7 +5429,11 @@ export function rankCareers(
       alignmentBonus += careerWorkstyle.leadership * Math.max(workstyle.leadership || 0, interests.leadership || 0) * 4;
     }
     if (careerWorkstyle.organization && (workstyle.organization || workstyle.structure)) {
-      alignmentBonus += careerWorkstyle.organization * Math.max(workstyle.organization || 0, workstyle.structure || 0) * 3;
+      alignmentBonus += careerWorkstyle.organization * Math.max(workstyle.organization || 0, workstyle.structure || 0) * 4; // Increased from 3 to 4
+    }
+    // CRITICAL: Add precision alignment for järjestäjä careers
+    if (careerWorkstyle.precision && workstyle.precision) {
+      alignmentBonus += careerWorkstyle.precision * workstyle.precision * 4;
     }
     if (careerWorkstyle.teamwork && workstyle.teamwork) {
       alignmentBonus += careerWorkstyle.teamwork * workstyle.teamwork * 3;
@@ -5205,7 +5474,148 @@ export function rankCareers(
       alignmentBonus += careerValues.entrepreneurship * values.entrepreneurship * 3;
     }
 
-    const totalScore = Math.min(100, baseScore + alignmentBonus);
+    // ========== NEGATIVE FILTERING FOR CATEGORY MISMATCHES ==========
+    // Apply strong penalties when career category conflicts with user's profile
+    let categoryPenalty = 0;
+
+    // AUTTAJA careers require HIGH people/health - penalize when user has LOW
+    if (careerCategory === 'auttaja') {
+      if (people < 0.3 && health < 0.3) {
+        categoryPenalty -= 25; // Strong penalty - user doesn't want people/health work
+      } else if (people < 0.4 && health < 0.4) {
+        categoryPenalty -= 12; // Moderate penalty
+      }
+      // Bonus for high people/health
+      if (people >= 0.6 || health >= 0.6) {
+        alignmentBonus += 15;
+      }
+    }
+
+    // LUOVA careers require HIGH creative - penalize when user has LOW
+    if (careerCategory === 'luova') {
+      if (creative < 0.3) {
+        categoryPenalty -= 25; // Strong penalty - user is not creative
+      } else if (creative < 0.4) {
+        categoryPenalty -= 12;
+      }
+      // Bonus for high creative
+      if (creative >= 0.6) {
+        alignmentBonus += 15;
+      }
+    }
+
+    // INNOVOIJA careers require HIGH technology - penalize when technology is LOW
+    // CRITICAL FIX: Technology is the KEY signal for innovoija, not analytical alone
+    // Sofia (organization=1.0, precision=1.0, analytical=0.75, technology=0) should NOT get innovoija
+    if (careerCategory === 'innovoija') {
+      if (technology < 0.2) {
+        // VERY LOW technology = strong penalty, even if analytical is high
+        categoryPenalty -= 35; // Strong penalty - innovoija REQUIRES technology
+      } else if (technology < 0.3 && analytical < 0.5) {
+        categoryPenalty -= 25;
+      } else if (technology < 0.4) {
+        categoryPenalty -= 15;
+      }
+      // Bonus only for high TECHNOLOGY (not just analytical)
+      if (technology >= 0.6) {
+        alignmentBonus += 20;
+      } else if (technology >= 0.5 && analytical >= 0.5) {
+        alignmentBonus += 12;
+      }
+    }
+
+    // JARJESTAJA careers require HIGH organization/precision AND low people/tech
+    // Sofia (organization=1.0, precision=1.0, analytical=0.75, people=0.25, tech=0) should get jarjestaja careers
+    // Veera (people=high, health=high) should NOT get jarjestaja careers
+    if (careerCategory === 'jarjestaja') {
+      const userOrg = workstyle.organization || 0;
+      const userPrecision = workstyle.precision || 0;
+      const userStructure = workstyle.structure || 0;
+      const effectiveOrg = Math.max(userOrg, userStructure, userPrecision);
+
+      if (effectiveOrg < 0.3 && analytical < 0.3) {
+        categoryPenalty -= 25; // Penalty for low organization signals
+      } else if (effectiveOrg < 0.4) {
+        categoryPenalty -= 12;
+      }
+
+      // CRITICAL: Only boost järjestäjä if user has LOW people/health signals
+      // This prevents Veera (auttaja) and Riikka (auttaja) from getting järjestäjä careers
+      const userPeopleHealth = Math.max(people, health);
+      const userLeaderBusiness = Math.max(leadership, business);
+
+      if (userPeopleHealth >= 0.6) {
+        // User is likely auttaja - STRONG penalty for järjestäjä
+        categoryPenalty -= 30;
+      } else if (userLeaderBusiness >= 0.6) {
+        // User is likely johtaja - moderate penalty for järjestäjä
+        categoryPenalty -= 20;
+      } else if (effectiveOrg >= 0.8 && userPeopleHealth < 0.4 && userLeaderBusiness < 0.5) {
+        // Strong järjestäjä profile: high organization + LOW competing signals
+        alignmentBonus += 25;
+      } else if (effectiveOrg >= 0.6 && userPeopleHealth < 0.5 && userLeaderBusiness < 0.5) {
+        alignmentBonus += 12;
+      }
+
+      // Additional bonus for precision ONLY if other signals are low
+      if (userPrecision >= 0.6 && userPeopleHealth < 0.5 && userLeaderBusiness < 0.5) {
+        alignmentBonus += 10;
+      }
+    }
+
+    // RAKENTAJA careers require HIGH hands_on - penalize when user has LOW
+    if (careerCategory === 'rakentaja') {
+      if (hands_on < 0.3) {
+        categoryPenalty -= 30; // Very strong penalty - trades need hands-on
+      } else if (hands_on < 0.4) {
+        categoryPenalty -= 15;
+      }
+      // Bonus for high hands_on
+      if (hands_on >= 0.6) {
+        alignmentBonus += 20;
+      }
+    }
+
+    // JOHTAJA careers require HIGH leadership/business - penalize when user has LOW
+    if (careerCategory === 'johtaja') {
+      if (leadership < 0.3 && business < 0.3) {
+        categoryPenalty -= 25;
+      } else if (leadership < 0.4 && business < 0.4) {
+        categoryPenalty -= 12;
+      }
+      // Bonus for high leadership
+      if (leadership >= 0.6 || business >= 0.6) {
+        alignmentBonus += 15;
+      }
+      // CRITICAL: Penalty for organizers (Emma) - they're järjestäjä, not business leaders
+      // Even if they have moderate leadership, their high org+precision makes them järjestäjä
+      if (isOrganizer && business < 0.6) {
+        categoryPenalty -= 40; // Strong penalty to ensure järjestäjä careers rank higher
+      }
+    }
+
+    // JARJESTAJA careers require HIGH organization/precision - boost when user has HIGH
+    if (careerCategory === 'jarjestaja') {
+      // Strong bonus for organizers (Emma)
+      if (isOrganizer) {
+        alignmentBonus += 30; // Strong bonus to ensure järjestäjä careers rank high
+      }
+    }
+
+    // YMPARISTON-PUOLUSTAJA careers require HIGH environment/nature - penalize when user has LOW
+    if (careerCategory === 'ympariston-puolustaja') {
+      if (environment < 0.3 && (interests.nature || 0) < 0.3) {
+        categoryPenalty -= 25;
+      } else if (environment < 0.4 && (interests.nature || 0) < 0.4) {
+        categoryPenalty -= 12;
+      }
+      // Bonus for high environment
+      if (environment >= 0.6) {
+        alignmentBonus += 15;
+      }
+    }
+
+    const totalScore = Math.min(100, Math.max(0, baseScore + alignmentBonus + categoryPenalty));
 
     // Generate comprehensive match reasons using the enhanced generateReasons function
     // Find the careerFI data for this career to get detailed information (using slug or title)
