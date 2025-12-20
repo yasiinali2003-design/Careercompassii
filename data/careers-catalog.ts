@@ -704,7 +704,7 @@ export const careersData: Career[] = [
         url: "https://opintopolku.fi/"
       }
     ],
-    relatedSlugs: ["sähköinsinööri", "konetekniikan-insinööri", "rakennusinsinööri"]
+    relatedSlugs: ["rakennusinsinööri", "projektipäällikkö"]
   },
   {
     slug: "kokki",
@@ -794,35 +794,6 @@ export const careersData: Career[] = [
     relatedSlugs: ["varhaiskasvatuksen-opettaja", "perheohjaaja", "lastenohjaaja"]
   },
   {
-    slug: "sähköinsinööri",
-    title: "Sähköinsinööri",
-    summary: "Suunnittelee ja toteuttaa sähköjärjestelmiä.",
-    longDescription: "Sähköinsinööri suunnittelee ja toteuttaa sähköjärjestelmiä eri käyttötarkoituksiin. Työ sisältää suunnittelua, asennusta ja ylläpitoa.",
-    salaryMin: 4200,
-    salaryMax: 7200,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto", "AMK"],
-    industry: ["Teknologia", "Rakentaminen"],
-    personalityType: ["Innovoija", "Rakentaja"],
-    workMode: "Hybrid",
-    skillsHard: ["Sähkötekniikka", "CAD", "Ohjelmointi", "Automaatio"],
-    skillsSoft: ["Ongelmanratkaisu", "Tarkkuus", "Tiimityö", "Kommunikaatio"],
-    dailyTasks: [
-      "Sähköjärjestelmien suunnittelu",
-      "Laskelmien tekeminen",
-      "Asennusten valvonta",
-      "Testaaminen ja hyväksyntä",
-      "Dokumentointi"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "AMK – Sähkötekniikka",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["automaatioinsinööri", "energiainsinööri", "elektroniikkainsinööri"]
-  },
-  {
     slug: "journalisti",
     title: "Journalisti",
     summary: "Tutkii ja kirjoittaa uutisia ja artikkeleita.",
@@ -861,7 +832,7 @@ export const careersData: Career[] = [
     outlook: "Kasvaa",
     educationLevel: ["Yliopisto"],
     industry: ["Hoiva"],
-    personalityType: ["Järjestäjä"],
+    personalityType: ["Auttaja", "Järjestäjä"],
     workMode: "Paikan päällä",
     skillsHard: ["Farmasia", "Lääketiede", "Kemiat", "Lääkkeiden valmistus"],
     skillsSoft: ["Asiakaspalvelu", "Tarkkuus", "Empatia", "Kommunikaatio"],
@@ -890,7 +861,7 @@ export const careersData: Career[] = [
     outlook: "Kasvaa",
     educationLevel: ["Yliopisto"],
     industry: ["Design", "Ympäristö"],
-    personalityType: ["Luova", "Ympäristön puolustaja"],
+    personalityType: ["Luova", "Ympäristön Puolustaja"],
     workMode: "Hybrid",
     skillsHard: ["Maisema-arkkitehtuuri", "CAD", "Kasvitieto", "Ympäristösuunnittelu"],
     skillsSoft: ["Luovuus", "Visuaalinen ajattelu", "Ympäristötietoisuus", "Projektinhallinta"],
@@ -1029,35 +1000,6 @@ export const careersData: Career[] = [
     relatedSlugs: ["terapeutti", "puheterapeutti", "ergonomisti", "liikuntaneuvoja"]
   },
   {
-    slug: "markkinointipäällikkö",
-    title: "Markkinointipäällikkö",
-    summary: "Kehittää markkinointistrategioita ja johtaa kampanjoita.",
-    longDescription: "Markkinointipäällikkö suunnittelee ja toteuttaa markkinointistrategioita sekä johtaa markkinointitiimejä. Työ vaatii luovuutta ja analyyttista ajattelua.",
-    salaryMin: 4500,
-    salaryMax: 7500,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto", "AMK"],
-    industry: ["Markkinointi", "Palveluala"],
-    personalityType: ["Johtaja", "Luova"],
-    workMode: "Hybrid",
-    skillsHard: ["Markkinointi", "Analytiikka", "Digitaalinen markkinointi", "SEO"],
-    skillsSoft: ["Johtaminen", "Luovuus", "Strateginen ajattelu", "Kommunikaatio"],
-    dailyTasks: [
-      "Markkinointistrategioiden suunnittelu",
-      "Kampanjoiden johtaminen",
-      "Tulosten analysointi",
-      "Tiimien koordinointi",
-      "Budjettien hallinta"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "AMK – Markkinointi",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["digitaalinen-markkinoija", "tuotepäällikkö", "myyntipäällikkö"]
-  },
-  {
     slug: "ravintolapäällikkö",
     title: "Ravintolapäällikkö",
     summary: "Johtaa ravintolaa ja vastaa sen toiminnasta.",
@@ -1067,7 +1009,7 @@ export const careersData: Career[] = [
     outlook: "Kasvaa",
     educationLevel: ["AMK", "Oppisopimus"],
     industry: ["Palveluala"],
-    personalityType: ["Järjestäjä"],
+    personalityType: ["Johtaja", "Järjestäjä"],
     workMode: "Paikan päällä",
     skillsHard: ["Ravintolatalous", "Henkilöstöjohtaminen", "Asiakaspalvelu", "Ruokakulttuuri", "Terveys- ja turvallisuus", "Digitaaliset järjestelmät"],
     skillsSoft: ["Johtaminen", "Asiakaspalvelu", "Ongelmanratkaisu", "Tiimityö", "Stressinsieto", "Kommunikaatio"],
@@ -1160,394 +1102,6 @@ export const careersData: Career[] = [
       }
     ],
     relatedSlugs: ["hammaslääkäri", "psykiatri", "lastenlääkäri", "sisätautilääkäri"]
-  },
-  {
-    slug: "insinööri",
-    title: "Insinööri",
-    summary: "Suunnittelee ja kehittää teknisiä ratkaisuja.",
-    longDescription: "Insinööri suunnittelee ja kehittää teknisiä ratkaisuja eri aloilla. Työ sisältää teknisten järjestelmien suunnittelua, projektien johtamista ja ongelmien ratkaisemista. Insinööri voi erikoistua esimerkiksi rakennus-, sähkö- tai konetekniikkaan.",
-    salaryMin: 4000,
-    salaryMax: 8000,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto", "AMK"],
-    industry: ["Teknologia", "Rakentaminen"],
-    personalityType: ["Rakentaja", "Innovoija"],
-    workMode: "Hybrid",
-    skillsHard: ["Matematiikka ja fysiikka", "CAD-suunnittelu", "Projektinhallinta", "Tekninen analyysi", "Koodaus", "Automaatio"],
-    skillsSoft: ["Ongelmanratkaisu", "Analyyttinen ajattelu", "Tiimityö", "Kommunikaatio", "Tarkkuus", "Luovuus"],
-    dailyTasks: [
-      "Teknisten järjestelmien suunnittelu",
-      "Projektien johtaminen ja koordinointi",
-      "Teknisten ongelmien ratkaiseminen",
-      "Asiakkaiden kanssa keskustelu",
-      "Dokumentaation laatiminen",
-      "Testaaminen ja validointi",
-      "Kustannuslaskennat",
-      "Ammatillisen kehityksen jatkaminen"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "Yliopisto – Teknillinen fysiikka",
-        url: "https://opintopolku.fi/"
-      },
-      {
-        label: "AMK – Konetekniikka",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["sähköinsinööri", "rakennusinsinööri", "automaatioinsinööri", "projektipäällikkö"]
-  },
-  {
-    slug: "kokki",
-    title: "Kokki",
-    summary: "Valmistaa ruokaa ja johtaa keittiötä.",
-    longDescription: "Kokki valmistaa ruokaa ja johtaa keittiön toimintaa ravintolassa tai muussa ruokapalveluyrityksessä. Työ sisältää ruoan valmistusta, menun suunnittelua, henkilöstön johtamista ja laadun varmistamista.",
-    salaryMin: 2500,
-    salaryMax: 5000,
-    outlook: "Kasvaa",
-    educationLevel: ["Oppisopimus", "AMK"],
-    industry: ["Palveluala"],
-    personalityType: ["Luova", "Järjestäjä"],
-    workMode: "Paikan päällä",
-    skillsHard: ["Ruuanlaitto ja tekniikat", "Ravintotiede", "Ruokakulttuuri", "Keittiöorganisaatio", "Hygienia", "Varastonhallinta"],
-    skillsSoft: ["Luovuus", "Tiimityö", "Stressinsieto", "Tarkkuus", "Asiakaspalvelu", "Johtaminen"],
-    dailyTasks: [
-      "Ruuan valmistus ja esittely",
-      "Menun suunnittelu ja kehittäminen",
-      "Keittiön henkilöstön johtaminen",
-      "Raaka-aineiden valinta ja hankinta",
-      "Laadun varmistaminen",
-      "Keittiön siisteys ja hygienia",
-      "Kustannusten hallinta",
-      "Asiakaspalautteen kerääminen"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "Oppisopimus – Kokki",
-        url: "https://opintopolku.fi/"
-      },
-      {
-        label: "AMK – Ravintola- ja catering",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["pätisööri", "ravintolapäällikkö", "catering-kokki", "keittiömestari"]
-  },
-  {
-    slug: "psykologi",
-    title: "Psykologi",
-    summary: "Auttaa ihmisiä mielenterveysongelmissa ja henkisessä hyvinvoinnissa.",
-    longDescription: "Psykologi auttaa ihmisiä mielenterveysongelmissa ja henkisessä hyvinvoinnissa. Työ sisältää potilaiden kanssa keskustelua, psykologisia testejä, terapian antamista ja mielenterveyspalvelujen kehittämistä.",
-    salaryMin: 3500,
-    salaryMax: 6500,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto"],
-    industry: ["Hoiva"],
-    personalityType: ["Auttaja"],
-    workMode: "Hybrid",
-    skillsHard: ["Psykologia ja mielenterveys", "Psykologiset testit", "Terapiamenetelmät", "Diagnostiikka", "Tutkimusmenetelmät", "Lainsäädäntö"],
-    skillsSoft: ["Empatia", "Kuuntelu", "Kärsivällisyys", "Kommunikaatio", "Analyyttinen ajattelu", "Eettisyys"],
-    dailyTasks: [
-      "Potilaiden kanssa keskustelu ja terapia",
-      "Psykologisten testien suorittaminen",
-      "Diagnoosien tekeminen ja hoitosuunnitelmien laatiminen",
-      "Tutkimustyön tekeminen",
-      "Kollegoiden kanssa konsultaatiot",
-      "Mielenterveyspalvelujen kehittäminen",
-      "Dokumentaation kirjaaminen",
-      "Ammatillisen kehityksen jatkaminen"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "Yliopisto – Psykologia",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["terapeutti", "sosiaalityöntekijä", "koulupsykologi", "neuropsykologi"]
-  },
-  {
-    slug: "myyntipäällikkö",
-    title: "Myyntipäällikkö",
-    summary: "Johtaa myyntitiimiä ja kehittää myyntistrategioita.",
-    longDescription: "Myyntipäällikkö johtaa myyntitiimiä ja kehittää myyntistrategioita yritykselle. Työ sisältää myyntitavoitteiden asettamista, tiimien motivaatiota, asiakassuhteiden kehittämistä ja myyntitulosten seurantaa.",
-    salaryMin: 4000,
-    salaryMax: 8000,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto", "AMK"],
-    industry: ["Markkinointi", "Palveluala"],
-    personalityType: ["Johtaja", "Luova"],
-    workMode: "Hybrid",
-    skillsHard: ["Myyntistrategiat", "CRM-järjestelmät", "Analytiikka", "Projektinhallinta", "Markkinointi", "Taloushallinta"],
-    skillsSoft: ["Johtaminen", "Motivaatio", "Kommunikaatio", "Neuvottelu", "Strateginen ajattelu", "Asiakaspalvelu"],
-    dailyTasks: [
-      "Myyntitavoitteiden asettaminen ja seuranta",
-      "Myyntitiimin johtaminen ja motivaatio",
-      "Asiakassuhteiden kehittäminen",
-      "Myyntistrategioiden suunnittelu",
-      "Tulosten analysointi ja raportointi",
-      "Uusien myyntimahdollisuuksien etsiminen",
-      "Tiimien koulutus ja kehittäminen",
-      "Budjettien hallinta"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "AMK – Myynti ja markkinointi",
-        url: "https://opintopolku.fi/"
-      },
-      {
-        label: "Yliopisto – Liiketalous",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["markkinointipäällikkö", "projektipäällikkö", "myyntiedustaja", "asiakaspäällikkö"]
-  },
-  {
-    slug: "lastenhoitaja",
-    title: "Lastenhoitaja",
-    summary: "Hoitaa ja kasvattaa lapsia päiväkodissa tai kotihoidossa.",
-    longDescription: "Lastenhoitaja hoitaa ja kasvattaa lapsia päiväkodissa tai kotihoidossa. Työ sisältää lasten hoitoa, kasvatusta, leikkien järjestämistä ja vanhempien kanssa yhteistyötä.",
-    salaryMin: 2200,
-    salaryMax: 3800,
-    outlook: "Kasvaa",
-    educationLevel: ["AMK", "Oppisopimus"],
-    industry: ["Hoiva"],
-    personalityType: ["Auttaja"],
-    workMode: "Paikan päällä",
-    skillsHard: ["Lastenhoito ja kasvatus", "Kehityspsykologia", "Ensiapu", "Ruuanlaitto", "Hygienia", "Pedagogiikka"],
-    skillsSoft: ["Empatia", "Kärsivällisyys", "Luovuus", "Kommunikaatio", "Tiimityö", "Positiivisuus"],
-    dailyTasks: [
-      "Lasten hoito ja valvonta",
-      "Leikkien ja aktiviteettien järjestäminen",
-      "Ruokailun ja lepohetkien järjestäminen",
-      "Vanhempien kanssa keskustelu",
-      "Lasten kehityksen seuranta",
-      "Päiväkodin siisteys ja hygienia",
-      "Dokumentaation kirjaaminen",
-      "Ammatillisen kehityksen jatkaminen"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "AMK – Varhaiskasvatus",
-        url: "https://opintopolku.fi/"
-      },
-      {
-        label: "Oppisopimus – Lastenhoitaja",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["varhaiskasvatuksen-opettaja", "koulunkäyntiavustaja", "perhehoitaja", "lastenohjaaja"]
-  },
-  {
-    slug: "sähköinsinööri",
-    title: "Sähköinsinööri",
-    summary: "Suunnittelee ja toteuttaa sähköjärjestelmiä.",
-    longDescription: "Sähköinsinööri suunnittelee ja toteuttaa sähköjärjestelmiä eri käyttötarkoituksiin. Työ sisältää sähköverkkojen suunnittelua, automaatiojärjestelmien kehittämistä ja sähköasennusten valvontaa.",
-    salaryMin: 3800,
-    salaryMax: 7000,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto", "AMK"],
-    industry: ["Teknologia", "Rakentaminen"],
-    personalityType: ["Rakentaja", "Innovoija"],
-    workMode: "Hybrid",
-    skillsHard: ["Sähkötekniikka", "Automaatio", "CAD-suunnittelu", "Ohjelmointi", "Mittauslaitteet", "Turvallisuus"],
-    skillsSoft: ["Ongelmanratkaisu", "Tarkkuus", "Tiimityö", "Kommunikaatio", "Analyyttinen ajattelu", "Projektinhallinta"],
-    dailyTasks: [
-      "Sähköjärjestelmien suunnittelu",
-      "Automaatiojärjestelmien kehittäminen",
-      "Asennusten valvonta ja testaaminen",
-      "Teknisten dokumenttien laatiminen",
-      "Asiakkaiden kanssa keskustelu",
-      "Ongelmien diagnosointi ja korjaus",
-      "Turvallisuusstandardien varmistaminen",
-      "Ammatillisen kehityksen jatkaminen"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "Yliopisto – Sähkötekniikka",
-        url: "https://opintopolku.fi/"
-      },
-      {
-        label: "AMK – Sähkötekniikka",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["automaatioinsinööri", "energiainsinööri", "sähköasentaja", "projektipäällikkö"]
-  },
-  {
-    slug: "journalisti",
-    title: "Journalisti",
-    summary: "Kirjoittaa artikkeleita ja raportoi uutisia.",
-    longDescription: "Journalisti kirjoittaa artikkeleita ja raportoi uutisia eri medioissa. Työ sisältää aiheiden tutkimista, haastatteluja, artikkelien kirjoittamista ja uutisten toimittamista.",
-    salaryMin: 2800,
-    salaryMax: 5500,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto", "AMK"],
-    industry: ["Media"],
-    personalityType: ["Luova", "Innovoija"],
-    workMode: "Hybrid",
-    skillsHard: ["Kirjoittaminen ja kielitaito", "Tutkimusmenetelmät", "Digitaaliset työkalut", "Sosiaalinen media", "Kuvankäsittely", "Videoeditointi"],
-    skillsSoft: ["Kommunikaatio", "Uteliaisuus", "Kriittinen ajattelu", "Tiimityö", "Paineenkesto", "Luovuus"],
-    dailyTasks: [
-      "Aiheiden tutkiminen ja valmistelu",
-      "Haastattelujen tekeminen",
-      "Artikkelien ja uutisten kirjoittaminen",
-      "Toimituksen kanssa yhteistyö",
-      "Sosiaalisen median hallinta",
-      "Kuvien ja videoiden editointi",
-      "Deadlinejen noudattaminen",
-      "Ammatillisen kehityksen jatkaminen"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "Yliopisto – Journalistiikka",
-        url: "https://opintopolku.fi/"
-      },
-      {
-        label: "AMK – Viestintä",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["toimittaja", "copywriter", "sisältösuunnittelija", "mediasuunnittelija"]
-  },
-  {
-    slug: "apteekkari",
-    title: "Apteekkari",
-    summary: "Myy lääkkeitä ja antaa terveysneuvontaa.",
-    longDescription: "Apteekkari myy lääkkeitä ja antaa terveysneuvontaa apteekissa. Työ sisältää lääkkeiden myyntiä, terveysneuvontaa, reseptien tarkistamista ja apteekin toiminnan johtamista.",
-    salaryMin: 3500,
-    salaryMax: 6000,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto"],
-    industry: ["Hoiva"],
-    personalityType: ["Auttaja", "Järjestäjä"],
-    workMode: "Paikan päällä",
-    skillsHard: ["Farmasia ja lääketiede", "Lääkkeiden farmakologia", "Reseptien tarkistus", "Apteekin hallinta", "Terveysneuvonta", "Lainsäädäntö"],
-    skillsSoft: ["Asiakaspalvelu", "Empatia", "Tarkkuus", "Kommunikaatio", "Johtaminen", "Luotettavuus"],
-    dailyTasks: [
-      "Lääkkeiden myynti ja neuvonta",
-      "Reseptien tarkistaminen ja täyttäminen",
-      "Asiakkaiden terveysneuvonta",
-      "Apteekin henkilöstön johtaminen",
-      "Varastonhallinta ja tilaukset",
-      "Terveyspalvelujen kehittäminen",
-      "Dokumentaation kirjaaminen",
-      "Ammatillisen kehityksen jatkaminen"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "Yliopisto – Farmasia",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["lääkäri", "terveydenhoitaja", "apteekkitekninen", "farmaseutti"]
-  },
-  {
-    slug: "maisema-arkkitehti",
-    title: "Maisema-arkkitehti",
-    summary: "Suunnittelee ulkoilmoja ja maisemia.",
-    longDescription: "Maisema-arkkitehti suunnittelee ulkoilmoja ja maisemia eri käyttötarkoituksiin. Työ sisältää puistojen, puutarhojen ja kaupunkitilojen suunnittelua sekä ympäristönsuojelua.",
-    salaryMin: 3500,
-    salaryMax: 6500,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto", "AMK"],
-    industry: ["Design", "Ympäristö"],
-    personalityType: ["Luova", "Ympäristön Puolustaja"],
-    workMode: "Hybrid",
-    skillsHard: ["Maisema-arkkitehtuuri", "CAD-suunnittelu", "Kasvitiede", "Ympäristösuunnittelu", "3D-mallinnus", "Karttasuunnittelu"],
-    skillsSoft: ["Luovuus", "Visuaalinen ajattelu", "Kommunikaatio", "Projektinhallinta", "Ympäristötietoisuus", "Tiimityö"],
-    dailyTasks: [
-      "Maisemien ja ulkoilmojen suunnittelu",
-      "Asiakkaiden kanssa keskustelu",
-      "Suunnitelmien esittely ja myynti",
-      "Projektien koordinointi",
-      "Ympäristövaikutusten arviointi",
-      "Dokumentaation laatiminen",
-      "Toteutusten valvonta",
-      "Ammatillisen kehityksen jatkaminen"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "Yliopisto – Maisema-arkkitehtuuri",
-        url: "https://opintopolku.fi/"
-      },
-      {
-        label: "AMK – Maisema-arkkitehtuuri",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["arkkitehti", "puutarhasuunnittelija", "ympäristösuunnittelija", "kaupunkisuunnittelija"]
-  },
-  {
-    slug: "terapeutti",
-    title: "Terapeutti",
-    summary: "Auttaa ihmisiä henkisessä hyvinvoinnissa ja ongelmien ratkaisemisessa.",
-    longDescription: "Terapeutti auttaa ihmisiä henkisessä hyvinvoinnissa ja ongelmien ratkaisemisessa eri terapiamenetelmillä. Työ sisältää potilaiden kanssa keskustelua, terapiasessioita ja henkisen hyvinvoinnin tukemista.",
-    salaryMin: 3000,
-    salaryMax: 5500,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto", "AMK"],
-    industry: ["Hoiva"],
-    personalityType: ["Auttaja"],
-    workMode: "Hybrid",
-    skillsHard: ["Terapiamenetelmät", "Psykologia", "Kommunikaatiotaito", "Kriisityö", "Ryhmäterapia", "Perhetyö"],
-    skillsSoft: ["Empatia", "Kuuntelu", "Kärsivällisyys", "Luottamuksen rakentaminen", "Eettisyys", "Itsetietoisuus"],
-    dailyTasks: [
-      "Potilaiden kanssa terapiasessioita",
-      "Henkisen hyvinvoinnin arviointi",
-      "Hoitosuunnitelmien laatiminen",
-      "Ryhmäterapian johtaminen",
-      "Perheiden kanssa työskentely",
-      "Kriisitilanteiden käsittely",
-      "Dokumentaation kirjaaminen",
-      "Ammatillisen kehityksen jatkaminen"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "Yliopisto – Psykologia",
-        url: "https://opintopolku.fi/"
-      },
-      {
-        label: "AMK – Sosiaaliala",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["psykologi", "sosiaalityöntekijä", "perheohjaaja", "kriisityöntekijä"]
-  },
-  {
-    slug: "tuotepäällikkö",
-    title: "Tuotepäällikkö",
-    summary: "Johtaa tuotteen kehitystä ja strategiaa.",
-    longDescription: "Tuotepäällikkö johtaa tuotteen kehitystä ja strategiaa yrityksessä. Työ sisältää tuotteen suunnittelua, markkinointistrategioiden kehittämistä ja tuotteen elinkaaren hallintaa.",
-    salaryMin: 4500,
-    salaryMax: 8500,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto", "AMK"],
-    industry: ["Teknologia", "Markkinointi"],
-    personalityType: ["Johtaja", "Innovoija"],
-    workMode: "Hybrid",
-    skillsHard: ["Tuotteenhallinta", "Markkinointi", "Analytiikka", "Projektinhallinta", "Teknologia", "Taloushallinta"],
-    skillsSoft: ["Johtaminen", "Strateginen ajattelu", "Kommunikaatio", "Luovuus", "Ongelmanratkaisu", "Tiimityö"],
-    dailyTasks: [
-      "Tuotteen strategian kehittäminen",
-      "Tuotteen kehityksen johtaminen",
-      "Markkinointistrategioiden suunnittelu",
-      "Tiimien koordinointi",
-      "Tulosten analysointi",
-      "Asiakaspalautteen kerääminen",
-      "Kilpailun seuranta",
-      "Tuotteen elinkaaren hallinta"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "Yliopisto – Liiketalous",
-        url: "https://opintopolku.fi/"
-      },
-      {
-        label: "AMK – Markkinointi",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["markkinointipäällikkö", "projektipäällikkö", "myyntipäällikkö", "tuotekehittäjä"]
   },
   {
     slug: "hammaslääkäri",
@@ -1659,7 +1213,7 @@ export const careersData: Career[] = [
     outlook: "Kasvaa",
     educationLevel: ["Oppisopimus", "Lyhytkoulutus"],
     industry: ["Palveluala"],
-    personalityType: ["Järjestäjä"],
+    personalityType: ["Rakentaja", "Järjestäjä"],
     workMode: "Paikan päällä",
     skillsHard: ["Siivoustekniikat", "Kemikaalien käyttö", "Siivouslaitteet", "Hygienia", "Turvallisuus", "Aikataulutus"],
     skillsSoft: ["Tarkkuus", "Luotettavuus", "Itsenäisyys", "Tiimityö", "Kärsivällisyys", "Positiivisuus"],
@@ -1833,7 +1387,7 @@ export const careersData: Career[] = [
     outlook: "Vakaa",
     educationLevel: ["Toinen aste", "AMK"],
     industry: ["Media"],
-    personalityType: ["Rakentaja", "Tiimipelaaja"],
+    personalityType: ["Rakentaja", "Auttaja"],
     workMode: "Paikan päällä",
     skillsHard: ["Kamerakaluston käsittely", "Valaisutekniikat", "Setin turvallisuus", "Logistiikan koordinointi", "Tekninen huolto"],
     skillsSoft: ["Tiimityö", "Ketteryys", "Huolellisuus", "Kommunikaatio", "Fyysinen kestävyys"],
@@ -1866,7 +1420,7 @@ export const careersData: Career[] = [
     outlook: "Kasvaa",
     educationLevel: ["AMK", "Yliopisto", "Lyhytkoulutus"],
     industry: ["Media"],
-    personalityType: ["Luova", "Tekninen toteuttaja"],
+    personalityType: ["Luova", "Innovoija"],
     workMode: "Hybrid",
     skillsHard: ["Äänitystekniikka", "Live- ja studiomiksaus", "Masterointi", "Äänityslaitteiden huolto", "Digitaalinen äänenkäsittely"],
     skillsSoft: ["Kuuntelutaito", "Tarkkuus", "Ongelmanratkaisu", "Stressinsieto", "Tiimityö"],
@@ -2283,42 +1837,6 @@ export const careersData: Career[] = [
     relatedSlugs: ["taloustarkastaja", "rahoitusasiantuntija", "sijoitusneuvoja", "verotarkastaja"]
   },
   {
-    slug: "sosiaaliohjaaja",
-    title: "Sosiaaliohjaaja",
-    summary: "Ohjaa ja tukee ihmisiä sosiaalisissa ongelmissa.",
-    longDescription: "Sosiaaliohjaaja ohjaa ja tukee ihmisiä sosiaalisissa ongelmissa. Työ sisältää asiakkaiden kanssa keskustelua, tukipalvelujen järjestämistä ja yhteistyötä muiden sosiaali- ja terveysalan ammattilaisten kanssa.",
-    salaryMin: 2800,
-    salaryMax: 4500,
-    outlook: "Kasvaa",
-    educationLevel: ["AMK", "Yliopisto"],
-    industry: ["Hoiva"],
-    personalityType: ["Visionääri"],
-    workMode: "Hybrid",
-    skillsHard: ["Sosiaaliohjaus", "Lainsäädäntö", "Asiakasdokumentaatio", "Kriisityö", "Perhetyö", "Yhteisötyö"],
-    skillsSoft: ["Empatia", "Kuuntelu", "Kärsivällisyys", "Kommunikaatio", "Tiimityö", "Päätöksenteko"],
-    dailyTasks: [
-      "Asiakkaiden kanssa keskustelu ja neuvonta",
-      "Sosiaalipalvelujen hakeminen ja järjestäminen",
-      "Asiakasdokumentaation kirjaaminen",
-      "Kriisitilanteiden käsittely",
-      "Perheiden ja yhteisöjen kanssa työskentely",
-      "Muiden ammattilaisten kanssa yhteistyö",
-      "Asiakkaiden tukeminen ja ohjaaminen",
-      "Ammatillisen kehityksen jatkaminen"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "AMK – Sosiaaliala",
-        url: "https://opintopolku.fi/"
-      },
-      {
-        label: "Yliopisto – Sosiaalityö",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["sosiaalityöntekijä", "perheohjaaja", "lastensuojelutyöntekijä", "vanhustyöntekijä"]
-  },
-  {
     slug: "eläinlääkäri",
     title: "Eläinlääkäri",
     summary: "Hoitaa eläimiä ja tarjoaa eläinten terveyspalveluja.",
@@ -2531,42 +2049,6 @@ export const careersData: Career[] = [
     relatedSlugs: ["ympäristöasiantuntija", "projektipäällikkö", "konsultti", "strategiakonsultti"]
   },
   {
-    slug: "vihreä-teknologia-insinööri",
-    title: "Vihreä teknologia insinööri",
-    summary: "Kehittää teknologiaa ympäristöystävällisiksi ratkaisuiksi.",
-    longDescription: "Vihreä teknologia insinööri kehittää teknologiaa ympäristöystävällisiksi ratkaisuiksi. Työ sisältää uusiutuvan energian teknologioiden kehittämistä, energiatehokkuuden parantamista ja kestävien ratkaisujen suunnittelua.",
-    salaryMin: 4000,
-    salaryMax: 7500,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto", "AMK"],
-    industry: ["Teknologia", "Ympäristö"],
-    personalityType: ["Ympäristön Puolustaja", "Rakentaja"],
-    workMode: "Hybrid",
-    skillsHard: ["Vihreä teknologia", "Energiateknologia", "Uusiutuvat energiat", "CAD-suunnittelu", "Projektinhallinta", "Tekninen analyysi"],
-    skillsSoft: ["Ympäristötietoisuus", "Ongelmanratkaisu", "Tiimityö", "Kommunikaatio", "Tarkkuus", "Innovaatio"],
-    dailyTasks: [
-      "Vihreiden teknologioiden suunnittelu ja kehittäminen",
-      "Energiatehokkuusratkaisujen kehittäminen",
-      "Uusiutuvan energian projektien suunnittelu",
-      "Teknisten ratkaisujen testaaminen",
-      "Asiakkaiden kanssa teknologiaa keskustelu",
-      "Ympäristövaikutusten arviointi",
-      "Teknisten dokumenttien laatiminen",
-      "Ammatillisen kehityksen jatkaminen"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "Yliopisto – Energiatekniikka",
-        url: "https://opintopolku.fi/"
-      },
-      {
-        label: "AMK – Vihreä teknologia",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["insinööri", "sähköinsinööri", "ympäristöasiantuntija", "energiainsinööri"]
-  },
-  {
     slug: "luonnonvarojen-hoitaja",
     title: "Luonnonvarojen hoitaja",
     summary: "Hoitaa ja suunnittelee luonnonvarojen kestävää käyttöä.",
@@ -2773,78 +2255,6 @@ export const careersData: Career[] = [
       }
     ],
     relatedSlugs: ["tulevaisuudentutkija", "innovaatiopäällikkö", "psykologi", "ympäristöasiantuntija"]
-  },
-  {
-    slug: "energiainsinööri",
-    title: "Energiainsinööri",
-    summary: "Suunnittelee ja kehittää energiaratkaisuja.",
-    longDescription: "Energiainsinööri suunnittelee ja kehittää energiaratkaisuja eri käyttötarkoituksiin. Työ sisältää energiasuunnittelua, energiatehokkuuden parantamista ja uusiutuvan energian teknologioiden kehittämistä.",
-    salaryMin: 4000,
-    salaryMax: 7500,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto", "AMK"],
-    industry: ["Teknologia", "Ympäristö"],
-    personalityType: ["Rakentaja", "Innovoija"],
-    workMode: "Hybrid",
-    skillsHard: ["Energiatekniikka", "Uusiutuvat energiat", "CAD-suunnittelu", "Projektinhallinta", "Tekninen analyysi", "Energiatehokkuus"],
-    skillsSoft: ["Ongelmanratkaisu", "Tarkkuus", "Tiimityö", "Kommunikaatio", "Analyyttinen ajattelu", "Innovaatio"],
-    dailyTasks: [
-      "Energiasuunnittelun tekeminen",
-      "Energiatehokkuusratkaisujen kehittäminen",
-      "Uusiutuvan energian projektien suunnittelu",
-      "Teknisten ratkaisujen testaaminen",
-      "Asiakkaiden kanssa teknologiaa keskustelu",
-      "Energiakustannusten optimointi",
-      "Teknisten dokumenttien laatiminen",
-      "Ammatillisen kehityksen jatkaminen"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "Yliopisto – Energiatekniikka",
-        url: "https://opintopolku.fi/"
-      },
-      {
-        label: "AMK – Energiatekniikka",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["insinööri", "sähköinsinööri", "vihreä-teknologia-insinööri", "projektipäällikkö"]
-  },
-  {
-    slug: "automaatioinsinööri",
-    title: "Automaatioinsinööri",
-    summary: "Suunnittelee ja toteuttaa automaatiojärjestelmiä.",
-    longDescription: "Automaatioinsinööri suunnittelee ja toteuttaa automaatiojärjestelmiä eri teollisuudenaloilla. Työ sisältää automaatiojärjestelmien suunnittelua, ohjelmointia, testaamista ja ylläpitoa.",
-    salaryMin: 4000,
-    salaryMax: 7500,
-    outlook: "Kasvaa",
-    educationLevel: ["Yliopisto", "AMK"],
-    industry: ["Teknologia", "Rakentaminen"],
-    personalityType: ["Rakentaja", "Innovoija"],
-    workMode: "Hybrid",
-    skillsHard: ["Automaatio", "Ohjelmointi", "PLC-ohjelmointi", "CAD-suunnittelu", "Sähkötekniikka", "Projektinhallinta"],
-    skillsSoft: ["Ongelmanratkaisu", "Tarkkuus", "Tiimityö", "Kommunikaatio", "Analyyttinen ajattelu", "Logiikka"],
-    dailyTasks: [
-      "Automaatiojärjestelmien suunnittelu",
-      "Ohjelmointi ja konfigurointi",
-      "Järjestelmien testaaminen ja validointi",
-      "Asiakkaiden kanssa teknologiaa keskustelu",
-      "Automaatiojärjestelmien ylläpito",
-      "Dokumentaation laatiminen",
-      "Teknisten ongelmien ratkaiseminen",
-      "Ammatillisen kehityksen jatkaminen"
-    ],
-    opintopolkuLinks: [
-      {
-        label: "Yliopisto – Automaatiotekniikka",
-        url: "https://opintopolku.fi/"
-      },
-      {
-        label: "AMK – Automaatiotekniikka",
-        url: "https://opintopolku.fi/"
-      }
-    ],
-    relatedSlugs: ["insinööri", "sähköinsinööri", "energiainsinööri", "projektipäällikkö"]
   },
   {
     slug: "rakennusinsinööri",
@@ -3317,6 +2727,1009 @@ export const careersData: Career[] = [
       }
     ],
     relatedSlugs: ["projektipäällikkö", "myyntipäällikkö", "markkinointipäällikkö", "hankintapäällikkö"]
+  },
+  {
+    slug: "kirjanpitaja",
+    title: "Kirjanpitäjä",
+    summary: "Hoitaa yritysten taloushallintoa ja kirjanpitoa.",
+    longDescription: "Kirjanpitäjä vastaa yritysten taloudellisten tapahtumien kirjaamisesta ja raportoinnista. Työ sisältää tositeiden käsittelyä, tilinpäätösten laadintaa, alv-ilmoituksia ja talousraporttien tuottamista. Kirjanpitäjä toimii usein tilitoimistossa tai yrityksen taloushallinnossa.",
+    salaryMin: 2800,
+    salaryMax: 4500,
+    outlook: "Vakaa",
+    educationLevel: ["AMK", "Oppisopimus"],
+    industry: ["Rahoitus", "Liiketalous"],
+    personalityType: ["Innovoija", "Järjestäjä"],
+    workMode: "Hybrid",
+    skillsHard: ["Kirjanpito-ohjelmistot", "Taloushallinto", "Verotus", "Tilinpäätös", "Excel", "ALV-käsittely"],
+    skillsSoft: ["Tarkkuus", "Järjestelmällisyys", "Luotettavuus", "Analyyttinen ajattelu", "Asiakaspalvelu", "Aikataulutus"],
+    dailyTasks: [
+      "Tositteiden kirjaus ja käsittely",
+      "Tilinpäätösten laatiminen",
+      "ALV- ja veroilmoitusten tekeminen",
+      "Talousraporttien tuottaminen",
+      "Asiakasyritysten neuvonta",
+      "Palkanlaskenta",
+      "Kuukausikirjanpidon hoitaminen",
+      "Tilintarkastajien kanssa yhteistyö"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Liiketalous, taloushallinto",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "Merkonomitutkinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["tilintarkastaja", "controller", "palkanlaskija", "talousassistentti"]
+  },
+  {
+    slug: "tilintarkastaja",
+    title: "Tilintarkastaja",
+    summary: "Tarkastaa yritysten tilinpäätöksiä ja taloudellista raportointia.",
+    longDescription: "Tilintarkastaja tarkastaa yritysten kirjanpidon, tilinpäätöksen ja hallinnon lainmukaisuuden. Työ sisältää dokumenttien analysointia, tarkastuskäyntejä ja lausuntojen antamista. Tilintarkastaja varmistaa, että yrityksen taloudellinen raportointi on luotettavaa.",
+    salaryMin: 4000,
+    salaryMax: 8000,
+    outlook: "Vakaa",
+    educationLevel: ["Yliopisto"],
+    industry: ["Rahoitus", "Liiketalous"],
+    personalityType: ["Järjestäjä", "Innovoija"],
+    workMode: "Hybrid",
+    skillsHard: ["Tilintarkastusstandardit", "IFRS", "Kirjanpitolaki", "Data-analytiikka", "Verotus", "Riskienhallinta"],
+    skillsSoft: ["Analyyttisyys", "Tarkkuus", "Eettisyys", "Kommunikaatio", "Kriittinen ajattelu", "Riippumattomuus"],
+    dailyTasks: [
+      "Tilinpäätösten tarkastaminen",
+      "Kirjanpidon oikeellisuuden varmistaminen",
+      "Tarkastusraporttien laatiminen",
+      "Asiakkaiden tapaaminen",
+      "Riskianalyysit",
+      "Sisäisen valvonnan arviointi",
+      "Tilintarkastuskertomuksen laatiminen"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Yliopisto – Kauppatieteet, laskentatoimi",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "HT/KHT-tutkinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["kirjanpitaja", "controller", "taloustarkastaja", "rahoitusanalyytikko"]
+  },
+  {
+    slug: "controller",
+    title: "Controller",
+    summary: "Vastaa yrityksen talouden suunnittelusta ja seurannasta.",
+    longDescription: "Controller vastaa yrityksen taloudellisesta ohjauksesta, budjetoinnista ja talousraportoinnista. Työ sisältää talousanalyysien tekemistä, ennusteiden laatimista ja johdon tukemista päätöksenteossa. Controller toimii yrityksen strategisen talousjohtamisen asiantuntijana.",
+    salaryMin: 4500,
+    salaryMax: 7500,
+    outlook: "Kasvaa",
+    educationLevel: ["Yliopisto", "AMK"],
+    industry: ["Rahoitus", "Liiketalous"],
+    personalityType: ["Järjestäjä", "Johtaja"],
+    workMode: "Hybrid",
+    skillsHard: ["Budjetointi", "Talousraportointi", "ERP-järjestelmät", "Power BI", "Excel", "Ennustaminen"],
+    skillsSoft: ["Analyyttisyys", "Strateginen ajattelu", "Kommunikaatio", "Johtaminen", "Ongelmanratkaisu", "Liiketoimintaymmärrys"],
+    dailyTasks: [
+      "Talousraporttien laatiminen ja analysointi",
+      "Budjetin seuranta ja ennustaminen",
+      "Johdon raportointi",
+      "Kustannusanalyysit",
+      "Investointilaskelmien tekeminen",
+      "KPI-mittareiden seuranta",
+      "Taloustiimin johtaminen",
+      "Liiketoiminnan tukeminen päätöksenteossa"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Yliopisto – Kauppatieteet",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "AMK – Liiketalous, taloushallinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["talousjohtaja", "kirjanpitaja", "rahoitusanalyytikko", "liiketoiminta-analyytikko"]
+  },
+  {
+    slug: "rahoitusanalyytikko",
+    title: "Rahoitusanalyytikko",
+    summary: "Analysoi sijoituksia ja rahoitusmarkkinoita.",
+    longDescription: "Rahoitusanalyytikko analysoi yrityksiä, toimialoja ja markkinoita sijoituspäätösten tueksi. Työ sisältää tilinpäätösten analysointia, arvonmääritysmallien rakentamista ja sijoitussuositusten laatimista. Rahoitusanalyytikko työskentelee usein pankeissa, sijoitusyhtiöissä tai konsultointiyrityksissä.",
+    salaryMin: 4500,
+    salaryMax: 9000,
+    outlook: "Kasvaa",
+    educationLevel: ["Yliopisto"],
+    industry: ["Rahoitus"],
+    personalityType: ["Innovoija", "Järjestäjä"],
+    workMode: "Hybrid",
+    skillsHard: ["Tilinpäätösanalyysi", "Arvonmääritys", "Excel-mallinnus", "Bloomberg/Reuters", "Talousmatemaattiset menetelmät", "Python/R"],
+    skillsSoft: ["Analyyttisyys", "Kriittinen ajattelu", "Kommunikaatio", "Tarkkuus", "Paineensietokyky", "Uteliaisuus"],
+    dailyTasks: [
+      "Yritysten tilinpäätösten analysointi",
+      "Sijoitussuositusten laatiminen",
+      "Markkinoiden seuraaminen",
+      "Arvonmääritysmallien rakentaminen",
+      "Sijoittajatapaamisten valmistelu",
+      "Toimialaraporttien kirjoittaminen",
+      "Salkunhoitajien tukeminen"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Yliopisto – Kauppatieteet, rahoitus",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "CFA-tutkinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["sijoitusneuvoja", "salkunhoitaja", "controller", "riskianalyytikko"]
+  },
+  {
+    slug: "sijoitusneuvoja",
+    title: "Sijoitusneuvoja",
+    summary: "Neuvoo asiakkaita sijoituspäätöksissä ja varallisuuden hoidossa.",
+    longDescription: "Sijoitusneuvoja auttaa yksityishenkilöitä ja yrityksiä tekemään sijoituspäätöksiä. Työ sisältää asiakkaiden taloudellisen tilanteen kartoitusta, sijoitussuunnitelmien laatimista ja markkinatiedon jakamista. Sijoitusneuvoja työskentelee pankeissa, varainhoitoyhtiöissä tai itsenäisenä asiantuntijana.",
+    salaryMin: 3500,
+    salaryMax: 7000,
+    outlook: "Kasvaa",
+    educationLevel: ["Yliopisto", "AMK"],
+    industry: ["Rahoitus"],
+    personalityType: ["Johtaja", "Auttaja"],
+    workMode: "Hybrid",
+    skillsHard: ["Sijoitustuotteet", "Verotus", "Rahoitusmarkkinat", "Asiakashallinnan CRM", "Riskiprofilointi", "Eläkesuunnittelu"],
+    skillsSoft: ["Asiakaspalvelu", "Myyntitaidot", "Luottamuksellisuus", "Kuunteleminen", "Neuvottelutaidot", "Empatia"],
+    dailyTasks: [
+      "Asiakastapaamisten pitäminen",
+      "Sijoitussuunnitelmien laatiminen",
+      "Markkinakatsausten esittäminen",
+      "Portfolion seuranta ja raportointi",
+      "Uusasiakashankinta",
+      "Sijoitustuotteiden esittely",
+      "Asiakassuhteiden ylläpito"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Yliopisto – Kauppatieteet, rahoitus",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "Sijoituspalvelututkinto (APV1)",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["rahoitusanalyytikko", "pankkivirkailija", "vakuutusasiantuntija", "talousneuvoja"]
+  },
+  {
+    slug: "vakuutusasiantuntija",
+    title: "Vakuutusasiantuntija",
+    summary: "Neuvoo asiakkaita vakuutustuotteissa ja riskienhallinnassa.",
+    longDescription: "Vakuutusasiantuntija auttaa yksityishenkilöitä ja yrityksiä löytämään sopivat vakuutusratkaisut. Työ sisältää riskien kartoitusta, vakuutustarjousten tekemistä ja korvauskäsittelyä. Vakuutusasiantuntija työskentelee vakuutusyhtiöissä, välitystoimistoissa tai yritysten riskienhallinnassa.",
+    salaryMin: 3200,
+    salaryMax: 5500,
+    outlook: "Vakaa",
+    educationLevel: ["AMK", "Oppisopimus"],
+    industry: ["Rahoitus", "Palveluala"],
+    personalityType: ["Järjestäjä", "Auttaja"],
+    workMode: "Hybrid",
+    skillsHard: ["Vakuutustuotteet", "Riskiarviointi", "Vakuutuslaki", "Korvauskäsittely", "CRM-järjestelmät", "Myynti"],
+    skillsSoft: ["Asiakaspalvelu", "Neuvottelutaidot", "Empatia", "Tarkkuus", "Ongelmanratkaisu", "Myyntitaidot"],
+    dailyTasks: [
+      "Asiakkaiden vakuutustarpeiden kartoitus",
+      "Vakuutustarjousten laatiminen",
+      "Sopimusten solmiminen",
+      "Korvaushakemusten käsittely",
+      "Riskianalyysien tekeminen",
+      "Asiakasneuvonta",
+      "Vakuutusten päivitys ja uusiminen"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Liiketalous",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "Vakuutusalan ammattitutkinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["sijoitusneuvoja", "pankkivirkailija", "riskianalyytikko", "myyntiedustaja"]
+  },
+  {
+    slug: "hr-paallikkö",
+    title: "HR-päällikkö",
+    summary: "Johtaa henkilöstöhallintoa ja kehittää työpaikan kulttuuria.",
+    longDescription: "HR-päällikkö vastaa yrityksen henkilöstöhallinnon kokonaisuudesta. Työ sisältää rekrytointia, henkilöstön kehittämistä, työsuhdeasioita ja työhyvinvoinnin edistämistä. HR-päällikkö toimii johdon strategisena kumppanina henkilöstökysymyksissä.",
+    salaryMin: 4000,
+    salaryMax: 7000,
+    outlook: "Kasvaa",
+    educationLevel: ["Yliopisto", "AMK"],
+    industry: ["Liiketalous"],
+    personalityType: ["Johtaja", "Auttaja"],
+    workMode: "Hybrid",
+    skillsHard: ["Työlainsäädäntö", "HR-järjestelmät", "Rekrytointi", "Palkitsemisjärjestelmät", "Suorituksen johtaminen", "Työsopimukset"],
+    skillsSoft: ["Johtaminen", "Viestintä", "Empatia", "Ongelmanratkaisu", "Neuvottelutaidot", "Luottamuksellisuus"],
+    dailyTasks: [
+      "Rekrytointiprosessien johtaminen",
+      "Henkilöstön kehittämissuunnitelmat",
+      "Työsuhdeneuvotelut",
+      "Työhyvinvointiohjelmien koordinointi",
+      "Johdon neuvonta henkilöstöasioissa",
+      "HR-raportointi",
+      "Työehtosopimusten tulkinta",
+      "Perehdytysohjelmien kehittäminen"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Yliopisto – Hallintotieteet, HRM",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "AMK – Liiketalous, HR",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["rekrytoija", "henkilostoasiantuntija", "yritysjohtaja", "palkanlaskija"]
+  },
+  {
+    slug: "palkanlaskija",
+    title: "Palkanlaskija",
+    summary: "Laskee ja maksaa palkat sekä hoitaa palkkahallintoasiota.",
+    longDescription: "Palkanlaskija vastaa henkilöstön palkkojen laskemisesta ja maksamisesta. Työ sisältää työaikaseurantaa, verojen ja sivukulujen laskentaa, vuosilomalaskentaa ja viranomaisilmoituksia. Palkanlaskija toimii usein tilitoimistossa tai yrityksen henkilöstöhallinnossa.",
+    salaryMin: 2700,
+    salaryMax: 4200,
+    outlook: "Vakaa",
+    educationLevel: ["AMK", "Oppisopimus"],
+    industry: ["Liiketalous", "Rahoitus"],
+    personalityType: ["Auttaja", "Järjestäjä"],
+    workMode: "Hybrid",
+    skillsHard: ["Palkkaohjelmistot", "Työehtosopimukset", "Verotus", "Työaikalaki", "Excel", "Viranomaisilmoitukset"],
+    skillsSoft: ["Tarkkuus", "Luotettavuus", "Järjestelmällisyys", "Asiakaspalvelu", "Aikataulutus", "Salassapito"],
+    dailyTasks: [
+      "Palkkojen laskeminen ja maksaminen",
+      "Työaikaseurannan käsittely",
+      "Verokorttien ja ennakonpidätysten käsittely",
+      "Vuosilomalaskennat",
+      "Viranomaisilmoitusten tekeminen",
+      "Palkkakysymyksiin vastaaminen",
+      "Työehtosopimuksen soveltaminen",
+      "Palkkatodistusten laatiminen"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Merkonomitutkinto",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "AMK – Liiketalous, taloushallinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["kirjanpitaja", "hr-paallikkö", "henkilostoasiantuntija", "talousassistentti"]
+  },
+  {
+    slug: "verokonsultti",
+    title: "Verokonsultti",
+    summary: "Neuvoo asiakkaita verosuunnittelussa ja verotuksessa.",
+    longDescription: "Verokonsultti auttaa yrityksiä ja yksityishenkilöitä veroasioissa. Työ sisältää verosuunnittelua, veroilmoitusten laadintaa, verovalitusten käsittelyä ja verotarkastusten tukea. Verokonsultti työskentelee usein tilintarkastus- tai konsultointiyhtiöissä.",
+    salaryMin: 4500,
+    salaryMax: 8500,
+    outlook: "Vakaa",
+    educationLevel: ["Yliopisto"],
+    industry: ["Rahoitus", "Liiketalous"],
+    personalityType: ["Järjestäjä", "Innovoija"],
+    workMode: "Hybrid",
+    skillsHard: ["Verolainsäädäntö", "Kansainvälinen verotus", "Siirtohinnoittelu", "Verotarkastukset", "Excel", "Veroilmoitukset"],
+    skillsSoft: ["Analyyttisyys", "Tarkkuus", "Asiakaspalvelu", "Ongelmanratkaisu", "Kommunikaatio", "Ajanhallinta"],
+    dailyTasks: [
+      "Verosuunnittelun neuvonta",
+      "Veroilmoitusten laatiminen ja tarkistaminen",
+      "Verotarkastusten tuki",
+      "Verovalitusten käsittely",
+      "Asiakkaiden kouluttaminen",
+      "Lainsäädännön muutosten seuranta",
+      "Kansainvälisten verokysymysten ratkaiseminen"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Yliopisto – Oikeustiede tai kauppatieteet",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "KLT-tutkinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["tilintarkastaja", "kirjanpitaja", "lakimies", "controller"]
+  },
+  {
+    slug: "yrittaja",
+    title: "Yrittäjä",
+    summary: "Perustaa ja johtaa omaa yritystä.",
+    longDescription: "Yrittäjä perustaa, omistaa ja johtaa omaa yritystä. Työ sisältää liiketoiminnan suunnittelua, asiakashankintaa, talouden hallintaa ja päivittäisten operaatioiden johtamista. Yrittäjyys vaatii monipuolista osaamista ja riskinottokykyä.",
+    salaryMin: 2000,
+    salaryMax: 15000,
+    outlook: "Kasvaa",
+    educationLevel: ["Yliopisto", "AMK", "Oppisopimus", "Lyhytkoulutus"],
+    industry: ["Liiketalous"],
+    personalityType: ["Johtaja", "Visionääri", "Innovoija"],
+    workMode: "Hybrid",
+    skillsHard: ["Liiketoimintasuunnittelu", "Budjetointi", "Markkinointi", "Myynti", "Sopimukset", "Verotus"],
+    skillsSoft: ["Riskinotto", "Sinnikkyys", "Päätöksentekokyky", "Verkostoituminen", "Johtaminen", "Mukautuvuus"],
+    dailyTasks: [
+      "Liiketoiminnan strateginen suunnittelu",
+      "Asiakashankinta ja -suhteiden hoito",
+      "Talouden seuranta ja hallinta",
+      "Tiimin johtaminen ja motivointi",
+      "Tuotekehitys ja palveluiden parantaminen",
+      "Markkinointi ja brändin rakentaminen",
+      "Yhteistyökumppanuuksien solmiminen",
+      "Hallinnolliset tehtävät"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Yrittäjän ammattitutkinto",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "Yliopisto/AMK – Kauppatieteet",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["yritysjohtaja", "myyntipäällikkö", "projektipäällikkö", "konsultti"]
+  },
+  {
+    slug: "poliisi",
+    title: "Poliisi",
+    summary: "Ylläpitää yleistä järjestystä ja turvallisuutta.",
+    longDescription: "Poliisi vastaa yleisen järjestyksen ja turvallisuuden ylläpitämisestä sekä rikosten ennaltaehkäisystä ja tutkinnasta. Työ sisältää partiointia, rikosten selvittämistä, kuulusteluja ja yhteistyötä muiden viranomaisten kanssa. Poliisi toimii haastavissa tilanteissa ja auttaa kansalaisia hädän hetkellä.",
+    salaryMin: 2800,
+    salaryMax: 4500,
+    outlook: "Vakaa",
+    educationLevel: ["AMK"],
+    industry: ["Turvallisuus"],
+    personalityType: ["Auttaja", "Johtaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Lainsäädäntö", "Rikostutkinta", "Ensiapu", "Ajotaidot", "Voimankäyttö", "Kuulustelutekniikka"],
+    skillsSoft: ["Paineensietokyky", "Kommunikaatio", "Empatia", "Päätöksentekokyky", "Tiimityö", "Eettisyys"],
+    dailyTasks: [
+      "Partiointi ja valvonta",
+      "Rikosilmoitusten vastaanotto",
+      "Rikosten tutkinta ja kuulustelut",
+      "Liikennevalvonta",
+      "Kansalaisten avustaminen",
+      "Raportointi ja dokumentointi",
+      "Yhteistyö muiden viranomaisten kanssa"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Poliisiammattikorkeakoulu",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["vartija", "rikostutkija", "rajavartioja", "turvallisuusvastaava"]
+  },
+  {
+    slug: "palomies",
+    title: "Palomies",
+    summary: "Sammuttaa tulipaloja ja pelastaa ihmisiä hätätilanteissa.",
+    longDescription: "Palomies vastaa tulipalojen sammuttamisesta, ihmisten pelastamisesta ja onnettomuuksien ehkäisystä. Työ sisältää hälytysajoja, sammutus- ja pelastustöitä, ensihoitotehtäviä sekä turvallisuuskoulutusta. Palomies työskentelee vuorotyössä pelastuslaitoksella.",
+    salaryMin: 2600,
+    salaryMax: 3800,
+    outlook: "Vakaa",
+    educationLevel: ["Oppisopimus", "AMK"],
+    industry: ["Turvallisuus"],
+    personalityType: ["Auttaja", "Rakentaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Sammutustekniikka", "Ensiapu", "Pelastustekniikka", "Ajoneuvojen käyttö", "Vaarallisten aineiden käsittely", "Tekninen pelastaminen"],
+    skillsSoft: ["Rohkeus", "Fyysinen kunto", "Tiimityö", "Paineensietokyky", "Nopea reagointi", "Empatia"],
+    dailyTasks: [
+      "Hälytysvalmiudessa olo",
+      "Tulipalojen sammuttaminen",
+      "Pelastustehtävät (liikenneonnettomuudet, vedestä pelastus)",
+      "Ensihoitotehtävät",
+      "Kaluston huolto ja tarkistus",
+      "Harjoittelu ja koulutus",
+      "Turvallisuustarkastukset"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Pelastusopisto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["ensihoitaja", "poliisi", "turvallisuusvastaava"]
+  },
+  {
+    slug: "ensihoitaja",
+    title: "Ensihoitaja",
+    summary: "Antaa kiireellistä hoitoa ja kuljettaa potilaita sairaalaan.",
+    longDescription: "Ensihoitaja vastaa kiireellisestä ensihoidosta sairaalan ulkopuolella. Työ sisältää hätäpuheluihin vastaamista, potilaiden hoitoa tapahtumapaikalla ja kuljetusta sairaalaan. Ensihoitaja arvioi potilaan tilan ja tekee hoitopäätöksiä nopeasti.",
+    salaryMin: 2700,
+    salaryMax: 4000,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK"],
+    industry: ["Hoiva", "Turvallisuus"],
+    personalityType: ["Auttaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Ensihoito", "Lääkehoito", "Elvytys", "Traumahoito", "Ajotaidot", "Potilaan arviointi"],
+    skillsSoft: ["Paineensietokyky", "Empatia", "Nopea päätöksentekokyky", "Tiimityö", "Kommunikaatio", "Rauhallisuus"],
+    dailyTasks: [
+      "Hälytysvalmiudessa olo",
+      "Ensihoidon antaminen tapahtumapaikalla",
+      "Potilaan tilan arviointi ja seuranta",
+      "Potilaan kuljetus sairaalaan",
+      "Raportointi ja kirjaaminen",
+      "Kaluston tarkistus ja huolto",
+      "Yhteistyö sairaalan henkilöstön kanssa"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Ensihoitaja",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["sairaanhoitaja", "palomies", "laakari"]
+  },
+  {
+    slug: "lakimies",
+    title: "Lakimies",
+    summary: "Neuvoo asiakkaita juridisissa kysymyksissä.",
+    longDescription: "Lakimies tarjoaa oikeudellista neuvontaa ja avustaa asiakkaita juridisissa asioissa. Työ sisältää sopimusten laatimista, oikeudellisten ongelmien analysointia ja asiakkaiden edustamista. Lakimies voi erikoistua esimerkiksi yritys-, perhe- tai rikosoikeuteen.",
+    salaryMin: 4000,
+    salaryMax: 8000,
+    outlook: "Vakaa",
+    educationLevel: ["Yliopisto"],
+    industry: ["Liiketalous", "Palveluala"],
+    personalityType: ["Järjestäjä", "Johtaja"],
+    workMode: "Hybrid",
+    skillsHard: ["Lainsäädäntö", "Sopimusoikeus", "Prosessioikeus", "Oikeudellinen kirjoittaminen", "Tutkimus", "Neuvottelutaidot"],
+    skillsSoft: ["Analyyttisyys", "Tarkkuus", "Argumentointi", "Eettisyys", "Asiakaspalvelu", "Paineensietokyky"],
+    dailyTasks: [
+      "Asiakkaiden neuvonta oikeudellisissa kysymyksissä",
+      "Sopimusten laatiminen ja tarkistaminen",
+      "Oikeudellisten asiakirjojen valmistelu",
+      "Oikeuskäsittelyihin valmistautuminen",
+      "Neuvottelut vastapuolen kanssa",
+      "Lainsäädännön seuranta",
+      "Oikeudellinen tutkimus"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Yliopisto – Oikeustiede (OTM)",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["asianajaja", "verokonsultti", "hr-paallikkö"]
+  },
+  {
+    slug: "valokuvaaja",
+    title: "Valokuvaaja",
+    summary: "Ottaa ammattimaisia valokuvia eri tarkoituksiin.",
+    longDescription: "Valokuvaaja ikuistaa hetkiä ja luo visuaalisia sisältöjä ammattimaisesti. Työ sisältää kuvausprojektien suunnittelua, kuvausten toteuttamista ja kuvien jälkikäsittelyä. Valokuvaaja voi erikoistua esimerkiksi muotokuviin, tapahtumiin, mainosvalokuvaukseen tai dokumentaariseen kuvaukseen.",
+    salaryMin: 2200,
+    salaryMax: 5000,
+    outlook: "Vakaa",
+    educationLevel: ["AMK", "Lyhytkoulutus"],
+    industry: ["Media", "Palveluala"],
+    personalityType: ["Luova"],
+    workMode: "Hybrid",
+    skillsHard: ["Kameratekniikka", "Valaisu", "Kuvankäsittely (Lightroom, Photoshop)", "Studiotekniikka", "Sommittelu", "Videokuvaus"],
+    skillsSoft: ["Luovuus", "Asiakaspalvelu", "Yrittäjähenkisyys", "Tarkkuus", "Kommunikaatio", "Ajanhallinta"],
+    dailyTasks: [
+      "Kuvausprojektien suunnittelu",
+      "Kuvausten toteuttaminen eri kohteissa",
+      "Kuvien jälkikäsittely ja editointi",
+      "Asiakaskommunikaatio",
+      "Kaluston huolto",
+      "Portfolio päivitys",
+      "Markkinointi ja asiakashankinta"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Valokuvaus",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "Valokuvauksen ammattitutkinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["videokuvaaja", "graafinen-suunnittelija", "toimittaja"]
+  },
+  {
+    slug: "parturi-kampaaja",
+    title: "Parturi-kampaaja",
+    summary: "Leikkaa ja muotoilee hiuksia sekä hoitaa hiuspohjaa.",
+    longDescription: "Parturi-kampaaja leikkaa, värjää ja muotoilee asiakkaiden hiuksia. Työ sisältää hiusten hoitoa, tyylineuvontaa ja erilaisten hiuskäsittelyjen toteuttamista. Parturi-kampaaja työskentelee usein kampaamossa tai omassa yrityksessä.",
+    salaryMin: 2000,
+    salaryMax: 3500,
+    outlook: "Vakaa",
+    educationLevel: ["Oppisopimus", "Toinen aste"],
+    industry: ["Palveluala", "Hyvinvointi"],
+    personalityType: ["Luova", "Auttaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Hiustenleikkaustekniikat", "Värjäystekniikat", "Permanentti", "Hiustenhoidon tuotteet", "Hiuspohjan hoito", "Parturointi"],
+    skillsSoft: ["Asiakaspalvelu", "Luovuus", "Sosiaalisuus", "Tarkkuus", "Hygienia", "Kuunteleminen"],
+    dailyTasks: [
+      "Asiakkaiden vastaanotto ja konsultointi",
+      "Hiusten leikkaus ja muotoilu",
+      "Värjäykset ja raidoitukset",
+      "Hiusten hoitokäsittelyt",
+      "Työpisteiden siivous ja hygienia",
+      "Ajanvarausten hallinta",
+      "Tuotteiden myynti ja suosittelu"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Parturi-kampaajan perustutkinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["kosmetologi", "meikkaaja"]
+  },
+  {
+    slug: "sahkoasentaja",
+    title: "Sähköasentaja",
+    summary: "Asentaa ja huoltaa sähköjärjestelmiä.",
+    longDescription: "Sähköasentaja asentaa, huoltaa ja korjaa sähköjärjestelmiä rakennuksissa ja teollisuudessa. Työ sisältää johdotuksia, keskusten asennusta, vianetsintää ja sähköturvallisuuden varmistamista. Sähköasentaja työskentelee uudisrakennuskohteissa, saneerauksissa ja teollisuuslaitoksissa.",
+    salaryMin: 2800,
+    salaryMax: 4200,
+    outlook: "Kasvaa",
+    educationLevel: ["Oppisopimus", "Toinen aste"],
+    industry: ["Rakentaminen", "Teknologia"],
+    personalityType: ["Rakentaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Sähköasennukset", "Kytkentäkaaviot", "Mittalaitteet", "Sähköturvallisuus", "PLC-ohjelmointi", "Vianetsintä"],
+    skillsSoft: ["Tarkkuus", "Ongelmanratkaisu", "Turvallisuustietoisuus", "Itsenäinen työskentely", "Fyysinen kunto", "Asiakaspalvelu"],
+    dailyTasks: [
+      "Sähköasennusten suorittaminen",
+      "Kaapelointi ja johdotus",
+      "Sähkökeskusten asennus",
+      "Vikojen etsintä ja korjaus",
+      "Sähkötarkastukset",
+      "Dokumentointi",
+      "Asiakasneuvonta"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Sähköasentajan perustutkinto",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "Sähköalan ammattitutkinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["automaatioinsinööri", "lvi-asentaja", "rakennusinsinööri"]
+  },
+  {
+    slug: "lvi-asentaja",
+    title: "LVI-asentaja",
+    summary: "Asentaa lämmitys-, vesi- ja ilmastointijärjestelmiä.",
+    longDescription: "LVI-asentaja asentaa ja huoltaa rakennusten lämmitys-, vesi- ja ilmastointijärjestelmiä. Työ sisältää putkistojen asennusta, lämmitysjärjestelmien rakentamista ja ilmanvaihtokanavien asentamista. LVI-asentaja varmistaa rakennusten sisäilman laadun ja energiatehokkuuden.",
+    salaryMin: 2700,
+    salaryMax: 4000,
+    outlook: "Kasvaa",
+    educationLevel: ["Oppisopimus", "Toinen aste"],
+    industry: ["Rakentaminen"],
+    personalityType: ["Rakentaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Putkiasennus", "Hitsaus", "LVI-piirustukset", "Lämpöpumppujärjestelmät", "Ilmastointitekniikka", "Vianetsintä"],
+    skillsSoft: ["Tarkkuus", "Fyysinen kunto", "Ongelmanratkaisu", "Itsenäinen työskentely", "Asiakaspalvelu", "Turvallisuustietoisuus"],
+    dailyTasks: [
+      "Putkistojen asennus",
+      "Lämmitysjärjestelmien rakentaminen",
+      "Ilmastointilaitteiden asennus",
+      "Huolto- ja korjaustyöt",
+      "Vianetsintä",
+      "Työn dokumentointi",
+      "Asiakaspalvelu"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "LVI-asentajan perustutkinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["sahkoasentaja", "rakennusinsinööri", "kiinteistönhoitaja"]
+  },
+  {
+    slug: "kuljettaja",
+    title: "Kuljettaja",
+    summary: "Kuljettaa tavaroita tai matkustajia ammattimaisesti.",
+    longDescription: "Kuljettaja vastaa tavaroiden tai matkustajien turvallisesta kuljetuksesta. Työ sisältää ajoneuvon kuljettamista, reittisuunnittelua, kuorman käsittelyä ja aikatauluissa pysymistä. Kuljettaja voi työskennellä rekka-auton, linja-auton tai taksin ratissa.",
+    salaryMin: 2400,
+    salaryMax: 3800,
+    outlook: "Vakaa",
+    educationLevel: ["Oppisopimus", "Lyhytkoulutus"],
+    industry: ["Liikenne", "Palveluala"],
+    personalityType: ["Rakentaja", "Järjestäjä"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Ammattiajokortti", "Ajopiirturi", "Kuorman sidonta", "Reittisuunnittelu", "ADR-lupa (vaaralliset aineet)", "Kaluston huolto"],
+    skillsSoft: ["Vastuullisuus", "Aikatauluissa pysyminen", "Asiakaspalvelu", "Stressinsieto", "Itsenäinen työskentely", "Turvallisuustietoisuus"],
+    dailyTasks: [
+      "Ajoneuvon ajaminen",
+      "Kuorman lastaus ja purku",
+      "Reittisuunnittelu",
+      "Ajopäiväkirjan täyttö",
+      "Ajoneuvon tarkistukset",
+      "Asiakaspalvelu toimituksissa",
+      "Aikataulujen noudattaminen"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Logistiikan perustutkinto",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "Kuljetusalan ammattitutkinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["varastotyöntekijä", "logistiikkakoordinaattori", "lentäjä"]
+  },
+  {
+    slug: "vartija",
+    title: "Vartija",
+    summary: "Valvoo ja suojelee kohteita ja ihmisiä.",
+    longDescription: "Vartija vastaa kohteiden, tapahtumien ja ihmisten turvallisuudesta. Työ sisältää vartiointia, kulunvalvontaa, hälytystehtäviä ja turvallisuustarkastuksia. Vartija työskentelee kauppakeskuksissa, yrityksissä, tapahtumissa ja julkisissa tiloissa.",
+    salaryMin: 2200,
+    salaryMax: 3200,
+    outlook: "Kasvaa",
+    educationLevel: ["Lyhytkoulutus", "Oppisopimus"],
+    industry: ["Turvallisuus", "Palveluala"],
+    personalityType: ["Järjestäjä", "Auttaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Vartijakortti", "Turvallisuustekniikka", "Ensiapu", "Voimankäyttö", "Paloturvallisuus", "Valvontajärjestelmät"],
+    skillsSoft: ["Tarkkaavaisuus", "Rauhallisuus", "Asiakaspalvelu", "Paineensietokyky", "Kommunikaatio", "Fyysinen kunto"],
+    dailyTasks: [
+      "Kohteiden valvonta ja partiointi",
+      "Kulunvalvonta",
+      "Hälytystehtäviin reagointi",
+      "Asiakaspalvelu ja opastus",
+      "Turvallisuustarkastukset",
+      "Raportointi ja dokumentointi",
+      "Yhteistyö viranomaisten kanssa"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Turvallisuusalan perustutkinto",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "Vartijan ammattitutkinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["poliisi", "turvallisuusvastaava"]
+  },
+  {
+    slug: "personal-trainer",
+    title: "Personal trainer",
+    summary: "Ohjaa asiakkaita henkilökohtaisessa liikuntaharjoittelussa.",
+    longDescription: "Personal trainer suunnittelee ja ohjaa yksilöllisiä harjoitusohjelmia asiakkaille. Työ sisältää kunto-ohjelmien laatimista, harjoitusten ohjaamista, motivointia ja ravintoneuvontaa. Personal trainer auttaa asiakkaita saavuttamaan terveys- ja kuntoilutavoitteensa.",
+    salaryMin: 2000,
+    salaryMax: 4500,
+    outlook: "Kasvaa",
+    educationLevel: ["Lyhytkoulutus", "AMK"],
+    industry: ["Hyvinvointi", "Palveluala"],
+    personalityType: ["Auttaja", "Johtaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Liikuntafysiologia", "Ravitsemustieto", "Harjoitusohjelmointi", "Kehonkoostumuksen mittaus", "Ensiapu", "Liikkuvuusharjoittelu"],
+    skillsSoft: ["Motivointi", "Asiakaspalvelu", "Kommunikaatio", "Empatia", "Yrittäjähenkisyys", "Innostuneisuus"],
+    dailyTasks: [
+      "Asiakkaiden harjoitusten ohjaaminen",
+      "Harjoitusohjelmien suunnittelu",
+      "Kuntotestien tekeminen",
+      "Ravintoneuvonta",
+      "Asiakkaiden motivointi ja tukeminen",
+      "Edistymisen seuranta",
+      "Uusasiakashankinta ja markkinointi"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Liikuntaneuvoja-koulutus",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "Personal trainer -sertifikaatti",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["fysioterapeutti", "urheiluvalmentaja", "ravitsemusterapeutti"]
+  },
+  {
+    slug: "maanviljelia",
+    title: "Maanviljelijä",
+    summary: "Viljelee maata ja kasvattaa eläimiä.",
+    longDescription: "Maanviljelijä vastaa maatilan toiminnasta ja tuotannosta. Työ sisältää peltojen viljelyä, kotieläinten hoitoa, koneiden käyttöä ja maatilan johtamista. Maanviljelijä tuottaa ruokaa suomalaisille ja voi erikoistua esimerkiksi viljanviljelyyn, karjanhoitoon tai luomutuotantoon.",
+    salaryMin: 2000,
+    salaryMax: 4500,
+    outlook: "Vakaa",
+    educationLevel: ["Oppisopimus", "AMK"],
+    industry: ["Ympäristö", "Liiketalous"],
+    personalityType: ["Rakentaja", "Ympäristön Puolustaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Maatalouskoneet", "Kasvinviljely", "Kotieläinten hoito", "Maatalouden tukijärjestelmät", "Yrittäjyys", "Metsänhoito"],
+    skillsSoft: ["Itsenäisyys", "Ongelmanratkaisu", "Fyysinen kestävyys", "Pitkäjänteisyys", "Luonnon kunnioitus", "Yrittäjähenkisyys"],
+    dailyTasks: [
+      "Eläinten hoito ja ruokinta",
+      "Peltotöiden suunnittelu ja toteutus",
+      "Koneiden huolto ja käyttö",
+      "Sadon korjuu ja varastointi",
+      "Tilan talouden hoito",
+      "Tukihakemusten täyttö",
+      "Tuotteiden myynti ja markkinointi"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Maatalousalan perustutkinto",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "AMK – Agrologi",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["agrologi", "eläintenhoitaja", "metsuri"]
+  },
+  {
+    slug: "luontokuvaaja",
+    title: "Luontokuvaaja",
+    summary: "Kuvaa luontoa ja eläimiä dokumentaarisesti.",
+    longDescription: "Luontokuvaaja ikuistaa luontoa, eläimiä ja maisemia ammattimaisesti. Työ sisältää maastotyöskentelyä, eläinten käyttäytymisen tarkkailua ja kuvien käsittelyä. Luontokuvaaja työskentelee usein freelancerina ja myy töitään lehdille, kirjoille ja dokumenteille.",
+    salaryMin: 2000,
+    salaryMax: 5000,
+    outlook: "Vakaa",
+    educationLevel: ["AMK", "Lyhytkoulutus"],
+    industry: ["Media", "Ympäristö"],
+    personalityType: ["Luova", "Ympäristön Puolustaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Kameratekniikka", "Luonnon tuntemus", "Kuvankäsittely", "Eläinkäyttäytyminen", "Maastonavigaatio", "Videokuvaus"],
+    skillsSoft: ["Kärsivällisyys", "Luovuus", "Itsenäisyys", "Yrittäjähenkisyys", "Fyysinen kestävyys", "Luonnon kunnioitus"],
+    dailyTasks: [
+      "Luontokuvausten suunnittelu ja toteutus",
+      "Maastotyöskentely eri sääolosuhteissa",
+      "Eläinten tarkkaaminen ja odottaminen",
+      "Kuvien käsittely ja valinta",
+      "Kuvien myynti ja markkinointi",
+      "Kaluston huolto",
+      "Luonnon dokumentointi"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Valokuvaus",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["valokuvaaja", "luonnonvarojen-hoitaja", "dokumentaristi"]
+  },
+  {
+    slug: "ymparistoinsinoori",
+    title: "Ympäristöinsinööri",
+    summary: "Suunnittelee ympäristöystävällisiä teknisiä ratkaisuja.",
+    longDescription: "Ympäristöinsinööri kehittää teknisiä ratkaisuja ympäristöongelmiin. Työ sisältää jäteveden käsittelyä, ilmanlaadun parantamista, kierrätyksen tehostamista ja kestävän kehityksen projekteja. Ympäristöinsinööri yhdistää teknisen osaamisen ympäristötietoisuuteen.",
+    salaryMin: 3500,
+    salaryMax: 6000,
+    outlook: "Kasvaa",
+    educationLevel: ["Yliopisto", "AMK"],
+    industry: ["Teknologia", "Ympäristö"],
+    personalityType: ["Innovoija", "Ympäristön Puolustaja"],
+    workMode: "Hybrid",
+    skillsHard: ["Ympäristötekniikka", "Jätevesien käsittely", "Päästömittaukset", "CAD-suunnittelu", "Ympäristölainsäädäntö", "Data-analyysi"],
+    skillsSoft: ["Ongelmanratkaisu", "Analyyttisyys", "Projektinhallinta", "Kommunikaatio", "Ympäristötietoisuus", "Tiimityö"],
+    dailyTasks: [
+      "Ympäristöprojektien suunnittelu",
+      "Päästömittaukset ja analysointi",
+      "Ympäristölupahakemusten valmistelu",
+      "Asiakkaiden konsultointi",
+      "Teknisten ratkaisujen kehittäminen",
+      "Viranomaisyhteistyö",
+      "Raportointi ja dokumentointi"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Ympäristötekniikka",
+        url: "https://opintopolku.fi/"
+      },
+      {
+        label: "Yliopisto – Ympäristötekniikka",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["ympäristöasiantuntija", "insinööri", "kestävän-kehityksen-konsultti"]
+  },
+  {
+    slug: "luomutuottaja",
+    title: "Luomutuottaja",
+    summary: "Tuottaa luonnonmukaisia elintarvikkeita.",
+    longDescription: "Luomutuottaja viljelee ja tuottaa luonnonmukaisia elintarvikkeita ilman keinotekoisia lannoitteita ja torjunta-aineita. Työ sisältää luomuviljelyn suunnittelua, eläinten hyvinvoinnista huolehtimista ja tuotteiden markkinointia. Luomutuottaja edistää kestävää ruoantuotantoa.",
+    salaryMin: 2000,
+    salaryMax: 4500,
+    outlook: "Kasvaa",
+    educationLevel: ["Oppisopimus", "AMK"],
+    industry: ["Ympäristö"],
+    personalityType: ["Rakentaja", "Ympäristön Puolustaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Luomuviljely", "Eläintenhoito", "Maatalouskoneet", "Luomusertifiointi", "Liiketoiminta", "Markkinointi"],
+    skillsSoft: ["Kärsivällisyys", "Yrittäjähenkisyys", "Luonnon kunnioitus", "Fyysinen kestävyys", "Ongelmanratkaisu", "Pitkäjänteisyys"],
+    dailyTasks: [
+      "Luomuviljan ja -kasvisten hoito",
+      "Eläinten hyvinvoinnin varmistaminen",
+      "Luomusertifioinnin ylläpito",
+      "Tuotteiden myynti ja markkinointi",
+      "Tilan talouden hallinta",
+      "Koneiden huolto",
+      "Asiakassuhteiden hoito"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Maatalousalan perustutkinto",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["maanviljelia", "eläintenhoitaja", "yrittaja"]
+  },
+  {
+    slug: "tulevaisuustutkija",
+    title: "Tulevaisuustutkija",
+    summary: "Analysoi ja ennustaa yhteiskunnan kehityssuuntia.",
+    longDescription: "Tulevaisuustutkija analysoi trendejä ja ennustaa yhteiskunnan, teknologian ja liiketoiminnan kehityssuuntia. Työ sisältää tutkimusta, skenaarioiden laatimista ja organisaatioiden neuvontaa strategisissa päätöksissä. Tulevaisuustutkija auttaa yrityksiä ja yhteisöjä varautumaan muutoksiin.",
+    salaryMin: 4000,
+    salaryMax: 7000,
+    outlook: "Kasvaa",
+    educationLevel: ["Yliopisto"],
+    industry: ["Teknologia", "Liiketalous"],
+    personalityType: ["Visionääri", "Innovoija"],
+    workMode: "Hybrid",
+    skillsHard: ["Tulevaisuudentutkimus", "Skenaarioanalyysi", "Trendianalyysi", "Data-analyysi", "Tutkimusmenetelmät", "Strateginen suunnittelu"],
+    skillsSoft: ["Luovuus", "Analyyttisyys", "Viestintä", "Kriittinen ajattelu", "Uteliaisuus", "Verkostoituminen"],
+    dailyTasks: [
+      "Trendien ja signaalien seuranta",
+      "Tulevaisuusskenaarioiden laatiminen",
+      "Tutkimusten ja raporttien kirjoittaminen",
+      "Asiakkaiden strateginen neuvonta",
+      "Työpajojen ja seminaarien fasilitointi",
+      "Verkostoituminen asiantuntijoiden kanssa",
+      "Ennakointityön koordinointi"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Yliopisto – Tulevaisuudentutkimus",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["strategiakonsultti", "tutkija", "analyytikko"]
+  },
+  {
+    slug: "kansainvalinen-koordinaattori",
+    title: "Kansainvälinen koordinaattori",
+    summary: "Koordinoi kansainvälisiä projekteja ja yhteistyötä.",
+    longDescription: "Kansainvälinen koordinaattori vastaa kansainvälisten hankkeiden ja yhteistyön koordinoinnista. Työ sisältää kulttuurien välistä kommunikaatiota, projektinhallintaa ja verkostojen rakentamista eri maiden välillä. Työ voi olla esimerkiksi vaihto-ohjelmien tai kehitysyhteistyöhankkeiden parissa.",
+    salaryMin: 3200,
+    salaryMax: 5500,
+    outlook: "Kasvaa",
+    educationLevel: ["Yliopisto", "AMK"],
+    industry: ["Palveluala", "Koulutus"],
+    personalityType: ["Visionääri", "Johtaja"],
+    workMode: "Hybrid",
+    skillsHard: ["Projektinhallinta", "Kielitaito", "Kulttuurituntemus", "Budjetointi", "Raportointi", "EU-rahoitusohjelmat"],
+    skillsSoft: ["Kulttuurien välinen viestintä", "Diplomaattisuus", "Verkostoituminen", "Joustavuus", "Organisointikyky", "Empatia"],
+    dailyTasks: [
+      "Kansainvälisten projektien koordinointi",
+      "Yhteydenpito ulkomaisiin kumppaneihin",
+      "Vaihto-ohjelmien järjestäminen",
+      "Raportointi ja dokumentointi",
+      "Budjettien hallinta",
+      "Tapahtumien järjestäminen",
+      "Kulttuurien välinen neuvonta"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Yliopisto – Kansainväliset suhteet",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["projektipäällikkö", "diplomaatti", "kielenkääntäjä"]
+  },
+  {
+    slug: "startup-neuvoja",
+    title: "Startup-neuvoja",
+    summary: "Neuvoo ja mentoroi startup-yrittäjiä.",
+    longDescription: "Startup-neuvoja auttaa uusia yrittäjiä kehittämään liikeideaansa ja kasvattamaan yritystään. Työ sisältää mentorointia, liiketoimintamallin kehittämistä, rahoituksen hankkimista ja verkostojen rakentamista. Startup-neuvoja työskentelee usein hautomossa, kiihdyttämössä tai konsulttina.",
+    salaryMin: 3500,
+    salaryMax: 7000,
+    outlook: "Kasvaa",
+    educationLevel: ["Yliopisto", "AMK"],
+    industry: ["Liiketalous", "Teknologia"],
+    personalityType: ["Visionääri", "Johtaja"],
+    workMode: "Hybrid",
+    skillsHard: ["Liiketoiminnan kehitys", "Rahoituksen hankinta", "Pitch-valmennus", "Markkinatutkimus", "Juridinen perusteet", "Verkostoituminen"],
+    skillsSoft: ["Mentorointi", "Motivointi", "Verkostoituminen", "Kärsivällisyys", "Empatia", "Innostavuus"],
+    dailyTasks: [
+      "Startup-yrittäjien mentorointi",
+      "Liiketoimintamallien sparraus",
+      "Pitch-esitysten valmennus",
+      "Sijoittajayhteyksien luominen",
+      "Työpajojen ja koulutusten pitäminen",
+      "Verkostoitumistapahtumien järjestäminen",
+      "Yritysten edistymisen seuranta"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Yliopisto – Kauppatieteet",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["yrittaja", "konsultti", "sijoittaja"]
+  },
+  {
+    slug: "elamantapavalmentaja",
+    title: "Elämäntapavalmentaja",
+    summary: "Auttaa asiakkaita saavuttamaan henkilökohtaisia tavoitteita.",
+    longDescription: "Elämäntapavalmentaja eli life coach auttaa asiakkaita selkeyttämään tavoitteitaan ja saavuttamaan muutoksia elämässään. Työ sisältää henkilökohtaista valmennusta, motivointia ja työkaluja itsetuntemuksen kehittämiseen. Elämäntapavalmentaja työskentelee usein yrittäjänä.",
+    salaryMin: 2500,
+    salaryMax: 6000,
+    outlook: "Kasvaa",
+    educationLevel: ["Lyhytkoulutus", "AMK"],
+    industry: ["Hyvinvointi", "Palveluala"],
+    personalityType: ["Auttaja", "Visionääri"],
+    workMode: "Hybrid",
+    skillsHard: ["Coaching-menetelmät", "Tavoitteenasettelu", "NLP", "Psykologian perusteet", "Yrittäjyys", "Markkinointi"],
+    skillsSoft: ["Empatia", "Kuunteleminen", "Motivointi", "Intuitio", "Luottamuksellisuus", "Innostavuus"],
+    dailyTasks: [
+      "Asiakkaiden yksilövalmennukset",
+      "Tavoitteiden asettaminen ja seuranta",
+      "Ryhmävalmennusten pitäminen",
+      "Webinaarien ja kurssien luominen",
+      "Asiakassuhteiden hoito",
+      "Oman osaamisen kehittäminen",
+      "Markkinointi ja asiakashankinta"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "Coach-sertifikaatti (ICF)",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["personal-trainer", "terapeutti", "työnohjaaja"]
+  },
+  {
+    slug: "kierratyskeskuksen-paallikkö",
+    title: "Kierrätyskeskuksen päällikkö",
+    summary: "Johtaa kierrätyskeskuksen toimintaa.",
+    longDescription: "Kierrätyskeskuksen päällikkö vastaa kierrätyskeskuksen päivittäisestä toiminnasta ja kehittämisestä. Työ sisältää henkilöstön johtamista, kierrätystoiminnan organisointia ja ympäristökasvatusta. Kierrätyskeskus edistää kiertotaloutta ja tarjoaa kunnostettuja tuotteita.",
+    salaryMin: 2800,
+    salaryMax: 4500,
+    outlook: "Kasvaa",
+    educationLevel: ["AMK", "Oppisopimus"],
+    industry: ["Ympäristö", "Palveluala"],
+    personalityType: ["Ympäristön Puolustaja", "Johtaja"],
+    workMode: "Paikan päällä",
+    skillsHard: ["Kierrätys ja kiertotalous", "Henkilöstöjohtaminen", "Logistiikka", "Budjetointi", "Ympäristölainsäädäntö", "Asiakaspalvelu"],
+    skillsSoft: ["Johtaminen", "Organisointikyky", "Ympäristötietoisuus", "Tiimityö", "Viestintä", "Ongelmanratkaisu"],
+    dailyTasks: [
+      "Päivittäisten toimintojen johtaminen",
+      "Henkilöstön koordinointi ja koulutus",
+      "Kierrätysmateriaalien lajittelu ja ohjaus",
+      "Yhteistyö kuntien ja yritysten kanssa",
+      "Ympäristökasvatustapahtumat",
+      "Budjetin hallinta",
+      "Toiminnan kehittäminen"
+    ],
+    opintopolkuLinks: [
+      {
+        label: "AMK – Ympäristöala",
+        url: "https://opintopolku.fi/"
+      }
+    ],
+    relatedSlugs: ["kiertotalousasiantuntija", "ympäristöasiantuntija", "varastopäällikkö"]
   }
 ];
 
@@ -3331,7 +3744,7 @@ export const filterOptions = {
   ],
   personalityType: [
     "Luova", "Johtaja", "Innovoija", "Rakentaja", "Auttaja", 
-    "Ympäristön puolustaja", "Visionääri", "Järjestäjä"
+    "Ympäristön Puolustaja", "Visionääri", "Järjestäjä"
   ],
   workMode: [
     "Etä", "Paikan päällä", "Hybrid"
