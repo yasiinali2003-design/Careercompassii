@@ -452,15 +452,15 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     notes: "Security/rescue sector"
   },
 
-  // Q8: Transport/Logistics
+  // Q8: Transport/Logistics - Changed from hands_on to organization (logistics = coordination)
   {
     q: 8,
     text: "Kiinnostaako sinua kuljettajan työ tai logistiikka?",
     dimension: 'interests',
-    subdimension: 'hands_on',
+    subdimension: 'organization',
     weight: 1.1,
     reverse: false,
-    notes: "Transport/logistics"
+    notes: "Transport/logistics - involves coordination and organization"
   },
 
   // Q9: Sales/Retail
@@ -529,15 +529,15 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     notes: "Social work"
   },
 
-  // Q15: Physical work preference
+  // Q15: Physical work preference - Changed to outdoor (physical work often outdoor)
   {
     q: 15,
     text: "Haluaisitko työn jossa liikut ja teet fyysistä työtä?",
     dimension: 'workstyle',
-    subdimension: 'hands_on',
+    subdimension: 'outdoor',
     weight: 1.1,
     reverse: false,
-    notes: "Physical work preference - 5=physical"
+    notes: "Physical/active work preference - 5=active/outdoor"
   },
 
   // Q16: Shift work
@@ -824,24 +824,15 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     notes: "Legal sector"
   },
 
-  // Q8: Sales/Marketing - DUAL: business + leadership
+  // Q8: Sales/Marketing - business focus (removed leadership dual to reduce redundancy)
   {
     q: 8,
     text: "Kiinnostaako sinua myynti, markkinointi tai brändin rakentaminen?",
     dimension: 'interests',
     subdimension: 'business',
-    weight: 1.4,
+    weight: 1.5,
     reverse: false,
-    notes: "Sales/marketing"
-  },
-  {
-    q: 8,
-    text: "Kiinnostaako sinua myynti, markkinointi tai brändin rakentaminen?",
-    dimension: 'interests',
-    subdimension: 'leadership',
-    weight: 1.0,
-    reverse: false,
-    notes: "Sales/marketing - leadership aspect"
+    notes: "Sales/marketing - business focus"
   },
 
   // Q9: Research/Science
@@ -906,24 +897,24 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     notes: "Remote work preference"
   },
 
-  // Q13: Management aspiration - DUAL: leadership + business
+  // Q13: Management aspiration - DUAL: leadership + growth (reduced redundancy)
   {
     q: 13,
-    text: "Näetkö itsesi esimiehenä tai tiiminvetäjänä tulevaisuudessa?",
+    text: "Haluatko johtaa ihmisiä ja vastata tiimin tuloksista?",
     dimension: 'workstyle',
     subdimension: 'leadership',
     weight: 1.6,
     reverse: false,
-    notes: "Management aspiration"
+    notes: "Management aspiration - rephrased for clarity"
   },
   {
     q: 13,
-    text: "Näetkö itsesi esimiehenä tai tiiminvetäjänä tulevaisuudessa?",
-    dimension: 'interests',
-    subdimension: 'leadership',
-    weight: 1.4,
+    text: "Haluatko johtaa ihmisiä ja vastata tiimin tuloksista?",
+    dimension: 'values',
+    subdimension: 'growth',
+    weight: 1.2,
     reverse: false,
-    notes: "Management - interest aspect"
+    notes: "Management - career growth aspect"
   },
 
   // Q14: Team preference - people oriented
@@ -1023,13 +1014,13 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     notes: "Balance priority"
   },
 
-  // Q22: Career advancement - DUAL: advancement + leadership
+  // Q22: Career advancement - DUAL: advancement + performance (removed leadership redundancy)
   {
     q: 22,
     text: "Haluatko edetä urallasi nopeasti ja saada vastuuta?",
     dimension: 'values',
     subdimension: 'advancement',
-    weight: 1.3,
+    weight: 1.4,
     reverse: false,
     notes: "Career growth"
   },
@@ -1037,10 +1028,10 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     q: 22,
     text: "Haluatko edetä urallasi nopeasti ja saada vastuuta?",
     dimension: 'workstyle',
-    subdimension: 'leadership',
+    subdimension: 'performance',
     weight: 1.0,
     reverse: false,
-    notes: "Career growth - leadership aspect"
+    notes: "Career growth - performance/ambition aspect"
   },
 
   // Q23: Social impact - CRITICAL for auttaja

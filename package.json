@@ -10,7 +10,11 @@
     "lint": "next lint",
     "test": "npx ts-node --compiler-options '{\"module\":\"commonjs\"}' -r tsconfig-paths/register test-career-ranking.ts && node test-todistuspiste-calculation.js && node test-todistuspiste-complete.js",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui"
+    "test:e2e:ui": "playwright test --ui",
+    "test:qa": "node tests/run-all-tests.js",
+    "test:qa:api": "node tests/run-all-tests.js --api",
+    "test:qa:full": "node tests/run-all-tests.js --all --report",
+    "test:personas": "node tests/run-all-tests.js --api"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

@@ -1516,7 +1516,15 @@ function determineDominantCategory(
                                       // NEW: Strong people + high growth + moderate health (Iida: Q9=5, Q12=5, Q5=4)
                                       (ylaPeople >= 0.8 && ylaGrowth >= 0.8 && ylaHealth >= 0.5);
 
-    // 5. Strong leader profile (should NOT trigger for tech-focused OR creative profiles OR organizer profiles)
+    // 5. Define organizer signals FIRST (needed for leader profile check)
+    // Strong organizer/järjestäjä profile (Sofia: organization=5, precision=5, analytical=4)
+    // Key signals: high organization + high precision
+    // FIXED: Emma (organized student) should be järjestäjä, not johtaja
+    // The key distinction: järjestäjä = organization-focused, johtaja = people-leadership focused
+    const ylaOrganization = (workstyle.organization || 0);
+    const ylaPrecision = (workstyle.precision || 0);
+
+    // 6. Strong leader profile (should NOT trigger for tech-focused OR creative profiles OR organizer profiles)
     // FIXED: Exclude creative performers from becoming johtaja
     // ALSO FIXED: Exclude organized people like Emma who have high org+precision
     // Emma has leadership=0.75, business=0.5 which would trigger johtaja
@@ -1524,13 +1532,6 @@ function determineDominantCategory(
     const hasStrongOrganizerSignals = (ylaOrganization >= 0.8 && ylaPrecision >= 0.8);
     const isYLAStrongLeaderProfile = (ylaLeadership >= 0.7 && ylaBusiness >= 0.5 && ylaTech < 0.5 &&
                                        !creativeOverridesLeadership && !hasStrongOrganizerSignals);
-
-    // 6. Strong organizer/järjestäjä profile (Sofia: organization=5, precision=5, analytical=4)
-    // Key signals: high organization + high precision
-    // FIXED: Emma (organized student) should be järjestäjä, not johtaja
-    // The key distinction: järjestäjä = organization-focused, johtaja = people-leadership focused
-    const ylaOrganization = (workstyle.organization || 0);
-    const ylaPrecision = (workstyle.precision || 0);
     const organizerStrengthYLA = ylaOrganization + ylaPrecision * 0.9 + ylaAnalytical * 0.7;
 
     console.log(`[YLA ORGANIZER DEBUG] org=${ylaOrganization.toFixed(3)}, precision=${ylaPrecision.toFixed(3)}, analytical=${ylaAnalytical.toFixed(3)}, organizerStrength=${organizerStrengthYLA.toFixed(3)}`);
