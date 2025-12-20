@@ -375,7 +375,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     notes: "Software/IT careers"
   },
 
-  // Q1: Healthcare
+  // Q1: Healthcare - DUAL: health + people (caring involves people skills)
   {
     q: 1,
     text: "Haluaisitko hoitaa sairaita tai vanhuksia?",
@@ -383,7 +383,16 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     subdimension: 'health',
     weight: 1.4,
     reverse: false,
-    notes: "Healthcare/nursing"
+    notes: "Healthcare/nursing - primary health signal"
+  },
+  {
+    q: 1,
+    text: "Haluaisitko hoitaa sairaita tai vanhuksia?",
+    dimension: 'interests',
+    subdimension: 'people',
+    weight: 1.0,
+    reverse: false,
+    notes: "Healthcare/nursing - caring involves people skills"
   },
 
   // Q2: Construction
@@ -430,7 +439,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     notes: "Beauty/hairdressing"
   },
 
-  // Q6: Childcare
+  // Q6: Childcare - DUAL: people + health (child development/wellbeing)
   {
     q: 6,
     text: "Kiinnostaako sinua pienten lasten hoito ja kasvatus?",
@@ -438,10 +447,19 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     subdimension: 'people',
     weight: 1.3,
     reverse: false,
-    notes: "Childcare/early education"
+    notes: "Childcare/early education - primary people signal"
+  },
+  {
+    q: 6,
+    text: "Kiinnostaako sinua pienten lasten hoito ja kasvatus?",
+    dimension: 'interests',
+    subdimension: 'health',
+    weight: 0.9,
+    reverse: false,
+    notes: "Childcare - child development and wellbeing aspect"
   },
 
-  // Q7: Security
+  // Q7: Security - DUAL: leadership + people (protecting and helping others)
   {
     q: 7,
     text: "Haluaisitko työskennellä turvallisuus- tai pelastusalalla?",
@@ -449,7 +467,16 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     subdimension: 'leadership',
     weight: 1.1,
     reverse: false,
-    notes: "Security/rescue sector"
+    notes: "Security/rescue sector - responsibility and leadership"
+  },
+  {
+    q: 7,
+    text: "Haluaisitko työskennellä turvallisuus- tai pelastusalalla?",
+    dimension: 'interests',
+    subdimension: 'people',
+    weight: 0.9,
+    reverse: false,
+    notes: "Security/rescue - protecting and helping people"
   },
 
   // Q8: Transport/Logistics - Changed from hands_on to organization (logistics = coordination)
@@ -463,7 +490,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     notes: "Transport/logistics - involves coordination and organization"
   },
 
-  // Q9: Sales/Retail
+  // Q9: Sales/Retail - DUAL: business + social (customer interaction)
   {
     q: 9,
     text: "Tykkäätkö palvella asiakkaita ja myydä tuotteita?",
@@ -471,7 +498,16 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     subdimension: 'business',
     weight: 1.2,
     reverse: false,
-    notes: "Sales/retail"
+    notes: "Sales/retail - primary business signal"
+  },
+  {
+    q: 9,
+    text: "Tykkäätkö palvella asiakkaita ja myydä tuotteita?",
+    dimension: 'workstyle',
+    subdimension: 'social',
+    weight: 1.0,
+    reverse: false,
+    notes: "Sales/retail - customer interaction aspect"
   },
 
   // Q10: Electrical
@@ -518,7 +554,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     notes: "Office/admin work"
   },
 
-  // Q14: Social work
+  // Q14: Social work - DUAL: people + health (mental/social health support)
   {
     q: 14,
     text: "Kiinnostaako sinua tukea ihmisiä vaikeissa elämäntilanteissa?",
@@ -526,7 +562,16 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     subdimension: 'people',
     weight: 1.4,
     reverse: false,
-    notes: "Social work"
+    notes: "Social work - primary people signal"
+  },
+  {
+    q: 14,
+    text: "Kiinnostaako sinua tukea ihmisiä vaikeissa elämäntilanteissa?",
+    dimension: 'interests',
+    subdimension: 'health',
+    weight: 1.0,
+    reverse: false,
+    notes: "Social work - mental and social health aspect"
   },
 
   // Q15: Physical work preference - Changed to outdoor (physical work often outdoor)
