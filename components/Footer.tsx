@@ -16,7 +16,7 @@ export function Footer() {
             </h3>
             <p className="text-sm text-slate-300 leading-relaxed">
               Suomalainen urasuunnittelun työkalu, joka auttaa nuoria
-              hahmottamaan vahvuuksiaan ja suuntautumisvaihtoehtojaan.
+              hahmottamaan vahvuuksiaan ja ammatillisia suuntautumisvaihtoehtojaan.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-10 text-sm text-slate-300 md:grid-cols-2">
@@ -36,7 +36,6 @@ export function Footer() {
               </p>
               <ul className="space-y-2.5">
                 <li>info@urakompassi.fi</li>
-                <li>Säterintie 6, 00720 Helsinki</li>
               </ul>
             </div>
           </div>

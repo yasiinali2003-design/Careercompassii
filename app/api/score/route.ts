@@ -100,7 +100,7 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    const { cohort, answers, originalIndices, shuffleKey, currentOccupation } = body as ScoringRequest & { originalIndices?: number[]; shuffleKey?: string; currentOccupation?: string };
+    const { cohort, answers, originalIndices, shuffleKey, currentOccupation, subCohort } = body as ScoringRequest & { originalIndices?: number[]; shuffleKey?: string; currentOccupation?: string; subCohort?: string };
 
     // IMPORTANT: Answers are already mapped to originalQ indices by the client
     // The client sends questionIndex as the originalQ (0-29 for YLA/TASO2/NUORI), not shuffled position
@@ -125,10 +125,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Run scoring algorithm with unshuffled answers
-    console.log(`[API] Scoring ${unshuffledAnswers.length} answers for cohort ${cohort}`, currentOccupation ? `(filtering out: ${currentOccupation})` : '');
+    // IMPORTANT: Pass subCohort to use correct question mappings for TASO2 LUKIO/AMIS
+    console.log(`[API] Scoring ${unshuffledAnswers.length} answers for cohort ${cohort}${subCohort ? ` (${subCohort})` : ''}`, currentOccupation ? `(filtering out: ${currentOccupation})` : '');
 
-    const topCareers = rankCareers(unshuffledAnswers, cohort, 5, currentOccupation);
-    const userProfile = generateUserProfile(unshuffledAnswers, cohort, currentOccupation);
+    const topCareers = rankCareers(unshuffledAnswers, cohort, 5, currentOccupation, subCohort);
+    const userProfile = generateUserProfile(unshuffledAnswers, cohort, currentOccupation, subCohort);
     
     console.log(`[API] Top career: ${topCareers[0]?.title} (${topCareers[0]?.overallScore}%)`);
     

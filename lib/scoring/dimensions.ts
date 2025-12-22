@@ -41,7 +41,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Q2: Creative - Original creation
   {
     q: 2,
-    text: "Tykkäätkö keksiä omia tarinoita, piirroksia tai musiikkia?",
+    text: "Tykkäätkö luoda omia tarinoita, piirroksia tai musiikkia?",
     dimension: 'interests',
     subdimension: 'creative',
     weight: 1.4,
@@ -96,7 +96,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Q6: Business - Selling/trading
   {
     q: 6,
-    text: "Oletko koskaan myynyt tai vaihtanut jotain kavereiden kanssa?",
+    text: "Oletko koskaan myynyt tai vaihtanut jotain kavereidesi kanssa?",
     dimension: 'interests',
     subdimension: 'business',
     weight: 1.1,
@@ -107,7 +107,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Q7: Science - Experiments
   {
     q: 7,
-    text: "Haluaisitko tehdä kokeita ja selvittää miten asiat toimivat?",
+    text: "Haluaisitko tehdä kokeita ja selvittää, miten asiat toimivat?",
     dimension: 'interests',
     subdimension: 'analytical',
     weight: 1.2,
@@ -120,7 +120,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Athletes like Onni who help teammates should get auttaja, not rakentaja
   {
     q: 8,
-    text: "Onko liikunta ja urheilu tärkeä osa elämääsi?",
+    text: "Ovatko liikunta ja urheilu tärkeä osa elämääsi?",
     dimension: 'interests',
     subdimension: 'health',
     weight: 1.3,
@@ -175,7 +175,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Q13: Leadership - Group decisions
   {
     q: 13,
-    text: "Pidätkö siitä, kun saat päättää mitä ryhmä tekee?",
+    text: "Pidätkö siitä, kun saat päättää, mitä ryhmäsi tekee?",
     dimension: 'interests',
     subdimension: 'leadership',
     weight: 1.2,
@@ -197,7 +197,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Q15: Workstyle - Team preference
   {
     q: 15,
-    text: "Tykkäätkö tehdä ryhmätöitä kavereiden kanssa?",
+    text: "Tykkäätkö tehdä ryhmätöitä muiden kanssa?",
     dimension: 'workstyle',
     subdimension: 'teamwork',
     weight: 1.0,
@@ -208,7 +208,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Q16: Workstyle - Structure
   {
     q: 16,
-    text: "Pidätkö siitä, kun tiedät tarkalleen mitä pitää tehdä?",
+    text: "Pidätkö siitä, kun tiedät tarkalleen, mitä pitää tehdä?",
     dimension: 'workstyle',
     subdimension: 'organization',
     weight: 0.9,
@@ -230,7 +230,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Q18: Workstyle - Focus
   {
     q: 18,
-    text: "Pystytkö keskittymään pitkään samaan tehtävään?",
+    text: "Pystytkö keskittymään pitkän aikaa samaan tehtävään?",
     dimension: 'workstyle',
     subdimension: 'precision',
     weight: 0.9,
@@ -307,7 +307,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Q25: Values - Recognition
   {
     q: 25,
-    text: "Haluaisitko olla tunnettu jostain erityisestä?",
+    text: "Haluaisitko olla tunnettu jostakin, missä olet erityisen hyvä?",
     dimension: 'values',
     subdimension: 'advancement',
     weight: 0.9,
@@ -329,7 +329,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Q27: Values - Own boss
   {
     q: 27,
-    text: "Haluaisitko olla oma pomosi joskus?",
+    text: "Haluaisitko joskus olla oma pomosi?",
     dimension: 'values',
     subdimension: 'entrepreneurship',
     weight: 1.2,
@@ -442,7 +442,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   // Q6: Childcare - DUAL: people + health (child development/wellbeing)
   {
     q: 6,
-    text: "Kiinnostaako sinua pienten lasten hoito ja kasvatus?",
+    text: "Kiinnostaako sinua lasten hoito ja kasvatus?",
     dimension: 'interests',
     subdimension: 'people',
     weight: 1.3,
@@ -451,7 +451,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   },
   {
     q: 6,
-    text: "Kiinnostaako sinua pienten lasten hoito ja kasvatus?",
+    text: "Kiinnostaako sinua lasten hoito ja kasvatus?",
     dimension: 'interests',
     subdimension: 'health',
     weight: 0.9,
@@ -482,7 +482,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   // Q8: Transport/Logistics - Changed from hands_on to organization (logistics = coordination)
   {
     q: 8,
-    text: "Kiinnostaako sinua kuljettajan työ tai logistiikka?",
+    text: "Kiinnostaako sinua kuljetus- tai logistiikka-ala?",
     dimension: 'interests',
     subdimension: 'organization',
     weight: 1.1,
@@ -524,7 +524,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   // Q11: Agriculture/Forestry
   {
     q: 11,
-    text: "Haluaisitko työskennellä maatalouden tai metsäalan parissa?",
+    text: "Haluaisitko työskennellä maatalous- tai metsäalalla?",
     dimension: 'interests',
     subdimension: 'environment',
     weight: 1.2,
@@ -588,7 +588,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   // Q16: Shift work
   {
     q: 16,
-    text: "Sopisivatko vuorotyöt sinulle (illat, viikonloput)?",
+    text: "Sopiiko sinulle vuorotyö (esim. ilta- ja viikonloppuvuorot)?",
     dimension: 'workstyle',
     subdimension: 'flexibility',
     weight: 0.9,
@@ -632,7 +632,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   // Q20: Teamwork
   {
     q: 20,
-    text: "Tykkäätkö työskennellä tiimissä muiden kanssa?",
+    text: "Tykkäätkö tehdä yhteistyötä muiden kanssa?",
     dimension: 'workstyle',
     subdimension: 'teamwork',
     weight: 1.0,
@@ -799,7 +799,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
   // Q3: Creative industries
   {
     q: 3,
-    text: "Haluaisitko työskennellä luovalla alalla kuten mainonta tai design?",
+    text: "Haluaisitko työskennellä luovalla alalla, kuten mainonta tai design?",
     dimension: 'interests',
     subdimension: 'creative',
     weight: 1.6,
@@ -934,7 +934,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
   // Q12: Remote work
   {
     q: 12,
-    text: "Haluaisitko tehdä töitä etänä kotoa käsin?",
+    text: "Haluaisitko tehdä etätöitä kotoa käsin?",
     dimension: 'workstyle',
     subdimension: 'independence',
     weight: 1.2,
@@ -1113,7 +1113,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
   // Q25: Learning opportunities
   {
     q: 25,
-    text: "Haluatko työn jossa opit jatkuvasti uutta?",
+    text: "Haluatko työn, jossa opit jatkuvasti uutta?",
     dimension: 'values',
     subdimension: 'growth',
     weight: 1.3,
@@ -1124,7 +1124,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
   // Q26: Autonomy
   {
     q: 26,
-    text: "Onko sinulle tärkeää saada päättää itse miten teet työsi?",
+    text: "Onko sinulle tärkeää saada päättää itse, miten teet työsi?",
     dimension: 'values',
     subdimension: 'autonomy',
     weight: 1.2,
@@ -1175,6 +1175,479 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
   }
 ];
 
+// ========== TASO2 SHARED QUESTIONS (Q0-Q19) - Used by both LUKIO and AMIS ==========
+// These 20 questions cover general interests, workstyle, and values applicable to both paths
+
+const TASO2_SHARED_QUESTIONS: QuestionMapping[] = [
+  // === INTERESTS (Q0-Q9) ===
+
+  // Q0: Technology interest
+  {
+    q: 0,
+    text: "Kiinnostaako sinua tekniikka ja teknologia?",
+    dimension: 'interests',
+    subdimension: 'technology',
+    weight: 1.3,
+    reverse: false,
+    notes: "General tech interest - applies to both paths"
+  },
+
+  // Q1: Healthcare/Helping
+  {
+    q: 1,
+    text: "Kiinnostaako sinua terveys- ja hoitoala?",
+    dimension: 'interests',
+    subdimension: 'health',
+    weight: 1.4,
+    reverse: false,
+    notes: "Healthcare interest - nursing to medicine"
+  },
+
+  // Q2: Creative work
+  {
+    q: 2,
+    text: "Nautitko luovasta työstä, kuten suunnittelusta tai sisällön tuottamisesta?",
+    dimension: 'interests',
+    subdimension: 'creative',
+    weight: 1.2,
+    reverse: false,
+    notes: "Creative interest - design, media, arts"
+  },
+
+  // Q3: Working with people
+  {
+    q: 3,
+    text: "Haluaisitko työskennellä ihmisten parissa päivittäin?",
+    dimension: 'interests',
+    subdimension: 'people',
+    weight: 1.3,
+    reverse: false,
+    notes: "People orientation - social work to sales"
+  },
+
+  // Q4: Business/Economics
+  {
+    q: 4,
+    text: "Kiinnostaako sinua liiketoiminta ja talous?",
+    dimension: 'interests',
+    subdimension: 'business',
+    weight: 1.2,
+    reverse: false,
+    notes: "Business interest - retail to corporate"
+  },
+
+  // Q5: Environment/Nature
+  {
+    q: 5,
+    text: "Haluaisitko työskennellä luonnon tai ympäristön parissa?",
+    dimension: 'interests',
+    subdimension: 'environment',
+    weight: 1.2,
+    reverse: false,
+    notes: "Environment - agriculture to environmental science"
+  },
+
+  // Q6: Hands-on work
+  {
+    q: 6,
+    text: "Tykkäätkö rakentaa, korjata tai tehdä käsillä?",
+    dimension: 'interests',
+    subdimension: 'hands_on',
+    weight: 1.3,
+    reverse: false,
+    notes: "Hands-on work - trades to engineering"
+  },
+
+  // Q7: Problem-solving
+  {
+    q: 7,
+    text: "Nautitko ongelmien analysoinnista ja ratkaisemisesta?",
+    dimension: 'interests',
+    subdimension: 'analytical',
+    weight: 1.3,
+    reverse: false,
+    notes: "Analytical thinking - IT to research"
+  },
+
+  // Q8: Teaching/Mentoring
+  {
+    q: 8,
+    text: "Kiinnostaako sinua opettaminen tai muiden ohjaaminen?",
+    dimension: 'interests',
+    subdimension: 'education',
+    weight: 1.2,
+    reverse: false,
+    notes: "Education interest - trainer to professor"
+  },
+
+  // Q9: Innovation/New ideas
+  {
+    q: 9,
+    text: "Haluaisitko kehittää uusia tuotteita, palveluja tai ideoita?",
+    dimension: 'interests',
+    subdimension: 'innovation',
+    weight: 1.3,
+    reverse: false,
+    notes: "Innovation drive - startup to R&D"
+  },
+
+  // === WORKSTYLE (Q10-Q14) ===
+
+  // Q10: Teamwork preference
+  {
+    q: 10,
+    text: "Tykkäätkö työskennellä tiimissä muiden kanssa?",
+    dimension: 'workstyle',
+    subdimension: 'teamwork',
+    weight: 1.1,
+    reverse: false,
+    notes: "Team vs solo preference"
+  },
+
+  // Q11: Structure preference
+  {
+    q: 11,
+    text: "Pidätkö selkeistä ohjeista ja rutiineista työssä?",
+    dimension: 'workstyle',
+    subdimension: 'structure',
+    weight: 1.0,
+    reverse: false,
+    notes: "Structure preference"
+  },
+
+  // Q12: Independence
+  {
+    q: 12,
+    text: "Haluatko tehdä itsenäisiä päätöksiä työssäsi?",
+    dimension: 'workstyle',
+    subdimension: 'independence',
+    weight: 1.1,
+    reverse: false,
+    notes: "Autonomy preference"
+  },
+
+  // Q13: Outdoor/Physical
+  {
+    q: 13,
+    text: "Haluatko työn, jossa liikut ja olet aktiivinen?",
+    dimension: 'workstyle',
+    subdimension: 'outdoor',
+    weight: 1.1,
+    reverse: false,
+    notes: "Physical activity preference"
+  },
+
+  // Q14: Customer interaction
+  {
+    q: 14,
+    text: "Viihdytkö asiakaspalvelussa ja ihmisten kohtaamisessa?",
+    dimension: 'workstyle',
+    subdimension: 'social',
+    weight: 1.1,
+    reverse: false,
+    notes: "Customer-facing preference"
+  },
+
+  // === VALUES (Q15-Q19) ===
+
+  // Q15: Work-life balance
+  {
+    q: 15,
+    text: "Onko sinulle tärkeää, että työ jättää aikaa muulle elämälle?",
+    dimension: 'values',
+    subdimension: 'work_life_balance',
+    weight: 1.1,
+    reverse: false,
+    notes: "Balance priority"
+  },
+
+  // Q16: Financial motivation
+  {
+    q: 16,
+    text: "Kuinka tärkeää sinulle on hyvä palkka?",
+    dimension: 'values',
+    subdimension: 'financial',
+    weight: 1.1,
+    reverse: false,
+    notes: "Salary importance"
+  },
+
+  // Q17: Social impact
+  {
+    q: 17,
+    text: "Haluatko työn, jossa voit auttaa muita tai vaikuttaa yhteiskuntaan?",
+    dimension: 'values',
+    subdimension: 'social_impact',
+    weight: 1.2,
+    reverse: false,
+    notes: "Impact motivation"
+  },
+
+  // Q18: Career advancement
+  {
+    q: 18,
+    text: "Onko uralla eteneminen sinulle tärkeää?",
+    dimension: 'values',
+    subdimension: 'advancement',
+    weight: 1.1,
+    reverse: false,
+    notes: "Advancement drive"
+  },
+
+  // Q19: Job stability
+  {
+    q: 19,
+    text: "Onko työn pysyvyys ja varmuus sinulle tärkeää?",
+    dimension: 'values',
+    subdimension: 'stability',
+    weight: 1.1,
+    reverse: false,
+    notes: "Stability preference"
+  }
+];
+
+// ========== TASO2 LUKIO-SPECIFIC QUESTIONS (Q20-Q29) ==========
+// Focus: Academic path, theoretical thinking, university-track careers
+
+const TASO2_LUKIO_SPECIFIC: QuestionMapping[] = [
+  // Q20: Sciences - theoretical
+  {
+    q: 20,
+    text: "Kiinnostaako sinua luonnontieteet, kuten fysiikka, kemia tai biologia?",
+    dimension: 'interests',
+    subdimension: 'analytical',
+    weight: 1.4,
+    reverse: false,
+    notes: "Science interest - university track"
+  },
+
+  // Q21: Research interest
+  {
+    q: 21,
+    text: "Haluaisitko tehdä tutkimustyötä ja kehittää uutta tietoa?",
+    dimension: 'interests',
+    subdimension: 'innovation',
+    weight: 1.4,
+    reverse: false,
+    notes: "Academic research drive"
+  },
+
+  // Q22: Abstract thinking
+  {
+    q: 22,
+    text: "Nautitko abstraktista ajattelusta ja teoreettisista konsepteista?",
+    dimension: 'workstyle',
+    subdimension: 'analytical',
+    weight: 1.3,
+    reverse: false,
+    notes: "Theoretical thinking preference"
+  },
+
+  // Q23: Long-term study commitment
+  {
+    q: 23,
+    text: "Oletko valmis opiskelemaan 4-7 vuotta saadaksesi unelma-ammattisi?",
+    dimension: 'values',
+    subdimension: 'growth',
+    weight: 1.4,
+    reverse: false,
+    notes: "Long education commitment"
+  },
+
+  // Q24: Intellectual challenge
+  {
+    q: 24,
+    text: "Onko älyllinen haaste sinulle tärkeämpää kuin nopea työelämään pääsy?",
+    dimension: 'values',
+    subdimension: 'impact',
+    weight: 1.3,
+    reverse: false,
+    notes: "Intellectual vs practical priority"
+  },
+
+  // Q25: Expertise goal
+  {
+    q: 25,
+    text: "Haluatko tulla asiantuntijaksi jollakin erikoisalalla?",
+    dimension: 'values',
+    subdimension: 'advancement',
+    weight: 1.3,
+    reverse: false,
+    notes: "Specialist expertise goal"
+  },
+
+  // Q26: Reading/Learning
+  {
+    q: 26,
+    text: "Luetko paljon ja nautitko uuden tiedon omaksumisesta?",
+    dimension: 'workstyle',
+    subdimension: 'growth',
+    weight: 1.2,
+    reverse: false,
+    notes: "Learning orientation"
+  },
+
+  // Q27: International career
+  {
+    q: 27,
+    text: "Haluaisitko työskennellä kansainvälisessä ympäristössä?",
+    dimension: 'values',
+    subdimension: 'global',
+    weight: 1.1,
+    reverse: false,
+    notes: "International aspiration"
+  },
+
+  // Q28: Status/Prestige
+  {
+    q: 28,
+    text: "Onko ammatin arvostus ja status sinulle tärkeää?",
+    dimension: 'values',
+    subdimension: 'advancement',
+    weight: 0.9,
+    reverse: false,
+    notes: "Status motivation"
+  },
+
+  // Q29: Long-term projects
+  {
+    q: 29,
+    text: "Jaksatko työskennellä pitkäjänteisesti saman projektin parissa?",
+    dimension: 'workstyle',
+    subdimension: 'precision',
+    weight: 1.0,
+    reverse: false,
+    notes: "Long-term focus"
+  }
+];
+
+// Combine shared + LUKIO-specific for full LUKIO question set
+const TASO2_LUKIO_MAPPINGS: QuestionMapping[] = [
+  ...TASO2_SHARED_QUESTIONS,
+  ...TASO2_LUKIO_SPECIFIC
+];
+
+// ========== TASO2 AMIS-SPECIFIC QUESTIONS (Q20-Q29) ==========
+// Focus: Vocational path, hands-on skills, practical careers
+
+const TASO2_AMIS_SPECIFIC: QuestionMapping[] = [
+  // Q20: Trade/Craft work
+  {
+    q: 20,
+    text: "Kiinnostaako sinua ammatti, jossa näet konkreettisen työn tuloksen?",
+    dimension: 'interests',
+    subdimension: 'hands_on',
+    weight: 1.4,
+    reverse: false,
+    notes: "Tangible work results preference"
+  },
+
+  // Q21: Quick work entry
+  {
+    q: 21,
+    text: "Onko sinulle tärkeää päästä nopeasti työelämään?",
+    dimension: 'values',
+    subdimension: 'stability',
+    weight: 1.3,
+    reverse: false,
+    notes: "Quick employment priority"
+  },
+
+  // Q22: Practical learning
+  {
+    q: 22,
+    text: "Opitko parhaiten tekemällä käytännön töitä?",
+    dimension: 'workstyle',
+    subdimension: 'hands_on',
+    weight: 1.3,
+    reverse: false,
+    notes: "Hands-on learning style"
+  },
+
+  // Q23: Practical vs theoretical
+  {
+    q: 23,
+    text: "Arvostatko käytännön ammattitaitoa enemmän kuin teoreettista osaamista?",
+    dimension: 'values',
+    subdimension: 'hands_on',
+    weight: 1.2,
+    reverse: false,
+    notes: "Practical skills value"
+  },
+
+  // Q24: Shift work tolerance
+  {
+    q: 24,
+    text: "Sopiiko sinulle vuorotyö ja vaihtelevat työajat?",
+    dimension: 'workstyle',
+    subdimension: 'flexibility',
+    weight: 1.0,
+    reverse: false,
+    notes: "Shift work acceptance"
+  },
+
+  // Q25: Entrepreneurship
+  {
+    q: 25,
+    text: "Haluaisitko joskus perustaa oman yrityksen tai toimia yrittäjänä?",
+    dimension: 'values',
+    subdimension: 'entrepreneurship',
+    weight: 1.3,
+    reverse: false,
+    notes: "Entrepreneurial drive"
+  },
+
+  // Q26: Employment stability
+  {
+    q: 26,
+    text: "Onko sinulle tärkeää, että alallasi on hyvä työllisyystilanne?",
+    dimension: 'values',
+    subdimension: 'stability',
+    weight: 1.2,
+    reverse: false,
+    notes: "Job market stability"
+  },
+
+  // Q27: Following procedures
+  {
+    q: 27,
+    text: "Osaatko noudattaa tarkasti ohjeita ja turvallisuusmääräyksiä?",
+    dimension: 'workstyle',
+    subdimension: 'precision',
+    weight: 1.1,
+    reverse: false,
+    notes: "Procedure following ability"
+  },
+
+  // Q28: Physical work
+  {
+    q: 28,
+    text: "Haluatko työn, jossa olet paljon ulkona ja liikut fyysisesti?",
+    dimension: 'workstyle',
+    subdimension: 'outdoor',
+    weight: 1.2,
+    reverse: false,
+    notes: "Physical/outdoor work preference"
+  },
+
+  // Q29: Apprenticeship interest
+  {
+    q: 29,
+    text: "Kiinnostaako sinua oppia ammatti työn ohessa kokeneemmalta tekijältä?",
+    dimension: 'workstyle',
+    subdimension: 'growth',
+    weight: 1.1,
+    reverse: false,
+    notes: "Apprenticeship/mentorship learning"
+  }
+];
+
+// Combine shared + AMIS-specific for full AMIS question set
+const TASO2_AMIS_MAPPINGS: QuestionMapping[] = [
+  ...TASO2_SHARED_QUESTIONS,
+  ...TASO2_AMIS_SPECIFIC
+];
+
 // ========== EXPORT MAPPINGS ==========
 
 export const QUESTION_MAPPINGS: CohortQuestionSet = {
@@ -1183,8 +1656,18 @@ export const QUESTION_MAPPINGS: CohortQuestionSet = {
   NUORI: NUORI_MAPPINGS
 };
 
-export function getQuestionMappings(cohort: Cohort, setIndex: number = 0): QuestionMapping[] {
-  // Single set of unique questions per cohort
+// TASO2 sub-cohort mappings
+export const TASO2_SUB_MAPPINGS: Record<string, QuestionMapping[]> = {
+  LUKIO: TASO2_LUKIO_MAPPINGS,
+  AMIS: TASO2_AMIS_MAPPINGS
+};
+
+export function getQuestionMappings(cohort: Cohort, setIndex: number = 0, subCohort?: string): QuestionMapping[] {
+  // For TASO2 with sub-cohort specified, return the specific question set
+  if (cohort === 'TASO2' && subCohort && TASO2_SUB_MAPPINGS[subCohort]) {
+    return TASO2_SUB_MAPPINGS[subCohort];
+  }
+  // Default: return the main cohort questions
   return QUESTION_MAPPINGS[cohort];
 }
 

@@ -6,18 +6,18 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection';
 const steps = [
   {
     number: 1,
-    title: 'Vastaa 30 kysymykseen',
-    description: 'Kartoitamme kiinnostuksesi, arvosi, työskentelytapasi ja työympäristötoiveesi.',
+    title: 'Kartoitus',
+    description: 'Vastaa 30 kysymykseen, joilla kartoitamme kiinnostuksesi, arvosi, työskentelytapasi ja työympäristötoiveesi.',
   },
   {
     number: 2,
-    title: 'Analysoimme profiilisi',
+    title: 'Analysointi',
     description: 'Vertaamme vastauksesi yli 700 ammatin vaatimuksiin ja ominaisuuksiin Suomen työmarkkinoilla.',
   },
   {
     number: 3,
-    title: 'Saat henkilökohtaiset suositukset',
-    description: 'Näet sopivimmat ammatit, koulutuspolut ja seuraavat askeleet perustuen vastauksiin.',
+    title: 'Henkilökohtaiset suositukset',
+    description: 'Näet sopivimmat ammatit ja koulutuspolut perustuen vastauksiisi.',
   },
 ];
 

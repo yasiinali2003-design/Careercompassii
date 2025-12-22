@@ -312,9 +312,10 @@ export function normalizeAnswer(score: number, reverse = false): number {
  */
 export function computeUserVector(
   answers: TestAnswer[],
-  cohort: Cohort
+  cohort: Cohort,
+  subCohort?: string
 ): { dimensionScores: DimensionScores; detailedScores: DetailedDimensionScores } {
-  const mappings = getQuestionMappings(cohort);
+  const mappings = getQuestionMappings(cohort, 0, subCohort);
   
   // Initialize scores
   const subdimensionScores: Record<string, { sum: number; count: number; weight: number }> = {};
@@ -5097,10 +5098,11 @@ export function rankCareers(
   answers: TestAnswer[],
   cohort: Cohort,
   limit: number = 5,
-  currentOccupation?: string
+  currentOccupation?: string,
+  subCohort?: string
 ): CareerMatch[] {
-  // Step 1: Compute user vector
-  const { dimensionScores, detailedScores } = computeUserVector(answers, cohort);
+  // Step 1: Compute user vector (pass subCohort for TASO2 LUKIO/AMIS)
+  const { dimensionScores, detailedScores } = computeUserVector(answers, cohort, subCohort);
 
   // ============================================================================
   // UNIFIED SIMPLIFIED PATH: Use interest-based matching for ALL cohorts
@@ -6843,9 +6845,10 @@ function _legacyRankCareers(
 export function generateUserProfile(
   answers: TestAnswer[],
   cohort: Cohort,
-  currentOccupation?: string
+  currentOccupation?: string,
+  subCohort?: string
 ): UserProfile {
-  const { dimensionScores, detailedScores } = computeUserVector(answers, cohort);
+  const { dimensionScores, detailedScores } = computeUserVector(answers, cohort, subCohort);
   
   // Find top strengths
   const allScores = [

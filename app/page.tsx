@@ -120,7 +120,7 @@ export default function HomePage() {
               style={{ willChange: "opacity, transform" }}
               className="text-lg md:text-xl text-urak-text-secondary mb-10 max-w-[720px] mx-auto leading-relaxed"
             >
-              Noin 5 minuutin uratesti, joka perustuu tutkimuspohjaiseen psykologiaan ja auttaa tunnistamaan vahvuudet ja suuntautumisvaihtoehdot.
+              Uratesti noin 5 minuuttia – perustuu tutkimuspohjaiseen psykologiaan ja auttaa tunnistamaan vahvuutesi ja suuntautumisvaihtoehtosi.
             </motion.p>
 
             {/* CTAs */}
@@ -202,10 +202,10 @@ export default function HomePage() {
               Kahdeksan ainutlaatuista tyyppiä
             </h2>
             <p className="mb-4 text-sm md:text-base text-urak-text-secondary max-w-[520px]">
-              Löydä tyyppi, joka kuvaa parhaiten sinua ja töitä, jotka sopivat sinulle
+              Löydä oma tyyppisi ja ammatit, jotka sopivat juuri sinulle.
             </p>
             <p className="text-xs md:text-sm text-urak-text-muted max-w-[520px]">
-              Jokainen tyyppi edustaa erilaista lähestymistapaa työhön ja uraan
+              Jokainen tyyppi kuvastaa erilaista lähestymistapaa työhön ja uravalintoihin.
             </p>
           </div>
           

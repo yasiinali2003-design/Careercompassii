@@ -7,6 +7,9 @@
 
 export type Cohort = 'YLA' | 'TASO2' | 'NUORI';
 
+// Sub-cohort for TASO2 (16-19v): Lukio (academic) vs Ammattikoulu (vocational)
+export type TASO2SubCohort = 'LUKIO' | 'AMIS';
+
 // ========== DIMENSION TYPES ==========
 
 export type Dimension = 'interests' | 'values' | 'workstyle' | 'context';

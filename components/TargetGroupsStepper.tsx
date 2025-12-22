@@ -11,9 +11,9 @@ const targetGroups = [
     intro: "Löydä suunta toisen asteen opintoihin ja tutki eri urapolkuja.",
     icon: GraduationCap,
     points: [
-      "Tutustu laajaan valikoimaan uroja ja ammatteja",
+      "Tutustu laajaan valikoimaan erilaisia uria ja ammatteja",
       "Tunnista omat vahvuutesi ja kiinnostuksen kohteesi",
-      "Saat selkeän kuvan erilaisista koulutuspoluista",
+      "Saa selkeä kuva erilaisista koulutuspoluista",
     ],
   },
   {

@@ -212,9 +212,13 @@ interface QuestionResponse {
   originalQ?: number;
 }
 
-async function fetchQuestions(cohort: string, setIndex: number): Promise<QuestionResponse[]> {
+async function fetchQuestions(cohort: string, setIndex: number, subCohort?: string): Promise<QuestionResponse[]> {
   try {
-    const response = await fetch(`/api/questions?cohort=${cohort}&setIndex=${setIndex}`);
+    let url = `/api/questions?cohort=${cohort}&setIndex=${setIndex}`;
+    if (subCohort) {
+      url += `&subCohort=${subCohort}`;
+    }
+    const response = await fetch(url);
     const data = await response.json();
 
     if (!data.success) {
@@ -237,6 +241,7 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [currentOccupation, setCurrentOccupation] = useState<string>(""); // Current career/occupation for filtering
+  const [taso2SubCohort, setTaso2SubCohort] = useState<"LUKIO" | "AMIS" | null>(null); // TASO2 sub-selection: Lukio or Ammattikoulu
   const [showSaveNotification, setShowSaveNotification] = useState(false);
   const [hasLoadedProgress, setHasLoadedProgress] = useState(false);
   const [hasShownSaveNotification, setHasShownSaveNotification] = useState(false);
@@ -248,6 +253,7 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   const [qList, setQList] = useState<string[]>([]); // Shuffled questions for display
 
   // Effect to select question set and prepare questions when group changes
+  // For TASO2, also wait for subCohort selection before loading questions
   useEffect(() => {
     if (!group) {
       setQList([]);
@@ -255,6 +261,12 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
       setOriginalIndices([]);
       setShuffleKey('');
       setSelectedSetIndex(0);
+      return;
+    }
+
+    // For TASO2, don't load questions until subCohort is selected
+    if (group === 'TASO2' && !taso2SubCohort) {
+      setQList([]);
       return;
     }
 
@@ -271,7 +283,9 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
 
         try {
           // Fetch questions from secure API (protects business logic)
-          const apiQuestions = await fetchQuestions(group, setIndex);
+          // For TASO2, pass the subCohort to get LUKIO or AMIS specific questions
+          const subCohortParam = group === 'TASO2' ? taso2SubCohort || undefined : undefined;
+          const apiQuestions = await fetchQuestions(group, setIndex, subCohortParam);
 
           // Extract question texts and create mapping
           questions = apiQuestions.map(q => q.text);
@@ -342,7 +356,7 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
 
     // Call the async function
     loadQuestions();
-  }, [group]);
+  }, [group, taso2SubCohort]);
   const total = qList.length;
 
   // Load saved progress on component mount
@@ -424,6 +438,7 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   const restart = () => {
     setStep(0);
     setGroup(null);
+    setTaso2SubCohort(null); // Reset TASO2 sub-selection
     setIndex(0);
     setAnswers([]);
     setHasLoadedProgress(false);
@@ -496,6 +511,17 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
         <GroupSelect onChoose={chooseGroup} onBack={restart} />
       )}
 
+      {/* TASO2 sub-selection: Lukio or Ammattikoulu */}
+      {step === 2 && group === "TASO2" && !taso2SubCohort && (
+        <TASO2SubSelect
+          onChoose={(sub) => setTaso2SubCohort(sub)}
+          onBack={() => {
+            setGroup(null);
+            setStep(1);
+          }}
+        />
+      )}
+
       {step === 2 && group && index === 0 && group === "NUORI" && currentOccupation === "" && (
         <OccupationInput
           value={currentOccupation}
@@ -504,13 +530,23 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
         />
       )}
 
-      {step === 2 && group && (index > 0 || group !== "NUORI" || currentOccupation !== "") && (
+      {/* Show questions when:
+          - YLA is selected (no sub-selection needed)
+          - TASO2 is selected AND subCohort is chosen
+          - NUORI is selected AND (index > 0 OR currentOccupation is set) */}
+      {step === 2 && group && (
+        (group === "YLA") ||
+        (group === "TASO2" && taso2SubCohort) ||
+        (group === "NUORI" && (index > 0 || currentOccupation !== ""))
+      ) && (
         <QuestionScreen
           title={
             group === "YLA"
               ? "Yläaste (13–15 v) – Tutustu itseesi"
               : group === "TASO2"
-              ? "Toisen asteen opiskelijat (16–19 v) – Löydä suuntasi"
+              ? taso2SubCohort === "LUKIO"
+                ? "Lukio (16–19 v) – Löydä akateeminen suuntasi"
+                : "Ammattikoulu (16–19 v) – Löydä ammatillinen suuntasi"
               : "Nuoret aikuiset – Rakenna oma polkusi"
           }
           questions={qList}
@@ -537,6 +573,7 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
           pin={pin}
           classToken={classToken}
           currentOccupation={currentOccupation}
+          taso2SubCohort={taso2SubCohort}
         />
       )}
     </div>
@@ -688,6 +725,113 @@ const GroupSelect = ({ onChoose, onBack }: { onChoose: (g: "YLA" | "TASO2" | "NU
       Takaisin
     </button>
   </div>
+);
+
+// TASO2 Sub-selection: Lukio (academic) or Ammattikoulu (vocational)
+const TASO2SubSelect = ({ onChoose, onBack }: { onChoose: (sub: "LUKIO" | "AMIS") => void; onBack: () => void }) => (
+  <section className="flex justify-center px-4 py-24">
+    <div
+      className="
+        relative
+        max-w-4xl w-full
+        overflow-hidden
+        rounded-[32px]
+        border border-cyan-400/10
+        bg-gradient-to-b from-white/6 via-white/3 to-white/2
+        bg-clip-padding
+        backdrop-blur-xl
+        shadow-[0_24px_80px_rgba(0,0,0,0.65)]
+        px-8 py-10 md:px-12 md:py-14
+      "
+    >
+      {/* Top glow effect */}
+      <div className="pointer-events-none absolute inset-x-8 -top-32 h-40 rounded-full bg-gradient-to-b from-cyan-300/25 to-transparent blur-3xl" />
+
+      <div className="relative space-y-8">
+        <div className="text-center">
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
+            Missä opiskelet?
+          </h1>
+          <p className="mt-3 text-base md:text-lg text-urak-text-secondary">
+            Valitse nykyinen opiskelupaikkasi, jotta saat sinulle sopivimmat kysymykset.
+          </p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {/* Lukio card */}
+          <button
+            onClick={() => onChoose("LUKIO")}
+            className="
+              group
+              flex flex-col items-start
+              rounded-2xl
+              border border-white/20
+              bg-white/5
+              backdrop-blur-sm
+              p-6
+              text-left
+              shadow-sm
+              transition-all
+              hover:shadow-md
+              hover:bg-white/10
+              hover:border-cyan-400/30
+            "
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white">Lukio</h3>
+            </div>
+            <p className="text-urak-text-secondary">
+              Akateeminen polku kohti yliopistoa tai korkeakoulua. Kysymykset keskittyvät teoreettisiin aloihin ja tutkimukseen.
+            </p>
+          </button>
+
+          {/* Ammattikoulu card */}
+          <button
+            onClick={() => onChoose("AMIS")}
+            className="
+              group
+              flex flex-col items-start
+              rounded-2xl
+              border border-white/20
+              bg-white/5
+              backdrop-blur-sm
+              p-6
+              text-left
+              shadow-sm
+              transition-all
+              hover:shadow-md
+              hover:bg-white/10
+              hover:border-cyan-400/30
+            "
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center text-white">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white">Ammattikoulu</h3>
+            </div>
+            <p className="text-urak-text-secondary">
+              Käytännön ammattitaitoon tähtäävä polku. Kysymykset keskittyvät käytännön työhön ja ammatteihin.
+            </p>
+          </button>
+        </div>
+
+        <button
+          onClick={onBack}
+          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white hover:bg-white/10 transition-colors"
+        >
+          Takaisin
+        </button>
+      </div>
+    </div>
+  </section>
 );
 
 const OccupationInput = ({ value, onChange, onSkip }: { value: string; onChange: (val: string) => void; onSkip: () => void }) => {
@@ -906,6 +1050,7 @@ const Summary = ({
   pin,
   classToken,
   currentOccupation,
+  taso2SubCohort,
 }: {
   group: any;
   questions: string[];
@@ -919,6 +1064,7 @@ const Summary = ({
   pin?: string | null;
   classToken?: string | null;
   currentOccupation?: string;
+  taso2SubCohort?: "LUKIO" | "AMIS" | null;
 }) => {
   console.log('[Summary] Component rendered with props:', { pin, classToken, hasPin: !!pin, hasClassToken: !!classToken });
   
@@ -1002,7 +1148,8 @@ const Summary = ({
             answers: formattedAnswers,
             originalIndices,
             shuffleKey,
-            currentOccupation: currentOccupation || undefined
+            currentOccupation: currentOccupation || undefined,
+            subCohort: group === 'TASO2' ? taso2SubCohort : undefined
           }),
           signal: controller.signal
         }).catch((error) => {
@@ -1158,7 +1305,8 @@ const Summary = ({
             answers: formattedAnswers,
             originalIndices,
             shuffleKey,
-            currentOccupation: currentOccupation || undefined
+            currentOccupation: currentOccupation || undefined,
+            subCohort: group === 'TASO2' ? taso2SubCohort : undefined
           }),
           signal: controller.signal
         }).catch((error) => {
@@ -1169,7 +1317,7 @@ const Summary = ({
           throw error;
         });
         clearTimeout(timeoutId);
-        
+
         if (!response.ok) {
           console.error('[Test] API response not OK:', response.status, response.statusText);
           const errorText = await response.text().catch(() => 'Unknown error');
