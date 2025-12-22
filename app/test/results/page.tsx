@@ -348,7 +348,7 @@ export default function ResultsPage() {
             cohortType={cohortType}
           />
 
-          {/* Todistuspistelaskuri CTA for TASO2 users */}
+          {/* Todistusvalinta.fi CTA for TASO2 users */}
           {userProfile.cohort === 'TASO2' &&
            educationPath &&
            (educationPath.primary === 'yliopisto' || educationPath.primary === 'amk') && (
@@ -370,18 +370,15 @@ export default function ResultsPage() {
                   <div className="md:max-w-2xl">
                     <h3 className="text-2xl font-bold text-white mb-2">Laske todistuspisteesi seuraavaksi</h3>
                     <p className="text-slate-300 leading-relaxed">
-                      Voit tutustua koulutusohjelmiin laskemalla yo-todistuksesi pisteet. Laskuri yhdistää pisteesi ja tämän testin havainnot ja näyttää sinulle yliopisto- tai AMK-vaihtoehtoja, joihin voit tutustua.
+                      Voit tutustua koulutusohjelmiin ja laskea todistuspisteesi Todistusvalinta.fi-palvelussa. Palvelu näyttää sinulle yliopisto- ja AMK-vaihtoehtoja pisteittesi perusteella.
                     </p>
                   </div>
-                  <Link href="/todistuspistelaskuri" className="shrink-0">
+                  <a href="https://todistusvalinta.fi" target="_blank" rel="noopener noreferrer" className="shrink-0">
                     <Button className="bg-cyan-500 hover:bg-cyan-600 text-white">
-                      Avaa todistuspistelaskuri
+                      Avaa Todistusvalinta.fi
                     </Button>
-                  </Link>
+                  </a>
                 </div>
-                <p className="mt-4 text-sm text-slate-400">
-                  Voit palata tähän näkymään milloin tahansa. Laskuri tallentaa pisteesi selaimeen, jotta voit vertailla ohjelmia rauhassa.
-                </p>
               </div>
             </motion.div>
           )}
