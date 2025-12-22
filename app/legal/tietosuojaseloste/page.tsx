@@ -22,8 +22,7 @@ export default function TietosuojaPage() {
 
       <main className="flex-1">
         <div className="container mx-auto px-4 py-12 max-w-3xl">
-          <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-white">TIETOSUOJASELOSTE — Urakompassi Oy</h1>
-          <p className="text-sm text-neutral-400 mb-8">Versio 4.1 • Viimeksi päivitetty: 12.2025 • Y-tunnus: 3579081-5</p>
+          <h1 className="text-3xl sm:text-4xl font-extrabold mb-8 text-white">TIETOSUOJASELOSTE — Urakompassi Oy</h1>
           <div className="space-y-6 leading-relaxed text-base">
           <pre className="whitespace-pre-wrap font-sans text-[15px] text-neutral-200">
 {`1. Rekisterinpitäjä ja yhteystiedot
@@ -75,12 +74,7 @@ Tietosuojavaltuutetun toimisto, Lintulahdenkatu 4, 00530 Helsinki, https://tieto
 Voimme päivittää tätä selostetta esimerkiksi lakimuutosten tai teknisten muutosten yhteydessä. Uusi versio julkaistaan verkkosivuilla ja päiväys päivitetään.
 
 16. Sovellettava laki ja kieli
-Sovellettava laki on Suomen laki. Virallinen kieli on suomi, ja ristiriitatilanteessa suomenkielinen versio on ensisijainen.
-
-17. Yhteystiedot
-Urakompassi Oy, Helsinki, Finland
-Y-tunnus: 3579081-5
-Sähköposti: info@urakompassi.fi`}
+Sovellettava laki on Suomen laki. Virallinen kieli on suomi, ja ristiriitatilanteessa suomenkielinen versio on ensisijainen.`}
           </pre>
         </div>
         </div>

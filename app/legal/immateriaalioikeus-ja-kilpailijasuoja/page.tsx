@@ -22,8 +22,7 @@ export default function IpSuojaPage() {
 
       <main className="flex-1">
         <div className="container mx-auto px-4 py-12 max-w-3xl">
-          <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 text-white">IMMATERIAALIOIKEUS- JA KILPAILIJASUOJA — Urakompassi Oy</h1>
-          <p className="text-sm text-neutral-400 mb-8">Versio 4.1 • Viimeksi päivitetty: 12.2025 • Y-tunnus: 3579081-5</p>
+          <h1 className="text-3xl sm:text-4xl font-extrabold mb-8 text-white">IMMATERIAALIOIKEUS- JA KILPAILIJASUOJA — Urakompassi Oy</h1>
           <div className="space-y-6 leading-relaxed text-base">
           <pre className="whitespace-pre-wrap font-sans text-[15px] text-neutral-200">
 {`1. Tarkoitus
@@ -70,12 +69,7 @@ Sovellettava laki on Suomen laki. Riidat ratkaistaan ensisijaisesti neuvottelute
 Virallinen kieli on suomi, ja ristiriitatilanteissa suomenkielinen versio on ensisijainen. Tämä dokumentti on erottamaton osa Käyttöehtoja. Ristiriitatilanteessa sovelletaan säännöstä, joka ei riko pakottavaa lakia ja turvaa laillisesti Urakompassin immateriaalioikeudet laajasti.
 
 12. Muutokset
-Urakompassi voi päivittää tätä dokumenttia teknisten tai oikeudellisten muutosten yhteydessä. Uusi versio tulee voimaan julkaisupäivästä ja korvaa aiemman.
-
-13. Yhteystiedot
-Urakompassi Oy, Helsinki, Finland
-Y-tunnus: 3579081-5
-Sähköposti: info@urakompassi.fi`}
+Urakompassi voi päivittää tätä dokumenttia teknisten tai oikeudellisten muutosten yhteydessä. Uusi versio tulee voimaan julkaisupäivästä ja korvaa aiemman.`}
           </pre>
         </div>
         </div>
