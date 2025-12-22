@@ -4,13 +4,16 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 export function Footer() {
-  const [isLocalhost, setIsLocalhost] = useState(false);
+  const [isLocalhost, setIsLocalhost] = useState<boolean | null>(null);
 
   useEffect(() => {
     // Check if running on localhost
     const hostname = window.location.hostname;
     setIsLocalhost(hostname === 'localhost' || hostname === '127.0.0.1');
   }, []);
+
+  // Don't render admin links section until we know if we're on localhost
+  const showAdminLinks = isLocalhost === true;
 
   return (
     <footer className="border-t border-teal-800/30 bg-transparent relative snap-start">
@@ -31,7 +34,7 @@ export function Footer() {
           </div>
           <div className="grid grid-cols-2 gap-10 text-sm text-slate-300 md:grid-cols-2">
             {/* Only show Palvelu section on localhost */}
-            {isLocalhost && (
+            {showAdminLinks && (
             <div>
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
                 Palvelu
