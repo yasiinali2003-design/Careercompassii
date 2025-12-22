@@ -120,7 +120,7 @@ export default function HomePage() {
               style={{ willChange: "opacity, transform" }}
               className="text-lg md:text-xl text-urak-text-secondary mb-10 max-w-[720px] mx-auto leading-relaxed"
             >
-              Uratesti noin 5 minuuttia – perustuu tutkimuspohjaiseen psykologiaan ja auttaa tunnistamaan vahvuutesi ja suuntautumisvaihtoehtosi.
+              Uratesti, joka perustuu tutkimuspohjaiseen psykologiaan ja auttaa tunnistamaan vahvuutesi ja suuntautumisvaihtoehtosi.
             </motion.p>
 
             {/* CTAs */}
@@ -158,7 +158,7 @@ export default function HomePage() {
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="text-urak-accent-green">✔</span>
-                Noin 5 min
+                Noin 5 minuuttia
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="text-urak-accent-green">✔</span>
