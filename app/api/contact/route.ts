@@ -37,8 +37,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Save to Supabase
-    const { error } = await supabaseAdmin
+    // Save to Supabase (table not in generated types yet)
+    const { error } = await (supabaseAdmin as unknown as { from: (table: string) => { insert: (data: Record<string, unknown>) => Promise<{ error: unknown }> } })
       .from('contact_submissions')
       .insert({
         name: name.trim(),
