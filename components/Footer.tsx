@@ -51,7 +51,9 @@ export function Footer() {
                 Yhteystiedot
               </p>
               <ul className="space-y-2.5">
+                <li>Helsinki, Finland</li>
                 <li>info@urakompassi.fi</li>
+                <li><Link href="/ota-yhteytta" className="hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm transition-colors">Ota yhteyttä →</Link></li>
               </ul>
             </div>
           </div>
@@ -59,7 +61,9 @@ export function Footer() {
         <div className="mt-12 flex flex-col gap-4 border-t border-urak-border/60 pt-6 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Urakompassi. All rights reserved.</p>
           <nav aria-label="Legal links" className="flex flex-wrap gap-4 md:gap-6">
-            <Link href="/metodologia" className="hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm transition-colors">Tutkimuspohja</Link>
+            {showAdminLinks && (
+              <Link href="/metodologia" className="hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm transition-colors">Tutkimuspohja</Link>
+            )}
             <Link href="/legal/tietosuojaseloste" className="hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm transition-colors">Tietosuojaseloste</Link>
             <Link href="/legal/immateriaalioikeus-ja-kilpailijasuoja" className="hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm transition-colors">Immateriaalioikeus- ja kilpailijansuoja</Link>
             <Link href="/legal/kayttoehdot" className="hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm transition-colors">Käyttöehdot</Link>

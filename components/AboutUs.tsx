@@ -6,7 +6,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 // Main AboutUs Component
 const AboutUs = () => {
   return (
-    <div className="max-w-5xl mx-auto px-6 lg:px-0">
+    <div className="max-w-5xl mx-auto px-6 lg:px-0 pb-24 lg:pb-32">
       {/* Minimal Nordic-style header */}
       <AnimatedSection>
         <section className="pt-20 lg:pt-28 pb-12">
@@ -117,7 +117,7 @@ const AboutUs = () => {
                 <div>
                   <p className="text-sm font-medium text-slate-300 mb-2">Osoite</p>
                   <p className="text-sky-400 font-medium">
-                    Säterintie 6, 00720 Helsinki
+                    Helsinki, Finland
                   </p>
                 </div>
                 <div>

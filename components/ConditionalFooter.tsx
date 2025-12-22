@@ -10,8 +10,8 @@ import { Footer } from '@/components/Footer';
 export function ConditionalFooter() {
   const pathname = usePathname();
 
-  // Don't show footer on teacher dashboard pages
-  const hideFooterPaths = ['/teacher'];
+  // Don't show footer on teacher dashboard pages and pages with their own contact sections
+  const hideFooterPaths = ['/teacher', '/meista', '/ota-yhteytta'];
 
   const shouldHideFooter = hideFooterPaths.some(path =>
     pathname?.startsWith(path)
