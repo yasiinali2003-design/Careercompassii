@@ -1,7 +1,17 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 export function Footer() {
+  const [isLocalhost, setIsLocalhost] = useState(false);
+
+  useEffect(() => {
+    // Check if running on localhost
+    const hostname = window.location.hostname;
+    setIsLocalhost(hostname === 'localhost' || hostname === '127.0.0.1');
+  }, []);
+
   return (
     <footer className="border-t border-teal-800/30 bg-transparent relative snap-start">
       {/* Semi-transparent overlay to ensure text readability while showing beams */}
@@ -20,6 +30,8 @@ export function Footer() {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-10 text-sm text-slate-300 md:grid-cols-2">
+            {/* Only show Palvelu section on localhost */}
+            {isLocalhost && (
             <div>
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
                 Palvelu
@@ -30,6 +42,7 @@ export function Footer() {
                 <li><Link href="/admin/school-dashboard" className="hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm transition-colors">Admin</Link></li>
               </ul>
             </div>
+            )}
             <div>
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
                 Yhteystiedot

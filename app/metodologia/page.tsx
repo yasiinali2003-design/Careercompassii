@@ -11,11 +11,9 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const navigationItems = [
   { id: "mita-mittaamme", label: "Mitä mittaamme" },
-  { id: "teoreettinen-tausta", label: "Miten menetelmä toimii" },
-  { id: "miten-testi", label: "Miten testi on rakennettu" },
+  { id: "ikaryhmat", label: "Ikäryhmät" },
   { id: "tulosten-tulkinta", label: "Tulosten tulkinta" },
   { id: "tietosuoja", label: "Tietosuoja" },
-  { id: "yhteistyö", label: "Yhteistyö koulujen kanssa" },
 ];
 
 const scrollToSection = (id: string) => {
@@ -91,13 +89,13 @@ export default function MetodologiaPage() {
           <AnimatedSection>
             <section className="mb-16">
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-urak-accent-blue mb-4">
-                Metodologia
+                Tutkimuspohja
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Kiinnostuksiin perustuva menetelmä uravalintojen tueksi
+                Suomalainen urasuunnittelun työkalu
               </h1>
               <p className="text-lg md:text-xl text-urak-text-secondary leading-relaxed max-w-3xl">
-                UraKompassi kartoittaa nuoren kiinnostuksen kohteet ja vertaa niitä yli 700 ammatin vaatimuksiin Suomen työmarkkinoilla. Menetelmä ei korvaa opinto-ohjaajaa vaan kokoaa nuoren kiinnostuksen kohteet ja vahvuudet yhteen raporttiin, joka toimii lähtökohtana ohjauskeskustelulle.
+                UraKompassi auttaa nuoria löytämään itselleen sopivia urapolkuja kartoittamalla heidän kiinnostuksensa, arvonsa ja vahvuutensa. Tuloksena syntyy henkilökohtainen raportti, joka toimii lähtökohtana urapohdinnalle.
               </p>
             </section>
           </AnimatedSection>
@@ -148,42 +146,39 @@ export default function MetodologiaPage() {
               <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
                 Mitä UraKompassi kartoittaa?
               </h2>
+              <p className="text-base text-urak-text-secondary leading-relaxed mb-6">
+                UraKompassi perustuu tutkimuspohjaiseen lähestymistapaan, joka kartoittaa nuoren profiilia useasta näkökulmasta:
+              </p>
               <ul className="space-y-4 mb-6">
                 <li className="flex items-start gap-3">
                   <span className="text-urak-accent-blue mt-1">•</span>
                   <div>
-                    <strong className="text-white font-semibold">Kiinnostuksen kohteet</strong> – Mitä aiheita, aloja ja tehtäviä nuori kokee mielenkiintoisiksi ja motivoiviksi.
+                    <strong className="text-white font-semibold">Kiinnostukset</strong> – Mitä aloja ja tehtäviä nuori kokee kiinnostaviksi ja motivoiviksi.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-urak-accent-blue mt-1">•</span>
                   <div>
-                    <strong className="text-white font-semibold">Vahvuudet ja luontaiset taipumukset</strong> – Millaisia taitoja ja kykyjä nuorella on luonnostaan, ja miten hän työskentelee parhaiten.
+                    <strong className="text-white font-semibold">Arvot</strong> – Mikä on nuorelle tärkeää työelämässä ja tulevaisuudessa.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-urak-accent-blue mt-1">•</span>
                   <div>
-                    <strong className="text-white font-semibold">Työskentelytapa</strong> – Miten nuori suhtautuu työhön, tiimityöhön, itsenäiseen työskentelyyn ja päätöksentekoon.
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-urak-accent-blue mt-1">•</span>
-                  <div>
-                    <strong className="text-white font-semibold">Toiveet tulevaisuudesta</strong> – Millaisia työympäristöjä, työtehtäviä ja elämäntilanteita nuori toivoo itselleen.
+                    <strong className="text-white font-semibold">Työskentelytapa</strong> – Miten nuori työskentelee parhaiten ja millaisessa ympäristössä hän viihtyy.
                   </div>
                 </li>
               </ul>
               <p className="text-base text-urak-text-secondary leading-relaxed">
-                Nämä neljä ulottuvuutta muodostavat yhdessä nuoren henkilökohtaisen profiilin, joka vertaillaan yli 700 ammatin vaatimuksiin ja ominaisuuksiin Suomen työmarkkinoilla.
+                Näiden pohjalta UraKompassi etsii nuorelle sopivia ammatteja laajasta suomalaisesta ammattitietokannasta.
               </p>
             </motion.section>
           </AnimatedSection>
 
-          {/* Section: Teoreettinen tausta */}
+          {/* Section: Ikäryhmät */}
           <AnimatedSection delay={0.3}>
             <motion.section
-              id="teoreettinen-tausta"
+              id="ikaryhmat"
               className="
                 rounded-3xl
                 border border-white/5
@@ -197,145 +192,30 @@ export default function MetodologiaPage() {
               role="article"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-                Miten menetelmä toimii?
+                Ikäryhmäkohtaiset testit
               </h2>
-
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    Kiinnostuspohjaiset kysymykset
-                  </h3>
-                  <p className="text-base text-urak-text-secondary leading-relaxed mb-4">
-                    UraKompassin kysymykset kartoittavat nuoren kiinnostuksen kohteita eri alueilla: analyyttinen ajattelu, luovuus, käytännön tekeminen, teknologia, ihmisten auttaminen, ympäristö ja johtaminen. Kysymykset on muotoiltu suoraan: &ldquo;Kiinnostaako sinua...?&rdquo; tai &ldquo;Pidätkö...?&rdquo;.
-                  </p>
-                  <p className="text-base text-urak-text-secondary leading-relaxed">
-                    Nuoren vastaukset muodostavat hänen henkilökohtaisen kiinnostusprofiilins, jota verrataan yli 700 ammatin vaatimuksiin ja ominaisuuksiin. Vertailu perustuu matemaattiseen samankaltaisuuden laskentaan, joka löytää parhaat vastineet nuoren profiilille.
-                  </p>
+              <p className="text-base text-urak-text-secondary leading-relaxed mb-6">
+                UraKompassi tarjoaa räätälöidyt testit eri ikäryhmille, koska nuoren elämäntilanne vaikuttaa siihen, millaisia kysymyksiä on mielekästä kysyä:
+              </p>
+              <div className="space-y-4">
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <h4 className="text-white font-semibold mb-2">Yläaste (13-16 v)</h4>
+                  <p className="text-sm text-urak-text-secondary">Keskittyy peruskiinnostuksiin ja oppimistyyleihin. Sopii nuorille, jotka vasta tutustuvat eri aloihin.</p>
                 </div>
-
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    Ikäryhmäkohtaiset testit
-                  </h3>
-                  <p className="text-base text-urak-text-secondary leading-relaxed mb-4">
-                    UraKompassi käyttää kolmea eri testiä eri ikäryhmille:
-                  </p>
-                  <ul className="space-y-3 text-base text-urak-text-secondary leading-relaxed ml-4">
-                    <li className="flex items-start gap-3">
-                      <span className="text-urak-accent-blue mt-1">•</span>
-                      <div>
-                        <strong className="text-white">Yläaste (13-15 v):</strong> 30 kysymystä, jotka kartoittavat peruskiinnostuksen alueita ja oppimistyylejä
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-urak-accent-blue mt-1">•</span>
-                      <div>
-                        <strong className="text-white">Toisen asteen opiskelijat (16-18 v):</strong> 33 kysymystä, jotka keskittyvät tarkemmin uravalintoihin ja käytännön työtehtäviin
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-urak-accent-blue mt-1">•</span>
-                      <div>
-                        <strong className="text-white">Nuoret aikuiset (19-21 v):</strong> 30 kysymystä, jotka kartoittavat sekä kiinnostuksen kohteita että työelämän arvoja
-                      </div>
-                    </li>
-                  </ul>
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <h4 className="text-white font-semibold mb-2">Toinen aste (16-19 v)</h4>
+                  <p className="text-sm text-urak-text-secondary">Erilliset testit lukio- ja ammattikouluopiskelijoille. Huomioi eri koulutuspolkujen erityispiirteet.</p>
                 </div>
-
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    Positiivinen lähestymistapa
-                  </h3>
-                  <p className="text-base text-urak-text-secondary leading-relaxed">
-                    Keskiössä on nuoren oma kokemus ja vahvuuksien tunnistaminen, ei puutteiden korostaminen. Tavoitteena on auttaa nuorta löytämään itselleen sopivia polkuja, ei rajoittaa vaihtoehtoja. Tulokset tarjoavat lähtökohdan keskustelulle, eivät lopullista vastausta.
-                  </p>
-                </div>
-              </div>
-            </motion.section>
-          </AnimatedSection>
-
-          {/* Section: Miten testi on rakennettu */}
-          <AnimatedSection delay={0.4}>
-            <motion.section
-              id="miten-testi"
-              className="
-                rounded-3xl
-                border border-white/5
-                bg-white/5
-                backdrop-blur-xl
-                shadow-[0_18px_50px_rgba(0,0,0,0.45)]
-                p-8 md:p-10
-                mb-12
-                scroll-mt-24
-              "
-              role="article"
-            >
-              <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-                Näin UraKompassi on kehitetty
-              </h2>
-
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full border border-urak-accent-blue/40 bg-urak-bg text-sm font-medium text-urak-accent-blue flex items-center justify-center">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
-                      Tutkimuskirjallisuuden läpikäynti
-                    </h3>
-                    <p className="text-base text-urak-text-secondary leading-relaxed">
-                      Aloitimme kattavalla kirjallisuuskatsauksella urapsykologian, persoonallisuustutkimuksen ja nuorten ohjauksen aloilta. Tarkastelimme, mitkä menetelmät toimivat parhaiten suomalaisessa kontekstissa.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full border border-urak-accent-blue/40 bg-urak-bg text-sm font-medium text-urak-accent-blue flex items-center justify-center">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
-                      Kysymysten luonnosvaihe
-                    </h3>
-                    <p className="text-base text-urak-text-secondary leading-relaxed">
-                      Loimme alkuperäisen kysymyspankin, joka kartoittaa neljää ulottuvuutta: kiinnostukset, vahvuudet, työskentelytapa ja tulevaisuuden toiveet. Kysymykset suunniteltiin selkeiksi, neutraaleiksi ja helposti ymmärrettäviksi nuorille.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full border border-urak-accent-blue/40 bg-urak-bg text-sm font-medium text-urak-accent-blue flex items-center justify-center">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
-                      Sisäinen analyysi ja testaus
-                    </h3>
-                    <p className="text-base text-urak-text-secondary leading-relaxed">
-                      Analysoimme vastauksia ja vertasimme niitä ammattiprofiileihin. Tarkistimme, että testi erottaa eri tyyppejä riittävän hyvin ja että tulokset ovat johdonmukaisia.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full border border-urak-accent-blue/40 bg-urak-bg text-sm font-medium text-urak-accent-blue flex items-center justify-center">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
-                      Jatkuva kehittäminen
-                    </h3>
-                    <p className="text-base text-urak-text-secondary leading-relaxed">
-                      Palvelu on käytössä ja kehittyy jatkuvasti käyttäjäpalautteen perusteella. Keräämme säännöllisesti palautetta käyttäjiltä ja opettajilta, ja päivitämme kysymyksiä ja analyysiä tarpeen mukaan.
-                    </p>
-                  </div>
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <h4 className="text-white font-semibold mb-2">Nuoret aikuiset (18-25 v)</h4>
+                  <p className="text-sm text-urak-text-secondary">Kartoittaa laajemmin työelämän arvoja ja tulevaisuuden toiveita. Sopii jatko-opintoihin hakeville ja uran vaihtajille.</p>
                 </div>
               </div>
             </motion.section>
           </AnimatedSection>
 
           {/* Section: Tulosten tulkinta */}
-          <AnimatedSection delay={0.5}>
+          <AnimatedSection delay={0.4}>
             <motion.section
               id="tulosten-tulkinta"
               className="
@@ -351,45 +231,42 @@ export default function MetodologiaPage() {
               role="article"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-                Tulokset ovat keskustelun lähtökohta – eivät valmis päätös
+                Miten tuloksia tulkitaan?
               </h2>
               <p className="text-base text-urak-text-secondary leading-relaxed mb-6">
-                UraKompassi ei korvaa opinto-ohjaajaa vaan kokoaa nuoren ajatukset, vahvuudet ja kiinnostuksen kohteet yhteen raporttiin, joka toimii lähtökohtana ohjauskeskustelulle. Testi ei anna nuorelle lopullista vastausta siihen, mitä hänen pitäisi opiskella tai työskennellä. Sen sijaan raportti:
+                UraKompassin tulokset ovat suuntaa antavia, eivät lopullisia vastauksia. Raportti näyttää:
               </p>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-3">
                   <span className="text-urak-accent-blue mt-1">•</span>
                   <span className="text-base text-urak-text-secondary leading-relaxed">
-                    Nostaa esiin nuoren vahvuuksia ja kiinnostuksen kohteita selkeällä tavalla
+                    <strong className="text-white">Sopivimmat ammatit</strong> – Ammatteja, jotka vastaavat nuoren kiinnostuksia ja arvoja.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-urak-accent-blue mt-1">•</span>
                   <span className="text-base text-urak-text-secondary leading-relaxed">
-                    Tarjoaa esimerkkialoja ja ammatteja, jotka voisivat sopia nuorelle
+                    <strong className="text-white">Koulutuspolkusuositus</strong> – Suuntaa antava arvio sopivasta koulutuspolusta.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-urak-accent-blue mt-1">•</span>
                   <span className="text-base text-urak-text-secondary leading-relaxed">
-                    Auttaa nuorta sanoittamaan itseään ja ajatuksiaan urapohdinnassa
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-urak-accent-blue mt-1">•</span>
-                  <span className="text-base text-urak-text-secondary leading-relaxed">
-                    Toimii lähtökohtana keskustelulle opinto-ohjaajan, opettajan tai huoltajan kanssa
+                    <strong className="text-white">Henkilökohtainen analyysi</strong> – Kuvaus nuoren vahvuuksista ja kiinnostuksista.
                   </span>
                 </li>
               </ul>
+              <p className="text-base text-urak-text-secondary leading-relaxed mb-4">
+                Tulokset ovat keskustelun lähtökohta, eivät valmis päätös. Suosittelemme, että nuori käy tulokset läpi yhdessä luotettavan aikuisen kanssa.
+              </p>
               <p className="text-base text-urak-text-secondary leading-relaxed">
-                Suosittelemme, että nuori käy raportin läpi yhdessä opinto-ohjaajan, opettajan tai muun luotettavan aikuisen kanssa. Yhdessä voi pohtia, mitkä tulokset tuntuvat oikeilta, mitkä yllättävät ja mitkä kysymykset herättävät lisää pohdintaa.
+                UraKompassi ei korvaa opinto-ohjaajaa, vaan tarjoaa työkalun itsetuntemuksen ja urapohdinnon tueksi.
               </p>
             </motion.section>
           </AnimatedSection>
 
           {/* Section: Tietosuoja */}
-          <AnimatedSection delay={0.6}>
+          <AnimatedSection delay={0.5}>
             <motion.section
               id="tietosuoja"
               className="
@@ -405,47 +282,20 @@ export default function MetodologiaPage() {
               role="article"
             >
               <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-                Miten käsittelemme oppilaiden tietoja?
+                Tietosuoja ja yksityisyys
               </h2>
               <div className="space-y-4 text-base text-urak-text-secondary leading-relaxed">
                 <p>
-                  Oppilaan vastaukset ovat yksityisiä. Opettaja näkee oppilaan tulokset opettajan työpöydässä, mutta oppilas itse päättää, haluaako hän jakaa tuloksensa muille.
+                  <strong className="text-white">Ei henkilötietoja:</strong> UraKompassi ei vaadi rekisteröitymistä eikä kerää henkilötietoja. Testi voidaan tehdä täysin anonyymisti.
                 </p>
                 <p>
-                  UraKompassi näkee vain anonymisoituja, aggregoituja tietoja (esim. &quot;45% yläasteen oppilaista vastasi näin&quot;). Emme myy eikä jaa oppilaiden henkilötietoja kolmansille osapuolille.
+                  <strong className="text-white">Yksityisyys:</strong> Vastaukset käsitellään luottamuksellisesti eikä niitä yhdistetä henkilöön.
                 </p>
                 <p>
-                  Opettajien työpöydässä käytetään PIN-koodeja, jotta oppilaat voivat kirjautua ilman henkilötietojen syöttämistä. Tämä varmistaa GDPR-yhteensopivuuden ja auttaa kouluja noudattamaan tietosuoja-asetusta.
-                </p>
-              </div>
-            </motion.section>
-          </AnimatedSection>
-
-          {/* Section: Yhteistyö koulujen kanssa */}
-          <AnimatedSection delay={0.7}>
-            <motion.section
-              id="yhteistyö"
-              className="
-                rounded-3xl
-                border border-white/5
-                bg-white/5
-                backdrop-blur-xl
-                shadow-[0_18px_50px_rgba(0,0,0,0.45)]
-                p-8 md:p-10
-                mb-12
-                scroll-mt-24
-              "
-              role="article"
-            >
-              <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-                Yhteiskehittäminen koulujen kanssa
-              </h2>
-              <div className="space-y-4 text-base text-urak-text-secondary leading-relaxed">
-                <p>
-                  UraKompassi on kehitetty yhdessä suomalaisten koulujen kanssa. Olemme työskennelleet läheisesti opinto-ohjaajien ja opettajien kanssa varmistaaksemme, että menetelmä tukee suomalaista opetussuunnitelmaa ja koulujen ohjauskäytäntöjä.
+                  <strong className="text-white">Ei myyntiä kolmansille:</strong> Emme myy emmekä jaa käyttäjätietoja kolmansille osapuolille.
                 </p>
                 <p>
-                  Palvelu on käytössä ja kehittyy jatkuvasti käyttäjäpalautteen perusteella. Jatkamme yhteistyötä koulujen kanssa kehittääksemme palvelua eteenpäin.
+                  <strong className="text-white">GDPR-yhteensopivuus:</strong> Palvelu noudattaa EU:n yleistä tietosuoja-asetusta (GDPR).
                 </p>
               </div>
             </motion.section>
@@ -456,4 +306,3 @@ export default function MetodologiaPage() {
     </div>
   );
 }
-
