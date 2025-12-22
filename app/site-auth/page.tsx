@@ -53,9 +53,9 @@ export default function SiteAuthPage() {
           <div className="flex justify-center mb-4">
             <Logo className="h-12 w-auto" />
           </div>
-          <CardTitle className="text-2xl">Salasana vaaditaan</CardTitle>
+          <CardTitle className="text-2xl">Pääsy rajoitettu</CardTitle>
           <CardDescription>
-            Syötä salasana päästäksesi sivustolle
+            Tämä sisältö on saatavilla vain pilottiohjelman osallistujille. Syötä pääsykoodi jatkaaksesi.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -63,7 +63,7 @@ export default function SiteAuthPage() {
             <div>
               <Input
                 type="password"
-                placeholder="Salasana"
+                placeholder="Pääsykoodi"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -83,7 +83,7 @@ export default function SiteAuthPage() {
               className="w-full"
               disabled={loading || !password}
             >
-              {loading ? 'Tarkistetaan...' : 'Kirjaudu sisään'}
+              {loading ? 'Tarkistetaan...' : 'Jatka'}
             </Button>
           </form>
         </CardContent>

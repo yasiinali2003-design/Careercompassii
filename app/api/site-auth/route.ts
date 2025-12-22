@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
 
     if (!password) {
       return NextResponse.json(
-        { success: false, error: 'Salasana vaaditaan' },
+        { success: false, error: 'Pääsykoodi vaaditaan' },
         { status: 400 }
       );
     }
@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
 
     if (!normalized) {
       return NextResponse.json(
-        { success: false, error: 'Salasana vaaditaan' },
+        { success: false, error: 'Pääsykoodi vaaditaan' },
         { status: 400 }
       );
     }
@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
         console.warn('[Site Auth] Using default development password fallback.');
       }
       return NextResponse.json(
-        { success: false, error: 'Väärä salasana' },
+        { success: false, error: 'Väärä pääsykoodi' },
         { status: 401 }
       );
     }

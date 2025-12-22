@@ -130,39 +130,29 @@ export async function middleware(request: NextRequest) {
     // (No Basic Auth requirement for development)
   }
 
-  // Site-wide password protection (via /site-auth page)
-  // Only enable on production domain, not on localhost
-  const sitePasswordEnabled = !isLocalhost && isProduction && sitePasswordIsConfigured();
-  
+  // Protected routes password protection (via /site-auth page)
+  // Protects only /test and /ammatit routes
+  // Localhost is always allowed (development bypass)
+  const sitePasswordEnabled = !isLocalhost && sitePasswordIsConfigured();
+
   if (sitePasswordEnabled) {
     // Always allow access to site auth page and its API
     if (pathname === '/site-auth' || pathname === '/api/site-auth') {
       return NextResponse.next();
     }
 
-    // Exclude routes that have their own auth or are needed for functionality
-    const segments = pathname.split('/').filter(Boolean);
-    const firstSegment = segments[0];
-    const base64UrlTokenRegex = /^[A-Za-z0-9_-]{16,}$/;
-    const looksLikeClassTokenRoute =
-      Boolean(firstSegment && base64UrlTokenRegex.test(firstSegment)) &&
-      (segments.length === 1 ||
-        (segments.length === 2 && (segments[1] === 'test' || segments[1].startsWith('reports') || segments[1] === 'results' || segments[1] === 'analytics')) ||
-        (segments.length > 2 && segments[1] === 'reports'));
+    // Only protect /test and /ammatit routes (the core product)
+    // Everything else (landing page, /meista, /kouluille, /metodologia, legal pages) is public
+    const isProtectedRoute =
+      pathname === '/test' ||
+      pathname.startsWith('/test/') ||
+      pathname === '/ammatit' ||
+      pathname.startsWith('/ammatit/');
 
-    const isExcluded = 
-      pathname.startsWith('/teacher') ||
-      pathname.startsWith('/admin') ||
-      pathname === '/kouluille' || // Already handled above
-      (pathname.startsWith('/api') && pathname !== '/api/site-auth') ||
-      pathname.startsWith('/_next') ||
-      pathname.startsWith('/favicon') ||
-      looksLikeClassTokenRoute;
-
-    if (!isExcluded) {
+    if (isProtectedRoute) {
       // Check for site authentication cookie
       const siteAuth = request.cookies.get('site_auth');
-      
+
       if (!siteAuth || siteAuth.value !== 'authenticated') {
         // Redirect to site auth page
         const authUrl = new URL('/site-auth', request.url);
