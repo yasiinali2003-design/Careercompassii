@@ -369,13 +369,18 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
       const loadedAnswers = saved.answers ?? [];
       setAnswers(loadedAnswers);
       setHasLoadedProgress(true);
-      
+
+      // Restore taso2SubCohort if saved
+      if (saved.taso2SubCohort) {
+        setTaso2SubCohort(saved.taso2SubCohort);
+      }
+
       // If user already has answers saved, mark notification as shown
       // so it won't show again when they continue answering
       if (loadedAnswers.length > 0) {
         setHasShownSaveNotification(true);
       }
-      
+
       // Show notification that progress was loaded
       setTimeout(() => {
         setShowSaveNotification(true);
@@ -387,8 +392,8 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   // Auto-save progress whenever state changes
   useEffect(() => {
     if (step > 0) { // Only save if test has started
-      saveProgress({ step, group, index, answers });
-      
+      saveProgress({ step, group, index, answers, taso2SubCohort });
+
       // Show save notification only once after the first answer
       // Check if we're in question step (step === 2) and have at least one answer
       // and haven't shown the notification yet
@@ -398,7 +403,7 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
         setTimeout(() => setShowSaveNotification(false), 3000);
       }
     }
-  }, [step, group, index, answers, hasShownSaveNotification]);
+  }, [step, group, index, answers, taso2SubCohort, hasShownSaveNotification]);
 
   // Save progress before page unload
   useEffect(() => {
@@ -560,21 +565,30 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
       )}
 
       {step === 3 && group && (
-        <Summary
-          group={group}
-          questions={qList}
-          answers={answers}
-          originalIndices={originalIndices}
-          shuffledToOriginalQ={shuffledToOriginalQ}
-          shuffleKey={shuffleKey}
-          selectedSetIndex={selectedSetIndex}
-          onRestart={restart}
-          onSend={sendToBackend}
-          pin={pin}
-          classToken={classToken}
-          currentOccupation={currentOccupation}
-          taso2SubCohort={taso2SubCohort}
-        />
+        // Wait for questions to load before showing Summary (prevents "30/0" error on restore)
+        qList.length > 0 && shuffledToOriginalQ.length > 0 ? (
+          <Summary
+            group={group}
+            questions={qList}
+            answers={answers}
+            originalIndices={originalIndices}
+            shuffledToOriginalQ={shuffledToOriginalQ}
+            shuffleKey={shuffleKey}
+            selectedSetIndex={selectedSetIndex}
+            onRestart={restart}
+            onSend={sendToBackend}
+            pin={pin}
+            classToken={classToken}
+            currentOccupation={currentOccupation}
+            taso2SubCohort={taso2SubCohort}
+          />
+        ) : (
+          // Loading state while questions are being fetched
+          <div className="flex flex-col items-center justify-center py-20 space-y-4">
+            <div className="w-8 h-8 border-2 border-urak-accent-blue/30 border-t-urak-accent-blue rounded-full animate-spin" />
+            <p className="text-urak-text-secondary">Ladataan tuloksia...</p>
+          </div>
+        )
       )}
     </div>
   );

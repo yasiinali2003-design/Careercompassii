@@ -1619,15 +1619,15 @@ const TASO2_AMIS_SPECIFIC: QuestionMapping[] = [
     notes: "Procedure following ability"
   },
 
-  // Q28: Physical work
+  // Q28: Local/Community work - unique to vocational paths
   {
     q: 28,
-    text: "Haluatko työn, jossa olet paljon ulkona ja liikut fyysisesti?",
-    dimension: 'workstyle',
-    subdimension: 'outdoor',
-    weight: 1.2,
+    text: "Haluaisitko työn, jossa voit toimia omalla paikkakunnallasi?",
+    dimension: 'values',
+    subdimension: 'stability',
+    weight: 1.1,
     reverse: false,
-    notes: "Physical/outdoor work preference"
+    notes: "Local work preference - common vocational value"
   },
 
   // Q29: Apprenticeship interest
