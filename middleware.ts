@@ -28,58 +28,57 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith('/favicon') ||
     pathname.match(/\.(ico|png|jpg|jpeg|gif|svg|css|js|woff|woff2|ttf|eot)$/);
   
-  // TEMPORARILY DISABLED - Bot detection disabled for testing
-  // if (!skipBotCheck) {
-  //   const userAgent = request.headers.get('user-agent');
-  //
-  //   // Block known bots immediately (except search engines for SEO)
-  //   if (userAgent && isBotUserAgent(userAgent)) {
-  //     const isSearchEngine = /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandex/i.test(userAgent);
-  //
-  //     if (!isSearchEngine) {
-  //       // Track and block
-  //       const ip = getIP(request);
-  //       await trackRequest(request, ip, pathname);
-  //
-  //       return new NextResponse('Access Denied', {
-  //         status: 403,
-  //         headers: {
-  //           'X-Bot-Detected': 'true',
-  //           'Retry-After': '3600'
-  //         }
-  //       });
-  //     }
-  //   }
-  //
-  //   // Check for suspicious request patterns
-  //   const suspicious = isSuspiciousRequest(request);
-  //   if (suspicious.suspicious) {
-  //     const ip = getIP(request);
-  //     await trackRequest(request, ip, pathname);
-  //
-  //     // Analyze patterns
-  //     const analysis = await analyzeRequestPatterns(request, ip);
-  //
-  //     if (analysis.action === 'block') {
-  //       return new NextResponse('Access Denied - Suspicious Activity Detected', {
-  //         status: 403,
-  //         headers: {
-  //           'X-Bot-Detected': 'true',
-  //           'X-Bot-Confidence': analysis.confidence.toString(),
-  //           'Retry-After': '3600'
-  //         }
-  //       });
-  //     }
-  //
-  //     if (analysis.action === 'challenge') {
-  //       // Redirect to challenge page (we'll create this)
-  //       const challengeUrl = new URL('/challenge', request.url);
-  //       challengeUrl.searchParams.set('returnTo', pathname);
-  //       challengeUrl.searchParams.set('token', crypto.randomBytes(16).toString('hex'));
-  //       return NextResponse.redirect(challengeUrl);
-  //     }
-  //   }
-  // }
+  if (!skipBotCheck) {
+    const userAgent = request.headers.get('user-agent');
+
+    // Block known bots immediately (except search engines for SEO)
+    if (userAgent && isBotUserAgent(userAgent)) {
+      const isSearchEngine = /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandex/i.test(userAgent);
+
+      if (!isSearchEngine) {
+        // Track and block
+        const ip = getIP(request);
+        await trackRequest(request, ip, pathname);
+
+        return new NextResponse('Access Denied', {
+          status: 403,
+          headers: {
+            'X-Bot-Detected': 'true',
+            'Retry-After': '3600'
+          }
+        });
+      }
+    }
+
+    // Check for suspicious request patterns
+    const suspicious = isSuspiciousRequest(request);
+    if (suspicious.suspicious) {
+      const ip = getIP(request);
+      await trackRequest(request, ip, pathname);
+
+      // Analyze patterns
+      const analysis = await analyzeRequestPatterns(request, ip);
+
+      if (analysis.action === 'block') {
+        return new NextResponse('Access Denied - Suspicious Activity Detected', {
+          status: 403,
+          headers: {
+            'X-Bot-Detected': 'true',
+            'X-Bot-Confidence': analysis.confidence.toString(),
+            'Retry-After': '3600'
+          }
+        });
+      }
+
+      if (analysis.action === 'challenge') {
+        // Redirect to challenge page (we'll create this)
+        const challengeUrl = new URL('/challenge', request.url);
+        challengeUrl.searchParams.set('returnTo', pathname);
+        challengeUrl.searchParams.set('token', crypto.randomBytes(16).toString('hex'));
+        return NextResponse.redirect(challengeUrl);
+      }
+    }
+  }
 
   // Block analytics API for GDPR compliance - admin should only generate teacher codes
   if (pathname.startsWith('/api/admin/school-analytics')) {
