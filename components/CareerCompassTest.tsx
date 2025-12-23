@@ -362,7 +362,8 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   // Load saved progress on component mount
   useEffect(() => {
     const saved = loadProgress();
-    if (saved && saved.step !== undefined && saved.step > 0) {
+    // Only restore steps 1 and 2, not step 3 (Summary) - step 3 causes issues when restoring
+    if (saved && saved.step !== undefined && saved.step > 0 && saved.step < 3) {
       setStep(saved.step);
       setGroup(saved.group);
       setIndex(saved.index ?? 0);
@@ -386,12 +387,16 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
         setShowSaveNotification(true);
         setTimeout(() => setShowSaveNotification(false), 4000);
       }, 500);
+    } else if (saved && saved.step === 3) {
+      // If saved at step 3, clear it - user should see results page or restart
+      safeRemoveItem(STORAGE_KEY);
     }
   }, []);
 
   // Auto-save progress whenever state changes
+  // NOTE: Don't save step 3 (Summary) - it causes issues when restoring because questions re-shuffle
   useEffect(() => {
-    if (step > 0) { // Only save if test has started
+    if (step > 0 && step < 3) { // Only save steps 1 and 2, not step 3 (Summary)
       saveProgress({ step, group, index, answers, taso2SubCohort });
 
       // Show save notification only once after the first answer
@@ -405,17 +410,17 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
     }
   }, [step, group, index, answers, taso2SubCohort, hasShownSaveNotification]);
 
-  // Save progress before page unload
+  // Save progress before page unload (but not step 3)
   useEffect(() => {
     const handleBeforeUnload = () => {
-      if (step > 0) {
-        saveProgress({ step, group, index, answers });
+      if (step > 0 && step < 3) {
+        saveProgress({ step, group, index, answers, taso2SubCohort });
       }
     };
 
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, [step, group, index, answers]);
+  }, [step, group, index, answers, taso2SubCohort]);
 
   const start = () => setStep(1);
 
@@ -583,10 +588,15 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
             taso2SubCohort={taso2SubCohort}
           />
         ) : (
-          // Loading state while questions are being fetched
+          // Questions not loaded - show error with restart option instead of infinite loading
           <div className="flex flex-col items-center justify-center py-20 space-y-4">
-            <div className="w-8 h-8 border-2 border-urak-accent-blue/30 border-t-urak-accent-blue rounded-full animate-spin" />
-            <p className="text-urak-text-secondary">Ladataan tuloksia...</p>
+            <p className="text-urak-text-secondary">Kysymysten lataus epäonnistui.</p>
+            <button
+              onClick={restart}
+              className="px-4 py-2 bg-urak-accent-blue text-white rounded-lg hover:bg-urak-accent-blue/80 transition-colors"
+            >
+              Aloita testi alusta
+            </button>
           </div>
         )
       )}
@@ -1275,14 +1285,18 @@ const Summary = ({
             // IMPORTANT: Save to localStorage BEFORE navigating to ensure persistence
             // Use safeSetString with JSON.stringify for reliable synchronous storage
             const resultsJson = JSON.stringify(resultsWithAnswers);
-            const savedResults = safeSetString('careerTestResults', resultsJson);
             const finalResultId = resultsData.resultId || scoreData.resultId;
+            console.log('[Test] PIN flow: Saving results to localStorage, resultId:', finalResultId);
+            const savedResults = safeSetString('careerTestResults', resultsJson);
             const savedResultId = finalResultId ? safeSetString('lastTestResultId', finalResultId) : true;
+            console.log('[Test] PIN flow: localStorage save result - results:', savedResults, 'resultId:', savedResultId);
 
             // Verify storage succeeded before navigating
             if (!savedResults || !savedResultId) {
               console.error('[Test] Failed to save results to localStorage');
               // Still navigate - results should be retrievable from database
+            } else {
+              console.log('[Test] Results saved successfully to localStorage');
             }
 
             // Small delay to ensure localStorage write completes
@@ -1377,13 +1391,17 @@ const Summary = ({
           // IMPORTANT: Save to localStorage BEFORE navigating to ensure persistence
           // Use safeSetString with JSON.stringify for reliable synchronous storage
           const resultsJson = JSON.stringify(resultsWithAnswers);
+          console.log('[Test] Saving results to localStorage, resultId:', data.resultId);
           const savedResults = safeSetString('careerTestResults', resultsJson);
           const savedResultId = data.resultId ? safeSetString('lastTestResultId', data.resultId) : true;
+          console.log('[Test] localStorage save result - results:', savedResults, 'resultId:', savedResultId);
 
           // Verify storage succeeded before navigating
           if (!savedResults || !savedResultId) {
             console.error('[Test] Failed to save results to localStorage');
             // Still navigate - results should be retrievable from database
+          } else {
+            console.log('[Test] Results saved successfully to localStorage');
           }
 
           // Small delay to ensure localStorage write completes

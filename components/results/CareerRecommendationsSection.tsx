@@ -54,7 +54,7 @@ export function CareerRecommendationsSection({
           Ammattiehdotukset vastauksiesi perusteella
         </h2>
         <p className="text-base md:text-lg text-slate-300 leading-relaxed max-w-3xl">
-          Nämä ammatit ovat esimerkkejä – eivät listaa ammateista, joita sinun tulisi hakea. 
+          Nämä ammatit ovat esimerkkejä, eivät listaa ammateista, joita sinun tulisi hakea. 
           Käytä niitä keskustelun avauksena ja tutki myös muita vaihtoehtoja.
         </p>
       </div>

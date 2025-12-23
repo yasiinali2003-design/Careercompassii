@@ -1128,7 +1128,7 @@ function generatePersonalityCareerBenefit(careerFI: any, cohort: Cohort): string
     const impactReason = careerFI.impact[Math.floor(Math.random() * careerFI.impact.length)];
     // Clean up the impact text (remove "Suomessa" prefix if present for better flow)
     const cleanedImpact = impactReason.replace(/^Auttaa Suomessa /i, 'Auttaa ').replace(/^Parantaa Suomessa /i, 'Parantaa ').replace(/^Luo Suomessa /i, 'Luo ');
-    return `${careerTitle}na pääset tekemään merkityksellistä työtä: ${cleanedImpact.charAt(0).toLowerCase() + cleanedImpact.slice(1)}`;
+    return `Tässä ammatissa pääset tekemään merkityksellistä työtä: ${cleanedImpact.charAt(0).toLowerCase() + cleanedImpact.slice(1)}`;
   }
 
   // Use job outlook if available
@@ -1144,13 +1144,13 @@ function generatePersonalityCareerBenefit(careerFI: any, cohort: Cohort): string
   // Use main_tasks if available
   if (careerFI?.main_tasks && careerFI.main_tasks.length > 0) {
     const task = careerFI.main_tasks[0];
-    return `${careerTitle}na pääset keskittymään esimerkiksi: ${task.charAt(0).toLowerCase() + task.slice(1)}`;
+    return `Tässä työssä pääset keskittymään esimerkiksi: ${task.charAt(0).toLowerCase() + task.slice(1)}`;
   }
 
   // Generic benefits with career title
   const genericBenefits = [
     `${careerTitle} tarjoaa monipuolisia mahdollisuuksia kehittyä ja kasvaa ammatillisesti.`,
-    `${careerTitle}na pääset oppimaan jatkuvasti uutta ja kehittämään osaamistasi.`,
+    `Tässä ammatissa pääset oppimaan jatkuvasti uutta ja kehittämään osaamistasi.`,
     `${careerTitle} mahdollistaa merkityksellisen työn tekemisen ja henkilökohtaista kasvua.`
   ];
 
@@ -1241,10 +1241,10 @@ function generateCareerSpecificTaskReason(careerFI: any, userDetailed: DetailedD
       };
 
       const strengthText = interestMap[topInterest] || "vahvuutesi";
-      return `${careerTitle}na pääset hyödyntämään ${strengthText} tehtävissä kuten ${formattedTasks}.`;
+      return `Tässä työssä pääset hyödyntämään ${strengthText} tehtävissä kuten ${formattedTasks}.`;
     }
 
-    return `${careerTitle}na päivittäisiisi kuuluu ${formattedTasks}.`;
+    return `Tässä työssä päivittäisiisi kuuluu ${formattedTasks}.`;
   }
 
   // Use core_skills if main_tasks not available

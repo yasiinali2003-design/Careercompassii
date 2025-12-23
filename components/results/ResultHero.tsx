@@ -17,9 +17,9 @@ interface ResultHeroProps {
 }
 
 const cohortLabels: Record<string, string> = {
-  nuoriAikuinen: 'Nuoret aikuiset – UraKompassi',
-  ylaste: 'Yläasteen oppilaat – UraKompassi',
-  toinenAste: 'Toisen asteen opiskelijat – UraKompassi',
+  nuoriAikuinen: 'Nuoret aikuiset | Urakompassi',
+  ylaste: 'Yläasteen oppilaat | Urakompassi',
+  toinenAste: 'Toisen asteen opiskelijat | Urakompassi',
 };
 
 export function ResultHero({
@@ -64,7 +64,7 @@ export function ResultHero({
       >
         <p className="text-base md:text-lg text-slate-200 leading-relaxed">
           <strong className="font-semibold text-white">
-            Tulokset ovat keskustelun avaus – eivät päätöksiä puolestasi.
+            Tulokset ovat keskustelun avaus, eivät päätöksiä puolestasi.
           </strong>
           <span className="block mt-2">
             Käytä raporttia pohtiessasi tulevaisuuttasi yhdessä opinto-ohjaajan, opettajien tai muun luotettavan aikuisen kanssa.

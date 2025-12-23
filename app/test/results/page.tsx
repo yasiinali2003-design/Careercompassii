@@ -94,13 +94,16 @@ export default function ResultsPage() {
     const loadResults = async () => {
       // Get resultId from localStorage - this is the key to consistent results
       const resultId = safeGetString('lastTestResultId');
+      console.log('[Results] Loading results, resultId:', resultId);
 
       // First, try localStorage (set by test component)
       const storedResults = safeGetString('careerTestResults');
+      console.log('[Results] localStorage careerTestResults exists:', !!storedResults);
 
       if (storedResults) {
         try {
           const data = JSON.parse(storedResults);
+          console.log('[Results] Parsed localStorage data, has topCareers:', !!data.topCareers);
           // Validate and clean topCareers array
           if (data.topCareers && Array.isArray(data.topCareers)) {
             data.topCareers = data.topCareers.filter((c: any) =>
@@ -111,16 +114,22 @@ export default function ResultsPage() {
           if (resultId && !data.resultId) {
             data.resultId = resultId;
           }
+          console.log('[Results] Using localStorage data successfully');
           setResults(data);
           setLoading(false);
           return;
         } catch (err) {
           console.error('[Results] Error parsing localStorage:', err);
+          // Clear corrupted localStorage data
+          try {
+            localStorage.removeItem('careerTestResults');
+          } catch {}
         }
       }
 
       // If localStorage is empty, try to fetch from API using resultId
       // This fetches the EXACT stored results, not recalculated ones
+      console.log('[Results] localStorage empty, attempting API fallback with resultId:', resultId);
       if (resultId) {
         try {
           console.log('[Results] Fetching stored results from API with resultId:', resultId);
@@ -239,7 +248,8 @@ export default function ResultsPage() {
       }
 
       // If both localStorage and database fail, show error
-      setError('Tuloksia ei löytynyt. Tee testi uudelleen.');
+      console.error('[Results] No results found - localStorage empty and no valid resultId');
+      setError('Tuloksia ei löytynyt. Tee testi uudelleen nähdäksesi tuloksesi.');
       setLoading(false);
     };
 
@@ -519,23 +529,32 @@ function FeedbackSection() {
   }
 
   return (
-    <Card className="mt-12 border-2 border-white/20 bg-[#11161D]">
-      <CardHeader>
-        <CardTitle className="text-2xl text-white">
-          Kerro meille mielipiteesi
-        </CardTitle>
-        <CardDescription className="text-slate-400">
-          Palautteesi auttaa meitä kehittämään testiä
-        </CardDescription>
+    <Card className="mt-12 border border-white/10 bg-gradient-to-br from-[#0f1419] to-[#11161D] shadow-xl">
+      <CardHeader className="pb-4">
+        <div className="flex items-center gap-3 mb-1">
+          <div className="w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center">
+            <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </div>
+          <div>
+            <CardTitle className="text-xl text-white">
+              Miten koit testin?
+            </CardTitle>
+            <CardDescription className="text-slate-400 text-sm">
+              Auta meitä kehittämään palvelua
+            </CardDescription>
+          </div>
+        </div>
       </CardHeader>
 
       <CardContent className="space-y-6">
         <div>
-          <label className="block text-lg font-semibold text-white mb-3">
-            Oliko testi hyödyllinen?
-          </label>
-          
-          <div className="flex items-center gap-2 mb-2">
+          <p className="text-sm text-slate-300 mb-4">
+            Kuinka hyödylliseksi koit testin tulokset?
+          </p>
+
+          <div className="flex items-center justify-center gap-1 sm:gap-2">
             {[1, 2, 3, 4, 5].map((star) => (
               <button
                 key={star}
@@ -543,71 +562,88 @@ function FeedbackSection() {
                 onClick={() => setRating(star)}
                 onMouseEnter={() => setHoveredRating(star)}
                 onMouseLeave={() => setHoveredRating(null)}
-                className="text-4xl transition-all duration-150 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 rounded"
+                className="group p-2 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded-lg"
                 aria-label={`${star} tähteä`}
               >
-                {(hoveredRating !== null ? star <= hoveredRating : star <= (rating || 0)) ? (
-                  <span className="text-yellow-400">⭐</span>
-                ) : (
-                  <span className="text-gray-300">☆</span>
-                )}
+                <svg
+                  className={`w-8 h-8 sm:w-10 sm:h-10 transition-colors duration-200 ${
+                    (hoveredRating !== null ? star <= hoveredRating : star <= (rating || 0))
+                      ? 'text-amber-400 fill-amber-400'
+                      : 'text-slate-600 group-hover:text-slate-400'
+                  }`}
+                  fill={
+                    (hoveredRating !== null ? star <= hoveredRating : star <= (rating || 0))
+                      ? 'currentColor'
+                      : 'none'
+                  }
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
               </button>
             ))}
           </div>
 
-          <div className="flex justify-between text-sm text-slate-400 mt-1">
-            <span>Ei lainkaan</span>
+          <div className="flex justify-between text-xs text-slate-500 mt-3 px-2">
+            <span>Ei kovin hyödyllinen</span>
             <span>Erittäin hyödyllinen</span>
           </div>
         </div>
 
         {rating !== null && (
-          <div className="animate-in fade-in slide-in-from-top-2 duration-300">
-            <label className="block text-base font-semibold text-white mb-2">
-              Mikä oli parasta? Mitä voisimme parantaa?
-              <span className="text-sm font-normal text-slate-400 ml-2">(valinnainen)</span>
+          <div className="animate-in fade-in slide-in-from-top-2 duration-300 pt-2 border-t border-white/5">
+            <label className="block text-sm font-medium text-slate-300 mb-2">
+              Haluatko kertoa lisää?
+              <span className="text-slate-500 font-normal ml-1">(valinnainen)</span>
             </label>
-            
+
             <textarea
               value={feedbackText}
               onChange={(e) => setFeedbackText(e.target.value)}
               maxLength={500}
-              rows={4}
-              placeholder=""
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-400 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all resize-none bg-white/5 text-white placeholder:text-slate-500"
+              rows={3}
+              placeholder="Kerro meille kokemuksestasi..."
+              className="w-full px-4 py-3 border border-white/10 rounded-xl focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none transition-all resize-none bg-white/5 text-white placeholder:text-slate-500 text-sm"
             />
-            
-            <div className="text-sm text-slate-400 mt-1 text-right">
-              {feedbackText.length}/500 merkkiä
+
+            <div className="text-xs text-slate-500 mt-1.5 text-right">
+              {feedbackText.length}/500
             </div>
           </div>
         )}
 
         {rating !== null && (
-          <div className="flex flex-col sm:flex-row gap-3 pt-2">
+          <div className="flex gap-3 pt-2">
             <Button
               onClick={handleSubmit}
               disabled={isSubmitting}
-              size="lg"
-              className="flex-1 bg-cyan-500 hover:bg-cyan-600"
+              className="flex-1 bg-cyan-500 hover:bg-cyan-600 text-white font-medium py-2.5"
             >
-              {isSubmitting ? 'Lähetetään...' : 'Lähetä palaute'}
+              {isSubmitting ? (
+                <span className="flex items-center gap-2">
+                  <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                  </svg>
+                  Lähetetään...
+                </span>
+              ) : 'Lähetä palaute'}
             </Button>
             <Button
               onClick={handleSkip}
               disabled={isSubmitting}
-              size="lg"
-              variant="outline"
-              className="flex-1 sm:flex-none border-white/20 text-white hover:bg-white/10"
+              variant="ghost"
+              className="text-slate-400 hover:text-white hover:bg-white/5"
             >
               Ohita
             </Button>
           </div>
         )}
 
-        <div className="text-sm text-slate-400 text-center pt-2">
-          ✨ Palautteesi auttaa meitä parantamaan testiä! Kaikki palaute on anonyymiä.
-        </div>
+        <p className="text-xs text-slate-500 text-center">
+          Palaute on anonyymiä ja auttaa meitä parantamaan testiä.
+        </p>
       </CardContent>
     </Card>
   );

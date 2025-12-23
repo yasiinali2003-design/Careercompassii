@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
@@ -11,9 +11,28 @@ import { extractReferralCodeFromUrl, trackReferral } from '@/lib/referralSystem'
 
 export default function TestPage() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const pin = searchParams?.get('pin') || null;
   const classToken = searchParams?.get('classToken') || null;
+  const reset = searchParams?.get('reset') || null;
   const [scrolled, setScrolled] = useState(false);
+  const [isReady, setIsReady] = useState(false);
+
+  // Clear localStorage if reset parameter is present - do this BEFORE rendering test component
+  useEffect(() => {
+    if (reset === '1') {
+      // Clear ALL possible storage keys used by the test
+      localStorage.removeItem('careercompass-progress'); // Main progress key
+      localStorage.removeItem('careerTestProgress');
+      localStorage.removeItem('careerTestResults');
+      localStorage.removeItem('lastTestResultId');
+      // Remove the reset parameter from URL and reload
+      window.location.href = '/test';
+      return;
+    }
+    // Only render test component after we've checked reset
+    setIsReady(true);
+  }, [reset]);
 
   // Track referral code if present
   useEffect(() => {
@@ -64,8 +83,14 @@ export default function TestPage() {
         </div>
       </nav>
 
-      {/* Test Component */}
-      <CareerCompassTest pin={pin} classToken={classToken} />
+      {/* Test Component - only render when ready (after reset check) */}
+      {isReady ? (
+        <CareerCompassTest pin={pin} classToken={classToken} />
+      ) : (
+        <div className="flex items-center justify-center py-20">
+          <div className="w-8 h-8 border-2 border-cyan-400/30 border-t-cyan-400 rounded-full animate-spin" />
+        </div>
+      )}
     </div>
   )
 }

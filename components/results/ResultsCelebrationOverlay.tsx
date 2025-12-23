@@ -231,7 +231,7 @@ export function ResultsCelebrationOverlay({
 
                 {/* Title */}
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
-                  Testi suoritettu – Olet ottanut tärkeän askeleen kohti oman tulevaisuutesi pohtimista.
+                  Testi suoritettu! Olet ottanut tärkeän askeleen kohti oman tulevaisuutesi pohtimista.
                 </h2>
 
                 {/* Subtitle */}
