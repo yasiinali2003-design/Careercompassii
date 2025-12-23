@@ -8,6 +8,13 @@
  * IMPORTANT: All questions use 1-5 Likert scale
  * - 1 = "Ei lainkaan"
  * - 5 = "Erittäin paljon"
+ *
+ * PSYCHOMETRIC IMPROVEMENTS (v2.0):
+ * - Added reverse-scored items (~9%) to detect acquiescence bias
+ * - Reverse items have `reverse: true` and scoring engine automatically inverts
+ * - YLA: Q18 (focus), Q20 (stress), Q25 (recognition) are reverse-scored
+ * - TASO2: Q18 (detail), Q21 (frustration) are reverse-scored
+ * - NUORI: Q16 (client fatigue), Q19 (pace stress), Q29 (culture) are reverse-scored
  */
 
 import { QuestionMapping, CohortQuestionSet, Cohort, ScoringWeights } from './types';
@@ -227,15 +234,15 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     notes: "Outdoor work preference"
   },
 
-  // Q18: Workstyle - Focus
+  // Q18: Workstyle - Focus (REVERSE-SCORED for bias detection)
   {
     q: 18,
-    text: "Pystytkö keskittymään pitkän aikaa samaan tehtävään?",
+    text: "Onko sinun vaikea keskittyä pitkään samaan tehtävään?",
     dimension: 'workstyle',
     subdimension: 'precision',
     weight: 0.9,
-    reverse: false,
-    notes: "Focus ability"
+    reverse: true,  // REVERSE: high = poor focus, flipped for scoring
+    notes: "Focus difficulty - REVERSE SCORED for acquiescence bias detection"
   },
 
   // Q19: Workstyle - Variety
@@ -249,15 +256,15 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     notes: "Variety preference"
   },
 
-  // Q20: Workstyle - Pressure
+  // Q20: Workstyle - Pressure (REVERSE-SCORED for bias detection)
   {
     q: 20,
-    text: "Pystytkö toimimaan hyvin, vaikka olisi kiire?",
+    text: "Stressaannutko helposti, kun on kiire?",
     dimension: 'workstyle',
     subdimension: 'performance',
     weight: 0.8,
-    reverse: false,
-    notes: "Pressure handling"
+    reverse: true,  // REVERSE: high = poor stress tolerance, flipped for scoring
+    notes: "Stress sensitivity - REVERSE SCORED for acquiescence bias detection"
   },
 
   // Q21: Workstyle - Public speaking
@@ -304,15 +311,15 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     notes: "Financial motivation"
   },
 
-  // Q25: Values - Recognition
+  // Q25: Values - Recognition (REVERSE-SCORED for bias detection)
   {
     q: 25,
-    text: "Haluaisitko olla tunnettu jostakin, missä olet erityisen hyvä?",
+    text: "Onko sinulle yhdentekevää, huomaavatko muut saavutuksesi?",
     dimension: 'values',
     subdimension: 'advancement',
     weight: 0.9,
-    reverse: false,
-    notes: "Recognition desire"
+    reverse: true,  // REVERSE: high = doesn't care about recognition, flipped for scoring
+    notes: "Recognition indifference - REVERSE SCORED for bias detection"
   },
 
   // Q26: Values - Free time
@@ -577,7 +584,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   // Q15: Physical work preference - Changed to outdoor (physical work often outdoor)
   {
     q: 15,
-    text: "Haluaisitko työn jossa liikut ja teet fyysistä työtä?",
+    text: "Haluaisitko työn, jossa liikut ja teet fyysistä työtä?",
     dimension: 'workstyle',
     subdimension: 'outdoor',
     weight: 1.1,
@@ -607,15 +614,15 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     notes: "Customer interaction"
   },
 
-  // Q18: Precision
+  // Q18: Precision (REVERSE-SCORED for bias detection)
   {
     q: 18,
-    text: "Oletko tarkka ja huolellinen yksityiskohdissa?",
+    text: "Turhauttavatko tarkat yksityiskohdat sinua?",
     dimension: 'workstyle',
     subdimension: 'precision',
     weight: 1.0,
-    reverse: false,
-    notes: "Attention to detail"
+    reverse: true,  // REVERSE: high = dislikes precision, flipped for scoring
+    notes: "Detail frustration - REVERSE SCORED for bias detection"
   },
 
   // Q19: Responsibility
@@ -640,21 +647,21 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     notes: "Team preference - 5=team"
   },
 
-  // Q21: Problem-solving at work
+  // Q21: Problem-solving at work (REVERSE-SCORED for bias detection)
   {
     q: 21,
-    text: "Pidätkö haastavien teknisten ongelmien ratkaisemisesta?",
+    text: "Ärsyttääkö sinua, kun asiat eivät toimi heti?",
     dimension: 'workstyle',
     subdimension: 'problem_solving',
     weight: 1.1,
-    reverse: false,
-    notes: "Technical problem-solving"
+    reverse: true,  // REVERSE: high = low frustration tolerance, flipped for scoring
+    notes: "Frustration with problems - REVERSE SCORED for bias detection"
   },
 
   // Q22: Routine tolerance
   {
     q: 22,
-    text: "Sopiiko sinulle työ jossa tehtävät toistuvat samanlaisina?",
+    text: "Sopiiko sinulle työ, jossa tehtävät toistuvat samanlaisina?",
     dimension: 'workstyle',
     subdimension: 'structure',
     weight: 0.8,
@@ -687,7 +694,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   // Q25: Meaningful work
   {
     q: 25,
-    text: "Haluatko työn joka tuntuu merkitykselliseltä?",
+    text: "Haluatko työn, joka tuntuu merkitykselliseltä?",
     dimension: 'values',
     subdimension: 'impact',
     weight: 1.2,
@@ -709,7 +716,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   // Q27: Work-life balance
   {
     q: 27,
-    text: "Haluatko työn joka jättää aikaa perheelle ja vapaa-ajalle?",
+    text: "Haluatko työn, joka jättää aikaa perheelle ja vapaa-ajalle?",
     dimension: 'values',
     subdimension: 'work_life_balance',
     weight: 1.1,
@@ -731,7 +738,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
   // Q29: Travel
   {
     q: 29,
-    text: "Haluaisitko työn jossa pääsee matkustamaan?",
+    text: "Haluaisitko työn, jossa pääsee matkustamaan?",
     dimension: 'values',
     subdimension: 'global',
     weight: 0.9,
@@ -993,15 +1000,15 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     notes: "Structure preference - 5=structured"
   },
 
-  // Q16: Client-facing - social skills
+  // Q16: Client-facing - social skills (REVERSE-SCORED for bias detection)
   {
     q: 16,
-    text: "Viihdytkö asiakasrajapinnassa ja neuvotteluissa?",
+    text: "Väsyttääkö jatkuva asiakkaiden kohtaaminen sinua?",
     dimension: 'workstyle',
     subdimension: 'social',
     weight: 1.3,
-    reverse: false,
-    notes: "Client-facing work"
+    reverse: true,  // REVERSE: high = dislikes client work, flipped for scoring
+    notes: "Client fatigue - REVERSE SCORED for bias detection"
   },
 
   // Q17: Strategic thinking
@@ -1026,15 +1033,15 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     notes: "Detail orientation - 5=details"
   },
 
-  // Q19: Work pace
+  // Q19: Work pace (REVERSE-SCORED for bias detection)
   {
     q: 19,
-    text: "Viihdytkö nopeatahtisessa ja kiireisessä työympäristössä?",
+    text: "Stressaako kiireinen työtahti sinua?",
     dimension: 'workstyle',
     subdimension: 'performance',
     weight: 1.0,
-    reverse: false,
-    notes: "Pace preference - 5=fast"
+    reverse: true,  // REVERSE: high = stressed by pace, flipped for scoring
+    notes: "Pace stress - REVERSE SCORED for bias detection"
   },
 
   // Q20: Salary priority
@@ -1163,15 +1170,15 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     notes: "International orientation"
   },
 
-  // Q29: Company culture - social aspect
+  // Q29: Company culture - social aspect (REVERSE-SCORED for bias detection)
   {
     q: 29,
-    text: "Onko työpaikan ilmapiiri ja kulttuuri sinulle erityisen tärkeää?",
+    text: "Onko työpaikan kulttuuri sinulle yhdentekevää?",
     dimension: 'values',
     subdimension: 'social',
     weight: 1.1,
-    reverse: false,
-    notes: "Culture importance"
+    reverse: true,  // REVERSE: high = doesn't care about culture, flipped for scoring
+    notes: "Culture indifference - REVERSE SCORED for bias detection"
   }
 ];
 
@@ -1383,15 +1390,15 @@ const TASO2_SHARED_QUESTIONS: QuestionMapping[] = [
     notes: "Impact motivation"
   },
 
-  // Q18: Career advancement
+  // Q18: Detail frustration (REVERSE-SCORED for bias detection)
   {
     q: 18,
-    text: "Onko uralla eteneminen sinulle tärkeää?",
-    dimension: 'values',
-    subdimension: 'advancement',
-    weight: 1.1,
-    reverse: false,
-    notes: "Advancement drive"
+    text: "Turhauttavatko tarkat säännöt ja yksityiskohdat sinua?",
+    dimension: 'workstyle',
+    subdimension: 'precision',
+    weight: 1.0,
+    reverse: true,  // REVERSE: high = dislikes precision, flipped for scoring
+    notes: "Detail frustration - REVERSE SCORED for bias detection"
   },
 
   // Q19: Job stability
@@ -1421,15 +1428,15 @@ const TASO2_LUKIO_SPECIFIC: QuestionMapping[] = [
     notes: "Science interest - university track"
   },
 
-  // Q21: Research interest
+  // Q21: Frustration with slow progress (REVERSE-SCORED for bias detection)
   {
     q: 21,
-    text: "Haluaisitko tehdä tutkimustyötä ja kehittää uutta tietoa?",
-    dimension: 'interests',
-    subdimension: 'innovation',
-    weight: 1.4,
-    reverse: false,
-    notes: "Academic research drive"
+    text: "Ärsyttääkö sinua, kun opiskelu etenee hitaasti tai vaatii paljon toistoa?",
+    dimension: 'workstyle',
+    subdimension: 'problem_solving',
+    weight: 1.1,
+    reverse: true,  // REVERSE: high = low patience, flipped for scoring
+    notes: "Learning frustration - REVERSE SCORED for bias detection"
   },
 
   // Q22: Abstract thinking
@@ -1542,15 +1549,15 @@ const TASO2_AMIS_SPECIFIC: QuestionMapping[] = [
     notes: "Tangible work results preference"
   },
 
-  // Q21: Quick work entry
+  // Q21: Frustration with problems (REVERSE-SCORED for bias detection)
   {
     q: 21,
-    text: "Onko sinulle tärkeää päästä nopeasti työelämään?",
-    dimension: 'values',
-    subdimension: 'stability',
-    weight: 1.3,
-    reverse: false,
-    notes: "Quick employment priority"
+    text: "Ärsyttääkö sinua, kun asiat eivät toimi heti tai täytyy kokeilla monta kertaa?",
+    dimension: 'workstyle',
+    subdimension: 'problem_solving',
+    weight: 1.1,
+    reverse: true,  // REVERSE: high = low frustration tolerance, flipped for scoring
+    notes: "Problem-solving frustration - REVERSE SCORED for bias detection"
   },
 
   // Q22: Practical learning

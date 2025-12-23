@@ -1463,7 +1463,7 @@ export const careersData: CareerFI[] = [
 
 
   {
-    id: "henkilöstöpäällikkö",
+    id: "henkilostopaallikko",
     category: "johtaja",
     title_fi: "Henkilöstöpäällikkö",
     title_en: "HR Manager",
@@ -1547,7 +1547,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "tuotantopäällikkö",
+    id: "tuotantopaallikko",
     category: "johtaja",
     title_fi: "Tuotantopäällikkö",
     title_en: "Production Manager",
@@ -1631,7 +1631,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "talouspäällikkö",
+    id: "talouspaallikko",
     category: "johtaja",
     title_fi: "Talouspäällikkö",
     title_en: "Finance Manager",
@@ -1715,7 +1715,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "asiakaspalvelupäällikkö",
+    id: "asiakaspalvelupaallikko",
     category: "johtaja",
     title_fi: "Asiakaspalvelupäällikkö",
     title_en: "Customer Service Manager",
@@ -1799,7 +1799,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "tietoturvapäällikkö",
+    id: "tietoturvapaallikko",
     category: "johtaja",
     title_fi: "Tietoturvapäällikkö",
     title_en: "Cybersecurity Manager",
@@ -1883,7 +1883,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "laadunpäällikkö",
+    id: "laadunpaallikko",
     category: "johtaja",
     title_fi: "Laadunpäällikkö",
     title_en: "Quality Manager",
@@ -1967,7 +1967,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "kehityspäällikkö",
+    id: "kehityspaallikko",
     category: "johtaja",
     title_fi: "Kehityspäällikkö",
     title_en: "Development Manager",
@@ -2051,7 +2051,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "data-insinööri",
+    id: "data-insinoori",
     category: "innovoija",
     title_fi: "Data-insinööri",
     title_en: "Data Engineer",
@@ -2215,7 +2215,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "robotiikka-insinööri",
+    id: "robotiikka-insinoori",
     category: "innovoija",
     title_fi: "Robotiikka-insinööri",
     title_en: "Robotics Engineer",
@@ -2299,7 +2299,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "biotekniikka-insinööri",
+    id: "biotekniikka-insinoori",
     category: "innovoija",
     title_fi: "Biotekniikka-insinööri",
     title_en: "Biotechnology Engineer",
@@ -2383,7 +2383,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "nanotekniikka-insinööri",
+    id: "nanotekniikka-insinoori",
     category: "innovoija",
     title_fi: "Nanotekniikka-insinööri",
     title_en: "Nanotechnology Engineer",
@@ -2467,7 +2467,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "kvantti-insinööri",
+    id: "kvantti-insinoori",
     category: "innovoija",
     title_fi: "Kvantti-insinööri",
     title_en: "Quantum Engineer",
@@ -2551,7 +2551,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "blockchain-insinööri",
+    id: "blockchain-insinoori",
     category: "innovoija",
     title_fi: "Blockchain-insinööri",
     title_en: "Blockchain Engineer",
@@ -2635,7 +2635,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "virtuaalitodellisuus-insinööri",
+    id: "virtuaalitodellisuus-insinoori",
     category: "innovoija",
     title_fi: "Virtuaalitodellisuus-insinööri",
     title_en: "VR/AR Engineer",
@@ -2715,7 +2715,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "automaatio-insinööri",
+    id: "automaatio-insinoori",
     category: "innovoija",
     title_fi: "Automaatio-insinööri",
     title_en: "Automation Engineer",
@@ -5233,7 +5233,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "sosiaalityöntekijä",
+    id: "sosiaalityontekija",
     category: "auttaja",
     title_fi: "Sosiaalityöntekijä",
     title_en: "Social Worker",
@@ -5646,7 +5646,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "perhetyöntekijä",
+    id: "perhetyontekija",
     category: "auttaja",
     title_fi: "Perhetyöntekijä",
     title_en: "Family Worker",
@@ -5814,7 +5814,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "kriisityöntekijä",
+    id: "kriisityontekija",
     category: "auttaja",
     title_fi: "Kriisityöntekijä",
     title_en: "Crisis Worker",
@@ -5898,7 +5898,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "ympäristöinsinööri",
+    id: "ymparistoinsinoori",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöinsinööri",
     title_en: "Environmental Engineer",
@@ -6150,7 +6150,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "uusiutuva-energia-insinööri",
+    id: "uusiutuva-energia-insinoori",
     category: "ympariston-puolustaja",
     title_fi: "Uusiutuva energia -insinööri",
     title_en: "Renewable Energy Engineer",
@@ -6234,7 +6234,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "ympäristökasvattaja",
+    id: "ymparistokasvattaja",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristökasvattaja",
     title_en: "Environmental Educator",
@@ -6314,7 +6314,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "vesi-insinööri",
+    id: "vesi-insinoori",
     category: "ympariston-puolustaja",
     title_fi: "Vesi-insinööri",
     title_en: "Water Engineer",
@@ -6398,7 +6398,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "hiilijalanjälki-asiantuntija",
+    id: "hiilijalanjalki-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Hiilijalanjälki-asiantuntija",
     title_en: "Carbon Footprint Specialist",
@@ -6482,7 +6482,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "ympäristöjuristi",
+    id: "ymparistojuristi",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöjuristi",
     title_en: "Environmental Lawyer",
@@ -6650,7 +6650,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "kestävän-kehityksen-koordinaattori",
+    id: "kestavan-kehityksen-koordinaattori",
     category: "ympariston-puolustaja",
     title_fi: "Kestävän kehityksen koordinaattori",
     title_en: "Sustainability Coordinator",
@@ -7745,7 +7745,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "henkilöstöasiantuntija",
+    id: "henkilostoasiantuntija",
     category: "jarjestaja",
     title_fi: "Henkilöstöasiantuntija",
     title_en: "HR Specialist",
@@ -8753,7 +8753,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "puuseppä",
+    id: "puuseppa",
     category: "rakentaja",
     title_fi: "Puuseppä",
     title_en: "Carpenter",
@@ -9325,7 +9325,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "varastotyöntekijä",
+    id: "varastotyontekija",
     category: "jarjestaja",
     title_fi: "Varastotyöntekijä",
     title_en: "Warehouse Worker",
@@ -9577,7 +9577,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "sähköasentaja",
+    id: "sahkoasentaja",
     category: "rakentaja",
     title_fi: "Sähköasentaja",
     title_en: "Electrician",
@@ -9661,7 +9661,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "energiainsinööri",
+    id: "energiainsinoori",
     category: "innovoija",
     title_fi: "Energiainsinööri",
     title_en: "Energy Engineer",
@@ -10079,7 +10079,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "brändisuunnittelija",
+    id: "brandisuunnittelija",
     category: "luova",
     title_fi: "Brändisuunnittelija",
     title_en: "Brand Designer",
@@ -10163,7 +10163,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "ympäristöasiantuntija",
+    id: "ymparistoasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöasiantuntija",
     title_en: "Environmental Specialist",
@@ -10580,7 +10580,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "liiketoimintakehittäjä",
+    id: "liiketoimintakehittaja",
     category: "innovoija",
     title_fi: "Liiketoimintakehittäjä",
     title_en: "Business Developer",
@@ -10742,7 +10742,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "tuotepäällikkö",
+    id: "tuotepaallikko",
     category: "johtaja",
     title_fi: "Tuotepäällikkö",
     title_en: "Product Manager",
@@ -11156,7 +11156,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "tietojärjestelmäasiantuntija",
+    id: "tietojarjestelmaasiantuntija",
     category: "innovoija",
     title_fi: "Tietojärjestelmäasiantuntija",
     title_en: "IT Systems Specialist",
@@ -11324,7 +11324,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "henkilöstökoordinaattori",
+    id: "henkilostokoordinaattori",
     category: "auttaja",
     title_fi: "Henkilöstökoordinaattori",
     title_en: "HR Coordinator",
@@ -11738,7 +11738,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "sisällöntuottaja",
+    id: "sisallontuottaja",
     category: "luova",
     title_fi: "Sisällöntuottaja",
     title_en: "Content Creator",
@@ -11822,7 +11822,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "mobiilisovelluskehittäjä",
+    id: "mobiilisovelluskehittaja",
     category: "innovoija",
     title_fi: "Mobiilisovelluskehittäjä",
     title_en: "Mobile App Developer",
@@ -11906,7 +11906,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "tekoäly-asiantuntija",
+    id: "tekoaly-asiantuntija",
     category: "innovoija",
     title_fi: "Tekoäly-asiantuntija",
     title_en: "AI Specialist",
@@ -12326,7 +12326,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "ravintolatyöntekijä",
+    id: "ravintolatyontekija",
     category: "auttaja",
     title_fi: "Ravintolatyöntekijä",
     title_en: "Restaurant Worker",
@@ -12830,7 +12830,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "kirjanpitäjä",
+    id: "kirjanpitaja",
     category: "jarjestaja",
     title_fi: "Kirjanpitäjä",
     title_en: "Bookkeeper",
@@ -13315,7 +13315,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "röntgenhoitaja",
+    id: "rontgenhoitaja",
     category: "auttaja",
     title_fi: "Röntgenhoitaja",
     title_en: "Radiographer",
@@ -13474,7 +13474,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "lähihoitaja",
+    id: "lahihoitaja",
     category: "auttaja",
     title_fi: "Lähihoitaja",
     title_en: "Practical Nurse",
@@ -13632,7 +13632,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "kätilö",
+    id: "katilo",
     category: "auttaja",
     title_fi: "Kätilö",
     title_en: "Midwife",
@@ -13874,7 +13874,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "äänisuunnittelija",
+    id: "aanisuunnittelija",
     category: "luova",
     title_fi: "Äänisuunnittelija",
     title_en: "Sound Designer",
@@ -14116,7 +14116,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "näyttelijä",
+    id: "nayttelija",
     category: "luova",
     title_fi: "Näyttelijä",
     title_en: "Actor",
@@ -14279,7 +14279,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "käsikirjoittaja",
+    id: "kasikirjoittaja",
     category: "luova",
     title_fi: "Käsikirjoittaja",
     title_en: "Screenwriter",
@@ -14775,7 +14775,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "ympäristötarkastaja",
+    id: "ymparistotarkastaja",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristötarkastaja",
     title_en: "Environmental Inspector",
@@ -14939,7 +14939,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "jätehuoltoasiantuntija",
+    id: "jatehuoltoasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Jätehuoltoasiantuntija",
     title_en: "Waste Management Specialist",
@@ -15021,7 +15021,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "metsänhoitaja",
+    id: "metsanhoitaja",
     category: "ympariston-puolustaja",
     title_fi: "Metsänhoitaja",
     title_en: "Forestry Professional",
@@ -15677,7 +15677,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "tapahtumajärjestäjä",
+    id: "tapahtumajarjestaja",
     category: "jarjestaja",
     title_fi: "Tapahtumajärjestäjä",
     title_en: "Event Organizer",
@@ -15841,7 +15841,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "devops-insinööri",
+    id: "devops-insinoori",
     category: "innovoija",
     title_fi: "DevOps-insinööri",
     title_en: "DevOps Engineer",
@@ -17084,7 +17084,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "putkityömies",
+    id: "putkityomies",
     category: "rakentaja",
     title_fi: "Putkityömies",
     title_en: "Pipe Worker",
@@ -17336,7 +17336,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "ympäristövalvonta",
+    id: "ymparistovalvonta",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristövalvonta",
     title_en: "Environmental Inspector",
@@ -17919,7 +17919,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "it-tukihenkilö",
+    id: "it-tukihenkilo",
     category: "innovoija",
     title_fi: "IT-tukihenkilö",
     title_en: "IT Support Specialist",
@@ -18167,7 +18167,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "oppilashuoltotyöntekijä",
+    id: "oppilashuoltotyontekija",
     category: "auttaja",
     title_fi: "Oppilashuoltotyöntekijä",
     title_en: "Student Welfare Worker",
@@ -18331,7 +18331,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "kotipalvelutyöntekijä",
+    id: "kotipalvelutyontekija",
     category: "auttaja",
     title_fi: "Kotipalvelutyöntekijä",
     title_en: "Home-Based Personal Care Worker",
@@ -18415,7 +18415,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "full-stack-kehittäjä",
+    id: "full-stack-kehittaja",
     category: "innovoija",
     title_fi: "Full-Stack-kehittäjä",
     title_en: "Full-Stack Developer",
@@ -18663,7 +18663,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "lämpötekniikka-asentaja",
+    id: "lampotekniikka-asentaja",
     category: "rakentaja",
     title_fi: "Lämpötekniikka-asentaja",
     title_en: "Heating Technician",
@@ -18911,7 +18911,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "myyntityöntekijä",
+    id: "myyntityontekija",
     category: "johtaja",
     title_fi: "Myyntityöntekijä",
     title_en: "Sales Worker",
@@ -19163,7 +19163,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "vaihtoehtoinen-energia-insinööri",
+    id: "vaihtoehtoinen-energia-insinoori",
     category: "ympariston-puolustaja",
     title_fi: "Vaihtoehtoinen energia-insinööri",
     title_en: "Renewable Energy Engineer",
@@ -19247,7 +19247,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "rakennustyönjohtaja",
+    id: "rakennustyonjohtaja",
     category: "rakentaja",
     title_fi: "Rakennustyönjohtaja",
     title_en: "Construction Supervisor",
@@ -19579,7 +19579,7 @@ export const careersData: CareerFI[] = [
 
 
 {
-    id: "ääniteknikko",
+    id: "aaniteknikko",
     category: "luova",
     title_fi: "Ääniteknikko",
     title_en: "Sound Technician",
@@ -42721,7 +42721,7 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 48
   },
   {
-    id: "projektipaallikkö-rakennus",
+    id: "projektipaallikko-rakennus",
     category: "jarjestaja",
     title_fi: "Projektipäällikkö (rakennus)",
     title_en: "Construction Project Manager",
@@ -42775,7 +42775,7 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 48
   },
   {
-    id: "tuotantopaallikkö-teollisuus",
+    id: "tuotantopaallikko-teollisuus",
     category: "jarjestaja",
     title_fi: "Tuotantopäällikkö (teollisuus)",
     title_en: "Production Manager (Industry)",
@@ -45665,9 +45665,9 @@ export const careersData: CareerFI[] = [
   {
     id: "kirjailija-luova",
     category: "luova",
-    title_fi: "Kirjailija",
-    title_en: "Author",
-    short_description: "Kirjailija kirjoittaa kaunokirjallisuutta tai tietokirjoja. Työ vaatii luovuutta ja kirjoittamisen taitoa.",
+    title_fi: "Luova kirjailija",
+    title_en: "Creative Author",
+    short_description: "Luova kirjailija kirjoittaa kaunokirjallisuutta, runoja tai näytelmiä. Työ vaatii taiteellista näkemystä ja kirjoittamisen taitoa.",
     main_tasks: [
       "Teosten kirjoittaminen",
       "Tutkimustyö",

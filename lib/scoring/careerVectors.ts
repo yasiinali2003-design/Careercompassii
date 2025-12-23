@@ -215,7 +215,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.95, international: 0.11, work_environment: 0.34 }
   },
   {
-    slug: "henkilöstöpäällikkö",
+    slug: "henkilostopaallikko",
     title: "Henkilöstöpäällikkö",
     category: "johtaja",
     interests: { technology: 0.41, people: 0.9, creative: 0.1, analytical: 0.79, hands_on: 0.1, business: 0.91, environment: 0.35, health: 0.23, education: 0.1, innovation: 0.46, arts_culture: 0.1, sports: 0.17, nature: 0.38, writing: 0.68 },
@@ -224,7 +224,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.47, international: 0.69, work_environment: 0.53 }
   },
   {
-    slug: "tuotantopäällikkö",
+    slug: "tuotantopaallikko",
     title: "Tuotantopäällikkö",
     category: "johtaja",
     interests: { technology: 0.41, people: 0.8, creative: 0.1, analytical: 0.85, hands_on: 0.4, business: 0.92, environment: 0.46, health: 0.1, education: 0.14, innovation: 0.32, arts_culture: 0.46, sports: 0.17, nature: 0.33, writing: 0.2 },
@@ -233,7 +233,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.45, international: 0.35, work_environment: 0.51 }
   },
   {
-    slug: "talouspäällikkö",
+    slug: "talouspaallikko",
     title: "Talouspäällikkö",
     category: "johtaja",
     interests: { technology: 0.56, people: 0.85, creative: 0.19, analytical: 0.43, hands_on: 0.1, business: 0.9, environment: 0.15, health: 0.1, education: 0.19, innovation: 0.25, arts_culture: 0.16, sports: 0.29, nature: 0.41, writing: 0.22 },
@@ -242,7 +242,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.15, international: 0.52, work_environment: 0.31 }
   },
   {
-    slug: "asiakaspalvelupäällikkö",
+    slug: "asiakaspalvelupaallikko",
     title: "Asiakaspalvelupäällikkö",
     category: "johtaja",
     interests: { technology: 0.28, people: 0.8, creative: 0.58, analytical: 0.66, hands_on: 0.12, business: 0.95, environment: 0.37, health: 0.22, education: 0.12, innovation: 0.71, arts_culture: 0.1, sports: 0.22, nature: 0.19, writing: 0.41 },
@@ -251,7 +251,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.6, international: 0.79, work_environment: 0.61 }
   },
   {
-    slug: "tietoturvapäällikkö",
+    slug: "tietoturvapaallikko",
     title: "Tietoturvapäällikkö",
     category: "johtaja",
     interests: { technology: 0.37, people: 0.55, creative: 0.46, analytical: 0.44, hands_on: 0.32, business: 0.92, environment: 0.14, health: 0.1, education: 0.1, innovation: 0.67, arts_culture: 0.48, sports: 0.24, nature: 0.1, writing: 0.47 },
@@ -260,7 +260,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.39, international: 0.52, work_environment: 0.5 }
   },
   {
-    slug: "laadunpäällikkö",
+    slug: "laadunpaallikko",
     title: "Laadunpäällikkö",
     category: "johtaja",
     interests: { technology: 0.57, people: 0.74, creative: 0.1, analytical: 0.62, hands_on: 0.1, business: 0.95, environment: 0.13, health: 0.24, education: 0.26, innovation: 0.6, arts_culture: 0.27, sports: 0.58, nature: 0.1, writing: 0.67 },
@@ -269,7 +269,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.44, international: 0.4, work_environment: 0.35 }
   },
   {
-    slug: "kehityspäällikkö",
+    slug: "kehityspaallikko",
     title: "Kehityspäällikkö",
     category: "johtaja",
     interests: { technology: 0.7, people: 0.72, creative: 0.1, analytical: 0.81, hands_on: 0.2, business: 0.61, environment: 0.34, health: 0.11, education: 0.13, innovation: 0.64, arts_culture: 0.1, sports: 0.27, nature: 0.13, writing: 0.6 },
@@ -278,7 +278,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.38, international: 0.35, work_environment: 0.81 }
   },
   {
-    slug: "data-insinööri",
+    slug: "data-insinoori",
     title: "Data-insinööri",
     category: "innovoija",
     interests: { technology: 0.91, people: 0.18, creative: 0.42, analytical: 0.69, hands_on: 0.41, business: 0.31, environment: 0.51, health: 0.38, education: 0.24, innovation: 0.95, arts_culture: 0.43, sports: 0.1, nature: 0.1, writing: 0.29 },
@@ -296,7 +296,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.28, international: 0.2, work_environment: 0.84 }
   },
   {
-    slug: "robotiikka-insinööri",
+    slug: "robotiikka-insinoori",
     title: "Robotiikka-insinööri",
     category: "innovoija",
     interests: { technology: 0.79, people: 0.26, creative: 0.45, analytical: 0.7, hands_on: 0.72, business: 0.23, environment: 0.29, health: 0.24, education: 0.55, innovation: 0.7, arts_culture: 0.51, sports: 0.25, nature: 0.41, writing: 0.64 },
@@ -305,7 +305,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.18, international: 0.14, work_environment: 0.33 }
   },
   {
-    slug: "biotekniikka-insinööri",
+    slug: "biotekniikka-insinoori",
     title: "Biotekniikka-insinööri",
     category: "innovoija",
     interests: { technology: 0.69, people: 0.15, creative: 0.84, analytical: 0.95, hands_on: 0.53, business: 0.33, environment: 0.42, health: 0.4, education: 0.57, innovation: 0.95, arts_culture: 0.57, sports: 0.1, nature: 0.23, writing: 0.67 },
@@ -314,7 +314,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.31, international: 0.13, work_environment: 0.84 }
   },
   {
-    slug: "nanotekniikka-insinööri",
+    slug: "nanotekniikka-insinoori",
     title: "Nanotekniikka-insinööri",
     category: "innovoija",
     interests: { technology: 0.95, people: 0.58, creative: 0.89, analytical: 0.95, hands_on: 0.41, business: 0.33, environment: 0.1, health: 0.14, education: 0.26, innovation: 0.95, arts_culture: 0.28, sports: 0.35, nature: 0.33, writing: 0.42 },
@@ -323,7 +323,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.22, international: 0.12, work_environment: 0.47 }
   },
   {
-    slug: "kvantti-insinööri",
+    slug: "kvantti-insinoori",
     title: "Kvantti-insinööri",
     category: "innovoija",
     interests: { technology: 0.81, people: 0.27, creative: 0.87, analytical: 0.95, hands_on: 0.37, business: 0.59, environment: 0.14, health: 0.45, education: 0.42, innovation: 0.95, arts_culture: 0.13, sports: 0.21, nature: 0.1, writing: 0.29 },
@@ -332,7 +332,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.32, international: 0.41, work_environment: 0.82 }
   },
   {
-    slug: "blockchain-insinööri",
+    slug: "blockchain-insinoori",
     title: "Blockchain-insinööri",
     category: "innovoija",
     interests: { technology: 0.95, people: 0.47, creative: 0.94, analytical: 0.72, hands_on: 0.56, business: 0.33, environment: 0.47, health: 0.26, education: 0.41, innovation: 0.83, arts_culture: 0.52, sports: 0.1, nature: 0.1, writing: 0.21 },
@@ -341,7 +341,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.52, international: 0.6, work_environment: 0.44 }
   },
   {
-    slug: "virtuaalitodellisuus-insinööri",
+    slug: "virtuaalitodellisuus-insinoori",
     title: "Virtuaalitodellisuus-insinööri",
     category: "innovoija",
     interests: { technology: 0.78, people: 0.37, creative: 0.85, analytical: 0.66, hands_on: 0.58, business: 0.5, environment: 0.28, health: 0.1, education: 0.31, innovation: 0.95, arts_culture: 0.1, sports: 0.37, nature: 0.1, writing: 0.12 },
@@ -350,7 +350,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.69, international: 0.62, work_environment: 0.7 }
   },
   {
-    slug: "automaatio-insinööri",
+    slug: "automaatio-insinoori",
     title: "Automaatio-insinööri",
     category: "innovoija",
     interests: { technology: 0.95, people: 0.59, creative: 0.87, analytical: 0.72, hands_on: 0.61, business: 0.7, environment: 0.3, health: 0.1, education: 0.45, innovation: 0.71, arts_culture: 0.1, sports: 0.1, nature: 0.22, writing: 0.37 },
@@ -629,7 +629,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.45, international: 0.55, work_environment: 0.51 }
   },
   {
-    slug: "sosiaalityöntekijä",
+    slug: "sosiaalityontekija",
     title: "Sosiaalityöntekijä",
     category: "auttaja",
     interests: { technology: 0.1, people: 0.83, creative: 0.34, analytical: 0.31, hands_on: 0.1, business: 0.1, environment: 0.1, health: 0.95, education: 0.45, innovation: 0.1, arts_culture: 0.44, sports: 0.11, nature: 0.5, writing: 0.17 },
@@ -674,7 +674,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.13, international: 0.3, work_environment: 0.72 }
   },
   {
-    slug: "perhetyöntekijä",
+    slug: "perhetyontekija",
     title: "Perhetyöntekijä",
     category: "auttaja",
     interests: { technology: 0.37, people: 0.95, creative: 0.29, analytical: 0.55, hands_on: 0.3, business: 0.1, environment: 0.55, health: 0.94, education: 0.44, innovation: 0.18, arts_culture: 0.48, sports: 0.16, nature: 0.1, writing: 0.4 },
@@ -692,7 +692,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.48, international: 0.43, work_environment: 0.46 }
   },
   {
-    slug: "kriisityöntekijä",
+    slug: "kriisityontekija",
     title: "Kriisityöntekijä",
     category: "auttaja",
     interests: { technology: 0.32, people: 0.87, creative: 0.1, analytical: 0.12, hands_on: 0.67, business: 0.1, environment: 0.35, health: 0.95, education: 0.82, innovation: 0.29, arts_culture: 0.16, sports: 0.52, nature: 0.34, writing: 0.27 },
@@ -701,7 +701,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.19, international: 0.52, work_environment: 0.77 }
   },
   {
-    slug: "ympäristöinsinööri",
+    slug: "ymparistoinsinoori",
     title: "Ympäristöinsinööri",
     category: "ympariston-puolustaja",
     interests: { technology: 0.49, people: 0.45, creative: 0.21, analytical: 0.42, hands_on: 0.37, business: 0.39, environment: 0.95, health: 0.58, education: 0.32, innovation: 0.59, arts_culture: 0.1, sports: 0.45, nature: 0.95, writing: 0.59 },
@@ -728,7 +728,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.48, international: 0.2, work_environment: 0.31 }
   },
   {
-    slug: "uusiutuva-energia-insinööri",
+    slug: "uusiutuva-energia-insinoori",
     title: "Uusiutuva energia -insinööri",
     category: "ympariston-puolustaja",
     interests: { technology: 0.29, people: 0.37, creative: 0.61, analytical: 0.66, hands_on: 0.69, business: 0.18, environment: 0.95, health: 0.53, education: 0.43, innovation: 0.6, arts_culture: 0.26, sports: 0.39, nature: 0.95, writing: 0.27 },
@@ -737,7 +737,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.42, international: 0.3, work_environment: 0.51 }
   },
   {
-    slug: "ympäristökasvattaja",
+    slug: "ymparistokasvattaja",
     title: "Ympäristökasvattaja",
     category: "ympariston-puolustaja",
     interests: { technology: 0.37, people: 0.31, creative: 0.43, analytical: 0.71, hands_on: 0.61, business: 0.1, environment: 0.76, health: 0.33, education: 0.5, innovation: 0.74, arts_culture: 0.52, sports: 0.37, nature: 0.67, writing: 0.61 },
@@ -746,7 +746,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.42, international: 0.3, work_environment: 0.82 }
   },
   {
-    slug: "vesi-insinööri",
+    slug: "vesi-insinoori",
     title: "Vesi-insinööri",
     category: "ympariston-puolustaja",
     interests: { technology: 0.3, people: 0.3, creative: 0.58, analytical: 0.85, hands_on: 0.32, business: 0.23, environment: 0.95, health: 0.29, education: 0.77, innovation: 0.3, arts_culture: 0.34, sports: 0.36, nature: 0.9, writing: 0.54 },
@@ -755,7 +755,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.53, international: 0.56, work_environment: 0.63 }
   },
   {
-    slug: "hiilijalanjälki-asiantuntija",
+    slug: "hiilijalanjalki-asiantuntija",
     title: "Hiilijalanjälki-asiantuntija",
     category: "ympariston-puolustaja",
     interests: { technology: 0.69, people: 0.42, creative: 0.18, analytical: 0.62, hands_on: 0.63, business: 0.1, environment: 0.95, health: 0.46, education: 0.54, innovation: 0.61, arts_culture: 0.39, sports: 0.12, nature: 0.95, writing: 0.18 },
@@ -764,7 +764,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.84, international: 0.69, work_environment: 0.67 }
   },
   {
-    slug: "ympäristöjuristi",
+    slug: "ymparistojuristi",
     title: "Ympäristöjuristi",
     category: "ympariston-puolustaja",
     interests: { technology: 0.59, people: 0.56, creative: 0.55, analytical: 0.73, hands_on: 0.47, business: 0.1, environment: 0.95, health: 0.14, education: 0.73, innovation: 0.41, arts_culture: 0.1, sports: 0.39, nature: 0.86, writing: 0.25 },
@@ -782,7 +782,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.74, international: 0.61, work_environment: 0.44 }
   },
   {
-    slug: "kestävän-kehityksen-koordinaattori",
+    slug: "kestavan-kehityksen-koordinaattori",
     title: "Kestävän kehityksen koordinaattori",
     category: "ympariston-puolustaja",
     interests: { technology: 0.49, people: 0.74, creative: 0.55, analytical: 0.62, hands_on: 0.68, business: 0.29, environment: 0.95, health: 0.28, education: 0.4, innovation: 0.43, arts_culture: 0.1, sports: 0.67, nature: 0.66, writing: 0.57 },
@@ -899,7 +899,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.15, international: 0.38, work_environment: 0.54 }
   },
   {
-    slug: "henkilöstöasiantuntija",
+    slug: "henkilostoasiantuntija",
     title: "Henkilöstöasiantuntija",
     category: "jarjestaja",
     interests: { technology: 0.69, people: 0.28, creative: 0.34, analytical: 0.88, hands_on: 0.23, business: 0.44, environment: 0.1, health: 0.4, education: 0.42, innovation: 0.18, arts_culture: 0.21, sports: 0.1, nature: 0.29, writing: 0.34 },
@@ -1007,7 +1007,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.43, international: 0.17, work_environment: 0.88 }
   },
   {
-    slug: "puuseppä",
+    slug: "puuseppa",
     title: "Puuseppä",
     category: "rakentaja",
     interests: { technology: 0.57, people: 0.66, creative: 0.6, analytical: 0.66, hands_on: 0.95, business: 0.27, environment: 0.49, health: 0.1, education: 0.39, innovation: 0.3, arts_culture: 0.29, sports: 0.5, nature: 0.29, writing: 0.42 },
@@ -1070,7 +1070,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.95, international: 0.31, work_environment: 0.9 }
   },
   {
-    slug: "varastotyöntekijä",
+    slug: "varastotyontekija",
     title: "Varastotyöntekijä",
     category: "jarjestaja",
     interests: { technology: 0.2, people: 0.43, creative: 0.5, analytical: 0.71, hands_on: 0.16, business: 0.7, environment: 0.1, health: 0.39, education: 0.59, innovation: 0.15, arts_culture: 0.49, sports: 0.36, nature: 0.1, writing: 0.44 },
@@ -1097,7 +1097,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.43, international: 0.34, work_environment: 0.87 }
   },
   {
-    slug: "sähköasentaja",
+    slug: "sahkoasentaja",
     title: "Sähköasentaja",
     category: "rakentaja",
     interests: { technology: 0.7, people: 0.28, creative: 0.51, analytical: 0.58, hands_on: 0.95, business: 0.59, environment: 0.34, health: 0.28, education: 0.29, innovation: 0.29, arts_culture: 0.5, sports: 0.27, nature: 0.35, writing: 0.1 },
@@ -1106,7 +1106,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.53, international: 0.21, work_environment: 0.5 }
   },
   {
-    slug: "energiainsinööri",
+    slug: "energiainsinoori",
     title: "Energiainsinööri",
     category: "innovoija",
     interests: { technology: 0.95, people: 0.4, creative: 0.95, analytical: 0.71, hands_on: 0.29, business: 0.17, environment: 0.13, health: 0.38, education: 0.49, innovation: 0.91, arts_culture: 0.1, sports: 0.1, nature: 0.1, writing: 0.17 },
@@ -1151,7 +1151,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.14, international: 0.4, work_environment: 0.75 }
   },
   {
-    slug: "brändisuunnittelija",
+    slug: "brandisuunnittelija",
     title: "Brändisuunnittelija",
     category: "luova",
     interests: { technology: 0.48, people: 0.24, creative: 0.95, analytical: 0.1, hands_on: 0.27, business: 0.23, environment: 0.39, health: 0.19, education: 0.31, innovation: 0.87, arts_culture: 0.75, sports: 0.1, nature: 0.6, writing: 0.82 },
@@ -1160,7 +1160,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.31, international: 0.12, work_environment: 0.76 }
   },
   {
-    slug: "ympäristöasiantuntija",
+    slug: "ymparistoasiantuntija",
     title: "Ympäristöasiantuntija",
     category: "ympariston-puolustaja",
     interests: { technology: 0.18, people: 0.27, creative: 0.49, analytical: 0.62, hands_on: 0.22, business: 0.35, environment: 0.95, health: 0.48, education: 0.32, innovation: 0.44, arts_culture: 0.4, sports: 0.42, nature: 0.95, writing: 0.54 },
@@ -1205,7 +1205,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.12, international: 0.5, work_environment: 0.89 }
   },
   {
-    slug: "liiketoimintakehittäjä",
+    slug: "liiketoimintakehittaja",
     title: "Liiketoimintakehittäjä",
     category: "innovoija",
     interests: { technology: 0.95, people: 0.64, creative: 0.81, analytical: 0.72, hands_on: 0.59, business: 0.52, environment: 0.59, health: 0.13, education: 0.57, innovation: 0.95, arts_culture: 0.38, sports: 0.15, nature: 0.19, writing: 0.45 },
@@ -1223,7 +1223,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.12, international: 0.3, work_environment: 0.88 }
   },
   {
-    slug: "tuotepäällikkö",
+    slug: "tuotepaallikko",
     title: "Tuotepäällikkö",
     category: "johtaja",
     interests: { technology: 0.29, people: 0.77, creative: 0.15, analytical: 0.76, hands_on: 0.1, business: 0.95, environment: 0.19, health: 0.1, education: 0.25, innovation: 0.79, arts_culture: 0.18, sports: 0.58, nature: 0.42, writing: 0.61 },
@@ -1268,7 +1268,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.28, international: 0.62, work_environment: 0.44 }
   },
   {
-    slug: "tietojärjestelmäasiantuntija",
+    slug: "tietojarjestelmaasiantuntija",
     title: "Tietojärjestelmäasiantuntija",
     category: "innovoija",
     interests: { technology: 0.95, people: 0.18, creative: 0.71, analytical: 0.95, hands_on: 0.39, business: 0.34, environment: 0.3, health: 0.12, education: 0.15, innovation: 0.95, arts_culture: 0.46, sports: 0.1, nature: 0.19, writing: 0.31 },
@@ -1286,7 +1286,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.66, international: 0.57, work_environment: 0.62 }
   },
   {
-    slug: "henkilöstökoordinaattori",
+    slug: "henkilostokoordinaattori",
     title: "Henkilöstökoordinaattori",
     category: "auttaja",
     interests: { technology: 0.2, people: 0.98, creative: 0.2, analytical: 0.19, hands_on: 0.15, business: 0.4, environment: 0.15, health: 0.5, education: 0.86, innovation: 0.25, arts_culture: 0.12, sports: 0.2, nature: 0.15, writing: 0.47 },
@@ -1331,7 +1331,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.29, international: 0.19, work_environment: 0.65 }
   },
   {
-    slug: "sisällöntuottaja",
+    slug: "sisallontuottaja",
     title: "Sisällöntuottaja",
     category: "luova",
     interests: { technology: 0.27, people: 0.23, creative: 0.95, analytical: 0.59, hands_on: 0.21, business: 0.32, environment: 0.39, health: 0.42, education: 0.27, innovation: 0.87, arts_culture: 0.72, sports: 0.23, nature: 0.61, writing: 0.65 },
@@ -1340,7 +1340,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.25, international: 0.56, work_environment: 0.85 }
   },
   {
-    slug: "mobiilisovelluskehittäjä",
+    slug: "mobiilisovelluskehittaja",
     title: "Mobiilisovelluskehittäjä",
     category: "innovoija",
     interests: { technology: 0.95, people: 0.24, creative: 0.76, analytical: 0.95, hands_on: 0.63, business: 0.54, environment: 0.22, health: 0.42, education: 0.48, innovation: 0.95, arts_culture: 0.55, sports: 0.1, nature: 0.42, writing: 0.69 },
@@ -1349,7 +1349,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.23, international: 0.2, work_environment: 0.81 }
   },
   {
-    slug: "tekoäly-asiantuntija",
+    slug: "tekoaly-asiantuntija",
     title: "Tekoäly-asiantuntija",
     category: "innovoija",
     interests: { technology: 0.82, people: 0.1, creative: 0.95, analytical: 0.79, hands_on: 0.34, business: 0.27, environment: 0.3, health: 0.12, education: 0.47, innovation: 0.94, arts_culture: 0.38, sports: 0.28, nature: 0.41, writing: 0.11 },
@@ -1394,7 +1394,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.23, international: 0.27, work_environment: 0.64 }
   },
   {
-    slug: "ravintolatyöntekijä",
+    slug: "ravintolatyontekija",
     title: "Ravintolatyöntekijä",
     category: "auttaja",
     interests: { technology: 0.45, people: 0.88, creative: 0.35, analytical: 0.59, hands_on: 0.49, business: 0.12, environment: 0.1, health: 0.95, education: 0.66, innovation: 0.1, arts_culture: 0.26, sports: 0.5, nature: 0.41, writing: 0.57 },
@@ -1448,7 +1448,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.24, international: 0.66, work_environment: 0.74 }
   },
   {
-    slug: "kirjanpitäjä",
+    slug: "kirjanpitaja",
     title: "Kirjanpitäjä",
     category: "jarjestaja",
     interests: { technology: 0.36, people: 0.22, creative: 0.1, analytical: 0.87, hands_on: 0.1, business: 0.74, environment: 0.23, health: 0.43, education: 0.35, innovation: 0.1, arts_culture: 0.1, sports: 0.47, nature: 0.44, writing: 0.27 },
@@ -1502,7 +1502,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.44, international: 0.32, work_environment: 0.83 }
   },
   {
-    slug: "röntgenhoitaja",
+    slug: "rontgenhoitaja",
     title: "Röntgenhoitaja",
     category: "auttaja",
     interests: { technology: 0.2, people: 0.65, creative: 0.38, analytical: 0.25, hands_on: 0.22, business: 0.47, environment: 0.3, health: 0.95, education: 0.56, innovation: 0.46, arts_culture: 0.1, sports: 0.49, nature: 0.47, writing: 0.25 },
@@ -1520,7 +1520,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.36, international: 0.6, work_environment: 0.57 }
   },
   {
-    slug: "lähihoitaja",
+    slug: "lahihoitaja",
     title: "Lähihoitaja",
     category: "auttaja",
     interests: { technology: 0.18, people: 0.95, creative: 0.41, analytical: 0.23, hands_on: 0.37, business: 0.34, environment: 0.38, health: 0.52, education: 0.94, innovation: 0.27, arts_culture: 0.51, sports: 0.19, nature: 0.39, writing: 0.1 },
@@ -1538,7 +1538,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.32, international: 0.54, work_environment: 0.57 }
   },
   {
-    slug: "kätilö",
+    slug: "katilo",
     title: "Kätilö",
     category: "auttaja",
     interests: { technology: 0.28, people: 0.95, creative: 0.1, analytical: 0.56, hands_on: 0.45, business: 0.25, environment: 0.52, health: 0.84, education: 0.95, innovation: 0.43, arts_culture: 0.1, sports: 0.58, nature: 0.56, writing: 0.11 },
@@ -1565,7 +1565,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.12, international: 0.21, work_environment: 0.43 }
   },
   {
-    slug: "äänisuunnittelija",
+    slug: "aanisuunnittelija",
     title: "Äänisuunnittelija",
     category: "luova",
     interests: { technology: 0.21, people: 0.23, creative: 0.7, analytical: 0.1, hands_on: 0.33, business: 0.1, environment: 0.31, health: 0.1, education: 0.41, innovation: 0.63, arts_culture: 0.89, sports: 0.1, nature: 0.24, writing: 0.92 },
@@ -1592,7 +1592,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.36, international: 0.63, work_environment: 0.65 }
   },
   {
-    slug: "näyttelijä",
+    slug: "nayttelija",
     title: "Näyttelijä",
     category: "luova",
     interests: { technology: 0.63, people: 0.43, creative: 0.95, analytical: 0.2, hands_on: 0.74, business: 0.1, environment: 0.1, health: 0.46, education: 0.59, innovation: 0.82, arts_culture: 0.74, sports: 0.37, nature: 0.21, writing: 0.83 },
@@ -1610,7 +1610,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.51, international: 0.11, work_environment: 0.34 }
   },
   {
-    slug: "käsikirjoittaja",
+    slug: "kasikirjoittaja",
     title: "Käsikirjoittaja",
     category: "luova",
     interests: { technology: 0.47, people: 0.8, creative: 0.95, analytical: 0.58, hands_on: 0.24, business: 0.37, environment: 0.38, health: 0.1, education: 0.68, innovation: 0.95, arts_culture: 0.82, sports: 0.49, nature: 0.34, writing: 0.46 },
@@ -1664,7 +1664,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.27, international: 0.21, work_environment: 0.67 }
   },
   {
-    slug: "ympäristötarkastaja",
+    slug: "ymparistotarkastaja",
     title: "Ympäristötarkastaja",
     category: "ympariston-puolustaja",
     interests: { technology: 0.27, people: 0.42, creative: 0.14, analytical: 0.35, hands_on: 0.66, business: 0.1, environment: 0.95, health: 0.3, education: 0.56, innovation: 0.42, arts_culture: 0.43, sports: 0.41, nature: 0.75, writing: 0.35 },
@@ -1682,7 +1682,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.85, international: 0.44, work_environment: 0.44 }
   },
   {
-    slug: "jätehuoltoasiantuntija",
+    slug: "jatehuoltoasiantuntija",
     title: "Jätehuoltoasiantuntija",
     category: "ympariston-puolustaja",
     interests: { technology: 0.69, people: 0.45, creative: 0.53, analytical: 0.51, hands_on: 0.49, business: 0.1, environment: 0.95, health: 0.1, education: 0.54, innovation: 0.3, arts_culture: 0.21, sports: 0.35, nature: 0.75, writing: 0.12 },
@@ -1691,7 +1691,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.87, international: 0.67, work_environment: 0.62 }
   },
   {
-    slug: "metsänhoitaja",
+    slug: "metsanhoitaja",
     title: "Metsänhoitaja",
     category: "ympariston-puolustaja",
     interests: { technology: 0.35, people: 0.5, creative: 0.55, analytical: 0.73, hands_on: 0.5, business: 0.46, environment: 0.82, health: 0.17, education: 0.4, innovation: 0.26, arts_culture: 0.6, sports: 0.39, nature: 0.87, writing: 0.68 },
@@ -1763,7 +1763,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.63, international: 0.12, work_environment: 0.4 }
   },
   {
-    slug: "tapahtumajärjestäjä",
+    slug: "tapahtumajarjestaja",
     title: "Tapahtumajärjestäjä",
     category: "jarjestaja",
     interests: { technology: 0.73, people: 0.64, creative: 0.48, analytical: 0.95, hands_on: 0.1, business: 0.68, environment: 0.1, health: 0.1, education: 0.52, innovation: 0.1, arts_culture: 0.41, sports: 0.39, nature: 0.3, writing: 0.25 },
@@ -1781,7 +1781,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.28, international: 0.65, work_environment: 0.72 }
   },
   {
-    slug: "devops-insinööri",
+    slug: "devops-insinoori",
     title: "DevOps-insinööri",
     category: "innovoija",
     interests: { technology: 0.89, people: 0.65, creative: 0.94, analytical: 0.62, hands_on: 0.23, business: 0.34, environment: 0.1, health: 0.1, education: 0.22, innovation: 0.73, arts_culture: 0.44, sports: 0.26, nature: 0.22, writing: 0.28 },
@@ -1916,7 +1916,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.46, international: 0.35, work_environment: 0.47 }
   },
   {
-    slug: "putkityömies",
+    slug: "putkityomies",
     title: "Putkityömies",
     category: "rakentaja",
     interests: { technology: 0.19, people: 0.11, creative: 0.64, analytical: 0.67, hands_on: 0.95, business: 0.22, environment: 0.69, health: 0.49, education: 0.1, innovation: 0.12, arts_culture: 0.38, sports: 0.32, nature: 0.74, writing: 0.26 },
@@ -1943,7 +1943,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.88, international: 0.15, work_environment: 0.45 }
   },
   {
-    slug: "ympäristövalvonta",
+    slug: "ymparistovalvonta",
     title: "Ympäristövalvonta",
     category: "ympariston-puolustaja",
     interests: { technology: 0.62, people: 0.58, creative: 0.24, analytical: 0.73, hands_on: 0.59, business: 0.37, environment: 0.89, health: 0.44, education: 0.46, innovation: 0.59, arts_culture: 0.1, sports: 0.1, nature: 0.95, writing: 0.28 },
@@ -2006,7 +2006,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.87, international: 0.18, work_environment: 0.85 }
   },
   {
-    slug: "it-tukihenkilö",
+    slug: "it-tukihenkilo",
     title: "IT-tukihenkilö",
     category: "innovoija",
     interests: { technology: 0.95, people: 0.31, creative: 0.66, analytical: 0.83, hands_on: 0.33, business: 0.13, environment: 0.12, health: 0.17, education: 0.49, innovation: 0.95, arts_culture: 0.24, sports: 0.1, nature: 0.34, writing: 0.43 },
@@ -2033,7 +2033,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.13, international: 0.36, work_environment: 0.42 }
   },
   {
-    slug: "oppilashuoltotyöntekijä",
+    slug: "oppilashuoltotyontekija",
     title: "Oppilashuoltotyöntekijä",
     category: "auttaja",
     interests: { technology: 0.23, people: 0.95, creative: 0.41, analytical: 0.3, hands_on: 0.19, business: 0.23, environment: 0.27, health: 0.95, education: 0.56, innovation: 0.1, arts_culture: 0.17, sports: 0.64, nature: 0.19, writing: 0.31 },
@@ -2051,7 +2051,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.44, international: 0.44, work_environment: 0.37 }
   },
   {
-    slug: "kotipalvelutyöntekijä",
+    slug: "kotipalvelutyontekija",
     title: "Kotipalvelutyöntekijä",
     category: "auttaja",
     interests: { technology: 0.1, people: 0.95, creative: 0.1, analytical: 0.37, hands_on: 0.31, business: 0.3, environment: 0.3, health: 0.62, education: 0.89, innovation: 0.1, arts_culture: 0.13, sports: 0.29, nature: 0.29, writing: 0.52 },
@@ -2060,7 +2060,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.13, international: 0.61, work_environment: 0.48 }
   },
   {
-    slug: "full-stack-kehittäjä",
+    slug: "full-stack-kehittaja",
     title: "Full-Stack-kehittäjä",
     category: "innovoija",
     interests: { technology: 0.83, people: 0.29, creative: 0.71, analytical: 0.86, hands_on: 0.7, business: 0.39, environment: 0.54, health: 0.45, education: 0.1, innovation: 0.95, arts_culture: 0.1, sports: 0.1, nature: 0.1, writing: 0.27 },
@@ -2087,7 +2087,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.13, international: 0.59, work_environment: 0.77 }
   },
   {
-    slug: "lämpötekniikka-asentaja",
+    slug: "lampotekniikka-asentaja",
     title: "Lämpötekniikka-asentaja",
     category: "rakentaja",
     interests: { technology: 0.3, people: 0.11, creative: 0.49, analytical: 0.78, hands_on: 0.95, business: 0.2, environment: 0.54, health: 0.1, education: 0.37, innovation: 0.1, arts_culture: 0.1, sports: 0.79, nature: 0.67, writing: 0.27 },
@@ -2114,7 +2114,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.15, international: 0.4, work_environment: 0.8 }
   },
   {
-    slug: "myyntityöntekijä",
+    slug: "myyntityontekija",
     title: "Myyntityöntekijä",
     category: "johtaja",
     interests: { technology: 0.28, people: 0.53, creative: 0.48, analytical: 0.5, hands_on: 0.39, business: 0.68, environment: 0.1, health: 0.1, education: 0.33, innovation: 0.36, arts_culture: 0.19, sports: 0.23, nature: 0.25, writing: 0.14 },
@@ -2141,7 +2141,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.49, international: 0.22, work_environment: 0.47 }
   },
   {
-    slug: "vaihtoehtoinen-energia-insinööri",
+    slug: "vaihtoehtoinen-energia-insinoori",
     title: "Vaihtoehtoinen energia-insinööri",
     category: "ympariston-puolustaja",
     interests: { technology: 0.26, people: 0.44, creative: 0.37, analytical: 0.73, hands_on: 0.43, business: 0.46, environment: 0.76, health: 0.48, education: 0.78, innovation: 0.27, arts_culture: 0.22, sports: 0.14, nature: 0.95, writing: 0.24 },
@@ -2150,7 +2150,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.79, international: 0.64, work_environment: 0.38 }
   },
   {
-    slug: "rakennustyönjohtaja",
+    slug: "rakennustyonjohtaja",
     title: "Rakennustyönjohtaja",
     category: "rakentaja",
     interests: { technology: 0.54, people: 0.37, creative: 0.35, analytical: 0.73, hands_on: 0.95, business: 0.59, environment: 0.55, health: 0.2, education: 0.1, innovation: 0.37, arts_culture: 0.38, sports: 0.54, nature: 0.33, writing: 0.4 },
@@ -2186,7 +2186,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.53, international: 0.37, work_environment: 0.83 }
   },
   {
-    slug: "ääniteknikko",
+    slug: "aaniteknikko",
     title: "Ääniteknikko",
     category: "luova",
     interests: { technology: 0.33, people: 0.47, creative: 0.95, analytical: 0.14, hands_on: 0.48, business: 0.24, environment: 0.1, health: 0.29, education: 0.16, innovation: 0.75, arts_culture: 0.7, sports: 0.26, nature: 0.16, writing: 0.58 },
@@ -5363,7 +5363,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.26, international: 0.68, work_environment: 0.88 }
   },
   {
-    slug: "projektipaallikkö-rakennus",
+    slug: "projektipaallikko-rakennus",
     title: "Projektipäällikkö (rakennus)",
     category: "jarjestaja",
     interests: { technology: 0.31, people: 0.54, creative: 0.22, analytical: 0.63, hands_on: 0.4, business: 0.38, environment: 0.22, health: 0.1, education: 0.47, innovation: 0.52, arts_culture: 0.1, sports: 0.14, nature: 0.1, writing: 0.21 },
@@ -5372,7 +5372,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.36, international: 0.18, work_environment: 0.5 }
   },
   {
-    slug: "tuotantopaallikkö-teollisuus",
+    slug: "tuotantopaallikko-teollisuus",
     title: "Tuotantopäällikkö (teollisuus)",
     category: "jarjestaja",
     interests: { technology: 0.56, people: 0.43, creative: 0.39, analytical: 0.51, hands_on: 0.11, business: 0.57, environment: 0.3, health: 0.47, education: 0.26, innovation: 0.1, arts_culture: 0.12, sports: 0.31, nature: 0.44, writing: 0.36 },
@@ -5841,7 +5841,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   },
   {
     slug: "kirjailija-luova",
-    title: "Kirjailija",
+    title: "Luova kirjailija",
     category: "luova",
     interests: { technology: 0.82, people: 0.78, creative: 0.88, analytical: 0.17, hands_on: 0.73, business: 0.17, environment: 0.36, health: 0.1, education: 0.65, innovation: 0.95, arts_culture: 0.95, sports: 0.31, nature: 0.35, writing: 0.64 },
     workstyle: { teamwork: 0.63, independence: 0.83, leadership: 0.21, organization: 0.23, planning: 0.14, problem_solving: 0.78, precision: 0.35, performance: 0.73, teaching: 0.57, motivation: 0.57, autonomy: 0.79, social: 0.68, structure: 0.47, flexibility: 0.68, variety: 0.95 },
