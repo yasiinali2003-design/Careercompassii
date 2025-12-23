@@ -1,0 +1,506 @@
+{
+  "total": 30,
+  "passed": 30,
+  "failed": 0,
+  "byCohort": {
+    "YLA": {
+      "passed": 10,
+      "failed": 0,
+      "categoryMatches": 9
+    },
+    "TASO2": {
+      "passed": 10,
+      "failed": 0,
+      "categoryMatches": 9
+    },
+    "NUORI": {
+      "passed": 10,
+      "failed": 0,
+      "categoryMatches": 9
+    }
+  },
+  "accuracyByTest": [
+    {
+      "profile": "Creative Artist",
+      "cohort": "YLA",
+      "matched": true,
+      "matchCount": 6,
+      "totalKeywords": 18,
+      "percentage": 33,
+      "categoryMatch": true,
+      "topCategory": "luova",
+      "expectedCategory": "luova",
+      "topCareers": [
+        "Graafinen suunnittelija",
+        "Kameramies",
+        "Kirjailija"
+      ]
+    },
+    {
+      "profile": "Tech Enthusiast",
+      "cohort": "YLA",
+      "matched": true,
+      "matchCount": 5,
+      "totalKeywords": 18,
+      "percentage": 28,
+      "categoryMatch": true,
+      "topCategory": "innovoija",
+      "expectedCategory": "innovoija",
+      "topCareers": [
+        "Data-insinööri",
+        "Pelisuunnittelija",
+        "Robotiikka-insinööri"
+      ]
+    },
+    {
+      "profile": "Healthcare Helper",
+      "cohort": "YLA",
+      "matched": true,
+      "matchCount": 6,
+      "totalKeywords": 15,
+      "percentage": 40,
+      "categoryMatch": true,
+      "topCategory": "auttaja",
+      "expectedCategory": "auttaja",
+      "topCareers": [
+        "Sairaanhoitaja",
+        "Bioanalyytikko",
+        "Kouluterveydenhoitaja"
+      ]
+    },
+    {
+      "profile": "Business Leader",
+      "cohort": "YLA",
+      "matched": true,
+      "matchCount": 5,
+      "totalKeywords": 16,
+      "percentage": 31,
+      "categoryMatch": true,
+      "topCategory": "johtaja",
+      "expectedCategory": "johtaja",
+      "topCareers": [
+        "Henkilöstöpäällikkö",
+        "Tuotantopäällikkö",
+        "Talouspäällikkö"
+      ]
+    },
+    {
+      "profile": "Hands-on Builder",
+      "cohort": "YLA",
+      "matched": true,
+      "matchCount": 5,
+      "totalKeywords": 16,
+      "percentage": 31,
+      "categoryMatch": true,
+      "topCategory": "rakentaja",
+      "expectedCategory": "rakentaja",
+      "topCareers": [
+        "Rakennusmestari",
+        "Putkiasentaja",
+        "Maalari"
+      ]
+    },
+    {
+      "profile": "Nature Lover",
+      "cohort": "YLA",
+      "matched": true,
+      "matchCount": 6,
+      "totalKeywords": 13,
+      "percentage": 46,
+      "categoryMatch": true,
+      "topCategory": "ympariston-puolustaja",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCareers": [
+        "Biologi",
+        "Ympäristöinsinööri",
+        "Ilmastotutkija"
+      ]
+    },
+    {
+      "profile": "Scientific Mind",
+      "cohort": "YLA",
+      "matched": true,
+      "matchCount": 2,
+      "totalKeywords": 14,
+      "percentage": 14,
+      "categoryMatch": true,
+      "topCategory": "visionaari",
+      "expectedCategory": "visionaari",
+      "topCareers": [
+        "Strateginen suunnittelija",
+        "Sosiaalitutkija",
+        "Sosiaalisen innovaation asiantuntija"
+      ]
+    },
+    {
+      "profile": "Social Connector",
+      "cohort": "YLA",
+      "matched": true,
+      "matchCount": 4,
+      "totalKeywords": 21,
+      "percentage": 19,
+      "categoryMatch": true,
+      "topCategory": "auttaja",
+      "expectedCategory": "auttaja",
+      "topCareers": [
+        "Sairaanhoitaja",
+        "Kouluterveydenhoitaja",
+        "Kotihoitaja"
+      ]
+    },
+    {
+      "profile": "Security Seeker",
+      "cohort": "YLA",
+      "matched": true,
+      "matchCount": 3,
+      "totalKeywords": 14,
+      "percentage": 21,
+      "categoryMatch": true,
+      "topCategory": "jarjestaja",
+      "expectedCategory": "jarjestaja",
+      "topCareers": [
+        "Notaari",
+        "Hallinnon koordinaattori",
+        "Pankkivirkailija"
+      ]
+    },
+    {
+      "profile": "Adventure Seeker",
+      "cohort": "YLA",
+      "matched": false,
+      "matchCount": 0,
+      "totalKeywords": 14,
+      "percentage": 0,
+      "categoryMatch": null,
+      "topCategory": "N/A",
+      "topCareers": [
+        "Biologi",
+        "Ympäristöinsinööri",
+        "Ilmastotutkija"
+      ]
+    },
+    {
+      "profile": "Creative Artist",
+      "cohort": "TASO2",
+      "matched": true,
+      "matchCount": 5,
+      "totalKeywords": 18,
+      "percentage": 28,
+      "categoryMatch": true,
+      "topCategory": "luova",
+      "expectedCategory": "luova",
+      "topCareers": [
+        "Käsikirjoittaja",
+        "Mediatuottaja",
+        "Digitaalinen sisältötuottaja"
+      ]
+    },
+    {
+      "profile": "Tech Enthusiast",
+      "cohort": "TASO2",
+      "matched": true,
+      "matchCount": 5,
+      "totalKeywords": 18,
+      "percentage": 28,
+      "categoryMatch": true,
+      "topCategory": "innovoija",
+      "expectedCategory": "innovoija",
+      "topCareers": [
+        "Robotiikka-insinööri",
+        "Ohjelmistokehittäjä",
+        "Elintarviketutkija"
+      ]
+    },
+    {
+      "profile": "Healthcare Helper",
+      "cohort": "TASO2",
+      "matched": true,
+      "matchCount": 6,
+      "totalKeywords": 15,
+      "percentage": 40,
+      "categoryMatch": true,
+      "topCategory": "auttaja",
+      "expectedCategory": "auttaja",
+      "topCareers": [
+        "Sairaanhoitaja",
+        "Bioanalyytikko",
+        "Kouluterveydenhoitaja"
+      ]
+    },
+    {
+      "profile": "Business Leader",
+      "cohort": "TASO2",
+      "matched": true,
+      "matchCount": 5,
+      "totalKeywords": 16,
+      "percentage": 31,
+      "categoryMatch": true,
+      "topCategory": "johtaja",
+      "expectedCategory": "johtaja",
+      "topCareers": [
+        "Henkilöstöpäällikkö",
+        "Tuotantopäällikkö",
+        "Talouspäällikkö"
+      ]
+    },
+    {
+      "profile": "Hands-on Builder",
+      "cohort": "TASO2",
+      "matched": true,
+      "matchCount": 4,
+      "totalKeywords": 16,
+      "percentage": 25,
+      "categoryMatch": true,
+      "topCategory": "rakentaja",
+      "expectedCategory": "rakentaja",
+      "topCareers": [
+        "Kattomestari",
+        "Talonrakentaja",
+        "Puuseppä"
+      ]
+    },
+    {
+      "profile": "Nature Lover",
+      "cohort": "TASO2",
+      "matched": true,
+      "matchCount": 4,
+      "totalKeywords": 13,
+      "percentage": 31,
+      "categoryMatch": true,
+      "topCategory": "ympariston-puolustaja",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCareers": [
+        "Ympäristöinsinööri",
+        "Luonnonsuojelija",
+        "Uusiutuva energia -insinööri"
+      ]
+    },
+    {
+      "profile": "Scientific Mind",
+      "cohort": "TASO2",
+      "matched": true,
+      "matchCount": 2,
+      "totalKeywords": 14,
+      "percentage": 14,
+      "categoryMatch": true,
+      "topCategory": "visionaari",
+      "expectedCategory": "visionaari",
+      "topCareers": [
+        "Strateginen suunnittelija",
+        "Tulevaisuuden visio-johtaja",
+        "Journalisti"
+      ]
+    },
+    {
+      "profile": "Social Connector",
+      "cohort": "TASO2",
+      "matched": true,
+      "matchCount": 4,
+      "totalKeywords": 21,
+      "percentage": 19,
+      "categoryMatch": true,
+      "topCategory": "auttaja",
+      "expectedCategory": "auttaja",
+      "topCareers": [
+        "Sairaanhoitaja",
+        "Kouluterveydenhoitaja",
+        "Kotihoitaja"
+      ]
+    },
+    {
+      "profile": "Security Seeker",
+      "cohort": "TASO2",
+      "matched": true,
+      "matchCount": 5,
+      "totalKeywords": 14,
+      "percentage": 36,
+      "categoryMatch": true,
+      "topCategory": "jarjestaja",
+      "expectedCategory": "jarjestaja",
+      "topCareers": [
+        "Koulutuskoordinaattori",
+        "Notaari",
+        "Toimistosihteeri"
+      ]
+    },
+    {
+      "profile": "Adventure Seeker",
+      "cohort": "TASO2",
+      "matched": false,
+      "matchCount": 0,
+      "totalKeywords": 14,
+      "percentage": 0,
+      "categoryMatch": null,
+      "topCategory": "N/A",
+      "topCareers": [
+        "Ympäristöinsinööri",
+        "Luonnonsuojelija",
+        "Uusiutuva energia -insinööri"
+      ]
+    },
+    {
+      "profile": "Creative Artist",
+      "cohort": "NUORI",
+      "matched": true,
+      "matchCount": 6,
+      "totalKeywords": 18,
+      "percentage": 33,
+      "categoryMatch": true,
+      "topCategory": "luova",
+      "expectedCategory": "luova",
+      "topCareers": [
+        "Graafinen suunnittelija",
+        "Muusikko",
+        "Kameramies"
+      ]
+    },
+    {
+      "profile": "Tech Enthusiast",
+      "cohort": "NUORI",
+      "matched": true,
+      "matchCount": 5,
+      "totalKeywords": 18,
+      "percentage": 28,
+      "categoryMatch": true,
+      "topCategory": "innovoija",
+      "expectedCategory": "innovoija",
+      "topCareers": [
+        "Data-insinööri",
+        "Pelisuunnittelija",
+        "Robotiikka-insinööri"
+      ]
+    },
+    {
+      "profile": "Healthcare Helper",
+      "cohort": "NUORI",
+      "matched": true,
+      "matchCount": 6,
+      "totalKeywords": 15,
+      "percentage": 40,
+      "categoryMatch": true,
+      "topCategory": "auttaja",
+      "expectedCategory": "auttaja",
+      "topCareers": [
+        "Sairaanhoitaja",
+        "Bioanalyytikko",
+        "Kouluterveydenhoitaja"
+      ]
+    },
+    {
+      "profile": "Business Leader",
+      "cohort": "NUORI",
+      "matched": true,
+      "matchCount": 4,
+      "totalKeywords": 16,
+      "percentage": 25,
+      "categoryMatch": true,
+      "topCategory": "johtaja",
+      "expectedCategory": "johtaja",
+      "topCareers": [
+        "Liiketoiminnan kehityspäällikkö",
+        "Etätiimin vetäjä",
+        "Kehitysjohtaja"
+      ]
+    },
+    {
+      "profile": "Hands-on Builder",
+      "cohort": "NUORI",
+      "matched": true,
+      "matchCount": 5,
+      "totalKeywords": 16,
+      "percentage": 31,
+      "categoryMatch": true,
+      "topCategory": "rakentaja",
+      "expectedCategory": "rakentaja",
+      "topCareers": [
+        "Rakennusmestari",
+        "Putkiasentaja",
+        "Maalari"
+      ]
+    },
+    {
+      "profile": "Nature Lover",
+      "cohort": "NUORI",
+      "matched": true,
+      "matchCount": 6,
+      "totalKeywords": 13,
+      "percentage": 46,
+      "categoryMatch": true,
+      "topCategory": "ympariston-puolustaja",
+      "expectedCategory": "ympariston-puolustaja",
+      "topCareers": [
+        "Biologi",
+        "Ympäristöinsinööri",
+        "Ilmastotutkija"
+      ]
+    },
+    {
+      "profile": "Scientific Mind",
+      "cohort": "NUORI",
+      "matched": true,
+      "matchCount": 2,
+      "totalKeywords": 14,
+      "percentage": 14,
+      "categoryMatch": true,
+      "topCategory": "visionaari",
+      "expectedCategory": "visionaari",
+      "topCareers": [
+        "Sosiaalisen innovaation asiantuntija",
+        "Strateginen suunnittelija",
+        "Tulevaisuuden visio-johtaja"
+      ]
+    },
+    {
+      "profile": "Social Connector",
+      "cohort": "NUORI",
+      "matched": true,
+      "matchCount": 3,
+      "totalKeywords": 21,
+      "percentage": 14,
+      "categoryMatch": true,
+      "topCategory": "auttaja",
+      "expectedCategory": "auttaja",
+      "topCareers": [
+        "Sairaanhoitaja",
+        "Bioanalyytikko",
+        "Kouluterveydenhoitaja"
+      ]
+    },
+    {
+      "profile": "Security Seeker",
+      "cohort": "NUORI",
+      "matched": true,
+      "matchCount": 1,
+      "totalKeywords": 14,
+      "percentage": 7,
+      "categoryMatch": true,
+      "topCategory": "jarjestaja",
+      "expectedCategory": "jarjestaja",
+      "topCareers": [
+        "Markkinointisuunnittelija",
+        "Yritysneuvoja",
+        "Asianajaja"
+      ]
+    },
+    {
+      "profile": "Adventure Seeker",
+      "cohort": "NUORI",
+      "matched": false,
+      "matchCount": 0,
+      "totalKeywords": 14,
+      "percentage": 0,
+      "categoryMatch": null,
+      "topCategory": "N/A",
+      "topCareers": [
+        "Henkilöstöpäällikkö",
+        "Tuotantopäällikkö",
+        "Talouspäällikkö"
+      ]
+    }
+  ],
+  "categoryMatches": 27,
+  "categoryTotal": 27,
+  "persistenceSaved": 30,
+  "persistenceRetrieved": 30,
+  "issues": []
+}

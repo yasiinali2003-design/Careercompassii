@@ -34,19 +34,21 @@ const CATEGORY_SUBDIMENSION_WEIGHTS: Record<string, {
 }> = {
   auttaja: {
     interests: {
-      health: 5.0,        // CRITICAL: Healthcare careers must match health interest
-      people: 4.5,        // CRITICAL: People-oriented work
-      education: 3.5,     // BOOSTED: Teaching/education
-      growth: 3.0,        // Teaching aptitude
+      health: 3.5,        // Healthcare - reduced to allow education to compete
+      people: 5.0,        // CRITICAL: People-oriented work - highest priority
+      education: 5.0,     // CRITICAL: Teaching/education - equal to people
+      growth: 4.0,        // Teaching aptitude - boosted
     },
     workstyle: {
-      teaching: 4.0,      // BOOSTED: Teaching style
-      teamwork: 3.0,      // BOOSTED: Collaborative work
-      social: 3.5,        // Social interaction
+      teaching: 5.0,      // CRITICAL: Teaching style - key differentiator for education
+      teamwork: 4.0,      // Collaborative work
+      social: 4.5,        // Social interaction - boosted significantly
+      motivation: 4.0,    // Coaching/motivating others
     },
     values: {
       social_impact: 4.5, // CRITICAL: Helping motivation
-      impact: 4.0,        // CRITICAL: Making a difference
+      impact: 4.0,        // Making a difference
+      growth: 4.0,        // Personal development focus - boosted
     },
   },
   luova: {

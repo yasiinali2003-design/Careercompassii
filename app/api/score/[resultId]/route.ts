@@ -39,11 +39,31 @@ export async function GET(
     }
 
     // Fetch the result from database
-    const { data, error } = await supabaseAdmin
+    // First try with full_results, then fallback to without it if column doesn't exist
+    let data: any = null;
+    let error: any = null;
+
+    // Try fetching with full_results first
+    const fullResult = await supabaseAdmin
       .from('test_results')
       .select('id, cohort, full_results, dimension_scores, top_careers, education_path_primary, education_path_scores, created_at')
       .eq('id', resultId)
-      .single() as { data: { id: string; cohort: string; full_results: any; dimension_scores: any; top_careers: any; education_path_primary: any; education_path_scores: any; created_at: string } | null; error: any };
+      .single();
+
+    if (fullResult.error?.code === '42703' && fullResult.error?.message?.includes('full_results')) {
+      // Column doesn't exist, retry without it
+      console.log('[API] full_results column not found, fetching without it');
+      const partialResult = await supabaseAdmin
+        .from('test_results')
+        .select('id, cohort, dimension_scores, top_careers, education_path_primary, education_path_scores, created_at')
+        .eq('id', resultId)
+        .single();
+      data = partialResult.data;
+      error = partialResult.error;
+    } else {
+      data = fullResult.data;
+      error = fullResult.error;
+    }
 
     if (error) {
       console.error('[API] Error fetching result:', error);
