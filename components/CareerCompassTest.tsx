@@ -609,30 +609,12 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
 // ---------- SUB-COMPONENTS ----------
 const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedProgress: boolean }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [termsAccepted, setTermsAccepted] = useState(false);
 
   useEffect(() => {
     // Trigger animation on mount
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
-
-  // Check if terms were previously accepted
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const accepted = localStorage.getItem('termsAccepted');
-      if (accepted) {
-        setTermsAccepted(true);
-      }
-    }
-  }, []);
-
-  const handleTermsChange = (checked: boolean) => {
-    setTermsAccepted(checked);
-    if (checked && typeof window !== 'undefined') {
-      localStorage.setItem('termsAccepted', new Date().toISOString());
-    }
-  };
 
   const featureChips = ['30 kysymystä', 'Noin 5 minuuttia', 'Maksuton', 'Luottamuksellinen'];
 
@@ -702,94 +684,30 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
             </div>
           )}
 
-          {/* Terms acceptance checkbox */}
-          <div className="pt-2">
-            <label className="flex items-start gap-3 cursor-pointer group">
-              <div className="relative flex items-center justify-center mt-0.5">
-                <input
-                  type="checkbox"
-                  checked={termsAccepted}
-                  onChange={(e) => handleTermsChange(e.target.checked)}
-                  className="peer sr-only"
-                />
-                <div className="h-5 w-5 rounded border-2 border-white/30 bg-white/5 peer-checked:bg-sky-500 peer-checked:border-sky-500 transition-all peer-focus:ring-2 peer-focus:ring-sky-400 peer-focus:ring-offset-2 peer-focus:ring-offset-slate-900">
-                  <svg
-                    className="h-full w-full text-white opacity-0 peer-checked:opacity-100 transition-opacity"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={3}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                {termsAccepted && (
-                  <svg
-                    className="absolute h-3 w-3 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={3}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                )}
-              </div>
-              <span className="text-sm text-urak-text-secondary group-hover:text-white/80 transition-colors">
-                Hyväksyn{' '}
-                <a
-                  href="/legal/kayttoehdot"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sky-400 hover:text-sky-300 underline underline-offset-2"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  käyttöehdot
-                </a>
-                {' '}ja{' '}
-                <a
-                  href="/legal/tietosuojaseloste"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sky-400 hover:text-sky-300 underline underline-offset-2"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  tietosuojaselosteen
-                </a>
-              </span>
-            </label>
-          </div>
-
           <div className="pt-4">
             <button
               type="button"
               onClick={onStart}
-              disabled={!termsAccepted}
-              className={`
+              className="
                 group
                 relative inline-flex items-center justify-center
                 rounded-full
+                bg-gradient-to-r from-sky-500 to-blue-500
                 px-8 py-3
                 text-sm md:text-base font-semibold text-white
+                shadow-[0_18px_40px_rgba(37,99,235,0.6)]
                 transition
+                hover:shadow-[0_20px_45px_rgba(37,99,235,0.65)]
+                hover:scale-[1.01]
                 focus-visible:outline-none
                 focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
-                ${termsAccepted
-                  ? 'bg-gradient-to-r from-sky-500 to-blue-500 shadow-[0_18px_40px_rgba(37,99,235,0.6)] hover:shadow-[0_20px_45px_rgba(37,99,235,0.65)] hover:scale-[1.01] cursor-pointer'
-                  : 'bg-gray-600/50 cursor-not-allowed shadow-none'
-                }
-              `}
+              "
             >
               {hasSavedProgress ? "Jatka testiä" : "Aloita ilmainen testi"}
               <span className="ml-2 inline-block translate-x-0 transition-transform group-hover:translate-x-0.5">
                 →
               </span>
             </button>
-            {!termsAccepted && (
-              <p className="mt-2 text-xs text-urak-text-secondary">
-                Hyväksy käyttöehdot aloittaaksesi testin
-              </p>
-            )}
           </div>
         </div>
       </div>
