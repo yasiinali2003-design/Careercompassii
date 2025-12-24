@@ -226,7 +226,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
   // Q17: Workstyle - Outdoor
   {
     q: 17,
-    text: "Haluaisitko työskennellä mieluummin ulkona kuin sisällä?",
+    text: "Kiinnostaako sinua työskennellä ulkona?",
     dimension: 'workstyle',
     subdimension: 'outdoor',
     weight: 1.1,
