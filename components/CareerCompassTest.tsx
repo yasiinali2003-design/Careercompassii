@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { selectQuestionSet, markSetAsUsed } from "@/lib/questionPool";
 import { toast, Toaster } from "sonner";
 import Todistuspistelaskuri from './Todistuspistelaskuri';
@@ -235,6 +236,7 @@ async function fetchQuestions(cohort: string, setIndex: number, subCohort?: stri
 
 // ---------- MAIN COMPONENT ----------
 export default function CareerCompassTest({ pin, classToken }: { pin?: string | null; classToken?: string | null } = {}) {
+  const router = useRouter();
   type GroupKey = "YLA" | "TASO2" | "NUORI";
   const [step, setStep] = useState<0 | 1 | 2 | 3>(0); // 0: landing, 1: group select, 2: questions, 3: summary
   const [group, setGroup] = useState<GroupKey | null>(null);
@@ -1090,8 +1092,9 @@ const Summary = ({
   currentOccupation?: string;
   taso2SubCohort?: "LUKIO" | "AMIS" | null;
 }) => {
+  const router = useRouter();
   console.log('[Summary] Component rendered with props:', { pin, classToken, hasPin: !!pin, hasClassToken: !!classToken });
-  
+
   const [analysis, setAnalysis] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -1299,10 +1302,8 @@ const Summary = ({
               console.log('[Test] Results saved successfully to localStorage');
             }
 
-            // Small delay to ensure localStorage write completes
-            setTimeout(() => {
-              window.location.href = '/test/results';
-            }, 50);
+            // Navigate to results page - using router.push for reliable SPA navigation
+            router.push('/test/results');
           } else {
             console.error('[Test] Failed to save results:', resultsData.error);
             const errorMsg = resultsData.error || "Tulosten tallentaminen epäonnistui";
@@ -1404,10 +1405,8 @@ const Summary = ({
             console.log('[Test] Results saved successfully to localStorage');
           }
 
-          // Small delay to ensure localStorage write completes
-          setTimeout(() => {
-            window.location.href = '/test/results';
-          }, 50);
+          // Navigate to results page - using router.push for reliable SPA navigation
+          router.push('/test/results');
         } else {
           console.error('[Test] Score API failed:', data);
           const errorMsg = data.error || data.details || "Analyysi epäonnistui";
@@ -1980,7 +1979,7 @@ const Summary = ({
         {/* Career Recommendations */}
         <div className="rounded-3xl bg-[#2563EB] p-8 shadow-lg">
           <h2 className="text-3xl font-bold text-white mb-4">Valitsimme muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa</h2>
-          <p className="text-white/80 text-sm mb-8">Ammattiehdotukset ovat esimerkkejä — ei listoja ammateista, joita sinun tulisi hakea.</p>
+          <p className="text-white/80 text-sm mb-8">Ammattiehdotukset ovat esimerkkejä, eivät listoja ammateista, joita sinun tulisi hakea.</p>
           
           <div className="grid gap-6 md:grid-cols-2">
             {(Array.isArray(analysis?.recommendations) ? analysis.recommendations : []).map((career: any, i: number) => {

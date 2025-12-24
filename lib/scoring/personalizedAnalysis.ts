@@ -208,17 +208,17 @@ const FUTURE_ADVICE = {
 
 const RECOMMENDATION_INTROS = {
   YLA: [
-    "Vastaustesi perusteella profiilistasi nousee esiin seuraavia vahvuuksia ja kiinnostuksia. Alla näet muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa. Nämä ovat esimerkkejä — ei listoja ammateista, joita sinun tulisi hakea.",
+    "Vastaustesi perusteella profiilistasi nousee esiin seuraavia vahvuuksia ja kiinnostuksia. Alla näet muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa. Nämä ovat esimerkkejä, eivät listoja ammateista, joita sinun tulisi hakea.",
     "Valitsimme muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa. Nämä voivat antaa uusia näkökulmia siihen, millaisissa ympäristöissä saattaisit viihtyä. Ne eivät rajoita valintojasi.",
     "Alla näet ammattiehdotuksia, jotka perustuvat vastauksiin. Ne on valittu sen mukaan, missä vahvuutesi saattaisivat tulla hyödyksi. Pidä nämä keskustelun avaavina ideoina. Mikään yksittäinen polku ei ole 'oikea' tai 'väärä'. Tarkoitus on avata uusia näkökulmia."
   ],
   TASO2: [
-    "Vastaustesi perusteella profiilistasi nousee esiin seuraavia vahvuuksia ja kiinnostuksia. Alla näet ammattiehdotuksia, jotka voivat sopia yhteen profiilisi kanssa. Nämä ovat esimerkkejä — ei listoja ammateista, joita sinun tulisi hakea. Ne voivat auttaa hahmottamaan, millaisilla aloilla vahvuutesi saattaisivat tulla hyödyksi.",
+    "Vastaustesi perusteella profiilistasi nousee esiin seuraavia vahvuuksia ja kiinnostuksia. Alla näet ammattiehdotuksia, jotka voivat sopia yhteen profiilisi kanssa. Nämä ovat esimerkkejä, eivät listoja ammateista, joita sinun tulisi hakea. Ne voivat auttaa hahmottamaan, millaisilla aloilla vahvuutesi saattaisivat tulla hyödyksi.",
     "Valitsimme muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa. Ne voivat antaa uusia näkökulmia siihen, millaisissa ympäristöissä saattaisit viihtyä. Ne eivät rajoita valintojasi. Mikään yksittäinen polku ei ole 'oikea' tai 'väärä'. Tarkoitus on avata uusia näkökulmia.",
     "Alla näet ammattiehdotuksia, jotka perustuvat vastauksiin. Ne voivat olla keskustelun avaavia ideoita urasuunnittelun ja jatko-opintojen pohtimiseen. Tutki myös muita mielenkiintoisia vaihtoehtoja. Polkuja on monia, ja voit pohtia erilaisia yhdistelmiä."
   ],
   NUORI: [
-    "Vastaustesi perusteella profiilistasi nousee esiin seuraavia vahvuuksia ja kiinnostuksia. Alla näet muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa. Nämä ovat esimerkkejä — ei listoja ammateista, joita sinun tulisi hakea. Ne voivat antaa uusia näkökulmia siihen, millaisissa ympäristöissä saattaisit viihtyä.",
+    "Vastaustesi perusteella profiilistasi nousee esiin seuraavia vahvuuksia ja kiinnostuksia. Alla näet muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa. Nämä ovat esimerkkejä, eivät listoja ammateista, joita sinun tulisi hakea. Ne voivat antaa uusia näkökulmia siihen, millaisissa ympäristöissä saattaisit viihtyä.",
     "Valitsimme muutamia esimerkkejä ammateista, jotka voivat sopia yhteen profiilisi kanssa. Ne voivat olla keskustelun avaavia ideoita urasuunnittelun pohtimiseen. Ne eivät rajoita valintojasi. Ne voivat auttaa hahmottamaan, millaisilla poluilla vahvuutesi saattaisivat tulla hyödyksi.",
     "Alla näet ammattiehdotuksia, jotka perustuvat vastauksiin. Ne voivat tarjota näkökulmia uravalinnan pohtimiseen. Käytä niitä keskustelun avaavina ideoina ja tutki myös muita kiinnostavia mahdollisuuksia. Mikään yksittäinen polku ei ole 'oikea' tai 'väärä'. Tarkoitus on avata uusia näkökulmia."
   ]

@@ -72,7 +72,7 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
       `Missä olet havainnut olevasi erityisen kiinnostunut?`
     );
     talkingPoints.push(
-      `Sinulla on monipuolisia kiinnostuksia — hyvä pohja keskustelulle`
+      `Sinulla on monipuolisia kiinnostuksia, mikä on hyvä pohja keskustelulle`
     );
   } else if (dimensions.interests < 50) {
     questions.push(
@@ -104,7 +104,7 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
       `Miten haluaisit oppia uutta?`
     );
     talkingPoints.push(
-      `Profiilistasi nousee esiin kiinnostusta käytännönläheiseen oppimiseen — tämä voi avata monia mahdollisuuksia`
+      `Profiilistasi nousee esiin kiinnostusta käytännönläheiseen oppimiseen, mikä voi avata monia mahdollisuuksia`
     );
   } else if (dimensions.workstyle < 50) {
     questions.push(
@@ -112,7 +112,7 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
       `Sopisiko sinulle lukio tai akateeminen ura?`
     );
     talkingPoints.push(
-      `Profiilistasi nousee esiin kiinnostusta teoreettiseen oppimiseen — tämä voi avata mahdollisuuksia korkeakouluun`
+      `Profiilistasi nousee esiin kiinnostusta teoreettiseen oppimiseen, mikä voi avata mahdollisuuksia korkeakouluun`
     );
   }
 
@@ -163,7 +163,7 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
   const avgScore = (dimensions.interests + dimensions.values + dimensions.workstyle + dimensions.context) / 4;
   if (avgScore < 50) {
     talkingPoints.push(
-      `Profiilissa ei nouse yhtä selkeää suuntaa — tämä on normaalia`,
+      `Profiilissa ei nouse yhtä selkeää suuntaa, mikä on täysin normaalia`,
       `On täysin normaalia, ettei kaikkea vielä tiedä. Voimme yhdessä pohtia erilaisia mahdollisuuksia`
     );
     actionItems.push(
@@ -191,13 +191,13 @@ export function generateParentMeetingTalkingPoints(profile: StudentProfile): str
     const topCareer = topCareers[0];
     points.push(
       `${profile.name}:n profiilista nousee esiin kiinnostusta ${topCareer.title} -tyyppisiin ammatteihin`,
-      `Profiilista nousee esiin monipuolisia kiinnostuksia — hyvä pohja keskustelulle`
+      `Profiilista nousee esiin monipuolisia kiinnostuksia, mikä on hyvä pohja keskustelulle`
     );
   }
 
   if (dimensions.interests > 60) {
     points.push(
-      `${profile.name}:lla on monipuolisia kiinnostuksia — hyvä pohja keskustelulle`
+      `${profile.name}:lla on monipuolisia kiinnostuksia, mikä on hyvä pohja keskustelulle`
     );
   }
 
@@ -217,7 +217,7 @@ export function generateParentMeetingTalkingPoints(profile: StudentProfile): str
   const avgScore = (dimensions.interests + dimensions.values + dimensions.workstyle + dimensions.context) / 4;
   if (avgScore < 50) {
     points.push(
-      `Profiilissa ei nouse yhtä selkeää suuntaa — tämä on normaalia`,
+      `Profiilissa ei nouse yhtä selkeää suuntaa, mikä on täysin normaalia`,
       `On täysin normaalia, ettei kaikkea vielä tiedä. Voimme yhdessä pohtia erilaisia mahdollisuuksia`
     );
   }
