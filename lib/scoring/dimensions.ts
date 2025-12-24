@@ -806,7 +806,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
   // Q3: Creative industries
   {
     q: 3,
-    text: "Haluaisitko työskennellä luovalla alalla, kuten mainonta tai design?",
+    text: "Haluaisitko työskennellä luovalla alalla, kuten mainonta tai muotoilu?",
     dimension: 'interests',
     subdimension: 'creative',
     weight: 1.6,

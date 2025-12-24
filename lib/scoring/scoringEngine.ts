@@ -2299,17 +2299,27 @@ function determineDominantCategory(
     // If tech >= 0.7, this person is tech-focused even if they have business interest
     // "The Tech Entrepreneur": tech=5 (1.0), business=4 (0.75), innovation=5 (1.0) -> should be innovoija, not johtaja
     categoryScores.innovoija = 0;  // ZERO score - this is johtaja
-  } else if (innovoijaHandsOn >= 0.5 && innovoijaTech < 0.5) {
-    // High hands_on + low tech = rakentaja, NOT innovoija - set to ZERO
-    // "The Hands-On Builder": hands_on=5, tech=2 -> should be rakentaja, not innovoija
+  } else if (innovoijaHandsOn >= 0.5 && innovoijaTech < 0.5 && innovoijaInnovation < 0.5) {
+    // High hands_on + low tech + LOW INNOVATION = rakentaja, NOT innovoija
+    // "The Hands-On Builder": hands_on=5, tech=2, innovation=2 -> should be rakentaja
+    // BUT: If innovation is HIGH (>=0.5), keep innovoija as an option for hybrid careers
     categoryScores.innovoija = 0;  // ZERO score - this is rakentaja
   } else if (innovoijaHandsOn >= 0.5 && innovoijaTech < 0.6 && innovoijaInnovation < 0.4) {
     // High hands_on + moderate/low tech + low innovation = rakentaja, NOT innovoija
     categoryScores.innovoija = 0;  // ZERO score - this is rakentaja
-  } else if (innovoijaHandsOn >= 0.6) {
-    // VERY high hands_on = ALWAYS rakentaja, NOT innovoija (regardless of tech)
-    // "The Hands-On Builder": hands_on=5 -> should be rakentaja, not innovoija
+  } else if (innovoijaHandsOn >= 0.6 && innovoijaInnovation < 0.5) {
+    // VERY high hands_on + LOW INNOVATION = rakentaja, NOT innovoija
+    // "The Hands-On Builder": hands_on=5, innovation=2 -> should be rakentaja
+    // BUT: If innovation is HIGH (>=0.5), this could be an innovative practical person
     categoryScores.innovoija = 0;  // ZERO score - this is rakentaja
+  } else if (innovoijaHandsOn >= 0.5 && innovoijaInnovation >= 0.5) {
+    // HIGH hands_on + HIGH innovation = HYBRID profile - innovative practical work
+    // "The Innovative Builder": hands_on=4, innovation=4 -> should get BOTH rakentaja AND innovoija careers
+    // Boost innovoija to compete with rakentaja, but don't zero either
+    categoryScores.innovoija += innovoijaInnovation * 12.0;
+    categoryScores.innovoija += innovoijaHandsOn * 5.0;  // Some credit for practical skills
+    // Also boost rakentaja slightly for balance
+    categoryScores.rakentaja = (categoryScores.rakentaja || 0) + innovoijaHandsOn * 8.0;
   } else if (innovoijaTech >= 0.5 && innovoijaInnovation >= 0.4 && !isVisionaariNotInnovaija) {
     // CRITICAL: Tech + innovation = innovoija, NOT visionaari or jarjestaja
     // "The Tech Innovator": technology=5, innovation=5, analytical=5 -> should be innovoija
@@ -2408,13 +2418,14 @@ function determineDominantCategory(
   }
   
   // STRONG penalty for very high hands_on (should be rakentaja, not innovoija)
-  // Only penalize if hands_on is very high (>= 0.6) to avoid catching tech personalities with moderate hands_on
-  if (innovoijaHandsOn >= 0.6) {
-    categoryScores.innovoija *= 0.3;  // STRONG penalty for very high hands_on
-  } else if (innovoijaHandsOn >= 0.5 && innovoijaTech < 0.6) {
-    // Moderate hands_on + moderate tech = likely rakentaja
+  // BUT: Only penalize if innovation is LOW - if innovation is high, this is a hybrid profile
+  if (innovoijaHandsOn >= 0.6 && innovoijaInnovation < 0.5) {
+    categoryScores.innovoija *= 0.3;  // STRONG penalty for hands_on WITHOUT innovation
+  } else if (innovoijaHandsOn >= 0.5 && innovoijaTech < 0.6 && innovoijaInnovation < 0.5) {
+    // Moderate hands_on + moderate tech + LOW innovation = likely rakentaja
     categoryScores.innovoija *= 0.5;  // Moderate penalty
   }
+  // NO penalty if hands_on is high BUT innovation is also high - this is the hybrid "innovative builder" profile
 
   // rakentaja: hands_on/physical work
   // FIXED: Require hands_on AND NOT global/planning (distinguish from visionaari)
@@ -3857,12 +3868,18 @@ function determineDominantCategory(
     categoryScores.johtaja = Math.min(categoryScores.johtaja || 0, finalCheckGlobalForVisionaari * 0.1);
   }
   
-  if (finalCheckHandsOn >= 0.6 && finalCheckTechForRakentaja < 0.5) {
-    // VERY high hands_on + low tech = ALWAYS rakentaja
+  if (finalCheckHandsOn >= 0.6 && finalCheckTechForRakentaja < 0.5 && finalCheckInnovationForInnovaija < 0.5) {
+    // VERY high hands_on + low tech + LOW INNOVATION = rakentaja
+    // BUT: If innovation is high, this is a hybrid "innovative builder" - don't zero innovoija
     categoryScores.innovoija = 0;  // ZERO score - this is rakentaja
     categoryScores.visionaari = 0;  // ZERO score - this is rakentaja
     // Boost rakentaja to ensure it wins
     categoryScores.rakentaja = Math.max(categoryScores.rakentaja || 0, finalCheckHandsOn * 15.0);
+  } else if (finalCheckHandsOn >= 0.5 && finalCheckInnovationForInnovaija >= 0.5) {
+    // HYBRID profile: High hands_on + High innovation = "Innovative Builder"
+    // Boost BOTH categories to get a mix of practical AND innovative careers
+    categoryScores.innovoija = Math.max(categoryScores.innovoija || 0, finalCheckInnovationForInnovaija * 12.0 + finalCheckHandsOn * 4.0);
+    categoryScores.rakentaja = Math.max(categoryScores.rakentaja || 0, finalCheckHandsOn * 10.0);
   }
   
   // "The Business Leader": leadership=5 (normalized to 1.0), business=5 (normalized to 1.0) -> should be johtaja, not auttaja
@@ -5477,6 +5494,27 @@ export function rankCareers(
     }
     if (careerValues.entrepreneurship && values.entrepreneurship) {
       alignmentBonus += careerValues.entrepreneurship * values.entrepreneurship * 3;
+    }
+
+    // ========== INNOVATION MISMATCH PENALTY ==========
+    // When user has HIGH innovation but career has LOW innovation, apply penalty
+    // This ensures innovative users get careers that match their innovation level
+    // ACROSS ALL CATEGORIES (not just innovoija)
+    const userInnovation = interests.innovation || 0;
+    const careerInnovation = careerInterests.innovation || 0;
+    if (userInnovation >= 0.6) {
+      // User is innovative - penalize non-innovative careers
+      if (careerInnovation < 0.3) {
+        // Career has very low innovation - strong penalty
+        alignmentBonus -= (userInnovation - careerInnovation) * 15;
+      } else if (careerInnovation < 0.5) {
+        // Career has moderate innovation - mild penalty
+        alignmentBonus -= (userInnovation - careerInnovation) * 8;
+      }
+      // Bonus for careers with high innovation matching user's innovation
+      if (careerInnovation >= 0.6) {
+        alignmentBonus += userInnovation * careerInnovation * 8;
+      }
     }
 
     // ========== NEGATIVE FILTERING FOR CATEGORY MISMATCHES ==========
