@@ -1302,8 +1302,11 @@ const Summary = ({
               console.log('[Test] Results saved successfully to localStorage');
             }
 
-            // Navigate to results page - using router.push for reliable SPA navigation
-            router.push('/test/results');
+            // Navigate to results page with resultId in URL for persistence
+            const resultsUrl = finalResultId
+              ? `/test/results?id=${finalResultId}`
+              : '/test/results';
+            router.push(resultsUrl);
           } else {
             console.error('[Test] Failed to save results:', resultsData.error);
             const errorMsg = resultsData.error || "Tulosten tallentaminen epäonnistui";
@@ -1405,8 +1408,11 @@ const Summary = ({
             console.log('[Test] Results saved successfully to localStorage');
           }
 
-          // Navigate to results page - using router.push for reliable SPA navigation
-          router.push('/test/results');
+          // Navigate to results page with resultId in URL for persistence
+          const resultsUrl = data.resultId
+            ? `/test/results?id=${data.resultId}`
+            : '/test/results';
+          router.push(resultsUrl);
         } else {
           console.error('[Test] Score API failed:', data);
           const errorMsg = data.error || data.details || "Analyysi epäonnistui";

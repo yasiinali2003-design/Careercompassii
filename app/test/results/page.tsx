@@ -92,11 +92,43 @@ export default function ResultsPage() {
 
   useEffect(() => {
     const loadResults = async () => {
-      // Get resultId from localStorage - this is the key to consistent results
-      const resultId = safeGetString('lastTestResultId');
-      console.log('[Results] Loading results, resultId:', resultId);
+      // Priority 1: Check URL query parameter for resultId (allows bookmarking/sharing)
+      const urlResultId = searchParams.get('id');
+      // Priority 2: Check localStorage for resultId
+      const localResultId = safeGetString('lastTestResultId');
+      // Use URL param first, then localStorage
+      const resultId = urlResultId || localResultId;
 
-      // First, try localStorage (set by test component)
+      console.log('[Results] Loading results, urlResultId:', urlResultId, 'localResultId:', localResultId);
+
+      // If we have a URL resultId, always fetch from API to ensure consistency
+      if (urlResultId) {
+        console.log('[Results] URL has resultId, fetching from API:', urlResultId);
+        try {
+          const response = await fetch(`/api/score/${urlResultId}`);
+          if (response.ok) {
+            const apiResult = await response.json();
+            if (apiResult.success) {
+              console.log('[Results] Successfully loaded results from URL resultId');
+              if (apiResult.topCareers && Array.isArray(apiResult.topCareers)) {
+                apiResult.topCareers = apiResult.topCareers.filter((c: any) =>
+                  c && typeof c === 'object' && c !== null && c.slug && c.title
+                );
+              }
+              // Save to localStorage for future visits
+              safeSetString('careerTestResults', JSON.stringify(apiResult));
+              safeSetString('lastTestResultId', urlResultId);
+              setResults(apiResult);
+              setLoading(false);
+              return;
+            }
+          }
+        } catch (err) {
+          console.error('[Results] Error fetching from URL resultId:', err);
+        }
+      }
+
+      // Priority 2: Try localStorage (set by test component)
       const storedResults = safeGetString('careerTestResults');
       console.log('[Results] localStorage careerTestResults exists:', !!storedResults);
 
@@ -117,6 +149,12 @@ export default function ResultsPage() {
           console.log('[Results] Using localStorage data successfully');
           setResults(data);
           setLoading(false);
+
+          // Update URL with resultId for bookmarking (if not already in URL)
+          if (resultId && !urlResultId) {
+            const newUrl = `/test/results?id=${resultId}`;
+            window.history.replaceState({}, '', newUrl);
+          }
           return;
         } catch (err) {
           console.error('[Results] Error parsing localStorage:', err);
@@ -150,6 +188,12 @@ export default function ResultsPage() {
               safeSetString('careerTestResults', JSON.stringify(apiResult));
               setResults(apiResult);
               setLoading(false);
+
+              // Update URL with resultId for bookmarking (if not already in URL)
+              if (resultId && !urlResultId) {
+                const newUrl = `/test/results?id=${resultId}`;
+                window.history.replaceState({}, '', newUrl);
+              }
               return;
             }
           } else {
@@ -183,8 +227,15 @@ export default function ResultsPage() {
                   );
                 }
                 safeSetString('careerTestResults', JSON.stringify(fullResults));
+                safeSetString('lastTestResultId', resultId);
                 setResults(fullResults);
                 setLoading(false);
+
+                // Update URL with resultId for bookmarking
+                if (!urlResultId) {
+                  const newUrl = `/test/results?id=${resultId}`;
+                  window.history.replaceState({}, '', newUrl);
+                }
                 return;
               }
 
@@ -237,8 +288,15 @@ export default function ResultsPage() {
               };
 
               safeSetString('careerTestResults', JSON.stringify(transformedResult));
+              safeSetString('lastTestResultId', resultId);
               setResults(transformedResult);
               setLoading(false);
+
+              // Update URL with resultId for bookmarking
+              if (!urlResultId) {
+                const newUrl = `/test/results?id=${resultId}`;
+                window.history.replaceState({}, '', newUrl);
+              }
               return;
             }
           } catch (err) {
