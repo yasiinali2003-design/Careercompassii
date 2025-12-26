@@ -7,7 +7,7 @@ import { toast, Toaster } from "sonner";
 import Todistuspistelaskuri from './Todistuspistelaskuri';
 import { validateResponseQuality, getSeverityColor, getQualityWarningMessage, type ResponseQualityMetrics } from "@/lib/scoring/responseValidation";
 import { ErrorMessage } from '@/components/ui/ErrorMessage';
-import { safeGetItem, safeSetItem, safeRemoveItem, safeSetString, isLocalStorageAvailable } from '@/lib/safeStorage';
+import { safeGetItem, safeGetString, safeSetItem, safeRemoveItem, safeSetString, isLocalStorageAvailable } from '@/lib/safeStorage';
 
 // Debug logging only in development
 const isDev = process.env.NODE_ENV !== 'production';
@@ -253,6 +253,9 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   const [questionToOriginalMapping, setQuestionToOriginalMapping] = useState<Map<number, number>>(new Map()); // Maps displayed Q index to originalQ
   const [shuffledToOriginalQ, setShuffledToOriginalQ] = useState<number[]>([]); // Maps shuffled position -> originalQ (0-29)
   const [qList, setQList] = useState<string[]>([]); // Shuffled questions for display
+  const [hasExistingResults, setHasExistingResults] = useState(false); // User already has completed results
+  const [existingResultId, setExistingResultId] = useState<string | null>(null); // ID of existing results
+  const [hasCheckedExistingResults, setHasCheckedExistingResults] = useState(false); // Track if we've checked for results
 
   // Effect to select question set and prepare questions when group changes
   // For TASO2, also wait for subCohort selection before loading questions
@@ -363,6 +366,31 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
 
   // Load saved progress on component mount
   useEffect(() => {
+    // FIRST: Check if user has existing completed results
+    // If they do, we want them to see the Landing page with "View Results" option
+    const savedResultId = safeGetString('lastTestResultId', null);
+    console.log('[CareerCompassTest] Checking for existing results, lastTestResultId:', savedResultId);
+
+    if (savedResultId) {
+      // User has completed a test before - show them the landing page with options
+      setExistingResultId(savedResultId);
+      setHasExistingResults(true);
+      console.log('[CareerCompassTest] ✅ Found existing results, showing "View Results" option');
+
+      // Check if there's also saved progress
+      const saved = loadProgress();
+      if (saved && saved.step !== undefined && saved.step > 0 && saved.step < 3) {
+        // They have both existing results AND in-progress test
+        // Don't auto-restore - let them choose on the landing page
+        setHasLoadedProgress(true); // Mark that there IS saved progress
+        console.log('[CareerCompassTest] Also found saved progress, user can choose to continue or view results');
+      }
+
+      setHasCheckedExistingResults(true);
+      return; // Don't auto-restore, show landing page
+    }
+
+    // No existing results - check for saved progress to auto-restore
     const saved = loadProgress();
     // Only restore steps 1 and 2, not step 3 (Summary) - step 3 causes issues when restoring
     if (saved && saved.step !== undefined && saved.step > 0 && saved.step < 3) {
@@ -393,6 +421,9 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
       // If saved at step 3, clear it - user should see results page or restart
       safeRemoveItem(STORAGE_KEY);
     }
+
+    console.log('[CareerCompassTest] No existing results found');
+    setHasCheckedExistingResults(true);
   }, []);
 
   // Auto-save progress whenever state changes
@@ -425,6 +456,32 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
   }, [step, group, index, answers, taso2SubCohort]);
 
   const start = () => setStep(1);
+
+  // Navigate to existing results
+  const viewExistingResults = () => {
+    if (existingResultId) {
+      router.push(`/test/results?id=${existingResultId}`);
+    }
+  };
+
+  // Start a fresh test (clear existing results and progress)
+  const startFreshTest = () => {
+    // Clear existing results from localStorage
+    safeRemoveItem('lastTestResultId');
+    safeRemoveItem('careerTestResults');
+    // Also clear any saved progress
+    safeRemoveItem(STORAGE_KEY);
+    setHasExistingResults(false);
+    setExistingResultId(null);
+    setHasLoadedProgress(false);
+    // Reset test state
+    setAnswers([]);
+    setIndex(0);
+    setGroup(null);
+    setTaso2SubCohort(null);
+    // Start the test
+    setStep(1);
+  };
 
   const chooseGroup = (g: GroupKey) => {
     setGroup(g);
@@ -516,7 +573,14 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
       )}
 
       {step === 0 && (
-        <Landing onStart={start} hasSavedProgress={hasLoadedProgress} />
+        <Landing
+          onStart={start}
+          hasSavedProgress={hasLoadedProgress}
+          hasExistingResults={hasExistingResults}
+          hasCheckedExistingResults={hasCheckedExistingResults}
+          onViewResults={viewExistingResults}
+          onStartFresh={startFreshTest}
+        />
       )}
 
       {step === 1 && (
@@ -607,7 +671,16 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
 }
 
 // ---------- SUB-COMPONENTS ----------
-const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedProgress: boolean }) => {
+interface LandingProps {
+  onStart: () => void;
+  hasSavedProgress: boolean;
+  hasExistingResults: boolean;
+  hasCheckedExistingResults: boolean;
+  onViewResults: () => void;
+  onStartFresh: () => void;
+}
+
+const Landing = ({ onStart, hasSavedProgress, hasExistingResults, hasCheckedExistingResults, onViewResults, onStartFresh }: LandingProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -673,6 +746,62 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
             ))}
           </div>
 
+          {/* Show existing results notice - takes priority over saved progress */}
+          {hasCheckedExistingResults && hasExistingResults && !hasSavedProgress && (
+            <div className="rounded-lg bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-400/30 p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="h-2 w-2 rounded-full bg-green-400 animate-pulse"></div>
+                <p className="text-sm text-green-300 font-medium">
+                  Olet jo suorittanut testin – tuloksesi on tallennettu!
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button
+                  type="button"
+                  onClick={onViewResults}
+                  className="
+                    flex-1
+                    group
+                    relative inline-flex items-center justify-center
+                    rounded-full
+                    bg-gradient-to-r from-green-500 to-emerald-500
+                    px-6 py-2.5
+                    text-sm font-semibold text-white
+                    shadow-[0_12px_30px_rgba(16,185,129,0.4)]
+                    transition
+                    hover:shadow-[0_14px_35px_rgba(16,185,129,0.5)]
+                    hover:scale-[1.01]
+                    focus-visible:outline-none
+                    focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+                  "
+                >
+                  Katso tulokset
+                  <span className="ml-2">→</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={onStartFresh}
+                  className="
+                    flex-1
+                    inline-flex items-center justify-center
+                    rounded-full
+                    border border-white/20
+                    bg-white/5
+                    px-6 py-2.5
+                    text-sm font-medium text-white/80
+                    transition
+                    hover:bg-white/10
+                    hover:text-white
+                    focus-visible:outline-none
+                    focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+                  "
+                >
+                  Aloita uusi testi
+                </button>
+              </div>
+            </div>
+          )}
+
           {hasSavedProgress && (
             <div className="rounded-lg bg-white/5 border border-white/20 p-4">
               <div className="flex items-center gap-2">
@@ -684,31 +813,89 @@ const Landing = ({ onStart, hasSavedProgress }: { onStart: () => void; hasSavedP
             </div>
           )}
 
-          <div className="pt-4">
-            <button
-              type="button"
-              onClick={onStart}
-              className="
-                group
-                relative inline-flex items-center justify-center
-                rounded-full
-                bg-gradient-to-r from-sky-500 to-blue-500
-                px-8 py-3
-                text-sm md:text-base font-semibold text-white
-                shadow-[0_18px_40px_rgba(37,99,235,0.6)]
-                transition
-                hover:shadow-[0_20px_45px_rgba(37,99,235,0.65)]
-                hover:scale-[1.01]
-                focus-visible:outline-none
-                focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
-              "
-            >
-              {hasSavedProgress ? "Jatka testiä" : "Aloita ilmainen testi"}
-              <span className="ml-2 inline-block translate-x-0 transition-transform group-hover:translate-x-0.5">
-                →
-              </span>
-            </button>
-          </div>
+          {/* Show loading state while checking for existing results */}
+          {!hasCheckedExistingResults && (
+            <div className="pt-4 flex justify-center">
+              <div className="w-6 h-6 border-2 border-cyan-400/30 border-t-cyan-400 rounded-full animate-spin" />
+            </div>
+          )}
+
+          {/* Only show the main start button if no existing results (after check is complete) */}
+          {hasCheckedExistingResults && !hasExistingResults && (
+            <div className="pt-4">
+              <button
+                type="button"
+                onClick={onStart}
+                className="
+                  group
+                  relative inline-flex items-center justify-center
+                  rounded-full
+                  bg-gradient-to-r from-sky-500 to-blue-500
+                  px-8 py-3
+                  text-sm md:text-base font-semibold text-white
+                  shadow-[0_18px_40px_rgba(37,99,235,0.6)]
+                  transition
+                  hover:shadow-[0_20px_45px_rgba(37,99,235,0.65)]
+                  hover:scale-[1.01]
+                  focus-visible:outline-none
+                  focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+                "
+              >
+                {hasSavedProgress ? "Jatka testiä" : "Aloita ilmainen testi"}
+                <span className="ml-2 inline-block translate-x-0 transition-transform group-hover:translate-x-0.5">
+                  →
+                </span>
+              </button>
+            </div>
+          )}
+
+          {/* If user has saved progress, still show a button to continue */}
+          {hasExistingResults && hasSavedProgress && (
+            <div className="pt-4 flex flex-col gap-3">
+              <button
+                type="button"
+                onClick={onViewResults}
+                className="
+                  group
+                  relative inline-flex items-center justify-center
+                  rounded-full
+                  bg-gradient-to-r from-green-500 to-emerald-500
+                  px-8 py-3
+                  text-sm md:text-base font-semibold text-white
+                  shadow-[0_18px_40px_rgba(16,185,129,0.4)]
+                  transition
+                  hover:shadow-[0_20px_45px_rgba(16,185,129,0.5)]
+                  hover:scale-[1.01]
+                  focus-visible:outline-none
+                  focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+                "
+              >
+                Katso aiemmat tulokset
+                <span className="ml-2 inline-block translate-x-0 transition-transform group-hover:translate-x-0.5">
+                  →
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={onStart}
+                className="
+                  inline-flex items-center justify-center
+                  rounded-full
+                  border border-white/20
+                  bg-white/5
+                  px-8 py-3
+                  text-sm md:text-base font-medium text-white/80
+                  transition
+                  hover:bg-white/10
+                  hover:text-white
+                  focus-visible:outline-none
+                  focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+                "
+              >
+                Jatka keskeneräistä testiä
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>
