@@ -57,14 +57,13 @@ export function Tooltip({
       {isVisible && (
         <div
           className={`
-            absolute z-50 px-3 py-2 text-xs text-white bg-white/95 backdrop-blur-sm rounded-lg shadow-lg
+            absolute z-50 px-3 py-2 text-xs text-white/90 bg-urak-surface border border-white/10 rounded-lg shadow-lg
             max-w-xs whitespace-normal
             ${positionClasses[position]}
             pointer-events-none
           `}
           role="tooltip"
         >
-          <div className={`absolute w-0 h-0 border-4 ${arrowClasses[position]}`} />
           {content}
         </div>
       )}
