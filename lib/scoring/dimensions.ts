@@ -100,15 +100,15 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     notes: "Biology/health interest"
   },
 
-  // Q6: Business - Selling/trading
+  // Q6: Business - Entrepreneurial interest
   {
     q: 6,
-    text: "Oletko koskaan myynyt tai vaihtanut jotain kavereidesi kanssa?",
+    text: "Kiinnostaako sinua yrittäjyys tai oman yrityksen perustaminen tulevaisuudessa?",
     dimension: 'interests',
     subdimension: 'business',
     weight: 1.1,
     reverse: false,
-    notes: "Trading/selling aptitude"
+    notes: "Entrepreneurial interest"
   },
 
   // Q7: Science - Experiments

@@ -7,6 +7,10 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
+import { COHORT_COPY } from '@/lib/scoring/cohortConfig';
+import { translateStrength } from '@/lib/scoring/scoringEngine';
+import { generatePersonalizedAnalysis } from '@/lib/scoring/personalizedAnalysis';
+import type { Cohort, UserProfile } from '@/lib/scoring/types';
 
 export async function GET(
   request: NextRequest,
@@ -93,6 +97,43 @@ export async function GET(
 
     // Fallback: reconstruct from partial data (for older results without full_results)
     console.log('[API] Reconstructing results from partial data for ID:', resultId);
+
+    const cohort = data.cohort as Cohort;
+    const dimensionScores = data.dimension_scores || {
+      interests: 0,
+      values: 0,
+      workstyle: 0,
+      context: 0
+    };
+
+    // Generate top strengths from dimension scores
+    const allScores = Object.entries(dimensionScores)
+      .map(([key, value]) => ({ key, value: value as number }))
+      .filter(s => s.value > 0.5)
+      .sort((a, b) => b.value - a.value)
+      .slice(0, 3);
+
+    const topStrengths = allScores.map(s => translateStrength(s.key, cohort));
+
+    // Build a minimal UserProfile for personalized analysis generation
+    const minimalUserProfile: UserProfile = {
+      cohort,
+      dimensionScores,
+      topStrengths,
+      detailedScores: {
+        interests: {},
+        values: {},
+        workstyle: {},
+        context: {}
+      }
+    };
+
+    // Generate personalized analysis
+    const personalizedAnalysis = generatePersonalizedAnalysis(
+      minimalUserProfile,
+      cohort
+    );
+
     const reconstructedResults = {
       success: true,
       resultId: data.id,
@@ -100,19 +141,14 @@ export async function GET(
       cohort: data.cohort,
       userProfile: {
         cohort: data.cohort,
-        dimensionScores: data.dimension_scores || {
-          interests: 0,
-          values: 0,
-          workstyle: 0,
-          context: 0
-        },
-        topStrengths: [],
-        personalizedAnalysis: undefined
+        dimensionScores,
+        topStrengths,
+        personalizedAnalysis
       },
       topCareers: (data.top_careers || []).map((c: any) => ({
         slug: c.slug,
         title: c.title,
-        category: '',
+        category: c.category || '',
         overallScore: c.score || 0,
         dimensionScores: { interests: 0, values: 0, workstyle: 0, context: 0 },
         reasons: [],
@@ -124,7 +160,7 @@ export async function GET(
         reasoning: '',
         confidence: 'medium' as const
       } : null,
-      cohortCopy: {
+      cohortCopy: COHORT_COPY[cohort] || {
         title: '',
         subtitle: '',
         ctaText: '',

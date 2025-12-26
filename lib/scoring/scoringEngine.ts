@@ -6919,7 +6919,7 @@ export function generateUserProfile(
   };
 }
 
-function translateStrength(key: string, cohort: Cohort): string {
+export function translateStrength(key: string, cohort: Cohort): string {
   const translations: Record<string, string> = {
     // Interests sub-dimensions
     technology: "Vahva teknologiakiinnostus",

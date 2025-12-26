@@ -6,9 +6,22 @@
  * IMPORTANT: This test uses SUBDIMENSION-BASED scoring, not keyword matching.
  * Each question maps to a subdimension, and each personality type has affinity
  * weights for different subdimensions. This matches how the actual scoring engine works.
+ *
+ * PSYCHOMETRIC UPDATE: Handles reverse-scored questions (v2.0)
+ * Reverse questions ask about negative traits - high affinity profiles should answer LOW.
+ * Example: "Is it hard to focus?" - a focused person answers 1-2, not 5.
  */
 
 const BASE_URL = 'http://localhost:3000';
+
+// ========== REVERSE-SCORED QUESTIONS ==========
+// These questions are phrased negatively - high score = negative trait
+// For realistic answers, we INVERT the affinity score for these questions
+const REVERSE_SCORED_QUESTIONS = {
+  YLA: [18, 20, 25],    // Q18: focus difficulty, Q20: stress, Q25: recognition indifference
+  TASO2: [18, 21],      // Q18: detail frustration, Q21: frustration with problems
+  NUORI: [16, 19, 29]   // Q16: client fatigue, Q19: pace stress, Q29: culture indifference
+};
 
 // ========== QUESTION → SUBDIMENSION MAPPINGS ==========
 // Extracted from lib/scoring/dimensions.ts
@@ -617,15 +630,24 @@ async function getResults(resultId) {
 }
 
 // Generate answers based on personality's subdimension affinities
+// Handles reverse-scored questions by inverting the score
 function generateAnswers(questions, personalityKey, cohort) {
   const affinities = SUBDIMENSION_AFFINITIES[personalityKey];
   const subdimensionMap = QUESTION_SUBDIMENSIONS[cohort];
+  const reverseQuestions = REVERSE_SCORED_QUESTIONS[cohort] || [];
 
   return questions.map((q, index) => {
     // Get the subdimension for this question from our static mapping
     const subdimension = subdimensionMap[index];
     // Get affinity score for this subdimension (default to 3 if not found)
-    const score = affinities[subdimension] || 3;
+    let score = affinities[subdimension] || 3;
+
+    // For reverse-scored questions, invert the score
+    // High affinity (5) → Low answer (1), Low affinity (1) → High answer (5)
+    // This simulates realistic answers: "Is it hard to focus?" → focused person says 1
+    if (reverseQuestions.includes(index)) {
+      score = 6 - score; // Inverts: 1→5, 2→4, 3→3, 4→2, 5→1
+    }
 
     return {
       questionIndex: index,
