@@ -83,13 +83,20 @@ function calculateAnalytics(results: any[]): ClassAnalytics {
       }
     });
 
-    // Dimension scores
+    // Dimension scores - normalize from 0-1 to 0-100 if needed
     const dimScores = payload.dimension_scores || payload.dimensionScores;
     if (dimScores) {
-      dimensionSums.interests += dimScores.interests || 0;
-      dimensionSums.values += dimScores.values || 0;
-      dimensionSums.workstyle += dimScores.workstyle || 0;
-      dimensionSums.context += dimScores.context || 0;
+      const rawI = dimScores.interests || 0;
+      const rawV = dimScores.values || 0;
+      const rawW = dimScores.workstyle || 0;
+      const rawC = dimScores.context || 0;
+      // If max value is <= 1, multiply by 100 to get percentage
+      const maxRaw = Math.max(rawI, rawV, rawW, rawC);
+      const mult = maxRaw > 0 && maxRaw <= 1 ? 100 : 1;
+      dimensionSums.interests += rawI * mult;
+      dimensionSums.values += rawV * mult;
+      dimensionSums.workstyle += rawW * mult;
+      dimensionSums.context += rawC * mult;
       dimensionCount++;
     }
 
@@ -175,20 +182,14 @@ function generateStudentProfile(result: any, name: string, classAvg: ClassAnalyt
         'kansanopisto': 'Kansanopisto'
       };
       const path = pathNames[edPath.primary] || edPath.primary;
-      const scores = edPath.scores || edPath.education_path_scores || {};
-      const score = scores[edPath.primary] || 0;
-      if (score > 70) {
-        profile.push(`Vahva suositus: ${path}`);
-      } else {
-        profile.push(`Suositus: ${path}`);
-      }
+      profile.push(`Suositus: ${path}`);
     }
   }
   
   // Needs attention check
   const avgScore = (interests + values + workstyle + context) / 4;
   if (avgScore < 50 || (interests < 50 && values < 50 && workstyle < 50 && context < 50)) {
-    profile.push('Tarvitsee tukea kiinnostuksen kohteiden löytämisessä');
+    profile.push('Hyötyisi ohjauksesta kiinnostuksen kohteiden löytämisessä');
   }
   
   return profile.join(' • ') || 'Odottaa arviointia';
@@ -483,16 +484,6 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
           >
             Tulokset ({filteredResults.length})
           </button>
-          <button
-            onClick={() => setActiveTab('analytics')}
-            className={`py-2 px-4 font-medium transition-colors ${
-              activeTab === 'analytics'
-                ? 'border-b-2 border-urak-accent-blue text-urak-accent-blue'
-                : 'text-urak-text-secondary hover:text-urak-text-primary'
-            }`}
-          >
-            Analyysi
-          </button>
         </div>
       </div>
 
@@ -678,11 +669,11 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                     </select>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-neutral-200 mr-2">Suositus:</label>
+                    <label className="text-sm font-medium text-urak-text-secondary mr-2">Suositus:</label>
                     <select
                       value={filterEducationPath}
                       onChange={(e) => setFilterEducationPath(e.target.value)}
-                      className="px-3 py-1 border border-gray-300 rounded-lg"
+                      className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/40"
                     >
                       <option value="all">Kaikki</option>
                       <option value="lukio">Lukio</option>
@@ -691,11 +682,11 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                     </select>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-neutral-200 mr-2">Järjestä:</label>
+                    <label className="text-sm font-medium text-urak-text-secondary mr-2">Järjestä:</label>
                     <select
                       value={sortBy}
                       onChange={(e) => setSortBy(e.target.value)}
-                      className="px-3 py-1 border border-gray-300 rounded-lg"
+                      className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/40"
                     >
                       <option value="date">Päivämäärä</option>
                       <option value="name">Nimi</option>
@@ -703,11 +694,11 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                     </select>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-neutral-200 mr-2">Näkymä:</label>
+                    <label className="text-sm font-medium text-urak-text-secondary mr-2">Näkymä:</label>
                     <select
                       value={viewMode}
                       onChange={(e) => setViewMode(e.target.value as 'table' | 'detailed')}
-                      className="px-3 py-1 border border-gray-300 rounded-lg"
+                      className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/40"
                     >
                       <option value="table">Taulukko</option>
                       <option value="detailed">Yksityiskohtainen</option>
@@ -716,13 +707,13 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                 </div>
                 
                 {/* Class Averages Display - Education Paths & Top Careers */}
-                <div className="bg-white rounded p-3 border border-gray-200 space-y-3">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-4 space-y-3">
                   <p className="text-sm font-semibold mb-3">Luokan keskiarvot:</p>
                   
                   {/* Education Path Distribution (YLA) */}
                   {analytics.educationPathDistribution.lukio + analytics.educationPathDistribution.ammattikoulu + analytics.educationPathDistribution.kansanopisto > 0 && (
                     <div>
-                      <p className="text-xs font-medium text-neutral-200 mb-2">Suositeltavat koulutuspolut (YLA):</p>
+                      <p className="text-xs font-medium text-urak-text-secondary mb-2">Suositeltavat koulutuspolut (YLA):</p>
                       <div className="space-y-1 text-sm">
                         {Object.entries(analytics.educationPathDistribution).map(([path, count]) => {
                           if (count === 0) return null;
@@ -734,7 +725,7 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                           };
                           return (
                             <div key={path} className="flex items-center justify-between">
-                              <span className="text-neutral-200">{pathNames[path] || path}:</span>
+                              <span className="text-urak-text-secondary">{pathNames[path] || path}:</span>
                               <span className="font-semibold">{count} oppilasta ({totalYLA > 0 ? Math.round((count / totalYLA) * 100) : 0}%)</span>
                             </div>
                           );
@@ -746,11 +737,11 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                   {/* Top Careers */}
                   {analytics.topCareers.length > 0 && (
                     <div>
-                      <p className="text-xs font-medium text-neutral-200 mb-2">Yleisimmät ammatit:</p>
+                      <p className="text-xs font-medium text-urak-text-secondary mb-2">Yleisimmät ammatit:</p>
                       <div className="space-y-1 text-sm">
                         {analytics.topCareers.slice(0, 5).map((career, idx) => (
                           <div key={idx} className="flex items-center justify-between">
-                            <span className="text-neutral-200">{idx + 1}. {career.name}</span>
+                            <span className="text-urak-text-secondary">{idx + 1}. {career.name}</span>
                             <span className="font-semibold">{career.count} oppilasta</span>
                           </div>
                         ))}
@@ -814,12 +805,12 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                     <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-6">
                       <div className="flex items-start gap-2 mb-3">
                         <h3 className="font-semibold text-yellow-300 mb-2 flex-1">
-                          ⚠️ {atRiskStudents.length} oppilasta tarvitsee tukea
+                          📋 {atRiskStudents.length} oppilasta hyötyisi lisäohjauksesta
                         </h3>
-                        <Tooltip content="Nämä oppilaat saavat alhaiset tulokset tai eivät ole vielä tehneet testiä. He tarvitsevat erityistä ohjausta ja tukea." />
+                        <Tooltip content="Näiden oppilaiden vastaukset viittaavat siihen, että he voisivat hyötyä henkilökohtaisesta ohjauskeskustelusta." />
                       </div>
                       <p className="text-sm text-yellow-400 mb-4">
-                        Seuraavat oppilaat tarvitsevat erityistä huomiota ja ohjausta:
+                        Seuraavat oppilaat voisivat hyötyä henkilökohtaisesta ohjauksesta:
                       </p>
                       <div className="space-y-2 mb-3">
                         {atRiskStudents.slice(0, 5).map((result) => {
@@ -827,7 +818,7 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                           const name = nameMapping[result.pin] || result.pin;
                           return (
                             <div key={result.pin} className="bg-white/5 border border-white/10 p-3 rounded-lg text-sm text-urak-text-secondary">
-                              <strong className="text-urak-text-primary">{name}</strong> ({result.pin}) - {check.data?.reasons[0] || 'Tarvitsee tukea'}
+                              <strong className="text-urak-text-primary">{name}</strong> ({result.pin}) - {check.data?.reasons[0] || 'Hyötyisi ohjauksesta'}
                             </div>
                           );
                         })}
@@ -1204,19 +1195,25 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                             'kansanopisto': 'Kansanopisto'
                           };
                           const pathName = pathNames[primary] || primary;
-                          const scores = educationPath.scores || educationPath.education_path_scores || {};
-                          const score = scores[primary];
-                          return score ? `${pathName} (${Math.round(score)}%)` : pathName;
+                          return pathName;
                         };
                         
                         const profile = generateStudentProfile(result, nameMapping[result.pin] || '', analytics);
                         
-                        // Check if student needs attention
+                        // Check if student needs attention - normalize scores from 0-1 to 0-100 if needed
                         const dimScores = (payload?.dimension_scores || payload?.dimensionScores) as Record<string, number> || {};
                         const needsAttention = (() => {
                           if (Object.keys(dimScores).length === 0) return false;
-                          const avg = Object.values(dimScores).reduce((a, b) => a + b, 0) / Object.values(dimScores).length;
-                          return avg < 50 || (dimScores.interests < 50 && dimScores.values < 50 && dimScores.workstyle < 50 && dimScores.context < 50);
+                          const rawVals = Object.values(dimScores);
+                          const maxRawVal = Math.max(...rawVals);
+                          const normMult = maxRawVal > 0 && maxRawVal <= 1 ? 100 : 1;
+                          const normVals = rawVals.map(v => v * normMult);
+                          const avg = normVals.reduce((a, b) => a + b, 0) / normVals.length;
+                          const ni = (dimScores.interests || 0) * normMult;
+                          const nv = (dimScores.values || 0) * normMult;
+                          const nw = (dimScores.workstyle || 0) * normMult;
+                          const nc = (dimScores.context || 0) * normMult;
+                          return avg < 50 || (ni < 50 && nv < 50 && nw < 50 && nc < 50);
                         })();
                         
                         return (
@@ -1224,7 +1221,7 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                             <td className="border border-white/10 p-3 font-medium text-urak-text-primary">
                               {nameMapping[result.pin] || '—'}
                               {needsAttention && (
-                                <span className="ml-2 text-xs bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded-full">Tarvitsee tukea</span>
+                                <span className="ml-2 text-xs bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded-full">Hyötyisi ohjauksesta</span>
                               )}
                             </td>
                             <td className="border border-white/10 p-3 font-mono text-sm text-urak-text-secondary">{result.pin}</td>
@@ -1256,8 +1253,8 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                               </div>
                             </td>
                             <td className="border border-white/10 p-3 text-sm text-urak-text-secondary">{cohort || '—'}</td>
-                            <td className="border p-2 text-sm font-medium">{getEducationPathDisplay()}</td>
-                            <td className="border p-2 text-xs text-neutral-300 max-w-xs">{profile}</td>
+                            <td className="border border-white/10 p-3 text-sm font-medium text-urak-text-secondary">{getEducationPathDisplay()}</td>
+                            <td className="border border-white/10 p-3 text-xs text-urak-text-secondary max-w-xs">{profile}</td>
                           </tr>
                         );
                       })}
@@ -1275,30 +1272,37 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                     const name = nameMapping[result.pin] || result.pin;
                     const profile = generateStudentProfile(result, name, analytics);
                     
+                    // Normalize dimension scores from 0-1 to 0-100 if needed
+                    const rawI = dimScores.interests || 0;
+                    const rawV = dimScores.values || 0;
+                    const rawW = dimScores.workstyle || 0;
+                    const rawC = dimScores.context || 0;
+                    const maxRaw = Math.max(rawI, rawV, rawW, rawC);
+                    const mult = maxRaw > 0 && maxRaw <= 1 ? 100 : 1;
+
                     const dimensionBars = [
-                      { label: 'Kiinnostukset', value: dimScores.interests || 0, classAvg: analytics.dimensionAverages.interests },
-                      { label: 'Arvot', value: dimScores.values || 0, classAvg: analytics.dimensionAverages.values },
-                      { label: 'Työtapa', value: dimScores.workstyle || 0, classAvg: analytics.dimensionAverages.workstyle },
-                      { label: 'Konteksti', value: dimScores.context || 0, classAvg: analytics.dimensionAverages.context },
+                      { label: 'Kiinnostukset', value: rawI * mult, classAvg: analytics.dimensionAverages.interests },
+                      { label: 'Arvot', value: rawV * mult, classAvg: analytics.dimensionAverages.values },
+                      { label: 'Työtapa', value: rawW * mult, classAvg: analytics.dimensionAverages.workstyle },
+                      { label: 'Konteksti', value: rawC * mult, classAvg: analytics.dimensionAverages.context },
                     ];
                     
-                    // Check if student needs attention
+                    // Check if student needs attention - use already-normalized values
                     const needsAttention = (() => {
-                      const scores = (dimScores || {}) as Record<string, number>;
-                      const values = Object.values(scores) as number[];
-                      if (values.length === 0) return false;
-                      const avg = values.reduce((a, b) => a + b, 0) / values.length;
-                      return avg < 50 || ((scores.interests ?? 0) < 50 && (scores.values ?? 0) < 50 && (scores.workstyle ?? 0) < 50 && (scores.context ?? 0) < 50);
+                      const normVals = [rawI * mult, rawV * mult, rawW * mult, rawC * mult];
+                      if (normVals.every(v => v === 0)) return false;
+                      const avg = normVals.reduce((a, b) => a + b, 0) / normVals.length;
+                      return avg < 50 || (normVals[0] < 50 && normVals[1] < 50 && normVals[2] < 50 && normVals[3] < 50);
                     })();
                     
                     return (
-                      <div key={i} className={`bg-white border ${needsAttention ? 'border-orange-300' : 'border-gray-300'} rounded-lg p-4`}>
+                      <div key={i} className={`bg-urak-surface/50 border ${needsAttention ? 'border-yellow-500/30' : 'border-white/10'} rounded-xl p-5`}>
                         <div className="flex justify-between items-start mb-4">
                           <div>
                             <div className="flex items-center gap-2">
                               <h3 className="font-bold text-lg">{name}</h3>
                               {needsAttention && (
-                                <span className="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded-full">Tarvitsee tukea</span>
+                                <span className="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded-full">Hyötyisi ohjauksesta</span>
                               )}
                             </div>
                             <p className="text-sm text-urak-text-secondary">PIN: {result.pin} • {new Date(result.created_at).toLocaleDateString('fi-FI')} • {cohort}</p>
@@ -1400,8 +1404,8 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                               
                               <div className="space-y-3">
                                 <div>
-                                  <p className="text-xs font-medium text-neutral-200 mb-1">Kysymykset oppilaan kanssa:</p>
-                                  <ul className="text-xs text-neutral-300 space-y-1 ml-4 list-disc">
+                                  <p className="text-xs font-medium text-urak-text-secondary mb-1">Kysymykset oppilaan kanssa:</p>
+                                  <ul className="text-xs text-urak-text-muted space-y-1 ml-4 list-disc">
                                     {starters.questions.slice(0, 4).map((q, idx) => (
                                       <li key={idx}>{q}</li>
                                     ))}
@@ -1409,8 +1413,8 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                                 </div>
                                 
                                 <div>
-                                  <p className="text-xs font-medium text-neutral-200 mb-1">Keskustelupisteet:</p>
-                                  <ul className="text-xs text-neutral-300 space-y-1 ml-4 list-disc">
+                                  <p className="text-xs font-medium text-urak-text-secondary mb-1">Keskustelupisteet:</p>
+                                  <ul className="text-xs text-urak-text-muted space-y-1 ml-4 list-disc">
                                     {starters.talkingPoints.slice(0, 3).map((tp, idx) => (
                                       <li key={idx}>{tp}</li>
                                     ))}
@@ -1418,8 +1422,8 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
                                 </div>
                                 
                                 <div>
-                                  <p className="text-xs font-medium text-neutral-200 mb-1">Toimintakohdat:</p>
-                                  <ul className="text-xs text-neutral-300 space-y-1 ml-4 list-disc">
+                                  <p className="text-xs font-medium text-urak-text-secondary mb-1">Toimintakohdat:</p>
+                                  <ul className="text-xs text-urak-text-muted space-y-1 ml-4 list-disc">
                                     {starters.actionItems.slice(0, 3).map((ai, idx) => (
                                       <li key={idx}>{ai}</li>
                                     ))}
@@ -1439,139 +1443,7 @@ Konteksti: ${Math.round((payload.dimension_scores || payload.dimensionScores || 
         </div>
       )}
 
-      {/* Analytics Tab */}
-      {activeTab === 'analytics' && (
-        <div className="space-y-6">
-          {/* Class Overview */}
-          <div className="bg-white border border-gray-300 rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-4">Luokan yleiskuva</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="text-center p-4 bg-slate-50 rounded-lg">
-                <div className="text-3xl font-bold text-primary">{results.length}</div>
-                <div className="text-sm text-neutral-300">Testiä tehty</div>
-              </div>
-              <div className="text-center p-4 bg-green-50 rounded-lg">
-                <div className="text-3xl font-bold text-green-600">
-                  {Object.keys(analytics.cohortDistribution).length}
-                </div>
-                <div className="text-sm text-neutral-300">Kohorttia</div>
-              </div>
-              <div className="text-center p-4 bg-secondary/10 rounded-lg">
-                <div className="text-3xl font-bold text-secondary">
-                  {analytics.topCareers.length}
-                </div>
-                <div className="text-sm text-neutral-300">Eri ammattia</div>
-              </div>
-              <div className="text-center p-4 bg-orange-50 rounded-lg">
-                <div className="text-3xl font-bold text-orange-600">
-                  {Math.round((analytics.dimensionAverages.interests + analytics.dimensionAverages.values + analytics.dimensionAverages.workstyle + analytics.dimensionAverages.context) / 4)}%
-                </div>
-                <div className="text-sm text-neutral-300">Keskiarvo</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Top Careers */}
-          <div className="bg-white border border-gray-300 rounded-lg p-6">
-            <h2 className="text-xl font-bold mb-4">Yleisimmät ammatit</h2>
-            <div className="space-y-2">
-              {analytics.topCareers.slice(0, 10).map((career, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <span className="text-2xl font-bold text-gray-400 w-8">#{i + 1}</span>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="font-medium">{career.name}</span>
-                      <span className="text-sm text-neutral-300">{career.count} oppilasta</span>
-                    </div>
-                    <div className="w-full bg-neutral-700/40 rounded-full h-2">
-                      <div 
-                        className="bg-slate-500 h-2 rounded-full"
-                        style={{ width: `${(career.count / results.length) * 100}%` }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Dimension Averages Chart */}
-          <div className="bg-white border border-gray-300 rounded-lg p-6">
-            <h2 className="text-xl font-bold mb-4">Luokan keskiarvot dimensioissa</h2>
-            <div className="space-y-4">
-              {Object.entries(analytics.dimensionAverages).map(([dim, avg]) => (
-                <div key={dim}>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium capitalize">{dim === 'interests' ? 'Kiinnostukset' : dim === 'values' ? 'Arvot' : dim === 'workstyle' ? 'Työtapa' : 'Konteksti'}</span>
-                    <span className="text-sm font-semibold">{Math.round(avg)}%</span>
-                  </div>
-                  <div className="w-full bg-neutral-700/40 rounded-full h-4">
-                    <div 
-                      className="bg-gradient-to-r from-slate-500 to-teal-50/200 h-4 rounded-full"
-                      style={{ width: `${avg}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Education Path Distribution (YLA only) */}
-          {analytics.educationPathDistribution.lukio + analytics.educationPathDistribution.ammattikoulu + analytics.educationPathDistribution.kansanopisto > 0 && (
-            <div className="bg-white border border-gray-300 rounded-lg p-6">
-              <h2 className="text-xl font-bold mb-4">Koulutuspolkujen jakauma (YLA)</h2>
-              <div className="space-y-3">
-                {Object.entries(analytics.educationPathDistribution).map(([path, count]) => {
-                  if (count === 0) return null;
-                  const pathNames: Record<string, string> = {
-                    'lukio': 'Lukio',
-                    'ammattikoulu': 'Ammattikoulu',
-                    'kansanopisto': 'Kansanopisto'
-                  };
-                  const totalYLA = Object.values(analytics.educationPathDistribution).reduce((a, b) => a + b, 0);
-                  return (
-                    <div key={path}>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm font-medium">{pathNames[path] || path}</span>
-                        <span className="text-sm font-semibold">{count} oppilasta ({totalYLA > 0 ? Math.round((count / totalYLA) * 100) : 0}%)</span>
-                      </div>
-                      <div className="w-full bg-neutral-700/40 rounded-full h-4">
-                        <div 
-                          className="bg-green-500 h-4 rounded-full"
-                          style={{ width: `${totalYLA > 0 ? (count / totalYLA) * 100 : 0}%` }}
-                        />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* Cohort Distribution */}
-          <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-            <div className="flex items-center gap-2 mb-4">
-              <h2 className="text-xl font-bold text-urak-text-primary">Kohorttijakauma</h2>
-              <Tooltip content="Näyttää kuinka monta oppilasta on kustakin kohortista (YLA, TASO2, NUORI)" />
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              {Object.entries(analytics.cohortDistribution).map(([cohort, count]) => {
-                const cohortNames: Record<string, string> = {
-                  'YLA': 'Yläaste',
-                  'TASO2': 'Toinen aste',
-                  'NUORI': 'Nuori aikuinen'
-                };
-                return (
-                  <div key={cohort} className="text-center p-4 bg-white/5 border border-white/10 rounded-lg">
-                    <div className="text-2xl font-bold text-urak-text-primary">{count}</div>
-                    <div className="text-sm text-urak-text-secondary">{cohortNames[cohort] || cohort}</div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Analytics Tab - Removed, data available in Tulokset tab */}
 
       {/* Public Links */}
       <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-6">

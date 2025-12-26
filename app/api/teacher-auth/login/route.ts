@@ -38,46 +38,31 @@ export async function POST(request: NextRequest) {
     // Check if Supabase is configured
     if (!supabaseAdmin) {
       console.error('[Teacher Auth] Supabase not configured');
-      
+
       // Fallback to environment variable if database not available
       if (teacherAccessCode && candidateCodes.includes(teacherAccessCode)) {
         const cookieStore = await cookies();
+        // Set cookies with path '/' to ensure middleware receives them
         cookieStore.set('teacher_auth_token', 'authenticated', {
           httpOnly: true,
           secure: process.env.NODE_ENV === 'production',
-          sameSite: 'strict',
+          sameSite: 'lax',
           maxAge: 60 * 60 * 24 * 7,
-          path: '/teacher',
-        });
-        // Duplicate cookie for API route access
-        cookieStore.set('teacher_auth_token', 'authenticated', {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === 'production',
-          sameSite: 'strict',
-          maxAge: 60 * 60 * 24 * 7,
-          path: '/api',
-        });
-        // Minimal teacher_id for mock mode
-        cookieStore.set('teacher_id', 'mock-teacher', {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === 'production',
-          sameSite: 'strict',
-          maxAge: 60 * 60 * 24 * 7,
-          path: '/teacher',
+          path: '/',
         });
         cookieStore.set('teacher_id', 'mock-teacher', {
           httpOnly: true,
           secure: process.env.NODE_ENV === 'production',
-          sameSite: 'strict',
+          sameSite: 'lax',
           maxAge: 60 * 60 * 24 * 7,
-          path: '/api',
+          path: '/',
         });
         return NextResponse.json({
           success: true,
           message: 'Kirjautuminen onnistui (fallback mode)',
         });
       }
-      
+
       return NextResponse.json(
         { success: false, error: 'Autentikointi ei ole käytettävissä' },
         { status: 500 }
@@ -103,33 +88,20 @@ export async function POST(request: NextRequest) {
       const fallbackMatch = teacherAccessCode && candidateCodes.includes(teacherAccessCode);
       if (fallbackMatch) {
         const cookieStore = await cookies();
+        // Set cookies with path '/' to ensure middleware receives them
         cookieStore.set('teacher_auth_token', 'authenticated', {
           httpOnly: true,
           secure: process.env.NODE_ENV === 'production',
-          sameSite: 'strict',
+          sameSite: 'lax',
           maxAge: 60 * 60 * 24 * 7,
-          path: '/teacher',
-        });
-        cookieStore.set('teacher_auth_token', 'authenticated', {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === 'production',
-          sameSite: 'strict',
-          maxAge: 60 * 60 * 24 * 7,
-          path: '/api',
+          path: '/',
         });
         cookieStore.set('teacher_id', 'mock-teacher', {
           httpOnly: true,
           secure: process.env.NODE_ENV === 'production',
-          sameSite: 'strict',
+          sameSite: 'lax',
           maxAge: 60 * 60 * 24 * 7,
-          path: '/teacher',
-        });
-        cookieStore.set('teacher_id', 'mock-teacher', {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === 'production',
-          sameSite: 'strict',
-          maxAge: 60 * 60 * 24 * 7,
-          path: '/api',
+          path: '/',
         });
         return NextResponse.json({
           success: true,
