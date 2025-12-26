@@ -583,28 +583,85 @@ export default function TeacherClassManager({ classId, classToken }: Props) {
                 </div>
               </div>
 
-              {/* Guidance suggestions - subtle, non-alarming */}
+              {/* Class Overview Statistics */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Education Path Distribution (YLA only) */}
+                {(analytics.educationPathDistribution.lukio + analytics.educationPathDistribution.ammattikoulu + analytics.educationPathDistribution.kansanopisto > 0) && (
+                  <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
+                    <p className="text-sm font-medium text-white/70 mb-3">Koulutuspolkusuositukset (YLA)</p>
+                    <div className="space-y-2">
+                      {Object.entries(analytics.educationPathDistribution).map(([path, count]) => {
+                        if (count === 0) return null;
+                        const totalYLA = Object.values(analytics.educationPathDistribution).reduce((a, b) => a + b, 0);
+                        const pathNames: Record<string, string> = { 'lukio': 'Lukio', 'ammattikoulu': 'Ammattikoulu', 'kansanopisto': 'Kansanopisto' };
+                        const percentage = totalYLA > 0 ? Math.round((count / totalYLA) * 100) : 0;
+                        return (
+                          <div key={path} className="flex items-center justify-between">
+                            <span className="text-sm text-white/60">{pathNames[path] || path}</span>
+                            <div className="flex items-center gap-2">
+                              <div className="w-20 bg-white/[0.04] rounded-full h-1.5">
+                                <div className="bg-urak-accent-blue h-1.5 rounded-full" style={{ width: `${percentage}%` }} />
+                              </div>
+                              <span className="text-sm text-white/80 w-16 text-right">{count} ({percentage}%)</span>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Top Careers in Class */}
+                {analytics.topCareers.length > 0 && (
+                  <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
+                    <p className="text-sm font-medium text-white/70 mb-3">Suosituimmat ammatit</p>
+                    <div className="space-y-2">
+                      {analytics.topCareers.slice(0, 5).map((career, idx) => (
+                        <div key={idx} className="flex items-center justify-between">
+                          <span className="text-sm text-white/60 truncate flex-1 mr-2">{career.name}</span>
+                          <span className="text-sm text-white/80">{career.count} opp.</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Guidance suggestions with detailed reasons */}
               {atRiskStudents.length > 0 && (
                 <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
-                  <div className="flex items-start gap-3">
-                    <div className="flex-1">
-                      <p className="text-sm text-white/70 mb-2">
-                        {atRiskStudents.length} oppilasta voisi hyötyä lisäohjauksesta
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {atRiskStudents.slice(0, 5).map((result) => (
-                          <span key={result.pin} className="text-xs px-2.5 py-1 bg-white/[0.04] rounded-md text-white/60">
-                            {nameMapping[result.pin] || result.pin}
-                          </span>
-                        ))}
-                        {atRiskStudents.length > 5 && (
-                          <span className="text-xs px-2.5 py-1 bg-white/[0.04] rounded-md text-white/40">
-                            +{atRiskStudents.length - 5} muuta
-                          </span>
-                        )}
-                      </div>
-                    </div>
+                  <div className="flex items-start justify-between mb-3">
+                    <p className="text-sm font-medium text-white/70">
+                      {atRiskStudents.length} oppilasta voisi hyötyä lisäohjauksesta
+                    </p>
                     <Tooltip content="Näiden oppilaiden vastaukset viittaavat siihen, että he voisivat hyötyä henkilökohtaisesta ohjauskeskustelusta." />
+                  </div>
+                  <div className="space-y-3">
+                    {atRiskStudents.map((result) => {
+                      const check = checkAtRiskStudent(result);
+                      const name = nameMapping[result.pin] || result.pin;
+                      const reasons = check.data?.reasons || [];
+                      return (
+                        <div key={result.pin} className="bg-white/[0.02] border border-white/[0.04] rounded-lg p-3">
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <p className="text-sm font-medium text-white/80">{name}</p>
+                              <p className="text-xs text-white/40 font-mono">{result.pin}</p>
+                            </div>
+                          </div>
+                          {reasons.length > 0 && (
+                            <div className="mt-2 space-y-1">
+                              {reasons.map((reason: string, idx: number) => (
+                                <p key={idx} className="text-xs text-white/50 flex items-start gap-2">
+                                  <span className="text-white/30">•</span>
+                                  {reason}
+                                </p>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}
