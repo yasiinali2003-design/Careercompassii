@@ -3,15 +3,17 @@
  * Core algorithm for matching users to careers
  */
 
-import { 
-  Cohort, 
-  TestAnswer, 
-  DimensionScores, 
+import {
+  Cohort,
+  TestAnswer,
+  DimensionScores,
   DetailedDimensionScores,
   CareerMatch,
   UserProfile,
   COHORT_WEIGHTS,
-  SubDimension
+  SubDimension,
+  CategoryAffinity,
+  HybridCareerPath
 } from './types';
 import { getQuestionMappings } from './dimensions';
 import { CAREER_VECTORS } from './careerVectors';
@@ -231,42 +233,45 @@ function detectPersonalityType(
   const topType = validTypes[0];
   console.log(`[detectPersonalityType] ✓ ${topType.type} type detected (score: ${topType.score.toFixed(2)})`);
 
+  // UPDATED: Reduced multipliers from 3.0x to 2.0x to prevent personality boosts from dominating
+  // natural fit scores. A 30% fit career should not become 90% just from personality match.
+  // With 2.0x, a 30% becomes 60% which is more reasonable.
   switch (topType.type) {
     case 'HELPER':
       // Expected: opettaja, sairaanhoitaja, psykologi, sosiaalityöntekijä, valmentaja
       return {
         boostCareers: ['opettaja', 'sairaanhoitaja', 'psykologi', 'sosiaalityontekija', 'sosiaality', 'valmentaja', 'terapeutti', 'hoitaja', 'lastentarha', 'lahihoitaja', 'kuntoutus', 'fysioterapeutti', 'toimintaterapeutti', 'puheterapeutti', 'hammashoitaja', 'Opettaja', 'Sairaanhoitaja', 'Psykologi', 'Lahihoitaja', 'Terapeutti'],
-        boostMultiplier: 3.0
+        boostMultiplier: 2.0
       };
     case 'LEADER':
       // Expected: johtaja, yrittäjä, myyntipäällikkö, projektipäällikkö
       return {
         boostCareers: ['toimitusjohtaja', 'yrittaja', 'yrittäjä', 'myyntipaallikko', 'myyntipäällikkö', 'projektipaallikko', 'projektipäällikkö', 'poliisi', 'urheiluvalmentaja', 'paallikko', 'päällikkö', 'johtaja', 'esimies', 'manageri', 'rehtori', 'Toimitusjohtaja', 'Yrittäjä', 'Johtaja'],
-        boostMultiplier: 3.0
+        boostMultiplier: 2.0
       };
     case 'CREATIVE':
       // Expected: kirjailija, muusikko, taiteilija, suunnittelija
       return {
         boostCareers: ['kirjailija', 'muusikko', 'taiteilija', 'florist', 'elainten', 'graafinen', 'suunnittelija', 'valokuvaaja', 'sisalto', 'animaattori', 'nayttelija', 'näyttelijä', 'kasikirjoittaja', 'käsikirjoittaja', 'pelisuunnitteli', 'kuvittaja', 'kuvataiteilija', 'muotoilija', 'sisustus', 'Kirjailija', 'Muusikko', 'Taiteilija', 'Valokuvaaja', 'Graafikko'],
-        boostMultiplier: 3.0
+        boostMultiplier: 2.0
       };
     case 'TECH':
       // Expected: tutkija, ohjelmoija, insinööri, arkkitehti, analyytikko
       return {
         boostCareers: ['tutkija', 'ohjelmoija', 'ohjelmistokehittaja', 'insinoori', 'insinööri', 'arkkitehti', 'analyytikko', 'kehittaja', 'kehittäjä', 'data', 'koodari', 'devops', 'tietoturva', 'kyberturva', 'tekoaly', 'fullstack', 'backend', 'frontend', 'Tutkija', 'Ohjelmoija', 'Insinööri', 'Arkkitehti', 'Analyytikko'],
-        boostMultiplier: 3.0
+        boostMultiplier: 2.0
       };
     case 'HANDSON':
       // Expected: puuseppä, sähköasentaja, automekaanikko, rakentaja
       return {
         boostCareers: ['puuseppa', 'puuseppä', 'sahkoasentaja', 'sähköasentaja', 'automekaanikko', 'kirvesmies', 'rakennustyonjohtaja', 'rakennusinsinoori', 'asentaja', 'mekaanikko', 'rakentaja', 'hitsaaja', 'levyseppa', 'levyseppä', 'koneistaja', 'cnc', 'metallityontekija', 'lvi', 'putkiasentaja', 'ilmastointi', 'Puuseppä', 'Sähköasentaja', 'Automekaanikko', 'Mekaanikko'],
-        boostMultiplier: 3.5
+        boostMultiplier: 2.2
       };
     case 'ADVENTURER':
       // Expected: matkailuopas, urheilija, pelastaja, sotilas, lentokapteeni
       return {
         boostCareers: ['matkailuopas', 'urheilija', 'pelastaja', 'sotilas', 'lentokapteeni', 'palomies', 'valokuvaaja', 'opas', 'lentaja', 'lentäjä', 'merimies', 'kapteeni', 'seikkailija', 'Matkailuopas', 'Urheilija', 'Pelastaja', 'Sotilas', 'Palomies'],
-        boostMultiplier: 3.0
+        boostMultiplier: 2.0
       };
     default:
       return null;
@@ -5172,6 +5177,24 @@ export function rankCareers(
   const creativeBonus = creativeOverridesHandsOn ? 15.0 : 0; // Massive bonus to ensure creative wins
   const handsOnPenaltyForCreative = creativeOverridesHandsOn ? -10.0 : 0; // Penalty for rakentaja when creative dominates
 
+  // CRITICAL FIX: When technology is HIGH (>= 0.7), innovoija should beat rakentaja AND johtaja
+  // Ville (YLA): technology=HIGH, innovation=HIGH, entrepreneurship=medium → should be innovoija, not johtaja
+  // Jari (NUORI): software=HIGH, engineering=HIGH → should be innovoija, not johtaja
+  // Tech innovators may have some business/leadership traits but their PRIMARY interest is technology
+  // LOWERED threshold from 0.8 to 0.7 to catch more tech profiles
+  const isTechInnovator = technology >= 0.7 && (innovation >= 0.5 || analytical >= 0.6);
+  const techInnovoijaBonus = isTechInnovator ? 20.0 : 0; // Increased bonus for innovoija
+  const rakentajaPenaltyForTech = isTechInnovator ? -10.0 : 0; // Penalty for rakentaja
+  // CRITICAL: Add penalty to johtaja for tech innovators - they're tech workers, not business leaders
+  const johtajaPenaltyForTechInnovator = isTechInnovator ? -15.0 : 0;
+
+  // CRITICAL FIX: Future doctors (Antti) with high health AND people should be auttaja, not innovoija
+  // Antti: health=1.0, people=0.75, analytical=1.0 → should be auttaja (doctor), not innovoija
+  // The key: doctors use analytical skills TO HELP PEOPLE, not for pure research
+  const isDoctorType = health >= 0.8 && people >= 0.6 && (growth >= 0.5 || (values.social_impact || 0) >= 0.5);
+  const doctorAuttajaBonus = isDoctorType ? 20.0 : 0; // Bonus for auttaja
+  const innovoijaPenaltyForDoctor = isDoctorType ? -15.0 : 0; // Penalty for innovoija
+
   // CRITICAL FIX: Performers (Leo) with high social/growth should be luova, not johtaja
   // Leo: creative=0.58, growth=1.0, social=1.0, leadership=1.0, business=0.5
   // Performers use social/leadership for ENTERTAINMENT (luova), not BUSINESS (johtaja)
@@ -5261,7 +5284,11 @@ export function rankCareers(
                // Penalty when leadership/business dominate (should be johtaja)
                (leadership > technology + 0.2 && business > technology + 0.2 ? -2.0 : 0) +
                // CRITICAL: Penalty for organizers (Emma) with low tech - they're järjestäjä, not innovoija
-               innovoijaPenaltyForOrganizer,
+               innovoijaPenaltyForOrganizer +
+               // CRITICAL: Bonus for tech innovators (Ville) - tech > hands_on
+               techInnovoijaBonus +
+               // CRITICAL: Penalty for doctors (Antti) - they're helpers using analytical skills
+               innovoijaPenaltyForDoctor,
 
     // AUTTAJA: people-oriented, helping, healthcare
     // Priority: people + health + growth
@@ -5278,7 +5305,9 @@ export function rankCareers(
              // CRITICAL: Penalty for organizers (Emma) - they organize, not care
              auttajaPenaltyForOrganizer +
              // CRITICAL: Penalty for performers (Leo) - they entertain, not care
-             auttajaPenaltyForPerformer,
+             auttajaPenaltyForPerformer +
+             // CRITICAL: Massive bonus for doctors (Antti) - health + people + analytical
+             doctorAuttajaBonus,
 
     // JOHTAJA: leadership, business, advancement
     // Priority: leadership > business
@@ -5291,6 +5320,8 @@ export function rankCareers(
              (creative > leadership + 0.3 ? -3.0 : 0) +
              // Penalty when technology dominates (should be innovoija)
              (technology > leadership + 0.3 && technology > business + 0.3 ? -4.0 : 0) +
+             // STRONGER penalty when technology is clearly high (should be innovoija)
+             (technology >= 0.7 ? -5.0 : 0) +
              // Penalty when hands_on dominates (should be rakentaja)
              (hands_on > leadership + 0.3 && hands_on > business + 0.3 ? -4.0 : 0) +
              // Penalty when environment dominates (should be ympäristö)
@@ -5300,7 +5331,9 @@ export function rankCareers(
              // CRITICAL: Massive penalty for performers (Leo) - they're entertainers, not business leaders
              johtajaPenaltyForPerformer +
              // CRITICAL: Massive penalty for organizers (Emma) - they're admins, not business leaders
-             johtajaPenaltyForOrganizer,
+             johtajaPenaltyForOrganizer +
+             // CRITICAL: Penalty for tech innovators (Ville, Jari) - they're tech workers, not business leaders
+             johtajaPenaltyForTechInnovator,
 
     // RAKENTAJA: hands-on work, practical skills
     // Priority: hands_on > outdoor (without environment focus)
@@ -5323,7 +5356,9 @@ export function rankCareers(
                // CRITICAL: Penalty when creative >> hands_on (artist, not builder)
                handsOnPenaltyForCreative +
                // CRITICAL: Massive penalty for environment activists (Jesse) - they build FOR THE PLANET
-               rakentajaPenaltyForActivist,
+               rakentajaPenaltyForActivist +
+               // CRITICAL: Penalty for tech innovators (Ville) - they code, not build physically
+               rakentajaPenaltyForTech,
 
     // YMPARISTON-PUOLUSTAJA: environment, nature, sustainability
     // Priority: environment > outdoor > nature > impact
@@ -5417,33 +5452,41 @@ export function rankCareers(
     const careerValues = careerVector.values || {};
     let alignmentBonus = 0;
 
-    // Interest subdimension alignment
+    // Interest subdimension alignment - INCREASED WEIGHTS FOR DIFFERENTIATION
     if (careerInterests.creative && interests.creative) {
-      alignmentBonus += careerInterests.creative * interests.creative * 5;
+      alignmentBonus += careerInterests.creative * interests.creative * 8;
     }
     if (careerInterests.technology && interests.technology) {
-      alignmentBonus += careerInterests.technology * interests.technology * 5;
+      alignmentBonus += careerInterests.technology * interests.technology * 8;
     }
     if (careerInterests.people && interests.people) {
-      alignmentBonus += careerInterests.people * interests.people * 5;
+      alignmentBonus += careerInterests.people * interests.people * 7;
     }
     if (careerInterests.hands_on && interests.hands_on) {
-      alignmentBonus += careerInterests.hands_on * interests.hands_on * 5;
+      alignmentBonus += careerInterests.hands_on * interests.hands_on * 8;
     }
     if (careerInterests.health && interests.health) {
-      alignmentBonus += careerInterests.health * interests.health * 5;
+      alignmentBonus += careerInterests.health * interests.health * 8;
+    }
+    // CRITICAL: Nature-based careers (Eläinlääkäri, Ympäristö roles) need strong nature matching
+    if (careerInterests.nature && interests.nature) {
+      alignmentBonus += careerInterests.nature * interests.nature * 10; // HIGH weight for nature
     }
     if (careerInterests.environment && (interests.environment || interests.nature)) {
-      alignmentBonus += careerInterests.environment * Math.max(interests.environment || 0, interests.nature || 0) * 5;
+      alignmentBonus += careerInterests.environment * Math.max(interests.environment || 0, interests.nature || 0) * 8;
     }
     if (careerInterests.analytical && interests.analytical) {
-      alignmentBonus += careerInterests.analytical * interests.analytical * 4;
+      alignmentBonus += careerInterests.analytical * interests.analytical * 6;
     }
     if (careerInterests.innovation && interests.innovation) {
-      alignmentBonus += careerInterests.innovation * interests.innovation * 4;
+      alignmentBonus += careerInterests.innovation * interests.innovation * 6;
     }
     if (careerInterests.business && (interests.business || values.business)) {
-      alignmentBonus += careerInterests.business * Math.max(interests.business || 0, values.business || 0) * 4;
+      alignmentBonus += careerInterests.business * Math.max(interests.business || 0, values.business || 0) * 6;
+    }
+    // CRITICAL: Education interest alignment for teaching/training careers
+    if (careerInterests.education && interests.education) {
+      alignmentBonus += careerInterests.education * interests.education * 6;
     }
 
     // Workstyle subdimension alignment
@@ -6889,28 +6932,66 @@ export function generateUserProfile(
   subCohort?: string
 ): UserProfile {
   const { dimensionScores, detailedScores } = computeUserVector(answers, cohort, subCohort);
-  
+
+  // Import category affinity functions
+  const {
+    calculateProfileConfidence,
+    calculateCategoryAffinities,
+    detectHybridPaths,
+    detectEdgeCases
+  } = require('./categoryAffinities');
+
+  // Calculate profile confidence based on answer patterns
+  const profileConfidence = calculateProfileConfidence(answers);
+
+  // Detect edge cases (all neutral, all high, etc.)
+  const edgeCase = detectEdgeCases(answers);
+
   // Find top strengths
   const allScores = [
     ...Object.entries(detailedScores.interests).map(([k, v]) => ({ key: k, value: v, type: 'interests' })),
     ...Object.entries(detailedScores.workstyle).map(([k, v]) => ({ key: k, value: v, type: 'workstyle' }))
   ];
-  
+
   const topStrengths = allScores
     .filter(s => s.value > 0.6)
     .sort((a, b) => b.value - a.value)
     .slice(0, 3)
     .map(s => translateStrength(s.key, cohort));
-  
+
+  // Calculate category affinities (all 8 categories ranked)
+  const categoryAffinities = calculateCategoryAffinities(detailedScores, profileConfidence);
+
+  // Detect hybrid career paths
+  const hybridPaths = detectHybridPaths(detailedScores, categoryAffinities);
+
+  // Log for debugging
+  console.log(`[generateUserProfile] Profile confidence: ${profileConfidence.overall} (${profileConfidence.strongSignals} strong, ${profileConfidence.neutralAnswers} neutral)`);
+  console.log(`[generateUserProfile] Top 3 categories: ${categoryAffinities.slice(0, 3).map((c: CategoryAffinity) => `${c.category}(${c.score}%)`).join(', ')}`);
+  if (hybridPaths.length > 0) {
+    console.log(`[generateUserProfile] Hybrid paths: ${hybridPaths.map((h: HybridCareerPath) => h.label).join(', ')}`);
+  }
+  if (edgeCase.isEdgeCase) {
+    console.log(`[generateUserProfile] ⚠️ Edge case detected: ${edgeCase.type}`);
+  }
+
   const userProfile: UserProfile = {
     cohort,
     dimensionScores,
     detailedScores,
-    topStrengths
+    topStrengths,
+    categoryAffinities,
+    hybridPaths: hybridPaths.length > 0 ? hybridPaths : undefined,
+    profileConfidence
   };
-  
-  // Generate personalized analysis text
-  const personalizedText = generatePersonalizedAnalysis(userProfile, cohort);
+
+  // Generate personalized analysis text (include edge case message if applicable)
+  let personalizedText = generatePersonalizedAnalysis(userProfile, cohort);
+
+  // Append edge case message if needed
+  if (edgeCase.isEdgeCase && edgeCase.message_fi) {
+    personalizedText = `${personalizedText}\n\n⚠️ ${edgeCase.message_fi}`;
+  }
 
   return {
     ...userProfile,
