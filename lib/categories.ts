@@ -42,7 +42,7 @@ export const categories: Record<string, CategoryInfo> = {
     slug: "auttaja",
     name_fi: "Auttaja",
     name_en: "Helper",
-    description: "Hoitajat, opettajat ja puolustajat",
+    description: "Hoitajat, opettajat ja tukihenkilöt",
     intro: "Auttaja-alan urat sopivat ihmisille, jotka haluavat auttaa muita ja tehdä työtä, jolla on merkitystä. Tämä ala tarjoaa tyydyttävää työtä ja mahdollisuuksia vaikuttaa yhteiskuntaan."
   },
   "ympariston-puolustaja": {
