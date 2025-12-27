@@ -63,7 +63,7 @@ export function getQuestionReferenceYLA(questionText: string, cohort: Cohort): s
 export function getQuestionReference(questionIndex: number, questionText: string, cohort: Cohort): string {
   if (cohort === 'YLA') {
     // YLA: no question numbers, just paraphrased text
-    return `kun kysyimme että ${questionText.toLowerCase().replace('?', '')}`;
+    return `kun kysyimme, ${questionText.toLowerCase().replace('?', '')}`;
   }
   
   // TASO2 and NUORI: can use Q numbers

@@ -41,25 +41,25 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
   if (topCareers.length > 0) {
     const topCareer = topCareers[0];
     questions.push(
-      `Mikä ${topCareer.title} -ammatissa kiinnostaa sinua eniten?`,
-      `Oletko ajatellut miten ${topCareer.title} -ura voisi sopia sinulle?`,
-      `Mitä tiedät ${topCareer.title} -ammatista? Oletko harkinnut sitä ennen?`
+      `Mikä ${topCareer.title}-ammatissa kiinnostaa sinua eniten?`,
+      `Oletko ajatellut, miten ${topCareer.title}-ura voisi sopia sinulle?`,
+      `Mitä tiedät ${topCareer.title}-ammatista? Oletko harkinnut sitä aiemmin?`
     );
-    
+
     talkingPoints.push(
-      `Profiilistasi nousee esiin kiinnostusta ${topCareer.title} -tyyppisiin ammatteihin`,
-      `Voit tutustua ${topCareer.title} -uraan tarkemmin, jos se kiinnostaa sinua`
+      `Profiilistasi nousee esiin kiinnostusta ${topCareer.title}-tyyppisiin ammatteihin`,
+      `Voit tutustua ${topCareer.title}-uraan tarkemmin, jos se kiinnostaa sinua`
     );
-    
+
     actionItems.push(
-      `Tutustu ${topCareer.title} -ammattiin tarkemmin`,
+      `Tutustu ${topCareer.title}-ammattiin tarkemmin`,
       `Keskustele oppilaiden kanssa heidän kokemuksistaan`
     );
 
     // If multiple top careers
     if (topCareers.length > 1) {
       questions.push(
-        `Oletko kiinnostunut myös ${topCareers[1].title} tai ${topCareers[2]?.title || 'muista'}-uraista?`,
+        `Oletko kiinnostunut myös ${topCareers[1].title}-urasta tai ${topCareers[2]?.title || 'muista ammateista'}?`,
         `Mitä eroa näet näiden ammattien välillä?`
       );
     }
@@ -132,8 +132,8 @@ export function generateConversationStarters(profile: StudentProfile): Conversat
     );
     
     talkingPoints.push(
-      `Profiilistasi nousee esiin kiinnostusta ${pathName === 'Lukio' ? 'lukio' : pathName === 'Ammattikoulu' ? 'ammattikoulu' : 'kansanopisto'}-tyyppiseen oppimiseen`,
-      `Voit tutustua ${pathName === 'Lukio' ? 'lukion' : pathName === 'Ammattikoulu' ? 'ammattikoulun' : 'kansanopiston'} vaihtoehtoihin ja pohtia, mitä ne voisivat tarjota sinulle`
+      `Profiilistasi nousee esiin kiinnostusta ${pathName.toLowerCase()}-tyyppiseen oppimiseen`,
+      `Voit tutustua ${pathName.toLowerCase()}n vaihtoehtoihin ja pohtia, mitä ne voisivat tarjota sinulle`
     );
     
     actionItems.push(
@@ -190,14 +190,14 @@ export function generateParentMeetingTalkingPoints(profile: StudentProfile): str
   if (topCareers.length > 0) {
     const topCareer = topCareers[0];
     points.push(
-      `${profile.name}:n profiilista nousee esiin kiinnostusta ${topCareer.title} -tyyppisiin ammatteihin`,
+      `${profile.name}n profiilista nousee esiin kiinnostusta ${topCareer.title}-tyyppisiin ammatteihin`,
       `Profiilista nousee esiin monipuolisia kiinnostuksia, mikä on hyvä pohja keskustelulle`
     );
   }
 
   if (dimensions.interests > 60) {
     points.push(
-      `${profile.name}:lla on monipuolisia kiinnostuksia, mikä on hyvä pohja keskustelulle`
+      `${profile.name}lla on monipuolisia kiinnostuksia, mikä on hyvä pohja keskustelulle`
     );
   }
 
@@ -209,7 +209,7 @@ export function generateParentMeetingTalkingPoints(profile: StudentProfile): str
     };
     const pathName = pathNames[educationPath.primary] || educationPath.primary;
     points.push(
-      `Profiilista nousee esiin kiinnostusta ${pathName === 'Lukio' ? 'lukio' : pathName === 'Ammattikoulu' ? 'ammattikoulu' : 'kansanopisto'}-tyyppiseen oppimiseen`,
+      `Profiilista nousee esiin kiinnostusta ${pathName.toLowerCase()}-tyyppiseen oppimiseen`,
       `Voitte keskustella ${pathName.toLowerCase()}n vaihtoehdoista ja pohtia, mitä ne voisivat tarjota`
     );
   }

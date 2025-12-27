@@ -89,7 +89,7 @@ export function mapStrengthsToAnswers(
       let explanation = '';
       if (cohort === 'YLA') {
         const firstQ = relatedQuestions[0];
-        explanation = `Sinun vahvuutesi ${strength.toLowerCase()} tulee siitä, miten vastasit teknologia-kysymyksiin. Muistatko kun kysyimme että ${firstQ.questionText.toLowerCase().replace('?', '')}? Vastasit että ${firstQ.answerLevel}! Sama tuli esiin myös muissa teknologia-kysymyksissä.`;
+        explanation = `Vahvuutesi ${strength.toLowerCase()} tulee siitä, miten vastasit teknologia-kysymyksiin. Muistatko, kun kysyimme ${firstQ.questionText.toLowerCase().replace('?', '')}? Vastasit ${firstQ.answerLevel}! Sama tuli esiin myös muissa teknologia-kysymyksissä.`;
       } else if (cohort === 'TASO2') {
         const refs = relatedQuestions.slice(0, 2).map(q => getQuestionReference(q.questionNumber, q.questionText, cohort)).join(' ja ');
         explanation = `Vahvuutesi ${strength.toLowerCase()} perustuu vastauksiisi teknologia-kysymyksiin (${refs}). Erityisesti vastauksesi ${relatedQuestions[0].answerLevel} olivat vahvoja. Tämä profiili sopii erinomaisesti teknologia-uraan.`;
