@@ -261,7 +261,7 @@ export default function HomePage() {
                     Testi analysoi vahvuutesi ja kiinnostuksesi, antaen sinulle henkilökohtaiset suositukset.
                   </p>
                   <p>
-                    Tulokset ovat <strong className="font-semibold text-white">lähtökohta keskustelulle</strong> – käytä niitä
+                    Tulokset ovat <strong className="font-semibold text-white">lähtökohta keskustelulle</strong>. Käytä niitä
                     pohtiessasi omaa tulevaisuuttasi yhdessä opettajien, opinto-ohjaajien ja perheen kanssa.
                   </p>
                 </div>
