@@ -127,9 +127,11 @@ export default function PricingPage() {
                   <span>Sähköpostituki</span>
                 </li>
               </ul>
-              <Button className="w-full bg-accent hover:bg-accent/90">
-                Ota yhteyttä
-              </Button>
+              <Link href="/ota-yhteytta">
+                <Button className="w-full bg-accent hover:bg-accent/90">
+                  Ota yhteyttä
+                </Button>
+              </Link>
             </CardContent>
           </Card>
 
@@ -183,9 +185,11 @@ export default function PricingPage() {
                   <span>API-integraatiot koulujen järjestelmiin</span>
                 </li>
               </ul>
-              <Button className="w-full bg-primary hover:bg-primary/90">
-                Ota yhteyttä
-              </Button>
+              <Link href="/ota-yhteytta">
+                <Button className="w-full bg-primary hover:bg-primary/90">
+                  Ota yhteyttä
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>
@@ -283,10 +287,15 @@ export default function PricingPage() {
                 Kokeile ilmaiseksi
               </Button>
             </Link>
-            <Button size="lg" className="bg-primary">
-              Ota yhteyttä
-            </Button>
+            <Link href="/ota-yhteytta">
+              <Button size="lg" className="bg-primary">
+                Ota yhteyttä
+              </Button>
+            </Link>
           </div>
+          <p className="text-neutral-500 text-sm mt-6">
+            DPA-sopimus ja tietoturva-dokumentaatio saatavilla pyynnöstä.
+          </p>
         </div>
       </div>
     </div>

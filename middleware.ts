@@ -131,7 +131,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // Protected routes password protection (via /site-auth page)
-  // Protects only /test and /ammatit routes
+  // Protects ALL routes in production (full auth wall)
   // Localhost is always allowed (development bypass)
   const sitePasswordEnabled = !isLocalhost && sitePasswordIsConfigured();
 
@@ -141,13 +141,9 @@ export async function middleware(request: NextRequest) {
       return NextResponse.next();
     }
 
-    // Only protect /test and /ammatit routes (the core product)
-    // Everything else (landing page, /meista, /kouluille, /metodologia, legal pages) is public
-    const isProtectedRoute =
-      pathname === '/test' ||
-      pathname.startsWith('/test/') ||
-      pathname === '/ammatit' ||
-      pathname.startsWith('/ammatit/');
+    // Protect ALL routes - full site lockdown
+    // Only exceptions: /site-auth page itself and API routes
+    const isProtectedRoute = !pathname.startsWith('/api/');
 
     if (isProtectedRoute) {
       // Check for site authentication cookie
