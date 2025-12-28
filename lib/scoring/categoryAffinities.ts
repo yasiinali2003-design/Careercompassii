@@ -15,75 +15,89 @@ import {
 
 // ========== CATEGORY DEFINITIONS ==========
 
+/**
+ * CATEGORY SIGNALS v2.1
+ * Improved signal definitions for better score differentiation
+ *
+ * Changes in v2.1:
+ * - Reduced negative signal lists to avoid over-penalizing
+ * - Added more secondary signals for better score coverage
+ * - Balanced primary signals to ensure each category has good coverage
+ */
 const CATEGORY_SIGNALS: Record<string, {
-  primary: string[];      // Must have high scores in these
-  secondary: string[];    // Nice to have
-  negative: string[];     // Should be low for clear category match
+  primary: string[];      // Must have high scores in these (weighted 55%)
+  secondary: string[];    // Nice to have (weighted 30%)
+  negative: string[];     // Should be low for clear match (penalty 15%)
   label_fi: string;
 }> = {
   auttaja: {
-    // Auttaja = healthcare, social work, teaching - requires HEALTH or strong social_impact
-    // People alone is NOT enough (businesspeople also have high people scores)
-    // Business is now a NEGATIVE signal - business+people = johtaja, not auttaja
+    // Auttaja = healthcare, social work, teaching, coaching
+    // People remains SECONDARY (not primary) to differentiate from service industry jobs
+    // Restonomi (hospitality) has high people but should be johtaja/rakentaja, not auttaja
+    // Primary signals MUST include health/social_impact/teaching for true caring professions
     primary: ['health', 'social_impact', 'teaching'],
-    secondary: ['people', 'growth', 'teamwork', 'sports'], // People is secondary, not primary
-    negative: ['technology', 'hands_on', 'business', 'entrepreneurship', 'leadership'],
+    secondary: ['people', 'growth', 'teamwork', 'sports', 'stability'],
+    negative: ['technology', 'business', 'entrepreneurship'],
     label_fi: 'Auttaja'
   },
   innovoija: {
     // Innovoija = tech innovators, developers, engineers
-    // Requires technology - analytical alone is NOT enough (lawyers are analytical but not innovators)
+    // IMPROVED: Reduced negative signals - innovators can write docs too
     primary: ['technology', 'innovation', 'problem_solving'],
-    secondary: ['analytical', 'independence', 'growth'],
-    negative: ['hands_on', 'outdoor', 'health', 'writing'],
+    secondary: ['analytical', 'independence', 'growth', 'creativity'],
+    negative: ['outdoor', 'health'],
     label_fi: 'Innovoija'
   },
   luova: {
+    // Luova = artists, writers, designers
+    // IMPROVED: Reduced negative signals - creatives can also be organized
     primary: ['creative', 'arts_culture', 'writing'],
-    secondary: ['independence', 'variety', 'flexibility'],
-    negative: ['structure', 'precision', 'analytical'],
+    secondary: ['independence', 'variety', 'flexibility', 'innovation'],
+    negative: ['precision', 'stability'],
     label_fi: 'Luova'
   },
   rakentaja: {
-    // Athletes and physical workers - outdoor + hands_on focus
-    primary: ['hands_on', 'outdoor', 'precision'],
-    secondary: ['stability', 'independence', 'sports'],
-    negative: ['creative', 'people', 'technology'],
+    // Rakentaja = tradespeople, athletes, physical workers
+    // IMPROVED: Removed 'people' from negative - mechanics and athletes work with people too
+    // Added 'stability' to secondary - tradespeople value job security
+    primary: ['hands_on', 'outdoor', 'precision', 'sports'],
+    secondary: ['stability', 'independence', 'teamwork'],
+    negative: ['creative', 'writing'],
     label_fi: 'Rakentaja'
   },
   johtaja: {
-    // Leaders, managers, lawyers, business professionals
-    // Legal professionals have high analytical+writing but they LEAD and influence
-    // Business+people = johtaja (not auttaja) - people is now a secondary signal here
+    // Johtaja = leaders, managers, lawyers, business professionals
+    // IMPROVED: Added 'impact' to secondary - leaders want to make impact
+    // Reduced negative signals - leaders can value stability too
     primary: ['leadership', 'business', 'entrepreneurship'],
-    secondary: ['social', 'advancement', 'financial', 'analytical', 'writing', 'people'],
-    negative: ['hands_on', 'stability', 'health'],
+    secondary: ['social', 'advancement', 'financial', 'analytical', 'writing', 'people', 'impact'],
+    negative: ['hands_on', 'health'],
     label_fi: 'Johtaja'
   },
   'ympariston-puolustaja': {
-    // outdoor alone is NOT enough - must also have environment/nature interest
-    // Sports athletes have outdoor but NOT environment focus
+    // Ympäristön puolustaja = environmental scientists, activists, nature workers
+    // social_impact is SECONDARY - teachers also have high social_impact but shouldn't be here
+    // environment/nature are the CORE signals that differentiate this category
     primary: ['environment', 'nature'],
-    secondary: ['outdoor', 'social_impact', 'impact', 'independence'],
-    negative: ['technology', 'business', 'analytical', 'sports'],
+    secondary: ['outdoor', 'social_impact', 'impact', 'independence', 'analytical'],
+    negative: ['business', 'sports'],
     label_fi: 'Ympäristön puolustaja'
   },
   visionaari: {
     // Visionaari = global thinker, strategic, international focus
-    // Uses: global (Q28), impact, advancement, innovation - but NOT technology/analytical
-    // MUST avoid: health/people (auttaja), organization/structure (jarjestaja), business/leadership (johtaja)
-    primary: ['global', 'international', 'advancement'],
-    secondary: ['impact', 'innovation', 'social_impact'],
-    negative: ['hands_on', 'stability', 'precision', 'health', 'organization', 'structure'],
+    // IMPROVED: Added 'impact' to primary - visionaries want big impact
+    // Reduced negative signals for better scores
+    primary: ['global', 'international', 'advancement', 'impact'],
+    secondary: ['innovation', 'social_impact', 'leadership'],
+    negative: ['hands_on', 'precision'],
     label_fi: 'Visionääri'
   },
   jarjestaja: {
-    // Jarjestaja = organized, structured, detail-oriented
-    // Uses: organization, structure, precision, stability
-    // Legal/administrative roles also fit here (analytical + precision + writing)
-    primary: ['organization', 'structure', 'precision'],
-    secondary: ['stability', 'teamwork', 'analytical', 'writing'],
-    negative: ['creative', 'variety', 'innovation'],
+    // Järjestäjä = organized, structured, detail-oriented, administrators
+    // IMPROVED: Added 'stability' to primary - organizers value predictability
+    primary: ['organization', 'structure', 'precision', 'stability'],
+    secondary: ['teamwork', 'analytical', 'writing'],
+    negative: ['variety', 'flexibility'],
     label_fi: 'Järjestäjä'
   }
 };
@@ -159,68 +173,101 @@ const HYBRID_PATHS: Array<{
 
 /**
  * Analyzes answer patterns to determine confidence level
- * IMPROVEMENT 2: Recalibrated thresholds for more accurate confidence levels
+ * IMPROVEMENT 2.1: Enhanced confidence analysis with granular feedback
  *
- * Old thresholds were too strict - most profiles showed "low" confidence.
- * New thresholds are based on 30-question tests:
- * - high: 10+ strong signals (33%+), <=8 neutral answers
- * - medium: 5+ strong signals OR <=12 neutral answers
- * - low: <5 strong signals AND >12 neutral answers
+ * Confidence levels based on answer pattern quality:
+ * - high: Clear preferences, good signal variance, decisive answers
+ * - medium: Some clear preferences but mixed with uncertainty
+ * - low: Mostly neutral or all-same answers, needs more self-reflection
+ *
+ * NEW in v2.1:
+ * - More specific and actionable feedback messages
+ * - Detects patterns like "all agree" or "mostly neutral"
+ * - Provides encouraging messages for exploration-stage users
  */
 export function calculateProfileConfidence(answers: TestAnswer[]): ProfileConfidence {
   const scores = answers.map(a => a.score);
   const totalQuestions = scores.length;
 
   // Count answer types
-  const strongSignals = scores.filter(s => s === 1 || s === 5).length;
+  const strongAgree = scores.filter(s => s === 5).length;
+  const strongDisagree = scores.filter(s => s === 1).length;
+  const strongSignals = strongAgree + strongDisagree;
   const neutralAnswers = scores.filter(s => s === 3).length;
   const moderateAnswers = scores.filter(s => s === 2 || s === 4).length;
+  const positiveAnswers = scores.filter(s => s >= 4).length;
+  const negativeAnswers = scores.filter(s => s <= 2).length;
 
   // Calculate variance (0-1 scale)
   const mean = scores.reduce((a, b) => a + b, 0) / scores.length;
   const variance = scores.reduce((sum, s) => sum + Math.pow(s - mean, 2), 0) / scores.length;
-  const normalizedVariance = Math.min(1, variance / 2); // Max variance is 4 (1 to 5 range), normalize to 0-1
+  const normalizedVariance = Math.min(1, variance / 2);
 
-  // RECALIBRATED thresholds based on realistic answer patterns
-  // For 30 questions:
-  // - High confidence: 10+ strong (33%), <=8 neutral (27%)
-  // - Medium confidence: 5+ strong (17%) OR variance >= 0.5
-  // - Low confidence: <5 strong AND >12 neutral (40%)
+  // Thresholds (calibrated for 30-question tests)
   const strongThresholdHigh = Math.max(8, Math.floor(totalQuestions * 0.27));
   const strongThresholdMedium = Math.max(4, Math.floor(totalQuestions * 0.13));
   const neutralThresholdLow = Math.floor(totalQuestions * 0.40);
   const neutralThresholdMedium = Math.floor(totalQuestions * 0.30);
 
-  // Determine confidence
+  // Detect special patterns
+  const isAllPositive = positiveAnswers >= totalQuestions * 0.8;
+  const isAllNeutral = neutralAnswers >= totalQuestions * 0.7;
+  const hasGoodBalance = positiveAnswers >= 5 && negativeAnswers >= 5;
+  const hasStrongPreferences = strongAgree >= 3 && strongDisagree >= 2;
+
+  // Determine confidence and generate reasons
   const reasons: string[] = [];
   let overall: 'high' | 'medium' | 'low';
 
   if (strongSignals >= strongThresholdHigh && neutralAnswers <= neutralThresholdMedium) {
     overall = 'high';
-    reasons.push('Sinulla on selkeitä mieltymyksiä useilla alueilla');
+    if (hasStrongPreferences) {
+      reasons.push('Tiedät selkeästi mitä haluat ja mitä et halua');
+    } else {
+      reasons.push('Sinulla on selkeitä mieltymyksiä useilla alueilla');
+    }
+    if (hasGoodBalance) {
+      reasons.push('Vastauksesi osoittavat hyvää itsetuntemusta');
+    }
     if (normalizedVariance >= 0.6) {
-      reasons.push('Vastauksesi osoittavat vahvaa itsetuntemusta');
+      reasons.push('Profiilisi erottuu selkeästi muista');
     }
   } else if (neutralAnswers >= neutralThresholdLow && strongSignals < strongThresholdMedium) {
     overall = 'low';
-    reasons.push('Monet vastauksesi olivat neutraaleja');
-    if (neutralAnswers >= totalQuestions * 0.5) {
-      reasons.push('Harkitse testin tekemistä uudelleen kun tiedät paremmin mitä haluat');
+    if (isAllNeutral) {
+      reasons.push('Olet vielä tutkimassa vaihtoehtojasi - se on täysin normaalia');
+      reasons.push('Kokeile miettiä mikä saa sinut innostumaan tai mikä tuntuu tylsältä');
+    } else {
+      reasons.push('Monet vastauksesi olivat neutraaleja');
+      if (strongSignals <= 2) {
+        reasons.push('Harva asia herätti vahvoja tunteita - tulokset ovat suuntaa-antavia');
+      }
     }
-    if (strongSignals <= 2) {
-      reasons.push('Sinulla on vähän vahvoja mieltymyksiä - tulokset ovat suuntaa-antavia');
+    // Add encouraging message for low confidence
+    reasons.push('Tutustu eri aloihin käytännössä - se auttaa löytämään oman polkusi');
+  } else if (isAllPositive) {
+    overall = 'medium';
+    reasons.push('Olet kiinnostunut monista asioista - se on vahvuus!');
+    reasons.push('Kokeile miettiä mikä näistä kiinnostaa ENITEN');
+    if (strongDisagree === 0) {
+      reasons.push('Mieti myös mitä ET haluaisi tehdä - se auttaa rajaamaan vaihtoehtoja');
     }
   } else {
     overall = 'medium';
-    reasons.push('Sinulla on joitakin selkeitä mieltymyksiä');
-    if (moderateAnswers >= totalQuestions * 0.5) {
-      reasons.push('Useissa asioissa olet hieman puolesta tai vastaan');
-    }
-    // Upgrade to high if variance is good even with moderate strong signals
-    if (normalizedVariance >= 0.5 && strongSignals >= strongThresholdMedium && neutralAnswers <= neutralThresholdMedium) {
-      overall = 'high';
-      reasons.length = 0;
-      reasons.push('Vastauksesi muodostavat selkeän profiilin');
+    if (hasGoodBalance) {
+      reasons.push('Sinulla on sekä selkeitä kiinnostuksia että asioita joita haluat välttää');
+      // Upgrade to high if good balance with decent variance
+      if (normalizedVariance >= 0.5 && strongSignals >= strongThresholdMedium) {
+        overall = 'high';
+        reasons.length = 0;
+        reasons.push('Vastauksesi muodostavat selkeän profiilin');
+        reasons.push('Tiedät mitä haluat ja mitä haluat välttää');
+      }
+    } else {
+      reasons.push('Sinulla on joitakin selkeitä mieltymyksiä');
+      if (moderateAnswers >= totalQuestions * 0.5) {
+        reasons.push('Moniin asioihin suhtaudut melko neutraalisti');
+      }
     }
   }
 
@@ -238,6 +285,12 @@ export function calculateProfileConfidence(answers: TestAnswer[]): ProfileConfid
 /**
  * Calculate affinity score for all 8 categories
  * Returns ranked list with confidence levels
+ *
+ * IMPROVEMENT v2.1: Enhanced scoring algorithm
+ * - Improved weighting formula for higher, more realistic scores
+ * - Primary signals weighted 55%, secondary 30%, negative penalty 15%
+ * - Added signal strength bonus for very strong matches (>0.75)
+ * - Scores now properly range from ~20% (poor fit) to ~95% (excellent fit)
  */
 export function calculateCategoryAffinities(
   detailedScores: DetailedDimensionScores,
@@ -256,10 +309,14 @@ export function calculateCategoryAffinities(
     // Calculate primary signal score (weighted heavily)
     let primaryScore = 0;
     let primaryCount = 0;
+    let strongPrimaryCount = 0; // Track very strong signals (>0.75)
+
     for (const signal of signals.primary) {
       if (allScores[signal] !== undefined) {
-        primaryScore += allScores[signal];
+        const signalValue = allScores[signal];
+        primaryScore += signalValue;
         primaryCount++;
+        if (signalValue > 0.75) strongPrimaryCount++;
       }
     }
     primaryScore = primaryCount > 0 ? primaryScore / primaryCount : 0.5;
@@ -275,7 +332,7 @@ export function calculateCategoryAffinities(
     }
     secondaryScore = secondaryCount > 0 ? secondaryScore / secondaryCount : 0.5;
 
-    // Calculate negative signal penalty
+    // Calculate negative signal penalty (inverted - high negative signals = penalty)
     let negativeScore = 0;
     let negativeCount = 0;
     for (const signal of signals.negative) {
@@ -286,8 +343,30 @@ export function calculateCategoryAffinities(
     }
     negativeScore = negativeCount > 0 ? negativeScore / negativeCount : 0;
 
-    // Combined score: 60% primary, 25% secondary, -15% negative
-    const rawScore = (primaryScore * 0.6 + secondaryScore * 0.25) - (negativeScore * 0.15);
+    // IMPROVED SCORING FORMULA v2.1:
+    // - Base score: 55% primary + 30% secondary = 85% max base
+    // - Negative penalty: reduces score by up to 15%
+    // - Strong signal bonus: adds up to 15% for excellent matches
+    // - Result: realistic range of ~25% (poor fit) to ~100% (excellent fit)
+
+    const baseScore = (primaryScore * 0.55) + (secondaryScore * 0.30);
+    const negativePenalty = negativeScore * 0.15;
+
+    // Strong signal bonus: if primary signals are very strong AND negative signals are low
+    // This rewards clear, strong matches without conflicting interests
+    let strongSignalBonus = 0;
+    if (primaryScore >= 0.7 && negativeScore <= 0.4) {
+      strongSignalBonus = 0.10; // 10% bonus for strong clear match
+      if (primaryScore >= 0.8 && negativeScore <= 0.3) {
+        strongSignalBonus = 0.15; // 15% bonus for excellent match
+      }
+    }
+
+    // Additional boost if most primary signals are strong (>0.75)
+    const primaryStrength = primaryCount > 0 ? strongPrimaryCount / primaryCount : 0;
+    const primaryStrengthBonus = primaryStrength * 0.05; // Up to 5% extra
+
+    const rawScore = baseScore - negativePenalty + strongSignalBonus + primaryStrengthBonus;
     const finalScore = Math.max(0, Math.min(100, rawScore * 100));
 
     // Determine confidence for this category
@@ -322,10 +401,13 @@ export function calculateCategoryAffinities(
 // ========== DETECT HYBRID PATHS ==========
 
 /**
- * IMPROVEMENT 5: Enhanced hybrid path detection
+ * IMPROVEMENT 5.1: Enhanced hybrid path detection
  * - Detects when top 2-3 categories are close (<15 points)
  * - Shows multiple category recommendations for multi-interest profiles
  * - Creates dynamic hybrid paths even if not predefined
+ * - NEW: Also detects hybrids based on STRONG SIGNAL STRENGTH even if categories aren't top 3
+ *   (e.g., a tech leader with very high leadership+technology signals should get "Johtaminen + Innovaatio"
+ *    even if johtaja is ranked 4th due to other neutral signals)
  */
 export function detectHybridPaths(
   detailedScores: DetailedDimensionScores,
@@ -339,16 +421,16 @@ export function detectHybridPaths(
   };
 
   const matches: HybridCareerPath[] = [];
+  const addedLabels = new Set<string>(); // Prevent duplicates
 
-  // Get top 3 category affinities
+  // Get top 3 category affinities for traditional matching
   const topCategories = categoryAffinities.slice(0, 3).map(a => a.category);
 
+  // FIRST: Traditional matching - both categories in top 3
   for (const hybridPath of HYBRID_PATHS) {
     const [cat1, cat2] = hybridPath.categories;
 
-    // Check if both categories are in top 3
     if (topCategories.includes(cat1) && topCategories.includes(cat2)) {
-      // Check if required signals are present
       const signalScores = hybridPath.requiredSignals.map(s => allScores[s] || 0);
       const avgSignal = signalScores.reduce((a, b) => a + b, 0) / signalScores.length;
 
@@ -358,7 +440,7 @@ export function detectHybridPaths(
 
         const matchScore = Math.round(
           ((cat1Affinity?.score || 0) + (cat2Affinity?.score || 0)) / 2 *
-          (avgSignal + 0.5) // Boost by signal strength
+          (avgSignal + 0.5)
         );
 
         matches.push({
@@ -368,7 +450,48 @@ export function detectHybridPaths(
           exampleCareers: hybridPath.exampleCareers,
           matchScore: Math.min(100, matchScore)
         });
+        addedLabels.add(hybridPath.label);
       }
+    }
+  }
+
+  // SECOND: Signal-strength based matching - for cases where signals are strong
+  // but category rank might be lower due to neutral answers in other areas
+  // This catches cases like "tech leader" where leadership+technology are both high (>0.7)
+  // but johtaja might be rank 4-5 due to low business/entrepreneurship
+  for (const hybridPath of HYBRID_PATHS) {
+    if (addedLabels.has(hybridPath.label)) continue; // Skip if already matched
+
+    const [cat1, cat2] = hybridPath.categories;
+    const cat1Affinity = categoryAffinities.find(a => a.category === cat1);
+    const cat2Affinity = categoryAffinities.find(a => a.category === cat2);
+
+    // At least one category must be in top 2
+    const hasTopCategory = cat1Affinity?.rank === 1 || cat1Affinity?.rank === 2 ||
+                           cat2Affinity?.rank === 1 || cat2Affinity?.rank === 2;
+
+    if (!hasTopCategory) continue;
+
+    // Check if required signals are VERY strong (>0.7) for both
+    const signalScores = hybridPath.requiredSignals.map(s => allScores[s] || 0);
+    const minSignal = Math.min(...signalScores);
+    const avgSignal = signalScores.reduce((a, b) => a + b, 0) / signalScores.length;
+
+    // Require BOTH signals to be strong (min > 0.65) and average > 0.7
+    if (minSignal >= 0.65 && avgSignal >= 0.7) {
+      const matchScore = Math.round(
+        ((cat1Affinity?.score || 0) + (cat2Affinity?.score || 0)) / 2 *
+        (avgSignal + 0.3) // Slightly lower boost since this is signal-based
+      );
+
+      matches.push({
+        categories: hybridPath.categories,
+        label: hybridPath.label,
+        description: hybridPath.description,
+        exampleCareers: hybridPath.exampleCareers,
+        matchScore: Math.min(100, matchScore)
+      });
+      addedLabels.add(hybridPath.label);
     }
   }
 
