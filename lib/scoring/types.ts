@@ -93,6 +93,10 @@ export interface UserProfile {
   summary?: string;                  // Brief personality summary
   personalizedAnalysis?: string;     // 2-3 paragraph personalized text
   currentOccupation?: string;        // Current career/occupation slug (for filtering)
+  // NEW: Enhanced profile information
+  categoryAffinities?: CategoryAffinity[];  // All 8 categories ranked by affinity
+  hybridPaths?: HybridCareerPath[];         // Suggested hybrid career paths
+  profileConfidence?: ProfileConfidence;    // How confident we are in this profile
 }
 
 // ========== CAREER MATCHING TYPES ==========
@@ -156,6 +160,41 @@ export const COHORT_WEIGHTS: Record<Cohort, ScoringWeights> = {
     context: 0.10
   }
 };
+
+// ========== CATEGORY AFFINITY TYPES ==========
+
+/**
+ * Represents affinity to a career category with confidence
+ * Used for hybrid/multi-category recommendations
+ */
+export interface CategoryAffinity {
+  category: string;
+  score: number;           // 0-100 affinity score
+  confidence: 'high' | 'medium' | 'low';
+  rank: number;            // 1 = highest affinity
+}
+
+/**
+ * Hybrid career path combining multiple categories
+ */
+export interface HybridCareerPath {
+  categories: string[];    // e.g., ['innovoija', 'luova'] for UX designer
+  label: string;           // e.g., "Teknologia + Luovuus"
+  description: string;     // Finnish description
+  exampleCareers: string[]; // e.g., ['UX-suunnittelija', 'Pelisuunnittelija']
+  matchScore: number;      // 0-100
+}
+
+/**
+ * Profile confidence based on answer patterns
+ */
+export interface ProfileConfidence {
+  overall: 'high' | 'medium' | 'low';
+  reasons: string[];       // Why this confidence level
+  answerVariance: number;  // 0-1, low = all neutral, high = clear preferences
+  strongSignals: number;   // Count of answers 1 or 5
+  neutralAnswers: number;  // Count of answers 3
+}
 
 // ========== API RESPONSE TYPES ==========
 
