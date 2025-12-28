@@ -184,14 +184,94 @@ export async function POST(request: NextRequest) {
       };
       console.log(`[API] NUORI Education path: ${path.primary} (category-based)`);
     } else if (cohort === 'YLA' || cohort === 'TASO2') {
-      educationPath = calculateEducationPath(unshuffledAnswers, cohort);
-      if (educationPath) {
-        const primaryPath = 'primary' in educationPath ? educationPath.primary : undefined;
-        if (primaryPath) {
-          const scoreKey = cohort === 'YLA'
-            ? (educationPath as any).scores[primaryPath as string]
-            : (educationPath as any).scores[primaryPath as string];
-          console.log(`[API] Education path: ${primaryPath} (${Math.round(scoreKey)}%)`);
+      // IMPROVEMENT 4: AMIS students (vocational) get appropriate education path options
+      // In Finland, ammattikoulu students CAN apply to yliopisto, but also have other options
+      const isAMIS = subCohort === 'AMIS';
+
+      if (isAMIS) {
+        // AMIS-specific education paths
+        const topCareer = topCareers[0];
+        const category = topCareer?.category || 'rakentaja';
+
+        // AMIS students have multiple valid paths in Finland:
+        // 1. Direct work (työ) - most common for vocational graduates
+        // 2. Apprenticeship (oppisopimus) - work + training
+        // 3. AMK - apply with vocational degree
+        // 4. Yliopisto - possible but requires preparation/open university
+        // 5. Erikoisammattitutkinto - advanced vocational qualification
+
+        const amisPathMap: Record<string, {
+          primary: string;
+          secondary?: string;
+          reasoning: string;
+          scores: Record<string, number>;
+        }> = {
+          rakentaja: {
+            primary: 'tyoelama_tai_oppisopimus',
+            secondary: 'amk',
+            reasoning: 'Ammattikoulupohjalla pääset suoraan töihin ja kartuttamaan kokemusta. Oppisopimuskoulutus yhdistää työn ja oppimisen. AMK-opinnot ovat myös mahdollisia myöhemmin.',
+            scores: { tyoelama_tai_oppisopimus: 85, amk: 60, yliopisto: 40 }
+          },
+          innovoija: {
+            primary: 'amk_tai_tyoelama',
+            secondary: 'yliopisto',
+            reasoning: 'IT-alalla AMK-tutkinto tai suora työkokemus ovat molemmat arvostettuja. Yliopisto-opinnot ovat mahdollisia avoimen yliopiston kautta.',
+            scores: { amk_tai_tyoelama: 80, yliopisto: 55 }
+          },
+          auttaja: {
+            primary: 'amk',
+            secondary: 'tyoelama',
+            reasoning: 'Hoitoalalla AMK-tutkinto (esim. sairaanhoitaja) avaa laajemmat mahdollisuudet. Lähihoitajana voit myös työskennellä suoraan.',
+            scores: { amk: 75, tyoelama: 70, yliopisto: 45 }
+          },
+          luova: {
+            primary: 'portfolio_ja_tyoelama',
+            secondary: 'amk',
+            reasoning: 'Luovilla aloilla portfolio ja työkokemus ovat usein tärkeämpiä kuin tutkinto. AMK-opinnot (esim. muotoilu) voivat syventää osaamista.',
+            scores: { portfolio_ja_tyoelama: 80, amk: 65 }
+          },
+          johtaja: {
+            primary: 'tyokokemus_ja_amk',
+            reasoning: 'Yrittäjyys ja liiketoiminta kehittyvät parhaiten käytännössä. AMK-tradenomitutkinto antaa liiketoimintaosaamista.',
+            scores: { tyokokemus_ja_amk: 80, amk: 70, yliopisto: 50 }
+          },
+          'ympariston-puolustaja': {
+            primary: 'amk_tai_tyoelama',
+            reasoning: 'Ympäristöalalla AMK-insinööri tai suora työ maatilalla/puutarhassa ovat hyviä vaihtoehtoja.',
+            scores: { amk_tai_tyoelama: 75, yliopisto: 55 }
+          },
+          jarjestaja: {
+            primary: 'amk_tai_tyoelama',
+            reasoning: 'Hallinto- ja toimistotyössä AMK-tutkinto (tradenomi) tai suora työkokemus ovat molemmat hyviä polkuja.',
+            scores: { amk_tai_tyoelama: 75, yliopisto: 50 }
+          },
+          visionaari: {
+            primary: 'amk_tai_avoin_yliopisto',
+            reasoning: 'Strateginen ajattelu kehittyy korkeakouluopinnoissa. Avoin yliopisto on hyvä tapa tutustua yliopisto-opintoihin.',
+            scores: { amk_tai_avoin_yliopisto: 70, yliopisto: 60 }
+          }
+        };
+
+        const path = amisPathMap[category] || amisPathMap.rakentaja;
+        educationPath = {
+          primary: path.primary,
+          secondary: path.secondary,
+          reasoning: path.reasoning,
+          scores: path.scores,
+          confidence: 'medium' as const
+        };
+        console.log(`[API] TASO2_AMIS Education path: ${path.primary} (vocational-appropriate)`);
+      } else {
+        // LUKIO or generic TASO2 - use standard calculation
+        educationPath = calculateEducationPath(unshuffledAnswers, cohort);
+        if (educationPath) {
+          const primaryPath = 'primary' in educationPath ? educationPath.primary : undefined;
+          if (primaryPath) {
+            const scoreKey = cohort === 'YLA'
+              ? (educationPath as any).scores[primaryPath as string]
+              : (educationPath as any).scores[primaryPath as string];
+            console.log(`[API] Education path: ${primaryPath} (${Math.round(scoreKey)}%)`);
+          }
         }
       }
     } else {
@@ -291,7 +371,11 @@ export async function POST(request: NextRequest) {
         dimensionScores: userProfile.dimensionScores,
         topStrengths: userProfile.topStrengths,
         cohort: userProfile.cohort,
-        personalizedAnalysis: userProfile.personalizedAnalysis
+        personalizedAnalysis: userProfile.personalizedAnalysis,
+        // NEW: Enhanced profile data
+        categoryAffinities: userProfile.categoryAffinities,
+        hybridPaths: userProfile.hybridPaths,
+        profileConfidence: userProfile.profileConfidence
       },
       topCareers: topCareers.map(career => ({
         slug: career.slug,

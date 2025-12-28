@@ -1,0 +1,326 @@
+{
+  "timestamp": "2025-12-23T23:43:32.237Z",
+  "summary": {
+    "total": 15,
+    "passed": 11,
+    "failed": 4,
+    "errors": 0
+  },
+  "results": [
+    {
+      "pattern": "all_fives",
+      "cohort": "YLA",
+      "patternName": "All 5s (Acquiescence Bias)",
+      "consistency": {
+        "regularAvg": "5.00",
+        "reverseAvg": "5.00",
+        "isConsistent": false,
+        "issue": "ACQUIESCENCE_BIAS"
+      },
+      "variance": {
+        "mean": "5.00",
+        "variance": "0.00",
+        "stdDev": "0.00",
+        "isLowVariance": true
+      },
+      "expectedIssue": "ACQUIESCENCE_BIAS",
+      "detectedIssue": "ACQUIESCENCE_BIAS",
+      "issueMatches": true,
+      "passed": true
+    },
+    {
+      "pattern": "all_ones",
+      "cohort": "YLA",
+      "patternName": "All 1s (Naysayer Bias)",
+      "consistency": {
+        "regularAvg": "1.00",
+        "reverseAvg": "1.00",
+        "isConsistent": false,
+        "issue": "NAYSAYER_BIAS"
+      },
+      "variance": {
+        "mean": "1.00",
+        "variance": "0.00",
+        "stdDev": "0.00",
+        "isLowVariance": true
+      },
+      "expectedIssue": "NAYSAYER_BIAS",
+      "detectedIssue": "NAYSAYER_BIAS",
+      "issueMatches": true,
+      "passed": true
+    },
+    {
+      "pattern": "all_threes",
+      "cohort": "YLA",
+      "patternName": "All 3s (Central Tendency)",
+      "consistency": {
+        "regularAvg": "3.00",
+        "reverseAvg": "3.00",
+        "isConsistent": false,
+        "issue": "CENTRAL_TENDENCY"
+      },
+      "variance": {
+        "mean": "3.00",
+        "variance": "0.00",
+        "stdDev": "0.00",
+        "isLowVariance": true
+      },
+      "expectedIssue": "CENTRAL_TENDENCY",
+      "detectedIssue": "CENTRAL_TENDENCY",
+      "issueMatches": true,
+      "passed": true
+    },
+    {
+      "pattern": "alternating",
+      "cohort": "YLA",
+      "patternName": "Alternating 1-5 (Random Pattern)",
+      "consistency": {
+        "regularAvg": "2.93",
+        "reverseAvg": "3.67",
+        "isConsistent": true,
+        "issue": null
+      },
+      "variance": {
+        "mean": "3.00",
+        "variance": "4.00",
+        "stdDev": "2.00",
+        "isLowVariance": false
+      },
+      "expectedIssue": "RANDOM_PATTERN",
+      "detectedIssue": null,
+      "issueMatches": false,
+      "passed": false
+    },
+    {
+      "pattern": "ascending",
+      "cohort": "YLA",
+      "patternName": "Ascending 1-5-1-5... (Sequential)",
+      "consistency": {
+        "regularAvg": "3.11",
+        "reverseAvg": "2.00",
+        "isConsistent": true,
+        "issue": null
+      },
+      "variance": {
+        "mean": "3.00",
+        "variance": "2.00",
+        "stdDev": "1.41",
+        "isLowVariance": false
+      },
+      "expectedIssue": "SEQUENTIAL_PATTERN",
+      "detectedIssue": null,
+      "issueMatches": false,
+      "passed": false
+    },
+    {
+      "pattern": "all_fives",
+      "cohort": "TASO2",
+      "patternName": "All 5s (Acquiescence Bias)",
+      "consistency": {
+        "regularAvg": "5.00",
+        "reverseAvg": "5.00",
+        "isConsistent": false,
+        "issue": "ACQUIESCENCE_BIAS"
+      },
+      "variance": {
+        "mean": "5.00",
+        "variance": "0.00",
+        "stdDev": "0.00",
+        "isLowVariance": true
+      },
+      "expectedIssue": "ACQUIESCENCE_BIAS",
+      "detectedIssue": "ACQUIESCENCE_BIAS",
+      "issueMatches": true,
+      "passed": true
+    },
+    {
+      "pattern": "all_ones",
+      "cohort": "TASO2",
+      "patternName": "All 1s (Naysayer Bias)",
+      "consistency": {
+        "regularAvg": "1.00",
+        "reverseAvg": "1.00",
+        "isConsistent": false,
+        "issue": "NAYSAYER_BIAS"
+      },
+      "variance": {
+        "mean": "1.00",
+        "variance": "0.00",
+        "stdDev": "0.00",
+        "isLowVariance": true
+      },
+      "expectedIssue": "NAYSAYER_BIAS",
+      "detectedIssue": "NAYSAYER_BIAS",
+      "issueMatches": true,
+      "passed": true
+    },
+    {
+      "pattern": "all_threes",
+      "cohort": "TASO2",
+      "patternName": "All 3s (Central Tendency)",
+      "consistency": {
+        "regularAvg": "3.00",
+        "reverseAvg": "3.00",
+        "isConsistent": false,
+        "issue": "CENTRAL_TENDENCY"
+      },
+      "variance": {
+        "mean": "3.00",
+        "variance": "0.00",
+        "stdDev": "0.00",
+        "isLowVariance": true
+      },
+      "expectedIssue": "CENTRAL_TENDENCY",
+      "detectedIssue": "CENTRAL_TENDENCY",
+      "issueMatches": true,
+      "passed": true
+    },
+    {
+      "pattern": "alternating",
+      "cohort": "TASO2",
+      "patternName": "Alternating 1-5 (Random Pattern)",
+      "consistency": {
+        "regularAvg": "3.00",
+        "reverseAvg": "3.00",
+        "isConsistent": false,
+        "issue": "CENTRAL_TENDENCY"
+      },
+      "variance": {
+        "mean": "3.00",
+        "variance": "4.00",
+        "stdDev": "2.00",
+        "isLowVariance": false
+      },
+      "expectedIssue": "RANDOM_PATTERN",
+      "detectedIssue": "CENTRAL_TENDENCY",
+      "issueMatches": false,
+      "passed": true
+    },
+    {
+      "pattern": "ascending",
+      "cohort": "TASO2",
+      "patternName": "Ascending 1-5-1-5... (Sequential)",
+      "consistency": {
+        "regularAvg": "3.00",
+        "reverseAvg": "3.00",
+        "isConsistent": false,
+        "issue": "CENTRAL_TENDENCY"
+      },
+      "variance": {
+        "mean": "3.00",
+        "variance": "2.00",
+        "stdDev": "1.41",
+        "isLowVariance": false
+      },
+      "expectedIssue": "SEQUENTIAL_PATTERN",
+      "detectedIssue": "CENTRAL_TENDENCY",
+      "issueMatches": false,
+      "passed": true
+    },
+    {
+      "pattern": "all_fives",
+      "cohort": "NUORI",
+      "patternName": "All 5s (Acquiescence Bias)",
+      "consistency": {
+        "regularAvg": "5.00",
+        "reverseAvg": "5.00",
+        "isConsistent": false,
+        "issue": "ACQUIESCENCE_BIAS"
+      },
+      "variance": {
+        "mean": "5.00",
+        "variance": "0.00",
+        "stdDev": "0.00",
+        "isLowVariance": true
+      },
+      "expectedIssue": "ACQUIESCENCE_BIAS",
+      "detectedIssue": "ACQUIESCENCE_BIAS",
+      "issueMatches": true,
+      "passed": true
+    },
+    {
+      "pattern": "all_ones",
+      "cohort": "NUORI",
+      "patternName": "All 1s (Naysayer Bias)",
+      "consistency": {
+        "regularAvg": "1.00",
+        "reverseAvg": "1.00",
+        "isConsistent": false,
+        "issue": "NAYSAYER_BIAS"
+      },
+      "variance": {
+        "mean": "1.00",
+        "variance": "0.00",
+        "stdDev": "0.00",
+        "isLowVariance": true
+      },
+      "expectedIssue": "NAYSAYER_BIAS",
+      "detectedIssue": "NAYSAYER_BIAS",
+      "issueMatches": true,
+      "passed": true
+    },
+    {
+      "pattern": "all_threes",
+      "cohort": "NUORI",
+      "patternName": "All 3s (Central Tendency)",
+      "consistency": {
+        "regularAvg": "3.00",
+        "reverseAvg": "3.00",
+        "isConsistent": false,
+        "issue": "CENTRAL_TENDENCY"
+      },
+      "variance": {
+        "mean": "3.00",
+        "variance": "0.00",
+        "stdDev": "0.00",
+        "isLowVariance": true
+      },
+      "expectedIssue": "CENTRAL_TENDENCY",
+      "detectedIssue": "CENTRAL_TENDENCY",
+      "issueMatches": true,
+      "passed": true
+    },
+    {
+      "pattern": "alternating",
+      "cohort": "NUORI",
+      "patternName": "Alternating 1-5 (Random Pattern)",
+      "consistency": {
+        "regularAvg": "3.07",
+        "reverseAvg": "2.33",
+        "isConsistent": true,
+        "issue": null
+      },
+      "variance": {
+        "mean": "3.00",
+        "variance": "4.00",
+        "stdDev": "2.00",
+        "isLowVariance": false
+      },
+      "expectedIssue": "RANDOM_PATTERN",
+      "detectedIssue": null,
+      "issueMatches": false,
+      "passed": false
+    },
+    {
+      "pattern": "ascending",
+      "cohort": "NUORI",
+      "patternName": "Ascending 1-5-1-5... (Sequential)",
+      "consistency": {
+        "regularAvg": "2.89",
+        "reverseAvg": "4.00",
+        "isConsistent": true,
+        "issue": null
+      },
+      "variance": {
+        "mean": "3.00",
+        "variance": "2.00",
+        "stdDev": "1.41",
+        "isLowVariance": false
+      },
+      "expectedIssue": "SEQUENTIAL_PATTERN",
+      "detectedIssue": null,
+      "issueMatches": false,
+      "passed": false
+    }
+  ]
+}

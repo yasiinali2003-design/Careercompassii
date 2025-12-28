@@ -1,0 +1,217 @@
+{
+  "timestamp": "2025-12-24T03:42:54.114Z",
+  "config": {
+    "baseUrl": "https://urakompassi.fi",
+    "concurrentUsers": 10
+  },
+  "summary": {
+    "duration": 3414,
+    "successful": 10,
+    "failed": 0,
+    "avgResponseTime": 2769,
+    "p95ResponseTime": 3412,
+    "requestsPerSecond": 5.858230814294083
+  },
+  "results": [
+    {
+      "userId": 1,
+      "cohort": "NUORI",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 200,
+          "time": 561,
+          "success": true
+        },
+        {
+          "name": "Submit Test",
+          "status": 200,
+          "time": 2000,
+          "success": true
+        }
+      ],
+      "success": true,
+      "totalTime": 2563
+    },
+    {
+      "userId": 2,
+      "cohort": "NUORI",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 200,
+          "time": 597,
+          "success": true
+        },
+        {
+          "name": "Submit Test",
+          "status": 200,
+          "time": 2157,
+          "success": true
+        }
+      ],
+      "success": true,
+      "totalTime": 2757
+    },
+    {
+      "userId": 3,
+      "cohort": "YLA",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 200,
+          "time": 544,
+          "success": true
+        },
+        {
+          "name": "Submit Test",
+          "status": 200,
+          "time": 2198,
+          "success": true
+        }
+      ],
+      "success": true,
+      "totalTime": 2744
+    },
+    {
+      "userId": 4,
+      "cohort": "TASO2",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 200,
+          "time": 622,
+          "success": true
+        },
+        {
+          "name": "Submit Test",
+          "status": 200,
+          "time": 1950,
+          "success": true
+        }
+      ],
+      "success": true,
+      "totalTime": 2573
+    },
+    {
+      "userId": 5,
+      "cohort": "TASO2",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 200,
+          "time": 515,
+          "success": true
+        },
+        {
+          "name": "Submit Test",
+          "status": 200,
+          "time": 2896,
+          "success": true
+        }
+      ],
+      "success": true,
+      "totalTime": 3412
+    },
+    {
+      "userId": 6,
+      "cohort": "YLA",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 200,
+          "time": 397,
+          "success": true
+        },
+        {
+          "name": "Submit Test",
+          "status": 200,
+          "time": 2321,
+          "success": true
+        }
+      ],
+      "success": true,
+      "totalTime": 2720
+    },
+    {
+      "userId": 7,
+      "cohort": "YLA",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 200,
+          "time": 519,
+          "success": true
+        },
+        {
+          "name": "Submit Test",
+          "status": 200,
+          "time": 2377,
+          "success": true
+        }
+      ],
+      "success": true,
+      "totalTime": 2897
+    },
+    {
+      "userId": 8,
+      "cohort": "YLA",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 200,
+          "time": 705,
+          "success": true
+        },
+        {
+          "name": "Submit Test",
+          "status": 200,
+          "time": 2026,
+          "success": true
+        }
+      ],
+      "success": true,
+      "totalTime": 2732
+    },
+    {
+      "userId": 9,
+      "cohort": "NUORI",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 200,
+          "time": 1072,
+          "success": true
+        },
+        {
+          "name": "Submit Test",
+          "status": 200,
+          "time": 1645,
+          "success": true
+        }
+      ],
+      "success": true,
+      "totalTime": 2718
+    },
+    {
+      "userId": 10,
+      "cohort": "TASO2",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 200,
+          "time": 610,
+          "success": true
+        },
+        {
+          "name": "Submit Test",
+          "status": 200,
+          "time": 1959,
+          "success": true
+        }
+      ],
+      "success": true,
+      "totalTime": 2570
+    }
+  ]
+}

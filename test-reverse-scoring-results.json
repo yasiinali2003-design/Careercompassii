@@ -1,0 +1,177 @@
+{
+  "timestamp": "2025-12-24T03:16:05.027Z",
+  "summary": {
+    "total": 16,
+    "passed": 16,
+    "failed": 0
+  },
+  "cohortsTestr": 4,
+  "results": [
+    {
+      "cohort": "YLA (Yläaste)",
+      "tests": [
+        {
+          "name": "Reverse Contribution",
+          "passed": true
+        },
+        {
+          "name": "Impact on Results",
+          "passed": true
+        },
+        {
+          "name": "Individual Questions",
+          "passed": true,
+          "results": [
+            {
+              "questionIndex": 18,
+              "questionText": "Onko sinun vaikea keskittyä pitkään samaan tehtävä...",
+              "dimensionsDiffer": true,
+              "careersDiffer": false,
+              "affects": true
+            },
+            {
+              "questionIndex": 20,
+              "questionText": "Stressaannutko helposti, kun on kiire?...",
+              "dimensionsDiffer": true,
+              "careersDiffer": false,
+              "affects": true
+            },
+            {
+              "questionIndex": 25,
+              "questionText": "Onko sinulle yhdentekevää, huomaavatko muut saavut...",
+              "dimensionsDiffer": true,
+              "careersDiffer": true,
+              "affects": true
+            }
+          ],
+          "note": "All reverse questions affect profile or results"
+        },
+        {
+          "name": "Reverse Equivalence",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "cohort": "TASO2 Lukio",
+      "tests": [
+        {
+          "name": "Reverse Contribution",
+          "passed": true
+        },
+        {
+          "name": "Impact on Results",
+          "passed": true
+        },
+        {
+          "name": "Individual Questions",
+          "passed": true,
+          "results": [
+            {
+              "questionIndex": 18,
+              "questionText": "Turhauttavatko tarkat säännöt ja yksityiskohdat si...",
+              "dimensionsDiffer": true,
+              "careersDiffer": true,
+              "affects": true
+            },
+            {
+              "questionIndex": 21,
+              "questionText": "Ärsyttääkö sinua, kun opiskelu etenee hitaasti tai...",
+              "dimensionsDiffer": true,
+              "careersDiffer": false,
+              "affects": true
+            }
+          ],
+          "note": "All reverse questions affect profile or results"
+        },
+        {
+          "name": "Reverse Equivalence",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "cohort": "TASO2 Ammattikoulu",
+      "tests": [
+        {
+          "name": "Reverse Contribution",
+          "passed": true
+        },
+        {
+          "name": "Impact on Results",
+          "passed": true
+        },
+        {
+          "name": "Individual Questions",
+          "passed": true,
+          "results": [
+            {
+              "questionIndex": 18,
+              "questionText": "Turhauttavatko tarkat säännöt ja yksityiskohdat si...",
+              "dimensionsDiffer": true,
+              "careersDiffer": true,
+              "affects": true
+            },
+            {
+              "questionIndex": 21,
+              "questionText": "Ärsyttääkö sinua, kun asiat eivät toimi heti tai t...",
+              "dimensionsDiffer": true,
+              "careersDiffer": false,
+              "affects": true
+            }
+          ],
+          "note": "All reverse questions affect profile or results"
+        },
+        {
+          "name": "Reverse Equivalence",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "cohort": "NUORI (Nuori aikuinen)",
+      "tests": [
+        {
+          "name": "Reverse Contribution",
+          "passed": true
+        },
+        {
+          "name": "Impact on Results",
+          "passed": true
+        },
+        {
+          "name": "Individual Questions",
+          "passed": true,
+          "results": [
+            {
+              "questionIndex": 16,
+              "questionText": "Väsyttääkö jatkuva asiakkaiden kohtaaminen sinua?...",
+              "dimensionsDiffer": true,
+              "careersDiffer": false,
+              "affects": true
+            },
+            {
+              "questionIndex": 19,
+              "questionText": "Stressaako kiireinen työtahti sinua?...",
+              "dimensionsDiffer": true,
+              "careersDiffer": false,
+              "affects": true
+            },
+            {
+              "questionIndex": 29,
+              "questionText": "Onko työpaikan kulttuuri sinulle yhdentekevää?...",
+              "dimensionsDiffer": true,
+              "careersDiffer": false,
+              "affects": true
+            }
+          ],
+          "note": "All reverse questions affect profile or results"
+        },
+        {
+          "name": "Reverse Equivalence",
+          "passed": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1598 @@
+{
+  "timestamp": "2025-12-23T23:47:09.717Z",
+  "summary": {
+    "totalScore": 12,
+    "maxScore": 12,
+    "percentage": "100"
+  },
+  "results": {
+    "YLA": {
+      "profileDiversity": {
+        "results": {
+          "creative": {
+            "profile": "creative",
+            "profileName": "Creative/Artistic",
+            "cohort": "YLA",
+            "careers": [
+              {
+                "title": "Rakennusmestari",
+                "category": "rakentaja",
+                "score": 100
+              },
+              {
+                "title": "Putkiasentaja",
+                "category": "rakentaja",
+                "score": 100
+              },
+              {
+                "title": "Maalari",
+                "category": "rakentaja",
+                "score": 100
+              },
+              {
+                "title": "Kattomestari",
+                "category": "rakentaja",
+                "score": 100
+              },
+              {
+                "title": "Talonrakentaja",
+                "category": "rakentaja",
+                "score": 100
+              }
+            ]
+          },
+          "analytical": {
+            "profile": "analytical",
+            "profileName": "Analytical/Technical",
+            "cohort": "YLA",
+            "careers": [
+              {
+                "title": "Asiakaspalvelupäällikkö",
+                "category": "johtaja",
+                "score": 100
+              },
+              {
+                "title": "Sairaanhoitaja",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Bioanalyytikko",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Kouluterveydenhoitaja",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Kotihoitaja",
+                "category": "auttaja",
+                "score": 100
+              }
+            ]
+          },
+          "social": {
+            "profile": "social",
+            "profileName": "Social/Helping",
+            "cohort": "YLA",
+            "careers": [
+              {
+                "title": "Graafinen suunnittelija",
+                "category": "luova",
+                "score": 100
+              },
+              {
+                "title": "Muusikko",
+                "category": "luova",
+                "score": 100
+              },
+              {
+                "title": "Kameramies",
+                "category": "luova",
+                "score": 100
+              },
+              {
+                "title": "Kirjailija",
+                "category": "luova",
+                "score": 100
+              },
+              {
+                "title": "Tuotemuotoilija",
+                "category": "luova",
+                "score": 100
+              }
+            ]
+          },
+          "leadership": {
+            "profile": "leadership",
+            "profileName": "Leadership/Enterprising",
+            "cohort": "YLA",
+            "careers": [
+              {
+                "title": "Full-Stack-kehittäjä",
+                "category": "innovoija",
+                "score": 95
+              },
+              {
+                "title": "Tietoturva-asiantuntija",
+                "category": "innovoija",
+                "score": 94
+              },
+              {
+                "title": "Digitaalisen markkinoinnin asiantuntija",
+                "category": "innovoija",
+                "score": 94
+              },
+              {
+                "title": "Liiketoimintakehittäjä",
+                "category": "innovoija",
+                "score": 94
+              },
+              {
+                "title": "Testausasiantuntija",
+                "category": "innovoija",
+                "score": 94
+              }
+            ]
+          },
+          "practical": {
+            "profile": "practical",
+            "profileName": "Practical/Hands-on",
+            "cohort": "YLA",
+            "careers": [
+              {
+                "title": "Putkiasentaja",
+                "category": "rakentaja",
+                "score": 100
+              },
+              {
+                "title": "Maalari",
+                "category": "rakentaja",
+                "score": 100
+              },
+              {
+                "title": "Kattomestari",
+                "category": "rakentaja",
+                "score": 100
+              },
+              {
+                "title": "LVI-asentaja",
+                "category": "rakentaja",
+                "score": 100
+              },
+              {
+                "title": "Talonrakentaja",
+                "category": "rakentaja",
+                "score": 100
+              }
+            ]
+          },
+          "balanced": {
+            "profile": "balanced",
+            "profileName": "Balanced/Generalist",
+            "cohort": "YLA",
+            "careers": [
+              {
+                "title": "Data-insinööri",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Pelisuunnittelija",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Biotekniikka-insinööri",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Kvantti-insinööri",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Blockchain-insinööri",
+                "category": "innovoija",
+                "score": 100
+              }
+            ]
+          },
+          "random": {
+            "profile": "random",
+            "profileName": "Random",
+            "cohort": "YLA",
+            "careers": [
+              {
+                "title": "Valosuunnittelija",
+                "category": "luova",
+                "score": 100
+              },
+              {
+                "title": "Sisältöstrategisti",
+                "category": "luova",
+                "score": 100
+              },
+              {
+                "title": "Julkisen taiteen koordinaattori",
+                "category": "luova",
+                "score": 100
+              },
+              {
+                "title": "Lokalisointiasiantuntija",
+                "category": "luova",
+                "score": 99
+              },
+              {
+                "title": "Sisällöntuottaja",
+                "category": "luova",
+                "score": 99
+              }
+            ]
+          }
+        },
+        "uniqueCareers": 31,
+        "uniqueCategories": 5,
+        "categories": [
+          "rakentaja",
+          "johtaja",
+          "auttaja",
+          "luova",
+          "innovoija"
+        ]
+      },
+      "randomDiversity": {
+        "uniqueCareers": 36,
+        "uniqueCategories": 5,
+        "careerCounts": [
+          [
+            "Putkiasentaja",
+            4
+          ],
+          [
+            "Maalari",
+            4
+          ],
+          [
+            "Kattomestari",
+            4
+          ],
+          [
+            "LVI-asentaja",
+            4
+          ],
+          [
+            "Rakennusmestari",
+            3
+          ],
+          [
+            "Data-insinööri",
+            3
+          ],
+          [
+            "Pelisuunnittelija",
+            3
+          ],
+          [
+            "Robotiikka-insinööri",
+            3
+          ],
+          [
+            "Biotekniikka-insinööri",
+            3
+          ],
+          [
+            "Nanotekniikka-insinööri",
+            3
+          ],
+          [
+            "Biologi",
+            3
+          ],
+          [
+            "Ympäristöinsinööri",
+            3
+          ],
+          [
+            "Ilmastotutkija",
+            3
+          ],
+          [
+            "Luonnonsuojelija",
+            3
+          ],
+          [
+            "Uusiutuva energia -insinööri",
+            3
+          ],
+          [
+            "Graafinen suunnittelija",
+            2
+          ],
+          [
+            "Muusikko",
+            2
+          ],
+          [
+            "Kameramies",
+            2
+          ],
+          [
+            "Kirjailija",
+            2
+          ],
+          [
+            "Tuotemuotoilija",
+            2
+          ],
+          [
+            "Teatteriohjaaja",
+            1
+          ],
+          [
+            "Käsikirjoittaja",
+            1
+          ],
+          [
+            "Mediatuottaja",
+            1
+          ],
+          [
+            "Videonmuokkaaja",
+            1
+          ],
+          [
+            "Digitaalinen sisältötuottaja",
+            1
+          ],
+          [
+            "Talonrakentaja",
+            1
+          ],
+          [
+            "Henkilöstöpäällikkö",
+            1
+          ],
+          [
+            "Tuotantopäällikkö",
+            1
+          ],
+          [
+            "Asiakaspalvelupäällikkö",
+            1
+          ],
+          [
+            "Tietoturvapäällikkö",
+            1
+          ],
+          [
+            "Kehityspäällikkö",
+            1
+          ],
+          [
+            "Metsänhoitaja",
+            1
+          ],
+          [
+            "Biokaasuteknikko",
+            1
+          ],
+          [
+            "Kiertotalouden asiantuntija",
+            1
+          ],
+          [
+            "Ilmastoasiantuntija",
+            1
+          ],
+          [
+            "Luontokohteen hoitaja",
+            1
+          ]
+        ],
+        "categoryCounts": [
+          [
+            "rakentaja",
+            20
+          ],
+          [
+            "ympariston-puolustaja",
+            20
+          ],
+          [
+            "luova",
+            15
+          ],
+          [
+            "innovoija",
+            15
+          ],
+          [
+            "johtaja",
+            5
+          ]
+        ],
+        "topCareerCounts": [
+          [
+            "Rakennusmestari",
+            3
+          ],
+          [
+            "Data-insinööri",
+            3
+          ],
+          [
+            "Biologi",
+            3
+          ],
+          [
+            "Graafinen suunnittelija",
+            2
+          ],
+          [
+            "Teatteriohjaaja",
+            1
+          ],
+          [
+            "Putkiasentaja",
+            1
+          ],
+          [
+            "Henkilöstöpäällikkö",
+            1
+          ],
+          [
+            "Metsänhoitaja",
+            1
+          ]
+        ],
+        "maxCareerPercent": 5.333333333333334,
+        "maxTopCareerPercent": 20
+      },
+      "uniqueness": {
+        "results": [
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 1,
+            "hasRepeats": false
+          },
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 1,
+            "hasRepeats": false
+          },
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 1,
+            "hasRepeats": false
+          },
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 1,
+            "hasRepeats": false
+          },
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 1,
+            "hasRepeats": false
+          }
+        ],
+        "allUnique": true,
+        "avgUniqueCategories": 1
+      },
+      "differentiation": {
+        "profileTopCareers": {
+          "creative": "Rakennusmestari",
+          "analytical": "Asiakaspalvelupäällikkö",
+          "social": "Graafinen suunnittelija",
+          "leadership": "Full-Stack-kehittäjä",
+          "practical": "Putkiasentaja",
+          "balanced": "Data-insinööri"
+        },
+        "uniqueTopCareers": 6,
+        "differentiationScore": 100
+      }
+    },
+    "TASO2": {
+      "profileDiversity": {
+        "results": {
+          "creative": {
+            "profile": "creative",
+            "profileName": "Creative/Artistic",
+            "cohort": "TASO2",
+            "careers": [
+              {
+                "title": "Sairaanhoitaja",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Bioanalyytikko",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Kouluterveydenhoitaja",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Kotihoitaja",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Ravitsemusasiantuntija",
+                "category": "auttaja",
+                "score": 100
+              }
+            ]
+          },
+          "analytical": {
+            "profile": "analytical",
+            "profileName": "Analytical/Technical",
+            "cohort": "TASO2",
+            "careers": [
+              {
+                "title": "Sairaanhoitaja",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Bioanalyytikko",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Kouluterveydenhoitaja",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Kotihoitaja",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Ravitsemusasiantuntija",
+                "category": "auttaja",
+                "score": 100
+              }
+            ]
+          },
+          "social": {
+            "profile": "social",
+            "profileName": "Social/Helping",
+            "cohort": "TASO2",
+            "careers": [
+              {
+                "title": "Biologi",
+                "category": "ympariston-puolustaja",
+                "score": 100
+              },
+              {
+                "title": "Ympäristöinsinööri",
+                "category": "ympariston-puolustaja",
+                "score": 100
+              },
+              {
+                "title": "Ilmastotutkija",
+                "category": "ympariston-puolustaja",
+                "score": 100
+              },
+              {
+                "title": "Luonnonsuojelija",
+                "category": "ympariston-puolustaja",
+                "score": 100
+              },
+              {
+                "title": "Uusiutuva energia -insinööri",
+                "category": "ympariston-puolustaja",
+                "score": 100
+              }
+            ]
+          },
+          "leadership": {
+            "profile": "leadership",
+            "profileName": "Leadership/Enterprising",
+            "cohort": "TASO2",
+            "careers": [
+              {
+                "title": "Etätiimin vetäjä",
+                "category": "johtaja",
+                "score": 95
+              },
+              {
+                "title": "Asiakaspalvelujohtaja",
+                "category": "johtaja",
+                "score": 95
+              },
+              {
+                "title": "Analytiikkajohtaja",
+                "category": "johtaja",
+                "score": 95
+              },
+              {
+                "title": "Liiketoiminnan kehityspäällikkö",
+                "category": "johtaja",
+                "score": 94
+              },
+              {
+                "title": "Teknologiajohtaja (CTO)",
+                "category": "johtaja",
+                "score": 94
+              }
+            ]
+          },
+          "practical": {
+            "profile": "practical",
+            "profileName": "Practical/Hands-on",
+            "cohort": "TASO2",
+            "careers": [
+              {
+                "title": "Kattomestari",
+                "category": "rakentaja",
+                "score": 100
+              },
+              {
+                "title": "Sairaanhoitaja",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Bioanalyytikko",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Kouluterveydenhoitaja",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Kotihoitaja",
+                "category": "auttaja",
+                "score": 100
+              }
+            ]
+          },
+          "balanced": {
+            "profile": "balanced",
+            "profileName": "Balanced/Generalist",
+            "cohort": "TASO2",
+            "careers": [
+              {
+                "title": "Koulutuskoordinaattori",
+                "category": "jarjestaja",
+                "score": 85
+              },
+              {
+                "title": "Notaari",
+                "category": "jarjestaja",
+                "score": 84
+              },
+              {
+                "title": "Työnkulkukoordinaattori",
+                "category": "jarjestaja",
+                "score": 84
+              },
+              {
+                "title": "Laboratoriopäällikkö",
+                "category": "jarjestaja",
+                "score": 84
+              },
+              {
+                "title": "Kunnossapitosuunnittelija",
+                "category": "jarjestaja",
+                "score": 84
+              }
+            ]
+          },
+          "random": {
+            "profile": "random",
+            "profileName": "Random",
+            "cohort": "TASO2",
+            "careers": [
+              {
+                "title": "Data-insinööri",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Pelisuunnittelija",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Robotiikka-insinööri",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Biotekniikka-insinööri",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Nanotekniikka-insinööri",
+                "category": "innovoija",
+                "score": 100
+              }
+            ]
+          }
+        },
+        "uniqueCareers": 26,
+        "uniqueCategories": 6,
+        "categories": [
+          "auttaja",
+          "ympariston-puolustaja",
+          "johtaja",
+          "rakentaja",
+          "jarjestaja",
+          "innovoija"
+        ]
+      },
+      "randomDiversity": {
+        "uniqueCareers": 49,
+        "uniqueCategories": 6,
+        "careerCounts": [
+          [
+            "Tuotemuotoilija",
+            5
+          ],
+          [
+            "Teatteriohjaaja",
+            4
+          ],
+          [
+            "Valokuvaaja",
+            3
+          ],
+          [
+            "Kirjailija",
+            2
+          ],
+          [
+            "Videonmuokkaaja",
+            2
+          ],
+          [
+            "Sairaanhoitaja",
+            2
+          ],
+          [
+            "Bioanalyytikko",
+            2
+          ],
+          [
+            "Kouluterveydenhoitaja",
+            2
+          ],
+          [
+            "Kotihoitaja",
+            2
+          ],
+          [
+            "Ravitsemusasiantuntija",
+            2
+          ],
+          [
+            "Tuotantopäällikkö",
+            2
+          ],
+          [
+            "Talouspäällikkö",
+            2
+          ],
+          [
+            "Asiakaspalvelupäällikkö",
+            2
+          ],
+          [
+            "Myyntipäällikkö",
+            2
+          ],
+          [
+            "Koreografi",
+            2
+          ],
+          [
+            "Julkisen taiteen koordinaattori",
+            2
+          ],
+          [
+            "Ympäristöinsinööri",
+            2
+          ],
+          [
+            "Uusiutuva energia -insinööri",
+            2
+          ],
+          [
+            "Ympäristökasvattaja",
+            2
+          ],
+          [
+            "Vesi-insinööri",
+            2
+          ],
+          [
+            "Kameramies",
+            1
+          ],
+          [
+            "Inklusiivinen sisällöntuottaja",
+            1
+          ],
+          [
+            "Verkkokurssien luoja",
+            1
+          ],
+          [
+            "Graafinen suunnittelija",
+            1
+          ],
+          [
+            "Pukusuunnittelija",
+            1
+          ],
+          [
+            "Robotiikka-insinööri",
+            1
+          ],
+          [
+            "Automaatio-insinööri",
+            1
+          ],
+          [
+            "Ohjelmistokehittäjä",
+            1
+          ],
+          [
+            "Elintarviketutkija",
+            1
+          ],
+          [
+            "Verkkoasiantuntija",
+            1
+          ],
+          [
+            "Kehityspäällikkö",
+            1
+          ],
+          [
+            "Valosuunnittelija",
+            1
+          ],
+          [
+            "Laatuasiantuntija",
+            1
+          ],
+          [
+            "Asiakaskokemuksen suunnittelija",
+            1
+          ],
+          [
+            "Henkilöstöpäällikkö",
+            1
+          ],
+          [
+            "Tietoturvapäällikkö",
+            1
+          ],
+          [
+            "Osastonhoitaja (sairaala)",
+            1
+          ],
+          [
+            "Rakennuspäällikkö",
+            1
+          ],
+          [
+            "Vastuullinen myyntiedustaja",
+            1
+          ],
+          [
+            "Ohjelmistojohtaja",
+            1
+          ],
+          [
+            "Sisältöstrategisti",
+            1
+          ],
+          [
+            "Sisältötuottaja",
+            1
+          ],
+          [
+            "Luonnonsuojelija",
+            1
+          ],
+          [
+            "Liiketoiminnan kehityspäällikkö",
+            1
+          ],
+          [
+            "Etätiimin vetäjä",
+            1
+          ],
+          [
+            "Teknologiajohtaja (CTO)",
+            1
+          ],
+          [
+            "Myyntijohtaja",
+            1
+          ],
+          [
+            "Asiakaspalvelujohtaja",
+            1
+          ],
+          [
+            "Hiilijalanjälki-asiantuntija",
+            1
+          ]
+        ],
+        "categoryCounts": [
+          [
+            "luova",
+            29
+          ],
+          [
+            "johtaja",
+            20
+          ],
+          [
+            "auttaja",
+            10
+          ],
+          [
+            "ympariston-puolustaja",
+            10
+          ],
+          [
+            "innovoija",
+            5
+          ],
+          [
+            "jarjestaja",
+            1
+          ]
+        ],
+        "topCareerCounts": [
+          [
+            "Tuotemuotoilija",
+            3
+          ],
+          [
+            "Sairaanhoitaja",
+            2
+          ],
+          [
+            "Ympäristöinsinööri",
+            2
+          ],
+          [
+            "Kameramies",
+            1
+          ],
+          [
+            "Graafinen suunnittelija",
+            1
+          ],
+          [
+            "Robotiikka-insinööri",
+            1
+          ],
+          [
+            "Tuotantopäällikkö",
+            1
+          ],
+          [
+            "Valosuunnittelija",
+            1
+          ],
+          [
+            "Henkilöstöpäällikkö",
+            1
+          ],
+          [
+            "Osastonhoitaja (sairaala)",
+            1
+          ],
+          [
+            "Liiketoiminnan kehityspäällikkö",
+            1
+          ]
+        ],
+        "maxCareerPercent": 6.666666666666667,
+        "maxTopCareerPercent": 20
+      },
+      "uniqueness": {
+        "results": [
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 2,
+            "hasRepeats": false
+          },
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 1,
+            "hasRepeats": false
+          },
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 1,
+            "hasRepeats": false
+          },
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 1,
+            "hasRepeats": false
+          },
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 1,
+            "hasRepeats": false
+          }
+        ],
+        "allUnique": true,
+        "avgUniqueCategories": 1.2
+      },
+      "differentiation": {
+        "profileTopCareers": {
+          "creative": "Sairaanhoitaja",
+          "analytical": "Sairaanhoitaja",
+          "social": "Biologi",
+          "leadership": "Etätiimin vetäjä",
+          "practical": "Kattomestari",
+          "balanced": "Koulutuskoordinaattori"
+        },
+        "uniqueTopCareers": 5,
+        "differentiationScore": 83
+      }
+    },
+    "NUORI": {
+      "profileDiversity": {
+        "results": {
+          "creative": {
+            "profile": "creative",
+            "profileName": "Creative/Artistic",
+            "cohort": "NUORI",
+            "careers": [
+              {
+                "title": "Tuotemuotoilija",
+                "category": "luova",
+                "score": 100
+              },
+              {
+                "title": "Data-insinööri",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Pelisuunnittelija",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Robotiikka-insinööri",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Biotekniikka-insinööri",
+                "category": "innovoija",
+                "score": 100
+              }
+            ]
+          },
+          "analytical": {
+            "profile": "analytical",
+            "profileName": "Analytical/Technical",
+            "cohort": "NUORI",
+            "careers": [
+              {
+                "title": "Tuotantopäällikkö",
+                "category": "johtaja",
+                "score": 100
+              },
+              {
+                "title": "Sairaanhoitaja",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Bioanalyytikko",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Kouluterveydenhoitaja",
+                "category": "auttaja",
+                "score": 100
+              },
+              {
+                "title": "Kotihoitaja",
+                "category": "auttaja",
+                "score": 100
+              }
+            ]
+          },
+          "social": {
+            "profile": "social",
+            "profileName": "Social/Helping",
+            "cohort": "NUORI",
+            "careers": [
+              {
+                "title": "Tuotantopäällikkö",
+                "category": "johtaja",
+                "score": 100
+              },
+              {
+                "title": "Hiilijalanjälki-asiantuntija",
+                "category": "ympariston-puolustaja",
+                "score": 100
+              },
+              {
+                "title": "Biologinen monimuotoisuus -asiantuntija",
+                "category": "ympariston-puolustaja",
+                "score": 100
+              },
+              {
+                "title": "Palvelumuotoilija",
+                "category": "johtaja",
+                "score": 100
+              },
+              {
+                "title": "Merikapteeni",
+                "category": "johtaja",
+                "score": 100
+              }
+            ]
+          },
+          "leadership": {
+            "profile": "leadership",
+            "profileName": "Leadership/Enterprising",
+            "cohort": "NUORI",
+            "careers": [
+              {
+                "title": "Markkinointisuunnittelija",
+                "category": "jarjestaja",
+                "score": 100
+              },
+              {
+                "title": "Yritysneuvoja",
+                "category": "jarjestaja",
+                "score": 100
+              },
+              {
+                "title": "Asianajaja",
+                "category": "jarjestaja",
+                "score": 100
+              },
+              {
+                "title": "Notaari",
+                "category": "jarjestaja",
+                "score": 100
+              },
+              {
+                "title": "Kustannustoimittaja",
+                "category": "jarjestaja",
+                "score": 100
+              }
+            ]
+          },
+          "practical": {
+            "profile": "practical",
+            "profileName": "Practical/Hands-on",
+            "cohort": "NUORI",
+            "careers": [
+              {
+                "title": "Data-insinööri",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Pelisuunnittelija",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Robotiikka-insinööri",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Biotekniikka-insinööri",
+                "category": "innovoija",
+                "score": 100
+              },
+              {
+                "title": "Nanotekniikka-insinööri",
+                "category": "innovoija",
+                "score": 100
+              }
+            ]
+          },
+          "balanced": {
+            "profile": "balanced",
+            "profileName": "Balanced/Generalist",
+            "cohort": "NUORI",
+            "careers": [
+              {
+                "title": "Tietoturva-asiantuntija",
+                "category": "innovoija",
+                "score": 91
+              },
+              {
+                "title": "Full-Stack-kehittäjä",
+                "category": "innovoija",
+                "score": 91
+              },
+              {
+                "title": "Pelitekninen suunnittelija",
+                "category": "innovoija",
+                "score": 91
+              },
+              {
+                "title": "Digitaalisen markkinoinnin asiantuntija",
+                "category": "innovoija",
+                "score": 90
+              },
+              {
+                "title": "Liiketoimintakehittäjä",
+                "category": "innovoija",
+                "score": 90
+              }
+            ]
+          },
+          "random": {
+            "profile": "random",
+            "profileName": "Random",
+            "cohort": "NUORI",
+            "careers": [
+              {
+                "title": "Kestävän kehityksen koordinaattori",
+                "category": "ympariston-puolustaja",
+                "score": 99
+              },
+              {
+                "title": "Ympäristövaikutusten arvioija",
+                "category": "ympariston-puolustaja",
+                "score": 99
+              },
+              {
+                "title": "Perinnebiotooppien hoitaja",
+                "category": "ympariston-puolustaja",
+                "score": 99
+              },
+              {
+                "title": "Kiertotalouden asiantuntija",
+                "category": "ympariston-puolustaja",
+                "score": 98
+              },
+              {
+                "title": "Luontokulttuuriasiantuntija",
+                "category": "ympariston-puolustaja",
+                "score": 98
+              }
+            ]
+          }
+        },
+        "uniqueCareers": 30,
+        "uniqueCategories": 6,
+        "categories": [
+          "luova",
+          "innovoija",
+          "johtaja",
+          "auttaja",
+          "ympariston-puolustaja",
+          "jarjestaja"
+        ]
+      },
+      "randomDiversity": {
+        "uniqueCareers": 45,
+        "uniqueCategories": 5,
+        "careerCounts": [
+          [
+            "Data-insinööri",
+            5
+          ],
+          [
+            "Pelisuunnittelija",
+            5
+          ],
+          [
+            "Robotiikka-insinööri",
+            5
+          ],
+          [
+            "Biotekniikka-insinööri",
+            4
+          ],
+          [
+            "Nanotekniikka-insinööri",
+            4
+          ],
+          [
+            "Putkiasentaja",
+            3
+          ],
+          [
+            "Tietoturva-asiantuntija",
+            2
+          ],
+          [
+            "Liiketoimintakehittäjä",
+            2
+          ],
+          [
+            "Tuotantopäällikkö",
+            2
+          ],
+          [
+            "Turvallisuusjohtaja",
+            2
+          ],
+          [
+            "Liiketoiminnan kehityspäällikkö",
+            2
+          ],
+          [
+            "Etätiimin vetäjä",
+            2
+          ],
+          [
+            "Rakennusmestari",
+            2
+          ],
+          [
+            "Maalari",
+            2
+          ],
+          [
+            "Kattomestari",
+            2
+          ],
+          [
+            "LVI-asentaja",
+            2
+          ],
+          [
+            "Automaatio-insinööri",
+            1
+          ],
+          [
+            "Digitaalisen markkinoinnin asiantuntija",
+            1
+          ],
+          [
+            "Full-Stack-kehittäjä",
+            1
+          ],
+          [
+            "Henkilöstöpäällikkö",
+            1
+          ],
+          [
+            "Talouspäällikkö",
+            1
+          ],
+          [
+            "Asiakaspalvelupäällikkö",
+            1
+          ],
+          [
+            "Tietoturvapäällikkö",
+            1
+          ],
+          [
+            "Talonrakentaja",
+            1
+          ],
+          [
+            "Digitaalinen sisältötuottaja",
+            1
+          ],
+          [
+            "Eettisen brändin strategisti",
+            1
+          ],
+          [
+            "Luova kirjailija",
+            1
+          ],
+          [
+            "Keramiikkataiteilija",
+            1
+          ],
+          [
+            "Digitaalinen taiteilija",
+            1
+          ],
+          [
+            "Asiakaspalvelujohtaja",
+            1
+          ],
+          [
+            "Teknologiajohtaja (CTO)",
+            1
+          ],
+          [
+            "Biologi",
+            1
+          ],
+          [
+            "Ympäristöinsinööri",
+            1
+          ],
+          [
+            "Ilmastotutkija",
+            1
+          ],
+          [
+            "Luonnonsuojelija",
+            1
+          ],
+          [
+            "Uusiutuva energia -insinööri",
+            1
+          ],
+          [
+            "Graafinen suunnittelija",
+            1
+          ],
+          [
+            "Muusikko",
+            1
+          ],
+          [
+            "Kameramies",
+            1
+          ],
+          [
+            "Kirjailija",
+            1
+          ],
+          [
+            "Tuotemuotoilija",
+            1
+          ],
+          [
+            "Myyntikehitysedustaja",
+            1
+          ],
+          [
+            "Konsultti",
+            1
+          ],
+          [
+            "Tietojärjestelmäasiantuntija",
+            1
+          ],
+          [
+            "UX-suunnittelija",
+            1
+          ]
+        ],
+        "categoryCounts": [
+          [
+            "innovoija",
+            33
+          ],
+          [
+            "johtaja",
+            15
+          ],
+          [
+            "rakentaja",
+            12
+          ],
+          [
+            "luova",
+            10
+          ],
+          [
+            "ympariston-puolustaja",
+            5
+          ]
+        ],
+        "topCareerCounts": [
+          [
+            "Data-insinööri",
+            4
+          ],
+          [
+            "Rakennusmestari",
+            2
+          ],
+          [
+            "Automaatio-insinööri",
+            1
+          ],
+          [
+            "Henkilöstöpäällikkö",
+            1
+          ],
+          [
+            "Putkiasentaja",
+            1
+          ],
+          [
+            "Digitaalinen sisältötuottaja",
+            1
+          ],
+          [
+            "Turvallisuusjohtaja",
+            1
+          ],
+          [
+            "Biologi",
+            1
+          ],
+          [
+            "Graafinen suunnittelija",
+            1
+          ],
+          [
+            "Liiketoiminnan kehityspäällikkö",
+            1
+          ],
+          [
+            "Tietoturva-asiantuntija",
+            1
+          ]
+        ],
+        "maxCareerPercent": 6.666666666666667,
+        "maxTopCareerPercent": 26.666666666666668
+      },
+      "uniqueness": {
+        "results": [
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 2,
+            "hasRepeats": false
+          },
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 1,
+            "hasRepeats": false
+          },
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 1,
+            "hasRepeats": false
+          },
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 1,
+            "hasRepeats": false
+          },
+          {
+            "uniqueTitles": 5,
+            "uniqueCategories": 1,
+            "hasRepeats": false
+          }
+        ],
+        "allUnique": true,
+        "avgUniqueCategories": 1.2
+      },
+      "differentiation": {
+        "profileTopCareers": {
+          "creative": "Tuotemuotoilija",
+          "analytical": "Tuotantopäällikkö",
+          "social": "Tuotantopäällikkö",
+          "leadership": "Markkinointisuunnittelija",
+          "practical": "Data-insinööri",
+          "balanced": "Tietoturva-asiantuntija"
+        },
+        "uniqueTopCareers": 5,
+        "differentiationScore": 83
+      }
+    }
+  }
+}

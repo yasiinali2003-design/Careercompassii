@@ -1,0 +1,1562 @@
+{
+  "timestamp": "2025-12-24T03:14:00.986Z",
+  "summary": {
+    "total": 16,
+    "successful": 16,
+    "avgTime": 2000
+  },
+  "journeys": [
+    {
+      "persona": "quickUser",
+      "cohort": "YLA (Yläaste)",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 47,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766545983014
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 11,
+          "details": {
+            "cohort": "YLA",
+            "subCohort": null,
+            "questionCount": 30
+          },
+          "timestamp": 1766545983026
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 0,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "3.43"
+          },
+          "timestamp": 1766545983026
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 961,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Biologi",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766545983988
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766545983989
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766545982967,
+      "endTime": 1766545983989,
+      "totalTime": 1022
+    },
+    {
+      "persona": "thoughtfulUser",
+      "cohort": "YLA (Yläaste)",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 37,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766545984026
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 5,
+          "details": {
+            "cohort": "YLA",
+            "subCohort": null,
+            "questionCount": 30
+          },
+          "timestamp": 1766545984031
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 1531,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "3.80"
+          },
+          "timestamp": 1766545985563
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 516,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Graafinen suunnittelija",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766545986080
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766545986080
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766545983989,
+      "endTime": 1766545986080,
+      "totalTime": 2091
+    },
+    {
+      "persona": "extremeUser",
+      "cohort": "YLA (Yläaste)",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 24,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766545986104
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 6,
+          "details": {
+            "cohort": "YLA",
+            "subCohort": null,
+            "questionCount": 30
+          },
+          "timestamp": 1766545986111
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 783,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "2.87"
+          },
+          "timestamp": 1766545986894
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 615,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Sairaanhoitaja",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766545987511
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766545987511
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766545986080,
+      "endTime": 1766545987511,
+      "totalTime": 1431
+    },
+    {
+      "persona": "uncertainUser",
+      "cohort": "YLA (Yläaste)",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 34,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766545987545
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 7,
+          "details": {
+            "cohort": "YLA",
+            "subCohort": null,
+            "questionCount": 30
+          },
+          "timestamp": 1766545987553
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 3031,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "3.13"
+          },
+          "timestamp": 1766545990584
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 592,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Rakennusmestari",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766545991177
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766545991177
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766545987511,
+      "endTime": 1766545991177,
+      "totalTime": 3666
+    },
+    {
+      "persona": "quickUser",
+      "cohort": "TASO2 Lukio",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 32,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766545997593
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 7,
+          "details": {
+            "cohort": "TASO2",
+            "subCohort": "LUKIO",
+            "questionCount": 30
+          },
+          "timestamp": 1766545997600
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 0,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "3.67"
+          },
+          "timestamp": 1766545997600
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 627,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Data-insinööri",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766545998228
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766545998228
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766545997561,
+      "endTime": 1766545998228,
+      "totalTime": 667
+    },
+    {
+      "persona": "thoughtfulUser",
+      "cohort": "TASO2 Lukio",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 21,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766545998249
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 6,
+          "details": {
+            "cohort": "TASO2",
+            "subCohort": "LUKIO",
+            "questionCount": 30
+          },
+          "timestamp": 1766545998255
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 1530,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "3.80"
+          },
+          "timestamp": 1766545999785
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 603,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Data-insinööri",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766546000388
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766546000388
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766545998228,
+      "endTime": 1766546000388,
+      "totalTime": 2160
+    },
+    {
+      "persona": "extremeUser",
+      "cohort": "TASO2 Lukio",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 31,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766546000420
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 7,
+          "details": {
+            "cohort": "TASO2",
+            "subCohort": "LUKIO",
+            "questionCount": 30
+          },
+          "timestamp": 1766546000427
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 782,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "2.33"
+          },
+          "timestamp": 1766546001209
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 689,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Kirjailija",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766546001899
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766546001899
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766546000389,
+      "endTime": 1766546001899,
+      "totalTime": 1510
+    },
+    {
+      "persona": "uncertainUser",
+      "cohort": "TASO2 Lukio",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 33,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766546001932
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 8,
+          "details": {
+            "cohort": "TASO2",
+            "subCohort": "LUKIO",
+            "questionCount": 30
+          },
+          "timestamp": 1766546001940
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 3034,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "2.80"
+          },
+          "timestamp": 1766546004974
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 613,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Tietoturva-asiantuntija",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766546005587
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766546005587
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766546001899,
+      "endTime": 1766546005587,
+      "totalTime": 3688
+    },
+    {
+      "persona": "quickUser",
+      "cohort": "TASO2 Ammattikoulu",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 17,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766546012174
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 4,
+          "details": {
+            "cohort": "TASO2",
+            "subCohort": "AMIS",
+            "questionCount": 30
+          },
+          "timestamp": 1766546012178
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 0,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "3.47"
+          },
+          "timestamp": 1766546012178
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 601,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Rakennusmestari",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766546012779
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766546012779
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766546012157,
+      "endTime": 1766546012779,
+      "totalTime": 622
+    },
+    {
+      "persona": "thoughtfulUser",
+      "cohort": "TASO2 Ammattikoulu",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 30,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766546012809
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 18,
+          "details": {
+            "cohort": "TASO2",
+            "subCohort": "AMIS",
+            "questionCount": 30
+          },
+          "timestamp": 1766546012827
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 1534,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "3.80"
+          },
+          "timestamp": 1766546014361
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 580,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Data-insinööri",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766546014942
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766546014942
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766546012779,
+      "endTime": 1766546014942,
+      "totalTime": 2163
+    },
+    {
+      "persona": "extremeUser",
+      "cohort": "TASO2 Ammattikoulu",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 34,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766546014976
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 6,
+          "details": {
+            "cohort": "TASO2",
+            "subCohort": "AMIS",
+            "questionCount": 30
+          },
+          "timestamp": 1766546014982
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 782,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "3.13"
+          },
+          "timestamp": 1766546015764
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 575,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Graafinen suunnittelija",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766546016339
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766546016339
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766546014942,
+      "endTime": 1766546016339,
+      "totalTime": 1397
+    },
+    {
+      "persona": "uncertainUser",
+      "cohort": "TASO2 Ammattikoulu",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 18,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766546016357
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 4,
+          "details": {
+            "cohort": "TASO2",
+            "subCohort": "AMIS",
+            "questionCount": 30
+          },
+          "timestamp": 1766546016361
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 3033,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "3.10"
+          },
+          "timestamp": 1766546019394
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 647,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Notaari",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766546020042
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766546020042
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766546016339,
+      "endTime": 1766546020042,
+      "totalTime": 3703
+    },
+    {
+      "persona": "quickUser",
+      "cohort": "NUORI (Nuori aikuinen)",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 28,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766546026497
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 6,
+          "details": {
+            "cohort": "NUORI",
+            "subCohort": null,
+            "questionCount": 30
+          },
+          "timestamp": 1766546026503
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 0,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "3.53"
+          },
+          "timestamp": 1766546026503
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 508,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Data-insinööri",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766546027012
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766546027012
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766546026469,
+      "endTime": 1766546027012,
+      "totalTime": 543
+    },
+    {
+      "persona": "thoughtfulUser",
+      "cohort": "NUORI (Nuori aikuinen)",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 27,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766546027039
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 7,
+          "details": {
+            "cohort": "NUORI",
+            "subCohort": null,
+            "questionCount": 30
+          },
+          "timestamp": 1766546027046
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 1533,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "3.80"
+          },
+          "timestamp": 1766546028579
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 629,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Rakennusmestari",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766546029211
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766546029211
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766546027012,
+      "endTime": 1766546029211,
+      "totalTime": 2199
+    },
+    {
+      "persona": "extremeUser",
+      "cohort": "NUORI (Nuori aikuinen)",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 51,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766546029262
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 7,
+          "details": {
+            "cohort": "NUORI",
+            "subCohort": null,
+            "questionCount": 30
+          },
+          "timestamp": 1766546029269
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 780,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "3.13"
+          },
+          "timestamp": 1766546030049
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 574,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Data-insinööri",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766546030623
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766546030623
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766546029211,
+      "endTime": 1766546030623,
+      "totalTime": 1412
+    },
+    {
+      "persona": "uncertainUser",
+      "cohort": "NUORI (Nuori aikuinen)",
+      "steps": [
+        {
+          "name": "Landing Page Load",
+          "success": true,
+          "time": 29,
+          "details": {
+            "status": 200
+          },
+          "timestamp": 1766546030653
+        },
+        {
+          "name": "Fetch Questions",
+          "success": true,
+          "time": 5,
+          "details": {
+            "cohort": "NUORI",
+            "subCohort": null,
+            "questionCount": 30
+          },
+          "timestamp": 1766546030658
+        },
+        {
+          "name": "Answer Questions",
+          "success": true,
+          "time": 3033,
+          "details": {
+            "questionCount": 30,
+            "avgScore": "2.90"
+          },
+          "timestamp": 1766546033691
+        },
+        {
+          "name": "Submit Test",
+          "success": true,
+          "time": 665,
+          "details": {
+            "success": true,
+            "careerCount": 5,
+            "topCareer": "Koulutuskoordinaattori",
+            "hasAnalysis": true
+          },
+          "timestamp": 1766546034356
+        },
+        {
+          "name": "Validate Results",
+          "success": true,
+          "time": 0,
+          "details": {
+            "validations": [
+              {
+                "check": "Has Careers",
+                "passed": true
+              },
+              {
+                "check": "Has Title",
+                "passed": true
+              },
+              {
+                "check": "Has Category",
+                "passed": true
+              },
+              {
+                "check": "Has Score",
+                "passed": true
+              },
+              {
+                "check": "Has Reasons",
+                "passed": true
+              },
+              {
+                "check": "Has Profile",
+                "passed": true
+              },
+              {
+                "check": "Has Analysis",
+                "passed": true
+              },
+              {
+                "check": "Has Strengths",
+                "passed": true
+              }
+            ],
+            "passed": 8,
+            "total": 8
+          },
+          "timestamp": 1766546034356
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "startTime": 1766546030624,
+      "endTime": 1766546034356,
+      "totalTime": 3732
+    }
+  ]
+}

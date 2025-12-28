@@ -1,0 +1,166 @@
+{
+  "timestamp": "2025-12-24T03:15:15.434Z",
+  "summary": {
+    "totalTests": 21,
+    "passedTests": 21
+  },
+  "results": {
+    "YLA": {
+      "careerCount": 52,
+      "requiredFields": {
+        "passed": true,
+        "issues": []
+      },
+      "categories": {
+        "passed": true,
+        "issues": [],
+        "categoryCounts": {
+          "innovoija": 11,
+          "auttaja": 8,
+          "luova": 12,
+          "jarjestaja": 5,
+          "rakentaja": 11,
+          "ympariston-puolustaja": 5
+        }
+      },
+      "slugs": {
+        "passed": true,
+        "issues": [],
+        "uniqueSlugs": 52
+      },
+      "scores": {
+        "passed": true,
+        "issues": [],
+        "scoreStats": {
+          "min": 96,
+          "max": 100,
+          "avg": 99.40384615384616
+        }
+      },
+      "reasons": {
+        "passed": true,
+        "issues": [],
+        "avgReasons": "3.0"
+      },
+      "duplicates": {
+        "passed": true,
+        "issues": []
+      },
+      "confidence": {
+        "passed": true,
+        "issues": [],
+        "confidenceCounts": {
+          "high": 52,
+          "medium": 0,
+          "low": 0,
+          "unknown": 0
+        }
+      }
+    },
+    "TASO2": {
+      "careerCount": 76,
+      "requiredFields": {
+        "passed": true,
+        "issues": []
+      },
+      "categories": {
+        "passed": true,
+        "issues": [],
+        "categoryCounts": {
+          "auttaja": 7,
+          "ympariston-puolustaja": 15,
+          "johtaja": 18,
+          "jarjestaja": 5,
+          "rakentaja": 9,
+          "luova": 17,
+          "innovoija": 5
+        }
+      },
+      "slugs": {
+        "passed": true,
+        "issues": [],
+        "uniqueSlugs": 76
+      },
+      "scores": {
+        "passed": true,
+        "issues": [],
+        "scoreStats": {
+          "min": 84,
+          "max": 100,
+          "avg": 97.09210526315789
+        }
+      },
+      "reasons": {
+        "passed": true,
+        "issues": [],
+        "avgReasons": "3.0"
+      },
+      "duplicates": {
+        "passed": true,
+        "issues": []
+      },
+      "confidence": {
+        "passed": true,
+        "issues": [],
+        "confidenceCounts": {
+          "high": 76,
+          "medium": 0,
+          "low": 0,
+          "unknown": 0
+        }
+      }
+    },
+    "NUORI": {
+      "careerCount": 62,
+      "requiredFields": {
+        "passed": true,
+        "issues": []
+      },
+      "categories": {
+        "passed": true,
+        "issues": [],
+        "categoryCounts": {
+          "innovoija": 12,
+          "auttaja": 8,
+          "jarjestaja": 7,
+          "luova": 12,
+          "rakentaja": 18,
+          "ympariston-puolustaja": 5
+        }
+      },
+      "slugs": {
+        "passed": true,
+        "issues": [],
+        "uniqueSlugs": 62
+      },
+      "scores": {
+        "passed": true,
+        "issues": [],
+        "scoreStats": {
+          "min": 90,
+          "max": 100,
+          "avg": 98.74193548387096
+        }
+      },
+      "reasons": {
+        "passed": true,
+        "issues": [],
+        "avgReasons": "3.0"
+      },
+      "duplicates": {
+        "passed": true,
+        "issues": []
+      },
+      "confidence": {
+        "passed": true,
+        "issues": [],
+        "confidenceCounts": {
+          "high": 62,
+          "medium": 0,
+          "low": 0,
+          "unknown": 0
+        }
+      }
+    }
+  }
+}

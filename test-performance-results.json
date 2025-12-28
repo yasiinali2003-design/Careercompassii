@@ -1,0 +1,442 @@
+{
+  "timestamp": "2025-12-23T23:46:13.696Z",
+  "config": {
+    "concurrentUsers": 10,
+    "requestsPerUser": 5,
+    "rampUpDelay": 100,
+    "acceptableResponseTime": 2000,
+    "acceptableP95": 3000
+  },
+  "totalTestTime": 104678,
+  "verdicts": [
+    {
+      "test": "Baseline",
+      "passed": true
+    },
+    {
+      "test": "Load",
+      "passed": true
+    },
+    {
+      "test": "Stress",
+      "passed": true
+    }
+  ],
+  "results": {
+    "baseline": {
+      "YLA": {
+        "questionsTime": 19,
+        "scoreStats": {
+          "min": 462,
+          "max": 673,
+          "avg": 507,
+          "median": 466,
+          "p95": 673,
+          "p99": 673
+        }
+      },
+      "TASO2": {
+        "questionsTime": 5,
+        "scoreStats": {
+          "min": 431,
+          "max": 497,
+          "avg": 460,
+          "median": 457,
+          "p95": 497,
+          "p99": 497
+        }
+      },
+      "NUORI": {
+        "questionsTime": 5,
+        "scoreStats": {
+          "min": 430,
+          "max": 467,
+          "avg": 443,
+          "median": 440,
+          "p95": 467,
+          "p99": 467
+        }
+      }
+    },
+    "concurrentLoad": {
+      "totalRequests": 50,
+      "successfulRequests": 50,
+      "errors": 0,
+      "totalTime": 3361,
+      "throughput": 14.876524843796489,
+      "stats": {
+        "min": 421,
+        "max": 569,
+        "avg": 478,
+        "median": 469,
+        "p95": 564,
+        "p99": 569
+      }
+    },
+    "sequentialStress": {
+      "totalRequests": 50,
+      "successfulRequests": 50,
+      "totalTime": 22674,
+      "stats": {
+        "min": 408,
+        "max": 620,
+        "avg": 453,
+        "median": 446,
+        "p95": 531,
+        "p99": 620
+      },
+      "results": [
+        {
+          "iteration": 0,
+          "time": 461,
+          "success": true
+        },
+        {
+          "iteration": 1,
+          "time": 447,
+          "success": true
+        },
+        {
+          "iteration": 2,
+          "time": 434,
+          "success": true
+        },
+        {
+          "iteration": 3,
+          "time": 446,
+          "success": true
+        },
+        {
+          "iteration": 4,
+          "time": 465,
+          "success": true
+        },
+        {
+          "iteration": 5,
+          "time": 555,
+          "success": true
+        },
+        {
+          "iteration": 6,
+          "time": 442,
+          "success": true
+        },
+        {
+          "iteration": 7,
+          "time": 412,
+          "success": true
+        },
+        {
+          "iteration": 8,
+          "time": 462,
+          "success": true
+        },
+        {
+          "iteration": 9,
+          "time": 418,
+          "success": true
+        },
+        {
+          "iteration": 10,
+          "time": 446,
+          "success": true
+        },
+        {
+          "iteration": 11,
+          "time": 464,
+          "success": true
+        },
+        {
+          "iteration": 12,
+          "time": 408,
+          "success": true
+        },
+        {
+          "iteration": 13,
+          "time": 468,
+          "success": true
+        },
+        {
+          "iteration": 14,
+          "time": 410,
+          "success": true
+        },
+        {
+          "iteration": 15,
+          "time": 531,
+          "success": true
+        },
+        {
+          "iteration": 16,
+          "time": 466,
+          "success": true
+        },
+        {
+          "iteration": 17,
+          "time": 437,
+          "success": true
+        },
+        {
+          "iteration": 18,
+          "time": 436,
+          "success": true
+        },
+        {
+          "iteration": 19,
+          "time": 430,
+          "success": true
+        },
+        {
+          "iteration": 20,
+          "time": 446,
+          "success": true
+        },
+        {
+          "iteration": 21,
+          "time": 435,
+          "success": true
+        },
+        {
+          "iteration": 22,
+          "time": 463,
+          "success": true
+        },
+        {
+          "iteration": 23,
+          "time": 441,
+          "success": true
+        },
+        {
+          "iteration": 24,
+          "time": 442,
+          "success": true
+        },
+        {
+          "iteration": 25,
+          "time": 436,
+          "success": true
+        },
+        {
+          "iteration": 26,
+          "time": 460,
+          "success": true
+        },
+        {
+          "iteration": 27,
+          "time": 462,
+          "success": true
+        },
+        {
+          "iteration": 28,
+          "time": 444,
+          "success": true
+        },
+        {
+          "iteration": 29,
+          "time": 437,
+          "success": true
+        },
+        {
+          "iteration": 30,
+          "time": 453,
+          "success": true
+        },
+        {
+          "iteration": 31,
+          "time": 620,
+          "success": true
+        },
+        {
+          "iteration": 32,
+          "time": 426,
+          "success": true
+        },
+        {
+          "iteration": 33,
+          "time": 448,
+          "success": true
+        },
+        {
+          "iteration": 34,
+          "time": 428,
+          "success": true
+        },
+        {
+          "iteration": 35,
+          "time": 487,
+          "success": true
+        },
+        {
+          "iteration": 36,
+          "time": 450,
+          "success": true
+        },
+        {
+          "iteration": 37,
+          "time": 431,
+          "success": true
+        },
+        {
+          "iteration": 38,
+          "time": 480,
+          "success": true
+        },
+        {
+          "iteration": 39,
+          "time": 442,
+          "success": true
+        },
+        {
+          "iteration": 40,
+          "time": 438,
+          "success": true
+        },
+        {
+          "iteration": 41,
+          "time": 451,
+          "success": true
+        },
+        {
+          "iteration": 42,
+          "time": 423,
+          "success": true
+        },
+        {
+          "iteration": 43,
+          "time": 429,
+          "success": true
+        },
+        {
+          "iteration": 44,
+          "time": 467,
+          "success": true
+        },
+        {
+          "iteration": 45,
+          "time": 467,
+          "success": true
+        },
+        {
+          "iteration": 46,
+          "time": 473,
+          "success": true
+        },
+        {
+          "iteration": 47,
+          "time": 466,
+          "success": true
+        },
+        {
+          "iteration": 48,
+          "time": 449,
+          "success": true
+        },
+        {
+          "iteration": 49,
+          "time": 435,
+          "success": true
+        }
+      ]
+    },
+    "consistency": {
+      "YLA": [
+        419,
+        457,
+        459,
+        463,
+        419,
+        440,
+        422,
+        453,
+        439,
+        445,
+        434,
+        462,
+        408,
+        437,
+        473,
+        395,
+        425,
+        433,
+        457,
+        415
+      ],
+      "TASO2": [
+        442,
+        434,
+        428,
+        449,
+        451,
+        440,
+        449,
+        478,
+        431,
+        408,
+        643,
+        412,
+        458,
+        448,
+        447,
+        438,
+        442,
+        469,
+        477,
+        441
+      ],
+      "NUORI": [
+        429,
+        451,
+        417,
+        438,
+        430,
+        441,
+        416,
+        416,
+        443,
+        421,
+        433,
+        434,
+        444,
+        410,
+        429,
+        426,
+        431,
+        449,
+        437,
+        443
+      ]
+    },
+    "stability": [
+      {
+        "batch": 1,
+        "duration": 8967,
+        "avgTime": 448,
+        "requests": 20
+      },
+      {
+        "batch": 2,
+        "duration": 8915,
+        "avgTime": 445,
+        "requests": 20
+      },
+      {
+        "batch": 3,
+        "duration": 8949,
+        "avgTime": 447,
+        "requests": 20
+      },
+      {
+        "batch": 4,
+        "duration": 9026,
+        "avgTime": 451,
+        "requests": 20
+      },
+      {
+        "batch": 5,
+        "duration": 9205,
+        "avgTime": 460,
+        "requests": 20
+      }
+    ]
+  }
+}

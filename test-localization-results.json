@@ -1,0 +1,119 @@
+{
+  "timestamp": "2025-12-23T23:46:20.817Z",
+  "summary": {
+    "totalErrors": 0,
+    "totalWarnings": 0,
+    "passed": 3,
+    "total": 3
+  },
+  "results": [
+    {
+      "cohort": "YLA",
+      "passed": true,
+      "issues": [
+        {
+          "type": "language",
+          "severity": "info",
+          "message": "Q1: May not be Finnish (no Finnish patterns detected)",
+          "text": "Nautitko arvoitusten ja pulmien ratkaisemisesta?..."
+        },
+        {
+          "type": "punctuation",
+          "severity": "minor",
+          "message": "Career \"Data-insinööri\": Reason doesn't end with period",
+          "text": "Tässä ammatissa pääset tekemään merkityk..."
+        },
+        {
+          "type": "punctuation",
+          "severity": "minor",
+          "message": "Career \"Pelisuunnittelija\": Reason doesn't end with period",
+          "text": "Tässä ammatissa pääset tekemään merkityk..."
+        },
+        {
+          "type": "punctuation",
+          "severity": "minor",
+          "message": "Career \"Biotekniikka-insinööri\": Reason doesn't end with period",
+          "text": "Tässä ammatissa pääset tekemään merkityk..."
+        },
+        {
+          "type": "punctuation",
+          "severity": "minor",
+          "message": "Career \"Kvantti-insinööri\": Reason doesn't end with period",
+          "text": "Tässä ammatissa pääset tekemään merkityk..."
+        },
+        {
+          "type": "punctuation",
+          "severity": "minor",
+          "message": "Career \"Blockchain-insinööri\": Reason doesn't end with period",
+          "text": "Tässä ammatissa pääset tekemään merkityk..."
+        }
+      ],
+      "summary": {
+        "errors": 0,
+        "warnings": 0,
+        "minor": 5,
+        "info": 1
+      }
+    },
+    {
+      "cohort": "TASO2",
+      "passed": true,
+      "issues": [
+        {
+          "type": "language",
+          "severity": "info",
+          "message": "Q3: May not be Finnish (no Finnish patterns detected)",
+          "text": "Haluaisitko korjata autoja tai koneita?..."
+        },
+        {
+          "type": "punctuation",
+          "severity": "minor",
+          "message": "Career \"Notaari\": Reason doesn't end with period",
+          "text": "Tässä ammatissa pääset tekemään merkityk..."
+        }
+      ],
+      "summary": {
+        "errors": 0,
+        "warnings": 0,
+        "minor": 1,
+        "info": 1
+      }
+    },
+    {
+      "cohort": "NUORI",
+      "passed": true,
+      "issues": [
+        {
+          "type": "punctuation",
+          "severity": "minor",
+          "message": "Career \"Tietoturva-asiantuntija\": Reason doesn't end with period",
+          "text": "Tässä ammatissa pääset tekemään merkityk..."
+        },
+        {
+          "type": "punctuation",
+          "severity": "minor",
+          "message": "Career \"Full-Stack-kehittäjä\": Reason doesn't end with period",
+          "text": "Tässä ammatissa pääset tekemään merkityk..."
+        },
+        {
+          "type": "punctuation",
+          "severity": "minor",
+          "message": "Career \"Digitaalisen markkinoinnin asiantuntija\": Reason doesn't end with period",
+          "text": "Tässä ammatissa pääset tekemään merkityk..."
+        },
+        {
+          "type": "punctuation",
+          "severity": "minor",
+          "message": "Career \"Liiketoimintakehittäjä\": Reason doesn't end with period",
+          "text": "Tässä ammatissa pääset tekemään merkityk..."
+        }
+      ],
+      "summary": {
+        "errors": 0,
+        "warnings": 0,
+        "minor": 4,
+        "info": 0
+      }
+    }
+  ]
+}

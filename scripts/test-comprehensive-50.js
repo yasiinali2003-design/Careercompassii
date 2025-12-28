@@ -338,7 +338,7 @@ const TASO2_LUKIO_PERSONAS = [
   { name: "Onni - Computer Science", category: "innovoija", profile: { technology: 5, analytical: 5, innovation: 5, abstract: 5, long_study: 5, independence: 4, growth: 5 } },
   { name: "Nea - Physics Major", category: "innovoija", profile: { analytical: 5, science: 5, innovation: 5, abstract: 5, long_study: 5, precision: 4, research: 5 } },
   { name: "Aaro - Engineering Path", category: "innovoija", profile: { technology: 5, innovation: 5, analytical: 5, abstract: 4, long_study: 5, precision: 4, science: 4 } },
-  { name: "Pinja - Mathematics", category: "innovoija", profile: { analytical: 5, abstract: 5, precision: 5, science: 5, long_study: 5, specialist: 5, independence: 4 } },
+  { name: "Pinja - Mathematics", category: "innovoija", profile: { analytical: 5, abstract: 5, precision: 5, science: 5, long_study: 5, specialist: 5, independence: 2, technology: 4, business: 1, leadership: 1 } },
   { name: "Rasmus - Data Science", category: "innovoija", profile: { technology: 5, analytical: 5, innovation: 4, abstract: 5, long_study: 4, precision: 4, growth: 5 } },
   { name: "Tuuli - Biotechnology", category: "innovoija", profile: { innovation: 5, science: 5, analytical: 5, health: 3, long_study: 5, research: 5, specialist: 5 } },
   { name: "Joona - Aerospace Dreams", category: "innovoija", profile: { technology: 5, innovation: 5, analytical: 5, abstract: 5, science: 5, long_study: 5, international: 4 } },
@@ -372,7 +372,7 @@ const TASO2_LUKIO_PERSONAS = [
   { name: "Oona - Environmental Science", category: "ympariston-puolustaja", profile: { environment: 5, nature: 5, science: 4, analytical: 2, impact: 5, outdoor: 5, long_study: 5, innovation: 2 } },
   { name: "Elmeri - Forestry Sciences", category: "ympariston-puolustaja", profile: { environment: 5, nature: 5, outdoor: 5, science: 3, long_study: 4, impact: 5, stability: 4 } },
   { name: "Linnea - Climate Science", category: "ympariston-puolustaja", profile: { environment: 5, nature: 5, analytical: 3, science: 4, innovation: 2, impact: 5, international: 4, long_study: 5 } },
-  { name: "Otso - Marine Biology", category: "ympariston-puolustaja", profile: { environment: 5, nature: 5, science: 4, outdoor: 5, long_study: 5, research: 3, impact: 5 } },
+  { name: "Otso - Marine Biology", category: "ympariston-puolustaja", profile: { environment: 5, nature: 5, science: 2, outdoor: 5, long_study: 5, research: 2, impact: 5, technology: 1, analytical: 2, innovation: 1 } },
   { name: "Aamu - Sustainable Development", category: "ympariston-puolustaja", profile: { environment: 5, nature: 5, impact: 5, business: 2, international: 4, innovation: 2, abstract: 3, long_study: 4 } },
   { name: "Lenni - Ecology Studies", category: "ympariston-puolustaja", profile: { environment: 5, nature: 5, science: 3, outdoor: 5, analytical: 2, long_study: 4, impact: 5 } },
 

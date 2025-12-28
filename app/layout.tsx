@@ -11,16 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 const PLAUSIBLE_DOMAIN = 'urakompassi.fi'
 const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN
 
-const getMetadataBase = () => {
-  const url = process.env.NEXT_PUBLIC_SITE_URL || 'https://urakompassi.com';
-  try {
-    return new URL(url);
-  } catch {
-    return undefined;
-  }
-};
-
-const metadataBase = getMetadataBase();
+const metadataBase = new URL('https://www.urakompassi.fi');
 
 export const metadata: Metadata = {
   title: {
@@ -32,11 +23,11 @@ export const metadata: Metadata = {
   authors: [{ name: 'Urakompassi' }],
   creator: 'Urakompassi',
   publisher: 'Urakompassi',
-  ...(metadataBase && { metadataBase }),
+  metadataBase,
   openGraph: {
     type: 'website',
     locale: 'fi_FI',
-    url: 'https://urakompassi.fi',
+    url: 'https://www.urakompassi.fi',
     siteName: 'Urakompassi',
     title: 'Urakompassi - Ammatinvalintatesti nuorille',
     description: 'Löydä sinulle sopivat ammatit 30 kysymyksen testillä. Ilmainen ja luotettava ammatinvalintatesti.',

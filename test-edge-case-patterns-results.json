@@ -1,0 +1,683 @@
+{
+  "timestamp": "2025-12-23T23:43:54.632Z",
+  "summary": {
+    "total": 24,
+    "passed": 24,
+    "failed": 0,
+    "errors": 0
+  },
+  "results": [
+    {
+      "pattern": "random",
+      "cohort": "YLA",
+      "patternName": "Random Answers",
+      "stats": {
+        "mean": "3.00",
+        "variance": "1.53",
+        "stdDev": "1.24",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 5,
+          "2": 5,
+          "3": 8,
+          "4": 9,
+          "5": 3
+        }
+      },
+      "responseTime": 721,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Data-insinööri",
+      "topCategory": "innovoija",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "extreme_contrast",
+      "cohort": "YLA",
+      "patternName": "Extreme Contrast",
+      "stats": {
+        "mean": "3.00",
+        "variance": "4.00",
+        "stdDev": "2.00",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 15,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 15
+        }
+      },
+      "responseTime": 498,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Robotiikka-insinööri",
+      "topCategory": "innovoija",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "bell_curve",
+      "cohort": "YLA",
+      "patternName": "Bell Curve Distribution",
+      "stats": {
+        "mean": "3.27",
+        "variance": "1.06",
+        "stdDev": "1.03",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 1,
+          "2": 4,
+          "3": 17,
+          "4": 2,
+          "5": 6
+        }
+      },
+      "responseTime": 520,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Sairaanhoitaja",
+      "topCategory": "auttaja",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "interests_focus",
+      "cohort": "YLA",
+      "patternName": "Interests-Only Focus",
+      "stats": {
+        "mean": "4.00",
+        "variance": "1.00",
+        "stdDev": "1.00",
+        "min": 3,
+        "max": 5,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 15,
+          "4": 0,
+          "5": 15
+        }
+      },
+      "responseTime": 472,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Rakennusmestari",
+      "topCategory": "rakentaja",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "values_focus",
+      "cohort": "YLA",
+      "patternName": "Values-Only Focus",
+      "stats": {
+        "mean": "3.47",
+        "variance": "0.72",
+        "stdDev": "0.85",
+        "min": 3,
+        "max": 5,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 23,
+          "4": 0,
+          "5": 7
+        }
+      },
+      "responseTime": 511,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Tietoturva-asiantuntija",
+      "topCategory": "innovoija",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "split_personality",
+      "cohort": "YLA",
+      "patternName": "Split Personality",
+      "stats": {
+        "mean": "2.33",
+        "variance": "3.56",
+        "stdDev": "1.89",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 20,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 10
+        }
+      },
+      "responseTime": 479,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Rakennusinsinööri",
+      "topCategory": "rakentaja",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "inverted_u",
+      "cohort": "YLA",
+      "patternName": "Inverted U Pattern",
+      "stats": {
+        "mean": "3.00",
+        "variance": "2.00",
+        "stdDev": "1.41",
+        "min": 2,
+        "max": 5,
+        "distribution": {
+          "1": 0,
+          "2": 20,
+          "3": 0,
+          "4": 0,
+          "5": 10
+        }
+      },
+      "responseTime": 479,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Graafinen suunnittelija",
+      "topCategory": "luova",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "sawtooth",
+      "cohort": "YLA",
+      "patternName": "Sawtooth Pattern",
+      "stats": {
+        "mean": "3.00",
+        "variance": "2.00",
+        "stdDev": "1.41",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 6,
+          "2": 6,
+          "3": 6,
+          "4": 6,
+          "5": 6
+        }
+      },
+      "responseTime": 522,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Graafinen suunnittelija",
+      "topCategory": "luova",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "random",
+      "cohort": "TASO2",
+      "patternName": "Random Answers",
+      "stats": {
+        "mean": "3.03",
+        "variance": "2.30",
+        "stdDev": "1.52",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 8,
+          "2": 3,
+          "3": 6,
+          "4": 6,
+          "5": 7
+        }
+      },
+      "responseTime": 586,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Biologi",
+      "topCategory": "ympariston-puolustaja",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "extreme_contrast",
+      "cohort": "TASO2",
+      "patternName": "Extreme Contrast",
+      "stats": {
+        "mean": "3.00",
+        "variance": "4.00",
+        "stdDev": "2.00",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 15,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 15
+        }
+      },
+      "responseTime": 939,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Blockchain-insinööri",
+      "topCategory": "innovoija",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "bell_curve",
+      "cohort": "TASO2",
+      "patternName": "Bell Curve Distribution",
+      "stats": {
+        "mean": "3.20",
+        "variance": "1.23",
+        "stdDev": "1.11",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 3,
+          "2": 3,
+          "3": 13,
+          "4": 7,
+          "5": 4
+        }
+      },
+      "responseTime": 452,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Ympäristöinsinööri",
+      "topCategory": "ympariston-puolustaja",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "interests_focus",
+      "cohort": "TASO2",
+      "patternName": "Interests-Only Focus",
+      "stats": {
+        "mean": "4.00",
+        "variance": "1.00",
+        "stdDev": "1.00",
+        "min": 3,
+        "max": 5,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 15,
+          "4": 0,
+          "5": 15
+        }
+      },
+      "responseTime": 455,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Data-insinööri",
+      "topCategory": "innovoija",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "values_focus",
+      "cohort": "TASO2",
+      "patternName": "Values-Only Focus",
+      "stats": {
+        "mean": "3.47",
+        "variance": "0.72",
+        "stdDev": "0.85",
+        "min": 3,
+        "max": 5,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 23,
+          "4": 0,
+          "5": 7
+        }
+      },
+      "responseTime": 450,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Koulutuskoordinaattori",
+      "topCategory": "jarjestaja",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "split_personality",
+      "cohort": "TASO2",
+      "patternName": "Split Personality",
+      "stats": {
+        "mean": "2.33",
+        "variance": "3.56",
+        "stdDev": "1.89",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 20,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 10
+        }
+      },
+      "responseTime": 427,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Sairaanhoitaja",
+      "topCategory": "auttaja",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "inverted_u",
+      "cohort": "TASO2",
+      "patternName": "Inverted U Pattern",
+      "stats": {
+        "mean": "3.00",
+        "variance": "2.00",
+        "stdDev": "1.41",
+        "min": 2,
+        "max": 5,
+        "distribution": {
+          "1": 0,
+          "2": 20,
+          "3": 0,
+          "4": 0,
+          "5": 10
+        }
+      },
+      "responseTime": 415,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Ympäristöinsinööri",
+      "topCategory": "ympariston-puolustaja",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "sawtooth",
+      "cohort": "TASO2",
+      "patternName": "Sawtooth Pattern",
+      "stats": {
+        "mean": "3.00",
+        "variance": "2.00",
+        "stdDev": "1.41",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 6,
+          "2": 6,
+          "3": 6,
+          "4": 6,
+          "5": 6
+        }
+      },
+      "responseTime": 507,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Biologi",
+      "topCategory": "ympariston-puolustaja",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "random",
+      "cohort": "NUORI",
+      "patternName": "Random Answers",
+      "stats": {
+        "mean": "2.93",
+        "variance": "1.86",
+        "stdDev": "1.36",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 5,
+          "2": 9,
+          "3": 4,
+          "4": 7,
+          "5": 5
+        }
+      },
+      "responseTime": 418,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Kirjailija",
+      "topCategory": "luova",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "extreme_contrast",
+      "cohort": "NUORI",
+      "patternName": "Extreme Contrast",
+      "stats": {
+        "mean": "3.00",
+        "variance": "4.00",
+        "stdDev": "2.00",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 15,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 15
+        }
+      },
+      "responseTime": 443,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Graafinen suunnittelija",
+      "topCategory": "luova",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "bell_curve",
+      "cohort": "NUORI",
+      "patternName": "Bell Curve Distribution",
+      "stats": {
+        "mean": "2.83",
+        "variance": "1.14",
+        "stdDev": "1.07",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 5,
+          "2": 3,
+          "3": 16,
+          "4": 4,
+          "5": 2
+        }
+      },
+      "responseTime": 442,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Biologi",
+      "topCategory": "ympariston-puolustaja",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "interests_focus",
+      "cohort": "NUORI",
+      "patternName": "Interests-Only Focus",
+      "stats": {
+        "mean": "4.00",
+        "variance": "1.00",
+        "stdDev": "1.00",
+        "min": 3,
+        "max": 5,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 15,
+          "4": 0,
+          "5": 15
+        }
+      },
+      "responseTime": 414,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Rakennusmestari",
+      "topCategory": "rakentaja",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "values_focus",
+      "cohort": "NUORI",
+      "patternName": "Values-Only Focus",
+      "stats": {
+        "mean": "3.47",
+        "variance": "0.72",
+        "stdDev": "0.85",
+        "min": 3,
+        "max": 5,
+        "distribution": {
+          "1": 0,
+          "2": 0,
+          "3": 23,
+          "4": 0,
+          "5": 7
+        }
+      },
+      "responseTime": 531,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Liiketoiminnan kehityspäällikkö",
+      "topCategory": "johtaja",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "split_personality",
+      "cohort": "NUORI",
+      "patternName": "Split Personality",
+      "stats": {
+        "mean": "2.33",
+        "variance": "3.56",
+        "stdDev": "1.89",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 20,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 10
+        }
+      },
+      "responseTime": 444,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Graafinen suunnittelija",
+      "topCategory": "luova",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "inverted_u",
+      "cohort": "NUORI",
+      "patternName": "Inverted U Pattern",
+      "stats": {
+        "mean": "3.00",
+        "variance": "2.00",
+        "stdDev": "1.41",
+        "min": 2,
+        "max": 5,
+        "distribution": {
+          "1": 0,
+          "2": 20,
+          "3": 0,
+          "4": 0,
+          "5": 10
+        }
+      },
+      "responseTime": 454,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "Markkinointisuunnittelija",
+      "topCategory": "jarjestaja",
+      "isReasonable": false,
+      "passed": true
+    },
+    {
+      "pattern": "sawtooth",
+      "cohort": "NUORI",
+      "patternName": "Sawtooth Pattern",
+      "stats": {
+        "mean": "3.00",
+        "variance": "2.00",
+        "stdDev": "1.41",
+        "min": 1,
+        "max": 5,
+        "distribution": {
+          "1": 6,
+          "2": 6,
+          "3": 6,
+          "4": 6,
+          "5": 6
+        }
+      },
+      "responseTime": 427,
+      "hasResult": true,
+      "hasCareers": true,
+      "hasAnalysis": true,
+      "careerCount": 5,
+      "topCareer": "It Tukihenkilo",
+      "topCategory": "innovoija",
+      "isReasonable": false,
+      "passed": true
+    }
+  ]
+}

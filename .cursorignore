@@ -1,0 +1,12 @@
+# Already ignored by .gitignore but adding here for Claude Code
+node_modules/
+.next/
+out/
+build/
+*.log
+
+# Large generated files
+*.min.js
+*.min.css
+dist/
+coverage/

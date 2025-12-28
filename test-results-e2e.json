@@ -1,0 +1,5087 @@
+{
+  "total": 30,
+  "passed": 30,
+  "failed": 0,
+  "details": [
+    {
+      "cohort": "YLA",
+      "profile": "Creative Artist",
+      "profileKey": "creative_artist",
+      "timestamp": "2025-12-23T17:23:09.725Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 5
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "6bb7f9fe-865c-4d5a-9eb3-72753e5714fe",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 6,
+          "totalExpected": 12,
+          "matchPercentage": "50.0",
+          "matchedKeywords": [
+            "graafinen",
+            "suunnittelija",
+            "muusikko",
+            "kirjailija",
+            "muotoilija",
+            "kamera"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Graafinen suunnittelija",
+            "Muusikko",
+            "Kameramies",
+            "Kirjailija",
+            "Tuotemuotoilija"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "6bb7f9fe-865c-4d5a-9eb3-72753e5714fe",
+            "createdAt": "2025-12-23T17:23:10.75061+00:00",
+            "cohort": "YLA",
+            "userProfile": {
+              "cohort": "YLA",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.5833333333333334,
+                "workstyle": 0.5
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "graafinen-suunnittelija",
+                "title": "Graafinen suunnittelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "muusikko",
+                "title": "Muusikko",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kameramies",
+                "title": "Kameramies",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kirjailija",
+                "title": "Kirjailija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "muotoilija",
+                "title": "Tuotemuotoilija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "lukio",
+              "scores": {
+                "lukio": 55.00000000000001,
+                "ammattikoulu": 28.999999999999996,
+                "kansanopisto": 0
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "YLA",
+      "profile": "Tech Enthusiast",
+      "profileKey": "tech_enthusiast",
+      "timestamp": "2025-12-23T17:23:11.790Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 5
+            },
+            {
+              "questionIndex": 1,
+              "score": 5
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "3883bee2-e619-4940-a046-b76065e3ed5c",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 0,
+          "totalExpected": 13,
+          "matchPercentage": "0.0",
+          "matchedKeywords": [],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Graafinen suunnittelija",
+            "Muusikko",
+            "Kameramies",
+            "Kirjailija",
+            "Tuotemuotoilija"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "3883bee2-e619-4940-a046-b76065e3ed5c",
+            "createdAt": "2025-12-23T17:23:12.116435+00:00",
+            "cohort": "YLA",
+            "userProfile": {
+              "cohort": "YLA",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.6768985371926548,
+                "workstyle": 0.5
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "graafinen-suunnittelija",
+                "title": "Graafinen suunnittelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "muusikko",
+                "title": "Muusikko",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kameramies",
+                "title": "Kameramies",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kirjailija",
+                "title": "Kirjailija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "muotoilija",
+                "title": "Tuotemuotoilija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "lukio",
+              "scores": {
+                "lukio": 77.5,
+                "ammattikoulu": 19.5,
+                "kansanopisto": 0
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "YLA",
+      "profile": "Healthcare Helper",
+      "profileKey": "healthcare_helper",
+      "timestamp": "2025-12-23T17:23:13.133Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 1
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "a2e59e34-1db7-4d13-a651-6b229295bbd3",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 6,
+          "totalExpected": 12,
+          "matchPercentage": "50.0",
+          "matchedKeywords": [
+            "sairaanhoitaja",
+            "tervey",
+            "hoitaja",
+            "bioanalyytikko",
+            "ravitsemus",
+            "koti"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Sairaanhoitaja",
+            "Bioanalyytikko",
+            "Kouluterveydenhoitaja",
+            "Kotihoitaja",
+            "Ravitsemusasiantuntija"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "a2e59e34-1db7-4d13-a651-6b229295bbd3",
+            "createdAt": "2025-12-23T17:23:13.483537+00:00",
+            "cohort": "YLA",
+            "userProfile": {
+              "cohort": "YLA",
+              "dimensionScores": {
+                "values": 0.5357142857142857,
+                "context": 0.5,
+                "interests": 0.6054421768707483,
+                "workstyle": 0.5625
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "sairaanhoitaja",
+                "title": "Sairaanhoitaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "bioanalyytikko",
+                "title": "Bioanalyytikko",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kouluterveydenhoitaja",
+                "title": "Kouluterveydenhoitaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kotihoitaja",
+                "title": "Kotihoitaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "ravitsemusasiantuntija",
+                "title": "Ravitsemusasiantuntija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "kansanopisto",
+              "scores": {
+                "lukio": 30,
+                "ammattikoulu": 28.999999999999996,
+                "kansanopisto": 50
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "YLA",
+      "profile": "Business Leader",
+      "profileKey": "business_leader",
+      "timestamp": "2025-12-23T17:23:14.524Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "ba9fdb61-9050-4f80-9ee4-7d7e4a5c4d5e",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 5,
+          "totalExpected": 13,
+          "matchPercentage": "38.5",
+          "matchedKeywords": [
+            "päällikkö",
+            "henkilöstö",
+            "tuotanto",
+            "talous",
+            "asiakaspalvelu"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Henkilöstöpäällikkö",
+            "Tuotantopäällikkö",
+            "Talouspäällikkö",
+            "Asiakaspalvelupäällikkö",
+            "Tietoturvapäällikkö"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "ba9fdb61-9050-4f80-9ee4-7d7e4a5c4d5e",
+            "createdAt": "2025-12-23T17:23:14.858861+00:00",
+            "cohort": "YLA",
+            "userProfile": {
+              "cohort": "YLA",
+              "dimensionScores": {
+                "values": 0.5714285714285714,
+                "context": 0.5,
+                "interests": 0.5341435185185185,
+                "workstyle": 0.65625
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "henkilöstöpäällikkö",
+                "title": "Henkilöstöpäällikkö",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "tuotantopäällikkö",
+                "title": "Tuotantopäällikkö",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "talouspäällikkö",
+                "title": "Talouspäällikkö",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "asiakaspalvelupäällikkö",
+                "title": "Asiakaspalvelupäällikkö",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "tietoturvapäällikkö",
+                "title": "Tietoturvapäällikkö",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "lukio",
+              "scores": {
+                "lukio": 42.5,
+                "ammattikoulu": 12.75,
+                "kansanopisto": 0
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "YLA",
+      "profile": "Hands-on Builder",
+      "profileKey": "hands_on_builder",
+      "timestamp": "2025-12-23T17:23:15.862Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 2
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "d1f05e1a-ee2b-48d9-8c6a-139e053520c0",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 5,
+          "totalExpected": 12,
+          "matchPercentage": "41.7",
+          "matchedKeywords": [
+            "rakennus",
+            "putki",
+            "asentaja",
+            "maalari",
+            "mestari"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Rakennusmestari",
+            "Putkiasentaja",
+            "Maalari",
+            "Kattomestari",
+            "LVI-asentaja"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "d1f05e1a-ee2b-48d9-8c6a-139e053520c0",
+            "createdAt": "2025-12-23T17:23:16.189557+00:00",
+            "cohort": "YLA",
+            "userProfile": {
+              "cohort": "YLA",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.552108843537415,
+                "workstyle": 0.59375
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "rakennusmestari",
+                "title": "Rakennusmestari",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "putkiasentaja",
+                "title": "Putkiasentaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "maalari",
+                "title": "Maalari",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kattomestari",
+                "title": "Kattomestari",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "lvi-asentaja",
+                "title": "LVI-asentaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "ammattikoulu",
+              "scores": {
+                "lukio": 41.25,
+                "ammattikoulu": 49.00000000000001,
+                "kansanopisto": 0
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "YLA",
+      "profile": "Nature Lover",
+      "profileKey": "nature_lover",
+      "timestamp": "2025-12-23T17:23:17.228Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 1
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "a11f16c9-836c-4c06-81fb-a48307661288",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 6,
+          "totalExpected": 12,
+          "matchPercentage": "50.0",
+          "matchedKeywords": [
+            "biologi",
+            "ympäristö",
+            "ilmasto",
+            "uusiutuva",
+            "luonnonsuojelija",
+            "energia"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Biologi",
+            "Ympäristöinsinööri",
+            "Ilmastotutkija",
+            "Luonnonsuojelija",
+            "Uusiutuva energia -insinööri"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "a11f16c9-836c-4c06-81fb-a48307661288",
+            "createdAt": "2025-12-23T17:23:17.579567+00:00",
+            "cohort": "YLA",
+            "userProfile": {
+              "cohort": "YLA",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.49728260869565216,
+                "workstyle": 0.5625
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "biologi",
+                "title": "Biologi",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "ympäristöinsinööri",
+                "title": "Ympäristöinsinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "ilmastotutkija",
+                "title": "Ilmastotutkija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "luonnonsuojelija",
+                "title": "Luonnonsuojelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "uusiutuva-energia-insinööri",
+                "title": "Uusiutuva energia -insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "kansanopisto",
+              "scores": {
+                "lukio": 30,
+                "ammattikoulu": 36.5,
+                "kansanopisto": 50
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "YLA",
+      "profile": "Scientific Mind",
+      "profileKey": "scientific_mind",
+      "timestamp": "2025-12-23T17:23:18.632Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 5
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "5e7c759a-75da-4ddf-af85-61b5b253fc29",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 0,
+          "totalExpected": 11,
+          "matchPercentage": "0.0",
+          "matchedKeywords": [],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Graafinen suunnittelija",
+            "Kameramies",
+            "Kirjailija",
+            "Tuotemuotoilija",
+            "Animaattori"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "5e7c759a-75da-4ddf-af85-61b5b253fc29",
+            "createdAt": "2025-12-23T17:23:19.053588+00:00",
+            "cohort": "YLA",
+            "userProfile": {
+              "cohort": "YLA",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.6223901597676107,
+                "workstyle": 0.5
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "graafinen-suunnittelija",
+                "title": "Graafinen suunnittelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kameramies",
+                "title": "Kameramies",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kirjailija",
+                "title": "Kirjailija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "muotoilija",
+                "title": "Tuotemuotoilija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "animaattori",
+                "title": "Animaattori",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "lukio",
+              "scores": {
+                "lukio": 61.25000000000001,
+                "ammattikoulu": 27,
+                "kansanopisto": 0
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "YLA",
+      "profile": "Social Connector",
+      "profileKey": "social_connector",
+      "timestamp": "2025-12-23T17:23:20.091Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 4
+            },
+            {
+              "questionIndex": 1,
+              "score": 4
+            },
+            {
+              "questionIndex": 2,
+              "score": 4
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "df997e68-3a80-4e8e-b23e-2a2e798c5d26",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 0,
+          "totalExpected": 12,
+          "matchPercentage": "0.0",
+          "matchedKeywords": [],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Graafinen suunnittelija",
+            "Muusikko",
+            "Kameramies",
+            "Kirjailija",
+            "Tuotemuotoilija"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "df997e68-3a80-4e8e-b23e-2a2e798c5d26",
+            "createdAt": "2025-12-23T17:23:20.444602+00:00",
+            "cohort": "YLA",
+            "userProfile": {
+              "cohort": "YLA",
+              "dimensionScores": {
+                "values": 0.7857142857142857,
+                "context": 0.5,
+                "interests": 0.7916666666666666,
+                "workstyle": 0.8125
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "graafinen-suunnittelija",
+                "title": "Graafinen suunnittelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "muusikko",
+                "title": "Muusikko",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kameramies",
+                "title": "Kameramies",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kirjailija",
+                "title": "Kirjailija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "muotoilija",
+                "title": "Tuotemuotoilija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "lukio",
+              "scores": {
+                "lukio": 63.74999999999999,
+                "ammattikoulu": 39.5,
+                "kansanopisto": 0
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "YLA",
+      "profile": "Security Seeker",
+      "profileKey": "security_seeker",
+      "timestamp": "2025-12-23T17:23:21.440Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "4036fdbd-eefa-4cdb-83ee-40d7711e0c50",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 1,
+          "totalExpected": 13,
+          "matchPercentage": "7.7",
+          "matchedKeywords": [
+            "notaari"
+          ],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Markkinointisuunnittelija",
+            "Yritysneuvoja",
+            "Asianajaja",
+            "Notaari",
+            "Kustannustoimittaja"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "4036fdbd-eefa-4cdb-83ee-40d7711e0c50",
+            "createdAt": "2025-12-23T17:23:21.792133+00:00",
+            "cohort": "YLA",
+            "userProfile": {
+              "cohort": "YLA",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.4791666666666667,
+                "workstyle": 0.53125
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "markkinointisuunnittelija",
+                "title": "Markkinointisuunnittelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "yritysneuvoja",
+                "title": "Yritysneuvoja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "asianajaja",
+                "title": "Asianajaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "notaari",
+                "title": "Notaari",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kustannustoimittaja",
+                "title": "Kustannustoimittaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "kansanopisto",
+              "scores": {
+                "lukio": 38.75,
+                "ammattikoulu": 28.999999999999996,
+                "kansanopisto": 50
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "YLA",
+      "profile": "Adventure Seeker",
+      "profileKey": "adventure_seeker",
+      "timestamp": "2025-12-23T17:23:22.814Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 5
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "9d5ecd87-d32b-4c42-aca3-36e66341bf77",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 3,
+          "totalExpected": 13,
+          "matchPercentage": "23.1",
+          "matchedKeywords": [
+            "graafinen",
+            "kamera",
+            "kirjailija"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Graafinen suunnittelija",
+            "Kameramies",
+            "Kirjailija",
+            "Tuotemuotoilija",
+            "Teatteriohjaaja"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "9d5ecd87-d32b-4c42-aca3-36e66341bf77",
+            "createdAt": "2025-12-23T17:23:23.258127+00:00",
+            "cohort": "YLA",
+            "userProfile": {
+              "cohort": "YLA",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.5767895299145299,
+                "workstyle": 0.5625
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "graafinen-suunnittelija",
+                "title": "Graafinen suunnittelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kameramies",
+                "title": "Kameramies",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kirjailija",
+                "title": "Kirjailija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "muotoilija",
+                "title": "Tuotemuotoilija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "teatteriohjaaja",
+                "title": "Teatteriohjaaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "lukio",
+              "scores": {
+                "lukio": 50,
+                "ammattikoulu": 27,
+                "kansanopisto": 0
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "TASO2",
+      "profile": "Creative Artist",
+      "profileKey": "creative_artist",
+      "timestamp": "2025-12-23T17:23:24.283Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "79974c10-8beb-48d7-afd8-8a9b4ef3b102",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 3,
+          "totalExpected": 12,
+          "matchPercentage": "25.0",
+          "matchedKeywords": [
+            "kirjailija",
+            "muotoilija",
+            "luova"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Tuotemuotoilija",
+            "Videonmuokkaaja",
+            "Digitaalinen sisältötuottaja",
+            "Verkkokurssien luoja",
+            "Kirjailija"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "79974c10-8beb-48d7-afd8-8a9b4ef3b102",
+            "createdAt": "2025-12-23T17:23:24.652757+00:00",
+            "cohort": "TASO2",
+            "userProfile": {
+              "cohort": "TASO2",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.49943310657596374,
+                "workstyle": 0.5
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "muotoilija",
+                "title": "Tuotemuotoilija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "videonmuokkaaja",
+                "title": "Videonmuokkaaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "digital-content-producer",
+                "title": "Digitaalinen sisältötuottaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "verkkokurssien-luoja",
+                "title": "Verkkokurssien luoja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kirjailija-luova",
+                "title": "Kirjailija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "amk",
+              "scores": {
+                "amk": 51.13314447592068,
+                "yliopisto": 50.40322580645162
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "TASO2",
+      "profile": "Tech Enthusiast",
+      "profileKey": "tech_enthusiast",
+      "timestamp": "2025-12-23T17:23:25.662Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "864fe742-7918-40a6-8983-2bc01e943750",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 0,
+          "totalExpected": 13,
+          "matchPercentage": "0.0",
+          "matchedKeywords": [],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Aikuiskouluttaja",
+            "Koulutuskoordinaattori",
+            "Notaari",
+            "Hallinnon koordinaattori",
+            "Tapahtumajärjestäjä"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "864fe742-7918-40a6-8983-2bc01e943750",
+            "createdAt": "2025-12-23T17:23:26.039858+00:00",
+            "cohort": "TASO2",
+            "userProfile": {
+              "cohort": "TASO2",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.4444444444444444,
+                "workstyle": 0.6041666666666667
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "aikuiskouluttaja",
+                "title": "Aikuiskouluttaja",
+                "category": "",
+                "overallScore": 84,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "training-coordinator",
+                "title": "Koulutuskoordinaattori",
+                "category": "",
+                "overallScore": 84,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "notaari",
+                "title": "Notaari",
+                "category": "",
+                "overallScore": 83,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "hallinnon-koordinaattori",
+                "title": "Hallinnon koordinaattori",
+                "category": "",
+                "overallScore": 83,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "tapahtumajärjestäjä",
+                "title": "Tapahtumajärjestäjä",
+                "category": "",
+                "overallScore": 83,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "yliopisto",
+              "scores": {
+                "amk": 51.13314447592069,
+                "yliopisto": 52.41935483870967
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "TASO2",
+      "profile": "Healthcare Helper",
+      "profileKey": "healthcare_helper",
+      "timestamp": "2025-12-23T17:23:27.031Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "67470f98-4fd1-45f9-8ea4-ef439bd0baba",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 2,
+          "totalExpected": 12,
+          "matchPercentage": "16.7",
+          "matchedKeywords": [
+            "hoitaja",
+            "kouluttaja"
+          ],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Aikuiskouluttaja",
+            "Koulutuskoordinaattori",
+            "Notaari",
+            "Arkistonhoitaja",
+            "Työnkulkukoordinaattori"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "67470f98-4fd1-45f9-8ea4-ef439bd0baba",
+            "createdAt": "2025-12-23T17:23:27.345289+00:00",
+            "cohort": "TASO2",
+            "userProfile": {
+              "cohort": "TASO2",
+              "dimensionScores": {
+                "values": 0.4642857142857143,
+                "context": 0.5,
+                "interests": 0.5,
+                "workstyle": 0.5625
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "aikuiskouluttaja",
+                "title": "Aikuiskouluttaja",
+                "category": "",
+                "overallScore": 86,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "training-coordinator",
+                "title": "Koulutuskoordinaattori",
+                "category": "",
+                "overallScore": 86,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "notaari",
+                "title": "Notaari",
+                "category": "",
+                "overallScore": 85,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "records-manager",
+                "title": "Arkistonhoitaja",
+                "category": "",
+                "overallScore": 85,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "workflow-coordinator",
+                "title": "Työnkulkukoordinaattori",
+                "category": "",
+                "overallScore": 85,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "amk",
+              "scores": {
+                "amk": 51.20396600566573,
+                "yliopisto": 50.30241935483871
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "TASO2",
+      "profile": "Business Leader",
+      "profileKey": "business_leader",
+      "timestamp": "2025-12-23T17:23:28.349Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "f2dec2d4-b665-4a5e-b880-358b162e1511",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 0,
+          "totalExpected": 13,
+          "matchPercentage": "0.0",
+          "matchedKeywords": [],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Ympäristöinsinööri",
+            "Luonnonsuojelija",
+            "Uusiutuva energia -insinööri",
+            "Ympäristökasvattaja",
+            "Vesi-insinööri"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "f2dec2d4-b665-4a5e-b880-358b162e1511",
+            "createdAt": "2025-12-23T17:23:28.764354+00:00",
+            "cohort": "TASO2",
+            "userProfile": {
+              "cohort": "TASO2",
+              "dimensionScores": {
+                "values": 0.5714285714285714,
+                "context": 0.5,
+                "interests": 0.5555555555555556,
+                "workstyle": 0.5
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "ympäristöinsinööri",
+                "title": "Ympäristöinsinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "luonnonsuojelija",
+                "title": "Luonnonsuojelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "uusiutuva-energia-insinööri",
+                "title": "Uusiutuva energia -insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "ympäristökasvattaja",
+                "title": "Ympäristökasvattaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "vesi-insinööri",
+                "title": "Vesi-insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "amk",
+              "scores": {
+                "amk": 53.54107648725213,
+                "yliopisto": 53.0241935483871
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "TASO2",
+      "profile": "Hands-on Builder",
+      "profileKey": "hands_on_builder",
+      "timestamp": "2025-12-23T17:23:29.823Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "7bcd07fa-a2f4-4c0e-bea5-60aa8d74419f",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 0,
+          "totalExpected": 12,
+          "matchPercentage": "0.0",
+          "matchedKeywords": [],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Aikuiskouluttaja",
+            "Koulutuskoordinaattori",
+            "Notaari",
+            "Työnkulkukoordinaattori",
+            "Laboratoriopäällikkö"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "7bcd07fa-a2f4-4c0e-bea5-60aa8d74419f",
+            "createdAt": "2025-12-23T17:23:30.215399+00:00",
+            "cohort": "TASO2",
+            "userProfile": {
+              "cohort": "TASO2",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.5,
+                "workstyle": 0.53125
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "aikuiskouluttaja",
+                "title": "Aikuiskouluttaja",
+                "category": "",
+                "overallScore": 86,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "training-coordinator",
+                "title": "Koulutuskoordinaattori",
+                "category": "",
+                "overallScore": 86,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "notaari",
+                "title": "Notaari",
+                "category": "",
+                "overallScore": 85,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "workflow-coordinator",
+                "title": "Työnkulkukoordinaattori",
+                "category": "",
+                "overallScore": 85,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "lab-manager",
+                "title": "Laboratoriopäällikkö",
+                "category": "",
+                "overallScore": 85,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "amk",
+              "scores": {
+                "amk": 50.92067988668555,
+                "yliopisto": 50.70564516129033
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "TASO2",
+      "profile": "Nature Lover",
+      "profileKey": "nature_lover",
+      "timestamp": "2025-12-23T17:23:31.212Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "b64a0df4-6e9c-449c-b9cd-734aa97c9f17",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 4,
+          "totalExpected": 12,
+          "matchPercentage": "33.3",
+          "matchedKeywords": [
+            "ympäristö",
+            "uusiutuva",
+            "luonnonsuojelija",
+            "energia"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Ympäristöinsinööri",
+            "Luonnonsuojelija",
+            "Uusiutuva energia -insinööri",
+            "Ympäristökasvattaja",
+            "Vesi-insinööri"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "b64a0df4-6e9c-449c-b9cd-734aa97c9f17",
+            "createdAt": "2025-12-23T17:23:31.562222+00:00",
+            "cohort": "TASO2",
+            "userProfile": {
+              "cohort": "TASO2",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.5555555555555556,
+                "workstyle": 0.5
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "ympäristöinsinööri",
+                "title": "Ympäristöinsinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "luonnonsuojelija",
+                "title": "Luonnonsuojelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "uusiutuva-energia-insinööri",
+                "title": "Uusiutuva energia -insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "ympäristökasvattaja",
+                "title": "Ympäristökasvattaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "vesi-insinööri",
+                "title": "Vesi-insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "amk",
+              "scores": {
+                "amk": 51.98300283286119,
+                "yliopisto": 51.20967741935484
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "TASO2",
+      "profile": "Scientific Mind",
+      "profileKey": "scientific_mind",
+      "timestamp": "2025-12-23T17:23:32.580Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "a7c64fa9-851b-4023-ae4e-4fb7d07e4b6d",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 1,
+          "totalExpected": 11,
+          "matchPercentage": "9.1",
+          "matchedKeywords": [
+            "laboratorio"
+          ],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Aikuiskouluttaja",
+            "Koulutuskoordinaattori",
+            "Notaari",
+            "Työnkulkukoordinaattori",
+            "Laboratoriopäällikkö"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "a7c64fa9-851b-4023-ae4e-4fb7d07e4b6d",
+            "createdAt": "2025-12-23T17:23:32.915998+00:00",
+            "cohort": "TASO2",
+            "userProfile": {
+              "cohort": "TASO2",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.5,
+                "workstyle": 0.5625
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "aikuiskouluttaja",
+                "title": "Aikuiskouluttaja",
+                "category": "",
+                "overallScore": 85,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "training-coordinator",
+                "title": "Koulutuskoordinaattori",
+                "category": "",
+                "overallScore": 85,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "notaari",
+                "title": "Notaari",
+                "category": "",
+                "overallScore": 84,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "workflow-coordinator",
+                "title": "Työnkulkukoordinaattori",
+                "category": "",
+                "overallScore": 84,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "lab-manager",
+                "title": "Laboratoriopäällikkö",
+                "category": "",
+                "overallScore": 84,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "amk",
+              "scores": {
+                "amk": 51.98300283286119,
+                "yliopisto": 51.20967741935484
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "TASO2",
+      "profile": "Social Connector",
+      "profileKey": "social_connector",
+      "timestamp": "2025-12-23T17:23:33.925Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 4
+            },
+            {
+              "questionIndex": 1,
+              "score": 4
+            },
+            {
+              "questionIndex": 2,
+              "score": 4
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "a95bbd70-d7c1-4820-a102-58457534b5c6",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 0,
+          "totalExpected": 12,
+          "matchPercentage": "0.0",
+          "matchedKeywords": [],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Biologi",
+            "Ympäristöinsinööri",
+            "Ilmastotutkija",
+            "Luonnonsuojelija",
+            "Uusiutuva energia -insinööri"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "a95bbd70-d7c1-4820-a102-58457534b5c6",
+            "createdAt": "2025-12-23T17:23:34.267722+00:00",
+            "cohort": "TASO2",
+            "userProfile": {
+              "cohort": "TASO2",
+              "dimensionScores": {
+                "values": 0.75,
+                "context": 0.5,
+                "interests": 0.75,
+                "workstyle": 0.78125
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "biologi",
+                "title": "Biologi",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "ympäristöinsinööri",
+                "title": "Ympäristöinsinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "ilmastotutkija",
+                "title": "Ilmastotutkija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "luonnonsuojelija",
+                "title": "Luonnonsuojelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "uusiutuva-energia-insinööri",
+                "title": "Uusiutuva energia -insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "amk",
+              "scores": {
+                "amk": 75.99150141643062,
+                "yliopisto": 75.60483870967738
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "TASO2",
+      "profile": "Security Seeker",
+      "profileKey": "security_seeker",
+      "timestamp": "2025-12-23T17:23:35.276Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "21d2bfe4-f391-446b-94b6-7d3675ccb1bb",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 0,
+          "totalExpected": 13,
+          "matchPercentage": "0.0",
+          "matchedKeywords": [],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Biologi",
+            "Ympäristöinsinööri",
+            "Luonnonsuojelija",
+            "Uusiutuva energia -insinööri",
+            "Ympäristökasvattaja"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "21d2bfe4-f391-446b-94b6-7d3675ccb1bb",
+            "createdAt": "2025-12-23T17:23:35.614882+00:00",
+            "cohort": "TASO2",
+            "userProfile": {
+              "cohort": "TASO2",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.5555555555555556,
+                "workstyle": 0.5625
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "biologi",
+                "title": "Biologi",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "ympäristöinsinööri",
+                "title": "Ympäristöinsinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "luonnonsuojelija",
+                "title": "Luonnonsuojelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "uusiutuva-energia-insinööri",
+                "title": "Uusiutuva energia -insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "ympäristökasvattaja",
+                "title": "Ympäristökasvattaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "amk",
+              "scores": {
+                "amk": 53.82436260623229,
+                "yliopisto": 52.62096774193549
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "TASO2",
+      "profile": "Adventure Seeker",
+      "profileKey": "adventure_seeker",
+      "timestamp": "2025-12-23T17:23:36.770Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "a78f5fa5-1dc0-475c-99cf-bf9916fc557d",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 0,
+          "totalExpected": 13,
+          "matchPercentage": "0.0",
+          "matchedKeywords": [],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Aikuiskouluttaja",
+            "Koulutuskoordinaattori",
+            "Notaari",
+            "Työnkulkukoordinaattori",
+            "Laboratoriopäällikkö"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "a78f5fa5-1dc0-475c-99cf-bf9916fc557d",
+            "createdAt": "2025-12-23T17:23:37.107999+00:00",
+            "cohort": "TASO2",
+            "userProfile": {
+              "cohort": "TASO2",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.5,
+                "workstyle": 0.5
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "aikuiskouluttaja",
+                "title": "Aikuiskouluttaja",
+                "category": "",
+                "overallScore": 85,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "training-coordinator",
+                "title": "Koulutuskoordinaattori",
+                "category": "",
+                "overallScore": 85,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "notaari",
+                "title": "Notaari",
+                "category": "",
+                "overallScore": 84,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "workflow-coordinator",
+                "title": "Työnkulkukoordinaattori",
+                "category": "",
+                "overallScore": 84,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "lab-manager",
+                "title": "Laboratoriopäällikkö",
+                "category": "",
+                "overallScore": 84,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "yliopisto",
+              "scores": {
+                "amk": 50,
+                "yliopisto": 50
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "NUORI",
+      "profile": "Creative Artist",
+      "profileKey": "creative_artist",
+      "timestamp": "2025-12-23T17:23:38.103Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 2
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "2b27c1b2-21b4-46cb-9a20-1bc44a0ddfcd",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 5,
+          "totalExpected": 12,
+          "matchPercentage": "41.7",
+          "matchedKeywords": [
+            "graafinen",
+            "suunnittelija",
+            "kirjailija",
+            "muotoilija",
+            "kamera"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Graafinen suunnittelija",
+            "Kameramies",
+            "Kirjailija",
+            "Tuotemuotoilija",
+            "Animaattori"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "2b27c1b2-21b4-46cb-9a20-1bc44a0ddfcd",
+            "createdAt": "2025-12-23T17:23:38.443772+00:00",
+            "cohort": "NUORI",
+            "userProfile": {
+              "cohort": "NUORI",
+              "dimensionScores": {
+                "values": 0.4890909090909091,
+                "context": 0.5,
+                "interests": 0.5104166666666666,
+                "workstyle": 0.46875
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "graafinen-suunnittelija",
+                "title": "Graafinen suunnittelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kameramies",
+                "title": "Kameramies",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kirjailija",
+                "title": "Kirjailija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "muotoilija",
+                "title": "Tuotemuotoilija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "animaattori",
+                "title": "Animaattori",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "portfolio_ja_verkostot",
+              "scores": {
+                "portfolio_ja_verkostot": 85
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "NUORI",
+      "profile": "Tech Enthusiast",
+      "profileKey": "tech_enthusiast",
+      "timestamp": "2025-12-23T17:23:39.454Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 5
+            },
+            {
+              "questionIndex": 1,
+              "score": 2
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "9524fc3c-dc83-450a-aa34-fcc09d403a41",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 5,
+          "totalExpected": 13,
+          "matchPercentage": "38.5",
+          "matchedKeywords": [
+            "data",
+            "insinööri",
+            "peli",
+            "robotiikka",
+            "biotekniikka"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Data-insinööri",
+            "Pelisuunnittelija",
+            "Robotiikka-insinööri",
+            "Biotekniikka-insinööri",
+            "Nanotekniikka-insinööri"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "9524fc3c-dc83-450a-aa34-fcc09d403a41",
+            "createdAt": "2025-12-23T17:23:39.79731+00:00",
+            "cohort": "NUORI",
+            "userProfile": {
+              "cohort": "NUORI",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.5758345428156749,
+                "workstyle": 0.484375
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "data-insinööri",
+                "title": "Data-insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "pelisuunnittelija",
+                "title": "Pelisuunnittelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "robotiikka-insinööri",
+                "title": "Robotiikka-insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "biotekniikka-insinööri",
+                "title": "Biotekniikka-insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "nanotekniikka-insinööri",
+                "title": "Nanotekniikka-insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "bootcamp_tai_amk",
+              "scores": {
+                "bootcamp_tai_amk": 85
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "NUORI",
+      "profile": "Healthcare Helper",
+      "profileKey": "healthcare_helper",
+      "timestamp": "2025-12-23T17:23:40.807Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 1
+            },
+            {
+              "questionIndex": 1,
+              "score": 5
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "6b6ea5e2-ea3a-4b42-8683-e4fd4be9327b",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 6,
+          "totalExpected": 12,
+          "matchPercentage": "50.0",
+          "matchedKeywords": [
+            "sairaanhoitaja",
+            "tervey",
+            "hoitaja",
+            "bioanalyytikko",
+            "ravitsemus",
+            "koti"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Sairaanhoitaja",
+            "Bioanalyytikko",
+            "Kouluterveydenhoitaja",
+            "Kotihoitaja",
+            "Ravitsemusasiantuntija"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "6b6ea5e2-ea3a-4b42-8683-e4fd4be9327b",
+            "createdAt": "2025-12-23T17:23:41.146973+00:00",
+            "cohort": "NUORI",
+            "userProfile": {
+              "cohort": "NUORI",
+              "dimensionScores": {
+                "values": 0.5067567567567568,
+                "context": 0.5,
+                "interests": 0.5639652014652015,
+                "workstyle": 0.625
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "sairaanhoitaja",
+                "title": "Sairaanhoitaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "bioanalyytikko",
+                "title": "Bioanalyytikko",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kouluterveydenhoitaja",
+                "title": "Kouluterveydenhoitaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kotihoitaja",
+                "title": "Kotihoitaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "ravitsemusasiantuntija",
+                "title": "Ravitsemusasiantuntija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "amk_tai_yliopisto",
+              "scores": {
+                "amk_tai_yliopisto": 85
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "NUORI",
+      "profile": "Business Leader",
+      "profileKey": "business_leader",
+      "timestamp": "2025-12-23T17:23:42.133Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 5
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "1d807450-7fd3-4450-a03d-493c21a0b139",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 5,
+          "totalExpected": 13,
+          "matchPercentage": "38.5",
+          "matchedKeywords": [
+            "päällikkö",
+            "henkilöstö",
+            "tuotanto",
+            "talous",
+            "asiakaspalvelu"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Henkilöstöpäällikkö",
+            "Tuotantopäällikkö",
+            "Talouspäällikkö",
+            "Asiakaspalvelupäällikkö",
+            "Tietoturvapäällikkö"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "1d807450-7fd3-4450-a03d-493c21a0b139",
+            "createdAt": "2025-12-23T17:23:42.510525+00:00",
+            "cohort": "NUORI",
+            "userProfile": {
+              "cohort": "NUORI",
+              "dimensionScores": {
+                "values": 0.6203931203931204,
+                "context": 0.5,
+                "interests": 0.5913525132275133,
+                "workstyle": 0.6875
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "henkilöstöpäällikkö",
+                "title": "Henkilöstöpäällikkö",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "tuotantopäällikkö",
+                "title": "Tuotantopäällikkö",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "talouspäällikkö",
+                "title": "Talouspäällikkö",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "asiakaspalvelupäällikkö",
+                "title": "Asiakaspalvelupäällikkö",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "tietoturvapäällikkö",
+                "title": "Tietoturvapäällikkö",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "amk_tai_tyokokemus",
+              "scores": {
+                "amk_tai_tyokokemus": 85
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "NUORI",
+      "profile": "Hands-on Builder",
+      "profileKey": "hands_on_builder",
+      "timestamp": "2025-12-23T17:23:43.521Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "694e0477-764c-4680-9b89-8d0d9c603267",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 5,
+          "totalExpected": 12,
+          "matchPercentage": "41.7",
+          "matchedKeywords": [
+            "rakennus",
+            "putki",
+            "asentaja",
+            "maalari",
+            "mestari"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Rakennusmestari",
+            "Putkiasentaja",
+            "Maalari",
+            "Kattomestari",
+            "LVI-asentaja"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "694e0477-764c-4680-9b89-8d0d9c603267",
+            "createdAt": "2025-12-23T17:23:43.937942+00:00",
+            "cohort": "NUORI",
+            "userProfile": {
+              "cohort": "NUORI",
+              "dimensionScores": {
+                "values": 0.4890909090909091,
+                "context": 0.5,
+                "interests": 0.5561594202898551,
+                "workstyle": 0.46875
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "rakennusmestari",
+                "title": "Rakennusmestari",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "putkiasentaja",
+                "title": "Putkiasentaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "maalari",
+                "title": "Maalari",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kattomestari",
+                "title": "Kattomestari",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "lvi-asentaja",
+                "title": "LVI-asentaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "ammattikoulu_tai_tyopaikka",
+              "scores": {
+                "ammattikoulu_tai_tyopaikka": 85
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "NUORI",
+      "profile": "Nature Lover",
+      "profileKey": "nature_lover",
+      "timestamp": "2025-12-23T17:23:44.977Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 1
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 2
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "9fd38b81-1fcc-4bff-b7f2-a9217e22eb7d",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 4,
+          "totalExpected": 12,
+          "matchPercentage": "33.3",
+          "matchedKeywords": [
+            "ympäristö",
+            "uusiutuva",
+            "luonnonsuojelija",
+            "energia"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Ympäristöinsinööri",
+            "Luonnonsuojelija",
+            "Uusiutuva energia -insinööri",
+            "Ympäristökasvattaja",
+            "Vesi-insinööri"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "9fd38b81-1fcc-4bff-b7f2-a9217e22eb7d",
+            "createdAt": "2025-12-23T17:23:45.314375+00:00",
+            "cohort": "NUORI",
+            "userProfile": {
+              "cohort": "NUORI",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.5175925925925926,
+                "workstyle": 0.4791666666666667
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "ympäristöinsinööri",
+                "title": "Ympäristöinsinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "luonnonsuojelija",
+                "title": "Luonnonsuojelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "uusiutuva-energia-insinööri",
+                "title": "Uusiutuva energia -insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "ympäristökasvattaja",
+                "title": "Ympäristökasvattaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "vesi-insinööri",
+                "title": "Vesi-insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "yliopisto_tai_amk",
+              "scores": {
+                "yliopisto_tai_amk": 85
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "NUORI",
+      "profile": "Scientific Mind",
+      "profileKey": "scientific_mind",
+      "timestamp": "2025-12-23T17:23:46.304Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 5
+            },
+            {
+              "questionIndex": 1,
+              "score": 4
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "ae9987e1-38aa-419c-8540-cfbf775b8d6b",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 2,
+          "totalExpected": 11,
+          "matchPercentage": "18.2",
+          "matchedKeywords": [
+            "data",
+            "insinööri"
+          ],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Data-insinööri",
+            "Pelisuunnittelija",
+            "Robotiikka-insinööri",
+            "Biotekniikka-insinööri",
+            "Nanotekniikka-insinööri"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "ae9987e1-38aa-419c-8540-cfbf775b8d6b",
+            "createdAt": "2025-12-23T17:23:46.648212+00:00",
+            "cohort": "NUORI",
+            "userProfile": {
+              "cohort": "NUORI",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.5922559493624623,
+                "workstyle": 0.46875
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "data-insinööri",
+                "title": "Data-insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "pelisuunnittelija",
+                "title": "Pelisuunnittelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "robotiikka-insinööri",
+                "title": "Robotiikka-insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "biotekniikka-insinööri",
+                "title": "Biotekniikka-insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "nanotekniikka-insinööri",
+                "title": "Nanotekniikka-insinööri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "bootcamp_tai_amk",
+              "scores": {
+                "bootcamp_tai_amk": 85
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "NUORI",
+      "profile": "Social Connector",
+      "profileKey": "social_connector",
+      "timestamp": "2025-12-23T17:23:47.658Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 2
+            },
+            {
+              "questionIndex": 1,
+              "score": 4
+            },
+            {
+              "questionIndex": 2,
+              "score": 4
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "b3e51567-8f9a-49a2-8be7-edf74cf1c4e3",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 0,
+          "totalExpected": 12,
+          "matchPercentage": "0.0",
+          "matchedKeywords": [],
+          "isAccurate": false,
+          "topCareersReceived": [
+            "Graafinen suunnittelija",
+            "Muusikko",
+            "Kameramies",
+            "Kirjailija",
+            "Tuotemuotoilija"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "b3e51567-8f9a-49a2-8be7-edf74cf1c4e3",
+            "createdAt": "2025-12-23T17:23:47.99563+00:00",
+            "cohort": "NUORI",
+            "userProfile": {
+              "cohort": "NUORI",
+              "dimensionScores": {
+                "values": 0.75,
+                "context": 0.5,
+                "interests": 0.7359818574920097,
+                "workstyle": 0.75
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "graafinen-suunnittelija",
+                "title": "Graafinen suunnittelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "muusikko",
+                "title": "Muusikko",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kameramies",
+                "title": "Kameramies",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kirjailija",
+                "title": "Kirjailija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "muotoilija",
+                "title": "Tuotemuotoilija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "portfolio_ja_verkostot",
+              "scores": {
+                "portfolio_ja_verkostot": 85
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "NUORI",
+      "profile": "Security Seeker",
+      "profileKey": "security_seeker",
+      "timestamp": "2025-12-23T17:23:49.006Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 5
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "3c577d1e-18cb-4dd9-bfe9-9c121eac3eb6",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 3,
+          "totalExpected": 13,
+          "matchPercentage": "23.1",
+          "matchedKeywords": [
+            "toimisto",
+            "sihteeri",
+            "notaari"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Markkinointisuunnittelija",
+            "Yritysneuvoja",
+            "Notaari",
+            "Kustannustoimittaja",
+            "Toimistosihteeri"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "3c577d1e-18cb-4dd9-bfe9-9c121eac3eb6",
+            "createdAt": "2025-12-23T17:23:49.336209+00:00",
+            "cohort": "NUORI",
+            "userProfile": {
+              "cohort": "NUORI",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.5385561936013126,
+                "workstyle": 0.59375
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "markkinointisuunnittelija",
+                "title": "Markkinointisuunnittelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "yritysneuvoja",
+                "title": "Yritysneuvoja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "notaari",
+                "title": "Notaari",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kustannustoimittaja",
+                "title": "Kustannustoimittaja",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "toimistosihteeri",
+                "title": "Toimistosihteeri",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "amk",
+              "scores": {
+                "amk": 85
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "cohort": "NUORI",
+      "profile": "Adventure Seeker",
+      "profileKey": "adventure_seeker",
+      "timestamp": "2025-12-23T17:23:50.334Z",
+      "steps": {
+        "getQuestions": {
+          "success": true,
+          "questionCount": 30
+        },
+        "generateAnswers": {
+          "success": true,
+          "answerCount": 30,
+          "sampleAnswers": [
+            {
+              "questionIndex": 0,
+              "score": 3
+            },
+            {
+              "questionIndex": 1,
+              "score": 3
+            },
+            {
+              "questionIndex": 2,
+              "score": 3
+            }
+          ]
+        },
+        "submitTest": {
+          "success": true,
+          "resultId": "1d136e38-b47c-4966-ad09-1b686bf2fdf4",
+          "hasTopCareers": true,
+          "careerCount": 5,
+          "hasProfileText": false,
+          "hasStrengths": false
+        },
+        "careerValidation": {
+          "matchCount": 3,
+          "totalExpected": 13,
+          "matchPercentage": "23.1",
+          "matchedKeywords": [
+            "graafinen",
+            "kamera",
+            "kirjailija"
+          ],
+          "isAccurate": true,
+          "topCareersReceived": [
+            "Graafinen suunnittelija",
+            "Kameramies",
+            "Kirjailija",
+            "Tuotemuotoilija",
+            "Animaattori"
+          ]
+        },
+        "persistence": {
+          "persisted": true,
+          "hasTopCareers": true,
+          "hasProfile": false,
+          "hasStrengths": false,
+          "data": {
+            "success": true,
+            "resultId": "1d136e38-b47c-4966-ad09-1b686bf2fdf4",
+            "createdAt": "2025-12-23T17:23:50.655145+00:00",
+            "cohort": "NUORI",
+            "userProfile": {
+              "cohort": "NUORI",
+              "dimensionScores": {
+                "values": 0.5,
+                "context": 0.5,
+                "interests": 0.5492886178861789,
+                "workstyle": 0.4791666666666667
+              },
+              "topStrengths": []
+            },
+            "topCareers": [
+              {
+                "slug": "graafinen-suunnittelija",
+                "title": "Graafinen suunnittelija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kameramies",
+                "title": "Kameramies",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "kirjailija",
+                "title": "Kirjailija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "muotoilija",
+                "title": "Tuotemuotoilija",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              },
+              {
+                "slug": "animaattori",
+                "title": "Animaattori",
+                "category": "",
+                "overallScore": 100,
+                "dimensionScores": {
+                  "interests": 0,
+                  "values": 0,
+                  "workstyle": 0,
+                  "context": 0
+                },
+                "reasons": [],
+                "confidence": "medium"
+              }
+            ],
+            "educationPath": {
+              "primary": "portfolio_ja_verkostot",
+              "scores": {
+                "portfolio_ja_verkostot": 85
+              },
+              "reasoning": "",
+              "confidence": "medium"
+            },
+            "cohortCopy": {
+              "title": "",
+              "subtitle": "",
+              "ctaText": "",
+              "shareText": ""
+            }
+          }
+        },
+        "returnVisit": {
+          "success": true,
+          "dataIntact": false
+        }
+      },
+      "passed": true
+    }
+  ]
+}

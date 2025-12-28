@@ -1,0 +1,251 @@
+{
+  "timestamp": "2025-12-24T03:12:28.147Z",
+  "summary": {
+    "totalTests": 21,
+    "passedTests": 21
+  },
+  "results": {
+    "YLA": {
+      "length": {
+        "passed": true,
+        "length": 1205,
+        "isIdeal": true,
+        "issues": []
+      },
+      "finnish": {
+        "passed": true,
+        "hasFinnishChars": true,
+        "hasFinnishEndings": true,
+        "hasEnglish": false
+      },
+      "personalization": {
+        "passed": true,
+        "found": {
+          "personalWords": [
+            "sinulle",
+            "sinulla",
+            "sinulla on"
+          ],
+          "strengthWords": [
+            "vahvuutesi",
+            "osaat",
+            "taito"
+          ],
+          "futureWords": [],
+          "encouragingWords": [
+            "hieno"
+          ]
+        },
+        "personalizationScore": 7
+      },
+      "notGeneric": {
+        "passed": true,
+        "foundGeneric": []
+      },
+      "diversity": {
+        "passed": true,
+        "uniqueAnalyses": 4,
+        "avgSimilarity": 25.333333333333332,
+        "similarities": [
+          {
+            "pair": "creative vs analytical",
+            "similarity": "25%"
+          },
+          {
+            "pair": "creative vs social",
+            "similarity": "0%"
+          },
+          {
+            "pair": "creative vs balanced",
+            "similarity": "19%"
+          },
+          {
+            "pair": "analytical vs social",
+            "similarity": "50%"
+          },
+          {
+            "pair": "analytical vs balanced",
+            "similarity": "25%"
+          },
+          {
+            "pair": "social vs balanced",
+            "similarity": "33%"
+          }
+        ]
+      },
+      "ageAppropriate": {
+        "passed": true,
+        "foundWords": [
+          "yläkoulu",
+          "koulu",
+          "harrastus",
+          "opiskelu"
+        ],
+        "percentage": "80"
+      },
+      "strengthsQuality": {
+        "passed": true,
+        "count": 3,
+        "unique": 3,
+        "issues": []
+      }
+    },
+    "TASO2": {
+      "length": {
+        "passed": true,
+        "length": 1249,
+        "isIdeal": true,
+        "issues": []
+      },
+      "finnish": {
+        "passed": true,
+        "hasFinnishChars": true,
+        "hasFinnishEndings": true,
+        "hasEnglish": false
+      },
+      "personalization": {
+        "passed": true,
+        "found": {
+          "personalWords": [
+            "sinun",
+            "sinulla",
+            "sinulla on"
+          ],
+          "strengthWords": [
+            "vahvuutesi",
+            "osaat"
+          ],
+          "futureWords": [],
+          "encouragingWords": []
+        },
+        "personalizationScore": 5
+      },
+      "notGeneric": {
+        "passed": true,
+        "foundGeneric": []
+      },
+      "diversity": {
+        "passed": true,
+        "uniqueAnalyses": 4,
+        "avgSimilarity": 16.5,
+        "similarities": [
+          {
+            "pair": "creative vs analytical",
+            "similarity": "47%"
+          },
+          {
+            "pair": "creative vs social",
+            "similarity": "21%"
+          },
+          {
+            "pair": "creative vs balanced",
+            "similarity": "0%"
+          },
+          {
+            "pair": "analytical vs social",
+            "similarity": "0%"
+          },
+          {
+            "pair": "analytical vs balanced",
+            "similarity": "0%"
+          },
+          {
+            "pair": "social vs balanced",
+            "similarity": "31%"
+          }
+        ]
+      },
+      "ageAppropriate": {
+        "passed": true,
+        "foundWords": [
+          "työ"
+        ],
+        "percentage": "20"
+      },
+      "strengthsQuality": {
+        "passed": true,
+        "count": 3,
+        "unique": 3,
+        "issues": []
+      }
+    },
+    "NUORI": {
+      "length": {
+        "passed": true,
+        "length": 1241,
+        "isIdeal": true,
+        "issues": []
+      },
+      "finnish": {
+        "passed": true,
+        "hasFinnishChars": true,
+        "hasFinnishEndings": true,
+        "hasEnglish": false
+      },
+      "personalization": {
+        "passed": true,
+        "found": {
+          "personalWords": [
+            "sinulle"
+          ],
+          "strengthWords": [
+            "vahvuutesi"
+          ],
+          "futureWords": [],
+          "encouragingWords": [
+            "arvokas"
+          ]
+        },
+        "personalizationScore": 3
+      },
+      "notGeneric": {
+        "passed": true,
+        "foundGeneric": []
+      },
+      "diversity": {
+        "passed": true,
+        "uniqueAnalyses": 4,
+        "avgSimilarity": 20.166666666666668,
+        "similarities": [
+          {
+            "pair": "creative vs analytical",
+            "similarity": "0%"
+          },
+          {
+            "pair": "creative vs social",
+            "similarity": "47%"
+          },
+          {
+            "pair": "creative vs balanced",
+            "similarity": "24%"
+          },
+          {
+            "pair": "analytical vs social",
+            "similarity": "25%"
+          },
+          {
+            "pair": "analytical vs balanced",
+            "similarity": "0%"
+          },
+          {
+            "pair": "social vs balanced",
+            "similarity": "25%"
+          }
+        ]
+      },
+      "ageAppropriate": {
+        "passed": true,
+        "foundWords": [
+          "ura"
+        ],
+        "percentage": "20"
+      },
+      "strengthsQuality": {
+        "passed": true,
+        "count": 3,
+        "unique": 3,
+        "issues": []
+      }
+    }
+  }
+}

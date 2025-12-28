@@ -1,0 +1,157 @@
+{
+  "timestamp": "2025-12-24T03:36:43.712Z",
+  "config": {
+    "baseUrl": "http://localhost:3000",
+    "concurrentUsers": 10
+  },
+  "summary": {
+    "duration": 49,
+    "successful": 0,
+    "failed": 10,
+    "avgResponseTime": 44,
+    "p95ResponseTime": 47,
+    "requestsPerSecond": 408.1632653061224
+  },
+  "results": [
+    {
+      "userId": 1,
+      "cohort": "NUORI",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 500,
+          "time": 20,
+          "success": false
+        }
+      ],
+      "success": false,
+      "totalTime": 20
+    },
+    {
+      "userId": 2,
+      "cohort": "TASO2",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 500,
+          "time": 46,
+          "success": false
+        }
+      ],
+      "success": false,
+      "totalTime": 46
+    },
+    {
+      "userId": 3,
+      "cohort": "YLA",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 500,
+          "time": 46,
+          "success": false
+        }
+      ],
+      "success": false,
+      "totalTime": 46
+    },
+    {
+      "userId": 4,
+      "cohort": "YLA",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 500,
+          "time": 46,
+          "success": false
+        }
+      ],
+      "success": false,
+      "totalTime": 46
+    },
+    {
+      "userId": 5,
+      "cohort": "YLA",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 500,
+          "time": 47,
+          "success": false
+        }
+      ],
+      "success": false,
+      "totalTime": 47
+    },
+    {
+      "userId": 6,
+      "cohort": "NUORI",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 500,
+          "time": 47,
+          "success": false
+        }
+      ],
+      "success": false,
+      "totalTime": 47
+    },
+    {
+      "userId": 7,
+      "cohort": "TASO2",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 500,
+          "time": 46,
+          "success": false
+        }
+      ],
+      "success": false,
+      "totalTime": 46
+    },
+    {
+      "userId": 8,
+      "cohort": "NUORI",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 500,
+          "time": 46,
+          "success": false
+        }
+      ],
+      "success": false,
+      "totalTime": 46
+    },
+    {
+      "userId": 9,
+      "cohort": "YLA",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 500,
+          "time": 46,
+          "success": false
+        }
+      ],
+      "success": false,
+      "totalTime": 46
+    },
+    {
+      "userId": 10,
+      "cohort": "TASO2",
+      "steps": [
+        {
+          "name": "Fetch Questions",
+          "status": 500,
+          "time": 45,
+          "success": false
+        }
+      ],
+      "success": false,
+      "totalTime": 45
+    }
+  ]
+}
