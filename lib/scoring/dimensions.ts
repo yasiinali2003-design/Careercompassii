@@ -45,7 +45,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     notes: "Puzzle solving - analytical thinking"
   },
 
-  // Q2: Creative - Original creation
+  // Q2: Creative - Original creation - DUAL MAPPING for writing/arts_culture coverage
   {
     q: 2,
     text: "Tykkäätkö luoda omia tarinoita, piirroksia tai musiikkia?",
@@ -54,6 +54,24 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     weight: 1.4,
     reverse: false,
     notes: "Original creative expression"
+  },
+  {
+    q: 2,
+    text: "Tykkäätkö luoda omia tarinoita, piirroksia tai musiikkia?",
+    dimension: 'interests',
+    subdimension: 'writing',
+    weight: 1.2,
+    reverse: false,
+    notes: "Writing aspect - stories indicate writing interest (for kirjailija, toimittaja, etc.)"
+  },
+  {
+    q: 2,
+    text: "Tykkäätkö luoda omia tarinoita, piirroksia tai musiikkia?",
+    dimension: 'interests',
+    subdimension: 'arts_culture',
+    weight: 1.1,
+    reverse: false,
+    notes: "Arts/culture aspect - music and drawing indicate arts interest (for muusikko, taiteilija, etc.)"
   },
 
   // Q3: Hands-on - Building/fixing
@@ -87,6 +105,17 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     weight: 1.0,
     reverse: false,
     notes: "Animal care aspect - for vets and animal health careers (auttaja)"
+  },
+  // CRITICAL: Animals = caring = people-like work (vets care for animals like doctors care for people)
+  // This ensures animal lovers get auttaja category
+  {
+    q: 4,
+    text: "Haluaisitko tehdä jotain luonnon ja eläinten hyväksi?",
+    dimension: 'interests',
+    subdimension: 'people',
+    weight: 0.8,
+    reverse: false,
+    notes: "Animal care is caring work - contributes to auttaja (people-like caring)"
   },
 
   // Q5: Health - Human body
@@ -122,7 +151,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     notes: "Scientific experimentation"
   },
 
-  // Q8: Sports - Physical activity
+  // Q8: Sports - Physical activity - DUAL MAPPING for sports subdimension
   // FIXED: Sports maps to health (for fitness/sports careers) NOT hands_on
   // Athletes like Onni who help teammates should get auttaja, not rakentaja
   {
@@ -134,8 +163,17 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     reverse: false,
     notes: "Sports/fitness interest - maps to health for sports/fitness careers"
   },
+  {
+    q: 8,
+    text: "Ovatko liikunta ja urheilu tärkeä osa elämääsi?",
+    dimension: 'interests',
+    subdimension: 'sports',
+    weight: 1.4,
+    reverse: false,
+    notes: "Sports subdimension - direct mapping for urheilija, valmentaja, personal trainer, etc."
+  },
 
-  // Q9: Teaching - Explaining to others
+  // Q9: Teaching - Explaining to others - DUAL MAPPING for teaching subdimension
   {
     q: 9,
     text: "Tykkäätkö selittää asioita muille ja auttaa heitä ymmärtämään?",
@@ -143,7 +181,16 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     subdimension: 'growth',
     weight: 1.3,
     reverse: false,
-    notes: "Teaching aptitude"
+    notes: "Teaching aptitude - growth aspect"
+  },
+  {
+    q: 9,
+    text: "Tykkäätkö selittää asioita muille ja auttaa heitä ymmärtämään?",
+    dimension: 'interests',
+    subdimension: 'teaching',
+    weight: 1.4,
+    reverse: false,
+    notes: "Teaching subdimension - for auttaja category (opettaja, valmentaja, etc.)"
   },
 
   // Q10: Food - Cooking
@@ -245,7 +292,7 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     notes: "Focus difficulty - REVERSE SCORED for acquiescence bias detection"
   },
 
-  // Q19: Workstyle - Variety
+  // Q19: Workstyle - Variety - DUAL MAPPING for variety subdimension
   {
     q: 19,
     text: "Pidätkö siitä, kun jokainen päivä on erilainen?",
@@ -253,7 +300,16 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     subdimension: 'flexibility',
     weight: 0.9,
     reverse: false,
-    notes: "Variety preference"
+    notes: "Variety preference - flexibility aspect"
+  },
+  {
+    q: 19,
+    text: "Pidätkö siitä, kun jokainen päivä on erilainen?",
+    dimension: 'workstyle',
+    subdimension: 'variety',
+    weight: 1.0,
+    reverse: false,
+    notes: "Variety subdimension - direct mapping for careers with varied tasks"
   },
 
   // Q20: Workstyle - Pressure (REVERSE-SCORED for bias detection)
@@ -581,7 +637,7 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     notes: "Social work - mental and social health aspect"
   },
 
-  // Q15: Physical work preference - Changed to outdoor (physical work often outdoor)
+  // Q15: Physical work preference - DUAL MAPPING for sports
   {
     q: 15,
     text: "Haluaisitko työn, jossa liikut ja teet fyysistä työtä?",
@@ -590,6 +646,15 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     weight: 1.1,
     reverse: false,
     notes: "Physical/active work preference - 5=active/outdoor"
+  },
+  {
+    q: 15,
+    text: "Haluaisitko työn, jossa liikut ja teet fyysistä työtä?",
+    dimension: 'interests',
+    subdimension: 'sports',
+    weight: 1.2,
+    reverse: false,
+    notes: "Sports aspect - physical activity correlates with sports careers"
   },
 
   // Q16: Shift work
@@ -803,7 +868,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     notes: "Finance/accounting"
   },
 
-  // Q3: Creative industries
+  // Q3: Creative industries - DUAL MAPPING for writing/arts_culture coverage
   {
     q: 3,
     text: "Haluaisitko työskennellä luovalla alalla, kuten mainonta tai muotoilu?",
@@ -813,28 +878,46 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     reverse: false,
     notes: "Creative industries"
   },
+  {
+    q: 3,
+    text: "Haluaisitko työskennellä luovalla alalla, kuten mainonta tai muotoilu?",
+    dimension: 'interests',
+    subdimension: 'writing',
+    weight: 1.2,
+    reverse: false,
+    notes: "Writing aspect - advertising involves copywriting (for copywriter, content creator)"
+  },
+  {
+    q: 3,
+    text: "Haluaisitko työskennellä luovalla alalla, kuten mainonta tai muotoilu?",
+    dimension: 'interests',
+    subdimension: 'arts_culture',
+    weight: 1.3,
+    reverse: false,
+    notes: "Arts/culture aspect - design and advertising are cultural industries"
+  },
 
-  // Q4: Engineering/R&D - DUAL: innovation + hands_on
+  // Q4: Engineering/R&D - DUAL: innovation + technology (not hands_on - engineering is about innovation, not physical building)
   {
     q: 4,
     text: "Kiinnostaako sinua insinöörityö tai tuotekehitys?",
     dimension: 'interests',
     subdimension: 'innovation',
-    weight: 1.5,
+    weight: 1.6,
     reverse: false,
-    notes: "Engineering/R&D"
+    notes: "Engineering/R&D - innovation focus"
   },
   {
     q: 4,
     text: "Kiinnostaako sinua insinöörityö tai tuotekehitys?",
     dimension: 'interests',
-    subdimension: 'hands_on',
-    weight: 1.2,
+    subdimension: 'technology',
+    weight: 1.4,
     reverse: false,
-    notes: "Engineering - hands-on aspect"
+    notes: "Engineering - technology aspect (modern engineering is tech-focused)"
   },
 
-  // Q5: Education/Training - DUAL: growth + people
+  // Q5: Education/Training - TRIPLE MAPPING: growth + people + teaching
   {
     q: 5,
     text: "Haluaisitko opettaa, kouluttaa tai valmentaa muita?",
@@ -842,7 +925,7 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     subdimension: 'growth',
     weight: 1.5,
     reverse: false,
-    notes: "Education sector"
+    notes: "Education sector - growth aspect"
   },
   {
     q: 5,
@@ -852,6 +935,15 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     weight: 1.3,
     reverse: false,
     notes: "Education - people aspect"
+  },
+  {
+    q: 5,
+    text: "Haluaisitko opettaa, kouluttaa tai valmentaa muita?",
+    dimension: 'interests',
+    subdimension: 'teaching',
+    weight: 1.6,
+    reverse: false,
+    notes: "Teaching subdimension - for auttaja category (opettaja, valmentaja, etc.)"
   },
 
   // Q6: HR/Recruitment - people focus
@@ -989,15 +1081,24 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     notes: "Team - people aspect"
   },
 
-  // Q15: Structure preference
+  // Q15: Structure preference - DUAL MAPPING for jarjestaja
   {
     q: 15,
     text: "Pidätkö siitä, kun työpäivällä on selkeä rakenne ja aikataulu?",
     dimension: 'workstyle',
     subdimension: 'structure',
-    weight: 1.0,
+    weight: 1.2,
     reverse: false,
     notes: "Structure preference - 5=structured"
+  },
+  {
+    q: 15,
+    text: "Pidätkö siitä, kun työpäivällä on selkeä rakenne ja aikataulu?",
+    dimension: 'workstyle',
+    subdimension: 'organization',
+    weight: 1.2,
+    reverse: false,
+    notes: "Organization subdimension - for jarjestaja category"
   },
 
   // Q16: Client-facing - social skills (REVERSE-SCORED for bias detection)
@@ -1159,15 +1260,24 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     notes: "Entrepreneurship - business aspect"
   },
 
-  // Q28: International work
+  // Q28: International work - DUAL MAPPING for visionaari
   {
     q: 28,
     text: "Haluaisitko tehdä kansainvälistä työtä tai työskennellä ulkomailla?",
     dimension: 'values',
     subdimension: 'global',
-    weight: 1.2,
+    weight: 1.4,
     reverse: false,
-    notes: "International orientation"
+    notes: "International orientation - PRIMARY visionaari signal"
+  },
+  {
+    q: 28,
+    text: "Haluaisitko tehdä kansainvälistä työtä tai työskennellä ulkomailla?",
+    dimension: 'values',
+    subdimension: 'international',
+    weight: 1.4,
+    reverse: false,
+    notes: "International subdimension - for visionaari category"
   },
 
   // Q29: Company culture - social aspect (REVERSE-SCORED for bias detection)
@@ -1210,7 +1320,7 @@ const TASO2_SHARED_QUESTIONS: QuestionMapping[] = [
     notes: "Healthcare interest - nursing to medicine"
   },
 
-  // Q2: Creative work
+  // Q2: Creative work - DUAL MAPPING for writing/arts_culture coverage
   {
     q: 2,
     text: "Nautitko luovasta työstä, kuten suunnittelusta tai sisällön tuottamisesta?",
@@ -1219,6 +1329,24 @@ const TASO2_SHARED_QUESTIONS: QuestionMapping[] = [
     weight: 1.2,
     reverse: false,
     notes: "Creative interest - design, media, arts"
+  },
+  {
+    q: 2,
+    text: "Nautitko luovasta työstä, kuten suunnittelusta tai sisällön tuottamisesta?",
+    dimension: 'interests',
+    subdimension: 'writing',
+    weight: 1.1,
+    reverse: false,
+    notes: "Writing aspect - content production indicates writing interest"
+  },
+  {
+    q: 2,
+    text: "Nautitko luovasta työstä, kuten suunnittelusta tai sisällön tuottamisesta?",
+    dimension: 'interests',
+    subdimension: 'arts_culture',
+    weight: 1.0,
+    reverse: false,
+    notes: "Arts/culture aspect - design and media are cultural fields"
   },
 
   // Q3: Working with people
@@ -1276,15 +1404,24 @@ const TASO2_SHARED_QUESTIONS: QuestionMapping[] = [
     notes: "Analytical thinking - IT to research"
   },
 
-  // Q8: Teaching/Mentoring
+  // Q8: Teaching/Mentoring - DUAL MAPPING for teaching subdimension
   {
     q: 8,
     text: "Kiinnostaako sinua opettaminen tai muiden ohjaaminen?",
     dimension: 'interests',
-    subdimension: 'education',
-    weight: 1.2,
+    subdimension: 'teaching',
+    weight: 1.4,
     reverse: false,
-    notes: "Education interest - trainer to professor"
+    notes: "Teaching subdimension - for auttaja category (opettaja, valmentaja, etc.)"
+  },
+  {
+    q: 8,
+    text: "Kiinnostaako sinua opettaminen tai muiden ohjaaminen?",
+    dimension: 'interests',
+    subdimension: 'growth',
+    weight: 1.1,
+    reverse: false,
+    notes: "Teaching - growth aspect (developing others)"
   },
 
   // Q9: Innovation/New ideas
@@ -1311,7 +1448,7 @@ const TASO2_SHARED_QUESTIONS: QuestionMapping[] = [
     notes: "Team vs solo preference"
   },
 
-  // Q11: Structure preference
+  // Q11: Structure preference - DUAL MAPPING with reverse for variety + organization for jarjestaja
   {
     q: 11,
     text: "Pidätkö selkeistä ohjeista ja rutiineista työssä?",
@@ -1321,8 +1458,26 @@ const TASO2_SHARED_QUESTIONS: QuestionMapping[] = [
     reverse: false,
     notes: "Structure preference"
   },
+  {
+    q: 11,
+    text: "Pidätkö selkeistä ohjeista ja rutiineista työssä?",
+    dimension: 'workstyle',
+    subdimension: 'organization',
+    weight: 1.1,
+    reverse: false,
+    notes: "Organization subdimension - for jarjestaja category"
+  },
+  {
+    q: 11,
+    text: "Pidätkö selkeistä ohjeista ja rutiineista työssä?",
+    dimension: 'workstyle',
+    subdimension: 'variety',
+    weight: 0.8,
+    reverse: true,
+    notes: "Variety subdimension (REVERSE) - low structure preference = high variety preference"
+  },
 
-  // Q12: Independence
+  // Q12: Independence - DUAL MAPPING for leadership/johtaja
   {
     q: 12,
     text: "Haluatko tehdä itsenäisiä päätöksiä työssäsi?",
@@ -1332,8 +1487,17 @@ const TASO2_SHARED_QUESTIONS: QuestionMapping[] = [
     reverse: false,
     notes: "Autonomy preference"
   },
+  {
+    q: 12,
+    text: "Haluatko tehdä itsenäisiä päätöksiä työssäsi?",
+    dimension: 'interests',
+    subdimension: 'leadership',
+    weight: 1.0,
+    reverse: false,
+    notes: "Leadership subdimension - decision-making indicates leadership potential"
+  },
 
-  // Q13: Outdoor/Physical
+  // Q13: Outdoor/Physical - DUAL MAPPING for sports
   {
     q: 13,
     text: "Haluatko työn, jossa liikut ja olet aktiivinen?",
@@ -1342,6 +1506,15 @@ const TASO2_SHARED_QUESTIONS: QuestionMapping[] = [
     weight: 1.1,
     reverse: false,
     notes: "Physical activity preference"
+  },
+  {
+    q: 13,
+    text: "Haluatko työn, jossa liikut ja olet aktiivinen?",
+    dimension: 'interests',
+    subdimension: 'sports',
+    weight: 1.2,
+    reverse: false,
+    notes: "Sports aspect - active work correlates with sports/fitness careers"
   },
 
   // Q14: Customer interaction
@@ -1494,15 +1667,24 @@ const TASO2_LUKIO_SPECIFIC: QuestionMapping[] = [
     notes: "Learning orientation"
   },
 
-  // Q27: International career
+  // Q27: International career - DUAL MAPPING for visionaari
   {
     q: 27,
     text: "Haluaisitko työskennellä kansainvälisessä ympäristössä?",
     dimension: 'values',
     subdimension: 'global',
-    weight: 1.1,
+    weight: 1.3,
     reverse: false,
-    notes: "International aspiration"
+    notes: "International aspiration - PRIMARY visionaari signal"
+  },
+  {
+    q: 27,
+    text: "Haluaisitko työskennellä kansainvälisessä ympäristössä?",
+    dimension: 'values',
+    subdimension: 'international',
+    weight: 1.3,
+    reverse: false,
+    notes: "International subdimension - for visionaari category"
   },
 
   // Q28: Status/Prestige
@@ -1582,7 +1764,7 @@ const TASO2_AMIS_SPECIFIC: QuestionMapping[] = [
     notes: "Practical skills value"
   },
 
-  // Q24: Shift work tolerance
+  // Q24: Shift work tolerance - DUAL MAPPING for variety
   {
     q: 24,
     text: "Sopiiko sinulle vuorotyö ja vaihtelevat työajat?",
@@ -1590,10 +1772,19 @@ const TASO2_AMIS_SPECIFIC: QuestionMapping[] = [
     subdimension: 'flexibility',
     weight: 1.0,
     reverse: false,
-    notes: "Shift work acceptance"
+    notes: "Shift work acceptance - flexibility aspect"
+  },
+  {
+    q: 24,
+    text: "Sopiiko sinulle vuorotyö ja vaihtelevat työajat?",
+    dimension: 'workstyle',
+    subdimension: 'variety',
+    weight: 0.9,
+    reverse: false,
+    notes: "Variety subdimension - varying schedules indicate variety tolerance"
   },
 
-  // Q25: Entrepreneurship
+  // Q25: Entrepreneurship - DUAL MAPPING for johtaja
   {
     q: 25,
     text: "Haluaisitko joskus perustaa oman yrityksen tai toimia yrittäjänä?",
@@ -1602,6 +1793,24 @@ const TASO2_AMIS_SPECIFIC: QuestionMapping[] = [
     weight: 1.3,
     reverse: false,
     notes: "Entrepreneurial drive"
+  },
+  {
+    q: 25,
+    text: "Haluaisitko joskus perustaa oman yrityksen tai toimia yrittäjänä?",
+    dimension: 'interests',
+    subdimension: 'business',
+    weight: 1.2,
+    reverse: false,
+    notes: "Business subdimension - entrepreneurship indicates business orientation"
+  },
+  {
+    q: 25,
+    text: "Haluaisitko joskus perustaa oman yrityksen tai toimia yrittäjänä?",
+    dimension: 'interests',
+    subdimension: 'leadership',
+    weight: 1.1,
+    reverse: false,
+    notes: "Leadership subdimension - entrepreneurs are leaders"
   },
 
   // Q26: Employment stability
@@ -1615,7 +1824,7 @@ const TASO2_AMIS_SPECIFIC: QuestionMapping[] = [
     notes: "Job market stability"
   },
 
-  // Q27: Following procedures
+  // Q27: Following procedures - DUAL MAPPING for jarjestaja
   {
     q: 27,
     text: "Osaatko noudattaa tarkasti ohjeita ja turvallisuusmääräyksiä?",
@@ -1625,8 +1834,17 @@ const TASO2_AMIS_SPECIFIC: QuestionMapping[] = [
     reverse: false,
     notes: "Procedure following ability"
   },
+  {
+    q: 27,
+    text: "Osaatko noudattaa tarkasti ohjeita ja turvallisuusmääräyksiä?",
+    dimension: 'workstyle',
+    subdimension: 'organization',
+    weight: 1.0,
+    reverse: false,
+    notes: "Organization subdimension - following procedures indicates organizational mindset"
+  },
 
-  // Q28: Local/Community work - unique to vocational paths
+  // Q28: Local/Community work - unique to vocational paths - DUAL MAPPING with reverse for global/visionaari
   {
     q: 28,
     text: "Haluaisitko työn, jossa voit toimia omalla paikkakunnallasi?",
@@ -1635,6 +1853,24 @@ const TASO2_AMIS_SPECIFIC: QuestionMapping[] = [
     weight: 1.1,
     reverse: false,
     notes: "Local work preference - common vocational value"
+  },
+  {
+    q: 28,
+    text: "Haluaisitko työn, jossa voit toimia omalla paikkakunnallasi?",
+    dimension: 'values',
+    subdimension: 'global',
+    weight: 1.0,
+    reverse: true,
+    notes: "Global subdimension (REVERSE) - local preference = low global/international interest"
+  },
+  {
+    q: 28,
+    text: "Haluaisitko työn, jossa voit toimia omalla paikkakunnallasi?",
+    dimension: 'values',
+    subdimension: 'international',
+    weight: 1.0,
+    reverse: true,
+    notes: "International subdimension (REVERSE) - for visionaari category detection"
   },
 
   // Q29: Apprenticeship interest

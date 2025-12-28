@@ -43,11 +43,11 @@ export type EducationPathResult = YLAEducationPathResult | TASO2EducationPathRes
 /**
  * Calculate education path recommendation for YLA or TASO2 cohort
  */
-export function calculateEducationPath(answers: TestAnswer[], cohort: Cohort): EducationPathResult | null {
+export function calculateEducationPath(answers: TestAnswer[], cohort: Cohort, subCohort?: string): EducationPathResult | null {
   if (cohort === 'YLA') {
     return calculateYLAPath(answers);
   } else if (cohort === 'TASO2') {
-    return calculateTASO2Path(answers, cohort);
+    return calculateTASO2Path(answers, cohort, subCohort);
   }
   return null; // NUORI doesn't get education paths
 }
@@ -107,41 +107,86 @@ function calculateYLAPath(answers: TestAnswer[]): YLAEducationPathResult | null 
   let ammattikouluScore = 0;
   let kansanopistoScore = 0;
 
-  // LUKIO indicators: tech, analytical, innovation, creative (academic paths)
+  // LUKIO indicators: tech, analytical, innovation, creative, HEALTH (academic paths)
   // Tech-focused students (like Matti the coder) should go to Lukio → Yliopisto/AMK
+  // Healthcare-focused students (future doctors, vets, nurses) should also go Lukio → Yliopisto/AMK
   lukioScore += technology * 2.5;       // Strong tech → lukio for IT/CS studies
   lukioScore += analytical * 2.0;       // Analytical → lukio for academic path
   lukioScore += innovation * 1.5;       // Innovation → lukio for research/design
   lukioScore += problem_solving * 1.5;  // Problem solving → lukio
   lukioScore += creative * 1.0;         // Creative → lukio for art/design studies
+  // CRITICAL: Health-focused students (Ella: future vet) need lukio for medical/vet school
+  lukioScore += health * 2.5;           // High health interest → lukio for medical studies
+  lukioScore += people * 1.5;           // High people interest → lukio for psychology/teaching
 
-  // AMMATTIKOULU indicators: hands-on, outdoor, stability preference
-  ammattikouluScore += hands_on * 2.5;   // Hands-on → ammattikoulu
-  ammattikouluScore += outdoor * 1.5;    // Outdoor work → ammattikoulu
+  // AMMATTIKOULU indicators: hands-on, outdoor, stability preference, LOW health/analytical
+  ammattikouluScore += hands_on * 3.0;   // Hands-on → ammattikoulu (increased weight)
+  ammattikouluScore += outdoor * 1.0;    // Outdoor work → ammattikoulu (reduced - vet also likes outdoor)
   ammattikouluScore += stability * 1.0;  // Wants job security → ammattikoulu
   ammattikouluScore += (1 - analytical) * 0.8; // Not analytical → ammattikoulu
 
-  // KANSANOPISTO: unclear direction, mixed signals
-  // If both lukio and ammattikoulu scores are low, kansanopisto is good
-  const isUnclear = lukioScore < 4 && ammattikouluScore < 4;
-  if (isUnclear) {
-    kansanopistoScore += 3.0;
+  // CRITICAL: When hands_on is DOMINANT (>0.8) and much higher than analytical, boost ammattikoulu
+  // This is for students like Mikko who clearly want to build/fix things
+  if (hands_on > 0.8 && hands_on > analytical + 0.3) {
+    ammattikouluScore += 3.0; // Strong boost for clearly vocational students
+    lukioScore -= 1.5; // Slight reduction to lukio
   }
-  // If there's strong entrepreneurship but unclear academic path
-  if (entrepreneurship > 0.6 && technology < 0.5 && hands_on < 0.5) {
-    kansanopistoScore += 1.5;
+
+  // CRITICAL: Penalty for ammattikoulu when health is high (academic medical path preferred)
+  if (health > 0.6) {
+    ammattikouluScore -= health * 1.5;
+  }
+
+  // KANSANOPISTO: Only for truly undecided students who can't decide anything
+  // IMPORTANT: Finnish education system values lukio highly - students can still explore
+  // in lukio and decide their path later. Kansanopisto is only for extreme cases.
+
+  // Only use subdimensions that have actual question mappings in YLA
+  const coreScores = [technology, analytical, problem_solving, creative, health, people, hands_on];
+  const avgScore = coreScores.reduce((a, b) => a + b, 0) / coreScores.length;
+  const variance = coreScores.reduce((sum, s) => sum + Math.pow(s - avgScore, 2), 0) / coreScores.length;
+  const stdDev = Math.sqrt(variance);
+
+  // Count how many strong signals (> 0.6) the student has
+  const strongSignals = coreScores.filter(s => s > 0.6).length;
+
+  // Creative students should go to LUKIO (for art schools, design, etc.) - NOT kansanopisto
+  // Lukio keeps more doors open for creative careers that require higher education
+  if (creative > 0.6) {
+    lukioScore += 2.0; // Extra boost for creative students toward lukio
+  }
+
+  // KANSANOPISTO is ONLY recommended when:
+  // 1. Student has extremely flat profile (stdDev < 0.08) - truly no preferences
+  // 2. AND has ZERO strong signals in any direction
+  // 3. AND specifically NOT interested in academics (all academic scores < 0.45)
+  const isExtremelyUndecided = stdDev < 0.08 && strongSignals === 0;
+  const noAcademicInterest = technology < 0.45 && analytical < 0.45 && health < 0.45 && creative < 0.45;
+  const noVocationalInterest = hands_on < 0.45;
+
+  // Only give kansanopisto a small boost for truly lost students
+  if (isExtremelyUndecided && noAcademicInterest && noVocationalInterest) {
+    kansanopistoScore += 2.0; // Reduced boost - lukio is still preferred
+  }
+
+  // STRONGLY penalize kansanopisto when ANY clear signal is present
+  // This ensures lukio wins in most cases
+  if (creative > 0.5 || health > 0.5 || technology > 0.5 || analytical > 0.5 || people > 0.5) {
+    kansanopistoScore -= 4.0; // Strong penalty - these students belong in lukio
+  }
+  if (hands_on > 0.6) {
+    kansanopistoScore -= 3.0; // Vocational direction → ammattikoulu, not kansanopisto
   }
 
   // Normalize to 0-100
   const maxPossibleScore = 10;
   lukioScore = Math.min(100, (lukioScore / maxPossibleScore) * 100);
   ammattikouluScore = Math.min(100, (ammattikouluScore / maxPossibleScore) * 100);
-  kansanopistoScore = Math.min(100, (kansanopistoScore / maxPossibleScore) * 100);
+  kansanopistoScore = Math.min(100, Math.max(0, (kansanopistoScore / maxPossibleScore) * 100));
 
-  // Boost Kansanopisto if both Lukio and Ammattikoulu are low (unclear path)
-  if (lukioScore < 40 && ammattikouluScore < 40) {
-    kansanopistoScore = Math.max(50, kansanopistoScore + 20);
-  }
+  // IMPORTANT: In Finnish education, lukio is the default safe choice
+  // Only show kansanopisto as secondary if it's actually competitive
+  // Kansanopisto should only be primary if both lukio AND ammattikoulu are very low
 
   // Determine primary and secondary paths
   const scores = { lukio: lukioScore, ammattikoulu: ammattikouluScore, kansanopisto: kansanopistoScore };
@@ -187,198 +232,166 @@ function calculateYLAPath(answers: TestAnswer[]): YLAEducationPathResult | null 
  * 
  * All 30 questions are evenly distributed (50/50) between yliopisto and amk
  */
-function calculateTASO2Path(answers: TestAnswer[], cohort: Cohort): TASO2EducationPathResult | null {
+function calculateTASO2Path(answers: TestAnswer[], cohort: Cohort, subCohort?: string): TASO2EducationPathResult | null {
   if (answers.length === 0) {
     return null;
   }
 
-  // Normalize scores to 0-1
-  const normalized = answers.map(a => ({
-    index: a.questionIndex,
-    score: (a.score - 1) / 4  // 1-5 → 0-1
-  }));
+  // Use SUBDIMENSION-BASED scoring (like YLA) instead of raw question indices
+  // This ensures proper alignment with how questions are mapped to subdimensions
+  const mappings = getQuestionMappings(cohort, 0, subCohort);
 
-  // Calculate path scores based on question patterns
-  // All questions evenly distributed (50/50) between yliopisto and amk
+  // Aggregate scores by subdimension
+  const subdimensionScores: Record<string, { total: number; count: number }> = {};
+
+  answers.forEach(answer => {
+    const matchingMappings = mappings.filter(m => {
+      const q = m.originalQ !== undefined ? m.originalQ : m.q;
+      return q === answer.questionIndex;
+    });
+
+    matchingMappings.forEach(mapping => {
+      const subdim = mapping.subdimension;
+      if (subdim) {
+        const normalizedScore = (answer.score - 1) / 4; // 1-5 → 0-1
+        const finalScore = mapping.reverse ? (1 - normalizedScore) : normalizedScore;
+
+        if (!subdimensionScores[subdim]) {
+          subdimensionScores[subdim] = { total: 0, count: 0 };
+        }
+        subdimensionScores[subdim].total += finalScore * (mapping.weight || 1);
+        subdimensionScores[subdim].count += (mapping.weight || 1);
+      }
+    });
+  });
+
+  // Helper to get normalized subdimension average
+  const getAvg = (subdim: string): number => {
+    const data = subdimensionScores[subdim];
+    return data && data.count > 0 ? data.total / data.count : 0.5;
+  };
+
+  // Extract key subdimensions
+  const technology = getAvg('technology');
+  const analytical = getAvg('analytical');
+  const problem_solving = getAvg('problem_solving');
+  const innovation = getAvg('innovation');
+  const health = getAvg('health');
+  const people = getAvg('people');
+  const creative = getAvg('creative');
+  const hands_on = getAvg('hands_on');
+  const business = getAvg('business');
+  const environment = getAvg('environment');
+  const writing = getAvg('writing');
+  const leadership = getAvg('leadership');
+
+  // Calculate path scores based on subdimension patterns
   let yliopistoScore = 0;
   let amkScore = 0;
 
-  normalized.forEach(({ index, score }) => {
-    switch (index) {
-      // Section 1: Tech & Digital (Q0-6)
-      case 0: // Koodaaminen
-        yliopistoScore += score * 1.0;
-        amkScore += score * 1.0;
-        break;
-      case 1: // Tietokoneet ja teknologia
-        yliopistoScore += score * 0.9;
-        amkScore += score * 1.1;
-        break;
-      case 2: // Numeroiden analysointi → Yliopisto
-        yliopistoScore += score * 1.3;
-        amkScore += score * 0.7;
-        break;
-      case 3: // Tekniset ongelmat → Balanced
-        yliopistoScore += score * 1.0;
-        amkScore += score * 1.0;
-        break;
-      case 4: // Nettisivut/sovellukset → AMK (redistributed from työelämä)
-        yliopistoScore += score * 0.5;
-        amkScore += score * 1.5;
-        break;
-      case 5: // Videopelit → Split (redistributed from erikoistuminen)
-        yliopistoScore += score * 0.8;
-        amkScore += score * 1.2;
-        break;
-      case 6: // Tietoturva → Balanced
-        yliopistoScore += score * 1.0;
-        amkScore += score * 1.1;
-        break;
+  // YLIOPISTO indicators: analytical, theoretical, research-focused
+  // Fields: Lääketiede, psykologia, luonnontieteet, kauppatieteet (KTM), oikeustiede, etc.
+  yliopistoScore += analytical * 3.0;      // Strong analytical → yliopisto
+  yliopistoScore += technology * 2.0;       // Tech can be both, slight yliopisto lean for CS
+  yliopistoScore += innovation * 1.5;       // Research/innovation → yliopisto
+  yliopistoScore += writing * 2.0;          // Writing (journalism, literature) → yliopisto
+  yliopistoScore += environment * 1.5;      // Environmental science → yliopisto
 
-      // Section 2: People & Care (Q7-13)
-      case 7: // Auttaa ihmisiä terveydessä → AMK (redistributed from erikoistuminen)
-        yliopistoScore += score * 0.7;
-        amkScore += score * 1.3;
-        break;
-      case 8: // Mielen ymmärtäminen → Yliopisto
-        yliopistoScore += score * 1.3;
-        amkScore += score * 0.7;
-        break;
-      case 9: // Opettaminen → Balanced
-        yliopistoScore += score * 0.9;
-        amkScore += score * 1.1;
-        break;
-      case 10: // Auttaa ihmisiä vaikeuksissa → AMK (redistributed from erikoistuminen)
-        yliopistoScore += score * 0.7;
-        amkScore += score * 1.3;
-        break;
-      case 11: // Lasten/nuorten kanssa → AMK
-        yliopistoScore += score * 0.6;
-        amkScore += score * 1.4;
-        break;
-      case 12: // Vanhusten hoito → AMK (redistributed from erikoistuminen)
-        yliopistoScore += score * 0.8;
-        amkScore += score * 1.2;
-        break;
-      case 13: // Neuvoa ja ohjata → AMK (redistributed from erikoistuminen)
-        yliopistoScore += score * 0.8;
-        amkScore += score * 1.2;
-        break;
-
-      // Section 3: Creative & Business (Q14-20)
-      case 14: // Grafiikka → AMK (redistributed from työelämä/erikoistuminen)
-        yliopistoScore += score * 0.7;
-        amkScore += score * 1.3;
-        break;
-      case 15: // Mainonta/markkinointi → AMK (redistributed from työelämä)
-        yliopistoScore += score * 0.8;
-        amkScore += score * 1.2;
-        break;
-      case 16: // Sisustaminen → AMK (redistributed from työelämä/erikoistuminen)
-        yliopistoScore += score * 0.7;
-        amkScore += score * 1.3;
-        break;
-      case 17: // Kirjoittaminen → Yliopisto
-        yliopistoScore += score * 1.2;
-        amkScore += score * 0.8;
-        break;
-      case 18: // Valokuvaus/videot → AMK (redistributed from työelämä/erikoistuminen)
-        yliopistoScore += score * 0.7;
-        amkScore += score * 1.3;
-        break;
-      case 19: // Oma yritys → AMK (redistributed from työelämä/erikoistuminen)
-        yliopistoScore += score * 0.8;
-        amkScore += score * 1.2;
-        break;
-      case 20: // Myynti → AMK (redistributed from työelämä)
-        yliopistoScore += score * 0.6;
-        amkScore += score * 1.4;
-        break;
-
-      // Section 4: Hands-On & Practical (Q21-29)
-      case 21: // Rakentaminen → AMK (redistributed from työelämä/erikoistuminen)
-        yliopistoScore += score * 0.6;
-        amkScore += score * 1.4;
-        break;
-      case 22: // Autot → AMK (redistributed from työelämä/erikoistuminen)
-        yliopistoScore += score * 0.7;
-        amkScore += score * 1.3;
-        break;
-      case 23: // Sähköasennukset → AMK (redistributed from työelämä/erikoistuminen)
-        yliopistoScore += score * 0.6;
-        amkScore += score * 1.4;
-        break;
-      case 24: // Kasvit/eläimet → Balanced (redistributed from erikoistuminen)
-        yliopistoScore += score * 0.9;
-        amkScore += score * 1.1;
-        break;
-      case 25: // Ympäristön suojelu → Yliopisto
-        yliopistoScore += score * 1.1;
-        amkScore += score * 0.9;
-        break;
-      case 26: // Kuljetus → AMK (redistributed from työelämä)
-        yliopistoScore += score * 0.6;
-        amkScore += score * 1.4;
-        break;
-      case 27: // Ruoan valmistus → AMK (redistributed from työelämä/erikoistuminen)
-        yliopistoScore += score * 0.7;
-        amkScore += score * 1.3;
-        break;
-      case 28: // Puuntyöstö/metallintyöstö → AMK (redistributed from työelämä/erikoistuminen)
-        yliopistoScore += score * 0.6;
-        amkScore += score * 1.4;
-        break;
-      case 29: // Laboratorio/kokeet → Yliopisto
-        yliopistoScore += score * 1.2;
-        amkScore += score * 0.8;
-        break;
-    }
-  });
-
-  // Calculate actual maximum possible scores for each path (if all contributing questions score 1.0)
-  // This ensures fair normalization across paths with different numbers of contributing questions
-  let maxYliopisto = 0;
-  let maxAMK = 0;
-
-  // Calculate theoretical maximums by summing all weights
-  for (let i = 0; i < 30; i++) {
-    switch (i) {
-      case 0: maxYliopisto += 1.0; maxAMK += 1.0; break;
-      case 1: maxYliopisto += 0.9; maxAMK += 1.1; break;
-      case 2: maxYliopisto += 1.3; maxAMK += 0.7; break;
-      case 3: maxYliopisto += 1.0; maxAMK += 1.0; break;
-      case 4: maxYliopisto += 0.5; maxAMK += 1.5; break;
-      case 5: maxYliopisto += 0.8; maxAMK += 1.2; break;
-      case 6: maxYliopisto += 1.0; maxAMK += 1.1; break;
-      case 7: maxYliopisto += 0.7; maxAMK += 1.3; break;
-      case 8: maxYliopisto += 1.3; maxAMK += 0.7; break;
-      case 9: maxYliopisto += 0.9; maxAMK += 1.1; break;
-      case 10: maxYliopisto += 0.7; maxAMK += 1.3; break;
-      case 11: maxYliopisto += 0.6; maxAMK += 1.4; break;
-      case 12: maxYliopisto += 0.8; maxAMK += 1.2; break;
-      case 13: maxYliopisto += 0.8; maxAMK += 1.2; break;
-      case 14: maxYliopisto += 0.7; maxAMK += 1.3; break;
-      case 15: maxYliopisto += 0.8; maxAMK += 1.2; break;
-      case 16: maxYliopisto += 0.7; maxAMK += 1.3; break;
-      case 17: maxYliopisto += 1.2; maxAMK += 0.8; break;
-      case 18: maxYliopisto += 0.7; maxAMK += 1.3; break;
-      case 19: maxYliopisto += 0.8; maxAMK += 1.2; break;
-      case 20: maxYliopisto += 0.6; maxAMK += 1.4; break;
-      case 21: maxYliopisto += 0.6; maxAMK += 1.4; break;
-      case 22: maxYliopisto += 0.7; maxAMK += 1.3; break;
-      case 23: maxYliopisto += 0.6; maxAMK += 1.4; break;
-      case 24: maxYliopisto += 0.9; maxAMK += 1.1; break;
-      case 25: maxYliopisto += 1.1; maxAMK += 0.9; break;
-      case 26: maxYliopisto += 0.6; maxAMK += 1.4; break;
-      case 27: maxYliopisto += 0.7; maxAMK += 1.3; break;
-      case 28: maxYliopisto += 0.6; maxAMK += 1.4; break;
-      case 29: maxYliopisto += 1.2; maxAMK += 0.8; break;
-    }
+  // Health can go both ways:
+  // - High health + high analytical = lääkäri → yliopisto
+  // - High health + high hands_on = sairaanhoitaja → AMK
+  if (health > 0.6 && analytical > 0.5) {
+    // Future doctor/psychologist - strong yliopisto signal
+    yliopistoScore += health * 3.0; // Boost from health
+    yliopistoScore += people * 1.5; // Doctors need people skills too
+  } else if (health > 0.6) {
+    amkScore += health * 2.0; // Practical healthcare (nurse, physio)
+    amkScore += people * 0.5; // People skills help here too
   }
 
-  // Normalize each path independently using its own maximum
+  // AMK indicators: practical, applied, hands-on
+  // Fields: Sairaanhoitaja, insinööri, tradenomi, restonomi, etc.
+  amkScore += hands_on * 3.0;             // Hands-on work → AMK
+  amkScore += creative * 1.5;             // Practical creative (design) → AMK
+  amkScore += business * 1.0;             // Business can be both (tradenomi vs KTM)
+
+  // People skills: Only count toward AMK if NOT combined with strong analytical
+  // (Doctors need people skills too, but they go to yliopisto)
+  if (people > 0.5 && analytical < 0.6) {
+    amkScore += people * 1.0;             // Social work, nursing without strong analytical → AMK
+  }
+
+  // High leadership + business = management track
+  if (leadership > 0.6 && business > 0.5) {
+    // Could be either: kauppatieteet (yliopisto) or liiketalous (AMK)
+    yliopistoScore += 1.0;
+    amkScore += 1.0;
+  }
+
+  // Strong tech + analytical → yliopisto (tietojenkäsittelytiede)
+  // Strong tech + hands_on → AMK (insinööri)
+  if (technology > 0.6 && analytical > 0.5) {
+    yliopistoScore += 2.0;
+  }
+  if (technology > 0.5 && hands_on > 0.5) {
+    amkScore += 2.0;
+  }
+
+  // Normalize to 0-100
+  const maxYliopisto = 12.0; // Sum of max yliopisto weights
+  const maxAMK = 10.0;       // Sum of max AMK weights
+
   yliopistoScore = Math.min(100, (yliopistoScore / maxYliopisto) * 100);
   amkScore = Math.min(100, (amkScore / maxAMK) * 100);
+
+  // Apply boosts based on profile clarity
+  // Strong academic signals → boost yliopisto
+  if (analytical > 0.7 || (technology > 0.7 && analytical > 0.5) || (health > 0.7 && analytical > 0.5)) {
+    yliopistoScore += 15;
+  } else if (analytical > 0.5 || writing > 0.6 || environment > 0.6) {
+    yliopistoScore += 8;
+  }
+
+  // Strong practical signals → boost AMK
+  if (hands_on > 0.7 || (health > 0.7 && hands_on > 0.4)) {
+    amkScore += 15;
+  } else if (hands_on > 0.5 || (creative > 0.6 && hands_on > 0.3)) {
+    amkScore += 8;
+  }
+
+  // AMIS BACKGROUND: Students from ammattillinen koulutus naturally lean toward AMK
+  // AMK is the practical continuation of vocational education
+  // Only go to yliopisto if there are very strong academic signals (high analytical)
+  if (subCohort === 'AMIS') {
+    // Baseline AMK boost for AMIS students
+    amkScore += 15;
+
+    // Business/sales students from AMIS → tradenomi (AMK), not KTM (yliopisto)
+    if (business > 0.6 && analytical < 0.7) {
+      amkScore += 10;
+    }
+
+    // Creative/design students from AMIS → muotoilu/media (AMK), not university
+    if (creative > 0.6 && analytical < 0.7) {
+      amkScore += 10;
+    }
+
+    // Tech students from AMIS → insinööri (AMK) unless VERY analytical (>0.75)
+    // IT-tukihenkilö, datanomi, etc. are AMK paths, not CS at university
+    if (technology > 0.6 && analytical < 0.75) {
+      amkScore += 12; // Stronger boost for tech students
+    }
+
+    // Problem solving + tech + hands_on → practical engineering (AMK)
+    if (technology > 0.5 && problem_solving > 0.5 && analytical < 0.75) {
+      amkScore += 8;
+    }
+
+    // Only keep yliopisto boost if student has VERY strong academic signals
+    if (analytical < 0.75 && writing < 0.7 && environment < 0.7) {
+      yliopistoScore -= 10; // Stronger reduction for non-academic AMIS students
+    }
+  }
 
   // Determine primary and secondary paths
   const scores = { yliopisto: yliopistoScore, amk: amkScore };

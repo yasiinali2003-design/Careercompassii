@@ -22,15 +22,20 @@ const CATEGORY_SIGNALS: Record<string, {
   label_fi: string;
 }> = {
   auttaja: {
-    primary: ['health', 'people', 'social_impact', 'impact'],
-    secondary: ['teaching', 'growth', 'teamwork'],
-    negative: ['technology', 'hands_on', 'business'],
+    // Auttaja = healthcare, social work, teaching - requires HEALTH or strong social_impact
+    // People alone is NOT enough (businesspeople also have high people scores)
+    // Business is now a NEGATIVE signal - business+people = johtaja, not auttaja
+    primary: ['health', 'social_impact', 'teaching'],
+    secondary: ['people', 'growth', 'teamwork', 'sports'], // People is secondary, not primary
+    negative: ['technology', 'hands_on', 'business', 'entrepreneurship', 'leadership'],
     label_fi: 'Auttaja'
   },
   innovoija: {
-    primary: ['technology', 'analytical', 'innovation'],
-    secondary: ['problem_solving', 'independence', 'growth'],
-    negative: ['hands_on', 'outdoor', 'health'],
+    // Innovoija = tech innovators, developers, engineers
+    // Requires technology - analytical alone is NOT enough (lawyers are analytical but not innovators)
+    primary: ['technology', 'innovation', 'problem_solving'],
+    secondary: ['analytical', 'independence', 'growth'],
+    negative: ['hands_on', 'outdoor', 'health', 'writing'],
     label_fi: 'Innovoija'
   },
   luova: {
@@ -40,21 +45,27 @@ const CATEGORY_SIGNALS: Record<string, {
     label_fi: 'Luova'
   },
   rakentaja: {
+    // Athletes and physical workers - outdoor + hands_on focus
     primary: ['hands_on', 'outdoor', 'precision'],
-    secondary: ['stability', 'independence'],
+    secondary: ['stability', 'independence', 'sports'],
     negative: ['creative', 'people', 'technology'],
     label_fi: 'Rakentaja'
   },
   johtaja: {
+    // Leaders, managers, lawyers, business professionals
+    // Legal professionals have high analytical+writing but they LEAD and influence
+    // Business+people = johtaja (not auttaja) - people is now a secondary signal here
     primary: ['leadership', 'business', 'entrepreneurship'],
-    secondary: ['social', 'advancement', 'financial'],
+    secondary: ['social', 'advancement', 'financial', 'analytical', 'writing', 'people'],
     negative: ['hands_on', 'stability', 'health'],
     label_fi: 'Johtaja'
   },
   'ympariston-puolustaja': {
-    primary: ['environment', 'nature', 'outdoor'],
-    secondary: ['social_impact', 'impact', 'independence'],
-    negative: ['technology', 'business', 'analytical'],
+    // outdoor alone is NOT enough - must also have environment/nature interest
+    // Sports athletes have outdoor but NOT environment focus
+    primary: ['environment', 'nature'],
+    secondary: ['outdoor', 'social_impact', 'impact', 'independence'],
+    negative: ['technology', 'business', 'analytical', 'sports'],
     label_fi: 'Ympäristön puolustaja'
   },
   visionaari: {
@@ -69,8 +80,9 @@ const CATEGORY_SIGNALS: Record<string, {
   jarjestaja: {
     // Jarjestaja = organized, structured, detail-oriented
     // Uses: organization, structure, precision, stability
+    // Legal/administrative roles also fit here (analytical + precision + writing)
     primary: ['organization', 'structure', 'precision'],
-    secondary: ['stability', 'teamwork'],
+    secondary: ['stability', 'teamwork', 'analytical', 'writing'],
     negative: ['creative', 'variety', 'innovation'],
     label_fi: 'Järjestäjä'
   }
@@ -147,9 +159,17 @@ const HYBRID_PATHS: Array<{
 
 /**
  * Analyzes answer patterns to determine confidence level
+ * IMPROVEMENT 2: Recalibrated thresholds for more accurate confidence levels
+ *
+ * Old thresholds were too strict - most profiles showed "low" confidence.
+ * New thresholds are based on 30-question tests:
+ * - high: 10+ strong signals (33%+), <=8 neutral answers
+ * - medium: 5+ strong signals OR <=12 neutral answers
+ * - low: <5 strong signals AND >12 neutral answers
  */
 export function calculateProfileConfidence(answers: TestAnswer[]): ProfileConfidence {
   const scores = answers.map(a => a.score);
+  const totalQuestions = scores.length;
 
   // Count answer types
   const strongSignals = scores.filter(s => s === 1 || s === 5).length;
@@ -161,30 +181,46 @@ export function calculateProfileConfidence(answers: TestAnswer[]): ProfileConfid
   const variance = scores.reduce((sum, s) => sum + Math.pow(s - mean, 2), 0) / scores.length;
   const normalizedVariance = Math.min(1, variance / 2); // Max variance is 4 (1 to 5 range), normalize to 0-1
 
+  // RECALIBRATED thresholds based on realistic answer patterns
+  // For 30 questions:
+  // - High confidence: 10+ strong (33%), <=8 neutral (27%)
+  // - Medium confidence: 5+ strong (17%) OR variance >= 0.5
+  // - Low confidence: <5 strong AND >12 neutral (40%)
+  const strongThresholdHigh = Math.max(8, Math.floor(totalQuestions * 0.27));
+  const strongThresholdMedium = Math.max(4, Math.floor(totalQuestions * 0.13));
+  const neutralThresholdLow = Math.floor(totalQuestions * 0.40);
+  const neutralThresholdMedium = Math.floor(totalQuestions * 0.30);
+
   // Determine confidence
   const reasons: string[] = [];
   let overall: 'high' | 'medium' | 'low';
 
-  if (strongSignals >= 15 && neutralAnswers <= 10) {
+  if (strongSignals >= strongThresholdHigh && neutralAnswers <= neutralThresholdMedium) {
     overall = 'high';
     reasons.push('Sinulla on selkeitä mieltymyksiä useilla alueilla');
-    if (strongSignals >= 20) {
+    if (normalizedVariance >= 0.6) {
       reasons.push('Vastauksesi osoittavat vahvaa itsetuntemusta');
     }
-  } else if (neutralAnswers >= 15 || strongSignals <= 5) {
+  } else if (neutralAnswers >= neutralThresholdLow && strongSignals < strongThresholdMedium) {
     overall = 'low';
     reasons.push('Monet vastauksesi olivat neutraaleja');
-    if (neutralAnswers >= 20) {
+    if (neutralAnswers >= totalQuestions * 0.5) {
       reasons.push('Harkitse testin tekemistä uudelleen kun tiedät paremmin mitä haluat');
     }
-    if (strongSignals <= 3) {
+    if (strongSignals <= 2) {
       reasons.push('Sinulla on vähän vahvoja mieltymyksiä - tulokset ovat suuntaa-antavia');
     }
   } else {
     overall = 'medium';
     reasons.push('Sinulla on joitakin selkeitä mieltymyksiä');
-    if (moderateAnswers >= 15) {
+    if (moderateAnswers >= totalQuestions * 0.5) {
       reasons.push('Useissa asioissa olet hieman puolesta tai vastaan');
+    }
+    // Upgrade to high if variance is good even with moderate strong signals
+    if (normalizedVariance >= 0.5 && strongSignals >= strongThresholdMedium && neutralAnswers <= neutralThresholdMedium) {
+      overall = 'high';
+      reasons.length = 0;
+      reasons.push('Vastauksesi muodostavat selkeän profiilin');
     }
   }
 
@@ -286,7 +322,10 @@ export function calculateCategoryAffinities(
 // ========== DETECT HYBRID PATHS ==========
 
 /**
- * Find matching hybrid career paths based on user's profile
+ * IMPROVEMENT 5: Enhanced hybrid path detection
+ * - Detects when top 2-3 categories are close (<15 points)
+ * - Shows multiple category recommendations for multi-interest profiles
+ * - Creates dynamic hybrid paths even if not predefined
  */
 export function detectHybridPaths(
   detailedScores: DetailedDimensionScores,
@@ -333,14 +372,19 @@ export function detectHybridPaths(
     }
   }
 
-  // Also check for close score gaps (might indicate hybrid)
-  if (matches.length === 0 && categoryAffinities.length >= 2) {
+  // IMPROVEMENT 5: Enhanced close-score detection
+  // If top categories are close (<15 points), suggest exploring multiple
+  if (categoryAffinities.length >= 2) {
     const top = categoryAffinities[0];
     const second = categoryAffinities[1];
-    const scoreGap = top.score - second.score;
+    const third = categoryAffinities.length >= 3 ? categoryAffinities[2] : null;
 
-    // If top 2 are very close (<10 points), suggest they explore both
-    if (scoreGap < 10) {
+    const gapTopSecond = top.score - second.score;
+    const gapSecondThird = third ? second.score - third.score : 999;
+
+    // If top 2 are close (<15 points), suggest they explore both
+    if (gapTopSecond < 15 && matches.length === 0) {
+      // Try to find a predefined hybrid path
       const hybridMatch = HYBRID_PATHS.find(h =>
         (h.categories[0] === top.category && h.categories[1] === second.category) ||
         (h.categories[1] === top.category && h.categories[0] === second.category)
@@ -353,6 +397,39 @@ export function detectHybridPaths(
           description: hybridMatch.description,
           exampleCareers: hybridMatch.exampleCareers,
           matchScore: Math.round((top.score + second.score) / 2)
+        });
+      } else {
+        // Create a dynamic hybrid suggestion
+        const label1 = CATEGORY_SIGNALS[top.category]?.label_fi || top.category;
+        const label2 = CATEGORY_SIGNALS[second.category]?.label_fi || second.category;
+        matches.push({
+          categories: [top.category, second.category] as [string, string],
+          label: `${label1} + ${label2}`,
+          description: `Sinussa on vahvoja piirteitä sekä ${label1.toLowerCase()}- että ${label2.toLowerCase()}-kategoriasta. Tutustu molempien alojen ammatteihin.`,
+          exampleCareers: [],
+          matchScore: Math.round((top.score + second.score) / 2)
+        });
+      }
+    }
+
+    // If top 3 are all close (<20 points from top), suggest multi-exploration
+    if (third && gapTopSecond < 12 && gapSecondThird < 12) {
+      const label1 = CATEGORY_SIGNALS[top.category]?.label_fi || top.category;
+      const label2 = CATEGORY_SIGNALS[second.category]?.label_fi || second.category;
+      const label3 = CATEGORY_SIGNALS[third.category]?.label_fi || third.category;
+
+      // Only add if we don't already have this combination
+      const alreadyHasTriple = matches.some(m =>
+        m.label.includes(label1) && m.label.includes(label2) && m.label.includes(label3)
+      );
+
+      if (!alreadyHasTriple) {
+        matches.push({
+          categories: [top.category, second.category] as [string, string], // API only supports pairs
+          label: `Monipuolinen profiili`,
+          description: `Sinulla on tasaisia kiinnostuksia usealla alalla: ${label1}, ${label2} ja ${label3}. Tämä on vahvuus! Voit tutkia laajasti eri vaihtoehtoja.`,
+          exampleCareers: [],
+          matchScore: Math.round((top.score + second.score + third.score) / 3)
         });
       }
     }
@@ -367,42 +444,68 @@ export function detectHybridPaths(
 // ========== HANDLE EDGE CASES ==========
 
 /**
- * Detect and handle problematic answer patterns
+ * IMPROVEMENT 3: Enhanced detection and handling of problematic answer patterns
+ * - Neutral/undecided profiles get exploratory recommendations instead of defaulting to innovoija
+ * - All-high profiles are treated as multi-interest explorers
+ * - All-low profiles are encouraged to think about hobbies
  */
 export function detectEdgeCases(answers: TestAnswer[]): {
   isEdgeCase: boolean;
-  type: 'neutral' | 'all_high' | 'all_low' | 'random' | 'normal';
+  type: 'neutral' | 'all_high' | 'all_low' | 'random' | 'undecided' | 'normal';
   message_fi?: string;
+  suggestedCategories?: string[]; // For undecided profiles, suggest multiple categories
 } {
   const scores = answers.map(a => a.score);
   const neutralCount = scores.filter(s => s === 3).length;
   const highCount = scores.filter(s => s >= 4).length;
   const lowCount = scores.filter(s => s <= 2).length;
+  const totalQuestions = answers.length;
 
-  // All neutral (>=80% are 3s)
-  if (neutralCount >= answers.length * 0.8) {
+  // Calculate variance - low variance means undecided
+  const mean = scores.reduce((a, b) => a + b, 0) / scores.length;
+  const variance = scores.reduce((sum, s) => sum + Math.pow(s - mean, 2), 0) / scores.length;
+
+  // UNDECIDED: High neutral count OR low variance (all answers clustered around 2-4)
+  const isUndecided = (neutralCount >= totalQuestions * 0.5 && variance < 0.8) ||
+                      (variance < 0.5 && neutralCount >= totalQuestions * 0.3);
+
+  if (isUndecided) {
+    return {
+      isEdgeCase: true,
+      type: 'undecided',
+      message_fi: 'Olet vielä urasi tutkimisvaiheessa - se on täysin normaalia! Näytämme sinulle monipuolisia vaihtoehtoja eri aloilta.',
+      // Suggest broad exploration categories instead of defaulting to tech
+      suggestedCategories: ['auttaja', 'luova', 'innovoija', 'rakentaja']
+    };
+  }
+
+  // All neutral (>=70% are 3s) - slightly lower threshold than undecided
+  if (neutralCount >= totalQuestions * 0.7) {
     return {
       isEdgeCase: true,
       type: 'neutral',
-      message_fi: 'Vastauksesi olivat pääosin neutraaleja. Tulokset ovat suuntaa-antavia. Kokeile vastata vahvemmin suuntaan tai toiseen saadaksesi tarkempia tuloksia.'
+      message_fi: 'Vastauksesi olivat pääosin neutraaleja. Tulokset ovat suuntaa-antavia. Kokeile vastata vahvemmin suuntaan tai toiseen saadaksesi tarkempia tuloksia.',
+      suggestedCategories: ['auttaja', 'innovoija', 'luova']
     };
   }
 
-  // All high (>=80% are 4-5)
-  if (highCount >= answers.length * 0.8) {
+  // All high (>=80% are 4-5) - enthusiastic about everything
+  if (highCount >= totalQuestions * 0.8) {
     return {
       isEdgeCase: true,
       type: 'all_high',
-      message_fi: 'Olet kiinnostunut monista asioista! Tulokset perustuvat hienovaraisiin eroihin vastauksissa. Sinulle sopisi moni ura.'
+      message_fi: 'Olet kiinnostunut monista asioista! Tulokset perustuvat hienovaraisiin eroihin vastauksissa. Sinulle sopisi moni ura.',
+      suggestedCategories: ['visionaari', 'johtaja', 'innovoija'] // Broad-interest types
     };
   }
 
-  // All low (>=80% are 1-2)
-  if (lowCount >= answers.length * 0.8) {
+  // All low (>=80% are 1-2) - not finding interest in test topics
+  if (lowCount >= totalQuestions * 0.8) {
     return {
       isEdgeCase: true,
       type: 'all_low',
-      message_fi: 'Et löytänyt monia kiinnostavia asioita testistä. Harkitse mitä teet vapaa-ajallasi tai mistä nautit, ja etsi uria niiden perusteella.'
+      message_fi: 'Et löytänyt monia kiinnostavia asioita testistä. Harkitse mitä teet vapaa-ajallasi tai mistä nautit, ja etsi uria niiden perusteella.',
+      suggestedCategories: ['luova', 'rakentaja'] // More practical/hobby-oriented
     };
   }
 
