@@ -65,8 +65,8 @@ export function Footer() {
               <Link href="/metodologia" className="hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm transition-colors">Tutkimuspohja</Link>
             )}
             <Link href="/legal/tietosuojaseloste" className="hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm transition-colors">Tietosuojaseloste</Link>
-            <Link href="/legal/immateriaalioikeus-ja-kilpailijasuoja" className="hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm transition-colors">Immateriaalioikeus- ja kilpailijansuoja</Link>
             <Link href="/legal/kayttoehdot" className="hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm transition-colors">Käyttöehdot</Link>
+            <Link href="/legal/immateriaalioikeus-ja-kilpailijasuoja" className="hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm transition-colors">Immateriaalioikeus</Link>
           </nav>
         </div>
       </div>
