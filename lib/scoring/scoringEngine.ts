@@ -5735,13 +5735,346 @@ export function rankCareers(
     });
   }
 
-  // Sort by score and return top N
+  // Sort by score and return top N with DIVERSITY filtering
   scoredCareers.sort((a, b) => b.overallScore - a.overallScore);
-  const topCareers = scoredCareers.slice(0, limit);
 
-  console.log(`[rankCareers] ${cohort} top ${limit} careers:`, topCareers.map(c => `${c.title} (${c.overallScore}%) - ${c.category}`).join(', '));
+  // ========== AGE-APPROPRIATE CAREER FILTERING ==========
+  // Filter out senior/advanced roles that are inappropriate for each cohort
+  const SENIOR_ROLES = {
+    // YLA (13-16): Most restrictive - filter out very advanced careers
+    YLA: [
+      'toimitusjohtaja', 'ceo', 'cto', 'cmo', 'cfo', 'chro', 'coo',
+      'johtaja', 'toiminnanjohtaja', 'pääjohtaja', 'varatoimitusjohtaja',
+      'hallituksen', 'partner', 'osakas',
+      'ylilääkäri', 'erikoislääkäri', 'professori', 'dosentti',
+      'pääsuunnittelija', 'varatuomari', 'oikeusneuvos',
+      'suurlähettiläs', 'kenraali'
+    ],
+    // TASO2 (16-19): Filter out roles requiring 10+ years experience
+    TASO2: [
+      'toimitusjohtaja', 'ceo', 'cto', 'cmo', 'cfo', 'chro', 'coo',
+      'toiminnanjohtaja', 'pääjohtaja', 'varatoimitusjohtaja',
+      'hallituksen puheenjohtaja', 'partner', 'osakas',
+      'ylilääkäri', 'professori', 'suurlähettiläs'
+    ],
+    // NUORI (20-25): Filter out senior executive roles only
+    NUORI: [
+      'toimitusjohtaja', 'ceo', 'cto', 'cmo', 'cfo', 'chro', 'coo',
+      'johtaja', 'toiminnanjohtaja', 'pääjohtaja', 'varatoimitusjohtaja',
+      'hallituksen', 'partner', 'osakas'
+    ]
+  };
 
-  return topCareers;
+  const rolesToFilter = SENIOR_ROLES[cohort] || [];
+  const ageFilteredCareers = rolesToFilter.length > 0
+    ? scoredCareers.filter(career => {
+        const titleLower = career.title.toLowerCase();
+        const slugLower = (career.slug || '').toLowerCase();
+        const isSeniorRole = rolesToFilter.some(role =>
+          titleLower.includes(role) || slugLower.includes(role)
+        );
+        if (isSeniorRole) {
+          console.log(`[rankCareers] ${cohort} age-filter: Removed "${career.title}"`);
+        }
+        return !isSeniorRole;
+      })
+    : scoredCareers;
+
+  // ========== IMPROVEMENT 1: CAREER DIVERSITY WITHIN CATEGORIES ==========
+  // Instead of returning top N by score alone, ensure diversity within categories
+  // This prevents "all auttaja get Sairaanhoitaja, Bioanalyytikko" problem
+  const diverseTopCareers = selectDiverseCareers(ageFilteredCareers, limit, detailedScores);
+
+  console.log(`[rankCareers] ${cohort} top ${limit} careers:`, diverseTopCareers.map(c => `${c.title} (${c.overallScore}%) - ${c.category}`).join(', '));
+
+  return diverseTopCareers;
+}
+
+// ========== CAREER DIVERSITY SELECTION ==========
+/**
+ * ENHANCED: Selects diverse careers based on user's subdimension profile
+ * - Animal lovers get Eläinlääkäri instead of Sairaanhoitaja
+ * - Teachers get teaching careers, not nursing
+ * - Uses subdimension matching to re-rank within categories
+ */
+function selectDiverseCareers(
+  scoredCareers: CareerMatch[],
+  limit: number,
+  detailedScores: DetailedDimensionScores
+): CareerMatch[] {
+  const selected: CareerMatch[] = [];
+  const usedTitles = new Set<string>();
+  const usedCareerTypes = new Set<string>();
+
+  // Get user's subdimension signals
+  const userInterests = detailedScores.interests || {};
+  const userWorkstyle = detailedScores.workstyle || {};
+  const userValues = detailedScores.values || {};
+
+  // STEP 1: Calculate subdimension bonuses for ALL careers first
+  const careersWithBonus = scoredCareers.map(career => {
+    let diversityBonus = 0;
+    const titleLower = career.title.toLowerCase();
+
+    // ========== AUTTAJA DIFFERENTIATION ==========
+    if (career.category === 'auttaja') {
+      // CRITICAL: YLA Q4 maps to 'environment', not 'nature' - check both
+      const natureScore = Math.max(userInterests.nature || 0, userInterests.environment || 0);
+      const educationScore = userInterests.education || userWorkstyle.teaching || 0;
+      const analyticalScore = userInterests.analytical || 0;
+      const peopleScore = userInterests.people || 0;
+      const healthScore = userInterests.health || 0;
+
+      // ANIMAL CAREERS - big boost for nature lovers
+      // Detect animal interest: high environment score + NOT high health (human) = animals
+      const isAnimalLover = natureScore >= 0.5 && (healthScore < 0.6 || natureScore > healthScore);
+      if (titleLower.includes('eläin') || titleLower.includes('elain') ||
+          titleLower.includes('veterinär') || titleLower.includes('lemmikki')) {
+        if (isAnimalLover) {
+          diversityBonus += 30; // Strong boost for animal lovers
+        }
+        if (natureScore >= 0.7) {
+          diversityBonus += 20; // Extra boost for strong nature interest
+        }
+      }
+
+      // TEACHING CAREERS
+      if (titleLower.includes('opettaja') || titleLower.includes('koulut') ||
+          titleLower.includes('ohjaaja') || titleLower.includes('valmentaja')) {
+        if (educationScore >= 0.5) {
+          diversityBonus += 20;
+        }
+        if (educationScore >= 0.7) {
+          diversityBonus += 10;
+        }
+      }
+
+      // PSYCHOLOGY/THERAPY CAREERS
+      if (titleLower.includes('psyk') || titleLower.includes('terap') ||
+          titleLower.includes('neuropsyk') || titleLower.includes('mielenterveys')) {
+        if (analyticalScore >= 0.4 && peopleScore >= 0.5) {
+          diversityBonus += 18;
+        }
+      }
+
+      // SOCIAL WORK CAREERS
+      if (titleLower.includes('sosiaal') || titleLower.includes('perhe') ||
+          titleLower.includes('nuoriso') || titleLower.includes('lastensuojelu')) {
+        if (peopleScore >= 0.6 && (userValues.impact || userValues.social_impact || 0) >= 0.5) {
+          diversityBonus += 15;
+        }
+      }
+
+      // MEDICAL CAREERS (doctors, specialists)
+      if (titleLower.includes('lääkäri') || titleLower.includes('laakari') ||
+          titleLower.includes('kirurgi') || titleLower.includes('erikoislääkäri')) {
+        if (healthScore >= 0.7 && analyticalScore >= 0.5) {
+          diversityBonus += 20;
+        }
+      }
+
+      // NURSING - penalize if animal lover (should get animal careers instead)
+      if (titleLower.includes('sairaan') || titleLower.includes('hoita')) {
+        if (isAnimalLover) {
+          diversityBonus -= 20; // Penalty - animal lovers should get animal careers
+        }
+      }
+    }
+
+    // ========== INNOVOIJA DIFFERENTIATION ==========
+    if (career.category === 'innovoija') {
+      const analyticalScore = userInterests.analytical || 0;
+      const creativeScore = userInterests.creative || 0;
+      const precisionScore = userWorkstyle.precision || 0;
+
+      // DATA/ANALYTICS CAREERS
+      if (titleLower.includes('data') || titleLower.includes('analyy') ||
+          titleLower.includes('tilasto') || titleLower.includes('business intelligence')) {
+        if (analyticalScore >= 0.6) {
+          diversityBonus += 20;
+        }
+      }
+
+      // GAME DEVELOPMENT
+      if (titleLower.includes('peli') || titleLower.includes('game')) {
+        if (creativeScore >= 0.4) {
+          diversityBonus += 18;
+        }
+      }
+
+      // SECURITY
+      if (titleLower.includes('turva') || titleLower.includes('kyber') ||
+          titleLower.includes('tietoturva') || titleLower.includes('security')) {
+        if (precisionScore >= 0.5) {
+          diversityBonus += 15;
+        }
+      }
+
+      // AI/ML
+      if (titleLower.includes('tekoäly') || titleLower.includes('koneoppiminen') ||
+          titleLower.includes('ml') || titleLower.includes('ai ')) {
+        if (analyticalScore >= 0.7) {
+          diversityBonus += 18;
+        }
+      }
+    }
+
+    // ========== LUOVA DIFFERENTIATION ==========
+    if (career.category === 'luova') {
+      const writingScore = userInterests.writing || 0;
+      const artsCultureScore = userInterests.arts_culture || 0;
+      const performanceScore = userWorkstyle.performance || userWorkstyle.social || 0;
+
+      // WRITING CAREERS
+      if (titleLower.includes('kirj') || titleLower.includes('toimit') ||
+          titleLower.includes('käsikirj') || titleLower.includes('copywriter')) {
+        if (writingScore >= 0.5) {
+          diversityBonus += 22;
+        }
+      }
+
+      // MUSIC CAREERS
+      if (titleLower.includes('muusik') || titleLower.includes('ääni') ||
+          titleLower.includes('säveltäjä') || titleLower.includes('tuottaja')) {
+        if (artsCultureScore >= 0.6) {
+          diversityBonus += 18;
+        }
+      }
+
+      // PERFORMANCE CAREERS
+      if (titleLower.includes('näyttelijä') || titleLower.includes('tanssija') ||
+          titleLower.includes('esiintyjä') || titleLower.includes('juontaja')) {
+        if (performanceScore >= 0.6) {
+          diversityBonus += 20;
+        }
+      }
+
+      // VISUAL ARTS
+      if (titleLower.includes('graafinen') || titleLower.includes('kuvittaja') ||
+          titleLower.includes('valokuvaaja') || titleLower.includes('taiteilija')) {
+        if (artsCultureScore >= 0.5 && (userInterests.creative || 0) >= 0.6) {
+          diversityBonus += 15;
+        }
+      }
+    }
+
+    // ========== RAKENTAJA DIFFERENTIATION ==========
+    if (career.category === 'rakentaja') {
+      const outdoorScore = userInterests.outdoor || userWorkstyle.outdoor || 0;
+      const precisionScore = userWorkstyle.precision || 0;
+      const technologyScore = userInterests.technology || 0;
+
+      // OUTDOOR CONSTRUCTION
+      if (titleLower.includes('maisema') || titleLower.includes('viherrakent') ||
+          titleLower.includes('metsä') || titleLower.includes('maanrakennus')) {
+        if (outdoorScore >= 0.6) {
+          diversityBonus += 18;
+        }
+      }
+
+      // PRECISION TRADES
+      if (titleLower.includes('hienomekaan') || titleLower.includes('kelloseppä') ||
+          titleLower.includes('kultaseppä')) {
+        if (precisionScore >= 0.6) {
+          diversityBonus += 15;
+        }
+      }
+
+      // TECHNICAL TRADES
+      if (titleLower.includes('sähkö') || titleLower.includes('automaatio') ||
+          titleLower.includes('elektroniikka')) {
+        if (technologyScore >= 0.4) {
+          diversityBonus += 12;
+        }
+      }
+    }
+
+    // ========== YMPARISTON-PUOLUSTAJA DIFFERENTIATION ==========
+    if (career.category === 'ympariston-puolustaja') {
+      const natureScore = userInterests.nature || 0;
+      const analyticalScore = userInterests.analytical || 0;
+      const outdoorScore = userInterests.outdoor || userWorkstyle.outdoor || 0;
+
+      // RESEARCH ROLES
+      if (titleLower.includes('biologi') || titleLower.includes('tutkija') ||
+          titleLower.includes('tiedemies')) {
+        if (analyticalScore >= 0.5) {
+          diversityBonus += 15;
+        }
+      }
+
+      // PRACTICAL OUTDOOR ROLES
+      if (titleLower.includes('metsänhoitaja') || titleLower.includes('puutarhuri') ||
+          titleLower.includes('luonnonsuojel')) {
+        if (outdoorScore >= 0.6 && natureScore >= 0.6) {
+          diversityBonus += 18;
+        }
+      }
+    }
+
+    return {
+      ...career,
+      overallScore: Math.min(100, career.overallScore + diversityBonus),
+      _originalScore: career.overallScore,
+      _diversityBonus: diversityBonus
+    };
+  });
+
+  // STEP 2: Re-sort by adjusted score
+  careersWithBonus.sort((a, b) => b.overallScore - a.overallScore);
+
+  // STEP 3: Select diverse careers with type limits
+  for (const career of careersWithBonus) {
+    if (selected.length >= limit) break;
+    if (usedTitles.has(career.title)) continue;
+
+    const careerType = getCareerType(career.title, career.category);
+    const typeCount = Array.from(usedCareerTypes).filter(t => t === careerType).length;
+    if (typeCount >= 2) continue;
+
+    selected.push(career);
+    usedTitles.add(career.title);
+    usedCareerTypes.add(careerType);
+  }
+
+  return selected;
+}
+
+/**
+ * Extract career "type" for diversity grouping
+ */
+function getCareerType(title: string, category: string): string {
+  const titleLower = title.toLowerCase();
+
+  // Healthcare types
+  if (titleLower.includes('sairaan') || titleLower.includes('hoita')) return 'healthcare-nursing';
+  if (titleLower.includes('lääkäri') || titleLower.includes('laakari')) return 'healthcare-doctor';
+  if (titleLower.includes('psyk') || titleLower.includes('terap')) return 'healthcare-mental';
+  if (titleLower.includes('eläin') || titleLower.includes('elain')) return 'healthcare-animal';
+  if (titleLower.includes('hammas')) return 'healthcare-dental';
+
+  // Education types
+  if (titleLower.includes('opettaja') || titleLower.includes('koulut')) return 'education';
+
+  // Tech types
+  if (titleLower.includes('ohjelmisto') || titleLower.includes('kehittäjä') || titleLower.includes('koodaa')) return 'tech-software';
+  if (titleLower.includes('data') || titleLower.includes('analyy')) return 'tech-data';
+  if (titleLower.includes('peli')) return 'tech-games';
+  if (titleLower.includes('turva') || titleLower.includes('kyber')) return 'tech-security';
+  if (titleLower.includes('insinööri') || titleLower.includes('insinoori')) return 'tech-engineering';
+
+  // Creative types
+  if (titleLower.includes('graafinen') || titleLower.includes('suunnitteli')) return 'creative-visual';
+  if (titleLower.includes('muusik') || titleLower.includes('ääni')) return 'creative-audio';
+  if (titleLower.includes('kirj') || titleLower.includes('toimit')) return 'creative-writing';
+
+  // Construction types
+  if (titleLower.includes('rakennus') || titleLower.includes('mestari')) return 'construction';
+  if (titleLower.includes('sähkö') || titleLower.includes('sahko')) return 'electrical';
+  if (titleLower.includes('putk') || titleLower.includes('lvi')) return 'plumbing';
+
+  // Default to category
+  return category;
 }
 
 // ========== LEGACY COMPLEX PATH (PRESERVED FOR REFERENCE) ==========

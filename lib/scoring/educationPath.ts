@@ -101,6 +101,8 @@ function calculateYLAPath(answers: TestAnswer[]): YLAEducationPathResult | null 
   const outdoor = getAvg('outdoor');
   const stability = getAvg('stability');
   const entrepreneurship = getAvg('entrepreneurship');
+  const nature = getAvg('nature');
+  const environment = getAvg('environment');
 
   // Calculate path scores based on career profile
   let lukioScore = 0;
@@ -125,16 +127,33 @@ function calculateYLAPath(answers: TestAnswer[]): YLAEducationPathResult | null 
   ammattikouluScore += stability * 1.0;  // Wants job security → ammattikoulu
   ammattikouluScore += (1 - analytical) * 0.8; // Not analytical → ammattikoulu
 
-  // CRITICAL: When hands_on is DOMINANT (>0.8) and much higher than analytical, boost ammattikoulu
+  // CRITICAL: When hands_on is DOMINANT and much higher than analytical, boost ammattikoulu
   // This is for students like Mikko who clearly want to build/fix things
-  if (hands_on > 0.8 && hands_on > analytical + 0.3) {
-    ammattikouluScore += 3.0; // Strong boost for clearly vocational students
-    lukioScore -= 1.5; // Slight reduction to lukio
+  if (hands_on > 0.7 && hands_on > analytical + 0.2) {
+    ammattikouluScore += 4.0; // Strong boost for clearly vocational students
+    lukioScore -= 2.0; // Reduction to lukio
+  }
+  // Extra boost when hands_on is very high AND low academic interest
+  // But NOT if health or nature is high (could be vet student)
+  if (hands_on > 0.6 && analytical < 0.4 && technology < 0.5 && health < 0.4 && nature < 0.5) {
+    ammattikouluScore += 3.0; // Clearly vocational preference
   }
 
   // CRITICAL: Penalty for ammattikoulu when health is high (academic medical path preferred)
   if (health > 0.6) {
     ammattikouluScore -= health * 1.5;
+  }
+
+  // Students with high nature AND health likely want to be vets → need lukio
+  // Also applies to high environment + health (environmental health, biology)
+  if ((nature > 0.6 || environment > 0.6) && health > 0.6) {
+    lukioScore += 5.0; // Vet school / biology requires lukio
+    ammattikouluScore -= 3.0;
+  }
+
+  // High analytical should also boost lukio
+  if (analytical > 0.6) {
+    lukioScore += 2.0;
   }
 
   // KANSANOPISTO: Only for truly undecided students who can't decide anything
@@ -328,13 +347,16 @@ function calculateTASO2Path(answers: TestAnswer[], cohort: Cohort, subCohort?: s
     amkScore += 1.0;
   }
 
-  // Strong tech + analytical → yliopisto (tietojenkäsittelytiede)
-  // Strong tech + hands_on → AMK (insinööri)
-  if (technology > 0.6 && analytical > 0.5) {
+  // Strong tech + analytical → yliopisto (tietojenkäsittelytiede, DI)
+  // Strong tech + hands_on → AMK (insinööri AMK)
+  // For LUKIO students with VERY strong analytical, favor yliopisto (DI over AMK insinööri)
+  if (technology > 0.6 && analytical > 0.7) {
+    yliopistoScore += 4.0; // Strong boost for DI-track
+  } else if (technology > 0.6 && analytical > 0.5) {
     yliopistoScore += 2.0;
   }
-  if (technology > 0.5 && hands_on > 0.5) {
-    amkScore += 2.0;
+  if (technology > 0.5 && hands_on > 0.5 && analytical < 0.7) {
+    amkScore += 2.0; // Only boost AMK if not strongly analytical
   }
 
   // Normalize to 0-100
@@ -357,6 +379,39 @@ function calculateTASO2Path(answers: TestAnswer[], cohort: Cohort, subCohort?: s
     amkScore += 15;
   } else if (hands_on > 0.5 || (creative > 0.6 && hands_on > 0.3)) {
     amkScore += 8;
+  }
+
+  // LUKIO BACKGROUND: Students from lukio naturally lean toward yliopisto
+  // Lukio prepares for academic higher education
+  // Only go to AMK if there are very strong practical signals
+  if (subCohort === 'LUKIO') {
+    // Baseline yliopisto boost for LUKIO students
+    yliopistoScore += 10;
+
+    // Strong analytical lukio students → yliopisto (DI, lääkäri, juristi, etc.)
+    if (analytical > 0.7) {
+      yliopistoScore += 12;
+    } else if (analytical > 0.5) {
+      yliopistoScore += 6;
+    }
+
+    // LUKIO students with high health+analytical = lääkäri/psykologi → yliopisto
+    if (health > 0.6 && analytical > 0.5) {
+      yliopistoScore += 8;
+    }
+
+    // LUKIO students with sports+health but NOT strong hands_on might want
+    // liikuntatieteet (yliopisto) vs fysioterapia (AMK)
+    // If analytical is moderate, slightly favor yliopisto for coaching/sports science
+    if (health > 0.6 && analytical > 0.4 && hands_on < 0.7) {
+      yliopistoScore += 4; // Sports science path
+    }
+
+    // Only boost AMK for LUKIO students if hands_on is VERY dominant
+    if (hands_on > 0.8 && analytical < 0.5) {
+      amkScore += 10;
+      yliopistoScore -= 5;
+    }
   }
 
   // AMIS BACKGROUND: Students from ammattillinen koulutus naturally lean toward AMK
@@ -509,41 +564,41 @@ function generateTASO2Reasoning(
 
   if (primary === 'yliopisto') {
     if (confidence === 'high') {
-      reasoning = `Vastaustesi perusteella yliopisto-opinnot sopivat sinulle erittäin hyvin. Profiilisi osoittaa vahvan analyyttisen ajattelun, tutkimusmielisyyttä ja syvällistä oppimishalua, mikä on juuri sitä mitä yliopisto-opinnot edellyttävät. Yliopistossa opiskelet tutkintoon johtavalla linjalla ja saat laajaa teoreettista tietämystä sekä kriittisen ajattelun taitoja. Tämä polku sopii erityisesti, jos haluat syventää tietämystäsi tietyssä alassa ja harkitset mahdollisesti jatko-opintoja (maisteri, tohtori) tai tutkijauran tielle menemistä.
+      reasoning = `Vastaustesi perusteella yliopisto-opinnot sopivat sinulle erittäin hyvin. Profiilisi osoittaa vahvaa analyyttistä ajattelua, tutkimusmielisyyttä ja syvällistä oppimishalua – juuri sitä, mitä yliopisto-opinnot edellyttävät. Yliopistossa opiskelet tutkintoon johtavalla linjalla ja saat laajaa teoreettista tietämystä sekä kriittisen ajattelun taitoja. Tämä polku sopii erityisesti, jos haluat syventää tietämystäsi tietyssä alassa ja harkitset mahdollisesti jatko-opintoja (maisteri, tohtori) tai tutkijanuraa.
 
-Yliopistokoulutus kestää yleensä 3-5 vuotta kandidaatin tutkintoon ja tarjoaa erinomaiset valmiudet monipuoliseen työelämään. Opiskelutapa on pääosin itsenäistä ja vaatii aktiivista osallistumista luennoille, seminaareihin ja kirjallisuuden tutkimiseen. Yliopistossa kehität myös vahvoja argumentaatiotaidot, tutkimusmetodologian ymmärrystä ja akateemisia kirjoitustaitoja, jotka ovat arvostettuja monissa työtehtävissä. Opiskelutapa painottuu itsenäiseen työskentelyyn ja syvälliseen tiedon omaksumiseen, mikä kehittää kykyäsi analysoida monimutkaisia ongelmia ja muodostaa itsenäisiä näkemyksiä.
+Yliopistokoulutus kestää yleensä 3–5 vuotta kandidaatin tutkintoon ja tarjoaa erinomaiset valmiudet monipuoliseen työelämään. Opiskelutapa on pääosin itsenäistä ja vaatii aktiivista osallistumista luennoille, seminaareihin ja kirjallisuuden tutkimiseen. Yliopistossa kehität myös vahvat argumentaatiotaidot, tutkimusmetodologian ymmärrystä ja akateemisia kirjoitustaitoja, jotka ovat arvostettuja monissa työtehtävissä. Opiskelutapa painottuu itsenäiseen työskentelyyn ja syvälliseen tiedon omaksumiseen, mikä kehittää kykyäsi analysoida monimutkaisia ongelmia ja muodostaa itsenäisiä näkemyksiä.
 
-Työmarkkinanäkymät yliopistokoulutukselle ovat yleisesti hyvät, erityisesti teknologia-, terveys- ja luonnontieteiden aloilla. Keskimääräinen palkka yliopistotutkinnon suorittaneilla on noin 3 500-5 500 euroa kuukaudessa riippuen alasta ja työtehtävästä. Teknologia-alalla palkat voivat olla huomattavasti korkeammat (usein 4 500-7 000 euroa), kun taas humanistisilla ja yhteiskuntatieteellisillä aloilla palkkataso on yleensä alhaisempi mutta työllisyysnäkymät ovat kuitenkin hyvät. Korkeakoulututkinto avaa ovia myös johtotehtäviin ja erikoistuneisiin rooleihin, joissa vaaditaan syvällistä alan tuntemusta. Tutkijauralla tai akateemisessa työssä palkat voivat nousta merkittävästi korkeammiksi (usein 5 000-8 000 euroa), mutta polku vaatii myös jatko-opintoja ja kilpailu on kovaa.
+Työmarkkinanäkymät yliopistokoulutukselle ovat yleisesti hyvät, erityisesti teknologia-, terveys- ja luonnontieteiden aloilla. Keskimääräinen palkka yliopistotutkinnon suorittaneilla on noin 3 500–5 500 euroa kuukaudessa riippuen alasta ja työtehtävästä. Teknologia-alalla palkat voivat olla huomattavasti korkeammat (usein 4 500–7 000 euroa), kun taas humanistisilla ja yhteiskuntatieteellisillä aloilla palkkataso on yleensä alhaisempi, mutta työllisyysnäkymät ovat kuitenkin hyvät. Korkeakoulututkinto avaa ovia myös johtotehtäviin ja erikoistuneisiin rooleihin, joissa vaaditaan syvällistä alan tuntemusta. Tutkijanuralla tai akateemisessa työssä palkat voivat nousta merkittävästi korkeammiksi (usein 5 000–8 000 euroa), mutta polku vaatii myös jatko-opintoja, ja kilpailu on kovaa.
 
-Yliopistokoulutuksen etuja ovat laaja yleissivistys, akateemisten taitojen kehitys ja mahdollisuus jatko-opintoihin. Yliopistossa saat myös mahdollisuuden tutustua tutkimustyöhön, osallistua kansainvälisiin vaihto-ohjelmiin ja rakentaa akateemista verkostoa, mikä voi olla merkittävä etu myöhemmässä urassa. Haasteena voi olla pidempi opiskeluaika verrattuna ammattikorkeakouluihin ja vähäisempi suora työelämäkytkös, mikä voi viivästyttää työllistymistä. Lisäksi yliopisto-opinnot vaativat huomattavan itsenäisen työskentelyn ja motivaation, mikä ei sovi kaikille. Yliopisto-opinnot ovat investointi - vaikka työllistyminen voi olla hieman hitaampaa, yliopistotutkinto tarjoaa yleensä paremmat mahdollisuudet pitkällä aikavälillä ja erikoistuneisiin työtehtäviin.`;
+Yliopistokoulutuksen etuja ovat laaja yleissivistys, akateemisten taitojen kehitys ja mahdollisuus jatko-opintoihin. Yliopistossa saat myös mahdollisuuden tutustua tutkimustyöhön, osallistua kansainvälisiin vaihto-ohjelmiin ja rakentaa akateemista verkostoa, mikä voi olla merkittävä etu myöhemmässä urassa. Haasteena voi olla pidempi opiskeluaika verrattuna ammattikorkeakouluihin ja vähäisempi suora työelämäyhteys, mikä voi viivästyttää työllistymistä. Lisäksi yliopisto-opinnot vaativat huomattavaa itsenäistä työskentelyä ja motivaatiota, mikä ei sovi kaikille. Yliopisto-opinnot ovat investointi – vaikka työllistyminen voi olla hieman hitaampaa, yliopistotutkinto tarjoaa yleensä paremmat mahdollisuudet pitkällä aikavälillä ja erikoistuneisiin työtehtäviin.`;
     } else if (confidence === 'medium') {
       reasoning = `Vastaustesi perusteella yliopisto-opinnot vaikuttavat sopivalta vaihtoehdolta. Näytät pitävän analyyttisestä ajattelusta ja syvällisestä oppimisesta, mikä sopii hyvin yliopistossa tarjottavaan koulutukseen. Yliopistokoulutus tarjoaa laajan yleissivistyksen ja vahvat akateemiset taidot, jotka avaavat monia mahdollisuuksia tulevaisuudessa sekä työelämässä että jatko-opinnoissa.
 
-Yliopisto-opinnot kestävät tyypillisesti 3-5 vuotta ja keskittyvät teoreettiseen tietämiseen sekä tutkimusmetodologian oppimiseen. Opiskelutapa on pääosin itsenäistä ja vaatii aktiivista osallistumista. Yliopistossa saat myös mahdollisuuden tutustua tutkimustyöhön ja mahdollisesti suorittaa jatko-opintoja.
+Yliopisto-opinnot kestävät tyypillisesti 3–5 vuotta ja keskittyvät teoreettiseen tietämykseen sekä tutkimusmetodologian oppimiseen. Opiskelutapa on pääosin itsenäistä ja vaatii aktiivista osallistumista. Yliopistossa saat myös mahdollisuuden tutustua tutkimustyöhön ja mahdollisesti suorittaa jatko-opintoja.
 
 Työmarkkinanäkymät ovat yleisesti hyvät, ja keskimääräinen palkka vaihtelee aloittain. Teknologia- ja terveysaloilla työllisyysnäkymät ovat erityisen hyvät. Yliopistotutkinto avaa ovia myös johtotehtäviin ja erikoistuneisiin rooleihin.`;
     } else {
       reasoning = `Vastaustesi perusteella yliopisto-opinnot voisivat olla yksi vaihtoehto. Yliopistokoulutus sopii erityisesti, jos haluat syventää tietämystäsi tietyssä alassa ja harkitset mahdollisesti jatko-opintoja. Yliopistossa kehität vahvoja akateemisia taitoja ja saat laajan yleissivistyksen.
 
-Yliopisto-opinnot kestävät tyypillisesti 3-5 vuotta ja tarjoavat hyvät valmiudet monipuoliseen työelämään. Työmarkkinanäkymät ovat yleisesti hyvät, erityisesti teknologia- ja terveysaloilla.`;
+Yliopisto-opinnot kestävät tyypillisesti 3–5 vuotta ja tarjoavat hyvät valmiudet monipuoliseen työelämään. Työmarkkinanäkymät ovat yleisesti hyvät, erityisesti teknologia- ja terveysaloilla.`;
     }
   } else if (primary === 'amk') {
     if (confidence === 'high') {
-      reasoning = `Vastaustesi perusteella ammattikorkeakoulu-opinnot sopivat sinulle erittäin hyvin. Profiilisi osoittaa vahvan käytännönläheisyyden, konkreettisen ongelmanratkaisukyvyn ja halua oppia työelämään soveltuvia taitoja, mikä on täsmälleen sitä mitä AMK-koulutus tarjoaa. Ammattikorkeakouluissa opiskelutapa on käytännönläheinen ja työelämäprojekteja on runsaasti, mikä auttaa kehittämään työelämässä tarvittavia taitoja jo opiskelun aikana.
+      reasoning = `Vastaustesi perusteella ammattikorkeakoulu-opinnot sopivat sinulle erittäin hyvin. Profiilisi osoittaa vahvaa käytännönläheisyyttä, konkreettista ongelmanratkaisukykyä ja halua oppia työelämään soveltuvia taitoja – juuri sitä, mitä AMK-koulutus tarjoaa. Ammattikorkeakouluissa opiskelutapa on käytännönläheinen ja työelämäprojekteja on runsaasti, mikä auttaa kehittämään työelämässä tarvittavia taitoja jo opiskelun aikana.
 
-AMK-opinnot kestävät tyypillisesti 3,5-4,5 vuotta ja johtavat ammattikorkeakoulututkintoon. Opiskelutapa yhdistää teoreettista tietämystä ja käytännön harjoittelua, ja työelämäprojekteja on merkittävässä osassa opintojasi (tyypillisesti 30-40% opintojaksoista). AMK-opinnoissa saat myös hyvät verkostomahdollisuudet työelämään ja mahdollisuuden työharjoitteluihin jo opiskelun aikana, mikä helpottaa merkittävästi työllistymistä valmistumisen jälkeen. Opiskelutapa on strukturoitumpi verrattuna yliopistoon, mikä voi sopia paremmin henkilöille, jotka haluavat selkeän opintopolun ja säännöllisemmän työrytmin.
+AMK-opinnot kestävät tyypillisesti 3,5–4,5 vuotta ja johtavat ammattikorkeakoulututkintoon. Opiskelutapa yhdistää teoreettista tietämystä ja käytännön harjoittelua, ja työelämäprojektit ovat merkittävässä osassa opintojasi (tyypillisesti 30–40 % opintojaksoista). AMK-opinnoissa saat myös hyvät verkostoitumismahdollisuudet työelämään ja mahdollisuuden työharjoitteluihin jo opiskelun aikana, mikä helpottaa merkittävästi työllistymistä valmistumisen jälkeen. Opiskelutapa on strukturoidumpi verrattuna yliopistoon, mikä voi sopia paremmin henkilöille, jotka haluavat selkeän opintopolun ja säännöllisemmän työrytmin.
 
-Työmarkkinanäkymät AMK-koulutukselle ovat erinomaiset. Suurin osa AMK-valmistuneista työllistyy nopeasti ja suoraan oman alansa töihin - työllisyysaste on yleensä 85-95% vuoden sisällä valmistumisesta. Keskimääräinen palkka AMK-tutkinnon suorittaneilla on noin 3 200-4 800 euroa kuukaudessa riippuen alasta. Teknologia-alalla palkat ovat yleensä korkeimmat (3 800-5 500 euroa), kun taas sosiaali- ja terveysalalla palkkataso on hieman alhaisempi mutta työllisyysnäkymät ovat erinomaiset. Aloittaminen työelämässä tapahtuu yleensä nopeasti, ja AMK-opinnot antavat myös hyvät valmiudet johtotehtäviin ja erikoistumiseen työelämässä. Ylempi AMK-tutkinto (ylempi ammattikorkeakoulututkinto) on myös mahdollisuus, mikä avaa ovia vielä korkeampiin johtotehtäviin.
+Työmarkkinanäkymät AMK-koulutukselle ovat erinomaiset. Suurin osa AMK-valmistuneista työllistyy nopeasti ja suoraan oman alansa töihin – työllisyysaste on yleensä 85–95 % vuoden sisällä valmistumisesta. Keskimääräinen palkka AMK-tutkinnon suorittaneilla on noin 3 200–4 800 euroa kuukaudessa riippuen alasta. Teknologia-alalla palkat ovat yleensä korkeimmat (3 800–5 500 euroa), kun taas sosiaali- ja terveysalalla palkkataso on hieman alhaisempi, mutta työllisyysnäkymät ovat erinomaiset. Siirtyminen työelämään tapahtuu yleensä nopeasti, ja AMK-opinnot antavat myös hyvät valmiudet johtotehtäviin ja erikoistumiseen työelämässä. Ylempi AMK-tutkinto on myös mahdollisuus, mikä avaa ovia vielä korkeampiin johtotehtäviin.
 
-AMK-koulutuksen etuja ovat konkreettinen työelämäkytkös, nopea työllistyminen ja käytännönläheinen opiskelutapa. AMK-opinnoissa saat myös hyvät verkostomahdollisuudet ja työharjoittelujen kautta mahdollisuuden varmistaa, että ala sopii sinulle ennen valmistumista. Haasteena voi olla vähemmän syvällinen teoreettinen tietämys verrattuna yliopistoon ja rajoitetummat jatko-opintomahdollisuudet - AMK-opinnoista voi kuitenkin jatkaa yliopistoon, mutta se vaatii usein täydentäviä opintoja. Lisäksi akateeminen ura tai tutkijaura on vaikeampi AMK-opinnoista, jos sitä harkitset. AMK-koulutus sopii erityisesti henkilöille, jotka haluavat nopean työllistymisen ja konkreettisen työelämäkytköksen ilman että heidän tarvitsee luopua korkeakoulututkinnosta.`;
+AMK-koulutuksen etuja ovat konkreettinen työelämäyhteys, nopea työllistyminen ja käytännönläheinen opiskelutapa. AMK-opinnoissa saat myös hyvät verkostoitumismahdollisuudet ja työharjoittelujen kautta mahdollisuuden varmistaa, että ala sopii sinulle ennen valmistumista. Haasteena voi olla vähemmän syvällinen teoreettinen tietämys verrattuna yliopistoon ja rajoitetummat jatko-opintomahdollisuudet – AMK-opinnoista voi kuitenkin jatkaa yliopistoon, mutta se vaatii usein täydentäviä opintoja. Lisäksi akateeminen ura tai tutkijanura on vaikeampi AMK-opinnoista, jos sitä harkitset. AMK-koulutus sopii erityisesti henkilöille, jotka haluavat nopean työllistymisen ja konkreettisen työelämäyhteyden ilman, että heidän tarvitsee luopua korkeakoulututkinnosta.`;
     } else if (confidence === 'medium') {
       reasoning = `Vastaustesi perusteella ammattikorkeakoulu-opinnot vaikuttavat sopivalta vaihtoehdolta. Näytät pitävän käytännönläheisestä oppimisesta ja konkreettisista työelämän taidoista, mikä sopii hyvin AMK-koulutukseen. Ammattikorkeakouluissa opiskelutapa on käytännönläheinen ja työelämäprojekteja on runsaasti, mikä auttaa kehittämään työelämässä tarvittavia taitoja.
 
-AMK-opinnot kestävät tyypillisesti 3,5-4,5 vuotta ja tarjoavat hyvät valmiudet työelämään. Työmarkkinanäkymät ovat erinomaiset ja työllistyminen tapahtuu yleensä nopeasti. Keskimääräinen palkka vaihtelee aloittain mutta on yleisesti kilpailukykyinen.`;
+AMK-opinnot kestävät tyypillisesti 3,5–4,5 vuotta ja tarjoavat hyvät valmiudet työelämään. Työmarkkinanäkymät ovat erinomaiset, ja työllistyminen tapahtuu yleensä nopeasti. Keskimääräinen palkka vaihtelee aloittain, mutta on yleisesti kilpailukykyinen.`;
     } else {
-      reasoning = `Vastaustesi perusteella ammattikorkeakoulu-opinnot voisivat olla yksi vaihtoehto. AMK-koulutus sopii erityisesti, jos haluat konkreettisen työelämäkytköksen ja nopean työllistymisen. AMK-opinnoissa opiskelutapa on käytännönläheinen ja työelämäprojekteja on runsaasti.
+      reasoning = `Vastaustesi perusteella ammattikorkeakoulu-opinnot voisivat olla yksi vaihtoehto. AMK-koulutus sopii erityisesti, jos haluat konkreettisen työelämäyhteyden ja nopean työllistymisen. AMK-opinnoissa opiskelutapa on käytännönläheinen ja työelämäprojekteja on runsaasti.
 
-AMK-opinnot kestävät tyypillisesti 3,5-4,5 vuotta ja tarjoavat hyvät valmiudet työelämään. Työmarkkinanäkymät ovat erinomaiset.`;
+AMK-opinnot kestävät tyypillisesti 3,5–4,5 vuotta ja tarjoavat hyvät valmiudet työelämään. Työmarkkinanäkymät ovat erinomaiset.`;
     }
   }
 
@@ -582,7 +637,7 @@ export function getEducationPathDescription(path: EducationPath, cohort?: Cohort
         return {
           title: 'Yliopisto-opinnot',
           description: 'Akateeminen korkeakoulututkinto, joka tarjoaa syvällistä teoreettista tietämystä ja vahvoja akateemisia taitoja. Tämä vaihtoehto voi olla kiinnostava tutustua, jos koet tärkeäksi esimerkiksi tutkimusmielisyyttä ja analyyttistä ajattelua.',
-          duration: '3-5 vuotta (kandidaatti + maisteri)',
+          duration: '3–5 vuotta (kandidaatti + maisteri)',
           studyStyle: 'Itsenäistä opiskelua, luentoja, seminaareja ja tutkielmia. Painotus teoreettisessa ymmärryksessä ja tieteellisessä ajattelussa. Opiskelutahti on joustavampi kuin AMK:ssa.',
           strengths: [
             'Syvällinen teoreettinen osaaminen',
@@ -607,25 +662,25 @@ export function getEducationPathDescription(path: EducationPath, cohort?: Cohort
           nextSteps: [
             'Maisterin tutkinto (2 vuotta)',
             'Tohtorin tutkinto (4 vuotta)',
-            'Tutkijaura yliopistossa',
+            'Tutkijanura yliopistossa',
             'Erikoistuneet asiantuntijatehtävät'
           ],
-          applicationInfo: 'Haku yhteishaussa Opintopolussa keväisin. Useimmissa ohjelmissa pääsykoe tai todistusvalinta. Valmistaudu pääsykokeisiin ajoissa - kursseja ja materiaaleja saatavilla.',
-          financialInfo: 'Opiskelu on maksutonta. Opintotuki noin 250-350€/kk + asumistuki. Opintolaina mahdollinen (650€/kk). Kesätyöt ja osa-aikatyöt yleisiä.',
-          typicalWeek: 'Noin 10-20h luentoja, loput itsenäistä opiskelua. Tenttikaudet intensiivisiä. Paljon vapautta aikatauluttaa omaa opiskelua.'
+          applicationInfo: 'Haku yhteishaussa Opintopolussa keväisin. Useimmissa ohjelmissa pääsykoe tai todistusvalinta. Valmistaudu pääsykokeisiin ajoissa – kursseja ja materiaaleja saatavilla.',
+          financialInfo: 'Opiskelu on maksutonta. Opintotuki noin 250–350 €/kk + asumistuki. Opintolaina mahdollinen (650 €/kk). Kesätyöt ja osa-aikatyöt yleisiä.',
+          typicalWeek: 'Noin 10–20 h luentoja, loput itsenäistä opiskelua. Tenttikaudet intensiivisiä. Paljon vapautta aikatauluttaa omaa opiskelua.'
         };
 
       case 'amk':
         return {
           title: 'Ammattikorkeakoulu',
           description: 'Käytännönläheinen korkeakoulututkinto, joka yhdistää teoreettista tietämystä ja konkreettista työelämän taitoa. Opiskelutapa on käytännönläheinen ja työelämäprojekteja on runsaasti.',
-          duration: '3,5-4,5 vuotta',
+          duration: '3,5–4,5 vuotta',
           studyStyle: 'Projektioppimista, ryhmätöitä ja käytännön harjoituksia. Tiivis yhteistyö yritysten kanssa. Pakollinen työharjoittelu (30 op) osana opintoja.',
           strengths: [
             'Käytännönläheinen oppiminen',
             'Vahvat työelämäyhteydet',
             'Harjoittelu osana opintoja',
-            'Nopea työllistyminen (85-95%)',
+            'Nopea työllistyminen (85–95 %)',
             'Projektit oikeiden yritysten kanssa'
           ],
           considerations: [
@@ -648,8 +703,8 @@ export function getEducationPathDescription(path: EducationPath, cohort?: Cohort
             'Erikoistumiskoulutukset'
           ],
           applicationInfo: 'Haku yhteishaussa Opintopolussa keväisin ja syksyisin. Valinta todistuspisteillä, pääsykokeilla tai AMK-valintakokeella. Joillakin aloilla soveltuvuustestit.',
-          financialInfo: 'Opiskelu on maksutonta. Opintotuki noin 250-350€/kk + asumistuki. Opintolaina mahdollinen. Harjoittelusta usein palkka (noin 1000-1500€/kk).',
-          typicalWeek: 'Noin 25-35h kontaktiopetusta ja projektityötä. Säännöllisempi lukujärjestys kuin yliopistossa. Harjoittelujaksot työpaikoilla.'
+          financialInfo: 'Opiskelu on maksutonta. Opintotuki noin 250–350 €/kk + asumistuki. Opintolaina mahdollinen. Harjoittelusta maksetaan usein palkkaa (noin 1 000–1 500 €/kk).',
+          typicalWeek: 'Noin 25–35 h kontaktiopetusta ja projektityötä. Säännöllisempi lukujärjestys kuin yliopistossa. Harjoittelujaksot työpaikoilla.'
         };
     }
   }
@@ -689,15 +744,15 @@ export function getEducationPathDescription(path: EducationPath, cohort?: Cohort
           'Välivuosi / työkokemus'
         ],
         applicationInfo: 'Haku yhteishaussa keväällä 9. luokan aikana. Valinta peruskoulun päättötodistuksen keskiarvon perusteella. Joissain lukioissa pääsykoe tai painotukset.',
-        financialInfo: 'Opiskelu on maksutonta. Oppikirjat ja materiaalit maksavat noin 300-500€/vuosi. Alle 17-vuotiaat asuvat yleensä kotona.',
-        typicalWeek: 'Noin 30-35h oppitunteja. Kotitehtäviä ja kokeisiin valmistautumista. Valinnaisuus lisääntyy yläluokilla.'
+        financialInfo: 'Opiskelu on maksutonta. Oppikirjat ja materiaalit maksavat noin 300–500 €/vuosi. Alle 17-vuotiaat asuvat yleensä kotona.',
+        typicalWeek: 'Noin 30–35 h oppitunteja. Kotitehtäviä ja kokeisiin valmistautumista. Valinnaisuus lisääntyy yläluokilla.'
       };
 
     case 'ammattikoulu':
       return {
         title: 'Ammattikoulu',
         description: 'Ammatillinen koulutus, jossa opit tietyn ammatin taidot käytännössä. Saat työelämävalmiudet ja voit aloittaa työt heti valmistuttuasi tai jatkaa opiskelua.',
-        duration: '2-3 vuotta',
+        duration: '2–3 vuotta',
         studyStyle: 'Käytännön tekemistä, työssäoppimista ja projekteja. Opit oikeissa työympäristöissä. Vähemmän perinteistä luokkaopetusta.',
         strengths: [
           'Käytännön ammattitaito',
@@ -729,7 +784,7 @@ export function getEducationPathDescription(path: EducationPath, cohort?: Cohort
         ],
         applicationInfo: 'Haku yhteishaussa keväällä. Valinta peruskoulun päättötodistuksen ja mahdollisten pääsykokeiden perusteella. Joillakin aloilla soveltuvuustestit.',
         financialInfo: 'Opiskelu on maksutonta. Työvaatteet ja välineet joillakin aloilla itse hankittava. Työssäoppimisesta voi saada palkkaa.',
-        typicalWeek: 'Vaihtelee aloittain. Noin 25-30h opetusta + työssäoppimista. Paljon käytännön harjoituksia pajoissa ja työpaikoilla.'
+        typicalWeek: 'Vaihtelee aloittain. Noin 25–30 h opetusta + työssäoppimista. Paljon käytännön harjoituksia pajoissa ja työpaikoilla.'
       };
 
     case 'kansanopisto':
@@ -765,7 +820,7 @@ export function getEducationPathDescription(path: EducationPath, cohort?: Cohort
           'Toinen kansanopistovuosi (eri linja)'
         ],
         applicationInfo: 'Haku suoraan kansanopistoihin ympäri vuoden. Ei pääsykokeita useimmille linjoille. Valinta hakemuksen ja motivaation perusteella.',
-        financialInfo: 'Lukukausimaksu noin 100-500€/kk sisältäen asumisen ja ruoan. Opintotuki mahdollinen. KELAn opintotukea voi saada myös kansanopisto-opintoihin.',
+        financialInfo: 'Lukukausimaksu noin 100–500 €/kk sisältäen asumisen ja ruoan. Opintotuki mahdollinen. Kelan opintotukea voi saada myös kansanopisto-opintoihin.',
         typicalWeek: 'Vaihtelee linjan mukaan. Asut kampuksella muiden opiskelijoiden kanssa. Vapaa-ajan aktiviteetteja ja yhteisöllisyyttä paljon.'
       };
   }

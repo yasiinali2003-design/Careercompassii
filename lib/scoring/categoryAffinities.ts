@@ -114,7 +114,7 @@ const HYBRID_PATHS: Array<{
   {
     categories: ['innovoija', 'luova'],
     label: 'Teknologia + Luovuus',
-    description: 'Yhdistät teknisen osaamisen luovaan suunnitteluun. Sovit digitaaliseen muotoiluun ja käyttäjäkokemukseen.',
+    description: 'Yhdistät teknisen osaamisen luovaan suunnitteluun. Digitaalinen muotoilu ja käyttäjäkokemus sopivat sinulle.',
     exampleCareers: ['UX-suunnittelija', 'Pelisuunnittelija', 'Digitaalinen muotoilija', 'Sisältömarkkinoija'],
     requiredSignals: ['technology', 'creative']
   },
@@ -156,7 +156,7 @@ const HYBRID_PATHS: Array<{
   {
     categories: ['johtaja', 'innovoija'],
     label: 'Johtaminen + Innovaatio',
-    description: 'Haluat johtaa teknologia-alan yrityksiä tai startupeja. Yhdistät bisnesälyn tekniseen ymmärrykseen.',
+    description: 'Haluat johtaa teknologia-alan yrityksiä tai startupeja. Yhdistät liiketoimintaosaamisen tekniseen ymmärrykseen.',
     exampleCareers: ['Tech-yrittäjä', 'Tuotepäällikkö', 'Teknologiajohtaja', 'Startup-perustaja'],
     requiredSignals: ['leadership', 'technology']
   },
