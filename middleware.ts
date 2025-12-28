@@ -200,9 +200,13 @@ export const config = {
      * - api (API routes - handle their own auth)
      * - _next/static (static files)
      * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
+     * - favicon (favicon files - .ico, .png, .svg)
+     * - og-image (Open Graph images)
+     * - logo (logo files)
+     * - apple-touch-icon (Apple touch icons)
+     * - Static image files (.png, .jpg, .svg, .ico)
      */
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    '/((?!api|_next/static|_next/image|favicon|og-image|logo|apple-touch-icon|.*\\.png$|.*\\.ico$|.*\\.svg$).*)',
   ],
 };
 
