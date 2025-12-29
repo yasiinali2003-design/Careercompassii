@@ -20651,79 +20651,79 @@ export const careersData: CareerFI[] = [
   {
     id: "erikoislaakari",
     category: "auttaja",
-    title_fi: "Erikoislaakari",
-    title_en: "Specialist Doctor",
-    short_description: "Erikoislaakari toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    title_fi: "Erikoislääkäri",
+    title_en: "Specialist Physician",
+    short_description: "Erikoislääkäri on lääketieteen asiantuntija, joka on erikoistunut tiettyyn lääketieteen alaan kuten sisätauteihin, kirurgiaan, psykiatriaan tai lastentauteihin. Työ on vaativaa ja vastuullista potilastyötä, joka edellyttää laajaa lääketieteellistä osaamista ja jatkuvaa kouluttautumista.",
     main_tasks: [
-      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
-      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
-      "Tekee yhteistyötä eri sidosryhmien kanssa",
-      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
-      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
+      "Diagnosoi ja hoitaa potilaita omalla erikoisalallaan",
+      "Suorittaa erikoisalaan kuuluvia toimenpiteitä ja leikkauksia",
+      "Konsultoi muita lääkäreitä vaativissa tapauksissa",
+      "Ohjaa ja kouluttaa erikoistuvia lääkäreitä ja lääketieteen opiskelijoita",
+      "Osallistuu päivystykseen ja varallaoloon"
     ],
     impact: [
-      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
-      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
+      "Pelastaa ihmishenkiä ja parantaa potilaiden elämänlaatua",
+      "Kehittää lääketiedettä ja hoitokäytäntöjä Suomessa",
+      "Kouluttaa seuraavan sukupolven lääkäreitä"
     ],
     education_paths: [
-      "Yliopisto: Alan maisteriohjelma",
-      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
-      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
+      "Yliopisto: Lääketieteen lisensiaatin tutkinto (6 vuotta)",
+      "Erikoistumiskoulutus: 5–6 vuotta erikoisalasta riippuen",
+      "Yhteensä noin 11–12 vuotta koulutusta"
     ],
-    qualification_or_license: null,
+    qualification_or_license: "Lääkärin laillistus (Valvira) + erikoislääkärin pätevyys",
     core_skills: [
-      "Analyyttinen ajattelu",
-      "Projektinhallinta",
-      "Viestintä ja yhteistyö",
-      "Ratkaisukeskeisyys",
-      "Tietotekninen osaaminen"
+      "Laaja lääketieteellinen osaaminen",
+      "Kliininen päätöksenteko",
+      "Paineensietokyky ja stressinhallinta",
+      "Vuorovaikutustaidot ja empatia",
+      "Tiimityö ja johtaminen"
     ],
     tools_tech: [
-      "Office 365",
-      "Projektinhallintatyökalut",
-      "Data-analytiikkatyökalut",
-      "Alan erikoisohjelmistot",
-      "Raportointijärjestelmät"
+      "Potilastietojärjestelmät (Apotti, Lifecare, Esko)",
+      "Kuvantamislaitteet (MRI, CT, ultraääni)",
+      "Erikoisalan toimenpidevälineet",
+      "Laboratoriotutkimusten tulkinta",
+      "Lääketieteelliset tietokannat (Terveysportti, UpToDate)"
     ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
+    languages_required: { fi: "C2", sv: "B1", en: "B2" },
     salary_eur_month: {
-      median: 3800,
-      range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      median: 8500,
+      range: [6500, 15000],
+      source: { name: "Lääkäriliitto", url: "https://www.laakariliitto.fi/", year: 2024 }
     },
     job_outlook: {
-      status: "vakaa",
-      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      status: "kasvava",
+      explanation: "Lääkäripula on merkittävä ongelma Suomessa. Erikoislääkäreille on jatkuvasti kysyntää erityisesti hyvinvointialueilla ja yksityisellä sektorilla.",
+      source: { name: "Lääkäriliitto", url: "https://www.laakariliitto.fi/", year: 2024 }
     },
     entry_roles: [
-      "Junior Erikoislaakari",
-      "Harjoittelija",
-      "Assistentti"
+      "Lääketieteen kandidaatti",
+      "Lääketieteen lisensiaatti",
+      "Erikoistuva lääkäri"
     ],
     career_progression: [
-      "Asiantuntija",
-      "Vanhempi asiantuntija",
-      "Johtava asiantuntija"
+      "Erikoislääkäri",
+      "Osastonylilääkäri",
+      "Ylilääkäri",
+      "Johtava ylilääkäri"
     ],
     typical_employers: [
-      "Kunnat ja hyvinvointialueet",
-      "Valtio ja virastot",
-      "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot",
-      "Digitoimistot ympäri Suomen",
-      "Etätyö mahdollistaa työskentelyn mistä tahansa",
-      "Wolt (Helsinki)",
-      "Vincit (Tampere)"
+      "Hyvinvointialueet (HUS, Pirha, Varha jne.)",
+      "Yliopistolliset sairaalat",
+      "Yksityiset lääkäriasemat (Mehiläinen, Terveystalo, Pihlajalinna)",
+      "Työterveyshuolto",
+      "Yliopistot ja tutkimuslaitokset"
     ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Erikoislaakari", url: "https://tyomarkkinatori.fi/ammatit/erikoislaakari" }
-      ],
-    keywords: ["erikoislaakari", "asiantuntija", "kehittäminen"],
-    study_length_estimate_months: 48
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    union_or_CBA: "Lääkäriliitto / Lääkärisopimus (LS)",
+    useful_links: [
+      { name: "Opintopolku – Lääketiede", url: "https://opintopolku.fi/konfo/fi/haku/lääketiede" },
+      { name: "Lääkäriliitto", url: "https://www.laakariliitto.fi/" },
+      { name: "Duodecim", url: "https://www.duodecim.fi/" }
+    ],
+    keywords: ["erikoislääkäri", "lääkäri", "lääketiede", "terveydenhuolto", "sairaala", "potilas"],
+    study_length_estimate_months: 144
   },
 
 

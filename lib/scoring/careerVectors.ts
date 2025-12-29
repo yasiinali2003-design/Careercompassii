@@ -2295,12 +2295,12 @@ export const CAREER_VECTORS: CareerVector[] = [
   },
   {
     slug: "erikoislaakari",
-    title: "Erikoislaakari",
+    title: "Erikoislääkäri",
     category: "auttaja",
-    interests: { technology: 0.1, people: 0.95, creative: 0.42, analytical: 0.31, hands_on: 0.26, business: 0.1, environment: 0.1, health: 0.84, education: 0.72, innovation: 0.1, arts_culture: 0.1, sports: 0.66, nature: 0.18, writing: 0.29 },
-    workstyle: { teamwork: 0.57, independence: 0.42, leadership: 0.29, organization: 0.75, planning: 0.45, problem_solving: 0.29, precision: 0.24, performance: 0.42, teaching: 0.44, motivation: 0.95, autonomy: 0.25, social: 0.75, structure: 0.5, flexibility: 0.57, variety: 0.41 },
-    values: { growth: 0.21, impact: 0.95, global: 0.13, career_clarity: 0.33, financial: 0.45, entrepreneurship: 0.25, social_impact: 0.93, stability: 0.53, advancement: 0.25, work_life_balance: 0.75, company_size: 0.53 },
-    context: { outdoor: 0.46, international: 0.18, work_environment: 0.81 }
+    interests: { technology: 0.45, people: 0.95, creative: 0.30, analytical: 0.90, hands_on: 0.75, business: 0.20, environment: 0.15, health: 0.98, education: 0.60, innovation: 0.55, arts_culture: 0.10, sports: 0.20, nature: 0.15, writing: 0.40 },
+    workstyle: { teamwork: 0.85, independence: 0.70, leadership: 0.75, organization: 0.85, planning: 0.70, problem_solving: 0.95, precision: 0.95, performance: 0.80, teaching: 0.65, motivation: 0.90, autonomy: 0.65, social: 0.85, structure: 0.75, flexibility: 0.60, variety: 0.80 },
+    values: { growth: 0.85, impact: 0.98, global: 0.40, career_clarity: 0.90, financial: 0.80, entrepreneurship: 0.35, social_impact: 0.95, stability: 0.85, advancement: 0.80, work_life_balance: 0.40, company_size: 0.70 },
+    context: { outdoor: 0.10, international: 0.45, work_environment: 0.95 }
   },
   {
     slug: "erityispedagogi",
