@@ -211,6 +211,85 @@ function detectPersonalityType(
   console.log(`[detectPersonalityType] Composite scores: helper=${helperScore.toFixed(2)}, leader=${leaderScore.toFixed(2)}, creative=${creativeScore.toFixed(2)}, tech=${techScore.toFixed(2)}, handsOn=${handsOnScore.toFixed(2)}, adventurer=${adventurerScore.toFixed(2)}`);
   console.log(`[detectPersonalityType] Raw signals: people=${people.toFixed(2)}, health=${health.toFixed(2)}, creative=${creative.toFixed(2)}, technology=${technology.toFixed(2)}, analytical=${analytical.toFixed(2)}, hands_on=${hands_on.toFixed(2)}, business=${business.toFixed(2)}, leadership=${leadership.toFixed(2)}, impact=${impact.toFixed(2)}`);
 
+  // ========== HYBRID PERSONALITY DETECTION ==========
+  // Check for hybrid profiles FIRST - these are users with strong signals in multiple dimensions
+  // Hybrid profiles get specialized career recommendations that combine both dimensions
+
+  // CREATIVE + LEADER hybrid: Creative professionals with leadership/entrepreneurial drive
+  const isCreativeLeader = (creative >= 0.5 && leadership >= 0.5) ||
+                           (creative >= 0.6 && leadership >= 0.4) ||
+                           (creative >= 0.4 && leadership >= 0.6) ||
+                           (creative >= 0.5 && business >= 0.5 && innovation >= 0.4);
+
+  // TECH + LEADER hybrid: Technical leaders, CTOs, tech entrepreneurs
+  const isTechLeader = (technology >= 0.5 && leadership >= 0.5) ||
+                       (technology >= 0.6 && leadership >= 0.4) ||
+                       (analytical >= 0.5 && leadership >= 0.5 && innovation >= 0.4);
+
+  // CREATIVE + TECH hybrid: UX designers, game developers, creative technologists
+  const isCreativeTech = (creative >= 0.5 && technology >= 0.5) ||
+                         (creative >= 0.6 && technology >= 0.4) ||
+                         (creative >= 0.5 && innovation >= 0.6 && analytical >= 0.4);
+
+  // Check for hybrid matches first (they take priority)
+  if (isCreativeLeader) {
+    console.log(`[detectPersonalityType] ✓ CREATIVE_LEADER hybrid type detected (creative=${creative.toFixed(2)}, leadership=${leadership.toFixed(2)}, innovation=${innovation.toFixed(2)})`);
+    return {
+      boostCareers: [
+        // Creative leadership roles
+        'brandijohtaja', 'brändijohtaja', 'luova-johtaja', 'creative-director',
+        'markkinointijohtaja', 'markkinointipaallikko', 'markkinointipäällikkö',
+        'art-director', 'mainostoimiston-art-director', 'tuotantopaallikko',
+        // Entrepreneurial creative roles
+        'yrittaja', 'yrittäjä', 'startup', 'perustaja',
+        // Strategic creative roles
+        'brandistrategisti', 'brändistrategisti', 'brand-strategist', 'ethical-brand-strategist',
+        'sisaltostrategisti', 'sisältöstrategisti', 'content-strategist',
+        // Design leadership
+        'muotoilujohtaja', 'design-director', 'suunnittelupaallikko',
+        // Innovation + creative roles
+        'innovaatiojohtaja', 'tuotekehitysjohtaja', 'tuotejohtaja',
+        // Media leadership
+        'mediajohtaja', 'viestintajohtaja', 'viestintäjohtaja',
+        // General leadership in creative fields
+        'johtaja', 'paallikko', 'päällikkö', 'esimies'
+      ],
+      boostMultiplier: 2.5  // Higher multiplier for hybrid matches
+    };
+  }
+
+  if (isTechLeader) {
+    console.log(`[detectPersonalityType] ✓ TECH_LEADER hybrid type detected (tech=${technology.toFixed(2)}, leadership=${leadership.toFixed(2)})`);
+    return {
+      boostCareers: [
+        'teknologiajohtaja', 'cto', 'tietohallintojohtaja', 'cio',
+        'it-johtaja', 'kehitysjohtaja', 'tuotekehitysjohtaja',
+        'startup', 'yrittaja', 'yrittäjä', 'perustaja',
+        'projektipaallikko', 'projektipäällikkö', 'tuotepaallikko',
+        'tekninen-johtaja', 'arkkitehti', 'lead-developer',
+        'innovaatiojohtaja', 'digitalisaatiojohtaja'
+      ],
+      boostMultiplier: 2.5
+    };
+  }
+
+  if (isCreativeTech) {
+    console.log(`[detectPersonalityType] ✓ CREATIVE_TECH hybrid type detected (creative=${creative.toFixed(2)}, tech=${technology.toFixed(2)})`);
+    return {
+      boostCareers: [
+        'ux-suunnittelija', 'ui-suunnittelija', 'kayttoliittymasuunnittelija',
+        'pelisuunnittelija', 'pelikehittaja', 'pelinkehittäjä',
+        'web-suunnittelija', 'fullstack', 'frontend',
+        'digitaalinen-suunnittelija', 'motion-designer',
+        'animaattori', '3d-taiteilija', 'vfx',
+        'tekoalytaiteilija', 'ai-artist', 'generatiivinen',
+        'interaktio-suunnittelija', 'palvelumuotoilija'
+      ],
+      boostMultiplier: 2.3
+    };
+  }
+
+  // ========== SINGLE PERSONALITY TYPE DETECTION ==========
   // Find the dominant personality type based on highest composite score
   // FIXED: Relaxed conditions to allow more personality matches
   const scores = [

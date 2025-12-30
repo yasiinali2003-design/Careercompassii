@@ -173,7 +173,7 @@ const STRENGTH_NARRATIVES = {
   NUORI: {
     with_subdimensions: [
       "Kun analysoidaan profiiliasi syvällisemmin, {strengths} nousevat selvästi vahvimmiksi alueiksi. Kykysi {subdim_quality} on erityisen arvokas työmarkkinoilla ja antaa sinulle merkittävän kilpailuedun. Nämä vahvuudet yhdistettynä ammatilliseen motivaatioosi luovat vankan perustan menestykselle ja mahdollistavat merkittävän urakehityksen valitsemallasi alalla. Tämä on harvinainen yhdistelmä, joka erottaa sinut eduksesi ja avaa ovia korkeisiin asemiin ja vastuullisiin tehtäviin.",
-      "Erityisen vahvoina alueina profiilissasi korostuvat {strengths}. Se, että {subdim_quality}, tekee sinusta erittäin arvokaan työntekijän ja asiantuntijan. Työnantajat arvostavat ja etsivät aktiivisesti juuri näitä ominaisuuksia, ja niiden avulla voit rakentaa merkittävän ja vaikuttavan uran. Nämä vahvuudet ovat jo nyt näkyvissä, ja niiden tietoinen kehittäminen vie sinut pitkälle. Olet selvästi investoinut itsesi kehittämiseen.",
+      "Erityisen vahvoina alueina profiilissasi korostuvat {strengths}. Se, että {subdim_quality}, tekee sinusta erittäin arvokkaan työntekijän ja asiantuntijan. Työnantajat arvostavat ja etsivät aktiivisesti juuri näitä ominaisuuksia, ja niiden avulla voit rakentaa merkittävän ja vaikuttavan uran. Nämä vahvuudet ovat jo nyt näkyvissä, ja niiden tietoinen kehittäminen vie sinut pitkälle. Olet selvästi investoinut itsesi kehittämiseen.",
       "Vahvuutesi {strengths} erottuvat selvästi ja vahvasti. Kykysi {subdim_quality} on harvinainen ja arvokas yhdistelmä, joka avaa ovia vaativiin ja palkitseviin tehtäviin. Nämä vahvuudet antavat sinulle mahdollisuuden kehittyä asiantuntijaksi omalla alallasi ja vaikuttaa laajemmin ympärilläsi. Tämänkaltainen profiili ei synny sattumalta, vaan se on merkki siitä, että olet tehnyt tietoisia valintoja itsesi kehittämiseksi."
     ],
     without_subdimensions: [
@@ -273,7 +273,7 @@ const SUBDIMENSION_QUALITIES = {
   multiple_high: {
     YLA: "yhdistät useita tärkeitä taitoja ja osaat soveltaa niitä käytännössä",
     TASO2: "yhdistät useita vahvuuksia tavalla, joka tekee sinusta monipuolisen osaajan",
-    NUORI: "yhdistät useita vahvuuksia strategisesti tavalla, joka tekee sinusta arvokaan asiantuntijan"
+    NUORI: "yhdistät useita vahvuuksia strategisesti tavalla, joka tekee sinusta arvokkaan asiantuntijan"
   }
 };
 
