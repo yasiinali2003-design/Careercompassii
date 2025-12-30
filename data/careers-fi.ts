@@ -50227,6 +50227,1457 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     keywords: ["varasto", "logistiikka", "keräily"],
     study_length_estimate_months: 12
+},
+// ===============================
+// HYBRID CAREERS - Creative + Helper
+// ===============================
+{
+    id: "taideterapeutti",
+    category: "auttaja",
+    title_fi: "Taideterapeutti",
+    title_en: "Art Therapist",
+    short_description: "Taideterapeutti käyttää taidetta ja luovia menetelmiä asiakkaiden mielenterveyden ja hyvinvoinnin edistämiseen. Työ yhdistää taiteellisen ilmaisun terapeuttiseen hoitoon.",
+    main_tasks: [
+      "Taideterapiaistuntojen suunnittelu ja toteuttaminen",
+      "Asiakkaiden arviointi ja hoitosuunnitelmien laatiminen",
+      "Erilaisten taidemateriaalien ja -menetelmien hyödyntäminen",
+      "Asiakkaiden luovan ilmaisun tukeminen ja ohjaaminen",
+      "Moniammatillinen yhteistyö terveydenhuollon henkilöstön kanssa"
+    ],
+    impact: [
+      "Auttaa ihmisiä käsittelemään traumoja ja vaikeita tunteita",
+      "Edistää mielenterveyttä ja psyykkistä hyvinvointia",
+      "Tarjoaa sanattoman keinon itseilmaisuun ja kommunikaatioon"
+    ],
+    education_paths: [
+      "Yliopisto: Taideterapian maisteriohjelma",
+      "Ammatillinen erikoistumiskoulutus taideterapiaan",
+      "Pohjakoulutuksena esim. psykologia, taiteen tutkinto tai hoitoala + erikoistuminen"
+    ],
+    qualification_or_license: "Suomen Taideterapiayhdistyksen hyväksymä koulutus suositeltava",
+    core_skills: [
+      "Taiteellinen osaaminen",
+      "Empatia ja kuuntelutaidot",
+      "Psykologinen ymmärrys",
+      "Ryhmänohjaustaidot",
+      "Luovuus ja joustavuus"
+    ],
+    tools_tech: [
+      "Kuvataidemateriaalit (maalit, savityöt, piirustusvälineet)",
+      "Kollaasit ja mixed media",
+      "Digitaaliset taidetyökalut",
+      "Dokumentointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3400,
+      range: [2900, 4200],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Luovien terapiamuotojen kysyntä kasvaa mielenterveyspalveluiden laajentumisen myötä.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Taideterapiaopiskelija", "Ohjaaja taideterapiaryhmissä"],
+    career_progression: ["Seniorisaideterapeutti", "Taideterapian kouluttaja", "Oma yksityisvastaanotto"],
+    typical_employers: ["Sairaalat", "Mielenterveyskeskukset", "Kuntoutusyksiköt", "Yksityinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Terveydenhuoltoalan TES",
+    useful_links: [
+      { name: "Suomen Taideterapiayhdistys", url: "https://www.taideterapia.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["taideterapia", "luova terapia", "mielenterveys", "taide", "kuntoutus"],
+    study_length_estimate_months: 60
+},
+{
+    id: "musiikkiterapeutti",
+    category: "auttaja",
+    title_fi: "Musiikkiterapeutti",
+    title_en: "Music Therapist",
+    short_description: "Musiikkiterapeutti käyttää musiikkia ja ääntä terapeuttisena välineenä erilaisten asiakasryhmien kuntoutuksessa ja hoidossa.",
+    main_tasks: [
+      "Musiikkiterapiaistuntojen suunnittelu ja toteutus",
+      "Asiakkaiden toimintakyvyn arviointi",
+      "Soittaminen, laulaminen ja kuuntelu terapiavälineenä",
+      "Yksilö- ja ryhmäterapian ohjaaminen",
+      "Terapiaprosessin dokumentointi ja arviointi"
+    ],
+    impact: [
+      "Edistää neurologisten potilaiden kuntoutumista",
+      "Auttaa kehitysvammaisia kommunikaatiossa",
+      "Tukee mielenterveyskuntoutujien toipumista"
+    ],
+    education_paths: [
+      "AMK: Musiikkipedagogi + musiikkiterapian erikoistumisopinnot",
+      "Yliopisto: Musiikkiterapian maisteriohjelma (Jyväskylä)",
+      "Ammatillinen musiikkiterapiakoulutus"
+    ],
+    qualification_or_license: "Musiikkiterapeutin ammattinimike (Suomen Musiikkiterapiayhdistys)",
+    core_skills: [
+      "Musikaalisuus ja soittotaito",
+      "Empatia",
+      "Vuorovaikutustaidot",
+      "Psykologinen osaaminen",
+      "Improvisaatiotaidot"
+    ],
+    tools_tech: [
+      "Erilaiset soittimet (piano, kitara, rummut)",
+      "Digitaaliset musiikkityökalut",
+      "Äänityslaitteet",
+      "Potilastietojärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3500,
+      range: [3000, 4300],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Musiikkiterapian vaikuttavuus on tutkimuksissa todistettu, mikä lisää kysyntää.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Musiikkiterapiaopiskelija", "Musiikkipedagogi"],
+    career_progression: ["Erikoistunut musiikkiterapeutti", "Kouluttaja", "Tutkija"],
+    typical_employers: ["Sairaalat", "Kuntoutuskeskukset", "Erityiskoulut", "Yksityinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Terveydenhuoltoalan TES",
+    useful_links: [
+      { name: "Suomen Musiikkiterapiayhdistys", url: "https://www.musiikkiterapia.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["musiikkiterapia", "kuntoutus", "musiikki", "terapia"],
+    study_length_estimate_months: 60
+},
+{
+    id: "draamaterapeutti",
+    category: "auttaja",
+    title_fi: "Draamaterapeutti",
+    title_en: "Drama Therapist",
+    short_description: "Draamaterapeutti hyödyntää teatteria ja draamaa terapeuttisina menetelminä asiakkaiden psyykkisen hyvinvoinnin edistämisessä.",
+    main_tasks: [
+      "Draamaterapiaistuntojen suunnittelu ja ohjaaminen",
+      "Roolityöskentelyn ja improvisaation käyttäminen terapiassa",
+      "Asiakkaiden tunteiden ja kokemusten käsittely draaman keinoin",
+      "Ryhmäterapian ohjaaminen",
+      "Terapiaprosessin arviointi ja dokumentointi"
+    ],
+    impact: [
+      "Auttaa ihmisiä tutkimaan ja käsittelemään elämänkokemuksia turvallisesti",
+      "Kehittää sosiaalisia taitoja ja itsetuntemusta",
+      "Tukee traumasta toipumista"
+    ],
+    education_paths: [
+      "Yliopisto: Draamaterapian maisteriohjelma",
+      "Ammatillinen draamaterapiakoulutus",
+      "Teatterialan koulutus + terapiakoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Teatteritaidot",
+      "Empatia",
+      "Ryhmänohjaustaidot",
+      "Psykologinen ymmärrys",
+      "Improvisaatiokyky"
+    ],
+    tools_tech: [
+      "Teatterirekvisiitta",
+      "Roolivaatteet",
+      "Nuket ja symboliset esineet",
+      "Dokumentointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3300,
+      range: [2800, 4000],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Draamaterapia on kasvava erikoisala osana luovia terapiamuotoja.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Draamaohjaaja", "Terapia-avustaja"],
+    career_progression: ["Erikoistunut draamaterapeutti", "Kouluttaja"],
+    typical_employers: ["Mielenterveyskeskukset", "Kuntoutusyksiköt", "Yksityinen sektori"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["draamaterapia", "teatteri", "terapia", "luova terapia"],
+    study_length_estimate_months: 60
+},
+{
+    id: "tanssiterapeutti",
+    category: "auttaja",
+    title_fi: "Tanssiterapeutti",
+    title_en: "Dance Therapist",
+    short_description: "Tanssiterapeutti käyttää liikettä ja tanssia terapeuttisena välineenä asiakkaiden fyysisen ja psyykkisen hyvinvoinnin edistämisessä.",
+    main_tasks: [
+      "Tanssiterapiaistuntojen suunnittelu ja ohjaaminen",
+      "Liikkeen ja kehollisen ilmaisun käyttäminen terapiassa",
+      "Asiakkaiden kehotietoisuuden kehittäminen",
+      "Yksilö- ja ryhmäterapian toteuttaminen",
+      "Terapiaprosessin dokumentointi"
+    ],
+    impact: [
+      "Auttaa käsittelemään kehollisia traumoja",
+      "Edistää mielenterveyskuntoutujien toipumista",
+      "Parantaa kehotietoisuutta ja itsetuntemusta"
+    ],
+    education_paths: [
+      "Yliopisto: Tanssiterapian erikoistumisopinnot",
+      "Tanssipedagogin koulutus + terapiakoulutus",
+      "Ammatillinen tanssiterapiakoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Tanssitaito ja liikeilmaisu",
+      "Empatia",
+      "Kehotietoisuus",
+      "Psykologinen osaaminen",
+      "Vuorovaikutustaidot"
+    ],
+    tools_tech: [
+      "Musiikkisoittimet",
+      "Liikuntavälineet",
+      "Videointilaitteisto",
+      "Dokumentointijärjestelmät"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2700, 3900],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Kehollisten terapiamuotojen kysyntä kasvaa hitaasti.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Tanssinohjaaja", "Tanssipedagogi"],
+    career_progression: ["Erikoistunut tanssiterapeutti", "Kouluttaja"],
+    typical_employers: ["Kuntoutuskeskukset", "Mielenterveyskeskukset", "Yksityinen sektori"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["tanssiterapia", "liike", "terapia", "kehollinen"],
+    study_length_estimate_months: 60
+},
+{
+    id: "kuvataideopettaja",
+    category: "auttaja",
+    title_fi: "Kuvataideopettaja",
+    title_en: "Visual Arts Teacher",
+    short_description: "Kuvataideopettaja opettaa kuvataidetta eri kouluasteilla kehittäen oppilaiden visuaalista lukutaitoa ja luovaa ilmaisua.",
+    main_tasks: [
+      "Kuvataiteen opetuksen suunnittelu ja toteutus",
+      "Erilaisten kuvataidetekniikoiden opettaminen",
+      "Oppilaiden luovuuden ja visuaalisen ajattelun kehittäminen",
+      "Näyttelyiden ja projektien organisointi",
+      "Oppilasarviointi ja palautteen antaminen"
+    ],
+    impact: [
+      "Kehittää nuorten visuaalista lukutaitoa",
+      "Edistää luovuutta ja itseilmaisua",
+      "Tukee oppilaiden kokonaisvaltaista kehitystä"
+    ],
+    education_paths: [
+      "Yliopisto: Kuvataidekasvatuksen maisteriohjelma",
+      "AMK: Kuvataiteilija + opettajan pedagogiset opinnot",
+      "Taideteollinen korkeakoulutus + pedagogiikka"
+    ],
+    qualification_or_license: "Opettajan kelpoisuus (pedagogiset opinnot 60 op)",
+    core_skills: [
+      "Taiteellinen osaaminen",
+      "Pedagogiset taidot",
+      "Luovuus",
+      "Vuorovaikutustaidot",
+      "Visuaalinen ajattelu"
+    ],
+    tools_tech: [
+      "Kuvataidemateriaalit",
+      "Digitaaliset taidetyökalut",
+      "Adobe Creative Suite",
+      "Opetusteknologia"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3300, 4500],
+      source: { name: "Opetusalan Ammattijärjestö OAJ", url: "https://www.oaj.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Kuvataideopettajien tarve pysyy vakaana kouluissa.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Kuvataiteen tuntiopettaja", "Sijaisopettaja"],
+    career_progression: ["Lehtori", "Aineenopettaja", "Rehtori"],
+    typical_employers: ["Peruskoulut", "Lukiot", "Kuvataidekoulut", "Kansalaisopistot"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: "OVTES",
+    useful_links: [
+      { name: "OAJ", url: "https://www.oaj.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["kuvataide", "opettaja", "taide", "kasvatus"],
+    study_length_estimate_months: 60
+},
+{
+    id: "musiikkipedagogi",
+    category: "auttaja",
+    title_fi: "Musiikkipedagogi",
+    title_en: "Music Educator",
+    short_description: "Musiikkipedagogi opettaa musiikkia ja soittamista eri ikäisille oppilaille kehittäen heidän musiikillisia taitojaan ja rakkautta musiikkiin.",
+    main_tasks: [
+      "Soiton- ja laulunopetuksen suunnittelu ja toteutus",
+      "Musiikin teorian opettaminen",
+      "Oppilaiden musiikillisen kehityksen seuraaminen",
+      "Konserttien ja esitysten järjestäminen",
+      "Yhteistyö muiden musiikkikasvattajien kanssa"
+    ],
+    impact: [
+      "Kehittää lasten ja nuorten musiikillisia taitoja",
+      "Edistää musiikkikulttuuria Suomessa",
+      "Tukee oppilaiden kokonaisvaltaista kehitystä"
+    ],
+    education_paths: [
+      "AMK: Musiikkipedagogi (AMK)",
+      "Yliopisto: Musiikkikasvatuksen maisteriohjelma",
+      "Konservatorio + pedagogiset opinnot"
+    ],
+    qualification_or_license: "Musiikkipedagogin tutkinto",
+    core_skills: [
+      "Soittotaito",
+      "Pedagogiset taidot",
+      "Musikaalisuus",
+      "Vuorovaikutustaidot",
+      "Kärsivällisyys"
+    ],
+    tools_tech: [
+      "Soittimet",
+      "Nuotinteko-ohjelmat (Sibelius, Finale)",
+      "Äänityslaitteet",
+      "Musiikkiohjelmistot"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3500,
+      range: [2800, 4200],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Musiikkipedagogien tarve pysyy vakaana musiikkioppilaitoksissa.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Soitonopettaja", "Musiikkikoulun opettaja"],
+    career_progression: ["Lehtori", "Musiikkiopiston rehtori", "Musiikkiterapeutti"],
+    typical_employers: ["Musiikkiopistot", "Musiikkikoulut", "Kansalaisopistot", "Yksityinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "OVTES tai yksityisten oppilaitosten TES",
+    useful_links: [
+      { name: "Suomen musiikkioppilaitosten liitto", url: "https://www.musicedu.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["musiikki", "pedagogi", "opetus", "soitto"],
+    study_length_estimate_months: 48
+},
+{
+    id: "kasityonopettaja",
+    category: "auttaja",
+    title_fi: "Käsityönopettaja",
+    title_en: "Crafts Teacher",
+    short_description: "Käsityönopettaja opettaa käsityötaitoja ja -tekniikoita kehittäen oppilaiden kädentaitoja, luovuutta ja ongelmanratkaisukykyä.",
+    main_tasks: [
+      "Käsityön opetuksen suunnittelu ja toteutus",
+      "Erilaisten käsityötekniikoiden opettaminen (tekstiili, puu, metalli)",
+      "Oppilaiden projektien ohjaaminen",
+      "Työturvallisuuden varmistaminen",
+      "Oppilasarviointi ja palautteen antaminen"
+    ],
+    impact: [
+      "Kehittää oppilaiden kädentaitoja ja luovuutta",
+      "Opettaa ongelmanratkaisua ja suunnitteluprosessia",
+      "Säilyttää käsityöperinnettä"
+    ],
+    education_paths: [
+      "Yliopisto: Käsityönopettajan maisteriohjelma",
+      "AMK: Muotoilija + opettajan pedagogiset opinnot",
+      "Artesaanin tutkinto + pedagogiset opinnot"
+    ],
+    qualification_or_license: "Opettajan kelpoisuus (pedagogiset opinnot 60 op)",
+    core_skills: [
+      "Käsityötaidot",
+      "Pedagogiset taidot",
+      "Luovuus",
+      "Suunnitteluosaaminen",
+      "Työturvallisuusosaaminen"
+    ],
+    tools_tech: [
+      "Käsityökoneet ja -laitteet",
+      "CAD-ohjelmat",
+      "3D-tulostus",
+      "Perinteiset käsityövälineet"
+    ],
+    languages_required: { fi: "C1", sv: "B1", en: "B1" },
+    salary_eur_month: {
+      median: 3700,
+      range: [3200, 4400],
+      source: { name: "Opetusalan Ammattijärjestö OAJ", url: "https://www.oaj.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Käsityönopettajien tarve pysyy vakaana peruskouluissa.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Käsityön tuntiopettaja", "Sijaisopettaja"],
+    career_progression: ["Lehtori", "Aineenopettaja", "Rehtori"],
+    typical_employers: ["Peruskoulut", "Lukiot", "Kansalaisopistot"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: "OVTES",
+    useful_links: [
+      { name: "OAJ", url: "https://www.oaj.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["käsityö", "opettaja", "tekstiili", "puu", "tekninen työ"],
+    study_length_estimate_months: 60
+},
+{
+    id: "luovuusvalmentaja",
+    category: "auttaja",
+    title_fi: "Luovuusvalmentaja",
+    title_en: "Creativity Coach",
+    short_description: "Luovuusvalmentaja auttaa yksilöitä ja organisaatioita löytämään ja kehittämään luovaa potentiaaliaan erilaisin menetelmin ja harjoituksin.",
+    main_tasks: [
+      "Luovuusvalmennusten suunnittelu ja toteutus",
+      "Yksilöllisten valmennusohjelmien laatiminen",
+      "Luovien menetelmien ja harjoitusten ohjaaminen",
+      "Työpajojen ja kurssien vetäminen",
+      "Organisaatioiden luovuuskulttuurin kehittäminen"
+    ],
+    impact: [
+      "Auttaa ihmisiä löytämään luovan potentiaalinsa",
+      "Kehittää organisaatioiden innovaatiokykyä",
+      "Edistää hyvinvointia ja itseilmaisua"
+    ],
+    education_paths: [
+      "Coachingin erikoistumiskoulutus",
+      "Psykologin tai pedagogin koulutus + valmennus",
+      "Taidealan koulutus + coaching-koulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Luovuus",
+      "Valmennustaidot",
+      "Empatia",
+      "Vuorovaikutustaidot",
+      "Fasilitointitaidot"
+    ],
+    tools_tech: [
+      "Luovat menetelmät ja työkalut",
+      "Visualisointityökalut",
+      "Digitaaliset valmennusalustat",
+      "Mindfulness-menetelmät"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3600,
+      range: [2800, 5000],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Luovuuden ja innovaatioiden merkitys kasvaa työelämässä.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Valmentaja", "Kouluttaja"],
+    career_progression: ["Seniorialmentaja", "Yrittäjä", "Konsultti"],
+    typical_employers: ["Valmennusyritykset", "Organisaatiokehitys", "Yksityinen sektori"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "Suomen Coaching-yhdistys", url: "https://www.coaching-yhdistys.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["luovuus", "valmennus", "coaching", "innovaatio"],
+    study_length_estimate_months: 24
+},
+// ===============================
+// HYBRID CAREERS - Health + Tech
+// ===============================
+{
+    id: "terveysteknologia-asiantuntija",
+    category: "innovoija",
+    title_fi: "Terveysteknologia-asiantuntija",
+    title_en: "Health Technology Specialist",
+    short_description: "Terveysteknologia-asiantuntija kehittää ja soveltaa teknologisia ratkaisuja terveydenhuollon tarpeisiin yhdistäen terveydenhuollon ja teknologian osaamisen.",
+    main_tasks: [
+      "Terveydenhuollon teknologiaratkaisujen kehittäminen",
+      "Terveyssovellusten ja -laitteiden suunnittelu",
+      "Terveydenhuollon prosessien digitalisointi",
+      "Käyttäjätarpeiden kartoitus ja analysointi",
+      "Teknologian käyttöönoton tukeminen"
+    ],
+    impact: [
+      "Parantaa terveydenhuollon tehokkuutta",
+      "Kehittää potilaiden hoitoa teknologian avulla",
+      "Edistää terveydenhuollon digitalisaatiota"
+    ],
+    education_paths: [
+      "AMK: Terveysteknologian insinööri",
+      "Yliopisto: Biotekniikka tai lääketieteellinen tekniikka",
+      "AMK: Sairaanhoitaja + IT-opinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Tekninen osaaminen",
+      "Terveydenhuollon ymmärrys",
+      "Projektinhallinta",
+      "Analyyttiset taidot",
+      "Viestintätaidot"
+    ],
+    tools_tech: [
+      "Terveydenhuollon tietojärjestelmät",
+      "Ohjelmointikielet (Python, Java)",
+      "IoT-laitteet",
+      "Tietokannat"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "C1" },
+    salary_eur_month: {
+      median: 4500,
+      range: [3800, 5500],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Terveysteknologia on nopeasti kasvava ala Suomessa.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior terveysteknologia-asiantuntija", "Tekninen tukihenkilö"],
+    career_progression: ["Senior asiantuntija", "Projektipäällikkö", "Tuotekehityspäällikkö"],
+    typical_employers: ["Terveysteknologiayritykset", "Sairaalat", "Teknologiakonsultit"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Teknologiateollisuuden TES",
+    useful_links: [
+      { name: "Healthtech Finland", url: "https://healthtech.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["terveysteknologia", "digitalisaatio", "healthtech", "eHealth"],
+    study_length_estimate_months: 48
+},
+{
+    id: "laakintalaiteteknikko",
+    category: "innovoija",
+    title_fi: "Lääkintälaiteteknikko",
+    title_en: "Medical Device Technician",
+    short_description: "Lääkintälaiteteknikko huoltaa, korjaa ja ylläpitää lääkinnällisiä laitteita varmistaen niiden turvallisen ja tehokkaan toiminnan.",
+    main_tasks: [
+      "Lääkinnällisten laitteiden huolto ja korjaus",
+      "Laitteiden kalibrointi ja testaus",
+      "Ennakoiva huolto ja kunnossapito",
+      "Laitteiden käyttökoulutus henkilökunnalle",
+      "Dokumentointi ja laaturaportointi"
+    ],
+    impact: [
+      "Varmistaa potilasturvallisuuden",
+      "Pitää terveydenhuollon laitteet toimintakunnossa",
+      "Tukee hoitohenkilökunnan työtä"
+    ],
+    education_paths: [
+      "AMK: Sähkö- tai elektroniikkatekniikan insinööri",
+      "AMK: Terveysteknologian insinööri",
+      "Toinen aste: Elektroniikka-asentaja + erikoistuminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Tekninen osaaminen",
+      "Elektroniikan tuntemus",
+      "Ongelmanratkaisukyky",
+      "Tarkkuus",
+      "Asiakaspalvelutaidot"
+    ],
+    tools_tech: [
+      "Mittaus- ja testauslaitteet",
+      "Elektroniikkatyökalut",
+      "Diagnostiikkaohjelmistot",
+      "Huoltojärjestelmät"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4500],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Lääkintälaitteiden määrä kasvaa, mikä lisää huoltotarvetta.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Huoltoteknikko", "Laiteteknikko"],
+    career_progression: ["Senior teknikko", "Huoltopäällikkö", "Tekninen asiantuntija"],
+    typical_employers: ["Sairaalat", "Lääkintälaiteyritykset", "Huoltoyhtiöt"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
+    union_or_CBA: "Teknologiateollisuuden TES",
+    useful_links: [
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["lääkintälaite", "huolto", "teknikko", "terveysteknologia"],
+    study_length_estimate_months: 48
+},
+{
+    id: "terveysinformatiikan-asiantuntija",
+    category: "innovoija",
+    title_fi: "Terveysinformatiikan asiantuntija",
+    title_en: "Health Informatics Specialist",
+    short_description: "Terveysinformatiikan asiantuntija kehittää ja hallinnoi terveydenhuollon tietojärjestelmiä ja -prosesseja parantaen hoidon laatua datan avulla.",
+    main_tasks: [
+      "Terveydenhuollon tietojärjestelmien kehittäminen",
+      "Terveystiedon analysointi ja raportointi",
+      "Tiedonhallinnan prosessien suunnittelu",
+      "Tietojärjestelmien käyttöönoton tukeminen",
+      "Tietosuojan ja -turvan varmistaminen"
+    ],
+    impact: [
+      "Parantaa hoidon laatua tiedon avulla",
+      "Tehostaa terveydenhuollon prosesseja",
+      "Tukee päätöksentekoa analytiikalla"
+    ],
+    education_paths: [
+      "Yliopisto: Terveysinformatiikan maisteriohjelma",
+      "AMK: Tietotekniikka + terveydenhuollon opinnot",
+      "Terveysalan tutkinto + IT-erikoistuminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Tiedonhallinta",
+      "Analyyttiset taidot",
+      "Terveydenhuollon ymmärrys",
+      "Projektinhallinta",
+      "Viestintätaidot"
+    ],
+    tools_tech: [
+      "Potilastietojärjestelmät (Apotti, Esko)",
+      "BI-työkalut (Power BI, Tableau)",
+      "SQL ja tietokannat",
+      "HL7/FHIR-standardit"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3500, 5000],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Terveydenhuollon digitalisaatio lisää informatiikan osaajien tarvetta.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Tietojärjestelmäasiantuntija", "Pääkäyttäjä"],
+    career_progression: ["Senior asiantuntija", "Tietohallintojohtaja", "Kehityspäällikkö"],
+    typical_employers: ["Sairaalat", "Sairaanhoitopiirit", "Terveysteknologiayritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "IT-alan TES",
+    useful_links: [
+      { name: "HL7 Finland", url: "https://www.hl7.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["terveysinformatiikka", "tietojärjestelmät", "data", "terveydenhuolto"],
+    study_length_estimate_months: 60
+},
+{
+    id: "digitaalisen-terveyden-kehittaja",
+    category: "innovoija",
+    title_fi: "Digitaalisen terveyden kehittäjä",
+    title_en: "Digital Health Developer",
+    short_description: "Digitaalisen terveyden kehittäjä suunnittelee ja toteuttaa digitaalisia terveyspalveluita ja -sovelluksia parantaen kansalaisten terveydenhuoltoa.",
+    main_tasks: [
+      "Terveyssovellusten ja -palveluiden kehittäminen",
+      "Käyttäjäkokemuksen suunnittelu terveyspalveluissa",
+      "Digitaalisten hoitopolkujen suunnittelu",
+      "Integraatioiden rakentaminen terveysjärjestelmiin",
+      "Käyttäjätutkimus ja testaus"
+    ],
+    impact: [
+      "Parantaa terveyspalveluiden saavutettavuutta",
+      "Kehittää asiakaskokemusta terveydenhuollossa",
+      "Edistää terveyttä digitaalisin keinoin"
+    ],
+    education_paths: [
+      "AMK: Ohjelmistokehitys + terveysteknologia",
+      "Yliopisto: Tietotekniikka + terveysinformatiikka",
+      "UX-suunnittelu + terveydenhuollon erikoistuminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Ohjelmistokehitys",
+      "UX/UI-suunnittelu",
+      "Terveydenhuollon ymmärrys",
+      "Projektinhallinta",
+      "Käyttäjäkeskeinen suunnittelu"
+    ],
+    tools_tech: [
+      "React, React Native",
+      "Python, Node.js",
+      "Cloud-palvelut (AWS, Azure)",
+      "Figma, Sketch"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "C1" },
+    salary_eur_month: {
+      median: 4600,
+      range: [3800, 5800],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Digitaalisten terveyspalveluiden kysyntä kasvaa nopeasti.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Junior-kehittäjä", "UX-suunnittelija"],
+    career_progression: ["Senior-kehittäjä", "Lead developer", "Tuotepäällikkö"],
+    typical_employers: ["Terveysteknologiayritykset", "Startupit", "Sairaalat"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: "IT-alan TES",
+    useful_links: [
+      { name: "Digital Health Finland", url: "https://digitalhealthfinland.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["digitaalinen terveys", "kehitys", "sovellus", "eHealth"],
+    study_length_estimate_months: 48
+},
+{
+    id: "biolaaketieteellinen-insinoori",
+    category: "innovoija",
+    title_fi: "Biolääketieteellinen insinööri",
+    title_en: "Biomedical Engineer",
+    short_description: "Biolääketieteellinen insinööri soveltaa insinööriosaamista lääketieteen ja biologian ongelmien ratkaisemiseen kehittäen lääkintälaitteita ja -teknologioita.",
+    main_tasks: [
+      "Lääkintälaitteiden ja -teknologioiden kehittäminen",
+      "Proteesien ja implanttien suunnittelu",
+      "Lääketieteellisten järjestelmien testaus ja validointi",
+      "Tutkimus- ja kehitystyö",
+      "Tuotekehityksen laatu- ja turvallisuusvaatimusten varmistaminen"
+    ],
+    impact: [
+      "Kehittää lääketieteen teknologiaa",
+      "Parantaa potilaiden elämänlaatua",
+      "Edistää terveydenhuollon innovaatioita"
+    ],
+    education_paths: [
+      "Yliopisto: Biolääketieteen tekniikan diplomi-insinööri",
+      "AMK: Terveysteknologian insinööri",
+      "Yliopisto: Biotekniikan maisteri + lääketieteellinen erikoistuminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Insinööriosaaminen",
+      "Biologian ja lääketieteen ymmärrys",
+      "Matemaattiset taidot",
+      "Tutkimustaidot",
+      "Projektinhallinta"
+    ],
+    tools_tech: [
+      "CAD-ohjelmistot (SolidWorks, AutoCAD)",
+      "MATLAB, Python",
+      "3D-tulostus",
+      "Laboratoriolaitteet"
+    ],
+    languages_required: { fi: "B2", sv: "A2", en: "C1" },
+    salary_eur_month: {
+      median: 4800,
+      range: [4000, 6000],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Biolääketiede on nopeasti kasvava ala maailmanlaajuisesti.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Tutkimusinsinööri", "Tuotekehitysinsinööri"],
+    career_progression: ["Senior insinööri", "Tuotekehityspäällikkö", "T&K-johtaja"],
+    typical_employers: ["Lääkintälaiteyritykset", "Tutkimuslaitokset", "Yliopistot"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Teknologiateollisuuden TES",
+    useful_links: [
+      { name: "Suomen Biolääketieteen Tekniikan Yhdistys", url: "https://www.fbt.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["biolääketiede", "insinööri", "lääkintälaite", "T&K"],
+    study_length_estimate_months: 60
+},
+{
+    id: "kliininen-informatiikka-asiantuntija",
+    category: "innovoija",
+    title_fi: "Kliininen informatiikka-asiantuntija",
+    title_en: "Clinical Informatics Specialist",
+    short_description: "Kliininen informatiikka-asiantuntija toimii siltana kliinisen työn ja tietotekniikan välillä optimoiden terveydenhuollon tietojärjestelmiä kliinisiin tarpeisiin.",
+    main_tasks: [
+      "Kliinisten tietojärjestelmien kehittäminen ja optimointi",
+      "Hoitohenkilökunnan kouluttaminen järjestelmiin",
+      "Kliinisten prosessien analysointi ja parantaminen",
+      "Tiedon laadun varmistaminen",
+      "Yhteistyö IT:n ja kliinisen henkilöstön välillä"
+    ],
+    impact: [
+      "Tehostaa kliinistä työtä",
+      "Parantaa potilasturvallisuutta",
+      "Optimoi terveydenhuollon tietojärjestelmiä"
+    ],
+    education_paths: [
+      "Terveysalan tutkinto + informatiikan erikoistuminen",
+      "Tietotekniikka + kliinisen työn kokemus",
+      "Yliopisto: Terveysinformatiikan maisteriohjelma"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Kliininen osaaminen",
+      "Tietojärjestelmäosaaminen",
+      "Koulutustaidot",
+      "Analyyttiset taidot",
+      "Viestintätaidot"
+    ],
+    tools_tech: [
+      "Potilastietojärjestelmät",
+      "Kliiniset päätöksentukijärjestelmät",
+      "Raportointityökalut",
+      "Prosessimallinnustyökalut"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4000,
+      range: [3400, 4800],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Terveydenhuollon digitalisaatio vaatii kliinistä informatiikkaosaamista.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Pääkäyttäjä", "Järjestelmäasiantuntija"],
+    career_progression: ["Senior asiantuntija", "Informatiikkapäällikkö"],
+    typical_employers: ["Sairaalat", "Sairaanhoitopiirit", "Terveysteknologiayritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Terveydenhuoltoalan TES",
+    useful_links: [
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["kliininen informatiikka", "tietojärjestelmät", "terveydenhuolto"],
+    study_length_estimate_months: 60
+},
+// ===============================
+// HYBRID CAREERS - Environment + Education
+// ===============================
+{
+    id: "ymparistokasvattaja",
+    category: "ympariston-puolustaja",
+    title_fi: "Ympäristökasvattaja",
+    title_en: "Environmental Educator",
+    short_description: "Ympäristökasvattaja opettaa ja viestii ympäristöasioista eri ikäryhmille edistäen kestävää elämäntapaa ja ympäristötietoisuutta.",
+    main_tasks: [
+      "Ympäristökasvatusohjelmien suunnittelu ja toteutus",
+      "Luontoretkien ja työpajojen järjestäminen",
+      "Oppimateriaalien kehittäminen",
+      "Yhteistyö koulujen ja organisaatioiden kanssa",
+      "Ympäristöviestintä ja tiedotus"
+    ],
+    impact: [
+      "Lisää ympäristötietoisuutta yhteiskunnassa",
+      "Edistää kestävää kehitystä",
+      "Innostaa nuoria luonnon suojeluun"
+    ],
+    education_paths: [
+      "Yliopisto: Ympäristötieteiden maisteri + pedagogiikka",
+      "AMK: Ympäristösuunnittelija + opetusopinnot",
+      "Luonnonvara-alan tutkinto + ympäristökasvatuksen opinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Ympäristöosaaminen",
+      "Pedagogiset taidot",
+      "Viestintätaidot",
+      "Ryhmänohjaustaidot",
+      "Luonnontuntemus"
+    ],
+    tools_tech: [
+      "Retkeilyvarusteet",
+      "Opetusteknologia",
+      "Ympäristömittarit",
+      "Viestintätyökalut"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3200,
+      range: [2700, 3800],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Ympäristökasvatuksen merkitys kasvaa ilmastokriisin myötä.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Ympäristöohjaaja", "Luonto-ohjaaja"],
+    career_progression: ["Ympäristökasvatuksen asiantuntija", "Ohjelman koordinaattori"],
+    typical_employers: ["Luontokeskukset", "Ympäristöjärjestöt", "Kunnat", "Koulut"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "Ympäristökasvatusjärjestö FEE Suomi", url: "https://feesuomi.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["ympäristökasvatus", "luonto", "kestävä kehitys", "kasvatus"],
+    study_length_estimate_months: 48
+},
+{
+    id: "luontokoulun-ohjaaja",
+    category: "ympariston-puolustaja",
+    title_fi: "Luontokoulun ohjaaja",
+    title_en: "Nature School Instructor",
+    short_description: "Luontokoulun ohjaaja opettaa lapsille ja nuorille luonnontuntemusta ja ympäristöasioita ulkona luonnossa toiminnallisten menetelmien avulla.",
+    main_tasks: [
+      "Luontokouluohjelmien suunnittelu ja toteutus",
+      "Retkien ja leirien ohjaaminen",
+      "Luonnonilmiöiden ja eliöiden opettaminen",
+      "Yhteistyö koulujen opettajien kanssa",
+      "Oppimateriaalien kehittäminen"
+    ],
+    impact: [
+      "Vahvistaa lasten luontosuhdetta",
+      "Opettaa luonnontuntemusta",
+      "Edistää ulkona oppimista"
+    ],
+    education_paths: [
+      "AMK: Ympäristöala tai luonnonvara-ala + pedagogiikka",
+      "Yliopisto: Biologia + opetusopinnot",
+      "Luonto- ja erä-alan perustutkinto + pedagogiikka"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Luonnontuntemus",
+      "Pedagogiset taidot",
+      "Ryhmänohjaustaidot",
+      "Turvallisuusosaaminen",
+      "Innostavuus"
+    ],
+    tools_tech: [
+      "Luontomääritysoppaat",
+      "Retkeilyvarusteet",
+      "GPS ja kartat",
+      "Luontokamerot ja linkit"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 2900,
+      range: [2400, 3400],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Luontokoulujen suosio pysyy vakaana.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Luonto-ohjaaja", "Leirityöntekijä"],
+    career_progression: ["Luontokoulun johtaja", "Ympäristökasvattaja"],
+    typical_employers: ["Luontokoulut", "Ympäristökeskukset", "Kunnat", "Järjestöt"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "Suomen luontokoulujen verkosto", url: "https://www.luontokoulut.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["luontokoulu", "luonto", "ohjaaja", "ympäristökasvatus"],
+    study_length_estimate_months: 36
+},
+{
+    id: "kestavyyskouluttaja",
+    category: "ympariston-puolustaja",
+    title_fi: "Kestävyyskouluttaja",
+    title_en: "Sustainability Trainer",
+    short_description: "Kestävyyskouluttaja kouluttaa organisaatioita ja yksilöitä kestävän kehityksen käytännöistä ja edistää vastuullista toimintaa.",
+    main_tasks: [
+      "Kestävyyskoulutusten suunnittelu ja toteutus",
+      "Organisaatioiden kestävyyskäytäntöjen kehittäminen",
+      "Koulutusmateriaalien laatiminen",
+      "Vaikuttavuuden mittaaminen ja raportointi",
+      "Asiantuntija-avun tarjoaminen kestävyyskysymyksissä"
+    ],
+    impact: [
+      "Edistää organisaatioiden kestävyyttä",
+      "Vähentää ympäristövaikutuksia",
+      "Lisää kestävyysosaamista yhteiskunnassa"
+    ],
+    education_paths: [
+      "Yliopisto: Ympäristötieteet tai kestävä kehitys",
+      "AMK: Kestävän kehityksen koulutus",
+      "Liiketalouden koulutus + kestävyyserikoistouminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Kestävyysosaaminen",
+      "Koulutustaidot",
+      "Viestintätaidot",
+      "Projektinhallinta",
+      "Analyyttiset taidot"
+    ],
+    tools_tech: [
+      "Koulutusalustat",
+      "Hiilijalanjälkilaskurit",
+      "Raportointityökalut",
+      "Esitysteknologia"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4600],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Kestävyyskoulutuksen tarve kasvaa yritysten vastuullisuustavoitteiden myötä.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Kestävyysasiantuntija", "Kouluttaja"],
+    career_progression: ["Senior kouluttaja", "Kestävyysjohtaja"],
+    typical_employers: ["Konsulttiyritykset", "Suuryritykset", "Järjestöt", "Koulutusorganisaatiot"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "FIBS ry", url: "https://www.fibsry.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["kestävä kehitys", "koulutus", "vastuullisuus", "sustainability"],
+    study_length_estimate_months: 48
+},
+// ===============================
+// HYBRID CAREERS - Education + Creative
+// ===============================
+{
+    id: "mediakasvatuksen-asiantuntija",
+    category: "auttaja",
+    title_fi: "Mediakasvatuksen asiantuntija",
+    title_en: "Media Education Specialist",
+    short_description: "Mediakasvatuksen asiantuntija kehittää ja toteuttaa mediakasvatusohjelmia edistäen mediataitoja ja kriittistä medialukutaitoa.",
+    main_tasks: [
+      "Mediakasvatusohjelmien suunnittelu ja toteutus",
+      "Oppimateriaalien kehittäminen",
+      "Kouluttajien ja opettajien kouluttaminen",
+      "Tutkimus- ja kehitystyö",
+      "Yhteistyö koulujen ja organisaatioiden kanssa"
+    ],
+    impact: [
+      "Kehittää kriittistä medialukutaitoa",
+      "Edistää turvallista median käyttöä",
+      "Vahvistaa demokratiaa mediaosaamisen kautta"
+    ],
+    education_paths: [
+      "Yliopisto: Mediakasvatus tai viestintätieteet",
+      "AMK: Media-ala + pedagogiikka",
+      "Opettajan koulutus + mediakasvatuksen opinnot"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Mediakasvatusosaaminen",
+      "Pedagogiset taidot",
+      "Digitaidot",
+      "Viestintätaidot",
+      "Tutkimustaidot"
+    ],
+    tools_tech: [
+      "Mediantuotantovälineet",
+      "Oppimisalustat",
+      "Sosiaalisen median työkalut",
+      "Analytiikkatyökalut"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3600,
+      range: [3000, 4300],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Mediakasvatuksen merkitys kasvaa digitalisaation myötä.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Mediakasvatusohjaaja", "Kouluttaja"],
+    career_progression: ["Senior asiantuntija", "Ohjelmapäällikkö"],
+    typical_employers: ["Kansallinen audiovisuaalinen instituutti", "Järjestöt", "Kunnat", "Koulut"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "Kansallinen audiovisuaalinen instituutti", url: "https://kavi.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["mediakasvatus", "medialukutaito", "kasvatus", "digitaidot"],
+    study_length_estimate_months: 60
+},
+{
+    id: "oppimismuotoilija",
+    category: "luova",
+    title_fi: "Oppimismuotoilija",
+    title_en: "Learning Designer",
+    short_description: "Oppimismuotoilija suunnittelee oppimiskokemuksia ja -ratkaisuja hyödyntäen muotoiluajattelua pedagogisen sisällön kehittämisessä.",
+    main_tasks: [
+      "Oppimiskokemusten suunnittelu",
+      "Digitaalisten oppimisratkaisujen kehittäminen",
+      "Käyttäjätutkimus ja oppijatarpeiden kartoitus",
+      "Sisältöjen prototypointi ja testaus",
+      "Yhteistyö pedagogien ja teknologien kanssa"
+    ],
+    impact: [
+      "Parantaa oppimisen laatua ja vaikuttavuutta",
+      "Kehittää oppijalle mielekkäitä kokemuksia",
+      "Innovoi koulutuksen menetelmiä"
+    ],
+    education_paths: [
+      "Yliopisto: Kasvatustiede + muotoilu",
+      "AMK: Palvelumuotoilu + pedagogiikka",
+      "Muotoilun koulutus + oppimisen erikoistuminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Muotoiluajattelu",
+      "Pedagoginen osaaminen",
+      "Luovuus",
+      "Käyttäjäkeskeinen suunnittelu",
+      "Digitaidot"
+    ],
+    tools_tech: [
+      "Figma, Miro",
+      "Oppimisalustat (Moodle, Canvas)",
+      "Prototyyppityökalut",
+      "Videoeditointi"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4000,
+      range: [3400, 4800],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Oppimisen digitalisaatio ja laatuvaatimukset lisäävät oppimismuotoilun tarvetta.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Koulutussuunnittelija", "Sisällöntuottaja"],
+    career_progression: ["Senior oppimismuotoilija", "Learning & Development -päällikkö"],
+    typical_employers: ["Koulutusyritykset", "Suuryritykset", "Yliopistot", "EdTech-startupit"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["oppimismuotoilu", "learning design", "muotoilu", "koulutus"],
+    study_length_estimate_months: 60
+},
+{
+    id: "koulutussuunnittelija",
+    category: "auttaja",
+    title_fi: "Koulutussuunnittelija",
+    title_en: "Training Designer",
+    short_description: "Koulutussuunnittelija suunnittelee ja kehittää koulutuksia ja oppimisratkaisuja organisaatioiden tarpeisiin.",
+    main_tasks: [
+      "Koulutusohjelmien suunnittelu",
+      "Oppimateriaalien kehittäminen",
+      "Koulutusten vaikuttavuuden arviointi",
+      "Kouluttajien tukeminen",
+      "Yhteistyö asiakkaiden ja sidosryhmien kanssa"
+    ],
+    impact: [
+      "Kehittää organisaatioiden osaamista",
+      "Parantaa koulutusten laatua",
+      "Tukee työntekijöiden ammatillista kasvua"
+    ],
+    education_paths: [
+      "Yliopisto: Kasvatustiede tai aikuiskasvatustiede",
+      "AMK: Liiketalous + HR-erikoistuminen",
+      "Pedagoginen koulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Pedagoginen suunnittelu",
+      "Projektinhallinta",
+      "Viestintätaidot",
+      "Analyyttiset taidot",
+      "Yhteistyötaidot"
+    ],
+    tools_tech: [
+      "Oppimisenhallintajärjestelmät (LMS)",
+      "Esitystyökalut",
+      "Videotyökalut",
+      "Arviointityökalut"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3700,
+      range: [3100, 4400],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Osaamisen kehittämisen tarve pysyy korkeana työelämässä.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Koulutusassistentti", "HR-koordinaattori"],
+    career_progression: ["Senior koulutussuunnittelija", "Learning & Development -päällikkö"],
+    typical_employers: ["Suuryritykset", "Konsulttiyhtiöt", "Oppilaitokset", "Julkinen sektori"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["koulutussuunnittelu", "L&D", "koulutus", "kehittäminen"],
+    study_length_estimate_months: 60
+},
+// ===============================
+// HYBRID CAREERS - Sports + Helper
+// ===============================
+{
+    id: "urheilupsykologi",
+    category: "auttaja",
+    title_fi: "Urheilupsykologi",
+    title_en: "Sports Psychologist",
+    short_description: "Urheilupsykologi auttaa urheilijoita kehittämään henkisiä taitoja ja suorituskykyä tarjoamalla psykologista valmennusta ja tukea.",
+    main_tasks: [
+      "Urheilijoiden henkisten taitojen valmentaminen",
+      "Suorituskyvyn parantamisen tukeminen",
+      "Urheilijan hyvinvoinnin ja jaksamisen seuranta",
+      "Valmentajien konsultointi",
+      "Ryhmädynamiikan kehittäminen joukkueissa"
+    ],
+    impact: [
+      "Auttaa urheilijoita saavuttamaan huippusuorituksia",
+      "Tukee urheilijoiden mielenterveyttä",
+      "Kehittää urheilun psyykkistä valmennuskulttuuria"
+    ],
+    education_paths: [
+      "Yliopisto: Psykologian maisteri + urheilupsykologian erikoistuminen",
+      "Laillistettu psykologi + urheilupsykologian koulutus",
+      "Liikuntapsykologian erikoistumisopinnot"
+    ],
+    qualification_or_license: "Psykologin ammattinimike (Valvira)",
+    core_skills: [
+      "Psykologinen osaaminen",
+      "Urheilun ymmärrys",
+      "Vuorovaikutustaidot",
+      "Valmentajuus",
+      "Analyyttiset taidot"
+    ],
+    tools_tech: [
+      "Psykologiset testit ja arvioinnit",
+      "Mentaalivalmennusmenetelmät",
+      "Video-analyysityökalut",
+      "Biofeedback-laitteet"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4200,
+      range: [3500, 5200],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Psyykkisen valmennuksen merkitys urheilussa kasvaa jatkuvasti.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Mentaalivalmentaja", "Psykologiharjoittelija"],
+    career_progression: ["Senior urheilupsykologi", "Olympiakomitean psykologi"],
+    typical_employers: ["Urheiluliitot", "Olympiakomitea", "Urheiluakatemiat", "Yksityinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    union_or_CBA: "Psykologiliiton TES",
+    useful_links: [
+      { name: "Suomen Psykologiliitto", url: "https://www.psyli.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["urheilupsykologia", "mentaalivalmennus", "psykologia", "urheilu"],
+    study_length_estimate_months: 72
+},
+{
+    id: "kuntoutusohjaaja",
+    category: "auttaja",
+    title_fi: "Kuntoutusohjaaja",
+    title_en: "Rehabilitation Counselor",
+    short_description: "Kuntoutusohjaaja tukee ja ohjaa kuntoutujia heidän kuntoutusprosessissaan yhdistäen liikunnallisia ja sosiaalisia menetelmiä.",
+    main_tasks: [
+      "Kuntoutujien ohjaaminen ja tukeminen",
+      "Kuntoutusohjelmien suunnittelu ja toteutus",
+      "Liikunnallisten harjoitusten ohjaaminen",
+      "Moniammatillinen yhteistyö",
+      "Kuntoutuksen edistymisen seuranta"
+    ],
+    impact: [
+      "Tukee kuntoutujien toipumista",
+      "Edistää toimintakyvyn palautumista",
+      "Auttaa ihmisiä takaisin arkeen ja työelämään"
+    ],
+    education_paths: [
+      "AMK: Kuntoutuksen ohjaaja (AMK)",
+      "AMK: Sosionomi + liikunta-alan opinnot",
+      "Liikunnanohjaaja + kuntoutuksen erikoistuminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Kuntoutusosaaminen",
+      "Liikunnanohjaus",
+      "Empatia",
+      "Vuorovaikutustaidot",
+      "Moniammatillinen yhteistyö"
+    ],
+    tools_tech: [
+      "Kuntoutusvälineet",
+      "Liikuntavälineet",
+      "Potilastietojärjestelmät",
+      "Arviointityökalut"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B1" },
+    salary_eur_month: {
+      median: 3100,
+      range: [2600, 3700],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "vakaa",
+      explanation: "Kuntoutuspalveluiden tarve pysyy vakaana väestön ikääntyessä.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Kuntoutusavustaja", "Liikuntaohjaaja"],
+    career_progression: ["Kuntoutusohjaaja", "Kuntoutuksen asiantuntija"],
+    typical_employers: ["Kuntoutuskeskukset", "Sairaalat", "Kela", "Kolmas sektori"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Terveydenhuoltoalan TES",
+    useful_links: [
+      { name: "Kuntoutusportti", url: "https://www.kuntoutusportti.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["kuntoutus", "ohjaus", "liikunta", "terveys"],
+    study_length_estimate_months: 42
+},
+// ===============================
+// HYBRID CAREERS - Health + Creative
+// ===============================
+{
+    id: "terveyskommunikaatiosuunnittelija",
+    category: "luova",
+    title_fi: "Terveyskommunikaatiosuunnittelija",
+    title_en: "Health Communications Designer",
+    short_description: "Terveyskommunikaatiosuunnittelija suunnittelee terveysviestintää ja -materiaaleja tehden terveystiedosta ymmärrettävää ja saavutettavaa.",
+    main_tasks: [
+      "Terveysviestintäkampanjoiden suunnittelu",
+      "Potilasmateriaalien kehittäminen",
+      "Terveystiedon visualisointi",
+      "Saavutettavuuden varmistaminen",
+      "Yhteistyö terveysasiantuntijoiden kanssa"
+    ],
+    impact: [
+      "Tekee terveystiedosta ymmärrettävää",
+      "Edistää kansanterveyttä viestinnän keinoin",
+      "Parantaa potilaiden tiedonsaantia"
+    ],
+    education_paths: [
+      "AMK: Viestinnän koulutus + terveysalan opinnot",
+      "Yliopisto: Viestintätieteet + terveysviestinnän erikoistuminen",
+      "Graafinen suunnittelu + terveysalan osaaminen"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Visuaalinen viestintä",
+      "Terveysosaaminen",
+      "Kirjoitustaito",
+      "Käyttäjäkeskeinen suunnittelu",
+      "Saavutettavuusosaaminen"
+    ],
+    tools_tech: [
+      "Adobe Creative Suite",
+      "Figma",
+      "Videoeditointi",
+      "Selkokieliohjeistukset"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 3800,
+      range: [3200, 4500],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Terveysviestinnän merkitys korostuu digitalisaation myötä.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Viestintäsuunnittelija", "Sisällöntuottaja"],
+    career_progression: ["Senior suunnittelija", "Viestintäpäällikkö"],
+    typical_employers: ["Sairaalat", "Terveysjärjestöt", "Viestintätoimistot", "Lääkeyritykset"],
+    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["terveysviestintä", "viestintä", "suunnittelu", "terveys"],
+    study_length_estimate_months: 48
+},
+{
+    id: "potilaskokemussuunnittelija",
+    category: "luova",
+    title_fi: "Potilaskokemussuunnittelija",
+    title_en: "Patient Experience Designer",
+    short_description: "Potilaskokemussuunnittelija kehittää potilaan hoitopolkua ja -kokemusta palvelumuotoilun keinoin parantaen terveydenhuollon asiakaslähtöisyyttä.",
+    main_tasks: [
+      "Potilaskokemusten tutkiminen ja analysointi",
+      "Hoitopolkujen suunnittelu ja kehittäminen",
+      "Palvelumuotoiluprojektien vetäminen",
+      "Potilaspalautejärjestelmien kehittäminen",
+      "Yhteiskehittäminen potilaiden ja henkilökunnan kanssa"
+    ],
+    impact: [
+      "Parantaa potilaiden hoitokokemusta",
+      "Kehittää terveydenhuollon asiakaslähtöisyyttä",
+      "Lisää potilaiden tyytyväisyyttä ja sitoutumista hoitoon"
+    ],
+    education_paths: [
+      "AMK: Palvelumuotoilu + terveysalan opinnot",
+      "Yliopisto: Muotoilu + terveydenhuollon erikoistuminen",
+      "Terveysalan tutkinto + palvelumuotoilukoulutus"
+    ],
+    qualification_or_license: null,
+    core_skills: [
+      "Palvelumuotoilu",
+      "Käyttäjätutkimus",
+      "Empatia",
+      "Terveydenhuollon ymmärrys",
+      "Fasilitointitaidot"
+    ],
+    tools_tech: [
+      "Miro, Figma",
+      "Palvelumuotoilumenetelmät",
+      "Kyselytyökalut",
+      "Prototyyppityökalut"
+    ],
+    languages_required: { fi: "C1", sv: "A2", en: "B2" },
+    salary_eur_month: {
+      median: 4100,
+      range: [3500, 4900],
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    job_outlook: {
+      status: "kasvaa",
+      explanation: "Potilaskokemuksen merkitys terveydenhuollossa kasvaa jatkuvasti.",
+      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    },
+    entry_roles: ["Palvelumuotoilija", "Kehittämiskoordinaattori"],
+    career_progression: ["Senior palvelumuotoilija", "Kehittämispäällikkö"],
+    typical_employers: ["Sairaalat", "Sairaanhoitopiirit", "Konsulttiyhtiöt", "Terveysteknologiayritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: null,
+    useful_links: [
+      { name: "Palvelumuotoilun verkosto", url: "https://www.palvelumuotoilu.fi/" },
+      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+    ],
+    keywords: ["potilaskokemus", "palvelumuotoilu", "terveydenhuolto", "design"],
+    study_length_estimate_months: 48
 }
 
 

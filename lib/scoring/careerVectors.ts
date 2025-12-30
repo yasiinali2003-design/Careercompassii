@@ -6648,6 +6648,246 @@ export const CAREER_VECTORS: CareerVector[] = [
     workstyle: { teamwork: 0.41, independence: 0.75, leadership: 0.11, organization: 0.61, planning: 0.53, problem_solving: 0.85, precision: 0.74, performance: 0.5, teaching: 0.1, motivation: 0.61, autonomy: 0.72, social: 0.67, structure: 0.59, flexibility: 0.58, variety: 0.76 },
     values: { growth: 0.47, impact: 0.21, global: 0.46, career_clarity: 0.41, financial: 0.47, entrepreneurship: 0.42, social_impact: 0.45, stability: 0.41, advancement: 0.5, work_life_balance: 0.86, company_size: 0.16 },
     context: { outdoor: 0.93, international: 0.41, work_environment: 0.61 }
+  },
+
+  // =====================================================
+  // HYBRID CAREERS - Creative + Helper (Auttaja category)
+  // =====================================================
+  {
+    slug: "taideterapeutti",
+    title: "Taideterapeutti",
+    category: "auttaja",
+    interests: { technology: 0.25, people: 0.92, creative: 0.95, analytical: 0.55, hands_on: 0.65, business: 0.20, environment: 0.30, health: 0.85, education: 0.75, innovation: 0.60, arts_culture: 0.95, sports: 0.20, nature: 0.35, writing: 0.50 },
+    workstyle: { teamwork: 0.70, independence: 0.75, leadership: 0.35, organization: 0.55, planning: 0.60, problem_solving: 0.75, precision: 0.50, performance: 0.60, teaching: 0.80, motivation: 0.90, autonomy: 0.70, social: 0.90, structure: 0.40, flexibility: 0.85, variety: 0.80 },
+    values: { growth: 0.75, impact: 0.90, global: 0.30, career_clarity: 0.65, financial: 0.40, entrepreneurship: 0.45, social_impact: 0.95, stability: 0.55, advancement: 0.50, work_life_balance: 0.70, company_size: 0.30 },
+    context: { outdoor: 0.15, international: 0.25, work_environment: 0.80 }
+  },
+  {
+    slug: "musiikkiterapeutti",
+    title: "Musiikkiterapeutti",
+    category: "auttaja",
+    interests: { technology: 0.35, people: 0.90, creative: 0.92, analytical: 0.50, hands_on: 0.55, business: 0.20, environment: 0.25, health: 0.88, education: 0.78, innovation: 0.55, arts_culture: 0.95, sports: 0.20, nature: 0.30, writing: 0.40 },
+    workstyle: { teamwork: 0.65, independence: 0.78, leadership: 0.30, organization: 0.50, planning: 0.55, problem_solving: 0.70, precision: 0.60, performance: 0.75, teaching: 0.85, motivation: 0.92, autonomy: 0.75, social: 0.88, structure: 0.35, flexibility: 0.85, variety: 0.75 },
+    values: { growth: 0.70, impact: 0.88, global: 0.35, career_clarity: 0.60, financial: 0.38, entrepreneurship: 0.40, social_impact: 0.92, stability: 0.50, advancement: 0.45, work_life_balance: 0.72, company_size: 0.28 },
+    context: { outdoor: 0.10, international: 0.30, work_environment: 0.85 }
+  },
+  {
+    slug: "draamaterapeutti",
+    title: "Draamaterapeutti",
+    category: "auttaja",
+    interests: { technology: 0.20, people: 0.95, creative: 0.92, analytical: 0.50, hands_on: 0.50, business: 0.18, environment: 0.25, health: 0.85, education: 0.80, innovation: 0.58, arts_culture: 0.92, sports: 0.30, nature: 0.25, writing: 0.65 },
+    workstyle: { teamwork: 0.80, independence: 0.65, leadership: 0.45, organization: 0.50, planning: 0.58, problem_solving: 0.72, precision: 0.45, performance: 0.85, teaching: 0.88, motivation: 0.90, autonomy: 0.65, social: 0.95, structure: 0.35, flexibility: 0.88, variety: 0.85 },
+    values: { growth: 0.72, impact: 0.90, global: 0.32, career_clarity: 0.58, financial: 0.35, entrepreneurship: 0.42, social_impact: 0.95, stability: 0.48, advancement: 0.45, work_life_balance: 0.68, company_size: 0.25 },
+    context: { outdoor: 0.15, international: 0.28, work_environment: 0.82 }
+  },
+  {
+    slug: "tanssiterapeutti",
+    title: "Tanssiterapeutti",
+    category: "auttaja",
+    interests: { technology: 0.18, people: 0.92, creative: 0.90, analytical: 0.45, hands_on: 0.70, business: 0.18, environment: 0.28, health: 0.88, education: 0.75, innovation: 0.55, arts_culture: 0.90, sports: 0.75, nature: 0.30, writing: 0.35 },
+    workstyle: { teamwork: 0.72, independence: 0.70, leadership: 0.38, organization: 0.48, planning: 0.55, problem_solving: 0.68, precision: 0.55, performance: 0.88, teaching: 0.85, motivation: 0.92, autonomy: 0.72, social: 0.90, structure: 0.32, flexibility: 0.90, variety: 0.82 },
+    values: { growth: 0.70, impact: 0.88, global: 0.30, career_clarity: 0.55, financial: 0.35, entrepreneurship: 0.45, social_impact: 0.92, stability: 0.45, advancement: 0.42, work_life_balance: 0.70, company_size: 0.25 },
+    context: { outdoor: 0.20, international: 0.30, work_environment: 0.78 }
+  },
+  {
+    slug: "kuvataideopettaja",
+    title: "Kuvataideopettaja",
+    category: "auttaja",
+    interests: { technology: 0.40, people: 0.88, creative: 0.95, analytical: 0.50, hands_on: 0.75, business: 0.22, environment: 0.35, health: 0.30, education: 0.95, innovation: 0.65, arts_culture: 0.98, sports: 0.25, nature: 0.45, writing: 0.55 },
+    workstyle: { teamwork: 0.75, independence: 0.70, leadership: 0.55, organization: 0.65, planning: 0.75, problem_solving: 0.70, precision: 0.60, performance: 0.70, teaching: 0.98, motivation: 0.88, autonomy: 0.68, social: 0.85, structure: 0.50, flexibility: 0.78, variety: 0.80 },
+    values: { growth: 0.72, impact: 0.85, global: 0.35, career_clarity: 0.70, financial: 0.45, entrepreneurship: 0.35, social_impact: 0.88, stability: 0.68, advancement: 0.55, work_life_balance: 0.72, company_size: 0.35 },
+    context: { outdoor: 0.25, international: 0.30, work_environment: 0.85 }
+  },
+  {
+    slug: "musiikkipedagogi",
+    title: "Musiikkipedagogi",
+    category: "auttaja",
+    interests: { technology: 0.38, people: 0.90, creative: 0.92, analytical: 0.52, hands_on: 0.55, business: 0.25, environment: 0.25, health: 0.28, education: 0.98, innovation: 0.58, arts_culture: 0.98, sports: 0.22, nature: 0.30, writing: 0.45 },
+    workstyle: { teamwork: 0.72, independence: 0.72, leadership: 0.52, organization: 0.68, planning: 0.78, problem_solving: 0.65, precision: 0.72, performance: 0.85, teaching: 0.98, motivation: 0.92, autonomy: 0.70, social: 0.88, structure: 0.55, flexibility: 0.75, variety: 0.75 },
+    values: { growth: 0.75, impact: 0.82, global: 0.40, career_clarity: 0.72, financial: 0.42, entrepreneurship: 0.38, social_impact: 0.85, stability: 0.65, advancement: 0.52, work_life_balance: 0.70, company_size: 0.32 },
+    context: { outdoor: 0.12, international: 0.38, work_environment: 0.88 }
+  },
+  {
+    slug: "kasityonopettaja",
+    title: "Käsityönopettaja",
+    category: "auttaja",
+    interests: { technology: 0.45, people: 0.85, creative: 0.88, analytical: 0.48, hands_on: 0.95, business: 0.25, environment: 0.45, health: 0.25, education: 0.95, innovation: 0.60, arts_culture: 0.85, sports: 0.30, nature: 0.50, writing: 0.40 },
+    workstyle: { teamwork: 0.70, independence: 0.68, leadership: 0.52, organization: 0.72, planning: 0.78, problem_solving: 0.75, precision: 0.85, performance: 0.68, teaching: 0.98, motivation: 0.85, autonomy: 0.65, social: 0.82, structure: 0.58, flexibility: 0.72, variety: 0.78 },
+    values: { growth: 0.68, impact: 0.80, global: 0.28, career_clarity: 0.72, financial: 0.45, entrepreneurship: 0.35, social_impact: 0.82, stability: 0.72, advancement: 0.50, work_life_balance: 0.75, company_size: 0.35 },
+    context: { outdoor: 0.20, international: 0.22, work_environment: 0.88 }
+  },
+  {
+    slug: "luovuusvalmentaja",
+    title: "Luovuusvalmentaja",
+    category: "auttaja",
+    interests: { technology: 0.42, people: 0.92, creative: 0.95, analytical: 0.55, hands_on: 0.50, business: 0.55, environment: 0.30, health: 0.45, education: 0.85, innovation: 0.90, arts_culture: 0.85, sports: 0.30, nature: 0.35, writing: 0.65 },
+    workstyle: { teamwork: 0.75, independence: 0.78, leadership: 0.65, organization: 0.58, planning: 0.65, problem_solving: 0.80, precision: 0.45, performance: 0.75, teaching: 0.92, motivation: 0.95, autonomy: 0.80, social: 0.90, structure: 0.35, flexibility: 0.90, variety: 0.88 },
+    values: { growth: 0.90, impact: 0.85, global: 0.45, career_clarity: 0.60, financial: 0.55, entrepreneurship: 0.75, social_impact: 0.82, stability: 0.45, advancement: 0.65, work_life_balance: 0.70, company_size: 0.30 },
+    context: { outdoor: 0.25, international: 0.45, work_environment: 0.75 }
+  },
+
+  // =====================================================
+  // HYBRID CAREERS - Health + Tech (Innovoija/Auttaja)
+  // =====================================================
+  {
+    slug: "terveysteknologia-asiantuntija",
+    title: "Terveysteknologia-asiantuntija",
+    category: "innovoija",
+    interests: { technology: 0.92, people: 0.70, creative: 0.55, analytical: 0.85, hands_on: 0.45, business: 0.55, environment: 0.30, health: 0.90, education: 0.50, innovation: 0.92, arts_culture: 0.15, sports: 0.25, nature: 0.25, writing: 0.45 },
+    workstyle: { teamwork: 0.78, independence: 0.72, leadership: 0.55, organization: 0.70, planning: 0.78, problem_solving: 0.92, precision: 0.85, performance: 0.75, teaching: 0.55, motivation: 0.80, autonomy: 0.72, social: 0.65, structure: 0.65, flexibility: 0.65, variety: 0.70 },
+    values: { growth: 0.85, impact: 0.92, global: 0.55, career_clarity: 0.70, financial: 0.68, entrepreneurship: 0.55, social_impact: 0.90, stability: 0.65, advancement: 0.75, work_life_balance: 0.60, company_size: 0.55 },
+    context: { outdoor: 0.10, international: 0.55, work_environment: 0.90 }
+  },
+  {
+    slug: "laakintalaiteteknikko",
+    title: "Lääkintälaiteteknikko",
+    category: "innovoija",
+    interests: { technology: 0.90, people: 0.65, creative: 0.45, analytical: 0.82, hands_on: 0.85, business: 0.35, environment: 0.25, health: 0.88, education: 0.45, innovation: 0.78, arts_culture: 0.12, sports: 0.25, nature: 0.20, writing: 0.35 },
+    workstyle: { teamwork: 0.72, independence: 0.75, leadership: 0.35, organization: 0.78, planning: 0.72, problem_solving: 0.90, precision: 0.95, performance: 0.72, teaching: 0.45, motivation: 0.70, autonomy: 0.70, social: 0.55, structure: 0.75, flexibility: 0.55, variety: 0.65 },
+    values: { growth: 0.72, impact: 0.85, global: 0.45, career_clarity: 0.75, financial: 0.65, entrepreneurship: 0.35, social_impact: 0.85, stability: 0.78, advancement: 0.62, work_life_balance: 0.68, company_size: 0.50 },
+    context: { outdoor: 0.08, international: 0.40, work_environment: 0.92 }
+  },
+  {
+    slug: "terveysinformatiikan-asiantuntija",
+    title: "Terveysinformatiikan asiantuntija",
+    category: "innovoija",
+    interests: { technology: 0.95, people: 0.62, creative: 0.48, analytical: 0.92, hands_on: 0.35, business: 0.55, environment: 0.25, health: 0.85, education: 0.55, innovation: 0.85, arts_culture: 0.12, sports: 0.20, nature: 0.18, writing: 0.55 },
+    workstyle: { teamwork: 0.75, independence: 0.78, leadership: 0.50, organization: 0.85, planning: 0.82, problem_solving: 0.90, precision: 0.90, performance: 0.70, teaching: 0.55, motivation: 0.75, autonomy: 0.75, social: 0.55, structure: 0.80, flexibility: 0.55, variety: 0.62 },
+    values: { growth: 0.82, impact: 0.88, global: 0.50, career_clarity: 0.72, financial: 0.72, entrepreneurship: 0.45, social_impact: 0.88, stability: 0.72, advancement: 0.72, work_life_balance: 0.62, company_size: 0.58 },
+    context: { outdoor: 0.05, international: 0.50, work_environment: 0.95 }
+  },
+  {
+    slug: "digitaalisen-terveyden-kehittaja",
+    title: "Digitaalisen terveyden kehittäjä",
+    category: "innovoija",
+    interests: { technology: 0.95, people: 0.68, creative: 0.65, analytical: 0.85, hands_on: 0.40, business: 0.60, environment: 0.28, health: 0.88, education: 0.48, innovation: 0.95, arts_culture: 0.18, sports: 0.25, nature: 0.22, writing: 0.48 },
+    workstyle: { teamwork: 0.80, independence: 0.75, leadership: 0.55, organization: 0.72, planning: 0.78, problem_solving: 0.92, precision: 0.82, performance: 0.78, teaching: 0.45, motivation: 0.82, autonomy: 0.78, social: 0.62, structure: 0.68, flexibility: 0.72, variety: 0.75 },
+    values: { growth: 0.90, impact: 0.92, global: 0.60, career_clarity: 0.68, financial: 0.75, entrepreneurship: 0.65, social_impact: 0.92, stability: 0.58, advancement: 0.80, work_life_balance: 0.55, company_size: 0.52 },
+    context: { outdoor: 0.08, international: 0.58, work_environment: 0.92 }
+  },
+  {
+    slug: "biolaaketieteellinen-insinoori",
+    title: "Biolääketieteellinen insinööri",
+    category: "innovoija",
+    interests: { technology: 0.92, people: 0.55, creative: 0.58, analytical: 0.95, hands_on: 0.55, business: 0.45, environment: 0.35, health: 0.92, education: 0.50, innovation: 0.92, arts_culture: 0.15, sports: 0.25, nature: 0.45, writing: 0.55 },
+    workstyle: { teamwork: 0.75, independence: 0.78, leadership: 0.45, organization: 0.75, planning: 0.82, problem_solving: 0.95, precision: 0.92, performance: 0.75, teaching: 0.50, motivation: 0.78, autonomy: 0.75, social: 0.52, structure: 0.75, flexibility: 0.58, variety: 0.68 },
+    values: { growth: 0.88, impact: 0.95, global: 0.58, career_clarity: 0.75, financial: 0.72, entrepreneurship: 0.52, social_impact: 0.92, stability: 0.68, advancement: 0.78, work_life_balance: 0.55, company_size: 0.55 },
+    context: { outdoor: 0.12, international: 0.62, work_environment: 0.88 }
+  },
+  {
+    slug: "kliininen-informatiikka-asiantuntija",
+    title: "Kliininen informatiikka-asiantuntija",
+    category: "auttaja",
+    interests: { technology: 0.88, people: 0.78, creative: 0.42, analytical: 0.90, hands_on: 0.30, business: 0.50, environment: 0.22, health: 0.95, education: 0.60, innovation: 0.78, arts_culture: 0.10, sports: 0.20, nature: 0.18, writing: 0.55 },
+    workstyle: { teamwork: 0.82, independence: 0.68, leadership: 0.50, organization: 0.88, planning: 0.85, problem_solving: 0.85, precision: 0.92, performance: 0.68, teaching: 0.65, motivation: 0.72, autonomy: 0.65, social: 0.72, structure: 0.85, flexibility: 0.50, variety: 0.55 },
+    values: { growth: 0.78, impact: 0.90, global: 0.45, career_clarity: 0.78, financial: 0.68, entrepreneurship: 0.35, social_impact: 0.92, stability: 0.78, advancement: 0.68, work_life_balance: 0.65, company_size: 0.55 },
+    context: { outdoor: 0.05, international: 0.42, work_environment: 0.95 }
+  },
+
+  // =====================================================
+  // HYBRID CAREERS - Environment + Education (Auttaja)
+  // =====================================================
+  {
+    slug: "ymparistokasvattaja",
+    title: "Ympäristökasvattaja",
+    category: "auttaja",
+    interests: { technology: 0.40, people: 0.90, creative: 0.65, analytical: 0.55, hands_on: 0.65, business: 0.22, environment: 0.95, health: 0.35, education: 0.95, innovation: 0.55, arts_culture: 0.45, sports: 0.45, nature: 0.95, writing: 0.60 },
+    workstyle: { teamwork: 0.80, independence: 0.65, leadership: 0.55, organization: 0.65, planning: 0.72, problem_solving: 0.68, precision: 0.50, performance: 0.65, teaching: 0.98, motivation: 0.90, autonomy: 0.62, social: 0.92, structure: 0.50, flexibility: 0.78, variety: 0.82 },
+    values: { growth: 0.75, impact: 0.95, global: 0.55, career_clarity: 0.65, financial: 0.38, entrepreneurship: 0.40, social_impact: 0.98, stability: 0.55, advancement: 0.50, work_life_balance: 0.72, company_size: 0.30 },
+    context: { outdoor: 0.85, international: 0.45, work_environment: 0.55 }
+  },
+  {
+    slug: "luontokoulun-ohjaaja",
+    title: "Luontokoulun ohjaaja",
+    category: "auttaja",
+    interests: { technology: 0.30, people: 0.92, creative: 0.68, analytical: 0.48, hands_on: 0.75, business: 0.18, environment: 0.92, health: 0.40, education: 0.95, innovation: 0.50, arts_culture: 0.50, sports: 0.55, nature: 0.98, writing: 0.50 },
+    workstyle: { teamwork: 0.75, independence: 0.68, leadership: 0.52, organization: 0.62, planning: 0.70, problem_solving: 0.65, precision: 0.48, performance: 0.68, teaching: 0.98, motivation: 0.92, autonomy: 0.65, social: 0.95, structure: 0.45, flexibility: 0.85, variety: 0.88 },
+    values: { growth: 0.72, impact: 0.92, global: 0.45, career_clarity: 0.62, financial: 0.35, entrepreneurship: 0.38, social_impact: 0.95, stability: 0.52, advancement: 0.45, work_life_balance: 0.78, company_size: 0.25 },
+    context: { outdoor: 0.95, international: 0.35, work_environment: 0.45 }
+  },
+  {
+    slug: "kestavyyskouluttaja",
+    title: "Kestävyyskouluttaja",
+    category: "auttaja",
+    interests: { technology: 0.50, people: 0.88, creative: 0.58, analytical: 0.62, hands_on: 0.50, business: 0.45, environment: 0.95, health: 0.35, education: 0.92, innovation: 0.68, arts_culture: 0.35, sports: 0.35, nature: 0.85, writing: 0.65 },
+    workstyle: { teamwork: 0.78, independence: 0.68, leadership: 0.62, organization: 0.70, planning: 0.75, problem_solving: 0.72, precision: 0.55, performance: 0.70, teaching: 0.95, motivation: 0.88, autonomy: 0.65, social: 0.88, structure: 0.55, flexibility: 0.75, variety: 0.78 },
+    values: { growth: 0.80, impact: 0.95, global: 0.65, career_clarity: 0.68, financial: 0.45, entrepreneurship: 0.50, social_impact: 0.98, stability: 0.55, advancement: 0.58, work_life_balance: 0.68, company_size: 0.35 },
+    context: { outdoor: 0.55, international: 0.58, work_environment: 0.70 }
+  },
+
+  // =====================================================
+  // HYBRID CAREERS - Education + Creative (Auttaja)
+  // =====================================================
+  {
+    slug: "mediakasvatuksen-asiantuntija",
+    title: "Mediakasvatuksen asiantuntija",
+    category: "auttaja",
+    interests: { technology: 0.78, people: 0.85, creative: 0.82, analytical: 0.62, hands_on: 0.45, business: 0.38, environment: 0.30, health: 0.28, education: 0.95, innovation: 0.72, arts_culture: 0.75, sports: 0.22, nature: 0.25, writing: 0.78 },
+    workstyle: { teamwork: 0.78, independence: 0.70, leadership: 0.55, organization: 0.68, planning: 0.75, problem_solving: 0.72, precision: 0.55, performance: 0.70, teaching: 0.95, motivation: 0.85, autonomy: 0.68, social: 0.85, structure: 0.55, flexibility: 0.78, variety: 0.80 },
+    values: { growth: 0.80, impact: 0.88, global: 0.55, career_clarity: 0.68, financial: 0.50, entrepreneurship: 0.45, social_impact: 0.90, stability: 0.60, advancement: 0.60, work_life_balance: 0.68, company_size: 0.40 },
+    context: { outdoor: 0.15, international: 0.50, work_environment: 0.85 }
+  },
+  {
+    slug: "oppimismuotoilija",
+    title: "Oppimismuotoilija",
+    category: "auttaja",
+    interests: { technology: 0.82, people: 0.82, creative: 0.88, analytical: 0.72, hands_on: 0.45, business: 0.48, environment: 0.28, health: 0.25, education: 0.95, innovation: 0.88, arts_culture: 0.65, sports: 0.22, nature: 0.22, writing: 0.72 },
+    workstyle: { teamwork: 0.80, independence: 0.72, leadership: 0.52, organization: 0.72, planning: 0.80, problem_solving: 0.82, precision: 0.62, performance: 0.72, teaching: 0.88, motivation: 0.85, autonomy: 0.72, social: 0.78, structure: 0.58, flexibility: 0.82, variety: 0.85 },
+    values: { growth: 0.88, impact: 0.85, global: 0.52, career_clarity: 0.68, financial: 0.58, entrepreneurship: 0.55, social_impact: 0.88, stability: 0.58, advancement: 0.68, work_life_balance: 0.65, company_size: 0.45 },
+    context: { outdoor: 0.12, international: 0.52, work_environment: 0.88 }
+  },
+  {
+    slug: "koulutussuunnittelija",
+    title: "Koulutussuunnittelija",
+    category: "auttaja",
+    interests: { technology: 0.72, people: 0.85, creative: 0.78, analytical: 0.75, hands_on: 0.40, business: 0.52, environment: 0.30, health: 0.28, education: 0.98, innovation: 0.75, arts_culture: 0.55, sports: 0.22, nature: 0.25, writing: 0.80 },
+    workstyle: { teamwork: 0.82, independence: 0.68, leadership: 0.58, organization: 0.85, planning: 0.92, problem_solving: 0.78, precision: 0.72, performance: 0.70, teaching: 0.85, motivation: 0.82, autonomy: 0.65, social: 0.78, structure: 0.72, flexibility: 0.68, variety: 0.72 },
+    values: { growth: 0.78, impact: 0.85, global: 0.48, career_clarity: 0.75, financial: 0.55, entrepreneurship: 0.42, social_impact: 0.88, stability: 0.68, advancement: 0.65, work_life_balance: 0.70, company_size: 0.48 },
+    context: { outdoor: 0.10, international: 0.45, work_environment: 0.90 }
+  },
+
+  // =====================================================
+  // HYBRID CAREERS - Sports + Helper
+  // =====================================================
+  {
+    slug: "urheilupsykologi",
+    title: "Urheilupsykologi",
+    category: "auttaja",
+    interests: { technology: 0.42, people: 0.95, creative: 0.52, analytical: 0.78, hands_on: 0.35, business: 0.35, environment: 0.28, health: 0.82, education: 0.75, innovation: 0.55, arts_culture: 0.28, sports: 0.95, nature: 0.40, writing: 0.62 },
+    workstyle: { teamwork: 0.78, independence: 0.75, leadership: 0.52, organization: 0.65, planning: 0.72, problem_solving: 0.85, precision: 0.62, performance: 0.82, teaching: 0.80, motivation: 0.95, autonomy: 0.72, social: 0.92, structure: 0.55, flexibility: 0.75, variety: 0.72 },
+    values: { growth: 0.82, impact: 0.88, global: 0.48, career_clarity: 0.70, financial: 0.55, entrepreneurship: 0.48, social_impact: 0.85, stability: 0.58, advancement: 0.62, work_life_balance: 0.62, company_size: 0.38 },
+    context: { outdoor: 0.45, international: 0.55, work_environment: 0.65 }
+  },
+  {
+    slug: "kuntoutusohjaaja",
+    title: "Kuntoutusohjaaja",
+    category: "auttaja",
+    interests: { technology: 0.38, people: 0.95, creative: 0.48, analytical: 0.55, hands_on: 0.60, business: 0.28, environment: 0.32, health: 0.92, education: 0.75, innovation: 0.45, arts_culture: 0.30, sports: 0.78, nature: 0.45, writing: 0.48 },
+    workstyle: { teamwork: 0.85, independence: 0.62, leadership: 0.45, organization: 0.72, planning: 0.75, problem_solving: 0.75, precision: 0.65, performance: 0.72, teaching: 0.85, motivation: 0.92, autonomy: 0.58, social: 0.95, structure: 0.60, flexibility: 0.72, variety: 0.70 },
+    values: { growth: 0.72, impact: 0.90, global: 0.35, career_clarity: 0.72, financial: 0.45, entrepreneurship: 0.35, social_impact: 0.95, stability: 0.68, advancement: 0.55, work_life_balance: 0.70, company_size: 0.35 },
+    context: { outdoor: 0.35, international: 0.28, work_environment: 0.75 }
+  },
+
+  // =====================================================
+  // HYBRID CAREERS - Health + Creative
+  // =====================================================
+  {
+    slug: "terveyskommunikaatiosuunnittelija",
+    title: "Terveyskommunikaatiosuunnittelija",
+    category: "luova",
+    interests: { technology: 0.65, people: 0.80, creative: 0.88, analytical: 0.62, hands_on: 0.35, business: 0.52, environment: 0.30, health: 0.85, education: 0.68, innovation: 0.72, arts_culture: 0.65, sports: 0.25, nature: 0.28, writing: 0.92 },
+    workstyle: { teamwork: 0.78, independence: 0.72, leadership: 0.48, organization: 0.68, planning: 0.75, problem_solving: 0.72, precision: 0.68, performance: 0.70, teaching: 0.62, motivation: 0.78, autonomy: 0.72, social: 0.80, structure: 0.55, flexibility: 0.75, variety: 0.78 },
+    values: { growth: 0.78, impact: 0.92, global: 0.48, career_clarity: 0.68, financial: 0.58, entrepreneurship: 0.48, social_impact: 0.92, stability: 0.60, advancement: 0.62, work_life_balance: 0.68, company_size: 0.45 },
+    context: { outdoor: 0.10, international: 0.48, work_environment: 0.88 }
+  },
+  {
+    slug: "potilaskokemussuunnittelija",
+    title: "Potilaskokemussuunnittelija",
+    category: "innovoija",
+    interests: { technology: 0.72, people: 0.92, creative: 0.85, analytical: 0.72, hands_on: 0.38, business: 0.55, environment: 0.28, health: 0.92, education: 0.55, innovation: 0.88, arts_culture: 0.55, sports: 0.22, nature: 0.25, writing: 0.68 },
+    workstyle: { teamwork: 0.85, independence: 0.68, leadership: 0.52, organization: 0.72, planning: 0.78, problem_solving: 0.85, precision: 0.70, performance: 0.72, teaching: 0.55, motivation: 0.82, autonomy: 0.68, social: 0.88, structure: 0.58, flexibility: 0.78, variety: 0.80 },
+    values: { growth: 0.82, impact: 0.95, global: 0.45, career_clarity: 0.68, financial: 0.62, entrepreneurship: 0.52, social_impact: 0.95, stability: 0.58, advancement: 0.68, work_life_balance: 0.62, company_size: 0.50 },
+    context: { outdoor: 0.08, international: 0.45, work_environment: 0.92 }
   }
 ];
 
