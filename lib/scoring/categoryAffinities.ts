@@ -58,29 +58,32 @@ const CATEGORY_SIGNALS: Record<string, {
   },
   rakentaja: {
     // Rakentaja = tradespeople, athletes, physical workers
-    // IMPROVED: Removed 'people' from negative - mechanics and athletes work with people too
-    // Added 'stability' to secondary - tradespeople value job security
-    primary: ['hands_on', 'outdoor', 'precision', 'sports'],
-    secondary: ['stability', 'independence', 'teamwork'],
-    negative: ['creative', 'writing'],
+    // IMPROVED v2.2: hands_on is THE key signal - if hands_on is high, this should dominate
+    // Added technology to negative - tech workers should be innovoija, not rakentaja
+    // Removed precision from primary - precision is more järjestäjä
+    primary: ['hands_on', 'outdoor', 'sports'],
+    secondary: ['stability', 'independence', 'teamwork', 'precision'],
+    negative: ['creative', 'writing', 'technology', 'innovation'],
     label_fi: 'Rakentaja'
   },
   johtaja: {
     // Johtaja = leaders, managers, lawyers, business professionals
-    // IMPROVED: Added 'impact' to secondary - leaders want to make impact
-    // Reduced negative signals - leaders can value stability too
+    // IMPROVED v2.2: More restrictive - need BOTH leadership AND business/entrepreneurship
+    // Added organization and structure to negative to differentiate from jarjestaja
+    // Added technology to negative to differentiate from innovoija
     primary: ['leadership', 'business', 'entrepreneurship'],
     secondary: ['social', 'advancement', 'financial', 'analytical', 'writing', 'people', 'impact'],
-    negative: ['hands_on', 'health'],
+    negative: ['hands_on', 'health', 'organization', 'structure', 'precision'],
     label_fi: 'Johtaja'
   },
   'ympariston-puolustaja': {
     // Ympäristön puolustaja = environmental scientists, activists, nature workers
+    // IMPROVED v2.2: Made outdoor primary (activists are outdoorsy), reduced negative signals
     // social_impact is SECONDARY - teachers also have high social_impact but shouldn't be here
-    // environment/nature are the CORE signals that differentiate this category
-    primary: ['environment', 'nature'],
-    secondary: ['outdoor', 'social_impact', 'impact', 'independence', 'analytical'],
-    negative: ['business', 'sports'],
+    // environment/nature/outdoor are the CORE signals
+    primary: ['environment', 'nature', 'outdoor'],
+    secondary: ['social_impact', 'impact', 'independence', 'analytical'],
+    negative: ['business', 'entrepreneurship', 'technology'],
     label_fi: 'Ympäristön puolustaja'
   },
   visionaari: {
@@ -343,14 +346,25 @@ export function calculateCategoryAffinities(
     }
     negativeScore = negativeCount > 0 ? negativeScore / negativeCount : 0;
 
-    // IMPROVED SCORING FORMULA v2.1:
+    // IMPROVED SCORING FORMULA v2.2:
     // - Base score: 55% primary + 30% secondary = 85% max base
-    // - Negative penalty: reduces score by up to 15%
+    // - Negative penalty: INCREASED to up to 25% for better differentiation
     // - Strong signal bonus: adds up to 15% for excellent matches
-    // - Result: realistic range of ~25% (poor fit) to ~100% (excellent fit)
+    // - Very high negative penalty: additional penalty when negative signals are very high
+    // - Result: realistic range of ~20% (poor fit) to ~100% (excellent fit)
 
     const baseScore = (primaryScore * 0.55) + (secondaryScore * 0.30);
-    const negativePenalty = negativeScore * 0.15;
+
+    // IMPROVED v2.2: Increased base penalty and added progressive penalty
+    let negativePenalty = negativeScore * 0.20; // Increased from 0.15 to 0.20
+
+    // Extra penalty when negative signals are very high (>0.6)
+    // This ensures that conflicting interests strongly reduce the score
+    if (negativeScore >= 0.7) {
+      negativePenalty += 0.10; // Strong additional penalty for very high negative signals
+    } else if (negativeScore >= 0.5) {
+      negativePenalty += 0.05; // Moderate additional penalty
+    }
 
     // Strong signal bonus: if primary signals are very strong AND negative signals are low
     // This rewards clear, strong matches without conflicting interests

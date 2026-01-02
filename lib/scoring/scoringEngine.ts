@@ -5196,6 +5196,10 @@ function determineDominantCategory(
  * Rank all careers for a user and return top matches
  * Now focuses on careers from the user's dominant category
  * Returns careers with dynamic count based on confidence levels
+ *
+ * CRITICAL FIX: Now uses the same calculateCategoryAffinities function
+ * as generateUserProfile to ensure career recommendations match
+ * the personality analysis and displayed category profile.
  */
 export function rankCareers(
   answers: TestAnswer[],
@@ -5208,13 +5212,13 @@ export function rankCareers(
   const { dimensionScores, detailedScores } = computeUserVector(answers, cohort, subCohort);
 
   // ============================================================================
-  // UNIFIED SIMPLIFIED PATH: Use interest-based matching for ALL cohorts
+  // UNIFIED PATH: Use the SAME category affinity calculation as generateUserProfile
   // This ensures career recommendations align with personality analysis (vahvuudet)
-  // by directly matching user subdimension strengths to career requirements
+  // by using the shared calculateCategoryAffinities function from categoryAffinities.ts
   // ============================================================================
   console.log(`[rankCareers] 🎯 ${cohort} COHORT: Using unified interest-based matching`);
 
-  // Extract detailed scores from all dimensions
+  // Extract detailed scores from all dimensions (needed for subdimension alignment later)
   const interests = detailedScores.interests || {};
   const values = detailedScores.values || {};
   const workstyle = detailedScores.workstyle || {};
@@ -5225,278 +5229,52 @@ export function rankCareers(
   console.log(`[rankCareers] ${cohort} values:`, JSON.stringify(values));
   console.log(`[rankCareers] ${cohort} workstyle:`, JSON.stringify(workstyle));
 
-  // Calculate category affinities based on subdimension strengths (vahvuudet)
-  // These weights align with what the personality analysis emphasizes
-  // IMPORTANT: Weights are calibrated to ensure proper category differentiation
-  // TARGET: 100% alignment between profile types and expected categories
+  // ============================================================================
+  // CRITICAL FIX: Use shared calculateCategoryAffinities from categoryAffinities.ts
+  // This ensures rankCareers uses the SAME category calculation as generateUserProfile
+  // ============================================================================
+  const {
+    calculateProfileConfidence,
+    calculateCategoryAffinities
+  } = require('./categoryAffinities');
 
-  // Helper function to get max value from multiple possible keys
-  const getMax = (...vals: (number | undefined)[]) => Math.max(...vals.map(v => v || 0));
+  // Calculate profile confidence based on answer patterns
+  const profileConfidence = calculateProfileConfidence(answers);
 
-  // Extract key subdimensions with fallbacks
+  // Calculate category affinities using the SHARED function
+  // This returns CategoryAffinity[] with score, confidence, and rank
+  const categoryAffinitiesArray: CategoryAffinity[] = calculateCategoryAffinities(detailedScores, profileConfidence);
+
+  // Extract dominant category and top categories from the shared calculation
+  const dominantCategory = categoryAffinitiesArray[0].category;
+  const topCategories = categoryAffinitiesArray.slice(0, 3).map((c: CategoryAffinity) => c.category);
+
+  // Create a lookup map for category scores (for logging and category match scoring)
+  const categoryScoresMap: Record<string, number> = {};
+  categoryAffinitiesArray.forEach((c: CategoryAffinity) => {
+    categoryScoresMap[c.category] = c.score;
+  });
+
+  console.log(`[rankCareers] ${cohort} category affinities:`, JSON.stringify(categoryScoresMap, null, 2));
+  console.log(`[rankCareers] ${cohort} dominant category: ${dominantCategory}, top 3: ${topCategories.join(', ')}`);
+
+  // Extract key subdimensions for use in career-specific alignment checks below
+  // These are used for penalties/bonuses when matching careers to user profiles
   const creative = interests.creative || 0;
   const technology = interests.technology || 0;
   const people = interests.people || 0;
   const hands_on = interests.hands_on || 0;
   const analytical = interests.analytical || 0;
-  const leadership = getMax(interests.leadership, workstyle.leadership);
-  const environment = getMax(interests.environment, interests.impact, interests.outdoor);
   const health = interests.health || 0;
-  const business = getMax(interests.business, values.business);
-  const innovation = interests.innovation || 0;
-  const problem_solving = interests.problem_solving || 0;
-  const growth = interests.growth || 0;
-  const planning = workstyle.planning || 0;
-  const organization = getMax(workstyle.organization, workstyle.structure);
-  const outdoor = getMax(interests.outdoor, workstyle.outdoor);
+  const leadership = Math.max(interests.leadership || 0, workstyle.leadership || 0);
+  const business = Math.max(interests.business || 0, values.business || 0);
+  const environment = Math.max(interests.environment || 0, interests.nature || 0);
+  const organization = Math.max(workstyle.organization || 0, workstyle.structure || 0);
+  const precision = workstyle.precision || 0;
 
-  // CRITICAL FIX: When creative is VERY HIGH (>= 0.8), it should ALWAYS dominate over moderate hands_on
-  // This prevents "Elias the creative artist" (creative=0.9, hands_on=0.57) from becoming "Elias the construction worker"
-  const creativeOverridesHandsOn = creative >= 0.8 && creative > hands_on;
-  const creativeBonus = creativeOverridesHandsOn ? 15.0 : 0; // Massive bonus to ensure creative wins
-  const handsOnPenaltyForCreative = creativeOverridesHandsOn ? -10.0 : 0; // Penalty for rakentaja when creative dominates
-
-  // CRITICAL FIX: When technology is HIGH (>= 0.7), innovoija should beat rakentaja AND johtaja
-  // Ville (YLA): technology=HIGH, innovation=HIGH, entrepreneurship=medium → should be innovoija, not johtaja
-  // Jari (NUORI): software=HIGH, engineering=HIGH → should be innovoija, not johtaja
-  // Tech innovators may have some business/leadership traits but their PRIMARY interest is technology
-  // LOWERED threshold from 0.8 to 0.7 to catch more tech profiles
-  const isTechInnovator = technology >= 0.7 && (innovation >= 0.5 || analytical >= 0.6);
-  const techInnovoijaBonus = isTechInnovator ? 20.0 : 0; // Increased bonus for innovoija
-  const rakentajaPenaltyForTech = isTechInnovator ? -10.0 : 0; // Penalty for rakentaja
-  // CRITICAL: Add penalty to johtaja for tech innovators - they're tech workers, not business leaders
-  const johtajaPenaltyForTechInnovator = isTechInnovator ? -15.0 : 0;
-
-  // CRITICAL FIX: Future doctors (Antti) with high health AND people should be auttaja, not innovoija
-  // Antti: health=1.0, people=0.75, analytical=1.0 → should be auttaja (doctor), not innovoija
-  // The key: doctors use analytical skills TO HELP PEOPLE, not for pure research
-  const isDoctorType = health >= 0.8 && people >= 0.6 && (growth >= 0.5 || (values.social_impact || 0) >= 0.5);
-  const doctorAuttajaBonus = isDoctorType ? 20.0 : 0; // Bonus for auttaja
-  const innovoijaPenaltyForDoctor = isDoctorType ? -15.0 : 0; // Penalty for innovoija
-
-  // CRITICAL FIX: Performers (Leo) with high social/growth should be luova, not johtaja
-  // Leo: creative=0.58, growth=1.0, social=1.0, leadership=1.0, business=0.5
-  // Performers use social/leadership for ENTERTAINMENT (luova), not BUSINESS (johtaja)
-  const isPerformer = creative >= 0.4 && (workstyle.social || 0) >= 0.8 && growth >= 0.8;
-  const performerBonus = isPerformer ? 20.0 : 0;
-  const johtajaPenaltyForPerformer = isPerformer ? -15.0 : 0;
-  // CRITICAL: Performers are NOT helpers - they entertain, not care
-  const auttajaPenaltyForPerformer = isPerformer ? -15.0 : 0;
-
-  // CRITICAL FIX: Organized people (Emma) with high org+precision should be järjestäjä, not johtaja
-  // Emma: organization=1.0, precision=1.0, leadership=0.75, business=0.5, analytical=0.8
-  // The key: johtaja = leadership + business, järjestäjä = organization + precision
-  // BUT: Emma has high analytical (0.8) which boosts innovoija AND high leadership (0.75) which boosts johtaja
-  // CRITICAL FIX: Sanni has org=1.0, precision=1.0 BUT also has technology=1.0 - she's INNOVOIJA, not järjestäjä
-  // True organizers have high org+precision WITHOUT high technology
-  const isOrganizer = organization >= 0.8 && (workstyle.precision || 0) >= 0.8 && technology < 0.7;
-  // Emma's johtaja score: leadership*5.0 + business*4.0 = 0.75*5 + 0.5*4 = 3.75 + 2.0 = 5.75
-  // Emma's jarjestaja score: org*5.0 + precision*4.0 = 1.0*5 + 1.0*4 = 9.0 (needs bonus to beat 5.75+penalties)
-  const organizerBonus = isOrganizer ? 35.0 : 0;  // INCREASED from 30 to 35
-  const johtajaPenaltyForOrganizer = isOrganizer && business < 0.6 ? -30.0 : 0;  // INCREASED from -25 to -30
-  // CRITICAL: Organizers are NOT helpers - they organize, not care for people
-  const auttajaPenaltyForOrganizer = isOrganizer ? -15.0 : 0;
-  // CRITICAL: Organizers with high analytical should NOT be innovoija - they're järjestäjä
-  const innovoijaPenaltyForOrganizer = isOrganizer && technology < 0.6 ? -20.0 : 0;
-
-  // CRITICAL FIX: Environment activists should beat rakentaja even with high hands_on
-  // Jesse: environment=1.0, hands_on=0.8, impact=1.0, analytical=0.66
-  // The key: Jesse does hands-on activities FOR THE ENVIRONMENT, not as a career
-  const isEnvironmentActivist = environment >= 0.8 && (values.impact || 0) >= 0.8;
-  const environmentActivistBonus = isEnvironmentActivist ? 15.0 : 0;
-  const rakentajaPenaltyForActivist = isEnvironmentActivist ? -15.0 : 0;
-
-  // CRITICAL FIX: Prevent ympäristön-puolustaja false positives
-  // Aino (writer): environment=0.75, creative=1.0, analytical=0.66 → should be luova
-  // Sara (vet wannabe): environment=1.0, health=0.93, people=1.0 → should be auttaja
-  // Iida (caregiver): environment=0.75, people=1.0, growth=1.0, health=0.75 → should be auttaja
-  // The key insight:
-  // - TRUE activists: high environment + high impact + analytical (research) + low helper signals
-  // - Writers: high creative > moderate environment
-  // - Helpers: high people + health OR people + growth
-  // CRITICAL: Writers may have lower aggregated creative score because Q10 (cooking) drags it down
-  // Aino: Q2=5 (stories), Q10=2 (cooking) → creative=(5+2)/10=0.7
-  // So lower the threshold to catch writers like Aino
-  const isWriterNotActivist = creative >= 0.6 && creative > environment;
-  // CRITICAL FIX: Helper detection should EXCLUDE performers
-  // Leo has people=1.0, growth=1.0, social=1.0 - but he's a PERFORMER, not a helper
-  // True helpers: people + health WITHOUT high social/creative performer signals
-  // Sara/Iida: people + health/growth WITHOUT high social+creative
-  const isHelperNotActivist = people >= 0.8 && (health >= 0.5 || growth >= 0.8) && !isPerformer;
-  // INCREASED penalties and bonuses to ensure proper classification
-  const environmentPenaltyForWriter = isWriterNotActivist ? -25.0 : 0;  // INCREASED
-  const environmentPenaltyForHelper = isHelperNotActivist && !isEnvironmentActivist ? -25.0 : 0;  // INCREASED
-  const writerBonus = isWriterNotActivist ? 25.0 : 0;  // INCREASED bonus for luova
-  const helperBonus = isHelperNotActivist ? 25.0 : 0;   // INCREASED bonus for auttaja
-
-  const categoryAffinities: Record<string, number> = {
-    // LUOVA: creative expression and artistic interests
-    // Priority: creative > innovation (only if creative is strong)
-    // CRITICAL: When creative >= 0.8 AND creative > hands_on, add massive bonus to ensure luova wins
-    luova: creative * 4.0 +
-           (interests.arts_culture || 0) * 2.5 +
-           (interests.writing || 0) * 2.0 +
-           // Small innovation bonus only if creative is dominant
-           (creative > 0.5 ? innovation * 0.8 : 0) +
-           // Penalty when technology dominates creative
-           (technology > creative + 0.2 ? -2.0 : 0) +
-           // CRITICAL: Massive bonus when creative >> hands_on (artist, not builder)
-           creativeBonus +
-           // CRITICAL: Massive bonus for performers (Leo) with high social/growth
-           performerBonus +
-           // CRITICAL: Massive bonus for writers (Aino) - creative > environment
-           writerBonus,
-
-    // INNOVOIJA: technology, analytical thinking, problem-solving
-    // Priority: technology > analytical > problem_solving
-    // CRITICAL: Must beat johtaja when technology is the primary trait
-    innovoija: technology * 5.5 +  // VERY high tech weight
-               analytical * 3.0 +   // Higher analytical weight
-               problem_solving * 2.5 +
-               innovation * 2.0 +
-               // Bonus when technology is clearly dominant
-               (technology >= 0.7 ? 5.0 : 0) +
-               // Penalty when creative dominates (should be luova)
-               (creative > technology + 0.2 ? -2.0 : 0) +
-               // Penalty when hands_on dominates (should be rakentaja)
-               (hands_on > technology + 0.3 ? -2.0 : 0) +
-               // Penalty when leadership/business dominate (should be johtaja)
-               (leadership > technology + 0.2 && business > technology + 0.2 ? -2.0 : 0) +
-               // CRITICAL: Penalty for organizers (Emma) with low tech - they're järjestäjä, not innovoija
-               innovoijaPenaltyForOrganizer +
-               // CRITICAL: Bonus for tech innovators (Ville) - tech > hands_on
-               techInnovoijaBonus +
-               // CRITICAL: Penalty for doctors (Antti) - they're helpers using analytical skills
-               innovoijaPenaltyForDoctor,
-
-    // AUTTAJA: people-oriented, helping, healthcare
-    // Priority: people + health + growth
-    auttaja: people * 3.5 +
-             health * 3.0 +
-             growth * 2.0 +
-             (values.impact || values.social_impact || 0) * 1.5 +
-             // Penalty when technology dominates (should be innovoija)
-             (technology > people + 0.3 ? -2.0 : 0) +
-             // Penalty when hands_on is much stronger (should be rakentaja)
-             (hands_on > people + health + 0.3 ? -1.5 : 0) +
-             // CRITICAL: Massive bonus for helpers (Sara, Iida) who like animals/children
-             helperBonus +
-             // CRITICAL: Penalty for organizers (Emma) - they organize, not care
-             auttajaPenaltyForOrganizer +
-             // CRITICAL: Penalty for performers (Leo) - they entertain, not care
-             auttajaPenaltyForPerformer +
-             // CRITICAL: Massive bonus for doctors (Antti) - health + people + analytical
-             doctorAuttajaBonus,
-
-    // JOHTAJA: leadership, business, advancement
-    // Priority: leadership > business
-    // CRITICAL: Must require STRONG leadership/business signals to activate
-    johtaja: leadership * 5.0 +
-             business * 4.0 +
-             (values.advancement || 0) * 2.0 +
-             (values.entrepreneurship || 0) * 2.0 +
-             // Penalty when creative dominates (should be luova)
-             (creative > leadership + 0.3 ? -3.0 : 0) +
-             // Penalty when technology dominates (should be innovoija)
-             (technology > leadership + 0.3 && technology > business + 0.3 ? -4.0 : 0) +
-             // STRONGER penalty when technology is clearly high (should be innovoija)
-             (technology >= 0.7 ? -5.0 : 0) +
-             // Penalty when hands_on dominates (should be rakentaja)
-             (hands_on > leadership + 0.3 && hands_on > business + 0.3 ? -4.0 : 0) +
-             // Penalty when environment dominates (should be ympäristö)
-             (environment > leadership + 0.3 ? -3.0 : 0) +
-             // Penalty when people/health dominate without leadership (should be auttaja)
-             (people > leadership + 0.2 && health > 0.4 ? -3.0 : 0) +
-             // CRITICAL: Massive penalty for performers (Leo) - they're entertainers, not business leaders
-             johtajaPenaltyForPerformer +
-             // CRITICAL: Massive penalty for organizers (Emma) - they're admins, not business leaders
-             johtajaPenaltyForOrganizer +
-             // CRITICAL: Penalty for tech innovators (Ville, Jari) - they're tech workers, not business leaders
-             johtajaPenaltyForTechInnovator,
-
-    // RAKENTAJA: hands-on work, practical skills
-    // Priority: hands_on > outdoor (without environment focus)
-    // CRITICAL: Must beat johtaja when hands_on is the primary trait
-    // CRITICAL: Must NOT beat luova when creative >> hands_on (artist, not builder)
-    rakentaja: hands_on * 6.0 +  // VERY high hands_on weight
-               (workstyle.precision || 0) * 3.0 +
-               (workstyle.performance || 0) * 2.0 +
-               (values.stability || 0) * 2.0 +
-               // Outdoor contributes only if environment is not dominant
-               (environment < hands_on ? outdoor * 2.0 : 0) +
-               // Bonus when hands_on is clearly dominant
-               (hands_on >= 0.7 ? 5.0 : 0) +
-               // Penalty when technology AND innovation dominate (should be innovoija)
-               (technology > hands_on + 0.2 && innovation > 0.4 ? -3.0 : 0) +
-               // Penalty when people/health dominate (should be auttaja)
-               (people + health > hands_on + 0.4 ? -3.0 : 0) +
-               // Penalty when leadership/business dominate (should be johtaja)
-               (leadership > hands_on + 0.2 && business > hands_on + 0.2 ? -4.0 : 0) +
-               // CRITICAL: Penalty when creative >> hands_on (artist, not builder)
-               handsOnPenaltyForCreative +
-               // CRITICAL: Massive penalty for environment activists (Jesse) - they build FOR THE PLANET
-               rakentajaPenaltyForActivist +
-               // CRITICAL: Penalty for tech innovators (Ville) - they code, not build physically
-               rakentajaPenaltyForTech,
-
-    // YMPARISTON-PUOLUSTAJA: environment, nature, sustainability
-    // Priority: environment > outdoor > nature > impact
-    // CRITICAL: Must beat rakentaja when environment is the primary trait
-    'ympariston-puolustaja': environment * 6.0 +  // VERY strong environment weight
-                              (interests.nature || 0) * 5.0 +  // Strong nature weight
-                              outdoor * 4.0 +  // Strong outdoor preference
-                              (values.social_impact || 0) * 2.5 +
-                              (values.impact || 0) * 2.0 +
-                              // Bonus when environment + outdoor are both high
-                              (environment >= 0.6 && outdoor >= 0.5 ? 5.0 : 0) +
-                              // Penalty when people/health dominate (should be auttaja)
-                              (people + health > environment + outdoor + 0.3 ? -4.0 : 0) +
-                              // Penalty when hands_on dominates without environment (should be rakentaja)
-                              (hands_on > environment + 0.4 && environment < 0.4 ? -5.0 : 0) +
-                              // Penalty when hands_on is very high but environment is moderate
-                              (hands_on > environment && hands_on >= 0.6 ? -3.0 : 0) +
-                              // CRITICAL: Massive bonus for environment activists (Jesse)
-                              environmentActivistBonus +
-                              // CRITICAL: Massive penalty for writers (Aino) - they like nature but are CREATIVE
-                              environmentPenaltyForWriter +
-                              // CRITICAL: Massive penalty for helpers (Sara, Iida) - they like animals but are HELPERS
-                              environmentPenaltyForHelper,
-
-    // VISIONAARI: strategic thinking, global perspective, planning
-    // Priority: planning + global perspective
-    visionaari: (values.global || interests.global || 0) * 3.0 +
-                planning * 3.0 +
-                innovation * 1.0 +
-                (values.career_clarity || 0) * 1.0 +
-                // Penalty when leadership dominates (should be johtaja)
-                (leadership > planning + 0.3 ? -1.5 : 0),
-
-    // JARJESTAJA: organization, structure, systematic work
-    // Priority: organization + planning + precision (highly structured personalities)
-    // CRITICAL: Must beat innovoija when organization/structure is primary, even with moderate tech
-    jarjestaja: organization * 5.0 +  // MAJOR boost for organization
-                (workstyle.structure || 0) * 4.5 +  // MAJOR boost for structure
-                (workstyle.precision || 0) * 4.0 +  // MAJOR boost for precision
-                planning * 2.5 +
-                analytical * 1.5 +
-                (values.stability || 0) * 2.0 +
-                // Penalty when technology dominates clearly (should be innovoija)
-                (technology > organization + 0.5 ? -3.0 : 0) +
-                // Penalty when creative dominates (should be luova)
-                (creative > organization + 0.3 ? -2.0 : 0) +
-                // CRITICAL: Massive bonus for organizers (Emma) with high org+precision
-                organizerBonus
-  };
-
-  console.log(`[rankCareers] ${cohort} category affinities:`, JSON.stringify(categoryAffinities, null, 2));
-
-  // Find top categories based on user's strengths
-  const sortedCategories = Object.entries(categoryAffinities)
-    .sort(([, a], [, b]) => b - a);
-  const dominantCategory = sortedCategories[0][0];
-  const topCategories = sortedCategories.slice(0, 3).map(([cat]) => cat);
-
-  console.log(`[rankCareers] ${cohort} dominant category: ${dominantCategory}, top 3: ${topCategories.join(', ')}`);
+  // Detect specific profile types for career-specific bonuses/penalties
+  // isOrganizer: High organization + precision WITHOUT high technology (järjestäjä type)
+  const isOrganizer = organization >= 0.8 && precision >= 0.8 && technology < 0.7;
 
   // Score ALL careers based on category match AND subdimension alignment
   const scoredCareers: CareerMatch[] = [];
@@ -5520,7 +5298,7 @@ export function rankCareers(
       baseScore += 30; // Major boost for matching dominant category
     } else if (topCategories.includes(careerCategory)) {
       baseScore += 18; // Good boost for top 3 categories
-    } else if (sortedCategories.slice(3, 5).map(([c]) => c).includes(careerCategory)) {
+    } else if (categoryAffinitiesArray.slice(3, 5).map((c: CategoryAffinity) => c.category).includes(careerCategory)) {
       baseScore += 8; // Small boost for categories 4-5
     }
 
