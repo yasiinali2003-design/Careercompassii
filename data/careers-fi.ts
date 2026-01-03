@@ -118,10 +118,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Media-alan TES",
     useful_links: [
-      { name: "Grafia", url: "https://www.grafia.fi/" },
+      { name: "Grafia", url: "https://grafia.fi/" },
       { name: "Opintopolku - Graafinen suunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Graafinen%20suunnittelija" },
     
-      { name: "Työmarkkinatori – Graafinen suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/graafinen-suunnittelija" }
+      { name: "Työmarkkinatori – Graafinen suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/graafinen-suunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Graafinen%20suunnittelija" }
       ],
     keywords: ["graafinen suunnittelu", "brändi", "mainonta", "visuaalinen viestintä", "Adobe"],
     study_length_estimate_months: 42
@@ -197,7 +198,8 @@ export const careersData: CareerFI[] = [
       { name: "Muusikkojen liitto", url: "https://www.muusikkojenliitto.fi/" },
       { name: "Opintopolku - Muusikko", url: "https://opintopolku.fi/konfo/fi/haku/Muusikko" },
     
-      { name: "Työmarkkinatori – Muusikko", url: "https://tyomarkkinatori.fi/ammatit/muusikko" }
+      { name: "Työmarkkinatori – Muusikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/muusikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Musiikki" }
       ],
     keywords: ["musiikki", "esiintyminen", "säveltäminen", "opettaminen", "studio"],
     study_length_estimate_months: 48,
@@ -281,7 +283,8 @@ export const careersData: CareerFI[] = [
       { name: "Elokuvatuottajien keskusliitto", url: "https://www.sek.fi/" },
       { name: "Opintopolku - Kameramies", url: "https://opintopolku.fi/konfo/fi/haku/Kameramies" },
     
-      { name: "Työmarkkinatori – Kameramies", url: "https://tyomarkkinatori.fi/ammatit/kameramies" }
+      { name: "Työmarkkinatori – Kameramies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kameramies" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kamera%20video" }
       ],
     keywords: ["kamera", "kuvaus", "elokuva", "TV", "valaistus"],
     study_length_estimate_months: 36,
@@ -331,7 +334,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2000,
       range: [500, 8000],
-      source: { name: "Kirjailijaliitto", url: "https://www.kirjailijaliitto.fi/", year: 2024 }
+      source: { name: "Kirjailijaliitto", url: "https://kirjailijaliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vaihtelee",
@@ -359,10 +362,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Kirjailijaliitto",
     useful_links: [
-      { name: "Kirjailijaliitto", url: "https://www.kirjailijaliitto.fi/" },
+      { name: "Kirjailijaliitto", url: "https://kirjailijaliitto.fi/" },
       { name: "Opintopolku - Kirjailija", url: "https://opintopolku.fi/konfo/fi/haku/Kirjailija" },
     
-      { name: "Työmarkkinatori – Kirjailija", url: "https://tyomarkkinatori.fi/ammatit/kirjailija" }
+      { name: "Työmarkkinatori – Kirjailija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kirjailija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kirjoittaja" }
       ],
     keywords: ["kirjoittaminen", "kirjallisuus", "romaani", "artikkeli", "käsikirjoitus"],
     study_length_estimate_months: 48,
@@ -443,10 +447,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "UX Finland", url: "https://uxfinland.org/" },
       { name: "Opintopolku - Tuotemuotoilija", url: "https://opintopolku.fi/konfo/fi/haku/Tuotemuotoilija" },
     
-      { name: "Työmarkkinatori – Tuotemuotoilija", url: "https://tyomarkkinatori.fi/ammatit/muotoilija" }
+      { name: "Työmarkkinatori – Tuotemuotoilija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/muotoilija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotemuotoilija" }
       ],
     keywords: ["UX", "UI", "käyttöliittymä", "sovellus", "digitaalinen suunnittelu"],
     study_length_estimate_months: 42,
@@ -527,10 +531,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Media-alan TES",
     useful_links: [
-      { name: "Animaatioinstituutti", url: "https://www.animaatioinstituutti.fi/" },
       { name: "Opintopolku - Animaattori", url: "https://opintopolku.fi/konfo/fi/haku/Animaattori" },
     
-      { name: "Työmarkkinatori – Animaattori", url: "https://tyomarkkinatori.fi/ammatit/animaattori" }
+      { name: "Työmarkkinatori – Animaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/animaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Animaatio" }
       ],
     keywords: ["animaatio", "3D", "elokuva", "pelit", "digitaalinen taide"],
     study_length_estimate_months: 42,
@@ -610,7 +614,10 @@ export const careersData: CareerFI[] = [
       { name: "Teatterin tiedotuskeskus", url: "https://www.tinfo.fi/" },
       { name: "Opintopolku - Teatteriohjaaja", url: "https://opintopolku.fi/konfo/fi/haku/Teatteriohjaaja" },
     
-      { name: "Työmarkkinatori – Teatteriohjaaja", url: "https://tyomarkkinatori.fi/ammatit/teatteriohjaaja" }
+      { name: "Työmarkkinatori – Teatteriohjaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/teatteriohjaaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ohjaaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ohjaaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ohjaaja" }
       ],
     keywords: ["teatteri", "ohjaus", "näytelmä", "esitys", "taide"],
     study_length_estimate_months: 60,
@@ -691,10 +698,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Media-alan TES",
     useful_links: [
-      { name: "Suomen valokuvataiteen museo", url: "https://www.valokuvataiteenmuseo.fi/" },
+      { name: "Suomen valokuvataiteen museo", url: "https://www.valokuvataiteenmuseo.fi/fi" },
       { name: "Opintopolku - Valokuvaaja", url: "https://opintopolku.fi/konfo/fi/haku/Valokuvaaja" },
     
-      { name: "Työmarkkinatori – Valokuvaaja", url: "https://tyomarkkinatori.fi/ammatit/valokuvaaja" }
+      { name: "Työmarkkinatori – Valokuvaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/valokuvaaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Valokuvaaja" }
       ],
     keywords: ["valokuvaus", "kamera", "kuvankäsittely", "taide", "mainoskuvaus"],
     study_length_estimate_months: 36,
@@ -778,7 +786,8 @@ export const careersData: CareerFI[] = [
       { name: "Teatterin tiedotuskeskus", url: "https://www.tinfo.fi/" },
       { name: "Opintopolku - Pukusuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Pukusuunnittelija" },
     
-      { name: "Työmarkkinatori – Pukusuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/pukusuunnittelija" }
+      { name: "Työmarkkinatori – Pukusuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/pukusuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Puvustaja" }
       ],
     keywords: ["pukusuunnittelu", "teatteri", "elokuva", "muoti", "historia"],
     study_length_estimate_months: 48,
@@ -828,12 +837,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3500, 6000],
-      source: { name: "Rakennusalan TES", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusalan TES", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Rakennusalan kysyntä pysyy vakaana, erityisesti asuntorakentamisen ja kunnostusten myötä. Koulutettuja mestareita tarvitaan.",
-      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusliitto", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     entry_roles: [
       "Rakennustyöntekijä",
@@ -859,10 +868,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusalan TES",
     useful_links: [
-      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - Rakennusmestari", url: "https://opintopolku.fi/konfo/fi/haku/Rakennusmestari" },
     
-      { name: "Työmarkkinatori – Rakennusmestari", url: "https://tyomarkkinatori.fi/ammatit/rakennusmestari" }
+      { name: "Työmarkkinatori – Rakennusmestari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rakennusmestari" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rakennusmestari" }
       ],
     keywords: ["rakennus", "johtaminen", "työmaa", "turvallisuus", "projektinhallinta"],
     study_length_estimate_months: 36,
@@ -943,10 +953,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "LVI-alan TES",
     useful_links: [
-      { name: "LVI-liitto", url: "https://www.lviliitto.fi/" },
       { name: "Opintopolku - Putkiasentaja", url: "https://opintopolku.fi/konfo/fi/haku/Putkiasentaja" },
     
-      { name: "Työmarkkinatori – Putkiasentaja", url: "https://tyomarkkinatori.fi/ammatit/putkiasentaja" }
+      { name: "Työmarkkinatori – Putkiasentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/putkiasentaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Putkiasentaja" }
       ],
     keywords: ["putki", "LVI", "lämmitys", "vesijohto", "huolto"],
     study_length_estimate_months: 36,
@@ -996,7 +1006,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2800,
       range: [2200, 3800],
-      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusliitto", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -1027,10 +1037,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Maalausalan TES",
     useful_links: [
-      { name: "Maalausliitto", url: "https://www.maalausliitto.fi/" },
       { name: "Opintopolku - Maalari", url: "https://opintopolku.fi/konfo/fi/haku/Maalari" },
     
-      { name: "Työmarkkinatori – Maalari", url: "https://tyomarkkinatori.fi/ammatit/maalari" }
+      { name: "Työmarkkinatori – Maalari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/maalari" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maalari" }
       ],
     keywords: ["maalaus", "värit", "pintakäsittely", "kunnostus", "viimeistely"],
     study_length_estimate_months: 24,
@@ -1080,7 +1090,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2700, 4500],
-      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusliitto", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -1111,10 +1121,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Kattomestarialan TES",
     useful_links: [
-      { name: "Kattomestariyhdistys", url: "https://www.kattomestariyhdistys.fi/" },
       { name: "Opintopolku - Kattomestari", url: "https://opintopolku.fi/konfo/fi/haku/Kattomestari" },
     
-      { name: "Työmarkkinatori – Kattomestari", url: "https://tyomarkkinatori.fi/ammatit/kattomestari" }
+      { name: "Työmarkkinatori – Kattomestari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kattomestari" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kattomestari" }
       ],
     keywords: ["kattomestari", "katto", "räystäs", "korkea työ", "turvallisuus"],
     study_length_estimate_months: 36,
@@ -1164,7 +1174,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3300,
       range: [2600, 4500],
-      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusliitto", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -1195,10 +1205,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "LVI-alan TES",
     useful_links: [
-      { name: "LVI-liitto", url: "https://www.lvi-liitto.fi/" },
       { name: "Opintopolku - LVI-asentaja", url: "https://opintopolku.fi/konfo/fi/haku/LVI-asentaja" },
     
-      { name: "Työmarkkinatori – LVI-asentaja", url: "https://tyomarkkinatori.fi/ammatit/lvi-asentaja" }
+      { name: "Työmarkkinatori – LVI-asentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lvi-asentaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=LVI-asentaja" }
       ],
     keywords: ["LVI", "lämpö", "vesi", "ilmastointi", "tekniikka"],
     study_length_estimate_months: 36,
@@ -1248,7 +1258,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3000,
       range: [2400, 4000],
-      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusliitto", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -1279,10 +1289,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusalan TES",
     useful_links: [
-      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - Talonrakentaja", url: "https://opintopolku.fi/konfo/fi/haku/Talonrakentaja" },
     
-      { name: "Työmarkkinatori – Talonrakentaja", url: "https://tyomarkkinatori.fi/ammatit/talonrakentaja" }
+      { name: "Työmarkkinatori – Talonrakentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/talonrakentaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Talonrakentaja" }
       ],
     keywords: ["talonrakennus", "rakennus", "työmaa", "asuintalo", "rakentaminen"],
     study_length_estimate_months: 36,
@@ -1332,7 +1343,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3100,
       range: [2500, 4200],
-      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusliitto", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -1363,10 +1374,13 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusalan TES",
     useful_links: [
-      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - Betonityöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Betonity%C3%B6ntekij%C3%A4" },
     
-      { name: "Työmarkkinatori – Betonityöntekijä", url: "https://tyomarkkinatori.fi/ammatit/betonityontekija" }
+      { name: "Työmarkkinatori – Betonityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/betonityontekija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Betonity%C3%B6ntekij%C3%A4" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Betonity%C3%B6ntekij%C3%A4" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Betonity%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["betoni", "valu", "muotti", "raudoitus", "rakennus"],
     study_length_estimate_months: 36,
@@ -1416,7 +1430,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 5000],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -1447,10 +1461,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Kunnallinen TES",
     useful_links: [
-      { name: "Rakennusvalvonta", url: "https://www.rakennusvalvonta.fi/" },
       { name: "Opintopolku - Rakennusvalvoja", url: "https://opintopolku.fi/konfo/fi/haku/Rakennusvalvoja" },
     
-      { name: "Työmarkkinatori – Rakennusvalvoja", url: "https://tyomarkkinatori.fi/ammatit/rakennusvalvoja" }
+      { name: "Työmarkkinatori – Rakennusvalvoja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rakennusvalvoja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rakennusvalvoja" }
       ],
     keywords: ["rakennusvalvonta", "tarkastus", "luvat", "turvallisuus", "laatua"],
     study_length_estimate_months: 48,
@@ -1505,7 +1519,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3500, 6000],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -1536,10 +1550,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Liiketalouden TES",
     useful_links: [
-      { name: "Henkilöstöjohtaminen.fi", url: "https://www.henkilostojohtaminen.fi/" },
       { name: "Opintopolku - Henkilöstöpäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Henkil%C3%B6st%C3%B6p%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Henkilöstöpäällikkö", url: "https://tyomarkkinatori.fi/ammatit/henkilostopaallikko" }
+      { name: "Työmarkkinatori – Henkilöstöpäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/henkilostopaallikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Henkil%C3%B6st%C3%B6p%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["henkilöstöjohtaminen", "rekrytointi", "kehitys", "organisaatio", "työsuhteet"],
     study_length_estimate_months: 36
@@ -1589,7 +1603,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4600,
       range: [3500, 6000],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -1620,10 +1634,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Teollisuuden TES",
     useful_links: [
-      { name: "Tuotantotalous.fi", url: "https://www.tuotantotalous.fi/" },
       { name: "Opintopolku - Tuotantopäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tuotantop%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Tuotantopäällikkö", url: "https://tyomarkkinatori.fi/ammatit/tuotantopaallikko" }
+      { name: "Työmarkkinatori – Tuotantopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotantopaallikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantop%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["tuotantotalous", "laadunhallinta", "johtaminen", "optimointi", "tehokkuus"],
     study_length_estimate_months: 36
@@ -1673,7 +1687,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5000,
       range: [3800, 7000],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -1704,10 +1718,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Liiketalouden TES",
     useful_links: [
-      { name: "Taloushallinto.fi", url: "https://www.taloushallinto.fi/" },
+      { name: "Taloushallinto.fi", url: "https://taloushallintoliitto.fi/" },
       { name: "Opintopolku - Talouspäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Talousp%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Talouspäällikkö", url: "https://tyomarkkinatori.fi/ammatit/talouspaallikko" }
+      { name: "Työmarkkinatori – Talouspäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/talouspaallikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Talousp%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["taloushallinto", "laskentatoimi", "budjetointi", "raportointi", "analyysi"],
     study_length_estimate_months: 36
@@ -1757,7 +1772,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200, 5500],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -1788,10 +1803,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
     union_or_CBA: "Liiketalouden TES",
     useful_links: [
-      { name: "Asiakaspalvelu.fi", url: "https://www.asiakaspalvelu.fi/" },
       { name: "Opintopolku - Asiakaspalvelupäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Asiakaspalvelup%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Asiakaspalvelupäällikkö", url: "https://tyomarkkinatori.fi/ammatit/asiakaspalvelupaallikko" }
+      { name: "Työmarkkinatori – Asiakaspalvelupäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakaspalvelupaallikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaspalvelup%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["asiakaspalvelu", "johtaminen", "kokemus", "prosessit", "tiimityö"],
     study_length_estimate_months: 36
@@ -1872,10 +1887,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "Tietoturva.fi", url: "https://www.tietoturva.fi/" },
       { name: "Opintopolku - Tietoturvapäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tietoturvap%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Tietoturvapäällikkö", url: "https://tyomarkkinatori.fi/ammatit/tietoturvapaallikko" }
+      { name: "Työmarkkinatori – Tietoturvapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietoturvapaallikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietoturvap%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["tietoturva", "kyberturvallisuus", "riskienhallinta", "johtaminen", "teknologia"],
     study_length_estimate_months: 36
@@ -1925,7 +1940,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4300,
       range: [3200, 5800],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -1956,10 +1971,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teollisuuden TES",
     useful_links: [
-      { name: "Laadunhallinta.fi", url: "https://www.laadunhallinta.fi/" },
       { name: "Opintopolku - Laadunpäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Laadunp%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Laadunpäällikkö", url: "https://tyomarkkinatori.fi/ammatit/laadunpaallikko" }
+      { name: "Työmarkkinatori – Laadunpäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/laadunpaallikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laadunp%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["laadunhallinta", "prosessit", "standardit", "sertifikaatit", "optimointi"],
     study_length_estimate_months: 36
@@ -2009,7 +2024,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5400,
       range: [4000, 7500],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -2040,10 +2055,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Kehitysjohtaminen.fi", url: "https://www.kehitysjohtaminen.fi/" },
       { name: "Opintopolku - Kehityspäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Kehitysp%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Kehityspäällikkö", url: "https://tyomarkkinatori.fi/ammatit/kehityspaallikko" }
+      { name: "Työmarkkinatori – Kehityspäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kehityspaallikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kehitysp%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["kehitysjohtaminen", "innovaatio", "projektit", "tutkimus", "strategia"],
     study_length_estimate_months: 36
@@ -2124,10 +2139,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "Data Science Finland", url: "https://www.datasciencefinland.fi/" },
       { name: "Opintopolku - Data-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Data-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Data-insinööri", url: "https://tyomarkkinatori.fi/ammatit/data-insinoori" }
+      { name: "Työmarkkinatori – Data-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/data-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Data-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["data", "ohjelmointi", "cloud", "big data", "analytiikka"],
     study_length_estimate_months: 42
@@ -2204,10 +2219,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Media-alan TES",
     useful_links: [
-      { name: "Peliala.fi", url: "https://www.peliala.fi/" },
       { name: "Opintopolku - Pelisuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Pelisuunnittelija" },
     
-      { name: "Työmarkkinatori – Pelisuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/pelisuunnittelija" }
+      { name: "Työmarkkinatori – Pelisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/pelisuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pelisuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pelisuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pelisuunnittelija" }
       ],
     keywords: ["pelisuunnittelu", "kreatiivisuus", "teknologia", "tarinankerronta", "interaktiivisuus"],
     study_length_estimate_months: 36
@@ -2257,7 +2274,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5200,
       range: [4000, 7000],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -2288,10 +2305,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Robotiikka.fi", url: "https://www.robotiikka.fi/" },
       { name: "Opintopolku - Robotiikka-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Robotiikka-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Robotiikka-insinööri", url: "https://tyomarkkinatori.fi/ammatit/robotiikka-insinoori" }
+      { name: "Työmarkkinatori – Robotiikka-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/robotiikka-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Robotiikka-insin%C3%B6%C3%B6ri" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Robotiikka-insin%C3%B6%C3%B6ri" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Robotiikka-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["robotiikka", "automaatio", "mekatroniikka", "ohjelmointi", "teollisuus"],
     study_length_estimate_months: 42
@@ -2341,7 +2360,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [3600, 6500],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -2372,10 +2391,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Kemian teollisuuden TES",
     useful_links: [
-      { name: "Biotekniikka.fi", url: "https://www.biotekniikka.fi/" },
       { name: "Opintopolku - Biotekniikka-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Biotekniikka-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Biotekniikka-insinööri", url: "https://tyomarkkinatori.fi/ammatit/biotekniikka-insinoori" }
+      { name: "Työmarkkinatori – Biotekniikka-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/biotekniikka-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Biotekniikka-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["biotekniikka", "biologia", "laboratorio", "tutkimus", "lääketeollisuus"],
     study_length_estimate_months: 48
@@ -2425,7 +2444,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5200,
       range: [4000, 7000],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -2456,10 +2475,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Nanotekniikka.fi", url: "https://www.nanotekniikka.fi/" },
       { name: "Opintopolku - Nanotekniikka-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Nanotekniikka-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Nanotekniikka-insinööri", url: "https://tyomarkkinatori.fi/ammatit/nanotekniikka-insinoori" }
+      { name: "Työmarkkinatori – Nanotekniikka-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/nanotekniikka-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Nanotekniikka-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["nanotekniikka", "materiaalitekniikka", "fysiikka", "tutkimus", "innovointi"],
     study_length_estimate_months: 48
@@ -2540,10 +2559,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "Kvanttiteknologia.fi", url: "https://www.kvanttiteknologia.fi/" },
       { name: "Opintopolku - Kvantti-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Kvantti-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Kvantti-insinööri", url: "https://tyomarkkinatori.fi/ammatit/kvantti-insinoori" }
+      { name: "Työmarkkinatori – Kvantti-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kvantti-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kvantti-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["kvanttiteknologia", "kvanttifysiikka", "ohjelmointi", "algoritmit", "tutkimus"],
     study_length_estimate_months: 48
@@ -2624,10 +2643,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "Blockchain Finland", url: "https://www.blockchainfinland.fi/" },
       { name: "Opintopolku - Blockchain-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Blockchain-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Blockchain-insinööri", url: "https://tyomarkkinatori.fi/ammatit/blockchain-insinoori" }
+      { name: "Työmarkkinatori – Blockchain-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/blockchain-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Blockchain-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["blockchain", "kryptografia", "ohjelmointi", "Web3", "hajautetut järjestelmät"],
     study_length_estimate_months: 42
@@ -2704,10 +2723,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "VR Finland", url: "https://www.vrfinland.fi/" },
       { name: "Opintopolku - Virtuaalitodellisuus-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Virtuaalitodellisuus-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Virtuaalitodellisuus-insinööri", url: "https://tyomarkkinatori.fi/ammatit/virtuaalitodellisuus-insinoori" }
+      { name: "Työmarkkinatori – Virtuaalitodellisuus-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/virtuaalitodellisuus-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Virtuaalitodellisuus-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["VR", "AR", "virtuaalitodellisuus", "3D", "immersiivinen"],
     study_length_estimate_months: 42
@@ -2757,7 +2776,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4900,
       range: [3700, 6500],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -2788,10 +2807,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Automaatio.fi", url: "https://www.automaatio.fi/" },
       { name: "Opintopolku - Automaatio-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Automaatio-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Automaatio-insinööri", url: "https://tyomarkkinatori.fi/ammatit/automaatio-insinoori" }
+      { name: "Työmarkkinatori – Automaatio-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/automaatio-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Automaatio-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["automaatio", "PLC", "robotiikka", "IoT", "teollisuus"],
     study_length_estimate_months: 42
@@ -2841,12 +2860,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3500,
       range: [2800, 4500],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Sairaanhoitajien kysyntä kasvaa ikääntyvän väestön ja terveydenhuollon kehityksen myötä.",
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     entry_roles: [
       "Sairaanhoitaja",
@@ -2874,10 +2893,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Sairaanhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Sairaanhoitaja" },
     
-      { name: "Työmarkkinatori – Sairaanhoitaja", url: "https://tyomarkkinatori.fi/ammatit/sairaanhoitaja" }
+      { name: "Työmarkkinatori – Sairaanhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sairaanhoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sairaanhoitaja" }
       ],
     keywords: ["sairaanhoito", "terveys", "potilaat", "hoito", "kuntoutus"],
     study_length_estimate_months: 42
@@ -2926,12 +2946,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2800, 3800],
-      source: { name: "Tehy – Bioanalyytikon palkka", url: "https://www.tehy.fi/fi/tehylaisten-palkat/bioanalyytikon-palkka", year: 2024 }
+      source: { name: "Tehy – Bioanalyytikon palkka", url: "https://www.tehy.fi/fifi/tehylaisten-palkat/bioanalyytikon-palkka", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Laboratoriopalveluiden kysyntä kasvaa väestön ikääntyessä ja diagnostiikan kehittyessä.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/bioanalyytikko", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/bioanalyytikko", year: 2025 }
     },
     entry_roles: [
       "Bioanalyytikko",
@@ -2957,8 +2977,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Työmarkkinatori – Bioanalyytikko", url: "https://tyomarkkinatori.fi/ammatit/bioanalyytikko" },
-      { name: "Opintopolku – Bioanalyytikko", url: "https://opintopolku.fi/konfo/fi/haku/bioanalyytikko" }
+      { name: "Työmarkkinatori – Bioanalyytikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/bioanalyytikko" },
+      { name: "Opintopolku – Bioanalyytikko", url: "https://opintopolku.fi/konfo/fi/haku/bioanalyytikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Bioanalyytikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Bioanalyytikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Bioanalyytikko" }
     ],
     keywords: ["laboratorio", "diagnostiikka", "analytiikka", "näytteenotto", "terveydenhuolto"],
     study_length_estimate_months: 42
@@ -3007,12 +3030,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [3100, 4100],
-      source: { name: "Tehy – Terveydenhoitajan palkka", url: "https://www.tehy.fi/fi/tehylaisten-palkat/terveydenhoitajan-palkka", year: 2024 }
+      source: { name: "Tehy – Terveydenhoitajan palkka", url: "https://www.tehy.fi/fifi/tehylaisten-palkat/terveydenhoitajan-palkka", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Hyvinvointialueet panostavat ennaltaehkäisevään työhön ja kouluterveydenhuollon resursseihin.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/kouluterveydenhoitaja", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kouluterveydenhoitaja", year: 2025 }
     },
     entry_roles: [
       "Kouluterveydenhoitaja",
@@ -3038,8 +3061,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Työmarkkinatori – Kouluterveydenhoitaja", url: "https://tyomarkkinatori.fi/ammatit/kouluterveydenhoitaja" },
-      { name: "Opintopolku – Terveydenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/terveydenhoitaja" }
+      { name: "Työmarkkinatori – Kouluterveydenhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kouluterveydenhoitaja" },
+      { name: "Opintopolku – Terveydenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/terveydenhoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kouluterveydenhoitaja" }
     ],
     keywords: ["oppilashuolto", "ennaltaehkäisy", "nuoret", "terveyskasvatus", "hyvinvointi"],
     study_length_estimate_months: 42
@@ -3088,12 +3112,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2650,
       range: [2400, 3100],
-      source: { name: "Tehy – Lähihoitajan palkka", url: "https://www.tehy.fi/fi/tehylaisten-palkat/lahihoitajan-palkka", year: 2024 }
+      source: { name: "Tehy – Lähihoitajan palkka", url: "https://www.tehy.fi/fifi/tehylaisten-palkat/lahihoitajan-palkka", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kotihoidon tarve kasvaa nopeasti väestön ikääntyessä ja palveluiden painopisteen siirtyessä kotiin.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/kotihoitaja", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kotihoitaja", year: 2025 }
     },
     entry_roles: [
       "Kotihoitaja",
@@ -3119,8 +3143,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "SuPer",
     useful_links: [
-      { name: "Työmarkkinatori – Kotihoitaja", url: "https://tyomarkkinatori.fi/ammatit/kotihoitaja" },
-      { name: "Opintopolku – Lähihoitaja", url: "https://opintopolku.fi/konfo/fi/haku/l%C3%A4hihoitaja" }
+      { name: "Työmarkkinatori – Kotihoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kotihoitaja" },
+      { name: "Opintopolku – Lähihoitaja", url: "https://opintopolku.fi/konfo/fi/haku/l%C3%A4hihoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kotihoitaja" }
     ],
     keywords: ["kotihoito", "vanhuspalvelut", "hoiva", "asiakaslähtöisyys", "liikkuva työ"],
     study_length_estimate_months: 36
@@ -3169,12 +3194,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [3000, 4100],
-      source: { name: "Tehy – Ravitsemusterapeutin palkka", url: "https://www.tehy.fi/fi/tehylaisten-palkat/ravitsemusterapeutti", year: 2024 }
+      source: { name: "Tehy – Ravitsemusterapeutin palkka", url: "https://www.tehy.fi/fifi/tehylaisten-palkat/ravitsemusterapeutti", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Hyvinvointialueet ja ruokapalvelut hakevat ravitsemusasiantuntijoita terveellisten ja kestävien ruokavalioiden edistämiseen.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/ravitsemusasiantuntija", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ravitsemusasiantuntija", year: 2025 }
     },
     entry_roles: [
       "Ravitsemusasiantuntija",
@@ -3200,8 +3225,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Työmarkkinatori – Ravitsemusasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/ravitsemusasiantuntija" },
-      { name: "Opintopolku – Ravitsemustiede", url: "https://opintopolku.fi/konfo/fi/haku/ravitsemustiede" }
+      { name: "Työmarkkinatori – Ravitsemusasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ravitsemusasiantuntija" },
+      { name: "Opintopolku – Ravitsemustiede", url: "https://opintopolku.fi/konfo/fi/haku/ravitsemustiede" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ravitsemusasiantuntija" }
     ],
     keywords: ["ravitsemus", "hyvinvointi", "ruokapalvelut", "terveysviestintä", "kestävä ruokavalio"],
     study_length_estimate_months: 60
@@ -3255,7 +3281,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Organisaatiot panostavat mielenterveyteen, työkykyyn ja muutostilanteiden tukeen.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/tyopsykologi", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tyopsykologi", year: 2025 }
     },
     entry_roles: [
       "Työpsykologi",
@@ -3281,8 +3307,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Psykologiliitto",
     useful_links: [
-      { name: "Työmarkkinatori – Työpsykologi", url: "https://tyomarkkinatori.fi/ammatit/tyopsykologi" },
-      { name: "Opintopolku – Psykologi", url: "https://opintopolku.fi/konfo/fi/haku/psykologi" }
+      { name: "Työmarkkinatori – Työpsykologi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tyopsykologi" },
+      { name: "Opintopolku – Psykologi", url: "https://opintopolku.fi/konfo/fi/haku/psykologi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ty%C3%B6psykologi" }
     ],
     keywords: ["työhyvinvointi", "psykologia", "organisaatiokehitys", "valmennus", "muutosjohtaminen"],
     study_length_estimate_months: 72
@@ -3336,7 +3363,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Poliisien rekrytointi pysyy tasaisena, mutta osa-alueilla on tarvetta uusille osaajille.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/poliisi", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/poliisi", year: 2025 }
     },
     entry_roles: [
       "Vanhempi konstaapeli",
@@ -3362,9 +3389,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Poliisiammattijärjestö",
     useful_links: [
-      { name: "Työmarkkinatori – Poliisi", url: "https://tyomarkkinatori.fi/ammatit/poliisi" },
-      { name: "Poliisi.fi – Poliisikoulutus", url: "https://www.poliisi.fi/ammattilaiseksi/poliisikoulutus" },
-      { name: "Opintopolku – Poliisi", url: "https://opintopolku.fi/konfo/fi/haku/poliisi" }
+      { name: "Työmarkkinatori – Poliisi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/poliisi" },
+      { name: "Poliisiammattikorkeakoulu", url: "https://polamk.fi/hakeminen" },
+      { name: "Opintopolku – Poliisi", url: "https://opintopolku.fi/konfo/fi/haku/poliisi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Poliisi" }
     ],
     keywords: ["turvallisuus", "järjestys", "rikostorjunta", "kenttätyö", "viranomais työ"],
     study_length_estimate_months: 30
@@ -3418,7 +3446,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Rikostutkijoita tarvitaan erityisesti talous- ja kyberrikollisuuden torjunnassa.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/rikostutkija", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rikostutkija", year: 2025 }
     },
     entry_roles: [
       "Rikostutkija",
@@ -3444,9 +3472,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Poliisiammattijärjestö",
     useful_links: [
-      { name: "Työmarkkinatori – Rikostutkija", url: "https://tyomarkkinatori.fi/ammatit/rikostutkija" },
+      { name: "Työmarkkinatori – Rikostutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rikostutkija" },
       { name: "Opintopolku – Poliisi (perustutkinto)", url: "https://opintopolku.fi/konfo/fi/haku/poliisi" },
-      { name: "Poliisi.fi – Rikostutkijan ura", url: "https://www.poliisi.fi/ammattilaiseksi/rikostutkija" }
+      { name: "Poliisiammattikorkeakoulu", url: "https://polamk.fi/hakeminen" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rikostutkija" }
     ],
     keywords: ["rikostutkinta", "forensiikka", "todisteet", "analyysi", "oikeus"],
     study_length_estimate_months: 36
@@ -3500,7 +3529,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Puolustusvoimat rekrytoi jatkuvasti sopimussotilaita ja erikoisosaajia vahvistaakseen valmiutta.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/sotilas", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sotilas", year: 2025 }
     },
     entry_roles: [
       "Sopimussotilas",
@@ -3526,9 +3555,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "Julkisalan koulutettujen neuvottelujärjestö (JUKO) / Pääesikunta",
     useful_links: [
-      { name: "Työmarkkinatori – Sotilas", url: "https://tyomarkkinatori.fi/ammatit/sotilas" },
-      { name: "Puolustusvoimat – Ura", url: "https://puolustusvoimat.fi/ura" },
-      { name: "Opintopolku – Maanpuolustus", url: "https://opintopolku.fi/konfo/fi/haku/maanpuolustus" }
+      { name: "Työmarkkinatori – Sotilas", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sotilas" },
+      { name: "Opintopolku – Maanpuolustus", url: "https://opintopolku.fi/konfo/fi/haku/maanpuolustus" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sotilas" }
     ],
     keywords: ["puolustus", "kenttätyö", "valmius", "kansainväliset tehtävät", "johtaminen"],
     study_length_estimate_months: 18
@@ -3582,7 +3611,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Upseereita tarvitaan sekä kotimaan valmiuteen että kansainvälisiin tehtäviin.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/upseeri", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/upseeri", year: 2025 }
     },
     entry_roles: [
       "Kadetti",
@@ -3608,9 +3637,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Upseeriliitto",
     useful_links: [
-      { name: "Työmarkkinatori – Upseeri", url: "https://tyomarkkinatori.fi/ammatit/upseeri" },
-      { name: "Puolustusvoimat – Kadettikoulu", url: "https://maanpuolustuskorkeakoulu.fi/kadettikurssi" },
-      { name: "Opintopolku – Upseerikoulutus", url: "https://opintopolku.fi/konfo/fi/haku/upseeri" }
+      { name: "Työmarkkinatori – Upseeri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/upseeri" },
+      { name: "Opintopolku – Upseerikoulutus", url: "https://opintopolku.fi/konfo/fi/haku/upseeri" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Upseeri" }
     ],
     keywords: ["johtaminen", "puolustus", "strategia", "operaatiot", "kriisinhallinta"],
     study_length_estimate_months: 48
@@ -3664,7 +3693,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitalisaatio ja asiakasdatan hyödyntäminen lisäävät markkinointisuunnittelijoiden tarvetta.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/markkinointisuunnittelija", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/markkinointisuunnittelija", year: 2025 }
     },
     entry_roles: [
       "Markkinointisuunnittelija",
@@ -3690,8 +3719,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro / Markkinointialan TES",
     useful_links: [
-      { name: "Työmarkkinatori – Markkinointisuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/markkinointisuunnittelija" },
-      { name: "Opintopolku – Liiketalous (AMK)", url: "https://opintopolku.fi/konfo/fi/haku/liiketalous" }
+      { name: "Työmarkkinatori – Markkinointisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/markkinointisuunnittelija" },
+      { name: "Opintopolku – Liiketalous (AMK)", url: "https://opintopolku.fi/konfo/fi/haku/liiketalous" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Markkinointisuunnittelija" }
     ],
     keywords: ["markkinointi", "data", "kampanjat", "digitaalinen", "strategia"],
     study_length_estimate_months: 42
@@ -3745,7 +3775,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Hyvinvointialueet ja kunnat panostavat ennaltaehkäisevään liikuntaneuvontaan.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/liikunnanohjaaja", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liikunnanohjaaja", year: 2025 }
     },
     entry_roles: [
       "Liikuntaneuvoja",
@@ -3771,8 +3801,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "PAM / Liikunta-alan TES",
     useful_links: [
-      { name: "Työmarkkinatori – Liikunnanohjaaja", url: "https://tyomarkkinatori.fi/ammatit/liikuntaneuvoja" },
-      { name: "Opintopolku – Liikunnanohjaaja", url: "https://opintopolku.fi/konfo/fi/haku/liikunnanohjaaja" }
+      { name: "Työmarkkinatori – Liikunnanohjaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liikuntaneuvoja" },
+      { name: "Opintopolku – Liikunnanohjaaja", url: "https://opintopolku.fi/konfo/fi/haku/liikunnanohjaaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liikuntaneuvoja" }
     ],
     keywords: ["liikunta", "hyvinvointi", "ohjaus", "valmennus", "ennaltaehkäisy"],
     study_length_estimate_months: 36
@@ -3821,12 +3852,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [3000, 4200],
-      source: { name: "Suomen Fysioterapeutit – Palkkasuositus", url: "https://www.fysioterapeutit.fi/tyo-ja-palkka/palkkasuositukset/", year: 2024 }
+      source: { name: "Suomen Fysioterapeutit – Palkkasuositus", url: "https://www.suomenfysioterapeutit.fi/tyo-ja-palkka/palkkasuositukset/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Ikääntyminen ja liikuntaan perustuva kuntoutus lisäävät liikuntaterapeuttien tarvetta.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/liikuntaterapeutti", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liikuntaterapeutti", year: 2025 }
     },
     entry_roles: [
       "Liikuntaterapeutti",
@@ -3852,8 +3883,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy / Fysioterapeuttien TES",
     useful_links: [
-      { name: "Työmarkkinatori – Liikuntaterapeutti", url: "https://tyomarkkinatori.fi/ammatit/liikuntaterapeutti" },
-      { name: "Opintopolku – Liikuntaterapeutti", url: "https://opintopolku.fi/konfo/fi/haku/liikuntaterapeutti" }
+      { name: "Työmarkkinatori – Liikuntaterapeutti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liikuntaterapeutti" },
+      { name: "Opintopolku – Liikuntaterapeutti", url: "https://opintopolku.fi/konfo/fi/haku/liikuntaterapeutti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liikuntaterapeutti" }
     ],
     keywords: ["kuntoutus", "liikuntalääketiede", "hyvinvointi", "ohjaus", "erityisryhmät"],
     study_length_estimate_months: 48
@@ -3902,12 +3934,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 8200,
       range: [6500, 11000],
-      source: { name: "EK – Johtajien palkkatilasto", url: "https://www.ek.fi/wp-content/uploads/2024/01/ek-johtajien-palkkatilasto-2023.pdf", year: 2024 }
+      source: { name: "EK – Johtajien palkkatilasto", url: "https://ek.fi/wp-content/uploads/2024/01/ek-johtajien-palkkatilasto-2023.pdf", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Kokeneille liiketoimintajohtajille on tarvetta erityisesti kasvuyrityksissä ja kansainvälisillä markkinoilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/liiketoimintajohtaja", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liiketoimintajohtaja", year: 2025 }
     },
     entry_roles: [
       "Liiketalousjohtaja",
@@ -3933,8 +3965,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "EK:n johto- ja asiantuntijasopimukset",
     useful_links: [
-      { name: "Työmarkkinatori – Liiketoimintajohtaja", url: "https://tyomarkkinatori.fi/ammatit/liiketalousjohtaja" },
-      { name: "Opintopolku – Kauppatieteet", url: "https://opintopolku.fi/konfo/fi/haku/kauppatieteet" }
+      { name: "Työmarkkinatori – Liiketoimintajohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liiketalousjohtaja" },
+      { name: "Opintopolku – Kauppatieteet", url: "https://opintopolku.fi/konfo/fi/haku/kauppatieteet" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketalousjohtaja" }
     ],
     keywords: ["johtaminen", "strategia", "talous", "kasvu", "investoinnit"],
     study_length_estimate_months: 72
@@ -3988,7 +4021,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Yrityspalvelut ja kasvuyrittäjyys lisäävät kysyntää kokeneille neuvonantajille.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/yritysneuvoja", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/yritysneuvoja", year: 2025 }
     },
     entry_roles: [
       "Yritysneuvoja",
@@ -4014,8 +4047,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro / Asiantuntijatyön TES",
     useful_links: [
-      { name: "Työmarkkinatori – Yritysneuvoja", url: "https://tyomarkkinatori.fi/ammatit/yritysneuvoja" },
-      { name: "Opintopolku – Kauppatieteet", url: "https://opintopolku.fi/konfo/fi/haku/kauppatieteet" }
+      { name: "Työmarkkinatori – Yritysneuvoja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/yritysneuvoja" },
+      { name: "Opintopolku – Kauppatieteet", url: "https://opintopolku.fi/konfo/fi/haku/kauppatieteet" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Yritysneuvoja" }
     ],
     keywords: ["yrityskehitys", "rahoitus", "neuvonta", "kasvu", "verkostot"],
     study_length_estimate_months: 60
@@ -4069,7 +4103,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitaalinen markkinointi ja omien kanavien sisällöntuotanto lisäävät kysyntää sisältöammattilaisille.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/sisaltotuottaja", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sisaltotuottaja", year: 2025 }
     },
     entry_roles: [
       "Sisältötuottaja",
@@ -4095,8 +4129,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro / Viestintäalan TES",
     useful_links: [
-      { name: "Työmarkkinatori – Sisältötuottaja", url: "https://tyomarkkinatori.fi/ammatit/sisaltotuottaja" },
-      { name: "Opintopolku – Viestintä", url: "https://opintopolku.fi/konfo/fi/haku/viestinta" }
+      { name: "Työmarkkinatori – Sisältötuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sisaltotuottaja" },
+      { name: "Opintopolku – Viestintä", url: "https://opintopolku.fi/konfo/fi/haku/viestinta" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4lt%C3%B6tuottaja" }
     ],
     keywords: ["sisältö", "viestintä", "tarinankerronta", "digitaalinen", "markkinointi"],
     study_length_estimate_months: 42
@@ -4150,7 +4185,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "B2B-palvelujen ja kasvuyritysten myynnissä tarvitaan kokeneita myyntijohtajia.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/myyntipaallikko", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/myyntipaallikko", year: 2025 }
     },
     entry_roles: [
       "Myyntipäällikkö",
@@ -4176,8 +4211,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Palta / Johto ja asiantuntijatyö",
     useful_links: [
-      { name: "Työmarkkinatori – Myyntipäällikkö", url: "https://tyomarkkinatori.fi/ammatit/myyntipaallikko" },
-      { name: "Opintopolku – Liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/liiketalous" }
+      { name: "Työmarkkinatori – Myyntipäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/myyntipaallikko" },
+      { name: "Opintopolku – Liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/liiketalous" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Myyntip%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["myynti", "johtaminen", "asiakashallinta", "kasvu", "strategia"],
     study_length_estimate_months: 60
@@ -4231,7 +4267,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitalisaatio ja tekoälyratkaisut lisäävät ohjelmistokehittäjien kysyntää kaikilla toimialoilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/ohjelmistokehittaja", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ohjelmistokehittaja", year: 2025 }
     },
     entry_roles: [
       "Ohjelmistokehittäjä",
@@ -4257,8 +4293,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietoala ry / Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Työmarkkinatori – Ohjelmistokehittäjä", url: "https://tyomarkkinatori.fi/ammatit/ohjelmistokehittaja" },
-      { name: "Opintopolku – Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/tietojenk%C3%A4sittely" }
+      { name: "Työmarkkinatori – Ohjelmistokehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ohjelmistokehittaja" },
+      { name: "Opintopolku – Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/tietojenk%C3%A4sittely" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ohjelmistokehitt%C3%A4j%C3%A4" }
     ],
     keywords: ["ohjelmointi", "ketterä", "pilvi", "devops", "tuotekehitys"],
     study_length_estimate_months: 48
@@ -4312,7 +4349,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Tekoälyratkaisut laajenevat julkiselle sektorille ja yrityksiin, mikä kasvattaa asiantuntijatarvetta.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/tekoalyasiantuntija", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tekoalyasiantuntija", year: 2025 }
     },
     entry_roles: [
       "Tekoälyasiantuntija",
@@ -4338,8 +4375,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietoala ry",
     useful_links: [
-      { name: "Työmarkkinatori – Tekoälyasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/tekoalyasiantuntija" },
-      { name: "Opintopolku – Tekoäly", url: "https://opintopolku.fi/konfo/fi/haku/teko%C3%A4ly" }
+      { name: "Työmarkkinatori – Tekoälyasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tekoalyasiantuntija" },
+      { name: "Opintopolku – Tekoäly", url: "https://opintopolku.fi/konfo/fi/haku/teko%C3%A4ly" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teko%C3%A4lyasiantuntija" }
     ],
     keywords: ["tekoäly", "machine learning", "data", "automaatio", "analytiikka"],
     study_length_estimate_months: 60
@@ -4393,7 +4431,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Pilvisiirtymät ja integraatiotarpeet lisäävät kokeneiden arkkitehtien kysyntää.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/tietojarjestelma-arkkitehti", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietojarjestelma-arkkitehti", year: 2025 }
     },
     entry_roles: [
       "Tietojärjestelmäarkkitehti",
@@ -4419,8 +4457,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tietoala ry",
     useful_links: [
-      { name: "Työmarkkinatori – Tietojärjestelmäarkkitehti", url: "https://tyomarkkinatori.fi/ammatit/tietojarjestelma-arkkitehti" },
-      { name: "Opintopolku – Tietojärjestelmät", url: "https://opintopolku.fi/konfo/fi/haku/tietoj%C3%A4rjestelm%C3%A4t" }
+      { name: "Työmarkkinatori – Tietojärjestelmäarkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietojarjestelma-arkkitehti" },
+      { name: "Opintopolku – Tietojärjestelmät", url: "https://opintopolku.fi/konfo/fi/haku/tietoj%C3%A4rjestelm%C3%A4t" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietoj%C3%A4rjestelm%C3%A4arkkitehti" }
     ],
     keywords: ["arkkitehtuuri", "pilvi", "integraatio", "tietoturva", "strategia"],
     study_length_estimate_months: 66
@@ -4474,7 +4513,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Digipalveluiden saavutettavuus- ja UX-vaatimukset lisäävät verkkosuunnittelijoiden kysyntää.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/verkkosuunnittelija", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/verkkosuunnittelija", year: 2025 }
     },
     entry_roles: [
       "Verkkosuunnittelija",
@@ -4500,8 +4539,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Grafinet / Pro",
     useful_links: [
-      { name: "Työmarkkinatori – Verkkosuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/verkkosuunnittelija" },
-      { name: "Opintopolku – UX", url: "https://opintopolku.fi/konfo/fi/haku/ux" }
+      { name: "Työmarkkinatori – Verkkosuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/verkkosuunnittelija" },
+      { name: "Opintopolku – UX", url: "https://opintopolku.fi/konfo/fi/haku/ux" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Verkkosuunnittelija" }
     ],
     keywords: ["ux", "ui", "design", "saavutettavuus", "prototypointi"],
     study_length_estimate_months: 48
@@ -4550,12 +4590,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4300,
       range: [3600, 5600],
-      source: { name: "Akava – Tutkijoiden palkat", url: "https://www.akava.fi/palkat", year: 2024 }
+      source: { name: "Akava – Tutkijoiden palkat", url: "https://akava.fi/palkat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Fysiikan osaajia tarvitaan energia-, teknologia- ja tutkimussektoreilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/fyysikko", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/fyysikko", year: 2025 }
     },
     entry_roles: [
       "Tutkija",
@@ -4581,8 +4621,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Professoriliitto / Yksityisen tutkimussektorin TES",
     useful_links: [
-      { name: "Työmarkkinatori – Fyysikko", url: "https://tyomarkkinatori.fi/ammatit/fyysikko" },
-      { name: "Opintopolku – Fysiikka", url: "https://opintopolku.fi/konfo/fi/haku/fysiikka" }
+      { name: "Työmarkkinatori – Fyysikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/fyysikko" },
+      { name: "Opintopolku – Fysiikka", url: "https://opintopolku.fi/konfo/fi/haku/fysiikka" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Fyysikko" }
     ],
     keywords: ["fysiikka", "tutkimus", "mallinnus", "energia", "kvantti"],
     study_length_estimate_months: 60
@@ -4636,7 +4677,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Data-analytiikan ja finanssialan tarpeet kasvattavat matemaatikkojen kysyntää.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/matemaatikko", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/matemaatikko", year: 2025 }
     },
     entry_roles: [
       "Matemaatikko",
@@ -4662,8 +4703,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Suomen Ekonomit / Julkisen alan TES",
     useful_links: [
-      { name: "Työmarkkinatori – Matemaatikko", url: "https://tyomarkkinatori.fi/ammatit/matemaatikko" },
-      { name: "Opintopolku – Matematiikka", url: "https://opintopolku.fi/konfo/fi/haku/matematiikka" }
+      { name: "Työmarkkinatori – Matemaatikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/matemaatikko" },
+      { name: "Opintopolku – Matematiikka", url: "https://opintopolku.fi/konfo/fi/haku/matematiikka" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Matemaatikko" }
     ],
     keywords: ["matematiikka", "tilastot", "mallinnus", "optimointi", "data"],
     study_length_estimate_months: 60
@@ -4717,7 +4759,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Luonnon monimuotoisuuden seuranta ja vihreä siirtymä lisäävät biologien kysyntää.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/biologi", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/biologi", year: 2025 }
     },
     entry_roles: [
       "Biologi",
@@ -4743,8 +4785,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Luonnontieteilijät ry",
     useful_links: [
-      { name: "Työmarkkinatori – Biologi", url: "https://tyomarkkinatori.fi/ammatit/biologi" },
-      { name: "Opintopolku – Biologia", url: "https://opintopolku.fi/konfo/fi/haku/biologia" }
+      { name: "Työmarkkinatori – Biologi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/biologi" },
+      { name: "Opintopolku – Biologia", url: "https://opintopolku.fi/konfo/fi/haku/biologia" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Biologi" }
     ],
     keywords: ["biologia", "ympäristö", "ekologia", "laboratorio", "biodiversiteetti"],
     study_length_estimate_months: 60
@@ -4798,7 +4841,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Kestävän ruokajärjestelmän kehittäminen lisää elintarviketutkijoiden tarvetta.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/elintarviketutkija", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/elintarviketutkija", year: 2025 }
     },
     entry_roles: [
       "Elintarviketutkija",
@@ -4824,8 +4867,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Luonnontieteilijät ry / Elintarvikealan TES",
     useful_links: [
-      { name: "Työmarkkinatori – Elintarviketutkija", url: "https://tyomarkkinatori.fi/ammatit/elintarviketutkija" },
-      { name: "Opintopolku – Elintarviketiede", url: "https://opintopolku.fi/konfo/fi/haku/elintarviketiede" }
+      { name: "Työmarkkinatori – Elintarviketutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/elintarviketutkija" },
+      { name: "Opintopolku – Elintarviketiede", url: "https://opintopolku.fi/konfo/fi/haku/elintarviketiede" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Elintarviketutkija" }
     ],
     keywords: ["elintarvikkeet", "ravitsemus", "tuotekehitys", "turvallisuus", "innovaatio"],
     study_length_estimate_months: 60
@@ -4874,12 +4918,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6200,
       range: [4500, 9200],
-      source: { name: "Asianajajaliitto – Palkkatutkimus", url: "https://www.asianajajaliitto.fi/fi/asianajaja/palkkatutkimus", year: 2024 }
+      source: { name: "Asianajajaliitto – Palkkatutkimus", url: "https://asianajajat.fi/fi/asianajaja/palkkatutkimus", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Yritysjuridiikan, riidanratkaisun ja perheoikeuden kysyntä pitää asianajajien tarpeen vakaana.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/asianajaja", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asianajaja", year: 2025 }
     },
     entry_roles: [
       "Asianajaja",
@@ -4905,8 +4949,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Asianajajaliitto",
     useful_links: [
-      { name: "Työmarkkinatori – Asianajaja", url: "https://tyomarkkinatori.fi/ammatit/asianajaja" },
-      { name: "Opintopolku – Oikeustiede", url: "https://opintopolku.fi/konfo/fi/haku/oikeustiede" }
+      { name: "Työmarkkinatori – Asianajaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asianajaja" },
+      { name: "Opintopolku – Oikeustiede", url: "https://opintopolku.fi/konfo/fi/haku/oikeustiede" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asianajaja" }
     ],
     keywords: ["juridiikka", "oikeus", "sopimukset", "riidanratkaisu", "asiakastyö"],
     study_length_estimate_months: 72
@@ -4959,7 +5004,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Virkoja on rajallinen määrä, täytetään eläköitymisen myötä erittäin kokeneilla juristeilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/oikeusneuvos", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/oikeusneuvos", year: 2025 }
     },
     entry_roles: [
       "Oikeusneuvos",
@@ -4983,7 +5028,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tuomariliitto",
     useful_links: [
       { name: "Opintopolku – Oikeustiede (OTM)", url: "https://opintopolku.fi/konfo/fi/haku/oikeustiede" },
-      { name: "Työmarkkinatori – Oikeusneuvos", url: "https://tyomarkkinatori.fi/ammatit/oikeusneuvos" }
+      { name: "Työmarkkinatori – Oikeusneuvos", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/oikeusneuvos" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Oikeusneuvos" }
     ],
     keywords: ["tuomari", "ennakkopäätös", "oikeusjärjestelmä", "lainsäädäntö", "johtaminen"],
     study_length_estimate_months: 180
@@ -5037,7 +5083,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Tuomioistuimet ja viranomaiset tarvitsevat jatkuvasti notaaritason valmistelijoita.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/notaari", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/notaari", year: 2025 }
     },
     entry_roles: [
       "Notaari",
@@ -5063,8 +5109,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Julkisalan koulutettujen neuvottelujärjestö (JUKO)",
     useful_links: [
-      { name: "Työmarkkinatori – Notaari", url: "https://tyomarkkinatori.fi/ammatit/notaari" },
-      { name: "Opintopolku – Oikeustiede", url: "https://opintopolku.fi/konfo/fi/haku/oikeustiede" }
+      { name: "Työmarkkinatori – Notaari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/notaari" },
+      { name: "Opintopolku – Oikeustiede", url: "https://opintopolku.fi/konfo/fi/haku/oikeustiede" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Notaari" }
     ],
     keywords: ["oikeus", "tuomioistuin", "valmistelu", "asiakirjat", "julkishallinto"],
     study_length_estimate_months: 48
@@ -5118,7 +5165,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Painetun ja digitaalisen julkaisutoiminnan yhdistyminen pitää kustannustoimittajien tarpeen vakaana.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/ammatit/kustannustoimittaja", year: 2025 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kustannustoimittaja", year: 2025 }
     },
     entry_roles: [
       "Kustannustoimittaja",
@@ -5144,8 +5191,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro / Viestintäalan TES",
     useful_links: [
-      { name: "Työmarkkinatori – Kustannustoimittaja", url: "https://tyomarkkinatori.fi/ammatit/kustannustoimittaja" },
-      { name: "Opintopolku – Julkaisu- ja viestintäala", url: "https://opintopolku.fi/konfo/fi/haku/julkaisu" }
+      { name: "Työmarkkinatori – Kustannustoimittaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kustannustoimittaja" },
+      { name: "Opintopolku – Julkaisu- ja viestintäala", url: "https://opintopolku.fi/konfo/fi/haku/julkaisu" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kustannustoimittaja" }
     ],
     keywords: ["kustannustoiminta", "kirjallisuus", "editointi", "projektinhallinta", "julkaisu"],
     study_length_estimate_months: 48
@@ -5225,7 +5273,8 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Luokanopettaja", url: "https://opintopolku.fi/konfo/fi/haku/Luokanopettaja" },
     
-      { name: "Työmarkkinatori – Luokanopettaja", url: "https://tyomarkkinatori.fi/ammatit/luokanopettaja" }
+      { name: "Työmarkkinatori – Luokanopettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/luokanopettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luokanopettaja" }
       ],
     keywords: ["opetus", "koulu", "lapset", "pedagogiikka", "kasvatus"],
     study_length_estimate_months: 60
@@ -5306,10 +5355,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "JHL",
     useful_links: [
-      { name: "Sosiaalityöntekijät", url: "https://www.sosiaalityontyekijat.fi/" },
       { name: "Opintopolku - Sosiaalityöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Sosiaality%C3%B6ntekij%C3%A4" },
     
-      { name: "Työmarkkinatori – Sosiaalityöntekijä", url: "https://tyomarkkinatori.fi/ammatit/sosiaalityontekija" }
+      { name: "Työmarkkinatori – Sosiaalityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sosiaalityontekija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaality%C3%B6ntekij%C3%A4" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalityontekija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalityontekija" }
       ],
     keywords: ["sosiaalityö", "perheet", "lapset", "hyvinvointi", "tuki"],
     study_length_estimate_months: 42
@@ -5359,7 +5410,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200, 5500],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -5386,10 +5437,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Psykologit", url: "https://www.psykologit.fi/" },
+      { name: "Psykologit", url: "https://www.psyli.fi/" },
       { name: "Opintopolku - Psykologi", url: "https://opintopolku.fi/konfo/fi/haku/Psykologi" },
     
-      { name: "Työmarkkinatori – Psykologi", url: "https://tyomarkkinatori.fi/ammatit/psykologi" }
+      { name: "Työmarkkinatori – Psykologi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/psykologi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Psykologi" }
       ],
     keywords: ["psykologia", "mielenterveys", "terapia", "hyvinvointi", "tutkimus"],
     study_length_estimate_months: 60
@@ -5439,7 +5491,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2700, 4300],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -5470,10 +5522,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Fysioterapeutit", url: "https://www.fysioterapeutit.fi/" },
+      { name: "Suomen Fysioterapeutit", url: "https://www.suomenfysioterapeutit.fi/" },
       { name: "Opintopolku - Fysioterapeutti", url: "https://opintopolku.fi/konfo/fi/haku/Fysioterapeutti" },
     
-      { name: "Työmarkkinatori – Fysioterapeutti", url: "https://tyomarkkinatori.fi/ammatit/fysioterapeutti" }
+      { name: "Työmarkkinatori – Fysioterapeutti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/fysioterapeutti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Fysioterapeutti" }
       ],
     keywords: ["fysioterapia", "kuntoutus", "liikunta", "terapia", "palautuminen"],
     study_length_estimate_months: 42
@@ -5554,7 +5607,8 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Lastentarhanopettaja", url: "https://opintopolku.fi/konfo/fi/haku/Lastentarhanopettaja" },
     
-      { name: "Työmarkkinatori – Lastentarhanopettaja", url: "https://tyomarkkinatori.fi/ammatit/lastentarhanopettaja" }
+      { name: "Työmarkkinatori – Lastentarhanopettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lastentarhanopettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lastentarhanopettaja" }
       ],
     keywords: ["varhaiskasvatus", "lapset", "päiväkoti", "kasvatus", "oppiminen"],
     study_length_estimate_months: 42
@@ -5635,10 +5689,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "JHL",
     useful_links: [
-      { name: "Kuntoutusohjaajat", url: "https://www.kuntoutusohjaajat.fi/" },
       { name: "Opintopolku - Kuntoutusohjaaja", url: "https://opintopolku.fi/konfo/fi/haku/Kuntoutusohjaaja" },
     
-      { name: "Työmarkkinatori – Kuntoutusohjaaja", url: "https://tyomarkkinatori.fi/ammatit/kuntoutusohjaaja" }
+      { name: "Työmarkkinatori – Kuntoutusohjaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kuntoutusohjaaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuntoutusohjaaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuntoutusohjaaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuntoutusohjaaja" }
       ],
     keywords: ["kuntoutus", "työkyky", "palautuminen", "ohjaus", "tuki"],
     study_length_estimate_months: 42
@@ -5719,10 +5775,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
     union_or_CBA: "JHL",
     useful_links: [
-      { name: "Perhetyöntekijät", url: "https://www.perhetyontyekijat.fi/" },
       { name: "Opintopolku - Perhetyöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Perhety%C3%B6ntekij%C3%A4" },
     
-      { name: "Työmarkkinatori – Perhetyöntekijä", url: "https://tyomarkkinatori.fi/ammatit/perhetyontekija" }
+      { name: "Työmarkkinatori – Perhetyöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/perhetyontekija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Perhety%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["perhetyö", "lapset", "perheet", "tuki", "hyvinvointi"],
     study_length_estimate_months: 42
@@ -5772,7 +5828,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2800,
       range: [2200, 3500],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -5803,10 +5859,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Vanhustenhoitajat", url: "https://www.vanhustenhoitajat.fi/" },
       { name: "Opintopolku - Vanhustenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Vanhustenhoitaja" },
     
-      { name: "Työmarkkinatori – Vanhustenhoitaja", url: "https://tyomarkkinatori.fi/ammatit/vanhustenhoitaja" }
+      { name: "Työmarkkinatori – Vanhustenhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vanhustenhoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vanhustenhoitaja" }
       ],
     keywords: ["vanhustenhoito", "vanhukset", "hoito", "itsenäisyys", "elämänlaatu"],
     study_length_estimate_months: 24
@@ -5856,7 +5912,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3500,
       range: [2800, 4500],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -5887,10 +5943,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Kriisityöntekijät", url: "https://www.kriisityontyekijat.fi/" },
       { name: "Opintopolku - Kriisityöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Kriisity%C3%B6ntekij%C3%A4" },
     
-      { name: "Työmarkkinatori – Kriisityöntekijä", url: "https://tyomarkkinatori.fi/ammatit/kriisityontekija" }
+      { name: "Työmarkkinatori – Kriisityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kriisityontekija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kriisity%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["kriisityö", "trauma", "mielenterveys", "toipuminen", "tuki"],
     study_length_estimate_months: 42
@@ -5940,7 +5996,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [3600, 6500],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -5971,10 +6027,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Ympäristöinsinöörit", url: "https://www.ymparistoinsinoorit.fi/" },
       { name: "Opintopolku - Ympäristöinsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Ympäristöinsinööri", url: "https://tyomarkkinatori.fi/ammatit/ymparistoinsinoori" }
+      { name: "Työmarkkinatori – Ympäristöinsinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistoinsinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6insin%C3%B6%C3%B6ri" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6insin%C3%B6%C3%B6ri" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["ympäristö", "kestävä kehitys", "saasteet", "teknologia", "suojelu"],
     study_length_estimate_months: 42
@@ -6058,7 +6116,8 @@ export const careersData: CareerFI[] = [
       { name: "Ilmatieteen laitos", url: "https://www.ilmatieteenlaitos.fi/" },
       { name: "Opintopolku - Ilmastotutkija", url: "https://opintopolku.fi/konfo/fi/haku/Ilmastotutkija" },
     
-      { name: "Työmarkkinatori – Ilmastotutkija", url: "https://tyomarkkinatori.fi/ammatit/ilmastotutkija" }
+      { name: "Työmarkkinatori – Ilmastotutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ilmastotutkija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ilmastotutkija" }
       ],
     keywords: ["ilmasto", "tutkimus", "meteorologia", "ilmastonmuutos", "tiede"],
     study_length_estimate_months: 60
@@ -6142,7 +6201,8 @@ export const careersData: CareerFI[] = [
       { name: "Metsähallitus", url: "https://www.metsa.fi/" },
       { name: "Opintopolku - Luonnonsuojelija", url: "https://opintopolku.fi/konfo/fi/haku/Luonnonsuojelija" },
     
-      { name: "Työmarkkinatori – Luonnonsuojelija", url: "https://tyomarkkinatori.fi/ammatit/luonnonsuojelija" }
+      { name: "Työmarkkinatori – Luonnonsuojelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/luonnonsuojelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luonnonsuojelija" }
       ],
     keywords: ["luonnonsuojelu", "luonto", "eläimet", "kasvit", "monimuotoisuus"],
     study_length_estimate_months: 42
@@ -6192,7 +6252,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5000,
       range: [3800, 6800],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -6223,10 +6283,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Energia.fi", url: "https://www.energia.fi/" },
+      { name: "Energia.fi", url: "https://energia.fi/" },
       { name: "Opintopolku - Uusiutuva energia -insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Uusiutuva%20energia%20-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Uusiutuva energia -insinööri", url: "https://tyomarkkinatori.fi/ammatit/uusiutuva-energia-insinoori" }
+      { name: "Työmarkkinatori – Uusiutuva energia -insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/uusiutuva-energia-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Uusiutuva%20energia%20-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["uusiutuva energia", "aurinkoenergia", "tuulivoima", "energiatehokkuus", "kestävä kehitys"],
     study_length_estimate_months: 42
@@ -6303,10 +6364,15 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "OAJ",
     useful_links: [
-      { name: "Ympäristökasvatus", url: "https://www.ymparistokasvatus.fi/" },
+      { name: "Ympäristökasvatus", url: "https://feesuomi.fi/verkkolehti/" },
       { name: "Opintopolku - Ympäristökasvattaja", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6kasvattaja" },
     
-      { name: "Työmarkkinatori – Ympäristökasvattaja", url: "https://tyomarkkinatori.fi/ammatit/ymparistokasvattaja" }
+      { name: "Työmarkkinatori – Ympäristökasvattaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistokasvattaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6kasvattaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6kasvattaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6kasvattaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6kasvattaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6kasvattaja" }
       ],
     keywords: ["ympäristökasvatus", "kestävä kehitys", "opetus", "tietoisuus", "kasvatus"],
     study_length_estimate_months: 42
@@ -6356,7 +6422,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4600,
       range: [3500, 6200],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -6387,10 +6453,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Vesiyhdistys", url: "https://www.vesiyhdistys.fi/" },
+      { name: "Vesiyhdistys", url: "https://vesiyhdistys.fi/" },
       { name: "Opintopolku - Vesi-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Vesi-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Vesi-insinööri", url: "https://tyomarkkinatori.fi/ammatit/vesi-insinoori" }
+      { name: "Työmarkkinatori – Vesi-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vesi-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vesi-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["vesiteknologia", "vesihuolto", "jätevesi", "vesitalous", "ympäristö"],
     study_length_estimate_months: 42
@@ -6440,7 +6507,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200, 5500],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -6471,10 +6538,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Hiilijalanjälki.fi", url: "https://www.hiilijalanjalki.fi/" },
       { name: "Opintopolku - Hiilijalanjälki-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Hiilijalanj%C3%A4lki-asiantuntija" },
     
-      { name: "Työmarkkinatori – Hiilijalanjälki-asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/hiilijalanjalki-asiantuntija" }
+      { name: "Työmarkkinatori – Hiilijalanjälki-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/hiilijalanjalki-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hiilijalanj%C3%A4lki-asiantuntija" }
       ],
     keywords: ["hiilijalanjälki", "ilmastoneutraali", "kestävä kehitys", "ilmasto", "hiilidioksidi"],
     study_length_estimate_months: 42
@@ -6524,7 +6591,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5500,
       range: [4200, 7500],
-      source: { name: "Suomen Asianajajaliitto", url: "https://www.asianajajaliitto.fi/", year: 2024 }
+      source: { name: "Suomen Asianajajaliitto", url: "https://asianajajat.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -6555,10 +6622,13 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Asianajajaliitto",
     useful_links: [
-      { name: "Asianajajaliitto", url: "https://www.asianajajaliitto.fi/" },
+      { name: "Asianajajaliitto", url: "https://asianajajat.fi/" },
       { name: "Opintopolku - Ympäristöjuristi", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6juristi" },
     
-      { name: "Työmarkkinatori – Ympäristöjuristi", url: "https://tyomarkkinatori.fi/ammatit/ymparistojuristi" }
+      { name: "Työmarkkinatori – Ympäristöjuristi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistojuristi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6juristi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6juristi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6juristi" }
       ],
     keywords: ["ympäristöoikeus", "lainsäädäntö", "oikeustiede", "ympäristörikos", "kestävä kehitys"],
     study_length_estimate_months: 60
@@ -6639,10 +6709,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
     union_or_CBA: "Tutkijaliitto",
     useful_links: [
-      { name: "Luonnontieteellinen keskusmuseo", url: "https://www.luomus.fi/" },
+      { name: "Luonnontieteellinen keskusmuseo", url: "https://www.helsinki.fi/fi/luomus" },
       { name: "Opintopolku - Biologinen monimuotoisuus -asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Biologinen%20monimuotoisuus%20-asiantuntija" },
     
-      { name: "Työmarkkinatori – Biologinen monimuotoisuus -asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/biologinen-monimuotoisuus-asiantuntija" }
+      { name: "Työmarkkinatori – Biologinen monimuotoisuus -asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/biologinen-monimuotoisuus-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Biologinen%20monimuotoisuus%20-asiantuntija" }
       ],
     keywords: ["biologinen monimuotoisuus", "luonnonsuojelu", "eläimet", "kasvit", "uhanalaiset lajit"],
     study_length_estimate_months: 48
@@ -6692,7 +6763,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4000,
       range: [3000, 5200],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -6723,10 +6794,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Kestävän kehityksen komissio", url: "https://www.kestavankehityksen.fi/" },
       { name: "Opintopolku - Kestävän kehityksen koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Kest%C3%A4v%C3%A4n%20kehityksen%20koordinaattori" },
     
-      { name: "Työmarkkinatori – Kestävän kehityksen koordinaattori", url: "https://tyomarkkinatori.fi/ammatit/kestavan-kehityksen-koordinaattori" }
+      { name: "Työmarkkinatori – Kestävän kehityksen koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kestavan-kehityksen-koordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4v%C3%A4n%20kehityksen%20koordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4v%C3%A4n%20kehityksen%20koordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4v%C3%A4n%20kehityksen%20koordinaattori" }
       ],
     keywords: ["kestävä kehitys", "ympäristöystävällisyys", "sosiaalinen vastuu", "strategia", "raportointi"],
     study_length_estimate_months: 42
@@ -6779,7 +6852,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5200,
       range: [4000, 7000],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -6810,10 +6883,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Strategia.fi", url: "https://www.strategia.fi/" },
       { name: "Opintopolku - Strategia-konsultti", url: "https://opintopolku.fi/konfo/fi/haku/Strategia-konsultti" },
     
-      { name: "Työmarkkinatori – Strategia-konsultti", url: "https://tyomarkkinatori.fi/ammatit/strategia-konsultti" }
+      { name: "Työmarkkinatori – Strategia-konsultti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/strategia-konsultti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Strategia-konsultti" }
       ],
     keywords: ["strategia", "konsultointi", "liiketoimintakehitys", "muutos", "analyysi"],
     study_length_estimate_months: 48
@@ -6863,7 +6936,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5800,
       range: [4500, 7500],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -6894,10 +6967,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Innovaatio.fi", url: "https://www.innovaatio.fi/" },
       { name: "Opintopolku - Innovaatiojohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Innovaatiojohtaja" },
     
-      { name: "Työmarkkinatori – Innovaatiojohtaja", url: "https://tyomarkkinatori.fi/ammatit/innovaatiojohtaja" }
+      { name: "Työmarkkinatori – Innovaatiojohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/innovaatiojohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Innovaatiojohtaja" }
       ],
     keywords: ["innovaatio", "tutkimus", "kehitys", "teknologia", "strategia"],
     study_length_estimate_months: 48
@@ -6947,7 +7020,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200, 5500],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -6978,10 +7051,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Tulevaisuuden suunnittelu", url: "https://www.tulevaisuudensuunnittelu.fi/" },
       { name: "Opintopolku - Tulevaisuuden suunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20suunnittelija" },
     
-      { name: "Työmarkkinatori – Tulevaisuuden suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/tulevaisuuden-suunnittelija" }
+      { name: "Työmarkkinatori – Tulevaisuuden suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tulevaisuuden-suunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tulevaisuuden%20suunnittelija" }
       ],
     keywords: ["tulevaisuus", "suunnittelu", "strategia", "skenaariot", "trendit"],
     study_length_estimate_months: 48
@@ -7031,7 +7104,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5500,
       range: [4200, 7500],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -7062,10 +7135,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "Digitaalinen muutos", url: "https://www.digitaalinenmuutos.fi/" },
       { name: "Opintopolku - Digitaalinen muutosjohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Digitaalinen%20muutosjohtaja" },
     
-      { name: "Työmarkkinatori – Digitaalinen muutosjohtaja", url: "https://tyomarkkinatori.fi/ammatit/digitaalinen-muutosjohtaja" }
+      { name: "Työmarkkinatori – Digitaalinen muutosjohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/digitaalinen-muutosjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitaalinen%20muutosjohtaja" }
       ],
     keywords: ["digitaalinen muutos", "teknologia", "liiketoiminta", "strategia", "innovaatio"],
     study_length_estimate_months: 48
@@ -7146,10 +7219,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tutkijaliitto",
     useful_links: [
-      { name: "Tulevaisuuden tutkimus", url: "https://www.tulevaisuudentutkimus.fi/" },
       { name: "Opintopolku - Tulevaisuuden tutkija", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20tutkija" },
     
-      { name: "Työmarkkinatori – Tulevaisuuden tutkija", url: "https://tyomarkkinatori.fi/ammatit/tulevaisuuden-tutkija" }
+      { name: "Työmarkkinatori – Tulevaisuuden tutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tulevaisuuden-tutkija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tulevaisuuden%20tutkija" }
       ],
     keywords: ["tulevaisuus", "tutkimus", "futurologia", "trendit", "skenaariot"],
     study_length_estimate_months: 60
@@ -7199,7 +7272,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4600,
       range: [3500, 6200],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -7230,10 +7303,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Strateginen suunnittelu", url: "https://www.strateginensuunnittelu.fi/" },
       { name: "Opintopolku - Strateginen suunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Strateginen%20suunnittelija" },
     
-      { name: "Työmarkkinatori – Strateginen suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/strateginen-suunnittelija" }
+      { name: "Työmarkkinatori – Strateginen suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/strateginen-suunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Strateginen%20suunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Strateginen%20suunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Strateginen%20suunnittelija" }
       ],
     keywords: ["strategia", "suunnittelu", "analyysi", "tulevaisuus", "muutos"],
     study_length_estimate_months: 48
@@ -7283,7 +7358,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5000,
       range: [3800, 6800],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -7314,10 +7389,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Tulevaisuuden visio", url: "https://www.tulevaisuudenvisio.fi/" },
       { name: "Opintopolku - Tulevaisuuden visio-johtaja", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20visio-johtaja" },
     
-      { name: "Työmarkkinatori – Tulevaisuuden visio-johtaja", url: "https://tyomarkkinatori.fi/ammatit/tulevaisuuden-visio-johtaja" }
+      { name: "Työmarkkinatori – Tulevaisuuden visio-johtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tulevaisuuden-visio-johtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tulevaisuuden%20visio-johtaja" }
       ],
     keywords: ["tulevaisuus", "visio", "johtaminen", "strategia", "muutos"],
     study_length_estimate_months: 48
@@ -7398,10 +7473,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "Tulevaisuuden teknologia", url: "https://www.tulevaisuudenteknologia.fi/" },
       { name: "Opintopolku - Tulevaisuuden teknologia-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20teknologia-asiantuntija" },
     
-      { name: "Työmarkkinatori – Tulevaisuuden teknologia-asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/tulevaisuuden-teknologia-asiantuntija" }
+      { name: "Työmarkkinatori – Tulevaisuuden teknologia-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tulevaisuuden-teknologia-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tulevaisuuden%20teknologia-asiantuntija" }
       ],
     keywords: ["tulevaisuus", "teknologia", "innovaatio", "tutkimus", "skenaariot"],
     study_length_estimate_months: 48
@@ -7451,7 +7526,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3500, 6000],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -7482,10 +7557,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tutkijaliitto",
     useful_links: [
-      { name: "Tulevaisuuden yhteiskunta", url: "https://www.tulevaisuudenyhteiskunta.fi/" },
       { name: "Opintopolku - Tulevaisuuden yhteiskunta-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20yhteiskunta-asiantuntija" },
     
-      { name: "Työmarkkinatori – Tulevaisuuden yhteiskunta-asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/tulevaisuuden-yhteiskunta-asiantuntija" }
+      { name: "Työmarkkinatori – Tulevaisuuden yhteiskunta-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tulevaisuuden-yhteiskunta-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tulevaisuuden%20yhteiskunta-asiantuntija" }
       ],
     keywords: ["tulevaisuus", "yhteiskunta", "sosiologia", "futurologia", "tutkimus"],
     study_length_estimate_months: 60
@@ -7535,7 +7610,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2500, 4200],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -7566,10 +7641,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "paljon" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Tapahtumien järjestäminen", url: "https://www.tapahtumienjarjestaminen.fi/" },
       { name: "Opintopolku - Tapahtumakoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Tapahtumakoordinaattori" },
     
-      { name: "Työmarkkinatori – Tapahtumakoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/tapahtumakoordinaattori" }
+      { name: "Työmarkkinatori – Tapahtumakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tapahtumakoordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tapahtumakoordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tapahtumakoordinaattori" }
       ],
     keywords: ["tapahtumien järjestäminen", "koordinointi", "suunnittelu", "budjetti", "asiakaspalvelu"],
     study_length_estimate_months: 36
@@ -7619,7 +7695,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2800,
       range: [2200, 3500],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -7650,10 +7726,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
     useful_links: [
-      { name: "Toimistosihteerit", url: "https://www.toimistosihteerit.fi/" },
       { name: "Opintopolku - Toimistosihteeri", url: "https://opintopolku.fi/konfo/fi/haku/Toimistosihteeri" },
     
-      { name: "Työmarkkinatori – Toimistosihteeri", url: "https://tyomarkkinatori.fi/ammatit/toimistosihteeri" }
+      { name: "Työmarkkinatori – Toimistosihteeri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/toimistosihteeri" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimistosihteeri" }
       ],
     keywords: ["toimistosihteeri", "hallinto", "kommunikaatio", "organisointi", "asiakaspalvelu"],
     study_length_estimate_months: 24
@@ -7703,7 +7779,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5000],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -7734,10 +7810,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Logistiikka.fi", url: "https://www.logistiikka.fi/" },
       { name: "Opintopolku - Logistiikkakoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Logistiikkakoordinaattori" },
     
-      { name: "Työmarkkinatori – Logistiikkakoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/logistiikkakoordinaattori" }
+      { name: "Työmarkkinatori – Logistiikkakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/logistiikkakoordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Logistiikkakoordinaattori" }
       ],
     keywords: ["logistiikka", "toimitusketju", "koordinointi", "varastointi", "kuljetus"],
     study_length_estimate_months: 36
@@ -7787,7 +7863,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200, 5500],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -7818,10 +7894,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
     useful_links: [
-      { name: "Henkilöstöhallinto.fi", url: "https://www.henkilostohallinto.fi/" },
       { name: "Opintopolku - Henkilöstöasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Henkil%C3%B6st%C3%B6asiantuntija" },
     
-      { name: "Työmarkkinatori – Henkilöstöasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/henkilostoasiantuntija" }
+      { name: "Työmarkkinatori – Henkilöstöasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/henkilostoasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Henkil%C3%B6st%C3%B6asiantuntija" }
       ],
     keywords: ["henkilöstöhallinto", "työsuhteet", "henkilöstö", "hallinto", "työntekijät"],
     study_length_estimate_months: 36
@@ -7871,7 +7947,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3500, 6000],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -7902,10 +7978,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
     useful_links: [
-      { name: "Taloushallinto.fi", url: "https://www.taloushallinto.fi/" },
+      { name: "Taloushallinto.fi", url: "https://taloushallintoliitto.fi/" },
       { name: "Opintopolku - Taloushallinnon asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Taloushallinnon%20asiantuntija" },
     
-      { name: "Työmarkkinatori – Taloushallinnon asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/taloushallinnon-asiantuntija" }
+      { name: "Työmarkkinatori – Taloushallinnon asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/taloushallinnon-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taloushallinnon%20asiantuntija" }
       ],
     keywords: ["taloushallinto", "talousraportointi", "budjetti", "analyysi", "hallinto"],
     study_length_estimate_months: 36
@@ -7955,7 +8032,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4000,
       range: [3000, 5200],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -7986,10 +8063,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Laadunhallinto.fi", url: "https://www.laadunhallinto.fi/" },
       { name: "Opintopolku - Laadunhallinnan koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Laadunhallinnan%20koordinaattori" },
     
-      { name: "Työmarkkinatori – Laadunhallinnan koordinaattori", url: "https://tyomarkkinatori.fi/ammatit/laadunhallinnan-koordinaattori" }
+      { name: "Työmarkkinatori – Laadunhallinnan koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/laadunhallinnan-koordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laadunhallinnan%20koordinaattori" }
       ],
     keywords: ["laadunhallinto", "laatustandardit", "koordinointi", "analyysi", "hallinto"],
     study_length_estimate_months: 36
@@ -8039,7 +8116,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2500, 4200],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -8070,10 +8147,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
     useful_links: [
-      { name: "Asiakaspalvelu.fi", url: "https://www.asiakaspalvelu.fi/" },
       { name: "Opintopolku - Asiakaspalvelun koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Asiakaspalvelun%20koordinaattori" },
     
-      { name: "Työmarkkinatori – Asiakaspalvelun koordinaattori", url: "https://tyomarkkinatori.fi/ammatit/asiakaspalvelun-koordinaattori" }
+      { name: "Työmarkkinatori – Asiakaspalvelun koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakaspalvelun-koordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaspalvelun%20koordinaattori" }
       ],
     keywords: ["asiakaspalvelu", "kommunikaatio", "koordinointi", "asiakkaat", "palvelu"],
     study_length_estimate_months: 36
@@ -8123,7 +8200,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5000],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -8154,10 +8231,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
     useful_links: [
-      { name: "Tietohallinto.fi", url: "https://www.tietohallinto.fi/" },
       { name: "Opintopolku - Tietohallinnon koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Tietohallinnon%20koordinaattori" },
     
-      { name: "Työmarkkinatori – Tietohallinnon koordinaattori", url: "https://tyomarkkinatori.fi/ammatit/tietohallinnon-koordinaattori" }
+      { name: "Työmarkkinatori – Tietohallinnon koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietohallinnon-koordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietohallinnon%20koordinaattori" }
       ],
     keywords: ["tietohallinto", "dokumenttienhallinta", "koordinointi", "tiedot", "hallinto"],
     study_length_estimate_months: 36
@@ -8207,7 +8284,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3500,
       range: [2800, 4500],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -8238,10 +8315,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "JHL",
     useful_links: [
-      { name: "Hallinto.fi", url: "https://www.hallinto.fi/" },
       { name: "Opintopolku - Hallinnon koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Hallinnon%20koordinaattori" },
     
-      { name: "Työmarkkinatori – Hallinnon koordinaattori", url: "https://tyomarkkinatori.fi/ammatit/hallinnon-koordinaattori" }
+      { name: "Työmarkkinatori – Hallinnon koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/hallinnon-koordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hallinnon%20koordinaattori" }
       ],
     keywords: ["hallinto", "organisointi", "koordinointi", "hallinto", "organisaatio"],
     study_length_estimate_months: 36
@@ -8325,7 +8402,8 @@ export const careersData: CareerFI[] = [
       { name: "JHL", url: "https://www.jhl.fi/" },
       { name: "Opintopolku - Lapsenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Lapsenhoitaja" },
     
-      { name: "Työmarkkinatori – Lapsenhoitaja", url: "https://tyomarkkinatori.fi/ammatit/lapsenhoitaja" }
+      { name: "Työmarkkinatori – Lapsenhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lapsenhoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lapsenhoitaja" }
       ],
     keywords: ["lapsenhoito", "päiväkoti", "kasvatus", "varhaiskasvatus", "perhepäivähoito"],
     study_length_estimate_months: 36
@@ -8409,7 +8487,8 @@ export const careersData: CareerFI[] = [
       { name: "Suomen Apteekkariliitto", url: "https://www.apteekkariliitto.fi/" },
       { name: "Opintopolku - Apteekkari", url: "https://opintopolku.fi/konfo/fi/haku/Apteekkari" },
     
-      { name: "Työmarkkinatori – Apteekkari", url: "https://tyomarkkinatori.fi/ammatit/apteekkari" }
+      { name: "Työmarkkinatori – Apteekkari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/apteekkari" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Apteekkari" }
       ],
     keywords: ["apteekkari", "lääkkeet", "farmacia", "lääkeneuvonta", "apteekki"],
     study_length_estimate_months: 60
@@ -8490,10 +8569,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
       { name: "Opintopolku - Tietoturva-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tietoturva-asiantuntija" },
     
-      { name: "Työmarkkinatori – Tietoturva-asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/tietoturva-asiantuntija" }
+      { name: "Työmarkkinatori – Tietoturva-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietoturva-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietoturva-asiantuntija" }
       ],
     keywords: ["tietoturva", "kyberturvallisuus", "verkkoanalyysi", "penetraatiotestaus", "SIEM"],
     study_length_estimate_months: 60
@@ -8574,10 +8653,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
       { name: "Opintopolku - Tietokantasuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Tietokantasuunnittelija" },
     
-      { name: "Työmarkkinatori – Tietokantasuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/tietokantasuunnittelija" }
+      { name: "Työmarkkinatori – Tietokantasuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietokantasuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietokantasuunnittelija" }
       ],
     keywords: ["tietokanta", "SQL", "tietojen mallintaminen", "DBA", "tietokantojen optimointi"],
     study_length_estimate_months: 60
@@ -8658,10 +8737,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
       { name: "Opintopolku - Verkkoasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Verkkoasiantuntija" },
     
-      { name: "Työmarkkinatori – Verkkoasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/verkkoasiantuntija" }
+      { name: "Työmarkkinatori – Verkkoasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/verkkoasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Verkkoasiantuntija" }
       ],
     keywords: ["verkot", "Cisco", "tietoverkot", "verkkoanalyysi", "NOC"],
     study_length_estimate_months: 60
@@ -8711,7 +8790,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200, 5800],
-      source: { name: "RIL", url: "https://www.ril.fi/", year: 2024 }
+      source: { name: "RIL", url: "https://ril.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -8742,10 +8821,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "RIL",
     useful_links: [
-      { name: "RIL", url: "https://www.ril.fi/" },
+      { name: "RIL", url: "https://ril.fi/" },
       { name: "Opintopolku - Rakennusinsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Rakennusinsin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Rakennusinsinööri", url: "https://tyomarkkinatori.fi/ammatit/rakennusinsinoori" }
+      { name: "Työmarkkinatori – Rakennusinsinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rakennusinsinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rakennusinsin%C3%B6%C3%B6ri" }
       ],
     keywords: ["rakennusinsinööri", "rakennustekniikka", "projektinhallinta", "BIM", "CAD"],
     study_length_estimate_months: 60
@@ -8795,7 +8875,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2600, 4200],
-      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusliitto", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -8826,10 +8906,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusliitto",
     useful_links: [
-      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - Puuseppä", url: "https://opintopolku.fi/konfo/fi/haku/Puusepp%C3%A4" },
     
-      { name: "Työmarkkinatori – Puuseppä", url: "https://tyomarkkinatori.fi/ammatit/puuseppa" }
+      { name: "Työmarkkinatori – Puuseppä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/puuseppa" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Puusepp%C3%A4" }
       ],
     keywords: ["puuseppä", "puuntyöstö", "rakentaminen", "huonekalujen", "korjaus"],
     study_length_estimate_months: 24
@@ -8909,7 +8990,8 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Opettaja" },
     
-      { name: "Työmarkkinatori – Opettaja", url: "https://tyomarkkinatori.fi/ammatit/opettaja" }
+      { name: "Työmarkkinatori – Opettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/opettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Opettaja" }
       ],
     keywords: ["opettaja", "pedagogiikka", "opetus", "koulu", "oppilaiden"],
     study_length_estimate_months: 60
@@ -8993,7 +9075,8 @@ export const careersData: CareerFI[] = [
       { name: "JHL", url: "https://www.jhl.fi/" },
       { name: "Opintopolku - Varhaiskasvatuksen opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Varhaiskasvatuksen%20opettaja" },
     
-      { name: "Työmarkkinatori – Varhaiskasvatuksen opettaja", url: "https://tyomarkkinatori.fi/ammatit/varhaiskasvatuksen-opettaja" }
+      { name: "Työmarkkinatori – Varhaiskasvatuksen opettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/varhaiskasvatuksen-opettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varhaiskasvatuksen%20opettaja" }
       ],
     keywords: ["varhaiskasvatus", "päiväkoti", "lapsenkasvatus", "opetus", "kehitys"],
     study_length_estimate_months: 42
@@ -9073,7 +9156,8 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Ammattikoulun opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Ammattikoulun%20opettaja" },
     
-      { name: "Työmarkkinatori – Ammattikoulun opettaja", url: "https://tyomarkkinatori.fi/ammatit/ammattikoulun-opettaja" }
+      { name: "Työmarkkinatori – Ammattikoulun opettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ammattikoulun-opettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ammattikoulun%20opettaja" }
       ],
     keywords: ["ammattikoulu", "opettaja", "ammattitaito", "työelämä", "koulutus"],
     study_length_estimate_months: 60
@@ -9153,7 +9237,8 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Kielten opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Kielten%20opettaja" },
     
-      { name: "Työmarkkinatori – Kielten opettaja", url: "https://tyomarkkinatori.fi/ammatit/kielten-opettaja" }
+      { name: "Työmarkkinatori – Kielten opettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kielten-opettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kielten%20opettaja" }
       ],
     keywords: ["kielten opettaja", "vieraat kielet", "kulttuurit", "opetus", "kansainvälistyminen"],
     study_length_estimate_months: 60
@@ -9233,7 +9318,8 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Erityisopettaja", url: "https://opintopolku.fi/konfo/fi/haku/Erityisopettaja" },
     
-      { name: "Työmarkkinatori – Erityisopettaja", url: "https://tyomarkkinatori.fi/ammatit/erityisopettaja" }
+      { name: "Työmarkkinatori – Erityisopettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/erityisopettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Erityisopettaja" }
       ],
     keywords: ["erityisopettaja", "erityispedagogiikka", "oppimisvaikeudet", "henkilökohtainen tuki", "erityisopetus"],
     study_length_estimate_months: 60
@@ -9317,7 +9403,8 @@ export const careersData: CareerFI[] = [
       { name: "AKT", url: "https://www.akt.fi/" },
       { name: "Opintopolku - Kuorma-auton kuljettaja", url: "https://opintopolku.fi/konfo/fi/haku/Kuorma-auton%20kuljettaja" },
     
-      { name: "Työmarkkinatori – Kuorma-auton kuljettaja", url: "https://tyomarkkinatori.fi/ammatit/kuorma-auton-kuljettaja" }
+      { name: "Työmarkkinatori – Kuorma-auton kuljettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kuorma-auton-kuljettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuorma-auton%20kuljettaja" }
       ],
     keywords: ["kuorma-auto", "kuljettaja", "kuljetus", "logistiikka", "jakelu"],
     study_length_estimate_months: 12
@@ -9401,7 +9488,10 @@ export const careersData: CareerFI[] = [
       { name: "AKT", url: "https://www.akt.fi/" },
       { name: "Opintopolku - Varastotyöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Varastoty%C3%B6ntekij%C3%A4" },
     
-      { name: "Työmarkkinatori – Varastotyöntekijä", url: "https://tyomarkkinatori.fi/ammatit/varastotyontekija" }
+      { name: "Työmarkkinatori – Varastotyöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/varastotyontekija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varastoty%C3%B6ntekij%C3%A4" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varastoty%C3%B6ntekij%C3%A4" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varastoty%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["varastointi", "logistiikka", "pakkaaminen", "hyllytys", "varasto"],
     study_length_estimate_months: 12
@@ -9485,7 +9575,8 @@ export const careersData: CareerFI[] = [
       { name: "AKT", url: "https://www.akt.fi/" },
       { name: "Opintopolku - Jakelukuljettaja", url: "https://opintopolku.fi/konfo/fi/haku/Jakelukuljettaja" },
     
-      { name: "Työmarkkinatori – Jakelukuljettaja", url: "https://tyomarkkinatori.fi/ammatit/jakelukuljettaja" }
+      { name: "Työmarkkinatori – Jakelukuljettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/jakelukuljettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Jakelukuljettaja" }
       ],
     keywords: ["jakelu", "kuljettaja", "paketit", "kotitoimitus", "verkkokauppa"],
     study_length_estimate_months: 12
@@ -9569,7 +9660,8 @@ export const careersData: CareerFI[] = [
       { name: "AKT", url: "https://www.akt.fi/" },
       { name: "Opintopolku - Kuljetuskoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Kuljetuskoordinaattori" },
     
-      { name: "Työmarkkinatori – Kuljetuskoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/kuljetuskoordinaattori" }
+      { name: "Työmarkkinatori – Kuljetuskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kuljetuskoordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuljetuskoordinaattori" }
       ],
     keywords: ["kuljetus", "koordinointi", "logistiikka", "reittien optimointi", "kuljetusketju"],
     study_length_estimate_months: 36
@@ -9619,7 +9711,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2800, 4400],
-      source: { name: "Sähköliitto", url: "https://www.sahkoliitto.fi/", year: 2024 }
+      source: { name: "Sähköliitto", url: "https://sahkoliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -9650,10 +9742,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Sähköliitto",
     useful_links: [
-      { name: "Sähköliitto", url: "https://www.sahkoliitto.fi/" },
+      { name: "Sähköliitto", url: "https://sahkoliitto.fi/" },
       { name: "Opintopolku - Sähköasentaja", url: "https://opintopolku.fi/konfo/fi/haku/S%C3%A4hk%C3%B6asentaja" },
     
-      { name: "Työmarkkinatori – Sähköasentaja", url: "https://tyomarkkinatori.fi/ammatit/sahkoasentaja" }
+      { name: "Työmarkkinatori – Sähköasentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sahkoasentaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6asentaja" }
       ],
     keywords: ["sähköasentaja", "sähkötekniikka", "sähköjärjestelmät", "energiatehokkuus", "korjaus"],
     study_length_estimate_months: 24
@@ -9703,7 +9796,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3500, 6000],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -9734,10 +9827,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Insöörit",
     useful_links: [
-      { name: "Insöörit", url: "https://www.insinoorit.fi/" },
+      { name: "Insöörit", url: "https://www.ilry.fi/" },
       { name: "Opintopolku - Energiainsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Energiainsin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Energiainsinööri", url: "https://tyomarkkinatori.fi/ammatit/energiainsinoori" }
+      { name: "Työmarkkinatori – Energiainsinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/energiainsinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Energiainsin%C3%B6%C3%B6ri" }
       ],
     keywords: ["energiainsinööri", "energiatehokkuus", "uusiutuva energia", "energiaratkaisut", "ilmastonmuutos"],
     study_length_estimate_months: 60
@@ -9787,7 +9881,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3600,
       range: [3000, 4600],
-      source: { name: "Sähköliitto", url: "https://www.sahkoliitto.fi/", year: 2024 }
+      source: { name: "Sähköliitto", url: "https://sahkoliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -9818,10 +9912,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Sähköliitto",
     useful_links: [
-      { name: "Sähköliitto", url: "https://www.sahkoliitto.fi/" },
+      { name: "Sähköliitto", url: "https://sahkoliitto.fi/" },
       { name: "Opintopolku - Aurinkoenergia-asentaja", url: "https://opintopolku.fi/konfo/fi/haku/Aurinkoenergia-asentaja" },
     
-      { name: "Työmarkkinatori – Aurinkoenergia-asentaja", url: "https://tyomarkkinatori.fi/ammatit/aurinkoenergia-asentaja" }
+      { name: "Työmarkkinatori – Aurinkoenergia-asentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/aurinkoenergia-asentaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aurinkoenergia-asentaja" }
       ],
     keywords: ["aurinkoenergia", "aurinkopaneelit", "uusiutuva energia", "energiatehokkuus", "ilmastonmuutos"],
     study_length_estimate_months: 24
@@ -9871,7 +9966,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [3800, 6500],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -9902,10 +9997,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Insöörit",
     useful_links: [
-      { name: "Insöörit", url: "https://www.insinoorit.fi/" },
+      { name: "Insöörit", url: "https://www.ilry.fi/" },
       { name: "Opintopolku - Energiakonsultti", url: "https://opintopolku.fi/konfo/fi/haku/Energiakonsultti" },
     
-      { name: "Työmarkkinatori – Energiakonsultti", url: "https://tyomarkkinatori.fi/ammatit/energiakonsultti" }
+      { name: "Työmarkkinatori – Energiakonsultti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/energiakonsultti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Energiakonsultti" }
       ],
     keywords: ["energiakonsultti", "energiatehokkuus", "energiaratkaisut", "kestävää kehitystä", "hiilijalanjälki"],
     study_length_estimate_months: 60
@@ -9955,7 +10051,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3300, 5800],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -9986,10 +10082,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Insöörit",
     useful_links: [
-      { name: "Insöörit", url: "https://www.insinoorit.fi/" },
+      { name: "Insöörit", url: "https://www.ilry.fi/" },
       { name: "Opintopolku - Energia-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Energia-asiantuntija" },
     
-      { name: "Työmarkkinatori – Energia-asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/energia-asiantuntija" }
+      { name: "Työmarkkinatori – Energia-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/energia-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Energia-asiantuntija" }
       ],
     keywords: ["energia-asiantuntija", "energiatehokkuus", "energiaratkaisut", "uusiutuva energia", "kestävää kehitystä"],
     study_length_estimate_months: 60
@@ -10070,10 +10167,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
     useful_links: [{ name: "Markkinointiliitto", url: "https://www.markkinointiliitto.fi/" },
-      { name: "Google Digital Garage", url: "https://learndigital.withgoogle.com/digitalgarage" },
+      { name: "Google Digital Garage", url: "https://grow.google/intl/fi/" },
       { name: "Opintopolku - Digitaalisen markkinoinnin asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Digitaalisen%20markkinoinnin%20asiantuntija" },
     
-      { name: "Työmarkkinatori – Digitaalisen markkinoinnin asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/digitaalisen-markkinoinnin-asiantuntija" }
+      { name: "Työmarkkinatori – Digitaalisen markkinoinnin asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/digitaalisen-markkinoinnin-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitaalisen%20markkinoinnin%20asiantuntija" }
       ],
   },
 
@@ -10152,10 +10250,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Grafia",
     useful_links: [
-      { name: "Grafia", url: "https://www.grafia.fi/" },
+      { name: "Grafia", url: "https://grafia.fi/" },
       { name: "Opintopolku - Brändisuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Br%C3%A4ndisuunnittelija" },
     
-      { name: "Työmarkkinatori – Brändisuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/brandisuunnittelija" }
+      { name: "Työmarkkinatori – Brändisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/brandisuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Br%C3%A4ndisuunnittelija" }
       ],
     keywords: ["brändi", "logo", "visuaalinen identiteetti", "graafinen suunnittelu", "kreatiivisuus"],
     study_length_estimate_months: 36
@@ -10236,10 +10335,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Ympäristöliitto", url: "https://www.ymparistoliitto.fi/" },
       { name: "Opintopolku - Ympäristöasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6asiantuntija" },
     
-      { name: "Työmarkkinatori – Ympäristöasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/ymparistoasiantuntija" }
+      { name: "Työmarkkinatori – Ympäristöasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistoasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6asiantuntija" }
       ],
     keywords: ["ympäristö", "kestävää kehitystä", "ympäristönsuoja", "auditointi", "vastuullisuus"],
     study_length_estimate_months: 60
@@ -10320,10 +10419,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Grafia",
     useful_links: [
-      { name: "Grafia", url: "https://www.grafia.fi/" },
+      { name: "Grafia", url: "https://grafia.fi/" },
       { name: "Opintopolku - Tuotesuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Tuotesuunnittelija" },
     
-      { name: "Työmarkkinatori – Tuotesuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/tuotesuunnittelija" }
+      { name: "Työmarkkinatori – Tuotesuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotesuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotesuunnittelija" }
       ],
   },
 
@@ -10402,10 +10502,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Viestintäpäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Viestint%C3%A4p%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Viestintäpäällikkö", url: "https://tyomarkkinatori.fi/ammatit/viestintapaallikko" }
+      { name: "Työmarkkinatori – Viestintäpäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/viestintapaallikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Viestint%C3%A4p%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["viestintä", "media", "julkisuus", "kriisiviestintä", "johtaminen"],
     study_length_estimate_months: 48
@@ -10486,10 +10587,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Data-analyytikko", url: "https://opintopolku.fi/konfo/fi/haku/Data-analyytikko" },
     
-      { name: "Työmarkkinatori – Data-analyytikko", url: "https://tyomarkkinatori.fi/ammatit/data-analyytikko" }
+      { name: "Työmarkkinatori – Data-analyytikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/data-analyytikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Data-analyytikko" }
       ],
   },
 
@@ -10569,10 +10671,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - HR-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/HR-asiantuntija" },
     
-      { name: "Työmarkkinatori – HR-asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/hr-asiantuntija" }
+      { name: "Työmarkkinatori – HR-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/hr-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=HR-asiantuntija" }
       ],
     keywords: ["henkilöstö", "rekrytointi", "koulutus", "palkkaus", "työsuhteet"],
     study_length_estimate_months: 48
@@ -10653,10 +10756,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Liiketoimintakehittäjä", url: "https://opintopolku.fi/konfo/fi/haku/Liiketoimintakehitt%C3%A4j%C3%A4" },
     
-      { name: "Työmarkkinatori – Liiketoimintakehittäjä", url: "https://tyomarkkinatori.fi/ammatit/liiketoimintakehittaja" }
+      { name: "Työmarkkinatori – Liiketoimintakehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liiketoimintakehittaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoimintakehitt%C3%A4j%C3%A4" }
       ],
   },
 
@@ -10731,10 +10835,13 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Koulutussuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Koulutussuunnittelija" },
     
-      { name: "Työmarkkinatori – Koulutussuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/koulutussuunnittelija" }
+      { name: "Työmarkkinatori – Koulutussuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/koulutussuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Koulutussuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Koulutussuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Koulutussuunnittelija" }
       ],
     keywords: ["koulutus", "oppiminen", "pedagogiikka", "materiaalit", "kehittäminen"],
     study_length_estimate_months: 48
@@ -10815,10 +10922,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Tuotepäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tuotep%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Tuotepäällikkö", url: "https://tyomarkkinatori.fi/ammatit/tuotepaallikko" }
+      { name: "Työmarkkinatori – Tuotepäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotepaallikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotep%C3%A4%C3%A4llikk%C3%B6" }
       ],
   },
 
@@ -10897,10 +11005,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Konsultti", url: "https://opintopolku.fi/konfo/fi/haku/Konsultti" },
     
-      { name: "Työmarkkinatori – Konsultti", url: "https://tyomarkkinatori.fi/ammatit/konsultti" }
+      { name: "Työmarkkinatori – Konsultti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/konsultti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Konsultti" }
       ],
     keywords: ["konsultointi", "analyysi", "ratkaisut", "projektit", "asiantuntijuus"],
     study_length_estimate_months: 48
@@ -10981,10 +11090,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Tutkimusasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tutkimusasiantuntija" },
     
-      { name: "Työmarkkinatori – Tutkimusasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/tutkimusasiantuntija" }
+      { name: "Työmarkkinatori – Tutkimusasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tutkimusasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tutkimusasiantuntija" }
       ],
   },
 
@@ -11063,10 +11173,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Laadunvalvonta-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Laadunvalvonta-asiantuntija" },
     
-      { name: "Työmarkkinatori – Laadunvalvonta-asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/laadunvalvonta-asiantuntija" }
+      { name: "Työmarkkinatori – Laadunvalvonta-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/laadunvalvonta-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laadunvalvonta-asiantuntija" }
       ],
     keywords: ["laadunvalvonta", "testaus", "laatu", "analyysi", "prosessit"],
     study_length_estimate_months: 36
@@ -11147,10 +11258,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Asiakasvastaava", url: "https://opintopolku.fi/konfo/fi/haku/Asiakasvastaava" },
     
-      { name: "Työmarkkinatori – Asiakasvastaava", url: "https://tyomarkkinatori.fi/ammatit/asiakasvastaava" }
+      { name: "Työmarkkinatori – Asiakasvastaava", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakasvastaava" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakasvastaava" }
       ],
   },
 
@@ -11229,10 +11341,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Tietojärjestelmäasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tietoj%C3%A4rjestelm%C3%A4asiantuntija" },
     
-      { name: "Työmarkkinatori – Tietojärjestelmäasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/tietojarjestelmaasiantuntija" }
+      { name: "Työmarkkinatori – Tietojärjestelmäasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietojarjestelmaasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietoj%C3%A4rjestelm%C3%A4asiantuntija" }
       ],
     keywords: ["tietojärjestelmät", "IT", "verkko", "ylläpito", "tuki"],
     study_length_estimate_months: 36
@@ -11313,10 +11426,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Talousasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Talousasiantuntija" },
     
-      { name: "Työmarkkinatori – Talousasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/talousasiantuntija" }
+      { name: "Työmarkkinatori – Talousasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/talousasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Talousasiantuntija" }
       ],
     keywords: ["talous", "budjetti", "raportointi", "analyysi", "hallinto"],
     study_length_estimate_months: 48
@@ -11397,10 +11511,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Henkilöstökoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Henkil%C3%B6st%C3%B6koordinaattori" },
     
-      { name: "Työmarkkinatori – Henkilöstökoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/henkilostokoordinaattori" }
+      { name: "Työmarkkinatori – Henkilöstökoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/henkilostokoordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Henkil%C3%B6st%C3%B6koordinaattori" }
       ],
   },
 
@@ -11479,10 +11594,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Myyntiedustaja", url: "https://opintopolku.fi/konfo/fi/haku/Myyntiedustaja" },
     
-      { name: "Työmarkkinatori – Myyntiedustaja", url: "https://tyomarkkinatori.fi/ammatit/myyntiedustaja" }
+      { name: "Työmarkkinatori – Myyntiedustaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/myyntiedustaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Myyntiedustaja" }
       ],
     keywords: ["myynti", "asiakkaat", "kommunikaatio", "neuvottelu", "tavoitteet"],
     study_length_estimate_months: 36
@@ -11563,10 +11679,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Markkinointikoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Markkinointikoordinaattori" },
     
-      { name: "Työmarkkinatori – Markkinointikoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/markkinointikoordinaattori" }
+      { name: "Työmarkkinatori – Markkinointikoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/markkinointikoordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Markkinointikoordinaattori" }
       ],
   },
 
@@ -11645,10 +11762,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Projektikoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Projektikoordinaattori" },
     
-      { name: "Työmarkkinatori – Projektikoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/projektikoordinaattori" }
+      { name: "Työmarkkinatori – Projektikoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/projektikoordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Projektikoordinaattori" }
       ],
     keywords: ["projektinhallinta", "koordinointi", "aikataulu", "resurssit", "seuranta"],
     study_length_estimate_months: 36
@@ -11729,10 +11847,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Asiakaspalveluedustaja", url: "https://opintopolku.fi/konfo/fi/haku/Asiakaspalveluedustaja" },
     
-      { name: "Työmarkkinatori – Asiakaspalveluedustaja", url: "https://tyomarkkinatori.fi/ammatit/asiakaspalveluedustaja" }
+      { name: "Työmarkkinatori – Asiakaspalveluedustaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakaspalveluedustaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaspalveluedustaja" }
       ],
   },
 
@@ -11811,10 +11930,13 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Sisällöntuottaja", url: "https://opintopolku.fi/konfo/fi/haku/Sis%C3%A4ll%C3%B6ntuottaja" },
     
-      { name: "Työmarkkinatori – Sisällöntuottaja", url: "https://tyomarkkinatori.fi/ammatit/sisallontuottaja" }
+      { name: "Työmarkkinatori – Sisällöntuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sisallontuottaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4ll%C3%B6ntuottaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4ll%C3%B6ntuottaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4ll%C3%B6ntuottaja" }
       ],
     keywords: ["sisältö", "luovuus", "kirjoittaminen", "media", "markkinointi"],
     study_length_estimate_months: 36
@@ -11895,10 +12017,13 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Mobiilisovelluskehittäjä", url: "https://opintopolku.fi/konfo/fi/haku/Mobiilisovelluskehitt%C3%A4j%C3%A4" },
     
-      { name: "Työmarkkinatori – Mobiilisovelluskehittäjä", url: "https://tyomarkkinatori.fi/ammatit/mobiilisovelluskehittaja" }
+      { name: "Työmarkkinatori – Mobiilisovelluskehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/mobiilisovelluskehittaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mobiilisovelluskehitt%C3%A4j%C3%A4" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mobiilisovelluskehitt%C3%A4j%C3%A4" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mobiilisovelluskehitt%C3%A4j%C3%A4" }
       ],
     keywords: ["mobiilikehitys", "iOS", "Android", "React Native", "Flutter"],
     study_length_estimate_months: 48
@@ -11979,10 +12104,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Tekoäly-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Teko%C3%A4ly-asiantuntija" },
     
-      { name: "Työmarkkinatori – Tekoäly-asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/tekoaly-asiantuntija" }
+      { name: "Työmarkkinatori – Tekoäly-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tekoaly-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teko%C3%A4ly-asiantuntija" }
       ],
     keywords: ["tekoäly", "koneoppiminen", "ohjelmointi", "algoritmit", "automaatio"],
     study_length_estimate_months: 48
@@ -12066,7 +12192,8 @@ export const careersData: CareerFI[] = [
       { name: "Teollisuusliitto", url: "https://www.teollisuusliitto.fi/" },
       { name: "Opintopolku - Tuotantoteknikko", url: "https://opintopolku.fi/konfo/fi/haku/Tuotantoteknikko" },
     
-      { name: "Työmarkkinatori – Tuotantoteknikko", url: "https://tyomarkkinatori.fi/ammatit/tuotantoteknikko" }
+      { name: "Työmarkkinatori – Tuotantoteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotantoteknikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantoteknikko" }
       ],
     keywords: ["tuotantoteknikko", "tuotanto", "automaatio", "laitteiden huolto", "teollisuus"],
     study_length_estimate_months: 36
@@ -12116,7 +12243,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3300, 5800],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -12147,10 +12274,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Insöörit",
     useful_links: [
-      { name: "Insöörit", url: "https://www.insinoorit.fi/" },
+      { name: "Insöörit", url: "https://www.ilry.fi/" },
       { name: "Opintopolku - Teollisuusinsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Teollisuusinsin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Teollisuusinsinööri", url: "https://tyomarkkinatori.fi/ammatit/teollisuusinsinoori" }
+      { name: "Työmarkkinatori – Teollisuusinsinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/teollisuusinsinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teollisuusinsin%C3%B6%C3%B6ri" }
       ],
     keywords: ["teollisuusinsinööri", "teollisuustekniikka", "projektinhallinta", "tuotannon optimointi", "teollisuus"],
     study_length_estimate_months: 60
@@ -12234,7 +12362,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Asiakaspalvelu-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Asiakaspalvelu-asiantuntija" },
     
-      { name: "Työmarkkinatori – Asiakaspalvelu-asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/asiakaspalvelu-asiantuntija" }
+      { name: "Työmarkkinatori – Asiakaspalvelu-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakaspalvelu-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaspalvelu-asiantuntija" }
       ],
     keywords: ["asiakaspalvelu", "asiakkaiden auttaminen", "kommunikaatio", "ongelmaratkaisu", "palvelutalous"],
     study_length_estimate_months: 24
@@ -12318,7 +12447,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Hotellityöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Hotellity%C3%B6ntekij%C3%A4" },
     
-      { name: "Työmarkkinatori – Hotellityöntekijä", url: "https://tyomarkkinatori.fi/ammatit/hotellityontekija" }
+      { name: "Työmarkkinatori – Hotellityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/hotellityontekija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hotellity%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["hotellityöntekijä", "hotelli", "matkailu", "asiakaspalvelu", "palvelutalous"],
     study_length_estimate_months: 24
@@ -12402,7 +12532,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Ravintolatyöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Ravintolaty%C3%B6ntekij%C3%A4" },
     
-      { name: "Työmarkkinatori – Ravintolatyöntekijä", url: "https://tyomarkkinatori.fi/ammatit/ravintolatyontekija" }
+      { name: "Työmarkkinatori – Ravintolatyöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ravintolatyontekija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ravintolaty%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["ravintolatyöntekijä", "ravintola", "asiakaspalvelu", "ruokapalvelu", "palvelutalous"],
     study_length_estimate_months: 24
@@ -12486,7 +12617,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Siivooja", url: "https://opintopolku.fi/konfo/fi/haku/Siivooja" },
     
-      { name: "Työmarkkinatori – Siivooja", url: "https://tyomarkkinatori.fi/ammatit/siivooja" }
+      { name: "Työmarkkinatori – Siivooja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/siivooja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Siivooja" }
       ],
     keywords: ["siivooja", "siivous", "puhtaus", "terveys", "palvelutalous"],
     study_length_estimate_months: 12
@@ -12570,7 +12702,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Turvallisuusvastaava", url: "https://opintopolku.fi/konfo/fi/haku/Turvallisuusvastaava" },
     
-      { name: "Työmarkkinatori – Turvallisuusvastaava", url: "https://tyomarkkinatori.fi/ammatit/turvallisuusvastaava" }
+      { name: "Työmarkkinatori – Turvallisuusvastaava", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/turvallisuusvastaava" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Turvallisuusvastaava" }
       ],
     keywords: ["turvallisuusvastaava", "turvallisuus", "valvonta", "turvallisuuspalvelu", "palvelutalous"],
     study_length_estimate_months: 12
@@ -12654,7 +12787,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Pankkivirkailija", url: "https://opintopolku.fi/konfo/fi/haku/Pankkivirkailija" },
     
-      { name: "Työmarkkinatori – Pankkivirkailija", url: "https://tyomarkkinatori.fi/ammatit/pankkivirkailija" }
+      { name: "Työmarkkinatori – Pankkivirkailija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/pankkivirkailija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pankkivirkailija" }
       ],
     keywords: ["pankkivirkailija", "pankki", "rahoitus", "asiakaspalvelu", "rahoituspalvelu"],
     study_length_estimate_months: 36
@@ -12738,7 +12872,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Rahoitusneuvonantaja", url: "https://opintopolku.fi/konfo/fi/haku/Rahoitusneuvonantaja" },
     
-      { name: "Työmarkkinatori – Rahoitusneuvonantaja", url: "https://tyomarkkinatori.fi/ammatit/rahoitusneuvonantaja" }
+      { name: "Työmarkkinatori – Rahoitusneuvonantaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rahoitusneuvonantaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rahoitusneuvonantaja" }
       ],
     keywords: ["rahoitusneuvonantaja", "rahoitus", "neuvonta", "sijoitusneuvonta", "rahoituspalvelu"],
     study_length_estimate_months: 36
@@ -12822,7 +12957,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Vakuutusasiamies", url: "https://opintopolku.fi/konfo/fi/haku/Vakuutusasiamies" },
     
-      { name: "Työmarkkinatori – Vakuutusasiamies", url: "https://tyomarkkinatori.fi/ammatit/vakuutusasiamies" }
+      { name: "Työmarkkinatori – Vakuutusasiamies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vakuutusasiamies" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vakuutusasiamies" }
       ],
     keywords: ["vakuutusasiamies", "vakuutus", "myynti", "neuvonta", "vakuutuspalvelu"],
     study_length_estimate_months: 36
@@ -12906,7 +13042,10 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Kirjanpitäjä", url: "https://opintopolku.fi/konfo/fi/haku/Kirjanpit%C3%A4j%C3%A4" },
     
-      { name: "Työmarkkinatori – Kirjanpitäjä", url: "https://tyomarkkinatori.fi/ammatit/kirjanpitaja" }
+      { name: "Työmarkkinatori – Kirjanpitäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kirjanpitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kirjanpit%C3%A4j%C3%A4" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kirjanpitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kirjanpitaja" }
       ],
     keywords: ["kirjanpitäjä", "kirjanpito", "rahoitus", "tilinpäätös", "verotiedot"],
     study_length_estimate_months: 36
@@ -12990,7 +13129,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Rahoitusanalyytikko", url: "https://opintopolku.fi/konfo/fi/haku/Rahoitusanalyytikko" },
     
-      { name: "Työmarkkinatori – Rahoitusanalyytikko", url: "https://tyomarkkinatori.fi/ammatit/rahoitusanalyytikko" }
+      { name: "Työmarkkinatori – Rahoitusanalyytikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rahoitusanalyytikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rahoitusanalyytikko" }
       ],
     keywords: ["rahoitusanalyytikko", "rahoitusanalyysi", "sijoitusanalyysi", "rahoitusmarkkinat", "rahoituspalvelu"],
     study_length_estimate_months: 60
@@ -13070,7 +13210,8 @@ export const careersData: CareerFI[] = [
       { name: "Lääkäriliitto", url: "https://www.laakariliitto.fi/" },
       { name: "Opintopolku - Lääkäri", url: "https://opintopolku.fi/konfo/fi/haku/L%C3%A4%C3%A4k%C3%A4ri" },
     
-      { name: "Työmarkkinatori – Lääkäri", url: "https://tyomarkkinatori.fi/ammatit/laakari" }
+      { name: "Työmarkkinatori – Lääkäri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/laakari" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=L%C3%A4%C3%A4k%C3%A4ri" }
       ],
     keywords: ["lääkäri", "terveydenhuolto", "diagnoosi", "hoito", "potilas"],
     study_length_estimate_months: 72
@@ -13116,7 +13257,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5800,
       range: [4500, 8200],
-      source: { name: "Hammaslääkäriliitto", url: "https://www.hammaslaakariliitto.fi/", year: 2024 }
+      source: { name: "Hammaslääkäriliitto", url: "https://www.hammaslaakariliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -13146,10 +13287,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Hammaslääkäriliitto",
     useful_links: [
-      { name: "Hammaslääkäriliitto", url: "https://www.hammaslaakariliitto.fi/" },
+      { name: "Hammaslääkäriliitto", url: "https://www.hammaslaakariliitto.fi/fi" },
       { name: "Opintopolku - Hammaslääkäri", url: "https://opintopolku.fi/konfo/fi/haku/Hammasl%C3%A4%C3%A4k%C3%A4ri" },
     
-      { name: "Työmarkkinatori – Hammaslääkäri", url: "https://tyomarkkinatori.fi/ammatit/hammaslaakari" }
+      { name: "Työmarkkinatori – Hammaslääkäri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/hammaslaakari" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hammasl%C3%A4%C3%A4k%C3%A4ri" }
       ],
     keywords: ["hammaslääkäri", "suun terveys", "hammashoidot", "hampaiden korjaus"],
     study_length_estimate_months: 60
@@ -13195,7 +13337,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [3800, 6500],
-      source: { name: "Eläinlääkäriliitto", url: "https://www.sell.fi/", year: 2024 }
+      source: { name: "Eläinlääkäriliitto", url: "https://sell.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -13225,10 +13367,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Eläinlääkäriliitto",
     useful_links: [
-      { name: "Eläinlääkäriliitto", url: "https://www.sell.fi/" },
+      { name: "Eläinlääkäriliitto", url: "https://sell.fi/" },
       { name: "Opintopolku - Eläinlääkäri", url: "https://opintopolku.fi/konfo/fi/haku/El%C3%A4inl%C3%A4%C3%A4k%C3%A4ri" },
     
-      { name: "Työmarkkinatori – Eläinlääkäri", url: "https://tyomarkkinatori.fi/ammatit/elainlaakari" }
+      { name: "Työmarkkinatori – Eläinlääkäri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/elainlaakari" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=El%C3%A4inl%C3%A4%C3%A4k%C3%A4ri" }
       ],
     keywords: ["eläinlääkäri", "eläinten hoito", "eläinlääketiede", "lemmikkieläimet"],
     study_length_estimate_months: 72
@@ -13307,7 +13450,8 @@ export const careersData: CareerFI[] = [
       { name: "Farmasialiitto", url: "https://www.farmasialiitto.fi/" },
       { name: "Opintopolku - Farmaseutti", url: "https://opintopolku.fi/konfo/fi/haku/Farmaseutti" },
     
-      { name: "Työmarkkinatori – Farmaseutti", url: "https://tyomarkkinatori.fi/ammatit/farmaseutti" }
+      { name: "Työmarkkinatori – Farmaseutti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/farmaseutti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Farmaseutti" }
       ],
     keywords: ["farmaseutti", "apteekki", "lääkkeet", "lääkeneuvonta"],
     study_length_estimate_months: 36
@@ -13353,7 +13497,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2900, 4100],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -13384,10 +13528,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Röntgenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/R%C3%B6ntgenhoitaja" },
     
-      { name: "Työmarkkinatori – Röntgenhoitaja", url: "https://tyomarkkinatori.fi/ammatit/rontgenhoitaja" }
+      { name: "Työmarkkinatori – Röntgenhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rontgenhoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=R%C3%B6ntgenhoitaja" }
       ],
     keywords: ["röntgenhoitaja", "kuvantaminen", "röntgen", "ultraääni"],
     study_length_estimate_months: 42
@@ -13433,7 +13578,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3300,
       range: [2800, 4000],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -13463,10 +13608,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Laboratoriohoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Laboratoriohoitaja" },
     
-      { name: "Työmarkkinatori – Laboratoriohoitaja", url: "https://tyomarkkinatori.fi/ammatit/laboratoriohoitaja" }
+      { name: "Työmarkkinatori – Laboratoriohoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/laboratoriohoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laboratoriohoitaja" }
       ],
     keywords: ["laboratoriohoitaja", "bioanalytiikka", "laboratorio", "tutkimukset"],
     study_length_estimate_months: 42
@@ -13512,7 +13658,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2800,
       range: [2400, 3400],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -13542,10 +13688,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Lähihoitaja", url: "https://opintopolku.fi/konfo/fi/haku/L%C3%A4hihoitaja" },
     
-      { name: "Työmarkkinatori – Lähihoitaja", url: "https://tyomarkkinatori.fi/ammatit/lahihoitaja" }
+      { name: "Työmarkkinatori – Lähihoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lahihoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=L%C3%A4hihoitaja" }
       ],
     keywords: ["lähihoitaja", "hoitotyö", "hoiva", "vanhusten hoito"],
     study_length_estimate_months: 36
@@ -13591,7 +13738,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2800, 3800],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -13621,10 +13768,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Ensihoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Ensihoitaja" },
     
-      { name: "Työmarkkinatori – Ensihoitaja", url: "https://tyomarkkinatori.fi/ammatit/ensihoitaja" }
+      { name: "Työmarkkinatori – Ensihoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ensihoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ensihoitaja" }
       ],
     keywords: ["ensihoitaja", "ambulanssi", "ensihoito", "hätätilanteet"],
     study_length_estimate_months: 42
@@ -13670,7 +13818,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3600,
       range: [3100, 4300],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -13700,10 +13848,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Kätilö", url: "https://opintopolku.fi/konfo/fi/haku/K%C3%A4til%C3%B6" },
     
-      { name: "Työmarkkinatori – Kätilö", url: "https://tyomarkkinatori.fi/ammatit/katilo" }
+      { name: "Työmarkkinatori – Kätilö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/katilo" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=K%C3%A4til%C3%B6" }
       ],
     keywords: ["kätilö", "synnytys", "raskaus", "vastasyntyneet"],
     study_length_estimate_months: 54
@@ -13749,7 +13898,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3500,
       range: [3000, 4200],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -13780,10 +13929,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Mielenterveyshoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Mielenterveyshoitaja" },
     
-      { name: "Työmarkkinatori – Mielenterveyshoitaja", url: "https://tyomarkkinatori.fi/ammatit/mielenterveyshoitaja" }
+      { name: "Työmarkkinatori – Mielenterveyshoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/mielenterveyshoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mielenterveyshoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mielenterveyshoitaja" }
       ],
     keywords: ["mielenterveyshoitaja", "psykiatria", "mielenterveys", "kuntoutus"],
     study_length_estimate_months: 42
@@ -13832,7 +13983,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3400, 5800],
-      source: { name: "Grafia", url: "https://www.grafia.fi/", year: 2024 }
+      source: { name: "Grafia", url: "https://grafia.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -13863,10 +14014,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
     useful_links: [
-      { name: "Grafia", url: "https://www.grafia.fi/" },
+      { name: "Grafia", url: "https://grafia.fi/" },
       { name: "Opintopolku - Mainostoimiston Art Director", url: "https://opintopolku.fi/konfo/fi/haku/Mainostoimiston%20Art%20Director" },
     
-      { name: "Työmarkkinatori – Mainostoimiston Art Director", url: "https://tyomarkkinatori.fi/ammatit/mainostoimiston-art-director" }
+      { name: "Työmarkkinatori – Mainostoimiston Art Director", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/mainostoimiston-art-director" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mainostoimiston%20Art%20Director" }
       ],
     keywords: ["art director", "mainonta", "graafinen suunnittelu", "luova", "visuaalinen"],
     study_length_estimate_months: 42
@@ -13915,7 +14067,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2600, 4800],
-      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/", year: 2024 }
+      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -13946,10 +14098,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
-      { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
+      { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi" },
       { name: "Opintopolku - Äänisuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/%C3%84%C3%A4nisuunnittelija" },
     
-      { name: "Työmarkkinatori – Äänisuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/aanisuunnittelija" }
+      { name: "Työmarkkinatori – Äänisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/aanisuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=%C3%84%C3%A4nisuunnittelu" }
       ],
     keywords: ["äänisuunnittelija", "ääni", "miksaus", "elokuva", "pelit"],
     study_length_estimate_months: 42
@@ -13996,7 +14149,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2400, 4500],
-      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/", year: 2024 }
+      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -14027,10 +14180,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
-      { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
+      { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi" },
       { name: "Opintopolku - Koreografi", url: "https://opintopolku.fi/konfo/fi/haku/Koreografi" },
     
-      { name: "Työmarkkinatori – Koreografi", url: "https://tyomarkkinatori.fi/ammatit/koreografi" }
+      { name: "Työmarkkinatori – Koreografi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/koreografi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tanssi" }
       ],
     keywords: ["koreografi", "tanssi", "esitys", "ohjaus", "luova"],
     study_length_estimate_months: 42
@@ -14078,7 +14232,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2800,
       range: [1800, 4500],
-      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/", year: 2024 }
+      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "vaihtelee",
@@ -14105,10 +14259,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
-      { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
+      { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi" },
       { name: "Opintopolku - Kuvataiteilija", url: "https://opintopolku.fi/konfo/fi/haku/Kuvataiteilija" },
     
-      { name: "Työmarkkinatori – Kuvataiteilija", url: "https://tyomarkkinatori.fi/ammatit/kuvataiteilija" }
+      { name: "Työmarkkinatori – Kuvataiteilija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kuvataiteilija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taiteilija" }
       ],
     keywords: ["kuvataiteilija", "taide", "maalaus", "veisto", "luova"],
     study_length_estimate_months: 60
@@ -14155,7 +14310,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3000,
       range: [2000, 5500],
-      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/", year: 2024 }
+      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "vaihtelee",
@@ -14186,10 +14341,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
-      { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
+      { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi" },
       { name: "Opintopolku - Näyttelijä", url: "https://opintopolku.fi/konfo/fi/haku/N%C3%A4yttelij%C3%A4" },
     
-      { name: "Työmarkkinatori – Näyttelijä", url: "https://tyomarkkinatori.fi/ammatit/nayttelija" }
+      { name: "Työmarkkinatori – Näyttelijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/nayttelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=N%C3%A4yttelij%C3%A4" }
       ],
     keywords: ["näyttelijä", "teatteri", "elokuva", "esiintyminen", "rooli"],
     study_length_estimate_months: 48
@@ -14237,7 +14393,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2800, 4600],
-      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/", year: 2024 }
+      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -14268,10 +14424,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
-      { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
+      { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi" },
       { name: "Opintopolku - Valosuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Valosuunnittelija" },
     
-      { name: "Työmarkkinatori – Valosuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/valosuunnittelija" }
+      { name: "Työmarkkinatori – Valosuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/valosuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Valotekniikka" }
       ],
     keywords: ["valosuunnittelija", "valotekniikka", "teatteri", "tapahtumat", "tekninen"],
     study_length_estimate_months: 42
@@ -14319,7 +14476,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2200, 5500],
-      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/", year: 2024 }
+      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -14350,10 +14507,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
-      { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
+      { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi" },
       { name: "Opintopolku - Käsikirjoittaja", url: "https://opintopolku.fi/konfo/fi/haku/K%C3%A4sikirjoittaja" },
     
-      { name: "Työmarkkinatori – Käsikirjoittaja", url: "https://tyomarkkinatori.fi/ammatit/kasikirjoittaja" }
+      { name: "Työmarkkinatori – Käsikirjoittaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kasikirjoittaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=K%C3%A4sikirjoittaja" }
       ],
     keywords: ["käsikirjoittaja", "elokuva", "TV", "kirjoittaminen", "tarina"],
     study_length_estimate_months: 48
@@ -14401,7 +14559,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5500],
-      source: { name: "Akava", url: "https://www.akava.fi/", year: 2024 }
+      source: { name: "Akava", url: "https://akava.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -14432,10 +14590,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
     useful_links: [
-      { name: "Akava", url: "https://www.akava.fi/" },
+      { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Mediatuottaja", url: "https://opintopolku.fi/konfo/fi/haku/Mediatuottaja" },
     
-      { name: "Työmarkkinatori – Mediatuottaja", url: "https://tyomarkkinatori.fi/ammatit/tuottaja-media" }
+      { name: "Työmarkkinatori – Mediatuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuottaja-media" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mediatuottaja" }
       ],
     keywords: ["tuottaja", "media", "elokuva", "TV", "tuotanto"],
     study_length_estimate_months: 42
@@ -14484,7 +14643,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2800, 4800],
-      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/", year: 2024 }
+      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -14515,10 +14674,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
-      { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
+      { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi" },
       { name: "Opintopolku - Leikkausartisti", url: "https://opintopolku.fi/konfo/fi/haku/Leikkausartisti" },
     
-      { name: "Työmarkkinatori – Leikkausartisti", url: "https://tyomarkkinatori.fi/ammatit/leikkausartisti" }
+      { name: "Työmarkkinatori – Leikkausartisti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/leikkausartisti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Video" }
       ],
     keywords: ["leikkaaja", "videoeditoi nti", "jälkituotanto", "elokuva", "media"],
     study_length_estimate_months: 42
@@ -14567,7 +14727,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3000,
       range: [2200, 4800],
-      source: { name: "Journalistiliitto", url: "https://www.journalistiliitto.fi/", year: 2024 }
+      source: { name: "Journalistiliitto", url: "https://journalistiliitto.fi/fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -14598,10 +14758,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Journalistiliitto",
     useful_links: [
-      { name: "Journalistiliitto", url: "https://www.journalistiliitto.fi/" },
+      { name: "Journalistiliitto", url: "https://journalistiliitto.fi/fi/" },
       { name: "Opintopolku - Dokumentaristi", url: "https://opintopolku.fi/konfo/fi/haku/Dokumentaristi" },
     
-      { name: "Työmarkkinatori – Dokumentaristi", url: "https://tyomarkkinatori.fi/ammatit/dokumentaristi" }
+      { name: "Työmarkkinatori – Dokumentaristi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/dokumentaristi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuottaja" }
       ],
     keywords: ["dokumentaristi", "dokumentti", "elokuva", "journalismi", "tutkiminen"],
     study_length_estimate_months: 48
@@ -14650,7 +14811,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2400, 4500],
-      source: { name: "Journalistiliitto", url: "https://www.journalistiliitto.fi/", year: 2024 }
+      source: { name: "Journalistiliitto", url: "https://journalistiliitto.fi/fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -14681,10 +14842,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Journalistiliitto",
     useful_links: [
-      { name: "Journalistiliitto", url: "https://www.journalistiliitto.fi/" },
+      { name: "Journalistiliitto", url: "https://journalistiliitto.fi/fi/" },
       { name: "Opintopolku - Podcast-tuottaja", url: "https://opintopolku.fi/konfo/fi/haku/Podcast-tuottaja" },
     
-      { name: "Työmarkkinatori – Podcast-tuottaja", url: "https://tyomarkkinatori.fi/ammatit/podcast-tuottaja" }
+      { name: "Työmarkkinatori – Podcast-tuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/podcast-tuottaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Podcast" }
       ],
     keywords: ["podcast", "tuottaja", "ääni", "editointi", "media"],
     study_length_estimate_months: 42
@@ -14733,7 +14895,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2800, 4800],
-      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/", year: 2024 }
+      source: { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -14764,10 +14926,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Taiteilijaliitto",
     useful_links: [
-      { name: "Taiteilijaliitto", url: "https://www.artists.fi/" },
+      { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi" },
       { name: "Opintopolku - Lavastaja", url: "https://opintopolku.fi/konfo/fi/haku/Lavastaja" },
     
-      { name: "Työmarkkinatori – Lavastaja", url: "https://tyomarkkinatori.fi/ammatit/lavastaja" }
+      { name: "Työmarkkinatori – Lavastaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lavastaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lavastus" }
       ],
     keywords: ["lavastaja", "lavasteet", "teatteri", "elokuva", "suunnittelu"],
     study_length_estimate_months: 42
@@ -14846,10 +15009,13 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Akava",
     useful_links: [
-      { name: "Akava", url: "https://www.akava.fi/" },
+      { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Ympäristötarkastaja", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6tarkastaja" },
     
-      { name: "Työmarkkinatori – Ympäristötarkastaja", url: "https://tyomarkkinatori.fi/ammatit/ymparistotarkastaja" }
+      { name: "Työmarkkinatori – Ympäristötarkastaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistotarkastaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6tarkastaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6tarkastaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6tarkastaja" }
       ],
     keywords: ["ympäristö", "tarkastus", "valvonta", "ympäristönsuojelu"],
     study_length_estimate_months: 42
@@ -14897,7 +15063,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 4600],
-      source: { name: "Akava", url: "https://www.akava.fi/", year: 2024 }
+      source: { name: "Akava", url: "https://akava.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -14928,10 +15094,13 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
     useful_links: [
-      { name: "Akava", url: "https://www.akava.fi/" },
+      { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Vesiensuojeluasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Vesiensuojeluasiantuntija" },
     
-      { name: "Työmarkkinatori – Vesiensuojeluasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/vesiensuojeluasiantuntija" }
+      { name: "Työmarkkinatori – Vesiensuojeluasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vesiensuojeluasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vesiensuojeluasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vesiensuojeluasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vesiensuojeluasiantuntija" }
       ],
     keywords: ["vesi", "vesiensuojelu", "vesihuolto", "ympäristö", "laatu"],
     study_length_estimate_months: 60
@@ -14979,7 +15148,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3600,
       range: [3000, 4400],
-      source: { name: "Akava", url: "https://www.akava.fi/", year: 2024 }
+      source: { name: "Akava", url: "https://akava.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -15010,10 +15179,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
     useful_links: [
-      { name: "Akava", url: "https://www.akava.fi/" },
+      { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Jätehuoltoasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/J%C3%A4tehuoltoasiantuntija" },
     
-      { name: "Työmarkkinatori – Jätehuoltoasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/jatehuoltoasiantuntija" }
+      { name: "Työmarkkinatori – Jätehuoltoasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/jatehuoltoasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=J%C3%A4tehuoltoasiantuntija" }
       ],
     keywords: ["jätehuolto", "kierrätys", "kiertotalous", "ympäristö", "kestävyys"],
     study_length_estimate_months: 42
@@ -15092,10 +15262,13 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Akava",
     useful_links: [
-      { name: "Akava", url: "https://www.akava.fi/" },
+      { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Metsänhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Mets%C3%A4nhoitaja" },
     
-      { name: "Työmarkkinatori – Metsänhoitaja", url: "https://tyomarkkinatori.fi/ammatit/metsanhoitaja" }
+      { name: "Työmarkkinatori – Metsänhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/metsanhoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mets%C3%A4nhoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mets%C3%A4nhoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mets%C3%A4nhoitaja" }
       ],
     keywords: ["metsä", "metsätalous", "metsänhoito", "kestävyys", "ympäristö"],
     study_length_estimate_months: 60
@@ -15143,7 +15316,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 8500,
       range: [6000, 15000],
-      source: { name: "Johtajien palkka", url: "https://www.ek.fi/", year: 2024 }
+      source: { name: "Johtajien palkka", url: "https://ek.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -15174,10 +15347,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: null,
     useful_links: [
-      { name: "EK", url: "https://www.ek.fi/" },
+      { name: "EK", url: "https://ek.fi/" },
       { name: "Opintopolku - Toimitusjohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Toimitusjohtaja" },
     
-      { name: "Työmarkkinatori – Toimitusjohtaja", url: "https://tyomarkkinatori.fi/ammatit/toimitusjohtaja" }
+      { name: "Työmarkkinatori – Toimitusjohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/toimitusjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimitusjohtaja" }
       ],
     keywords: ["toimitusjohtaja", "CEO", "johtaminen", "strategia", "yritys"],
     study_length_estimate_months: 60
@@ -15225,7 +15399,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7500,
       range: [5500, 12000],
-      source: { name: "Talousjohtajien palkka", url: "https://www.ek.fi/", year: 2024 }
+      source: { name: "Talousjohtajien palkka", url: "https://ek.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -15256,10 +15430,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
     useful_links: [
-      { name: "Akava", url: "https://www.akava.fi/" },
+      { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Talousjohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Talousjohtaja" },
     
-      { name: "Työmarkkinatori – Talousjohtaja", url: "https://tyomarkkinatori.fi/ammatit/talousjohtaja" }
+      { name: "Työmarkkinatori – Talousjohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/talousjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Talousjohtaja" }
       ],
     keywords: ["talousjohtaja", "CFO", "talous", "johtaminen", "strategia"],
     study_length_estimate_months: 60
@@ -15307,7 +15482,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7000,
       range: [5000, 11000],
-      source: { name: "IT-alan palkka", url: "https://www.tek.fi/", year: 2024 }
+      source: { name: "IT-alan palkka", url: "https://tek.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -15338,10 +15513,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
     useful_links: [
-      { name: "Akava", url: "https://www.akava.fi/" },
+      { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Teknologiajohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Teknologiajohtaja" },
     
-      { name: "Työmarkkinatori – Teknologiajohtaja", url: "https://tyomarkkinatori.fi/ammatit/teknologiajohtaja" }
+      { name: "Työmarkkinatori – Teknologiajohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/teknologiajohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teknologiajohtaja" }
       ],
     keywords: ["CTO", "teknologiajohtaja", "IT", "johtaminen", "innovaatio"],
     study_length_estimate_months: 60
@@ -15389,7 +15565,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7200,
       range: [5500, 11500],
-      source: { name: "Johtajien palkka", url: "https://www.ek.fi/", year: 2024 }
+      source: { name: "Johtajien palkka", url: "https://ek.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -15420,10 +15596,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Akava",
     useful_links: [
-      { name: "Akava", url: "https://www.akava.fi/" },
+      { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Operatiivinen johtaja", url: "https://opintopolku.fi/konfo/fi/haku/Operatiivinen%20johtaja" },
     
-      { name: "Työmarkkinatori – Operatiivinen johtaja", url: "https://tyomarkkinatori.fi/ammatit/operatiivinen-johtaja" }
+      { name: "Työmarkkinatori – Operatiivinen johtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/operatiivinen-johtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Operatiivinen%20johtaja" }
       ],
     keywords: ["COO", "operatiivinen", "johtaminen", "prosessit", "tehokkuus"],
     study_length_estimate_months: 60
@@ -15471,7 +15648,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6800,
       range: [5000, 10000],
-      source: { name: "Johtajien palkka", url: "https://www.ek.fi/", year: 2024 }
+      source: { name: "Johtajien palkka", url: "https://ek.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -15502,10 +15679,13 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "Akava",
     useful_links: [
-      { name: "Akava", url: "https://www.akava.fi/" },
+      { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Liiketoimintajohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Liiketoimintajohtaja" },
     
-      { name: "Työmarkkinatori – Liiketoimintajohtaja", url: "https://tyomarkkinatori.fi/ammatit/liiketoimintajohtaja" }
+      { name: "Työmarkkinatori – Liiketoimintajohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liiketoimintajohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoimintajohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoimintajohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoimintajohtaja" }
       ],
     keywords: ["liiketoimintajohtaja", "johtaminen", "strategia", "myynti", "kasvu"],
     study_length_estimate_months: 60
@@ -15553,7 +15733,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2800, 4200],
-      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusliitto", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -15584,10 +15764,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusliitto",
     useful_links: [
-      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - Kirvesmies", url: "https://opintopolku.fi/konfo/fi/haku/Kirvesmies" },
     
-      { name: "Työmarkkinatori – Kirvesmies", url: "https://tyomarkkinatori.fi/ammatit/kirvesmies" }
+      { name: "Työmarkkinatori – Kirvesmies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kirvesmies" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kirvesmies" }
       ],
     keywords: ["kirvesmies", "rakentaminen", "puutyö", "talonrakennus", "korjaus"],
     study_length_estimate_months: 36
@@ -15635,7 +15816,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3600,
       range: [3000, 4400],
-      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusliitto", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -15666,10 +15847,13 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
     union_or_CBA: "Rakennusliitto",
     useful_links: [
-      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - Maanrakennuskoneen kuljettaja", url: "https://opintopolku.fi/konfo/fi/haku/Maanrakennuskoneen%20kuljettaja" },
     
-      { name: "Työmarkkinatori – Maanrakennuskoneen kuljettaja", url: "https://tyomarkkinatori.fi/ammatit/maanrakennuskoneen-kuljettaja" }
+      { name: "Työmarkkinatori – Maanrakennuskoneen kuljettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/maanrakennuskoneen-kuljettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maanrakennuskoneen%20kuljettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maanrakennuskoneen%20kuljettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maanrakennuskoneen%20kuljettaja" }
       ],
     keywords: ["kaivukone", "maanrakennus", "koneen kuljettaja", "rakentaminen", "infrastruktuuri"],
     study_length_estimate_months: 36
@@ -15751,7 +15935,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Tapahtumajärjestäjä", url: "https://opintopolku.fi/konfo/fi/haku/Tapahtumaj%C3%A4rjest%C3%A4j%C3%A4" },
     
-      { name: "Työmarkkinatori – Tapahtumajärjestäjä", url: "https://tyomarkkinatori.fi/ammatit/tapahtumajarjestaja" }
+      { name: "Työmarkkinatori – Tapahtumajärjestäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tapahtumajarjestaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tapahtumaj%C3%A4rjest%C3%A4j%C3%A4" }
       ],
     keywords: ["tapahtuma", "järjestäminen", "tapahtumajärjestäjä", "projektit", "koordinointi"],
     study_length_estimate_months: 42
@@ -15833,7 +16018,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Tilauspalvelukoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Tilauspalvelukoordinaattori" },
     
-      { name: "Työmarkkinatori – Tilauspalvelukoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/tilauspalvelukoordinaattori" }
+      { name: "Työmarkkinatori – Tilauspalvelukoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tilauspalvelukoordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tilauspalvelukoordinaattori" }
       ],
     keywords: ["tilauspalvelu", "koordinointi", "tilaukset", "asiakaspalvelu", "toimitukset"],
     study_length_estimate_months: 42
@@ -15914,9 +16100,13 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
       { name: "Opintopolku - DevOps", url: "https://opintopolku.fi/konfo/fi/haku/DevOps" },
-      { name: "Työmarkkinatori – DevOps-insinööri", url: "https://tyomarkkinatori.fi/ammatit/devops-insinoori" }
+      { name: "Työmarkkinatori – DevOps-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/devops-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=DevOps-insin%C3%B6%C3%B6ri" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=DevOps-insin%C3%B6%C3%B6ri" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=DevOps-insin%C3%B6%C3%B6ri" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=DevOps-insin%C3%B6%C3%B6ri" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=DevOps-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["devops", "cloud", "automaatio", "docker", "kubernetes", "ci/cd"],
     study_length_estimate_months: 48
@@ -15997,10 +16187,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Autoalan TES",
     useful_links: [
-      { name: "Autoalan TES", url: "https://www.autoalan-tes.fi/" },
       { name: "Opintopolku - Autokorjaaja", url: "https://opintopolku.fi/konfo/fi/haku/Autokorjaaja" },
     
-      { name: "Työmarkkinatori – Automekaanikko", url: "https://tyomarkkinatori.fi/ammatit/automekaanikko" }
+      { name: "Työmarkkinatori – Automekaanikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/automekaanikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Automekaanikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Automekaanikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Automekaanikko" }
       ],
     keywords: ["automekaanikko", "autokorjaus", "huolto", "diagnostiikka", "mekaanikko"],
     study_length_estimate_months: 36
@@ -16081,9 +16273,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
       { name: "Opintopolku - Ohjelmistotestaus", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistotestaus" },
-      { name: "Työmarkkinatori – Ohjelmistotestaja", url: "https://tyomarkkinatori.fi/ammatit/ohjelmistotestaja" }
+      { name: "Työmarkkinatori – Ohjelmistotestaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ohjelmistotestaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ohjelmistotestaja" }
       ],
     keywords: ["testaus", "laadunvarmistus", "ohjelmistotestaus", "qa", "vikaraportointi"],
     study_length_estimate_months: 42
@@ -16164,9 +16356,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
       { name: "Opintopolku - UX-suunnittelu", url: "https://opintopolku.fi/konfo/fi/haku/UX%20suunnittelu" },
-      { name: "Työmarkkinatori – UX-suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/ux-suunnittelija" }
+      { name: "Työmarkkinatori – UX-suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ux-suunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=UX-suunnittelija" }
       ],
     keywords: ["ux", "käyttäjäkokemus", "käytettävyys", "suunnittelu", "user experience"],
     study_length_estimate_months: 42
@@ -16247,9 +16439,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
       { name: "Opintopolku - Pilvipalvelut", url: "https://opintopolku.fi/konfo/fi/haku/pilvipalvelut" },
-      { name: "Työmarkkinatori – Cloud-arkkitehti", url: "https://tyomarkkinatori.fi/ammatit/cloud-arkkitehti" }
+      { name: "Työmarkkinatori – Cloud-arkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/cloud-arkkitehti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Cloud-arkkitehti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pilviarkkitehti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pilviarkkitehti" }
       ],
     keywords: ["cloud", "arkkitehtuuri", "aws", "azure", "pilvipalvelut"],
     study_length_estimate_months: 60
@@ -16299,7 +16493,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4600,
       range: [3500, 6200],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -16330,10 +16524,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/Liiketalous" },
     
-      { name: "Työmarkkinatori – Asiakkuusvastaava", url: "https://tyomarkkinatori.fi/ammatit/asiakkuusvastaava" }
+      { name: "Työmarkkinatori – Asiakkuusvastaava", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakkuusvastaava" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakkuusvastaava" }
       ],
     keywords: ["asiakkuus", "myynti", "asiakassuhteet", "account management", "b2b"],
     study_length_estimate_months: 42
@@ -16417,7 +16612,8 @@ export const careersData: CareerFI[] = [
       { name: "JHL", url: "https://www.jhl.fi/" },
       { name: "Opintopolku - Sosionomi", url: "https://opintopolku.fi/konfo/fi/haku/Sosionomi" },
     
-      { name: "Työmarkkinatori – Sosiaaliohjaaja", url: "https://tyomarkkinatori.fi/ammatit/sosiaaliohjaaja" }
+      { name: "Työmarkkinatori – Sosiaaliohjaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sosiaaliohjaaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaaliohjaaja" }
       ],
     keywords: ["sosiaaliohjaaja", "ohjaus", "sosiaalipalvelut", "neuvonta", "sosionomi"],
     study_length_estimate_months: 42
@@ -16467,7 +16663,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3600,
       range: [3000, 4500],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -16494,10 +16690,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Terveydenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Terveydenhoitaja" },
     
-      { name: "Työmarkkinatori – Terveydenhoitaja", url: "https://tyomarkkinatori.fi/ammatit/terveydenhoitaja" }
+      { name: "Työmarkkinatori – Terveydenhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terveydenhoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Terveydenhoitaja" }
       ],
     keywords: ["terveydenhoitaja", "terveyden edistäminen", "ehkäisevä terveydenhuolto", "terveysneuvonta"],
     study_length_estimate_months: 42
@@ -16547,7 +16744,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 4800],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -16578,10 +16775,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Sairaanhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Sairaanhoitaja" },
     
-      { name: "Työmarkkinatori – Dialyysihoitaja", url: "https://tyomarkkinatori.fi/ammatit/dialyysihoitaja" }
+      { name: "Työmarkkinatori – Dialyysihoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/dialyysihoitaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Dialyysihoitaja" }
       ],
     keywords: ["dialyysi", "sairaanhoitaja", "munuais", "hoito", "erikoissairaanhoito"],
     study_length_estimate_months: 42
@@ -16661,7 +16859,8 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Erityisopettaja", url: "https://opintopolku.fi/konfo/fi/haku/Erityisopettaja" },
     
-      { name: "Työmarkkinatori – Varhaiskasvatuksen erityisopettaja", url: "https://tyomarkkinatori.fi/ammatit/varhaiskasvatuksen-erityisopettaja" }
+      { name: "Työmarkkinatori – Varhaiskasvatuksen erityisopettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/varhaiskasvatuksen-erityisopettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varhaiskasvatuksen%20erityisopettaja" }
       ],
     keywords: ["erityisopettaja", "varhaiskasvatus", "erityistuki", "kehitysvamma", "oppimisvaikeudet"],
     study_length_estimate_months: 60
@@ -16742,9 +16941,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
       { name: "Opintopolku - UI-suunnittelu", url: "https://opintopolku.fi/konfo/fi/haku/UI%20suunnittelu" },
-      { name: "Työmarkkinatori – UI-suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/ui-suunnittelija" }
+      { name: "Työmarkkinatori – UI-suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ui-suunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=UI-suunnittelija" }
       ],
     keywords: ["ui", "käyttöliittymä", "visuaalinen suunnittelu", "design", "user interface"],
     study_length_estimate_months: 42
@@ -16825,10 +17024,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
       { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" },
     
-      { name: "Työmarkkinatori – Tietoturvaanalyytikko", url: "https://tyomarkkinatori.fi/ammatit/tietoturvaanalyytikko" }
+      { name: "Työmarkkinatori – Tietoturvaanalyytikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietoturvaanalyytikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietoturvaanalyytikko" }
       ],
     keywords: ["tietoturva", "kyberturvallisuus", "analyysi", "tietoturvaincidentti", "soc"],
     study_length_estimate_months: 42
@@ -16905,10 +17104,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
       { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Tietotekniikka" },
     
-      { name: "Työmarkkinatori – Tietokoneasentaja", url: "https://tyomarkkinatori.fi/ammatit/tietokoneasentaja" }
+      { name: "Työmarkkinatori – Tietokoneasentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietokoneasentaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietokoneasentaja" }
       ],
     keywords: ["tietokoneasentaja", "it-tuki", "tietokonekorjaus", "tietoverkot", "teknikko"],
     study_length_estimate_months: 36
@@ -16958,7 +17157,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 4800],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -16989,10 +17188,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Optometria", url: "https://opintopolku.fi/konfo/fi/haku/Optometria" },
     
-      { name: "Työmarkkinatori – Optometristi", url: "https://tyomarkkinatori.fi/ammatit/optometristi" }
+      { name: "Työmarkkinatori – Optometristi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/optometristi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Optometristi" }
       ],
     keywords: ["optometristi", "näkö", "silmälaseet", "silmätarkastus", "optometria"],
     study_length_estimate_months: 42
@@ -17042,7 +17242,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3600,
       range: [3000, 4500],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -17073,10 +17273,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Ravitsemusterapeutti", url: "https://opintopolku.fi/konfo/fi/haku/Ravitsemusterapeutti" },
     
-      { name: "Työmarkkinatori – Ravitsemusterapeutti", url: "https://tyomarkkinatori.fi/ammatit/ravitsemusterapeutti" }
+      { name: "Työmarkkinatori – Ravitsemusterapeutti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ravitsemusterapeutti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ravitsemusterapeutti" }
       ],
     keywords: ["ravitsemusterapeutti", "ravitsemusneuvonta", "ruokavalio", "terveys", "ravitsemustiede"],
     study_length_estimate_months: 42
@@ -17126,7 +17327,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2800, 4500],
-      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusliitto", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -17157,10 +17358,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusliitto",
     useful_links: [
-      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - LVI-asentaja", url: "https://opintopolku.fi/konfo/fi/haku/LVI-asentaja" },
     
-      { name: "Työmarkkinatori – Putkityömies", url: "https://tyomarkkinatori.fi/ammatit/putkityomies" }
+      { name: "Työmarkkinatori – Putkityömies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/putkityomies" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Putkity%C3%B6mies" }
       ],
     keywords: ["putkityömies", "lvi", "putkisto", "vesihuolto", "lämmitys"],
     study_length_estimate_months: 36
@@ -17210,7 +17412,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3600, 6000],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -17241,10 +17443,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Insöörit",
     useful_links: [
-      { name: "Insöörit", url: "https://www.insinoorit.fi/" },
+      { name: "Insöörit", url: "https://www.ilry.fi/" },
       { name: "Opintopolku - Automaatiotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Automaatiotekniikka" },
     
-      { name: "Työmarkkinatori – Automaatioteknikko", url: "https://tyomarkkinatori.fi/ammatit/automaatioteknikko" }
+      { name: "Työmarkkinatori – Automaatioteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/automaatioteknikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Automaatioteknikko" }
       ],
     keywords: ["automaatio", "plc", "scada", "teollisuusautomaatio", "teknikko"],
     study_length_estimate_months: 42
@@ -17294,7 +17497,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200, 5500],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -17325,10 +17528,13 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6tekniikka" },
     
-      { name: "Työmarkkinatori – Kiertotalousasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/kiertotalousasiantuntija" }
+      { name: "Työmarkkinatori – Kiertotalousasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kiertotalousasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kiertotalousasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kiertotalousasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kiertotalousasiantuntija" }
       ],
     keywords: ["kiertotalous", "kierrättäminen", "jätehuolto", "kestävän kehityksen", "ympäristö"],
     study_length_estimate_months: 42
@@ -17412,7 +17618,8 @@ export const careersData: CareerFI[] = [
       { name: "JHL", url: "https://www.jhl.fi/" },
       { name: "Opintopolku - Ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6tekniikka" },
     
-      { name: "Työmarkkinatori – Ympäristövalvonta", url: "https://tyomarkkinatori.fi/ammatit/ymparistovalvonta" }
+      { name: "Työmarkkinatori – Ympäristövalvonta", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistovalvonta" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6valvonta" }
       ],
     keywords: ["ympäristövalvonta", "valvonta", "ympäristölainsäädäntö", "tarkastus", "ympäristö"],
     study_length_estimate_months: 42
@@ -17493,9 +17700,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
     union_or_CBA: "Media-alan TES",
     useful_links: [
-      { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/" },
       { name: "Opintopolku - Videotuotanto", url: "https://opintopolku.fi/konfo/fi/haku/videotuotanto" },
-      { name: "Työmarkkinatori – Videonmuokkaaja", url: "https://tyomarkkinatori.fi/ammatit/videonmuokkaaja" }
+      { name: "Työmarkkinatori – Videonmuokkaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/videonmuokkaaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Video" }
       ],
     keywords: ["videonmuokkaus", "leikkaus", "video", "media", "editing"],
     study_length_estimate_months: 42
@@ -17576,10 +17783,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "paljon" },
     union_or_CBA: "Media-alan TES",
     useful_links: [
-      { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/" },
       { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" },
     
-      { name: "Työmarkkinatori – Tuotantokoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/tuotantokoordinaattori" }
+      { name: "Työmarkkinatori – Tuotantokoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotantokoordinaattori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantokoordinaattori" }
       ],
     keywords: ["tuotantokoordinaattori", "media", "tuotanto", "koordinointi", "projektinhallinta"],
     study_length_estimate_months: 42
@@ -17663,7 +17870,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Ravintolatyö", url: "https://opintopolku.fi/konfo/fi/haku/Ravintolaty%C3%B6" },
     
-      { name: "Työmarkkinatori – Tarjoilija", url: "https://tyomarkkinatori.fi/ammatit/tarjoilija" }
+      { name: "Työmarkkinatori – Tarjoilija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tarjoilija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tarjoilija" }
       ],
     keywords: ["tarjoilija", "ravintola", "asiakaspalvelu", "palvelu", "ruokailu"],
     study_length_estimate_months: 24
@@ -17747,7 +17955,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Kokki", url: "https://opintopolku.fi/konfo/fi/haku/Kokki" },
     
-      { name: "Työmarkkinatori – Kokki", url: "https://tyomarkkinatori.fi/ammatit/kokki" }
+      { name: "Työmarkkinatori – Kokki", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kokki" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kokki" }
       ],
     keywords: ["kokki", "ruuanvalmistus", "keittiö", "ruoka", "ravintola"],
     study_length_estimate_months: 36
@@ -17827,7 +18036,8 @@ export const careersData: CareerFI[] = [
       { name: "JHL", url: "https://www.jhl.fi/" },
       { name: "Opintopolku - Sosionomi", url: "https://opintopolku.fi/konfo/fi/haku/Sosionomi" },
     
-      { name: "Työmarkkinatori – Oppilashuoltaja", url: "https://tyomarkkinatori.fi/ammatit/oppilashuoltaja" }
+      { name: "Työmarkkinatori – Oppilashuoltaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/oppilashuoltaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Oppilashuoltaja" }
       ],
     keywords: ["oppilashuoltaja", "koulu", "oppilaiden tuki", "hyvinvointi", "sosionomi"],
     study_length_estimate_months: 42
@@ -17877,7 +18087,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2600, 4200],
-      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusliitto", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
@@ -17908,10 +18118,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusliitto",
     useful_links: [
-      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - Hitsaaja", url: "https://opintopolku.fi/konfo/fi/haku/Hitsaaja" },
     
-      { name: "Työmarkkinatori – Hitsaaja", url: "https://tyomarkkinatori.fi/ammatit/hitsaaja" }
+      { name: "Työmarkkinatori – Hitsaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/hitsaaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hitsaaja" }
       ],
     keywords: ["hitsaaja", "hitsaus", "metalli", "rakentaminen", "teollisuus"],
     study_length_estimate_months: 36
@@ -17988,10 +18199,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
       { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Tietotekniikka" },
     
-      { name: "Työmarkkinatori – IT-tukihenkilö", url: "https://tyomarkkinatori.fi/ammatit/it-tukihenkilo" }
+      { name: "Työmarkkinatori – IT-tukihenkilö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/it-tukihenkilo" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=IT-tukihenkil%C3%B6" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=It%20Tukihenkilo" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=It%20Tukihenkilo" }
       ],
     keywords: ["it-tuki", "helpdesk", "tietotekniikka", "asiakaspalvelu", "tuki"],
     study_length_estimate_months: 36
@@ -18041,7 +18254,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 4800],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -18072,10 +18285,13 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Puheterapia", url: "https://opintopolku.fi/konfo/fi/haku/Puheterapia" },
     
-      { name: "Työmarkkinatori – Puheterapeutti", url: "https://tyomarkkinatori.fi/ammatit/puheterapeutti" }
+      { name: "Työmarkkinatori – Puheterapeutti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/puheterapeutti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Puheterapeutti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Puheterapeutti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Puheterapeutti" }
       ],
     keywords: ["puheterapeutti", "puhe", "kieli", "kommunikaatio", "logopedia"],
     study_length_estimate_months: 60
@@ -18125,7 +18341,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3900,
       range: [3300, 4900],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -18156,10 +18372,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Audiologia", url: "https://opintopolku.fi/konfo/fi/haku/Audiologia" },
     
-      { name: "Työmarkkinatori – Audiologi", url: "https://tyomarkkinatori.fi/ammatit/audiologi" }
+      { name: "Työmarkkinatori – Audiologi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/audiologi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Audiologi" }
       ],
     keywords: ["audiologi", "kuulo", "kuulolaitteet", "kuulotarkastus", "kuulonkuntoutus"],
     study_length_estimate_months: 60
@@ -18239,7 +18456,8 @@ export const careersData: CareerFI[] = [
       { name: "JHL", url: "https://www.jhl.fi/" },
       { name: "Opintopolku - Sosionomi", url: "https://opintopolku.fi/konfo/fi/haku/Sosionomi" },
     
-      { name: "Työmarkkinatori – Oppilashuoltotyöntekijä", url: "https://tyomarkkinatori.fi/ammatit/oppilashuoltotyontekija" }
+      { name: "Työmarkkinatori – Oppilashuoltotyöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/oppilashuoltotyontekija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Oppilashuoltoty%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["oppilashuolto", "koulu", "oppilaiden tuki", "hyvinvointi", "sosionomi"],
     study_length_estimate_months: 42
@@ -18289,7 +18507,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3500,
       range: [3000, 4400],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -18320,10 +18538,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Suuhygienisti", url: "https://opintopolku.fi/konfo/fi/haku/Suuhygienisti" },
     
-      { name: "Työmarkkinatori – Suuhygienisti", url: "https://tyomarkkinatori.fi/ammatit/suuhygienisti" }
+      { name: "Työmarkkinatori – Suuhygienisti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/suuhygienisti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Suuhygienisti" }
       ],
     keywords: ["suuhygienisti", "hammas", "suun terveys", "hammashoito", "suuhygienia"],
     study_length_estimate_months: 42
@@ -18407,7 +18626,8 @@ export const careersData: CareerFI[] = [
       { name: "JHL", url: "https://www.jhl.fi/" },
       { name: "Opintopolku - Sosiaali- ja terveysala", url: "https://opintopolku.fi/konfo/fi/haku/Sosiaali-%20ja%20terveysala" },
     
-      { name: "Työmarkkinatori – Kotipalvelutyöntekijä", url: "https://tyomarkkinatori.fi/ammatit/kotipalvelutyontekija" }
+      { name: "Työmarkkinatori – Kotipalvelutyöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kotipalvelutyontekija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kotipalveluty%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["kotipalvelu", "kotihoito", "henkilökohtainen hoito", "ikääntyneet", "avustaja"],
     study_length_estimate_months: 24
@@ -18488,10 +18708,14 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
       { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" },
     
-      { name: "Työmarkkinatori – Full-Stack-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/full-stack-kehittaja" }
+      { name: "Työmarkkinatori – Full-Stack-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/full-stack-kehittaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Full-Stack-kehitt%C3%A4j%C3%A4" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Full%20Stack%20-kehitt%C3%A4j%C3%A4" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Full%20Stack%20-kehitt%C3%A4j%C3%A4" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Full%20Stack%20-kehitt%C3%A4j%C3%A4" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Full%20Stack%20-kehitt%C3%A4j%C3%A4" }
       ],
     keywords: ["full-stack", "web-kehitys", "frontend", "backend", "fullstack"],
     study_length_estimate_months: 48
@@ -18572,10 +18796,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Media-alan TES",
     useful_links: [
-      { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/" },
       { name: "Opintopolku - Viestintä", url: "https://opintopolku.fi/konfo/fi/haku/Viestint%C3%A4" },
     
-      { name: "Työmarkkinatori – Sosiaalisen median asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/sosiaalisen-median-asiantuntija" }
+      { name: "Työmarkkinatori – Sosiaalisen median asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sosiaalisen-median-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalisen%20median%20asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalisen%20median%20asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalisen%20median%20asiantuntija" }
       ],
     keywords: ["sosiaalinen media", "sosiaalisen median markkinointi", "smm", "sisällöntuotanto", "yhteisö"],
     study_length_estimate_months: 42
@@ -18655,7 +18881,8 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Liikuntatiede", url: "https://opintopolku.fi/konfo/fi/haku/Liikuntatiede" },
     
-      { name: "Työmarkkinatori – Urheiluvalmentaja", url: "https://tyomarkkinatori.fi/ammatit/urheiluvalmentaja" }
+      { name: "Työmarkkinatori – Urheiluvalmentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/urheiluvalmentaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Urheiluvalmentaja" }
       ],
     keywords: ["urheiluvalmentaja", "valmennus", "urheilu", "liikunta", "valmentaja"],
     study_length_estimate_months: 36
@@ -18705,7 +18932,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3600,
       range: [3000, 4700],
-      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusliitto", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -18736,10 +18963,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Rakennusliitto",
     useful_links: [
-      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - LVI-asentaja", url: "https://opintopolku.fi/konfo/fi/haku/LVI-asentaja" },
     
-      { name: "Työmarkkinatori – Lämpötekniikka-asentaja", url: "https://tyomarkkinatori.fi/ammatit/lampotekniikka-asentaja" }
+      { name: "Työmarkkinatori – Lämpötekniikka-asentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lampotekniikka-asentaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=L%C3%A4mp%C3%B6tekniikka-asentaja" }
       ],
     keywords: ["lämpötekniikka", "maalämpö", "kaukolämpö", "uusiutuva energia", "lvi"],
     study_length_estimate_months: 36
@@ -18789,7 +19017,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4400,
       range: [3400, 5800],
-      source: { name: "Pro", url: "https://www.pro.fi/", year: 2024 }
+      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -18820,10 +19048,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Pro",
     useful_links: [
-      { name: "Pro", url: "https://www.pro.fi/" },
+      { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6tekniikka" },
     
-      { name: "Työmarkkinatori – Ilmastoneuvonantaja", url: "https://tyomarkkinatori.fi/ammatit/ilmastoneuvonantaja" }
+      { name: "Työmarkkinatori – Ilmastoneuvonantaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ilmastoneuvonantaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ilmastoneuvonantaja" }
       ],
     keywords: ["ilmasto", "hiilijalanjälki", "kestävyys", "ilmastoneuvonta", "ympäristö"],
     study_length_estimate_months: 42
@@ -18903,7 +19132,8 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Aikuiskasvatus", url: "https://opintopolku.fi/konfo/fi/haku/Aikuiskasvatus" },
     
-      { name: "Työmarkkinatori – Aikuiskouluttaja", url: "https://tyomarkkinatori.fi/ammatit/aikuiskouluttaja" }
+      { name: "Työmarkkinatori – Aikuiskouluttaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/aikuiskouluttaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aikuiskouluttaja" }
       ],
     keywords: ["aikuiskouluttaja", "aikuiskasvatus", "koulutus", "opetus", "työelämäkoulutus"],
     study_length_estimate_months: 60
@@ -18987,7 +19217,8 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Myynti", url: "https://opintopolku.fi/konfo/fi/haku/Myynti" },
     
-      { name: "Työmarkkinatori – Myyntityöntekijä", url: "https://tyomarkkinatori.fi/ammatit/myyntityontekija" }
+      { name: "Työmarkkinatori – Myyntityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/myyntityontekija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Myyntity%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["myynti", "myyntityöntekijä", "asiakaspalvelu", "kauppa", "myyntityö"],
     study_length_estimate_months: 36
@@ -19071,7 +19302,8 @@ export const careersData: CareerFI[] = [
       { name: "JHL", url: "https://www.jhl.fi/" },
       { name: "Opintopolku - Sekretariaatti", url: "https://opintopolku.fi/konfo/fi/haku/Sekretariaatti" },
     
-      { name: "Työmarkkinatori – Reseptionisti", url: "https://tyomarkkinatori.fi/ammatit/reseptionisti" }
+      { name: "Työmarkkinatori – Reseptionisti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/reseptionisti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Reseptionisti" }
       ],
     keywords: ["reseptionisti", "vastaanotto", "asiakaspalvelu", "sekretariaatti", "palvelu"],
     study_length_estimate_months: 24
@@ -19152,10 +19384,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
-      { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/" },
       { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" },
     
-      { name: "Työmarkkinatori – Verkkosivustonhallintaja", url: "https://tyomarkkinatori.fi/ammatit/verkkosivustonhallintaja" }
+      { name: "Työmarkkinatori – Verkkosivustonhallintaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/verkkosivustonhallintaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Verkkosivustonhallintaja" }
       ],
     keywords: ["verkkosivustonhallinta", "web", "cms", "seo", "verkkosivusto"],
     study_length_estimate_months: 36
@@ -19205,7 +19437,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [3800, 6300],
-      source: { name: "Insöörit", url: "https://www.insinoorit.fi/", year: 2024 }
+      source: { name: "Insöörit", url: "https://www.ilry.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -19236,10 +19468,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Insöörit",
     useful_links: [
-      { name: "Insöörit", url: "https://www.insinoorit.fi/" },
+      { name: "Insöörit", url: "https://www.ilry.fi/" },
       { name: "Opintopolku - Energiatekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Energiatekniikka" },
     
-      { name: "Työmarkkinatori – Vaihtoehtoinen energia-insinööri", url: "https://tyomarkkinatori.fi/ammatit/vaihtoehtoinen-energia-insinoori" }
+      { name: "Työmarkkinatori – Vaihtoehtoinen energia-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vaihtoehtoinen-energia-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vaihtoehtoinen%20energia-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["uusiutuva energia", "aurinkoenergia", "tuulienergia", "biokaasu", "energiainsinööri"],
     study_length_estimate_months: 48
@@ -19289,7 +19522,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4600,
       range: [3700, 6000],
-      source: { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/", year: 2024 }
+      source: { name: "Rakennusliitto", url: "https://rakennusliitto.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -19320,10 +19553,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
     union_or_CBA: "Rakennusliitto",
     useful_links: [
-      { name: "Rakennusliitto", url: "https://www.rakennusliitto.fi/" },
+      { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - Rakennusinsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Rakennusinsin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Rakennustyönjohtaja", url: "https://tyomarkkinatori.fi/ammatit/rakennustyonjohtaja" }
+      { name: "Työmarkkinatori – Rakennustyönjohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rakennustyonjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rakennusty%C3%B6njohtaja" }
       ],
     keywords: ["rakennustyönjohtaja", "työnjohtaja", "rakennus", "projektinhallinta", "rakennusinsinööri"],
     study_length_estimate_months: 48
@@ -19403,7 +19637,8 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Opettaja" },
     
-      { name: "Työmarkkinatori – Aineenopettaja", url: "https://tyomarkkinatori.fi/ammatit/aineenopettaja" }
+      { name: "Työmarkkinatori – Aineenopettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/aineenopettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aineenopettaja" }
       ],
     keywords: ["aineenopettaja", "opettaja", "opetus", "koulu", "pedagogiikka"],
     study_length_estimate_months: 60
@@ -19484,10 +19719,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: true, travel: "vähän" },
     union_or_CBA: "Media-alan TES",
     useful_links: [
-      { name: "Media-alan TES", url: "https://www.media-alan-tes.fi/" },
       { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" },
     
-      { name: "Työmarkkinatori – Livestream-tuottaja", url: "https://tyomarkkinatori.fi/ammatit/livestream-tuottaja" }
+      { name: "Työmarkkinatori – Livestream-tuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/livestream-tuottaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Media" }
       ],
     keywords: ["livestream", "suoratoisto", "streaming", "media", "tuottaja"],
     study_length_estimate_months: 36
@@ -19537,7 +19772,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2600,
       range: [2200, 3500],
-      source: { name: "Tehy", url: "https://www.tehy.fi/", year: 2024 }
+      source: { name: "Tehy", url: "https://www.tehy.fi/fi", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -19568,10 +19803,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Tehy", url: "https://www.tehy.fi/" },
+      { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Hieroja", url: "https://opintopolku.fi/konfo/fi/haku/Hieroja" },
     
-      { name: "Työmarkkinatori – Hieroja", url: "https://tyomarkkinatori.fi/ammatit/hieroja" }
+      { name: "Työmarkkinatori – Hieroja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/hieroja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hieroja" }
       ],
     keywords: ["hieroja", "hieronta", "rentoutus", "hyvinvointi", "terveys"],
     study_length_estimate_months: 24
@@ -19652,10 +19888,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Musiikkialan TES",
     useful_links: [
-      { name: "Musiikkialan TES", url: "https://www.musiikkialan-tes.fi/" },
       { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" },
     
-      { name: "Työmarkkinatori – Ääniteknikko", url: "https://tyomarkkinatori.fi/ammatit/aaniteknikko" }
+      { name: "Työmarkkinatori – Ääniteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/aaniteknikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=%C3%84%C3%A4niteknikko" }
       ],
     keywords: ["ääniteknikko", "ääni", "miksaaminen", "masterointi", "media"],
     study_length_estimate_months: 42
@@ -19745,8 +19981,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Palvelualojen TES",
     useful_links: [
-      { name: "Työmarkkinatori – Asiakaspalvelun esihenkilöt", url: "https://tyomarkkinatori.fi/ammattilistat/asiakaspalvelun-esihenkilot" },
-      { name: "Opintopolku – Liiketalouden koulutus", url: "https://opintopolku.fi/konfo/fi/haku/liiketalouden%20tradenomi" }
+      { name: "Opintopolku – Liiketalouden koulutus", url: "https://opintopolku.fi/konfo/fi/haku/liiketalouden%20tradenomi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaspalveluvastaava" }
     ],
     keywords: ["asiakaskokemus", "customer success", "palvelujohtaminen", "CRM", "tiiminvetäjä"],
     study_length_estimate_months: 36
@@ -19838,7 +20074,8 @@ export const careersData: CareerFI[] = [
       { name: "Ornamo – Palvelumuotoilijat", url: "https://www.ornamo.fi/" },
       { name: "Opintopolku – Palvelumuotoilu", url: "https://opintopolku.fi/konfo/fi/haku/palvelumuotoilu" },
     
-      { name: "Työmarkkinatori – Palvelumuotoilija", url: "https://tyomarkkinatori.fi/ammatit/palvelumuotoilija" }
+      { name: "Työmarkkinatori – Palvelumuotoilija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/palvelumuotoilija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Palvelumuotoilija" }
       ],
     keywords: ["service design", "asiakaskokemus", "design-ajattelu", "palvelupolku", "kokeilukulttuuri"],
     study_length_estimate_months: 36
@@ -19927,10 +20164,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Suomen Sisustusarkkitehdit SIO",
     useful_links: [
-      { name: "Sisustusarkkitehdit SIO", url: "https://www.sisustusarkkitehdit.fi/" },
       { name: "Opintopolku – Sisustusalan perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/sisustusalan%20perustutkinto" },
     
-      { name: "Työmarkkinatori – Lattiasuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/lattiasuunnittelija" }
+      { name: "Työmarkkinatori – Lattiasuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lattiasuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lattiasuunnittelija" }
       ],
     keywords: ["lattiapinnat", "sisustussuunnittelu", "materiaalisuunnittelu", "CAD", "tilaratkaisut"],
     study_length_estimate_months: 36
@@ -20019,10 +20256,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Kaupan TES",
     useful_links: [
-      { name: "Kaupan liitto", url: "https://www.kauppa.fi/" },
+      { name: "Kaupan liitto", url: "https://kauppa.fi/" },
       { name: "Opintopolku – Myynnin ja markkinoinnin perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/myynnin%20ja%20markkinoinnin%20perustutkinto" },
     
-      { name: "Työmarkkinatori – Rakennusmateriaalimyyjä", url: "https://tyomarkkinatori.fi/ammatit/rakennusmateriaalimyyja" }
+      { name: "Työmarkkinatori – Rakennusmateriaalimyyjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rakennusmateriaalimyyja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rakennusmateriaalimyyj%C3%A4" }
       ],
     keywords: ["rakennustarvikkeet", "myynti", "asiakaspalvelu", "tarjouslaskenta", "logistiikka"],
     study_length_estimate_months: 30
@@ -20083,7 +20321,7 @@ export const careersData: CareerFI[] = [
       explanation: "Rautakaupoissa tarvitaan laajaa tuotetuntemusta ja kustannusten hallintaa, vaikka verkkokauppa kasvaa.",
       source: {
         name: "Kaupan liitto – Rautakaupan näkymät",
-        url: "https://www.kauppa.fi/uutishuone/rautakauppa/",
+        url: "https://kauppa.fi/uutishuone/rautakauppa/",
         year: 2024
       }
     },
@@ -20111,11 +20349,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Kaupan TES",
     useful_links: [
-      { name: "K-Rauta – Yrittäjyys", url: "https://www.kesko.fi/ketjut/k-rauta/" },
-      { name: "Yrittäjät – Kaupan ala", url: "https://yrittajat.fi/yrittajan-abc/kaupan-ala/" },
       { name: "Opintopolku – Liiketoiminnan perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/Liiketoiminnan%20perustutkinto" },
     
-      { name: "Työmarkkinatori – Rautakauppias", url: "https://tyomarkkinatori.fi/ammatit/rautakauppias" }
+      { name: "Työmarkkinatori – Rautakauppias", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rautakauppias" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rautakauppias" }
       ],
     keywords: ["rautakauppa", "kaupan johto", "yrittäjyys", "hankinta", "myymälä"],
     study_length_estimate_months: 42
@@ -20204,10 +20441,10 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Prosessiteollisuuden TES",
     useful_links: [
-      { name: "Suomen Biokaasuyhdistys", url: "https://www.biokaasuyhdistys.fi/" },
       { name: "Opintopolku – Energia- ja ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/energia-%20ja%20ympäristötekniikka" },
     
-      { name: "Työmarkkinatori – Biokaasuteknikko", url: "https://tyomarkkinatori.fi/ammatit/biokaasuteknikko" }
+      { name: "Työmarkkinatori – Biokaasuteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/biokaasuteknikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Biokaasuteknikko" }
       ],
     keywords: ["biokaasu", "uusiutuva energia", "prosessitekniikka", "kestävä kehitys", "ympäristötekniikka"],
     study_length_estimate_months: 36
@@ -20296,10 +20533,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietoala ry",
     useful_links: [
-      { name: "Suomen ympäristökeskus SYKE", url: "https://www.syke.fi/fi-FI" },
+      { name: "Suomen ympäristökeskus SYKE", url: "https://www.syke.fi/fi" },
       { name: "Opintopolku – Ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/ymparistotekniikka" },
     
-      { name: "Työmarkkinatori – Ympäristöohjelmoija", url: "https://tyomarkkinatori.fi/ammatit/ymparisto-ohjelmoija" }
+      { name: "Työmarkkinatori – Ympäristöohjelmoija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparisto-ohjelmoija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6ohjelmoija" }
       ],
     keywords: ["ympäristodata", "ohjelmistokehitys", "ilmastotyö", "GIS", "data-analytiikka"],
     study_length_estimate_months: 36
@@ -20388,10 +20626,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "Suomen elokuva- ja mediatyöntekijät SET",
     useful_links: [
-      { name: "SET – Mediatyöntekijät", url: "https://www.setry.fi/" },
+      { name: "SET – Mediatyöntekijät", url: "https://setry.fi/" },
       { name: "Opintopolku – Audiovisuaalisen viestinnän perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/audiovisuaalisen%20viestinnan%20perustutkinto" },
     
-      { name: "Työmarkkinatori – Kuvausassistentti", url: "https://tyomarkkinatori.fi/ammatit/kuvausassistentti" }
+      { name: "Työmarkkinatori – Kuvausassistentti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kuvausassistentti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Video" }
       ],
     keywords: ["kuvaus", "elokuva", "kamera", "tuotanto", "AV-ala"],
     study_length_estimate_months: 36
@@ -20483,7 +20722,8 @@ export const careersData: CareerFI[] = [
       { name: "Matkailu- ja Ravintolapalvelut MaRa", url: "https://www.mara.fi/" },
       { name: "Opintopolku – Ravintola- ja cateringalan perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/ravintola-%20ja%20cateringalan%20perustutkinto" },
     
-      { name: "Työmarkkinatori – Baarimikko", url: "https://tyomarkkinatori.fi/ammatit/baarimikko" }
+      { name: "Työmarkkinatori – Baarimikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/baarimikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Baarimikko" }
       ],
     keywords: ["baarityö", "cocktail", "ravintola", "anniskelu", "palvelu"],
     study_length_estimate_months: 30
@@ -20532,12 +20772,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Aktuaari",
@@ -20561,8 +20801,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Aktuaari", url: "https://tyomarkkinatori.fi/ammatit/aktuaari" }
+    useful_links: [{ name: "Opintopolku - vakuutusmatemaatikko", url: "https://opintopolku.fi/konfo/fi/haku/vakuutusmatemaatikko" },
+      { name: "Työmarkkinatori – Aktuaari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/aktuaari" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aktuaari" }
       ],
     keywords: ["aktuaari", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -20611,12 +20852,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Arkkitehti",
@@ -20640,8 +20881,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Arkkitehti", url: "https://tyomarkkinatori.fi/ammatit/arkkitehti" }
+    useful_links: [{ name: "Opintopolku - arkkitehtuuri", url: "https://opintopolku.fi/konfo/fi/haku/arkkitehtuuri" },
+      { name: "Työmarkkinatori – Arkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/arkkitehti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Arkkitehti" }
       ],
     keywords: ["arkkitehti", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -20720,7 +20962,8 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku – Lääketiede", url: "https://opintopolku.fi/konfo/fi/haku/lääketiede" },
       { name: "Lääkäriliitto", url: "https://www.laakariliitto.fi/" },
-      { name: "Duodecim", url: "https://www.duodecim.fi/" }
+      { name: "Duodecim", url: "https://www.duodecim.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Erikoisl%C3%A4%C3%A4k%C3%A4ri" }
     ],
     keywords: ["erikoislääkäri", "lääkäri", "lääketiede", "terveydenhuolto", "sairaala", "potilas"],
     study_length_estimate_months: 144
@@ -20769,12 +21012,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Erityispedagogi",
@@ -20798,8 +21041,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Erityispedagogi", url: "https://tyomarkkinatori.fi/ammatit/erityispedagogi" }
+    useful_links: [{ name: "Opintopolku - erityispedagogiikka", url: "https://opintopolku.fi/konfo/fi/haku/erityispedagogiikka" },
+      { name: "Työmarkkinatori – Erityispedagogi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/erityispedagogi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Erityispedagogi" }
       ],
     keywords: ["erityispedagogi", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -20848,12 +21092,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Etiikan Asiantuntija",
@@ -20877,8 +21121,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Etiikan Asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/etiikan-asiantuntija" }
+    useful_links: [{ name: "Opintopolku - filosofia etiikka", url: "https://opintopolku.fi/konfo/fi/haku/filosofia%20etiikka" },
+      { name: "Työmarkkinatori – Etiikan Asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/etiikan-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Etiikan%20Asiantuntija" }
       ],
     keywords: ["etiikan-asiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -20927,12 +21172,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Filosofi",
@@ -20956,8 +21201,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Filosofi", url: "https://tyomarkkinatori.fi/ammatit/filosofi" }
+    useful_links: [{ name: "Opintopolku - filosofia", url: "https://opintopolku.fi/konfo/fi/haku/filosofia" },
+      { name: "Työmarkkinatori – Filosofi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/filosofi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Filosofi" }
       ],
     keywords: ["filosofi", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -21006,12 +21252,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Historioitsija",
@@ -21035,8 +21281,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Historioitsija", url: "https://tyomarkkinatori.fi/ammatit/historioitsija" }
+    useful_links: [{ name: "Opintopolku - historia", url: "https://opintopolku.fi/konfo/fi/haku/historia" },
+      { name: "Työmarkkinatori – Historioitsija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/historioitsija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Historioitsija" }
       ],
     keywords: ["historioitsija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -21085,12 +21332,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Insinoori",
@@ -21114,94 +21361,13 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Insinoori", url: "https://tyomarkkinatori.fi/ammatit/insinoori" }
+    useful_links: [{ name: "Opintopolku - insinööri", url: "https://opintopolku.fi/konfo/fi/haku/insin%C3%B6%C3%B6ri" },
+      { name: "Työmarkkinatori – Insinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Insinoori" }
       ],
     keywords: ["insinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
-  },
-
-
-  {
-    id: "it-tukihenkilo",
-    category: "innovoija",
-    title_fi: "It Tukihenkilo",
-    title_en: "IT Support Specialist",
-    short_description: "It Tukihenkilo toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
-    main_tasks: [
-      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
-      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
-      "Tekee yhteistyötä eri sidosryhmien kanssa",
-      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
-      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
-    ],
-    impact: [
-      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
-      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
-    ],
-    education_paths: [
-      "Yliopisto: Alan maisteriohjelma",
-      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
-      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Analyyttinen ajattelu",
-      "Projektinhallinta",
-      "Viestintä ja yhteistyö",
-      "Ratkaisukeskeisyys",
-      "Tietotekninen osaaminen"
-    ],
-    tools_tech: [
-      "Office 365",
-      "Projektinhallintatyökalut",
-      "Data-analytiikkatyökalut",
-      "Alan erikoisohjelmistot",
-      "Raportointijärjestelmät"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 3800,
-      range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior It Tukihenkilo",
-      "Harjoittelija",
-      "Assistentti"
-    ],
-    career_progression: [
-      "Asiantuntija",
-      "Vanhempi asiantuntija",
-      "Johtava asiantuntija"
-    ],
-    typical_employers: [
-      "Kunnat ja hyvinvointialueet",
-      "Valtio ja virastot",
-      "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot",
-      "Digitoimistot ympäri Suomen",
-      "Etätyö mahdollistaa työskentelyn mistä tahansa",
-      "Wolt (Helsinki)",
-      "Vincit (Tampere)"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – It Tukihenkilo", url: "https://tyomarkkinatori.fi/ammatit/it-tukihenkilo" }
-      ],
-    keywords: ["it-tukihenkilo", "asiantuntija", "kehittäminen"],
-    study_length_estimate_months: 48
-  },
-
-
-  {
+  },{
     id: "journalisti",
     category: "visionaari",
     title_fi: "Journalisti",
@@ -21243,12 +21409,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Journalisti",
@@ -21272,8 +21438,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Journalisti", url: "https://tyomarkkinatori.fi/ammatit/journalisti" }
+    useful_links: [{ name: "Opintopolku - journalistiikka", url: "https://opintopolku.fi/konfo/fi/haku/journalistiikka" },
+      { name: "Työmarkkinatori – Journalisti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/journalisti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Journalisti" }
       ],
     keywords: ["journalisti", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -21322,12 +21489,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Kemiisti",
@@ -21351,94 +21518,13 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Kemiisti", url: "https://tyomarkkinatori.fi/ammatit/kemiisti" }
+    useful_links: [{ name: "Opintopolku - kemia", url: "https://opintopolku.fi/konfo/fi/haku/kemia" },
+      { name: "Työmarkkinatori – Kemiisti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kemiisti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kemiisti" }
       ],
     keywords: ["kemiisti", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
-  },
-
-
-  {
-    id: "kirjanpitaja",
-    category: "jarjestaja",
-    title_fi: "Kirjanpitaja",
-    title_en: "Bookkeeper",
-    short_description: "Kirjanpitaja toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
-    main_tasks: [
-      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
-      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
-      "Tekee yhteistyötä eri sidosryhmien kanssa",
-      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
-      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
-    ],
-    impact: [
-      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
-      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
-    ],
-    education_paths: [
-      "Yliopisto: Alan maisteriohjelma",
-      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
-      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Analyyttinen ajattelu",
-      "Projektinhallinta",
-      "Viestintä ja yhteistyö",
-      "Ratkaisukeskeisyys",
-      "Tietotekninen osaaminen"
-    ],
-    tools_tech: [
-      "Office 365",
-      "Projektinhallintatyökalut",
-      "Data-analytiikkatyökalut",
-      "Alan erikoisohjelmistot",
-      "Raportointijärjestelmät"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 3800,
-      range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior Kirjanpitaja",
-      "Harjoittelija",
-      "Assistentti"
-    ],
-    career_progression: [
-      "Asiantuntija",
-      "Vanhempi asiantuntija",
-      "Johtava asiantuntija"
-    ],
-    typical_employers: [
-      "Kunnat ja hyvinvointialueet",
-      "Valtio ja virastot",
-      "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot",
-      "Digitoimistot ympäri Suomen",
-      "Etätyö mahdollistaa työskentelyn mistä tahansa",
-      "Wolt (Helsinki)",
-      "Vincit (Tampere)"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Kirjanpitaja", url: "https://tyomarkkinatori.fi/ammatit/kirjanpitaja" }
-      ],
-    keywords: ["kirjanpitaja", "asiantuntija", "kehittäminen"],
-    study_length_estimate_months: 48
-  },
-
-
-  {
+  },{
     id: "konetekniikan-insinoori",
     category: "innovoija",
     title_fi: "Konetekniikan Insinoori",
@@ -21480,12 +21566,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Konetekniikan Insinoori",
@@ -21509,8 +21595,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Konetekniikan Insinoori", url: "https://tyomarkkinatori.fi/ammatit/konetekniikan-insinoori" }
+    useful_links: [{ name: "Opintopolku - konetekniikka", url: "https://opintopolku.fi/konfo/fi/haku/konetekniikka" },
+      { name: "Työmarkkinatori – Konetekniikan Insinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/konetekniikan-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Konetekniikan%20Insinoori" }
       ],
     keywords: ["konetekniikan-insinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -21559,12 +21646,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Koulupsykologi",
@@ -21588,8 +21675,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Koulupsykologi", url: "https://tyomarkkinatori.fi/ammatit/koulupsykologi" }
+    useful_links: [{ name: "Opintopolku - psykologia", url: "https://opintopolku.fi/konfo/fi/haku/psykologia" },
+      { name: "Työmarkkinatori – Koulupsykologi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/koulupsykologi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Koulupsykologi" }
       ],
     keywords: ["koulupsykologi", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -21638,12 +21726,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Kriitikko",
@@ -21667,8 +21755,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Kriitikko", url: "https://tyomarkkinatori.fi/ammatit/kriitikko" }
+    useful_links: [{ name: "Opintopolku - kulttuurintutkimus", url: "https://opintopolku.fi/konfo/fi/haku/kulttuurintutkimus" },
+      { name: "Työmarkkinatori – Kriitikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kriitikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kriitikko" }
       ],
     keywords: ["kriitikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -21717,12 +21806,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Laatuasiantuntija",
@@ -21746,8 +21835,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Laatuasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/laatuasiantuntija" }
+    useful_links: [{ name: "Opintopolku - laadunhallinta", url: "https://opintopolku.fi/konfo/fi/haku/laadunhallinta" },
+      { name: "Työmarkkinatori – Laatuasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/laatuasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laatuasiantuntija" }
       ],
     keywords: ["laatuasiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -21796,12 +21886,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Maatalousasiantuntija",
@@ -21825,8 +21915,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Maatalousasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/maatalousasiantuntija" }
+    useful_links: [{ name: "Opintopolku - maatalous", url: "https://opintopolku.fi/konfo/fi/haku/maatalous" },
+      { name: "Työmarkkinatori – Maatalousasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/maatalousasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maatalousasiantuntija" }
       ],
     keywords: ["maatalousasiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -21875,12 +21966,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Maatalousinsinoori",
@@ -21904,8 +21995,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Maatalousinsinoori", url: "https://tyomarkkinatori.fi/ammatit/maatalousinsinoori" }
+    useful_links: [{ name: "Opintopolku - agrologi maatalous", url: "https://opintopolku.fi/konfo/fi/haku/agrologi%20maatalous" },
+      { name: "Työmarkkinatori – Maatalousinsinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/maatalousinsinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maatalousinsinoori" }
       ],
     keywords: ["maatalousinsinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -21954,12 +22046,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Markkinointipaallikko",
@@ -21983,8 +22075,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Markkinointipaallikko", url: "https://tyomarkkinatori.fi/ammatit/markkinointipaallikko" }
+    useful_links: [{ name: "Opintopolku - markkinointi liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/markkinointi%20liiketalous" },
+      { name: "Työmarkkinatori – Markkinointipaallikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/markkinointipaallikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Markkinointipaallikko" }
       ],
     keywords: ["markkinointipaallikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22033,12 +22126,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Matkailuneuvoja",
@@ -22062,8 +22155,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Matkailuneuvoja", url: "https://tyomarkkinatori.fi/ammatit/matkailuneuvoja" }
+    useful_links: [{ name: "Opintopolku - matkailu", url: "https://opintopolku.fi/konfo/fi/haku/matkailu" },
+      { name: "Työmarkkinatori – Matkailuneuvoja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/matkailuneuvoja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Matkailuneuvoja" }
       ],
     keywords: ["matkailuneuvoja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22112,12 +22206,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Mediasuunnittelija",
@@ -22141,8 +22235,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Mediasuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/mediasuunnittelija" }
+    useful_links: [{ name: "Opintopolku - mediatuotanto", url: "https://opintopolku.fi/konfo/fi/haku/mediatuotanto" },
+      { name: "Työmarkkinatori – Mediasuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/mediasuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mediasuunnittelija" }
       ],
     keywords: ["mediasuunnittelija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22191,12 +22286,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Merenkulun Insinoori",
@@ -22220,8 +22315,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Merenkulun Insinoori", url: "https://tyomarkkinatori.fi/ammatit/merenkulun-insinoori" }
+    useful_links: [{ name: "Opintopolku - merenkulku", url: "https://opintopolku.fi/konfo/fi/haku/merenkulku" },
+      { name: "Työmarkkinatori – Merenkulun Insinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/merenkulun-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Merenkulun%20Insinoori" }
       ],
     keywords: ["merenkulun-insinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22270,12 +22366,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Merikapteeni",
@@ -22299,8 +22395,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Merikapteeni", url: "https://tyomarkkinatori.fi/ammatit/merikapteeni" }
+    useful_links: [{ name: "Opintopolku - merikapteeni merenkulku", url: "https://opintopolku.fi/konfo/fi/haku/merikapteeni%20merenkulku" },
+      { name: "Työmarkkinatori – Merikapteeni", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/merikapteeni" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Merikapteeni" }
       ],
     keywords: ["merikapteeni", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22349,12 +22446,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Metsainsinoori",
@@ -22378,8 +22475,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Metsainsinoori", url: "https://tyomarkkinatori.fi/ammatit/metsainsinoori" }
+    useful_links: [{ name: "Opintopolku - metsätalous", url: "https://opintopolku.fi/konfo/fi/haku/mets%C3%A4talous" },
+      { name: "Työmarkkinatori – Metsainsinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/metsainsinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Metsainsinoori" }
       ],
     keywords: ["metsainsinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22428,12 +22526,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Metsatalousasiantuntija",
@@ -22457,8 +22555,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Metsatalousasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/metsatalousasiantuntija" }
+    useful_links: [{ name: "Opintopolku - metsätalous", url: "https://opintopolku.fi/konfo/fi/haku/mets%C3%A4talous" },
+      { name: "Työmarkkinatori – Metsatalousasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/metsatalousasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Metsatalousasiantuntija" }
       ],
     keywords: ["metsatalousasiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22507,12 +22606,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Museoasiantuntija",
@@ -22536,8 +22635,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Museoasiantuntija", url: "https://tyomarkkinatori.fi/ammatit/museoasiantuntija" }
+    useful_links: [{ name: "Opintopolku - museologia", url: "https://opintopolku.fi/konfo/fi/haku/museologia" },
+      { name: "Työmarkkinatori – Museoasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/museoasiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Museoasiantuntija" }
       ],
     keywords: ["museoasiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22586,12 +22686,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Projektipaallikko",
@@ -22615,8 +22715,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Projektipaallikko", url: "https://tyomarkkinatori.fi/ammatit/projektipaallikko" }
+    useful_links: [{ name: "Opintopolku - projektinhallinta liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta%20liiketalous" },
+      { name: "Työmarkkinatori – Projektipaallikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/projektipaallikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Projektipaallikko" }
       ],
     keywords: ["projektipaallikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22665,12 +22766,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Rakennusarkkitehti",
@@ -22694,8 +22795,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Rakennusarkkitehti", url: "https://tyomarkkinatori.fi/ammatit/rakennusarkkitehti" }
+    useful_links: [{ name: "Opintopolku - rakennusarkkitehtuuri", url: "https://opintopolku.fi/konfo/fi/haku/rakennusarkkitehtuuri" },
+      { name: "Työmarkkinatori – Rakennusarkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rakennusarkkitehti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rakennusarkkitehti" }
       ],
     keywords: ["rakennusarkkitehti", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22744,12 +22846,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Ravintolapaallikko",
@@ -22773,8 +22875,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Ravintolapaallikko", url: "https://tyomarkkinatori.fi/ammatit/ravintolapaallikko" }
+    useful_links: [{ name: "Opintopolku - ravintola-ala restonomi", url: "https://opintopolku.fi/konfo/fi/haku/ravintola-ala%20restonomi" },
+      { name: "Työmarkkinatori – Ravintolapaallikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ravintolapaallikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ravintolapaallikko" }
       ],
     keywords: ["ravintolapaallikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22823,12 +22926,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Sahkotekniikan Insinoori",
@@ -22852,8 +22955,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Sahkotekniikan Insinoori", url: "https://tyomarkkinatori.fi/ammatit/sahkotekniikan-insinoori" }
+    useful_links: [{ name: "Opintopolku - sähkötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/s%C3%A4hk%C3%B6tekniikka" },
+      { name: "Työmarkkinatori – Sahkotekniikan Insinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sahkotekniikan-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sahkotekniikan%20Insinoori" }
       ],
     keywords: ["sahkotekniikan-insinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22902,12 +23006,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Sosiaaliohjaja",
@@ -22931,8 +23035,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Sosiaaliohjaja", url: "https://tyomarkkinatori.fi/ammatit/sosiaaliohjaja" }
+    useful_links: [{ name: "Opintopolku - sosiaaliala sosionomi", url: "https://opintopolku.fi/konfo/fi/haku/sosiaaliala%20sosionomi" },
+      { name: "Työmarkkinatori – Sosiaaliohjaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sosiaaliohjaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaaliohjaja" }
       ],
     keywords: ["sosiaaliohjaja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22981,12 +23086,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Sosiaalitutkija",
@@ -23010,94 +23115,13 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Sosiaalitutkija", url: "https://tyomarkkinatori.fi/ammatit/sosiaalitutkija" }
+    useful_links: [{ name: "Opintopolku - sosiologia", url: "https://opintopolku.fi/konfo/fi/haku/sosiologia" },
+      { name: "Työmarkkinatori – Sosiaalitutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sosiaalitutkija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalitutkija" }
       ],
     keywords: ["sosiaalitutkija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
-  },
-
-
-  {
-    id: "sosiaalityontekija",
-    category: "auttaja",
-    title_fi: "Sosiaalityontekija",
-    title_en: "Social Worker",
-    short_description: "Sosiaalityontekija toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
-    main_tasks: [
-      "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
-      "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
-      "Tekee yhteistyötä eri sidosryhmien kanssa",
-      "Seuraa alan kehitystä ja soveltaa uusia menetelmiä",
-      "Ohjaa ja neuvoo asiakkaita tai tiimejä"
-    ],
-    impact: [
-      "Mahdollistaa laadukkaita palveluja ja ratkaisuja yhteiskunnalle",
-      "Tukee Suomessa organisaatioita tekemään tietoon perustuvia päätöksiä",
-      "Varmistaa prosessien vastuullisuuden ja tehokkuuden"
-    ],
-    education_paths: [
-      "Yliopisto: Alan maisteriohjelma",
-      "AMK: Sosionomi / Insinööri / Tradenomi (roolista riippuen)",
-      "Täydennyskoulutus: Ammatilliset erikoistumisopinnot"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Analyyttinen ajattelu",
-      "Projektinhallinta",
-      "Viestintä ja yhteistyö",
-      "Ratkaisukeskeisyys",
-      "Tietotekninen osaaminen"
-    ],
-    tools_tech: [
-      "Office 365",
-      "Projektinhallintatyökalut",
-      "Data-analytiikkatyökalut",
-      "Alan erikoisohjelmistot",
-      "Raportointijärjestelmät"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 3800,
-      range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior Sosiaalityontekija",
-      "Harjoittelija",
-      "Assistentti"
-    ],
-    career_progression: [
-      "Asiantuntija",
-      "Vanhempi asiantuntija",
-      "Johtava asiantuntija"
-    ],
-    typical_employers: [
-      "Kunnat ja hyvinvointialueet",
-      "Valtio ja virastot",
-      "Yksityiset yritykset",
-      "Järjestöt ja asiantuntijaorganisaatiot",
-      "Digitoimistot ympäri Suomen",
-      "Etätyö mahdollistaa työskentelyn mistä tahansa",
-      "Wolt (Helsinki)",
-      "Vincit (Tampere)"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Sosiaalityontekija", url: "https://tyomarkkinatori.fi/ammatit/sosiaalityontekija" }
-      ],
-    keywords: ["sosiaalityontekija", "asiantuntija", "kehittäminen"],
-    study_length_estimate_months: 48
-  },
-
-
-  {
+  },{
     id: "tilitoimiston-johtaja",
     category: "johtaja",
     title_fi: "Tilitoimiston Johtaja",
@@ -23139,12 +23163,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Tilitoimiston Johtaja",
@@ -23168,8 +23192,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Tilitoimiston Johtaja", url: "https://tyomarkkinatori.fi/ammatit/tilitoimiston-johtaja" }
+    useful_links: [{ name: "Opintopolku - taloushallinto tradenomi", url: "https://opintopolku.fi/konfo/fi/haku/taloushallinto%20tradenomi" },
+      { name: "Työmarkkinatori – Tilitoimiston Johtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tilitoimiston-johtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tilitoimiston%20Johtaja" }
       ],
     keywords: ["tilitoimiston-johtaja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -23218,12 +23243,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Tutkija",
@@ -23247,8 +23272,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Tutkija", url: "https://tyomarkkinatori.fi/ammatit/tutkija" }
+    useful_links: [{ name: "Opintopolku - tutkimus yliopisto", url: "https://opintopolku.fi/konfo/fi/haku/tutkimus%20yliopisto" },
+      { name: "Työmarkkinatori – Tutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tutkija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tutkija" }
       ],
     keywords: ["tutkija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -23297,12 +23323,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Uutistoimittaja",
@@ -23326,8 +23352,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Uutistoimittaja", url: "https://tyomarkkinatori.fi/ammatit/uutistoimittaja" }
+    useful_links: [{ name: "Opintopolku - journalistiikka", url: "https://opintopolku.fi/konfo/fi/haku/journalistiikka" },
+      { name: "Työmarkkinatori – Uutistoimittaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/uutistoimittaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Uutistoimittaja" }
       ],
     keywords: ["uutistoimittaja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -23376,12 +23403,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Valmentaja",
@@ -23405,8 +23432,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Valmentaja", url: "https://tyomarkkinatori.fi/ammatit/valmentaja" }
+    useful_links: [{ name: "Opintopolku - valmennus liikunta", url: "https://opintopolku.fi/konfo/fi/haku/valmennus%20liikunta" },
+      { name: "Työmarkkinatori – Valmentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/valmentaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Valmentaja" }
       ],
     keywords: ["valmentaja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -23455,12 +23483,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Visuaalinen Suunnittelija",
@@ -23484,8 +23512,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Visuaalinen Suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/visuaalinen-suunnittelija" }
+    useful_links: [{ name: "Opintopolku - visuaalinen suunnittelu muotoilu", url: "https://opintopolku.fi/konfo/fi/haku/visuaalinen%20suunnittelu%20muotoilu" },
+      { name: "Työmarkkinatori – Visuaalinen Suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/visuaalinen-suunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Visuaalinen%20Suunnittelija" }
       ],
     keywords: ["visuaalinen-suunnittelija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -23534,12 +23563,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Ymparistonsuojelun Asiantuntija",
@@ -23563,8 +23592,9 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Ymparistonsuojelun Asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/ymparistonsuojelun-asiantuntija" }
+    useful_links: [{ name: "Opintopolku - ympäristönsuojelu", url: "https://opintopolku.fi/konfo/fi/haku/ymp%C3%A4rist%C3%B6nsuojelu" },
+      { name: "Työmarkkinatori – Ymparistonsuojelun Asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistonsuojelun-asiantuntija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymparistonsuojelun%20Asiantuntija" }
       ],
     keywords: ["ymparistonsuojelun-asiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -23613,12 +23643,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5200],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Roolille on tasaista kysyntää sekä julkisella että yksityisellä sektorilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Ymparistoteknikko",
@@ -23642,15 +23672,13 @@ export const careersData: CareerFI[] = [
     ],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku", url: "https://opintopolku.fi/" },
-      { name: "Työmarkkinatori – Ymparistoteknikko", url: "https://tyomarkkinatori.fi/ammatit/ymparistoteknikko" }
+    useful_links: [{ name: "Opintopolku - ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/ymp%C3%A4rist%C3%B6tekniikka" },
+      { name: "Työmarkkinatori – Ymparistoteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistoteknikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymparistoteknikko" }
       ],
     keywords: ["ymparistoteknikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
-,
 
 {
     id: "product-manager",
@@ -23695,7 +23723,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5200,
       range: [4500, 7000],
-      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -23732,8 +23760,9 @@ export const careersData: CareerFI[] = [
           },
           {
                 "name": "TEK Palkkavertailu",
-                "url": "https://www.tek.fi/fi/ura/palkkavertailu"
-          }
+                "url": "https://tek.fi/fi/ura/palkkavertailu"
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotep%C3%A4%C3%A4llikk%C3%B6" }
     ],
     related_careers: ["ux-researcher","scrum-master","business-analyst"],
     study_length_estimate_months: 60
@@ -23781,7 +23810,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [4000, 6500],
-      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -23816,7 +23845,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Scrum Alliance",
                 "url": "https://www.scrumalliance.org/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Scrum%20Master" }
     ],
     related_careers: ["product-manager","project-coordinator"],
     study_length_estimate_months: 48
@@ -23868,12 +23898,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5400,
       range: [4500, 7500],
-      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Pilvipalveluiden ja DevOps-kulttuurin yleistyminen luo vahvaa kysyntää.",
-      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/", year: 2024 }
     },
     entry_roles: [
           "Junior DevOps Engineer",
@@ -23904,8 +23934,9 @@ export const careersData: CareerFI[] = [
           },
           {
                 "name": "TEK Palkkavertailu",
-                "url": "https://www.tek.fi/fi/ura/palkkavertailu"
-          }
+                "url": "https://tek.fi/fi/ura/palkkavertailu"
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=DevOps-insin%C3%B6%C3%B6ri" }
     ],
     related_careers: ["site-reliability-engineer","platform-engineer","backend-developer"],
     study_length_estimate_months: 48
@@ -23992,7 +24023,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Data Science Society Finland",
                 "url": "https://www.datasciencesociety.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Data-analyytikko" }
     ],
     related_careers: ["business-analyst","health-data-analyst"],
     study_length_estimate_months: 36
@@ -24043,7 +24075,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3800, 5800],
-      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -24078,7 +24110,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Nielsen Norman Group",
                 "url": "https://www.nngroup.com/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=UX-tutkija" }
     ],
     related_careers: ["ui-ux-designer","product-manager"],
     study_length_estimate_months: 60
@@ -24166,7 +24199,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Reforge",
                 "url": "https://www.reforge.com/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kasvuasiantuntija" }
     ],
     related_careers: ["product-manager","data-analyst","social-media-manager"],
     study_length_estimate_months: 36
@@ -24253,7 +24287,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Gainsight",
                 "url": "https://www.gainsight.com/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakasmenestyksen%20asiantuntija" }
     ],
     related_careers: ["account-executive","technical-support-specialist"],
     study_length_estimate_months: 36
@@ -24305,12 +24340,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [3800, 6500],
-      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitalisaatio ja web-sovellusten kysyntä kasvaa jatkuvasti.",
-      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/", year: 2024 }
     },
     entry_roles: [
           "Junior Frontend Developer",
@@ -24341,7 +24376,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Frontend Masters",
                 "url": "https://frontendmasters.com/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Frontend-kehitt%C3%A4j%C3%A4" }
     ],
     related_careers: ["ui-ux-designer","backend-developer"],
     study_length_estimate_months: 36
@@ -24393,12 +24429,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5000,
       range: [4000, 7000],
-      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Backend-osaamisen kysyntä kasvaa digitaalisten palveluiden yleistyessä.",
-      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/", year: 2024 }
     },
     entry_roles: [
           "Junior Backend Developer",
@@ -24425,12 +24461,13 @@ export const careersData: CareerFI[] = [
     useful_links: [
           {
                 "name": "TEK",
-                "url": "https://www.tek.fi/"
+                "url": "https://tek.fi/"
           },
           {
                 "name": "Stack Overflow",
                 "url": "https://stackoverflow.com/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Backend-kehitt%C3%A4j%C3%A4" }
     ],
     related_careers: ["frontend-developer","devops-engineer","api-developer"],
     study_length_estimate_months: 36
@@ -24481,12 +24518,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3500, 5500],
-      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Ohjelmistojen laadunvarmistus pysyy tärkeänä, mutta automatisointi muuttaa roolia.",
-      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/", year: 2024 }
     },
     entry_roles: [
           "QA Tester",
@@ -24518,7 +24555,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Test Automation University",
                 "url": "https://testautomationu.applitools.com/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Testausasiantuntija" }
     ],
     related_careers: ["backend-developer","frontend-developer"],
     study_length_estimate_months: 36
@@ -24605,7 +24643,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Society for Technical Communication",
                 "url": "https://www.stc.org/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tekninen%20kirjoittaja" }
     ],
     related_careers: ["copywriter","content-strategist"],
     study_length_estimate_months: 36
@@ -24657,12 +24696,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5800,
       range: [4800, 8000],
-      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Pilvipalveluiden ja microservices-arkkitehtuurin yleistyminen lisää SRE-kysyntää.",
-      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/", year: 2024 }
     },
     entry_roles: [
           "Junior SRE",
@@ -24694,7 +24733,10 @@ export const careersData: CareerFI[] = [
           {
                 "name": "SRE Weekly",
                 "url": "https://sreweekly.com/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=SRE-insin%C3%B6%C3%B6ri" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Site%20Reliability%20Engineer%20(SRE)" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Site%20Reliability%20Engineer%20(SRE)" }
     ],
     related_careers: ["devops-engineer","platform-engineer"],
     study_length_estimate_months: 48
@@ -24744,12 +24786,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6200,
       range: [5000, 8500],
-      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitaalitransformaatio ja pilvisiirtymät lisäävät kysyntää arkkitehtiosaamiselle.",
-      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/", year: 2024 }
     },
     entry_roles: [
           "Software Developer",
@@ -24780,7 +24822,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "The Open Group",
                 "url": "https://www.opengroup.org/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ratkaisuarkkitehti" }
     ],
     related_careers: ["platform-engineer","devops-engineer"],
     study_length_estimate_months: 60
@@ -24831,7 +24874,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5600,
       range: [4700, 7500],
-      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -24867,7 +24910,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "CNCF",
                 "url": "https://www.cncf.io/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Alustasuunnittelija" }
     ],
     related_careers: ["devops-engineer","site-reliability-engineer"],
     study_length_estimate_months: 48
@@ -24918,12 +24962,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [3800, 6500],
-      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "API-talouden kasvu ja mikropalveluarkkitehtuurit lisäävät kysyntää.",
-      source: { name: "TEK", url: "https://www.tek.fi/", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/", year: 2024 }
     },
     entry_roles: [
           "Junior Backend Developer",
@@ -24954,7 +24998,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Swagger API Documentation",
                 "url": "https://swagger.io/docs/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=API-kehitt%C3%A4j%C3%A4" }
     ],
     related_careers: ["backend-developer","solutions-architect"],
     study_length_estimate_months: 36
@@ -25028,7 +25073,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Viestijät",
                 "url": "https://viestijat.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4lt%C3%B6strategisti" }
     ],
     keywords: ["sisältöstrategisti","content","markkinointi","viestintä"],
     study_length_estimate_months: 36
@@ -25101,7 +25147,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "IAB Finland",
                 "url": "https://www.iab.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalisen%20median%20asiantuntija" }
     ],
     keywords: ["some","sosiaalinen media","markkinointi","instagram"],
     study_length_estimate_months: 36
@@ -25145,7 +25192,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3600,
       range: [2800, 5000],
-      source: { name: "Journalistiliitto", url: "https://www.journalistiliitto.fi/", year: 2024 }
+      source: { name: "Journalistiliitto", url: "https://journalistiliitto.fi/fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -25174,7 +25221,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Pacific Content",
                 "url": "https://www.pacificcontent.com/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Podcast" }
     ],
     keywords: ["podcast","äänituotanto","media","haastattelut"],
     study_length_estimate_months: 24
@@ -25247,7 +25295,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Kansallinen audiovisuaalinen instituutti",
                 "url": "https://kavi.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Videoleikkaaja" }
     ],
     keywords: ["videoleikkaus","editointi","premiere","video"],
     study_length_estimate_months: 36
@@ -25320,7 +25369,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Community Management Finland",
                 "url": "https://www.facebook.com/groups/communitymanagementfinland"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Yhteis%C3%B6p%C3%A4%C3%A4llikk%C3%B6" }
     ],
     keywords: ["yhteisö","community","moderointi","some"],
     study_length_estimate_months: 24
@@ -25364,12 +25414,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3900,
       range: [3200, 5500],
-      source: { name: "Grafia", url: "https://www.grafia.fi/", year: 2024 }
+      source: { name: "Grafia", url: "https://grafia.fi/", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Brändisuunnittelijoita tarvitaan jatkuvasti, mutta kilpailu on kovaa.",
-      source: { name: "Grafia", url: "https://www.grafia.fi/", year: 2024 }
+      source: { name: "Grafia", url: "https://grafia.fi/", year: 2024 }
     },
     entry_roles: ["Junior Brand Designer","Graphic Designer"],
     career_progression: ["Senior Brand Designer","Brand Design Lead","Creative Director"],
@@ -25388,12 +25438,13 @@ export const careersData: CareerFI[] = [
     useful_links: [
           {
                 "name": "Grafia",
-                "url": "https://www.grafia.fi/"
+                "url": "https://grafia.fi/"
           },
           {
                 "name": "ORNAMO",
                 "url": "https://www.ornamo.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Br%C3%A4ndisuunnittelija" }
     ],
     keywords: ["brändäys","logo","graafinen suunnittelu","visuaalinen"],
     study_length_estimate_months: 42
@@ -25466,7 +25517,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "MTL",
                 "url": "https://mtl.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Copywriter" }
     ],
     keywords: ["copywriter","mainosteksti","copywriting","tekstit"],
     study_length_estimate_months: 24
@@ -25510,7 +25562,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3000, 5500],
-      source: { name: "Grafia", url: "https://www.grafia.fi/", year: 2024 }
+      source: { name: "Grafia", url: "https://grafia.fi/", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -25539,7 +25591,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Motionographer",
                 "url": "https://motionographer.com/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Motion%20graphics" }
     ],
     keywords: ["motion graphics","animaatio","after effects","video"],
     study_length_estimate_months: 36
@@ -25583,7 +25636,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4300,
       range: [3500, 5800],
-      source: { name: "TEK", url: "https://www.tek.fi/fi/ura/palkkavertailu", year: 2024 }
+      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
@@ -25612,7 +25665,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Figma Community",
                 "url": "https://www.figma.com/community"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=UI%2FUX-suunnittelija" }
     ],
     keywords: ["ui","ux","käyttöliittymä","figma"],
     study_length_estimate_months: 36
@@ -25685,7 +25739,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Suomen Vaikuttajamarkkinoijat",
                 "url": "https://www.vaikuttajamarkkinoijat.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4ll%C3%B6ntuottaja" }
     ],
     keywords: ["content creator","sisällöntuottaja","influencer","some"],
     study_length_estimate_months: 12
@@ -25758,7 +25813,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "IAB Finland",
                 "url": "https://www.iab.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vaikuttajamarkkinoinnin%20asiantuntija" }
     ],
     keywords: ["vaikuttajamarkkinointi","influencer","some","kampanjat"],
     study_length_estimate_months: 36
@@ -25831,7 +25887,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Viestijät",
                 "url": "https://viestijat.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitaalinen%20sis%C3%A4lt%C3%B6tuottaja" }
     ],
     keywords: ["sisältötuotanto","tuottaja","digitaalinen","projektinhallinta"],
     study_length_estimate_months: 36
@@ -25905,7 +25962,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Palkka.fi",
                 "url": "https://www.palkka.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liikkeenjohdon%20konsultti" }
     ],
     related_careers: ["business-analyst","strategy-consultant"],
     study_length_estimate_months: 60
@@ -25949,7 +26007,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3200,5500],
-      source: {"name":"TEK Palkkavertailu","url":"https://www.tek.fi/fi/ura/palkkavertailu","year":2024}
+      source: {"name":"TEK Palkkavertailu","url":"https://tek.fi/fi/ura/palkkavertailu","year":2024}
     },
     job_outlook: {
       status: "kasvaa",
@@ -25977,8 +26035,9 @@ export const careersData: CareerFI[] = [
           },
           {
                 "name": "TEK Palkkavertailu",
-                "url": "https://www.tek.fi/fi/ura/palkkavertailu"
-          }
+                "url": "https://tek.fi/fi/ura/palkkavertailu"
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoiminta-analyytikko" }
     ],
     related_careers: ["data-analyst","product-manager","management-consultant"],
     study_length_estimate_months: 48
@@ -26051,7 +26110,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Management Events",
                 "url": "https://managementevents.com/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Strategiakonsultti" }
     ],
     related_careers: ["management-consultant","business-development-manager"],
     study_length_estimate_months: 60
@@ -26124,7 +26184,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Myynnin ja markkinoinnin ammattilaiset MMA",
                 "url": "https://www.mma.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Myyntikehitysedustaja" }
     ],
     related_careers: ["account-executive","customer-success-manager"],
     study_length_estimate_months: 36
@@ -26197,7 +26258,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Myynnin ja markkinoinnin ammattilaiset MMA",
                 "url": "https://www.mma.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vastuullinen%20myyntiedustaja" }
     ],
     related_careers: ["sales-development-representative","business-development-manager"],
     study_length_estimate_months: 36
@@ -26270,7 +26332,10 @@ export const careersData: CareerFI[] = [
           {
                 "name": "EK",
                 "url": "https://ek.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Operatiivinen%20p%C3%A4%C3%A4llikk%C3%B6" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimintap%C3%A4%C3%A4llikk%C3%B6" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimintap%C3%A4%C3%A4llikk%C3%B6" }
     ],
     related_careers: ["project-coordinator","business-development-manager"],
     study_length_estimate_months: 48
@@ -26343,7 +26408,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "EK",
                 "url": "https://ek.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoiminnan%20kehitysp%C3%A4%C3%A4llikk%C3%B6" }
     ],
     related_careers: ["account-executive","strategy-consultant"],
     study_length_estimate_months: 60
@@ -26416,7 +26482,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Projekti-instituutti",
                 "url": "https://www.projekti-instituutti.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Projektikoordinaattori" }
     ],
     related_careers: ["operations-manager","scrum-master"],
     study_length_estimate_months: 36
@@ -26460,7 +26527,7 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5600,
       range: [4200,7500],
-      source: {"name":"TEK","url":"https://www.tek.fi/fi/ura/palkkavertailu","year":2024}
+      source: {"name":"TEK","url":"https://tek.fi/fi/ura/palkkavertailu","year":2024}
     },
     job_outlook: {
       status: "kasvaa",
@@ -26489,7 +26556,8 @@ export const careersData: CareerFI[] = [
           {
                 "name": "Digibarometri",
                 "url": "https://www.digibarometri.fi/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitaalisen%20muutoksen%20konsultti" }
     ],
     related_careers: ["management-consultant","business-analyst"],
     study_length_estimate_months: 60
@@ -26557,12 +26625,13 @@ export const careersData: CareerFI[] = [
     useful_links:     [
           {
                 "name": "Change Management Institute",
-                "url": "https://www.change-management-institute.com/"
+                "url": "https://change-management-institute.com/"
           },
           {
                 "name": "Prosci",
                 "url": "https://www.prosci.com/"
-          }
+          },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Muutosjohtamisen%20asiantuntija" }
     ],
     related_careers: ["management-consultant","digital-transformation-consultant"],
     study_length_estimate_months: 60
@@ -26610,7 +26679,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Mielenterveyspalveluiden tarve kasvaa jatkuvasti.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Mental Health Counselor", "Trainee"],
     career_progression: ["Senior Mental Health Counselor", "Lead", "Manager"],
@@ -26627,8 +26696,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Talentia",
     useful_links: [
-      { name: "TEM", url: "https://tem.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "TEM", url: "https://tem.fi/etusivu" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mielenterveysohjaaja" }
     ],
     study_length_estimate_months: 42
   },
@@ -26675,7 +26745,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Hyvinvointivalmennan kysyntä kasvaa terveydenalan ja työpaikkojen tarpeissa.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Wellness Coach", "Trainee"],
     career_progression: ["Senior Wellness Coach", "Lead", "Manager"],
@@ -26692,8 +26762,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM", url: "https://tem.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "TEM", url: "https://tem.fi/etusivu" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hyvinvointivalmentaja" }
     ],
     study_length_estimate_months: 24
   },
@@ -26740,7 +26811,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Työterveyspalveluiden kysyntä on vakaata työsuojelulain velvoitteiden vuoksi.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Occupational Health Specialist", "Trainee"],
     career_progression: ["Senior Occupational Health Specialist", "Lead", "Manager"],
@@ -26757,8 +26828,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: "Tehy / Talentia",
     useful_links: [
-      { name: "TEM", url: "https://tem.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "TEM", url: "https://tem.fi/etusivu" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ty%C3%B6terveysasiantuntija" }
     ],
     study_length_estimate_months: 48
   },
@@ -26805,7 +26877,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Terveysdatan hyödyntäminen kasvaa voimakkaasti digitalisaation myötä.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Health Data Analyst", "Trainee"],
     career_progression: ["Senior Health Data Analyst", "Lead", "Manager"],
@@ -26822,8 +26894,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK",
     useful_links: [
-      { name: "TEM", url: "https://tem.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "TEM", url: "https://tem.fi/etusivu" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Terveystiedon%20analyytikko" }
     ],
     study_length_estimate_months: 60
   },
@@ -26869,7 +26942,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Ravitsemusneuvonnan kysyntä kasvaa terveyden ja hyvinvoinnin merkityksen kasvaessa.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Nutrition Specialist", "Trainee"],
     career_progression: ["Senior Nutrition Specialist", "Lead", "Manager"],
@@ -26886,8 +26959,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: "Talentia",
     useful_links: [
-      { name: "TEM", url: "https://tem.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "TEM", url: "https://tem.fi/etusivu" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ravitsemusasiantuntija" }
     ],
     study_length_estimate_months: 42
   },
@@ -26933,7 +27007,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Terveyspalveluiden koordinoinnin tarve on tasaista.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Healthcare Coordinator", "Trainee"],
     career_progression: ["Senior Healthcare Coordinator", "Lead", "Manager"],
@@ -26950,8 +27024,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tehy / JHL",
     useful_links: [
-      { name: "TEM", url: "https://tem.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "TEM", url: "https://tem.fi/etusivu" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Terveydenhuollon%20koordinaattori" }
     ],
     study_length_estimate_months: 36
   },
@@ -26998,7 +27073,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Suomalaisten yritysten kansainvälistyminen luo kysyntää.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior International Sales Manager", "Trainee"],
     career_progression: ["Senior International Sales Manager", "Lead", "Manager"],
@@ -27015,8 +27090,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "paljon" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links: [
-      { name: "TEM", url: "https://tem.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "TEM", url: "https://tem.fi/etusivu" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kansainv%C3%A4lisen%20myynnin%20p%C3%A4%C3%A4llikk%C3%B6" }
     ],
     study_length_estimate_months: 60
   },
@@ -27063,7 +27139,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Etätyön yleistyminen luo kysyntää etäjohtamisosaamiselle.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Remote Team Lead", "Trainee"],
     career_progression: ["Senior Remote Team Lead", "Lead", "Manager"],
@@ -27080,8 +27156,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links: [
-      { name: "TEM", url: "https://tem.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "TEM", url: "https://tem.fi/etusivu" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Et%C3%A4tiimin%20vet%C3%A4j%C3%A4" }
     ],
     study_length_estimate_months: 48
   },
@@ -27127,7 +27204,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Globaalin digitaalisen sisällön kasvu luo kysyntää.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Localization Specialist", "Trainee"],
     career_progression: ["Senior Localization Specialist", "Lead", "Manager"],
@@ -27144,8 +27221,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links: [
-      { name: "TEM", url: "https://tem.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "TEM", url: "https://tem.fi/etusivu" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=K%C3%A4%C3%A4nn%C3%B6s" }
     ],
     study_length_estimate_months: 48
   },
@@ -27192,7 +27270,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Kumppanuusperusteinen kasvu on keskeinen strategia monelle yritykselle.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Global Partnerships Manager", "Trainee"],
     career_progression: ["Senior Global Partnerships Manager", "Lead", "Manager"],
@@ -27209,8 +27287,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "paljon" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links: [
-      { name: "TEM", url: "https://tem.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "TEM", url: "https://tem.fi/etusivu" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Globaalien%20kumppanuuksien%20p%C3%A4%C3%A4llikk%C3%B6" }
     ],
     study_length_estimate_months: 60
   },
@@ -27257,7 +27336,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Teknisen tuen tarve on jatkuvaa teknologian yleistyessä.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Technical Support Specialist", "Trainee"],
     career_progression: ["Senior Technical Support Specialist", "Lead", "Manager"],
@@ -27274,8 +27353,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK / Toimihenkilöunioni",
     useful_links: [
-      { name: "TEM", url: "https://tem.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "TEM", url: "https://tem.fi/etusivu" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teknisen%20tuen%20asiantuntija" }
     ],
     study_length_estimate_months: 36
   },
@@ -27321,7 +27401,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Käännöspalveluiden tarve on vakaata globalisaation myötä.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Translation Project Manager", "Trainee"],
     career_progression: ["Senior Translation Project Manager", "Lead", "Manager"],
@@ -27338,8 +27418,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Toimihenkilöunioni",
     useful_links: [
-      { name: "TEM", url: "https://tem.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "TEM", url: "https://tem.fi/etusivu" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=K%C3%A4%C3%A4nn%C3%B6sprojektien%20p%C3%A4%C3%A4llikk%C3%B6" }
     ],
     study_length_estimate_months: 48
   },
@@ -27385,7 +27466,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "DEI-työn merkitys kasvaa organisaatioissa.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Diversity & Inclusion Specialist", "Trainee", "Coordinator"],
     career_progression: ["Senior Diversity & Inclusion Specialist", "Lead", "Director"],
@@ -27402,8 +27483,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Monimuotoisuus-%20ja%20yhdenvertaisuusasiantuntija" }
     ],
     study_length_estimate_months: 48
   },
@@ -27448,7 +27530,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Järjestösektorin kysyntä on tasaista.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Social Justice Advocate", "Trainee", "Coordinator"],
     career_progression: ["Senior Social Justice Advocate", "Lead", "Director"],
@@ -27465,8 +27547,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalisen%20oikeudenmukaisuuden%20edist%C3%A4j%C3%A4" }
     ],
     study_length_estimate_months: 48
   },
@@ -27513,7 +27596,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Yhteisötyön tarve jatkuu erityisesti kaupungeissa.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Community Organizer", "Trainee", "Coordinator"],
     career_progression: ["Senior Community Organizer", "Lead", "Director"],
@@ -27530,8 +27613,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Yhteis%C3%B6aktivisti" }
     ],
     study_length_estimate_months: 48
   },
@@ -27577,7 +27661,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Järjestösektorin ohjelmatoiminta jatkuu tasaisena.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Nonprofit Program Coordinator", "Trainee", "Coordinator"],
     career_progression: ["Senior Nonprofit Program Coordinator", "Lead", "Director"],
@@ -27594,8 +27678,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=J%C3%A4rjest%C3%B6n%20ohjelmakoordinaattori" }
     ],
     study_length_estimate_months: 48
   },
@@ -27641,7 +27726,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Ihmisoikeustutkimuksen tarve jatkuu globaalisti.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Human Rights Researcher", "Trainee", "Coordinator"],
     career_progression: ["Senior Human Rights Researcher", "Lead", "Director"],
@@ -27658,8 +27743,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ihmisoikeustutkija" }
     ],
     study_length_estimate_months: 48
   },
@@ -27705,7 +27791,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Saavutettavuusvaatimukset kasvavat lainsäädännön myötä.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Accessibility Consultant", "Trainee", "Coordinator"],
     career_progression: ["Senior Accessibility Consultant", "Lead", "Director"],
@@ -27722,8 +27808,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Esteett%C3%B6myysasiantuntija" }
     ],
     study_length_estimate_months: 48
   },
@@ -27768,7 +27855,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Tasa-arvotyö on lakisääteistä ja jatkuvaa.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Gender Equality Advisor", "Trainee", "Coordinator"],
     career_progression: ["Senior Gender Equality Advisor", "Lead", "Director"],
@@ -27785,8 +27872,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tasa-arvoneuvoja" }
     ],
     study_length_estimate_months: 48
   },
@@ -27833,7 +27921,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Nuorisotyön tarve jatkuu tasaisena.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Youth Empowerment Coordinator", "Trainee", "Coordinator"],
     career_progression: ["Senior Youth Empowerment Coordinator", "Lead", "Director"],
@@ -27846,8 +27934,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Nuorten%20voimaannuttamisen%20koordinaattori" }
     ],
     study_length_estimate_months: 48
   },
@@ -27893,7 +27982,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Kestävän muodin kysyntä kasvaa kuluttajatietoisuuden myötä.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Sustainable Fashion Designer", "Trainee", "Coordinator"],
     career_progression: ["Senior Sustainable Fashion Designer", "Lead", "Director"],
@@ -27910,8 +27999,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Muoti%20suunnittelija" }
     ],
     study_length_estimate_months: 48
   },
@@ -27958,7 +28048,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Kiertotalous on keskeinen osa kestävyyssiirtymää.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Circular Economy Specialist", "Trainee", "Coordinator"],
     career_progression: ["Senior Circular Economy Specialist", "Lead", "Director"],
@@ -27975,8 +28065,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kiertotalouden%20asiantuntija" }
     ],
     study_length_estimate_months: 48
   },
@@ -28023,7 +28114,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Vastuullisuus on keskeinen osa brändirakentamista.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Ethical Brand Strategist", "Trainee", "Coordinator"],
     career_progression: ["Senior Ethical Brand Strategist", "Lead", "Director"],
@@ -28040,8 +28131,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Br%C3%A4ndi%20strategisti" }
     ],
     study_length_estimate_months: 48
   },
@@ -28087,7 +28179,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Kestävä rakentaminen on kasvava trendi.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Green Building Designer", "Trainee", "Coordinator"],
     career_progression: ["Senior Green Building Designer", "Lead", "Director"],
@@ -28104,8 +28196,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ekologisen%20rakentamisen%20suunnittelija" }
     ],
     study_length_estimate_months: 48
   },
@@ -28151,7 +28244,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Jätteiden vähentäminen on keskeinen ympäristötavoite.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Zero Waste Consultant", "Trainee", "Coordinator"],
     career_progression: ["Senior Zero Waste Consultant", "Lead", "Director"],
@@ -28168,8 +28261,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Nollajatetavoitteen%20konsultti" }
     ],
     study_length_estimate_months: 48
   },
@@ -28216,7 +28310,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Kestävä tuotesuunnittelu on kasvava ala.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Sustainable Product Designer", "Trainee", "Coordinator"],
     career_progression: ["Senior Sustainable Product Designer", "Lead", "Director"],
@@ -28233,8 +28327,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotesuunnittelija" }
     ],
     study_length_estimate_months: 48
   },
@@ -28281,7 +28376,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Eettinen hankinta on keskeinen osa vastuullisuutta.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Ethical Sourcing Manager", "Trainee", "Coordinator"],
     career_progression: ["Senior Ethical Sourcing Manager", "Lead", "Director"],
@@ -28298,8 +28393,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Eettisen%20hankinnan%20p%C3%A4%C3%A4llikk%C3%B6" }
     ],
     study_length_estimate_months: 48
   },
@@ -28346,7 +28442,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Inklusiivisen sisällön kysyntä kasvaa.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Inclusive Content Creator", "Trainee", "Coordinator"],
     career_progression: ["Senior Inclusive Content Creator", "Lead", "Director"],
@@ -28363,8 +28459,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4ll%C3%B6ntuottaja" }
     ],
     study_length_estimate_months: 48
   },
@@ -28411,7 +28508,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Kulttuurisen sensitiivisyyden tarve kasvaa globalisaation myötä.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Cultural Sensitivity Consultant", "Trainee", "Coordinator"],
     career_progression: ["Senior Cultural Sensitivity Consultant", "Lead", "Director"],
@@ -28428,8 +28525,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kulttuurisen%20sensitiivisyyden%20konsultti" }
     ],
     study_length_estimate_months: 48
   },
@@ -28476,7 +28574,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Edustuksellisuuden merkitys mediassa jatkuu.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Representation Editor", "Trainee", "Coordinator"],
     career_progression: ["Senior Representation Editor", "Lead", "Director"],
@@ -28493,8 +28591,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimittaja" }
     ],
     study_length_estimate_months: 48
   },
@@ -28541,7 +28640,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Dokumenttien kysyntä jatkuu striimipalveluiden myötä.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Documentary Filmmaker (Social Issues)", "Trainee", "Coordinator"],
     career_progression: ["Senior Documentary Filmmaker (Social Issues)", "Lead", "Director"],
@@ -28558,8 +28657,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "paljon" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuottaja%20(yhteiskunnalliset%20aiheet)" }
     ],
     study_length_estimate_months: 48
   },
@@ -28606,7 +28706,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Monikulttuurinen markkinointi kasvaa väestön monimuotoistuessa.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Multicultural Marketing Specialist", "Trainee", "Coordinator"],
     career_progression: ["Senior Multicultural Marketing Specialist", "Lead", "Director"],
@@ -28623,8 +28723,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Markkinointi%20asiantuntija" }
     ],
     study_length_estimate_months: 48
   },
@@ -28671,7 +28772,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Julkisen taiteen kysyntä jatkuu kaupungeissa.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Public Art Coordinator", "Trainee", "Coordinator"],
     career_progression: ["Senior Public Art Coordinator", "Lead", "Director"],
@@ -28688,8 +28789,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Koordinaattori" }
     ],
     study_length_estimate_months: 48
   },
@@ -28736,7 +28838,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Kulttuuritapahtumien kysyntä jatkuu tasaisena.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Cultural Events Producer", "Trainee", "Coordinator"],
     career_progression: ["Senior Cultural Events Producer", "Lead", "Director"],
@@ -28753,8 +28855,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kulttuuritapahtumien%20tuottaja" }
     ],
     study_length_estimate_months: 48
   },
@@ -28801,7 +28904,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Taidelähtöisten terapioiden kysyntä kasvaa.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Art Therapy Facilitator", "Trainee", "Coordinator"],
     career_progression: ["Senior Art Therapy Facilitator", "Lead", "Director"],
@@ -28818,8 +28921,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taideterapian%20ohjaaja" }
     ],
     study_length_estimate_months: 48
   },
@@ -28866,7 +28970,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Yhteisötaiteen merkitys jatkuu kulttuuripolitiikassa.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Community Arts Director", "Trainee", "Coordinator"],
     career_progression: ["Senior Community Arts Director", "Lead", "Director"],
@@ -28883,8 +28987,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Yhteis%C3%B6taiteen%20johtaja" }
     ],
     study_length_estimate_months: 48
   },
@@ -28931,7 +29036,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Museo-opetuksen tarve jatkuu tasaisena.",
-      source: { name: "TEM", url: "https://tem.fi/", year: 2024 }
+      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
     },
     entry_roles: ["Junior Museum Education Specialist", "Trainee", "Coordinator"],
     career_progression: ["Senior Museum Education Specialist", "Lead", "Director"],
@@ -28948,8 +29053,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat" },
+      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Museopedagogi" }
     ],
     study_length_estimate_months: 48
   },
@@ -29005,7 +29111,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitaalisten tuotteiden kehitys kasvaa, tuotepäälliköiden kysyntä vahvaa erityisesti teknologiayrityksissä.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Product Manager",
@@ -29039,190 +29145,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Product Management Finland", url: "https://www.meetup.com/ProductTank-Helsinki/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Product Management Finland", url: "https://www.meetup.com/producttank-helsinki/" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotepaalliko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotep%C3%A4%C3%A4llikk%C3%B6" }
     ],
     study_length_estimate_months: 48
-  },
-
-{
-    id: "devops-insinoori",
-    category: "innovoija",
-    title_fi: "DevOps-insinööri",
-    title_en: "DevOps Engineer",
-    short_description: "DevOps-insinööri yhdistää ohjelmistokehityksen ja IT-operaatiot. Automatisoi prosesseja ja varmistaa että ohjelmistot toimitetaan nopeasti ja luotettavasti.",
-    main_tasks: [
-      "CI/CD-putkien rakentaminen ja ylläpito",
-      "Pilvi-infrastruktuurin hallinta (AWS, Azure, GCP)",
-      "Automaation kehittäminen ja skriptaus",
-      "Monitoring- ja logging-järjestelmien ylläpito",
-      "Tietoturvan ja vakauden varmistaminen"
-    ],
-    impact: [
-      "Nopeuttaa ohjelmistojen julkaisua ja parantaa laatua",
-      "Vähentää manuaalista työtä automaation avulla",
-      "Mahdollistaa skaalautuvan ja luotettavan infrastruktuurin"
-    ],
-    education_paths: [
-      "AMK: Insinööri (AMK), Tietotekniikka",
-      "Yliopisto: Diplomi-insinööri, Tietotekniikka",
-      "Bootcamp: DevOps-koulutukset + sertifikaatit"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Linux/Unix-hallinta",
-      "Automaatio ja skriptaus",
-      "Pilvipalvelut",
-      "Konttiteknologiat",
-      "Ongelmanratkaisu",
-      "Yhteistyö kehittäjien kanssa"
-    ],
-    tools_tech: [
-      "Docker, Kubernetes",
-      "Jenkins, GitLab CI/CD",
-      "Terraform, Ansible",
-      "AWS, Azure, Google Cloud",
-      "Prometheus, Grafana",
-      "Git, Python, Bash"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "C1" },
-    salary_eur_month: {
-      median: 5200,
-      range: [4200, 7000],
-      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Pilvipalveluiden ja automaation tarve kasvaa, DevOps-osaajia tarvitaan kaikenkokoisissa yrityksissä.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior DevOps Engineer",
-      "System Administrator",
-      "Cloud Engineer"
-    ],
-    career_progression: [
-      "Senior DevOps Engineer",
-      "Lead DevOps Engineer",
-      "DevOps Architect",
-      "Site Reliability Engineer (SRE)",
-      "Head of DevOps"
-    ],
-    transferable_skills: [
-      "automation",
-      "cloud_infrastructure",
-      "problem_solving",
-      "scripting",
-      "system_administration",
-      "collaboration"
-    ],
-    typical_employers: [
-      "Wolt",
-      "Supercell",
-      "F-Secure",
-      "Elisa",
-      "Telia",
-      "Konsultointiyritykset"
-    ],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: "Tietoalan Ammattiliitto TAL ry",
-    useful_links: [
-      { name: "DevOps Finland", url: "https://www.meetup.com/devops-finland/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
-    ],
-    study_length_estimate_months: 48
-  },
-
-{
-    id: "full-stack-kehittaja",
-    category: "innovoija",
-    title_fi: "Full Stack -kehittäjä",
-    title_en: "Full Stack Developer",
-    short_description: "Full Stack -kehittäjä hallitsee sekä frontend- että backend-kehityksen. Rakentaa kokonaisia web-sovelluksia käyttöliittymästä tietokantaan.",
-    main_tasks: [
-      "Frontend-kehitys (React, Vue, Angular)",
-      "Backend-kehitys (Node.js, Python, Java)",
-      "Tietokantojen suunnittelu ja ylläpito",
-      "API-rajapintojen kehittäminen",
-      "Testaus ja debuggaus"
-    ],
-    impact: [
-      "Rakentaa digitaalisia palveluja jotka helpottavat ihmisten arkea",
-      "Mahdollistaa yritysten digitaalisen transformaation",
-      "Luo innovatiivisia ratkaisuja liiketoimintahaasteisiin"
-    ],
-    education_paths: [
-      "AMK: Insinööri (AMK), Tietotekniikka",
-      "Yliopisto: Diplomi-insinööri, Tietotekniikka",
-      "Bootcamp: Web Development bootcamp + portfolio"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "JavaScript/TypeScript",
-      "Frontend-kehitys",
-      "Backend-kehitys",
-      "Tietokannat (SQL, NoSQL)",
-      "Versionhallinta (Git)",
-      "Ongelmanratkaisu"
-    ],
-    tools_tech: [
-      "React, Next.js, Vue",
-      "Node.js, Express",
-      "PostgreSQL, MongoDB",
-      "Git, GitHub",
-      "Docker",
-      "VS Code"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "C1" },
-    salary_eur_month: {
-      median: 4600,
-      range: [3500, 6500],
-      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Digitalisaatio jatkuu, full stack -kehittäjiä tarvitaan erityisesti startup- ja kasvuyrityksiss ä.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior Full Stack Developer",
-      "Frontend Developer",
-      "Backend Developer"
-    ],
-    career_progression: [
-      "Senior Full Stack Developer",
-      "Lead Developer",
-      "Tech Lead",
-      "Engineering Manager",
-      "CTO"
-    ],
-    progression_from: ["web-kehittaja", "frontend-kehittaja", "backend-kehittaja"],
-    transferable_skills: [
-      "programming",
-      "problem_solving",
-      "web_development",
-      "api_design",
-      "database_design",
-      "testing"
-    ],
-    typical_employers: [
-      "Wolt",
-      "Supercell",
-      "Reaktor",
-      "Futurice",
-      "Startupit",
-      "Digitoimistot ympäri Suomen"
-    ],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: "Tietoalan Ammattiliitto TAL ry",
-    useful_links: [
-      { name: "React Finland", url: "https://react-finland.fi/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
-    ],
-    study_length_estimate_months: 36
-  },
-
-{
+  },{
     id: "asiakasmenestysjohtaja",
     category: "auttaja",
     title_fi: "Asiakasmenestysjohtaja",
@@ -29270,7 +29198,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "SaaS- ja teknologiayritykset panostavat asiakasmenestykseen, kysyntä kasvaa erityisesti B2B-sektorilla.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Customer Success Specialist",
@@ -29302,184 +29230,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Customer Success Finland", url: "https://www.linkedin.com/groups/8838565/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakaspalvelu" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakasmenestysjohtaja" }
     ],
     study_length_estimate_months: 36
-  },
-
-{
-    id: "sosiaalisen-median-asiantuntija",
-    category: "luova",
-    title_fi: "Sosiaalisen median asiantuntija",
-    title_en: "Social Media Manager",
-    short_description: "Sosiaalisen median asiantuntija rakentaa ja ylläpitää yrityksen läsnäoloa sosiaalisessa mediassa. Luo sisältöä, hallitsee yhteisöjä ja analysoi tuloksia.",
-    main_tasks: [
-      "Sosiaalisen median strategian suunnittelu",
-      "Sisällön luominen ja julkaiseminen",
-      "Yhteisön hallinta ja vuorovaikutus",
-      "Kampanjoiden suunnittelu ja toteutus",
-      "Analytiikan seuranta ja raportointi"
-    ],
-    impact: [
-      "Rakentaa yrityksen brändiä ja näkyvyyttä",
-      "Luo yhteyksiä asiakkaisiin ja yhteisöön",
-      "Edistää liiketoiminnan kasvua digitaalisissa kanavissa"
-    ],
-    education_paths: [
-      "AMK: Medianomi, Tradenomi (markkinointi)",
-      "Yliopisto: Viestintä, Markkinointi",
-      "Portfolio: Omat some-kanavat + esimerkkityöt"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Sisällöntuotanto",
-      "Copywriting",
-      "Visuaalinen suunnittelu",
-      "Yhteisöhallinta",
-      "Analytiikka",
-      "Trenditietoisuus"
-    ],
-    tools_tech: [
-      "Meta Business Suite",
-      "Instagram, TikTok, LinkedIn",
-      "Canva, Adobe Creative Suite",
-      "Google Analytics",
-      "Hootsuite, Buffer"
-    ],
-    languages_required: { fi: "C1", sv: "A2", en: "C1" },
-    salary_eur_month: {
-      median: 3800,
-      range: [3000, 5500],
-      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Sosiaalinen media on keskeinen osa yritysten markkinointia, kysyntä jatkaa kasvuaan.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior Social Media Manager",
-      "Social Media Coordinator",
-      "Content Creator"
-    ],
-    career_progression: [
-      "Senior Social Media Manager",
-      "Social Media Director",
-      "Head of Social Media",
-      "Digital Marketing Director"
-    ],
-    transferable_skills: [
-      "content_creation",
-      "copywriting",
-      "visual_design",
-      "community_management",
-      "analytics",
-      "digital_marketing"
-    ],
-    typical_employers: [
-      "Mainostoimistot",
-      "Digitoimistot",
-      "Brändit ja yritykset",
-      "Media-alan yritykset",
-      "Freelance"
-    ],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Suomen Somemarkkinoijat", url: "https://www.somemarkkinoijat.fi/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
-    ],
-    study_length_estimate_months: 36
-  },
-
-{
-    id: "sisallontuottaja",
-    category: "luova",
-    title_fi: "Sisällöntuottaja",
-    title_en: "Content Creator",
-    short_description: "Sisällöntuottaja luo digitaalista sisältöä eri kanaviin - videoita, blogeja, podcasteja ja sosiaalisen median sisältöä. Voi työskennellä yritykselle tai itsenäisenä yrittäjänä.",
-    main_tasks: [
-      "Sisältösuunnitelmien laatiminen",
-      "Videoiden, kuvien ja tekstien luominen",
-      "Editointi ja jälkituotanto",
-      "Julkaiseminen eri alustoille",
-      "Yleisön kanssa vuorovaikutus"
-    ],
-    impact: [
-      "Luo viihdyttävää ja kouluttavaa sisältöä yleisölle",
-      "Auttaa yrityksiä tavoittamaan asiakkaita",
-      "Vaikuttaa mielipiteisiin ja trendeihin"
-    ],
-    education_paths: [
-      "AMK: Medianomi",
-      "Portfolio: Omat kanavat + näyttö osaamisesta",
-      "Itseopiskeltu: Online-kurssit + käytännön kokemus"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Storytelling",
-      "Videokuvaus ja editointi",
-      "Valokuvaus",
-      "Copywriting",
-      "Sosiaalisen median hallinta",
-      "Yrittäjyys"
-    ],
-    tools_tech: [
-      "Adobe Premiere Pro",
-      "Final Cut Pro",
-      "DaVinci Resolve",
-      "Canva",
-      "CapCut",
-      "Kamerat ja mikrofonit"
-    ],
-    languages_required: { fi: "C1", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 3200,
-      range: [2000, 8000],
-      source: { name: "Palkka.fi (vaihtelee suuresti)", url: "https://www.palkka.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Sisältömarkkinointi kasvaa, yritysten ja brändien tarve laadukkaalle sisällölle vahvaa.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior Content Creator",
-      "Social Media Content Producer",
-      "Freelance Creator"
-    ],
-    career_progression: [
-      "Senior Content Creator",
-      "Content Lead",
-      "Creative Director",
-      "Influencer/Creator (yrittäjänä)"
-    ],
-    transferable_skills: [
-      "storytelling",
-      "video_production",
-      "photography",
-      "writing",
-      "social_media",
-      "entrepreneurship"
-    ],
-    typical_employers: [
-      "Media-alan yritykset",
-      "Mainostoimistot",
-      "Digitoimistot",
-      "Yritykset",
-      "Itsenäinen yrittäjä/freelancer"
-    ],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Suomen Sisällöntuottajat", url: "https://www.linkedin.com/groups/13882766/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
-    ],
-    study_length_estimate_months: 24
-  },
-
-{
+  },{
     id: "koneoppimisasiantuntija",
     category: "innovoija",
     title_fi: "Koneoppimisasiantuntija",
@@ -29528,7 +29283,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Tekoälyn hyödyntäminen kasvaa nopeasti, ML-insinöörejä tarvitaan kaikilla toimialoilla.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior ML Engineer",
@@ -29562,7 +29317,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietoalan Ammattiliitto TAL ry",
     useful_links: [
       { name: "Finnish Center for AI (FCAI)", url: "https://fcai.fi/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietotekniikka" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Koneoppimisasiantuntija" }
     ],
     study_length_estimate_months: 60
   },
@@ -29615,7 +29371,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Dataan perustuva päätöksenteko kasvaa, BI-analyytikkoja tarvitaan kaikilla toimialoilla.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior BI Analyst",
@@ -29648,8 +29404,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Data & Analytics Professionals Finland", url: "https://www.linkedin.com/groups/8477088/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liiketoiminta" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoiminta-analyytikko" }
     ],
     study_length_estimate_months: 36
   },
@@ -29702,7 +29458,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Organisaatiot siirtyvät ketteriin toimintatapoihin, agile coachien kysyntä vahvaa.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Scrum Master",
@@ -29734,101 +29490,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Agile Finland", url: "https://www.agilefinland.com/" },
-      { name: "Scrum Alliance", url: "https://www.scrumalliance.org/" }
+      { name: "Agile Finland", url: "https://agile.fi/" },
+      { name: "Scrum Alliance", url: "https://www.scrumalliance.org/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Agile-valmentaja" }
     ],
     study_length_estimate_months: 24
-  },
-
-{
-    id: "mobiilisovelluskehittaja",
-    category: "innovoija",
-    title_fi: "Mobiilisovelluskehittäjä",
-    title_en: "Mobile App Developer",
-    short_description: "Mobiilisovelluskehittäjä suunnittelee ja kehittää sovelluksia iOS- ja Android-alustoille. Luo käyttäjäystävällisiä mobiiliratkaisuja.",
-    main_tasks: [
-      "Mobiilisovellusten kehittäminen (iOS/Android)",
-      "Käyttöliittymän suunnittelu ja toteutus",
-      "API-integraatiot",
-      "Testaus ja debuggaus",
-      "Sovellusten ylläpito ja päivitys"
-    ],
-    impact: [
-      "Luo digitaalisia palveluja jotka ovat aina saatavilla",
-      "Helpottaa ihmisten arkea mobiilisovelluksilla",
-      "Mahdollistaa innovatiivisia mobiilikokemuksia"
-    ],
-    education_paths: [
-      "AMK: Insinööri (AMK), Tietotekniikka",
-      "Yliopisto: Diplomi-insinööri, Tietotekniikka",
-      "Bootcamp: Mobile Development + portfolio"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "iOS kehitys (Swift, SwiftUI)",
-      "Android kehitys (Kotlin)",
-      "Cross-platform (React Native, Flutter)",
-      "UI/UX-suunnittelu",
-      "API-integraatiot",
-      "Ongelmanratkaisu"
-    ],
-    tools_tech: [
-      "Xcode",
-      "Android Studio",
-      "React Native, Flutter",
-      "Firebase",
-      "Git, GitHub",
-      "Figma"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "C1" },
-    salary_eur_month: {
-      median: 4800,
-      range: [3800, 6500],
-      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Mobiilisovellusten kysyntä jatkaa kasvuaan, erityisesti cross-platform-osaajat kysyttyjä.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior Mobile Developer",
-      "iOS Developer",
-      "Android Developer"
-    ],
-    career_progression: [
-      "Senior Mobile Developer",
-      "Lead Mobile Developer",
-      "Mobile Architect",
-      "Engineering Manager"
-    ],
-    progression_from: ["web-kehittaja", "junior-developer"],
-    transferable_skills: [
-      "programming",
-      "mobile_development",
-      "ui_design",
-      "api_integration",
-      "testing",
-      "problem_solving"
-    ],
-    typical_employers: [
-      "Supercell",
-      "Rovio",
-      "Wolt",
-      "Mobiilisovellustoimistot",
-      "Startupit",
-      "Digitoimistot"
-    ],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: "Tietoalan Ammattiliitto TAL ry",
-    useful_links: [
-      { name: "Mobile Monday Helsinki", url: "https://www.meetup.com/mobilemonday-helsinki/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
-    ],
-    study_length_estimate_months: 36
-  },
-
-{
+  },{
     id: "pilvipalveluarkkitehti",
     category: "innovoija",
     title_fi: "Pilvipalveluarkkitehti",
@@ -29876,7 +29543,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Yritykset siirtävät järjestelmiään pilveen, cloud architect -osaaminen erittäin kysyttyä.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Cloud Engineer",
@@ -29910,7 +29577,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietoalan Ammattiliitto TAL ry",
     useful_links: [
       { name: "AWS User Group Finland", url: "https://www.meetup.com/aws-finland/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietotekniikka" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pilvipalveluarkkitehti" }
     ],
     study_length_estimate_months: 60
   },
@@ -29963,7 +29631,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Kyberuhat kasvavat, tietoturva-asiantuntijoiden kysyntä erittäin vahvaa kaikilla toimialoilla.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Security Analyst",
@@ -29995,8 +29663,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tietoalan Ammattiliitto TAL ry",
     useful_links: [
-      { name: "OWASP Finland", url: "https://owasp.org/www-chapter-finland/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietoturva" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kyberturvallisuusanalyytikko" }
     ],
     study_length_estimate_months: 48
   },
@@ -30049,7 +29717,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitaalinen markkinointi kasvaa, laadukkaan copywritingin tarve vahvaa.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Copywriter",
@@ -30080,8 +29748,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Mainostoimistojen Liitto MTL", url: "https://mtl.fi/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/viestinta" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Copywriter" }
     ],
     study_length_estimate_months: 24
   },
@@ -30134,7 +29802,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Jatkuva oppiminen ja osaamisen kehittäminen tärkeää, kouluttajien kysyntä tasaista.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Koulutusassistentti",
@@ -30166,8 +29834,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Suomen Kouluttajat", url: "https://www.kouluttajat.fi/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/koulutus" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Yrityskouluttaja" }
     ],
     study_length_estimate_months: 36
   },
@@ -30218,7 +29886,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Väestön ikääntyminen ja kuntoutuksen tarve kasvavat, toimintaterapeuttien kysyntä vahvaa.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Toimintaterapeutti (AMK)",
@@ -30249,7 +29917,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "KVTES (kunnallinen yleinen virka- ja työehtosopimus)",
     useful_links: [
       { name: "Suomen Toimintaterapeuttiliitto", url: "https://www.toimintaterapeuttiliitto.fi/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/toimintaterapeutti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimintaterapeutti" }
     ],
     study_length_estimate_months: 42
   },
@@ -30305,7 +29974,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Startup- ja kasvuyritykset tarvitsevat growth hacking -osaamista, kysyntä vahvaa.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Growth Hacker",
@@ -30337,7 +30006,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Growth Tribe", url: "https://growthtribe.io/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/markkinointi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kasvuasiantuntija" }
     ],
     study_length_estimate_months: 24
   },
@@ -30389,7 +30059,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "EU:n vastuullisuussäädökset lisäävät ESG-raportoinnin tarvetta, kysyntä kasvaa nopeasti.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior ESG Analyst",
@@ -30420,8 +30090,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "FIBS ry", url: "https://www.fibsry.fi/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "FIBS ry", url: "https://fibsry.fi/" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparisto" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=ESG-analyytikko" }
     ],
     study_length_estimate_months: 48
   },
@@ -30474,7 +30145,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Brändin merkitys kilpailussa jatkuu vahvana, kysyntä tasaista.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Assistant Brand Manager",
@@ -30506,98 +30177,11 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Markkinointiviestinnän Toimistojen Liitto", url: "https://mtl.fi/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/markkinointi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Br%C3%A4ndijohtaja" }
     ],
     study_length_estimate_months: 48
-  },
-
-{
-    id: "pelisuunnittelija",
-    category: "luova",
-    title_fi: "Pelisuunnittelija",
-    title_en: "Game Designer",
-    short_description: "Pelisuunnittelija luo pelimekaniikkoja, pelikokemuksia ja tarinallista sisältöä digitaalisiin peleihin. Yhdistää luovuuden ja teknisen ymmärryksen.",
-    main_tasks: [
-      "Pelimekaniikkojen suunnittelu",
-      "Pelitason (level) design",
-      "Pelattavuuden tasapainotus",
-      "Prototyyppien luominen",
-      "Dokumentaation kirjoittaminen"
-    ],
-    impact: [
-      "Luo viihdyttäviä ja mukaansatempaavia pelikokemuksia",
-      "Tukee Suomen vahvaa peliteollisuutta",
-      "Vaikuttaa miljoonien pelaajien kokemuksiin"
-    ],
-    education_paths: [
-      "AMK: Medianomi, Pelialantekijä",
-      "Yliopisto: Digitaalinen kulttuuri",
-      "Portfolio: Omat pelit + modaukset"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Pelisuunnittelu",
-      "Game mechanics",
-      "Level design",
-      "Pelattavuus (gameplay)",
-      "Narratiivi",
-      "Prototyping"
-    ],
-    tools_tech: [
-      "Unity, Unreal Engine",
-      "Game design documents",
-      "Balancing tools",
-      "Excel (tuning)",
-      "Figma, Miro"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "C1" },
-    salary_eur_month: {
-      median: 4200,
-      range: [3200, 6000],
-      source: { name: "Palkka.fi / Neogames", url: "https://www.palkka.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Suomen peliteollisuus kasvaa, erityisesti mobile gaming vahvaa.",
-      source: { name: "Neogames Finland", url: "https://www.neogames.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior Game Designer",
-      "Associate Designer",
-      "Game Design Intern"
-    ],
-    career_progression: [
-      "Game Designer",
-      "Senior Game Designer",
-      "Lead Game Designer",
-      "Creative Director"
-    ],
-    transferable_skills: [
-      "game_design",
-      "creative_thinking",
-      "prototyping",
-      "user_experience",
-      "problem_solving",
-      "documentation"
-    ],
-    typical_employers: [
-      "Supercell",
-      "Rovio",
-      "Remedy Entertainment",
-      "Small Giant Games",
-      "Indie-studiot"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Neogames Finland", url: "https://www.neogames.fi/" },
-      { name: "Finnish Game Jam", url: "https://finnishgamejam.com/" }
-    ],
-    study_length_estimate_months: 36
-  },
-
-{
+  },{
     id: "3d-taiteilija",
     category: "luova",
     title_fi: "3D-taiteilija",
@@ -30645,7 +30229,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Peliteollisuus, mainonta ja elokuvat tarvitsevat 3D-osaamista, kysyntä kasvaa.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior 3D Artist",
@@ -30676,8 +30260,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Neogames Finland", url: "https://www.neogames.fi/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Neogames Finland", url: "https://neogames.fi/" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/graafinen-suunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=3D" }
     ],
     study_length_estimate_months: 36
   },
@@ -30730,7 +30315,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Videomarkkinointi ja sosiaalinen media kasvattavat motion graphics -osaamisen kysyntää.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Junior Motion Designer",
@@ -30761,8 +30346,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Grafia", url: "https://www.grafia.fi/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Grafia", url: "https://grafia.fi/" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/mediatuottaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Video" }
     ],
     study_length_estimate_months: 24
   },
@@ -30814,7 +30400,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "kasvaa",
       explanation: "Sähköautojen määrä kasvaa nopeasti, asentajien kysyntä vahvaa.",
-      source: { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
       "Autonasentaja",
@@ -30846,8 +30432,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Autoalan TES",
     useful_links: [
-      { name: "Autoalan Keskusliitto", url: "https://www.akl.fi/" },
-      { name: "TEM Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Autoalan Keskusliitto", url: "https://akl.fi/" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ajoneuvoasentaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6ajoneuvoasentaja" }
     ],
     study_length_estimate_months: 36
   },
@@ -30921,8 +30508,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Traficom: Dronelupapalvelut", url: "https://www.traficom.fi/fi/liikenne/ilmailu/droonet" },
-      { name: "Suomen Drone-liitto", url: "https://droneliitto.fi/" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Drone-ohjaaja" }
     ],
     progression_from: ["valokuvaaja", "videokuvaaja"],
     transferable_skills: [
@@ -31006,8 +30592,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Teollisuusliitto (teollisuustyöntekijät)",
     useful_links: [
-      { name: "3D-tulostus.fi", url: "https://3dtulostus.fi/" },
-      { name: "Aalto Fablab", url: "https://fablab.aalto.fi/" }
+      { name: "Aalto Fablab", url: "https://fablab.aalto.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=3D-tulostusasiantuntija" }
     ],
     transferable_skills: [
       "cad_modeling",
@@ -31089,8 +30675,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
     union_or_CBA: "Sähköalojen ammattiliitto",
     useful_links: [
-      { name: "Aurinkosähköyhdistys", url: "https://www.aurinkosahkoyhdistys.fi/" },
-      { name: "Sähköalojen ammattiliitto", url: "https://www.sahkoliitto.fi/" }
+      { name: "Sähköalojen ammattiliitto", url: "https://sahkoliitto.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aurinkopaneeliasentaja" }
     ],
     progression_from: ["sahkoasentaja"],
     transferable_skills: [
@@ -31103,173 +30689,7 @@ export const careersData: CareerFI[] = [
       "electrical_measurements"
     ],
     study_length_estimate_months: 36
-  },
-
-  {
-    id: "kiertotalousasiantuntija",
-    category: "ympariston-puolustaja",
-    title_fi: "Kiertotalousasiantuntija",
-    title_en: "Circular Economy Specialist",
-    short_description: "Kiertotalousasiantuntija kehittää liiketoimintamalleja ja prosesseja, jotka minimoivat jätteen ja maksimoivat resurssien uudelleenkäytön. Työ yhdistää ympäristöosaamisen ja liiketoiminnan.",
-    main_tasks: [
-      "Kiertotalousmallien suunnittelu",
-      "Jätevirtojen ja materiaalikiertojen analysointi",
-      "Uusien liiketoimintamallien kehittäminen",
-      "Yritysten neuvonta kestävyyskysymyksissä",
-      "Hankkeiden johtaminen ja raportointi"
-    ],
-    impact: [
-      "Vähentää luonnonvarojen kulutusta ja jätteen määrää",
-      "Edistää kestävää liiketoimintaa ja talouskasvua",
-      "Tukee yritysten siirtymistä kohti vähähiilistä taloutta"
-    ],
-    education_paths: [
-      "Yliopisto: Ympäristötiede, Liiketalous tai Tekniikka",
-      "AMK: Ympäristötekniikka tai Liiketalous",
-      "Täydennyskoulutus: Kiertotalous ja kestävä kehitys"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Kiertotalouden periaatteet",
-      "Kestävyysanalyysi",
-      "Liiketoimintamallit",
-      "Projektinhallinta",
-      "Sidosryhmäyhteistyö",
-      "Raportointiosaaminen"
-    ],
-    tools_tech: [
-      "Elinkaarianalyysi (LCA) -ohjelmistot",
-      "Excel ja data-analyysityökalut",
-      "PowerPoint/Canva",
-      "Projektinhallintatyökalut"
-    ],
-    languages_required: { fi: 4, sv: 1, en: 4 },
-    salary_eur_month: {
-      median: 4200,
-      range: [3400, 5800],
-      source: "Konsultti- ja asiantuntijapalkkatilastot ympäristöalalta"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "EU:n ja Suomen kiertotaloustavoitteet lisäävät kysyntää kiertotalousosaamisesta"
-    },
-    entry_roles: [
-      "Ympäristökoordinaattori",
-      "Kestävyysassistentti",
-      "Kiertotalousharjoittelija"
-    ],
-    career_progression: [
-      "Kiertotalousjohtaja",
-      "Kestävyysjohtaja (CSO)",
-      "Konsultti/yrittäjä",
-      "Poliittinen vaikuttaja/asiantuntija"
-    ],
-    typical_employers: [
-      "Konsulttiyritykset",
-      "Teollisuusyritykset",
-      "Kuntasektori",
-      "Ympäristöjärjestöt"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: "Akava tai Ylemmät Toimihenkilöt",
-    useful_links: [
-      { name: "Suomen ympäristökeskus SYKE", url: "https://www.syke.fi/" },
-      { name: "Sitra: Kiertotalous", url: "https://www.sitra.fi/aiheet/kiertotalous/" }
-    ],
-    transferable_skills: [
-      "circular_economy",
-      "sustainability_analysis",
-      "business_models",
-      "project_management",
-      "stakeholder_collaboration",
-      "reporting"
-    ],
-    study_length_estimate_months: 60
-  },
-
-  {
-    id: "puheterapeutti",
-    category: "auttaja",
-    title_fi: "Puheterapeutti",
-    title_en: "Speech Therapist",
-    short_description: "Puheterapeutti arvioi ja hoitaa puheen, kielen, äänenkäytön ja nielemisen häiriöitä. Asiakkaina on lapsia ja aikuisia, jotka tarvitsevat tukea kommunikaatiossa.",
-    main_tasks: [
-      "Puheen ja kielen kehityksen arviointi",
-      "Yksilöllisten terapiasuunnitelmien laatiminen",
-      "Terapiatilanteet ja harjoitukset",
-      "Yhteistyö opettajien, vanhempien ja muiden ammattilaisten kanssa",
-      "Seuranta ja raportointi"
-    ],
-    impact: [
-      "Auttaa ihmisiä kommunikoimaan paremmin ja osallistumaan yhteiskuntaan",
-      "Tukee lasten kielen kehitystä ja koulunkäyntiä",
-      "Parantaa asiakkaiden elämänlaatua ja itsetuntoa"
-    ],
-    education_paths: [
-      "Yliopisto: Puheterapeutti (FM tai TtM)",
-      "Erikoistumiskoulutukset (esim. afasia, äänihäiriöt)"
-    ],
-    qualification_or_license: "Valviran laillistus puheterapeutiksi",
-    core_skills: [
-      "Puheen ja kielen arviointi",
-      "Terapiasuunnittelu",
-      "Empatia ja kärsivällisyys",
-      "Vuorovaikutustaidot",
-      "Moniammatillinen yhteistyö",
-      "Raportointi"
-    ],
-    tools_tech: [
-      "Puheterapian arviointivälineet",
-      "Kuntoutusohjelmat",
-      "Kommunikaatiolaitteet",
-      "Tietojärjestelmät (esim. Kanta)"
-    ],
-    languages_required: { fi: 5, sv: 2, en: 2 },
-    salary_eur_month: {
-      median: 3700,
-      range: [3200, 4500],
-      source: "Suomen Puheterapeutit ry ja julkisen sektorin palkkaus"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Väestön ikääntyminen ja lisääntynyt tietoisuus puhehäiriöistä kasvattavat kysyntää"
-    },
-    entry_roles: [
-      "Puheterapeutti (nuorempi)",
-      "Kuntoutustyöntekijä",
-      "Puheterapian harjoittelija"
-    ],
-    career_progression: [
-      "Erikoispuheterapeutti",
-      "Kuntoutuspäällikkö",
-      "Yksityisvastaanottoa pitävä puheterapeutti",
-      "Opettaja/kouluttaja"
-    ],
-    typical_employers: [
-      "Terveyskeskukset ja sairaalat",
-      "Koulut ja päiväkodit",
-      "Yksityiset terapiakeskukset",
-      "Yksityisyrittäjyys"
-    ],
-    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
-    union_or_CBA: "Tehy tai JHL",
-    useful_links: [
-      { name: "Suomen Puheterapeutit ry", url: "https://www.puheterapeutit.fi/" },
-      { name: "Valvira", url: "https://www.valvira.fi/" }
-    ],
-    transferable_skills: [
-      "speech_therapy",
-      "assessment",
-      "therapy_planning",
-      "empathy",
-      "patience",
-      "communication",
-      "multidisciplinary_collaboration"
-    ],
-    study_length_estimate_months: 60
-  },
-
-  {
+  },{
     id: "terveysvalmentaja",
     category: "auttaja",
     title_fi: "Terveysvalmentaja",
@@ -31337,8 +30757,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Suomen Terveysliikuntainstituutti", url: "https://www.terveysliikuntainstituutti.fi/" },
-      { name: "ICF Finland (coaching)", url: "https://www.coachfederation.fi/" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Terveysvalmentaja" }
     ],
     transferable_skills: [
       "health_coaching",
@@ -31420,8 +30839,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Oppimisen palvelut Opetushallitus", url: "https://www.oph.fi/" },
-      { name: "Teachable platform", url: "https://teachable.com/" }
+      { name: "Oppimisen palvelut Opetushallitus", url: "https://www.oph.fi/fi" },
+      { name: "Teachable platform", url: "https://www.teachable.com/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kouluttaja" }
     ],
     transferable_skills: [
       "instructional_design",
@@ -31504,7 +30924,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Ylemmät Toimihenkilöt YTN",
     useful_links: [
       { name: "Henry ry (HR-yhdistys)", url: "https://www.henry.fi/" },
-      { name: "ATD (Association for Talent Development)", url: "https://www.td.org/" }
+      { name: "ATD (Association for Talent Development)", url: "https://www.td.org/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Oppimis-%20ja%20kehitysasiantuntija" }
     ],
     progression_from: ["hr-asiantuntija", "yrityskouluttaja"],
     transferable_skills: [
@@ -31588,7 +31009,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Ylemmät Toimihenkilöt YTN",
     useful_links: [
       { name: "Teknologiateollisuus ry", url: "https://teknologiateollisuus.fi/" },
-      { name: "Sales Engineer resources", url: "https://www.saleshacker.com/" }
+      { name: "Sales Engineer resources", url: "https://gtmnow.com/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Myynti-insin%C3%B6%C3%B6ri" }
     ],
     progression_from: ["insinoori", "tekninen-asiantuntija"],
     transferable_skills: [
@@ -31672,7 +31094,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Ylemmät Toimihenkilöt YTN",
     useful_links: [
       { name: "Prosci Change Management", url: "https://www.prosci.com/" },
-      { name: "Change Management Institute", url: "https://www.change-management-institute.com/" }
+      { name: "Change Management Institute", url: "https://change-management-institute.com/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Muutosjohtamiskonsultti" }
     ],
     transferable_skills: [
       "change_management",
@@ -31719,17 +31142,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 8500,
       range: [7000, 12000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitalisaatio ja teknologian merkityksen kasvu lisäävät CTO-roolien kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tekninen johtaja", "Kehityspäällikkö"],
     career_progression: ["CEO", "Toimitusjohtaja"],
     typical_employers: ["Teknologiayritykset", "Suuryritykset", "Startup-yritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teknologiajohtaja%20(CTO)" }
+    ],
     keywords: ["CTO", "teknologia", "strategia"],
     study_length_estimate_months: 72
   },
@@ -31768,17 +31194,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 8000,
       range: [6500, 11000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Suuryritykset tarvitsevat aina vahvaa talousjohtamista.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Talouspäällikkö", "Controller"],
     career_progression: ["CEO", "Toimitusjohtaja"],
     typical_employers: ["Suuryritykset", "Pörssiyhtiöt", "Konsernit"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Talousjohtaja%20(CFO)" }
+    ],
     keywords: ["CFO", "talous", "strategia"],
     study_length_estimate_months: 72
   },
@@ -31817,17 +31246,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7500,
       range: [6000, 10000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Henkilöstöjohtamisen strateginen merkitys kasvaa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["HR-päällikkö", "Henkilöstöpäällikkö"],
     career_progression: ["CEO", "Hallituksen jäsen"],
     typical_employers: ["Suuryritykset", "Konsernit", "Organisaatiot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Henkil%C3%B6st%C3%B6johtaja%20(CHRO)" }
+    ],
     keywords: ["CHRO", "henkilöstö", "strategia"],
     study_length_estimate_months: 72
   },
@@ -31866,17 +31298,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7800,
       range: [6500, 10500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Operatiivisen johtamisen tarve on jatkuvaa suurissa organisaatioissa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Toiminnanjohtaja", "Tuotantopäällikkö"],
     career_progression: ["CEO", "Toimitusjohtaja"],
     typical_employers: ["Suuryritykset", "Teollisuusyritykset", "Palveluyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Operatiivinen%20johtaja%20(COO)" }
+    ],
     keywords: ["COO", "operaatiot", "toiminta"],
     study_length_estimate_months: 72
   },
@@ -31915,17 +31350,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7500,
       range: [6000, 10000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitalisaatio ja markkinoinnin strateginen rooli lisäävät kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Markkinointipäällikkö", "Brändi päällikkö"],
     career_progression: ["CEO", "Liiketoimintajohtaja"],
     typical_employers: ["Yritykset", "Konsernit", "Brändiorganisaatiot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Markkinointijohtaja%20(CMO)" }
+    ],
     keywords: ["CMO", "markkinointi", "brändi"],
     study_length_estimate_months: 72
   },
@@ -31964,17 +31402,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 8000,
       range: [6500, 11000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kyberturvallisuuden merkitys kasvaa jatkuvasti.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tietoturvapäällikkö", "Security Manager"],
     career_progression: ["CIO", "CTO"],
     typical_employers: ["Suuryritykset", "Finanssiala", "Viranomaiset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietoturvajohtaja%20(CISO)" }
+    ],
     keywords: ["CISO", "tietoturva", "kyberturvallisuus"],
     study_length_estimate_months: 72
   },
@@ -32013,17 +31454,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 8200,
       range: [6800, 11500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitalisaatio lisää CIO-roolien merkitystä.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["IT-päällikkö", "Tietohallintojohtaja"],
     career_progression: ["CTO", "CEO"],
     typical_employers: ["Suuryritykset", "Konsernit", "Julkishallinto"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietohallintojohtaja%20(CIO)" }
+    ],
     keywords: ["CIO", "IT-strategia", "digitalisaatio"],
     study_length_estimate_months: 72
   },
@@ -32062,71 +31506,23 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7500,
       range: [6000, 10000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Vastuullisuuden merkitys kasvaa yrityksissä ja lainsäädännössä.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Vastuullisuuspäällikkö", "Kestävyysjohtaja"],
     career_progression: ["CEO", "Hallituksen jäsen"],
     typical_employers: ["Suuryritykset", "Pörssiyhtiöt", "Konsernit"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vastuullisuusjohtaja%20(CSO)" }
+    ],
     keywords: ["CSO", "vastuullisuus", "ESG"],
     study_length_estimate_months: 72
-  },
-
-  {
-    id: "liiketoimintajohtaja",
-    category: "johtaja",
-    title_fi: "Liiketoimintajohtaja",
-    title_en: "Business Unit Director",
-    short_description: "Liiketoimintajohtaja vastaa liiketoimintayksikön tuloksesta ja kehittämisestä. Työ vaatii laaja-alaista johtamisosaamista.",
-    main_tasks: [
-      "Liiketoimintayksikön johtaminen",
-      "Strategian laatiminen ja toteuttaminen",
-      "Tulosvastuun kantaminen",
-      "Tiimin johtaminen",
-      "Asiakassuhteiden hallinta"
-    ],
-    education_paths: [
-      "Ylempi korkeakoulututkinto: Kauppatieteiden maisterin tutkinto",
-      "Johtamiskoulutus",
-      "Laaja liiketoimintakokemus"
-    ],
-    core_skills: [
-      "Liiketoiminnan johtaminen",
-      "Strateginen suunnittelu",
-      "Tulosjohtaminen",
-      "Tiimin johtaminen",
-      "Asiakasymmärrys"
-    ],
-    tools_tech: [
-      "CRM-järjestelmät",
-      "BI-työkalut",
-      "Projektinhallintatyökalut"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 7000,
-      range: [5500, 9500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Liiketoimintajohtajia tarvitaan jatkuvasti suurissa organisaatioissa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    entry_roles: ["Myyntipäällikkö", "Tuotepäällikkö"],
-    career_progression: ["CEO", "Toimitusjohtaja"],
-    typical_employers: ["Suuryritykset", "Konsernit", "Kasvuyritykset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-    keywords: ["liiketoiminta", "johtaminen", "strategia"],
-    study_length_estimate_months: 72
-  },
-
-  {
+  },{
     id: "tuotantojohtaja",
     category: "johtaja",
     title_fi: "Tuotantojohtaja",
@@ -32160,17 +31556,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6500,
       range: [5500, 8500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Teollisuusyritykset tarvitsevat tuotantojohtajia jatkuvasti.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tuotantopäällikkö", "Työnjohtaja"],
     career_progression: ["COO", "Toimitusjohtaja"],
     typical_employers: ["Teollisuusyritykset", "Tuotantolaitokset", "Valmistusyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantojohtaja" }
+    ],
     keywords: ["tuotanto", "johtaminen", "teollisuus"],
     study_length_estimate_months: 72
   },
@@ -32209,17 +31608,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7500,
       range: [6000, 10000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Yritysten kasvava tarve innovoida ja kehittää toimintaansa luo kysyntää kehitysjohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tuotepäällikkö", "Kehityspäällikkö"],
     career_progression: ["COO", "CEO"],
     typical_employers: ["Teknologiayritykset", "Teollisuusyritykset", "Palveluyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kehitysjohtaja" }
+    ],
     keywords: ["kehitys", "innovaatio", "strategia"],
     study_length_estimate_months: 72
   },
@@ -32258,17 +31660,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7000,
       range: [5500, 11000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Myyntijohtajien kysyntä on tasaista kaikilla toimialoilla.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Myyntipäällikkö", "Key Account Manager"],
     career_progression: ["CMO", "Toimitusjohtaja"],
     typical_employers: ["Yritykset kaikilla toimialoilla"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Myyntijohtaja" }
+    ],
     keywords: ["myynti", "johtaminen", "asiakashallinta"],
     study_length_estimate_months: 60
   },
@@ -32307,17 +31712,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7200,
       range: [6000, 9500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Globaalit toimitusketjut ja logistiikan merkitys lisäävät kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Logistiikkapäällikkö", "Hankintapäällikkö"],
     career_progression: ["COO", "Toimitusjohtaja"],
     typical_employers: ["Teollisuusyritykset", "Vähittäiskauppa", "Logistiikkayritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimitusketjujohtaja" }
+    ],
     keywords: ["toimitusketju", "logistiikka", "optimointi"],
     study_length_estimate_months: 72
   },
@@ -32356,17 +31764,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6500,
       range: [5500, 8500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Laatuvaatimukset ja sertifikaatit ylläpitävät kysyntää laatujohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Laatupäällikkö", "Laatuinsinööri"],
     career_progression: ["COO", "Toimitusjohtaja"],
     typical_employers: ["Teollisuusyritykset", "Palveluyritykset", "Terveydenhuolto"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laatujohtaja" }
+    ],
     keywords: ["laatu", "prosessit", "auditointi"],
     study_length_estimate_months: 60
   },
@@ -32405,17 +31816,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6800,
       range: [5500, 9000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Viestinnän strateginen merkitys ja sosiaalinen media lisäävät kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Viestintäpäällikkö", "Tiedottaja"],
     career_progression: ["CMO", "Johtoryhmäjäsen"],
     typical_employers: ["Yritykset", "Julkishallinto", "Järjestöt"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Viestint%C3%A4johtaja" }
+    ],
     keywords: ["viestintä", "media", "strategia"],
     study_length_estimate_months: 72
   },
@@ -32454,17 +31868,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7800,
       range: [6500, 10000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Tutkimus- ja kehitystoiminnan merkitys ylläpitää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tutkimusryhmän johtaja", "Principal Investigator"],
     career_progression: ["Tiedeprofessori", "Yliopistojohtaja"],
     typical_employers: ["Yliopistot", "Tutkimuslaitokset", "Yritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tutkimusjohtaja" }
+    ],
     keywords: ["tutkimus", "tiede", "johtaminen"],
     study_length_estimate_months: 96
   },
@@ -32503,17 +31920,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6000,
       range: [5000, 8000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Asiakaskokemuksen merkityksen kasvu lisää kysyntää asiakaspalvelujohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Asiakaspalvelupäällikkö", "Customer Success Manager"],
     career_progression: ["COO", "Toimitusjohtaja"],
     typical_employers: ["Palveluyritykset", "Vähittäiskauppa", "Teknologiayritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaspalvelujohtaja" }
+    ],
     keywords: ["asiakaspalvelu", "asiakaskokemus", "johtaminen"],
     study_length_estimate_months: 60
   },
@@ -32552,17 +31972,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5800,
       range: [4800, 7500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Teollisuuden jatkuva tarve tuotantojohtamiselle ylläpitää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tuotantoinsinööri", "Vuoromestari"],
     career_progression: ["Tuotantojohtaja", "Tehtaanjohtaja"],
     typical_employers: ["Teollisuusyritykset", "Tuotantolaitokset"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantop%C3%A4%C3%A4llikk%C3%B6" }
+    ],
     keywords: ["tuotanto", "teollisuus", "johtaminen"],
     study_length_estimate_months: 60
   },
@@ -32601,17 +32024,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6800,
       range: [5500, 9000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kustannustehokkuuden ja toimitusketjujen hallinnan merkitys lisää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Hankintapäällikkö", "Category Manager"],
     career_progression: ["Toimitusketjujohtaja", "COO"],
     typical_employers: ["Suuryritykset", "Julkishallinto", "Teollisuus"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hankintajohtaja" }
+    ],
     keywords: ["hankinta", "neuvottelu", "strategia"],
     study_length_estimate_months: 60
   },
@@ -32650,17 +32076,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7500,
       range: [6000, 10000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Alueellinen liiketoiminta vaatii jatkuvasti aluejohtajia.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Myyntipäällikkö", "Toimipisteen johtaja"],
     career_progression: ["Liiketoimintajohtaja", "Toimitusjohtaja"],
     typical_employers: ["Vähittäiskauppa", "Palveluyritykset", "Teollisuus"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aluejohtaja" }
+    ],
     keywords: ["alue", "liiketoiminta", "johtaminen"],
     study_length_estimate_months: 60
   },
@@ -32699,17 +32128,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6800,
       range: [5500, 9000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Projektityön lisääntyminen ja monimutkaiset hankkeet lisäävät kysyntää projektijohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Projektipäällikkö", "Senior Project Manager"],
     career_progression: ["Program Director", "COO"],
     typical_employers: ["Suuryritykset", "Konsulttiyritykset", "IT-yritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Projektijohtaja" }
+    ],
     keywords: ["projektinhallinta", "johtaminen", "strategia"],
     study_length_estimate_months: 60
   },
@@ -32748,17 +32180,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7500,
       range: [6500, 10000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitalisaatio ja ohjelmistokehityksen kysyntä lisäävät tarvetta ohjelmistojohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Lead Developer", "Engineering Manager"],
     career_progression: ["CTO", "VP of Engineering"],
     typical_employers: ["IT-yritykset", "Teknologiayritykset", "Suuryritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ohjelmistojohtaja" }
+    ],
     keywords: ["ohjelmistokehitys", "teknologia", "johtaminen"],
     study_length_estimate_months: 60
   },
@@ -32797,17 +32232,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6500,
       range: [5500, 8500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitalisaatio ja IT-riippuvuus lisäävät kysyntää IT-johtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Järjestelmäasiantuntija", "IT-koordinaattori"],
     career_progression: ["CIO", "IT-johtaja"],
     typical_employers: ["Yritykset kaikilla toimialoilla", "Julkishallinto"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietohallintop%C3%A4%C3%A4llikk%C3%B6" }
+    ],
     keywords: ["IT", "tietohallinto", "johtaminen"],
     study_length_estimate_months: 60
   },
@@ -32846,17 +32284,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 8000,
       range: [6500, 11000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Liiketoimintaympäristön monimutkaisuus lisää strategiajohtajien kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Strategiakonsultti", "Liiketoiminta-analyytikko"],
     career_progression: ["COO", "CEO"],
     typical_employers: ["Suuryritykset", "Konsulttiyritykset", "Julkishallinto"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Strategiajohtaja" }
+    ],
     keywords: ["strategia", "analyysi", "johtaminen"],
     study_length_estimate_months: 72
   },
@@ -32895,17 +32336,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6200,
       range: [5000, 8000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Organisaatioiden jatkuva tarve yksikköjohtamiselle ylläpitää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tiimipäällikkö", "Osastopäällikkö"],
     career_progression: ["Liiketoimintajohtaja", "Toimialajohtaja"],
     typical_employers: ["Yritykset", "Julkishallinto", "Järjestöt"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Yksik%C3%B6njohtaja" }
+    ],
     keywords: ["yksikkö", "johtaminen", "operatiivinen"],
     study_length_estimate_months: 60
   },
@@ -32944,17 +32388,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7800,
       range: [6500, 10500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Yritysten kasvutavoitteet ja kansainvälistyminen lisäävät kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Business Development Manager", "Strategiakonsultti"],
     career_progression: ["COO", "CEO"],
     typical_employers: ["Kasvuyritykset", "Teknologiayritykset", "Konsulttiyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoiminnan%20kehitysjohtaja" }
+    ],
     keywords: ["liiketoiminta", "kehitys", "kasvustrategia"],
     study_length_estimate_months: 72
   },
@@ -32993,17 +32440,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6500,
       range: [5500, 8500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Palvelutalouden kasvu ja asiakaskokemuksen merkitys lisäävät kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Palvelupäällikkö", "Asiakaspalvelupäällikkö"],
     career_progression: ["COO", "Toimitusjohtaja"],
     typical_employers: ["Palveluyritykset", "Teknologiayritykset", "Vähittäiskauppa"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Palvelujohtaja" }
+    ],
     keywords: ["palvelu", "asiakaskokemus", "johtaminen"],
     study_length_estimate_months: 60
   },
@@ -33042,17 +32492,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6800,
       range: [5500, 9000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Turvallisuusuhkien monimuotoistuminen lisää kysyntää turvallisuusjohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Turvallisuuspäällikkö", "Turvallisuusasiantuntija"],
     career_progression: ["CISO", "Riskienhallintajohtaja"],
     typical_employers: ["Suuryritykset", "Julkishallinto", "Kriittiset infrastruktuurit"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Turvallisuusjohtaja" }
+    ],
     keywords: ["turvallisuus", "riskienhallinta", "kriisinhallinta"],
     study_length_estimate_months: 60
   },
@@ -33091,17 +32544,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6500,
       range: [5500, 8500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Tuotekehityksen merkityksen kasvu lisää kysyntää kokeneille tuotepäälliköille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tuotepäällikkö", "Product Owner"],
     career_progression: ["Tuotejohtaja", "VP of Product"],
     typical_employers: ["Teknologiayritykset", "Tuoteyritykset", "Palveluyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotep%C3%A4%C3%A4llikk%C3%B6%20(Senior)" }
+    ],
     keywords: ["tuote", "strategia", "kehitys"],
     study_length_estimate_months: 60
   },
@@ -33140,17 +32596,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 8000,
       range: [6500, 11000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Yritysten kansainvälistyminen lisää kysyntää kansainvälisen liiketoiminnan johtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Export Manager", "Kansainvälinen myyntipäällikkö"],
     career_progression: ["COO", "CEO"],
     typical_employers: ["Vientiyritykset", "Kansainväliset yritykset", "Kasvuyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kansainv%C3%A4lisen%20liiketoiminnan%20johtaja" }
+    ],
     keywords: ["kansainvälinen", "vienti", "liiketoiminta"],
     study_length_estimate_months: 72
   },
@@ -33189,17 +32648,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 5000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Ravintola-alan jatkuva tarve johtajille ylläpitää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Vuoropäällikkö", "Apulaisravintolapäällikkö"],
     career_progression: ["Ravintolaketjun johtaja", "Yrittäjä"],
     typical_employers: ["Ravintolat", "Hotellit", "Ravintolaketjut"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ravintolajohtaja" }
+    ],
     keywords: ["ravintola", "asiakaspalvelu", "johtaminen"],
     study_length_estimate_months: 42
   },
@@ -33238,17 +32700,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3500, 6000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Matkailun kasvu lisää kysyntää kokeneille hotellinjohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Vastaanottopäällikkö", "Front Office Manager"],
     career_progression: ["Aluejohtaja", "Hotelliketjun johtaja"],
     typical_employers: ["Hotellit", "Hotelliketjut", "Lomakeskukset"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hotellinjohtaja" }
+    ],
     keywords: ["hotelli", "matkailu", "asiakaspalvelu"],
     study_length_estimate_months: 42
   },
@@ -33287,17 +32752,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2800, 4500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Vähittäiskaupan jatkuva tarve myymäläpäälliköille ylläpitää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Myyjä", "Vuoropäällikkö"],
     career_progression: ["Aluejohtaja", "Kauppapäällikkö"],
     typical_employers: ["Vähittäiskauppa", "Erikoisliikkeet", "Ketjut"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Myym%C3%A4l%C3%A4p%C3%A4%C3%A4llikk%C3%B6" }
+    ],
     keywords: ["myymälä", "kauppa", "myynti"],
     study_length_estimate_months: 36
   },
@@ -33336,17 +32804,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7500,
       range: [6000, 10000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Teollisuuden jatkuva tarve tehtaanjohtajille ylläpitää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tuotantopäällikkö", "Tuotantojohtaja"],
     career_progression: ["Tuotantojohtaja (konserni)", "COO"],
     typical_employers: ["Teollisuusyritykset", "Tuotantolaitokset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tehtaanjohtaja" }
+    ],
     keywords: ["tehdas", "tuotanto", "teollisuus"],
     study_length_estimate_months: 72
   },
@@ -33385,17 +32856,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [4000, 6500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Rakentamisen kysyntä ja infrastruktuurihankkeet lisäävät tarvetta rakennuspäälliköille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Työnjohtaja", "Vastaava työnjohtaja"],
     career_progression: ["Hankepäällikkö", "Rakennusliikkeen johtaja"],
     typical_employers: ["Rakennusliikkeet", "Talonrakennusyritykset", "Infrastruktuuriyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rakennusp%C3%A4%C3%A4llikk%C3%B6" }
+    ],
     keywords: ["rakentaminen", "projekti", "työmaa"],
     study_length_estimate_months: 42
   },
@@ -33434,17 +32908,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3800, 5000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Terveydenhuollon tarve ja väestön ikääntyminen lisäävät kysyntää osastonhoitajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Sairaanhoitaja", "Erikoissairaanhoitaja"],
     career_progression: ["Ylihoitaja", "Hoitotyön johtaja"],
     typical_employers: ["Sairaalat", "Terveyskeskukset", "Yksityiset terveysasemat"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Osastonhoitaja%20(sairaala)" }
+    ],
     keywords: ["hoitotyö", "osasto", "terveydenhuolto"],
     study_length_estimate_months: 54
   },
@@ -33483,17 +32960,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3800, 5500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Koulujen jatkuva tarve rehtoreille ylläpitää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Opettaja", "Apulaisrehtori"],
     career_progression: ["Koulutusjohtaja", "Sivistysjohtaja"],
     typical_employers: ["Kunnat", "Yksityiset koulut", "Kansainväliset koulut"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rehtori" }
+    ],
     keywords: ["koulu", "pedagogiikka", "koulutus"],
     study_length_estimate_months: 66
   },
@@ -33532,17 +33012,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 5000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "E-kaupan kasvu ja logistiikan merkitys lisäävät kysyntää varastopäälliköille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Varastotyöntekijä", "Varastoesimies"],
     career_progression: ["Logistiikkapäällikkö", "Toimitusketjujohtaja"],
     typical_employers: ["Logistiikkayritykset", "Vähittäiskauppa", "Teollisuus"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varastop%C3%A4%C3%A4llikk%C3%B6" }
+    ],
     keywords: ["varasto", "logistiikka", "toimitusketju"],
     study_length_estimate_months: 42
   },
@@ -33581,17 +33064,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4000,
       range: [3400, 5200],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Kiinteistöjen ja laitteiden jatkuva huoltotarve ylläpitää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Huoltomies", "Huoltoteknikko"],
     career_progression: ["Tekninen päällikkö", "Kiinteistöjohtaja"],
     typical_employers: ["Kiinteistöyhtiöt", "Teollisuusyritykset", "Huoltoyhtiöt"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Huoltop%C3%A4%C3%A4llikk%C3%B6" }
+    ],
     keywords: ["huolto", "kunnossapito", "tekniikka"],
     study_length_estimate_months: 42
   },
@@ -33630,17 +33116,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5200,
       range: [4500, 6500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Tutkimuksen ja diagnostiikan merkitys lisää kysyntää laboratoriopäälliköille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Laboratorioanalyytikko", "Erikoistutkija"],
     career_progression: ["Tutkimusjohtaja", "Laatujohtaja"],
     typical_employers: ["Tutkimuslaitokset", "Sairaalat", "Teollisuuslaboratoriot"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laboratoriop%C3%A4%C3%A4llikk%C3%B6" }
+    ],
     keywords: ["laboratorio", "tutkimus", "laatu"],
     study_length_estimate_months: 72
   },
@@ -33679,17 +33168,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 8200,
       range: [7000, 11000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitalisaation merkityksen kasvu luo vahvaa kysyntää digitalisaatiojohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Digitalisaatiopäällikkö", "IT-johtaja"],
     career_progression: ["CIO", "CEO"],
     typical_employers: ["Suuryritykset", "Julkishallinto", "Teknologiayritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitalisaatiojohtaja" }
+    ],
     keywords: ["digitalisaatio", "transformaatio", "teknologia"],
     study_length_estimate_months: 72
   },
@@ -33728,17 +33220,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 8500,
       range: [7000, 11500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Datan merkityksen kasvu liiketoiminnassa lisää kysyntää datajohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Data Scientist", "Tietohallintoasiantuntija"],
     career_progression: ["CIO", "CTO"],
     typical_employers: ["Suuryritykset", "Teknologiayritykset", "Rahoitusala"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Datajohtaja" }
+    ],
     keywords: ["data", "analytiikka", "tiedonhallinta"],
     study_length_estimate_months: 72
   },
@@ -33777,17 +33272,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7500,
       range: [6500, 10000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Sääntelyn lisääntyminen ja compliance-vaatimusten kasvu lisäävät kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Compliance Officer", "Lakimies"],
     career_progression: ["Riskienhallintajohtaja", "Lakiasiainjohtaja"],
     typical_employers: ["Rahoitusala", "Suuryritykset", "Julkishallinto"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Compliance-johtaja" }
+    ],
     keywords: ["compliance", "säännöstenmukaisuus", "riskienhallinta"],
     study_length_estimate_months: 72
   },
@@ -33826,17 +33324,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7800,
       range: [6500, 10000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Asiakaskokemuksen strateginen merkitys lisää kysyntää CXO-rooleille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Asiakaskokemuspäällikkö", "Service Designer"],
     career_progression: ["COO", "CMO"],
     typical_employers: ["Palveluyritykset", "Vähittäiskauppa", "Teknologiayritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaskokemuksen%20johtaja" }
+    ],
     keywords: ["asiakaskokemus", "palvelumuotoilu", "CX"],
     study_length_estimate_months: 72
   },
@@ -33875,17 +33376,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 9000,
       range: [7500, 12000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Tekoälyn merkityksen räjähdysmäinen kasvu luo vahvaa kysyntää AI-johtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["AI/ML Engineer", "Data Scientist"],
     career_progression: ["CTO", "CDO"],
     typical_employers: ["Teknologiayritykset", "Suuryritykset", "Tutkimuslaitokset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teko%C3%A4lyjohtaja" }
+    ],
     keywords: ["AI", "tekoäly", "koneoppiminen"],
     study_length_estimate_months: 72
   },
@@ -33924,17 +33428,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6800,
       range: [5500, 9000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Organisaatiokulttuurin merkityksen ymmärtäminen lisää kysyntää kulttuurijohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["HR-päällikkö", "Organisaatiokehittäjä"],
     career_progression: ["CHRO", "Henkilöstöjohtaja"],
     typical_employers: ["Suuryritykset", "Kasvuyritykset", "Konsulttiyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kulttuurijohtaja" }
+    ],
     keywords: ["kulttuuri", "työhyvinvointi", "organisaatio"],
     study_length_estimate_months: 72
   },
@@ -33973,17 +33480,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7200,
       range: [6000, 9500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Projektisalkkujen kompleksisuus lisää kysyntää portfoliojohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Projektijohtaja", "Program Manager"],
     career_progression: ["COO", "Strategiajohtaja"],
     typical_employers: ["Suuryritykset", "IT-yritykset", "Konsulttiyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Portfoliojohtaja" }
+    ],
     keywords: ["portfolio", "projektit", "strategia"],
     study_length_estimate_months: 72
   },
@@ -34022,17 +33532,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7000,
       range: [5500, 9500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Jälleenmyyntikanavien merkitys ylläpitää kysyntää kanavajohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Channel Manager", "Kumppanipäällikkö"],
     career_progression: ["Myyntijohtaja", "COO"],
     typical_employers: ["Teknologiayritykset", "Tuoteyritykset", "Valmistajat"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=J%C3%A4lleenmyyntijohtaja" }
+    ],
     keywords: ["jälleenmyynti", "kanavat", "kumppanuudet"],
     study_length_estimate_months: 60
   },
@@ -34071,17 +33584,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5800,
       range: [4800, 7500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Energiatehokkuus ja ilmastotavoitteet lisäävät kysyntää energiajohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Energiainsinööri", "Energiakoordinaattori"],
     career_progression: ["Kiinteistöjohtaja", "Kestävyysjohtaja"],
     typical_employers: ["Teollisuus", "Kiinteistöyhtiöt", "Energiayhtiöt"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Energiajohtaja" }
+    ],
     keywords: ["energia", "tehokkuus", "kestävyys"],
     study_length_estimate_months: 60
   },
@@ -34120,17 +33636,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5500,
       range: [4500, 7500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Vastuullisuusvaatimusten kasvu luo vahvaa kysyntää vastuullisuuspäälliköille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Vastuullisuusasiantuntija", "Ympäristöasiantuntija"],
     career_progression: ["Vastuullisuusjohtaja (CSO)", "Kestävyysjohtaja"],
     typical_employers: ["Suuryritykset", "Teollisuus", "Julkishallinto"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vastuullisuusp%C3%A4%C3%A4llikk%C3%B6" }
+    ],
     keywords: ["vastuullisuus", "kestävyys", "ESG"],
     study_length_estimate_months: 60
   },
@@ -34169,17 +33688,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6500,
       range: [5000, 8500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Franchising-liiketoimintamallin suosio ylläpitää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Franchise Manager", "Liiketoimintakehityspäällikkö"],
     career_progression: ["Liiketoimintajohtaja", "COO"],
     typical_employers: ["Ravintolaketjut", "Vähittäiskauppa", "Palveluyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Franchising-johtaja" }
+    ],
     keywords: ["franchising", "verkosto", "liiketoiminta"],
     study_length_estimate_months: 60
   },
@@ -34218,17 +33740,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6800,
       range: [5500, 9000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Asiakassuhteiden strateginen merkitys lisää kysyntää asiakkuusjohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Key Account Manager", "Myyntipäällikkö"],
     career_progression: ["Myyntijohtaja", "CMO"],
     typical_employers: ["B2B-yritykset", "Palveluyritykset", "Teknologiayritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakkuusjohtaja" }
+    ],
     keywords: ["asiakkuudet", "avainasiakkaat", "account management"],
     study_length_estimate_months: 60
   },
@@ -34267,17 +33792,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 8000,
       range: [6500, 10500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Jatkuvat muutokset liiketoimintaympäristössä lisäävät tarvetta transformaatiojohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Muutosjohtamiskonsultti", "Program Manager"],
     career_progression: ["COO", "CEO"],
     typical_employers: ["Suuryritykset", "Konsulttiyritykset", "Julkishallinto"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Transformaatiojohtaja" }
+    ],
     keywords: ["transformaatio", "muutos", "strategia"],
     study_length_estimate_months: 72
   },
@@ -34316,17 +33844,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6500,
       range: [5500, 8500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Kiinteistöalan jatkuva tarve kiinteistöjohtajille ylläpitää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Kiinteistöpäällikkö", "Isännöitsijä"],
     career_progression: ["Kiinteistötuotannon johtaja", "Liiketoimintajohtaja"],
     typical_employers: ["Kiinteistöyhtiöt", "Sijoitusyhtiöt", "Suuryritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kiinteist%C3%B6johtaja" }
+    ],
     keywords: ["kiinteistö", "portfolio", "johtaminen"],
     study_length_estimate_months: 60
   },
@@ -34365,17 +33896,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5500,
       range: [4800, 7000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Koulutusorganisaatioiden tarve opetusjohtajille ylläpitää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Rehtori", "Opetusneuvos"],
     career_progression: ["Koulutusjohtaja", "Sivistysjohtaja"],
     typical_employers: ["Kunnat", "Oppilaitokset", "Yksityiset koulut"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Opetusjohtaja" }
+    ],
     keywords: ["opetus", "pedagogiikka", "koulutus"],
     study_length_estimate_months: 66
   },
@@ -34414,17 +33948,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7800,
       range: [6500, 10000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Teknisten ratkaisujen monimutkaisuus lisää kysyntää teknisille johtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Lead Developer", "Solution Architect"],
     career_progression: ["CTO", "VP of Engineering"],
     typical_employers: ["Teknologiayritykset", "IT-yritykset", "Suuryritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tekninen%20johtaja" }
+    ],
     keywords: ["tekninen", "arkkitehtuuri", "kehitys"],
     study_length_estimate_months: 72
   },
@@ -34463,17 +34000,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 7500,
       range: [6500, 9500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Data-analytiikan merkityksen kasvu liiketoiminnassa lisää kysyntää analytiikkajohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Data Analyst", "BI-asiantuntija"],
     career_progression: ["Datajohtaja (CDO)", "CIO"],
     typical_employers: ["Suuryritykset", "Teknologiayritykset", "Konsulttiyritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Analytiikkajohtaja" }
+    ],
     keywords: ["analytiikka", "BI", "data"],
     study_length_estimate_months: 72
   },
@@ -34512,17 +34052,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 6500,
       range: [5500, 8500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Innovaatioiden ja sisäisen yrittäjyyden merkitys lisää kysyntää yrittäjyysjohtajille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Innovaatiopäällikkö", "Yrittäjä"],
     career_progression: ["Innovaatiojohtaja", "Liiketoiminnan kehitysjohtaja"],
     typical_employers: ["Suuryritykset", "Kasvuyritykset", "Innovaatiokeskukset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Yritt%C3%A4jyysjohtaja" }
+    ],
     keywords: ["yrittäjyys", "innovaatio", "startup"],
     study_length_estimate_months: 60
   },
@@ -34597,7 +34140,64 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Ylemmät Toimihenkilöt YTN",
     useful_links: [
       { name: "Suomen Innovaatiorahasto Sitra", url: "https://www.sitra.fi/" },
-      { name: "Design Thinking resources", url: "https://www.designthinking.fi/" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teknologiajohtaja%20(CTO)" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Talousjohtaja%20(CFO)" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Henkil%C3%B6st%C3%B6johtaja%20(CHRO)" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Operatiivinen%20johtaja%20(COO)" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Markkinointijohtaja%20(CMO)" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietoturvajohtaja%20(CISO)" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietohallintojohtaja%20(CIO)" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vastuullisuusjohtaja%20(CSO)" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantojohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kehitysjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Myyntijohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimitusketjujohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laatujohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Viestint%C3%A4johtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tutkimusjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaspalvelujohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantop%C3%A4%C3%A4llikk%C3%B6" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hankintajohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aluejohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Projektijohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ohjelmistojohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietohallintop%C3%A4%C3%A4llikk%C3%B6" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Strategiajohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Yksik%C3%B6njohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoiminnan%20kehitysjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Palvelujohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Turvallisuusjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotep%C3%A4%C3%A4llikk%C3%B6%20(Senior)" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kansainv%C3%A4lisen%20liiketoiminnan%20johtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ravintolajohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hotellinjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Myym%C3%A4l%C3%A4p%C3%A4%C3%A4llikk%C3%B6" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tehtaanjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rakennusp%C3%A4%C3%A4llikk%C3%B6" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Osastonhoitaja%20(sairaala)" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rehtori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varastop%C3%A4%C3%A4llikk%C3%B6" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Huoltop%C3%A4%C3%A4llikk%C3%B6" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laboratoriop%C3%A4%C3%A4llikk%C3%B6" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitalisaatiojohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Datajohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Compliance-johtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaskokemuksen%20johtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teko%C3%A4lyjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kulttuurijohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Portfoliojohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=J%C3%A4lleenmyyntijohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Energiajohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vastuullisuusp%C3%A4%C3%A4llikk%C3%B6" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Franchising-johtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakkuusjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Transformaatiojohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kiinteist%C3%B6johtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Opetusjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tekninen%20johtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Analytiikkajohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Yritt%C3%A4jyysjohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Innovaatiop%C3%A4%C3%A4llikk%C3%B6" }
     ],
     progression_from: ["tuotepaalliko", "liiketoimintakehittaja"],
     transferable_skills: [
@@ -34645,71 +34245,23 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3500, 6000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Ennakointitiedon merkityksen kasvu lisää kysyntää tulevaisuustutkijoille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tutkija", "Analyytikko"],
     career_progression: ["Tutkimusjohtaja", "Strategiakonsultti"],
     typical_employers: ["Tutkimuslaitokset", "Konsulttiyritykset", "Julkishallinto"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tulevaisuustutkija" }
+    ],
     keywords: ["tulevaisuus", "trendit", "ennakointi"],
     study_length_estimate_months: 72
-  },
-
-  {
-    id: "strateginen-suunnittelija",
-    category: "visionaari",
-    title_fi: "Strateginen suunnittelija",
-    title_en: "Strategic Planner",
-    short_description: "Strateginen suunnittelija kehittää organisaation pitkän aikavälin strategioita. Työ vaatii analyyttistä ajattelua ja visionääristä otetta.",
-    main_tasks: [
-      "Strategioiden kehittäminen",
-      "Markkina-analyysi",
-      "Kilpailija-analyysi",
-      "Strategisten aloitteiden suunnittelu",
-      "Skenaariotarkastelut"
-    ],
-    education_paths: [
-      "Ylempi korkeakoulututkinto: Kauppatieteiden maisterin tutkinto",
-      "Strategisen suunnittelun koulutus",
-      "MBA tai vastaava"
-    ],
-    core_skills: [
-      "Strateginen suunnittelu",
-      "Markkina-analyysi",
-      "Liiketoimintaymmärrys",
-      "Analytiikka",
-      "Visionäärisyys"
-    ],
-    tools_tech: [
-      "Strategiatyökalut",
-      "Analytiikkaohjelmat",
-      "BI-työkalut"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "C1" },
-    salary_eur_month: {
-      median: 5500,
-      range: [4500, 7500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Strategisen suunnittelun merkityksen kasvu lisää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    entry_roles: ["Liiketoiminta-analyytikko", "Konsultti"],
-    career_progression: ["Strategiajohtaja", "Liiketoimintajohtaja"],
-    typical_employers: ["Suuryritykset", "Konsulttiyritykset", "Julkishallinto"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    keywords: ["strategia", "suunnittelu", "visio"],
-    study_length_estimate_months: 72
-  },
-
-  {
+  },{
     id: "innovaatiokonsultti",
     category: "visionaari",
     title_fi: "Innovaatiokonsultti",
@@ -34743,17 +34295,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5000,
       range: [4000, 7000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Innovaatioiden merkityksen kasvu lisää kysyntää innovaatiokonsulteille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Innovaatioasiantuntija", "Tuotepäällikkö"],
     career_progression: ["Innovaatiojohtaja", "Kehitysjohtaja"],
     typical_employers: ["Konsulttiyritykset", "Yritykset", "Innovaatiokeskukset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Innovaatiokonsultti" }
+    ],
     keywords: ["innovaatio", "konsultointi", "kehitys"],
     study_length_estimate_months: 60
   },
@@ -34792,17 +34347,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [4000, 6500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Vision merkityksen ymmärtäminen lisää kysyntää visiointiasiantuntijoille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Strategiakonsultti", "Organisaatiokehittäjä"],
     career_progression: ["Strategiajohtaja", "Muutosjohtaja"],
     typical_employers: ["Konsulttiyritykset", "Suuryritykset", "Julkishallinto"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Visiointiasiantuntija" }
+    ],
     keywords: ["visio", "strategia", "fasilitointi"],
     study_length_estimate_months: 72
   },
@@ -34841,17 +34399,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5200,
       range: [4200, 7000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Uusien liiketoimintamallien tarve lisää kysyntää liiketoimintamallisuunnittelijoille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Liiketoiminta-analyytikko", "Konsultti"],
     career_progression: ["Liiketoiminnan kehitysjohtaja", "Strategiajohtaja"],
     typical_employers: ["Startup-yritykset", "Konsulttiyritykset", "Innovaatioyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoimintamallisuunnittelija" }
+    ],
     keywords: ["liiketoimintamalli", "BMC", "innovaatio"],
     study_length_estimate_months: 60
   },
@@ -34890,17 +34451,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 5000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kestävyyden merkityksen kasvu lisää kysyntää ekosuunnittelijoille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Muotoilija", "Tuotesuunnittelija"],
     career_progression: ["Päällikkösuunnittelija", "Kestävyysjohtaja"],
     typical_employers: ["Tuoteyritykset", "Muotoilutoimistot", "Innovaatioyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ekosuunnittelija" }
+    ],
     keywords: ["ekosuunnittelu", "kestävyys", "kiertotalous"],
     study_length_estimate_months: 48
   },
@@ -34939,17 +34503,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [3800, 6500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Megatrendien ymmärtämisen tarve lisää kysyntää analyytikoille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tutkija", "Analyytikko"],
     career_progression: ["Tulevaisuustutkija", "Strategiajohtaja"],
     typical_employers: ["Tutkimuslaitokset", "Konsulttiyritykset", "Think tankit"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Megatrendien%20analyytikko" }
+    ],
     keywords: ["megatrendit", "analyysi", "tulevaisuus"],
     study_length_estimate_months: 72
   },
@@ -34988,17 +34555,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3500, 5500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Yhteiskunnallisen suunnittelun jatkuva tarve ylläpitää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Suunnittelija", "Kehittämispäällikkö"],
     career_progression: ["Kehitysjohtaja", "Kaupunginjohtaja"],
     typical_employers: ["Kunnat", "Maakuntaliitot", "Konsulttiyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Yhteiskuntasuunnittelija" }
+    ],
     keywords: ["yhteiskunta", "suunnittelu", "tulevaisuus"],
     study_length_estimate_months: 72
   },
@@ -35037,17 +34607,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5000,
       range: [4000, 6800],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Epävarmuuden kasvu lisää skenaariosuunnittelun kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tulevaisuustutkija", "Strategiakonsultti"],
     career_progression: ["Strategiajohtaja", "Tutkimusjohtaja"],
     typical_employers: ["Konsulttiyritykset", "Tutkimuslaitokset", "Suuryritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Skenaariosuunnittelija" }
+    ],
     keywords: ["skenaariot", "tulevaisuus", "strategia"],
     study_length_estimate_months: 72
   },
@@ -35086,17 +34659,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3700, 6000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Vaikuttavuuden mittaamisen merkityksen kasvu lisää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tutkija", "Analyytikko"],
     career_progression: ["Tutkimusjohtaja", "Kehitysjohtaja"],
     typical_employers: ["Julkishallinto", "Järjestöt", "Tutkimuslaitokset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vaikuttavuusanalyytikko" }
+    ],
     keywords: ["vaikuttavuus", "mittaaminen", "arviointi"],
     study_length_estimate_months: 72
   },
@@ -35135,17 +34711,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5500,
       range: [4500, 7500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kestävyyden strateginen merkitys lisää kysyntää kestävyysstrategisteille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Vastuullisuusasiantuntija", "Kestävyysasiantuntija"],
     career_progression: ["Kestävyysjohtaja", "Vastuullisuusjohtaja"],
     typical_employers: ["Suuryritykset", "Konsulttiyritykset", "Järjestöt"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4v%C3%A4n%20kehityksen%20strategisti" }
+    ],
     keywords: ["kestävyys", "strategia", "ESG"],
     study_length_estimate_months: 72
   },
@@ -35184,17 +34763,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3500, 5500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Yhteiskunnallisten haasteiden ratkaiseminen lisää kysyntää sosiaalisille innovaattoreille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Projektipäällikkö", "Kehittäjä"],
     career_progression: ["Innovaatiojohtaja", "Kehitysjohtaja"],
     typical_employers: ["Järjestöt", "Julkishallinto", "Säätiöt"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalisen%20innovaation%20asiantuntija" }
+    ],
     keywords: ["sosiaalinen innovaatio", "yhteiskehittäminen", "vaikuttavuus"],
     study_length_estimate_months: 72
   },
@@ -35233,17 +34815,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3800, 6000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kiertotalouden merkityksen kasvu lisää kysyntää kiertotaloussuunnittelijoille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Kestävyysasiantuntija", "Tuotesuunnittelija"],
     career_progression: ["Kestävyysjohtaja", "Kehitysjohtaja"],
     typical_employers: ["Tuoteyritykset", "Konsulttiyritykset", "Innovaatiokeskukset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kiertotaloussuunnittelija" }
+    ],
     keywords: ["kiertotalous", "kestävyys", "innovaatio"],
     study_length_estimate_months: 60
   },
@@ -35282,17 +34867,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5500,
       range: [4500, 7500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitaalisen transformaation tarve lisää kysyntää asiantuntijoille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Digitalisaatioasiantuntija", "IT-konsultti"],
     career_progression: ["Digitalisaatiojohtaja", "CIO"],
     typical_employers: ["Konsulttiyritykset", "Suuryritykset", "Julkishallinto"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitaalisen%20transformaation%20asiantuntija" }
+    ],
     keywords: ["digitalisaatio", "transformaatio", "muutos"],
     study_length_estimate_months: 60
   },
@@ -35331,17 +34919,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5000,
       range: [4200, 6800],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kaupungistuminen ja digitalisaatio lisäävät kysyntää älykaupunkisuunnittelijoille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Kaupunkisuunnittelija", "Digitalisaatioasiantuntija"],
     career_progression: ["Digitalisaatiojohtaja", "Kehitysjohtaja"],
     typical_employers: ["Kunnat", "Teknologiayritykset", "Konsulttiyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=%C3%84lykaupunkisuunnittelija" }
+    ],
     keywords: ["älykaupunki", "smart city", "digitalisaatio"],
     study_length_estimate_months: 60
   },
@@ -35380,17 +34971,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3800, 6000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Palvelukeskeisyys ja käyttäjäkokemus lisäävät kysyntää palvelumuotoilijoille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Palvelumuotoilija", "UX Designer"],
     career_progression: ["Design Lead", "Asiakaskokemuksen johtaja"],
     typical_employers: ["Muotoilutoimistot", "Palveluyritykset", "Konsulttiyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Palvelumuotoilija%20(vision%C3%A4%C3%A4ri)" }
+    ],
     keywords: ["palvelumuotoilu", "UX", "käyttäjäkokemus"],
     study_length_estimate_months: 48
   },
@@ -35429,17 +35023,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 5800,
       range: [4800, 8000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kestävän rahoituksen sääntelyn ja kysynnän kasvu lisää tarvetta asiantuntijoille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Analyytikko", "Vastuullisuusasiantuntija"],
     career_progression: ["Vastuullisen sijoittamisen johtaja", "ESG-johtaja"],
     typical_employers: ["Pankit", "Sijoitusyhtiöt", "Rahoituslaitokset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4v%C3%A4n%20rahoituksen%20asiantuntija" }
+    ],
     keywords: ["kestävä rahoitus", "ESG", "vastuullinen sijoittaminen"],
     study_length_estimate_months: 72
   },
@@ -35478,17 +35075,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 5000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Tulevaisuusosaamisen ja tiedeviestinnän tarve lisää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Viestijä", "Toimittaja"],
     career_progression: ["Viestintäpäällikkö", "Päätoimittaja"],
     typical_employers: ["Tutkimuslaitokset", "Mediat", "Järjestöt"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tiedeviestij%C3%A4%20(tulevaisuusaiheet)" }
+    ],
     keywords: ["tiedeviestintä", "tulevaisuus", "popularisaatio"],
     study_length_estimate_months: 72
   },
@@ -35527,17 +35127,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3500, 5500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Ruokajärjestelmien kestävyyden tarve lisää kysyntää suunnittelijoille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Ruoka-asiantuntija", "Kestävyysasiantuntija"],
     career_progression: ["Kehitysjohtaja", "Kestävyysjohtaja"],
     typical_employers: ["Elintarvikeyritykset", "Järjestöt", "Tutkimuslaitokset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ruokaj%C3%A4rjestelm%C3%A4n%20suunnittelija" }
+    ],
     keywords: ["ruokajärjestelmä", "kestävyys", "ruokaturva"],
     study_length_estimate_months: 60
   },
@@ -35576,17 +35179,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [4000, 6500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Työelämän nopea muutos lisää tarvetta tulevaisuusasiantuntijoille.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["HR-asiantuntija", "Organisaatiokehittäjä"],
     career_progression: ["HR-johtaja", "Kulttuurijohtaja"],
     typical_employers: ["Konsulttiyritykset", "Suuryritykset", "Tutkimuslaitokset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ty%C3%B6el%C3%A4m%C3%A4n%20tulevaisuusasiantuntija" }
+    ],
     keywords: ["työelämä", "tulevaisuus", "HR"],
     study_length_estimate_months: 72
   },
@@ -35624,18 +35230,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4800,
     range: [4000, 6500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Regeneratiivisen talouden merkityksen kasvu luo kysyntää suunnittelijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Kestävyysasiantuntija", "Taloussuunnittelija"],
   career_progression: ["Kestävyysjohtaja", "Strategiajohtaja"],
   typical_employers: ["Konsulttiyritykset", "Järjestöt", "Innovaatioyritykset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["regeneratiivinen talous", "kestävyys", "ekosysteemi"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Regeneratiivisen%20talouden%20suunnittelija" }
+    ],
+    keywords: ["regeneratiivinen talous", "kestävyys", "ekosysteemi"],
   study_length_estimate_months: 72
 },
 {
@@ -35672,18 +35281,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 6500,
     range: [5500, 8500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Reaaliaika-datan merkityksen kasvu lisää kysyntää arkkitehdeille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Data Engineer", "Solution Architect"],
   career_progression: ["Chief Data Officer", "CTO"],
   typical_employers: ["Teknologiayritykset", "Datayritykset", "Suuryritykset"],
   work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-  keywords: ["data", "arkkitehtuuri", "reaaliaika"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Datavirtojen%20arkkitehti" }
+    ],
+    keywords: ["data", "arkkitehtuuri", "reaaliaika"],
   study_length_estimate_months: 72
 },
 {
@@ -35720,18 +35332,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 6000,
     range: [5000, 8000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Digitaalisten kaksosten yleistyminen lisää kysyntää arkkitehdeille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["IoT-insinööri", "Solution Architect"],
   career_progression: ["CTO", "Tekninen johtaja"],
   typical_employers: ["Teollisuusyritykset", "Teknologiayritykset", "Konsulttiyritykset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["digital twin", "IoT", "simulointi"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitaalisen%20kaksosen%20arkkitehti" }
+    ],
+    keywords: ["digital twin", "IoT", "simulointi"],
   study_length_estimate_months: 72
 },
 {
@@ -35768,18 +35383,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 5000,
     range: [4000, 7000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Globalisaatio ja kulttuurien kohtaaminen lisäävät kysyntää asiantuntijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Innovaatioasiantuntija", "Kulttuuriasiantuntija"],
   career_progression: ["Innovaatiojohtaja", "Kansainvälisen liiketoiminnan johtaja"],
   typical_employers: ["Kansainväliset yritykset", "Konsulttiyritykset", "Järjestöt"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-  keywords: ["kulttuuri", "innovaatio", "kansainvälisyys"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kulttuurienv%C3%A4lisen%20innovaation%20asiantuntija" }
+    ],
+    keywords: ["kulttuuri", "innovaatio", "kansainvälisyys"],
   study_length_estimate_months: 72
 },
 {
@@ -35816,18 +35434,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4800,
     range: [4000, 6500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Ilmastonmuutoksen vaikutukset lisäävät sopeutumissuunnittelun tarvetta.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Ympäristösuunnittelija", "Ilmastoasiantuntija"],
   career_progression: ["Kestävyysjohtaja", "Kehitysjohtaja"],
   typical_employers: ["Kunnat", "Konsulttiyritykset", "Järjestöt"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["ilmastonmuutos", "sopeutuminen", "resilienssi"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ilmastonmuutoksen%20sopeutumissuunnittelija" }
+    ],
+    keywords: ["ilmastonmuutos", "sopeutuminen", "resilienssi"],
   study_length_estimate_months: 72
 },
 {
@@ -35864,18 +35485,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 5000,
     range: [4000, 7000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Maatalouden teknologisoituminen lisää kysyntää täsmäviljelyn asiantuntijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Maatalousteknologi", "AgTech-asiantuntija"],
   career_progression: ["Kehitysjohtaja", "CTO"],
   typical_employers: ["AgTech-yritykset", "Maatalousyritykset", "Tutkimuslaitokset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["täsmäviljely", "maatalous", "teknologia"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=T%C3%A4sm%C3%A4viljelyn%20vision%C3%A4%C3%A4ri" }
+    ],
+    keywords: ["täsmäviljely", "maatalous", "teknologia"],
   study_length_estimate_months: 60
 },
 {
@@ -35912,18 +35536,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4200,
     range: [3500, 5500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Kansalaisosallistumisen merkityksen kasvu lisää kysyntää asiantuntijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Yhteisötyöntekijä", "Suunnittelija"],
   career_progression: ["Kehityspäällikkö", "Demokratiajohtaja"],
   typical_employers: ["Kunnat", "Järjestöt", "Konsulttiyritykset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["osallistaminen", "yhteiskehittäminen", "demokratia"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Osallistavan%20suunnittelun%20asiantuntija" }
+    ],
+    keywords: ["osallistaminen", "yhteiskehittäminen", "demokratia"],
   study_length_estimate_months: 72
 },
 {
@@ -35960,18 +35587,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 5500,
     range: [4500, 7500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Energiamurros ja uudet energiateknologiat lisäävät kysyntää asiantuntijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Energiatekniikan insinööri", "Tutkija"],
   career_progression: ["Energiajohtaja", "CTO"],
   typical_employers: ["Energiayritykset", "Teknologiayritykset", "Tutkimuslaitokset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["energia", "uusiutuva", "innovaatio"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Seuraavan%20sukupolven%20energia-asiantuntija" }
+    ],
+    keywords: ["energia", "uusiutuva", "innovaatio"],
   study_length_estimate_months: 72
 },
 {
@@ -36008,18 +35638,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 5200,
     range: [4200, 7000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Teknologian eettisten kysymysten merkitys lisää kysyntää kehittäjille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Ohjelmistokehittäjä", "Etiikka-asiantuntija"],
   career_progression: ["Chief Ethics Officer", "CTO"],
   typical_employers: ["Teknologiayritykset", "Konsulttiyritykset", "Tutkimuslaitokset"],
   work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-  keywords: ["etiikka", "teknologia", "kehitys"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Eettisen%20teknologian%20kehitt%C3%A4j%C3%A4" }
+    ],
+    keywords: ["etiikka", "teknologia", "kehitys"],
   study_length_estimate_months: 60
 },
 {
@@ -36056,18 +35689,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4500,
     range: [3700, 6000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Biodiversiteettikriisin huomioiminen lisää kysyntää suunnittelijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Ekologi", "Ympäristösuunnittelija"],
   career_progression: ["Kestävyysjohtaja", "Ympäristöjohtaja"],
   typical_employers: ["Konsulttiyritykset", "Kunnat", "Järjestöt"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["biodiversiteetti", "ekologia", "suojelu"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Biodiversiteettisuunnittelija" }
+    ],
+    keywords: ["biodiversiteetti", "ekologia", "suojelu"],
   study_length_estimate_months: 72
 },
 {
@@ -36104,18 +35740,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4800,
     range: [4000, 6500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Resurssitehokkuuden ja kiertotalouden merkitys lisää kysyntää suunnittelijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Kiertotalousasiantuntija", "Ympäristöinsinööri"],
   career_progression: ["Kestävyysjohtaja", "Kehitysjohtaja"],
   typical_employers: ["Teollisuusyritykset", "Konsulttiyritykset", "Kunnat"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["teollinen symbioosi", "kiertotalous", "resurssitehokkuus"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teollisen%20symbioosien%20suunnittelija" }
+    ],
+    keywords: ["teollinen symbioosi", "kiertotalous", "resurssitehokkuus"],
   study_length_estimate_months: 60
 },
 {
@@ -36152,18 +35791,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4800,
     range: [4000, 6500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Kriisien ja epävarmuuden kasvu lisää resilienssisuunnittelun tarvetta.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Riskienhallinnan asiantuntija", "Suunnittelija"],
   career_progression: ["Riskienhallintajohtaja", "Strategiajohtaja"],
   typical_employers: ["Kunnat", "Julkishallinto", "Konsulttiyritykset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["resilienssi", "kriisinhallinta", "sopeutumiskyky"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Resilienssisuunnittelija" }
+    ],
+    keywords: ["resilienssi", "kriisinhallinta", "sopeutumiskyky"],
   study_length_estimate_months: 72
 },
 {
@@ -36200,18 +35842,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4500,
     range: [3700, 6000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Neurodiversiteetin tunnistaminen ja arvostaminen lisäävät kysyntää asiantuntijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["HR-asiantuntija", "Työhyvinvoinnin asiantuntija"],
   career_progression: ["HR-johtaja", "Kulttuurijohtaja"],
   typical_employers: ["Yritykset", "Konsulttiyritykset", "Julkishallinto"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["neurodiversiteetti", "saavutettavuus", "työhyvinvointi"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Neurodiversiteettiasiantuntija" }
+    ],
+    keywords: ["neurodiversiteetti", "saavutettavuus", "työhyvinvointi"],
   study_length_estimate_months: 72
 },
 {
@@ -36248,18 +35893,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4200,
     range: [3500, 5500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Vaihtoehtoisten omistus- ja hallintomallien kiinnostus lisää kysyntää kehittäjille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Yhteisökehittäjä", "Talousasiantuntija"],
   career_progression: ["Kehitysjohtaja", "Strategiajohtaja"],
   typical_employers: ["Järjestöt", "Osuuskunnat", "Tutkimuslaitokset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["commons", "yhteisomistus", "yhteisötalous"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Yhteisomistuutalouden%20kehitt%C3%A4j%C3%A4" }
+    ],
+    keywords: ["commons", "yhteisomistus", "yhteisötalous"],
   study_length_estimate_months: 72
 },
 {
@@ -36296,18 +35944,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4500,
     range: [3700, 6000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Yhteiskunnallisten siirtymien tarve lisää kysyntää transitiomuotoilijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Muotoilija", "Yhteiskunnallinen kehittäjä"],
   career_progression: ["Design Lead", "Strategiajohtaja"],
   typical_employers: ["Muotoilutoimistot", "Konsulttiyritykset", "Järjestöt"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-  keywords: ["transition design", "muotoilu", "yhteiskunnallinen muutos"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Transitiomuotoilija" }
+    ],
+    keywords: ["transition design", "muotoilu", "yhteiskunnallinen muutos"],
   study_length_estimate_months: 72
 },
 {
@@ -36344,18 +35995,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4200,
     range: [3500, 5500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Perinteisen tiedon arvostuksen kasvu lisää kysyntää integroijille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Kulttuuriantropologi", "Tutkija"],
   career_progression: ["Tutkimusjohtaja", "Kulttuurijohtaja"],
   typical_employers: ["Tutkimuslaitokset", "Järjestöt", "Kansainväliset organisaatiot"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-  keywords: ["alkuperäiskansat", "perinteinen tieto", "kulttuurisensitiivisyys"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Alkuper%C3%A4iskansojen%20tiedon%20integroija" }
+    ],
+    keywords: ["alkuperäiskansat", "perinteinen tieto", "kulttuurisensitiivisyys"],
   study_length_estimate_months: 72
 },
 {
@@ -36392,18 +36046,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4800,
     range: [4000, 6500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Kestävien ja luontopohjaisten ratkaisujen tarve lisää biomimikryn kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Biologi", "Suunnittelija"],
   career_progression: ["Innovaatiojohtaja", "Tutkimusjohtaja"],
   typical_employers: ["Tuoteyritykset", "Tutkimuslaitokset", "Konsulttiyritykset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["biomimikry", "luonto", "innovaatio"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Biomimikry-asiantuntija" }
+    ],
+    keywords: ["biomimikry", "luonto", "innovaatio"],
   study_length_estimate_months: 60
 },
 {
@@ -36440,18 +36097,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4000,
     range: [3300, 5500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Yhteisöjen ja kulttuurien uudistumisen tarve lisää kysyntää rakentajille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Yhteisötyöntekijä", "Fasilitaattori"],
   career_progression: ["Kulttuurijohtaja", "Kehitysjohtaja"],
   typical_employers: ["Järjestöt", "Yhteisöt", "Konsulttiyritykset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-  keywords: ["regeneratiivinen kulttuuri", "yhteisö", "uudistuminen"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Regeneratiivisen%20kulttuurin%20rakentaja" }
+    ],
+    keywords: ["regeneratiivinen kulttuuri", "yhteisö", "uudistuminen"],
   study_length_estimate_months: 72
 },
 {
@@ -36488,18 +36148,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 5500,
     range: [4500, 7500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Kompleksisten ongelmien ratkaiseminen lisää järjestelmäsuunnittelijoiden kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Järjestelmäasiantuntija", "Strateginen suunnittelija"],
   career_progression: ["Strategiajohtaja", "Chief Systems Officer"],
   typical_employers: ["Konsulttiyritykset", "Think tankit", "Suuryritykset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["järjestelmäajattelu", "kompleksisuus", "kokonaisvaltaisuus"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kokonaisj%C3%A4rjestelmien%20suunnittelija" }
+    ],
+    keywords: ["järjestelmäajattelu", "kompleksisuus", "kokonaisvaltaisuus"],
   study_length_estimate_months: 72
 },
 {
@@ -36536,18 +36199,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 5000,
     range: [4200, 6800],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Kaupungistuminen ja tulevaisuuden haasteet lisäävät kysyntää asiantuntijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Kaupunkisuunnittelija", "Tulevaisuustutkija"],
   career_progression: ["Kehitysjohtaja", "Kaupunginjohtaja"],
   typical_employers: ["Kunnat", "Konsulttiyritykset", "Tutkimuslaitokset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["kaupunki", "tulevaisuus", "suunnittelu"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kaupunkien%20tulevaisuuden%20asiantuntija" }
+    ],
+    keywords: ["kaupunki", "tulevaisuus", "suunnittelu"],
   study_length_estimate_months: 72
 },
 {
@@ -36584,18 +36250,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 5500,
     range: [4500, 7500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Planeettaisen terveyden merkityksen ymmärtäminen lisää kysyntää asiantuntijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Terveydenhuollon asiantuntija", "Ympäristöterveyden asiantuntija"],
   career_progression: ["Terveysjohtaja", "Tutkimusjohtaja"],
   typical_employers: ["Terveysjärjestöt", "Tutkimuslaitokset", "Kansainväliset organisaatiot"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-  keywords: ["planeettainen terveys", "one health", "ekosysteemiterveys"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Planeettaisen%20terveyden%20asiantuntija" }
+    ],
+    keywords: ["planeettainen terveys", "one health", "ekosysteemiterveys"],
   study_length_estimate_months: 84
 },
 {
@@ -36632,18 +36301,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4000,
     range: [3300, 5500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Ekologisen kriisin tunnistaminen lisää jälkiantroposentrisen suunnittelun kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Muotoilija", "Konseptisuunnittelija"],
   career_progression: ["Design Lead", "Creative Director"],
   typical_employers: ["Muotoilutoimistot", "Tutkimuslaitokset", "Taideyritykset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["post-anthropocentric", "more-than-human", "filosofia"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=J%C3%A4lkiantroposentrinen%20suunnittelija" }
+    ],
+    keywords: ["post-anthropocentric", "more-than-human", "filosofia"],
   study_length_estimate_months: 72
 },
 {
@@ -36680,18 +36352,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 5200,
     range: [4200, 7000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Digitaalisen hyvinvoinnin merkitys lisää kysyntää huomiotalouden asiantuntijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["UX-suunnittelija", "Digitaalisen hyvinvoinnin asiantuntija"],
   career_progression: ["Chief Experience Officer", "Ethics Lead"],
   typical_employers: ["Teknologiayritykset", "Konsulttiyritykset", "Tutkimuslaitokset"],
   work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
-  keywords: ["huomiotalous", "humane technology", "digitaalinen hyvinvointi"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Huomiotalouden%20asiantuntija" }
+    ],
+    keywords: ["huomiotalous", "humane technology", "digitaalinen hyvinvointi"],
   study_length_estimate_months: 72
 },
 {
@@ -36728,18 +36403,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 5800,
     range: [4800, 8000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Generatiivisen AI:n kehittyminen luo kysyntää laskennallisen luovuuden asiantuntijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["AI-kehittäjä", "Creative technologist"],
   career_progression: ["AI Lead", "Creative Director"],
   typical_employers: ["Teknologiayritykset", "Mediatalot", "Peliyritykset"],
   work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-  keywords: ["laskennallinen luovuus", "generatiivinen AI", "taide"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laskennallisen%20luovuuden%20asiantuntija" }
+    ],
+    keywords: ["laskennallinen luovuus", "generatiivinen AI", "taide"],
   study_length_estimate_months: 72
 },
 {
@@ -36776,18 +36454,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 5500,
     range: [4500, 7500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Nopeat muutokset lisäävät ennakoivan hallinnon tarvetta.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Tulevaisuustutkija", "Strategiaasiantuntija"],
   career_progression: ["Strategiajohtaja", "Hallintojohtaja"],
   typical_employers: ["Julkishallinto", "Kansainväliset organisaatiot", "Think tankit"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-  keywords: ["ennakoiva hallinto", "tulevaisuus", "päätöksenteko"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ennakoivan%20hallinnon%20asiantuntija" }
+    ],
+    keywords: ["ennakoiva hallinto", "tulevaisuus", "päätöksenteko"],
   study_length_estimate_months: 72
 },
 {
@@ -36824,18 +36505,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4500,
     range: [3700, 6000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Tulevaisuuden konkretisoinnin tarve lisää kokemuksellisen tulevaisuuden suunnittelijoiden kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Muotoilija", "Tulevaisuustutkija"],
   career_progression: ["Design Lead", "Innovaatiojohtaja"],
   typical_employers: ["Muotoilutoimistot", "Innovaatiokeskukset", "Konsulttiyritykset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-  keywords: ["experiential futures", "spekulatiivinen muotoilu", "tulevaisuus"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kokemuksellisen%20tulevaisuuden%20suunnittelija" }
+    ],
+    keywords: ["experiential futures", "spekulatiivinen muotoilu", "tulevaisuus"],
   study_length_estimate_months: 60
 },
 {
@@ -36872,18 +36556,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 5500,
     range: [4500, 7500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Immersion teknologioiden kehittyminen lisää sensorisen teknologian kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["UX-suunnittelija", "Interaction designer"],
   career_progression: ["Design Lead", "CTO"],
   typical_employers: ["Teknologiayritykset", "Peliyritykset", "VR/AR-yritykset"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
-  keywords: ["sensorinen teknologia", "haptiikka", "immersio"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sensorisen%20teknologian%20vision%C3%A4%C3%A4ri" }
+    ],
+    keywords: ["sensorinen teknologia", "haptiikka", "immersio"],
   study_length_estimate_months: 60
 },
 {
@@ -36920,18 +36607,21 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 4800,
     range: [4000, 6500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Teknologian haittavaikutusten tunnistaminen lisää hitaan teknologian kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["UX-suunnittelija", "Teknologian etiikka-asiantuntija"],
   career_progression: ["Chief Ethics Officer", "Design Lead"],
   typical_employers: ["Teknologiayritykset", "Konsulttiyritykset", "Tutkimuslaitokset"],
   work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-  keywords: ["slow technology", "etiikka", "hyvinvointi"],
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hitaan%20teknologian%20asiantuntija" }
+    ],
+    keywords: ["slow technology", "etiikka", "hyvinvointi"],
   study_length_estimate_months: 60
 },
 {
@@ -36968,105 +36658,23 @@ export const careersData: CareerFI[] = [
   salary_eur_month: {
     median: 5000,
     range: [4000, 7000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   job_outlook: {
     status: "kasvaa",
     explanation: "Neurotekn ologian kehittyminen lisää kognitiivisen vapauden asiantuntijoiden tarvetta.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
   entry_roles: ["Etiikka-asiantuntija", "Ihmisoikeusasiantuntija"],
   career_progression: ["Chief Ethics Officer", "Lakiasiainjohtaja"],
   typical_employers: ["Järjestöt", "Tutkimuslaitokset", "Kansainväliset organisaatiot"],
   work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+  useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kognitiivisen%20vapauden%20asiantuntija" }
+    ],
   keywords: ["kognitiivinen vapaus", "neuroetiikka", "ihmisoikeudet"],
   study_length_estimate_months: 84
-},
-
-  {
-    id: "tapahtumakoordinaattori",
-    category: "jarjestaja",
-    title_fi: "Tapahtumakoordinaattori",
-    title_en: "Event Coordinator",
-    short_description: "Tapahtumakoordinaattori suunnittelee ja toteuttaa erilaisia tapahtumia, kuten konferensseja, messuja ja yritystilaisuuksia. Työ vaatii organisointitaitoa, stressinsietokykyä ja palveluasennetta.",
-    main_tasks: [
-      "Tapahtuman suunnittelu ja budjetointi",
-      "Toimittajien ja yhteistyökumppaneiden koordinointi",
-      "Tapahtumapaikkojen varaaminen",
-      "Aikataulujen hallinta",
-      "Tapahtuman toteutus ja jälkihoito"
-    ],
-    impact: [
-      "Luo ikimuistoisia kokemuksia osallistujille",
-      "Edistää verkostoitumista ja liiketoimintamahdollisuuksia",
-      "Tukee organisaatioiden brändin rakentamista"
-    ],
-    education_paths: [
-      "AMK: Matkailuala, Liiketalous tai Tapahtumatuotanto",
-      "Ammattitutkinto: Tapahtumatuotanto",
-      "Kokemuspohjainen ura"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Projektinhallinta",
-      "Organisointikyky",
-      "Budjetointi",
-      "Neuvottelutaidot",
-      "Asiakaspalvelu",
-      "Stressinhallinta"
-    ],
-    tools_tech: [
-      "Tapahtumanhallintatyökalut (Eventbrite, Lyyti)",
-      "Projektihallintatyökalut",
-      "Excel/Google Sheets",
-      "Canva/Adobe Creative Suite",
-      "CRM-järjestelmät"
-    ],
-    languages_required: { fi: 4, sv: 1, en: 4 },
-    salary_eur_month: {
-      median: 3400,
-      range: [2800, 4800],
-      source: "Tapahtumatuotannon ja järjestöalan palkkatilastot"
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Hybriditapahtumat ja virtuaalitapahtumat monipuolistavat alaa, mutta kilpailu on kovaa"
-    },
-    entry_roles: [
-      "Tapahtumaassistentti",
-      "Tapahtumajärjestäjä",
-      "Tapahtumapalveluiden myyjä"
-    ],
-    career_progression: [
-      "Senior Event Coordinator",
-      "Tapahtumapäällikkö",
-      "Tapahtumajohtaja",
-      "Oman tapahtumatoimiston perustaja"
-    ],
-    typical_employers: [
-      "Tapahtumatoimistot",
-      "Kongressikeskukset ja hotellit",
-      "Yritykset (sisäinen tapahtumatiimi)",
-      "Järjestöt ja yhdistykset"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
-    union_or_CBA: "Palvelualojen ammattiliitto PAM",
-    useful_links: [
-      { name: "Suomen Tapahtumamarkkinointiyhdistys", url: "https://www.stmy.fi/" },
-      { name: "Eventbrite resources", url: "https://www.eventbrite.com/" }
-    ],
-    transferable_skills: [
-      "project_management",
-      "organization",
-      "budgeting",
-      "negotiation",
-      "customer_service",
-      "stress_management"
-    ],
-    study_length_estimate_months: 36
-  },
-
-  {
+},{
     id: "lohkoketjukehittaja",
     category: "innovoija",
     title_fi: "Lohkoketjukehittäjä",
@@ -37138,7 +36746,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Ethereum.org", url: "https://ethereum.org/" },
-      { name: "ConsenSys Academy", url: "https://consensys.net/academy/" }
+      { name: "ConsenSys Academy", url: "https://consensys.io/academy" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lohkoketjukehitt%C3%A4j%C3%A4" }
     ],
     progression_from: ["full-stack-kehittaja", "backend-kehittaja"],
     transferable_skills: [
@@ -37223,8 +36832,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "OpenAI documentation", url: "https://platform.openai.com/docs" },
-      { name: "Prompt Engineering Guide", url: "https://www.promptingguide.ai/" }
+      { name: "OpenAI documentation", url: "https://platform.openai.com/docs/overview" },
+      { name: "Prompt Engineering Guide", url: "https://www.promptingguide.ai/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teko%C3%A4ly-kehoteasiantuntija" }
     ],
     transferable_skills: [
       "prompt_engineering",
@@ -37306,8 +36916,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Ylemmät Toimihenkilöt YTN",
     useful_links: [
-      { name: "HAUS Kehittämiskeskus (hankinnat)", url: "https://www.haus.fi/" },
-      { name: "CIPS (Chartered Institute of Procurement & Supply)", url: "https://www.cips.org/" }
+      { name: "HAUS Kehittämiskeskus (hankinnat)", url: "https://haus.fi/" },
+      { name: "CIPS (Chartered Institute of Procurement & Supply)", url: "https://www.cips.org/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hankinta-asiantuntija" }
     ],
     transferable_skills: [
       "procurement",
@@ -37389,8 +37000,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Mainostajien Liitto", url: "https://mainostajat.fi/" },
-      { name: "Vaikuttajamarkkinoinnin Neuvosto", url: "https://www.iab.fi/" }
+      { name: "Mainostajien Liitto", url: "https://www.marketingfinland.fi/" },
+      { name: "Vaikuttajamarkkinoinnin Neuvosto", url: "https://www.iab.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Markkinointi" }
     ],
     transferable_skills: [
       "influencer_marketing",
@@ -37472,7 +37084,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Suomen Näyttelijäliitto",
     useful_links: [
       { name: "Suomen Näyttelijäliitto", url: "https://nayttelijaliitto.fi/" },
-      { name: "Voice Acting resources", url: "https://www.voices.com/" }
+      { name: "Voice Acting resources", url: "https://www.voices.com/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=%C3%84%C3%A4ni" }
     ],
     transferable_skills: [
       "voice_acting",
@@ -37555,8 +37168,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "Sähköalojen ammattiliitto tai Teollisuusliitto",
     useful_links: [
-      { name: "Suomen Tuulivoimayhdistys", url: "https://www.tuulivoimayhdistys.fi/" },
-      { name: "Global Wind Organisation (GWO)", url: "https://www.globalwindsafety.org/" }
+      { name: "Suomen Tuulivoimayhdistys", url: "https://suomenuusiutuvat.fi/" },
+      { name: "Global Wind Organisation (GWO)", url: "https://www.globalwindsafety.org/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuulivoima-asentaja" }
     ],
     progression_from: ["sahkoasentaja", "koneteknikko"],
     transferable_skills: [
@@ -37639,7 +37253,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Ylemmät Toimihenkilöt YTN",
     useful_links: [
       { name: "Green Building Council Finland", url: "https://figbc.fi/" },
-      { name: "US Green Building Council (LEED)", url: "https://www.usgbc.org/" }
+      { name: "US Green Building Council (LEED)", url: "https://www.usgbc.org/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ekologisen%20rakentamisen%20konsultti" }
     ],
     transferable_skills: [
       "green_building",
@@ -37720,8 +37335,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
     union_or_CBA: "Teollisuusliitto",
     useful_links: [
-      { name: "SERTY (Sähkö- ja elektroniikkaromun tuottajayhteisö)", url: "https://www.serty.fi/" },
-      { name: "Kierrätyskeskus", url: "https://www.kierratyskeskus.fi/" }
+      { name: "SERTY (Sähkö- ja elektroniikkaromun tuottajayhteisö)", url: "https://serty.fi/" },
+      { name: "Kierrätyskeskus", url: "https://kierratyskeskus.fi/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6laiteromujen%20kierr%C3%A4tt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [
       "electronics_disassembly",
@@ -37771,171 +37387,23 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3400,
     range: [2900, 4200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Luonnon monimuotoisuuden turvaaminen lisää tarvetta suojelubiologeille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Tutkimusavustaja", "Kenttäbiologi"],
     career_progression: ["Erikoistutkija", "Tutkimusjohtaja", "Ylitarkastaja"],
     typical_employers: ["Tutkimuslaitokset", "Ympäristöviranomaiset", "Luonnonsuojelujärjestöt"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luonnonsuojelubiologi" }
+    ],
     keywords: ["luonnonsuojelu", "ekologia", "biodiversiteetti"],
     study_length_estimate_months: 72
-},
-
-{
-  id: "metsanhoitaja",
-    category: "ympariston-puolustaja",
-    title_fi: "Metsänhoitaja",
-    title_en: "Forester",
-    short_description: "Metsänhoitaja suunnittelee ja valvoo metsien hoitoa kestävästi. Työ yhdistää luonnonsuojelun ja talouden.",
-    main_tasks: [
-    "Metsätaloussuunnittelu",
-    "Hakkuiden suunnittelu",
-    "Metsänuudistaminen",
-    "Luonnonhoitotyöt",
-    "Asiakasneuvonta"
-  ],
-    education_paths: [
-    "Korkeakoulututkinto: Metsätieteiden kandidaatti tai maisterin tutkinto",
-    "Toisen asteen metsäalan tutkinto",
-    "Työkokemus metsäalalta"
-  ],
-    core_skills: [
-    "Metsäekologia",
-    "Metsätalous",
-    "Suunnittelu",
-    "Asiakaspalvelu",
-    "Lainsäädännön tuntemus"
-  ],
-    tools_tech: [
-    "Metsäsuunnitteluohjelmat",
-    "GPS-laitteet",
-    "Karttaohjelmat",
-    "Mittausvälineet"
-  ],
-    languages_required: { fi: "C1", sv: "B1", en: "B1" },
-    salary_eur_month: {
-    median: 3300,
-    range: [2800, 4000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    job_outlook: {
-    status: "vakaa",
-    explanation: "Metsänhoitajia tarvitaan metsätalouden suunnitteluun ja toteutukseen.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    entry_roles: ["Metsäsuunnittelija"],
-    career_progression: ["Aluemetsänhoitaja", "Metsäpäällikkö"],
-    typical_employers: ["Metsäyhtiöt", "Metsänhoitoyhdistykset", "Metsäkeskus"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-    keywords: ["metsä", "kestävyys", "suunnittelu"],
-    study_length_estimate_months: 48
-},
-
-{
-  id: "ymparistotarkastaja",
-    category: "ympariston-puolustaja",
-    title_fi: "Ympäristötarkastaja",
-    title_en: "Environmental Inspector",
-    short_description: "Ympäristötarkastaja valvoo ympäristömääräysten noudattamista. Työ vaatii lakiosaamista ja tarkkuutta.",
-    main_tasks: [
-    "Ympäristölupien valvonta",
-    "Tarkastuskäynnit",
-    "Päästömittausten valvonta",
-    "Raportointi",
-    "Yhteistyö viranomaisten kanssa"
-  ],
-    education_paths: [
-    "Korkeakoulututkinto: Ympäristöalan tutkinto",
-    "Insinöörin tutkinto (ympäristötekniikka)",
-    "Tarkastajan pätevyys"
-  ],
-    core_skills: [
-    "Ympäristölainsäädäntö",
-    "Tarkastusosaaminen",
-    "Raportointi",
-    "Viranomaisyhteistyö",
-    "Analyyttisyys"
-  ],
-    tools_tech: [
-    "Mittauslaitteet",
-    "Tietojärjestelmät",
-    "Raportointiohjelmat"
-  ],
-    languages_required: { fi: "C1", sv: "B1", en: "B1" },
-    salary_eur_month: {
-    median: 3200,
-    range: [2800, 3800],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    job_outlook: {
-    status: "vakaa",
-    explanation: "Ympäristövalvonta on viranomaisten tehtävä, joka työllistää tasaisesti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    entry_roles: ["Tarkastusavustaja"],
-    career_progression: ["Ylitarkastaja", "Ympäristöpäällikkö"],
-    typical_employers: ["Kunnat", "Aluehallintovirastot", "ELY-keskukset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    keywords: ["valvonta", "ympäristö", "luvat"],
-    study_length_estimate_months: 48
-},
-
-{
-  id: "vesiensuojeluasiantuntija",
-    category: "ympariston-puolustaja",
-    title_fi: "Vesiensuojeluasiantuntija",
-    title_en: "Water Protection Specialist",
-    short_description: "Vesiensuojeluasiantuntija työskentelee vesistöjen suojelun parissa. Työ vaatii hydrobiologista osaamista.",
-    main_tasks: [
-    "Vesistöjen tilan seuranta",
-    "Vesiensuojelusuunnitelmien laatiminen",
-    "Näytteenotto ja analysointi",
-    "Kunnostusprojektit",
-    "Sidosryhmäyhteistyö"
-  ],
-    education_paths: [
-    "Korkeakoulututkinto: Ympäristötieteiden maisterin tutkinto",
-    "Vesialan erikoistuminen",
-    "Kenttätyökokemus"
-  ],
-    core_skills: [
-    "Hydrobiologia",
-    "Vesikemia",
-    "Projektinhallinta",
-    "Tiedon analysointi",
-    "Viestintä"
-  ],
-    tools_tech: [
-    "Näytteenottovälineet",
-    "Laboratoriolaitteet",
-    "Vesistömallit",
-    "GIS-ohjelmat"
-  ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-    median: 3500,
-    range: [3000, 4200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    job_outlook: {
-    status: "kasvaa",
-    explanation: "Vesiensuojelu on yhä tärkeämpää ilmastonmuutoksen myötä.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    entry_roles: ["Tutkimusavustaja", "Kenttätyöntekijä"],
-    career_progression: ["Erikoistutkija", "Projektipäällikkö"],
-    typical_employers: ["ELY-keskukset", "Tutkimuslaitokset", "Vesiosuuskunnat", "Konsulttiyritykset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    keywords: ["vesiensuojelu", "vesistö", "vesibiologia"],
-    study_length_estimate_months: 72
-},
-
-{
+},{
   id: "ilmastoasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Ilmastoasiantuntija",
@@ -37970,17 +37438,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3800,
     range: [3200, 4800],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Ilmastonmuutoksen torjunta luo jatkuvasti uusia työpaikkoja.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Ilmastokoordinaattori", "Projektityöntekijä"],
     career_progression: ["Ilmastopäällikkö", "Kestävyysjohtaja"],
     typical_employers: ["Kunnat", "Yritykset", "Konsulttiyritykset", "Järjestöt"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ilmastoasiantuntija" }
+    ],
     keywords: ["ilmasto", "päästöt", "kestävyys"],
     study_length_estimate_months: 72
 },
@@ -38019,17 +37490,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3100,
     range: [2700, 3700],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Kiertotalouden kehittäminen lisää kierrätysasiantuntijoiden kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Kierrätysneuvoja"],
     career_progression: ["Jätehuoltopäällikkö", "Kiertotalousjohtaja"],
     typical_employers: ["Kunnat", "Jätehuoltoyritykset", "Yritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kierr%C3%A4tyskoordinaattori" }
+    ],
     keywords: ["kierrätys", "kiertotalous", "jätehuolto"],
     study_length_estimate_months: 48
 },
@@ -38067,17 +37541,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2900,
     range: [2500, 3500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Eläinten hyvinvoinnin valvonta työllistää tasaisesti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Eläintenhoitaja"],
     career_progression: ["Eläinsuojelutarkastaja", "Ylitarkastaja"],
     typical_employers: ["Kunnat", "Eläinsuojelujärjestöt", "Eläinlääkintähuolto"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=El%C3%A4inneuvoja" }
+    ],
     keywords: ["eläinsuojelu", "hyvinvointi", "neuvonta"],
     study_length_estimate_months: 48
 },
@@ -38117,17 +37594,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2800,
     range: [2400, 3400],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Rakentaminen ja maankäyttö edellyttävät luontoselvityksiä.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Kenttäbiologi"],
     career_progression: ["Konsultti", "Projektipäällikkö"],
     typical_employers: ["Konsulttiyritykset", "Tutkimuslaitokset", "Viranomaiset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luontokartoittaja" }
+    ],
     keywords: ["kartoitus", "inventointi", "lajisto"],
     study_length_estimate_months: 48
 },
@@ -38167,17 +37647,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3600,
     range: [3000, 4500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Kaupungistuminen ja viherrakentaminen lisäävät kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Suunnitteluavustaja"],
     career_progression: ["Projektipäällikkö", "Partner"],
     typical_employers: ["Suunnittelutoimistot", "Kunnat", "Konsultit"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maisema-arkkitehti" }
+    ],
     keywords: ["maisema", "viheralueet", "suunnittelu"],
     study_length_estimate_months: 72
 },
@@ -38216,17 +37699,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2600,
     range: [2300, 3100],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Suojelualueet vaativat jatkuvaa hoitoa ja ylläpitoa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Luonnonhoitotyöntekijä"],
     career_progression: ["Aluevastaava", "Luontopalveluiden esimies"],
     typical_employers: ["Metsähallitus", "Kunnat", "Järjestöt"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luontokohteen%20hoitaja" }
+    ],
     keywords: ["luonnonhoito", "suojelu", "kenttätyö"],
     study_length_estimate_months: 36
   },
@@ -38267,71 +37753,23 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3400,
     range: [2900, 4200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Uusiutuvan energian kasvu lisää aurinkoenergia-alan osaajien kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Suunnitteluavustaja", "Asentaja"],
     career_progression: ["Projektipäällikkö", "Energiakonsultti"],
     typical_employers: ["Energiayhtiöt", "Suunnittelutoimistot", "Asennusyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aurinkoenergiasuunnittelija" }
+    ],
     keywords: ["aurinkoenergia", "uusiutuva energia", "suunnittelu"],
     study_length_estimate_months: 48
-},
-
-{
-  id: "ymparistoinsinoori",
-    category: "ympariston-puolustaja",
-    title_fi: "Ympäristöinsinööri",
-    title_en: "Environmental Engineer",
-    short_description: "Ympäristöinsinööri suunnittelee ja toteuttaa ympäristönsuojeluratkaisuja. Työ yhdistää tekniikan ja ekologian.",
-    main_tasks: [
-    "Ympäristösuunnittelu",
-    "Päästöjen vähentäminen",
-    "Vesien- ja ilmansuojelu",
-    "Ympäristövaikutusten arviointi",
-    "Teknisten ratkaisujen kehittäminen"
-  ],
-    education_paths: [
-    "AMK-tutkinto: Ympäristötekniikka",
-    "Diplomi-insinöörin tutkinto",
-    "Ympäristöalan erikoistuminen"
-  ],
-    core_skills: [
-    "Ympäristötekniikka",
-    "Prosessitekniikka",
-    "Projektin hallinta",
-    "Lainsäädäntö",
-    "Ongelmanratkaisu"
-  ],
-    tools_tech: [
-    "Suunnitteluohjelmat",
-    "Simulointiohjelmistot",
-    "Mittauslaitteet"
-  ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-    median: 3600,
-    range: [3100, 4500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    job_outlook: {
-    status: "kasvaa",
-    explanation: "Ympäristömääräysten tiukentuminen lisää ympäristöinsinöörien tarvetta.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    entry_roles: ["Suunnitteluinsinööri"],
-    career_progression: ["Projektipäällikkö", "Ympäristöpäällikkö"],
-    typical_employers: ["Konsulttiyritykset", "Teollisuusyritykset", "Kunnat"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    keywords: ["ympäristötekniikka", "suunnittelu", "päästöt"],
-    study_length_estimate_months: 48
-},
-
-{
+},{
   id: "energiatehokkuusasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Energiatehokkuusasiantuntija",
@@ -38365,17 +37803,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3500,
     range: [3000, 4300],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Energiansäästötavoitteet ja EU:n direktiivit lisäävät kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Energianeuvoja"],
     career_progression: ["Energiapäällikkö", "Konsultti"],
     typical_employers: ["Energiayhtiöt", "Konsultit", "Isot yritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Energiatehokkuusasiantuntija" }
+    ],
     keywords: ["energiatehokkuus", "säästö", "katselmus"],
     study_length_estimate_months: 48
 },
@@ -38414,17 +37855,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3200,
     range: [2800, 3800],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Biokaasun tuotanto kasvaa osana kiertotaloutta ja uusiutuvaa energiaa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Prosessioperaattori"],
     career_progression: ["Vuoromestari", "Laitospäällikkö"],
     typical_employers: ["Biokaasulaitokset", "Jätehuoltoyhtiöt", "Energiayhtiöt"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Biokaasulaitoksen%20operaattori" }
+    ],
     keywords: ["biokaasu", "uusiutuva energia", "prosessi"],
     study_length_estimate_months: 48
 },
@@ -38463,17 +37907,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3400,
     range: [2900, 4200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Pilaantuneiden maiden kunnostus ja pohjaveden suojelu työllistää tasaisesti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Tutkimusavustaja", "Kenttägeologi"],
     career_progression: ["Erikoistutkija", "Projektipäällikkö"],
     typical_employers: ["Konsulttiyritykset", "Tutkimuslaitokset", "Viranomaiset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6geologi" }
+    ],
     keywords: ["geologia", "pohjavesi", "maaperä"],
     study_length_estimate_months: 72
 },
@@ -38512,17 +37959,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3800,
     range: [3200, 4800],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Vastuullisuusvaatimukset ja raportointi lisäävät kysyntää merkittävästi.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Kestävyykoordinaattori"],
     career_progression: ["Vastuullisuuspäällikkö", "Kestävyysjohtaja"],
     typical_employers: ["Yritykset", "Konsultit", "Julkishallinto"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4v%C3%A4n%20kehityksen%20asiantuntija" }
+    ],
     keywords: ["kestävyys", "vastuullisuus", "raportointi"],
     study_length_estimate_months: 60
 },
@@ -38561,17 +38011,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2400,
     range: [1800, 3500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Luomutuotteiden kysyntä kasvaa jatkuvasti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Maataloustyöntekijä"],
     career_progression: ["Tilallinen", "Luomuneuvoja"],
     typical_employers: ["Omat tilat", "Luomutilat"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luomuviljelija" }
+    ],
     keywords: ["luomu", "viljely", "maatalous"],
     study_length_estimate_months: 48
 },
@@ -38610,17 +38063,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3300,
     range: [2800, 4000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Ympäristön seuranta ja analytiikka työllistävät tasaisesti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Laboratorioanalyytikko"],
     career_progression: ["Erikoistutkija", "Laboratoriopäällikkö"],
     typical_employers: ["Laboratoriot", "Tutkimuslaitokset", "Viranomaiset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6kemisti" }
+    ],
     keywords: ["kemia", "analytiikka", "ympäristö"],
     study_length_estimate_months: 72
 },
@@ -38659,17 +38115,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3200,
     range: [2700, 3900],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Kaupunkivihreän ja ilmastonmuutokseen sopeutumisen kasvu lisää kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Viherrakentaja"],
     career_progression: ["Projektipäällikkö", "Konsultti"],
     typical_employers: ["Suunnittelutoimistot", "Viherrakennusyritykset", "Kunnat"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Viherkattosuunnittelija" }
+    ],
     keywords: ["viherkatto", "kaupunkiviher", "suunnittelu"],
     study_length_estimate_months: 48
 },
@@ -38708,17 +38167,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3600,
     range: [3100, 4500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Luontokadon pysäyttäminen ja biodiversiteettivelvoitteet lisäävät kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Biodiversiteettikoordinaattori"],
     career_progression: ["Biodiversiteettipäällikkö", "Johtaja"],
     typical_employers: ["Yritykset", "Konsultit", "Järjestöt", "Viranomaiset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luonnon%20monimuotoisuusasiantuntija" }
+    ],
     keywords: ["biodiversiteetti", "luontokato", "ekologia"],
     study_length_estimate_months: 72
   },
@@ -38726,56 +38188,7 @@ export const careersData: CareerFI[] = [
   // ========== BATCH 3: YMPÄRISTÖN PUOLUSTAJA CAREERS (Environmental Education & Communication) ==========
 
   {
-  id: "ymparistokasvattaja",
-    category: "ympariston-puolustaja",
-    title_fi: "Ympäristökasvattaja",
-    title_en: "Environmental Educator",
-    short_description: "Ympäristökasvattaja opettaa ympäristöasioita eri kohderyhmille. Työ vaatii pedagogista osaamista ja viestintätaitoja.",
-    main_tasks: [
-    "Ympäristökasvatusohjelmien suunnittelu",
-    "Opetustilaisuuksien vetäminen",
-    "Opetusmateriaalien laatiminen",
-    "Luonto-opastukset",
-    "Hankkeiden koordinointi"
-  ],
-    education_paths: [
-    "Korkeakoulututkinto: Kasvatustieteiden tai ympäristötieteiden tutkinto",
-    "Ympäristökasvatuksen erikoistuminen",
-    "Opettajan pedagogiset opinnot"
-  ],
-    core_skills: [
-    "Pedagogiikka",
-    "Ympäristötieto",
-    "Viestintä",
-    "Ryhmänohjaus",
-    "Materiaalien tuottaminen"
-  ],
-    tools_tech: [
-    "Opetusmateriaaliohjelmat",
-    "Esitystekniikka",
-    "Digitaaliset oppimisympäristöt"
-  ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-    median: 3000,
-    range: [2600, 3600],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    job_outlook: {
-    status: "vakaa",
-    explanation: "Ympäristötietoisuuden kasvu ylläpitää kysyntää ympäristökasvattajille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    entry_roles: ["Ympäristöohjaaja"],
-    career_progression: ["Ympäristökasvatuspäällikkö", "Koulutusjohtaja"],
-    typical_employers: ["Luontokeskukset", "Koulut", "Järjestöt", "Kunnat"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    keywords: ["ympäristökasvatus", "opetus", "luontokoulu"],
-    study_length_estimate_months: 60
-},
-
-{
-  id: "ymparistoviestija",
+    id: "ymparistoviestija",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöviestijä",
     title_en: "Environmental Communicator",
@@ -38808,17 +38221,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3200,
     range: [2800, 4000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Ympäristöviestinnän tarve kasvaa yritysten vastuullisuusvaatimusten myötä.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Viestintäassistentti"],
     career_progression: ["Viestintäpäällikkö", "Viestintäjohtaja"],
     typical_employers: ["Yritykset", "Järjestöt", "Viestintätoimistot"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6viestij%C3%A4" }
+    ],
     keywords: ["viestintä", "ympäristö", "kampanja"],
     study_length_estimate_months: 60
 },
@@ -38857,17 +38273,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2800,
     range: [2400, 3400],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Ympäristöjärjestöt työllistävät tasaisesti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Vapaaehtoinen", "Harjoittelija"],
     career_progression: ["Kampanjapäällikkö", "Toiminnanjohtaja"],
     typical_employers: ["WWF", "Greenpeace", "Luonto-Liitto", "Muut ympäristöjärjestöt"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6j%C3%A4rjest%C3%B6n%20ty%C3%B6ntekij%C3%A4" }
+    ],
     keywords: ["järjestö", "kampanja", "vaikuttaminen"],
     study_length_estimate_months: 60
 },
@@ -38906,17 +38325,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3100,
     range: [2700, 3700],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Kulttuuriperinnön vaaliminen työllistää asiantuntijoita.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Tutkimusavustaja"],
     career_progression: ["Erikoistutkija", "Projektipäällikkö"],
     typical_employers: ["Museot", "Metsähallitus", "Tutkimuslaitokset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luontokulttuuriasiantuntija" }
+    ],
     keywords: ["kulttuuriperintö", "perinnemaisema", "historia"],
     study_length_estimate_months: 60
 },
@@ -38955,17 +38377,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2600,
     range: [1800, 4000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Kestävän matkailun kysyntä kasvaa jatkuvasti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Luonto-opas"],
     career_progression: ["Yrittäjä", "Yrityksen laajentaminen"],
     typical_employers: ["Oma yritys"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ekomatkailuyritt%C3%A4j%C3%A4" }
+    ],
     keywords: ["ekomatkailu", "luontomatkailu", "yrittäjyys"],
     study_length_estimate_months: 48
 },
@@ -39005,70 +38430,23 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3200,
     range: [2700, 3900],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Linnustonseuranta ja tutkimus työllistävät tasaisesti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Tutkimusavustaja", "Rengastaja"],
     career_progression: ["Erikoistutkija", "Tutkimusjohtaja"],
     typical_employers: ["Tutkimuslaitokset", "Yliopistot", "Lintutieteellinen yhdistys"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Linnustontutkija" }
+    ],
     keywords: ["linnut", "ornitologia", "tutkimus"],
     study_length_estimate_months: 72
-},
-
-{
-  id: "ymparistojuristi",
-    category: "ympariston-puolustaja",
-    title_fi: "Ympäristöjuristi",
-    title_en: "Environmental Lawyer",
-    short_description: "Ympäristöjuristi työskentelee ympäristöoikeuden parissa. Työ vaatii juridista osaamista ja ympäristötietoutta.",
-    main_tasks: [
-    "Ympäristölupien käsittely",
-    "Lakiasiat ja neuvonta",
-    "Valitusten laatiminen",
-    "Sopimusten tarkastus",
-    "Oikeudenkäynnit"
-  ],
-    education_paths: [
-    "Ylempi korkeakoulututkinto: Oikeustieteen maisterin tutkinto",
-    "Ympäristöoikeuden erikoistuminen",
-    "Asianajajan tutkinto"
-  ],
-    core_skills: [
-    "Ympäristöoikeus",
-    "Lakitieto",
-    "Juridinen kirjoittaminen",
-    "Neuvonta",
-    "Analyyttisyys"
-  ],
-    tools_tech: [
-    "Lakitietokannat",
-    "Asianhallintajärjestelmät"
-  ],
-    languages_required: { fi: "C2", sv: "C1", en: "C1" },
-    salary_eur_month: {
-    median: 4500,
-    range: [3500, 6500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    job_outlook: {
-    status: "kasvaa",
-    explanation: "Ympäristömääräysten monimutkaisuus lisää ympäristöjuristien tarvetta.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    entry_roles: ["Lakimies"],
-    career_progression: ["Johtava lakimies", "Partner"],
-    typical_employers: ["Asianajotoimistot", "Yritykset", "Viranomaiset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
-    keywords: ["ympäristöoikeus", "laki", "juridiikka"],
-    study_length_estimate_months: 72
-},
-
-{
+},{
   id: "ymparistotalousasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristötalousasiantuntija",
@@ -39102,17 +38480,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 4000,
     range: [3400, 5200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Ilmastopolitiikka ja päästökauppa lisäävät ympäristötalousasiantuntijoiden kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Tutkimusavustaja", "Analyytikko"],
     career_progression: ["Erikoistutkija", "Johtava ekonomisti"],
     typical_employers: ["Tutkimuslaitokset", "Konsultit", "Ministeriöt", "Kansainväliset organisaatiot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6talousasiantuntija" }
+    ],
     keywords: ["ympäristötalous", "kustannus-hyöty", "politiikka"],
     study_length_estimate_months: 72
 },
@@ -39151,17 +38532,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3600,
     range: [3100, 4500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Kemikaalien turvallisuusarviointi työllistää ekotoksikologeja.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Tutkija"],
     career_progression: ["Erikoistutkija", "Tutkimusjohtaja"],
     typical_employers: ["Tutkimuslaitokset", "Yliopistot", "Kemikaaliviraomaiset", "Teollisuus"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ekotoksikologi" }
+    ],
     keywords: ["toksikologia", "kemikaali", "riski"],
     study_length_estimate_months: 84
 },
@@ -39200,17 +38584,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3300,
     range: [2900, 3900],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Ympäristöterveyden valvonta on viranomaisten tehtävä.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Terveystarkastaja"],
     career_progression: ["Ylitarkastaja", "Ympäristöterveysjohtaja"],
     typical_employers: ["Kunnat", "Aluehallintovirastot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6terveyden%20asiantuntija" }
+    ],
     keywords: ["ympäristöterveys", "valvonta", "hygienia"],
     study_length_estimate_months: 48
   },
@@ -39218,55 +38605,7 @@ export const careersData: CareerFI[] = [
   // ========== BATCH 4: YMPÄRISTÖN PUOLUSTAJA CAREERS (Environmental Policy & Urban Sustainability) ==========
 
   {
-  id: "kestavan-kehityksen-koordinaattori",
-    category: "ympariston-puolustaja",
-    title_fi: "Kestävän kehityksen koordinaattori",
-    title_en: "Sustainability Coordinator",
-    short_description: "Kestävän kehityksen koordinaattori edistää organisaation kestävyyttä. Työ vaatii strategista ajattelua ja laaja-alaista osaamista.",
-    main_tasks: [
-    "Kestävyysstrategian laatiminen",
-    "Ympäristöohjelmien koordinointi",
-    "Sidosryhmäyhteistyö",
-    "Raportointi ja seuranta",
-    "Henkilöstön koulutus"
-  ],
-    education_paths: [
-    "Korkeakoulututkinto: Ympäristötieteiden tai johtamisen tutkinto",
-    "Kestävän kehityksen erikoistuminen",
-    "Ympäristöjärjestelmien koulutus"
-  ],
-    core_skills: [
-    "Kestävän kehityksen asiantuntemus",
-    "Projektinhallinta",
-    "Strateginen suunnittelu",
-    "Sidosryhmäyhteistyö",
-    "Raportointi"
-  ],
-    tools_tech: [
-    "Ympäristöraportointijärjestelmät",
-    "Hiilijalanjälkilaskurit",
-    "Tiedonhallintajärjestelmät"
-  ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-    median: 3500,
-    range: [3000, 4200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    job_outlook: {
-    status: "kasvaa",
-    explanation: "Kestävyyden merkitys kasvaa kaikilla toimialoilla.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    entry_roles: ["Kestävän kehityksen asiantuntija"],
-    career_progression: ["Kestävyysjohtaja", "Vastuullisuusjohtaja"],
-    typical_employers: ["Yritykset", "Kunnat", "Järjestöt", "Oppilaitokset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    keywords: ["kestävä kehitys", "vastuullisuus", "koordinointi"],
-    study_length_estimate_months: 60
-},
-{
-  id: "viherrakennesuunnittelija",
+    id: "viherrakennesuunnittelija",
     category: "ympariston-puolustaja",
     title_fi: "Viherrakennesuunnittelija",
     title_en: "Green Infrastructure Designer",
@@ -39299,17 +38638,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3400,
     range: [2900, 4000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Kaupunkien viherryttäminen ja ilmastonmuutokseen sopeutuminen lisäävät kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Vihersuunnittelija"],
     career_progression: ["Viherjohtaja", "Kaupunkiekologian asiantuntija"],
     typical_employers: ["Kunnat", "Suunnittelutoimistot", "Konsulttiyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "jonkin verran" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Viherrakennesuunnittelija" }
+    ],
     keywords: ["viherrakenne", "kaupunkisuunnittelu", "ekologia"],
     study_length_estimate_months: 60
 },
@@ -39347,17 +38689,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3600,
     range: [3100, 4300],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Ilmanlaadun seuranta on jatkuva tarve kaupungeissa ja teollisuudessa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Ilmanlaadun mittaaja"],
     career_progression: ["Ilmanlaadun ylitarkastaja", "Ympäristöjohtaja"],
     typical_employers: ["Kunnat", "Konsulttiyritykset", "Viranomaiset", "Teollisuus"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "jonkin verran" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ilmanlaatuasiantuntija" }
+    ],
     keywords: ["ilmanlaatu", "mittaukset", "päästöt"],
     study_length_estimate_months: 60
 },
@@ -39395,17 +38740,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3500,
     range: [3000, 4200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Kaupungistuminen ja liikenteen kasvu ylläpitävät kysyntää meluntorjunnalle.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Melun mittaaja"],
     career_progression: ["Meluntorjunnan asiantuntija", "Akustikko"],
     typical_employers: ["Kunnat", "Konsulttiyritykset", "Suunnittelutoimistot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "jonkin verran" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Meluntorjuntasuunnittelija" }
+    ],
     keywords: ["meluntorjunta", "akustiikka", "kaupunkisuunnittelu"],
     study_length_estimate_months: 60
 },
@@ -39443,17 +38791,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3700,
     range: [3200, 4500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Ympäristösäädösten vaatimukset turvaavat jatkuvan tarpeen luvitusasiantuntijoille.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Ympäristöasiantuntija"],
     career_progression: ["Ympäristöjohtaja", "Luvituspäällikkö"],
     typical_employers: ["Teollisuusyritykset", "Konsulttiyritykset", "Viranomaiset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6luvitusasiantuntija" }
+    ],
     keywords: ["ympäristöluvitus", "lainsäädäntö", "prosessit"],
     study_length_estimate_months: 60
 },
@@ -39491,17 +38842,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3600,
     range: [3100, 4300],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Vanhojen teollisuusalueiden kunnostustarpeet turvaavat työmahdollisuuksia.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Ympäristötutkija"],
     career_progression: ["Kunnostuspäällikkö", "Ympäristöjohtaja"],
     typical_employers: ["Konsulttiyritykset", "Kunnostusyritykset", "Kunnat"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pilaantuneiden%20maiden%20kunnostusasiantuntija" }
+    ],
     keywords: ["maaperän kunnostus", "pilaantuneet maat", "ympäristötekniikka"],
     study_length_estimate_months: 60
 },
@@ -39539,17 +38893,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3800,
     range: [3300, 4600],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Suuret infrastruktuurihankkeet vaativat YVA-menettelyjä.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Ympäristöasiantuntija"],
     career_progression: ["YVA-päällikkö", "Konsulttipäällikkö"],
     typical_employers: ["Konsulttiyritykset", "Viranomaiset", "Suuryritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6vaikutusten%20arvioija" }
+    ],
     keywords: ["YVA", "vaikutusarviointi", "hankkeet"],
     study_length_estimate_months: 60
 },
@@ -39587,17 +38944,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3900,
     range: [3400, 4700],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Ilmastoriskit ja ympäristövaatimukset lisäävät riskienhallinnan tarvetta.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Ympäristöasiantuntija"],
     career_progression: ["Riskienhallintapäällikkö", "Vastuullisuusjohtaja"],
     typical_employers: ["Suuryritykset", "Konsulttiyritykset", "Viranomaiset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6riskien%20arvioija" }
+    ],
     keywords: ["riskienhallinta", "ympäristöriskit", "arviointi"],
     study_length_estimate_months: 60
 },
@@ -39635,17 +38995,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3500,
     range: [3000, 4200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Vieraslajien leviäminen ja luontokadon torjunta lisäävät kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Ympäristöbiologi"],
     career_progression: ["Luontoturvallisuuspäällikkö", "Biodiversiteettijohtaja"],
     typical_employers: ["Viranomaiset", "Tutkimuslaitokset", "Konsulttiyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luontoturvallisuusasiantuntija" }
+    ],
     keywords: ["luontoturvallisuus", "biodiversiteetti", "vieraslajit"],
     study_length_estimate_months: 60
 },
@@ -39683,17 +39046,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3800,
     range: [3300, 4600],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Ilmastoraportoinnin vaatimukset ja yritysten sitoutuminen ilmastotavoitteisiin lisäävät kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Ympäristöasiantuntija"],
     career_progression: ["Ilmastojohtaja", "Kestävyysjohtaja"],
     typical_employers: ["Konsulttiyritykset", "Yritykset", "Järjestöt"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hiilijalanj%C3%A4lkikonsultti" }
+    ],
     keywords: ["hiilijalanjälki", "päästöt", "ilmasto"],
     study_length_estimate_months: 60
   },
@@ -39734,17 +39100,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3600,
     range: [3100, 4300],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Merialueiden käytön lisääntyminen ja EU-direktiivit edellyttävät suunnittelua.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Merialueasiantuntija"],
     career_progression: ["Merialuesuunnittelupäällikkö", "Meriasioiden johtaja"],
     typical_employers: ["Viranomaiset", "Konsulttiyritykset", "Tutkimuslaitokset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Merialuesuunnittelija" }
+    ],
     keywords: ["merialuesuunnittelu", "GIS", "meriluonto"],
     study_length_estimate_months: 60
 },
@@ -39782,17 +39151,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3400,
     range: [2900, 4000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Kestävän ruoantuotannon tarve lisää vesiviljelyn merkitystä.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Vesiviljelyn tutkija"],
     career_progression: ["Vesiviljelyn johtaja", "Tuotantopäällikkö"],
     typical_employers: ["Vesiviljelyyritykset", "Tutkimuslaitokset", "Viranomaiset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Merivesiviljelyn%20asiantuntija" }
+    ],
     keywords: ["vesiviljely", "kalankasvatus", "kestävyys"],
     study_length_estimate_months: 60
 },
@@ -39830,17 +39202,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3300,
     range: [2800, 3900],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Merten suojelutarpeet turvaavat työmahdollisuuksia tutkimuksessa ja viranomaistyössä.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Meritutkija"],
     career_progression: ["Vanhempi tutkija", "Tutkimusjohtaja"],
     typical_employers: ["Tutkimuslaitokset", "Yliopistot", "Ympäristöjärjestöt"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Merensuojelubiologi" }
+    ],
     keywords: ["meribiologia", "suojelu", "tutkimus"],
     study_length_estimate_months: 72
 },
@@ -39878,17 +39253,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3000,
     range: [2600, 3500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Rantojen kunnostustarve ja luonnon monimuotoisuuden edistäminen lisäävät kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Kenttätyöntekijä"],
     career_progression: ["Kunnostuspäällikkö", "Projektipäällikkö"],
     typical_employers: ["Kunnat", "Ympäristöyritykset", "Järjestöt", "Metsähallitus"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ranta-alueiden%20kunnostaja" }
+    ],
     keywords: ["ennallistaminen", "rannat", "ekologia"],
     study_length_estimate_months: 48
 },
@@ -39926,17 +39304,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2600,
     range: [2300, 3100],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Vesistöjen tilan seuranta on jatkuva tarve ympäristönsuojelussa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Näytteenottaja"],
     career_progression: ["Seurantapäällikkö", "Vesistöasiantuntija"],
     typical_employers: ["Laboratoriot", "Konsulttiyritykset", "Kunnat"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vesist%C3%B6tarkkailiaja" }
+    ],
     keywords: ["vesistöseuranta", "näytteenotto", "kenttätyö"],
     study_length_estimate_months: 36
 },
@@ -39974,17 +39355,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3700,
     range: [3200, 4400],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Pohjaveden suojelu on keskeinen ympäristönsuojelun osa-alue.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Hydrogeologi"],
     career_progression: ["Vesihuoltojohtaja", "Konsultti"],
     typical_employers: ["Konsulttiyritykset", "Viranomaiset", "Vesihuoltolaitokset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pohjavesiasiantuntija" }
+    ],
     keywords: ["pohjavesi", "hydrogeologia", "suojelu"],
     study_length_estimate_months: 60
 },
@@ -40022,17 +39406,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3500,
     range: [3000, 4200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Vesistöjen rehevöityminen on merkittävä ympäristöongelma, joka vaatii asiantuntemusta.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Vesiensuojeluasiantuntija"],
     career_progression: ["Vesiensuojelupäällikkö", "Vesistöjohtaja"],
     typical_employers: ["ELY-keskukset", "Konsulttiyritykset", "Tutkimuslaitokset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rehev%C3%B6itymisen%20torjuja" }
+    ],
     keywords: ["rehevöityminen", "vesiensuojelu", "ravinteet"],
     study_length_estimate_months: 60
 },
@@ -40070,17 +39457,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3600,
     range: [3100, 4300],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Kalakantojen kestävä hallinta edellyttää jatkuvaa tutkimusta ja seurantaa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Kalataloustutkija"],
     career_progression: ["Vanhempi tutkija", "Kalatalousjohtaja"],
     typical_employers: ["Tutkimuslaitokset", "Viranomaiset", "Luonnonvarakeskus"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kalatalousbiologi" }
+    ],
     keywords: ["kalatalous", "kalakannat", "tutkimus"],
     study_length_estimate_months: 72
 },
@@ -40118,17 +39508,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3800,
     range: [3300, 4600],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "EU:n meristrategiadirektiivi ja merten suojelutavoitteet lisäävät kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Meriasiantuntija"],
     career_progression: ["Merenhoidon päällikkö", "Meriasioiden johtaja"],
     typical_employers: ["Viranomaiset", "ELY-keskukset", "Tutkimuslaitokset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Merenhoidon%20asiantuntija" }
+    ],
     keywords: ["merenhoito", "meristrategia", "direktiivit"],
     study_length_estimate_months: 60
 },
@@ -40166,17 +39559,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3700,
     range: [3200, 4500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Vesihuollon kestävyystavoitteet ja ilmastonmuutoksen sopeutuminen lisäävät kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Ympäristöasiantuntija"],
     career_progression: ["Ympäristöjohtaja", "Kestävyysjohtaja"],
     typical_employers: ["Vesilaitokset", "Vesihuoltoyhtymät", "Kunnat"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vesilaitosten%20ymp%C3%A4rist%C3%B6asiantuntija" }
+    ],
     keywords: ["vesihuolto", "kestävyys", "ympäristö"],
     study_length_estimate_months: 60
   },
@@ -40217,17 +39613,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3200,
     range: [2800, 3800],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Maatalouden ympäristötoimet ja tukijärjestelmät turvaavat työmahdollisuuksia.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Maaseutune uvoja"],
     career_progression: ["Maaseutupalvelujen päällikkö", "Kehittämispäällikkö"],
     typical_employers: ["ELY-keskukset", "ProAgria", "Kunnat"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maatalouden%20ymp%C3%A4rist%C3%B6asiantuntija" }
+    ],
     keywords: ["maatalous", "ympäristö", "neuvonta"],
     study_length_estimate_months: 60
 },
@@ -40265,17 +39664,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3100,
     range: [2700, 3700],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Luomutuotannon kasvu lisää neuvonnan ja kehittämisen tarvetta.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Luomuneuvoja"],
     career_progression: ["Luomuasiantuntija", "Kehittämispäällikkö"],
     typical_employers: ["ProAgria", "Luomujärjestöt", "Yritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luonnonmukaisen%20tuotannon%20asiantuntija" }
+    ],
     keywords: ["luomu", "neuvonta", "maatalous"],
     study_length_estimate_months: 60
 },
@@ -40313,17 +39715,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3400,
     range: [2900, 4000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Maaperän terveyden merkityksen kasvu ylläpitää kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Maaperätutkija"],
     career_progression: ["Vanhempi tutkija", "Laboratoriopäällikkö"],
     typical_employers: ["Tutkimuslaitokset", "Neuvontaorganisaatiot", "Yritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maaper%C3%A4n%20asiantuntija" }
+    ],
     keywords: ["maaperä", "viljavuus", "tutkimus"],
     study_length_estimate_months: 60
 },
@@ -40361,17 +39766,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2700,
     range: [2400, 3200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Perinnemaisemien hoitotarpeet turvaavat työmahdollisuuksia luonnonhoidossa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Luonnonhoitotyöntekijä"],
     career_progression: ["Työnjohtaja", "Hoitopäällikkö"],
     typical_employers: ["Metsähallitus", "Kunnat", "Ympäristöyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Perinnebiotooppien%20hoitaja" }
+    ],
     keywords: ["perinnemaisema", "laidunnus", "luonnonhoito"],
     study_length_estimate_months: 36
 },
@@ -40409,17 +39817,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3600,
     range: [3100, 4300],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Ilmastonmuutoksen vaikutukset lisäävät vesienhallinta n tarvetta.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Vesitaloussuunnittelija"],
     career_progression: ["Vesihuoltoinsinööri", "Projektipäällikkö"],
     typical_employers: ["Konsulttiyritykset", "ELY-keskukset", "Kunnat"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vesienhallinta-asiantuntija" }
+    ],
     keywords: ["vesitalous", "suunnittelu", "kuivatus"],
     study_length_estimate_months: 60
 },
@@ -40458,17 +39869,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3700,
     range: [3200, 4500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Ympäristödatan määrän kasvu lisää analyytikkojen kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Data-analyytikko"],
     career_progression: ["Vanhempi analyytikko", "Data-tiimin johtaja"],
     typical_employers: ["Viranomaiset", "Tutkimuslaitokset", "Konsulttiyritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6tiedon%20analyytikko" }
+    ],
     keywords: ["data-analyysi", "ympäristö", "tilastot"],
     study_length_estimate_months: 60
 },
@@ -40506,17 +39920,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3500,
     range: [3000, 4200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Kaupungistuminen ja ympäristötietoisuuden kasvu lisäävät kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Suunnittelija"],
     career_progression: ["Suunnittelupäällikkö", "Kaupunkiekologi"],
     typical_employers: ["Kunnat", "Konsulttiyritykset", "Kaupungit"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6suunnittelija" }
+    ],
     keywords: ["suunnittelu", "kaavoitus", "ympäristö"],
     study_length_estimate_months: 60
 },
@@ -40554,17 +39971,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3000,
     range: [2600, 3600],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Luonnossa liikkumisen suosio ylläpitää turvallisuuskoulutuksen tarvetta.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Luonto-ohjaaja"],
     career_progression: ["Koulutuspäällikkö", "Turvallisuuspäällikkö"],
     typical_employers: ["Koulutusorganisaatiot", "Matkailuyritykset", "Järjestöt"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luontoturvallisuuden%20kouluttaja" }
+    ],
     keywords: ["turvallisuus", "koulutus", "luonto"],
     study_length_estimate_months: 48
 },
@@ -40602,17 +40022,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3800,
     range: [3300, 4600],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Ympäristösertifikaattien merkityksen kasvu lisää kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Ympäristöasiantuntija"],
     career_progression: ["Pääauditoija", "Konsulttipäällikkö"],
     typical_employers: ["Konsulttiyritykset", "Sertifiointiyritykset", "Isot organisaatiot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6sertifioinnin%20asiantuntija" }
+    ],
     keywords: ["sertifiointi", "ISO 14001", "auditointi"],
     study_length_estimate_months: 60
 },
@@ -40650,17 +40073,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3400,
     range: [2900, 4100],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Ympäristötietoisuuden merkitys lisää viestinnän kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Viestintäkoordinaattori"],
     career_progression: ["Viestintäpäällikkö", "Vastuullisuusviestinnän johtaja"],
     typical_employers: ["Yritykset", "Järjestöt", "Viranomaiset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6viestinn%C3%A4n%20asiantuntija" }
+    ],
     keywords: ["viestintä", "ympäristö", "kampanjointi"],
     study_length_estimate_months: 48
 },
@@ -40698,104 +40124,23 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3500,
     range: [3000, 4200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Ympäristöhankkeiden määrän kasvu lisää koordinaattoreiden kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Projektiassistentti"],
     career_progression: ["Projektipäällikkö", "Kehittämisjohtaja"],
     typical_employers: ["Järjestöt", "Kunnat", "Tutkimuslaitokset", "Yritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6hankkeiden%20koordinaattori" }
+    ],
     keywords: ["projektinhallinta", "hankkeet", "koordinointi"],
     study_length_estimate_months: 60
-  },
-
-  {
-    id: "mielenterveyshoitaja",
-    category: "auttaja",
-    title_fi: "Mielenterveyshoitaja",
-    title_en: "Mental Health Nurse",
-    short_description: "Mielenterveyshoitaja työskentelee psykiatrisen hoidon parissa auttaen mielenterveyden häiriöistä kärsiviä potilaita. Työ vaatii empatiakykyä, kärsivällisyyttä ja kriisityötaitoja.",
-    main_tasks: [
-      "Psykiatristen potilaiden hoito ja tukeminen",
-      "Lääkehoidon toteutus ja seuranta",
-      "Kriisitilanteiden hallinta",
-      "Hoitosuunnitelmien laatiminen",
-      "Yhteistyö moniammatillisessa tiimissä"
-    ],
-    impact: [
-      "Auttaa mielenterveysongelmista kärsiviä ihmisiä toipumaan",
-      "Tukee potilaiden sosiaalista kuntoutumista",
-      "Vähentää mielenterveyden stigmaa ja edistää hoitomyönteisyyttä"
-    ],
-    education_paths: [
-      "AMK: Sairaanhoitaja (AMK) + erikoistumiskoulutus",
-      "Psykiatrinen erikoissairaanhoitajakoulutus",
-      "Yliopisto: TtM (Hoitotiede)"
-    ],
-    qualification_or_license: "Laillistettu sairaanhoitaja (Valvira)",
-    core_skills: [
-      "Psykiatrinen hoitotyö",
-      "Kriisityö",
-      "Vuorovaikutustaidot",
-      "Empatia",
-      "Lääkehoito",
-      "Moniammatillinen yhteistyö"
-    ],
-    tools_tech: [
-      "Potilastietojärjestelmät (Kanta)",
-      "Arviointivälineet (BDI, MADRS)",
-      "Hoito-ohjeet ja protokollat"
-    ],
-    languages_required: { fi: 5, sv: 2, en: 2 },
-    salary_eur_month: {
-      median: 3600,
-      range: [3200, 4400],
-      source: "Sairaanhoitajien palkkatilastot ja TES"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Mielenterveysongelmien yleistyminen lisää tarvetta erikoishoitajille"
-    },
-    entry_roles: [
-      "Sairaanhoitaja (psykiatria)",
-      "Akuuttiosaston hoitaja",
-      "Osastonhoitajan sijainen"
-    ],
-    career_progression: [
-      "Erikoissairaanhoitaja",
-      "Osastonhoitaja",
-      "Kliininen asiantuntija",
-      "Yksikön päällikkö"
-    ],
-    typical_employers: [
-      "Sairaalat (psykiatriset osastot)",
-      "Terveyskeskukset",
-      "Mielenterveystoimistot",
-      "Yksityiset hoitolaitokset"
-    ],
-    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
-    union_or_CBA: "Tehy tai Super",
-    useful_links: [
-      { name: "Suomen Mielenterveysseura", url: "https://mieli.fi/" },
-      { name: "Tehy (Sairaanhoitajaliitto)", url: "https://www.tehy.fi/" }
-    ],
-    progression_from: ["sairaanhoitaja"],
-    transferable_skills: [
-      "psychiatric_care",
-      "crisis_intervention",
-      "communication",
-      "empathy",
-      "medication_management",
-      "multidisciplinary_collaboration"
-    ],
-    study_length_estimate_months: 54
-  },
-
-  {
+  },{
     id: "genetiikan-neuvoja",
     category: "auttaja",
     title_fi: "Genetiikan neuvoja",
@@ -40863,8 +40208,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Akava tai Tehy",
     useful_links: [
-      { name: "Perinnöllisyyslääketieteen yhdistys", url: "https://sslg.fi/" },
-      { name: "National Society of Genetic Counselors", url: "https://www.nsgc.org/" }
+      { name: "National Society of Genetic Counselors", url: "https://www.nsgc.org/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Genetiikan%20neuvoja" }
     ],
     transferable_skills: [
       "genetics",
@@ -40875,91 +40220,7 @@ export const careersData: CareerFI[] = [
       "research_interpretation"
     ],
     study_length_estimate_months: 60
-  },
-
-  {
-    id: "bioanalyytikko",
-    category: "innovoija",
-    title_fi: "Bioanalyytikko",
-    title_en: "Medical Laboratory Scientist",
-    short_description: "Bioanalyytikko tutkii näytteitä laboratorioissa, kuten veri-, virtsa- ja kudosnäytteitä. Työ tukee sairauksien diagnosointia ja hoitoa tarjoamalla tarkkoja laboratoriotuloksia.",
-    main_tasks: [
-      "Näytteiden analysointi",
-      "Laboratoriolaitteiden käyttö ja huolto",
-      "Tulosten tulkinta ja raportointi",
-      "Laadunvalvonta",
-      "Laboratorioturvallisuuden ylläpito"
-    ],
-    impact: [
-      "Tuottaa luotettavaa tietoa sairauksien diagnosoinnissa",
-      "Tukee lääkäreiden hoitopäätöksiä",
-      "Edistää potilaiden terveyttä tarkan diagnostiikan avulla"
-    ],
-    education_paths: [
-      "AMK: Bioanalyytikko (AMK)",
-      "Yliopisto: Biokemia tai Molekyylibiologia (valinnainen)"
-    ],
-    qualification_or_license: "Valviran laillistus bioanalyytikoksi",
-    core_skills: [
-      "Laboratoriotyöskentely",
-      "Näytteiden analysointi",
-      "Laadunvalvonta",
-      "Tarkkuus ja huolellisuus",
-      "Laboratorioturvallisuus",
-      "Mikrobiologia ja biokemia"
-    ],
-    tools_tech: [
-      "Analysaattorit ja mittalaitteet",
-      "Mikroskooppi",
-      "PCR-laitteet",
-      "Laboratoriotietojärjestelmät",
-      "Steriilit työvälineet"
-    ],
-    languages_required: { fi: 4, sv: 1, en: 3 },
-    salary_eur_month: {
-      median: 3400,
-      range: [3000, 4200],
-      source: "Bioanalyytikkojen palkkatilastot ja TES"
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Laboratoriotoiminta on vakaa ala, mutta automatisointi vaikuttaa työvoiman tarpeeseen"
-    },
-    entry_roles: [
-      "Bioanalyytikko (juniorius)",
-      "Laboratoriohoitaja",
-      "Näytteenottaja"
-    ],
-    career_progression: [
-      "Vanhempi bioanalyytikko",
-      "Laboratorionhoitaja",
-      "Laatupäällikkö",
-      "Koulutuspäällikkö"
-    ],
-    typical_employers: [
-      "Sairaalat ja terveyskeskukset",
-      "Yksityiset laboratoriot (esim. Mehiläinen)",
-      "Tutkimuslaitokset",
-      "Verikeskukset"
-    ],
-    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
-    union_or_CBA: "Tehy",
-    useful_links: [
-      { name: "Suomen Bioanalyytikkoliitto", url: "https://www.bioanalyytikkoliitto.fi/" },
-      { name: "Valvira", url: "https://www.valvira.fi/" }
-    ],
-    transferable_skills: [
-      "laboratory_work",
-      "sample_analysis",
-      "quality_control",
-      "precision",
-      "lab_safety",
-      "microbiology_biochemistry"
-    ],
-    study_length_estimate_months: 42
-  },
-
-  {
+  },{
     id: "opetusteknologi",
     category: "innovoija",
     title_fi: "Opetusteknologi",
@@ -41028,8 +40289,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "OAJ tai Akava",
     useful_links: [
-      { name: "Opetushallitus", url: "https://www.oph.fi/" },
-      { name: "ISTE (International Society for Technology in Education)", url: "https://www.iste.org/" }
+      { name: "Opetushallitus", url: "https://www.oph.fi/fi" },
+      { name: "ISTE (International Society for Technology in Education)", url: "https://iste.org/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Opetusteknologi" }
     ],
     transferable_skills: [
       "educational_technology",
@@ -41040,180 +40302,7 @@ export const careersData: CareerFI[] = [
       "project_management"
     ],
     study_length_estimate_months: 60
-  },
-
-  {
-    id: "devops-insinoori",
-    category: "innovoija",
-    title_fi: "DevOps-insinööri",
-    title_en: "DevOps Engineer",
-    short_description: "DevOps-insinööri yhdistää kehitys- ja tuotantoprosesseja. Työ vaatii teknistä osaamista ja prosessiosaamista.",
-    main_tasks: [
-      "CI/CD-putkistojen rakentaminen",
-      "Infrastruktuurin automatisointi",
-      "Tuotantoympäristöjen hallinta",
-      "Monitorointi ja lokitus",
-      "Kehittäjien tukeminen"
-    ],
-    impact: [],
-    education_paths: [
-      "AMK: Tietotekniikan tutkinto",
-      "DevOps-sertifikaatit",
-      "Ohjelmistokehityskokemus"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "DevOps",
-      "CI/CD",
-      "Kontittaminen",
-      "Pilvipalvelut",
-      "Automatisointi"
-    ],
-    tools_tech: [
-      "Docker",
-      "Kubernetes",
-      "Jenkins",
-      "Terraform"
-    ],
-    languages_required: { fi: 5, sv: 2, en: 5 },
-    salary_eur_month: {
-      median: 5000,
-      range: [4200, 6500],
-      source: "Ammattinetti 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "DevOps-kulttuurin yleistyminen lisää kysyntää DevOps-insinööreille."
-    },
-    entry_roles: ["Järjestelmäylläpitäjä", "Ohjelmistokehittäjä"],
-    career_progression: ["Senior DevOps Engineer", "Platform Engineer"],
-    typical_employers: ["IT-yritykset", "Teknologiayritykset", "Startup-yritykset"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku - DevOps", url: "https://opintopolku.fi/konfo/fi/haku/DevOps" },
-      { name: "Työmarkkinatori – DevOps-insinööri", url: "https://tyomarkkinatori.fi/ammatit/devops-insinoori" }
-    ],
-    transferable_skills: [],
-    keywords: ["DevOps", "CI/CD", "automatisointi"],
-    study_length_estimate_months: 48
-  },
-
-  {
-    id: "cloud-arkkitehti",
-    category: "innovoija",
-    title_fi: "Pilviarkkitehti",
-    title_en: "Cloud Architect",
-    short_description: "Pilviarkkitehti suunnittelee pilviratkaisuja. Työ vaatii teknistä osaamista ja arkkitehtuuriymmärrystä.",
-    main_tasks: [
-      "Pilvi-arkkitehtuurien suunnittelu",
-      "Pilviratkaisujen valinta",
-      "Skaalautuvuuden varmistaminen",
-      "Kustannusoptimointi",
-      "Turvallisuusarkkitehtuuri"
-    ],
-    impact: [],
-    education_paths: [
-      "Ylempi korkeakoulututkinto: Tietotekniikan maisterin tutkinto",
-      "Pilvisertifikaatit (AWS, Azure, GCP)",
-      "Arkkitehtuurikokemus"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Pilvi-arkkitehtuuri",
-      "AWS/Azure/GCP",
-      "Skaalautuvuus",
-      "Turvallisuus",
-      "Kustannusoptimointi"
-    ],
-    tools_tech: [
-      "AWS",
-      "Azure",
-      "Google Cloud",
-      "Terraform"
-    ],
-    languages_required: { fi: 5, sv: 2, en: 5 },
-    salary_eur_month: {
-      median: 6000,
-      range: [5000, 8500],
-      source: "Ammattinetti 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Pilvisiirtymä lisää kysyntää pilviarkkitehdeille."
-    },
-    entry_roles: ["Cloud Engineer", "Solution Architect"],
-    career_progression: ["Principal Architect", "CTO"],
-    typical_employers: ["IT-yritykset", "Konsulttiyritykset", "Suuryritykset"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku - Pilvipalvelut", url: "https://opintopolku.fi/konfo/fi/haku/pilvipalvelut" },
-      { name: "Työmarkkinatori – Pilviarkkitehti", url: "https://tyomarkkinatori.fi/ammatit/pilviarkkitehti" }
-    ],
-    transferable_skills: [],
-    keywords: ["pilvi", "arkkitehtuuri", "AWS"],
-    study_length_estimate_months: 72
-  },
-
-  {
-    id: "full-stack-kehittaja",
-    category: "innovoija",
-    title_fi: "Full Stack -kehittäjä",
-    title_en: "Full Stack Developer",
-    short_description: "Full Stack -kehittäjä hallitsee sekä frontend- että backend-kehityksen. Työ vaatii laaja-alaista ohjelmointiosaamista.",
-    main_tasks: [
-      "Web-sovellusten kehittäminen",
-      "Frontend-kehitys",
-      "Backend-kehitys",
-      "Tietokantojen suunnittelu",
-      "API-kehitys"
-    ],
-    impact: [],
-    education_paths: [
-      "AMK: Tietotekniikan tutkinto",
-      "Ohjelmointikurssit",
-      "Portfolio projekteista"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "JavaScript/TypeScript",
-      "React/Angular/Vue",
-      "Node.js/Python/Java",
-      "Tietokannat",
-      "REST/GraphQL"
-    ],
-    tools_tech: [
-      "Git",
-      "VS Code",
-      "Docker",
-      "Postman"
-    ],
-    languages_required: { fi: 5, sv: 2, en: 5 },
-    salary_eur_month: {
-      median: 4500,
-      range: [3800, 6000],
-      source: "Ammattinetti 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Web-sovellusten jatkuva kysyntä lisää Full Stack -kehittäjien tarvetta."
-    },
-    entry_roles: ["Junior Developer", "Frontend Developer"],
-    career_progression: ["Senior Full Stack Developer", "Tech Lead"],
-    typical_employers: ["IT-yritykset", "Startup-yritykset", "Digitoimistot"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku - Ohjelmistokehitys", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistokehitys" },
-      { name: "Työmarkkinatori – Full Stack -kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/full-stack-kehittaja" }
-    ],
-    transferable_skills: [],
-    keywords: ["full stack", "web-kehitys", "JavaScript"],
-    study_length_estimate_months: 48
-  },
-
-  {
+  },{
     id: "blockchain-kehittaja",
     category: "innovoija",
     title_fi: "Blockchain-kehittäjä",
@@ -41263,7 +40352,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" },
-      { name: "Työmarkkinatori – Blockchain-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/blockchain-kehittaja" }
+      { name: "Työmarkkinatori – Blockchain-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/blockchain-kehittaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Blockchain-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
     keywords: ["blockchain", "smart contracts", "Web3"],
@@ -41320,71 +40410,13 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Sulautetut järjestelmät", url: "https://opintopolku.fi/konfo/fi/haku/sulautetut%20j%C3%A4rjestelm%C3%A4t" },
-      { name: "Työmarkkinatori – IoT-insinööri", url: "https://tyomarkkinatori.fi/ammatit/iot-insinoori" }
+      { name: "Työmarkkinatori – IoT-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/iot-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=IoT-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
     keywords: ["IoT", "embedded", "sensorit"],
     study_length_estimate_months: 48
-  },
-
-  {
-    id: "robotiikka-insinoori",
-    category: "innovoija",
-    title_fi: "Robotiikka-insinööri",
-    title_en: "Robotics Engineer",
-    short_description: "Robotiikka-insinööri kehittää robotteja ja automaatiojärjestelmiä. Työ vaatii mekaniikkaa, elektroniikkaa ja ohjelmointia.",
-    main_tasks: [
-      "Robottien suunnittelu ja kehitys",
-      "Ohjausjärjestelmien ohjelmointi",
-      "Sensorien integrointi",
-      "Tekoälyn soveltaminen",
-      "Testaus ja validointi"
-    ],
-    impact: [],
-    education_paths: [
-      "Ylempi korkeakoulututkinto: Automaatiotekniikan tai robotiikan maisterin tutkinto",
-      "Robotiikan erikoistuminen",
-      "Mekaniikka- ja elektroniikkaosaaminen"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Robotiikka",
-      "Automaatio",
-      "Ohjelmointi (Python, C++)",
-      "Mekaniikka",
-      "Koneoppiminen"
-    ],
-    tools_tech: [
-      "ROS",
-      "MATLAB",
-      "CAD-ohjelmat",
-      "Simulointityökalut"
-    ],
-    languages_required: { fi: 5, sv: 2, en: 5 },
-    salary_eur_month: {
-      median: 5200,
-      range: [4500, 7000],
-      source: "Ammattinetti 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Automaation ja robotiikan kehittyminen lisää insinöörien kysyntää."
-    },
-    entry_roles: ["Junior Robotics Engineer", "Automaatioinsinööri"],
-    career_progression: ["Senior Robotics Engineer", "Robotics Architect"],
-    typical_employers: ["Robotiikkayritykset", "Teollisuusyritykset", "Tutkimuslaitokset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku - Automaatiotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/automaatiotekniikka" },
-      { name: "Työmarkkinatori – Robotiikka-insinööri", url: "https://tyomarkkinatori.fi/ammatit/robotiikka-insinoori" }
-    ],
-    transferable_skills: [],
-    keywords: ["robotiikka", "automaatio", "ROS"],
-    study_length_estimate_months: 72
-  },
-
-  {
+  },{
     id: "vr-ar-kehittaja",
     category: "innovoija",
     title_fi: "VR/AR-kehittäjä",
@@ -41434,7 +40466,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Peliteknologia", url: "https://opintopolku.fi/konfo/fi/haku/peliteknologia" },
-      { name: "Työmarkkinatori – VR/AR-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/vr-ar-kehittaja" }
+      { name: "Työmarkkinatori – VR/AR-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vr-ar-kehittaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=VR%2FAR-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
     keywords: ["VR", "AR", "Unity"],
@@ -41491,7 +40524,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Bioinformatiikka", url: "https://opintopolku.fi/konfo/fi/haku/bioinformatiikka" },
-      { name: "Työmarkkinatori – Bioinformatiikko", url: "https://tyomarkkinatori.fi/ammatit/bioinformatiikko" }
+      { name: "Työmarkkinatori – Bioinformatiikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/bioinformatiikko" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Bioinformatiikko" }
     ],
     transferable_skills: [],
     keywords: ["bioinformatiikka", "genomiikka", "data-analyysi"],
@@ -41548,7 +40582,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Pelisuunnittelu", url: "https://opintopolku.fi/konfo/fi/haku/pelisuunnittelu" },
-      { name: "Työmarkkinatori – Pelitekninen suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/pelitekninen-suunnittelija" }
+      { name: "Työmarkkinatori – Pelitekninen suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/pelitekninen-suunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pelitekninen%20suunnittelija" }
     ],
     transferable_skills: [],
     keywords: ["pelisuunnittelu", "pelimekaniikka", "Unity"],
@@ -41605,7 +40640,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Fysiikka", url: "https://opintopolku.fi/konfo/fi/haku/fysiikka" },
-      { name: "Työmarkkinatori – Kvanttilaskenta-insinööri", url: "https://tyomarkkinatori.fi/ammatit/kvanttilaskenta-insinoori" }
+      { name: "Työmarkkinatori – Kvanttilaskenta-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kvanttilaskenta-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kvanttilaskenta-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
     keywords: ["kvanttilaskenta", "quantum", "algoritmi"],
@@ -41662,7 +40698,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" },
-      { name: "Työmarkkinatori – Edge computing -asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/edge-computing-specialist" }
+      { name: "Työmarkkinatori – Edge computing -asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/edge-computing-specialist" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Edge%20computing%20-asiantuntija" }
     ],
     transferable_skills: [],
     keywords: ["edge computing", "IoT", "hajautetut järjestelmät"],
@@ -41719,7 +40756,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Ohjelmistokehitys", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistokehitys" },
-      { name: "Työmarkkinatori – API-suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/api-designer" }
+      { name: "Työmarkkinatori – API-suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/api-designer" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=API-suunnittelija" }
     ],
     transferable_skills: [],
     keywords: ["API", "REST", "GraphQL"],
@@ -41776,7 +40814,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Ohjelmistoarkkitehtuuri", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistoarkkitehtuuri" },
-      { name: "Työmarkkinatori – Mikropalveluarkkitehti", url: "https://tyomarkkinatori.fi/ammatit/microservices-architect" }
+      { name: "Työmarkkinatori – Mikropalveluarkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/microservices-architect" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mikropalveluarkkitehti" }
     ],
     transferable_skills: [],
     keywords: ["mikropalvelut", "arkkitehtuuri", "hajautetut järjestelmät"],
@@ -41833,7 +40872,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Koneoppiminen", url: "https://opintopolku.fi/konfo/fi/haku/koneoppiminen" },
-      { name: "Työmarkkinatori – MLOps-insinööri", url: "https://tyomarkkinatori.fi/ammatit/mlops-insinoori" }
+      { name: "Työmarkkinatori – MLOps-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/mlops-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=MLOps-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
     keywords: ["MLOps", "koneoppiminen", "DevOps"],
@@ -41890,7 +40930,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Pilvipalvelut", url: "https://opintopolku.fi/konfo/fi/haku/pilvipalvelut" },
-      { name: "Työmarkkinatori – Serverless-arkkitehti", url: "https://tyomarkkinatori.fi/ammatit/serverless-architect" }
+      { name: "Työmarkkinatori – Serverless-arkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/serverless-architect" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Serverless-arkkitehti" }
     ],
     transferable_skills: [],
     keywords: ["serverless", "FaaS", "pilvi"],
@@ -41947,7 +40988,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tekoäly", url: "https://opintopolku.fi/konfo/fi/haku/teko%C3%A4ly" },
-      { name: "Työmarkkinatori – Chatbot-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/chatbot-kehittaja" }
+      { name: "Työmarkkinatori – Chatbot-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/chatbot-kehittaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Chatbot-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
     keywords: ["chatbot", "NLP", "keskustelurobotti"],
@@ -42004,7 +41046,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Liiketoiminta", url: "https://opintopolku.fi/konfo/fi/haku/liiketoiminta" },
-      { name: "Työmarkkinatori – Low-code-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/low-code-developer" }
+      { name: "Työmarkkinatori – Low-code-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/low-code-developer" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Low-code-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
     keywords: ["low-code", "automaatio", "Power Platform"],
@@ -42061,7 +41104,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Web-kehitys", url: "https://opintopolku.fi/konfo/fi/haku/web-kehitys" },
-      { name: "Työmarkkinatori – PWA-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/progressive-web-app-developer" }
+      { name: "Työmarkkinatori – PWA-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/progressive-web-app-developer" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=PWA-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
     keywords: ["PWA", "web-kehitys", "offline"],
@@ -42118,7 +41162,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Automaatio", url: "https://opintopolku.fi/konfo/fi/haku/automaatio" },
-      { name: "Työmarkkinatori – RPA-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/rpa-kehittaja" }
+      { name: "Työmarkkinatori – RPA-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rpa-kehittaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=RPA-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
     keywords: ["RPA", "automatio", "prosessit"],
@@ -42175,7 +41220,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Ohjelmointi", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmointi" },
-      { name: "Työmarkkinatori – WebAssembly-kehittäjä", url: "https://tyomarkkinatori.fi/ammatit/webassembly-developer" }
+      { name: "Työmarkkinatori – WebAssembly-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/webassembly-developer" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=WebAssembly-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
     keywords: ["WebAssembly", "WASM", "suorituskyky"],
@@ -42232,71 +41278,13 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - DevOps", url: "https://opintopolku.fi/konfo/fi/haku/DevOps" },
-      { name: "Työmarkkinatori – Platform-insinööri", url: "https://tyomarkkinatori.fi/ammatit/platform-insinoori" }
+      { name: "Työmarkkinatori – Platform-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/platform-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Platform-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
     keywords: ["platform engineering", "DevOps", "IDP"],
     study_length_estimate_months: 60
-  },
-
-  {
-    id: "site-reliability-engineer",
-    category: "innovoija",
-    title_fi: "Site Reliability Engineer (SRE)",
-    title_en: "Site Reliability Engineer",
-    short_description: "SRE varmistaa järjestelmien luotettavuuden ja suorituskyvyn. Työ vaatii järjestelmäosaamista ja ohjelmointitaitoja.",
-    main_tasks: [
-      "Järjestelmien luotettavuuden varmistaminen",
-      "Monitoroinnin ja hälytysten kehittäminen",
-      "Incident management",
-      "Kapasiteetin suunnittelu",
-      "Automaation kehittäminen"
-    ],
-    impact: [],
-    education_paths: [
-      "AMK: Tietotekniikan tutkinto",
-      "Järjestelmäylläpidon osaaminen",
-      "Ohjelmointiosaaminen"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Site reliability engineering",
-      "Järjestelmähallinta",
-      "Ohjelmointi",
-      "Monitorointi",
-      "Incident management"
-    ],
-    tools_tech: [
-      "Prometheus",
-      "Grafana",
-      "Kubernetes",
-      "Terraform"
-    ],
-    languages_required: { fi: 5, sv: 2, en: 5 },
-    salary_eur_month: {
-      median: 5500,
-      range: [4800, 7500],
-      source: "Ammattinetti 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Järjestelmien luotettavuuden merkitys lisää SRE:iden kysyntää."
-    },
-    entry_roles: ["Systems Administrator", "DevOps Engineer"],
-    career_progression: ["Senior SRE", "Principal SRE"],
-    typical_employers: ["Teknologiayritykset", "Suuryritykset", "SaaS-yritykset"],
-    work_conditions: { remote: "Kyllä", shift_work: true, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" },
-      { name: "Työmarkkinatori – Site Reliability Engineer", url: "https://tyomarkkinatori.fi/ammatit/site-reliability-engineer" }
-    ],
-    transferable_skills: [],
-    keywords: ["SRE", "luotettavuus", "järjestelmät"],
-    study_length_estimate_months: 60
-  },
-
-  {
+  },{
     id: "embedded-linux-engineer",
     category: "innovoija",
     title_fi: "Embedded Linux -insinööri",
@@ -42346,7 +41334,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Sulautetut järjestelmät", url: "https://opintopolku.fi/konfo/fi/haku/sulautetut%20j%C3%A4rjestelm%C3%A4t" },
-      { name: "Työmarkkinatori – Embedded Linux -insinööri", url: "https://tyomarkkinatori.fi/ammatit/embedded-linux-engineer" }
+      { name: "Työmarkkinatori – Embedded Linux -insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/embedded-linux-engineer" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Embedded%20Linux%20-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
     keywords: ["embedded Linux", "kernel", "IoT"],
@@ -42403,7 +41392,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Peliohjelmointi", url: "https://opintopolku.fi/konfo/fi/haku/peliohjelmointi" },
-      { name: "Työmarkkinatori – Pelimoottorikehittäjä", url: "https://tyomarkkinatori.fi/ammatit/game-engine-developer" }
+      { name: "Työmarkkinatori – Pelimoottorikehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/game-engine-developer" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pelimoottori%20kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
     keywords: ["pelimoottori", "C++", "grafiikka"],
@@ -42460,7 +41450,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tietoverkot", url: "https://opintopolku.fi/konfo/fi/haku/tietoverkot" },
-      { name: "Työmarkkinatori – Verkkoautomaatio-insinööri", url: "https://tyomarkkinatori.fi/ammatit/network-automation-engineer" }
+      { name: "Työmarkkinatori – Verkkoautomaatio-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/network-automation-engineer" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Verkkoautomaatio-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
     keywords: ["verkkoautomaatio", "Network as Code", "Python"],
@@ -42517,7 +41508,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" },
-      { name: "Työmarkkinatori – Observability-insinööri", url: "https://tyomarkkinatori.fi/ammatit/observability-engineer" }
+      { name: "Työmarkkinatori – Observability-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/observability-engineer" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Observability-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
     keywords: ["observability", "monitorointi", "tracing"],
@@ -42574,7 +41566,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Konetekniikka", url: "https://opintopolku.fi/konfo/fi/haku/konetekniikka" },
-      { name: "Työmarkkinatori – 3D-tulostusingsinööri", url: "https://tyomarkkinatori.fi/ammatit/3d-tulostus-insinoori" }
+      { name: "Työmarkkinatori – 3D-tulostusingsinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/3d-tulostus-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=3D-tulostusingsin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
     keywords: ["3D-tulostus", "additiivinen valmistus", "materiaalitekniikka"],
@@ -42631,7 +41624,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Biolääketieteellinen tekniikka", url: "https://opintopolku.fi/konfo/fi/haku/biol%C3%A4%C3%A4ketieteellinen%20tekniikka" },
-      { name: "Työmarkkinatori – Neurotekniikka-insinööri", url: "https://tyomarkkinatori.fi/ammatit/neurotech-insinoori" }
+      { name: "Työmarkkinatori – Neurotekniikka-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/neurotech-insinoori" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Neurotekniikka-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
     keywords: ["neurotekniikka", "aivot", "biolääketiede"],
@@ -42707,8 +41701,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Ylemmät Toimihenkilöt YTN",
     useful_links: [
-      { name: "Suomen Logistiikkayhdistys", url: "https://logistiikka.net/" },
-      { name: "APICS Supply Chain Council", url: "https://www.apics.org/" }
+      { name: "APICS Supply Chain Council", url: "https://www.apics.org/" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimitusketjuanalyytikko" }
     ],
     transferable_skills: [
       "supply_chain_management",
@@ -42769,7 +41763,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Rakennustekniikka", url: "https://opintopolku.fi/konfo/fi/haku/rakennustekniikka" },
-      { name: "Työmarkkinatori – Projektipäällikkö (rakennus)", url: "https://tyomarkkinatori.fi/ammatit/projektipaallikkö-rakennus" }
+      { name: "Työmarkkinatori – Projektipäällikkö (rakennus)", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/projektipaallikkö-rakennus" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Projektip%C3%A4%C3%A4llikk%C3%B6%20(rakennus)" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 48
@@ -42823,7 +41818,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tuotantotalous", url: "https://opintopolku.fi/konfo/fi/haku/tuotantotalous" },
-      { name: "Työmarkkinatori – Tuotantopäällikkö", url: "https://tyomarkkinatori.fi/ammatit/tuotantopaallikkö-teollisuus" }
+      { name: "Työmarkkinatori – Tuotantopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotantopaallikkö-teollisuus" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantop%C3%A4%C3%A4llikk%C3%B6%20(teollisuus)" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 48
@@ -42877,7 +41873,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
-      { name: "Työmarkkinatori – Logistiikkakoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/logistics-coordinator" }
+      { name: "Työmarkkinatori – Logistiikkakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/logistics-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Logistiikkakoordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -42931,7 +41928,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tapahtumatuotanto", url: "https://opintopolku.fi/konfo/fi/haku/tapahtumatuotanto" },
-      { name: "Työmarkkinatori – Tapahtumakoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/event-coordinator" }
+      { name: "Työmarkkinatori – Tapahtumakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/event-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tapahtumakoordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -42985,7 +41983,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Kiinteistöjohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/kiinteist%C3%B6johtaminen" },
-      { name: "Työmarkkinatori – Kiinteistöpäällikkö", url: "https://tyomarkkinatori.fi/ammatit/facility-manager" }
+      { name: "Työmarkkinatori – Kiinteistöpäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/facility-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kiinteist%C3%B6p%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -43039,66 +42038,12 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Hankintatoimi", url: "https://opintopolku.fi/konfo/fi/haku/hankintatoimi" },
-      { name: "Työmarkkinatori – Hankinta-asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/procurement-specialist" }
+      { name: "Työmarkkinatori – Hankinta-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/procurement-specialist" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hankinta-asiantuntija" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
-  },
-  {
-    id: "operations-manager",
-    category: "jarjestaja",
-    title_fi: "Toimintapäällikkö",
-    title_en: "Operations Manager",
-    short_description: "Toimintapäällikkö vastaa organisaation operatiivisen toiminnan johtamisesta. Työ vaatii laaja-alaista osaamista ja johtamistaitoja.",
-    main_tasks: [
-      "Operatiivisen toiminnan johtaminen",
-      "Prosessien kehittäminen",
-      "Henkilöstön johtaminen",
-      "Budjetointi ja raportointi",
-      "Laadunvarmistus"
-    ],
-    education_paths: [
-      "DI: Tuotantotalous",
-      "KTM: Liiketalous",
-      "AMK: Liiketalous tai tekniikka + johtamiskoulutus"
-    ],
-    core_skills: [
-      "Operatiivinen johtaminen",
-      "Prosessien kehittäminen",
-      "Henkilöstöjohtaminen",
-      "Taloudellinen ymmärrys",
-      "Strateginen ajattelu"
-    ],
-    tools_tech: [
-      "ERP-järjestelmät",
-      "Prosessinhallintatyökalut",
-      "Raportointiohjelmistot"
-    ],
-    languages_required: { fi: 5, sv: 3, en: 5 },
-    salary_eur_month: {
-      median: 5800,
-      range: [5000, 7500],
-      source: "Ammattinetti, 2024"
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Organisaatioiden jatkuva tarve tehokkaille toimintapäälliköille ylläpitää kysyntää."
-    },
-    entry_roles: ["Toimistopaallikkö", "Osastopäällikkö"],
-    career_progression: ["COO", "Toimitusjohtaja"],
-    typical_employers: ["Kaikki suuret organisaatiot", "Palveluyritykset", "Tuotantoyritykset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    impact: [],
-    qualification_or_license: null,
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku - Tuotantotalous", url: "https://opintopolku.fi/konfo/fi/haku/tuotantotalous" },
-      { name: "Työmarkkinatori – Toimintapäällikkö", url: "https://tyomarkkinatori.fi/ammatit/operations-manager" }
-    ],
-    transferable_skills: [],
-    study_length_estimate_months: 60
-  },
-  {
+  },{
     id: "quality-manager",
     category: "jarjestaja",
     title_fi: "Laatupäällikkö",
@@ -43147,7 +42092,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Laatujohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/laatujohtaminen" },
-      { name: "Työmarkkinatori – Laatupäällikkö", url: "https://tyomarkkinatori.fi/ammatit/quality-manager" }
+      { name: "Työmarkkinatori – Laatupäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/quality-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laatup%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 48
@@ -43201,7 +42147,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Muutosjohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/muutosjohtaminen" },
-      { name: "Työmarkkinatori – Muutospäällikkö", url: "https://tyomarkkinatori.fi/ammatit/change-manager" }
+      { name: "Työmarkkinatori – Muutospäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/change-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Muutosp%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 60
@@ -43255,7 +42202,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Prosessijohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/prosessijohtaminen" },
-      { name: "Työmarkkinatori – Prosessipäällikkö", url: "https://tyomarkkinatori.fi/ammatit/process-manager" }
+      { name: "Työmarkkinatori – Prosessipäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/process-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Prosessip%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 60
@@ -43309,7 +42257,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Riskienhallinta", url: "https://opintopolku.fi/konfo/fi/haku/riskienhallinta" },
-      { name: "Työmarkkinatori – Compliance-päällikkö", url: "https://tyomarkkinatori.fi/ammatit/compliance-manager" }
+      { name: "Työmarkkinatori – Compliance-päällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/compliance-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Compliance-p%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 60
@@ -43363,7 +42312,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/liiketalous" },
-      { name: "Työmarkkinatori – Toimistopäällikkö", url: "https://tyomarkkinatori.fi/ammatit/office-manager" }
+      { name: "Työmarkkinatori – Toimistopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/office-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimistop%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -43417,7 +42367,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
-      { name: "Työmarkkinatori – Varastopäällikkö", url: "https://tyomarkkinatori.fi/ammatit/warehouse-manager" }
+      { name: "Työmarkkinatori – Varastopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/warehouse-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varastop%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -43471,7 +42422,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Palvelujohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/palvelujohtaminen" },
-      { name: "Työmarkkinatori – Palvelupäällikkö", url: "https://tyomarkkinatori.fi/ammatit/service-manager" }
+      { name: "Työmarkkinatori – Palvelupäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/service-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Palvelup%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -43525,7 +42477,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta" },
-      { name: "Työmarkkinatori – Aikataulukoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/scheduling-coordinator" }
+      { name: "Työmarkkinatori – Aikataulukoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/scheduling-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aikataulukoordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -43579,7 +42532,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
-      { name: "Työmarkkinatori – Varastonhallintapäällikkö", url: "https://tyomarkkinatori.fi/ammatit/inventory-manager" }
+      { name: "Työmarkkinatori – Varastonhallintapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/inventory-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varastonhallintap%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -43633,7 +42587,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Arkistointi", url: "https://opintopolku.fi/konfo/fi/haku/arkistointi" },
-      { name: "Työmarkkinatori – Arkistonhoitaja", url: "https://tyomarkkinatori.fi/ammatit/records-manager" }
+      { name: "Työmarkkinatori – Arkistonhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/records-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Arkistonhoitaja" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 60
@@ -43687,7 +42642,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Matkailu", url: "https://opintopolku.fi/konfo/fi/haku/matkailu" },
-      { name: "Työmarkkinatori – Matkakoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/travel-coordinator" }
+      { name: "Työmarkkinatori – Matkakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/travel-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Matkakoordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -43741,7 +42697,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Koulutus ja kehittäminen", url: "https://opintopolku.fi/konfo/fi/haku/koulutus%20kehitt%C3%A4minen" },
-      { name: "Työmarkkinatori – Koulutuskoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/training-coordinator" }
+      { name: "Työmarkkinatori – Koulutuskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/training-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Koulutuskoordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -43795,7 +42752,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
-      { name: "Työmarkkinatori – Kalustonhallintapäällikkö", url: "https://tyomarkkinatori.fi/ammatit/fleet-manager" }
+      { name: "Työmarkkinatori – Kalustonhallintapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/fleet-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kalustonhallintap%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -43849,7 +42807,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tietojärjestelmät", url: "https://opintopolku.fi/konfo/fi/haku/tietoj%C3%A4rjestelm%C3%A4t" },
-      { name: "Työmarkkinatori – Hallintojärjestelmäkoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/admin-systems-coordinator" }
+      { name: "Työmarkkinatori – Hallintojärjestelmäkoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/admin-systems-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hallintoj%C3%A4rjestelm%C3%A4koordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -43903,7 +42862,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tuotantotalous", url: "https://opintopolku.fi/konfo/fi/haku/tuotantotalous" },
-      { name: "Työmarkkinatori – Resurssisuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/resource-planner" }
+      { name: "Työmarkkinatori – Resurssisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/resource-planner" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Resurssisuunnittelija" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -43957,7 +42917,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Hankintatoimi", url: "https://opintopolku.fi/konfo/fi/haku/hankintatoimi" },
-      { name: "Työmarkkinatori – Toimittajapäällikkö", url: "https://tyomarkkinatori.fi/ammatit/vendor-manager" }
+      { name: "Työmarkkinatori – Toimittajapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vendor-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimittajap%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44011,7 +42972,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tiedonhallinta", url: "https://opintopolku.fi/konfo/fi/haku/tiedonhallinta" },
-      { name: "Työmarkkinatori – Tiedonhallintakoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/data-governance-coordinator" }
+      { name: "Työmarkkinatori – Tiedonhallintakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/data-governance-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tiedonhallintakoordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44065,7 +43027,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Sopimushallinta", url: "https://opintopolku.fi/konfo/fi/haku/sopimushallinta" },
-      { name: "Työmarkkinatori – Sopimushallinnoija", url: "https://tyomarkkinatori.fi/ammatit/contract-administrator" }
+      { name: "Työmarkkinatori – Sopimushallinnoija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/contract-administrator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sopimushallinnoija" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44119,7 +43082,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tapahtumatuotanto", url: "https://opintopolku.fi/konfo/fi/haku/tapahtumatuotanto" },
-      { name: "Työmarkkinatori – Kokouskoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/meeting-coordinator" }
+      { name: "Työmarkkinatori – Kokouskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/meeting-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kokouskoordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44173,7 +43137,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Prosessien johtaminen", url: "https://opintopolku.fi/konfo/fi/haku/prosessien%20johtaminen" },
-      { name: "Työmarkkinatori – Työnkulkukoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/workflow-coordinator" }
+      { name: "Työmarkkinatori – Työnkulkukoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/workflow-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ty%C3%B6nkulkukoordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44227,7 +43192,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Riskienhallinta", url: "https://opintopolku.fi/konfo/fi/haku/riskienhallinta" },
-      { name: "Työmarkkinatori – Toiminnan jatkuvuuden suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/business-continuity-planner" }
+      { name: "Työmarkkinatori – Toiminnan jatkuvuuden suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/business-continuity-planner" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toiminnan%20jatkuvuuden%20suunnittelija" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44281,7 +43247,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta" },
-      { name: "Työmarkkinatori – Portfoliopäällikkö", url: "https://tyomarkkinatori.fi/ammatit/portfolio-manager-projects" }
+      { name: "Työmarkkinatori – Portfoliopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/portfolio-manager-projects" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Portfoliop%C3%A4%C3%A4llikk%C3%B6%20(projektit)" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 60
@@ -44335,7 +43302,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta" },
-      { name: "Työmarkkinatori – PMO-koordinaattori", url: "https://tyomarkkinatori.fi/ammatit/pmo-coordinator" }
+      { name: "Työmarkkinatori – PMO-koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/pmo-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=PMO-koordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44389,7 +43357,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
-      { name: "Työmarkkinatori – Materiaalisuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/materials-planner" }
+      { name: "Työmarkkinatori – Materiaalisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/materials-planner" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Materiaalisuunnittelija" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44443,7 +43412,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tuotantotalous", url: "https://opintopolku.fi/konfo/fi/haku/tuotantotalous" },
-      { name: "Työmarkkinatori – Kapasiteettisuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/capacity-planner" }
+      { name: "Työmarkkinatori – Kapasiteettisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/capacity-planner" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kapasiteettisuunnittelija" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44497,7 +43467,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Kuljetusala", url: "https://opintopolku.fi/konfo/fi/haku/kuljetusala" },
-      { name: "Työmarkkinatori – Kuljetuskoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/transportation-coordinator" }
+      { name: "Työmarkkinatori – Kuljetuskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/transportation-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuljetuskoordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44551,7 +43522,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Laboratorioala", url: "https://opintopolku.fi/konfo/fi/haku/laboratorioala" },
-      { name: "Työmarkkinatori – Laboratoriopäällikkö", url: "https://tyomarkkinatori.fi/ammatit/lab-manager" }
+      { name: "Työmarkkinatori – Laboratoriopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lab-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laboratoriop%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 60
@@ -44605,7 +43577,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Kunnossapito", url: "https://opintopolku.fi/konfo/fi/haku/kunnossapito" },
-      { name: "Työmarkkinatori – Kunnossapitosuunnittelija", url: "https://tyomarkkinatori.fi/ammatit/maintenance-planner" }
+      { name: "Työmarkkinatori – Kunnossapitosuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/maintenance-planner" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kunnossapitosuunnittelija" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 48
@@ -44659,7 +43632,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Kaupan ala", url: "https://opintopolku.fi/konfo/fi/haku/kaupan%20ala" },
-      { name: "Työmarkkinatori – Myymäläpäällikkö", url: "https://tyomarkkinatori.fi/ammatit/store-manager" }
+      { name: "Työmarkkinatori – Myymäläpäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/store-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Myym%C3%A4l%C3%A4p%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44713,7 +43687,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tuotannonohjaus", url: "https://opintopolku.fi/konfo/fi/haku/tuotannonohjaus" },
-      { name: "Työmarkkinatori – Tuotantoaikatauluttaja", url: "https://tyomarkkinatori.fi/ammatit/production-scheduler" }
+      { name: "Työmarkkinatori – Tuotantoaikatauluttaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/production-scheduler" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantoaikatauluttaja" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44767,7 +43742,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Toimitusketjun hallinta", url: "https://opintopolku.fi/konfo/fi/haku/toimitusketjun%20hallinta" },
-      { name: "Työmarkkinatori – Kysynnän suunnittelija", url: "https://tyomarkkinatori.fi/ammatit/demand-planner" }
+      { name: "Työmarkkinatori – Kysynnän suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/demand-planner" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kysynn%C3%A4n%20suunnittelija" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44821,7 +43797,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Lean-johtaminen", url: "https://opintopolku.fi/konfo/fi/haku/lean" },
-      { name: "Työmarkkinatori – Lean-koordinaattori", url: "https://tyomarkkinatori.fi/ammatit/lean-coordinator" }
+      { name: "Työmarkkinatori – Lean-koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lean-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lean-koordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44875,7 +43852,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Kansainvälinen kauppa", url: "https://opintopolku.fi/konfo/fi/haku/kansainv%C3%A4linen%20kauppa" },
-      { name: "Työmarkkinatori – Tuonti-vientikoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/import-export-coordinator" }
+      { name: "Työmarkkinatori – Tuonti-vientikoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/import-export-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuonti-vientikoordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44929,7 +43907,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Esimiestyö", url: "https://opintopolku.fi/konfo/fi/haku/esimiesty%C3%B6" },
-      { name: "Työmarkkinatori – Vuoroesimies", url: "https://tyomarkkinatori.fi/ammatit/shift-supervisor" }
+      { name: "Työmarkkinatori – Vuoroesimies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/shift-supervisor" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vuoroesimies" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -44984,7 +43963,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Ohjelmistokehitys", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistokehitys" },
-      { name: "Työmarkkinatori – Release Manager", url: "https://tyomarkkinatori.fi/ammatit/release-manager" }
+      { name: "Työmarkkinatori – Release Manager", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/release-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Release%20Manager" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -45038,7 +44018,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - IT-palveluhallinta", url: "https://opintopolku.fi/konfo/fi/haku/IT-palveluhallinta" },
-      { name: "Työmarkkinatori – Konfiguraationhallintapäällikkö", url: "https://tyomarkkinatori.fi/ammatit/configuration-manager" }
+      { name: "Työmarkkinatori – Konfiguraationhallintapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/configuration-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Konfiguraationhallintap%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -45092,7 +44073,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Kiinteistöjohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/kiinteist%C3%B6johtaminen" },
-      { name: "Työmarkkinatori – Omaisuudenhallintapäällikkö", url: "https://tyomarkkinatori.fi/ammatit/asset-manager" }
+      { name: "Työmarkkinatori – Omaisuudenhallintapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asset-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Omaisuudenhallintap%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -45146,7 +44128,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tuotehallinta", url: "https://opintopolku.fi/konfo/fi/haku/tuotehallinta" },
-      { name: "Työmarkkinatori – Product Owner", url: "https://tyomarkkinatori.fi/ammatit/product-owner" }
+      { name: "Työmarkkinatori – Product Owner", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/product-owner" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Product%20Owner" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -45200,7 +44183,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - IT-palveluhallinta", url: "https://opintopolku.fi/konfo/fi/haku/IT-palveluhallinta" },
-      { name: "Työmarkkinatori – Palveluntoimituspäällikkö", url: "https://tyomarkkinatori.fi/ammatit/service-delivery-manager" }
+      { name: "Työmarkkinatori – Palveluntoimituspäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/service-delivery-manager" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Palveluntoimitusp%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -45254,7 +44238,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta" },
-      { name: "Työmarkkinatori – Ohjelmakoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/program-coordinator" }
+      { name: "Työmarkkinatori – Ohjelmakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/program-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ohjelmakoordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -45308,7 +44293,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/liiketalous" },
-      { name: "Työmarkkinatori – Toimintokoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/operations-coordinator" }
+      { name: "Työmarkkinatori – Toimintokoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/operations-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimintokoordinaattori" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -45362,7 +44348,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Regulatory affairs", url: "https://opintopolku.fi/konfo/fi/haku/regulatory%20affairs" },
-      { name: "Työmarkkinatori – Viranomaisasioiden asiantuntija", url: "https://tyomarkkinatori.fi/ammatit/regulatory-affairs-specialist" }
+      { name: "Työmarkkinatori – Viranomaisasioiden asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/regulatory-affairs-specialist" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Viranomaisasioiden%20asiantuntija" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 60
@@ -45401,12 +44388,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3600,
       range: [3000, 4500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Työvoiman vaihtuvuus ja laadukkaan perehdytyksen tarve lisäävät koordinaattoreiden kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["HR-assistentti", "Perehdyttäjä"],
     career_progression: ["Senior perehdytyskoordinaattori", "HR-päällikkö"],
@@ -45417,7 +44404,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Henkilöstöhallinto", url: "https://opintopolku.fi/konfo/fi/haku/henkil%C3%B6st%C3%B6hallinto" },
-      { name: "Työmarkkinatori – Perehdytyskoordinaattori", url: "https://tyomarkkinatori.fi/ammatit/onboarding-coordinator" }
+      { name: "Työmarkkinatori – Perehdytyskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/onboarding-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Perehdytyskoordinaattori" }
     ],
     transferable_skills: [],
     keywords: ["perehdytys", "onboarding", "HR"],
@@ -45458,12 +44446,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 4800],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Tiedon merkityksen kasvu organisaatioissa lisää tiedonhallinnan koordinaattoreiden kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Dokumenttikoordinaattori", "Tietoasiantuntija"],
     career_progression: ["Senior knowledge management coordinator", "Knowledge Management Manager"],
@@ -45474,7 +44462,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tiedonhallinta", url: "https://opintopolku.fi/konfo/fi/haku/tiedonhallinta" },
-      { name: "Työmarkkinatori – Tiedonhallinnan koordinaattori", url: "https://tyomarkkinatori.fi/ammatit/knowledge-management-coordinator" }
+      { name: "Työmarkkinatori – Tiedonhallinnan koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/knowledge-management-coordinator" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tiedonhallinnan%20koordinaattori" }
     ],
     transferable_skills: [],
     keywords: ["tiedonhallinta", "knowledge management", "dokumentointi"],
@@ -45550,8 +44539,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Service Design Network Finland", url: "https://www.servicedesignnetwork.org/" },
-      { name: "UX Finland", url: "https://uxfinland.org/" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaskokemuksen%20suunnittelija" }
     ],
     transferable_skills: [
       "service_design",
@@ -45609,6 +44597,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Senior Motion Designer", "Creative Director"],
     typical_employers: ["Mainostoimistot", "Tuotantoyhtiöt", "Mediatalot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Motion%20graphics" }
+    ],
     keywords: ["animaatio", "motion graphics", "visuaalinen suunnittelu"],
     study_length_estimate_months: 42
   },
@@ -45658,6 +44649,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Senior Sound Designer", "Audio Director"],
     typical_employers: ["Äänistudiot", "Peliyritykset", "Elokuvatuotannot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=%C3%84%C3%A4nisuunnittelu" }
+    ],
     keywords: ["äänisuunnittelu", "äänitys", "audio"],
     study_length_estimate_months: 42
   },
@@ -45707,6 +44701,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Bestseller-kirjailija", "Monitoimijakirjailija"],
     typical_employers: ["Kustantamot", "Itsenäinen yrittäjä"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kirjoittaja" }
+    ],
     keywords: ["kirjoittaminen", "kirjallisuus", "tarinankerronta"],
     study_length_estimate_months: 60
   },
@@ -45756,6 +44753,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Headliner", "TV-koomikko"],
     typical_employers: ["Itsenäinen yrittäjä", "Viihdetoimistot"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Stand-up" }
+    ],
     keywords: ["stand-up", "komedia", "esiintyminen"],
     study_length_estimate_months: 12
   },
@@ -45805,6 +44805,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Senior UI Designer", "Design Lead"],
     typical_employers: ["Teknologiayritykset", "Digitoimistot", "Tuoteyritykset"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=UI%20UX" }
+    ],
     keywords: ["UI", "käyttöliittymä", "visuaalinen suunnittelu"],
     study_length_estimate_months: 42
   },
@@ -45854,6 +44857,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Senior Brand Designer", "Creative Director"],
     typical_employers: ["Brändätoimistot", "Mainostoimistot", "Yritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Br%C3%A4ndi" }
+    ],
     keywords: ["brändi", "identiteetti", "visuaalinen suunnittelu"],
     study_length_estimate_months: 42
   },
@@ -45903,6 +44909,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Senior sisustusarkkitehti", "Oman toimiston omistaja"],
     typical_employers: ["Arkkitehtitoimistot", "Sisustusliikkeet", "Itsenäinen yrittäjä"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sisustussuunnittelija" }
+    ],
     keywords: ["sisustus", "suunnittelu", "tilat"],
     study_length_estimate_months: 42
   },
@@ -45952,6 +44961,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Senior tatuoija", "Oman studion omistaja"],
     typical_employers: ["Tatuointistudiot", "Itsenäinen yrittäjä"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tatuointi" }
+    ],
     keywords: ["tatuointi", "taide", "kehotaide"],
     study_length_estimate_months: 24
   },
@@ -46001,6 +45013,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Senior stylist", "Fashion Editor"],
     typical_employers: ["Muotitalot", "Mainostoimistot", "Mediat"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Stylisti" }
+    ],
     keywords: ["styling", "muoti", "tyyli"],
     study_length_estimate_months: 36
   },
@@ -46050,6 +45065,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Kokenut kuvittaja", "Taideohjaaja"],
     typical_employers: ["Kustantamot", "Mainostoimistot", "Itsenäinen yrittäjä"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuvittaja" }
+    ],
     keywords: ["kuvitus", "piirtäminen", "kirjat"],
     study_length_estimate_months: 42
   },
@@ -46099,6 +45117,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Tunnettu keramiikkataiteilija", "Tyhjää tonomistatuutto-opettaja"],
     typical_employers: ["Itsenäinen yrittäjä", "Taidegalleriat", "Käsityöläisyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Keramiikka" }
+    ],
     keywords: ["keramiikka", "taide", "käsityö"],
     study_length_estimate_months: 42
   },
@@ -46148,6 +45169,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Tunnettu tekstiilitaiteilija", "Oma studio"],
     typical_employers: ["Itsenäinen yrittäjä", "Taidegalleriat", "Käsityöläisyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tekstiili" }
+    ],
     keywords: ["tekstiili", "taide", "käsityö"],
     study_length_estimate_months: 42
   },
@@ -46197,6 +45221,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Tunnettu lasitaiteilija", "Oma studio"],
     typical_employers: ["Itsenäinen yrittäjä", "Lasistu diot", "Taidegalleriat"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lasi" }
+    ],
     keywords: ["lasi", "taide", "käsityö"],
     study_length_estimate_months: 42
   },
@@ -46246,6 +45273,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Kokenut nahkataiteilija", "Oma yritys"],
     typical_employers: ["Itsenäinen yrittäjä", "Käsityöläisyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Nahka" }
+    ],
     keywords: ["nahka", "käsityö", "taide"],
     study_length_estimate_months: 24
   },
@@ -46295,6 +45325,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Tunnettu korutaiteilija", "Oma koruliike"],
     typical_employers: ["Itsenäinen yrittäjä", "Koruliikkeet", "Taidegalleriat"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Korusuunnittelija" }
+    ],
     keywords: ["korut", "taide", "käsityö"],
     study_length_estimate_months: 42
   },
@@ -46344,60 +45377,12 @@ export const careersData: CareerFI[] = [
     career_progression: ["Senior-opettaja", "Tanssikoulun omistaja"],
     typical_employers: ["Tanssikoulut", "Kulttuurikeskukset", "Itsenäinen yrittäjä"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tanssi" }
+    ],
     keywords: ["tanssi", "opettaminen", "koreografia"],
     study_length_estimate_months: 42
-  },
-
-  {
-    id: "teatteriohjaaja",
-    category: "luova",
-    title_fi: "Teatteriohjaaja",
-    title_en: "Theater Director",
-    short_description: "Teatteriohjaaja ohjaa teatteriesityksiä. Työ vaatii luovuutta ja ohjaamisen taitoja.",
-    main_tasks: [
-      "Esitysten ohjaaminen",
-      "Näyttelijöiden ohjaus",
-      "Tulkintojen kehittäminen",
-      "Yhteistyö taiteellisen tiimin kanssa",
-      "Esityskokonaisuuksien luominen"
-    ],
-    education_paths: [
-      "YK: Teatteriohjaajan tutkinto (Taideyliopisto)",
-      "Teatteritaiteen opinnot",
-      "Ohjauskokemus"
-    ],
-    core_skills: [
-      "Ohjaaminen",
-      "Dramaturgia",
-      "Näyttelijöiden ohjaus",
-      "Taiteellinen visio",
-      "Yhteistyötaidot"
-    ],
-    tools_tech: [
-      "Käsikirjoitusanalyysi",
-      "Lavastussuunnittelu",
-      "Visualisointityökalut"
-    ],
-    languages_required: { fi: 4, sv: 2, en: 3 },
-    salary_eur_month: {
-      median: 3500,
-      range: [2500, 6000],
-      source: "Ammattinetti 2024"
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Teatteritaiteen jatkuva kysyntä ylläpitää ohjaajien tarvetta.",
-      source: "Ammattinetti 2024"
-    },
-    entry_roles: ["Apulaisohjaaja", "Freelance-ohjaaja"],
-    career_progression: ["Senior-ohjaaja", "Taiteellinen johtaja"],
-    typical_employers: ["Teatterit", "Freelance", "Kulttuurilaitokset"],
-    work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
-    keywords: ["teatteri", "ohjaaminen", "esitykset"],
-    study_length_estimate_months: 60
-  },
-
-  {
+  },{
     id: "graafinen-taiteilija",
     category: "luova",
     title_fi: "Graafinen taiteilija",
@@ -46442,6 +45427,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Tunnettu taiteilija", "Taideohjaaja"],
     typical_employers: ["Itsenäinen yrittäjä", "Taidegalleriat", "Taidekoulut"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Graafinen%20suunnittelija" }
+    ],
     keywords: ["grafiikka", "taide", "painotaide"],
     study_length_estimate_months: 42
   },
@@ -46491,6 +45479,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Senior Editor", "Post-production Supervisor"],
     typical_employers: ["Tuotantoyhtiöt", "Mainostoimistot", "Freelance"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Video" }
+    ],
     keywords: ["leikkaus", "elokuva", "editointi"],
     study_length_estimate_months: 42
   },
@@ -46540,6 +45531,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Tunnettu installaatiotaiteilija", "Kansainvälinen taiteilija"],
     typical_employers: ["Itsenäinen yrittäjä", "Taidegalleriat", "Museot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taiteilija" }
+    ],
     keywords: ["installaatio", "nykytaide", "tilat"],
     study_length_estimate_months: 60
   },
@@ -46589,6 +45583,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Tunnettu performanssitaiteilija", "Kansainvälinen taiteilija"],
     typical_employers: ["Itsenäinen yrittäjä", "Taidegalleriat", "Tapahtumajärjestäjät"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taiteilija" }
+    ],
     keywords: ["performanssi", "nykytaide", "live-taide"],
     study_length_estimate_months: 60
   },
@@ -46638,6 +45635,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Senior digitaalinen taiteilija", "Art Director"],
     typical_employers: ["Peliyritykset", "Mainostoimistot", "Itsenäinen yrittäjä"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitaalinen%20suunnittelija" }
+    ],
     keywords: ["digitaalinen taide", "3D", "NFT"],
     study_length_estimate_months: 42
   },
@@ -46687,6 +45687,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Tunnettu street art -taiteilija", "Muraalitaiteilija"],
     typical_employers: ["Itsenäinen yrittäjä", "Kaupungit", "Yritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taiteilija" }
+    ],
     keywords: ["street art", "muraalit", "katutaide"],
     study_length_estimate_months: 24
   },
@@ -46736,6 +45739,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Senior Concept Artist", "Art Director"],
     typical_employers: ["Peliyritykset", "Elokuvatoptutuannot", "Animaatiostudiot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Konseptisuunnittelija" }
+    ],
     keywords: ["konsepti", "taide", "pelit"],
     study_length_estimate_months: 42
   },
@@ -46785,6 +45791,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Senior Type Designer", "Typographic Director"],
     typical_employers: ["Suunnittelutoimistot", "Kustantamot", "Itsenäinen yrittäjä"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Graafinen%20suunnittelija" }
+    ],
     keywords: ["typografia", "kirjasintyypit", "suunnittelu"],
     study_length_estimate_months: 42
   },
@@ -46834,6 +45843,9 @@ export const careersData: CareerFI[] = [
     career_progression: ["Senior pakkaussuunnittelija", "Packaging Design Lead"],
     typical_employers: ["Suunnittelutoimistot", "Tuoteyritykset", "Pakkausyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pakkaussuunnittelu" }
+    ],
     keywords: ["pakkaus", "suunnittelu", "brändi"],
     study_length_estimate_months: 42
   },
@@ -46872,17 +45884,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 5500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Peliteollisuuden ja animaatioiden kasvu lisää hahmosuunnittelijoiden kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Junior Character Designer", "2D-artisti"],
     career_progression: ["Senior Character Designer", "Character Art Director"],
     typical_employers: ["Peliyritykset", "Animaatiostudiot", "Elokuvatuotannot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Peli" }
+    ],
     keywords: ["hahmosuunnittelu", "piirtäminen", "pelit"],
     study_length_estimate_months: 42
   },
@@ -46921,17 +45936,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2700, 4500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Esitysten ja tapahtumien jatkuva tarve ylläpitää valosuunnittelijoiden kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Valoteknikko", "Assistentti"],
     career_progression: ["Senior valosuunnittelija", "Valaistuksen taiteellinen johtaja"],
     typical_employers: ["Teatterit", "Tapahtumayritykset", "Freelance"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Valotekniikka%20(taide)" }
+    ],
     keywords: ["valo", "valaistus", "taide"],
     study_length_estimate_months: 42
   },
@@ -47006,8 +46024,35 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tehy tai Super",
     useful_links: [
-      { name: "Suomen Telemedikaationyhdistys", url: "https://www.telemedikaatio.fi/" },
-      { name: "THL: Etäpalvelut", url: "https://thl.fi/" }
+      { name: "THL: Etäpalvelut", url: "https://thl.fi/etusivu" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Motion%20graphics" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=%C3%84%C3%A4nisuunnittelu" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kirjoittaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Stand-up" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=UI%20UX" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Br%C3%A4ndi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sisustussuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tatuointi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Stylisti" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuvittaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Keramiikka" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tekstiili" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lasi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Nahka" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Korusuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tanssi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Graafinen%20suunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Video" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taiteilija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taiteilija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitaalinen%20suunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taiteilija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Konseptisuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Graafinen%20suunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pakkaussuunnittelu" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Peli" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Valotekniikka%20(taide)" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Et%C3%A4terveyskoordinaattori" }
     ],
     transferable_skills: [
       "telehealth_technology",
@@ -47057,17 +46102,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2800, 4000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Metalliteollisuus tarvitsee koneistajia, erityisesti CNC-osaajia.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Koneistajan apulainen", "Sorvari"],
     career_progression: ["Mestari", "Työnjohtaja", "Tuotantopäällikkö"],
     typical_employers: ["Metalliteollisuusyritykset", "Konepajojen valmistajat"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Koneistaja" }
+    ],
     keywords: ["koneistus", "CNC", "metalli", "tuotanto"],
     study_length_estimate_months: 36
   },
@@ -47107,17 +46155,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [3000, 4200],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Teollisuus tarvitsee mekanikoita koneiden kunnossapitoon.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Kunnossapitotyöntekijä"],
     career_progression: ["Kunnossapitomestari", "Kunnossapitopäällikkö"],
     typical_employers: ["Teollisuusyritykset", "Paperitehtaat", "Kemianteollisuus"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teollisuusmekanikko" }
+    ],
     keywords: ["kunnossapito", "mekanikko", "teollisuus"],
     study_length_estimate_months: 36
   },
@@ -47156,17 +46207,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2700,
       range: [2400, 3200],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Teollisuus tarvitsee tuotantotyöntekijöitä, erityisesti elektroniikka- ja elintarviketeollisuudessa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tuotannon apulainen"],
     career_progression: ["Vuoromestari", "Tuotantopäällikkö"],
     typical_employers: ["Teollisuusyritykset", "Elintarviketeollisuus", "Elektroniikkateollisuus"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantoty%C3%B6ntekij%C3%A4" }
+    ],
     keywords: ["tuotanto", "tehdas", "linja"],
     study_length_estimate_months: 24
   },
@@ -47205,17 +46259,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2600,
       range: [2300, 3000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Kokoonpanijoita tarvitaan elektroniikka- ja koneteollisuudessa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Kokoonpanon apulainen"],
     career_progression: ["Vuoromestari", "Laatuvastaava"],
     typical_employers: ["Elektroniikkateollisuus", "Koneteollisuus", "Autoteollisuus"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kokoonpanija" }
+    ],
     keywords: ["kokoonpano", "asennus", "tuotanto"],
     study_length_estimate_months: 12
   },
@@ -47255,17 +46312,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3000,
       range: [2600, 3600],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Laatutarkastajia tarvitaan teollisuudessa laadunvalvontaan.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Laadunvalvonnan apulainen"],
     career_progression: ["Laatupäällikkö", "Laatujohtaja"],
     typical_employers: ["Teollisuusyritykset", "Laboratoriot", "Testauslaitokset"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laatutarkastaja" }
+    ],
     keywords: ["laatu", "tarkastus", "mittaus"],
     study_length_estimate_months: 36
   },
@@ -47304,17 +46364,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2700,
       range: [2400, 3200],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Trukinkuljettajia tarvitaan logistiikka-alalla ja teollisuudessa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Varastotyöntekijä"],
     career_progression: ["Varastonhoitaja", "Logistiikkakoordinaattori"],
     typical_employers: ["Logistiikkayritykset", "Tehtaat", "Satamat"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Trukinkuljettaja" }
+    ],
     keywords: ["trukki", "logistiikka", "siirto"],
     study_length_estimate_months: 3
   },
@@ -47355,17 +46418,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2900,
       range: [2600, 3400],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Linja-autonkuljettajia tarvitaan julkisessa liikenteessä ja tilausajoissa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Varalinja-autonkuljettaja"],
     career_progression: ["Vuoromestari", "Liikennöitsijä"],
     typical_employers: ["HSL", "Onnibus", "Pohjolan Liikenne", "Matkahuolto"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Linja-autonkuljettaja" }
+    ],
     keywords: ["liikenne", "kuljetus", "asiakaspalvelu"],
     study_length_estimate_months: 6
   },
@@ -47404,17 +46470,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3100,
       range: [2700, 3800],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Verkkokaupan ja logistiikan kasvu lisää kuljettajien kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Pakettiauton kuljettaja"],
     career_progression: ["Kuljetusyrittäjä", "Logistiikkakoordinaattori"],
     typical_employers: ["DB Schenker", "Posti", "Kuljetus Auvinen", "Itella"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rekkakuski" }
+    ],
     keywords: ["kuljetus", "logistiikka", "liikenne"],
     study_length_estimate_months: 6
   },
@@ -47454,17 +46523,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2600,
       range: [2200, 3500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vaihtelee",
       explanation: "Uber ja muut kuljetuspalvelut muuttavat alaa, mutta kysyntää on edelleen.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Taksinkuljettaja"],
     career_progression: ["Taksiyrittäjä", "Vuoropäällikkö"],
     typical_employers: ["Taksiyhtiöt", "Uber", "Bolt", "Oma yritys"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taksikuski" }
+    ],
     keywords: ["kuljetus", "asiakaspalvelu", "liikenne"],
     study_length_estimate_months: 3
   },
@@ -47503,17 +46575,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3300,
       range: [2900, 4000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Rakentaminen ja sähköistyminen lisäävät sähköasentajien kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Sähköasentajan apulainen"],
     career_progression: ["Työnjohtaja", "Sähköurakoitsija"],
     typical_employers: ["Sähköurakointi yritykset", "Caverion", "YIT"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6asentaja%20(rakennus)" }
+    ],
     keywords: ["sähkö", "asennus", "rakennus"],
     study_length_estimate_months: 36
   },
@@ -47553,72 +46628,23 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2800, 3900],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "LVI-alan ammattilaisia tarvitaan rakentamisessa ja korjauksissa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["LVI-asentajan apulainen"],
     career_progression: ["Työnjohtaja", "LVI-urakoitsija"],
     typical_employers: ["LVI-yritykset", "Caverion", "Talotekniikka"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=VVS-asentaja" }
+    ],
     keywords: ["LVI", "putki", "ilmastointi"],
     study_length_estimate_months: 36
-  },
-
-  {
-    id: "maanrakennuskoneen-kuljettaja",
-    category: "rakentaja",
-    title_fi: "Maanrakennuskoneen kuljettaja",
-    title_en: "Heavy Equipment Operator",
-    short_description: "Maanrakennuskoneen kuljettaja operoi kaivinkoneita ja muita raskaan maanrakennuksen koneita. Työ vaatii tarkkuutta ja teknistä osaamista.",
-    main_tasks: [
-      "Maanrakennuskoneiden käyttö",
-      "Kaivutyöt",
-      "Täyttötyöt",
-      "Koneiden huolto",
-      "Turvallisuusmääräysten noudattaminen"
-    ],
-    education_paths: [
-      "Maanrakennuskoneenkuljettajan koulutus",
-      "Toinen aste: Rakennusalan perustutkinto",
-      "Työkokemus"
-    ],
-    core_skills: [
-      "Koneiden käyttö",
-      "Tarkkuus",
-      "Tekninen ymmärrys",
-      "Turvallisuusosaaminen",
-      "Avaruudellinen hahmotus"
-    ],
-    tools_tech: [
-      "Kaivukoneet",
-      "Pyöräkuormaajat",
-      "Tiehöylät",
-      "GPS-ohjausjärjestelmät"
-    ],
-    languages_required: { fi: "B1", sv: "Ei vaatimusta", en: "Ei vaatimusta" },
-    salary_eur_month: {
-      median: 3100,
-      range: [2700, 3700],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Infrastruktuurihankkeet ja rakentaminen tarvitsevat koneenkuljettajia.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    entry_roles: ["Koneenkuljettajan apulainen"],
-    career_progression: ["Työmaamestari", "Urakoitsija"],
-    typical_employers: ["Rakennusyritykset", "YIT", "NCC", "Destia"],
-    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
-    keywords: ["kaivinkone", "rakennus", "maanrakennus"],
-    study_length_estimate_months: 12
-  },
-
-  {
+  },{
     id: "nosturinkuljettaja",
     category: "rakentaja",
     title_fi: "Nosturinkuljettaja",
@@ -47652,17 +46678,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [3000, 4200],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Rakennustyömailla tarvitaan nosturinkuljettajia.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Nosturinkuljettajan apulainen"],
     career_progression: ["Työmaamestari"],
     typical_employers: ["Rakennusyritykset", "Nosturipalveluyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Nosturinkuljettaja" }
+    ],
     keywords: ["nosturi", "rakennus", "nosto"],
     study_length_estimate_months: 6
   },
@@ -47701,17 +46730,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2700,
       range: [2400, 3200],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Kiinteistöjä tarvitsee aina huoltoa ja kunnossapitoa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Kiinteistöhoitaja"],
     career_progression: ["Isännöitsijä", "Kiinteistöpäällikkö"],
     typical_employers: ["Kiinteistöyhtiöt", "Isännöintitoimistot", "Kaupungit"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Huoltomies" }
+    ],
     keywords: ["huolto", "kiinteistö", "korjaus"],
     study_length_estimate_months: 24
   },
@@ -47750,17 +46782,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3000,
       range: [2600, 3600],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Rakentamisessa ja korjauksissa tarvitaan kirves miehiä.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Kirve miehen apulainen"],
     career_progression: ["Työmaamestari", "Rakennusyrittäjä"],
     typical_employers: ["Rakennusyritykset", "Puualan yritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ammattikirvesmies" }
+    ],
     keywords: ["puu", "rakennus", "kirves"],
     study_length_estimate_months: 36
   },
@@ -47799,17 +46834,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2800,
       range: [2400, 3400],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Maalaustöitä tarvitaan rakentamisessa ja korjauksissa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Maalarin apulainen"],
     career_progression: ["Työnjohtaja", "Maalausyrittäjä"],
     typical_employers: ["Maalausyritykset", "Rakennusyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ammattimaalari" }
+    ],
     keywords: ["maalaus", "pintakäsittely", "rakennus"],
     study_length_estimate_months: 36
   },
@@ -47850,17 +46888,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2900,
       range: [2500, 3500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Rakentamisessa ja remonteissa tarvitaan lattia-asentajia.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Lattia-asentajan apulainen"],
     career_progression: ["Työnjohtaja", "Lattiaurako itsija"],
     typical_employers: ["Lattiayritykset", "Rakennusyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lattia-asentaja" }
+    ],
     keywords: ["lattia", "asennus", "rakennus"],
     study_length_estimate_months: 24
   },
@@ -47899,71 +46940,23 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3100,
       range: [2700, 3700],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Betonirakentamisessa tarvitaan raudoittajia.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Raudoittajan apulainen"],
     career_progression: ["Työmaamestari", "Raudoitusurakoitsija"],
     typical_employers: ["Rakennusyritykset", "YIT", "NCC"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Raudoittaja" }
+    ],
     keywords: ["raudoitus", "betoni", "rakennus"],
     study_length_estimate_months: 24
-  },
-
-  {
-    id: "betonityontekija",
-    category: "rakentaja",
-    title_fi: "Betonityöntekijä",
-    title_en: "Concrete Worker",
-    short_description: "Betonityöntekijä valaa ja käsittelee betonia rakennustyömailla. Työ on fyysistä ja vaatii tarkkuutta.",
-    main_tasks: [
-      "Betonin valu",
-      "Muottien asennus",
-      "Betonin tasoitus",
-      "Jälkihoito",
-      "Työmaiden siivous"
-    ],
-    education_paths: [
-      "Toinen aste: Rakennusalan perustutkinto",
-      "Betonityön ammattitutkinto",
-      "Työkokemus"
-    ],
-    core_skills: [
-      "Betonirakentaminen",
-      "Fyysinen kunto",
-      "Tarkkuus",
-      "Tiimityö",
-      "Turvallisuusosaaminen"
-    ],
-    tools_tech: [
-      "Betonityökalut",
-      "Tasoittimet",
-      "Muotit"
-    ],
-    languages_required: { fi: "B1", sv: "Ei vaatimusta", en: "Ei vaatimusta" },
-    salary_eur_month: {
-      median: 2900,
-      range: [2500, 3400],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Betonirakentamista tarvitaan infrastruktuurissa ja rakennuksissa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    entry_roles: ["Rakennustyöntekijä"],
-    career_progression: ["Työmaamestari", "Betonimestari"],
-    typical_employers: ["Rakennusyritykset", "Infrastruktuuriyritykset"],
-    work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
-    keywords: ["betoni", "valu", "rakennus"],
-    study_length_estimate_months: 24
-  },
-
-  {
+  },{
     id: "kattoasentaja",
     category: "rakentaja",
     title_fi: "Kattoasentaja",
@@ -47997,17 +46990,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3100,
       range: [2700, 3800],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Kattojen asennus ja korjaus ovat jatkuvaa tarvetta.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Kattoasentajan apulainen"],
     career_progression: ["Työnjohtaja", "Kattourakoitsija"],
     typical_employers: ["Kattourakoitsijat", "Rakennusyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kattoasentaja" }
+    ],
     keywords: ["katto", "asennus", "rakennus"],
     study_length_estimate_months: 24
   },
@@ -48046,17 +47042,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3000,
       range: [2600, 3600],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Muurareita tarvitaan rakentamisessa ja korjauksissa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Muurarin apulainen"],
     career_progression: ["Työmaamestari", "Muurausurakoitsija"],
     typical_employers: ["Rakennusyritykset", "Muurausyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Muurari" }
+    ],
     keywords: ["muuraus", "tiili", "rakennus"],
     study_length_estimate_months: 36
   },
@@ -48095,17 +47094,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2900,
       range: [2500, 3500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Ikkunoiden ja ovien vaihto on jatkuvaa tarvetta korjausrakentamisessa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Asentajan apulainen"],
     career_progression: ["Työnjohtaja", "Asennusyrittäjä"],
     typical_employers: ["Ikkuna- ja oviyritykset", "Rakennusyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ikkunan%20ja%20oven%20asentaja" }
+    ],
     keywords: ["ikkuna", "ovi", "asennus"],
     study_length_estimate_months: 12
   },
@@ -48145,17 +47147,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3100,
       range: [2700, 3700],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Levyseppiä tarvitaan teollisuudessa ja rakentamisessa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Levysepän apulainen"],
     career_progression: ["Mestari", "Työnjohtaja"],
     typical_employers: ["Metalliteollisuus", "Rakennusyritykset", "Levypajat"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Levysepp%C3%A4" }
+    ],
     keywords: ["levy", "metalli", "hitsaus"],
     study_length_estimate_months: 36
   },
@@ -48194,17 +47199,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3300,
       range: [2900, 4000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Rakennehitsaajia tarvitaan infrastruktuurihankkeissa ja teollisuudessa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Hitsaajan apulainen"],
     career_progression: ["Hitsausmestari", "Työnjohtaja"],
     typical_employers: ["Rakennusyritykset", "Terästeollisuus", "Telakka"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rakennehitsaaja" }
+    ],
     keywords: ["hitsaus", "teräs", "rakennus"],
     study_length_estimate_months: 36
   },
@@ -48243,17 +47251,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2600,
       range: [2300, 3000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Elintarviketeollisuus tarvitsee tuotantotyöntekijöitä.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tuotannon apulainen"],
     career_progression: ["Vuoromestari", "Tuotantopäällikkö"],
     typical_employers: ["Elintarviketeollisuus", "HKScan", "Valio", "Fazer"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Elintarvikety%C3%B6ntekij%C3%A4" }
+    ],
     keywords: ["elintarvike", "tuotanto", "hygienia"],
     study_length_estimate_months: 24
   },
@@ -48292,17 +47303,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2900,
       range: [2500, 3500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Puutuoteteollisuus tarvitsee ammattitaitoisia puuseppiä.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Puusepän apulainen"],
     career_progression: ["Mestari", "Tuotantopäällikkö"],
     typical_employers: ["Puutuoteteollisuus", "Huonekalutehtaat"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teollisuuspuusepp%C3%A4" }
+    ],
     keywords: ["puuseppä", "puutuote", "CNC"],
     study_length_estimate_months: 36
   },
@@ -48310,56 +47324,7 @@ export const careersData: CareerFI[] = [
   // ========== BATCH 4: RAKENTAJA CAREERS (Automotive, Maritime & Industrial Operations) ==========
 
   {
-  id: "automekaanikko",
-    category: "rakentaja",
-    title_fi: "Automekaanikko",
-    title_en: "Auto Mechanic",
-    short_description: "Automekaanikko huoltaa ja korjaa autoja. Työ vaatii teknistä osaamista ja ongelmanratkaisukykyä.",
-    main_tasks: [
-    "Autojen huolto ja korjaus",
-    "Vikojen diagnosointi",
-    "Osien vaihto",
-    "Katsastukseen valmistelu",
-    "Asiakkaiden neuvonta"
-  ],
-    education_paths: [
-    "Toinen aste: Autoalan perustutkinto",
-    "Automekaanikkon ammattitutkinto",
-    "Työkokemus"
-  ],
-    core_skills: [
-    "Autotekniikka",
-    "Diagnostiikka",
-    "Ongelmanratkaisu",
-    "Sähkötekniikka",
-    "Asiakaspalvelu"
-  ],
-    tools_tech: [
-    "Korjaamotyökalut",
-    "Diagnostiikkalaitteet",
-    "Nostinlaitteet"
-  ],
-    languages_required: { fi: "B2", sv: "Ei vaatimusta", en: "A2" },
-    salary_eur_month: {
-    median: 3000,
-    range: [2600, 3600],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    job_outlook: {
-    status: "vakaa",
-    explanation: "Automekanikoita tarvitaan huoltoasemilla ja korjaamoissa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    entry_roles: ["Automekaanikkon apulainen"],
-    career_progression: ["Mestari", "Korjaamopäällikkö"],
-    typical_employers: ["Autoliikkeet", "Huoltoasemat", "Korjaamot"],
-    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
-    keywords: ["auto", "huolto", "korjaus"],
-    study_length_estimate_months: 36
-},
-
-{
-  id: "raskaan-kaluston-mekaanikko",
+    id: "raskaan-kaluston-mekaanikko",
     category: "rakentaja",
     title_fi: "Raskaan kaluston mekaanikko",
     title_en: "Heavy Vehicle Mechanic",
@@ -48392,17 +47357,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3400,
     range: [3000, 4200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Raskaan kaluston mekanikoista on pulaa, erityisesti erikoisosaajista.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Mekaanikkon apulainen"],
     career_progression: ["Mestari", "Huoltopäällikkö"],
     typical_employers: ["Kuljetusyritykset", "Työkoneyritykset", "Huoltoasemat"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Raskaan%20kaluston%20mekaanikko" }
+    ],
     keywords: ["raskas kalusto", "diesel", "huolto"],
     study_length_estimate_months: 36
 },
@@ -48441,17 +47409,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3600,
     range: [3200, 4500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Merenkulku tarvitsee mekanikoita alusten kunnossapitoon.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Konemiehen apulainen"],
     career_progression: ["Konemestari", "Konepäällikkö"],
     typical_employers: ["Varustamot", "Telakat", "Satama-alueet"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Alusmekaanikko" }
+    ],
     keywords: ["merenkulku", "alus", "koneisto"],
     study_length_estimate_months: 36
 },
@@ -48490,17 +47461,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3200,
     range: [2800, 3900],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vaihtelee",
     explanation: "Telakka-ala riippuu tilauskannasta, mutta osaajia tarvitaan.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Telakka-apulainen"],
     career_progression: ["Mestari", "Työnjohtaja"],
     typical_employers: ["Telakat", "Laivankorjaamo", "Meyer Turku"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Telakkaty%C3%B6ntekij%C3%A4" }
+    ],
     keywords: ["telakka", "laiva", "hitsaus"],
     study_length_estimate_months: 36
 },
@@ -48539,17 +47513,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3500,
     range: [3100, 4200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Paperiteollisuus tarvitsee koneenkuljettajia, vaikka automatisointi lisääntyy.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Prosessioperaattori"],
     career_progression: ["Vuoromestari", "Tuotantopäällikkö"],
     typical_employers: ["Paperitehtaat", "UPM", "Stora Enso", "Metsä Group"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Paperikoneen%20kuljettaja" }
+    ],
     keywords: ["paperi", "prosessi", "teollisuus"],
     study_length_estimate_months: 36
 },
@@ -48588,17 +47565,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3400,
     range: [3000, 4100],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Kemianteollisuus tarvitsee prosessioperaattoreita.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Prosessin apulainen"],
     career_progression: ["Vuoromestari", "Tuotantopäällikkö"],
     typical_employers: ["Kemianteollisuus", "Öljynjalostamot", "Neste"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kemianprosessioperaattori" }
+    ],
     keywords: ["kemia", "prosessi", "tuotanto"],
     study_length_estimate_months: 36
 },
@@ -48637,17 +47617,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2800,
     range: [2500, 3300],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Sahateollisuus tarvitsee työntekijöitä puun jalostukseen.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Sahan apulainen"],
     career_progression: ["Vuoromestari", "Tuotantopäällikkö"],
     typical_employers: ["Sahat", "Metsäteollisuusyritykset"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sahateollisuusty%C3%B6ntekij%C3%A4" }
+    ],
     keywords: ["saha", "puu", "tuotanto"],
     study_length_estimate_months: 12
 },
@@ -48686,17 +47669,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3000,
     range: [2600, 3600],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Metsureita tarvitaan metsätaloudessa, vaikka koneellistuminen lisääntyy.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Metsurin apulainen"],
     career_progression: ["Metsätyönjohtaja", "Urakoitsija"],
     typical_employers: ["Metsäyhtiöt", "Metsäpalveluyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Metsuri" }
+    ],
     keywords: ["metsä", "puunkaato", "ulkotyö"],
     study_length_estimate_months: 24
 },
@@ -48735,26 +47721,23 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3300,
     range: [2900, 4000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Metsäkoneenkuljettajia tarvitaan puunkorjuussa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Metsäkoneen apulainen"],
     career_progression: ["Metsätyönjohtaja", "Urakoitsija"],
     typical_employers: ["Metsäyhtiöt", "Metsäkoneurakoitsijat"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mets%C3%A4koneen%20kuljettaja" }
+    ],
     keywords: ["metsä", "hakkuu", "kone"],
     study_length_estimate_months: 24
-},
-
-{
-  id: "varastotyontekija",
-  },
-
-  // ========== BATCH 5: RAKENTAJA CAREERS (Agriculture, Energy & Specialized Manufacturing) ==========
+},// ========== BATCH 5: RAKENTAJA CAREERS (Agriculture, Energy & Specialized Manufacturing) ==========
 
   {
   id: "maataloustyontekija",
@@ -48790,17 +47773,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2400,
     range: [2100, 2900],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Maatalous tarvitsee työntekijöitä, erityisesti kausiluonteisesti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Maatilan apulainen"],
     career_progression: ["Maatalousyrittäjä", "Työnjohtaja"],
     typical_employers: ["Maatilat", "Maatalousyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maatalousty%C3%B6ntekij%C3%A4" }
+    ],
     keywords: ["maatalous", "eläimet", "viljely"],
     study_length_estimate_months: 24
 },
@@ -48839,17 +47825,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2500,
     range: [2200, 3000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Maidontuotanto ja lihantuotanto tarvitsevat karjanhoitajia.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Karjanhoitajan apulainen"],
     career_progression: ["Karjatilanpitäjä", "Maatalousyrittäjä"],
     typical_employers: ["Maidontuotantotilat", "Lihakarjatilat"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Karjanhoitaja" }
+    ],
     keywords: ["karja", "lypsytyö", "maatalous"],
     study_length_estimate_months: 24
 },
@@ -48888,17 +47877,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2600,
     range: [2300, 3100],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Viheralueita ja puutarhoja tarvitsee hoitoa ympäri vuoden.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Puutarha-apulainen"],
     career_progression: ["Puutarhasuunnittelija", "Yrittäjä"],
     typical_employers: ["Puutarhayritykset", "Kunnat", "Viheraluepalvelut"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Puutarhuri" }
+    ],
     keywords: ["puutarha", "kasvit", "viheralueet"],
     study_length_estimate_months: 36
 },
@@ -48937,17 +47929,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3500,
     range: [3100, 4300],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "kasvaa",
     explanation: "Tuulivoiman kasvu lisää huoltoteknikkojen kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Huoltoteknikkon apulainen"],
     career_progression: ["Työnjohtaja", "Huoltopäällikkö"],
     typical_employers: ["Tuulivoimayhtiöt", "Energiayhtiöt"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuulivoimalan%20huoltoteknikko" }
+    ],
     keywords: ["tuulivoima", "huolto", "energia"],
     study_length_estimate_months: 36
 },
@@ -48986,17 +47981,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3600,
     range: [3200, 4400],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Sähköverkkojen ylläpito ja uusiminen tarvitsee asentajia.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Sähköasentajan apulainen"],
     career_progression: ["Työnjohtaja", "Verkkopäällikkö"],
     typical_employers: ["Energiayhtiöt", "Caruna", "Helen"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6verkkoasentaja" }
+    ],
     keywords: ["sähköverkko", "linjat", "energia"],
     study_length_estimate_months: 36
 },
@@ -49035,17 +48033,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2500,
     range: [2200, 2900],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "laskee",
     explanation: "Tekstiiliteollisuus on pienentynyt Suomessa, mutta erikoistuotannossa on kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Tuotannon apulainen"],
     career_progression: ["Vuoromestari", "Tuotantopäällikkö"],
     typical_employers: ["Tekstiilitehtaat", "Erikoistuottajat"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tekstiility%C3%B6ntekij%C3%A4" }
+    ],
     keywords: ["tekstiili", "kangas", "tuotanto"],
     study_length_estimate_months: 24
 },
@@ -49084,17 +48085,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2800,
     range: [2500, 3300],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Muoviteollisuus tarvitsee osaavia työntekijöitä.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Tuotannon apulainen"],
     career_progression: ["Vuoromestari", "Tuotantopäällikkö"],
     typical_employers: ["Muoviteollisuus", "Pakkausteollisuus"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Muovituotteiden%20valmistaja" }
+    ],
     keywords: ["muovi", "valmistus", "teollisuus"],
     study_length_estimate_months: 24
 },
@@ -49133,17 +48137,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2700,
     range: [2400, 3200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Kumiteollisuus tarvitsee työntekijöitä, erityisesti rengasvalmistuksessa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Tuotannon apulainen"],
     career_progression: ["Vuoromestari", "Tuotantopäällikkö"],
     typical_employers: ["Nokian Renkaat", "Kumiteollisuusyritykset"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kumiteollisuusty%C3%B6ntekij%C3%A4" }
+    ],
     keywords: ["kumi", "renkaat", "tuotanto"],
     study_length_estimate_months: 24
 },
@@ -49182,17 +48189,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2900,
     range: [2600, 3400],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Lasiteollisuus tarvitsee osaavia työntekijöitä.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Tuotannon apulainen"],
     career_progression: ["Vuoromestari", "Tuotantopäällikkö"],
     typical_employers: ["Lasiteollisuus", "Ikkunatehtaat"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lasiteollisuusty%C3%B6ntekij%C3%A4" }
+    ],
     keywords: ["lasi", "valmistus", "teollisuus"],
     study_length_estimate_months: 24
 },
@@ -49231,17 +48241,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2600,
     range: [2300, 3100],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Keramiikkateollisuus tarvitsee osaajia, erityisesti erikoistuotannossa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Keramiikka-apulainen"],
     career_progression: ["Mestari", "Tuotantopäällikkö"],
     typical_employers: ["Keramiikkatehtaat", "Erikoisvalmistajat"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Keramiikkaty%C3%B6ntekij%C3%A4" }
+    ],
     keywords: ["keramiikka", "savityö", "valmistus"],
     study_length_estimate_months: 36
   },
@@ -49282,17 +48295,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2400,
     range: [2200, 2800],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Vartijoiden kysyntä pysyy vakaana turvallisuustarpeiden kasvaessa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Järjestyksenvalvoja"],
     career_progression: ["Vartiopäällikkö", "Turvallisuuspäällikkö"],
     typical_employers: ["Vartiointiyritykset", "Kauppakeskukset", "Teollisuusyritykset"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vartija" }
+    ],
     keywords: ["vartiointi", "turvallisuus", "valvonta"],
     study_length_estimate_months: 12
 },
@@ -49331,17 +48347,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2800,
     range: [2500, 3300],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Kiinteistönhoitajia tarvitaan rakennusten ylläpitoon.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Talonmies"],
     career_progression: ["Isännöitsijä", "Kiinteistöpäällikkö"],
     typical_employers: ["Kiinteistöyhtiöt", "Isännöintiyritykset", "Kauppakeskukset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kiinteist%C3%B6nhoitaja" }
+    ],
     keywords: ["kiinteistö", "huolto", "ylläpito"],
     study_length_estimate_months: 24
 },
@@ -49380,17 +48399,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2900,
     range: [2600, 3400],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Jätehuolto on välttämätön palvelu, joka työllistää tasaisesti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Jäteauton apumies"],
     career_progression: ["Työnjohtaja", "Kierrätysaseman hoitaja"],
     typical_employers: ["Jätehuoltoyritykset", "Kunnat"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=J%C3%A4tehuoltoty%C3%B6ntekij%C3%A4" }
+    ],
     keywords: ["jäte", "kierrätys", "ympäristö"],
     study_length_estimate_months: 12
 },
@@ -49429,17 +48451,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2300,
     range: [2100, 2700],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Siivoojia tarvitaan kaikilla aloilla ja kaikissa tiloissa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Laitoshuoltaja"],
     career_progression: ["Siivoustyönjohtaja", "Kiinteistöpalvelupäällikkö"],
     typical_employers: ["Siivousyritykset", "Kiinteistöyhtiöt", "Sairaalat", "Koulut"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Siivoja" }
+    ],
     keywords: ["siivous", "puhdistus", "hygienia"],
     study_length_estimate_months: 12
 },
@@ -49478,17 +48503,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3400,
     range: [3000, 4200],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Teollisuusputkiasentajia tarvitaan prosessiteollisuudessa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Putkiasentajan apulainen"],
     career_progression: ["Mestari", "Työnjohtaja"],
     typical_employers: ["Prosessiteollisuus", "Energiayhtiöt", "Rakennusliikkeet"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teollisuusputkiasentaja" }
+    ],
     keywords: ["putki", "hitsaus", "teollisuus"],
     study_length_estimate_months: 36
 },
@@ -49527,17 +48555,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2500,
     range: [2200, 2900],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Elintarviketeollisuus työllistää pakkaajia tasaisesti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Tuotantotyöntekijä"],
     career_progression: ["Vuoromestari", "Tuotantopäällikkö"],
     typical_employers: ["Elintarviketehtaat", "Leipomot", "Lihanjalostusyritykset"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Elintarvikealan%20pakkaaja" }
+    ],
     keywords: ["pakkaus", "elintarvike", "hygienia"],
     study_length_estimate_months: 12
 },
@@ -49576,17 +48607,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3100,
     range: [2800, 3600],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Rakentaminen työllistää elementtiasennuksen osaajia.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Rakennusmies"],
     career_progression: ["Työnjohtaja", "Työmaapäällikkö"],
     typical_employers: ["Rakennusliikkeet", "Elementtiasennusyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Betonielementtiasentaja" }
+    ],
     keywords: ["betoni", "elementti", "rakentaminen"],
     study_length_estimate_months: 24
 },
@@ -49625,17 +48659,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2900,
     range: [2600, 3400],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Teollisuusmaalareita tarvitaan metalliteollisuudessa ja telakalla.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Maalarin apulainen"],
     career_progression: ["Mestari", "Työnjohtaja"],
     typical_employers: ["Metalliteollisuus", "Telakat", "Maalaustoimistot"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teollisuusmaalari" }
+    ],
     keywords: ["maalaus", "pintakäsittely", "teollisuus"],
     study_length_estimate_months: 24
 },
@@ -49674,17 +48711,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3300,
     range: [2900, 4000],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Ammattitaitoisia hitsaajia tarvitaan metalliteollisuudessa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Hitsaajan apulainen"],
     career_progression: ["Mestari", "Hitsaustyönjohtaja"],
     typical_employers: ["Konepajat", "Metalliteollisuus", "Rakennusliikkeet"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Konepajahitsaaja" }
+    ],
     keywords: ["hitsaus", "metalli", "konepaja"],
     study_length_estimate_months: 36
 },
@@ -49723,17 +48763,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3100,
     range: [2800, 3700],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Teollisuus tarvitsee koneenkäyttäjiä tuotannon ylläpitoon.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Tuotantotyöntekijä"],
     career_progression: ["Vuoromestari", "Tuotantopäällikkö"],
     typical_employers: ["Prosessiteollisuus", "Elintarviketeollisuus", "Kemianteollisuus"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Koneenk%C3%A4ytt%C3%A4j%C3%A4%20(teollisuus)" }
+    ],
     keywords: ["kone", "tuotanto", "valvonta"],
     study_length_estimate_months: 24
   },
@@ -49774,17 +48817,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3100,
     range: [2800, 3600],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Rautateiden kunnossapito työllistää tasaisesti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Ratatyöntekijä"],
     career_progression: ["Työnjohtaja", "Ratamestari"],
     typical_employers: ["VR Track", "Rataurakoitsijat"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rautatiety%C3%B6ntekij%C3%A4" }
+    ],
     keywords: ["rata", "rautatie", "kunnossapito"],
     study_length_estimate_months: 24
 },
@@ -49823,17 +48869,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3000,
     range: [2700, 3500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Tiestön ylläpito ja rakentaminen työllistää jatkuvasti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Rakennusmies"],
     career_progression: ["Työnjohtaja", "Työmaapäällikkö"],
     typical_employers: ["Infrarakentajat", "Kuntien rakennusosastot"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tienrakentaja" }
+    ],
     keywords: ["tie", "asfaltti", "rakentaminen"],
     study_length_estimate_months: 24
 },
@@ -49872,17 +48921,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2800,
     range: [2400, 3600],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Erityisosaamista arvostetaan restauroinnissa ja käsityössä.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Sepän apulainen"],
     career_progression: ["Mestari", "Yrittäjä"],
     typical_employers: ["Taidesepoät", "Restaurointiliikkeet", "Käsityöpajat"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Metallisepp%C3%A4" }
+    ],
     keywords: ["seppä", "takominen", "metalli"],
     study_length_estimate_months: 36
 },
@@ -49921,17 +48973,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3500,
     range: [3100, 4300],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Infrarakentaminen ja kaivostoiminta työllistävät poraajia.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Porarin apulainen"],
     career_progression: ["Työnjohtaja", "Räjäytystyönjohtaja"],
     typical_employers: ["Rakennusyritykset", "Kaivosteollisuus", "Tunnelointiyritykset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Porari" }
+    ],
     keywords: ["poraus", "räjäytys", "kallio"],
     study_length_estimate_months: 24
 },
@@ -49970,17 +49025,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3000,
     range: [2700, 3500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Vesihuoltoverkostot vaativat jatkuvaa ylläpitoa.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["LVI-asentaja"],
     career_progression: ["Työnjohtaja", "Verkostopäällikkö"],
     typical_employers: ["Kunnat", "Vesihuoltoyhtiöt"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vesihuoltomies" }
+    ],
     keywords: ["vesi", "viemäri", "huolto"],
     study_length_estimate_months: 36
 },
@@ -50019,17 +49077,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 2600,
     range: [2300, 3100],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Maatalous tarvitsee koneenkäyttäjiä erityisesti sesonkiaikana.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Maataloustyöntekijä"],
     career_progression: ["Karjanhoitaja", "Tilallinen"],
     typical_employers: ["Maatilat", "Maatalousurakoitsijat"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maatalouskoneen%20kuljettaja" }
+    ],
     keywords: ["maatalous", "traktori", "kone"],
     study_length_estimate_months: 24
 },
@@ -50068,17 +49129,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3000,
     range: [2700, 3500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "laskee",
     explanation: "Digitalisaatio vähentää painotuotteiden kysyntää, mutta erikoistuotteita tarvitaan.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Painoapulainen"],
     career_progression: ["Painomestari", "Tuotantopäällikkö"],
     typical_employers: ["Painotalot", "Pakkaustuotevalmistajat"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Painokoneenk%C3%A4ytt%C3%A4j%C3%A4" }
+    ],
     keywords: ["paino", "kone", "painatus"],
     study_length_estimate_months: 36
 },
@@ -50117,17 +49181,20 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3200,
     range: [2900, 3800],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Elintarviketeollisuus ja logistiikka tarvitsevat kylmäalan osaajia.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Kylmäasentaja"],
     career_progression: ["Työnjohtaja", "Huoltopäällikkö"],
     typical_employers: ["Elintarviketeollisuus", "Logistiikkakeskukset", "Kauppakeskukset"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=J%C3%A4%C3%A4dytysteknologian%20operaattori" }
+    ],
     keywords: ["kylmä", "jäähdytys", "pakastus"],
     study_length_estimate_months: 36
 },
@@ -50165,70 +49232,23 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
     median: 3000,
     range: [2700, 3500],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     job_outlook: {
     status: "vakaa",
     explanation: "Rakentaminen työllistää betoniauton kuljettajia tasaisesti.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
   },
     entry_roles: ["Kuorma-auton kuljettaja"],
     career_progression: ["Työnjohtaja", "Kuljetuspäällikkö"],
     typical_employers: ["Betonitehtaat", "Rakennusliikkeet"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Betoniauton%20kuljettaja" }
+    ],
     keywords: ["betoni", "kuljetus", "ajo"],
     study_length_estimate_months: 12
-  },
-
-  {
-    id: "varastotyontekija",
-    category: "rakentaja",
-    title_fi: "Varastotyöntekijä",
-    title_en: "Warehouse Worker",
-    short_description: "Varastotyöntekijä käsittelee ja järjestää tavaroita varastossa. Työ on fyysistä ja vaatii tarkkuutta.",
-    main_tasks: [
-    "Tavaroiden vastaanotto",
-    "Varastointi ja järjestely",
-    "Keräily ja pakkaus",
-    "Inventointi",
-    "Järjestelmien käyttö"
-  ],
-    education_paths: [
-    "Toinen aste: Logistiikan perustutkinto",
-    "Perehdytys työpaikalla",
-    "Ei vaadi erityiskoulutusta"
-  ],
-    core_skills: [
-    "Fyysinen kunto",
-    "Järjestelmällisyys",
-    "Tarkkuus",
-    "Tiimityö",
-    "Koneiden käyttö"
-  ],
-    tools_tech: [
-    "Varastojärjestelmät",
-    "Käsitrukki",
-    "Viivakoodinlukijat"
-  ],
-    languages_required: { fi: "B1", sv: "Ei vaatimusta", en: "Ei vaatimusta" },
-    salary_eur_month: {
-    median: 2500,
-    range: [2200, 2900],
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    job_outlook: {
-    status: "kasvaa",
-    explanation: "Verkkokaupan kasvu lisää varastotyöntekijöiden kysyntää.",
-    source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-  },
-    entry_roles: ["Varastoavustaja"],
-    career_progression: ["Varastonhoitaja", "Logistiikkakoordinaattori"],
-    typical_employers: ["Logistiikkayritykset", "Kaupat", "Verkkokaupat"],
-    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
-    keywords: ["varasto", "logistiikka", "keräily"],
-    study_length_estimate_months: 12
-},
-// ===============================
+  },// ===============================
 // HYBRID CAREERS - Creative + Helper
 // ===============================
 {
@@ -50272,12 +49292,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3400,
       range: [2900, 4200],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Luovien terapiamuotojen kysyntä kasvaa mielenterveyspalveluiden laajentumisen myötä.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Taideterapiaopiskelija", "Ohjaaja taideterapiaryhmissä"],
     career_progression: ["Seniorisaideterapeutti", "Taideterapian kouluttaja", "Oma yksityisvastaanotto"],
@@ -50286,7 +49306,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Terveydenhuoltoalan TES",
     useful_links: [
       { name: "Suomen Taideterapiayhdistys", url: "https://www.taideterapia.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terapia" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taideterapeutti" }
     ],
     keywords: ["taideterapia", "luova terapia", "mielenterveys", "taide", "kuntoutus"],
     study_length_estimate_months: 60
@@ -50332,12 +49353,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3500,
       range: [3000, 4300],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Musiikkiterapian vaikuttavuus on tutkimuksissa todistettu, mikä lisää kysyntää.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Musiikkiterapiaopiskelija", "Musiikkipedagogi"],
     career_progression: ["Erikoistunut musiikkiterapeutti", "Kouluttaja", "Tutkija"],
@@ -50346,7 +49367,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Terveydenhuoltoalan TES",
     useful_links: [
       { name: "Suomen Musiikkiterapiayhdistys", url: "https://www.musiikkiterapia.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terapia" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Musiikkiterapeutti" }
     ],
     keywords: ["musiikkiterapia", "kuntoutus", "musiikki", "terapia"],
     study_length_estimate_months: 60
@@ -50392,12 +49414,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3300,
       range: [2800, 4000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Draamaterapia on kasvava erikoisala osana luovia terapiamuotoja.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Draamaohjaaja", "Terapia-avustaja"],
     career_progression: ["Erikoistunut draamaterapeutti", "Kouluttaja"],
@@ -50405,7 +49427,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terapia" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Draamaterapeutti" }
     ],
     keywords: ["draamaterapia", "teatteri", "terapia", "luova terapia"],
     study_length_estimate_months: 60
@@ -50451,12 +49474,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3200,
       range: [2700, 3900],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Kehollisten terapiamuotojen kysyntä kasvaa hitaasti.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tanssinohjaaja", "Tanssipedagogi"],
     career_progression: ["Erikoistunut tanssiterapeutti", "Kouluttaja"],
@@ -50464,7 +49487,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terapia" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tanssiterapeutti" }
     ],
     keywords: ["tanssiterapia", "liike", "terapia", "kehollinen"],
     study_length_estimate_months: 60
@@ -50515,7 +49539,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Kuvataideopettajien tarve pysyy vakaana kouluissa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Kuvataiteen tuntiopettaja", "Sijaisopettaja"],
     career_progression: ["Lehtori", "Aineenopettaja", "Rehtori"],
@@ -50524,7 +49548,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "OVTES",
     useful_links: [
       { name: "OAJ", url: "https://www.oaj.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/opettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuvataideopettaja" }
     ],
     keywords: ["kuvataide", "opettaja", "taide", "kasvatus"],
     study_length_estimate_months: 60
@@ -50570,12 +49595,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3500,
       range: [2800, 4200],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Musiikkipedagogien tarve pysyy vakaana musiikkioppilaitoksissa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Soitonopettaja", "Musiikkikoulun opettaja"],
     career_progression: ["Lehtori", "Musiikkiopiston rehtori", "Musiikkiterapeutti"],
@@ -50584,7 +49609,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "OVTES tai yksityisten oppilaitosten TES",
     useful_links: [
       { name: "Suomen musiikkioppilaitosten liitto", url: "https://www.musicedu.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/opettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Musiikkipedagogi" }
     ],
     keywords: ["musiikki", "pedagogi", "opetus", "soitto"],
     study_length_estimate_months: 48
@@ -50635,7 +49661,7 @@ export const careersData: CareerFI[] = [
     job_outlook: {
       status: "vakaa",
       explanation: "Käsityönopettajien tarve pysyy vakaana peruskouluissa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Käsityön tuntiopettaja", "Sijaisopettaja"],
     career_progression: ["Lehtori", "Aineenopettaja", "Rehtori"],
@@ -50644,7 +49670,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "OVTES",
     useful_links: [
       { name: "OAJ", url: "https://www.oaj.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/opettaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=K%C3%A4sity%C3%B6nopettaja" }
     ],
     keywords: ["käsityö", "opettaja", "tekstiili", "puu", "tekninen työ"],
     study_length_estimate_months: 60
@@ -50690,12 +49717,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3600,
       range: [2800, 5000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Luovuuden ja innovaatioiden merkitys kasvaa työelämässä.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Valmentaja", "Kouluttaja"],
     career_progression: ["Seniorialmentaja", "Yrittäjä", "Konsultti"],
@@ -50704,7 +49731,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Suomen Coaching-yhdistys", url: "https://www.coaching-yhdistys.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/valmentaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luovuusvalmentaja" }
     ],
     keywords: ["luovuus", "valmennus", "coaching", "innovaatio"],
     study_length_estimate_months: 24
@@ -50753,12 +49781,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4500,
       range: [3800, 5500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Terveysteknologia on nopeasti kasvava ala Suomessa.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Junior terveysteknologia-asiantuntija", "Tekninen tukihenkilö"],
     career_progression: ["Senior asiantuntija", "Projektipäällikkö", "Tuotekehityspäällikkö"],
@@ -50766,8 +49794,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Healthtech Finland", url: "https://healthtech.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Healthtech Finland", url: "https://teknologiateollisuus.fi/healthtech/" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terveydenhuolto" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Terveysteknologia-asiantuntija" }
     ],
     keywords: ["terveysteknologia", "digitalisaatio", "healthtech", "eHealth"],
     study_length_estimate_months: 48
@@ -50813,12 +49842,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 4500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Lääkintälaitteiden määrä kasvaa, mikä lisää huoltotarvetta.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Huoltoteknikko", "Laiteteknikko"],
     career_progression: ["Senior teknikko", "Huoltopäällikkö", "Tekninen asiantuntija"],
@@ -50826,7 +49855,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terveydenhuolto" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=L%C3%A4%C3%A4kint%C3%A4laiteteknikko" }
     ],
     keywords: ["lääkintälaite", "huolto", "teknikko", "terveysteknologia"],
     study_length_estimate_months: 48
@@ -50872,12 +49902,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3500, 5000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Terveydenhuollon digitalisaatio lisää informatiikan osaajien tarvetta.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tietojärjestelmäasiantuntija", "Pääkäyttäjä"],
     career_progression: ["Senior asiantuntija", "Tietohallintojohtaja", "Kehityspäällikkö"],
@@ -50886,7 +49916,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "HL7 Finland", url: "https://www.hl7.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terveydenhuolto" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Terveysinformatiikan%20asiantuntija" }
     ],
     keywords: ["terveysinformatiikka", "tietojärjestelmät", "data", "terveydenhuolto"],
     study_length_estimate_months: 60
@@ -50932,12 +49963,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4600,
       range: [3800, 5800],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Digitaalisten terveyspalveluiden kysyntä kasvaa nopeasti.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Junior-kehittäjä", "UX-suunnittelija"],
     career_progression: ["Senior-kehittäjä", "Lead developer", "Tuotepäällikkö"],
@@ -50945,8 +49976,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "Digital Health Finland", url: "https://digitalhealthfinland.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terveydenhuolto" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitaalisen%20terveyden%20kehitt%C3%A4j%C3%A4" }
     ],
     keywords: ["digitaalinen terveys", "kehitys", "sovellus", "eHealth"],
     study_length_estimate_months: 48
@@ -50992,12 +50023,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4800,
       range: [4000, 6000],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Biolääketiede on nopeasti kasvava ala maailmanlaajuisesti.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Tutkimusinsinööri", "Tuotekehitysinsinööri"],
     career_progression: ["Senior insinööri", "Tuotekehityspäällikkö", "T&K-johtaja"],
@@ -51005,8 +50036,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Suomen Biolääketieteen Tekniikan Yhdistys", url: "https://www.fbt.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Suomen Biolääketieteen Tekniikan Yhdistys", url: "https://fbt.fi/" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/bioteknologia" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Biol%C3%A4%C3%A4ketieteellinen%20insin%C3%B6%C3%B6ri" }
     ],
     keywords: ["biolääketiede", "insinööri", "lääkintälaite", "T&K"],
     study_length_estimate_months: 60
@@ -51052,12 +50084,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4000,
       range: [3400, 4800],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Terveydenhuollon digitalisaatio vaatii kliinistä informatiikkaosaamista.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Pääkäyttäjä", "Järjestelmäasiantuntija"],
     career_progression: ["Senior asiantuntija", "Informatiikkapäällikkö"],
@@ -51065,75 +50097,18 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Terveydenhuoltoalan TES",
     useful_links: [
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terveydenhuolto" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kliininen%20informatiikka-asiantuntija" }
     ],
     keywords: ["kliininen informatiikka", "tietojärjestelmät", "terveydenhuolto"],
     study_length_estimate_months: 60
 },
+
 // ===============================
 // HYBRID CAREERS - Environment + Education
 // ===============================
-{
-    id: "ymparistokasvattaja",
-    category: "ympariston-puolustaja",
-    title_fi: "Ympäristökasvattaja",
-    title_en: "Environmental Educator",
-    short_description: "Ympäristökasvattaja opettaa ja viestii ympäristöasioista eri ikäryhmille edistäen kestävää elämäntapaa ja ympäristötietoisuutta.",
-    main_tasks: [
-      "Ympäristökasvatusohjelmien suunnittelu ja toteutus",
-      "Luontoretkien ja työpajojen järjestäminen",
-      "Oppimateriaalien kehittäminen",
-      "Yhteistyö koulujen ja organisaatioiden kanssa",
-      "Ympäristöviestintä ja tiedotus"
-    ],
-    impact: [
-      "Lisää ympäristötietoisuutta yhteiskunnassa",
-      "Edistää kestävää kehitystä",
-      "Innostaa nuoria luonnon suojeluun"
-    ],
-    education_paths: [
-      "Yliopisto: Ympäristötieteiden maisteri + pedagogiikka",
-      "AMK: Ympäristösuunnittelija + opetusopinnot",
-      "Luonnonvara-alan tutkinto + ympäristökasvatuksen opinnot"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Ympäristöosaaminen",
-      "Pedagogiset taidot",
-      "Viestintätaidot",
-      "Ryhmänohjaustaidot",
-      "Luonnontuntemus"
-    ],
-    tools_tech: [
-      "Retkeilyvarusteet",
-      "Opetusteknologia",
-      "Ympäristömittarit",
-      "Viestintätyökalut"
-    ],
-    languages_required: { fi: "C1", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 3200,
-      range: [2700, 3800],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Ympäristökasvatuksen merkitys kasvaa ilmastokriisin myötä.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    entry_roles: ["Ympäristöohjaaja", "Luonto-ohjaaja"],
-    career_progression: ["Ympäristökasvatuksen asiantuntija", "Ohjelman koordinaattori"],
-    typical_employers: ["Luontokeskukset", "Ympäristöjärjestöt", "Kunnat", "Koulut"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Ympäristökasvatusjärjestö FEE Suomi", url: "https://feesuomi.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
-    ],
-    keywords: ["ympäristökasvatus", "luonto", "kestävä kehitys", "kasvatus"],
-    study_length_estimate_months: 48
-},
-{
+
+  {
     id: "luontokoulun-ohjaaja",
     category: "ympariston-puolustaja",
     title_fi: "Luontokoulun ohjaaja",
@@ -51174,12 +50149,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 2900,
       range: [2400, 3400],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "vakaa",
       explanation: "Luontokoulujen suosio pysyy vakaana.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Luonto-ohjaaja", "Leirityöntekijä"],
     career_progression: ["Luontokoulun johtaja", "Ympäristökasvattaja"],
@@ -51188,7 +50163,8 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Suomen luontokoulujen verkosto", url: "https://www.luontokoulut.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistokasvatus" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luontokoulun%20ohjaaja" }
     ],
     keywords: ["luontokoulu", "luonto", "ohjaaja", "ympäristökasvatus"],
     study_length_estimate_months: 36
@@ -51234,12 +50210,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 4600],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Kestävyyskoulutuksen tarve kasvaa yritysten vastuullisuustavoitteiden myötä.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Kestävyysasiantuntija", "Kouluttaja"],
     career_progression: ["Senior kouluttaja", "Kestävyysjohtaja"],
@@ -51247,8 +50223,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [
-      { name: "FIBS ry", url: "https://www.fibsry.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "FIBS ry", url: "https://fibsry.fi/" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/koulutus" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4vyyskouluttaja" }
     ],
     keywords: ["kestävä kehitys", "koulutus", "vastuullisuus", "sustainability"],
     study_length_estimate_months: 48
@@ -51297,12 +50274,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3600,
       range: [3000, 4300],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Mediakasvatuksen merkitys kasvaa digitalisaation myötä.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Mediakasvatusohjaaja", "Kouluttaja"],
     career_progression: ["Senior asiantuntija", "Ohjelmapäällikkö"],
@@ -51310,8 +50287,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Kansallinen audiovisuaalinen instituutti", url: "https://kavi.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/mediakasvatus" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mediakasvatuksen%20asiantuntija" }
     ],
     keywords: ["mediakasvatus", "medialukutaito", "kasvatus", "digitaidot"],
     study_length_estimate_months: 60
@@ -51357,12 +50334,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4000,
       range: [3400, 4800],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Oppimisen digitalisaatio ja laatuvaatimukset lisäävät oppimismuotoilun tarvetta.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Koulutussuunnittelija", "Sisällöntuottaja"],
     career_progression: ["Senior oppimismuotoilija", "Learning & Development -päällikkö"],
@@ -51370,71 +50347,12 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/koulutus" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kouluttaja" }
     ],
     keywords: ["oppimismuotoilu", "learning design", "muotoilu", "koulutus"],
     study_length_estimate_months: 60
-},
-{
-    id: "koulutussuunnittelija",
-    category: "auttaja",
-    title_fi: "Koulutussuunnittelija",
-    title_en: "Training Designer",
-    short_description: "Koulutussuunnittelija suunnittelee ja kehittää koulutuksia ja oppimisratkaisuja organisaatioiden tarpeisiin.",
-    main_tasks: [
-      "Koulutusohjelmien suunnittelu",
-      "Oppimateriaalien kehittäminen",
-      "Koulutusten vaikuttavuuden arviointi",
-      "Kouluttajien tukeminen",
-      "Yhteistyö asiakkaiden ja sidosryhmien kanssa"
-    ],
-    impact: [
-      "Kehittää organisaatioiden osaamista",
-      "Parantaa koulutusten laatua",
-      "Tukee työntekijöiden ammatillista kasvua"
-    ],
-    education_paths: [
-      "Yliopisto: Kasvatustiede tai aikuiskasvatustiede",
-      "AMK: Liiketalous + HR-erikoistuminen",
-      "Pedagoginen koulutus"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Pedagoginen suunnittelu",
-      "Projektinhallinta",
-      "Viestintätaidot",
-      "Analyyttiset taidot",
-      "Yhteistyötaidot"
-    ],
-    tools_tech: [
-      "Oppimisenhallintajärjestelmät (LMS)",
-      "Esitystyökalut",
-      "Videotyökalut",
-      "Arviointityökalut"
-    ],
-    languages_required: { fi: "C1", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 3700,
-      range: [3100, 4400],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Osaamisen kehittämisen tarve pysyy korkeana työelämässä.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    entry_roles: ["Koulutusassistentti", "HR-koordinaattori"],
-    career_progression: ["Senior koulutussuunnittelija", "Learning & Development -päällikkö"],
-    typical_employers: ["Suuryritykset", "Konsulttiyhtiöt", "Oppilaitokset", "Julkinen sektori"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
-    ],
-    keywords: ["koulutussuunnittelu", "L&D", "koulutus", "kehittäminen"],
-    study_length_estimate_months: 60
-},
-// ===============================
+},// ===============================
 // HYBRID CAREERS - Sports + Helper
 // ===============================
 {
@@ -51478,12 +50396,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4200,
       range: [3500, 5200],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Psyykkisen valmennuksen merkitys urheilussa kasvaa jatkuvasti.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Mentaalivalmentaja", "Psykologiharjoittelija"],
     career_progression: ["Senior urheilupsykologi", "Olympiakomitean psykologi"],
@@ -51492,72 +50410,12 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Psykologiliiton TES",
     useful_links: [
       { name: "Suomen Psykologiliitto", url: "https://www.psyli.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/psykologi" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Urheilupsykologi" }
     ],
     keywords: ["urheilupsykologia", "mentaalivalmennus", "psykologia", "urheilu"],
     study_length_estimate_months: 72
-},
-{
-    id: "kuntoutusohjaaja",
-    category: "auttaja",
-    title_fi: "Kuntoutusohjaaja",
-    title_en: "Rehabilitation Counselor",
-    short_description: "Kuntoutusohjaaja tukee ja ohjaa kuntoutujia heidän kuntoutusprosessissaan yhdistäen liikunnallisia ja sosiaalisia menetelmiä.",
-    main_tasks: [
-      "Kuntoutujien ohjaaminen ja tukeminen",
-      "Kuntoutusohjelmien suunnittelu ja toteutus",
-      "Liikunnallisten harjoitusten ohjaaminen",
-      "Moniammatillinen yhteistyö",
-      "Kuntoutuksen edistymisen seuranta"
-    ],
-    impact: [
-      "Tukee kuntoutujien toipumista",
-      "Edistää toimintakyvyn palautumista",
-      "Auttaa ihmisiä takaisin arkeen ja työelämään"
-    ],
-    education_paths: [
-      "AMK: Kuntoutuksen ohjaaja (AMK)",
-      "AMK: Sosionomi + liikunta-alan opinnot",
-      "Liikunnanohjaaja + kuntoutuksen erikoistuminen"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Kuntoutusosaaminen",
-      "Liikunnanohjaus",
-      "Empatia",
-      "Vuorovaikutustaidot",
-      "Moniammatillinen yhteistyö"
-    ],
-    tools_tech: [
-      "Kuntoutusvälineet",
-      "Liikuntavälineet",
-      "Potilastietojärjestelmät",
-      "Arviointityökalut"
-    ],
-    languages_required: { fi: "C1", sv: "A2", en: "B1" },
-    salary_eur_month: {
-      median: 3100,
-      range: [2600, 3700],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Kuntoutuspalveluiden tarve pysyy vakaana väestön ikääntyessä.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
-    },
-    entry_roles: ["Kuntoutusavustaja", "Liikuntaohjaaja"],
-    career_progression: ["Kuntoutusohjaaja", "Kuntoutuksen asiantuntija"],
-    typical_employers: ["Kuntoutuskeskukset", "Sairaalat", "Kela", "Kolmas sektori"],
-    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
-    union_or_CBA: "Terveydenhuoltoalan TES",
-    useful_links: [
-      { name: "Kuntoutusportti", url: "https://www.kuntoutusportti.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
-    ],
-    keywords: ["kuntoutus", "ohjaus", "liikunta", "terveys"],
-    study_length_estimate_months: 42
-},
-// ===============================
+},// ===============================
 // HYBRID CAREERS - Health + Creative
 // ===============================
 {
@@ -51601,12 +50459,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 3800,
       range: [3200, 4500],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Terveysviestinnän merkitys korostuu digitalisaation myötä.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Viestintäsuunnittelija", "Sisällöntuottaja"],
     career_progression: ["Senior suunnittelija", "Viestintäpäällikkö"],
@@ -51614,7 +50472,8 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/viestinta" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Viestint%C3%A4" }
     ],
     keywords: ["terveysviestintä", "viestintä", "suunnittelu", "terveys"],
     study_length_estimate_months: 48
@@ -51660,12 +50519,12 @@ export const careersData: CareerFI[] = [
     salary_eur_month: {
       median: 4100,
       range: [3500, 4900],
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     job_outlook: {
       status: "kasvaa",
       explanation: "Potilaskokemuksen merkitys terveydenhuollossa kasvaa jatkuvasti.",
-      source: { name: "Ammattinetti", url: "https://www.ammattinetti.fi/", year: 2024 }
+      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: ["Palvelumuotoilija", "Kehittämiskoordinaattori"],
     career_progression: ["Senior palvelumuotoilija", "Kehittämispäällikkö"],
@@ -51673,8 +50532,9 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Palvelumuotoilun verkosto", url: "https://www.palvelumuotoilu.fi/" },
-      { name: "Ammattinetti", url: "https://www.ammattinetti.fi/" }
+      { name: "Palvelumuotoilun verkosto", url: "https://www.solita.fi/services/service-design/" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terveydenhuolto" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Potilaskokemus" }
     ],
     keywords: ["potilaskokemus", "palvelumuotoilu", "terveydenhuolto", "design"],
     study_length_estimate_months: 48
