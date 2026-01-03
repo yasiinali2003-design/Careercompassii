@@ -694,9 +694,8 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Valokuvaaja", url: "https://opintopolku.fi/konfo/fi/haku/Valokuvaaja" },
     
-      { name: "Työmarkkinatori – Valokuvaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/valokuvaaja" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Valokuvaaja" }
-      ],
+      { name: "Työmarkkinatori – Valokuvaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/valokuvaaja" }
+    ],
     keywords: ["valokuvaus", "kamera", "kuvankäsittely", "taide", "mainoskuvaus"],
     study_length_estimate_months: 36,
     impact: [
@@ -3040,7 +3039,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Työmarkkinatori – Kouluterveydenhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Terveydenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/terveydenhoitaja" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kouluterveydenhoitaja" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=terveydenhoitaja" }
     ],
     keywords: ["oppilashuolto", "ennaltaehkäisy", "nuoret", "terveyskasvatus", "hyvinvointi"],
     study_length_estimate_months: 42
@@ -5163,8 +5162,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Pro / Viestintäalan TES",
     useful_links: [
       { name: "Työmarkkinatori – Kustannustoimittaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kustannustoimittaja" },
-      { name: "Opintopolku – Julkaisu- ja viestintäala", url: "https://opintopolku.fi/konfo/fi/haku/julkaisu" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kustannustoimittaja" }
+      { name: "Opintopolku – Julkaisu- ja viestintäala", url: "https://opintopolku.fi/konfo/fi/haku/julkaisu" }
     ],
     keywords: ["kustannustoiminta", "kirjallisuus", "editointi", "projektinhallinta", "julkaisu"],
     study_length_estimate_months: 48
@@ -5330,8 +5328,8 @@ export const careersData: CareerFI[] = [
     
       { name: "Työmarkkinatori – Sosiaalityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sosiaalityontekija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaality%C3%B6ntekij%C3%A4" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalityontekija" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalityontekija" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaality%C3%B6ntekij%C3%A4" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaality%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["sosiaalityö", "perheet", "lapset", "hyvinvointi", "tuki"],
     study_length_estimate_months: 42
@@ -5832,7 +5830,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Vanhustenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Vanhustenhoitaja" },
     
       { name: "Työmarkkinatori – Vanhustenhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vanhustenhoitaja" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=hoitaja" }
       ],
     keywords: ["vanhustenhoito", "vanhukset", "hoito", "itsenäisyys", "elämänlaatu"],
     study_length_estimate_months: 24
@@ -6332,13 +6330,8 @@ export const careersData: CareerFI[] = [
       { name: "Ympäristökasvatus", url: "https://feesuomi.fi/verkkolehti/" },
       { name: "Opintopolku - Ympäristökasvattaja", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6kasvattaja" },
     
-      { name: "Työmarkkinatori – Ympäristökasvattaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistokasvattaja" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6kasvattaja" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6kasvattaja" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6kasvattaja" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6kasvattaja" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6kasvattaja" }
-      ],
+      { name: "Työmarkkinatori – Ympäristökasvattaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistokasvattaja" }
+    ],
     keywords: ["ympäristökasvatus", "kestävä kehitys", "opetus", "tietoisuus", "kasvatus"],
     study_length_estimate_months: 42
   },
@@ -12691,7 +12684,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Pankkivirkailija", url: "https://opintopolku.fi/konfo/fi/haku/Pankkivirkailija" },
     
       { name: "Työmarkkinatori – Pankkivirkailija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/pankkivirkailija" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pankkivirkailija" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=pankki" }
       ],
     keywords: ["pankkivirkailija", "pankki", "rahoitus", "asiakaspalvelu", "rahoituspalvelu"],
     study_length_estimate_months: 36
@@ -13906,7 +13899,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Mainostoimiston Art Director", url: "https://opintopolku.fi/konfo/fi/haku/Mainostoimiston%20Art%20Director" },
     
       { name: "Työmarkkinatori – Mainostoimiston Art Director", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=art%20director" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=suunnittelija" }
       ],
     keywords: ["art director", "mainonta", "graafinen suunnittelu", "luova", "visuaalinen"],
     study_length_estimate_months: 42
@@ -14395,7 +14388,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Käsikirjoittaja", url: "https://opintopolku.fi/konfo/fi/haku/K%C3%A4sikirjoittaja" },
     
       { name: "Työmarkkinatori – Käsikirjoittaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kasikirjoittaja" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=K%C3%A4sikirjoittaja" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=kirjoittaja" }
       ],
     keywords: ["käsikirjoittaja", "elokuva", "TV", "kirjoittaminen", "tarina"],
     study_length_estimate_months: 48
@@ -15545,9 +15538,9 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku - Liiketoimintajohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Liiketoimintajohtaja" },
     
       { name: "Työmarkkinatori – Liiketoimintajohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoimintajohtaja" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoimintajohtaja" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoimintajohtaja" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=johtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=johtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=johtaja" }
       ],
     keywords: ["liiketoimintajohtaja", "johtaminen", "strategia", "myynti", "kasvu"],
     study_length_estimate_months: 60
@@ -18026,8 +18019,8 @@ export const careersData: CareerFI[] = [
     
       { name: "Työmarkkinatori – IT-tukihenkilö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=IT-tukihenkil%C3%B6" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=It%20Tukihenkilo" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=It%20Tukihenkilo" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=IT-tukihenkil%C3%B6" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=IT-tukihenkil%C3%B6" }
       ],
     keywords: ["it-tuki", "helpdesk", "tietotekniikka", "asiakaspalvelu", "tuki"],
     study_length_estimate_months: 36
@@ -20593,7 +20586,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - vakuutusmatemaatikko", url: "https://opintopolku.fi/konfo/fi/haku/vakuutusmatemaatikko" },
       { name: "Työmarkkinatori – Aktuaari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aktuaari" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=vakuutus" }
       ],
     keywords: ["aktuaari", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -21150,7 +21143,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - insinööri", url: "https://opintopolku.fi/konfo/fi/haku/insin%C3%B6%C3%B6ri" },
       { name: "Työmarkkinatori – Insinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Insinoori" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["insinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -21859,7 +21852,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - markkinointi liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/markkinointi%20liiketalous" },
       { name: "Työmarkkinatori – Markkinointipaallikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/markkinointipaallikko" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=markkinointipaallikko" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Markkinointip%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["markkinointipaallikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -21939,7 +21932,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - matkailu", url: "https://opintopolku.fi/konfo/fi/haku/matkailu" },
       { name: "Työmarkkinatori – Matkailuneuvoja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Matkailuneuvoja" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=matkailu" }
       ],
     keywords: ["matkailuneuvoja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -22653,7 +22646,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - ravintola-ala restonomi", url: "https://opintopolku.fi/konfo/fi/haku/ravintola-ala%20restonomi" },
       { name: "Työmarkkinatori – Ravintolapaallikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ravintolapaallikko" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ravintolapaallikko" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ravintolap%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["ravintolapaallikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
@@ -29871,7 +29864,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Br%C3%A4ndijohtaja" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=markkinointi" }
     ],
     study_length_estimate_months: 48
   },{
@@ -33093,7 +33086,7 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Suuryritykset", "Kasvuyritykset", "Konsulttiyritykset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     useful_links: [
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kulttuurijohtaja" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=johtaja" }
     ],
     keywords: ["kulttuuri", "työhyvinvointi", "organisaatio"],
     study_length_estimate_months: 72
@@ -33799,7 +33792,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varastop%C3%A4%C3%A4llikk%C3%B6" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Huoltop%C3%A4%C3%A4llikk%C3%B6" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laboratoriop%C3%A4%C3%A4llikk%C3%B6" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kulttuurijohtaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=johtaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vastuullisuusp%C3%A4%C3%A4llikk%C3%B6" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakkuusjohtaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Innovaatiop%C3%A4%C3%A4llikk%C3%B6" }
@@ -36719,7 +36712,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Suomen Tuulivoimayhdistys", url: "https://suomenuusiutuvat.fi/" },
       { name: "Global Wind Organisation (GWO)", url: "https://www.globalwindsafety.org/" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuulivoima-asentaja" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=tuulivoima" }
     ],
     progression_from: ["sahkoasentaja", "koneteknikko"],
     transferable_skills: [
@@ -37149,7 +37142,7 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Konsulttiyritykset", "Tutkimuslaitokset", "Viranomaiset"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     useful_links: [
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luontokartoittaja" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=luonto" }
     ],
     keywords: ["kartoitus", "inventointi", "lajisto"],
     study_length_estimate_months: 48
@@ -37612,7 +37605,7 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Laboratoriot", "Tutkimuslaitokset", "Viranomaiset"],
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     useful_links: [
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6kemisti" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=kemisti" }
     ],
     keywords: ["kemia", "analytiikka", "ympäristö"],
     study_length_estimate_months: 72
@@ -38227,7 +38220,7 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Kunnat", "Konsulttiyritykset", "Viranomaiset", "Teollisuus"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "jonkin verran" },
     useful_links: [
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ilmanlaatuasiantuntija" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=asiantuntija" }
     ],
     keywords: ["ilmanlaatu", "mittaukset", "päästöt"],
     study_length_estimate_months: 60
@@ -44497,7 +44490,7 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Kustantamot", "Mainostoimistot", "Itsenäinen yrittäjä"],
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     useful_links: [
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuvittaja" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=suunnittelija" }
     ],
     keywords: ["kuvitus", "piirtäminen", "kirjat"],
     study_length_estimate_months: 42
@@ -45163,7 +45156,7 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Peliyritykset", "Elokuvatoptutuannot", "Animaatiostudiot"],
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     useful_links: [
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Konseptisuunnittelija" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=suunnittelija" }
     ],
     keywords: ["konsepti", "taide", "pelit"],
     study_length_estimate_months: 42
@@ -45446,12 +45439,12 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kirjoittaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sisustussuunnittelija" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuvittaja" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=suunnittelija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Graafinen%20suunnittelija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taiteilija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taiteilija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taiteilija" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Konseptisuunnittelija" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=suunnittelija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Graafinen%20suunnittelija" }
     ],
     transferable_skills: [
@@ -47788,7 +47781,7 @@ export const careersData: CareerFI[] = [
     typical_employers: ["Jätehuoltoyritykset", "Kunnat"],
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     useful_links: [
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=J%C3%A4tehuoltoty%C3%B6ntekij%C3%A4" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=j%C3%A4tehuolto" }
     ],
     keywords: ["jäte", "kierrätys", "ympäristö"],
     study_length_estimate_months: 12
@@ -48670,7 +48663,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Suomen Taideterapiayhdistys", url: "https://www.taideterapia.fi/" },
       { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taideterapeutti" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=terapeutti" }
     ],
     keywords: ["taideterapia", "luova terapia", "mielenterveys", "taide", "kuntoutus"],
     study_length_estimate_months: 60
