@@ -283,7 +283,7 @@ export const careersData: CareerFI[] = [
       { name: "Elokuvatuottajien keskusliitto", url: "https://www.sek.fi/" },
       { name: "Opintopolku - Kameramies", url: "https://opintopolku.fi/konfo/fi/haku/Kameramies" },
     
-      { name: "Työmarkkinatori – Kameramies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kameramies" },
+      { name: "Työmarkkinatori – Kameramies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kamera%20video" }
       ],
     keywords: ["kamera", "kuvaus", "elokuva", "TV", "valaistus"],
@@ -449,7 +449,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tuotemuotoilija", url: "https://opintopolku.fi/konfo/fi/haku/Tuotemuotoilija" },
     
-      { name: "Työmarkkinatori – Tuotemuotoilija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/muotoilija" },
+      { name: "Työmarkkinatori – Tuotemuotoilija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotemuotoilija" }
       ],
     keywords: ["UX", "UI", "käyttöliittymä", "sovellus", "digitaalinen suunnittelu"],
@@ -614,7 +614,7 @@ export const careersData: CareerFI[] = [
       { name: "Teatterin tiedotuskeskus", url: "https://www.tinfo.fi/" },
       { name: "Opintopolku - Teatteriohjaaja", url: "https://opintopolku.fi/konfo/fi/haku/Teatteriohjaaja" },
     
-      { name: "Työmarkkinatori – Teatteriohjaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/teatteriohjaaja" },
+      { name: "Työmarkkinatori – Teatteriohjaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ohjaaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ohjaaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ohjaaja" }
@@ -955,7 +955,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Putkiasentaja", url: "https://opintopolku.fi/konfo/fi/haku/Putkiasentaja" },
     
-      { name: "Työmarkkinatori – Putkiasentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/putkiasentaja" },
+      { name: "Työmarkkinatori – Putkiasentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Putkiasentaja" }
       ],
     keywords: ["putki", "LVI", "lämmitys", "vesijohto", "huolto"],
@@ -1039,7 +1039,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Maalari", url: "https://opintopolku.fi/konfo/fi/haku/Maalari" },
     
-      { name: "Työmarkkinatori – Maalari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/maalari" },
+      { name: "Työmarkkinatori – Maalari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maalari" }
       ],
     keywords: ["maalaus", "värit", "pintakäsittely", "kunnostus", "viimeistely"],
@@ -1123,7 +1123,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Kattomestari", url: "https://opintopolku.fi/konfo/fi/haku/Kattomestari" },
     
-      { name: "Työmarkkinatori – Kattomestari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kattomestari" },
+      { name: "Työmarkkinatori – Kattomestari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kattomestari" }
       ],
     keywords: ["kattomestari", "katto", "räystäs", "korkea työ", "turvallisuus"],
@@ -1292,7 +1292,7 @@ export const careersData: CareerFI[] = [
       { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - Talonrakentaja", url: "https://opintopolku.fi/konfo/fi/haku/Talonrakentaja" },
     
-      { name: "Työmarkkinatori – Talonrakentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/talonrakentaja" },
+      { name: "Työmarkkinatori – Talonrakentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Talonrakentaja" }
       ],
     keywords: ["talonrakennus", "rakennus", "työmaa", "asuintalo", "rakentaminen"],
@@ -1377,7 +1377,7 @@ export const careersData: CareerFI[] = [
       { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - Betonityöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Betonity%C3%B6ntekij%C3%A4" },
     
-      { name: "Työmarkkinatori – Betonityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/betonityontekija" },
+      { name: "Työmarkkinatori – Betonityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Betonity%C3%B6ntekij%C3%A4" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Betonity%C3%B6ntekij%C3%A4" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Betonity%C3%B6ntekij%C3%A4" }
@@ -1463,7 +1463,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Rakennusvalvoja", url: "https://opintopolku.fi/konfo/fi/haku/Rakennusvalvoja" },
     
-      { name: "Työmarkkinatori – Rakennusvalvoja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rakennusvalvoja" },
+      { name: "Työmarkkinatori – Rakennusvalvoja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rakennusvalvoja" }
       ],
     keywords: ["rakennusvalvonta", "tarkastus", "luvat", "turvallisuus", "laatua"],
@@ -1636,7 +1636,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tuotantopäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tuotantop%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Tuotantopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotantopaallikko" },
+      { name: "Työmarkkinatori – Tuotantopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantop%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["tuotantotalous", "laadunhallinta", "johtaminen", "optimointi", "tehokkuus"],
@@ -1721,7 +1721,7 @@ export const careersData: CareerFI[] = [
       { name: "Taloushallinto.fi", url: "https://taloushallintoliitto.fi/" },
       { name: "Opintopolku - Talouspäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Talousp%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Talouspäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/talouspaallikko" },
+      { name: "Työmarkkinatori – Talouspäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Talousp%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["taloushallinto", "laskentatoimi", "budjetointi", "raportointi", "analyysi"],
@@ -1805,7 +1805,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Asiakaspalvelupäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Asiakaspalvelup%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Asiakaspalvelupäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakaspalvelupaallikko" },
+      { name: "Työmarkkinatori – Asiakaspalvelupäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaspalvelup%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["asiakaspalvelu", "johtaminen", "kokemus", "prosessit", "tiimityö"],
@@ -1889,7 +1889,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tietoturvapäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tietoturvap%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Tietoturvapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietoturvapaallikko" },
+      { name: "Työmarkkinatori – Tietoturvapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietoturvap%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["tietoturva", "kyberturvallisuus", "riskienhallinta", "johtaminen", "teknologia"],
@@ -1973,7 +1973,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Laadunpäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Laadunp%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Laadunpäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/laadunpaallikko" },
+      { name: "Työmarkkinatori – Laadunpäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laadunp%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["laadunhallinta", "prosessit", "standardit", "sertifikaatit", "optimointi"],
@@ -2057,7 +2057,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Kehityspäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Kehitysp%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Kehityspäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kehityspaallikko" },
+      { name: "Työmarkkinatori – Kehityspäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kehitysp%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["kehitysjohtaminen", "innovaatio", "projektit", "tutkimus", "strategia"],
@@ -2141,7 +2141,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Data-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Data-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Data-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/data-insinoori" },
+      { name: "Työmarkkinatori – Data-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Data-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["data", "ohjelmointi", "cloud", "big data", "analytiikka"],
@@ -2307,7 +2307,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Robotiikka-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Robotiikka-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Robotiikka-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/robotiikka-insinoori" },
+      { name: "Työmarkkinatori – Robotiikka-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Robotiikka-insin%C3%B6%C3%B6ri" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Robotiikka-insin%C3%B6%C3%B6ri" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Robotiikka-insin%C3%B6%C3%B6ri" }
@@ -2393,7 +2393,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Biotekniikka-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Biotekniikka-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Biotekniikka-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/biotekniikka-insinoori" },
+      { name: "Työmarkkinatori – Biotekniikka-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Biotekniikka-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["biotekniikka", "biologia", "laboratorio", "tutkimus", "lääketeollisuus"],
@@ -2477,7 +2477,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Nanotekniikka-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Nanotekniikka-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Nanotekniikka-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/nanotekniikka-insinoori" },
+      { name: "Työmarkkinatori – Nanotekniikka-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Nanotekniikka-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["nanotekniikka", "materiaalitekniikka", "fysiikka", "tutkimus", "innovointi"],
@@ -2561,7 +2561,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Kvantti-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Kvantti-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Kvantti-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kvantti-insinoori" },
+      { name: "Työmarkkinatori – Kvantti-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kvantti-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["kvanttiteknologia", "kvanttifysiikka", "ohjelmointi", "algoritmit", "tutkimus"],
@@ -2645,7 +2645,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Blockchain-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Blockchain-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Blockchain-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/blockchain-insinoori" },
+      { name: "Työmarkkinatori – Blockchain-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Blockchain-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["blockchain", "kryptografia", "ohjelmointi", "Web3", "hajautetut järjestelmät"],
@@ -2725,7 +2725,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Virtuaalitodellisuus-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Virtuaalitodellisuus-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Virtuaalitodellisuus-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/virtuaalitodellisuus-insinoori" },
+      { name: "Työmarkkinatori – Virtuaalitodellisuus-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Virtuaalitodellisuus-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["VR", "AR", "virtuaalitodellisuus", "3D", "immersiivinen"],
@@ -2809,7 +2809,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Automaatio-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Automaatio-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Automaatio-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/automaatio-insinoori" },
+      { name: "Työmarkkinatori – Automaatio-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Automaatio-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["automaatio", "PLC", "robotiikka", "IoT", "teollisuus"],
@@ -3061,7 +3061,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Työmarkkinatori – Kouluterveydenhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kouluterveydenhoitaja" },
+      { name: "Työmarkkinatori – Kouluterveydenhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Terveydenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/terveydenhoitaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kouluterveydenhoitaja" }
     ],
@@ -3143,7 +3143,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "SuPer",
     useful_links: [
-      { name: "Työmarkkinatori – Kotihoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kotihoitaja" },
+      { name: "Työmarkkinatori – Kotihoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Lähihoitaja", url: "https://opintopolku.fi/konfo/fi/haku/l%C3%A4hihoitaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kotihoitaja" }
     ],
@@ -3225,7 +3225,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy",
     useful_links: [
-      { name: "Työmarkkinatori – Ravitsemusasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ravitsemusasiantuntija" },
+      { name: "Työmarkkinatori – Ravitsemusasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Ravitsemustiede", url: "https://opintopolku.fi/konfo/fi/haku/ravitsemustiede" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ravitsemusasiantuntija" }
     ],
@@ -3307,7 +3307,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Psykologiliitto",
     useful_links: [
-      { name: "Työmarkkinatori – Työpsykologi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tyopsykologi" },
+      { name: "Työmarkkinatori – Työpsykologi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Psykologi", url: "https://opintopolku.fi/konfo/fi/haku/psykologi" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ty%C3%B6psykologi" }
     ],
@@ -3472,7 +3472,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Poliisiammattijärjestö",
     useful_links: [
-      { name: "Työmarkkinatori – Rikostutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rikostutkija" },
+      { name: "Työmarkkinatori – Rikostutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Poliisi (perustutkinto)", url: "https://opintopolku.fi/konfo/fi/haku/poliisi" },
       { name: "Poliisiammattikorkeakoulu", url: "https://polamk.fi/hakeminen" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rikostutkija" }
@@ -3555,7 +3555,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
     union_or_CBA: "Julkisalan koulutettujen neuvottelujärjestö (JUKO) / Pääesikunta",
     useful_links: [
-      { name: "Työmarkkinatori – Sotilas", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sotilas" },
+      { name: "Työmarkkinatori – Sotilas", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Maanpuolustus", url: "https://opintopolku.fi/konfo/fi/haku/maanpuolustus" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sotilas" }
     ],
@@ -3801,7 +3801,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "PAM / Liikunta-alan TES",
     useful_links: [
-      { name: "Työmarkkinatori – Liikunnanohjaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liikuntaneuvoja" },
+      { name: "Työmarkkinatori – Liikunnanohjaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Liikunnanohjaaja", url: "https://opintopolku.fi/konfo/fi/haku/liikunnanohjaaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liikuntaneuvoja" }
     ],
@@ -3883,7 +3883,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tehy / Fysioterapeuttien TES",
     useful_links: [
-      { name: "Työmarkkinatori – Liikuntaterapeutti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liikuntaterapeutti" },
+      { name: "Työmarkkinatori – Liikuntaterapeutti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Liikuntaterapeutti", url: "https://opintopolku.fi/konfo/fi/haku/liikuntaterapeutti" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liikuntaterapeutti" }
     ],
@@ -3965,7 +3965,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
     union_or_CBA: "EK:n johto- ja asiantuntijasopimukset",
     useful_links: [
-      { name: "Työmarkkinatori – Liiketoimintajohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liiketalousjohtaja" },
+      { name: "Työmarkkinatori – Liiketoimintajohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Kauppatieteet", url: "https://opintopolku.fi/konfo/fi/haku/kauppatieteet" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketalousjohtaja" }
     ],
@@ -4129,7 +4129,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Pro / Viestintäalan TES",
     useful_links: [
-      { name: "Työmarkkinatori – Sisältötuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sisaltotuottaja" },
+      { name: "Työmarkkinatori – Sisältötuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Viestintä", url: "https://opintopolku.fi/konfo/fi/haku/viestinta" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4lt%C3%B6tuottaja" }
     ],
@@ -4375,7 +4375,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Tietoala ry",
     useful_links: [
-      { name: "Työmarkkinatori – Tekoälyasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tekoalyasiantuntija" },
+      { name: "Työmarkkinatori – Tekoälyasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Tekoäly", url: "https://opintopolku.fi/konfo/fi/haku/teko%C3%A4ly" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teko%C3%A4lyasiantuntija" }
     ],
@@ -4457,7 +4457,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Tietoala ry",
     useful_links: [
-      { name: "Työmarkkinatori – Tietojärjestelmäarkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietojarjestelma-arkkitehti" },
+      { name: "Työmarkkinatori – Tietojärjestelmäarkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Tietojärjestelmät", url: "https://opintopolku.fi/konfo/fi/haku/tietoj%C3%A4rjestelm%C3%A4t" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietoj%C3%A4rjestelm%C3%A4arkkitehti" }
     ],
@@ -4539,7 +4539,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Grafinet / Pro",
     useful_links: [
-      { name: "Työmarkkinatori – Verkkosuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/verkkosuunnittelija" },
+      { name: "Työmarkkinatori – Verkkosuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – UX", url: "https://opintopolku.fi/konfo/fi/haku/ux" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Verkkosuunnittelija" }
     ],
@@ -4785,7 +4785,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Luonnontieteilijät ry",
     useful_links: [
-      { name: "Työmarkkinatori – Biologi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/biologi" },
+      { name: "Työmarkkinatori – Biologi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Biologia", url: "https://opintopolku.fi/konfo/fi/haku/biologia" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Biologi" }
     ],
@@ -4867,7 +4867,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: "Luonnontieteilijät ry / Elintarvikealan TES",
     useful_links: [
-      { name: "Työmarkkinatori – Elintarviketutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/elintarviketutkija" },
+      { name: "Työmarkkinatori – Elintarviketutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Elintarviketiede", url: "https://opintopolku.fi/konfo/fi/haku/elintarviketiede" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Elintarviketutkija" }
     ],
@@ -5028,7 +5028,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tuomariliitto",
     useful_links: [
       { name: "Opintopolku – Oikeustiede (OTM)", url: "https://opintopolku.fi/konfo/fi/haku/oikeustiede" },
-      { name: "Työmarkkinatori – Oikeusneuvos", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/oikeusneuvos" },
+      { name: "Työmarkkinatori – Oikeusneuvos", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Oikeusneuvos" }
     ],
     keywords: ["tuomari", "ennakkopäätös", "oikeusjärjestelmä", "lainsäädäntö", "johtaminen"],
@@ -5109,7 +5109,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Julkisalan koulutettujen neuvottelujärjestö (JUKO)",
     useful_links: [
-      { name: "Työmarkkinatori – Notaari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/notaari" },
+      { name: "Työmarkkinatori – Notaari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Opintopolku – Oikeustiede", url: "https://opintopolku.fi/konfo/fi/haku/oikeustiede" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Notaari" }
     ],
@@ -5607,7 +5607,7 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Lastentarhanopettaja", url: "https://opintopolku.fi/konfo/fi/haku/Lastentarhanopettaja" },
     
-      { name: "Työmarkkinatori – Lastentarhanopettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lastentarhanopettaja" },
+      { name: "Työmarkkinatori – Lastentarhanopettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lastentarhanopettaja" }
       ],
     keywords: ["varhaiskasvatus", "lapset", "päiväkoti", "kasvatus", "oppiminen"],
@@ -5691,7 +5691,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Kuntoutusohjaaja", url: "https://opintopolku.fi/konfo/fi/haku/Kuntoutusohjaaja" },
     
-      { name: "Työmarkkinatori – Kuntoutusohjaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kuntoutusohjaaja" },
+      { name: "Työmarkkinatori – Kuntoutusohjaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuntoutusohjaaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuntoutusohjaaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuntoutusohjaaja" }
@@ -5777,7 +5777,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Perhetyöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Perhety%C3%B6ntekij%C3%A4" },
     
-      { name: "Työmarkkinatori – Perhetyöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/perhetyontekija" },
+      { name: "Työmarkkinatori – Perhetyöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Perhety%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["perhetyö", "lapset", "perheet", "tuki", "hyvinvointi"],
@@ -5861,7 +5861,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Vanhustenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Vanhustenhoitaja" },
     
-      { name: "Työmarkkinatori – Vanhustenhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vanhustenhoitaja" },
+      { name: "Työmarkkinatori – Vanhustenhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vanhustenhoitaja" }
       ],
     keywords: ["vanhustenhoito", "vanhukset", "hoito", "itsenäisyys", "elämänlaatu"],
@@ -5945,7 +5945,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Kriisityöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Kriisity%C3%B6ntekij%C3%A4" },
     
-      { name: "Työmarkkinatori – Kriisityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kriisityontekija" },
+      { name: "Työmarkkinatori – Kriisityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kriisity%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["kriisityö", "trauma", "mielenterveys", "toipuminen", "tuki"],
@@ -6029,7 +6029,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Ympäristöinsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Ympäristöinsinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistoinsinoori" },
+      { name: "Työmarkkinatori – Ympäristöinsinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6insin%C3%B6%C3%B6ri" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6insin%C3%B6%C3%B6ri" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6insin%C3%B6%C3%B6ri" }
@@ -6116,7 +6116,7 @@ export const careersData: CareerFI[] = [
       { name: "Ilmatieteen laitos", url: "https://www.ilmatieteenlaitos.fi/" },
       { name: "Opintopolku - Ilmastotutkija", url: "https://opintopolku.fi/konfo/fi/haku/Ilmastotutkija" },
     
-      { name: "Työmarkkinatori – Ilmastotutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ilmastotutkija" },
+      { name: "Työmarkkinatori – Ilmastotutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ilmastotutkija" }
       ],
     keywords: ["ilmasto", "tutkimus", "meteorologia", "ilmastonmuutos", "tiede"],
@@ -6201,7 +6201,7 @@ export const careersData: CareerFI[] = [
       { name: "Metsähallitus", url: "https://www.metsa.fi/" },
       { name: "Opintopolku - Luonnonsuojelija", url: "https://opintopolku.fi/konfo/fi/haku/Luonnonsuojelija" },
     
-      { name: "Työmarkkinatori – Luonnonsuojelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/luonnonsuojelija" },
+      { name: "Työmarkkinatori – Luonnonsuojelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luonnonsuojelija" }
       ],
     keywords: ["luonnonsuojelu", "luonto", "eläimet", "kasvit", "monimuotoisuus"],
@@ -6286,7 +6286,7 @@ export const careersData: CareerFI[] = [
       { name: "Energia.fi", url: "https://energia.fi/" },
       { name: "Opintopolku - Uusiutuva energia -insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Uusiutuva%20energia%20-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Uusiutuva energia -insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/uusiutuva-energia-insinoori" },
+      { name: "Työmarkkinatori – Uusiutuva energia -insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Uusiutuva%20energia%20-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["uusiutuva energia", "aurinkoenergia", "tuulivoima", "energiatehokkuus", "kestävä kehitys"],
@@ -6456,7 +6456,7 @@ export const careersData: CareerFI[] = [
       { name: "Vesiyhdistys", url: "https://vesiyhdistys.fi/" },
       { name: "Opintopolku - Vesi-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Vesi-insin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Vesi-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vesi-insinoori" },
+      { name: "Työmarkkinatori – Vesi-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vesi-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["vesiteknologia", "vesihuolto", "jätevesi", "vesitalous", "ympäristö"],
@@ -6540,7 +6540,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Hiilijalanjälki-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Hiilijalanj%C3%A4lki-asiantuntija" },
     
-      { name: "Työmarkkinatori – Hiilijalanjälki-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/hiilijalanjalki-asiantuntija" },
+      { name: "Työmarkkinatori – Hiilijalanjälki-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hiilijalanj%C3%A4lki-asiantuntija" }
       ],
     keywords: ["hiilijalanjälki", "ilmastoneutraali", "kestävä kehitys", "ilmasto", "hiilidioksidi"],
@@ -6625,7 +6625,7 @@ export const careersData: CareerFI[] = [
       { name: "Asianajajaliitto", url: "https://asianajajat.fi/" },
       { name: "Opintopolku - Ympäristöjuristi", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6juristi" },
     
-      { name: "Työmarkkinatori – Ympäristöjuristi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistojuristi" },
+      { name: "Työmarkkinatori – Ympäristöjuristi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6juristi" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6juristi" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6juristi" }
@@ -6712,7 +6712,7 @@ export const careersData: CareerFI[] = [
       { name: "Luonnontieteellinen keskusmuseo", url: "https://www.helsinki.fi/fi/luomus" },
       { name: "Opintopolku - Biologinen monimuotoisuus -asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Biologinen%20monimuotoisuus%20-asiantuntija" },
     
-      { name: "Työmarkkinatori – Biologinen monimuotoisuus -asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/biologinen-monimuotoisuus-asiantuntija" },
+      { name: "Työmarkkinatori – Biologinen monimuotoisuus -asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Biologinen%20monimuotoisuus%20-asiantuntija" }
       ],
     keywords: ["biologinen monimuotoisuus", "luonnonsuojelu", "eläimet", "kasvit", "uhanalaiset lajit"],
@@ -6796,7 +6796,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Kestävän kehityksen koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Kest%C3%A4v%C3%A4n%20kehityksen%20koordinaattori" },
     
-      { name: "Työmarkkinatori – Kestävän kehityksen koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kestavan-kehityksen-koordinaattori" },
+      { name: "Työmarkkinatori – Kestävän kehityksen koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4v%C3%A4n%20kehityksen%20koordinaattori" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4v%C3%A4n%20kehityksen%20koordinaattori" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4v%C3%A4n%20kehityksen%20koordinaattori" }
@@ -6885,7 +6885,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Strategia-konsultti", url: "https://opintopolku.fi/konfo/fi/haku/Strategia-konsultti" },
     
-      { name: "Työmarkkinatori – Strategia-konsultti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/strategia-konsultti" },
+      { name: "Työmarkkinatori – Strategia-konsultti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Strategia-konsultti" }
       ],
     keywords: ["strategia", "konsultointi", "liiketoimintakehitys", "muutos", "analyysi"],
@@ -6969,7 +6969,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Innovaatiojohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Innovaatiojohtaja" },
     
-      { name: "Työmarkkinatori – Innovaatiojohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/innovaatiojohtaja" },
+      { name: "Työmarkkinatori – Innovaatiojohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Innovaatiojohtaja" }
       ],
     keywords: ["innovaatio", "tutkimus", "kehitys", "teknologia", "strategia"],
@@ -7053,7 +7053,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tulevaisuuden suunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20suunnittelija" },
     
-      { name: "Työmarkkinatori – Tulevaisuuden suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tulevaisuuden-suunnittelija" },
+      { name: "Työmarkkinatori – Tulevaisuuden suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tulevaisuuden%20suunnittelija" }
       ],
     keywords: ["tulevaisuus", "suunnittelu", "strategia", "skenaariot", "trendit"],
@@ -7137,7 +7137,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Digitaalinen muutosjohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Digitaalinen%20muutosjohtaja" },
     
-      { name: "Työmarkkinatori – Digitaalinen muutosjohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/digitaalinen-muutosjohtaja" },
+      { name: "Työmarkkinatori – Digitaalinen muutosjohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitaalinen%20muutosjohtaja" }
       ],
     keywords: ["digitaalinen muutos", "teknologia", "liiketoiminta", "strategia", "innovaatio"],
@@ -7221,7 +7221,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tulevaisuuden tutkija", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20tutkija" },
     
-      { name: "Työmarkkinatori – Tulevaisuuden tutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tulevaisuuden-tutkija" },
+      { name: "Työmarkkinatori – Tulevaisuuden tutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tulevaisuuden%20tutkija" }
       ],
     keywords: ["tulevaisuus", "tutkimus", "futurologia", "trendit", "skenaariot"],
@@ -7305,7 +7305,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Strateginen suunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Strateginen%20suunnittelija" },
     
-      { name: "Työmarkkinatori – Strateginen suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/strateginen-suunnittelija" },
+      { name: "Työmarkkinatori – Strateginen suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Strateginen%20suunnittelija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Strateginen%20suunnittelija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Strateginen%20suunnittelija" }
@@ -7391,7 +7391,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tulevaisuuden visio-johtaja", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20visio-johtaja" },
     
-      { name: "Työmarkkinatori – Tulevaisuuden visio-johtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tulevaisuuden-visio-johtaja" },
+      { name: "Työmarkkinatori – Tulevaisuuden visio-johtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tulevaisuuden%20visio-johtaja" }
       ],
     keywords: ["tulevaisuus", "visio", "johtaminen", "strategia", "muutos"],
@@ -7475,7 +7475,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tulevaisuuden teknologia-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20teknologia-asiantuntija" },
     
-      { name: "Työmarkkinatori – Tulevaisuuden teknologia-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tulevaisuuden-teknologia-asiantuntija" },
+      { name: "Työmarkkinatori – Tulevaisuuden teknologia-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tulevaisuuden%20teknologia-asiantuntija" }
       ],
     keywords: ["tulevaisuus", "teknologia", "innovaatio", "tutkimus", "skenaariot"],
@@ -7559,7 +7559,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tulevaisuuden yhteiskunta-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20yhteiskunta-asiantuntija" },
     
-      { name: "Työmarkkinatori – Tulevaisuuden yhteiskunta-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tulevaisuuden-yhteiskunta-asiantuntija" },
+      { name: "Työmarkkinatori – Tulevaisuuden yhteiskunta-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tulevaisuuden%20yhteiskunta-asiantuntija" }
       ],
     keywords: ["tulevaisuus", "yhteiskunta", "sosiologia", "futurologia", "tutkimus"],
@@ -7643,7 +7643,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tapahtumakoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Tapahtumakoordinaattori" },
     
-      { name: "Työmarkkinatori – Tapahtumakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tapahtumakoordinaattori" },
+      { name: "Työmarkkinatori – Tapahtumakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tapahtumakoordinaattori" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tapahtumakoordinaattori" }
       ],
@@ -7812,7 +7812,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Logistiikkakoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Logistiikkakoordinaattori" },
     
-      { name: "Työmarkkinatori – Logistiikkakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/logistiikkakoordinaattori" },
+      { name: "Työmarkkinatori – Logistiikkakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Logistiikkakoordinaattori" }
       ],
     keywords: ["logistiikka", "toimitusketju", "koordinointi", "varastointi", "kuljetus"],
@@ -7896,7 +7896,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Henkilöstöasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Henkil%C3%B6st%C3%B6asiantuntija" },
     
-      { name: "Työmarkkinatori – Henkilöstöasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/henkilostoasiantuntija" },
+      { name: "Työmarkkinatori – Henkilöstöasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Henkil%C3%B6st%C3%B6asiantuntija" }
       ],
     keywords: ["henkilöstöhallinto", "työsuhteet", "henkilöstö", "hallinto", "työntekijät"],
@@ -7981,7 +7981,7 @@ export const careersData: CareerFI[] = [
       { name: "Taloushallinto.fi", url: "https://taloushallintoliitto.fi/" },
       { name: "Opintopolku - Taloushallinnon asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Taloushallinnon%20asiantuntija" },
     
-      { name: "Työmarkkinatori – Taloushallinnon asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/taloushallinnon-asiantuntija" },
+      { name: "Työmarkkinatori – Taloushallinnon asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taloushallinnon%20asiantuntija" }
       ],
     keywords: ["taloushallinto", "talousraportointi", "budjetti", "analyysi", "hallinto"],
@@ -8065,7 +8065,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Laadunhallinnan koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Laadunhallinnan%20koordinaattori" },
     
-      { name: "Työmarkkinatori – Laadunhallinnan koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/laadunhallinnan-koordinaattori" },
+      { name: "Työmarkkinatori – Laadunhallinnan koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laadunhallinnan%20koordinaattori" }
       ],
     keywords: ["laadunhallinto", "laatustandardit", "koordinointi", "analyysi", "hallinto"],
@@ -8149,7 +8149,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Asiakaspalvelun koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Asiakaspalvelun%20koordinaattori" },
     
-      { name: "Työmarkkinatori – Asiakaspalvelun koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakaspalvelun-koordinaattori" },
+      { name: "Työmarkkinatori – Asiakaspalvelun koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaspalvelun%20koordinaattori" }
       ],
     keywords: ["asiakaspalvelu", "kommunikaatio", "koordinointi", "asiakkaat", "palvelu"],
@@ -8233,7 +8233,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tietohallinnon koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Tietohallinnon%20koordinaattori" },
     
-      { name: "Työmarkkinatori – Tietohallinnon koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietohallinnon-koordinaattori" },
+      { name: "Työmarkkinatori – Tietohallinnon koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietohallinnon%20koordinaattori" }
       ],
     keywords: ["tietohallinto", "dokumenttienhallinta", "koordinointi", "tiedot", "hallinto"],
@@ -8317,7 +8317,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Hallinnon koordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Hallinnon%20koordinaattori" },
     
-      { name: "Työmarkkinatori – Hallinnon koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/hallinnon-koordinaattori" },
+      { name: "Työmarkkinatori – Hallinnon koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hallinnon%20koordinaattori" }
       ],
     keywords: ["hallinto", "organisointi", "koordinointi", "hallinto", "organisaatio"],
@@ -8402,7 +8402,7 @@ export const careersData: CareerFI[] = [
       { name: "JHL", url: "https://www.jhl.fi/" },
       { name: "Opintopolku - Lapsenhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Lapsenhoitaja" },
     
-      { name: "Työmarkkinatori – Lapsenhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lapsenhoitaja" },
+      { name: "Työmarkkinatori – Lapsenhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lapsenhoitaja" }
       ],
     keywords: ["lapsenhoito", "päiväkoti", "kasvatus", "varhaiskasvatus", "perhepäivähoito"],
@@ -8655,7 +8655,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tietokantasuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Tietokantasuunnittelija" },
     
-      { name: "Työmarkkinatori – Tietokantasuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietokantasuunnittelija" },
+      { name: "Työmarkkinatori – Tietokantasuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietokantasuunnittelija" }
       ],
     keywords: ["tietokanta", "SQL", "tietojen mallintaminen", "DBA", "tietokantojen optimointi"],
@@ -8739,7 +8739,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Verkkoasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Verkkoasiantuntija" },
     
-      { name: "Työmarkkinatori – Verkkoasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/verkkoasiantuntija" },
+      { name: "Työmarkkinatori – Verkkoasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Verkkoasiantuntija" }
       ],
     keywords: ["verkot", "Cisco", "tietoverkot", "verkkoanalyysi", "NOC"],
@@ -8990,7 +8990,7 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Opettaja" },
     
-      { name: "Työmarkkinatori – Opettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/opettaja" },
+      { name: "Työmarkkinatori – Opettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Opettaja" }
       ],
     keywords: ["opettaja", "pedagogiikka", "opetus", "koulu", "oppilaiden"],
@@ -9156,7 +9156,7 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Ammattikoulun opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Ammattikoulun%20opettaja" },
     
-      { name: "Työmarkkinatori – Ammattikoulun opettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ammattikoulun-opettaja" },
+      { name: "Työmarkkinatori – Ammattikoulun opettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ammattikoulun%20opettaja" }
       ],
     keywords: ["ammattikoulu", "opettaja", "ammattitaito", "työelämä", "koulutus"],
@@ -9237,7 +9237,7 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Kielten opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Kielten%20opettaja" },
     
-      { name: "Työmarkkinatori – Kielten opettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kielten-opettaja" },
+      { name: "Työmarkkinatori – Kielten opettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kielten%20opettaja" }
       ],
     keywords: ["kielten opettaja", "vieraat kielet", "kulttuurit", "opetus", "kansainvälistyminen"],
@@ -9403,7 +9403,7 @@ export const careersData: CareerFI[] = [
       { name: "AKT", url: "https://www.akt.fi/" },
       { name: "Opintopolku - Kuorma-auton kuljettaja", url: "https://opintopolku.fi/konfo/fi/haku/Kuorma-auton%20kuljettaja" },
     
-      { name: "Työmarkkinatori – Kuorma-auton kuljettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kuorma-auton-kuljettaja" },
+      { name: "Työmarkkinatori – Kuorma-auton kuljettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuorma-auton%20kuljettaja" }
       ],
     keywords: ["kuorma-auto", "kuljettaja", "kuljetus", "logistiikka", "jakelu"],
@@ -9575,7 +9575,7 @@ export const careersData: CareerFI[] = [
       { name: "AKT", url: "https://www.akt.fi/" },
       { name: "Opintopolku - Jakelukuljettaja", url: "https://opintopolku.fi/konfo/fi/haku/Jakelukuljettaja" },
     
-      { name: "Työmarkkinatori – Jakelukuljettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/jakelukuljettaja" },
+      { name: "Työmarkkinatori – Jakelukuljettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Jakelukuljettaja" }
       ],
     keywords: ["jakelu", "kuljettaja", "paketit", "kotitoimitus", "verkkokauppa"],
@@ -9660,7 +9660,7 @@ export const careersData: CareerFI[] = [
       { name: "AKT", url: "https://www.akt.fi/" },
       { name: "Opintopolku - Kuljetuskoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Kuljetuskoordinaattori" },
     
-      { name: "Työmarkkinatori – Kuljetuskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kuljetuskoordinaattori" },
+      { name: "Työmarkkinatori – Kuljetuskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuljetuskoordinaattori" }
       ],
     keywords: ["kuljetus", "koordinointi", "logistiikka", "reittien optimointi", "kuljetusketju"],
@@ -9830,7 +9830,7 @@ export const careersData: CareerFI[] = [
       { name: "Insöörit", url: "https://www.ilry.fi/" },
       { name: "Opintopolku - Energiainsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Energiainsin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Energiainsinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/energiainsinoori" },
+      { name: "Työmarkkinatori – Energiainsinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Energiainsin%C3%B6%C3%B6ri" }
       ],
     keywords: ["energiainsinööri", "energiatehokkuus", "uusiutuva energia", "energiaratkaisut", "ilmastonmuutos"],
@@ -9915,7 +9915,7 @@ export const careersData: CareerFI[] = [
       { name: "Sähköliitto", url: "https://sahkoliitto.fi/" },
       { name: "Opintopolku - Aurinkoenergia-asentaja", url: "https://opintopolku.fi/konfo/fi/haku/Aurinkoenergia-asentaja" },
     
-      { name: "Työmarkkinatori – Aurinkoenergia-asentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/aurinkoenergia-asentaja" },
+      { name: "Työmarkkinatori – Aurinkoenergia-asentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aurinkoenergia-asentaja" }
       ],
     keywords: ["aurinkoenergia", "aurinkopaneelit", "uusiutuva energia", "energiatehokkuus", "ilmastonmuutos"],
@@ -10000,7 +10000,7 @@ export const careersData: CareerFI[] = [
       { name: "Insöörit", url: "https://www.ilry.fi/" },
       { name: "Opintopolku - Energiakonsultti", url: "https://opintopolku.fi/konfo/fi/haku/Energiakonsultti" },
     
-      { name: "Työmarkkinatori – Energiakonsultti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/energiakonsultti" },
+      { name: "Työmarkkinatori – Energiakonsultti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Energiakonsultti" }
       ],
     keywords: ["energiakonsultti", "energiatehokkuus", "energiaratkaisut", "kestävää kehitystä", "hiilijalanjälki"],
@@ -10085,7 +10085,7 @@ export const careersData: CareerFI[] = [
       { name: "Insöörit", url: "https://www.ilry.fi/" },
       { name: "Opintopolku - Energia-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Energia-asiantuntija" },
     
-      { name: "Työmarkkinatori – Energia-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/energia-asiantuntija" },
+      { name: "Työmarkkinatori – Energia-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Energia-asiantuntija" }
       ],
     keywords: ["energia-asiantuntija", "energiatehokkuus", "energiaratkaisut", "uusiutuva energia", "kestävää kehitystä"],
@@ -10170,7 +10170,7 @@ export const careersData: CareerFI[] = [
       { name: "Google Digital Garage", url: "https://grow.google/intl/fi/" },
       { name: "Opintopolku - Digitaalisen markkinoinnin asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Digitaalisen%20markkinoinnin%20asiantuntija" },
     
-      { name: "Työmarkkinatori – Digitaalisen markkinoinnin asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/digitaalisen-markkinoinnin-asiantuntija" },
+      { name: "Työmarkkinatori – Digitaalisen markkinoinnin asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitaalisen%20markkinoinnin%20asiantuntija" }
       ],
   },
@@ -10253,7 +10253,7 @@ export const careersData: CareerFI[] = [
       { name: "Grafia", url: "https://grafia.fi/" },
       { name: "Opintopolku - Brändisuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Br%C3%A4ndisuunnittelija" },
     
-      { name: "Työmarkkinatori – Brändisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/brandisuunnittelija" },
+      { name: "Työmarkkinatori – Brändisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Br%C3%A4ndisuunnittelija" }
       ],
     keywords: ["brändi", "logo", "visuaalinen identiteetti", "graafinen suunnittelu", "kreatiivisuus"],
@@ -10337,7 +10337,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Ympäristöasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6asiantuntija" },
     
-      { name: "Työmarkkinatori – Ympäristöasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistoasiantuntija" },
+      { name: "Työmarkkinatori – Ympäristöasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6asiantuntija" }
       ],
     keywords: ["ympäristö", "kestävää kehitystä", "ympäristönsuoja", "auditointi", "vastuullisuus"],
@@ -10422,7 +10422,7 @@ export const careersData: CareerFI[] = [
       { name: "Grafia", url: "https://grafia.fi/" },
       { name: "Opintopolku - Tuotesuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Tuotesuunnittelija" },
     
-      { name: "Työmarkkinatori – Tuotesuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotesuunnittelija" },
+      { name: "Työmarkkinatori – Tuotesuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotesuunnittelija" }
       ],
   },
@@ -10505,7 +10505,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Viestintäpäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Viestint%C3%A4p%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Viestintäpäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/viestintapaallikko" },
+      { name: "Työmarkkinatori – Viestintäpäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Viestint%C3%A4p%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["viestintä", "media", "julkisuus", "kriisiviestintä", "johtaminen"],
@@ -10674,7 +10674,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - HR-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/HR-asiantuntija" },
     
-      { name: "Työmarkkinatori – HR-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/hr-asiantuntija" },
+      { name: "Työmarkkinatori – HR-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=HR-asiantuntija" }
       ],
     keywords: ["henkilöstö", "rekrytointi", "koulutus", "palkkaus", "työsuhteet"],
@@ -10759,7 +10759,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Liiketoimintakehittäjä", url: "https://opintopolku.fi/konfo/fi/haku/Liiketoimintakehitt%C3%A4j%C3%A4" },
     
-      { name: "Työmarkkinatori – Liiketoimintakehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liiketoimintakehittaja" },
+      { name: "Työmarkkinatori – Liiketoimintakehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoimintakehitt%C3%A4j%C3%A4" }
       ],
   },
@@ -10925,7 +10925,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Tuotepäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tuotep%C3%A4%C3%A4llikk%C3%B6" },
     
-      { name: "Työmarkkinatori – Tuotepäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotepaallikko" },
+      { name: "Työmarkkinatori – Tuotepäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotep%C3%A4%C3%A4llikk%C3%B6" }
       ],
   },
@@ -11008,7 +11008,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Konsultti", url: "https://opintopolku.fi/konfo/fi/haku/Konsultti" },
     
-      { name: "Työmarkkinatori – Konsultti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/konsultti" },
+      { name: "Työmarkkinatori – Konsultti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Konsultti" }
       ],
     keywords: ["konsultointi", "analyysi", "ratkaisut", "projektit", "asiantuntijuus"],
@@ -11093,7 +11093,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Tutkimusasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tutkimusasiantuntija" },
     
-      { name: "Työmarkkinatori – Tutkimusasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tutkimusasiantuntija" },
+      { name: "Työmarkkinatori – Tutkimusasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tutkimusasiantuntija" }
       ],
   },
@@ -11176,7 +11176,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Laadunvalvonta-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Laadunvalvonta-asiantuntija" },
     
-      { name: "Työmarkkinatori – Laadunvalvonta-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/laadunvalvonta-asiantuntija" },
+      { name: "Työmarkkinatori – Laadunvalvonta-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laadunvalvonta-asiantuntija" }
       ],
     keywords: ["laadunvalvonta", "testaus", "laatu", "analyysi", "prosessit"],
@@ -11261,7 +11261,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Asiakasvastaava", url: "https://opintopolku.fi/konfo/fi/haku/Asiakasvastaava" },
     
-      { name: "Työmarkkinatori – Asiakasvastaava", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakasvastaava" },
+      { name: "Työmarkkinatori – Asiakasvastaava", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakasvastaava" }
       ],
   },
@@ -11344,7 +11344,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Tietojärjestelmäasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tietoj%C3%A4rjestelm%C3%A4asiantuntija" },
     
-      { name: "Työmarkkinatori – Tietojärjestelmäasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietojarjestelmaasiantuntija" },
+      { name: "Työmarkkinatori – Tietojärjestelmäasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietoj%C3%A4rjestelm%C3%A4asiantuntija" }
       ],
     keywords: ["tietojärjestelmät", "IT", "verkko", "ylläpito", "tuki"],
@@ -11429,7 +11429,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Talousasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Talousasiantuntija" },
     
-      { name: "Työmarkkinatori – Talousasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/talousasiantuntija" },
+      { name: "Työmarkkinatori – Talousasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Talousasiantuntija" }
       ],
     keywords: ["talous", "budjetti", "raportointi", "analyysi", "hallinto"],
@@ -11514,7 +11514,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Henkilöstökoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Henkil%C3%B6st%C3%B6koordinaattori" },
     
-      { name: "Työmarkkinatori – Henkilöstökoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/henkilostokoordinaattori" },
+      { name: "Työmarkkinatori – Henkilöstökoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Henkil%C3%B6st%C3%B6koordinaattori" }
       ],
   },
@@ -11682,7 +11682,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Markkinointikoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Markkinointikoordinaattori" },
     
-      { name: "Työmarkkinatori – Markkinointikoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/markkinointikoordinaattori" },
+      { name: "Työmarkkinatori – Markkinointikoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Markkinointikoordinaattori" }
       ],
   },
@@ -11765,7 +11765,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Projektikoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Projektikoordinaattori" },
     
-      { name: "Työmarkkinatori – Projektikoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/projektikoordinaattori" },
+      { name: "Työmarkkinatori – Projektikoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Projektikoordinaattori" }
       ],
     keywords: ["projektinhallinta", "koordinointi", "aikataulu", "resurssit", "seuranta"],
@@ -11850,7 +11850,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Asiakaspalveluedustaja", url: "https://opintopolku.fi/konfo/fi/haku/Asiakaspalveluedustaja" },
     
-      { name: "Työmarkkinatori – Asiakaspalveluedustaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakaspalveluedustaja" },
+      { name: "Työmarkkinatori – Asiakaspalveluedustaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaspalveluedustaja" }
       ],
   },
@@ -11933,7 +11933,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Sisällöntuottaja", url: "https://opintopolku.fi/konfo/fi/haku/Sis%C3%A4ll%C3%B6ntuottaja" },
     
-      { name: "Työmarkkinatori – Sisällöntuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sisallontuottaja" },
+      { name: "Työmarkkinatori – Sisällöntuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4ll%C3%B6ntuottaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4ll%C3%B6ntuottaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4ll%C3%B6ntuottaja" }
@@ -12020,7 +12020,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Mobiilisovelluskehittäjä", url: "https://opintopolku.fi/konfo/fi/haku/Mobiilisovelluskehitt%C3%A4j%C3%A4" },
     
-      { name: "Työmarkkinatori – Mobiilisovelluskehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/mobiilisovelluskehittaja" },
+      { name: "Työmarkkinatori – Mobiilisovelluskehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mobiilisovelluskehitt%C3%A4j%C3%A4" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mobiilisovelluskehitt%C3%A4j%C3%A4" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mobiilisovelluskehitt%C3%A4j%C3%A4" }
@@ -12107,7 +12107,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Tekoäly-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Teko%C3%A4ly-asiantuntija" },
     
-      { name: "Työmarkkinatori – Tekoäly-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tekoaly-asiantuntija" },
+      { name: "Työmarkkinatori – Tekoäly-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teko%C3%A4ly-asiantuntija" }
       ],
     keywords: ["tekoäly", "koneoppiminen", "ohjelmointi", "algoritmit", "automaatio"],
@@ -12192,7 +12192,7 @@ export const careersData: CareerFI[] = [
       { name: "Teollisuusliitto", url: "https://www.teollisuusliitto.fi/" },
       { name: "Opintopolku - Tuotantoteknikko", url: "https://opintopolku.fi/konfo/fi/haku/Tuotantoteknikko" },
     
-      { name: "Työmarkkinatori – Tuotantoteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotantoteknikko" },
+      { name: "Työmarkkinatori – Tuotantoteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantoteknikko" }
       ],
     keywords: ["tuotantoteknikko", "tuotanto", "automaatio", "laitteiden huolto", "teollisuus"],
@@ -12277,7 +12277,7 @@ export const careersData: CareerFI[] = [
       { name: "Insöörit", url: "https://www.ilry.fi/" },
       { name: "Opintopolku - Teollisuusinsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Teollisuusinsin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Teollisuusinsinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/teollisuusinsinoori" },
+      { name: "Työmarkkinatori – Teollisuusinsinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teollisuusinsin%C3%B6%C3%B6ri" }
       ],
     keywords: ["teollisuusinsinööri", "teollisuustekniikka", "projektinhallinta", "tuotannon optimointi", "teollisuus"],
@@ -12362,7 +12362,7 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Asiakaspalvelu-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Asiakaspalvelu-asiantuntija" },
     
-      { name: "Työmarkkinatori – Asiakaspalvelu-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakaspalvelu-asiantuntija" },
+      { name: "Työmarkkinatori – Asiakaspalvelu-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakaspalvelu-asiantuntija" }
       ],
     keywords: ["asiakaspalvelu", "asiakkaiden auttaminen", "kommunikaatio", "ongelmaratkaisu", "palvelutalous"],
@@ -12447,7 +12447,7 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Hotellityöntekijä", url: "https://opintopolku.fi/konfo/fi/haku/Hotellity%C3%B6ntekij%C3%A4" },
     
-      { name: "Työmarkkinatori – Hotellityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/hotellityontekija" },
+      { name: "Työmarkkinatori – Hotellityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hotellity%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["hotellityöntekijä", "hotelli", "matkailu", "asiakaspalvelu", "palvelutalous"],
@@ -12702,7 +12702,7 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Turvallisuusvastaava", url: "https://opintopolku.fi/konfo/fi/haku/Turvallisuusvastaava" },
     
-      { name: "Työmarkkinatori – Turvallisuusvastaava", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/turvallisuusvastaava" },
+      { name: "Työmarkkinatori – Turvallisuusvastaava", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Turvallisuusvastaava" }
       ],
     keywords: ["turvallisuusvastaava", "turvallisuus", "valvonta", "turvallisuuspalvelu", "palvelutalous"],
@@ -12872,7 +12872,7 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Rahoitusneuvonantaja", url: "https://opintopolku.fi/konfo/fi/haku/Rahoitusneuvonantaja" },
     
-      { name: "Työmarkkinatori – Rahoitusneuvonantaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rahoitusneuvonantaja" },
+      { name: "Työmarkkinatori – Rahoitusneuvonantaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rahoitusneuvonantaja" }
       ],
     keywords: ["rahoitusneuvonantaja", "rahoitus", "neuvonta", "sijoitusneuvonta", "rahoituspalvelu"],
@@ -12957,7 +12957,7 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Vakuutusasiamies", url: "https://opintopolku.fi/konfo/fi/haku/Vakuutusasiamies" },
     
-      { name: "Työmarkkinatori – Vakuutusasiamies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vakuutusasiamies" },
+      { name: "Työmarkkinatori – Vakuutusasiamies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vakuutusasiamies" }
       ],
     keywords: ["vakuutusasiamies", "vakuutus", "myynti", "neuvonta", "vakuutuspalvelu"],
@@ -13129,7 +13129,7 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Rahoitusanalyytikko", url: "https://opintopolku.fi/konfo/fi/haku/Rahoitusanalyytikko" },
     
-      { name: "Työmarkkinatori – Rahoitusanalyytikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rahoitusanalyytikko" },
+      { name: "Työmarkkinatori – Rahoitusanalyytikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rahoitusanalyytikko" }
       ],
     keywords: ["rahoitusanalyytikko", "rahoitusanalyysi", "sijoitusanalyysi", "rahoitusmarkkinat", "rahoituspalvelu"],
@@ -13611,7 +13611,7 @@ export const careersData: CareerFI[] = [
       { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Laboratoriohoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Laboratoriohoitaja" },
     
-      { name: "Työmarkkinatori – Laboratoriohoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/laboratoriohoitaja" },
+      { name: "Työmarkkinatori – Laboratoriohoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laboratoriohoitaja" }
       ],
     keywords: ["laboratoriohoitaja", "bioanalytiikka", "laboratorio", "tutkimukset"],
@@ -14017,7 +14017,7 @@ export const careersData: CareerFI[] = [
       { name: "Grafia", url: "https://grafia.fi/" },
       { name: "Opintopolku - Mainostoimiston Art Director", url: "https://opintopolku.fi/konfo/fi/haku/Mainostoimiston%20Art%20Director" },
     
-      { name: "Työmarkkinatori – Mainostoimiston Art Director", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/mainostoimiston-art-director" },
+      { name: "Työmarkkinatori – Mainostoimiston Art Director", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mainostoimiston%20Art%20Director" }
       ],
     keywords: ["art director", "mainonta", "graafinen suunnittelu", "luova", "visuaalinen"],
@@ -14101,7 +14101,7 @@ export const careersData: CareerFI[] = [
       { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi" },
       { name: "Opintopolku - Äänisuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/%C3%84%C3%A4nisuunnittelija" },
     
-      { name: "Työmarkkinatori – Äänisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/aanisuunnittelija" },
+      { name: "Työmarkkinatori – Äänisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=%C3%84%C3%A4nisuunnittelu" }
       ],
     keywords: ["äänisuunnittelija", "ääni", "miksaus", "elokuva", "pelit"],
@@ -14183,7 +14183,7 @@ export const careersData: CareerFI[] = [
       { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi" },
       { name: "Opintopolku - Koreografi", url: "https://opintopolku.fi/konfo/fi/haku/Koreografi" },
     
-      { name: "Työmarkkinatori – Koreografi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/koreografi" },
+      { name: "Työmarkkinatori – Koreografi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tanssi" }
       ],
     keywords: ["koreografi", "tanssi", "esitys", "ohjaus", "luova"],
@@ -14262,7 +14262,7 @@ export const careersData: CareerFI[] = [
       { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi" },
       { name: "Opintopolku - Kuvataiteilija", url: "https://opintopolku.fi/konfo/fi/haku/Kuvataiteilija" },
     
-      { name: "Työmarkkinatori – Kuvataiteilija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kuvataiteilija" },
+      { name: "Työmarkkinatori – Kuvataiteilija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taiteilija" }
       ],
     keywords: ["kuvataiteilija", "taide", "maalaus", "veisto", "luova"],
@@ -14427,7 +14427,7 @@ export const careersData: CareerFI[] = [
       { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi" },
       { name: "Opintopolku - Valosuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Valosuunnittelija" },
     
-      { name: "Työmarkkinatori – Valosuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/valosuunnittelija" },
+      { name: "Työmarkkinatori – Valosuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Valotekniikka" }
       ],
     keywords: ["valosuunnittelija", "valotekniikka", "teatteri", "tapahtumat", "tekninen"],
@@ -14593,7 +14593,7 @@ export const careersData: CareerFI[] = [
       { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Mediatuottaja", url: "https://opintopolku.fi/konfo/fi/haku/Mediatuottaja" },
     
-      { name: "Työmarkkinatori – Mediatuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuottaja-media" },
+      { name: "Työmarkkinatori – Mediatuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mediatuottaja" }
       ],
     keywords: ["tuottaja", "media", "elokuva", "TV", "tuotanto"],
@@ -14677,7 +14677,7 @@ export const careersData: CareerFI[] = [
       { name: "Taiteilijaliitto", url: "https://www.artists.fi/fi" },
       { name: "Opintopolku - Leikkausartisti", url: "https://opintopolku.fi/konfo/fi/haku/Leikkausartisti" },
     
-      { name: "Työmarkkinatori – Leikkausartisti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/leikkausartisti" },
+      { name: "Työmarkkinatori – Leikkausartisti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Video" }
       ],
     keywords: ["leikkaaja", "videoeditoi nti", "jälkituotanto", "elokuva", "media"],
@@ -14761,7 +14761,7 @@ export const careersData: CareerFI[] = [
       { name: "Journalistiliitto", url: "https://journalistiliitto.fi/fi/" },
       { name: "Opintopolku - Dokumentaristi", url: "https://opintopolku.fi/konfo/fi/haku/Dokumentaristi" },
     
-      { name: "Työmarkkinatori – Dokumentaristi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/dokumentaristi" },
+      { name: "Työmarkkinatori – Dokumentaristi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuottaja" }
       ],
     keywords: ["dokumentaristi", "dokumentti", "elokuva", "journalismi", "tutkiminen"],
@@ -14845,7 +14845,7 @@ export const careersData: CareerFI[] = [
       { name: "Journalistiliitto", url: "https://journalistiliitto.fi/fi/" },
       { name: "Opintopolku - Podcast-tuottaja", url: "https://opintopolku.fi/konfo/fi/haku/Podcast-tuottaja" },
     
-      { name: "Työmarkkinatori – Podcast-tuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/podcast-tuottaja" },
+      { name: "Työmarkkinatori – Podcast-tuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Podcast" }
       ],
     keywords: ["podcast", "tuottaja", "ääni", "editointi", "media"],
@@ -15097,7 +15097,7 @@ export const careersData: CareerFI[] = [
       { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Vesiensuojeluasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Vesiensuojeluasiantuntija" },
     
-      { name: "Työmarkkinatori – Vesiensuojeluasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vesiensuojeluasiantuntija" },
+      { name: "Työmarkkinatori – Vesiensuojeluasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vesiensuojeluasiantuntija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vesiensuojeluasiantuntija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vesiensuojeluasiantuntija" }
@@ -15182,7 +15182,7 @@ export const careersData: CareerFI[] = [
       { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Jätehuoltoasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/J%C3%A4tehuoltoasiantuntija" },
     
-      { name: "Työmarkkinatori – Jätehuoltoasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/jatehuoltoasiantuntija" },
+      { name: "Työmarkkinatori – Jätehuoltoasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=J%C3%A4tehuoltoasiantuntija" }
       ],
     keywords: ["jätehuolto", "kierrätys", "kiertotalous", "ympäristö", "kestävyys"],
@@ -15265,7 +15265,7 @@ export const careersData: CareerFI[] = [
       { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Metsänhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Mets%C3%A4nhoitaja" },
     
-      { name: "Työmarkkinatori – Metsänhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/metsanhoitaja" },
+      { name: "Työmarkkinatori – Metsänhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mets%C3%A4nhoitaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mets%C3%A4nhoitaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mets%C3%A4nhoitaja" }
@@ -15350,7 +15350,7 @@ export const careersData: CareerFI[] = [
       { name: "EK", url: "https://ek.fi/" },
       { name: "Opintopolku - Toimitusjohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Toimitusjohtaja" },
     
-      { name: "Työmarkkinatori – Toimitusjohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/toimitusjohtaja" },
+      { name: "Työmarkkinatori – Toimitusjohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimitusjohtaja" }
       ],
     keywords: ["toimitusjohtaja", "CEO", "johtaminen", "strategia", "yritys"],
@@ -15433,7 +15433,7 @@ export const careersData: CareerFI[] = [
       { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Talousjohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Talousjohtaja" },
     
-      { name: "Työmarkkinatori – Talousjohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/talousjohtaja" },
+      { name: "Työmarkkinatori – Talousjohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Talousjohtaja" }
       ],
     keywords: ["talousjohtaja", "CFO", "talous", "johtaminen", "strategia"],
@@ -15599,7 +15599,7 @@ export const careersData: CareerFI[] = [
       { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Operatiivinen johtaja", url: "https://opintopolku.fi/konfo/fi/haku/Operatiivinen%20johtaja" },
     
-      { name: "Työmarkkinatori – Operatiivinen johtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/operatiivinen-johtaja" },
+      { name: "Työmarkkinatori – Operatiivinen johtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Operatiivinen%20johtaja" }
       ],
     keywords: ["COO", "operatiivinen", "johtaminen", "prosessit", "tehokkuus"],
@@ -15682,7 +15682,7 @@ export const careersData: CareerFI[] = [
       { name: "Akava", url: "https://akava.fi/" },
       { name: "Opintopolku - Liiketoimintajohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Liiketoimintajohtaja" },
     
-      { name: "Työmarkkinatori – Liiketoimintajohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liiketoimintajohtaja" },
+      { name: "Työmarkkinatori – Liiketoimintajohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoimintajohtaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoimintajohtaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoimintajohtaja" }
@@ -15767,7 +15767,7 @@ export const careersData: CareerFI[] = [
       { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - Kirvesmies", url: "https://opintopolku.fi/konfo/fi/haku/Kirvesmies" },
     
-      { name: "Työmarkkinatori – Kirvesmies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kirvesmies" },
+      { name: "Työmarkkinatori – Kirvesmies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kirvesmies" }
       ],
     keywords: ["kirvesmies", "rakentaminen", "puutyö", "talonrakennus", "korjaus"],
@@ -15850,7 +15850,7 @@ export const careersData: CareerFI[] = [
       { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - Maanrakennuskoneen kuljettaja", url: "https://opintopolku.fi/konfo/fi/haku/Maanrakennuskoneen%20kuljettaja" },
     
-      { name: "Työmarkkinatori – Maanrakennuskoneen kuljettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/maanrakennuskoneen-kuljettaja" },
+      { name: "Työmarkkinatori – Maanrakennuskoneen kuljettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maanrakennuskoneen%20kuljettaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maanrakennuskoneen%20kuljettaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maanrakennuskoneen%20kuljettaja" }
@@ -15935,7 +15935,7 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Tapahtumajärjestäjä", url: "https://opintopolku.fi/konfo/fi/haku/Tapahtumaj%C3%A4rjest%C3%A4j%C3%A4" },
     
-      { name: "Työmarkkinatori – Tapahtumajärjestäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tapahtumajarjestaja" },
+      { name: "Työmarkkinatori – Tapahtumajärjestäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tapahtumaj%C3%A4rjest%C3%A4j%C3%A4" }
       ],
     keywords: ["tapahtuma", "järjestäminen", "tapahtumajärjestäjä", "projektit", "koordinointi"],
@@ -16018,7 +16018,7 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Tilauspalvelukoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Tilauspalvelukoordinaattori" },
     
-      { name: "Työmarkkinatori – Tilauspalvelukoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tilauspalvelukoordinaattori" },
+      { name: "Työmarkkinatori – Tilauspalvelukoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tilauspalvelukoordinaattori" }
       ],
     keywords: ["tilauspalvelu", "koordinointi", "tilaukset", "asiakaspalvelu", "toimitukset"],
@@ -16101,7 +16101,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
       { name: "Opintopolku - DevOps", url: "https://opintopolku.fi/konfo/fi/haku/DevOps" },
-      { name: "Työmarkkinatori – DevOps-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/devops-insinoori" },
+      { name: "Työmarkkinatori – DevOps-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=DevOps-insin%C3%B6%C3%B6ri" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=DevOps-insin%C3%B6%C3%B6ri" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=DevOps-insin%C3%B6%C3%B6ri" },
@@ -16274,7 +16274,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
       { name: "Opintopolku - Ohjelmistotestaus", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistotestaus" },
-      { name: "Työmarkkinatori – Ohjelmistotestaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ohjelmistotestaja" },
+      { name: "Työmarkkinatori – Ohjelmistotestaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ohjelmistotestaja" }
       ],
     keywords: ["testaus", "laadunvarmistus", "ohjelmistotestaus", "qa", "vikaraportointi"],
@@ -16357,7 +16357,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
       { name: "Opintopolku - UX-suunnittelu", url: "https://opintopolku.fi/konfo/fi/haku/UX%20suunnittelu" },
-      { name: "Työmarkkinatori – UX-suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ux-suunnittelija" },
+      { name: "Työmarkkinatori – UX-suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=UX-suunnittelija" }
       ],
     keywords: ["ux", "käyttäjäkokemus", "käytettävyys", "suunnittelu", "user experience"],
@@ -16440,7 +16440,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
       { name: "Opintopolku - Pilvipalvelut", url: "https://opintopolku.fi/konfo/fi/haku/pilvipalvelut" },
-      { name: "Työmarkkinatori – Cloud-arkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/cloud-arkkitehti" },
+      { name: "Työmarkkinatori – Cloud-arkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Cloud-arkkitehti" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pilviarkkitehti" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pilviarkkitehti" }
@@ -16527,7 +16527,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/Liiketalous" },
     
-      { name: "Työmarkkinatori – Asiakkuusvastaava", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakkuusvastaava" },
+      { name: "Työmarkkinatori – Asiakkuusvastaava", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakkuusvastaava" }
       ],
     keywords: ["asiakkuus", "myynti", "asiakassuhteet", "account management", "b2b"],
@@ -16778,7 +16778,7 @@ export const careersData: CareerFI[] = [
       { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Sairaanhoitaja", url: "https://opintopolku.fi/konfo/fi/haku/Sairaanhoitaja" },
     
-      { name: "Työmarkkinatori – Dialyysihoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/dialyysihoitaja" },
+      { name: "Työmarkkinatori – Dialyysihoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Dialyysihoitaja" }
       ],
     keywords: ["dialyysi", "sairaanhoitaja", "munuais", "hoito", "erikoissairaanhoito"],
@@ -16859,7 +16859,7 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Erityisopettaja", url: "https://opintopolku.fi/konfo/fi/haku/Erityisopettaja" },
     
-      { name: "Työmarkkinatori – Varhaiskasvatuksen erityisopettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/varhaiskasvatuksen-erityisopettaja" },
+      { name: "Työmarkkinatori – Varhaiskasvatuksen erityisopettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varhaiskasvatuksen%20erityisopettaja" }
       ],
     keywords: ["erityisopettaja", "varhaiskasvatus", "erityistuki", "kehitysvamma", "oppimisvaikeudet"],
@@ -16942,7 +16942,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietojenkäsittelyliitto",
     useful_links: [
       { name: "Opintopolku - UI-suunnittelu", url: "https://opintopolku.fi/konfo/fi/haku/UI%20suunnittelu" },
-      { name: "Työmarkkinatori – UI-suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ui-suunnittelija" },
+      { name: "Työmarkkinatori – UI-suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=UI-suunnittelija" }
       ],
     keywords: ["ui", "käyttöliittymä", "visuaalinen suunnittelu", "design", "user interface"],
@@ -17026,7 +17026,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" },
     
-      { name: "Työmarkkinatori – Tietoturvaanalyytikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietoturvaanalyytikko" },
+      { name: "Työmarkkinatori – Tietoturvaanalyytikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietoturvaanalyytikko" }
       ],
     keywords: ["tietoturva", "kyberturvallisuus", "analyysi", "tietoturvaincidentti", "soc"],
@@ -17106,7 +17106,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Tietotekniikka" },
     
-      { name: "Työmarkkinatori – Tietokoneasentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietokoneasentaja" },
+      { name: "Työmarkkinatori – Tietokoneasentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tietokoneasentaja" }
       ],
     keywords: ["tietokoneasentaja", "it-tuki", "tietokonekorjaus", "tietoverkot", "teknikko"],
@@ -17191,7 +17191,7 @@ export const careersData: CareerFI[] = [
       { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Optometria", url: "https://opintopolku.fi/konfo/fi/haku/Optometria" },
     
-      { name: "Työmarkkinatori – Optometristi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/optometristi" },
+      { name: "Työmarkkinatori – Optometristi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Optometristi" }
       ],
     keywords: ["optometristi", "näkö", "silmälaseet", "silmätarkastus", "optometria"],
@@ -17361,7 +17361,7 @@ export const careersData: CareerFI[] = [
       { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - LVI-asentaja", url: "https://opintopolku.fi/konfo/fi/haku/LVI-asentaja" },
     
-      { name: "Työmarkkinatori – Putkityömies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/putkityomies" },
+      { name: "Työmarkkinatori – Putkityömies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Putkity%C3%B6mies" }
       ],
     keywords: ["putkityömies", "lvi", "putkisto", "vesihuolto", "lämmitys"],
@@ -17446,7 +17446,7 @@ export const careersData: CareerFI[] = [
       { name: "Insöörit", url: "https://www.ilry.fi/" },
       { name: "Opintopolku - Automaatiotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Automaatiotekniikka" },
     
-      { name: "Työmarkkinatori – Automaatioteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/automaatioteknikko" },
+      { name: "Työmarkkinatori – Automaatioteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Automaatioteknikko" }
       ],
     keywords: ["automaatio", "plc", "scada", "teollisuusautomaatio", "teknikko"],
@@ -17531,7 +17531,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6tekniikka" },
     
-      { name: "Työmarkkinatori – Kiertotalousasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kiertotalousasiantuntija" },
+      { name: "Työmarkkinatori – Kiertotalousasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kiertotalousasiantuntija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kiertotalousasiantuntija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kiertotalousasiantuntija" }
@@ -17618,7 +17618,7 @@ export const careersData: CareerFI[] = [
       { name: "JHL", url: "https://www.jhl.fi/" },
       { name: "Opintopolku - Ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6tekniikka" },
     
-      { name: "Työmarkkinatori – Ympäristövalvonta", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistovalvonta" },
+      { name: "Työmarkkinatori – Ympäristövalvonta", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6valvonta" }
       ],
     keywords: ["ympäristövalvonta", "valvonta", "ympäristölainsäädäntö", "tarkastus", "ympäristö"],
@@ -17701,7 +17701,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Media-alan TES",
     useful_links: [
       { name: "Opintopolku - Videotuotanto", url: "https://opintopolku.fi/konfo/fi/haku/videotuotanto" },
-      { name: "Työmarkkinatori – Videonmuokkaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/videonmuokkaaja" },
+      { name: "Työmarkkinatori – Videonmuokkaaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Video" }
       ],
     keywords: ["videonmuokkaus", "leikkaus", "video", "media", "editing"],
@@ -17785,7 +17785,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" },
     
-      { name: "Työmarkkinatori – Tuotantokoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotantokoordinaattori" },
+      { name: "Työmarkkinatori – Tuotantokoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantokoordinaattori" }
       ],
     keywords: ["tuotantokoordinaattori", "media", "tuotanto", "koordinointi", "projektinhallinta"],
@@ -18036,7 +18036,7 @@ export const careersData: CareerFI[] = [
       { name: "JHL", url: "https://www.jhl.fi/" },
       { name: "Opintopolku - Sosionomi", url: "https://opintopolku.fi/konfo/fi/haku/Sosionomi" },
     
-      { name: "Työmarkkinatori – Oppilashuoltaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/oppilashuoltaja" },
+      { name: "Työmarkkinatori – Oppilashuoltaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Oppilashuoltaja" }
       ],
     keywords: ["oppilashuoltaja", "koulu", "oppilaiden tuki", "hyvinvointi", "sosionomi"],
@@ -18201,7 +18201,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Tietotekniikka" },
     
-      { name: "Työmarkkinatori – IT-tukihenkilö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/it-tukihenkilo" },
+      { name: "Työmarkkinatori – IT-tukihenkilö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=IT-tukihenkil%C3%B6" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=It%20Tukihenkilo" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=It%20Tukihenkilo" }
@@ -18375,7 +18375,7 @@ export const careersData: CareerFI[] = [
       { name: "Tehy", url: "https://www.tehy.fi/fi" },
       { name: "Opintopolku - Audiologia", url: "https://opintopolku.fi/konfo/fi/haku/Audiologia" },
     
-      { name: "Työmarkkinatori – Audiologi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/audiologi" },
+      { name: "Työmarkkinatori – Audiologi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Audiologi" }
       ],
     keywords: ["audiologi", "kuulo", "kuulolaitteet", "kuulotarkastus", "kuulonkuntoutus"],
@@ -18456,7 +18456,7 @@ export const careersData: CareerFI[] = [
       { name: "JHL", url: "https://www.jhl.fi/" },
       { name: "Opintopolku - Sosionomi", url: "https://opintopolku.fi/konfo/fi/haku/Sosionomi" },
     
-      { name: "Työmarkkinatori – Oppilashuoltotyöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/oppilashuoltotyontekija" },
+      { name: "Työmarkkinatori – Oppilashuoltotyöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Oppilashuoltoty%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["oppilashuolto", "koulu", "oppilaiden tuki", "hyvinvointi", "sosionomi"],
@@ -18710,7 +18710,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" },
     
-      { name: "Työmarkkinatori – Full-Stack-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/full-stack-kehittaja" },
+      { name: "Työmarkkinatori – Full-Stack-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Full-Stack-kehitt%C3%A4j%C3%A4" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Full%20Stack%20-kehitt%C3%A4j%C3%A4" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Full%20Stack%20-kehitt%C3%A4j%C3%A4" },
@@ -18798,7 +18798,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Viestintä", url: "https://opintopolku.fi/konfo/fi/haku/Viestint%C3%A4" },
     
-      { name: "Työmarkkinatori – Sosiaalisen median asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sosiaalisen-median-asiantuntija" },
+      { name: "Työmarkkinatori – Sosiaalisen median asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalisen%20median%20asiantuntija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalisen%20median%20asiantuntija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalisen%20median%20asiantuntija" }
@@ -18966,7 +18966,7 @@ export const careersData: CareerFI[] = [
       { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - LVI-asentaja", url: "https://opintopolku.fi/konfo/fi/haku/LVI-asentaja" },
     
-      { name: "Työmarkkinatori – Lämpötekniikka-asentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lampotekniikka-asentaja" },
+      { name: "Työmarkkinatori – Lämpötekniikka-asentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=L%C3%A4mp%C3%B6tekniikka-asentaja" }
       ],
     keywords: ["lämpötekniikka", "maalämpö", "kaukolämpö", "uusiutuva energia", "lvi"],
@@ -19051,7 +19051,7 @@ export const careersData: CareerFI[] = [
       { name: "Pro", url: "https://proliitto.fi/fi" },
       { name: "Opintopolku - Ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Ymp%C3%A4rist%C3%B6tekniikka" },
     
-      { name: "Työmarkkinatori – Ilmastoneuvonantaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ilmastoneuvonantaja" },
+      { name: "Työmarkkinatori – Ilmastoneuvonantaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ilmastoneuvonantaja" }
       ],
     keywords: ["ilmasto", "hiilijalanjälki", "kestävyys", "ilmastoneuvonta", "ympäristö"],
@@ -19132,7 +19132,7 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Aikuiskasvatus", url: "https://opintopolku.fi/konfo/fi/haku/Aikuiskasvatus" },
     
-      { name: "Työmarkkinatori – Aikuiskouluttaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/aikuiskouluttaja" },
+      { name: "Työmarkkinatori – Aikuiskouluttaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aikuiskouluttaja" }
       ],
     keywords: ["aikuiskouluttaja", "aikuiskasvatus", "koulutus", "opetus", "työelämäkoulutus"],
@@ -19217,7 +19217,7 @@ export const careersData: CareerFI[] = [
       { name: "PAM", url: "https://www.pam.fi/" },
       { name: "Opintopolku - Myynti", url: "https://opintopolku.fi/konfo/fi/haku/Myynti" },
     
-      { name: "Työmarkkinatori – Myyntityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/myyntityontekija" },
+      { name: "Työmarkkinatori – Myyntityöntekijä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Myyntity%C3%B6ntekij%C3%A4" }
       ],
     keywords: ["myynti", "myyntityöntekijä", "asiakaspalvelu", "kauppa", "myyntityö"],
@@ -19302,7 +19302,7 @@ export const careersData: CareerFI[] = [
       { name: "JHL", url: "https://www.jhl.fi/" },
       { name: "Opintopolku - Sekretariaatti", url: "https://opintopolku.fi/konfo/fi/haku/Sekretariaatti" },
     
-      { name: "Työmarkkinatori – Reseptionisti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/reseptionisti" },
+      { name: "Työmarkkinatori – Reseptionisti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Reseptionisti" }
       ],
     keywords: ["reseptionisti", "vastaanotto", "asiakaspalvelu", "sekretariaatti", "palvelu"],
@@ -19386,7 +19386,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Tietojenkäsittely", url: "https://opintopolku.fi/konfo/fi/haku/Tietojenk%C3%A4sittely" },
     
-      { name: "Työmarkkinatori – Verkkosivustonhallintaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/verkkosivustonhallintaja" },
+      { name: "Työmarkkinatori – Verkkosivustonhallintaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Verkkosivustonhallintaja" }
       ],
     keywords: ["verkkosivustonhallinta", "web", "cms", "seo", "verkkosivusto"],
@@ -19471,7 +19471,7 @@ export const careersData: CareerFI[] = [
       { name: "Insöörit", url: "https://www.ilry.fi/" },
       { name: "Opintopolku - Energiatekniikka", url: "https://opintopolku.fi/konfo/fi/haku/Energiatekniikka" },
     
-      { name: "Työmarkkinatori – Vaihtoehtoinen energia-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vaihtoehtoinen-energia-insinoori" },
+      { name: "Työmarkkinatori – Vaihtoehtoinen energia-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vaihtoehtoinen%20energia-insin%C3%B6%C3%B6ri" }
       ],
     keywords: ["uusiutuva energia", "aurinkoenergia", "tuulienergia", "biokaasu", "energiainsinööri"],
@@ -19556,7 +19556,7 @@ export const careersData: CareerFI[] = [
       { name: "Rakennusliitto", url: "https://rakennusliitto.fi/" },
       { name: "Opintopolku - Rakennusinsinööri", url: "https://opintopolku.fi/konfo/fi/haku/Rakennusinsin%C3%B6%C3%B6ri" },
     
-      { name: "Työmarkkinatori – Rakennustyönjohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rakennustyonjohtaja" },
+      { name: "Työmarkkinatori – Rakennustyönjohtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rakennusty%C3%B6njohtaja" }
       ],
     keywords: ["rakennustyönjohtaja", "työnjohtaja", "rakennus", "projektinhallinta", "rakennusinsinööri"],
@@ -19637,7 +19637,7 @@ export const careersData: CareerFI[] = [
       { name: "OAJ", url: "https://www.oaj.fi/" },
       { name: "Opintopolku - Opettaja", url: "https://opintopolku.fi/konfo/fi/haku/Opettaja" },
     
-      { name: "Työmarkkinatori – Aineenopettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/aineenopettaja" },
+      { name: "Työmarkkinatori – Aineenopettaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aineenopettaja" }
       ],
     keywords: ["aineenopettaja", "opettaja", "opetus", "koulu", "pedagogiikka"],
@@ -19721,7 +19721,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" },
     
-      { name: "Työmarkkinatori – Livestream-tuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/livestream-tuottaja" },
+      { name: "Työmarkkinatori – Livestream-tuottaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Media" }
       ],
     keywords: ["livestream", "suoratoisto", "streaming", "media", "tuottaja"],
@@ -19890,7 +19890,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Medianomi", url: "https://opintopolku.fi/konfo/fi/haku/Medianomi" },
     
-      { name: "Työmarkkinatori – Ääniteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/aaniteknikko" },
+      { name: "Työmarkkinatori – Ääniteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=%C3%84%C3%A4niteknikko" }
       ],
     keywords: ["ääniteknikko", "ääni", "miksaaminen", "masterointi", "media"],
@@ -20166,7 +20166,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku – Sisustusalan perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/sisustusalan%20perustutkinto" },
     
-      { name: "Työmarkkinatori – Lattiasuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lattiasuunnittelija" },
+      { name: "Työmarkkinatori – Lattiasuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lattiasuunnittelija" }
       ],
     keywords: ["lattiapinnat", "sisustussuunnittelu", "materiaalisuunnittelu", "CAD", "tilaratkaisut"],
@@ -20259,7 +20259,7 @@ export const careersData: CareerFI[] = [
       { name: "Kaupan liitto", url: "https://kauppa.fi/" },
       { name: "Opintopolku – Myynnin ja markkinoinnin perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/myynnin%20ja%20markkinoinnin%20perustutkinto" },
     
-      { name: "Työmarkkinatori – Rakennusmateriaalimyyjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rakennusmateriaalimyyja" },
+      { name: "Työmarkkinatori – Rakennusmateriaalimyyjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rakennusmateriaalimyyj%C3%A4" }
       ],
     keywords: ["rakennustarvikkeet", "myynti", "asiakaspalvelu", "tarjouslaskenta", "logistiikka"],
@@ -20351,7 +20351,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku – Liiketoiminnan perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/Liiketoiminnan%20perustutkinto" },
     
-      { name: "Työmarkkinatori – Rautakauppias", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rautakauppias" },
+      { name: "Työmarkkinatori – Rautakauppias", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rautakauppias" }
       ],
     keywords: ["rautakauppa", "kaupan johto", "yrittäjyys", "hankinta", "myymälä"],
@@ -20443,7 +20443,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku – Energia- ja ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/energia-%20ja%20ympäristötekniikka" },
     
-      { name: "Työmarkkinatori – Biokaasuteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/biokaasuteknikko" },
+      { name: "Työmarkkinatori – Biokaasuteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Biokaasuteknikko" }
       ],
     keywords: ["biokaasu", "uusiutuva energia", "prosessitekniikka", "kestävä kehitys", "ympäristötekniikka"],
@@ -20536,7 +20536,7 @@ export const careersData: CareerFI[] = [
       { name: "Suomen ympäristökeskus SYKE", url: "https://www.syke.fi/fi" },
       { name: "Opintopolku – Ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/ymparistotekniikka" },
     
-      { name: "Työmarkkinatori – Ympäristöohjelmoija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparisto-ohjelmoija" },
+      { name: "Työmarkkinatori – Ympäristöohjelmoija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6ohjelmoija" }
       ],
     keywords: ["ympäristodata", "ohjelmistokehitys", "ilmastotyö", "GIS", "data-analytiikka"],
@@ -20629,7 +20629,7 @@ export const careersData: CareerFI[] = [
       { name: "SET – Mediatyöntekijät", url: "https://setry.fi/" },
       { name: "Opintopolku – Audiovisuaalisen viestinnän perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/audiovisuaalisen%20viestinnan%20perustutkinto" },
     
-      { name: "Työmarkkinatori – Kuvausassistentti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kuvausassistentti" },
+      { name: "Työmarkkinatori – Kuvausassistentti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Video" }
       ],
     keywords: ["kuvaus", "elokuva", "kamera", "tuotanto", "AV-ala"],
@@ -20722,7 +20722,7 @@ export const careersData: CareerFI[] = [
       { name: "Matkailu- ja Ravintolapalvelut MaRa", url: "https://www.mara.fi/" },
       { name: "Opintopolku – Ravintola- ja cateringalan perustutkinto", url: "https://opintopolku.fi/konfo/fi/haku/ravintola-%20ja%20cateringalan%20perustutkinto" },
     
-      { name: "Työmarkkinatori – Baarimikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/baarimikko" },
+      { name: "Työmarkkinatori – Baarimikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Baarimikko" }
       ],
     keywords: ["baarityö", "cocktail", "ravintola", "anniskelu", "palvelu"],
@@ -20802,7 +20802,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - vakuutusmatemaatikko", url: "https://opintopolku.fi/konfo/fi/haku/vakuutusmatemaatikko" },
-      { name: "Työmarkkinatori – Aktuaari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/aktuaari" },
+      { name: "Työmarkkinatori – Aktuaari", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aktuaari" }
       ],
     keywords: ["aktuaari", "asiantuntija", "kehittäminen"],
@@ -21042,7 +21042,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - erityispedagogiikka", url: "https://opintopolku.fi/konfo/fi/haku/erityispedagogiikka" },
-      { name: "Työmarkkinatori – Erityispedagogi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/erityispedagogi" },
+      { name: "Työmarkkinatori – Erityispedagogi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Erityispedagogi" }
       ],
     keywords: ["erityispedagogi", "asiantuntija", "kehittäminen"],
@@ -21122,7 +21122,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - filosofia etiikka", url: "https://opintopolku.fi/konfo/fi/haku/filosofia%20etiikka" },
-      { name: "Työmarkkinatori – Etiikan Asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/etiikan-asiantuntija" },
+      { name: "Työmarkkinatori – Etiikan Asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Etiikan%20Asiantuntija" }
       ],
     keywords: ["etiikan-asiantuntija", "asiantuntija", "kehittäminen"],
@@ -21202,7 +21202,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - filosofia", url: "https://opintopolku.fi/konfo/fi/haku/filosofia" },
-      { name: "Työmarkkinatori – Filosofi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/filosofi" },
+      { name: "Työmarkkinatori – Filosofi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Filosofi" }
       ],
     keywords: ["filosofi", "asiantuntija", "kehittäminen"],
@@ -21282,7 +21282,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - historia", url: "https://opintopolku.fi/konfo/fi/haku/historia" },
-      { name: "Työmarkkinatori – Historioitsija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/historioitsija" },
+      { name: "Työmarkkinatori – Historioitsija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Historioitsija" }
       ],
     keywords: ["historioitsija", "asiantuntija", "kehittäminen"],
@@ -21362,7 +21362,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - insinööri", url: "https://opintopolku.fi/konfo/fi/haku/insin%C3%B6%C3%B6ri" },
-      { name: "Työmarkkinatori – Insinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/insinoori" },
+      { name: "Työmarkkinatori – Insinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Insinoori" }
       ],
     keywords: ["insinoori", "asiantuntija", "kehittäminen"],
@@ -21439,7 +21439,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - journalistiikka", url: "https://opintopolku.fi/konfo/fi/haku/journalistiikka" },
-      { name: "Työmarkkinatori – Journalisti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/journalisti" },
+      { name: "Työmarkkinatori – Journalisti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Journalisti" }
       ],
     keywords: ["journalisti", "asiantuntija", "kehittäminen"],
@@ -21519,7 +21519,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - kemia", url: "https://opintopolku.fi/konfo/fi/haku/kemia" },
-      { name: "Työmarkkinatori – Kemiisti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kemiisti" },
+      { name: "Työmarkkinatori – Kemiisti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kemiisti" }
       ],
     keywords: ["kemiisti", "asiantuntija", "kehittäminen"],
@@ -21596,7 +21596,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - konetekniikka", url: "https://opintopolku.fi/konfo/fi/haku/konetekniikka" },
-      { name: "Työmarkkinatori – Konetekniikan Insinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/konetekniikan-insinoori" },
+      { name: "Työmarkkinatori – Konetekniikan Insinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Konetekniikan%20Insinoori" }
       ],
     keywords: ["konetekniikan-insinoori", "asiantuntija", "kehittäminen"],
@@ -21676,7 +21676,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - psykologia", url: "https://opintopolku.fi/konfo/fi/haku/psykologia" },
-      { name: "Työmarkkinatori – Koulupsykologi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/koulupsykologi" },
+      { name: "Työmarkkinatori – Koulupsykologi", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Koulupsykologi" }
       ],
     keywords: ["koulupsykologi", "asiantuntija", "kehittäminen"],
@@ -21836,7 +21836,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - laadunhallinta", url: "https://opintopolku.fi/konfo/fi/haku/laadunhallinta" },
-      { name: "Työmarkkinatori – Laatuasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/laatuasiantuntija" },
+      { name: "Työmarkkinatori – Laatuasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laatuasiantuntija" }
       ],
     keywords: ["laatuasiantuntija", "asiantuntija", "kehittäminen"],
@@ -21916,7 +21916,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - maatalous", url: "https://opintopolku.fi/konfo/fi/haku/maatalous" },
-      { name: "Työmarkkinatori – Maatalousasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/maatalousasiantuntija" },
+      { name: "Työmarkkinatori – Maatalousasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maatalousasiantuntija" }
       ],
     keywords: ["maatalousasiantuntija", "asiantuntija", "kehittäminen"],
@@ -21996,7 +21996,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - agrologi maatalous", url: "https://opintopolku.fi/konfo/fi/haku/agrologi%20maatalous" },
-      { name: "Työmarkkinatori – Maatalousinsinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/maatalousinsinoori" },
+      { name: "Työmarkkinatori – Maatalousinsinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Maatalousinsinoori" }
       ],
     keywords: ["maatalousinsinoori", "asiantuntija", "kehittäminen"],
@@ -22156,7 +22156,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - matkailu", url: "https://opintopolku.fi/konfo/fi/haku/matkailu" },
-      { name: "Työmarkkinatori – Matkailuneuvoja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/matkailuneuvoja" },
+      { name: "Työmarkkinatori – Matkailuneuvoja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Matkailuneuvoja" }
       ],
     keywords: ["matkailuneuvoja", "asiantuntija", "kehittäminen"],
@@ -22236,7 +22236,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - mediatuotanto", url: "https://opintopolku.fi/konfo/fi/haku/mediatuotanto" },
-      { name: "Työmarkkinatori – Mediasuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/mediasuunnittelija" },
+      { name: "Työmarkkinatori – Mediasuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mediasuunnittelija" }
       ],
     keywords: ["mediasuunnittelija", "asiantuntija", "kehittäminen"],
@@ -22316,7 +22316,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - merenkulku", url: "https://opintopolku.fi/konfo/fi/haku/merenkulku" },
-      { name: "Työmarkkinatori – Merenkulun Insinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/merenkulun-insinoori" },
+      { name: "Työmarkkinatori – Merenkulun Insinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Merenkulun%20Insinoori" }
       ],
     keywords: ["merenkulun-insinoori", "asiantuntija", "kehittäminen"],
@@ -22476,7 +22476,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - metsätalous", url: "https://opintopolku.fi/konfo/fi/haku/mets%C3%A4talous" },
-      { name: "Työmarkkinatori – Metsainsinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/metsainsinoori" },
+      { name: "Työmarkkinatori – Metsainsinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Metsainsinoori" }
       ],
     keywords: ["metsainsinoori", "asiantuntija", "kehittäminen"],
@@ -22556,7 +22556,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - metsätalous", url: "https://opintopolku.fi/konfo/fi/haku/mets%C3%A4talous" },
-      { name: "Työmarkkinatori – Metsatalousasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/metsatalousasiantuntija" },
+      { name: "Työmarkkinatori – Metsatalousasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Metsatalousasiantuntija" }
       ],
     keywords: ["metsatalousasiantuntija", "asiantuntija", "kehittäminen"],
@@ -22636,7 +22636,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - museologia", url: "https://opintopolku.fi/konfo/fi/haku/museologia" },
-      { name: "Työmarkkinatori – Museoasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/museoasiantuntija" },
+      { name: "Työmarkkinatori – Museoasiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Museoasiantuntija" }
       ],
     keywords: ["museoasiantuntija", "asiantuntija", "kehittäminen"],
@@ -22716,7 +22716,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - projektinhallinta liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta%20liiketalous" },
-      { name: "Työmarkkinatori – Projektipaallikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/projektipaallikko" },
+      { name: "Työmarkkinatori – Projektipaallikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Projektipaallikko" }
       ],
     keywords: ["projektipaallikko", "asiantuntija", "kehittäminen"],
@@ -22796,7 +22796,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - rakennusarkkitehtuuri", url: "https://opintopolku.fi/konfo/fi/haku/rakennusarkkitehtuuri" },
-      { name: "Työmarkkinatori – Rakennusarkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rakennusarkkitehti" },
+      { name: "Työmarkkinatori – Rakennusarkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Rakennusarkkitehti" }
       ],
     keywords: ["rakennusarkkitehti", "asiantuntija", "kehittäminen"],
@@ -22956,7 +22956,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - sähkötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/s%C3%A4hk%C3%B6tekniikka" },
-      { name: "Työmarkkinatori – Sahkotekniikan Insinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sahkotekniikan-insinoori" },
+      { name: "Työmarkkinatori – Sahkotekniikan Insinoori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sahkotekniikan%20Insinoori" }
       ],
     keywords: ["sahkotekniikan-insinoori", "asiantuntija", "kehittäminen"],
@@ -23036,7 +23036,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - sosiaaliala sosionomi", url: "https://opintopolku.fi/konfo/fi/haku/sosiaaliala%20sosionomi" },
-      { name: "Työmarkkinatori – Sosiaaliohjaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sosiaaliohjaja" },
+      { name: "Työmarkkinatori – Sosiaaliohjaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaaliohjaja" }
       ],
     keywords: ["sosiaaliohjaja", "asiantuntija", "kehittäminen"],
@@ -23116,7 +23116,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - sosiologia", url: "https://opintopolku.fi/konfo/fi/haku/sosiologia" },
-      { name: "Työmarkkinatori – Sosiaalitutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/sosiaalitutkija" },
+      { name: "Työmarkkinatori – Sosiaalitutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalitutkija" }
       ],
     keywords: ["sosiaalitutkija", "asiantuntija", "kehittäminen"],
@@ -23193,7 +23193,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - taloushallinto tradenomi", url: "https://opintopolku.fi/konfo/fi/haku/taloushallinto%20tradenomi" },
-      { name: "Työmarkkinatori – Tilitoimiston Johtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tilitoimiston-johtaja" },
+      { name: "Työmarkkinatori – Tilitoimiston Johtaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tilitoimiston%20Johtaja" }
       ],
     keywords: ["tilitoimiston-johtaja", "asiantuntija", "kehittäminen"],
@@ -23273,7 +23273,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - tutkimus yliopisto", url: "https://opintopolku.fi/konfo/fi/haku/tutkimus%20yliopisto" },
-      { name: "Työmarkkinatori – Tutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tutkija" },
+      { name: "Työmarkkinatori – Tutkija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tutkija" }
       ],
     keywords: ["tutkija", "asiantuntija", "kehittäminen"],
@@ -23353,7 +23353,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - journalistiikka", url: "https://opintopolku.fi/konfo/fi/haku/journalistiikka" },
-      { name: "Työmarkkinatori – Uutistoimittaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/uutistoimittaja" },
+      { name: "Työmarkkinatori – Uutistoimittaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Uutistoimittaja" }
       ],
     keywords: ["uutistoimittaja", "asiantuntija", "kehittäminen"],
@@ -23433,7 +23433,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - valmennus liikunta", url: "https://opintopolku.fi/konfo/fi/haku/valmennus%20liikunta" },
-      { name: "Työmarkkinatori – Valmentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/valmentaja" },
+      { name: "Työmarkkinatori – Valmentaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Valmentaja" }
       ],
     keywords: ["valmentaja", "asiantuntija", "kehittäminen"],
@@ -23513,7 +23513,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - visuaalinen suunnittelu muotoilu", url: "https://opintopolku.fi/konfo/fi/haku/visuaalinen%20suunnittelu%20muotoilu" },
-      { name: "Työmarkkinatori – Visuaalinen Suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/visuaalinen-suunnittelija" },
+      { name: "Työmarkkinatori – Visuaalinen Suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Visuaalinen%20Suunnittelija" }
       ],
     keywords: ["visuaalinen-suunnittelija", "asiantuntija", "kehittäminen"],
@@ -23593,7 +23593,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - ympäristönsuojelu", url: "https://opintopolku.fi/konfo/fi/haku/ymp%C3%A4rist%C3%B6nsuojelu" },
-      { name: "Työmarkkinatori – Ymparistonsuojelun Asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistonsuojelun-asiantuntija" },
+      { name: "Työmarkkinatori – Ymparistonsuojelun Asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymparistonsuojelun%20Asiantuntija" }
       ],
     keywords: ["ymparistonsuojelun-asiantuntija", "asiantuntija", "kehittäminen"],
@@ -23673,7 +23673,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku - ympäristötekniikka", url: "https://opintopolku.fi/konfo/fi/haku/ymp%C3%A4rist%C3%B6tekniikka" },
-      { name: "Työmarkkinatori – Ymparistoteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistoteknikko" },
+      { name: "Työmarkkinatori – Ymparistoteknikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymparistoteknikko" }
       ],
     keywords: ["ymparistoteknikko", "asiantuntija", "kehittäminen"],
@@ -29146,7 +29146,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Product Management Finland", url: "https://www.meetup.com/producttank-helsinki/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotepaalliko" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotep%C3%A4%C3%A4llikk%C3%B6" }
     ],
     study_length_estimate_months: 48
@@ -29230,7 +29230,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asiakaspalvelu" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakasmenestysjohtaja" }
     ],
     study_length_estimate_months: 36
@@ -29317,7 +29317,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietoalan Ammattiliitto TAL ry",
     useful_links: [
       { name: "Finnish Center for AI (FCAI)", url: "https://fcai.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietotekniikka" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Koneoppimisasiantuntija" }
     ],
     study_length_estimate_months: 60
@@ -29404,7 +29404,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/liiketoiminta" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoiminta-analyytikko" }
     ],
     study_length_estimate_months: 36
@@ -29577,7 +29577,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Tietoalan Ammattiliitto TAL ry",
     useful_links: [
       { name: "AWS User Group Finland", url: "https://www.meetup.com/aws-finland/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietotekniikka" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pilvipalveluarkkitehti" }
     ],
     study_length_estimate_months: 60
@@ -29663,7 +29663,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
     union_or_CBA: "Tietoalan Ammattiliitto TAL ry",
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tietoturva" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kyberturvallisuusanalyytikko" }
     ],
     study_length_estimate_months: 48
@@ -29748,7 +29748,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/viestinta" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Copywriter" }
     ],
     study_length_estimate_months: 24
@@ -29834,7 +29834,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/koulutus" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Yrityskouluttaja" }
     ],
     study_length_estimate_months: 36
@@ -30006,7 +30006,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Growth Tribe", url: "https://growthtribe.io/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/markkinointi" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kasvuasiantuntija" }
     ],
     study_length_estimate_months: 24
@@ -30091,7 +30091,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "FIBS ry", url: "https://fibsry.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparisto" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=ESG-analyytikko" }
     ],
     study_length_estimate_months: 48
@@ -30177,7 +30177,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/markkinointi" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Br%C3%A4ndijohtaja" }
     ],
     study_length_estimate_months: 48
@@ -30347,7 +30347,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Grafia", url: "https://grafia.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/mediatuottaja" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Video" }
     ],
     study_length_estimate_months: 24
@@ -30433,7 +30433,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Autoalan TES",
     useful_links: [
       { name: "Autoalan Keskusliitto", url: "https://akl.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ajoneuvoasentaja" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6ajoneuvoasentaja" }
     ],
     study_length_estimate_months: 36
@@ -40352,7 +40352,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" },
-      { name: "Työmarkkinatori – Blockchain-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/blockchain-kehittaja" },
+      { name: "Työmarkkinatori – Blockchain-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Blockchain-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
@@ -40410,7 +40410,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Sulautetut järjestelmät", url: "https://opintopolku.fi/konfo/fi/haku/sulautetut%20j%C3%A4rjestelm%C3%A4t" },
-      { name: "Työmarkkinatori – IoT-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/iot-insinoori" },
+      { name: "Työmarkkinatori – IoT-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=IoT-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
@@ -40466,7 +40466,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Peliteknologia", url: "https://opintopolku.fi/konfo/fi/haku/peliteknologia" },
-      { name: "Työmarkkinatori – VR/AR-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vr-ar-kehittaja" },
+      { name: "Työmarkkinatori – VR/AR-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=VR%2FAR-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
@@ -40524,7 +40524,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Bioinformatiikka", url: "https://opintopolku.fi/konfo/fi/haku/bioinformatiikka" },
-      { name: "Työmarkkinatori – Bioinformatiikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/bioinformatiikko" },
+      { name: "Työmarkkinatori – Bioinformatiikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Bioinformatiikko" }
     ],
     transferable_skills: [],
@@ -40582,7 +40582,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Pelisuunnittelu", url: "https://opintopolku.fi/konfo/fi/haku/pelisuunnittelu" },
-      { name: "Työmarkkinatori – Pelitekninen suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/pelitekninen-suunnittelija" },
+      { name: "Työmarkkinatori – Pelitekninen suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pelitekninen%20suunnittelija" }
     ],
     transferable_skills: [],
@@ -40640,7 +40640,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Fysiikka", url: "https://opintopolku.fi/konfo/fi/haku/fysiikka" },
-      { name: "Työmarkkinatori – Kvanttilaskenta-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/kvanttilaskenta-insinoori" },
+      { name: "Työmarkkinatori – Kvanttilaskenta-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kvanttilaskenta-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
@@ -40698,7 +40698,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" },
-      { name: "Työmarkkinatori – Edge computing -asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/edge-computing-specialist" },
+      { name: "Työmarkkinatori – Edge computing -asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Edge%20computing%20-asiantuntija" }
     ],
     transferable_skills: [],
@@ -40756,7 +40756,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Ohjelmistokehitys", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistokehitys" },
-      { name: "Työmarkkinatori – API-suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/api-designer" },
+      { name: "Työmarkkinatori – API-suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=API-suunnittelija" }
     ],
     transferable_skills: [],
@@ -40814,7 +40814,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Ohjelmistoarkkitehtuuri", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistoarkkitehtuuri" },
-      { name: "Työmarkkinatori – Mikropalveluarkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/microservices-architect" },
+      { name: "Työmarkkinatori – Mikropalveluarkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mikropalveluarkkitehti" }
     ],
     transferable_skills: [],
@@ -40872,7 +40872,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Koneoppiminen", url: "https://opintopolku.fi/konfo/fi/haku/koneoppiminen" },
-      { name: "Työmarkkinatori – MLOps-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/mlops-insinoori" },
+      { name: "Työmarkkinatori – MLOps-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=MLOps-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
@@ -40930,7 +40930,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Pilvipalvelut", url: "https://opintopolku.fi/konfo/fi/haku/pilvipalvelut" },
-      { name: "Työmarkkinatori – Serverless-arkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/serverless-architect" },
+      { name: "Työmarkkinatori – Serverless-arkkitehti", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Serverless-arkkitehti" }
     ],
     transferable_skills: [],
@@ -40988,7 +40988,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tekoäly", url: "https://opintopolku.fi/konfo/fi/haku/teko%C3%A4ly" },
-      { name: "Työmarkkinatori – Chatbot-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/chatbot-kehittaja" },
+      { name: "Työmarkkinatori – Chatbot-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Chatbot-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
@@ -41046,7 +41046,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Liiketoiminta", url: "https://opintopolku.fi/konfo/fi/haku/liiketoiminta" },
-      { name: "Työmarkkinatori – Low-code-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/low-code-developer" },
+      { name: "Työmarkkinatori – Low-code-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Low-code-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
@@ -41104,7 +41104,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Web-kehitys", url: "https://opintopolku.fi/konfo/fi/haku/web-kehitys" },
-      { name: "Työmarkkinatori – PWA-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/progressive-web-app-developer" },
+      { name: "Työmarkkinatori – PWA-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=PWA-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
@@ -41162,7 +41162,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Automaatio", url: "https://opintopolku.fi/konfo/fi/haku/automaatio" },
-      { name: "Työmarkkinatori – RPA-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/rpa-kehittaja" },
+      { name: "Työmarkkinatori – RPA-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=RPA-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
@@ -41220,7 +41220,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Ohjelmointi", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmointi" },
-      { name: "Työmarkkinatori – WebAssembly-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/webassembly-developer" },
+      { name: "Työmarkkinatori – WebAssembly-kehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=WebAssembly-kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
@@ -41278,7 +41278,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - DevOps", url: "https://opintopolku.fi/konfo/fi/haku/DevOps" },
-      { name: "Työmarkkinatori – Platform-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/platform-insinoori" },
+      { name: "Työmarkkinatori – Platform-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Platform-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
@@ -41334,7 +41334,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Sulautetut järjestelmät", url: "https://opintopolku.fi/konfo/fi/haku/sulautetut%20j%C3%A4rjestelm%C3%A4t" },
-      { name: "Työmarkkinatori – Embedded Linux -insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/embedded-linux-engineer" },
+      { name: "Työmarkkinatori – Embedded Linux -insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Embedded%20Linux%20-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
@@ -41392,7 +41392,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Peliohjelmointi", url: "https://opintopolku.fi/konfo/fi/haku/peliohjelmointi" },
-      { name: "Työmarkkinatori – Pelimoottorikehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/game-engine-developer" },
+      { name: "Työmarkkinatori – Pelimoottorikehittäjä", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pelimoottori%20kehitt%C3%A4j%C3%A4" }
     ],
     transferable_skills: [],
@@ -41450,7 +41450,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tietoverkot", url: "https://opintopolku.fi/konfo/fi/haku/tietoverkot" },
-      { name: "Työmarkkinatori – Verkkoautomaatio-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/network-automation-engineer" },
+      { name: "Työmarkkinatori – Verkkoautomaatio-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Verkkoautomaatio-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
@@ -41508,7 +41508,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" },
-      { name: "Työmarkkinatori – Observability-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/observability-engineer" },
+      { name: "Työmarkkinatori – Observability-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Observability-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
@@ -41566,7 +41566,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Konetekniikka", url: "https://opintopolku.fi/konfo/fi/haku/konetekniikka" },
-      { name: "Työmarkkinatori – 3D-tulostusingsinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/3d-tulostus-insinoori" },
+      { name: "Työmarkkinatori – 3D-tulostusingsinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=3D-tulostusingsin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
@@ -41624,7 +41624,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Biolääketieteellinen tekniikka", url: "https://opintopolku.fi/konfo/fi/haku/biol%C3%A4%C3%A4ketieteellinen%20tekniikka" },
-      { name: "Työmarkkinatori – Neurotekniikka-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/neurotech-insinoori" },
+      { name: "Työmarkkinatori – Neurotekniikka-insinööri", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Neurotekniikka-insin%C3%B6%C3%B6ri" }
     ],
     transferable_skills: [],
@@ -41763,7 +41763,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Rakennustekniikka", url: "https://opintopolku.fi/konfo/fi/haku/rakennustekniikka" },
-      { name: "Työmarkkinatori – Projektipäällikkö (rakennus)", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/projektipaallikkö-rakennus" },
+      { name: "Työmarkkinatori – Projektipäällikkö (rakennus)", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Projektip%C3%A4%C3%A4llikk%C3%B6%20(rakennus)" }
     ],
     transferable_skills: [],
@@ -41818,7 +41818,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tuotantotalous", url: "https://opintopolku.fi/konfo/fi/haku/tuotantotalous" },
-      { name: "Työmarkkinatori – Tuotantopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/tuotantopaallikkö-teollisuus" },
+      { name: "Työmarkkinatori – Tuotantopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantop%C3%A4%C3%A4llikk%C3%B6%20(teollisuus)" }
     ],
     transferable_skills: [],
@@ -41873,7 +41873,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
-      { name: "Työmarkkinatori – Logistiikkakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/logistics-coordinator" },
+      { name: "Työmarkkinatori – Logistiikkakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Logistiikkakoordinaattori" }
     ],
     transferable_skills: [],
@@ -41928,7 +41928,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tapahtumatuotanto", url: "https://opintopolku.fi/konfo/fi/haku/tapahtumatuotanto" },
-      { name: "Työmarkkinatori – Tapahtumakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/event-coordinator" },
+      { name: "Työmarkkinatori – Tapahtumakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tapahtumakoordinaattori" }
     ],
     transferable_skills: [],
@@ -41983,7 +41983,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Kiinteistöjohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/kiinteist%C3%B6johtaminen" },
-      { name: "Työmarkkinatori – Kiinteistöpäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/facility-manager" },
+      { name: "Työmarkkinatori – Kiinteistöpäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kiinteist%C3%B6p%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -42038,7 +42038,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Hankintatoimi", url: "https://opintopolku.fi/konfo/fi/haku/hankintatoimi" },
-      { name: "Työmarkkinatori – Hankinta-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/procurement-specialist" },
+      { name: "Työmarkkinatori – Hankinta-asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hankinta-asiantuntija" }
     ],
     transferable_skills: [],
@@ -42092,7 +42092,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Laatujohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/laatujohtaminen" },
-      { name: "Työmarkkinatori – Laatupäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/quality-manager" },
+      { name: "Työmarkkinatori – Laatupäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laatup%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -42147,7 +42147,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Muutosjohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/muutosjohtaminen" },
-      { name: "Työmarkkinatori – Muutospäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/change-manager" },
+      { name: "Työmarkkinatori – Muutospäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Muutosp%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -42202,7 +42202,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Prosessijohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/prosessijohtaminen" },
-      { name: "Työmarkkinatori – Prosessipäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/process-manager" },
+      { name: "Työmarkkinatori – Prosessipäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Prosessip%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -42257,7 +42257,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Riskienhallinta", url: "https://opintopolku.fi/konfo/fi/haku/riskienhallinta" },
-      { name: "Työmarkkinatori – Compliance-päällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/compliance-manager" },
+      { name: "Työmarkkinatori – Compliance-päällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Compliance-p%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -42312,7 +42312,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/liiketalous" },
-      { name: "Työmarkkinatori – Toimistopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/office-manager" },
+      { name: "Työmarkkinatori – Toimistopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimistop%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -42367,7 +42367,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
-      { name: "Työmarkkinatori – Varastopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/warehouse-manager" },
+      { name: "Työmarkkinatori – Varastopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varastop%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -42422,7 +42422,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Palvelujohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/palvelujohtaminen" },
-      { name: "Työmarkkinatori – Palvelupäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/service-manager" },
+      { name: "Työmarkkinatori – Palvelupäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Palvelup%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -42477,7 +42477,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta" },
-      { name: "Työmarkkinatori – Aikataulukoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/scheduling-coordinator" },
+      { name: "Työmarkkinatori – Aikataulukoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Aikataulukoordinaattori" }
     ],
     transferable_skills: [],
@@ -42532,7 +42532,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
-      { name: "Työmarkkinatori – Varastonhallintapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/inventory-manager" },
+      { name: "Työmarkkinatori – Varastonhallintapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varastonhallintap%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -42587,7 +42587,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Arkistointi", url: "https://opintopolku.fi/konfo/fi/haku/arkistointi" },
-      { name: "Työmarkkinatori – Arkistonhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/records-manager" },
+      { name: "Työmarkkinatori – Arkistonhoitaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Arkistonhoitaja" }
     ],
     transferable_skills: [],
@@ -42642,7 +42642,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Matkailu", url: "https://opintopolku.fi/konfo/fi/haku/matkailu" },
-      { name: "Työmarkkinatori – Matkakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/travel-coordinator" },
+      { name: "Työmarkkinatori – Matkakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Matkakoordinaattori" }
     ],
     transferable_skills: [],
@@ -42697,7 +42697,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Koulutus ja kehittäminen", url: "https://opintopolku.fi/konfo/fi/haku/koulutus%20kehitt%C3%A4minen" },
-      { name: "Työmarkkinatori – Koulutuskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/training-coordinator" },
+      { name: "Työmarkkinatori – Koulutuskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Koulutuskoordinaattori" }
     ],
     transferable_skills: [],
@@ -42752,7 +42752,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
-      { name: "Työmarkkinatori – Kalustonhallintapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/fleet-manager" },
+      { name: "Työmarkkinatori – Kalustonhallintapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kalustonhallintap%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -42807,7 +42807,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tietojärjestelmät", url: "https://opintopolku.fi/konfo/fi/haku/tietoj%C3%A4rjestelm%C3%A4t" },
-      { name: "Työmarkkinatori – Hallintojärjestelmäkoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/admin-systems-coordinator" },
+      { name: "Työmarkkinatori – Hallintojärjestelmäkoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hallintoj%C3%A4rjestelm%C3%A4koordinaattori" }
     ],
     transferable_skills: [],
@@ -42862,7 +42862,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tuotantotalous", url: "https://opintopolku.fi/konfo/fi/haku/tuotantotalous" },
-      { name: "Työmarkkinatori – Resurssisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/resource-planner" },
+      { name: "Työmarkkinatori – Resurssisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Resurssisuunnittelija" }
     ],
     transferable_skills: [],
@@ -42917,7 +42917,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Hankintatoimi", url: "https://opintopolku.fi/konfo/fi/haku/hankintatoimi" },
-      { name: "Työmarkkinatori – Toimittajapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/vendor-manager" },
+      { name: "Työmarkkinatori – Toimittajapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimittajap%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -42972,7 +42972,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tiedonhallinta", url: "https://opintopolku.fi/konfo/fi/haku/tiedonhallinta" },
-      { name: "Työmarkkinatori – Tiedonhallintakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/data-governance-coordinator" },
+      { name: "Työmarkkinatori – Tiedonhallintakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tiedonhallintakoordinaattori" }
     ],
     transferable_skills: [],
@@ -43027,7 +43027,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Sopimushallinta", url: "https://opintopolku.fi/konfo/fi/haku/sopimushallinta" },
-      { name: "Työmarkkinatori – Sopimushallinnoija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/contract-administrator" },
+      { name: "Työmarkkinatori – Sopimushallinnoija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sopimushallinnoija" }
     ],
     transferable_skills: [],
@@ -43082,7 +43082,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tapahtumatuotanto", url: "https://opintopolku.fi/konfo/fi/haku/tapahtumatuotanto" },
-      { name: "Työmarkkinatori – Kokouskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/meeting-coordinator" },
+      { name: "Työmarkkinatori – Kokouskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kokouskoordinaattori" }
     ],
     transferable_skills: [],
@@ -43137,7 +43137,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Prosessien johtaminen", url: "https://opintopolku.fi/konfo/fi/haku/prosessien%20johtaminen" },
-      { name: "Työmarkkinatori – Työnkulkukoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/workflow-coordinator" },
+      { name: "Työmarkkinatori – Työnkulkukoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ty%C3%B6nkulkukoordinaattori" }
     ],
     transferable_skills: [],
@@ -43192,7 +43192,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Riskienhallinta", url: "https://opintopolku.fi/konfo/fi/haku/riskienhallinta" },
-      { name: "Työmarkkinatori – Toiminnan jatkuvuuden suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/business-continuity-planner" },
+      { name: "Työmarkkinatori – Toiminnan jatkuvuuden suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toiminnan%20jatkuvuuden%20suunnittelija" }
     ],
     transferable_skills: [],
@@ -43247,7 +43247,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta" },
-      { name: "Työmarkkinatori – Portfoliopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/portfolio-manager-projects" },
+      { name: "Työmarkkinatori – Portfoliopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Portfoliop%C3%A4%C3%A4llikk%C3%B6%20(projektit)" }
     ],
     transferable_skills: [],
@@ -43302,7 +43302,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta" },
-      { name: "Työmarkkinatori – PMO-koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/pmo-coordinator" },
+      { name: "Työmarkkinatori – PMO-koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=PMO-koordinaattori" }
     ],
     transferable_skills: [],
@@ -43357,7 +43357,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
-      { name: "Työmarkkinatori – Materiaalisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/materials-planner" },
+      { name: "Työmarkkinatori – Materiaalisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Materiaalisuunnittelija" }
     ],
     transferable_skills: [],
@@ -43412,7 +43412,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tuotantotalous", url: "https://opintopolku.fi/konfo/fi/haku/tuotantotalous" },
-      { name: "Työmarkkinatori – Kapasiteettisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/capacity-planner" },
+      { name: "Työmarkkinatori – Kapasiteettisuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kapasiteettisuunnittelija" }
     ],
     transferable_skills: [],
@@ -43467,7 +43467,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Kuljetusala", url: "https://opintopolku.fi/konfo/fi/haku/kuljetusala" },
-      { name: "Työmarkkinatori – Kuljetuskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/transportation-coordinator" },
+      { name: "Työmarkkinatori – Kuljetuskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuljetuskoordinaattori" }
     ],
     transferable_skills: [],
@@ -43522,7 +43522,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Laboratorioala", url: "https://opintopolku.fi/konfo/fi/haku/laboratorioala" },
-      { name: "Työmarkkinatori – Laboratoriopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lab-manager" },
+      { name: "Työmarkkinatori – Laboratoriopäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laboratoriop%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -43577,7 +43577,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Kunnossapito", url: "https://opintopolku.fi/konfo/fi/haku/kunnossapito" },
-      { name: "Työmarkkinatori – Kunnossapitosuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/maintenance-planner" },
+      { name: "Työmarkkinatori – Kunnossapitosuunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kunnossapitosuunnittelija" }
     ],
     transferable_skills: [],
@@ -43632,7 +43632,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Kaupan ala", url: "https://opintopolku.fi/konfo/fi/haku/kaupan%20ala" },
-      { name: "Työmarkkinatori – Myymäläpäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/store-manager" },
+      { name: "Työmarkkinatori – Myymäläpäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Myym%C3%A4l%C3%A4p%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -43687,7 +43687,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tuotannonohjaus", url: "https://opintopolku.fi/konfo/fi/haku/tuotannonohjaus" },
-      { name: "Työmarkkinatori – Tuotantoaikatauluttaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/production-scheduler" },
+      { name: "Työmarkkinatori – Tuotantoaikatauluttaja", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantoaikatauluttaja" }
     ],
     transferable_skills: [],
@@ -43742,7 +43742,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Toimitusketjun hallinta", url: "https://opintopolku.fi/konfo/fi/haku/toimitusketjun%20hallinta" },
-      { name: "Työmarkkinatori – Kysynnän suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/demand-planner" },
+      { name: "Työmarkkinatori – Kysynnän suunnittelija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kysynn%C3%A4n%20suunnittelija" }
     ],
     transferable_skills: [],
@@ -43797,7 +43797,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Lean-johtaminen", url: "https://opintopolku.fi/konfo/fi/haku/lean" },
-      { name: "Työmarkkinatori – Lean-koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/lean-coordinator" },
+      { name: "Työmarkkinatori – Lean-koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lean-koordinaattori" }
     ],
     transferable_skills: [],
@@ -43852,7 +43852,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Kansainvälinen kauppa", url: "https://opintopolku.fi/konfo/fi/haku/kansainv%C3%A4linen%20kauppa" },
-      { name: "Työmarkkinatori – Tuonti-vientikoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/import-export-coordinator" },
+      { name: "Työmarkkinatori – Tuonti-vientikoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuonti-vientikoordinaattori" }
     ],
     transferable_skills: [],
@@ -43907,7 +43907,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Esimiestyö", url: "https://opintopolku.fi/konfo/fi/haku/esimiesty%C3%B6" },
-      { name: "Työmarkkinatori – Vuoroesimies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/shift-supervisor" },
+      { name: "Työmarkkinatori – Vuoroesimies", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vuoroesimies" }
     ],
     transferable_skills: [],
@@ -43963,7 +43963,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Ohjelmistokehitys", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistokehitys" },
-      { name: "Työmarkkinatori – Release Manager", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/release-manager" },
+      { name: "Työmarkkinatori – Release Manager", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Release%20Manager" }
     ],
     transferable_skills: [],
@@ -44018,7 +44018,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - IT-palveluhallinta", url: "https://opintopolku.fi/konfo/fi/haku/IT-palveluhallinta" },
-      { name: "Työmarkkinatori – Konfiguraationhallintapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/configuration-manager" },
+      { name: "Työmarkkinatori – Konfiguraationhallintapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Konfiguraationhallintap%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -44073,7 +44073,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Kiinteistöjohtaminen", url: "https://opintopolku.fi/konfo/fi/haku/kiinteist%C3%B6johtaminen" },
-      { name: "Työmarkkinatori – Omaisuudenhallintapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/asset-manager" },
+      { name: "Työmarkkinatori – Omaisuudenhallintapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Omaisuudenhallintap%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -44128,7 +44128,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tuotehallinta", url: "https://opintopolku.fi/konfo/fi/haku/tuotehallinta" },
-      { name: "Työmarkkinatori – Product Owner", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/product-owner" },
+      { name: "Työmarkkinatori – Product Owner", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Product%20Owner" }
     ],
     transferable_skills: [],
@@ -44183,7 +44183,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - IT-palveluhallinta", url: "https://opintopolku.fi/konfo/fi/haku/IT-palveluhallinta" },
-      { name: "Työmarkkinatori – Palveluntoimituspäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/service-delivery-manager" },
+      { name: "Työmarkkinatori – Palveluntoimituspäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Palveluntoimitusp%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
@@ -44238,7 +44238,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Projektinhallinta", url: "https://opintopolku.fi/konfo/fi/haku/projektinhallinta" },
-      { name: "Työmarkkinatori – Ohjelmakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/program-coordinator" },
+      { name: "Työmarkkinatori – Ohjelmakoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ohjelmakoordinaattori" }
     ],
     transferable_skills: [],
@@ -44293,7 +44293,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/liiketalous" },
-      { name: "Työmarkkinatori – Toimintokoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/operations-coordinator" },
+      { name: "Työmarkkinatori – Toimintokoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimintokoordinaattori" }
     ],
     transferable_skills: [],
@@ -44348,7 +44348,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Regulatory affairs", url: "https://opintopolku.fi/konfo/fi/haku/regulatory%20affairs" },
-      { name: "Työmarkkinatori – Viranomaisasioiden asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/regulatory-affairs-specialist" },
+      { name: "Työmarkkinatori – Viranomaisasioiden asiantuntija", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Viranomaisasioiden%20asiantuntija" }
     ],
     transferable_skills: [],
@@ -44404,7 +44404,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Henkilöstöhallinto", url: "https://opintopolku.fi/konfo/fi/haku/henkil%C3%B6st%C3%B6hallinto" },
-      { name: "Työmarkkinatori – Perehdytyskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/onboarding-coordinator" },
+      { name: "Työmarkkinatori – Perehdytyskoordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Perehdytyskoordinaattori" }
     ],
     transferable_skills: [],
@@ -44462,7 +44462,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tiedonhallinta", url: "https://opintopolku.fi/konfo/fi/haku/tiedonhallinta" },
-      { name: "Työmarkkinatori – Tiedonhallinnan koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/knowledge-management-coordinator" },
+      { name: "Työmarkkinatori – Tiedonhallinnan koordinaattori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tiedonhallinnan%20koordinaattori" }
     ],
     transferable_skills: [],
@@ -49306,7 +49306,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Terveydenhuoltoalan TES",
     useful_links: [
       { name: "Suomen Taideterapiayhdistys", url: "https://www.taideterapia.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terapia" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Taideterapeutti" }
     ],
     keywords: ["taideterapia", "luova terapia", "mielenterveys", "taide", "kuntoutus"],
@@ -49367,7 +49367,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Terveydenhuoltoalan TES",
     useful_links: [
       { name: "Suomen Musiikkiterapiayhdistys", url: "https://www.musiikkiterapia.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terapia" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Musiikkiterapeutti" }
     ],
     keywords: ["musiikkiterapia", "kuntoutus", "musiikki", "terapia"],
@@ -49427,7 +49427,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terapia" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Draamaterapeutti" }
     ],
     keywords: ["draamaterapia", "teatteri", "terapia", "luova terapia"],
@@ -49487,7 +49487,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terapia" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tanssiterapeutti" }
     ],
     keywords: ["tanssiterapia", "liike", "terapia", "kehollinen"],
@@ -49548,7 +49548,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "OVTES",
     useful_links: [
       { name: "OAJ", url: "https://www.oaj.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/opettaja" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kuvataideopettaja" }
     ],
     keywords: ["kuvataide", "opettaja", "taide", "kasvatus"],
@@ -49609,7 +49609,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "OVTES tai yksityisten oppilaitosten TES",
     useful_links: [
       { name: "Suomen musiikkioppilaitosten liitto", url: "https://www.musicedu.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/opettaja" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Musiikkipedagogi" }
     ],
     keywords: ["musiikki", "pedagogi", "opetus", "soitto"],
@@ -49670,7 +49670,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "OVTES",
     useful_links: [
       { name: "OAJ", url: "https://www.oaj.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/opettaja" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=K%C3%A4sity%C3%B6nopettaja" }
     ],
     keywords: ["käsityö", "opettaja", "tekstiili", "puu", "tekninen työ"],
@@ -49731,7 +49731,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Suomen Coaching-yhdistys", url: "https://www.coaching-yhdistys.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/valmentaja" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luovuusvalmentaja" }
     ],
     keywords: ["luovuus", "valmennus", "coaching", "innovaatio"],
@@ -49795,7 +49795,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Healthtech Finland", url: "https://teknologiateollisuus.fi/healthtech/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terveydenhuolto" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Terveysteknologia-asiantuntija" }
     ],
     keywords: ["terveysteknologia", "digitalisaatio", "healthtech", "eHealth"],
@@ -49855,7 +49855,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Ei", shift_work: true, travel: "kohtalaisesti" },
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terveydenhuolto" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=L%C3%A4%C3%A4kint%C3%A4laiteteknikko" }
     ],
     keywords: ["lääkintälaite", "huolto", "teknikko", "terveysteknologia"],
@@ -49916,7 +49916,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "IT-alan TES",
     useful_links: [
       { name: "HL7 Finland", url: "https://www.hl7.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terveydenhuolto" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Terveysinformatiikan%20asiantuntija" }
     ],
     keywords: ["terveysinformatiikka", "tietojärjestelmät", "data", "terveydenhuolto"],
@@ -49976,7 +49976,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "IT-alan TES",
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terveydenhuolto" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitaalisen%20terveyden%20kehitt%C3%A4j%C3%A4" }
     ],
     keywords: ["digitaalinen terveys", "kehitys", "sovellus", "eHealth"],
@@ -50037,7 +50037,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: "Teknologiateollisuuden TES",
     useful_links: [
       { name: "Suomen Biolääketieteen Tekniikan Yhdistys", url: "https://fbt.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/bioteknologia" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Biol%C3%A4%C3%A4ketieteellinen%20insin%C3%B6%C3%B6ri" }
     ],
     keywords: ["biolääketiede", "insinööri", "lääkintälaite", "T&K"],
@@ -50097,7 +50097,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
     union_or_CBA: "Terveydenhuoltoalan TES",
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terveydenhuolto" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kliininen%20informatiikka-asiantuntija" }
     ],
     keywords: ["kliininen informatiikka", "tietojärjestelmät", "terveydenhuolto"],
@@ -50163,7 +50163,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Suomen luontokoulujen verkosto", url: "https://www.luontokoulut.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ymparistokasvatus" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luontokoulun%20ohjaaja" }
     ],
     keywords: ["luontokoulu", "luonto", "ohjaaja", "ympäristökasvatus"],
@@ -50224,7 +50224,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "FIBS ry", url: "https://fibsry.fi/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/koulutus" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4vyyskouluttaja" }
     ],
     keywords: ["kestävä kehitys", "koulutus", "vastuullisuus", "sustainability"],
@@ -50287,7 +50287,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/mediakasvatus" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mediakasvatuksen%20asiantuntija" }
     ],
     keywords: ["mediakasvatus", "medialukutaito", "kasvatus", "digitaidot"],
@@ -50347,7 +50347,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/koulutus" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kouluttaja" }
     ],
     keywords: ["oppimismuotoilu", "learning design", "muotoilu", "koulutus"],
@@ -50472,7 +50472,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: null,
     useful_links: [
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/viestinta" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Viestint%C3%A4" }
     ],
     keywords: ["terveysviestintä", "viestintä", "suunnittelu", "terveys"],
@@ -50533,7 +50533,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Palvelumuotoilun verkosto", url: "https://www.solita.fi/services/service-design/" },
-      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/terveydenhuolto" },
+      { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Potilaskokemus" }
     ],
     keywords: ["potilaskokemus", "palvelumuotoilu", "terveydenhuolto", "design"],
