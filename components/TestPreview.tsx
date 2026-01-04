@@ -62,7 +62,7 @@ export default function TestPreview() {
                   : 'bg-white/5 text-neutral-300 hover:bg-white/10'
               }`}
             >
-              Yläaste (13-15v)
+              Yläasteen oppilas
             </button>
             <button
               onClick={() => { setSelectedCohort('TASO2'); setCurrentQuestion(0); setAnswer(null); }}
@@ -72,7 +72,7 @@ export default function TestPreview() {
                   : 'bg-white/5 text-neutral-300 hover:bg-white/10'
               }`}
             >
-              Toinen aste (16-19v)
+              Toisen asteen opiskelija
             </button>
             <button
               onClick={() => { setSelectedCohort('NUORI'); setCurrentQuestion(0); setAnswer(null); }}
@@ -82,7 +82,7 @@ export default function TestPreview() {
                   : 'bg-white/5 text-neutral-300 hover:bg-white/10'
               }`}
             >
-              Nuoret aikuiset (20+)
+              Nuori aikuinen
             </button>
           </div>
         </div>

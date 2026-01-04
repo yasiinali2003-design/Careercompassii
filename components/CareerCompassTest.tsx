@@ -618,12 +618,12 @@ export default function CareerCompassTest({ pin, classToken }: { pin?: string | 
         <QuestionScreen
           title={
             group === "YLA"
-              ? "Yläaste (13–15 v) – Tutustu itseesi"
+              ? "Yläasteen oppilas – Tutustu itseesi"
               : group === "TASO2"
               ? taso2SubCohort === "LUKIO"
-                ? "Lukio (16–19 v) – Löydä akateeminen suuntasi"
-                : "Ammattikoulu (16–19 v) – Löydä ammatillinen suuntasi"
-              : "Nuoret aikuiset – Rakenna oma polkusi"
+                ? "Lukio-opiskelija – Löydä akateeminen suuntasi"
+                : "Ammattikouluopiskelija – Löydä ammatillinen suuntasi"
+              : "Nuori aikuinen – Rakenna oma polkusi"
           }
           questions={qList}
           index={index}
@@ -918,12 +918,12 @@ const GroupSelect = ({ onChoose, onBack }: { onChoose: (g: "YLA" | "TASO2" | "NU
 
     <div className="grid gap-4">
       <GroupCard
-        title="Yläasteen oppilas (13–15 v)"
+        title="Yläasteen oppilas"
         desc="Tutustu itseesi ja löydä kiinnostuksesi"
         onClick={() => onChoose("YLA")}
       />
       <GroupCard
-        title="Toisen asteen opiskelija (16–19 v)"
+        title="Toisen asteen opiskelija"
         desc="Löydä suuntasi ja suunnittele tulevaisuuttasi"
         onClick={() => onChoose("TASO2")}
       />
