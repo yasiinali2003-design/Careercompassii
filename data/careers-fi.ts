@@ -25002,7 +25002,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
     union_or_CBA: "TEK - Tekniikan akateemiset / Grafia",
     useful_links: [
-      { name: "Opintopolku - UI/UX-suunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/UI%2FUX-suunnittelija" },
+      { name: "Opintopolku - UX-suunnittelu", url: "https://opintopolku.fi/konfo/fi/haku/UX%20suunnittelu" },
       {
                 "name": "UX Finland",
                 "url": "https://uxfinland.org/"
@@ -28815,7 +28815,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Agile-valmentaja", url: "https://opintopolku.fi/konfo/fi/haku/Agile-valmentaja" },
-      { name: "Agile Finland", url: "https://agile.fi/" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Agile%20Coach" }
     ],
     study_length_estimate_months: 24
   },{
@@ -36020,7 +36020,7 @@ export const careersData: CareerFI[] = [
     union_or_CBA: null,
     useful_links: [
       { name: "Opintopolku - Tekoäly-kehoteasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Teko%C3%A4ly-kehoteasiantuntija" },
-      { name: "OpenAI documentation", url: "https://platform.openai.com/docs/overview" },
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=AI%20prompt" },
       { name: "Prompt Engineering Guide", url: "https://www.promptingguide.ai/" }
     ],
     transferable_skills: [
@@ -36269,7 +36269,7 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku - Ääninäyttelijä", url: "https://opintopolku.fi/konfo/fi/haku/%C3%84%C3%A4nin%C3%A4yttelij%C3%A4" },
       { name: "Suomen Näyttelijäliitto", url: "https://nayttelijaliitto.fi/" },
-      { name: "Voice Acting resources", url: "https://www.voices.com/" }
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=%C3%A4%C3%A4nin%C3%A4yttelij%C3%A4" }
     ],
     transferable_skills: [
       "voice_acting",
