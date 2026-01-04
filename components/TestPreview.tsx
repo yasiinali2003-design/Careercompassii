@@ -62,7 +62,7 @@ export default function TestPreview() {
                   : 'bg-white/5 text-neutral-300 hover:bg-white/10'
               }`}
             >
-              Yläasteen oppilas
+              Yläkoululainen
             </button>
             <button
               onClick={() => { setSelectedCohort('TASO2'); setCurrentQuestion(0); setAnswer(null); }}
@@ -72,7 +72,7 @@ export default function TestPreview() {
                   : 'bg-white/5 text-neutral-300 hover:bg-white/10'
               }`}
             >
-              Toisen asteen opiskelija
+              Lukiolainen tai ammattikoululainen
             </button>
             <button
               onClick={() => { setSelectedCohort('NUORI'); setCurrentQuestion(0); setAnswer(null); }}

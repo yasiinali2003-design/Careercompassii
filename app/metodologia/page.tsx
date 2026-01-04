@@ -218,11 +218,11 @@ export default function MetodologiaPage() {
               </p>
               <div className="space-y-4">
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                  <h4 className="text-white font-semibold mb-2">Yläasteen oppilas</h4>
+                  <h4 className="text-white font-semibold mb-2">Yläkoululainen</h4>
                   <p className="text-sm text-urak-text-secondary">Keskittyy peruskiinnostuksiin ja oppimistyyleihin. Sopii nuorille, jotka vasta tutustuvat eri aloihin.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                  <h4 className="text-white font-semibold mb-2">Toisen asteen opiskelija</h4>
+                  <h4 className="text-white font-semibold mb-2">Lukiolainen tai ammattikoululainen</h4>
                   <p className="text-sm text-urak-text-secondary">Erilliset testit lukio- ja ammattikouluopiskelijoille. Huomioi eri koulutuspolkujen erityispiirteet.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
