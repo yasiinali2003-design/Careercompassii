@@ -317,7 +317,7 @@ export default function ResultsPage() {
   // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#0B1015]">
+      <div className="min-h-screen flex items-center justify-center bg-urak-bg">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-cyan-400 mx-auto mb-4"></div>
           <p className="text-slate-300">Analysoidaan tuloksiasi...</p>
@@ -329,8 +329,8 @@ export default function ResultsPage() {
   // Error state
   if (error || !results) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4 bg-[#0B1015]">
-        <Card className="max-w-md border-white/20 bg-[#11161D]">
+      <div className="min-h-screen flex items-center justify-center p-4 bg-urak-bg">
+        <Card className="max-w-md border-white/20 bg-urak-surface">
           <CardHeader>
             <CardTitle className="text-white">Virhe</CardTitle>
             <CardDescription className="text-slate-400">{error || 'Jotain meni pieleen'}</CardDescription>

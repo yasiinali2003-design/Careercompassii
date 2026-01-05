@@ -124,7 +124,7 @@ export default function AdminTeachersPage() {
 
   return (
     <div className="min-h-screen">
-      <nav className="border-b border-white/10 bg-[#05070B]/95 backdrop-blur-xl sticky top-0 z-50">
+      <nav className="border-b border-white/10 bg-urak-bg/95 backdrop-blur-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <Logo className="h-10 w-auto" />

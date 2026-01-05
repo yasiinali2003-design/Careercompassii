@@ -52,7 +52,13 @@ export default function PublicClassResultsPage({
   }, [fetchResults, isReservedPath]);
 
   if (isReservedPath) {
-    return null;
+    return (
+      <div className="min-h-screen p-8">
+        <div className="max-w-4xl mx-auto text-center py-12">
+          <p className="text-urak-text-secondary">Sivua ei löytynyt</p>
+        </div>
+      </div>
+    );
   }
 
   if (loading) {
@@ -80,7 +86,7 @@ export default function PublicClassResultsPage({
   return (
     <div className="min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-[#1a1d23] rounded-xl shadow-lg border border-white/10 p-8">
+        <div className="bg-urak-surface rounded-xl shadow-lg border border-white/10 p-8">
           <h1 className="text-3xl font-bold mb-2">Luokantulokset</h1>
           <p className="text-neutral-300 mb-6">Anonyymit testitulokset</p>
 
@@ -118,7 +124,7 @@ export default function PublicClassResultsPage({
             </div>
           )}
 
-          <div className="mt-8 bg-[#1a1d23]/50 border border-white/10 rounded-lg p-4">
+          <div className="mt-8 bg-urak-surface/50 border border-white/10 rounded-lg p-4">
             <p className="text-sm text-primary">
               💡 <strong>Huomio:</strong> Kaikki tulokset ovat täysin anonyymeja. 
               Nimia eivät näy, eivätkä koskaan ole näkyneet tämän sivun yhteydessä.

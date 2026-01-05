@@ -283,7 +283,7 @@ export default function CareerCatalog() {
               placeholder="Hae ammatteja..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 bg-[#11161f] border border-white/10 rounded-2xl focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/50 text-base text-white placeholder:text-slate-400"
+              className="w-full pl-12 pr-4 py-4 bg-urak-surface border border-white/10 rounded-2xl focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/50 text-base text-white placeholder:text-slate-400"
             />
           </div>
 
@@ -301,7 +301,7 @@ export default function CareerCatalog() {
                       industry: value ? [value] : undefined 
                     }));
                   }}
-                  className="bg-[#11161f] border border-white/10 rounded-full px-4 py-2 pr-8 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue appearance-none transition-colors hover:border-white/20 cursor-pointer"
+                  className="bg-urak-surface border border-white/10 rounded-full px-4 py-2 pr-8 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue appearance-none transition-colors hover:border-white/20 cursor-pointer"
                   aria-label="Valitse toimiala"
                 >
                   <option value="">Kaikki alat</option>
@@ -325,7 +325,7 @@ export default function CareerCatalog() {
                       educationLevel: value ? [value] : undefined
                     }));
                   }}
-                  className="bg-[#11161f] border border-white/10 rounded-full px-4 py-2 pr-8 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue appearance-none transition-colors hover:border-white/20 cursor-pointer"
+                  className="bg-urak-surface border border-white/10 rounded-full px-4 py-2 pr-8 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue appearance-none transition-colors hover:border-white/20 cursor-pointer"
                   aria-label="Valitse koulutustaso"
                 >
                   <option value="">Kaikki koulutustasot</option>
@@ -349,7 +349,7 @@ export default function CareerCatalog() {
                       personalityType: value ? [value] : undefined 
                     }));
                   }}
-                  className="bg-[#11161f] border border-white/10 rounded-full px-4 py-2 pr-8 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue appearance-none transition-colors hover:border-white/20 cursor-pointer"
+                  className="bg-urak-surface border border-white/10 rounded-full px-4 py-2 pr-8 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue appearance-none transition-colors hover:border-white/20 cursor-pointer"
                   aria-label="Valitse persoonallisuustyyppi"
                 >
                   <option value="">Kaikki tyypit</option>
@@ -373,7 +373,7 @@ export default function CareerCatalog() {
                       outlook: value ? [value] : undefined 
                     }));
                   }}
-                  className="bg-[#11161f] border border-white/10 rounded-full px-4 py-2 pr-8 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue appearance-none transition-colors hover:border-white/20 cursor-pointer"
+                  className="bg-urak-surface border border-white/10 rounded-full px-4 py-2 pr-8 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-urak-accent-blue appearance-none transition-colors hover:border-white/20 cursor-pointer"
                   aria-label="Valitse työllisyysnäkymä"
                 >
                   <option value="">Kaikki näkymät</option>
@@ -504,7 +504,7 @@ export default function CareerCatalog() {
                 <div className="text-center">
                   <button
                     onClick={loadMoreCareers}
-                    className="px-6 py-3 bg-[#11161f] border border-white/10 rounded-xl hover:bg-white/[0.03] hover:border-white/20 transition-all text-white font-medium"
+                    className="px-6 py-3 bg-urak-surface border border-white/10 rounded-xl hover:bg-white/[0.03] hover:border-white/20 transition-all text-white font-medium"
                   >
                     Näytä lisää ammatteja
                   </button>
@@ -519,7 +519,7 @@ export default function CareerCatalog() {
               {hasActiveFilters && (
                 <button
                   onClick={clearFilters}
-                  className="px-6 py-3 bg-[#11161f] border border-white/10 rounded-xl hover:bg-white/[0.03] transition-all text-white font-medium"
+                  className="px-6 py-3 bg-urak-surface border border-white/10 rounded-xl hover:bg-white/[0.03] transition-all text-white font-medium"
                 >
                   Tyhjennä suodattimet
                 </button>

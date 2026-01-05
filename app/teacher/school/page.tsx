@@ -241,7 +241,7 @@ export default function SchoolPage() {
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Schools List */}
         <div className="lg:col-span-1">
-          <div className="bg-[#0d1117] border border-white/[0.08] rounded-2xl overflow-hidden">
+          <div className="bg-urak-surface border border-white/[0.08] rounded-2xl overflow-hidden">
             <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 px-5 py-4 border-b border-white/[0.08]">
               <h3 className="font-semibold text-white flex items-center gap-2">
                 <Building2 className="h-4 w-4 text-blue-400" />
@@ -311,7 +311,7 @@ export default function SchoolPage() {
 
         {/* School Details & Team Management */}
         <div className="lg:col-span-2">
-          <div className="bg-[#0d1117] border border-white/[0.08] rounded-2xl overflow-hidden">
+          <div className="bg-urak-surface border border-white/[0.08] rounded-2xl overflow-hidden">
             <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 px-6 py-4 border-b border-white/[0.08]">
               <h3 className="font-semibold text-white">
                 {selectedSchool ? selectedSchool.school_name : 'Valitse koulu'}

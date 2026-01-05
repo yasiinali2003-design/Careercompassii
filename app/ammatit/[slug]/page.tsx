@@ -132,7 +132,7 @@ export default function CareerDetail() {
           <h1 className="text-2xl font-bold text-white mb-4">Ammattia ei löytynyt</h1>
           <Link
             href="/ammatit"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#11161f] border border-white/10 rounded-xl hover:bg-white/[0.03] transition-all text-white"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-urak-surface border border-white/10 rounded-xl hover:bg-white/[0.03] transition-all text-white"
           >
             <ArrowLeft className="h-4 w-4" />
             Takaisin Urakirjastoon
@@ -152,7 +152,7 @@ export default function CareerDetail() {
           <h1 className="text-2xl font-bold text-white mb-4">Ammattia ei löytynyt</h1>
           <Link
             href="/ammatit"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#11161f] border border-white/10 rounded-xl hover:bg-white/[0.03] transition-all text-white"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-urak-surface border border-white/10 rounded-xl hover:bg-white/[0.03] transition-all text-white"
           >
             <ArrowLeft className="h-4 w-4" />
             Takaisin Urakirjastoon
@@ -322,7 +322,7 @@ export default function CareerDetail() {
           {/* Right: Sticky Sidebar */}
           <div className="sticky top-24 space-y-6 h-fit">
             {/* Pikakatsaus Card */}
-            <AnimatedCard className="bg-[#11161f] rounded-xl ring-1 ring-white/5 p-6">
+            <AnimatedCard className="bg-urak-surface rounded-xl ring-1 ring-white/5 p-6">
               <h3 className="text-lg font-semibold text-white mb-4">
                 Pikakatsaus
               </h3>
@@ -381,7 +381,7 @@ export default function CareerDetail() {
 
             {/* Koulutuspolut Card */}
             {career.opintopolkuLinks && career.opintopolkuLinks.length > 0 && (
-              <AnimatedCard className="bg-[#11161f] rounded-xl ring-1 ring-white/5 p-6">
+              <AnimatedCard className="bg-urak-surface rounded-xl ring-1 ring-white/5 p-6">
                 <h3 className="text-lg font-semibold text-white mb-4">
                   Koulutuspolut
                 </h3>
@@ -403,7 +403,7 @@ export default function CareerDetail() {
             )}
 
             {/* Työpaikkahaku Card */}
-            <AnimatedCard className="bg-[#11161f] rounded-xl ring-1 ring-white/5 p-6">
+            <AnimatedCard className="bg-urak-surface rounded-xl ring-1 ring-white/5 p-6">
               <h3 className="text-lg font-semibold text-white mb-4">
                 Työpaikkahaku
               </h3>

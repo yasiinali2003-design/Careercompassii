@@ -56,7 +56,7 @@ export default function StudentLoginPage({
   return (
     <div className="min-h-screen p-8">
       <div className="max-w-md mx-auto mt-20">
-        <div className="bg-[#1a1d23] rounded-xl shadow-lg border border-white/10 p-8">
+        <div className="bg-urak-surface rounded-xl shadow-lg border border-white/10 p-8">
           <h1 className="text-3xl font-bold mb-2">Kirjaudu testiin</h1>
           <p className="text-neutral-300 mb-6">
             Syötä opettajasi antama PIN-koodi
@@ -95,7 +95,7 @@ export default function StudentLoginPage({
             </button>
           </div>
 
-          <div className="mt-6 bg-[#1a1d23]/50 border border-white/10 rounded-lg p-4">
+          <div className="mt-6 bg-urak-surface/50 border border-white/10 rounded-lg p-4">
             <p className="text-sm text-primary">
               💡 <strong>Vinkki:</strong> Jos sinulla ei ole PIN-koodia, ota yhteyttä opettajaasi.
             </p>
