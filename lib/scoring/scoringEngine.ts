@@ -5673,6 +5673,243 @@ function selectDiverseCareers(
     let diversityBonus = 0;
     const titleLower = career.title.toLowerCase();
 
+    // ========== CORE INTEREST SCORES ==========
+    const leadershipScore = userWorkstyle.leadership || 0;
+    const peopleScoreGlobal = userInterests.people || 0;
+    const handsOnScore = userInterests.hands_on || 0;
+    const businessScore = userInterests.business || 0;
+    const technologyScore = userInterests.technology || 0;
+    const creativeScore = userInterests.creative || 0;
+    const writingScore = userInterests.writing || 0;
+    const problemSolvingScore = userInterests.problem_solving || 0;
+    const analyticalScore = userInterests.analytical || 0;
+    const healthScore = userInterests.health || 0;
+
+    // Determine user's PRIMARY interest (highest score)
+    const interestScores = [
+      { name: 'technology', score: technologyScore },
+      { name: 'people', score: peopleScoreGlobal },
+      { name: 'hands_on', score: handsOnScore },
+      { name: 'creative', score: creativeScore },
+      { name: 'business', score: businessScore },
+      { name: 'leadership', score: leadershipScore }
+    ];
+    const primaryInterest = interestScores.sort((a, b) => b.score - a.score)[0];
+    const isPrimaryLeader = primaryInterest.name === 'leadership' && leadershipScore >= 0.5;
+
+    // Leadership combos only apply when leadership is strong AND matched with another interest
+    const hasLeadershipCombo = leadershipScore >= 0.5;
+    const hasPeopleLeadershipCombo = leadershipScore >= 0.5 && peopleScoreGlobal >= 0.5;
+    const hasPracticalLeadershipCombo = leadershipScore >= 0.5 && handsOnScore >= 0.5;
+    const hasTechLeadershipCombo = leadershipScore >= 0.5 && technologyScore >= 0.5;
+
+    // ========== TECHNOLOGY CAREERS - CRITICAL FOR TECH-ORIENTED USERS ==========
+    // Users with high tech interest should see tech careers, not generic management
+    const isTechOriented = technologyScore >= 0.5 || (technologyScore >= 0.4 && problemSolvingScore >= 0.4);
+    if (isTechOriented) {
+      // SOFTWARE/DEVELOPER CAREERS - VERY STRONG BOOST
+      if (titleLower.includes('ohjelmisto') || titleLower.includes('kehittäjä') ||
+          titleLower.includes('koodaaja') || titleLower.includes('softa') ||
+          titleLower.includes('developer') || titleLower.includes('programmer') ||
+          titleLower.includes('full-stack') || titleLower.includes('backend') ||
+          titleLower.includes('frontend')) {
+        diversityBonus += 55;
+        if (technologyScore >= 0.6) diversityBonus += 20;
+        if (technologyScore >= 0.8) diversityBonus += 10;
+      }
+
+      // GAME DEVELOPMENT
+      if (titleLower.includes('peli') || titleLower.includes('game')) {
+        diversityBonus += 45;
+        if (creativeScore >= 0.4) diversityBonus += 15;
+      }
+
+      // DATA CAREERS
+      if (titleLower.includes('data') || titleLower.includes('analyytikko') ||
+          titleLower.includes('tietokannan') || titleLower.includes('database')) {
+        diversityBonus += 40;
+        if (analyticalScore >= 0.5) diversityBonus += 15;
+      }
+
+      // IT/SYSTEMS
+      if (titleLower.includes('järjestelmä') || titleLower.includes('it-') ||
+          titleLower.includes('tietotekniikka') || titleLower.includes('verkkoinsinööri')) {
+        diversityBonus += 35;
+      }
+
+      // TECH ENGINEERING
+      if ((titleLower.includes('insinööri') && (titleLower.includes('ohjelmisto') ||
+           titleLower.includes('data') || titleLower.includes('tieto') ||
+           titleLower.includes('kyber') || titleLower.includes('robotiikka')))) {
+        diversityBonus += 40;
+      }
+
+      // AI/ML
+      if (titleLower.includes('tekoäly') || titleLower.includes('koneoppiminen') ||
+          titleLower.includes('ml-') || titleLower.includes('ai-')) {
+        diversityBonus += 38;
+      }
+
+      // TECH LEADERSHIP (only if also has strong leadership)
+      if (hasTechLeadershipCombo && leadershipScore >= 0.6) {
+        if (titleLower.includes('teknologiajohtaja') || titleLower.includes('cto') ||
+            titleLower.includes('it-päällikkö') || titleLower.includes('kehitysjohtaja')) {
+          diversityBonus += 30;
+        }
+      }
+
+      // PENALIZE non-tech careers for tech-oriented users - STRONGER PENALTY
+      if (technologyScore >= 0.5) {
+        // Check if this is a tech career
+        const isTechCareer = titleLower.includes('ohjelmisto') || titleLower.includes('kehittäjä') ||
+          titleLower.includes('data') || titleLower.includes('peli') || titleLower.includes('it') ||
+          titleLower.includes('tieto') || titleLower.includes('insinööri') || titleLower.includes('kyber') ||
+          titleLower.includes('robotiikka') || titleLower.includes('full-stack') || titleLower.includes('backend') ||
+          titleLower.includes('frontend') || titleLower.includes('softa') || titleLower.includes('koodaaja') ||
+          titleLower.includes('tekoäly') || titleLower.includes('koneoppiminen');
+
+        if (!isTechCareer) {
+          // Generic management roles strongly penalized for tech users
+          if (titleLower.includes('päällikkö') || titleLower.includes('johtaja')) {
+            if (!titleLower.includes('tekno') && !titleLower.includes('tieto') &&
+                !titleLower.includes('it') && !titleLower.includes('data') &&
+                !titleLower.includes('ohjelmisto') && !titleLower.includes('kehitys')) {
+              diversityBonus -= 35; // Strong penalty for generic management
+            }
+          }
+          // Also penalize health-tech careers for pure software devs
+          if (titleLower.includes('terveysteknologia') || titleLower.includes('lääkintälaite') ||
+              titleLower.includes('terveysinformatiikka')) {
+            if (healthScore < 0.4) {
+              diversityBonus -= 20; // Pure tech people don't want health-tech unless interested in health
+            }
+          }
+        }
+      }
+    }
+
+    // ========== CREATIVE/MARKETING CAREERS ==========
+    const isCreativeOriented = creativeScore >= 0.5 || writingScore >= 0.5;
+
+    // MARKETING LEADERSHIP - for creative business minds (Tuomas-type)
+    // This needs to be checked REGARDLESS of isCreativeOriented for business-creative combos
+    const isMarketingLeader = creativeScore >= 0.4 && businessScore >= 0.4 && leadershipScore >= 0.4;
+    if (isMarketingLeader) {
+      // MARKETING PÄÄLLIKKÖ/JOHTAJA - VERY STRONG BOOST
+      if (titleLower.includes('markkinointipäällikkö') || titleLower.includes('markkinointijohtaja') ||
+          titleLower.includes('markkinointi') || titleLower.includes('cmo')) {
+        diversityBonus += 55;
+        if (leadershipScore >= 0.6) diversityBonus += 15;
+      }
+      // BRAND MANAGER
+      if (titleLower.includes('brändi') || titleLower.includes('brand')) {
+        diversityBonus += 45;
+        if (creativeScore >= 0.6) diversityBonus += 10;
+      }
+      // VIESTINTÄPÄÄLLIKKÖ
+      if (titleLower.includes('viestintäpäällikkö') || titleLower.includes('viestintäjohtaja') ||
+          titleLower.includes('viestintä')) {
+        diversityBonus += 40;
+      }
+      // ADVERTISING
+      if (titleLower.includes('mainosjohtaja') || titleLower.includes('mainospäällikkö') ||
+          titleLower.includes('mainos')) {
+        diversityBonus += 40;
+      }
+      // PENALIZE pure creative roles for marketing leaders
+      if (leadershipScore >= 0.5) {
+        if ((titleLower.includes('kameramies') || titleLower.includes('valokuvaaja') ||
+             titleLower.includes('muusikko') || titleLower.includes('taiteilija')) &&
+            !titleLower.includes('johtaja') && !titleLower.includes('päällikkö')) {
+          diversityBonus -= 25; // They want leadership roles, not pure creative
+        }
+      }
+    }
+
+    if (isCreativeOriented) {
+      // MARKETING (for pure creative without strong leadership)
+      if (!isMarketingLeader) {
+        if (titleLower.includes('markkinoin') || titleLower.includes('markkinoija') ||
+            titleLower.includes('mainont') || titleLower.includes('mainos')) {
+          diversityBonus += 30;
+          if (businessScore >= 0.4) diversityBonus += 10;
+        }
+      }
+
+      // COMMUNICATIONS
+      if (titleLower.includes('viestintä') || titleLower.includes('viestinnän') ||
+          titleLower.includes('kommunikaat') || titleLower.includes('pr-')) {
+        diversityBonus += 28;
+      }
+
+      // CONTENT CREATION
+      if (titleLower.includes('sisältö') || titleLower.includes('content') ||
+          titleLower.includes('copywriter') || titleLower.includes('luova')) {
+        diversityBonus += 25;
+      }
+
+      // WRITING
+      if (titleLower.includes('kirjail') || titleLower.includes('toimittaja') ||
+          titleLower.includes('journalis') || titleLower.includes('kirjoittaja')) {
+        diversityBonus += 25;
+        if (writingScore >= 0.6) diversityBonus += 10;
+      }
+
+      // PENALIZE non-creative careers for creative users (but not for marketing leaders)
+      if (creativeScore >= 0.6 && !isMarketingLeader) {
+        if ((titleLower.includes('päällikkö') || titleLower.includes('johtaja')) &&
+            !titleLower.includes('markkin') && !titleLower.includes('viestintä') &&
+            !titleLower.includes('luova') && !titleLower.includes('sisältö') &&
+            !titleLower.includes('brändi')) {
+          diversityBonus -= 12;
+        }
+      }
+    }
+
+    // ========== LEADERSHIP COMBINATION BONUSES ==========
+    // Only apply generic leadership boosts when leadership is PRIMARY or very strong
+    if (isPrimaryLeader || leadershipScore >= 0.7) {
+      // Manager/Supervisor roles - but only if leadership is primary interest
+      if (titleLower.includes('johtaja') || titleLower.includes('päällikkö') ||
+          titleLower.includes('esimies') || titleLower.includes('manageri') ||
+          titleLower.includes('rehtori') || titleLower.includes('toimitusjohtaja')) {
+        diversityBonus += 20;
+        if (leadershipScore >= 0.7) {
+          diversityBonus += 10;
+        }
+      }
+
+      // Team lead / Project manager roles
+      if (titleLower.includes('tiimin') || titleLower.includes('projekti') ||
+          titleLower.includes('koordinaat') || titleLower.includes('vastuuhenkilö')) {
+        diversityBonus += 18;
+      }
+    }
+
+    // PEOPLE + LEADERSHIP = HR, Team Management, Social Services Leadership
+    if (hasPeopleLeadershipCombo && peopleScoreGlobal >= technologyScore) {
+      if (titleLower.includes('henkilöstö') || titleLower.includes('hr') ||
+          titleLower.includes('rekrytointi') || titleLower.includes('työhyvinvointi')) {
+        diversityBonus += 25;
+      }
+      if (titleLower.includes('sosiaalijohtaja') || titleLower.includes('hoivajohtaja') ||
+          titleLower.includes('palvelujohtaja') || titleLower.includes('toiminnanjohtaja')) {
+        diversityBonus += 22;
+      }
+    }
+
+    // PRACTICAL + LEADERSHIP = Construction Manager, Operations (only if hands-on is primary)
+    if (hasPracticalLeadershipCombo && handsOnScore >= technologyScore) {
+      if (titleLower.includes('työnjohtaja') || titleLower.includes('mestari') ||
+          titleLower.includes('tuotantopäällikkö') || titleLower.includes('tehtaanjohtaja')) {
+        diversityBonus += 22;
+      }
+      if (titleLower.includes('työmaapäällikkö') || titleLower.includes('rakennusmestari') ||
+          titleLower.includes('tuotantojohtaja')) {
+        diversityBonus += 20;
+      }
+    }
+
     // ========== AUTTAJA DIFFERENTIATION ==========
     if (career.category === 'auttaja') {
       // CRITICAL: YLA Q4 maps to 'environment', not 'nature' - check both
@@ -5681,6 +5918,96 @@ function selectDiverseCareers(
       const analyticalScore = userInterests.analytical || 0;
       const peopleScore = userInterests.people || 0;
       const healthScore = userInterests.health || 0;
+      // LEADERSHIP IN HELPING PROFESSIONS - users with people + leadership
+      // should see management roles in healthcare/social services
+      if (hasPeopleLeadershipCombo) {
+        // Healthcare management - STRONG BOOST for nurse managers
+        if (titleLower.includes('osastonhoitaja') || titleLower.includes('ylihoitaja') ||
+            titleLower.includes('johtava hoitaja') || titleLower.includes('hoitotyön johtaja')) {
+          diversityBonus += 50; // Strong boost - leadership in healthcare
+          if (healthScore >= 0.6) diversityBonus += 20; // Extra for healthcare background
+        }
+        // Social services leadership
+        if (titleLower.includes('sosiaaliohjaaja') || titleLower.includes('palveluohjaaja') ||
+            titleLower.includes('toiminnanohjaaja') || titleLower.includes('yksikön johtaja')) {
+          diversityBonus += 32;
+        }
+        // Education leadership
+        if (titleLower.includes('rehtori') || titleLower.includes('apulaisrehtori') ||
+            titleLower.includes('koulutuspäällikkö') || titleLower.includes('varhaiskasvatuksen johtaja')) {
+          diversityBonus += 30;
+        }
+        // Penalize pure helper roles for leadership-oriented users
+        // BUT only if they DON'T have strong health interest (nurse managers should see hoitaja too)
+        if (titleLower.includes('hoitaja') && !titleLower.includes('johtaja') &&
+            !titleLower.includes('osastonhoitaja') && !titleLower.includes('vastaava')) {
+          if (healthScore < 0.5) {
+            diversityBonus -= 15; // They should see leadership roles instead
+          }
+        }
+        // PENALIZE non-healthcare careers for healthcare leaders
+        if (healthScore >= 0.5) {
+          if (!titleLower.includes('hoitaja') && !titleLower.includes('terveys') &&
+              !titleLower.includes('sairaan') && !titleLower.includes('lääkäri') &&
+              !titleLower.includes('osastonhoitaja') && !titleLower.includes('ylihoitaja')) {
+            if (titleLower.includes('bioanalyytikko') || titleLower.includes('ravitsemus') ||
+                titleLower.includes('työpsykolog') || titleLower.includes('poliisi') ||
+                titleLower.includes('rikostutkija')) {
+              diversityBonus -= 25; // Healthcare leaders should get healthcare management, not bioanalytics
+            }
+          }
+        }
+      }
+
+      // NURSING/CARING PROFILES - high health + people
+      // This is for Emilia-type users who want to care for people
+      // Two levels: pure caring (low leadership) and caring with moderate leadership
+      const isPureCaringProfile = healthScore >= 0.5 && peopleScore >= 0.4 && leadershipScore < 0.5;
+      const isCaringProfile = healthScore >= 0.5 && peopleScore >= 0.4;
+      const isVeryHighHealth = healthScore >= 0.7;
+
+      // For ANY caring profile with high health, boost nursing careers
+      if (isCaringProfile) {
+        // LÄHIHOITAJA / SAIRAANHOITAJA - strong boost
+        if (titleLower.includes('lähihoitaja') || titleLower.includes('lähi')) {
+          diversityBonus += 55;
+          if (isVeryHighHealth) diversityBonus += 20;
+          if (isPureCaringProfile) diversityBonus += 10; // Extra for pure caring
+        }
+        if (titleLower.includes('sairaanhoitaja') || titleLower.includes('sairaan')) {
+          diversityBonus += 50;
+          if (isVeryHighHealth) diversityBonus += 15;
+          if (isPureCaringProfile) diversityBonus += 10;
+        }
+        // KOTIHOITAJA / VANHUSTENHOITAJA
+        if (titleLower.includes('kotihoitaja') || titleLower.includes('vanhustenhoitaja') ||
+            titleLower.includes('koti') || titleLower.includes('vanhus')) {
+          diversityBonus += 45;
+          if (isVeryHighHealth) diversityBonus += 10;
+        }
+        // TERVEYDENHOITAJA / ENSIHOITAJA
+        if (titleLower.includes('terveydenhoitaja') || titleLower.includes('ensihoitaja') ||
+            titleLower.includes('terveydenhoit')) {
+          diversityBonus += 42;
+        }
+        // PENALIZE non-nursing healthcare for caring profiles
+        // But only if leadership is not strong (if leadership is strong, they might want management)
+        if (leadershipScore < 0.6) {
+          if (titleLower.includes('erikoislääkäri') || titleLower.includes('lääkäri') ||
+              titleLower.includes('kirurgi')) {
+            diversityBonus -= 35; // They want nursing, not doctor roles
+          }
+          if (titleLower.includes('bioanalyytikko') || titleLower.includes('laboratorio') ||
+              titleLower.includes('kliininen informatiikka')) {
+            diversityBonus -= 40; // They want patient care, not lab work
+          }
+          // Also penalize non-healthcare management roles
+          if (titleLower.includes('liiketoiminnan') || titleLower.includes('asiakaspalvelujoh') ||
+              titleLower.includes('etätiimin')) {
+            diversityBonus -= 30; // Healthcare people shouldn't get generic business management
+          }
+        }
+      }
 
       // ANIMAL CAREERS - big boost for nature lovers
       // Detect animal interest: high environment score + NOT high health (human) = animals
@@ -5695,14 +6022,169 @@ function selectDiverseCareers(
         }
       }
 
-      // TEACHING CAREERS
-      if (titleLower.includes('opettaja') || titleLower.includes('koulut') ||
-          titleLower.includes('ohjaaja') || titleLower.includes('valmentaja')) {
-        if (educationScore >= 0.5) {
-          diversityBonus += 20;
+      // TEACHING CAREERS (non-sports) - strong boost for teaching-focused users
+      const teachingScore = userInterests.teaching || userWorkstyle.teaching || 0;
+      const growthScore = userInterests.growth || 0;
+      const writingScoreLocal = userInterests.writing || 0;
+      const creativeScoreLocal = userInterests.creative || 0;
+      const isTeachingFocused = teachingScore >= 0.5 || (growthScore >= 0.5 && peopleScore >= 0.5);
+      // STRICT: Only consider "high writing" when there's a STRONG signal (not medium)
+      // 0.5 = neutral (answered 3/5), so we need >= 0.6 to indicate genuine interest
+      const hasHighWriting = writingScoreLocal >= 0.6 || (creativeScoreLocal >= 0.7 && writingScoreLocal >= 0.5);
+
+      if (isTeachingFocused) {
+        // Boost education careers (but NOT sports valmentaja if user has high writing)
+        if (titleLower.includes('opettaja') || titleLower.includes('koulut') ||
+            titleLower.includes('ohjaaja') || titleLower.includes('kasvat') ||
+            titleLower.includes('päiväkoti')) {
+          diversityBonus += 75;
+          if (teachingScore >= 0.6) diversityBonus += 25;
+          if (growthScore >= 0.6) diversityBonus += 15;
         }
-        if (educationScore >= 0.7) {
-          diversityBonus += 10;
+        // Valmentaja careers - only boost if NOT a writer (writers should get writing careers)
+        if (titleLower.includes('valmentaja') && !hasHighWriting) {
+          diversityBonus += 60;
+          if (teachingScore >= 0.6) diversityBonus += 20;
+        }
+        // Penalize non-teaching careers for teaching-focused users
+        if (titleLower.includes('meikki') || titleLower.includes('kampaaja') ||
+            titleLower.includes('kosmetologi') || titleLower.includes('kauneus')) {
+          diversityBonus -= 70; // Teachers want teaching, not beauty
+        }
+      } else if (educationScore >= 0.5 || teachingScore >= 0.4) {
+        // Moderate boost
+        if (titleLower.includes('opettaja') || titleLower.includes('koulut')) {
+          diversityBonus += 30;
+        }
+      }
+
+      // SPORTS/FITNESS CAREERS - specific handling for athletic users
+      // VERY STRICT: Only boost sports careers for people with STRONG sports signal
+      // AND who don't have competing creative/writing interests
+      const sportsScore = userInterests.sports || 0;
+      const isSportsOriented = sportsScore >= 0.6; // Very strict: must have answered 4-5
+      const isModeratelySportsOriented = sportsScore >= 0.5 && healthScore >= 0.5; // Moderate
+
+      // CRITICAL: Don't boost sports careers if user has high writing/creative interest
+      // Writing/creative is a more specific career signal than general sports interest
+      // STRICT: Only consider competing when there's a STRONG creative signal (>= 0.7)
+      const hasCompetingCreativeInterest = hasHighWriting || creativeScoreLocal >= 0.7;
+
+      if (isSportsOriented && !hasCompetingCreativeInterest) {
+        // VALMENTAJA/COACH careers - strong boost for sports-oriented (without creative interest)
+        if (titleLower.includes('valmentaja') || titleLower.includes('urheiluvalment') ||
+            titleLower.includes('liikuntaneuvoja') || titleLower.includes('personal trainer') ||
+            titleLower.includes('urheiluvalmenta') || titleLower.includes('liikunta')) {
+          diversityBonus += 80;
+          if (sportsScore >= 0.6) diversityBonus += 25;
+        }
+        // PHYSICAL THERAPY / FITNESS
+        if (titleLower.includes('fysioterapeutti') || titleLower.includes('liikuntaterapeutti') ||
+            titleLower.includes('liikuntaohjaaja') || titleLower.includes('kuntovalmentaja')) {
+          diversityBonus += 65;
+          if (sportsScore >= 0.6) diversityBonus += 20;
+        }
+        // SPORTS MANAGEMENT
+        if (titleLower.includes('urheilujohtaja') || titleLower.includes('seurajohtaja') ||
+            titleLower.includes('urheilupäällikkö') || titleLower.includes('urheil')) {
+          diversityBonus += 50;
+        }
+      } else if (isModeratelySportsOriented && !hasCompetingCreativeInterest) {
+        // Moderate boost for moderately sports-oriented (without creative interest)
+        if (titleLower.includes('valmentaja') || titleLower.includes('liikunta') ||
+            titleLower.includes('fysioterapeutti') || titleLower.includes('liikuntaterapeutti')) {
+          diversityBonus += 25;
+        }
+      }
+
+      // PENALIZE sports careers for non-sports people
+      // If someone is NOT sports-oriented (sportsScore <= 0.5 = answered 3 or below = not enthusiastic)
+      // AND has high health/nature interest, they should get healthcare/nature careers, not sports
+      const isNotSportsEnthusiast = sportsScore <= 0.55; // 0.5 = neutral (answered 3/5)
+
+      // Healthcare-focused but not sports enthusiast
+      if (isNotSportsEnthusiast && healthScore >= 0.5) {
+        if (titleLower.includes('valmentaja') || titleLower.includes('urheil') ||
+            titleLower.includes('liikuntaneuvoja') || titleLower.includes('personal trainer') ||
+            titleLower.includes('liikuntaterapeutti') || titleLower.includes('liikuntaohjaaja') ||
+            titleLower.includes('liikunta')) {
+          diversityBonus -= 100; // STRONG penalty: Healthcare people should get healthcare, not sports
+        }
+      }
+
+      // Nature/environment focused but not sports enthusiast
+      if (isNotSportsEnthusiast && (natureScore >= 0.5 || analyticalScore >= 0.5)) {
+        if (titleLower.includes('valmentaja') || titleLower.includes('urheil') ||
+            titleLower.includes('liikunta') || titleLower.includes('liikuntaterapeutti')) {
+          diversityBonus -= 100; // Nature/research people should get nature careers, not sports
+        }
+      }
+
+      // CREATIVE/WRITING focused people who also like sports - prioritize their creative interests
+      // CRITICAL FIX: If someone has STRONG writing/creative, penalize sports careers
+      // Why: Many people enjoy sports personally but want creative careers professionally
+      // Writing is a MORE SPECIFIC career signal than general sports interest
+      const writingScore = userInterests.writing || 0;
+
+      // STRICT: Only penalize when there's a STRONG creative/writing signal (>= 0.6)
+      // 0.5 is neutral (answered 3/5), 0.6+ indicates genuine interest (4-5)
+      const hasStrongCreativeWritingSignal = writingScore >= 0.6 || creativeScore >= 0.7;
+      if (hasStrongCreativeWritingSignal) {
+        if (titleLower.includes('valmentaja') || titleLower.includes('urheil') ||
+            titleLower.includes('liikunta') || titleLower.includes('liikuntaterapeutti') ||
+            titleLower.includes('fysioterapeutti')) {
+          // Stronger penalty when writing is dominant, moderate when just creative
+          const penalty = writingScore >= 0.6 ? 120 : 80;
+          diversityBonus -= penalty; // Creative/writing people get creative careers, not sports
+        }
+      }
+
+      // RESTAURANT/COOKING CAREERS - specific boost for culinary-oriented people
+      // Kokki and restaurant workers need hands_on + creative + people combo
+      // KEY INSIGHT: Restaurant people have high CREATIVE (food presentation), high PEOPLE,
+      // and high CUSTOMER SERVICE - this differentiates them from construction workers
+      // IMPORTANT: Artists with high arts_culture should NOT get restaurant careers
+      const handsOnScore = userInterests.hands_on || 0;
+      const customerScore = userWorkstyle.social || userWorkstyle.customer || 0;
+      const artsCultureScoreRest = userInterests.arts_culture || 0;
+      const writingScoreRest = userInterests.writing || 0;
+
+      // EXCLUDE visual artists and writers from restaurant detection
+      const isArtsFocused = artsCultureScoreRest >= 0.5 || writingScoreRest >= 0.5;
+
+      // Restaurant signal: creative + people + hands_on combo BUT NOT arts/writing focused
+      // Lowered thresholds to catch TASO2 profiles correctly
+      const isRestaurantFocused = handsOnScore >= 0.5 && creativeScoreLocal >= 0.5 && peopleScore >= 0.5 && !isArtsFocused;
+      const isStrongRestaurantFocused = ((handsOnScore >= 0.6 && creativeScoreLocal >= 0.6 && peopleScore >= 0.5) ||
+                                         (creativeScoreLocal >= 0.6 && peopleScore >= 0.6 && handsOnScore >= 0.5)) && !isArtsFocused;
+      const isVeryStrongRestaurantFocused = handsOnScore >= 0.7 && creativeScoreLocal >= 0.7 && peopleScore >= 0.6 && !isArtsFocused;
+
+      if (titleLower.includes('kokki') || titleLower.includes('keittäjä') ||
+          titleLower.includes('leipuri') || titleLower.includes('kondiittori') ||
+          titleLower.includes('ravintola') || titleLower.includes('ruoka') ||
+          titleLower.includes('kahvila') || titleLower.includes('baari') ||
+          titleLower.includes('catering') || titleLower.includes('keittiö') ||
+          titleLower.includes('tarjoilija') || titleLower.includes('hovimest')) {
+        if (isRestaurantFocused) {
+          diversityBonus += 120; // Very strong boost for restaurant careers
+          if (isStrongRestaurantFocused) diversityBonus += 50;
+          if (isVeryStrongRestaurantFocused) diversityBonus += 30;
+        }
+        // Also boost for general hands-on + creative + people combo
+        if (handsOnScore >= 0.5 && creativeScoreLocal >= 0.5 && peopleScore >= 0.4) {
+          diversityBonus += 40;
+        }
+      }
+
+      // Penalize marketing/business careers for restaurant-focused people
+      // They want culinary, not office work
+      if (isStrongRestaurantFocused) {
+        if (titleLower.includes('markkinoin') || titleLower.includes('mainos') ||
+            titleLower.includes('myynti') || titleLower.includes('brändi') ||
+            titleLower.includes('kirjailija') || titleLower.includes('viestintä')) {
+          if (!titleLower.includes('ravintola') && !titleLower.includes('ruoka')) {
+            diversityBonus -= 80; // Restaurant people want culinary, not marketing/writing
+          }
         }
       }
 
@@ -5743,6 +6225,76 @@ function selectDiverseCareers(
       const analyticalScore = userInterests.analytical || 0;
       const creativeScore = userInterests.creative || 0;
       const precisionScore = userWorkstyle.precision || 0;
+      const techScore = userInterests.technology || 0;
+      const peopleScoreInnovoija = userInterests.people || 0;
+
+      // IT SUPPORT CAREERS - for tech + service/people combo WITHOUT high analytical/creative
+      // IT support is different from development - it's more service-oriented
+      const isITSupportProfile = techScore >= 0.5 && peopleScoreInnovoija >= 0.3 &&
+                                  analyticalScore < 0.6 && creativeScore < 0.6;
+      const isStrongITSupportProfile = techScore >= 0.6 && analyticalScore < 0.5;
+
+      if (titleLower.includes('tukihenk') || titleLower.includes('it-tuki') ||
+          titleLower.includes('helpdesk') || titleLower.includes('service desk') ||
+          titleLower.includes('käyttäjätuki')) {
+        if (isITSupportProfile) {
+          diversityBonus += 100; // Strong boost for IT support careers
+          if (isStrongITSupportProfile) diversityBonus += 40;
+        }
+        // Also boost if tech is high even without other signals
+        if (techScore >= 0.6) {
+          diversityBonus += 30;
+        }
+      }
+
+      // SYSTEM ADMIN / JÄRJESTELMÄ careers - similar to IT support
+      if (titleLower.includes('järjestelmä') || titleLower.includes('ylläpit') ||
+          titleLower.includes('admin') || titleLower.includes('teknikko')) {
+        if (isITSupportProfile || techScore >= 0.6) {
+          diversityBonus += 60;
+          if (isStrongITSupportProfile) diversityBonus += 25;
+        }
+      }
+
+      // PENALIZE pure dev careers for IT support profiles
+      // IT support people want service-oriented roles, not coding
+      if (isStrongITSupportProfile) {
+        if (titleLower.includes('kehittäjä') || titleLower.includes('developer') ||
+            titleLower.includes('koodaaja') || titleLower.includes('ohjelmoija')) {
+          if (!titleLower.includes('järjestelmä') && !titleLower.includes('tuki')) {
+            diversityBonus -= 70; // IT support people want support, not development
+          }
+        }
+      }
+
+      // WEB/SOFTWARE DEVELOPMENT CAREERS - for tech + analytical combo
+      // Career changers and people with strong tech interest want developer roles
+      const isDeveloperProfile = techScore >= 0.6 && analyticalScore >= 0.5;
+      const isStrongDeveloperProfile = techScore >= 0.7 && analyticalScore >= 0.6;
+
+      if (titleLower.includes('kehittäjä') || titleLower.includes('developer') ||
+          titleLower.includes('ohjelmoija') || titleLower.includes('koodaaja') ||
+          titleLower.includes('ohjelmisto') || titleLower.includes('web') ||
+          titleLower.includes('frontend') || titleLower.includes('backend') ||
+          titleLower.includes('fullstack') || titleLower.includes('full-stack')) {
+        if (isDeveloperProfile) {
+          diversityBonus += 90; // Strong boost for developer careers
+          if (isStrongDeveloperProfile) diversityBonus += 35;
+        }
+        // Also boost for high tech interest alone
+        if (techScore >= 0.6) {
+          diversityBonus += 30;
+        }
+      }
+
+      // MOBILE/APP DEVELOPMENT
+      if (titleLower.includes('mobiili') || titleLower.includes('mobile') ||
+          titleLower.includes('sovellus') || titleLower.includes('app ')) {
+        if (isDeveloperProfile) {
+          diversityBonus += 80;
+          if (isStrongDeveloperProfile) diversityBonus += 25;
+        }
+      }
 
       // DATA/ANALYTICS CAREERS
       if (titleLower.includes('data') || titleLower.includes('analyy') ||
@@ -5781,12 +6333,65 @@ function selectDiverseCareers(
       const writingScore = userInterests.writing || 0;
       const artsCultureScore = userInterests.arts_culture || 0;
       const performanceScore = userWorkstyle.performance || userWorkstyle.social || 0;
+      const sportsScore = userInterests.sports || 0;
 
-      // WRITING CAREERS
-      if (titleLower.includes('kirj') || titleLower.includes('toimit') ||
-          titleLower.includes('käsikirj') || titleLower.includes('copywriter')) {
-        if (writingScore >= 0.5) {
-          diversityBonus += 22;
+      // MARKETING/ADVERTISING CAREERS - for creative + business combo
+      // If someone has high creative + high business/sales, they want marketing careers
+      const isMarketingFocused = creativeScore >= 0.6 && businessScore >= 0.5;
+      const isStrongMarketingFocused = creativeScore >= 0.7 && businessScore >= 0.6;
+
+      if (isMarketingFocused) {
+        if (titleLower.includes('markkinoin') || titleLower.includes('mainost') ||
+            titleLower.includes('brändi') || titleLower.includes('brand') ||
+            titleLower.includes('viestintä') || titleLower.includes('kampanja')) {
+          diversityBonus += 100; // Very strong boost for marketing careers
+          if (isStrongMarketingFocused) diversityBonus += 40;
+          if (leadershipScore >= 0.5) diversityBonus += 25; // Marketing manager bonus
+        }
+        // Penalize pure writing careers for marketing-focused people
+        // They want marketing, not novels or journalism
+        if (titleLower.includes('kirjailija') || titleLower.includes('romaani') ||
+            titleLower.includes('käsikirj')) {
+          if (!titleLower.includes('mainost') && !titleLower.includes('copywriter')) {
+            diversityBonus -= 60; // Marketing people want marketing, not fiction writing
+          }
+        }
+      }
+
+      // WRITING CAREERS - strong boost for pure writers (NOT marketing people)
+      // Writers with high writing but LOW business should get writing careers
+      const isWritingFocused = (writingScore >= 0.5 || (creativeScore >= 0.6 && writingScore >= 0.4)) &&
+                                businessScore < 0.5; // Exclude marketing people
+      if (isWritingFocused) {
+        if (titleLower.includes('kirj') || titleLower.includes('toimit') ||
+            titleLower.includes('käsikirj') || titleLower.includes('copywriter') ||
+            titleLower.includes('viestintä') || titleLower.includes('sisältö')) {
+          diversityBonus += 70; // Strong boost for writing careers
+          if (writingScore >= 0.6) diversityBonus += 25;
+          if (creativeScore >= 0.7) diversityBonus += 15;
+        }
+        // ALSO boost journalism/media
+        if (titleLower.includes('mainost') || titleLower.includes('media') ||
+            titleLower.includes('julkais') || titleLower.includes('viestinnän')) {
+          diversityBonus += 55;
+        }
+      }
+
+      // PENALIZE non-writing creative careers for writing-focused users
+      // If someone has high writing but gets beauty/art careers, penalize them
+      if (writingScore >= 0.5 && creativeScore >= 0.5) {
+        // Writers should NOT get beauty careers
+        if (titleLower.includes('meikki') || titleLower.includes('kampaaja') ||
+            titleLower.includes('kosmetologi') || titleLower.includes('kynsi') ||
+            titleLower.includes('kauneus')) {
+          diversityBonus -= 60; // Writers want writing, not beauty
+        }
+        // Writers should NOT get pure visual arts (unless arts_culture is also high)
+        if (artsCultureScore < 0.5) {
+          if (titleLower.includes('taiteilija') || titleLower.includes('kuvatait') ||
+              titleLower.includes('koreografi') || titleLower.includes('tanssija')) {
+            diversityBonus -= 40;
+          }
         }
       }
 
@@ -5806,11 +6411,82 @@ function selectDiverseCareers(
         }
       }
 
-      // VISUAL ARTS
+      // VISUAL ARTS - strong boost for visually-oriented creative people
+      // Artists with high arts_culture + creative but LOW writing should get visual arts careers
+      const isVisualArtsFocused = artsCultureScore >= 0.5 && creativeScore >= 0.6 &&
+                                   writingScore < 0.5; // Not writers
+      const isStrongVisualArts = artsCultureScore >= 0.6 && creativeScore >= 0.7;
+
       if (titleLower.includes('graafinen') || titleLower.includes('kuvittaja') ||
-          titleLower.includes('valokuvaaja') || titleLower.includes('taiteilija')) {
-        if (artsCultureScore >= 0.5 && (userInterests.creative || 0) >= 0.6) {
-          diversityBonus += 15;
+          titleLower.includes('valokuvaaja') || titleLower.includes('taiteilija') ||
+          titleLower.includes('muotoilija') || titleLower.includes('suunnittelija')) {
+        if (isVisualArtsFocused || isStrongVisualArts) {
+          diversityBonus += 80; // Strong boost for visual arts careers
+          if (isStrongVisualArts) diversityBonus += 30;
+        } else if (artsCultureScore >= 0.5 && creativeScore >= 0.5) {
+          diversityBonus += 35; // Moderate boost
+        }
+      }
+
+      // Penalize writing careers for visual arts focused people
+      if (isVisualArtsFocused) {
+        if (titleLower.includes('kirjailija') || titleLower.includes('toimittaja') ||
+            titleLower.includes('käsikirj') || titleLower.includes('sisältö')) {
+          if (!titleLower.includes('graafinen') && !titleLower.includes('visuaal')) {
+            diversityBonus -= 50; // Visual artists want visual careers, not writing
+          }
+        }
+      }
+
+      // BEAUTY/HAIRDRESSING CAREERS - specific handling for beauty-oriented creative users
+      // For TASO2, high creative + social + people signals specifically for beauty
+      const socialScore = userWorkstyle.social || 0;
+
+      // STRONG beauty signal: high creative from Q5 (beauty question) combined with social/people
+      // When someone answers Q5=5 (beauty work), the creative/people/social all come from that single question
+      // This creates a unique "cluster" pattern: high creative + high social + high people + moderate hands_on
+      const isStrongBeautySignal = creativeScore >= 0.75 && socialScore >= 0.75 && peopleScoreGlobal >= 0.4;
+      const isBeautyOriented = isStrongBeautySignal ||
+                               (creativeScore >= 0.6 && socialScore >= 0.5 && peopleScoreGlobal >= 0.4);
+
+      if (isBeautyOriented) {
+        // MASSIVE bonus for beauty careers when beauty signal is detected
+        if (titleLower.includes('kampaaja') || titleLower.includes('parturi') ||
+            titleLower.includes('kauneus') || titleLower.includes('kosmetologi') ||
+            titleLower.includes('meikki') || titleLower.includes('kynsi')) {
+          if (isStrongBeautySignal) {
+            diversityBonus += 120; // Very strong boost for strong beauty signal
+          } else {
+            diversityBonus += 80; // Good boost for regular beauty signal
+          }
+          if (businessScore >= 0.4) diversityBonus += 15; // Beauty entrepreneur bonus
+        }
+
+        // PENALIZE generic creative/brand careers for people with beauty signal
+        // These people want BEAUTY work, not marketing/brand work
+        if (isStrongBeautySignal) {
+          if (titleLower.includes('brändi') || titleLower.includes('markkinoin') ||
+              titleLower.includes('mainos')) {
+            diversityBonus -= 80; // Strong penalty - don't show brand careers to beauty people
+          }
+          if (titleLower.includes('muusikko') || titleLower.includes('kameramies') ||
+              titleLower.includes('teatteriohjaaja') || titleLower.includes('tuotemuotoilija') ||
+              titleLower.includes('koreografi') || titleLower.includes('animaattori') ||
+              titleLower.includes('kirjailija')) {
+            diversityBonus -= 50; // Penalty for unrelated creative
+          }
+        }
+      }
+
+      // MARKETING/ADVERTISING CAREERS - need creative + business combo
+      // But NOT for beauty-oriented people
+      const isMarketingOriented = creativeScore >= 0.5 && businessScore >= 0.4 && !isStrongBeautySignal;
+      if (isMarketingOriented) {
+        if (titleLower.includes('markkinoin') || titleLower.includes('mainos') ||
+            titleLower.includes('brändi') || titleLower.includes('pr-') ||
+            titleLower.includes('viestintä')) {
+          diversityBonus += 30;
+          if (businessScore >= 0.6) diversityBonus += 10;
         }
       }
     }
@@ -5820,6 +6496,26 @@ function selectDiverseCareers(
       const outdoorScore = userInterests.outdoor || userWorkstyle.outdoor || 0;
       const precisionScore = userWorkstyle.precision || 0;
       const technologyScore = userInterests.technology || 0;
+      const handsOnScore = userInterests.hands_on || 0;
+
+      // CONSTRUCTION/HANDS-ON FOCUSED - strong boost for people with high hands_on interest
+      const isConstructionFocused = handsOnScore >= 0.6 || (handsOnScore >= 0.4 && leadershipScore >= 0.4);
+      if (isConstructionFocused) {
+        // CONSTRUCTION CAREERS - strong boost
+        if (titleLower.includes('rakenn') || titleLower.includes('mestari') ||
+            titleLower.includes('työnjohtaja') || titleLower.includes('kirvesmies') ||
+            titleLower.includes('muurari') || titleLower.includes('maalari')) {
+          diversityBonus += 80;
+          if (handsOnScore >= 0.7) diversityBonus += 25;
+          if (leadershipScore >= 0.5) diversityBonus += 20; // Construction management
+        }
+        // ELECTRICAL/PLUMBING TRADES
+        if (titleLower.includes('sähkö') || titleLower.includes('putki') ||
+            titleLower.includes('lvi') || titleLower.includes('asentaja')) {
+          diversityBonus += 70;
+          if (handsOnScore >= 0.7) diversityBonus += 20;
+        }
+      }
 
       // OUTDOOR CONSTRUCTION
       if (titleLower.includes('maisema') || titleLower.includes('viherrakent') ||
@@ -5837,6 +6533,35 @@ function selectDiverseCareers(
         }
       }
 
+      // AUTOMOTIVE CAREERS - specific boost for auto/mechanical interest
+      // Automekaanikko and related careers for people with hands_on + tech focus
+      const isAutomotiveFocused = handsOnScore >= 0.5 && technologyScore >= 0.3;
+      const isStrongAutomotiveFocused = handsOnScore >= 0.6 && technologyScore >= 0.4;
+
+      if (titleLower.includes('auto') || titleLower.includes('mekaanikko') ||
+          titleLower.includes('korjaamo') || titleLower.includes('huolto') ||
+          titleLower.includes('ajoneuvo') || titleLower.includes('moottori')) {
+        if (isAutomotiveFocused) {
+          diversityBonus += 80; // Strong boost for automotive careers
+          if (isStrongAutomotiveFocused) diversityBonus += 30;
+        }
+        // Also boost for general hands_on interest
+        if (handsOnScore >= 0.5) {
+          diversityBonus += 25;
+        }
+      }
+
+      // Penalize construction-only careers for automotive-focused people
+      // They want automotive, not general construction
+      if (isStrongAutomotiveFocused && technologyScore > outdoorScore) {
+        if (titleLower.includes('muurari') || titleLower.includes('kirvesmies') ||
+            titleLower.includes('katto') || titleLower.includes('maalari')) {
+          if (!titleLower.includes('auto') && !titleLower.includes('kone')) {
+            diversityBonus -= 40; // Automotive people want automotive, not painting/masonry
+          }
+        }
+      }
+
       // TECHNICAL TRADES
       if (titleLower.includes('sähkö') || titleLower.includes('automaatio') ||
           titleLower.includes('elektroniikka')) {
@@ -5844,34 +6569,235 @@ function selectDiverseCareers(
           diversityBonus += 12;
         }
       }
+
+      // PENALIZE construction/electrical careers for RESTAURANT-focused people
+      // Restaurant people have high creative + people + hands_on, but they want culinary, not construction
+      // IMPORTANT: Do NOT penalize for arts-focused people (they get visual arts careers via LUOVA)
+      const creativeScoreRak = userInterests.creative || 0;
+      const peopleScoreRak = userInterests.people || 0;
+      const artsCultureRak = userInterests.arts_culture || 0;
+      const writingRak = userInterests.writing || 0;
+      const isArtsFocusedRak = artsCultureRak >= 0.5 || writingRak >= 0.5;
+
+      // Restaurant signal: HIGH creative + HIGH people + hands_on combo BUT NOT arts-focused
+      // KEY: Restaurant people have BOTH high creative AND high people (hospitality = serving others creatively)
+      // Lowered thresholds since TASO2 scores are often normalized differently
+      const isRestaurantSignal = handsOnScore >= 0.5 && creativeScoreRak >= 0.5 && peopleScoreRak >= 0.5 && !isArtsFocusedRak;
+      const isStrongRestaurantSignal = handsOnScore >= 0.6 && creativeScoreRak >= 0.6 && peopleScoreRak >= 0.6 && !isArtsFocusedRak;
+      const isVeryStrongRestaurantSignal = handsOnScore >= 0.7 && creativeScoreRak >= 0.7 && peopleScoreRak >= 0.7 && !isArtsFocusedRak;
+
+      if (isRestaurantSignal) {
+        // Restaurant people should NOT get electrical/construction careers
+        if (titleLower.includes('sähkö') || titleLower.includes('asentaja') ||
+            titleLower.includes('rakennus') || titleLower.includes('muurari') ||
+            titleLower.includes('kirvesmies') || titleLower.includes('putki') ||
+            titleLower.includes('mestari')) {
+          if (!titleLower.includes('ravintola') && !titleLower.includes('keittiö')) {
+            diversityBonus -= 120; // Strong penalty - restaurant people want culinary, not construction
+            if (isStrongRestaurantSignal) diversityBonus -= 60;
+            if (isVeryStrongRestaurantSignal) diversityBonus -= 40;
+          }
+        }
+      }
     }
 
     // ========== YMPARISTON-PUOLUSTAJA DIFFERENTIATION ==========
     if (career.category === 'ympariston-puolustaja') {
       const natureScore = userInterests.nature || 0;
+      const environmentScore = userInterests.environment || 0;
       const analyticalScore = userInterests.analytical || 0;
       const outdoorScore = userInterests.outdoor || userWorkstyle.outdoor || 0;
 
-      // RESEARCH ROLES
-      if (titleLower.includes('biologi') || titleLower.includes('tutkija') ||
-          titleLower.includes('tiedemies')) {
-        if (analyticalScore >= 0.5) {
+      // Combine nature and environment scores for better detection
+      const combinedNatureScore = Math.max(natureScore, environmentScore);
+
+      // VERY STRICT: Only boost for people with VERY HIGH nature/environment interest
+      // They need to have answered 5/5 on nature question (combinedNatureScore >= 0.8)
+      // OR have high nature AND it's their dominant interest (higher than health/tech/creative)
+      const isVeryHighNature = combinedNatureScore >= 0.8;
+      const isNatureEnthusiast = isVeryHighNature ||
+                                  (combinedNatureScore >= 0.7 && analyticalScore >= 0.6) ||
+                                  (combinedNatureScore >= 0.6 && analyticalScore >= 0.7);
+
+      if (isNatureEnthusiast) {
+        // BIOLOGY/RESEARCH ROLES - strong boost
+        if (titleLower.includes('biologi') || titleLower.includes('tutkija') ||
+            titleLower.includes('tiedemies') || titleLower.includes('ympäristö') ||
+            titleLower.includes('luonto') || titleLower.includes('ekologi')) {
+          diversityBonus += 80;
+          if (analyticalScore >= 0.7) diversityBonus += 25;
+          if (isVeryHighNature) diversityBonus += 30;
+        }
+
+        // ANIMAL CAREERS
+        if (titleLower.includes('eläin') || titleLower.includes('veterinär') ||
+            titleLower.includes('lemmikki') || titleLower.includes('eläinlääkäri')) {
+          diversityBonus += 70;
+          if (isVeryHighNature) diversityBonus += 25;
+        }
+
+        // OUTDOOR/PRACTICAL NATURE ROLES
+        if (titleLower.includes('metsänhoitaja') || titleLower.includes('puutarhuri') ||
+            titleLower.includes('luonnonsuojel') || titleLower.includes('metsä')) {
+          diversityBonus += 65;
+          if (outdoorScore >= 0.5) diversityBonus += 20;
+        }
+      } else if (combinedNatureScore >= 0.5) {
+        // Moderate boost for moderate nature interest
+        if (titleLower.includes('biologi') || titleLower.includes('ympäristö') ||
+            titleLower.includes('luonto') || titleLower.includes('eläin')) {
+          diversityBonus += 25;
+        }
+      }
+
+      // PENALIZE environment careers when leadership is the dominant signal
+      // If someone has high leadership + business + low nature, they want johtaja careers
+      const leadershipDominant = leadershipScore >= 0.6 && businessScore >= 0.5 &&
+                                  combinedNatureScore < leadershipScore;
+      if (leadershipDominant) {
+        // Reduce environment career scores for leadership-focused people
+        diversityBonus -= 80;
+      }
+    }
+
+    // ========== JOHTAJA DIFFERENTIATION ==========
+    if (career.category === 'johtaja') {
+      const organizationScore = userWorkstyle.organization || 0;
+      const planningScore = userWorkstyle.planning || 0;
+      const entrepreneurshipScore = userValues.entrepreneurship || 0;
+      const financialScore = userValues.financial || 0;
+
+      // STRONG LEADERSHIP SIGNAL - boost ALL johtaja careers
+      // Leadership is a PRIMARY career signal for managers/executives
+      const hasStrongLeadershipSignal = leadershipScore >= 0.6 && businessScore >= 0.4;
+      const hasVeryStrongLeadershipSignal = leadershipScore >= 0.7 && businessScore >= 0.5;
+
+      if (hasStrongLeadershipSignal) {
+        // All johtaja careers get base boost for leadership people
+        diversityBonus += 70;
+        if (hasVeryStrongLeadershipSignal) diversityBonus += 30;
+      }
+
+      // EXECUTIVE/CEO ROLES - for strong leadership + business combo
+      if (titleLower.includes('toimitusjohtaja') || titleLower.includes('ceo') ||
+          titleLower.includes('pääjohtaja') || titleLower.includes('johtaja')) {
+        if (leadershipScore >= 0.7 && businessScore >= 0.5) {
+          diversityBonus += 35;
+        }
+      }
+
+      // PROJECT MANAGEMENT - for organized planners
+      if (titleLower.includes('projektipäällikkö') || titleLower.includes('projektijohtaja') ||
+          titleLower.includes('project manager') || titleLower.includes('projekti')) {
+        if (organizationScore >= 0.5 || planningScore >= 0.5 || leadershipScore >= 0.6) {
+          diversityBonus += 40;
+        }
+      }
+
+      // ENTREPRENEURSHIP ROLES
+      if (titleLower.includes('yrittäjä') || titleLower.includes('startup') ||
+          titleLower.includes('perustaja') || titleLower.includes('omistaja')) {
+        if (entrepreneurshipScore >= 0.5) {
+          diversityBonus += 30;
+        }
+      }
+
+      // FINANCE LEADERSHIP
+      if (titleLower.includes('talous') || titleLower.includes('rahoitus') ||
+          titleLower.includes('cfo') || titleLower.includes('controller')) {
+        if (financialScore >= 0.5 && leadershipScore >= 0.5) {
+          diversityBonus += 30;
+        }
+      }
+
+      // HR/PEOPLE LEADERSHIP - for people-focused leaders
+      if (hasPeopleLeadershipCombo) {
+        if (titleLower.includes('henkilöstöjohtaja') || titleLower.includes('hr-johtaja') ||
+            titleLower.includes('chro') || titleLower.includes('henkilöstöpäällikkö') ||
+            titleLower.includes('henkilöstö') || titleLower.includes('hr')) {
+          diversityBonus += 50; // Strong boost for people-focused leadership
+        }
+      }
+
+      // HEALTHCARE MANAGEMENT - for health + leadership combo where health is PRIMARY
+      // Only boost healthcare management when health is the dominant interest
+      // This prevents general leaders from getting osastonhoitaja
+      const hasHealthcareLeadershipCombo = healthScore >= 0.6 && leadershipScore >= 0.5 &&
+                                            healthScore > businessScore; // Health must be primary
+      const hasStrongHealthcareLeadership = healthScore >= 0.7 && leadershipScore >= 0.6;
+
+      if (hasHealthcareLeadershipCombo) {
+        if (titleLower.includes('osastonhoitaja') || titleLower.includes('ylihoitaja') ||
+            titleLower.includes('hoitotyön johtaja') || titleLower.includes('terveysjohtaja') ||
+            titleLower.includes('terveyspäällikkö') || titleLower.includes('hoitotyön päällikkö')) {
+          diversityBonus += 120; // Very strong boost for healthcare management
+          if (hasStrongHealthcareLeadership) diversityBonus += 40;
+        }
+        // Also boost generic johtaja roles if they're healthcare-related
+        if (titleLower.includes('sairaala') || titleLower.includes('tervey') ||
+            titleLower.includes('hoito') || titleLower.includes('lääke')) {
+          diversityBonus += 60;
+          if (hasStrongHealthcareLeadership) diversityBonus += 20;
+        }
+        // Penalize non-healthcare management for healthcare-focused leaders
+        // They want healthcare management, not general business management
+        if (!titleLower.includes('tervey') && !titleLower.includes('hoito') &&
+            !titleLower.includes('sairaala') && !titleLower.includes('lääke') &&
+            !titleLower.includes('osastonhoitaja')) {
+          diversityBonus -= 40; // Healthcare leaders want healthcare careers
+        }
+      }
+
+      // PÄÄLLIKKÖ (manager) roles
+      if (titleLower.includes('päällikkö') || titleLower.includes('manager') ||
+          titleLower.includes('esimies') || titleLower.includes('teamlead')) {
+        if (leadershipScore >= 0.5) {
+          diversityBonus += 35;
+        }
+      }
+    }
+
+    // ========== JARJESTAJA DIFFERENTIATION ==========
+    if (career.category === 'jarjestaja') {
+      const organizationScore = userWorkstyle.organization || 0;
+      const structureScore = userWorkstyle.structure || 0;
+      const precisionScore = userWorkstyle.precision || 0;
+
+      // ADMINISTRATIVE ROLES
+      if (titleLower.includes('assistentti') || titleLower.includes('sihteeri') ||
+          titleLower.includes('koordinaattori') || titleLower.includes('hallinto')) {
+        if (organizationScore >= 0.6) {
+          diversityBonus += 18;
+        }
+      }
+
+      // LOGISTICS/OPERATIONS
+      if (titleLower.includes('logistiikka') || titleLower.includes('varasto') ||
+          titleLower.includes('hankinta') || titleLower.includes('toimitusketju')) {
+        if (organizationScore >= 0.5 && structureScore >= 0.5) {
           diversityBonus += 15;
         }
       }
 
-      // PRACTICAL OUTDOOR ROLES
-      if (titleLower.includes('metsänhoitaja') || titleLower.includes('puutarhuri') ||
-          titleLower.includes('luonnonsuojel')) {
-        if (outdoorScore >= 0.6 && natureScore >= 0.6) {
+      // QUALITY/COMPLIANCE
+      if (titleLower.includes('laatu') || titleLower.includes('auditoija') ||
+          titleLower.includes('tarkastaja') || titleLower.includes('compliance')) {
+        if (precisionScore >= 0.6) {
           diversityBonus += 18;
+        }
+      }
+
+      // LEADERSHIP IN ORGANIZED ROLES
+      if (hasLeadershipCombo) {
+        if (titleLower.includes('päällikkö') || titleLower.includes('johtaja')) {
+          diversityBonus += 20;
         }
       }
     }
 
     return {
       ...career,
-      overallScore: Math.min(100, career.overallScore + diversityBonus),
+      overallScore: career.overallScore + diversityBonus, // Don't cap at 100 so bonuses can differentiate
       _originalScore: career.overallScore,
       _diversityBonus: diversityBonus
     };
@@ -5902,6 +6828,12 @@ function selectDiverseCareers(
  */
 function getCareerType(title: string, category: string): string {
   const titleLower = title.toLowerCase();
+
+  // LEADERSHIP types - check first to prioritize leadership diversity
+  if (titleLower.includes('johtaja') || titleLower.includes('päällikkö') ||
+      titleLower.includes('esimies') || titleLower.includes('rehtori')) return 'leadership';
+  if (titleLower.includes('projektipäällikkö') || titleLower.includes('tiimin')) return 'project-management';
+  if (titleLower.includes('henkilöstö') || titleLower.includes('hr')) return 'hr-management';
 
   // Healthcare types
   if (titleLower.includes('sairaan') || titleLower.includes('hoita')) return 'healthcare-nursing';
