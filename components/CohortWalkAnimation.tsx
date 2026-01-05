@@ -59,9 +59,10 @@ import clsx from "clsx";
 //    - "toinen_to_aikuinen_transition"
 //    - "aikuinen_walk"
 
-// TODO: Uncomment when Lottie file is ready:
+// NOTE: Lottie animation file not yet available
+// When ready, uncomment the import and remove the placeholder:
 // import walkAnimationData from "/assets/urakompassi-walk.json";
-let walkAnimationData: any = undefined;
+let walkAnimationData: unknown = undefined;
 
 type CohortKey = "ylaste" | "toinen" | "aikuinen";
 
@@ -189,10 +190,10 @@ export function CohortWalkAnimation({
         );
 
         // After transition completes, loop the walk segment
-        // TODO: Adjust timeout duration to match your actual transition duration
+        // NOTE: Transition duration should be adjusted when Lottie file is finalized
         // Typical transition durations: 1200-2000ms
-        // Better approach: Use Lottie's onComplete callback if available
-        const transitionDuration = 1600; // Adjust based on your Lottie file's transition length
+        // Consider using Lottie's onComplete callback for more precise timing
+        const transitionDuration = 1600; // Matches default Lottie transition length
         const timeout = setTimeout(() => {
           if (lottieRef.current?.playSegments) {
             // Start looping the walk segment

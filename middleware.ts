@@ -1,33 +1,100 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import crypto from 'crypto';
 import { sitePasswordIsConfigured } from '@/lib/siteAuth';
 import { isBotUserAgent, isSuspiciousRequest, shouldChallenge } from '@/lib/antiScraping';
 import { trackRequest, analyzeRequestPatterns, getIP } from '@/lib/botDetection';
 
+// Edge-compatible random bytes generator using Web Crypto API
+function generateRandomHex(bytes: number): string {
+  const randomBytes = new Uint8Array(bytes);
+  crypto.getRandomValues(randomBytes);
+  return Array.from(randomBytes)
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
 /**
- * Teacher Dashboard Protection Middleware
- * Protects all /teacher/* routes except /teacher/login
- * Uses cookie-based authentication with teacher access code
+ * Security Middleware for Urakompassi
+ * - Teacher Dashboard Protection
+ * - Anti-Scraping
+ * - Security Headers (HSTS, CSP, etc.)
+ * - CSRF Token Generation
+ * - Session Validation
  */
+
+// Validate session token format (timestamp.random)
+function isValidSessionToken(token: string): boolean {
+  if (!token || typeof token !== 'string') {
+    return false;
+  }
+
+  // Check for the new secure token format (timestamp.random)
+  const parts = token.split('.');
+  if (parts.length === 2) {
+    const [timestampHex, random] = parts;
+
+    // Validate random part length (48 hex chars = 24 bytes)
+    if (!random || random.length !== 48) {
+      return false;
+    }
+
+    // Validate timestamp
+    try {
+      const timestamp = parseInt(timestampHex, 16);
+      if (isNaN(timestamp)) {
+        return false;
+      }
+
+      const now = Date.now();
+      const maxAge = 24 * 60 * 60 * 1000; // 24 hours
+
+      // Check if token is expired
+      if (now - timestamp > maxAge) {
+        return false;
+      }
+
+      // Check if token is from the future (clock skew tolerance: 5 minutes)
+      if (timestamp > now + 5 * 60 * 1000) {
+        return false;
+      }
+
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  // For backwards compatibility, also accept 'authenticated' (to be removed later)
+  // This allows existing sessions to continue working during transition
+  if (token === 'authenticated') {
+    return true;
+  }
+
+  return false;
+}
+
+// Generate CSRF token
+function generateCsrfToken(): string {
+  return generateRandomHex(32);
+}
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  
+
   // ANTI-SCRAPING PROTECTION LAYER 1: Bot Detection
   // Skip bot detection for localhost (development) and static assets
   const localHosts = new Set(['localhost', '127.0.0.1', '0.0.0.0', '::1']);
   const hostname = request.nextUrl.hostname || '';
   const isLocalhost = localHosts.has(hostname) || hostname.includes('localhost') || hostname.includes('127.0.0.1');
-  
-  const skipBotCheck = 
+
+  const skipBotCheck =
     isLocalhost || // Skip all bot detection on localhost
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api/teacher-auth') ||
     pathname.startsWith('/api/site-auth') ||
     pathname.startsWith('/favicon') ||
     pathname.match(/\.(ico|png|jpg|jpeg|gif|svg|css|js|woff|woff2|ttf|eot)$/);
-  
+
   if (!skipBotCheck) {
     const userAgent = request.headers.get('user-agent');
 
@@ -71,18 +138,34 @@ export async function middleware(request: NextRequest) {
       }
 
       if (analysis.action === 'challenge') {
-        // Redirect to challenge page (we'll create this)
+        // Redirect to challenge page
         const challengeUrl = new URL('/challenge', request.url);
         challengeUrl.searchParams.set('returnTo', pathname);
-        challengeUrl.searchParams.set('token', crypto.randomBytes(16).toString('hex'));
+        challengeUrl.searchParams.set('token', generateRandomHex(16));
         return NextResponse.redirect(challengeUrl);
       }
     }
   }
 
-  // Block analytics API for GDPR compliance - admin should only generate teacher codes
-  if (pathname.startsWith('/api/admin/school-analytics')) {
-    return new NextResponse('Not Found', { status: 404 });
+  // Block debug/test endpoints in production
+  if (!isLocalhost) {
+    const debugEndpoints = [
+      '/api/test-env',
+      '/api/debug-password',
+      '/api/debug-results',
+      '/api/test-classes',
+      '/api/test-system-complete',
+      '/api/test-education-path',
+      '/api/test-parent-report',
+      '/api/test-category-focus',
+      '/api/test-category-weighting',
+      '/api/simple-class-test',
+      '/api/admin/school-analytics'
+    ];
+
+    if (debugEndpoints.some(endpoint => pathname.startsWith(endpoint))) {
+      return new NextResponse('Not Found', { status: 404 });
+    }
   }
 
   // Admin pages: completely hidden in production, accessible only on localhost
@@ -105,8 +188,8 @@ export async function middleware(request: NextRequest) {
     // Check for teacher authentication cookie
     const teacherToken = request.cookies.get('teacher_auth_token');
 
-    // If no token, redirect to login
-    if (!teacherToken || teacherToken.value !== 'authenticated') {
+    // Validate the session token
+    if (!teacherToken || !isValidSessionToken(teacherToken.value)) {
       const loginUrl = new URL('/teacher/login', request.url);
       // Add return URL so we can redirect back after login
       loginUrl.searchParams.set('returnTo', pathname);
@@ -118,21 +201,15 @@ export async function middleware(request: NextRequest) {
   }
 
   // Hide /kouluille page from public in production
-  // Allow admin access in localhost
   const isProduction = request.nextUrl.hostname.includes('urakompassi.fi') || request.nextUrl.hostname.includes('vercel.app');
 
   if (pathname === '/kouluille') {
     if (isProduction) {
-      // In production: hide the page completely (404)
       return new NextResponse('Not Found', { status: 404 });
     }
-    // In localhost: allow access without authentication
-    // (No Basic Auth requirement for development)
   }
 
   // Protected routes password protection (via /site-auth page)
-  // Protects ALL routes in production (full auth wall)
-  // Localhost is always allowed (development bypass)
   const sitePasswordEnabled = !isLocalhost && sitePasswordIsConfigured();
 
   if (sitePasswordEnabled) {
@@ -142,14 +219,13 @@ export async function middleware(request: NextRequest) {
     }
 
     // Protect ALL routes - full site lockdown
-    // Only exceptions: /site-auth page itself and API routes
     const isProtectedRoute = !pathname.startsWith('/api/');
 
     if (isProtectedRoute) {
       // Check for site authentication cookie
       const siteAuth = request.cookies.get('site_auth');
 
-      if (!siteAuth || siteAuth.value !== 'authenticated') {
+      if (!siteAuth || !isValidSessionToken(siteAuth.value)) {
         // Redirect to site auth page
         const authUrl = new URL('/site-auth', request.url);
         authUrl.searchParams.set('returnTo', pathname);
@@ -158,38 +234,96 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  // ANTI-SCRAPING PROTECTION LAYER 2: Add Security Headers
+  // Create response with security headers
   const response = NextResponse.next();
-  
-  // Security headers to prevent scraping and attacks
+
+  // ============================================================================
+  // SECURITY HEADERS
+  // ============================================================================
+
+  // Prevent MIME type sniffing
   response.headers.set('X-Content-Type-Options', 'nosniff');
+
+  // Prevent clickjacking
   response.headers.set('X-Frame-Options', 'DENY');
+
+  // XSS Protection (legacy, but still useful)
   response.headers.set('X-XSS-Protection', '1; mode=block');
+
+  // Referrer Policy
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-  response.headers.set('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
-  
-  // Content Security Policy - relaxed for localhost development
+
+  // Permissions Policy
+  response.headers.set('Permissions-Policy', 'geolocation=(), microphone=(), camera=(), payment=()');
+
+  // HSTS - Strict Transport Security (production only)
+  if (!isLocalhost) {
+    response.headers.set(
+      'Strict-Transport-Security',
+      'max-age=31536000; includeSubDomains; preload'
+    );
+  }
+
+  // Cross-Origin policies
+  response.headers.set('Cross-Origin-Opener-Policy', 'same-origin');
+  response.headers.set('Cross-Origin-Resource-Policy', 'same-origin');
+
+  // Content Security Policy
   if (isLocalhost) {
     // More permissive CSP for localhost to allow Next.js dev mode features
     response.headers.set(
       'Content-Security-Policy',
-      "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; style-src 'self' 'unsafe-inline' data:; img-src 'self' data: blob: https:; font-src 'self' data: blob:; connect-src 'self' ws: wss: http: https:; frame-ancestors 'none';"
+      [
+        "default-src 'self'",
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+        "style-src 'self' 'unsafe-inline'",
+        "img-src 'self' data: blob: https:",
+        "font-src 'self' data:",
+        "connect-src 'self' ws: wss: http: https:",
+        "frame-ancestors 'none'",
+        "base-uri 'self'",
+        "form-action 'self'"
+      ].join('; ')
     );
   } else {
-    // Strict CSP for production
+    // Strict CSP for production - removed 'unsafe-eval'
     response.headers.set(
       'Content-Security-Policy',
-      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none';"
+      [
+        "default-src 'self'",
+        "script-src 'self' 'unsafe-inline'", // Removed 'unsafe-eval'
+        "style-src 'self' 'unsafe-inline'",
+        "img-src 'self' data: https:",
+        "font-src 'self' data:",
+        "connect-src 'self' https:",
+        "frame-ancestors 'none'",
+        "base-uri 'self'",
+        "form-action 'self'",
+        "upgrade-insecure-requests"
+      ].join('; ')
     );
   }
-  
+
   // Prevent caching of sensitive pages
   if (pathname.startsWith('/teacher') || pathname.startsWith('/admin') || pathname.startsWith('/api')) {
     response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
     response.headers.set('Pragma', 'no-cache');
     response.headers.set('Expires', '0');
   }
-  
+
+  // Set CSRF token cookie if not present
+  const csrfToken = request.cookies.get('csrf_token');
+  if (!csrfToken) {
+    const newToken = generateCsrfToken();
+    response.cookies.set('csrf_token', newToken, {
+      httpOnly: false, // Must be readable by JavaScript
+      secure: !isLocalhost,
+      sameSite: 'strict',
+      path: '/',
+      maxAge: 60 * 60 * 24, // 24 hours
+    });
+  }
+
   return response;
 }
 
@@ -209,4 +343,3 @@ export const config = {
     '/((?!api|_next/static|_next/image|favicon|og-image|logo|apple-touch-icon|.*\\.png$|.*\\.ico$|.*\\.svg$).*)',
   ],
 };
-

@@ -5,6 +5,10 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
+import { createLogger } from '@/lib/logger';
+import { validateSessionToken } from '@/lib/security';
+
+const log = createLogger('API/Schools');
 
 export const dynamic = 'force-dynamic';
 
@@ -15,10 +19,22 @@ export const dynamic = 'force-dynamic';
 export async function GET(request: NextRequest) {
   try {
     const teacherId = request.cookies.get('teacher_id')?.value;
+    const authToken = request.cookies.get('teacher_auth_token')?.value;
 
-    if (!teacherId) {
+    // Validate both teacher ID and auth token exist
+    if (!teacherId || !authToken) {
       return NextResponse.json(
         { success: false, error: 'Ei kirjautunut' },
+        { status: 401 }
+      );
+    }
+
+    // Validate the session token is valid and not expired
+    const isLegacyToken = authToken === 'authenticated';
+    const isValidToken = validateSessionToken(authToken, 24 * 60 * 60 * 1000);
+    if (!isLegacyToken && !isValidToken) {
+      return NextResponse.json(
+        { success: false, error: 'Istunto vanhentunut' },
         { status: 401 }
       );
     }
@@ -35,7 +51,7 @@ export async function GET(request: NextRequest) {
       .rpc('get_teacher_schools', { p_teacher_id: teacherId });
 
     if (error) {
-      console.error('[API/Schools] Error fetching schools:', error);
+      log.error('Error fetching schools:', error);
       return NextResponse.json(
         { success: false, error: 'Koulujen haku epäonnistui' },
         { status: 500 }
@@ -48,7 +64,7 @@ export async function GET(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[API/Schools] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
@@ -63,10 +79,22 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const teacherId = request.cookies.get('teacher_id')?.value;
+    const authToken = request.cookies.get('teacher_auth_token')?.value;
 
-    if (!teacherId) {
+    // Validate both teacher ID and auth token exist
+    if (!teacherId || !authToken) {
       return NextResponse.json(
         { success: false, error: 'Ei kirjautunut' },
+        { status: 401 }
+      );
+    }
+
+    // Validate the session token is valid and not expired
+    const isLegacyToken = authToken === 'authenticated';
+    const isValidToken = validateSessionToken(authToken, 24 * 60 * 60 * 1000);
+    if (!isLegacyToken && !isValidToken) {
+      return NextResponse.json(
+        { success: false, error: 'Istunto vanhentunut' },
         { status: 401 }
       );
     }
@@ -103,7 +131,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (schoolError || !school) {
-      console.error('[API/Schools] Error creating school:', schoolError);
+      log.error('Error creating school:', schoolError);
       return NextResponse.json(
         { success: false, error: 'Koulun luominen epäonnistui' },
         { status: 500 }
@@ -121,7 +149,7 @@ export async function POST(request: NextRequest) {
       } as any);
 
     if (memberError) {
-      console.error('[API/Schools] Error adding admin:', memberError);
+      log.error('Error adding admin:', memberError);
       // Rollback: delete school
       await supabaseAdmin.from('schools').delete().eq('id', schoolData.id)
       return NextResponse.json(
@@ -130,7 +158,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log(`[API/Schools] Created school: ${schoolData.id} by ${teacherId}`);
+    log.info(`Created school: ${schoolData.id} by teacher ${teacherId}`);
 
     return NextResponse.json({
       success: true,
@@ -138,7 +166,7 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[API/Schools] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }

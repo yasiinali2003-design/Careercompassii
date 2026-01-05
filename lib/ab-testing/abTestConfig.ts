@@ -130,8 +130,9 @@ export function logABTestEvent(
   }
 
   // In production, send to analytics service
+  // NOTE: Analytics integration placeholder - implement when analytics service is configured
+  // Supported services: Google Analytics 4, Mixpanel, Amplitude, PostHog
   if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
-    // TODO: Send to your analytics service (Google Analytics, Mixpanel, etc.)
     // Example: analytics.track('ab_test_event', event);
   }
 

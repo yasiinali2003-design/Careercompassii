@@ -11,6 +11,9 @@ import { calculateEducationPath } from '@/lib/scoring/educationPath';
 import { supabaseAdmin } from '@/lib/supabase';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { unshuffleAnswers } from '@/lib/questionShuffle';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('API/Score');
 
 // ========== REQUEST VALIDATION ==========
 
@@ -115,23 +118,22 @@ export async function POST(request: NextRequest) {
     
     if (isShuffledFormat && originalIndices && shuffleKey && originalIndices.length > 0) {
       // Legacy: if client sends shuffled positions, unshuffle them
-      console.log(`[API] Legacy unshuffle detected, unshuffling ${answers.length} answers`);
+      log.debug(`Legacy unshuffle detected, unshuffling ${answers.length} answers`);
       unshuffledAnswers = unshuffleAnswers(answers, originalIndices);
     } else {
       // Modern flow: answers already have correct questionIndex (originalQ)
-      console.log(`[API] Using answers directly (already mapped to originalQ): ${answers.length} answers`);
-      console.log(`[API] Sample answer indices:`, answers.slice(0, 5).map(a => a.questionIndex));
+      log.debug(`Using answers directly (already mapped to originalQ): ${answers.length} answers`);
       unshuffledAnswers = answers;
     }
 
     // Run scoring algorithm with unshuffled answers
     // IMPORTANT: Pass subCohort to use correct question mappings for TASO2 LUKIO/AMIS
-    console.log(`[API] Scoring ${unshuffledAnswers.length} answers for cohort ${cohort}${subCohort ? ` (${subCohort})` : ''}`, currentOccupation ? `(filtering out: ${currentOccupation})` : '');
+    log.debug(`Scoring ${unshuffledAnswers.length} answers for cohort ${cohort}${subCohort ? ` (${subCohort})` : ''}${currentOccupation ? ` (filtering out: ${currentOccupation})` : ''}`);
 
     const topCareers = rankCareers(unshuffledAnswers, cohort, 5, currentOccupation, subCohort);
     const userProfile = generateUserProfile(unshuffledAnswers, cohort, currentOccupation, subCohort);
     
-    console.log(`[API] Top career: ${topCareers[0]?.title} (${topCareers[0]?.overallScore}%)`);
+    log.info(`Top career: ${topCareers[0]?.title} (${topCareers[0]?.overallScore}%)`);
     
     // Calculate education path (all cohorts)
     let educationPath;
@@ -182,7 +184,7 @@ export async function POST(request: NextRequest) {
         scores: { [path.primary]: 85 },
         confidence: 'medium' as const
       };
-      console.log(`[API] NUORI Education path: ${path.primary} (category-based)`);
+      log.debug(`NUORI Education path: ${path.primary} (category-based)`);
     } else if (cohort === 'YLA' || cohort === 'TASO2') {
       // IMPROVEMENT 4: AMIS students (vocational) get appropriate education path options
       // In Finland, ammattikoulu students CAN apply to yliopisto, but also have other options
@@ -337,7 +339,7 @@ export async function POST(request: NextRequest) {
 
         // If the error is about missing full_results column, retry without it
         if (error?.code === 'PGRST204' && error?.message?.includes('full_results')) {
-          console.log('[API] full_results column not found, retrying without it');
+          log.debug('full_results column not found, retrying without it');
           const { full_results, ...testResultWithoutFullResults } = testResult;
           const retryResult = await supabaseAdmin
             .from('test_results')
@@ -349,17 +351,17 @@ export async function POST(request: NextRequest) {
         }
 
         if (error) {
-          console.error('[API] Error saving to Supabase:', error);
+          log.error('Error saving to Supabase:', error);
         } else if (data) {
           resultId = data.id;
-          console.log('[API] Saved to Supabase with ID:', resultId);
+          log.info('Saved to Supabase with ID:', resultId);
         }
       } catch (dbError) {
-        console.error('[API] Database error:', dbError);
+        log.error('Database error:', dbError);
         // Continue anyway - don't fail the request if DB save fails
       }
     } else {
-      console.warn('[API] Supabase not configured, skipping database save');
+      log.warn('Supabase not configured, skipping database save');
     }
     
     // Build response
@@ -409,8 +411,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(response);
     
   } catch (error) {
-    console.error('[API] Error in scoring endpoint:', error);
-    
+    log.error('Error in scoring endpoint:', error);
+
     return NextResponse.json(
       { 
         success: false, 

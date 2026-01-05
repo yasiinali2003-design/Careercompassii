@@ -1,14 +1,98 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { supabaseAdmin } from '@/lib/supabase';
+import { generateSessionToken, sanitizeInput } from '@/lib/security';
+
+// Rate limiting for teacher auth
+const failedAttempts = new Map<string, { count: number; lastAttempt: number }>();
+const MAX_ATTEMPTS = 5;
+const LOCKOUT_TIME = 15 * 60 * 1000; // 15 minutes
+
+function checkRateLimit(ip: string): { allowed: boolean; remainingAttempts: number } {
+  const now = Date.now();
+  const record = failedAttempts.get(ip);
+
+  if (!record) {
+    return { allowed: true, remainingAttempts: MAX_ATTEMPTS };
+  }
+
+  if (now - record.lastAttempt > LOCKOUT_TIME) {
+    failedAttempts.delete(ip);
+    return { allowed: true, remainingAttempts: MAX_ATTEMPTS };
+  }
+
+  if (record.count >= MAX_ATTEMPTS) {
+    return { allowed: false, remainingAttempts: 0 };
+  }
+
+  return { allowed: true, remainingAttempts: MAX_ATTEMPTS - record.count };
+}
+
+function recordFailedAttempt(ip: string): void {
+  const now = Date.now();
+  const record = failedAttempts.get(ip);
+
+  if (!record) {
+    failedAttempts.set(ip, { count: 1, lastAttempt: now });
+  } else {
+    record.count++;
+    record.lastAttempt = now;
+  }
+}
+
+function clearFailedAttempts(ip: string): void {
+  failedAttempts.delete(ip);
+}
+
+/**
+ * Set secure session cookies for teacher authentication
+ */
+async function setTeacherCookies(teacherId: string): Promise<void> {
+  const cookieStore = await cookies();
+  const sessionToken = generateSessionToken();
+
+  // Session duration: 24 hours (reduced from 7 days for better security)
+  const maxAge = 60 * 60 * 24;
+
+  // Set secure session token cookie
+  cookieStore.set('teacher_auth_token', sessionToken, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'strict',
+    maxAge,
+    path: '/',
+  });
+
+  // Store teacher ID in a separate cookie
+  cookieStore.set('teacher_id', teacherId, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'strict',
+    maxAge,
+    path: '/',
+  });
+}
 
 /**
  * Teacher Login API
  * Validates teacher access code against database and sets authentication cookie
  */
-
 export async function POST(request: NextRequest) {
   try {
+    // Get client IP for rate limiting
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+               request.headers.get('x-real-ip') ||
+               'unknown';
+
+    // Check rate limit
+    const { allowed, remainingAttempts } = checkRateLimit(ip);
+    if (!allowed) {
+      return NextResponse.json(
+        { success: false, error: 'Liian monta yritystä. Yritä uudelleen 15 minuutin kuluttua.' },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
     const { password: rawAccessCode } = body;
 
@@ -19,7 +103,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const trimmedCode = rawAccessCode.trim();
+    const trimmedCode = sanitizeInput(rawAccessCode);
     if (!trimmedCode) {
       return NextResponse.json(
         { success: false, error: 'Opettajakoodi vaaditaan' },
@@ -32,34 +116,24 @@ export async function POST(request: NextRequest) {
       trimmedCode.toUpperCase(),
       trimmedCode.toLowerCase()
     ])).filter(Boolean);
-    const fallbackCode = process.env.NODE_ENV === 'production' ? undefined : 'PLAYWRIGHT';
+
+    // Only use fallback in development, and use env variable (no hardcoded values)
+    const fallbackCode = process.env.NODE_ENV === 'production'
+      ? undefined
+      : process.env.DEV_TEACHER_CODE;
     const teacherAccessCode = process.env.TEACHER_ACCESS_CODE ?? fallbackCode;
 
     // Check if Supabase is configured
     if (!supabaseAdmin) {
       console.error('[Teacher Auth] Supabase not configured');
 
-      // Fallback to environment variable if database not available
+      // Fallback to environment variable if database not available (dev only)
       if (teacherAccessCode && candidateCodes.includes(teacherAccessCode)) {
-        const cookieStore = await cookies();
-        // Set cookies with path '/' to ensure middleware receives them
-        cookieStore.set('teacher_auth_token', 'authenticated', {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === 'production',
-          sameSite: 'lax',
-          maxAge: 60 * 60 * 24 * 7,
-          path: '/',
-        });
-        cookieStore.set('teacher_id', 'mock-teacher', {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === 'production',
-          sameSite: 'lax',
-          maxAge: 60 * 60 * 24 * 7,
-          path: '/',
-        });
+        await setTeacherCookies('mock-teacher');
+        clearFailedAttempts(ip);
         return NextResponse.json({
           success: true,
-          message: 'Kirjautuminen onnistui (fallback mode)',
+          message: 'Kirjautuminen onnistui (kehitystila)',
         });
       }
 
@@ -69,8 +143,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log('[Teacher Auth] Looking up codes:', candidateCodes);
-
     const { data: teacher, error } = await supabaseAdmin
       .from('teachers')
       .select('id, name, email, school_name, access_code, is_active')
@@ -78,101 +150,42 @@ export async function POST(request: NextRequest) {
       .eq('is_active', true)
       .maybeSingle() as { data: { id: string; name: string; email: string; school_name: string; access_code: string; is_active: boolean } | null; error: any };
 
-    console.log(`[Teacher Auth] Query result:`, { 
-      found: !!teacher, 
-      error: error?.message,
-      codeSearched: candidateCodes
-    });
-
     if (error || !teacher) {
-      const fallbackMatch = teacherAccessCode && candidateCodes.includes(teacherAccessCode);
+      // Only use fallback in development
+      const fallbackMatch = process.env.NODE_ENV !== 'production' &&
+                           teacherAccessCode &&
+                           candidateCodes.includes(teacherAccessCode);
       if (fallbackMatch) {
-        const cookieStore = await cookies();
-        // Set cookies with path '/' to ensure middleware receives them
-        cookieStore.set('teacher_auth_token', 'authenticated', {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === 'production',
-          sameSite: 'lax',
-          maxAge: 60 * 60 * 24 * 7,
-          path: '/',
-        });
-        cookieStore.set('teacher_id', 'mock-teacher', {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === 'production',
-          sameSite: 'lax',
-          maxAge: 60 * 60 * 24 * 7,
-          path: '/',
-        });
+        await setTeacherCookies('mock-teacher');
+        clearFailedAttempts(ip);
         return NextResponse.json({
           success: true,
           message: 'Kirjautuminen onnistui (kehitystila)',
         });
       }
 
-      console.error('[Teacher Auth] Teacher lookup failed:', error?.message || 'No teacher found');
+      recordFailedAttempt(ip);
       return NextResponse.json(
-        { success: false, error: 'Opettajakoodi ei kelpaa' },
+        {
+          success: false,
+          error: 'Opettajakoodi ei kelpaa',
+          remainingAttempts: remainingAttempts - 1
+        },
         { status: 401 }
       );
     }
 
-    // Update last login timestamp (non-blocking, errors are ignored)
-    (supabaseAdmin as any)
+    // Update last login timestamp (non-blocking)
+    (supabaseAdmin as unknown as { from: (table: string) => { update: (data: Record<string, unknown>) => { eq: (col: string, val: string) => Promise<unknown> } } })
       .from('teachers')
       .update({ last_login: new Date().toISOString() })
       .eq('id', teacher.id)
       .then(() => {})
-      .catch((err: any) => console.error('[Teacher Auth] Failed to update last_login:', err));
+      .catch((err: unknown) => console.error('[Teacher Auth] Failed to update last_login:', err));
 
-    // Set authentication cookie with teacher ID
-    const cookieStore = await cookies();
-    cookieStore.set('teacher_auth_token', 'authenticated', {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      maxAge: 60 * 60 * 24 * 7, // 7 days
-      path: '/teacher',
-    });
-    // Duplicate cookie for API route access
-    cookieStore.set('teacher_auth_token', 'authenticated', {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      maxAge: 60 * 60 * 24 * 7,
-      path: '/api',
-    });
-
-    // Also store teacher ID in a separate cookie for dashboard use
-    cookieStore.set('teacher_id', teacher.id, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      maxAge: 60 * 60 * 24 * 7,
-      path: '/teacher',
-    });
-    cookieStore.set('teacher_id', teacher.id, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      maxAge: 60 * 60 * 24 * 7,
-      path: '/api',
-    });
-
-    // Also set site-wide cookies to ensure middleware receives them regardless of path quirks
-    cookieStore.set('teacher_auth_token', 'authenticated', {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      maxAge: 60 * 60 * 24 * 7,
-      path: '/',
-    });
-    cookieStore.set('teacher_id', teacher.id, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      maxAge: 60 * 60 * 24 * 7,
-      path: '/',
-    });
+    // Set secure session cookies
+    await setTeacherCookies(teacher.id);
+    clearFailedAttempts(ip);
 
     return NextResponse.json({
       success: true,
@@ -184,20 +197,15 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error: any) {
-    console.error('[Teacher Auth] Login error:', error);
-    console.error('[Teacher Auth] Error stack:', error?.stack);
-    console.error('[Teacher Auth] Error details:', {
-      message: error?.message,
-      name: error?.name,
-      cause: error?.cause
-    });
+    console.error('[Teacher Auth] Login error:', error?.message);
     return NextResponse.json(
-      { 
-        success: false, 
-        error: 'Sisäänkirjautuminen epäonnistui',
-        debug: process.env.NODE_ENV === 'development' ? error?.message : undefined
+      {
+        success: false,
+        error: 'Sisäänkirjautuminen epäonnistui'
       },
       { status: 500 }
     );
   }
 }
+
+export const dynamic = 'force-dynamic';

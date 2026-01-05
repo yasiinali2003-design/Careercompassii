@@ -9,17 +9,33 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { generateClassToken } from '@/lib/teacherCrypto';
+import { createLogger } from '@/lib/logger';
+import { validateSessionToken } from '@/lib/security';
 import fs from 'fs';
 import path from 'path';
 
+const log = createLogger('API/Classes');
+
 export async function POST(request: NextRequest) {
   try {
-    // Get authenticated teacher ID from cookie (secure - can't be spoofed)
+    // Get authenticated teacher ID and token from cookies
     const teacherId = request.cookies.get('teacher_id')?.value;
+    const authToken = request.cookies.get('teacher_auth_token')?.value;
 
-    if (!teacherId) {
+    // Validate both teacher ID and auth token exist
+    if (!teacherId || !authToken) {
       return NextResponse.json(
         { success: false, error: 'Ei kirjautunut' },
+        { status: 401 }
+      );
+    }
+
+    // Validate the session token is valid and not expired
+    const isLegacyToken = authToken === 'authenticated';
+    const isValidToken = validateSessionToken(authToken, 24 * 60 * 60 * 1000);
+    if (!isLegacyToken && !isValidToken) {
+      return NextResponse.json(
+        { success: false, error: 'Istunto vanhentunut' },
         { status: 401 }
       );
     }
@@ -29,7 +45,7 @@ export async function POST(request: NextRequest) {
 
     // Check if Supabase is configured
     if (!supabaseAdmin) {
-      console.warn('[API/Classes] Supabase not configured - using local mock store');
+      log.warn('Supabase not configured - using local mock store');
       const mockPath = path.join(process.cwd(), 'mock-db.json');
       let store: any = { classes: [], pins: {}, results: [] };
       try {
@@ -56,10 +72,7 @@ export async function POST(request: NextRequest) {
         .single() as { data: { id: string; class_token: string; created_at: string } | null; error: any };
 
       if (error || !data) {
-        console.error('[API/Classes] Supabase error:', error);
-        console.error('[API/Classes] Error code:', error?.code);
-        console.error('[API/Classes] Error message:', error?.message);
-        console.error('[API/Classes] Error details:', error?.details);
+        log.error('Supabase error:', { code: error?.code, message: error?.message, details: error?.details });
 
         // Check if it's a table missing error
         if (error?.code === 'PGRST116' || error?.message?.includes('does not exist')) {
@@ -85,7 +98,7 @@ export async function POST(request: NextRequest) {
         );
       }
 
-      console.log('[API/Classes] Created class:', data.id);
+      log.info('Created class:', data.id);
 
       return NextResponse.json({
         success: true,
@@ -94,10 +107,10 @@ export async function POST(request: NextRequest) {
         createdAt: data.created_at
       });
     } catch (err) {
-      console.error('[API/Classes] Unexpected error:', err);
+      log.error('Database connection error:', err);
       return NextResponse.json(
-        { 
-          success: false, 
+        {
+          success: false,
           error: 'Tietokantayhteys epäonnistui',
           details: err instanceof Error ? err.message : String(err)
         },
@@ -106,7 +119,7 @@ export async function POST(request: NextRequest) {
     }
 
   } catch (error) {
-    console.error('[API/Classes] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
@@ -123,10 +136,22 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   try {
     const teacherId = request.cookies.get('teacher_id')?.value;
+    const authToken = request.cookies.get('teacher_auth_token')?.value;
 
-    if (!teacherId) {
+    // Validate both teacher ID and auth token exist
+    if (!teacherId || !authToken) {
       return NextResponse.json(
         { success: false, error: 'Ei kirjautunut' },
+        { status: 401 }
+      );
+    }
+
+    // Validate the session token is valid and not expired
+    const isLegacyToken = authToken === 'authenticated';
+    const isValidToken = validateSessionToken(authToken, 24 * 60 * 60 * 1000);
+    if (!isLegacyToken && !isValidToken) {
+      return NextResponse.json(
+        { success: false, error: 'Istunto vanhentunut' },
         { status: 401 }
       );
     }
@@ -178,7 +203,7 @@ export async function GET(request: NextRequest) {
     };
 
     if (!supabaseAdmin) {
-      console.warn('[API/Classes] Supabase not configured - reading local mock store');
+      log.warn('Supabase not configured - reading local mock store');
       const mockPath = path.join(process.cwd(), 'mock-db.json');
       try {
         if (fs.existsSync(mockPath)) {
@@ -209,7 +234,7 @@ export async function GET(request: NextRequest) {
           return NextResponse.json({ success: true, classes: classesWithStats });
         }
       } catch (err) {
-        console.error('[API/Classes] Mock store read failed:', err);
+        log.error('Mock store read failed:', err);
       }
       return NextResponse.json({ success: true, classes: [] });
     }
@@ -223,7 +248,7 @@ export async function GET(request: NextRequest) {
       .limit(100); // Reasonable limit for most teachers
 
     if (error) {
-      console.error('[API/Classes] Error fetching classes:', error);
+      log.error('Error fetching classes:', error);
       return NextResponse.json(
         { success: false, error: 'Luokkien haku epäonnistui' },
         { status: 500 }
@@ -276,7 +301,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ success: true, classes: classesWithStats });
   } catch (error) {
-    console.error('[API/Classes] GET unexpected error:', error);
+    log.error('GET unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }

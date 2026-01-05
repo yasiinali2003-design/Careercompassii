@@ -312,7 +312,7 @@ export default function ResultsPage() {
     };
 
     loadResults();
-  }, []);
+  }, [searchParams]);
 
   // Loading state
   if (loading) {

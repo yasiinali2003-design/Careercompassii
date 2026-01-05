@@ -214,9 +214,11 @@ Return as JSON:
   }
 }
 
-export default {
+const geminiUtils = {
   analyzeCareerWithGemini3,
   generateDynamicUI,
   generateCareerContent,
   generateCareerPathVisualization,
 };
+
+export default geminiUtils;

@@ -60,9 +60,10 @@ export const workStyleOptions = [
 export function filterCareers(careers: CareerFI[], filters: FilterOptions): CareerFI[] {
   return careers.filter(career => {
     // Location filter (mock - in real app would check actual job locations)
+    // NOTE: Location filtering requires integration with job market data API
+    // Currently all careers pass location filter as data is not available
     if (filters.location !== "Koko Suomi") {
-      // For now, all careers pass location filter
-      // TODO: Implement actual location filtering based on job data
+      // Future: Filter based on job market data by region
     }
 
     // Education filter

@@ -173,10 +173,13 @@ export default function LogoPreview() {
             onClick={() => setSelectedLogo(null)}
           >
             <div className="bg-white rounded-xl p-8 max-w-2xl">
-              <img
+              <Image
                 src={selectedLogo}
                 alt="Enlarged logo"
+                width={500}
+                height={500}
                 className="max-w-full h-auto"
+                unoptimized
               />
               <button
                 onClick={() => setSelectedLogo(null)}

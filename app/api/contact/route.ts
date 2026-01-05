@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
+import { hashIpAddress, isValidEmail, sanitizeInput } from '@/lib/security';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('Contact');
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,11 +18,39 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    // Sanitize inputs
+    const sanitizedName = sanitizeInput(name);
+    const sanitizedEmail = sanitizeInput(email).toLowerCase();
+    const sanitizedOrg = organization ? sanitizeInput(organization) : null;
+    const sanitizedMessage = sanitizeInput(message);
+
+    // Validate required fields after sanitization
+    if (!sanitizedName || !sanitizedEmail || !sanitizedMessage) {
+      return NextResponse.json(
+        { success: false, error: 'Täytä kaikki pakolliset kentät' },
+        { status: 400 }
+      );
+    }
+
+    // Email validation using RFC 5322 pattern
+    if (!isValidEmail(sanitizedEmail)) {
       return NextResponse.json(
         { success: false, error: 'Virheellinen sähköpostiosoite' },
+        { status: 400 }
+      );
+    }
+
+    // Message length validation
+    if (sanitizedMessage.length < 10) {
+      return NextResponse.json(
+        { success: false, error: 'Viesti on liian lyhyt' },
+        { status: 400 }
+      );
+    }
+
+    if (sanitizedMessage.length > 5000) {
+      return NextResponse.json(
+        { success: false, error: 'Viesti on liian pitkä (max 5000 merkkiä)' },
         { status: 400 }
       );
     }
@@ -30,44 +62,49 @@ export async function POST(request: NextRequest) {
     }
 
     if (!supabaseAdmin) {
-      console.error('[Contact] Supabase not configured');
+      log.error('Supabase not configured');
       return NextResponse.json(
         { success: false, error: 'Palveluvirhe. Yritä myöhemmin uudelleen.' },
         { status: 500 }
       );
     }
 
-    // Save to Supabase (table not in generated types yet)
+    // Hash IP address for GDPR compliance
+    const rawIp = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+                  request.headers.get('x-real-ip') ||
+                  'unknown';
+    const hashedIp = await hashIpAddress(rawIp);
+
+    // Save to Supabase
     const { error } = await (supabaseAdmin as unknown as { from: (table: string) => { insert: (data: Record<string, unknown>) => Promise<{ error: unknown }> } })
       .from('contact_submissions')
       .insert({
-        name: name.trim(),
-        email: email.trim().toLowerCase(),
-        organization: organization?.trim() || null,
+        name: sanitizedName,
+        email: sanitizedEmail,
+        organization: sanitizedOrg,
         organization_type: organizationType || null,
-        message: message.trim(),
+        message: sanitizedMessage,
         submitted_at: new Date().toISOString(),
-        ip_address: request.headers.get('x-forwarded-for')?.split(',')[0] ||
-                    request.headers.get('x-real-ip') ||
-                    'unknown',
-        user_agent: request.headers.get('user-agent') || null,
+        ip_hash: hashedIp, // Store hash instead of plain IP
+        user_agent: request.headers.get('user-agent')?.substring(0, 500) || null,
       });
 
     if (error) {
-      console.error('[Contact] Supabase error:', error);
+      log.error('Supabase error:', error);
       return NextResponse.json(
         { success: false, error: 'Viestin lähetys epäonnistui. Yritä myöhemmin uudelleen.' },
         { status: 500 }
       );
     }
 
+    log.info('Contact form submitted successfully');
     return NextResponse.json({
       success: true,
       message: 'Kiitos yhteydenotostasi! Palaamme asiaan mahdollisimman pian.'
     });
 
   } catch (error) {
-    console.error('[Contact] Error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen virhe' },
       { status: 500 }

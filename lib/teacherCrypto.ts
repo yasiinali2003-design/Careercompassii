@@ -254,17 +254,22 @@ export function generateClassToken(): string {
 }
 
 /**
- * Generate student PIN (4-6 alphanumeric)
+ * Generate student PIN using cryptographically secure random
+ * Length increased to 6 characters for better security (~31 bits entropy)
  */
 export function generateStudentPin(): string {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // No 0, 1, I, O (avoid confusion)
-  const length = 4;
+  const length = 6; // Increased from 4 to 6 for better security
+
+  // Use crypto.getRandomValues for secure randomness
+  const randomBytes = new Uint8Array(length);
+  crypto.getRandomValues(randomBytes);
+
   let pin = '';
-  
   for (let i = 0; i < length; i++) {
-    pin += chars[Math.floor(Math.random() * chars.length)];
+    pin += chars[randomBytes[i] % chars.length];
   }
-  
+
   return pin;
 }
 

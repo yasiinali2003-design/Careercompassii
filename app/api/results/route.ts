@@ -11,9 +11,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { createLogger } from '@/lib/logger';
 import fs from 'fs';
 import path from 'path';
 import { z } from 'zod';
+
+const log = createLogger('API/Results');
 
 // Validation schema
 const SubmitResultSchema = z.object({
@@ -72,8 +75,8 @@ export async function POST(request: NextRequest) {
     const validation = SubmitResultSchema.safeParse(body);
 
     if (!validation.success) {
-      console.error('[API/Results] Validation failed:', JSON.stringify(validation.error.issues, null, 2));
-      console.error('[API/Results] Request body:', JSON.stringify(body, null, 2));
+      log.warn('Validation failed:', validation.error.issues);
+      log.debug('Request body:', body);
       return NextResponse.json(
         { 
           success: false, 
@@ -129,7 +132,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate PIN exists and belongs to class
-    console.log(`[API/Results] Validating PIN: ${normalizedPin} for class token: ${normalizedClassToken}`);
+    log.debug(`Validating PIN: ${normalizedPin} for class token: ${normalizedClassToken}`);
     let isValid = false;
     let classId = null;
 
@@ -140,11 +143,11 @@ export async function POST(request: NextRequest) {
         p_class_token: normalizedClassToken
       });
 
-    console.log(`[API/Results] RPC Response:`, { pinData, pinError: pinError?.message });
+    log.debug('RPC Response:', { pinData, pinError: pinError?.message });
 
     // If RPC fails, use fallback direct query
     if (pinError) {
-      console.log('[API/Results] RPC function failed or not found, using fallback');
+      log.debug('RPC function failed or not found, using fallback');
 
       // Get class by token
       const { data: classData } = await supabaseAdmin
@@ -164,14 +167,14 @@ export async function POST(request: NextRequest) {
 
         isValid = !!(pinExists && pinExists.length > 0);
         classId = String(classData.id); // Ensure string type for consistency
-        console.log(`[API/Results] Fallback validation: isValid=${isValid}, classId=${classId} (type: ${typeof classId})`);
+        log.debug(`Fallback validation: isValid=${isValid}, classId=${classId}`);
       } else {
-        console.log('[API/Results] Class not found');
+        log.debug('Class not found');
       }
     } else if (pinData && pinData.length > 0) {
       isValid = Boolean(pinData[0]?.is_valid);
       classId = String(pinData[0]?.class_id || ''); // Ensure string type
-      console.log(`[API/Results] RPC validation: isValid=${isValid}, classId=${classId} (type: ${typeof classId})`);
+      log.debug(`RPC validation: isValid=${isValid}, classId=${classId}`);
     }
 
     if (!isValid || !classId) {
@@ -184,8 +187,8 @@ export async function POST(request: NextRequest) {
     // Store result (no names, no PII)
     // Ensure classId is a valid UUID string (not just any string)
     const classIdUUID = classId; // Supabase Postgres should handle string UUID conversion
-    console.log(`[API/Results] About to insert result for PIN: ${normalizedPin}, classId: ${classIdUUID} (type: ${typeof classIdUUID}, length: ${classIdUUID?.length})`);
-    
+    log.debug(`About to insert result for PIN: ${normalizedPin}, classId: ${classIdUUID}`);
+
     // First, verify class exists
     const { data: classCheck } = await supabaseAdmin
       .from('classes')
@@ -194,14 +197,14 @@ export async function POST(request: NextRequest) {
       .single();
     
     if (!classCheck) {
-      console.error(`[API/Results] Class ID ${classIdUUID} does not exist in database!`);
+      log.warn(`Class ID ${classIdUUID} does not exist in database`);
       return NextResponse.json(
         { success: false, error: 'Luokkaa ei löydy' },
         { status: 400 }
       );
     }
-    
-    console.log(`[API/Results] Class verified, inserting result...`);
+
+    log.debug('Class verified, inserting result...');
     const { data: insertData, error: insertError } = await supabaseAdmin
       .from('results')
       .insert({
@@ -212,21 +215,20 @@ export async function POST(request: NextRequest) {
       .select('id, class_id, pin, created_at') as { data: Array<{ id: string; class_id: string; pin: string; created_at: string }> | null; error: any };
 
     if (insertError) {
-      console.error('[API/Results] Error storing result:', insertError);
-      console.error('[API/Results] Error details:', JSON.stringify(insertError, null, 2));
+      log.error('Error storing result:', insertError);
       return NextResponse.json(
         { success: false, error: 'Tuloksen tallentaminen epäonnistui', details: insertError.message },
         { status: 500 }
       );
     }
 
-    console.log(`[API/Results] Stored result for PIN: ${normalizedPin} (class: ${classId})`);
+    log.info(`Stored result for PIN: ${normalizedPin} (class: ${classId})`);
     let resultId = null;
     if (insertData && insertData.length > 0) {
       resultId = insertData[0].id;
-      console.log(`[API/Results] Insert successful. ID: ${resultId}, class_id: ${insertData[0].class_id}, pin: ${insertData[0].pin}`);
+      log.debug(`Insert successful. ID: ${resultId}`);
     } else {
-      console.log(`[API/Results] Insert returned no data!`);
+      log.warn('Insert returned no data');
     }
 
     return NextResponse.json({
@@ -236,7 +238,7 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[API/Results] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
