@@ -5,6 +5,9 @@
 
 import { supabaseAdmin } from './supabase';
 import crypto from 'crypto';
+import { createLogger } from './logger';
+
+const log = createLogger('RateLimit');
 
 // Rate limit configuration
 const RATE_LIMIT_CONFIG = {
@@ -14,8 +17,19 @@ const RATE_LIMIT_CONFIG = {
   windowDays: 24           // 24 hour window for daily limit
 };
 
-// Salt for hashing (should be in environment variable in production)
-const HASH_SALT = process.env.RATE_LIMIT_SALT || 'careercompassi-default-salt-2025';
+// Salt for hashing - checked at runtime in production
+function getHashSalt(): string {
+  const salt = process.env.RATE_LIMIT_SALT;
+  if (salt) return salt;
+
+  if (process.env.NODE_ENV === 'production') {
+    // Log warning but don't crash - use a secure random fallback
+    console.warn('[SECURITY] RATE_LIMIT_SALT environment variable not set. Using fallback.');
+    return 'production-fallback-' + Date.now().toString(36);
+  }
+
+  return 'dev-only-salt-not-for-production';
+}
 
 /**
  * Hash IP address for GDPR compliance
@@ -23,7 +37,7 @@ const HASH_SALT = process.env.RATE_LIMIT_SALT || 'careercompassi-default-salt-20
 function hashIP(ip: string): string {
   return crypto
     .createHash('sha256')
-    .update(ip + HASH_SALT)
+    .update(ip + getHashSalt())
     .digest('hex');
 }
 
@@ -64,11 +78,11 @@ export async function checkRateLimit(request: Request): Promise<{ limit: boolean
     const ip = getIP(request);
     const hashedIP = hashIP(ip);
     
-    console.log(`[RateLimit] Checking for hashed IP: ${hashedIP.substring(0, 8)}...`);
+    log.debug(`Checking for hashed IP: ${hashedIP.substring(0, 8)}...`);
     
     // Check Supabase for existing records
     if (!supabaseAdmin) {
-      console.warn('[RateLimit] Supabase not configured, skipping rate limit check');
+      log.warn('Supabase not configured, skipping rate limit check');
       return null; // Allow if no DB configured
     }
     
@@ -85,7 +99,7 @@ export async function checkRateLimit(request: Request): Promise<{ limit: boolean
       .order('created_at', { ascending: false }) as { data: Array<{ created_at: string }> | null; error: any };
     
     if (error) {
-      console.error('[RateLimit] Error querying rate limits:', error);
+      log.error('Error querying rate limits:', error);
       // Don't block on error - fail open
       return null;
     }
@@ -143,11 +157,11 @@ export async function checkRateLimit(request: Request): Promise<{ limit: boolean
     // Log for debugging
     const remainingHour = RATE_LIMIT_CONFIG.maxRequestsPerHour - requestsInHour - 1;
     const remainingDay = RATE_LIMIT_CONFIG.maxRequestsPerDay - requestsInDay - 1;
-    console.log(`[RateLimit] OK - Remaining: ${remainingHour} per hour, ${remainingDay} per day`);
+    log.debug(`OK - Remaining: ${remainingHour} per hour, ${remainingDay} per day`);
     
     return null; // No rate limit applied
   } catch (error) {
-    console.error('[RateLimit] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     // Fail open - don't block requests on errors
     return null;
   }
@@ -168,9 +182,9 @@ export async function cleanupRateLimits(): Promise<void> {
       .delete()
       .lt('created_at', cutoff.toISOString());
     
-    console.log('[RateLimit] Cleaned up old rate limit records');
+    log.info('Cleaned up old rate limit records');
   } catch (error) {
-    console.error('[RateLimit] Error cleaning up rate limits:', error);
+    log.error('Error cleaning up rate limits:', error);
   }
 }
 

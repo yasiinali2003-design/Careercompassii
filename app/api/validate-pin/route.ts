@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('API/ValidatePIN');
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,7 +16,7 @@ export async function POST(request: NextRequest) {
     // Validate input
     if (!pin || !classToken || pin.length < 4 || pin.length > 6) {
       return NextResponse.json(
-        { success: false, error: 'Virheellinen PIN-koodi tai luokka-tunniste' },
+        { success: false, error: 'Virheellinen PIN-koodi tai luokkatunniste' },
         { status: 400 }
       );
     }
@@ -28,7 +31,7 @@ export async function POST(request: NextRequest) {
           store = JSON.parse(fs.readFileSync(mockPath, 'utf8')) || store;
         }
       } catch (error) {
-        console.warn('[API/ValidatePIN] Failed to read mock-db.json:', error);
+        log.warn('Failed to read mock-db.json:', error);
       }
 
       const cls = (store.classes || []).find((c: any) => c.class_token === classToken);
@@ -43,7 +46,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate PIN exists and belongs to class
-    console.log(`[API/ValidatePIN] Validating PIN: ${pin} for class: ${classToken}`);
+    log.debug(`Validating PIN: ${pin} for class: ${classToken}`);
     
     let isValid = false;
     
@@ -54,11 +57,11 @@ export async function POST(request: NextRequest) {
         p_class_token: classToken
       });
 
-    console.log(`[API/ValidatePIN] RPC Response:`, { pinData, pinError: pinError?.message });
+    log.debug('RPC Response:', { pinData, pinError: pinError?.message });
 
     // If RPC fails, use fallback direct query
     if (pinError) {
-      console.log('[API/ValidatePIN] RPC function failed or not found, using fallback');
+      log.debug('RPC function failed or not found, using fallback');
 
       // Get class by token
       const { data: classData } = await supabaseAdmin
@@ -77,13 +80,13 @@ export async function POST(request: NextRequest) {
           .limit(1) as { data: any[] | null; error: any };
 
         isValid = Boolean(pinExists && pinExists.length > 0);
-        console.log(`[API/ValidatePIN] Fallback validation result: ${isValid}`);
+        log.debug(`Fallback validation result: ${isValid}`);
       } else {
-        console.log('[API/ValidatePIN] Class not found');
+        log.debug('Class not found');
       }
     } else if (pinData && (pinData as any[]).length > 0) {
       isValid = Boolean((pinData as any[])[0]?.is_valid);
-      console.log(`[API/ValidatePIN] RPC validation result: ${isValid}`);
+      log.debug(`RPC validation result: ${isValid}`);
     }
 
     return NextResponse.json({
@@ -92,7 +95,7 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[API/ValidatePIN] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, isValid: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }

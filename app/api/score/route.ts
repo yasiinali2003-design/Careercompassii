@@ -25,7 +25,7 @@ interface ScoringRequest {
 function validateRequest(data: any): { valid: boolean; error?: string } {
   // Check cohort
   if (!data.cohort) {
-    return { valid: false, error: 'Puuttuva kohortti-kenttä' };
+    return { valid: false, error: 'Puuttuva kohorttikenttä' };
   }
   
   if (!['YLA', 'TASO2', 'NUORI'].includes(data.cohort)) {
@@ -34,7 +34,7 @@ function validateRequest(data: any): { valid: boolean; error?: string } {
   
   // Check answers
   if (!data.answers || !Array.isArray(data.answers)) {
-    return { valid: false, error: 'Puuttuva tai virheellinen vastaus-kenttä' };
+    return { valid: false, error: 'Puuttuva tai virheellinen vastauskenttä' };
   }
   
   if (data.answers.length === 0) {
@@ -85,7 +85,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           success: false,
-          error: 'Virheellinen JSON-muoto pyyntöä'
+          error: 'Virheellinen JSON-muoto pyynnössä'
         },
         { status: 400 }
       );
@@ -262,7 +262,7 @@ export async function POST(request: NextRequest) {
           scores: path.scores,
           confidence: 'medium' as const
         };
-        console.log(`[API] TASO2_AMIS Education path: ${path.primary} (vocational-appropriate)`);
+        log.debug(`TASO2_AMIS Education path: ${path.primary} (vocational-appropriate)`);
       } else {
         // LUKIO or generic TASO2 - use standard calculation
         educationPath = calculateEducationPath(unshuffledAnswers, cohort);
@@ -272,7 +272,7 @@ export async function POST(request: NextRequest) {
             const scoreKey = cohort === 'YLA'
               ? (educationPath as any).scores[primaryPath as string]
               : (educationPath as any).scores[primaryPath as string];
-            console.log(`[API] Education path: ${primaryPath} (${Math.round(scoreKey)}%)`);
+            log.debug(`Education path: ${primaryPath} (${Math.round(scoreKey)}%)`);
           }
         }
       }

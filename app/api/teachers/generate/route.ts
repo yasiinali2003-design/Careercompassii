@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
+import { createLogger } from '@/lib/logger';
+import { validateSessionToken } from '@/lib/security';
+
+const log = createLogger('API/Teachers');
 
 /**
  * Generate Teacher Access Code
@@ -21,10 +25,10 @@ export async function POST(request: NextRequest) {
     const teacherToken = request.cookies.get('teacher_auth_token');
     const teacherId = request.cookies.get('teacher_id');
     const adminId = process.env.ADMIN_TEACHER_ID || '';
-    const isAuthed = teacherToken && teacherToken.value === 'authenticated';
+    const isValidToken = teacherToken && validateSessionToken(teacherToken.value, 24 * 60 * 60 * 1000);
     const isAdmin = teacherId && adminId && teacherId.value === adminId;
 
-    if (!(hasValidBasicAuth || hasAdminCookie || (isAuthed && isAdmin))) {
+    if (!(hasValidBasicAuth || hasAdminCookie || (isValidToken && isAdmin))) {
       return new NextResponse('Not Found', { status: 404 });
     }
 
@@ -110,18 +114,17 @@ export async function POST(request: NextRequest) {
         .single();
 
       if (error) {
-        console.error('[API/Teachers] Error creating teacher:', error);
-        console.error('[API/Teachers] Error details:', JSON.stringify(error, null, 2));
-        
+        log.error('Error creating teacher:', error);
+
         // If package column doesn't exist, try without it
-        const isPackageColumnError = error.message?.includes('column "package"') 
+        const isPackageColumnError = error.message?.includes('column "package"')
           || error.message?.includes("'package' column")
           || error.message?.includes('package')
-          || error.code === '42703' 
+          || error.code === '42703'
           || error.code === 'PGRST204';
-        
+
         if (isPackageColumnError) {
-          console.warn('[API/Teachers] Package column not found, retrying without package field');
+          log.warn('Package column not found, retrying without package field');
           const { data: fallbackData, error: fallbackError } = await supabaseAdmin
             .from('teachers')
             .insert({
@@ -191,18 +194,17 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (error) {
-      console.error('[API/Teachers] Error creating teacher:', error);
-      console.error('[API/Teachers] Error details:', JSON.stringify(error, null, 2));
-      
+      log.error('Error creating teacher:', error);
+
       // If package column doesn't exist, try without it
-      const isPackageColumnError2 = error.message?.includes('column "package"') 
+      const isPackageColumnError2 = error.message?.includes('column "package"')
         || error.message?.includes("'package' column")
         || error.message?.includes('package')
-        || error.code === '42703' 
+        || error.code === '42703'
         || error.code === 'PGRST204';
-      
+
       if (isPackageColumnError2) {
-        console.warn('[API/Teachers] Package column not found, retrying without package field');
+        log.warn('Package column not found, retrying without package field');
         const { data: fallbackData, error: fallbackError } = await supabaseAdmin
           .from('teachers')
           .insert({
@@ -250,7 +252,7 @@ export async function POST(request: NextRequest) {
       message: 'Opettajatili luotu onnistuneesti',
     });
   } catch (error) {
-    console.error('[API/Teachers] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }

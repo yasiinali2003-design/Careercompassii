@@ -7,6 +7,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getQuestionMappings } from '@/lib/scoring/dimensions';
 import { Cohort } from '@/lib/scoring/types';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('API/Questions');
 
 // Simple question object with only text and originalQ (no scoring metadata like weights/subdimensions)
 interface Question {
@@ -74,7 +77,7 @@ export async function GET(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[Questions API] Error:', error);
+    log.error('Error:', error);
     return NextResponse.json(
       {
         success: false,

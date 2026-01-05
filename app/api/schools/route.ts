@@ -7,6 +7,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { createLogger } from '@/lib/logger';
 import { validateSessionToken } from '@/lib/security';
+import { requireCsrf } from '@/lib/csrf';
 
 const log = createLogger('API/Schools');
 
@@ -30,9 +31,8 @@ export async function GET(request: NextRequest) {
     }
 
     // Validate the session token is valid and not expired
-    const isLegacyToken = authToken === 'authenticated';
     const isValidToken = validateSessionToken(authToken, 24 * 60 * 60 * 1000);
-    if (!isLegacyToken && !isValidToken) {
+    if (!isValidToken) {
       return NextResponse.json(
         { success: false, error: 'Istunto vanhentunut' },
         { status: 401 }
@@ -78,6 +78,15 @@ export async function GET(request: NextRequest) {
  */
 export async function POST(request: NextRequest) {
   try {
+    // Validate CSRF token
+    const csrfCheck = requireCsrf(request);
+    if (!csrfCheck.valid) {
+      return NextResponse.json(
+        { success: false, error: 'Virheellinen istunto. Päivitä sivu ja yritä uudelleen.' },
+        { status: 403 }
+      );
+    }
+
     const teacherId = request.cookies.get('teacher_id')?.value;
     const authToken = request.cookies.get('teacher_auth_token')?.value;
 
@@ -90,9 +99,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate the session token is valid and not expired
-    const isLegacyToken = authToken === 'authenticated';
     const isValidToken = validateSessionToken(authToken, 24 * 60 * 60 * 1000);
-    if (!isLegacyToken && !isValidToken) {
+    if (!isValidToken) {
       return NextResponse.json(
         { success: false, error: 'Istunto vanhentunut' },
         { status: 401 }

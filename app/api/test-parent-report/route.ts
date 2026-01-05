@@ -6,6 +6,9 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { generateParentReport, ParentReportData } from '@/lib/pdfGenerator';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('API/TestParentReport');
 
 export async function POST(request: NextRequest) {
   // Security: Only allow on localhost
@@ -102,7 +105,7 @@ export async function POST(request: NextRequest) {
       message: `PDF generated successfully (${blob.size} bytes)`
     });
   } catch (error: any) {
-    console.error('[Test Parent Report] Error:', error);
+    log.error('Error generating test parent report:', error);
     return NextResponse.json({
       success: false,
       error: error.message || 'Unknown error',

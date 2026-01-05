@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateCareerPathVisualization } from "@/lib/gemini";
+import { createLogger } from "@/lib/logger";
+
+const log = createLogger("API/Gemini");
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -28,7 +31,7 @@ export async function POST(request: NextRequest) {
       aiProvider: "gemini-3",
     });
   } catch (error) {
-    console.error("Gemini 3 Visualization API Error:", error);
+    log.error("Visualization API Error:", error);
     return NextResponse.json(
       {
         error: "Failed to generate visualization with Gemini 3",

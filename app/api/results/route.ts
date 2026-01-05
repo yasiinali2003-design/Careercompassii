@@ -100,7 +100,7 @@ export async function POST(request: NextRequest) {
 
     if (!normalizedPin || normalizedPin.length < 4 || normalizedPin.length > 6 || !normalizedClassToken) {
       return NextResponse.json(
-        { success: false, error: 'Virheellinen PIN-koodi tai luokan tunniste' },
+        { success: false, error: 'Virheellinen PIN-koodi tai luokkatunniste' },
         { status: 400 }
       );
     }

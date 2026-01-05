@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('API/MigratePackage');
 
 /**
  * Admin API endpoint to run the package column migration
@@ -80,7 +83,7 @@ UPDATE teachers SET package = 'standard' WHERE package IS NULL;
     });
 
   } catch (error: any) {
-    console.error('[Migration] Error:', error);
+    log.error('Migration error:', error);
     return NextResponse.json(
       { success: false, error: error.message || 'Migration failed' },
       { status: 500 }

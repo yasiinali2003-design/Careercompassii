@@ -7,6 +7,9 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('API/GetClass');
 
 interface RouteParams {
   params: {
@@ -29,7 +32,7 @@ export async function GET(
     }
 
     if (!supabaseAdmin) {
-      console.warn('[API/GetClass] Supabase not configured - using local mock store');
+      log.warn('Supabase not configured - using local mock store');
       const fs = require('fs');
       const path = require('path');
       const mockPath = path.join(process.cwd(), 'mock-db.json');
@@ -39,7 +42,7 @@ export async function GET(
           store = JSON.parse(fs.readFileSync(mockPath, 'utf8')) || store;
         }
       } catch (error) {
-        console.warn('[API/GetClass] Failed to read mock-db.json:', error);
+        log.warn('Failed to read mock-db.json:', error);
       }
 
       const cls = (store.classes || []).find((c: any) => String(c.id) === String(classId));
@@ -70,7 +73,7 @@ export async function GET(
       .single() as { data: { id: string; class_token: string; teacher_id: string; created_at: string } | null; error: any };
 
     if (error || !data) {
-      console.error('[API/GetClass] Error:', error);
+      log.error('Error:', error);
       return NextResponse.json(
         { success: false, error: 'Luokkaa ei löydy' },
         { status: 404 }
@@ -88,7 +91,7 @@ export async function GET(
     });
 
   } catch (error) {
-    console.error('[API/GetClass] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }

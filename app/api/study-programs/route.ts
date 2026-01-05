@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { getStaticPrograms, StudyProgramsQuery } from '@/lib/api/studyPrograms';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('API/StudyPrograms');
 
 /**
  * GET /api/study-programs
@@ -62,7 +65,7 @@ export async function GET(request: NextRequest) {
 
     if (!supabaseAdmin) {
       // Fallback to static data if Supabase not configured
-      console.warn('[API/StudyPrograms] Supabase not configured, using static data');
+      log.warn('Supabase not configured, using static data');
       return respondWithStatic();
     }
 
@@ -110,7 +113,7 @@ export async function GET(request: NextRequest) {
     let careerRelaxed = false;
 
     if (error) {
-      console.error('[API/StudyPrograms] Database error:', error);
+      log.error('Database error:', error);
       return NextResponse.json(
         { error: 'Koulutusohjelmien haku epäonnistui', details: error.message },
         { status: 500 }
@@ -229,7 +232,7 @@ export async function GET(request: NextRequest) {
     });
 
   } catch (error: any) {
-    console.error('[API/StudyPrograms] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { error: 'Sisäinen palvelinvirhe', details: error.message },
       { status: 500 }
@@ -295,7 +298,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (error) {
-      console.error('[API/StudyPrograms] Insert error:', error);
+      log.error('Insert error:', error);
       return NextResponse.json(
         { error: 'Koulutusohjelman tallennus epäonnistui', details: error.message },
         { status: 500 }
@@ -308,7 +311,7 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error: any) {
-    console.error('[API/StudyPrograms] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { error: 'Sisäinen palvelinvirhe', details: error.message },
       { status: 500 }

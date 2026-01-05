@@ -6,6 +6,9 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('API/Analytics');
 
 export async function POST(request: NextRequest) {
   try {
@@ -46,7 +49,7 @@ export async function POST(request: NextRequest) {
 
     if (error) {
       if (process.env.NODE_ENV === 'development') {
-        console.error('Error storing analytics:', error);
+        log.error('Error storing analytics:', error);
       }
       return NextResponse.json(
         { error: 'Analytiikan tallennus epäonnistui' },
@@ -95,7 +98,7 @@ export async function GET(request: NextRequest) {
 
     if (error) {
       if (process.env.NODE_ENV === 'development') {
-        console.error('Error fetching analytics:', error);
+        log.error('Error fetching analytics:', error);
       }
       return NextResponse.json(
         { error: 'Analytiikan haku epäonnistui' },

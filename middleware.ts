@@ -64,12 +64,6 @@ function isValidSessionToken(token: string): boolean {
     }
   }
 
-  // For backwards compatibility, also accept 'authenticated' (to be removed later)
-  // This allows existing sessions to continue working during transition
-  if (token === 'authenticated') {
-    return true;
-  }
-
   return false;
 }
 
@@ -286,12 +280,17 @@ export async function middleware(request: NextRequest) {
       ].join('; ')
     );
   } else {
-    // Strict CSP for production - removed 'unsafe-eval'
+    // Production CSP - 'unsafe-eval' removed for security
+    // Note: 'unsafe-inline' is required for Next.js but XSS is mitigated by:
+    // 1. React's automatic escaping of JSX
+    // 2. Strict input sanitization in all API routes
+    // 3. CSRF protection on all state-changing operations
+    // To fully remove 'unsafe-inline', implement CSP nonces in next.config.js
     response.headers.set(
       'Content-Security-Policy',
       [
         "default-src 'self'",
-        "script-src 'self' 'unsafe-inline'", // Removed 'unsafe-eval'
+        "script-src 'self' 'unsafe-inline'",
         "style-src 'self' 'unsafe-inline'",
         "img-src 'self' data: https:",
         "font-src 'self' data:",

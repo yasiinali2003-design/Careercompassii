@@ -4,12 +4,15 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { 
-  generateClassCompletionEmail, 
-  generateAtRiskStudentEmail, 
+import {
+  generateClassCompletionEmail,
+  generateAtRiskStudentEmail,
   generateWeeklySummaryEmail,
-  EmailNotification 
+  EmailNotification
 } from '@/lib/emailNotifications';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('API/Email');
 
 // Email sending function - can be configured to use Resend, SendGrid, etc.
 async function sendEmail(notification: EmailNotification): Promise<boolean> {
@@ -59,16 +62,13 @@ async function sendEmail(notification: EmailNotification): Promise<boolean> {
     // });
 
     // For now, log the email (in production, replace with actual email sending)
-    console.log('📧 Email would be sent:', {
-      to: notification.to,
-      subject: notification.subject,
-    });
-    
+    log.info('Email would be sent:', { to: notification.to, subject: notification.subject });
+
     // In development, you might want to return true to simulate success
     // In production, uncomment one of the email services above
     return process.env.NODE_ENV === 'development' ? true : false;
   } catch (error) {
-    console.error('Error sending email:', error);
+    log.error('Error sending email:', error);
     return false;
   }
 }
@@ -118,7 +118,7 @@ export async function POST(request: NextRequest) {
       );
     }
   } catch (error) {
-    console.error('Error in send-email API:', error);
+    log.error('Error in send-email API:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }

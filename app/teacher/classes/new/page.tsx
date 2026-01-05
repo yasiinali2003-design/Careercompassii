@@ -22,6 +22,7 @@ import {
   ClipboardList,
   BarChart3
 } from 'lucide-react';
+import { getCsrfTokenFromCookie } from '@/lib/csrf';
 
 interface ClassData {
   classId: string;
@@ -42,9 +43,13 @@ export default function NewClassPage() {
 
     try {
       // Teacher ID comes from authenticated session cookie - no need to send it
+      const csrfToken = getCsrfTokenFromCookie();
       const response = await fetch('/api/classes', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          ...(csrfToken && { 'x-csrf-token': csrfToken }),
+        },
         body: JSON.stringify({})
       });
 
@@ -59,9 +64,8 @@ export default function NewClassPage() {
       } else {
         setError(data.error || 'Luokan luominen epäonnistui');
       }
-    } catch (err) {
+    } catch {
       setError('Verkkovirhe. Yritä uudelleen.');
-      console.error('Error creating class:', err);
     } finally {
       setLoading(false);
     }

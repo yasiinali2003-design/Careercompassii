@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('Teacher Auth');
 
 /**
  * Teacher Logout API
@@ -30,7 +33,7 @@ export async function POST() {
       message: 'Uloskirjautuminen onnistui',
     });
   } catch (error) {
-    console.error('[Teacher Auth] Logout error:', error);
+    log.error('Logout error:', error);
     return NextResponse.json(
       { success: false, error: 'Uloskirjautuminen epäonnistui' },
       { status: 500 }

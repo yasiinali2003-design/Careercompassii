@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { analyzeCareerWithGemini3 } from "@/lib/gemini";
+import { createLogger } from "@/lib/logger";
+
+const log = createLogger("API/Gemini");
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -28,7 +31,7 @@ export async function POST(request: NextRequest) {
       aiProvider: "gemini-3",
     });
   } catch (error) {
-    console.error("Gemini 3 Analysis API Error:", error);
+    log.error("Analysis API Error:", error);
     return NextResponse.json(
       {
         error: "Failed to analyze career with Gemini 3",

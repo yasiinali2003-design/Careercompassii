@@ -5,6 +5,9 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('API/Schools/Teachers');
 
 export const dynamic = 'force-dynamic';
 
@@ -63,7 +66,7 @@ export async function GET(
       .order('joined_at', { ascending: true });
 
     if (error) {
-      console.error('[API/Schools/Teachers] Error fetching teachers:', error);
+      log.error('Error fetching teachers:', error);
       return NextResponse.json(
         { success: false, error: 'Opettajien haku epäonnistui' },
         { status: 500 }
@@ -77,7 +80,7 @@ export async function GET(
     });
 
   } catch (error) {
-    console.error('[API/Schools/Teachers] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
@@ -167,7 +170,7 @@ export async function POST(
       .single();
 
     if (error) {
-      console.error('[API/Schools/Teachers] Error adding teacher:', error);
+      log.error('Error adding teacher:', error);
 
       if (error.code === '23505') { // Unique constraint violation
         return NextResponse.json(
@@ -182,7 +185,7 @@ export async function POST(
       );
     }
 
-    console.log(`[API/Schools/Teachers] Added teacher ${newTeacherId} to school ${schoolId}`);
+    log.info(`Added teacher ${newTeacherId} to school ${schoolId}`);
 
     return NextResponse.json({
       success: true,
@@ -190,7 +193,7 @@ export async function POST(
     });
 
   } catch (error) {
-    console.error('[API/Schools/Teachers] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
@@ -279,14 +282,14 @@ export async function DELETE(
       .eq('teacher_id', teacherIdToRemove);
 
     if (error) {
-      console.error('[API/Schools/Teachers] Error removing teacher:', error);
+      log.error('Error removing teacher:', error);
       return NextResponse.json(
         { success: false, error: 'Opettajan poistaminen epäonnistui' },
         { status: 500 }
       );
     }
 
-    console.log(`[API/Schools/Teachers] Removed teacher ${teacherIdToRemove} from school ${schoolId}`);
+    log.info(`Removed teacher ${teacherIdToRemove} from school ${schoolId}`);
 
     return NextResponse.json({
       success: true,
@@ -294,7 +297,7 @@ export async function DELETE(
     });
 
   } catch (error) {
-    console.error('[API/Schools/Teachers] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }

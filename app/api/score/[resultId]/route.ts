@@ -10,7 +10,10 @@ import { supabaseAdmin } from '@/lib/supabase';
 import { COHORT_COPY } from '@/lib/scoring/cohortConfig';
 import { translateStrength } from '@/lib/scoring/scoringEngine';
 import { generatePersonalizedAnalysis } from '@/lib/scoring/personalizedAnalysis';
+import { createLogger } from '@/lib/logger';
 import type { Cohort, UserProfile } from '@/lib/scoring/types';
+
+const log = createLogger('API/Score');
 
 export async function GET(
   request: NextRequest,
@@ -56,7 +59,7 @@ export async function GET(
 
     if (fullResult.error?.code === '42703' && fullResult.error?.message?.includes('full_results')) {
       // Column doesn't exist, retry without it
-      console.log('[API] full_results column not found, fetching without it');
+      log.debug('full_results column not found, fetching without it');
       const partialResult = await supabaseAdmin
         .from('test_results')
         .select('id, cohort, dimension_scores, top_careers, education_path_primary, education_path_scores, created_at')
@@ -70,7 +73,7 @@ export async function GET(
     }
 
     if (error) {
-      console.error('[API] Error fetching result:', error);
+      log.error('Error fetching result:', error);
       return NextResponse.json(
         { success: false, error: 'Tulosta ei löydy' },
         { status: 404 }
@@ -86,7 +89,7 @@ export async function GET(
 
     // If we have full_results stored, return it directly (exact same results)
     if (data.full_results) {
-      console.log('[API] Returning full stored results for ID:', resultId);
+      log.debug('Returning full stored results for ID:', resultId);
       return NextResponse.json({
         success: true,
         resultId: data.id,
@@ -96,7 +99,7 @@ export async function GET(
     }
 
     // Fallback: reconstruct from partial data (for older results without full_results)
-    console.log('[API] Reconstructing results from partial data for ID:', resultId);
+    log.debug('Reconstructing results from partial data for ID:', resultId);
 
     const cohort = data.cohort as Cohort;
     const dimensionScores = data.dimension_scores || {
@@ -171,7 +174,7 @@ export async function GET(
     return NextResponse.json(reconstructedResults);
 
   } catch (error) {
-    console.error('[API] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }

@@ -5,6 +5,9 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { careersData } from '@/data/careers-fi';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('API/Careers');
 
 export const dynamic = 'force-dynamic';
 
@@ -40,7 +43,7 @@ export async function GET(request: NextRequest) {
     // Can be added later if needed
     if (cohort) {
       // Future enhancement: filter careers appropriate for cohort
-      console.log(`[API] Cohort filter requested: ${cohort} (not yet implemented)`);
+      log.debug(`Cohort filter requested: ${cohort} (not yet implemented)`);
     }
 
     // Enhanced caching: 1 hour cache, 2 hours stale-while-revalidate
@@ -53,7 +56,7 @@ export async function GET(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[API] /api/careers error:', error);
+    log.error('Error:', error);
     return NextResponse.json(
       {
         success: false,

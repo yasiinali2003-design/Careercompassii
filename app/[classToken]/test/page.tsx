@@ -59,7 +59,7 @@ export default function StudentLoginPage({
         <div className="bg-[#1a1d23] rounded-xl shadow-lg border border-white/10 p-8">
           <h1 className="text-3xl font-bold mb-2">Kirjaudu testiin</h1>
           <p className="text-neutral-300 mb-6">
-            Syötä oppilaanunnesi antama PIN-koodi
+            Syötä opettajasi antama PIN-koodi
           </p>
 
           {error && (
@@ -83,7 +83,7 @@ export default function StudentLoginPage({
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-center font-mono text-2xl uppercase tracking-widest"
               />
               <p className="text-sm text-neutral-400 mt-1">
-                Anna oppilaanumero-opettajasi antama PIN-koodi
+                Anna opettajasi antama PIN-koodi
               </p>
             </div>
 
@@ -97,7 +97,7 @@ export default function StudentLoginPage({
 
           <div className="mt-6 bg-[#1a1d23]/50 border border-white/10 rounded-lg p-4">
             <p className="text-sm text-primary">
-              💡 <strong>Vinkki:</strong> Jos sinulla ei ole PIN-koodia, ota yhteyttä oppilaanumero-opettajaasi.
+              💡 <strong>Vinkki:</strong> Jos sinulla ei ole PIN-koodia, ota yhteyttä opettajaasi.
             </p>
           </div>
         </div>

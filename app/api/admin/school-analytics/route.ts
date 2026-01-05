@@ -11,6 +11,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { calculateSchoolAnalytics, ClassWithResults } from '@/lib/schoolAnalytics';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('School Analytics');
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -66,7 +69,7 @@ export async function GET(request: NextRequest) {
     const { data: classes, error: classesError } = await classesQuery;
 
     if (classesError) {
-      console.error('[School Analytics] Error fetching classes:', classesError);
+      log.error('Error fetching classes:', classesError);
       return NextResponse.json(
         { success: false, error: 'Luokkien haku epäonnistui' },
         { status: 500 }
@@ -104,7 +107,7 @@ export async function GET(request: NextRequest) {
     const { data: allResults, error: resultsError } = await resultsQuery;
 
     if (resultsError) {
-      console.error('[School Analytics] Error fetching results:', resultsError);
+      log.error('Error fetching results:', resultsError);
       return NextResponse.json(
         { success: false, error: 'Tulosten haku epäonnistui' },
         { status: 500 }
@@ -132,7 +135,7 @@ export async function GET(request: NextRequest) {
       analytics,
     });
   } catch (error: any) {
-    console.error('[School Analytics] Error:', error);
+    log.error('Error:', error);
     return NextResponse.json(
       { success: false, error: error.message || 'Sisäinen palvelinvirhe' },
       { status: 500 }

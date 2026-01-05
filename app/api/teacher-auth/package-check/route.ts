@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { isPremiumTeacher } from '@/lib/teacherPackage';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('Package Check');
 
 /**
  * GET /api/teacher-auth/package-check
@@ -29,7 +32,7 @@ export async function GET(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('[Package Check] Error:', error);
+    log.error('Error:', error);
     return NextResponse.json(
       { success: false, hasPremium: false, error: 'Sisäinen virhe' },
       { status: 500 }

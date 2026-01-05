@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateSessionToken, sanitizeInput } from '@/lib/security';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('Admin Auth');
 
 // Rate limiting for admin auth
 const failedAttempts = new Map<string, { count: number; lastAttempt: number }>();
@@ -76,7 +79,7 @@ export async function POST(request: NextRequest) {
     // Check rate limit
     const { allowed, remainingAttempts } = checkRateLimit(ip);
     if (!allowed) {
-      console.warn(`[Admin Auth] Rate limit exceeded for IP: ${ip.substring(0, 10)}...`);
+      log.warn('Rate limit exceeded');
       return NextResponse.json(
         { success: false, error: 'Liian monta yritystä. Yritä uudelleen 30 minuutin kuluttua.' },
         { status: 429 }
@@ -89,7 +92,7 @@ export async function POST(request: NextRequest) {
     const expectedPassword = process.env.ADMIN_PASSWORD;
 
     if (!expectedPassword) {
-      console.error('[Admin Auth] ADMIN_PASSWORD environment variable not set');
+      log.error('ADMIN_PASSWORD environment variable not set');
       return NextResponse.json(
         { success: false, error: 'Palvelimen asetusvirhe' },
         { status: 500 }
@@ -141,7 +144,7 @@ export async function POST(request: NextRequest) {
 
     // Record failed attempt
     recordFailedAttempt(ip);
-    console.warn(`[Admin Auth] Failed login attempt from IP: ${ip.substring(0, 10)}...`);
+    log.warn('Failed login attempt');
 
     return NextResponse.json(
       {
@@ -152,7 +155,7 @@ export async function POST(request: NextRequest) {
       { status: 401 }
     );
   } catch (error) {
-    console.error('[Admin Auth] Error:', error);
+    log.error('Error:', error);
     return NextResponse.json(
       { success: false, error: 'Virheellinen pyyntö' },
       { status: 400 }

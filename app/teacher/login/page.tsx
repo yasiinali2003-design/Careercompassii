@@ -7,6 +7,7 @@ import { Logo } from '@/components/Logo';
 import ScrollNav from '@/components/ScrollNav';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { GraduationCap, Lock, ArrowRight, ArrowLeft } from 'lucide-react';
+import { getCsrfTokenFromCookie } from '@/lib/csrf';
 
 export default function TeacherLoginPage() {
   const router = useRouter();
@@ -40,10 +41,12 @@ export default function TeacherLoginPage() {
         setLoading(false);
         return;
       }
+      const csrfToken = getCsrfTokenFromCookie();
       const response = await fetch('/api/teacher-auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          ...(csrfToken && { 'x-csrf-token': csrfToken }),
         },
         body: JSON.stringify({ password: normalized }),
       });
@@ -57,9 +60,8 @@ export default function TeacherLoginPage() {
       } else {
         setError(data.error || 'Opettajakoodi ei kelpaa');
       }
-    } catch (err) {
+    } catch {
       setError('Verkkovirhe. Yritä uudelleen.');
-      console.error('Login error:', err);
     } finally {
       setLoading(false);
     }

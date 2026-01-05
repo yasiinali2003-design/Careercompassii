@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { validateSessionToken } from '@/lib/security';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('Teacher Auth');
 
 /**
  * Teacher Auth Check API
@@ -28,12 +31,8 @@ export async function GET() {
     // Token format: timestamp.random (hex encoded)
     const isValidToken = validateSessionToken(token.value, MAX_SESSION_AGE_MS);
 
-    // Also check for legacy 'authenticated' token for backwards compatibility
-    // This will be deprecated in future versions
-    const isLegacyToken = token.value === 'authenticated';
-
     // Must have both valid token and teacher ID
-    const isAuthenticated = (isValidToken || isLegacyToken) && !!teacherId?.value;
+    const isAuthenticated = isValidToken && !!teacherId?.value;
 
     return NextResponse.json({
       authenticated: isAuthenticated,
@@ -41,10 +40,7 @@ export async function GET() {
       ...(isAuthenticated && teacherId?.value ? { teacherId: teacherId.value } : {}),
     });
   } catch (error) {
-    // Log error without exposing details
-    if (process.env.NODE_ENV === 'development') {
-      console.error('[Teacher Auth] Check error:', error);
-    }
+    log.error('Check error:', error);
     return NextResponse.json(
       { authenticated: false },
       { status: 500 }

@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { supabaseAdmin } from '@/lib/supabase';
 import { generateSessionToken, sanitizeInput } from '@/lib/security';
+import { createLogger } from '@/lib/logger';
+import { requireCsrf } from '@/lib/csrf';
+
+const log = createLogger('Teacher Auth');
 
 // Rate limiting for teacher auth
 const failedAttempts = new Map<string, { count: number; lastAttempt: number }>();
@@ -79,6 +83,15 @@ async function setTeacherCookies(teacherId: string): Promise<void> {
  */
 export async function POST(request: NextRequest) {
   try {
+    // Validate CSRF token
+    const csrfCheck = requireCsrf(request);
+    if (!csrfCheck.valid) {
+      return NextResponse.json(
+        { success: false, error: 'Virheellinen istunto. Päivitä sivu ja yritä uudelleen.' },
+        { status: 403 }
+      );
+    }
+
     // Get client IP for rate limiting
     const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
                request.headers.get('x-real-ip') ||
@@ -125,7 +138,7 @@ export async function POST(request: NextRequest) {
 
     // Check if Supabase is configured
     if (!supabaseAdmin) {
-      console.error('[Teacher Auth] Supabase not configured');
+      log.error('Supabase not configured');
 
       // Fallback to environment variable if database not available (dev only)
       if (teacherAccessCode && candidateCodes.includes(teacherAccessCode)) {
@@ -181,7 +194,7 @@ export async function POST(request: NextRequest) {
       .update({ last_login: new Date().toISOString() })
       .eq('id', teacher.id)
       .then(() => {})
-      .catch((err: unknown) => console.error('[Teacher Auth] Failed to update last_login:', err));
+      .catch((err: unknown) => log.error('Failed to update last_login:', err));
 
     // Set secure session cookies
     await setTeacherCookies(teacher.id);
@@ -197,7 +210,7 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error: any) {
-    console.error('[Teacher Auth] Login error:', error?.message);
+    log.error('Login error:', error?.message);
     return NextResponse.json(
       {
         success: false,

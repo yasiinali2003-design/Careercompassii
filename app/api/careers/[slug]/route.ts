@@ -5,6 +5,9 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { careersData } from '@/data/careers-fi';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('API/Careers');
 
 export const dynamic = 'force-dynamic';
 
@@ -38,7 +41,7 @@ export async function GET(
     });
 
   } catch (error) {
-    console.error(`[API] /api/careers/${slug} error:`, error);
+    log.error(`Error fetching career ${slug}:`, error);
     return NextResponse.json(
       {
         success: false,

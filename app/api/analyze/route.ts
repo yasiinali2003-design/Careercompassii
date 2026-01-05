@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { rankCareers, generateUserProfile } from '@/lib/scoring/scoringEngine';
 import { Cohort } from '@/lib/scoring/types';
+import { createLogger } from '@/lib/logger';
+
+const log = createLogger('API/Analyze');
 
 function validateAnswers(answers: number[]): { isValid: boolean; reason?: string } {
   // Check if all answers are the same (indicates random clicking)
@@ -131,7 +134,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(response);
 
   } catch (error) {
-    console.error('Analysis error:', error);
+    log.error('Analysis error:', error);
     return NextResponse.json(
       { error: 'Sisäinen palvelinvirhe' },
       { status: 500 }

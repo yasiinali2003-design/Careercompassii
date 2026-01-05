@@ -9,8 +9,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { generateStudentPin } from '@/lib/teacherCrypto';
+import { createLogger } from '@/lib/logger';
 import fs from 'fs';
 import path from 'path';
+
+const log = createLogger('API/Pins');
 
 interface RouteParams {
   params: {
@@ -30,7 +33,7 @@ export async function POST(
     // Validate input
     if (!classId) {
       return NextResponse.json(
-        { success: false, error: 'Puuttuva luokka-tunniste' },
+        { success: false, error: 'Puuttuva luokkatunniste' },
         { status: 400 }
       );
     }
@@ -119,14 +122,14 @@ export async function POST(
       .insert(pinsToInsert);
 
     if (insertError) {
-      console.error('[API/Pins] Error creating PINs:', insertError);
+      log.error('Error creating PINs:', insertError);
       return NextResponse.json(
         { success: false, error: 'PIN-koodien luominen epäonnistui' },
         { status: 500 }
       );
     }
 
-    console.log(`[API/Pins] Created ${count} PINs for class ${classId}`);
+    log.info(`Created ${count} PINs for class ${classId}`);
 
     return NextResponse.json({
       success: true,
@@ -135,7 +138,7 @@ export async function POST(
     });
 
   } catch (error) {
-    console.error('[API/Pins] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
@@ -170,7 +173,7 @@ export async function GET(
       .order('created_at', { ascending: false });
 
     if (error) {
-      console.error('[API/Pins] Error fetching PINs:', error);
+      log.error('Error fetching PINs:', error);
       return NextResponse.json(
         { success: false, error: 'PIN-koodien haku epäonnistui' },
         { status: 500 }
@@ -183,7 +186,7 @@ export async function GET(
     });
 
   } catch (error) {
-    console.error('[API/Pins] Unexpected error:', error);
+    log.error('Unexpected error:', error);
     return NextResponse.json(
       { success: false, error: 'Sisäinen palvelinvirhe' },
       { status: 500 }
