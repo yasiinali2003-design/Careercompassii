@@ -588,7 +588,7 @@ Yliopisto-opinnot kestävät tyypillisesti 3–5 vuotta ja tarjoavat hyvät valm
 
 AMK-opinnot kestävät tyypillisesti 3,5–4,5 vuotta ja johtavat ammattikorkeakoulututkintoon. Opiskelutapa yhdistää teoreettista tietämystä ja käytännön harjoittelua, ja työelämäprojektit ovat merkittävässä osassa opintojasi (tyypillisesti 30–40 % opintojaksoista). AMK-opinnoissa saat myös hyvät verkostoitumismahdollisuudet työelämään ja mahdollisuuden työharjoitteluihin jo opiskelun aikana, mikä helpottaa merkittävästi työllistymistä valmistumisen jälkeen. Opiskelutapa on strukturoidumpi verrattuna yliopistoon, mikä voi sopia paremmin henkilöille, jotka haluavat selkeän opintopolun ja säännöllisemmän työrytmin.
 
-Työmarkkinanäkymät AMK-koulutukselle ovat erinomaiset. Suurin osa AMK-valmistuneista työllistyy nopeasti ja suoraan oman alansa töihin – työllisyysaste on yleensä 85–95 % vuoden sisällä valmistumisesta. Keskimääräinen palkka AMK-tutkinnon suorittaneilla on noin 3 200–4 800 euroa kuukaudessa riippuen alasta. Teknologia-alalla palkat ovat yleensä korkeimmat (3 800–5 500 euroa), kun taas sosiaali- ja terveysalalla palkkataso on hieman alhaisempi, mutta työllisyysnäkymät ovat erinomaiset. Siirtyminen työelämään tapahtuu yleensä nopeasti, ja AMK-opinnot antavat myös hyvät valmiudet johtotehtäviin ja erikoistumiseen työelämässä. Ylempi AMK-tutkinto on myös mahdollisuus, mikä avaa ovia vielä korkeampiin johtotehtäviin.
+Työmarkkinanäkymät AMK-koulutukselle ovat erinomaiset. Suurin osa AMK-valmistuneista työllistyy nopeasti ja suoraan oman alansa töihin – työllisyysaste on yleensä 85–97 % vuoden sisällä valmistumisesta. Keskimääräinen palkka AMK-tutkinnon suorittaneilla on noin 2 800–4 200 euroa kuukaudessa riippuen alasta. Teknologia-alalla palkat ovat yleensä korkeimmat (3 200–4 500 euroa), kun taas sosiaali- ja terveysalalla palkkataso on hieman alhaisempi, mutta työllisyysnäkymät ovat erinomaiset. Siirtyminen työelämään tapahtuu yleensä nopeasti, ja AMK-opinnot antavat myös hyvät valmiudet johtotehtäviin ja erikoistumiseen työelämässä. Ylempi AMK-tutkinto on myös mahdollisuus, mikä avaa ovia vielä korkeampiin johtotehtäviin.
 
 AMK-koulutuksen etuja ovat konkreettinen työelämäyhteys, nopea työllistyminen ja käytännönläheinen opiskelutapa. AMK-opinnoissa saat myös hyvät verkostoitumismahdollisuudet ja työharjoittelujen kautta mahdollisuuden varmistaa, että ala sopii sinulle ennen valmistumista. Haasteena voi olla vähemmän syvällinen teoreettinen tietämys verrattuna yliopistoon ja rajoitetummat jatko-opintomahdollisuudet – AMK-opinnoista voi kuitenkin jatkaa yliopistoon, mutta se vaatii usein täydentäviä opintoja. Lisäksi akateeminen ura tai tutkijanura on vaikeampi AMK-opinnoista, jos sitä harkitset. AMK-koulutus sopii erityisesti henkilöille, jotka haluavat nopean työllistymisen ja konkreettisen työelämäyhteyden ilman, että heidän tarvitsee luopua korkeakoulututkinnosta.`;
     } else if (confidence === 'medium') {
@@ -666,7 +666,7 @@ export function getEducationPathDescription(path: EducationPath, cohort?: Cohort
             'Erikoistuneet asiantuntijatehtävät'
           ],
           applicationInfo: 'Haku yhteishaussa Opintopolussa keväisin. Useimmissa ohjelmissa pääsykoe tai todistusvalinta. Valmistaudu pääsykokeisiin ajoissa – kursseja ja materiaaleja saatavilla.',
-          financialInfo: 'Opiskelu on maksutonta. Opintotuki noin 250–350 €/kk + asumistuki. Opintolaina mahdollinen (650 €/kk). Kesätyöt ja osa-aikatyöt yleisiä.',
+          financialInfo: 'Opiskelu on maksutonta. Opintotuki noin 280 €/kk + asumistuki. Opintolaina mahdollinen (850 €/kk). Kesätyöt ja osa-aikatyöt yleisiä.',
           typicalWeek: 'Noin 10–20 h luentoja, loput itsenäistä opiskelua. Tenttikaudet intensiivisiä. Paljon vapautta aikatauluttaa omaa opiskelua.'
         };
 
@@ -680,7 +680,7 @@ export function getEducationPathDescription(path: EducationPath, cohort?: Cohort
             'Käytännönläheinen oppiminen',
             'Vahvat työelämäyhteydet',
             'Harjoittelu osana opintoja',
-            'Nopea työllistyminen (85–95 %)',
+            'Nopea työllistyminen (85–97 %)',
             'Projektit oikeiden yritysten kanssa'
           ],
           considerations: [
@@ -703,7 +703,7 @@ export function getEducationPathDescription(path: EducationPath, cohort?: Cohort
             'Erikoistumiskoulutukset'
           ],
           applicationInfo: 'Haku yhteishaussa Opintopolussa keväisin ja syksyisin. Valinta todistuspisteillä, pääsykokeilla tai AMK-valintakokeella. Joillakin aloilla soveltuvuustestit.',
-          financialInfo: 'Opiskelu on maksutonta. Opintotuki noin 250–350 €/kk + asumistuki. Opintolaina mahdollinen. Harjoittelusta maksetaan usein palkkaa (noin 1 000–1 500 €/kk).',
+          financialInfo: 'Opiskelu on maksutonta. Opintotuki noin 280 €/kk + asumistuki. Opintolaina mahdollinen (850 €/kk). Harjoittelusta maksetaan usein palkkaa (noin 1 000–1 500 €/kk).',
           typicalWeek: 'Noin 25–35 h kontaktiopetusta ja projektityötä. Säännöllisempi lukujärjestys kuin yliopistossa. Harjoittelujaksot työpaikoilla.'
         };
     }
