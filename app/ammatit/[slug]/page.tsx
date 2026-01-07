@@ -199,26 +199,26 @@ export default function CareerDetail() {
 
       {/* Main Content */}
       <AnimatedSection className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr,1fr] gap-12">
+        <div className="grid grid-cols-[2fr,1fr] gap-6 md:gap-12">
           {/* Left: Main Content */}
           <div>
             {/* Title & Subtitle */}
-            <div className="mb-8">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <div className="mb-6 md:mb-8">
+              <h1 className="text-2xl md:text-5xl font-bold text-white mb-2 md:mb-4">
                 {career.title}
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed">
+              <p className="text-sm md:text-xl text-gray-300 leading-relaxed">
                 {career.summary}
               </p>
             </div>
 
             {/* Mitä työssä tehdään? */}
             {career.dailyTasks && career.dailyTasks.length > 0 && (
-              <section className="mb-8">
-                <h2 className="text-lg font-semibold text-white mt-8 mb-3">
+              <section className="mb-6 md:mb-8">
+                <h2 className="text-sm md:text-lg font-semibold text-white mt-4 md:mt-8 mb-2 md:mb-3">
                   Mitä työssä tehdään?
                 </h2>
-                <ul className="list-disc list-inside space-y-1 text-gray-300 text-base leading-relaxed">
+                <ul className="list-disc list-inside space-y-1 text-gray-300 text-xs md:text-base leading-relaxed">
                   {career.dailyTasks.map((task: string, index: number) => (
                     <li key={index}>{task}</li>
                   ))}
@@ -227,11 +227,11 @@ export default function CareerDetail() {
             )}
 
             {/* Missä töitä tehdään? */}
-            <section className="mb-8">
-              <h2 className="text-lg font-semibold text-white mt-8 mb-3">
+            <section className="mb-6 md:mb-8">
+              <h2 className="text-sm md:text-lg font-semibold text-white mt-4 md:mt-8 mb-2 md:mb-3">
                 Missä töitä tehdään?
               </h2>
-              <p className="text-base text-gray-300 leading-relaxed">
+              <p className="text-xs md:text-base text-gray-300 leading-relaxed">
                 {career.workMode === 'Hybrid' && 'Työskentelee sekä etänä että toimistossa, joustava työaikataulu.'}
                 {career.workMode === 'Etä' && 'Työskentelee pääasiassa etänä, itsenäinen työskentely.'}
                 {career.workMode === 'Paikan päällä' && 'Työskentelee pääasiassa toimistossa tai työpaikalla.'}
@@ -243,11 +243,11 @@ export default function CareerDetail() {
 
             {/* Millainen koulutus tarvitaan? */}
             {career.educationLevel.length > 0 && (
-              <section className="mb-8">
-                <h2 className="text-lg font-semibold text-white mt-8 mb-3">
+              <section className="mb-6 md:mb-8">
+                <h2 className="text-sm md:text-lg font-semibold text-white mt-4 md:mt-8 mb-2 md:mb-3">
                   Millainen koulutus tarvitaan?
                 </h2>
-                <ul className="list-disc list-inside space-y-1 text-gray-300 text-base leading-relaxed">
+                <ul className="list-disc list-inside space-y-1 text-gray-300 text-xs md:text-base leading-relaxed">
                   {career.educationLevel.map((level: string, index: number) => (
                     <li key={index}>{level}</li>
                   ))}
@@ -257,16 +257,16 @@ export default function CareerDetail() {
 
             {/* Kenelle tämä sopii? */}
             {((career.skillsSoft && career.skillsSoft.length > 0) || career.personalityType.length > 0) && (
-              <section className="mb-8">
-                <h2 className="text-lg font-semibold text-white mt-8 mb-3">
+              <section className="mb-6 md:mb-8">
+                <h2 className="text-sm md:text-lg font-semibold text-white mt-4 md:mt-8 mb-2 md:mb-3">
                   Kenelle tämä sopii?
                 </h2>
                 {career.skillsSoft && career.skillsSoft.length > 0 && (
-                  <div className="mb-4">
-                    <p className="text-base text-gray-300 leading-relaxed mb-2">
+                  <div className="mb-3 md:mb-4">
+                    <p className="text-xs md:text-base text-gray-300 leading-relaxed mb-2">
                       Tärkeimmät taidot:
                     </p>
-                    <ul className="list-disc list-inside space-y-1 text-gray-300 text-base leading-relaxed">
+                    <ul className="list-disc list-inside space-y-1 text-gray-300 text-xs md:text-base leading-relaxed">
                       {career.skillsSoft.slice(0, 5).map((skill: string, index: number) => (
                         <li key={index}>{skill}</li>
                       ))}
@@ -275,14 +275,14 @@ export default function CareerDetail() {
                 )}
                 {career.personalityType.length > 0 && (
                   <div>
-                    <p className="text-base text-gray-300 leading-relaxed mb-2">
+                    <p className="text-xs md:text-base text-gray-300 leading-relaxed mb-2">
                       Soveltuvat persoonallisuustyypit:
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1 md:gap-2">
                       {career.personalityType.map((type: string, index: number) => (
                         <span
                           key={index}
-                          className="text-xs bg-white/5 text-urak-text-secondary rounded-full px-2 py-1"
+                          className="text-[10px] md:text-xs bg-white/5 text-urak-text-secondary rounded-full px-2 py-1"
                         >
                           {type}
                         </span>
@@ -295,11 +295,11 @@ export default function CareerDetail() {
 
             {/* Läheiset ammatit */}
             {relatedCareers.length > 0 && (
-              <section className="mb-8">
-                <h2 className="text-lg font-semibold text-white mt-8 mb-3">
+              <section className="mb-6 md:mb-8">
+                <h2 className="text-sm md:text-lg font-semibold text-white mt-4 md:mt-8 mb-2 md:mb-3">
                   Läheiset ammatit
                 </h2>
-                <ul className="space-y-2">
+                <ul className="space-y-1 md:space-y-2">
                   {relatedCareers
                     .filter((relatedCareer: Career) => careerSlugExists(relatedCareer.slug))
                     .slice(0, 6)
@@ -307,10 +307,10 @@ export default function CareerDetail() {
                       <li key={relatedCareer.slug}>
                         <Link
                           href={`/ammatit/${encodeURIComponent(relatedCareer.slug)}`}
-                          className="inline-flex items-center gap-2 text-urak-accent-blue hover:underline text-base"
+                          className="inline-flex items-center gap-1 md:gap-2 text-urak-accent-blue hover:underline text-xs md:text-base"
                         >
                           {relatedCareer.title}
-                          <ChevronRight className="h-4 w-4" />
+                          <ChevronRight className="h-3 w-3 md:h-4 md:w-4" />
                         </Link>
                       </li>
                     ))}
@@ -320,19 +320,19 @@ export default function CareerDetail() {
           </div>
 
           {/* Right: Sticky Sidebar */}
-          <div className="sticky top-24 space-y-6 h-fit">
+          <div className="sticky top-20 md:top-24 space-y-4 md:space-y-6 h-fit">
             {/* Pikakatsaus Card */}
-            <AnimatedCard className="bg-urak-surface rounded-xl ring-1 ring-white/5 p-6">
-              <h3 className="text-lg font-semibold text-white mb-4">
+            <AnimatedCard className="bg-urak-surface rounded-xl ring-1 ring-white/5 p-4 md:p-6">
+              <h3 className="text-sm md:text-lg font-semibold text-white mb-3 md:mb-4">
                 Pikakatsaus
               </h3>
               
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {/* Palkkataso */}
                 {career.salaryMin && career.salaryMax && (
                   <div>
-                    <p className="text-xs text-gray-400 mb-2 uppercase tracking-wider">Palkkataso</p>
-                    <p className="text-sm text-white font-medium">
+                    <p className="text-[10px] md:text-xs text-gray-400 mb-1 md:mb-2 uppercase tracking-wider">Palkkataso</p>
+                    <p className="text-xs md:text-sm text-white font-medium">
                       {career.salaryMin}–{career.salaryMax} €/kk
                     </p>
                   </div>
@@ -341,8 +341,8 @@ export default function CareerDetail() {
                 {/* Työllisyysnäkymä */}
                 {career.outlook && (
                   <div>
-                    <p className="text-xs text-gray-400 mb-2 uppercase tracking-wider">Työllisyysnäkymä</p>
-                    <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${getOutlookBgColor(career.outlook)} ${getOutlookColor(career.outlook)}`}>
+                    <p className="text-[10px] md:text-xs text-gray-400 mb-1 md:mb-2 uppercase tracking-wider">Työllisyysnäkymä</p>
+                    <span className={`inline-block px-2 py-0.5 md:py-1 rounded-full text-[10px] md:text-xs font-medium ${getOutlookBgColor(career.outlook)} ${getOutlookColor(career.outlook)}`}>
                       {career.outlook}
                     </span>
                   </div>
@@ -351,10 +351,10 @@ export default function CareerDetail() {
                 {/* Koulutustaso */}
                 {career.educationLevel.length > 0 && (
                   <div>
-                    <p className="text-xs text-gray-400 mb-2 uppercase tracking-wider">Koulutustaso</p>
-                    <div className="space-y-1">
-                      {career.educationLevel.map((level: string, index: number) => (
-                        <p key={index} className="text-sm text-gray-300">{level}</p>
+                    <p className="text-[10px] md:text-xs text-gray-400 mb-1 md:mb-2 uppercase tracking-wider">Koulutustaso</p>
+                    <div className="space-y-0.5 md:space-y-1">
+                      {career.educationLevel.slice(0, 2).map((level: string, index: number) => (
+                        <p key={index} className="text-xs md:text-sm text-gray-300 truncate">{level}</p>
                       ))}
                     </div>
                   </div>
@@ -363,12 +363,12 @@ export default function CareerDetail() {
                 {/* Sopivat profiilit */}
                 {career.personalityType.length > 0 && (
                   <div>
-                    <p className="text-xs text-gray-400 mb-2 uppercase tracking-wider">Sopivat profiilit</p>
-                    <div className="flex flex-wrap gap-2">
+                    <p className="text-[10px] md:text-xs text-gray-400 mb-1 md:mb-2 uppercase tracking-wider">Sopivat profiilit</p>
+                    <div className="flex flex-wrap gap-1 md:gap-2">
                       {career.personalityType.map((type: string, index: number) => (
                         <span
                           key={index}
-                          className="text-xs bg-white/5 text-urak-text-secondary rounded-full px-2 py-1"
+                          className="text-[10px] md:text-xs bg-white/5 text-urak-text-secondary rounded-full px-1.5 md:px-2 py-0.5 md:py-1"
                         >
                           {type}
                         </span>
@@ -381,21 +381,21 @@ export default function CareerDetail() {
 
             {/* Koulutuspolut Card */}
             {career.opintopolkuLinks && career.opintopolkuLinks.length > 0 && (
-              <AnimatedCard className="bg-urak-surface rounded-xl ring-1 ring-white/5 p-6">
-                <h3 className="text-lg font-semibold text-white mb-4">
+              <AnimatedCard className="bg-urak-surface rounded-xl ring-1 ring-white/5 p-4 md:p-6">
+                <h3 className="text-sm md:text-lg font-semibold text-white mb-3 md:mb-4">
                   Koulutuspolut
                 </h3>
-                <div className="space-y-2">
-                  {career.opintopolkuLinks.map((link: {label: string; url: string}, index: number) => (
+                <div className="space-y-1 md:space-y-2">
+                  {career.opintopolkuLinks.slice(0, 3).map((link: {label: string; url: string}, index: number) => (
                     <a
                       key={index}
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center justify-between w-full px-6 py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
+                      className="group flex items-center justify-between w-full px-3 py-2 md:px-6 md:py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-xs md:text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
                     >
-                      <span>{link.label}</span>
-                      <ExternalLink className="h-4 w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                      <span className="truncate mr-2">{link.label}</span>
+                      <ExternalLink className="h-3 w-3 md:h-4 md:w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                     </a>
                   ))}
                 </div>
@@ -403,46 +403,46 @@ export default function CareerDetail() {
             )}
 
             {/* Työpaikkahaku Card */}
-            <AnimatedCard className="bg-urak-surface rounded-xl ring-1 ring-white/5 p-6">
-              <h3 className="text-lg font-semibold text-white mb-4">
+            <AnimatedCard className="bg-urak-surface rounded-xl ring-1 ring-white/5 p-4 md:p-6">
+              <h3 className="text-sm md:text-lg font-semibold text-white mb-3 md:mb-4">
                 Työpaikkahaku
               </h3>
-              <div className="space-y-2">
+              <div className="space-y-1 md:space-y-2">
                 <a
                   href={`https://duunitori.fi/tyopaikat?hakusana=${encodeURIComponent(career.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between w-full px-6 py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
+                  className="group flex items-center justify-between w-full px-3 py-2 md:px-6 md:py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-xs md:text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
                 >
                   <span>Duunitori</span>
-                  <ExternalLink className="h-4 w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <ExternalLink className="h-3 w-3 md:h-4 md:w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                 </a>
                 <a
                   href={`https://www.te-palvelut.fi/te/fi/tyonhaku/tyopaikat?hakusana=${encodeURIComponent(career.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between w-full px-6 py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
+                  className="group flex items-center justify-between w-full px-3 py-2 md:px-6 md:py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-xs md:text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
                 >
                   <span>TE-Palvelut</span>
-                  <ExternalLink className="h-4 w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <ExternalLink className="h-3 w-3 md:h-4 md:w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                 </a>
                 <a
                   href={`https://fi.indeed.com/jobs?q=${encodeURIComponent(career.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between w-full px-6 py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
+                  className="group flex items-center justify-between w-full px-3 py-2 md:px-6 md:py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-xs md:text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
                 >
                   <span>Indeed</span>
-                  <ExternalLink className="h-4 w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <ExternalLink className="h-3 w-3 md:h-4 md:w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                 </a>
                 <a
                   href={`https://www.monster.fi/tyopaikat/haku?q=${encodeURIComponent(career.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between w-full px-6 py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
+                  className="group flex items-center justify-between w-full px-3 py-2 md:px-6 md:py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-xs md:text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
                 >
                   <span>Monster</span>
-                  <ExternalLink className="h-4 w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <ExternalLink className="h-3 w-3 md:h-4 md:w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                 </a>
               </div>
             </AnimatedCard>

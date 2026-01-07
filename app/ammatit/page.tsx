@@ -412,7 +412,7 @@ export default function CareerCatalog() {
         <div className="max-w-7xl mx-auto">
           {displayedCareers.length > 0 ? (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 mb-12">
                 {displayedCareers.map((career: Career, index: number) => {
                   // Collect all tags for display
                   const tags = [
@@ -424,7 +424,7 @@ export default function CareerCatalog() {
                   return (
                     <div
                       key={career.slug}
-                      className="group relative overflow-hidden rounded-3xl border border-white/5 bg-white/5 bg-gradient-to-b from-white/[0.05] to-white/0 backdrop-blur-xl px-6 py-6 shadow-[0_18px_50px_rgba(0,0,0,0.45)] hover:bg-white/[0.08] hover:border-white/10 hover:shadow-[0_26px_60px_rgba(0,0,0,0.7)] transition-all duration-300 ease-out hover:-translate-y-1"
+                      className="group relative overflow-hidden rounded-2xl md:rounded-3xl border border-white/5 bg-white/5 bg-gradient-to-b from-white/[0.05] to-white/0 backdrop-blur-xl px-3 py-4 md:px-6 md:py-6 shadow-[0_18px_50px_rgba(0,0,0,0.45)] hover:bg-white/[0.08] hover:border-white/10 hover:shadow-[0_26px_60px_rgba(0,0,0,0.7)] transition-all duration-300 ease-out hover:-translate-y-1"
                     >
                       {/* Hover Glow */}
                       <div className="absolute top-0 right-0 h-32 w-32 bg-urak-accent-blue/15 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -434,36 +434,36 @@ export default function CareerCatalog() {
                         className="block h-full flex flex-col relative z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-3xl"
                       >
                         {/* Title */}
-                        <h3 className="text-lg font-semibold text-urak-text-primary mb-3 group-hover:text-white transition-colors">
+                        <h3 className="text-sm md:text-lg font-semibold text-urak-text-primary mb-2 md:mb-3 group-hover:text-white transition-colors">
                           {career.title}
                         </h3>
 
                         {/* Description */}
-                        <p className="text-sm text-urak-text-secondary leading-relaxed mb-4 line-clamp-3 flex-1">
+                        <p className="text-xs md:text-sm text-urak-text-secondary leading-relaxed mb-3 md:mb-4 line-clamp-2 md:line-clamp-3 flex-1">
                           {career.summary}
                         </p>
 
                         {/* Quick Info Row */}
-                        <div className="mb-4 space-y-2">
+                        <div className="mb-2 md:mb-4 space-y-1 md:space-y-2">
                           {/* Salary */}
                           {career.salaryMin && career.salaryMax && (
-                            <div className="flex items-center gap-2 text-xs text-urak-text-muted">
+                            <div className="flex items-center gap-1 md:gap-2 text-[10px] md:text-xs text-urak-text-muted">
                               <span className="font-medium text-urak-text-secondary">Palkka:</span>
-                              <span>{career.salaryMin}€ - {career.salaryMax}€/kk</span>
+                              <span>{career.salaryMin}€–{career.salaryMax}€</span>
                             </div>
                           )}
-                          
+
                           {/* Education Level */}
                           {career.educationLevel && career.educationLevel.length > 0 && (
-                            <div className="flex items-center gap-2 text-xs text-urak-text-muted">
+                            <div className="flex items-center gap-1 md:gap-2 text-[10px] md:text-xs text-urak-text-muted">
                               <span className="font-medium text-urak-text-secondary">Koulutus:</span>
-                              <span>{career.educationLevel.slice(0, 2).join(', ')}{career.educationLevel.length > 2 ? '...' : ''}</span>
+                              <span className="truncate">{career.educationLevel[0]}</span>
                             </div>
                           )}
-                          
+
                           {/* Outlook */}
                           {career.outlook && (
-                            <div className="flex items-center gap-2 text-xs">
+                            <div className="flex items-center gap-1 md:gap-2 text-[10px] md:text-xs">
                               <span className="font-medium text-urak-text-secondary">Työllisyys:</span>
                               <span className={`${career.outlook === 'Kasvaa' ? 'text-urak-accent-green' : 'text-urak-text-muted'}`}>
                                 {career.outlook}
@@ -474,11 +474,11 @@ export default function CareerCatalog() {
 
                         {/* Tag Pills */}
                         {tags.length > 0 && (
-                          <div className="flex flex-wrap gap-2 mb-4">
-                            {tags.map((tag: string, tagIndex: number) => (
+                          <div className="flex flex-wrap gap-1 md:gap-2 mb-2 md:mb-4">
+                            {tags.slice(0, 2).map((tag: string, tagIndex: number) => (
                               <span
                                 key={`${tag}-${tagIndex}`}
-                                className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-urak-text-secondary"
+                                className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-2 md:px-3 py-0.5 md:py-1 text-[10px] md:text-xs font-medium text-urak-text-secondary truncate max-w-[80px] md:max-w-none"
                               >
                                 {tag}
                               </span>
@@ -487,10 +487,10 @@ export default function CareerCatalog() {
                         )}
 
                         {/* CTA Section */}
-                        <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
-                          <span className="inline-flex items-center gap-1.5 text-sm font-medium text-urak-accent-blue group-hover:text-urak-accent-blue/90 transition-colors">
-                            Katso ammatti
-                            <ChevronRight className="h-4 w-4 inline-block translate-x-0 group-hover:translate-x-0.5 transition-transform" />
+                        <div className="mt-auto pt-2 md:pt-4 border-t border-white/10 flex items-center justify-between">
+                          <span className="inline-flex items-center gap-1 md:gap-1.5 text-xs md:text-sm font-medium text-urak-accent-blue group-hover:text-urak-accent-blue/90 transition-colors">
+                            Katso
+                            <ChevronRight className="h-3 w-3 md:h-4 md:w-4 inline-block translate-x-0 group-hover:translate-x-0.5 transition-transform" />
                           </span>
                         </div>
                       </Link>

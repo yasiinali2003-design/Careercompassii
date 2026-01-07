@@ -22,17 +22,17 @@ export function Footer() {
 
       {/* Footer Content */}
       <div className="mx-auto max-w-6xl px-8 sm:px-10 py-12 md:py-16 relative z-10 w-full">
-        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
-          <div className="max-w-sm">
-            <h3 className="font-body text-lg font-semibold mb-4">
+        <div className="flex flex-row gap-6 md:gap-10 items-start justify-between">
+          <div className="max-w-[200px] md:max-w-sm flex-shrink-0">
+            <h3 className="font-body text-base md:text-lg font-semibold mb-2 md:mb-4">
               Urakompassi
             </h3>
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs md:text-sm text-slate-300 leading-relaxed">
               Suomalainen urasuunnittelun työkalu, joka auttaa nuoria
               hahmottamaan vahvuuksiaan ja ammatillisia suuntautumisvaihtoehtojaan.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-10 text-sm text-slate-300 md:grid-cols-2">
+          <div className="grid grid-cols-2 gap-4 md:gap-10 text-xs md:text-sm text-slate-300">
             {/* Only show Palvelu section on localhost */}
             {showAdminLinks && (
             <div>
@@ -58,9 +58,9 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col gap-4 border-t border-urak-border/60 pt-6 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
+        <div className="mt-8 md:mt-12 flex flex-row gap-4 border-t border-urak-border/60 pt-4 md:pt-6 text-[10px] md:text-xs text-slate-400 items-center justify-between">
           <p>© {new Date().getFullYear()} Urakompassi. All rights reserved.</p>
-          <nav aria-label="Legal links" className="flex flex-wrap gap-4 md:gap-6">
+          <nav aria-label="Legal links" className="flex flex-wrap gap-2 md:gap-6">
             {showAdminLinks && (
               <Link href="/metodologia" className="hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-urak-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-urak-bg rounded-sm transition-colors">Tutkimuspohja</Link>
             )}

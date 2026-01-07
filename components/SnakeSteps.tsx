@@ -35,54 +35,35 @@ export default function SnakeSteps() {
           </p>
         </div>
 
-        {/* Desktop Timeline */}
-        <div className="hidden md:block">
+        {/* Timeline - Same layout on all screen sizes */}
+        <div>
           {/* Numbered Circles with Connecting Line */}
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex items-center justify-between mb-8 md:mb-12">
             {steps.map((step, index) => (
               <div key={step.number} className="flex items-center flex-1">
-                <div className="h-10 w-10 flex items-center justify-center rounded-full border border-urak-accent-blue/40 bg-urak-bg text-sm font-medium text-urak-accent-blue flex-shrink-0">
+                <div className="h-8 w-8 md:h-10 md:w-10 flex items-center justify-center rounded-full border border-urak-accent-blue/40 bg-urak-bg text-xs md:text-sm font-medium text-urak-accent-blue flex-shrink-0">
                   {step.number}
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="h-px flex-1 bg-urak-border/60 mx-4" />
+                  <div className="h-px flex-1 bg-urak-border/60 mx-2 md:mx-4" />
                 )}
               </div>
             ))}
           </div>
 
           {/* Titles and Descriptions Grid */}
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 gap-4 md:gap-8">
             {steps.map((step) => (
               <div key={step.number} className="max-w-[240px]">
-                <h3 className="text-lg font-semibold text-urak-text-primary mb-3">
+                <h3 className="text-sm md:text-lg font-semibold text-urak-text-primary mb-2 md:mb-3">
                   {step.title}
                 </h3>
-                <p className="text-sm text-urak-text-secondary leading-relaxed">
+                <p className="text-xs md:text-sm text-urak-text-secondary leading-relaxed">
                   {step.description}
                 </p>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Mobile Timeline */}
-        <div className="md:hidden space-y-10">
-          {steps.map((step) => (
-            <div key={step.number} className="flex gap-4">
-              <div className="h-10 w-10 flex items-center justify-center rounded-full border border-urak-accent-blue/40 bg-urak-bg text-sm font-medium text-urak-accent-blue flex-shrink-0">
-                {step.number}
-              </div>
-              <div className="flex-1">
-                <h3 className="text-lg font-semibold text-urak-text-primary mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-urak-text-secondary leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </AnimatedSection>

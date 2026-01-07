@@ -32,27 +32,14 @@ import {
 export default function HomePage() {
   const categories = getAllCategories();
 
-  // Apply snap scroll only to this page
+  // Apply snap scroll to this page on all screen sizes
   useEffect(() => {
     const htmlElement = document.documentElement;
-    // Only apply on desktop (768px+)
-    const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-    const applySnapScroll = () => {
-      if (mediaQuery.matches) {
-        htmlElement.style.scrollSnapType = 'y mandatory';
-      } else {
-        htmlElement.style.scrollSnapType = '';
-      }
-    };
-
-    applySnapScroll();
-    mediaQuery.addEventListener('change', applySnapScroll);
+    htmlElement.style.scrollSnapType = 'y mandatory';
 
     return () => {
       // Remove snap scroll when leaving the page
       htmlElement.style.scrollSnapType = '';
-      mediaQuery.removeEventListener('change', applySnapScroll);
       // Also scroll to top when unmounting
       window.scrollTo(0, 0);
     };
@@ -105,7 +92,7 @@ export default function HomePage() {
               }}
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               style={{ willChange: "opacity, transform" }}
-              className="font-heading text-5xl sm:text-6xl md:text-7xl font-bold mb-8 text-urak-text-primary leading-[1.05] tracking-tight"
+              className="font-heading text-4xl md:text-7xl font-bold mb-8 text-urak-text-primary leading-[1.05] tracking-tight"
             >
               Löydä suunta, joka tuntuu omalta
             </motion.h1>
@@ -118,7 +105,7 @@ export default function HomePage() {
               }}
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               style={{ willChange: "opacity, transform" }}
-              className="text-lg md:text-xl text-urak-text-secondary mb-10 max-w-[720px] mx-auto leading-relaxed"
+              className="text-base md:text-xl text-urak-text-secondary mb-10 max-w-[720px] mx-auto leading-relaxed"
             >
               Uratesti, joka perustuu tutkimuspohjaiseen psykologiaan ja auttaa tunnistamaan vahvuutesi ja suuntautumisvaihtoehtosi.
             </motion.p>
@@ -131,7 +118,7 @@ export default function HomePage() {
               }}
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               style={{ willChange: "opacity, transform" }}
-              className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-8"
+              className="flex flex-row gap-3 justify-center items-center mb-8"
             >
               <PrimaryButton href="/test" className="group inline-flex items-center gap-2 px-8 py-4 text-base">
                 Aloita testi

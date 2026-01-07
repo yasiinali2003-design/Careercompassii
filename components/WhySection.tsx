@@ -42,31 +42,31 @@ export function WhySection() {
         </p>
       </header>
 
-      {/* Glass Feature Cards */}
-      <div className="grid gap-8 md:grid-cols-3">
+      {/* Glass Feature Cards - 3 columns on all screens */}
+      <div className="grid grid-cols-3 gap-4 md:gap-8">
         {reasons.map((item, index) => {
           const Icon = item.icon;
           return (
             <AnimatedCard
               key={item.id}
               delay={index * 0.08}
-              className="group relative overflow-hidden rounded-3xl border border-white/5 bg-white/5 bg-gradient-to-b from-white/[0.05] to-white/0 backdrop-blur-xl px-6 py-8 transition-transform duration-300 ease-out hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-2xl md:rounded-3xl border border-white/5 bg-white/5 bg-gradient-to-b from-white/[0.05] to-white/0 backdrop-blur-xl px-4 py-6 md:px-6 md:py-8 transition-transform duration-300 ease-out hover:-translate-y-1"
             >
               {/* Hover Glow */}
               <div className="absolute top-0 right-0 h-32 w-32 bg-urak-accent-blue/15 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Icon Bubble */}
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-urak-bg/60 ring-1 ring-white/10 mb-5 relative z-10">
-                <Icon className="h-5 w-5 text-urak-accent-blue" />
+              <div className="flex h-9 w-9 md:h-11 md:w-11 items-center justify-center rounded-xl md:rounded-2xl bg-urak-bg/60 ring-1 ring-white/10 mb-4 md:mb-5 relative z-10">
+                <Icon className="h-4 w-4 md:h-5 md:w-5 text-urak-accent-blue" />
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-urak-text-primary mb-3 relative z-10">
+              <h3 className="text-sm md:text-lg font-semibold text-urak-text-primary mb-2 md:mb-3 relative z-10">
                 {item.title}
               </h3>
 
               {/* Body */}
-              <p className="text-sm text-urak-text-secondary leading-relaxed relative z-10">
+              <p className="text-xs md:text-sm text-urak-text-secondary leading-relaxed relative z-10">
                 {item.body}
               </p>
             </AnimatedCard>
