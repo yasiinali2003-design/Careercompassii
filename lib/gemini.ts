@@ -28,41 +28,42 @@ export interface GenerativeUIResult {
  */
 export async function analyzeCareerWithGemini3(input: CareerAnalysisInput) {
   try {
-    const prompt = `You are an expert career counselor using advanced AI to provide personalized career guidance.
+    const prompt = `Olet asiantunteva uraohjaaja, joka käyttää tekoälyä henkilökohtaisen uraohjauksen tarjoamiseen.
+TÄRKEÄÄ: Kirjoita kaikki vastaukset SUOMEKSI. Käytä erinomaista suomen kieltä kaikissa teksteissä.
 
-Analyze the following career test results and provide a comprehensive career analysis:
+Analysoi seuraavat uratestin tulokset ja anna kattava ura-analyysi:
 
-User Answers: ${JSON.stringify(input.answers, null, 2)}
-${input.userProfile ? `User Profile: ${JSON.stringify(input.userProfile, null, 2)}` : ''}
+Käyttäjän vastaukset: ${JSON.stringify(input.answers, null, 2)}
+${input.userProfile ? `Käyttäjän profiili: ${JSON.stringify(input.userProfile, null, 2)}` : ''}
 
-Based on this data, provide:
-1. **Personality Type**: Identify the best matching personality type from these 8 categories:
-   - Realistit (Practical Doers)
-   - Tutkijat (Analytical Thinkers)
-   - Taite import ilijat (Creative Artists)
-   - Sosiaaliset (People Helpers)
-   - Yrittäjät (Enterprising Leaders)
-   - Perinteiset (Organized Planners)
-   - Luovat (Innovators)
-   - Tekniset (Technical Specialists)
+Anna vastaus seuraavista:
+1. **Persoonallisuustyyppi**: Tunnista parhaiten sopiva persoonallisuustyyppi näistä 8 kategoriasta:
+   - Realistit (Käytännön tekijät)
+   - Tutkijat (Analyyttiset ajattelijat)
+   - Taiteilijat (Luovat tekijät)
+   - Sosiaaliset (Ihmisten auttajat)
+   - Yrittäjät (Johtavat vaikuttajat)
+   - Perinteiset (Järjestelmälliset suunnittelijat)
+   - Luovat (Innovaattorit)
+   - Tekniset (Tekniikan asiantuntijat)
 
-2. **Top 5 Career Recommendations**: Match from the 361 careers in our database with match percentages
+2. **Top 5 urasuositusta**: Sovita 361 ammatin tietokannastamme prosentuaalisilla osuvuuksilla
 
-3. **Strengths & Skills**: Key strengths identified
+3. **Vahvuudet ja taidot**: Tunnistetut keskeiset vahvuudet (SUOMEKSI)
 
-4. **Learning Path**: Recommended education and skill development
+4. **Oppimispolku**: Suositellut koulutus- ja taitokehityspolut
 
-5. **Career Roadmap**: Step-by-step career progression
+5. **Urapolku**: Vaiheittainen uraetenemä
 
-Return the response as a JSON object with this structure:
+Palauta vastaus JSON-objektina tällä rakenteella (KAIKKI TEKSTIT SUOMEKSI):
 {
-  "personalityType": "string",
-  "matchPercentage": number,
-  "topCareers": [{ "name": "string", "match": number, "description": "string", "salary": "string", "education": "string" }],
-  "strengths": ["string"],
-  "learningPath": { "immediate": ["string"], "shortTerm": ["string"], "longTerm": ["string"] },
-  "careerRoadmap": [{ "stage": "string", "timeline": "string", "actions": ["string"] }],
-  "insights": "string (detailed personal insights)"
+  "personalityType": "persoonallisuustyyppi suomeksi",
+  "matchPercentage": numero,
+  "topCareers": [{ "name": "ammatin nimi suomeksi", "match": numero, "description": "kuvaus suomeksi", "salary": "palkka suomeksi", "education": "koulutus suomeksi" }],
+  "strengths": ["vahvuus suomeksi", "toinen vahvuus suomeksi"],
+  "learningPath": { "immediate": ["toimenpide suomeksi"], "shortTerm": ["toimenpide suomeksi"], "longTerm": ["toimenpide suomeksi"] },
+  "careerRoadmap": [{ "stage": "vaihe suomeksi", "timeline": "aikataulu suomeksi", "actions": ["toimenpide suomeksi"] }],
+  "insights": "henkilökohtaiset oivallukset suomeksi"
 }`;
 
     const result = await model.generateContent(prompt);
@@ -137,21 +138,22 @@ Return a JSON object with:
  */
 export async function generateCareerContent(career: string, userContext: any) {
   try {
-    const prompt = `Generate engaging, personalized content about the career: "${career}"
+    const prompt = `Luo kiinnostavaa, henkilökohtaista sisältöä ammatista: "${career}"
+TÄRKEÄÄ: Kirjoita kaikki SUOMEKSI erinomaisella kieliopilla.
 
-User Context: ${JSON.stringify(userContext, null, 2)}
+Käyttäjän konteksti: ${JSON.stringify(userContext, null, 2)}
 
-Create content that includes:
-1. A compelling introduction tailored to the user
-2. Day-in-the-life scenarios
-3. Skills needed (with user's current skills highlighted)
-4. Career growth opportunities
-5. Salary expectations in Finland
-6. Education requirements
-7. Industry trends
-8. Inspiring success stories
+Luo sisältöä, joka sisältää:
+1. Houkutteleva johdanto käyttäjälle räätälöitynä
+2. Päivä ammatin parissa -skenaarioita
+3. Tarvittavat taidot (käyttäjän nykyiset taidot korostettuina)
+4. Urakehitysmahdollisuudet
+5. Palkkaodotukset Suomessa
+6. Koulutusvaatimukset
+7. Alan trendit
+8. Inspiroivia menestystarinoita
 
-Make it personal, engaging, and actionable. Return as markdown.`;
+Tee siitä henkilökohtainen, kiinnostava ja toiminnallinen. Palauta markdown-muodossa SUOMEKSI.`;
 
     const result = await model.generateContent(prompt);
     const response = await result.response;

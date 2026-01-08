@@ -5290,16 +5290,17 @@ export function rankCareers(
     }
 
     // Calculate base score from category match
-    let baseScore = 40; // Neutral starting point
+    // REDUCED base score to allow subdimension alignment to matter more
+    let baseScore = 25; // Lower starting point - subdimensions should differentiate
     const careerCategory = careerVector.category;
 
-    // Category matching bonus
+    // Category matching bonus - REDUCED to allow within-category differentiation
     if (careerCategory === dominantCategory) {
-      baseScore += 30; // Major boost for matching dominant category
+      baseScore += 20; // Reduced from 30 - let subdimensions differentiate within category
     } else if (topCategories.includes(careerCategory)) {
-      baseScore += 18; // Good boost for top 3 categories
+      baseScore += 12; // Reduced from 18
     } else if (categoryAffinitiesArray.slice(3, 5).map((c: CategoryAffinity) => c.category).includes(careerCategory)) {
-      baseScore += 8; // Small boost for categories 4-5
+      baseScore += 5; // Reduced from 8
     }
 
     // Calculate subdimension alignment bonus
@@ -5309,59 +5310,91 @@ export function rankCareers(
     const careerValues = careerVector.values || {};
     let alignmentBonus = 0;
 
-    // Interest subdimension alignment - INCREASED WEIGHTS FOR DIFFERENTIATION
+    // Interest subdimension alignment - DOUBLED WEIGHTS FOR BETTER WITHIN-CATEGORY DIFFERENTIATION
+    // These weights now matter MORE because base/category scores are lower
     if (careerInterests.creative && interests.creative) {
-      alignmentBonus += careerInterests.creative * interests.creative * 8;
+      alignmentBonus += careerInterests.creative * interests.creative * 15; // Doubled from 8
     }
     if (careerInterests.technology && interests.technology) {
-      alignmentBonus += careerInterests.technology * interests.technology * 8;
+      alignmentBonus += careerInterests.technology * interests.technology * 15; // Doubled from 8
     }
     if (careerInterests.people && interests.people) {
-      alignmentBonus += careerInterests.people * interests.people * 7;
+      alignmentBonus += careerInterests.people * interests.people * 14; // Doubled from 7
     }
     if (careerInterests.hands_on && interests.hands_on) {
-      alignmentBonus += careerInterests.hands_on * interests.hands_on * 8;
+      alignmentBonus += careerInterests.hands_on * interests.hands_on * 15; // Doubled from 8
     }
     if (careerInterests.health && interests.health) {
-      alignmentBonus += careerInterests.health * interests.health * 8;
+      alignmentBonus += careerInterests.health * interests.health * 15; // Doubled from 8
     }
     // CRITICAL: Nature-based careers (Eläinlääkäri, Ympäristö roles) need strong nature matching
     if (careerInterests.nature && interests.nature) {
-      alignmentBonus += careerInterests.nature * interests.nature * 10; // HIGH weight for nature
+      alignmentBonus += careerInterests.nature * interests.nature * 18; // Increased from 10
     }
     if (careerInterests.environment && (interests.environment || interests.nature)) {
-      alignmentBonus += careerInterests.environment * Math.max(interests.environment || 0, interests.nature || 0) * 8;
+      alignmentBonus += careerInterests.environment * Math.max(interests.environment || 0, interests.nature || 0) * 15;
     }
     if (careerInterests.analytical && interests.analytical) {
-      alignmentBonus += careerInterests.analytical * interests.analytical * 6;
+      alignmentBonus += careerInterests.analytical * interests.analytical * 12; // Doubled from 6
     }
     if (careerInterests.innovation && interests.innovation) {
-      alignmentBonus += careerInterests.innovation * interests.innovation * 6;
+      alignmentBonus += careerInterests.innovation * interests.innovation * 12; // Doubled from 6
     }
     if (careerInterests.business && (interests.business || values.business)) {
-      alignmentBonus += careerInterests.business * Math.max(interests.business || 0, values.business || 0) * 6;
+      alignmentBonus += careerInterests.business * Math.max(interests.business || 0, values.business || 0) * 12;
     }
     // CRITICAL: Education interest alignment for teaching/training careers
     if (careerInterests.education && interests.education) {
-      alignmentBonus += careerInterests.education * interests.education * 6;
+      alignmentBonus += careerInterests.education * interests.education * 12; // Doubled from 6
+    }
+    // NEW: Arts & culture alignment
+    if (careerInterests.arts_culture && interests.arts_culture) {
+      alignmentBonus += careerInterests.arts_culture * interests.arts_culture * 12;
+    }
+    // NEW: Sports alignment
+    if (careerInterests.sports && interests.sports) {
+      alignmentBonus += careerInterests.sports * interests.sports * 12;
+    }
+    // NEW: Writing alignment
+    if (careerInterests.writing && interests.writing) {
+      alignmentBonus += careerInterests.writing * interests.writing * 12;
     }
 
-    // Workstyle subdimension alignment
+    // Workstyle subdimension alignment - INCREASED WEIGHTS
     if (careerWorkstyle.leadership && (workstyle.leadership || interests.leadership)) {
-      alignmentBonus += careerWorkstyle.leadership * Math.max(workstyle.leadership || 0, interests.leadership || 0) * 4;
+      alignmentBonus += careerWorkstyle.leadership * Math.max(workstyle.leadership || 0, interests.leadership || 0) * 8; // Doubled from 4
     }
     if (careerWorkstyle.organization && (workstyle.organization || workstyle.structure)) {
-      alignmentBonus += careerWorkstyle.organization * Math.max(workstyle.organization || 0, workstyle.structure || 0) * 4; // Increased from 3 to 4
+      alignmentBonus += careerWorkstyle.organization * Math.max(workstyle.organization || 0, workstyle.structure || 0) * 8; // Doubled from 4
     }
     // CRITICAL: Add precision alignment for järjestäjä careers
     if (careerWorkstyle.precision && workstyle.precision) {
-      alignmentBonus += careerWorkstyle.precision * workstyle.precision * 4;
+      alignmentBonus += careerWorkstyle.precision * workstyle.precision * 8; // Doubled from 4
     }
     if (careerWorkstyle.teamwork && workstyle.teamwork) {
-      alignmentBonus += careerWorkstyle.teamwork * workstyle.teamwork * 3;
+      alignmentBonus += careerWorkstyle.teamwork * workstyle.teamwork * 6; // Doubled from 3
     }
     if (careerWorkstyle.independence && workstyle.independence) {
-      alignmentBonus += careerWorkstyle.independence * workstyle.independence * 3;
+      alignmentBonus += careerWorkstyle.independence * workstyle.independence * 6; // Doubled from 3
+    }
+    // NEW: Problem solving alignment
+    if (careerWorkstyle.problem_solving && workstyle.problem_solving) {
+      alignmentBonus += careerWorkstyle.problem_solving * workstyle.problem_solving * 8;
+    }
+    // NEW: Teaching workstyle alignment (for education careers)
+    if (careerWorkstyle.teaching && workstyle.teaching) {
+      alignmentBonus += careerWorkstyle.teaching * workstyle.teaching * 8;
+    }
+    // NEW: Social workstyle alignment
+    if (careerWorkstyle.social && workstyle.social) {
+      alignmentBonus += careerWorkstyle.social * workstyle.social * 6;
+    }
+    // NEW: Flexibility and variety alignment
+    if (careerWorkstyle.flexibility && workstyle.flexibility) {
+      alignmentBonus += careerWorkstyle.flexibility * workstyle.flexibility * 5;
+    }
+    if (careerWorkstyle.variety && workstyle.variety) {
+      alignmentBonus += careerWorkstyle.variety * workstyle.variety * 5;
     }
 
     // CRITICAL FIX: Penalty for social mismatch (introvert getting social careers)
@@ -8176,6 +8209,12 @@ export function translateStrength(key: string, cohort: Cohort): string {
     work_environment: "Työympäristö"
   };
   
-  return translations[key] || key;
+  // Always return Finnish - if no translation found, use a generic Finnish term
+  if (translations[key]) {
+    return translations[key];
+  }
+  // Log unknown key for debugging and return a safe Finnish fallback
+  console.warn(`[translateStrength] Unknown strength key: "${key}" - using fallback`);
+  return "Monipuoliset taidot";
 }
 

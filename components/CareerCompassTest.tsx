@@ -802,12 +802,23 @@ const Landing = ({ onStart, hasSavedProgress, hasExistingResults, hasCheckedExis
             </div>
           )}
 
-          {hasSavedProgress && (
+          {hasSavedProgress && !hasExistingResults && (
             <div className="rounded-lg bg-white/5 border border-white/20 p-4">
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-[#2B5F75]"></div>
                 <p className="text-sm text-white font-medium">
                   Löysimme tallennetut vastauksesi – voit jatkaa siitä mihin jäit!
+                </p>
+              </div>
+            </div>
+          )}
+
+          {hasExistingResults && (
+            <div className="rounded-lg bg-white/5 border border-white/20 p-4">
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 rounded-full bg-emerald-500"></div>
+                <p className="text-sm text-white font-medium">
+                  Sinulla on aiempia tuloksia – voit katsoa niitä tai aloittaa uuden testin!
                 </p>
               </div>
             </div>
@@ -892,7 +903,7 @@ const Landing = ({ onStart, hasSavedProgress, hasExistingResults, hasCheckedExis
                   focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
                 "
               >
-                Jatka keskeneräistä testiä
+                Aloita uusi testi
               </button>
             </div>
           )}
