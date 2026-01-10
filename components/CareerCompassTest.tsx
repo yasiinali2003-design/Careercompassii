@@ -746,6 +746,36 @@ const Landing = ({ onStart, hasSavedProgress, hasExistingResults, hasCheckedExis
             ))}
           </div>
 
+          {/* Privacy Acknowledgment */}
+          <div className="rounded-xl bg-gradient-to-r from-cyan-500/5 to-blue-500/5 border border-cyan-400/20 p-4 mt-4">
+            <div className="flex items-start gap-3">
+              <div className="mt-0.5 text-cyan-400">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div className="flex-1">
+                <p className="text-sm text-white/90 leading-relaxed">
+                  Vastauksesi käsitellään luottamuksellisesti eikä niitä yhdistetä henkilötietoihisi. 
+                  Testin tulokset auttavat sinua löytämään sopivia urapolkuja.
+                </p>
+                <a 
+                  href="/legal/tietosuojaseloste" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 mt-2 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
+                >
+                  Lue tietosuojaseloste
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15 3 21 3 21 9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
           {/* Show existing results notice - takes priority over saved progress */}
           {hasCheckedExistingResults && hasExistingResults && !hasSavedProgress && (
             <div className="rounded-lg bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-400/30 p-4">

@@ -475,6 +475,55 @@ export default function ResultsPage() {
                 Selaa kaikkia ammatteja
               </button>
             </Link>
+            <button
+              onClick={() => {
+                // Export user's data as JSON
+                const exportData = {
+                  exportDate: new Date().toISOString(),
+                  cohort: userProfile.cohort,
+                  dimensionScores: userProfile.dimensionScores,
+                  topStrengths: userProfile.topStrengths,
+                  topCareers: validTopCareers.map(c => ({
+                    title: c.title,
+                    category: c.category,
+                    reasons: c.reasons
+                  })),
+                  educationPath: educationPath ? {
+                    primary: educationPath.primary,
+                    secondary: educationPath.secondary,
+                    reasoning: educationPath.reasoning
+                  } : null
+                };
+                const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `urakompassi-tulokset-${new Date().toISOString().split('T')[0]}.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+              }}
+              className="
+                rounded-full
+                border border-cyan-400/30
+                bg-cyan-500/10
+                backdrop-blur-sm
+                px-6 py-3
+                text-sm md:text-base font-medium text-cyan-400
+                transition
+                hover:bg-cyan-500/20
+                hover:border-cyan-400/50
+                flex items-center gap-2
+              "
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Lataa tietosi
+            </button>
             <Link href="/test">
               <button
                 className="

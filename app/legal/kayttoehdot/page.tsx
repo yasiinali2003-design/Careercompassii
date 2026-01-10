@@ -31,21 +31,31 @@ Nämä käyttöehdot säätelevät Urakompassi Oy:n tarjoaman verkkopalvelun kä
 2. Määritelmät
 "Palvelu" tarkoittaa Urakompassin verkkopalvelua ja sen osia.
 "Käyttäjä" tarkoittaa henkilöä, joka käyttää palvelua.
+"Oppilaitos" tarkoittaa koulua tai oppilaitosta, joka käyttää Palvelua oppilaiden uraohjauksessa.
 "Sopimus" tarkoittaa näitä käyttöehtoja, tietosuojaselostetta ja immateriaalioikeus- ja kilpailijasuojadokumenttia.
 
 3. Käyttöoikeus ja ikäraja
 Palvelua voivat käyttää vähintään 13-vuotiaat. Alle 13-vuotiaiden käyttö edellyttää huoltajan suostumusta ja valvontaa.
 
-4. Sallitut käyttötarkoitukset
+4. Oppilaitosten vastuu
+Kun oppilaitos ottaa Palvelun käyttöön oppilaiden uraohjauksessa, oppilaitos vastaa:
+• Tarvittavien suostumusten hankkimisesta huoltajilta ennen Palvelun käyttöä
+• Oppilaiden ja huoltajien informoinnista Palvelun käytöstä ja tietojenkäsittelystä
+• Ikärajojen noudattamisesta ja valvonnasta
+• Palvelun käytön ohjeistamisesta oppilaille
+• Tietosuoja-asetuksen (GDPR) mukaisten velvoitteiden täyttämisestä rekisterinpitäjänä
+Oppilaitos toimii henkilötietojen rekisterinpitäjänä oppilaiden osalta, ja Urakompassi toimii henkilötietojen käsittelijänä. Oppilaitoksen tulee varmistaa, että sillä on asianmukainen oikeusperuste henkilötietojen käsittelylle.
+
+5. Sallitut käyttötarkoitukset
 Palvelu on tarkoitettu henkilökohtaiseen urasuunnitteluun ja ammatilliseen ohjaukseen. Muu kaupallinen hyödyntäminen ilman Urakompassin kirjallista lupaa on kielletty.
 
-5. Käyttöoikeuden sisältö
+6. Käyttöoikeuden sisältö
 Myönnämme käyttäjälle ei-yksinomaisen ja ei-siirrettävän käyttöoikeuden Palveluun näiden Ehtojen mukaisesti. Käyttöoikeus ei anna omistusoikeutta Palvelun sisältöihin tai aineistoihin.
 
-6. Immateriaalioikeudet
+7. Immateriaalioikeudet
 Palvelun sisältö, testikysymykset, algoritmit, käyttöliittymä ja dokumentaatio ovat Urakompassi Oy:n omaisuutta ja suojattuja lain mukaan. Yksityiskohtainen suoja on kuvattu immateriaalioikeus- ja kilpailijasuojadokumentissa, joka on osa näitä ehtoja. Käänteinen suunnittelu (reverse engineering) ja datalouhinta ovat kiellettyjä siltä osin kuin ne eivät perustu pakottavaan lakiin.
 
-7. Kielletty toiminta
+8. Kielletty toiminta
 Käyttäjä sitoutuu olemaan:
 • kopioimatta tai tallentamatta testisisältöä
 • analysoimatta tai muokkaamatta algoritmeja
@@ -53,37 +63,37 @@ Käyttäjä sitoutuu olemaan:
 • hyödyntämättä Palvelua kilpailevan palvelun kehittämiseen
 • kiertämättä teknisiä suojausmekanismeja
 
-8. Tekniset käyttörajoitukset
+9. Tekniset käyttörajoitukset
 Urakompassi voi asettaa kohtuullisia käyttörajoituksia väärinkäytösten estämiseksi. Ajantasaiset rajoitukset ilmoitetaan Palvelussa, ja niitä voidaan päivittää perustellusti.
 
-9. Tietojen käsittely
-Tietosuojakäytännöt on kuvattu Tietosuojaselosteessa, joka on osa näitä Ehtoja. Urakompassi toimii rekisterinpitäjänä käyttäjätiedoille.
+10. Tietojen käsittely
+Tietosuojakäytännöt on kuvattu Tietosuojaselosteessa, joka on osa näitä Ehtoja. Urakompassi toimii rekisterinpitäjänä yksityiskäyttäjien tiedoille. Oppilaitosten käyttäessä Palvelua oppilaiden ohjauksessa, oppilaitos toimii rekisterinpitäjänä ja Urakompassi henkilötietojen käsittelijänä.
 
-10. Palvelun saatavuus ja tuki
+11. Palvelun saatavuus ja tuki
 Palvelu tarjotaan parhaan kykymme mukaan (best effort -periaatteella). Suunnitelluista huoltotöistä ilmoitetaan etukäteen. Asiakastuki vastaa sähköpostitse kohtuullisessa ajassa.
 
-11. Palvelun muutokset ja keskeytykset
+12. Palvelun muutokset ja keskeytykset
 Voimme päivittää tai keskeyttää Palvelun tilapäisesti tai pysyvästi. Merkittävistä muutoksista ilmoitetaan kohtuullisessa ajassa Palvelussa tai sähköpostitse.
 
-12. Vastuunrajoitus
+13. Vastuunrajoitus
 Palvelu tarjotaan sellaisenaan. Emme takaa keskeytyksetöntä toimintaa tai tiettyä lopputulosta. Tämä rajoitus ei koske pakottavaa kuluttajansuojalainsäädäntöä.
 
-13. Kuluttajien erityiset oikeudet
+14. Kuluttajien erityiset oikeudet
 Kuluttaja-asiakkaalla on oikeus peruuttaa sopimus 14 päivän kuluessa sekä tehdä valitus kuluttajaviranomaiselle.
 
-14. Sovellettava laki ja riidanratkaisu
+15. Sovellettava laki ja riidanratkaisu
 Sovellettava laki on Suomen laki. Riidat pyritään ratkaisemaan ensisijaisesti neuvotteluteitse. Kuluttaja-asioissa toimivaltainen taho on Kuluttajariitalautakunta tai Helsingin käräjäoikeus. Ehtojen virallinen kieli on suomi, ja ristiriitatilanteessa suomenkielinen versio on ensisijainen.
 
-15. Tietojen säilytys
+16. Tietojen säilytys
 Testitulokset säilytetään enintään kolme vuotta testin suorituspäivästä. Selainkohtaiset asetukset säilytetään käyttäjän omassa laitteessa, eikä niitä toimiteta Urakompassille.
 
-16. Tietoturvapoikkeamat
+17. Tietoturvapoikkeamat
 Ilmoitamme tietoturvaloukkauksista ilman aiheetonta viivytystä ja viimeistään 72 tunnin kuluessa, mikäli sovellettava laki sitä edellyttää.
 
-17. EU/ETA-alueen ulkopuoliset siirrot
+18. EU/ETA-alueen ulkopuoliset siirrot
 Urakompassi ei siirrä henkilötietoja EU/ETA-alueen ulkopuolelle ilman asianmukaista siirtoperustetta.
 
-18. Ehtojen muutokset
+19. Ehtojen muutokset
 Voimme päivittää näitä Ehtoja. Uudet Ehdot tulevat voimaan ilmoitetusta päivästä alkaen. Palvelun käyttö muutosten jälkeen merkitsee Ehtojen hyväksymistä.`}
           </pre>
         </div>
