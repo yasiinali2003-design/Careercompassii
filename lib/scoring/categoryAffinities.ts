@@ -380,7 +380,49 @@ export function calculateCategoryAffinities(
     const primaryStrength = primaryCount > 0 ? strongPrimaryCount / primaryCount : 0;
     const primaryStrengthBonus = primaryStrength * 0.05; // Up to 5% extra
 
-    const rawScore = baseScore - negativePenalty + strongSignalBonus + primaryStrengthBonus;
+    // CRITICAL FIX: Healthcare vs Environment differentiation
+    // When health+people combo exists, boost auttaja and penalize ympariston-puolustaja
+    const healthScore = allScores.health || 0;
+    const peopleScore = allScores.people || 0;
+    const environmentScore = allScores.environment || 0;
+    const natureScore = allScores.nature || 0;
+    const isHealthcareProfile = healthScore >= 0.5 && peopleScore >= 0.5;
+    const combinedNatureScore = Math.max(natureScore, environmentScore);
+    
+    let healthcareBonus = 0;
+    let environmentPenalty = 0;
+    
+    if (isHealthcareProfile) {
+      // Boost auttaja when health+people combo exists
+      if (category === 'auttaja') {
+        // Extra boost when health+people combo is strong
+        if (healthScore >= 0.8 && peopleScore >= 0.8) {
+          healthcareBonus = 0.15; // 15% boost
+        } else {
+          healthcareBonus = 0.10; // 10% boost
+        }
+        // Extra boost when health is at maximum
+        if (healthScore >= 0.95) {
+          healthcareBonus += 0.05; // Additional 5% boost
+        }
+      }
+      
+      // Penalize ympariston-puolustaja when healthcare profile detected
+      if (category === 'ympariston-puolustaja') {
+        // Strong penalty when health+people combo exists
+        if (healthScore >= 0.8 && peopleScore >= 0.8) {
+          environmentPenalty = 0.20; // 20% penalty
+        } else {
+          environmentPenalty = 0.15; // 15% penalty
+        }
+        // Extra penalty when both health and environment are maximum
+        if (healthScore >= 0.95 && combinedNatureScore >= 0.95) {
+          environmentPenalty += 0.15; // Additional 15% penalty
+        }
+      }
+    }
+
+    const rawScore = baseScore - negativePenalty + strongSignalBonus + primaryStrengthBonus + healthcareBonus - environmentPenalty;
     const finalScore = Math.max(0, Math.min(100, rawScore * 100));
 
     // Determine confidence for this category

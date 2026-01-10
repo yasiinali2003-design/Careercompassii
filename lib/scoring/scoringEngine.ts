@@ -6056,17 +6056,65 @@ function selectDiverseCareers(
       }
 
       // For ANY caring profile with high health, boost nursing careers
+      // FIXED: When health + people combo exists, STRONGLY prioritize healthcare careers
+      const isHealthcareProfileBoost = healthScore >= 0.5 && peopleScore >= 0.5; // Health+people combo
+      const isVeryStrongHealthcareProfile = healthScore >= 0.8 && peopleScore >= 0.8; // Both very high
+      const isMaximumHealthcareProfile = healthScore >= 0.95 && peopleScore >= 0.5; // Health at maximum
+      
       if (isCaringProfile) {
-        // LÄHIHOITAJA / SAIRAANHOITAJA - strong boost
+        // LÄHIHOITAJA / SAIRAANHOITAJA - STRONG boost when health+people combo exists
         if (titleLower.includes('lähihoitaja') || titleLower.includes('lähi')) {
-          diversityBonus += 55;
+          if (isMaximumHealthcareProfile) {
+            diversityBonus += 150; // MASSIVE boost when health is at maximum and people is high
+          } else if (isVeryStrongHealthcareProfile) {
+            diversityBonus += 120; // Very strong boost when both are very high
+          } else if (isHealthcareProfileBoost) {
+            diversityBonus += 100; // EXTRA STRONG boost when health+people combo detected
+          } else {
+            diversityBonus += 55; // Regular boost
+          }
           if (isVeryHighHealth) diversityBonus += 20;
           if (isPureCaringProfile) diversityBonus += 10; // Extra for pure caring
         }
         if (titleLower.includes('sairaanhoitaja') || titleLower.includes('sairaan')) {
-          diversityBonus += 50;
+          if (isMaximumHealthcareProfile) {
+            diversityBonus += 145; // MASSIVE boost when health is at maximum and people is high
+          } else if (isVeryStrongHealthcareProfile) {
+            diversityBonus += 115; // Very strong boost when both are very high
+          } else if (isHealthcareProfileBoost) {
+            diversityBonus += 95; // EXTRA STRONG boost when health+people combo detected
+          } else {
+            diversityBonus += 50; // Regular boost
+          }
           if (isVeryHighHealth) diversityBonus += 15;
           if (isPureCaringProfile) diversityBonus += 10;
+        }
+        
+        // TERVEYDENHOITAJA / ENSIHOITAJA - also boost these
+        if (titleLower.includes('terveydenhoitaja') || titleLower.includes('ensihoitaja') ||
+            titleLower.includes('terveydenhoit')) {
+          if (isMaximumHealthcareProfile) {
+            diversityBonus += 130; // MASSIVE boost
+          } else if (isVeryStrongHealthcareProfile) {
+            diversityBonus += 100; // Very strong boost
+          } else if (isHealthcareProfileBoost) {
+            diversityBonus += 80; // Strong boost
+          } else {
+            diversityBonus += 42; // Regular boost
+          }
+        }
+        
+        // FYSIOTERAPEUTTI - also boost this
+        if (titleLower.includes('fysioterapeutti') || titleLower.includes('fysio')) {
+          if (isMaximumHealthcareProfile) {
+            diversityBonus += 120; // MASSIVE boost
+          } else if (isVeryStrongHealthcareProfile) {
+            diversityBonus += 90; // Very strong boost
+          } else if (isHealthcareProfileBoost) {
+            diversityBonus += 70; // Strong boost
+          } else {
+            diversityBonus += 40; // Regular boost
+          }
         }
         // KOTIHOITAJA / VANHUSTENHOITAJA
         if (titleLower.includes('kotihoitaja') || titleLower.includes('vanhustenhoitaja') ||
@@ -6566,11 +6614,18 @@ function selectDiverseCareers(
             titleLower.includes('kauneus') || titleLower.includes('kosmetologi') ||
             titleLower.includes('meikki') || titleLower.includes('kynsi')) {
           if (isStrongBeautySignal) {
-            diversityBonus += 120; // Very strong boost for strong beauty signal
+            diversityBonus += 180; // MASSIVE boost for strong beauty signal (increased from 120)
+          } else if (isCreativePeopleNotHealth) {
+            diversityBonus += 150; // Very strong boost for creative+people+low health pattern
           } else {
-            diversityBonus += 80; // Good boost for regular beauty signal
+            diversityBonus += 100; // Strong boost for regular beauty signal (increased from 80)
           }
           if (businessScore >= 0.4) diversityBonus += 15; // Beauty entrepreneur bonus
+          
+          // EXTRA boost when social is very high (beauty work is highly social)
+          if (socialScore >= 0.8) {
+            diversityBonus += 30; // Additional boost for very social people
+          }
         }
 
         // PENALIZE generic creative/brand careers for people with beauty signal
@@ -6612,8 +6667,19 @@ function selectDiverseCareers(
       // CRITICAL FIX: Penalize rakentaja careers when hands_on is NEUTRAL or LOW
       // This prevents trades careers from appearing for non-trades profiles
       // Neutral = 0.5 (3/5 on Likert), so we need > 0.5 to show interest
+      // BUT: Healthcare profiles have hands_on=3 (moderate) which normalizes to ~0.5-0.6
+      // So we need to check if this is a healthcare profile and penalize trades even more
+      const healthScoreRakPenalty = userInterests.health || 0;
+      const peopleScoreRakPenalty = userInterests.people || 0;
+      const isHealthcareProfileRak = healthScoreRakPenalty >= 0.5 && peopleScoreRakPenalty >= 0.5;
+      
       if (handsOnScore <= 0.5) {
         diversityBonus -= 80; // Strong penalty - no trades interest = no trades careers
+      }
+      
+      // EXTRA penalty for healthcare profiles - they should NOT get trades careers
+      if (isHealthcareProfileRak) {
+        diversityBonus -= 100; // MASSIVE penalty - healthcare ≠ trades
       }
 
       // PENALTY: People with high creative but LOW hands_on should NOT get rakentaja careers
@@ -6624,21 +6690,85 @@ function selectDiverseCareers(
       }
 
       // CONSTRUCTION/HANDS-ON FOCUSED - strong boost for people with high hands_on interest
-      const isConstructionFocused = handsOnScore >= 0.6 || (handsOnScore >= 0.4 && leadershipScore >= 0.4);
+      // FIXED: Lower threshold to catch profiles with hands_on=5 that get normalized to ~0.4
+      // Also check outdoor score as trades often involve outdoor work
+      const outdoorScoreRak = userInterests.outdoor || userWorkstyle.outdoor || 0;
+      const isConstructionFocused = handsOnScore >= 0.25 || // Very low threshold to catch normalized scores
+                                   (handsOnScore >= 0.2 && outdoorScoreRak >= 0.5) || // Hands-on + outdoor combo
+                                   (handsOnScore >= 0.2 && leadershipScore >= 0.4); // Hands-on + leadership (construction management)
+      const isVeryHandsOn = handsOnScore >= 0.6;
+      const isModeratelyHandsOn = handsOnScore >= 0.4;
+      const isLowHandsOn = handsOnScore >= 0.2 && handsOnScore < 0.4; // Catch normalized low scores
+      
+      // CRITICAL: Check if creative is LOW - trades people have LOW creative interest
+      const creativeScoreRakPenalty = userInterests.creative || 0;
+      const isTradesProfile = (isVeryHandsOn || isModeratelyHandsOn || isLowHandsOn) && creativeScoreRakPenalty < 0.5;
+      
       if (isConstructionFocused) {
         // CONSTRUCTION CAREERS - strong boost
         if (titleLower.includes('rakenn') || titleLower.includes('mestari') ||
             titleLower.includes('työnjohtaja') || titleLower.includes('kirvesmies') ||
             titleLower.includes('muurari') || titleLower.includes('maalari')) {
-          diversityBonus += 80;
+          if (isTradesProfile) {
+            // Trades profile (high hands_on + low creative) gets MASSIVE boost
+            if (isVeryHandsOn) {
+              diversityBonus += 150; // MASSIVE boost for very high hands_on
+            } else if (isModeratelyHandsOn) {
+              diversityBonus += 120; // Very strong boost
+            } else if (isLowHandsOn) {
+              diversityBonus += 100; // Strong boost even for normalized low scores
+            }
+          } else {
+            // Regular construction boost
+            if (isVeryHandsOn) {
+              diversityBonus += 100; // Very strong boost for high hands_on
+            } else if (isModeratelyHandsOn) {
+              diversityBonus += 80; // Strong boost
+            } else {
+              diversityBonus += 60; // Good boost
+            }
+          }
           if (handsOnScore >= 0.7) diversityBonus += 25;
           if (leadershipScore >= 0.5) diversityBonus += 20; // Construction management
+          if (outdoorScoreRak >= 0.6) diversityBonus += 15; // Outdoor work bonus
         }
+        
         // ELECTRICAL/PLUMBING TRADES
         if (titleLower.includes('sähkö') || titleLower.includes('putki') ||
             titleLower.includes('lvi') || titleLower.includes('asentaja')) {
-          diversityBonus += 70;
+          if (isTradesProfile) {
+            // Trades profile gets MASSIVE boost
+            if (isVeryHandsOn) {
+              diversityBonus += 150; // MASSIVE boost for very high hands_on
+            } else if (isModeratelyHandsOn) {
+              diversityBonus += 120; // Very strong boost
+            } else if (isLowHandsOn) {
+              diversityBonus += 100; // Strong boost even for normalized low scores
+            }
+          } else {
+            // Regular trades boost
+            if (isVeryHandsOn) {
+              diversityBonus += 100; // Very strong boost for high hands_on
+            } else if (isModeratelyHandsOn) {
+              diversityBonus += 75; // Strong boost
+            } else {
+              diversityBonus += 50; // Good boost
+            }
+          }
           if (handsOnScore >= 0.7) diversityBonus += 20;
+          if (precisionScore >= 0.6) diversityBonus += 15; // Precision matters for electrical
+        }
+        
+        // PENALIZE luova careers when hands_on is high (trades people don't want creative careers)
+        if (isTradesProfile) {
+          // MASSIVE penalty for creative careers when trades profile detected
+          if (titleLower.includes('graafinen') || titleLower.includes('muusikko') ||
+              titleLower.includes('kirjailija') || titleLower.includes('valokuvaaja') ||
+              titleLower.includes('animaattori') || titleLower.includes('taiteilija') ||
+              titleLower.includes('äänisuunnittelija') || titleLower.includes('verkkosuunnittelija') ||
+              titleLower.includes('ui-ux') || titleLower.includes('ui/ux')) {
+            diversityBonus -= 150; // MASSIVE penalty - trades people don't want creative careers (increased from 100)
+          }
         }
       }
 
@@ -6707,20 +6837,64 @@ function selectDiverseCareers(
       // Restaurant signal: HIGH creative + HIGH people + hands_on combo BUT NOT arts-focused
       // KEY: Restaurant people have BOTH high creative AND high people (hospitality = serving others creatively)
       // Lowered thresholds since TASO2 scores are often normalized differently
-      const isRestaurantSignal = handsOnScore >= 0.5 && creativeScoreRak >= 0.5 && peopleScoreRak >= 0.5 && !isArtsFocusedRak;
-      const isStrongRestaurantSignal = handsOnScore >= 0.6 && creativeScoreRak >= 0.6 && peopleScoreRak >= 0.6 && !isArtsFocusedRak;
-      const isVeryStrongRestaurantSignal = handsOnScore >= 0.7 && creativeScoreRak >= 0.7 && peopleScoreRak >= 0.7 && !isArtsFocusedRak;
+      // CRITICAL: Restaurant ≠ visual arts/writing - restaurant is creative SERVICE, not creative ART
+      // So we need creative+people+hands_on but LOW writing/arts_culture
+      const isRestaurantSignal = handsOnScore >= 0.5 && creativeScoreRak >= 0.5 && peopleScoreRak >= 0.5 && 
+                                 writingRak < 0.6 && artsCultureRak < 0.6; // NOT arts-focused
+      const isStrongRestaurantSignal = handsOnScore >= 0.6 && creativeScoreRak >= 0.6 && peopleScoreRak >= 0.6 && 
+                                      writingRak < 0.5 && artsCultureRak < 0.5; // Definitely NOT arts-focused
+      const isVeryStrongRestaurantSignal = handsOnScore >= 0.7 && creativeScoreRak >= 0.7 && peopleScoreRak >= 0.7 && 
+                                          writingRak < 0.4 && artsCultureRak < 0.4; // Very clearly NOT arts-focused
 
       if (isRestaurantSignal) {
+        // MASSIVE boost for restaurant/hospitality careers when restaurant signal detected
+        if (titleLower.includes('ravintola') || titleLower.includes('hotelli') ||
+            titleLower.includes('keittiö') || titleLower.includes('kokki') ||
+            titleLower.includes('tarjoilija') || titleLower.includes('baari')) {
+          if (isVeryStrongRestaurantSignal) {
+            diversityBonus += 200; // MASSIVE boost (increased from 150)
+          } else if (isStrongRestaurantSignal) {
+            diversityBonus += 160; // Very strong boost (increased from 120)
+          } else {
+            diversityBonus += 120; // Strong boost (increased from 80)
+          }
+          
+          // EXTRA boost when people score is very high (hospitality is all about people)
+          if (peopleScoreRak >= 0.8) {
+            diversityBonus += 40; // Additional boost for very high people score
+          }
+        }
+        
         // Restaurant people should NOT get electrical/construction careers
         if (titleLower.includes('sähkö') || titleLower.includes('asentaja') ||
             titleLower.includes('rakennus') || titleLower.includes('muurari') ||
             titleLower.includes('kirvesmies') || titleLower.includes('putki') ||
             titleLower.includes('mestari')) {
           if (!titleLower.includes('ravintola') && !titleLower.includes('keittiö')) {
-            diversityBonus -= 120; // Strong penalty - restaurant people want culinary, not construction
+            diversityBonus -= 150; // Strong penalty (increased from 120) - restaurant people want culinary, not construction
             if (isStrongRestaurantSignal) diversityBonus -= 60;
             if (isVeryStrongRestaurantSignal) diversityBonus -= 40;
+          }
+        }
+        
+        // CRITICAL: Restaurant people should NOT get healthcare careers
+        // Restaurant = creative + people + LOW health, healthcare = people + HIGH health
+        const healthScoreRakRestaurant = userInterests.health || 0;
+        if (healthScoreRakRestaurant < 0.4) {
+          if (titleLower.includes('lähihoitaja') || titleLower.includes('sairaanhoitaja') ||
+              titleLower.includes('hoitaja') || titleLower.includes('terveyden')) {
+            diversityBonus -= 120; // Strong penalty (increased from 100) - restaurant people don't want healthcare
+          }
+        }
+        
+        // CRITICAL: Restaurant people should NOT get environment careers
+        // Restaurant = creative + people + hands_on, environment = nature + analytical
+        const environmentScoreRak = userInterests.environment || 0;
+        const natureScoreRak = userInterests.nature || 0;
+        if (environmentScoreRak < 0.5 && natureScoreRak < 0.5) {
+          if (titleLower.includes('biologi') || titleLower.includes('ympäristö') ||
+              titleLower.includes('luonto') || titleLower.includes('ekologi')) {
+            diversityBonus -= 100; // Penalty - restaurant people don't want environment careers
           }
         }
       }
@@ -6734,6 +6908,12 @@ function selectDiverseCareers(
       const outdoorScore = userInterests.outdoor || userWorkstyle.outdoor || 0;
 
       // Combine nature and environment scores for better detection
+      // CRITICAL FIX: When health+people combo exists, environment should NOT be boosted
+      // Healthcare profiles have health+people, environment profiles don't
+      const healthScoreEnv = userInterests.health || 0;
+      const peopleScoreEnv = userInterests.people || 0;
+      const isHealthcareProfileForEnv = healthScoreEnv >= 0.5 && peopleScoreEnv >= 0.5;
+      
       const combinedNatureScore = Math.max(natureScore, environmentScore);
 
       // VERY STRICT: Only boost for people with VERY HIGH nature/environment interest
@@ -6745,13 +6925,23 @@ function selectDiverseCareers(
                                   (combinedNatureScore >= 0.6 && analyticalScore >= 0.7);
 
       if (isNatureEnthusiast) {
-        // BIOLOGY/RESEARCH ROLES - strong boost
-        if (titleLower.includes('biologi') || titleLower.includes('tutkija') ||
-            titleLower.includes('tiedemies') || titleLower.includes('ympäristö') ||
-            titleLower.includes('luonto') || titleLower.includes('ekologi')) {
-          diversityBonus += 80;
-          if (analyticalScore >= 0.7) diversityBonus += 25;
-          if (isVeryHighNature) diversityBonus += 30;
+        // CRITICAL: If healthcare profile detected, STRONGLY penalize environment careers
+        // Healthcare profiles (health+people combo) should NOT get environment careers
+        if (isHealthcareProfileForEnv) {
+          // MASSIVE penalty for environment careers when healthcare profile detected
+          diversityBonus -= 150; // Very strong penalty
+          if (healthScoreEnv >= 0.8 && peopleScoreEnv >= 0.8) {
+            diversityBonus -= 100; // Even stronger penalty
+          }
+        } else {
+          // BIOLOGY/RESEARCH ROLES - strong boost (only if NOT healthcare profile)
+          if (titleLower.includes('biologi') || titleLower.includes('tutkija') ||
+              titleLower.includes('tiedemies') || titleLower.includes('ympäristö') ||
+              titleLower.includes('luonto') || titleLower.includes('ekologi')) {
+            diversityBonus += 80;
+            if (analyticalScore >= 0.7) diversityBonus += 25;
+            if (isVeryHighNature) diversityBonus += 30;
+          }
         }
 
         // ANIMAL CAREERS
@@ -6789,15 +6979,36 @@ function selectDiverseCareers(
       // This prevents Ympäristöinsinööri from appearing for healthcare-focused profiles
       const healthScoreYP = userInterests.health || 0;
       const peopleScoreYP = userInterests.people || 0;
+      
+      // CRITICAL FIX: When health + people are BOTH high, prioritize healthcare over environment
+      // This handles the case where health=1.0 and environment=1.0 (both maximum)
+      // The key insight: Healthcare profiles have health+people combo, environment profiles don't
+      const isHealthcareProfile = healthScoreYP >= 0.5 && peopleScoreYP >= 0.5;
+      
       // Healthcare is dominant if:
-      // 1. Health is SIGNIFICANTLY higher than nature (health is the clear interest)
-      // 2. OR health + people both high (healthcare profile) and nature is not very high
-      // Note: Q4 maps to both environment AND health, so we need health > environment to distinguish
-      const healthcareDominant = (healthScoreYP >= 0.6 && healthScoreYP > combinedNatureScore + 0.1) ||
-                                  (healthScoreYP >= 0.5 && peopleScoreYP >= 0.5 && combinedNatureScore < 0.7);
+      // 1. Health + people combo exists (this is the KEY differentiator)
+      // 2. AND health is at least equal to or higher than nature (when both are max, health+people wins)
+      // 3. OR health is SIGNIFICANTLY higher than nature
+      const healthcareDominant = isHealthcareProfile && 
+                                 (healthScoreYP >= combinedNatureScore - 0.05 || // Health >= nature (allowing small margin)
+                                  healthScoreYP >= 0.6 && combinedNatureScore < 0.8 || // Health high, nature not very high
+                                  healthScoreYP > combinedNatureScore + 0.1); // Health significantly higher
+      
       if (healthcareDominant) {
-        // Strong penalty - healthcare people don't want environment careers
-        diversityBonus -= 100;
+        // STRONG penalty - healthcare people don't want environment careers
+        // When health+people combo exists, environment careers should be penalized heavily
+        diversityBonus -= 120; // Increased from 100
+        
+        // EXTRA penalty when health+people combo is very strong (both >= 0.8)
+        if (healthScoreYP >= 0.8 && peopleScoreYP >= 0.8) {
+          diversityBonus -= 80; // Even stronger penalty (increased from 50)
+        }
+        
+        // EXTRA penalty when both health and environment are maximum (1.0)
+        // In this case, health+people combo should win decisively
+        if (healthScoreYP >= 0.95 && combinedNatureScore >= 0.95 && peopleScoreYP >= 0.5) {
+          diversityBonus -= 100; // Massive penalty - healthcare clearly wins
+        }
       }
     }
 
@@ -6827,11 +7038,41 @@ function selectDiverseCareers(
       // This addresses TASO2 Beauty profile: luova(38%) > johtaja(34%) should mean beauty careers dominate
       // Creative people with neutral-ish leadership (0.4-0.5) shouldn't get startup/manager careers
       const healthScoreJ = userInterests.health || 0;
-      const isBeautyCreativeProfile = creativeScoreJ >= 0.5 && healthScoreJ < 0.4 && creativeScoreJ > leadershipScore;
+      const peopleScoreJ = userInterests.people || 0;
+      const socialScoreJ = userWorkstyle.social || 0;
+      const handsOnScoreJ = userInterests.hands_on || 0;
+      
+      // STRONG beauty signal detection (matches logic in LUOVA section)
+      // Beauty = creative + people + social + LOW health + moderate hands_on
+      const isStrongBeautySignalJ = creativeScoreJ >= 0.75 && socialScoreJ >= 0.75 && peopleScoreJ >= 0.4;
+      const isCreativePeopleNotHealthJ = creativeScoreJ >= 0.5 && peopleScoreJ >= 0.4 && healthScoreJ < 0.4;
+      const isBeautyOrientedJ = isStrongBeautySignalJ ||
+                                (creativeScoreJ >= 0.6 && socialScoreJ >= 0.5 && peopleScoreJ >= 0.4) ||
+                                isCreativePeopleNotHealthJ;
+      
+      // Also check if creative score is significantly higher than leadership
+      // This catches cases where creative is high but leadership is moderate
+      const creativeDominatesLeadership = creativeScoreJ >= 0.5 && creativeScoreJ > leadershipScore + 0.1;
+      
+      const isBeautyCreativeProfile = (creativeScoreJ >= 0.5 && healthScoreJ < 0.4 && creativeScoreJ > leadershipScore) ||
+                                     isBeautyOrientedJ || // Beauty signal detected
+                                     (creativeDominatesLeadership && healthScoreJ < 0.5); // Creative dominates, not healthcare
+      
       if (isBeautyCreativeProfile) {
         // Penalize ALL johtaja careers for beauty-oriented creative profiles
         // Beauty people want creative careers (kampaaja, kosmetologi) not management roles
-        diversityBonus -= 100; // Strong penalty - beauty creatives don't want management
+        if (isBeautyOrientedJ) {
+          diversityBonus -= 200; // MASSIVE penalty when beauty signal is clearly detected (increased from 150)
+        } else if (creativeDominatesLeadership) {
+          diversityBonus -= 150; // Strong penalty when creative clearly dominates leadership
+        } else {
+          diversityBonus -= 100; // Regular penalty - beauty creatives don't want management
+        }
+        
+        // EXTRA penalty when creative is very high and leadership is low
+        if (creativeScoreJ >= 0.7 && leadershipScore < 0.4) {
+          diversityBonus -= 50; // Additional penalty
+        }
       }
 
       // HEALTHCARE DOMINANCE PENALTY: When health score exceeds leadership, don't show johtaja careers
