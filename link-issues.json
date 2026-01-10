@@ -1,0 +1,41 @@
+{
+  "total": 1383,
+  "working": 1378,
+  "issues": [
+    {
+      "careerId": "aurinkoenergia-asentaja",
+      "careerTitle": "Aurinkoenergia-asentaja",
+      "linkName": "Hae töitä Duunitorista",
+      "url": "https://duunitori.fi/tyopaikat?haku=asentaja",
+      "error": "Timeout"
+    },
+    {
+      "careerId": "ui-ux-designer",
+      "careerTitle": "UI/UX-suunnittelija",
+      "linkName": "Opintopolku - UI/UX-suunnittelija",
+      "url": "https://opintopolku.fi/konfo/fi/haku/UI%2FUX-suunnittelija",
+      "error": "HTTP 400"
+    },
+    {
+      "careerId": "kettera-valmentaja",
+      "careerTitle": "Agile-valmentaja",
+      "linkName": "Agile Finland",
+      "url": "https://agile.fi/",
+      "error": "fetch failed"
+    },
+    {
+      "careerId": "tekoaly-kehoteasiantuntija",
+      "careerTitle": "Tekoäly-kehoteasiantuntija",
+      "linkName": "OpenAI documentation",
+      "url": "https://platform.openai.com/docs/overview",
+      "error": "HTTP 403"
+    },
+    {
+      "careerId": "aaninaittelija",
+      "careerTitle": "Ääninäyttelijä",
+      "linkName": "Voice Acting resources",
+      "url": "https://www.voices.com/",
+      "error": "HTTP 403"
+    }
+  ]
+}

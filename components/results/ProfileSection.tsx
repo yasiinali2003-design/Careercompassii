@@ -115,3 +115,6 @@ export function ProfileSection({ profileText, strengths }: ProfileSectionProps) 
 
 
 
+
+
+

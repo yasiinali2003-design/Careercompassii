@@ -1,0 +1,40 @@
+{
+  "total": 1480,
+  "broken": [
+    {
+      "url": "https://duunitori.fi/tyopaikat?haku=L%C3%A4%C3%A4k%C3%A4ri",
+      "careers": [
+        "laakari"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://duunitori.fi/tyopaikat?haku=%C3%84%C3%A4nisuunnittelu",
+      "careers": [
+        "aanisuunnittelija",
+        "sound-designer",
+        "etaterveys-koordinaattori"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://duunitori.fi/tyopaikat?haku=SRE-insin%C3%B6%C3%B6ri",
+      "careers": [
+        "site-reliability-engineer"
+      ],
+      "status": 0,
+      "error": "Timeout"
+    },
+    {
+      "url": "https://agile.fi/",
+      "careers": [
+        "kettera-valmentaja"
+      ],
+      "status": 0,
+      "error": "Client network socket disconnected before secure TLS connection was established"
+    }
+  ],
+  "redirects": []
+}

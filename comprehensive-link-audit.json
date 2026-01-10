@@ -1,0 +1,578 @@
+{
+  "totalCareers": 734,
+  "totalIssues": 28,
+  "issuesByType": {
+    "DUUNITORI_MISMATCHED_SEARCH": {
+      "count": 27,
+      "issues": [
+        {
+          "careerId": "kirjailija",
+          "careerTitle": "Kirjailija",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"Kirjoittaja\" doesn't match career \"Kirjailija\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=Kirjoittaja"
+          }
+        },
+        {
+          "careerId": "biotekniikka-insinoori",
+          "careerTitle": "Biotekniikka-insinööri",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"bioteknologia\" doesn't match career \"Biotekniikka-insinööri\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=bioteknologia"
+          }
+        },
+        {
+          "careerId": "yritysneuvoja",
+          "careerTitle": "Yritysneuvoja",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"konsultti\" doesn't match career \"Yritysneuvoja\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=konsultti"
+          }
+        },
+        {
+          "careerId": "oikeusneuvos",
+          "careerTitle": "Oikeusneuvos",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"juristi\" doesn't match career \"Oikeusneuvos\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=juristi"
+          }
+        },
+        {
+          "careerId": "tulevaisuuden-yhteiskunta-asiantuntija",
+          "careerTitle": "Tulevaisuuden yhteiskunta-asiantuntija",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"tutkija\" doesn't match career \"Tulevaisuuden yhteiskunta-asiantuntija\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=tutkija"
+          }
+        },
+        {
+          "careerId": "tutkimusasiantuntija",
+          "careerTitle": "Tutkimusasiantuntija",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"tutkija\" doesn't match career \"Tutkimusasiantuntija\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=tutkija"
+          }
+        },
+        {
+          "careerId": "dokumentaristi",
+          "careerTitle": "Dokumentaristi",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"dokumentti\" doesn't match career \"Dokumentaristi\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=dokumentti"
+          }
+        },
+        {
+          "careerId": "audiologi",
+          "careerTitle": "Audiologi",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"kuulontutkija\" doesn't match career \"Audiologi\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=kuulontutkija"
+          }
+        },
+        {
+          "careerId": "rautakauppias",
+          "careerTitle": "Rautakauppias",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"rautakauppa\" doesn't match career \"Rautakauppias\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=rautakauppa"
+          }
+        },
+        {
+          "careerId": "aktuaari",
+          "careerTitle": "Aktuaari",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"vakuutus\" doesn't match career \"Aktuaari\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=vakuutus"
+          }
+        },
+        {
+          "careerId": "erityispedagogi",
+          "careerTitle": "Erityispedagogi",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"erityisopettaja\" doesn't match career \"Erityispedagogi\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=erityisopettaja"
+          }
+        },
+        {
+          "careerId": "filosofi",
+          "careerTitle": "Filosofi",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"tutkija\" doesn't match career \"Filosofi\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=tutkija"
+          }
+        },
+        {
+          "careerId": "historioitsija",
+          "careerTitle": "Historioitsija",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"tutkija\" doesn't match career \"Historioitsija\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=tutkija"
+          }
+        },
+        {
+          "careerId": "insinoori",
+          "careerTitle": "Insinoori",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"insinööri\" doesn't match career \"Insinoori\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=insin%C3%B6%C3%B6ri"
+          }
+        },
+        {
+          "careerId": "markkinointipaallikko",
+          "careerTitle": "Markkinointipaallikko",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"markkinointipäällikkö\" doesn't match career \"Markkinointipaallikko\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=markkinointip%C3%A4%C3%A4llikk%C3%B6"
+          }
+        },
+        {
+          "careerId": "ravintolapaallikko",
+          "careerTitle": "Ravintolapaallikko",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"ravintolapäällikkö\" doesn't match career \"Ravintolapaallikko\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=ravintolap%C3%A4%C3%A4llikk%C3%B6"
+          }
+        },
+        {
+          "careerId": "content-strategist",
+          "careerTitle": "Sisältöstrategisti",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"sisällöntuottaja\" doesn't match career \"Sisältöstrategisti\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=sis%C3%A4ll%C3%B6ntuottaja"
+          }
+        },
+        {
+          "careerId": "health-data-analyst",
+          "careerTitle": "Terveystiedon analyytikko",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"terveydenhuolto\" doesn't match career \"Terveystiedon analyytikko\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=terveydenhuolto"
+          }
+        },
+        {
+          "careerId": "asiakasmenestysjohtaja",
+          "careerTitle": "Asiakasmenestysjohtaja",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"asiakaspalvelu\" doesn't match career \"Asiakasmenestysjohtaja\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=asiakaspalvelu"
+          }
+        },
+        {
+          "careerId": "verkkokurssien-luoja",
+          "careerTitle": "Verkkokurssien luoja",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"koulutus\" doesn't match career \"Verkkokurssien luoja\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=koulutus"
+          }
+        },
+        {
+          "careerId": "opetusteknologi",
+          "careerTitle": "Opetusteknologi",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"opettaja\" doesn't match career \"Opetusteknologi\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=opettaja"
+          }
+        },
+        {
+          "careerId": "kirjailija-luova",
+          "careerTitle": "Luova kirjailija",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"Kirjoittaja\" doesn't match career \"Luova kirjailija\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=Kirjoittaja"
+          }
+        },
+        {
+          "careerId": "sisustusarkkitehti-luova",
+          "careerTitle": "Sisustusarkkitehti",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"Sisustussuunnittelija\" doesn't match career \"Sisustusarkkitehti\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=Sisustussuunnittelija"
+          }
+        },
+        {
+          "careerId": "kirjojen-kuvittaja",
+          "careerTitle": "Kirjojen kuvittaja",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"suunnittelija\" doesn't match career \"Kirjojen kuvittaja\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=suunnittelija"
+          }
+        },
+        {
+          "careerId": "konsepti-taiteilija",
+          "careerTitle": "Konsepti taiteilija",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"suunnittelija\" doesn't match career \"Konsepti taiteilija\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=suunnittelija"
+          }
+        },
+        {
+          "careerId": "etaterveys-koordinaattori",
+          "careerTitle": "Etäterveyskoordinaattori",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"terveydenhuolto\" doesn't match career \"Etäterveyskoordinaattori\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=terveydenhuolto"
+          }
+        },
+        {
+          "careerId": "oppimismuotoilija",
+          "careerTitle": "Oppimismuotoilija",
+          "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+          "details": "Search term \"Kouluttaja\" doesn't match career \"Oppimismuotoilija\"",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=Kouluttaja"
+          }
+        }
+      ]
+    },
+    "DUPLICATE_LINK": {
+      "count": 1,
+      "issues": [
+        {
+          "careerId": "kirjanpitaja",
+          "careerTitle": "Kirjanpitäjä",
+          "issueType": "DUPLICATE_LINK",
+          "details": "URL appears 2 times: https://duunitori.fi/tyopaikat?haku=Kirjanpit%C3%A4j%C3%A4",
+          "link": {
+            "name": "Hae töitä Duunitorista",
+            "url": "https://duunitori.fi/tyopaikat?haku=Kirjanpit%C3%A4j%C3%A4"
+          }
+        }
+      ]
+    }
+  },
+  "allIssues": [
+    {
+      "careerId": "kirjailija",
+      "careerTitle": "Kirjailija",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"Kirjoittaja\" doesn't match career \"Kirjailija\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=Kirjoittaja"
+      }
+    },
+    {
+      "careerId": "biotekniikka-insinoori",
+      "careerTitle": "Biotekniikka-insinööri",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"bioteknologia\" doesn't match career \"Biotekniikka-insinööri\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=bioteknologia"
+      }
+    },
+    {
+      "careerId": "yritysneuvoja",
+      "careerTitle": "Yritysneuvoja",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"konsultti\" doesn't match career \"Yritysneuvoja\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=konsultti"
+      }
+    },
+    {
+      "careerId": "oikeusneuvos",
+      "careerTitle": "Oikeusneuvos",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"juristi\" doesn't match career \"Oikeusneuvos\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=juristi"
+      }
+    },
+    {
+      "careerId": "tulevaisuuden-yhteiskunta-asiantuntija",
+      "careerTitle": "Tulevaisuuden yhteiskunta-asiantuntija",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"tutkija\" doesn't match career \"Tulevaisuuden yhteiskunta-asiantuntija\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=tutkija"
+      }
+    },
+    {
+      "careerId": "tutkimusasiantuntija",
+      "careerTitle": "Tutkimusasiantuntija",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"tutkija\" doesn't match career \"Tutkimusasiantuntija\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=tutkija"
+      }
+    },
+    {
+      "careerId": "kirjanpitaja",
+      "careerTitle": "Kirjanpitäjä",
+      "issueType": "DUPLICATE_LINK",
+      "details": "URL appears 2 times: https://duunitori.fi/tyopaikat?haku=Kirjanpit%C3%A4j%C3%A4",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=Kirjanpit%C3%A4j%C3%A4"
+      }
+    },
+    {
+      "careerId": "dokumentaristi",
+      "careerTitle": "Dokumentaristi",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"dokumentti\" doesn't match career \"Dokumentaristi\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=dokumentti"
+      }
+    },
+    {
+      "careerId": "audiologi",
+      "careerTitle": "Audiologi",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"kuulontutkija\" doesn't match career \"Audiologi\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=kuulontutkija"
+      }
+    },
+    {
+      "careerId": "rautakauppias",
+      "careerTitle": "Rautakauppias",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"rautakauppa\" doesn't match career \"Rautakauppias\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=rautakauppa"
+      }
+    },
+    {
+      "careerId": "aktuaari",
+      "careerTitle": "Aktuaari",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"vakuutus\" doesn't match career \"Aktuaari\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=vakuutus"
+      }
+    },
+    {
+      "careerId": "erityispedagogi",
+      "careerTitle": "Erityispedagogi",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"erityisopettaja\" doesn't match career \"Erityispedagogi\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=erityisopettaja"
+      }
+    },
+    {
+      "careerId": "filosofi",
+      "careerTitle": "Filosofi",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"tutkija\" doesn't match career \"Filosofi\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=tutkija"
+      }
+    },
+    {
+      "careerId": "historioitsija",
+      "careerTitle": "Historioitsija",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"tutkija\" doesn't match career \"Historioitsija\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=tutkija"
+      }
+    },
+    {
+      "careerId": "insinoori",
+      "careerTitle": "Insinoori",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"insinööri\" doesn't match career \"Insinoori\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=insin%C3%B6%C3%B6ri"
+      }
+    },
+    {
+      "careerId": "markkinointipaallikko",
+      "careerTitle": "Markkinointipaallikko",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"markkinointipäällikkö\" doesn't match career \"Markkinointipaallikko\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=markkinointip%C3%A4%C3%A4llikk%C3%B6"
+      }
+    },
+    {
+      "careerId": "ravintolapaallikko",
+      "careerTitle": "Ravintolapaallikko",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"ravintolapäällikkö\" doesn't match career \"Ravintolapaallikko\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=ravintolap%C3%A4%C3%A4llikk%C3%B6"
+      }
+    },
+    {
+      "careerId": "content-strategist",
+      "careerTitle": "Sisältöstrategisti",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"sisällöntuottaja\" doesn't match career \"Sisältöstrategisti\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=sis%C3%A4ll%C3%B6ntuottaja"
+      }
+    },
+    {
+      "careerId": "health-data-analyst",
+      "careerTitle": "Terveystiedon analyytikko",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"terveydenhuolto\" doesn't match career \"Terveystiedon analyytikko\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=terveydenhuolto"
+      }
+    },
+    {
+      "careerId": "asiakasmenestysjohtaja",
+      "careerTitle": "Asiakasmenestysjohtaja",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"asiakaspalvelu\" doesn't match career \"Asiakasmenestysjohtaja\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=asiakaspalvelu"
+      }
+    },
+    {
+      "careerId": "verkkokurssien-luoja",
+      "careerTitle": "Verkkokurssien luoja",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"koulutus\" doesn't match career \"Verkkokurssien luoja\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=koulutus"
+      }
+    },
+    {
+      "careerId": "opetusteknologi",
+      "careerTitle": "Opetusteknologi",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"opettaja\" doesn't match career \"Opetusteknologi\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=opettaja"
+      }
+    },
+    {
+      "careerId": "kirjailija-luova",
+      "careerTitle": "Luova kirjailija",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"Kirjoittaja\" doesn't match career \"Luova kirjailija\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=Kirjoittaja"
+      }
+    },
+    {
+      "careerId": "sisustusarkkitehti-luova",
+      "careerTitle": "Sisustusarkkitehti",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"Sisustussuunnittelija\" doesn't match career \"Sisustusarkkitehti\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=Sisustussuunnittelija"
+      }
+    },
+    {
+      "careerId": "kirjojen-kuvittaja",
+      "careerTitle": "Kirjojen kuvittaja",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"suunnittelija\" doesn't match career \"Kirjojen kuvittaja\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=suunnittelija"
+      }
+    },
+    {
+      "careerId": "konsepti-taiteilija",
+      "careerTitle": "Konsepti taiteilija",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"suunnittelija\" doesn't match career \"Konsepti taiteilija\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=suunnittelija"
+      }
+    },
+    {
+      "careerId": "etaterveys-koordinaattori",
+      "careerTitle": "Etäterveyskoordinaattori",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"terveydenhuolto\" doesn't match career \"Etäterveyskoordinaattori\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=terveydenhuolto"
+      }
+    },
+    {
+      "careerId": "oppimismuotoilija",
+      "careerTitle": "Oppimismuotoilija",
+      "issueType": "DUUNITORI_MISMATCHED_SEARCH",
+      "details": "Search term \"Kouluttaja\" doesn't match career \"Oppimismuotoilija\"",
+      "link": {
+        "name": "Hae töitä Duunitorista",
+        "url": "https://duunitori.fi/tyopaikat?haku=Kouluttaja"
+      }
+    }
+  ]
+}

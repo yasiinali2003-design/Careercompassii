@@ -17,6 +17,7 @@ import {
 } from './types';
 import { getQuestionMappings } from './dimensions';
 import { CAREER_VECTORS } from './careerVectors';
+import { CURATED_CAREER_SLUGS } from './curatedCareers';
 import { RANKING_WEIGHTS, getDemandWeight, getDiversityKey, isPaallikkoVariant } from './rankingConfig';
 import { careersData as careersFI } from '@/data/careers-fi';
 import { generatePersonalizedAnalysis } from './personalizedAnalysis';
@@ -1617,7 +1618,9 @@ function determineDominantCategory(
     // Emma has leadership=0.75, business=0.5 which would trigger johtaja
     // But her org=1.0, precision=1.0 should make her järjestäjä instead
     const hasStrongOrganizerSignals = (ylaOrganization >= 0.8 && ylaPrecision >= 0.8);
-    const isYLAStrongLeaderProfile = (ylaLeadership >= 0.7 && ylaBusiness >= 0.5 && ylaTech < 0.5 &&
+    // RELAXED: Lower threshold for leader profile detection
+    // A score of 5 on Q13 + 5 on Q6 should detect as leader even if scores get diluted
+    const isYLAStrongLeaderProfile = (ylaLeadership >= 0.55 && ylaBusiness >= 0.45 && ylaTech < 0.6 &&
                                        !creativeOverridesLeadership && !hasStrongOrganizerSignals);
     const organizerStrengthYLA = ylaOrganization + ylaPrecision * 0.9 + ylaAnalytical * 0.7;
 
@@ -5276,10 +5279,15 @@ export function rankCareers(
   // isOrganizer: High organization + precision WITHOUT high technology (järjestäjä type)
   const isOrganizer = organization >= 0.8 && precision >= 0.8 && technology < 0.7;
 
-  // Score ALL careers based on category match AND subdimension alignment
+  // Score CURATED careers based on category match AND subdimension alignment
+  // Using curated pool of ~121 careers for better accuracy and relevance
+  const curatedSlugSet = new Set(CURATED_CAREER_SLUGS);
+  const curatedCareers = CAREER_VECTORS.filter(cv => curatedSlugSet.has(cv.slug));
+  console.log(`[rankCareers] Using curated pool: ${curatedCareers.length} careers (from ${CAREER_VECTORS.length} total)`);
+
   const scoredCareers: CareerMatch[] = [];
 
-  for (const careerVector of CAREER_VECTORS) {
+  for (const careerVector of curatedCareers) {
     // Skip current occupation if provided
     if (currentOccupation && currentOccupation !== "none") {
       const occupationLower = currentOccupation.toLowerCase().trim();
@@ -5290,17 +5298,20 @@ export function rankCareers(
     }
 
     // Calculate base score from category match
-    // REDUCED base score to allow subdimension alignment to matter more
+    // Base score allows subdimension alignment to differentiate within categories
     let baseScore = 25; // Lower starting point - subdimensions should differentiate
     const careerCategory = careerVector.category;
 
-    // Category matching bonus - REDUCED to allow within-category differentiation
+    // Category matching bonus - INCREASED for dominant category to ensure
+    // careers from the user's top category appear in results
+    // The dominant category bonus needs to be strong enough to beat
+    // alignment bonuses from non-dominant categories
     if (careerCategory === dominantCategory) {
-      baseScore += 20; // Reduced from 30 - let subdimensions differentiate within category
+      baseScore += 35; // Increased from 20 - ensure dominant category careers appear
     } else if (topCategories.includes(careerCategory)) {
-      baseScore += 12; // Reduced from 18
+      baseScore += 18; // Increased from 12 - better support for top 3 categories
     } else if (categoryAffinitiesArray.slice(3, 5).map((c: CategoryAffinity) => c.category).includes(careerCategory)) {
-      baseScore += 5; // Reduced from 8
+      baseScore += 8; // Slightly increased from 5
     }
 
     // Calculate subdimension alignment bonus
@@ -5361,8 +5372,13 @@ export function rankCareers(
     }
 
     // Workstyle subdimension alignment - INCREASED WEIGHTS
+    // CRITICAL: Leadership alignment needs STRONG weight for johtaja careers
     if (careerWorkstyle.leadership && (workstyle.leadership || interests.leadership)) {
-      alignmentBonus += careerWorkstyle.leadership * Math.max(workstyle.leadership || 0, interests.leadership || 0) * 8; // Doubled from 4
+      alignmentBonus += careerWorkstyle.leadership * Math.max(workstyle.leadership || 0, interests.leadership || 0) * 15; // Increased from 8 to match other key dimensions
+    }
+    // Also add interests.leadership alignment for johtaja careers
+    if (careerInterests.leadership && interests.leadership) {
+      alignmentBonus += careerInterests.leadership * interests.leadership * 12;
     }
     if (careerWorkstyle.organization && (workstyle.organization || workstyle.structure)) {
       alignmentBonus += careerWorkstyle.organization * Math.max(workstyle.organization || 0, workstyle.structure || 0) * 8; // Doubled from 4
@@ -5559,14 +5575,26 @@ export function rankCareers(
       } else if (leadership < 0.4 && business < 0.4) {
         categoryPenalty -= 12;
       }
-      // Bonus for high leadership
+      // STRONG bonus for high leadership/business (5 on Likert = ~0.6+)
       if (leadership >= 0.6 || business >= 0.6) {
-        alignmentBonus += 15;
+        alignmentBonus += 25; // Increased from 15
+      }
+      // MODERATE bonus for moderate leadership/business (4 on Likert = ~0.5)
+      // BUT ONLY when user doesn't have strong competing signals (creative, health, hands_on)
+      // This ensures johtaja careers appear for business profiles, not creative/healthcare
+      else if ((leadership >= 0.45 || business >= 0.45) &&
+               creative < 0.5 && health < 0.5 && hands_on < 0.5) {
+        alignmentBonus += 15; // New: boost for moderate business profiles without competing signals
       }
       // CRITICAL: Penalty for organizers (Emma) - they're järjestäjä, not business leaders
       // Even if they have moderate leadership, their high org+precision makes them järjestäjä
       if (isOrganizer && business < 0.6) {
         categoryPenalty -= 40; // Strong penalty to ensure järjestäjä careers rank higher
+      }
+      // PENALTY: Creative people should NOT get johtaja careers
+      // This prevents beauty-focused users from getting henkilöstöpäällikkö
+      if (creative >= 0.5 && leadership < 0.5 && business < 0.5) {
+        categoryPenalty -= 30; // Creative people without leadership want creative careers
       }
     }
 
@@ -5707,7 +5735,9 @@ function selectDiverseCareers(
     const titleLower = career.title.toLowerCase();
 
     // ========== CORE INTEREST SCORES ==========
-    const leadershipScore = userWorkstyle.leadership || 0;
+    // FIXED: Leadership can come from either interests or workstyle - use max of both
+    // YLA Q13 maps to interests.leadership, but other cohorts may map to workstyle.leadership
+    const leadershipScore = Math.max(userWorkstyle.leadership || 0, userInterests.leadership || 0);
     const peopleScoreGlobal = userInterests.people || 0;
     const handsOnScore = userInterests.hands_on || 0;
     const businessScore = userInterests.business || 0;
@@ -5730,15 +5760,19 @@ function selectDiverseCareers(
     const primaryInterest = interestScores.sort((a, b) => b.score - a.score)[0];
     const isPrimaryLeader = primaryInterest.name === 'leadership' && leadershipScore >= 0.5;
 
-    // Leadership combos only apply when leadership is strong AND matched with another interest
-    const hasLeadershipCombo = leadershipScore >= 0.5;
-    const hasPeopleLeadershipCombo = leadershipScore >= 0.5 && peopleScoreGlobal >= 0.5;
-    const hasPracticalLeadershipCombo = leadershipScore >= 0.5 && handsOnScore >= 0.5;
-    const hasTechLeadershipCombo = leadershipScore >= 0.5 && technologyScore >= 0.5;
+    // Leadership combos only apply when leadership is ABOVE-NEUTRAL AND matched with another interest
+    // FIXED: Changed threshold from 0.5 to 0.6 - neutral (0.5) should NOT trigger leadership boosts
+    // This prevents Henkilöstöpäällikkö from appearing for non-leadership profiles
+    const hasLeadershipCombo = leadershipScore >= 0.6;
+    const hasPeopleLeadershipCombo = leadershipScore >= 0.6 && peopleScoreGlobal >= 0.5;
+    const hasPracticalLeadershipCombo = leadershipScore >= 0.6 && handsOnScore >= 0.5;
+    const hasTechLeadershipCombo = leadershipScore >= 0.6 && technologyScore >= 0.5;
 
     // ========== TECHNOLOGY CAREERS - CRITICAL FOR TECH-ORIENTED USERS ==========
     // Users with high tech interest should see tech careers, not generic management
-    const isTechOriented = technologyScore >= 0.5 || (technologyScore >= 0.4 && problemSolvingScore >= 0.4);
+    // FIXED: Changed threshold from 0.5 to 0.6 - neutral tech (0.5) is NOT tech-oriented
+    // Only users who explicitly answered ABOVE-neutral on tech questions (4-5 on Likert) are tech-oriented
+    const isTechOriented = technologyScore >= 0.6 || (technologyScore >= 0.5 && problemSolvingScore >= 0.6);
     if (isTechOriented) {
       // SOFTWARE/DEVELOPER CAREERS - VERY STRONG BOOST
       if (titleLower.includes('ohjelmisto') || titleLower.includes('kehittäjä') ||
@@ -5751,10 +5785,15 @@ function selectDiverseCareers(
         if (technologyScore >= 0.8) diversityBonus += 10;
       }
 
-      // GAME DEVELOPMENT
+      // GAME DEVELOPMENT - only boost when tech is STRONG (not just moderate)
       if (titleLower.includes('peli') || titleLower.includes('game')) {
-        diversityBonus += 45;
-        if (creativeScore >= 0.4) diversityBonus += 15;
+        if (technologyScore >= 0.7) {
+          diversityBonus += 45;
+          if (creativeScore >= 0.4) diversityBonus += 15;
+        } else if (technologyScore >= 0.5) {
+          diversityBonus += 20; // Moderate boost for moderate tech interest
+        }
+        // No boost for low tech interest
       }
 
       // DATA CAREERS
@@ -5792,7 +5831,9 @@ function selectDiverseCareers(
       }
 
       // PENALIZE non-tech careers for tech-oriented users - STRONGER PENALTY
-      if (technologyScore >= 0.5) {
+      // FIXED: Increased threshold from 0.5 to 0.6 - neutral tech (0.5) should NOT trigger penalties
+      // Only users with ABOVE-neutral tech interest (4-5 on Likert) should have non-tech careers penalized
+      if (technologyScore >= 0.6) {
         // Check if this is a tech career
         const isTechCareer = titleLower.includes('ohjelmisto') || titleLower.includes('kehittäjä') ||
           titleLower.includes('data') || titleLower.includes('peli') || titleLower.includes('it') ||
@@ -5826,7 +5867,9 @@ function selectDiverseCareers(
 
     // MARKETING LEADERSHIP - for creative business minds (Tuomas-type)
     // This needs to be checked REGARDLESS of isCreativeOriented for business-creative combos
-    const isMarketingLeader = creativeScore >= 0.4 && businessScore >= 0.4 && leadershipScore >= 0.4;
+    // FIXED: Increased leadership threshold from 0.4 to 0.6 - need ABOVE-NEUTRAL leadership for marketing roles
+    // This prevents markkinointipäällikkö from appearing for pure creative profiles
+    const isMarketingLeader = creativeScore >= 0.4 && businessScore >= 0.4 && leadershipScore >= 0.6;
     if (isMarketingLeader) {
       // MARKETING PÄÄLLIKKÖ/JOHTAJA - VERY STRONG BOOST
       if (titleLower.includes('markkinointipäällikkö') || titleLower.includes('markkinointijohtaja') ||
@@ -5998,6 +6041,19 @@ function selectDiverseCareers(
       const isPureCaringProfile = healthScore >= 0.5 && peopleScore >= 0.4 && leadershipScore < 0.5;
       const isCaringProfile = healthScore >= 0.5 && peopleScore >= 0.4;
       const isVeryHighHealth = healthScore >= 0.7;
+
+      // PENALTY: Creative people with LOW health should NOT get auttaja/healthcare careers
+      // TASO2 Q5 (beauty) creates high creative + high people but LOW health
+      // These people want beauty/creative careers, NOT nursing/healthcare
+      const creativeScoreCheck = userInterests.creative || 0;
+      const isCreativeNotHealthcare = creativeScoreCheck >= 0.5 && healthScore < 0.4;
+      if (isCreativeNotHealthcare) {
+        if (titleLower.includes('lähihoitaja') || titleLower.includes('sairaanhoitaja') ||
+            titleLower.includes('hoitaja') || titleLower.includes('terveyden') ||
+            titleLower.includes('kotihoitaja') || titleLower.includes('vanhustenhoitaja')) {
+          diversityBonus -= 80; // Strong penalty - creative people don't want healthcare
+        }
+      }
 
       // For ANY caring profile with high health, boost nursing careers
       if (isCaringProfile) {
@@ -6207,6 +6263,14 @@ function selectDiverseCareers(
         if (handsOnScore >= 0.5 && creativeScoreLocal >= 0.5 && peopleScore >= 0.4) {
           diversityBonus += 40;
         }
+        // CRITICAL: Penalize restaurant careers for users with HIGH HEALTH interest but NOT restaurant focused
+        // This prevents healthcare-focused users from getting restaurant recommendations
+        if (healthScore >= 0.6 && !isRestaurantFocused) {
+          diversityBonus -= 150; // Strong penalty - health-focused people want healthcare, not restaurants
+          if (healthScore >= 0.7) {
+            diversityBonus -= 100; // Extra penalty for very health-focused users
+          }
+        }
       }
 
       // Penalize marketing/business careers for restaurant-focused people
@@ -6337,9 +6401,9 @@ function selectDiverseCareers(
         }
       }
 
-      // GAME DEVELOPMENT
+      // GAME DEVELOPMENT - require tech interest, not just creative
       if (titleLower.includes('peli') || titleLower.includes('game')) {
-        if (creativeScore >= 0.4) {
+        if (technologyScore >= 0.6 && creativeScore >= 0.4) {
           diversityBonus += 18;
         }
       }
@@ -6367,6 +6431,15 @@ function selectDiverseCareers(
       const artsCultureScore = userInterests.arts_culture || 0;
       const performanceScore = userWorkstyle.performance || userWorkstyle.social || 0;
       const sportsScore = userInterests.sports || 0;
+      const healthScoreLuovaGen = userInterests.health || 0;
+
+      // GENERAL LUOVA BOOST: Creative people with LOW health should get luova careers (not auttaja)
+      // This addresses the key issue: TASO2 Q5 (beauty) creates creative + people, but NOT health
+      // These users want luova careers, not healthcare careers
+      const isCreativeNotHealthOriented = creativeScore >= 0.5 && healthScoreLuovaGen < 0.4;
+      if (isCreativeNotHealthOriented) {
+        diversityBonus += 50; // General boost for all luova careers when creative but not health-oriented
+      }
 
       // MARKETING/ADVERTISING CAREERS - for creative + business combo
       // If someone has high creative + high business/sales, they want marketing careers
@@ -6474,13 +6547,18 @@ function selectDiverseCareers(
       // BEAUTY/HAIRDRESSING CAREERS - specific handling for beauty-oriented creative users
       // For TASO2, high creative + social + people signals specifically for beauty
       const socialScore = userWorkstyle.social || 0;
+      const healthScoreLuova = userInterests.health || 0;
 
       // STRONG beauty signal: high creative from Q5 (beauty question) combined with social/people
       // When someone answers Q5=5 (beauty work), the creative/people/social all come from that single question
       // This creates a unique "cluster" pattern: high creative + high social + high people + moderate hands_on
       const isStrongBeautySignal = creativeScore >= 0.75 && socialScore >= 0.75 && peopleScoreGlobal >= 0.4;
+      // RELAXED: Also detect beauty when creative + people are high but health is LOW
+      // This is the key pattern for TASO2 Q5 (beauty) - creative + people without health
+      const isCreativePeopleNotHealth = creativeScore >= 0.5 && peopleScoreGlobal >= 0.4 && healthScoreLuova < 0.4;
       const isBeautyOriented = isStrongBeautySignal ||
-                               (creativeScore >= 0.6 && socialScore >= 0.5 && peopleScoreGlobal >= 0.4);
+                               (creativeScore >= 0.6 && socialScore >= 0.5 && peopleScoreGlobal >= 0.4) ||
+                               isCreativePeopleNotHealth;
 
       if (isBeautyOriented) {
         // MASSIVE bonus for beauty careers when beauty signal is detected
@@ -6530,6 +6608,20 @@ function selectDiverseCareers(
       const precisionScore = userWorkstyle.precision || 0;
       const technologyScore = userInterests.technology || 0;
       const handsOnScore = userInterests.hands_on || 0;
+
+      // CRITICAL FIX: Penalize rakentaja careers when hands_on is NEUTRAL or LOW
+      // This prevents trades careers from appearing for non-trades profiles
+      // Neutral = 0.5 (3/5 on Likert), so we need > 0.5 to show interest
+      if (handsOnScore <= 0.5) {
+        diversityBonus -= 80; // Strong penalty - no trades interest = no trades careers
+      }
+
+      // PENALTY: People with high creative but LOW hands_on should NOT get rakentaja careers
+      // This prevents beauty/hospitality creative people from getting construction careers
+      const isCreativeNotTrades = creativeScore >= 0.6 && handsOnScore < 0.5;
+      if (isCreativeNotTrades) {
+        diversityBonus -= 60; // Strong penalty - creative people don't want trades
+      }
 
       // CONSTRUCTION/HANDS-ON FOCUSED - strong boost for people with high hands_on interest
       const isConstructionFocused = handsOnScore >= 0.6 || (handsOnScore >= 0.4 && leadershipScore >= 0.4);
@@ -6691,6 +6783,22 @@ function selectDiverseCareers(
         // Reduce environment career scores for leadership-focused people
         diversityBonus -= 80;
       }
+
+      // PENALIZE environment careers when healthcare/helping is the dominant signal
+      // If someone has high health + people interest but LOW nature, they want auttaja careers
+      // This prevents Ympäristöinsinööri from appearing for healthcare-focused profiles
+      const healthScoreYP = userInterests.health || 0;
+      const peopleScoreYP = userInterests.people || 0;
+      // Healthcare is dominant if:
+      // 1. Health is SIGNIFICANTLY higher than nature (health is the clear interest)
+      // 2. OR health + people both high (healthcare profile) and nature is not very high
+      // Note: Q4 maps to both environment AND health, so we need health > environment to distinguish
+      const healthcareDominant = (healthScoreYP >= 0.6 && healthScoreYP > combinedNatureScore + 0.1) ||
+                                  (healthScoreYP >= 0.5 && peopleScoreYP >= 0.5 && combinedNatureScore < 0.7);
+      if (healthcareDominant) {
+        // Strong penalty - healthcare people don't want environment careers
+        diversityBonus -= 100;
+      }
     }
 
     // ========== JOHTAJA DIFFERENTIATION ==========
@@ -6700,10 +6808,53 @@ function selectDiverseCareers(
       const entrepreneurshipScore = userValues.entrepreneurship || 0;
       const financialScore = userValues.financial || 0;
 
+      // PENALTY: People with LOW leadership should NOT get johtaja careers
+      // This prevents creative/healthcare people from getting management roles
+      const hasLowLeadership = leadershipScore < 0.4 && businessScore < 0.4;
+      if (hasLowLeadership) {
+        diversityBonus -= 50; // Strong penalty - non-leaders don't want management
+      }
+
+      // EXTRA PENALTY: Creative people with LOW leadership/business want creative careers, not management
+      // This specifically addresses TASO2 Creative test where beauty-focused users shouldn't get päällikkö roles
+      const creativeScoreJ = userInterests.creative || 0;
+      const isCreativeNotManager = creativeScoreJ >= 0.5 && leadershipScore < 0.4 && businessScore < 0.4;
+      if (isCreativeNotManager) {
+        diversityBonus -= 60; // Strong additional penalty for creative people without management interest
+      }
+
+      // BEAUTY/CREATIVE DOMINANCE PENALTY: When creative score exceeds leadership, don't show johtaja careers
+      // This addresses TASO2 Beauty profile: luova(38%) > johtaja(34%) should mean beauty careers dominate
+      // Creative people with neutral-ish leadership (0.4-0.5) shouldn't get startup/manager careers
+      const healthScoreJ = userInterests.health || 0;
+      const isBeautyCreativeProfile = creativeScoreJ >= 0.5 && healthScoreJ < 0.4 && creativeScoreJ > leadershipScore;
+      if (isBeautyCreativeProfile) {
+        // Penalize ALL johtaja careers for beauty-oriented creative profiles
+        // Beauty people want creative careers (kampaaja, kosmetologi) not management roles
+        diversityBonus -= 100; // Strong penalty - beauty creatives don't want management
+      }
+
+      // HEALTHCARE DOMINANCE PENALTY: When health score exceeds leadership, don't show johtaja careers
+      // This addresses TASO2 Healthcare profile: auttaja(45%) > johtaja(33%) should mean healthcare careers dominate
+      // Healthcare people with neutral-ish leadership should NOT get startup/manager careers
+      const isHealthcareProfile = healthScoreJ >= 0.5 && healthScoreJ > leadershipScore && healthScoreJ > businessScore;
+      if (isHealthcareProfile) {
+        // Penalize ALL johtaja careers for healthcare-oriented profiles
+        // Healthcare people want caring careers (sairaanhoitaja, lähihoitaja) not management roles
+        diversityBonus -= 100; // Strong penalty - healthcare people don't want management
+      }
+
       // STRONG LEADERSHIP SIGNAL - boost ALL johtaja careers
       // Leadership is a PRIMARY career signal for managers/executives
       const hasStrongLeadershipSignal = leadershipScore >= 0.6 && businessScore >= 0.4;
       const hasVeryStrongLeadershipSignal = leadershipScore >= 0.7 && businessScore >= 0.5;
+      // MODERATE: Detect moderate leadership interest (answer of 4 = ~0.5 on normalized scale)
+      const hasModerateLeadershipSignal = leadershipScore >= 0.45 && businessScore >= 0.35;
+
+      // Boost for MODERATE leadership interest (this catches profiles with answer of 4)
+      if (hasModerateLeadershipSignal && !hasStrongLeadershipSignal) {
+        diversityBonus += 40; // Moderate boost for moderate leadership interest
+      }
 
       if (hasStrongLeadershipSignal) {
         // All johtaja careers get base boost for leadership people
@@ -6825,6 +6976,20 @@ function selectDiverseCareers(
         if (titleLower.includes('päällikkö') || titleLower.includes('johtaja')) {
           diversityBonus += 20;
         }
+      }
+    }
+
+    // ========== VISIONAARI DIFFERENTIATION ==========
+    if (career.category === 'visionaari') {
+      const healthScoreV = userInterests.health || 0;
+      const globalScore = userValues.global || userInterests.global || 0;
+
+      // HEALTHCARE DOMINANCE PENALTY: When health score exceeds global/strategic interest
+      // Healthcare people want caring careers, not strategic/visionary roles like journalist
+      const isHealthcareDominantV = healthScoreV >= 0.5 && healthScoreV > globalScore;
+      if (isHealthcareDominantV) {
+        // Penalize visionaari careers for healthcare-oriented profiles
+        diversityBonus -= 80; // Healthcare people don't want strategic roles
       }
     }
 
@@ -7018,9 +7183,37 @@ function _legacyRankCareers(
       if (careerInterests.health && interests.health) {
         interestBonus += careerInterests.health * interests.health * 4;
       }
-      // Leadership alignment
+      // Leadership alignment - INCREASED weight to match other key dimensions
       if (careerWorkstyle.leadership && (workstyle.leadership || interests.leadership)) {
-        interestBonus += careerWorkstyle.leadership * Math.max(workstyle.leadership || 0, interests.leadership || 0) * 3;
+        interestBonus += careerWorkstyle.leadership * Math.max(workstyle.leadership || 0, interests.leadership || 0) * 8;
+      }
+      // Business alignment - ADDED (was missing!)
+      const careerBusiness = careerInterests.business || 0;
+      if (careerBusiness && interests.business) {
+        interestBonus += careerBusiness * interests.business * 6;
+      }
+      // Innovation alignment
+      if (careerInterests.innovation && interests.innovation) {
+        interestBonus += careerInterests.innovation * interests.innovation * 4;
+      }
+      // Analytical alignment
+      if (careerInterests.analytical && interests.analytical) {
+        interestBonus += careerInterests.analytical * interests.analytical * 4;
+      }
+
+      // JOHTAJA-SPECIFIC BONUS: High leadership/business users should get johtaja careers
+      // This ensures moderate business/leadership profiles get appropriate career matches
+      const userLeadership = Math.max(workstyle.leadership || 0, interests.leadership || 0);
+      const userBusiness = interests.business || 0;
+      if (careerCategory === 'johtaja') {
+        // Strong bonus for high leadership/business
+        if (userLeadership >= 0.6 || userBusiness >= 0.6) {
+          interestBonus += 20;
+        }
+        // Moderate bonus for moderate leadership/business
+        else if (userLeadership >= 0.4 || userBusiness >= 0.4) {
+          interestBonus += 10;
+        }
       }
 
       const totalScore = Math.min(100, baseScore + interestBonus);
@@ -7306,9 +7499,14 @@ function _legacyRankCareers(
                                  rankCareersStrategySignal > rankCareersOrgSignals; // Strategy must be stronger than org signals
   console.log(`[rankCareers] Strategic signals: strategy=${rankCareersStrategySignal.toFixed(2)}, business=${rankCareersBusiness.toFixed(2)}, tech=${rankCareersTechSignal.toFixed(2)}, org=${rankCareersOrgSignals.toFixed(2)}, isStrategicConsultant=${isStrategicConsultant}`);
 
-  // Score ALL 700+ careers for comprehensive recommendations
+  // Score CURATED careers for comprehensive recommendations
+  // Using curated pool of ~121 careers for better accuracy and relevance
   // BUT: For certain strong profile types (Business Leader, etc.), use category filtering
   // to ensure accurate matches
+  const curatedSlugSetTASO2 = new Set(CURATED_CAREER_SLUGS);
+  const curatedCareersTASO2 = CAREER_VECTORS.filter(cv => curatedSlugSetTASO2.has(cv.slug));
+  console.log(`[rankCareers] TASO2/NUORI using curated pool: ${curatedCareersTASO2.length} careers`);
+
   let careersToScore: typeof CAREER_VECTORS;
   let useStrictCategoryFiltering = false;
 
@@ -7319,7 +7517,7 @@ function _legacyRankCareers(
   // This prevents generic high-scoring careers from dominating
   if (isBusinessLeaderInRankCareers) {
     useStrictCategoryFiltering = true;
-    careersToScore = CAREER_VECTORS.filter(careerVector => {
+    careersToScore = curatedCareersTASO2.filter(careerVector => {
       // Only include johtaja category for Business Leaders
       if (careerVector.category !== 'johtaja') return false;
       // Filter out current occupation
@@ -7335,7 +7533,7 @@ function _legacyRankCareers(
     console.log(`[rankCareers] 🎯 BUSINESS LEADER DETECTED: Filtering to ${careersToScore.length} johtaja careers only`);
   } else if (isEnvironmentalScientist) {
     useStrictCategoryFiltering = true;
-    careersToScore = CAREER_VECTORS.filter(careerVector => {
+    careersToScore = curatedCareersTASO2.filter(careerVector => {
       // Only include ympariston-puolustaja category for Environmental Scientists
       if (careerVector.category !== 'ympariston-puolustaja') return false;
       // Filter out current occupation
@@ -7352,7 +7550,7 @@ function _legacyRankCareers(
   } else if (isDefinitelyAuttaja) {
     // AUTTAJA DETECTION - MUST come BEFORE järjestäjä to prioritize helping professions
     useStrictCategoryFiltering = true;
-    careersToScore = CAREER_VECTORS.filter(careerVector => {
+    careersToScore = curatedCareersTASO2.filter(careerVector => {
       // Only include auttaja category for Helper/Healthcare profiles
       if (careerVector.category !== 'auttaja') return false;
       // Filter out current occupation
@@ -7368,7 +7566,7 @@ function _legacyRankCareers(
     console.log(`[rankCareers] 🏥 AUTTAJA (HELPER) DETECTED: Filtering to ${careersToScore.length} auttaja careers only`);
   } else if (isAccountantAdmin) {
     useStrictCategoryFiltering = true;
-    careersToScore = CAREER_VECTORS.filter(careerVector => {
+    careersToScore = curatedCareersTASO2.filter(careerVector => {
       // Only include jarjestaja category for Accountants/Administrators
       if (careerVector.category !== 'jarjestaja') return false;
       // Filter out current occupation
@@ -7384,7 +7582,7 @@ function _legacyRankCareers(
     console.log(`[rankCareers] 📊 ACCOUNTANT/ADMIN DETECTED: Filtering to ${careersToScore.length} jarjestaja careers only`);
   } else if (isStrategicConsultant) {
     useStrictCategoryFiltering = true;
-    careersToScore = CAREER_VECTORS.filter(careerVector => {
+    careersToScore = curatedCareersTASO2.filter(careerVector => {
       // Only include visionaari category for Strategic Consultants
       if (careerVector.category !== 'visionaari') return false;
       // Filter out current occupation
@@ -7399,8 +7597,8 @@ function _legacyRankCareers(
     });
     console.log(`[rankCareers] 🎯 STRATEGIC CONSULTANT DETECTED: Filtering to ${careersToScore.length} visionaari careers only`);
   } else {
-    // Default: Score all careers
-    careersToScore = CAREER_VECTORS.filter(careerVector => {
+    // Default: Score all careers from curated pool
+    careersToScore = curatedCareersTASO2.filter(careerVector => {
       // Only filter out current occupation (fuzzy match on title)
       if (currentOccupation && currentOccupation !== "none") {
         const occupationLower = currentOccupation.toLowerCase().trim();
@@ -7415,10 +7613,10 @@ function _legacyRankCareers(
     console.log(`[rankCareers] Scoring ALL ${careersToScore.length} careers (dominant category hint: "${dominantCategory}")`);
   }
 
-  // SAFETY: If careersToScore is somehow empty (all filtered out), use ALL careers
+  // SAFETY: If careersToScore is somehow empty (all filtered out), use curated pool
   if (careersToScore.length === 0) {
-    console.log(`[rankCareers] ⚠️ No careers to score after filtering! Using all ${CAREER_VECTORS.length} careers...`);
-    careersToScore = CAREER_VECTORS;
+    console.log(`[rankCareers] ⚠️ No careers to score after filtering! Using all ${curatedCareersTASO2.length} curated careers...`);
+    careersToScore = curatedCareersTASO2;
   }
 
   // HYBRID APPROACH: Apply category boost to careers in the dominant category

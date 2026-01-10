@@ -1,0 +1,64 @@
+{
+  "total": 691,
+  "working": 683,
+  "broken": [
+    {
+      "url": "https://duunitori.fi/tyopaikat?haku=Talousjohtaja",
+      "careers": [
+        "talousjohtaja"
+      ],
+      "error": "Timeout"
+    },
+    {
+      "url": "https://duunitori.fi/tyopaikat?haku=Kirvesmies",
+      "careers": [
+        "kirvesmies"
+      ]
+    },
+    {
+      "url": "https://duunitori.fi/tyopaikat?haku=Maanrakennuskoneen%20kuljettaja",
+      "careers": [
+        "maanrakennuskoneen-kuljettaja",
+        "maanrakennuskoneen-kuljettaja",
+        "maanrakennuskoneen-kuljettaja"
+      ],
+      "error": "Timeout"
+    },
+    {
+      "url": "https://duunitori.fi/tyopaikat?haku=asiantuntija",
+      "careers": [
+        "etiikan-asiantuntija"
+      ],
+      "error": "Timeout"
+    },
+    {
+      "url": "https://duunitori.fi/tyopaikat?haku=Rakennusarkkitehti",
+      "careers": [
+        "rakennusarkkitehti"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://agile.fi/",
+      "careers": [
+        "kettera-valmentaja"
+      ],
+      "error": "Client network socket disconnected before secure TLS connection was established"
+    },
+    {
+      "url": "https://platform.openai.com/docs/overview",
+      "careers": [
+        "tekoaly-kehoteasiantuntija"
+      ],
+      "error": "HTTP 403"
+    },
+    {
+      "url": "https://www.voices.com/",
+      "careers": [
+        "aaninaittelija"
+      ],
+      "error": "HTTP 403"
+    }
+  ]
+}

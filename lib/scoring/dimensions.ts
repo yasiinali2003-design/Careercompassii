@@ -491,15 +491,43 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     notes: "Hospitality/culinary"
   },
 
-  // Q5: Beauty
+  // Q5: Beauty - TRIPLE MAPPING: creative + people + hands_on
+  // Beauty work is creative (styling), people-oriented (client work), and hands-on (physical work)
   {
     q: 5,
     text: "Haluaisitko työskennellä kampaamossa tai kauneusalalla?",
     dimension: 'interests',
     subdimension: 'creative',
+    weight: 1.3,
+    reverse: false,
+    notes: "Beauty/hairdressing - creative styling"
+  },
+  {
+    q: 5,
+    text: "Haluaisitko työskennellä kampaamossa tai kauneusalalla?",
+    dimension: 'interests',
+    subdimension: 'people',
     weight: 1.2,
     reverse: false,
-    notes: "Beauty/hairdressing"
+    notes: "Beauty/hairdressing - client interaction is key"
+  },
+  {
+    q: 5,
+    text: "Haluaisitko työskennellä kampaamossa tai kauneusalalla?",
+    dimension: 'interests',
+    subdimension: 'hands_on',
+    weight: 1.1,
+    reverse: false,
+    notes: "Beauty/hairdressing - physical work with hands"
+  },
+  {
+    q: 5,
+    text: "Haluaisitko työskennellä kampaamossa tai kauneusalalla?",
+    dimension: 'workstyle',
+    subdimension: 'social',
+    weight: 1.2,
+    reverse: false,
+    notes: "Beauty/hairdressing - highly social work environment"
   },
 
   // Q6: Childcare - DUAL: people + health (child development/wellbeing)

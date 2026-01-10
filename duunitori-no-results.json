@@ -1,0 +1,1350 @@
+[
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=musiikki",
+    "searchTerm": "musiikki"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=video%20tuotanto",
+    "searchTerm": "video tuotanto"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=graafinen%20suunnittelu",
+    "searchTerm": "graafinen suunnittelu"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=pukuompelija",
+    "searchTerm": "pukuompelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=rakennusala",
+    "searchTerm": "rakennusala"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=laatu",
+    "searchTerm": "laatu"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=data",
+    "searchTerm": "data"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=robotiikka",
+    "searchTerm": "robotiikka"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=kehitt%C3%A4j%C3%A4",
+    "searchTerm": "kehittäjä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=automaatio",
+    "searchTerm": "automaatio"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=puolustusvoimat",
+    "searchTerm": "puolustusvoimat"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=liikunta",
+    "searchTerm": "liikunta"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=fysioterapia",
+    "searchTerm": "fysioterapia"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=elintarvike",
+    "searchTerm": "elintarvike"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=ymp%C3%A4rist%C3%B6",
+    "searchTerm": "ympäristö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=energia",
+    "searchTerm": "energia"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=strategia",
+    "searchTerm": "strategia"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=teknologia",
+    "searchTerm": "teknologia"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=markkinointi",
+    "searchTerm": "markkinointi"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=liiketoiminta",
+    "searchTerm": "liiketoiminta"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=mobile%20kehitt%C3%A4j%C3%A4",
+    "searchTerm": "mobile kehittäjä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=AI",
+    "searchTerm": "AI"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=tuotanto",
+    "searchTerm": "tuotanto"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=turvallisuus",
+    "searchTerm": "turvallisuus"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=rahoitus",
+    "searchTerm": "rahoitus"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=media",
+    "searchTerm": "media"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=tanssi%20opettaja",
+    "searchTerm": "tanssi opettaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=tekniikka",
+    "searchTerm": "tekniikka"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=viestint%C3%A4tuottaja",
+    "searchTerm": "viestintätuottaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=viestint%C3%A4",
+    "searchTerm": "viestintä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=teatteri",
+    "searchTerm": "teatteri"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=j%C3%A4tehuolto",
+    "searchTerm": "jätehuolto"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=devops",
+    "searchTerm": "devops"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=testaus",
+    "searchTerm": "testaus"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=UX",
+    "searchTerm": "UX"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=pilvi",
+    "searchTerm": "pilvi"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=UI",
+    "searchTerm": "UI"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=tietoturva",
+    "searchTerm": "tietoturva"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=sosiaaliala",
+    "searchTerm": "sosiaaliala"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=full%20stack",
+    "searchTerm": "full stack"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=LVI",
+    "searchTerm": "LVI"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=myynti",
+    "searchTerm": "myynti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=vastaanotto",
+    "searchTerm": "vastaanotto"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=web",
+    "searchTerm": "web"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=mediateknikko",
+    "searchTerm": "mediateknikko"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=laboratorio",
+    "searchTerm": "laboratorio"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=konetekniikka",
+    "searchTerm": "konetekniikka"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=maatalous",
+    "searchTerm": "maatalous"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=merenkulku",
+    "searchTerm": "merenkulku"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=mets%C3%A4ala",
+    "searchTerm": "metsäala"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=s%C3%A4hk%C3%B6",
+    "searchTerm": "sähkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=taloushallinto",
+    "searchTerm": "taloushallinto"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=UX-tutkija",
+    "searchTerm": "UX-tutkija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kasvuasiantuntija",
+    "searchTerm": "Kasvuasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Asiakasmenestyksen%20asiantuntija",
+    "searchTerm": "Asiakasmenestyksen asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=infrastruktuuri",
+    "searchTerm": "infrastruktuuri"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=backend%20kehitt%C3%A4j%C3%A4",
+    "searchTerm": "backend kehittäjä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=video%20tuotantoleikkaaja",
+    "searchTerm": "video tuotantoleikkaaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Vaikuttajamarkkinoinnin%20asiantuntija",
+    "searchTerm": "Vaikuttajamarkkinoinnin asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Digitaalinen%20sis%C3%A4lt%C3%B6tuottaja",
+    "searchTerm": "Digitaalinen sisältötuottaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Myyntikehitysedustaja",
+    "searchTerm": "Myyntikehitysedustaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Vastuullinen%20myyntiedustaja",
+    "searchTerm": "Vastuullinen myyntiedustaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Operatiivinen%20p%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Operatiivinen päällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Toimintap%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Toimintapäällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Digitaalisen%20muutoksen%20konsultti",
+    "searchTerm": "Digitaalisen muutoksen konsultti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Muutosjohtamisen%20asiantuntija",
+    "searchTerm": "Muutosjohtamisen asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=ty%C3%B6terveys",
+    "searchTerm": "työterveys"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kansainv%C3%A4lisen%20myynnin%20p%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Kansainvälisen myynnin päällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Et%C3%A4tiimin%20vet%C3%A4j%C3%A4",
+    "searchTerm": "Etätiimin vetäjä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=K%C3%A4%C3%A4nn%C3%B6s",
+    "searchTerm": "Käännös"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Globaalien%20kumppanuuksien%20p%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Globaalien kumppanuuksien päällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Teknisen%20tuen%20asiantuntija",
+    "searchTerm": "Teknisen tuen asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=K%C3%A4%C3%A4nn%C3%B6sprojektien%20p%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Käännösprojektien päällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Monimuotoisuus-%20ja%20yhdenvertaisuusasiantuntija",
+    "searchTerm": "Monimuotoisuus- ja yhdenvertaisuusasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Sosiaalisen%20oikeudenmukaisuuden%20edist%C3%A4j%C3%A4",
+    "searchTerm": "Sosiaalisen oikeudenmukaisuuden edistäjä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Yhteis%C3%B6aktivisti",
+    "searchTerm": "Yhteisöaktivisti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=J%C3%A4rjest%C3%B6n%20ohjelmakoordinaattori",
+    "searchTerm": "Järjestön ohjelmakoordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ihmisoikeustutkija",
+    "searchTerm": "Ihmisoikeustutkija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Esteett%C3%B6myysasiantuntija",
+    "searchTerm": "Esteettömyysasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tasa-arvoneuvoja",
+    "searchTerm": "Tasa-arvoneuvoja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Nuorten%20voimaannuttamisen%20koordinaattori",
+    "searchTerm": "Nuorten voimaannuttamisen koordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Muoti%20suunnittelija",
+    "searchTerm": "Muoti suunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kiertotalouden%20asiantuntija",
+    "searchTerm": "Kiertotalouden asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Br%C3%A4ndi%20strategisti",
+    "searchTerm": "Brändi strategisti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ekologisen%20rakentamisen%20suunnittelija",
+    "searchTerm": "Ekologisen rakentamisen suunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Nollajatetavoitteen%20konsultti",
+    "searchTerm": "Nollajatetavoitteen konsultti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Eettisen%20hankinnan%20p%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Eettisen hankinnan päällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kulttuurisen%20sensitiivisyyden%20konsultti",
+    "searchTerm": "Kulttuurisen sensitiivisyyden konsultti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tuottaja%20(yhteiskunnalliset%20aiheet)",
+    "searchTerm": "Tuottaja (yhteiskunnalliset aiheet)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=markkinointi%20asiantuntija",
+    "searchTerm": "markkinointi asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kulttuuritapahtumien%20tuottaja",
+    "searchTerm": "Kulttuuritapahtumien tuottaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Taideterapian%20ohjaaja",
+    "searchTerm": "Taideterapian ohjaaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Yhteis%C3%B6taiteen%20johtaja",
+    "searchTerm": "Yhteisötaiteen johtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Museopedagogi",
+    "searchTerm": "Museopedagogi"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=scrum",
+    "searchTerm": "scrum"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Pilvipalveluarkkitehti",
+    "searchTerm": "Pilvipalveluarkkitehti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6ajoneuvoasentaja",
+    "searchTerm": "Sähköajoneuvoasentaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Drone-ohjaaja",
+    "searchTerm": "Drone-ohjaaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=suunnittelija-tulostusasiantuntija",
+    "searchTerm": "suunnittelija-tulostusasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Oppimis-%20ja%20kehitysasiantuntija",
+    "searchTerm": "Oppimis- ja kehitysasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Muutosjohtamiskonsultti",
+    "searchTerm": "Muutosjohtamiskonsultti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Teknologiajohtaja%20(CTO)",
+    "searchTerm": "Teknologiajohtaja (CTO)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Talousjohtaja%20(CFO)",
+    "searchTerm": "Talousjohtaja (CFO)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Henkil%C3%B6st%C3%B6johtaja%20(CHRO)",
+    "searchTerm": "Henkilöstöjohtaja (CHRO)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Operatiivinen%20johtaja%20(COO)",
+    "searchTerm": "Operatiivinen johtaja (COO)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=markkinointijohtaja%20(CMO)",
+    "searchTerm": "markkinointijohtaja (CMO)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tietoturvajohtaja%20(CISO)",
+    "searchTerm": "Tietoturvajohtaja (CISO)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tietohallintojohtaja%20(CIO)",
+    "searchTerm": "Tietohallintojohtaja (CIO)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Vastuullisuusjohtaja%20(CSO)",
+    "searchTerm": "Vastuullisuusjohtaja (CSO)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Toimitusketjujohtaja",
+    "searchTerm": "Toimitusketjujohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Laatujohtaja",
+    "searchTerm": "Laatujohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Asiakaspalvelujohtaja",
+    "searchTerm": "Asiakaspalvelujohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Hankintajohtaja",
+    "searchTerm": "Hankintajohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Aluejohtaja",
+    "searchTerm": "Aluejohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ohjelmistojohtaja",
+    "searchTerm": "Ohjelmistojohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Strategiajohtaja",
+    "searchTerm": "Strategiajohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Turvallisuusjohtaja",
+    "searchTerm": "Turvallisuusjohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tuotep%C3%A4%C3%A4llikk%C3%B6%20(Senior)",
+    "searchTerm": "Tuotepäällikkö (Senior)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kansainv%C3%A4lisen%20liiketoiminnan%20johtaja",
+    "searchTerm": "Kansainvälisen liiketoiminnan johtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ravintolajohtaja",
+    "searchTerm": "Ravintolajohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Myym%C3%A4l%C3%A4p%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Myymäläpäällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tehtaanjohtaja",
+    "searchTerm": "Tehtaanjohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Osastonhoitaja%20(sairaala)",
+    "searchTerm": "Osastonhoitaja (sairaala)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Digitalisaatiojohtaja",
+    "searchTerm": "Digitalisaatiojohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Datajohtaja",
+    "searchTerm": "Datajohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Compliance-johtaja",
+    "searchTerm": "Compliance-johtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Asiakaskokemuksen%20johtaja",
+    "searchTerm": "Asiakaskokemuksen johtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Teko%C3%A4lyjohtaja",
+    "searchTerm": "Tekoälyjohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Portfoliojohtaja",
+    "searchTerm": "Portfoliojohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=J%C3%A4lleenmyyntijohtaja",
+    "searchTerm": "Jälleenmyyntijohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Energiajohtaja",
+    "searchTerm": "Energiajohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Franchising-johtaja",
+    "searchTerm": "Franchising-johtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Transformaatiojohtaja",
+    "searchTerm": "Transformaatiojohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kiinteist%C3%B6johtaja",
+    "searchTerm": "Kiinteistöjohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Opetusjohtaja",
+    "searchTerm": "Opetusjohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tekninen%20johtaja",
+    "searchTerm": "Tekninen johtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Analytiikkajohtaja",
+    "searchTerm": "Analytiikkajohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Yritt%C3%A4jyysjohtaja",
+    "searchTerm": "Yrittäjyysjohtaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tulevaisuustutkija",
+    "searchTerm": "Tulevaisuustutkija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Innovaatiokonsultti",
+    "searchTerm": "Innovaatiokonsultti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Visiointiasiantuntija",
+    "searchTerm": "Visiointiasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Liiketoimintamallisuunnittelija",
+    "searchTerm": "Liiketoimintamallisuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ekosuunnittelija",
+    "searchTerm": "Ekosuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Megatrendien%20analyytikko",
+    "searchTerm": "Megatrendien analyytikko"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Yhteiskuntasuunnittelija",
+    "searchTerm": "Yhteiskuntasuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Skenaariosuunnittelija",
+    "searchTerm": "Skenaariosuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Vaikuttavuusanalyytikko",
+    "searchTerm": "Vaikuttavuusanalyytikko"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4v%C3%A4n%20kehityksen%20strategisti",
+    "searchTerm": "Kestävän kehityksen strategisti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kiertotaloussuunnittelija",
+    "searchTerm": "Kiertotaloussuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Digitaalisen%20transformaation%20asiantuntija",
+    "searchTerm": "Digitaalisen transformaation asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=%C3%84lykaupunkisuunnittelija",
+    "searchTerm": "Älykaupunkisuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Palvelumuotoilija%20(vision%C3%A4%C3%A4ri)",
+    "searchTerm": "Palvelumuotoilija (visionääri)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4v%C3%A4n%20rahoituksen%20asiantuntija",
+    "searchTerm": "Kestävän rahoituksen asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tiedeviestij%C3%A4%20(tulevaisuusaiheet)",
+    "searchTerm": "Tiedeviestijä (tulevaisuusaiheet)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ruokaj%C3%A4rjestelm%C3%A4n%20suunnittelija",
+    "searchTerm": "Ruokajärjestelmän suunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Regeneratiivisen%20talouden%20suunnittelija",
+    "searchTerm": "Regeneratiivisen talouden suunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Datavirtojen%20arkkitehti",
+    "searchTerm": "Datavirtojen arkkitehti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Digitaalisen%20kaksosen%20arkkitehti",
+    "searchTerm": "Digitaalisen kaksosen arkkitehti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kulttuurienv%C3%A4lisen%20innovaation%20asiantuntija",
+    "searchTerm": "Kulttuurienvälisen innovaation asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ilmastonmuutoksen%20sopeutumissuunnittelija",
+    "searchTerm": "Ilmastonmuutoksen sopeutumissuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=T%C3%A4sm%C3%A4viljelyn%20vision%C3%A4%C3%A4ri",
+    "searchTerm": "Täsmäviljelyn visionääri"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Osallistavan%20suunnittelun%20asiantuntija",
+    "searchTerm": "Osallistavan suunnittelun asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Seuraavan%20sukupolven%20energia-asiantuntija",
+    "searchTerm": "Seuraavan sukupolven energia-asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Eettisen%20teknologian%20kehitt%C3%A4j%C3%A4",
+    "searchTerm": "Eettisen teknologian kehittäjä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Biodiversiteettisuunnittelija",
+    "searchTerm": "Biodiversiteettisuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Teollisen%20symbioosien%20suunnittelija",
+    "searchTerm": "Teollisen symbioosien suunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Resilienssisuunnittelija",
+    "searchTerm": "Resilienssisuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Neurodiversiteettiasiantuntija",
+    "searchTerm": "Neurodiversiteettiasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Yhteisomistuutalouden%20kehitt%C3%A4j%C3%A4",
+    "searchTerm": "Yhteisomistuutalouden kehittäjä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Transitiomuotoilija",
+    "searchTerm": "Transitiomuotoilija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Alkuper%C3%A4iskansojen%20tiedon%20integroija",
+    "searchTerm": "Alkuperäiskansojen tiedon integroija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Biomimikry-asiantuntija",
+    "searchTerm": "Biomimikry-asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Regeneratiivisen%20kulttuurin%20rakentaja",
+    "searchTerm": "Regeneratiivisen kulttuurin rakentaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kokonaisj%C3%A4rjestelmien%20suunnittelija",
+    "searchTerm": "Kokonaisjärjestelmien suunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kaupunkien%20tulevaisuuden%20asiantuntija",
+    "searchTerm": "Kaupunkien tulevaisuuden asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Planeettaisen%20terveyden%20asiantuntija",
+    "searchTerm": "Planeettaisen terveyden asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=J%C3%A4lkiantroposentrinen%20suunnittelija",
+    "searchTerm": "Jälkiantroposentrinen suunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Huomiotalouden%20asiantuntija",
+    "searchTerm": "Huomiotalouden asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Laskennallisen%20luovuuden%20asiantuntija",
+    "searchTerm": "Laskennallisen luovuuden asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ennakoivan%20hallinnon%20asiantuntija",
+    "searchTerm": "Ennakoivan hallinnon asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kokemuksellisen%20tulevaisuuden%20suunnittelija",
+    "searchTerm": "Kokemuksellisen tulevaisuuden suunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Sensorisen%20teknologian%20vision%C3%A4%C3%A4ri",
+    "searchTerm": "Sensorisen teknologian visionääri"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Hitaan%20teknologian%20asiantuntija",
+    "searchTerm": "Hitaan teknologian asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kognitiivisen%20vapauden%20asiantuntija",
+    "searchTerm": "Kognitiivisen vapauden asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Teko%C3%A4ly-kehoteasiantuntija",
+    "searchTerm": "Tekoäly-kehoteasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ekologisen%20rakentamisen%20konsultti",
+    "searchTerm": "Ekologisen rakentamisen konsultti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6laiteromujen%20kierr%C3%A4tt%C3%A4j%C3%A4",
+    "searchTerm": "Sähkölaiteromujen kierrättäjä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Luonnonsuojelubiologi",
+    "searchTerm": "Luonnonsuojelubiologi"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kierr%C3%A4tyskoordinaattori",
+    "searchTerm": "Kierrätyskoordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=El%C3%A4inneuvoja",
+    "searchTerm": "Eläinneuvoja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Luontokohteen%20hoitaja",
+    "searchTerm": "Luontokohteen hoitaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Aurinkoenergiasuunnittelija",
+    "searchTerm": "Aurinkoenergiasuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Energiatehokkuusasiantuntija",
+    "searchTerm": "Energiatehokkuusasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Biokaasulaitoksen%20operaattori",
+    "searchTerm": "Biokaasulaitoksen operaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6geologi",
+    "searchTerm": "Ympäristögeologi"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Luomuviljelija",
+    "searchTerm": "Luomuviljelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Viherkattosuunnittelija",
+    "searchTerm": "Viherkattosuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Luonnon%20monimuotoisuusasiantuntija",
+    "searchTerm": "Luonnon monimuotoisuusasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6viestij%C3%A4",
+    "searchTerm": "Ympäristöviestijä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6j%C3%A4rjest%C3%B6n%20ty%C3%B6ntekij%C3%A4",
+    "searchTerm": "Ympäristöjärjestön työntekijä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Luontokulttuuriasiantuntija",
+    "searchTerm": "Luontokulttuuriasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ekomatkailuyritt%C3%A4j%C3%A4",
+    "searchTerm": "Ekomatkailuyrittäjä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Linnustontutkija",
+    "searchTerm": "Linnustontutkija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6talousasiantuntija",
+    "searchTerm": "Ympäristötalousasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ekotoksikologi",
+    "searchTerm": "Ekotoksikologi"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6terveyden%20asiantuntija",
+    "searchTerm": "Ympäristöterveyden asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Viherrakennesuunnittelija",
+    "searchTerm": "Viherrakennesuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Meluntorjuntasuunnittelija",
+    "searchTerm": "Meluntorjuntasuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6luvitusasiantuntija",
+    "searchTerm": "Ympäristöluvitusasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Pilaantuneiden%20maiden%20kunnostusasiantuntija",
+    "searchTerm": "Pilaantuneiden maiden kunnostusasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6vaikutusten%20arvioija",
+    "searchTerm": "Ympäristövaikutusten arvioija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6riskien%20arvioija",
+    "searchTerm": "Ympäristöriskien arvioija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Luontoturvallisuusasiantuntija",
+    "searchTerm": "Luontoturvallisuusasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Hiilijalanj%C3%A4lkikonsultti",
+    "searchTerm": "Hiilijalanjälkikonsultti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Merialuesuunnittelija",
+    "searchTerm": "Merialuesuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Merivesiviljelyn%20asiantuntija",
+    "searchTerm": "Merivesiviljelyn asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Merensuojelubiologi",
+    "searchTerm": "Merensuojelubiologi"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ranta-alueiden%20kunnostaja",
+    "searchTerm": "Ranta-alueiden kunnostaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Vesist%C3%B6tarkkailiaja",
+    "searchTerm": "Vesistötarkkailiaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Rehev%C3%B6itymisen%20torjuja",
+    "searchTerm": "Rehevöitymisen torjuja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kalatalousbiologi",
+    "searchTerm": "Kalatalousbiologi"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Merenhoidon%20asiantuntija",
+    "searchTerm": "Merenhoidon asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Vesilaitosten%20ymp%C3%A4rist%C3%B6asiantuntija",
+    "searchTerm": "Vesilaitosten ympäristöasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Maatalouden%20ymp%C3%A4rist%C3%B6asiantuntija",
+    "searchTerm": "Maatalouden ympäristöasiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Luonnonmukaisen%20tuotannon%20asiantuntija",
+    "searchTerm": "Luonnonmukaisen tuotannon asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Maaper%C3%A4n%20asiantuntija",
+    "searchTerm": "Maaperän asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Perinnebiotooppien%20hoitaja",
+    "searchTerm": "Perinnebiotooppien hoitaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Vesienhallinta-asiantuntija",
+    "searchTerm": "Vesienhallinta-asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6tiedon%20analyytikko",
+    "searchTerm": "Ympäristötiedon analyytikko"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Luontoturvallisuuden%20kouluttaja",
+    "searchTerm": "Luontoturvallisuuden kouluttaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6sertifioinnin%20asiantuntija",
+    "searchTerm": "Ympäristösertifioinnin asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6viestinn%C3%A4n%20asiantuntija",
+    "searchTerm": "Ympäristöviestinnän asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6hankkeiden%20koordinaattori",
+    "searchTerm": "Ympäristöhankkeiden koordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Genetiikan%20neuvoja",
+    "searchTerm": "Genetiikan neuvoja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=biologia",
+    "searchTerm": "biologia"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Pelitekninen%20suunnittelija",
+    "searchTerm": "Pelitekninen suunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kvanttilaskenta-insin%C3%B6%C3%B6ri",
+    "searchTerm": "Kvanttilaskenta-insinööri"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Edge%20computing%20-asiantuntija",
+    "searchTerm": "Edge computing -asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Mikropalveluarkkitehti",
+    "searchTerm": "Mikropalveluarkkitehti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Serverless-arkkitehti",
+    "searchTerm": "Serverless-arkkitehti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Embedded%20Linux%20-insin%C3%B6%C3%B6ri",
+    "searchTerm": "Embedded Linux -insinööri"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Pelimoottori%20kehitt%C3%A4j%C3%A4",
+    "searchTerm": "Pelimoottori kehittäjä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=verkko",
+    "searchTerm": "verkko"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Observability-insin%C3%B6%C3%B6ri",
+    "searchTerm": "Observability-insinööri"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=suunnittelija-tulostusingsin%C3%B6%C3%B6ri",
+    "searchTerm": "suunnittelija-tulostusingsinööri"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Toimitusketjuanalyytikko",
+    "searchTerm": "Toimitusketjuanalyytikko"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Projektip%C3%A4%C3%A4llikk%C3%B6%20(rakennus)",
+    "searchTerm": "Projektipäällikkö (rakennus)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tuotantop%C3%A4%C3%A4llikk%C3%B6%20(teollisuus)",
+    "searchTerm": "Tuotantopäällikkö (teollisuus)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Muutosp%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Muutospäällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Prosessip%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Prosessipäällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Compliance-p%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Compliance-päällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Aikataulukoordinaattori",
+    "searchTerm": "Aikataulukoordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Varastonhallintap%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Varastonhallintapäällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Matkakoordinaattori",
+    "searchTerm": "Matkakoordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kalustonhallintap%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Kalustonhallintapäällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Hallintoj%C3%A4rjestelm%C3%A4koordinaattori",
+    "searchTerm": "Hallintojärjestelmäkoordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Toimittajap%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Toimittajapäällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tiedonhallintakoordinaattori",
+    "searchTerm": "Tiedonhallintakoordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Sopimushallinnoija",
+    "searchTerm": "Sopimushallinnoija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kokouskoordinaattori",
+    "searchTerm": "Kokouskoordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ty%C3%B6nkulkukoordinaattori",
+    "searchTerm": "Työnkulkukoordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Toiminnan%20jatkuvuuden%20suunnittelija",
+    "searchTerm": "Toiminnan jatkuvuuden suunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Portfoliop%C3%A4%C3%A4llikk%C3%B6%20(projektit)",
+    "searchTerm": "Portfoliopäällikkö (projektit)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=PMO-koordinaattori",
+    "searchTerm": "PMO-koordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Materiaalisuunnittelija",
+    "searchTerm": "Materiaalisuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kapasiteettisuunnittelija",
+    "searchTerm": "Kapasiteettisuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kunnossapitosuunnittelija",
+    "searchTerm": "Kunnossapitosuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tuotantoaikatauluttaja",
+    "searchTerm": "Tuotantoaikatauluttaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kysynn%C3%A4n%20suunnittelija",
+    "searchTerm": "Kysynnän suunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Lean-koordinaattori",
+    "searchTerm": "Lean-koordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tuonti-vientikoordinaattori",
+    "searchTerm": "Tuonti-vientikoordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Release%20Manager",
+    "searchTerm": "Release Manager"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Konfiguraationhallintap%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Konfiguraationhallintapäällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Omaisuudenhallintap%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Omaisuudenhallintapäällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Palveluntoimitusp%C3%A4%C3%A4llikk%C3%B6",
+    "searchTerm": "Palveluntoimituspäällikkö"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Toimintokoordinaattori",
+    "searchTerm": "Toimintokoordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Perehdytyskoordinaattori",
+    "searchTerm": "Perehdytyskoordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tiedonhallinnan%20koordinaattori",
+    "searchTerm": "Tiedonhallinnan koordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Asiakaskokemuksen%20suunnittelija",
+    "searchTerm": "Asiakaskokemuksen suunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Stand-up",
+    "searchTerm": "Stand-up"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=UI%20UX",
+    "searchTerm": "UI UX"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Br%C3%A4ndi",
+    "searchTerm": "Brändi"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tatuointi",
+    "searchTerm": "Tatuointi"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Keramiikka",
+    "searchTerm": "Keramiikka"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tekstiili",
+    "searchTerm": "Tekstiili"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Lasi",
+    "searchTerm": "Lasi"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Nahka",
+    "searchTerm": "Nahka"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Korusuunnittelija",
+    "searchTerm": "Korusuunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Digitaalinen%20suunnittelija",
+    "searchTerm": "Digitaalinen suunnittelija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Pakkaussuunnittelu",
+    "searchTerm": "Pakkaussuunnittelu"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Peli",
+    "searchTerm": "Peli"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=tekniikka%20(taide)",
+    "searchTerm": "tekniikka (taide)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Et%C3%A4terveyskoordinaattori",
+    "searchTerm": "Etäterveyskoordinaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Teollisuusmekanikko",
+    "searchTerm": "Teollisuusmekanikko"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6asentaja%20(rakennus)",
+    "searchTerm": "Sähköasentaja (rakennus)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=VVS-asentaja",
+    "searchTerm": "VVS-asentaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ammattikirvesmies",
+    "searchTerm": "Ammattikirvesmies"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ammattimaalari",
+    "searchTerm": "Ammattimaalari"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Lattia-asentaja",
+    "searchTerm": "Lattia-asentaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Ikkunan%20ja%20oven%20asentaja",
+    "searchTerm": "Ikkunan ja oven asentaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Rakennehitsaaja",
+    "searchTerm": "Rakennehitsaaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Teollisuuspuusepp%C3%A4",
+    "searchTerm": "Teollisuuspuuseppä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Alusmekaanikko",
+    "searchTerm": "Alusmekaanikko"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Telakkaty%C3%B6ntekij%C3%A4",
+    "searchTerm": "Telakkatyöntekijä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Paperikoneen%20kuljettaja",
+    "searchTerm": "Paperikoneen kuljettaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kemianprosessioperaattori",
+    "searchTerm": "Kemianprosessioperaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Sahateollisuusty%C3%B6ntekij%C3%A4",
+    "searchTerm": "Sahateollisuustyöntekijä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Mets%C3%A4koneen%20kuljettaja",
+    "searchTerm": "Metsäkoneen kuljettaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tuulivoimalan%20huoltoteknikko",
+    "searchTerm": "Tuulivoimalan huoltoteknikko"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Tekstiility%C3%B6ntekij%C3%A4",
+    "searchTerm": "Tekstiilityöntekijä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Muovituotteiden%20valmistaja",
+    "searchTerm": "Muovituotteiden valmistaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Lasiteollisuusty%C3%B6ntekij%C3%A4",
+    "searchTerm": "Lasiteollisuustyöntekijä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Keramiikkaty%C3%B6ntekij%C3%A4",
+    "searchTerm": "Keramiikkatyöntekijä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Siivoja",
+    "searchTerm": "Siivoja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Elintarvikealan%20pakkaaja",
+    "searchTerm": "Elintarvikealan pakkaaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Teollisuusmaalari",
+    "searchTerm": "Teollisuusmaalari"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Konepajahitsaaja",
+    "searchTerm": "Konepajahitsaaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Koneenk%C3%A4ytt%C3%A4j%C3%A4%20(teollisuus)",
+    "searchTerm": "Koneenkäyttäjä (teollisuus)"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Rautatiety%C3%B6ntekij%C3%A4",
+    "searchTerm": "Rautatietyöntekijä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Metallisepp%C3%A4",
+    "searchTerm": "Metalliseppä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Porari",
+    "searchTerm": "Porari"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Vesihuoltomies",
+    "searchTerm": "Vesihuoltomies"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Maatalouskoneen%20kuljettaja",
+    "searchTerm": "Maatalouskoneen kuljettaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Painokoneenk%C3%A4ytt%C3%A4j%C3%A4",
+    "searchTerm": "Painokoneenkäyttäjä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=J%C3%A4%C3%A4dytysteknologian%20operaattori",
+    "searchTerm": "Jäädytysteknologian operaattori"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=tanssi%20opettajaterapeutti",
+    "searchTerm": "tanssi opettajaterapeutti"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Luovuusvalmentaja",
+    "searchTerm": "Luovuusvalmentaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Terveysteknologia-asiantuntija",
+    "searchTerm": "Terveysteknologia-asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=L%C3%A4%C3%A4kint%C3%A4laiteteknikko",
+    "searchTerm": "Lääkintälaiteteknikko"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Terveysinformatiikan%20asiantuntija",
+    "searchTerm": "Terveysinformatiikan asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Digitaalisen%20terveyden%20kehitt%C3%A4j%C3%A4",
+    "searchTerm": "Digitaalisen terveyden kehittäjä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Biol%C3%A4%C3%A4ketieteellinen%20insin%C3%B6%C3%B6ri",
+    "searchTerm": "Biolääketieteellinen insinööri"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Kliininen%20informatiikka-asiantuntija",
+    "searchTerm": "Kliininen informatiikka-asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=ohjaaja",
+    "searchTerm": "ohjaaja"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=viestint%C3%A4kasvatuksen%20asiantuntija",
+    "searchTerm": "viestintäkasvatuksen asiantuntija"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Viestint%C3%A4",
+    "searchTerm": "Viestintä"
+  },
+  {
+    "url": "https://duunitori.fi/tyopaikat?haku=Potilaskokemus",
+    "searchTerm": "Potilaskokemus"
+  }
+]

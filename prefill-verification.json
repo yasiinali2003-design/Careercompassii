@@ -1,0 +1,24 @@
+{
+  "total": 430,
+  "prefilled": 428,
+  "zeroResults": 2,
+  "notPrefilled": 0,
+  "issues": [
+    {
+      "careerId": "tekoaly-kehoteasiantuntija",
+      "careerTitle": "Tekoäly-kehoteasiantuntija",
+      "linkName": "Hae töitä Duunitorista",
+      "url": "https://duunitori.fi/tyopaikat?haku=AI%20prompt",
+      "issue": "zero_results",
+      "searchTerm": "AI prompt"
+    },
+    {
+      "careerId": "aaninaittelija",
+      "careerTitle": "Ääninäyttelijä",
+      "linkName": "Hae töitä Duunitorista",
+      "url": "https://duunitori.fi/tyopaikat?haku=%C3%A4%C3%A4nin%C3%A4yttelij%C3%A4",
+      "issue": "zero_results",
+      "searchTerm": "ääninäyttelijä"
+    }
+  ]
+}

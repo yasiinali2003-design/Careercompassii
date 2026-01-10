@@ -3164,7 +3164,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku – Poliisi", url: "https://opintopolku.fi/konfo/fi/haku/poliisi" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Poliisi" }
     ],
-    keywords: ["turvallisuus", "järjestys", "rikostorjunta", "kenttätyö", "viranomais työ"],
+    keywords: ["turvallisuus", "järjestys", "rikostorjunta", "kenttätyö", "viranomaistyö"],
     study_length_estimate_months: 30
   },
 
@@ -4260,7 +4260,7 @@ export const careersData: CareerFI[] = [
       "Yhteistyö insinöörien, kemistien ja datatieteilijöiden kanssa"
     ],
     impact: [
-      "Laajentaa ymmärrystä luo Suomessannonilmiöistä",
+      "Laajentaa ymmärrystä luonnonilmiöistä",
       "Synnyttää uusia teknologioita ja energiaratkaisuja",
       "Tukee Suomessa lääketieteen, ilmastotieteen ja teollisuuden innovaatioita"
     ],
@@ -5744,7 +5744,7 @@ export const careersData: CareerFI[] = [
     ],
     impact: [
       "Suojaa Suomen luontoa ja eläimiä",
-      "Säilyttää luo Suomessannon monimuotoisuutta",
+      "Säilyttää luonnon monimuotoisuutta",
       "Edistää Suomessa kestävää luonnonkäyttöä"
     ],
     education_paths: [
@@ -11602,7 +11602,7 @@ export const careersData: CareerFI[] = [
 
 {
     id: "ravintolatyontekija",
-    category: "auttaja",
+    category: "rakentaja",
     title_fi: "Ravintolatyöntekijä",
     title_en: "Restaurant Worker",
     short_description: "Ravintolatyöntekijä huolehtii ravintolan asiakkaista ja palveluista. Tarjoaa ammattitaitoista ravintolapalvelua.",
@@ -16515,7 +16515,7 @@ export const careersData: CareerFI[] = [
 
 {
     id: "tarjoilija",
-    category: "auttaja",
+    category: "rakentaja",
     title_fi: "Tarjoilija",
     title_en: "Waiter/Waitress",
     short_description: "Tarjoilija palvelee asiakkaita ravintoloissa ja kahviloissa. Työskentelee asiakaspalvelun, tilauksien vastaanoton ja ruokailun järjestämisen parissa.",
@@ -16593,7 +16593,7 @@ export const careersData: CareerFI[] = [
 
 {
     id: "kokki",
-    category: "auttaja",
+    category: "luova",
     title_fi: "Kokki",
     title_en: "Chef",
     short_description: "Kokki valmistaa ruokaa ravintoloissa ja muissa ruokailupaikoissa. Työskentelee ruoan valmistuksen, ruokailun suunnittelun ja keittiön hallinnan parissa.",
@@ -19153,7 +19153,7 @@ export const careersData: CareerFI[] = [
 
   {
     id: "baarimikko",
-    category: "auttaja",
+    category: "rakentaja",
     title_fi: "Baarimikko",
     title_en: "Bartender",
     short_description: "Baarimikko valmistaa juomia, huolehtii baarin asiakaspalvelusta ja varmistaa anniskelun turvallisuuden ravintoloissa ja tapahtumissa.",
@@ -23949,7 +23949,7 @@ export const careersData: CareerFI[] = [
           "Henkilöbrändi ja autenttisuus",
           "Liiketoiminta- ja neuvottelutaidot"
     ],
-    tools_tech: ["Kamerat ja mikrofoni t","Adobe Creative Suite","CapCut","Canva","Sosiaalisen median alustat"],
+    tools_tech: ["Kamerat ja mikrofonit","Adobe Creative Suite","CapCut","Canva","Sosiaalisen median alustat"],
     languages_required: { fi: "C1", sv: "B1", en: "B2" },
     salary_eur_month: {
       median: 3000,
@@ -26997,7 +26997,7 @@ export const careersData: CareerFI[] = [
               "Vaikuttavuuden arviointi"
     ],
     impact: [
-      "Johtaa yhteisötaideprojekteja, jotka osallistavat satoja ihmisiä luo Suomessavaan prosessiin",
+      "Johtaa yhteisötaideprojekteja, jotka osallistavat satoja ihmisiä luovaan prosessiin",
       "Luo Suomessa yhteisöllisyyttä ja vahvistaa yhteisöjä taiteen avulla",
       "Tekee taiteesta saavutettavaa kaikille ja edistää Suomessa kulttuurista demokratiaa"
     ],
