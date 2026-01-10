@@ -65,7 +65,7 @@ const careersData: Career[] = careersFI
   });
 
 // Source data has over 700 Finnish careers
-const totalCareerCount = 'yli 700';
+const totalCareerCount = 'yli 700 erilaista suomalaista';
 
 // Simplified education level categories for the dropdown
 const EDUCATION_CATEGORIES = [
@@ -276,7 +276,7 @@ export default function CareerCatalog() {
             Urakirjasto
           </h1>
           <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Selaa {totalCareerCount} erilaista ammattia ja löydä ura, joka tuntuu omalta.
+            Selaa {totalCareerCount} ammattia eri aloilta ja löydä se ura, joka tuntuu aidosti omalta.
           </p>
           
           {/* Search Input */}
