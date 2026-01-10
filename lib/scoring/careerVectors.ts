@@ -1387,7 +1387,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "hotellityontekija",
     title: "Hotellityöntekijä",
-    category: "auttaja",
+    category: "rakentaja",
     interests: { technology: 0.3, people: 0.9, creative: 0.4, analytical: 0.3, hands_on: 0.6, business: 0.5, environment: 0.1, health: 0.15, education: 0.2, innovation: 0.25, arts_culture: 0.3, sports: 0.2, nature: 0.1, writing: 0.2 },
     workstyle: { teamwork: 0.59, independence: 0.67, leadership: 0.1, organization: 0.62, planning: 0.48, problem_solving: 0.64, precision: 0.27, performance: 0.27, teaching: 0.9, motivation: 0.57, autonomy: 0.4, social: 0.95, structure: 0.74, flexibility: 0.61, variety: 0.74 },
     values: { growth: 0.66, impact: 0.77, global: 0.1, career_clarity: 0.77, financial: 0.37, entrepreneurship: 0.1, social_impact: 0.95, stability: 0.74, advancement: 0.61, work_life_balance: 0.42, company_size: 0.33 },

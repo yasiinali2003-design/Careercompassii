@@ -11523,7 +11523,7 @@ export const careersData: CareerFI[] = [
 
 {
     id: "hotellityontekija",
-    category: "auttaja",
+    category: "rakentaja",  // Changed from auttaja - hotel work is hands-on service, similar to restaurant work
     title_fi: "Hotellityöntekijä",
     title_en: "Hotel Worker",
     short_description: "Hotellityöntekijä huolehtii hotellin asiakkaista ja palveluista. Tarjoaa ammattitaitoista hotellipalvelua.",

@@ -9,6 +9,12 @@ import { Career, CareerFilters, WorkMode, Outlook } from '@/lib/types';
 import ScrollNav from '@/components/ScrollNav';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import LightRays from '@/components/LightRays';
+import { categories } from '@/lib/categories';
+
+// Helper to get Finnish category name from slug
+const getCategoryLabel = (slug: string): string => {
+  return categories[slug]?.name_fi || slug.charAt(0).toUpperCase() + slug.slice(1);
+};
 
 const convertCareerFIToCareer = (careerFI: CareerFI): Career => ({
   slug: careerFI.id,
@@ -59,7 +65,7 @@ const careersData: Career[] = careersFI
   });
 
 // Source data has over 700 Finnish careers
-const totalCareerCount = 'Yli 700 suomalaista ammattia';
+const totalCareerCount = 'yli 700';
 
 // Simplified education level categories for the dropdown
 const EDUCATION_CATEGORIES = [
@@ -270,7 +276,7 @@ export default function CareerCatalog() {
             Urakirjasto
           </h1>
           <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Selaa {totalCareerCount} erilaista ammattia eri aloilta ja löydä se ura, joka tuntuu aidosti omalta.
+            Selaa {totalCareerCount} erilaista ammattia ja löydä ura, joka tuntuu omalta.
           </p>
           
           {/* Search Input */}
@@ -306,7 +312,7 @@ export default function CareerCatalog() {
                 >
                   <option value="">Kaikki alat</option>
                   {filterOptions.industry.map((industry: string) => (
-                    <option key={industry} value={industry}>{industry}</option>
+                    <option key={industry} value={industry}>{getCategoryLabel(industry)}</option>
                   ))}
                 </select>
                 <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-xs text-gray-400">
