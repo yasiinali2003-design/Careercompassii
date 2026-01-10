@@ -193,7 +193,7 @@ function detectPersonalityType(
   const hands_on = interests.hands_on || interests.practical || 0;
   const nature = interests.nature || interests.environment || interests.outdoors || 0;
   const business = Math.max(interests.business || 0, values.business || 0, values.entrepreneurship || 0);
-  const leadership = Math.max(interests.leadership || 0, workstyle.leadership || 0, values.leadership || 0);
+  const leadership = Math.max((interests as any).leadership || 0, workstyle.leadership || 0, values.leadership || 0);
   const impact = Math.max(values.impact || 0, values.social_impact || 0, values.helping || 0);
   const independence = workstyle.independence || values.independence || values.autonomy || 0;
   const stability = values.stability || values.security || 0;
@@ -1429,7 +1429,7 @@ function determineDominantCategory(
     const nuoriCreative = (interests.creative || 0);
     const nuoriHandsOn = (interests.hands_on || 0);
     const nuoriBusiness = (interests.business || 0);
-    const nuoriLeadership = (interests.leadership || 0);
+    const nuoriLeadership = ((interests as any).leadership || 0);
 
     console.log(`[NUORI EARLY EXIT CHECK] tech=${nuoriTech.toFixed(3)}, innovation=${nuoriInnovation.toFixed(3)}, problemSolving=${nuoriProblemSolving.toFixed(3)}, analytical=${nuoriAnalytical.toFixed(3)}`);
     console.log(`[NUORI EARLY EXIT CHECK] people=${nuoriPeople.toFixed(3)}, health=${nuoriHealth.toFixed(3)}, impact=${nuoriImpact.toFixed(3)}, creative=${nuoriCreative.toFixed(3)}`);
@@ -1517,7 +1517,7 @@ function determineDominantCategory(
     const ylaHandsOn = (interests.hands_on || 0);
     const ylaPeople = (interests.people || 0);
     const ylaHealth = (interests.health || 0);
-    const ylaLeadership = (interests.leadership || 0);
+    const ylaLeadership = ((interests as any).leadership || 0);
     const ylaBusiness = (interests.business || 0);
 
     console.log(`[YLA EARLY EXIT CHECK] tech=${ylaTech.toFixed(3)}, innovation=${ylaInnovation.toFixed(3)}, problemSolving=${ylaProblemSolving.toFixed(3)}, creative=${ylaCreative.toFixed(3)}`);
@@ -1806,7 +1806,7 @@ function determineDominantCategory(
   const auttajaHealth = (interests.health || 0);
   const auttajaImpact = (values.impact || 0);
   const auttajaOrg = (workstyle.organization || workstyle.structure || 0);
-  const auttajaLeadership = (interests.leadership || workstyle.leadership || 0);
+  const auttajaLeadership = ((interests as any).leadership || workstyle.leadership || 0);
   const auttajaCreative = (interests.creative || 0);
   
   // CRITICAL FIX: Early exit conditions to prevent false positives
