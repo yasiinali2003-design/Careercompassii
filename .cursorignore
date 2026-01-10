@@ -1,12 +1,7 @@
-# Already ignored by .gitignore but adding here for Claude Code
+# Large files that cause Claude Coder to hang
+lib/scoring/scoringEngine.ts
+lib/scoring/careerVectors.ts
+lib/scoring/dimensions.ts
 node_modules/
 .next/
-out/
-build/
 *.log
-
-# Large generated files
-*.min.js
-*.min.css
-dist/
-coverage/
