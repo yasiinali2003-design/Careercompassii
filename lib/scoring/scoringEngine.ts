@@ -5378,8 +5378,8 @@ export function rankCareers(
       alignmentBonus += careerWorkstyle.leadership * Math.max(workstyle.leadership || 0, leadershipInterest) * 15; // Increased from 8 to match other key dimensions
     }
     // Also add interests.leadership alignment for johtaja careers
-    if (careerInterests.leadership && leadershipInterest) {
-      alignmentBonus += careerInterests.leadership * leadershipInterest * 12;
+    if ((careerInterests as any).leadership && leadershipInterest) {
+      alignmentBonus += (careerInterests as any).leadership * leadershipInterest * 12;
     }
     if (careerWorkstyle.organization && (workstyle.organization || workstyle.structure)) {
       alignmentBonus += careerWorkstyle.organization * Math.max(workstyle.organization || 0, workstyle.structure || 0) * 8; // Doubled from 4
