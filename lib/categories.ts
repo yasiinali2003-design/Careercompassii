@@ -21,14 +21,14 @@ export const categories: Record<string, CategoryInfo> = {
     slug: "johtaja",
     name_fi: "Johtaja",
     name_en: "Leader",
-    description: "Yrittäjät, managerit ja vaikuttajat",
+    description: "Yrittäjät, esimiehet ja vaikuttajat",
     intro: "Johtaja-tyyppiset urat sopivat luonnollisille johtajille, jotka haluavat vaikuttaa ja ohjata muita. Tämä ala tarjoaa mahdollisuuksia yrittäjyyteen, johtamiseen ja strategiseen ajatteluun."
   },
   innovoija: {
     slug: "innovoija",
     name_fi: "Innovoija",
     name_en: "Innovator",
-    description: "Tech-rakentajat ja ongelmanratkaisijat",
+    description: "Teknologian kehittäjät ja ongelmanratkaisijat",
     intro: "Innovoija-alan urat sopivat teknologiaan kiinnostuneille ja ongelmanratkaisijoille. Tämä nopeasti kehittyvä ala tarjoaa hyviä palkkoja ja mahdollisuuksia vaikuttaa tulevaisuuteen."
   },
   rakentaja: {
@@ -49,14 +49,14 @@ export const categories: Record<string, CategoryInfo> = {
     slug: "ympariston-puolustaja",
     name_fi: "Ympäristön puolustaja",
     name_en: "Environmental Defender",
-    description: "Vihreät ajattelijat ja kestävän kehityksen tekijät",
+    description: "Ympäristöasiantuntijat ja kestävän kehityksen tekijät",
     intro: "Ympäristön puolustaja -alan urat sopivat ympäristöasioista kiinnostuneille, jotka haluavat vaikuttaa kestävään kehitykseen. Tämä kasvava ala tarjoaa mahdollisuuksia vaikuttaa tulevaisuuteen."
   },
   visionaari: {
     slug: "visionaari",
     name_fi: "Visionääri",
     name_en: "Visionary",
-    description: "Tulevaisuuden näkijät ja strategit",
+    description: "Tulevaisuuden suunnittelijat ja strategit",
     intro: "Visionääri-alan urat sopivat strategisesti ajatteleville, jotka haluavat vaikuttaa pitkän aikavälin kehitykseen. Tämä ala tarjoaa mahdollisuuksia johtamiseen ja innovaatioihin."
   },
   jarjestaja: {
