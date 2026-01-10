@@ -5269,7 +5269,7 @@ export function rankCareers(
   const hands_on = interests.hands_on || 0;
   const analytical = interests.analytical || 0;
   const health = interests.health || 0;
-  const leadership = Math.max(interests.leadership || 0, workstyle.leadership || 0);
+  const leadership = Math.max((interests as any).leadership || 0, workstyle.leadership || 0);
   const business = Math.max(interests.business || 0, values.business || 0);
   const environment = Math.max(interests.environment || 0, interests.nature || 0);
   const organization = Math.max(workstyle.organization || 0, workstyle.structure || 0);
