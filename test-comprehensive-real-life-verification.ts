@@ -496,7 +496,8 @@ export function generateAnswersFromTraits(
   profile: RealLifeProfile,
   cohort: Cohort
 ): TestAnswer[] {
-  const mappings = getQuestionMappings(cohort, 0);
+  // CRITICAL FIX: Pass subCohort to getQuestionMappings to ensure we use the same mappings as computeUserVector
+  const mappings = getQuestionMappings(cohort, 0, profile.subCohort);
   const answerMap = new Map<number, number>();
   
   const traits = profile.personalityTraits;
@@ -510,8 +511,16 @@ export function generateAnswersFromTraits(
                          traits.interests.creative < 2;
   const isHealthcareProfile = traits.interests.health >= 4 && 
                              traits.interests.people >= 4;
+  const isHospitalityProfile = traits.interests.creative >= 4 && 
+                               traits.interests.people >= 4 && 
+                               traits.interests.hands_on >= 3 &&
+                               traits.interests.health < 2 &&
+                               (traits.interests.writing === undefined || traits.interests.writing <= 2) &&
+                               (traits.interests.arts_culture === undefined || traits.interests.arts_culture <= 2);
   
   // Handle Q1 (healthcare) FIRST - for TASO2/NUORI, this maps to health
+  // BUT: For TASO2_SHARED_QUESTIONS, Q1 maps ONLY to health, NOT people!
+  // Q3 maps to people in TASO2_SHARED_QUESTIONS
   // Beauty/hospitality/trade profiles should answer LOW (health=1)
   if (cohort !== 'YLA') {
     const healthScoreQ1 = traits.interests.health || 3;
@@ -526,90 +535,66 @@ export function generateAnswersFromTraits(
     }
   }
   
-  // Handle Q2 (construction) FIRST - for TASO2, this maps to hands_on
-  // Trade profiles should answer HIGH (hands_on=5)
-  // Healthcare profiles should answer LOW (hands_on=3 is moderate, not construction-level)
-  // Beauty/hospitality profiles should answer LOW
+  // Handle Q3 (working with people) FIRST - for TASO2_SHARED_QUESTIONS, this maps to people
+  // CRITICAL: This is the PRIMARY people question in TASO2_SHARED_QUESTIONS!
+  // Healthcare profiles: people=5 → Q3 should be HIGH
+  // Beauty profiles: people=4 → Q3 should be HIGH
+  // Hospitality profiles: people=5 → Q3 should be HIGH
+  // Trade profiles: people=2 → Q3 should be LOW
   if (cohort !== 'YLA') {
-    const handsOnScoreQ2 = traits.interests.hands_on || 3;
-    if (isTradeProfile) {
-      answerMap.set(2, 5); // Trade: very interested in construction
-    } else if (isHealthcareProfile) {
-      // Healthcare: hands_on=3 is moderate (patient care), NOT construction-level
-      answerMap.set(2, 1); // Healthcare: NOT interested in construction
-    } else if (isBeautyProfile || (traits.interests.hands_on <= 2 && traits.interests.creative >= 4)) {
-      answerMap.set(2, 1); // Beauty/hospitality: NOT interested in construction
-    } else if (handsOnScoreQ2 >= 4) {
-      answerMap.set(2, 5); // High hands_on: very interested
-    } else if (handsOnScoreQ2 <= 2) {
-      answerMap.set(2, 1); // Low hands_on: not interested
+    const peopleScoreQ3 = traits.interests.people || 3;
+    if (isHealthcareProfile || isBeautyProfile || (peopleScoreQ3 >= 4)) {
+      answerMap.set(3, 5); // Healthcare/beauty/hospitality: very interested in working with people
+    } else if (isTradeProfile || peopleScoreQ3 <= 2) {
+      answerMap.set(3, 1); // Trade/low people: NOT interested in working with people daily
+    } else {
+      answerMap.set(3, 3); // Moderate
     }
   }
   
-  // Handle Q3 FIRST - for TASO2, this maps to BOTH hands_on (automotive) AND creative+writing+arts (creative industries)
-  // This is a complex question with multiple mappings
-  // Trade profiles: answer HIGH (hands_on=5, automotive interest)
-  // Beauty profiles: answer HIGH (creative=5, creative industries interest)
-  // Hospitality profiles: answer LOW (creative=4 but writing/arts LOW, restaurant ≠ creative industries)
-  // Healthcare profiles: answer LOW (not interested in automotive or creative industries)
+  // Handle Q2 (creative work) FIRST - for TASO2_SHARED_QUESTIONS, this maps to creative+writing+arts_culture
+  // CRITICAL: This is the PRIMARY creative question in TASO2_SHARED_QUESTIONS!
+  // Q2 maps to creative (weight 1.2), writing (weight 1.1), arts_culture (weight 1.0)
+  // Beauty profiles: creative=5, arts_culture=4 → Q2 should be HIGH
+  // Hospitality profiles: creative=4, writing=1, arts_culture=1 → Q2 should be MODERATE (restaurant ≠ writing/arts)
+  // Trade profiles: creative=1 → Q2 should be LOW
+  // Healthcare profiles: creative=2 → Q2 should be LOW
   if (cohort !== 'YLA') {
-    const handsOnScoreQ3 = traits.interests.hands_on || 3;
-    const creativeScoreQ3 = traits.interests.creative || 3;
-    const writingScoreQ3 = traits.interests.writing || 3;
-    const artsCultureScoreQ3 = traits.interests.arts_culture || 3;
+    const creativeScoreQ2 = traits.interests.creative || 3;
+    const writingScoreQ2 = traits.interests.writing || 3;
+    const artsCultureScoreQ2 = traits.interests.arts_culture || 3;
     
-    if (isTradeProfile) {
-      // Trade: prioritize hands_on (automotive) over creative
-      answerMap.set(3, 5); // Trade: very interested in automotive
+    // Check Hospitality BEFORE Beauty (Hospitality is more specific - both can match)
+    // Hospitality: creative=4 but writing=1, arts_culture=1 → MODERATE
+    // Restaurant work is creative (presentation) but NOT writing/arts creative
+    if (isHospitalityProfile) {
+      answerMap.set(2, 3); // Moderate - practical creativity, not artistic creativity
     } else if (isBeautyProfile) {
-      // Beauty: prioritize creative (creative industries) over hands_on
-      answerMap.set(3, 5); // Beauty: very interested in creative industries
-    } else if (isHealthcareProfile) {
-      // Healthcare: NOT interested in automotive or creative industries
-      answerMap.set(3, 1);
-    } else if (creativeScoreQ3 >= 4 && writingScoreQ3 <= 2 && artsCultureScoreQ3 <= 2) {
-      // Hospitality: creative high but writing/arts LOW (creative service, not creative art)
-      answerMap.set(3, 1); // LOW interest (restaurant ≠ creative industries)
-    } else if (handsOnScoreQ3 >= 4 && creativeScoreQ3 < 3) {
-      // High hands_on but low creative: automotive interest
-      answerMap.set(3, 5);
-    } else if (creativeScoreQ3 >= 4 && writingScoreQ3 >= 3 && artsCultureScoreQ3 >= 3) {
-      // High creative + writing + arts: creative industries interest
-      answerMap.set(3, 5);
-    } else if (handsOnScoreQ3 <= 2 && creativeScoreQ3 <= 2) {
-      // Low both: not interested
-      answerMap.set(3, 1);
+      // Beauty: creative=5, arts_culture=4 → very interested
+      // For beauty profiles, prioritize creative and arts_culture (they may not have writing defined)
+      answerMap.set(2, 5); // Beauty: very interested in creative work
+    } else if (creativeScoreQ2 >= 4 || artsCultureScoreQ2 >= 4) {
+      answerMap.set(2, 5); // High creative or arts_culture: very interested
+    } else if (isTradeProfile || isHealthcareProfile || creativeScoreQ2 <= 2) {
+      answerMap.set(2, 1); // Trade/healthcare/low creative: NOT interested
+    } else {
+      answerMap.set(2, 3); // Moderate
     }
   }
   
-  // Handle Q4 (restaurant/hospitality) FIRST - for TASO2, this maps to creative
-  // CRITICAL: Q4 maps to creative (weight 1.2) - must be answered correctly for beauty profiles
-  // Beauty profiles: creative=5 → Q4 should be HIGH (beauty people like creative work)
-  // Hospitality profiles: creative=4, people=5, health=1 → Q4 should be HIGH (restaurant interest)
-  // Trade profiles should answer LOW (creative=1)
-  // Healthcare profiles should answer LOW (creative=2)
+  // NOTE: Q3 is now handled ABOVE for people dimension (TASO2_SHARED_QUESTIONS)
+  // The old Q3 logic (hands_on/creative) was for the OLD TASO2 mappings, not TASO2_SHARED_QUESTIONS
+  // Q3 in TASO2_SHARED_QUESTIONS maps to people, NOT hands_on/creative
+  
+  // Handle Q4 (restaurant/hospitality) FIRST - for TASO2_SHARED_QUESTIONS, this maps to business
+  // NOTE: Q4 in TASO2_SHARED_QUESTIONS maps to business, NOT creative!
+  // The old Q4 logic (creative) was for the OLD TASO2 mappings
   if (cohort !== 'YLA') {
-    const creativeScoreQ4 = traits.interests.creative || 3;
-    const peopleScoreQ4 = traits.interests.people || 3;
-    const healthScoreQ4 = traits.interests.health || 3;
-    const writingScoreQ4 = traits.interests.writing || 3;
-    const artsCultureScoreQ4 = traits.interests.arts_culture || 3;
-    
-    // Beauty profiles: creative=5, people=4, health=1
-    // Beauty people like creative work, but restaurant is more about service than art
-    // However, Q4 maps to creative, so beauty profiles should answer HIGH
-    if (isBeautyProfile) {
-      // Beauty: creative=5 → interested in creative work (restaurant has creative elements)
-      answerMap.set(4, 5); // HIGH interest - beauty people like creative work
-    } else if (creativeScoreQ4 >= 4 && peopleScoreQ4 >= 4 && healthScoreQ4 <= 2 && 
-        writingScoreQ4 <= 2 && artsCultureScoreQ4 <= 2) {
-      // Hospitality: creative=4, people=5, health=1, writing=1, arts_culture=1
-      // Restaurant = creative service (creative+people+hands_on), NOT creative art (writing+arts)
-      answerMap.set(4, 5); // Hospitality: very interested in restaurant/hospitality
-    } else if (isTradeProfile || isHealthcareProfile || creativeScoreQ4 <= 2) {
-      answerMap.set(4, 1); // Trade/healthcare/low creative: NOT interested
-    } else if (creativeScoreQ4 >= 4) {
-      answerMap.set(4, 5); // High creative: very interested
+    const businessScoreQ4 = traits.interests.business || 3;
+    if (isTradeProfile || isHealthcareProfile || businessScoreQ4 <= 2) {
+      answerMap.set(4, 1); // Trade/healthcare/low business: NOT interested
+    } else if (businessScoreQ4 >= 4) {
+      answerMap.set(4, 5); // High business: very interested
     } else {
       answerMap.set(4, 3);
     }
@@ -644,90 +629,130 @@ export function generateAnswersFromTraits(
     }
   }
   
-  // Handle Q5 (beauty) FIRST - set before normal mapping
-  // Q5 maps to creative + people + hands_on + social
-  // Beauty profiles: creative=5, people=4, health=1 → Q5=5
-  // Trade profiles: creative=1, people=1 → Q5=1
-  // Healthcare profiles: creative=2, people=5, health=5 → Q5 should be LOW (healthcare ≠ beauty)
-  // Hospitality profiles: creative=4, people=5, health=1 → Q5 should be MODERATE (restaurant has some beauty elements)
-  if (isBeautyProfile) {
-    answerMap.set(5, 5); // Beauty profile: very interested in beauty work
-  } else if (isTradeProfile) {
-    answerMap.set(5, 1); // Trade profile: not interested in beauty work
-  } else if (isHealthcareProfile) {
-    // Healthcare: NOT primarily interested in beauty work (healthcare ≠ beauty)
-    // BUT Q5 maps to people (weight 1.2), so we need to answer MODERATE (3) to avoid dragging down people score
-    // Healthcare profiles ARE interested in people-oriented work, just not beauty specifically
-    answerMap.set(5, 3); // Moderate - people-oriented but not beauty-specific
-  } else {
-    // For other profiles, set Q5 based on creative+people+health
-    const creativeScore = traits.interests.creative || 3;
-    const peopleScore = traits.interests.people || 3;
-    const healthScore = traits.interests.health || 3;
-    const writingScore = traits.interests.writing || 3;
-    const artsCultureScore = traits.interests.arts_culture || 3;
-    
-    // Hospitality: creative=4, people=5, health=1, writing=1, arts_culture=1
-    // Restaurant has some beauty elements (creative service), but not primary beauty work
-    if (creativeScore >= 4 && peopleScore >= 4 && healthScore <= 2 && 
-        writingScore <= 2 && artsCultureScore <= 2) {
-      answerMap.set(5, 3); // Hospitality: moderate interest (restaurant has some beauty elements)
-    } else if (creativeScore >= 4 && peopleScore >= 3 && healthScore < 2) {
-      answerMap.set(5, 5); // Beauty pattern
-    } else if (creativeScore <= 2 && peopleScore <= 2) {
-      answerMap.set(5, 1); // Not interested
+  // Handle Q5 (beauty/environment) FIRST - set before normal mapping
+  // CRITICAL: Q5 mapping varies by cohort/sub-cohort!
+  // - For TASO2 LUKIO/AMIS: Q5 maps to environment (NOT beauty)
+  // - For NUORI: Q5 maps to beauty (creative + people + hands_on + social)
+  // - For YLA: Q5 maps to health
+  // Beauty profiles: creative=5, people=4, health=1 → Q5 should be LOW for TASO2 (environment), HIGH for NUORI (beauty)
+  // Trade profiles: creative=1, people=1 → Q5 should be LOW (not interested in environment or beauty)
+  // Healthcare profiles: creative=2, people=5, health=5 → Q5 should be LOW for TASO2 (environment), MODERATE for NUORI (beauty)
+  if (cohort === 'TASO2') {
+    // For TASO2, Q5 maps to environment - beauty profiles should answer LOW (not interested in environment)
+    if (isBeautyProfile) {
+      answerMap.set(5, 1); // Beauty profile: NOT interested in environment work
+    } else if (isTradeProfile) {
+      answerMap.set(5, 1); // Trade profile: not interested in environment work
+    } else if (isHealthcareProfile) {
+      answerMap.set(5, 1); // Healthcare: not primarily interested in environment
     } else {
-      answerMap.set(5, 3);
+      // For other profiles, set Q5 based on environment interest (which beauty profiles don't have)
+      const environmentScore = traits.interests.environment || 3;
+      if (environmentScore >= 4) {
+        answerMap.set(5, 5); // High environment interest
+      } else if (environmentScore <= 2) {
+        answerMap.set(5, 1); // Low environment interest
+      } else {
+        answerMap.set(5, 3); // Moderate
+      }
     }
+  } else if (cohort === 'NUORI') {
+    // For NUORI, Q5 maps to beauty (creative + people + hands_on + social)
+    if (isBeautyProfile) {
+      answerMap.set(5, 5); // Beauty profile: very interested in beauty work
+    } else if (isTradeProfile) {
+      answerMap.set(5, 1); // Trade profile: not interested in beauty work
+    } else if (isHealthcareProfile) {
+      // Healthcare: NOT primarily interested in beauty work (healthcare ≠ beauty)
+      // BUT Q5 maps to people (weight 1.2), so we need to answer MODERATE (3) to avoid dragging down people score
+      answerMap.set(5, 3); // Moderate - people-oriented but not beauty-specific
+    } else {
+      // For other profiles, set Q5 based on creative+people+health
+      const creativeScore = traits.interests.creative || 3;
+      const peopleScore = traits.interests.people || 3;
+      const healthScore = traits.interests.health || 3;
+      const writingScore = traits.interests.writing || 3;
+      const artsCultureScore = traits.interests.arts_culture || 3;
+      
+      // Hospitality: creative=4, people=5, health=1, writing=1, arts_culture=1
+      if (creativeScore >= 4 && peopleScore >= 4 && healthScore <= 2 && 
+          writingScore <= 2 && artsCultureScore <= 2) {
+        answerMap.set(5, 3); // Hospitality: moderate interest (restaurant has some beauty elements)
+      } else if (creativeScore >= 4 && peopleScore >= 3 && healthScore < 2) {
+        answerMap.set(5, 5); // Beauty pattern
+      } else if (creativeScore <= 2 && peopleScore <= 2) {
+        answerMap.set(5, 1); // Not interested
+      } else {
+        answerMap.set(5, 3);
+      }
+    }
+  } else {
+    // For YLA, Q5 maps to health - handled by normal mapping loop
+    // Don't set Q5 here for YLA
   }
   
-  // Handle Q17 (meeting new people/social) FIRST - for TASO2, this maps to social (workstyle)
-  // CRITICAL: Q17 maps to social (weight 1.0) - must be answered correctly for beauty profiles
-  // Beauty profiles: social=5 → Q17 should be HIGH
-  // Healthcare profiles: social=5 → Q17 should be HIGH
-  // Hospitality profiles: social=5 → Q17 should be HIGH
-  // Trade profiles: social=2 → Q17 should be LOW
+  // Handle Q17 (social impact/helping others) FIRST - for TASO2, this maps to social_impact (values)
+  // CRITICAL: Q17 maps to social_impact (weight 1.2) - must be answered correctly
+  // Healthcare profiles: social_impact=5 → Q17 should be HIGH (helping people is core)
+  // Beauty profiles: social_impact varies → Q17 should be MODERATE-HIGH (beauty helps people feel good)
+  // Hospitality profiles: social_impact should be MODERATE (service ≠ healthcare helping)
+  // Trade profiles: social_impact=1 → Q17 should be LOW
   if (cohort !== 'YLA') {
-    const socialScoreQ17 = traits.workstyle.social || 3;
+    const socialImpactScoreQ17 = traits.values.social_impact || 3;
+    const healthScoreQ17 = traits.interests.health || 3;
     const peopleScoreQ17 = traits.interests.people || 3;
     
-    if (isBeautyProfile || isHealthcareProfile || (socialScoreQ17 >= 4 && peopleScoreQ17 >= 4)) {
-      // Beauty/healthcare/hospitality: social=5, people=5 → HIGH interest in meeting new people
-      answerMap.set(17, 5); // Very interested in meeting new people daily
-    } else if (isTradeProfile || socialScoreQ17 <= 2) {
-      answerMap.set(17, 1); // Trade/low social: NOT interested in meeting new people daily
-    } else if (socialScoreQ17 >= 4) {
-      answerMap.set(17, 5); // High social: very interested
-    } else if (socialScoreQ17 <= 2) {
-      answerMap.set(17, 1); // Low social: not interested
+    if (isHealthcareProfile) {
+      // Healthcare: helping people is core mission
+      answerMap.set(17, 5); // Very interested in helping others/social impact
+    } else if (isHospitalityProfile) {
+      // Hospitality: service-oriented but NOT healthcare helping
+      // Restaurant work is service, not "helping others" in healthcare sense
+      answerMap.set(17, 3); // Moderate - service work, not healthcare helping
+    } else if (isBeautyProfile) {
+      // Beauty: helps people feel good, but not healthcare helping
+      answerMap.set(17, 4); // Moderate-high - beauty helps people feel good
+    } else if (isTradeProfile || socialImpactScoreQ17 <= 2) {
+      answerMap.set(17, 1); // Trade/low social_impact: NOT interested in helping others
+    } else if (socialImpactScoreQ17 >= 4 && healthScoreQ17 >= 4) {
+      answerMap.set(17, 5); // High social_impact + health: very interested
+    } else if (socialImpactScoreQ17 >= 4) {
+      answerMap.set(17, 4); // High social_impact: interested
+    } else if (socialImpactScoreQ17 <= 2) {
+      answerMap.set(17, 1); // Low social_impact: not interested
     } else {
       answerMap.set(17, 3); // Moderate
     }
   }
   
-  // Handle Q14 (supporting people) - for TASO2, this maps to people + health
-  // Healthcare profiles should answer HIGH (people=5, health=5)
-  // Beauty/hospitality/trade profiles should answer LOW (health=1)
+  // Handle Q14 (customer interaction) FIRST - for TASO2_SHARED_QUESTIONS, this maps to social (workstyle)
+  // CRITICAL: Q14 maps to social (weight 1.1) - must be answered correctly for beauty profiles
+  // Beauty profiles: social=5 → Q14 should be HIGH
+  // Healthcare profiles: social=5 → Q14 should be HIGH
+  // Hospitality profiles: social=5 → Q14 should be HIGH
+  // Trade profiles: social=2 → Q14 should be LOW
   if (cohort !== 'YLA') {
-    const healthScoreQ14 = traits.interests.health || 3;
+    const socialScoreQ14 = traits.workstyle.social || 3;
     const peopleScoreQ14 = traits.interests.people || 3;
-    if (isHealthcareProfile) {
-      // Healthcare: people=5, health=5 → Q14=5
-      answerMap.set(14, 5); // Healthcare: very interested in supporting people
-    } else if (isBeautyProfile || isTradeProfile || (traits.interests.health <= 2 && traits.interests.creative >= 4)) {
-      answerMap.set(14, 1); // Beauty/hospitality/trade: NOT interested in supporting people in difficult situations
-    } else if (healthScoreQ14 <= 2) {
-      answerMap.set(14, 1); // Low health: not interested
-    } else if (healthScoreQ14 >= 4 && peopleScoreQ14 >= 4) {
-      answerMap.set(14, 5); // High health + people: very interested
-    } else if (healthScoreQ14 >= 4) {
-      answerMap.set(14, 4); // High health: somewhat interested
+    
+    if (isBeautyProfile || isHealthcareProfile || (socialScoreQ14 >= 4 && peopleScoreQ14 >= 4)) {
+      // Beauty/healthcare/hospitality: social=5, people=5 → HIGH interest in customer interaction
+      answerMap.set(14, 5); // Very interested in customer interaction
+    } else if (isTradeProfile || socialScoreQ14 <= 2) {
+      answerMap.set(14, 1); // Trade/low social: NOT interested in customer interaction
+    } else if (socialScoreQ14 >= 4) {
+      answerMap.set(14, 5); // High social: very interested
+    } else if (socialScoreQ14 <= 2) {
+      answerMap.set(14, 1); // Low social: not interested
+    } else {
+      answerMap.set(14, 3); // Moderate
     }
   }
   
   // Handle Q6 - varies by cohort
   // YLA: Q6 = Business/Entrepreneurship
-  // TASO2/NUORI: Q6 = Childcare (maps to people + health)
+  // TASO2_SHARED_QUESTIONS: Q6 = Hands-on work (maps to hands_on)
+  // Hospitality profiles: hands_on=4 → Q6 should be HIGH (restaurant work is hands-on)
   if (cohort === 'YLA') {
     // Q6 for YLA is business/entrepreneurship
     const businessScore = traits.interests.business || 3;
@@ -735,27 +760,22 @@ export function generateAnswersFromTraits(
     // Use the higher of business or entrepreneurship
     const q6Score = Math.max(businessScore, entrepreneurshipScore);
     answerMap.set(6, q6Score);
-  } else {
-    // Q6 for TASO2/NUORI is childcare (maps to people + health)
-    // CRITICAL: Health is the KEY signal - if health is LOW, Q6 should be LOW
-    // This prevents beauty/hospitality profiles from getting healthcare careers
-    const healthScore = traits.interests.health || 3;
-    const peopleScore = traits.interests.people || 3;
-    
-    if (isHealthcareProfile) {
-      answerMap.set(6, 5); // Healthcare profile: very interested in childcare
-    } else if (healthScore <= 2) {
-      // CRITICAL: If health is LOW, Q6 MUST be LOW (even if people is high)
-      // This is the key fix for beauty/hospitality profiles
-      answerMap.set(6, 1); // Low health: not interested in childcare
-    } else if (healthScore >= 4 && peopleScore >= 4) {
-      answerMap.set(6, 5); // Both high: very interested
-    } else if (healthScore >= 3 && peopleScore >= 3) {
-      answerMap.set(6, 4); // Both moderate: somewhat interested
-    } else {
-      answerMap.set(6, 2); // Low interest
-    }
-  }
+                  } else {
+                    // Q6 for TASO2_SHARED_QUESTIONS is hands-on work (maps to hands_on)
+                    // Trade profiles: hands_on=5 → Q6 should be HIGH
+                    // Hospitality profiles: hands_on=4 → Q6 should be HIGH (restaurant work is hands-on)
+                    // Healthcare profiles: hands_on=3 → Q6 should be MODERATE
+                    // Beauty profiles: hands_on=3 → Q6 should be MODERATE
+                    const handsOnScoreQ6 = traits.interests.hands_on || 3;
+
+                    if (isTradeProfile || isHospitalityProfile || handsOnScoreQ6 >= 4) {
+                      answerMap.set(6, 5); // Trade/hospitality/high hands_on: very interested in hands-on work
+                    } else if (handsOnScoreQ6 <= 2) {
+                      answerMap.set(6, 1); // Low hands_on: not interested
+                    } else {
+                      answerMap.set(6, 3); // Moderate hands_on: moderate interest
+                    }
+                  }
   
   for (const mapping of mappings) {
     const questionIndex = mapping.originalQ !== undefined ? mapping.originalQ : mapping.q;
@@ -763,6 +783,7 @@ export function generateAnswersFromTraits(
     const dimension = mapping.dimension;
     
     // Skip Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q9, Q12, Q13, Q14, Q17 - already handled above (cohort-specific)
+    // NOTE: Q3 is now handled for people dimension (TASO2_SHARED_QUESTIONS), so skip it
     if (cohort !== 'YLA' && (questionIndex === 1 || questionIndex === 2 || questionIndex === 3 || 
                              questionIndex === 4 || questionIndex === 7 || questionIndex === 9 || 
                              questionIndex === 12 || questionIndex === 13 || questionIndex === 14 ||
@@ -935,7 +956,7 @@ function runComprehensiveTests() {
       const answers = generateAnswersFromTraits(profile, profile.cohort);
       
       // Generate user profile
-      const userProfile = generateUserProfile(answers, profile.cohort, profile.subCohort);
+      const userProfile = generateUserProfile(answers, profile.cohort, undefined, profile.subCohort);
       
       // Rank careers
       const careers = rankCareers(answers, profile.cohort, 10, undefined, profile.subCohort);

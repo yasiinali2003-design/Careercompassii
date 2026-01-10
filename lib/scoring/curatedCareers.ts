@@ -1,23 +1,23 @@
 /**
  * Curated Flagship Career Pool
  *
- * This is a carefully selected subset of ~125 careers optimized for:
+ * This is a carefully selected subset of ~131 careers optimized for:
  * - Finnish youth (YLA cohort) relevance
  * - Real, achievable career paths (not senior executive roles)
  * - Education variety (ammattikoulu, AMK, yliopisto options)
  * - Field diversity within each category
  *
  * Variable sizing by category based on real-world career diversity:
- * - Auttaja: 22 careers (healthcare is huge)
- * - Innovoija: 22 careers (tech/engineering is huge)
- * - Rakentaja: 18 careers (trades are diverse)
- * - Luova: 15 careers (creative fields)
- * - Järjestäjä: 12 careers (admin/logistics)
+ * - Auttaja: 24 careers (healthcare, education, social work)
+ * - Innovoija: 22 careers (tech/engineering)
+ * - Rakentaja: 22 careers (trades, construction, logistics, hospitality)
+ * - Luova: 16 careers (creative fields, media)
+ * - Järjestäjä: 15 careers (admin, sales, security)
  * - Johtaja: 10 careers (entry-level leadership only)
- * - Visionääri: 10 careers (niche field)
- * - Ympäristön puolustaja: 12 careers (growing field)
+ * - Visionääri: 10 careers (strategy, research)
+ * - Ympäristön puolustaja: 12 careers (environment, sustainability)
  *
- * Total: ~121 careers
+ * Total: ~131 careers
  */
 
 export const CURATED_CAREER_SLUGS: string[] = [
@@ -54,6 +54,10 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "erityisopettaja",          // Special education teacher - yliopisto
   "opettaja",                 // Teacher (general) - yliopisto
 
+  // Social Work & Public Health
+  "sosiaalityontekija",       // Social worker - AMK/yliopisto
+  "terveydenhoitaja",         // Public health nurse - AMK
+
   // ==========================================
   // INNOVOIJA (22) - Technology, Engineering, Research
   // ==========================================
@@ -88,7 +92,7 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "insinoori",                // Engineer (general)
 
   // ==========================================
-  // RAKENTAJA (18) - Trades, Construction, Manufacturing
+  // RAKENTAJA (21) - Trades, Construction, Manufacturing, Hospitality
   // ==========================================
   // Construction
   "kirvesmies",               // Carpenter
@@ -110,11 +114,17 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "kuorma-auton-kuljettaja",  // Truck driver
   "trukinkuljettaja",         // Forklift operator
   "varastotyontekija",        // Warehouse worker
+  "jakelukuljettaja",         // Delivery driver - ammattikoulu
 
   // Other Trades
   "puuseppa",                 // Woodworker
   "puutarhuri",               // Gardener
   "siivoja",                  // Cleaner
+  
+  // Hospitality & Service (hands-on service work)
+  "ravintolatyontekija",      // Restaurant worker - rakentaja category
+  "tarjoilija",               // Waiter/Waitress - rakentaja category
+  "hotellityontekija",        // Hotel worker - rakentaja category (hands-on service work)
 
   // ==========================================
   // LUOVA (15) - Design, Media, Arts
@@ -139,6 +149,7 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "kirjailija",               // Writer
   "sisustusarkkitehti-luova", // Interior architect
   "parturi-kampaaja",         // Hairdresser
+  "uutistoimittaja",          // Reporter/Journalist
 
   // ==========================================
   // JÄRJESTÄJÄ (12) - Administration, Finance, Logistics
@@ -153,6 +164,14 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "hr-asiantuntija",          // HR specialist
   "toimistosihteeri",         // Office secretary
   "reseptionisti",            // Receptionist
+  
+  // Sales & Customer Service
+  "myyntityontekija",         // Sales worker - ammattikoulu
+  "asiakaspalveluedustaja",   // Customer service rep - ammattikoulu
+  "myyntiedustaja",           // Sales representative - ammattikoulu
+  
+  // Legal & Security
+  "poliisi",                  // Police officer - ammattikoulu/AMK
 
   // Logistics & Operations
   "logistiikkakoordinaattori", // Logistics coordinator
@@ -221,16 +240,16 @@ export function getCuratedCareerSlugs(): string[] {
 }
 
 /**
- * Category distribution summary
+ * Category distribution summary (updated with new careers)
  */
 export const CURATED_CATEGORY_DISTRIBUTION = {
-  auttaja: 22,
+  auttaja: 24,     // +2: sosiaalityontekija, terveydenhoitaja
   innovoija: 22,
-  rakentaja: 18,
-  luova: 15,
-  jarjestaja: 12,
+  rakentaja: 22,   // +1: jakelukuljettaja
+  luova: 16,       // +1: uutistoimittaja
+  jarjestaja: 15,  // +3: myyntityontekija, asiakaspalveluedustaja, myyntiedustaja, poliisi
   johtaja: 10,
   visionaari: 10,
   "ympariston-puolustaja": 12,
-  total: 121
+  total: 131       // Updated total with new careers
 };
