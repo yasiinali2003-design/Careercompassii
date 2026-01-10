@@ -100,8 +100,22 @@ function careerMatchesEducationCategory(career: typeof careersData[0], categoryV
   });
 }
 
+// Define the correct order for category filters (matches homepage)
+const CATEGORY_ORDER = [
+  'luova',
+  'johtaja', 
+  'innovoija',
+  'rakentaja',
+  'auttaja',
+  'ympariston-puolustaja',
+  'visionaari',
+  'jarjestaja'
+];
+
 const filterOptions = {
-  industry: Array.from(new Set(careersData.flatMap((c) => c.industry || []))).filter(Boolean).sort(),
+  industry: CATEGORY_ORDER.filter(cat => 
+    careersData.some(c => c.industry?.includes(cat))
+  ),
   educationLevel: EDUCATION_CATEGORIES, // Use simplified categories
   personalityType: Array.from(new Set(careersData.flatMap((c) => c.personalityType || []))).filter(Boolean).sort(),
   workMode: Array.from(
