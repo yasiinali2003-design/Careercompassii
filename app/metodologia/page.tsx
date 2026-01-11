@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -31,6 +32,19 @@ const scrollToSection = (id: string) => {
 
 export default function MetodologiaPage() {
   const [scrolled, setScrolled] = useState(false);
+  const [isLocalhost, setIsLocalhost] = useState<boolean | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    // Check if running on localhost - redirect if not
+    const hostname = window.location.hostname;
+    const isLocal = hostname === 'localhost' || hostname === '127.0.0.1';
+    setIsLocalhost(isLocal);
+
+    if (!isLocal) {
+      router.replace('/');
+    }
+  }, [router]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,6 +55,11 @@ export default function MetodologiaPage() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Don't render anything until we know if we're on localhost
+  if (isLocalhost === null || isLocalhost === false) {
+    return null;
+  }
 
   return (
     <div className="min-h-screen bg-transparent relative">
