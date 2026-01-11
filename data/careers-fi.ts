@@ -19848,9 +19848,9 @@ export const careersData: CareerFI[] = [
   {
     id: "markkinointipaallikko",
     category: "johtaja",
-    title_fi: "Markkinointipaallikko",
+    title_fi: "Markkinointipäällikkö",
     title_en: "Marketing Manager",
-    short_description: "Markkinointipaallikko toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    short_description: "Markkinointipäällikkö toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
     main_tasks: [
       "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
       "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
@@ -19895,7 +19895,7 @@ export const careersData: CareerFI[] = [
       source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
-      "Junior Markkinointipaallikko",
+      "Junior Markkinointipäällikkö",
       "Harjoittelija",
       "Assistentti"
     ],
@@ -19913,7 +19913,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku – markkinointi liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/markkinointi%20liiketalous" },
-      { name: "Työmarkkinatori – Markkinointipaallikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/markkinointipaallikko" },
+      { name: "Työmarkkinatori – Markkinointipäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/markkinointipaallikko" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=markkinointip%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["markkinointipaallikko", "asiantuntija", "kehittäminen"],
@@ -20431,9 +20431,9 @@ export const careersData: CareerFI[] = [
   {
     id: "projektipaallikko",
     category: "jarjestaja",
-    title_fi: "Projektipaallikko",
+    title_fi: "Projektipäällikkö",
     title_en: "Project Manager",
-    short_description: "Projektipaallikko toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    short_description: "Projektipäällikkö toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
     main_tasks: [
       "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
       "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
@@ -20478,7 +20478,7 @@ export const careersData: CareerFI[] = [
       source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
-      "Junior Projektipaallikko",
+      "Junior Projektipäällikkö",
       "Harjoittelija",
       "Assistentti"
     ],
@@ -20575,9 +20575,9 @@ export const careersData: CareerFI[] = [
   {
     id: "ravintolapaallikko",
     category: "johtaja",
-    title_fi: "Ravintolapaallikko",
+    title_fi: "Ravintolapäällikkö",
     title_en: "Restaurant Manager",
-    short_description: "Ravintolapaallikko toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
+    short_description: "Ravintolapäällikkö toimii asiantuntijana alallaan ja tukee organisaatioita päätöksenteossa. Työ vaatii analyyttistä ajattelua, yhteistyötaitoja ja kykyä soveltaa tietoa käytäntöön.",
     main_tasks: [
       "Suunnittelee ja kehittää ratkaisuja oman alansa tarpeisiin",
       "Analysoi tietoa ja laatii raportteja päätöksenteon tueksi",
@@ -20622,7 +20622,7 @@ export const careersData: CareerFI[] = [
       source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
     },
     entry_roles: [
-      "Junior Ravintolapaallikko",
+      "Junior Ravintolapäällikkö",
       "Harjoittelija",
       "Assistentti"
     ],
@@ -20640,7 +20640,7 @@ export const careersData: CareerFI[] = [
     work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
     union_or_CBA: null,
     useful_links: [{ name: "Opintopolku – ravintola-ala restonomi", url: "https://opintopolku.fi/konfo/fi/haku/ravintola-ala%20restonomi" },
-      { name: "Työmarkkinatori – Ravintolapaallikko", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ravintolapaallikko" },
+      { name: "Työmarkkinatori – Ravintolapäällikkö", url: "https://tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto/ammatit/ravintolapaallikko" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=ravintolap%C3%A4%C3%A4llikk%C3%B6" }
       ],
     keywords: ["ravintolapaallikko", "asiantuntija", "kehittäminen"],
@@ -45303,6 +45303,182 @@ export const careersData: CareerFI[] = [
     keywords: ["kiinteistönvälittäjä","asuntokauppa","välittäjä","LKV","asunnonmyynti"],
     study_length_estimate_months: 12,
     source: "KVKL, Tilastokeskus 2024"
+  },
+  {
+    id: "markkinointiassistentti",
+    category: "jarjestaja",
+    title_fi: "Markkinointiassistentti",
+    title_en: "Marketing Assistant",
+    short_description: "Markkinointiassistentti tukee markkinointitiimiä kampanjoiden toteutuksessa, materiaalien tuottamisessa ja asiakasviestinnässä.",
+    main_tasks: ["Markkinointimateriaalien tuottaminen","Sosiaalisen median päivitykset","Kampanjoiden koordinointi","Asiakasrekisterin ylläpito","Tapahtumien järjestelyjen avustaminen"],
+    impact: ["Tukee yrityksen näkyvyyttä ja brändiä","Mahdollistaa markkinointikampanjoiden toteutuksen","Oppii markkinoinnin perusteet käytännössä"],
+    education_paths: ["Tradenomi, markkinointi (AMK)","Kauppatieteiden kandidaatti (yliopisto)","Liiketalouden perustutkinto (toinen aste)"],
+    salary_range: { min: 2200, max: 3000, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Markkinointiassistenttien tarve on vakaa. Hyvä aloituspositio markkinointiuralle." },
+    typical_employers: ["Mainostoimistot","Yritykset","Viestintätoimistot","Verkkokaupat"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Kaupan alan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=markkinointiassistentti" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/markkinointi" }
+    ],
+    keywords: ["markkinointiassistentti","markkinointi","some","kampanja","viestintä"],
+    study_length_estimate_months: 36,
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "myyntiassistentti",
+    category: "jarjestaja",
+    title_fi: "Myyntiassistentti",
+    title_en: "Sales Assistant",
+    short_description: "Myyntiassistentti tukee myyntitiimiä tarjousten valmistelussa, asiakasyhteydenpidossa ja myynnin seurannassa.",
+    main_tasks: ["Tarjousten valmistelu","Asiakastietojen ylläpito","Tilausten käsittely","Myyntiraporttien laatiminen","Asiakaspalvelu"],
+    impact: ["Tukee myynnin tehokkuutta","Varmistaa asiakastyytyväisyyden","Oppii myynnin perusteet"],
+    education_paths: ["Tradenomi (AMK)","Kauppatieteiden kandidaatti (yliopisto)","Liiketalouden perustutkinto (toinen aste)"],
+    salary_range: { min: 2200, max: 3200, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Myyntiassistenttien tarve on vakaa kaikilla toimialoilla." },
+    typical_employers: ["Tukkukaupat","Teollisuusyritykset","Palveluyritykset","IT-yritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Kaupan alan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=myyntiassistentti" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/myynti" }
+    ],
+    keywords: ["myyntiassistentti","myynti","asiakaspalvelu","tarjous","tilaus"],
+    study_length_estimate_months: 36,
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "talousassistentti",
+    category: "jarjestaja",
+    title_fi: "Talousassistentti",
+    title_en: "Finance Assistant",
+    short_description: "Talousassistentti avustaa taloushallinnon tehtävissä, kuten laskutuksessa, maksuliikenteessä ja raportoinnissa.",
+    main_tasks: ["Laskujen käsittely","Maksuliikenteen hoito","Kirjanpidon avustavat tehtävät","Raporttien laatiminen","Arkistointi"],
+    impact: ["Varmistaa taloushallinnon sujuvuuden","Tukee talousosaston toimintaa","Oppii taloushallinnon perusteet"],
+    education_paths: ["Tradenomi, taloushallinto (AMK)","Kauppatieteiden kandidaatti, laskentatoimi (yliopisto)","Liiketalouden perustutkinto (toinen aste)"],
+    salary_range: { min: 2300, max: 3200, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Talousassistenttien tarve on vakaa. Hyvä aloituspositio talousuralle." },
+    typical_employers: ["Tilitoimistot","Yritysten talousosastot","Julkinen sektori","Järjestöt"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "ei" },
+    union_or_CBA: "Taloushallintoalan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=talousassistentti" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/taloushallinto" }
+    ],
+    keywords: ["talousassistentti","taloushallinto","kirjanpito","laskutus","reskontranhoitaja"],
+    study_length_estimate_months: 36,
+    source: "Taloushallintoliitto, Tilastokeskus 2024"
+  },
+  {
+    id: "tilintarkastajan-assistentti",
+    category: "jarjestaja",
+    title_fi: "Tilintarkastajan assistentti",
+    title_en: "Audit Assistant",
+    short_description: "Tilintarkastajan assistentti avustaa tilintarkastuksissa ja oppii ammatin perusteita kokeneempien kollegoiden ohjauksessa.",
+    main_tasks: ["Tilintarkastusaineiston kerääminen","Tarkastusdokumenttien valmistelu","Analyysien tekeminen","Raportoinnin avustaminen","Asiakasyhteydenpito"],
+    impact: ["Varmistaa yritysten taloustietojen luotettavuuden","Oppii tilintarkastuksen ammattitaidon","Tukee talouden läpinäkyvyyttä"],
+    education_paths: ["Kauppatieteiden kandidaatti, laskentatoimi (yliopisto)","Tradenomi, taloushallinto (AMK)","KHT/HT-tutkinto myöhemmin"],
+    salary_range: { min: 2800, max: 3800, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Tilintarkastusala tarjoaa vakaan uran ja hyvät etenemismahdollisuudet." },
+    typical_employers: ["Big Four -yhtiöt (Deloitte, EY, KPMG, PwC)","Keskisuuret tilintarkastusyhtiöt","Yksityiset tilintarkastajat"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Tilintarkastusalan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=tilintarkastus" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/tilintarkastus" }
+    ],
+    keywords: ["tilintarkastus","auditointi","kirjanpito","laskentatoimi","KHT"],
+    study_length_estimate_months: 60,
+    source: "Suomen Tilintarkastajat, Tilastokeskus 2024"
+  },
+  {
+    id: "pankkitoimihenkilo",
+    category: "jarjestaja",
+    title_fi: "Pankkitoimihenkilö",
+    title_en: "Bank Clerk",
+    short_description: "Pankkitoimihenkilö palvelee asiakkaita päivittäisissä pankkiasioissa ja neuvoo rahoitustuotteissa.",
+    main_tasks: ["Asiakaspalvelu konttorissa","Tilien avaaminen ja hoito","Lainahakemusten käsittely","Sijoitusneuvonta","Maksupalvelut"],
+    impact: ["Auttaa asiakkaita taloudellisissa päätöksissä","Varmistaa pankkipalveluiden saatavuuden","Tukee suomalaisten taloudenhallintaa"],
+    education_paths: ["Tradenomi, rahoitus (AMK)","Kauppatieteiden kandidaatti (yliopisto)","Liiketalouden perustutkinto (toinen aste)"],
+    salary_range: { min: 2500, max: 3500, currency: "EUR" },
+    job_outlook: { status: "declining", description: "Digitalisaatio vähentää konttorityötä, mutta asiantuntijatehtävät kasvavat." },
+    typical_employers: ["Nordea","OP","Danske Bank","S-Pankki","Säästöpankit"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "ei" },
+    union_or_CBA: "Rahoitusalan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=pankkitoimihenkil%C3%B6" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/rahoitus" }
+    ],
+    keywords: ["pankkitoimihenkilö","pankki","rahoitus","asiakaspalvelu","laina"],
+    study_length_estimate_months: 36,
+    source: "Finanssiala ry, Tilastokeskus 2024"
+  },
+  {
+    id: "vakuutusvirkailija",
+    category: "jarjestaja",
+    title_fi: "Vakuutusvirkailija",
+    title_en: "Insurance Clerk",
+    short_description: "Vakuutusvirkailija käsittelee vakuutushakemuksia, korvauksia ja neuvoo asiakkaita vakuutusasioissa.",
+    main_tasks: ["Vakuutushakemusten käsittely","Korvausten käsittely","Asiakasneuvonta","Vakuutustarjousten laatiminen","Vahinkotilanteiden selvittäminen"],
+    impact: ["Auttaa asiakkaita suojaamaan omaisuuttaan","Käsittelee korvauksia oikeudenmukaisesti","Varmistaa vakuutusturvan toimivuuden"],
+    education_paths: ["Tradenomi (AMK)","Kauppatieteiden kandidaatti (yliopisto)","Vakuutusalan ammattitutkinto"],
+    salary_range: { min: 2400, max: 3400, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Vakuutusala tarjoaa vakaan työllisyyden ja hyvät etenemismahdollisuudet." },
+    typical_employers: ["If","LähiTapiola","Pohjola Vakuutus","Fennia","Turva"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Rahoitusalan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=vakuutusvirkailija" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/vakuutus" }
+    ],
+    keywords: ["vakuutusvirkailija","vakuutus","korvaus","asiakaspalvelu","vahinko"],
+    study_length_estimate_months: 36,
+    source: "Finanssiala ry, Tilastokeskus 2024"
+  },
+  {
+    id: "veroasiantuntija",
+    category: "jarjestaja",
+    title_fi: "Veroasiantuntija",
+    title_en: "Tax Specialist",
+    short_description: "Veroasiantuntija neuvoo yrityksiä ja yksityishenkilöitä verotukseen liittyvissä asioissa.",
+    main_tasks: ["Veroilmoitusten laatiminen","Veroneuvonta","Verosuunnittelu","Verotarkastusten avustaminen","Lainsäädännön seuranta"],
+    impact: ["Auttaa asiakkaita optimoimaan verotusta laillisesti","Varmistaa verolakien noudattamisen","Säästää asiakkaiden rahaa"],
+    education_paths: ["Kauppatieteiden kandidaatti/maisteri, verotus (yliopisto)","Tradenomi, taloushallinto (AMK)","Oikeustieteen opinnot"],
+    salary_range: { min: 3200, max: 5000, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Verotuksen monimutkaistuessa asiantuntijoiden tarve kasvaa." },
+    typical_employers: ["Tilitoimistot","Big Four","Verohallinto","Asianajotoimistot","Yritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Taloushallintoalan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=veroasiantuntija" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/verotus" }
+    ],
+    keywords: ["veroasiantuntija","verotus","verosuunnittelu","taloushallinto","veroilmoitus"],
+    study_length_estimate_months: 60,
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "ekonomisti",
+    category: "visionaari",
+    title_fi: "Ekonomisti",
+    title_en: "Economist",
+    short_description: "Ekonomisti tutkii ja analysoi talouden kehitystä, laatii ennusteita ja neuvoo päätöksentekijöitä.",
+    main_tasks: ["Talousanalyysien tekeminen","Ennusteiden laatiminen","Raporttien kirjoittaminen","Talouspoliittinen neuvonta","Tutkimustyö"],
+    impact: ["Auttaa ymmärtämään talouden kehitystä","Tukee päätöksentekoa tutkitulla tiedolla","Vaikuttaa talouspolitiikkaan"],
+    education_paths: ["Kauppatieteiden maisteri, taloustiede (yliopisto)","Valtiotieteiden maisteri, kansantaloustiede (yliopisto)"],
+    salary_range: { min: 3500, max: 6000, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Ekonomistien tarve on vakaa tutkimuslaitoksissa, pankeissa ja julkisella sektorilla." },
+    typical_employers: ["Pankit","Tutkimuslaitokset","Ministeriöt","Etujärjestöt","Konsulttiyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Akavan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=ekonomisti" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/taloustiede" }
+    ],
+    keywords: ["ekonomisti","taloustiede","kansantalous","ennustaminen","analyysi"],
+    study_length_estimate_months: 60,
+    source: "Tilastokeskus 2024"
   }
 ] as CareerFI[];
 
