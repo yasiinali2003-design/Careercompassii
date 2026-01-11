@@ -46,7 +46,7 @@ export interface CareerFI {
 }
 
 export const careersData: CareerFI[] = [
-{
+  {
     id: "graafinen-suunnittelija",
     category: "luova",
     title_fi: "Graafinen suunnittelija",
@@ -123,8 +123,6 @@ export const careersData: CareerFI[] = [
     keywords: ["graafinen suunnittelu", "brändi", "mainonta", "visuaalinen viestintä", "Adobe"],
     study_length_estimate_months: 42
   },
-
-
   {
     id: "muusikko",
     category: "luova",
@@ -202,8 +200,6 @@ export const careersData: CareerFI[] = [
       "Vaikuttaa Suomessa ihmisten hyvinvointiin ja mielenterveyteen"
     ]
   },
-
-
   {
     id: "kameramies",
     category: "luova",
@@ -279,9 +275,7 @@ export const careersData: CareerFI[] = [
       "Vaikuttaa Suomessa kulttuuriin ja yhteiskuntaan visuaalisella viestinnällä"
     ]
   },
-
-
-{
+  {
     id: "kirjailija",
     category: "luova",
     title_fi: "Kirjailija",
@@ -360,9 +354,7 @@ export const careersData: CareerFI[] = [
       "Tarjoaa pakopaikan ja inspiraatiota miljoonille lukijoille"
     ]
   },
-
-
-{
+  {
     id: "muotoilija",
     category: "luova",
     title_fi: "Tuotemuotoilija",
@@ -439,9 +431,7 @@ export const careersData: CareerFI[] = [
       "Vaikuttaa Suomessa teknologian käyttöön ja hyväksyntään"
     ]
   },
-
-
-{
+  {
     id: "animaattori",
     category: "luova",
     title_fi: "Animaattori",
@@ -518,9 +508,7 @@ export const careersData: CareerFI[] = [
       "Edistää Suomessa digitaalisen taiteen kehitystä"
     ]
   },
-
-
-{
+  {
     id: "teatteriohjaaja",
     category: "luova",
     title_fi: "Teatteriohjaaja",
@@ -597,9 +585,7 @@ export const careersData: CareerFI[] = [
       "Tukee Suomessa näyttelijöiden taiteellista kasvua"
     ]
   },
-
-
-{
+  {
     id: "valokuvaaja",
     category: "luova",
     title_fi: "Valokuvaaja",
@@ -676,9 +662,7 @@ export const careersData: CareerFI[] = [
       "Dokumentoi historiaa ja yhteiskuntaa"
     ]
   },
-
-
-{
+  {
     id: "pukusuunnittelija",
     category: "luova",
     title_fi: "Pukusuunnittelija",
@@ -755,9 +739,7 @@ export const careersData: CareerFI[] = [
       "Vaikuttaa Suomessa yleisön kokemukseen ja eläytymiseen"
     ]
   },
-
-
-{
+  {
     id: "rakennusmestari",
     category: "rakentaja",
     title_fi: "Rakennusmestari",
@@ -836,9 +818,7 @@ export const careersData: CareerFI[] = [
       "Turvaa työntekijöiden turvallisuuden rakennustyömailla"
     ]
   },
-
-
-{
+  {
     id: "putkiasentaja",
     category: "rakentaja",
     title_fi: "Putkiasentaja",
@@ -912,9 +892,7 @@ export const careersData: CareerFI[] = [
       "Auttaa Suomessa kunnostamaan vanhoja rakennuksia"
     ]
   },
-
-
-{
+  {
     id: "maalari",
     category: "rakentaja",
     title_fi: "Maalari",
@@ -991,9 +969,7 @@ export const careersData: CareerFI[] = [
       "Suojaa rakenteita kosteudelta ja korroosiolta"
     ]
   },
-
-
-{
+  {
     id: "kattomestari",
     category: "rakentaja",
     title_fi: "Kattomestari",
@@ -1067,9 +1043,7 @@ export const careersData: CareerFI[] = [
       "Vaikuttaa Suomessa rakennusten energiatehokkuuteen"
     ]
   },
-
-
-{
+  {
     id: "lvi-asentaja",
     category: "rakentaja",
     title_fi: "LVI-asentaja",
@@ -1147,9 +1121,7 @@ export const careersData: CareerFI[] = [
       "Auttaa Suomessa vähentämään hiilijalanjälkeä"
     ]
   },
-
-
-{
+  {
     id: "talonrakentaja",
     category: "rakentaja",
     title_fi: "Talonrakentaja",
@@ -1227,9 +1199,7 @@ export const careersData: CareerFI[] = [
       "Luo Suomessa työpaikkoja ja talouskasvua"
     ]
   },
-
-
-{
+  {
     id: "betonityontekija",
     category: "rakentaja",
     title_fi: "Betonityöntekijä",
@@ -1306,9 +1276,7 @@ export const careersData: CareerFI[] = [
       "Luo Suomessa perustan rakennuksille ja silloille"
     ]
   },
-
-
-{
+  {
     id: "rakennusvalvoja",
     category: "rakentaja",
     title_fi: "Rakennusvalvoja",
@@ -1385,8 +1353,6 @@ export const careersData: CareerFI[] = [
       "Valvoo rakennusmääräysten noudattamista"
     ]
   },
-
-
   {
     id: "henkilostopaallikko",
     category: "johtaja",
@@ -1463,9 +1429,7 @@ export const careersData: CareerFI[] = [
     keywords: ["henkilöstöjohtaminen", "rekrytointi", "kehitys", "organisaatio", "työsuhteet"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "tuotantopaallikko",
     category: "johtaja",
     title_fi: "Tuotantopäällikkö",
@@ -1542,9 +1506,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tuotantotalous", "laadunhallinta", "johtaminen", "optimointi", "tehokkuus"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "talouspaallikko",
     category: "johtaja",
     title_fi: "Talouspäällikkö",
@@ -1618,9 +1580,7 @@ export const careersData: CareerFI[] = [
     keywords: ["taloushallinto", "laskentatoimi", "budjetointi", "raportointi", "analyysi"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "asiakaspalvelupaallikko",
     category: "johtaja",
     title_fi: "Asiakaspalvelupäällikkö",
@@ -1697,9 +1657,7 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakaspalvelu", "johtaminen", "kokemus", "prosessit", "tiimityö"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "tietoturvapaallikko",
     category: "johtaja",
     title_fi: "Tietoturvapäällikkö",
@@ -1773,9 +1731,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tietoturva", "kyberturvallisuus", "riskienhallinta", "johtaminen", "teknologia"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "laadunpaallikko",
     category: "johtaja",
     title_fi: "Laadunpäällikkö",
@@ -1849,9 +1805,7 @@ export const careersData: CareerFI[] = [
     keywords: ["laadunhallinta", "prosessit", "standardit", "sertifikaatit", "optimointi"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "kehityspaallikko",
     category: "johtaja",
     title_fi: "Kehityspäällikkö",
@@ -1928,9 +1882,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kehitysjohtaminen", "innovaatio", "projektit", "tutkimus", "strategia"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "data-insinoori",
     category: "innovoija",
     title_fi: "Data-insinööri",
@@ -2004,9 +1956,7 @@ export const careersData: CareerFI[] = [
     keywords: ["data", "ohjelmointi", "cloud", "big data", "analytiikka"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "pelisuunnittelija",
     category: "innovoija",
     title_fi: "Pelisuunnittelija",
@@ -2083,9 +2033,7 @@ export const careersData: CareerFI[] = [
     keywords: ["pelisuunnittelu", "kreatiivisuus", "teknologia", "tarinankerronta", "interaktiivisuus"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "robotiikka-insinoori",
     category: "innovoija",
     title_fi: "Robotiikka-insinööri",
@@ -2159,9 +2107,7 @@ export const careersData: CareerFI[] = [
     keywords: ["robotiikka", "automaatio", "mekatroniikka", "ohjelmointi", "teollisuus"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "biotekniikka-insinoori",
     category: "innovoija",
     title_fi: "Biotekniikka-insinööri",
@@ -2238,9 +2184,7 @@ export const careersData: CareerFI[] = [
     keywords: ["biotekniikka", "biologia", "laboratorio", "tutkimus", "lääketeollisuus"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "nanotekniikka-insinoori",
     category: "innovoija",
     title_fi: "Nanotekniikka-insinööri",
@@ -2317,9 +2261,7 @@ export const careersData: CareerFI[] = [
     keywords: ["nanotekniikka", "materiaalitekniikka", "fysiikka", "tutkimus", "innovointi"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "kvantti-insinoori",
     category: "innovoija",
     title_fi: "Kvantti-insinööri",
@@ -2396,9 +2338,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kvanttiteknologia", "kvanttifysiikka", "ohjelmointi", "algoritmit", "tutkimus"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "blockchain-insinoori",
     category: "innovoija",
     title_fi: "Blockchain-insinööri",
@@ -2472,9 +2412,7 @@ export const careersData: CareerFI[] = [
     keywords: ["blockchain", "kryptografia", "ohjelmointi", "Web3", "hajautetut järjestelmät"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "virtuaalitodellisuus-insinoori",
     category: "innovoija",
     title_fi: "Virtuaalitodellisuus-insinööri",
@@ -2548,9 +2486,7 @@ export const careersData: CareerFI[] = [
     keywords: ["VR", "AR", "virtuaalitodellisuus", "3D", "immersiivinen"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "automaatio-insinoori",
     category: "innovoija",
     title_fi: "Automaatio-insinööri",
@@ -2624,9 +2560,7 @@ export const careersData: CareerFI[] = [
     keywords: ["automaatio", "PLC", "robotiikka", "IoT", "teollisuus"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "sairaanhoitaja",
     category: "auttaja",
     title_fi: "Sairaanhoitaja",
@@ -2706,8 +2640,6 @@ export const careersData: CareerFI[] = [
     keywords: ["sairaanhoito", "terveys", "potilaat", "hoito", "kuntoutus"],
     study_length_estimate_months: 42
   },
-
-
   {
     id: "bioanalyytikko",
     category: "auttaja",
@@ -2784,8 +2716,6 @@ export const careersData: CareerFI[] = [
     keywords: ["laboratorio", "diagnostiikka", "analytiikka", "näytteenotto", "terveydenhuolto"],
     study_length_estimate_months: 42
   },
-
-
   {
     id: "kouluterveydenhoitaja",
     category: "auttaja",
@@ -2861,8 +2791,6 @@ export const careersData: CareerFI[] = [
     keywords: ["oppilashuolto", "ennaltaehkäisy", "nuoret", "terveyskasvatus", "hyvinvointi"],
     study_length_estimate_months: 42
   },
-
-
   {
     id: "kotihoitaja",
     category: "auttaja",
@@ -2938,8 +2866,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kotihoito", "vanhuspalvelut", "hoiva", "asiakaslähtöisyys", "liikkuva työ"],
     study_length_estimate_months: 36
   },
-
-
   {
     id: "ravitsemusasiantuntija",
     category: "auttaja",
@@ -3015,8 +2941,6 @@ export const careersData: CareerFI[] = [
     keywords: ["ravitsemus", "hyvinvointi", "ruokapalvelut", "terveysviestintä", "kestävä ruokavalio"],
     study_length_estimate_months: 60
   },
-
-
   {
     id: "tyopsykologi",
     category: "auttaja",
@@ -3092,8 +3016,6 @@ export const careersData: CareerFI[] = [
     keywords: ["työhyvinvointi", "psykologia", "organisaatiokehitys", "valmennus", "muutosjohtaminen"],
     study_length_estimate_months: 72
   },
-
-
   {
     id: "poliisi",
     category: "auttaja",
@@ -3170,8 +3092,6 @@ export const careersData: CareerFI[] = [
     keywords: ["turvallisuus", "järjestys", "rikostorjunta", "kenttätyö", "viranomaistyö"],
     study_length_estimate_months: 30
   },
-
-
   {
     id: "rikostutkija",
     category: "auttaja",
@@ -3247,8 +3167,6 @@ export const careersData: CareerFI[] = [
     keywords: ["rikostutkinta", "forensiikka", "todisteet", "analyysi", "oikeus"],
     study_length_estimate_months: 36
   },
-
-
   {
     id: "sotilas",
     category: "auttaja",
@@ -3322,8 +3240,6 @@ export const careersData: CareerFI[] = [
     keywords: ["puolustus", "kenttätyö", "valmius", "kansainväliset tehtävät", "johtaminen"],
     study_length_estimate_months: 18
   },
-
-
   {
     id: "upseeri",
     category: "auttaja",
@@ -3400,8 +3316,6 @@ export const careersData: CareerFI[] = [
     keywords: ["johtaminen", "puolustus", "strategia", "operaatiot", "kriisinhallinta"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "markkinointisuunnittelija",
     category: "jarjestaja",
@@ -3478,8 +3392,6 @@ export const careersData: CareerFI[] = [
     keywords: ["markkinointi", "data", "kampanjat", "digitaalinen", "strategia"],
     study_length_estimate_months: 42
   },
-
-
   {
     id: "liikuntaneuvoja",
     category: "auttaja",
@@ -3553,8 +3465,6 @@ export const careersData: CareerFI[] = [
     keywords: ["liikunta", "hyvinvointi", "ohjaus", "valmennus", "ennaltaehkäisy"],
     study_length_estimate_months: 36
   },
-
-
   {
     id: "liikuntaterapeutti",
     category: "auttaja",
@@ -3629,8 +3539,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kuntoutus", "liikuntalääketiede", "hyvinvointi", "ohjaus", "erityisryhmät"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "liiketalousjohtaja",
     category: "johtaja",
@@ -3706,8 +3614,6 @@ export const careersData: CareerFI[] = [
     keywords: ["johtaminen", "strategia", "talous", "kasvu", "investoinnit"],
     study_length_estimate_months: 72
   },
-
-
   {
     id: "yritysneuvoja",
     category: "jarjestaja",
@@ -3784,8 +3690,6 @@ export const careersData: CareerFI[] = [
     keywords: ["yrityskehitys", "rahoitus", "neuvonta", "kasvu", "verkostot"],
     study_length_estimate_months: 60
   },
-
-
   {
     id: "sisaltotuottaja",
     category: "luova",
@@ -3861,8 +3765,6 @@ export const careersData: CareerFI[] = [
     keywords: ["sisältö", "viestintä", "tarinankerronta", "digitaalinen", "markkinointi"],
     study_length_estimate_months: 42
   },
-
-
   {
     id: "myyntipaallikko",
     category: "johtaja",
@@ -3939,8 +3841,6 @@ export const careersData: CareerFI[] = [
     keywords: ["myynti", "johtaminen", "asiakashallinta", "kasvu", "strategia"],
     study_length_estimate_months: 60
   },
-
-
   {
     id: "ohjelmistokehittaja",
     category: "innovoija",
@@ -4017,8 +3917,6 @@ export const careersData: CareerFI[] = [
     keywords: ["ohjelmointi", "ketterä", "pilvi", "devops", "tuotekehitys"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "tekoalyasiantuntija",
     category: "visionaari",
@@ -4094,8 +3992,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tekoäly", "machine learning", "data", "automaatio", "analytiikka"],
     study_length_estimate_months: 60
   },
-
-
   {
     id: "tietojarjestelma-arkkitehti",
     category: "visionaari",
@@ -4171,8 +4067,6 @@ export const careersData: CareerFI[] = [
     keywords: ["arkkitehtuuri", "pilvi", "integraatio", "tietoturva", "strategia"],
     study_length_estimate_months: 66
   },
-
-
   {
     id: "verkkosuunnittelija",
     category: "luova",
@@ -4248,8 +4142,6 @@ export const careersData: CareerFI[] = [
     keywords: ["ux", "ui", "design", "saavutettavuus", "prototypointi"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "fyysikko",
     category: "visionaari",
@@ -4326,8 +4218,6 @@ export const careersData: CareerFI[] = [
     keywords: ["fysiikka", "tutkimus", "mallinnus", "energia", "kvantti"],
     study_length_estimate_months: 60
   },
-
-
   {
     id: "matemaatikko",
     category: "visionaari",
@@ -4404,8 +4294,6 @@ export const careersData: CareerFI[] = [
     keywords: ["matematiikka", "tilastot", "mallinnus", "optimointi", "data"],
     study_length_estimate_months: 60
   },
-
-
   {
     id: "biologi",
     category: "ympariston-puolustaja",
@@ -4481,8 +4369,6 @@ export const careersData: CareerFI[] = [
     keywords: ["biologia", "ympäristö", "ekologia", "laboratorio", "biodiversiteetti"],
     study_length_estimate_months: 60
   },
-
-
   {
     id: "elintarviketutkija",
     category: "innovoija",
@@ -4556,8 +4442,6 @@ export const careersData: CareerFI[] = [
     keywords: ["elintarvikkeet", "ravitsemus", "tuotekehitys", "turvallisuus", "innovaatio"],
     study_length_estimate_months: 60
   },
-
-
   {
     id: "asianajaja",
     category: "jarjestaja",
@@ -4634,8 +4518,6 @@ export const careersData: CareerFI[] = [
     keywords: ["juridiikka", "oikeus", "sopimukset", "riidanratkaisu", "asiakastyö"],
     study_length_estimate_months: 72
   },
-
-
   {
     id: "oikeusneuvos",
     category: "johtaja",
@@ -4707,8 +4589,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tuomari", "ennakkopäätös", "oikeusjärjestelmä", "lainsäädäntö", "johtaminen"],
     study_length_estimate_months: 180
   },
-
-
   {
     id: "notaari",
     category: "jarjestaja",
@@ -4784,8 +4664,6 @@ export const careersData: CareerFI[] = [
     keywords: ["oikeus", "tuomioistuin", "valmistelu", "asiakirjat", "julkishallinto"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "kustannustoimittaja",
     category: "jarjestaja",
@@ -4860,9 +4738,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kustannustoiminta", "kirjallisuus", "editointi", "projektinhallinta", "julkaisu"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "luokanopettaja",
     category: "auttaja",
     title_fi: "Luokanopettaja",
@@ -4941,9 +4817,7 @@ export const careersData: CareerFI[] = [
     keywords: ["opetus", "koulu", "lapset", "pedagogiikka", "kasvatus"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "sosiaalityontekija",
     category: "auttaja",
     title_fi: "Sosiaalityöntekijä",
@@ -5020,9 +4894,7 @@ export const careersData: CareerFI[] = [
     keywords: ["sosiaalityö", "perheet", "lapset", "hyvinvointi", "tuki"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "psykologi",
     category: "auttaja",
     title_fi: "Psykologi",
@@ -5100,9 +4972,7 @@ export const careersData: CareerFI[] = [
     keywords: ["psykologia", "mielenterveys", "terapia", "hyvinvointi", "tutkimus"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "fysioterapeutti",
     category: "auttaja",
     title_fi: "Fysioterapeutti",
@@ -5181,9 +5051,7 @@ export const careersData: CareerFI[] = [
     keywords: ["fysioterapia", "kuntoutus", "liikunta", "terapia", "palautuminen"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "lastentarhanopettaja",
     category: "auttaja",
     title_fi: "Lastentarhanopettaja",
@@ -5262,9 +5130,7 @@ export const careersData: CareerFI[] = [
     keywords: ["varhaiskasvatus", "lapset", "päiväkoti", "kasvatus", "oppiminen"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "kuntoutusohjaaja",
     category: "auttaja",
     title_fi: "Kuntoutusohjaaja",
@@ -5340,9 +5206,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kuntoutus", "työkyky", "palautuminen", "ohjaus", "tuki"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "perhetyontekija",
     category: "auttaja",
     title_fi: "Perhetyöntekijä",
@@ -5419,9 +5283,7 @@ export const careersData: CareerFI[] = [
     keywords: ["perhetyö", "lapset", "perheet", "tuki", "hyvinvointi"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "vanhustenhoitaja",
     category: "auttaja",
     title_fi: "Vanhustenhoitaja",
@@ -5498,9 +5360,7 @@ export const careersData: CareerFI[] = [
     keywords: ["vanhustenhoito", "vanhukset", "hoito", "itsenäisyys", "elämänlaatu"],
     study_length_estimate_months: 24
   },
-
-
-{
+  {
     id: "kriisityontekija",
     category: "auttaja",
     title_fi: "Kriisityöntekijä",
@@ -5577,9 +5437,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kriisityö", "trauma", "mielenterveys", "toipuminen", "tuki"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "ymparistoinsinoori",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöinsinööri",
@@ -5655,9 +5513,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristö", "kestävä kehitys", "saasteet", "teknologia", "suojelu"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "ilmastotutkija",
     category: "ympariston-puolustaja",
     title_fi: "Ilmastotutkija",
@@ -5731,9 +5587,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ilmasto", "tutkimus", "meteorologia", "ilmastonmuutos", "tiede"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "luonnonsuojelija",
     category: "ympariston-puolustaja",
     title_fi: "Luonnonsuojelija",
@@ -5808,9 +5662,7 @@ export const careersData: CareerFI[] = [
     keywords: ["luonnonsuojelu", "luonto", "eläimet", "kasvit", "monimuotoisuus"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "uusiutuva-energia-insinoori",
     category: "ympariston-puolustaja",
     title_fi: "Uusiutuva energia -insinööri",
@@ -5884,9 +5736,7 @@ export const careersData: CareerFI[] = [
     keywords: ["uusiutuva energia", "aurinkoenergia", "tuulivoima", "energiatehokkuus", "kestävä kehitys"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "ymparistokasvattaja",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristökasvattaja",
@@ -5963,9 +5813,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristökasvatus", "kestävä kehitys", "opetus", "tietoisuus", "kasvatus"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "vesi-insinoori",
     category: "ympariston-puolustaja",
     title_fi: "Vesi-insinööri",
@@ -6040,9 +5888,7 @@ export const careersData: CareerFI[] = [
     keywords: ["vesiteknologia", "vesihuolto", "jätevesi", "vesitalous", "ympäristö"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "hiilijalanjalki-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Hiilijalanjälki-asiantuntija",
@@ -6116,9 +5962,7 @@ export const careersData: CareerFI[] = [
     keywords: ["hiilijalanjälki", "ilmastoneutraali", "kestävä kehitys", "ilmasto", "hiilidioksidi"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "ymparistojuristi",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöjuristi",
@@ -6195,9 +6039,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristöoikeus", "lainsäädäntö", "oikeustiede", "ympäristörikos", "kestävä kehitys"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "biologinen-monimuotoisuus-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Biologinen monimuotoisuus -asiantuntija",
@@ -6272,9 +6114,7 @@ export const careersData: CareerFI[] = [
     keywords: ["biologinen monimuotoisuus", "luonnonsuojelu", "eläimet", "kasvit", "uhanalaiset lajit"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "kestavan-kehityksen-koordinaattori",
     category: "ympariston-puolustaja",
     title_fi: "Kestävän kehityksen koordinaattori",
@@ -6350,12 +6190,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kestävä kehitys", "ympäristöystävällisyys", "sosiaalinen vastuu", "strategia", "raportointi"],
     study_length_estimate_months: 42
   },
-
-
-
-
-
-{
+  {
     id: "strategia-konsultti",
     category: "visionaari",
     title_fi: "Strategia-konsultti",
@@ -6432,9 +6267,7 @@ export const careersData: CareerFI[] = [
     keywords: ["strategia", "konsultointi", "liiketoimintakehitys", "muutos", "analyysi"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "innovaatiojohtaja",
     category: "visionaari",
     title_fi: "Innovaatiojohtaja",
@@ -6511,9 +6344,7 @@ export const careersData: CareerFI[] = [
     keywords: ["innovaatio", "tutkimus", "kehitys", "teknologia", "strategia"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "tulevaisuuden-suunnittelija",
     category: "visionaari",
     title_fi: "Tulevaisuuden suunnittelija",
@@ -6588,9 +6419,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "suunnittelu", "strategia", "skenaariot", "trendit"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "digitaalinen-muutosjohtaja",
     category: "visionaari",
     title_fi: "Digitaalinen muutosjohtaja",
@@ -6667,9 +6496,7 @@ export const careersData: CareerFI[] = [
     keywords: ["digitaalinen muutos", "teknologia", "liiketoiminta", "strategia", "innovaatio"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "tulevaisuuden-tutkija",
     category: "visionaari",
     title_fi: "Tulevaisuuden tutkija",
@@ -6746,9 +6573,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "tutkimus", "futurologia", "trendit", "skenaariot"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "strateginen-suunnittelija",
     category: "visionaari",
     title_fi: "Strateginen suunnittelija",
@@ -6823,9 +6648,7 @@ export const careersData: CareerFI[] = [
     keywords: ["strategia", "suunnittelu", "analyysi", "tulevaisuus", "muutos"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "tulevaisuuden-visio-johtaja",
     category: "visionaari",
     title_fi: "Tulevaisuuden visio-johtaja",
@@ -6902,9 +6725,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "visio", "johtaminen", "strategia", "muutos"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "tulevaisuuden-teknologia-asiantuntija",
     category: "visionaari",
     title_fi: "Tulevaisuuden teknologia-asiantuntija",
@@ -6978,88 +6799,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tulevaisuus", "teknologia", "innovaatio", "tutkimus", "skenaariot"],
     study_length_estimate_months: 48
   },
-
-
-{
-    id: "tulevaisuuden-yhteiskunta-asiantuntija",
-    category: "visionaari",
-    title_fi: "Tulevaisuuden yhteiskunta-asiantuntija",
-    title_en: "Future Society Specialist",
-    short_description: "Tulevaisuuden yhteiskunta-asiantuntija tutkii tulevaisuuden yhteiskuntaa ja kehittää skenaarioita. Työskentelee yhteiskuntatutkimuksen ja futurologian parissa.",
-    main_tasks: [
-      "Tulevaisuuden yhteiskunnan tutkiminen",
-      "Yhteiskuntaskenaarioiden kehittäminen",
-      "Yhteiskunnan kehityksen analysointi",
-      "Tutkimustulosten analysointi",
-      "Tulevaisuuden yhteiskuntavisioiden luominen"
-    ],
-    impact: [
-      "Auttaa Suomessa ymmärtämään yhteiskunnan kehitystä",
-      "Kehittää tulevaisuuden yhteiskuntaskenaarioita",
-      "Vaikuttaa Suomessa yhteiskuntapolitiikkaan"
-    ],
-    education_paths: [
-      "Yliopisto: Sosiologia, Futurologia",
-      "PhD-tutkimus yhteiskuntatutkimuksessa",
-      "Tulevaisuuden yhteiskunnan erikoiskurssit",
-      "Yhteiskuntatutkimuksen koulutus"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Yhteiskuntatutkimus",
-      "Futurologia",
-      "Tutkimusmenetelmät",
-      "Analyysi",
-      "Kommunikaatio"
-    ],
-    tools_tech: [
-      "Tutkimusohjelmistot",
-      "Yhteiskuntatutkimuksen työkalut",
-      "Excel, Power BI",
-      "Git, Docker",
-      "Tietokoneet ja supertietokoneet"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 4500,
-      range: [3500, 6000],
-      source: { name: "Pro", url: "https://proliitto.fi/fi", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Tulevaisuuden yhteiskunta-asiantuntijoiden kysyntä kasvaa yhteiskuntatutkimuksen ja futurologian myötä.",
-      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior tulevaisuuden yhteiskunta-asiantuntija",
-      "Yhteiskuntatutkija",
-      "Futurologi"
-    ],
-    career_progression: [
-      "Senior tulevaisuuden yhteiskunta-asiantuntija",
-      "Yhteiskuntatutkimuksen johtaja",
-      "Futurologian professori",
-      "Tulevaisuuden yhteiskunta-konsultti"
-    ],
-    typical_employers: [
-      "Tutkimuslaitokset",
-      "Yliopistot",
-      "Julkinen sektori",
-      "Konsultointiyritykset",
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: "Tutkijaliitto",
-    useful_links: [
-      { name: "Opintopolku – Tulevaisuuden yhteiskunta-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Tulevaisuuden%20yhteiskunta-asiantuntija" },
-    
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=tutkija" }
-      ],
-    keywords: ["tulevaisuus", "yhteiskunta", "sosiologia", "futurologia", "tutkimus"],
-    study_length_estimate_months: 60
-  },
-
-
-{
+  {
     id: "tapahtumakoordinaattori",
     category: "jarjestaja",
     title_fi: "Tapahtumakoordinaattori",
@@ -7135,9 +6875,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tapahtumien järjestäminen", "koordinointi", "suunnittelu", "budjetti", "asiakaspalvelu"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "toimistosihteeri",
     category: "jarjestaja",
     title_fi: "Toimistosihteeri",
@@ -7215,9 +6953,7 @@ export const careersData: CareerFI[] = [
     keywords: ["toimistosihteeri", "hallinto", "kommunikaatio", "organisointi", "asiakaspalvelu"],
     study_length_estimate_months: 24
   },
-
-
-{
+  {
     id: "logistiikkakoordinaattori",
     category: "jarjestaja",
     title_fi: "Logistiikkakoordinaattori",
@@ -7294,9 +7030,7 @@ export const careersData: CareerFI[] = [
     keywords: ["logistiikka", "toimitusketju", "koordinointi", "varastointi", "kuljetus"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "henkilostoasiantuntija",
     category: "jarjestaja",
     title_fi: "Henkilöstöasiantuntija",
@@ -7373,9 +7107,7 @@ export const careersData: CareerFI[] = [
     keywords: ["henkilöstöhallinto", "työsuhteet", "henkilöstö", "hallinto", "työntekijät"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "taloushallinnon-asiantuntija",
     category: "jarjestaja",
     title_fi: "Taloushallinnon asiantuntija",
@@ -7452,9 +7184,7 @@ export const careersData: CareerFI[] = [
     keywords: ["taloushallinto", "talousraportointi", "budjetti", "analyysi", "hallinto"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "laadunhallinnan-koordinaattori",
     category: "jarjestaja",
     title_fi: "Laadunhallinnan koordinaattori",
@@ -7531,9 +7261,7 @@ export const careersData: CareerFI[] = [
     keywords: ["laadunhallinto", "laatustandardit", "koordinointi", "analyysi", "hallinto"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "asiakaspalvelun-koordinaattori",
     category: "jarjestaja",
     title_fi: "Asiakaspalvelun koordinaattori",
@@ -7610,9 +7338,7 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakaspalvelu", "kommunikaatio", "koordinointi", "asiakkaat", "palvelu"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "tietohallinnon-koordinaattori",
     category: "jarjestaja",
     title_fi: "Tietohallinnon koordinaattori",
@@ -7689,9 +7415,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tietohallinto", "dokumenttienhallinta", "koordinointi", "tiedot", "hallinto"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "hallinnon-koordinaattori",
     category: "jarjestaja",
     title_fi: "Hallinnon koordinaattori",
@@ -7768,9 +7492,7 @@ export const careersData: CareerFI[] = [
     keywords: ["hallinto", "organisointi", "koordinointi", "hallinto", "organisaatio"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "lapsenhoitaja",
     category: "auttaja",
     title_fi: "Lapsenhoitaja",
@@ -7847,9 +7569,7 @@ export const careersData: CareerFI[] = [
     keywords: ["lapsenhoito", "päiväkoti", "kasvatus", "varhaiskasvatus", "perhepäivähoito"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "apteekkari",
     category: "auttaja",
     title_fi: "Apteekkari",
@@ -7928,9 +7648,7 @@ export const careersData: CareerFI[] = [
     keywords: ["apteekkari", "lääkkeet", "farmacia", "lääkeneuvonta", "apteekki"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "tietoturva-asiantuntija",
     category: "innovoija",
     title_fi: "Tietoturva-asiantuntija",
@@ -8008,9 +7726,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tietoturva", "kyberturvallisuus", "verkkoanalyysi", "penetraatiotestaus", "SIEM"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "tietokantasuunnittelija",
     category: "innovoija",
     title_fi: "Tietokantasuunnittelija",
@@ -8087,9 +7803,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tietokanta", "SQL", "tietojen mallintaminen", "DBA", "tietokantojen optimointi"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "verkkoasiantuntija",
     category: "innovoija",
     title_fi: "Verkkoasiantuntija",
@@ -8166,9 +7880,7 @@ export const careersData: CareerFI[] = [
     keywords: ["verkot", "Cisco", "tietoverkot", "verkkoanalyysi", "NOC"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "rakennusinsinoori",
     category: "rakentaja",
     title_fi: "Rakennusinsinööri",
@@ -8247,9 +7959,7 @@ export const careersData: CareerFI[] = [
     keywords: ["rakennusinsinööri", "rakennustekniikka", "projektinhallinta", "BIM", "CAD"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "puuseppa",
     category: "rakentaja",
     title_fi: "Puuseppä",
@@ -8328,9 +8038,7 @@ export const careersData: CareerFI[] = [
     keywords: ["puuseppä", "puuntyöstö", "rakentaminen", "huonekalujen", "korjaus"],
     study_length_estimate_months: 24
   },
-
-
-{
+  {
     id: "opettaja",
     category: "auttaja",
     title_fi: "Opettaja",
@@ -8408,9 +8116,7 @@ export const careersData: CareerFI[] = [
     keywords: ["opettaja", "pedagogiikka", "opetus", "koulu", "oppilaiden"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "varhaiskasvatuksen-opettaja",
     category: "auttaja",
     title_fi: "Varhaiskasvatuksen opettaja",
@@ -8488,9 +8194,7 @@ export const careersData: CareerFI[] = [
     keywords: ["varhaiskasvatus", "päiväkoti", "lapsenkasvatus", "opetus", "kehitys"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "ammattikoulun-opettaja",
     category: "auttaja",
     title_fi: "Ammattikoulun opettaja",
@@ -8568,9 +8272,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ammattikoulu", "opettaja", "ammattitaito", "työelämä", "koulutus"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "kielten-opettaja",
     category: "auttaja",
     title_fi: "Kielten opettaja",
@@ -8648,9 +8350,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kielten opettaja", "vieraat kielet", "kulttuurit", "opetus", "kansainvälistyminen"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "erityisopettaja",
     category: "auttaja",
     title_fi: "Erityisopettaja",
@@ -8729,9 +8429,7 @@ export const careersData: CareerFI[] = [
     keywords: ["erityisopettaja", "erityispedagogiikka", "oppimisvaikeudet", "henkilökohtainen tuki", "erityisopetus"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "kuorma-auton-kuljettaja",
     category: "rakentaja",
     title_fi: "Kuorma-auton kuljettaja",
@@ -8808,9 +8506,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kuorma-auto", "kuljettaja", "kuljetus", "logistiikka", "jakelu"],
     study_length_estimate_months: 12
   },
-
-
-{
+  {
     id: "varastotyontekija",
     category: "jarjestaja",
     title_fi: "Varastotyöntekijä",
@@ -8887,9 +8583,7 @@ export const careersData: CareerFI[] = [
     keywords: ["varastointi", "logistiikka", "pakkaaminen", "hyllytys", "varasto"],
     study_length_estimate_months: 12
   },
-
-
-{
+  {
     id: "jakelukuljettaja",
     category: "rakentaja",
     title_fi: "Jakelukuljettaja",
@@ -8966,9 +8660,7 @@ export const careersData: CareerFI[] = [
     keywords: ["jakelu", "kuljettaja", "paketit", "kotitoimitus", "verkkokauppa"],
     study_length_estimate_months: 12
   },
-
-
-{
+  {
     id: "kuljetuskoordinaattori",
     category: "jarjestaja",
     title_fi: "Kuljetuskoordinaattori",
@@ -9045,9 +8737,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kuljetus", "koordinointi", "logistiikka", "reittien optimointi", "kuljetusketju"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "sahkoasentaja",
     category: "rakentaja",
     title_fi: "Sähköasentaja",
@@ -9125,9 +8815,7 @@ export const careersData: CareerFI[] = [
     keywords: ["sähköasentaja", "sähkötekniikka", "sähköjärjestelmät", "energiatehokkuus", "korjaus"],
     study_length_estimate_months: 24
   },
-
-
-{
+  {
     id: "energiainsinoori",
     category: "innovoija",
     title_fi: "Energiainsinööri",
@@ -9204,9 +8892,7 @@ export const careersData: CareerFI[] = [
     keywords: ["energiainsinööri", "energiatehokkuus", "uusiutuva energia", "energiaratkaisut", "ilmastonmuutos"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "aurinkoenergia-asentaja",
     category: "rakentaja",
     title_fi: "Aurinkoenergia-asentaja",
@@ -9283,9 +8969,7 @@ export const careersData: CareerFI[] = [
     keywords: ["aurinkoenergia", "aurinkopaneelit", "uusiutuva energia", "energiatehokkuus", "ilmastonmuutos"],
     study_length_estimate_months: 24
   },
-
-
-{
+  {
     id: "energiakonsultti",
     category: "visionaari",
     title_fi: "Energiakonsultti",
@@ -9359,9 +9043,7 @@ export const careersData: CareerFI[] = [
     keywords: ["energiakonsultti", "energiatehokkuus", "energiaratkaisut", "kestävää kehitystä", "hiilijalanjälki"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "energia-asiantuntija",
     category: "visionaari",
     title_fi: "Energia-asiantuntija",
@@ -9438,9 +9120,7 @@ export const careersData: CareerFI[] = [
     keywords: ["energia-asiantuntija", "energiatehokkuus", "energiaratkaisut", "uusiutuva energia", "kestävää kehitystä"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "digitaalisen-markkinoinnin-asiantuntija",
     category: "innovoija",
     title_fi: "Digitaalisen markkinoinnin asiantuntija",
@@ -9514,9 +9194,7 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku – Digitaalisen markkinoinnin asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Digitaalisen%20markkinoinnin%20asiantuntija" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=markkinointi" }],
   },
-
-
-{
+  {
     id: "brandisuunnittelija",
     category: "luova",
     title_fi: "Brändisuunnittelija",
@@ -9591,9 +9269,7 @@ export const careersData: CareerFI[] = [
     keywords: ["brändi", "logo", "visuaalinen identiteetti", "graafinen suunnittelu", "kreatiivisuus"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "ymparistoasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöasiantuntija",
@@ -9670,9 +9346,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristö", "kestävää kehitystä", "ympäristönsuoja", "auditointi", "vastuullisuus"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "tuotesuunnittelija",
     category: "luova",
     title_fi: "Tuotesuunnittelija",
@@ -9748,9 +9422,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotesuunnittelija" }
       ],
   },
-
-
-{
+  {
     id: "viestintapaallikko",
     category: "johtaja",
     title_fi: "Viestintäpäällikkö",
@@ -9824,9 +9496,7 @@ export const careersData: CareerFI[] = [
     keywords: ["viestintä", "media", "julkisuus", "kriisiviestintä", "johtaminen"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "data-analyytikko",
     category: "innovoija",
     title_fi: "Data-analyytikko",
@@ -9902,9 +9572,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Data-analyytikko" }
       ],
   },
-
-
-{
+  {
     id: "hr-asiantuntija",
     category: "auttaja",
     title_fi: "HR-asiantuntija",
@@ -9982,9 +9650,7 @@ export const careersData: CareerFI[] = [
     keywords: ["henkilöstö", "rekrytointi", "koulutus", "palkkaus", "työsuhteet"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "liiketoimintakehittaja",
     category: "innovoija",
     title_fi: "Liiketoimintakehittäjä",
@@ -10056,9 +9722,7 @@ export const careersData: CareerFI[] = [
     useful_links: [{ name: "Opintopolku – Liiketoimintakehittäjä", url: "https://opintopolku.fi/konfo/fi/haku/Liiketoimintakehitt%C3%A4j%C3%A4" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=liiketoiminta" }],
   },
-
-
-{
+  {
     id: "koulutussuunnittelija",
     category: "auttaja",
     title_fi: "Koulutussuunnittelija",
@@ -10135,9 +9799,7 @@ export const careersData: CareerFI[] = [
     keywords: ["koulutus", "oppiminen", "pedagogiikka", "materiaalit", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "tuotepaallikko",
     category: "johtaja",
     title_fi: "Tuotepäällikkö",
@@ -10209,9 +9871,7 @@ export const careersData: CareerFI[] = [
     useful_links: [{ name: "Opintopolku – Tuotepäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tuotep%C3%A4%C3%A4llikk%C3%B6" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotep%C3%A4%C3%A4llikk%C3%B6" }],
   },
-
-
-{
+  {
     id: "konsultti",
     category: "innovoija",
     title_fi: "Konsultti",
@@ -10288,9 +9948,7 @@ export const careersData: CareerFI[] = [
     keywords: ["konsultointi", "analyysi", "ratkaisut", "projektit", "asiantuntijuus"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "tutkimusasiantuntija",
     category: "visionaari",
     title_fi: "Tutkimusasiantuntija",
@@ -10365,9 +10023,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=tutkija" }
       ],
   },
-
-
-{
+  {
     id: "laadunvalvonta-asiantuntija",
     category: "jarjestaja",
     title_fi: "Laadunvalvonta-asiantuntija",
@@ -10441,9 +10097,7 @@ export const careersData: CareerFI[] = [
     keywords: ["laadunvalvonta", "testaus", "laatu", "analyysi", "prosessit"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "asiakasvastaava",
     category: "auttaja",
     title_fi: "Asiakasvastaava",
@@ -10518,9 +10172,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Asiakasvastaava" }
       ],
   },
-
-
-{
+  {
     id: "tietojarjestelmaasiantuntija",
     category: "innovoija",
     title_fi: "Tietojärjestelmäasiantuntija",
@@ -10597,9 +10249,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tietojärjestelmät", "IT", "verkko", "ylläpito", "tuki"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "talousasiantuntija",
     category: "jarjestaja",
     title_fi: "Talousasiantuntija",
@@ -10676,9 +10326,7 @@ export const careersData: CareerFI[] = [
     keywords: ["talous", "budjetti", "raportointi", "analyysi", "hallinto"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "henkilostokoordinaattori",
     category: "auttaja",
     title_fi: "Henkilöstökoordinaattori",
@@ -10753,9 +10401,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Henkil%C3%B6st%C3%B6koordinaattori" }
       ],
   },
-
-
-{
+  {
     id: "myyntiedustaja",
     category: "innovoija",
     title_fi: "Myyntiedustaja",
@@ -10833,9 +10479,7 @@ export const careersData: CareerFI[] = [
     keywords: ["myynti", "asiakkaat", "kommunikaatio", "neuvottelu", "tavoitteet"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "markkinointikoordinaattori",
     category: "innovoija",
     title_fi: "Markkinointikoordinaattori",
@@ -10910,9 +10554,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=markkinointikoordinaattori" }
       ],
   },
-
-
-{
+  {
     id: "projektikoordinaattori",
     category: "jarjestaja",
     title_fi: "Projektikoordinaattori",
@@ -10986,9 +10628,7 @@ export const careersData: CareerFI[] = [
     keywords: ["projektinhallinta", "koordinointi", "aikataulu", "resurssit", "seuranta"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "asiakaspalveluedustaja",
     category: "auttaja",
     title_fi: "Asiakaspalveluedustaja",
@@ -11063,9 +10703,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=asiakaspalvelu" }
       ],
   },
-
-
-{
+  {
     id: "sisallontuottaja",
     category: "luova",
     title_fi: "Sisällöntuottaja",
@@ -11141,9 +10779,7 @@ export const careersData: CareerFI[] = [
     keywords: ["sisältö", "luovuus", "kirjoittaminen", "media", "markkinointi"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "mobiilisovelluskehittaja",
     category: "innovoija",
     title_fi: "Mobiilisovelluskehittäjä",
@@ -11218,9 +10854,7 @@ export const careersData: CareerFI[] = [
     keywords: ["mobiilikehitys", "iOS", "Android", "React Native", "Flutter"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "tekoaly-asiantuntija",
     category: "innovoija",
     title_fi: "Tekoäly-asiantuntija",
@@ -11294,9 +10928,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tekoäly", "koneoppiminen", "ohjelmointi", "algoritmit", "automaatio"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "tuotantoteknikko",
     category: "rakentaja",
     title_fi: "Tuotantoteknikko",
@@ -11371,9 +11003,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tuotantoteknikko", "tuotanto", "automaatio", "laitteiden huolto", "teollisuus"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "teollisuusinsinoori",
     category: "innovoija",
     title_fi: "Teollisuusinsinööri",
@@ -11447,9 +11077,7 @@ export const careersData: CareerFI[] = [
     keywords: ["teollisuusinsinööri", "teollisuustekniikka", "projektinhallinta", "tuotannon optimointi", "teollisuus"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "asiakaspalvelu-asiantuntija",
     category: "auttaja",
     title_fi: "Asiakaspalvelu-asiantuntija",
@@ -11526,9 +11154,7 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakaspalvelu", "asiakkaiden auttaminen", "kommunikaatio", "ongelmaratkaisu", "palvelutalous"],
     study_length_estimate_months: 24
   },
-
-
-{
+  {
     id: "hotellityontekija",
     category: "auttaja",
     title_fi: "Hotellityöntekijä",
@@ -11605,9 +11231,7 @@ export const careersData: CareerFI[] = [
     keywords: ["hotellityöntekijä", "hotelli", "matkailu", "asiakaspalvelu", "palvelutalous"],
     study_length_estimate_months: 24
   },
-
-
-{
+  {
     id: "ravintolatyontekija",
     category: "rakentaja",
     title_fi: "Ravintolatyöntekijä",
@@ -11685,9 +11309,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ravintolatyöntekijä", "ravintola", "asiakaspalvelu", "ruokapalvelu", "palvelutalous"],
     study_length_estimate_months: 24
   },
-
-
-{
+  {
     id: "siivooja",
     category: "rakentaja",
     title_fi: "Siivooja",
@@ -11765,9 +11387,7 @@ export const careersData: CareerFI[] = [
     keywords: ["siivooja", "siivous", "puhtaus", "terveys", "palvelutalous"],
     study_length_estimate_months: 12
   },
-
-
-{
+  {
     id: "turvallisuusvastaava",
     category: "jarjestaja",
     title_fi: "Turvallisuusvastaava",
@@ -11841,9 +11461,7 @@ export const careersData: CareerFI[] = [
     keywords: ["turvallisuusvastaava", "turvallisuus", "valvonta", "turvallisuuspalvelu", "palvelutalous"],
     study_length_estimate_months: 12
   },
-
-
-{
+  {
     id: "pankkivirkailija",
     category: "jarjestaja",
     title_fi: "Pankkivirkailija",
@@ -11921,9 +11539,7 @@ export const careersData: CareerFI[] = [
     keywords: ["pankkivirkailija", "pankki", "rahoitus", "asiakaspalvelu", "rahoituspalvelu"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "rahoitusneuvonantaja",
     category: "visionaari",
     title_fi: "Rahoitusneuvonantaja",
@@ -11997,9 +11613,7 @@ export const careersData: CareerFI[] = [
     keywords: ["rahoitusneuvonantaja", "rahoitus", "neuvonta", "sijoitusneuvonta", "rahoituspalvelu"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "vakuutusasiamies",
     category: "jarjestaja",
     title_fi: "Vakuutusasiamies",
@@ -12076,9 +11690,7 @@ export const careersData: CareerFI[] = [
     keywords: ["vakuutusasiamies", "vakuutus", "myynti", "neuvonta", "vakuutuspalvelu"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "kirjanpitaja",
     category: "jarjestaja",
     title_fi: "Kirjanpitäjä",
@@ -12156,9 +11768,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kirjanpitäjä", "kirjanpito", "rahoitus", "tilinpäätös", "verotiedot"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "rahoitusanalyytikko",
     category: "visionaari",
     title_fi: "Rahoitusanalyytikko",
@@ -12232,9 +11842,7 @@ export const careersData: CareerFI[] = [
     keywords: ["rahoitusanalyytikko", "rahoitusanalyysi", "sijoitusanalyysi", "rahoitusmarkkinat", "rahoituspalvelu"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "laakari",
     category: "auttaja",
     title_fi: "Lääkäri",
@@ -12308,9 +11916,7 @@ export const careersData: CareerFI[] = [
     keywords: ["lääkäri", "terveydenhuolto", "diagnoosi", "hoito", "potilas"],
     study_length_estimate_months: 72
   },
-
-
-{
+  {
     id: "hammaslaakari",
     category: "auttaja",
     title_fi: "Hammaslääkäri",
@@ -12384,9 +11990,7 @@ export const careersData: CareerFI[] = [
     keywords: ["hammaslääkäri", "suun terveys", "hammashoidot", "hampaiden korjaus"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "elainlaakari",
     category: "auttaja",
     title_fi: "Eläinlääkäri",
@@ -12459,9 +12063,7 @@ export const careersData: CareerFI[] = [
     keywords: ["eläinlääkäri", "eläinten hoito", "eläinlääketiede", "lemmikkieläimet"],
     study_length_estimate_months: 72
   },
-
-
-{
+  {
     id: "farmaseutti",
     category: "auttaja",
     title_fi: "Farmaseutti",
@@ -12534,9 +12136,7 @@ export const careersData: CareerFI[] = [
     keywords: ["farmaseutti", "apteekki", "lääkkeet", "lääkeneuvonta"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "rontgenhoitaja",
     category: "auttaja",
     title_fi: "Röntgenhoitaja",
@@ -12610,9 +12210,7 @@ export const careersData: CareerFI[] = [
     keywords: ["röntgenhoitaja", "kuvantaminen", "röntgen", "ultraääni"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "laboratoriohoitaja",
     category: "auttaja",
     title_fi: "Laboratoriohoitaja",
@@ -12684,9 +12282,7 @@ export const careersData: CareerFI[] = [
     keywords: ["laboratoriohoitaja", "bioanalytiikka", "laboratorio", "tutkimukset"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "lahihoitaja",
     category: "auttaja",
     title_fi: "Lähihoitaja",
@@ -12759,9 +12355,7 @@ export const careersData: CareerFI[] = [
     keywords: ["lähihoitaja", "hoitotyö", "hoiva", "vanhusten hoito"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "ensihoitaja",
     category: "auttaja",
     title_fi: "Ensihoitaja",
@@ -12834,9 +12428,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ensihoitaja", "ambulanssi", "ensihoito", "hätätilanteet"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "katilo",
     category: "auttaja",
     title_fi: "Kätilö",
@@ -12909,9 +12501,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kätilö", "synnytys", "raskaus", "vastasyntyneet"],
     study_length_estimate_months: 54
   },
-
-
-{
+  {
     id: "mielenterveyshoitaja",
     category: "auttaja",
     title_fi: "Mielenterveyshoitaja",
@@ -12984,9 +12574,7 @@ export const careersData: CareerFI[] = [
     keywords: ["mielenterveyshoitaja", "psykiatria", "mielenterveys", "kuntoutus"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "mainostoimiston-art-director",
     category: "luova",
     title_fi: "Mainostoimiston Art Director",
@@ -13063,9 +12651,7 @@ export const careersData: CareerFI[] = [
     keywords: ["art director", "mainonta", "graafinen suunnittelu", "luova", "visuaalinen"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "aanisuunnittelija",
     category: "luova",
     title_fi: "Äänisuunnittelija",
@@ -13139,9 +12725,7 @@ export const careersData: CareerFI[] = [
     keywords: ["äänisuunnittelija", "ääni", "miksaus", "elokuva", "pelit"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "koreografi",
     category: "luova",
     title_fi: "Koreografi",
@@ -13214,9 +12798,7 @@ export const careersData: CareerFI[] = [
     keywords: ["koreografi", "tanssi", "esitys", "ohjaus", "luova"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "kuvataiteilija",
     category: "luova",
     title_fi: "Kuvataiteilija",
@@ -13292,9 +12874,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kuvataiteilija", "taide", "maalaus", "veisto", "luova"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "nayttelija",
     category: "luova",
     title_fi: "Näyttelijä",
@@ -13368,9 +12948,7 @@ export const careersData: CareerFI[] = [
     keywords: ["näyttelijä", "teatteri", "elokuva", "esiintyminen", "rooli"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "valosuunnittelija",
     category: "luova",
     title_fi: "Valosuunnittelija",
@@ -13444,9 +13022,7 @@ export const careersData: CareerFI[] = [
     keywords: ["valosuunnittelija", "valotekniikka", "teatteri", "tapahtumat", "tekninen"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "kasikirjoittaja",
     category: "luova",
     title_fi: "Käsikirjoittaja",
@@ -13523,9 +13099,7 @@ export const careersData: CareerFI[] = [
     keywords: ["käsikirjoittaja", "elokuva", "TV", "kirjoittaminen", "tarina"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "tuottaja-media",
     category: "luova",
     title_fi: "Mediatuottaja",
@@ -13597,9 +13171,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tuottaja", "media", "elokuva", "TV", "tuotanto"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "leikkausartisti",
     category: "luova",
     title_fi: "Leikkausartisti",
@@ -13674,9 +13246,7 @@ export const careersData: CareerFI[] = [
     keywords: ["leikkaaja", "videoeditointi", "jälkituotanto", "elokuva", "media"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "dokumentaristi",
     category: "luova",
     title_fi: "Dokumentaristi",
@@ -13752,9 +13322,7 @@ export const careersData: CareerFI[] = [
     keywords: ["dokumentaristi", "dokumentti", "elokuva", "journalismi", "tutkiminen"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "podcast-tuottaja",
     category: "luova",
     title_fi: "Podcast-tuottaja",
@@ -13828,9 +13396,7 @@ export const careersData: CareerFI[] = [
     keywords: ["podcast", "tuottaja", "ääni", "editointi", "media"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "lavastaja",
     category: "luova",
     title_fi: "Lavastaja",
@@ -13906,9 +13472,7 @@ export const careersData: CareerFI[] = [
     keywords: ["lavastaja", "lavasteet", "teatteri", "elokuva", "suunnittelu"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "ymparistotarkastaja",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristötarkastaja",
@@ -13983,9 +13547,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristö", "tarkastus", "valvonta", "ympäristönsuojelu"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "vesiensuojeluasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Vesiensuojeluasiantuntija",
@@ -14057,9 +13619,7 @@ export const careersData: CareerFI[] = [
     keywords: ["vesi", "vesiensuojelu", "vesihuolto", "ympäristö", "laatu"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "jatehuoltoasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Jätehuoltoasiantuntija",
@@ -14131,9 +13691,7 @@ export const careersData: CareerFI[] = [
     keywords: ["jätehuolto", "kierrätys", "kiertotalous", "ympäristö", "kestävyys"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "metsanhoitaja",
     category: "ympariston-puolustaja",
     title_fi: "Metsänhoitaja",
@@ -14207,9 +13765,7 @@ export const careersData: CareerFI[] = [
     keywords: ["metsä", "metsätalous", "metsänhoito", "kestävyys", "ympäristö"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "toimitusjohtaja",
     category: "johtaja",
     title_fi: "Toimitusjohtaja",
@@ -14284,9 +13840,7 @@ export const careersData: CareerFI[] = [
     keywords: ["toimitusjohtaja", "CEO", "johtaminen", "strategia", "yritys"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "talousjohtaja",
     category: "johtaja",
     title_fi: "Talousjohtaja",
@@ -14358,9 +13912,7 @@ export const careersData: CareerFI[] = [
     keywords: ["talousjohtaja", "CFO", "talous", "johtaminen", "strategia"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "teknologiajohtaja",
     category: "johtaja",
     title_fi: "Teknologiajohtaja",
@@ -14434,9 +13986,7 @@ export const careersData: CareerFI[] = [
     keywords: ["CTO", "teknologiajohtaja", "IT", "johtaminen", "innovaatio"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "operatiivinen-johtaja",
     category: "johtaja",
     title_fi: "Operatiivinen johtaja",
@@ -14511,9 +14061,7 @@ export const careersData: CareerFI[] = [
     keywords: ["COO", "operatiivinen", "johtaminen", "prosessit", "tehokkuus"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "liiketoimintajohtaja",
     category: "johtaja",
     title_fi: "Liiketoimintajohtaja",
@@ -14587,9 +14135,7 @@ export const careersData: CareerFI[] = [
     keywords: ["liiketoimintajohtaja", "johtaminen", "strategia", "myynti", "kasvu"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "kirvesmies",
     category: "rakentaja",
     title_fi: "Kirvesmies",
@@ -14662,9 +14208,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kirvesmies", "rakentaminen", "puutyö", "talonrakennus", "korjaus"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "maanrakennuskoneen-kuljettaja",
     category: "rakentaja",
     title_fi: "Maanrakennuskoneen kuljettaja",
@@ -14737,9 +14281,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kaivukone", "maanrakennus", "koneen kuljettaja", "rakentaminen", "infrastruktuuri"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "tapahtumajarjestaja",
     category: "jarjestaja",
     title_fi: "Tapahtumajärjestäjä",
@@ -14814,9 +14356,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tapahtuma", "järjestäminen", "tapahtumajärjestäjä", "projektit", "koordinointi"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "tilauspalvelukoordinaattori",
     category: "jarjestaja",
     title_fi: "Tilauspalvelukoordinaattori",
@@ -14891,9 +14431,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tilauspalvelu", "koordinointi", "tilaukset", "asiakaspalvelu", "toimitukset"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "devops-insinoori",
     category: "innovoija",
     title_fi: "DevOps-insinööri",
@@ -14967,9 +14505,7 @@ export const careersData: CareerFI[] = [
     keywords: ["devops", "cloud", "automaatio", "docker", "kubernetes", "ci/cd"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "automekaanikko",
     category: "rakentaja",
     title_fi: "Automekaanikko",
@@ -15046,9 +14582,7 @@ export const careersData: CareerFI[] = [
     keywords: ["automekaanikko", "autokorjaus", "huolto", "diagnostiikka", "mekaanikko"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "ohjelmistotestaja",
     category: "innovoija",
     title_fi: "Ohjelmistotestaja",
@@ -15122,9 +14656,7 @@ export const careersData: CareerFI[] = [
     keywords: ["testaus", "laadunvarmistus", "ohjelmistotestaus", "qa", "vikaraportointi"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "ux-suunnittelija",
     category: "innovoija",
     title_fi: "UX-suunnittelija",
@@ -15198,9 +14730,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ux", "käyttäjäkokemus", "käytettävyys", "suunnittelu", "user experience"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "cloud-arkkitehti",
     category: "innovoija",
     title_fi: "Cloud-arkkitehti",
@@ -15274,9 +14804,7 @@ export const careersData: CareerFI[] = [
     keywords: ["cloud", "arkkitehtuuri", "aws", "azure", "pilvipalvelut"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "asiakkuusvastaava",
     category: "johtaja",
     title_fi: "Asiakkuusvastaava",
@@ -15353,9 +14881,7 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakkuus", "myynti", "asiakassuhteet", "account management", "b2b"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "sosiaaliohjaaja",
     category: "auttaja",
     title_fi: "Sosiaaliohjaaja",
@@ -15433,9 +14959,7 @@ export const careersData: CareerFI[] = [
     keywords: ["sosiaaliohjaaja", "ohjaus", "sosiaalipalvelut", "neuvonta", "sosionomi"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "terveydenhoitaja",
     category: "auttaja",
     title_fi: "Terveydenhoitaja",
@@ -15513,9 +15037,7 @@ export const careersData: CareerFI[] = [
     keywords: ["terveydenhoitaja", "terveyden edistäminen", "ehkäisevä terveydenhuolto", "terveysneuvonta"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "dialyysihoitaja",
     category: "auttaja",
     title_fi: "Dialyysihoitaja",
@@ -15592,9 +15114,7 @@ export const careersData: CareerFI[] = [
     keywords: ["dialyysi", "sairaanhoitaja", "munuais", "hoito", "erikoissairaanhoito"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "varhaiskasvatuksen-erityisopettaja",
     category: "auttaja",
     title_fi: "Varhaiskasvatuksen erityisopettaja",
@@ -15672,9 +15192,7 @@ export const careersData: CareerFI[] = [
     keywords: ["erityisopettaja", "varhaiskasvatus", "erityistuki", "kehitysvamma", "oppimisvaikeudet"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "ui-suunnittelija",
     category: "innovoija",
     title_fi: "UI-suunnittelija",
@@ -15748,9 +15266,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ui", "käyttöliittymä", "visuaalinen suunnittelu", "design", "user interface"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "tietoturvaanalyytikko",
     category: "innovoija",
     title_fi: "Tietoturvaanalyytikko",
@@ -15824,9 +15340,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tietoturva", "kyberturvallisuus", "analyysi", "tietoturvaincidentti", "soc"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "tietokoneasentaja",
     category: "innovoija",
     title_fi: "Tietokoneasentaja",
@@ -15903,9 +15417,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tietokoneasentaja", "it-tuki", "tietokonekorjaus", "tietoverkot", "teknikko"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "optometristi",
     category: "auttaja",
     title_fi: "Optometristi",
@@ -15982,9 +15494,7 @@ export const careersData: CareerFI[] = [
     keywords: ["optometristi", "näkö", "silmälaseet", "silmätarkastus", "optometria"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "ravitsemusterapeutti",
     category: "auttaja",
     title_fi: "Ravitsemusterapeutti",
@@ -16062,9 +15572,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ravitsemusterapeutti", "ravitsemusneuvonta", "ruokavalio", "terveys", "ravitsemustiede"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "putkityomies",
     category: "rakentaja",
     title_fi: "Putkityömies",
@@ -16139,9 +15647,7 @@ export const careersData: CareerFI[] = [
     keywords: ["putkityömies", "lvi", "putkisto", "vesihuolto", "lämmitys"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "automaatioteknikko",
     category: "rakentaja",
     title_fi: "Automaatioteknikko",
@@ -16215,9 +15721,7 @@ export const careersData: CareerFI[] = [
     keywords: ["automaatio", "plc", "scada", "teollisuusautomaatio", "teknikko"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "kiertotalousasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Kiertotalousasiantuntija",
@@ -16291,9 +15795,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kiertotalous", "kierrättäminen", "jätehuolto", "kestävän kehityksen", "ympäristö"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "ymparistovalvonta",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristövalvonta",
@@ -16367,9 +15869,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristövalvonta", "valvonta", "ympäristölainsäädäntö", "tarkastus", "ympäristö"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "videonmuokkaaja",
     category: "luova",
     title_fi: "Videonmuokkaaja",
@@ -16443,9 +15943,7 @@ export const careersData: CareerFI[] = [
     keywords: ["videonmuokkaus", "leikkaus", "video", "media", "editing"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "tuotantokoordinaattori",
     category: "luova",
     title_fi: "Tuotantokoordinaattori",
@@ -16522,9 +16020,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tuotantokoordinaattori", "media", "tuotanto", "koordinointi", "projektinhallinta"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "tarjoilija",
     category: "rakentaja",
     title_fi: "Tarjoilija",
@@ -16600,9 +16096,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tarjoilija", "ravintola", "asiakaspalvelu", "palvelu", "ruokailu"],
     study_length_estimate_months: 24
   },
-
-
-{
+  {
     id: "kokki",
     category: "luova",
     title_fi: "Kokki",
@@ -16680,9 +16174,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kokki", "ruuanvalmistus", "keittiö", "ruoka", "ravintola"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "oppilashuoltaja",
     category: "auttaja",
     title_fi: "Oppilashuoltaja",
@@ -16756,9 +16248,7 @@ export const careersData: CareerFI[] = [
     keywords: ["oppilashuoltaja", "koulu", "oppilaiden tuki", "hyvinvointi", "sosionomi"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "hitsaaja",
     category: "rakentaja",
     title_fi: "Hitsaaja",
@@ -16837,9 +16327,7 @@ export const careersData: CareerFI[] = [
     keywords: ["hitsaaja", "hitsaus", "metalli", "rakentaminen", "teollisuus"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "it-tukihenkilo",
     category: "innovoija",
     title_fi: "IT-tukihenkilö",
@@ -16915,9 +16403,7 @@ export const careersData: CareerFI[] = [
     keywords: ["it-tuki", "helpdesk", "tietotekniikka", "asiakaspalvelu", "tuki"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "puheterapeutti",
     category: "auttaja",
     title_fi: "Puheterapeutti",
@@ -16993,9 +16479,7 @@ export const careersData: CareerFI[] = [
     keywords: ["puheterapeutti", "puhe", "kieli", "kommunikaatio", "logopedia"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "audiologi",
     category: "auttaja",
     title_fi: "Audiologi",
@@ -17072,9 +16556,7 @@ export const careersData: CareerFI[] = [
     keywords: ["audiologi", "kuulo", "kuulolaitteet", "kuulotarkastus", "kuulonkuntoutus"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "oppilashuoltotyontekija",
     category: "auttaja",
     title_fi: "Oppilashuoltotyöntekijä",
@@ -17148,9 +16630,7 @@ export const careersData: CareerFI[] = [
     keywords: ["oppilashuolto", "koulu", "oppilaiden tuki", "hyvinvointi", "sosionomi"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "suuhygienisti",
     category: "auttaja",
     title_fi: "Suuhygienisti",
@@ -17228,9 +16708,7 @@ export const careersData: CareerFI[] = [
     keywords: ["suuhygienisti", "hammas", "suun terveys", "hammashoito", "suuhygienia"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "kotipalvelutyontekija",
     category: "auttaja",
     title_fi: "Kotipalvelutyöntekijä",
@@ -17306,9 +16784,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kotipalvelu", "kotihoito", "henkilökohtainen hoito", "ikääntyneet", "avustaja"],
     study_length_estimate_months: 24
   },
-
-
-{
+  {
     id: "full-stack-kehittaja",
     category: "innovoija",
     title_fi: "Full-Stack-kehittäjä",
@@ -17382,9 +16858,7 @@ export const careersData: CareerFI[] = [
     keywords: ["full-stack", "web-kehitys", "frontend", "backend", "fullstack"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "sosiaalisen-median-asiantuntija",
     category: "innovoija",
     title_fi: "Sosiaalisen median asiantuntija",
@@ -17460,9 +16934,7 @@ export const careersData: CareerFI[] = [
     keywords: ["sosiaalinen media", "sosiaalisen median markkinointi", "smm", "sisällöntuotanto", "yhteisö"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "urheiluvalmentaja",
     category: "auttaja",
     title_fi: "Urheiluvalmentaja",
@@ -17541,9 +17013,7 @@ export const careersData: CareerFI[] = [
     keywords: ["urheiluvalmentaja", "valmennus", "urheilu", "liikunta", "valmentaja"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "lampotekniikka-asentaja",
     category: "rakentaja",
     title_fi: "Lämpötekniikka-asentaja",
@@ -17618,9 +17088,7 @@ export const careersData: CareerFI[] = [
     keywords: ["lämpötekniikka", "maalämpö", "kaukolämpö", "uusiutuva energia", "lvi"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "ilmastoneuvonantaja",
     category: "ympariston-puolustaja",
     title_fi: "Ilmastoneuvonantaja",
@@ -17694,9 +17162,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ilmasto", "hiilijalanjälki", "kestävyys", "ilmastoneuvonta", "ympäristö"],
     study_length_estimate_months: 42
   },
-
-
-{
+  {
     id: "aikuiskouluttaja",
     category: "jarjestaja",
     title_fi: "Aikuiskouluttaja",
@@ -17774,9 +17240,7 @@ export const careersData: CareerFI[] = [
     keywords: ["aikuiskouluttaja", "aikuiskasvatus", "koulutus", "opetus", "työelämäkoulutus"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "myyntityontekija",
     category: "johtaja",
     title_fi: "Myyntityöntekijä",
@@ -17850,9 +17314,7 @@ export const careersData: CareerFI[] = [
     keywords: ["myynti", "myyntityöntekijä", "asiakaspalvelu", "kauppa", "myyntityö"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "reseptionisti",
     category: "jarjestaja",
     title_fi: "Reseptionisti",
@@ -17926,9 +17388,7 @@ export const careersData: CareerFI[] = [
     keywords: ["reseptionisti", "vastaanotto", "asiakaspalvelu", "sekretariaatti", "palvelu"],
     study_length_estimate_months: 24
   },
-
-
-{
+  {
     id: "verkkosivustonhallintaja",
     category: "innovoija",
     title_fi: "Verkkosivustonhallintaja",
@@ -18003,9 +17463,7 @@ export const careersData: CareerFI[] = [
     keywords: ["verkkosivustonhallinta", "web", "cms", "seo", "verkkosivusto"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "vaihtoehtoinen-energia-insinoori",
     category: "ympariston-puolustaja",
     title_fi: "Vaihtoehtoinen energia-insinööri",
@@ -18079,9 +17537,7 @@ export const careersData: CareerFI[] = [
     keywords: ["uusiutuva energia", "aurinkoenergia", "tuulienergia", "biokaasu", "energiainsinööri"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "rakennustyonjohtaja",
     category: "rakentaja",
     title_fi: "Rakennustyönjohtaja",
@@ -18159,9 +17615,7 @@ export const careersData: CareerFI[] = [
     keywords: ["rakennustyönjohtaja", "työnjohtaja", "rakennus", "projektinhallinta", "rakennusinsinööri"],
     study_length_estimate_months: 48
   },
-
-
-{
+  {
     id: "aineenopettaja",
     category: "auttaja",
     title_fi: "Aineenopettaja",
@@ -18239,9 +17693,7 @@ export const careersData: CareerFI[] = [
     keywords: ["aineenopettaja", "opettaja", "opetus", "koulu", "pedagogiikka"],
     study_length_estimate_months: 60
   },
-
-
-{
+  {
     id: "livestream-tuottaja",
     category: "luova",
     title_fi: "Livestream-tuottaja",
@@ -18315,9 +17767,7 @@ export const careersData: CareerFI[] = [
     keywords: ["livestream", "suoratoisto", "streaming", "media", "tuottaja"],
     study_length_estimate_months: 36
   },
-
-
-{
+  {
     id: "hieroja",
     category: "auttaja",
     title_fi: "Hieroja",
@@ -18395,9 +17845,7 @@ export const careersData: CareerFI[] = [
     keywords: ["hieroja", "hieronta", "rentoutus", "hyvinvointi", "terveys"],
     study_length_estimate_months: 24
   },
-
-
-{
+  {
     id: "aaniteknikko",
     category: "luova",
     title_fi: "Ääniteknikko",
@@ -18470,10 +17918,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=%C3%84%C3%A4niteknikko" }],
     keywords: ["ääniteknikko", "ääni", "miksaaminen", "masterointi", "media"],
     study_length_estimate_months: 42
-  }
-
-
- ,
+  },
   {
     id: "asiakaspalveluvastaava",
     category: "johtaja",
@@ -18558,8 +18003,6 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakaskokemus", "customer success", "palvelujohtaminen", "CRM", "tiiminvetäjä"],
     study_length_estimate_months: 36
   },
-
-
   {
     id: "palvelumuotoilija",
     category: "johtaja",
@@ -18647,8 +18090,6 @@ export const careersData: CareerFI[] = [
     keywords: ["service design", "asiakaskokemus", "design-ajattelu", "palvelupolku", "kokeilukulttuuri"],
     study_length_estimate_months: 36
   },
-
-
   {
     id: "lattiasuunnittelija",
     category: "rakentaja",
@@ -18734,8 +18175,6 @@ export const careersData: CareerFI[] = [
     keywords: ["lattiapinnat", "sisustussuunnittelu", "materiaalisuunnittelu", "CAD", "tilaratkaisut"],
     study_length_estimate_months: 36
   },
-
-
   {
     id: "rakennusmateriaalimyyja",
     category: "rakentaja",
@@ -18821,8 +18260,6 @@ export const careersData: CareerFI[] = [
     keywords: ["rakennustarvikkeet", "myynti", "asiakaspalvelu", "tarjouslaskenta", "logistiikka"],
     study_length_estimate_months: 30
   },
-
-
   {
     id: "rautakauppias",
     category: "jarjestaja",
@@ -18908,8 +18345,6 @@ export const careersData: CareerFI[] = [
     keywords: ["rautakauppa", "kaupan johto", "yrittäjyys", "hankinta", "myymälä"],
     study_length_estimate_months: 42
   },
-
-
   {
     id: "biokaasuteknikko",
     category: "ympariston-puolustaja",
@@ -18992,8 +18427,6 @@ export const careersData: CareerFI[] = [
     keywords: ["biokaasu", "uusiutuva energia", "prosessitekniikka", "kestävä kehitys", "ympäristötekniikka"],
     study_length_estimate_months: 36
   },
-
-
   {
     id: "ymparisto-ohjelmoija",
     category: "ympariston-puolustaja",
@@ -19076,8 +18509,6 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristodata", "ohjelmistokehitys", "ilmastotyö", "GIS", "data-analytiikka"],
     study_length_estimate_months: 36
   },
-
-
   {
     id: "kuvausassistentti",
     category: "luova",
@@ -19162,8 +18593,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kuvaus", "elokuva", "kamera", "tuotanto", "AV-ala"],
     study_length_estimate_months: 36
   },
-
-
   {
     id: "baarimikko",
     category: "rakentaja",
@@ -19250,8 +18679,6 @@ export const careersData: CareerFI[] = [
     keywords: ["baarityö", "cocktail", "ravintola", "anniskelu", "palvelu"],
     study_length_estimate_months: 30
   },
-
-
   {
     id: "aktuaari",
     category: "jarjestaja",
@@ -19325,8 +18752,6 @@ export const careersData: CareerFI[] = [
     keywords: ["aktuaari", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "arkkitehti",
     category: "visionaari",
@@ -19401,8 +18826,6 @@ export const careersData: CareerFI[] = [
     keywords: ["arkkitehti", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "erikoislaakari",
     category: "auttaja",
@@ -19478,8 +18901,6 @@ export const careersData: CareerFI[] = [
     keywords: ["erikoislääkäri", "lääkäri", "lääketiede", "terveydenhuolto", "sairaala", "potilas"],
     study_length_estimate_months: 144
   },
-
-
   {
     id: "erityispedagogi",
     category: "auttaja",
@@ -19553,8 +18974,6 @@ export const careersData: CareerFI[] = [
     keywords: ["erityispedagogi", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "etiikan-asiantuntija",
     category: "visionaari",
@@ -19627,8 +19046,6 @@ export const careersData: CareerFI[] = [
     keywords: ["etiikan-asiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "filosofi",
     category: "visionaari",
@@ -19702,8 +19119,6 @@ export const careersData: CareerFI[] = [
     keywords: ["filosofi", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "historioitsija",
     category: "visionaari",
@@ -19777,8 +19192,6 @@ export const careersData: CareerFI[] = [
     keywords: ["historioitsija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "insinoori",
     category: "innovoija",
@@ -19851,7 +19264,8 @@ export const careersData: CareerFI[] = [
       ],
     keywords: ["insinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
-  },{
+  },
+  {
     id: "journalisti",
     category: "visionaari",
     title_fi: "Journalisti",
@@ -19924,8 +19338,6 @@ export const careersData: CareerFI[] = [
     keywords: ["journalisti", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "kemiisti",
     category: "innovoija",
@@ -19997,7 +19409,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=laboratorio" }],
     keywords: ["kemiisti", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
-  },{
+  },
+  {
     id: "konetekniikan-insinoori",
     category: "innovoija",
     title_fi: "Konetekniikan Insinoori",
@@ -20069,8 +19482,6 @@ export const careersData: CareerFI[] = [
     keywords: ["konetekniikan-insinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "koulupsykologi",
     category: "auttaja",
@@ -20144,8 +19555,6 @@ export const careersData: CareerFI[] = [
     keywords: ["koulupsykologi", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "kriitikko",
     category: "visionaari",
@@ -20219,8 +19628,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kriitikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "laatuasiantuntija",
     category: "jarjestaja",
@@ -20294,8 +19701,6 @@ export const careersData: CareerFI[] = [
     keywords: ["laatuasiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "maatalousasiantuntija",
     category: "ympariston-puolustaja",
@@ -20368,8 +19773,6 @@ export const careersData: CareerFI[] = [
     keywords: ["maatalousasiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "maatalousinsinoori",
     category: "ympariston-puolustaja",
@@ -20442,8 +19845,6 @@ export const careersData: CareerFI[] = [
     keywords: ["maatalousinsinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "markkinointipaallikko",
     category: "johtaja",
@@ -20518,8 +19919,6 @@ export const careersData: CareerFI[] = [
     keywords: ["markkinointipaallikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "matkailuneuvoja",
     category: "visionaari",
@@ -20593,8 +19992,6 @@ export const careersData: CareerFI[] = [
     keywords: ["matkailuneuvoja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "mediasuunnittelija",
     category: "luova",
@@ -20667,8 +20064,6 @@ export const careersData: CareerFI[] = [
     keywords: ["mediasuunnittelija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "merenkulun-insinoori",
     category: "innovoija",
@@ -20742,8 +20137,6 @@ export const careersData: CareerFI[] = [
     keywords: ["merenkulun-insinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "merikapteeni",
     category: "johtaja",
@@ -20818,8 +20211,6 @@ export const careersData: CareerFI[] = [
     keywords: ["merikapteeni", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "metsainsinoori",
     category: "ympariston-puolustaja",
@@ -20892,8 +20283,6 @@ export const careersData: CareerFI[] = [
     keywords: ["metsainsinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "metsatalousasiantuntija",
     category: "ympariston-puolustaja",
@@ -20966,8 +20355,6 @@ export const careersData: CareerFI[] = [
     keywords: ["metsatalousasiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "museoasiantuntija",
     category: "visionaari",
@@ -21041,8 +20428,6 @@ export const careersData: CareerFI[] = [
     keywords: ["museoasiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "projektipaallikko",
     category: "jarjestaja",
@@ -21115,8 +20500,6 @@ export const careersData: CareerFI[] = [
     keywords: ["projektipaallikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "rakennusarkkitehti",
     category: "innovoija",
@@ -21189,8 +20572,6 @@ export const careersData: CareerFI[] = [
     keywords: ["rakennusarkkitehti", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "ravintolapaallikko",
     category: "johtaja",
@@ -21265,8 +20646,6 @@ export const careersData: CareerFI[] = [
     keywords: ["ravintolapaallikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "sahkotekniikan-insinoori",
     category: "innovoija",
@@ -21339,8 +20718,6 @@ export const careersData: CareerFI[] = [
     keywords: ["sahkotekniikan-insinoori", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "sosiaaliohjaja",
     category: "auttaja",
@@ -21413,8 +20790,6 @@ export const careersData: CareerFI[] = [
     keywords: ["sosiaaliohjaja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "sosiaalitutkija",
     category: "visionaari",
@@ -21487,7 +20862,8 @@ export const careersData: CareerFI[] = [
       ],
     keywords: ["sosiaalitutkija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
-  },{
+  },
+  {
     id: "tilitoimiston-johtaja",
     category: "johtaja",
     title_fi: "Tilitoimiston Johtaja",
@@ -21559,8 +20935,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tilitoimiston-johtaja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "tutkija",
     category: "visionaari",
@@ -21634,8 +21008,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tutkija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "uutistoimittaja",
     category: "visionaari",
@@ -21709,8 +21081,6 @@ export const careersData: CareerFI[] = [
     keywords: ["uutistoimittaja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "valmentaja",
     category: "auttaja",
@@ -21784,8 +21154,6 @@ export const careersData: CareerFI[] = [
     keywords: ["valmentaja", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "visuaalinen-suunnittelija",
     category: "luova",
@@ -21859,8 +21227,6 @@ export const careersData: CareerFI[] = [
     keywords: ["visuaalinen-suunnittelija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "ymparistonsuojelun-asiantuntija",
     category: "ympariston-puolustaja",
@@ -21933,8 +21299,6 @@ export const careersData: CareerFI[] = [
     keywords: ["ymparistonsuojelun-asiantuntija", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "ymparistoteknikko",
     category: "ympariston-puolustaja",
@@ -22007,96 +21371,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ymparistoteknikko", "asiantuntija", "kehittäminen"],
     study_length_estimate_months: 48
   },
-
-{
-    id: "product-manager",
-    category: "innovoija",
-    title_fi: "Tuotepäällikkö",
-    title_en: "Product Manager",
-    short_description: "Tuotepäällikkö määrittelee ja kehittää digitaalisia tuotteita vastaamaan käyttäjien tarpeita ja liiketoimintatavoitteita. Suomessa erityisen kysytty rooli startup- ja kasvuyrityksissa, jossa yhdistyvät teknologia, liiketoiminta ja käyttäjäymmärrys Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa nopean urakehityksen ja mahdollisuuden vaikuttaa miljoonien käyttäjien arkeen.",
-    main_tasks: [
-          "Tuotevision ja strategian määrittely",
-          "Kehitysjonon priorisointi ja roadmapin laatiminen",
-          "Käyttäjätarpeiden tutkiminen ja analysointi",
-          "Tiimien koordinointi ja päätöksenteko",
-          "Tuotteen menestyksen mittaaminen ja optimointi"
-    ],
-    impact: [
-      "Luo tuotteita ja palveluita, joita sadat tuhannet ihmiset käyttävät päivittäin Suomessa ja kansainvälisesti",
-      "Ohjaa teknologiakehitystä käyttäjälähtöisesti ja vaikuttaa Suomessa suoraan tuotteen menestykseen",
-      "Mahdollistaa liiketoiminnan nopean kasvun ja läpimurtoinnovaatiot Helsingin tech-ekosysteemissä"
-    ],
-    education_paths: [
-          "AMK: Tradenomi, tietotekniikka",
-          "Yliopisto: Kauppatieteiden tai tietotekniikan maisteri",
-          "Sertifikaatit: Product Management Professional, CSPO"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-          "Tuotestrategia ja roadmap-suunnittelu",
-          "Käyttäjäkokemus ja UX/UI-ymmärrys",
-          "Data-analyysi ja mittarit",
-          "Sidosryhmähallinta ja viestintä",
-          "Ketterät menetelmät (Agile, Scrum)"
-    ],
-    tools_tech: [
-          "Jira",
-          "Figma",
-          "Google Analytics",
-          "Mixpanel",
-          "Productboard",
-          "Miro"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "C1" },
-    salary_eur_month: {
-      median: 5200,
-      range: [4500, 7000],
-      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Digitaalisten tuotteiden kasvu luo jatkuvasti kysyntää. Helsingin startup-sektori erityisen vahva.",
-      source: { name: "Business Finland", url: "https://www.businessfinland.fi/", year: 2024 }
-    },
-    entry_roles: [
-          "Associate Product Manager",
-          "Product Owner",
-          "Junior Product Manager"
-    ],
-    career_progression: [
-          "Senior Product Manager",
-          "Lead Product Manager",
-          "VP of Product",
-          "CPO"
-    ],
-    typical_employers: [
-      "Wolt, Supercell, Reaktor",
-      "Vincit, Futurice, Solita",
-      "Startup-yritykset ja kasvuyhtiöt",
-      "Digitaaliset palvelutalot ja IT-konsultit",
-      "Nitor (Turku)",
-      "Oulu Health Labs"
-    ],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: "TEK – Tekniikan akateemiset",
-    useful_links: [
-      { name: "Opintopolku – Tuotepäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tuotep%C3%A4%C3%A4llikk%C3%B6" },
-      {
-                "name": "Product Management Finland",
-                "url": "https://www.productmanagement.fi/"
-          },
-          {
-                "name": "TEK Palkkavertailu",
-                "url": "https://tek.fi/fi/ura/palkkavertailu"
-          },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotep%C3%A4%C3%A4llikk%C3%B6" }],
-    related_careers: ["ux-researcher","scrum-master","business-analyst"],
-    study_length_estimate_months: 60
-  },
-
-
-
-{
+  {
     id: "scrum-master",
     category: "jarjestaja",
     title_fi: "Scrum Master",
@@ -22175,185 +21450,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["product-manager","project-coordinator"],
     study_length_estimate_months: 48
   },
-
-
-
-{
-    id: "devops-engineer",
-    category: "innovoija",
-    title_fi: "DevOps-insinööri",
-    title_en: "DevOps Engineer",
-    short_description: "DevOps-insinööri automatisoi ohjelmistokehityksen prosesseja ja ylläpitää IT-infrastruktuuria pilvessä. Suomessa erittäin kysytty osaaja, joka yhdistää teknisen syväosaamisen ja automaation business-vaikuttavuuteen Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa joustavan etätyön ja kilpailukykyisen palkan 4500-7500€/kk.",
-    main_tasks: [
-          "CI/CD-putkistojen rakentaminen ja ylläpito",
-          "Infrastruktuurin automatisointi (Infrastructure as Code)",
-          "Pilvipalveluiden konfigurointi ja hallinta",
-          "Monitorointi- ja loggausjärjestelmien ylläpito",
-          "Tietoturvan ja skaalautuvuuden varmistaminen"
-    ],
-    impact: [
-      "Nopeuttaa ohjelmistojen julkaisusykliä viikoista minuutteihin automaation avulla",
-      "Vähentää manuaalista työtä 70-90% ja vapauttaa Suomessa kehittäjien aikaa innovointiin",
-      "Parantaa Suomessa järjestelmien luotettavuutta 99.9% uptime-tasolle ja mahdollistaa skaalautumisen miljoonille käyttäjille"
-    ],
-    education_paths: [
-          "AMK: Tietotekniikka, ohjelmistotekniikka",
-          "Yliopisto: Tietotekniikan DI",
-          "Sertifikaatit: AWS Certified, Kubernetes CKA"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-          "Linux-järjestelmähallinta",
-          "Pilvipalvelut (AWS, Azure, GCP)",
-          "Konttiteknologia (Docker, Kubernetes)",
-          "Automaatiotyökalut (Ansible, Terraform)",
-          "CI/CD (Jenkins, GitLab CI, GitHub Actions)"
-    ],
-    tools_tech: [
-          "Docker",
-          "Kubernetes",
-          "Terraform",
-          "AWS/Azure",
-          "Jenkins",
-          "Prometheus",
-          "Grafana"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "C1" },
-    salary_eur_month: {
-      median: 5400,
-      range: [4500, 7500],
-      source: { name: "TEK", url: "https://tek.fi/fi/ura/palkkavertailu", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Pilvipalveluiden ja DevOps-kulttuurin yleistyminen luo vahvaa kysyntää.",
-      source: { name: "TEK", url: "https://tek.fi/", year: 2024 }
-    },
-    entry_roles: [
-          "Junior DevOps Engineer",
-          "System Administrator"
-    ],
-    career_progression: [
-          "Senior DevOps Engineer",
-          "DevOps Lead",
-          "Site Reliability Engineer",
-          "Platform Engineer"
-    ],
-    typical_employers: [
-      "Wolt, Supercell, Smartly.io",
-      "Reaktor, Futurice, Vincit",
-      "Nordcloud, F-Secure, Aiven",
-      "Startup-yritykset ja kasvuyhtiöt",
-      "Nitor (Turku)",
-      "Oulu Health Labs"
-    ],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: "TEK – Tekniikan akateemiset",
-    useful_links: [
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=DevOps" },
-      { name: "Opintopolku – DevOps-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/DevOps-insin%C3%B6%C3%B6ri" },
-      {
-                "name": "DevOps Institute",
-                "url": "https://devopsinstitute.com/"
-          },
-          {
-                "name": "TEK Palkkavertailu",
-                "url": "https://tek.fi/fi/ura/palkkavertailu"
-          }
-    ],
-    related_careers: ["site-reliability-engineer","platform-engineer","backend-developer"],
-    study_length_estimate_months: 48
-  },
-
-
-
-{
-    id: "data-analyst",
-    category: "innovoija",
-    title_fi: "Data-analyytikko",
-    title_en: "Data Analyst",
-    short_description: "Data-analyytikko kerää, käsittelee ja analysoi dataa liiketoimintapäätösten tueksi sekä muuttaa raakadatan ymmärrettäviksi raporteiksi ja visualisoinneiksi. Suomessa kasvava kysyntä kaikilla aloilla – alkeistason aloituspalkka 3500€ ja nopea kehitys kohti senior-roolia Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Täysin etätyömahdollisuus ja joustava työaika.",
-    main_tasks: [
-          "Datan kerääminen ja siivous",
-          "Tilastollinen analyysi ja raportointi",
-          "Visualisointien ja dashboardien luonti",
-          "Liiketoimintasuositusten antaminen datan pohjalta",
-          "SQL-kyselyiden kirjoittaminen"
-    ],
-    impact: [
-      "Tukee Suomessa parempia liiketoimintapäätöksiä, jotka voivat tuottaa miljoonia euroja lisäarvoa",
-      "Tunnistaa kasvumahdollisuuksia datasta ja ohjaa resursseja oikeisiin kohteisiin",
-      "Tehostaa prosesseja analytiikan avulla ja säästää yrityksen aikaa sekä kustannuksia merkittävästi"
-    ],
-    education_paths: [
-          "AMK: Tietojenkäsittely, liiketalous",
-          "Yliopisto: Tilastotiede, matematiikka, tietotekniikka",
-          "Bootcampit: Data Analytics intensiivikurssit"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-          "SQL ja tietokannat",
-          "Excel ja taulukkolaskenta (edistynyt)",
-          "Visualisointityökalut (Tableau, Power BI)",
-          "Tilastollinen analyysi",
-          "Python/R-ohjelmointi"
-    ],
-    tools_tech: [
-          "SQL",
-          "Python",
-          "Tableau",
-          "Power BI",
-          "Excel",
-          "Google Analytics"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 4300,
-      range: [3500, 5500],
-      source: { name: "Tilastokeskus", url: "https://www.stat.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Data-ohjattu päätöksenteko yleistyy kaikilla aloilla.",
-      source: { name: "Business Finland", url: "https://www.businessfinland.fi/", year: 2024 }
-    },
-    entry_roles: [
-          "Junior Data Analyst",
-          "Data Analyst"
-    ],
-    career_progression: [
-          "Senior Data Analyst",
-          "Data Scientist",
-          "Analytics Manager"
-    ],
-    typical_employers: [
-      "Wolt, Supercell, Smartly.io",
-      "Reaktor, Vincit, Solita, Futurice",
-      "S-ryhmä, K-ryhmä, Veikkaus",
-      "Nordea, OP, Danske Bank",
-      "Nitor (Turku)",
-      "Oulu Health Labs"
-    ],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: "TEK – Tekniikan akateemiset / Toimihenkilöunioni",
-    useful_links: [
-      { name: "Opintopolku – Data-analyytikko", url: "https://opintopolku.fi/konfo/fi/haku/Data-analyytikko" },
-      {
-                "name": "Tilastokeskus",
-                "url": "https://www.stat.fi/"
-          },
-          {
-                "name": "Data Science Society Finland",
-                "url": "https://www.datasciencesociety.fi/"
-          },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Data-analyytikko" }],
-    related_careers: ["business-analyst","health-data-analyst"],
-    study_length_estimate_months: 36
-  },
-
-
-
-{
+  {
     id: "ux-researcher",
     category: "innovoija",
     title_fi: "UX-tutkija",
@@ -22436,10 +21533,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["ui-ux-designer","product-manager"],
     study_length_estimate_months: 60
   },
-
-
-
-{
+  {
     id: "growth-hacker",
     category: "innovoija",
     title_fi: "Kasvuasiantuntija",
@@ -22523,10 +21617,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["product-manager","data-analyst","social-media-manager"],
     study_length_estimate_months: 36
   },
-
-
-
-{
+  {
     id: "customer-success-manager",
     category: "auttaja",
     title_fi: "Asiakasmenestyksen asiantuntija",
@@ -22609,10 +21700,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["account-executive","technical-support-specialist"],
     study_length_estimate_months: 36
   },
-
-
-
-{
+  {
     id: "frontend-developer",
     category: "innovoija",
     title_fi: "Frontend-kehittäjä",
@@ -22696,10 +21784,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["ui-ux-designer","backend-developer"],
     study_length_estimate_months: 36
   },
-
-
-
-{
+  {
     id: "backend-developer",
     category: "innovoija",
     title_fi: "Backend-kehittäjä",
@@ -22784,10 +21869,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["frontend-developer","devops-engineer","api-developer"],
     study_length_estimate_months: 36
   },
-
-
-
-{
+  {
     id: "qa-engineer",
     category: "innovoija",
     title_fi: "Testausasiantuntija",
@@ -22870,10 +21952,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["backend-developer","frontend-developer"],
     study_length_estimate_months: 36
   },
-
-
-
-{
+  {
     id: "technical-writer",
     category: "luova",
     title_fi: "Tekninen kirjoittaja",
@@ -22955,10 +22034,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["copywriter","content-strategist"],
     study_length_estimate_months: 36
   },
-
-
-
-{
+  {
     id: "site-reliability-engineer",
     category: "innovoija",
     title_fi: "SRE-insinööri",
@@ -23043,10 +22119,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["devops-engineer","platform-engineer"],
     study_length_estimate_months: 48
   },
-
-
-
-{
+  {
     id: "solutions-architect",
     category: "visionaari",
     title_fi: "Ratkaisuarkkitehti",
@@ -23127,10 +22200,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["platform-engineer","devops-engineer"],
     study_length_estimate_months: 60
   },
-
-
-
-{
+  {
     id: "platform-engineer",
     category: "innovoija",
     title_fi: "Alustasuunnittelija",
@@ -23212,10 +22282,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["devops-engineer","site-reliability-engineer"],
     study_length_estimate_months: 48
   },
-
-
-
-{
+  {
     id: "api-developer",
     category: "innovoija",
     title_fi: "API-kehittäjä",
@@ -23297,11 +22364,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=API-kehitt%C3%A4j%C3%A4" }],
     related_careers: ["backend-developer","solutions-architect"],
     study_length_estimate_months: 36
-  }
-
-
-,
-
+  },
   {
     id: "content-strategist",
     category: "luova",
@@ -23370,151 +22433,6 @@ export const careersData: CareerFI[] = [
     keywords: ["sisältöstrategisti","content","markkinointi","viestintä"],
     study_length_estimate_months: 36
   },
-
-
-
-  {
-    id: "social-media-manager",
-    category: "luova",
-    title_fi: "Sosiaalisen median asiantuntija",
-    title_en: "Social Media Manager",
-    short_description: "Some-asiantuntija vastaa yrityksen sosiaalisen median strategiasta, sisällöntuotannosta ja yhteisöjen hallinnasta kaikissa kanavissa. Suomessa kysytty rooli, joka yhdistää luovuuden, datan ja yhteisöymmärryksen Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa hybridityön, vapaan sisällöntuotannon ja palkan 3200-5000€/kk.",
-    main_tasks: [
-          "Sosiaalisen median strategian suunnittelu ja toteutus",
-          "Sisällön luominen eri kanaviin (Instagram, LinkedIn, TikTok, X)",
-          "Yhteisön hallinnointi ja vuorovaikutus seuraajien kanssa",
-          "Sosiaalisen median mainonnan suunnittelu ja toteutus",
-          "Analytiikan seuranta ja raportointi"
-    ],
-    impact: [
-      "Rakentaa ja kasvattaa sosiaalisen median yhteisöjä kymmeniin tai satoihin tuhansiin seuraajiin",
-      "Luo Suomessa sisältöä, joka tavoittaa miljoonia näyttökertoja ja lisää bränditietoisuutta merkittävästi",
-      "Kasvattaa sitoutumista 40-60% strategisella yhteisöhallinnalla ja vuorovaikutuksella"
-    ],
-    education_paths: [
-          "AMK: Medianomi, tradenomi",
-          "Yliopisto: Viestintä, markkinointi",
-          "Sertifikaatit: Meta Blueprint, Google Digital Marketing"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-          "Sosiaalisen median alustat ja algoritmit",
-          "Visuaalinen sisällöntuotanto (kuvat, videot)",
-          "Copywriting ja storytelling",
-          "Community management",
-          "Paid social advertising"
-    ],
-    tools_tech: ["Meta Business Suite","Hootsuite","Canva","Adobe Creative Suite","Later","Sprout Social"],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 3800,
-      range: [3000, 5000],
-      source: { name: "MTL", url: "https://mtl.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Sosiaalinen media on keskeinen markkinointikanava, joka vaatii jatkuvasti osaajia.",
-      source: { name: "IAB Finland", url: "https://www.iab.fi/", year: 2024 }
-    },
-    entry_roles: ["Social Media Coordinator","Social Media Specialist"],
-    career_progression: ["Senior Social Media Manager","Head of Social Media","Digital Marketing Manager"],
-    typical_employers: [
-      "Wolt, Sanoma Media, Yle",
-      "Mainostoimistot ja some-toimistot",
-      "Brand-yritykset ja verkkokaupat",
-      "Influencer-markkinointitoimistot",
-      "Nitor (Turku)"
-    ],
-    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
-    union_or_CBA: "Viestinnän ammattilaiset",
-    useful_links: [
-      { name: "Opintopolku – Sosiaalisen median asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Sosiaalisen%20median%20asiantuntija" },
-      {
-                "name": "Markkinointi & Mainonta",
-                "url": "https://www.marmai.fi/"
-          },
-          {
-                "name": "IAB Finland",
-                "url": "https://www.iab.fi/"
-          },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sosiaalisen%20median%20asiantuntija" }],
-    keywords: ["some","sosiaalinen media","markkinointi","instagram"],
-    study_length_estimate_months: 36
-  },
-
-
-
-  {
-    id: "podcast-producer",
-    category: "luova",
-    title_fi: "Podcast-tuottaja",
-    title_en: "Podcast Producer",
-    short_description: "Podcast-tuottaja vastaa podcast-sarjojen konseptoinnista, tuotannosta ja julkaisemisesta sekä äänilaadun varmistamisesta. Suomessa kasvava podcast-markkina luo mahdollisuuksia – rooli yhdistää tarinankerronnan, äänitaiteen ja mediatuotannon Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa vapaan työajan, etätyön ja freelance-mahdollisuuksia.",
-    main_tasks: [
-          "Podcast-konseptien ideointi ja kehittäminen",
-          "Vieraiden varaaminen ja haastattelujen valmistelu",
-          "Äänitallenteiden nauhoitus ja editointi",
-          "Julkaisu ja jakelu podcast-alustoille",
-          "Kuulijoiden analytiikan seuranta ja sisällön optimointi"
-    ],
-    impact: [
-      "Tuottaa podcasteja, joita kuunnellaan tuhansia kertoja viikossa Suomessa ja kansainvälisesti",
-      "Luo Suomessa äänisisältöä, joka sitoutaa kuulijoita ja rakentaa uskollisia yhteisöjä",
-      "Mahdollistaa brändeille ja mediatalloille modernin tavan tavoittaa Suomessa yleisöjä audiokanavisssa"
-    ],
-    education_paths: [
-          "AMK: Medianomi (äänituotanto, journalismi)",
-          "Yliopisto: Viestintä",
-          "Itseopiskelu ja podcastaus kurssit"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-          "Ääni editointi (Audition, Audacity, Logic Pro)",
-          "Haastattelutekniikka ja tarinankerronta",
-          "Äänentallennus ja mikrofoni tekniikka",
-          "Podcast-alustojen hallinta",
-          "Markkinointi ja yleisön kasvataminen"
-    ],
-    tools_tech: ["Adobe Audition","Audacity","Anchor/Spotify for Podcasters","Buzzsprout","Riverside.fm"],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 3600,
-      range: [2800, 5000],
-      source: { name: "Journalistiliitto", url: "https://journalistiliitto.fi/fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Podcastien suosio kasvaa Suomessa, mikä luo kysyntää tuottajille.",
-      source: { name: "Kansallinen audiovisuaalinen instituutti", url: "https://kavi.fi/", year: 2024 }
-    },
-    entry_roles: ["Podcast Assistant","Audio Producer"],
-    career_progression: ["Senior Podcast Producer","Audio Director","Content Director"],
-    typical_employers: [
-      "Yle, Sanoma, Alma Media",
-      "Supla, Podme, Acast",
-      "Tuotantoyhtiöt ja mainostoimistot",
-      "Freelance ja omat projektit",
-    ],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: "Journalistiliitto",
-    useful_links: [
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=podcast" },
-      { name: "Opintopolku – Podcast-tuottaja", url: "https://opintopolku.fi/konfo/fi/haku/Podcast-tuottaja" },
-      {
-                "name": "Yle Areena Podcastit",
-                "url": "https://areena.yle.fi/podcastit"
-          },
-          {
-                "name": "Pacific Content",
-                "url": "https://www.pacificcontent.com/"
-          }
-    ],
-    keywords: ["podcast","äänituotanto","media","haastattelut"],
-    study_length_estimate_months: 24
-  },
-
-
-
   {
     id: "video-editor",
     category: "luova",
@@ -23583,9 +22501,6 @@ export const careersData: CareerFI[] = [
     keywords: ["videoleikkaus","editointi","premiere","video"],
     study_length_estimate_months: 36
   },
-
-
-
   {
     id: "community-manager",
     category: "auttaja",
@@ -23654,80 +22569,6 @@ export const careersData: CareerFI[] = [
     keywords: ["yhteisö","community","moderointi","some"],
     study_length_estimate_months: 24
   },
-
-
-
-  {
-    id: "brand-designer",
-    category: "luova",
-    title_fi: "Brändisuunnittelija",
-    title_en: "Brand Designer",
-    short_description: "Brändisuunnittelija luo ja kehittää visuaalisia brändi-identiteettejä, logoja ja designkieliä. Suomessa kysytty rooli mainostoimistoissa ja startupeissa – yhdistää strategisen ajattelun ja visuaalisen suunnittelun Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa luovan työympäristön, portfolion kasvun ja palkan 3200-5500€/kk.",
-    main_tasks: [
-          "Brändi-identiteetin suunnittelu (logo, värit, typografia)",
-          "Brand guidelinien ja visuaalisten sääntöjen laatiminen",
-          "Markkinointimateriaalien visuaalinen suunnittelu",
-          "Asiakastyöpajojen ja -esitysten fasilitointi",
-          "Visuaalisen brändi-ilmeen ylläpito ja kehittäminen"
-    ],
-    impact: [
-      "Luo Suomessa visuaalisia identiteettejä brändeille, jotka tavoittavat satoja tuhansia ihmisiä päivittäin",
-      "Erottaa yritykset kilpailijoista vahvalla brändi-ilmeellä ja nostaa brändiarvoa",
-      "Mahdollistaa johdonmukaisen visuaalisen viestinnän kaikissa kosketuspisteissä"
-    ],
-    education_paths: [
-          "AMK: Medianomi (graafinen suunnittelu)",
-          "Yliopisto: Taideteollinen korkeakoulu",
-          "Muotoilualan koulutus"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-          "Graafinen suunnittelu (Adobe Creative Suite)",
-          "Typografia ja layout",
-          "Brändistrategia ja -teoria",
-          "Asiakasymmärrys ja empatia",
-          "Esitystaidot"
-    ],
-    tools_tech: ["Adobe Illustrator","Adobe Photoshop","Figma","Adobe InDesign","Sketch"],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 3900,
-      range: [3200, 5500],
-      source: { name: "Grafia", url: "https://grafia.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Brändisuunnittelijoita tarvitaan jatkuvasti, mutta kilpailu on kovaa.",
-      source: { name: "Grafia", url: "https://grafia.fi/", year: 2024 }
-    },
-    entry_roles: ["Junior Brand Designer","Graphic Designer"],
-    career_progression: ["Senior Brand Designer","Brand Design Lead","Creative Director"],
-    typical_employers: [
-      "Mainostoimistot: hasan & partners, TBWA, Bob the Robot",
-      "Design-toimistot: Werklig, Kuudes, Everpress",
-      "Startup-yritykset ja kasvuyhtiöt",
-      "Freelance ja omat projektit",
-    ],
-    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
-    union_or_CBA: "Grafia",
-    useful_links: [
-      { name: "Opintopolku – Brändisuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Br%C3%A4ndisuunnittelija" },
-      {
-                "name": "Grafia",
-                "url": "https://grafia.fi/"
-          },
-          {
-                "name": "ORNAMO",
-                "url": "https://www.ornamo.fi/"
-          }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Br%C3%A4ndisuunnittelija" }],
-    keywords: ["brändäys","logo","graafinen suunnittelu","visuaalinen"],
-    study_length_estimate_months: 42
-  },
-
-
-
   {
     id: "copywriter",
     category: "luova",
@@ -23795,9 +22636,6 @@ export const careersData: CareerFI[] = [
     keywords: ["copywriter","mainosteksti","copywriting","tekstit"],
     study_length_estimate_months: 24
   },
-
-
-
   {
     id: "motion-graphics-designer",
     category: "luova",
@@ -23866,9 +22704,6 @@ export const careersData: CareerFI[] = [
     keywords: ["motion graphics","animaatio","after effects","video"],
     study_length_estimate_months: 36
   },
-
-
-
   {
     id: "ui-ux-designer",
     category: "luova",
@@ -23938,79 +22773,6 @@ export const careersData: CareerFI[] = [
     keywords: ["ui","ux","käyttöliittymä","figma"],
     study_length_estimate_months: 36
   },
-
-
-
-  {
-    id: "content-creator",
-    category: "luova",
-    title_fi: "Sisällöntuottaja",
-    title_en: "Content Creator",
-    short_description: "Sisällöntuottaja luo monipuolista sisältöä sosiaaliseen mediaan, blogihin ja muihin digitaalisiin kanaviin. Suomessa kasvava creator economy luo mahdollisuuksia – voit työskennellä brändeille tai rakentaa omaa yleisöä Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa luovan vapauden, joustavan työajan ja ansaintapotentiaalia.",
-    main_tasks: [
-          "Sisältöideoiden kehittäminen ja suunnittelu",
-          "Videoiden, kuvien ja tekstien tuottaminen",
-          "Sisällön editointi ja julkaisu",
-          "Yhteisön rakentaminen ja vuorovaikutus",
-          "Yhteistyö brändien kanssa"
-    ],
-    impact: [
-      "Luo Suomessa sisältöä, joka tavoittaa kymmeniä tai satoja tuhansia seuraajia sosiaalisessa mediassa",
-      "Rakentaa brändipartnerships-tuloja ja creator-taloutta Suomessa",
-      "Vaikuttaa Suomessa yleisön ostopäätöksiin ja trendeihin autenttisella sisällöllä"
-    ],
-    education_paths: [
-          "AMK: Medianomi",
-          "Yliopisto: Viestintä",
-          "Itseopiskelu ja luova kokeilu"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-          "Sisällöntuotanto (video, kuva, teksti)",
-          "Sosiaalisen median alustat",
-          "Yhteisön rakentaminen",
-          "Henkilöbrändi ja autenttisuus",
-          "Liiketoiminta- ja neuvottelutaidot"
-    ],
-    tools_tech: ["Kamerat ja mikrofonit","Adobe Creative Suite","CapCut","Canva","Sosiaalisen median alustat"],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 3000,
-      range: [1000, 8000],
-      source: { name: "Yrittäjät", url: "https://www.yrittajat.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Creator-talous kasvaa, mutta tulot vaihtelevat suuresti.",
-      source: { name: "Influencer Marketing Hub", url: "https://influencermarketinghub.com/", year: 2024 }
-    },
-    entry_roles: ["Content Creator (oma kanava)"],
-    career_progression: ["Established Creator","Creator Agency Owner","Brand Partnerships Manager"],
-    typical_employers: [
-      "Brändit yhteistyökumppaneina",
-      "Influencer-markkinointitoimistot",
-      "Mediayhtiöt ja julkaisijat",
-      "Freelance ja oma yritystoiminta",
-    ],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku – Sisällöntuottaja", url: "https://opintopolku.fi/konfo/fi/haku/Sis%C3%A4ll%C3%B6ntuottaja" },
-      {
-                "name": "Creator Economy Finland",
-                "url": "https://www.facebook.com/groups/creatoreconomyfinland"
-          },
-          {
-                "name": "Suomen Vaikuttajamarkkinoijat",
-                "url": "https://www.vaikuttajamarkkinoijat.fi/"
-          },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4ll%C3%B6ntuottaja" }],
-    keywords: ["content creator","sisällöntuottaja","influencer","some"],
-    study_length_estimate_months: 12
-  },
-
-
-
   {
     id: "influencer-marketing-specialist",
     category: "luova",
@@ -24079,9 +22841,6 @@ export const careersData: CareerFI[] = [
     keywords: ["vaikuttajamarkkinointi","influencer","some","kampanjat"],
     study_length_estimate_months: 36
   },
-
-
-
   {
     id: "digital-content-producer",
     category: "luova",
@@ -24149,12 +22908,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Digitaalinen%20sis%C3%A4lt%C3%B6tuottaja" }],
     keywords: ["sisältötuotanto","tuottaja","digitaalinen","projektinhallinta"],
     study_length_estimate_months: 36
-  }
-
-
-,
-
-{
+  },
+  {
     id: "management-consultant",
     category: "visionaari",
     title_fi: "Liikkeenjohdon konsultti",
@@ -24221,10 +22976,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["business-analyst","strategy-consultant"],
     study_length_estimate_months: 60
   },
-
-
-
-{
+  {
     id: "business-analyst",
     category: "visionaari",
     title_fi: "Liiketoiminta-analyytikko",
@@ -24292,10 +23044,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["data-analyst","product-manager","management-consultant"],
     study_length_estimate_months: 48
   },
-
-
-
-{
+  {
     id: "strategy-consultant",
     category: "visionaari",
     title_fi: "Strategiakonsultti",
@@ -24362,10 +23111,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["management-consultant","business-development-manager"],
     study_length_estimate_months: 60
   },
-
-
-
-{
+  {
     id: "sales-development-representative",
     category: "johtaja",
     title_fi: "Myyntikehitysedustaja",
@@ -24434,10 +23180,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["account-executive","customer-success-manager"],
     study_length_estimate_months: 36
   },
-
-
-
-{
+  {
     id: "account-executive",
     category: "johtaja",
     title_fi: "Vastuullinen myyntiedustaja",
@@ -24506,10 +23249,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["sales-development-representative","business-development-manager"],
     study_length_estimate_months: 36
   },
-
-
-
-{
+  {
     id: "operations-manager",
     category: "jarjestaja",
     title_fi: "Operatiivinen päällikkö",
@@ -24578,10 +23318,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["project-coordinator","business-development-manager"],
     study_length_estimate_months: 48
   },
-
-
-
-{
+  {
     id: "business-development-manager",
     category: "johtaja",
     title_fi: "Liiketoiminnan kehityspäällikkö",
@@ -24649,80 +23386,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["account-executive","strategy-consultant"],
     study_length_estimate_months: 60
   },
-
-
-
-{
-    id: "project-coordinator",
-    category: "jarjestaja",
-    title_fi: "Projektikoordinaattori",
-    title_en: "Project Coordinator",
-    short_description: "Projektikoordinaattori koordinoi projekteja, aikatauluja ja resursseja varmistaen että projektit valmistuvat ajallaan ja budjetissa. Suomessa kysytty aloitusrooli, joka tarjoaa polun projektipäällikkyteen Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa monipuolisen työn, hybridityön ja palkan 3200-4500€/kk.",
-    main_tasks: [
-          "Projektin aikataulujen ja resurssien koordinointi",
-          "Projektidokumentaation ylläpito",
-          "Tiimin viestinnän ja kokousten fasilitointi",
-          "Projektin etenemisen seuranta ja raportointi",
-          "Sidosryhmäyhteistyö"
-    ],
-    impact: [
-      "Koordinoi projekteja, jotka tuottavat satoja tuhansia euroja arvoa yritykselle",
-      "Varmistaa että projektit valmistuvat ajallaan ja budjetissa tehokkaalla koordinoinnilla",
-      "Mahdollistaa tiimien tehokkaan yhteistyön ja viestinnän"
-    ],
-    education_paths: [
-          "AMK: Tradenomi, projektihallinta",
-          "Yliopisto: Hallintotiede",
-          "Sertifikaatit: PRINCE2, PMI"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-          "Projektinhallinta ja koordinointi",
-          "Organisointitaidot ja aikataulutus",
-          "Viestintä ja sidosryhmähallinta",
-          "Dokumentointi ja raportointi",
-          "Joustavuus ja moniajo"
-    ],
-    tools_tech: ["MS Project","JIRA","Trello","Confluence","Excel","Teams"],
-    languages_required: {"fi":"C1","sv":"A2","en":"B2"},
-    salary_eur_month: {
-      median: 3400,
-      range: [2800,4200],
-      source: {"name":"Palkka.fi","url":"https://www.palkka.fi/","year":2024}
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Projektikoordinaattoreiden kysyntä on tasaista kaikilla toimialoilla.",
-      source: {"name":"PMI Finland","url":"https://pmi.fi/","year":2024}
-    },
-    entry_roles: ["Project Assistant","Junior Project Coordinator"],
-    career_progression: ["Senior Project Coordinator","Project Manager","Program Manager"],
-    typical_employers: [
-      "Konsultit: Gofore, Solita, Reaktor",
-      "Rakennusala: YIT, Skanska",
-      "IT-yritykset ja digitoimistot",
-      "Julkinen sektori ja suuryritykset",
-    ],
-    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
-    union_or_CBA: "Toimihenkilöunioni",
-    useful_links: [
-      { name: "Opintopolku – Projektikoordinaattori", url: "https://opintopolku.fi/konfo/fi/haku/Projektikoordinaattori" },
-      {
-                "name": "PMI Finland",
-                "url": "https://pmi.fi/"
-          },
-          {
-                "name": "Projekti-instituutti",
-                "url": "https://www.projekti-instituutti.fi/"
-          },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Projektikoordinaattori" }],
-    related_careers: ["operations-manager","scrum-master"],
-    study_length_estimate_months: 36
-  },
-
-
-
-{
+  {
     id: "digital-transformation-consultant",
     category: "visionaari",
     title_fi: "Digitaalisen muutoksen konsultti",
@@ -24790,10 +23454,7 @@ export const careersData: CareerFI[] = [
     related_careers: ["management-consultant","business-analyst"],
     study_length_estimate_months: 60
   },
-
-
-
-{
+  {
     id: "change-management-specialist",
     category: "visionaari",
     title_fi: "Muutosjohtamisen asiantuntija",
@@ -24861,8 +23522,6 @@ export const careersData: CareerFI[] = [
     related_careers: ["management-consultant","digital-transformation-consultant"],
     study_length_estimate_months: 60
   },
-
-
   {
     id: "mental-health-counselor",
     category: "auttaja",
@@ -24923,8 +23582,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hyvinvointivalmentaja" }],
     study_length_estimate_months: 42
   },
-
-
   {
     id: "wellness-coach",
     category: "auttaja",
@@ -24984,8 +23641,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=valmentaja" }],
     study_length_estimate_months: 24
   },
-
-
   {
     id: "occupational-health-specialist",
     category: "auttaja",
@@ -25046,8 +23701,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Terveystiedon%20analyytikko" }],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "health-data-analyst",
     category: "innovoija",
@@ -25107,68 +23760,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=terveydenhuolto" }],
     study_length_estimate_months: 60
   },
-
-
-  {
-    id: "nutrition-specialist",
-    category: "auttaja",
-    title_fi: "Ravitsemusasiantuntija",
-    title_en: "Nutrition Specialist",
-    short_description: "Ravitsemusasiantuntija neuvoo asiakkaita terveellisessä ravitsemuksessa ja auttaa saavuttamaan terveystavoitteita. Suomessa kasvava kysyntä yksityisellä sektorilla ja wellness-toimialalla Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa joustavan työajan, asiakastyön ja ansaintapotentiaalia.",
-    main_tasks: [
-              "Yksilöllinen ravitsemusneuvonta",
-              "Ravinto-ohjelmien suunnittelu",
-              "Ravitsemustilan arviointi",
-              "Ravitsemusopetusmateriaalin laatiminen",
-              "Yhteistyö terveydenhuollon kanssa"
-    ],
-    impact: [
-      "Auttaa Suomessa satoja asiakkaita vuosittain saavuttamaan terveystavoitteita ravitsemuksen avulla",
-      "Tukee Suomessa kroonisten sairauksien hallintaa ja ehkäisyä terveellisellä ruokavaliolla",
-      "Mahdollistaa terveellisemmän elämäntavan ja paremman energiatason"
-    ],
-    education_paths: [
-              "AMK/Yliopisto: Ravitsemustiede",
-              "Kliinisen ravitsemusterapeutin koulutus"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-              "Ravitsemustieteen osaaminen",
-              "Asiakasneuvonta",
-              "Ravinto-ohjelmien suunnittelu",
-              "Terveys- ja sairaustietous",
-              "Vuorovaikutustaidot"
-    ],
-    tools_tech: ["Ravitsemuslaskentaohjelmat","Asiakastietojärjestelmät","Mittauslaitteet"],
-    languages_required: { fi: "C1", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 3500,
-      range: [2800,4500],
-      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Ravitsemusneuvonnan kysyntä kasvaa terveyden ja hyvinvoinnin merkityksen kasvaessa.",
-      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
-    },
-    entry_roles: ["Junior Nutrition Specialist", "Trainee"],
-    career_progression: ["Senior Nutrition Specialist", "Lead", "Manager"],
-    typical_employers: [
-      "Terveystalo, Mehiläinen",
-      "Yksityinen vastaanotto",
-      "Urheiluseurat ja wellness-keskukset",
-      "Freelance ja ravitsemusneuvonta",
-    ],
-    work_conditions: { remote: "Hybridi", shift_work: false, travel: "vähän" },
-    union_or_CBA: "Talentia",
-    useful_links: [
-      { name: "Opintopolku – Ravitsemusasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Ravitsemusasiantuntija" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ravitsemusasiantuntija" }],
-    study_length_estimate_months: 42
-  },
-
-
   {
     id: "healthcare-coordinator",
     category: "jarjestaja",
@@ -25227,8 +23818,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=koordinaattori" }],
     study_length_estimate_months: 36
   },
-
-
   {
     id: "international-sales-manager",
     category: "johtaja",
@@ -25290,8 +23879,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Et%C3%A4tiimin%20vet%C3%A4j%C3%A4" }],
     study_length_estimate_months: 60
   },
-
-
   {
     id: "remote-team-lead",
     category: "johtaja",
@@ -25353,8 +23940,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Lokalisointiasiantuntija" }],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "localization-specialist",
     category: "luova",
@@ -25415,8 +24000,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Globaalien%20kumppanuuksien%20p%C3%A4%C3%A4llikk%C3%B6" }],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "global-partnerships-manager",
     category: "johtaja",
@@ -25478,8 +24061,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teknisen%20tuen%20asiantuntija" }],
     study_length_estimate_months: 60
   },
-
-
   {
     id: "technical-support-specialist",
     category: "auttaja",
@@ -25541,8 +24122,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=K%C3%A4%C3%A4nn%C3%B6sprojektien%20p%C3%A4%C3%A4llikk%C3%B6" }],
     study_length_estimate_months: 36
   },
-
-
   {
     id: "translation-project-manager",
     category: "jarjestaja",
@@ -25602,8 +24181,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Monimuotoisuus-%20ja%20yhdenvertaisuusasiantuntija" }],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "diversity-and-inclusion-specialist",
     category: "auttaja",
@@ -25664,8 +24241,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "social-justice-advocate",
     category: "auttaja",
@@ -25724,8 +24299,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "community-organizer",
     category: "auttaja",
@@ -25786,8 +24359,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "nonprofit-program-coordinator",
     category: "jarjestaja",
@@ -25847,8 +24418,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "human-rights-researcher",
     category: "visionaari",
@@ -25908,8 +24477,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "accessibility-consultant",
     category: "auttaja",
@@ -25970,8 +24537,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "gender-equality-advisor",
     category: "auttaja",
@@ -26030,8 +24595,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "youth-empowerment-coordinator",
     category: "auttaja",
@@ -26092,8 +24655,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "sustainable-fashion-designer",
     category: "luova",
@@ -26153,8 +24714,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "circular-economy-specialist",
     category: "ympariston-puolustaja",
@@ -26215,8 +24774,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "ethical-brand-strategist",
     category: "luova",
@@ -26277,8 +24834,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "green-building-designer",
     category: "ympariston-puolustaja",
@@ -26338,69 +24893,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
-  {
-    id: "zero-waste-consultant",
-    category: "ympariston-puolustaja",
-    title_fi: "Nollajatetavoitteen konsultti",
-    title_en: "Zero Waste Consultant",
-    short_description: "Zero waste -konsultti auttaa yrityksiä ja organisaatioita vähentämään jätettä ja siirtymään kohti nollajatetavoitetta. Suomessa kasvava kiinnostus zero waste -elämäntapaan – rooli yhdistää kestävyyden ja liiketoiminnan Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa merkityksellisen työn, vaikuttamisen ja ansaintapotentiaalia.",
-    main_tasks: [
-              "Jätekartoitusten tekeminen",
-              "Nollajätestrategioiden kehittäminen",
-              "Kierrätysprosessien optimointi",
-              "Koulutus ja tiedotus",
-              "Jätemittareiden seuranta"
-    ],
-    impact: [
-      "Auttaa Suomessa yrityksiä vähentämään jätettä 70-90% ja säästämään merkittäviä kustannuksia",
-      "Edistää Suomessa circular economy -tavoitteita ja nollajatetavoitetta",
-      "Inspiroi satoja ihmisiä ottamaan zero waste -elämäntavan käyttöön"
-    ],
-    education_paths: [
-              "Ympäristötieteet",
-              "Ympäristötekniikka"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-              "Jätteenkäsittelyn ymmärrys",
-              "Kiertotalous",
-              "Prosessisuunnittelu",
-              "Konsultointi",
-              "Koulutus"
-    ],
-    tools_tech: ["Waste tracking tools","LCA software","Data analytics"],
-    languages_required: { fi: "C1", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 3900,
-      range: [3000,5200],
-      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Jätteiden vähentäminen on keskeinen ympäristötavoite.",
-      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
-    },
-    entry_roles: ["Junior Zero Waste Consultant", "Trainee", "Coordinator"],
-    career_progression: ["Senior Zero Waste Consultant", "Lead", "Director"],
-    typical_employers: [
-      "Kiertotalousyritykset",
-      "Ravintolat ja hotellit (kestävyysneuvonta)",
-      "Helsingin kaupunki, jätehuoltoyritykset",
-      "Freelance ja omat projektit",
-    ],
-    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku – Nollajatetavoitteen konsultti", url: "https://opintopolku.fi/konfo/fi/haku/Nollajatetavoitteen%20konsultti" },
-      { name: "Hae avoimia työpaikkoja – Nollajatetavoitteen konsultti", url: "https://duunitori.fi/tyopaikat?haku=Nollajatetavoitteen%20konsultti" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
-    ],
-    study_length_estimate_months: 48
-  },
-
-
   {
     id: "sustainable-product-designer",
     category: "luova",
@@ -26461,8 +24953,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotesuunnittelija" }],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "ethical-sourcing-manager",
     category: "jarjestaja",
@@ -26523,8 +25013,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "inclusive-content-creator",
     category: "luova",
@@ -26585,70 +25073,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4ll%C3%B6ntuottaja" }],
     study_length_estimate_months: 48
   },
-
-
-  {
-    id: "cultural-sensitivity-consultant",
-    category: "auttaja",
-    title_fi: "Kulttuurisen sensitiivisyyden konsultti",
-    title_en: "Cultural Sensitivity Consultant",
-    short_description: "Kulttuurisen sensitiivisyyden konsultti auttaa yrityksiä ymmärtämään kulttuurieroja ja kommunikoimaan kulttuurisesti sopivalla tavalla. Suomessa kysyntää erityisesti kansainvälisissä yrityksissä ja kv-ekspansiossa Mahdollisuuksia erityisesti Helsingissä, Tampereella, Turussa ja Oulussa, mutta myös etätyönä ympäri Suomen. Tarjoaa kansainvälisen työn, kulttuurien ymmärtämisen ja palkan 3500-5500€/kk.",
-    main_tasks: [
-              "Kulttuurisen sensitiivisyyden arvioinnit",
-              "Koulutukset ja työpajat",
-              "Sisällön ja markkinoinnin tarkastus",
-              "Kulttuuristen konfliktien ratkaisu",
-              "Inklusiivisten käytäntöjen kehittäminen"
-    ],
-    impact: [
-      "Auttaa Suomessa yrityksiä välttämään kulttuurisia väärinymmärryksiä ja kommunikoimaan tehokkaasti globaalisti",
-      "Edistää Suomessa kulttuurista inklusiivisuutta ja monimuotoisuutta organisaatioissa",
-      "Mahdollistaa menestyksekkään suomalaisen ja kansainvälisen liiketoiminnan"
-    ],
-    education_paths: [
-              "Kulttuuriantropologia",
-              "Kulttuurintutkimus",
-              "Viestintä"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-              "Kulttuurinen kompetenssi",
-              "Konsultointi",
-              "Koulutus",
-              "Konfliktin ratkaisu",
-              "Viestintä"
-    ],
-    tools_tech: ["Training platforms","Cultural databases","Collaboration tools"],
-    languages_required: { fi: "C1", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 4200,
-      range: [3200,5500],
-      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Kulttuurisen sensitiivisyyden tarve kasvaa globalisaation myötä.",
-      source: { name: "TEM", url: "https://tem.fi/etusivu", year: 2024 }
-    },
-    entry_roles: ["Junior Cultural Sensitivity Consultant", "Trainee", "Coordinator"],
-    career_progression: ["Senior Cultural Sensitivity Consultant", "Lead", "Director"],
-    typical_employers: [
-      "Kansainväliset yritykset (Helsinki)",
-      "Konsultit: Deloitte, KPMG, Accenture",
-      "Käännöstoimistot ja lokalisointiyritykset",
-      "Freelance ja kulttuurikonsultit",
-    ],
-    work_conditions: { remote: "Hybridi", shift_work: false, travel: "jonkin verran" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku – Kulttuurisen sensitiivisyyden konsultti", url: "https://opintopolku.fi/konfo/fi/haku/Kulttuurisen%20sensitiivisyyden%20konsultti" },
-      { name: "Hae avoimia työpaikkoja – Kulttuurisen sensitiivisyyden konsultti", url: "https://duunitori.fi/tyopaikat?haku=Kulttuurisen%20sensitiivisyyden%20konsultti" },
-      { name: "Palkka.fi", url: "https://www.palkka.fi/" }
-    ],
-    study_length_estimate_months: 48
-  },
-
-
   {
     id: "representation-editor",
     category: "luova",
@@ -26709,8 +25133,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimittaja" }],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "documentary-filmmaker-social-issues",
     category: "luova",
@@ -26771,8 +25193,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "multicultural-marketing-specialist",
     category: "luova",
@@ -26833,8 +25253,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "public-art-coordinator",
     category: "luova",
@@ -26895,8 +25313,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Koordinaattori" }],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "cultural-events-producer",
     category: "jarjestaja",
@@ -26957,8 +25373,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "art-therapy-facilitator",
     category: "auttaja",
@@ -27019,8 +25433,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "community-arts-director",
     category: "johtaja",
@@ -27081,8 +25493,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-
   {
     id: "museum-education-specialist",
     category: "auttaja",
@@ -27143,96 +25553,7 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
-// === PHASE 4: PRIORITY 0 MISSING CAREERS – BATCH 1 ===
-// Added 2025-11-20: High-demand tech and business careers
-
-{
-    id: "tuotepaalliko",
-    category: "johtaja",
-    title_fi: "Tuotepäällikkö",
-    title_en: "Product Manager",
-    short_description: "Tuotepäällikkö vastaa tuotteen strategiasta, kehityksestä ja menestymisestä markkinoilla. Toimii sillanrakentajana liiketoiminnan, teknologian ja asiakkaiden välillä.",
-    main_tasks: [
-      "Tuotteen vision ja strategian määrittely",
-      "Product roadmapin ylläpito ja priorisointi",
-      "Asiakkaiden tarpeiden tutkiminen ja analysointi",
-      "Kehitystiimin ja sidosryhmien koordinointi",
-      "Tuotteen menestyksen mittaaminen ja raportointi"
-    ],
-    impact: [
-      "Varmistaa että tuotteet vastaavat todellisiin asiakastarpeisiin",
-      "Luo arvoa yritykselle ja asiakkaille",
-      "Edistää innovaatiota ja tuotekehitystä Suomessa"
-    ],
-    education_paths: [
-      "AMK: Tradenomi, Tietojenkäsittely",
-      "Yliopisto: Kauppatieteiden maisteri, Diplomi-insinööri",
-      "Bootcamp: Product Management -koulutukset"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Strateginen ajattelu",
-      "Asiakaslähtöisyys",
-      "Data-analytiikka",
-      "Sidosryhmähallinta",
-      "Priorisointi ja päätöksenteko",
-      "Viestintä"
-    ],
-    tools_tech: [
-      "Jira, Confluence",
-      "Figma, Miro",
-      "Google Analytics, Mixpanel",
-      "SQL, Excel",
-      "Product roadmap tools (Aha!, ProductBoard)"
-    ],
-    languages_required: { fi: "C1", sv: "A2", en: "C1" },
-    salary_eur_month: {
-      median: 4800,
-      range: [3800, 6500],
-      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Digitaalisten tuotteiden kehitys kasvaa, tuotepäälliköiden kysyntä vahvaa erityisesti teknologiayrityksissä.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-    },
-    entry_roles: [
-      "Junior Product Manager",
-      "Associate Product Manager",
-      "Product Owner"
-    ],
-    career_progression: [
-      "Senior Product Manager",
-      "Lead Product Manager",
-      "Group Product Manager",
-      "Head of Product",
-      "VP of Product",
-      "Chief Product Officer"
-    ],
-    transferable_skills: [
-      "strategic_thinking",
-      "stakeholder_management",
-      "data_analysis",
-      "communication",
-      "prioritization",
-      "customer_research"
-    ],
-    typical_employers: [
-      "Supercell",
-      "Wolt",
-      "Nokia",
-      "F-Secure",
-      "Reaktor",
-      "Ohjelmistoyritykset ympäri Suomen"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku – Tuotepäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tuotep%C3%A4%C3%A4llikk%C3%B6" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotep%C3%A4%C3%A4llikk%C3%B6" }],
-    study_length_estimate_months: 48
-  },{
+  {
     id: "asiakasmenestysjohtaja",
     category: "auttaja",
     title_fi: "Asiakasmenestysjohtaja",
@@ -27315,7 +25636,8 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku – Asiakasmenestysjohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Asiakasmenestysjohtaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=asiakaspalvelu" }],
     study_length_estimate_months: 36
-  },{
+  },
+  {
     id: "koneoppimisasiantuntija",
     category: "innovoija",
     title_fi: "Koneoppimisasiantuntija",
@@ -27402,94 +25724,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Liiketoiminta-analyytikko" }],
     study_length_estimate_months: 60
   },
-
-{
-    id: "liiketoiminta-analyytikko",
-    category: "jarjestaja",
-    title_fi: "Liiketoiminta-analyytikko",
-    title_en: "Business Intelligence Analyst",
-    short_description: "Liiketoiminta-analyytikko analysoi yrityksen dataa ja tuottaa raportteja päätöksenteon tueksi. Muuttaa raakadatan käytännön liiketoimintatiedoksi.",
-    main_tasks: [
-      "Datan kerääminen ja analysointi",
-      "Raporttien ja dashboardien luominen",
-      "Liiketoiminnan trendien tunnistaminen",
-      "SQL-kyselyiden kirjoittaminen",
-      "Sidosryhmien konsultointi"
-    ],
-    impact: [
-      "Tukee dataan perustuvaa päätöksentekoa",
-      "Parantaa liiketoiminnan tehokkuutta",
-      "Tunnistaa kasvumahdollisuuksia ja riskejä"
-    ],
-    education_paths: [
-      "AMK: Tradenomi, Tietojenkäsittely",
-      "Yliopisto: Kauppatieteiden maisteri",
-      "Bootcamp: Data Analytics -koulutus"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Data-analytiikka",
-      "SQL ja tietokannat",
-      "Visualisointi",
-      "Liiketoimintaymmärrys",
-      "Excel ja taulukkolaskenta",
-      "Viestintä"
-    ],
-    tools_tech: [
-      "Power BI, Tableau",
-      "SQL (PostgreSQL, MySQL)",
-      "Excel, Google Sheets",
-      "Python (Pandas)",
-      "ETL-työkalut"
-    ],
-    languages_required: { fi: "C1", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 4200,
-      range: [3400, 5800],
-      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Dataan perustuva päätöksenteko kasvaa, BI-analyytikkoja tarvitaan kaikilla toimialoilla.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-    },
-    entry_roles: [
-      "Junior BI Analyst",
-      "Data Analyst",
-      "Reporting Specialist"
-    ],
-    career_progression: [
-      "Senior BI Analyst",
-      "Lead BI Analyst",
-      "BI Manager",
-      "Head of Analytics",
-      "Data Architect"
-    ],
-    progression_from: ["data-analyytikko", "raportointi-asiantuntija"],
-    transferable_skills: [
-      "data_analysis",
-      "sql",
-      "visualization",
-      "business_acumen",
-      "reporting",
-      "problem_solving"
-    ],
-    typical_employers: [
-      "Ohjelmistoyritykset",
-      "Kaupan ketjut (S-ryhmä, K-ryhmä)",
-      "Pankit ja vakuutusyhtiöt",
-      "Konsultointiyritykset",
-      "Kaikki suuret yritykset"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku – Liiketoiminta-analyytikko", url: "https://opintopolku.fi/konfo/fi/haku/Liiketoiminta-analyytikko" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=analyytikko" }],
-    study_length_estimate_months: 36
-  },
-
-{
+  {
     id: "kettera-valmentaja",
     category: "johtaja",
     title_fi: "Agile-valmentaja",
@@ -27573,7 +25808,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Agile%20Coach" }
     ],
     study_length_estimate_months: 24
-  },{
+  },
+  {
     id: "pilvipalveluarkkitehti",
     category: "innovoija",
     title_fi: "Pilvipalveluarkkitehti",
@@ -27659,8 +25895,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kyberturvallisuusanalyytikko" }],
     study_length_estimate_months: 60
   },
-
-{
+  {
     id: "kyberturvallisuusanalyytikko",
     category: "innovoija",
     title_fi: "Kyberturvallisuusanalyytikko",
@@ -27745,8 +25980,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tekstinkirjoittaja" }],
     study_length_estimate_months: 48
   },
-
-{
+  {
     id: "tekstinkirjoittaja",
     category: "luova",
     title_fi: "Tekstinkirjoittaja",
@@ -27829,8 +26063,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=kirjoittaja" }],
     study_length_estimate_months: 24
   },
-
-{
+  {
     id: "yrityskouluttaja",
     category: "auttaja",
     title_fi: "Yrityskouluttaja",
@@ -27914,8 +26147,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=kouluttaja" }],
     study_length_estimate_months: 36
   },
-
-{
+  {
     id: "toimintaterapeutti",
     category: "auttaja",
     title_fi: "Toimintaterapeutti",
@@ -27997,96 +26229,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimintaterapeutti" }],
     study_length_estimate_months: 42
   },
-
-// === PHASE 4: PRIORITY 0 MISSING CAREERS – BATCH 2 ===
-// Added 2025-11-20: Modern and emerging careers
-
-{
-    id: "kasvuhakkeri",
-    category: "visionaari",
-    title_fi: "Kasvuasiantuntija",
-    title_en: "Growth Hacker",
-    short_description: "Kasvuhakkeri yhdistää markkinoinnin, datan ja teknologian kasvattaakseen yrityksen käyttäjämääriä ja myyntiä. Keskittyy nopeaan kokeiluun ja mitattaviin tuloksiin.",
-    main_tasks: [
-      "Kasvukokeilujen suunnittelu ja toteutus",
-      "Konversio-optimointi ja A/B-testaus",
-      "Analytiikan seuranta ja raportointi",
-      "Virallisuuden ja suosittelun hyödyntäminen",
-      "Automaation rakentaminen"
-    ],
-    impact: [
-      "Kasvattaa yrityksen käyttäjämääriä eksponentiaalisesti",
-      "Optimoi markkinointibudjetin käyttöä",
-      "Luo dataan perustuvia kasvustrategioita"
-    ],
-    education_paths: [
-      "AMK: Tradenomi (markkinointi/digitaalinen liiketoiminta)",
-      "Yliopisto: KTM, Viestintä",
-      "Kokemus: Digitaalinen markkinointi + data-analytiikka"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Data-analytiikka",
-      "Digitaalinen markkinointi",
-      "Kokeellisuus ja testaus",
-      "Analytiikkatyökalut",
-      "Automaatio",
-      "Luovuus"
-    ],
-    tools_tech: [
-      "Google Analytics, Mixpanel",
-      "A/B-testaustyökalut (Optimizely)",
-      "Marketing automation (HubSpot, Mailchimp)",
-      "SQL, Python",
-      "Facebook/Google Ads"
-    ],
-    languages_required: { fi: "C1", sv: "A2", en: "C1" },
-    salary_eur_month: {
-      median: 4500,
-      range: [3500, 6500],
-      source: { name: "Palkka.fi", url: "https://www.palkka.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Startup- ja kasvuyritykset tarvitsevat growth hacking -osaamista, kysyntä vahvaa.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-    },
-    entry_roles: [
-      "Junior Growth Hacker",
-      "Growth Marketing Specialist",
-      "Digital Marketing Analyst"
-    ],
-    career_progression: [
-      "Senior Growth Hacker",
-      "Head of Growth",
-      "VP of Growth",
-      "Chief Growth Officer"
-    ],
-    transferable_skills: [
-      "data_analysis",
-      "digital_marketing",
-      "experimentation",
-      "analytics",
-      "automation",
-      "creativity"
-    ],
-    typical_employers: [
-      "Startupit",
-      "Kasvuyritykset",
-      "SaaS-yritykset",
-      "E-commerce yritykset",
-      "Digitoimistot"
-    ],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku – Kasvuasiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Kasvuasiantuntija" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=ESG-analyytikko" }],
-    study_length_estimate_months: 24
-  },
-
-{
+  {
     id: "esg-analyytikko",
     category: "ympariston-puolustaja",
     title_fi: "ESG-analyytikko",
@@ -28169,8 +26312,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=analyytikko" }],
     study_length_estimate_months: 48
   },
-
-{
+  {
     id: "brandijohtaja",
     category: "johtaja",
     title_fi: "Brändijohtaja",
@@ -28253,7 +26395,8 @@ export const careersData: CareerFI[] = [
       { name: "Opintopolku – Brändijohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Br%C3%A4ndijohtaja" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=markkinointi" }],
     study_length_estimate_months: 48
-  },{
+  },
+  {
     id: "3d-taiteilija",
     category: "luova",
     title_fi: "3D-taiteilija",
@@ -28338,8 +26481,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=3D" }],
     study_length_estimate_months: 36
   },
-
-{
+  {
     id: "liikkuvan-kuvan-suunnittelija",
     category: "luova",
     title_fi: "Liikkuvan kuvan suunnittelija",
@@ -28424,8 +26566,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6ajoneuvoasentaja" }],
     study_length_estimate_months: 24
   },
-
-{
+  {
     id: "sahkoajoneuvoasentaja",
     category: "rakentaja",
     title_fi: "Sähköajoneuvoasentaja",
@@ -28508,7 +26649,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6ajoneuvoasentaja" }],
     study_length_estimate_months: 36
   },
-
   {
     id: "drone-ohjaaja",
     category: "innovoija",
@@ -28593,7 +26733,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 6
   },
-
   {
     id: "3d-tulostusasiantuntija",
     category: "innovoija",
@@ -28677,7 +26816,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 24
   },
-
   {
     id: "aurinkopaneeliasentaja",
     category: "rakentaja",
@@ -28760,7 +26898,8 @@ export const careersData: CareerFI[] = [
       "electrical_measurements"
     ],
     study_length_estimate_months: 36
-  },{
+  },
+  {
     id: "terveysvalmentaja",
     category: "auttaja",
     title_fi: "Terveysvalmentaja",
@@ -28840,7 +26979,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 42
   },
-
   {
     id: "verkkokurssien-luoja",
     category: "luova",
@@ -28922,7 +27060,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 36
   },
-
   {
     id: "oppimis-ja-kehitysasiantuntija",
     category: "auttaja",
@@ -29007,7 +27144,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
   {
     id: "myynti-insinoori",
     category: "johtaja",
@@ -29092,7 +27228,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 60
   },
-
   {
     id: "muutosjohtamiskonsultti",
     category: "johtaja",
@@ -29175,7 +27310,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 60
   },
-
   {
     id: "teknologiajohtaja-cto",
     category: "johtaja",
@@ -29228,7 +27362,6 @@ export const careersData: CareerFI[] = [
     keywords: ["CTO", "teknologia", "strategia"],
     study_length_estimate_months: 72
   },
-
   {
     id: "talousjohtaja-cfo",
     category: "johtaja",
@@ -29281,7 +27414,6 @@ export const careersData: CareerFI[] = [
     keywords: ["CFO", "talous", "strategia"],
     study_length_estimate_months: 72
   },
-
   {
     id: "henkilostojohtaja-chro",
     category: "johtaja",
@@ -29334,7 +27466,6 @@ export const careersData: CareerFI[] = [
     keywords: ["CHRO", "henkilöstö", "strategia"],
     study_length_estimate_months: 72
   },
-
   {
     id: "operatiivinen-johtaja-coo",
     category: "johtaja",
@@ -29386,7 +27517,6 @@ export const careersData: CareerFI[] = [
     keywords: ["COO", "operaatiot", "toiminta"],
     study_length_estimate_months: 72
   },
-
   {
     id: "markkinointijohtaja-cmo",
     category: "johtaja",
@@ -29439,7 +27569,6 @@ export const careersData: CareerFI[] = [
     keywords: ["CMO", "markkinointi", "brändi"],
     study_length_estimate_months: 72
   },
-
   {
     id: "tietoturvajohtaja-ciso",
     category: "johtaja",
@@ -29492,7 +27621,6 @@ export const careersData: CareerFI[] = [
     keywords: ["CISO", "tietoturva", "kyberturvallisuus"],
     study_length_estimate_months: 72
   },
-
   {
     id: "tietohallintojohtaja-cio",
     category: "johtaja",
@@ -29545,7 +27673,6 @@ export const careersData: CareerFI[] = [
     keywords: ["CIO", "IT-strategia", "digitalisaatio"],
     study_length_estimate_months: 72
   },
-
   {
     id: "vastuullisuusjohtaja-cso",
     category: "johtaja",
@@ -29597,7 +27724,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vastuullisuusjohtaja%20(CSO)" }],
     keywords: ["CSO", "vastuullisuus", "ESG"],
     study_length_estimate_months: 72
-  },{
+  },
+  {
     id: "tuotantojohtaja",
     category: "johtaja",
     title_fi: "Tuotantojohtaja",
@@ -29648,7 +27776,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tuotanto", "johtaminen", "teollisuus"],
     study_length_estimate_months: 72
   },
-
   {
     id: "kehitysjohtaja",
     category: "johtaja",
@@ -29700,7 +27827,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kehitys", "innovaatio", "strategia"],
     study_length_estimate_months: 72
   },
-
   {
     id: "myyntijohtaja",
     category: "johtaja",
@@ -29752,7 +27878,6 @@ export const careersData: CareerFI[] = [
     keywords: ["myynti", "johtaminen", "asiakashallinta"],
     study_length_estimate_months: 60
   },
-
   {
     id: "toimitusketjujohtaja",
     category: "johtaja",
@@ -29805,7 +27930,6 @@ export const careersData: CareerFI[] = [
     keywords: ["toimitusketju", "logistiikka", "optimointi"],
     study_length_estimate_months: 72
   },
-
   {
     id: "laatujohtaja",
     category: "johtaja",
@@ -29858,7 +27982,6 @@ export const careersData: CareerFI[] = [
     keywords: ["laatu", "prosessit", "auditointi"],
     study_length_estimate_months: 60
   },
-
   {
     id: "viestintajohtaja",
     category: "johtaja",
@@ -29910,7 +28033,6 @@ export const careersData: CareerFI[] = [
     keywords: ["viestintä", "media", "strategia"],
     study_length_estimate_months: 72
   },
-
   {
     id: "tutkimusjohtaja",
     category: "johtaja",
@@ -29962,7 +28084,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tutkimus", "tiede", "johtaminen"],
     study_length_estimate_months: 96
   },
-
   {
     id: "asiakaspalvelujohtaja",
     category: "johtaja",
@@ -30015,59 +28136,6 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakaspalvelu", "asiakaskokemus", "johtaminen"],
     study_length_estimate_months: 60
   },
-
-  {
-    id: "tuotantopaalliko",
-    category: "johtaja",
-    title_fi: "Tuotantopäällikkö",
-    title_en: "Production Manager",
-    short_description: "Tuotantopäällikkö vastaa tuotannon sujuvuudesta ja tehokkuudesta. Työ vaatii teknistä osaamista ja johtamistaitoja.",
-    main_tasks: [
-      "Tuotannon suunnittelu ja ohjaus",
-      "Tuotantotiimin johtaminen",
-      "Laadunvalvonta",
-      "Tuotantokustannusten hallinta",
-      "Prosessien kehittäminen"
-    ],
-    education_paths: [
-      "Korkeakoulututkinto: Tekniikan tutkinto",
-      "Tuotannonohjauksen koulutus",
-      "Kokemus tuotannosta"
-    ],
-    core_skills: [
-      "Tuotannonohjaus",
-      "Prosessijohtaminen",
-      "Laadunhallinta",
-      "Tiimien johtaminen",
-      "Lean-menetelmät"
-    ],
-    tools_tech: [
-      "Tuotannonohjausjärjestelmät",
-      "ERP-järjestelmät",
-      "Lean-työkalut"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "B2" },
-    salary_eur_month: {
-      median: 5800,
-      range: [4800, 7500],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Teollisuuden jatkuva tarve tuotantojohtamiselle ylläpitää kysyntää.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-    },
-    entry_roles: ["Tuotantoinsinööri", "Vuoromestari"],
-    career_progression: ["Tuotantojohtaja", "Tehtaanjohtaja"],
-    typical_employers: ["Teollisuusyritykset", "Tuotantolaitokset"],
-    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
-    useful_links: [
-      { name: "Opintopolku – Tuotantopäällikkö", url: "https://opintopolku.fi/konfo/fi/haku/Tuotantop%C3%A4%C3%A4llikk%C3%B6" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tuotantop%C3%A4%C3%A4llikk%C3%B6" }],
-    keywords: ["tuotanto", "teollisuus", "johtaminen"],
-    study_length_estimate_months: 60
-  },
-
   {
     id: "hankintajohtaja",
     category: "johtaja",
@@ -30119,7 +28187,6 @@ export const careersData: CareerFI[] = [
     keywords: ["hankinta", "neuvottelu", "strategia"],
     study_length_estimate_months: 60
   },
-
   {
     id: "liiketoimintajohtaja-alue",
     category: "johtaja",
@@ -30171,7 +28238,6 @@ export const careersData: CareerFI[] = [
     keywords: ["alue", "liiketoiminta", "johtaminen"],
     study_length_estimate_months: 60
   },
-
   {
     id: "projektijohtaja",
     category: "johtaja",
@@ -30223,7 +28289,6 @@ export const careersData: CareerFI[] = [
     keywords: ["projektinhallinta", "johtaminen", "strategia"],
     study_length_estimate_months: 60
   },
-
   {
     id: "ohjelmistojohtaja",
     category: "johtaja",
@@ -30276,7 +28341,6 @@ export const careersData: CareerFI[] = [
     keywords: ["ohjelmistokehitys", "teknologia", "johtaminen"],
     study_length_estimate_months: 60
   },
-
   {
     id: "tietohallintopaalliko",
     category: "johtaja",
@@ -30328,7 +28392,6 @@ export const careersData: CareerFI[] = [
     keywords: ["IT", "tietohallinto", "johtaminen"],
     study_length_estimate_months: 60
   },
-
   {
     id: "strategiajohtaja",
     category: "johtaja",
@@ -30381,7 +28444,6 @@ export const careersData: CareerFI[] = [
     keywords: ["strategia", "analyysi", "johtaminen"],
     study_length_estimate_months: 72
   },
-
   {
     id: "yksikkojohtaja",
     category: "johtaja",
@@ -30433,7 +28495,6 @@ export const careersData: CareerFI[] = [
     keywords: ["yksikkö", "johtaminen", "operatiivinen"],
     study_length_estimate_months: 60
   },
-
   {
     id: "liiketoiminnan-kehitysjohtaja",
     category: "johtaja",
@@ -30485,7 +28546,6 @@ export const careersData: CareerFI[] = [
     keywords: ["liiketoiminta", "kehitys", "kasvustrategia"],
     study_length_estimate_months: 72
   },
-
   {
     id: "palvelujohtaja",
     category: "johtaja",
@@ -30537,7 +28597,6 @@ export const careersData: CareerFI[] = [
     keywords: ["palvelu", "asiakaskokemus", "johtaminen"],
     study_length_estimate_months: 60
   },
-
   {
     id: "turvallisuusjohtaja",
     category: "johtaja",
@@ -30590,7 +28649,6 @@ export const careersData: CareerFI[] = [
     keywords: ["turvallisuus", "riskienhallinta", "kriisinhallinta"],
     study_length_estimate_months: 60
   },
-
   {
     id: "tuotepaallikko-senior",
     category: "johtaja",
@@ -30643,7 +28701,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tuote", "strategia", "kehitys"],
     study_length_estimate_months: 60
   },
-
   {
     id: "kansainvalisen-liiketoiminnan-johtaja",
     category: "johtaja",
@@ -30696,7 +28753,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kansainvälinen", "vienti", "liiketoiminta"],
     study_length_estimate_months: 72
   },
-
   {
     id: "ravintola-johtaja",
     category: "johtaja",
@@ -30748,7 +28804,6 @@ export const careersData: CareerFI[] = [
     keywords: ["ravintola", "asiakaspalvelu", "johtaminen"],
     study_length_estimate_months: 42
   },
-
   {
     id: "hotellinjohtaja",
     category: "johtaja",
@@ -30800,7 +28855,6 @@ export const careersData: CareerFI[] = [
     keywords: ["hotelli", "matkailu", "asiakaspalvelu"],
     study_length_estimate_months: 42
   },
-
   {
     id: "myymala-paalliko",
     category: "johtaja",
@@ -30852,7 +28906,6 @@ export const careersData: CareerFI[] = [
     keywords: ["myymälä", "kauppa", "myynti"],
     study_length_estimate_months: 36
   },
-
   {
     id: "tehtaanjohtaja",
     category: "johtaja",
@@ -30905,7 +28958,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tehdas", "tuotanto", "teollisuus"],
     study_length_estimate_months: 72
   },
-
   {
     id: "rakennuspaallikko",
     category: "johtaja",
@@ -30957,7 +29009,6 @@ export const careersData: CareerFI[] = [
     keywords: ["rakentaminen", "projekti", "työmaa"],
     study_length_estimate_months: 42
   },
-
   {
     id: "sairaalan-osastonhoitaja",
     category: "johtaja",
@@ -31010,7 +29061,6 @@ export const careersData: CareerFI[] = [
     keywords: ["hoitotyö", "osasto", "terveydenhuolto"],
     study_length_estimate_months: 54
   },
-
   {
     id: "koulun-rehtori",
     category: "johtaja",
@@ -31062,7 +29112,6 @@ export const careersData: CareerFI[] = [
     keywords: ["koulu", "pedagogiikka", "koulutus"],
     study_length_estimate_months: 66
   },
-
   {
     id: "varasto-paalliko",
     category: "johtaja",
@@ -31114,7 +29163,6 @@ export const careersData: CareerFI[] = [
     keywords: ["varasto", "logistiikka", "toimitusketju"],
     study_length_estimate_months: 42
   },
-
   {
     id: "huoltopaalliko",
     category: "johtaja",
@@ -31166,7 +29214,6 @@ export const careersData: CareerFI[] = [
     keywords: ["huolto", "kunnossapito", "tekniikka"],
     study_length_estimate_months: 42
   },
-
   {
     id: "laboratoriopaallikko",
     category: "johtaja",
@@ -31218,7 +29265,6 @@ export const careersData: CareerFI[] = [
     keywords: ["laboratorio", "tutkimus", "laatu"],
     study_length_estimate_months: 72
   },
-
   {
     id: "digitalisaatiojohtaja",
     category: "johtaja",
@@ -31270,7 +29316,6 @@ export const careersData: CareerFI[] = [
     keywords: ["digitalisaatio", "transformaatio", "teknologia"],
     study_length_estimate_months: 72
   },
-
   {
     id: "datajohtaja",
     category: "johtaja",
@@ -31323,7 +29368,6 @@ export const careersData: CareerFI[] = [
     keywords: ["data", "analytiikka", "tiedonhallinta"],
     study_length_estimate_months: 72
   },
-
   {
     id: "compliance-johtaja",
     category: "johtaja",
@@ -31376,7 +29420,6 @@ export const careersData: CareerFI[] = [
     keywords: ["compliance", "säännöstenmukaisuus", "riskienhallinta"],
     study_length_estimate_months: 72
   },
-
   {
     id: "asiakaskokemusjohtaja",
     category: "johtaja",
@@ -31429,7 +29472,6 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakaskokemus", "palvelumuotoilu", "CX"],
     study_length_estimate_months: 72
   },
-
   {
     id: "tekoalyjohtaja",
     category: "johtaja",
@@ -31482,7 +29524,6 @@ export const careersData: CareerFI[] = [
     keywords: ["AI", "tekoäly", "koneoppiminen"],
     study_length_estimate_months: 72
   },
-
   {
     id: "kulttuurijohtaja",
     category: "johtaja",
@@ -31534,7 +29575,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kulttuuri", "työhyvinvointi", "organisaatio"],
     study_length_estimate_months: 72
   },
-
   {
     id: "portfolio-johtaja",
     category: "johtaja",
@@ -31587,7 +29627,6 @@ export const careersData: CareerFI[] = [
     keywords: ["portfolio", "projektit", "strategia"],
     study_length_estimate_months: 72
   },
-
   {
     id: "jalleenmyyntijohtaja",
     category: "johtaja",
@@ -31640,7 +29679,6 @@ export const careersData: CareerFI[] = [
     keywords: ["jälleenmyynti", "kanavat", "kumppanuudet"],
     study_length_estimate_months: 60
   },
-
   {
     id: "energiajohtaja",
     category: "johtaja",
@@ -31693,7 +29731,6 @@ export const careersData: CareerFI[] = [
     keywords: ["energia", "tehokkuus", "kestävyys"],
     study_length_estimate_months: 60
   },
-
   {
     id: "vastuullisuuspaalliko",
     category: "johtaja",
@@ -31745,7 +29782,6 @@ export const careersData: CareerFI[] = [
     keywords: ["vastuullisuus", "kestävyys", "ESG"],
     study_length_estimate_months: 60
   },
-
   {
     id: "franchising-johtaja",
     category: "johtaja",
@@ -31798,7 +29834,6 @@ export const careersData: CareerFI[] = [
     keywords: ["franchising", "verkosto", "liiketoiminta"],
     study_length_estimate_months: 60
   },
-
   {
     id: "asiakkuusjohtaja",
     category: "johtaja",
@@ -31850,7 +29885,6 @@ export const careersData: CareerFI[] = [
     keywords: ["asiakkuudet", "avainasiakkaat", "account management"],
     study_length_estimate_months: 60
   },
-
   {
     id: "transformaatiojohtaja",
     category: "johtaja",
@@ -31903,7 +29937,6 @@ export const careersData: CareerFI[] = [
     keywords: ["transformaatio", "muutos", "strategia"],
     study_length_estimate_months: 72
   },
-
   {
     id: "kiinteistojohtaja",
     category: "johtaja",
@@ -31956,7 +29989,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kiinteistö", "portfolio", "johtaminen"],
     study_length_estimate_months: 60
   },
-
   {
     id: "opetusjohtaja",
     category: "johtaja",
@@ -32009,7 +30041,6 @@ export const careersData: CareerFI[] = [
     keywords: ["opetus", "pedagogiikka", "koulutus"],
     study_length_estimate_months: 66
   },
-
   {
     id: "tekninen-johtaja",
     category: "johtaja",
@@ -32061,7 +30092,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tekninen", "arkkitehtuuri", "kehitys"],
     study_length_estimate_months: 72
   },
-
   {
     id: "analytiikkajohtaja",
     category: "johtaja",
@@ -32113,7 +30143,6 @@ export const careersData: CareerFI[] = [
     keywords: ["analytiikka", "BI", "data"],
     study_length_estimate_months: 72
   },
-
   {
     id: "yrittajyysjohtaja",
     category: "johtaja",
@@ -32166,7 +30195,6 @@ export const careersData: CareerFI[] = [
     keywords: ["yrittäjyys", "innovaatio", "startup"],
     study_length_estimate_months: 60
   },
-
   {
     id: "innovaatiopaalliko",
     category: "visionaari",
@@ -32241,7 +30269,8 @@ export const careersData: CareerFI[] = [
     ],
     keywords: ["tulevaisuus", "trendit", "ennakointi"],
     study_length_estimate_months: 72
-  },{
+  },
+  {
     id: "innovaatiokonsultti",
     category: "visionaari",
     title_fi: "Innovaatiokonsultti",
@@ -32293,7 +30322,6 @@ export const careersData: CareerFI[] = [
     keywords: ["innovaatio", "konsultointi", "kehitys"],
     study_length_estimate_months: 60
   },
-
   {
     id: "visiointi-asiantuntija",
     category: "visionaari",
@@ -32346,7 +30374,6 @@ export const careersData: CareerFI[] = [
     keywords: ["visio", "strategia", "fasilitointi"],
     study_length_estimate_months: 72
   },
-
   {
     id: "liiketoimintamallisuunnittelija",
     category: "visionaari",
@@ -32399,7 +30426,6 @@ export const careersData: CareerFI[] = [
     keywords: ["liiketoimintamalli", "BMC", "innovaatio"],
     study_length_estimate_months: 60
   },
-
   {
     id: "ekosuunnittelija",
     category: "visionaari",
@@ -32452,60 +30478,6 @@ export const careersData: CareerFI[] = [
     keywords: ["ekosuunnittelu", "kestävyys", "kiertotalous"],
     study_length_estimate_months: 48
   },
-
-  {
-    id: "megatrendien-analyytikko",
-    category: "visionaari",
-    title_fi: "Megatrendien analyytikko",
-    title_en: "Megatrend Analyst",
-    short_description: "Megatrendien analyytikko tunnistaa ja analysoi globaaleja megatrendejä. Työ vaatii analyyttistä ajattelua ja laaja-alaista ymmärrystä.",
-    main_tasks: [
-      "Megatrendien tunnistaminen",
-      "Trendien vaikutusten analysointi",
-      "Raporttien laatiminen",
-      "Ennusteiden tekeminen",
-      "Tiedon visualisointi"
-    ],
-    education_paths: [
-      "Ylempi korkeakoulututkinto: Yhteiskuntatieteet tai kauppatieteet",
-      "Tulevaisuudentutkimuksen opinnot",
-      "Analytiikkaosaaminen"
-    ],
-    core_skills: [
-      "Trendien analysointi",
-      "Tutkimus",
-      "Analytiikka",
-      "Ennustaminen",
-      "Raportointi"
-    ],
-    tools_tech: [
-      "Analyysityökalut",
-      "Visualisointiohjelmistot",
-      "Tietokannat"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "C2" },
-    salary_eur_month: {
-      median: 4800,
-      range: [3800, 6500],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Megatrendien ymmärtämisen tarve lisää kysyntää analyytikoille.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-    },
-    entry_roles: ["Tutkija", "Analyytikko"],
-    career_progression: ["Tulevaisuustutkija", "Strategiajohtaja"],
-    typical_employers: ["Tutkimuslaitokset", "Konsulttiyritykset", "Think tankit"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
-    useful_links: [
-      { name: "Opintopolku – Megatrendien analyytikko", url: "https://opintopolku.fi/konfo/fi/haku/Megatrendien%20analyytikko" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vaikuttavuusanalyytikko" }],
-    keywords: ["megatrendit", "analyysi", "tulevaisuus"],
-    study_length_estimate_months: 72
-  },
-
   {
     id: "yhteiskuntasuunnittelija",
     category: "visionaari",
@@ -32558,7 +30530,6 @@ export const careersData: CareerFI[] = [
     keywords: ["yhteiskunta", "suunnittelu", "tulevaisuus"],
     study_length_estimate_months: 72
   },
-
   {
     id: "skenaariosuunnittelija",
     category: "visionaari",
@@ -32611,7 +30582,6 @@ export const careersData: CareerFI[] = [
     keywords: ["skenaariot", "tulevaisuus", "strategia"],
     study_length_estimate_months: 72
   },
-
   {
     id: "vaikuttavuusanalyytikko",
     category: "visionaari",
@@ -32664,7 +30634,6 @@ export const careersData: CareerFI[] = [
     keywords: ["vaikuttavuus", "mittaaminen", "arviointi"],
     study_length_estimate_months: 72
   },
-
   {
     id: "kestavan-kehityksen-strategisti",
     category: "visionaari",
@@ -32717,7 +30686,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kestävyys", "strategia", "ESG"],
     study_length_estimate_months: 72
   },
-
   {
     id: "sosiaalisen-innovaation-asiantuntija",
     category: "visionaari",
@@ -32770,7 +30738,6 @@ export const careersData: CareerFI[] = [
     keywords: ["sosiaalinen innovaatio", "yhteiskehittäminen", "vaikuttavuus"],
     study_length_estimate_months: 72
   },
-
   {
     id: "kiertotaloussuunnittelija",
     category: "visionaari",
@@ -32823,7 +30790,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kiertotalous", "kestävyys", "innovaatio"],
     study_length_estimate_months: 60
   },
-
   {
     id: "digitaalisen-transformaation-asiantuntija",
     category: "visionaari",
@@ -32876,7 +30842,6 @@ export const careersData: CareerFI[] = [
     keywords: ["digitalisaatio", "transformaatio", "muutos"],
     study_length_estimate_months: 60
   },
-
   {
     id: "smart-city-suunnittelija",
     category: "visionaari",
@@ -32929,7 +30894,6 @@ export const careersData: CareerFI[] = [
     keywords: ["älykaupunki", "smart city", "digitalisaatio"],
     study_length_estimate_months: 60
   },
-
   {
     id: "palvelumuotoilija-visionaari",
     category: "visionaari",
@@ -32982,7 +30946,6 @@ export const careersData: CareerFI[] = [
     keywords: ["palvelumuotoilu", "UX", "käyttäjäkokemus"],
     study_length_estimate_months: 48
   },
-
   {
     id: "kestavan-rahoituksen-asiantuntija",
     category: "visionaari",
@@ -33035,7 +30998,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kestävä rahoitus", "ESG", "vastuullinen sijoittaminen"],
     study_length_estimate_months: 72
   },
-
   {
     id: "tiedeviestija-tulevaisuus",
     category: "visionaari",
@@ -33088,7 +31050,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tiedeviestintä", "tulevaisuus", "popularisaatio"],
     study_length_estimate_months: 72
   },
-
   {
     id: "ruokajarjestelman-suunnittelija",
     category: "visionaari",
@@ -33141,7 +31102,6 @@ export const careersData: CareerFI[] = [
     keywords: ["ruokajärjestelmä", "kestävyys", "ruokaturva"],
     study_length_estimate_months: 60
   },
-
   {
     id: "tyoelaman-tulevaisuusasiantuntija",
     category: "visionaari",
@@ -33194,267 +31154,7 @@ export const careersData: CareerFI[] = [
     keywords: ["työelämä", "tulevaisuus", "HR"],
     study_length_estimate_months: 72
   },
-{
-  id: "regeneratiivisen-talouden-suunnittelija",
-  category: "visionaari",
-  title_fi: "Regeneratiivisen talouden suunnittelija",
-  title_en: "Regenerative Economy Designer",
-  short_description: "Regeneratiivisen talouden suunnittelija kehittää talousratkaisuja jotka palauttavat ekosysteemejä. Työ vaatii visionääristä ajattelua ja järjestelmäymmärrystä.",
-  main_tasks: [
-    "Regeneratiivisten talouskonseptien kehittäminen",
-    "Ekosysteemipalvelujen integrointi",
-    "Liiketoimintamallien innovointi",
-    "Vaikutusten mittaaminen",
-    "Sidosryhmäyhteistyö"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Ympäristötieteet tai taloustieteet",
-    "Regeneratiivisen talouden opinnot",
-    "Ekologisen talouden osaaminen"
-  ],
-  core_skills: [
-    "Regeneratiivinen talous",
-    "Järjestelmäajattelu",
-    "Ekologinen talous",
-    "Liiketoimintamallisuunnittelu",
-    "Vaikuttavuuden arviointi"
-  ],
-  tools_tech: [
-    "Ekosysteemipalvelujen arviointi",
-    "Vaikuttavuusmittarit",
-    "Liiketoimintasuunnittelutyökalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "B2" },
-  salary_eur_month: {
-    median: 4800,
-    range: [4000, 6500],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Regeneratiivisen talouden merkityksen kasvu luo kysyntää suunnittelijoille.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["Kestävyysasiantuntija", "Taloussuunnittelija"],
-  career_progression: ["Kestävyysjohtaja", "Strategiajohtaja"],
-  typical_employers: ["Konsulttiyritykset", "Järjestöt", "Innovaatioyritykset"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  useful_links: [
-      { name: "Opintopolku – Regeneratiivisen talouden suunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Regeneratiivisen%20talouden%20suunnittelija" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ilmastonmuutoksen%20sopeutumissuunnittelija" }],
-    keywords: ["regeneratiivinen talous", "kestävyys", "ekosysteemi"],
-  study_length_estimate_months: 72
-},
-{
-  id: "datavirtojen-arkkitehti",
-  category: "visionaari",
-  title_fi: "Datavirtojen arkkitehti",
-  title_en: "Data Streams Architect",
-  short_description: "Datavirtojen arkkitehti suunnittelee tulevaisuuden dataratkaisuja. Työ vaatii teknologiaosaamista ja visionääristä ajattelua.",
-  main_tasks: [
-    "Datavirta-arkkitehtuurien suunnittelu",
-    "Reaaliaika-analytiikan kehittäminen",
-    "Dataekosysteemien rakentaminen",
-    "Teknologiavalinnat",
-    "Skaalautuvuuden varmistaminen"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Tietotekniikan maisterin tutkinto",
-    "Data engineering -osaaminen",
-    "Arkkitehtuuriosaaminen"
-  ],
-  core_skills: [
-    "Data-arkkitehtuuri",
-    "Datavirrat",
-    "Reaaliaika-analytiikka",
-    "Pilvipalvelut",
-    "Skaalautuvuus"
-  ],
-  tools_tech: [
-    "Stream processing -alustat",
-    "Data pipeline -työkalut",
-    "Cloud platforms"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 6500,
-    range: [5500, 8500],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Reaaliaika-datan merkityksen kasvu lisää kysyntää arkkitehdeille.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["Data Engineer", "Solution Architect"],
-  career_progression: ["Chief Data Officer", "CTO"],
-  typical_employers: ["Teknologiayritykset", "Datayritykset", "Suuryritykset"],
-  work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-  useful_links: [
-      { name: "Opintopolku – Datavirtojen arkkitehti", url: "https://opintopolku.fi/konfo/fi/haku/Datavirtojen%20arkkitehti" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=T%C3%A4sm%C3%A4viljelyn%20vision%C3%A4%C3%A4ri" }],
-    keywords: ["data", "arkkitehtuuri", "reaaliaika"],
-  study_length_estimate_months: 72
-},
-{
-  id: "digitaalisen-kaksosen-arkkitehti",
-  category: "visionaari",
-  title_fi: "Digitaalisen kaksosen arkkitehti",
-  title_en: "Digital Twin Architect",
-  short_description: "Digitaalisen kaksosen arkkitehti suunnittelee digitaalisia kaksosia fyysisille järjestelmille. Työ vaatii teknologiaosaamista ja visionääristä ajattelua.",
-  main_tasks: [
-    "Digitaalisten kaksosten arkkitehtuuri",
-    "IoT-integraatiot",
-    "Simulaatiomallien kehittäminen",
-    "Datan integrointi",
-    "Ennakoivan ylläpidon kehittäminen"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Tekniikan alan maisterin tutkinto",
-    "IoT-osaaminen",
-    "Simulaatio-osaaminen"
-  ],
-  core_skills: [
-    "Digital twin -teknologia",
-    "IoT",
-    "Simulointi",
-    "Data-integraatio",
-    "Arkkitehtuuri"
-  ],
-  tools_tech: [
-    "Digital twin -alustat",
-    "IoT-alustat",
-    "Simulointiohjelmistot"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 6000,
-    range: [5000, 8000],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Digitaalisten kaksosten yleistyminen lisää kysyntää arkkitehdeille.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["IoT-insinööri", "Solution Architect"],
-  career_progression: ["CTO", "Tekninen johtaja"],
-  typical_employers: ["Teollisuusyritykset", "Teknologiayritykset", "Konsulttiyritykset"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  useful_links: [
-      { name: "Opintopolku – Digitaalisen kaksosen arkkitehti", url: "https://opintopolku.fi/konfo/fi/haku/Digitaalisen%20kaksosen%20arkkitehti" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Osallistavan%20suunnittelun%20asiantuntija" }],
-    keywords: ["digital twin", "IoT", "simulointi"],
-  study_length_estimate_months: 72
-},
-{
-  id: "kulttuurien-valisen-innovaation-asiantuntija",
-  category: "visionaari",
-  title_fi: "Kulttuurienvälisen innovaation asiantuntija",
-  title_en: "Cross-Cultural Innovation Specialist",
-  short_description: "Kulttuurienvälisen innovaation asiantuntija kehittää kulttuureja yhdistäviä innovaatioita. Työ vaatii kulttuuriosaamista ja visionääristä ajattelua.",
-  main_tasks: [
-    "Kulttuurienvälisten innovaatioiden kehittäminen",
-    "Globaalien trendien yhdistäminen",
-    "Monikulttuurisen yhteiskehittämisen fasilitointi",
-    "Kulttuurisen kontekstin ymmärtäminen",
-    "Innovaatioekosysteemien rakentaminen"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Kulttuuriantropologia tai kansainvälinen liiketoiminta",
-    "Kulttuuriosaaminen",
-    "Innovaatiojohtamisen opinnot"
-  ],
-  core_skills: [
-    "Kulttuuriosaaminen",
-    "Innovaatiojohtaminen",
-    "Fasilitointi",
-    "Globaali ymmärrys",
-    "Yhteiskehittäminen"
-  ],
-  tools_tech: [
-    "Yhteiskehittämisalustat",
-    "Fasilitointityökalut",
-    "Kulttuurisen analyysin työkalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C2" },
-  salary_eur_month: {
-    median: 5000,
-    range: [4000, 7000],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Globalisaatio ja kulttuurien kohtaaminen lisäävät kysyntää asiantuntijoille.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["Innovaatioasiantuntija", "Kulttuuriasiantuntija"],
-  career_progression: ["Innovaatiojohtaja", "Kansainvälisen liiketoiminnan johtaja"],
-  typical_employers: ["Kansainväliset yritykset", "Konsulttiyritykset", "Järjestöt"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-  useful_links: [
-      { name: "Opintopolku – Kulttuurienvälisen innovaation asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Kulttuurienv%C3%A4lisen%20innovaation%20asiantuntija" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Seuraavan%20sukupolven%20energia-asiantuntija" }],
-    keywords: ["kulttuuri", "innovaatio", "kansainvälisyys"],
-  study_length_estimate_months: 72
-},
-{
-  id: "ilmastonmuutoksen-sopeutumissuunnittelija",
-  category: "visionaari",
-  title_fi: "Ilmastonmuutoksen sopeutumissuunnittelija",
-  title_en: "Climate Adaptation Planner",
-  short_description: "Ilmastonmuutoksen sopeutumissuunnittelija kehittää ilmastonmuutokseen sopeutumisratkaisuja. Työ vaatii visionääristä ajattelua ja ilmasto-osaamista.",
-  main_tasks: [
-    "Sopeutumisstrategioiden kehittäminen",
-    "Ilmastoriskien arviointi",
-    "Sopeutumistoimenpiteiden suunnittelu",
-    "Sidosryhmäyhteistyö",
-    "Rahoituksen hankkiminen"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Ympäristötieteet tai vastaava",
-    "Ilmastonmuutoksen opinnot",
-    "Sopeutumissuunnittelun osaaminen"
-  ],
-  core_skills: [
-    "Ilmastonmuutoksen sopeutuminen",
-    "Riskiarviointi",
-    "Strateginen suunnittelu",
-    "Sidosryhmähallinta",
-    "Projektinhallinta"
-  ],
-  tools_tech: [
-    "Ilmastomallinnustyökalut",
-    "GIS-ohjelmat",
-    "Riskiarviointityökalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "B2" },
-  salary_eur_month: {
-    median: 4800,
-    range: [4000, 6500],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Ilmastonmuutoksen vaikutukset lisäävät sopeutumissuunnittelun tarvetta.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["Ympäristösuunnittelija", "Ilmastoasiantuntija"],
-  career_progression: ["Kestävyysjohtaja", "Kehitysjohtaja"],
-  typical_employers: ["Kunnat", "Konsulttiyritykset", "Järjestöt"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  useful_links: [
-      { name: "Opintopolku – Ilmastonmuutoksen sopeutumissuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Ilmastonmuutoksen%20sopeutumissuunnittelija" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Eettisen%20teknologian%20kehitt%C3%A4j%C3%A4" }],
-    keywords: ["ilmastonmuutos", "sopeutuminen", "resilienssi"],
-  study_length_estimate_months: 72
-},
-{
+  {
   id: "precision-agriculture-visionaari",
   category: "visionaari",
   title_fi: "Täsmäviljelyn visionääri",
@@ -33506,111 +31206,7 @@ export const careersData: CareerFI[] = [
     keywords: ["täsmäviljely", "maatalous", "teknologia"],
   study_length_estimate_months: 60
 },
-{
-  id: "osallistavan-suunnittelun-asiantuntija",
-  category: "visionaari",
-  title_fi: "Osallistavan suunnittelun asiantuntija",
-  title_en: "Participatory Design Specialist",
-  short_description: "Osallistavan suunnittelun asiantuntija fasilitoi osallistavia suunnitteluprosesseja. Työ vaatii fasilitointitaitoja ja visionääristä ajattelua.",
-  main_tasks: [
-    "Osallistavan suunnittelun fasilitointi",
-    "Kansalaisosallistumisen edistäminen",
-    "Yhteiskehittämisen johtaminen",
-    "Demokratiainnovaatioiden kehittäminen",
-    "Menetelmien kehittäminen"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Yhteiskuntatieteet tai muotoilu",
-    "Osallistavan suunnittelun koulutus",
-    "Fasilitoinnin osaaminen"
-  ],
-  core_skills: [
-    "Osallistava suunnittelu",
-    "Fasilitointi",
-    "Yhteiskehittäminen",
-    "Demokratiainnovaatio",
-    "Yhteisötyö"
-  ],
-  tools_tech: [
-    "Osallistamisen digitaaliset alustat",
-    "Fasilitointityökalut",
-    "Yhteistyötyökalut"
-  ],
-  languages_required: { fi: "C1", sv: "B2", en: "B1" },
-  salary_eur_month: {
-    median: 4200,
-    range: [3500, 5500],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Kansalaisosallistumisen merkityksen kasvu lisää kysyntää asiantuntijoille.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["Yhteisötyöntekijä", "Suunnittelija"],
-  career_progression: ["Kehityspäällikkö", "Demokratiajohtaja"],
-  typical_employers: ["Kunnat", "Järjestöt", "Konsulttiyritykset"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  useful_links: [
-      { name: "Opintopolku – Osallistavan suunnittelun asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Osallistavan%20suunnittelun%20asiantuntija" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teollisen%20symbioosien%20suunnittelija" }],
-    keywords: ["osallistaminen", "yhteiskehittäminen", "demokratia"],
-  study_length_estimate_months: 72
-},
-{
-  id: "seuraavan-sukupolven-energia-asiantuntija",
-  category: "visionaari",
-  title_fi: "Seuraavan sukupolven energia-asiantuntija",
-  title_en: "Next Generation Energy Specialist",
-  short_description: "Seuraavan sukupolven energia-asiantuntija kehittää innovatiivisia energiaratkaisuja. Työ vaatii energiaosaamista ja visionääristä ajattelua.",
-  main_tasks: [
-    "Uusien energiateknologioiden kehittäminen",
-    "Energiajärjestelmien suunnittelu",
-    "Innovaatioiden arviointi",
-    "Pilottiprojektien johtaminen",
-    "Strateginen suunnittelu"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Energiatekniikan maisterin tutkinto",
-    "Uusiutuvan energian erikoistuminen",
-    "Energiajärjestelmien osaaminen"
-  ],
-  core_skills: [
-    "Energiateknologia",
-    "Uusiutuva energia",
-    "Energiajärjestelmät",
-    "Innovointi",
-    "Strateginen suunnittelu"
-  ],
-  tools_tech: [
-    "Energiamallinnustyökalut",
-    "Simulointiohjelmistot",
-    "Projektinhallintatyökalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 5500,
-    range: [4500, 7500],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Energiamurros ja uudet energiateknologiat lisäävät kysyntää asiantuntijoille.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["Energiatekniikan insinööri", "Tutkija"],
-  career_progression: ["Energiajohtaja", "CTO"],
-  typical_employers: ["Energiayritykset", "Teknologiayritykset", "Tutkimuslaitokset"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  useful_links: [
-      { name: "Opintopolku – Seuraavan sukupolven energia-asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Seuraavan%20sukupolven%20energia-asiantuntija" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Resilienssisuunnittelija" }],
-    keywords: ["energia", "uusiutuva", "innovaatio"],
-  study_length_estimate_months: 72
-},
-{
+  {
   id: "eettisen-teknologian-kehittaja",
   category: "visionaari",
   title_fi: "Eettisen teknologian kehittäjä",
@@ -33662,7 +31258,7 @@ export const careersData: CareerFI[] = [
     keywords: ["etiikka", "teknologia", "kehitys"],
   study_length_estimate_months: 60
 },
-{
+  {
   id: "biodiverse-design-asiantuntija",
   category: "visionaari",
   title_fi: "Biodiversiteettisuunnittelija",
@@ -33714,7 +31310,7 @@ export const careersData: CareerFI[] = [
     keywords: ["biodiversiteetti", "ekologia", "suojelu"],
   study_length_estimate_months: 72
 },
-{
+  {
   id: "teollisen-symbioosien-suunnittelija",
   category: "visionaari",
   title_fi: "Teollisen symbioosien suunnittelija",
@@ -33766,7 +31362,7 @@ export const careersData: CareerFI[] = [
     keywords: ["teollinen symbioosi", "kiertotalous", "resurssitehokkuus"],
   study_length_estimate_months: 60
 },
-{
+  {
   id: "seismic-resilience-suunnittelija",
   category: "visionaari",
   title_fi: "Resilienssisuunnittelija",
@@ -33818,7 +31414,7 @@ export const careersData: CareerFI[] = [
     keywords: ["resilienssi", "kriisinhallinta", "sopeutumiskyky"],
   study_length_estimate_months: 72
 },
-{
+  {
   id: "neurodiverse-workplaces-asiantuntija",
   category: "visionaari",
   title_fi: "Neurodiversiteettiasiantuntija",
@@ -33870,59 +31466,7 @@ export const careersData: CareerFI[] = [
     keywords: ["neurodiversiteetti", "saavutettavuus", "työhyvinvointi"],
   study_length_estimate_months: 72
 },
-{
-  id: "commons-talouden-kehittaja",
-  category: "visionaari",
-  title_fi: "Yhteisomistuutalouden kehittäjä",
-  title_en: "Commons Economy Developer",
-  short_description: "Yhteisomistustalouden kehittäjä kehittää yhteisomistukseen perustuvia talousratkaisuja. Työ vaatii visionääristä ajattelua ja talousosaamista.",
-  main_tasks: [
-    "Yhteisomistusmallien kehittäminen",
-    "Yhteisötalouden suunnittelu",
-    "Hallintomallien innovointi",
-    "Ekosysteemien rakentaminen",
-    "Vaikuttaminen"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Taloustieteet tai yhteiskuntatieteet",
-    "Yhteisötalouden opinnot",
-    "Commons-talouden osaaminen"
-  ],
-  core_skills: [
-    "Commons-talous",
-    "Yhteisötalous",
-    "Hallintomallit",
-    "Innovointi",
-    "Vaikuttaminen"
-  ],
-  tools_tech: [
-    "Yhteisöalustat",
-    "Hallintojärjestelmät",
-    "Talousmallinnus työkalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 4200,
-    range: [3500, 5500],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Vaihtoehtoisten omistus- ja hallintomallien kiinnostus lisää kysyntää kehittäjille.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["Yhteisökehittäjä", "Talousasiantuntija"],
-  career_progression: ["Kehitysjohtaja", "Strategiajohtaja"],
-  typical_employers: ["Järjestöt", "Osuuskunnat", "Tutkimuslaitokset"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  useful_links: [
-      { name: "Opintopolku – Yhteisomistuutalouden kehittäjä", url: "https://opintopolku.fi/konfo/fi/haku/Yhteisomistuutalouden%20kehitt%C3%A4j%C3%A4" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Yhteisomistuutalouden%20kehitt%C3%A4j%C3%A4" }],
-    keywords: ["commons", "yhteisomistus", "yhteisötalous"],
-  study_length_estimate_months: 72
-},
-{
+  {
   id: "transition-design-asiantuntija",
   category: "visionaari",
   title_fi: "Transitiomuotoilija",
@@ -33974,59 +31518,7 @@ export const careersData: CareerFI[] = [
     keywords: ["transition design", "muotoilu", "yhteiskunnallinen muutos"],
   study_length_estimate_months: 72
 },
-{
-  id: "indigenous-knowledge-integrator",
-  category: "visionaari",
-  title_fi: "Alkuperäiskansojen tiedon integroija",
-  title_en: "Indigenous Knowledge Integrator",
-  short_description: "Alkuperäiskansojen tiedon integroija yhdistää perinteistä viisautta ja modernia tiedettä. Työ vaatii kulttuuriosaamista ja visionääristä ajattelua.",
-  main_tasks: [
-    "Perinteisen tiedon ja modernin tieteen yhdistäminen",
-    "Kulttuurisensitiivinen yhteistyö",
-    "Tiedonhallintamallien kehittäminen",
-    "Yhteiskehittämisen fasilitointi",
-    "Eettisten periaatteiden varmistaminen"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Antropologia tai vastaava",
-    "Alkuperäiskansojen tutkimuksen opinnot",
-    "Kulttuurisen ymmärryksen osaaminen"
-  ],
-  core_skills: [
-    "Kulttuuriosaaminen",
-    "Perinteinen tieto",
-    "Yhteiskehittäminen",
-    "Etiikka",
-    "Fasilitointi"
-  ],
-  tools_tech: [
-    "Tiedonhallintajärjestelmät",
-    "Yhteistyöalustat",
-    "Dokumentointityökalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 4200,
-    range: [3500, 5500],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Perinteisen tiedon arvostuksen kasvu lisää kysyntää integroijille.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["Kulttuuriantropologi", "Tutkija"],
-  career_progression: ["Tutkimusjohtaja", "Kulttuurijohtaja"],
-  typical_employers: ["Tutkimuslaitokset", "Järjestöt", "Kansainväliset organisaatiot"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-  useful_links: [
-      { name: "Opintopolku – Alkuperäiskansojen tiedon integroija", url: "https://opintopolku.fi/konfo/fi/haku/Alkuper%C3%A4iskansojen%20tiedon%20integroija" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Planeettaisen%20terveyden%20asiantuntija" }],
-    keywords: ["alkuperäiskansat", "perinteinen tieto", "kulttuurisensitiivisyys"],
-  study_length_estimate_months: 72
-},
-{
+  {
   id: "biomimicry-specialist",
   category: "visionaari",
   title_fi: "Biomimikry-asiantuntija",
@@ -34078,59 +31570,7 @@ export const careersData: CareerFI[] = [
     keywords: ["biomimikry", "luonto", "innovaatio"],
   study_length_estimate_months: 60
 },
-{
-  id: "regenerative-culture-builder",
-  category: "visionaari",
-  title_fi: "Regeneratiivisen kulttuurin rakentaja",
-  title_en: "Regenerative Culture Builder",
-  short_description: "Regeneratiivisen kulttuurin rakentaja kehittää yhteisöjä ja kulttuureita jotka tukevat uudistumista. Työ vaatii visionääristä ajattelua ja yhteisöosaamista.",
-  main_tasks: [
-    "Regeneratiivisten kulttuurien kehittäminen",
-    "Yhteisötyö ja fasilitointi",
-    "Arvo- ja kulttuurimuutoksen tukeminen",
-    "Osallistavien prosessien johtaminen",
-    "Resilienssin vahvistaminen"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Yhteiskuntatieteet tai vastaava",
-    "Regeneratiivisen kulttuurin opinnot",
-    "Yhteisötyön osaaminen"
-  ],
-  core_skills: [
-    "Regeneratiivinen kulttuuri",
-    "Yhteisötyö",
-    "Fasilitointi",
-    "Kulttuurimuutos",
-    "Resilienssi"
-  ],
-  tools_tech: [
-    "Fasilitointityökalut",
-    "Yhteisöalustat",
-    "Prosessityökalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "B2" },
-  salary_eur_month: {
-    median: 4000,
-    range: [3300, 5500],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Yhteisöjen ja kulttuurien uudistumisen tarve lisää kysyntää rakentajille.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["Yhteisötyöntekijä", "Fasilitaattori"],
-  career_progression: ["Kulttuurijohtaja", "Kehitysjohtaja"],
-  typical_employers: ["Järjestöt", "Yhteisöt", "Konsulttiyritykset"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-  useful_links: [
-      { name: "Opintopolku – Regeneratiivisen kulttuurin rakentaja", url: "https://opintopolku.fi/konfo/fi/haku/Regeneratiivisen%20kulttuurin%20rakentaja" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Huomiotalouden%20asiantuntija" }],
-    keywords: ["regeneratiivinen kulttuuri", "yhteisö", "uudistuminen"],
-  study_length_estimate_months: 72
-},
-{
+  {
   id: "whole-systems-designer",
   category: "visionaari",
   title_fi: "Kokonaisjärjestelmien suunnittelija",
@@ -34182,111 +31622,7 @@ export const careersData: CareerFI[] = [
     keywords: ["järjestelmäajattelu", "kompleksisuus", "kokonaisvaltaisuus"],
   study_length_estimate_months: 72
 },
-{
-  id: "urban-futures-asiantuntija",
-  category: "visionaari",
-  title_fi: "Kaupunkien tulevaisuuden asiantuntija",
-  title_en: "Urban Futures Specialist",
-  short_description: "Kaupunkien tulevaisuuden asiantuntija kehittää tulevaisuuden kaupunkiratkaisuja. Työ vaatii kaupunkisuunnittelun osaamista ja visionääristä ajattelua.",
-  main_tasks: [
-    "Tulevaisuuden kaupunkien suunnittelu",
-    "Kaupunkitrendien analysointi",
-    "Kestävien kaupunkiratkaisujen kehittäminen",
-    "Skenaariotyöskentely",
-    "Innovaatioiden edistäminen"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Kaupunkisuunnittelu tai yhteiskuntatieteet",
-    "Tulevaisuudentutkimuksen opinnot",
-    "Kaupunkisuunnittelun osaaminen"
-  ],
-  core_skills: [
-    "Kaupunkisuunnittelu",
-    "Tulevaisuusajattelu",
-    "Skenaariosuunnittelu",
-    "Kestävyys",
-    "Innovointi"
-  ],
-  tools_tech: [
-    "GIS-ohjelmat",
-    "Kaupunkimallinnustyökalut",
-    "Skenaariotyökalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 5000,
-    range: [4200, 6800],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Kaupungistuminen ja tulevaisuuden haasteet lisäävät kysyntää asiantuntijoille.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["Kaupunkisuunnittelija", "Tulevaisuustutkija"],
-  career_progression: ["Kehitysjohtaja", "Kaupunginjohtaja"],
-  typical_employers: ["Kunnat", "Konsulttiyritykset", "Tutkimuslaitokset"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-  useful_links: [
-      { name: "Opintopolku – Kaupunkien tulevaisuuden asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Kaupunkien%20tulevaisuuden%20asiantuntija" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ennakoivan%20hallinnon%20asiantuntija" }],
-    keywords: ["kaupunki", "tulevaisuus", "suunnittelu"],
-  study_length_estimate_months: 72
-},
-{
-  id: "planetary-health-asiantuntija",
-  category: "visionaari",
-  title_fi: "Planeettaisen terveyden asiantuntija",
-  title_en: "Planetary Health Specialist",
-  short_description: "Planeettaisen terveyden asiantuntija kehittää ihmisten ja planeetan terveyden ratkaisuja. Työ vaatii kokonaisvaltaista ymmärrystä ja visionääristä ajattelua.",
-  main_tasks: [
-    "Planeettaisen terveyden ratkaisujen kehittäminen",
-    "One Health -lähestymistavan soveltaminen",
-    "Ekosysteemiterveyden edistäminen",
-    "Terveysvaikutusten arviointi",
-    "Poikkitieteellinen yhteistyö"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Lääketiede tai ympäristötieteet",
-    "Planeettaisen terveyden opinnot",
-    "One Health -osaaminen"
-  ],
-  core_skills: [
-    "Planeettainen terveys",
-    "One Health",
-    "Ekosysteemiterveys",
-    "Epidemiologia",
-    "Järjestelmäajattelu"
-  ],
-  tools_tech: [
-    "Terveysdata-analytiikka",
-    "Ekologiset mallinnustyökalut",
-    "GIS-ohjelmat"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 5500,
-    range: [4500, 7500],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Planeettaisen terveyden merkityksen ymmärtäminen lisää kysyntää asiantuntijoille.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["Terveydenhuollon asiantuntija", "Ympäristöterveyden asiantuntija"],
-  career_progression: ["Terveysjohtaja", "Tutkimusjohtaja"],
-  typical_employers: ["Terveysjärjestöt", "Tutkimuslaitokset", "Kansainväliset organisaatiot"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-  useful_links: [
-      { name: "Opintopolku – Planeettaisen terveyden asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Planeettaisen%20terveyden%20asiantuntija" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kokemuksellisen%20tulevaisuuden%20suunnittelija" }],
-    keywords: ["planeettainen terveys", "one health", "ekosysteemiterveys"],
-  study_length_estimate_months: 84
-},
-{
+  {
   id: "post-anthropocentric-suunnittelija",
   category: "visionaari",
   title_fi: "Jälkiantroposentrinen suunnittelija",
@@ -34338,7 +31674,7 @@ export const careersData: CareerFI[] = [
     keywords: ["post-anthropocentric", "more-than-human", "filosofia"],
   study_length_estimate_months: 72
 },
-{
+  {
   id: "attention-economy-asiantuntija",
   category: "visionaari",
   title_fi: "Huomiotalouden asiantuntija",
@@ -34390,59 +31726,7 @@ export const careersData: CareerFI[] = [
     keywords: ["huomiotalous", "humane technology", "digitaalinen hyvinvointi"],
   study_length_estimate_months: 72
 },
-{
-  id: "computational-creativity-asiantuntija",
-  category: "visionaari",
-  title_fi: "Laskennallisen luovuuden asiantuntija",
-  title_en: "Computational Creativity Specialist",
-  short_description: "Laskennallisen luovuuden asiantuntija kehittää AI-pohjaisia luovia järjestelmiä. Työ vaatii teknologiaosaamista ja luovaa ajattelua.",
-  main_tasks: [
-    "Luovien AI-järjestelmien kehittäminen",
-    "Generatiivisen taiteen sovellusten luominen",
-    "Ihmisen ja AI:n yhteisluomisen fasilitointi",
-    "Tutkimus ja kehitys",
-    "Taiteilijoiden ja teknologien yhteistyö"
-  ],
-  education_paths: [
-    "Ylempi korkeakoulututkinto: Tietotekniikan tai taiteen maisterin tutkinto",
-    "AI-osaaminen",
-    "Luovan koodauksen osaaminen"
-  ],
-  core_skills: [
-    "Laskennallinen luovuus",
-    "AI ja koneoppiminen",
-    "Generatiivinen taide",
-    "Luova koodaus",
-    "Ihmisen ja AI:n yhteistyö"
-  ],
-  tools_tech: [
-    "AI/ML-frameworkit",
-    "Generatiiviset mallit",
-    "Luovan koodauksen työkalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 5800,
-    range: [4800, 8000],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Generatiivisen AI:n kehittyminen luo kysyntää laskennallisen luovuuden asiantuntijoille.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["AI-kehittäjä", "Creative technologist"],
-  career_progression: ["AI Lead", "Creative Director"],
-  typical_employers: ["Teknologiayritykset", "Mediatalot", "Peliyritykset"],
-  work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-  useful_links: [
-      { name: "Opintopolku – Laskennallisen luovuuden asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Laskennallisen%20luovuuden%20asiantuntija" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kognitiivisen%20vapauden%20asiantuntija" }],
-    keywords: ["laskennallinen luovuus", "generatiivinen AI", "taide"],
-  study_length_estimate_months: 72
-},
-{
+  {
   id: "anticipatory-governance-asiantuntija",
   category: "visionaari",
   title_fi: "Ennakoivan hallinnon asiantuntija",
@@ -34494,59 +31778,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ennakoiva hallinto", "tulevaisuus", "päätöksenteko"],
   study_length_estimate_months: 72
 },
-{
-  id: "experiential-futures-suunnittelija",
-  category: "visionaari",
-  title_fi: "Kokemuksellisen tulevaisuuden suunnittelija",
-  title_en: "Experiential Futures Designer",
-  short_description: "Kokemuksellisen tulevaisuuden suunnittelija luo koettavia tulevaisuusskenaarioita. Työ vaatii luovuutta ja tulevaisuusajattelua.",
-  main_tasks: [
-    "Kokemuksellisten tulevaisuusskenaarioiden luominen",
-    "Tulevaisuusinstallaa tioiden suunnittelu",
-    "Spekulatiivisen muotoilun soveltaminen",
-    "Työpajojen fasilitointi",
-    "Tulevaisuuden konkretisointi"
-  ],
-  education_paths: [
-    "Korkeakoulututkinto: Muotoilun tai tulevaisuudentutkimuksen tutkinto",
-    "Experiential futures -osaaminen",
-    "Spekulatiivisen muotoilun osaaminen"
-  ],
-  core_skills: [
-    "Experiential futures",
-    "Spekulatiivinen muotoilu",
-    "Fasilitointi",
-    "Installaatiosuunnittelu",
-    "Tulevaisuusajattelu"
-  ],
-  tools_tech: [
-    "Muotoilutyökalut",
-    "Prototyyppaustyökalut",
-    "Installaatiosuunnittelutyökalut"
-  ],
-  languages_required: { fi: "C1", sv: "B1", en: "C1" },
-  salary_eur_month: {
-    median: 4500,
-    range: [3700, 6000],
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  job_outlook: {
-    status: "kasvaa",
-    explanation: "Tulevaisuuden konkretisoinnin tarve lisää kokemuksellisen tulevaisuuden suunnittelijoiden kysyntää.",
-    source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-  },
-  entry_roles: ["Muotoilija", "Tulevaisuustutkija"],
-  career_progression: ["Design Lead", "Innovaatiojohtaja"],
-  typical_employers: ["Muotoilutoimistot", "Innovaatiokeskukset", "Konsulttiyritykset"],
-  work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-  useful_links: [
-      { name: "Opintopolku – Kokemuksellisen tulevaisuuden suunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/Kokemuksellisen%20tulevaisuuden%20suunnittelija" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Teko%C3%A4ly-kehoteasiantuntija" }],
-    keywords: ["experiential futures", "spekulatiivinen muotoilu", "tulevaisuus"],
-  study_length_estimate_months: 60
-},
-{
+  {
   id: "sensorinen-teknologia-visionaari",
   category: "visionaari",
   title_fi: "Sensorisen teknologian visionääri",
@@ -34598,7 +31830,7 @@ export const careersData: CareerFI[] = [
     keywords: ["sensorinen teknologia", "haptiikka", "immersio"],
   study_length_estimate_months: 60
 },
-{
+  {
   id: "slow-technology-asiantuntija",
   category: "visionaari",
   title_fi: "Hitaan teknologian asiantuntija",
@@ -34650,7 +31882,7 @@ export const careersData: CareerFI[] = [
     keywords: ["slow technology", "etiikka", "hyvinvointi"],
   study_length_estimate_months: 60
 },
-{
+  {
   id: "cognitive-liberty-asiantuntija",
   category: "visionaari",
   title_fi: "Kognitiivisen vapauden asiantuntija",
@@ -34701,7 +31933,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Vaikuttajamarkkinointijohtaja" }],
   keywords: ["kognitiivinen vapaus", "neuroetiikka", "ihmisoikeudet"],
   study_length_estimate_months: 84
-},{
+},
+  {
     id: "lohkoketjukehittaja",
     category: "innovoija",
     title_fi: "Lohkoketjukehittäjä",
@@ -34787,7 +32020,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 60
   },
-
   {
     id: "tekoaly-kehoteasiantuntija",
     category: "innovoija",
@@ -34873,7 +32105,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 12
   },
-
   {
     id: "hankinta-asiantuntija",
     category: "jarjestaja",
@@ -34955,7 +32186,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
   {
     id: "vaikuttajamarkkinointijohtaja",
     category: "luova",
@@ -35039,7 +32269,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 36
   },
-
   {
     id: "aaninaittelija",
     category: "luova",
@@ -35122,7 +32351,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 24
   },
-
   {
     id: "tuulivoima-asentaja",
     category: "rakentaja",
@@ -35208,7 +32436,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 36
   },
-
   {
     id: "ekologisen-rakentamisen-konsultti",
     category: "ympariston-puolustaja",
@@ -35291,7 +32518,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 60
   },
-
   {
     id: "sahkolaiteromujen-kierrattaja",
     category: "rakentaja",
@@ -35375,9 +32601,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 12
   },
-
-  // ========== BATCH 1: YMPÄRISTÖN PUOLUSTAJA CAREERS (Environmental Conservation & Wildlife Protection) ==========
-
   {
     id: "luonnonsuojelubiologi",
     category: "ympariston-puolustaja",
@@ -35430,7 +32653,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Luonnonsuojelubiologi" }],
     keywords: ["luonnonsuojelu", "ekologia", "biodiversiteetti"],
     study_length_estimate_months: 72
-},{
+},
+  {
   id: "ilmastoasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Ilmastoasiantuntija",
@@ -35482,8 +32706,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ilmasto", "päästöt", "kestävyys"],
     study_length_estimate_months: 72
 },
-
-{
+  {
   id: "kierratyskoordinaattori",
     category: "ympariston-puolustaja",
     title_fi: "Kierrätyskoordinaattori",
@@ -35535,8 +32758,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kierrätys", "kiertotalous", "jätehuolto"],
     study_length_estimate_months: 48
 },
-
-{
+  {
   id: "elainneuoja",
     category: "ympariston-puolustaja",
     title_fi: "Eläinneuvoja",
@@ -35587,8 +32809,7 @@ export const careersData: CareerFI[] = [
     keywords: ["eläinsuojelu", "hyvinvointi", "neuvonta"],
     study_length_estimate_months: 48
 },
-
-{
+  {
   id: "luontokartoittaja",
     category: "ympariston-puolustaja",
     title_fi: "Luontokartoittaja",
@@ -35640,8 +32861,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kartoitus", "inventointi", "lajisto"],
     study_length_estimate_months: 48
 },
-
-{
+  {
   id: "maisema-arkkitehti",
     category: "ympariston-puolustaja",
     title_fi: "Maisema-arkkitehti",
@@ -35693,8 +32913,7 @@ export const careersData: CareerFI[] = [
     keywords: ["maisema", "viheralueet", "suunnittelu"],
     study_length_estimate_months: 72
 },
-
-{
+  {
   id: "luontokohteen-hoitaja",
     category: "ympariston-puolustaja",
     title_fi: "Luontokohteen hoitaja",
@@ -35746,9 +32965,6 @@ export const careersData: CareerFI[] = [
     keywords: ["luonnonhoito", "suojelu", "kenttätyö"],
     study_length_estimate_months: 36
   },
-
-  // ========== BATCH 2: YMPÄRISTÖN PUOLUSTAJA CAREERS (Sustainable Energy & Environmental Engineering) ==========
-
   {
     id: "aurinkoenergiasuunnittelija",
     category: "ympariston-puolustaja",
@@ -35800,7 +33016,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Ymp%C3%A4rist%C3%B6kemisti" }],
     keywords: ["aurinkoenergia", "uusiutuva energia", "suunnittelu"],
     study_length_estimate_months: 48
-},{
+},
+  {
   id: "energiatehokkuusasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Energiatehokkuusasiantuntija",
@@ -35852,8 +33069,7 @@ export const careersData: CareerFI[] = [
     keywords: ["energiatehokkuus", "säästö", "katselmus"],
     study_length_estimate_months: 48
 },
-
-{
+  {
   id: "biokaasulaitoksen-operaattori",
     category: "ympariston-puolustaja",
     title_fi: "Biokaasulaitoksen operaattori",
@@ -35905,8 +33121,7 @@ export const careersData: CareerFI[] = [
     keywords: ["biokaasu", "uusiutuva energia", "prosessi"],
     study_length_estimate_months: 48
 },
-
-{
+  {
   id: "ymparistogeologi",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristögeologi",
@@ -35957,8 +33172,7 @@ export const careersData: CareerFI[] = [
     keywords: ["geologia", "pohjavesi", "maaperä"],
     study_length_estimate_months: 72
 },
-
-{
+  {
   id: "kestavan-kehityksen-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Kestävän kehityksen asiantuntija",
@@ -36009,8 +33223,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kestävyys", "vastuullisuus", "raportointi"],
     study_length_estimate_months: 60
 },
-
-{
+  {
   id: "luomuviljelija",
     category: "ympariston-puolustaja",
     title_fi: "Luomuviljelija",
@@ -36062,8 +33275,7 @@ export const careersData: CareerFI[] = [
     keywords: ["luomu", "viljely", "maatalous"],
     study_length_estimate_months: 48
 },
-
-{
+  {
   id: "ymparistokemisti",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristökemisti",
@@ -36114,8 +33326,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kemia", "analytiikka", "ympäristö"],
     study_length_estimate_months: 72
 },
-
-{
+  {
   id: "viherkattosuunnittelija",
     category: "ympariston-puolustaja",
     title_fi: "Viherkattosuunnittelija",
@@ -36167,8 +33378,7 @@ export const careersData: CareerFI[] = [
     keywords: ["viherkatto", "kaupunkiviher", "suunnittelu"],
     study_length_estimate_months: 48
 },
-
-{
+  {
   id: "luonnon-monimuotoisuusasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Luonnon monimuotoisuusasiantuntija",
@@ -36220,9 +33430,6 @@ export const careersData: CareerFI[] = [
     keywords: ["biodiversiteetti", "luontokato", "ekologia"],
     study_length_estimate_months: 72
   },
-
-  // ========== BATCH 3: YMPÄRISTÖN PUOLUSTAJA CAREERS (Environmental Education & Communication) ==========
-
   {
     id: "ymparistoviestija",
     category: "ympariston-puolustaja",
@@ -36275,8 +33482,7 @@ export const careersData: CareerFI[] = [
     keywords: ["viestintä", "ympäristö", "kampanja"],
     study_length_estimate_months: 60
 },
-
-{
+  {
   id: "luontoaktivisti",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöjärjestön työntekijä",
@@ -36328,8 +33534,7 @@ export const careersData: CareerFI[] = [
     keywords: ["järjestö", "kampanja", "vaikuttaminen"],
     study_length_estimate_months: 60
 },
-
-{
+  {
   id: "luontokulttuuriasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Luontokulttuuriasiantuntija",
@@ -36381,8 +33586,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kulttuuriperintö", "perinnemaisema", "historia"],
     study_length_estimate_months: 60
 },
-
-{
+  {
   id: "ekomatkailuyrittaja",
     category: "ympariston-puolustaja",
     title_fi: "Ekomatkailuyrittäjä",
@@ -36434,8 +33638,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ekomatkailu", "luontomatkailu", "yrittäjyys"],
     study_length_estimate_months: 48
 },
-
-{
+  {
   id: "luontokartoituksen-erikoisasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Linnustontutkija",
@@ -36487,7 +33690,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Meluntorjuntasuunnittelija" }],
     keywords: ["linnut", "ornitologia", "tutkimus"],
     study_length_estimate_months: 72
-},{
+},
+  {
   id: "ymparistotalousasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristötalousasiantuntija",
@@ -36539,8 +33743,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristötalous", "kustannus-hyöty", "politiikka"],
     study_length_estimate_months: 72
 },
-
-{
+  {
   id: "ekotoksikologi",
     category: "ympariston-puolustaja",
     title_fi: "Ekotoksikologi",
@@ -36592,8 +33795,7 @@ export const careersData: CareerFI[] = [
     keywords: ["toksikologia", "kemikaali", "riski"],
     study_length_estimate_months: 84
 },
-
-{
+  {
   id: "ymparistohygienian-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöterveyden asiantuntija",
@@ -36645,9 +33847,6 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristöterveys", "valvonta", "hygienia"],
     study_length_estimate_months: 48
   },
-
-  // ========== BATCH 4: YMPÄRISTÖN PUOLUSTAJA CAREERS (Environmental Policy & Urban Sustainability) ==========
-
   {
     id: "viherrakennesuunnittelija",
     category: "ympariston-puolustaja",
@@ -36700,7 +33899,7 @@ export const careersData: CareerFI[] = [
     keywords: ["viherrakenne", "kaupunkisuunnittelu", "ekologia"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "ilmanlaatuasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Ilmanlaatuasiantuntija",
@@ -36751,7 +33950,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ilmanlaatu", "mittaukset", "päästöt"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "meluntorjuntasuunnittelija",
     category: "ympariston-puolustaja",
     title_fi: "Meluntorjuntasuunnittelija",
@@ -36803,7 +34002,7 @@ export const careersData: CareerFI[] = [
     keywords: ["meluntorjunta", "akustiikka", "kaupunkisuunnittelu"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "ymparistoluvitusasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöluvitusasiantuntija",
@@ -36855,7 +34054,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ympäristöluvitus", "lainsäädäntö", "prosessit"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "pilaantuneiden-maiden-kunnostusasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Pilaantuneiden maiden kunnostusasiantuntija",
@@ -36907,7 +34106,7 @@ export const careersData: CareerFI[] = [
     keywords: ["maaperän kunnostus", "pilaantuneet maat", "ympäristötekniikka"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "ymparistovaikutusten-arvioija",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristövaikutusten arvioija",
@@ -36959,7 +34158,7 @@ export const careersData: CareerFI[] = [
     keywords: ["YVA", "vaikutusarviointi", "hankkeet"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "ymparistoriskien-arvioija",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöriskien arvioija",
@@ -37011,7 +34210,7 @@ export const careersData: CareerFI[] = [
     keywords: ["riskienhallinta", "ympäristöriskit", "arviointi"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "luontoturvallisuusasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Luontoturvallisuusasiantuntija",
@@ -37063,7 +34262,7 @@ export const careersData: CareerFI[] = [
     keywords: ["luontoturvallisuus", "biodiversiteetti", "vieraslajit"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "hiilijalanjalkikonsultti",
     category: "ympariston-puolustaja",
     title_fi: "Hiilijalanjälkikonsultti",
@@ -37115,9 +34314,6 @@ export const careersData: CareerFI[] = [
     keywords: ["hiilijalanjälki", "päästöt", "ilmasto"],
     study_length_estimate_months: 60
   },
-
-  // ========== BATCH 5: YMPÄRISTÖN PUOLUSTAJA CAREERS (Marine & Aquatic Environment) ==========
-
   {
   id: "merialuesuunnittelija",
     category: "ympariston-puolustaja",
@@ -37170,7 +34366,7 @@ export const careersData: CareerFI[] = [
     keywords: ["merialuesuunnittelu", "GIS", "meriluonto"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "merivesiviljelyn-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Merivesiviljelyn asiantuntija",
@@ -37222,7 +34418,7 @@ export const careersData: CareerFI[] = [
     keywords: ["vesiviljely", "kalankasvatus", "kestävyys"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "merensuojelubiologi",
     category: "ympariston-puolustaja",
     title_fi: "Merensuojelubiologi",
@@ -37274,7 +34470,7 @@ export const careersData: CareerFI[] = [
     keywords: ["meribiologia", "suojelu", "tutkimus"],
     study_length_estimate_months: 72
 },
-{
+  {
   id: "ranta-alueiden-kunnostaja",
     category: "ympariston-puolustaja",
     title_fi: "Ranta-alueiden kunnostaja",
@@ -37326,7 +34522,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ennallistaminen", "rannat", "ekologia"],
     study_length_estimate_months: 48
 },
-{
+  {
   id: "vesistotarkkailiaja",
     category: "ympariston-puolustaja",
     title_fi: "Vesistötarkkailiaja",
@@ -37378,7 +34574,7 @@ export const careersData: CareerFI[] = [
     keywords: ["vesistöseuranta", "näytteenotto", "kenttätyö"],
     study_length_estimate_months: 36
 },
-{
+  {
   id: "pohjavesiasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Pohjavesiasiantuntija",
@@ -37429,7 +34625,7 @@ export const careersData: CareerFI[] = [
     keywords: ["pohjavesi", "hydrogeologia", "suojelu"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "rehevointymisen-torjuja",
     category: "ympariston-puolustaja",
     title_fi: "Rehevöitymisen torjuja",
@@ -37481,7 +34677,7 @@ export const careersData: CareerFI[] = [
     keywords: ["rehevöityminen", "vesiensuojelu", "ravinteet"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "kalatalousbiologi",
     category: "ympariston-puolustaja",
     title_fi: "Kalatalousbiologi",
@@ -37533,7 +34729,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kalatalous", "kalakannat", "tutkimus"],
     study_length_estimate_months: 72
 },
-{
+  {
   id: "merenhoidon-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Merenhoidon asiantuntija",
@@ -37585,7 +34781,7 @@ export const careersData: CareerFI[] = [
     keywords: ["merenhoito", "meristrategia", "direktiivit"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "vesilaitosten-ymparistoasiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Vesilaitosten ympäristöasiantuntija",
@@ -37637,9 +34833,6 @@ export const careersData: CareerFI[] = [
     keywords: ["vesihuolto", "kestävyys", "ympäristö"],
     study_length_estimate_months: 60
   },
-
-  // ========== BATCH 6: YMPÄRISTÖN PUOLUSTAJA CAREERS (Agricultural, Rural & Cross-cutting) ==========
-
   {
   id: "maatalouden-ymparistoasiantuntija",
     category: "ympariston-puolustaja",
@@ -37692,7 +34885,7 @@ export const careersData: CareerFI[] = [
     keywords: ["maatalous", "ympäristö", "neuvonta"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "luonnonmukaisen-tuotannon-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Luonnonmukaisen tuotannon asiantuntija",
@@ -37744,7 +34937,7 @@ export const careersData: CareerFI[] = [
     keywords: ["luomu", "neuvonta", "maatalous"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "maaperan-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Maaperän asiantuntija",
@@ -37796,7 +34989,7 @@ export const careersData: CareerFI[] = [
     keywords: ["maaperä", "viljavuus", "tutkimus"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "perinnebiotooppien-hoitaja",
     category: "ympariston-puolustaja",
     title_fi: "Perinnebiotooppien hoitaja",
@@ -37848,7 +35041,7 @@ export const careersData: CareerFI[] = [
     keywords: ["perinnemaisema", "laidunnus", "luonnonhoito"],
     study_length_estimate_months: 36
 },
-{
+  {
   id: "vesienhallinta-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Vesienhallinta-asiantuntija",
@@ -37900,7 +35093,7 @@ export const careersData: CareerFI[] = [
     keywords: ["vesitalous", "suunnittelu", "kuivatus"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "ymparistotiedon-analyytikko",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristötiedon analyytikko",
@@ -37953,7 +35146,7 @@ export const careersData: CareerFI[] = [
     keywords: ["data-analyysi", "ympäristö", "tilastot"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "ymparistosuunnittelija",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristösuunnittelija",
@@ -38004,7 +35197,7 @@ export const careersData: CareerFI[] = [
     keywords: ["suunnittelu", "kaavoitus", "ympäristö"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "luontoturvallisuuden-kouluttaja",
     category: "ympariston-puolustaja",
     title_fi: "Luontoturvallisuuden kouluttaja",
@@ -38056,7 +35249,7 @@ export const careersData: CareerFI[] = [
     keywords: ["turvallisuus", "koulutus", "luonto"],
     study_length_estimate_months: 48
 },
-{
+  {
   id: "ymparistosertifioinnin-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristösertifioinnin asiantuntija",
@@ -38108,7 +35301,7 @@ export const careersData: CareerFI[] = [
     keywords: ["sertifiointi", "ISO 14001", "auditointi"],
     study_length_estimate_months: 60
 },
-{
+  {
   id: "ymparistoviestinnan-asiantuntija",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöviestinnän asiantuntija",
@@ -38160,7 +35353,7 @@ export const careersData: CareerFI[] = [
     keywords: ["viestintä", "ympäristö", "kampanjointi"],
     study_length_estimate_months: 48
 },
-{
+  {
   id: "ymparistohankkeiden-koordinaattori",
     category: "ympariston-puolustaja",
     title_fi: "Ympäristöhankkeiden koordinaattori",
@@ -38211,7 +35404,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Pelitekninen%20suunnittelija" }],
     keywords: ["projektinhallinta", "hankkeet", "koordinointi"],
     study_length_estimate_months: 60
-  },{
+  },
+  {
     id: "genetiikan-neuvoja",
     category: "auttaja",
     title_fi: "Genetiikan neuvoja",
@@ -38292,7 +35486,8 @@ export const careersData: CareerFI[] = [
       "research_interpretation"
     ],
     study_length_estimate_months: 60
-  },{
+  },
+  {
     id: "opetusteknologi",
     category: "innovoija",
     title_fi: "Opetusteknologi",
@@ -38373,7 +35568,8 @@ export const careersData: CareerFI[] = [
       "project_management"
     ],
     study_length_estimate_months: 60
-  },{
+  },
+  {
     id: "blockchain-kehittaja",
     category: "innovoija",
     title_fi: "Blockchain-kehittäjä",
@@ -38428,7 +35624,6 @@ export const careersData: CareerFI[] = [
     keywords: ["blockchain", "smart contracts", "Web3"],
     study_length_estimate_months: 60
   },
-
   {
     id: "iot-insinoori",
     category: "innovoija",
@@ -38484,7 +35679,8 @@ export const careersData: CareerFI[] = [
     transferable_skills: [],
     keywords: ["IoT", "embedded", "sensorit"],
     study_length_estimate_months: 48
-  },{
+  },
+  {
     id: "vr-ar-kehittaja",
     category: "innovoija",
     title_fi: "VR/AR-kehittäjä",
@@ -38539,7 +35735,6 @@ export const careersData: CareerFI[] = [
     keywords: ["VR", "AR", "Unity"],
     study_length_estimate_months: 48
   },
-
   {
     id: "bioinformatiikko",
     category: "innovoija",
@@ -38595,7 +35790,6 @@ export const careersData: CareerFI[] = [
     keywords: ["bioinformatiikka", "genomiikka", "data-analyysi"],
     study_length_estimate_months: 72
   },
-
   {
     id: "pelitekninen-suunnittelija",
     category: "innovoija",
@@ -38651,7 +35845,6 @@ export const careersData: CareerFI[] = [
     keywords: ["pelisuunnittelu", "pelimekaniikka", "Unity"],
     study_length_estimate_months: 48
   },
-
   {
     id: "quantum-computing-engineer",
     category: "innovoija",
@@ -38707,7 +35900,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kvanttilaskenta", "quantum", "algoritmi"],
     study_length_estimate_months: 96
   },
-
   {
     id: "edge-computing-specialist",
     category: "innovoija",
@@ -38763,7 +35955,6 @@ export const careersData: CareerFI[] = [
     keywords: ["edge computing", "IoT", "hajautetut järjestelmät"],
     study_length_estimate_months: 48
   },
-
   {
     id: "api-designer",
     category: "innovoija",
@@ -38820,63 +36011,6 @@ export const careersData: CareerFI[] = [
     keywords: ["API", "REST", "GraphQL"],
     study_length_estimate_months: 48
   },
-
-  {
-    id: "microservices-architect",
-    category: "innovoija",
-    title_fi: "Mikropalveluarkkitehti",
-    title_en: "Microservices Architect",
-    short_description: "Mikropalveluarkkitehti suunnittelee mikropalveluarkkitehtuureja. Työ vaatii arkkitehtuuriosaamista ja hajautettujen järjestelmien ymmärrystä.",
-    main_tasks: [
-      "Mikropalveluarkkitehtuurin suunnittelu",
-      "Palveluiden rajausten määrittely",
-      "Kommunikaatiomallien suunnittelu",
-      "Skaalautuvuuden varmistaminen",
-      "Teknologiavalinnat"
-    ],
-    impact: [],
-    education_paths: [
-      "Ylempi korkeakoulututkinto: Tietotekniikan maisterin tutkinto",
-      "Arkkitehtuuriosaaminen",
-      "Mikropalvelukokemus"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Mikropalveluarkkitehtuuri",
-      "Hajautetut järjestelmät",
-      "Domain-driven design",
-      "Kontittaminen",
-      "API-suunnittelu"
-    ],
-    tools_tech: [
-      "Docker",
-      "Kubernetes",
-      "Service mesh",
-      "Message queues"
-    ],
-    languages_required: { fi: 5, sv: 2, en: 5 },
-    salary_eur_month: {
-      median: 6200,
-      range: [5200, 8500],
-      source: "Ammattinetti 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Mikropalveluiden yleistyminen lisää arkkitehtien kysyntää."
-    },
-    entry_roles: ["Backend Developer", "Solution Architect"],
-    career_progression: ["Principal Architect", "CTO"],
-    typical_employers: ["IT-yritykset", "Suuryritykset", "Fintech"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku – Ohjelmistoarkkitehtuuri", url: "https://opintopolku.fi/konfo/fi/haku/ohjelmistoarkkitehtuuri" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Embedded%20Linux%20-insin%C3%B6%C3%B6ri" }],
-    transferable_skills: [],
-    keywords: ["mikropalvelut", "arkkitehtuuri", "hajautetut järjestelmät"],
-    study_length_estimate_months: 72
-  },
-
   {
     id: "mlops-insinoori",
     category: "innovoija",
@@ -38932,63 +36066,6 @@ export const careersData: CareerFI[] = [
     keywords: ["MLOps", "koneoppiminen", "DevOps"],
     study_length_estimate_months: 48
   },
-
-  {
-    id: "serverless-architect",
-    category: "innovoija",
-    title_fi: "Serverless-arkkitehti",
-    title_en: "Serverless Architect",
-    short_description: "Serverless-arkkitehti suunnittelee palvelimettomia ratkaisuja. Työ vaatii pilvi-osaamista ja arkkitehtuuriymmärrystä.",
-    main_tasks: [
-      "Serverless-arkkitehtuurin suunnittelu",
-      "FaaS-ratkaisujen kehittäminen",
-      "Event-driven architectures",
-      "Kustannusoptimointi",
-      "Skaalautuvuuden varmistaminen"
-    ],
-    impact: [],
-    education_paths: [
-      "Korkeakoulututkinto: Tietotekniikan tutkinto",
-      "Pilvisertifikaatit",
-      "Serverless-kokemus"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Serverless",
-      "AWS Lambda/Azure Functions",
-      "Event-driven architecture",
-      "Pilvi-arkkitehtuuri",
-      "Infrastructure as Code"
-    ],
-    tools_tech: [
-      "AWS Lambda",
-      "Azure Functions",
-      "Serverless Framework",
-      "Terraform"
-    ],
-    languages_required: { fi: 5, sv: 2, en: 5 },
-    salary_eur_month: {
-      median: 5800,
-      range: [5000, 8000],
-      source: "Ammattinetti 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Serverless-arkkitehtuurien yleistyminen lisää arkkitehtien kysyntää."
-    },
-    entry_roles: ["Cloud Developer", "Backend Developer"],
-    career_progression: ["Senior Serverless Architect", "Cloud Architect"],
-    typical_employers: ["IT-yritykset", "Startup-yritykset", "Konsulttiyritykset"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku – Pilvipalvelut", url: "https://opintopolku.fi/konfo/fi/haku/pilvipalvelut" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Verkkoautomaatio-insin%C3%B6%C3%B6ri" }],
-    transferable_skills: [],
-    keywords: ["serverless", "FaaS", "pilvi"],
-    study_length_estimate_months: 60
-  },
-
   {
     id: "chatbot-kehittaja",
     category: "innovoija",
@@ -39044,7 +36121,6 @@ export const careersData: CareerFI[] = [
     keywords: ["chatbot", "NLP", "keskustelurobotti"],
     study_length_estimate_months: 48
   },
-
   {
     id: "low-code-developer",
     category: "innovoija",
@@ -39100,7 +36176,6 @@ export const careersData: CareerFI[] = [
     keywords: ["low-code", "automaatio", "Power Platform"],
     study_length_estimate_months: 36
   },
-
   {
     id: "progressive-web-app-developer",
     category: "innovoija",
@@ -39156,7 +36231,6 @@ export const careersData: CareerFI[] = [
     keywords: ["PWA", "web-kehitys", "offline"],
     study_length_estimate_months: 48
   },
-
   {
     id: "rpa-kehittaja",
     category: "innovoija",
@@ -39212,7 +36286,6 @@ export const careersData: CareerFI[] = [
     keywords: ["RPA", "automatio", "prosessit"],
     study_length_estimate_months: 36
   },
-
   {
     id: "webassembly-developer",
     category: "innovoija",
@@ -39268,7 +36341,6 @@ export const careersData: CareerFI[] = [
     keywords: ["WebAssembly", "WASM", "suorituskyky"],
     study_length_estimate_months: 60
   },
-
   {
     id: "platform-insinoori",
     category: "innovoija",
@@ -39323,7 +36395,8 @@ export const careersData: CareerFI[] = [
     transferable_skills: [],
     keywords: ["platform engineering", "DevOps", "IDP"],
     study_length_estimate_months: 60
-  },{
+  },
+  {
     id: "embedded-linux-engineer",
     category: "innovoija",
     title_fi: "Embedded Linux -insinööri",
@@ -39378,7 +36451,6 @@ export const careersData: CareerFI[] = [
     keywords: ["embedded Linux", "kernel", "IoT"],
     study_length_estimate_months: 60
   },
-
   {
     id: "game-engine-developer",
     category: "innovoija",
@@ -39434,7 +36506,6 @@ export const careersData: CareerFI[] = [
     keywords: ["pelimoottori", "C++", "grafiikka"],
     study_length_estimate_months: 72
   },
-
   {
     id: "network-automation-engineer",
     category: "innovoija",
@@ -39490,7 +36561,6 @@ export const careersData: CareerFI[] = [
     keywords: ["verkkoautomaatio", "Network as Code", "Python"],
     study_length_estimate_months: 60
   },
-
   {
     id: "observability-engineer",
     category: "innovoija",
@@ -39546,7 +36616,6 @@ export const careersData: CareerFI[] = [
     keywords: ["observability", "monitorointi", "tracing"],
     study_length_estimate_months: 48
   },
-
   {
     id: "3d-tulostus-insinoori",
     category: "innovoija",
@@ -39602,7 +36671,6 @@ export const careersData: CareerFI[] = [
     keywords: ["3D-tulostus", "additiivinen valmistus", "materiaalitekniikka"],
     study_length_estimate_months: 60
   },
-
   {
     id: "neurotech-insinoori",
     category: "innovoija",
@@ -39659,7 +36727,6 @@ export const careersData: CareerFI[] = [
     keywords: ["neurotekniikka", "aivot", "biolääketiede"],
     study_length_estimate_months: 60
   },
-
   {
     id: "toimitusketjuanalyytikko",
     category: "jarjestaja",
@@ -39849,114 +36916,6 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 48
   },
   {
-    id: "logistics-coordinator",
-    category: "jarjestaja",
-    title_fi: "Logistiikkakoordinaattori",
-    title_en: "Logistics Coordinator",
-    short_description: "Logistiikkakoordinaattori hallinnoi tavaroiden liikkumista ja varastointia. Työ vaatii organisointikykyä ja analyyttistä ajattelua.",
-    main_tasks: [
-      "Kuljetusten koordinointi",
-      "Varastonhallinta",
-      "Toimittajasuhteiden hoito",
-      "Toimitusketjun optimointi",
-      "Raportointii ja analysointi"
-    ],
-    education_paths: [
-      "AMK: Logistiikka tai liiketalous",
-      "Logistiikan erikoiskoulutus",
-      "Kuljetusalan tutkinto"
-    ],
-    core_skills: [
-      "Logistiikka",
-      "Toimitusketjun hallinta",
-      "Varastointi",
-      "Analytiikka",
-      "Ongelmanratkaisu"
-    ],
-    tools_tech: [
-      "WMS-järjestelmät",
-      "TMS-järjestelmät",
-      "Excel"
-    ],
-    languages_required: { fi: 5, sv: 3, en: 4 },
-    salary_eur_month: {
-      median: 3800,
-      range: [3200, 5000],
-      source: "Ammattinetti, 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Verkkokaupan kasvu ja toimitusketjujen monimutkaisuus lisäävät logistiikan ammattilaisten kysyntää."
-    },
-    entry_roles: ["Varastotyöntekijä", "Logistiikka-assistentti"],
-    career_progression: ["Logistiikkapäällikkö", "Toimitusketjupäällikkö"],
-    typical_employers: ["Logistiikkayritykset", "Kaupan alan yritykset", "Valmistava teollisuus"],
-    work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
-    impact: [],
-    qualification_or_license: null,
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku – Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Logistiikkakoordinaattori" }
-    ],
-    transferable_skills: [],
-    study_length_estimate_months: 42
-  },
-  {
-    id: "event-coordinator",
-    category: "jarjestaja",
-    title_fi: "Tapahtumakoordinaattori",
-    title_en: "Event Coordinator",
-    short_description: "Tapahtumakoordinaattori järjestää ja koordinoi erilaisia tapahtumia. Työ vaatii organisointikykyä ja ihmissuhdetaitoja.",
-    main_tasks: [
-      "Tapahtumien suunnittelu",
-      "Toimittajien koordinointi",
-      "Aikataulujen hallinta",
-      "Budjetointi",
-      "Tapahtumapäivän koordinointi"
-    ],
-    education_paths: [
-      "AMK: Liiketalous tai matkailualaa",
-      "Tapahtumatuotannon koulutus",
-      "Projektijohtamisen opinnot"
-    ],
-    core_skills: [
-      "Tapahtumatuotanto",
-      "Projektinhallinta",
-      "Asiakaspalvelu",
-      "Budjetointi",
-      "Neuvottelutaidot"
-    ],
-    tools_tech: [
-      "Tapahtumahallintatyökalut",
-      "Projektinhallintatyökalut",
-      "Sosiaalinen media"
-    ],
-    languages_required: { fi: 5, sv: 3, en: 4 },
-    salary_eur_month: {
-      median: 3500,
-      range: [2800, 4500],
-      source: "Ammattinetti, 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Tapahtuma-alan elpyminen pandemiasta ja kokousmatkailun kasvu lisäävät kysyntää."
-    },
-    entry_roles: ["Tapahtumaassistentti", "Tapahtumavastaava"],
-    career_progression: ["Tapahtumapäällikkö", "Tapahtumajohtaja"],
-    typical_employers: ["Tapahtumatoimistot", "Yritykset", "Järjestöt"],
-    work_conditions: { remote: "Osittain", shift_work: true, travel: "kohtalaisesti" },
-    impact: [],
-    qualification_or_license: null,
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku – Tapahtumatuotanto", url: "https://opintopolku.fi/konfo/fi/haku/tapahtumatuotanto" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tapahtumakoordinaattori" }
-    ],
-    transferable_skills: [],
-    study_length_estimate_months: 42
-  },
-  {
     id: "facility-manager",
     category: "jarjestaja",
     title_fi: "Kiinteistöpäällikkö",
@@ -40011,59 +36970,6 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 42
   },
   {
-    id: "procurement-specialist",
-    category: "jarjestaja",
-    title_fi: "Hankinta-asiantuntija",
-    title_en: "Procurement Specialist",
-    short_description: "Hankinta-asiantuntija vastaa organisaation hankinnoista ja toimittajasuhteista. Työ vaatii neuvottelutaitoja ja analyyttistä osaamista.",
-    main_tasks: [
-      "Hankintojen suunnittelu",
-      "Toimittajaneuvottelut",
-      "Sopimusten hallinta",
-      "Kustannusanalyysit",
-      "Toimittajasuhteiden kehittäminen"
-    ],
-    education_paths: [
-      "AMK: Liiketalous tai logistiikka",
-      "Hankintatoimen erikoiskoulutus",
-      "SILF-tutkinto"
-    ],
-    core_skills: [
-      "Hankintatoimi",
-      "Neuvottelutaidot",
-      "Sopimusten hallinta",
-      "Analytiikka",
-      "Toimittajahallinta"
-    ],
-    tools_tech: [
-      "Hankintajärjestelmät",
-      "ERP-järjestelmät",
-      "Excel"
-    ],
-    languages_required: { fi: 5, sv: 3, en: 4 },
-    salary_eur_month: {
-      median: 4200,
-      range: [3500, 5500],
-      source: "Ammattinetti, 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Hankintojen strateginen merkitys kasvaa, mikä lisää asiantuntijoiden kysyntää."
-    },
-    entry_roles: ["Ostaja", "Hankinta-assistentti"],
-    career_progression: ["Senior hankinta-asiantuntija", "Hankintapäällikkö"],
-    typical_employers: ["Suuryritykset", "Julkinen sektori", "Hankintapalveluyritykset"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "kohtalaisesti" },
-    impact: [],
-    qualification_or_license: null,
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku – Hankintatoimi", url: "https://opintopolku.fi/konfo/fi/haku/hankintatoimi" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Hankinta-asiantuntija" }
-    ],
-    transferable_skills: [],
-    study_length_estimate_months: 42
-  },{
     id: "quality-manager",
     category: "jarjestaja",
     title_fi: "Laatupäällikkö",
@@ -40324,60 +37230,6 @@ export const careersData: CareerFI[] = [
     useful_links: [
       { name: "Opintopolku – Liiketalous", url: "https://opintopolku.fi/konfo/fi/haku/liiketalous" },
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Toimistop%C3%A4%C3%A4llikk%C3%B6" }
-    ],
-    transferable_skills: [],
-    study_length_estimate_months: 42
-  },
-  {
-    id: "warehouse-manager",
-    category: "jarjestaja",
-    title_fi: "Varastopäällikkö",
-    title_en: "Warehouse Manager",
-    short_description: "Varastopäällikkö johtaa varaston toimintaa ja henkilöstöä. Työ vaatii logistista osaamista ja johtamistaitoja.",
-    main_tasks: [
-      "Varaston toiminnan johtaminen",
-      "Henkilöstön johtaminen",
-      "Varastonohjausjärjestelmien käyttö",
-      "Turvallisuuden varmistaminen",
-      "Varaston optimointi"
-    ],
-    education_paths: [
-      "AMK: Logistiikka",
-      "Varastonhallinnan koulutus",
-      "Esimiesvalmennus"
-    ],
-    core_skills: [
-      "Varastonhallinta",
-      "Logistiikka",
-      "Henkilöstöjohtaminen",
-      "WMS-järjestelmät",
-      "Turvallisuus"
-    ],
-    tools_tech: [
-      "WMS-järjestelmät",
-      "Trukkiliikenne",
-      "Varastointijärjestelmät"
-    ],
-    languages_required: { fi: 5, sv: 3, en: 3 },
-    salary_eur_month: {
-      median: 4000,
-      range: [3400, 5000],
-      source: "Ammattinetti, 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Verkkokaupan kasvu ja logistiikan kehitys lisäävät varastopäälliköiden kysyntää."
-    },
-    entry_roles: ["Varastoesimies", "Varastotyöntekijä"],
-    career_progression: ["Logistiikkapäällikkö", "Jakelukeskuspäällikkö"],
-    typical_employers: ["Logistiikkayritykset", "Kaupan alan yritykset", "Valmistava teollisuus"],
-    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
-    impact: [],
-    qualification_or_license: null,
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku – Logistiikka", url: "https://opintopolku.fi/konfo/fi/haku/logistiikka" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Varastop%C3%A4%C3%A4llikk%C3%B6" }
     ],
     transferable_skills: [],
     study_length_estimate_months: 42
@@ -41394,114 +38246,6 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 42
   },
   {
-    id: "transportation-coordinator",
-    category: "jarjestaja",
-    title_fi: "Kuljetuskoordinaattori",
-    title_en: "Transportation Coordinator",
-    short_description: "Kuljetuskoordinaattori järjestää ja koordinoi kuljetuksia. Työ vaatii logistista osaamista ja organisointikykyä.",
-    main_tasks: [
-      "Kuljetusten suunnittelu ja koordinointi",
-      "Kuljetusyritysten hallinta",
-      "Reittien optimointi",
-      "Kuljetuskustannusten seuranta",
-      "Toimitusaikojen valvonta"
-    ],
-    education_paths: [
-      "AMK: Logistiikka",
-      "Kuljetusalan koulutus",
-      "Liikenteenohjauksen opinnot"
-    ],
-    core_skills: [
-      "Kuljetusten koordinointi",
-      "Logistiikka",
-      "Reittioptimointi",
-      "Ongelmanratkaisu",
-      "Viestintä"
-    ],
-    tools_tech: [
-      "TMS-järjestelmät",
-      "Reittioptimoinniohjelmistot",
-      "GPS-seurantajärjestelmät"
-    ],
-    languages_required: { fi: 5, sv: 3, en: 4 },
-    salary_eur_month: {
-      median: 3600,
-      range: [3000, 4500],
-      source: "Ammattinetti, 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Verkkokaupan kasvu ja kuljetusalan kehitys lisäävät koordinaattoreiden kysyntää."
-    },
-    entry_roles: ["Kuljetusassistentti", "Lähetyskoordinaattori"],
-    career_progression: ["Senior kuljetuskoordinaattori", "Kuljetuspäällikkö"],
-    typical_employers: ["Kuljetusyritykset", "Logistiikkayritykset", "Kaupan alan yritykset"],
-    work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
-    impact: [],
-    qualification_or_license: null,
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku – Kuljetusala", url: "https://opintopolku.fi/konfo/fi/haku/kuljetusala" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=koordinaattori" }
-    ],
-    transferable_skills: [],
-    study_length_estimate_months: 42
-  },
-  {
-    id: "lab-manager",
-    category: "jarjestaja",
-    title_fi: "Laboratoriopäällikkö",
-    title_en: "Laboratory Manager",
-    short_description: "Laboratoriopäällikkö johtaa laboratorion toimintaa ja henkilöstöä. Työ vaatii tieteellistä osaamista ja johtamistaitoja.",
-    main_tasks: [
-      "Laboratorion toiminnan johtaminen",
-      "Laadunvarmistus",
-      "Henkilöstön johtaminen",
-      "Laitteiden ja materiaalien hallinta",
-      "Turvallisuudesta huolehtiminen"
-    ],
-    education_paths: [
-      "FM tai FT: Luonnontieteet",
-      "Laboratorioalan erikoistumiskoulutus",
-      "Johtamiskoulutus"
-    ],
-    core_skills: [
-      "Laboratoriokäytännöt",
-      "Laadunvarmistus",
-      "Henkilöstöjohtaminen",
-      "Turvallisuus",
-      "Budjetointi"
-    ],
-    tools_tech: [
-      "Laboratoriolaitteet",
-      "LIMS-järjestelmät",
-      "Laatujärjestelmät"
-    ],
-    languages_required: { fi: 5, sv: 3, en: 5 },
-    salary_eur_month: {
-      median: 4800,
-      range: [4000, 6000],
-      source: "Ammattinetti, 2024"
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Laboratorioiden jatkuva tarve johdolle ylläpitää kysyntää."
-    },
-    entry_roles: ["Laborantti", "Tutkija"],
-    career_progression: ["Senior laboratoriopäällikkö", "Laboratoriojohtaja"],
-    typical_employers: ["Terveydenhuolto", "Yliopistot", "Tutkimuslaitokset"],
-    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
-    impact: [],
-    qualification_or_license: null,
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku – Laboratorioala", url: "https://opintopolku.fi/konfo/fi/haku/laboratorioala" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Laboratoriop%C3%A4%C3%A4llikk%C3%B6" }
-    ],
-    transferable_skills: [],
-    study_length_estimate_months: 60
-  },
-  {
     id: "maintenance-planner",
     category: "jarjestaja",
     title_fi: "Kunnossapitosuunnittelija",
@@ -41553,58 +38297,6 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kunnossapitosuunnittelija" }],
     transferable_skills: [],
     study_length_estimate_months: 48
-  },
-  {
-    id: "store-manager",
-    category: "jarjestaja",
-    title_fi: "Myymäläpäällikkö",
-    title_en: "Store Manager",
-    short_description: "Myymäläpäällikkö johtaa myymälän toimintaa ja henkilöstöä. Työ vaatii johtamistaitoja ja kaupallista osaamista.",
-    main_tasks: [
-      "Myymälän toiminnan johtaminen",
-      "Henkilöstön johtaminen",
-      "Myynnin ja tuloksen seuranta",
-      "Asiakaspalvelun varmistaminen",
-      "Varastonhallinta"
-    ],
-    education_paths: [
-      "AMK: Liiketalous",
-      "Merkonomi",
-      "Johtamiskoulutus"
-    ],
-    core_skills: [
-      "Kaupan johtaminen",
-      "Henkilöstöjohtaminen",
-      "Asiakaspalvelu",
-      "Myynti",
-      "Budjetointi"
-    ],
-    tools_tech: [
-      "Kassajärjestelmät",
-      "Varastonhallintajärjestelmät",
-      "Myyntiraportointityökalut"
-    ],
-    languages_required: { fi: 5, sv: 3, en: 3 },
-    salary_eur_month: {
-      median: 3800,
-      range: [3200, 5000],
-      source: "Ammattinetti, 2024"
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Kaupan alan jatkuva tarve myymäläpäälliköille ylläpitää kysyntää."
-    },
-    entry_roles: ["Myyjä", "Vuoropäällikkö"],
-    career_progression: ["Aluejohtaja", "Myyntijohtaja"],
-    typical_employers: ["Kaupan alan yritykset", "Vähittäiskauppa", "Erikoisliikkeet"],
-    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
-    impact: [],
-    qualification_or_license: null,
-    union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku – Kaupan ala", url: "https://opintopolku.fi/konfo/fi/haku/kaupan%20ala" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Myym%C3%A4l%C3%A4p%C3%A4%C3%A4llikk%C3%B6" }],
-    transferable_skills: [],
-    study_length_estimate_months: 42
   },
   {
     id: "production-scheduler",
@@ -42408,7 +39100,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tiedonhallinta", "knowledge management", "dokumentointi"],
     study_length_estimate_months: 42
   },
-
   {
     id: "asiakaskokemuksen-suunnittelija",
     category: "luova",
@@ -42491,7 +39182,6 @@ export const careersData: CareerFI[] = [
     ],
     study_length_estimate_months: 48
   },
-
   {
     id: "motion-designer",
     category: "luova",
@@ -42543,60 +39233,6 @@ export const careersData: CareerFI[] = [
     keywords: ["animaatio", "motion graphics", "visuaalinen suunnittelu"],
     study_length_estimate_months: 42
   },
-
-  {
-    id: "sound-designer",
-    category: "luova",
-    title_fi: "Äänisuunnittelija",
-    title_en: "Sound Designer",
-    short_description: "Äänisuunnittelija luo ja muokkaa ääniefektejä ja äänimaisemia. Työ vaatii luovuutta ja teknistä osaamista.",
-    main_tasks: [
-      "Ääniefektien luominen",
-      "Äänimaisemien suunnittelu",
-      "Äänitys ja editointi",
-      "Foley-äänet",
-      "Asiakasyhteistyö"
-    ],
-    education_paths: [
-      "AMK: Musiikkiteknologian tai äänitaiteen tutkinto",
-      "Äänisuunnittelun erikoistuminen",
-      "Portfolio ja demo"
-    ],
-    core_skills: [
-      "Äänisuunnittelu",
-      "Äänitys",
-      "Audioeditointi",
-      "Luova ajattelu",
-      "Tekninen osaaminen"
-    ],
-    tools_tech: [
-      "Pro Tools",
-      "Ableton Live",
-      "Logic Pro"
-    ],
-    languages_required: { fi: 4, sv: 2, en: 3 },
-    salary_eur_month: {
-      median: 3500,
-      range: [3000, 5000],
-      source: "Ammattinetti 2024"
-    },
-    job_outlook: {
-      status: "vakaa",
-      explanation: "Äänisuunnittelun jatkuva tarve elokuvassa, peleissä ja mediassa ylläpitää kysyntää.",
-      source: "Ammattinetti 2024"
-    },
-    entry_roles: ["Äänitysassistentti", "Junior Sound Designer"],
-    career_progression: ["Senior Sound Designer", "Audio Director"],
-    typical_employers: ["Äänistudiot", "Peliyritykset", "Elokuvatuotannot"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
-    useful_links: [
-      { name: "Opintopolku – Äänisuunnittelija", url: "https://opintopolku.fi/konfo/fi/haku/%C3%84%C3%A4nisuunnittelija" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=%C3%84%C3%A4nisuunnittelija" }],
-    keywords: ["äänisuunnittelu", "äänitys", "audio"],
-    study_length_estimate_months: 42
-  },
-
   {
     id: "kirjailija-luova",
     category: "luova",
@@ -42648,7 +39284,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kirjoittaminen", "kirjallisuus", "tarinankerronta"],
     study_length_estimate_months: 60
   },
-
   {
     id: "stand-up-koomikko",
     category: "luova",
@@ -42701,7 +39336,6 @@ export const careersData: CareerFI[] = [
     keywords: ["stand-up", "komedia", "esiintyminen"],
     study_length_estimate_months: 12
   },
-
   {
     id: "kayttoliittymasuunnittelija",
     category: "luova",
@@ -42754,7 +39388,6 @@ export const careersData: CareerFI[] = [
     keywords: ["UI", "käyttöliittymä", "visuaalinen suunnittelu"],
     study_length_estimate_months: 42
   },
-
   {
     id: "brandi-identiteettisuunnittelija",
     category: "luova",
@@ -42807,7 +39440,6 @@ export const careersData: CareerFI[] = [
     keywords: ["brändi", "identiteetti", "visuaalinen suunnittelu"],
     study_length_estimate_months: 42
   },
-
   {
     id: "sisustusarkkitehti-luova",
     category: "luova",
@@ -42859,7 +39491,6 @@ export const careersData: CareerFI[] = [
     keywords: ["sisustus", "suunnittelu", "tilat"],
     study_length_estimate_months: 42
   },
-
   {
     id: "tattoo-artisti",
     category: "luova",
@@ -42911,7 +39542,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tatuointi", "taide", "kehotaide"],
     study_length_estimate_months: 24
   },
-
   {
     id: "tyylisuunnittelija",
     category: "luova",
@@ -42964,7 +39594,6 @@ export const careersData: CareerFI[] = [
     keywords: ["styling", "muoti", "tyyli"],
     study_length_estimate_months: 36
   },
-
   {
     id: "kirjojen-kuvittaja",
     category: "luova",
@@ -43016,7 +39645,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kuvitus", "piirtäminen", "kirjat"],
     study_length_estimate_months: 42
   },
-
   {
     id: "keramiikkataiteilija",
     category: "luova",
@@ -43069,7 +39697,6 @@ export const careersData: CareerFI[] = [
     keywords: ["keramiikka", "taide", "käsityö"],
     study_length_estimate_months: 42
   },
-
   {
     id: "tekstiilitaiteilija",
     category: "luova",
@@ -43122,7 +39749,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tekstiili", "taide", "käsityö"],
     study_length_estimate_months: 42
   },
-
   {
     id: "lasitaiteilija",
     category: "luova",
@@ -43175,7 +39801,6 @@ export const careersData: CareerFI[] = [
     keywords: ["lasi", "taide", "käsityö"],
     study_length_estimate_months: 42
   },
-
   {
     id: "nahkataiteilija",
     category: "luova",
@@ -43228,7 +39853,6 @@ export const careersData: CareerFI[] = [
     keywords: ["nahka", "käsityö", "taide"],
     study_length_estimate_months: 24
   },
-
   {
     id: "korusuunnittelija-taiteilija",
     category: "luova",
@@ -43281,7 +39905,6 @@ export const careersData: CareerFI[] = [
     keywords: ["korut", "taide", "käsityö"],
     study_length_estimate_months: 42
   },
-
   {
     id: "tanssinopettaja-luova",
     category: "luova",
@@ -43332,7 +39955,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tanssinopettaja" }],
     keywords: ["tanssi", "opettaminen", "koreografia"],
     study_length_estimate_months: 42
-  },{
+  },
+  {
     id: "graafinen-taiteilija",
     category: "luova",
     title_fi: "Graafinen taiteilija",
@@ -43383,7 +40007,6 @@ export const careersData: CareerFI[] = [
     keywords: ["grafiikka", "taide", "painotaide"],
     study_length_estimate_months: 42
   },
-
   {
     id: "elokuvaleikkaaja",
     category: "luova",
@@ -43436,7 +40059,6 @@ export const careersData: CareerFI[] = [
     keywords: ["leikkaus", "elokuva", "editointi"],
     study_length_estimate_months: 42
   },
-
   {
     id: "installaatiotaiteilija",
     category: "luova",
@@ -43488,7 +40110,6 @@ export const careersData: CareerFI[] = [
     keywords: ["installaatio", "nykytaide", "tilat"],
     study_length_estimate_months: 60
   },
-
   {
     id: "performanssitaiteilija",
     category: "luova",
@@ -43540,7 +40161,6 @@ export const careersData: CareerFI[] = [
     keywords: ["performanssi", "nykytaide", "live-taide"],
     study_length_estimate_months: 60
   },
-
   {
     id: "digitaalinen-taiteilija",
     category: "luova",
@@ -43593,7 +40213,6 @@ export const careersData: CareerFI[] = [
     keywords: ["digitaalinen taide", "3D", "NFT"],
     study_length_estimate_months: 42
   },
-
   {
     id: "street-art-taiteilija",
     category: "luova",
@@ -43645,7 +40264,6 @@ export const careersData: CareerFI[] = [
     keywords: ["street art", "muraalit", "katutaide"],
     study_length_estimate_months: 24
   },
-
   {
     id: "konsepti-taiteilija",
     category: "luova",
@@ -43697,7 +40315,6 @@ export const careersData: CareerFI[] = [
     keywords: ["konsepti", "taide", "pelit"],
     study_length_estimate_months: 42
   },
-
   {
     id: "typo graphinen-suunnittelija",
     category: "luova",
@@ -43749,7 +40366,6 @@ export const careersData: CareerFI[] = [
     keywords: ["typografia", "kirjasintyypit", "suunnittelu"],
     study_length_estimate_months: 42
   },
-
   {
     id: "pakkasuunnittelija-luova",
     category: "luova",
@@ -43802,7 +40418,6 @@ export const careersData: CareerFI[] = [
     keywords: ["pakkaus", "suunnittelu", "brändi"],
     study_length_estimate_months: 42
   },
-
   {
     id: "character-designer",
     category: "luova",
@@ -43855,7 +40470,6 @@ export const careersData: CareerFI[] = [
     keywords: ["hahmosuunnittelu", "piirtäminen", "pelit"],
     study_length_estimate_months: 42
   },
-
   {
     id: "valo-suunnittelija-taide",
     category: "luova",
@@ -43908,8 +40522,6 @@ export const careersData: CareerFI[] = [
     keywords: ["valo", "valaistus", "taide"],
     study_length_estimate_months: 42
   },
-
-
   {
     id: "etaterveys-koordinaattori",
     category: "auttaja",
@@ -43985,7 +40597,6 @@ export const careersData: CareerFI[] = [
     keywords: ["koneistus", "CNC", "metalli", "tuotanto"],
     study_length_estimate_months: 36
   },
-
   {
     id: "teollisuusmekanikko",
     category: "rakentaja",
@@ -44039,7 +40650,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kunnossapito", "mekanikko", "teollisuus"],
     study_length_estimate_months: 36
   },
-
   {
     id: "tuotantotyontekija",
     category: "rakentaja",
@@ -44091,7 +40701,6 @@ export const careersData: CareerFI[] = [
     keywords: ["tuotanto", "tehdas", "linja"],
     study_length_estimate_months: 24
   },
-
   {
     id: "kokoonpanija",
     category: "rakentaja",
@@ -44143,7 +40752,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kokoonpano", "asennus", "tuotanto"],
     study_length_estimate_months: 12
   },
-
   {
     id: "laatutarkastaja",
     category: "rakentaja",
@@ -44196,7 +40804,6 @@ export const careersData: CareerFI[] = [
     keywords: ["laatu", "tarkastus", "mittaus"],
     study_length_estimate_months: 36
   },
-
   {
     id: "trukinkuljettaja",
     category: "rakentaja",
@@ -44248,9 +40855,6 @@ export const careersData: CareerFI[] = [
     keywords: ["trukki", "logistiikka", "siirto"],
     study_length_estimate_months: 3
   },
-
-  // ========== BATCH 2: RAKENTAJA CAREERS (Transportation, Logistics & Technical Trades) ==========
-
   {
     id: "linja-autonkuljettaja",
     category: "rakentaja",
@@ -44302,7 +40906,6 @@ export const careersData: CareerFI[] = [
     keywords: ["liikenne", "kuljetus", "asiakaspalvelu"],
     study_length_estimate_months: 6
   },
-
   {
     id: "rekkakuski",
     category: "rakentaja",
@@ -44354,7 +40957,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kuljetus", "logistiikka", "liikenne"],
     study_length_estimate_months: 6
   },
-
   {
     id: "taksikuski",
     category: "rakentaja",
@@ -44407,7 +41009,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kuljetus", "asiakaspalvelu", "liikenne"],
     study_length_estimate_months: 3
   },
-
   {
     id: "sahkoasentaja-rakennus",
     category: "rakentaja",
@@ -44460,7 +41061,6 @@ export const careersData: CareerFI[] = [
     keywords: ["sähkö", "asennus", "rakennus"],
     study_length_estimate_months: 36
   },
-
   {
     id: "vvs-asentaja",
     category: "rakentaja",
@@ -44513,7 +41113,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=VVS-asentaja" }],
     keywords: ["LVI", "putki", "ilmastointi"],
     study_length_estimate_months: 36
-  },{
+  },
+  {
     id: "nosturinkuljettaja",
     category: "rakentaja",
     title_fi: "Nosturinkuljettaja",
@@ -44564,7 +41165,6 @@ export const careersData: CareerFI[] = [
     keywords: ["nosturi", "rakennus", "nosto"],
     study_length_estimate_months: 6
   },
-
   {
     id: "huoltomies",
     category: "rakentaja",
@@ -44616,7 +41216,6 @@ export const careersData: CareerFI[] = [
     keywords: ["huolto", "kiinteistö", "korjaus"],
     study_length_estimate_months: 24
   },
-
   {
     id: "kirvesmies-osaaja",
     category: "rakentaja",
@@ -44669,7 +41268,6 @@ export const careersData: CareerFI[] = [
     keywords: ["puu", "rakennus", "kirves"],
     study_length_estimate_months: 36
   },
-
   {
     id: "maalausalan-ammattilainen",
     category: "rakentaja",
@@ -44722,9 +41320,6 @@ export const careersData: CareerFI[] = [
     keywords: ["maalaus", "pintakäsittely", "rakennus"],
     study_length_estimate_months: 36
   },
-
-  // ========== BATCH 3: RAKENTAJA CAREERS (Construction & Specialized Trades) ==========
-
   {
     id: "lattia-asentaja",
     category: "rakentaja",
@@ -44777,7 +41372,6 @@ export const careersData: CareerFI[] = [
     keywords: ["lattia", "asennus", "rakennus"],
     study_length_estimate_months: 24
   },
-
   {
     id: "raudoittaja",
     category: "rakentaja",
@@ -44828,7 +41422,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Raudoittaja" }],
     keywords: ["raudoitus", "betoni", "rakennus"],
     study_length_estimate_months: 24
-  },{
+  },
+  {
     id: "kattoasentaja",
     category: "rakentaja",
     title_fi: "Kattoasentaja",
@@ -44879,7 +41474,6 @@ export const careersData: CareerFI[] = [
     keywords: ["katto", "asennus", "rakennus"],
     study_length_estimate_months: 24
   },
-
   {
     id: "muurari",
     category: "rakentaja",
@@ -44931,7 +41525,6 @@ export const careersData: CareerFI[] = [
     keywords: ["muuraus", "tiili", "rakennus"],
     study_length_estimate_months: 36
   },
-
   {
     id: "ikkunan-ovi-asentaja",
     category: "rakentaja",
@@ -44984,7 +41577,6 @@ export const careersData: CareerFI[] = [
     keywords: ["ikkuna", "ovi", "asennus"],
     study_length_estimate_months: 12
   },
-
   {
     id: "levyseppa",
     category: "rakentaja",
@@ -45037,7 +41629,6 @@ export const careersData: CareerFI[] = [
     keywords: ["levy", "metalli", "hitsaus"],
     study_length_estimate_months: 36
   },
-
   {
     id: "hitsaaja-rakenne",
     category: "rakentaja",
@@ -45090,7 +41681,6 @@ export const careersData: CareerFI[] = [
     keywords: ["hitsaus", "teräs", "rakennus"],
     study_length_estimate_months: 36
   },
-
   {
     id: "elintarviketyontekija",
     category: "rakentaja",
@@ -45142,7 +41732,6 @@ export const careersData: CareerFI[] = [
     keywords: ["elintarvike", "tuotanto", "hygienia"],
     study_length_estimate_months: 24
   },
-
   {
     id: "puuseppa-teollinen",
     category: "rakentaja",
@@ -45195,9 +41784,6 @@ export const careersData: CareerFI[] = [
     keywords: ["puuseppä", "puutuote", "CNC"],
     study_length_estimate_months: 36
   },
-
-  // ========== BATCH 4: RAKENTAJA CAREERS (Automotive, Maritime & Industrial Operations) ==========
-
   {
     id: "raskaan-kaluston-mekaanikko",
     category: "rakentaja",
@@ -45249,8 +41835,7 @@ export const careersData: CareerFI[] = [
     keywords: ["raskas kalusto", "diesel", "huolto"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "alus-mekaanikko",
     category: "rakentaja",
     title_fi: "Alusmekaanikko",
@@ -45302,8 +41887,7 @@ export const careersData: CareerFI[] = [
     keywords: ["merenkulku", "alus", "koneisto"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "telakkatyontekija",
     category: "rakentaja",
     title_fi: "Telakkatyöntekijä",
@@ -45354,8 +41938,7 @@ export const careersData: CareerFI[] = [
     keywords: ["telakka", "laiva", "hitsaus"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "paperikoneenkuljettaja",
     category: "rakentaja",
     title_fi: "Paperikoneen kuljettaja",
@@ -45407,8 +41990,7 @@ export const careersData: CareerFI[] = [
     keywords: ["paperi", "prosessi", "teollisuus"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "kemianprosessi-operaattori",
     category: "rakentaja",
     title_fi: "Kemianprosessioperaattori",
@@ -45460,8 +42042,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kemia", "prosessi", "tuotanto"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "sahateollisuustyontekija",
     category: "rakentaja",
     title_fi: "Sahateollisuustyöntekijä",
@@ -45513,8 +42094,7 @@ export const careersData: CareerFI[] = [
     keywords: ["saha", "puu", "tuotanto"],
     study_length_estimate_months: 12
 },
-
-{
+  {
   id: "metsuri",
     category: "rakentaja",
     title_fi: "Metsuri",
@@ -45565,8 +42145,7 @@ export const careersData: CareerFI[] = [
     keywords: ["metsä", "puunkaato", "ulkotyö"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "metsakoneen-kuljettaja",
     category: "rakentaja",
     title_fi: "Metsäkoneen kuljettaja",
@@ -45616,8 +42195,7 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Mets%C3%A4koneen%20kuljettaja" }],
     keywords: ["metsä", "hakkuu", "kone"],
     study_length_estimate_months: 24
-},// ========== BATCH 5: RAKENTAJA CAREERS (Agriculture, Energy & Specialized Manufacturing) ==========
-
+},
   {
   id: "maataloustyontekija",
     category: "rakentaja",
@@ -45669,8 +42247,7 @@ export const careersData: CareerFI[] = [
     keywords: ["maatalous", "eläimet", "viljely"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "karjanhoitaja",
     category: "rakentaja",
     title_fi: "Karjanhoitaja",
@@ -45721,8 +42298,7 @@ export const careersData: CareerFI[] = [
     keywords: ["karja", "lypsytyö", "maatalous"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "puutarhuri",
     category: "rakentaja",
     title_fi: "Puutarhuri",
@@ -45773,8 +42349,7 @@ export const careersData: CareerFI[] = [
     keywords: ["puutarha", "kasvit", "viheralueet"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "tuulivoimalan-huoltoteknikko",
     category: "rakentaja",
     title_fi: "Tuulivoimalan huoltoteknikko",
@@ -45826,8 +42401,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tuulivoima", "huolto", "energia"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "sahkoverkkoasentaja",
     category: "rakentaja",
     title_fi: "Sähköverkkoasentaja",
@@ -45878,8 +42452,7 @@ export const careersData: CareerFI[] = [
     keywords: ["sähköverkko", "linjat", "energia"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "tekstiilityontekija",
     category: "rakentaja",
     title_fi: "Tekstiilityöntekijä",
@@ -45931,8 +42504,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tekstiili", "kangas", "tuotanto"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "muovituotteiden-valmistaja",
     category: "rakentaja",
     title_fi: "Muovituotteiden valmistaja",
@@ -45984,8 +42556,7 @@ export const careersData: CareerFI[] = [
     keywords: ["muovi", "valmistus", "teollisuus"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "kumiteollisuustyontekija",
     category: "rakentaja",
     title_fi: "Kumiteollisuustyöntekijä",
@@ -46037,8 +42608,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kumi", "renkaat", "tuotanto"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "lasiteollisuustyontekija",
     category: "rakentaja",
     title_fi: "Lasiteollisuustyöntekijä",
@@ -46090,8 +42660,7 @@ export const careersData: CareerFI[] = [
     keywords: ["lasi", "valmistus", "teollisuus"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "keramiikkatyontekija",
     category: "rakentaja",
     title_fi: "Keramiikkatyöntekijä",
@@ -46143,9 +42712,6 @@ export const careersData: CareerFI[] = [
     keywords: ["keramiikka", "savityö", "valmistus"],
     study_length_estimate_months: 36
   },
-
-  // ========== BATCH 6: RAKENTAJA CAREERS (Security, Maintenance & Technical Services) ==========
-
   {
   id: "vartija",
     category: "rakentaja",
@@ -46197,8 +42763,7 @@ export const careersData: CareerFI[] = [
     keywords: ["vartiointi", "turvallisuus", "valvonta"],
     study_length_estimate_months: 12
 },
-
-{
+  {
   id: "kiinteistonhoitaja",
     category: "rakentaja",
     title_fi: "Kiinteistönhoitaja",
@@ -46249,8 +42814,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kiinteistö", "huolto", "ylläpito"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "jatehuoltotyontekija",
     category: "rakentaja",
     title_fi: "Jätehuoltotyöntekijä",
@@ -46301,8 +42865,7 @@ export const careersData: CareerFI[] = [
     keywords: ["jäte", "kierrätys", "ympäristö"],
     study_length_estimate_months: 12
 },
-
-{
+  {
   id: "siivoja",
     category: "rakentaja",
     title_fi: "Siivoja",
@@ -46354,8 +42917,7 @@ export const careersData: CareerFI[] = [
     keywords: ["siivous", "puhdistus", "hygienia"],
     study_length_estimate_months: 12
 },
-
-{
+  {
   id: "teollisuusputkiasentaja",
     category: "rakentaja",
     title_fi: "Teollisuusputkiasentaja",
@@ -46406,8 +42968,7 @@ export const careersData: CareerFI[] = [
     keywords: ["putki", "hitsaus", "teollisuus"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "elintarvikealan-pakkaaja",
     category: "rakentaja",
     title_fi: "Elintarvikealan pakkaaja",
@@ -46459,8 +43020,7 @@ export const careersData: CareerFI[] = [
     keywords: ["pakkaus", "elintarvike", "hygienia"],
     study_length_estimate_months: 12
 },
-
-{
+  {
   id: "betonielementtiasentaja",
     category: "rakentaja",
     title_fi: "Betonielementtiasentaja",
@@ -46511,8 +43071,7 @@ export const careersData: CareerFI[] = [
     keywords: ["betoni", "elementti", "rakentaminen"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "teollisuusmaalari",
     category: "rakentaja",
     title_fi: "Teollisuusmaalari",
@@ -46563,8 +43122,7 @@ export const careersData: CareerFI[] = [
     keywords: ["maalaus", "pintakäsittely", "teollisuus"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "konepajahitsaaja",
     category: "rakentaja",
     title_fi: "Konepajahitsaaja",
@@ -46616,8 +43174,7 @@ export const careersData: CareerFI[] = [
     keywords: ["hitsaus", "metalli", "konepaja"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "koneenkayttaja-teollisuus",
     category: "rakentaja",
     title_fi: "Koneenkäyttäjä (teollisuus)",
@@ -46669,9 +43226,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kone", "tuotanto", "valvonta"],
     study_length_estimate_months: 24
   },
-
-  // ========== BATCH 7: RAKENTAJA CAREERS (Specialized Trades & Operations) – FINAL BATCH ==========
-
   {
   id: "rautatietyontekija",
     category: "rakentaja",
@@ -46724,8 +43278,7 @@ export const careersData: CareerFI[] = [
     keywords: ["rata", "rautatie", "kunnossapito"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "tienrakentaja",
     category: "rakentaja",
     title_fi: "Tienrakentaja",
@@ -46776,8 +43329,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tie", "asfaltti", "rakentaminen"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "metalliseppa",
     category: "rakentaja",
     title_fi: "Metalliseppä",
@@ -46829,8 +43381,7 @@ export const careersData: CareerFI[] = [
     keywords: ["seppä", "takominen", "metalli"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "porari",
     category: "rakentaja",
     title_fi: "Porari",
@@ -46881,8 +43432,7 @@ export const careersData: CareerFI[] = [
     keywords: ["poraus", "räjäytys", "kallio"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "vesihuoltomies",
     category: "rakentaja",
     title_fi: "Vesihuoltomies",
@@ -46934,8 +43484,7 @@ export const careersData: CareerFI[] = [
     keywords: ["vesi", "viemäri", "huolto"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "lannoitteiden-levittaja",
     category: "rakentaja",
     title_fi: "Maatalouskoneen kuljettaja",
@@ -46987,8 +43536,7 @@ export const careersData: CareerFI[] = [
     keywords: ["maatalous", "traktori", "kone"],
     study_length_estimate_months: 24
 },
-
-{
+  {
   id: "painokoneenkayttaja",
     category: "rakentaja",
     title_fi: "Painokoneenkäyttäjä",
@@ -47040,8 +43588,7 @@ export const careersData: CareerFI[] = [
     keywords: ["paino", "kone", "painatus"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "jaatehdas-operaattori",
     category: "rakentaja",
     title_fi: "Jäädytysteknologian operaattori",
@@ -47093,8 +43640,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kylmä", "jäähdytys", "pakastus"],
     study_length_estimate_months: 36
 },
-
-{
+  {
   id: "betoniauton-kuljettaja",
     category: "rakentaja",
     title_fi: "Betoniauton kuljettaja",
@@ -47143,10 +43689,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Betoniauton%20kuljettaja" }],
     keywords: ["betoni", "kuljetus", "ajo"],
     study_length_estimate_months: 12
-  },// ===============================
-// HYBRID CAREERS – Creative + Helper
-// ===============================
-{
+  },
+  {
     id: "taideterapeutti",
     category: "auttaja",
     title_fi: "Taideterapeutti",
@@ -47206,7 +43750,7 @@ export const careersData: CareerFI[] = [
     keywords: ["taideterapia", "luova terapia", "mielenterveys", "taide", "kuntoutus"],
     study_length_estimate_months: 60
 },
-{
+  {
     id: "musiikkiterapeutti",
     category: "auttaja",
     title_fi: "Musiikkiterapeutti",
@@ -47266,7 +43810,7 @@ export const careersData: CareerFI[] = [
     keywords: ["musiikkiterapia", "kuntoutus", "musiikki", "terapia"],
     study_length_estimate_months: 60
 },
-{
+  {
     id: "draamaterapeutti",
     category: "auttaja",
     title_fi: "Draamaterapeutti",
@@ -47325,7 +43869,7 @@ export const careersData: CareerFI[] = [
     keywords: ["draamaterapia", "teatteri", "terapia", "luova terapia"],
     study_length_estimate_months: 60
 },
-{
+  {
     id: "tanssiterapeutti",
     category: "auttaja",
     title_fi: "Tanssiterapeutti",
@@ -47385,7 +43929,7 @@ export const careersData: CareerFI[] = [
     keywords: ["tanssiterapia", "liike", "terapia", "kehollinen"],
     study_length_estimate_months: 60
 },
-{
+  {
     id: "kuvataideopettaja",
     category: "auttaja",
     title_fi: "Kuvataideopettaja",
@@ -47445,7 +43989,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kuvataide", "opettaja", "taide", "kasvatus"],
     study_length_estimate_months: 60
 },
-{
+  {
     id: "musiikkipedagogi",
     category: "auttaja",
     title_fi: "Musiikkipedagogi",
@@ -47504,7 +44048,7 @@ export const careersData: CareerFI[] = [
     keywords: ["musiikki", "pedagogi", "opetus", "soitto"],
     study_length_estimate_months: 48
 },
-{
+  {
     id: "kasityonopettaja",
     category: "auttaja",
     title_fi: "Käsityönopettaja",
@@ -47564,7 +44108,7 @@ export const careersData: CareerFI[] = [
     keywords: ["käsityö", "opettaja", "tekstiili", "puu", "tekninen työ"],
     study_length_estimate_months: 60
 },
-{
+  {
     id: "luovuusvalmentaja",
     category: "auttaja",
     title_fi: "Luovuusvalmentaja",
@@ -47625,10 +44169,7 @@ export const careersData: CareerFI[] = [
     keywords: ["luovuus", "valmennus", "coaching", "innovaatio"],
     study_length_estimate_months: 24
 },
-// ===============================
-// HYBRID CAREERS – Health + Tech
-// ===============================
-{
+  {
     id: "terveysteknologia-asiantuntija",
     category: "innovoija",
     title_fi: "Terveysteknologia-asiantuntija",
@@ -47689,7 +44230,7 @@ export const careersData: CareerFI[] = [
     keywords: ["terveysteknologia", "digitalisaatio", "healthtech", "eHealth"],
     study_length_estimate_months: 48
 },
-{
+  {
     id: "laakintalaiteteknikko",
     category: "innovoija",
     title_fi: "Lääkintälaiteteknikko",
@@ -47749,7 +44290,7 @@ export const careersData: CareerFI[] = [
     keywords: ["lääkintälaite", "huolto", "teknikko", "terveysteknologia"],
     study_length_estimate_months: 48
 },
-{
+  {
     id: "terveysinformatiikan-asiantuntija",
     category: "innovoija",
     title_fi: "Terveysinformatiikan asiantuntija",
@@ -47810,7 +44351,7 @@ export const careersData: CareerFI[] = [
     keywords: ["terveysinformatiikka", "tietojärjestelmät", "data", "terveydenhuolto"],
     study_length_estimate_months: 60
 },
-{
+  {
     id: "digitaalisen-terveyden-kehittaja",
     category: "innovoija",
     title_fi: "Digitaalisen terveyden kehittäjä",
@@ -47870,7 +44411,7 @@ export const careersData: CareerFI[] = [
     keywords: ["digitaalinen terveys", "kehitys", "sovellus", "eHealth"],
     study_length_estimate_months: 48
 },
-{
+  {
     id: "biolaaketieteellinen-insinoori",
     category: "innovoija",
     title_fi: "Biolääketieteellinen insinööri",
@@ -47931,7 +44472,7 @@ export const careersData: CareerFI[] = [
     keywords: ["biolääketiede", "insinööri", "lääkintälaite", "T&K"],
     study_length_estimate_months: 60
 },
-{
+  {
     id: "kliininen-informatiikka-asiantuntija",
     category: "innovoija",
     title_fi: "Kliininen informatiikka-asiantuntija",
@@ -47991,11 +44532,6 @@ export const careersData: CareerFI[] = [
     keywords: ["kliininen informatiikka", "tietojärjestelmät", "terveydenhuolto"],
     study_length_estimate_months: 60
 },
-
-// ===============================
-// HYBRID CAREERS – Environment + Education
-// ===============================
-
   {
     id: "luontokoulun-ohjaaja",
     category: "ympariston-puolustaja",
@@ -48057,7 +44593,7 @@ export const careersData: CareerFI[] = [
     keywords: ["luontokoulu", "luonto", "ohjaaja", "ympäristökasvatus"],
     study_length_estimate_months: 36
 },
-{
+  {
     id: "kestavyyskouluttaja",
     category: "ympariston-puolustaja",
     title_fi: "Kestävyyskouluttaja",
@@ -48117,10 +44653,7 @@ export const careersData: CareerFI[] = [
     keywords: ["kestävä kehitys", "koulutus", "vastuullisuus", "sustainability"],
     study_length_estimate_months: 48
 },
-// ===============================
-// HYBRID CAREERS – Education + Creative
-// ===============================
-{
+  {
     id: "mediakasvatuksen-asiantuntija",
     category: "auttaja",
     title_fi: "Mediakasvatuksen asiantuntija",
@@ -48180,7 +44713,7 @@ export const careersData: CareerFI[] = [
     keywords: ["mediakasvatus", "medialukutaito", "kasvatus", "digitaidot"],
     study_length_estimate_months: 60
 },
-{
+  {
     id: "oppimismuotoilija",
     category: "luova",
     title_fi: "Oppimismuotoilija",
@@ -48238,10 +44771,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kouluttaja" }],
     keywords: ["oppimismuotoilu", "learning design", "muotoilu", "koulutus"],
     study_length_estimate_months: 60
-},// ===============================
-// HYBRID CAREERS – Sports + Helper
-// ===============================
-{
+},
+  {
     id: "urheilupsykologi",
     category: "auttaja",
     title_fi: "Urheilupsykologi",
@@ -48300,10 +44831,8 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=psykologi" }],
     keywords: ["urheilupsykologia", "mentaalivalmennus", "psykologia", "urheilu"],
     study_length_estimate_months: 72
-},// ===============================
-// HYBRID CAREERS – Health + Creative
-// ===============================
-{
+},
+  {
     id: "terveyskommunikaatiosuunnittelija",
     category: "luova",
     title_fi: "Terveyskommunikaatiosuunnittelija",
@@ -48363,7 +44892,7 @@ export const careersData: CareerFI[] = [
     keywords: ["terveysviestintä", "viestintä", "suunnittelu", "terveys"],
     study_length_estimate_months: 48
 },
-{
+  {
     id: "potilaskokemussuunnittelija",
     category: "luova",
     title_fi: "Potilaskokemussuunnittelija",
@@ -48422,10 +44951,359 @@ export const careersData: CareerFI[] = [
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Potilaskokemussuunnittelija" }],
     keywords: ["potilaskokemus", "palvelumuotoilu", "terveydenhuolto", "design"],
     study_length_estimate_months: 48
-}
-
-
-
+},
+  {
+    id: "palomies",
+    category: "auttaja",
+    title_fi: "Palomies",
+    title_en: "Firefighter",
+    short_description: "Palomies sammuttaa tulipaloja, pelastaa ihmisiä onnettomuustilanteista ja osallistuu ensihoitotehtäviin.",
+    main_tasks: ["Tulipalojen sammuttaminen", "Pelastustoiminta onnettomuuksissa", "Ensihoidon antaminen", "Välineiden huolto ja harjoittelu", "Turvallisuusvalistus"],
+    impact: ["Pelastaa ihmishenkiä ja omaisuutta", "Ylläpitää yhteiskunnan turvallisuutta", "Auttaa hätätilanteissa"],
+    education_paths: ["Pelastusalan perustutkinto (toinen aste)", "Pelastusopiston koulutus"],
+    salary_range: { min: 2800, max: 4200, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Palokuntatyö on vakaata ja arvostettua työtä." },
+    typical_employers: ["Pelastuslaitokset", "Kunnat", "Yksityiset palokunnat"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    union_or_CBA: "KVTES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=palomies" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/pelastusala" }
+    ],
+    keywords: ["palomies", "pelastaja", "sammuttaminen", "turvallisuus", "ensihoito"],
+    study_length_estimate_months: 18,
+    source: "Pelastusopisto, Tilastokeskus 2024"
+  },
+  {
+    id: "kampaaja",
+    category: "luova",
+    title_fi: "Kampaaja",
+    title_en: "Hairdresser",
+    short_description: "Kampaaja leikkaa, värjää ja muotoilee asiakkaiden hiuksia sekä neuvoo hiustenhoitoon liittyvissä asioissa.",
+    main_tasks: ["Hiusten leikkaus ja muotoilu", "Värjäys ja vaalennukset", "Permanentit ja hoidot", "Asiakasneuvonta", "Tuotemyynti"],
+    impact: ["Parantaa asiakkaiden itsetuntoa", "Luo trendejä ja tyylejä", "Tarjoaa henkilökohtaista palvelua"],
+    education_paths: ["Hiusalan perustutkinto (toinen aste)", "Hiusalan ammattitutkinto"],
+    salary_range: { min: 2000, max: 3200, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Kampaajan työ on vakaata." },
+    typical_employers: ["Kampaamot", "Yrittäjänä", "Hotellit ja kylpylät"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "ei" },
+    union_or_CBA: "Hiusalan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=kampaaja" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/hiusala" }
+    ],
+    keywords: ["kampaaja", "hiukset", "leikkaus", "värjäys", "kauneus"],
+    study_length_estimate_months: 36,
+    source: "Suomen Hiusyrittäjät, Tilastokeskus 2024"
+  },
+  {
+    id: "parturi",
+    category: "luova",
+    title_fi: "Parturi",
+    title_en: "Barber",
+    short_description: "Parturi erikoistuu miesten hiustenleikkuuseen, parranajoon ja parranmuotoiluun.",
+    main_tasks: ["Miesten hiustenleikkuu", "Parranajo ja -muotoilu", "Hiustenhoito", "Asiakaspalvelu", "Välineiden huolto"],
+    impact: ["Auttaa asiakkaita näyttämään parhaaltaan", "Ylläpitää perinteistä parturikulttuuria"],
+    education_paths: ["Hiusalan perustutkinto (toinen aste)", "Parturi-kampaajan ammattitutkinto"],
+    salary_range: { min: 2000, max: 3500, currency: "EUR" },
+    job_outlook: { status: "growing", description: "Parturipalveluiden kysyntä kasvaa." },
+    typical_employers: ["Parturiliikkeet", "Yrittäjänä", "Kampaamot"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "ei" },
+    union_or_CBA: "Hiusalan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=parturi" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/parturi" }
+    ],
+    keywords: ["parturi", "parta", "hiukset", "leikkaus", "miehet"],
+    study_length_estimate_months: 36,
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "kosmetologi",
+    category: "luova",
+    title_fi: "Kosmetologi",
+    title_en: "Cosmetician",
+    short_description: "Kosmetologi tekee ihonhoitoja, meikkauksia ja erilaisia kauneushoitoja.",
+    main_tasks: ["Kasvohoitojen tekeminen", "Meikkaus", "Kulmien ja ripsien käsittely", "Vartalohoidot", "Asiakasneuvonta"],
+    impact: ["Parantaa asiakkaiden ihon kuntoa", "Lisää asiakkaiden hyvinvointia"],
+    education_paths: ["Kauneudenhoitoalan perustutkinto (toinen aste)", "Kosmetologin ammattitutkinto"],
+    salary_range: { min: 2100, max: 3300, currency: "EUR" },
+    job_outlook: { status: "growing", description: "Kauneusalan kasvu jatkuu." },
+    typical_employers: ["Kauneushoitolat", "Kylpylät", "Yrittäjänä"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "ei" },
+    union_or_CBA: "Kauneudenhoitoalan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=kosmetologi" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/kosmetologi" }
+    ],
+    keywords: ["kosmetologi", "ihonhoito", "kauneus", "meikki", "hoitola"],
+    study_length_estimate_months: 36,
+    source: "SKY - Suomen Kosmetologien Yhdistys, Tilastokeskus 2024"
+  },
+  {
+    id: "personal-trainer",
+    category: "auttaja",
+    title_fi: "Personal Trainer",
+    title_en: "Personal Trainer",
+    short_description: "Personal trainer suunnittelee ja ohjaa yksilöllisiä harjoitusohjelmia asiakkaille.",
+    main_tasks: ["Harjoitusohjelmien suunnittelu", "Henkilökohtainen valmennus", "Asiakkaan motivointi", "Kehityksen seuranta"],
+    impact: ["Parantaa asiakkaiden fyysistä kuntoa", "Tukee terveellisiä elämäntapoja"],
+    education_paths: ["Liikunta-alan perustutkinto (toinen aste)", "Liikunnanohjaaja (AMK)", "Personal trainer -sertifikaatti"],
+    salary_range: { min: 2300, max: 4500, currency: "EUR" },
+    job_outlook: { status: "growing", description: "Liikunta-alan kasvu jatkuu." },
+    typical_employers: ["Kuntosalit", "Yrittäjänä", "Hyvinvointikeskukset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Liikunta-alan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=personal%20trainer" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/liikunta" }
+    ],
+    keywords: ["personal trainer", "valmentaja", "liikunta", "kuntosali", "hyvinvointi"],
+    study_length_estimate_months: 12,
+    source: "FAF - Fitness Academy of Finland, Tilastokeskus 2024"
+  },
+  {
+    id: "nuorisotyontekija",
+    category: "auttaja",
+    title_fi: "Nuorisotyöntekijä",
+    title_en: "Youth Worker",
+    short_description: "Nuorisotyöntekijä tukee nuorten kasvua ja kehitystä sekä järjestää toimintaa.",
+    main_tasks: ["Nuorten ohjaus ja tukeminen", "Toiminnan järjestäminen", "Ryhmätoiminnan vetäminen", "Yhteistyö vanhempien kanssa"],
+    impact: ["Tukee nuorten hyvinvointia", "Ehkäisee syrjäytymistä", "Vahvistaa nuorten osallisuutta"],
+    education_paths: ["Nuoriso- ja vapaa-ajan ohjauksen perustutkinto (toinen aste)", "Yhteisöpedagogi (AMK)"],
+    salary_range: { min: 2400, max: 3400, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Nuorisotyön tarve on vakaa." },
+    typical_employers: ["Kunnat", "Järjestöt", "Seurakunnat", "Oppilaitokset"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    union_or_CBA: "KVTES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=nuorisoty%C3%B6ntekij%C3%A4" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/nuorisoty%C3%B6" }
+    ],
+    keywords: ["nuorisotyö", "nuoret", "ohjaus", "kasvatus", "järjestö"],
+    study_length_estimate_months: 36,
+    source: "Allianssi - nuorisotyön keskus, Tilastokeskus 2024"
+  },
+  {
+    id: "isannoitsija",
+    category: "jarjestaja",
+    title_fi: "Isännöitsijä",
+    title_en: "Property Manager",
+    short_description: "Isännöitsijä vastaa taloyhtiöiden ja kiinteistöjen hallinnosta, taloudesta ja teknisestä ylläpidosta.",
+    main_tasks: ["Taloyhtiön hallinnon hoitaminen","Talousarvioiden ja tilinpäätösten laatiminen","Yhtiökokouksien järjestäminen","Huoltoyhtiöiden ja urakoitsijoiden kilpailuttaminen","Asukkaiden neuvonta ja palvelu"],
+    impact: ["Pitää suomalaisten kodit kunnossa","Hallinnoi miljardien eurojen kiinteistöomaisuutta","Mahdollistaa taloyhtiöiden sujuvan toiminnan"],
+    education_paths: ["Isännöinnin ammattitutkinto (toinen aste)","Tradenomi, kiinteistöala (AMK)","ITS-tutkinto (Isännöitsijän koulutus ja tutkinto)"],
+    salary_range: { min: 3200, max: 5500, currency: "EUR" },
+    job_outlook: { status: "growing", description: "Suomessa on yli 90 000 taloyhtiötä, jotka tarvitsevat isännöintipalveluita. Ala kasvaa tasaisesti." },
+    typical_employers: ["Isännöintitoimistot","Kiinteistöyhtiöt","Yrittäjänä"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    union_or_CBA: "Kiinteistöpalvelualan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=is%C3%A4nn%C3%B6itsij%C3%A4" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/is%C3%A4nn%C3%B6inti" }
+    ],
+    keywords: ["isännöitsijä","taloyhtiö","kiinteistö","hallinto","asunto-osakeyhtiö"],
+    study_length_estimate_months: 24,
+    source: "Isännöintiliitto, Tilastokeskus 2024"
+  },
+  {
+    id: "leipuri",
+    category: "rakentaja",
+    title_fi: "Leipuri",
+    title_en: "Baker",
+    short_description: "Leipuri valmistaa leipää, sämpylöitä ja muita leipomotuotteita ammattitaidolla ja perinteisiä menetelmiä kunnioittaen.",
+    main_tasks: ["Taikinoiden valmistus ja muotoilu","Leipien ja sämpylöiden paistaminen","Raaka-aineiden laadunvalvonta","Tuotannon suunnittelu","Hygieniasta huolehtiminen"],
+    impact: ["Valmistaa suomalaisten päivittäistä perusruokaa","Ylläpitää perinteistä leipuritaitoa","Tuo tuoreen leivän kauppoihin ja kahviloihin"],
+    education_paths: ["Leipuri-kondiittorin perustutkinto (toinen aste)","Leipurin ammattitutkinto"],
+    salary_range: { min: 2200, max: 3200, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Leipureiden tarve on vakaa. Artesaanileipomot ja lähiruoka kasvattavat kysyntää." },
+    typical_employers: ["Leipomot","Kauppojen paistopisteet","Hotellit ja ravintolat","Yrittäjänä"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "ei" },
+    union_or_CBA: "Elintarvikealojen TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=leipuri" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/leipuri" }
+    ],
+    keywords: ["leipuri","leipomo","leivonta","leipä","sämpylä"],
+    study_length_estimate_months: 36,
+    source: "Suomen Leipuriliitto, Tilastokeskus 2024"
+  },
+  {
+    id: "kondiittori",
+    category: "luova",
+    title_fi: "Kondiittori",
+    title_en: "Pastry Chef",
+    short_description: "Kondiittori valmistaa kakkuja, leivoksia, suklaita ja muita konditoriatuotteita yhdistäen luovuutta ja tarkkuutta.",
+    main_tasks: ["Kakkujen ja leivoksien valmistus","Koristelu ja viimeistely","Uusien tuotteiden kehittäminen","Tilaustöiden suunnittelu","Raaka-aineiden tilaaminen"],
+    impact: ["Luo juhlahetkiin unohtumattomia makuelämyksiä","Kehittää suomalaista kahvilakulttuuria","Yhdistää taidetta ja käsityötä"],
+    education_paths: ["Leipuri-kondiittorin perustutkinto (toinen aste)","Kondiittorin ammattitutkinto","Kondiittorimestarin erikoisammattitutkinto"],
+    salary_range: { min: 2300, max: 3800, currency: "EUR" },
+    job_outlook: { status: "growing", description: "Kahvilakulttuuri kasvaa Suomessa ja laadukkaille kondiittoreille on kysyntää." },
+    typical_employers: ["Konditoria-kahvilat","Hotellit","Ravintolat","Yrittäjänä"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "ei" },
+    union_or_CBA: "Elintarvikealojen TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=kondiittori" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/kondiittori" }
+    ],
+    keywords: ["kondiittori","kakku","leivos","konditoriatuote","leivonta"],
+    study_length_estimate_months: 36,
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "barista",
+    category: "luova",
+    title_fi: "Barista",
+    title_en: "Barista",
+    short_description: "Barista on kahvin valmistuksen ammattilainen, joka hallitsee espressopohjaisten juomien valmistuksen ja latte arten.",
+    main_tasks: ["Erikoiskahvien valmistus","Latte art -kuvioiden tekeminen","Asiakaspalvelu","Kahvikoneiden huolto","Kahvien maistelu ja laadunvalvonta"],
+    impact: ["Tuo kahvikulttuurin huipulle","Luo nautinnollisia hetkiä asiakkaille","Edistää laadukasta kahvikulttuuria Suomessa"],
+    education_paths: ["Ravintola- ja catering-alan perustutkinto (toinen aste)","Barista-kurssit ja sertifikaatit","SCA (Specialty Coffee Association) -koulutukset"],
+    salary_range: { min: 2000, max: 2800, currency: "EUR" },
+    job_outlook: { status: "growing", description: "Helsinki on yksi maailman kahvipääkaupungeista. Erikoiskahviloiden määrä kasvaa." },
+    typical_employers: ["Kahvilat","Erikoiskahvilat","Hotellit","Ravintolat"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "ei" },
+    union_or_CBA: "Matkailu- ja ravintola-alan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=barista" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/ravintola-ala" }
+    ],
+    keywords: ["barista","kahvi","espresso","latte art","kahvila"],
+    study_length_estimate_months: 12,
+    source: "MaRa ry, Tilastokeskus 2024"
+  },
+  {
+    id: "lentoemanta",
+    category: "auttaja",
+    title_fi: "Lentoemäntä/Stuertti",
+    title_en: "Flight Attendant",
+    short_description: "Lentoemäntä tai stuertti huolehtii matkustajien turvallisuudesta ja viihtyvyydestä lentojen aikana.",
+    main_tasks: ["Matkustajien turvallisuudesta huolehtiminen","Turvallisuusohjeiden antaminen","Tarjoilu lennon aikana","Hätätilanteiden hallinta","Asiakaspalvelu"],
+    impact: ["Varmistaa miljoonien matkustajien turvallisuuden","Edustaa Suomea kansainvälisesti","Luo positiivisen matkakokemuksen"],
+    education_paths: ["Matkailualan perustutkinto (toinen aste)","Lentoyhtiöiden omat koulutusohjelmat","Cabin Crew -koulutus"],
+    salary_range: { min: 2400, max: 3800, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Lentoliikenteen kasvu lisää matkustamohenkilökunnan tarvetta. Finnair on suuri työllistäjä." },
+    typical_employers: ["Finnair","Muut lentoyhtiöt","Tilauslentoyhtiöt"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "paljon" },
+    union_or_CBA: "Ilmailualan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=lentoemantat" },
+      { name: "Finnair ura", url: "https://www.finnair.com/fi/fi/finnair-group/careers" }
+    ],
+    keywords: ["lentoemäntä","stuertti","lentoyhtiö","matkustamo","Finnair"],
+    study_length_estimate_months: 6,
+    source: "Finnair, Tilastokeskus 2024"
+  },
+  {
+    id: "lennonjohtaja",
+    category: "jarjestaja",
+    title_fi: "Lennonjohtaja",
+    title_en: "Air Traffic Controller",
+    short_description: "Lennonjohtaja ohjaa lentoliikennettä ja varmistaa lentokoneiden turvallisen liikkumisen ilmatilassa ja lentokentillä.",
+    main_tasks: ["Lentokoneiden ohjaaminen turvallisesti","Lentolupien antaminen","Ilmatilan valvonta","Kommunikointi lentäjien kanssa","Poikkeustilanteiden hallinta"],
+    impact: ["Vastaa satojen lentojen turvallisuudesta päivittäin","Mahdollistaa sujuvan lentoliikenteen","Tekee kriittisiä päätöksiä sekunneissa"],
+    education_paths: ["Lennonjohtajan koulutus (Fintraffic)","Korkea-asteen opinnot suositeltavia"],
+    salary_range: { min: 5000, max: 9000, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Lennonjohtajien tarve on vakaa. Ala on erittäin kilpailtu ja vaativa." },
+    typical_employers: ["Fintraffic Lennonvarmistus","Puolustusvoimat"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "ei" },
+    union_or_CBA: "Lennonjohtajien TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=lennonjohtaja" },
+      { name: "Fintraffic ura", url: "https://www.fintraffic.fi/fi/ura" }
+    ],
+    keywords: ["lennonjohtaja","ilmailu","lentokenttä","ilmatila","Fintraffic"],
+    study_length_estimate_months: 24,
+    source: "Fintraffic, Tilastokeskus 2024"
+  },
+  {
+    id: "hammashoitaja",
+    category: "auttaja",
+    title_fi: "Hammashoitaja",
+    title_en: "Dental Assistant",
+    short_description: "Hammashoitaja avustaa hammaslääkäriä toimenpiteissä ja huolehtii potilaiden hoidosta sekä vastaanottotyöstä.",
+    main_tasks: ["Hammaslääkärin avustaminen toimenpiteissä","Instrumenttien valmistelu ja sterilointi","Potilaiden vastaanotto ja ohjaus","Röntgenkuvien ottaminen","Ajanvarausten hoitaminen"],
+    impact: ["Mahdollistaa sujuvan hammashoidon","Huolehtii potilaiden hyvinvoinnista","Tukee suomalaisten suunterveyttä"],
+    education_paths: ["Hammashoitajan perustutkinto (toinen aste)","Suuhygienisti (AMK)"],
+    salary_range: { min: 2300, max: 3200, currency: "EUR" },
+    job_outlook: { status: "growing", description: "Hammashoitajien kysyntä kasvaa väestön ikääntyessä ja suunterveyden merkityksen kasvaessa." },
+    typical_employers: ["Terveyskeskukset","Yksityiset hammaslääkäriasemat","Sairaalat"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "ei" },
+    union_or_CBA: "Kunta-alan TES / Yksityisen terveyspalvelualan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=hammashoitaja" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/hammashoitaja" }
+    ],
+    keywords: ["hammashoitaja","hammaslääkäri","suunterveys","hammashuolto","terveydenhuolto"],
+    study_length_estimate_months: 36,
+    source: "Suomen Hammashoitajaliitto, Tilastokeskus 2024"
+  },
+  {
+    id: "tulkki",
+    category: "auttaja",
+    title_fi: "Tulkki",
+    title_en: "Interpreter",
+    short_description: "Tulkki mahdollistaa eri kielten puhujien välisen kommunikaation tulkkaamalla puhetta reaaliajassa.",
+    main_tasks: ["Simultaani- ja konsekutiivitulkkaus","Asioimistulkkaus viranomaisasioissa","Tulkkaus terveydenhuollossa","Oikeustulkkaus","Konferenssitulkkaus"],
+    impact: ["Mahdollistaa maahanmuuttajien asioinnin","Turvaa oikeusturvan kielimuurista huolimatta","Edistää kansainvälistä yhteistyötä"],
+    education_paths: ["Tulkki (AMK)","Asioimistulkin ammattitutkinto","Yliopiston kääntämisen ja tulkkauksen opinnot"],
+    salary_range: { min: 2500, max: 4500, currency: "EUR" },
+    job_outlook: { status: "growing", description: "Maahanmuuton kasvu ja kansainvälistyminen lisäävät tulkkien tarvetta Suomessa." },
+    typical_employers: ["Tulkkausyritykset","Maahanmuuttovirasto","Oikeuslaitos","Sairaalat","Yrittäjänä"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    union_or_CBA: "Käännösalan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=tulkki" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/tulkki" }
+    ],
+    keywords: ["tulkki","tulkkaus","kielet","asioimistulkkaus","simultaanitulkkaus"],
+    study_length_estimate_months: 42,
+    source: "SKTL, Tilastokeskus 2024"
+  },
+  {
+    id: "palkanlaskija",
+    category: "jarjestaja",
+    title_fi: "Palkanlaskija",
+    title_en: "Payroll Specialist",
+    short_description: "Palkanlaskija hoitaa yritysten palkanmaksun, verojen tilittämisen ja palkkakirjanpidon.",
+    main_tasks: ["Palkkojen laskeminen ja maksaminen","Verojen ja sivukulujen tilittäminen","Vuosilomien ja poissaolojen seuranta","Palkkatodistusten laatiminen","Työehtosopimuksien tulkinta"],
+    impact: ["Varmistaa, että työntekijät saavat palkkansa oikein ja ajallaan","Huolehtii lakisääteisten velvoitteiden hoitamisesta","Tukee yritysten taloushallintoa"],
+    education_paths: ["Liiketalouden perustutkinto (toinen aste)","Tradenomi (AMK)","Palkanlaskennan erikoiskurssit"],
+    salary_range: { min: 2600, max: 3800, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Jokainen yritys tarvitsee palkanlaskentaa. Osaajille on jatkuvaa kysyntää." },
+    typical_employers: ["Tilitoimistot","Yritysten talousosastot","Palkkahallinnon palveluyritykset","Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "ei" },
+    union_or_CBA: "Taloushallintoalan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=palkanlaskija" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/taloushallinto" }
+    ],
+    keywords: ["palkanlaskija","palkanlaskenta","palkkahallinto","taloushallinto","kirjanpito"],
+    study_length_estimate_months: 36,
+    source: "Taloushallintoliitto, Tilastokeskus 2024"
+  },
+  {
+    id: "kiinteistonvalittaja",
+    category: "johtaja",
+    title_fi: "Kiinteistönvälittäjä",
+    title_en: "Real Estate Agent",
+    short_description: "Kiinteistönvälittäjä auttaa asiakkaita myymään ja ostamaan asuntoja sekä kiinteistöjä.",
+    main_tasks: ["Asuntojen arviointi ja hinnoittelu","Myynti-ilmoitusten laatiminen","Asuntonäyttöjen järjestäminen","Ostajien ja myyjien neuvottelu","Kauppakirjojen valmistelu"],
+    impact: ["Auttaa suomalaisia löytämään kodin","Mahdollistaa merkittävimmät taloudelliset päätökset","Pitää asuntomarkkinat toimivina"],
+    education_paths: ["LKV-tutkinto (laillistettu kiinteistönvälittäjä)","Kiinteistönvälitysalan ammattitutkinto","Tradenomi, kiinteistöala (AMK)"],
+    salary_range: { min: 2500, max: 8000, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Asuntokauppa vaihtelee suhdanteiden mukaan, mutta ammattilaisia tarvitaan aina." },
+    typical_employers: ["Kiinteistönvälitystoimistot","Pankkien välityspalvelut","Yrittäjänä"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    union_or_CBA: "Kiinteistönvälitysalan TES",
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=kiinteist%C3%B6nv%C3%A4litt%C3%A4j%C3%A4" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/kiinteist%C3%B6" }
+    ],
+    keywords: ["kiinteistönvälittäjä","asuntokauppa","välittäjä","LKV","asunnonmyynti"],
+    study_length_estimate_months: 12,
+    source: "KVKL, Tilastokeskus 2024"
+  }
 ] as CareerFI[];
 
 // Helper function to get careers by category

@@ -6935,6 +6935,170 @@ export const CAREER_VECTORS: CareerVector[] = [
     values: { growth: 0.50, impact: 0.45, global: 0.25, career_clarity: 0.68, financial: 0.50, entrepreneurship: 0.70, social_impact: 0.45, stability: 0.55, advancement: 0.45, work_life_balance: 0.65, company_size: 0.25 },
     context: { outdoor: 0.05, international: 0.20, work_environment: 0.92 }
   }
+,
+  {
+    slug: "palomies",
+    title: "Palomies",
+    category: "auttaja",
+    interests: { technology: 0.3, people: 0.75, creative: 0.1, analytical: 0.4, hands_on: 0.9, business: 0.1, environment: 0.4, health: 0.6, education: 0.3, innovation: 0.2, arts_culture: 0.1, sports: 0.8, nature: 0.3, writing: 0.1 },
+    workstyle: { teamwork: 0.9, independence: 0.4, leadership: 0.5, organization: 0.7, planning: 0.6, problem_solving: 0.8, precision: 0.7, performance: 0.8, teaching: 0.3, motivation: 0.8, autonomy: 0.3, social: 0.7, structure: 0.7, flexibility: 0.6, variety: 0.8 },
+    values: { growth: 0.5, impact: 0.9, global: 0.2, career_clarity: 0.8, financial: 0.5, entrepreneurship: 0.1, social_impact: 0.95, stability: 0.8, advancement: 0.4, work_life_balance: 0.4, company_size: 0.3 },
+    context: { outdoor: 0.7, international: 0.1, work_environment: 0.5 }
+  },
+  {
+    slug: "poliisi",
+    title: "Poliisi",
+    category: "auttaja",
+    interests: { technology: 0.4, people: 0.85, creative: 0.1, analytical: 0.7, hands_on: 0.6, business: 0.2, environment: 0.3, health: 0.4, education: 0.3, innovation: 0.2, arts_culture: 0.1, sports: 0.6, nature: 0.2, writing: 0.4 },
+    workstyle: { teamwork: 0.8, independence: 0.5, leadership: 0.6, organization: 0.8, planning: 0.6, problem_solving: 0.8, precision: 0.8, performance: 0.7, teaching: 0.3, motivation: 0.7, autonomy: 0.4, social: 0.8, structure: 0.8, flexibility: 0.5, variety: 0.8 },
+    values: { growth: 0.5, impact: 0.85, global: 0.3, career_clarity: 0.9, financial: 0.5, entrepreneurship: 0.1, social_impact: 0.9, stability: 0.9, advancement: 0.5, work_life_balance: 0.4, company_size: 0.3 },
+    context: { outdoor: 0.6, international: 0.2, work_environment: 0.5 }
+  },
+  {
+    slug: "kampaaja",
+    title: "Kampaaja",
+    category: "luova",
+    interests: { technology: 0.2, people: 0.9, creative: 0.85, analytical: 0.2, hands_on: 0.8, business: 0.5, environment: 0.2, health: 0.3, education: 0.3, innovation: 0.4, arts_culture: 0.7, sports: 0.2, nature: 0.1, writing: 0.1 },
+    workstyle: { teamwork: 0.4, independence: 0.7, leadership: 0.3, organization: 0.5, planning: 0.4, problem_solving: 0.5, precision: 0.7, performance: 0.6, teaching: 0.4, motivation: 0.6, autonomy: 0.7, social: 0.9, structure: 0.4, flexibility: 0.6, variety: 0.6 },
+    values: { growth: 0.5, impact: 0.4, global: 0.3, career_clarity: 0.7, financial: 0.5, entrepreneurship: 0.7, social_impact: 0.4, stability: 0.5, advancement: 0.4, work_life_balance: 0.6, company_size: 0.2 },
+    context: { outdoor: 0.1, international: 0.2, work_environment: 0.7 }
+  },
+  {
+    slug: "parturi",
+    title: "Parturi",
+    category: "luova",
+    interests: { technology: 0.2, people: 0.85, creative: 0.8, analytical: 0.2, hands_on: 0.8, business: 0.5, environment: 0.2, health: 0.2, education: 0.2, innovation: 0.4, arts_culture: 0.6, sports: 0.2, nature: 0.1, writing: 0.1 },
+    workstyle: { teamwork: 0.3, independence: 0.8, leadership: 0.3, organization: 0.5, planning: 0.4, problem_solving: 0.5, precision: 0.7, performance: 0.6, teaching: 0.3, motivation: 0.5, autonomy: 0.75, social: 0.85, structure: 0.4, flexibility: 0.6, variety: 0.5 },
+    values: { growth: 0.5, impact: 0.3, global: 0.2, career_clarity: 0.7, financial: 0.5, entrepreneurship: 0.75, social_impact: 0.3, stability: 0.5, advancement: 0.4, work_life_balance: 0.6, company_size: 0.1 },
+    context: { outdoor: 0.1, international: 0.2, work_environment: 0.7 }
+  },
+  {
+    slug: "kosmetologi",
+    title: "Kosmetologi",
+    category: "luova",
+    interests: { technology: 0.3, people: 0.9, creative: 0.8, analytical: 0.3, hands_on: 0.7, business: 0.5, environment: 0.2, health: 0.5, education: 0.3, innovation: 0.4, arts_culture: 0.6, sports: 0.2, nature: 0.2, writing: 0.1 },
+    workstyle: { teamwork: 0.3, independence: 0.75, leadership: 0.3, organization: 0.5, planning: 0.5, problem_solving: 0.5, precision: 0.7, performance: 0.6, teaching: 0.4, motivation: 0.6, autonomy: 0.65, social: 0.9, structure: 0.5, flexibility: 0.6, variety: 0.6 },
+    values: { growth: 0.5, impact: 0.4, global: 0.3, career_clarity: 0.7, financial: 0.5, entrepreneurship: 0.7, social_impact: 0.4, stability: 0.5, advancement: 0.4, work_life_balance: 0.6, company_size: 0.2 },
+    context: { outdoor: 0.1, international: 0.2, work_environment: 0.8 }
+  },
+  {
+    slug: "hieroja",
+    title: "Hieroja",
+    category: "auttaja",
+    interests: { technology: 0.1, people: 0.85, creative: 0.3, analytical: 0.3, hands_on: 0.9, business: 0.4, environment: 0.2, health: 0.8, education: 0.3, innovation: 0.2, arts_culture: 0.2, sports: 0.6, nature: 0.2, writing: 0.1 },
+    workstyle: { teamwork: 0.2, independence: 0.85, leadership: 0.2, organization: 0.4, planning: 0.4, problem_solving: 0.5, precision: 0.6, performance: 0.5, teaching: 0.3, motivation: 0.6, autonomy: 0.8, social: 0.7, structure: 0.4, flexibility: 0.6, variety: 0.4 },
+    values: { growth: 0.4, impact: 0.6, global: 0.2, career_clarity: 0.7, financial: 0.5, entrepreneurship: 0.7, social_impact: 0.6, stability: 0.5, advancement: 0.3, work_life_balance: 0.7, company_size: 0.1 },
+    context: { outdoor: 0.1, international: 0.1, work_environment: 0.8 }
+  },
+  {
+    slug: "personal-trainer",
+    title: "Personal Trainer",
+    category: "auttaja",
+    interests: { technology: 0.3, people: 0.95, creative: 0.3, analytical: 0.4, hands_on: 0.7, business: 0.6, environment: 0.2, health: 0.9, education: 0.7, innovation: 0.3, arts_culture: 0.1, sports: 0.95, nature: 0.3, writing: 0.2 },
+    workstyle: { teamwork: 0.4, independence: 0.8, leadership: 0.6, organization: 0.5, planning: 0.6, problem_solving: 0.5, precision: 0.5, performance: 0.7, teaching: 0.8, motivation: 0.9, autonomy: 0.8, social: 0.9, structure: 0.5, flexibility: 0.7, variety: 0.6 },
+    values: { growth: 0.6, impact: 0.7, global: 0.3, career_clarity: 0.6, financial: 0.6, entrepreneurship: 0.8, social_impact: 0.6, stability: 0.4, advancement: 0.5, work_life_balance: 0.5, company_size: 0.2 },
+    context: { outdoor: 0.4, international: 0.2, work_environment: 0.7 }
+  },
+  {
+    slug: "nuorisotyontekija",
+    title: "Nuorisotyöntekijä",
+    category: "auttaja",
+    interests: { technology: 0.3, people: 0.95, creative: 0.5, analytical: 0.3, hands_on: 0.4, business: 0.2, environment: 0.3, health: 0.4, education: 0.8, innovation: 0.3, arts_culture: 0.4, sports: 0.5, nature: 0.3, writing: 0.3 },
+    workstyle: { teamwork: 0.8, independence: 0.5, leadership: 0.6, organization: 0.5, planning: 0.5, problem_solving: 0.6, precision: 0.4, performance: 0.5, teaching: 0.8, motivation: 0.8, autonomy: 0.5, social: 0.95, structure: 0.5, flexibility: 0.7, variety: 0.7 },
+    values: { growth: 0.5, impact: 0.8, global: 0.2, career_clarity: 0.7, financial: 0.4, entrepreneurship: 0.2, social_impact: 0.95, stability: 0.6, advancement: 0.4, work_life_balance: 0.6, company_size: 0.3 },
+    context: { outdoor: 0.4, international: 0.2, work_environment: 0.6 }
+  }
+,
+  {
+    slug: "isannoitsija",
+    title: "Isännöitsijä",
+    category: "jarjestaja",
+    interests: { technology: 0.4, people: 0.75, creative: 0.2, analytical: 0.6, hands_on: 0.3, business: 0.8, environment: 0.3, health: 0.1, education: 0.2, innovation: 0.3, arts_culture: 0.1, sports: 0.1, nature: 0.2, writing: 0.5 },
+    workstyle: { teamwork: 0.5, independence: 0.7, leadership: 0.6, organization: 0.9, planning: 0.8, problem_solving: 0.7, precision: 0.7, performance: 0.5, teaching: 0.3, motivation: 0.5, autonomy: 0.7, social: 0.7, structure: 0.8, flexibility: 0.5, variety: 0.6 },
+    values: { growth: 0.5, impact: 0.5, global: 0.2, career_clarity: 0.7, financial: 0.6, entrepreneurship: 0.5, social_impact: 0.4, stability: 0.8, advancement: 0.5, work_life_balance: 0.6, company_size: 0.3 },
+    context: { outdoor: 0.3, international: 0.1, work_environment: 0.6 }
+  },
+  {
+    slug: "leipuri",
+    title: "Leipuri",
+    category: "rakentaja",
+    interests: { technology: 0.2, people: 0.5, creative: 0.6, analytical: 0.3, hands_on: 0.95, business: 0.3, environment: 0.2, health: 0.3, education: 0.2, innovation: 0.4, arts_culture: 0.4, sports: 0.3, nature: 0.3, writing: 0.1 },
+    workstyle: { teamwork: 0.5, independence: 0.6, leadership: 0.3, organization: 0.6, planning: 0.5, problem_solving: 0.4, precision: 0.8, performance: 0.5, teaching: 0.3, motivation: 0.5, autonomy: 0.5, social: 0.4, structure: 0.7, flexibility: 0.4, variety: 0.4 },
+    values: { growth: 0.4, impact: 0.4, global: 0.1, career_clarity: 0.8, financial: 0.4, entrepreneurship: 0.6, social_impact: 0.3, stability: 0.6, advancement: 0.3, work_life_balance: 0.5, company_size: 0.2 },
+    context: { outdoor: 0.1, international: 0.1, work_environment: 0.7 }
+  },
+  {
+    slug: "kondiittori",
+    title: "Kondiittori",
+    category: "luova",
+    interests: { technology: 0.2, people: 0.5, creative: 0.9, analytical: 0.3, hands_on: 0.9, business: 0.4, environment: 0.2, health: 0.2, education: 0.2, innovation: 0.6, arts_culture: 0.7, sports: 0.1, nature: 0.2, writing: 0.1 },
+    workstyle: { teamwork: 0.4, independence: 0.7, leadership: 0.3, organization: 0.6, planning: 0.6, problem_solving: 0.5, precision: 0.9, performance: 0.6, teaching: 0.3, motivation: 0.6, autonomy: 0.6, social: 0.5, structure: 0.6, flexibility: 0.5, variety: 0.6 },
+    values: { growth: 0.5, impact: 0.4, global: 0.2, career_clarity: 0.7, financial: 0.5, entrepreneurship: 0.7, social_impact: 0.3, stability: 0.5, advancement: 0.4, work_life_balance: 0.5, company_size: 0.2 },
+    context: { outdoor: 0.1, international: 0.2, work_environment: 0.8 }
+  },
+  {
+    slug: "barista",
+    title: "Barista",
+    category: "luova",
+    interests: { technology: 0.2, people: 0.9, creative: 0.7, analytical: 0.2, hands_on: 0.8, business: 0.4, environment: 0.2, health: 0.2, education: 0.2, innovation: 0.4, arts_culture: 0.5, sports: 0.2, nature: 0.2, writing: 0.1 },
+    workstyle: { teamwork: 0.6, independence: 0.5, leadership: 0.3, organization: 0.5, planning: 0.4, problem_solving: 0.4, precision: 0.7, performance: 0.6, teaching: 0.3, motivation: 0.6, autonomy: 0.4, social: 0.95, structure: 0.5, flexibility: 0.6, variety: 0.5 },
+    values: { growth: 0.4, impact: 0.3, global: 0.2, career_clarity: 0.6, financial: 0.3, entrepreneurship: 0.5, social_impact: 0.3, stability: 0.4, advancement: 0.3, work_life_balance: 0.6, company_size: 0.2 },
+    context: { outdoor: 0.1, international: 0.3, work_environment: 0.8 }
+  },
+  {
+    slug: "lentoemanta",
+    title: "Lentoemäntä/Stuertti",
+    category: "auttaja",
+    interests: { technology: 0.3, people: 0.95, creative: 0.3, analytical: 0.3, hands_on: 0.4, business: 0.3, environment: 0.3, health: 0.4, education: 0.2, innovation: 0.2, arts_culture: 0.3, sports: 0.4, nature: 0.3, writing: 0.2 },
+    workstyle: { teamwork: 0.8, independence: 0.4, leadership: 0.4, organization: 0.6, planning: 0.5, problem_solving: 0.6, precision: 0.6, performance: 0.6, teaching: 0.4, motivation: 0.6, autonomy: 0.3, social: 0.95, structure: 0.7, flexibility: 0.7, variety: 0.8 },
+    values: { growth: 0.4, impact: 0.5, global: 0.9, career_clarity: 0.7, financial: 0.5, entrepreneurship: 0.1, social_impact: 0.5, stability: 0.6, advancement: 0.4, work_life_balance: 0.4, company_size: 0.4 },
+    context: { outdoor: 0.3, international: 0.95, work_environment: 0.5 }
+  },
+  {
+    slug: "lennonjohtaja",
+    title: "Lennonjohtaja",
+    category: "jarjestaja",
+    interests: { technology: 0.7, people: 0.5, creative: 0.1, analytical: 0.8, hands_on: 0.3, business: 0.2, environment: 0.2, health: 0.2, education: 0.2, innovation: 0.3, arts_culture: 0.1, sports: 0.2, nature: 0.1, writing: 0.2 },
+    workstyle: { teamwork: 0.6, independence: 0.5, leadership: 0.5, organization: 0.9, planning: 0.7, problem_solving: 0.9, precision: 0.95, performance: 0.8, teaching: 0.2, motivation: 0.6, autonomy: 0.4, social: 0.5, structure: 0.9, flexibility: 0.4, variety: 0.5 },
+    values: { growth: 0.5, impact: 0.8, global: 0.3, career_clarity: 0.9, financial: 0.8, entrepreneurship: 0.1, social_impact: 0.6, stability: 0.9, advancement: 0.5, work_life_balance: 0.4, company_size: 0.4 },
+    context: { outdoor: 0.1, international: 0.4, work_environment: 0.6 }
+  },
+  {
+    slug: "hammashoitaja",
+    title: "Hammashoitaja",
+    category: "auttaja",
+    interests: { technology: 0.4, people: 0.85, creative: 0.2, analytical: 0.4, hands_on: 0.7, business: 0.2, environment: 0.2, health: 0.9, education: 0.3, innovation: 0.2, arts_culture: 0.1, sports: 0.2, nature: 0.1, writing: 0.2 },
+    workstyle: { teamwork: 0.8, independence: 0.4, leadership: 0.2, organization: 0.7, planning: 0.5, problem_solving: 0.5, precision: 0.8, performance: 0.5, teaching: 0.4, motivation: 0.5, autonomy: 0.3, social: 0.8, structure: 0.7, flexibility: 0.4, variety: 0.4 },
+    values: { growth: 0.4, impact: 0.6, global: 0.1, career_clarity: 0.8, financial: 0.4, entrepreneurship: 0.2, social_impact: 0.6, stability: 0.7, advancement: 0.4, work_life_balance: 0.6, company_size: 0.3 },
+    context: { outdoor: 0.1, international: 0.1, work_environment: 0.8 }
+  },
+  {
+    slug: "tulkki",
+    title: "Tulkki",
+    category: "auttaja",
+    interests: { technology: 0.3, people: 0.9, creative: 0.4, analytical: 0.5, hands_on: 0.2, business: 0.3, environment: 0.2, health: 0.3, education: 0.5, innovation: 0.2, arts_culture: 0.6, sports: 0.1, nature: 0.1, writing: 0.7 },
+    workstyle: { teamwork: 0.4, independence: 0.7, leadership: 0.2, organization: 0.5, planning: 0.5, problem_solving: 0.6, precision: 0.9, performance: 0.7, teaching: 0.4, motivation: 0.5, autonomy: 0.7, social: 0.8, structure: 0.5, flexibility: 0.7, variety: 0.7 },
+    values: { growth: 0.5, impact: 0.7, global: 0.8, career_clarity: 0.6, financial: 0.5, entrepreneurship: 0.6, social_impact: 0.8, stability: 0.5, advancement: 0.4, work_life_balance: 0.6, company_size: 0.2 },
+    context: { outdoor: 0.2, international: 0.8, work_environment: 0.6 }
+  },
+  {
+    slug: "palkanlaskija",
+    title: "Palkanlaskija",
+    category: "jarjestaja",
+    interests: { technology: 0.5, people: 0.5, creative: 0.1, analytical: 0.8, hands_on: 0.2, business: 0.7, environment: 0.1, health: 0.1, education: 0.2, innovation: 0.2, arts_culture: 0.1, sports: 0.1, nature: 0.1, writing: 0.3 },
+    workstyle: { teamwork: 0.4, independence: 0.7, leadership: 0.2, organization: 0.9, planning: 0.7, problem_solving: 0.6, precision: 0.95, performance: 0.5, teaching: 0.2, motivation: 0.4, autonomy: 0.6, social: 0.4, structure: 0.9, flexibility: 0.3, variety: 0.3 },
+    values: { growth: 0.4, impact: 0.4, global: 0.1, career_clarity: 0.8, financial: 0.5, entrepreneurship: 0.2, social_impact: 0.3, stability: 0.8, advancement: 0.4, work_life_balance: 0.7, company_size: 0.3 },
+    context: { outdoor: 0.1, international: 0.1, work_environment: 0.8 }
+  },
+  {
+    slug: "kiinteistonvalittaja",
+    title: "Kiinteistönvälittäjä",
+    category: "johtaja",
+    interests: { technology: 0.4, people: 0.9, creative: 0.3, analytical: 0.5, hands_on: 0.3, business: 0.9, environment: 0.2, health: 0.1, education: 0.2, innovation: 0.3, arts_culture: 0.2, sports: 0.2, nature: 0.2, writing: 0.4 },
+    workstyle: { teamwork: 0.4, independence: 0.8, leadership: 0.5, organization: 0.6, planning: 0.6, problem_solving: 0.6, precision: 0.6, performance: 0.8, teaching: 0.3, motivation: 0.8, autonomy: 0.8, social: 0.95, structure: 0.4, flexibility: 0.7, variety: 0.7 },
+    values: { growth: 0.6, impact: 0.5, global: 0.2, career_clarity: 0.6, financial: 0.8, entrepreneurship: 0.8, social_impact: 0.4, stability: 0.4, advancement: 0.6, work_life_balance: 0.4, company_size: 0.2 },
+    context: { outdoor: 0.4, international: 0.2, work_environment: 0.5 }
+  }
 ];
 
 // Helper function to get vector by slug
