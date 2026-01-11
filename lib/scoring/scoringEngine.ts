@@ -5650,6 +5650,7 @@ export function rankCareers(
       dimensionScores: careerDimensionScores,
       confidence: totalScore >= 80 ? 'high' : totalScore >= 60 ? 'medium' : 'low',
       reasons: matchReasons.length > 0 ? matchReasons : [`Ammatti sopii profiiliisi`],
+      educationPaths: careerFI?.education_paths,
       category: careerCategory
     });
   }
@@ -5698,6 +5699,32 @@ export function rankCareers(
         return !isSeniorRole;
       })
     : scoredCareers;
+
+  // ========== EDUCATION PATH FILTERING FOR LUKIO ==========
+  // LUKIO students should NOT see careers that ONLY require ammattikoulu
+  // (e.g., Lähihoitaja, Maalari, Kirvesmies) because they would need to go back to AMIS
+  // AMIS students CAN see all careers since they are on the ammattikoulu path
+  let educationFilteredCareers = ageFilteredCareers;
+  if (subCohort === 'LUKIO') {
+    educationFilteredCareers = ageFilteredCareers.filter(career => {
+      const eduPaths = (career as any).educationPaths || [];
+      if (eduPaths.length === 0) return true; // No paths info, keep it
+      const paths = eduPaths.map((p: string) => p.toLowerCase());
+      const hasAmk = paths.some((p: string) => p.includes('amk') || p.includes('ammattikorkeakoulu'));
+      const hasYliopisto = paths.some((p: string) => p.includes('yliopisto') || p.includes('maisteri') || p.includes('kandidaatti'));
+      const hasAmisOnly = paths.some((p: string) => 
+        p.includes('toinen aste') || p.includes('ammattikoulu') || 
+        p.includes('ammattitutkinto') || p.includes('perustutkinto') || 
+        p.includes('ammatillinen')
+      ) && !hasAmk && !hasYliopisto;
+      if (hasAmisOnly) {
+        console.log(`[rankCareers] LUKIO edu-filter: Removed amis-only career "${career.title}"`);
+        return false;
+      }
+      return true;
+    });
+    console.log(`[rankCareers] LUKIO education filter: ${ageFilteredCareers.length} -> ${educationFilteredCareers.length} careers`);
+  }
 
   // ========== IMPROVEMENT 1: CAREER DIVERSITY WITHIN CATEGORIES ==========
   // Instead of returning top N by score alone, ensure diversity within categories
@@ -8189,7 +8216,8 @@ function _legacyRankCareers(
         careerFI.salary_eur_month?.range?.[0] || 2500,
         careerFI.salary_eur_month?.range?.[1] || 4000
       ] : undefined,
-      outlook: careerFI?.job_outlook?.status
+      outlook: careerFI?.job_outlook?.status,
+      educationPaths: careerFI?.education_paths
     } as CareerMatch;
   })
   .filter(career => {
@@ -8275,7 +8303,8 @@ function _legacyRankCareers(
           careerFI.salary_eur_month?.range?.[0] || 2500,
           careerFI.salary_eur_month?.range?.[1] || 4000
         ] : undefined,
-        outlook: careerFI?.job_outlook?.status
+        outlook: careerFI?.job_outlook?.status,
+      educationPaths: careerFI?.education_paths
       } as CareerMatch;
     })
     .sort((a, b) => b.overallScore - a.overallScore)

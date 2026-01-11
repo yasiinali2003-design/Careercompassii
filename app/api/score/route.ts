@@ -15,6 +15,177 @@ import { createLogger } from '@/lib/logger';
 
 const log = createLogger('API/Score');
 
+// ========== EDUCATION PATH CAREER FILTERING ==========
+
+/**
+ * Helper to determine education level from career's education_paths
+ */
+function getCareerEducationLevel(educationPaths: string[] | undefined): ('yliopisto' | 'amk' | 'both' | 'amis_only' | 'other') {
+  if (!educationPaths || educationPaths.length === 0) return 'other';
+  
+  const paths = educationPaths.map(p => p.toLowerCase());
+  
+  const hasYliopisto = paths.some(p => 
+    p.includes('yliopisto') || 
+    p.includes('maisteri') ||
+    p.includes('kandidaatti')
+  );
+  const hasAMK = paths.some(p => 
+    p.includes('amk') || 
+    p.includes('ammattikorkeakoulu')
+  );
+  const hasAmis = paths.some(p => 
+    p.includes('toinen aste') || 
+    p.includes('ammattikoulu') || 
+    p.includes('ammattitutkinto') || 
+    p.includes('perustutkinto') ||
+    p.includes('ammatillinen')
+  );
+  
+  if (hasYliopisto && hasAMK) return 'both';
+  if (hasYliopisto) return 'yliopisto';
+  if (hasAMK) return 'amk';
+  if (hasAmis && !hasYliopisto && !hasAMK) return 'amis_only';
+  return 'other';
+}
+
+/**
+ * Checks if a career requires ONLY ammattikoulu (no AMK/yliopisto path)
+ * These careers should NOT be recommended to LUKIO students
+ */
+function isAmisOnlyCareer(educationPaths: string[] | undefined): boolean {
+  return getCareerEducationLevel(educationPaths) === 'amis_only';
+}
+
+/**
+ * Filter careers based on the student's current education path
+ * - LUKIO students should NOT see careers that only require ammattikoulu
+ * - AMIS students CAN see all careers (they can do amis-level jobs)
+ */
+function filterCareersByStudentPath(
+  careers: any[],
+  subCohort?: string
+): any[] {
+  // Only filter for LUKIO students
+  if (subCohort !== 'LUKIO') {
+    return careers;
+  }
+  
+  // Filter out amis-only careers for LUKIO students
+  const filtered = careers.filter(career => {
+    const level = getCareerEducationLevel(career.educationPaths);
+    if (level === 'amis_only') {
+      log.debug(`Filtered out amis-only career for LUKIO student: ${career.title}`);
+      return false;
+    }
+    return true;
+  });
+  
+  log.debug(`Filtered careers for LUKIO: ${careers.length} -> ${filtered.length} (removed ${careers.length - filtered.length} amis-only careers)`);
+  
+  return filtered;
+}
+
+/**
+ * Ensures career diversity when user has both yliopisto and amk recommended
+ * Returns a balanced selection of careers from both education levels
+ */
+function ensureEducationPathDiversity(
+  careers: any[],
+  educationPath: any,
+  limit: number = 5
+): any[] {
+  // Only apply diversity logic for TASO2 with dual paths
+  if (!educationPath?.scores) return careers.slice(0, limit);
+  
+  const scores = educationPath.scores as { yliopisto?: number; amk?: number };
+  const yliopistoScore = scores.yliopisto || 0;
+  const amkScore = scores.amk || 0;
+  
+  // Check if both paths are close (within 20 points) or if there's a secondary path
+  const hasDualPath = educationPath.secondary || (Math.abs(yliopistoScore - amkScore) <= 20);
+  
+  if (!hasDualPath) {
+    return careers.slice(0, limit);
+  }
+  
+  log.debug(`Dual education path detected: yliopisto=${yliopistoScore}, amk=${amkScore}`);
+  
+  // Categorize careers by education level
+  const yliopistoCareers: any[] = [];
+  const amkCareers: any[] = [];
+  const bothCareers: any[] = [];
+  const otherCareers: any[] = [];
+  
+  for (const career of careers) {
+    const level = getCareerEducationLevel(career.educationPaths);
+    switch (level) {
+      case 'yliopisto':
+        yliopistoCareers.push(career);
+        break;
+      case 'amk':
+        amkCareers.push(career);
+        break;
+      case 'both':
+        bothCareers.push(career);
+        break;
+      default:
+        otherCareers.push(career);
+    }
+  }
+  
+  log.debug(`Career distribution: yliopisto=${yliopistoCareers.length}, amk=${amkCareers.length}, both=${bothCareers.length}, other=${otherCareers.length}`);
+  
+  // Build diverse selection
+  const result: any[] = [];
+  const usedSlugs = new Set<string>();
+  
+  // Determine target counts based on score ratio
+  const totalScore = yliopistoScore + amkScore;
+  const yliopistoRatio = totalScore > 0 ? yliopistoScore / totalScore : 0.5;
+  const targetYliopisto = Math.round(limit * yliopistoRatio);
+  const targetAmk = limit - targetYliopisto;
+  
+  // Add careers from yliopisto pool
+  let yliopistoAdded = 0;
+  for (const career of yliopistoCareers) {
+    if (yliopistoAdded >= targetYliopisto) break;
+    if (!usedSlugs.has(career.slug)) {
+      result.push(career);
+      usedSlugs.add(career.slug);
+      yliopistoAdded++;
+    }
+  }
+  
+  // Add careers from amk pool
+  let amkAdded = 0;
+  for (const career of amkCareers) {
+    if (amkAdded >= targetAmk) break;
+    if (!usedSlugs.has(career.slug)) {
+      result.push(career);
+      usedSlugs.add(career.slug);
+      amkAdded++;
+    }
+  }
+  
+  // Fill remaining slots with 'both' or 'other' careers (or any remaining)
+  const remaining = [...bothCareers, ...otherCareers, ...yliopistoCareers, ...amkCareers];
+  for (const career of remaining) {
+    if (result.length >= limit) break;
+    if (!usedSlugs.has(career.slug)) {
+      result.push(career);
+      usedSlugs.add(career.slug);
+    }
+  }
+  
+  // Sort by overall score to maintain quality
+  result.sort((a, b) => b.overallScore - a.overallScore);
+  
+  log.debug(`Diversified careers: ${result.map(c => `${c.title} (${getCareerEducationLevel(c.educationPaths)})`).join(', ')}`);
+  
+  return result;
+}
+
 // ========== REQUEST VALIDATION ==========
 
 interface ScoringRequest {
@@ -130,7 +301,9 @@ export async function POST(request: NextRequest) {
     // IMPORTANT: Pass subCohort to use correct question mappings for TASO2 LUKIO/AMIS
     log.debug(`Scoring ${unshuffledAnswers.length} answers for cohort ${cohort}${subCohort ? ` (${subCohort})` : ''}${currentOccupation ? ` (filtering out: ${currentOccupation})` : ''}`);
 
-    const topCareers = rankCareers(unshuffledAnswers, cohort, 5, currentOccupation, subCohort);
+    // For TASO2, get more careers initially to allow for education path diversity
+    const initialLimit = cohort === 'TASO2' ? 10 : 5;
+    let topCareers = rankCareers(unshuffledAnswers, cohort, initialLimit, currentOccupation, subCohort);
     const userProfile = generateUserProfile(unshuffledAnswers, cohort, currentOccupation, subCohort);
     
     log.info(`Top career: ${topCareers[0]?.title} (${topCareers[0]?.overallScore}%)`);
@@ -278,6 +451,24 @@ export async function POST(request: NextRequest) {
       }
     } else {
       educationPath = null;
+    }
+    
+    // STEP 1: Filter out careers that don't match the student's education path
+    // LUKIO students should NOT see careers that only require ammattikoulu
+    // (e.g., Lähihoitaja, Maalari, Kirvesmies) because they would need to go back to AMIS
+    if (cohort === 'TASO2') {
+      topCareers = filterCareersByStudentPath(topCareers, subCohort);
+    }
+    
+    // STEP 2: Apply education path diversity for TASO2 cohort
+    // This ensures career recommendations include both yliopisto and AMK level careers
+    // when the user qualifies for both education paths
+    if (cohort === 'TASO2' && educationPath && topCareers.length > 5) {
+      log.debug('Applying education path diversity for TASO2...');
+      topCareers = ensureEducationPathDiversity(topCareers, educationPath, 5);
+    } else if (topCareers.length > 5) {
+      // For other cohorts, just take top 5
+      topCareers = topCareers.slice(0, 5);
     }
     
     // Get cohort-specific copy

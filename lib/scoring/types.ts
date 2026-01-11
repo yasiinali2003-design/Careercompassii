@@ -128,6 +128,7 @@ export interface CareerMatch {
   confidence: 'high' | 'medium' | 'low'; // Based on data quality
   salaryRange?: [number, number];
   outlook?: string;
+  educationPaths?: string[];         // Education paths from career data (for diversity filtering)
 }
 
 // ========== WEIGHTING TYPES ==========
