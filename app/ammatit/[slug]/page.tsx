@@ -379,14 +379,23 @@ export default function CareerDetail() {
               </div>
             </AnimatedCard>
 
-            {/* Koulutuspolut Card */}
-            {career.opintopolkuLinks && career.opintopolkuLinks.length > 0 && (
+            {/* Koulutuspolut Card - Only show education-related links */}
+            {career.opintopolkuLinks && career.opintopolkuLinks.filter((link: {label: string; url: string}) => 
+              link.url.includes('opintopolku.fi') || 
+              link.url.includes('tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto')
+            ).length > 0 && (
               <AnimatedCard className="bg-urak-surface rounded-xl ring-1 ring-white/5 p-4 md:p-6">
                 <h3 className="text-sm md:text-lg font-semibold text-white mb-3 md:mb-4">
                   Koulutuspolut
                 </h3>
                 <div className="space-y-1 md:space-y-2">
-                  {career.opintopolkuLinks.slice(0, 3).map((link: {label: string; url: string}, index: number) => (
+                  {career.opintopolkuLinks
+                    .filter((link: {label: string; url: string}) => 
+                      link.url.includes('opintopolku.fi') || 
+                      link.url.includes('tyomarkkinatori.fi/henkiloasiakkaat/ammattitieto')
+                    )
+                    .slice(0, 3)
+                    .map((link: {label: string; url: string}, index: number) => (
                     <a
                       key={index}
                       href={link.url}
@@ -409,7 +418,7 @@ export default function CareerDetail() {
               </h3>
               <div className="space-y-1 md:space-y-2">
                 <a
-                  href={`https://duunitori.fi/tyopaikat?hakusana=${encodeURIComponent(career.title)}`}
+                  href={`https://duunitori.fi/tyopaikat?haku=${encodeURIComponent(career.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-between w-full px-3 py-2 md:px-6 md:py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-xs md:text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
@@ -418,16 +427,7 @@ export default function CareerDetail() {
                   <ExternalLink className="h-3 w-3 md:h-4 md:w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                 </a>
                 <a
-                  href={`https://www.te-palvelut.fi/te/fi/tyonhaku/tyopaikat?hakusana=${encodeURIComponent(career.title)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center justify-between w-full px-3 py-2 md:px-6 md:py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-xs md:text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
-                >
-                  <span>TE-Palvelut</span>
-                  <ExternalLink className="h-3 w-3 md:h-4 md:w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                </a>
-                <a
-                  href={`https://fi.indeed.com/jobs?q=${encodeURIComponent(career.title)}`}
+                  href={`https://fi.indeed.com/jobs?q=${encodeURIComponent(career.title)}&l=Suomi`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-between w-full px-3 py-2 md:px-6 md:py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-xs md:text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
@@ -436,12 +436,12 @@ export default function CareerDetail() {
                   <ExternalLink className="h-3 w-3 md:h-4 md:w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                 </a>
                 <a
-                  href={`https://www.monster.fi/tyopaikat/haku?q=${encodeURIComponent(career.title)}`}
+                  href={`https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(career.title)}&location=Finland`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-between w-full px-3 py-2 md:px-6 md:py-4 bg-white/5 rounded-lg hover:bg-urak-surface/70 transition-all text-xs md:text-sm text-urak-accent-blue hover:text-urak-accent-blue/90"
                 >
-                  <span>Monster</span>
+                  <span>LinkedIn</span>
                   <ExternalLink className="h-3 w-3 md:h-4 md:w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                 </a>
               </div>
