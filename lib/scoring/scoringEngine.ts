@@ -209,6 +209,16 @@ function detectPersonalityType(
   const handsOnScore = (hands_on * 2 + stability) / 3;
   const adventurerScore = (nature * 1.5 + independence - stability * 0.5) / 2;
 
+  // NEW: Extract organization and environment signals
+  const organization = Math.max(workstyle.organization || 0, workstyle.structure || 0);
+  const precision = workstyle.precision || 0;
+  const planning = workstyle.planning || 0;
+  const environment = Math.max(interests.environment || 0, interests.nature || 0, nature);
+  
+  // NEW: Calculate ORGANIZER and ENVIRONMENTALIST composite scores
+  const organizerScore = (organization * 2 + precision * 1.5 + planning + stability) / 5.5;
+  const environmentalistScore = (environment * 2.5 + nature * 2 + impact * 1.5) / 6;
+
   console.log(`[detectPersonalityType] Composite scores: helper=${helperScore.toFixed(2)}, leader=${leaderScore.toFixed(2)}, creative=${creativeScore.toFixed(2)}, tech=${techScore.toFixed(2)}, handsOn=${handsOnScore.toFixed(2)}, adventurer=${adventurerScore.toFixed(2)}`);
   console.log(`[detectPersonalityType] Raw signals: people=${people.toFixed(2)}, health=${health.toFixed(2)}, creative=${creative.toFixed(2)}, technology=${technology.toFixed(2)}, analytical=${analytical.toFixed(2)}, hands_on=${hands_on.toFixed(2)}, business=${business.toFixed(2)}, leadership=${leadership.toFixed(2)}, impact=${impact.toFixed(2)}`);
 
@@ -299,7 +309,9 @@ function detectPersonalityType(
     { type: 'CREATIVE', score: creativeScore, condition: creative >= 0.5 || (creative >= 0.4 && independence >= 0.5) },
     { type: 'TECH', score: techScore, condition: technology >= 0.5 || analytical >= 0.5 || (technology >= 0.4 && analytical >= 0.4) },
     { type: 'HANDSON', score: handsOnScore, condition: hands_on >= 0.5 || (hands_on >= 0.4 && stability >= 0.5) },
-    { type: 'ADVENTURER', score: adventurerScore, condition: (nature >= 0.5 && stability < 0.5) || (independence >= 0.6 && nature >= 0.3) }
+    { type: 'ADVENTURER', score: adventurerScore, condition: (nature >= 0.5 && stability < 0.5) || (independence >= 0.6 && nature >= 0.3) },
+    { type: 'ORGANIZER', score: organizerScore, condition: (organization >= 0.5 && precision >= 0.4) || (organization >= 0.6) || (planning >= 0.5 && stability >= 0.5) },
+    { type: 'ENVIRONMENTALIST', score: environmentalistScore, condition: environment >= 0.5 || (nature >= 0.5 && impact >= 0.4) || (environment >= 0.4 && nature >= 0.4) }
   ];
 
   // Filter to only types that meet their condition and sort by score
@@ -352,6 +364,18 @@ function detectPersonalityType(
       return {
         boostCareers: ['matkailuopas', 'urheilija', 'pelastaja', 'sotilas', 'lentokapteeni', 'palomies', 'valokuvaaja', 'opas', 'lentaja', 'lentäjä', 'merimies', 'kapteeni', 'seikkailija', 'Matkailuopas', 'Urheilija', 'Pelastaja', 'Sotilas', 'Palomies'],
         boostMultiplier: 2.0
+      };
+    case 'ORGANIZER':
+      // Expected: kirjanpitäjä, toimistosihteeri, HR-koordinaattori, projektikoordinaattori, palkanlaskija
+      return {
+        boostCareers: ['kirjanpitaja', 'kirjanpitäjä', 'toimistosihteeri', 'sihteeri', 'koordinaattori', 'palkanlaskija', 'assistentti', 'reseptionisti', 'hallinto', 'vakuutus', 'pankki', 'talous', 'hr-', 'hankinta', 'logistiikka', 'isannoitsija', 'isännöitsijä', 'turvallisuus', 'asiakas', 'myynti', 'kassatyontekija', 'Kirjanpitäjä', 'Sihteeri', 'Koordinaattori', 'Assistentti'],
+        boostMultiplier: 2.2
+      };
+    case 'ENVIRONMENTALIST':
+      // Expected: ympäristöinsinööri, biologi, luonnonsuojelija, metsänhoitaja, kierrätyskoordinaattori
+      return {
+        boostCareers: ['ymparisto', 'ympäristö', 'biologi', 'luonnon', 'metsa', 'metsä', 'energia', 'kestav', 'kiertotalous', 'kierratys', 'kierrätys', 'ilmasto', 'vesi', 'luonto', 'maatalous', 'esg', 'maisema', 'puutarha', 'Ympäristö', 'Biologi', 'Luonnonsuojelija', 'Metsänhoitaja'],
+        boostMultiplier: 2.2
       };
     default:
       return null;
@@ -5302,16 +5326,24 @@ export function rankCareers(
     let baseScore = 25; // Lower starting point - subdimensions should differentiate
     const careerCategory = careerVector.category;
 
-    // Category matching bonus - INCREASED for dominant category to ensure
-    // careers from the user's top category appear in results
-    // The dominant category bonus needs to be strong enough to beat
-    // alignment bonuses from non-dominant categories
+    // Category matching bonus - VERY STRONG category preference
+    // CRITICAL: This must be strong enough to ensure careers from dominant category win
+    const categoryAffinity = categoryScoresMap[careerCategory] || 0;
+    let categoryMultiplier = 1.0;
     if (careerCategory === dominantCategory) {
-      baseScore += 35; // Increased from 20 - ensure dominant category careers appear
+      // Dominant category gets MASSIVE bonus + multiplier
+      baseScore += 100 + categoryAffinity; // e.g., 100 + 84 = 184 for 84% affinity
+      categoryMultiplier = 2.0; // Double all subsequent bonuses for dominant category
     } else if (topCategories.includes(careerCategory)) {
-      baseScore += 18; // Increased from 12 - better support for top 3 categories
+      baseScore += 50 + (categoryAffinity * 0.5);
+      categoryMultiplier = 1.3;
     } else if (categoryAffinitiesArray.slice(3, 5).map((c: CategoryAffinity) => c.category).includes(careerCategory)) {
-      baseScore += 8; // Slightly increased from 5
+      baseScore += 20;
+      categoryMultiplier = 0.8;
+    } else {
+      // Non-matching categories get significant PENALTY
+      baseScore -= 50;
+      categoryMultiplier = 0.5; // Halve all bonuses for non-matching categories
     }
 
     // Calculate subdimension alignment bonus
@@ -5620,7 +5652,14 @@ export function rankCareers(
       }
     }
 
-    const totalScore = Math.min(100, Math.max(0, baseScore + alignmentBonus + categoryPenalty));
+    // Apply categoryMultiplier to alignment bonus for category-weighted scoring
+    const adjustedAlignmentBonus = alignmentBonus * categoryMultiplier;
+    const totalScore = Math.min(100, Math.max(0, baseScore + adjustedAlignmentBonus + categoryPenalty));
+    
+    // Debug: Log scoring for järjestäjä careers
+    if (careerCategory === 'jarjestaja' || careerVector.slug === 'it-tukihenkilo') {
+      console.log(`[DEBUG SCORE] ${careerVector.slug}: base=${baseScore}, align=${alignmentBonus}, adjusted=${adjustedAlignmentBonus.toFixed(1)}, mult=${categoryMultiplier}, penalty=${categoryPenalty}, total=${totalScore}`);
+    }
 
     // Generate comprehensive match reasons using the enhanced generateReasons function
     // Find the careerFI data for this career to get detailed information (using slug or title)
@@ -5729,7 +5768,33 @@ export function rankCareers(
   // ========== IMPROVEMENT 1: CAREER DIVERSITY WITHIN CATEGORIES ==========
   // Instead of returning top N by score alone, ensure diversity within categories
   // This prevents "all auttaja get Sairaanhoitaja, Bioanalyytikko" problem
-  const diverseTopCareers = selectDiverseCareers(ageFilteredCareers, limit, detailedScores);
+  let diverseTopCareers = selectDiverseCareers(ageFilteredCareers, limit, detailedScores);
+
+  // ========== CRITICAL FIX: CATEGORY-PRIORITY ADJUSTMENT ==========
+  // After diversity selection, ensure at least 60% of careers are from dominant category
+  // This fixes the issue where subdimension bonuses override category matching
+  const dominantCatCareers = diverseTopCareers.filter(c => c.category === dominantCategory);
+  const otherCatCareers = diverseTopCareers.filter(c => c.category !== dominantCategory);
+  
+  const minDominantCount = Math.ceil(limit * 0.6); // At least 60% from dominant category
+  
+  if (dominantCatCareers.length < minDominantCount) {
+    // Need more careers from dominant category
+    const additionalNeeded = minDominantCount - dominantCatCareers.length;
+    
+    // Get all careers from dominant category that aren't already selected
+    const selectedTitles = new Set(diverseTopCareers.map(c => c.title));
+    const additionalDominant = ageFilteredCareers
+      .filter(c => c.category === dominantCategory && !selectedTitles.has(c.title))
+      .slice(0, additionalNeeded);
+    
+    if (additionalDominant.length > 0) {
+      // Replace some non-dominant careers with dominant ones
+      const keptOther = otherCatCareers.slice(0, limit - dominantCatCareers.length - additionalDominant.length);
+      diverseTopCareers = [...dominantCatCareers, ...additionalDominant, ...keptOther].slice(0, limit);
+      console.log(`[rankCareers] Category priority adjustment: Added ${additionalDominant.length} careers from dominant category (${dominantCategory})`);
+    }
+  }
 
   console.log(`[rankCareers] ${cohort} top ${limit} careers:`, diverseTopCareers.map(c => `${c.title} (${c.overallScore}%) - ${c.category}`).join(', '));
 
@@ -5808,18 +5873,18 @@ function selectDiverseCareers(
           titleLower.includes('developer') || titleLower.includes('programmer') ||
           titleLower.includes('full-stack') || titleLower.includes('backend') ||
           titleLower.includes('frontend')) {
-        diversityBonus += 55;
-        if (technologyScore >= 0.6) diversityBonus += 20;
-        if (technologyScore >= 0.8) diversityBonus += 10;
+        diversityBonus += 6;
+        if (technologyScore >= 0.6) diversityBonus += 6;
+        if (technologyScore >= 0.8) diversityBonus += 3;
       }
 
       // GAME DEVELOPMENT - only boost when tech is STRONG (not just moderate)
       if (titleLower.includes('peli') || titleLower.includes('game')) {
         if (technologyScore >= 0.7) {
-          diversityBonus += 45;
-          if (creativeScore >= 0.4) diversityBonus += 15;
+          diversityBonus += 18;
+          if (creativeScore >= 0.4) diversityBonus += 5;
         } else if (technologyScore >= 0.5) {
-          diversityBonus += 20; // Moderate boost for moderate tech interest
+          diversityBonus += 6; // Moderate boost for moderate tech interest
         }
         // No boost for low tech interest
       }
@@ -5827,34 +5892,34 @@ function selectDiverseCareers(
       // DATA CAREERS
       if (titleLower.includes('data') || titleLower.includes('analyytikko') ||
           titleLower.includes('tietokannan') || titleLower.includes('database')) {
-        diversityBonus += 40;
-        if (analyticalScore >= 0.5) diversityBonus += 15;
+        diversityBonus += 5;
+        if (analyticalScore >= 0.5) diversityBonus += 5;
       }
 
       // IT/SYSTEMS
       if (titleLower.includes('järjestelmä') || titleLower.includes('it-') ||
           titleLower.includes('tietotekniikka') || titleLower.includes('verkkoinsinööri')) {
-        diversityBonus += 35;
+        diversityBonus += 12;
       }
 
       // TECH ENGINEERING
       if ((titleLower.includes('insinööri') && (titleLower.includes('ohjelmisto') ||
            titleLower.includes('data') || titleLower.includes('tieto') ||
            titleLower.includes('kyber') || titleLower.includes('robotiikka')))) {
-        diversityBonus += 40;
+        diversityBonus += 5;
       }
 
       // AI/ML
       if (titleLower.includes('tekoäly') || titleLower.includes('koneoppiminen') ||
           titleLower.includes('ml-') || titleLower.includes('ai-')) {
-        diversityBonus += 38;
+        diversityBonus += 14;
       }
 
       // TECH LEADERSHIP (only if also has strong leadership)
       if (hasTechLeadershipCombo && leadershipScore >= 0.6) {
         if (titleLower.includes('teknologiajohtaja') || titleLower.includes('cto') ||
             titleLower.includes('it-päällikkö') || titleLower.includes('kehitysjohtaja')) {
-          diversityBonus += 30;
+          diversityBonus += 3;
         }
       }
 
@@ -5876,14 +5941,14 @@ function selectDiverseCareers(
             if (!titleLower.includes('tekno') && !titleLower.includes('tieto') &&
                 !titleLower.includes('it') && !titleLower.includes('data') &&
                 !titleLower.includes('ohjelmisto') && !titleLower.includes('kehitys')) {
-              diversityBonus -= 35; // Strong penalty for generic management
+              diversityBonus -= 12; // Strong penalty for generic management
             }
           }
           // Also penalize health-tech careers for pure software devs
           if (titleLower.includes('terveysteknologia') || titleLower.includes('lääkintälaite') ||
               titleLower.includes('terveysinformatiikka')) {
             if (healthScore < 0.4) {
-              diversityBonus -= 20; // Pure tech people don't want health-tech unless interested in health
+              diversityBonus -= 6; // Pure tech people don't want health-tech unless interested in health
             }
           }
         }
@@ -5902,30 +5967,30 @@ function selectDiverseCareers(
       // MARKETING PÄÄLLIKKÖ/JOHTAJA - VERY STRONG BOOST
       if (titleLower.includes('markkinointipäällikkö') || titleLower.includes('markkinointijohtaja') ||
           titleLower.includes('markkinointi') || titleLower.includes('cmo')) {
-        diversityBonus += 55;
-        if (leadershipScore >= 0.6) diversityBonus += 15;
+        diversityBonus += 6;
+        if (leadershipScore >= 0.6) diversityBonus += 5;
       }
       // BRAND MANAGER
       if (titleLower.includes('brändi') || titleLower.includes('brand')) {
-        diversityBonus += 45;
-        if (creativeScore >= 0.6) diversityBonus += 10;
+        diversityBonus += 18;
+        if (creativeScore >= 0.6) diversityBonus += 3;
       }
       // VIESTINTÄPÄÄLLIKKÖ
       if (titleLower.includes('viestintäpäällikkö') || titleLower.includes('viestintäjohtaja') ||
           titleLower.includes('viestintä')) {
-        diversityBonus += 40;
+        diversityBonus += 5;
       }
       // ADVERTISING
       if (titleLower.includes('mainosjohtaja') || titleLower.includes('mainospäällikkö') ||
           titleLower.includes('mainos')) {
-        diversityBonus += 40;
+        diversityBonus += 5;
       }
       // PENALIZE pure creative roles for marketing leaders
       if (leadershipScore >= 0.5) {
         if ((titleLower.includes('kameramies') || titleLower.includes('valokuvaaja') ||
              titleLower.includes('muusikko') || titleLower.includes('taiteilija')) &&
             !titleLower.includes('johtaja') && !titleLower.includes('päällikkö')) {
-          diversityBonus -= 25; // They want leadership roles, not pure creative
+          diversityBonus -= 8; // They want leadership roles, not pure creative
         }
       }
     }
@@ -5935,8 +6000,8 @@ function selectDiverseCareers(
       if (!isMarketingLeader) {
         if (titleLower.includes('markkinoin') || titleLower.includes('markkinoija') ||
             titleLower.includes('mainont') || titleLower.includes('mainos')) {
-          diversityBonus += 30;
-          if (businessScore >= 0.4) diversityBonus += 10;
+          diversityBonus += 3;
+          if (businessScore >= 0.4) diversityBonus += 3;
         }
       }
 
@@ -5949,14 +6014,14 @@ function selectDiverseCareers(
       // CONTENT CREATION
       if (titleLower.includes('sisältö') || titleLower.includes('content') ||
           titleLower.includes('copywriter') || titleLower.includes('luova')) {
-        diversityBonus += 25;
+        diversityBonus += 8;
       }
 
       // WRITING
       if (titleLower.includes('kirjail') || titleLower.includes('toimittaja') ||
           titleLower.includes('journalis') || titleLower.includes('kirjoittaja')) {
-        diversityBonus += 25;
-        if (writingScore >= 0.6) diversityBonus += 10;
+        diversityBonus += 8;
+        if (writingScore >= 0.6) diversityBonus += 3;
       }
 
       // PENALIZE non-creative careers for creative users (but not for marketing leaders)
@@ -5977,9 +6042,9 @@ function selectDiverseCareers(
       if (titleLower.includes('johtaja') || titleLower.includes('päällikkö') ||
           titleLower.includes('esimies') || titleLower.includes('manageri') ||
           titleLower.includes('rehtori') || titleLower.includes('toimitusjohtaja')) {
-        diversityBonus += 20;
+        diversityBonus += 6;
         if (leadershipScore >= 0.7) {
-          diversityBonus += 10;
+          diversityBonus += 3;
         }
       }
 
@@ -5994,7 +6059,7 @@ function selectDiverseCareers(
     if (hasPeopleLeadershipCombo && peopleScoreGlobal >= technologyScore) {
       if (titleLower.includes('henkilöstö') || titleLower.includes('hr') ||
           titleLower.includes('rekrytointi') || titleLower.includes('työhyvinvointi')) {
-        diversityBonus += 25;
+        diversityBonus += 8;
       }
       if (titleLower.includes('sosiaalijohtaja') || titleLower.includes('hoivajohtaja') ||
           titleLower.includes('palvelujohtaja') || titleLower.includes('toiminnanjohtaja')) {
@@ -6010,7 +6075,7 @@ function selectDiverseCareers(
       }
       if (titleLower.includes('työmaapäällikkö') || titleLower.includes('rakennusmestari') ||
           titleLower.includes('tuotantojohtaja')) {
-        diversityBonus += 20;
+        diversityBonus += 6;
       }
     }
 
@@ -6029,7 +6094,7 @@ function selectDiverseCareers(
         if (titleLower.includes('osastonhoitaja') || titleLower.includes('ylihoitaja') ||
             titleLower.includes('johtava hoitaja') || titleLower.includes('hoitotyön johtaja')) {
           diversityBonus += 50; // Strong boost - leadership in healthcare
-          if (healthScore >= 0.6) diversityBonus += 20; // Extra for healthcare background
+          if (healthScore >= 0.6) diversityBonus += 6; // Extra for healthcare background
         }
         // Social services leadership
         if (titleLower.includes('sosiaaliohjaaja') || titleLower.includes('palveluohjaaja') ||
@@ -6039,14 +6104,14 @@ function selectDiverseCareers(
         // Education leadership
         if (titleLower.includes('rehtori') || titleLower.includes('apulaisrehtori') ||
             titleLower.includes('koulutuspäällikkö') || titleLower.includes('varhaiskasvatuksen johtaja')) {
-          diversityBonus += 30;
+          diversityBonus += 3;
         }
         // Penalize pure helper roles for leadership-oriented users
         // BUT only if they DON'T have strong health interest (nurse managers should see hoitaja too)
         if (titleLower.includes('hoitaja') && !titleLower.includes('johtaja') &&
             !titleLower.includes('osastonhoitaja') && !titleLower.includes('vastaava')) {
           if (healthScore < 0.5) {
-            diversityBonus -= 15; // They should see leadership roles instead
+            diversityBonus -= 5; // They should see leadership roles instead
           }
         }
         // PENALIZE non-healthcare careers for healthcare leaders
@@ -6057,7 +6122,7 @@ function selectDiverseCareers(
             if (titleLower.includes('bioanalyytikko') || titleLower.includes('ravitsemus') ||
                 titleLower.includes('työpsykolog') || titleLower.includes('poliisi') ||
                 titleLower.includes('rikostutkija')) {
-              diversityBonus -= 25; // Healthcare leaders should get healthcare management, not bioanalytics
+              diversityBonus -= 8; // Healthcare leaders should get healthcare management, not bioanalytics
             }
           }
         }
@@ -6079,7 +6144,7 @@ function selectDiverseCareers(
         if (titleLower.includes('lähihoitaja') || titleLower.includes('sairaanhoitaja') ||
             titleLower.includes('hoitaja') || titleLower.includes('terveyden') ||
             titleLower.includes('kotihoitaja') || titleLower.includes('vanhustenhoitaja')) {
-          diversityBonus -= 80; // Strong penalty - creative people don't want healthcare
+          diversityBonus -= 10; // Strong penalty - creative people don't want healthcare
         }
       }
 
@@ -6099,10 +6164,10 @@ function selectDiverseCareers(
           } else if (isHealthcareProfileBoost) {
             diversityBonus += 100; // EXTRA STRONG boost when health+people combo detected
           } else {
-            diversityBonus += 55; // Regular boost
+            diversityBonus += 6; // Regular boost
           }
-          if (isVeryHighHealth) diversityBonus += 20;
-          if (isPureCaringProfile) diversityBonus += 10; // Extra for pure caring
+          if (isVeryHighHealth) diversityBonus += 6;
+          if (isPureCaringProfile) diversityBonus += 3; // Extra for pure caring
         }
         if (titleLower.includes('sairaanhoitaja') || titleLower.includes('sairaan')) {
           if (isMaximumHealthcareProfile) {
@@ -6114,8 +6179,8 @@ function selectDiverseCareers(
           } else {
             diversityBonus += 50; // Regular boost
           }
-          if (isVeryHighHealth) diversityBonus += 15;
-          if (isPureCaringProfile) diversityBonus += 10;
+          if (isVeryHighHealth) diversityBonus += 5;
+          if (isPureCaringProfile) diversityBonus += 3;
         }
         
         // TERVEYDENHOITAJA / ENSIHOITAJA - also boost these
@@ -6141,14 +6206,14 @@ function selectDiverseCareers(
           } else if (isHealthcareProfileBoost) {
             diversityBonus += 70; // Strong boost
           } else {
-            diversityBonus += 40; // Regular boost
+            diversityBonus += 5; // Regular boost
           }
         }
         // KOTIHOITAJA / VANHUSTENHOITAJA
         if (titleLower.includes('kotihoitaja') || titleLower.includes('vanhustenhoitaja') ||
             titleLower.includes('koti') || titleLower.includes('vanhus')) {
-          diversityBonus += 45;
-          if (isVeryHighHealth) diversityBonus += 10;
+          diversityBonus += 18;
+          if (isVeryHighHealth) diversityBonus += 3;
         }
         // TERVEYDENHOITAJA / ENSIHOITAJA
         if (titleLower.includes('terveydenhoitaja') || titleLower.includes('ensihoitaja') ||
@@ -6160,16 +6225,16 @@ function selectDiverseCareers(
         if (leadershipScore < 0.6) {
           if (titleLower.includes('erikoislääkäri') || titleLower.includes('lääkäri') ||
               titleLower.includes('kirurgi')) {
-            diversityBonus -= 35; // They want nursing, not doctor roles
+            diversityBonus -= 12; // They want nursing, not doctor roles
           }
           if (titleLower.includes('bioanalyytikko') || titleLower.includes('laboratorio') ||
               titleLower.includes('kliininen informatiikka')) {
-            diversityBonus -= 40; // They want patient care, not lab work
+            diversityBonus -= 5; // They want patient care, not lab work
           }
           // Also penalize non-healthcare management roles
           if (titleLower.includes('liiketoiminnan') || titleLower.includes('asiakaspalvelujoh') ||
               titleLower.includes('etätiimin')) {
-            diversityBonus -= 30; // Healthcare people shouldn't get generic business management
+            diversityBonus -= 10; // Healthcare people shouldn't get generic business management
           }
         }
       }
@@ -6180,10 +6245,10 @@ function selectDiverseCareers(
       if (titleLower.includes('eläin') || titleLower.includes('elain') ||
           titleLower.includes('veterinär') || titleLower.includes('lemmikki')) {
         if (isAnimalLover) {
-          diversityBonus += 30; // Strong boost for animal lovers
+          diversityBonus += 3; // Strong boost for animal lovers
         }
         if (natureScore >= 0.7) {
-          diversityBonus += 20; // Extra boost for strong nature interest
+          diversityBonus += 6; // Extra boost for strong nature interest
         }
       }
 
@@ -6203,13 +6268,13 @@ function selectDiverseCareers(
             titleLower.includes('ohjaaja') || titleLower.includes('kasvat') ||
             titleLower.includes('päiväkoti')) {
           diversityBonus += 75;
-          if (teachingScore >= 0.6) diversityBonus += 25;
-          if (growthScore >= 0.6) diversityBonus += 15;
+          if (teachingScore >= 0.6) diversityBonus += 8;
+          if (growthScore >= 0.6) diversityBonus += 5;
         }
         // Valmentaja careers - only boost if NOT a writer (writers should get writing careers)
         if (titleLower.includes('valmentaja') && !hasHighWriting) {
           diversityBonus += 60;
-          if (teachingScore >= 0.6) diversityBonus += 20;
+          if (teachingScore >= 0.6) diversityBonus += 6;
         }
         // Penalize non-teaching careers for teaching-focused users
         if (titleLower.includes('meikki') || titleLower.includes('kampaaja') ||
@@ -6219,7 +6284,7 @@ function selectDiverseCareers(
       } else if (educationScore >= 0.5 || teachingScore >= 0.4) {
         // Moderate boost
         if (titleLower.includes('opettaja') || titleLower.includes('koulut')) {
-          diversityBonus += 30;
+          diversityBonus += 3;
         }
       }
 
@@ -6241,13 +6306,13 @@ function selectDiverseCareers(
             titleLower.includes('liikuntaneuvoja') || titleLower.includes('personal trainer') ||
             titleLower.includes('urheiluvalmenta') || titleLower.includes('liikunta')) {
           diversityBonus += 80;
-          if (sportsScore >= 0.6) diversityBonus += 25;
+          if (sportsScore >= 0.6) diversityBonus += 8;
         }
         // PHYSICAL THERAPY / FITNESS
         if (titleLower.includes('fysioterapeutti') || titleLower.includes('liikuntaterapeutti') ||
             titleLower.includes('liikuntaohjaaja') || titleLower.includes('kuntovalmentaja')) {
           diversityBonus += 65;
-          if (sportsScore >= 0.6) diversityBonus += 20;
+          if (sportsScore >= 0.6) diversityBonus += 6;
         }
         // SPORTS MANAGEMENT
         if (titleLower.includes('urheilujohtaja') || titleLower.includes('seurajohtaja') ||
@@ -6258,7 +6323,7 @@ function selectDiverseCareers(
         // Moderate boost for moderately sports-oriented (without creative interest)
         if (titleLower.includes('valmentaja') || titleLower.includes('liikunta') ||
             titleLower.includes('fysioterapeutti') || titleLower.includes('liikuntaterapeutti')) {
-          diversityBonus += 25;
+          diversityBonus += 8;
         }
       }
 
@@ -6333,11 +6398,11 @@ function selectDiverseCareers(
         if (isRestaurantFocused) {
           diversityBonus += 120; // Very strong boost for restaurant careers
           if (isStrongRestaurantFocused) diversityBonus += 50;
-          if (isVeryStrongRestaurantFocused) diversityBonus += 30;
+          if (isVeryStrongRestaurantFocused) diversityBonus += 3;
         }
         // Also boost for general hands-on + creative + people combo
         if (handsOnScore >= 0.5 && creativeScoreLocal >= 0.5 && peopleScore >= 0.4) {
-          diversityBonus += 40;
+          diversityBonus += 5;
         }
         // CRITICAL: Penalize restaurant careers for users with HIGH HEALTH interest but NOT restaurant focused
         // This prevents healthcare-focused users from getting restaurant recommendations
@@ -6356,7 +6421,7 @@ function selectDiverseCareers(
             titleLower.includes('myynti') || titleLower.includes('brändi') ||
             titleLower.includes('kirjailija') || titleLower.includes('viestintä')) {
           if (!titleLower.includes('ravintola') && !titleLower.includes('ruoka')) {
-            diversityBonus -= 80; // Restaurant people want culinary, not marketing/writing
+            diversityBonus -= 10; // Restaurant people want culinary, not marketing/writing
           }
         }
       }
@@ -6373,7 +6438,7 @@ function selectDiverseCareers(
       if (titleLower.includes('sosiaal') || titleLower.includes('perhe') ||
           titleLower.includes('nuoriso') || titleLower.includes('lastensuojelu')) {
         if (peopleScore >= 0.6 && (userValues.impact || userValues.social_impact || 0) >= 0.5) {
-          diversityBonus += 15;
+          diversityBonus += 5;
         }
       }
 
@@ -6381,14 +6446,14 @@ function selectDiverseCareers(
       if (titleLower.includes('lääkäri') || titleLower.includes('laakari') ||
           titleLower.includes('kirurgi') || titleLower.includes('erikoislääkäri')) {
         if (healthScore >= 0.7 && analyticalScore >= 0.5) {
-          diversityBonus += 20;
+          diversityBonus += 6;
         }
       }
 
       // NURSING - penalize if animal lover (should get animal careers instead)
       if (titleLower.includes('sairaan') || titleLower.includes('hoita')) {
         if (isAnimalLover) {
-          diversityBonus -= 20; // Penalty - animal lovers should get animal careers
+          diversityBonus -= 6; // Penalty - animal lovers should get animal careers
         }
       }
     }
@@ -6412,11 +6477,11 @@ function selectDiverseCareers(
           titleLower.includes('käyttäjätuki')) {
         if (isITSupportProfile) {
           diversityBonus += 100; // Strong boost for IT support careers
-          if (isStrongITSupportProfile) diversityBonus += 40;
+          if (isStrongITSupportProfile) diversityBonus += 5;
         }
         // Also boost if tech is high even without other signals
         if (techScore >= 0.6) {
-          diversityBonus += 30;
+          diversityBonus += 3;
         }
       }
 
@@ -6425,7 +6490,7 @@ function selectDiverseCareers(
           titleLower.includes('admin') || titleLower.includes('teknikko')) {
         if (isITSupportProfile || techScore >= 0.6) {
           diversityBonus += 60;
-          if (isStrongITSupportProfile) diversityBonus += 25;
+          if (isStrongITSupportProfile) diversityBonus += 8;
         }
       }
 
@@ -6452,11 +6517,11 @@ function selectDiverseCareers(
           titleLower.includes('fullstack') || titleLower.includes('full-stack')) {
         if (isDeveloperProfile) {
           diversityBonus += 90; // Strong boost for developer careers
-          if (isStrongDeveloperProfile) diversityBonus += 35;
+          if (isStrongDeveloperProfile) diversityBonus += 12;
         }
         // Also boost for high tech interest alone
         if (techScore >= 0.6) {
-          diversityBonus += 30;
+          diversityBonus += 3;
         }
       }
 
@@ -6465,7 +6530,7 @@ function selectDiverseCareers(
           titleLower.includes('sovellus') || titleLower.includes('app ')) {
         if (isDeveloperProfile) {
           diversityBonus += 80;
-          if (isStrongDeveloperProfile) diversityBonus += 25;
+          if (isStrongDeveloperProfile) diversityBonus += 8;
         }
       }
 
@@ -6473,7 +6538,7 @@ function selectDiverseCareers(
       if (titleLower.includes('data') || titleLower.includes('analyy') ||
           titleLower.includes('tilasto') || titleLower.includes('business intelligence')) {
         if (analyticalScore >= 0.6) {
-          diversityBonus += 20;
+          diversityBonus += 6;
         }
       }
 
@@ -6488,7 +6553,7 @@ function selectDiverseCareers(
       if (titleLower.includes('turva') || titleLower.includes('kyber') ||
           titleLower.includes('tietoturva') || titleLower.includes('security')) {
         if (precisionScore >= 0.5) {
-          diversityBonus += 15;
+          diversityBonus += 5;
         }
       }
 
@@ -6527,8 +6592,8 @@ function selectDiverseCareers(
             titleLower.includes('brändi') || titleLower.includes('brand') ||
             titleLower.includes('viestintä') || titleLower.includes('kampanja')) {
           diversityBonus += 100; // Very strong boost for marketing careers
-          if (isStrongMarketingFocused) diversityBonus += 40;
-          if (leadershipScore >= 0.5) diversityBonus += 25; // Marketing manager bonus
+          if (isStrongMarketingFocused) diversityBonus += 5;
+          if (leadershipScore >= 0.5) diversityBonus += 8; // Marketing manager bonus
         }
         // Penalize pure writing careers for marketing-focused people
         // They want marketing, not novels or journalism
@@ -6549,13 +6614,13 @@ function selectDiverseCareers(
             titleLower.includes('käsikirj') || titleLower.includes('copywriter') ||
             titleLower.includes('viestintä') || titleLower.includes('sisältö')) {
           diversityBonus += 70; // Strong boost for writing careers
-          if (writingScore >= 0.6) diversityBonus += 25;
-          if (creativeScore >= 0.7) diversityBonus += 15;
+          if (writingScore >= 0.6) diversityBonus += 8;
+          if (creativeScore >= 0.7) diversityBonus += 5;
         }
         // ALSO boost journalism/media
         if (titleLower.includes('mainost') || titleLower.includes('media') ||
             titleLower.includes('julkais') || titleLower.includes('viestinnän')) {
-          diversityBonus += 55;
+          diversityBonus += 6;
         }
       }
 
@@ -6572,7 +6637,7 @@ function selectDiverseCareers(
         if (artsCultureScore < 0.5) {
           if (titleLower.includes('taiteilija') || titleLower.includes('kuvatait') ||
               titleLower.includes('koreografi') || titleLower.includes('tanssija')) {
-            diversityBonus -= 40;
+            diversityBonus -= 5;
           }
         }
       }
@@ -6589,7 +6654,7 @@ function selectDiverseCareers(
       if (titleLower.includes('näyttelijä') || titleLower.includes('tanssija') ||
           titleLower.includes('esiintyjä') || titleLower.includes('juontaja')) {
         if (performanceScore >= 0.6) {
-          diversityBonus += 20;
+          diversityBonus += 6;
         }
       }
 
@@ -6604,9 +6669,9 @@ function selectDiverseCareers(
           titleLower.includes('muotoilija') || titleLower.includes('suunnittelija')) {
         if (isVisualArtsFocused || isStrongVisualArts) {
           diversityBonus += 80; // Strong boost for visual arts careers
-          if (isStrongVisualArts) diversityBonus += 30;
+          if (isStrongVisualArts) diversityBonus += 3;
         } else if (artsCultureScore >= 0.5 && creativeScore >= 0.5) {
-          diversityBonus += 35; // Moderate boost
+          diversityBonus += 12; // Moderate boost
         }
       }
 
@@ -6615,7 +6680,7 @@ function selectDiverseCareers(
         if (titleLower.includes('kirjailija') || titleLower.includes('toimittaja') ||
             titleLower.includes('käsikirj') || titleLower.includes('sisältö')) {
           if (!titleLower.includes('graafinen') && !titleLower.includes('visuaal')) {
-            diversityBonus -= 50; // Visual artists want visual careers, not writing
+            diversityBonus -= 6; // Visual artists want visual careers, not writing
           }
         }
       }
@@ -6648,11 +6713,11 @@ function selectDiverseCareers(
           } else {
             diversityBonus += 100; // Strong boost for regular beauty signal (increased from 80)
           }
-          if (businessScore >= 0.4) diversityBonus += 15; // Beauty entrepreneur bonus
+          if (businessScore >= 0.4) diversityBonus += 5; // Beauty entrepreneur bonus
           
           // EXTRA boost when social is very high (beauty work is highly social)
           if (socialScore >= 0.8) {
-            diversityBonus += 30; // Additional boost for very social people
+            diversityBonus += 3; // Additional boost for very social people
           }
         }
 
@@ -6661,13 +6726,13 @@ function selectDiverseCareers(
         if (isStrongBeautySignal) {
           if (titleLower.includes('brändi') || titleLower.includes('markkinoin') ||
               titleLower.includes('mainos')) {
-            diversityBonus -= 80; // Strong penalty - don't show brand careers to beauty people
+            diversityBonus -= 10; // Strong penalty - don't show brand careers to beauty people
           }
           if (titleLower.includes('muusikko') || titleLower.includes('kameramies') ||
               titleLower.includes('teatteriohjaaja') || titleLower.includes('tuotemuotoilija') ||
               titleLower.includes('koreografi') || titleLower.includes('animaattori') ||
               titleLower.includes('kirjailija')) {
-            diversityBonus -= 50; // Penalty for unrelated creative
+            diversityBonus -= 6; // Penalty for unrelated creative
           }
         }
       }
@@ -6679,8 +6744,8 @@ function selectDiverseCareers(
         if (titleLower.includes('markkinoin') || titleLower.includes('mainos') ||
             titleLower.includes('brändi') || titleLower.includes('pr-') ||
             titleLower.includes('viestintä')) {
-          diversityBonus += 30;
-          if (businessScore >= 0.6) diversityBonus += 10;
+          diversityBonus += 3;
+          if (businessScore >= 0.6) diversityBonus += 3;
         }
       }
     }
@@ -6702,7 +6767,7 @@ function selectDiverseCareers(
       const isHealthcareProfileRak = healthScoreRakPenalty >= 0.5 && peopleScoreRakPenalty >= 0.5;
       
       if (handsOnScore <= 0.5) {
-        diversityBonus -= 80; // Strong penalty - no trades interest = no trades careers
+        diversityBonus -= 10; // Strong penalty - no trades interest = no trades careers
       }
       
       // EXTRA penalty for healthcare profiles - they should NOT get trades careers
@@ -6756,9 +6821,9 @@ function selectDiverseCareers(
               diversityBonus += 60; // Good boost
             }
           }
-          if (handsOnScore >= 0.7) diversityBonus += 25;
-          if (leadershipScore >= 0.5) diversityBonus += 20; // Construction management
-          if (outdoorScoreRak >= 0.6) diversityBonus += 15; // Outdoor work bonus
+          if (handsOnScore >= 0.7) diversityBonus += 8;
+          if (leadershipScore >= 0.5) diversityBonus += 6; // Construction management
+          if (outdoorScoreRak >= 0.6) diversityBonus += 5; // Outdoor work bonus
         }
         
         // ELECTRICAL/PLUMBING TRADES
@@ -6783,8 +6848,8 @@ function selectDiverseCareers(
               diversityBonus += 50; // Good boost
             }
           }
-          if (handsOnScore >= 0.7) diversityBonus += 20;
-          if (precisionScore >= 0.6) diversityBonus += 15; // Precision matters for electrical
+          if (handsOnScore >= 0.7) diversityBonus += 6;
+          if (precisionScore >= 0.6) diversityBonus += 5; // Precision matters for electrical
         }
         
         // PENALIZE luova careers when hands_on is high (trades people don't want creative careers)
@@ -6812,7 +6877,7 @@ function selectDiverseCareers(
       if (titleLower.includes('hienomekaan') || titleLower.includes('kelloseppä') ||
           titleLower.includes('kultaseppä')) {
         if (precisionScore >= 0.6) {
-          diversityBonus += 15;
+          diversityBonus += 5;
         }
       }
 
@@ -6826,11 +6891,11 @@ function selectDiverseCareers(
           titleLower.includes('ajoneuvo') || titleLower.includes('moottori')) {
         if (isAutomotiveFocused) {
           diversityBonus += 80; // Strong boost for automotive careers
-          if (isStrongAutomotiveFocused) diversityBonus += 30;
+          if (isStrongAutomotiveFocused) diversityBonus += 3;
         }
         // Also boost for general hands_on interest
         if (handsOnScore >= 0.5) {
-          diversityBonus += 25;
+          diversityBonus += 8;
         }
       }
 
@@ -6840,7 +6905,7 @@ function selectDiverseCareers(
         if (titleLower.includes('muurari') || titleLower.includes('kirvesmies') ||
             titleLower.includes('katto') || titleLower.includes('maalari')) {
           if (!titleLower.includes('auto') && !titleLower.includes('kone')) {
-            diversityBonus -= 40; // Automotive people want automotive, not painting/masonry
+            diversityBonus -= 5; // Automotive people want automotive, not painting/masonry
           }
         }
       }
@@ -6889,7 +6954,7 @@ function selectDiverseCareers(
           
           // EXTRA boost when people score is very high (hospitality is all about people)
           if (peopleScoreRak >= 0.8) {
-            diversityBonus += 40; // Additional boost for very high people score
+            diversityBonus += 5; // Additional boost for very high people score
           }
         }
         
@@ -6901,7 +6966,7 @@ function selectDiverseCareers(
           if (!titleLower.includes('ravintola') && !titleLower.includes('keittiö')) {
             diversityBonus -= 150; // Strong penalty (increased from 120) - restaurant people want culinary, not construction
             if (isStrongRestaurantSignal) diversityBonus -= 60;
-            if (isVeryStrongRestaurantSignal) diversityBonus -= 40;
+            if (isVeryStrongRestaurantSignal) diversityBonus -= 5;
           }
         }
         
@@ -6967,8 +7032,8 @@ function selectDiverseCareers(
               titleLower.includes('tiedemies') || titleLower.includes('ympäristö') ||
               titleLower.includes('luonto') || titleLower.includes('ekologi')) {
             diversityBonus += 80;
-            if (analyticalScore >= 0.7) diversityBonus += 25;
-            if (isVeryHighNature) diversityBonus += 30;
+            if (analyticalScore >= 0.7) diversityBonus += 8;
+            if (isVeryHighNature) diversityBonus += 3;
           }
         }
 
@@ -6976,20 +7041,20 @@ function selectDiverseCareers(
         if (titleLower.includes('eläin') || titleLower.includes('veterinär') ||
             titleLower.includes('lemmikki') || titleLower.includes('eläinlääkäri')) {
           diversityBonus += 70;
-          if (isVeryHighNature) diversityBonus += 25;
+          if (isVeryHighNature) diversityBonus += 8;
         }
 
         // OUTDOOR/PRACTICAL NATURE ROLES
         if (titleLower.includes('metsänhoitaja') || titleLower.includes('puutarhuri') ||
             titleLower.includes('luonnonsuojel') || titleLower.includes('metsä')) {
           diversityBonus += 65;
-          if (outdoorScore >= 0.5) diversityBonus += 20;
+          if (outdoorScore >= 0.5) diversityBonus += 6;
         }
       } else if (combinedNatureScore >= 0.5) {
         // Moderate boost for moderate nature interest
         if (titleLower.includes('biologi') || titleLower.includes('ympäristö') ||
             titleLower.includes('luonto') || titleLower.includes('eläin')) {
-          diversityBonus += 25;
+          diversityBonus += 8;
         }
       }
 
@@ -6999,7 +7064,7 @@ function selectDiverseCareers(
                                   combinedNatureScore < leadershipScore;
       if (leadershipDominant) {
         // Reduce environment career scores for leadership-focused people
-        diversityBonus -= 80;
+        diversityBonus -= 10;
       }
 
       // PENALIZE environment careers when healthcare/helping is the dominant signal
@@ -7029,7 +7094,7 @@ function selectDiverseCareers(
         
         // EXTRA penalty when health+people combo is very strong (both >= 0.8)
         if (healthScoreYP >= 0.8 && peopleScoreYP >= 0.8) {
-          diversityBonus -= 80; // Even stronger penalty (increased from 50)
+          diversityBonus -= 10; // Even stronger penalty (increased from 50)
         }
         
         // EXTRA penalty when both health and environment are maximum (1.0)
@@ -7051,7 +7116,7 @@ function selectDiverseCareers(
       // This prevents creative/healthcare people from getting management roles
       const hasLowLeadership = leadershipScore < 0.4 && businessScore < 0.4;
       if (hasLowLeadership) {
-        diversityBonus -= 50; // Strong penalty - non-leaders don't want management
+        diversityBonus -= 6; // Strong penalty - non-leaders don't want management
       }
 
       // EXTRA PENALTY: Creative people with LOW leadership/business want creative careers, not management
@@ -7099,7 +7164,7 @@ function selectDiverseCareers(
         
         // EXTRA penalty when creative is very high and leadership is low
         if (creativeScoreJ >= 0.7 && leadershipScore < 0.4) {
-          diversityBonus -= 50; // Additional penalty
+          diversityBonus -= 6; // Additional penalty
         }
       }
 
@@ -7122,20 +7187,20 @@ function selectDiverseCareers(
 
       // Boost for MODERATE leadership interest (this catches profiles with answer of 4)
       if (hasModerateLeadershipSignal && !hasStrongLeadershipSignal) {
-        diversityBonus += 40; // Moderate boost for moderate leadership interest
+        diversityBonus += 5; // Moderate boost for moderate leadership interest
       }
 
       if (hasStrongLeadershipSignal) {
         // All johtaja careers get base boost for leadership people
         diversityBonus += 70;
-        if (hasVeryStrongLeadershipSignal) diversityBonus += 30;
+        if (hasVeryStrongLeadershipSignal) diversityBonus += 3;
       }
 
       // EXECUTIVE/CEO ROLES - for strong leadership + business combo
       if (titleLower.includes('toimitusjohtaja') || titleLower.includes('ceo') ||
           titleLower.includes('pääjohtaja') || titleLower.includes('johtaja')) {
         if (leadershipScore >= 0.7 && businessScore >= 0.5) {
-          diversityBonus += 35;
+          diversityBonus += 12;
         }
       }
 
@@ -7143,7 +7208,7 @@ function selectDiverseCareers(
       if (titleLower.includes('projektipäällikkö') || titleLower.includes('projektijohtaja') ||
           titleLower.includes('project manager') || titleLower.includes('projekti')) {
         if (organizationScore >= 0.5 || planningScore >= 0.5 || leadershipScore >= 0.6) {
-          diversityBonus += 40;
+          diversityBonus += 5;
         }
       }
 
@@ -7151,7 +7216,7 @@ function selectDiverseCareers(
       if (titleLower.includes('yrittäjä') || titleLower.includes('startup') ||
           titleLower.includes('perustaja') || titleLower.includes('omistaja')) {
         if (entrepreneurshipScore >= 0.5) {
-          diversityBonus += 30;
+          diversityBonus += 3;
         }
       }
 
@@ -7159,7 +7224,7 @@ function selectDiverseCareers(
       if (titleLower.includes('talous') || titleLower.includes('rahoitus') ||
           titleLower.includes('cfo') || titleLower.includes('controller')) {
         if (financialScore >= 0.5 && leadershipScore >= 0.5) {
-          diversityBonus += 30;
+          diversityBonus += 3;
         }
       }
 
@@ -7184,20 +7249,20 @@ function selectDiverseCareers(
             titleLower.includes('hoitotyön johtaja') || titleLower.includes('terveysjohtaja') ||
             titleLower.includes('terveyspäällikkö') || titleLower.includes('hoitotyön päällikkö')) {
           diversityBonus += 120; // Very strong boost for healthcare management
-          if (hasStrongHealthcareLeadership) diversityBonus += 40;
+          if (hasStrongHealthcareLeadership) diversityBonus += 5;
         }
         // Also boost generic johtaja roles if they're healthcare-related
         if (titleLower.includes('sairaala') || titleLower.includes('tervey') ||
             titleLower.includes('hoito') || titleLower.includes('lääke')) {
           diversityBonus += 60;
-          if (hasStrongHealthcareLeadership) diversityBonus += 20;
+          if (hasStrongHealthcareLeadership) diversityBonus += 6;
         }
         // Penalize non-healthcare management for healthcare-focused leaders
         // They want healthcare management, not general business management
         if (!titleLower.includes('tervey') && !titleLower.includes('hoito') &&
             !titleLower.includes('sairaala') && !titleLower.includes('lääke') &&
             !titleLower.includes('osastonhoitaja')) {
-          diversityBonus -= 40; // Healthcare leaders want healthcare careers
+          diversityBonus -= 5; // Healthcare leaders want healthcare careers
         }
       }
 
@@ -7205,7 +7270,7 @@ function selectDiverseCareers(
       if (titleLower.includes('päällikkö') || titleLower.includes('manager') ||
           titleLower.includes('esimies') || titleLower.includes('teamlead')) {
         if (leadershipScore >= 0.5) {
-          diversityBonus += 35;
+          diversityBonus += 12;
         }
       }
     }
@@ -7228,7 +7293,7 @@ function selectDiverseCareers(
       if (titleLower.includes('logistiikka') || titleLower.includes('varasto') ||
           titleLower.includes('hankinta') || titleLower.includes('toimitusketju')) {
         if (organizationScore >= 0.5 && structureScore >= 0.5) {
-          diversityBonus += 15;
+          diversityBonus += 5;
         }
       }
 
@@ -7243,7 +7308,7 @@ function selectDiverseCareers(
       // LEADERSHIP IN ORGANIZED ROLES
       if (hasLeadershipCombo) {
         if (titleLower.includes('päällikkö') || titleLower.includes('johtaja')) {
-          diversityBonus += 20;
+          diversityBonus += 6;
         }
       }
     }
@@ -7258,13 +7323,13 @@ function selectDiverseCareers(
       const isHealthcareDominantV = healthScoreV >= 0.5 && healthScoreV > globalScore;
       if (isHealthcareDominantV) {
         // Penalize visionaari careers for healthcare-oriented profiles
-        diversityBonus -= 80; // Healthcare people don't want strategic roles
+        diversityBonus -= 10; // Healthcare people don't want strategic roles
       }
     }
 
     return {
       ...career,
-      overallScore: career.overallScore + diversityBonus, // Don't cap at 100 so bonuses can differentiate
+      overallScore: career.overallScore + diversityBonus,
       _originalScore: career.overallScore,
       _diversityBonus: diversityBonus
     };
@@ -7530,9 +7595,14 @@ function _legacyRankCareers(
     console.log(`[rankCareers] 🌐 Broadening category exploration to help uncertain user discover diverse options`);
   }
 
-  // Step 2: Determine dominant category
-  const dominantCategory = determineDominantCategory(detailedScores, cohort);
-  console.log(`[rankCareers] Dominant category: ${dominantCategory}`);
+  // Step 2: Determine dominant category using SHARED calculateCategoryAffinities
+  // CRITICAL FIX: Use the same function as generateUserProfile to ensure consistency
+  const { calculateProfileConfidence, calculateCategoryAffinities } = require('./categoryAffinities');
+  const rankProfileConfidence = calculateProfileConfidence(answers);
+  const rankCategoryAffinities = calculateCategoryAffinities(detailedScores, rankProfileConfidence);
+  const dominantCategory = rankCategoryAffinities[0]?.category || 'unknown';
+  console.log(`[rankCareers] Dominant category (from shared affinities): ${dominantCategory}`);
+  console.log(`[rankCareers] Category affinities: ${rankCategoryAffinities.slice(0,3).map((c: any) => c.category + ':' + c.score).join(', ')}`);
 
   // Step 3: Filter careers based on uncertainty
   // PHASE 5: If uncertain, include careers from top 3 categories instead of just dominant
@@ -7655,10 +7725,14 @@ function _legacyRankCareers(
   const rankCareersAuttajaSignal = Math.max(rankCareersPeople, rankCareersHealth, rankCareersCaring);
   // Environmental Scientist: strong env signal (>=0.7), not dominated by auttaja/people signals or rakentaja signals
   // STRICTER: Only trigger when env is the STRONGEST signal
-  const isEnvironmentalScientist = rankCareersEnvSignal >= 0.7 &&
+  // NEW: Also check if ympäristö is the dominant category
+  const isDominantYmparisto = dominantCategory === 'ympariston-puolustaja';
+  
+  const isEnvironmentalScientist = isDominantYmparisto || // NEW: If ympäristö is dominant, it's environmental!
+                                    (rankCareersEnvSignal >= 0.7 &&
                                     rankCareersEnvSignal > rankCareersBuildSignal + 0.1 &&
                                     rankCareersEnvSignal > rankCareersAuttajaSignal + 0.1 &&
-                                    rankCareersEnvSignal > rankCareersLeaderSignals + 0.1;
+                                    rankCareersEnvSignal > rankCareersLeaderSignals + 0.1);
   console.log(`[rankCareers] Environmental signals: env=${rankCareersEnvSignal.toFixed(2)}, build=${rankCareersBuildSignal.toFixed(2)}, auttaja=${rankCareersAuttajaSignal.toFixed(2)}, isEnvSci=${isEnvironmentalScientist}`);
 
   // ACCOUNTANT/ADMINISTRATOR (JÄRJESTÄJÄ) DETECTION
@@ -7737,7 +7811,11 @@ function _legacyRankCareers(
   // 6. Org signals must be clearly dominant over auttaja signals (unless definite Järjestäjä)
   // Key insight: Järjestäjä can have SOME tech interest (3/5), but not HIGH tech (4-5/5)
   // Key insight 2: Järjestäjä can have moderate business interest (4/5), but their security/stability VALUES take priority
-  const isAccountantAdmin = isDefinitelyJarjestaja || // New: Simple definite detection takes priority
+  // NEW: Also check if järjestäjä is the dominant category with high affinity
+  const isDominantJarjestaja = dominantCategory === 'jarjestaja';
+  
+  const isAccountantAdmin = isDefinitelyJarjestaja || // Simple definite detection takes priority
+                            isDominantJarjestaja || // NEW: If järjestäjä is dominant category, it's järjestäjä!
                             (rankCareersOrgSignals >= 0.5 &&
                             (rankCareersOrgSignalsStronger || hasJarjestajaValueProfile) && // Org signals beat leadership OR has Järjestäjä values
                             !isBusinessLeaderInRankCareers && // Not business leader
@@ -7888,9 +7966,10 @@ function _legacyRankCareers(
     careersToScore = curatedCareersTASO2;
   }
 
-  // HYBRID APPROACH: Apply category boost to careers in the dominant category
-  // Increased from 15 to 20 for better category alignment
-  const DOMINANT_CATEGORY_BOOST = 20; // 20% boost to careers in dominant category
+  // HYBRID APPROACH: Apply MASSIVE category boost to careers in the dominant category
+  // This ensures careers from the user's detected category appear in top 5
+  const DOMINANT_CATEGORY_BOOST = 50; // 50% boost to careers in dominant category
+  const NON_MATCHING_PENALTY = -25; // -25% penalty for careers NOT in dominant category
 
   // Step 5: Score filtered careers with enhanced matching
   const scoredCareers = careersToScore.map(careerVector => {
@@ -7901,11 +7980,13 @@ function _legacyRankCareers(
       dominantCategory // Pass category for category-specific weighting
     );
 
-    // DOMINANT CATEGORY BOOST: Prioritize careers in the detected dominant category
-    // This ensures the user gets careers from their best-fit category while still
-    // allowing great matches from other categories to compete
+    // MASSIVE CATEGORY PREFERENCE: Strongly prioritize careers in the detected dominant category
+    // This is critical for ensuring järjestäjä, ympäristö, and other category matches work
     if (careerVector.category === dominantCategory) {
       overallScore = Math.min(100, overallScore + DOMINANT_CATEGORY_BOOST);
+    } else {
+      // Apply penalty to careers NOT in dominant category
+      overallScore = Math.max(0, overallScore + NON_MATCHING_PENALTY);
     }
 
     // ENHANCED MATCHING: Apply boosts BEFORE filtering
