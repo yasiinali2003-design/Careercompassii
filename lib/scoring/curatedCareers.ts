@@ -1,25 +1,26 @@
 /**
  * Curated Flagship Career Pool
  *
- * This is a carefully selected subset of ~130 careers optimized for:
+ * This is a carefully selected subset of ~160 careers optimized for:
  * - Finnish youth (YLA cohort) relevance
  * - Real, achievable career paths (entry-level, NOT senior executive roles)
  * - Education variety (ammattikoulu, AMK, yliopisto options)
  * - Field diversity within each category
+ * - BALANCED coverage for all personality types
  *
  * Variable sizing by category based on real-world career diversity:
  * - Auttaja: 28 careers (healthcare, education, social work)
  * - Innovoija: 24 careers (tech/engineering)
  * - Rakentaja: 21 careers (trades, construction, logistics, hospitality)
- * - Luova: 16 careers (creative fields, media)
- * - Järjestäjä: 20 careers (admin, sales, finance - entry-level)
+ * - Luova: 17 careers (creative fields, media)
+ * - Järjestäjä: 32 careers (admin, sales, finance - EXPANDED)
  * - Johtaja: 3 careers (achievable leadership only)
- * - Visionääri: 11 careers (strategy, research)
- * - Ympäristön puolustaja: 12 careers (environment, sustainability)
+ * - Visionääri: 12 careers (strategy, research)
+ * - Ympäristön puolustaja: 24 careers (environment, sustainability - EXPANDED)
  *
- * Total: ~135 careers (all entry-level achievable)
+ * Total: ~161 careers (all entry-level achievable)
  * 
- * UPDATED: Removed all päällikkö/manager careers, added entry-level replacements
+ * UPDATED: Expanded järjestäjä and ympäristö categories for better personality matching
  */
 
 export const CURATED_CAREER_SLUGS: string[] = [
@@ -161,40 +162,51 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "uutistoimittaja",          // Reporter/Journalist
 
   // ==========================================
-  // JÄRJESTÄJÄ (20) - Administration, Finance, Entry-level Business
+  // JÄRJESTÄJÄ (32) - Administration, Finance, Entry-level Business
   // ==========================================
   // Finance & Accounting - Entry Level
   "kirjanpitaja",             // Accountant
   "talousasiantuntija",       // Financial specialist
   "aktuaari",                 // Actuary
   "pankkivirkailija",         // Bank clerk
-  "talousassistentti",        // Finance assistant (NEW)
-  "pankkitoimihenkilo",       // Bank clerk (NEW)
-  "vakuutusvirkailija",       // Insurance clerk (NEW)
-  "veroasiantuntija",         // Tax specialist (NEW)
+  "talousassistentti",        // Finance assistant
+  "pankkitoimihenkilo",       // Bank clerk
+  "vakuutusvirkailija",       // Insurance clerk
+  "veroasiantuntija",         // Tax specialist
+  "palkanlaskija",            // Payroll specialist (NEW)
+  "tilintarkastajan-assistentti", // Audit assistant (NEW)
+  "taloushallinnon-harjoittelija", // Finance trainee (NEW)
 
   // Administration - Entry Level
   "hr-asiantuntija",          // HR specialist
   "toimistosihteeri",         // Office secretary
   "reseptionisti",            // Receptionist
-  "hr-koordinaattori",        // HR coordinator (NEW)
+  "hr-koordinaattori",        // HR coordinator
+  "henkilostoasiantuntija",   // HR specialist (NEW)
+  "hallinnon-koordinaattori", // Admin coordinator (NEW)
+  "projektikoordinaattori",   // Project coordinator (NEW)
+  "tapahtumakoordinaattori",  // Event coordinator (NEW)
   
   // Sales & Customer Service - Entry Level
   "myyntityontekija",         // Sales worker - ammattikoulu
   "asiakaspalveluedustaja",   // Customer service rep - ammattikoulu
   "myyntiedustaja",           // Sales representative
-  "myyntiassistentti",        // Sales assistant (NEW)
-  "markkinointiassistentti",  // Marketing assistant (NEW)
-  "asiakaspalvelun-neuvoja",  // Customer service advisor (NEW)
+  "myyntiassistentti",        // Sales assistant
+  "markkinointiassistentti",  // Marketing assistant
+  "asiakaspalvelun-neuvoja",  // Customer service advisor
+  "kassatyontekija",          // Cashier (NEW)
+  "asiakaspalvelun-koordinaattori", // Customer service coord (NEW)
   
   // Legal & Security
   "poliisi",                  // Police officer - ammattikoulu/AMK
+  "turvallisuusvastaava",     // Security coordinator (NEW)
 
   // Logistics & Operations - Entry Level
   "logistiikkakoordinaattori", // Logistics coordinator
   "hankinta-asiantuntija",    // Procurement specialist
   "toimitusketjuanalyytikko", // Supply chain analyst
-  "hankinta-assistentti",     // Procurement assistant (NEW)
+  "hankinta-assistentti",     // Procurement assistant
+  "isannoitsija",             // Property manager (NEW)
 
   // ==========================================
   // JOHTAJA (3) - Achievable Entry-level Leadership Only
@@ -221,7 +233,7 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "tutkimusavustaja",         // Research assistant (NEW)
 
   // ==========================================
-  // YMPÄRISTÖN PUOLUSTAJA (12) - Environment, Sustainability
+  // YMPÄRISTÖN PUOLUSTAJA (24) - Environment, Sustainability
   // ==========================================
   // Environmental Science
   "ymparistoinsinoori",       // Environmental engineer
@@ -229,17 +241,29 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "ymparistoasiantuntija",    // Environmental specialist
   "biologi",                  // Biologist
   "metsanhoitaja",            // Forester
+  "ilmastotutkija",           // Climate researcher (NEW)
+  "ymparistotarkastaja",      // Environmental inspector (NEW)
+  "ymparistokasvattaja",      // Environmental educator (NEW)
+  "luonnonsuojelubiologi",    // Conservation biologist (NEW)
 
-  // Sustainability
+  // Sustainability & Energy
   "kestavan-kehityksen-asiantuntija", // Sustainability specialist
   "kiertotalousasiantuntija", // Circular economy specialist
   "energiatehokkuusasiantuntija", // Energy efficiency specialist
+  "uusiutuva-energia-insinoori", // Renewable energy engineer (NEW)
+  "kestavan-kehityksen-koordinaattori", // Sustainability coordinator (NEW)
+  "kierratyskoordinaattori",  // Recycling coordinator (NEW)
+  "esg-analyytikko",          // ESG analyst (NEW)
 
   // Nature & Agriculture
   "luonnonsuojelija",         // Conservationist
   "maatalousasiantuntija",    // Agricultural specialist
   "luomuviljelija",           // Organic farmer
   "maisema-arkkitehti",       // Landscape architect
+  "luontokartoittaja",        // Nature surveyor (NEW)
+  "vesiensuojeluasiantuntija", // Water protection specialist (NEW)
+  "jatehuoltoasiantuntija",   // Waste management specialist (NEW)
+  "metsainsinoori",           // Forest engineer (NEW)
 
   // ==========================================
   // SPECIAL ADDITIONS - Sign Language, Accessibility
@@ -256,16 +280,16 @@ export function getCuratedCareerSlugs(): string[] {
 }
 
 /**
- * Category distribution summary (updated - all entry-level)
+ * Category distribution summary (updated - balanced for all personality types)
  */
 export const CURATED_CATEGORY_DISTRIBUTION = {
   auttaja: 28,                // Healthcare, education, social work
   innovoija: 24,              // Tech, engineering
   rakentaja: 21,              // Trades, construction, hospitality
   luova: 17,                  // Creative, media
-  jarjestaja: 20,             // Admin, finance, sales (entry-level)
+  jarjestaja: 32,             // Admin, finance, sales (entry-level) - EXPANDED
   johtaja: 3,                 // Only achievable leadership roles
   visionaari: 12,             // Strategy, research
-  "ympariston-puolustaja": 12, // Environment
-  total: 137                  // All entry-level achievable
+  "ympariston-puolustaja": 24, // Environment - EXPANDED
+  total: 161                  // All entry-level achievable
 };
