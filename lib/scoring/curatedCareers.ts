@@ -58,7 +58,7 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "erityisopettaja",          // Special education teacher - yliopisto
   "opettaja",                 // Teacher (general) - yliopisto
   "opinto-ohjaaja",           // Study counselor - yliopisto (NEW)
-  "koulunkayntiavustaja",     // School assistant - ammattikoulu (NEW)
+  "koulunkäyntiavustaja",     // School assistant - ammattikoulu (NEW)
 
   // Social Work & Public Health
   "sosiaalityontekija",       // Social worker - AMK/yliopisto

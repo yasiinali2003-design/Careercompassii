@@ -6377,7 +6377,7 @@ export const CAREER_VECTORS: CareerVector[] = [
     context: { outdoor: 0.1, international: 0.2, work_environment: 0.8 }
   },
   {
-    slug: "koulunkayntiavustaja",
+    slug: "koulunkäyntiavustaja",
     title: "Koulunkäyntiavustaja",
     category: "auttaja",
     interests: { technology: 0.2, people: 0.95, creative: 0.4, analytical: 0.3, hands_on: 0.5, business: 0.1, environment: 0.2, health: 0.5, education: 0.9, innovation: 0.2, arts_culture: 0.3, sports: 0.4, nature: 0.2, writing: 0.2 },
