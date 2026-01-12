@@ -45480,6 +45480,207 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 60,
     source: "Tilastokeskus 2024"
   }
+,
+  {
+    id: "liikkeenjohdon-trainee",
+    category: "johtaja",
+    title_fi: "Liikkeenjohdon trainee",
+    title_en: "Management Trainee",
+    short_description: "Liikkeenjohdon trainee oppii yrityksen eri toimintoja ja valmistautuu esimiestehtäviin kiertämällä eri osastoilla.",
+    main_tasks: ["Eri osastojen toimintaan tutustuminen","Projekteihin osallistuminen","Raporttien laatiminen","Tiimityöskentely","Prosessien kehittäminen"],
+    impact: ["Oppii yrityksen kokonaiskuvan","Kehittää johtamistaitoja","Rakentaa verkostoja"],
+    education_paths: ["Kauppatieteiden kandidaatti/maisteri (yliopisto)","Tradenomi (AMK)"],
+    salary_range: { min: 2800, max: 3800, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Trainee-ohjelmat ovat suosittu tapa aloittaa ura suuryrityksissä." },
+    typical_employers: ["Suuryritykset","Konsernit","Kansainväliset yritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=trainee" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/kauppatieteet" }
+    ],
+    keywords: ["trainee","liikkeenjohto","johtaminen","ura"],
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "hr-koordinaattori",
+    category: "jarjestaja",
+    title_fi: "HR-koordinaattori",
+    title_en: "HR Coordinator",
+    short_description: "HR-koordinaattori avustaa henkilöstöhallinnon tehtävissä ja tukee rekrytointiprosesseja.",
+    main_tasks: ["Rekrytointien koordinointi","Työsopimusten valmistelu","Perehdytysten järjestäminen","HR-järjestelmien ylläpito","Henkilöstötilastojen laatiminen"],
+    impact: ["Varmistaa sujuvan rekrytoinnin","Tukee työntekijöiden viihtyvyyttä","Kehittää HR-prosesseja"],
+    education_paths: ["Tradenomi, henkilöstöhallinto (AMK)","Kauppatieteiden kandidaatti (yliopisto)"],
+    salary_range: { min: 2500, max: 3500, currency: "EUR" },
+    job_outlook: { status: "stable", description: "HR-osaajien tarve on vakaa kaikilla toimialoilla." },
+    typical_employers: ["Suuryritykset","HR-palveluyritykset","Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=hr%20koordinaattori" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/henkil%C3%B6st%C3%B6hallinto" }
+    ],
+    keywords: ["hr","henkilöstö","rekrytointi","koordinaattori"],
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "taloushallinnon-harjoittelija",
+    category: "jarjestaja",
+    title_fi: "Taloushallinnon harjoittelija",
+    title_en: "Finance Trainee",
+    short_description: "Taloushallinnon harjoittelija oppii taloushallinnon perustehtäviä ja tukee talousosastoa päivittäisissä tehtävissä.",
+    main_tasks: ["Kirjanpidon avustaminen","Laskujen käsittely","Raportoinnin tukeminen","Taloushallinnon järjestelmien käyttö","Arkistointi"],
+    impact: ["Oppii taloushallinnon perusteet","Tukee talousosaston toimintaa","Kehittää ammattitaitoa"],
+    education_paths: ["Tradenomi, taloushallinto (AMK)","Kauppatieteiden kandidaatti, laskentatoimi (yliopisto)"],
+    salary_range: { min: 2000, max: 2800, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Hyvä aloituspositio talousuralle." },
+    typical_employers: ["Tilitoimistot","Yritysten talousosastot","Konsulttiyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "ei" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=taloushallinto%20harjoittelija" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/taloushallinto" }
+    ],
+    keywords: ["taloushallinto","harjoittelija","kirjanpito","talous"],
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "it-tukihenkilo",
+    category: "innovoija",
+    title_fi: "IT-tukihenkilö",
+    title_en: "IT Support Specialist",
+    short_description: "IT-tukihenkilö auttaa käyttäjiä tietoteknisten ongelmien ratkaisemisessa ja ylläpitää IT-infrastruktuuria.",
+    main_tasks: ["Käyttäjätuki","Laitteiden asennus","Ohjelmistojen päivitys","Vikaselvitys","Käyttöoikeuksien hallinta"],
+    impact: ["Pitää organisaation IT-toiminnot käynnissä","Auttaa käyttäjiä","Varmistaa tietoturvan"],
+    education_paths: ["Tieto- ja viestintätekniikan perustutkinto (toinen aste)","Tietojenkäsittelyn tradenomi (AMK)"],
+    salary_range: { min: 2400, max: 3400, currency: "EUR" },
+    job_outlook: { status: "growing", description: "IT-tuen tarve kasvaa digitalisaation myötä." },
+    typical_employers: ["IT-palveluyritykset","Yritykset","Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=it%20tuki" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" }
+    ],
+    keywords: ["it-tuki","helpdesk","tietotekniikka","käyttäjätuki"],
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "myyntiedustaja",
+    category: "jarjestaja",
+    title_fi: "Myyntiedustaja",
+    title_en: "Sales Representative",
+    short_description: "Myyntiedustaja myy yrityksen tuotteita tai palveluita asiakkaille ja rakentaa asiakassuhteita.",
+    main_tasks: ["Asiakaskontaktointi","Tuote-esittelyt","Tarjousten laatiminen","Asiakassuhteiden hoito","Myynnin raportointi"],
+    impact: ["Kasvattaa yrityksen myyntiä","Rakentaa asiakassuhteita","Tuo asiakaspalautetta"],
+    education_paths: ["Liiketalouden perustutkinto (toinen aste)","Tradenomi (AMK)"],
+    salary_range: { min: 2500, max: 4500, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Myyntityö tarjoaa hyvät etenemismahdollisuudet." },
+    typical_employers: ["Tukkukaupat","Teollisuusyritykset","Palveluyritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=myyntiedustaja" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/myynti" }
+    ],
+    keywords: ["myyntiedustaja","myynti","b2b","asiakkuudet"],
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "viestinta-assistentti",
+    category: "jarjestaja",
+    title_fi: "Viestintäassistentti",
+    title_en: "Communications Assistant",
+    short_description: "Viestintäassistentti tukee yrityksen viestintää ja auttaa sisällöntuotannossa.",
+    main_tasks: ["Sisällöntuotanto","Sosiaalisen median päivitys","Tiedotteiden valmistelu","Mediaseuranta","Tapahtumien viestintä"],
+    impact: ["Tukee yrityksen näkyvyyttä","Ylläpitää viestintäkanavia","Tuottaa sisältöä"],
+    education_paths: ["Tradenomi, viestintä (AMK)","Yhteiskuntatieteiden kandidaatti, viestintä (yliopisto)"],
+    salary_range: { min: 2300, max: 3200, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Viestintäosaajien tarve on vakaa." },
+    typical_employers: ["Viestintätoimistot","Yritykset","Järjestöt"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=viestint%C3%A4assistentti" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/viestint%C3%A4" }
+    ],
+    keywords: ["viestintä","some","sisällöntuotanto","tiedotus"],
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "tutkimusavustaja",
+    category: "visionaari",
+    title_fi: "Tutkimusavustaja",
+    title_en: "Research Assistant",
+    short_description: "Tutkimusavustaja avustaa tutkimusprojekteissa ja kerää sekä analysoi tutkimusaineistoa.",
+    main_tasks: ["Aineiston keruu","Data-analyysi","Kirjallisuuskatsaukset","Tutkimusraportointi","Haastattelut"],
+    impact: ["Tukee tieteellistä tutkimusta","Tuottaa uutta tietoa","Kehittää analyyttisiä taitoja"],
+    education_paths: ["Kandidaatin tutkinto (yliopisto)","Maisterin tutkinto (yliopisto)"],
+    salary_range: { min: 2400, max: 3400, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Tutkimustyö tarjoaa polun akateemiselle uralle." },
+    typical_employers: ["Yliopistot","Tutkimuslaitokset","Yritykset"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=tutkimusavustaja" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/tutkimus" }
+    ],
+    keywords: ["tutkimus","analyysi","data","tiede"],
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "asiakaspalvelun-neuvoja",
+    category: "auttaja",
+    title_fi: "Asiakaspalveluneuvoja",
+    title_en: "Customer Service Advisor",
+    short_description: "Asiakaspalveluneuvoja auttaa asiakkaita kysymyksissä ja ongelmissa sekä varmistaa hyvän asiakaskokemuksen.",
+    main_tasks: ["Asiakaskyselyihin vastaaminen","Ongelmien ratkaisu","Tilausten käsittely","Palautteen käsittely","Tuoteneuvonta"],
+    impact: ["Varmistaa asiakastyytyväisyyden","Ratkaisee ongelmia","Edustaa yritystä"],
+    education_paths: ["Liiketalouden perustutkinto (toinen aste)","Tradenomi (AMK)"],
+    salary_range: { min: 2200, max: 3000, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Asiakaspalvelu on tärkeä osa lähes kaikkia yrityksiä." },
+    typical_employers: ["Kaupan alan yritykset","Palveluyritykset","Contact centerit"],
+    work_conditions: { remote: "Osittain", shift_work: true, travel: "ei" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=asiakaspalveluneuvoja" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/asiakaspalvelu" }
+    ],
+    keywords: ["asiakaspalvelu","neuvoja","palvelu","asiakkaat"],
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "hankinta-assistentti",
+    category: "jarjestaja",
+    title_fi: "Hankinta-assistentti",
+    title_en: "Procurement Assistant",
+    short_description: "Hankinta-assistentti avustaa ostoissa ja toimittajayhteistyössä.",
+    main_tasks: ["Tilausten käsittely","Toimittajayhteydet","Hintavertailut","Sopimusten hallinnointi","Varastoseuranta"],
+    impact: ["Varmistaa materiaalien saatavuuden","Optimoi hankintakustannuksia","Tukee toimitusketjua"],
+    education_paths: ["Tradenomi (AMK)","Liiketalouden perustutkinto (toinen aste)"],
+    salary_range: { min: 2400, max: 3300, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Hankintatoimi on keskeinen osa yritysten toimintaa." },
+    typical_employers: ["Teollisuusyritykset","Kaupan alan yritykset","Julkinen sektori"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=hankinta%20assistentti" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/hankinta" }
+    ],
+    keywords: ["hankinta","osto","toimittajat","logistiikka"],
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "data-analyytikko-junior",
+    category: "innovoija",
+    title_fi: "Junior Data-analyytikko",
+    title_en: "Junior Data Analyst",
+    short_description: "Junior data-analyytikko analysoi dataa ja tuottaa raportteja päätöksenteon tueksi.",
+    main_tasks: ["Datan kerääminen","Tilastoanalyysit","Raporttien laatiminen","Dashboardien rakentaminen","Datan visualisointi"],
+    impact: ["Tukee datapohjaista päätöksentekoa","Tuottaa liiketoimintanäkemyksiä","Kehittää analytiikkaa"],
+    education_paths: ["Tietojenkäsittelyn tradenomi (AMK)","Kauppatieteiden kandidaatti, data-analytiikka (yliopisto)","Tilastotiede (yliopisto)"],
+    salary_range: { min: 2800, max: 3800, currency: "EUR" },
+    job_outlook: { status: "growing", description: "Data-analytiikan osaajien tarve kasvaa voimakkaasti." },
+    typical_employers: ["Konsulttiyritykset","Teknologiayritykset","Pankit","Verkkokaupat"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=data%20analyytikko" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/data-analytiikka" }
+    ],
+    keywords: ["data","analytiikka","tilastot","raportointi","BI"],
+    source: "Tilastokeskus 2024"
+  }
 ] as CareerFI[];
 
 // Helper function to get careers by category
