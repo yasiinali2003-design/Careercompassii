@@ -45681,6 +45681,107 @@ export const careersData: CareerFI[] = [
     keywords: ["data","analytiikka","tilastot","raportointi","BI"],
     source: "Tilastokeskus 2024"
   }
+,
+  {
+    id: "opinto-ohjaaja",
+    category: "auttaja",
+    title_fi: "Opinto-ohjaaja",
+    title_en: "Study Counselor",
+    short_description: "Opinto-ohjaaja auttaa oppilaita ja opiskelijoita koulutusvalinnoissa, urasuunnittelussa ja henkilökohtaisissa haasteissa.",
+    main_tasks: ["Oppilaiden ohjaus koulutusvalinnoissa","Urasuunnittelun tukeminen","Jatko-opintoihin hakemisen neuvonta","Henkilökohtainen tuki","Yhteistyö vanhempien ja opettajien kanssa"],
+    impact: ["Auttaa nuoria löytämään oman polkunsa","Tukee oppilaiden hyvinvointia","Vähentää koulupudokkuutta"],
+    education_paths: ["Opinto-ohjaajan koulutus (yliopisto)","Kasvatustieteen maisteri + OPO-pätevyys","Opettajan koulutus + täydennyskoulutus"],
+    salary_range: { min: 3200, max: 4500, currency: "EUR" },
+    job_outlook: { status: "growing", description: "Opinto-ohjaajista on pulaa, erityisesti peruskouluissa ja lukioissa." },
+    typical_employers: ["Peruskoulut","Lukiot","Ammattioppilaitokset","Ammattikorkeakoulut"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=opinto-ohjaaja" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/opinto-ohjaaja" }
+    ],
+    keywords: ["opinto-ohjaaja","opo","ohjaus","oppilaanohjaus","urasuunnittelu"],
+    source: "OAJ, Tilastokeskus 2024"
+  },
+  {
+    id: "koulunkäyntiavustaja",
+    category: "auttaja",
+    title_fi: "Koulunkäyntiavustaja",
+    title_en: "School Assistant",
+    short_description: "Koulunkäyntiavustaja tukee oppilaita oppimisessa ja arjen tilanteissa kouluympäristössä.",
+    main_tasks: ["Oppilaiden tukeminen oppitunneilla","Erityistä tukea tarvitsevien avustaminen","Välituntivalvonta","Ruokailussa avustaminen","Ryhmätilanteiden tuki"],
+    impact: ["Mahdollistaa oppimisen kaikille","Tukee erityislapsia","Helpottaa opettajan työtä"],
+    education_paths: ["Koulunkäyntiavustajan ammattitutkinto","Sosiaali- ja terveysalan perustutkinto","Nuoriso- ja vapaa-ajan ohjauksen perustutkinto"],
+    salary_range: { min: 2100, max: 2800, currency: "EUR" },
+    job_outlook: { status: "growing", description: "Koulunkäyntiavustajista on jatkuva tarve, erityisesti erityisopetuksessa." },
+    typical_employers: ["Kunnat","Peruskoulut","Erityiskoulut","Päiväkodit"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "ei" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=koulunk%C3%A4yntiavustaja" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/koulunk%C3%A4yntiavustaja" }
+    ],
+    keywords: ["koulunkäyntiavustaja","kouluavustaja","erityisavustaja","koulu","oppilas"],
+    source: "Kuntaliitto, Tilastokeskus 2024"
+  },
+  {
+    id: "liikunnanohjaaja",
+    category: "auttaja",
+    title_fi: "Liikunnanohjaaja",
+    title_en: "Sports Instructor",
+    short_description: "Liikunnanohjaaja suunnittelee ja ohjaa liikuntaryhmiä eri-ikäisille ja -tasoisille liikkujille.",
+    main_tasks: ["Liikuntatuntien suunnittelu ja ohjaus","Ryhmäliikunnan vetäminen","Asiakasneuvonta","Liikuntaohjelmien kehittäminen","Tapahtumien järjestäminen"],
+    impact: ["Edistää ihmisten terveyttä","Lisää liikunnan iloa","Tukee hyvinvointia"],
+    education_paths: ["Liikunnanohjaaja (AMK)","Liikuntaneuvoja (toinen aste)","Liikuntatieteiden kandidaatti (yliopisto)"],
+    salary_range: { min: 2300, max: 3200, currency: "EUR" },
+    job_outlook: { status: "growing", description: "Hyvinvointialan kasvu lisää liikunnanohjaajien kysyntää." },
+    typical_employers: ["Kuntosalit","Liikuntakeskukset","Kunnat","Urheiluseurat","Yritykset"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "vähän" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=liikunnanohjaaja" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/liikunnanohjaaja" }
+    ],
+    keywords: ["liikunnanohjaaja","liikunta","urheilu","ryhmäliikunta","valmentaja"],
+    source: "Tilastokeskus 2024"
+  },
+  {
+    id: "optikko",
+    category: "auttaja",
+    title_fi: "Optikko",
+    title_en: "Optician",
+    short_description: "Optikko tutkii näköä, määrää silmälasit ja piilolinssit sekä auttaa asiakkaita näkemisen apuvälineissä.",
+    main_tasks: ["Näöntutkimukset","Silmälasien ja linssien määrääminen","Kehysten sovitus","Piilolasien sovitus","Asiakasneuvonta"],
+    impact: ["Parantaa ihmisten näkökykyä","Havaitsee silmäsairauksia varhain","Edistää elämänlaatua"],
+    education_paths: ["Optometristi (AMK)","Optikon erikoistumiskoulutus"],
+    salary_range: { min: 3000, max: 4200, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Väestön ikääntyminen lisää näönhuollon tarvetta." },
+    typical_employers: ["Optikkoliikkeet","Silmälääkäriasemat","Yksityinen vastaanotto","Terveyskeskukset"],
+    work_conditions: { remote: "Ei", shift_work: false, travel: "ei" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=optikko" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/optometria" }
+    ],
+    keywords: ["optikko","optometristi","silmälasit","näkö","näöntutkimus"],
+    source: "Suomen Optometrian Ammattilaiset, Tilastokeskus 2024"
+  },
+  {
+    id: "viittomakielen-tulkki",
+    category: "auttaja",
+    title_fi: "Viittomakielen tulkki",
+    title_en: "Sign Language Interpreter",
+    short_description: "Viittomakielen tulkki mahdollistaa kommunikaation kuurojen ja kuulevien välillä tulkkaamalla viittomakielellä.",
+    main_tasks: ["Tulkkaus viittomakielelle ja viittomakieleltä","Asioimistulkkaus","Opiskelutulkkaus","Työelämätulkkaus","Etätulkkaus"],
+    impact: ["Mahdollistaa kuurojen osallistumisen yhteiskuntaan","Edistää yhdenvertaisuutta","Poistaa kommunikaatioesteitä"],
+    education_paths: ["Viittomakielen tulkki (AMK)","Humanistinen ammattikorkeakoulu (Humak)"],
+    salary_range: { min: 2600, max: 3600, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Tulkkauspalvelujen tarve on jatkuva ja vakaa." },
+    typical_employers: ["Tulkkauspalveluyritykset","Kela","Oppilaitokset","Freelancer"],
+    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=viittomakieli" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/viittomakieli" }
+    ],
+    keywords: ["viittomakielen tulkki","tulkki","viittomakieli","kuuro","tulkkaus"],
+    source: "Kuurojen Liitto, Tilastokeskus 2024"
+  }
 ] as CareerFI[];
 
 // Helper function to get careers by category
