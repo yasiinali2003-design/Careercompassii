@@ -2339,154 +2339,6 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 48
   },
   {
-    id: "blockchain-insinoori",
-    category: "innovoija",
-    title_fi: "Blockchain-insinööri",
-    title_en: "Blockchain Engineer",
-    short_description: "Blockchain-insinööri kehittää hajautettuja sovelluksia ja älykkäitä sopimuksia. Työskentelee kryptovaluuttojen ja Web3-teknologian parissa.",
-    main_tasks: [
-      "Blockchain-sovellusten kehittäminen",
-      "Älykkäiden sopimusten (smart contracts) ohjelmointi",
-      "Hajautettujen järjestelmien suunnittelu",
-      "Kryptografian soveltaminen",
-      "DeFi-protokollien kehittäminen"
-    ],
-    impact: [
-      "Kehittää hajautettuja ja turvallisia järjestelmiä",
-      "Parantaa Suomessa läpinäkyvyyttä ja luottamusta",
-      "Edistää Suomessa Web3-teknologian kehitystä"
-    ],
-    education_paths: [
-      "AMK: Tietojenkäsittely, Kryptografia",
-      "Yliopisto: Tietojenkäsittelytieteen maisteri",
-      "Blockchain-kurssit ja sertifikaatit",
-      "Kryptografian erikoiskurssit"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Ohjelmointi (Solidity, JavaScript)",
-      "Kryptografia",
-      "Hajautetut järjestelmät",
-      "Algoritmien suunnittelu",
-      "Tietoturvallisuus"
-    ],
-    tools_tech: [
-      "Solidity, JavaScript",
-      "Ethereum, Polygon",
-      "Web3.js, Ethers.js",
-      "Git, Docker",
-      "Truffle, Hardhat"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 5600,
-      range: [4200, 7500],
-      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Blockchain-insinöörien kysyntä kasvaa Web3-teknologian ja kryptovaluuttojen myötä.",
-      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior blockchain-insinööri",
-      "Smart Contract Developer",
-      "Web3 Developer"
-    ],
-    career_progression: [
-      "Senior blockchain-insinööri",
-      "Blockchain Architect",
-      "CTO",
-      "Blockchain-konsultti"
-    ],
-    typical_employers: [
-      "Teknologiayritykset",
-      "Kryptovaluuttayritykset",
-      "Pankit ja rahoitusyhtiöt",
-      "Konsultointiyritykset",
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
-    union_or_CBA: "IT-alan TES",
-    useful_links: [{ name: "Opintopolku – Blockchain-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Blockchain-insin%C3%B6%C3%B6ri" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=kehitt%C3%A4j%C3%A4" }],
-    keywords: ["blockchain", "kryptografia", "ohjelmointi", "Web3", "hajautetut järjestelmät"],
-    study_length_estimate_months: 42
-  },
-  {
-    id: "virtuaalitodellisuus-insinoori",
-    category: "innovoija",
-    title_fi: "Virtuaalitodellisuus-insinööri",
-    title_en: "VR/AR Engineer",
-    short_description: "VR/AR-insinööri kehittää virtuaali- ja lisätodellisuussovelluksia. Työskentelee immersiivisten kokemusten ja 3D-teknologian parissa.",
-    main_tasks: [
-      "VR/AR-sovellusten kehittäminen",
-      "3D-mallinnuksen ja animaation luonti",
-      "Käyttöliittymien suunnittelu",
-      "Sensoreiden ja laitteiden integrointi",
-      "Käyttäjäkokemuksen optimointi"
-    ],
-    impact: [
-      "Luo Suomessa immersiivisiä ja interaktiivisia kokemuksia",
-      "Parantaa Suomessa koulutusta ja koulutusta",
-      "Kehittää innovatiivisia VR/AR-ratkaisuja"
-    ],
-    education_paths: [
-      "AMK: Medianomi, Tietojenkäsittely",
-      "Yliopisto: Tietojenkäsittelytieteen maisteri",
-      "VR/AR-kurssit ja sertifikaatit",
-      "3D-grafiikan erikoiskurssit"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Ohjelmointi (C#, Unity, Unreal)",
-      "3D-mallinnus ja animaatio",
-      "Käyttöliittymien suunnittelu",
-      "VR/AR-teknologia",
-      "Kreatiivisuus"
-    ],
-    tools_tech: [
-      "Unity, Unreal Engine",
-      "Blender, Maya",
-      "C#, C++",
-      "VR-headsetit",
-      "Git, Docker"
-    ],
-    languages_required: { fi: "B2", sv: "A2", en: "B2" },
-    salary_eur_month: {
-      median: 4800,
-      range: [3500, 6500],
-      source: { name: "Tietojenkäsittelyliitto", url: "https://www.tietojenkäsittelyliitto.fi/", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "VR/AR-insinöörien kysyntä kasvaa metaversen ja immersiivisten teknologioiden myötä.",
-      source: { name: "TE-palvelut", url: "https://www.te-palvelut.fi/", year: 2024 }
-    },
-    entry_roles: [
-      "Junior VR/AR-insinööri",
-      "3D Developer",
-      "Game Developer"
-    ],
-    career_progression: [
-      "Senior VR/AR-insinööri",
-      "VR/AR Architect",
-      "Creative Director",
-      "VR/AR-konsultti"
-    ],
-    typical_employers: [
-      "Pelistudiot",
-      "Teknologiayritykset",
-      "Koulutusyritykset",
-      "Konsultointiyritykset"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "vähän" },
-    union_or_CBA: "IT-alan TES",
-    useful_links: [{ name: "Opintopolku – Virtuaalitodellisuus-insinööri", url: "https://opintopolku.fi/konfo/fi/haku/Virtuaalitodellisuus-insin%C3%B6%C3%B6ri" },
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=kehitt%C3%A4j%C3%A4" }],
-    keywords: ["VR", "AR", "virtuaalitodellisuus", "3D", "immersiivinen"],
-    study_length_estimate_months: 42
-  },
-  {
     id: "automaatio-insinoori",
     category: "innovoija",
     title_fi: "Automaatio-insinööri",
@@ -29886,58 +29738,6 @@ export const careersData: CareerFI[] = [
     study_length_estimate_months: 60
   },
   {
-    id: "transformaatiojohtaja",
-    category: "johtaja",
-    title_fi: "Transformaatiojohtaja",
-    title_en: "Transformation Director",
-    short_description: "Transformaatiojohtaja vastaa organisaation suurista muutoshankkeista. Työ vaatii muutosjohtamisen osaamista ja strategista ajattelua.",
-    main_tasks: [
-      "Transformaatio-ohjelmien johtaminen",
-      "Muutosstrategian kehittäminen",
-      "Sidosryhmähallinta",
-      "Muutosviestintä",
-      "Muutoksen vaikutusten mittaaminen"
-    ],
-    education_paths: [
-      "Ylempi korkeakoulututkinto: Kauppatieteet tai tekniikka",
-      "Muutosjohtamisen koulutus",
-      "Konsultointikokemus"
-    ],
-    core_skills: [
-      "Muutosjohtaminen",
-      "Strateginen suunnittelu",
-      "Projektinhallinta",
-      "Sidosryhmähallinta",
-      "Viestintä"
-    ],
-    tools_tech: [
-      "Muutosjohtamisen työkalut",
-      "Projektinhallintatyökalut",
-      "Analytiikkatyökalut"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "C1" },
-    salary_eur_month: {
-      median: 8000,
-      range: [6500, 10500],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Jatkuvat muutokset liiketoimintaympäristössä lisäävät tarvetta transformaatiojohtajille.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-    },
-    entry_roles: ["Muutosjohtamiskonsultti", "Program Manager"],
-    career_progression: ["COO", "CEO"],
-    typical_employers: ["Suuryritykset", "Konsulttiyritykset", "Julkishallinto"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-    useful_links: [
-      { name: "Opintopolku – Transformaatiojohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Transformaatiojohtaja" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Tekninen%20johtaja" }],
-    keywords: ["transformaatio", "muutos", "strategia"],
-    study_length_estimate_months: 72
-  },
-  {
     id: "kiinteistojohtaja",
     category: "johtaja",
     title_fi: "Kiinteistöjohtaja",
@@ -30788,58 +30588,6 @@ export const careersData: CareerFI[] = [
     ,
       { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Palvelumuotoilija%20(vision%C3%A4%C3%A4ri)" }],
     keywords: ["kiertotalous", "kestävyys", "innovaatio"],
-    study_length_estimate_months: 60
-  },
-  {
-    id: "digitaalisen-transformaation-asiantuntija",
-    category: "visionaari",
-    title_fi: "Digitaalisen transformaation asiantuntija",
-    title_en: "Digital Transformation Specialist",
-    short_description: "Digitaalisen transformaation asiantuntija auttaa organisaatioita digitaalisessa murroksessa. Työ vaatii visionääristä ajattelua ja teknologiaymmärrystä.",
-    main_tasks: [
-      "Digitaalisen transformaation suunnittelu",
-      "Digitaalisten ratkaisujen kehittäminen",
-      "Muutosjohtaminen",
-      "Koulutus ja valmennus",
-      "Digitaalisen kulttuurin edistäminen"
-    ],
-    education_paths: [
-      "Korkeakoulututkinto: Tietotekniikan tai kauppatieteiden tutkinto",
-      "Digitaalisen transformaation koulutus",
-      "Muutosjohtamisen osaaminen"
-    ],
-    core_skills: [
-      "Digitaalinen transformaatio",
-      "Muutosjohtaminen",
-      "Teknologiaosaaminen",
-      "Strateginen suunnittelu",
-      "Fasilitointi"
-    ],
-    tools_tech: [
-      "Digitaaliset alustat",
-      "Transformaatiotyökalut",
-      "Yhteistyöalustat"
-    ],
-    languages_required: { fi: "C1", sv: "B1", en: "C1" },
-    salary_eur_month: {
-      median: 5500,
-      range: [4500, 7500],
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Digitaalisen transformaation tarve lisää kysyntää asiantuntijoille.",
-      source: { name: "Työmarkkinatori", url: "https://tyomarkkinatori.fi/henkiloasiakkaat", year: 2024 }
-    },
-    entry_roles: ["Digitalisaatioasiantuntija", "IT-konsultti"],
-    career_progression: ["Digitalisaatiojohtaja", "CIO"],
-    typical_employers: ["Konsulttiyritykset", "Suuryritykset", "Julkishallinto"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-    useful_links: [
-      { name: "Opintopolku – Digitaalisen transformaation asiantuntija", url: "https://opintopolku.fi/konfo/fi/haku/Digitaalisen%20transformaation%20asiantuntija" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Kest%C3%A4v%C3%A4n%20rahoituksen%20asiantuntija" }],
-    keywords: ["digitalisaatio", "transformaatio", "muutos"],
     study_length_estimate_months: 60
   },
   {
@@ -32185,89 +31933,6 @@ export const careersData: CareerFI[] = [
       "project_management"
     ],
     study_length_estimate_months: 48
-  },
-  {
-    id: "vaikuttajamarkkinointijohtaja",
-    category: "luova",
-    title_fi: "Vaikuttajamarkkinointijohtaja",
-    title_en: "Influencer Marketing Manager",
-    short_description: "Vaikuttajamarkkinointijohtaja suunnittelee ja toteuttaa vaikuttajayhteistöitä brändin tunnettuuden kasvattamiseksi. Työ vaatii luovuutta, verkostoitumista ja datan analysointia.",
-    main_tasks: [
-      "Vaikuttajakampanjoiden suunnittelu",
-      "Vaikuttajien etsiminen ja yhteistyöneuvottelut",
-      "Kampanjoiden toteutus ja koordinointi",
-      "Tulosten mittaaminen ja raportointi",
-      "Trendianalyysi ja kilpailijoiden seuranta"
-    ],
-    impact: [
-      "Kasvattaa brändin näkyvyyttä ja uskottavuutta sosiaalisessa mediassa",
-      "Luo aitoja yhteyksiä kohdeyleisöön vaikuttajien kautta",
-      "Tukee myyntiä ja asiakashankintaa digitaalisissa kanavissa"
-    ],
-    education_paths: [
-      "AMK: Markkinointi tai Viestintä",
-      "Yliopisto: Kauppatieteet tai Viestintä",
-      "Portfolio-pohjainen ura + kokemus"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Vaikuttajamarkkinointi",
-      "Sosiaalinen media",
-      "Kampanjasuunnittelu",
-      "Neuvottelutaidot",
-      "Analytics ja raportointi",
-      "Verkostoituminen"
-    ],
-    tools_tech: [
-      "Influencer marketing platforms",
-      "Instagram/TikTok/YouTube",
-      "Google Analytics",
-      "CRM-järjestelmät",
-      "Canva/Adobe Creative Suite"
-    ],
-    languages_required: { fi: 4, sv: 0, en: 4 },
-    salary_eur_month: {
-      median: 4000,
-      range: [3200, 6000],
-      source: "Markkinointijohdon palkkatilastot ja vaikuttajamarkkinoinnin kyselytutkimukset"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Sosiaalisen median merkitys markkinoinnissa kasvaa jatkuvasti"
-    },
-    entry_roles: [
-      "Vaikuttajamarkkinointikoordinaattori",
-      "Social media specialist",
-      "Content marketing assistant"
-    ],
-    career_progression: [
-      "Senior Influencer Marketing Manager",
-      "Head of Social Media",
-      "Marketing Director",
-      "Oma markkinointiagentuurin perustaja"
-    ],
-    typical_employers: [
-      "Markkinointitoimistot",
-      "Brändit ja kuluttajatuoteyritykset",
-      "Vaikuttajamarkkinointi-agenttuurit",
-      "Yksityisyrittäjyys"
-    ],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "kohtalaisesti" },
-    union_or_CBA: null,
-    useful_links: [
-      { name: "Opintopolku – Vaikuttajamarkkinointijohtaja", url: "https://opintopolku.fi/konfo/fi/haku/Vaikuttajamarkkinointijohtaja" },
-      { name: "Vaikuttajamarkkinoinnin Neuvosto", url: "https://www.iab.fi/" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6laiteromujen%20kierr%C3%A4tt%C3%A4j%C3%A4" }],
-    transferable_skills: [
-      "influencer_marketing",
-      "social_media",
-      "campaign_planning",
-      "negotiation",
-      "analytics",
-      "networking"
-    ],
-    study_length_estimate_months: 36
   },
   {
     id: "aaninaittelija",
@@ -35567,61 +35232,6 @@ export const careersData: CareerFI[] = [
       "problem_solving",
       "project_management"
     ],
-    study_length_estimate_months: 60
-  },
-  {
-    id: "blockchain-kehittaja",
-    category: "innovoija",
-    title_fi: "Blockchain-kehittäjä",
-    title_en: "Blockchain Developer",
-    short_description: "Blockchain-kehittäjä kehittää hajautettuja sovelluksia. Työ vaatii blockchain-osaamista ja ohjelmointitaitoja.",
-    main_tasks: [
-      "Älykkäiden sopimusten kehittäminen",
-      "Blockchain-sovellusten rakentaminen",
-      "DApp-kehitys",
-      "Konsensusmekanismien implementointi",
-      "Turvallisuusarviointi"
-    ],
-    impact: [],
-    education_paths: [
-      "Korkeakoulututkinto: Tietotekniikan tutkinto",
-      "Blockchain-sertifikaatit",
-      "Kryptografian osaaminen"
-    ],
-    qualification_or_license: null,
-    core_skills: [
-      "Blockchain",
-      "Smart contracts",
-      "Solidity/Rust",
-      "Kryptografia",
-      "DApp-kehitys"
-    ],
-    tools_tech: [
-      "Ethereum",
-      "Solidity",
-      "Web3.js",
-      "Truffle"
-    ],
-    languages_required: { fi: 5, sv: 2, en: 6 },
-    salary_eur_month: {
-      median: 5500,
-      range: [4500, 8000],
-      source: "Ammattinetti 2024"
-    },
-    job_outlook: {
-      status: "kasvaa",
-      explanation: "Blockchain-teknologian kehittyminen lisää kysyntää kehittäjille."
-    },
-    entry_roles: ["Junior Blockchain Developer", "Smart Contract Developer"],
-    career_progression: ["Senior Blockchain Developer", "Blockchain Architect"],
-    typical_employers: ["Blockchain-yritykset", "Fintech-yritykset", "Kryptoyritykset"],
-    work_conditions: { remote: "Kyllä", shift_work: false, travel: "vähän" },
-    union_or_CBA: null,
-    useful_links: [{ name: "Opintopolku – Tietotekniikka", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" }
-    ,
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=Blockchain-kehitt%C3%A4j%C3%A4" }],
-    transferable_skills: [],
-    keywords: ["blockchain", "smart contracts", "Web3"],
     study_length_estimate_months: 60
   },
   {
@@ -45479,8 +45089,7 @@ export const careersData: CareerFI[] = [
     keywords: ["ekonomisti","taloustiede","kansantalous","ennustaminen","analyysi"],
     study_length_estimate_months: 60,
     source: "Tilastokeskus 2024"
-  }
-,
+  },
   {
     id: "liikkeenjohdon-trainee",
     category: "johtaja",
@@ -45539,46 +45148,6 @@ export const careersData: CareerFI[] = [
       { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/taloushallinto" }
     ],
     keywords: ["taloushallinto","harjoittelija","kirjanpito","talous"],
-    source: "Tilastokeskus 2024"
-  },
-  {
-    id: "it-tukihenkilo",
-    category: "innovoija",
-    title_fi: "IT-tukihenkilö",
-    title_en: "IT Support Specialist",
-    short_description: "IT-tukihenkilö auttaa käyttäjiä tietoteknisten ongelmien ratkaisemisessa ja ylläpitää IT-infrastruktuuria.",
-    main_tasks: ["Käyttäjätuki","Laitteiden asennus","Ohjelmistojen päivitys","Vikaselvitys","Käyttöoikeuksien hallinta"],
-    impact: ["Pitää organisaation IT-toiminnot käynnissä","Auttaa käyttäjiä","Varmistaa tietoturvan"],
-    education_paths: ["Tieto- ja viestintätekniikan perustutkinto (toinen aste)","Tietojenkäsittelyn tradenomi (AMK)"],
-    salary_range: { min: 2400, max: 3400, currency: "EUR" },
-    job_outlook: { status: "growing", description: "IT-tuen tarve kasvaa digitalisaation myötä." },
-    typical_employers: ["IT-palveluyritykset","Yritykset","Julkinen sektori"],
-    work_conditions: { remote: "Osittain", shift_work: true, travel: "vähän" },
-    useful_links: [
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=it%20tuki" },
-      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/tietotekniikka" }
-    ],
-    keywords: ["it-tuki","helpdesk","tietotekniikka","käyttäjätuki"],
-    source: "Tilastokeskus 2024"
-  },
-  {
-    id: "myyntiedustaja",
-    category: "jarjestaja",
-    title_fi: "Myyntiedustaja",
-    title_en: "Sales Representative",
-    short_description: "Myyntiedustaja myy yrityksen tuotteita tai palveluita asiakkaille ja rakentaa asiakassuhteita.",
-    main_tasks: ["Asiakaskontaktointi","Tuote-esittelyt","Tarjousten laatiminen","Asiakassuhteiden hoito","Myynnin raportointi"],
-    impact: ["Kasvattaa yrityksen myyntiä","Rakentaa asiakassuhteita","Tuo asiakaspalautetta"],
-    education_paths: ["Liiketalouden perustutkinto (toinen aste)","Tradenomi (AMK)"],
-    salary_range: { min: 2500, max: 4500, currency: "EUR" },
-    job_outlook: { status: "stable", description: "Myyntityö tarjoaa hyvät etenemismahdollisuudet." },
-    typical_employers: ["Tukkukaupat","Teollisuusyritykset","Palveluyritykset"],
-    work_conditions: { remote: "Osittain", shift_work: false, travel: "paljon" },
-    useful_links: [
-      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=myyntiedustaja" },
-      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/myynti" }
-    ],
-    keywords: ["myyntiedustaja","myynti","b2b","asiakkuudet"],
     source: "Tilastokeskus 2024"
   },
   {
@@ -45680,8 +45249,7 @@ export const careersData: CareerFI[] = [
     ],
     keywords: ["data","analytiikka","tilastot","raportointi","BI"],
     source: "Tilastokeskus 2024"
-  }
-,
+  },
   {
     id: "opinto-ohjaaja",
     category: "auttaja",
@@ -45781,6 +45349,27 @@ export const careersData: CareerFI[] = [
     ],
     keywords: ["viittomakielen tulkki","tulkki","viittomakieli","kuuro","tulkkaus"],
     source: "Kuurojen Liitto, Tilastokeskus 2024"
+  }
+,
+  {
+    id: "kassatyontekija",
+    category: "jarjestaja",
+    title_fi: "Kassatyöntekijä",
+    title_en: "Cashier",
+    short_description: "Kassatyöntekijä palvelee asiakkaita, käsittelee maksuja ja huolehtii kassatoiminnoista kaupan tai palvelupisteen kassalla.",
+    main_tasks: ["Asiakkaiden palvelu kassalla","Maksujen vastaanottaminen","Tuotteiden skannaaminen","Kassan täsmäytys","Asiakasneuvonta"],
+    impact: ["Sujuva asiakaskokemus","Nopea ja virheetön kassapalvelu","Asiakastyytyväisyys"],
+    education_paths: ["Liiketalouden perustutkinto (toinen aste)","Kaupan alan ammattitutkinto","Työpaikkakoulutus"],
+    salary_range: { min: 1900, max: 2500, currency: "EUR" },
+    job_outlook: { status: "stable", description: "Kassatyöntekijöitä tarvitaan edelleen, vaikka itsepalvelukassat yleistyvät." },
+    typical_employers: ["Päivittäistavarakaupat","Tavaratalot","Erikoisliikkeet","Huoltoasemat","Kahvilat ja ravintolat"],
+    work_conditions: { remote: "Ei", shift_work: true, travel: "ei" },
+    useful_links: [
+      { name: "Hae töitä Duunitorista", url: "https://duunitori.fi/tyopaikat?haku=kassa" },
+      { name: "Opiskele alaa - Opintopolku", url: "https://opintopolku.fi/konfo/fi/haku/kaupan%20ala" }
+    ],
+    keywords: ["kassatyöntekijä","kassa","myyjä","asiakaspalvelu","kauppa"],
+    source: "Kaupan liitto, Tilastokeskus 2024"
   }
 ] as CareerFI[];
 

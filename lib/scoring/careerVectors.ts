@@ -6411,6 +6411,15 @@ export const CAREER_VECTORS: CareerVector[] = [
     workstyle: { teamwork: 0.5, independence: 0.7, leadership: 0.2, organization: 0.6, planning: 0.5, problem_solving: 0.7, precision: 0.9, performance: 0.7, teaching: 0.4, motivation: 0.5, autonomy: 0.7, social: 0.8, structure: 0.5, flexibility: 0.8, variety: 0.8 },
     values: { growth: 0.5, impact: 0.8, global: 0.3, career_clarity: 0.7, financial: 0.4, entrepreneurship: 0.4, social_impact: 0.9, stability: 0.6, advancement: 0.4, work_life_balance: 0.6, company_size: 0.2 },
     context: { outdoor: 0.3, international: 0.3, work_environment: 0.6 }
+  },
+  {
+    slug: "kassatyontekija",
+    title: "Kassatyöntekijä",
+    category: "jarjestaja",
+    interests: { technology: 0.3, people: 0.8, creative: 0.2, analytical: 0.4, hands_on: 0.5, business: 0.4, environment: 0.1, health: 0.1, education: 0.2, innovation: 0.2, arts_culture: 0.1, sports: 0.1, nature: 0.1, writing: 0.1 },
+    workstyle: { teamwork: 0.6, independence: 0.5, leadership: 0.2, organization: 0.7, planning: 0.4, problem_solving: 0.5, precision: 0.8, performance: 0.5, teaching: 0.2, motivation: 0.5, autonomy: 0.4, social: 0.8, structure: 0.7, flexibility: 0.6, variety: 0.5 },
+    values: { growth: 0.4, impact: 0.4, global: 0.1, career_clarity: 0.5, financial: 0.5, entrepreneurship: 0.2, social_impact: 0.4, stability: 0.7, advancement: 0.4, work_life_balance: 0.6, company_size: 0.3 },
+    context: { outdoor: 0.1, international: 0.1, work_environment: 0.9 }
   }
 ];
 
