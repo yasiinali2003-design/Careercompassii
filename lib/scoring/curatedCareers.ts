@@ -215,6 +215,16 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "liikkeenjohdon-trainee",   // Management trainee (NEW) - entry-level
   "rakennustyonjohtaja",      // Construction foreman - achievable
   "lennonjohtaja",            // Air traffic controller - specialized training
+  // Entry-level business & sales careers (expanded)
+  "myyntityontekija",
+  "asiakaspalveluvastaava",
+  "startup-perustaja",
+  "liikkeenjohdon-trainee",
+  "kiinteistonvalittaja",
+  "asiakkuusvastaava",
+  "sales-development-representative",
+  "palvelumuotoilija",
+  "myynti-insinoori",
 
   // ==========================================
   // VISIONÄÄRI (11) - Strategy, Consulting, Research
@@ -288,7 +298,7 @@ export const CURATED_CATEGORY_DISTRIBUTION = {
   rakentaja: 21,              // Trades, construction, hospitality
   luova: 17,                  // Creative, media
   jarjestaja: 32,             // Admin, finance, sales (entry-level) - EXPANDED
-  johtaja: 3,                 // Only achievable leadership roles
+  johtaja: 12,                 // Only achievable leadership roles
   visionaari: 12,             // Strategy, research
   "ympariston-puolustaja": 24, // Environment - EXPANDED
   total: 161                  // All entry-level achievable

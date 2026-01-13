@@ -5303,6 +5303,33 @@ export function rankCareers(
   // isOrganizer: High organization + precision WITHOUT high technology (järjestäjä type)
   const isOrganizer = organization >= 0.8 && precision >= 0.8 && technology < 0.7;
 
+  // ========== STRENGTH-BASED CAREER OVERRIDE ==========
+  // CRITICAL FIX: Ensure displayed strengths (vahvuudet) DIRECTLY influence career selection
+  // This prevents mismatch between shown strengths and recommended careers
+  
+  // Detect strong business/entrepreneurial profile
+  const isBusinessProfile = business >= 0.7 || (business >= 0.5 && leadership >= 0.5);
+  
+  // Detect strong problem-solving/analytical profile
+  const isAnalyticalProfile = analytical >= 0.7 || (analytical >= 0.5 && technology >= 0.5);
+  
+  // Detect strong healthcare/helping profile  
+  const isHealthcareProfile = health >= 0.7 || (health >= 0.5 && people >= 0.6);
+  
+  // Detect strong creative profile
+  const isCreativeProfile = creative >= 0.7 || (creative >= 0.5 && (interests.arts_culture || 0) >= 0.5);
+  
+  // Detect strong hands-on/practical profile
+  const isHandsOnProfile = hands_on >= 0.7 || (hands_on >= 0.5 && (interests.outdoor || 0) >= 0.5);
+  
+  console.log('[rankCareers] Strength profiles detected:', {
+    business: isBusinessProfile,
+    analytical: isAnalyticalProfile,
+    healthcare: isHealthcareProfile,
+    creative: isCreativeProfile,
+    handsOn: isHandsOnProfile
+  });
+
   // Score CURATED careers based on category match AND subdimension alignment
   // Using curated pool of ~121 careers for better accuracy and relevance
   const curatedSlugSet = new Set(CURATED_CAREER_SLUGS);
@@ -5344,6 +5371,49 @@ export function rankCareers(
       // Non-matching categories get significant PENALTY
       baseScore -= 50;
       categoryMultiplier = 0.5; // Halve all bonuses for non-matching categories
+    }
+
+    // ========== STRENGTH-BASED SCORE ADJUSTMENT ==========
+    // Apply bonuses/penalties based on detected strength profiles
+    // This ensures displayed strengths match recommended careers
+    
+    if (isBusinessProfile) {
+      // Business profile should get business careers, not healthcare
+      if (careerCategory === 'johtaja') {
+        baseScore += 40; // Strong boost for business careers
+      } else if (careerCategory === 'auttaja' && !isHealthcareProfile) {
+        baseScore -= 30; // Penalty for healthcare if not actually healthcare-oriented
+      }
+    }
+    
+    if (isAnalyticalProfile) {
+      // Analytical profile should get tech/analytical careers
+      if (careerCategory === 'innovoija' || careerCategory === 'visionaari') {
+        baseScore += 35;
+      }
+    }
+    
+    if (isHealthcareProfile) {
+      // Healthcare profile should get auttaja careers
+      if (careerCategory === 'auttaja') {
+        baseScore += 40;
+      } else if (careerCategory === 'johtaja' && !isBusinessProfile) {
+        baseScore -= 25;
+      }
+    }
+    
+    if (isCreativeProfile) {
+      // Creative profile should get luova careers
+      if (careerCategory === 'luova') {
+        baseScore += 40;
+      }
+    }
+    
+    if (isHandsOnProfile) {
+      // Hands-on profile should get rakentaja careers
+      if (careerCategory === 'rakentaja') {
+        baseScore += 40;
+      }
     }
 
     // Calculate subdimension alignment bonus
