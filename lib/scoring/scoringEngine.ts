@@ -5306,28 +5306,60 @@ export function rankCareers(
   // ========== STRENGTH-BASED CAREER OVERRIDE ==========
   // CRITICAL FIX: Ensure displayed strengths (vahvuudet) DIRECTLY influence career selection
   // This prevents mismatch between shown strengths and recommended careers
+  // Coverage: ALL 8 CATEGORIES
   
-  // Detect strong business/entrepreneurial profile
-  const isBusinessProfile = business >= 0.7 || (business >= 0.5 && leadership >= 0.5);
+  // Extract additional subdimensions needed for profile detection
+  const teaching = (interests as any).teaching || (interests as any).education || 0;
+  const social_impact = (interests as any).social_impact || (interests as any).impact || 0;
+  const innovation = (interests as any).innovation || 0;
+  const entrepreneurship = (values as any).entrepreneurship || business;
+  const stability = (values as any).stability || (workstyle as any).stability || 0;
+  const environmentInterest = (interests as any).environment || 0;
+  const natureInterest = (interests as any).nature || 0;
   
-  // Detect strong problem-solving/analytical profile
-  const isAnalyticalProfile = analytical >= 0.7 || (analytical >= 0.5 && technology >= 0.5);
+  // === JOHTAJA: Business/entrepreneurial/leadership profile ===
+  const isBusinessProfile = business >= 0.7 || (business >= 0.5 && leadership >= 0.5) || 
+                            (leadership >= 0.7 && entrepreneurship >= 0.5);
   
-  // Detect strong healthcare/helping profile  
-  const isHealthcareProfile = health >= 0.7 || (health >= 0.5 && people >= 0.6);
+  // === INNOVOIJA: Technology/analytical/innovation profile ===
+  const isTechProfile = technology >= 0.7 || (technology >= 0.5 && analytical >= 0.5) ||
+                        (innovation >= 0.7) || (analytical >= 0.7 && technology >= 0.4);
   
-  // Detect strong creative profile
-  const isCreativeProfile = creative >= 0.7 || (creative >= 0.5 && (interests.arts_culture || 0) >= 0.5);
+  // === AUTTAJA: Healthcare/helping/teaching profile ===
+  const isHealthcareProfile = health >= 0.7 || (health >= 0.5 && people >= 0.6) ||
+                              (teaching >= 0.7) || (social_impact >= 0.7 && people >= 0.5);
   
-  // Detect strong hands-on/practical profile
-  const isHandsOnProfile = hands_on >= 0.7 || (hands_on >= 0.5 && (interests.outdoor || 0) >= 0.5);
+  // === LUOVA: Creative/artistic profile ===
+  const isCreativeProfile = creative >= 0.7 || (creative >= 0.5 && ((interests as any).arts_culture || 0) >= 0.5) ||
+                            (((interests as any).writing || 0) >= 0.7);
+  
+  // === RAKENTAJA: Hands-on/practical/physical profile ===
+  const isHandsOnProfile = hands_on >= 0.7 || (hands_on >= 0.5 && ((interests as any).outdoor || 0) >= 0.5) ||
+                           (((interests as any).sports || 0) >= 0.7 && hands_on >= 0.4);
+  
+  // === JÄRJESTÄJÄ: Organization/precision/admin profile ===
+  const structureScore = (workstyle as any).structure || 0;
+  const isOrganizerProfile = organization >= 0.7 || (organization >= 0.5 && precision >= 0.5) ||
+                             (structureScore >= 0.7) || (precision >= 0.7 && stability >= 0.5);
+  
+  // === VISIONÄÄRI: Research/strategy/analytical profile ===
+  const isVisionaryProfile = (analytical >= 0.7 && innovation >= 0.5) || 
+                             (((interests as any).research || 0) >= 0.7) ||
+                             (analytical >= 0.7 && (((interests as any).science || 0) >= 0.5 || technology >= 0.5));
+  
+  // === YMPÄRISTÖN-PUOLUSTAJA: Environment/nature profile ===
+  const isEnvironmentProfile = environmentInterest >= 0.7 || natureInterest >= 0.7 ||
+                               (environmentInterest >= 0.5 && natureInterest >= 0.5);
   
   console.log('[rankCareers] Strength profiles detected:', {
     business: isBusinessProfile,
-    analytical: isAnalyticalProfile,
+    tech: isTechProfile,
     healthcare: isHealthcareProfile,
     creative: isCreativeProfile,
-    handsOn: isHandsOnProfile
+    handsOn: isHandsOnProfile,
+    organizer: isOrganizerProfile,
+    visionary: isVisionaryProfile,
+    environment: isEnvironmentProfile
   });
 
   // Score CURATED careers based on category match AND subdimension alignment
@@ -5376,43 +5408,93 @@ export function rankCareers(
     // ========== STRENGTH-BASED SCORE ADJUSTMENT ==========
     // Apply bonuses/penalties based on detected strength profiles
     // This ensures displayed strengths match recommended careers
+    // COVERAGE: ALL 8 CATEGORIES WITH CROSS-CATEGORY PENALTIES
     
+    // === JOHTAJA boost for business profiles ===
     if (isBusinessProfile) {
-      // Business profile should get business careers, not healthcare
       if (careerCategory === 'johtaja') {
-        baseScore += 40; // Strong boost for business careers
+        baseScore += 45; // Strong boost for business careers
       } else if (careerCategory === 'auttaja' && !isHealthcareProfile) {
-        baseScore -= 30; // Penalty for healthcare if not actually healthcare-oriented
+        baseScore -= 35; // Penalty for healthcare if not healthcare-oriented
+      } else if (careerCategory === 'rakentaja' && !isHandsOnProfile) {
+        baseScore -= 25; // Penalty for trades if not hands-on oriented
       }
     }
     
-    if (isAnalyticalProfile) {
-      // Analytical profile should get tech/analytical careers
-      if (careerCategory === 'innovoija' || careerCategory === 'visionaari') {
-        baseScore += 35;
+    // === INNOVOIJA boost for tech profiles ===
+    if (isTechProfile) {
+      if (careerCategory === 'innovoija') {
+        baseScore += 45;
+      } else if (careerCategory === 'visionaari') {
+        baseScore += 30; // Also good for research/strategy
+      } else if (careerCategory === 'auttaja' && !isHealthcareProfile) {
+        baseScore -= 30;
       }
     }
     
+    // === AUTTAJA boost for healthcare profiles ===
     if (isHealthcareProfile) {
-      // Healthcare profile should get auttaja careers
       if (careerCategory === 'auttaja') {
-        baseScore += 40;
+        baseScore += 45;
       } else if (careerCategory === 'johtaja' && !isBusinessProfile) {
+        baseScore -= 30;
+      } else if (careerCategory === 'innovoija' && !isTechProfile) {
         baseScore -= 25;
       }
     }
     
+    // === LUOVA boost for creative profiles ===
     if (isCreativeProfile) {
-      // Creative profile should get luova careers
       if (careerCategory === 'luova') {
-        baseScore += 40;
+        baseScore += 45;
+      } else if (careerCategory === 'visionaari') {
+        baseScore += 20; // Creative thinkers may like strategy
+      } else if (careerCategory === 'rakentaja' && !isHandsOnProfile) {
+        baseScore -= 25;
       }
     }
     
+    // === RAKENTAJA boost for hands-on profiles ===
     if (isHandsOnProfile) {
-      // Hands-on profile should get rakentaja careers
       if (careerCategory === 'rakentaja') {
-        baseScore += 40;
+        baseScore += 45;
+      } else if (careerCategory === 'innovoija' && !isTechProfile) {
+        baseScore -= 25;
+      } else if (careerCategory === 'jarjestaja' && !isOrganizerProfile) {
+        baseScore -= 20;
+      }
+    }
+    
+    // === JÄRJESTÄJÄ boost for organizer profiles ===
+    if (isOrganizerProfile) {
+      if (careerCategory === 'jarjestaja') {
+        baseScore += 45;
+      } else if (careerCategory === 'johtaja') {
+        baseScore += 25; // Organizers can be good managers
+      } else if (careerCategory === 'luova' && !isCreativeProfile) {
+        baseScore -= 25;
+      }
+    }
+    
+    // === VISIONÄÄRI boost for visionary profiles ===
+    if (isVisionaryProfile) {
+      if (careerCategory === 'visionaari') {
+        baseScore += 45;
+      } else if (careerCategory === 'innovoija') {
+        baseScore += 30; // Research often overlaps with innovation
+      } else if (careerCategory === 'rakentaja' && !isHandsOnProfile) {
+        baseScore -= 30;
+      }
+    }
+    
+    // === YMPÄRISTÖN-PUOLUSTAJA boost for environment profiles ===
+    if (isEnvironmentProfile) {
+      if (careerCategory === 'ympariston-puolustaja') {
+        baseScore += 50; // Strong boost for environment careers
+      } else if (careerCategory === 'visionaari') {
+        baseScore += 25; // Environmental research/strategy
+      } else if (careerCategory === 'johtaja' && !isBusinessProfile) {
+        baseScore -= 25;
       }
     }
 
