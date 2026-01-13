@@ -5330,8 +5330,15 @@ export function rankCareers(
                               (teaching >= 0.7) || (social_impact >= 0.7 && people >= 0.5);
   
   // === LUOVA: Creative/artistic profile ===
-  const isCreativeProfile = creative >= 0.7 || (creative >= 0.5 && ((interests as any).arts_culture || 0) >= 0.5) ||
-                            (((interests as any).writing || 0) >= 0.7);
+  // LOWERED THRESHOLDS: Match the strength display logic more closely
+  const artsScore = (interests as any).arts_culture || 0;
+  const writingScore = (interests as any).writing || 0;
+  const creativeStrengthSum = creative + artsScore + writingScore;
+  const isCreativeProfile = creative >= 0.6 || 
+                            (creative >= 0.4 && artsScore >= 0.4) ||
+                            (creative >= 0.4 && writingScore >= 0.4) ||
+                            (creativeStrengthSum >= 1.2) ||  // Combined creative signals
+                            (artsScore >= 0.6 || writingScore >= 0.6);
   
   // === RAKENTAJA: Hands-on/practical/physical profile ===
   const isHandsOnProfile = hands_on >= 0.7 || (hands_on >= 0.5 && ((interests as any).outdoor || 0) >= 0.5) ||
@@ -5444,13 +5451,25 @@ export function rankCareers(
     }
     
     // === LUOVA boost for creative profiles ===
+    // CRITICAL: Creative profiles should STRONGLY prefer creative careers
+    // Don't let other profile matches (like precision→jarjestaja) override
     if (isCreativeProfile) {
       if (careerCategory === 'luova') {
-        baseScore += 45;
+        baseScore += 60; // STRONG boost for creative careers
       } else if (careerCategory === 'visionaari') {
-        baseScore += 20; // Creative thinkers may like strategy
-      } else if (careerCategory === 'rakentaja' && !isHandsOnProfile) {
-        baseScore -= 25;
+        baseScore += 25; // Creative thinkers may like strategy
+      } else {
+        // UNCONDITIONAL penalties for non-creative careers when creative profile detected
+        // Even if user also has organization skills, creative careers should win
+        if (careerCategory === 'jarjestaja') {
+          baseScore -= 40; // Strong penalty - creative people don't want admin work
+        } else if (careerCategory === 'auttaja' && !isHealthcareProfile) {
+          baseScore -= 40; // Strong penalty for healthcare if not healthcare-oriented
+        } else if (careerCategory === 'rakentaja' && !isHandsOnProfile) {
+          baseScore -= 35;
+        } else if (careerCategory === 'innovoija' && !isTechProfile) {
+          baseScore -= 25;
+        }
       }
     }
     
@@ -5472,7 +5491,7 @@ export function rankCareers(
       } else if (careerCategory === 'johtaja') {
         baseScore += 25; // Organizers can be good managers
       } else if (careerCategory === 'luova' && !isCreativeProfile) {
-        baseScore -= 25;
+        baseScore -= 30;
       }
     }
     
@@ -5496,6 +5515,11 @@ export function rankCareers(
       } else if (careerCategory === 'johtaja' && !isBusinessProfile) {
         baseScore -= 25;
       }
+    }
+    
+    // DEBUG: Log score breakdown for first few careers
+    if (scoredCareers.length < 10) {
+      console.log(`[SCORE DEBUG] ${careerVector.title} (${careerCategory}): baseScore=${baseScore}, isCreative=${isCreativeProfile}`);
     }
 
     // Calculate subdimension alignment bonus
@@ -5789,6 +5813,22 @@ export function rankCareers(
       if (isOrganizer) {
         alignmentBonus += 30; // Strong bonus to ensure järjestäjä careers rank high
       }
+      
+      // CRITICAL: Penalty for CREATIVE profiles - creative people don't want admin work
+      // Even if they have some organizational skills, their creative interests should take priority
+      if (creative >= 0.5 || (interests.writing || 0) >= 0.5 || (interests.arts_culture || 0) >= 0.5) {
+        categoryPenalty -= 50; // Strong penalty to push järjestäjä careers down for creative profiles
+      }
+      
+      // Penalty for tech-focused profiles
+      if (technology >= 0.5 && organization < 0.6) {
+        categoryPenalty -= 25;
+      }
+      
+      // Penalty for healthcare profiles
+      if (health >= 0.5 && organization < 0.6) {
+        categoryPenalty -= 25;
+      }
     }
 
     // YMPARISTON-PUOLUSTAJA careers require HIGH environment/nature - penalize when user has LOW
@@ -5924,27 +5964,42 @@ export function rankCareers(
 
   // ========== CRITICAL FIX: CATEGORY-PRIORITY ADJUSTMENT ==========
   // After diversity selection, ensure at least 60% of careers are from dominant category
-  // This fixes the issue where subdimension bonuses override category matching
-  const dominantCatCareers = diverseTopCareers.filter(c => c.category === dominantCategory);
-  const otherCatCareers = diverseTopCareers.filter(c => c.category !== dominantCategory);
+  // BUT: Skip this if user has a STRONG profile that conflicts with dominant category
+  // This prevents creative profiles from being forced into jarjestaja careers
   
-  const minDominantCount = Math.ceil(limit * 0.6); // At least 60% from dominant category
+  // Check if user has a strong profile that conflicts with dominant category
+  const hasConflictingProfile = (
+    (isCreativeProfile && dominantCategory !== 'luova') ||
+    (isTechProfile && dominantCategory !== 'innovoija') ||
+    (isHealthcareProfile && dominantCategory !== 'auttaja') ||
+    (isHandsOnProfile && dominantCategory !== 'rakentaja') ||
+    (isEnvironmentProfile && dominantCategory !== 'ympariston-puolustaja')
+  );
   
-  if (dominantCatCareers.length < minDominantCount) {
-    // Need more careers from dominant category
-    const additionalNeeded = minDominantCount - dominantCatCareers.length;
+  if (hasConflictingProfile) {
+    console.log(`[rankCareers] SKIP category priority: User has strong profile that conflicts with dominant ${dominantCategory}`);
+  } else {
+    const dominantCatCareers = diverseTopCareers.filter(c => c.category === dominantCategory);
+    const otherCatCareers = diverseTopCareers.filter(c => c.category !== dominantCategory);
     
-    // Get all careers from dominant category that aren't already selected
-    const selectedTitles = new Set(diverseTopCareers.map(c => c.title));
-    const additionalDominant = ageFilteredCareers
-      .filter(c => c.category === dominantCategory && !selectedTitles.has(c.title))
-      .slice(0, additionalNeeded);
+    const minDominantCount = Math.ceil(limit * 0.6); // At least 60% from dominant category
     
-    if (additionalDominant.length > 0) {
-      // Replace some non-dominant careers with dominant ones
-      const keptOther = otherCatCareers.slice(0, limit - dominantCatCareers.length - additionalDominant.length);
-      diverseTopCareers = [...dominantCatCareers, ...additionalDominant, ...keptOther].slice(0, limit);
-      console.log(`[rankCareers] Category priority adjustment: Added ${additionalDominant.length} careers from dominant category (${dominantCategory})`);
+    if (dominantCatCareers.length < minDominantCount) {
+      // Need more careers from dominant category
+      const additionalNeeded = minDominantCount - dominantCatCareers.length;
+      
+      // Get all careers from dominant category that aren't already selected
+      const selectedTitles = new Set(diverseTopCareers.map(c => c.title));
+      const additionalDominant = ageFilteredCareers
+        .filter(c => c.category === dominantCategory && !selectedTitles.has(c.title))
+        .slice(0, additionalNeeded);
+      
+      if (additionalDominant.length > 0) {
+        // Replace some non-dominant careers with dominant ones
+        const keptOther = otherCatCareers.slice(0, limit - dominantCatCareers.length - additionalDominant.length);
+        diverseTopCareers = [...dominantCatCareers, ...additionalDominant, ...keptOther].slice(0, limit);
+        console.log(`[rankCareers] Category priority adjustment: Added ${additionalDominant.length} careers from dominant category (${dominantCategory})`);
+      }
     }
   }
 

@@ -26,22 +26,17 @@ import {
 import { useState } from 'react';
 
 // Helper to get education path title
-function getEducationPathTitle(path: string, cohort: 'YLA' | 'TASO2'): string {
-  if (cohort === 'TASO2') {
-    const titles: Record<string, string> = {
-      yliopisto: 'Yliopisto-opinnot',
-      amk: 'Ammattikorkeakoulu',
-    };
-    return titles[path] || path;
-  }
-
-  // YLA paths
-  const titles: Record<string, string> = {
-    lukio: 'Lukio',
+function getEducationPathTitle(path: string, cohort: 'YLA' | 'TASO2' | 'NUORI'): string {
+  // Universal education path titles (work for all cohorts)
+  const universalTitles: Record<string, string> = {
+    yliopisto: 'Yliopisto',
+    amk: 'Ammattikorkeakoulu',
     ammattikoulu: 'Ammattikoulu',
+    lukio: 'Lukio',
     kansanopisto: 'Kansanopisto',
   };
-  return titles[path] || path;
+  
+  return universalTitles[path] || path;
 }
 
 interface EducationPath {
@@ -53,7 +48,7 @@ interface EducationPath {
 
 interface NextStepsSectionProps {
   educationPath: EducationPath;
-  cohort: 'YLA' | 'TASO2';
+  cohort: 'YLA' | 'TASO2' | 'NUORI';
 }
 
 function getConfidenceBadge(confidence: 'high' | 'medium' | 'low') {
@@ -131,7 +126,7 @@ function EducationPathCard({
 }: {
   pathDesc: EducationPathDescriptionExtended;
   pathKey: string;
-  cohort: 'YLA' | 'TASO2';
+  cohort: 'YLA' | 'TASO2' | 'NUORI';
   isPrimary: boolean;
   confidence?: 'high' | 'medium' | 'low';
   reasoning?: string;

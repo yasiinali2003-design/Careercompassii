@@ -315,38 +315,43 @@ export async function POST(request: NextRequest) {
       const topCareer = topCareers[0];
       const category = topCareer?.category || 'innovoija';
 
-      const pathMap: Record<string, { primary: string; reasoning: string }> = {
+      const pathMap: Record<string, { primary: string; secondary?: string; reasoning: string }> = {
         innovoija: {
-          primary: 'bootcamp_tai_amk',
-          reasoning: 'Teknologia-alalla pääset alkuun nopeasti bootcamp-koulutuksella tai AMK-tutkinnolla. Molemmat yhdistävät käytännön osaamisen ja teorian tehokkaasti.'
+          primary: 'amk',
+          secondary: 'yliopisto',
+          reasoning: 'Teknologia-alalla AMK-tutkinto yhdistää käytännön osaamisen ja teorian tehokkaasti. Yliopisto-opinnot ovat myös hyvä vaihtoehto tutkimussuuntautuneille.'
         },
         auttaja: {
-          primary: 'amk_tai_yliopisto',
-          reasoning: 'Hoiva- ja terveysalalla AMK tai yliopisto antavat tarvittavan pätevyyden. Valinta riippuu siitä, haluatko enemmän käytäntöä (AMK) vai tutkimusta (yliopisto).'
+          primary: 'amk',
+          secondary: 'yliopisto',
+          reasoning: 'Hoiva- ja terveysalalla AMK tai yliopisto antavat tarvittavan pätevyyden. AMK sopii käytännönläheisempään työhön, yliopisto tutkimukselliseen.'
         },
         luova: {
-          primary: 'portfolio_ja_verkostot',
-          reasoning: 'Luovilla aloilla portfolio ja verkostot ovat usein tärkeämpiä kuin tutkinto. Harkitse lyhytkursseja ja freelance-töitä kokemuksen kartuttamiseksi.'
+          primary: 'amk',
+          reasoning: 'Luovilla aloilla AMK-tutkinto (esim. muotoilu, media-ala) antaa hyvän pohjan. Portfolio ja työkokemus täydentävät tutkintoa.'
         },
         johtaja: {
-          primary: 'amk_tai_tyokokemus',
-          reasoning: 'Liiketoiminta- ja johtamisosaaminen kehittyy parhaiten käytännössä. AMK-tutkinto antaa hyvän pohjan, mutta työkokemus on yhtä arvokasta.'
+          primary: 'amk',
+          secondary: 'yliopisto',
+          reasoning: 'Liiketoiminta- ja johtamisosaaminen kehittyy AMK-tradenomitutkinnolla tai yliopiston kauppatieteiden opinnoilla.'
         },
         visionaari: {
-          primary: 'yliopisto_tai_amk',
+          primary: 'yliopisto',
+          secondary: 'amk',
           reasoning: 'Strateginen ajattelu ja analytiikka hyötyvät korkeakoulututkinnosta. Yliopisto sopii tutkimukselliseen, AMK käytännönläheisempään lähestymistapaan.'
         },
         rakentaja: {
-          primary: 'ammattikoulu_tai_tyopaikka',
-          reasoning: 'Käytännön ammateissa pääset nopeimmin alkuun suoralla työkokemuksella tai ammattikoulutuksella. Monet työnantajat kouluttavat itse.'
+          primary: 'amk',
+          reasoning: 'Käytännön ammateissa AMK-insinööritutkinto antaa vahvan pohjan. Työkokemus täydentää osaamista.'
         },
         jarjestaja: {
           primary: 'amk',
-          reasoning: 'Organisointi- ja hallintotyöhön AMK-tutkinto antaa hyvän pohjan. Yhdistää käytännön osaamisen ja teorian tasapainoisesti.'
+          reasoning: 'Organisointi- ja hallintotyöhön AMK-tradenomitutkinto antaa hyvän pohjan. Yhdistää käytännön osaamisen ja teorian.'
         },
         'ympariston-puolustaja': {
-          primary: 'yliopisto_tai_amk',
-          reasoning: 'Ympäristöalalla koulutus on arvostettua. Yliopisto antaa syvempää tietoa, AMK keskittyy käytännön ratkaisuihin.'
+          primary: 'yliopisto',
+          secondary: 'amk',
+          reasoning: 'Ympäristöalalla yliopisto antaa syvempää tietoa, AMK keskittyy käytännön ratkaisuihin. Molemmat ovat hyviä vaihtoehtoja.'
         }
       };
 
@@ -382,13 +387,13 @@ export async function POST(request: NextRequest) {
           scores: Record<string, number>;
         }> = {
           rakentaja: {
-            primary: 'tyoelama_tai_oppisopimus',
+            primary: 'amk',
             secondary: 'amk',
             reasoning: 'Ammattikoulupohjalla pääset suoraan töihin ja kartuttamaan kokemusta. Oppisopimuskoulutus yhdistää työn ja oppimisen. AMK-opinnot ovat myös mahdollisia myöhemmin.',
             scores: { tyoelama_tai_oppisopimus: 85, amk: 60, yliopisto: 40 }
           },
           innovoija: {
-            primary: 'amk_tai_tyoelama',
+            primary: 'amk',
             secondary: 'yliopisto',
             reasoning: 'IT-alalla AMK-tutkinto tai suora työkokemus ovat molemmat arvostettuja. Yliopisto-opinnot ovat mahdollisia avoimen yliopiston kautta.',
             scores: { amk_tai_tyoelama: 80, yliopisto: 55 }
@@ -400,28 +405,27 @@ export async function POST(request: NextRequest) {
             scores: { amk: 75, tyoelama: 70, yliopisto: 45 }
           },
           luova: {
-            primary: 'portfolio_ja_tyoelama',
-            secondary: 'amk',
-            reasoning: 'Luovilla aloilla portfolio ja työkokemus ovat usein tärkeämpiä kuin tutkinto. AMK-opinnot (esim. muotoilu) voivat syventää osaamista.',
-            scores: { portfolio_ja_tyoelama: 80, amk: 65 }
+            primary: 'amk',
+            reasoning: 'Luovilla aloilla AMK-tutkinto (esim. muotoilu, media-ala) yhdistettynä portfolioon on vahva yhdistelmä.',
+            scores: { amk: 80, yliopisto: 50 }
           },
           johtaja: {
-            primary: 'tyokokemus_ja_amk',
+            primary: 'amk',
             reasoning: 'Yrittäjyys ja liiketoiminta kehittyvät parhaiten käytännössä. AMK-tradenomitutkinto antaa liiketoimintaosaamista.',
             scores: { tyokokemus_ja_amk: 80, amk: 70, yliopisto: 50 }
           },
           'ympariston-puolustaja': {
-            primary: 'amk_tai_tyoelama',
+            primary: 'amk',
             reasoning: 'Ympäristöalalla AMK-insinööri tai suora työ maatilalla/puutarhassa ovat hyviä vaihtoehtoja.',
             scores: { amk_tai_tyoelama: 75, yliopisto: 55 }
           },
           jarjestaja: {
-            primary: 'amk_tai_tyoelama',
+            primary: 'amk',
             reasoning: 'Hallinto- ja toimistotyössä AMK-tutkinto (tradenomi) tai suora työkokemus ovat molemmat hyviä polkuja.',
             scores: { amk_tai_tyoelama: 75, yliopisto: 50 }
           },
           visionaari: {
-            primary: 'amk_tai_avoin_yliopisto',
+            primary: 'amk',
             reasoning: 'Strateginen ajattelu kehittyy korkeakouluopinnoissa. Avoin yliopisto on hyvä tapa tutustua yliopisto-opintoihin.',
             scores: { amk_tai_avoin_yliopisto: 70, yliopisto: 60 }
           }
