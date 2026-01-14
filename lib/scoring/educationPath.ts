@@ -260,6 +260,11 @@ function calculateTASO2Path(answers: TestAnswer[], cohort: Cohort, subCohort?: s
   // This ensures proper alignment with how questions are mapped to subdimensions
   const mappings = getQuestionMappings(cohort, 0, subCohort);
 
+  // DEBUG: Log first few mappings to verify question indices
+  console.log(`[TASO2 Education Path] Total mappings: ${mappings.length}, subCohort: ${subCohort}`);
+  console.log(`[TASO2 Education Path] Q20 mappings:`, mappings.filter(m => (m.originalQ ?? m.q) === 20).map(m => ({ q: m.q, originalQ: m.originalQ, subdim: m.subdimension })));
+  console.log(`[TASO2 Education Path] Q22 mappings:`, mappings.filter(m => (m.originalQ ?? m.q) === 22).map(m => ({ q: m.q, originalQ: m.originalQ, subdim: m.subdimension })));
+
   // Aggregate scores by subdimension
   const subdimensionScores: Record<string, { total: number; count: number }> = {};
 
@@ -303,6 +308,12 @@ function calculateTASO2Path(answers: TestAnswer[], cohort: Cohort, subCohort?: s
   const environment = getAvg('environment');
   const writing = getAvg('writing');
   const leadership = getAvg('leadership');
+
+  // DEBUG: Log subdimension scores for TASO2 education path
+  console.log(`[TASO2 Education Path] Subdimension scores:`, {
+    analytical, technology, health, people, hands_on, creative,
+    business, innovation, writing, environment, leadership, problem_solving
+  });
 
   // Calculate path scores based on subdimension patterns
   let yliopistoScore = 0;

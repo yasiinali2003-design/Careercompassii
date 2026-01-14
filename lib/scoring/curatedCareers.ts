@@ -134,6 +134,9 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "ravintolatyontekija",      // Restaurant worker
   "tarjoilija",               // Waiter/Waitress
   "hotellityontekija",        // Hotel worker
+  "kokki",                    // Chef - CRITICAL ADDITION
+  "leipuri",                  // Baker
+  "kondiittori",              // Pastry chef
 
   // ==========================================
   // LUOVA (16) - Design, Media, Arts
@@ -209,7 +212,7 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "isannoitsija",             // Property manager (NEW)
 
   // ==========================================
-  // JOHTAJA (3) - Achievable Entry-level Leadership Only
+  // JOHTAJA (15) - Achievable Entry-level Leadership Only
   // ==========================================
   // Note: Only careers achievable straight from school or with minimal experience
   "liikkeenjohdon-trainee",   // Management trainee (NEW) - entry-level
@@ -219,12 +222,16 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "myyntityontekija",
   "asiakaspalveluvastaava",
   "startup-perustaja",
-  "liikkeenjohdon-trainee",
   "kiinteistonvalittaja",
   "asiakkuusvastaava",
   "sales-development-representative",
   "palvelumuotoilija",
   "myynti-insinoori",
+  // Sports & Fitness Leadership - CRITICAL ADDITIONS for "Onni the Team Captain" type
+  "valmentaja",               // Coach - sports leadership
+  "personal-trainer",         // Personal trainer - fitness leadership
+  "urheiluvalmentaja",        // Sports coach
+  "liikunnanohjaaja",         // Sports instructor (already in auttaja but needed for leadership)
 
   // ==========================================
   // VISIONÄÄRI (11) - Strategy, Consulting, Research

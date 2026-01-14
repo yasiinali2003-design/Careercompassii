@@ -442,7 +442,7 @@ export async function POST(request: NextRequest) {
         log.debug(`TASO2_AMIS Education path: ${path.primary} (vocational-appropriate)`);
       } else {
         // LUKIO or generic TASO2 - use standard calculation
-        educationPath = calculateEducationPath(unshuffledAnswers, cohort);
+        educationPath = calculateEducationPath(unshuffledAnswers, cohort, subCohort);
         if (educationPath) {
           const primaryPath = 'primary' in educationPath ? educationPath.primary : undefined;
           if (primaryPath) {

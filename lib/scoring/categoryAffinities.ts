@@ -35,8 +35,9 @@ const CATEGORY_SIGNALS: Record<string, {
     // People remains SECONDARY (not primary) to differentiate from service industry jobs
     // Restonomi (hospitality) has high people but should be johtaja/rakentaja, not auttaja
     // Primary signals MUST include health/social_impact/teaching for true caring professions
+    // REMOVED sports from secondary - sports + leadership = johtaja, not auttaja
     primary: ['health', 'social_impact', 'teaching'],
-    secondary: ['people', 'growth', 'teamwork', 'sports', 'stability'],
+    secondary: ['people', 'growth', 'teamwork', 'stability'],
     negative: ['technology', 'business', 'entrepreneurship'],
     label_fi: 'Auttaja'
   },
@@ -67,12 +68,12 @@ const CATEGORY_SIGNALS: Record<string, {
     label_fi: 'Rakentaja'
   },
   johtaja: {
-    // Johtaja = leaders, managers, lawyers, business professionals
-    // IMPROVED v2.2: More restrictive - need BOTH leadership AND business/entrepreneurship
+    // Johtaja = leaders, managers, lawyers, business professionals, sports coaches
+    // IMPROVED v2.3: Added sports as secondary signal - sports leadership is still leadership!
+    // Team captains, coaches, and sports managers have high leadership + sports combo
     // Added organization and structure to negative to differentiate from jarjestaja
-    // Added technology to negative to differentiate from innovoija
     primary: ['leadership', 'business', 'entrepreneurship'],
-    secondary: ['social', 'advancement', 'financial', 'analytical', 'writing', 'people', 'impact'],
+    secondary: ['social', 'advancement', 'financial', 'analytical', 'writing', 'people', 'impact', 'sports'],
     negative: ['hands_on', 'health', 'organization', 'structure', 'precision'],
     label_fi: 'Johtaja'
   },

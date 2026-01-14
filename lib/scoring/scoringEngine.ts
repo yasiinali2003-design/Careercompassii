@@ -440,6 +440,7 @@ export function computeUserVector(
     // Process each mapping for this question (dual mappings are now handled correctly)
     questionMappings.forEach(mapping => {
     const normalizedScore = normalizeAnswer(answer.score, mapping.reverse);
+    
     const key = `${mapping.dimension}:${mapping.subdimension}`;
 
     if (!subdimensionScores[key]) {
@@ -474,7 +475,7 @@ export function computeUserVector(
     const [dimension, subdimension] = key.split(':');
     const avgScore = data.sum / data.weight;
     detailedScores[dimension as keyof DetailedDimensionScores][subdimension] = avgScore;
-  });
+    });
   
   // Calculate main dimension scores (average of subdimensions)
   const dimensionScores: DimensionScores = {
@@ -5318,7 +5319,9 @@ export function rankCareers(
   const natureInterest = (interests as any).nature || 0;
   
   // === JOHTAJA: Business/entrepreneurial/leadership profile ===
-  const isBusinessProfile = business >= 0.7 || (business >= 0.5 && leadership >= 0.5) || 
+  // STRICTER v2.4: Require stronger signals to avoid false positives
+  // Previously: business >= 0.5 && leadership >= 0.5 was too weak (caught Mikko the Builder)
+  const isBusinessProfile = business >= 0.7 || (business >= 0.6 && leadership >= 0.6) ||
                             (leadership >= 0.7 && entrepreneurship >= 0.5);
   
   // === INNOVOIJA: Technology/analytical/innovation profile ===
@@ -5330,24 +5333,37 @@ export function rankCareers(
                               (teaching >= 0.7) || (social_impact >= 0.7 && people >= 0.5);
   
   // === LUOVA: Creative/artistic profile ===
-  // LOWERED THRESHOLDS: Match the strength display logic more closely
+  // CRITICAL: Match the displayed strengths (vahvuudet) logic
+  // If user has "Kirjoittaminen" or "Taide ja kulttuuri" as displayed strengths,
+  // they ARE a creative profile and should get luova careers
   const artsScore = (interests as any).arts_culture || 0;
   const writingScore = (interests as any).writing || 0;
   const creativeStrengthSum = creative + artsScore + writingScore;
-  const isCreativeProfile = creative >= 0.6 || 
-                            (creative >= 0.4 && artsScore >= 0.4) ||
-                            (creative >= 0.4 && writingScore >= 0.4) ||
-                            (creativeStrengthSum >= 1.2) ||  // Combined creative signals
-                            (artsScore >= 0.6 || writingScore >= 0.6);
+  
+  // Check if any creative-related subdimension is in top 3 (would appear as strength)
+  const allCreativeScores = [
+    { key: 'creative', value: creative },
+    { key: 'writing', value: writingScore },
+    { key: 'arts_culture', value: artsScore }
+  ];
+  const maxCreativeScore = Math.max(creative, writingScore, artsScore);
+  
+  // VERY BROAD DETECTION: If any creative signal is moderate or strong, consider creative
+  const isCreativeProfile = creative >= 0.5 || 
+                            writingScore >= 0.5 ||
+                            artsScore >= 0.5 ||
+                            creativeStrengthSum >= 1.0 ||  // Combined creative signals
+                            maxCreativeScore >= 0.5;  // Any significant creative signal
   
   // === RAKENTAJA: Hands-on/practical/physical profile ===
   const isHandsOnProfile = hands_on >= 0.7 || (hands_on >= 0.5 && ((interests as any).outdoor || 0) >= 0.5) ||
                            (((interests as any).sports || 0) >= 0.7 && hands_on >= 0.4);
   
   // === JÄRJESTÄJÄ: Organization/precision/admin profile ===
+  // STRICTER v2.4: Require stronger signals - organization alone isn't enough
   const structureScore = (workstyle as any).structure || 0;
-  const isOrganizerProfile = organization >= 0.7 || (organization >= 0.5 && precision >= 0.5) ||
-                             (structureScore >= 0.7) || (precision >= 0.7 && stability >= 0.5);
+  const isOrganizerProfile = (organization >= 0.7 && precision >= 0.5) || (organization >= 0.5 && precision >= 0.6) ||
+                             (structureScore >= 0.7 && precision >= 0.5) || (precision >= 0.7 && stability >= 0.6);
   
   // === VISIONÄÄRI: Research/strategy/analytical profile ===
   const isVisionaryProfile = (analytical >= 0.7 && innovation >= 0.5) || 
@@ -5452,23 +5468,44 @@ export function rankCareers(
     
     // === LUOVA boost for creative profiles ===
     // CRITICAL: Creative profiles should STRONGLY prefer creative careers
-    // Don't let other profile matches (like precision→jarjestaja) override
+    // Check if creative subdimensions are DOMINANT (high writing/arts_culture)
+    const veryCreative = writingScore >= 0.8 || artsScore >= 0.8 || (creativeStrengthSum >= 2.0);
+    
+    // Debug: Log veryCreative for first few careers
+    if (scoredCareers.length < 3) {
+      console.log(`[CREATIVE DEBUG] ${careerVector.title}: writingScore=${writingScore.toFixed(2)}, artsScore=${artsScore.toFixed(2)}, veryCreative=${veryCreative}, isCreative=${isCreativeProfile}`);
+    }
+    
     if (isCreativeProfile) {
       if (careerCategory === 'luova') {
-        baseScore += 60; // STRONG boost for creative careers
+        baseScore += veryCreative ? 100 : 70; // VERY STRONG boost when creative is dominant
       } else if (careerCategory === 'visionaari') {
         baseScore += 25; // Creative thinkers may like strategy
       } else {
-        // UNCONDITIONAL penalties for non-creative careers when creative profile detected
-        // Even if user also has organization skills, creative careers should win
-        if (careerCategory === 'jarjestaja') {
-          baseScore -= 40; // Strong penalty - creative people don't want admin work
-        } else if (careerCategory === 'auttaja' && !isHealthcareProfile) {
-          baseScore -= 40; // Strong penalty for healthcare if not healthcare-oriented
-        } else if (careerCategory === 'rakentaja' && !isHandsOnProfile) {
-          baseScore -= 35;
-        } else if (careerCategory === 'innovoija' && !isTechProfile) {
-          baseScore -= 25;
+        // UNCONDITIONAL penalties for non-creative careers
+        // When user has HIGH creative signals (writing/arts), apply STRONGER penalties
+        if (veryCreative) {
+          // User's displayed strengths are creative - heavily penalize non-creative careers
+          if (careerCategory === 'innovoija') {
+            baseScore -= 70; // Very strong penalty - user is primarily creative, not tech
+          } else if (careerCategory === 'jarjestaja') {
+            baseScore -= 80;
+          } else if (careerCategory === 'auttaja' && !isHealthcareProfile) {
+            baseScore -= 70;
+          } else if (careerCategory === 'rakentaja' && !isHandsOnProfile) {
+            baseScore -= 60;
+          }
+        } else {
+          // Moderate creative profile - standard penalties
+          if (careerCategory === 'jarjestaja') {
+            baseScore -= 40;
+          } else if (careerCategory === 'auttaja' && !isHealthcareProfile) {
+            baseScore -= 40;
+          } else if (careerCategory === 'rakentaja' && !isHandsOnProfile) {
+            baseScore -= 35;
+          } else if (careerCategory === 'innovoija' && !isTechProfile) {
+            baseScore -= 25;
+          }
         }
       }
     }
@@ -5875,6 +5912,11 @@ export function rankCareers(
       answers
     );
 
+    // DEBUG: Log if score exceeds 100 before it's capped
+    if (totalScore > 100) {
+      console.log(`[SCORE BUG] ${careerVector.slug} has totalScore=${totalScore} BEFORE Math.min - this should not happen! base=${baseScore}, alignBonus=${alignmentBonus}, penalty=${categoryPenalty}`);
+    }
+
     scoredCareers.push({
       ...careerVector,
       overallScore: Math.round(totalScore),
@@ -5884,6 +5926,12 @@ export function rankCareers(
       educationPaths: careerFI?.education_paths,
       category: careerCategory
     });
+  }
+
+  // DEBUG: Check for scores > 100 after push
+  const highScoreCareers = scoredCareers.filter(c => c.overallScore > 100);
+  if (highScoreCareers.length > 0) {
+    console.log(`[SCORE BUG] Found ${highScoreCareers.length} careers with score > 100 after push:`, highScoreCareers.map(c => `${c.slug}: ${c.overallScore}`).join(', '));
   }
 
   // Sort by score and return top N with DIVERSITY filtering
@@ -5960,7 +6008,8 @@ export function rankCareers(
   // ========== IMPROVEMENT 1: CAREER DIVERSITY WITHIN CATEGORIES ==========
   // Instead of returning top N by score alone, ensure diversity within categories
   // This prevents "all auttaja get Sairaanhoitaja, Bioanalyytikko" problem
-  let diverseTopCareers = selectDiverseCareers(ageFilteredCareers, limit, detailedScores);
+  // BUGFIX: Use educationFilteredCareers instead of ageFilteredCareers to respect education filtering
+  let diverseTopCareers = selectDiverseCareers(educationFilteredCareers, limit, detailedScores);
 
   // ========== CRITICAL FIX: CATEGORY-PRIORITY ADJUSTMENT ==========
   // After diversity selection, ensure at least 60% of careers are from dominant category
@@ -5968,12 +6017,14 @@ export function rankCareers(
   // This prevents creative profiles from being forced into jarjestaja careers
   
   // Check if user has a strong profile that conflicts with dominant category
+  // CRITICAL FIX: Added isBusinessProfile check for johtaja category
   const hasConflictingProfile = (
     (isCreativeProfile && dominantCategory !== 'luova') ||
     (isTechProfile && dominantCategory !== 'innovoija') ||
     (isHealthcareProfile && dominantCategory !== 'auttaja') ||
     (isHandsOnProfile && dominantCategory !== 'rakentaja') ||
-    (isEnvironmentProfile && dominantCategory !== 'ympariston-puolustaja')
+    (isEnvironmentProfile && dominantCategory !== 'ympariston-puolustaja') ||
+    (isBusinessProfile && dominantCategory !== 'johtaja')
   );
   
   if (hasConflictingProfile) {
@@ -5989,8 +6040,9 @@ export function rankCareers(
       const additionalNeeded = minDominantCount - dominantCatCareers.length;
       
       // Get all careers from dominant category that aren't already selected
+      // BUGFIX: Use educationFilteredCareers to respect education filtering
       const selectedTitles = new Set(diverseTopCareers.map(c => c.title));
-      const additionalDominant = ageFilteredCareers
+      const additionalDominant = educationFilteredCareers
         .filter(c => c.category === dominantCategory && !selectedTitles.has(c.title))
         .slice(0, additionalNeeded);
       
@@ -6498,8 +6550,13 @@ function selectDiverseCareers(
       // SPORTS/FITNESS CAREERS - specific handling for athletic users
       // VERY STRICT: Only boost sports careers for people with STRONG sports signal
       // AND who don't have competing creative/writing interests
+      // CRITICAL FIX v2.4: Leadership + sports combo should also trigger sports career boost
       const sportsScore = userInterests.sports || 0;
+      const leadershipForSports = userInterests.leadership || 0;
+      const businessForSports = userInterests.business || 0;
       const isSportsOriented = sportsScore >= 0.6; // Very strict: must have answered 4-5
+      // NEW: Sports + Leadership combo qualifies as sports-oriented (sports coach profile)
+      const isSportsLeadershipCombo = sportsScore >= 0.5 && (leadershipForSports >= 0.5 || businessForSports >= 0.5);
       const isModeratelySportsOriented = sportsScore >= 0.5 && healthScore >= 0.5; // Moderate
 
       // CRITICAL: Don't boost sports careers if user has high writing/creative interest
@@ -6507,7 +6564,7 @@ function selectDiverseCareers(
       // STRICT: Only consider competing when there's a STRONG creative signal (>= 0.7)
       const hasCompetingCreativeInterest = hasHighWriting || creativeScoreLocal >= 0.7;
 
-      if (isSportsOriented && !hasCompetingCreativeInterest) {
+      if ((isSportsOriented || isSportsLeadershipCombo) && !hasCompetingCreativeInterest) {
         // VALMENTAJA/COACH careers - strong boost for sports-oriented (without creative interest)
         if (titleLower.includes('valmentaja') || titleLower.includes('urheiluvalment') ||
             titleLower.includes('liikuntaneuvoja') || titleLower.includes('personal trainer') ||
@@ -6537,10 +6594,14 @@ function selectDiverseCareers(
       // PENALIZE sports careers for non-sports people
       // If someone is NOT sports-oriented (sportsScore <= 0.5 = answered 3 or below = not enthusiastic)
       // AND has high health/nature interest, they should get healthcare/nature careers, not sports
+      // CRITICAL FIX v2.4: Don't penalize if user has leadership/business profile - they want sports management
       const isNotSportsEnthusiast = sportsScore <= 0.55; // 0.5 = neutral (answered 3/5)
+      const leadershipScoreSports = userInterests.leadership || 0;
+      const businessScoreSports = userInterests.business || 0;
+      const hasLeadershipProfile = leadershipScoreSports >= 0.5 || businessScoreSports >= 0.5;
 
-      // Healthcare-focused but not sports enthusiast
-      if (isNotSportsEnthusiast && healthScore >= 0.5) {
+      // Healthcare-focused but not sports enthusiast (and NOT a leadership profile)
+      if (isNotSportsEnthusiast && healthScore >= 0.5 && !hasLeadershipProfile) {
         if (titleLower.includes('valmentaja') || titleLower.includes('urheil') ||
             titleLower.includes('liikuntaneuvoja') || titleLower.includes('personal trainer') ||
             titleLower.includes('liikuntaterapeutti') || titleLower.includes('liikuntaohjaaja') ||
@@ -6549,8 +6610,8 @@ function selectDiverseCareers(
         }
       }
 
-      // Nature/environment focused but not sports enthusiast
-      if (isNotSportsEnthusiast && (natureScore >= 0.5 || analyticalScore >= 0.5)) {
+      // Nature/environment focused but not sports enthusiast (and NOT leadership profile)
+      if (isNotSportsEnthusiast && (natureScore >= 0.5 || analyticalScore >= 0.5) && !hasLeadershipProfile) {
         if (titleLower.includes('valmentaja') || titleLower.includes('urheil') ||
             titleLower.includes('liikunta') || titleLower.includes('liikuntaterapeutti')) {
           diversityBonus -= 100; // Nature/research people should get nature careers, not sports
@@ -6714,7 +6775,12 @@ function selectDiverseCareers(
 
       // WEB/SOFTWARE DEVELOPMENT CAREERS - for tech + analytical combo
       // Career changers and people with strong tech interest want developer roles
-      const isDeveloperProfile = techScore >= 0.6 && analyticalScore >= 0.5;
+      // CRITICAL: Block developer bonuses when creative is HIGH and tech is NOT at maximum
+      // This catches profiles where writing/arts are the DISPLAYED strengths but tech is also moderate
+      const hasHighCreativeSignals = writingScore >= 0.9 || (userInterests.arts_culture || 0) >= 0.9;
+      const techIsNotDominant = techScore < 0.9; // If tech is below 90%, creative might dominate
+      const creativeDominatesTech = hasHighCreativeSignals && techIsNotDominant && creativeScore >= 0.8;
+      const isDeveloperProfile = techScore >= 0.6 && analyticalScore >= 0.5 && !creativeDominatesTech;
       const isStrongDeveloperProfile = techScore >= 0.7 && analyticalScore >= 0.6;
 
       if (titleLower.includes('kehittäjä') || titleLower.includes('developer') ||
@@ -6897,15 +6963,16 @@ function selectDiverseCareers(
       const socialScore = userWorkstyle.social || 0;
       const healthScoreLuova = userInterests.health || 0;
 
-      // STRONG beauty signal: high creative from Q5 (beauty question) combined with social/people
-      // When someone answers Q5=5 (beauty work), the creative/people/social all come from that single question
-      // This creates a unique "cluster" pattern: high creative + high social + high people + moderate hands_on
-      const isStrongBeautySignal = creativeScore >= 0.75 && socialScore >= 0.75 && peopleScoreGlobal >= 0.4;
-      // RELAXED: Also detect beauty when creative + people are high but health is LOW
-      // This is the key pattern for TASO2 Q5 (beauty) - creative + people without health
-      const isCreativePeopleNotHealth = creativeScore >= 0.5 && peopleScoreGlobal >= 0.4 && healthScoreLuova < 0.4;
+      // STRONG beauty signal: VERY high creative + social + people ALL together
+      // Beauty careers require a specific combination of traits, not just moderate levels
+      // TIGHTENED: Require VERY high thresholds to prevent over-triggering
+      const isStrongBeautySignal = creativeScore >= 0.85 && socialScore >= 0.85 && peopleScoreGlobal >= 0.6;
+      // TIGHTENED: Only detect beauty when creative + people are VERY high AND health is LOW
+      // And also require high social (beauty work is very social)
+      const isCreativePeopleNotHealth = creativeScore >= 0.75 && peopleScoreGlobal >= 0.6 && healthScoreLuova < 0.3 && socialScore >= 0.6;
+      // TIGHTENED: Require ALL three scores to be quite high
       const isBeautyOriented = isStrongBeautySignal ||
-                               (creativeScore >= 0.6 && socialScore >= 0.5 && peopleScoreGlobal >= 0.4) ||
+                               (creativeScore >= 0.8 && socialScore >= 0.7 && peopleScoreGlobal >= 0.5) ||
                                isCreativePeopleNotHealth;
 
       if (isBeautyOriented) {
@@ -7342,19 +7409,21 @@ function selectDiverseCareers(
       const socialScoreJ = userWorkstyle.social || 0;
       const handsOnScoreJ = userInterests.hands_on || 0;
       
-      // STRONG beauty signal detection (matches logic in LUOVA section)
-      // Beauty = creative + people + social + LOW health + moderate hands_on
-      const isStrongBeautySignalJ = creativeScoreJ >= 0.75 && socialScoreJ >= 0.75 && peopleScoreJ >= 0.4;
-      const isCreativePeopleNotHealthJ = creativeScoreJ >= 0.5 && peopleScoreJ >= 0.4 && healthScoreJ < 0.4;
+      // STRONG beauty signal detection (matches TIGHTENED logic in LUOVA section)
+      // Beauty = VERY high creative + people + social + LOW health
+      // TIGHTENED: Require much higher thresholds to prevent over-triggering
+      const isStrongBeautySignalJ = creativeScoreJ >= 0.85 && socialScoreJ >= 0.85 && peopleScoreJ >= 0.6;
+      const isCreativePeopleNotHealthJ = creativeScoreJ >= 0.75 && peopleScoreJ >= 0.6 && healthScoreJ < 0.3 && socialScoreJ >= 0.6;
       const isBeautyOrientedJ = isStrongBeautySignalJ ||
-                                (creativeScoreJ >= 0.6 && socialScoreJ >= 0.5 && peopleScoreJ >= 0.4) ||
+                                (creativeScoreJ >= 0.8 && socialScoreJ >= 0.7 && peopleScoreJ >= 0.5) ||
                                 isCreativePeopleNotHealthJ;
       
       // Also check if creative score is significantly higher than leadership
       // This catches cases where creative is high but leadership is moderate
       const creativeDominatesLeadership = creativeScoreJ >= 0.5 && creativeScoreJ > leadershipScore + 0.1;
       
-      const isBeautyCreativeProfile = (creativeScoreJ >= 0.5 && healthScoreJ < 0.4 && creativeScoreJ > leadershipScore) ||
+      // TIGHTENED: Require higher creative and lower health to flag as beauty creative
+      const isBeautyCreativeProfile = (creativeScoreJ >= 0.7 && healthScoreJ < 0.3 && creativeScoreJ > leadershipScore + 0.2) ||
                                      isBeautyOrientedJ || // Beauty signal detected
                                      (creativeDominatesLeadership && healthScoreJ < 0.5); // Creative dominates, not healthcare
       
@@ -7536,7 +7605,7 @@ function selectDiverseCareers(
 
     return {
       ...career,
-      overallScore: career.overallScore + diversityBonus,
+      overallScore: career.overallScore + diversityBonus, // Keep full score for sorting
       _originalScore: career.overallScore,
       _diversityBonus: diversityBonus
     };
@@ -7554,7 +7623,11 @@ function selectDiverseCareers(
     const typeCount = Array.from(usedCareerTypes).filter(t => t === careerType).length;
     if (typeCount >= 2) continue;
 
-    selected.push(career);
+    // Cap score at 100 for DISPLAY purposes only (after selection/sorting is done)
+    selected.push({
+      ...career,
+      overallScore: Math.min(100, career.overallScore) // Cap at 100 for display
+    });
     usedTitles.add(career.title);
     usedCareerTypes.add(careerType);
   }
@@ -7619,8 +7692,10 @@ function _legacyRankCareers(
   // Step 1: Compute user vector
   const { dimensionScores, detailedScores } = computeUserVector(answers, cohort);
 
-  // Legacy YLA path (preserved for reference)
-  if (cohort === 'YLA') {
+  // Legacy YLA path - DISABLED: Now using unified path with strength-based matching
+  // YLA now uses the unified path at the start of this function
+  // @ts-ignore - Keeping legacy code for reference but disabled
+  if (cohort === 'DISABLED_YLA_LEGACY') { // DISABLED - YLA uses unified path now
     console.log(`[rankCareers] 🎓 YLA COHORT: Using SIMPLE interest-based matching for young students`);
 
     const interests = detailedScores.interests || {};
