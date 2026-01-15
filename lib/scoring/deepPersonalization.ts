@@ -424,6 +424,7 @@ export function generateDeepPersonalizedInsights(
 
 /**
  * Generate the full personalized analysis text combining insights
+ * Target length: 1200-1500 characters for comprehensive, personal analysis
  */
 export function generateEnhancedPersonalizedAnalysis(
   answers: TestAnswer[],
@@ -431,7 +432,7 @@ export function generateEnhancedPersonalizedAnalysis(
   cohort: Cohort
 ): string {
   const insights = generateDeepPersonalizedInsights(answers, userProfile, cohort);
-  const { topStrengths, categoryAffinities, profileConfidence } = userProfile;
+  const { topStrengths, categoryAffinities, profileConfidence, detailedScores } = userProfile;
 
   const paragraphs: string[] = [];
 
@@ -444,35 +445,38 @@ export function generateEnhancedPersonalizedAnalysis(
     let opening = '';
 
     if (cohort === 'YLA') {
-      opening = `Vastauksistasi nousee selkeästi esiin, mikä sinua kiinnostaa. ${firstStrong.insight}`;
+      opening = `Vastauksistasi nousee selkeästi esiin, mikä sinua kiinnostaa ja mitkä asiat ovat sinulle tärkeitä. ${firstStrong.insight}`;
       if (strongYes.length > 1) {
         opening += ` ${strongYes[1].insight}`;
       }
+      if (strongYes.length > 2) {
+        opening += ` Myös ${strongYes[2].insight.toLowerCase().replace('vastauksestasi näkyy selvästi, että ', '')}`;
+      }
     } else if (cohort === 'TASO2') {
-      opening = `Profiilisi kertoo selkeää tarinaa kiinnostuksistasi. ${firstStrong.insight}`;
+      opening = `Profiilisi kertoo selkeää tarinaa kiinnostuksistasi ja ammatillisesta suuntautumisestasi. ${firstStrong.insight}`;
       if (strongYes.length > 1) {
         opening += ` Lisäksi ${strongYes[1].insight.toLowerCase()}`;
       }
     } else {
-      opening = `Ammatillinen suuntautumisesi näkyy selkeästi vastauksistasi. ${firstStrong.insight}`;
+      opening = `Ammatillinen suuntautumisesi näkyy selkeästi vastauksistasi, ja voimme nähdä mihin suuntaan haluat kehittyä. ${firstStrong.insight}`;
       if (strongYes.length > 1) {
         opening += ` ${strongYes[1].insight}`;
       }
     }
 
-    // Add what they don't like (if any)
+    // Add what they don't like (if any) - helps narrow down options
     if (strongNo.length > 0) {
       opening += ` ${strongNo[0].insight}`;
     }
 
     paragraphs.push(opening);
   } else {
-    // Fallback for neutral profiles
+    // Fallback for neutral profiles - more detailed
     const fallback = cohort === 'YLA'
-      ? 'Vastauksistasi näkyy, että olet vielä tutkimassa eri vaihtoehtoja, ja se on täysin normaalia. Sinulla on tasapainoinen profiili, joka avaa monia mahdollisuuksia.'
+      ? 'Vastauksistasi näkyy, että olet vielä tutkimassa eri vaihtoehtoja ja löytämässä omaa polkuasi. Tämä on täysin normaalia ja jopa arvokasta, sillä avoimuus eri mahdollisuuksille antaa sinulle joustavuutta tulevaisuudessa. Sinulla on tasapainoinen profiili, joka avaa monia erilaisia mahdollisuuksia.'
       : cohort === 'TASO2'
-      ? 'Profiilisi on monipuolinen ja tasapainoinen. Tämä antaa sinulle joustavuutta valita monista eri poluista.'
-      : 'Vastauksesi osoittavat monipuolista kiinnostusta eri aloihin. Tämä on vahvuus, joka mahdollistaa joustavan urakehityksen.';
+      ? 'Profiilisi on monipuolinen ja tasapainoinen, mikä kertoo laaja-alaisesta kiinnostuksesta eri aloihin. Tämä antaa sinulle joustavuutta valita monista eri poluista ja mahdollisuuden yhdistää eri osaamisia tulevaisuudessa.'
+      : 'Vastauksesi osoittavat monipuolista kiinnostusta eri aloihin ja työtehtäviin. Tämä on vahvuus, joka mahdollistaa joustavan urakehityksen ja antaa sinulle useita vaihtoehtoja etenemiseen.';
     paragraphs.push(fallback);
   }
 
@@ -480,25 +484,25 @@ export function generateEnhancedPersonalizedAnalysis(
   if (insights.patterns.length > 0 || insights.uniqueTraits.length > 0) {
     let patternParagraph = '';
 
-    // Add pattern insights
+    // Add pattern insights with more context
     if (insights.patterns.length > 0) {
       const mainPattern = insights.patterns[0];
       patternParagraph = `${mainPattern.description}. ${mainPattern.implications}`;
 
       if (insights.patterns.length > 1 && insights.patterns[1].type !== insights.patterns[0].type) {
-        patternParagraph += ` Lisäksi ${insights.patterns[1].description.toLowerCase()}.`;
+        patternParagraph += ` Lisäksi ${insights.patterns[1].description.toLowerCase()}. ${insights.patterns[1].implications}`;
       }
     }
 
-    // Add unique traits
+    // Add unique traits with context
     if (insights.uniqueTraits.length > 0) {
       if (patternParagraph) {
         patternParagraph += ` ${insights.uniqueTraits[0]}`;
       } else {
         patternParagraph = insights.uniqueTraits[0];
-        if (insights.uniqueTraits.length > 1) {
-          patternParagraph += ` ${insights.uniqueTraits[1]}`;
-        }
+      }
+      if (insights.uniqueTraits.length > 1) {
+        patternParagraph += ` ${insights.uniqueTraits[1]}`;
       }
     }
 
@@ -507,17 +511,27 @@ export function generateEnhancedPersonalizedAnalysis(
     }
   }
 
-  // ===== PARAGRAPH 3: Strengths with context =====
+  // ===== PARAGRAPH 3: Strengths with detailed context =====
   if (topStrengths && topStrengths.length > 0) {
     const strengthsText = topStrengths.slice(0, 2).join(' ja ');
+    const thirdStrength = topStrengths.length > 2 ? topStrengths[2] : null;
     let strengthParagraph = '';
 
     if (cohort === 'YLA') {
-      strengthParagraph = `Vahvuutesi ${strengthsText.toLowerCase()} erottuvat selvästi. Nämä eivät ole sattumaa, vaan ne heijastavat sitä, kuka olet ja mistä nautit. Kun tiedät vahvuutesi, voit valita polkuja, joissa pääset loistamaan.`;
+      strengthParagraph = `Vahvuutesi ${strengthsText.toLowerCase()} erottuvat selvästi vastauksistasi. Nämä eivät ole sattumaa, vaan ne heijastavat sitä, kuka olet ja mistä nautit. Kun tiedostat omat vahvuutesi, voit valita polkuja, joissa pääset todella loistamaan ja tekemään työtä, joka tuntuu merkitykselliseltä.`;
+      if (thirdStrength) {
+        strengthParagraph += ` Myös ${thirdStrength.toLowerCase()} on sinulle luontaista.`;
+      }
     } else if (cohort === 'TASO2') {
-      strengthParagraph = `Profiilissasi korostuvat ${strengthsText.toLowerCase()}. Nämä vahvuudet ovat arvokkaita työelämässä ja antavat sinulle kilpailuetua. Hyödynnä niitä tietoisesti hakemuksissa ja haastatteluissa.`;
+      strengthParagraph = `Profiilissasi korostuvat erityisesti ${strengthsText.toLowerCase()}. Nämä vahvuudet ovat erittäin arvokkaita työelämässä ja antavat sinulle selkeää kilpailuetua muihin hakijoihin verrattuna. Hyödynnä näitä vahvuuksia tietoisesti työhakemuksissa, haastatteluissa ja urasi rakentamisessa.`;
+      if (thirdStrength) {
+        strengthParagraph += ` ${thirdStrength} täydentää osaamistasi.`;
+      }
     } else {
-      strengthParagraph = `Ammatillisina vahvuuksinasi korostuvat ${strengthsText.toLowerCase()}. Nämä ovat markkinoilla arvostettuja ominaisuuksia, jotka erottavat sinut muista. Rakenna uraasi näiden vahvuuksien varaan.`;
+      strengthParagraph = `Ammatillisina vahvuuksinasi korostuvat selkeästi ${strengthsText.toLowerCase()}. Nämä ovat markkinoilla arvostettuja ominaisuuksia, jotka erottavat sinut muista ammattilaisista. Rakenna uraasi näiden vahvuuksien varaan ja hae tehtäviä, joissa pääset hyödyntämään niitä päivittäin.`;
+      if (thirdStrength) {
+        strengthParagraph += ` ${thirdStrength} on lisävahvuutesi.`;
+      }
     }
 
     paragraphs.push(strengthParagraph);
@@ -525,28 +539,44 @@ export function generateEnhancedPersonalizedAnalysis(
 
   // ===== PARAGRAPH 4: Career connection explanation =====
   if (insights.careerConnections.length > 0) {
-    let careerParagraph = 'Alla näet ammattiehdotuksia, jotka perustuvat vastauksiisi. ';
+    let careerParagraph = 'Alla näet ammattiehdotuksia, jotka perustuvat vastauksiisi ja profiiliisi. ';
     careerParagraph += insights.careerConnections[0];
 
     if (insights.careerConnections.length > 1) {
       careerParagraph += ' ' + insights.careerConnections[1];
     }
 
-    // Add confidence-based disclaimer
+    // Add confidence-based context
     if (profileConfidence?.overall === 'low') {
-      careerParagraph += ' Koska profiilisi on vielä muotoutumassa, ehdotukset ovat laajempia antaaksemme sinulle näkökulmia eri aloista.';
+      careerParagraph += ' Koska profiilisi on vielä muotoutumassa, ehdotukset ovat laajempia antaaksemme sinulle näkökulmia eri aloista ja mahdollisuuksista.';
+    } else if (profileConfidence?.overall === 'high') {
+      careerParagraph += ' Vahva profiilisi antaa meille hyvän pohjan tarkkoihin suosituksiin.';
     }
 
     paragraphs.push(careerParagraph);
   } else {
-    // Fallback career intro
+    // Fallback career intro - more detailed
     const careerIntro = cohort === 'YLA'
-      ? 'Alla näet ammattiehdotuksia, jotka voivat sopia profiiliisi. Ne ovat esimerkkejä, eivät listoja ammateista, joita sinun pitäisi valita.'
+      ? 'Alla näet ammattiehdotuksia, jotka voivat sopia profiiliisi. Nämä ovat esimerkkejä ja inspiraation lähteitä, eivät lopullisia määräyksiä. Tutustu eri vaihtoehtoihin avoimin mielin ja mieti, mikä näistä resonoi sinun kanssasi.'
       : cohort === 'TASO2'
-      ? 'Alla näet ammattiehdotuksia profiilisi perusteella. Käytä niitä inspiraationa urasuunnittelussa.'
-      : 'Alla näet ammattiehdotuksia, jotka vastaavat profiiliasi. Ne voivat avata uusia näkökulmia urasuunnitteluun.';
+      ? 'Alla näet ammattiehdotuksia profiilisi perusteella. Käytä näitä ehdotuksia inspiraationa urasuunnittelussa ja pohdi, miten voisit yhdistää kiinnostuksesi ja vahvuutesi työssäsi.'
+      : 'Alla näet ammattiehdotuksia, jotka vastaavat profiiliasi ja ammatillisia kiinnostuksiasi. Ne voivat avata uusia näkökulmia urasuunnitteluun ja auttaa sinua löytämään seuraavan askelen.';
     paragraphs.push(careerIntro);
   }
+
+  // ===== PARAGRAPH 5: Forward-looking encouragement (to reach target length) =====
+  const topCategory = categoryAffinities?.[0]?.category;
+  let closingParagraph = '';
+
+  if (cohort === 'YLA') {
+    closingParagraph = 'Muista, että urapolkusi on sinun omasi. Näiden suositusten avulla voit löytää suunnan, mutta lopullinen valinta on aina sinun. Kokeile eri asioita, kysy ammattilaisilta ja seuraa omaa intohimoasi.';
+  } else if (cohort === 'TASO2') {
+    closingParagraph = 'Hyödynnä näitä suosituksia lähtökohtana omalle urasuunnittelullesi. Voit aina palata tekemään testin uudelleen, kun kiinnostuksesi kehittyvät.';
+  } else {
+    closingParagraph = 'Näiden suositusten avulla voit hahmottaa mahdollisia urapolkuja ja suunnitella seuraavia askeleitasi. Uramuutos on prosessi, joka vaatii aikaa ja pohdintaa.';
+  }
+
+  paragraphs.push(closingParagraph);
 
   return paragraphs.join('\n\n');
 }

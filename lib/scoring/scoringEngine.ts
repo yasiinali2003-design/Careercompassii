@@ -9038,51 +9038,77 @@ export function generateUserProfile(
     'ympariston-puolustaja': ['environment', 'nature', 'outdoor', 'analytical']
   };
 
-  // Get all interest and workstyle scores
-  const allScores = [
-    ...Object.entries(detailedScores.interests).map(([k, v]) => ({ key: k, value: v, type: 'interests' as const })),
-    ...Object.entries(detailedScores.workstyle).map(([k, v]) => ({ key: k, value: v, type: 'workstyle' as const }))
-  ].filter(s => s.value > 0.5); // Include moderate scores
+  // CRITICAL FIX v2.9: Prioritize INTERESTS over workstyle for displayed strengths
+  // Strengths should reflect the user's interests that drive career recommendations
+  // Workstyle dimensions (outdoor, precision, etc.) should only appear if no strong interests exist
+
+  // Get interest scores first (these drive career recommendations)
+  const interestScores = Object.entries(detailedScores.interests)
+    .map(([k, v]) => ({ key: k, value: v, type: 'interests' as const }))
+    .filter(s => s.value > 0.5);
+
+  // Get workstyle scores (secondary)
+  const workstyleScores = Object.entries(detailedScores.workstyle)
+    .map(([k, v]) => ({ key: k, value: v, type: 'workstyle' as const }))
+    .filter(s => s.value > 0.5);
 
   // Prioritize strengths that match the top category
   const categoryRelevantKeys = categoryStrengthMap[topCategory] || [];
 
-  // Sort: category-relevant strengths first (by value), then others (by value)
-  const sortedStrengths = allScores.sort((a, b) => {
-    const aRelevant = categoryRelevantKeys.includes(a.key);
-    const bRelevant = categoryRelevantKeys.includes(b.key);
+  // Category-specific interest keys (the interests that define each category)
+  const categoryInterestKeys: Record<string, string[]> = {
+    'auttaja': ['health', 'people', 'growth', 'teaching', 'sports'],
+    'innovoija': ['technology', 'analytical', 'problem_solving', 'innovation'],
+    'luova': ['creative', 'writing', 'arts_culture'],
+    'rakentaja': ['hands_on', 'technology'],
+    'johtaja': ['leadership', 'business', 'people'],
+    'jarjestaja': ['analytical', 'business'],
+    'visionaari': ['innovation', 'leadership', 'analytical'],
+    'ympariston-puolustaja': ['environment', 'nature']
+  };
 
-    // Both relevant or both not relevant: sort by value
-    if (aRelevant === bRelevant) {
-      return b.value - a.value;
-    }
-    // Relevant ones come first
-    return aRelevant ? -1 : 1;
+  const relevantInterestKeys = categoryInterestKeys[topCategory] || [];
+
+  // Sort interests: category-relevant first, then by value
+  const sortedInterests = interestScores.sort((a, b) => {
+    const aRelevant = relevantInterestKeys.includes(a.key);
+    const bRelevant = relevantInterestKeys.includes(b.key);
+    if (aRelevant !== bRelevant) return aRelevant ? -1 : 1;
+    return b.value - a.value;
   });
 
-  // Take top 3, but ensure at least one is category-relevant if available
+  // Select strengths: PRIORITIZE INTERESTS that match the career category
   let selectedStrengths: { key: string; value: number; type: 'interests' | 'workstyle' }[] = [];
 
-  // First, add category-relevant strengths with high scores (> 0.6)
-  const relevantHighScores = sortedStrengths.filter(s =>
-    categoryRelevantKeys.includes(s.key) && s.value > 0.6
+  // Step 1: Add category-relevant interests with high scores (> 0.55)
+  const relevantInterests = sortedInterests.filter(s =>
+    relevantInterestKeys.includes(s.key) && s.value > 0.55
   );
-  selectedStrengths.push(...relevantHighScores.slice(0, 3));
+  selectedStrengths.push(...relevantInterests.slice(0, 3));
 
-  // Fill remaining slots with highest-scoring other strengths (> 0.6)
+  // Step 2: If not enough, add other high-scoring interests (> 0.6)
   if (selectedStrengths.length < 3) {
-    const otherHighScores = sortedStrengths.filter(s =>
+    const otherInterests = sortedInterests.filter(s =>
       s.value > 0.6 && !selectedStrengths.some(ss => ss.key === s.key)
     );
-    selectedStrengths.push(...otherHighScores.slice(0, 3 - selectedStrengths.length));
+    selectedStrengths.push(...otherInterests.slice(0, 3 - selectedStrengths.length));
   }
 
-  // If still fewer than 3, lower threshold to 0.5
+  // Step 3: If still not enough, add moderate interests (> 0.5)
   if (selectedStrengths.length < 3) {
-    const additionalScores = sortedStrengths.filter(s =>
+    const moderateInterests = sortedInterests.filter(s =>
       s.value > 0.5 && !selectedStrengths.some(ss => ss.key === s.key)
     );
-    selectedStrengths.push(...additionalScores.slice(0, 3 - selectedStrengths.length));
+    selectedStrengths.push(...moderateInterests.slice(0, 3 - selectedStrengths.length));
+  }
+
+  // Step 4: Only if we STILL don't have 3 strengths, add workstyle dimensions
+  // But only category-relevant workstyle dimensions
+  if (selectedStrengths.length < 3) {
+    const relevantWorkstyle = workstyleScores
+      .filter(s => categoryRelevantKeys.includes(s.key) && s.value > 0.6)
+      .sort((a, b) => b.value - a.value);
+    selectedStrengths.push(...relevantWorkstyle.slice(0, 3 - selectedStrengths.length));
   }
 
   // Final sort by value and translate
