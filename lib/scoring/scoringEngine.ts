@@ -21,6 +21,7 @@ import { CURATED_CAREER_SLUGS } from './curatedCareers';
 import { RANKING_WEIGHTS, getDemandWeight, getDiversityKey, isPaallikkoVariant } from './rankingConfig';
 import { careersData as careersFI } from '@/data/careers-fi';
 import { generatePersonalizedAnalysis } from './personalizedAnalysis';
+import { generateEnhancedPersonalizedAnalysis } from './deepPersonalization';
 import { getAnswerLevel, getQuestionReference } from './languageHelpers';
 
 // ========== CATEGORY-SPECIFIC SUBDIMENSION WEIGHTS ==========
@@ -9113,8 +9114,8 @@ export function generateUserProfile(
     profileConfidence
   };
 
-  // Generate personalized analysis text (include edge case message if applicable)
-  let personalizedText = generatePersonalizedAnalysis(userProfile, cohort);
+  // Generate personalized analysis text using deep personalization (answer-aware)
+  let personalizedText = generateEnhancedPersonalizedAnalysis(answers, userProfile, cohort);
 
   // Append edge case message if needed
   if (edgeCase.isEdgeCase && edgeCase.message_fi) {
