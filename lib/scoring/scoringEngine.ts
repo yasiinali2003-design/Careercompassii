@@ -9038,17 +9038,34 @@ export function generateUserProfile(
     'ympariston-puolustaja': ['environment', 'nature', 'outdoor', 'analytical']
   };
 
-  // CRITICAL FIX v2.9: Prioritize INTERESTS over workstyle for displayed strengths
+  // CRITICAL FIX v2.10: Prioritize INTERESTS over workstyle for displayed strengths
   // Strengths should reflect the user's interests that drive career recommendations
-  // Workstyle dimensions (outdoor, precision, etc.) should only appear if no strong interests exist
+  // Some dimensions like 'leadership' can exist in both interests AND workstyle - take the max
 
-  // Get interest scores first (these drive career recommendations)
-  const interestScores = Object.entries(detailedScores.interests)
+  // Merge interests and workstyle for dimensions that can appear in both
+  const mergedScores: Record<string, number> = {};
+
+  // Add all interest scores
+  for (const [k, v] of Object.entries(detailedScores.interests)) {
+    mergedScores[k] = v;
+  }
+
+  // For workstyle dimensions that are career-relevant, merge with interests (take max)
+  const careerRelevantWorkstyle = ['leadership', 'teaching', 'outdoor', 'hands_on', 'precision'];
+  for (const [k, v] of Object.entries(detailedScores.workstyle)) {
+    if (careerRelevantWorkstyle.includes(k)) {
+      mergedScores[k] = Math.max(mergedScores[k] || 0, v);
+    }
+  }
+
+  // Get merged scores as array
+  const interestScores = Object.entries(mergedScores)
     .map(([k, v]) => ({ key: k, value: v, type: 'interests' as const }))
     .filter(s => s.value > 0.5);
 
-  // Get workstyle scores (secondary)
+  // Get workstyle scores (secondary, excluding already-merged ones)
   const workstyleScores = Object.entries(detailedScores.workstyle)
+    .filter(([k]) => !careerRelevantWorkstyle.includes(k))
     .map(([k, v]) => ({ key: k, value: v, type: 'workstyle' as const }))
     .filter(s => s.value > 0.5);
 
@@ -9060,11 +9077,11 @@ export function generateUserProfile(
     'auttaja': ['health', 'people', 'growth', 'teaching', 'sports'],
     'innovoija': ['technology', 'analytical', 'problem_solving', 'innovation'],
     'luova': ['creative', 'writing', 'arts_culture'],
-    'rakentaja': ['hands_on', 'technology'],
+    'rakentaja': ['hands_on', 'technology', 'outdoor'],
     'johtaja': ['leadership', 'business', 'people'],
     'jarjestaja': ['analytical', 'business'],
     'visionaari': ['innovation', 'leadership', 'analytical'],
-    'ympariston-puolustaja': ['environment', 'nature']
+    'ympariston-puolustaja': ['environment', 'nature', 'outdoor']
   };
 
   const relevantInterestKeys = categoryInterestKeys[topCategory] || [];
