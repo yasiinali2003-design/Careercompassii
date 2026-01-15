@@ -9019,20 +9019,76 @@ export function generateUserProfile(
   // Detect edge cases (all neutral, all high, etc.)
   const edgeCase = detectEdgeCases(answers);
 
-  // Find top strengths
-  const allScores = [
-    ...Object.entries(detailedScores.interests).map(([k, v]) => ({ key: k, value: v, type: 'interests' })),
-    ...Object.entries(detailedScores.workstyle).map(([k, v]) => ({ key: k, value: v, type: 'workstyle' }))
-  ];
+  // Calculate category affinities FIRST (need this to align strengths with careers)
+  const categoryAffinities = calculateCategoryAffinities(detailedScores, profileConfidence);
+  const topCategory = categoryAffinities[0]?.category || 'innovoija';
 
-  const topStrengths = allScores
-    .filter(s => s.value > 0.6)
+  // CRITICAL FIX v2.8: Select strengths that ALIGN with the top career category
+  // The displayed strengths should match the career-driving factors
+  // Different categories prioritize different subdimensions
+  const categoryStrengthMap: Record<string, string[]> = {
+    'auttaja': ['health', 'people', 'growth', 'teaching', 'environment'],
+    'innovoija': ['technology', 'analytical', 'problem_solving', 'innovation'],
+    'luova': ['creative', 'writing', 'arts_culture', 'innovation'],
+    'rakentaja': ['hands_on', 'outdoor', 'environment', 'precision'],
+    'johtaja': ['leadership', 'business', 'people', 'innovation'],
+    'jarjestaja': ['organization', 'analytical', 'precision', 'planning'],
+    'visionaari': ['innovation', 'leadership', 'analytical', 'business'],
+    'ympariston-puolustaja': ['environment', 'nature', 'outdoor', 'analytical']
+  };
+
+  // Get all interest and workstyle scores
+  const allScores = [
+    ...Object.entries(detailedScores.interests).map(([k, v]) => ({ key: k, value: v, type: 'interests' as const })),
+    ...Object.entries(detailedScores.workstyle).map(([k, v]) => ({ key: k, value: v, type: 'workstyle' as const }))
+  ].filter(s => s.value > 0.5); // Include moderate scores
+
+  // Prioritize strengths that match the top category
+  const categoryRelevantKeys = categoryStrengthMap[topCategory] || [];
+
+  // Sort: category-relevant strengths first (by value), then others (by value)
+  const sortedStrengths = allScores.sort((a, b) => {
+    const aRelevant = categoryRelevantKeys.includes(a.key);
+    const bRelevant = categoryRelevantKeys.includes(b.key);
+
+    // Both relevant or both not relevant: sort by value
+    if (aRelevant === bRelevant) {
+      return b.value - a.value;
+    }
+    // Relevant ones come first
+    return aRelevant ? -1 : 1;
+  });
+
+  // Take top 3, but ensure at least one is category-relevant if available
+  let selectedStrengths: { key: string; value: number; type: 'interests' | 'workstyle' }[] = [];
+
+  // First, add category-relevant strengths with high scores (> 0.6)
+  const relevantHighScores = sortedStrengths.filter(s =>
+    categoryRelevantKeys.includes(s.key) && s.value > 0.6
+  );
+  selectedStrengths.push(...relevantHighScores.slice(0, 3));
+
+  // Fill remaining slots with highest-scoring other strengths (> 0.6)
+  if (selectedStrengths.length < 3) {
+    const otherHighScores = sortedStrengths.filter(s =>
+      s.value > 0.6 && !selectedStrengths.some(ss => ss.key === s.key)
+    );
+    selectedStrengths.push(...otherHighScores.slice(0, 3 - selectedStrengths.length));
+  }
+
+  // If still fewer than 3, lower threshold to 0.5
+  if (selectedStrengths.length < 3) {
+    const additionalScores = sortedStrengths.filter(s =>
+      s.value > 0.5 && !selectedStrengths.some(ss => ss.key === s.key)
+    );
+    selectedStrengths.push(...additionalScores.slice(0, 3 - selectedStrengths.length));
+  }
+
+  // Final sort by value and translate
+  const topStrengths = selectedStrengths
     .sort((a, b) => b.value - a.value)
     .slice(0, 3)
     .map(s => translateStrength(s.key, cohort));
-
-  // Calculate category affinities (all 8 categories ranked)
-  const categoryAffinities = calculateCategoryAffinities(detailedScores, profileConfidence);
 
   // Detect hybrid career paths
   const hybridPaths = detectHybridPaths(detailedScores, categoryAffinities);
