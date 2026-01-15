@@ -23,7 +23,48 @@ const YLA_PERSONAS = [
     name: "Aino - Tulevaisuuden lääkäri",
     description: "Ahkera ja empaattinen, haaveilee lääkärin urasta. Pitää biologiasta ja auttamisesta.",
     cohort: "YLA",
-    answers: [3, 4, 3, 5, 5, 3, 2, 3, 5, 4, 4, 3, 5, 4, 4, 4, 3, 5, 3, 4, 3, 5, 4, 5, 4, 3, 3, 3, 4, 4],
+    // YLA question mapping (0-indexed):
+    // Q0 (idx 0) = technology
+    // Q3 (idx 3) = hands_on
+    // Q4 (idx 4) = environment/animals
+    // Q5 (idx 5) = health (human body) ← KEY for doctor!
+    // Q7 (idx 7) = analytical/experiments ← KEY for doctor!
+    // Q8 (idx 8) = SPORTS ← Must be LOW for doctor, not sports person!
+    // Q9 (idx 9) = teaching
+    // Q12 (idx 12) = social/people
+    // For future doctor: HIGH health (Q5), HIGH analytical (Q7), LOW sports (Q8)
+    answers: [
+      3,  // Q0: technology - neutral
+      4,  // Q1: problem_solving - moderate-high
+      3,  // Q2: creative - neutral
+      3,  // Q3: hands_on - neutral (doctors use hands but not like builders)
+      5,  // Q4: environment/animals - HIGH (biology/nature interest)
+      5,  // Q5: health (human body) - HIGH (KEY for doctor!)
+      2,  // Q6: business - low
+      5,  // Q7: analytical/experiments - HIGH (science for medicine!)
+      2,  // Q8: SPORTS - LOW (not a sports person, wants to be doctor)
+      4,  // Q9: teaching - moderate (doctors educate patients)
+      3,  // Q10: food - neutral
+      3,  // Q11: innovation - neutral
+      5,  // Q12: social/people - HIGH (empathy, caring for patients)
+      3,  // Q13: leadership - neutral
+      4,  // Q14: languages - moderate
+      4,  // Q15: debates - moderate
+      3,  // Q16: workstyle
+      4,  // Q17: outdoor (biology fieldwork)
+      3,  // Q18
+      4,  // Q19
+      3,  // Q20
+      5,  // Q21: values - high (meaningful work)
+      4,  // Q22
+      5,  // Q23: values - high (helping others)
+      4,  // Q24
+      3,  // Q25
+      3,  // Q26
+      3,  // Q27
+      4,  // Q28
+      4   // Q29
+    ],
     expected: {
       category: "auttaja",
       educationPath: "lukio",

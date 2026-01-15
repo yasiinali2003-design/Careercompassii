@@ -72,13 +72,49 @@ const YLA_PERSONAS = [
     name: "Onni the Team Captain",
     description: "Natural leader who loves sports, coaching teammates, and organizing events. High social skills.",
     cohort: "YLA",
-    // CALIBRATED for johtaja:
-    // - High business(Q5=5 at idx 5)
-    // - High sports(Q7=5 at idx 7) AND (Q15=5 at idx 14) for strong sports signal
-    // - High leadership(Q12=5 at idx 12)
-    // - Lower health signals (Q4=2 at idx 3) to avoid auttaja dominance
+    // CALIBRATED for johtaja with sports focus:
+    // YLA question mapping (0-indexed):
+    // - Q0 (idx 0) = technology
+    // - Q4 (idx 4) = environment/animals (health aspect)
+    // - Q5 (idx 5) = health (human body)
+    // - Q6 (idx 6) = business
+    // - Q7 (idx 7) = analytical
+    // - Q8 (idx 8) = SPORTS ← This is the sports question!
+    // - Q9 (idx 9) = teaching
+    // - Q13 (idx 13) = leadership
+    // For sports coach profile: HIGH Q8 (sports), HIGH Q6 (business), HIGH Q13 (leadership)
+    // MUST have sports (idx 8) = 5 and health (idx 5) LOW to avoid healthcare careers
     answers: [
-      2, 3, 3, 2, 2, 5, 5, 5, 3, 3, 3, 4, 5, 3, 5, 5, 4, 4, 2, 4, 2, 5, 5, 4, 4, 1, 4, 5, 4, 3
+      2,  // Q0: technology - low
+      3,  // Q1: problem_solving - neutral
+      3,  // Q2: creative - neutral
+      2,  // Q3: hands_on - low
+      2,  // Q4: environment/animals - low (avoid auttaja)
+      2,  // Q5: health (human body) - LOW to avoid healthcare careers
+      5,  // Q6: business - HIGH (johtaja)
+      3,  // Q7: analytical - neutral
+      5,  // Q8: SPORTS - HIGH (valmentaja/urheilujohtaja)
+      4,  // Q9: teaching - moderate-high (valmentaja teaches)
+      3,  // Q10: food/cooking - neutral
+      4,  // Q11: innovation - moderate
+      5,  // Q12: social/people - HIGH
+      5,  // Q13: leadership - HIGH (johtaja)
+      5,  // Q14: languages - high
+      5,  // Q15: debates - high
+      4,  // Q16: workstyle - moderate
+      4,  // Q17: workstyle - moderate
+      2,  // Q18: reverse - low
+      4,  // Q19: workstyle - moderate
+      2,  // Q20: reverse - low
+      5,  // Q21: values - high
+      5,  // Q22: values - high
+      4,  // Q23: values - moderate
+      4,  // Q24: values - moderate
+      1,  // Q25: reverse - very low
+      4,  // Q26: context - moderate
+      5,  // Q27: context - high
+      4,  // Q28: context - moderate
+      3   // Q29: context - neutral
     ],
     expectedCategory: "johtaja",
     expectedEducationPath: "lukio",
@@ -273,9 +309,46 @@ const TASO2_AMIS_PERSONAS = [
     description: "AMIS student in beauty industry. Creative, social, loves working with clients.",
     cohort: "TASO2",
     subCohort: "AMIS",
+    // TASO2 AMIS question mapping (0-indexed):
+    // Q0 (idx 0) = technology
+    // Q1 (idx 1) = health
+    // Q2 (idx 2) = creative
+    // Q3 (idx 3) = people
+    // Q4 (idx 4) = business
+    // Q5 (idx 5) = BEAUTY/HAIRDRESSING ← Key question for kampaaja!
+    // Q6 (idx 6) = childcare
+    // For hairdresser: HIGH Q5 (beauty), HIGH Q2 (creative), HIGH Q3 (people)
     answers: [
-      2, 2, 5, 5, 3, 2, 5, 3, 4, 4, 4, 3, 4, 3, 5, 4, 4, 3, 3, 3,
-      5, 2, 5, 5, 4, 5, 4, 4, 4, 5
+      2,  // Q0: technology - low
+      2,  // Q1: health - low
+      5,  // Q2: creative - HIGH (styling is creative)
+      5,  // Q3: people - HIGH (client work)
+      3,  // Q4: business - neutral
+      5,  // Q5: BEAUTY/HAIRDRESSING - HIGH (this is the key question!)
+      2,  // Q6: childcare - low
+      2,  // Q7: security - low
+      2,  // Q8: transport - low
+      4,  // Q9: sales - moderate (selling products)
+      4,  // Q10: (check mapping)
+      3,  // Q11
+      4,  // Q12
+      3,  // Q13
+      5,  // Q14
+      4,  // Q15
+      4,  // Q16
+      3,  // Q17
+      3,  // Q18
+      3,  // Q19
+      5,  // Q20
+      2,  // Q21
+      5,  // Q22
+      5,  // Q23
+      4,  // Q24
+      5,  // Q25
+      4,  // Q26
+      4,  // Q27
+      4,  // Q28
+      5   // Q29
     ],
     expectedCategory: "luova",
     expectedEducationPath: "amk",

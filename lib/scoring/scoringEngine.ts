@@ -6403,8 +6403,23 @@ function selectDiverseCareers(
         if (titleLower.includes('lähihoitaja') || titleLower.includes('sairaanhoitaja') ||
             titleLower.includes('hoitaja') || titleLower.includes('terveyden') ||
             titleLower.includes('kotihoitaja') || titleLower.includes('vanhustenhoitaja')) {
-          diversityBonus -= 10; // Strong penalty - creative people don't want healthcare
+          diversityBonus -= 80; // Strong penalty - creative people don't want healthcare
         }
+      }
+
+      // CRITICAL FIX v2.7: General penalty for healthcare careers when user has NO health interest
+      // Healthcare careers have high base scores due to broad appeal (people=0.9+)
+      // Without this penalty, they dominate even for non-healthcare profiles
+      const hasNoHealthInterest = healthScore <= 0.5; // Neutral or below
+      const isHealthcareCareer = titleLower.includes('hoitaja') || titleLower.includes('ensihoitaja') ||
+                                  titleLower.includes('terveydenhoitaja') || titleLower.includes('sairaanhoitaja') ||
+                                  titleLower.includes('lähihoitaja') || titleLower.includes('fysioterapeutti') ||
+                                  titleLower.includes('kätilö') || titleLower.includes('terveys');
+
+      if (hasNoHealthInterest && isHealthcareCareer) {
+        // Strong penalty for healthcare careers when user doesn't have health interest
+        const healthcareNonInterestPenalty = healthScore <= 0.25 ? 120 : 70;
+        diversityBonus -= healthcareNonInterestPenalty;
       }
 
       // For ANY caring profile with high health, boost nursing careers
@@ -6548,21 +6563,62 @@ function selectDiverseCareers(
       }
 
       // SPORTS/FITNESS CAREERS - specific handling for athletic users
-      // VERY STRICT: Only boost sports careers for people with STRONG sports signal
-      // AND who don't have competing creative/writing interests
-      // CRITICAL FIX v2.4: Leadership + sports combo should also trigger sports career boost
+      // CRITICAL FIX v2.6: Smart sports boost that considers RELATIVE strength
+      // Only boost sports when sports is user's DOMINANT interest, not just a secondary one
       const sportsScore = userInterests.sports || 0;
       const leadershipForSports = userInterests.leadership || 0;
       const businessForSports = userInterests.business || 0;
-      const isSportsOriented = sportsScore >= 0.6; // Very strict: must have answered 4-5
-      // NEW: Sports + Leadership combo qualifies as sports-oriented (sports coach profile)
-      const isSportsLeadershipCombo = sportsScore >= 0.5 && (leadershipForSports >= 0.5 || businessForSports >= 0.5);
-      const isModeratelySportsOriented = sportsScore >= 0.5 && healthScore >= 0.5; // Moderate
+      const writingScoreSports = userInterests.writing || 0;
+      const environmentScoreSports = userInterests.environment || 0;
+      const peopleScoreSports = userInterests.people || 0;
 
-      // CRITICAL: Don't boost sports careers if user has high writing/creative interest
-      // Writing/creative is a more specific career signal than general sports interest
-      // STRICT: Only consider competing when there's a STRONG creative signal (>= 0.7)
-      const hasCompetingCreativeInterest = hasHighWriting || creativeScoreLocal >= 0.7;
+      // CRITICAL: Check if sports is the DOMINANT interest (higher than healthcare/nature/people)
+      // If healthcare or environment is STRONGER than sports, user is NOT sports-focused
+      const isSportsDominant = sportsScore >= healthScore && sportsScore >= environmentScoreSports && sportsScore >= peopleScoreSports * 0.8;
+      const isHealthcareDominant = healthScore >= sportsScore + 0.1 || (healthScore >= 0.6 && sportsScore < 0.8);
+      const isEnvironmentDominant = environmentScoreSports >= sportsScore + 0.1;
+      const isPeopleDominant = peopleScoreSports >= 0.7 && sportsScore < 0.8;
+
+      // User wants sports careers ONLY if sports is their PRIMARY interest
+      const isSportsOriented = sportsScore >= 0.6 && isSportsDominant; // Must be dominant, not just high
+      // Sports + Leadership combo qualifies as sports-oriented (sports coach profile)
+      // CRITICAL FIX v2.7: Require ABOVE-NEUTRAL interest (> 0.5, not >= 0.5) to avoid boosting for neutral answers
+      const isSportsLeadershipCombo = sportsScore > 0.5 && (leadershipForSports > 0.5 || businessForSports > 0.5) && !isHealthcareDominant && !isEnvironmentDominant;
+      const isModeratelySportsOriented = sportsScore > 0.5 && healthScore > 0.5 && isSportsDominant; // Moderate but must be dominant
+
+      // CRITICAL FIX v2.5: Sports + Writing combo = sports communication careers
+      // When user has BOTH strong sports AND strong writing, they want sports+communication careers
+      // BUT only if they don't have stronger healthcare/environment interests
+      // CRITICAL FIX v2.7: Require ABOVE-NEUTRAL interest (> 0.5) - neutral (0.5) is NOT interest
+      const isSportsWritingCombo = sportsScore > 0.5 && writingScoreSports > 0.5 && !isHealthcareDominant && !isEnvironmentDominant;
+      const isStrongSportsWritingCombo = sportsScore >= 0.6 && writingScoreSports >= 0.6 && !isHealthcareDominant && !isEnvironmentDominant;
+
+      // SPORTS + WRITING HYBRID CAREERS - prioritize these when user has both strengths
+      if (isSportsWritingCombo) {
+        // Boost careers that combine sports + communication/writing
+        if (titleLower.includes('urheilujournalisti') || titleLower.includes('urheilutoimittaja') ||
+            titleLower.includes('sports journalist') || titleLower.includes('urheilukommentaattori')) {
+          diversityBonus += isStrongSportsWritingCombo ? 150 : 100;
+        }
+        // Sports coaches ALSO benefit from writing/communication skills
+        if (titleLower.includes('valmentaja') || titleLower.includes('urheiluvalmentaja') ||
+            titleLower.includes('liikunnanohjaaja') || titleLower.includes('liikuntaohjaaja')) {
+          diversityBonus += isStrongSportsWritingCombo ? 100 : 70;
+        }
+        // Sports content creator, sports marketing
+        if (titleLower.includes('sisällöntuottaja') || titleLower.includes('sisallontuottaja') ||
+            titleLower.includes('content') || titleLower.includes('markkinointi')) {
+          diversityBonus += isStrongSportsWritingCombo ? 80 : 50;
+        }
+        // Personal trainer (communication is key for motivation)
+        if (titleLower.includes('personal trainer') || titleLower.includes('pt')) {
+          diversityBonus += isStrongSportsWritingCombo ? 90 : 60;
+        }
+      }
+
+      // Only consider creative as "competing" if user does NOT have strong sports
+      // CRITICAL FIX: If user has BOTH sports AND writing, they are NOT competing - they combine!
+      const hasCompetingCreativeInterest = (hasHighWriting || creativeScoreLocal >= 0.7) && !isSportsWritingCombo;
 
       if ((isSportsOriented || isSportsLeadershipCombo) && !hasCompetingCreativeInterest) {
         // VALMENTAJA/COACH careers - strong boost for sports-oriented (without creative interest)
@@ -6591,49 +6647,78 @@ function selectDiverseCareers(
         }
       }
 
-      // PENALIZE sports careers for non-sports people
-      // If someone is NOT sports-oriented (sportsScore <= 0.5 = answered 3 or below = not enthusiastic)
-      // AND has high health/nature interest, they should get healthcare/nature careers, not sports
-      // CRITICAL FIX v2.4: Don't penalize if user has leadership/business profile - they want sports management
-      const isNotSportsEnthusiast = sportsScore <= 0.55; // 0.5 = neutral (answered 3/5)
+      // PENALIZE sports careers when user has STRONGER non-sports interests
+      // CRITICAL FIX v2.6: Penalize based on relative strength, not absolute threshold
       const leadershipScoreSports = userInterests.leadership || 0;
       const businessScoreSports = userInterests.business || 0;
       const hasLeadershipProfile = leadershipScoreSports >= 0.5 || businessScoreSports >= 0.5;
 
-      // Healthcare-focused but not sports enthusiast (and NOT a leadership profile)
-      if (isNotSportsEnthusiast && healthScore >= 0.5 && !hasLeadershipProfile) {
+      // Healthcare-focused (health is DOMINANT over sports) - should get healthcare, not sports
+      // This catches users like "Sara the Animal Lover" who have moderate sports but higher health
+      if (isHealthcareDominant && !hasLeadershipProfile && !isSportsLeadershipCombo) {
         if (titleLower.includes('valmentaja') || titleLower.includes('urheil') ||
             titleLower.includes('liikuntaneuvoja') || titleLower.includes('personal trainer') ||
             titleLower.includes('liikuntaterapeutti') || titleLower.includes('liikuntaohjaaja') ||
             titleLower.includes('liikunta')) {
-          diversityBonus -= 100; // STRONG penalty: Healthcare people should get healthcare, not sports
+          // STRONG penalty: Healthcare-focused people should get healthcare careers
+          diversityBonus -= 120;
         }
       }
 
-      // Nature/environment focused but not sports enthusiast (and NOT leadership profile)
-      if (isNotSportsEnthusiast && (natureScore >= 0.5 || analyticalScore >= 0.5) && !hasLeadershipProfile) {
+      // Environment-focused (environment is DOMINANT over sports) - should get environment careers
+      if (isEnvironmentDominant && !hasLeadershipProfile && !isSportsLeadershipCombo) {
         if (titleLower.includes('valmentaja') || titleLower.includes('urheil') ||
             titleLower.includes('liikunta') || titleLower.includes('liikuntaterapeutti')) {
-          diversityBonus -= 100; // Nature/research people should get nature careers, not sports
+          diversityBonus -= 120; // Environment people should get nature careers, not sports
         }
       }
 
-      // CREATIVE/WRITING focused people who also like sports - prioritize their creative interests
-      // CRITICAL FIX: If someone has STRONG writing/creative, penalize sports careers
-      // Why: Many people enjoy sports personally but want creative careers professionally
-      // Writing is a MORE SPECIFIC career signal than general sports interest
+      // People-focused (very high people interest but not sports-dominant)
+      if (isPeopleDominant && !hasLeadershipProfile && !isSportsLeadershipCombo) {
+        if (titleLower.includes('valmentaja') || titleLower.includes('urheil') ||
+            titleLower.includes('liikunta') || titleLower.includes('personal trainer')) {
+          diversityBonus -= 80; // Reduce but don't eliminate (coaches also work with people)
+        }
+      }
+
+      // CREATIVE/WRITING focused people who also like sports - smart handling
+      // CRITICAL FIX v2.5: If user has BOTH sports AND writing, they want HYBRID careers (sports+communication)
+      // Only penalize sports careers when user has writing/creative but NOT strong sports
       const writingScore = userInterests.writing || 0;
 
       // STRICT: Only penalize when there's a STRONG creative/writing signal (>= 0.6)
+      // AND user does NOT have strong sports interest (the combo case)
       // 0.5 is neutral (answered 3/5), 0.6+ indicates genuine interest (4-5)
       const hasStrongCreativeWritingSignal = writingScore >= 0.6 || creativeScore >= 0.7;
-      if (hasStrongCreativeWritingSignal) {
+
+      // CRITICAL FIX v2.7: Penalize sports careers when user shows NO POSITIVE sports interest
+      // <= 0.5 means neutral or below (answered 1-3 out of 5)
+      // > 0.5 means positive interest (answered 4-5 out of 5)
+      const shouldPenalizeSportsForCreative = hasStrongCreativeWritingSignal && sportsScore <= 0.5;
+
+      if (shouldPenalizeSportsForCreative) {
         if (titleLower.includes('valmentaja') || titleLower.includes('urheil') ||
             titleLower.includes('liikunta') || titleLower.includes('liikuntaterapeutti') ||
             titleLower.includes('fysioterapeutti')) {
           // Stronger penalty when writing is dominant, moderate when just creative
+          // But ONLY for users who don't have strong sports interest
           const penalty = writingScore >= 0.6 ? 120 : 80;
-          diversityBonus -= penalty; // Creative/writing people get creative careers, not sports
+          diversityBonus -= penalty; // Pure creative/writing people get creative careers, not sports
+        }
+      }
+
+      // CRITICAL FIX v2.7: General penalty for sports careers when user has NO sports interest
+      // This catches cases where user answered neutral (3) or below for sports
+      // Without this, sports careers can appear due to their base vector scores
+      const hasNoSportsInterest = sportsScore <= 0.5 && !isSportsOriented && !isSportsLeadershipCombo && !isSportsWritingCombo;
+      if (hasNoSportsInterest) {
+        if (titleLower.includes('valmentaja') || titleLower.includes('urheiluvalmentaja') ||
+            titleLower.includes('urheil') || titleLower.includes('liikuntaohjaaja') ||
+            titleLower.includes('liikunnanohjaaja') || titleLower.includes('personal trainer')) {
+          // Apply penalty to push sports careers down when user has no sports interest
+          // Stronger penalty for lower sports scores
+          const lackOfInterestPenalty = sportsScore <= 0.25 ? 100 : 60;
+          diversityBonus -= lackOfInterestPenalty;
         }
       }
 
