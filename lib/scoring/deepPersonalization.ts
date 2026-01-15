@@ -373,7 +373,7 @@ function getCareerConnectionText(subdimension: string, score: number, cohort: Co
   const scoreText = score > 0.8 ? 'erittäin vahva' : 'vahva';
 
   const connections: Record<string, string> = {
-    technology: `${scoreText} teknologiakiinnostuksesi takia ehdotamme sinulle IT-alan ammatteja, joissa pääset kehittämään ja luomaan digitaalisia ratkaisuja.`,
+    technology: `${scoreText.charAt(0).toUpperCase() + scoreText.slice(1)} teknologiakiinnostuksesi takia ehdotamme sinulle IT-alan ammatteja, joissa pääset kehittämään ja luomaan digitaalisia ratkaisuja.`,
     people: `Koska välität ihmisistä ja nautit vuorovaikutuksesta, ehdotamme ammatteja, joissa pääset auttamaan ja kohtaamaan ihmisiä päivittäin.`,
     health: `Kiinnostuksesi terveyttä ja hyvinvointia kohtaan ohjaa ehdotuksiamme kohti hoitoalaa ja terveyspalveluita.`,
     creative: `Luovuutesi näkyy vastauksissa, joten ehdotamme ammatteja, joissa pääset ilmaisemaan itseäsi ja suunnittelemaan uutta.`,
