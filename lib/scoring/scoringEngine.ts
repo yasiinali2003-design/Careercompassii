@@ -5405,154 +5405,69 @@ export function rankCareers(
     }
 
     // Calculate base score from category match
-    // Base score allows subdimension alignment to differentiate within categories
-    let baseScore = 25; // Lower starting point - subdimensions should differentiate
+    // CRITICAL FIX v3.0: Category affinity must be THE DOMINANT FACTOR
+    // Previous version: category bonus was ~200, but subdimension/profile bonuses could add 300+
+    // New version: category bonus is ~500-700, making it nearly impossible to override
+    let baseScore = 0; // Start at 0 - category determines tier
     const careerCategory = careerVector.category;
 
-    // Category matching bonus - VERY STRONG category preference
-    // CRITICAL: This must be strong enough to ensure careers from dominant category win
+    // Category matching bonus - ABSOLUTELY DOMINANT category preference
+    // CRITICAL: This must be strong enough that careers from dominant category ALWAYS win
     const categoryAffinity = categoryScoresMap[careerCategory] || 0;
+    const dominantAffinity = categoryScoresMap[dominantCategory] || 0;
     let categoryMultiplier = 1.0;
+
     if (careerCategory === dominantCategory) {
-      // Dominant category gets MASSIVE bonus + multiplier
-      baseScore += 100 + categoryAffinity; // e.g., 100 + 84 = 184 for 84% affinity
-      categoryMultiplier = 2.0; // Double all subsequent bonuses for dominant category
+      // Dominant category gets MASSIVE bonus that cannot be overcome
+      // Base: 500 + category affinity * 3 (e.g., 500 + 84*3 = 752 for 84% affinity)
+      baseScore = 500 + (categoryAffinity * 3);
+      categoryMultiplier = 2.0;
     } else if (topCategories.includes(careerCategory)) {
-      baseScore += 50 + (categoryAffinity * 0.5);
+      // Top 2-3 categories get moderate bonus
+      // Base: 200 + category affinity * 2 (e.g., 200 + 60*2 = 320 for 60% affinity)
+      baseScore = 200 + (categoryAffinity * 2);
       categoryMultiplier = 1.3;
     } else if (categoryAffinitiesArray.slice(3, 5).map((c: CategoryAffinity) => c.category).includes(careerCategory)) {
-      baseScore += 20;
+      // Categories 4-5 get small bonus
+      baseScore = 50 + categoryAffinity;
       categoryMultiplier = 0.8;
     } else {
-      // Non-matching categories get significant PENALTY
-      baseScore -= 50;
-      categoryMultiplier = 0.5; // Halve all bonuses for non-matching categories
+      // Non-matching categories get HARD PENALTY - they should NEVER appear in top 5
+      // Penalty scaled by how far from dominant category
+      baseScore = -100 - (dominantAffinity - categoryAffinity);
+      categoryMultiplier = 0.3;
     }
 
     // ========== STRENGTH-BASED SCORE ADJUSTMENT ==========
-    // Apply bonuses/penalties based on detected strength profiles
-    // This ensures displayed strengths match recommended careers
-    // COVERAGE: ALL 8 CATEGORIES WITH CROSS-CATEGORY PENALTIES
-    
-    // === JOHTAJA boost for business profiles ===
-    if (isBusinessProfile) {
-      if (careerCategory === 'johtaja') {
-        baseScore += 45; // Strong boost for business careers
-      } else if (careerCategory === 'auttaja' && !isHealthcareProfile) {
-        baseScore -= 35; // Penalty for healthcare if not healthcare-oriented
-      } else if (careerCategory === 'rakentaja' && !isHandsOnProfile) {
-        baseScore -= 25; // Penalty for trades if not hands-on oriented
-      }
+    // v3.0: These bonuses are now SECONDARY to category affinity
+    // They help differentiate WITHIN a category, not override category choice
+    // Max total bonus from profile detection: ~50 points (vs 500+ from category)
+
+    // === Profile bonuses - small differentiators within matching categories ===
+    // Only apply positive bonuses, no penalties (category penalty handles mismatches)
+    if (isBusinessProfile && careerCategory === 'johtaja') {
+      baseScore += 25; // Small boost within johtaja careers
     }
-    
-    // === INNOVOIJA boost for tech profiles ===
-    if (isTechProfile) {
-      if (careerCategory === 'innovoija') {
-        baseScore += 45;
-      } else if (careerCategory === 'visionaari') {
-        baseScore += 30; // Also good for research/strategy
-      } else if (careerCategory === 'auttaja' && !isHealthcareProfile) {
-        baseScore -= 30;
-      }
+    if (isTechProfile && (careerCategory === 'innovoija' || careerCategory === 'visionaari')) {
+      baseScore += 25;
     }
-    
-    // === AUTTAJA boost for healthcare profiles ===
-    if (isHealthcareProfile) {
-      if (careerCategory === 'auttaja') {
-        baseScore += 45;
-      } else if (careerCategory === 'johtaja' && !isBusinessProfile) {
-        baseScore -= 30;
-      } else if (careerCategory === 'innovoija' && !isTechProfile) {
-        baseScore -= 25;
-      }
+    if (isHealthcareProfile && careerCategory === 'auttaja') {
+      baseScore += 25;
     }
-    
-    // === LUOVA boost for creative profiles ===
-    // CRITICAL: Creative profiles should STRONGLY prefer creative careers
-    // Check if creative subdimensions are DOMINANT (high writing/arts_culture)
-    const veryCreative = writingScore >= 0.8 || artsScore >= 0.8 || (creativeStrengthSum >= 2.0);
-    
-    // Debug: Log veryCreative for first few careers
-    if (scoredCareers.length < 3) {
-      console.log(`[CREATIVE DEBUG] ${careerVector.title}: writingScore=${writingScore.toFixed(2)}, artsScore=${artsScore.toFixed(2)}, veryCreative=${veryCreative}, isCreative=${isCreativeProfile}`);
+    if (isCreativeProfile && careerCategory === 'luova') {
+      baseScore += 25;
     }
-    
-    if (isCreativeProfile) {
-      if (careerCategory === 'luova') {
-        baseScore += veryCreative ? 100 : 70; // VERY STRONG boost when creative is dominant
-      } else if (careerCategory === 'visionaari') {
-        baseScore += 25; // Creative thinkers may like strategy
-      } else {
-        // UNCONDITIONAL penalties for non-creative careers
-        // When user has HIGH creative signals (writing/arts), apply STRONGER penalties
-        if (veryCreative) {
-          // User's displayed strengths are creative - heavily penalize non-creative careers
-          if (careerCategory === 'innovoija') {
-            baseScore -= 70; // Very strong penalty - user is primarily creative, not tech
-          } else if (careerCategory === 'jarjestaja') {
-            baseScore -= 80;
-          } else if (careerCategory === 'auttaja' && !isHealthcareProfile) {
-            baseScore -= 70;
-          } else if (careerCategory === 'rakentaja' && !isHandsOnProfile) {
-            baseScore -= 60;
-          }
-        } else {
-          // Moderate creative profile - standard penalties
-          if (careerCategory === 'jarjestaja') {
-            baseScore -= 40;
-          } else if (careerCategory === 'auttaja' && !isHealthcareProfile) {
-            baseScore -= 40;
-          } else if (careerCategory === 'rakentaja' && !isHandsOnProfile) {
-            baseScore -= 35;
-          } else if (careerCategory === 'innovoija' && !isTechProfile) {
-            baseScore -= 25;
-          }
-        }
-      }
+    if (isHandsOnProfile && careerCategory === 'rakentaja') {
+      baseScore += 25;
     }
-    
-    // === RAKENTAJA boost for hands-on profiles ===
-    if (isHandsOnProfile) {
-      if (careerCategory === 'rakentaja') {
-        baseScore += 45;
-      } else if (careerCategory === 'innovoija' && !isTechProfile) {
-        baseScore -= 25;
-      } else if (careerCategory === 'jarjestaja' && !isOrganizerProfile) {
-        baseScore -= 20;
-      }
+    if (isOrganizerProfile && careerCategory === 'jarjestaja') {
+      baseScore += 25;
     }
-    
-    // === JÄRJESTÄJÄ boost for organizer profiles ===
-    if (isOrganizerProfile) {
-      if (careerCategory === 'jarjestaja') {
-        baseScore += 45;
-      } else if (careerCategory === 'johtaja') {
-        baseScore += 25; // Organizers can be good managers
-      } else if (careerCategory === 'luova' && !isCreativeProfile) {
-        baseScore -= 30;
-      }
+    if (isVisionaryProfile && careerCategory === 'visionaari') {
+      baseScore += 25;
     }
-    
-    // === VISIONÄÄRI boost for visionary profiles ===
-    if (isVisionaryProfile) {
-      if (careerCategory === 'visionaari') {
-        baseScore += 45;
-      } else if (careerCategory === 'innovoija') {
-        baseScore += 30; // Research often overlaps with innovation
-      } else if (careerCategory === 'rakentaja' && !isHandsOnProfile) {
-        baseScore -= 30;
-      }
-    }
-    
-    // === YMPÄRISTÖN-PUOLUSTAJA boost for environment profiles ===
-    if (isEnvironmentProfile) {
-      if (careerCategory === 'ympariston-puolustaja') {
-        baseScore += 50; // Strong boost for environment careers
-      } else if (careerCategory === 'visionaari') {
-        baseScore += 25; // Environmental research/strategy
-      } else if (careerCategory === 'johtaja' && !isBusinessProfile) {
-        baseScore -= 25;
-      }
+    if (isEnvironmentProfile && careerCategory === 'ympariston-puolustaja') {
+      baseScore += 25;
     }
     
     // DEBUG: Log score breakdown for first few careers
@@ -5884,7 +5799,10 @@ export function rankCareers(
 
     // Apply categoryMultiplier to alignment bonus for category-weighted scoring
     const adjustedAlignmentBonus = alignmentBonus * categoryMultiplier;
-    const totalScore = Math.min(100, Math.max(0, baseScore + adjustedAlignmentBonus + categoryPenalty));
+    // v3.0 FIX: Don't cap score here - allow high scores for category matching
+    // The score will be capped later for display purposes only
+    // This ensures category-matched careers maintain their advantage during diversity selection
+    const totalScore = Math.max(0, baseScore + adjustedAlignmentBonus + categoryPenalty);
     
     // Debug: Log scoring for järjestäjä careers
     if (careerCategory === 'jarjestaja' || careerVector.slug === 'it-tukihenkilo') {
@@ -5913,10 +5831,9 @@ export function rankCareers(
       answers
     );
 
-    // DEBUG: Log if score exceeds 100 before it's capped
-    if (totalScore > 100) {
-      console.log(`[SCORE BUG] ${careerVector.slug} has totalScore=${totalScore} BEFORE Math.min - this should not happen! base=${baseScore}, alignBonus=${alignmentBonus}, penalty=${categoryPenalty}`);
-    }
+    // v3.0: Scores >100 are now EXPECTED for dominant category careers
+    // This ensures they maintain ranking advantage during diversity selection
+    // Final capping to 100 happens in selectDiverseCareers() for display
 
     scoredCareers.push({
       ...careerVector,
@@ -5929,12 +5846,7 @@ export function rankCareers(
     });
   }
 
-  // DEBUG: Check for scores > 100 after push
-  const highScoreCareers = scoredCareers.filter(c => c.overallScore > 100);
-  if (highScoreCareers.length > 0) {
-    console.log(`[SCORE BUG] Found ${highScoreCareers.length} careers with score > 100 after push:`, highScoreCareers.map(c => `${c.slug}: ${c.overallScore}`).join(', '));
-  }
-
+  // v3.0: Scores >100 are expected - they ensure category-matched careers rank first
   // Sort by score and return top N with DIVERSITY filtering
   scoredCareers.sort((a, b) => b.overallScore - a.overallScore);
 
@@ -8334,12 +8246,12 @@ function _legacyRankCareers(
     careersToScore = curatedCareersTASO2;
   }
 
-  // HYBRID APPROACH: Apply MASSIVE category boost to careers in the dominant category
-  // This ensures careers from the user's detected category appear in top 5
-  const DOMINANT_CATEGORY_BOOST = 50; // 50% boost to careers in dominant category
-  const NON_MATCHING_PENALTY = -25; // -25% penalty for careers NOT in dominant category
+  // CRITICAL FIX v3.0: Category affinity must be THE DOMINANT FACTOR for TASO2/NUORI
+  // Previous version: category bonus was only 50 points - FAR too weak!
+  // New version: category determines base tier (500+ vs 200+ vs negative)
+  // This MUST match the YLA scoring logic for consistency
 
-  // Step 5: Score filtered careers with enhanced matching
+  // Step 5: Score filtered careers with CATEGORY-FIRST approach
   const scoredCareers = careersToScore.map(careerVector => {
     let { overallScore, dimensionScores: dimScores } = computeCareerFit(
       detailedScores,
@@ -8348,59 +8260,68 @@ function _legacyRankCareers(
       dominantCategory // Pass category for category-specific weighting
     );
 
-    // MASSIVE CATEGORY PREFERENCE: Strongly prioritize careers in the detected dominant category
-    // This is critical for ensuring järjestäjä, ympäristö, and other category matches work
-    if (careerVector.category === dominantCategory) {
-      overallScore = Math.min(100, overallScore + DOMINANT_CATEGORY_BOOST);
+    // v3.0 CATEGORY-FIRST SCORING: Category match determines the score tier
+    // This ensures careers from the user's dominant category ALWAYS appear in top results
+    const careerCategory = careerVector.category;
+
+    // Get top 3 categories for secondary matching
+    const topCategories = rankCategoryAffinities.slice(0, 3).map((c: any) => c.category);
+
+    // CRITICAL: Use LARGE score differences to ensure category dominance survives interest boosts
+    // Scores will be capped to 100 for display AFTER sorting
+    if (careerCategory === dominantCategory) {
+      // Dominant category: base score 200+ (UNCAPPED during scoring)
+      // This ensures category-matched careers ALWAYS rank first
+      overallScore = 200 + overallScore;
+    } else if (topCategories.includes(careerCategory)) {
+      // Top 2-3 categories: base score 100-170 range
+      overallScore = 100 + Math.min(70, overallScore);
     } else {
-      // Apply penalty to careers NOT in dominant category
-      overallScore = Math.max(0, overallScore + NON_MATCHING_PENALTY);
+      // Non-matching categories: HARD PENALTY - max 40
+      // Even with 35 points of interest boosts, they can't reach 100
+      overallScore = Math.min(40, overallScore * 0.3);
     }
 
     // ENHANCED MATCHING: Apply boosts BEFORE filtering
     // This ensures careers that match key interests get proper scores
 
+    // v3.0 INTEREST BOOSTS: Add bonuses WITHIN categories to differentiate careers
+    // These help rank careers within the same category tier, NOT override category choice
+    // Math.min(100, ...) REMOVED - scores will be capped for display AFTER sorting
+
     // Healthcare boost: if user has strong health interest and career is healthcare
     const userHealthScore = detailedScores.interests.health || 0;
     const careerHealthScore = careerVector.interests?.health || 0;
-    if (userHealthScore >= 0.4 && careerHealthScore >= 0.7) {
-      // More aggressive boost for healthcare careers
-      const healthBoost = Math.min(30, userHealthScore * 50); // Up to 30% boost
-      overallScore = Math.min(100, overallScore + healthBoost);
-      console.log(`[rankCareers] Boosted ${careerVector.title} by ${healthBoost.toFixed(1)}% (health: ${userHealthScore.toFixed(2)} -> ${careerHealthScore.toFixed(2)}, base: ${(overallScore - healthBoost).toFixed(1)}%)`);
+    if (userHealthScore >= 0.4 && careerHealthScore >= 0.7 && careerVector.category === 'auttaja') {
+      const healthBoost = Math.min(30, userHealthScore * 50); // Up to 30 points
+      overallScore += healthBoost;
     }
-    
+
     // People boost: if user has strong people interest and career is people-oriented
-    // Now based on career's own category, not user's dominant category
     const userPeopleScore = detailedScores.interests.people || 0;
     const careerPeopleScore = careerVector.interests?.people || 0;
     if (userPeopleScore >= 0.6 && careerPeopleScore >= 0.7 && careerVector.category === 'auttaja') {
-      const peopleBoost = Math.min(15, userPeopleScore * 25); // Up to 15% boost
-      overallScore = Math.min(100, overallScore + peopleBoost);
+      const peopleBoost = Math.min(15, userPeopleScore * 25); // Up to 15 points
+      overallScore += peopleBoost;
     }
-
-    // Education boost removed - careerVectors don't have education field
-    // Education-related careers use high 'people' scores instead
 
     // Technology boost: if user has strong tech interest and career is tech
     const userTechScoreInnovoija = detailedScores.interests.technology || 0;
     const careerTechScore = careerVector.interests?.technology || 0;
     if (userTechScoreInnovoija >= 0.6 && careerTechScore >= 0.7 && careerVector.category === 'innovoija') {
-      const techBoost = Math.min(20, userTechScoreInnovoija * 35); // Up to 20% boost
-      overallScore = Math.min(100, overallScore + techBoost);
+      const techBoost = Math.min(20, userTechScoreInnovoija * 35); // Up to 20 points
+      overallScore += techBoost;
     }
 
     // Creative boost: if user has strong creative interest and career is creative
     const userCreativeScore = detailedScores.interests.creative || 0;
     const careerCreativeScore = careerVector.interests?.creative || 0;
     if (userCreativeScore >= 0.6 && careerCreativeScore >= 0.7 && careerVector.category === 'luova') {
-      const creativeBoost = Math.min(20, userCreativeScore * 35); // Up to 20% boost
-      overallScore = Math.min(100, overallScore + creativeBoost);
+      const creativeBoost = Math.min(20, userCreativeScore * 35); // Up to 20 points
+      overallScore += creativeBoost;
     }
 
-    // Environment boost: if user has strong environment interest and career is environment-oriented
-    // CRITICAL: TASO2 maps environmental questions to 'impact' subdimension, not 'environment'
-    // Use max of environment, impact, and outdoor as environmental signal (same logic as category detection)
+    // Environment boost: if user has strong environment interest
     const userEnvironmentScore = detailedScores.interests.environment || 0;
     const userImpactScore = detailedScores.values?.impact || detailedScores.interests?.impact || 0;
     const userOutdoorScore = detailedScores.interests?.outdoor || detailedScores.context?.outdoor || 0;
@@ -8409,37 +8330,34 @@ function _legacyRankCareers(
     const careerImpactScore = careerVector.values?.impact || 0;
     const careerEffectiveEnvScore = Math.max(careerEnvironmentScore, careerImpactScore);
     if (userEffectiveEnvScore >= 0.5 && careerEffectiveEnvScore >= 0.6 && careerVector.category === 'ympariston-puolustaja') {
-      const envBoost = Math.min(35, userEffectiveEnvScore * 50); // Up to 35% boost for environmental match
-      overallScore = Math.min(100, overallScore + envBoost);
+      const envBoost = Math.min(35, userEffectiveEnvScore * 50); // Up to 35 points
+      overallScore += envBoost;
     }
 
-    // Analytical boost: if user has strong analytical interest and career is analytical/organizational
+    // Analytical boost: if user has strong analytical interest
     const userAnalyticalScore = detailedScores.interests.analytical || 0;
     const careerAnalyticalScore = careerVector.interests?.analytical || 0;
     if (userAnalyticalScore >= 0.5 && careerAnalyticalScore >= 0.6 && careerVector.category === 'jarjestaja') {
-      const analyticalBoost = Math.min(20, userAnalyticalScore * 35); // Up to 20% boost
-      overallScore = Math.min(100, overallScore + analyticalBoost);
+      const analyticalBoost = Math.min(20, userAnalyticalScore * 35); // Up to 20 points
+      overallScore += analyticalBoost;
     }
 
-    // Hands-on boost: if user has strong hands-on interest and career is hands-on/practical
+    // Hands-on boost: if user has strong hands-on interest
     const userHandsOnScore = detailedScores.interests.hands_on || 0;
     const careerHandsOnScore = careerVector.interests?.hands_on || 0;
     if (userHandsOnScore >= 0.5 && careerHandsOnScore >= 0.6 && careerVector.category === 'rakentaja') {
-      const handsOnBoost = Math.min(25, userHandsOnScore * 40); // Up to 25% boost
-      overallScore = Math.min(100, overallScore + handsOnBoost);
+      const handsOnBoost = Math.min(25, userHandsOnScore * 40); // Up to 25 points
+      overallScore += handsOnBoost;
     }
-    
-    // Leadership boost: if user has strong leadership workstyle/interest and career is leadership-oriented
-    // Now based on career's own category, not user's dominant category
+
+    // Leadership boost: if user has strong leadership signal
     const userLeadershipWorkstyle = detailedScores.workstyle?.leadership || 0;
     const userLeadershipInterest = detailedScores.interests?.leadership || 0;
     const careerLeadershipWorkstyle = careerVector.workstyle?.leadership || 0;
     const combinedLeadership = Math.max(userLeadershipWorkstyle, userLeadershipInterest);
-    // REDUCED: Leadership boost from 45% to 25% to prevent päällikkö over-recommendation
-    // Also increased threshold from 0.2 to 0.5 to require stronger leadership signal
     if (combinedLeadership >= 0.5 && careerLeadershipWorkstyle >= 0.5 && careerVector.category === 'johtaja') {
-      const leadershipBoost = Math.min(25, combinedLeadership * 40); // REDUCED: Was 45% max, now 25% max
-      overallScore = Math.min(100, overallScore + leadershipBoost);
+      const leadershipBoost = Math.min(25, combinedLeadership * 40); // Up to 25 points
+      overallScore += leadershipBoost;
     }
 
     // Planning boost: if user has strong career_clarity (planning) values and career is planning/vision-oriented
@@ -8453,62 +8371,57 @@ function _legacyRankCareers(
     const userGrowth = detailedScores.values?.growth || 0;
     const userFlexibility = detailedScores.workstyle?.flexibility || 0;
 
+    // Visionaari-specific boosts (within category only)
     if (careerVector.category === 'visionaari') {
-      // Boost for career_clarity (strongest signal for YLA)
       if (userCareerClarity >= 0.3) {
-        const planningBoost = Math.min(40, userCareerClarity * 80); // Up to 40% boost for career_clarity
-        overallScore = Math.min(100, overallScore + planningBoost);
+        const planningBoost = Math.min(40, userCareerClarity * 80); // Up to 40 points
+        overallScore += planningBoost;
       }
 
       // Cohort-specific boosts
       if (cohort === 'TASO2') {
-        // TASO2: entrepreneurship + technology
         if (userEntrepreneurship >= 0.4) {
-          const entrepreneurshipBoost = Math.min(35, userEntrepreneurship * 70); // Up to 35% boost
-          overallScore = Math.min(100, overallScore + entrepreneurshipBoost);
+          const entrepreneurshipBoost = Math.min(35, userEntrepreneurship * 70); // Up to 35 points
+          overallScore += entrepreneurshipBoost;
         }
         if (userTechScore >= 0.5) {
-          const techBoost = Math.min(25, userTechScore * 40); // Up to 25% boost
-          overallScore = Math.min(100, overallScore + techBoost);
+          const techBoost = Math.min(25, userTechScore * 40); // Up to 25 points
+          overallScore += techBoost;
         }
       } else if (cohort === 'NUORI') {
-        // NUORI: global + advancement + growth + flexibility
         if (userGlobalValues >= 0.4) {
-          const globalBoost = Math.min(30, userGlobalValues * 50); // Up to 30% boost
-          overallScore = Math.min(100, overallScore + globalBoost);
+          const globalBoost = Math.min(30, userGlobalValues * 50); // Up to 30 points
+          overallScore += globalBoost;
         }
         if (userAdvancement >= 0.4) {
-          const advancementBoost = Math.min(30, userAdvancement * 50); // Up to 30% boost
-          overallScore = Math.min(100, overallScore + advancementBoost);
+          const advancementBoost = Math.min(30, userAdvancement * 50); // Up to 30 points
+          overallScore += advancementBoost;
         }
         if (userGrowth >= 0.4) {
-          const growthBoost = Math.min(25, userGrowth * 45); // Up to 25% boost
-          overallScore = Math.min(100, overallScore + growthBoost);
+          const growthBoost = Math.min(25, userGrowth * 45); // Up to 25 points
+          overallScore += growthBoost;
         }
         if (userFlexibility >= 0.4) {
-          const flexibilityBoost = Math.min(20, userFlexibility * 40); // Up to 20% boost
-          overallScore = Math.min(100, overallScore + flexibilityBoost);
+          const flexibilityBoost = Math.min(20, userFlexibility * 40); // Up to 20 points
+          overallScore += flexibilityBoost;
         }
       } else {
-        // YLA: creative interest (innovation/vision) - but only if career_clarity is also present to avoid luova confusion
+        // YLA cohort
         if (userCreativeInterest >= 0.5 && userCareerClarity >= 0.2) {
-          const creativeBoost = Math.min(30, userCreativeInterest * 50); // Up to 30% boost for creative
-          overallScore = Math.min(100, overallScore + creativeBoost);
+          const creativeBoost = Math.min(30, userCreativeInterest * 50); // Up to 30 points
+          overallScore += creativeBoost;
         }
-        // Boost for global values (but lower to avoid johtaja confusion)
         if (userGlobalValues >= 0.4 && userCareerClarity >= 0.2) {
-          const globalBoost = Math.min(20, userGlobalValues * 30); // Up to 20% boost for global
-          overallScore = Math.min(100, overallScore + globalBoost);
+          const globalBoost = Math.min(20, userGlobalValues * 30); // Up to 20 points
+          overallScore += globalBoost;
         }
       }
     }
 
-    // PHASE 2: Career Progression Boost
-    // Boost careers that are natural progressions from the user's current occupation
+    // PHASE 2: Career Progression Boost (applies to all categories)
     if (currentOccupation && currentOccupation !== "none") {
       const careerFI_temp = careersFI.find(c => c && c.id === careerVector.slug);
       if (careerFI_temp?.progression_from) {
-        // Check if current occupation is in the progression_from list
         const occupationLower = currentOccupation.toLowerCase().trim();
         const isProgression = careerFI_temp.progression_from.some(fromCareer => {
           return occupationLower.includes(fromCareer.toLowerCase()) ||
@@ -8516,10 +8429,8 @@ function _legacyRankCareers(
         });
 
         if (isProgression) {
-          // Significant boost for natural career progression (up to 35%)
-          const progressionBoost = 35;
-          overallScore = Math.min(100, overallScore + progressionBoost);
-          console.log(`[rankCareers] 🔼 Career Progression Boost: ${careerVector.title} is a natural progression from ${currentOccupation} (+${progressionBoost}%, total: ${Math.min(100, overallScore).toFixed(1)}%)`);
+          const progressionBoost = 35; // Up to 35 points
+          overallScore += progressionBoost;
         }
       }
     }
@@ -8546,11 +8457,10 @@ function _legacyRankCareers(
         const overlappingSkills = targetSkills.filter(skill => currentSkills.has(skill));
         const overlapPercentage = overlappingSkills.length / targetSkills.length;
 
-        // Apply boost based on skill overlap (up to 25% for high overlap)
+        // Apply boost based on skill overlap (up to 25 points for high overlap)
         if (overlapPercentage >= 0.3) { // At least 30% skill overlap
-          const skillBoost = Math.min(25, overlapPercentage * 40); // Up to 25% boost
-          overallScore = Math.min(100, overallScore + skillBoost);
-          console.log(`[rankCareers] 🔄 Career Switching Boost: ${careerVector.title} shares ${overlappingSkills.length}/${targetSkills.length} skills with ${currentOccupation} (${(overlapPercentage * 100).toFixed(0)}% overlap, +${skillBoost.toFixed(1)}%, total: ${Math.min(100, overallScore).toFixed(1)}%)`);
+          const skillBoost = Math.min(25, overlapPercentage * 40); // Up to 25 points
+          overallScore += skillBoost;
         }
       }
     }
@@ -8633,8 +8543,7 @@ function _legacyRankCareers(
 
     const flagshipBoost = flagshipCareers[careerVector.slug] || 0;
     if (flagshipBoost > 0) {
-      overallScore = Math.min(100, overallScore + flagshipBoost);
-      console.log(`[rankCareers] ⭐ Flagship Career Boost: ${careerVector.title} +${flagshipBoost}% (total: ${Math.min(100, overallScore).toFixed(1)}%)`);
+      overallScore += flagshipBoost;
     }
 
     // Get full career data
@@ -8653,11 +8562,12 @@ function _legacyRankCareers(
     // Determine confidence
     const confidence = overallScore >= 75 ? 'high' : overallScore >= 60 ? 'medium' : 'low';
 
+    // v3.0: Keep full score for sorting - will cap for display AFTER sorting
     return {
       slug: careerVector.slug,
       title: careerVector.title,
       category: careerVector.category,
-      overallScore: Math.round(overallScore),
+      overallScore: Math.round(overallScore), // Keep uncapped for sorting
       dimensionScores: dimScores,
       reasons: reasons.filter(r => r.length > 0),
       confidence,
@@ -8774,8 +8684,8 @@ function _legacyRankCareers(
         slugLower.includes(pattern.toLowerCase()) || titleLower.includes(pattern.toLowerCase())
       );
       if (shouldBoost) {
-        career.overallScore = Math.min(100, career.overallScore * personalityBoost.boostMultiplier); // Cap at 100
-        console.log(`[rankCareers] BOOSTED: ${career.title} (${slugLower}) - new score: ${career.overallScore}`);
+        // v3.0: Don't cap here - let scores stay high for proper sorting
+        career.overallScore = career.overallScore * personalityBoost.boostMultiplier;
       }
     }
   }
@@ -8987,7 +8897,11 @@ function _legacyRankCareers(
       return a.career.title.localeCompare(b.career.title, 'fi');
     })
     .slice(0, dynamicLimit)
-    .map(entry => entry.career);
+    .map(entry => ({
+      // v3.0: Cap score at 100 for display AFTER sorting
+      ...entry.career,
+      overallScore: Math.min(100, entry.career.overallScore)
+    }));
   const resultCategories = finalResults.map(c => c.category);
   const growthCount = finalResults.filter(c => c.outlook === 'kasvaa').length;
   console.log(`[rankCareers] Returning ${finalResults.length} careers (dominant: ${dominantCategory}, kasvava ala: ${growthCount}) – categories: ${resultCategories.join(', ')}`);
@@ -9072,16 +8986,18 @@ export function generateUserProfile(
   // Prioritize strengths that match the top category
   const categoryRelevantKeys = categoryStrengthMap[topCategory] || [];
 
-  // Category-specific interest keys (the interests that define each category)
+  // Category-specific interest keys (aligned with CATEGORY_SIGNALS in categoryAffinities.ts)
+  // These must match to ensure strengths align with category affinities
+  // NOTE: Some interests appear in multiple categories (e.g., sports in both auttaja & rakentaja)
   const categoryInterestKeys: Record<string, string[]> = {
-    'auttaja': ['health', 'people', 'growth', 'teaching', 'sports'],
-    'innovoija': ['technology', 'analytical', 'problem_solving', 'innovation'],
-    'luova': ['creative', 'writing', 'arts_culture'],
-    'rakentaja': ['hands_on', 'technology', 'outdoor'],
-    'johtaja': ['leadership', 'business', 'people'],
-    'jarjestaja': ['analytical', 'business'],
-    'visionaari': ['innovation', 'leadership', 'analytical'],
-    'ympariston-puolustaja': ['environment', 'nature', 'outdoor']
+    'auttaja': ['health', 'social_impact', 'teaching', 'people', 'growth', 'sports'],  // sports for valmentaja/coaches
+    'innovoija': ['technology', 'innovation', 'problem_solving', 'analytical'],
+    'luova': ['creative', 'arts_culture', 'writing'],
+    'rakentaja': ['hands_on', 'outdoor', 'sports', 'precision'],
+    'johtaja': ['leadership', 'business', 'entrepreneurship', 'advancement'],
+    'jarjestaja': ['organization', 'structure', 'precision', 'stability', 'analytical'],
+    'visionaari': ['global', 'international', 'advancement', 'impact', 'innovation'],
+    'ympariston-puolustaja': ['environment', 'nature', 'outdoor', 'impact']
   };
 
   const relevantInterestKeys = categoryInterestKeys[topCategory] || [];
