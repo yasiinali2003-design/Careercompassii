@@ -1,7 +1,7 @@
 /**
  * Curated Flagship Career Pool
  *
- * This is a carefully selected subset of ~160 careers optimized for:
+ * This is a carefully selected subset of ~177 careers optimized for:
  * - Finnish youth (YLA cohort) relevance
  * - Real, achievable career paths (entry-level, NOT senior executive roles)
  * - Education variety (ammattikoulu, AMK, yliopisto options)
@@ -9,23 +9,23 @@
  * - BALANCED coverage for all personality types
  *
  * Variable sizing by category based on real-world career diversity:
- * - Auttaja: 28 careers (healthcare, education, social work)
- * - Innovoija: 24 careers (tech/engineering)
- * - Rakentaja: 21 careers (trades, construction, logistics, hospitality)
- * - Luova: 17 careers (creative fields, media)
- * - Järjestäjä: 32 careers (admin, sales, finance - EXPANDED)
- * - Johtaja: 3 careers (achievable leadership only)
- * - Visionääri: 12 careers (strategy, research)
- * - Ympäristön puolustaja: 24 careers (environment, sustainability - EXPANDED)
+ * - Auttaja: 36 careers (healthcare, education, social work, customer service)
+ * - Innovoija: 25 careers (tech/engineering/UX)
+ * - Rakentaja: 22 careers (trades, construction, logistics)
+ * - Luova: 16 careers (creative fields, media, culinary arts)
+ * - Järjestäjä: 33 careers (admin, finance, logistics coordination)
+ * - Johtaja: 11 careers (achievable leadership, sales leadership)
+ * - Visionääri: 13 careers (strategy, research, journalism)
+ * - Ympäristön puolustaja: 24 careers (environment, sustainability)
  *
- * Total: ~161 careers (all entry-level achievable)
- * 
- * UPDATED: Expanded järjestäjä and ympäristö categories for better personality matching
+ * Total: ~177 unique careers (all entry-level achievable)
+ *
+ * NOTE: Categories are based on careerVectors.ts source of truth
  */
 
 export const CURATED_CAREER_SLUGS: string[] = [
   // ==========================================
-  // AUTTAJA (28) - Healthcare, Education, Social Work
+  // AUTTAJA (36) - Healthcare, Education, Social Work, Customer Service
   // ==========================================
   // Healthcare - Hospital/Clinical
   "sairaanhoitaja",           // Nurse - AMK
@@ -50,23 +50,35 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "farmaseutti",              // Pharmacist - yliopisto
   "hieroja",                  // Massage therapist - ammattikoulu
   "elainlaakari",             // Veterinarian - yliopisto
-  "optikko",                  // Optician - AMK (NEW)
-  "liikunnanohjaaja",         // Sports instructor - AMK (NEW)
+  "optikko",                  // Optician - AMK
+  "liikunnanohjaaja",         // Sports instructor - AMK
 
   // Education
   "luokanopettaja",           // Primary teacher - yliopisto
   "lastentarhanopettaja",     // Kindergarten teacher - AMK/yliopisto
   "erityisopettaja",          // Special education teacher - yliopisto
   "opettaja",                 // Teacher (general) - yliopisto
-  "opinto-ohjaaja",           // Study counselor - yliopisto (NEW)
-  "koulunkäyntiavustaja",     // School assistant - ammattikoulu (NEW)
+  "opinto-ohjaaja",           // Study counselor - yliopisto
+  "koulunkäyntiavustaja",     // School assistant - ammattikoulu
 
   // Social Work & Public Health
   "sosiaalityontekija",       // Social worker - AMK/yliopisto
   "terveydenhoitaja",         // Public health nurse - AMK
 
+  // Customer Service & HR (actually auttaja category)
+  "hr-asiantuntija",          // HR specialist - helping people
+  "asiakaspalveluedustaja",   // Customer service rep - helping customers
+  "asiakaspalvelun-neuvoja",  // Customer service advisor
+  "poliisi",                  // Police officer - public safety/helping
+  "hotellityontekija",        // Hotel worker - hospitality/helping
+
+  // Sports & Coaching (actually auttaja category)
+  "valmentaja",               // Coach - helping athletes
+  "personal-trainer",         // Personal trainer - fitness guidance
+  "urheiluvalmentaja",        // Sports coach
+
   // ==========================================
-  // INNOVOIJA (24) - Technology, Engineering, Research
+  // INNOVOIJA (25) - Technology, Engineering, UX
   // ==========================================
   // Software Development
   "ohjelmistokehittaja",      // Software developer
@@ -82,26 +94,29 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "data-insinoori",           // Data engineer
   "koneoppimisasiantuntija",  // ML specialist
   "tekoaly-asiantuntija",     // AI specialist
-  "data-analyytikko-junior",  // Junior data analyst (NEW)
+  "data-analyytikko-junior",  // Junior data analyst
 
   // Security & Infrastructure
   "tietoturvaanalyytikko",    // Security analyst
   "kyberturvallisuusanalyytikko", // Cybersecurity analyst
   "pilvipalveluarkkitehti",   // Cloud architect
   "devops-insinoori",         // DevOps engineer
-  "it-tukihenkilo",           // IT support (NEW)
+  "it-tukihenkilo",           // IT support
 
-  // Engineering & Research
+  // Engineering
   "konetekniikan-insinoori",  // Mechanical engineer
   "sahkotekniikan-insinoori", // Electrical engineer
   "automaatio-insinoori",     // Automation engineer
   "robotiikka-insinoori",     // Robotics engineer
-  "tutkija",                  // Researcher
   "kemiisti",                 // Chemist
   "insinoori",                // Engineer (general)
 
+  // UX & Sales Engineering (actually innovoija category)
+  "ux-suunnittelija",         // UX designer - innovative problem solving
+  "myyntiedustaja",           // Sales representative - innovative solutions
+
   // ==========================================
-  // RAKENTAJA (21) - Trades, Construction, Manufacturing, Hospitality
+  // RAKENTAJA (22) - Trades, Construction, Manufacturing
   // ==========================================
   // Construction
   "kirvesmies",               // Carpenter
@@ -112,6 +127,7 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "muurari",                  // Bricklayer
   "rakennusinsinoori",        // Construction engineer
   "rakennusmestari",          // Construction supervisor
+  "rakennustyonjohtaja",      // Construction foreman - hands-on leadership
 
   // Automotive & Machinery
   "automekaanikko",           // Auto mechanic
@@ -119,34 +135,29 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "koneistaja",               // Machinist
   "hitsaaja",                 // Welder
 
-  // Transportation & Logistics
+  // Transportation
   "kuorma-auton-kuljettaja",  // Truck driver
   "trukinkuljettaja",         // Forklift operator
-  "varastotyontekija",        // Warehouse worker
   "jakelukuljettaja",         // Delivery driver - ammattikoulu
 
   // Other Trades
   "puuseppa",                 // Woodworker
   "puutarhuri",               // Gardener
   "siivoja",                  // Cleaner
-  
-  // Hospitality & Service (hands-on service work)
+
+  // Service Work (hands-on)
   "ravintolatyontekija",      // Restaurant worker
   "tarjoilija",               // Waiter/Waitress
-  "hotellityontekija",        // Hotel worker
-  "kokki",                    // Chef - CRITICAL ADDITION
   "leipuri",                  // Baker
-  "kondiittori",              // Pastry chef
 
   // ==========================================
-  // LUOVA (16) - Design, Media, Arts
+  // LUOVA (16) - Design, Media, Arts, Culinary
   // ==========================================
   // Digital Design
   "graafinen-suunnittelija",  // Graphic designer
   "ui-ux-designer",           // UI/UX designer
   "verkkosuunnittelija",      // Web designer
   "animaattori",              // Animator
-  "ux-suunnittelija",         // UX designer
 
   // Media Production
   "valokuvaaja",              // Photographer
@@ -154,7 +165,6 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "aanisuunnittelija",        // Sound designer
   "sisallontuottaja",         // Content creator
   "podcast-tuottaja",         // Podcast producer
-  "viestinta-assistentti",    // Communications assistant (NEW)
 
   // Traditional Arts & Craft
   "muusikko",                 // Musician
@@ -162,10 +172,13 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "kirjailija",               // Writer
   "sisustusarkkitehti-luova", // Interior architect
   "parturi-kampaaja",         // Hairdresser
-  "uutistoimittaja",          // Reporter/Journalist
+
+  // Culinary Arts (creative cooking)
+  "kokki",                    // Chef - creative culinary arts
+  "kondiittori",              // Pastry chef - creative baking
 
   // ==========================================
-  // JÄRJESTÄJÄ (32) - Administration, Finance, Entry-level Business
+  // JÄRJESTÄJÄ (33) - Administration, Finance, Logistics
   // ==========================================
   // Finance & Accounting - Entry Level
   "kirjanpitaja",             // Accountant
@@ -176,67 +189,59 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "pankkitoimihenkilo",       // Bank clerk
   "vakuutusvirkailija",       // Insurance clerk
   "veroasiantuntija",         // Tax specialist
-  "palkanlaskija",            // Payroll specialist (NEW)
-  "tilintarkastajan-assistentti", // Audit assistant (NEW)
-  "taloushallinnon-harjoittelija", // Finance trainee (NEW)
+  "palkanlaskija",            // Payroll specialist
+  "tilintarkastajan-assistentti", // Audit assistant
+  "taloushallinnon-harjoittelija", // Finance trainee
+  "liiketoiminta-analyytikko", // Business analyst - organizing/analyzing
 
   // Administration - Entry Level
-  "hr-asiantuntija",          // HR specialist
   "toimistosihteeri",         // Office secretary
   "reseptionisti",            // Receptionist
   "hr-koordinaattori",        // HR coordinator
-  "henkilostoasiantuntija",   // HR specialist (NEW)
-  "hallinnon-koordinaattori", // Admin coordinator (NEW)
-  "projektikoordinaattori",   // Project coordinator (NEW)
-  "tapahtumakoordinaattori",  // Event coordinator (NEW)
-  
-  // Sales & Customer Service - Entry Level
-  "myyntityontekija",         // Sales worker - ammattikoulu
-  "asiakaspalveluedustaja",   // Customer service rep - ammattikoulu
-  "myyntiedustaja",           // Sales representative
+  "henkilostoasiantuntija",   // HR specialist
+  "hallinnon-koordinaattori", // Admin coordinator
+  "projektikoordinaattori",   // Project coordinator
+  "tapahtumakoordinaattori",  // Event coordinator
+  "viestinta-assistentti",    // Communications assistant
+
+  // Sales Support & Marketing
   "myyntiassistentti",        // Sales assistant
   "markkinointiassistentti",  // Marketing assistant
-  "asiakaspalvelun-neuvoja",  // Customer service advisor
-  "kassatyontekija",          // Cashier (NEW)
-  "asiakaspalvelun-koordinaattori", // Customer service coord (NEW)
-  
-  // Legal & Security
-  "poliisi",                  // Police officer - ammattikoulu/AMK
-  "turvallisuusvastaava",     // Security coordinator (NEW)
+  "kassatyontekija",          // Cashier
+  "asiakaspalvelun-koordinaattori", // Customer service coordinator
+
+  // Security & Control
+  "turvallisuusvastaava",     // Security coordinator
+  "lennonjohtaja",            // Air traffic controller - coordination role
 
   // Logistics & Operations - Entry Level
   "logistiikkakoordinaattori", // Logistics coordinator
   "hankinta-asiantuntija",    // Procurement specialist
   "toimitusketjuanalyytikko", // Supply chain analyst
   "hankinta-assistentti",     // Procurement assistant
-  "isannoitsija",             // Property manager (NEW)
+  "isannoitsija",             // Property manager
+  "varastotyontekija",        // Warehouse worker - logistics operations
 
   // ==========================================
-  // JOHTAJA (15) - Achievable Entry-level Leadership Only
+  // JOHTAJA (11) - Achievable Entry-level Leadership & Sales
   // ==========================================
   // Note: Only careers achievable straight from school or with minimal experience
-  "liikkeenjohdon-trainee",   // Management trainee (NEW) - entry-level
-  "rakennustyonjohtaja",      // Construction foreman - achievable
-  "lennonjohtaja",            // Air traffic controller - specialized training
-  // Entry-level business & sales careers (expanded)
-  "myyntityontekija",
-  "asiakaspalveluvastaava",
-  "startup-perustaja",
-  "kiinteistonvalittaja",
-  "asiakkuusvastaava",
-  "sales-development-representative",
-  "palvelumuotoilija",
-  "myynti-insinoori",
-  // Sports & Fitness Leadership - CRITICAL ADDITIONS for "Onni the Team Captain" type
-  "valmentaja",               // Coach - sports leadership
-  "personal-trainer",         // Personal trainer - fitness leadership
-  "urheiluvalmentaja",        // Sports coach
-  "liikunnanohjaaja",         // Sports instructor (already in auttaja but needed for leadership)
+  "liikkeenjohdon-trainee",   // Management trainee - entry-level leadership
+  "startup-perustaja",        // Startup founder - entrepreneurial leadership
+  "myyntityontekija",         // Sales worker - sales leadership track
+
+  // Entry-level business & sales careers
+  "asiakaspalveluvastaava",   // Customer service manager
+  "kiinteistonvalittaja",     // Real estate agent
+  "asiakkuusvastaava",        // Account manager
+  "sales-development-representative", // SDR
+  "palvelumuotoilija",        // Service designer
+  "myynti-insinoori",         // Sales engineer
 
   // ==========================================
-  // VISIONÄÄRI (11) - Strategy, Consulting, Research
+  // VISIONÄÄRI (13) - Strategy, Consulting, Research, Journalism
   // ==========================================
-  "liiketoiminta-analyytikko", // Business analyst
+  "tutkija",                  // Researcher - visionary research
   "strategia-konsultti",      // Strategy consultant
   "innovaatiokonsultti",      // Innovation consultant
   "rahoitusanalyytikko",      // Financial analyst
@@ -245,9 +250,9 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "journalisti",              // Journalist
   "tiedeviestija-tulevaisuus", // Science communicator
   "tutkimusasiantuntija",     // Research specialist
-  "startup-perustaja",        // Startup founder / Entrepreneur
-  "ekonomisti",               // Economist (NEW)
-  "tutkimusavustaja",         // Research assistant (NEW)
+  "ekonomisti",               // Economist
+  "tutkimusavustaja",         // Research assistant
+  "uutistoimittaja",          // News reporter/journalist - visionary communication
 
   // ==========================================
   // YMPÄRISTÖN PUOLUSTAJA (24) - Environment, Sustainability
@@ -297,16 +302,16 @@ export function getCuratedCareerSlugs(): string[] {
 }
 
 /**
- * Category distribution summary (updated - balanced for all personality types)
+ * Category distribution summary (based on careerVectors.ts source of truth)
  */
 export const CURATED_CATEGORY_DISTRIBUTION = {
-  auttaja: 28,                // Healthcare, education, social work
-  innovoija: 24,              // Tech, engineering
-  rakentaja: 21,              // Trades, construction, hospitality
-  luova: 17,                  // Creative, media
-  jarjestaja: 32,             // Admin, finance, sales (entry-level) - EXPANDED
-  johtaja: 12,                 // Only achievable leadership roles
-  visionaari: 12,             // Strategy, research
-  "ympariston-puolustaja": 24, // Environment - EXPANDED
-  total: 161                  // All entry-level achievable
+  auttaja: 36,                // Healthcare, education, social work, customer service
+  innovoija: 25,              // Tech, engineering, UX
+  rakentaja: 22,              // Trades, construction, manufacturing
+  luova: 16,                  // Creative, media, culinary arts
+  jarjestaja: 33,             // Admin, finance, logistics
+  johtaja: 11,                // Entry-level leadership, sales leadership
+  visionaari: 13,             // Strategy, research, journalism
+  "ympariston-puolustaja": 24, // Environment, sustainability
+  total: 177                  // All entry-level achievable (some careers appear in multiple sections for cross-referencing)
 };
