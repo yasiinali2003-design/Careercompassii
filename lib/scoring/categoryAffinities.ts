@@ -59,12 +59,12 @@ const CATEGORY_SIGNALS: Record<string, {
   },
   rakentaja: {
     // Rakentaja = tradespeople, athletes, physical workers
-    // IMPROVED v2.2: hands_on is THE key signal - if hands_on is high, this should dominate
-    // Added technology to negative - tech workers should be innovoija, not rakentaja
-    // Removed precision from primary - precision is more järjestäjä
+    // IMPROVED v2.3: hands_on is THE dominant signal for rakentaja
+    // Removed technology from negative - automekaanikot and machine operators use tech
+    // Removed innovation from negative - builders can innovate in their craft
     primary: ['hands_on', 'outdoor', 'sports'],
     secondary: ['stability', 'independence', 'teamwork', 'precision'],
-    negative: ['creative', 'writing', 'technology', 'innovation'],
+    negative: ['creative', 'writing', 'global'],  // Reduced negatives for better scoring
     label_fi: 'Rakentaja'
   },
   johtaja: {
@@ -381,49 +381,124 @@ export function calculateCategoryAffinities(
     const primaryStrength = primaryCount > 0 ? strongPrimaryCount / primaryCount : 0;
     const primaryStrengthBonus = primaryStrength * 0.05; // Up to 5% extra
 
-    // CRITICAL FIX: Healthcare vs Environment differentiation
-    // When health+people combo exists, boost auttaja and penalize ympariston-puolustaja
+    // CRITICAL FIX v2.3: Better profile differentiation
+    // Detect primary profile type based on signal combinations
     const healthScore = allScores.health || 0;
     const peopleScore = allScores.people || 0;
+    const teachingScore = allScores.teaching || 0;
     const environmentScore = allScores.environment || 0;
     const natureScore = allScores.nature || 0;
-    const isHealthcareProfile = healthScore >= 0.5 && peopleScore >= 0.5;
+    const technologyScore = allScores.technology || 0;
+    const handsOnScore = allScores.hands_on || 0;
+    const outdoorScore = allScores.outdoor || 0;
+    const analyticalScore = allScores.analytical || 0;
+
     const combinedNatureScore = Math.max(natureScore, environmentScore);
-    
-    let healthcareBonus = 0;
-    let environmentPenalty = 0;
-    
-    if (isHealthcareProfile) {
-      // Boost auttaja when health+people combo exists
+
+    // Profile type detection - more precise conditions
+    const leadershipScore = allScores.leadership || 0;
+    const businessScore = allScores.business || 0;
+    const creativeScore = allScores.creative || 0;
+
+    const isHealthcareProfile = healthScore >= 0.6 && (peopleScore >= 0.5 || teachingScore >= 0.5);
+    // Environment profile: MUST have environment/nature explicitly high, not just outdoor
+    // Outdoor alone could be rakentaja (construction) or just preference
+    const isEnvironmentProfile = combinedNatureScore >= 0.7 && outdoorScore >= 0.5 && healthScore <= 0.5;
+    // Builder: hands_on dominant, NOT tech-focused (tech leaders should be innovoija)
+    const isBuilderProfile = handsOnScore >= 0.7 && technologyScore <= 0.5 && leadershipScore <= 0.5;
+    const isTechEnvironmentProfile = combinedNatureScore >= 0.6 && technologyScore >= 0.5 && analyticalScore >= 0.5;
+    // Tech leader: technology + leadership, NOT hands_on dominant
+    const isTechLeaderProfile = technologyScore >= 0.6 && leadershipScore >= 0.5 && handsOnScore <= 0.5;
+    // Pure creative: creative high, not outdoor/environment focused
+    const isPureCreativeProfile = creativeScore >= 0.6 && combinedNatureScore <= 0.4 && handsOnScore <= 0.4;
+    // Pure innovator: technology high, not outdoorsy or environment-focused
+    const isPureInnovatorProfile = technologyScore >= 0.6 && analyticalScore >= 0.5 && combinedNatureScore <= 0.4 && outdoorScore <= 0.4;
+
+    let profileBonus = 0;
+    let profilePenalty = 0;
+
+    // Healthcare profile boosts auttaja
+    if (isHealthcareProfile && !isTechEnvironmentProfile) {
       if (category === 'auttaja') {
-        // Extra boost when health+people combo is strong
-        if (healthScore >= 0.8 && peopleScore >= 0.8) {
-          healthcareBonus = 0.15; // 15% boost
-        } else {
-          healthcareBonus = 0.10; // 10% boost
-        }
-        // Extra boost when health is at maximum
-        if (healthScore >= 0.95) {
-          healthcareBonus += 0.05; // Additional 5% boost
-        }
+        profileBonus = healthScore >= 0.8 && peopleScore >= 0.8 ? 0.15 : 0.10;
       }
-      
-      // Penalize ympariston-puolustaja when healthcare profile detected
-      if (category === 'ympariston-puolustaja') {
-        // Strong penalty when health+people combo exists
-        if (healthScore >= 0.8 && peopleScore >= 0.8) {
-          environmentPenalty = 0.20; // 20% penalty
-        } else {
-          environmentPenalty = 0.15; // 15% penalty
-        }
-        // Extra penalty when both health and environment are maximum
-        if (healthScore >= 0.95 && combinedNatureScore >= 0.95) {
-          environmentPenalty += 0.15; // Additional 15% penalty
-        }
+      // Only penalize environment if health is clearly dominant over environment
+      if (category === 'ympariston-puolustaja' && healthScore > combinedNatureScore + 0.2) {
+        profilePenalty = 0.15;
       }
     }
 
-    const rawScore = baseScore - negativePenalty + strongSignalBonus + primaryStrengthBonus + healthcareBonus - environmentPenalty;
+    // Environment profile boosts ympariston-puolustaja
+    if (isEnvironmentProfile && !isHealthcareProfile) {
+      if (category === 'ympariston-puolustaja') {
+        profileBonus = combinedNatureScore >= 0.8 ? 0.15 : 0.10;
+      }
+    }
+
+    // Tech+Environment profile (environmental engineer) - boost both innovoija and ympariston-puolustaja
+    if (isTechEnvironmentProfile) {
+      if (category === 'ympariston-puolustaja') {
+        profileBonus = 0.10; // Keep environment strong
+      }
+      if (category === 'innovoija') {
+        profileBonus = 0.08; // Tech aspect
+      }
+      // Reduce auttaja boost when this is clearly a tech+env profile
+      if (category === 'auttaja' && healthScore < 0.7) {
+        profilePenalty = 0.10;
+      }
+    }
+
+    // Builder profile boosts rakentaja
+    if (isBuilderProfile) {
+      if (category === 'rakentaja') {
+        profileBonus = handsOnScore >= 0.8 ? 0.15 : 0.10;
+      }
+      // Penalize innovoija for pure builders (they're not tech people)
+      if (category === 'innovoija') {
+        profilePenalty = 0.05;
+      }
+    }
+
+    // Tech leader profile boosts innovoija and johtaja, penalizes rakentaja
+    if (isTechLeaderProfile) {
+      if (category === 'innovoija') {
+        profileBonus = 0.10;
+      }
+      if (category === 'johtaja') {
+        profileBonus = 0.08;
+      }
+      if (category === 'rakentaja') {
+        profilePenalty = 0.15; // Tech leaders are NOT builders
+      }
+    }
+
+    // Pure creative profile boosts luova, penalizes outdoor categories
+    if (isPureCreativeProfile) {
+      if (category === 'luova') {
+        profileBonus = creativeScore >= 0.8 ? 0.15 : 0.10;
+      }
+      if (category === 'ympariston-puolustaja' || category === 'rakentaja') {
+        profilePenalty = 0.10;
+      }
+    }
+
+    // Pure innovator profile boosts innovoija, penalizes outdoor categories
+    if (isPureInnovatorProfile) {
+      if (category === 'innovoija') {
+        profileBonus = technologyScore >= 0.8 ? 0.15 : 0.10;
+      }
+      if (category === 'ympariston-puolustaja' || category === 'rakentaja') {
+        profilePenalty = 0.12;
+      }
+    }
+
+    // Global penalty: if someone explicitly chose LOW on environment questions, penalize ympariston-puolustaja
+    if (combinedNatureScore <= 0.3 && category === 'ympariston-puolustaja') {
+      profilePenalty = Math.max(profilePenalty, 0.10);
+    }
+
+    const rawScore = baseScore - negativePenalty + strongSignalBonus + primaryStrengthBonus + profileBonus - profilePenalty;
     const finalScore = Math.max(0, Math.min(100, rawScore * 100));
 
     // Determine confidence for this category
