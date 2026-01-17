@@ -64,8 +64,8 @@ const careersData: Career[] = careersFI
     return true;
   });
 
-// Source data has over 700 Finnish careers
-const totalCareerCount = 'yli 700 erilaista suomalaista';
+// Source data has over 600 Finnish careers
+const totalCareerCount = 'yli 600 erilaista suomalaista';
 
 // Simplified education level categories for the dropdown
 const EDUCATION_CATEGORIES = [

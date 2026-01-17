@@ -1,7 +1,7 @@
 /**
  * Curated Flagship Career Pool
  *
- * This is a carefully selected subset of ~177 careers optimized for:
+ * This is a carefully selected subset of ~173 careers optimized for:
  * - Finnish youth (YLA cohort) relevance
  * - Real, achievable career paths (entry-level, NOT senior executive roles)
  * - Education variety (ammattikoulu, AMK, yliopisto options)
@@ -10,15 +10,15 @@
  *
  * Variable sizing by category based on real-world career diversity:
  * - Auttaja: 36 careers (healthcare, education, social work, customer service)
- * - Innovoija: 25 careers (tech/engineering/UX)
+ * - Innovoija: 24 careers (tech/engineering/UX)
  * - Rakentaja: 22 careers (trades, construction, logistics)
  * - Luova: 16 careers (creative fields, media, culinary arts)
  * - Järjestäjä: 33 careers (admin, finance, logistics coordination)
  * - Johtaja: 11 careers (achievable leadership, sales leadership)
- * - Visionääri: 13 careers (strategy, research, journalism)
+ * - Visionääri: 10 careers (strategy, research, journalism)
  * - Ympäristön puolustaja: 24 careers (environment, sustainability)
  *
- * Total: ~177 unique careers (all entry-level achievable)
+ * Total: ~173 unique careers (all entry-level achievable)
  *
  * NOTE: Categories are based on careerVectors.ts source of truth
  */
@@ -78,7 +78,7 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "urheiluvalmentaja",        // Sports coach
 
   // ==========================================
-  // INNOVOIJA (25) - Technology, Engineering, UX
+  // INNOVOIJA (24) - Technology, Engineering, UX
   // ==========================================
   // Software Development
   "ohjelmistokehittaja",      // Software developer
@@ -99,7 +99,6 @@ export const CURATED_CAREER_SLUGS: string[] = [
   // Security & Infrastructure
   "tietoturvaanalyytikko",    // Security analyst
   "kyberturvallisuusanalyytikko", // Cybersecurity analyst
-  "pilvipalveluarkkitehti",   // Cloud architect
   "devops-insinoori",         // DevOps engineer
   "it-tukihenkilo",           // IT support
 
@@ -239,13 +238,10 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "myynti-insinoori",         // Sales engineer
 
   // ==========================================
-  // VISIONÄÄRI (13) - Strategy, Consulting, Research, Journalism
+  // VISIONÄÄRI (10) - Strategy, Consulting, Research, Journalism
   // ==========================================
   "tutkija",                  // Researcher - visionary research
-  "strategia-konsultti",      // Strategy consultant
-  "innovaatiokonsultti",      // Innovation consultant
   "rahoitusanalyytikko",      // Financial analyst
-  "tulevaisuustutkija",       // Futurist
   "arkkitehti",               // Architect
   "journalisti",              // Journalist
   "tiedeviestija-tulevaisuus", // Science communicator
