@@ -170,7 +170,7 @@ export const CURATED_CAREER_SLUGS: string[] = [
   "nayttelija",               // Actor
   "kirjailija",               // Writer
   "sisustusarkkitehti-luova", // Interior architect
-  "parturi-kampaaja",         // Hairdresser
+  "kampaaja",                 // Hairdresser (kampaaja exists in careerVectors)
 
   // Culinary Arts (creative cooking)
   "kokki",                    // Chef - creative culinary arts
