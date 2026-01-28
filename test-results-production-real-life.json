@@ -1,0 +1,968 @@
+{
+  "timestamp": "2026-01-14T23:44:44.160Z",
+  "summary": {
+    "totalTests": 27,
+    "passedTests": 27,
+    "failedTests": 0,
+    "passRate": "100.0%",
+    "averageConfidence": "89.1%",
+    "overallAssessment": "🟢 GOOD: Most tests pass with good confidence. Minor improvements possible."
+  },
+  "cohortBreakdown": {
+    "YLA": {
+      "total": 8,
+      "passed": 8,
+      "confidence": [
+        85,
+        95,
+        85,
+        85,
+        90,
+        95,
+        85,
+        95
+      ]
+    },
+    "TASO2-LUKIO": {
+      "total": 5,
+      "passed": 5,
+      "confidence": [
+        85,
+        100,
+        80,
+        90,
+        90
+      ]
+    },
+    "TASO2-AMIS": {
+      "total": 6,
+      "passed": 6,
+      "confidence": [
+        90,
+        85,
+        90,
+        100,
+        90,
+        85
+      ]
+    },
+    "NUORI": {
+      "total": 8,
+      "passed": 8,
+      "confidence": [
+        95,
+        80,
+        85,
+        90,
+        95,
+        85,
+        95,
+        80
+      ]
+    }
+  },
+  "detailedResults": [
+    {
+      "persona": "Aino - Tulevaisuuden lääkäri",
+      "description": "Ahkera ja empaattinen, haaveilee lääkärin urasta. Pitää biologiasta ja auttamisesta.",
+      "cohort": "YLA",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Analysis doesn't mention expected themes: [auttaminen, terveys, ihmiset, empatia]",
+        "Low career diversity: all careers from auttaja category"
+      ],
+      "confidenceScore": 85,
+      "details": {
+        "expectedCategory": "auttaja",
+        "actualCategory": "auttaja",
+        "categoryScore": 77,
+        "expectedEducationPath": "lukio",
+        "actualEducationPath": "lukio",
+        "educationMatch": true,
+        "topCareers": [
+          "Ensihoitaja (auttaja, 100%)",
+          "Terveydenhoitaja (auttaja, 100%)",
+          "Lähihoitaja (auttaja, 100%)",
+          "Sairaanhoitaja (auttaja, 100%)",
+          "Fysioterapeutti (auttaja, 100%)"
+        ],
+        "keywordsFound": "3/4",
+        "analysisLength": 1164,
+        "categoryAffinities": [
+          "auttaja: 77%",
+          "ympariston-puolustaja: 49%",
+          "visionaari: 45%"
+        ]
+      }
+    },
+    {
+      "persona": "Eetu - Koodari-nörtti",
+      "description": "Pelaa, koodaa, rakentaa tietokoneita. Matematiikka helppoa, sosiaaliset tilanteet vaikeita.",
+      "cohort": "YLA",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Low career diversity: all careers from innovoija category"
+      ],
+      "confidenceScore": 95,
+      "details": {
+        "expectedCategory": "innovoija",
+        "actualCategory": "innovoija",
+        "categoryScore": 91,
+        "expectedEducationPath": "lukio",
+        "actualEducationPath": "lukio",
+        "educationMatch": true,
+        "topCareers": [
+          "Mobiilisovelluskehittäjä (innovoija, 100%)",
+          "Pelimoottori kehittäjä (innovoija, 100%)",
+          "Ohjelmistokehittäjä (innovoija, 100%)",
+          "Full-Stack-kehittäjä (innovoija, 100%)",
+          "Frontend-kehittäjä (innovoija, 100%)"
+        ],
+        "keywordsFound": "3/5",
+        "analysisLength": 1140,
+        "categoryAffinities": [
+          "innovoija: 91%",
+          "johtaja: 57%",
+          "visionaari: 36%"
+        ]
+      }
+    },
+    {
+      "persona": "Venla - Taitelija-sielu",
+      "description": "Piirtää, maalaa, kirjoittaa runoja. Unelmoi taiteilijaksi tai kirjailijaksi.",
+      "cohort": "YLA",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 1/5 career keywords found",
+        "Low career diversity: all careers from luova category"
+      ],
+      "confidenceScore": 85,
+      "details": {
+        "expectedCategory": "luova",
+        "actualCategory": "luova",
+        "categoryScore": 75,
+        "expectedEducationPath": "lukio",
+        "actualEducationPath": "lukio",
+        "educationMatch": true,
+        "topCareers": [
+          "Äänisuunnittelija (luova, 100%)",
+          "Graafinen suunnittelija (luova, 100%)",
+          "Valokuvaaja (luova, 100%)",
+          "Verkkosuunnittelija (luova, 100%)",
+          "UI/UX-suunnittelija (luova, 100%)"
+        ],
+        "keywordsFound": "1/5",
+        "analysisLength": 1191,
+        "categoryAffinities": [
+          "luova: 75%",
+          "innovoija: 53%",
+          "visionaari: 52%"
+        ]
+      }
+    },
+    {
+      "persona": "Oskari - Käsillä tekijä",
+      "description": "Korjaa mopoja, rakentaa, ei jaksa istua luokassa. Haluaa töihin nopeasti.",
+      "cohort": "YLA",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 1/5 career keywords found",
+        "Low career diversity: all careers from rakentaja category"
+      ],
+      "confidenceScore": 85,
+      "details": {
+        "expectedCategory": "rakentaja",
+        "actualCategory": "rakentaja",
+        "categoryScore": 76,
+        "expectedEducationPath": "ammattikoulu",
+        "actualEducationPath": "ammattikoulu",
+        "educationMatch": true,
+        "topCareers": [
+          "Rakennusmestari (rakentaja, 100%)",
+          "Maalari (rakentaja, 100%)",
+          "Rakennusinsinööri (rakentaja, 100%)",
+          "Kirvesmies (rakentaja, 100%)",
+          "Muurari (rakentaja, 100%)"
+        ],
+        "keywordsFound": "1/5",
+        "analysisLength": 1186,
+        "categoryAffinities": [
+          "rakentaja: 76%",
+          "jarjestaja: 60%",
+          "ympariston-puolustaja: 41%"
+        ]
+      }
+    },
+    {
+      "persona": "Sofia - Yrittäjähenkinen",
+      "description": "Järjestää tapahtumia, johtaa projekteja koulussa. Haaveilee omasta firmasta.",
+      "cohort": "YLA",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 3/7 career keywords found"
+      ],
+      "confidenceScore": 90,
+      "details": {
+        "expectedCategory": "johtaja",
+        "actualCategory": "johtaja",
+        "categoryScore": 90,
+        "expectedEducationPath": "lukio",
+        "actualEducationPath": "lukio",
+        "educationMatch": true,
+        "topCareers": [
+          "IT-tukihenkilö (innovoija, 100%)",
+          "Startup-perustaja (johtaja, 100%)",
+          "Asiakkuusvastaava (johtaja, 100%)",
+          "Myyntityöntekijä (johtaja, 100%)",
+          "Asiakaspalveluvastaava (johtaja, 100%)"
+        ],
+        "keywordsFound": "3/7",
+        "analysisLength": 1599,
+        "categoryAffinities": [
+          "johtaja: 90%",
+          "visionaari: 78%",
+          "innovoija: 49%"
+        ]
+      }
+    },
+    {
+      "persona": "Niko - Urheiluhullu valmentaja",
+      "description": "Elää urheilusta, valmentaa nuorempia. Haluaa urheilun pariin töihin.",
+      "cohort": "YLA",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Low career diversity: all careers from auttaja category"
+      ],
+      "confidenceScore": 95,
+      "details": {
+        "expectedCategory": "johtaja",
+        "actualCategory": "johtaja",
+        "categoryScore": 92,
+        "expectedEducationPath": "lukio",
+        "actualEducationPath": "lukio",
+        "educationMatch": true,
+        "topCareers": [
+          "Urheiluvalmentaja (auttaja, 100%)",
+          "Valmentaja (auttaja, 100%)",
+          "Liikunnanohjaaja (auttaja, 100%)",
+          "Personal Trainer (auttaja, 100%)",
+          "Luokanopettaja (auttaja, 100%)"
+        ],
+        "keywordsFound": "4/5",
+        "analysisLength": 1620,
+        "categoryAffinities": [
+          "johtaja: 92%",
+          "visionaari: 78%",
+          "luova: 48%"
+        ]
+      }
+    },
+    {
+      "persona": "Emilia - Ympäristöaktivisti",
+      "description": "Huolissaan ilmastosta, kierrättää, haluaa pelastaa maailman.",
+      "cohort": "YLA",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 2/6 career keywords found",
+        "Low career diversity: all careers from ympariston-puolustaja category"
+      ],
+      "confidenceScore": 85,
+      "details": {
+        "expectedCategory": "ympariston-puolustaja",
+        "actualCategory": "ympariston-puolustaja",
+        "categoryScore": 94,
+        "expectedEducationPath": "lukio",
+        "actualEducationPath": "lukio",
+        "educationMatch": true,
+        "topCareers": [
+          "Luonnonsuojelubiologi (ympariston-puolustaja, 100%)",
+          "Biologi (ympariston-puolustaja, 100%)",
+          "Ympäristöinsinööri (ympariston-puolustaja, 100%)",
+          "Ilmastotutkija (ympariston-puolustaja, 100%)",
+          "Ympäristökasvattaja (ympariston-puolustaja, 100%)"
+        ],
+        "keywordsFound": "2/6",
+        "analysisLength": 1096,
+        "categoryAffinities": [
+          "ympariston-puolustaja: 94%",
+          "visionaari: 69%",
+          "luova: 44%"
+        ]
+      }
+    },
+    {
+      "persona": "Lauri - Epävarma etsijä",
+      "description": "Ei tiedä mitä haluaa, kokeilee kaikkea, tykkää monesta.",
+      "cohort": "YLA",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Low career diversity: all careers from auttaja category"
+      ],
+      "confidenceScore": 95,
+      "details": {
+        "expectedCategory": null,
+        "actualCategory": "auttaja",
+        "categoryScore": 38,
+        "expectedEducationPath": "lukio",
+        "actualEducationPath": "lukio",
+        "educationMatch": true,
+        "topCareers": [
+          "Urheiluvalmentaja (auttaja, 100%)",
+          "Valmentaja (auttaja, 100%)",
+          "Fysioterapeutti (auttaja, 100%)",
+          "Liikunnanohjaaja (auttaja, 100%)",
+          "Personal Trainer (auttaja, 100%)"
+        ],
+        "keywordsFound": "0/0",
+        "analysisLength": 752,
+        "categoryAffinities": [
+          "auttaja: 38%",
+          "innovoija: 28%",
+          "luova: 28%"
+        ]
+      }
+    },
+    {
+      "persona": "Anni - Tuleva psykologi",
+      "description": "Lukiolainen joka haluaa ymmärtää ihmismieltä. Kiinnostunut psykologiasta ja auttamisesta.",
+      "cohort": "TASO2",
+      "subCohort": "LUKIO",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Analysis doesn't mention expected themes: [auttaminen, ihmiset, psykologia]",
+        "Low career diversity: all careers from auttaja category"
+      ],
+      "confidenceScore": 85,
+      "details": {
+        "expectedCategory": "auttaja",
+        "actualCategory": "auttaja",
+        "categoryScore": 100,
+        "expectedEducationPath": "yliopisto",
+        "actualEducationPath": "yliopisto",
+        "educationMatch": true,
+        "topCareers": [
+          "Ensihoitaja (auttaja, 100%)",
+          "Terveydenhoitaja (auttaja, 100%)",
+          "Sairaanhoitaja (auttaja, 100%)",
+          "Fysioterapeutti (auttaja, 100%)",
+          "Luokanopettaja (auttaja, 100%)"
+        ],
+        "keywordsFound": "2/4",
+        "analysisLength": 1558,
+        "categoryAffinities": [
+          "auttaja: 100%",
+          "jarjestaja: 71%",
+          "visionaari: 49%"
+        ]
+      }
+    },
+    {
+      "persona": "Mikael - DI-haaveilija",
+      "description": "Matematiikka ja fysiikka vahvoja. Haluaa diplomi-insinööriksi.",
+      "cohort": "TASO2",
+      "subCohort": "LUKIO",
+      "passed": true,
+      "issues": [],
+      "warnings": [],
+      "confidenceScore": 100,
+      "details": {
+        "expectedCategory": "innovoija",
+        "actualCategory": "innovoija",
+        "categoryScore": 89,
+        "expectedEducationPath": "yliopisto",
+        "actualEducationPath": "yliopisto",
+        "educationMatch": true,
+        "topCareers": [
+          "Mobiilisovelluskehittäjä (innovoija, 100%)",
+          "Rakennusmestari (rakentaja, 100%)",
+          "Rakennustyönjohtaja (rakentaja, 100%)",
+          "Sähköasentaja (rakentaja, 100%)",
+          "Rakennusinsinööri (rakentaja, 100%)"
+        ],
+        "keywordsFound": "3/4",
+        "analysisLength": 1696,
+        "categoryAffinities": [
+          "innovoija: 89%",
+          "visionaari: 51%",
+          "johtaja: 46%"
+        ]
+      }
+    },
+    {
+      "persona": "Ella - Kansainvälinen strategi",
+      "description": "Kiinnostunut politiikasta ja kansainvälisistä asioista. Haluaa vaikuttaa.",
+      "cohort": "TASO2",
+      "subCohort": "LUKIO",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 1/5 career keywords found",
+        "Analysis doesn't mention expected themes: [kansainvälinen, strategia, vaikuttaminen]"
+      ],
+      "confidenceScore": 80,
+      "details": {
+        "expectedCategory": "visionaari",
+        "actualCategory": "visionaari",
+        "categoryScore": 71,
+        "expectedEducationPath": "yliopisto",
+        "actualEducationPath": "yliopisto",
+        "educationMatch": true,
+        "topCareers": [
+          "Urheiluvalmentaja (auttaja, 100%)",
+          "Valmentaja (auttaja, 100%)",
+          "Asiakkuusvastaava (johtaja, 100%)",
+          "Myyntityöntekijä (johtaja, 100%)",
+          "Asiakaspalveluvastaava (johtaja, 100%)"
+        ],
+        "keywordsFound": "1/5",
+        "analysisLength": 1688,
+        "categoryAffinities": [
+          "visionaari: 71%",
+          "johtaja: 64%",
+          "innovoija: 52%"
+        ]
+      }
+    },
+    {
+      "persona": "Roosa - Muotoilija",
+      "description": "Lukio-opiskelija kiinnostunut muotoilusta ja designista. Haluaa AMK:hon.",
+      "cohort": "TASO2",
+      "subCohort": "LUKIO",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 1/4 career keywords found"
+      ],
+      "confidenceScore": 90,
+      "details": {
+        "expectedCategory": "luova",
+        "actualCategory": "luova",
+        "categoryScore": 68,
+        "expectedEducationPath": "amk",
+        "actualEducationPath": "amk",
+        "educationMatch": true,
+        "topCareers": [
+          "Urheiluvalmentaja (auttaja, 100%)",
+          "Parturi-kampaaja (luova, 100%)",
+          "Äänisuunnittelija (luova, 100%)",
+          "Liikunnanohjaaja (auttaja, 100%)",
+          "Rakennusmestari (rakentaja, 100%)"
+        ],
+        "keywordsFound": "1/4",
+        "analysisLength": 1096,
+        "categoryAffinities": [
+          "luova: 68%",
+          "johtaja: 38%",
+          "auttaja: 37%"
+        ]
+      }
+    },
+    {
+      "persona": "Juuso - Yrittäjä-kauppis",
+      "description": "Lukiolainen joka haluaa KTM-tutkinnon ja oman yrityksen.",
+      "cohort": "TASO2",
+      "subCohort": "LUKIO",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 1/5 career keywords found"
+      ],
+      "confidenceScore": 90,
+      "details": {
+        "expectedCategory": "johtaja",
+        "actualCategory": "johtaja",
+        "categoryScore": 87,
+        "expectedEducationPath": "yliopisto",
+        "actualEducationPath": "yliopisto",
+        "educationMatch": true,
+        "topCareers": [
+          "Myyntityöntekijä (johtaja, 100%)",
+          "Kiinteistönvälittäjä (johtaja, 100%)",
+          "Urheiluvalmentaja (auttaja, 100%)",
+          "Asiakkuusvastaava (johtaja, 100%)",
+          "Asiakaspalveluvastaava (johtaja, 100%)"
+        ],
+        "keywordsFound": "1/5",
+        "analysisLength": 1206,
+        "categoryAffinities": [
+          "johtaja: 87%",
+          "visionaari: 48%",
+          "innovoija: 38%"
+        ]
+      }
+    },
+    {
+      "persona": "Jesse - Sähkömies",
+      "description": "AMIS-opiskelija sähköalalla. Tykkää teknisestä työstä ja ongelmanratkaisusta.",
+      "cohort": "TASO2",
+      "subCohort": "AMIS",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 1/4 career keywords found"
+      ],
+      "confidenceScore": 90,
+      "details": {
+        "expectedCategory": "rakentaja",
+        "actualCategory": "rakentaja",
+        "categoryScore": 68,
+        "expectedEducationPath": "amk",
+        "actualEducationPath": "amk",
+        "educationMatch": true,
+        "topCareers": [
+          "Mobiilisovelluskehittäjä (innovoija, 100%)",
+          "Rakennustyönjohtaja (rakentaja, 100%)",
+          "Rakennusinsinööri (rakentaja, 100%)",
+          "Maalari (rakentaja, 100%)",
+          "Kirvesmies (rakentaja, 100%)"
+        ],
+        "keywordsFound": "1/4",
+        "analysisLength": 1617,
+        "categoryAffinities": [
+          "rakentaja: 68%",
+          "jarjestaja: 56%",
+          "innovoija: 54%"
+        ]
+      }
+    },
+    {
+      "persona": "Sini - Hoitaja",
+      "description": "Lähihoitajaopiskelija. Välittää ihmisistä ja haluaa auttaa.",
+      "cohort": "TASO2",
+      "subCohort": "AMIS",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Analysis doesn't mention expected themes: [auttaminen, hoiva, ihmiset]",
+        "Low career diversity: all careers from auttaja category"
+      ],
+      "confidenceScore": 85,
+      "details": {
+        "expectedCategory": "auttaja",
+        "actualCategory": "auttaja",
+        "categoryScore": 100,
+        "expectedEducationPath": "amk",
+        "actualEducationPath": "amk",
+        "educationMatch": true,
+        "topCareers": [
+          "Opinto-ohjaaja (auttaja, 100%)",
+          "Ensihoitaja (auttaja, 100%)",
+          "Terveydenhoitaja (auttaja, 100%)",
+          "Sairaanhoitaja (auttaja, 100%)",
+          "Fysioterapeutti (auttaja, 100%)"
+        ],
+        "keywordsFound": "3/4",
+        "analysisLength": 1685,
+        "categoryAffinities": [
+          "auttaja: 100%",
+          "rakentaja: 47%",
+          "jarjestaja: 35%"
+        ]
+      }
+    },
+    {
+      "persona": "Roope - Kokki",
+      "description": "Ravintolakokkiopiskelija. Intohimo ruoanlaittoon ja ravintola-alaan.",
+      "cohort": "TASO2",
+      "subCohort": "AMIS",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 1/4 career keywords found"
+      ],
+      "confidenceScore": 90,
+      "details": {
+        "expectedCategory": "rakentaja",
+        "actualCategory": "rakentaja",
+        "categoryScore": 73,
+        "expectedEducationPath": "amk",
+        "actualEducationPath": "amk",
+        "educationMatch": true,
+        "topCareers": [
+          "Personal Trainer (auttaja, 100%)",
+          "Ravintolatyöntekijä (rakentaja, 100%)",
+          "Urheiluvalmentaja (auttaja, 100%)",
+          "Valmentaja (auttaja, 100%)",
+          "Liikunnanohjaaja (auttaja, 100%)"
+        ],
+        "keywordsFound": "1/4",
+        "analysisLength": 1663,
+        "categoryAffinities": [
+          "rakentaja: 73%",
+          "johtaja: 43%",
+          "auttaja: 37%"
+        ]
+      }
+    },
+    {
+      "persona": "Milla - Kampaaja",
+      "description": "Parturi-kampaajaopiskelija. Luova, sosiaalinen, rakastaa tyylejä.",
+      "cohort": "TASO2",
+      "subCohort": "AMIS",
+      "passed": true,
+      "issues": [],
+      "warnings": [],
+      "confidenceScore": 100,
+      "details": {
+        "expectedCategory": "luova",
+        "actualCategory": "luova",
+        "categoryScore": 61,
+        "expectedEducationPath": "amk",
+        "actualEducationPath": "amk",
+        "educationMatch": true,
+        "topCareers": [
+          "Parturi-kampaaja (luova, 100%)",
+          "Äänisuunnittelija (luova, 100%)",
+          "Rakennustyönjohtaja (rakentaja, 100%)",
+          "Rakennusmestari (rakentaja, 100%)",
+          "Graafinen suunnittelija (luova, 100%)"
+        ],
+        "keywordsFound": "2/3",
+        "analysisLength": 1623,
+        "categoryAffinities": [
+          "luova: 61%",
+          "johtaja: 58%",
+          "innovoija: 43%"
+        ]
+      }
+    },
+    {
+      "persona": "Teemu - Rakentaja",
+      "description": "Rakennusalan opiskelija. Haluaa rakentaa taloja ja nähdä konkreettisia tuloksia.",
+      "cohort": "TASO2",
+      "subCohort": "AMIS",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 1/5 career keywords found"
+      ],
+      "confidenceScore": 90,
+      "details": {
+        "expectedCategory": "rakentaja",
+        "actualCategory": "rakentaja",
+        "categoryScore": 95,
+        "expectedEducationPath": "amk",
+        "actualEducationPath": "amk",
+        "educationMatch": true,
+        "topCareers": [
+          "Luonnonsuojelubiologi (ympariston-puolustaja, 100%)",
+          "Rakennusmestari (rakentaja, 100%)",
+          "Putkiasentaja (rakentaja, 100%)",
+          "LVI-asentaja (rakentaja, 100%)",
+          "Rakennustyönjohtaja (rakentaja, 100%)"
+        ],
+        "keywordsFound": "1/5",
+        "analysisLength": 1756,
+        "categoryAffinities": [
+          "rakentaja: 95%",
+          "ympariston-puolustaja: 82%",
+          "jarjestaja: 59%"
+        ]
+      }
+    },
+    {
+      "persona": "Jenni - Logistiikka",
+      "description": "Logistiikka-alan opiskelija. Järjestelmällinen, pitää suunnittelusta.",
+      "cohort": "TASO2",
+      "subCohort": "AMIS",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 2/6 career keywords found",
+        "Low career diversity: all careers from rakentaja category"
+      ],
+      "confidenceScore": 85,
+      "details": {
+        "expectedCategory": "jarjestaja",
+        "actualCategory": "jarjestaja",
+        "categoryScore": 49,
+        "expectedEducationPath": "amk",
+        "actualEducationPath": "amk",
+        "educationMatch": true,
+        "topCareers": [
+          "Sähköasentaja (rakentaja, 100%)",
+          "Putkiasentaja (rakentaja, 100%)",
+          "LVI-asentaja (rakentaja, 100%)",
+          "Rakennusinsinööri (rakentaja, 100%)",
+          "Rakennustyönjohtaja (rakentaja, 100%)"
+        ],
+        "keywordsFound": "2/6",
+        "analysisLength": 1129,
+        "categoryAffinities": [
+          "jarjestaja: 49%",
+          "innovoija: 40%",
+          "rakentaja: 38%"
+        ]
+      }
+    },
+    {
+      "persona": "Aleksi - Ohjelmistokehittäjä",
+      "description": "Nuori aikuinen IT-alalla. Kokemusta koodaamisesta, hakee uramahdollisuuksia.",
+      "cohort": "NUORI",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Low career diversity: all careers from innovoija category"
+      ],
+      "confidenceScore": 95,
+      "details": {
+        "expectedCategory": "innovoija",
+        "actualCategory": "innovoija",
+        "categoryScore": 96,
+        "actualEducationPath": null,
+        "educationMatch": true,
+        "topCareers": [
+          "Mobiilisovelluskehittäjä (innovoija, 100%)",
+          "Pelimoottori kehittäjä (innovoija, 100%)",
+          "IT-tukihenkilö (innovoija, 100%)",
+          "Ohjelmistokehittäjä (innovoija, 100%)",
+          "Full-Stack-kehittäjä (innovoija, 100%)"
+        ],
+        "keywordsFound": "3/4",
+        "analysisLength": 1243,
+        "categoryAffinities": [
+          "innovoija: 96%",
+          "johtaja: 59%",
+          "jarjestaja: 43%"
+        ]
+      }
+    },
+    {
+      "persona": "Henna - Sosiaalityöntekijä",
+      "description": "Nuori aikuinen joka haluaa auttaa heikoimmassa asemassa olevia.",
+      "cohort": "NUORI",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 1/4 career keywords found",
+        "Analysis doesn't mention expected themes: [auttaminen, sosiaalinen, ihmiset]"
+      ],
+      "confidenceScore": 80,
+      "details": {
+        "expectedCategory": "auttaja",
+        "actualCategory": "auttaja",
+        "categoryScore": 100,
+        "actualEducationPath": null,
+        "educationMatch": true,
+        "topCareers": [
+          "Ensihoitaja (auttaja, 100%)",
+          "Terveydenhoitaja (auttaja, 100%)",
+          "Lähihoitaja (auttaja, 100%)",
+          "Sairaanhoitaja (auttaja, 100%)",
+          "Äänisuunnittelija (luova, 100%)"
+        ],
+        "keywordsFound": "1/4",
+        "analysisLength": 1659,
+        "categoryAffinities": [
+          "auttaja: 100%",
+          "jarjestaja: 76%",
+          "luova: 46%"
+        ]
+      }
+    },
+    {
+      "persona": "Markus - Markkinointipäällikkö",
+      "description": "Kunnianhimoinen nuori aikuinen markkinoinnissa. Haluaa johtotehtäviin.",
+      "cohort": "NUORI",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 1/5 career keywords found",
+        "Low career diversity: all careers from johtaja category"
+      ],
+      "confidenceScore": 85,
+      "details": {
+        "expectedCategory": "johtaja",
+        "actualCategory": "johtaja",
+        "categoryScore": 74,
+        "actualEducationPath": null,
+        "educationMatch": true,
+        "topCareers": [
+          "Startup-perustaja (johtaja, 100%)",
+          "Asiakkuusvastaava (johtaja, 100%)",
+          "Myyntityöntekijä (johtaja, 100%)",
+          "Asiakaspalveluvastaava (johtaja, 100%)",
+          "Palvelumuotoilija (johtaja, 100%)"
+        ],
+        "keywordsFound": "1/5",
+        "analysisLength": 1254,
+        "categoryAffinities": [
+          "johtaja: 74%",
+          "visionaari: 48%",
+          "rakentaja: 47%"
+        ]
+      }
+    },
+    {
+      "persona": "Kaisa - Ympäristökonsultti",
+      "description": "Nuori aikuinen intohimona kestävä kehitys ja ympäristönsuojelu.",
+      "cohort": "NUORI",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 1/4 career keywords found"
+      ],
+      "confidenceScore": 90,
+      "details": {
+        "expectedCategory": "ympariston-puolustaja",
+        "actualCategory": "ympariston-puolustaja",
+        "categoryScore": 76,
+        "actualEducationPath": null,
+        "educationMatch": true,
+        "topCareers": [
+          "Luonnonsuojelubiologi (ympariston-puolustaja, 100%)",
+          "Kirjailija (luova, 100%)",
+          "Luokanopettaja (auttaja, 100%)",
+          "Lastentarhanopettaja (auttaja, 100%)",
+          "Opettaja (auttaja, 100%)"
+        ],
+        "keywordsFound": "1/4",
+        "analysisLength": 2195,
+        "categoryAffinities": [
+          "ympariston-puolustaja: 76%",
+          "jarjestaja: 70%",
+          "auttaja: 59%"
+        ]
+      }
+    },
+    {
+      "persona": "Petri - Kirjanpitäjä",
+      "description": "Tarkka ja järjestelmällinen nuori aikuinen. Pitää numeroista ja tarkkuudesta.",
+      "cohort": "NUORI",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Low career diversity: all careers from jarjestaja category"
+      ],
+      "confidenceScore": 95,
+      "details": {
+        "expectedCategory": "jarjestaja",
+        "actualCategory": "jarjestaja",
+        "categoryScore": 89,
+        "actualEducationPath": null,
+        "educationMatch": true,
+        "topCareers": [
+          "Tilintarkastajan assistentti (jarjestaja, 100%)",
+          "Logistiikkakoordinaattori (jarjestaja, 100%)",
+          "Hankinta-assistentti (jarjestaja, 100%)",
+          "Tapahtumakoordinaattori (jarjestaja, 100%)",
+          "Toimistosihteeri (jarjestaja, 100%)"
+        ],
+        "keywordsFound": "2/4",
+        "analysisLength": 2226,
+        "categoryAffinities": [
+          "jarjestaja: 89%",
+          "innovoija: 44%",
+          "rakentaja: 44%"
+        ]
+      }
+    },
+    {
+      "persona": "Laura - Luova sisällöntuottaja",
+      "description": "Nuori aikuinen joka työskentelee sisällöntuotannon parissa. Kirjoittaa ja kuvaa.",
+      "cohort": "NUORI",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 2/5 career keywords found",
+        "Low career diversity: all careers from luova category"
+      ],
+      "confidenceScore": 85,
+      "details": {
+        "expectedCategory": "luova",
+        "actualCategory": "luova",
+        "categoryScore": 54,
+        "actualEducationPath": null,
+        "educationMatch": true,
+        "topCareers": [
+          "Äänisuunnittelija (luova, 100%)",
+          "Graafinen suunnittelija (luova, 100%)",
+          "Verkkosuunnittelija (luova, 100%)",
+          "UI/UX-suunnittelija (luova, 100%)",
+          "Valokuvaaja (luova, 100%)"
+        ],
+        "keywordsFound": "2/5",
+        "analysisLength": 1194,
+        "categoryAffinities": [
+          "luova: 54%",
+          "johtaja: 50%",
+          "visionaari: 41%"
+        ]
+      }
+    },
+    {
+      "persona": "Tommi - Startup-yrittäjä",
+      "description": "Nuori aikuinen joka haluaa perustaa oman yrityksen. Visionääri ja riskinottaja.",
+      "cohort": "NUORI",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Low career diversity: all careers from johtaja category"
+      ],
+      "confidenceScore": 95,
+      "details": {
+        "expectedCategory": "johtaja",
+        "actualCategory": "johtaja",
+        "categoryScore": 82,
+        "actualEducationPath": null,
+        "educationMatch": true,
+        "topCareers": [
+          "Startup-perustaja (johtaja, 100%)",
+          "Asiakkuusvastaava (johtaja, 100%)",
+          "Myyntityöntekijä (johtaja, 100%)",
+          "Asiakaspalveluvastaava (johtaja, 100%)",
+          "Palvelumuotoilija (johtaja, 100%)"
+        ],
+        "keywordsFound": "4/6",
+        "analysisLength": 1682,
+        "categoryAffinities": [
+          "johtaja: 82%",
+          "visionaari: 60%",
+          "rakentaja: 41%"
+        ]
+      }
+    },
+    {
+      "persona": "Elisa - Tutkija",
+      "description": "Analyyttinen nuori aikuinen. Kiinnostunut tutkimuksesta ja tieteestä.",
+      "cohort": "NUORI",
+      "passed": true,
+      "issues": [],
+      "warnings": [
+        "Only 2/6 career keywords found",
+        "Analysis doesn't mention expected themes: [analyyttinen, tutkimus, tiede]"
+      ],
+      "confidenceScore": 80,
+      "details": {
+        "expectedCategory": "visionaari",
+        "actualCategory": "visionaari",
+        "categoryScore": 90,
+        "actualEducationPath": null,
+        "educationMatch": true,
+        "topCareers": [
+          "Strategia-konsultti (visionaari, 100%)",
+          "Tutkimusasiantuntija (visionaari, 100%)",
+          "Rahoitusanalyytikko (visionaari, 100%)",
+          "Opinto-ohjaaja (auttaja, 100%)",
+          "Liikunnanohjaaja (auttaja, 100%)"
+        ],
+        "keywordsFound": "2/6",
+        "analysisLength": 1737,
+        "categoryAffinities": [
+          "visionaari: 90%",
+          "johtaja: 48%",
+          "rakentaja: 43%"
+        ]
+      }
+    }
+  ]
+}

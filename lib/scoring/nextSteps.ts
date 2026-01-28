@@ -23,8 +23,10 @@ export function generatePersonalizedNextSteps(
   const longTerm: string[] = [];
   const resources: Array<{name: string, url: string, description: string}> = [];
   
-  // Identify top strength to focus on
+  // Identify top strengths to focus on (use up to 3 for guidance)
   const topStrength = topStrengths && topStrengths.length > 0 ? topStrengths[0] : null;
+  const secondaryStrength = topStrengths && topStrengths.length > 1 ? topStrengths[1] : null;
+  const tertiaryStrength = topStrengths && topStrengths.length > 2 ? topStrengths[2] : null;
   
   // Find related questions for the top strength
   let relatedQuestions: TestAnswer[] = [];

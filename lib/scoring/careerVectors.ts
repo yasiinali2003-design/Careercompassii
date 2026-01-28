@@ -136,7 +136,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "pukusuunnittelija",
     title: "Pukusuunnittelija",
-    category: "luova",
+    category: "johtaja",
     interests: { technology: 0.24, people: 0.6, creative: 0.83, analytical: 0.1, hands_on: 0.67, business: 0.11, environment: 0.12, health: 0.19, education: 0.34, innovation: 0.67, arts_culture: 0.74, sports: 0.1, nature: 0.35, writing: 0.78 },
     workstyle: { teamwork: 0.53, independence: 0.95, leadership: 0.36, organization: 0.2, planning: 0.35, problem_solving: 0.42, precision: 0.43, performance: 0.4, teaching: 0.28, motivation: 0.59, autonomy: 0.95, social: 0.54, structure: 0.1, flexibility: 0.9, variety: 0.95 },
     values: { growth: 0.89, impact: 0.7, global: 0.26, career_clarity: 0.19, financial: 0.5, entrepreneurship: 0.74, social_impact: 0.48, stability: 0.41, advancement: 0.73, work_life_balance: 0.39, company_size: 0.48 },
@@ -514,7 +514,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "oikeusneuvos",
     title: "Oikeusneuvos",
-    category: "johtaja",
+    category: "visionaari",
     interests: { technology: 0.23, people: 0.95, creative: 0.22, analytical: 0.47, hands_on: 0.41, business: 0.95, environment: 0.1, health: 0.21, education: 0.56, innovation: 0.72, arts_culture: 0.1, sports: 0.46, nature: 0.1, writing: 0.59 },
     workstyle: { teamwork: 0.45, independence: 0.38, leadership: 0.95, organization: 0.78, planning: 0.95, problem_solving: 0.49, precision: 0.41, performance: 0.82, teaching: 0.26, motivation: 0.74, autonomy: 0.74, social: 0.9, structure: 0.46, flexibility: 0.6, variety: 0.82 },
     values: { growth: 0.82, impact: 0.41, global: 0.76, career_clarity: 0.74, financial: 0.95, entrepreneurship: 0.62, social_impact: 0.12, stability: 0.63, advancement: 0.95, work_life_balance: 0.68, company_size: 0.87 },
@@ -748,7 +748,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "tulevaisuuden-teknologia-asiantuntija",
     title: "Tulevaisuuden teknologia-asiantuntija",
-    category: "visionaari",
+    category: "johtaja",
     interests: { technology: 0.46, people: 0.45, creative: 0.78, analytical: 0.7, hands_on: 0.1, business: 0.5, environment: 0.56, health: 0.17, education: 0.27, innovation: 0.67, arts_culture: 0.49, sports: 0.22, nature: 0.32, writing: 0.72 },
     workstyle: { teamwork: 0.73, independence: 0.53, leadership: 0.58, organization: 0.12, planning: 0.95, problem_solving: 0.46, precision: 0.42, performance: 0.59, teaching: 0.68, motivation: 0.85, autonomy: 0.89, social: 0.33, structure: 0.13, flexibility: 0.66, variety: 0.8 },
     values: { growth: 0.67, impact: 0.91, global: 0.95, career_clarity: 0.4, financial: 0.27, entrepreneurship: 0.76, social_impact: 0.37, stability: 0.41, advancement: 0.54, work_life_balance: 0.67, company_size: 0.41 },
@@ -1045,7 +1045,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "brandisuunnittelija",
     title: "Brändisuunnittelija",
-    category: "luova",
+    category: "johtaja",
     interests: { technology: 0.48, people: 0.24, creative: 0.95, analytical: 0.1, hands_on: 0.27, business: 0.23, environment: 0.39, health: 0.19, education: 0.31, innovation: 0.87, arts_culture: 0.75, sports: 0.1, nature: 0.6, writing: 0.82 },
     workstyle: { teamwork: 0.79, independence: 0.95, leadership: 0.27, organization: 0.55, planning: 0.64, problem_solving: 0.52, precision: 0.14, performance: 0.62, teaching: 0.31, motivation: 0.48, autonomy: 0.95, social: 0.64, structure: 0.1, flexibility: 0.95, variety: 0.72 },
     values: { growth: 0.41, impact: 0.25, global: 0.49, career_clarity: 0.37, financial: 0.35, entrepreneurship: 0.77, social_impact: 0.65, stability: 0.33, advancement: 0.8, work_life_balance: 0.52, company_size: 0.53 },
@@ -1063,7 +1063,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "tuotesuunnittelija",
     title: "Tuotesuunnittelija",
-    category: "luova",
+    category: "johtaja",
     interests: { technology: 0.35, people: 0.39, creative: 0.95, analytical: 0.33, hands_on: 0.5, business: 0.39, environment: 0.1, health: 0.11, education: 0.51, innovation: 0.5, arts_culture: 0.95, sports: 0.31, nature: 0.51, writing: 0.45 },
     workstyle: { teamwork: 0.23, independence: 0.58, leadership: 0.24, organization: 0.43, planning: 0.26, problem_solving: 0.7, precision: 0.53, performance: 0.53, teaching: 0.4, motivation: 0.45, autonomy: 0.8, social: 0.32, structure: 0.15, flexibility: 0.89, variety: 0.8 },
     values: { growth: 0.78, impact: 0.41, global: 0.79, career_clarity: 0.5, financial: 0.51, entrepreneurship: 0.79, social_impact: 0.24, stability: 0.4, advancement: 0.41, work_life_balance: 0.44, company_size: 0.6 },
@@ -1090,7 +1090,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "liiketoimintakehittaja",
     title: "Liiketoimintakehittäjä",
-    category: "innovoija",
+    category: "johtaja",
     interests: { technology: 0.95, people: 0.64, creative: 0.81, analytical: 0.72, hands_on: 0.59, business: 0.52, environment: 0.59, health: 0.13, education: 0.57, innovation: 0.95, arts_culture: 0.38, sports: 0.15, nature: 0.19, writing: 0.45 },
     workstyle: { teamwork: 0.31, independence: 0.94, leadership: 0.49, organization: 0.57, planning: 0.53, problem_solving: 0.93, precision: 0.46, performance: 0.88, teaching: 0.57, motivation: 0.69, autonomy: 0.95, social: 0.42, structure: 0.45, flexibility: 0.58, variety: 0.77 },
     values: { growth: 0.84, impact: 0.37, global: 0.64, career_clarity: 0.54, financial: 0.71, entrepreneurship: 0.81, social_impact: 0.1, stability: 0.4, advancement: 0.82, work_life_balance: 0.53, company_size: 0.43 },
@@ -1207,7 +1207,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "sisallontuottaja",
     title: "Sisällöntuottaja",
-    category: "luova",
+    category: "johtaja",
     interests: { technology: 0.27, people: 0.23, creative: 0.95, analytical: 0.59, hands_on: 0.21, business: 0.32, environment: 0.39, health: 0.42, education: 0.27, innovation: 0.87, arts_culture: 0.72, sports: 0.23, nature: 0.61, writing: 0.65 },
     workstyle: { teamwork: 0.25, independence: 0.95, leadership: 0.2, organization: 0.47, planning: 0.24, problem_solving: 0.42, precision: 0.18, performance: 0.42, teaching: 0.29, motivation: 0.63, autonomy: 0.95, social: 0.65, structure: 0.5, flexibility: 0.95, variety: 0.65 },
     values: { growth: 0.35, impact: 0.24, global: 0.46, career_clarity: 0.52, financial: 0.36, entrepreneurship: 0.52, social_impact: 0.21, stability: 0.31, advancement: 0.49, work_life_balance: 0.83, company_size: 0.3 },
@@ -1333,7 +1333,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "rahoitusanalyytikko",
     title: "Rahoitusanalyytikko",
-    category: "visionaari",
+    category: "johtaja",
     interests: { technology: 0.43, people: 0.44, creative: 0.31, analytical: 0.87, hands_on: 0.4, business: 0.63, environment: 0.61, health: 0.44, education: 0.47, innovation: 0.9, arts_culture: 0.18, sports: 0.1, nature: 0.15, writing: 0.83 },
     workstyle: { teamwork: 0.57, independence: 0.58, leadership: 0.78, organization: 0.33, planning: 0.88, problem_solving: 0.53, precision: 0.49, performance: 0.73, teaching: 0.76, motivation: 0.39, autonomy: 0.82, social: 0.77, structure: 0.43, flexibility: 0.92, variety: 0.57 },
     values: { growth: 0.94, impact: 0.59, global: 0.8, career_clarity: 0.82, financial: 0.45, entrepreneurship: 0.72, social_impact: 0.4, stability: 0.17, advancement: 0.84, work_life_balance: 0.32, company_size: 0.68 },
@@ -1441,7 +1441,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "aanisuunnittelija",
     title: "Äänisuunnittelija",
-    category: "luova",
+    category: "johtaja",
     interests: { technology: 0.21, people: 0.23, creative: 0.7, analytical: 0.1, hands_on: 0.33, business: 0.1, environment: 0.31, health: 0.1, education: 0.41, innovation: 0.63, arts_culture: 0.89, sports: 0.1, nature: 0.24, writing: 0.92 },
     workstyle: { teamwork: 0.74, independence: 0.95, leadership: 0.12, organization: 0.11, planning: 0.4, problem_solving: 0.74, precision: 0.27, performance: 0.54, teaching: 0.43, motivation: 0.78, autonomy: 0.95, social: 0.64, structure: 0.34, flexibility: 0.68, variety: 0.63 },
     values: { growth: 0.55, impact: 0.51, global: 0.66, career_clarity: 0.44, financial: 0.16, entrepreneurship: 0.77, social_impact: 0.22, stability: 0.55, advancement: 0.68, work_life_balance: 0.42, company_size: 0.37 },
@@ -1486,7 +1486,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "kasikirjoittaja",
     title: "Käsikirjoittaja",
-    category: "luova",
+    category: "johtaja",
     interests: { technology: 0.47, people: 0.8, creative: 0.95, analytical: 0.58, hands_on: 0.24, business: 0.37, environment: 0.38, health: 0.1, education: 0.68, innovation: 0.95, arts_culture: 0.82, sports: 0.49, nature: 0.34, writing: 0.46 },
     workstyle: { teamwork: 0.48, independence: 0.7, leadership: 0.1, organization: 0.55, planning: 0.65, problem_solving: 0.61, precision: 0.51, performance: 0.95, teaching: 0.46, motivation: 0.6, autonomy: 0.95, social: 0.65, structure: 0.27, flexibility: 0.68, variety: 0.78 },
     values: { growth: 0.73, impact: 0.78, global: 0.63, career_clarity: 0.34, financial: 0.31, entrepreneurship: 0.73, social_impact: 0.66, stability: 0.37, advancement: 0.73, work_life_balance: 0.72, company_size: 0.1 },
@@ -1657,7 +1657,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "asiakkuusvastaava",
     title: "Asiakkuusvastaava",
-    category: "johtaja",
+    category: "jarjestaja",
     interests: { technology: 0.34, people: 0.81, creative: 0.36, analytical: 0.42, hands_on: 0.1, business: 0.95, environment: 0.31, health: 0.1, education: 0.25, innovation: 0.77, arts_culture: 0.1, sports: 0.21, nature: 0.1, writing: 0.31 },
     workstyle: { teamwork: 0.79, independence: 0.36, leadership: 0.93, organization: 0.83, planning: 0.95, problem_solving: 0.48, precision: 0.67, performance: 0.95, teaching: 0.5, motivation: 0.95, autonomy: 0.59, social: 0.46, structure: 0.6, flexibility: 0.25, variety: 0.55 },
     values: { growth: 0.63, impact: 0.62, global: 0.8, career_clarity: 0.42, financial: 0.72, entrepreneurship: 0.5, social_impact: 0.51, stability: 0.24, advancement: 0.7, work_life_balance: 0.59, company_size: 0.52 },
@@ -1837,7 +1837,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "it-tukihenkilo",
     title: "IT-tukihenkilö",
-    category: "innovoija",
+    category: "johtaja",
     interests: { technology: 0.95, people: 0.31, creative: 0.66, analytical: 0.83, hands_on: 0.33, business: 0.13, environment: 0.12, health: 0.17, education: 0.49, innovation: 0.95, arts_culture: 0.24, sports: 0.1, nature: 0.34, writing: 0.43 },
     workstyle: { teamwork: 0.31, independence: 0.75, leadership: 0.39, organization: 0.57, planning: 0.72, problem_solving: 0.95, precision: 0.8, performance: 0.46, teaching: 0.58, motivation: 0.22, autonomy: 0.95, social: 0.13, structure: 0.46, flexibility: 0.86, variety: 0.83 },
     values: { growth: 0.61, impact: 0.32, global: 0.77, career_clarity: 0.31, financial: 0.72, entrepreneurship: 0.78, social_impact: 0.6, stability: 0.4, advancement: 0.71, work_life_balance: 0.29, company_size: 0.32 },
@@ -1891,7 +1891,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "full-stack-kehittaja",
     title: "Full-Stack-kehittäjä",
-    category: "innovoija",
+    category: "johtaja",
     interests: { technology: 0.83, people: 0.29, creative: 0.71, analytical: 0.86, hands_on: 0.7, business: 0.39, environment: 0.54, health: 0.45, education: 0.1, innovation: 0.95, arts_culture: 0.1, sports: 0.1, nature: 0.1, writing: 0.27 },
     workstyle: { teamwork: 0.69, independence: 0.86, leadership: 0.49, organization: 0.58, planning: 0.57, problem_solving: 0.95, precision: 0.52, performance: 0.64, teaching: 0.22, motivation: 0.53, autonomy: 0.95, social: 0.15, structure: 0.18, flexibility: 0.81, variety: 0.95 },
     values: { growth: 0.6, impact: 0.85, global: 0.33, career_clarity: 0.62, financial: 0.48, entrepreneurship: 0.71, social_impact: 0.35, stability: 0.34, advancement: 0.46, work_life_balance: 0.27, company_size: 0.47 },
@@ -1945,7 +1945,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "myyntityontekija",
     title: "Myyntityöntekijä",
-    category: "johtaja",
+    category: "jarjestaja",
     interests: { technology: 0.28, people: 0.53, creative: 0.48, analytical: 0.5, hands_on: 0.39, business: 0.68, environment: 0.1, health: 0.1, education: 0.33, innovation: 0.36, arts_culture: 0.19, sports: 0.23, nature: 0.25, writing: 0.14 },
     workstyle: { teamwork: 0.8, independence: 0.78, leadership: 0.84, organization: 0.69, planning: 0.51, problem_solving: 0.81, precision: 0.27, performance: 0.91, teaching: 0.3, motivation: 0.95, autonomy: 0.56, social: 0.75, structure: 0.38, flexibility: 0.52, variety: 0.71 },
     values: { growth: 0.95, impact: 0.74, global: 0.33, career_clarity: 0.8, financial: 0.78, entrepreneurship: 0.72, social_impact: 0.47, stability: 0.26, advancement: 0.8, work_life_balance: 0.2, company_size: 0.55 },
@@ -1963,7 +1963,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "verkkosivustonhallintaja",
     title: "Verkkosivustonhallintaja",
-    category: "innovoija",
+    category: "johtaja",
     interests: { technology: 0.95, people: 0.43, creative: 0.53, analytical: 0.95, hands_on: 0.47, business: 0.34, environment: 0.41, health: 0.24, education: 0.52, innovation: 0.95, arts_culture: 0.34, sports: 0.13, nature: 0.14, writing: 0.69 },
     workstyle: { teamwork: 0.3, independence: 0.6, leadership: 0.45, organization: 0.65, planning: 0.72, problem_solving: 0.95, precision: 0.71, performance: 0.31, teaching: 0.35, motivation: 0.77, autonomy: 0.92, social: 0.1, structure: 0.26, flexibility: 0.8, variety: 0.82 },
     values: { growth: 0.95, impact: 0.8, global: 0.29, career_clarity: 0.77, financial: 0.9, entrepreneurship: 0.81, social_impact: 0.46, stability: 0.51, advancement: 0.47, work_life_balance: 0.77, company_size: 0.56 },
@@ -2026,7 +2026,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "asiakaspalveluvastaava",
     title: "Asiakaspalveluvastaava",
-    category: "johtaja",
+    category: "jarjestaja",
     interests: { technology: 0.69, people: 0.95, creative: 0.51, analytical: 0.39, hands_on: 0.1, business: 0.76, environment: 0.11, health: 0.14, education: 0.41, innovation: 0.44, arts_culture: 0.45, sports: 0.51, nature: 0.1, writing: 0.36 },
     workstyle: { teamwork: 0.43, independence: 0.52, leadership: 0.95, organization: 0.78, planning: 0.51, problem_solving: 0.73, precision: 0.46, performance: 0.95, teaching: 0.45, motivation: 0.95, autonomy: 0.72, social: 0.46, structure: 0.73, flexibility: 0.28, variety: 0.35 },
     values: { growth: 0.75, impact: 0.85, global: 0.71, career_clarity: 0.58, financial: 0.84, entrepreneurship: 0.43, social_impact: 0.63, stability: 0.37, advancement: 0.95, work_life_balance: 0.32, company_size: 0.82 },
@@ -2035,7 +2035,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "palvelumuotoilija",
     title: "Palvelumuotoilija",
-    category: "johtaja",
+    category: "innovoija",
     interests: { technology: 0.5, people: 0.48, creative: 0.1, analytical: 0.4, hands_on: 0.44, business: 0.95, environment: 0.32, health: 0.48, education: 0.32, innovation: 0.66, arts_culture: 0.15, sports: 0.39, nature: 0.39, writing: 0.53 },
     workstyle: { teamwork: 0.89, independence: 0.62, leadership: 0.77, organization: 0.86, planning: 0.79, problem_solving: 0.77, precision: 0.63, performance: 0.9, teaching: 0.46, motivation: 0.54, autonomy: 0.61, social: 0.5, structure: 0.58, flexibility: 0.78, variety: 0.76 },
     values: { growth: 0.55, impact: 0.61, global: 0.37, career_clarity: 0.88, financial: 0.89, entrepreneurship: 0.73, social_impact: 0.47, stability: 0.78, advancement: 0.87, work_life_balance: 0.27, company_size: 0.79 },
@@ -2188,7 +2188,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "kemiisti",
     title: "Kemiisti",
-    category: "innovoija",
+    category: "johtaja",
     interests: { technology: 0.95, people: 0.6, creative: 0.45, analytical: 0.85, hands_on: 0.34, business: 0.4, environment: 0.11, health: 0.44, education: 0.1, innovation: 0.8, arts_culture: 0.5, sports: 0.37, nature: 0.42, writing: 0.61 },
     workstyle: { teamwork: 0.25, independence: 0.95, leadership: 0.6, organization: 0.64, planning: 0.54, problem_solving: 0.95, precision: 0.81, performance: 0.52, teaching: 0.4, motivation: 0.23, autonomy: 0.85, social: 0.41, structure: 0.68, flexibility: 0.73, variety: 0.65 },
     values: { growth: 0.59, impact: 0.6, global: 0.41, career_clarity: 0.63, financial: 0.44, entrepreneurship: 0.83, social_impact: 0.35, stability: 0.55, advancement: 0.3, work_life_balance: 0.8, company_size: 0.13 },
@@ -2260,7 +2260,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "mediasuunnittelija",
     title: "Mediasuunnittelija",
-    category: "luova",
+    category: "johtaja",
     interests: { technology: 0.18, people: 0.45, creative: 0.69, analytical: 0.5, hands_on: 0.22, business: 0.52, environment: 0.35, health: 0.1, education: 0.52, innovation: 0.68, arts_culture: 0.95, sports: 0.1, nature: 0.14, writing: 0.46 },
     workstyle: { teamwork: 0.8, independence: 0.95, leadership: 0.1, organization: 0.42, planning: 0.69, problem_solving: 0.69, precision: 0.57, performance: 0.53, teaching: 0.68, motivation: 0.63, autonomy: 0.95, social: 0.62, structure: 0.3, flexibility: 0.67, variety: 0.95 },
     values: { growth: 0.74, impact: 0.29, global: 0.25, career_clarity: 0.39, financial: 0.48, entrepreneurship: 0.73, social_impact: 0.22, stability: 0.1, advancement: 0.57, work_life_balance: 0.56, company_size: 0.1 },
@@ -2278,7 +2278,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "merikapteeni",
     title: "Merikapteeni",
-    category: "johtaja",
+    category: "jarjestaja",
     interests: { technology: 0.26, people: 0.95, creative: 0.22, analytical: 0.39, hands_on: 0.27, business: 0.62, environment: 0.39, health: 0.37, education: 0.47, innovation: 0.43, arts_culture: 0.44, sports: 0.53, nature: 0.46, writing: 0.25 },
     workstyle: { teamwork: 0.71, independence: 0.61, leadership: 0.95, organization: 0.95, planning: 0.95, problem_solving: 0.72, precision: 0.57, performance: 0.66, teaching: 0.56, motivation: 0.67, autonomy: 0.54, social: 0.52, structure: 0.41, flexibility: 0.39, variety: 0.74 },
     values: { growth: 0.86, impact: 0.41, global: 0.42, career_clarity: 0.63, financial: 0.95, entrepreneurship: 0.77, social_impact: 0.33, stability: 0.5, advancement: 0.95, work_life_balance: 0.23, company_size: 0.31 },
@@ -2413,7 +2413,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "ux-researcher",
     title: "UX-tutkija",
-    category: "innovoija",
+    category: "johtaja",
     interests: { technology: 0.93, people: 0.48, creative: 0.48, analytical: 0.63, hands_on: 0.66, business: 0.25, environment: 0.32, health: 0.1, education: 0.33, innovation: 0.95, arts_culture: 0.51, sports: 0.3, nature: 0.32, writing: 0.21 },
     workstyle: { teamwork: 0.76, independence: 0.95, leadership: 0.43, organization: 0.5, planning: 0.2, problem_solving: 0.95, precision: 0.81, performance: 0.43, teaching: 0.59, motivation: 0.75, autonomy: 0.95, social: 0.65, structure: 0.47, flexibility: 0.67, variety: 0.52 },
     values: { growth: 0.78, impact: 0.61, global: 0.75, career_clarity: 0.51, financial: 0.71, entrepreneurship: 0.76, social_impact: 0.1, stability: 0.44, advancement: 0.36, work_life_balance: 0.8, company_size: 0.67 },
@@ -2476,7 +2476,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "site-reliability-engineer",
     title: "SRE-insinööri",
-    category: "innovoija",
+    category: "johtaja",
     interests: { technology: 0.8, people: 0.39, creative: 0.69, analytical: 0.83, hands_on: 0.63, business: 0.68, environment: 0.51, health: 0.45, education: 0.35, innovation: 0.77, arts_culture: 0.33, sports: 0.43, nature: 0.38, writing: 0.23 },
     workstyle: { teamwork: 0.37, independence: 0.6, leadership: 0.44, organization: 0.16, planning: 0.59, problem_solving: 0.91, precision: 0.93, performance: 0.32, teaching: 0.15, motivation: 0.55, autonomy: 0.95, social: 0.19, structure: 0.33, flexibility: 0.54, variety: 0.95 },
     values: { growth: 0.74, impact: 0.43, global: 0.36, career_clarity: 0.33, financial: 0.52, entrepreneurship: 0.72, social_impact: 0.28, stability: 0.43, advancement: 0.33, work_life_balance: 0.65, company_size: 0.67 },
@@ -2503,7 +2503,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "api-developer",
     title: "API-kehittäjä",
-    category: "innovoija",
+    category: "johtaja",
     interests: { technology: 0.95, people: 0.23, creative: 0.51, analytical: 0.95, hands_on: 0.43, business: 0.33, environment: 0.1, health: 0.1, education: 0.29, innovation: 0.74, arts_culture: 0.29, sports: 0.2, nature: 0.41, writing: 0.22 },
     workstyle: { teamwork: 0.71, independence: 0.79, leadership: 0.53, organization: 0.28, planning: 0.53, problem_solving: 0.91, precision: 0.58, performance: 0.68, teaching: 0.14, motivation: 0.45, autonomy: 0.95, social: 0.48, structure: 0.6, flexibility: 0.81, variety: 0.9 },
     values: { growth: 0.93, impact: 0.32, global: 0.23, career_clarity: 0.66, financial: 0.6, entrepreneurship: 0.77, social_impact: 0.28, stability: 0.42, advancement: 0.59, work_life_balance: 0.54, company_size: 0.19 },
@@ -2521,7 +2521,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "video-editor",
     title: "Videoleikkaaja",
-    category: "luova",
+    category: "johtaja",
     interests: { technology: 0.5, people: 0.54, creative: 0.95, analytical: 0.35, hands_on: 0.42, business: 0.46, environment: 0.36, health: 0.1, education: 0.64, innovation: 0.71, arts_culture: 0.95, sports: 0.11, nature: 0.25, writing: 0.59 },
     workstyle: { teamwork: 0.43, independence: 0.72, leadership: 0.26, organization: 0.26, planning: 0.42, problem_solving: 0.35, precision: 0.58, performance: 0.89, teaching: 0.15, motivation: 0.79, autonomy: 0.81, social: 0.5, structure: 0.42, flexibility: 0.65, variety: 0.61 },
     values: { growth: 0.73, impact: 0.42, global: 0.64, career_clarity: 0.4, financial: 0.54, entrepreneurship: 0.75, social_impact: 0.19, stability: 0.25, advancement: 0.68, work_life_balance: 0.81, company_size: 0.39 },
@@ -2629,7 +2629,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "change-management-specialist",
     title: "Muutosjohtamisen asiantuntija",
-    category: "visionaari",
+    category: "johtaja",
     interests: { technology: 0.8, people: 0.55, creative: 0.5, analytical: 0.55, hands_on: 0.33, business: 0.76, environment: 0.56, health: 0.4, education: 0.24, innovation: 0.95, arts_culture: 0.45, sports: 0.2, nature: 0.1, writing: 0.33 },
     workstyle: { teamwork: 0.68, independence: 0.45, leadership: 0.41, organization: 0.69, planning: 0.62, problem_solving: 0.85, precision: 0.39, performance: 0.22, teaching: 0.75, motivation: 0.55, autonomy: 0.87, social: 0.57, structure: 0.27, flexibility: 0.73, variety: 0.72 },
     values: { growth: 0.41, impact: 0.77, global: 0.61, career_clarity: 0.82, financial: 0.64, entrepreneurship: 0.78, social_impact: 0.58, stability: 0.64, advancement: 0.32, work_life_balance: 0.25, company_size: 0.57 },
@@ -2683,7 +2683,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "remote-team-lead",
     title: "Etätiimin vetäjä",
-    category: "johtaja",
+    category: "jarjestaja",
     interests: { technology: 0.7, people: 0.88, creative: 0.21, analytical: 0.46, hands_on: 0.17, business: 0.92, environment: 0.27, health: 0.36, education: 0.1, innovation: 0.42, arts_culture: 0.4, sports: 0.23, nature: 0.22, writing: 0.41 },
     workstyle: { teamwork: 0.95, independence: 0.8, leadership: 0.91, organization: 0.72, planning: 0.65, problem_solving: 0.86, precision: 0.61, performance: 0.52, teaching: 0.38, motivation: 0.78, autonomy: 0.63, social: 0.44, structure: 0.86, flexibility: 0.45, variety: 0.76 },
     values: { growth: 0.51, impact: 0.89, global: 0.34, career_clarity: 0.53, financial: 0.95, entrepreneurship: 0.95, social_impact: 0.41, stability: 0.69, advancement: 0.83, work_life_balance: 0.67, company_size: 0.72 },
@@ -2935,7 +2935,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "kettera-valmentaja",
     title: "Agile-valmentaja",
-    category: "johtaja",
+    category: "innovoija",
     interests: { technology: 0.41, people: 0.95, creative: 0.12, analytical: 0.89, hands_on: 0.1, business: 0.73, environment: 0.1, health: 0.23, education: 0.35, innovation: 0.42, arts_culture: 0.33, sports: 0.18, nature: 0.1, writing: 0.18 },
     workstyle: { teamwork: 0.75, independence: 0.68, leadership: 0.83, organization: 0.67, planning: 0.93, problem_solving: 0.77, precision: 0.78, performance: 0.59, teaching: 0.4, motivation: 0.69, autonomy: 0.62, social: 0.68, structure: 0.45, flexibility: 0.48, variety: 0.63 },
     values: { growth: 0.95, impact: 0.51, global: 0.45, career_clarity: 0.92, financial: 0.73, entrepreneurship: 0.45, social_impact: 0.1, stability: 0.51, advancement: 0.71, work_life_balance: 0.64, company_size: 0.44 },
@@ -3070,7 +3070,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "verkkokurssien-luoja",
     title: "Verkkokurssien luoja",
-    category: "luova",
+    category: "johtaja",
     interests: { technology: 0.58, people: 0.63, creative: 0.95, analytical: 0.33, hands_on: 0.73, business: 0.45, environment: 0.27, health: 0.41, education: 0.41, innovation: 0.93, arts_culture: 0.95, sports: 0.1, nature: 0.45, writing: 0.79 },
     workstyle: { teamwork: 0.51, independence: 0.95, leadership: 0.16, organization: 0.2, planning: 0.11, problem_solving: 0.47, precision: 0.5, performance: 0.95, teaching: 0.15, motivation: 0.7, autonomy: 0.9, social: 0.36, structure: 0.21, flexibility: 0.91, variety: 0.79 },
     values: { growth: 0.64, impact: 0.21, global: 0.45, career_clarity: 0.41, financial: 0.19, entrepreneurship: 0.74, social_impact: 0.59, stability: 0.38, advancement: 0.5, work_life_balance: 0.89, company_size: 0.24 },
@@ -3088,7 +3088,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "myynti-insinoori",
     title: "Myynti-insinööri",
-    category: "johtaja",
+    category: "innovoija",
     interests: { technology: 0.75, people: 0.71, creative: 0.17, analytical: 0.67, hands_on: 0.1, business: 0.65, environment: 0.27, health: 0.1, education: 0.48, innovation: 0.5, arts_culture: 0.1, sports: 0.21, nature: 0.42, writing: 0.66 },
     workstyle: { teamwork: 0.72, independence: 0.58, leadership: 0.7, organization: 0.9, planning: 0.6, problem_solving: 0.83, precision: 0.2, performance: 0.95, teaching: 0.14, motivation: 0.53, autonomy: 0.59, social: 0.52, structure: 0.74, flexibility: 0.48, variety: 0.85 },
     values: { growth: 0.61, impact: 0.71, global: 0.59, career_clarity: 0.82, financial: 0.64, entrepreneurship: 0.87, social_impact: 0.11, stability: 0.6, advancement: 0.95, work_life_balance: 0.4, company_size: 0.6 },
@@ -3097,7 +3097,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "muutosjohtamiskonsultti",
     title: "Muutosjohtamiskonsultti",
-    category: "johtaja",
+    category: "visionaari",
     interests: { technology: 0.49, people: 0.62, creative: 0.38, analytical: 0.38, hands_on: 0.32, business: 0.71, environment: 0.41, health: 0.1, education: 0.35, innovation: 0.71, arts_culture: 0.27, sports: 0.58, nature: 0.47, writing: 0.54 },
     workstyle: { teamwork: 0.84, independence: 0.75, leadership: 0.72, organization: 0.77, planning: 0.95, problem_solving: 0.44, precision: 0.69, performance: 0.95, teaching: 0.49, motivation: 0.9, autonomy: 0.35, social: 0.76, structure: 0.46, flexibility: 0.37, variety: 0.87 },
     values: { growth: 0.55, impact: 0.71, global: 0.31, career_clarity: 0.92, financial: 0.95, entrepreneurship: 0.51, social_impact: 0.59, stability: 0.4, advancement: 0.95, work_life_balance: 0.41, company_size: 0.4 },
@@ -3106,7 +3106,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "sairaalan-osastonhoitaja",
     title: "Osastonhoitaja (sairaala)",
-    category: "johtaja",
+    category: "auttaja",
     interests: { technology: 0.45, people: 0.85, creative: 0.2, analytical: 0.6, hands_on: 0.4, business: 0.6, environment: 0.15, health: 0.9, education: 0.4, innovation: 0.3, arts_culture: 0.1, sports: 0.2, nature: 0.1, writing: 0.4 },
     workstyle: { teamwork: 0.46, independence: 0.68, leadership: 0.95, organization: 0.75, planning: 0.62, problem_solving: 0.95, precision: 0.77, performance: 0.81, teaching: 0.19, motivation: 0.92, autonomy: 0.6, social: 0.41, structure: 0.71, flexibility: 0.72, variety: 0.4 },
     values: { growth: 0.6, impact: 0.48, global: 0.32, career_clarity: 0.68, financial: 0.55, entrepreneurship: 0.92, social_impact: 0.31, stability: 0.79, advancement: 0.95, work_life_balance: 0.41, company_size: 0.4 },
@@ -3115,7 +3115,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "koulun-rehtori",
     title: "Rehtori",
-    category: "johtaja",
+    category: "auttaja",
     interests: { technology: 0.21, people: 0.95, creative: 0.41, analytical: 0.48, hands_on: 0.25, business: 0.95, environment: 0.45, health: 0.3, education: 0.52, innovation: 0.45, arts_culture: 0.1, sports: 0.25, nature: 0.15, writing: 0.55 },
     workstyle: { teamwork: 0.95, independence: 0.66, leadership: 0.95, organization: 0.48, planning: 0.57, problem_solving: 0.6, precision: 0.76, performance: 0.72, teaching: 0.15, motivation: 0.59, autonomy: 0.67, social: 0.4, structure: 0.85, flexibility: 0.21, variety: 0.61 },
     values: { growth: 0.95, impact: 0.7, global: 0.32, career_clarity: 0.59, financial: 0.95, entrepreneurship: 0.66, social_impact: 0.11, stability: 0.4, advancement: 0.95, work_life_balance: 0.23, company_size: 0.64 },
@@ -3169,7 +3169,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "megatrendien-analyytikko",
     title: "Megatrendien analyytikko",
-    category: "visionaari",
+    category: "johtaja",
     interests: { technology: 0.69, people: 0.45, creative: 0.43, analytical: 0.61, hands_on: 0.1, business: 0.24, environment: 0.39, health: 0.26, education: 0.68, innovation: 0.68, arts_culture: 0.21, sports: 0.3, nature: 0.34, writing: 0.67 },
     workstyle: { teamwork: 0.23, independence: 0.8, leadership: 0.47, organization: 0.4, planning: 0.95, problem_solving: 0.95, precision: 0.23, performance: 0.8, teaching: 0.63, motivation: 0.57, autonomy: 0.95, social: 0.32, structure: 0.5, flexibility: 0.76, variety: 0.95 },
     values: { growth: 0.68, impact: 0.84, global: 0.62, career_clarity: 0.52, financial: 0.42, entrepreneurship: 0.79, social_impact: 0.81, stability: 0.65, advancement: 0.45, work_life_balance: 0.51, company_size: 0.68 },
@@ -3277,7 +3277,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "ruokajarjestelman-suunnittelija",
     title: "Ruokajärjestelmän suunnittelija",
-    category: "visionaari",
+    category: "johtaja",
     interests: { technology: 0.76, people: 0.27, creative: 0.45, analytical: 0.57, hands_on: 0.37, business: 0.56, environment: 0.75, health: 0.1, education: 0.77, innovation: 0.92, arts_culture: 0.18, sports: 0.45, nature: 0.52, writing: 0.38 },
     workstyle: { teamwork: 0.48, independence: 0.71, leadership: 0.59, organization: 0.56, planning: 0.69, problem_solving: 0.67, precision: 0.19, performance: 0.48, teaching: 0.37, motivation: 0.39, autonomy: 0.82, social: 0.43, structure: 0.44, flexibility: 0.67, variety: 0.54 },
     values: { growth: 0.92, impact: 0.61, global: 0.95, career_clarity: 0.65, financial: 0.33, entrepreneurship: 0.73, social_impact: 0.49, stability: 0.4, advancement: 0.66, work_life_balance: 0.54, company_size: 0.15 },
@@ -3286,7 +3286,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "tyoelaman-tulevaisuusasiantuntija",
     title: "Työelämän tulevaisuusasiantuntija",
-    category: "visionaari",
+    category: "johtaja",
     interests: { technology: 0.45, people: 0.47, creative: 0.57, analytical: 0.49, hands_on: 0.1, business: 0.78, environment: 0.49, health: 0.31, education: 0.71, innovation: 0.54, arts_culture: 0.6, sports: 0.25, nature: 0.58, writing: 0.67 },
     workstyle: { teamwork: 0.46, independence: 0.45, leadership: 0.53, organization: 0.48, planning: 0.78, problem_solving: 0.82, precision: 0.38, performance: 0.48, teaching: 0.32, motivation: 0.86, autonomy: 0.94, social: 0.32, structure: 0.5, flexibility: 0.87, variety: 0.78 },
     values: { growth: 0.92, impact: 0.78, global: 0.7, career_clarity: 0.32, financial: 0.23, entrepreneurship: 0.87, social_impact: 0.9, stability: 0.67, advancement: 0.47, work_life_balance: 0.7, company_size: 0.42 },
@@ -3304,7 +3304,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "datavirtojen-arkkitehti",
     title: "Datavirtojen arkkitehti",
-    category: "visionaari",
+    category: "johtaja",
     interests: { technology: 0.65, people: 0.36, creative: 0.33, analytical: 0.49, hands_on: 0.17, business: 0.67, environment: 0.57, health: 0.46, education: 0.46, innovation: 0.95, arts_culture: 0.31, sports: 0.1, nature: 0.44, writing: 0.8 },
     workstyle: { teamwork: 0.76, independence: 0.68, leadership: 0.71, organization: 0.27, planning: 0.73, problem_solving: 0.8, precision: 0.38, performance: 0.58, teaching: 0.21, motivation: 0.3, autonomy: 0.95, social: 0.69, structure: 0.35, flexibility: 0.52, variety: 0.48 },
     values: { growth: 0.81, impact: 0.77, global: 0.8, career_clarity: 0.76, financial: 0.34, entrepreneurship: 0.9, social_impact: 0.84, stability: 0.27, advancement: 0.82, work_life_balance: 0.49, company_size: 0.35 },
@@ -3331,7 +3331,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "ilmastonmuutoksen-sopeutumissuunnittelija",
     title: "Ilmastonmuutoksen sopeutumissuunnittelija",
-    category: "visionaari",
+    category: "johtaja",
     interests: { technology: 0.53, people: 0.48, creative: 0.77, analytical: 0.63, hands_on: 0.28, business: 0.49, environment: 0.59, health: 0.22, education: 0.6, innovation: 0.88, arts_culture: 0.19, sports: 0.44, nature: 0.47, writing: 0.61 },
     workstyle: { teamwork: 0.68, independence: 0.57, leadership: 0.28, organization: 0.52, planning: 0.95, problem_solving: 0.43, precision: 0.22, performance: 0.34, teaching: 0.23, motivation: 0.58, autonomy: 0.91, social: 0.73, structure: 0.31, flexibility: 0.45, variety: 0.82 },
     values: { growth: 0.94, impact: 0.95, global: 0.95, career_clarity: 0.65, financial: 0.41, entrepreneurship: 0.77, social_impact: 0.56, stability: 0.48, advancement: 0.53, work_life_balance: 0.38, company_size: 0.61 },
@@ -3385,7 +3385,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "teollisen-symbioosien-suunnittelija",
     title: "Teollisen symbioosien suunnittelija",
-    category: "visionaari",
+    category: "johtaja",
     interests: { technology: 0.95, people: 0.51, creative: 0.38, analytical: 0.82, hands_on: 0.1, business: 0.35, environment: 0.25, health: 0.14, education: 0.34, innovation: 0.93, arts_culture: 0.26, sports: 0.3, nature: 0.36, writing: 0.76 },
     workstyle: { teamwork: 0.54, independence: 0.71, leadership: 0.8, organization: 0.26, planning: 0.73, problem_solving: 0.95, precision: 0.63, performance: 0.7, teaching: 0.4, motivation: 0.77, autonomy: 0.9, social: 0.72, structure: 0.12, flexibility: 0.74, variety: 0.46 },
     values: { growth: 0.67, impact: 0.68, global: 0.65, career_clarity: 0.38, financial: 0.68, entrepreneurship: 0.7, social_impact: 0.55, stability: 0.58, advancement: 0.39, work_life_balance: 0.69, company_size: 0.44 },
@@ -3457,7 +3457,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "whole-systems-designer",
     title: "Kokonaisjärjestelmien suunnittelija",
-    category: "visionaari",
+    category: "johtaja",
     interests: { technology: 0.87, people: 0.65, creative: 0.66, analytical: 0.95, hands_on: 0.1, business: 0.21, environment: 0.28, health: 0.1, education: 0.54, innovation: 0.91, arts_culture: 0.5, sports: 0.29, nature: 0.51, writing: 0.6 },
     workstyle: { teamwork: 0.59, independence: 0.5, leadership: 0.76, organization: 0.16, planning: 0.55, problem_solving: 0.43, precision: 0.53, performance: 0.63, teaching: 0.34, motivation: 0.77, autonomy: 0.89, social: 0.23, structure: 0.57, flexibility: 0.51, variety: 0.5 },
     values: { growth: 0.41, impact: 0.7, global: 0.58, career_clarity: 0.73, financial: 0.54, entrepreneurship: 0.71, social_impact: 0.67, stability: 0.39, advancement: 0.65, work_life_balance: 0.39, company_size: 0.57 },
@@ -3466,7 +3466,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "urban-futures-asiantuntija",
     title: "Kaupunkien tulevaisuuden asiantuntija",
-    category: "visionaari",
+    category: "johtaja",
     interests: { technology: 0.51, people: 0.34, creative: 0.36, analytical: 0.44, hands_on: 0.39, business: 0.7, environment: 0.24, health: 0.36, education: 0.8, innovation: 0.95, arts_culture: 0.12, sports: 0.3, nature: 0.1, writing: 0.51 },
     workstyle: { teamwork: 0.36, independence: 0.78, leadership: 0.67, organization: 0.2, planning: 0.68, problem_solving: 0.93, precision: 0.48, performance: 0.6, teaching: 0.61, motivation: 0.86, autonomy: 0.94, social: 0.43, structure: 0.63, flexibility: 0.88, variety: 0.75 },
     values: { growth: 0.57, impact: 0.89, global: 0.73, career_clarity: 0.61, financial: 0.55, entrepreneurship: 0.82, social_impact: 0.66, stability: 0.63, advancement: 0.64, work_life_balance: 0.68, company_size: 0.53 },
@@ -3475,7 +3475,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "planetary-health-asiantuntija",
     title: "Planeettaisen terveyden asiantuntija",
-    category: "visionaari",
+    category: "johtaja",
     interests: { technology: 0.6, people: 0.35, creative: 0.32, analytical: 0.42, hands_on: 0.39, business: 0.5, environment: 0.69, health: 0.53, education: 0.33, innovation: 0.82, arts_culture: 0.27, sports: 0.34, nature: 0.25, writing: 0.37 },
     workstyle: { teamwork: 0.74, independence: 0.65, leadership: 0.34, organization: 0.26, planning: 0.95, problem_solving: 0.95, precision: 0.43, performance: 0.61, teaching: 0.76, motivation: 0.74, autonomy: 0.88, social: 0.28, structure: 0.43, flexibility: 0.89, variety: 0.49 },
     values: { growth: 0.45, impact: 0.52, global: 0.8, career_clarity: 0.6, financial: 0.5, entrepreneurship: 0.76, social_impact: 0.64, stability: 0.63, advancement: 0.67, work_life_balance: 0.75, company_size: 0.35 },
@@ -3565,7 +3565,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "tekoaly-kehoteasiantuntija",
     title: "Tekoäly-kehoteasiantuntija",
-    category: "innovoija",
+    category: "johtaja",
     interests: { technology: 0.76, people: 0.27, creative: 0.81, analytical: 0.65, hands_on: 0.77, business: 0.16, environment: 0.1, health: 0.1, education: 0.49, innovation: 0.95, arts_culture: 0.51, sports: 0.36, nature: 0.1, writing: 0.31 },
     workstyle: { teamwork: 0.49, independence: 0.64, leadership: 0.49, organization: 0.57, planning: 0.43, problem_solving: 0.69, precision: 0.84, performance: 0.58, teaching: 0.13, motivation: 0.67, autonomy: 0.85, social: 0.57, structure: 0.61, flexibility: 0.71, variety: 0.84 },
     values: { growth: 0.6, impact: 0.45, global: 0.29, career_clarity: 0.23, financial: 0.76, entrepreneurship: 0.83, social_impact: 0.46, stability: 0.26, advancement: 0.78, work_life_balance: 0.58, company_size: 0.6 },
@@ -4114,7 +4114,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "opetusteknologi",
     title: "Opetusteknologi",
-    category: "innovoija",
+    category: "johtaja",
     interests: { technology: 0.95, people: 0.16, creative: 0.8, analytical: 0.95, hands_on: 0.48, business: 0.38, environment: 0.31, health: 0.2, education: 0.13, innovation: 0.72, arts_culture: 0.43, sports: 0.1, nature: 0.28, writing: 0.16 },
     workstyle: { teamwork: 0.41, independence: 0.83, leadership: 0.1, organization: 0.19, planning: 0.4, problem_solving: 0.95, precision: 0.51, performance: 0.73, teaching: 0.16, motivation: 0.5, autonomy: 0.95, social: 0.22, structure: 0.57, flexibility: 0.58, variety: 0.69 },
     values: { growth: 0.79, impact: 0.63, global: 0.69, career_clarity: 0.75, financial: 0.45, entrepreneurship: 0.82, social_impact: 0.32, stability: 0.67, advancement: 0.85, work_life_balance: 0.41, company_size: 0.39 },
@@ -4258,7 +4258,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "webassembly-developer",
     title: "WebAssembly-kehittäjä",
-    category: "innovoija",
+    category: "johtaja",
     interests: { technology: 0.95, people: 0.28, creative: 0.42, analytical: 0.92, hands_on: 0.3, business: 0.55, environment: 0.52, health: 0.1, education: 0.57, innovation: 0.78, arts_culture: 0.1, sports: 0.12, nature: 0.1, writing: 0.56 },
     workstyle: { teamwork: 0.55, independence: 0.84, leadership: 0.15, organization: 0.64, planning: 0.21, problem_solving: 0.68, precision: 0.47, performance: 0.59, teaching: 0.5, motivation: 0.25, autonomy: 0.95, social: 0.38, structure: 0.58, flexibility: 0.71, variety: 0.46 },
     values: { growth: 0.55, impact: 0.82, global: 0.48, career_clarity: 0.25, financial: 0.68, entrepreneurship: 0.71, social_impact: 0.17, stability: 0.69, advancement: 0.79, work_life_balance: 0.69, company_size: 0.55 },
@@ -4267,7 +4267,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "platform-insinoori",
     title: "Platform-insinööri",
-    category: "innovoija",
+    category: "johtaja",
     interests: { technology: 0.95, people: 0.5, creative: 0.63, analytical: 0.95, hands_on: 0.62, business: 0.21, environment: 0.13, health: 0.1, education: 0.6, innovation: 0.95, arts_culture: 0.25, sports: 0.1, nature: 0.23, writing: 0.12 },
     workstyle: { teamwork: 0.32, independence: 0.95, leadership: 0.31, organization: 0.34, planning: 0.4, problem_solving: 0.95, precision: 0.56, performance: 0.8, teaching: 0.5, motivation: 0.76, autonomy: 0.95, social: 0.52, structure: 0.66, flexibility: 0.94, variety: 0.9 },
     values: { growth: 0.72, impact: 0.35, global: 0.53, career_clarity: 0.58, financial: 0.9, entrepreneurship: 0.83, social_impact: 0.14, stability: 0.27, advancement: 0.53, work_life_balance: 0.74, company_size: 0.3 },
@@ -4627,7 +4627,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "brandi-identiteettisuunnittelija",
     title: "Brändi-identiteettisuunnittelija",
-    category: "luova",
+    category: "johtaja",
     interests: { technology: 0.56, people: 0.41, creative: 0.89, analytical: 0.45, hands_on: 0.26, business: 0.44, environment: 0.1, health: 0.26, education: 0.13, innovation: 0.5, arts_culture: 0.95, sports: 0.13, nature: 0.41, writing: 0.95 },
     workstyle: { teamwork: 0.79, independence: 0.83, leadership: 0.22, organization: 0.13, planning: 0.6, problem_solving: 0.69, precision: 0.16, performance: 0.58, teaching: 0.66, motivation: 0.51, autonomy: 0.82, social: 0.76, structure: 0.1, flexibility: 0.6, variety: 0.92 },
     values: { growth: 0.76, impact: 0.51, global: 0.77, career_clarity: 0.38, financial: 0.43, entrepreneurship: 0.76, social_impact: 0.45, stability: 0.36, advancement: 0.22, work_life_balance: 0.88, company_size: 0.56 },
@@ -4654,7 +4654,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "tyylisuunnittelija",
     title: "Stylist",
-    category: "luova",
+    category: "johtaja",
     interests: { technology: 0.3, people: 0.64, creative: 0.88, analytical: 0.39, hands_on: 0.34, business: 0.16, environment: 0.21, health: 0.21, education: 0.25, innovation: 0.48, arts_culture: 0.88, sports: 0.37, nature: 0.52, writing: 0.87 },
     workstyle: { teamwork: 0.68, independence: 0.55, leadership: 0.16, organization: 0.28, planning: 0.11, problem_solving: 0.51, precision: 0.39, performance: 0.88, teaching: 0.12, motivation: 0.47, autonomy: 0.82, social: 0.54, structure: 0.1, flexibility: 0.74, variety: 0.95 },
     values: { growth: 0.84, impact: 0.64, global: 0.4, career_clarity: 0.51, financial: 0.18, entrepreneurship: 0.74, social_impact: 0.57, stability: 0.54, advancement: 0.26, work_life_balance: 0.84, company_size: 0.1 },
@@ -5446,7 +5446,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "luovuusvalmentaja",
     title: "Luovuusvalmentaja",
-    category: "auttaja",
+    category: "johtaja",
     interests: { technology: 0.42, people: 0.92, creative: 0.95, analytical: 0.55, hands_on: 0.50, business: 0.55, environment: 0.30, health: 0.45, education: 0.85, innovation: 0.90, arts_culture: 0.85, sports: 0.30, nature: 0.35, writing: 0.65 },
     workstyle: { teamwork: 0.75, independence: 0.78, leadership: 0.65, organization: 0.58, planning: 0.65, problem_solving: 0.80, precision: 0.45, performance: 0.75, teaching: 0.92, motivation: 0.95, autonomy: 0.80, social: 0.90, structure: 0.35, flexibility: 0.90, variety: 0.88 },
     values: { growth: 0.90, impact: 0.85, global: 0.45, career_clarity: 0.60, financial: 0.55, entrepreneurship: 0.75, social_impact: 0.82, stability: 0.45, advancement: 0.65, work_life_balance: 0.70, company_size: 0.30 },
@@ -5590,7 +5590,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "kauneusalan-yrittaja",
     title: "Kauneusalan yrittäjä",
-    category: "luova",
+    category: "johtaja",
     interests: { technology: 0.20, people: 0.85, creative: 0.85, analytical: 0.35, hands_on: 0.70, business: 0.85, environment: 0.15, health: 0.40, education: 0.40, innovation: 0.55, arts_culture: 0.70, sports: 0.15, nature: 0.15, writing: 0.30 },
     workstyle: { teamwork: 0.60, independence: 0.85, leadership: 0.75, organization: 0.75, planning: 0.70, problem_solving: 0.65, precision: 0.75, performance: 0.70, teaching: 0.50, motivation: 0.70, autonomy: 0.90, social: 0.85, structure: 0.55, flexibility: 0.70, variety: 0.75 },
     values: { growth: 0.70, impact: 0.55, global: 0.35, career_clarity: 0.75, financial: 0.70, entrepreneurship: 0.95, social_impact: 0.55, stability: 0.50, advancement: 0.70, work_life_balance: 0.50, company_size: 0.20 },
@@ -5635,7 +5635,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "personal-trainer",
     title: "Personal Trainer",
-    category: "auttaja",
+    category: "johtaja",
     interests: { technology: 0.3, people: 0.95, creative: 0.3, analytical: 0.4, hands_on: 0.7, business: 0.6, environment: 0.2, health: 0.9, education: 0.7, innovation: 0.3, arts_culture: 0.1, sports: 0.95, nature: 0.3, writing: 0.2 },
     workstyle: { teamwork: 0.4, independence: 0.8, leadership: 0.6, organization: 0.5, planning: 0.6, problem_solving: 0.5, precision: 0.5, performance: 0.7, teaching: 0.8, motivation: 0.9, autonomy: 0.8, social: 0.9, structure: 0.5, flexibility: 0.7, variety: 0.6 },
     values: { growth: 0.6, impact: 0.7, global: 0.3, career_clarity: 0.6, financial: 0.6, entrepreneurship: 0.8, social_impact: 0.6, stability: 0.4, advancement: 0.5, work_life_balance: 0.5, company_size: 0.2 },
@@ -5815,7 +5815,7 @@ export const CAREER_VECTORS: CareerVector[] = [
   {
     slug: "liikkeenjohdon-trainee",
     title: "Liikkeenjohdon trainee",
-    category: "johtaja",
+    category: "jarjestaja",
     interests: { technology: 0.5, people: 0.7, creative: 0.4, analytical: 0.7, hands_on: 0.3, business: 0.9, environment: 0.2, health: 0.1, education: 0.3, innovation: 0.5, arts_culture: 0.2, sports: 0.2, nature: 0.1, writing: 0.5 },
     workstyle: { teamwork: 0.8, independence: 0.5, leadership: 0.6, organization: 0.7, planning: 0.7, problem_solving: 0.7, precision: 0.6, performance: 0.7, teaching: 0.3, motivation: 0.7, autonomy: 0.4, social: 0.8, structure: 0.6, flexibility: 0.7, variety: 0.8 },
     values: { growth: 0.9, impact: 0.6, global: 0.6, career_clarity: 0.7, financial: 0.7, entrepreneurship: 0.5, social_impact: 0.4, stability: 0.6, advancement: 0.9, work_life_balance: 0.5, company_size: 0.4 },

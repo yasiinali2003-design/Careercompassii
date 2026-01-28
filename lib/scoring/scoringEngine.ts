@@ -9017,37 +9017,37 @@ export function generateUserProfile(
   const relevantInterests = sortedInterests.filter(s =>
     relevantInterestKeys.includes(s.key) && s.value > 0.55
   );
-  selectedStrengths.push(...relevantInterests.slice(0, 3));
+  selectedStrengths.push(...relevantInterests.slice(0, 5));  // Increased from 3 to 5
 
   // Step 2: If not enough, add other high-scoring interests (> 0.6)
-  if (selectedStrengths.length < 3) {
+  if (selectedStrengths.length < 5) {  // Increased from 3 to 5
     const otherInterests = sortedInterests.filter(s =>
       s.value > 0.6 && !selectedStrengths.some(ss => ss.key === s.key)
     );
-    selectedStrengths.push(...otherInterests.slice(0, 3 - selectedStrengths.length));
+    selectedStrengths.push(...otherInterests.slice(0, 5 - selectedStrengths.length));
   }
 
   // Step 3: If still not enough, add moderate interests (> 0.5)
-  if (selectedStrengths.length < 3) {
+  if (selectedStrengths.length < 5) {  // Increased from 3 to 5
     const moderateInterests = sortedInterests.filter(s =>
       s.value > 0.5 && !selectedStrengths.some(ss => ss.key === s.key)
     );
-    selectedStrengths.push(...moderateInterests.slice(0, 3 - selectedStrengths.length));
+    selectedStrengths.push(...moderateInterests.slice(0, 5 - selectedStrengths.length));
   }
 
-  // Step 4: Only if we STILL don't have 3 strengths, add workstyle dimensions
+  // Step 4: Only if we STILL don't have 5 strengths, add workstyle dimensions
   // But only category-relevant workstyle dimensions
-  if (selectedStrengths.length < 3) {
+  if (selectedStrengths.length < 5) {  // Increased from 3 to 5
     const relevantWorkstyle = workstyleScores
       .filter(s => categoryRelevantKeys.includes(s.key) && s.value > 0.6)
       .sort((a, b) => b.value - a.value);
-    selectedStrengths.push(...relevantWorkstyle.slice(0, 3 - selectedStrengths.length));
+    selectedStrengths.push(...relevantWorkstyle.slice(0, 5 - selectedStrengths.length));
   }
 
   // Final sort by value and translate
   const topStrengths = selectedStrengths
     .sort((a, b) => b.value - a.value)
-    .slice(0, 3)
+    .slice(0, 5)  // Show top 5 strengths (increased from 3)
     .map(s => translateStrength(s.key, cohort));
 
   // Detect hybrid career paths

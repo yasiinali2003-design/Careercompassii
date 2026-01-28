@@ -1,0 +1,2570 @@
+{
+  "total": 292,
+  "mismatches": 60,
+  "byType": {
+    "HIGH_AFFINITY_NO_CAREER": 15,
+    "PRIMARY_STRENGTH_MISMATCH": 43,
+    "CATEGORY_CAREER_MISMATCH": 3,
+    "STRENGTH_CAREER_MISMATCH": 12
+  },
+  "bySeverity": {
+    "HIGH": 61,
+    "MEDIUM": 12,
+    "LOW": 0
+  },
+  "examples": [
+    {
+      "cohort": "YLA",
+      "type": "RANDOM",
+      "answers": [
+        2,
+        1,
+        1,
+        5,
+        5,
+        2,
+        2,
+        5,
+        1,
+        5,
+        2,
+        5,
+        1,
+        1,
+        1,
+        2,
+        4,
+        4,
+        1,
+        4,
+        5,
+        5,
+        1,
+        2,
+        4,
+        3,
+        4,
+        1,
+        5,
+        4
+      ],
+      "strengths": [
+        "Ympäristökiinnostus",
+        "Käytännön tekeminen",
+        "Ulkotyö"
+      ],
+      "topCategory": {
+        "category": "ympariston-puolustaja",
+        "score": 72,
+        "confidence": "high",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Luonnonsuojelija",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Luonnonsuojelubiologi",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Metsänhoitaja",
+          "category": "ympariston-puolustaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "HIGH_AFFINITY_NO_CAREER",
+          "severity": "HIGH",
+          "message": "High affinity for \"auttaja\" (70%) but no careers in top 5",
+          "category": "auttaja",
+          "score": 70
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "RANDOM",
+      "answers": [
+        2,
+        2,
+        1,
+        2,
+        5,
+        2,
+        5,
+        3,
+        5,
+        5,
+        2,
+        2,
+        4,
+        1,
+        3,
+        2,
+        5,
+        2,
+        4,
+        1,
+        5,
+        5,
+        3,
+        5,
+        5,
+        1,
+        5,
+        5,
+        1,
+        4
+      ],
+      "strengths": [
+        "Urheilu",
+        "Kasvu",
+        "Opetus"
+      ],
+      "topCategory": {
+        "category": "auttaja",
+        "score": 67,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Urheiluvalmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Fysioterapeutti",
+          "category": "auttaja"
+        },
+        {
+          "title": "Valmentaja",
+          "category": "auttaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"rakentaja\" but no matching careers in top 5",
+          "strengthCategory": "rakentaja",
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "RANDOM",
+      "answers": [
+        5,
+        3,
+        4,
+        3,
+        3,
+        5,
+        4,
+        4,
+        5,
+        3,
+        1,
+        1,
+        1,
+        1,
+        5,
+        5,
+        1,
+        3,
+        2,
+        1,
+        5,
+        4,
+        4,
+        3,
+        2,
+        2,
+        5,
+        3,
+        3,
+        1
+      ],
+      "strengths": [
+        "Vahva teknologiakiinnostus",
+        "Analyyttinen ajattelu",
+        "Tarkkuus"
+      ],
+      "topCategory": {
+        "category": "jarjestaja",
+        "score": 42,
+        "confidence": "low",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Urheiluvalmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Viestintäassistentti",
+          "category": "jarjestaja"
+        },
+        {
+          "title": "Toimitusketjuanalyytikko",
+          "category": "jarjestaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "CATEGORY_CAREER_MISMATCH",
+          "severity": "HIGH",
+          "message": "Top category \"jarjestaja\" (42%) but top career is \"auttaja\"",
+          "expected": "jarjestaja",
+          "got": "auttaja"
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "RANDOM",
+      "answers": [
+        5,
+        5,
+        1,
+        1,
+        3,
+        4,
+        3,
+        4,
+        5,
+        3,
+        1,
+        4,
+        1,
+        3,
+        2,
+        5,
+        2,
+        4,
+        4,
+        2,
+        2,
+        5,
+        1,
+        1,
+        5,
+        3,
+        4,
+        2,
+        2,
+        4
+      ],
+      "strengths": [
+        "Urheilu",
+        "Vahva teknologiakiinnostus",
+        "Terveysala"
+      ],
+      "topCategory": {
+        "category": "auttaja",
+        "score": 50,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Urheiluvalmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Valmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Personal Trainer",
+          "category": "auttaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"rakentaja\" but no matching careers in top 5",
+          "strengthCategory": "rakentaja",
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        },
+        {
+          "type": "STRENGTH_CAREER_MISMATCH",
+          "severity": "MEDIUM",
+          "message": "3/4 strengths have no matching careers",
+          "unmatchedStrengths": [
+            "rakentaja",
+            "innovoija",
+            "visionaari"
+          ],
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "RANDOM",
+      "answers": [
+        1,
+        1,
+        4,
+        1,
+        5,
+        1,
+        5,
+        2,
+        2,
+        1,
+        1,
+        3,
+        2,
+        1,
+        3,
+        1,
+        1,
+        2,
+        5,
+        4,
+        5,
+        5,
+        1,
+        4,
+        3,
+        5,
+        3,
+        4,
+        3,
+        1
+      ],
+      "strengths": [
+        "Ympäristökiinnostus",
+        "Kirjoittaminen",
+        "Taide ja kulttuuri"
+      ],
+      "topCategory": {
+        "category": "luova",
+        "score": 52,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Sisällöntuottaja",
+          "category": "luova"
+        },
+        {
+          "title": "Graafinen suunnittelija",
+          "category": "luova"
+        },
+        {
+          "title": "Muusikko",
+          "category": "luova"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"ympariston-puolustaja\" but no matching careers in top 5",
+          "strengthCategory": "ympariston-puolustaja",
+          "careerCategories": [
+            "luova",
+            "luova",
+            "luova",
+            "luova",
+            "luova"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "RANDOM",
+      "answers": [
+        1,
+        1,
+        4,
+        5,
+        3,
+        3,
+        5,
+        2,
+        3,
+        2,
+        4,
+        5,
+        4,
+        3,
+        5,
+        1,
+        2,
+        3,
+        2,
+        5,
+        5,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        3,
+        1,
+        3
+      ],
+      "strengths": [
+        "Käytännön tekeminen",
+        "Yritystoiminta ja liiketoiminta",
+        "Tarkkuus"
+      ],
+      "topCategory": {
+        "category": "rakentaja",
+        "score": 53,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Muurari",
+          "category": "rakentaja"
+        },
+        {
+          "title": "Putkiasentaja",
+          "category": "rakentaja"
+        },
+        {
+          "title": "Sähköasentaja",
+          "category": "rakentaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "STRENGTH_CAREER_MISMATCH",
+          "severity": "MEDIUM",
+          "message": "3/5 strengths have no matching careers",
+          "unmatchedStrengths": [
+            "johtaja",
+            "jarjestaja",
+            "visionaari"
+          ],
+          "careerCategories": [
+            "rakentaja",
+            "rakentaja",
+            "rakentaja",
+            "rakentaja",
+            "rakentaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "RANDOM",
+      "answers": [
+        3,
+        1,
+        1,
+        4,
+        4,
+        2,
+        4,
+        1,
+        5,
+        5,
+        1,
+        4,
+        5,
+        1,
+        1,
+        4,
+        3,
+        2,
+        4,
+        1,
+        2,
+        5,
+        1,
+        1,
+        4,
+        1,
+        2,
+        5,
+        3,
+        4
+      ],
+      "strengths": [
+        "Urheilu",
+        "Kasvu",
+        "Opetus"
+      ],
+      "topCategory": {
+        "category": "auttaja",
+        "score": 61,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Urheiluvalmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Valmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Fysioterapeutti",
+          "category": "auttaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"rakentaja\" but no matching careers in top 5",
+          "strengthCategory": "rakentaja",
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "RANDOM",
+      "answers": [
+        1,
+        3,
+        2,
+        4,
+        4,
+        1,
+        1,
+        3,
+        5,
+        4,
+        1,
+        4,
+        5,
+        1,
+        4,
+        4,
+        4,
+        2,
+        1,
+        5,
+        4,
+        5,
+        4,
+        5,
+        5,
+        5,
+        1,
+        1,
+        3,
+        2
+      ],
+      "strengths": [
+        "Urheilu",
+        "Ihmiskeskeisyys",
+        "Kasvu"
+      ],
+      "topCategory": {
+        "category": "auttaja",
+        "score": 80,
+        "confidence": "high",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Urheiluvalmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Valmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Fysioterapeutti",
+          "category": "auttaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"rakentaja\" but no matching careers in top 5",
+          "strengthCategory": "rakentaja",
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "RANDOM",
+      "answers": [
+        3,
+        3,
+        1,
+        5,
+        4,
+        4,
+        5,
+        3,
+        1,
+        4,
+        3,
+        2,
+        2,
+        3,
+        5,
+        3,
+        1,
+        2,
+        3,
+        1,
+        1,
+        1,
+        3,
+        5,
+        3,
+        5,
+        4,
+        3,
+        1,
+        1
+      ],
+      "strengths": [
+        "Käytännön tekeminen",
+        "Yritystoiminta ja liiketoiminta",
+        "Analyyttinen ajattelu"
+      ],
+      "topCategory": {
+        "category": "rakentaja",
+        "score": 49,
+        "confidence": "low",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Sähköasentaja",
+          "category": "rakentaja"
+        },
+        {
+          "title": "Maalari",
+          "category": "rakentaja"
+        },
+        {
+          "title": "Muurari",
+          "category": "rakentaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "STRENGTH_CAREER_MISMATCH",
+          "severity": "MEDIUM",
+          "message": "3/5 strengths have no matching careers",
+          "unmatchedStrengths": [
+            "johtaja",
+            "jarjestaja",
+            "visionaari"
+          ],
+          "careerCategories": [
+            "rakentaja",
+            "rakentaja",
+            "rakentaja",
+            "rakentaja",
+            "rakentaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "RANDOM",
+      "answers": [
+        5,
+        5,
+        3,
+        2,
+        3,
+        2,
+        4,
+        1,
+        5,
+        4,
+        2,
+        1,
+        1,
+        2,
+        5,
+        1,
+        5,
+        5,
+        5,
+        1,
+        5,
+        5,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        3,
+        1
+      ],
+      "strengths": [
+        "Urheilu",
+        "Kasvu",
+        "Opetus"
+      ],
+      "topCategory": {
+        "category": "auttaja",
+        "score": 40,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Urheiluvalmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Valmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Personal Trainer",
+          "category": "auttaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"rakentaja\" but no matching careers in top 5",
+          "strengthCategory": "rakentaja",
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "RANDOM",
+      "answers": [
+        4,
+        1,
+        2,
+        2,
+        3,
+        2,
+        1,
+        5,
+        1,
+        2,
+        4,
+        2,
+        3,
+        1,
+        5,
+        1,
+        1,
+        3,
+        5,
+        2,
+        5,
+        3,
+        4,
+        1,
+        4,
+        2,
+        1,
+        2,
+        4,
+        3
+      ],
+      "strengths": [
+        "Analyyttinen ajattelu",
+        "Vahva teknologiakiinnostus",
+        "Luovuus ja innovatiivisuus"
+      ],
+      "topCategory": {
+        "category": "ympariston-puolustaja",
+        "score": 38,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Ympäristöinsinööri",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Luontokartoittaja",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Ymparistoteknikko",
+          "category": "ympariston-puolustaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"jarjestaja\" but no matching careers in top 5",
+          "strengthCategory": "jarjestaja",
+          "careerCategories": [
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja"
+          ]
+        },
+        {
+          "type": "STRENGTH_CAREER_MISMATCH",
+          "severity": "MEDIUM",
+          "message": "3/4 strengths have no matching careers",
+          "unmatchedStrengths": [
+            "jarjestaja",
+            "innovoija",
+            "luova"
+          ],
+          "careerCategories": [
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "BIASED",
+      "targetCategory": "auttaja",
+      "answers": [
+        3,
+        4,
+        2,
+        2,
+        5,
+        4,
+        3,
+        1,
+        5,
+        5,
+        2,
+        2,
+        4,
+        3,
+        1,
+        3,
+        3,
+        3,
+        5,
+        3,
+        3,
+        1,
+        5,
+        3,
+        3,
+        3,
+        3,
+        5,
+        3,
+        4
+      ],
+      "strengths": [
+        "Urheilu",
+        "Kasvu",
+        "Opetus"
+      ],
+      "topCategory": {
+        "category": "auttaja",
+        "score": 78,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Urheiluvalmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Valmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Fysioterapeutti",
+          "category": "auttaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"rakentaja\" but no matching careers in top 5",
+          "strengthCategory": "rakentaja",
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "BIASED",
+      "targetCategory": "auttaja",
+      "answers": [
+        1,
+        2,
+        3,
+        2,
+        2,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        3,
+        4,
+        3,
+        4,
+        3,
+        3,
+        3,
+        1,
+        3,
+        4,
+        3,
+        3,
+        3,
+        2,
+        1,
+        3,
+        2,
+        2,
+        2
+      ],
+      "strengths": [
+        "Urheilu",
+        "Kasvu",
+        "Opetus"
+      ],
+      "topCategory": {
+        "category": "auttaja",
+        "score": 59,
+        "confidence": "low",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Urheiluvalmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Fysioterapeutti",
+          "category": "auttaja"
+        },
+        {
+          "title": "Valmentaja",
+          "category": "auttaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"rakentaja\" but no matching careers in top 5",
+          "strengthCategory": "rakentaja",
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "BIASED",
+      "targetCategory": "luova",
+      "answers": [
+        1,
+        3,
+        4,
+        4,
+        2,
+        3,
+        2,
+        2,
+        5,
+        3,
+        4,
+        3,
+        5,
+        2,
+        3,
+        3,
+        5,
+        3,
+        1,
+        3,
+        3,
+        3,
+        4,
+        3,
+        5,
+        3,
+        4,
+        3,
+        5,
+        2
+      ],
+      "strengths": [
+        "Urheilu",
+        "Ihmiskeskeisyys",
+        "Terveysala"
+      ],
+      "topCategory": {
+        "category": "auttaja",
+        "score": 54,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Urheiluvalmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Liikunnanohjaaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Personal Trainer",
+          "category": "auttaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"rakentaja\" but no matching careers in top 5",
+          "strengthCategory": "rakentaja",
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "BIASED",
+      "targetCategory": "rakentaja",
+      "answers": [
+        3,
+        2,
+        4,
+        4,
+        5,
+        4,
+        1,
+        3,
+        3,
+        5,
+        3,
+        3,
+        3,
+        4,
+        3,
+        3,
+        3,
+        5,
+        4,
+        2,
+        3,
+        3,
+        2,
+        3,
+        3,
+        4,
+        5,
+        3,
+        2,
+        3
+      ],
+      "strengths": [
+        "Ympäristökiinnostus",
+        "Ulkotyö",
+        "Kasvu"
+      ],
+      "topCategory": {
+        "category": "ympariston-puolustaja",
+        "score": 86,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Luonnonsuojelija",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Luonnonsuojelubiologi",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Metsänhoitaja",
+          "category": "ympariston-puolustaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "HIGH_AFFINITY_NO_CAREER",
+          "severity": "HIGH",
+          "message": "High affinity for \"auttaja\" (78%) but no careers in top 5",
+          "category": "auttaja",
+          "score": 78
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "BIASED",
+      "targetCategory": "rakentaja",
+      "answers": [
+        3,
+        3,
+        1,
+        5,
+        3,
+        2,
+        1,
+        2,
+        5,
+        4,
+        3,
+        3,
+        4,
+        5,
+        3,
+        3,
+        3,
+        5,
+        5,
+        2,
+        3,
+        1,
+        3,
+        3,
+        4,
+        2,
+        3,
+        3,
+        3,
+        3
+      ],
+      "strengths": [
+        "Käytännön tekeminen",
+        "Urheilu",
+        "Ulkotyö"
+      ],
+      "topCategory": {
+        "category": "rakentaja",
+        "score": 81,
+        "confidence": "high",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Rakennusmestari",
+          "category": "rakentaja"
+        },
+        {
+          "title": "Muurari",
+          "category": "rakentaja"
+        },
+        {
+          "title": "Sähköasentaja",
+          "category": "rakentaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "HIGH_AFFINITY_NO_CAREER",
+          "severity": "HIGH",
+          "message": "High affinity for \"auttaja\" (71%) but no careers in top 5",
+          "category": "auttaja",
+          "score": 71
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "BIASED",
+      "targetCategory": "johtaja",
+      "answers": [
+        1,
+        4,
+        4,
+        5,
+        3,
+        1,
+        5,
+        3,
+        3,
+        2,
+        1,
+        3,
+        4,
+        4,
+        5,
+        5,
+        3,
+        3,
+        4,
+        5,
+        3,
+        5,
+        4,
+        3,
+        4,
+        1,
+        3,
+        1,
+        4,
+        3
+      ],
+      "strengths": [
+        "Käytännön tekeminen",
+        "Kirjoittaminen",
+        "Taide ja kulttuuri"
+      ],
+      "topCategory": {
+        "category": "luova",
+        "score": 53,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Sisällöntuottaja",
+          "category": "luova"
+        },
+        {
+          "title": "Kirjailija",
+          "category": "luova"
+        },
+        {
+          "title": "Muusikko",
+          "category": "luova"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"rakentaja\" but no matching careers in top 5",
+          "strengthCategory": "rakentaja",
+          "careerCategories": [
+            "luova",
+            "luova",
+            "luova",
+            "luova",
+            "luova"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "BIASED",
+      "targetCategory": "johtaja",
+      "answers": [
+        1,
+        4,
+        2,
+        1,
+        1,
+        2,
+        4,
+        2,
+        3,
+        5,
+        3,
+        3,
+        3,
+        4,
+        3,
+        3,
+        4,
+        3,
+        4,
+        5,
+        5,
+        3,
+        3,
+        3,
+        2,
+        2,
+        1,
+        3,
+        3,
+        5
+      ],
+      "strengths": [
+        "Kasvu",
+        "Opetus",
+        "Ongelmanratkaisukyky"
+      ],
+      "topCategory": {
+        "category": "auttaja",
+        "score": 50,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Opinto-ohjaaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Opettaja",
+          "category": "auttaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "STRENGTH_CAREER_MISMATCH",
+          "severity": "MEDIUM",
+          "message": "3/5 strengths have no matching careers",
+          "unmatchedStrengths": [
+            "visionaari",
+            "innovoija",
+            "jarjestaja"
+          ],
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "BIASED",
+      "targetCategory": "jarjestaja",
+      "answers": [
+        3,
+        3,
+        5,
+        4,
+        5,
+        3,
+        1,
+        4,
+        2,
+        1,
+        4,
+        4,
+        5,
+        5,
+        5,
+        4,
+        4,
+        5,
+        4,
+        3,
+        4,
+        3,
+        3,
+        3,
+        1,
+        5,
+        3,
+        2,
+        4,
+        1
+      ],
+      "strengths": [
+        "Ympäristökiinnostus",
+        "Ulkotyö",
+        "Kirjoittaminen"
+      ],
+      "topCategory": {
+        "category": "ympariston-puolustaja",
+        "score": 99,
+        "confidence": "high",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Luonnonsuojelija",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Luonnonsuojelubiologi",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Metsänhoitaja",
+          "category": "ympariston-puolustaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "HIGH_AFFINITY_NO_CAREER",
+          "severity": "HIGH",
+          "message": "High affinity for \"luova\" (88%) but no careers in top 5",
+          "category": "luova",
+          "score": 88
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "BIASED",
+      "targetCategory": "jarjestaja",
+      "answers": [
+        2,
+        4,
+        4,
+        5,
+        3,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        5,
+        3,
+        3,
+        4,
+        1,
+        4,
+        2,
+        4,
+        2,
+        2,
+        4,
+        3,
+        2,
+        1,
+        5,
+        5,
+        2,
+        4,
+        3
+      ],
+      "strengths": [
+        "Urheilu",
+        "Kasvu",
+        "Opetus"
+      ],
+      "topCategory": {
+        "category": "auttaja",
+        "score": 66,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Ensihoitaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Liikunnanohjaaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Terveydenhoitaja",
+          "category": "auttaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"rakentaja\" but no matching careers in top 5",
+          "strengthCategory": "rakentaja",
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "BIASED",
+      "targetCategory": "visionaari",
+      "answers": [
+        2,
+        3,
+        3,
+        3,
+        1,
+        5,
+        4,
+        4,
+        4,
+        3,
+        3,
+        5,
+        1,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3,
+        5,
+        3,
+        2,
+        3,
+        2,
+        2,
+        4,
+        3,
+        3,
+        2,
+        3
+      ],
+      "strengths": [
+        "Innovatiivisuus",
+        "Urheilu",
+        "Terveysala"
+      ],
+      "topCategory": {
+        "category": "auttaja",
+        "score": 40,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Urheiluvalmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Valmentaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Personal Trainer",
+          "category": "auttaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"innovoija\" but no matching careers in top 5",
+          "strengthCategory": "innovoija",
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        },
+        {
+          "type": "STRENGTH_CAREER_MISMATCH",
+          "severity": "MEDIUM",
+          "message": "3/5 strengths have no matching careers",
+          "unmatchedStrengths": [
+            "innovoija",
+            "visionaari",
+            "rakentaja"
+          ],
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "BIASED",
+      "targetCategory": "visionaari",
+      "answers": [
+        3,
+        3,
+        1,
+        3,
+        1,
+        3,
+        4,
+        4,
+        3,
+        3,
+        2,
+        5,
+        3,
+        3,
+        5,
+        3,
+        2,
+        5,
+        4,
+        2,
+        1,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        5,
+        4,
+        3
+      ],
+      "strengths": [
+        "Innovatiivisuus",
+        "Ulkotyö",
+        "Yritystoiminta ja liiketoiminta"
+      ],
+      "topCategory": {
+        "category": "johtaja",
+        "score": 61,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Startup-perustaja",
+          "category": "johtaja"
+        },
+        {
+          "title": "Palvelumuotoilija",
+          "category": "johtaja"
+        },
+        {
+          "title": "Asiakkuusvastaava",
+          "category": "johtaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"innovoija\" but no matching careers in top 5",
+          "strengthCategory": "innovoija",
+          "careerCategories": [
+            "johtaja",
+            "johtaja",
+            "johtaja",
+            "johtaja",
+            "johtaja"
+          ]
+        },
+        {
+          "type": "STRENGTH_CAREER_MISMATCH",
+          "severity": "MEDIUM",
+          "message": "4/7 strengths have no matching careers",
+          "unmatchedStrengths": [
+            "innovoija",
+            "luova",
+            "ympariston-puolustaja",
+            "rakentaja"
+          ],
+          "careerCategories": [
+            "johtaja",
+            "johtaja",
+            "johtaja",
+            "johtaja",
+            "johtaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "BIASED",
+      "targetCategory": "ympariston-puolustaja",
+      "answers": [
+        4,
+        2,
+        2,
+        4,
+        5,
+        3,
+        2,
+        1,
+        3,
+        2,
+        4,
+        2,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        2,
+        3,
+        2,
+        5,
+        3,
+        1,
+        3,
+        3,
+        1,
+        3,
+        3,
+        3
+      ],
+      "strengths": [
+        "Tarkkuus",
+        "Käytännön tekeminen",
+        "Ulkotyö"
+      ],
+      "topCategory": {
+        "category": "rakentaja",
+        "score": 47,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Maalari",
+          "category": "rakentaja"
+        },
+        {
+          "title": "Raskaan kaluston mekaanikko",
+          "category": "rakentaja"
+        },
+        {
+          "title": "Automekaanikko",
+          "category": "rakentaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"jarjestaja\" but no matching careers in top 5",
+          "strengthCategory": "jarjestaja",
+          "careerCategories": [
+            "rakentaja",
+            "rakentaja",
+            "rakentaja",
+            "rakentaja",
+            "rakentaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "YLA",
+      "type": "BIASED",
+      "targetCategory": "ympariston-puolustaja",
+      "answers": [
+        3,
+        5,
+        1,
+        3,
+        4,
+        5,
+        1,
+        3,
+        4,
+        2,
+        3,
+        3,
+        1,
+        3,
+        3,
+        1,
+        3,
+        4,
+        2,
+        1,
+        5,
+        2,
+        3,
+        4,
+        3,
+        2,
+        3,
+        5,
+        2,
+        3
+      ],
+      "strengths": [
+        "Ongelmanratkaisukyky",
+        "Ympäristökiinnostus",
+        "Ulkotyö"
+      ],
+      "topCategory": {
+        "category": "ympariston-puolustaja",
+        "score": 54,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Ympäristöinsinööri",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Luontokartoittaja",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Kestävän kehityksen koordinaattori",
+          "category": "ympariston-puolustaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"innovoija\" but no matching careers in top 5",
+          "strengthCategory": "innovoija",
+          "careerCategories": [
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "NUORI",
+      "type": "RANDOM",
+      "answers": [
+        1,
+        3,
+        2,
+        1,
+        3,
+        1,
+        5,
+        3,
+        2,
+        3,
+        5,
+        4,
+        3,
+        4,
+        3,
+        1,
+        5,
+        2,
+        1,
+        3,
+        5,
+        4,
+        5,
+        5,
+        4,
+        5,
+        1,
+        3,
+        1,
+        3
+      ],
+      "strengths": [
+        "Johtaminen",
+        "Ympäristökiinnostus",
+        "Luonto"
+      ],
+      "topCategory": {
+        "category": "ympariston-puolustaja",
+        "score": 54,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Ympäristöinsinööri",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Kestävän kehityksen koordinaattori",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Ympäristöasiantuntija",
+          "category": "ympariston-puolustaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"johtaja\" but no matching careers in top 5",
+          "strengthCategory": "johtaja",
+          "careerCategories": [
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "NUORI",
+      "type": "RANDOM",
+      "answers": [
+        1,
+        2,
+        4,
+        4,
+        1,
+        1,
+        4,
+        2,
+        4,
+        4,
+        1,
+        4,
+        4,
+        5,
+        5,
+        4,
+        3,
+        2,
+        5,
+        2,
+        1,
+        2,
+        2,
+        4,
+        1,
+        2,
+        4,
+        2,
+        4,
+        2
+      ],
+      "strengths": [
+        "Johtaminen",
+        "Ympäristökiinnostus",
+        "Luonto"
+      ],
+      "topCategory": {
+        "category": "ympariston-puolustaja",
+        "score": 66,
+        "confidence": "high",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Kestävän kehityksen koordinaattori",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Ympäristöasiantuntija",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Kierrätyskoordinaattori",
+          "category": "ympariston-puolustaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"johtaja\" but no matching careers in top 5",
+          "strengthCategory": "johtaja",
+          "careerCategories": [
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "NUORI",
+      "type": "RANDOM",
+      "answers": [
+        1,
+        2,
+        1,
+        4,
+        3,
+        3,
+        1,
+        3,
+        4,
+        2,
+        2,
+        4,
+        4,
+        4,
+        1,
+        2,
+        2,
+        4,
+        5,
+        5,
+        5,
+        4,
+        2,
+        5,
+        2,
+        4,
+        1,
+        2,
+        1,
+        4
+      ],
+      "strengths": [
+        "Tarkkuus",
+        "Ympäristökiinnostus",
+        "Luonto"
+      ],
+      "topCategory": {
+        "category": "ympariston-puolustaja",
+        "score": 68,
+        "confidence": "high",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Kierrätyskoordinaattori",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Kestävän kehityksen koordinaattori",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Vesiensuojeluasiantuntija",
+          "category": "ympariston-puolustaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"jarjestaja\" but no matching careers in top 5",
+          "strengthCategory": "jarjestaja",
+          "careerCategories": [
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "NUORI",
+      "type": "RANDOM",
+      "answers": [
+        2,
+        1,
+        4,
+        5,
+        1,
+        2,
+        5,
+        4,
+        3,
+        4,
+        4,
+        5,
+        1,
+        1,
+        2,
+        5,
+        1,
+        4,
+        4,
+        5,
+        3,
+        1,
+        2,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        3
+      ],
+      "strengths": [
+        "Luovuus ja innovatiivisuus",
+        "Tarkkuus",
+        "Analyyttinen ajattelu"
+      ],
+      "topCategory": {
+        "category": "jarjestaja",
+        "score": 81,
+        "confidence": "high",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Viestintäassistentti",
+          "category": "jarjestaja"
+        },
+        {
+          "title": "Markkinointiassistentti",
+          "category": "jarjestaja"
+        },
+        {
+          "title": "HR-koordinaattori",
+          "category": "jarjestaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"luova\" but no matching careers in top 5",
+          "strengthCategory": "luova",
+          "careerCategories": [
+            "jarjestaja",
+            "jarjestaja",
+            "jarjestaja",
+            "jarjestaja",
+            "jarjestaja"
+          ]
+        },
+        {
+          "type": "HIGH_AFFINITY_NO_CAREER",
+          "severity": "HIGH",
+          "message": "High affinity for \"ympariston-puolustaja\" (76%) but no careers in top 5",
+          "category": "ympariston-puolustaja",
+          "score": 76
+        }
+      ]
+    },
+    {
+      "cohort": "NUORI",
+      "type": "RANDOM",
+      "answers": [
+        4,
+        1,
+        3,
+        4,
+        4,
+        3,
+        4,
+        5,
+        5,
+        2,
+        1,
+        5,
+        5,
+        1,
+        1,
+        3,
+        4,
+        2,
+        3,
+        3,
+        1,
+        2,
+        2,
+        5,
+        5,
+        1,
+        5,
+        2,
+        5,
+        5
+      ],
+      "strengths": [
+        "Ympäristökiinnostus",
+        "Luonto",
+        "Vahva teknologiakiinnostus"
+      ],
+      "topCategory": {
+        "category": "ympariston-puolustaja",
+        "score": 82,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Luonnonsuojelubiologi",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Ympäristöinsinööri",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Ympäristökasvattaja",
+          "category": "ympariston-puolustaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "HIGH_AFFINITY_NO_CAREER",
+          "severity": "HIGH",
+          "message": "High affinity for \"innovoija\" (77%) but no careers in top 5",
+          "category": "innovoija",
+          "score": 77
+        }
+      ]
+    },
+    {
+      "cohort": "NUORI",
+      "type": "RANDOM",
+      "answers": [
+        1,
+        2,
+        3,
+        2,
+        1,
+        3,
+        4,
+        3,
+        2,
+        1,
+        4,
+        3,
+        2,
+        3,
+        3,
+        1,
+        1,
+        2,
+        4,
+        2,
+        3,
+        1,
+        3,
+        4,
+        4,
+        3,
+        5,
+        1,
+        5,
+        3
+      ],
+      "strengths": [
+        "Johtaminen",
+        "Tarkkuus",
+        "Ihmiskeskeisyys"
+      ],
+      "topCategory": {
+        "category": "auttaja",
+        "score": 42,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Lastentarhanopettaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Opinto-ohjaaja",
+          "category": "auttaja"
+        },
+        {
+          "title": "Luokanopettaja",
+          "category": "auttaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "STRENGTH_CAREER_MISMATCH",
+          "severity": "MEDIUM",
+          "message": "4/6 strengths have no matching careers",
+          "unmatchedStrengths": [
+            "visionaari",
+            "jarjestaja",
+            "rakentaja",
+            "innovoija"
+          ],
+          "careerCategories": [
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja",
+            "auttaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "NUORI",
+      "type": "BIASED",
+      "targetCategory": "innovoija",
+      "answers": [
+        4,
+        5,
+        2,
+        2,
+        2,
+        2,
+        1,
+        4,
+        1,
+        4,
+        1,
+        4,
+        1,
+        3,
+        5,
+        2,
+        2,
+        4,
+        5,
+        1,
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        1,
+        2,
+        3
+      ],
+      "strengths": [
+        "Terveysala",
+        "Ympäristökiinnostus",
+        "Luonto"
+      ],
+      "topCategory": {
+        "category": "ympariston-puolustaja",
+        "score": 70,
+        "confidence": "high",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Luonnonsuojelubiologi",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Luonnonsuojelija",
+          "category": "ympariston-puolustaja"
+        },
+        {
+          "title": "Metsänhoitaja",
+          "category": "ympariston-puolustaja"
+        }
+      ],
+      "issues": [
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"auttaja\" but no matching careers in top 5",
+          "strengthCategory": "auttaja",
+          "careerCategories": [
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja",
+            "ympariston-puolustaja"
+          ]
+        }
+      ]
+    },
+    {
+      "cohort": "NUORI",
+      "type": "BIASED",
+      "targetCategory": "innovoija",
+      "answers": [
+        4,
+        5,
+        1,
+        5,
+        4,
+        3,
+        4,
+        4,
+        5,
+        3,
+        5,
+        5,
+        5,
+        5,
+        4,
+        1,
+        3,
+        2,
+        4,
+        3,
+        2,
+        1,
+        2,
+        3,
+        3,
+        3,
+        4,
+        2,
+        5,
+        3
+      ],
+      "strengths": [
+        "Ympäristökiinnostus",
+        "Luonto",
+        "Terveysala"
+      ],
+      "topCategory": {
+        "category": "ympariston-puolustaja",
+        "score": 74,
+        "confidence": "medium",
+        "rank": 1
+      },
+      "topCareers": [
+        {
+          "title": "Äänisuunnittelija",
+          "category": "luova"
+        },
+        {
+          "title": "Verkkosuunnittelija",
+          "category": "luova"
+        },
+        {
+          "title": "Graafinen suunnittelija",
+          "category": "luova"
+        }
+      ],
+      "issues": [
+        {
+          "type": "CATEGORY_CAREER_MISMATCH",
+          "severity": "HIGH",
+          "message": "Top category \"ympariston-puolustaja\" (74%) but top career is \"luova\"",
+          "expected": "ympariston-puolustaja",
+          "got": "luova"
+        },
+        {
+          "type": "PRIMARY_STRENGTH_MISMATCH",
+          "severity": "HIGH",
+          "message": "Primary strength implies \"ympariston-puolustaja\" but no matching careers in top 5",
+          "strengthCategory": "ympariston-puolustaja",
+          "careerCategories": [
+            "luova",
+            "luova",
+            "luova",
+            "johtaja",
+            "luova"
+          ]
+        },
+        {
+          "type": "HIGH_AFFINITY_NO_CAREER",
+          "severity": "HIGH",
+          "message": "High affinity for \"ympariston-puolustaja\" (74%) but no careers in top 5",
+          "category": "ympariston-puolustaja",
+          "score": 74
+        }
+      ]
+    }
+  ],
+  "byCategory": {
+    "auttaja": {
+      "total": 24,
+      "mismatches": 8
+    },
+    "innovoija": {
+      "total": 24,
+      "mismatches": 3
+    },
+    "luova": {
+      "total": 24,
+      "mismatches": 1
+    },
+    "rakentaja": {
+      "total": 24,
+      "mismatches": 5
+    },
+    "johtaja": {
+      "total": 24,
+      "mismatches": 4
+    },
+    "jarjestaja": {
+      "total": 24,
+      "mismatches": 5
+    },
+    "visionaari": {
+      "total": 24,
+      "mismatches": 10
+    },
+    "ympariston-puolustaja": {
+      "total": 24,
+      "mismatches": 5
+    }
+  },
+  "errors": 0
+}

@@ -36,9 +36,8 @@ export function CareerRecommendationsSection({
     (c) => c && typeof c === 'object' && c.slug && c.title && Array.isArray(c.reasons)
   );
   
-  const displayedCareers = cohortType === 'ylaste' 
-    ? validCareers.slice(0, 3)
-    : validCareers.slice(0, 5);
+  // Show 5 career recommendations for all cohorts (uniform experience)
+  const displayedCareers = validCareers.slice(0, 5);
 
   return (
     <motion.section

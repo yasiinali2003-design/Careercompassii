@@ -1,0 +1,665 @@
+[
+  {
+    "persona": "Matti the Coder",
+    "cohort": "YLA",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "innovoija",
+      "actualCategory": "innovoija",
+      "categoryMatch": true,
+      "expectedEducationPath": "lukio",
+      "actualEducationPath": "lukio",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Mobiilisovelluskehittäjä (innovoija, 100%)",
+        "Pelimoottori kehittäjä (innovoija, 100%)",
+        "Ohjelmistokehittäjä (innovoija, 100%)",
+        "Full-Stack-kehittäjä (innovoija, 100%)",
+        "Frontend-kehittäjä (innovoija, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "kehittäjä",
+        "IT",
+        "ohjelmisto"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "innovoija: 96%",
+        "johtaja: 48%",
+        "visionaari: 45%"
+      ],
+      "personalizedAnalysisPreview": "Erityisen vahvasti profiilissasi korostuvat vahva teknologiakiinnostus ja ongelmanratkaisukyky. Kun yhdistät nämä vahvuudet siihen, että yhdistät useita tärkeitä taitoja ja osaat soveltaa niitä käytännössä, sinulla on todella hyvät edellytykset menestyä monenlaisissa tehtävissä. Nämä ovat taitoja, j...",
+      "educationPathReasoning": "Profiilistasi välittyy, että arvostat monipuolista oppimista ja haluat pitää vaihtoehdot auki tulevaisuutta varten. Sinussa on vahva uteliaisuus eri aineita kohtaan ja halu ymmärtää asioita syvällises..."
+    }
+  },
+  {
+    "persona": "Sara the Animal Lover",
+    "cohort": "YLA",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "auttaja",
+      "actualCategory": "auttaja",
+      "categoryMatch": true,
+      "expectedEducationPath": "lukio",
+      "actualEducationPath": "lukio",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Ensihoitaja (auttaja, 100%)",
+        "Terveydenhoitaja (auttaja, 100%)",
+        "Lähihoitaja (auttaja, 100%)",
+        "Sairaanhoitaja (auttaja, 100%)",
+        "Fysioterapeutti (auttaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "hoitaja"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "auttaja: 100%",
+        "ympariston-puolustaja: 73%",
+        "visionaari: 45%"
+      ],
+      "personalizedAnalysisPreview": "Vahvuutesi ympäristökiinnostus ja ihmiskeskeisyys nousevat selvästi esiin. On hienoa, että yhdistät useita tärkeitä taitoja ja osaat soveltaa niitä käytännössä. Tämä yhdistelmä on todella arvokas ja antaa sinulle hyvät mahdollisuudet monilla eri aloilla. Kannattaa ehdottomasti hyödyntää näitä vahvuu...",
+      "educationPathReasoning": "Profiilistasi välittyy, että arvostat monipuolista oppimista ja haluat pitää vaihtoehdot auki tulevaisuutta varten. Sinussa on vahva uteliaisuus eri aineita kohtaan ja halu ymmärtää asioita syvällises..."
+    }
+  },
+  {
+    "persona": "Mikko the Builder",
+    "cohort": "YLA",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "rakentaja",
+      "actualCategory": "rakentaja",
+      "categoryMatch": true,
+      "expectedEducationPath": "ammattikoulu",
+      "actualEducationPath": "ammattikoulu",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Rakennusmestari (rakentaja, 100%)",
+        "Putkiasentaja (rakentaja, 100%)",
+        "Maalari (rakentaja, 100%)",
+        "Fysioterapeutti (auttaja, 100%)",
+        "Urheiluvalmentaja (auttaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "asentaja"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "rakentaja: 82%",
+        "ympariston-puolustaja: 45%",
+        "auttaja: 42%"
+      ],
+      "personalizedAnalysisPreview": "Kun katsoo tarkemmin, mitä vastauksistasi nousee esiin, käytännön tekeminen ja organisointikyky erottuvat erityisen vahvoina alueina. Olet selvästi ihminen, joka yhdistät useita tärkeitä taitoja ja osaat soveltaa niitä käytännössä. Nämä taidot täydentävät toisiaan hienosti ja avaavat ovia monenlaisi...",
+      "educationPathReasoning": "Profiilistasi välittyy, että nautit käytännön tekemisestä ja oppimisesta tekemällä. Sinussa on vahva halu nähdä konkreettisia tuloksia ja oppia taitoja, joita voit heti käyttää käytännössä. Ammattikou..."
+    }
+  },
+  {
+    "persona": "Emma the Artist",
+    "cohort": "YLA",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "luova",
+      "actualCategory": "luova",
+      "categoryMatch": true,
+      "expectedEducationPath": "lukio",
+      "actualEducationPath": "lukio",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Äänisuunnittelija (luova, 100%)",
+        "Graafinen suunnittelija (luova, 100%)",
+        "Valokuvaaja (luova, 100%)",
+        "Verkkosuunnittelija (luova, 100%)",
+        "UI/UX-suunnittelija (luova, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "valokuvaaja"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "luova: 73%",
+        "innovoija: 55%",
+        "visionaari: 52%"
+      ],
+      "personalizedAnalysisPreview": "Vahvuutesi kirjoittaminen ja taide ja kulttuuri nousevat selvästi esiin. On hienoa, että yhdistät useita tärkeitä taitoja ja osaat soveltaa niitä käytännössä. Tämä yhdistelmä on todella arvokas ja antaa sinulle hyvät mahdollisuudet monilla eri aloilla. Kannattaa ehdottomasti hyödyntää näitä vahvuuks...",
+      "educationPathReasoning": "Profiilistasi välittyy, että arvostat monipuolista oppimista ja haluat pitää vaihtoehdot auki tulevaisuutta varten. Sinussa on vahva uteliaisuus eri aineita kohtaan ja halu ymmärtää asioita syvällises..."
+    }
+  },
+  {
+    "persona": "Onni the Team Captain",
+    "cohort": "YLA",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "johtaja",
+      "actualCategory": "johtaja",
+      "categoryMatch": true,
+      "expectedEducationPath": "lukio",
+      "actualEducationPath": "lukio",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Urheiluvalmentaja (auttaja, 100%)",
+        "Fysioterapeutti (auttaja, 100%)",
+        "Valmentaja (auttaja, 100%)",
+        "Ensihoitaja (auttaja, 100%)",
+        "Terveydenhoitaja (auttaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "valmentaja"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "johtaja: 68%",
+        "visionaari: 60%",
+        "rakentaja: 48%"
+      ],
+      "personalizedAnalysisPreview": "Vastauksesi kertovat, että pidät käytännön tekemisestä ja siitä, että pääset heti toimintaan. Olet selvästi ihminen, joka haluaa nähdä työnsä tulokset konkreettisesti. Tämä käytännönläheinen ote on arvokas piirre, joka vie sinut pitkälle. Sinä et tyydy vain suunnittelemaan ja pohtimaan, vaan haluat ...",
+      "educationPathReasoning": "Profiilistasi välittyy, että arvostat monipuolista oppimista ja haluat pitää vaihtoehdot auki tulevaisuutta varten. Sinussa on vahva uteliaisuus eri aineita kohtaan ja halu ymmärtää asioita syvällises..."
+    }
+  },
+  {
+    "persona": "Aleksi the Future Doctor",
+    "cohort": "TASO2",
+    "subCohort": "LUKIO",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "auttaja",
+      "actualCategory": "auttaja",
+      "categoryMatch": true,
+      "expectedEducationPath": "yliopisto",
+      "actualEducationPath": "yliopisto",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Ensihoitaja (auttaja, 100%)",
+        "Terveydenhoitaja (auttaja, 100%)",
+        "Sairaanhoitaja (auttaja, 100%)",
+        "Fysioterapeutti (auttaja, 100%)",
+        "Luokanopettaja (auttaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "sairaanhoitaja"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "auttaja: 85%",
+        "jarjestaja: 69%",
+        "visionaari: 58%"
+      ],
+      "personalizedAnalysisPreview": "Vastauksistasi huomaa, että mietit työn merkityksellisyyttä ja sen yhteyttä omiin arvoihisi. Tämä pohdiskeleva ote on merkki kypsyydestä ja auttaa sinua rakentamaan uran, joka tuntuu aidosti omalta. Et etsi vain työpaikkaa, vaan tapaa elää arvojesi mukaisesti. Tämä syvällinen pohdinta tulee kantamaa...",
+      "educationPathReasoning": "Vastaustesi perusteella yliopisto-opinnot sopivat sinulle erittäin hyvin. Profiilisi osoittaa vahvaa analyyttistä ajattelua, tutkimusmielisyyttä ja syvällistä oppimishalua. Yliopistossa opiskelet tutk..."
+    }
+  },
+  {
+    "persona": "Liisa the Tech Entrepreneur",
+    "cohort": "TASO2",
+    "subCohort": "LUKIO",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "innovoija",
+      "actualCategory": "innovoija",
+      "categoryMatch": true,
+      "expectedEducationPath": "yliopisto",
+      "actualEducationPath": "yliopisto",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Mobiilisovelluskehittäjä (innovoija, 100%)",
+        "Pelimoottori kehittäjä (innovoija, 100%)",
+        "Ohjelmistokehittäjä (innovoija, 100%)",
+        "Full-Stack-kehittäjä (innovoija, 100%)",
+        "Frontend-kehittäjä (innovoija, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "ohjelmistokehittäjä",
+        "IT"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "innovoija: 89%",
+        "johtaja: 72%",
+        "visionaari: 68%"
+      ],
+      "personalizedAnalysisPreview": "Vastauksistasi huomaa, että mietit työn merkityksellisyyttä ja sen yhteyttä omiin arvoihisi. Tämä pohdiskeleva ote on merkki kypsyydestä ja auttaa sinua rakentamaan uran, joka tuntuu aidosti omalta. Et etsi vain työpaikkaa, vaan tapaa elää arvojesi mukaisesti. Tämä syvällinen pohdinta tulee kantamaa...",
+      "educationPathReasoning": "Vastaustesi perusteella yliopisto-opinnot sopivat sinulle erittäin hyvin. Profiilisi osoittaa vahvaa analyyttistä ajattelua, tutkimusmielisyyttä ja syvällistä oppimishalua. Yliopistossa opiskelet tutk..."
+    }
+  },
+  {
+    "persona": "Noora the Environmental Scientist",
+    "cohort": "TASO2",
+    "subCohort": "LUKIO",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "ympariston-puolustaja",
+      "actualCategory": "ympariston-puolustaja",
+      "categoryMatch": true,
+      "expectedEducationPath": "yliopisto",
+      "actualEducationPath": "yliopisto",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Luonnonsuojelubiologi (ympariston-puolustaja, 100%)",
+        "Kirjailija (luova, 100%)",
+        "Biologi (ympariston-puolustaja, 100%)",
+        "Ympäristöinsinööri (ympariston-puolustaja, 100%)",
+        "Ilmastotutkija (ympariston-puolustaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "ympäristö",
+        "tutkija",
+        "biologi",
+        "ilmasto"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "ympariston-puolustaja: 81%",
+        "jarjestaja: 72%",
+        "visionaari: 67%"
+      ],
+      "personalizedAnalysisPreview": "Sinulle on selvästi tärkeää, että tuleva urasi vastaa arvojasi ja periaatteitasi. Tämä tietoinen suhtautuminen urasuunnitteluun auttaa sinua tekemään valintoja, joita et tule katumaan. Et tyydy vain mihin tahansa työhön tai opiskelupaikkaan, vaan haluat löytää polun, joka tuntuu oikealta syvemmällä ...",
+      "educationPathReasoning": "Vastaustesi perusteella yliopisto-opinnot sopivat sinulle erittäin hyvin. Profiilisi osoittaa vahvaa analyyttistä ajattelua, tutkimusmielisyyttä ja syvällistä oppimishalua. Yliopistossa opiskelet tutk..."
+    }
+  },
+  {
+    "persona": "Joonas the Creative Designer",
+    "cohort": "TASO2",
+    "subCohort": "LUKIO",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "luova",
+      "actualCategory": "luova",
+      "categoryMatch": true,
+      "expectedEducationPath": "amk",
+      "actualEducationPath": "amk",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Parturi-kampaaja (luova, 100%)",
+        "Äänisuunnittelija (luova, 100%)",
+        "Rakennusmestari (rakentaja, 100%)",
+        "Kirjailija (luova, 100%)",
+        "Graafinen suunnittelija (luova, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "suunnittelija"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "luova: 65%",
+        "innovoija: 33%",
+        "rakentaja: 32%"
+      ],
+      "personalizedAnalysisPreview": "Vahvuutesi luovuus ja innovatiivisuus ja kirjoittaminen erottuvat selvästi. Kykysi yhdistät useita vahvuuksia tavalla, joka tekee sinusta monipuolisen osaajan on erityisen arvokasta, sillä se yhdistää useita tärkeitä osa-alueita. Nämä vahvuudet antavat sinulle hyvän pohjan monille urapoluillle ja au...",
+      "educationPathReasoning": "Vastaustesi perusteella ammattikorkeakoulu-opinnot sopivat sinulle erittäin hyvin. Profiilisi osoittaa vahvaa käytännönläheisyyttä, konkreettista ongelmanratkaisukykyä ja halua oppia työelämään sovelt..."
+    }
+  },
+  {
+    "persona": "Ville the Business Leader",
+    "cohort": "TASO2",
+    "subCohort": "LUKIO",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "johtaja",
+      "actualCategory": "johtaja",
+      "categoryMatch": true,
+      "expectedEducationPath": "yliopisto",
+      "actualEducationPath": "yliopisto",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Myyntityöntekijä (johtaja, 100%)",
+        "Kiinteistönvälittäjä (johtaja, 100%)",
+        "Asiakkuusvastaava (johtaja, 100%)",
+        "Asiakaspalveluvastaava (johtaja, 100%)",
+        "Palvelumuotoilija (johtaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "myynti",
+        "asiakkuus"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "johtaja: 86%",
+        "visionaari: 39%",
+        "rakentaja: 38%"
+      ],
+      "personalizedAnalysisPreview": "Erityisen vahvoina alueina profiilissasi korostuvat yritystoiminta ja liiketoiminta ja johtaminen. Se, että yhdistät useita vahvuuksia tavalla, joka tekee sinusta monipuolisen osaajan, tekee sinusta arvokkaan työntekijän monilla aloilla. Nämä ovat juuri niitä ominaisuuksia, joita työnantajat etsivät...",
+      "educationPathReasoning": "Vastaustesi perusteella yliopisto-opinnot voisivat olla yksi vaihtoehto. Yliopistokoulutus sopii erityisesti, jos haluat syventää tietämystäsi tietyssä alassa ja harkitset mahdollisesti jatko-opintoja..."
+    }
+  },
+  {
+    "persona": "Petteri the Electrician",
+    "cohort": "TASO2",
+    "subCohort": "AMIS",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "rakentaja",
+      "actualCategory": "rakentaja",
+      "categoryMatch": true,
+      "expectedEducationPath": "amk",
+      "actualEducationPath": "amk",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Mobiilisovelluskehittäjä (innovoija, 100%)",
+        "Rakennustyönjohtaja (rakentaja, 100%)",
+        "Rakennusinsinööri (rakentaja, 100%)",
+        "Maalari (rakentaja, 100%)",
+        "Kirvesmies (rakentaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "insinööri"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "rakentaja: 66%",
+        "jarjestaja: 53%",
+        "innovoija: 49%"
+      ],
+      "personalizedAnalysisPreview": "Huomaa, että osaat organisoida tehtäviä ja työskennellä tavoitteellisesti. Nämä ovat taitoja, joita tarvitaan sekä opinnoissa että työelämässä, ja sinulla näyttää olevan niistä jo hyvä pohja. Et jätä asioita viime tippaan, vaan osaat suunnitella ja priorisoida. Tämänkaltainen järjestelmällisyys on h...",
+      "educationPathReasoning": "IT-alalla AMK-tutkinto tai suora työkokemus ovat molemmat arvostettuja. Yliopisto-opinnot ovat mahdollisia avoimen yliopiston kautta...."
+    }
+  },
+  {
+    "persona": "Henna the Nurse",
+    "cohort": "TASO2",
+    "subCohort": "AMIS",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "auttaja",
+      "actualCategory": "auttaja",
+      "categoryMatch": true,
+      "expectedEducationPath": "amk",
+      "actualEducationPath": "amk",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Opinto-ohjaaja (auttaja, 100%)",
+        "Ensihoitaja (auttaja, 100%)",
+        "Terveydenhoitaja (auttaja, 100%)",
+        "Sairaanhoitaja (auttaja, 100%)",
+        "Fysioterapeutti (auttaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "sairaanhoitaja",
+        "hoitaja"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "auttaja: 100%",
+        "rakentaja: 55%",
+        "jarjestaja: 35%"
+      ],
+      "personalizedAnalysisPreview": "Vastauksistasi välittyy järjestelmällinen ja tavoitteellinen ote. Tiedät, miten työskentelet parhaiten, ja tämä tieto auttaa sinua valitsemaan sopivan oppimisympäristön ja työpaikan. Sinussa on sisäinen motivaatio saada asioita valmiiksi ja tehdä ne hyvin. Tämä ei ole itsestäänselvyys, vaan vahvuus,...",
+      "educationPathReasoning": "Hoitoalalla AMK-tutkinto (esim. sairaanhoitaja) avaa laajemmat mahdollisuudet. Lähihoitajana voit myös työskennellä suoraan...."
+    }
+  },
+  {
+    "persona": "Kalle the Chef",
+    "cohort": "TASO2",
+    "subCohort": "AMIS",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "rakentaja",
+      "actualCategory": "rakentaja",
+      "categoryMatch": true,
+      "expectedEducationPath": "amk",
+      "actualEducationPath": "amk",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Ravintolatyöntekijä (rakentaja, 100%)",
+        "Personal Trainer (auttaja, 100%)",
+        "Urheiluvalmentaja (auttaja, 100%)",
+        "Valmentaja (auttaja, 100%)",
+        "Luokanopettaja (auttaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "ravintola",
+        "ravintolatyöntekijä"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "rakentaja: 73%",
+        "johtaja: 43%",
+        "auttaja: 37%"
+      ],
+      "personalizedAnalysisPreview": "Huomaa, että osaat organisoida tehtäviä ja työskennellä tavoitteellisesti. Nämä ovat taitoja, joita tarvitaan sekä opinnoissa että työelämässä, ja sinulla näyttää olevan niistä jo hyvä pohja. Et jätä asioita viime tippaan, vaan osaat suunnitella ja priorisoida. Tämänkaltainen järjestelmällisyys on h...",
+      "educationPathReasoning": "Hoitoalalla AMK-tutkinto (esim. sairaanhoitaja) avaa laajemmat mahdollisuudet. Lähihoitajana voit myös työskennellä suoraan...."
+    }
+  },
+  {
+    "persona": "Tiina the Hairdresser",
+    "cohort": "TASO2",
+    "subCohort": "AMIS",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "luova",
+      "actualCategory": "luova",
+      "categoryMatch": true,
+      "expectedEducationPath": "amk",
+      "actualEducationPath": "amk",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Parturi-kampaaja (luova, 100%)",
+        "Luonnonsuojelubiologi (ympariston-puolustaja, 100%)",
+        "Äänisuunnittelija (luova, 100%)",
+        "Rakennustyönjohtaja (rakentaja, 100%)",
+        "Rakennusmestari (rakentaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "kampaaja",
+        "parturi"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "luova: 63%",
+        "johtaja: 60%",
+        "innovoija: 45%"
+      ],
+      "personalizedAnalysisPreview": "Huomaa, että osaat organisoida tehtäviä ja työskennellä tavoitteellisesti. Nämä ovat taitoja, joita tarvitaan sekä opinnoissa että työelämässä, ja sinulla näyttää olevan niistä jo hyvä pohja. Et jätä asioita viime tippaan, vaan osaat suunnitella ja priorisoida. Tämänkaltainen järjestelmällisyys on h...",
+      "educationPathReasoning": "Luovilla aloilla AMK-tutkinto (esim. muotoilu, media-ala) yhdistettynä portfolioon on vahva yhdistelmä...."
+    }
+  },
+  {
+    "persona": "Juha the Carpenter",
+    "cohort": "TASO2",
+    "subCohort": "AMIS",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "rakentaja",
+      "actualCategory": "rakentaja",
+      "categoryMatch": true,
+      "expectedEducationPath": "amk",
+      "actualEducationPath": "amk",
+      "educationPathMatch": true,
+      "topCareers": [
+        "Rakennusmestari (rakentaja, 100%)",
+        "Putkiasentaja (rakentaja, 100%)",
+        "LVI-asentaja (rakentaja, 100%)",
+        "Urheiluvalmentaja (auttaja, 100%)",
+        "Rakennustyönjohtaja (rakentaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "rakennusmestari",
+        "putkiasentaja",
+        "LVI",
+        "asentaja"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "rakentaja: 93%",
+        "ympariston-puolustaja: 76%",
+        "jarjestaja: 55%"
+      ],
+      "personalizedAnalysisPreview": "Vastauksistasi välittyy järjestelmällinen ja tavoitteellinen ote. Tiedät, miten työskentelet parhaiten, ja tämä tieto auttaa sinua valitsemaan sopivan oppimisympäristön ja työpaikan. Sinussa on sisäinen motivaatio saada asioita valmiiksi ja tehdä ne hyvin. Tämä ei ole itsestäänselvyys, vaan vahvuus,...",
+      "educationPathReasoning": "Ammattikoulupohjalla pääset suoraan töihin ja kartuttamaan kokemusta. Oppisopimuskoulutus yhdistää työn ja oppimisen. AMK-opinnot ovat myös mahdollisia myöhemmin...."
+    }
+  },
+  {
+    "persona": "Antti the Software Developer",
+    "cohort": "NUORI",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "innovoija",
+      "actualCategory": "innovoija",
+      "categoryMatch": true,
+      "actualEducationPath": null,
+      "educationPathMatch": true,
+      "topCareers": [
+        "Mobiilisovelluskehittäjä (innovoija, 100%)",
+        "Pelimoottori kehittäjä (innovoija, 100%)",
+        "Ohjelmistokehittäjä (innovoija, 100%)",
+        "Full-Stack-kehittäjä (innovoija, 100%)",
+        "Frontend-kehittäjä (innovoija, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "ohjelmistokehittäjä",
+        "IT",
+        "kehittäjä"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "innovoija: 85%",
+        "jarjestaja: 72%",
+        "johtaja: 44%"
+      ],
+      "personalizedAnalysisPreview": "Vastauksistasi välittyy kypsä ja ammattimainen ote työhön. Tiedostat omat vahvuutesi ja osaat soveltaa niitä käytäntöön eri tilanteissa. Tämä reflektiivinen kyky on merkki korkean tason ammattilaisuudesta ja jatkuvasta itsensä kehittämisestä. Et jää jumiin vanhoihin toimintatapoihin, vaan mukautat l...",
+      "educationPathReasoning": "Teknologia-alalla AMK-tutkinto yhdistää käytännön osaamisen ja teorian tehokkaasti. Yliopisto-opinnot ovat myös hyvä vaihtoehto tutkimussuuntautuneille...."
+    }
+  },
+  {
+    "persona": "Maria the Social Worker",
+    "cohort": "NUORI",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "auttaja",
+      "actualCategory": "auttaja",
+      "categoryMatch": true,
+      "actualEducationPath": null,
+      "educationPathMatch": true,
+      "topCareers": [
+        "Ensihoitaja (auttaja, 100%)",
+        "Terveydenhoitaja (auttaja, 100%)",
+        "Lähihoitaja (auttaja, 100%)",
+        "Sairaanhoitaja (auttaja, 100%)",
+        "Fysioterapeutti (auttaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "hoitaja"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "auttaja: 100%",
+        "jarjestaja: 72%",
+        "ympariston-puolustaja: 47%"
+      ],
+      "personalizedAnalysisPreview": "Vahvuutesi terveysala ja kasvu erottuvat selvästi ja vahvasti. Kykysi yhdistät useita vahvuuksia strategisesti tavalla, joka tekee sinusta arvokkaan asiantuntijan on harvinainen ja arvokas yhdistelmä, joka avaa ovia vaativiin ja palkitseviin tehtäviin. Nämä vahvuudet antavat sinulle mahdollisuuden k...",
+      "educationPathReasoning": "Hoiva- ja terveysalalla AMK tai yliopisto antavat tarvittavan pätevyyden. AMK sopii käytännönläheisempään työhön, yliopisto tutkimukselliseen...."
+    }
+  },
+  {
+    "persona": "Lauri the Marketing Manager",
+    "cohort": "NUORI",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "johtaja",
+      "actualCategory": "johtaja",
+      "categoryMatch": true,
+      "actualEducationPath": null,
+      "educationPathMatch": true,
+      "topCareers": [
+        "Startup-perustaja (johtaja, 100%)",
+        "Asiakkuusvastaava (johtaja, 100%)",
+        "Myyntityöntekijä (johtaja, 100%)",
+        "Asiakaspalveluvastaava (johtaja, 100%)",
+        "Palvelumuotoilija (johtaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "myynti",
+        "startup",
+        "asiakkuus"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "johtaja: 74%",
+        "visionaari: 48%",
+        "rakentaja: 47%"
+      ],
+      "personalizedAnalysisPreview": "Kun analysoidaan profiiliasi syvällisemmin, yritystoiminta ja liiketoiminta ja johtaminen nousevat selvästi vahvimmiksi alueiksi. Kykysi yhdistät useita vahvuuksia strategisesti tavalla, joka tekee sinusta arvokkaan asiantuntijan on erityisen arvokas työmarkkinoilla ja antaa sinulle merkittävän kilp...",
+      "educationPathReasoning": "Liiketoiminta- ja johtamisosaaminen kehittyy AMK-tradenomitutkinnolla tai yliopiston kauppatieteiden opinnoilla...."
+    }
+  },
+  {
+    "persona": "Sanna the Environmental Consultant",
+    "cohort": "NUORI",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "ympariston-puolustaja",
+      "actualCategory": "ympariston-puolustaja",
+      "categoryMatch": true,
+      "actualEducationPath": null,
+      "educationPathMatch": true,
+      "topCareers": [
+        "Mobiilisovelluskehittäjä (innovoija, 100%)",
+        "Luonnonsuojelubiologi (ympariston-puolustaja, 100%)",
+        "Pelimoottori kehittäjä (innovoija, 100%)",
+        "Ohjelmistokehittäjä (innovoija, 100%)",
+        "Full-Stack-kehittäjä (innovoija, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "biologi",
+        "luonnonsuojelu"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "ympariston-puolustaja: 71%",
+        "jarjestaja: 71%",
+        "innovoija: 59%"
+      ],
+      "personalizedAnalysisPreview": "Huomaa selvästi, että osaat hyödyntää vahvuuksiasi tehokkaasti ja työskennellä tavoitteellisesti. Nämä ovat ominaisuuksia, joita työnantajat arvostavat erityisesti, sillä ne kertovat kyvystäsi tuottaa tuloksia ja kehittää toimintaa. Et vain tee töitä, vaan teet niitä älykkäästi ja tehokkaasti. Tämä ...",
+      "educationPathReasoning": "Teknologia-alalla AMK-tutkinto yhdistää käytännön osaamisen ja teorian tehokkaasti. Yliopisto-opinnot ovat myös hyvä vaihtoehto tutkimussuuntautuneille...."
+    }
+  },
+  {
+    "persona": "Eero the Accountant",
+    "cohort": "NUORI",
+    "passed": true,
+    "issues": [],
+    "details": {
+      "expectedCategory": "jarjestaja",
+      "actualCategory": "jarjestaja",
+      "categoryMatch": true,
+      "actualEducationPath": null,
+      "educationPathMatch": true,
+      "topCareers": [
+        "Tilintarkastajan assistentti (jarjestaja, 100%)",
+        "Logistiikkakoordinaattori (jarjestaja, 100%)",
+        "Hankinta-assistentti (jarjestaja, 100%)",
+        "Tapahtumakoordinaattori (jarjestaja, 100%)",
+        "Toimistosihteeri (jarjestaja, 100%)"
+      ],
+      "expectedKeywordsFound": [
+        "tilintarkastaja"
+      ],
+      "unexpectedCareersFound": [],
+      "categoryAffinities": [
+        "jarjestaja: 89%",
+        "innovoija: 44%",
+        "rakentaja: 44%"
+      ],
+      "personalizedAnalysisPreview": "Vastauksistasi välittyy kypsä ja ammattimainen ote työhön. Tiedostat omat vahvuutesi ja osaat soveltaa niitä käytäntöön eri tilanteissa. Tämä reflektiivinen kyky on merkki korkean tason ammattilaisuudesta ja jatkuvasta itsensä kehittämisestä. Et jää jumiin vanhoihin toimintatapoihin, vaan mukautat l...",
+      "educationPathReasoning": "Organisointi- ja hallintotyöhön AMK-tradenomitutkinto antaa hyvän pohjan. Yhdistää käytännön osaamisen ja teorian...."
+    }
+  }
+]
