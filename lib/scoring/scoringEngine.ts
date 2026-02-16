@@ -6001,31 +6001,68 @@ export function rankCareers(
       })
     : scoredCareers;
 
-  // ========== EDUCATION PATH FILTERING FOR LUKIO ==========
-  // LUKIO students should NOT see careers that ONLY require ammattikoulu
-  // (e.g., Lähihoitaja, Maalari, Kirvesmies) because they would need to go back to AMIS
-  // AMIS students CAN see all careers since they are on the ammattikoulu path
-  let educationFilteredCareers = ageFilteredCareers;
-  if (subCohort === 'LUKIO') {
-    educationFilteredCareers = ageFilteredCareers.filter(career => {
-      const eduPaths = (career as any).educationPaths || [];
-      if (eduPaths.length === 0) return true; // No paths info, keep it
-      const paths = eduPaths.map((p: string) => p.toLowerCase());
-      const hasAmk = paths.some((p: string) => p.includes('amk') || p.includes('ammattikorkeakoulu'));
-      const hasYliopisto = paths.some((p: string) => p.includes('yliopisto') || p.includes('maisteri') || p.includes('kandidaatti'));
-      const hasAmisOnly = paths.some((p: string) => 
-        p.includes('toinen aste') || p.includes('ammattikoulu') || 
-        p.includes('ammattitutkinto') || p.includes('perustutkinto') || 
-        p.includes('ammatillinen')
-      ) && !hasAmk && !hasYliopisto;
-      if (hasAmisOnly) {
-        console.log(`[rankCareers] LUKIO edu-filter: Removed amis-only career "${career.title}"`);
-        return false;
+  // ========== RELEASE A WEEK 2: EDUCATION PATH FILTERING ==========
+  // Apply score adjustments based on education_tags metadata
+  // LUKIO students: Prefer UNI/AMK paths, penalize AMIS-only
+  // AMIS students: Prefer vocational paths, penalize UNI-only
+  const educationFilteredCareers = ageFilteredCareers.map(career => {
+    // Find the career metadata from careers-fi
+    const careerMetadata = careersFI.find(c => c.id === career.slug);
+    const educationTags = careerMetadata?.education_tags;
+
+    // If no metadata, keep career unchanged (backward compatibility)
+    if (!educationTags || educationTags.length === 0) {
+      return career;
+    }
+
+    let scoreAdjustment = 0;
+
+    // LUKIO students: Prefer AMK/UNI paths, penalize AMIS-only careers
+    if (subCohort === 'LUKIO') {
+      const hasUniversityPath = educationTags.some(tag =>
+        tag === 'UNI' || tag === 'AMK'
+      );
+      const hasOnlyAmisPath = educationTags.length === 1 && educationTags[0] === 'AMIS';
+
+      if (hasUniversityPath) {
+        scoreAdjustment += 15; // Boost university-track careers
+        console.log(`[rankCareers] LUKIO edu-boost: +15 for "${career.title}" (has UNI/AMK path)`);
       }
-      return true;
-    });
-    console.log(`[rankCareers] LUKIO education filter: ${ageFilteredCareers.length} -> ${educationFilteredCareers.length} careers`);
-  }
+
+      if (hasOnlyAmisPath) {
+        scoreAdjustment -= 40; // Penalize AMIS-only (not realistic path)
+        console.log(`[rankCareers] LUKIO edu-penalty: -40 for "${career.title}" (AMIS-only)`);
+      }
+    }
+
+    // AMIS students: Prefer vocational paths, penalize UNI-only careers
+    if (subCohort === 'AMIS') {
+      const hasVocationalPath = educationTags.some(tag =>
+        tag === 'AMIS' || tag === 'AMK' || tag === 'APPRENTICE'
+      );
+      const hasOnlyUniPath = educationTags.length === 1 && educationTags[0] === 'UNI';
+
+      if (hasVocationalPath) {
+        scoreAdjustment += 20; // Boost vocational careers
+        console.log(`[rankCareers] AMIS edu-boost: +20 for "${career.title}" (has AMIS/AMK/APPRENTICE path)`);
+      }
+
+      if (hasOnlyUniPath) {
+        scoreAdjustment -= 35; // Penalize UNI-only (not realistic path)
+        console.log(`[rankCareers] AMIS edu-penalty: -35 for "${career.title}" (UNI-only)`);
+      }
+    }
+
+    // Apply score adjustment
+    if (scoreAdjustment !== 0) {
+      return {
+        ...career,
+        overallScore: Math.max(0, career.overallScore + scoreAdjustment)
+      };
+    }
+
+    return career;
+  });
 
   // ========== IMPROVEMENT 1: CAREER DIVERSITY WITHIN CATEGORIES ==========
   // Instead of returning top N by score alone, ensure diversity within categories
@@ -8891,7 +8928,7 @@ function _legacyRankCareers(
   });
 
   const ageFilteredCareers = levelFilteredCareers;
-  
+
   // Step 8: Limit to top demand-driven matches (default max 5)
   const dynamicLimit = Math.min(limit, 5);
 
