@@ -19,7 +19,7 @@ import { getQuestionMappings } from './dimensions';
 import { CAREER_VECTORS } from './careerVectors';
 import { CURATED_CAREER_SLUGS } from './curatedCareers';
 import { RANKING_WEIGHTS, getDemandWeight, getDiversityKey, isPaallikkoVariant } from './rankingConfig';
-import { careersData as careersFI } from '@/data/careers-fi';
+import { careersData as careersFI, CareerLevel } from '@/data/careers-fi';
 import { generatePersonalizedAnalysis } from './personalizedAnalysis';
 import { generateEnhancedPersonalizedAnalysis } from './deepPersonalization';
 import { getAnswerLevel, getQuestionReference } from './languageHelpers';
@@ -8740,27 +8740,48 @@ function _legacyRankCareers(
     return true;
   });
 
-  // Step 7.5: FIX - Age-appropriate filtering for NUORI cohort
-  // Filter out senior executive roles that are inappropriate for younger users
-  const SENIOR_ROLES_FOR_NUORI = [
-    'toimitusjohtaja', 'ceo', 'cto', 'cmo', 'cfo', 'chro', 'coo',
-    'johtaja', 'toiminnanjohtaja', 'pääjohtaja', 'varatoimitusjohtaja',
-    'hallituksen', 'partner', 'osakas'
-  ];
+  // Step 7.5: RELEASE A - Cohort-based level filtering
+  // Filter careers by level based on user's cohort and career metadata
+  // Uses careerLevel field from careers-fi.ts (entry/mid/senior)
+  const levelFilteredCareers = deduplicatedCareers.filter(career => {
+    // Find the career metadata from careers-fi
+    const careerMetadata = careersFI.find(c => c.id === career.slug);
+    const careerLevel = careerMetadata?.careerLevel;
 
-  const ageFilteredCareers = cohort === 'NUORI'
-    ? deduplicatedCareers.filter(career => {
-        const titleLower = career.title.toLowerCase();
-        const slugLower = (career.slug || '').toLowerCase();
-        const isSeniorRole = SENIOR_ROLES_FOR_NUORI.some(role =>
-          titleLower.includes(role) || slugLower.includes(role)
-        );
-        if (isSeniorRole) {
-          console.log(`[rankCareers] NUORI age-filter: Removed senior role "${career.title}"`);
-        }
-        return !isSeniorRole;
-      })
-    : deduplicatedCareers;
+    // If no metadata, keep the career (backward compatibility)
+    if (!careerLevel) {
+      return true;
+    }
+
+    // Define allowed levels based on cohort
+    const allowedLevels: Set<CareerLevel> = new Set();
+
+    if (cohort === 'YLA') {
+      // YLA (13-15): Only entry-level careers
+      allowedLevels.add('entry');
+    } else if (cohort === 'TASO2') {
+      // TASO2 (16-19): Entry + mid-level careers
+      allowedLevels.add('entry');
+      allowedLevels.add('mid');
+    } else if (cohort === 'NUORI') {
+      // NUORI (20-25): All levels (entry + mid + senior)
+      allowedLevels.add('entry');
+      allowedLevels.add('mid');
+      allowedLevels.add('senior');
+    }
+
+    // Check if career level is allowed
+    const isAllowed = allowedLevels.has(careerLevel);
+
+    // Log filtering for debugging
+    if (!isAllowed) {
+      console.log(`[rankCareers] ${cohort} level-filter: Removed ${careerLevel} level career "${career.title}" (${career.slug})`);
+    }
+
+    return isAllowed;
+  });
+
+  const ageFilteredCareers = levelFilteredCareers;
   
   // Step 8: Limit to top demand-driven matches (default max 5)
   const dynamicLimit = Math.min(limit, 5);
