@@ -248,23 +248,22 @@ function detectPersonalityType(
     console.log(`[detectPersonalityType] ✓ CREATIVE_LEADER hybrid type detected (creative=${creative.toFixed(2)}, leadership=${leadership.toFixed(2)}, innovation=${innovation.toFixed(2)})`);
     return {
       boostCareers: [
-        // Creative leadership roles
-        'brandijohtaja', 'brändijohtaja', 'luova-johtaja', 'creative-director',
-        'markkinointijohtaja', 'markkinointipaallikko', 'markkinointipäällikkö',
-        'art-director', 'mainostoimiston-art-director', 'tuotantopaallikko',
-        // Entrepreneurial creative roles
-        'yrittaja', 'yrittäjä', 'startup', 'perustaja',
-        // Strategic creative roles
-        'brandistrategisti', 'brändistrategisti', 'brand-strategist', 'ethical-brand-strategist',
+        // ✅ RELEASE A DAY 4: Removed senior titles, replaced with entry/mid-level careers
+        // Entrepreneurial creative roles (realistic for students)
+        'yrittaja', 'yrittäjä', 'perustaja',
+        // Strategic creative roles (mid-level, not management)
+        'brandistrategisti', 'brand-strategist',
         'sisaltostrategisti', 'sisältöstrategisti', 'content-strategist',
-        // Design leadership
-        'muotoilujohtaja', 'design-director', 'suunnittelupaallikko',
-        // Innovation + creative roles
-        'tuotekehitysjohtaja', 'tuotejohtaja',
-        // Media leadership
-        'mediajohtaja', 'viestintajohtaja', 'viestintäjohtaja',
-        // General leadership in creative fields
-        'johtaja', 'paallikko', 'päällikkö', 'esimies'
+        'markkinointistrategisti',
+        // Brand & marketing (entry/mid)
+        'markkinointiasiantuntija', 'markkinointisuunnittelija', 'brandisuunnittelija',
+        'sisaltotuottaja', 'sisältötuottaja', 'some-asiantuntija',
+        // Design (entry/mid)
+        'graafinen-suunnittelija', 'ux-suunnittelija', 'ui-suunnittelija',
+        'visuaalinen-suunnittelija', 'muotoilija',
+        // Media & content (entry/mid)
+        'videotuottaja', 'mediatuottaja', 'sisältömarkkinoija',
+        'copywriter', 'tekstinkirjoittaja'
       ],
       boostMultiplier: 2.5  // Higher multiplier for hybrid matches
     };
@@ -274,12 +273,17 @@ function detectPersonalityType(
     console.log(`[detectPersonalityType] ✓ TECH_LEADER hybrid type detected (tech=${technology.toFixed(2)}, leadership=${leadership.toFixed(2)})`);
     return {
       boostCareers: [
-        'teknologiajohtaja', 'cto', 'tietohallintojohtaja', 'cio',
-        'it-johtaja', 'kehitysjohtaja', 'tuotekehitysjohtaja',
-        'startup', 'yrittaja', 'yrittäjä', 'perustaja',
-        'projektikoordinaattori', 'tuotepaallikko',
-        'tekninen-johtaja', 'arkkitehti', 'lead-developer',
-        'digitalisaatiojohtaja'
+        // ✅ RELEASE A DAY 4: Removed senior titles, replaced with entry/mid-level tech careers
+        // Core development (entry/mid)
+        'ohjelmistokehittaja', 'fullstack-kehittaja', 'backend-kehittaja', 'frontend-kehittaja',
+        'mobiilisovelluskehittaja', 'web-kehittaja',
+        // Technical specialization (mid, not management)
+        'jarjestelmaasiantuntija', 'järjestelmäasiantuntija', 'tekninen-asiantuntija',
+        'ohjelmistoarkkitehti', 'pilvipalveluasiantuntija', 'tietoturva-asiantuntija',
+        // Product & coordination (mid, not management)
+        'tuote-omistaja', 'projektikoordinaattori',
+        // Entrepreneurship
+        'startup', 'yrittaja', 'yrittäjä', 'perustaja'
       ],
       boostMultiplier: 2.5
     };
@@ -337,9 +341,23 @@ function detectPersonalityType(
         boostMultiplier: 2.0
       };
     case 'LEADER':
-      // Expected: johtaja, yrittäjä, koordinaattori
+      // ✅ RELEASE A DAY 4: Removed senior titles, replaced with entry/mid-level leadership-oriented careers
+      // Expected: yrittäjä, koordinaattori, leadership-oriented professionals (not managers)
       return {
-        boostCareers: ['toimitusjohtaja', 'yrittaja', 'yrittäjä', 'myyntipaallikko', 'myyntipäällikkö', 'projektikoordinaattori', 'poliisi', 'urheiluvalmentaja', 'paallikko', 'päällikkö', 'johtaja', 'esimies', 'manageri', 'rehtori', 'Toimitusjohtaja', 'Yrittäjä', 'Johtaja'],
+        boostCareers: [
+          // Entrepreneurship
+          'yrittaja', 'yrittäjä', 'perustaja', 'startup',
+          // Coordination & project work (mid-level)
+          'projektikoordinaattori', 'tuote-omistaja', 'projektityontekija',
+          // Leadership-oriented professions (not managers)
+          'poliisi', 'urheiluvalmentaja', 'kouluttaja', 'valmentaja',
+          'opettaja', 'tiimityontekija',
+          // Business roles (entry/mid)
+          'myyntiedustaja', 'asiakasvastaava', 'asiakkuusasiantuntija',
+          'liiketoiminta-analyytikko', 'liiketoimintaasiantuntija',
+          // Specialist roles with autonomy
+          'konsultti', 'asiantuntija', 'strategia-asiantuntija'
+        ],
         boostMultiplier: 2.0
       };
     case 'CREATIVE':
