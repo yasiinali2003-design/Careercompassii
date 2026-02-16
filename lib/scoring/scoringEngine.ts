@@ -260,7 +260,7 @@ function detectPersonalityType(
         // Design leadership
         'muotoilujohtaja', 'design-director', 'suunnittelupaallikko',
         // Innovation + creative roles
-        'innovaatiojohtaja', 'tuotekehitysjohtaja', 'tuotejohtaja',
+        'tuotekehitysjohtaja', 'tuotejohtaja',
         // Media leadership
         'mediajohtaja', 'viestintajohtaja', 'viestintäjohtaja',
         // General leadership in creative fields
@@ -277,9 +277,9 @@ function detectPersonalityType(
         'teknologiajohtaja', 'cto', 'tietohallintojohtaja', 'cio',
         'it-johtaja', 'kehitysjohtaja', 'tuotekehitysjohtaja',
         'startup', 'yrittaja', 'yrittäjä', 'perustaja',
-        'projektipaallikko', 'projektipäällikkö', 'tuotepaallikko',
+        'projektikoordinaattori', 'tuotepaallikko',
         'tekninen-johtaja', 'arkkitehti', 'lead-developer',
-        'innovaatiojohtaja', 'digitalisaatiojohtaja'
+        'digitalisaatiojohtaja'
       ],
       boostMultiplier: 2.5
     };
@@ -337,9 +337,9 @@ function detectPersonalityType(
         boostMultiplier: 2.0
       };
     case 'LEADER':
-      // Expected: johtaja, yrittäjä, myyntipäällikkö, projektipäällikkö
+      // Expected: johtaja, yrittäjä, koordinaattori
       return {
-        boostCareers: ['toimitusjohtaja', 'yrittaja', 'yrittäjä', 'myyntipaallikko', 'myyntipäällikkö', 'projektipaallikko', 'projektipäällikkö', 'poliisi', 'urheiluvalmentaja', 'paallikko', 'päällikkö', 'johtaja', 'esimies', 'manageri', 'rehtori', 'Toimitusjohtaja', 'Yrittäjä', 'Johtaja'],
+        boostCareers: ['toimitusjohtaja', 'yrittaja', 'yrittäjä', 'myyntipaallikko', 'myyntipäällikkö', 'projektikoordinaattori', 'poliisi', 'urheiluvalmentaja', 'paallikko', 'päällikkö', 'johtaja', 'esimies', 'manageri', 'rehtori', 'Toimitusjohtaja', 'Yrittäjä', 'Johtaja'],
         boostMultiplier: 2.0
       };
     case 'CREATIVE':

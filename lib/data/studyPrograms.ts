@@ -324,7 +324,7 @@ const manualStudyPrograms: StudyProgram[] = [
     field: 'tekniikka',
     minPoints: 76.5,
     maxPoints: 95.0,
-    relatedCareers: ['konetekniikan-insinoori', 'automaatioteknikko', 'projektipaallikko'],
+    relatedCareers: ['konetekniikan-insinoori', 'automaatioteknikko', 'projektikoordinaattori'],
     description: 'Konetekniikan koulutus, joka valmistaa diplomi-insinööreiksi.'
   },
   {
@@ -335,7 +335,7 @@ const manualStudyPrograms: StudyProgram[] = [
     field: 'tekniikka',
     minPoints: 72.0,
     maxPoints: 90.0,
-    relatedCareers: ['rakennusinsinoori', 'projektipaallikko', 'rakennusmestari'],
+    relatedCareers: ['rakennusinsinoori', 'projektikoordinaattori', 'rakennusmestari'],
     description: 'Rakennustekniikan koulutus, joka valmistaa rakennusalan insinööreiksi.'
   },
   {
@@ -717,7 +717,7 @@ const manualStudyPrograms: StudyProgram[] = [
     field: 'tekniikka',
     minPoints: 68.0,
     maxPoints: 85.0,
-    relatedCareers: ['rakennusinsinoori', 'projektipaallikko'],
+    relatedCareers: ['rakennusinsinoori', 'projektikoordinaattori'],
     description: 'Rakennustekniikan koulutus Tampereella.'
   },
   {
@@ -1284,8 +1284,8 @@ const CAREER_FIELD_MAP: Record<string, string[]> = {
   'rakennusinsinoori': ['tekniikka', 'rakentaminen'],
   'sahkotekniikan-insinoori': ['tekniikka'],
   'automaatioteknikko': ['tekniikka'],
-  'projektipaallikko': ['tekniikka', 'rakentaminen'],
-  
+  'projektikoordinaattori': ['tekniikka', 'rakentaminen'],
+
   // Education careers
   'luokanopettaja': ['kasvatus'],
   'aineenopettaja': ['kasvatus'],

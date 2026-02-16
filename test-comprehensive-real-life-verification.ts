@@ -159,7 +159,7 @@ const realLifeProfiles: RealLifeProfile[] = [
     age: 15,
     cohort: 'YLA',
     expectedCategory: 'johtaja',
-    expectedTopCareers: ['henkilostopaallikko', 'projektipaallikko', 'myyntipaallikko'],
+    expectedTopCareers: ['henkilostopaallikko', 'projektikoordinaattori', 'myyntipaallikko'],
     personalityTraits: {
       interests: {
         leadership: 5,

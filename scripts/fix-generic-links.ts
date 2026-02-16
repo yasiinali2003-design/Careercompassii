@@ -38,7 +38,6 @@ const opintopolkuSearchTerms: Record<string, string> = {
   'metsainsinoori': 'metsätalous',
   'metsatalousasiantuntija': 'metsätalous',
   'museoasiantuntija': 'museologia',
-  'projektipaallikko': 'projektinhallinta liiketalous',
   'rakennusarkkitehti': 'rakennusarkkitehtuuri',
   'ravintolapaallikko': 'ravintola-ala restonomi',
   'sahkotekniikan-insinoori': 'sähkötekniikka',
@@ -56,7 +55,6 @@ const opintopolkuSearchTerms: Record<string, string> = {
 // Careers that have generic tyomarkkinatori.fi/ links - map to proper career IDs
 const tyomarkkinatoriIds: Record<string, string> = {
   'tuotepaalliko': 'tuotepaalliko',
-  'asiakasmenestysjohtaja': 'asiakaspalvelu',
   'koneoppimisasiantuntija': 'tietotekniikka',
   'liiketoiminta-analyytikko': 'liiketoiminta',
   'pilvipalveluarkkitehti': 'tietotekniikka',

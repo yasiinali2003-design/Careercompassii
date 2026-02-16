@@ -90,7 +90,7 @@ const realLifeProfiles: RealLifeProfile[] = [
     age: 15,
     cohort: 'YLA',
     expectedCategory: 'johtaja',
-    expectedTopCareers: ['henkilostopaallikko', 'projektipaallikko', 'myyntipaallikko', 'asiakaspalvelupaallikko', 'kehityspaallikko'],
+    expectedTopCareers: ['henkilostopaallikko', 'projektikoordinaattori', 'myyntipaallikko', 'asiakaspalvelupaallikko', 'kehityspaallikko'],
     expectedEducationPath: 'lukio',
     personalityTraits: {
       interests: { leadership: 5, business: 5, people: 3, analytical: 4, technology: 2, creative: 1, health: 1 },
@@ -221,7 +221,7 @@ const realLifeProfiles: RealLifeProfile[] = [
     cohort: 'TASO2',
     subCohort: 'LUKIO',
     expectedCategory: 'johtaja',
-    expectedTopCareers: ['poliisi', 'henkilostopaallikko', 'projektipaallikko', 'markkinointipaallikko', 'asiakaspalvelupaallikko'],
+    expectedTopCareers: ['poliisi', 'henkilostopaallikko', 'projektikoordinaattori', 'markkinointipaallikko', 'asiakaspalvelupaallikko'],
     expectedEducationPath: 'yliopisto',
     personalityTraits: {
       interests: { analytical: 5, people: 2, leadership: 4, writing: 4, impact: 4, business: 4, health: 1 },
@@ -281,7 +281,7 @@ const realLifeProfiles: RealLifeProfile[] = [
     cohort: 'TASO2',
     subCohort: 'LUKIO',
     expectedCategory: 'johtaja',
-    expectedTopCareers: ['markkinointipaallikko', 'henkilostopaallikko', 'projektipaallikko'],
+    expectedTopCareers: ['markkinointipaallikko', 'henkilostopaallikko', 'projektikoordinaattori'],
     expectedEducationPath: 'yliopisto',
     personalityTraits: {
       interests: { business: 5, leadership: 5, people: 4, analytical: 4, innovation: 3 },
@@ -511,7 +511,7 @@ const realLifeProfiles: RealLifeProfile[] = [
     age: 27,
     cohort: 'NUORI',
     expectedCategory: 'johtaja',
-    expectedTopCareers: ['markkinointipaallikko', 'henkilostopaallikko', 'projektipaallikko', 'myyntipaallikko', 'asiakaspalvelupaallikko'],
+    expectedTopCareers: ['markkinointipaallikko', 'henkilostopaallikko', 'projektikoordinaattori', 'myyntipaallikko', 'asiakaspalvelupaallikko'],
     personalityTraits: {
       interests: { business: 5, people: 3, creative: 3, leadership: 5, innovation: 2, writing: 2, health: 1, technology: 2 },
       workstyle: { leadership: 5, social: 3, teamwork: 3, organization: 5 },
@@ -576,7 +576,7 @@ const realLifeProfiles: RealLifeProfile[] = [
     age: 25,
     cohort: 'NUORI',
     expectedCategory: 'johtaja',
-    expectedTopCareers: ['henkilostopaallikko', 'hr-asiantuntija', 'projektipaallikko', 'asiakaspalvelupaallikko', 'myyntipaallikko', 'ohjelmistokehittaja', 'mobiilisovelluskehittaja'],
+    expectedTopCareers: ['henkilostopaallikko', 'hr-asiantuntija', 'projektikoordinaattori', 'asiakaspalvelupaallikko', 'myyntipaallikko', 'ohjelmistokehittaja', 'mobiilisovelluskehittaja'],
     personalityTraits: {
       interests: { people: 4, leadership: 5, business: 5, education: 2, analytical: 3, creative: 1, health: 1, technology: 1 },
       workstyle: { social: 4, organization: 5, teamwork: 4, leadership: 5 },
@@ -589,7 +589,7 @@ const realLifeProfiles: RealLifeProfile[] = [
     age: 30,
     cohort: 'NUORI',
     expectedCategory: 'johtaja',
-    expectedTopCareers: ['startup-perustaja', 'projektipaallikko', 'henkilostopaallikko', 'myyntipaallikko', 'kehityspaallikko', 'ohjelmistokehittaja', 'mobiilisovelluskehittaja'],
+    expectedTopCareers: ['startup-perustaja', 'projektikoordinaattori', 'henkilostopaallikko', 'myyntipaallikko', 'kehityspaallikko', 'ohjelmistokehittaja', 'mobiilisovelluskehittaja'],
     personalityTraits: {
       interests: { business: 5, leadership: 5, innovation: 2, people: 3, technology: 2, analytical: 3, health: 1, creative: 1 },
       workstyle: { independence: 5, leadership: 5, organization: 5, problem_solving: 4 },
