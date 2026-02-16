@@ -5237,6 +5237,97 @@ function determineDominantCategory(
   return dominantCategory;
 }
 
+// ========== DIVERSITY RULE FUNCTION ==========
+
+/**
+ * Apply soft diversity rule to career recommendations
+ *
+ * RELEASE A DAY 5: Prevents clustering of similar careers in top 10
+ *
+ * Strategy:
+ * - Preserves top 2 results untouched (maintains "obviousness")
+ * - Applies diversity constraint to ranks 3-10 (max 2 careers per family)
+ * - Uses minimal career families (8-12 only)
+ *
+ * Why this matters psychologically:
+ * - Top 2 = highest personality fit (user expects this)
+ * - Ranks 3-10 = diverse but strong matches (breadth without breaking trust)
+ * - Prevents "all software dev" or "all nurse" results
+ *
+ * @param rankedCareers - Careers sorted by score
+ * @param topN - Number of results to optimize (default 10)
+ * @returns Careers with diversity applied
+ */
+function applyDiversityRule(
+  rankedCareers: CareerMatch[],
+  topN: number = 10
+): CareerMatch[] {
+  const MAX_PER_FAMILY = 2;
+  const PRESERVE_TOP = 2; // Keep top 2 untouched
+
+  // Minimal career families (8-12 only, not 30+)
+  // These are the most common career clusters in Finnish system
+  const CAREER_FAMILIES: Record<string, string[]> = {
+    'software': [
+      'ohjelmistokehittaja', 'backend-kehittaja', 'frontend-kehittaja',
+      'fullstack-kehittaja', 'mobiilisovelluskehittaja', 'web-kehittaja'
+    ],
+    'data': ['data-analyytikko', 'data-engineer', 'data-scientist', 'tietoturva-analyytikko'],
+    'design': ['graafinen-suunnittelija', 'ux-suunnittelija', 'ui-suunnittelija', 'visuaalinen-suunnittelija'],
+    'healthcare': ['sairaanhoitaja', 'lahihoitaja', 'katilo', 'ensihoitaja', 'rontgenhoitaja'],
+    'education': ['opettaja', 'varhaiskasvatuksen-opettaja', 'erityisopettaja'],
+    'trades': ['sahkoasentaja', 'puuseppa', 'rakennusmies', 'autonasentaja'],
+    'business': ['myyntiedustaja', 'asiakasvastaava', 'liiketoiminta-analyytikko'],
+    'admin': ['kirjanpitaja', 'controller', 'palkanlaskija', 'toimistosihteeri'],
+    'public-safety': ['poliisi', 'palomies', 'rajavartija'],
+    'environment': ['ymparistoasiantuntija', 'metsatalousasiantuntija'],
+    'creative': ['valokuvaaja', 'muusikko', 'taiteilija', 'kirjailija'],
+    'engineering': ['konetekniikan-insinoori', 'sahkoinsinoori', 'rakennusinsinoori']
+  };
+
+  // Build reverse lookup: career slug → family name
+  const careerToFamily = new Map<string, string>();
+  for (const [familyName, careers] of Object.entries(CAREER_FAMILIES)) {
+    careers.forEach(slug => careerToFamily.set(slug, familyName));
+  }
+
+  // Step 1: Preserve top 2 untouched (highest personality fit)
+  const preservedTop = rankedCareers.slice(0, PRESERVE_TOP);
+  const remaining = rankedCareers.slice(PRESERVE_TOP);
+
+  // Track family counts (including preserved top 2)
+  const familyCounts = new Map<string, number>();
+  for (const career of preservedTop) {
+    const family = careerToFamily.get(career.slug) || 'unclustered';
+    familyCounts.set(family, (familyCounts.get(family) || 0) + 1);
+  }
+
+  // Step 2: Apply diversity constraint to ranks 3-10
+  const diverseMiddle: CareerMatch[] = [];
+
+  for (const career of remaining) {
+    const family = careerToFamily.get(career.slug) || 'unclustered';
+    const currentCount = familyCounts.get(family) || 0;
+
+    // Fill up to topN with diversity constraint
+    if (preservedTop.length + diverseMiddle.length < topN) {
+      if (currentCount < MAX_PER_FAMILY) {
+        diverseMiddle.push(career);
+        familyCounts.set(family, currentCount + 1);
+      } else {
+        // Skip this career (family quota full), try next
+        console.log(`[diversity] Skipping ${career.slug} (family ${family} already has ${MAX_PER_FAMILY})`);
+      }
+    } else {
+      // After topN, add remaining careers as-is (no diversity constraint)
+      diverseMiddle.push(career);
+    }
+  }
+
+  // Step 3: Combine preserved top 2 + diverse ranks 3-10 + rest
+  return [...preservedTop, ...diverseMiddle];
+}
+
 // ========== MAIN RANKING FUNCTION ==========
 
 /**
@@ -8941,11 +9032,15 @@ function _legacyRankCareers(
       ...entry.career,
       overallScore: Math.min(100, entry.career.overallScore)
     }));
-  const resultCategories = finalResults.map(c => c.category);
-  const growthCount = finalResults.filter(c => c.outlook === 'kasvaa').length;
-  console.log(`[rankCareers] Returning ${finalResults.length} careers (dominant: ${dominantCategory}, kasvava ala: ${growthCount}) – categories: ${resultCategories.join(', ')}`);
+  // Step 9: RELEASE A DAY 5 - Apply soft diversity rule
+  // Preserves top 2 results (obviousness), applies diversity to ranks 3-10
+  const diverseCareers = applyDiversityRule(finalResults, 10);
 
-  return finalResults;
+  const resultCategories = diverseCareers.map(c => c.category);
+  const growthCount = diverseCareers.filter(c => c.outlook === 'kasvaa').length;
+  console.log(`[rankCareers] Returning ${diverseCareers.length} careers (dominant: ${dominantCategory}, kasvava ala: ${growthCount}) – categories: ${resultCategories.join(', ')}`);
+
+  return diverseCareers;
 }
 
 /**
