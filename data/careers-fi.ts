@@ -4,6 +4,17 @@
 export type LangLevel = "A2" | "B1" | "B2" | "C1" | "C2" | "Ei vaatimusta";
 export type OutlookStatus = "kasvaa" | "vakaa" | "laskee" | "vaihtelee";
 
+// Career level for filtering by cohort (Release A - Week 1 Day 1)
+export type CareerLevel = 'entry' | 'mid' | 'senior';
+
+// Education path tags for Finnish education system (Release A - Week 1 Day 1)
+export type EducationLevel =
+  | 'AMIS'           // Ammattikoulu (Vocational secondary)
+  | 'AMK'            // Ammattikorkeakoulu (University of Applied Sciences)
+  | 'UNI'            // Yliopisto (University)
+  | 'ANY_SECONDARY'  // Any path from secondary education
+  | 'APPRENTICE';    // Oppisopimus (Apprenticeship route)
+
 export interface MoneyRange {
   median: number;
   range: [number, number];
@@ -43,6 +54,10 @@ export interface CareerFI {
   study_length_estimate_months?: number; // for sorting
   related_careers?: string[];
   title?: string;
+
+  // ✅ NEW FIELDS (Release A - Week 1 Day 1): Cohort filtering & education matching
+  careerLevel?: CareerLevel;          // Entry/mid/senior for cohort-based filtering
+  education_tags?: EducationLevel[];  // Structured education path tags (AMIS/AMK/UNI/etc)
 }
 
 export const careersData: CareerFI[] = [
@@ -157,7 +172,9 @@ export const careersData: CareerFI[] = [
     "visuaalinen viestintä",
     "Adobe"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "muusikko",
@@ -269,7 +286,9 @@ export const careersData: CareerFI[] = [
     "opettaminen",
     "studio"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "kameramies",
@@ -376,7 +395,9 @@ export const careersData: CareerFI[] = [
     "TV",
     "valaistus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "kirjailija",
@@ -488,7 +509,9 @@ export const careersData: CareerFI[] = [
     "artikkeli",
     "käsikirjoitus"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "muotoilija",
@@ -595,7 +618,9 @@ export const careersData: CareerFI[] = [
     "sovellus",
     "digitaalinen suunnittelu"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "animaattori",
@@ -706,7 +731,9 @@ export const careersData: CareerFI[] = [
     "pelit",
     "digitaalinen taide"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "teatteriohjaaja",
@@ -817,7 +844,9 @@ export const careersData: CareerFI[] = [
     "esitys",
     "taide"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "senior",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "valokuvaaja",
@@ -928,7 +957,9 @@ export const careersData: CareerFI[] = [
     "taide",
     "mainoskuvaus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "pukusuunnittelija",
@@ -1043,7 +1074,9 @@ export const careersData: CareerFI[] = [
     "muoti",
     "historia"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "rakennusmestari",
@@ -1158,7 +1191,9 @@ export const careersData: CareerFI[] = [
     "turvallisuus",
     "projektinhallinta"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "putkiasentaja",
@@ -1265,7 +1300,9 @@ export const careersData: CareerFI[] = [
     "vesijohto",
     "huolto"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "maalari",
@@ -1372,7 +1409,9 @@ export const careersData: CareerFI[] = [
     "kunnostus",
     "viimeistely"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "kattomestari",
@@ -1479,7 +1518,9 @@ export const careersData: CareerFI[] = [
     "korkea työ",
     "turvallisuus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "lvi-asentaja",
@@ -1590,7 +1631,9 @@ export const careersData: CareerFI[] = [
     "ilmastointi",
     "tekniikka"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "talonrakentaja",
@@ -1701,7 +1744,9 @@ export const careersData: CareerFI[] = [
     "asuintalo",
     "rakentaminen"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "betonityontekija",
@@ -1812,7 +1857,9 @@ export const careersData: CareerFI[] = [
     "raudoitus",
     "rakennus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "rakennusvalvoja",
@@ -1919,7 +1966,9 @@ export const careersData: CareerFI[] = [
     "turvallisuus",
     "laatua"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "data-insinoori",
@@ -2026,7 +2075,9 @@ export const careersData: CareerFI[] = [
     "big data",
     "analytiikka"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "pelisuunnittelija",
@@ -2137,7 +2188,9 @@ export const careersData: CareerFI[] = [
     "tarinankerronta",
     "interaktiivisuus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "robotiikka-insinoori",
@@ -2244,7 +2297,9 @@ export const careersData: CareerFI[] = [
     "ohjelmointi",
     "teollisuus"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "biotekniikka-insinoori",
@@ -2351,7 +2406,9 @@ export const careersData: CareerFI[] = [
     "tutkimus",
     "lääketeollisuus"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "nanotekniikka-insinoori",
@@ -2458,7 +2515,9 @@ export const careersData: CareerFI[] = [
     "tutkimus",
     "innovointi"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "kvantti-insinoori",
@@ -2565,7 +2624,9 @@ export const careersData: CareerFI[] = [
     "algoritmit",
     "tutkimus"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "automaatio-insinoori",
@@ -2672,7 +2733,9 @@ export const careersData: CareerFI[] = [
     "IoT",
     "teollisuus"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "sairaanhoitaja",
@@ -2798,7 +2861,9 @@ export const careersData: CareerFI[] = [
     "hoito",
     "kuntoutus"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "bioanalyytikko",
@@ -2908,7 +2973,9 @@ export const careersData: CareerFI[] = [
     "näytteenotto",
     "terveydenhuolto"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "kouluterveydenhoitaja",
@@ -3014,7 +3081,9 @@ export const careersData: CareerFI[] = [
     "terveyskasvatus",
     "hyvinvointi"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "kotihoitaja",
@@ -3120,7 +3189,9 @@ export const careersData: CareerFI[] = [
     "asiakaslähtöisyys",
     "liikkuva työ"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "ravitsemusasiantuntija",
@@ -3226,7 +3297,9 @@ export const careersData: CareerFI[] = [
     "terveysviestintä",
     "kestävä ruokavalio"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "tyopsykologi",
@@ -3332,7 +3405,9 @@ export const careersData: CareerFI[] = [
     "valmennus",
     "muutosjohtaminen"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "poliisi",
@@ -3442,7 +3517,9 @@ export const careersData: CareerFI[] = [
     "kenttätyö",
     "viranomaistyö"
   ],
-  "study_length_estimate_months": 30
+  "study_length_estimate_months": 30,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "rikostutkija",
@@ -3548,7 +3625,9 @@ export const careersData: CareerFI[] = [
     "analyysi",
     "oikeus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "sotilas",
@@ -3654,7 +3733,9 @@ export const careersData: CareerFI[] = [
     "kansainväliset tehtävät",
     "johtaminen"
   ],
-  "study_length_estimate_months": 18
+  "study_length_estimate_months": 18,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "upseeri",
@@ -3764,7 +3845,9 @@ export const careersData: CareerFI[] = [
     "operaatiot",
     "kriisinhallinta"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "markkinointisuunnittelija",
@@ -3874,7 +3957,9 @@ export const careersData: CareerFI[] = [
     "digitaalinen",
     "strategia"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "liikuntaneuvoja",
@@ -3980,7 +4065,9 @@ export const careersData: CareerFI[] = [
     "valmennus",
     "ennaltaehkäisy"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "liikuntaterapeutti",
@@ -4086,7 +4173,9 @@ export const careersData: CareerFI[] = [
     "ohjaus",
     "erityisryhmät"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "yritysneuvoja",
@@ -4196,7 +4285,9 @@ export const careersData: CareerFI[] = [
     "kasvu",
     "verkostot"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "sisaltotuottaja",
@@ -4302,7 +4393,9 @@ export const careersData: CareerFI[] = [
     "digitaalinen",
     "markkinointi"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ohjelmistokehittaja",
@@ -4412,7 +4505,9 @@ export const careersData: CareerFI[] = [
     "devops",
     "tuotekehitys"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tekoalyasiantuntija",
@@ -4518,7 +4613,9 @@ export const careersData: CareerFI[] = [
     "automaatio",
     "analytiikka"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tietojarjestelma-arkkitehti",
@@ -4624,7 +4721,9 @@ export const careersData: CareerFI[] = [
     "tietoturva",
     "strategia"
   ],
-  "study_length_estimate_months": 66
+  "study_length_estimate_months": 66,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "verkkosuunnittelija",
@@ -4730,7 +4829,9 @@ export const careersData: CareerFI[] = [
     "saavutettavuus",
     "prototypointi"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "fyysikko",
@@ -4840,7 +4941,9 @@ export const careersData: CareerFI[] = [
     "energia",
     "kvantti"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "matemaatikko",
@@ -4950,7 +5053,9 @@ export const careersData: CareerFI[] = [
     "optimointi",
     "data"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "biologi",
@@ -5056,7 +5161,9 @@ export const careersData: CareerFI[] = [
     "laboratorio",
     "biodiversiteetti"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "elintarviketutkija",
@@ -5162,7 +5269,9 @@ export const careersData: CareerFI[] = [
     "turvallisuus",
     "innovaatio"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "asianajaja",
@@ -5272,7 +5381,9 @@ export const careersData: CareerFI[] = [
     "riidanratkaisu",
     "asiakastyö"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "oikeusneuvos",
@@ -5374,7 +5485,9 @@ export const careersData: CareerFI[] = [
     "lainsäädäntö",
     "johtaminen"
   ],
-  "study_length_estimate_months": 180
+  "study_length_estimate_months": 180,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "notaari",
@@ -5480,7 +5593,9 @@ export const careersData: CareerFI[] = [
     "asiakirjat",
     "julkishallinto"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "kustannustoimittaja",
@@ -5590,7 +5705,9 @@ export const careersData: CareerFI[] = [
     "projektinhallinta",
     "julkaisu"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "luokanopettaja",
@@ -5705,7 +5822,9 @@ export const careersData: CareerFI[] = [
     "pedagogiikka",
     "kasvatus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "sosiaalityontekija",
@@ -5816,7 +5935,9 @@ export const careersData: CareerFI[] = [
     "hyvinvointi",
     "tuki"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "psykologi",
@@ -5927,7 +6048,9 @@ export const careersData: CareerFI[] = [
     "hyvinvointi",
     "tutkimus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "fysioterapeutti",
@@ -6042,7 +6165,9 @@ export const careersData: CareerFI[] = [
     "terapia",
     "palautuminen"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "lastentarhanopettaja",
@@ -6163,7 +6288,9 @@ export const careersData: CareerFI[] = [
     "kasvatus",
     "oppiminen"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "kuntoutusohjaaja",
@@ -6270,7 +6397,9 @@ export const careersData: CareerFI[] = [
     "ohjaus",
     "tuki"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "perhetyontekija",
@@ -6377,7 +6506,9 @@ export const careersData: CareerFI[] = [
     "tuki",
     "hyvinvointi"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "vanhustenhoitaja",
@@ -6484,7 +6615,9 @@ export const careersData: CareerFI[] = [
     "itsenäisyys",
     "elämänlaatu"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "kriisityontekija",
@@ -6591,7 +6724,9 @@ export const careersData: CareerFI[] = [
     "toipuminen",
     "tuki"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ymparistoinsinoori",
@@ -6698,7 +6833,9 @@ export const careersData: CareerFI[] = [
     "teknologia",
     "suojelu"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ilmastotutkija",
@@ -6805,7 +6942,9 @@ export const careersData: CareerFI[] = [
     "ilmastonmuutos",
     "tiede"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "luonnonsuojelija",
@@ -6916,7 +7055,9 @@ export const careersData: CareerFI[] = [
     "kasvit",
     "monimuotoisuus"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "uusiutuva-energia-insinoori",
@@ -7023,7 +7164,9 @@ export const careersData: CareerFI[] = [
     "energiatehokkuus",
     "kestävä kehitys"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ymparistokasvattaja",
@@ -7138,7 +7281,9 @@ export const careersData: CareerFI[] = [
     "tietoisuus",
     "kasvatus"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "vesi-insinoori",
@@ -7249,7 +7394,9 @@ export const careersData: CareerFI[] = [
     "vesitalous",
     "ympäristö"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "hiilijalanjalki-asiantuntija",
@@ -7356,7 +7503,9 @@ export const careersData: CareerFI[] = [
     "ilmasto",
     "hiilidioksidi"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ymparistojuristi",
@@ -7467,7 +7616,9 @@ export const careersData: CareerFI[] = [
     "ympäristörikos",
     "kestävä kehitys"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "biologinen-monimuotoisuus-asiantuntija",
@@ -7578,7 +7729,9 @@ export const careersData: CareerFI[] = [
     "kasvit",
     "uhanalaiset lajit"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "kestavan-kehityksen-koordinaattori",
@@ -7685,7 +7838,9 @@ export const careersData: CareerFI[] = [
     "strategia",
     "raportointi"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "strategia-konsultti",
@@ -7792,7 +7947,9 @@ export const careersData: CareerFI[] = [
     "muutos",
     "analyysi"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "strateginen-suunnittelija",
@@ -7899,7 +8056,9 @@ export const careersData: CareerFI[] = [
     "tulevaisuus",
     "muutos"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tulevaisuuden-teknologia-asiantuntija",
@@ -8006,7 +8165,9 @@ export const careersData: CareerFI[] = [
     "tutkimus",
     "skenaariot"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tapahtumakoordinaattori",
@@ -8113,7 +8274,9 @@ export const careersData: CareerFI[] = [
     "budjetti",
     "asiakaspalvelu"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "toimistosihteeri",
@@ -8224,7 +8387,9 @@ export const careersData: CareerFI[] = [
     "organisointi",
     "asiakaspalvelu"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "logistiikkakoordinaattori",
@@ -8331,7 +8496,9 @@ export const careersData: CareerFI[] = [
     "varastointi",
     "kuljetus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "henkilostoasiantuntija",
@@ -8438,7 +8605,9 @@ export const careersData: CareerFI[] = [
     "hallinto",
     "työntekijät"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "taloushallinnon-asiantuntija",
@@ -8545,7 +8714,9 @@ export const careersData: CareerFI[] = [
     "analyysi",
     "hallinto"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "laadunhallinnan-koordinaattori",
@@ -8652,7 +8823,9 @@ export const careersData: CareerFI[] = [
     "analyysi",
     "hallinto"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "asiakaspalvelun-koordinaattori",
@@ -8759,7 +8932,9 @@ export const careersData: CareerFI[] = [
     "asiakkaat",
     "palvelu"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tietohallinnon-koordinaattori",
@@ -8866,7 +9041,9 @@ export const careersData: CareerFI[] = [
     "tiedot",
     "hallinto"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "hallinnon-koordinaattori",
@@ -8973,7 +9150,9 @@ export const careersData: CareerFI[] = [
     "hallinto",
     "organisaatio"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "lapsenhoitaja",
@@ -9080,7 +9259,9 @@ export const careersData: CareerFI[] = [
     "varhaiskasvatus",
     "perhepäivähoito"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "apteekkari",
@@ -9195,7 +9376,9 @@ export const careersData: CareerFI[] = [
     "lääkeneuvonta",
     "apteekki"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tietoturva-asiantuntija",
@@ -9306,7 +9489,9 @@ export const careersData: CareerFI[] = [
     "penetraatiotestaus",
     "SIEM"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tietokantasuunnittelija",
@@ -9413,7 +9598,9 @@ export const careersData: CareerFI[] = [
     "DBA",
     "tietokantojen optimointi"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "verkkoasiantuntija",
@@ -9520,7 +9707,9 @@ export const careersData: CareerFI[] = [
     "verkkoanalyysi",
     "NOC"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "rakennusinsinoori",
@@ -9635,7 +9824,9 @@ export const careersData: CareerFI[] = [
     "BIM",
     "CAD"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "puuseppa",
@@ -9750,7 +9941,9 @@ export const careersData: CareerFI[] = [
     "huonekalujen",
     "korjaus"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "opettaja",
@@ -9861,7 +10054,9 @@ export const careersData: CareerFI[] = [
     "koulu",
     "oppilaiden"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "varhaiskasvatuksen-opettaja",
@@ -9972,7 +10167,9 @@ export const careersData: CareerFI[] = [
     "opetus",
     "kehitys"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ammattikoulun-opettaja",
@@ -10083,7 +10280,9 @@ export const careersData: CareerFI[] = [
     "työelämä",
     "koulutus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "kielten-opettaja",
@@ -10194,7 +10393,9 @@ export const careersData: CareerFI[] = [
     "opetus",
     "kansainvälistyminen"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "erityisopettaja",
@@ -10309,7 +10510,9 @@ export const careersData: CareerFI[] = [
     "henkilökohtainen tuki",
     "erityisopetus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "kuorma-auton-kuljettaja",
@@ -10416,7 +10619,9 @@ export const careersData: CareerFI[] = [
     "logistiikka",
     "jakelu"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "varastotyontekija",
@@ -10527,7 +10732,9 @@ export const careersData: CareerFI[] = [
     "hyllytys",
     "varasto"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "jakelukuljettaja",
@@ -10634,7 +10841,9 @@ export const careersData: CareerFI[] = [
     "kotitoimitus",
     "verkkokauppa"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "kuljetuskoordinaattori",
@@ -10741,7 +10950,9 @@ export const careersData: CareerFI[] = [
     "reittien optimointi",
     "kuljetusketju"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "sahkoasentaja",
@@ -10852,7 +11063,9 @@ export const careersData: CareerFI[] = [
     "energiatehokkuus",
     "korjaus"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "energiainsinoori",
@@ -10959,7 +11172,9 @@ export const careersData: CareerFI[] = [
     "energiaratkaisut",
     "ilmastonmuutos"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "aurinkoenergia-asentaja",
@@ -11066,7 +11281,9 @@ export const careersData: CareerFI[] = [
     "energiatehokkuus",
     "ilmastonmuutos"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "energiakonsultti",
@@ -11173,7 +11390,9 @@ export const careersData: CareerFI[] = [
     "kestävää kehitystä",
     "hiilijalanjälki"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "energia-asiantuntija",
@@ -11280,7 +11499,9 @@ export const careersData: CareerFI[] = [
     "uusiutuva energia",
     "kestävää kehitystä"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "digitaalisen-markkinoinnin-asiantuntija",
@@ -11387,7 +11608,9 @@ export const careersData: CareerFI[] = [
       "name": "Hae töitä Duunitorista",
       "url": "https://duunitori.fi/tyopaikat?haku=markkinointi"
     }
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "brandisuunnittelija",
@@ -11498,7 +11721,9 @@ export const careersData: CareerFI[] = [
     "graafinen suunnittelu",
     "kreatiivisuus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ymparistoasiantuntija",
@@ -11605,7 +11830,9 @@ export const careersData: CareerFI[] = [
     "auditointi",
     "vastuullisuus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tuotesuunnittelija",
@@ -11708,7 +11935,9 @@ export const careersData: CareerFI[] = [
       "name": "Hae töitä Duunitorista",
       "url": "https://duunitori.fi/tyopaikat?haku=Tuotesuunnittelija"
     }
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "data-analyytikko",
@@ -11811,7 +12040,9 @@ export const careersData: CareerFI[] = [
       "name": "Hae töitä Duunitorista",
       "url": "https://duunitori.fi/tyopaikat?haku=Data-analyytikko"
     }
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "hr-asiantuntija",
@@ -11928,7 +12159,9 @@ export const careersData: CareerFI[] = [
     "palkkaus",
     "työsuhteet"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "liiketoimintakehittaja",
@@ -12027,7 +12260,9 @@ export const careersData: CareerFI[] = [
       "name": "Hae töitä Duunitorista",
       "url": "https://duunitori.fi/tyopaikat?haku=liiketoiminta"
     }
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "koulutussuunnittelija",
@@ -12138,7 +12373,9 @@ export const careersData: CareerFI[] = [
     "materiaalit",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "konsultti",
@@ -12245,7 +12482,9 @@ export const careersData: CareerFI[] = [
     "projektit",
     "asiantuntijuus"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tutkimusasiantuntija",
@@ -12344,7 +12583,9 @@ export const careersData: CareerFI[] = [
       "name": "Hae töitä Duunitorista",
       "url": "https://duunitori.fi/tyopaikat?haku=tutkija"
     }
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "laadunvalvonta-asiantuntija",
@@ -12451,7 +12692,9 @@ export const careersData: CareerFI[] = [
     "analyysi",
     "prosessit"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "asiakasvastaava",
@@ -12550,7 +12793,9 @@ export const careersData: CareerFI[] = [
       "name": "Hae töitä Duunitorista",
       "url": "https://duunitori.fi/tyopaikat?haku=Asiakasvastaava"
     }
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tietojarjestelmaasiantuntija",
@@ -12657,7 +12902,9 @@ export const careersData: CareerFI[] = [
     "ylläpito",
     "tuki"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "talousasiantuntija",
@@ -12764,7 +13011,9 @@ export const careersData: CareerFI[] = [
     "analyysi",
     "hallinto"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "henkilostokoordinaattori",
@@ -12863,7 +13112,9 @@ export const careersData: CareerFI[] = [
       "name": "Hae töitä Duunitorista",
       "url": "https://duunitori.fi/tyopaikat?haku=Henkil%C3%B6st%C3%B6koordinaattori"
     }
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "myyntiedustaja",
@@ -12974,7 +13225,9 @@ export const careersData: CareerFI[] = [
     "neuvottelu",
     "tavoitteet"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "markkinointikoordinaattori",
@@ -13073,7 +13326,9 @@ export const careersData: CareerFI[] = [
       "name": "Hae töitä Duunitorista",
       "url": "https://duunitori.fi/tyopaikat?haku=markkinointikoordinaattori"
     }
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "projektikoordinaattori",
@@ -13180,7 +13435,9 @@ export const careersData: CareerFI[] = [
     "resurssit",
     "seuranta"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "asiakaspalveluedustaja",
@@ -13279,7 +13536,9 @@ export const careersData: CareerFI[] = [
       "name": "Hae töitä Duunitorista",
       "url": "https://duunitori.fi/tyopaikat?haku=asiakaspalvelu"
     }
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "sisallontuottaja",
@@ -13386,7 +13645,9 @@ export const careersData: CareerFI[] = [
     "media",
     "markkinointi"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "mobiilisovelluskehittaja",
@@ -13493,7 +13754,9 @@ export const careersData: CareerFI[] = [
     "React Native",
     "Flutter"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tekoaly-asiantuntija",
@@ -13600,7 +13863,9 @@ export const careersData: CareerFI[] = [
     "algoritmit",
     "automaatio"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tuotantoteknikko",
@@ -13711,7 +13976,9 @@ export const careersData: CareerFI[] = [
     "laitteiden huolto",
     "teollisuus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "teollisuusinsinoori",
@@ -13818,7 +14085,9 @@ export const careersData: CareerFI[] = [
     "tuotannon optimointi",
     "teollisuus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "asiakaspalvelu-asiantuntija",
@@ -13925,7 +14194,9 @@ export const careersData: CareerFI[] = [
     "ongelmaratkaisu",
     "palvelutalous"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "mid",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "hotellityontekija",
@@ -14032,7 +14303,9 @@ export const careersData: CareerFI[] = [
     "asiakaspalvelu",
     "palvelutalous"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "ravintolatyontekija",
@@ -14143,7 +14416,9 @@ export const careersData: CareerFI[] = [
     "ruokapalvelu",
     "palvelutalous"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "siivooja",
@@ -14254,7 +14529,9 @@ export const careersData: CareerFI[] = [
     "terveys",
     "palvelutalous"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "turvallisuusvastaava",
@@ -14361,7 +14638,9 @@ export const careersData: CareerFI[] = [
     "turvallisuuspalvelu",
     "palvelutalous"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "pankkivirkailija",
@@ -14472,7 +14751,9 @@ export const careersData: CareerFI[] = [
     "asiakaspalvelu",
     "rahoituspalvelu"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "rahoitusneuvonantaja",
@@ -14579,7 +14860,9 @@ export const careersData: CareerFI[] = [
     "sijoitusneuvonta",
     "rahoituspalvelu"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "vakuutusasiamies",
@@ -14686,7 +14969,9 @@ export const careersData: CareerFI[] = [
     "neuvonta",
     "vakuutuspalvelu"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "kirjanpitaja",
@@ -14801,7 +15086,9 @@ export const careersData: CareerFI[] = [
     "tilinpäätös",
     "verotiedot"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "rahoitusanalyytikko",
@@ -14908,7 +15195,9 @@ export const careersData: CareerFI[] = [
     "rahoitusmarkkinat",
     "rahoituspalvelu"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "laakari",
@@ -15015,7 +15304,9 @@ export const careersData: CareerFI[] = [
     "hoito",
     "potilas"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "hammaslaakari",
@@ -15124,7 +15415,9 @@ export const careersData: CareerFI[] = [
     "hammashoidot",
     "hampaiden korjaus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "elainlaakari",
@@ -15229,7 +15522,9 @@ export const careersData: CareerFI[] = [
     "eläinlääketiede",
     "lemmikkieläimet"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "farmaseutti",
@@ -15334,7 +15629,9 @@ export const careersData: CareerFI[] = [
     "lääkkeet",
     "lääkeneuvonta"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "rontgenhoitaja",
@@ -15443,7 +15740,9 @@ export const careersData: CareerFI[] = [
     "röntgen",
     "ultraääni"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "laboratoriohoitaja",
@@ -15544,7 +15843,9 @@ export const careersData: CareerFI[] = [
     "laboratorio",
     "tutkimukset"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "lahihoitaja",
@@ -15649,7 +15950,9 @@ export const careersData: CareerFI[] = [
     "hoiva",
     "vanhusten hoito"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "ensihoitaja",
@@ -15754,7 +16057,9 @@ export const careersData: CareerFI[] = [
     "ensihoito",
     "hätätilanteet"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "katilo",
@@ -15859,7 +16164,9 @@ export const careersData: CareerFI[] = [
     "raskaus",
     "vastasyntyneet"
   ],
-  "study_length_estimate_months": 54
+  "study_length_estimate_months": 54,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "mielenterveyshoitaja",
@@ -15967,7 +16274,9 @@ export const careersData: CareerFI[] = [
     "mielenterveys",
     "kuntoutus"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "mainostoimiston-art-director",
@@ -16077,7 +16386,9 @@ export const careersData: CareerFI[] = [
     "luova",
     "visuaalinen"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "senior",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "aanisuunnittelija",
@@ -16187,7 +16498,9 @@ export const careersData: CareerFI[] = [
     "elokuva",
     "pelit"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "koreografi",
@@ -16295,7 +16608,9 @@ export const careersData: CareerFI[] = [
     "ohjaus",
     "luova"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "kuvataiteilija",
@@ -16404,7 +16719,9 @@ export const careersData: CareerFI[] = [
     "veisto",
     "luova"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "nayttelija",
@@ -16516,7 +16833,9 @@ export const careersData: CareerFI[] = [
     "esiintyminen",
     "rooli"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "valosuunnittelija",
@@ -16625,7 +16944,9 @@ export const careersData: CareerFI[] = [
     "tapahtumat",
     "tekninen"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "kasikirjoittaja",
@@ -16738,7 +17059,9 @@ export const careersData: CareerFI[] = [
     "kirjoittaminen",
     "tarina"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tuottaja-media",
@@ -16843,7 +17166,9 @@ export const careersData: CareerFI[] = [
     "TV",
     "tuotanto"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "leikkausartisti",
@@ -16953,7 +17278,9 @@ export const careersData: CareerFI[] = [
     "elokuva",
     "media"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "dokumentaristi",
@@ -17059,7 +17386,9 @@ export const careersData: CareerFI[] = [
     "journalismi",
     "tutkiminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "podcast-tuottaja",
@@ -17165,7 +17494,9 @@ export const careersData: CareerFI[] = [
     "editointi",
     "media"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "lavastaja",
@@ -17279,7 +17610,9 @@ export const careersData: CareerFI[] = [
     "elokuva",
     "suunnittelu"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ymparistotarkastaja",
@@ -17387,7 +17720,9 @@ export const careersData: CareerFI[] = [
     "valvonta",
     "ympäristönsuojelu"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "vesiensuojeluasiantuntija",
@@ -17492,7 +17827,9 @@ export const careersData: CareerFI[] = [
     "ympäristö",
     "laatu"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "jatehuoltoasiantuntija",
@@ -17597,7 +17934,9 @@ export const careersData: CareerFI[] = [
     "ympäristö",
     "kestävyys"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "metsanhoitaja",
@@ -17702,7 +18041,9 @@ export const careersData: CareerFI[] = [
     "kestävyys",
     "ympäristö"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "kirvesmies",
@@ -17811,7 +18152,9 @@ export const careersData: CareerFI[] = [
     "talonrakennus",
     "korjaus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "maanrakennuskoneen-kuljettaja",
@@ -17920,7 +18263,9 @@ export const careersData: CareerFI[] = [
     "rakentaminen",
     "infrastruktuuri"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "tapahtumajarjestaja",
@@ -18025,7 +18370,9 @@ export const careersData: CareerFI[] = [
     "projektit",
     "koordinointi"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "tilauspalvelukoordinaattori",
@@ -18130,7 +18477,9 @@ export const careersData: CareerFI[] = [
     "asiakaspalvelu",
     "toimitukset"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "devops-insinoori",
@@ -18238,7 +18587,9 @@ export const careersData: CareerFI[] = [
     "kubernetes",
     "ci/cd"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "automekaanikko",
@@ -18349,7 +18700,9 @@ export const careersData: CareerFI[] = [
     "diagnostiikka",
     "mekaanikko"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "ohjelmistotestaja",
@@ -18456,7 +18809,9 @@ export const careersData: CareerFI[] = [
     "qa",
     "vikaraportointi"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "ux-suunnittelija",
@@ -18563,7 +18918,9 @@ export const careersData: CareerFI[] = [
     "suunnittelu",
     "user experience"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "cloud-arkkitehti",
@@ -18670,7 +19027,9 @@ export const careersData: CareerFI[] = [
     "azure",
     "pilvipalvelut"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "asiakkuusvastaava",
@@ -18777,7 +19136,9 @@ export const careersData: CareerFI[] = [
     "account management",
     "b2b"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "sosiaaliohjaaja",
@@ -18888,7 +19249,9 @@ export const careersData: CareerFI[] = [
     "neuvonta",
     "sosionomi"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "terveydenhoitaja",
@@ -18998,7 +19361,9 @@ export const careersData: CareerFI[] = [
     "ehkäisevä terveydenhuolto",
     "terveysneuvonta"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "dialyysihoitaja",
@@ -19105,7 +19470,9 @@ export const careersData: CareerFI[] = [
     "hoito",
     "erikoissairaanhoito"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "varhaiskasvatuksen-erityisopettaja",
@@ -19216,7 +19583,9 @@ export const careersData: CareerFI[] = [
     "kehitysvamma",
     "oppimisvaikeudet"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ui-suunnittelija",
@@ -19323,7 +19692,9 @@ export const careersData: CareerFI[] = [
     "design",
     "user interface"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tietoturvaanalyytikko",
@@ -19430,7 +19801,9 @@ export const careersData: CareerFI[] = [
     "tietoturvaincidentti",
     "soc"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tietokoneasentaja",
@@ -19537,7 +19910,9 @@ export const careersData: CareerFI[] = [
     "tietoverkot",
     "teknikko"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "optometristi",
@@ -19644,7 +20019,9 @@ export const careersData: CareerFI[] = [
     "silmätarkastus",
     "optometria"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ravitsemusterapeutti",
@@ -19755,7 +20132,9 @@ export const careersData: CareerFI[] = [
     "terveys",
     "ravitsemustiede"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "putkityomies",
@@ -19866,7 +20245,9 @@ export const careersData: CareerFI[] = [
     "vesihuolto",
     "lämmitys"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "automaatioteknikko",
@@ -19973,7 +20354,9 @@ export const careersData: CareerFI[] = [
     "teollisuusautomaatio",
     "teknikko"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "kiertotalousasiantuntija",
@@ -20080,7 +20463,9 @@ export const careersData: CareerFI[] = [
     "kestävän kehityksen",
     "ympäristö"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ymparistovalvonta",
@@ -20187,7 +20572,9 @@ export const careersData: CareerFI[] = [
     "tarkastus",
     "ympäristö"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "videonmuokkaaja",
@@ -20294,7 +20681,9 @@ export const careersData: CareerFI[] = [
     "media",
     "editing"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tuotantokoordinaattori",
@@ -20401,7 +20790,9 @@ export const careersData: CareerFI[] = [
     "koordinointi",
     "projektinhallinta"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tarjoilija",
@@ -20512,7 +20903,9 @@ export const careersData: CareerFI[] = [
     "palvelu",
     "ruokailu"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "kokki",
@@ -20623,7 +21016,9 @@ export const careersData: CareerFI[] = [
     "ruoka",
     "ravintola"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "oppilashuoltaja",
@@ -20730,7 +21125,9 @@ export const careersData: CareerFI[] = [
     "hyvinvointi",
     "sosionomi"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "hitsaaja",
@@ -20845,7 +21242,9 @@ export const careersData: CareerFI[] = [
     "rakentaminen",
     "teollisuus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "it-tukihenkilo",
@@ -20952,7 +21351,9 @@ export const careersData: CareerFI[] = [
     "asiakaspalvelu",
     "tuki"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "puheterapeutti",
@@ -21063,7 +21464,9 @@ export const careersData: CareerFI[] = [
     "kommunikaatio",
     "logopedia"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "audiologi",
@@ -21170,7 +21573,9 @@ export const careersData: CareerFI[] = [
     "kuulotarkastus",
     "kuulonkuntoutus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "oppilashuoltotyontekija",
@@ -21277,7 +21682,9 @@ export const careersData: CareerFI[] = [
     "hyvinvointi",
     "sosionomi"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "suuhygienisti",
@@ -21388,7 +21795,9 @@ export const careersData: CareerFI[] = [
     "hammashoito",
     "suuhygienia"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "kotipalvelutyontekija",
@@ -21499,7 +21908,9 @@ export const careersData: CareerFI[] = [
     "ikääntyneet",
     "avustaja"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "full-stack-kehittaja",
@@ -21606,7 +22017,9 @@ export const careersData: CareerFI[] = [
     "backend",
     "fullstack"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "sosiaalisen-median-asiantuntija",
@@ -21713,7 +22126,9 @@ export const careersData: CareerFI[] = [
     "sisällöntuotanto",
     "yhteisö"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "urheiluvalmentaja",
@@ -21828,7 +22243,9 @@ export const careersData: CareerFI[] = [
     "liikunta",
     "valmentaja"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "lampotekniikka-asentaja",
@@ -21939,7 +22356,9 @@ export const careersData: CareerFI[] = [
     "uusiutuva energia",
     "lvi"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "ilmastoneuvonantaja",
@@ -22046,7 +22465,9 @@ export const careersData: CareerFI[] = [
     "ilmastoneuvonta",
     "ympäristö"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "aikuiskouluttaja",
@@ -22157,7 +22578,9 @@ export const careersData: CareerFI[] = [
     "opetus",
     "työelämäkoulutus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "myyntityontekija",
@@ -22264,7 +22687,9 @@ export const careersData: CareerFI[] = [
     "kauppa",
     "myyntityö"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "reseptionisti",
@@ -22371,7 +22796,9 @@ export const careersData: CareerFI[] = [
     "sekretariaatti",
     "palvelu"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "verkkosivustonhallintaja",
@@ -22478,7 +22905,9 @@ export const careersData: CareerFI[] = [
     "seo",
     "verkkosivusto"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "vaihtoehtoinen-energia-insinoori",
@@ -22585,7 +23014,9 @@ export const careersData: CareerFI[] = [
     "biokaasu",
     "energiainsinööri"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "rakennustyonjohtaja",
@@ -22696,7 +23127,9 @@ export const careersData: CareerFI[] = [
     "projektinhallinta",
     "rakennusinsinööri"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "senior",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "aineenopettaja",
@@ -22807,7 +23240,9 @@ export const careersData: CareerFI[] = [
     "koulu",
     "pedagogiikka"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "livestream-tuottaja",
@@ -22914,7 +23349,9 @@ export const careersData: CareerFI[] = [
     "media",
     "tuottaja"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "hieroja",
@@ -23025,7 +23462,9 @@ export const careersData: CareerFI[] = [
     "hyvinvointi",
     "terveys"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "aaniteknikko",
@@ -23132,7 +23571,9 @@ export const careersData: CareerFI[] = [
     "masterointi",
     "media"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "asiakaspalveluvastaava",
@@ -23239,7 +23680,9 @@ export const careersData: CareerFI[] = [
     "CRM",
     "tiiminvetäjä"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "palvelumuotoilija",
@@ -23354,7 +23797,9 @@ export const careersData: CareerFI[] = [
     "palvelupolku",
     "kokeilukulttuuri"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "lattiasuunnittelija",
@@ -23461,7 +23906,9 @@ export const careersData: CareerFI[] = [
     "CAD",
     "tilaratkaisut"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "rakennusmateriaalimyyja",
@@ -23568,7 +24015,9 @@ export const careersData: CareerFI[] = [
     "tarjouslaskenta",
     "logistiikka"
   ],
-  "study_length_estimate_months": 30
+  "study_length_estimate_months": 30,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "rautakauppias",
@@ -23675,7 +24124,9 @@ export const careersData: CareerFI[] = [
     "hankinta",
     "myymälä"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "biokaasuteknikko",
@@ -23782,7 +24233,9 @@ export const careersData: CareerFI[] = [
     "kestävä kehitys",
     "ympäristötekniikka"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "ymparisto-ohjelmoija",
@@ -23889,7 +24342,9 @@ export const careersData: CareerFI[] = [
     "GIS",
     "data-analytiikka"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "kuvausassistentti",
@@ -24000,7 +24455,9 @@ export const careersData: CareerFI[] = [
     "tuotanto",
     "AV-ala"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "baarimikko",
@@ -24111,7 +24568,9 @@ export const careersData: CareerFI[] = [
     "anniskelu",
     "palvelu"
   ],
-  "study_length_estimate_months": 30
+  "study_length_estimate_months": 30,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "aktuaari",
@@ -24214,7 +24673,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "arkkitehti",
@@ -24321,7 +24782,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "erikoislaakari",
@@ -24433,7 +24896,9 @@ export const careersData: CareerFI[] = [
     "sairaala",
     "potilas"
   ],
-  "study_length_estimate_months": 144
+  "study_length_estimate_months": 144,
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "erityispedagogi",
@@ -24536,7 +25001,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "etiikan-asiantuntija",
@@ -24639,7 +25106,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "filosofi",
@@ -24742,7 +25211,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "historioitsija",
@@ -24845,7 +25316,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "insinoori",
@@ -24948,7 +25421,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "journalisti",
@@ -25051,7 +25526,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "kemiisti",
@@ -25154,7 +25631,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "konetekniikan-insinoori",
@@ -25257,7 +25736,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "koulupsykologi",
@@ -25360,7 +25841,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "kriitikko",
@@ -25467,7 +25950,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "laatuasiantuntija",
@@ -25570,7 +26055,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "maatalousasiantuntija",
@@ -25673,7 +26160,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "maatalousinsinoori",
@@ -25776,7 +26265,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "matkailuneuvoja",
@@ -25879,7 +26370,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "mediasuunnittelija",
@@ -25982,7 +26475,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "merenkulun-insinoori",
@@ -26085,7 +26580,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "merikapteeni",
@@ -26192,7 +26689,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "metsainsinoori",
@@ -26295,7 +26794,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "metsatalousasiantuntija",
@@ -26398,7 +26899,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "museoasiantuntija",
@@ -26501,7 +27004,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "rakennusarkkitehti",
@@ -26604,7 +27109,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "sahkotekniikan-insinoori",
@@ -26707,7 +27214,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "sosiaaliohjaja",
@@ -26810,7 +27319,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "sosiaalitutkija",
@@ -26913,7 +27424,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tutkija",
@@ -27016,7 +27529,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "uutistoimittaja",
@@ -27119,7 +27634,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "valmentaja",
@@ -27222,7 +27739,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "visuaalinen-suunnittelija",
@@ -27325,7 +27844,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ymparistonsuojelun-asiantuntija",
@@ -27428,7 +27949,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ymparistoteknikko",
@@ -27531,7 +28054,9 @@ export const careersData: CareerFI[] = [
     "asiantuntija",
     "kehittäminen"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "scrum-master",
@@ -27639,7 +28164,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "product-manager",
     "project-coordinator"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ux-researcher",
@@ -27750,7 +28277,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "ui-ux-designer",
     "product-manager"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "growth-hacker",
@@ -27863,7 +28392,9 @@ export const careersData: CareerFI[] = [
     "product-manager",
     "data-analyst",
     "social-media-manager"
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "customer-success-manager",
@@ -27974,7 +28505,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "account-executive",
     "technical-support-specialist"
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "frontend-developer",
@@ -28087,7 +28620,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "ui-ux-designer",
     "backend-developer"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "backend-developer",
@@ -28202,7 +28737,9 @@ export const careersData: CareerFI[] = [
     "frontend-developer",
     "devops-engineer",
     "api-developer"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "qa-engineer",
@@ -28314,7 +28851,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "backend-developer",
     "frontend-developer"
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "technical-writer",
@@ -28425,7 +28964,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "copywriter",
     "content-strategist"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "site-reliability-engineer",
@@ -28538,7 +29079,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "devops-engineer",
     "platform-engineer"
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "solutions-architect",
@@ -28648,7 +29191,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "platform-engineer",
     "devops-engineer"
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "platform-engineer",
@@ -28759,7 +29304,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "devops-engineer",
     "site-reliability-engineer"
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "api-developer",
@@ -28871,7 +29418,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "backend-developer",
     "solutions-architect"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "content-strategist",
@@ -28985,7 +29534,9 @@ export const careersData: CareerFI[] = [
     "markkinointi",
     "viestintä"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "video-editor",
@@ -29096,7 +29647,9 @@ export const careersData: CareerFI[] = [
     "premiere",
     "video"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "motion-graphics-designer",
@@ -29207,7 +29760,9 @@ export const careersData: CareerFI[] = [
     "after effects",
     "video"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ui-ux-designer",
@@ -29321,7 +29876,9 @@ export const careersData: CareerFI[] = [
     "käyttöliittymä",
     "figma"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "influencer-marketing-specialist",
@@ -29430,7 +29987,9 @@ export const careersData: CareerFI[] = [
     "some",
     "kampanjat"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "digital-content-producer",
@@ -29541,7 +30100,9 @@ export const careersData: CareerFI[] = [
     "digitaalinen",
     "projektinhallinta"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "management-consultant",
@@ -29652,7 +30213,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "business-analyst",
     "strategy-consultant"
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "business-analyst",
@@ -29765,7 +30328,9 @@ export const careersData: CareerFI[] = [
     "data-analyst",
     "product-manager",
     "management-consultant"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "sales-development-representative",
@@ -29875,7 +30440,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "account-executive",
     "customer-success-manager"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "account-executive",
@@ -29986,7 +30553,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "sales-development-representative",
     "business-development-manager"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "digital-transformation-consultant",
@@ -30094,7 +30663,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "management-consultant",
     "business-analyst"
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "change-management-specialist",
@@ -30202,7 +30773,9 @@ export const careersData: CareerFI[] = [
   "related_careers": [
     "management-consultant",
     "digital-transformation-consultant"
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "mental-health-counselor",
@@ -30301,7 +30874,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Hyvinvointivalmentaja"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "wellness-coach",
@@ -30400,7 +30975,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=valmentaja"
     }
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "occupational-health-specialist",
@@ -30499,7 +31076,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Terveystiedon%20analyytikko"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "health-data-analyst",
@@ -30601,7 +31180,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=terveydenhuolto"
     }
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "healthcare-coordinator",
@@ -30699,7 +31280,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=koordinaattori"
     }
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "localization-specialist",
@@ -30798,7 +31381,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Globaalien%20kumppanuuksien%20p%C3%A4%C3%A4llikk%C3%B6"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "technical-support-specialist",
@@ -30899,7 +31484,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=K%C3%A4%C3%A4nn%C3%B6sprojektien%20p%C3%A4%C3%A4llikk%C3%B6"
     }
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "diversity-and-inclusion-specialist",
@@ -30999,7 +31586,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "community-organizer",
@@ -31099,7 +31688,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "nonprofit-program-coordinator",
@@ -31198,7 +31789,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "human-rights-researcher",
@@ -31297,7 +31890,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "accessibility-consultant",
@@ -31397,7 +31992,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "gender-equality-advisor",
@@ -31495,7 +32092,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "youth-empowerment-coordinator",
@@ -31595,7 +32194,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "sustainable-fashion-designer",
@@ -31694,7 +32295,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "circular-economy-specialist",
@@ -31794,7 +32397,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ethical-brand-strategist",
@@ -31894,7 +32499,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "green-building-designer",
@@ -31993,7 +32600,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "sustainable-product-designer",
@@ -32097,7 +32706,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Tuotesuunnittelija"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "inclusive-content-creator",
@@ -32201,7 +32812,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Sis%C3%A4ll%C3%B6ntuottaja"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "representation-editor",
@@ -32305,7 +32918,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Toimittaja"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "documentary-filmmaker-social-issues",
@@ -32405,7 +33020,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "multicultural-marketing-specialist",
@@ -32505,7 +33122,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "public-art-coordinator",
@@ -32609,7 +33228,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Koordinaattori"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "cultural-events-producer",
@@ -32709,7 +33330,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "art-therapy-facilitator",
@@ -32809,7 +33432,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "museum-education-specialist",
@@ -32909,7 +33534,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.palkka.fi/"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "koneoppimisasiantuntija",
@@ -33021,7 +33648,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Liiketoiminta-analyytikko"
     }
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "kettera-valmentaja",
@@ -33135,7 +33764,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Agile%20Coach"
     }
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "pilvipalveluarkkitehti",
@@ -33250,7 +33881,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Kyberturvallisuusanalyytikko"
     }
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "kyberturvallisuusanalyytikko",
@@ -33360,7 +33993,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Tekstinkirjoittaja"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tekstinkirjoittaja",
@@ -33469,7 +34104,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=kirjoittaja"
     }
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "yrityskouluttaja",
@@ -33583,7 +34220,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=kouluttaja"
     }
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "toimintaterapeutti",
@@ -33697,7 +34336,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Toimintaterapeutti"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "esg-analyytikko",
@@ -33809,7 +34450,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=analyytikko"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "3d-taiteilija",
@@ -33926,7 +34569,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=3D"
     }
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "liikkuvan-kuvan-suunnittelija",
@@ -34039,7 +34684,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6ajoneuvoasentaja"
     }
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "sahkoajoneuvoasentaja",
@@ -34151,7 +34798,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=S%C3%A4hk%C3%B6ajoneuvoasentaja"
     }
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "drone-ohjaaja",
@@ -34264,7 +34913,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=3D-tulostusasiantuntija"
     }
   ],
-  "study_length_estimate_months": 6
+  "study_length_estimate_months": 6,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "3d-tulostusasiantuntija",
@@ -34376,7 +35027,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Aurinkopaneeliasentaja"
     }
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "mid",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "aurinkopaneeliasentaja",
@@ -34488,7 +35141,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Aurinkopaneeliasentaja"
     }
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "terveysvalmentaja",
@@ -34595,7 +35250,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=valmentaja"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "verkkokurssien-luoja",
@@ -34703,7 +35360,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=koulutus"
     }
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "oppimis-ja-kehitysasiantuntija",
@@ -34819,7 +35478,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Myynti-insin%C3%B6%C3%B6ri"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "myynti-insinoori",
@@ -34939,7 +35600,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Myynti-insin%C3%B6%C3%B6ri"
     }
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "muutosjohtamiskonsultti",
@@ -35047,7 +35710,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Teknologiajohtaja%20(CTO)"
     }
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "innovaatiokonsultti",
@@ -35141,7 +35806,9 @@ export const careersData: CareerFI[] = [
     "konsultointi",
     "kehitys"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "visiointi-asiantuntija",
@@ -35235,7 +35902,9 @@ export const careersData: CareerFI[] = [
     "strategia",
     "fasilitointi"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "liiketoimintamallisuunnittelija",
@@ -35329,7 +35998,9 @@ export const careersData: CareerFI[] = [
     "BMC",
     "innovaatio"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ekosuunnittelija",
@@ -35423,7 +36094,9 @@ export const careersData: CareerFI[] = [
     "kestävyys",
     "kiertotalous"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "yhteiskuntasuunnittelija",
@@ -35517,7 +36190,9 @@ export const careersData: CareerFI[] = [
     "suunnittelu",
     "tulevaisuus"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "skenaariosuunnittelija",
@@ -35611,7 +36286,9 @@ export const careersData: CareerFI[] = [
     "tulevaisuus",
     "strategia"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "vaikuttavuusanalyytikko",
@@ -35705,7 +36382,9 @@ export const careersData: CareerFI[] = [
     "mittaaminen",
     "arviointi"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "kestavan-kehityksen-strategisti",
@@ -35799,7 +36478,9 @@ export const careersData: CareerFI[] = [
     "strategia",
     "ESG"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "sosiaalisen-innovaation-asiantuntija",
@@ -35893,7 +36574,9 @@ export const careersData: CareerFI[] = [
     "yhteiskehittäminen",
     "vaikuttavuus"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "kiertotaloussuunnittelija",
@@ -35987,7 +36670,9 @@ export const careersData: CareerFI[] = [
     "kestävyys",
     "innovaatio"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "smart-city-suunnittelija",
@@ -36081,7 +36766,9 @@ export const careersData: CareerFI[] = [
     "smart city",
     "digitalisaatio"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "kestavan-rahoituksen-asiantuntija",
@@ -36175,7 +36862,9 @@ export const careersData: CareerFI[] = [
     "ESG",
     "vastuullinen sijoittaminen"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "tiedeviestija-tulevaisuus",
@@ -36269,7 +36958,9 @@ export const careersData: CareerFI[] = [
     "tulevaisuus",
     "popularisaatio"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ruokajarjestelman-suunnittelija",
@@ -36363,7 +37054,9 @@ export const careersData: CareerFI[] = [
     "kestävyys",
     "ruokaturva"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "tyoelaman-tulevaisuusasiantuntija",
@@ -36457,7 +37150,9 @@ export const careersData: CareerFI[] = [
     "tulevaisuus",
     "HR"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "eettisen-teknologian-kehittaja",
@@ -36551,7 +37246,9 @@ export const careersData: CareerFI[] = [
     "teknologia",
     "kehitys"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "biodiverse-design-asiantuntija",
@@ -36645,7 +37342,9 @@ export const careersData: CareerFI[] = [
     "ekologia",
     "suojelu"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "teollisen-symbioosien-suunnittelija",
@@ -36739,7 +37438,9 @@ export const careersData: CareerFI[] = [
     "kiertotalous",
     "resurssitehokkuus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "seismic-resilience-suunnittelija",
@@ -36833,7 +37534,9 @@ export const careersData: CareerFI[] = [
     "kriisinhallinta",
     "sopeutumiskyky"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "neurodiverse-workplaces-asiantuntija",
@@ -36927,7 +37630,9 @@ export const careersData: CareerFI[] = [
     "saavutettavuus",
     "työhyvinvointi"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "transition-design-asiantuntija",
@@ -37021,7 +37726,9 @@ export const careersData: CareerFI[] = [
     "muotoilu",
     "yhteiskunnallinen muutos"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "biomimicry-specialist",
@@ -37115,7 +37822,9 @@ export const careersData: CareerFI[] = [
     "luonto",
     "innovaatio"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "whole-systems-designer",
@@ -37209,7 +37918,9 @@ export const careersData: CareerFI[] = [
     "kompleksisuus",
     "kokonaisvaltaisuus"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "post-anthropocentric-suunnittelija",
@@ -37303,7 +38014,9 @@ export const careersData: CareerFI[] = [
     "more-than-human",
     "filosofia"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "attention-economy-asiantuntija",
@@ -37397,7 +38110,9 @@ export const careersData: CareerFI[] = [
     "humane technology",
     "digitaalinen hyvinvointi"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "anticipatory-governance-asiantuntija",
@@ -37491,7 +38206,9 @@ export const careersData: CareerFI[] = [
     "tulevaisuus",
     "päätöksenteko"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "slow-technology-asiantuntija",
@@ -37585,7 +38302,9 @@ export const careersData: CareerFI[] = [
     "etiikka",
     "hyvinvointi"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "cognitive-liberty-asiantuntija",
@@ -37679,7 +38398,9 @@ export const careersData: CareerFI[] = [
     "neuroetiikka",
     "ihmisoikeudet"
   ],
-  "study_length_estimate_months": 84
+  "study_length_estimate_months": 84,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "lohkoketjukehittaja",
@@ -37797,7 +38518,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=%C3%84%C3%A4nin%C3%A4yttelij%C3%A4"
     }
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tekoaly-kehoteasiantuntija",
@@ -37911,7 +38634,9 @@ export const careersData: CareerFI[] = [
       "url": "https://www.promptingguide.ai/"
     }
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "hankinta-asiantuntija",
@@ -38019,7 +38744,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Hankinta-asiantuntija"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "aaninaittelija",
@@ -38130,7 +38857,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=%C3%A4%C3%A4nin%C3%A4yttelij%C3%A4"
     }
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "tuulivoima-asentaja",
@@ -38251,7 +38980,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=tuulivoima"
     }
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "ekologisen-rakentamisen-konsultti",
@@ -38362,7 +39093,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=El%C3%A4inneuvoja"
     }
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "sahkolaiteromujen-kierrattaja",
@@ -38477,7 +39210,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Luontokartoittaja"
     }
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "luonnonsuojelubiologi",
@@ -38573,7 +39308,9 @@ export const careersData: CareerFI[] = [
     "ekologia",
     "biodiversiteetti"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ilmastoasiantuntija",
@@ -38669,7 +39406,9 @@ export const careersData: CareerFI[] = [
     "päästöt",
     "kestävyys"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "kierratyskoordinaattori",
@@ -38762,7 +39501,9 @@ export const careersData: CareerFI[] = [
     "kiertotalous",
     "jätehuolto"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "elainneuoja",
@@ -38854,7 +39595,9 @@ export const careersData: CareerFI[] = [
     "hyvinvointi",
     "neuvonta"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "luontokartoittaja",
@@ -38948,7 +39691,9 @@ export const careersData: CareerFI[] = [
     "inventointi",
     "lajisto"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "maisema-arkkitehti",
@@ -39042,7 +39787,9 @@ export const careersData: CareerFI[] = [
     "viheralueet",
     "suunnittelu"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "luontokohteen-hoitaja",
@@ -39135,7 +39882,9 @@ export const careersData: CareerFI[] = [
     "suojelu",
     "kenttätyö"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "aurinkoenergiasuunnittelija",
@@ -39229,7 +39978,9 @@ export const careersData: CareerFI[] = [
     "uusiutuva energia",
     "suunnittelu"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "energiatehokkuusasiantuntija",
@@ -39322,7 +40073,9 @@ export const careersData: CareerFI[] = [
     "säästö",
     "katselmus"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "biokaasulaitoksen-operaattori",
@@ -39415,7 +40168,9 @@ export const careersData: CareerFI[] = [
     "uusiutuva energia",
     "prosessi"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "ymparistogeologi",
@@ -39509,7 +40264,9 @@ export const careersData: CareerFI[] = [
     "pohjavesi",
     "maaperä"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "kestavan-kehityksen-asiantuntija",
@@ -39602,7 +40359,9 @@ export const careersData: CareerFI[] = [
     "vastuullisuus",
     "raportointi"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "luomuviljelija",
@@ -39694,7 +40453,9 @@ export const careersData: CareerFI[] = [
     "viljely",
     "maatalous"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "ymparistokemisti",
@@ -39787,7 +40548,9 @@ export const careersData: CareerFI[] = [
     "analytiikka",
     "ympäristö"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "viherkattosuunnittelija",
@@ -39880,7 +40643,9 @@ export const careersData: CareerFI[] = [
     "kaupunkiviher",
     "suunnittelu"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "luonnon-monimuotoisuusasiantuntija",
@@ -39974,7 +40739,9 @@ export const careersData: CareerFI[] = [
     "luontokato",
     "ekologia"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ymparistoviestija",
@@ -40067,7 +40834,9 @@ export const careersData: CareerFI[] = [
     "ympäristö",
     "kampanja"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "luontoaktivisti",
@@ -40162,7 +40931,9 @@ export const careersData: CareerFI[] = [
     "kampanja",
     "vaikuttaminen"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "luontokulttuuriasiantuntija",
@@ -40255,7 +41026,9 @@ export const careersData: CareerFI[] = [
     "perinnemaisema",
     "historia"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ekomatkailuyrittaja",
@@ -40346,7 +41119,9 @@ export const careersData: CareerFI[] = [
     "luontomatkailu",
     "yrittäjyys"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "luontokartoituksen-erikoisasiantuntija",
@@ -40441,7 +41216,9 @@ export const careersData: CareerFI[] = [
     "ornitologia",
     "tutkimus"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ymparistotalousasiantuntija",
@@ -40536,7 +41313,9 @@ export const careersData: CareerFI[] = [
     "kustannus-hyöty",
     "politiikka"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ekotoksikologi",
@@ -40630,7 +41409,9 @@ export const careersData: CareerFI[] = [
     "kemikaali",
     "riski"
   ],
-  "study_length_estimate_months": 84
+  "study_length_estimate_months": 84,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ymparistohygienian-asiantuntija",
@@ -40722,7 +41503,9 @@ export const careersData: CareerFI[] = [
     "valvonta",
     "hygienia"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "viherrakennesuunnittelija",
@@ -40815,7 +41598,9 @@ export const careersData: CareerFI[] = [
     "kaupunkisuunnittelu",
     "ekologia"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ilmanlaatuasiantuntija",
@@ -40909,7 +41694,9 @@ export const careersData: CareerFI[] = [
     "mittaukset",
     "päästöt"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "meluntorjuntasuunnittelija",
@@ -41002,7 +41789,9 @@ export const careersData: CareerFI[] = [
     "akustiikka",
     "kaupunkisuunnittelu"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ymparistoluvitusasiantuntija",
@@ -41095,7 +41884,9 @@ export const careersData: CareerFI[] = [
     "lainsäädäntö",
     "prosessit"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "pilaantuneiden-maiden-kunnostusasiantuntija",
@@ -41188,7 +41979,9 @@ export const careersData: CareerFI[] = [
     "pilaantuneet maat",
     "ympäristötekniikka"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ymparistovaikutusten-arvioija",
@@ -41281,7 +42074,9 @@ export const careersData: CareerFI[] = [
     "vaikutusarviointi",
     "hankkeet"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ymparistoriskien-arvioija",
@@ -41374,7 +42169,9 @@ export const careersData: CareerFI[] = [
     "ympäristöriskit",
     "arviointi"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "luontoturvallisuusasiantuntija",
@@ -41467,7 +42264,9 @@ export const careersData: CareerFI[] = [
     "biodiversiteetti",
     "vieraslajit"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "hiilijalanjalkikonsultti",
@@ -41560,7 +42359,9 @@ export const careersData: CareerFI[] = [
     "päästöt",
     "ilmasto"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "merialuesuunnittelija",
@@ -41653,7 +42454,9 @@ export const careersData: CareerFI[] = [
     "GIS",
     "meriluonto"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "merivesiviljelyn-asiantuntija",
@@ -41746,7 +42549,9 @@ export const careersData: CareerFI[] = [
     "kalankasvatus",
     "kestävyys"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "merensuojelubiologi",
@@ -41839,7 +42644,9 @@ export const careersData: CareerFI[] = [
     "suojelu",
     "tutkimus"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ranta-alueiden-kunnostaja",
@@ -41933,7 +42740,9 @@ export const careersData: CareerFI[] = [
     "rannat",
     "ekologia"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "vesistotarkkailiaja",
@@ -42026,7 +42835,9 @@ export const careersData: CareerFI[] = [
     "näytteenotto",
     "kenttätyö"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "pohjavesiasiantuntija",
@@ -42119,7 +42930,9 @@ export const careersData: CareerFI[] = [
     "hydrogeologia",
     "suojelu"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "rehevointymisen-torjuja",
@@ -42212,7 +43025,9 @@ export const careersData: CareerFI[] = [
     "vesiensuojelu",
     "ravinteet"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "kalatalousbiologi",
@@ -42305,7 +43120,9 @@ export const careersData: CareerFI[] = [
     "kalakannat",
     "tutkimus"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "merenhoidon-asiantuntija",
@@ -42398,7 +43215,9 @@ export const careersData: CareerFI[] = [
     "meristrategia",
     "direktiivit"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "vesilaitosten-ymparistoasiantuntija",
@@ -42491,7 +43310,9 @@ export const careersData: CareerFI[] = [
     "kestävyys",
     "ympäristö"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "maatalouden-ymparistoasiantuntija",
@@ -42584,7 +43405,9 @@ export const careersData: CareerFI[] = [
     "ympäristö",
     "neuvonta"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "luonnonmukaisen-tuotannon-asiantuntija",
@@ -42677,7 +43500,9 @@ export const careersData: CareerFI[] = [
     "neuvonta",
     "maatalous"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "maaperan-asiantuntija",
@@ -42770,7 +43595,9 @@ export const careersData: CareerFI[] = [
     "viljavuus",
     "tutkimus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "perinnebiotooppien-hoitaja",
@@ -42863,7 +43690,9 @@ export const careersData: CareerFI[] = [
     "laidunnus",
     "luonnonhoito"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "vesienhallinta-asiantuntija",
@@ -42956,7 +43785,9 @@ export const careersData: CareerFI[] = [
     "suunnittelu",
     "kuivatus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ymparistotiedon-analyytikko",
@@ -43050,7 +43881,9 @@ export const careersData: CareerFI[] = [
     "ympäristö",
     "tilastot"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ymparistosuunnittelija",
@@ -43143,7 +43976,9 @@ export const careersData: CareerFI[] = [
     "kaavoitus",
     "ympäristö"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "luontoturvallisuuden-kouluttaja",
@@ -43236,7 +44071,9 @@ export const careersData: CareerFI[] = [
     "koulutus",
     "luonto"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ymparistosertifioinnin-asiantuntija",
@@ -43329,7 +44166,9 @@ export const careersData: CareerFI[] = [
     "ISO 14001",
     "auditointi"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ymparistoviestinnan-asiantuntija",
@@ -43422,7 +44261,9 @@ export const careersData: CareerFI[] = [
     "ympäristö",
     "kampanjointi"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "ymparistohankkeiden-koordinaattori",
@@ -43516,7 +44357,9 @@ export const careersData: CareerFI[] = [
     "hankkeet",
     "koordinointi"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "genetiikan-neuvoja",
@@ -43627,7 +44470,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Kvanttilaskenta-insin%C3%B6%C3%B6ri"
     }
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "opetusteknologi",
@@ -43739,7 +44584,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=opettaja"
     }
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "iot-insinoori",
@@ -43835,7 +44682,9 @@ export const careersData: CareerFI[] = [
     "embedded",
     "sensorit"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "vr-ar-kehittaja",
@@ -43931,7 +44780,9 @@ export const careersData: CareerFI[] = [
     "AR",
     "Unity"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "bioinformatiikko",
@@ -44027,7 +44878,9 @@ export const careersData: CareerFI[] = [
     "genomiikka",
     "data-analyysi"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "pelitekninen-suunnittelija",
@@ -44122,7 +44975,9 @@ export const careersData: CareerFI[] = [
     "pelimekaniikka",
     "Unity"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "quantum-computing-engineer",
@@ -44218,7 +45073,9 @@ export const careersData: CareerFI[] = [
     "quantum",
     "algoritmi"
   ],
-  "study_length_estimate_months": 96
+  "study_length_estimate_months": 96,
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "edge-computing-specialist",
@@ -44314,7 +45171,9 @@ export const careersData: CareerFI[] = [
     "IoT",
     "hajautetut järjestelmät"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "api-designer",
@@ -44410,7 +45269,9 @@ export const careersData: CareerFI[] = [
     "REST",
     "GraphQL"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "mlops-insinoori",
@@ -44506,7 +45367,9 @@ export const careersData: CareerFI[] = [
     "koneoppiminen",
     "DevOps"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "chatbot-kehittaja",
@@ -44602,7 +45465,9 @@ export const careersData: CareerFI[] = [
     "NLP",
     "keskustelurobotti"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "low-code-developer",
@@ -44698,7 +45563,9 @@ export const careersData: CareerFI[] = [
     "automaatio",
     "Power Platform"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "progressive-web-app-developer",
@@ -44794,7 +45661,9 @@ export const careersData: CareerFI[] = [
     "web-kehitys",
     "offline"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "rpa-kehittaja",
@@ -44890,7 +45759,9 @@ export const careersData: CareerFI[] = [
     "automatio",
     "prosessit"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "webassembly-developer",
@@ -44986,7 +45857,9 @@ export const careersData: CareerFI[] = [
     "WASM",
     "suorituskyky"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "platform-insinoori",
@@ -45082,7 +45955,9 @@ export const careersData: CareerFI[] = [
     "DevOps",
     "IDP"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "embedded-linux-engineer",
@@ -45178,7 +46053,9 @@ export const careersData: CareerFI[] = [
     "kernel",
     "IoT"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "game-engine-developer",
@@ -45273,7 +46150,9 @@ export const careersData: CareerFI[] = [
     "C++",
     "grafiikka"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "network-automation-engineer",
@@ -45369,7 +46248,9 @@ export const careersData: CareerFI[] = [
     "Network as Code",
     "Python"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "observability-engineer",
@@ -45465,7 +46346,9 @@ export const careersData: CareerFI[] = [
     "monitorointi",
     "tracing"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "3d-tulostus-insinoori",
@@ -45561,7 +46444,9 @@ export const careersData: CareerFI[] = [
     "additiivinen valmistus",
     "materiaalitekniikka"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "neurotech-insinoori",
@@ -45657,7 +46542,9 @@ export const careersData: CareerFI[] = [
     "aivot",
     "biolääketiede"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "toimitusketjuanalyytikko",
@@ -45765,7 +46652,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Prosessip%C3%A4%C3%A4llikk%C3%B6"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "scheduling-coordinator",
@@ -45855,7 +46744,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Sopimushallinnoija"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "records-manager",
@@ -45945,7 +46836,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Arkistonhoitaja"
     }
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "travel-coordinator",
@@ -46035,7 +46928,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Matkakoordinaattori"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "training-coordinator",
@@ -46125,7 +47020,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Koulutuskoordinaattori"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "admin-systems-coordinator",
@@ -46215,7 +47112,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Hallintoj%C3%A4rjestelm%C3%A4koordinaattori"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "resource-planner",
@@ -46305,7 +47204,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Resurssisuunnittelija"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "data-governance-coordinator",
@@ -46395,7 +47296,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Laboratoriop%C3%A4%C3%A4llikk%C3%B6"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "contract-administrator",
@@ -46485,7 +47388,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Kunnossapitosuunnittelija"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "meeting-coordinator",
@@ -46575,7 +47480,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Myym%C3%A4l%C3%A4p%C3%A4%C3%A4llikk%C3%B6"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "workflow-coordinator",
@@ -46665,7 +47572,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Tuotantoaikatauluttaja"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "business-continuity-planner",
@@ -46755,7 +47664,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Kysynn%C3%A4n%20suunnittelija"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "pmo-coordinator",
@@ -46845,7 +47756,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Tuonti-vientikoordinaattori"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "materials-planner",
@@ -46935,7 +47848,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Materiaalisuunnittelija"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "capacity-planner",
@@ -47025,7 +47940,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Release%20Manager"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "maintenance-planner",
@@ -47115,7 +48032,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Kunnossapitosuunnittelija"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "production-scheduler",
@@ -47205,7 +48124,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Toimintokoordinaattori"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "demand-planner",
@@ -47295,7 +48216,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Viranomaisasioiden%20asiantuntija"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "lean-coordinator",
@@ -47385,7 +48308,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Perehdytyskoordinaattori"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "import-export-coordinator",
@@ -47475,7 +48400,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Tuonti-vientikoordinaattori"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "shift-supervisor",
@@ -47565,7 +48492,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Vuoroesimies"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "release-manager",
@@ -47656,7 +48585,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Asiakaskokemuksen%20suunnittelija"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "product-owner",
@@ -47746,7 +48677,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Product%20Owner"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "program-coordinator",
@@ -47836,7 +48769,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Ohjelmakoordinaattori"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "operations-coordinator",
@@ -47926,7 +48861,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Br%C3%A4ndi-identiteettisuunnittelija"
     }
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "regulatory-affairs-specialist",
@@ -48016,7 +48953,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Sisustusarkkitehti"
     }
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "onboarding-coordinator",
@@ -48111,7 +49050,9 @@ export const careersData: CareerFI[] = [
     "onboarding",
     "HR"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "knowledge-management-coordinator",
@@ -48207,7 +49148,9 @@ export const careersData: CareerFI[] = [
     "knowledge management",
     "dokumentointi"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "asiakaskokemuksen-suunnittelija",
@@ -48315,7 +49258,9 @@ export const careersData: CareerFI[] = [
       "url": "https://duunitori.fi/tyopaikat?haku=Keramiikkataiteilija"
     }
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "motion-designer",
@@ -48409,7 +49354,9 @@ export const careersData: CareerFI[] = [
     "motion graphics",
     "visuaalinen suunnittelu"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "kirjailija-luova",
@@ -48502,7 +49449,9 @@ export const careersData: CareerFI[] = [
     "kirjallisuus",
     "tarinankerronta"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "stand-up-koomikko",
@@ -48595,7 +49544,9 @@ export const careersData: CareerFI[] = [
     "komedia",
     "esiintyminen"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "kayttoliittymasuunnittelija",
@@ -48689,7 +49640,9 @@ export const careersData: CareerFI[] = [
     "käyttöliittymä",
     "visuaalinen suunnittelu"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "brandi-identiteettisuunnittelija",
@@ -48783,7 +49736,9 @@ export const careersData: CareerFI[] = [
     "identiteetti",
     "visuaalinen suunnittelu"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "sisustusarkkitehti-luova",
@@ -48877,7 +49832,9 @@ export const careersData: CareerFI[] = [
     "suunnittelu",
     "tilat"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "tattoo-artisti",
@@ -48970,7 +49927,9 @@ export const careersData: CareerFI[] = [
     "taide",
     "kehotaide"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["APPRENTICE"]
 },
   {
   "id": "tyylisuunnittelija",
@@ -49064,7 +50023,9 @@ export const careersData: CareerFI[] = [
     "muoti",
     "tyyli"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "kirjojen-kuvittaja",
@@ -49158,7 +50119,9 @@ export const careersData: CareerFI[] = [
     "piirtäminen",
     "kirjat"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "keramiikkataiteilija",
@@ -49252,7 +50215,9 @@ export const careersData: CareerFI[] = [
     "taide",
     "käsityö"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "tekstiilitaiteilija",
@@ -49346,7 +50311,9 @@ export const careersData: CareerFI[] = [
     "taide",
     "käsityö"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "lasitaiteilija",
@@ -49440,7 +50407,9 @@ export const careersData: CareerFI[] = [
     "taide",
     "käsityö"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "nahkataiteilija",
@@ -49533,7 +50502,9 @@ export const careersData: CareerFI[] = [
     "käsityö",
     "taide"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "korusuunnittelija-taiteilija",
@@ -49627,7 +50598,9 @@ export const careersData: CareerFI[] = [
     "taide",
     "käsityö"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "tanssinopettaja-luova",
@@ -49721,7 +50694,9 @@ export const careersData: CareerFI[] = [
     "opettaminen",
     "koreografia"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "graafinen-taiteilija",
@@ -49815,7 +50790,9 @@ export const careersData: CareerFI[] = [
     "taide",
     "painotaide"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "elokuvaleikkaaja",
@@ -49909,7 +50886,9 @@ export const careersData: CareerFI[] = [
     "elokuva",
     "editointi"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "installaatiotaiteilija",
@@ -50003,7 +50982,9 @@ export const careersData: CareerFI[] = [
     "nykytaide",
     "tilat"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "performanssitaiteilija",
@@ -50097,7 +51078,9 @@ export const careersData: CareerFI[] = [
     "nykytaide",
     "live-taide"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "digitaalinen-taiteilija",
@@ -50191,7 +51174,9 @@ export const careersData: CareerFI[] = [
     "3D",
     "NFT"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "street-art-taiteilija",
@@ -50285,7 +51270,9 @@ export const careersData: CareerFI[] = [
     "muraalit",
     "katutaide"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "konsepti-taiteilija",
@@ -50379,10 +51366,12 @@ export const careersData: CareerFI[] = [
     "taide",
     "pelit"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
-  "id": "typo graphinen-suunnittelija",
+  "id": "typografinen-suunnittelija",
   "category": "luova",
   "title_fi": "Typografinen suunnittelija",
   "title_en": "Typographic Designer",
@@ -50473,7 +51462,9 @@ export const careersData: CareerFI[] = [
     "kirjasintyypit",
     "suunnittelu"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "pakkasuunnittelija-luova",
@@ -50567,7 +51558,9 @@ export const careersData: CareerFI[] = [
     "suunnittelu",
     "brändi"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "character-designer",
@@ -50661,7 +51654,9 @@ export const careersData: CareerFI[] = [
     "piirtäminen",
     "pelit"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "valo-suunnittelija-taide",
@@ -50755,7 +51750,9 @@ export const careersData: CareerFI[] = [
     "valaistus",
     "taide"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "etaterveys-koordinaattori",
@@ -50861,7 +51858,9 @@ export const careersData: CareerFI[] = [
     "metalli",
     "tuotanto"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["AMK"]
 },
   {
   "id": "teollisuusmekanikko",
@@ -50955,7 +51954,9 @@ export const careersData: CareerFI[] = [
     "mekanikko",
     "teollisuus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "tuotantotyontekija",
@@ -51048,7 +52049,9 @@ export const careersData: CareerFI[] = [
     "tehdas",
     "linja"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "kokoonpanija",
@@ -51141,7 +52144,9 @@ export const careersData: CareerFI[] = [
     "asennus",
     "tuotanto"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "laatutarkastaja",
@@ -51235,7 +52240,9 @@ export const careersData: CareerFI[] = [
     "tarkastus",
     "mittaus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "trukinkuljettaja",
@@ -51328,7 +52335,9 @@ export const careersData: CareerFI[] = [
     "logistiikka",
     "siirto"
   ],
-  "study_length_estimate_months": 3
+  "study_length_estimate_months": 3,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "linja-autonkuljettaja",
@@ -51422,7 +52431,9 @@ export const careersData: CareerFI[] = [
     "kuljetus",
     "asiakaspalvelu"
   ],
-  "study_length_estimate_months": 6
+  "study_length_estimate_months": 6,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "rekkakuski",
@@ -51516,7 +52527,9 @@ export const careersData: CareerFI[] = [
     "logistiikka",
     "liikenne"
   ],
-  "study_length_estimate_months": 6
+  "study_length_estimate_months": 6,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "taksikuski",
@@ -51611,7 +52624,9 @@ export const careersData: CareerFI[] = [
     "asiakaspalvelu",
     "liikenne"
   ],
-  "study_length_estimate_months": 3
+  "study_length_estimate_months": 3,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "sahkoasentaja-rakennus",
@@ -51704,7 +52719,9 @@ export const careersData: CareerFI[] = [
     "asennus",
     "rakennus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "vvs-asentaja",
@@ -51798,7 +52815,9 @@ export const careersData: CareerFI[] = [
     "putki",
     "ilmastointi"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "nosturinkuljettaja",
@@ -51889,7 +52908,9 @@ export const careersData: CareerFI[] = [
     "rakennus",
     "nosto"
   ],
-  "study_length_estimate_months": 6
+  "study_length_estimate_months": 6,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "huoltomies",
@@ -51982,7 +53003,9 @@ export const careersData: CareerFI[] = [
     "kiinteistö",
     "korjaus"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "kirvesmies-osaaja",
@@ -52074,7 +53097,9 @@ export const careersData: CareerFI[] = [
     "rakennus",
     "kirves"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "maalausalan-ammattilainen",
@@ -52166,7 +53191,9 @@ export const careersData: CareerFI[] = [
     "pintakäsittely",
     "rakennus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "lattia-asentaja",
@@ -52258,7 +53285,9 @@ export const careersData: CareerFI[] = [
     "asennus",
     "rakennus"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "raudoittaja",
@@ -52351,7 +53380,9 @@ export const careersData: CareerFI[] = [
     "betoni",
     "rakennus"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "kattoasentaja",
@@ -52443,7 +53474,9 @@ export const careersData: CareerFI[] = [
     "asennus",
     "rakennus"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "muurari",
@@ -52535,7 +53568,9 @@ export const careersData: CareerFI[] = [
     "tiili",
     "rakennus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "ikkunan-ovi-asentaja",
@@ -52627,7 +53662,9 @@ export const careersData: CareerFI[] = [
     "ovi",
     "asennus"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "levyseppa",
@@ -52721,7 +53758,9 @@ export const careersData: CareerFI[] = [
     "metalli",
     "hitsaus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "hitsaaja-rakenne",
@@ -52814,7 +53853,9 @@ export const careersData: CareerFI[] = [
     "teräs",
     "rakennus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "elintarviketyontekija",
@@ -52908,7 +53949,9 @@ export const careersData: CareerFI[] = [
     "tuotanto",
     "hygienia"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "puuseppa-teollinen",
@@ -53000,7 +54043,9 @@ export const careersData: CareerFI[] = [
     "puutuote",
     "CNC"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "raskaan-kaluston-mekaanikko",
@@ -53093,7 +54138,9 @@ export const careersData: CareerFI[] = [
     "diesel",
     "huolto"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "alus-mekaanikko",
@@ -53186,7 +54233,9 @@ export const careersData: CareerFI[] = [
     "alus",
     "koneisto"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "telakkatyontekija",
@@ -53279,7 +54328,9 @@ export const careersData: CareerFI[] = [
     "laiva",
     "hitsaus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "paperikoneenkuljettaja",
@@ -53373,7 +54424,9 @@ export const careersData: CareerFI[] = [
     "prosessi",
     "teollisuus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "kemianprosessi-operaattori",
@@ -53466,7 +54519,9 @@ export const careersData: CareerFI[] = [
     "prosessi",
     "tuotanto"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "sahateollisuustyontekija",
@@ -53558,7 +54613,9 @@ export const careersData: CareerFI[] = [
     "puu",
     "tuotanto"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "metsuri",
@@ -53650,7 +54707,9 @@ export const careersData: CareerFI[] = [
     "puunkaato",
     "ulkotyö"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "metsakoneen-kuljettaja",
@@ -53742,7 +54801,9 @@ export const careersData: CareerFI[] = [
     "hakkuu",
     "kone"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "maataloustyontekija",
@@ -53834,7 +54895,9 @@ export const careersData: CareerFI[] = [
     "eläimet",
     "viljely"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "karjanhoitaja",
@@ -53926,7 +54989,9 @@ export const careersData: CareerFI[] = [
     "lypsytyö",
     "maatalous"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "puutarhuri",
@@ -54019,7 +55084,9 @@ export const careersData: CareerFI[] = [
     "kasvit",
     "viheralueet"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "tuulivoimalan-huoltoteknikko",
@@ -54111,7 +55178,9 @@ export const careersData: CareerFI[] = [
     "huolto",
     "energia"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "sahkoverkkoasentaja",
@@ -54204,7 +55273,9 @@ export const careersData: CareerFI[] = [
     "linjat",
     "energia"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "tekstiilityontekija",
@@ -54296,7 +55367,9 @@ export const careersData: CareerFI[] = [
     "kangas",
     "tuotanto"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "muovituotteiden-valmistaja",
@@ -54388,7 +55461,9 @@ export const careersData: CareerFI[] = [
     "valmistus",
     "teollisuus"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "kumiteollisuustyontekija",
@@ -54480,7 +55555,9 @@ export const careersData: CareerFI[] = [
     "renkaat",
     "tuotanto"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "lasiteollisuustyontekija",
@@ -54572,7 +55649,9 @@ export const careersData: CareerFI[] = [
     "valmistus",
     "teollisuus"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "keramiikkatyontekija",
@@ -54664,7 +55743,9 @@ export const careersData: CareerFI[] = [
     "savityö",
     "valmistus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "vartija",
@@ -54757,7 +55838,9 @@ export const careersData: CareerFI[] = [
     "turvallisuus",
     "valvonta"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "kiinteistonhoitaja",
@@ -54850,7 +55933,9 @@ export const careersData: CareerFI[] = [
     "huolto",
     "ylläpito"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "jatehuoltotyontekija",
@@ -54942,7 +56027,9 @@ export const careersData: CareerFI[] = [
     "kierrätys",
     "ympäristö"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "siivoja",
@@ -55036,7 +56123,9 @@ export const careersData: CareerFI[] = [
     "puhdistus",
     "hygienia"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "teollisuusputkiasentaja",
@@ -55129,7 +56218,9 @@ export const careersData: CareerFI[] = [
     "hitsaus",
     "teollisuus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "elintarvikealan-pakkaaja",
@@ -55222,7 +56313,9 @@ export const careersData: CareerFI[] = [
     "elintarvike",
     "hygienia"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "betonielementtiasentaja",
@@ -55314,7 +56407,9 @@ export const careersData: CareerFI[] = [
     "elementti",
     "rakentaminen"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "teollisuusmaalari",
@@ -55407,7 +56502,9 @@ export const careersData: CareerFI[] = [
     "pintakäsittely",
     "teollisuus"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "konepajahitsaaja",
@@ -55500,7 +56597,9 @@ export const careersData: CareerFI[] = [
     "metalli",
     "konepaja"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "koneenkayttaja-teollisuus",
@@ -55593,7 +56692,9 @@ export const careersData: CareerFI[] = [
     "tuotanto",
     "valvonta"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "rautatietyontekija",
@@ -55685,7 +56786,9 @@ export const careersData: CareerFI[] = [
     "rautatie",
     "kunnossapito"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "tienrakentaja",
@@ -55777,7 +56880,9 @@ export const careersData: CareerFI[] = [
     "asfaltti",
     "rakentaminen"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "metalliseppa",
@@ -55870,7 +56975,9 @@ export const careersData: CareerFI[] = [
     "takominen",
     "metalli"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "porari",
@@ -55963,7 +57070,9 @@ export const careersData: CareerFI[] = [
     "räjäytys",
     "kallio"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "vesihuoltomies",
@@ -56055,7 +57164,9 @@ export const careersData: CareerFI[] = [
     "viemäri",
     "huolto"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "lannoitteiden-levittaja",
@@ -56147,7 +57258,9 @@ export const careersData: CareerFI[] = [
     "traktori",
     "kone"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "painokoneenkayttaja",
@@ -56239,7 +57352,9 @@ export const careersData: CareerFI[] = [
     "kone",
     "painatus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "jaatehdas-operaattori",
@@ -56332,7 +57447,9 @@ export const careersData: CareerFI[] = [
     "jäähdytys",
     "pakastus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "betoniauton-kuljettaja",
@@ -56423,7 +57540,9 @@ export const careersData: CareerFI[] = [
     "kuljetus",
     "ajo"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "taideterapeutti",
@@ -56530,7 +57649,9 @@ export const careersData: CareerFI[] = [
     "taide",
     "kuntoutus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "musiikkiterapeutti",
@@ -56636,7 +57757,9 @@ export const careersData: CareerFI[] = [
     "musiikki",
     "terapia"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "draamaterapeutti",
@@ -56736,7 +57859,9 @@ export const careersData: CareerFI[] = [
     "terapia",
     "luova terapia"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "tanssiterapeutti",
@@ -56836,7 +57961,9 @@ export const careersData: CareerFI[] = [
     "terapia",
     "kehollinen"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "kuvataideopettaja",
@@ -56942,7 +58069,9 @@ export const careersData: CareerFI[] = [
     "taide",
     "kasvatus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "musiikkipedagogi",
@@ -57044,7 +58173,9 @@ export const careersData: CareerFI[] = [
     "opetus",
     "soitto"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "kasityonopettaja",
@@ -57150,7 +58281,9 @@ export const careersData: CareerFI[] = [
     "puu",
     "tekninen työ"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "luovuusvalmentaja",
@@ -57255,7 +58388,9 @@ export const careersData: CareerFI[] = [
     "coaching",
     "innovaatio"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "terveysteknologia-asiantuntija",
@@ -57360,7 +58495,9 @@ export const careersData: CareerFI[] = [
     "healthtech",
     "eHealth"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "laakintalaiteteknikko",
@@ -57461,7 +58598,9 @@ export const careersData: CareerFI[] = [
     "teknikko",
     "terveysteknologia"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "terveysinformatiikan-asiantuntija",
@@ -57566,7 +58705,9 @@ export const careersData: CareerFI[] = [
     "data",
     "terveydenhuolto"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "digitaalisen-terveyden-kehittaja",
@@ -57667,7 +58808,9 @@ export const careersData: CareerFI[] = [
     "sovellus",
     "eHealth"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "biolaaketieteellinen-insinoori",
@@ -57772,7 +58915,9 @@ export const careersData: CareerFI[] = [
     "lääkintälaite",
     "T&K"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "kliininen-informatiikka-asiantuntija",
@@ -57871,7 +59016,9 @@ export const careersData: CareerFI[] = [
     "tietojärjestelmät",
     "terveydenhuolto"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "luontokoulun-ohjaaja",
@@ -57976,7 +59123,9 @@ export const careersData: CareerFI[] = [
     "ohjaaja",
     "ympäristökasvatus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "kestavyyskouluttaja",
@@ -58081,7 +59230,9 @@ export const careersData: CareerFI[] = [
     "vastuullisuus",
     "sustainability"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "mediakasvatuksen-asiantuntija",
@@ -58182,7 +59333,9 @@ export const careersData: CareerFI[] = [
     "kasvatus",
     "digitaidot"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "oppimismuotoilija",
@@ -58283,7 +59436,9 @@ export const careersData: CareerFI[] = [
     "muotoilu",
     "koulutus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "urheilupsykologi",
@@ -58388,7 +59543,9 @@ export const careersData: CareerFI[] = [
     "psykologia",
     "urheilu"
   ],
-  "study_length_estimate_months": 72
+  "study_length_estimate_months": 72,
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "terveyskommunikaatiosuunnittelija",
@@ -58489,7 +59646,9 @@ export const careersData: CareerFI[] = [
     "suunnittelu",
     "terveys"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "potilaskokemussuunnittelija",
@@ -58590,7 +59749,9 @@ export const careersData: CareerFI[] = [
     "terveydenhuolto",
     "design"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "palomies",
@@ -58682,7 +59843,9 @@ export const careersData: CareerFI[] = [
     "turvallisuus",
     "ensihoito"
   ],
-  "study_length_estimate_months": 18
+  "study_length_estimate_months": 18,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "kampaaja",
@@ -58774,7 +59937,9 @@ export const careersData: CareerFI[] = [
     "värjäys",
     "kauneus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "parturi",
@@ -58865,7 +60030,9 @@ export const careersData: CareerFI[] = [
     "leikkaus",
     "miehet"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "kosmetologi",
@@ -58956,7 +60123,9 @@ export const careersData: CareerFI[] = [
     "meikki",
     "hoitola"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "personal-trainer",
@@ -59047,7 +60216,9 @@ export const careersData: CareerFI[] = [
     "kuntosali",
     "hyvinvointi"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "nuorisotyontekija",
@@ -59139,7 +60310,9 @@ export const careersData: CareerFI[] = [
     "kasvatus",
     "järjestö"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "isannoitsija",
@@ -59232,7 +60405,9 @@ export const careersData: CareerFI[] = [
     "hallinto",
     "asunto-osakeyhtiö"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "leipuri",
@@ -59325,7 +60500,9 @@ export const careersData: CareerFI[] = [
     "leipä",
     "sämpylä"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "kondiittori",
@@ -59419,7 +60596,9 @@ export const careersData: CareerFI[] = [
     "konditoriatuote",
     "leivonta"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "barista",
@@ -59513,7 +60692,9 @@ export const careersData: CareerFI[] = [
     "latte art",
     "kahvila"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["ANY_SECONDARY", "AMIS"]
 },
   {
   "id": "lentoemanta",
@@ -59606,7 +60787,9 @@ export const careersData: CareerFI[] = [
     "matkustamo",
     "Finnair"
   ],
-  "study_length_estimate_months": 6
+  "study_length_estimate_months": 6,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "lennonjohtaja",
@@ -59697,7 +60880,9 @@ export const careersData: CareerFI[] = [
     "ilmatila",
     "Fintraffic"
   ],
-  "study_length_estimate_months": 24
+  "study_length_estimate_months": 24,
+  "careerLevel": "mid",
+  "education_tags": ["ANY_SECONDARY"]
 },
   {
   "id": "hammashoitaja",
@@ -59789,7 +60974,9 @@ export const careersData: CareerFI[] = [
     "hammashuolto",
     "terveydenhuolto"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "tulkki",
@@ -59884,7 +61071,9 @@ export const careersData: CareerFI[] = [
     "asioimistulkkaus",
     "simultaanitulkkaus"
   ],
-  "study_length_estimate_months": 42
+  "study_length_estimate_months": 42,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "palkanlaskija",
@@ -59978,7 +61167,9 @@ export const careersData: CareerFI[] = [
     "taloushallinto",
     "kirjanpito"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "kiinteistonvalittaja",
@@ -60071,7 +61262,9 @@ export const careersData: CareerFI[] = [
     "LKV",
     "asunnonmyynti"
   ],
-  "study_length_estimate_months": 12
+  "study_length_estimate_months": 12,
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "markkinointiassistentti",
@@ -60165,7 +61358,9 @@ export const careersData: CareerFI[] = [
     "kampanja",
     "viestintä"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "myyntiassistentti",
@@ -60259,7 +61454,9 @@ export const careersData: CareerFI[] = [
     "tarjous",
     "tilaus"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "talousassistentti",
@@ -60353,7 +61550,9 @@ export const careersData: CareerFI[] = [
     "laskutus",
     "reskontranhoitaja"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "tilintarkastajan-assistentti",
@@ -60446,7 +61645,9 @@ export const careersData: CareerFI[] = [
     "laskentatoimi",
     "KHT"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "pankkitoimihenkilo",
@@ -60541,7 +61742,9 @@ export const careersData: CareerFI[] = [
     "asiakaspalvelu",
     "laina"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "vakuutusvirkailija",
@@ -60636,7 +61839,9 @@ export const careersData: CareerFI[] = [
     "asiakaspalvelu",
     "vahinko"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "veroasiantuntija",
@@ -60731,7 +61936,9 @@ export const careersData: CareerFI[] = [
     "taloushallinto",
     "veroilmoitus"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "ekonomisti",
@@ -60825,7 +62032,9 @@ export const careersData: CareerFI[] = [
     "ennustaminen",
     "analyysi"
   ],
-  "study_length_estimate_months": 60
+  "study_length_estimate_months": 60,
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "liikkeenjohdon-trainee",
@@ -60915,7 +62124,9 @@ export const careersData: CareerFI[] = [
     "liikkeenjohto",
     "johtaminen",
     "ura"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "hr-koordinaattori",
@@ -61005,7 +62216,9 @@ export const careersData: CareerFI[] = [
     "henkilöstö",
     "rekrytointi",
     "koordinaattori"
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "taloushallinnon-harjoittelija",
@@ -61095,7 +62308,9 @@ export const careersData: CareerFI[] = [
     "harjoittelija",
     "kirjanpito",
     "talous"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "viestinta-assistentti",
@@ -61185,7 +62400,9 @@ export const careersData: CareerFI[] = [
     "some",
     "sisällöntuotanto",
     "tiedotus"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tutkimusavustaja",
@@ -61275,7 +62492,9 @@ export const careersData: CareerFI[] = [
     "analyysi",
     "data",
     "tiede"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI"]
 },
   {
   "id": "asiakaspalvelun-neuvoja",
@@ -61365,7 +62584,9 @@ export const careersData: CareerFI[] = [
     "neuvoja",
     "palvelu",
     "asiakkaat"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "hankinta-assistentti",
@@ -61455,7 +62676,9 @@ export const careersData: CareerFI[] = [
     "osto",
     "toimittajat",
     "logistiikka"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["AMK", "AMIS"]
 },
   {
   "id": "data-analyytikko-junior",
@@ -61548,7 +62771,9 @@ export const careersData: CareerFI[] = [
     "tilastot",
     "raportointi",
     "BI"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "opinto-ohjaaja",
@@ -61641,7 +62866,9 @@ export const careersData: CareerFI[] = [
     "ohjaus",
     "oppilaanohjaus",
     "urasuunnittelu"
-  ]
+  ],
+  "careerLevel": "mid",
+  "education_tags": ["UNI"]
 },
   {
   "id": "koulunkäyntiavustaja",
@@ -61734,7 +62961,9 @@ export const careersData: CareerFI[] = [
     "erityisavustaja",
     "koulu",
     "oppilas"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "liikunnanohjaaja",
@@ -61828,7 +63057,9 @@ export const careersData: CareerFI[] = [
     "urheilu",
     "ryhmäliikunta",
     "valmentaja"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "optikko",
@@ -61920,7 +63151,9 @@ export const careersData: CareerFI[] = [
     "silmälasit",
     "näkö",
     "näöntutkimus"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "viittomakielen-tulkki",
@@ -62012,7 +63245,9 @@ export const careersData: CareerFI[] = [
     "viittomakieli",
     "kuuro",
     "tulkkaus"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["AMK"]
 },
   {
   "id": "kassatyontekija",
@@ -62106,7 +63341,9 @@ export const careersData: CareerFI[] = [
     "myyjä",
     "asiakaspalvelu",
     "kauppa"
-  ]
+  ],
+  "careerLevel": "entry",
+  "education_tags": ["AMIS"]
 },
   {
   "id": "tuote-omistaja",
@@ -62215,7 +63452,9 @@ export const careersData: CareerFI[] = [
     "ohjelmistokehitys",
     "agile"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "viestintakoordinaattori",
@@ -62324,7 +63563,9 @@ export const careersData: CareerFI[] = [
     "markkinointi",
     "brändi"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "kouluttaja",
@@ -62433,7 +63674,9 @@ export const careersData: CareerFI[] = [
     "oppiminen",
     "pedagogiikka"
   ],
-  "study_length_estimate_months": 48
+  "study_length_estimate_months": 48,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK"]
 },
   {
   "id": "tyomaakoordinaattori",
@@ -62533,7 +63776,9 @@ export const careersData: CareerFI[] = [
     "tiimityö",
     "johtaminen"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "vapaaehtoistoiminnan-koordinaattori",
@@ -62633,7 +63878,9 @@ export const careersData: CareerFI[] = [
     "tiimityö",
     "johtaminen"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "mid",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 },
   {
   "id": "nuorisotyon-ohjaaja",
@@ -62733,7 +63980,9 @@ export const careersData: CareerFI[] = [
     "tiimityö",
     "johtaminen"
   ],
-  "study_length_estimate_months": 36
+  "study_length_estimate_months": 36,
+  "careerLevel": "entry",
+  "education_tags": ["UNI", "AMK", "AMIS"]
 }
 ];
 
