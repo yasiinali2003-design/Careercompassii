@@ -632,6 +632,52 @@ function calculateSubdimensionSimilarity(
 // ========== STEP 4: GENERATE REASONS ==========
 
 /**
+ * Generate a varied intro sentence summarizing why a career matches the user.
+ * Uses 6 template variations selected by cohort + randomization.
+ * Called from generateReasons() to add a personalized match summary as the first reason.
+ */
+function generateMatchIntroTemplate(
+  strengths: string[],
+  cohort: Cohort,
+  overallScore: number
+): string | null {
+  if (strengths.length === 0) return null;
+
+  const joined = strengths.length === 1
+    ? strengths[0]
+    : strengths.length === 2
+      ? `${strengths[0]} ja ${strengths[1]}`
+      : `${strengths.slice(0, -1).join(', ')} ja ${strengths[strengths.length - 1]}`;
+
+  // 6 template variations - cohort-weighted selection
+  const templates = [
+    () => `Tämä ammatti sopii sinulle, koska se yhdistää ${joined}.`,
+    () => `Tässä ammatissa pääset hyödyntämään ${joined}.`,
+    () => `Tämä ammatti näyttää sopivan sinulle hyvin – arvostat ${joined}.`,
+    () => `Vahva osuma: tämä ammatti vastaa kiinnostukseesi ${joined}.`,
+    () => `Tämä ammatti saattaisi kiinnostaa sinua, koska se liittyy ${joined}.`,  // softer tone for YLA
+    () => `Profiilisi perusteella tämä sopii hyvin – yhdistää ${joined}.`,          // direct tone for NUORI
+  ];
+
+  let templateIndex: number;
+  if (cohort === 'YLA') {
+    // Softer tone for 13-15 year olds
+    templateIndex = Math.random() < 0.6 ? 4 : Math.floor(Math.random() * 3);
+  } else if (cohort === 'NUORI') {
+    // More direct for 20-25 year olds
+    templateIndex = Math.random() < 0.5 ? 5 : Math.floor(Math.random() * 4);
+  } else if (overallScore >= 85) {
+    // High confidence: use more affirmative templates
+    templateIndex = Math.random() < 0.5 ? 3 : Math.floor(Math.random() * 3);
+  } else {
+    // Standard variation
+    templateIndex = Math.floor(Math.random() * 4);
+  }
+
+  return templates[templateIndex]();
+}
+
+/**
  * Generate Finnish explanation for career match
  * Uses personality-based narrative style instead of technical answer-listing
  */
@@ -654,6 +700,42 @@ export function generateReasons(
   // Find top career characteristics
   const topCareerInterests = getTopScores(career.interests, 2);
   const topCareerWorkstyle = getTopScores(career.workstyle, 2);
+
+  // Build match strengths for intro template (top 2-3 matching dimensions in Finnish)
+  const dimensionNamesFI: Partial<Record<SubDimension, string>> = {
+    technology: 'teknologian', people: 'ihmisten kanssa työskentelyn',
+    creative: 'luovuuden', analytical: 'analyyttisen ajattelun',
+    hands_on: 'käytännön tekemisen', business: 'liiketoiminnan',
+    environment: 'ympäristötyön', health: 'terveyden edistämisen',
+    innovation: 'innovoinnin', education: 'opettamisen',
+    arts_culture: 'kulttuurin', sports: 'liikunnan',
+    nature: 'luontotyön', writing: 'kirjoittamisen',
+    teamwork: 'tiimityön', independence: 'itsenäisyyden',
+    leadership: 'johtamisen', organization: 'organisoinnin',
+    problem_solving: 'ongelmanratkaisun', teaching: 'ohjaamisen',
+  };
+  const introStrengths: string[] = [];
+  for (const [key] of topUserInterests) {
+    if (topCareerInterests.some(([ck]) => ck === key) && dimensionNamesFI[key as SubDimension]) {
+      introStrengths.push(dimensionNamesFI[key as SubDimension]!);
+      if (introStrengths.length >= 3) break;
+    }
+  }
+  if (introStrengths.length < 2) {
+    for (const [key] of topUserWorkstyle) {
+      if (topCareerWorkstyle.some(([ck]) => ck === key) && dimensionNamesFI[key as SubDimension]) {
+        introStrengths.push(dimensionNamesFI[key as SubDimension]!);
+        if (introStrengths.length >= 2) break;
+      }
+    }
+  }
+
+  // Add varied intro template as the first reason (only when strong match + 2+ strengths)
+  const overallScoreValue = dimensionScores.interests || 0;
+  if (introStrengths.length >= 2 && overallScoreValue >= 65) {
+    const introSentence = generateMatchIntroTemplate(introStrengths.slice(0, 2), cohort, overallScoreValue);
+    if (introSentence) reasons.push(introSentence);
+  }
 
   // Reason 1: Interest match (personality-based narrative with career context)
   if (dimensionScores.interests >= 70) {
@@ -5940,6 +6022,38 @@ export function rankCareers(
       answers
     );
 
+    // ========== WORK STYLE CONFLICT DETECTION (Release B) ==========
+    // Detect explicit mismatches between user work style preferences and career requirements
+    // Only surfaces conflicts at clear extremes (≥0.7 vs ≤0.3) to avoid false alarms
+    // Note: userIndependence, userTeamwork, userSocial, careerTeamwork, careerIndependence
+    //       are already declared earlier in this loop - reuse them here
+    let workStyleNote: string | undefined;
+    const wsUserStructure = (workstyle as any).structure || 0;
+    const wsCareerFlexibility = (careerWorkstyle as any).flexibility || 0;
+    const wsCareerHandsOn = careerInterests.hands_on || 0;
+    const wsUserHandsOn = interests.hands_on || 0;
+
+    // Conflict 1: High independence user + High teamwork career
+    if (userIndependence >= 0.7 && careerTeamwork >= 0.7) {
+      workStyleNote = 'Tämä työ vaatii paljon tiimityöskentelyä ja yhteistyötä muiden kanssa.';
+    }
+    // Conflict 2: High teamwork user + High independence career
+    else if (userTeamwork >= 0.7 && careerIndependence >= 0.7) {
+      workStyleNote = 'Tässä työssä toimitaan usein itsenäisesti ilman tiivistä tiimityötä.';
+    }
+    // Conflict 3: Low social preference + High social career
+    else if (userSocial <= 0.3 && careerSocial >= 0.7) {
+      workStyleNote = 'Tämä työ sisältää paljon asiakastyötä ja ihmisten kohtaamista.';
+    }
+    // Conflict 4: High structure need + High flexibility career
+    else if (wsUserStructure >= 0.7 && wsCareerFlexibility >= 0.7) {
+      workStyleNote = 'Tämä työ on hyvin vapaamuotoista – päivät ja tehtävät vaihtelevat paljon.';
+    }
+    // Conflict 5: Low hands_on interest + Very hands-on career
+    else if (wsUserHandsOn <= 0.2 && wsCareerHandsOn >= 0.8) {
+      workStyleNote = 'Tämä työ on käytännönläheistä fyysistä tekemistä.';
+    }
+
     // v3.0: Scores >100 are now EXPECTED for dominant category careers
     // This ensures they maintain ranking advantage during diversity selection
     // Final capping to 100 happens in selectDiverseCareers() for display
@@ -5951,7 +6065,8 @@ export function rankCareers(
       confidence: totalScore >= 80 ? 'high' : totalScore >= 60 ? 'medium' : 'low',
       reasons: matchReasons.length > 0 ? matchReasons : [`Ammatti sopii profiiliisi`],
       educationPaths: careerFI?.education_paths,
-      category: careerCategory
+      category: careerCategory,
+      workStyleNote
     });
   }
 

@@ -129,6 +129,7 @@ export interface CareerMatch {
   salaryRange?: [number, number];
   outlook?: string;
   educationPaths?: string[];         // Education paths from career data (for diversity filtering)
+  workStyleNote?: string;            // Work style compatibility note (shown when conflict exists)
 }
 
 // ========== WEIGHTING TYPES ==========

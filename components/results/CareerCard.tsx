@@ -27,6 +27,7 @@ interface CareerCardProps {
     salaryRange?: [number, number];
     outlook?: string;
     overallScore?: number;
+    workStyleNote?: string;
   };
   rank: number;
   cohort?: string;
@@ -134,6 +135,17 @@ export function CareerCard({ career, rank, cohort, subCohort }: CareerCardProps)
               </li>
             ))}
           </ul>
+        </div>
+      )}
+
+      {/* Work Style Note - Only shown when conflict exists */}
+      {career.workStyleNote && (
+        <div className="mb-4 flex items-start gap-2 rounded-md bg-amber-500/10 border border-amber-500/20 px-3 py-2">
+          <span className="mt-0.5 text-amber-400 text-sm shrink-0">ℹ</span>
+          <p className="text-sm text-amber-200/80 leading-relaxed">
+            <span className="font-medium text-amber-300">Huomioitavaa: </span>
+            {career.workStyleNote}
+          </p>
         </div>
       )}
 
