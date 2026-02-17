@@ -15,6 +15,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, ExternalLink } from 'lucide-react';
+import { trackCareerClick, incrementCareerClickCounter } from '@/lib/metrics/tracking';
 
 interface CareerCardProps {
   career: {
@@ -25,8 +26,11 @@ interface CareerCardProps {
     confidence: 'high' | 'medium' | 'low';
     salaryRange?: [number, number];
     outlook?: string;
+    overallScore?: number;
   };
   rank: number;
+  cohort?: string;
+  subCohort?: string;
 }
 
 function getConfidenceBadge(confidence: 'high' | 'medium' | 'low') {
@@ -54,14 +58,30 @@ function getConfidenceBadge(confidence: 'high' | 'medium' | 'low') {
   );
 }
 
-export function CareerCard({ career, rank }: CareerCardProps) {
+export function CareerCard({ career, rank, cohort, subCohort }: CareerCardProps) {
   // Safety check: ensure career object exists and has required properties
   if (!career || typeof career !== 'object' || !career.slug || !career.title) {
     return null;
   }
-  
+
   // Ensure confidence has a valid value
   const confidence = career.confidence || 'medium';
+
+  // Track career click (Week 3 Day 1: Core Metrics)
+  const handleCareerClick = () => {
+    if (cohort) {
+      trackCareerClick(
+        career.slug,
+        career.title,
+        rank,
+        career.overallScore || 0,
+        career.category || 'unknown',
+        cohort,
+        subCohort
+      );
+      incrementCareerClickCounter();
+    }
+  };
 
   return (
     <motion.div
@@ -146,6 +166,7 @@ export function CareerCard({ career, rank }: CareerCardProps) {
         {/* Secondary Link */}
         <Link
           href={`/ammatit/${encodeURIComponent(career.slug)}`}
+          onClick={handleCareerClick}
           className="
             inline-flex items-center gap-1
             text-xs md:text-sm
@@ -157,10 +178,11 @@ export function CareerCard({ career, rank }: CareerCardProps) {
           Näytä koulutuspolut ja työpaikat
           <ExternalLink className="h-3.5 w-3.5 opacity-60" />
         </Link>
-        
+
         {/* Primary Button */}
         <Link
           href={`/ammatit/${encodeURIComponent(career.slug)}`}
+          onClick={handleCareerClick}
           className="
             inline-flex items-center justify-center gap-1.5
             rounded-full

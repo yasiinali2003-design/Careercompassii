@@ -14,6 +14,7 @@ import { supabase } from '@/lib/supabase';
 import { ShareResults } from '@/components/ShareResults';
 import { motion } from 'framer-motion';
 import { safeGetItem, safeGetString, safeSetItem, safeSetString } from '@/lib/safeStorage';
+import { trackSessionStart, trackSessionComplete } from '@/lib/metrics/tracking';
 
 // New components
 import { ResultPageLayout } from '@/components/results/ResultPageLayout';
@@ -377,6 +378,29 @@ export default function ResultsPage() {
     { id: 'ammatit', label: 'Ammattisuositukset' },
   ];
 
+  // Track session start (Week 3 Day 1: Core Metrics)
+  useEffect(() => {
+    if (validTopCareers.length > 0) {
+      const careerSlugs = validTopCareers.map(c => c.slug);
+      const categories = [...new Set(validTopCareers.map(c => c.category).filter(Boolean))];
+      const subCohort = educationPath?.primary === 'lukio' ? 'LUKIO' :
+                        educationPath?.primary === 'ammattikoulu' ? 'AMIS' : undefined;
+
+      trackSessionStart(careerSlugs, categories, userProfile.cohort, subCohort);
+
+      // Track session complete on page unload
+      const startTime = Date.now();
+      const handleUnload = () => {
+        const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+        const careersClicked = parseInt(sessionStorage.getItem('careers_clicked') || '0', 10);
+        trackSessionComplete(careersClicked, timeOnPage, userProfile.cohort, subCohort);
+      };
+
+      window.addEventListener('beforeunload', handleUnload);
+      return () => window.removeEventListener('beforeunload', handleUnload);
+    }
+  }, [validTopCareers, userProfile.cohort, educationPath]);
+
   return (
     <>
       {/* Main Content */}
@@ -414,6 +438,8 @@ export default function ResultsPage() {
           <CareerRecommendationsSection
             careers={validTopCareers}
             cohortType={cohortType}
+            cohort={userProfile.cohort}
+            subCohort={educationPath?.primary === 'lukio' ? 'LUKIO' : educationPath?.primary === 'ammattikoulu' ? 'AMIS' : undefined}
           />
 
           {/* Todistusvalinta.fi CTA for TASO2 users */}

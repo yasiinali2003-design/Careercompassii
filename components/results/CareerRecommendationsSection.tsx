@@ -9,6 +9,7 @@
 
 import { motion } from 'framer-motion';
 import { CareerCard } from './CareerCard';
+import { NoneRelevantButton } from './NoneRelevantButton';
 
 interface Career {
   slug: string;
@@ -18,16 +19,21 @@ interface Career {
   confidence: 'high' | 'medium' | 'low';
   salaryRange?: [number, number];
   outlook?: string;
+  overallScore?: number;
 }
 
 interface CareerRecommendationsSectionProps {
   careers: Career[];
   cohortType: 'nuoriAikuinen' | 'ylaste' | 'toinenAste';
+  cohort?: string;
+  subCohort?: string;
 }
 
 export function CareerRecommendationsSection({
   careers,
   cohortType,
+  cohort,
+  subCohort,
 }: CareerRecommendationsSectionProps) {
   // Ensure careers is an array and filter out invalid careers
   const safeCareers = Array.isArray(careers) ? careers : [];
@@ -71,6 +77,8 @@ export function CareerRecommendationsSection({
                 key={career.slug || `career-${index}`}
                 career={career}
                 rank={index + 1}
+                cohort={cohort}
+                subCohort={subCohort}
               />
             );
           })}
@@ -79,6 +87,15 @@ export function CareerRecommendationsSection({
         <div className="text-center py-12">
           <p className="text-slate-400">Ei ammattisuosituksia saatavilla.</p>
         </div>
+      )}
+
+      {/* None of These Fit Button */}
+      {displayedCareers.length > 0 && cohort && (
+        <NoneRelevantButton
+          topCareers={displayedCareers}
+          cohort={cohort}
+          subCohort={subCohort}
+        />
       )}
     </motion.section>
   );
