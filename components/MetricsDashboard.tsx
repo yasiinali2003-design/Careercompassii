@@ -9,7 +9,7 @@
 
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import type { MetricsSummary } from '@/lib/metrics/types';
 
@@ -30,11 +30,7 @@ export function MetricsDashboard({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetchMetrics();
-  }, [startDate, endDate, cohort, subCohort]);
-
-  const fetchMetrics = async () => {
+  const fetchMetrics = useCallback(async () => {
     setLoading(true);
     setError(null);
 
@@ -58,7 +54,11 @@ export function MetricsDashboard({
     } finally {
       setLoading(false);
     }
-  };
+  }, [startDate, endDate, cohort, subCohort]);
+
+  useEffect(() => {
+    fetchMetrics();
+  }, [fetchMetrics]);
 
   if (loading) {
     return (
@@ -212,7 +212,7 @@ export function MetricsDashboard({
           <CardHeader>
             <CardTitle className="text-lg">None Relevant Rate</CardTitle>
             <CardDescription>
-              % who clicked "Ei mikään näistä sovi"
+              % who clicked &quot;Ei mikään näistä sovi&quot;
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -282,7 +282,7 @@ export function MetricsDashboard({
                 <span className="text-green-600">✓</span>
                 <span>
                   <strong>High relevance!</strong> Only {noneRelevantRate.none_relevant_rate}% of students said
-                  recommendations didn't fit.
+                  recommendations didn&apos;t fit.
                 </span>
               </div>
             )}
@@ -291,7 +291,7 @@ export function MetricsDashboard({
                 <span className="text-red-600">!</span>
                 <span>
                   <strong>Relevance issue.</strong> {noneRelevantRate.none_relevant_rate}% of students said recommendations
-                  didn't fit. Consider improving filtering logic.
+                  didn&apos;t fit. Consider improving filtering logic.
                 </span>
               </div>
             )}

@@ -328,7 +328,7 @@ export default function ResultsPage() {
     }
 
     const careerSlugs = topCareers.map((c: any) => c.slug).filter(Boolean);
-    const categories = [...new Set(topCareers.map((c: any) => c.category).filter(Boolean))];
+    const categories = Array.from(new Set(topCareers.map((c: any) => c.category).filter(Boolean)));
     const subCohort = results.educationPath?.primary === 'lukio' ? 'LUKIO' :
                       results.educationPath?.primary === 'ammattikoulu' ? 'AMIS' : undefined;
 
