@@ -315,6 +315,37 @@ export default function ResultsPage() {
     loadResults();
   }, [searchParams]);
 
+  // Track session start (Week 3 Day 1: Core Metrics)
+  // IMPORTANT: This must be before any conditional returns to satisfy React's rules of hooks
+  useEffect(() => {
+    if (!results || loading || error) {
+      return; // Don't track if data isn't loaded yet
+    }
+
+    const topCareers = results.topCareers;
+    if (!Array.isArray(topCareers) || topCareers.length === 0) {
+      return;
+    }
+
+    const careerSlugs = topCareers.map((c: any) => c.slug).filter(Boolean);
+    const categories = [...new Set(topCareers.map((c: any) => c.category).filter(Boolean))];
+    const subCohort = results.educationPath?.primary === 'lukio' ? 'LUKIO' :
+                      results.educationPath?.primary === 'ammattikoulu' ? 'AMIS' : undefined;
+
+    trackSessionStart(careerSlugs, categories, results.userProfile.cohort, subCohort);
+
+    // Track session complete on page unload
+    const startTime = Date.now();
+    const handleUnload = () => {
+      const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+      const careersClicked = parseInt(sessionStorage.getItem('careers_clicked') || '0', 10);
+      trackSessionComplete(careersClicked, timeOnPage, results.userProfile.cohort, subCohort);
+    };
+
+    window.addEventListener('beforeunload', handleUnload);
+    return () => window.removeEventListener('beforeunload', handleUnload);
+  }, [results, loading, error]);
+
   // Loading state
   if (loading) {
     return (
@@ -377,31 +408,6 @@ export default function ResultsPage() {
     ...(educationPath && cohortType !== 'nuoriAikuinen' ? [{ id: 'koulutus', label: 'Koulutus' }] : []),
     { id: 'ammatit', label: 'Ammattisuositukset' },
   ];
-
-  // Track session start (Week 3 Day 1: Core Metrics)
-  useEffect(() => {
-    if (validTopCareers.length === 0) {
-      return; // Return early but still return undefined (no cleanup)
-    }
-
-    const careerSlugs = validTopCareers.map(c => c.slug);
-    const categories = [...new Set(validTopCareers.map(c => c.category).filter(Boolean))];
-    const subCohort = educationPath?.primary === 'lukio' ? 'LUKIO' :
-                      educationPath?.primary === 'ammattikoulu' ? 'AMIS' : undefined;
-
-    trackSessionStart(careerSlugs, categories, userProfile.cohort, subCohort);
-
-    // Track session complete on page unload
-    const startTime = Date.now();
-    const handleUnload = () => {
-      const timeOnPage = Math.round((Date.now() - startTime) / 1000);
-      const careersClicked = parseInt(sessionStorage.getItem('careers_clicked') || '0', 10);
-      trackSessionComplete(careersClicked, timeOnPage, userProfile.cohort, subCohort);
-    };
-
-    window.addEventListener('beforeunload', handleUnload);
-    return () => window.removeEventListener('beforeunload', handleUnload);
-  }, [validTopCareers, userProfile.cohort, educationPath]);
 
   return (
     <>
