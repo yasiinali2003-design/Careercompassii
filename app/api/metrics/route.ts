@@ -6,7 +6,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabaseAdmin } from '@/lib/supabase';
 import type { MetricsEvent, MetricsQuery, MetricsSummary } from '@/lib/metrics/types';
 
 /**
@@ -15,6 +15,15 @@ import type { MetricsEvent, MetricsQuery, MetricsSummary } from '@/lib/metrics/t
  */
 export async function POST(request: NextRequest) {
   try {
+    // Check if Supabase is configured
+    if (!supabaseAdmin) {
+      console.error('[metrics] Supabase not configured');
+      return NextResponse.json(
+        { error: 'Database not configured' },
+        { status: 503 }
+      );
+    }
+
     const body: MetricsEvent = await request.json();
 
     // Validate required fields
@@ -40,13 +49,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Insert metric event into database
-    const { data, error } = await supabase
+    // Insert metric event into database (core_metrics table types not yet generated)
+    const { data, error } = await (supabaseAdmin as any)
       .from('core_metrics')
       .insert({
         session_id: body.session_id,
         event_type: body.event_type,
-        event_data: body.event_data,
+        event_data: body.event_data as any,
         cohort: body.cohort,
         sub_cohort: body.sub_cohort || null
       })
@@ -83,6 +92,15 @@ export async function POST(request: NextRequest) {
  */
 export async function GET(request: NextRequest) {
   try {
+    // Check if Supabase is configured
+    if (!supabaseAdmin) {
+      console.error('[metrics] Supabase not configured');
+      return NextResponse.json(
+        { error: 'Database not configured' },
+        { status: 503 }
+      );
+    }
+
     const { searchParams } = new URL(request.url);
     const query: MetricsQuery = {
       start_date: searchParams.get('start_date') || undefined,
@@ -97,7 +115,7 @@ export async function GET(request: NextRequest) {
     const startDate = query.start_date || new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
 
     // Build query for core_metrics table
-    let metricsQuery = supabase
+    let metricsQuery = supabaseAdmin
       .from('core_metrics')
       .select('*')
       .gte('created_at', startDate)
