@@ -380,25 +380,27 @@ export default function ResultsPage() {
 
   // Track session start (Week 3 Day 1: Core Metrics)
   useEffect(() => {
-    if (validTopCareers.length > 0) {
-      const careerSlugs = validTopCareers.map(c => c.slug);
-      const categories = [...new Set(validTopCareers.map(c => c.category).filter(Boolean))];
-      const subCohort = educationPath?.primary === 'lukio' ? 'LUKIO' :
-                        educationPath?.primary === 'ammattikoulu' ? 'AMIS' : undefined;
-
-      trackSessionStart(careerSlugs, categories, userProfile.cohort, subCohort);
-
-      // Track session complete on page unload
-      const startTime = Date.now();
-      const handleUnload = () => {
-        const timeOnPage = Math.round((Date.now() - startTime) / 1000);
-        const careersClicked = parseInt(sessionStorage.getItem('careers_clicked') || '0', 10);
-        trackSessionComplete(careersClicked, timeOnPage, userProfile.cohort, subCohort);
-      };
-
-      window.addEventListener('beforeunload', handleUnload);
-      return () => window.removeEventListener('beforeunload', handleUnload);
+    if (validTopCareers.length === 0) {
+      return; // Return early but still return undefined (no cleanup)
     }
+
+    const careerSlugs = validTopCareers.map(c => c.slug);
+    const categories = [...new Set(validTopCareers.map(c => c.category).filter(Boolean))];
+    const subCohort = educationPath?.primary === 'lukio' ? 'LUKIO' :
+                      educationPath?.primary === 'ammattikoulu' ? 'AMIS' : undefined;
+
+    trackSessionStart(careerSlugs, categories, userProfile.cohort, subCohort);
+
+    // Track session complete on page unload
+    const startTime = Date.now();
+    const handleUnload = () => {
+      const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+      const careersClicked = parseInt(sessionStorage.getItem('careers_clicked') || '0', 10);
+      trackSessionComplete(careersClicked, timeOnPage, userProfile.cohort, subCohort);
+    };
+
+    window.addEventListener('beforeunload', handleUnload);
+    return () => window.removeEventListener('beforeunload', handleUnload);
   }, [validTopCareers, userProfile.cohort, educationPath]);
 
   return (
