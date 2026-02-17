@@ -1,0 +1,912 @@
+{
+  "id": "muusikko",
+  "title_fi": "Muusikko",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kameramies",
+  "title_fi": "Kameramies",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kirjailija",
+  "title_fi": "Kirjailija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "animaattori",
+  "title_fi": "Animaattori",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "valokuvaaja",
+  "title_fi": "Valokuvaaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "maalari",
+  "title_fi": "Maalari",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kattomestari",
+  "title_fi": "Kattomestari",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "poliisi",
+  "title_fi": "Poliisi",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "sotilas",
+  "title_fi": "Sotilas",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "liikuntaterapeutti",
+  "title_fi": "Liikuntaterapeutti",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "notaari",
+  "title_fi": "Notaari",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "puuseppa",
+  "title_fi": "Puuseppä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "jakelukuljettaja",
+  "title_fi": "Jakelukuljettaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "data-analyytikko",
+  "title_fi": "Data-analyytikko",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "mobiilisovelluskehittaja",
+  "title_fi": "Mobiilisovelluskehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "laakari",
+  "title_fi": "Lääkäri",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "hammaslaakari",
+  "title_fi": "Hammaslääkäri",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "farmaseutti",
+  "title_fi": "Farmaseutti",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "lahihoitaja",
+  "title_fi": "Lähihoitaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "katilo",
+  "title_fi": "Kätilö",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "nayttelija",
+  "title_fi": "Näyttelijä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "dokumentaristi",
+  "title_fi": "Dokumentaristi",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "videonmuokkaaja",
+  "title_fi": "Videonmuokkaaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kokki",
+  "title_fi": "Kokki",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "full-stack-kehittaja",
+  "title_fi": "Full-Stack-kehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "urheiluvalmentaja",
+  "title_fi": "Urheiluvalmentaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "aineenopettaja",
+  "title_fi": "Aineenopettaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "hieroja",
+  "title_fi": "Hieroja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "ymparisto-ohjelmoija",
+  "title_fi": "Ympäristöohjelmoija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "aktuaari",
+  "title_fi": "Aktuaari",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "filosofi",
+  "title_fi": "Filosofi",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "historioitsija",
+  "title_fi": "Historioitsija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "journalisti",
+  "title_fi": "Journalisti",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kemiisti",
+  "title_fi": "Kemiisti",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "koulupsykologi",
+  "title_fi": "Koulupsykologi",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kriitikko",
+  "title_fi": "Kriitikko",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "matkailuneuvoja",
+  "title_fi": "Matkailuneuvoja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "merikapteeni",
+  "title_fi": "Merikapteeni",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "sosiaaliohjaja",
+  "title_fi": "Sosiaaliohjaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "sosiaalitutkija",
+  "title_fi": "Sosiaalitutkija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "tutkija",
+  "title_fi": "Tutkija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "uutistoimittaja",
+  "title_fi": "Uutistoimittaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "valmentaja",
+  "title_fi": "Valmentaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "scrum-master",
+  "title_fi": "Scrum Master",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "ux-researcher",
+  "title_fi": "UX-tutkija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "frontend-developer",
+  "title_fi": "Frontend-kehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "backend-developer",
+  "title_fi": "Backend-kehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "technical-writer",
+  "title_fi": "Tekninen kirjoittaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "api-developer",
+  "title_fi": "API-kehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "content-strategist",
+  "title_fi": "Sisältöstrategisti",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "video-editor",
+  "title_fi": "Videoleikkaaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "digital-content-producer",
+  "title_fi": "Digitaalinen sisältötuottaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "business-analyst",
+  "title_fi": "Liiketoiminta-analyytikko",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "sales-development-representative",
+  "title_fi": "Myyntikehitysedustaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "account-executive",
+  "title_fi": "Vastuullinen myyntiedustaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "mental-health-counselor",
+  "title_fi": "Mielenterveysohjaaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "wellness-coach",
+  "title_fi": "Hyvinvointivalmentaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "health-data-analyst",
+  "title_fi": "Terveystiedon analyytikko",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "community-organizer",
+  "title_fi": "Yhteisöaktivisti",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "human-rights-researcher",
+  "title_fi": "Ihmisoikeustutkija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "gender-equality-advisor",
+  "title_fi": "Tasa-arvoneuvoja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "ethical-brand-strategist",
+  "title_fi": "Eettisen brändin strategisti",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "inclusive-content-creator",
+  "title_fi": "Inklusiivinen sisällöntuottaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "representation-editor",
+  "title_fi": "Edustuksellisuuden toimittaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "documentary-filmmaker-social-issues",
+  "title_fi": "Dokumentaristi (yhteiskunnalliset aiheet)",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "cultural-events-producer",
+  "title_fi": "Kulttuuritapahtumien tuottaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "art-therapy-facilitator",
+  "title_fi": "Taideterapian ohjaaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kettera-valmentaja",
+  "title_fi": "Agile-valmentaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kyberturvallisuusanalyytikko",
+  "title_fi": "Kyberturvallisuusanalyytikko",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "tekstinkirjoittaja",
+  "title_fi": "Tekstinkirjoittaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "yrityskouluttaja",
+  "title_fi": "Yrityskouluttaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "esg-analyytikko",
+  "title_fi": "ESG-analyytikko",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "3d-taiteilija",
+  "title_fi": "3D-taiteilija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "drone-ohjaaja",
+  "title_fi": "Drone-ohjaaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "terveysvalmentaja",
+  "title_fi": "Terveysvalmentaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "verkkokurssien-luoja",
+  "title_fi": "Verkkokurssien luoja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "eettisen-teknologian-kehittaja",
+  "title_fi": "Eettisen teknologian kehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "lohkoketjukehittaja",
+  "title_fi": "Lohkoketjukehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "aaninaittelija",
+  "title_fi": "Ääninäyttelijä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "elainneuoja",
+  "title_fi": "Eläinneuvoja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "luontokohteen-hoitaja",
+  "title_fi": "Luontokohteen hoitaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "luomuviljelija",
+  "title_fi": "Luomuviljelija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "ekomatkailuyrittaja",
+  "title_fi": "Ekomatkailuyrittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "vr-ar-kehittaja",
+  "title_fi": "VR/AR-kehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "bioinformatiikko",
+  "title_fi": "Bioinformatiikko",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "chatbot-kehittaja",
+  "title_fi": "Chatbot-kehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "low-code-developer",
+  "title_fi": "Low-code-kehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "progressive-web-app-developer",
+  "title_fi": "PWA-kehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "rpa-kehittaja",
+  "title_fi": "RPA-kehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "webassembly-developer",
+  "title_fi": "WebAssembly-kehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "game-engine-developer",
+  "title_fi": "Pelimoottori kehittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "toimitusketjuanalyytikko",
+  "title_fi": "Toimitusketjuanalyytikko",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "release-manager",
+  "title_fi": "Release Manager",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kirjailija-luova",
+  "title_fi": "Luova kirjailija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "stand-up-koomikko",
+  "title_fi": "Stand-up-koomikko",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "tattoo-artisti",
+  "title_fi": "Tatuoija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kirjojen-kuvittaja",
+  "title_fi": "Kirjojen kuvittaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "keramiikkataiteilija",
+  "title_fi": "Keramiikkataiteilija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "tekstiilitaiteilija",
+  "title_fi": "Tekstiilitaiteilija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "lasitaiteilija",
+  "title_fi": "Lasitaiteilija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "nahkataiteilija",
+  "title_fi": "Nahkataiteilija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "tanssinopettaja-luova",
+  "title_fi": "Tanssinopettaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "graafinen-taiteilija",
+  "title_fi": "Graafinen taiteilija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "elokuvaleikkaaja",
+  "title_fi": "Elokuvaleikkaaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "installaatiotaiteilija",
+  "title_fi": "Installaatiotaiteilija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "performanssitaiteilija",
+  "title_fi": "Performanssitaiteilija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "digitaalinen-taiteilija",
+  "title_fi": "Digitaalinen taiteilija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "street-art-taiteilija",
+  "title_fi": "Street art -taiteilija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "konsepti-taiteilija",
+  "title_fi": "Konsepti taiteilija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kokoonpanija",
+  "title_fi": "Kokoonpanija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "trukinkuljettaja",
+  "title_fi": "Trukinkuljettaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "linja-autonkuljettaja",
+  "title_fi": "Linja-autonkuljettaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "rekkakuski",
+  "title_fi": "Rekkakuski",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "nosturinkuljettaja",
+  "title_fi": "Nosturinkuljettaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kirvesmies-osaaja",
+  "title_fi": "Ammattikirvesmies",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "raudoittaja",
+  "title_fi": "Raudoittaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "muurari",
+  "title_fi": "Muurari",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "karjanhoitaja",
+  "title_fi": "Karjanhoitaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "puutarhuri",
+  "title_fi": "Puutarhuri",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "metalliseppa",
+  "title_fi": "Metalliseppä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "lannoitteiden-levittaja",
+  "title_fi": "Maatalouskoneen kuljettaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "taideterapeutti",
+  "title_fi": "Taideterapeutti",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "musiikkiterapeutti",
+  "title_fi": "Musiikkiterapeutti",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "draamaterapeutti",
+  "title_fi": "Draamaterapeutti",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "tanssiterapeutti",
+  "title_fi": "Tanssiterapeutti",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kuvataideopettaja",
+  "title_fi": "Kuvataideopettaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "musiikkipedagogi",
+  "title_fi": "Musiikkipedagogi",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kasityonopettaja",
+  "title_fi": "Käsityönopettaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "luovuusvalmentaja",
+  "title_fi": "Luovuusvalmentaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "urheilupsykologi",
+  "title_fi": "Urheilupsykologi",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "palomies",
+  "title_fi": "Palomies",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kampaaja",
+  "title_fi": "Kampaaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "parturi",
+  "title_fi": "Parturi",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kosmetologi",
+  "title_fi": "Kosmetologi",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "personal-trainer",
+  "title_fi": "Personal Trainer",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "nuorisotyontekija",
+  "title_fi": "Nuorisotyöntekijä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "isannoitsija",
+  "title_fi": "Isännöitsijä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "leipuri",
+  "title_fi": "Leipuri",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kondiittori",
+  "title_fi": "Kondiittori",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "barista",
+  "title_fi": "Barista",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "lentoemanta",
+  "title_fi": "Lentoemäntä/Stuertti",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "tulkki",
+  "title_fi": "Tulkki",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kiinteistonvalittaja",
+  "title_fi": "Kiinteistönvälittäjä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "pankkitoimihenkilo",
+  "title_fi": "Pankkitoimihenkilö",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "vakuutusvirkailija",
+  "title_fi": "Vakuutusvirkailija",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "ekonomisti",
+  "title_fi": "Ekonomisti",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "asiakaspalvelun-neuvoja",
+  "title_fi": "Asiakaspalveluneuvoja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "opinto-ohjaaja",
+  "title_fi": "Opinto-ohjaaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "liikunnanohjaaja",
+  "title_fi": "Liikunnanohjaaja",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "optikko",
+  "title_fi": "Optikko",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "viittomakielen-tulkki",
+  "title_fi": "Viittomakielen tulkki",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}
+{
+  "id": "kassatyontekija",
+  "title_fi": "Kassatyöntekijä",
+  "suggestedLevel": "entry",
+  "suggestedLevelReason": "No clear indicators → defaulting to entry (manual review needed)"
+}

@@ -1,0 +1,59 @@
+# CAREER METADATA REVIEW - 157 careers need attention
+# Instructions: Review each section below and make corrections to career-metadata-suggestions.json
+
+## ========================================
+## SECTION 1: 4 Senior-Level Careers
+## ========================================
+## These were auto-tagged as "senior" - verify they're actually senior management roles
+
+1. teatteriohjaaja (Theater Director)
+   Current: senior
+   Suggested fix: mid (creative director, not management)
+   
+2. mainostoimiston-art-director (Art Director) 
+   Current: senior
+   Suggested fix: senior ✓ (correct - leadership role in agencies)
+   
+3. rakennustyonjohtaja (Construction Site Manager)
+   Current: senior
+   Suggested fix: mid (site management, not company management)
+   
+4. lennonjohtaja (Air Traffic Controller)
+   Current: senior
+   Suggested fix: mid (technical specialist, not management)
+
+## ========================================
+## SECTION 2: Low Confidence Suggestions (153 careers)
+## ========================================
+## Run these commands to review in detail:
+
+# View all low-confidence career level suggestions:
+jq '.[] | select(.suggestedLevelConfidence == "low") | {id, title_fi, suggestedLevel, suggestedLevelReason, entry_roles, career_progression}' scripts/career-metadata-suggestions.json > scripts/low-confidence-levels.json
+
+# View all low-confidence education suggestions:
+jq '.[] | select(.suggestedEducationConfidence == "low") | {id, title_fi, suggestedEducationTags, education_paths}' scripts/career-metadata-suggestions.json > scripts/low-confidence-education.json
+
+## ========================================
+## HOW TO MAKE CORRECTIONS
+## ========================================
+
+1. Open scripts/career-metadata-suggestions.json
+2. Find the career by "id"
+3. Change "suggestedLevel" to: "entry", "mid", or "senior"
+4. Change "suggestedEducationTags" array to include appropriate tags
+
+Example correction:
+{
+  "id": "teatteriohjaaja",
+  "suggestedLevel": "mid",  // Changed from "senior"
+  "suggestedEducationTags": ["UNI", "AMK", "AMIS"]  // Keep as-is
+}
+
+## ========================================
+## WHEN YOU'RE DONE
+## ========================================
+
+Run: npx tsx scripts/apply-career-metadata.ts
+
+This will write your reviewed metadata back to careers-fi.ts
+

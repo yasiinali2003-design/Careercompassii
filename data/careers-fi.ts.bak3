@@ -29259,7 +29259,7 @@ export const careersData: CareerFI[] = [
     "Nitor (Turku)"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "kohtalaisesti",
     environment: "Toimisto, etänä, asiakkaiden luona"
@@ -29595,7 +29595,7 @@ export const careersData: CareerFI[] = [
     "Nitor (Turku)"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "vähän"
   },
@@ -29706,7 +29706,7 @@ export const careersData: CareerFI[] = [
     "Freelance-projektit ja YouTube-kanavat"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "vähän"
   },
@@ -29929,7 +29929,7 @@ export const careersData: CareerFI[] = [
     "Freelance ja omat projektit"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "vähän"
   },
@@ -30040,7 +30040,7 @@ export const careersData: CareerFI[] = [
     "Freelance ja omat projektit"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "vähän"
   },
@@ -30263,7 +30263,7 @@ export const careersData: CareerFI[] = [
     "Startup-yritykset ja lifestyle-brändit"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "vähän"
   },
@@ -30374,7 +30374,7 @@ export const careersData: CareerFI[] = [
     "Verkkokaupat ja mediayritykset"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "vähän"
   },
@@ -30487,7 +30487,7 @@ export const careersData: CareerFI[] = [
     "Accenture, Gofore, Reaktor"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "paljon"
   },
@@ -30599,7 +30599,7 @@ export const careersData: CareerFI[] = [
     "Nitor (Turku)"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -30709,7 +30709,7 @@ export const careersData: CareerFI[] = [
     "Strategy& (PwC), Deloitte Strategy"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "paljon"
   },
@@ -30819,7 +30819,7 @@ export const careersData: CareerFI[] = [
     "Nitor (Turku)"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "vähän"
   },
@@ -30930,7 +30930,7 @@ export const careersData: CareerFI[] = [
     "Nitor (Turku)"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -31040,7 +31040,7 @@ export const careersData: CareerFI[] = [
     "Nitor (Turku)"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -31148,7 +31148,7 @@ export const careersData: CareerFI[] = [
     "Suuryritykset ja julkinen sektori"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "paljon"
   },
@@ -31256,7 +31256,7 @@ export const careersData: CareerFI[] = [
     "Organisaatiomuutosprojektit"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -31363,7 +31363,7 @@ export const careersData: CareerFI[] = [
     "Yksityinen vastaanotto"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "vähän"
   },
@@ -31462,7 +31462,7 @@ export const careersData: CareerFI[] = [
     "Freelance ja oma yritystoiminta"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "vähän"
   },
@@ -31663,7 +31663,7 @@ export const careersData: CareerFI[] = [
     "Terveysteknologiayritykset"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "vähän"
   },
@@ -32159,7 +32159,7 @@ export const careersData: CareerFI[] = [
     "Nitor (Turku)"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -32257,7 +32257,7 @@ export const careersData: CareerFI[] = [
     "Kansalaisjärjestöt ja sosiaaliset yritykset"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -32357,7 +32357,7 @@ export const careersData: CareerFI[] = [
     "Sosiaaliset yritykset"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -32456,7 +32456,7 @@ export const careersData: CareerFI[] = [
     "Sosiaaliset järjestöt ja yhteisöt"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -32555,7 +32555,7 @@ export const careersData: CareerFI[] = [
     "Tutkimuslaitokset ja järjestöt"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -32655,7 +32655,7 @@ export const careersData: CareerFI[] = [
     "Nitor (Turku)"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -32753,7 +32753,7 @@ export const careersData: CareerFI[] = [
     "Konsultit ja järjestöt"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -32853,7 +32853,7 @@ export const careersData: CareerFI[] = [
     "Sosiaaliset yritykset ja yhteisöt"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -32952,7 +32952,7 @@ export const careersData: CareerFI[] = [
     "Kiertotalousyritykset"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -33052,7 +33052,7 @@ export const careersData: CareerFI[] = [
     "Yritykset (kestävyysosastot)"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -33152,7 +33152,7 @@ export const careersData: CareerFI[] = [
     "Freelance ja omat projektit"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -33251,7 +33251,7 @@ export const careersData: CareerFI[] = [
     "Kestävän rakentamisen konsultit"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -33351,7 +33351,7 @@ export const careersData: CareerFI[] = [
     "Freelance ja omat projektit"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -33455,7 +33455,7 @@ export const careersData: CareerFI[] = [
     "Fair Trade -organisaatiot"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "paljon"
   },
@@ -33555,7 +33555,7 @@ export const careersData: CareerFI[] = [
     "Freelance ja omat kanavat"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "vähän"
   },
@@ -33659,7 +33659,7 @@ export const careersData: CareerFI[] = [
     "Mediayhtiöt ja elokuvatuotannot"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "vähän"
   },
@@ -33763,7 +33763,7 @@ export const careersData: CareerFI[] = [
     "Freelance ja omat tuotannot"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "paljon"
   },
@@ -33863,7 +33863,7 @@ export const careersData: CareerFI[] = [
     "Freelance ja konsultit"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -33963,7 +33963,7 @@ export const careersData: CareerFI[] = [
     "Festivaalit ja tapahtumat"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
@@ -34067,7 +34067,7 @@ export const careersData: CareerFI[] = [
     "Tapahtumatuotantoyhtiöt"
   ],
   work_conditions: {
-    remote: "Hybridi",
+    remote: "Osittain",
     shift_work: false,
     travel: "jonkin verran"
   },
