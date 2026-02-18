@@ -68,6 +68,24 @@ export const categories: Record<string, CategoryInfo> = {
   }
 };
 
+// Browse categories for Urakirjasto navigation (separate from personality test categories)
+export interface BrowseCategoryInfo {
+  slug: string;
+  label: string; // Finnish display label
+}
+
+export const BROWSE_CATEGORIES: BrowseCategoryInfo[] = [
+  { slug: 'terveys',      label: 'Terveys ja hyvinvointi' },
+  { slug: 'liiketalous',  label: 'Liiketalous ja asiakastyö' },
+  { slug: 'tekniikka',    label: 'Tekniikka ja IT' },
+  { slug: 'luovat-alat',  label: 'Luovat alat ja media' },
+  { slug: 'rakentaminen', label: 'Rakentaminen ja käsityö' },
+  { slug: 'opetus',       label: 'Opetus ja ohjaus' },
+  { slug: 'turvallisuus', label: 'Turvallisuus ja puolustus' },
+  { slug: 'palvelu',      label: 'Palvelu ja matkailu' },
+  { slug: 'ymparisto',    label: 'Ympäristö ja luonto' },
+];
+
 // Helper functions
 export function getCategoryInfo(slug: string): CategoryInfo | null {
   return categories[slug] || null;

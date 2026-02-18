@@ -74,10 +74,32 @@ export async function GET(
 
     if (error || !data) {
       log.error('Error:', error);
-      return NextResponse.json(
-        { success: false, error: 'Luokkaa ei löydy' },
-        { status: 404 }
-      );
+      // Supabase unreachable - fall back to local mock store
+      log.warn('Falling back to mock-db.json');
+      const fs = require('fs');
+      const path = require('path');
+      const mockPath = path.join(process.cwd(), 'mock-db.json');
+      let store: any = { classes: [], pins: {}, results: [] };
+      try {
+        if (fs.existsSync(mockPath)) {
+          store = JSON.parse(fs.readFileSync(mockPath, 'utf8')) || store;
+        }
+      } catch (e) {
+        log.warn('Failed to read mock-db.json:', e);
+      }
+      const cls = (store.classes || []).find((c: any) => String(c.id) === String(classId));
+      if (!cls) {
+        return NextResponse.json({ success: false, error: 'Luokkaa ei löydy' }, { status: 404 });
+      }
+      return NextResponse.json({
+        success: true,
+        class: {
+          id: cls.id,
+          classToken: cls.class_token,
+          teacherId: cls.teacher_id || 'mock-teacher',
+          createdAt: cls.created_at || new Date().toISOString()
+        }
+      });
     }
 
     return NextResponse.json({

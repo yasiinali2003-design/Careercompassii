@@ -20,7 +20,9 @@ export async function POST(request: NextRequest) {
 
     const hasValidBasicAuth = expected && authHeader === expected;
     const adminCookie = request.cookies.get('admin_auth');
-    const hasAdminCookie = adminCookie?.value === 'yes';
+    const hasAdminCookie = adminCookie?.value
+      ? adminCookie.value === 'yes' || validateSessionToken(adminCookie.value, 4 * 60 * 60 * 1000)
+      : false;
 
     const teacherToken = request.cookies.get('teacher_auth_token');
     const teacherId = request.cookies.get('teacher_id');
@@ -57,10 +59,18 @@ export async function POST(request: NextRequest) {
     }
 
     if (!supabaseAdmin) {
-      return NextResponse.json(
-        { success: false, error: 'Tietokantaa ei ole määritelty' },
-        { status: 500 }
-      );
+      // No Supabase configured - use local mock store
+      const accessCode = generateAccessCode();
+      const teacherId = `mock-teacher-${Date.now()}`;
+      const teacher = { id: teacherId, name, email: email || null, school_name: schoolName || null, access_code: accessCode, package: normalizedPackage, is_active: true, created_at: new Date().toISOString() };
+      const fs = require('fs'); const path = require('path');
+      const mockPath = path.join(process.cwd(), 'mock-db.json');
+      let store: any = { classes: [], pins: {}, results: [], teachers: [] };
+      try { if (fs.existsSync(mockPath)) store = JSON.parse(fs.readFileSync(mockPath, 'utf8')) || store; } catch {}
+      store.teachers = store.teachers || [];
+      store.teachers.push(teacher);
+      fs.writeFileSync(mockPath, JSON.stringify(store, null, 2));
+      return NextResponse.json({ success: true, teacher, message: 'Opettajatili luotu (kehitystila)' });
     }
 
     // Generate unique access code using Supabase function
@@ -76,6 +86,27 @@ export async function POST(request: NextRequest) {
     }
 
     if (codeError || !codeData) {
+      // If Supabase is unreachable (network error), use local mock store
+      const isNetworkError = codeError && (
+        String(codeError?.message || codeError).includes('fetch failed') ||
+        String(codeError?.message || codeError).includes('ENOTFOUND') ||
+        String(codeError?.message || codeError).includes('network')
+      );
+      if (isNetworkError) {
+        log.warn('Supabase unreachable - saving teacher to mock-db.json');
+        const accessCode = generateAccessCode();
+        const teacherId = `mock-teacher-${Date.now()}`;
+        const teacher = { id: teacherId, name, email: email || null, school_name: schoolName || null, access_code: accessCode, package: normalizedPackage, is_active: true, created_at: new Date().toISOString() };
+        const fs = require('fs'); const path = require('path');
+        const mockPath = path.join(process.cwd(), 'mock-db.json');
+        let store: any = { classes: [], pins: {}, results: [], teachers: [] };
+        try { if (fs.existsSync(mockPath)) store = JSON.parse(fs.readFileSync(mockPath, 'utf8')) || store; } catch {}
+        store.teachers = store.teachers || [];
+        store.teachers.push(teacher);
+        fs.writeFileSync(mockPath, JSON.stringify(store, null, 2));
+        return NextResponse.json({ success: true, teacher, message: 'Opettajatili luotu (kehitystila - tallennettu paikallisesti)' });
+      }
+
       // Fallback: Generate code in JavaScript if function doesn't exist
       const fallbackCode = generateAccessCode();
       
@@ -115,6 +146,22 @@ export async function POST(request: NextRequest) {
 
       if (error) {
         log.error('Error creating teacher:', error);
+
+        // If Supabase is unreachable, fall back to mock-db
+        const isNetworkErr = String(error?.message || error).includes('fetch failed') || String(error?.message || error).includes('ENOTFOUND');
+        if (isNetworkErr) {
+          log.warn('Supabase unreachable during insert - saving to mock-db.json');
+          const teacherId2 = `mock-teacher-${Date.now()}`;
+          const teacher2 = { id: teacherId2, name, email: email || null, school_name: schoolName || null, access_code: accessCode, package: normalizedPackage, is_active: true, created_at: new Date().toISOString() };
+          const fs2 = require('fs'); const path2 = require('path');
+          const mockPath2 = path2.join(process.cwd(), 'mock-db.json');
+          let store2: any = { classes: [], pins: {}, results: [], teachers: [] };
+          try { if (fs2.existsSync(mockPath2)) store2 = JSON.parse(fs2.readFileSync(mockPath2, 'utf8')) || store2; } catch {}
+          store2.teachers = store2.teachers || [];
+          store2.teachers.push(teacher2);
+          fs2.writeFileSync(mockPath2, JSON.stringify(store2, null, 2));
+          return NextResponse.json({ success: true, teacher: teacher2, message: 'Opettajatili luotu (kehitystila - tallennettu paikallisesti)' });
+        }
 
         // If package column doesn't exist, try without it
         const isPackageColumnError = error.message?.includes('column "package"')

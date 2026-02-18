@@ -9,11 +9,11 @@ import { Career, CareerFilters, WorkMode, Outlook } from '@/lib/types';
 import ScrollNav from '@/components/ScrollNav';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import LightRays from '@/components/LightRays';
-import { categories } from '@/lib/categories';
+import { BROWSE_CATEGORIES } from '@/lib/categories';
 
-// Helper to get Finnish category name from slug
-const getCategoryLabel = (slug: string): string => {
-  return categories[slug]?.name_fi || slug.charAt(0).toUpperCase() + slug.slice(1);
+// Helper to get Finnish browse category label from slug
+const getBrowseCategoryLabel = (slug: string): string => {
+  return BROWSE_CATEGORIES.find(c => c.slug === slug)?.label ?? slug.charAt(0).toUpperCase() + slug.slice(1);
 };
 
 const convertCareerFIToCareer = (careerFI: CareerFI): Career => ({
@@ -25,7 +25,7 @@ const convertCareerFIToCareer = (careerFI: CareerFI): Career => ({
   salaryMax: careerFI.salary_eur_month?.range?.[1],
   outlook: careerFI.job_outlook?.status === 'kasvaa' ? 'Kasvaa' : 'Vakaa',
   educationLevel: careerFI.education_paths || [],
-  industry: careerFI.category ? [careerFI.category] : [],
+  industry: (careerFI as any).browseCategory ? [(careerFI as any).browseCategory] : careerFI.category ? [careerFI.category] : [],
   personalityType: careerFI.category ? [careerFI.category] : [],
   workMode:
     careerFI.work_conditions?.remote === 'Kyllä'
@@ -100,21 +100,9 @@ function careerMatchesEducationCategory(career: typeof careersData[0], categoryV
   });
 }
 
-// Define the correct order for category filters (matches homepage)
-const CATEGORY_ORDER = [
-  'luova',
-  'johtaja', 
-  'innovoija',
-  'rakentaja',
-  'auttaja',
-  'ympariston-puolustaja',
-  'visionaari',
-  'jarjestaja'
-];
-
 const filterOptions = {
-  industry: CATEGORY_ORDER.filter(cat => 
-    careersData.some(c => c.industry?.includes(cat))
+  industry: BROWSE_CATEGORIES.map(c => c.slug).filter(slug =>
+    careersData.some(c => c.industry?.includes(slug))
   ),
   educationLevel: EDUCATION_CATEGORIES, // Use simplified categories
   personalityType: Array.from(new Set(careersData.flatMap((c) => c.personalityType || []))).filter(Boolean).sort(),
@@ -326,7 +314,7 @@ export default function CareerCatalog() {
                 >
                   <option value="">Kaikki alat</option>
                   {filterOptions.industry.map((industry: string) => (
-                    <option key={industry} value={industry}>{getCategoryLabel(industry)}</option>
+                    <option key={industry} value={industry}>{getBrowseCategoryLabel(industry)}</option>
                   ))}
                 </select>
                 <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-xs text-gray-400">
