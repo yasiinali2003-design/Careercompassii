@@ -55,6 +55,7 @@ const RULES: Array<{ slug: string; keywords: string[] }> = [
       'kirjanpit', 'talousasiantuntij', 'markkinoint', 'liiketoim',
       'hankinta', 'logistiikk', 'ostaj', 'talous', 'tilitoimist',
       'kirjanpitäj', 'kirjanpitaj', 'ekonom',
+      'konsultt', 'rahoitus', 'kiinteistonvälit', 'kiinteistonvalit',
     ],
   },
   {
@@ -66,6 +67,8 @@ const RULES: Array<{ slug: string; keywords: string[] }> = [
       'copywriter', 'tekstinkirjoittaj', 'pelisuunnitteli',
       'pelikehittäj', 'pelikehittaj', 'visualisti', 'motion',
       'muotoilij', 'ux-', 'ui-',
+      'filosof', 'historioit', 'kriitikk', 'museoasiantuntij',
+      'kokk', 'maalaus', 'kampaaj', 'parturi', 'kosmetolog',
     ],
   },
   {
@@ -73,7 +76,7 @@ const RULES: Array<{ slug: string; keywords: string[] }> = [
     keywords: [
       'rakentaj', 'puusep', 'sähköasentaj', 'sahkoasentaj', 'kirvesmies',
       'muurar', 'hitsaaj', 'lvi', 'maalair', 'konetekniikk',
-      'leipur', 'parturi', 'kampaaj', 'kokk', 'kosmetolog',
+      'leipur',
       'kiinteistö', 'kiinteisto', 'talonrakenn', 'maanrakenn',
       'putki', 'autonasentaj', 'koneasentaj', 'työmest',
     ],
@@ -84,6 +87,7 @@ const RULES: Array<{ slug: string; keywords: string[] }> = [
       'tarjoilij', 'barista', 'hotelli', 'matkailual', 'lentoemäntä',
       'lentoemanta', 'matkaopas', 'ravintol', 'catering',
       'reseptionist', 'vastaanottovirk',
+      'taksi', 'baarimik', 'linja-auto',
     ],
   },
   {
@@ -93,6 +97,7 @@ const RULES: Array<{ slug: string; keywords: string[] }> = [
       'ekolog', 'ilmasto', 'biolog', 'geolog', 'maanmittaus',
       'ympäristötekn', 'ymparistotekn', 'luonnonvara', 'agronomi',
       'eläinlääk', 'elainlaak',
+      'metsur', 'puutarh',
     ],
   },
 ];
