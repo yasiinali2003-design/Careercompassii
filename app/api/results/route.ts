@@ -126,7 +126,7 @@ export async function POST(request: NextRequest) {
         );
       }
       store.results = store.results || [];
-      store.results.push({ class_id: classId, pin: normalizedPin, result_payload: resultPayload, created_at: new Date().toISOString() });
+      store.results.push({ class_id: classId, pin_code: normalizedPin, result_payload: resultPayload, created_at: new Date().toISOString() });
       try { fs.writeFileSync(mockPath, JSON.stringify(store, null, 2)); } catch {}
       return NextResponse.json({ success: true, message: 'Tulos tallennettu onnistuneesti' });
     }
@@ -209,10 +209,10 @@ export async function POST(request: NextRequest) {
       .from('results')
       .insert({
         class_id: classIdUUID,
-        pin: normalizedPin,
+        pin_code: normalizedPin,
         result_payload: resultPayload
       } as any)
-      .select('id, class_id, pin, created_at') as { data: Array<{ id: string; class_id: string; pin: string; created_at: string }> | null; error: any };
+      .select('id, class_id, pin_code, created_at') as { data: Array<{ id: string; class_id: string; pin_code: string; created_at: string }> | null; error: any };
 
     if (insertError) {
       log.error('Error storing result:', insertError);
