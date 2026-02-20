@@ -6,13 +6,15 @@ import Link from 'next/link';
 import { Logo } from '@/components/Logo';
 import ScrollNav from '@/components/ScrollNav';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { GraduationCap, Lock, ArrowRight, ArrowLeft } from 'lucide-react';
+import { GraduationCap, Lock, ArrowRight, ArrowLeft, Eye, EyeOff } from 'lucide-react';
 import { getCsrfTokenFromCookie } from '@/lib/csrf';
 
 export default function TeacherLoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const returnTo = searchParams.get('returnTo') || '/teacher/classes';
@@ -35,12 +37,15 @@ export default function TeacherLoginPage() {
     setLoading(true);
 
     try {
-      const normalized = password.trim();
-      if (!normalized) {
-        setError('Syötä opettajakoodi');
+      const normalizedEmail = email.trim().toLowerCase();
+      const normalizedPassword = password.trim();
+
+      if (!normalizedEmail || !normalizedPassword) {
+        setError('Syötä sähköposti ja salasana');
         setLoading(false);
         return;
       }
+
       const csrfToken = getCsrfTokenFromCookie();
       const response = await fetch('/api/teacher-auth/login', {
         method: 'POST',
@@ -48,7 +53,10 @@ export default function TeacherLoginPage() {
           'Content-Type': 'application/json',
           ...(csrfToken && { 'x-csrf-token': csrfToken }),
         },
-        body: JSON.stringify({ password: normalized }),
+        body: JSON.stringify({
+          email: normalizedEmail,
+          password: normalizedPassword
+        }),
       });
 
       const data = await response.json();
@@ -57,8 +65,14 @@ export default function TeacherLoginPage() {
         // Redirect to the intended page or dashboard
         router.push(returnTo);
         router.refresh(); // Ensure middleware recognizes the new cookie
+      } else if (data.code === 'PASSWORD_NOT_SET' || data.requirePasswordSetup) {
+        // Teacher hasn't activated account yet
+        setError('Aktivoi tilisi ensin pääsykoodilla');
+        setTimeout(() => {
+          router.push('/teacher/first-login');
+        }, 2000);
       } else {
-        setError(data.error || 'Opettajakoodi ei kelpaa');
+        setError(data.error || 'Virheelliset kirjautumistiedot');
       }
     } catch {
       setError('Verkkovirhe. Yritä uudelleen.');
@@ -79,7 +93,7 @@ export default function TeacherLoginPage() {
               <Logo className="h-12 w-auto mx-auto" />
             </Link>
             <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">Opettajien hallintapaneeli</h1>
-            <p className="text-sm text-urak-text-secondary">Kirjaudu sisään opettajakoodilla</p>
+            <p className="text-sm text-urak-text-secondary">Kirjaudu sisään sähköpostilla ja salasanalla</p>
           </div>
 
           {/* Login Card */}
@@ -95,27 +109,56 @@ export default function TeacherLoginPage() {
             <div className="text-center mb-8">
               <h2 className="text-2xl font-semibold text-white mb-2">Kirjaudu sisään</h2>
               <p className="text-sm text-urak-text-secondary">
-                Syötä opettajakoodi päästäksesi hallintapaneeliin
+                Syötä sähköpostisi ja salasanasi
               </p>
             </div>
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="password" className="block text-sm text-urak-text-secondary mb-2">
-                  Opettajakoodi
+                <label htmlFor="email" className="block text-sm text-urak-text-secondary mb-2">
+                  Sähköpostiosoite
                 </label>
                 <input
-                  id="password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Syötä koodi"
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="matti@example.com"
                   required
                   autoFocus
                   className="w-full px-4 py-3 bg-white/5 border border-urak-border rounded-xl focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/40 text-white placeholder:text-gray-500 transition-all"
                   disabled={loading}
                 />
+              </div>
+
+              <div>
+                <label htmlFor="password" className="block text-sm text-urak-text-secondary mb-2">
+                  Salasana
+                </label>
+                <div className="relative">
+                  <input
+                    id="password"
+                    type={showPassword ? 'text' : 'password'}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Syötä salasanasi"
+                    required
+                    className="w-full px-4 py-3 pr-12 bg-white/5 border border-urak-border rounded-xl focus:outline-none focus:ring-2 focus:ring-urak-accent-blue/40 text-white placeholder:text-gray-500 transition-all"
+                    disabled={loading}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                  >
+                    {showPassword ? (
+                      <EyeOff className="h-5 w-5" />
+                    ) : (
+                      <Eye className="h-5 w-5" />
+                    )}
+                  </button>
+                </div>
               </div>
 
               {error && (
@@ -140,17 +183,32 @@ export default function TeacherLoginPage() {
               </button>
             </form>
 
+            {/* Forgot Password Link */}
+            <div className="mt-4 text-center">
+              <Link
+                href="/teacher/forgot-password"
+                className="text-sm text-urak-accent-blue hover:text-urak-accent-blue/80 transition-colors"
+              >
+                Unohditko salasanan?
+              </Link>
+            </div>
+
             {/* Opettajille Info Box */}
             <div className="mt-8 pt-8 border-t border-urak-border/40">
               <div className="bg-urak-surface/40 border border-urak-border/40 rounded-2xl p-4">
                 <div className="flex items-start gap-3">
                   <GraduationCap className="h-4 w-4 text-urak-accent-blue mt-0.5 flex-shrink-0" />
                   <div className="text-xs md:text-sm text-urak-text-secondary">
-                    <p className="font-semibold text-white mb-1">Opettajille</p>
-                    <p>
-                      Jos sinulla ei ole opettajakoodia, ota yhteyttä ylläpitoon tai tarkista
-                      sähköpostistasi koodi.
+                    <p className="font-semibold text-white mb-1">Ensimmäinen kerta?</p>
+                    <p className="mb-2">
+                      Aktivoi tilisi ensin pääsykoodilla, jonka sait sähköpostissa.
                     </p>
+                    <Link
+                      href="/teacher/first-login"
+                      className="text-urak-accent-blue hover:text-urak-accent-blue/80 transition-colors font-medium"
+                    >
+                      Aktivoi tili →
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -179,4 +237,3 @@ export default function TeacherLoginPage() {
     </div>
   );
 }
-

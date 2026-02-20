@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { createLogger } from '@/lib/logger';
-import { validateSessionToken } from '@/lib/security';
+import { validateSessionToken, isValidEmail } from '@/lib/security';
+import { sendWelcomeEmail } from '@/lib/email';
 
 const log = createLogger('API/Teachers');
 
@@ -40,9 +41,42 @@ export async function POST(request: NextRequest) {
     // Validate input
     if (!name || typeof name !== 'string') {
       return NextResponse.json(
-        { success: false, error: 'Name is required' },
+        { success: false, error: 'Nimi vaaditaan' },
         { status: 400 }
       );
+    }
+
+    // Email is now REQUIRED for password authentication
+    if (!email || typeof email !== 'string') {
+      return NextResponse.json(
+        { success: false, error: 'Sähköpostiosoite vaaditaan' },
+        { status: 400 }
+      );
+    }
+
+    // Validate email format
+    const normalizedEmail = email.toLowerCase().trim();
+    if (!isValidEmail(normalizedEmail)) {
+      return NextResponse.json(
+        { success: false, error: 'Virheellinen sähköpostiosoite' },
+        { status: 400 }
+      );
+    }
+
+    // Check if email already exists
+    if (supabaseAdmin) {
+      const { data: existingTeacher } = await supabaseAdmin
+        .from('teachers')
+        .select('id')
+        .ilike('email', normalizedEmail)
+        .maybeSingle();
+
+      if (existingTeacher) {
+        return NextResponse.json(
+          { success: false, error: 'Sähköpostiosoite on jo käytössä' },
+          { status: 400 }
+        );
+      }
     }
 
     // Validate package type
@@ -129,12 +163,12 @@ export async function POST(request: NextRequest) {
       // Try with package first, fallback without if column doesn't exist
       let insertData: any = {
         name,
-        email: email || null,
+        email: normalizedEmail, // Use normalized email (required)
         school_name: schoolName || null,
         access_code: accessCode,
         is_active: true,
       };
-      
+
       // Only include package if column exists (check via a test query or just try)
       insertData.package = normalizedPackage;
 
@@ -226,7 +260,7 @@ export async function POST(request: NextRequest) {
     // Try with package first, fallback without if column doesn't exist
     let insertData: any = {
       name,
-      email: email || null,
+      email: normalizedEmail, // Use normalized email (required)
       school_name: schoolName || null,
       access_code: accessCode,
       is_active: true,
@@ -238,7 +272,18 @@ export async function POST(request: NextRequest) {
       .from('teachers')
       .insert(insertData as any)
       .select('id, name, email, school_name, access_code, package, created_at')
-      .single();
+      .single() as {
+        data: {
+          id: string;
+          name: string;
+          email: string;
+          school_name: string | null;
+          access_code: string;
+          package: string;
+          created_at: string;
+        } | null;
+        error: any;
+      };
 
     if (error) {
       log.error('Error creating teacher:', error);
@@ -293,10 +338,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Send welcome email with access code (non-blocking)
+    if (data && data.email && data.name && data.access_code) {
+      sendWelcomeEmail(data.email, data.name, data.access_code).catch(err => {
+        log.error('Failed to send welcome email:', err);
+        // Don't fail the request if email fails
+      });
+    }
+
     return NextResponse.json({
       success: true,
       teacher: data,
       message: 'Opettajatili luotu onnistuneesti',
+      instructions: 'Opettaja aktivoi tilin pääsykoodilla ja asettaa oman salasanan.'
     });
   } catch (error) {
     log.error('Unexpected error:', error);

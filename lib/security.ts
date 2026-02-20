@@ -1,88 +1,48 @@
 /**
- * Security utilities for Urakompassi
- * Uses Web Crypto API for cross-runtime compatibility (Node.js and Edge)
+ * Security utilities for CareerCompassi
+ * Uses Argon2id for password hashing (modern best practice)
+ * Uses Web Crypto API for tokens and other utilities
  */
 
+import { hash, verify } from '@node-rs/argon2';
+import crypto from 'crypto';
+
 // ============================================================================
-// PASSWORD HASHING (PBKDF2)
+// PASSWORD HASHING (ARGON2ID)
 // ============================================================================
 
-const PBKDF2_ITERATIONS = 100000;
-const SALT_LENGTH = 16;
-const KEY_LENGTH = 32;
+// Argon2id parameters (OWASP recommended for production)
+const ARGON2_OPTIONS = {
+  memoryCost: 19456,      // 19 MiB
+  timeCost: 2,            // 2 iterations
+  parallelism: 1,         // 1 thread
+  hashLength: 32,         // 32 bytes output
+};
 
 /**
- * Hash a password using PBKDF2-SHA256
- * Returns a string in format: salt:hash (both base64 encoded)
+ * Hash a password using Argon2id
+ * Returns the hash string (includes salt, parameters automatically)
+ *
+ * Why Argon2id?
+ * - Winner of Password Hashing Competition (2015)
+ * - Resistant to GPU/ASIC attacks
+ * - Memory-hard (expensive to parallelize)
+ * - OWASP and NIST recommended
  */
 export async function hashPassword(password: string): Promise<string> {
-  const encoder = new TextEncoder();
-  const salt = crypto.getRandomValues(new Uint8Array(SALT_LENGTH));
-
-  const keyMaterial = await crypto.subtle.importKey(
-    'raw',
-    encoder.encode(password),
-    'PBKDF2',
-    false,
-    ['deriveBits']
-  );
-
-  const derivedBits = await crypto.subtle.deriveBits(
-    {
-      name: 'PBKDF2',
-      salt: salt,
-      iterations: PBKDF2_ITERATIONS,
-      hash: 'SHA-256',
-    },
-    keyMaterial,
-    KEY_LENGTH * 8
-  );
-
-  const hashArray = new Uint8Array(derivedBits);
-  const saltBase64 = btoa(String.fromCharCode.apply(null, Array.from(salt)));
-  const hashBase64 = btoa(String.fromCharCode.apply(null, Array.from(hashArray)));
-
-  return `${saltBase64}:${hashBase64}`;
+  return await hash(password, ARGON2_OPTIONS);
 }
 
 /**
- * Verify a password against a stored hash
- * Uses timing-safe comparison to prevent timing attacks
+ * Verify a password against a stored Argon2id hash
+ * Timing-safe comparison built into the library
  */
-export async function verifyPassword(password: string, storedHash: string): Promise<boolean> {
+export async function verifyPassword(
+  storedHash: string,
+  password: string
+): Promise<boolean> {
   try {
-    const [saltBase64, expectedHashBase64] = storedHash.split(':');
-    if (!saltBase64 || !expectedHashBase64) {
-      return false;
-    }
-
-    const salt = Uint8Array.from(atob(saltBase64), c => c.charCodeAt(0));
-    const expectedHash = Uint8Array.from(atob(expectedHashBase64), c => c.charCodeAt(0));
-
-    const encoder = new TextEncoder();
-    const keyMaterial = await crypto.subtle.importKey(
-      'raw',
-      encoder.encode(password),
-      'PBKDF2',
-      false,
-      ['deriveBits']
-    );
-
-    const derivedBits = await crypto.subtle.deriveBits(
-      {
-        name: 'PBKDF2',
-        salt: salt,
-        iterations: PBKDF2_ITERATIONS,
-        hash: 'SHA-256',
-      },
-      keyMaterial,
-      KEY_LENGTH * 8
-    );
-
-    const actualHash = new Uint8Array(derivedBits);
-
-    // Timing-safe comparison
-    return timingSafeEqual(actualHash, expectedHash);
+    return await verify(storedHash, password);
   } catch {
     return false;
   }
@@ -111,13 +71,40 @@ function timingSafeEqual(a: Uint8Array, b: Uint8Array): boolean {
 
 /**
  * Generate a cryptographically secure random token
- * Used for session tokens, CSRF tokens, etc.
+ * Default: 48-char hex (24 bytes) for reset/temp tokens
+ * Used for password reset tokens, temp activation tokens, etc.
  */
-export function generateSecureToken(length: number = 32): string {
-  const bytes = crypto.getRandomValues(new Uint8Array(length));
-  return Array.from(bytes)
-    .map(b => b.toString(16).padStart(2, '0'))
-    .join('');
+export function generateSecureToken(length: number = 24): string {
+  return crypto.randomBytes(length).toString('hex');
+}
+
+/**
+ * Hash a token using SHA-256
+ * Used to store reset tokens and temp tokens securely in database
+ *
+ * Why hash tokens?
+ * - If DB is compromised, attacker can't use tokens directly
+ * - Token is only sent via email (single point of exposure)
+ * - Hash is one-way (can't reverse to get original token)
+ */
+export function hashToken(token: string): string {
+  return crypto
+    .createHash('sha256')
+    .update(token)
+    .digest('hex');
+}
+
+/**
+ * Verify a token against its hash using timing-safe comparison
+ * Prevents timing attacks during token validation
+ */
+export function verifyToken(token: string, hash: string): boolean {
+  const tokenHash = hashToken(token);
+  // Timing-safe comparison prevents timing attacks
+  return crypto.timingSafeEqual(
+    Buffer.from(tokenHash),
+    Buffer.from(hash)
+  );
 }
 
 /**
@@ -126,7 +113,7 @@ export function generateSecureToken(length: number = 32): string {
  */
 export function generateSecurePin(length: number = 6): string {
   const chars = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
-  const bytes = crypto.getRandomValues(new Uint8Array(length));
+  const bytes = crypto.randomBytes(length);
   let pin = '';
 
   for (let i = 0; i < length; i++) {
@@ -134,6 +121,66 @@ export function generateSecurePin(length: number = 6): string {
   }
 
   return pin;
+}
+
+// ============================================================================
+// PASSWORD STRENGTH VALIDATION
+// ============================================================================
+
+/**
+ * Validate password strength using length-based security (modern best practice)
+ *
+ * Why length-only?
+ * - Teachers will use passphrases ("opettaja-kahvi-kirja-2026") → easier to remember
+ * - Length-based security is modern best practice
+ * - No frustrating complexity requirements
+ * - 10 chars is secure enough for school pilot
+ * - Strength meter guides users without forcing rules
+ */
+export function validatePasswordStrength(password: string): {
+  valid: boolean;
+  strength: 'weak' | 'medium' | 'strong';
+  message: string;
+} {
+  const length = password.length;
+
+  // Minimum: 10 characters (length-based security)
+  if (length < 10) {
+    return {
+      valid: false,
+      strength: 'weak',
+      message: 'Salasanan on oltava vähintään 10 merkkiä pitkä'
+    };
+  }
+
+  // Calculate strength (for UI meter)
+  let strength: 'weak' | 'medium' | 'strong' = 'medium';
+
+  if (length >= 16) {
+    strength = 'strong';
+  } else if (length >= 12) {
+    strength = 'medium';
+  }
+
+  // Bonus: check for variety (not required, just for strength meter)
+  const hasUpper = /[A-Z]/.test(password);
+  const hasLower = /[a-z]/.test(password);
+  const hasNumber = /[0-9]/.test(password);
+  const hasSpecial = /[!@#$%^&*(),.?":{}|<>\-_]/.test(password);
+
+  const varietyCount = [hasUpper, hasLower, hasNumber, hasSpecial].filter(Boolean).length;
+
+  if (varietyCount >= 3 && length >= 12) {
+    strength = 'strong';
+  }
+
+  return {
+    valid: true,
+    strength,
+    message: strength === 'strong'
+      ? 'Vahva salasana!'
+      : 'Hyvä! Käytä pidempi salasana parempaa turvallisuutta varten.'
+  };
 }
 
 // ============================================================================
@@ -170,17 +217,14 @@ export function verifyCsrfToken(token: string, expectedToken: string): boolean {
  * Hash an IP address for GDPR-compliant storage
  * Uses SHA-256 with a salt to prevent rainbow table attacks
  */
-export async function hashIpAddress(ip: string): Promise<string> {
-  const salt = process.env.IP_HASH_SALT || 'urakompassi-ip-salt-2025';
-  const encoder = new TextEncoder();
-  const data = encoder.encode(`${salt}:${ip}`);
+export function hashIpAddress(ip: string): string {
+  const salt = process.env.IP_HASH_SALT || 'careercompassi-ip-salt-2026';
+  const data = `${salt}:${ip}`;
 
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = new Uint8Array(hashBuffer);
-
-  return Array.from(hashArray)
-    .map(b => b.toString(16).padStart(2, '0'))
-    .join('');
+  return crypto
+    .createHash('sha256')
+    .update(data)
+    .digest('hex');
 }
 
 // ============================================================================
@@ -193,7 +237,7 @@ export async function hashIpAddress(ip: string): Promise<string> {
  */
 export function generateSessionToken(): string {
   const timestamp = Date.now().toString(16);
-  const random = generateSecureToken(24);
+  const random = crypto.randomBytes(24).toString('hex');
   return `${timestamp}.${random}`;
 }
 

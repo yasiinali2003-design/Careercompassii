@@ -9,17 +9,34 @@ DROP TABLE IF EXISTS teachers CASCADE;
 CREATE TABLE teachers (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name TEXT NOT NULL,
-  email TEXT,
+  email TEXT NOT NULL,
   school_name TEXT,
-  access_code TEXT UNIQUE NOT NULL,
+  access_code TEXT NOT NULL,
   package TEXT DEFAULT 'standard' CHECK (package IN ('standard', 'premium')),
   is_active BOOLEAN DEFAULT true,
+
+  -- Password authentication columns
+  password_hash TEXT,
+  password_set_at TIMESTAMPTZ,
+  password_updated_at TIMESTAMPTZ,
+  last_login TIMESTAMPTZ,
+  failed_login_attempts INTEGER DEFAULT 0,
+  locked_until TIMESTAMPTZ,
+  temp_token_hash TEXT,
+  temp_token_expires TIMESTAMPTZ,
+  reset_token_hash TEXT,
+  reset_token_expires TIMESTAMPTZ,
+
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 -- Indexes for fast lookups
-CREATE INDEX idx_teachers_access_code ON teachers(access_code);
+CREATE UNIQUE INDEX idx_teachers_email_unique ON teachers(LOWER(email));
+CREATE UNIQUE INDEX idx_teachers_access_code_unique ON teachers(UPPER(access_code));
 CREATE INDEX idx_teachers_is_active ON teachers(is_active);
+CREATE INDEX idx_teachers_temp_token_hash ON teachers(temp_token_hash) WHERE temp_token_hash IS NOT NULL;
+CREATE INDEX idx_teachers_reset_token_hash ON teachers(reset_token_hash) WHERE reset_token_hash IS NOT NULL;
+CREATE INDEX idx_teachers_locked_until ON teachers(locked_until) WHERE locked_until IS NOT NULL;
 
 -- ============================================
 -- 2. CLASSES TABLE
