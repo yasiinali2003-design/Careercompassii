@@ -23,7 +23,7 @@ export default function ForgotPasswordPage() {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/teacher-auth/forgot-password', {
+      await fetch('/api/teacher-auth/forgot-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,30 +43,30 @@ export default function ForgotPasswordPage() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-urak-bg flex items-center justify-center p-4">
         <div className="max-w-md w-full">
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+          <div className="bg-urak-surface rounded-2xl shadow-xl p-8 border border-white/10">
             {/* Success Icon */}
             <div className="text-center mb-6">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500/20 rounded-full mb-4">
+                <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+              <h2 className="text-2xl font-bold text-white mb-2">
                 Tarkista sähköpostisi
               </h2>
-              <p className="text-gray-600">
+              <p className="text-urak-text-secondary">
                 Jos sähköpostiosoite on rekisteröity, lähetimme sinne palautuslinkin.
               </p>
             </div>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mb-6">
               <div className="flex gap-3">
-                <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <div className="text-sm text-blue-800">
+                <div className="text-sm text-blue-200">
                   <p className="font-medium mb-1">Seuraavat vaiheet:</p>
                   <ol className="list-decimal list-inside space-y-1">
                     <li>Tarkista sähköpostisi ({email})</li>
@@ -77,7 +77,7 @@ export default function ForgotPasswordPage() {
               </div>
             </div>
 
-            <div className="space-y-3 text-sm text-gray-600">
+            <div className="space-y-3 text-sm text-urak-text-secondary">
               <p>
                 <strong>Etkö saanut sähköpostia?</strong>
               </p>
@@ -88,10 +88,10 @@ export default function ForgotPasswordPage() {
               </ul>
             </div>
 
-            <div className="mt-6 pt-6 border-t border-gray-200">
+            <div className="mt-6 pt-6 border-t border-white/10">
               <Link
                 href="/teacher/login"
-                className="block text-center text-sm text-blue-600 hover:text-blue-700 font-medium"
+                className="block text-center text-sm text-urak-accent-blue hover:text-urak-accent-blue/80 font-medium"
               >
                 ← Takaisin kirjautumiseen
               </Link>
@@ -103,20 +103,15 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-urak-bg flex items-center justify-center p-4">
       <div className="max-w-md w-full">
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+        <div className="bg-urak-surface rounded-2xl shadow-xl p-8 border border-white/10">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-              <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
-              </svg>
-            </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            <h1 className="text-3xl font-bold text-white mb-2">
               Unohditko salasanan?
             </h1>
-            <p className="text-gray-600">
+            <p className="text-urak-text-secondary">
               Syötä sähköpostiosoitteesi, niin lähetämme sinne palautuslinkin
             </p>
           </div>
@@ -124,7 +119,7 @@ export default function ForgotPasswordPage() {
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-neutral-200 mb-2">
                 Sähköpostiosoite
               </label>
               <input
@@ -133,7 +128,7 @@ export default function ForgotPasswordPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="matti@example.com"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-white/5 border border-urak-border rounded-lg focus:ring-2 focus:ring-urak-accent-blue/40 text-white placeholder:text-gray-500"
                 required
                 autoFocus
                 maxLength={254}
@@ -144,7 +139,7 @@ export default function ForgotPasswordPage() {
             <button
               type="submit"
               disabled={loading || !email.trim()}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+              className="w-full bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-urak-bg font-semibold py-3 px-4 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
               {loading ? (
                 <>
@@ -161,16 +156,16 @@ export default function ForgotPasswordPage() {
           </form>
 
           {/* Footer Links */}
-          <div className="mt-6 pt-6 border-t border-gray-200 space-y-3">
-            <p className="text-center text-sm text-gray-600">
+          <div className="mt-6 pt-6 border-t border-white/10 space-y-3">
+            <p className="text-center text-sm text-urak-text-secondary">
               Muistitko salasanan?{' '}
-              <Link href="/teacher/login" className="text-blue-600 hover:text-blue-700 font-medium">
+              <Link href="/teacher/login" className="text-urak-accent-blue hover:text-urak-accent-blue/80 font-medium">
                 Kirjaudu sisään
               </Link>
             </p>
-            <p className="text-center text-sm text-gray-600">
+            <p className="text-center text-sm text-urak-text-secondary">
               Ensimmäinen kerta?{' '}
-              <Link href="/teacher/first-login" className="text-blue-600 hover:text-blue-700 font-medium">
+              <Link href="/teacher/first-login" className="text-urak-accent-blue hover:text-urak-accent-blue/80 font-medium">
                 Aktivoi tilisi
               </Link>
             </p>
@@ -179,9 +174,9 @@ export default function ForgotPasswordPage() {
 
         {/* Help Text */}
         <div className="mt-6 text-center">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-urak-text-tertiary">
             Tarvitsetko apua?{' '}
-            <a href="mailto:support@careercompassi.fi" className="text-blue-600 hover:text-blue-700">
+            <a href="mailto:support@careercompassi.fi" className="text-urak-accent-blue hover:text-urak-accent-blue/80">
               Ota yhteyttä tukeen
             </a>
           </p>
