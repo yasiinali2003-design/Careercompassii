@@ -172,10 +172,18 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Only protect /teacher/* routes (except /teacher/login and /api/teacher-auth)
+  // Only protect /teacher/* routes (except auth-related pages)
   if (pathname.startsWith('/teacher')) {
-    // Allow access to login page and auth API
-    if (pathname === '/teacher/login' || pathname.startsWith('/api/teacher-auth')) {
+    // Allow access to login, first-login, password setup, forgot/reset password pages
+    const publicTeacherPaths = [
+      '/teacher/login',
+      '/teacher/first-login',
+      '/teacher/setup-password',
+      '/teacher/forgot-password',
+      '/teacher/reset-password'
+    ];
+
+    if (publicTeacherPaths.includes(pathname) || pathname.startsWith('/api/teacher-auth')) {
       return NextResponse.next();
     }
 

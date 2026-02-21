@@ -184,12 +184,18 @@ export default function TeacherLoginPage() {
             </form>
 
             {/* Forgot Password Link */}
-            <div className="mt-4 text-center">
+            <div className="mt-4 text-center space-y-2">
               <Link
                 href="/teacher/forgot-password"
-                className="text-sm text-urak-accent-blue hover:text-urak-accent-blue/80 transition-colors"
+                className="block text-sm text-urak-accent-blue hover:text-urak-accent-blue/80 transition-colors"
               >
                 Unohditko salasanan?
+              </Link>
+              <Link
+                href="/teacher/first-login"
+                className="block text-sm text-urak-text-secondary hover:text-white transition-colors"
+              >
+                Ensimmäinen kirjautuminen? Aktivoi tili pääsykoodilla
               </Link>
             </div>
 

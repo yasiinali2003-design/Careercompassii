@@ -139,24 +139,24 @@ export default function SetupPasswordPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-urak-bg flex items-center justify-center p-4">
       <div className="max-w-md w-full">
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+        <div className="bg-urak-surface rounded-2xl shadow-xl p-8 border border-white/10">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500/20 rounded-full mb-4">
+              <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            <h1 className="text-3xl font-bold text-white mb-2">
               Tervetuloa{teacherName ? `, ${teacherName}` : ''}!
             </h1>
-            <p className="text-gray-600">
+            <p className="text-urak-text-secondary">
               Aseta salasana tilillesi
             </p>
             {teacherEmail && (
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-urak-text-tertiary mt-1">
                 {teacherEmail}
               </p>
             )}
@@ -165,13 +165,13 @@ export default function SetupPasswordPage() {
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+              <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm">
                 {error}
               </div>
             )}
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-neutral-200 mb-2">
                 Salasana
               </label>
               <div className="relative">
@@ -181,7 +181,7 @@ export default function SetupPasswordPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Vähintään 10 merkkiä"
-                  className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 pr-12 bg-white/5 border border-urak-border rounded-lg focus:ring-2 focus:ring-urak-accent-blue/40 text-white placeholder:text-gray-500"
                   required
                   autoFocus
                   minLength={10}
@@ -191,7 +191,7 @@ export default function SetupPasswordPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
                 >
                   {showPassword ? (
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -228,13 +228,13 @@ export default function SetupPasswordPage() {
                 </div>
               )}
 
-              <p className="mt-2 text-sm text-gray-500">
+              <p className="mt-2 text-sm text-urak-text-tertiary">
                 Vinkki: Käytä helposti muistettavaa lausetta, kuten &ldquo;kahvi-opettaja-kirja-2026&rdquo;
               </p>
             </div>
 
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-neutral-200 mb-2">
                 Vahvista salasana
               </label>
               <input
@@ -243,7 +243,7 @@ export default function SetupPasswordPage() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="Kirjoita salasana uudelleen"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 bg-white/5 border border-urak-border rounded-lg focus:ring-2 focus:ring-urak-accent-blue/40 text-white placeholder:text-gray-500"
                 required
                 minLength={10}
                 maxLength={128}
@@ -254,7 +254,7 @@ export default function SetupPasswordPage() {
             <button
               type="submit"
               disabled={loading || !password || !confirmPassword || password !== confirmPassword || password.length < 10}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+              className="w-full bg-urak-accent-blue hover:bg-urak-accent-blue/90 text-urak-bg font-semibold py-3 px-4 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
               {loading ? (
                 <>
