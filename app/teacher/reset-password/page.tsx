@@ -238,7 +238,7 @@ function ResetPasswordForm() {
               )}
 
               <p className="mt-2 text-sm text-gray-500">
-                Vinkki: Käytä helposti muistettavaa lausetta, kuten "kahvi-opettaja-kirja-2026"
+                Vinkki: Käytä helposti muistettavaa lausetta, kuten &ldquo;kahvi-opettaja-kirja-2026&rdquo;
               </p>
             </div>
 

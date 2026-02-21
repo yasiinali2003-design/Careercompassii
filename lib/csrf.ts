@@ -8,7 +8,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { generateSecureToken } from './security';
+import crypto from 'crypto';
 
 const CSRF_COOKIE_NAME = 'csrf_token';
 const CSRF_HEADER_NAME = 'x-csrf-token';
@@ -18,7 +18,7 @@ const CSRF_TOKEN_LENGTH = 32;
  * Generate a new CSRF token
  */
 export function generateCsrfToken(): string {
-  return generateSecureToken(CSRF_TOKEN_LENGTH);
+  return crypto.randomBytes(CSRF_TOKEN_LENGTH).toString('hex');
 }
 
 /**
