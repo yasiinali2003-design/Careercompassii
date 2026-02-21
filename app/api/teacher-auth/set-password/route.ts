@@ -218,7 +218,7 @@ export async function POST(request: NextRequest) {
     const response = NextResponse.json({
       success: true,
       message: 'Salasana asetettu onnistuneesti!',
-      redirectTo: '/teacher/dashboard',
+      redirectTo: '/teacher/classes',
       teacher: {
         id: teacher.id,
         name: teacher.name,

@@ -128,8 +128,8 @@ export default function SetupPasswordPage() {
         sessionStorage.removeItem('teacher_name');
         sessionStorage.removeItem('teacher_email');
 
-        // Redirect to dashboard
-        router.push(data.redirectTo || '/teacher/dashboard');
+        // Redirect to classes page
+        router.push(data.redirectTo || '/teacher/classes');
       }
     } catch (err) {
       setError('Yhteyden muodostaminen epäonnistui');
