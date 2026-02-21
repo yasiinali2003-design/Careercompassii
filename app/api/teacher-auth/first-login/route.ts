@@ -30,11 +30,8 @@ const FirstLoginSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
-    // Check rate limit (5 attempts per 15 min per IP)
-    const rateLimitCheck = await checkRateLimit(request, {
-      maxRequests: 5,
-      windowMs: 15 * 60 * 1000,
-    });
+    // Check rate limit (configured in lib/rateLimit.ts)
+    const rateLimitCheck = await checkRateLimit(request);
 
     if (rateLimitCheck) {
       return NextResponse.json(
@@ -155,6 +152,7 @@ export async function POST(request: NextRequest) {
     // Update database with hashed token
     const { error: updateError } = await supabaseAdmin
       .from('teachers')
+      // @ts-expect-error - Supabase types need regeneration after schema changes
       .update({
         temp_token_hash: tempTokenHash,
         temp_token_expires: expiresAt.toISOString()

@@ -85,11 +85,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check rate limit (5 attempts per 15 min per IP)
-    const rateLimitCheck = await checkRateLimit(request, {
-      maxRequests: 5,
-      windowMs: 15 * 60 * 1000,
-    });
+    // Check rate limit (configured in lib/rateLimit.ts)
+    const rateLimitCheck = await checkRateLimit(request);
 
     if (rateLimitCheck) {
       return NextResponse.json(
@@ -207,6 +204,7 @@ export async function POST(request: NextRequest) {
         log.debug(`Lock expired for account ${teacher.id}, resetting`);
         await supabaseAdmin
           .from('teachers')
+          // @ts-expect-error - Supabase types need regeneration after schema changes
           .update({
             locked_until: null,
             failed_login_attempts: 0
@@ -252,6 +250,7 @@ export async function POST(request: NextRequest) {
 
       await supabaseAdmin
         .from('teachers')
+        // @ts-expect-error - Supabase types need regeneration after schema changes
         .update(updateData)
         .eq('id', teacher.id);
 
@@ -268,6 +267,7 @@ export async function POST(request: NextRequest) {
     const now = new Date().toISOString();
     await supabaseAdmin
       .from('teachers')
+      // @ts-expect-error - Supabase types need regeneration after schema changes
       .update({
         failed_login_attempts: 0,
         locked_until: null,

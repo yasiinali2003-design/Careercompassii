@@ -41,11 +41,8 @@ const SetPasswordSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
-    // Check rate limit (10 attempts per 15 min per IP)
-    const rateLimitCheck = await checkRateLimit(request, {
-      maxRequests: 10,
-      windowMs: 15 * 60 * 1000,
-    });
+    // Check rate limit (configured in lib/rateLimit.ts)
+    const rateLimitCheck = await checkRateLimit(request);
 
     if (rateLimitCheck) {
       return NextResponse.json(
@@ -193,6 +190,7 @@ export async function POST(request: NextRequest) {
     const now = new Date().toISOString();
     const { error: updateError } = await supabaseAdmin
       .from('teachers')
+      // @ts-expect-error - Supabase types need regeneration after schema changes
       .update({
         password_hash: passwordHash,
         password_set_at: now,

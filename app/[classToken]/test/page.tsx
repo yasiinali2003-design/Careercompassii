@@ -80,7 +80,7 @@ export default function StudentLoginPage({
                 onChange={(e) => setPin(normalizePin(e.target.value))}
                 placeholder="esim. A4K7"
                 maxLength={6}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-center font-mono text-2xl uppercase tracking-widest"
+                className="w-full px-4 py-3 bg-urak-surface border border-white/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-center font-mono text-2xl uppercase tracking-widest text-white placeholder:text-neutral-500"
               />
               <p className="text-sm text-neutral-400 mt-1">
                 Anna opettajasi antama PIN-koodi

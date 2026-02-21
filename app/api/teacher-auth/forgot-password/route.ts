@@ -35,11 +35,8 @@ const ForgotPasswordSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
-    // Strict rate limiting (3 attempts per hour per IP)
-    const rateLimitCheck = await checkRateLimit(request, {
-      maxRequests: 3,
-      windowMs: 60 * 60 * 1000, // 1 hour
-    });
+    // Strict rate limiting (configured in lib/rateLimit.ts)
+    const rateLimitCheck = await checkRateLimit(request);
 
     if (rateLimitCheck) {
       return NextResponse.json(
@@ -179,6 +176,7 @@ export async function POST(request: NextRequest) {
     // Update database with hashed token
     const { error: updateError } = await supabaseAdmin
       .from('teachers')
+      // @ts-expect-error - Supabase types need regeneration after schema changes
       .update({
         reset_token_hash: resetTokenHash,
         reset_token_expires: expiresAt.toISOString()
