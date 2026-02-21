@@ -14,7 +14,10 @@ const resend = process.env.RESEND_API_KEY
   : null;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-const FROM_EMAIL = 'CareerCompassi <noreply@careercompassi.fi>';
+
+// Use onboarding@resend.dev for testing (always works with any Resend API key)
+// Change to your verified domain email when you verify careercompassi.fi in Resend
+const FROM_EMAIL = process.env.FROM_EMAIL || 'onboarding@resend.dev';
 
 /**
  * Send password reset email to teacher
