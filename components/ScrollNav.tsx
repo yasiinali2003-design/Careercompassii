@@ -82,25 +82,25 @@ export default function ScrollNav() {
         <div className="flex items-center gap-4 md:gap-8">
           <Link
             href="/#miten"
-            className="text-xs md:text-sm font-medium text-neutral-300 hover:text-white transition-all duration-300 hover:scale-105"
+            className="text-xs md:text-sm font-medium text-white/90 hover:text-white transition-all duration-300 hover:scale-105"
           >
             Miten toimii
           </Link>
           <Link
             href="/ammatit"
-            className="text-xs md:text-sm font-medium text-neutral-300 hover:text-white transition-all duration-300 hover:scale-105"
+            className="text-xs md:text-sm font-medium text-white/90 hover:text-white transition-all duration-300 hover:scale-105"
           >
             Urakirjasto
           </Link>
           <Link
             href="/meista"
-            className="text-xs md:text-sm font-medium text-neutral-300 hover:text-white transition-all duration-300 hover:scale-105"
+            className="text-xs md:text-sm font-medium text-white/90 hover:text-white transition-all duration-300 hover:scale-105"
           >
             Meistä
           </Link>
           <Link
             href="/teacher/login"
-            className="text-xs md:text-sm font-medium text-neutral-300 hover:text-white transition-all duration-300 hover:scale-105"
+            className="text-xs md:text-sm font-medium text-white/90 hover:text-white transition-all duration-300 hover:scale-105"
           >
             Opettajille
           </Link>
