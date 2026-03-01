@@ -23,12 +23,176 @@ function getScoreLevel(score: number): 'high' | 'medium' | 'low' {
 function getTopSubdimensions(detailedScores: DetailedDimensionScores, dimension: keyof DetailedDimensionScores, limit: number = 2): string[] {
   const scores = detailedScores[dimension];
   if (!scores || typeof scores !== 'object') return [];
-  
+
   return Object.entries(scores)
     .filter(([, score]) => typeof score === 'number' && score > 0.5)
     .sort((a, b) => (b[1] as number) - (a[1] as number))
     .slice(0, limit)
     .map(([key]) => key);
+}
+
+// ========== FINNISH GRAMMAR HELPERS ==========
+
+/**
+ * Finnish declension table for all strength labels
+ * Maps display labels to their grammatical forms in different cases
+ */
+const STRENGTH_DECLENSIONS: Record<string, {
+  nominative: string;
+  partitive: string;
+  genitive: string;
+  inessive: string;
+}> = {
+  // Values
+  'Kasvu': { nominative: 'kasvu', partitive: 'kasvua', genitive: 'kasvun', inessive: 'kasvussa' },
+  'Vaikuttaminen': { nominative: 'vaikuttaminen', partitive: 'vaikuttamista', genitive: 'vaikuttamisen', inessive: 'vaikuttamisessa' },
+  'Kansainvälinen': { nominative: 'kansainvälisyys', partitive: 'kansainvälisyyttä', genitive: 'kansainvälisyyden', inessive: 'kansainvälisyydessä' },
+  'Uran selkeys': { nominative: 'uran selkeys', partitive: 'uran selkeyttä', genitive: 'uran selkeyden', inessive: 'uran selkeydessä' },
+  'Talous': { nominative: 'talous', partitive: 'taloutta', genitive: 'talouden', inessive: 'taloudessa' },
+  'Yrittäjyys': { nominative: 'yrittäjyys', partitive: 'yrittäjyyttä', genitive: 'yrittäjyyden', inessive: 'yrittäjyydessä' },
+  'Sosiaalinen vaikutus': { nominative: 'sosiaalinen vaikutus', partitive: 'sosiaalista vaikutusta', genitive: 'sosiaalisen vaikutuksen', inessive: 'sosiaalisessa vaikutuksessa' },
+  'Vakaus': { nominative: 'vakaus', partitive: 'vakautta', genitive: 'vakauden', inessive: 'vakaudessa' },
+  'Urakehitys': { nominative: 'urakehitys', partitive: 'urakehitystä', genitive: 'urakehityksen', inessive: 'urakehityksessä' },
+  'Työ-elämä-tasapaino': { nominative: 'työ-elämä-tasapaino', partitive: 'työ-elämä-tasapainoa', genitive: 'työ-elämä-tasapainon', inessive: 'työ-elämä-tasapainossa' },
+  'Yrityksen koko': { nominative: 'yrityksen koko', partitive: 'yrityksen kokoa', genitive: 'yrityksen koon', inessive: 'yrityksen koossa' },
+
+  // Interests
+  'Vahva teknologiakiinnostus': { nominative: 'teknologiakiinnostus', partitive: 'teknologiakiinnostusta', genitive: 'teknologiakiinnostuksen', inessive: 'teknologiakiinnostuksessa' },
+  'Ihmiskeskeisyys': { nominative: 'ihmiskeskeisyys', partitive: 'ihmiskeskeisyyttä', genitive: 'ihmiskeskeisyyden', inessive: 'ihmiskeskeisyydessä' },
+  'Luovuus ja innovatiivisuus': { nominative: 'luovuus', partitive: 'luovuutta', genitive: 'luovuuden', inessive: 'luovuudessa' },
+  'Analyyttinen ajattelu': { nominative: 'analyyttinen ajattelu', partitive: 'analyyttistä ajattelua', genitive: 'analyyttisen ajattelun', inessive: 'analyyttisessa ajattelussa' },
+  'Käytännön tekeminen': { nominative: 'käytännön tekeminen', partitive: 'käytännön tekemistä', genitive: 'käytännön tekemisen', inessive: 'käytännön tekemisessä' },
+  'Yritystoiminta ja liiketoiminta': { nominative: 'yritystoiminta', partitive: 'yritystoimintaa', genitive: 'yritystoiminnan', inessive: 'yritystoiminnassa' },
+  'Ympäristökiinnostus': { nominative: 'ympäristökiinnostus', partitive: 'ympäristökiinnostusta', genitive: 'ympäristökiinnostuksen', inessive: 'ympäristökiinnostuksessa' },
+  'Terveysala': { nominative: 'terveysala', partitive: 'terveysalaa', genitive: 'terveysalan', inessive: 'terveysalalla' },
+  'Kasvatus ja opetus': { nominative: 'opetus', partitive: 'opetusta', genitive: 'opetuksen', inessive: 'opetuksessa' },
+  'Innovatiivisuus': { nominative: 'innovatiivisuus', partitive: 'innovatiivisuutta', genitive: 'innovatiivisuuden', inessive: 'innovatiivisuudessa' },
+  'Taide ja kulttuuri': { nominative: 'taide', partitive: 'taidetta', genitive: 'taiteen', inessive: 'taiteessa' },
+  'Urheilu': { nominative: 'urheilu', partitive: 'urheilua', genitive: 'urheilun', inessive: 'urheilussa' },
+  'Luonto': { nominative: 'luonto', partitive: 'luontoa', genitive: 'luonnon', inessive: 'luonnossa' },
+  'Kirjoittaminen': { nominative: 'kirjoittaminen', partitive: 'kirjoittamista', genitive: 'kirjoittamisen', inessive: 'kirjoittamisessa' },
+
+  // Workstyle
+  'Tiimityöskentely': { nominative: 'tiimityöskentely', partitive: 'tiimityöskentelyä', genitive: 'tiimityöskentelyn', inessive: 'tiimityöskentelyssä' },
+  'Itsenäinen työskentely': { nominative: 'itsenäinen työskentely', partitive: 'itsenäistä työskentelyä', genitive: 'itsenäisen työskentelyn', inessive: 'itsenäisessä työskentelyssä' },
+  'Johtaminen': { nominative: 'johtaminen', partitive: 'johtamista', genitive: 'johtamisen', inessive: 'johtamisessa' },
+  'Organisointikyky': { nominative: 'organisointikyky', partitive: 'organisointikykyä', genitive: 'organisointikyvyn', inessive: 'organisointikyvyssä' },
+  'Suunnittelu': { nominative: 'suunnittelu', partitive: 'suunnittelua', genitive: 'suunnittelun', inessive: 'suunnittelussa' },
+  'Ongelmanratkaisukyky': { nominative: 'ongelmanratkaisu', partitive: 'ongelmanratkaisua', genitive: 'ongelmanratkaisun', inessive: 'ongelmanratkaisussa' },
+  'Tarkkuus': { nominative: 'tarkkuus', partitive: 'tarkkuutta', genitive: 'tarkkuuden', inessive: 'tarkkuudessa' },
+  'Suorituskyky': { nominative: 'suorituskyky', partitive: 'suorituskykyä', genitive: 'suorituskyvyn', inessive: 'suorituskyvyssä' },
+  'Opetus': { nominative: 'opetus', partitive: 'opetusta', genitive: 'opetuksen', inessive: 'opetuksessa' },
+  'Motivaatio': { nominative: 'motivaatio', partitive: 'motivaatiota', genitive: 'motivaation', inessive: 'motivaatiossa' },
+  'Autonomia': { nominative: 'autonomia', partitive: 'autonomiaa', genitive: 'autonomian', inessive: 'autonomiassa' },
+  'Sosiaalisuus': { nominative: 'sosiaalisuus', partitive: 'sosiaalisuutta', genitive: 'sosiaalisuuden', inessive: 'sosiaalisuudessa' },
+  'Rakenne': { nominative: 'rakenne', partitive: 'rakennetta', genitive: 'rakenteen', inessive: 'rakenteessa' },
+  'Joustavuus': { nominative: 'joustavuus', partitive: 'joustavuutta', genitive: 'joustavuuden', inessive: 'joustavuudessa' },
+  'Monipuolisuus': { nominative: 'monipuolisuus', partitive: 'monipuolisuutta', genitive: 'monipuolisuuden', inessive: 'monipuolisuudessa' },
+
+  // Context
+  'Ulkotyö': { nominative: 'ulkotyö', partitive: 'ulkotyötä', genitive: 'ulkotyön', inessive: 'ulkotyössä' },
+  'Työympäristö': { nominative: 'työympäristö', partitive: 'työympäristöä', genitive: 'työympäristön', inessive: 'työympäristössä' }
+};
+
+/**
+ * Format strength label with proper Finnish grammar case
+ * @param strength - Display label (e.g., "Kasvu", "Opetus")
+ * @param grammaticalCase - Finnish case to use
+ * @returns Properly declined form in lowercase
+ */
+function formatStrength(
+  strength: string | undefined,
+  grammaticalCase: 'nominative' | 'partitive' | 'genitive' | 'inessive'
+): string {
+  if (!strength) return '';
+
+  const declension = STRENGTH_DECLENSIONS[strength];
+  if (declension) {
+    return declension[grammaticalCase];
+  }
+
+  // Fallback: use as-is in lowercase
+  console.warn(`[formatStrength] No declension found for: "${strength}"`);
+  return strength.toLowerCase();
+}
+
+/**
+ * Detect if strengths are diverse (spanning multiple areas) or focused (clustered in one area)
+ * @param strengths - Array of strength display labels
+ * @returns Object with diversity score (0-1) and main area
+ */
+function detectStrengthCategories(strengths: string[]): {
+  diversity: number;
+  mainArea: string;
+  isDiverse: boolean;
+} {
+  // Group strengths by thematic category
+  const categoryMap: Record<string, string> = {
+    'Kasvu': 'kehitys',
+    'Vaikuttaminen': 'vaikutus',
+    'Opetus': 'opetus',
+    'Kasvatus ja opetus': 'opetus',
+    'Urheilu': 'urheilu',
+    'Terveysala': 'terveys',
+    'Ihmiskeskeisyys': 'ihmistyö',
+    'Sosiaalinen vaikutus': 'ihmistyö',
+    'Sosiaalisuus': 'ihmistyö',
+    'Vahva teknologiakiinnostus': 'teknologia',
+    'Analyyttinen ajattelu': 'teknologia',
+    'Innovatiivisuus': 'teknologia',
+    'Luovuus ja innovatiivisuus': 'luova',
+    'Taide ja kulttuuri': 'luova',
+    'Kirjoittaminen': 'luova',
+    'Yritystoiminta ja liiketoiminta': 'liiketoiminta',
+    'Yrittäjyys': 'liiketoiminta',
+    'Johtaminen': 'liiketoiminta',
+    'Käytännön tekeminen': 'käytäntö',
+    'Ulkotyö': 'käytäntö',
+    'Luonto': 'luonto',
+    'Ympäristökiinnostus': 'ympäristö',
+    'Tiimityöskentely': 'yhteistyö',
+    'Itsenäinen työskentely': 'itsenäisyys',
+    'Organisointikyky': 'organisointi',
+    'Suunnittelu': 'organisointi',
+    'Tarkkuus': 'organisointi',
+    'Ongelmanratkaisukyky': 'ongelmanratkaisu',
+    'Motivaatio': 'motivaatio',
+    'Urakehitys': 'kehitys',
+    'Vakaus': 'vakaus',
+    'Joustavuus': 'joustavuus',
+    'Monipuolisuus': 'monipuolisuus',
+    'Työ-elämä-tasapaino': 'tasapaino',
+    'Talous': 'talous',
+    'Kansainvälinen': 'kansainvälisyys',
+    'Autonomia': 'itsenäisyys',
+    'Rakenne': 'rakenne',
+    'Suorituskyky': 'suoritus',
+    'Työympäristö': 'ympäristö',
+    'Uran selkeys': 'selkeys',
+    'Yrityksen koko': 'organisaatio'
+  };
+
+  const categories = strengths.map(s => categoryMap[s] || 'muu');
+  const uniqueCategories = new Set(categories);
+
+  // Calculate diversity (0 = all same category, 1 = all different)
+  const diversity = uniqueCategories.size / Math.max(strengths.length, 1);
+
+  // Find most common category
+  const categoryCounts: Record<string, number> = {};
+  categories.forEach(cat => {
+    categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+  });
+
+  const sortedCategories = Object.entries(categoryCounts)
+    .sort(([, a], [, b]) => b - a);
+
+  const mainArea = sortedCategories[0]?.[0] || 'muu';
+
+  // Diverse if more than 60% different categories
+  const isDiverse = diversity > 0.6;
+
+  return { diversity, mainArea, isDiverse };
 }
 
 // ========== ESSAY OPENING (Sets the tone & validates user) ==========
@@ -184,6 +348,64 @@ const STRENGTH_NARRATIVES = {
   }
 };
 
+// ========== INTEGRATED STRENGTH NARRATIVES (Uses all 5 strengths) ==========
+
+const INTEGRATED_STRENGTH_NARRATIVES = {
+  YLA: {
+    diverse_strengths: [
+      "Vastauksistasi nousee selkeästi esiin {primary_strength}. Tämä yhdistyy mielenkiintoisella tavalla siihen, miten pidät {secondary_strength}. Lisäksi sinulla on vahva {tertiary_strength}, mikä täydentää profiiliasi monipuolisesti. Näiden lisäksi {fourth_strength} ja {fifth_strength} tuovat mukaan lisäulottuvuuksia. Näiden vahvuuksien yhdistelmä on ainutlaatuinen ja avaa ovia monenlaisiin ammatteihin.",
+
+      "Profiilistasi erottuu monipuolinen yhdistelmä erilaisia vahvuuksia. {Primary_strength} muodostaa vahvan perustan, jota täydentävät {secondary_strength} ja {tertiary_strength}. Myös {fourth_strength} sekä {fifth_strength} nousevat vastauksistasi esiin. Harvalla on näin tasapainoinen vahvuuksien yhdistelmä jo tässä vaiheessa.",
+
+      "Vastauksesi paljastavat monipuolisen kiinnostusprofiilin. {Primary_strength} yhdistyy {secondary_strength}, mikä luo hienon pohjan. {Tertiary_strength} tuo mukanaan lisäväriä, samoin kuin {fourth_strength} ja {fifth_strength}. Tämä vahvuuksien kirjo antaa sinulle joustavuutta valita monen tyyppisiä urapolkuja."
+    ],
+
+    focused_strengths: [
+      "Vastauksistasi välittyy selkeä suunta. {Primary_strength} on sinulla vahvana, ja tätä tukevat {secondary_strength} sekä {tertiary_strength}. Myös {fourth_strength} ja {fifth_strength} vahvistavat tätä suuntaa. Tämä johdonmukaisuus on vahvuus – tiedät mitä haluat ja mihin suuntaan haluat kehittyä.",
+
+      "On hienoa nähdä, kuinka johdonmukaisesti vahvuutesi tukevat toisiaan. {Primary_strength} saa vahvaa tukea siitä, että nautit {secondary_strength} ja sinulla on {tertiary_strength}. {Fourth_strength} yhdessä {fifth_strength} kanssa luovat selkeän profiilin, joka osoittaa mihin suuntaan sinua vetää.",
+
+      "Vahvuutesi muodostavat yhtenäisen kokonaisuuden. {Primary_strength} yhdistyy luontevasti {secondary_strength}, ja {tertiary_strength} täydentää kuvaa. {Fourth_strength} sekä {fifth_strength} tuovat lopun siihen, mikä tekee profiilisi erityiseksi – selkeä fokus alueilla, jotka kiinnostavat sinua aidosti."
+    ]
+  },
+
+  TASO2: {
+    diverse_strengths: [
+      "Kun tarkastellaan vahvuuksiasi kokonaisuutena, esiin nousee monipuolinen profiili. {Primary_strength} erottuu vahvimpana, mutta myös {secondary_strength} ja {tertiary_strength} ovat selkeitä vahvuuksia. {Fourth_strength} sekä {fifth_strength} täydentävät kuvaa monipuolisella tavalla. Tämä vahvuuksien yhdistelmä antaa sinulle joustavuutta valita eri alojen välillä.",
+
+      "Profiilissasi korostuu monipuolisuus. {Primary_strength} muodostaa yhden keskeisen vahvuuden, kun taas {secondary_strength} ja {tertiary_strength} tuovat mukanaan eri ulottuvuuksia. {Fourth_strength} yhdessä {fifth_strength} kanssa laajentavat mahdollisuuksiasi entisestään. Tämä kirjo on arvokas ominaisuus, joka erottaa sinut muista.",
+
+      "Vahvuutesi kattavat laajan kirjon. {Primary_strength} on yksi näistä, samoin kuin {secondary_strength} ja {tertiary_strength}. {Fourth_strength} ja {fifth_strength} tuovat vielä lisää syvyyttä profiiliisi. Tällä vahvuuksien yhdistelmällä voit menestyä monenlaisissa tehtävissä ja ympäristöissä."
+    ],
+
+    focused_strengths: [
+      "Vahvuutesi muodostavat selkeän kokonaisuuden. {Primary_strength} on keskeinen vahvuutesi, ja sitä tukevat vahvasti {secondary_strength} sekä {tertiary_strength}. {Fourth_strength} ja {fifth_strength} vahvistavat tätä linjaa entisestään. Tämä fokus on etu, sillä se auttaa sinua rakentamaan vahvaa osaamista tietyllä alueella.",
+
+      "On selvästi nähtävissä yhtenäinen linja vahvuuksissasi. {Primary_strength} saa tukea {secondary_strength} ja {tertiary_strength} kautta. {Fourth_strength} yhdessä {fifth_strength} kanssa syventävät tätä suuntaa. Tämä johdonmukaisuus kertoo siitä, että olet löytämässä oman polkusi.",
+
+      "Vahvuutesi tukevat toisiaan hienosti. {Primary_strength} muodostaa vahvan perustan, jota {secondary_strength} ja {tertiary_strength} täydentävät. {Fourth_strength} sekä {fifth_strength} vahvistavat kokonaisuutta. Tämä selkeä suunta helpottaa jatko-opintojen ja uran suunnittelua."
+    ]
+  },
+
+  NUORI: {
+    diverse_strengths: [
+      "Profiilisi osoittaa monipuolista osaamista. {Primary_strength} korostuu vahvimmin, mutta myös {secondary_strength} ja {tertiary_strength} ovat merkittäviä vahvuuksia. {Fourth_strength} yhdessä {fifth_strength} kanssa täydentävät profiilin. Tämä vahvuuksien kirjo antaa sinulle mahdollisuuden työskennellä monenlaisissa rooleissa ja ympäristöissä.",
+
+      "Vahvuutesi kattavat laajan alueen. {Primary_strength} on yksi keskeinen vahvuus, samoin kuin {secondary_strength} ja {tertiary_strength}. {Fourth_strength} sekä {fifth_strength} tuovat mukanaan lisäulottuvuuksia. Tämä monipuolisuus on arvokas kilpailuetu nykyisillä työmarkkinoilla.",
+
+      "Profiilissasi yhdistyy useita arvostettuja vahvuuksia. {Primary_strength} erottuu selkeänä, mutta myös {secondary_strength} ja {tertiary_strength} ovat vahvoja alueita. {Fourth_strength} ja {fifth_strength} tuovat profiiliin syvyyttä. Tämä yhdistelmä tekee sinusta monipuolisen ammattilaisen."
+    ],
+
+    focused_strengths: [
+      "Vahvuutesi muodostavat yhtenäisen ja selkeän profiilin. {Primary_strength} on keskiössä, ja sitä tukevat vahvasti {secondary_strength} sekä {tertiary_strength}. {Fourth_strength} ja {fifth_strength} vahvistavat tätä linjaa. Tämä johdonmukaisuus auttaa sinua rakentamaan vahvaa brändiä omalla alallasi.",
+
+      "Profiilisi osoittaa selkeää fokusta. {Primary_strength} muodostaa vahvan perustan, jota {secondary_strength} ja {tertiary_strength} täydentävät tehokkaasti. {Fourth_strength} yhdessä {fifth_strength} kanssa syventävät osaamistasi. Tämä keskittyminen tietylle alueelle on strateginen vahvuus.",
+
+      "Vahvuutesi tukevat toisiaan ammatillisesti. {Primary_strength} on ytimessä, ja {secondary_strength} sekä {tertiary_strength} vahvistavat sitä. {Fourth_strength} ja {fifth_strength} tuovat lisäarvoa kokonaisuuteen. Tämä linjassa oleva vahvuuksien profiili erottaa sinut asiantuntijana."
+    ]
+  }
+};
+
 // ========== FUTURE-ORIENTED ADVICE (Action steps) ==========
 
 const FUTURE_ADVICE = {
@@ -320,36 +542,47 @@ export function generatePersonalizedAnalysis(
   }
   
   // 3. STRENGTHS & SUBDIMENSIONS (300-400 chars) - Deep dive into what makes them unique
-  if (topStrengths && topStrengths.length > 0 && detailedScores) {
-    const strengthsText = topStrengths.slice(0, 2).join(' ja ');
-    
-    // Get top subdimensions for quality description
-    const topSubs = [
-      ...getTopSubdimensions(detailedScores!, 'interests', 2),
-      ...getTopSubdimensions(detailedScores!, 'workstyle', 2)
-    ];
-    
-    let subdimQuality = '';
-    if (topSubs.length > 0) {
-      const subKey = topSubs.length === 1 
-        ? `${topSubs[0]}_high` as keyof typeof SUBDIMENSION_QUALITIES
-        : 'multiple_high';
-      const quality = SUBDIMENSION_QUALITIES[subKey];
-      if (quality) {
-        subdimQuality = quality[cohort];
-      }
-    }
-    
-    const hasSubdims = subdimQuality.length > 0;
-    const narrativeType = hasSubdims ? 'with_subdimensions' : 'without_subdimensions';
-    const narratives = STRENGTH_NARRATIVES[cohort][narrativeType];
-    
+  if (topStrengths && topStrengths.length > 0) {
+    // Extract all 5 strengths (not just top 2)
+    const [primary, secondary, tertiary, fourth, fifth] = topStrengths;
+
+    // Detect if strengths are diverse or focused
+    const { isDiverse } = detectStrengthCategories(topStrengths);
+    const narrativeType = isDiverse ? 'diverse_strengths' : 'focused_strengths';
+
+    // Format strengths with proper Finnish grammar cases
+    const primaryNom = formatStrength(primary, 'nominative');
+    const primaryGen = formatStrength(primary, 'genitive');
+    const secondaryPart = formatStrength(secondary, 'partitive');
+    const tertiaryNom = formatStrength(tertiary, 'nominative');
+    const fourthPart = formatStrength(fourth, 'partitive');
+    const fifthNom = formatStrength(fifth, 'nominative');
+
+    // Capitalize first letter for sentence start
+    const primaryCapitalized = primaryNom.charAt(0).toUpperCase() + primaryNom.slice(1);
+
+    // Build replacements object for all placeholders
+    const replacements: Record<string, string> = {
+      '{primary_strength}': primaryNom,
+      '{Primary_strength}': primaryCapitalized,
+      '{primary_strength_gen}': primaryGen,
+      '{secondary_strength}': secondaryPart,
+      '{tertiary_strength}': tertiaryNom,
+      '{fourth_strength}': fourthPart,
+      '{fifth_strength}': fifthNom
+    };
+
+    // Select narrative template from INTEGRATED_STRENGTH_NARRATIVES
+    const narratives = INTEGRATED_STRENGTH_NARRATIVES[cohort]?.[narrativeType];
+
     if (narratives && narratives.length > 0) {
       let narrative = narratives[Math.floor(Math.random() * narratives.length)];
-      narrative = narrative.replace('{strengths}', strengthsText.toLowerCase());
-      if (hasSubdims) {
-        narrative = narrative.replace('{subdim_quality}', subdimQuality);
-      }
+
+      // Replace all placeholders
+      Object.entries(replacements).forEach(([placeholder, value]) => {
+        narrative = narrative.replace(new RegExp(placeholder.replace(/[{}]/g, '\\$&'), 'g'), value);
+      });
+
       sections.push(narrative);
     }
   }
