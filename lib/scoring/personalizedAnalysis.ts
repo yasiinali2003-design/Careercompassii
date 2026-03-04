@@ -195,6 +195,131 @@ function detectStrengthCategories(strengths: string[]): {
   return { diversity, mainArea, isDiverse };
 }
 
+// ========== SYNERGY ANALYSIS (Analyzes how strengths work together) ==========
+
+type SynergyType = 'complementary' | 'amplifying' | 'balancing';
+
+interface StrengthSynergy {
+  primaryPair: [string, string];
+  synergyType: SynergyType;
+  description: string;
+}
+
+/**
+ * Analyzes how the top 2-3 strengths work together to create unique value
+ * Returns synergy information that can be used to personalize narratives
+ */
+function analyzeStrengthSynergies(strengths: string[]): StrengthSynergy {
+  if (strengths.length < 2) {
+    return {
+      primaryPair: [strengths[0] || '', ''],
+      synergyType: 'complementary',
+      description: 'yksilöllinen vahvuus'
+    };
+  }
+
+  const [primary, secondary] = strengths;
+
+  // Category mapping (reusing from detectStrengthCategories)
+  const categoryMap: Record<string, string> = {
+    'Kasvu': 'kehitys',
+    'Vaikuttaminen': 'vaikuttaminen',
+    'Sosiaalisuus': 'yhteistyö',
+    'Empatia': 'yhteistyö',
+    'Analyyttinen ajattelu': 'analytiikka',
+    'Luovuus': 'luova',
+    'Itsenäinen työskentely': 'itsenäisyys',
+    'Tiimityöskentely': 'yhteistyö',
+    'Käytännön tekeminen': 'käytäntö',
+    'Talous': 'liiketoiminta',
+    'Yrittäjyys': 'liiketoiminta',
+    'Johtaminen': 'liiketoiminta',
+    'Työ-elämä-tasapaino': 'tasapaino',
+    'Kansainvälinen': 'kansainvälisyys',
+    'Innovatiivisuus': 'luova'
+  };
+
+  const cat1 = categoryMap[primary] || 'muu';
+  const cat2 = categoryMap[secondary] || 'muu';
+
+  // Determine synergy type based on category combinations
+  let synergyType: SynergyType;
+  let description: string;
+
+  // Complementary: Different categories that cover different aspects
+  if (cat1 !== cat2) {
+    synergyType = 'complementary';
+
+    // Technical + Social
+    if ((cat1 === 'analytiikka' && cat2 === 'yhteistyö') ||
+        (cat1 === 'yhteistyö' && cat2 === 'analytiikka')) {
+      description = 'yhdistät teknisen osaamisen ja ihmissuhdetaidot';
+    }
+    // Creative + Analytical
+    else if ((cat1 === 'luova' && cat2 === 'analytiikka') ||
+             (cat1 === 'analytiikka' && cat2 === 'luova')) {
+      description = 'yhdistät luovuuden ja analyyttisyyden harvinaisella tavalla';
+    }
+    // Business + Social
+    else if ((cat1 === 'liiketoiminta' && cat2 === 'yhteistyö') ||
+             (cat1 === 'yhteistyö' && cat2 === 'liiketoiminta')) {
+      description = 'ymmärrät sekä liiketoiminnan että ihmisten johtamisen';
+    }
+    // Global + Development
+    else if ((cat1 === 'kansainvälisyys' && cat2 === 'kehitys') ||
+             (cat1 === 'kehitys' && cat2 === 'kansainvälisyys')) {
+      description = 'yhdistät kansainvälisen näkökulman ja kasvuhakuisuuden';
+    }
+    else {
+      description = 'yhdistät erilaisia vahvuuksia monipuolisesti';
+    }
+  }
+  // Amplifying: Same category, strengths multiply each other
+  else if (cat1 === cat2) {
+    synergyType = 'amplifying';
+
+    if (cat1 === 'yhteistyö') {
+      description = 'sosiaaliset vahvuutesi vahvistavat toisiaan tehokkaasti';
+    }
+    else if (cat1 === 'liiketoiminta') {
+      description = 'liiketoimintaosaamisesi muodostaa vahvan kokonaisuuden';
+    }
+    else if (cat1 === 'luova') {
+      description = 'luovat vahvuutesi täydentävät toisiaan erinomaisesti';
+    }
+    else if (cat1 === 'analytiikka') {
+      description = 'analyyttinen osaamisesi on monipuolista ja syvää';
+    }
+    else {
+      description = 'vahvuutesi tukevat ja vahvistavat toisiaan';
+    }
+  }
+  // Balancing: Strengths that create healthy tension
+  else {
+    synergyType = 'balancing';
+
+    // Achievement + Balance
+    if ((cat1 === 'kehitys' && cat2 === 'tasapaino') ||
+        (cat1 === 'tasapaino' && cat2 === 'kehitys')) {
+      description = 'tasapainotat kunnianhimon ja hyvinvoinnin viisaasti';
+    }
+    // Independence + Teamwork
+    else if ((cat1 === 'itsenäisyys' && cat2 === 'yhteistyö') ||
+             (cat1 === 'yhteistyö' && cat2 === 'itsenäisyys')) {
+      description = 'osaat työskennellä sekä itsenäisesti että tiimissä';
+    }
+    else {
+      description = 'vahvuutesi täydentävät toisiaan tasapainoisesti';
+    }
+  }
+
+  return {
+    primaryPair: [primary, secondary],
+    synergyType,
+    description
+  };
+}
+
 // ========== ESSAY OPENING (Sets the tone & validates user) ==========
 
 const ESSAY_OPENINGS = {
@@ -348,60 +473,84 @@ const STRENGTH_NARRATIVES = {
   }
 };
 
-// ========== INTEGRATED STRENGTH NARRATIVES (Uses all 5 strengths) ==========
+// ========== INTEGRATED STRENGTH NARRATIVES (Discusses how 2-3 strengths work together) ==========
 
 const INTEGRATED_STRENGTH_NARRATIVES = {
   YLA: {
     diverse_strengths: [
-      "Sinulla on vahva {primary_strength}. Tämä yhdistyy mielenkiintoisella tavalla siihen, miten pidät {secondary_strength}. Lisäksi sinulla on vahva {tertiary_strength}, mikä täydentää profiiliasi monipuolisesti. Näiden lisäksi {fourth_strength} ja {fifth_strength} tuovat mukaan lisäulottuvuuksia. Näiden vahvuuksien yhdistelmä on ainutlaatuinen ja avaa ovia monenlaisiin ammatteihin.",
+      "{Primary_strength} yhdistettynä {secondary_strength} tekee sinusta monipuolisen. Et ole vain toinen tai toinen, vaan ymmärrät molempia. Harvalla on tällaista vahvuuksien yhdistelmää jo tässä iässä. {Tertiary_strength} täydentää kuvaa tuomalla siihen vielä yhden ulottuvuuden, mikä antaa sinulle joustavuutta valita monenlaisia polkuja tulevaisuudessa.",
 
-      "Sinulla on monipuolinen yhdistelmä erilaisia vahvuuksia. {Primary_strength} muodostaa vahvan perustan, jota täydentävät {secondary_strength} ja {tertiary_strength}. Myös {fourth_strength} sekä {fifth_strength} nousevat esiin. Harva on kehittänyt näin tasapainoisen vahvuuksien yhdistelmän jo tässä vaiheessa.",
+      "Vahvuutesi rakentavat siltoja eri alueiden välille. {Primary_strength} auttaa sinua ymmärtämään tiettyjä asioita, kun taas {secondary_strength} tuo mukanaan aivan erilaisen näkökulman. Nämä kaksi yhdessä tekevät sinusta mielenkiintoisen yhdistelmän. {Tertiary_strength} vahvistaa tätä profiilia entisestään, mikä tarkoittaa että sinulla on laaja kirjo mahdollisuuksia.",
 
-      "Sinulla on monipuolinen kiinnostusprofiili. {Primary_strength} yhdistyy {secondary_strength}, mikä luo hienon pohjan. {Tertiary_strength} tuo mukanaan lisäväriä, samoin kuin {fourth_strength} ja {fifth_strength}. Tämä vahvuuksien kirjo antaa sinulle joustavuutta valita monen tyyppisiä urapolkuja."
+      "Sinulla on harvinaisen monipuolinen yhdistelmä. {Primary_strength} ja {secondary_strength} toimivat yhdessä hienosti, vaikka ne saattavat näyttää erilaisilta. Juuri tämä yhdistelmä tekee sinusta erikoisen. Kun lisäät tähän vielä {tertiary_strength}, sinulla on vahvuuksia, jotka sopivat monenlaisiin tilanteisiin ja ympäristöihin.",
+
+      "Olet löytämässä omaa tyyliäsi. {Primary_strength} yhdistettynä {secondary_strength} luo pohjan, joka erottaa sinut muista. Et ole kaikille samanlainen, vaan sinulla on oma tapasi lähestyä asioita. {Tertiary_strength} tuo tähän vielä lisää syvyyttä, mikä tarkoittaa että sinulla on laajat mahdollisuudet tulevaisuudessa.",
+
+      "Vahvuutesi täydentävät toisiaan mielenkiintoisella tavalla. {Primary_strength} antaa sinulle tietyn näkökulman, kun taas {secondary_strength} avaa toisen ulottuvuuden. Yhdessä nämä tekevät sinusta joustavan ja sopeutuvan. {Tertiary_strength} vahvistaa tätä kokonaisuutta, mikä tarkoittaa että pystyt menestymään monenlaisissa tilanteissa."
     ],
 
     focused_strengths: [
-      "Sinulla on selkeä suunta. {Primary_strength} on sinulla vahvana, ja tätä tukevat {secondary_strength} sekä {tertiary_strength}. Myös {fourth_strength} ja {fifth_strength} vahvistavat tätä suuntaa. Tämä johdonmukaisuus on vahvuus – tiedät mitä haluat ja mihin suuntaan haluat kehittyä.",
+      "{Primary_strength}, {secondary_strength} ja {tertiary_strength} tukevat kaikki samaa suuntaa. Et ole hajanainen, vaan tiedät mitä haluat. Kaikki kolme vahvuutta vahvistavat toisiaan ja osoittavat selkeästi, mikä sinua kiinnostaa. Tämä johdonmukaisuus on harvinaista ja arvokasta, sillä se auttaa sinua valitsemaan jatko-opintoja ja harrastuksia, jotka sopivat sinulle.",
 
-      "Vahvuutesi tukevat toisiaan johdonmukaisesti. {Primary_strength} saa vahvaa tukea siitä, että nautit {secondary_strength} ja sinulla on {tertiary_strength}. {Fourth_strength} yhdessä {fifth_strength} kanssa luovat selkeän profiilin, joka osoittaa mihin suuntaan sinua vetää.",
+      "Vahvuutesi muodostavat selkeän kokonaisuuden. {Primary_strength} on perusta, jota {secondary_strength} vahvistaa ja {tertiary_strength} syventää. Kaikki kolme kulkevat samaan suuntaan, mikä tarkoittaa että sinulla on vahva fokus. Tämä selkeys on etu, sillä tiedät jo nyt millaiset asiat kiinnostavat sinua aidosti.",
 
-      "Vahvuutesi muodostavat yhtenäisen kokonaisuuden. {Primary_strength} yhdistyy luontevasti {secondary_strength}, ja {tertiary_strength} täydentää kuvaa. {Fourth_strength} sekä {fifth_strength} tuovat lopun siihen, mikä tekee profiilisi erityiseksi – selkeä fokus alueilla, jotka kiinnostavat sinua aidosti."
+      "Sinulla on ehjä kokonaisuus. {Primary_strength} yhdistyy luontevasti {secondary_strength}, ja {tertiary_strength} täydentää kuvaa täydellisesti. Et ole ristiriitainen, vaan vahvuutesi tukevat toisiaan. Tämä johdonmukaisuus auttaa sinua löytämään ammatteja ja aloja, joissa voit loistaa.",
+
+      "Vahvuutesi keskittyvät tietylle alueelle. {Primary_strength} ohjaa sinua tiettyyn suuntaan, ja {secondary_strength} vahvistaa tätä suuntaa. {Tertiary_strength} syventää fokustasi entisestään. Tämä ei ole rajoite, vaan vahvuus: tiedät mitä etsit ja mihin suuntaan haluat kehittyä.",
+
+      "Profiilissasi näkyy selkeä linja. {Primary_strength} ja {secondary_strength} toimivat käsi kädessä, ja {tertiary_strength} tuo siihen lisävahvistusta. Kaikki kolme osoittavat samaan suuntaan, mikä tekee sinusta johdonmukaisen. Tämä selkeys helpottaa päätöksentekoa, kun mietit tulevaisuutta ja omaa polkuasi."
     ]
   },
 
   TASO2: {
     diverse_strengths: [
-      "Sinulla on monipuolinen vahvuuksien profiili. {Primary_strength} erottuu vahvimpana, mutta myös {secondary_strength} ja {tertiary_strength} ovat selkeitä vahvuuksia. {Fourth_strength} sekä {fifth_strength} täydentävät kuvaa monipuolisella tavalla. Tämä vahvuuksien yhdistelmä antaa sinulle joustavuutta valita eri alojen välillä.",
+      "{Primary_strength} yhdistettynä {secondary_strength} tekee sinusta hybridiosaajan, jollaisia haetaan monille aloille. Et ole vain toinen tai toinen, vaan ymmärrät molempia näkökulmia. Tämä on kilpailuetu, joka avaa ovia erilaisiin koulutusvaihtoehtoihin ja uriin. {Tertiary_strength} vahvistaa profiiliasi tuomalla siihen vielä yhden ulottuvuuden.",
 
-      "Profiilissasi korostuu monipuolisuus. {Primary_strength} muodostaa yhden keskeisen vahvuuden, kun taas {secondary_strength} ja {tertiary_strength} tuovat mukanaan eri ulottuvuuksia. {Fourth_strength} yhdessä {fifth_strength} kanssa laajentavat mahdollisuuksiasi entisestään. Tämä kirjo on arvokas ominaisuus, joka erottaa sinut muista.",
+      "Vahvuutesi rakentavat siltoja eri alueiden välille. {Primary_strength} antaa sinulle tietyn näkökulman, kun taas {secondary_strength} tuo mukanaan aivan erilaisen osaamisen. Harvat yhdistävät nämä kaksi yhtä luontevasti. {Tertiary_strength} täydentää kokonaisuutta, mikä tekee sinusta monipuolisen hakijan jatko-opintoihin.",
 
-      "Vahvuutesi kattavat laajan kirjon. {Primary_strength} on yksi näistä, samoin kuin {secondary_strength} ja {tertiary_strength}. {Fourth_strength} ja {fifth_strength} tuovat vielä lisää syvyyttä profiiliisi. Tällä vahvuuksien yhdistelmällä voit menestyä monenlaisissa tehtävissä ja ympäristöissä."
+      "Sinulla on harvinaisen tasapainoinen yhdistelmä. {Primary_strength} ja {secondary_strength} toimivat yhdessä tehokkaasti, vaikka ne saattavat näyttää erilaisilta. Juuri tämä yhdistelmä erottaa sinut muista hakijoista. {Tertiary_strength} tuo tähän vielä lisää syvyyttä, mikä laajentaa mahdollisuuksiasi entisestään.",
+
+      "Vahvuutesi täydentävät toisiaan strategisesti. {Primary_strength} antaa sinulle yhden vahvan alueen, kun taas {secondary_strength} avaa toisen ulottuvuuden. Yhdessä nämä luovat profiilin, joka sopii monenlaisiin ympäristöihin. {Tertiary_strength} vahvistaa tätä kokonaisuutta, mikä antaa sinulle joustavuutta suunnitella tulevaisuuttasi.",
+
+      "Olet kehittämässä monipuolista osaamista. {Primary_strength} yhdistettynä {secondary_strength} luo pohjan, joka erottaa sinut eduksesi. Et ole kaikkien muiden kaltainen, vaan sinulla on oma tyylisi. {Tertiary_strength} tuo tähän vielä lisäarvoa, mikä tarkoittaa että sinulla on laajat mahdollisuudet sekä amk:ssa, yliopistossa että työelämässä."
     ],
 
     focused_strengths: [
-      "Vahvuutesi muodostavat selkeän kokonaisuuden. {Primary_strength} on keskeinen vahvuutesi, ja sitä tukevat vahvasti {secondary_strength} sekä {tertiary_strength}. {Fourth_strength} ja {fifth_strength} vahvistavat tätä linjaa entisestään. Tämä fokus on etu, sillä se auttaa sinua rakentamaan vahvaa osaamista tietyllä alueella.",
+      "{Primary_strength}, {secondary_strength} ja {tertiary_strength} muodostavat yhtenäisen profiilin. Kaikki kolme tukevat samaa suuntaa ja osoittavat selkeästi, missä vahvuutesi ovat. Tämä johdonmukaisuus on strateginen etu: voit rakentaa vahvaa osaamista tietyllä alueella ja erottua asiantuntijana.",
 
-      "Vahvuuksissasi näkyy yhtenäinen linja. {Primary_strength} saa tukea {secondary_strength} ja {tertiary_strength} kautta. {Fourth_strength} yhdessä {fifth_strength} kanssa syventävät tätä suuntaa. Tämä johdonmukaisuus kertoo siitä, että olet löytämässä oman polkusi.",
+      "Vahvuutesi keskittyvät tietylle alueelle. {Primary_strength} on perusta, jota {secondary_strength} vahvistaa ja {tertiary_strength} syventää. Tämä fokus ei ole rajoite, vaan vahvuus. Voit erikoistua syvällisesti ja rakentaa vahvaa profiilia omalla alallasi.",
 
-      "Vahvuutesi tukevat toisiaan hienosti. {Primary_strength} muodostaa vahvan perustan, jota {secondary_strength} ja {tertiary_strength} täydentävät. {Fourth_strength} sekä {fifth_strength} vahvistavat kokonaisuutta. Tämä selkeä suunta helpottaa jatko-opintojen ja uran suunnittelua."
+      "Sinulla on selkeä suunta. {Primary_strength} yhdistyy luontevasti {secondary_strength}, ja {tertiary_strength} täydentää kuvaa täydellisesti. Et ole ristiriitainen, vaan tiedät mitä haluat. Tämä selkeys helpottaa jatko-opintojen valintaa ja uran suunnittelua merkittävästi.",
+
+      "Profiilissasi näkyy yhtenäinen linja. {Primary_strength} ja {secondary_strength} kulkevat käsi kädessä, ja {tertiary_strength} vahvistaa tätä suuntaa. Kaikki kolme osoittavat samaan suuntaan, mikä tekee sinusta johdonmukaisen. Oppilaitokset ja työnantajat arvostavat tällaista fokusta.",
+
+      "Vahvuutesi tukevat toisiaan tehokkaasti. {Primary_strength} muodostaa ytimen, jota {secondary_strength} ja {tertiary_strength} vahvistavat. Tämä keskittyminen tietylle alueelle on arvokas ominaisuus, joka auttaa sinua rakentamaan selkeää ammatillista identiteettiä jo varhaisessa vaiheessa."
     ]
   },
 
   NUORI: {
     diverse_strengths: [
-      "Profiilisi osoittaa monipuolista osaamista. {Primary_strength} korostuu vahvimmin, mutta myös {secondary_strength} ja {tertiary_strength} ovat merkittäviä vahvuuksia. {Fourth_strength} yhdessä {fifth_strength} kanssa täydentävät profiilin. Tämä vahvuuksien kirjo antaa sinulle mahdollisuuden työskennellä monenlaisissa rooleissa ja ympäristöissä.",
+      "{Primary_strength} yhdistettynä {secondary_strength} tekee sinusta arvokkaan hybridiosaajan. Et ole vain toinen tai toinen, vaan ymmärrät molempia näkökulmia syvällisesti. Tämä on merkittävä kilpailuetu työmarkkinoilla, jossa tarvitaan moniosaajia. {Tertiary_strength} vahvistaa profiiliasi entisestään, mikä laajentaa uravaihtoehtojasi.",
 
-      "Vahvuutesi kattavat laajan alueen. {Primary_strength} on yksi keskeinen vahvuus, samoin kuin {secondary_strength} ja {tertiary_strength}. {Fourth_strength} sekä {fifth_strength} tuovat mukanaan lisäulottuvuuksia. Tämä monipuolisuus on arvokas kilpailuetu nykyisillä työmarkkinoilla.",
+      "Vahvuutesi rakentavat siltoja eri osaamisalueiden välille. {Primary_strength} antaa sinulle yhden vahvan osaamisen, kun taas {secondary_strength} tuo mukanaan aivan erilaisen näkökulman. Harvat ammattilaiset yhdistävät nämä kaksi yhtä luontevasti. {Tertiary_strength} täydentää kokonaisuutta, mikä tekee sinusta monipuolisen osaajan.",
 
-      "Profiilissasi yhdistyy useita arvostettuja vahvuuksia. {Primary_strength} erottuu selkeänä, mutta myös {secondary_strength} ja {tertiary_strength} ovat vahvoja alueita. {Fourth_strength} ja {fifth_strength} tuovat profiiliin syvyyttä. Tämä yhdistelmä tekee sinusta monipuolisen ammattilaisen."
+      "Sinulla on strategisesti arvokas yhdistelmä. {Primary_strength} ja {secondary_strength} toimivat yhdessä tehokkaasti, luoden profiilin joka erottuu työmarkkinoilla. Juuri tämä yhdistelmä tekee sinusta mielenkiintoisen työnantajille. {Tertiary_strength} tuo tähän vielä lisäulottuvuuden, mikä avaa ovia erilaisiin rooleihin.",
+
+      "Vahvuutesi täydentävät toisiaan ammatillisesti. {Primary_strength} antaa sinulle vahvan perustan yhdellä alueella, kun taas {secondary_strength} avaa toisen ulottuvuuden. Yhdessä nämä luovat profiilin, joka sopii sekä asiantuntija- että johtotehtäviin. {Tertiary_strength} vahvistaa tätä kokonaisuutta merkittävästi.",
+
+      "Olet kehittänyt monipuolista ammatillista osaamista. {Primary_strength} yhdistettynä {secondary_strength} luo pohjan, joka erottaa sinut muista osaajista. Sinulla on oma ammatti-identiteetti, joka ei ole kaikkien muiden kaltainen. {Tertiary_strength} tuo tähän vielä lisäarvoa, mikä laajentaa uramahdollisuuksiasi eri organisaatioissa ja rooleissa."
     ],
 
     focused_strengths: [
-      "Vahvuutesi muodostavat yhtenäisen ja selkeän profiilin. {Primary_strength} on keskiössä, ja sitä tukevat vahvasti {secondary_strength} sekä {tertiary_strength}. {Fourth_strength} ja {fifth_strength} vahvistavat tätä linjaa. Tämä johdonmukaisuus auttaa sinua rakentamaan vahvaa brändiä omalla alallasi.",
+      "{Primary_strength}, {secondary_strength} ja {tertiary_strength} muodostavat yhtenäisen ammatillisen profiilin. Kaikki kolme tukevat samaa suuntaa ja osoittavat selkeästi, missä vahvuutesi ovat. Tämä johdonmukaisuus auttaa sinua rakentamaan vahvaa asiantuntijabrändiä ja erottumaan omalla alallasi.",
 
-      "Profiilisi osoittaa selkeää fokusta. {Primary_strength} muodostaa vahvan perustan, jota {secondary_strength} ja {tertiary_strength} täydentävät tehokkaasti. {Fourth_strength} yhdessä {fifth_strength} kanssa syventävät osaamistasi. Tämä keskittyminen tietylle alueelle on strateginen vahvuus.",
+      "Vahvuutesi keskittyvät selkeälle osaamisalueelle. {Primary_strength} on perusta, jota {secondary_strength} vahvistaa ja {tertiary_strength} syventää. Tämä fokus on strateginen vahvuus: voit erikoistua syvällisesti ja rakentaa vahvaa mainetta asiantuntijana tietyllä alalla.",
 
-      "Vahvuutesi tukevat toisiaan ammatillisesti. {Primary_strength} on ytimessä, ja {secondary_strength} sekä {tertiary_strength} vahvistavat sitä. {Fourth_strength} ja {fifth_strength} tuovat lisäarvoa kokonaisuuteen. Tämä linjassa oleva vahvuuksien profiili erottaa sinut asiantuntijana."
+      "Sinulla on johdonmukainen profiili. {Primary_strength} yhdistyy luontevasti {secondary_strength}, ja {tertiary_strength} täydentää kuvaa täydellisesti. Et ole ristiriitainen, vaan tiedät mitä haluat ja missä loistat. Tämä selkeys on arvokas ominaisuus, joka auttaa urakehityksessä.",
+
+      "Profiilissasi näkyy selkeä ammatillinen suunta. {Primary_strength} ja {secondary_strength} kulkevat käsi kädessä, ja {tertiary_strength} vahvistaa tätä linjaa. Kaikki kolme osoittavat samaan suuntaan, mikä tekee sinusta uskottavan asiantuntijan. Työnantajat ja asiakkaat arvostavat tällaista fokusta.",
+
+      "Vahvuutesi tukevat toisiaan tehokkaasti. {Primary_strength} muodostaa ytimen, jota {secondary_strength} ja {tertiary_strength} vahvistavat. Tämä keskittyminen tietylle alueelle ei ole rajoite, vaan mahdollistaa syvällisen erikoistumisen. Voit rakentaa vahvaa uraa alalla, jossa juuri nämä ominaisuudet ovat keskeisiä."
     ]
   }
 };
