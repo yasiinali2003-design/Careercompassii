@@ -85,9 +85,14 @@ const STRENGTH_DECLENSIONS: Record<string, {
   'Motivaatio': { nominative: 'motivaatio', partitive: 'motivaatiota', genitive: 'motivaation', inessive: 'motivaatiossa' },
   'Autonomia': { nominative: 'autonomia', partitive: 'autonomiaa', genitive: 'autonomian', inessive: 'autonomiassa' },
   'Sosiaalisuus': { nominative: 'sosiaalisuus', partitive: 'sosiaalisuutta', genitive: 'sosiaalisuuden', inessive: 'sosiaalisuudessa' },
+  'Empatia': { nominative: 'empatia', partitive: 'empatiaa', genitive: 'empatian', inessive: 'empatiassa' },
+  'Kommunikaatio': { nominative: 'kommunikaatio', partitive: 'kommunikaatiota', genitive: 'kommunikaation', inessive: 'kommunikaatiossa' },
   'Rakenne': { nominative: 'rakenne', partitive: 'rakennetta', genitive: 'rakenteen', inessive: 'rakenteessa' },
   'Joustavuus': { nominative: 'joustavuus', partitive: 'joustavuutta', genitive: 'joustavuuden', inessive: 'joustavuudessa' },
   'Monipuolisuus': { nominative: 'monipuolisuus', partitive: 'monipuolisuutta', genitive: 'monipuolisuuden', inessive: 'monipuolisuudessa' },
+  'Luovuus': { nominative: 'luovuus', partitive: 'luovuutta', genitive: 'luovuuden', inessive: 'luovuudessa' },
+  'Visuaalisuus': { nominative: 'visuaalisuus', partitive: 'visuaalisuutta', genitive: 'visuaalisuuden', inessive: 'visuaalisuudessa' },
+  'Ilmaisu': { nominative: 'ilmaisu', partitive: 'ilmaisua', genitive: 'ilmaisun', inessive: 'ilmaisussa' },
 
   // Context
   'Ulkotyö': { nominative: 'ulkotyö', partitive: 'ulkotyötä', genitive: 'ulkotyön', inessive: 'ulkotyössä' },
@@ -809,8 +814,9 @@ export function generatePersonalizedAnalysis(
     const secondaryPart = formatStrength(secondary, 'partitive');
     const tertiaryNom = formatStrength(tertiary, 'nominative');
 
-    // Capitalize first letter for sentence start
+    // Capitalize first letters for sentence starts
     const primaryCapitalized = primaryNom.charAt(0).toUpperCase() + primaryNom.slice(1);
+    const tertiaryCapitalized = tertiaryNom.charAt(0).toUpperCase() + tertiaryNom.slice(1);
 
     // Build replacements object for all placeholders
     const replacements: Record<string, string> = {
@@ -818,7 +824,8 @@ export function generatePersonalizedAnalysis(
       '{Primary_strength}': primaryCapitalized,
       '{primary_strength_gen}': primaryGen,
       '{secondary_strength}': secondaryPart,
-      '{tertiary_strength}': tertiaryNom
+      '{tertiary_strength}': tertiaryNom,
+      '{Tertiary_strength}': tertiaryCapitalized
     };
 
     // Select narrative template from INTEGRATED_STRENGTH_NARRATIVES
