@@ -320,6 +320,107 @@ function analyzeStrengthSynergies(strengths: string[]): StrengthSynergy {
   };
 }
 
+// ========== CAREER CONTEXT MAPPING (Shows how combinations create value) ==========
+
+/**
+ * Maps specific strength combinations to career contexts and examples
+ * Used to provide concrete examples of how synergies create value
+ */
+const SYNERGY_CAREER_CONTEXTS: Record<string, {
+  contexts: string[];
+  explanation: string;
+}> = {
+  // Technical + Social combinations
+  'analyyttinen_ajattelu_empatia': {
+    contexts: ['terveysteknologia', 'UX-suunnittelu', 'palvelumuotoilu'],
+    explanation: 'ymmärrät sekä teknologian että käyttäjien tarpeet'
+  },
+  'analyyttinen_ajattelu_sosiaalisuus': {
+    contexts: ['data-analytiikka tiimeissä', 'konsultointi', 'projektijohtaminen'],
+    explanation: 'osaat viestiä teknisistä asioista selkeästi'
+  },
+
+  // Creative + Analytical combinations
+  'luovuus_analyyttinen_ajattelu': {
+    contexts: ['tuotesuunnittelu', 'data-visualisointi', 'arkkitehtuuri'],
+    explanation: 'yhdistät datan ja designin harvinaisella tavalla'
+  },
+  'innovatiivisuus_analyyttinen_ajattelu': {
+    contexts: ['strateginen suunnittelu', 'kehitystyö', 'tutkimus'],
+    explanation: 'luot uusia ratkaisuja analyyttisen pohjan varaan'
+  },
+
+  // Business + Social combinations
+  'yrittäjyys_empatia': {
+    contexts: ['sosiaaliset yritykset', 'palveluliiketoiminta', 'HR-konsultointi'],
+    explanation: 'rakennat liiketoimintaa ihmislähtöisesti'
+  },
+  'johtaminen_tiimityöskentely': {
+    contexts: ['tiimien johtaminen', 'projektinhallinta', 'organisaation kehittäminen'],
+    explanation: 'johdat ihmisiä ymmärtäen tiimidynamiikkaa'
+  },
+
+  // Growth + International combinations
+  'kasvu_kansainvälinen': {
+    contexts: ['kehitysyhteistyö', 'kansainväliset organisaatiot', 'startup-kansainvälistyminen'],
+    explanation: 'kasvuhakuisuutesi ja globaali näkökulma avaa kansainvälisiä mahdollisuuksia'
+  },
+  'kasvu_innovatiivisuus': {
+    contexts: ['startup-yritykset', 'tuotekehitys', 'uudet teknologiat'],
+    explanation: 'haluat kehittyä ja luoda uutta jatkuvasti'
+  },
+
+  // Balance + Achievement combinations
+  'kasvu_työ-elämä-tasapaino': {
+    contexts: ['organisaatiot joissa kehitytään kestävästi', 'hyvinvointiala', 'koulutus'],
+    explanation: 'tavoittelet menestystä uhrautumatta hyvinvointia'
+  },
+
+  // Independence + Collaboration combinations
+  'itsenäinen_työskentely_tiimityöskentely': {
+    contexts: ['hybridityö', 'asiantuntijatehtävät', 'projektipohjaiset työt'],
+    explanation: 'osaat työskennellä sekä itsenäisesti että osana tiimiä'
+  },
+
+  // Practical + Creative combinations
+  'käytännön_tekeminen_luovuus': {
+    contexts: ['käsityöammatti', 'tuotanto ja design', 'rakentaminen ja suunnittelu'],
+    explanation: 'toteutat luovia ideoita käytännössä'
+  },
+
+  // Impact + Business combinations
+  'vaikuttaminen_talous': {
+    contexts: ['yhteiskunnalliset yritykset', 'vaikuttavuusinvestoinnit', 'julkisen sektorin johtaminen'],
+    explanation: 'et ole vain idealisti, vaan ymmärrät liiketoiminnan realiteetit'
+  },
+
+  // Default fallback for unknown combinations
+  'default': {
+    contexts: ['monipuoliset roolit', 'kehittyvät alat', 'hybriditehtävät'],
+    explanation: 'vahvuuksiesi yhdistelmä sopii monenlaisiin ympäristöihin'
+  }
+};
+
+/**
+ * Gets career context for a strength combination
+ * Returns contexts and explanation for how the combination creates value
+ */
+function getCareerContext(primary: string, secondary: string): { contexts: string[]; explanation: string } {
+  // Try to find exact match
+  const key1 = `${primary.toLowerCase()}_${secondary.toLowerCase()}`.replace(/\s+/g, '_');
+  const key2 = `${secondary.toLowerCase()}_${primary.toLowerCase()}`.replace(/\s+/g, '_');
+
+  if (SYNERGY_CAREER_CONTEXTS[key1]) {
+    return SYNERGY_CAREER_CONTEXTS[key1];
+  }
+  if (SYNERGY_CAREER_CONTEXTS[key2]) {
+    return SYNERGY_CAREER_CONTEXTS[key2];
+  }
+
+  // Return default if no match found
+  return SYNERGY_CAREER_CONTEXTS['default'];
+}
+
 // ========== ESSAY OPENING (Sets the tone & validates user) ==========
 
 const ESSAY_OPENINGS = {
@@ -692,8 +793,11 @@ export function generatePersonalizedAnalysis(
   
   // 3. STRENGTHS & SUBDIMENSIONS (300-400 chars) - Deep dive into what makes them unique
   if (topStrengths && topStrengths.length > 0) {
-    // Extract all 5 strengths (not just top 2)
-    const [primary, secondary, tertiary, fourth, fifth] = topStrengths;
+    // Extract top 3 strengths (focus on primary synergy)
+    const [primary, secondary, tertiary] = topStrengths;
+
+    // Analyze synergy between top 2 strengths for personalization
+    const synergy = analyzeStrengthSynergies(topStrengths);
 
     // Detect if strengths are diverse or focused
     const { isDiverse } = detectStrengthCategories(topStrengths);
@@ -704,8 +808,6 @@ export function generatePersonalizedAnalysis(
     const primaryGen = formatStrength(primary, 'genitive');
     const secondaryPart = formatStrength(secondary, 'partitive');
     const tertiaryNom = formatStrength(tertiary, 'nominative');
-    const fourthPart = formatStrength(fourth, 'partitive');
-    const fifthNom = formatStrength(fifth, 'nominative');
 
     // Capitalize first letter for sentence start
     const primaryCapitalized = primaryNom.charAt(0).toUpperCase() + primaryNom.slice(1);
@@ -716,16 +818,32 @@ export function generatePersonalizedAnalysis(
       '{Primary_strength}': primaryCapitalized,
       '{primary_strength_gen}': primaryGen,
       '{secondary_strength}': secondaryPart,
-      '{tertiary_strength}': tertiaryNom,
-      '{fourth_strength}': fourthPart,
-      '{fifth_strength}': fifthNom
+      '{tertiary_strength}': tertiaryNom
     };
 
     // Select narrative template from INTEGRATED_STRENGTH_NARRATIVES
     const narratives = INTEGRATED_STRENGTH_NARRATIVES[cohort]?.[narrativeType];
 
     if (narratives && narratives.length > 0) {
-      let narrative = narratives[Math.floor(Math.random() * narratives.length)];
+      // Use synergy type to influence template selection for better personalization
+      // Different synergy types may work better with certain templates
+      let templateIndex: number;
+
+      if (synergy.synergyType === 'complementary' && narratives.length >= 2) {
+        // Complementary synergies work well with bridge-building templates (index 1)
+        templateIndex = 1 % narratives.length;
+      } else if (synergy.synergyType === 'amplifying' && narratives.length >= 3) {
+        // Amplifying synergies work well with focused/coherent templates (index 2)
+        templateIndex = 2 % narratives.length;
+      } else if (synergy.synergyType === 'balancing' && narratives.length >= 4) {
+        // Balancing synergies work well with specialist-with-range templates (index 3)
+        templateIndex = 3 % narratives.length;
+      } else {
+        // Default: random selection
+        templateIndex = Math.floor(Math.random() * narratives.length);
+      }
+
+      let narrative = narratives[templateIndex];
 
       // Replace all placeholders
       Object.entries(replacements).forEach(([placeholder, value]) => {
