@@ -302,16 +302,6 @@ export function NextStepsSection({ educationPath, cohort }: NextStepsSectionProp
           confidence={educationPath.confidence}
           reasoning={educationPath.reasoning}
         />
-
-        {/* Secondary Path Card (if exists) */}
-        {educationPath.secondary && secondaryDesc && (
-          <EducationPathCard
-            pathDesc={secondaryDesc}
-            pathKey={educationPath.secondary}
-            cohort={cohort}
-            isPrimary={false}
-          />
-        )}
       </div>
     </motion.section>
   );
