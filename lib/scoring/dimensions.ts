@@ -243,9 +243,9 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     text: "Kiinnostaako sinua oppia vieraita kieliä?",
     dimension: 'interests',
     subdimension: 'analytical',
-    weight: 1.0,
+    weight: 1.3,
     reverse: false,
-    notes: "Language learning interest"
+    notes: "Language learning interest - indicates analytical + growth mindset"
   },
 
   // Q15: Workstyle - Team preference
@@ -265,9 +265,9 @@ const YLA_MAPPINGS: QuestionMapping[] = [
     text: "Pidätkö siitä, kun tiedät tarkalleen, mitä pitää tehdä?",
     dimension: 'workstyle',
     subdimension: 'organization',
-    weight: 0.9,
+    weight: 1.2,
     reverse: false,
-    notes: "Structure preference"
+    notes: "Structure preference - critical for järjestäjä detection"
   },
 
   // Q17: Workstyle - Outdoor
@@ -834,9 +834,9 @@ const TASO2_MAPPINGS: QuestionMapping[] = [
     text: "Haluaisitko työn, jossa pääsee matkustamaan?",
     dimension: 'values',
     subdimension: 'global',
-    weight: 0.9,
+    weight: 1.3,
     reverse: false,
-    notes: "Travel preference"
+    notes: "Travel preference - matches Q27 global/international weight"
   }
 ];
 
@@ -925,13 +925,13 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     notes: "Arts/culture aspect - design and advertising are cultural industries"
   },
 
-  // Q4: Engineering/R&D - DUAL: innovation + technology (not hands_on - engineering is about innovation, not physical building)
+  // Q4: Engineering/R&D - TRIPLE MAPPING: innovation + technology + hands_on
   {
     q: 4,
     text: "Kiinnostaako sinua insinöörityö tai tuotekehitys?",
     dimension: 'interests',
     subdimension: 'innovation',
-    weight: 1.6,
+    weight: 1.4,
     reverse: false,
     notes: "Engineering/R&D - innovation focus"
   },
@@ -940,9 +940,18 @@ const NUORI_MAPPINGS: QuestionMapping[] = [
     text: "Kiinnostaako sinua insinöörityö tai tuotekehitys?",
     dimension: 'interests',
     subdimension: 'technology',
-    weight: 1.4,
+    weight: 1.2,
     reverse: false,
     notes: "Engineering - technology aspect (modern engineering is tech-focused)"
+  },
+  {
+    q: 4,
+    text: "Kiinnostaako sinua insinöörityö tai tuotekehitys?",
+    dimension: 'interests',
+    subdimension: 'hands_on',
+    weight: 1.2,
+    reverse: false,
+    notes: "Engineering - practical building/construction aspect enables Rakentaja detection"
   },
 
   // Q5: Education/Training - TRIPLE MAPPING: growth + people + teaching

@@ -9354,6 +9354,7 @@ export function generateUserProfile(
     dimensionScores,
     detailedScores,
     topStrengths,
+    primaryCategory: topCategory,  // Add primary category for alignment checks
     categoryAffinities,
     hybridPaths: hybridPaths.length > 0 ? hybridPaths : undefined,
     profileConfidence

@@ -94,6 +94,7 @@ export interface UserProfile {
   personalizedAnalysis?: string;     // 2-3 paragraph personalized text
   currentOccupation?: string;        // Current career/occupation slug (for filtering)
   // NEW: Enhanced profile information
+  primaryCategory?: string;                 // Top category (e.g., "auttaja", "innovoija")
   categoryAffinities?: CategoryAffinity[];  // All 8 categories ranked by affinity
   hybridPaths?: HybridCareerPath[];         // Suggested hybrid career paths
   profileConfidence?: ProfileConfidence;    // How confident we are in this profile

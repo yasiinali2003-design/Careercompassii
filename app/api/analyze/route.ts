@@ -94,6 +94,70 @@ export async function POST(request: NextRequest) {
     const topCareers = rankCareers(formattedAnswers, cohort, 5);
     const userProfile = generateUserProfile(formattedAnswers, cohort);
 
+    // PHASE 2B: Alignment monitoring (Solution D1)
+    // Check if personal analysis (category), education path, and careers align
+    const { calculateEducationPath } = require('@/lib/scoring/educationPath');
+    const educationPath = cohort !== 'NUORI' ? calculateEducationPath(formattedAnswers, cohort) : null;
+
+    const alignmentIssues: string[] = [];
+    const primaryCategory = userProfile.primaryCategory;
+    const topCareerCategories = topCareers.slice(0, 3).map((c: any) => c.category);
+
+    // Check 1: Do topStrengths align with primaryCategory?
+    if (primaryCategory && primaryCategory !== 'none') {
+      const categoryStrengthMap: Record<string, string[]> = {
+        'auttaja': ['terveysala', 'ihmis', 'kasvu', 'opetus', 'empatia', 'sosiaalinen vaikuttaminen'],
+        'innovoija': ['teknologia', 'analyyttinen', 'ongelmanratkaisu', 'innovatiivisuus'],
+        'luova': ['luovuus', 'kirjoittaminen', 'taide', 'kulttuuri', 'visuaalisuus'],
+        'rakentaja': ['käytännön tekeminen', 'ulkotyö', 'urheilu', 'tarkkuus'],
+        'johtaja': ['johtaminen', 'liiketoiminta', 'yrittäjyys'],
+        'jarjestaja': ['organisointi', 'suunnittelu', 'tarkkuus', 'rakenne'],
+        'visionaari': ['kansainvälisyys', 'globaali', 'vaikuttaminen', 'innovatiivisuus'],
+        'ympariston-puolustaja': ['ympäristö', 'luonto', 'ulkotyö']
+      };
+
+      const expectedKeywords = categoryStrengthMap[primaryCategory] || [];
+      const strengthsText = userProfile.topStrengths.join(' ').toLowerCase();
+      const matchingStrengths = expectedKeywords.filter(kw =>
+        strengthsText.includes(kw.toLowerCase())
+      ).length;
+
+      if (matchingStrengths < 2 && userProfile.categoryAffinities?.[0]?.score > 50) {
+        alignmentIssues.push(`⚠️ [ALIGNMENT] Category "${primaryCategory}" but topStrengths don't match expected keywords`);
+      }
+    }
+
+    // Check 2: Do top careers align with primaryCategory?
+    if (primaryCategory && primaryCategory !== 'none') {
+      const careerCategoryMatches = topCareerCategories.filter((cat: string) => cat === primaryCategory).length;
+      if (careerCategoryMatches === 0) {
+        alignmentIssues.push(`⚠️ [ALIGNMENT] Category "${primaryCategory}" but top 3 careers are: ${topCareerCategories.join(', ')}`);
+      }
+    }
+
+    // Check 3: Does education path align with career categories (YLA/TASO2 only)?
+    if (educationPath && primaryCategory) {
+      const pathCategoryMap: Record<string, string[]> = {
+        lukio: ['auttaja', 'innovoija', 'luova', 'visionaari', 'johtaja'],
+        ammattikoulu: ['rakentaja', 'jarjestaja'],
+        yliopisto: ['innovoija', 'visionaari', 'auttaja'],
+        amk: ['rakentaja', 'johtaja', 'jarjestaja', 'auttaja']
+      };
+
+      const expectedForPath = pathCategoryMap[educationPath.primary as string] || [];
+      if (!expectedForPath.includes(primaryCategory) && educationPath.confidence !== 'low') {
+        alignmentIssues.push(`⚠️ [ALIGNMENT] Education path "${educationPath.primary}" (${educationPath.confidence}) doesn't typically align with category "${primaryCategory}"`);
+      }
+    }
+
+    // Log alignment issues (server-side only)
+    if (alignmentIssues.length > 0) {
+      log.warn('Alignment issues detected:', alignmentIssues);
+      alignmentIssues.forEach(issue => console.warn(issue));
+    } else {
+      log.info(`[ALIGNMENT] ✅ Good alignment: category="${primaryCategory}", careers=[${topCareerCategories.join(', ')}], path="${educationPath?.primary || 'N/A'}"`);
+    }
+
     // Generate AI-powered analysis from user profile
     const aiAnalysis = generateAIAnalysis(userProfile, topCareers);
 

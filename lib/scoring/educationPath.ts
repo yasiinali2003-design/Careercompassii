@@ -104,6 +104,16 @@ function calculateYLAPath(answers: TestAnswer[]): YLAEducationPathResult | null 
   const nature = getAvg('nature');
   const environment = getAvg('environment');
 
+  // PHASE 2B FIX: Calculate category affinities to align education path with career category
+  const { calculateCategoryAffinities } = require('./categoryAffinities');
+  const detailedScores = {
+    interests: subdimensionScores,
+    workstyle: {},  // Not used for education path, but required by function
+    values: {}
+  };
+  const categoryAffinities = calculateCategoryAffinities(detailedScores, { overall: 'medium', strongSignals: 10, neutralAnswers: 20 });
+  const dominantCategory = categoryAffinities[0]?.category || 'none';
+
   // Calculate path scores based on career profile
   let lukioScore = 0;
   let ammattikouluScore = 0;
@@ -118,7 +128,14 @@ function calculateYLAPath(answers: TestAnswer[]): YLAEducationPathResult | null 
   lukioScore += problem_solving * 1.5;  // Problem solving → lukio
   lukioScore += creative * 1.0;         // Creative → lukio for art/design studies
   // CRITICAL: Health-focused students (Ella: future vet) need lukio for medical/vet school
-  lukioScore += health * 2.5;           // High health interest → lukio for medical studies
+  // Match TASO2 logic: high health + analytical = medical track (doctor, psychologist, vet)
+  if (health > 0.6 && analytical > 0.5) {
+    lukioScore += health * 3.0;  // Medical track boost (requires academic path)
+  } else if (health > 0.6) {
+    lukioScore += health * 2.5;  // General health interest (could be nurse via ammattikoulu)
+  } else {
+    lukioScore += health * 2.5;  // Standard health interest
+  }
   lukioScore += people * 1.5;           // High people interest → lukio for psychology/teaching
 
   // AMMATTIKOULU indicators: hands-on, outdoor, stability preference, LOW health/analytical
@@ -154,6 +171,35 @@ function calculateYLAPath(answers: TestAnswer[]): YLAEducationPathResult | null 
   // High analytical should also boost lukio
   if (analytical > 0.6) {
     lukioScore += 2.0;
+  }
+
+  // PHASE 2B: Category-specific education path boosts (Solution A2)
+  // Align education path recommendations with detected career category
+  console.log(`[educationPath] Dominant category: ${dominantCategory}`);
+
+  if (dominantCategory === 'auttaja' && health > 0.6) {
+    lukioScore += 5.0;  // Healthcare careers (doctor, psychologist, vet) need academic path
+    console.log(`[educationPath] Auttaja boost: +5.0 to lukio (health=${health.toFixed(2)})`);
+  }
+
+  if (dominantCategory === 'innovoija' && (technology > 0.7 || analytical > 0.7)) {
+    lukioScore += 4.0;  // Tech/analytical careers need academic path (IT, engineering, research)
+    console.log(`[educationPath] Innovoija boost: +4.0 to lukio (tech=${technology.toFixed(2)}, analytical=${analytical.toFixed(2)})`);
+  }
+
+  if (dominantCategory === 'rakentaja' && hands_on > 0.7) {
+    ammattikouluScore += 4.0;  // Builders thrive in vocational education (construction, trades)
+    console.log(`[educationPath] Rakentaja boost: +4.0 to ammattikoulu (hands_on=${hands_on.toFixed(2)})`);
+  }
+
+  if (dominantCategory === 'luova' && creative > 0.7) {
+    lukioScore += 3.0;  // Creative careers often need academic path (design schools, art schools)
+    console.log(`[educationPath] Luova boost: +3.0 to lukio (creative=${creative.toFixed(2)})`);
+  }
+
+  if (dominantCategory === 'johtaja' && analytical > 0.6) {
+    lukioScore += 3.0;  // Leadership careers benefit from academic background (business, management)
+    console.log(`[educationPath] Johtaja boost: +3.0 to lukio (analytical=${analytical.toFixed(2)})`);
   }
 
   // KANSANOPISTO: Only for truly undecided students who can't decide anything
@@ -228,6 +274,21 @@ function calculateYLAPath(answers: TestAnswer[]): YLAEducationPathResult | null 
     confidence = 'medium';
   } else {
     confidence = 'low';
+  }
+
+  // CRITICAL: Check if scores are meaningful (threshold check)
+  // If all scores are too low/neutral, default to lukio with low confidence
+  const maxScore = Math.max(lukioScore, ammattikouluScore, kansanopistoScore);
+  if (maxScore < 15) {
+    // Too ambiguous - profile is extremely flat/neutral
+    // Default to lukio (keeps most doors open in Finnish education system)
+    return {
+      primary: 'lukio',
+      secondary: undefined,
+      scores,
+      reasoning: "Profiilisi on monipuolinen ja avoin. Lukio antaa sinulle aikaa tutustua eri vaihtoehtoihin ja pitää monia ovia auki tulevaisuutta varten.",
+      confidence: 'low'
+    };
   }
 
   // Generate reasoning
