@@ -122,7 +122,8 @@ export async function POST(request: NextRequest) {
         strengthsText.includes(kw.toLowerCase())
       ).length;
 
-      if (matchingStrengths < 2 && userProfile.categoryAffinities?.[0]?.score > 50) {
+      const topCategoryScore = userProfile.categoryAffinities?.[0]?.score ?? 0;
+      if (matchingStrengths < 2 && topCategoryScore > 50) {
         alignmentIssues.push(`⚠️ [ALIGNMENT] Category "${primaryCategory}" but topStrengths don't match expected keywords`);
       }
     }
