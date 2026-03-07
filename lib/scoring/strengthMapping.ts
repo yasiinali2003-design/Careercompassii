@@ -4,9 +4,9 @@
  * Uses descriptive language (NO numerical scores) based on cohort
  */
 
-import { Cohort, TestAnswer, StrengthAnswerMapping, DetailedDimensionScores, UserProfile } from './types';
+import { Cohort, TestAnswer, StrengthAnswerMapping, UserProfile } from './types';
 import { getQuestionMappings } from './dimensions';
-import { getAnswerLevel, getQuestionReference } from './languageHelpers';
+import { getAnswerLevel } from './languageHelpers';
 
 /**
  * Map strengths to specific answers that led to them
@@ -89,14 +89,12 @@ export function mapStrengthsToAnswers(
       let explanation = '';
       if (cohort === 'YLA') {
         const firstQ = relatedQuestions[0];
-        explanation = `Vahvuutesi ${strength.toLowerCase()} tulee siitä, miten vastasit teknologia-kysymyksiin. Muistatko, kun kysyimme ${firstQ.questionText.toLowerCase().replace('?', '')}? Vastasit ${firstQ.answerLevel}! Sama tuli esiin myös muissa teknologia-kysymyksissä.`;
+        explanation = `Vahvuutesi ${strength.toLowerCase()} nousee vastauksistasi vahvasti esiin. Kiinnostuksesi tähän alueeseen on selvästi ${firstQ.answerLevel}. Tämä vahvuus näkyy johdonmukaisesti koko profiilissasi.`;
       } else if (cohort === 'TASO2') {
-        const refs = relatedQuestions.slice(0, 2).map(q => getQuestionReference(q.questionNumber, q.questionText, cohort)).join(' ja ');
-        explanation = `Vahvuutesi ${strength.toLowerCase()} perustuu vastauksiisi teknologia-kysymyksiin (${refs}). Erityisesti vastauksesi ${relatedQuestions[0].answerLevel} olivat vahvoja. Tämä profiili sopii erinomaisesti teknologia-uraan.`;
+        explanation = `Vahvuutesi ${strength.toLowerCase()} nousee profiilissasi vahvasti esiin. Kiinnostuksesi tähän alueeseen on ${relatedQuestions[0].answerLevel}. Tämä profiili sopii erinomaisesti teknologia-uraan.`;
       } else {
         // NUORI
-        const refs = relatedQuestions.slice(0, 2).map(q => getQuestionReference(q.questionNumber, q.questionText, cohort)).join(' ja ');
-        explanation = `Vahvuutesi ${strength.toLowerCase()} perustuu vastauksiisi teknologia-alueella (${refs}). Erityisesti ${relatedQuestions[0].answerLevel} tukevat tätä profiilia. Tämä yhdistelmä on markkinoilla arvostettu.`;
+        explanation = `Vahvuutesi ${strength.toLowerCase()} nousee profiilissasi selvästi esiin. Kiinnostuksesi tähän alueeseen on ${relatedQuestions[0].answerLevel}. Tämä yhdistelmä on markkinoilla arvostettu.`;
       }
       
       mappings.push({
