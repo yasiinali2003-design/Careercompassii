@@ -58,28 +58,28 @@ export function explainConfidence(
   
   if (cohort === 'YLA') {
     if (confidence === 'high') {
-      text = `Olemme melko varmoja että tämä ammatti sopii sinulle, koska vastasit moniin kysymyksiin samalla tavalla. Jos vastauksesi olisivat olleet erilaisia, emme olisi niin varmoja. Tämä on hyvä merkki! Mitä korkeampi varmuus, sitä paremmin ammatti sopii sinulle.`;
+      text = `Olemme melko varmoja että tämä ammatti sopii sinulle. Profiilisi vahvuudet ja kiinnostukset ovat linjassa tämän ammatin kanssa. Tämä on hyvä merkki! Mitä korkeampi varmuus, sitä paremmin ammatti sopii sinulle.`;
     } else if (confidence === 'medium') {
-      text = `Tämä ammatti voisi sopia sinulle. Vastauksesi tukevat tätä ammattia, mutta ne eivät olleet yhtä yhdenmukaisia kuin muissa ammateissa. Voit silti tutustua tähän ammattiin.`;
+      text = `Tämä ammatti voisi sopia sinulle. Profiilisi tukee tätä ammattia, mutta yhteensopivuus ei ole yhtä vahva kuin muissa ammateissa. Voit silti tutustua tähän ammattiin.`;
     } else {
-      text = `Tämä ammatti voisi sopia sinulle, mutta vastauksesi eivät olleet yhtä vahvoja kuin muissa ammateissa. Muista, että tämä on vain suositus - voit tutustua myös tähän ammattiin!`;
+      text = `Tämä ammatti voisi sopia sinulle, mutta profiilisi yhteensopivuus ei ole yhtä vahva kuin muissa ammateissa. Muista, että tämä on vain suositus - voit tutustua myös tähän ammattiin!`;
     }
   } else if (cohort === 'TASO2') {
     if (confidence === 'high') {
-      text = `Korkea varmuus tarkoittaa, että vastauksesi tukevat tätä ammattia vahvasti. Teknologia-profiilisi (Q1-Q7) ja työskentelytapasi (Q24-Q30) sopivat hyvin yhteen. Jos vastauksesi olisivat olleet tasaisemmat eri alueilla, varmuus olisi alempi. Tämä varmuusluku kertoo, että tämä ammatti on hyvä valinta sinulle. Mitä korkeampi varmuus, sitä paremmin ammatti vastaa profiiliasi.`;
+      text = `Korkea varmuus tarkoittaa, että profiilisi tukee tätä ammattia vahvasti. Teknologia-profiilisi ja työskentelytapasi sopivat hyvin yhteen. Tämä varmuusluku kertoo, että tämä ammatti on hyvä valinta sinulle. Mitä korkeampi varmuus, sitä paremmin ammatti vastaa profiiliasi.`;
     } else if (confidence === 'medium') {
-      text = `Kohtalainen varmuus tarkoittaa, että vastauksesi tukevat tätä ammattia, mutta ne eivät olleet yhtä yhdenmukaisia kuin korkean varmuuden ammateissa. Tämä ammatti voisi silti sopia sinulle hyvin.`;
+      text = `Kohtalainen varmuus tarkoittaa, että profiilisi tukee tätä ammattia, mutta yhteensopivuus ei ole yhtä vahva kuin korkean varmuuden ammateissa. Tämä ammatti voisi silti sopia sinulle hyvin.`;
     } else {
-      text = `Alhainen varmuus tarkoittaa, että vastauksesi eivät olleet yhtä vahvoja kuin muissa ammateissa. Tämä ei tarkoita että ammatti ei voisi sopia sinulle - tutustu silti tähän ammattiin.`;
+      text = `Alhainen varmuus tarkoittaa, että profiilisi yhteensopivuus ei ole yhtä vahva kuin muissa ammateissa. Tämä ei tarkoita että ammatti ei voisi sopia sinulle - tutustu silti tähän ammattiin.`;
     }
   } else {
     // NUORI
     if (confidence === 'high') {
-      text = `Korkea varmuus (yli 85%) perustuu kolmeen tekijään: 1) Teknologia-profiili on vahva (Q1-Q7), 2) Työskentelytapa sopii (Q24-Q30), 3) Arvot ovat linjassa (Q11-Q18). Tämä profiili on markkinoilla hyvin arvostettu. Tämän varmuuden perusteella voit strategisesti suunnata urapolkusi. Hyödyntämällä tätä varmuutta voit rakentaa vahvan uran.`;
+      text = `Korkea varmuus (yli 85%) perustuu kolmeen tekijään: 1) Teknologia-profiilisi on vahva, 2) Työskentelytapa sopii, 3) Arvot ovat linjassa. Tämä profiili on markkinoilla hyvin arvostettu. Tämän varmuuden perusteella voit strategisesti suunnata urapolkusi. Hyödyntämällä tätä varmuutta voit rakentaa vahvan uran.`;
     } else if (confidence === 'medium') {
-      text = `Kohtalainen varmuus (70-85%) tarkoittaa, että vastauksesi tukevat tätä roolia, mutta profiili ei ole yhtä yhdenmukainen kuin korkean varmuuden rooleissa. Tämä rooli voisi silti sopia sinulle hyvin.`;
+      text = `Kohtalainen varmuus (70-85%) tarkoittaa, että profiilisi tukee tätä roolia, mutta yhteensopivuus ei ole yhtä vahva kuin korkean varmuuden rooleissa. Tämä rooli voisi silti sopia sinulle hyvin.`;
     } else {
-      text = `Alhainen varmuus (alle 70%) tarkoittaa, että vastauksesi eivät olleet yhtä vahvoja kuin muissa rooleissa. Tämä ei tarkoita että rooli ei voisi sopia sinulle - tutustu silti tähän vaihtoehtoon.`;
+      text = `Alhainen varmuus (alle 70%) tarkoittaa, että profiilisi yhteensopivuus ei ole yhtä vahva kuin muissa rooleissa. Tämä ei tarkoita että rooli ei voisi sopia sinulle - tutustu silti tähän vaihtoehtoon.`;
     }
   }
   
