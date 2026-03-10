@@ -187,17 +187,35 @@ function generateStrongYesInsight(theme: string, subdimension: string, cohort: C
     YLA: [
       `Vastauksestasi näkyy selvästi, että ${theme} kiinnostaa sinua todella paljon.`,
       `Huomasimme, että olet erityisen innostunut aiheesta: ${theme}.`,
-      `${theme.charAt(0).toUpperCase() + theme.slice(1)} on selvästi sinulle tärkeää.`
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} on selvästi sinulle tärkeää.`,
+      `Näemme vastauksistasi, että ${theme} saa sinut innostumaan ja motivoitumaan.`,
+      `Sinulla on vahva kiinnostus aihetta kohtaan: ${theme}. Tämä on merkittävä vahvuutesi.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} nousee esiin yhtenä suurimmista kiinnostuksen kohteistasi.`,
+      `Osoitat selkeää intohimoa alueella ${theme}, mikä on erinomainen lähtökohta.`,
+      `Vastauksesi paljastavat, että ${theme} on alue, jossa koet vahvaa vetovoimaa ja mielenkiintoa.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} resonoi vahvasti kanssasi. Tämä kiinnostus voi ohjata tulevaisuuttasi.`
     ],
     TASO2: [
       `${theme.charAt(0).toUpperCase() + theme.slice(1)} nousi vastauksistasi vahvasti esiin.`,
       `Osoitit vahvaa kiinnostusta aihetta kohtaan: ${theme}.`,
-      `Profiilissasi korostuu selvästi ${theme}.`
+      `Profiilissasi korostuu selvästi ${theme}.`,
+      `Vastauksesi osoittavat, että ${theme} on sinulle merkityksellinen ja motivoiva alue.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} erottuu selkeänä vahvuusalueena kiinnostusprofiilissasi.`,
+      `Näemme vastauksistasi vahvan suuntautumisen alueelle: ${theme}.`,
+      `Profiilisi kertoo, että ${theme} on alue, jossa koet suurta mielenkiintoa ja potentiaalia.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} näyttäytyy yhtenä keskeisimmistä kiinnostuksen kohteistasi.`,
+      `Olet ilmaissut selkeän kiinnostuksen aihetta kohtaan: ${theme}. Tämä on arvokas tieto uravalintoja tehtäessä.`
     ],
     NUORI: [
       `Vastauksesi osoittavat vahvaa suuntautumista alueelle: ${theme}.`,
       `${theme.charAt(0).toUpperCase() + theme.slice(1)} näyttää olevan selkeä kiinnostuksen kohde.`,
-      `Ammatillinen kiinnostuksesi painottuu vahvasti: ${theme}.`
+      `Ammatillinen kiinnostuksesi painottuu vahvasti: ${theme}.`,
+      `Profiilisi kertoo vahvasta ammatillisesta kiinnostuksesta aihetta kohtaan: ${theme}.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} nousee esiin yhtenä keskeisimmistä urasuuntautumisvaihtoehdoistasi.`,
+      `Vastauksesi paljastavat selkeän ammatillisen orientaation alueelle: ${theme}.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} on alue, jossa koet vahvaa ammatillista vetovoimaa ja potentiaalia.`,
+      `Osoitat merkittävää kiinnostusta aihetta kohtaan: ${theme}. Tämä voi olla keskeinen tekijä urapolkusi määrittämisessä.`,
+      `Ammatillinen profiilisi viittaa vahvaan suuntautumiseen: ${theme}. Tämä on lupaava lähtökohta urallesi.`
     ]
   };
 
@@ -210,17 +228,32 @@ function generateStrongNoInsight(theme: string, subdimension: string, cohort: Co
     YLA: [
       `Toisaalta ${theme} ei näytä olevan sinun juttusi, ja sekin on tärkeä tieto.`,
       `On hyvä tietää, että ${theme} ei kiinnosta sinua erityisemmin.`,
-      `${theme.charAt(0).toUpperCase() + theme.slice(1)} ei ole sinulle tärkeää, mikä auttaa rajaamaan vaihtoehtoja.`
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} ei ole sinulle tärkeää, mikä auttaa rajaamaan vaihtoehtoja.`,
+      `Vastauksesi osoittavat, että ${theme} ei herätä sinussa suurta kiinnostusta. Tämä auttaa kartoittamaan sopivampia vaihtoehtoja.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} jää selvästi taka-alalle kiinnostuksessasi, mikä on hyvä tunnistaa.`,
+      `Näemme, että ${theme} ei ole alue, joka motivoisi tai inspiroisi sinua erityisesti.`,
+      `Profiilisi kertoo, että ${theme} ei ole sinun vahvuusalueesi. On tärkeää tunnistaa myös se, mikä ei sovi.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} ei tunnu resonoivan kanssasi, ja tämä tieto on yhtä arvokasta kuin vahvuuksien tunnistaminen.`
     ],
     TASO2: [
       `${theme.charAt(0).toUpperCase() + theme.slice(1)} ei näytä olevan sinun vahvuusalueesi.`,
       `Vastauksesi kertovat, että ${theme} ei kiinnosta sinua. Tämä on arvokasta tietoa.`,
-      `On selkeää, että ${theme} ei ole sinun suuntasi.`
+      `On selkeää, että ${theme} ei ole sinun suuntasi.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} jää profiilissasi taka-alalle. Tämä auttaa rajaamaan sopivia urapolkuja.`,
+      `Vastauksesi paljastavat, että ${theme} ei herätä sinussa erityistä mielenkiintoa tai motivaatiota.`,
+      `Profiilisi osoittaa, että ${theme} ei ole alue, jolle olisit luontaisesti suuntautumassa.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} ei näytä sopivan kiinnostusprofiiliisi. On hyvä tunnistaa myös ei-kiinnostuksen kohteet.`,
+      `Näemme selkeästi, että ${theme} ei ole sinulle motivoiva tai kiinnostava alue, mikä on tärkeää tietoa.`
     ],
     NUORI: [
       `${theme.charAt(0).toUpperCase() + theme.slice(1)} ei ole ammatillisen kiinnostuksesi keskiössä.`,
       `Vastauksesi osoittavat, että ${theme} ei motivoi sinua. Tämä on hyvä tietää urasuunnittelussa.`,
-      `Tämä ala ei näytä sopivan sinulle: ${theme}.`
+      `Tämä ala ei näytä sopivan sinulle: ${theme}.`,
+      `Ammatillinen profiilisi viittaa siihen, että ${theme} ei ole alue, joka herättäisi sinussa intohimoa.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} jää selvästi taka-alalle ammatillisissa prioriteeteissasi.`,
+      `Vastauksesi paljastavat, että ${theme} ei ole urasuuntautumisvaihtoehto, joka resonoisi vahvasti kanssasi.`,
+      `Profiilisi kertoo, että ${theme} ei ole alue, johon suuntautuisit ammatillisesti. Tämä tieto auttaa rajaamaan vaihtoehtoja.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} ei ole ammatillisen kiinnostuksesi ytimessä, mikä on tärkeää huomioida urasuunnittelussa.`
     ]
   };
 
