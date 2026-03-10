@@ -507,6 +507,98 @@ function generateUniqueTraits(
     traits.push('Haluat auttaa ihmisiä kasvamaan ja voimaan paremmin. Terveys ja hyvinvointi sopivat sinulle.');
   }
 
+  // 9. Business + People (relationship builder)
+  if (interests.business > 0.6 && interests.people > 0.6) {
+    traits.push('Yhdistät liiketoimintaosaamisen ja ihmistaidot. Olet luontainen verkostoituja ja kumppanuuksien rakentaja.');
+  }
+
+  // 10. Analytical + Detail-oriented (systematic thinker)
+  if (interests.analytical > 0.6 && workstyle.precision > 0.6) {
+    traits.push('Ajattelet järjestelmällisesti ja huolehdit yksityiskohdista. Voit rakentaa tarkkoja ja virheettömiä ratkaisuja.');
+  }
+
+  // 11. Creative + Writing (storyteller)
+  if (interests.creative > 0.6 && interests.writing > 0.6) {
+    traits.push('Olet tarinankertojatyyppi, joka osaa ilmaista ideat kiehtovasti. Sisällöntuotanto ja viestintä ovat vahvuuksiasi.');
+  }
+
+  // 12. Hands-on + Problem-solving (practical fixer)
+  if (interests.hands_on > 0.6 && interests.analytical > 0.5) {
+    traits.push('Olet käytännöllinen ongelmanratkaisija. Kun jokin hajoaa tai ei toimi, sinä saat sen kuntoon.');
+  }
+
+  // 13. Independent + Entrepreneurial
+  if (workstyle.independence > 0.7 && interests.business > 0.5) {
+    traits.push('Olet itsenäinen yrittäjähenkinen tekijä. Haluat tehdä asiat omalla tavallasi ja ottaa vastuuta tuloksista.');
+  }
+
+  // 14. Strategic + Analytical (big-picture analyst)
+  if (workstyle.strategy > 0.6 && interests.analytical > 0.6) {
+    traits.push('Näet sekä metsän että puut. Osaat analysoida dataa ja tehdä strategisia johtopäätöksiä kokonaisuuden kannalta.');
+  }
+
+  // 15. Teaching + Leadership (mentor leader)
+  if (interests.teaching > 0.6 && interests.leadership > 0.6) {
+    traits.push('Olet mentoroiva johtaja, joka kehittää muita. Et vain johda, vaan opetat ja kasvata tiimejäsi.');
+  }
+
+  // 16. Creative + Business (creative entrepreneur)
+  if (interests.creative > 0.6 && interests.business > 0.6) {
+    traits.push('Yhdistät luovuuden ja liiketoimintaajattelun. Voit kaupallistaa ideoita ja luoda menestyvää luovaa työtä.');
+  }
+
+  // 17. Teamwork + Communication (collaborative communicator)
+  if (workstyle.teamwork > 0.7 && interests.people > 0.6) {
+    traits.push('Olet yhteistyökykyinen kommunikoija. Saat ihmiset työskentelemään yhdessä ja pidät tiimin motivoituneena.');
+  }
+
+  // 18. Research + Writing (knowledge sharer)
+  if (interests.research > 0.6 && interests.writing > 0.5) {
+    traits.push('Olet tiedon etsijä ja jakaja. Osaat perehtyä asioihin syvällisesti ja välittää oppimasi muille ymmärrettävästi.');
+  }
+
+  // 19. Health + Hands-on (practical healer)
+  if (interests.health > 0.6 && interests.hands_on > 0.5) {
+    traits.push('Olet käytännöllinen auttaja. Haluat parantaa ihmisten hyvinvointia konkreettisin teoin, ei vain sanoilla.');
+  }
+
+  // 20. Precision + Structure + Routine (reliable professional)
+  if (workstyle.precision > 0.6 && workstyle.structure > 0.6 && workstyle.routine > 0.5) {
+    traits.push('Olet erittäin luotettava ammattilainen. Työsi on laadukasta, ajantasalla ja aina tehtyä sovitusti.');
+  }
+
+  // 21. Growth-oriented + Learning (continuous learner)
+  if (workstyle.growth > 0.7 && workstyle.learning > 0.6) {
+    traits.push('Olet jatkuvan oppimisen ja kehittymisen ihminen. Et koskaan lopeta oppimasta ja haluat aina parantaa itseäsi.');
+  }
+
+  // 22. Work-life balance + Meaningful work (purposeful balancer)
+  if (workstyle.balance > 0.7 && workstyle.meaning > 0.6) {
+    traits.push('Haluat työn, joka on merkityksellistä mutta ei vie koko elämääsi. Osaat priorisoida mitä todella on tärkeää.');
+  }
+
+  // 23. Multi-interest (renaissance person)
+  const highInterests = Object.values(interests).filter(s => typeof s === 'number' && s > 0.6);
+  if (highInterests.length >= 4 && highInterests.length <= 6) {
+    traits.push('Olet renessanssi-ihminen, jolla on monta vahvaa kiinnostuksen kohdetta. Tämä laaja-alaisuus on harvinainen lahja.');
+  }
+
+  // 24. Focused specialist (deep diver)
+  const veryHigh = Object.values(interests).filter(s => typeof s === 'number' && s > 0.8);
+  if (veryHigh.length === 1 || veryHigh.length === 2) {
+    traits.push('Olet keskittynyt syväosaaja. Kun löydät kipinän, uppoat siihen täysin ja kehityt todelliseksi asiantuntijaksi.');
+  }
+
+  // 25. Practical + Structured (systematic doer)
+  if (interests.hands_on > 0.6 && workstyle.structure > 0.6) {
+    traits.push('Olet järjestelmällinen tekijä. Rakennat asiat huolellisesti, vaihe vaiheelta, ja näet konkreettisia tuloksia.');
+  }
+
+  // 26. Communication + Strategic (influential communicator)
+  if (interests.communication > 0.6 && workstyle.strategy > 0.6) {
+    traits.push('Viestit strategisesti ja vaikutat ihmisiin. Osaat muotoilla viestin niin, että se resonoi yleisön kanssa.');
+  }
+
   return traits.slice(0, 2);
 }
 
