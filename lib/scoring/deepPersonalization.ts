@@ -318,6 +318,136 @@ function detectPatterns(
     });
   }
 
+  // 9. Moderate Tech + Business synergy
+  if (interests.technology >= 0.5 && interests.technology < 0.7 &&
+      interests.business >= 0.5 && interests.business < 0.7) {
+    patterns.push({
+      type: 'synergy',
+      description: 'Yhdistät teknologian ja liiketoimintaymmärryksen tasapainoisesti',
+      implications: 'Voit toimia siltana teknisten tiimien ja liiketoiminnan välillä. Product management tai business analyst -roolit sopivat sinulle.'
+    });
+  }
+
+  // 10. Moderate People + Creative synergy
+  if (interests.people >= 0.5 && interests.people < 0.7 &&
+      interests.creative >= 0.5 && interests.creative < 0.7) {
+    patterns.push({
+      type: 'synergy',
+      description: 'Yhdistät ihmistyön ja luovuuden harmonisesti',
+      implications: 'Voit menestyä luovissa tiimirooleissa, markkinoinnissa tai sisällöntuotannossa, jossa ymmärrät sekä ihmisiä että estetiikkaa.'
+    });
+  }
+
+  // 11. Specialist (deep expert in 1-2 areas)
+  const veryHighScores = Object.values(interests).filter(s => typeof s === 'number' && s > 0.8);
+  if (veryHighScores.length >= 1 && veryHighScores.length <= 2) {
+    patterns.push({
+      type: 'extreme',
+      description: 'Olet selkeä syväosaaja, joka keskittyy rajattuun alueeseen',
+      implications: 'Erikoistuminen on vahvuutesi. Voit kehittyä todelliseksi asiantuntijaksi valitsemallasi alalla ja rakentaa uran syvän osaamisen varaan.'
+    });
+  }
+
+  // 12. Generalist (broad moderate interests)
+  const moderateScores = Object.values(interests).filter(s => typeof s === 'number' && s >= 0.5 && s <= 0.7);
+  if (moderateScores.length >= 5) {
+    patterns.push({
+      type: 'balanced',
+      description: 'Olet monitaituri, jolla on laaja ja tasapainoinen kiinnostusprofiili',
+      implications: 'Monipuolisuutesi on vahvuus. Voit sopeutua eri rooleihin, oppia uusia asioita nopeasti ja toimia erilaisissa työympäristöissä.'
+    });
+  }
+
+  // 13. Three-way combo: Tech + People + Business
+  if (interests.technology >= 0.6 && interests.people >= 0.6 && interests.business >= 0.6) {
+    patterns.push({
+      type: 'rare_combo',
+      description: 'Yhdistät teknologian, ihmisosaamisen ja liiketoimintaymmärryksen',
+      implications: 'Tämä kolmiyhdistelmä on erittäin harvinainen ja arvokas. Voit menestyä product management, startup-ympäristöissä tai digitaalisen liiketoiminnan johtotehtävissä.'
+    });
+  }
+
+  // 14. Creative + Analytical + Hands-on (design thinker)
+  if (interests.creative >= 0.6 && interests.analytical >= 0.6 && interests.hands_on >= 0.6) {
+    patterns.push({
+      type: 'synergy',
+      description: 'Yhdistät luovuuden, analyyttisen ajattelun ja käytännön toteutuksen',
+      implications: 'Olet design thinker -tyyppi. Voit ideoida, analysoida ja toteuttaa ratkaisuja. UX-suunnittelu, tuotekehitys ja arkkitehtuuri sopivat sinulle.'
+    });
+  }
+
+  // 15. Risk-taker pattern (growth + entrepreneurship)
+  if (workstyle?.growth > 0.7 && interests.business > 0.6) {
+    patterns.push({
+      type: 'extreme',
+      description: 'Olet uralentoinen ja kasvuhakuinen',
+      implications: 'Haluat edetä nopeasti ja ottaa haasteita vastaan. Startup-maailma, myynti tai nopean kasvun yritykset tarjoavat sinulle sopivan ympäristön.'
+    });
+  }
+
+  // 16. Stability-seeker pattern
+  if (workstyle?.security > 0.7 && workstyle?.routine > 0.6) {
+    patterns.push({
+      type: 'balanced',
+      description: 'Arvostat vakautta, turvallisuutta ja ennakoitavuutta',
+      implications: 'Haluat luotettavan uran selkeillä rakenteilla. Julkinen sektori, suuryritykset ja vakiintuneet organisaatiot sopivat sinulle.'
+    });
+  }
+
+  // 17. Detail-oriented professional
+  if (workstyle?.precision > 0.7 && workstyle?.structure > 0.7) {
+    patterns.push({
+      type: 'extreme',
+      description: 'Olet tarkkuusammattilainen, joka arvostaa yksityiskohtia ja järjestystä',
+      implications: 'Tarkkuutesi on vahvuus. Voit menestyä laadukkuutta vaativissa ammateissa kuten kirjanpito, oikeusala, laboratoriotyö tai rakennussuunnittelu.'
+    });
+  }
+
+  // 18. Strategic visionary
+  if (interests.leadership > 0.7 && workstyle?.strategy > 0.7) {
+    patterns.push({
+      type: 'synergy',
+      description: 'Olet strateginen ajattelija, joka näkee kokonaisuuksia',
+      implications: 'Voit ajatella pitkällä tähtäimellä ja suunnitella laajoja kokonaisuuksia. Strateginen konsultointi, johtaminen tai liiketoiminnan kehittäminen sopii sinulle.'
+    });
+  }
+
+  // 19. Independent professional (high independence, low teamwork)
+  if (workstyle?.independence > 0.7 && workstyle?.teamwork < 0.4) {
+    patterns.push({
+      type: 'extreme',
+      description: 'Olet itsenäinen ammattilainen, joka työskentelee parhaiten omillaan',
+      implications: 'Tarvitset vapautta ja autonomiaa. Freelancing, yrittäjyys tai asiantuntija-ammatit, joissa työskentelet itsenäisesti, sopivat sinulle erinomaisesti.'
+    });
+  }
+
+  // 20. Team player (high teamwork, low independence)
+  if (workstyle?.teamwork > 0.7 && workstyle?.independence < 0.4) {
+    patterns.push({
+      type: 'synergy',
+      description: 'Olet vahva tiimipelaaja, joka kukoistaa yhteistyössä',
+      implications: 'Saat energiaa muista ihmisistä ja nautit yhteisistä projekteista. Tiimityötä vaativat roolit, projektityö ja yhteisötyö sopivat sinulle.'
+    });
+  }
+
+  // 21. Tech avoider (strong people focus, low tech)
+  if (interests.people > 0.7 && interests.technology < 0.3) {
+    patterns.push({
+      type: 'extreme',
+      description: 'Olet selkeästi ihmiskeskeinen ammattilainen',
+      implications: 'Vahvuutesi on ihmisten kanssa työskentely ilman teknologiapainotteisuutta. Opetus, hoitotyö, asiakaspalvelu ja sosiaalityö sopivat sinulle.'
+    });
+  }
+
+  // 22. Value-driven: Impact + Meaningful work
+  if (workstyle?.impact > 0.7 && workstyle?.meaning > 0.7) {
+    patterns.push({
+      type: 'synergy',
+      description: 'Olet tarkoitusvetoinen ja haluat tehdä merkityksellistä työtä',
+      implications: 'Haluat, että työsi vaikuttaa positiivisesti maailmaan. Järjestötyö, terveydenhuolto, opetus tai kestävä kehitys sopivat arvomaailmaasi.'
+    });
+  }
+
   return patterns.slice(0, 3); // Return top 3 most relevant
 }
 
