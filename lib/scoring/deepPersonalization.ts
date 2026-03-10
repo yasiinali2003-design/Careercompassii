@@ -735,6 +735,98 @@ function generateCareerConnections(
   return connections.slice(0, 2);
 }
 
+/**
+ * Generate growth and development insights based on score gaps and patterns
+ */
+function generateGrowthInsights(
+  detailedScores: DetailedDimensionScores,
+  topStrengths: string[],
+  patterns: ProfilePattern[],
+  cohort: Cohort
+): string | null {
+  const interests = detailedScores.interests;
+  const workstyle = detailedScores.workstyle || {};
+
+  // Identify growth areas based on score analysis
+  const lowScores = Object.entries(interests)
+    .filter(([, v]) => typeof v === 'number' && v < 0.4)
+    .map(([k]) => k);
+
+  const moderateScores = Object.entries(interests)
+    .filter(([, v]) => typeof v === 'number' && v >= 0.4 && v <= 0.6)
+    .map(([k]) => k);
+
+  const highScores = Object.entries(interests)
+    .filter(([, v]) => typeof v === 'number' && v > 0.7)
+    .map(([k]) => k);
+
+  // Generate growth insights based on profile type
+  let growthText = '';
+
+  // Case 1: Strong tech/analytical, weak people skills
+  if ((interests.technology > 0.7 || interests.analytical > 0.7) && interests.people < 0.4) {
+    if (cohort === 'YLA') {
+      growthText = 'Vahvuutesi teknologiassa ja analyyttisessä ajattelussa ovat selkeät. Voisit harkita myös ihmistaitojen kehittämistä, sillä monet hienot työt vaativat sekä teknistä osaamista että kykyä työskennellä tiimeissä. Yhdistämällä nämä taidot, voit avata itsellesi vielä enemmän mahdollisuuksia tulevaisuudessa.';
+    } else if (cohort === 'TASO2') {
+      growthText = 'Tekninen osaamisesi on vahva, mutta voisit hyötyä ihmistaitojen kehittämisestä. Tiimityö, kommunikaatio ja yhteistyötaidot ovat arvostettuja kaikilla aloilla. Harkitse kursseja tai harrastuksia, jotka kehittävät näitä taitoja.';
+    } else {
+      growthText = 'Vahvuutesi teknologiassa ja analytiikassa ovat selkeät, mutta voisit harkita ihmistaitojesi kehittämistä entisestään. Yhdistämällä teknisen osaamisesi vahvempaan kommunikointiin ja sidosryhmähallintaan, voit nousta nopeammin johtotehtäviin tai product owner -rooleihin, joissa tekninen ymmärrys yhdistyy strategiseen päätöksentekoon.';
+    }
+  }
+  // Case 2: Strong people skills, weak tech
+  else if (interests.people > 0.7 && interests.technology < 0.3) {
+    if (cohort === 'YLA') {
+      growthText = 'Olet vahva ihmisten kanssa työskentelyssä, mikä on hieno lahja. Tulevaisuudessa kannattaa kuitenkin tutustua myös teknologiaan, sillä digitaaliset taidot ovat nykyään tärkeitä lähes kaikissa töissä. Ei tarvitse tulla ohjelmoijaksi, mutta perustaitojen oppiminen auttaa.';
+    } else if (cohort === 'TASO2') {
+      growthText = 'Ihmistaitosi ovat vahvoja, mutta teknologian perusteiden oppiminen voisi avata uusia mahdollisuuksia. Digitaaliset työkalut, data-analytiikan perusteet tai sosiaalisen median hallinta täydentävät osaamistasi ja tekevät sinusta monialaisen osaajan.';
+    } else {
+      growthText = 'Ihmistaitosi ovat erinomaiset, mutta digitaalisten taitojen kehittäminen voisi laajentaa uramahdollisuuksiasi merkittävästi. Digitaalisen markkinoinnin, CRM-järjestelmien tai data-analytiikan perusteiden oppiminen yhdistettynä ihmistaitoihisi tekee sinusta erittäin kysytyn ammattilaisen.';
+    }
+  }
+  // Case 3: Balanced profile - explore specialization
+  else if (moderateScores.length >= 5) {
+    if (cohort === 'YLA') {
+      growthText = 'Sinulla on monipuolinen kiinnostus moniin asioihin, mikä on hienoa. Kun siirryt eteenpäin, voi olla hyödyllistä valita yksi tai kaksi aluetta, joihin keskityt erityisesti. Syvällinen osaaminen yhdellä alalla yhdistettynä laajaan yleistietoon on voimakas yhdistelmä.';
+    } else if (cohort === 'TASO2') {
+      growthText = 'Monipuolinen profiilisi on vahvuus, mutta harkitse myös erikoistumista johonkin osa-alueeseen. Syvä osaaminen yhdellä alalla tekee sinusta asiantuntijan, vaikka säilytät laaja-alaisen ymmärryksen. Pohdiskele, mikä kiinnostaa sinua eniten, ja syvenny siihen.';
+    } else {
+      growthText = 'Laaja-alainen osaamisesi on arvokas, mutta urasi edetessä kannattaa harkita strategista erikoistumista. Valitse yksi ydinalue, jossa haluat olla todellinen asiantuntija, mutta säilytä T-muotoinen profiili: syvä osaaminen yhdellä alalla ja laaja ymmärrys muista. Tämä yhdistelmä on markkinoilla erittäin kysytty.';
+    }
+  }
+  // Case 4: Specialist - consider broadening
+  else if (highScores.length <= 2 && highScores.length > 0) {
+    if (cohort === 'YLA') {
+      growthText = 'Sinulla on selkeä intohimo tietylle alueelle, mikä on erinomaista. Kun kehität vahvaa osaamisaluettasi, voi olla hyödyllistä oppia myös viereisiä taitoja. Esimerkiksi jos pidät teknologiasta, myös suunnittelun tai liiketoiminnan ymmärtäminen voi tehdä sinusta ainutlaatuisen.';
+    } else if (cohort === 'TASO2') {
+      growthText = 'Erikoistumisesi on vahvuus, mutta harkitse myös komplementaaristen taitojen oppimista. Jos olet vahva teknisesti, viestintätaidot tekevät sinusta paremman tiimipelaajan. Jos olet luova, liiketoimintaosaaminen auttaa ideoiden kaupallistamisessa. Täydennä vahvuuksiasi strategisesti.';
+    } else {
+      growthText = 'Syväosaamisesi on kilpailuetusi, mutta urasi kannalta kannattaa kehittää myös täydentäviä kompetensseja. Harkitse strategisesti, mitkä taidot tekisivät sinusta ainutlaatuisen markkinoilla. Tekninen osaaminen + johtaminen, luovuus + data-analytiikka, tai asiantuntemus + myyntitaidot ovat esimerkkejä voimakkaista yhdistelmistä.';
+    }
+  }
+  // Case 5: High growth orientation - maintain balance
+  else if (workstyle.growth > 0.7 && workstyle.balance < 0.4) {
+    if (cohort === 'YLA') {
+      growthText = 'Olet kunnianhimoinen ja haluat kehittyä nopeasti, mikä on hieno asenne. Muista kuitenkin, että pitkällä aikavälillä on tärkeää löytää tasapaino työn ja muun elämän välillä. Kestävä kehitys on aina parempaa kuin loppuun palaminen.';
+    } else if (cohort === 'TASO2') {
+      growthText = 'Kasvuhakuisuutesi on vahvuus, mutta muista myös huolehtia hyvinvoinnistasi. Pitkän uran rakentaminen vaatii tasapainoa työn, opiskelun ja levon välillä. Suunnittele kehittymisesi strategisesti niin, että vältät uupumisen.';
+    } else {
+      growthText = 'Vahva kehittymishalukkuutesi on erinomainen ominaisuus uralle, mutta harkitse myös kestävää kehitystä. Tutkimukset osoittavat, että work-life balance parantaa pitkän aikavälin suorituskykyä ja luovuutta. Strateginen lepo ja palautuminen ovat osa huippusuoritusta, eivät sen este.';
+    }
+  }
+  // Default: Generic growth encouragement
+  else {
+    if (cohort === 'YLA') {
+      growthText = 'Jatka omien kiinnostustesi tutkimista ja kokeile rohkeasti uusia asioita. Jokainen kokemus opettaa sinulle jotain arvokasta ja auttaa löytämään oikean suunnan. Älä pelkää tehdä virheitä – ne ovat osa oppimista.';
+    } else if (cohort === 'TASO2') {
+      growthText = 'Kehitä vahvuuksiasi jatkuvasti, mutta ole myös avoin oppimaan uutta. Työelämä muuttuu nopeasti, ja kyky oppia uusia taitoja on yksi tärkeimmistä ominaisuuksista. Investoi itsesi kehittämiseen pitkäjänteisesti.';
+    } else {
+      growthText = 'Jatkuva kehittyminen on keskeistä uramenestykselle. Tunnista vahvuutesi, mutta ole myös valmis kehittämään täydentäviä taitoja, jotka tekevät sinusta ainutlaatuisen markkinoilla. Strateginen itsensä kehittäminen on investointi tulevaisuuteesi.';
+    }
+  }
+
+  return growthText || null;
+}
+
 function getCareerConnectionText(subdimension: string, score: number, cohort: Cohort): string | null {
   const scoreText = score > 0.8 ? 'erittäin vahva' : 'vahva';
 
@@ -903,7 +995,18 @@ export function generateEnhancedPersonalizedAnalysis(
     paragraphs.push(strengthParagraph);
   }
 
-  // ===== PARAGRAPH 4: Career connection explanation =====
+  // ===== PARAGRAPH 4: Growth and development insights =====
+  const growthInsights = generateGrowthInsights(
+    detailedScores!,
+    topStrengths || [],
+    insights.patterns,
+    cohort
+  );
+  if (growthInsights) {
+    paragraphs.push(growthInsights);
+  }
+
+  // ===== PARAGRAPH 5: Career connection explanation =====
   if (insights.careerConnections.length > 0) {
     let careerParagraph = 'Alla näet ammattiehdotuksia, jotka perustuvat vastauksiisi ja profiiliisi. ';
     careerParagraph += insights.careerConnections[0];
@@ -930,7 +1033,7 @@ export function generateEnhancedPersonalizedAnalysis(
     paragraphs.push(careerIntro);
   }
 
-  // ===== PARAGRAPH 5: Forward-looking encouragement (to reach target length) =====
+  // ===== PARAGRAPH 6: Forward-looking encouragement =====
   const topCategory = categoryAffinities?.[0]?.category;
   let closingParagraph = '';
 
