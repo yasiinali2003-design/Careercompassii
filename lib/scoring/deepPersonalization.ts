@@ -15,7 +15,7 @@ import { getQuestionMappings } from './dimensions';
 // ========== TYPES ==========
 
 interface AnswerInsight {
-  type: 'strong_yes' | 'strong_no' | 'contrast' | 'pattern' | 'unique_combo';
+  type: 'strong_yes' | 'strong_no' | 'moderate_yes' | 'moderate_no' | 'contrast' | 'pattern' | 'unique_combo';
   questionIndex: number;
   questionText: string;
   subdimension: string;
@@ -140,7 +140,7 @@ const QUESTION_THEMES: Record<string, Record<number, string>> = {
 // ========== ANSWER ANALYSIS ==========
 
 /**
- * Find questions where user answered very strongly (5) or very weakly (1)
+ * Find questions where user answered very strongly (5), strongly (4), weakly (2), or very weakly (1)
  */
 function findExtremeAnswers(
   answers: TestAnswer[],
@@ -151,7 +151,8 @@ function findExtremeAnswers(
   const themes = QUESTION_THEMES[cohort] || {};
 
   for (const answer of answers) {
-    if (answer.score === 5 || answer.score === 1) {
+    // Capture extreme (5, 1) and moderate (4, 2) scores
+    if (answer.score === 5 || answer.score === 4 || answer.score === 2 || answer.score === 1) {
       const mapping = mappings.find(m => m.q === answer.questionIndex);
       if (mapping) {
         const theme = themes[answer.questionIndex] || mapping.subdimension;
@@ -164,6 +165,24 @@ function findExtremeAnswers(
             subdimension: mapping.subdimension,
             score: answer.score,
             insight: generateStrongYesInsight(theme, mapping.subdimension, cohort)
+          });
+        } else if (answer.score === 4) {
+          insights.push({
+            type: 'moderate_yes',
+            questionIndex: answer.questionIndex,
+            questionText: mapping.text,
+            subdimension: mapping.subdimension,
+            score: answer.score,
+            insight: generateModerateYesInsight(theme, mapping.subdimension, cohort)
+          });
+        } else if (answer.score === 2) {
+          insights.push({
+            type: 'moderate_no',
+            questionIndex: answer.questionIndex,
+            questionText: mapping.text,
+            subdimension: mapping.subdimension,
+            score: answer.score,
+            insight: generateModerateNoInsight(theme, mapping.subdimension, cohort)
           });
         } else {
           insights.push({
@@ -179,7 +198,7 @@ function findExtremeAnswers(
     }
   }
 
-  return insights.slice(0, 4); // Limit to most relevant
+  return insights.slice(0, 5); // Increased limit to capture more nuance
 }
 
 function generateStrongYesInsight(theme: string, subdimension: string, cohort: Cohort): string {
@@ -254,6 +273,58 @@ function generateStrongNoInsight(theme: string, subdimension: string, cohort: Co
       `Vastauksesi paljastavat, että ${theme} ei ole urasuuntautumisvaihtoehto, joka resonoisi vahvasti kanssasi.`,
       `Profiilisi kertoo, että ${theme} ei ole alue, johon suuntautuisit ammatillisesti. Tämä tieto auttaa rajaamaan vaihtoehtoja.`,
       `${theme.charAt(0).toUpperCase() + theme.slice(1)} ei ole ammatillisen kiinnostuksesi ytimessä, mikä on tärkeää huomioida urasuunnittelussa.`
+    ]
+  };
+
+  const options = templates[cohort];
+  return options[Math.floor(Math.random() * options.length)];
+}
+
+function generateModerateYesInsight(theme: string, subdimension: string, cohort: Cohort): string {
+  const templates: Record<Cohort, string[]> = {
+    YLA: [
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} kiinnostaa sinua kohtalaisesti.`,
+      `Näemme, että ${theme} on sinulle jonkin verran kiinnostavaa.`,
+      `Osoitat positiivista suhtautumista aiheeseen: ${theme}.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} vaikuttaa olevan alue, joka herättää mielenkiintoa sinussa.`
+    ],
+    TASO2: [
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} näyttää olevan kiinnostava alue sinulle.`,
+      `Profiilissasi näkyy positiivinen suhtautuminen aiheeseen: ${theme}.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} on alue, johon kallellaan.`,
+      `Vastauksesi viittaavat siihen, että ${theme} on sinulle melko kiinnostava.`
+    ],
+    NUORI: [
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} näyttää olevan sinulle kiinnostava vaihtoehto.`,
+      `Ammatillinen profiilisi osoittaa positiivista suuntautumista alueelle: ${theme}.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} voi olla potentiaalinen urasuuntaus sinulle.`,
+      `Vastauksesi kertovat, että ${theme} voisi sopia ammatilliseen profiiliisi.`
+    ]
+  };
+
+  const options = templates[cohort];
+  return options[Math.floor(Math.random() * options.length)];
+}
+
+function generateModerateNoInsight(theme: string, subdimension: string, cohort: Cohort): string {
+  const templates: Record<Cohort, string[]> = {
+    YLA: [
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} ei vaikuta erityisen kiinnostavalta sinulle.`,
+      `Vastauksesi viittaavat siihen, että ${theme} ei ole ensisijainen kiinnostuksesi.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} jää hieman taka-alalle profiilissasi.`,
+      `Näyttää siltä, että ${theme} ei ole sinulle kaikkein tärkein asia.`
+    ],
+    TASO2: [
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} ei näytä olevan ensisijainen kiinnostuksesi.`,
+      `Profiilissasi ${theme} jää hieman vähemmälle huomiolle.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} ei ole prioriteettisi kärkipäässä.`,
+      `Vastauksesi kertovat, että ${theme} ei ole sinulle keskeinen alue.`
+    ],
+    NUORI: [
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} ei ole ammatillisen kiinnostuksesi ytimessä.`,
+      `Ammatillinen suuntautumisesi ei painotu vahvasti alueelle: ${theme}.`,
+      `${theme.charAt(0).toUpperCase() + theme.slice(1)} jää hieman vähemmälle huomiolle urasuunnittelussasi.`,
+      `Vastauksesi viittaavat siihen, että ${theme} ei ole ensisijainen urasuuntauksesi.`
     ]
   };
 
