@@ -114,7 +114,7 @@ function findExtremeAnswers(
     if (answer.score === 5 || answer.score === 1) {
       const mapping = mappings.find(m => m.q === answer.questionIndex);
       if (mapping) {
-        const theme = themes[answer.questionIndex] || mapping.text;
+        const theme = themes[answer.questionIndex] || mapping.subdimension;
 
         if (answer.score === 5) {
           insights.push({
