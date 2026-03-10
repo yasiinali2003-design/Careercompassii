@@ -1,0 +1,970 @@
+====================================================================================================
+COMPREHENSIVE TEXT QUALITY CHECK
+====================================================================================================
+
+
+====================================================================================================
+TEST: YLA: Tech Enthusiast
+====================================================================================================
+[generateUserProfile] Profile confidence: medium (7 strong, 23 neutral)
+[generateUserProfile] Top 3 categories: innovoija(64%), auttaja(47%), johtaja(37%)
+[generateUserProfile] Hybrid paths: Teknologia + Hoiva, Johtaminen + Innovaatio, Johtaminen + Hoiva
+[generateUserProfile] ⚠️ Edge case detected: undecided
+[rankCareers] 🎯 YLA COHORT: Using unified interest-based matching
+[rankCareers] YLA interests: {"technology":1,"problem_solving":1,"creative":0.5,"writing":0.5,"arts_culture":0.5,"hands_on":0.5,"environment":0.5,"health":0.5,"people":0.8823529411764705,"business":0.5,"analytical":0.5,"sports":0.5,"growth":1,"teaching":1,"innovation":0.5,"leadership":0.5}
+[rankCareers] YLA values: {"impact":0.5,"financial":0.5,"advancement":0,"work_life_balance":0.5,"entrepreneurship":0.5,"global":0.5,"stability":0.5}
+[rankCareers] YLA workstyle: {"teamwork":0.5,"organization":0.5,"outdoor":0.5,"precision":0.5,"flexibility":0.5,"variety":0.5,"performance":0,"social":1,"independence":0.5}
+[rankCareers] YLA category affinities: {
+  "innovoija": 64,
+  "auttaja": 47,
+  "johtaja": 37,
+  "luova": 28,
+  "jarjestaja": 28,
+  "ympariston-puolustaja": 24,
+  "visionaari": 18,
+  "rakentaja": 13
+}
+[rankCareers] YLA dominant category: innovoija, top 3: innovoija, auttaja, johtaja
+[rankCareers] Strength profiles detected: {
+  business: false,
+  tech: true,
+  healthcare: true,
+  creative: true,
+  handsOn: false,
+  organizer: false,
+  visionary: false,
+  environment: false
+}
+[rankCareers] Using curated pool: 170 careers (from 617 total)
+[SCORE DEBUG] Graafinen suunnittelija (luova): baseScore=103, isCreative=true
+[SCORE DEBUG] Muusikko (luova): baseScore=103, isCreative=true
+[SCORE DEBUG] Kirjailija (luova): baseScore=103, isCreative=true
+[SCORE DEBUG] Animaattori (luova): baseScore=103, isCreative=true
+[SCORE DEBUG] Valokuvaaja (luova): baseScore=103, isCreative=true
+[SCORE DEBUG] Rakennusmestari (rakentaja): baseScore=-151, isCreative=true
+[SCORE DEBUG] Putkiasentaja (rakentaja): baseScore=-151, isCreative=true
+[SCORE DEBUG] Maalari (rakentaja): baseScore=-151, isCreative=true
+[SCORE DEBUG] LVI-asentaja (rakentaja): baseScore=-151, isCreative=true
+[SCORE DEBUG] Data-insinööri (innovoija): baseScore=717, isCreative=true
+[DEBUG SCORE] ymparistokasvattaja: base=78, align=64.00441176470589, adjusted=51.2, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] tapahtumakoordinaattori: base=78, align=53.078235294117654, adjusted=42.5, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] toimistosihteeri: base=78, align=54.128235294117644, adjusted=43.3, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] logistiikkakoordinaattori: base=78, align=57.235, adjusted=45.8, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] henkilostoasiantuntija: base=78, align=53.07882352941177, adjusted=42.5, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] asiakaspalvelun-koordinaattori: base=78, align=52.400588235294116, adjusted=41.9, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] hallinnon-koordinaattori: base=78, align=57.43470588235294, adjusted=45.9, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] varastotyontekija: base=78, align=53.25176470588234, adjusted=42.6, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] talousasiantuntija: base=78, align=51.50147058823529, adjusted=41.2, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] projektikoordinaattori: base=78, align=44.67382352941177, adjusted=35.7, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] turvallisuusvastaava: base=78, align=58.29676470588237, adjusted=46.6, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] pankkivirkailija: base=78, align=59.622352941176445, adjusted=47.7, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] kirjanpitaja: base=78, align=46.982647058823524, adjusted=37.6, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] asiakkuusvastaava: base=78, align=61.05588235294117, adjusted=48.8, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] it-tukihenkilo: base=717, align=81.99941176470588, adjusted=164.0, mult=2, penalty=0, total=880.9988235294118
+[DEBUG SCORE] reseptionisti: base=78, align=52.444999999999986, adjusted=42.0, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] asiakaspalveluvastaava: base=78, align=67.18529411764706, adjusted=53.7, mult=0.8, penalty=-130, total=1.7482352941176487
+[DEBUG SCORE] palvelumuotoilija: base=78, align=67.08441176470588, adjusted=53.7, mult=0.8, penalty=-130, total=1.66752941176469
+[DEBUG SCORE] aktuaari: base=78, align=56.11911764705883, adjusted=44.9, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] journalisti: base=78, align=55.759705882352925, adjusted=44.6, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] tutkija: base=78, align=62.6229411764706, adjusted=50.1, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] hankinta-asiantuntija: base=78, align=50.41058823529413, adjusted=40.3, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] toimitusketjuanalyytikko: base=78, align=51.509117647058815, adjusted=41.2, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] isannoitsija: base=78, align=59.364705882352936, adjusted=47.5, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] lennonjohtaja: base=78, align=54.5264705882353, adjusted=43.6, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] palkanlaskija: base=78, align=47.62647058823529, adjusted=38.1, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] markkinointiassistentti: base=78, align=63.14705882352941, adjusted=50.5, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] myyntiassistentti: base=78, align=55.28235294117647, adjusted=44.2, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] talousassistentti: base=78, align=48.476470588235294, adjusted=38.8, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] tilintarkastajan-assistentti: base=78, align=51.77647058823529, adjusted=41.4, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] pankkitoimihenkilo: base=78, align=52.332352941176474, adjusted=41.9, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] vakuutusvirkailija: base=78, align=49.29705882352942, adjusted=39.4, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] veroasiantuntija: base=78, align=50.176470588235304, adjusted=40.1, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] ekonomisti: base=78, align=59.3764705882353, adjusted=47.5, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] liikkeenjohdon-trainee: base=78, align=65.44705882352942, adjusted=52.4, mult=0.8, penalty=-130, total=0.3576470588235452
+[DEBUG SCORE] hr-koordinaattori: base=78, align=58.11764705882353, adjusted=46.5, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] taloushallinnon-harjoittelija: base=78, align=47.241176470588236, adjusted=37.8, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] hankinta-assistentti: base=78, align=51.61176470588235, adjusted=41.3, mult=0.8, penalty=-130, total=0
+[DEBUG SCORE] kassatyontekija: base=78, align=48.18235294117647, adjusted=38.5, mult=0.8, penalty=-130, total=0
+[rankCareers] YLA age-filter: Removed "Rakennustyönjohtaja"
+[rankCareers] YLA age-filter: Removed "Lennonjohtaja"
+[rankCareers] SKIP category priority: User has strong profile that conflicts with dominant innovoija
+[rankCareers] YLA top 5 careers: Mobiilisovelluskehittäjä (100%) - innovoija, Pelimoottori kehittäjä (100%) - innovoija, Full-Stack-kehittäjä (100%) - innovoija, Ohjelmistokehittäjä (100%) - innovoija, IT-tukihenkilö (100%) - innovoija
+[educationPath] Dominant category: auttaja
+
+Category: innovoija (64.0% affinity)
+
+Top Strengths:
+  1. Vahva teknologiakiinnostus
+  2. Ongelmanratkaisukyky
+  3. Kasvu
+  4. Opetus
+  5. Ihmiskeskeisyys
+
+Education Path: lukio
+Reasoning: Profiilistasi välittyy, että arvostat monipuolista oppimista ja haluat pitää vaihtoehdot auki tulevaisuutta varten. Sinussa on vahva uteliaisuus eri aineita kohtaan ja halu ymmärtää asioita syvällisesti. Lukiossa pääset tutustumaan laajasti eri aineisiin matematiikasta taiteeseen ja luonnontieteistä kieliin. Samalla kehität vahvaa opiskelutaitoa ja itsenäistä ajattelua. Lukio sopii sinulle erityisen hyvin, koska haluat rakentaa vahvan perustan jatko-opinnoille ja antaa itsellesi aikaa löytää oma alasi rauhassa.
+
+Top Careers:
+  1. Mobiilisovelluskehittäjä
+  2. Pelimoottori kehittäjä
+  3. Full-Stack-kehittäjä
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+PERSONALIZED ANALYSIS TEXT:
+────────────────────────────────────────────────────────────────────────────────────────────────────
+Vastauksistasi nousee selkeästi esiin, mikä sinua kiinnostaa ja mitkä asiat ovat sinulle tärkeitä. Vastauksestasi näkyy selvästi, että pelien ja sovellusten tekeminen kiinnostaa sinua todella paljon. Arvoitusten ja pulmien ratkaiseminen on selvästi sinulle tärkeää. Myös asioiden selittäminen ja opettaminen on selvästi sinulle tärkeää.
+
+Yhdistät teknologiakiinnostuksen vahvaan ihmissuuntautuneisuuteen. Tämä harvinainen yhdistelmä sopii erinomaisesti aloille kuten terveysteknologia, käyttäjäkokemussuunnittelu tai IT-koulutus. Lisäksi profiilisi on tasapainoinen ja olet vielä löytämässä omaa suuntaasi. Tämä on täysin normaalia. Kokeile erilaisia asioita ja seuraa, mikä saa sinut innostumaan.
+
+Vahvuutesi vahva teknologiakiinnostus ja ongelmanratkaisukyky erottuvat selvästi vastauksistasi. Nämä eivät ole sattumaa, vaan ne heijastavat sitä, kuka olet ja mistä nautit. Kun tiedostat omat vahvuutesi, voit valita polkuja, joissa pääset todella loistamaan ja tekemään työtä, joka tuntuu merkitykselliseltä. Myös kasvu on sinulle luontaista.
+
+Alla näet ammattiehdotuksia, jotka perustuvat vastauksiisi ja profiiliisi. Erittäin vahva teknologiakiinnostuksesi takia ehdotamme sinulle IT-alan ammatteja, joissa pääset kehittämään ja luomaan digitaalisia ratkaisuja.
+
+Muista, että urapolkusi on sinun omasi. Näiden suositusten avulla voit löytää suunnan, mutta lopullinen valinta on aina sinun. Kokeile eri asioita, kysy ammattilaisilta ja seuraa omaa intohimoasi.
+
+⚠️ Olet vielä urasi tutkimisvaiheessa - se on täysin normaalia! Näytämme sinulle monipuolisia vaihtoehtoja eri aloilta.
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+QUALITY CHECKS:
+  Has Analysis: ✅
+  Length: 1583 characters
+  Mentions Strengths: ✅
+  Sequential Listing: ✅ None
+  Generic Phrases: ✅ None
+  Grammar Issues:
+    ❌ Contains multiple consecutive spaces
+
+  OVERALL QUALITY: EXCELLENT
+
+====================================================================================================
+TEST: YLA: Healthcare Helper
+====================================================================================================
+[generateUserProfile] Profile confidence: medium (6 strong, 24 neutral)
+[generateUserProfile] Top 3 categories: auttaja(44%), johtaja(39%), rakentaja(36%)
+[generateUserProfile] Hybrid paths: Johtaminen + Hoiva, Monipuolinen profiili
+[generateUserProfile] ⚠️ Edge case detected: undecided
+[rankCareers] 🎯 YLA COHORT: Using unified interest-based matching
+[rankCareers] YLA interests: {"technology":0.5,"problem_solving":0.5,"creative":0.8055555555555556,"writing":0.5,"arts_culture":0.5,"hands_on":0.5,"environment":0.5,"health":0.7653061224489796,"people":0.5,"business":1,"analytical":0.5,"sports":0.5,"growth":0.5,"teaching":0.5,"innovation":0.5,"leadership":0.5}
+[rankCareers] YLA values: {"impact":0.5,"financial":1,"advancement":0.5,"work_life_balance":1,"entrepreneurship":0.5,"global":0.5,"stability":0.5}
+[rankCareers] YLA workstyle: {"teamwork":0.5,"organization":0.5,"outdoor":1,"precision":0.5,"flexibility":0.5,"variety":0.5,"performance":0.5,"social":0.5,"independence":0.5}
+[rankCareers] YLA category affinities: {
+  "auttaja": 44,
+  "johtaja": 39,
+  "rakentaja": 36,
+  "luova": 35,
+  "visionaari": 28,
+  "jarjestaja": 28,
+  "ympariston-puolustaja": 25,
+  "innovoija": 15
+}
+[rankCareers] YLA dominant category: auttaja, top 3: auttaja, johtaja, rakentaja
+[rankCareers] Strength profiles detected: {
+  business: true,
+  tech: true,
+  healthcare: true,
+  creative: true,
+  handsOn: false,
+  organizer: false,
+  visionary: false,
+  environment: false
+}
+[rankCareers] Using curated pool: 170 careers (from 617 total)
+[SCORE DEBUG] Graafinen suunnittelija (luova): baseScore=110, isCreative=true
+[SCORE DEBUG] Muusikko (luova): baseScore=110, isCreative=true
+[SCORE DEBUG] Kirjailija (luova): baseScore=110, isCreative=true
+[SCORE DEBUG] Animaattori (luova): baseScore=110, isCreative=true
+[SCORE DEBUG] Valokuvaaja (luova): baseScore=110, isCreative=true
+[SCORE DEBUG] Rakennusmestari (rakentaja): baseScore=272, isCreative=true
+[SCORE DEBUG] Putkiasentaja (rakentaja): baseScore=272, isCreative=true
+[SCORE DEBUG] Maalari (rakentaja): baseScore=272, isCreative=true
+[SCORE DEBUG] LVI-asentaja (rakentaja): baseScore=272, isCreative=true
+[SCORE DEBUG] Data-insinööri (innovoija): baseScore=-104, isCreative=true
+[DEBUG SCORE] ymparistokasvattaja: base=-116, align=61.444098639455774, adjusted=18.4, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] tapahtumakoordinaattori: base=-116, align=48.935935374149665, adjusted=14.7, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] toimistosihteeri: base=-116, align=53.202176870748296, adjusted=16.0, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] logistiikkakoordinaattori: base=-116, align=51.24865646258503, adjusted=15.4, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] henkilostoasiantuntija: base=-116, align=50.18517006802722, adjusted=15.1, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] asiakaspalvelun-koordinaattori: base=-116, align=49.33721088435374, adjusted=14.8, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] hallinnon-koordinaattori: base=-116, align=53.4178231292517, adjusted=16.0, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] varastotyontekija: base=-116, align=56.80370748299317, adjusted=17.0, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] talousasiantuntija: base=-116, align=49.7562925170068, adjusted=14.9, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] projektikoordinaattori: base=-116, align=42.131292517006806, adjusted=12.6, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] turvallisuusvastaava: base=-116, align=54.95886054421769, adjusted=16.5, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] pankkivirkailija: base=-116, align=56.68976190476189, adjusted=17.0, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] kirjanpitaja: base=-116, align=48.99455782312925, adjusted=14.7, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] asiakkuusvastaava: base=-116, align=60.537959183673465, adjusted=18.2, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] it-tukihenkilo: base=-104, align=69.3065306122449, adjusted=20.8, mult=0.3, penalty=0, total=0
+[DEBUG SCORE] reseptionisti: base=-116, align=50.06129251700679, adjusted=15.0, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] asiakaspalveluvastaava: base=-116, align=62.99964285714287, adjusted=18.9, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] palvelumuotoilija: base=-116, align=67.33353741496599, adjusted=20.2, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] aktuaari: base=-116, align=52.609625850340144, adjusted=15.8, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] journalisti: base=-116, align=52.63462585034013, adjusted=15.8, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] tutkija: base=-116, align=61.83462585034014, adjusted=18.6, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] hankinta-asiantuntija: base=-116, align=48.324251700680286, adjusted=14.5, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] toimitusketjuanalyytikko: base=-116, align=50.1745238095238, adjusted=15.1, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] isannoitsija: base=-116, align=56.36462585034014, adjusted=16.9, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] lennonjohtaja: base=-116, align=47.55425170068027, adjusted=14.3, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] palkanlaskija: base=-116, align=45.05629251700681, adjusted=13.5, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] markkinointiassistentti: base=-116, align=61.35629251700681, adjusted=18.4, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] myyntiassistentti: base=-116, align=52.17295918367348, adjusted=15.7, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] talousassistentti: base=-116, align=46.50629251700681, adjusted=14.0, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] tilintarkastajan-assistentti: base=-116, align=49.506292517006806, adjusted=14.9, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] pankkitoimihenkilo: base=-116, align=47.55629251700681, adjusted=14.3, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] vakuutusvirkailija: base=-116, align=45.90425170068028, adjusted=13.8, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] veroasiantuntija: base=-116, align=48.65629251700681, adjusted=14.6, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] ekonomisti: base=-116, align=58.02295918367347, adjusted=17.4, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] liikkeenjohdon-trainee: base=-116, align=63.1812925170068, adjusted=19.0, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] hr-koordinaattori: base=-116, align=53.37091836734694, adjusted=16.0, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] taloushallinnon-harjoittelija: base=-116, align=45.80629251700681, adjusted=13.7, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] hankinta-assistentti: base=-116, align=49.11462585034013, adjusted=14.7, mult=0.3, penalty=-130, total=0
+[DEBUG SCORE] kassatyontekija: base=-116, align=42.964625850340134, adjusted=12.9, mult=0.3, penalty=-130, total=0
+[rankCareers] YLA age-filter: Removed "Rakennustyönjohtaja"
+[rankCareers] YLA age-filter: Removed "Lennonjohtaja"
+[rankCareers] SKIP category priority: User has strong profile that conflicts with dominant auttaja
+[rankCareers] YLA top 5 careers: Ensihoitaja (100%) - auttaja, Terveydenhoitaja (100%) - auttaja, Sairaanhoitaja (100%) - auttaja, Lähihoitaja (100%) - auttaja, Lastentarhanopettaja (100%) - auttaja
+[educationPath] Dominant category: auttaja
+[educationPath] Auttaja boost: +5.0 to lukio (health=0.75)
+
+Category: auttaja (44.0% affinity)
+
+Top Strengths:
+  1. Yritystoiminta ja liiketoiminta
+  2. Ulkotyö
+  3. Luovuus ja innovatiivisuus
+  4. Terveysala
+
+Education Path: lukio
+Reasoning: Profiilistasi välittyy, että arvostat monipuolista oppimista ja haluat pitää vaihtoehdot auki tulevaisuutta varten. Sinussa on vahva uteliaisuus eri aineita kohtaan ja halu ymmärtää asioita syvällisesti. Lukiossa pääset tutustumaan laajasti eri aineisiin matematiikasta taiteeseen ja luonnontieteistä kieliin. Samalla kehität vahvaa opiskelutaitoa ja itsenäistä ajattelua. Lukio sopii sinulle erityisen hyvin, koska haluat rakentaa vahvan perustan jatko-opinnoille ja antaa itsellesi aikaa löytää oma alasi rauhassa.
+
+Top Careers:
+  1. Ensihoitaja
+  2. Terveydenhoitaja
+  3. Sairaanhoitaja
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+PERSONALIZED ANALYSIS TEXT:
+────────────────────────────────────────────────────────────────────────────────────────────────────
+Vastauksistasi nousee selkeästi esiin, mikä sinua kiinnostaa ja mitkä asiat ovat sinulle tärkeitä. Huomasimme, että olet erityisen innostunut aiheesta: ihmiskehon toiminta. Yrittäjyys on selvästi sinulle tärkeää. Myös huomasimme, että olet erityisen innostunut aiheesta: ruoanlaitto.
+
+Profiilisi on tasapainoinen ja olet vielä löytämässä omaa suuntaasi. Tämä on täysin normaalia. Kokeile erilaisia asioita ja seuraa, mikä saa sinut innostumaan.
+
+Vahvuutesi yritystoiminta ja liiketoiminta ja ulkotyö erottuvat selvästi vastauksistasi. Nämä eivät ole sattumaa, vaan ne heijastavat sitä, kuka olet ja mistä nautit. Kun tiedostat omat vahvuutesi, voit valita polkuja, joissa pääset todella loistamaan ja tekemään työtä, joka tuntuu merkitykselliseltä. Myös luovuus ja innovatiivisuus on sinulle luontaista.
+
+Alla näet ammattiehdotuksia, jotka perustuvat vastauksiisi ja profiiliisi. Liiketoimintakiinnostuksesi ohjaa ehdotuksia yrittäjyyden ja kaupan alalle. Luovuutesi näkyy vastauksissa, joten ehdotamme ammatteja, joissa pääset ilmaisemaan itseäsi ja suunnittelemaan uutta.
+
+Muista, että urapolkusi on sinun omasi. Näiden suositusten avulla voit löytää suunnan, mutta lopullinen valinta on aina sinun. Kokeile eri asioita, kysy ammattilaisilta ja seuraa omaa intohimoasi.
+
+⚠️ Olet vielä urasi tutkimisvaiheessa - se on täysin normaalia! Näytämme sinulle monipuolisia vaihtoehtoja eri aloilta.
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+QUALITY CHECKS:
+  Has Analysis: ✅
+  Length: 1392 characters
+  Mentions Strengths: ✅
+  Sequential Listing: ✅ None
+  Generic Phrases: ✅ None
+  Grammar Issues:
+    ❌ Contains multiple consecutive spaces
+
+  OVERALL QUALITY: EXCELLENT
+
+====================================================================================================
+TEST: YLA: Creative Artist
+====================================================================================================
+[generateUserProfile] Profile confidence: medium (5 strong, 25 neutral)
+[generateUserProfile] Top 3 categories: luova(69%), visionaari(38%), innovoija(36%)
+[generateUserProfile] Hybrid paths: Teknologia + Luovuus
+[generateUserProfile] ⚠️ Edge case detected: undecided
+[rankCareers] 🎯 YLA COHORT: Using unified interest-based matching
+[rankCareers] YLA interests: {"technology":0.5,"problem_solving":0.5,"creative":0.8589743589743589,"writing":1,"arts_culture":1,"hands_on":0.5,"environment":0.5,"health":0.5,"people":0.5,"business":0.5,"analytical":0.8243243243243242,"sports":0.5,"growth":0.5,"teaching":0.5,"innovation":0.5,"leadership":0.5}
+[rankCareers] YLA values: {"impact":0.5,"financial":0.5,"advancement":0.5,"work_life_balance":0.5,"entrepreneurship":0.5,"global":1,"stability":0.5}
+[rankCareers] YLA workstyle: {"teamwork":0.5,"organization":0.5,"outdoor":0.5,"precision":0.5,"flexibility":1,"variety":1,"performance":0.5,"social":0.5,"independence":1}
+[rankCareers] YLA category affinities: {
+  "luova": 69,
+  "visionaari": 38,
+  "innovoija": 36,
+  "ympariston-puolustaja": 36,
+  "johtaja": 31,
+  "auttaja": 28,
+  "jarjestaja": 21,
+  "rakentaja": 17
+}
+[rankCareers] YLA dominant category: luova, top 3: luova, visionaari, innovoija
+[rankCareers] Strength profiles detected: {
+  business: false,
+  tech: true,
+  healthcare: false,
+  creative: true,
+  handsOn: false,
+  organizer: false,
+  visionary: true,
+  environment: false
+}
+[rankCareers] Using curated pool: 170 careers (from 617 total)
+[SCORE DEBUG] Graafinen suunnittelija (luova): baseScore=732, isCreative=true
+[SCORE DEBUG] Muusikko (luova): baseScore=732, isCreative=true
+[SCORE DEBUG] Kirjailija (luova): baseScore=732, isCreative=true
+[SCORE DEBUG] Animaattori (luova): baseScore=732, isCreative=true
+[SCORE DEBUG] Valokuvaaja (luova): baseScore=732, isCreative=true
+[SCORE DEBUG] Rakennusmestari (rakentaja): baseScore=-152, isCreative=true
+[SCORE DEBUG] Putkiasentaja (rakentaja): baseScore=-152, isCreative=true
+[SCORE DEBUG] Maalari (rakentaja): baseScore=-152, isCreative=true
+[SCORE DEBUG] LVI-asentaja (rakentaja): baseScore=-152, isCreative=true
+[SCORE DEBUG] Data-insinööri (innovoija): baseScore=297, isCreative=true
+[DEBUG SCORE] ymparistokasvattaja: base=-148, align=74.32862785862787, adjusted=22.3, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] tapahtumakoordinaattori: base=-148, align=55.03291060291061, adjusted=16.5, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] toimistosihteeri: base=-148, align=57.378711018711016, adjusted=17.2, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] logistiikkakoordinaattori: base=-148, align=61.16268191268191, adjusted=18.3, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] henkilostoasiantuntija: base=-148, align=55.9056340956341, adjusted=16.8, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] asiakaspalvelun-koordinaattori: base=-148, align=55.19535343035343, adjusted=16.6, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] hallinnon-koordinaattori: base=-148, align=59.77765072765073, adjusted=17.9, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] varastotyontekija: base=-148, align=63.22055093555092, adjusted=19.0, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] talousasiantuntija: base=-148, align=56.0014345114345, adjusted=16.8, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] projektikoordinaattori: base=-148, align=50.50400207900208, adjusted=15.2, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] turvallisuusvastaava: base=-148, align=64.28579002079003, adjusted=19.3, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] pankkivirkailija: base=-148, align=60.31575883575883, adjusted=18.1, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] kirjanpitaja: base=-148, align=50.70940748440748, adjusted=15.2, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] asiakkuusvastaava: base=-148, align=61.90305613305614, adjusted=18.6, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] it-tukihenkilo: base=297, align=82.10411642411644, adjusted=106.7, mult=1.3, penalty=0, total=403.73535135135137
+[DEBUG SCORE] reseptionisti: base=-148, align=57.48575883575882, adjusted=17.2, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] asiakaspalveluvastaava: base=-148, align=67.80399168399168, adjusted=20.3, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] palvelumuotoilija: base=-148, align=71.1502182952183, adjusted=21.3, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] aktuaari: base=-148, align=58.01007276507276, adjusted=17.4, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] journalisti: base=-148, align=65.04265072765072, adjusted=19.5, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] tutkija: base=-148, align=73.17765072765074, adjusted=22.0, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] hankinta-asiantuntija: base=-148, align=53.59400207900208, adjusted=16.1, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] toimitusketjuanalyytikko: base=-148, align=55.07946985446984, adjusted=16.5, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] isannoitsija: base=-148, align=62.11205821205821, adjusted=18.6, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] lennonjohtaja: base=-148, align=54.30197505197505, adjusted=16.3, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] palkanlaskija: base=-148, align=49.65197505197505, adjusted=14.9, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] markkinointiassistentti: base=-148, align=70.82598752598753, adjusted=21.2, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] myyntiassistentti: base=-148, align=56.76133056133057, adjusted=17.0, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] talousassistentti: base=-148, align=50.801975051975056, adjusted=15.2, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] tilintarkastajan-assistentti: base=-148, align=54.741164241164235, adjusted=16.4, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] pankkitoimihenkilo: base=-148, align=50.67359667359668, adjusted=15.2, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] vakuutusvirkailija: base=-148, align=50.12359667359668, adjusted=15.0, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] veroasiantuntija: base=-148, align=54.84116424116424, adjusted=16.5, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] ekonomisti: base=-148, align=67.36268191268191, adjusted=20.2, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] liikkeenjohdon-trainee: base=-148, align=69.87817047817047, adjusted=21.0, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] hr-koordinaattori: base=-148, align=59.61133056133056, adjusted=17.9, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] taloushallinnon-harjoittelija: base=-148, align=50.10197505197506, adjusted=15.0, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] hankinta-assistentti: base=-148, align=54.4512474012474, adjusted=16.3, mult=0.3, penalty=-100, total=0
+[DEBUG SCORE] kassatyontekija: base=-148, align=47.33367983367983, adjusted=14.2, mult=0.3, penalty=-100, total=0
+[rankCareers] YLA age-filter: Removed "Rakennustyönjohtaja"
+[rankCareers] YLA age-filter: Removed "Lennonjohtaja"
+[rankCareers] SKIP category priority: User has strong profile that conflicts with dominant luova
+[rankCareers] YLA top 5 careers: Graafinen suunnittelija (100%) - luova, Valokuvaaja (100%) - luova, Verkkosuunnittelija (100%) - luova, UI/UX-suunnittelija (100%) - luova, Sisällöntuottaja (100%) - luova
+[educationPath] Dominant category: auttaja
+
+Category: luova (69.0% affinity)
+
+Top Strengths:
+  1. Kirjoittaminen
+  2. Taide ja kulttuuri
+  3. Luovuus ja innovatiivisuus
+  4. Analyyttinen ajattelu
+
+Education Path: lukio
+Reasoning: Profiilistasi välittyy, että arvostat monipuolista oppimista ja haluat pitää vaihtoehdot auki tulevaisuutta varten. Sinussa on vahva uteliaisuus eri aineita kohtaan ja halu ymmärtää asioita syvällisesti. Lukiossa pääset tutustumaan laajasti eri aineisiin matematiikasta taiteeseen ja luonnontieteistä kieliin. Samalla kehität vahvaa opiskelutaitoa ja itsenäistä ajattelua. Lukio sopii sinulle erityisen hyvin, koska haluat rakentaa vahvan perustan jatko-opinnoille ja antaa itsellesi aikaa löytää oma alasi rauhassa.
+
+Top Careers:
+  1. Graafinen suunnittelija
+  2. Valokuvaaja
+  3. Verkkosuunnittelija
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+PERSONALIZED ANALYSIS TEXT:
+────────────────────────────────────────────────────────────────────────────────────────────────────
+Vastauksistasi nousee selkeästi esiin, mikä sinua kiinnostaa ja mitkä asiat ovat sinulle tärkeitä. Huomasimme, että olet erityisen innostunut aiheesta: tarinoiden, piirrosten tai musiikin luominen. Huomasimme, että olet erityisen innostunut aiheesta: kokeiden tekeminen. Myös huomasimme, että olet erityisen innostunut aiheesta: päivittäinen vaihtelu.
+
+Sinussa yhdistyy luovuus ja analyyttinen ajattelu. Tämä yhdistelmä on harvinainen vahvuus. Voit ratkaista ongelmia luovasti mutta perustellen. Lisäksi profiilisi on tasapainoinen ja olet vielä löytämässä omaa suuntaasi. Tämä on täysin normaalia. Kokeile erilaisia asioita ja seuraa, mikä saa sinut innostumaan. Osaat kirjoittaa ja analysoida. Tutkija, analyytikko tai toimittaja voisi sopia sinulle.
+
+Vahvuutesi kirjoittaminen ja taide ja kulttuuri erottuvat selvästi vastauksistasi. Nämä eivät ole sattumaa, vaan ne heijastavat sitä, kuka olet ja mistä nautit. Kun tiedostat omat vahvuutesi, voit valita polkuja, joissa pääset todella loistamaan ja tekemään työtä, joka tuntuu merkitykselliseltä. Myös luovuus ja innovatiivisuus on sinulle luontaista.
+
+Alla näet ammattiehdotuksia, jotka perustuvat vastauksiisi ja profiiliisi. Ilmaisutaitosi takia ehdotamme ammatteja, joissa kirjoittaminen ja viestintä ovat keskeisiä. Luovuutesi näkyy vastauksissa, joten ehdotamme ammatteja, joissa pääset ilmaisemaan itseäsi ja suunnittelemaan uutta.
+
+Muista, että urapolkusi on sinun omasi. Näiden suositusten avulla voit löytää suunnan, mutta lopullinen valinta on aina sinun. Kokeile eri asioita, kysy ammattilaisilta ja seuraa omaa intohimoasi.
+
+⚠️ Olet vielä urasi tutkimisvaiheessa - se on täysin normaalia! Näytämme sinulle monipuolisia vaihtoehtoja eri aloilta.
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+QUALITY CHECKS:
+  Has Analysis: ✅
+  Length: 1711 characters
+  Mentions Strengths: ✅
+  Sequential Listing: ✅ None
+  Generic Phrases: ✅ None
+  Grammar Issues:
+    ❌ Contains multiple consecutive spaces
+
+  OVERALL QUALITY: EXCELLENT
+
+====================================================================================================
+TEST: TASO2: Engineering Student
+====================================================================================================
+[generateUserProfile] Profile confidence: medium (6 strong, 24 neutral)
+[generateUserProfile] Top 3 categories: auttaja(53%), jarjestaja(51%), innovoija(47%)
+[generateUserProfile] Hybrid paths: Teknologia + Hoiva, Monipuolinen profiili, Auttaminen + Luovuus
+[generateUserProfile] ⚠️ Edge case detected: undecided
+[rankCareers] 🎯 TASO2 COHORT: Using unified interest-based matching
+[rankCareers] TASO2 interests: {"technology":0.8414634146341463,"health":0.7325581395348837,"people":0.6944444444444444,"hands_on":0.5,"creative":0.74,"leadership":0.5,"organization":0.5,"business":0.8428571428571429,"environment":0.5,"sports":0.5}
+[rankCareers] TASO2 values: {"stability":1,"financial":0.5,"impact":0.5,"advancement":0.5,"work_life_balance":0.5,"entrepreneurship":0.5,"global":0.5}
+[rankCareers] TASO2 workstyle: {"social":0.7380952380952381,"outdoor":0.5,"flexibility":0.5,"precision":0.5,"leadership":0.5,"teamwork":1,"problem_solving":0.5,"structure":0.5}
+[rankCareers] TASO2 category affinities: {
+  "auttaja": 53,
+  "jarjestaja": 51,
+  "innovoija": 47,
+  "johtaja": 45,
+  "luova": 31,
+  "visionaari": 28,
+  "rakentaja": 20,
+  "ympariston-puolustaja": 3
+}
+[rankCareers] TASO2 dominant category: auttaja, top 3: auttaja, jarjestaja, innovoija
+[rankCareers] Strength profiles detected: {
+  business: true,
+  tech: true,
+  healthcare: true,
+  creative: true,
+  handsOn: false,
+  organizer: false,
+  visionary: false,
+  environment: false
+}
+[rankCareers] Using curated pool: 170 careers (from 617 total)
+[SCORE DEBUG] Graafinen suunnittelija (luova): baseScore=106, isCreative=true
+[SCORE DEBUG] Muusikko (luova): baseScore=106, isCreative=true
+[SCORE DEBUG] Kirjailija (luova): baseScore=106, isCreative=true
+[SCORE DEBUG] Animaattori (luova): baseScore=106, isCreative=true
+[SCORE DEBUG] Valokuvaaja (luova): baseScore=106, isCreative=true
+[SCORE DEBUG] Rakennusmestari (rakentaja): baseScore=-133, isCreative=true
+[SCORE DEBUG] Putkiasentaja (rakentaja): baseScore=-133, isCreative=true
+[SCORE DEBUG] Maalari (rakentaja): baseScore=-133, isCreative=true
+[SCORE DEBUG] LVI-asentaja (rakentaja): baseScore=-133, isCreative=true
+[SCORE DEBUG] Data-insinööri (innovoija): baseScore=319, isCreative=true
+[DEBUG SCORE] ymparistokasvattaja: base=302, align=50.86174505937751, adjusted=66.1, mult=1.3, penalty=-130, total=238.12026857719076
+[DEBUG SCORE] tapahtumakoordinaattori: base=302, align=45.21066729690553, adjusted=58.8, mult=1.3, penalty=-130, total=230.77386748597718
+[DEBUG SCORE] toimistosihteeri: base=302, align=48.83782745860681, adjusted=63.5, mult=1.3, penalty=-130, total=235.48917569618885
+[DEBUG SCORE] logistiikkakoordinaattori: base=302, align=42.491173666819726, adjusted=55.2, mult=1.3, penalty=-130, total=227.23852576686568
+[DEBUG SCORE] henkilostoasiantuntija: base=302, align=45.683145972323516, adjusted=59.4, mult=1.3, penalty=-130, total=231.38808976402055
+[DEBUG SCORE] asiakaspalvelun-koordinaattori: base=302, align=45.389512402200424, adjusted=59.0, mult=1.3, penalty=-130, total=231.00636612286053
+[DEBUG SCORE] hallinnon-koordinaattori: base=302, align=49.37718140975429, adjusted=64.2, mult=1.3, penalty=-130, total=236.1903358326806
+[DEBUG SCORE] varastotyontekija: base=302, align=47.538982344308494, adjusted=61.8, mult=1.3, penalty=-130, total=233.80067704760103
+[DEBUG SCORE] talousasiantuntija: base=302, align=41.41491696152842, adjusted=53.8, mult=1.3, penalty=-130, total=225.83939204998694
+[DEBUG SCORE] projektikoordinaattori: base=302, align=35.1113807633093, adjusted=45.6, mult=1.3, penalty=-130, total=217.64479499230208
+[DEBUG SCORE] turvallisuusvastaava: base=302, align=44.923699547128365, adjusted=58.4, mult=1.3, penalty=-130, total=230.4008094112669
+[DEBUG SCORE] pankkivirkailija: base=302, align=51.201625764164596, adjusted=66.6, mult=1.3, penalty=-130, total=238.56211349341396
+[DEBUG SCORE] kirjanpitaja: base=302, align=44.64521989934185, adjusted=58.0, mult=1.3, penalty=-130, total=230.03878586914442
+[DEBUG SCORE] asiakkuusvastaava: base=302, align=55.18201490965075, adjusted=71.7, mult=1.3, penalty=-130, total=243.736619382546
+[DEBUG SCORE] it-tukihenkilo: base=319, align=67.92933723181085, adjusted=88.3, mult=1.3, penalty=0, total=407.3081384013541
+[DEBUG SCORE] reseptionisti: base=302, align=41.82423674472625, adjusted=54.4, mult=1.3, penalty=-130, total=226.3715077681441
+[DEBUG SCORE] asiakaspalveluvastaava: base=302, align=59.70862954559779, adjusted=77.6, mult=1.3, penalty=-130, total=249.6212184092771
+[DEBUG SCORE] palvelumuotoilija: base=302, align=61.33991802393108, adjusted=79.7, mult=1.3, penalty=-130, total=251.74189343111038
+[DEBUG SCORE] aktuaari: base=302, align=48.7638774725621, adjusted=63.4, mult=1.3, penalty=-130, total=235.3930407143307
+[DEBUG SCORE] journalisti: base=302, align=43.89829326814862, adjusted=57.1, mult=1.3, penalty=-130, total=229.06778124859318
+[DEBUG SCORE] tutkija: base=302, align=50.293434189557836, adjusted=65.4, mult=1.3, penalty=-130, total=237.38146444642518
+[DEBUG SCORE] hankinta-asiantuntija: base=302, align=40.361942711287575, adjusted=52.5, mult=1.3, penalty=-130, total=224.47052552467386
+[DEBUG SCORE] toimitusketjuanalyytikko: base=302, align=47.92384506027784, adjusted=62.3, mult=1.3, penalty=-130, total=234.3009985783612
+[DEBUG SCORE] isannoitsija: base=302, align=51.400712935202435, adjusted=66.8, mult=1.3, penalty=-130, total=238.8209268157632
+[DEBUG SCORE] lennonjohtaja: base=302, align=46.89129424051716, adjusted=61.0, mult=1.3, penalty=-130, total=232.95868251267234
+[DEBUG SCORE] palkanlaskija: base=302, align=40.4323525015981, adjusted=52.6, mult=1.3, penalty=-130, total=224.56205825207752
+[DEBUG SCORE] markkinointiassistentti: base=302, align=53.01536837461397, adjusted=68.9, mult=1.3, penalty=-130, total=240.91997888699814
+[DEBUG SCORE] myyntiassistentti: base=302, align=48.6396811891707, adjusted=63.2, mult=1.3, penalty=-130, total=235.23158554592192
+[DEBUG SCORE] talousassistentti: base=302, align=41.69378107302668, adjusted=54.2, mult=1.3, penalty=-130, total=226.2019153949347
+[DEBUG SCORE] tilintarkastajan-assistentti: base=302, align=44.38663821588382, adjusted=57.7, mult=1.3, penalty=-130, total=229.70262968064895
+[DEBUG SCORE] pankkitoimihenkilo: base=302, align=45.981876311121916, adjusted=59.8, mult=1.3, penalty=-130, total=231.77643920445848
+[DEBUG SCORE] vakuutusvirkailija: base=302, align=42.64201046196508, adjusted=55.4, mult=1.3, penalty=-130, total=227.4346136005546
+[DEBUG SCORE] veroasiantuntija: base=302, align=41.87444309393261, adjusted=54.4, mult=1.3, penalty=-130, total=226.43677602211238
+[DEBUG SCORE] ekonomisti: base=302, align=47.85663821588383, adjusted=62.2, mult=1.3, penalty=-130, total=234.21362968064898
+[DEBUG SCORE] liikkeenjohdon-trainee: base=302, align=56.95108266032826, adjusted=74.0, mult=1.3, penalty=-130, total=246.03640745842677
+[DEBUG SCORE] hr-koordinaattori: base=302, align=50.130740620695235, adjusted=65.2, mult=1.3, penalty=-130, total=237.1699628069038
+[DEBUG SCORE] taloushallinnon-harjoittelija: base=302, align=40.32155885080446, adjusted=52.4, mult=1.3, penalty=-130, total=224.4180265060458
+[DEBUG SCORE] hankinta-assistentti: base=302, align=44.83809388758339, adjusted=58.3, mult=1.3, penalty=-130, total=230.28952205385843
+[DEBUG SCORE] kassatyontekija: base=302, align=43.07177178150519, adjusted=56.0, mult=1.3, penalty=-130, total=227.99330331595672
+[rankCareers] SKIP category priority: User has strong profile that conflicts with dominant auttaja
+[rankCareers] TASO2 top 5 careers: Kokki (100%) - auttaja, Ravintolatyöntekijä (100%) - auttaja, Tarjoilija (100%) - auttaja, Ensihoitaja (100%) - auttaja, Terveydenhoitaja (100%) - auttaja
+[TASO2 Education Path] Total mappings: 39, subCohort: undefined
+[TASO2 Education Path] Q20 mappings: [ { q: 20, originalQ: undefined, subdim: 'teamwork' } ]
+[TASO2 Education Path] Q22 mappings: [ { q: 22, originalQ: undefined, subdim: 'structure' } ]
+[TASO2 Education Path] Subdimension scores: {
+  analytical: 0.5,
+  technology: 0.7592592592592592,
+  health: 0.6515151515151515,
+  people: 0.6206896551724137,
+  hands_on: 0.5,
+  creative: 0.6578947368421053,
+  business: 0.7608695652173914,
+  innovation: 0.5,
+  writing: 0.5,
+  environment: 0.5,
+  leadership: 0.5,
+  problem_solving: 0.5
+}
+
+Category: auttaja (53.0% affinity)
+
+Top Strengths:
+  1. Yritystoiminta ja liiketoiminta
+  2. Vahva teknologiakiinnostus
+  3. Luovuus ja innovatiivisuus
+  4. Terveysala
+  5. Ihmiskeskeisyys
+
+Education Path: amk
+Reasoning: Vastaustesi perusteella ammattikorkeakoulu-opinnot vaikuttavat sopivalta vaihtoehdolta. Näytät pitävän käytännönläheisestä oppimisesta ja konkreettisista työelämän taidoista, mikä sopii hyvin AMK-koulutukseen. Ammattikorkeakouluissa opiskelutapa on käytännönläheinen ja työelämäprojekteja on runsaasti, mikä auttaa kehittämään työelämässä tarvittavia taitoja.
+
+AMK-opinnot kestävät tyypillisesti 3,5–4,5 vuotta ja tarjoavat hyvät valmiudet työelämään. Työmarkkinanäkymät ovat erinomaiset, ja työllistyminen tapahtuu yleensä nopeasti. Keskimääräinen palkka vaihtelee aloittain, mutta on yleisesti kilpailukykyinen.
+
+Top Careers:
+  1. Kokki
+  2. Ravintolatyöntekijä
+  3. Tarjoilija
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+PERSONALIZED ANALYSIS TEXT:
+────────────────────────────────────────────────────────────────────────────────────────────────────
+Profiilisi kertoo selkeää tarinaa kiinnostuksistasi ja ammatillisesta suuntautumisestasi. Osoitit vahvaa kiinnostusta aihetta kohtaan: teknologia ja digitaaliset ratkaisut. Lisäksi käytännön tekeminen nousi vastauksistasi vahvasti esiin.
+
+Osaat yhdistää teknologian ja luovuuden. Olet digitaalisen aikakauden renessanssi-ihminen.
+
+Profiilissasi korostuvat erityisesti yritystoiminta ja liiketoiminta ja vahva teknologiakiinnostus. Nämä vahvuudet ovat erittäin arvokkaita työelämässä ja antavat sinulle selkeää kilpailuetua muihin hakijoihin verrattuna. Hyödynnä näitä vahvuuksia tietoisesti työhakemuksissa, haastatteluissa ja urasi rakentamisessa. Luovuus ja innovatiivisuus täydentää osaamistasi.
+
+Alla näet ammattiehdotuksia, jotka perustuvat vastauksiisi ja profiiliisi. Liiketoimintakiinnostuksesi ohjaa ehdotuksia yrittäjyyden ja kaupan alalle. Erittäin vahva teknologiakiinnostuksesi takia ehdotamme sinulle IT-alan ammatteja, joissa pääset kehittämään ja luomaan digitaalisia ratkaisuja.
+
+Hyödynnä näitä suosituksia lähtökohtana omalle urasuunnittelullesi. Voit aina palata tekemään testin uudelleen, kun kiinnostuksesi kehittyvät.
+
+⚠️ Olet vielä urasi tutkimisvaiheessa - se on täysin normaalia! Näytämme sinulle monipuolisia vaihtoehtoja eri aloilta.
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+QUALITY CHECKS:
+  Has Analysis: ✅
+  Length: 1260 characters
+  Mentions Strengths: ✅
+  Sequential Listing: ✅ None
+  Generic Phrases: ✅ None
+  Grammar Issues:
+    ❌ Contains multiple consecutive spaces
+
+  OVERALL QUALITY: EXCELLENT
+
+====================================================================================================
+TEST: TASO2: Medical Aspirant
+====================================================================================================
+[generateUserProfile] Profile confidence: medium (6 strong, 24 neutral)
+[generateUserProfile] Top 3 categories: rakentaja(56%), ympariston-puolustaja(42%), visionaari(36%)
+[generateUserProfile] Hybrid paths: Rakentaja + Ympäristön puolustaja
+[generateUserProfile] ⚠️ Edge case detected: undecided
+[rankCareers] 🎯 TASO2 COHORT: Using unified interest-based matching
+[rankCareers] TASO2 interests: {"technology":0.825,"health":0.5,"people":0.5,"hands_on":0.76,"creative":0.5,"leadership":0.5,"organization":1,"business":0.5,"environment":0.5,"sports":1}
+[rankCareers] TASO2 values: {"stability":0.5,"financial":1,"impact":0.5,"advancement":1,"work_life_balance":0.5,"entrepreneurship":0.5,"global":0.5}
+[rankCareers] TASO2 workstyle: {"social":0.5,"outdoor":1,"flexibility":0.5,"precision":0.5,"leadership":0.5,"teamwork":0.5,"problem_solving":0.5,"structure":0.5}
+[rankCareers] TASO2 category affinities: {
+  "rakentaja": 56,
+  "ympariston-puolustaja": 42,
+  "visionaari": 36,
+  "jarjestaja": 36,
+  "johtaja": 32,
+  "innovoija": 29,
+  "luova": 28,
+  "auttaja": 25
+}
+[rankCareers] TASO2 dominant category: rakentaja, top 3: rakentaja, ympariston-puolustaja, visionaari
+[rankCareers] Strength profiles detected: {
+  business: false,
+  tech: true,
+  healthcare: false,
+  creative: true,
+  handsOn: true,
+  organizer: false,
+  visionary: false,
+  environment: false
+}
+[rankCareers] Using curated pool: 170 careers (from 617 total)
+[SCORE DEBUG] Graafinen suunnittelija (luova): baseScore=-103, isCreative=true
+[SCORE DEBUG] Muusikko (luova): baseScore=-103, isCreative=true
+[SCORE DEBUG] Kirjailija (luova): baseScore=-103, isCreative=true
+[SCORE DEBUG] Animaattori (luova): baseScore=-103, isCreative=true
+[SCORE DEBUG] Valokuvaaja (luova): baseScore=-103, isCreative=true
+[SCORE DEBUG] Rakennusmestari (rakentaja): baseScore=693, isCreative=true
+[SCORE DEBUG] Putkiasentaja (rakentaja): baseScore=693, isCreative=true
+[SCORE DEBUG] Maalari (rakentaja): baseScore=693, isCreative=true
+[SCORE DEBUG] LVI-asentaja (rakentaja): baseScore=693, isCreative=true
+[SCORE DEBUG] Data-insinööri (innovoija): baseScore=-102, isCreative=true
+[DEBUG SCORE] ymparistokasvattaja: base=86, align=48.387750000000004, adjusted=38.7, mult=0.8, penalty=-100, total=24.710200000000015
+[DEBUG SCORE] tapahtumakoordinaattori: base=86, align=41.81475000000001, adjusted=33.5, mult=0.8, penalty=-100, total=19.45180000000002
+[DEBUG SCORE] toimistosihteeri: base=86, align=44.88424999999999, adjusted=35.9, mult=0.8, penalty=-100, total=21.907399999999996
+[DEBUG SCORE] logistiikkakoordinaattori: base=86, align=36.5175, adjusted=29.2, mult=0.8, penalty=-100, total=15.213999999999999
+[DEBUG SCORE] henkilostoasiantuntija: base=86, align=39.690749999999994, adjusted=31.8, mult=0.8, penalty=-100, total=17.7526
+[DEBUG SCORE] asiakaspalvelun-koordinaattori: base=86, align=38.13075, adjusted=30.5, mult=0.8, penalty=-100, total=16.504599999999996
+[DEBUG SCORE] hallinnon-koordinaattori: base=86, align=43.54075, adjusted=34.8, mult=0.8, penalty=-100, total=20.832600000000014
+[DEBUG SCORE] varastotyontekija: base=86, align=40.544, adjusted=32.4, mult=0.8, penalty=-100, total=18.43520000000001
+[DEBUG SCORE] talousasiantuntija: base=86, align=34.45625, adjusted=27.6, mult=0.8, penalty=-100, total=13.564999999999998
+[DEBUG SCORE] projektikoordinaattori: base=86, align=32.890499999999996, adjusted=26.3, mult=0.8, penalty=-100, total=12.312399999999997
+[DEBUG SCORE] turvallisuusvastaava: base=86, align=43.223000000000006, adjusted=34.6, mult=0.8, penalty=-100, total=20.578400000000016
+[DEBUG SCORE] pankkivirkailija: base=86, align=44.32649999999999, adjusted=35.5, mult=0.8, penalty=-100, total=21.46119999999999
+[DEBUG SCORE] kirjanpitaja: base=86, align=40.3, adjusted=32.2, mult=0.8, penalty=-100, total=18.24000000000001
+[DEBUG SCORE] asiakkuusvastaava: base=86, align=45.9625, adjusted=36.8, mult=0.8, penalty=-100, total=22.77000000000001
+[DEBUG SCORE] it-tukihenkilo: base=-102, align=64.11824999999999, adjusted=19.2, mult=0.3, penalty=0, total=0
+[DEBUG SCORE] reseptionisti: base=86, align=40.336, adjusted=32.3, mult=0.8, penalty=-100, total=18.2688
+[DEBUG SCORE] asiakaspalveluvastaava: base=86, align=53.003750000000004, adjusted=42.4, mult=0.8, penalty=-100, total=28.40300000000002
+[DEBUG SCORE] palvelumuotoilija: base=86, align=54.6385, adjusted=43.7, mult=0.8, penalty=-100, total=29.710800000000006
+[DEBUG SCORE] aktuaari: base=86, align=43.42075, adjusted=34.7, mult=0.8, penalty=-100, total=20.73660000000001
+[DEBUG SCORE] journalisti: base=86, align=39.54750000000001, adjusted=31.6, mult=0.8, penalty=-100, total=17.638000000000005
+[DEBUG SCORE] tutkija: base=86, align=41.31125, adjusted=33.0, mult=0.8, penalty=-100, total=19.049000000000007
+[DEBUG SCORE] hankinta-asiantuntija: base=86, align=33.155, adjusted=26.5, mult=0.8, penalty=-100, total=12.524000000000001
+[DEBUG SCORE] toimitusketjuanalyytikko: base=86, align=43.85574999999999, adjusted=35.1, mult=0.8, penalty=-100, total=21.084599999999995
+[DEBUG SCORE] isannoitsija: base=86, align=44.169999999999995, adjusted=35.3, mult=0.8, penalty=-100, total=21.336
+[DEBUG SCORE] lennonjohtaja: base=86, align=43.332499999999996, adjusted=34.7, mult=0.8, penalty=-100, total=20.665999999999997
+[DEBUG SCORE] palkanlaskija: base=86, align=34.9675, adjusted=28.0, mult=0.8, penalty=-100, total=13.974000000000004
+[DEBUG SCORE] markkinointiassistentti: base=86, align=43.9075, adjusted=35.1, mult=0.8, penalty=-100, total=21.126000000000005
+[DEBUG SCORE] myyntiassistentti: base=86, align=39.78, adjusted=31.8, mult=0.8, penalty=-100, total=17.823999999999998
+[DEBUG SCORE] talousassistentti: base=86, align=35.517500000000005, adjusted=28.4, mult=0.8, penalty=-100, total=14.414000000000001
+[DEBUG SCORE] tilintarkastajan-assistentti: base=86, align=37.7675, adjusted=30.2, mult=0.8, penalty=-100, total=16.214
+[DEBUG SCORE] pankkitoimihenkilo: base=86, align=38.027499999999996, adjusted=30.4, mult=0.8, penalty=-100, total=16.421999999999997
+[DEBUG SCORE] vakuutusvirkailija: base=86, align=35.18999999999999, adjusted=28.2, mult=0.8, penalty=-100, total=14.151999999999987
+[DEBUG SCORE] veroasiantuntija: base=86, align=35.49, adjusted=28.4, mult=0.8, penalty=-100, total=14.391999999999996
+[DEBUG SCORE] ekonomisti: base=86, align=40.4275, adjusted=32.3, mult=0.8, penalty=-100, total=18.342000000000013
+[DEBUG SCORE] liikkeenjohdon-trainee: base=86, align=48.257499999999986, adjusted=38.6, mult=0.8, penalty=-100, total=24.605999999999995
+[DEBUG SCORE] hr-koordinaattori: base=86, align=41.33, adjusted=33.1, mult=0.8, penalty=-100, total=19.063999999999993
+[DEBUG SCORE] taloushallinnon-harjoittelija: base=86, align=34.417500000000004, adjusted=27.5, mult=0.8, penalty=-100, total=13.534000000000006
+[DEBUG SCORE] hankinta-assistentti: base=86, align=38.26999999999999, adjusted=30.6, mult=0.8, penalty=-100, total=16.615999999999985
+[DEBUG SCORE] kassatyontekija: base=86, align=37.7125, adjusted=30.2, mult=0.8, penalty=-100, total=16.17
+[rankCareers] SKIP category priority: User has strong profile that conflicts with dominant rakentaja
+[rankCareers] TASO2 top 5 careers: Maalari (100%) - rakentaja, Automekaanikko (100%) - rakentaja, Raskaan kaluston mekaanikko (100%) - rakentaja, Puuseppä (100%) - rakentaja, Puutarhuri (100%) - rakentaja
+[TASO2 Education Path] Total mappings: 39, subCohort: undefined
+[TASO2 Education Path] Q20 mappings: [ { q: 20, originalQ: undefined, subdim: 'teamwork' } ]
+[TASO2 Education Path] Q22 mappings: [ { q: 22, originalQ: undefined, subdim: 'structure' } ]
+[TASO2 Education Path] Subdimension scores: {
+  analytical: 0.5,
+  technology: 0.7407407407407407,
+  health: 0.5,
+  people: 0.5,
+  hands_on: 0.6756756756756757,
+  creative: 0.5,
+  business: 0.5,
+  innovation: 0.5,
+  writing: 0.5,
+  environment: 0.5,
+  leadership: 0.5,
+  problem_solving: 0.5
+}
+
+Category: rakentaja (56.0% affinity)
+
+Top Strengths:
+  1. Urheilu
+  2. Ulkotyö
+  3. Organisointikyky
+  4. Vahva teknologiakiinnostus
+  5. Käytännön tekeminen
+
+Education Path: amk
+Reasoning: Vastaustesi perusteella ammattikorkeakoulu-opinnot vaikuttavat sopivalta vaihtoehdolta. Näytät pitävän käytännönläheisestä oppimisesta ja konkreettisista työelämän taidoista, mikä sopii hyvin AMK-koulutukseen. Ammattikorkeakouluissa opiskelutapa on käytännönläheinen ja työelämäprojekteja on runsaasti, mikä auttaa kehittämään työelämässä tarvittavia taitoja.
+
+AMK-opinnot kestävät tyypillisesti 3,5–4,5 vuotta ja tarjoavat hyvät valmiudet työelämään. Työmarkkinanäkymät ovat erinomaiset, ja työllistyminen tapahtuu yleensä nopeasti. Keskimääräinen palkka vaihtelee aloittain, mutta on yleisesti kilpailukykyinen.
+
+Top Careers:
+  1. Maalari
+  2. Automekaanikko
+  3. Raskaan kaluston mekaanikko
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+PERSONALIZED ANALYSIS TEXT:
+────────────────────────────────────────────────────────────────────────────────────────────────────
+Profiilisi kertoo selkeää tarinaa kiinnostuksistasi ja ammatillisesta suuntautumisestasi. Ihmisten kanssa työskentely nousi vastauksistasi vahvasti esiin. Lisäksi profiilissasi korostuu selvästi tutkimus ja kehittäminen.
+
+Profiilisi on tasapainoinen ja olet vielä löytämässä omaa suuntaasi. Tämä on täysin normaalia. Kokeile erilaisia asioita ja seuraa, mikä saa sinut innostumaan.
+
+Profiilissasi korostuvat erityisesti urheilu ja ulkotyö. Nämä vahvuudet ovat erittäin arvokkaita työelämässä ja antavat sinulle selkeää kilpailuetua muihin hakijoihin verrattuna. Hyödynnä näitä vahvuuksia tietoisesti työhakemuksissa, haastatteluissa ja urasi rakentamisessa. Organisointikyky täydentää osaamistasi.
+
+Alla näet ammattiehdotuksia, jotka perustuvat vastauksiisi ja profiiliisi. Urheilukiinnostuksesi ohjaa ehdotuksia valmennus- ja liikunta-alalle. Erittäin vahva teknologiakiinnostuksesi takia ehdotamme sinulle IT-alan ammatteja, joissa pääset kehittämään ja luomaan digitaalisia ratkaisuja.
+
+Hyödynnä näitä suosituksia lähtökohtana omalle urasuunnittelullesi. Voit aina palata tekemään testin uudelleen, kun kiinnostuksesi kehittyvät.
+
+⚠️ Olet vielä urasi tutkimisvaiheessa - se on täysin normaalia! Näytämme sinulle monipuolisia vaihtoehtoja eri aloilta.
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+QUALITY CHECKS:
+  Has Analysis: ✅
+  Length: 1253 characters
+  Mentions Strengths: ✅
+  Sequential Listing: ✅ None
+  Generic Phrases: ✅ None
+  Grammar Issues:
+    ❌ Contains multiple consecutive spaces
+
+  OVERALL QUALITY: EXCELLENT
+
+====================================================================================================
+TEST: NUORI: Software Developer
+====================================================================================================
+[generateUserProfile] Profile confidence: medium (6 strong, 24 neutral)
+[generateUserProfile] Top 3 categories: luova(68%), innovoija(62%), jarjestaja(50%)
+[generateUserProfile] Hybrid paths: Teknologia + Luovuus, Luovuus + Käsityö
+[generateUserProfile] ⚠️ Edge case detected: undecided
+[rankCareers] 🎯 NUORI COHORT: Using unified interest-based matching
+[rankCareers] NUORI interests: {"technology":1,"analytical":0.7307692307692307,"health":0.5,"people":0.5,"business":0.6818181818181818,"creative":1,"writing":1,"arts_culture":1,"innovation":1,"hands_on":1,"growth":0.5,"teaching":0.5,"leadership":1,"environment":0.5,"nature":0.5}
+[rankCareers] NUORI values: {"growth":0.5,"financial":1,"work_life_balance":0.5,"advancement":1,"social_impact":0.5,"impact":0.5,"stability":0.5,"autonomy":0.5,"entrepreneurship":0.5,"global":0.5,"international":0.5,"social":0.5}
+[rankCareers] NUORI workstyle: {"independence":0.5,"leadership":0.5,"teamwork":0.5,"structure":0.5,"organization":0.5,"social":0.5,"planning":0.5,"precision":0.5,"performance":0.8333333333333334}
+[rankCareers] NUORI category affinities: {
+  "luova": 68,
+  "innovoija": 62,
+  "jarjestaja": 50,
+  "rakentaja": 48,
+  "johtaja": 36,
+  "visionaari": 31,
+  "ympariston-puolustaja": 20,
+  "auttaja": 18
+}
+[rankCareers] NUORI dominant category: luova, top 3: luova, innovoija, jarjestaja
+[rankCareers] Strength profiles detected: {
+  business: true,
+  tech: true,
+  healthcare: false,
+  creative: true,
+  handsOn: true,
+  organizer: false,
+  visionary: true,
+  environment: true
+}
+[rankCareers] Using curated pool: 170 careers (from 617 total)
+[SCORE DEBUG] Graafinen suunnittelija (luova): baseScore=729, isCreative=true
+[SCORE DEBUG] Muusikko (luova): baseScore=729, isCreative=true
+[SCORE DEBUG] Kirjailija (luova): baseScore=729, isCreative=true
+[SCORE DEBUG] Animaattori (luova): baseScore=729, isCreative=true
+[SCORE DEBUG] Valokuvaaja (luova): baseScore=729, isCreative=true
+[SCORE DEBUG] Rakennusmestari (rakentaja): baseScore=123, isCreative=true
+[SCORE DEBUG] Putkiasentaja (rakentaja): baseScore=123, isCreative=true
+[SCORE DEBUG] Maalari (rakentaja): baseScore=123, isCreative=true
+[SCORE DEBUG] LVI-asentaja (rakentaja): baseScore=123, isCreative=true
+[SCORE DEBUG] Data-insinööri (innovoija): baseScore=349, isCreative=true
+[DEBUG SCORE] ymparistokasvattaja: base=300, align=91.21933566433567, adjusted=118.6, mult=1.3, penalty=-120, total=298.58513636363637
+[DEBUG SCORE] tapahtumakoordinaattori: base=300, align=49.86185314685316, adjusted=64.8, mult=1.3, penalty=-120, total=244.8204090909091
+[DEBUG SCORE] toimistosihteeri: base=300, align=61.93321678321678, adjusted=80.5, mult=1.3, penalty=-120, total=260.5131818181818
+[DEBUG SCORE] logistiikkakoordinaattori: base=300, align=67.48122377622377, adjusted=87.7, mult=1.3, penalty=-120, total=267.7255909090909
+[DEBUG SCORE] henkilostoasiantuntija: base=300, align=52.23192307692308, adjusted=67.9, mult=1.3, penalty=-120, total=247.9015
+[DEBUG SCORE] asiakaspalvelun-koordinaattori: base=300, align=49.245979020979014, adjusted=64.0, mult=1.3, penalty=-120, total=244.0197727272727
+[DEBUG SCORE] hallinnon-koordinaattori: base=300, align=56.95388111888111, adjusted=74.0, mult=1.3, penalty=-120, total=254.0400454545454
+[DEBUG SCORE] varastotyontekija: base=300, align=53.29842657342657, adjusted=69.3, mult=1.3, penalty=-120, total=249.28795454545457
+[DEBUG SCORE] talousasiantuntija: base=300, align=58.066923076923075, adjusted=75.5, mult=1.3, penalty=-120, total=255.48699999999997
+[DEBUG SCORE] projektikoordinaattori: base=300, align=43.43171328671329, adjusted=56.5, mult=1.3, penalty=-120, total=236.46122727272729
+[DEBUG SCORE] turvallisuusvastaava: base=300, align=68.40395104895104, adjusted=88.9, mult=1.3, penalty=-120, total=268.92513636363634
+[DEBUG SCORE] pankkivirkailija: base=300, align=67.31076923076922, adjusted=87.5, mult=1.3, penalty=-120, total=267.504
+[DEBUG SCORE] kirjanpitaja: base=300, align=44.31877622377622, adjusted=57.6, mult=1.3, penalty=-120, total=237.61440909090908
+[DEBUG SCORE] asiakkuusvastaava: base=300, align=79.8808041958042, adjusted=103.8, mult=1.3, penalty=-120, total=283.84504545454547
+[DEBUG SCORE] it-tukihenkilo: base=349, align=108.4370979020979, adjusted=141.0, mult=1.3, penalty=0, total=489.9682272727273
+[DEBUG SCORE] reseptionisti: base=300, align=48.937587412587405, adjusted=63.6, mult=1.3, penalty=-120, total=243.61886363636364
+[DEBUG SCORE] asiakaspalveluvastaava: base=300, align=74.44318181818183, adjusted=96.8, mult=1.3, penalty=-120, total=276.7761363636364
+[DEBUG SCORE] palvelumuotoilija: base=300, align=86.66041958041959, adjusted=112.7, mult=1.3, penalty=-120, total=292.65854545454545
+[DEBUG SCORE] aktuaari: base=300, align=67.45692307692308, adjusted=87.7, mult=1.3, penalty=-120, total=267.694
+[DEBUG SCORE] journalisti: base=300, align=69.30562937062938, adjusted=90.1, mult=1.3, penalty=-120, total=270.0973181818182
+[DEBUG SCORE] tutkija: base=300, align=78.75979020979022, adjusted=102.4, mult=1.3, penalty=-120, total=282.38772727272726
+[DEBUG SCORE] hankinta-asiantuntija: base=300, align=61.67678321678322, adjusted=80.2, mult=1.3, penalty=-120, total=260.1798181818182
+[DEBUG SCORE] toimitusketjuanalyytikko: base=300, align=47.612937062937064, adjusted=61.9, mult=1.3, penalty=-120, total=241.89681818181816
+[DEBUG SCORE] isannoitsija: base=300, align=63.156993006993, adjusted=82.1, mult=1.3, penalty=-120, total=262.1040909090909
+[DEBUG SCORE] lennonjohtaja: base=300, align=55.20174825174824, adjusted=71.8, mult=1.3, penalty=-120, total=251.76227272727272
+[DEBUG SCORE] palkanlaskija: base=300, align=41.64265734265735, adjusted=54.1, mult=1.3, penalty=-120, total=234.13545454545454
+[DEBUG SCORE] markkinointiassistentti: base=300, align=76.93496503496502, adjusted=100.0, mult=1.3, penalty=-120, total=280.01545454545453
+[DEBUG SCORE] myyntiassistentti: base=300, align=55.33006993006993, adjusted=71.9, mult=1.3, penalty=-120, total=251.92909090909092
+[DEBUG SCORE] talousassistentti: base=300, align=43.310839160839166, adjusted=56.3, mult=1.3, penalty=-120, total=236.30409090909092
+[DEBUG SCORE] tilintarkastajan-assistentti: base=300, align=47.687762237762236, adjusted=62.0, mult=1.3, penalty=-120, total=241.99409090909091
+[DEBUG SCORE] pankkitoimihenkilo: base=300, align=42.70699300699302, adjusted=55.5, mult=1.3, penalty=-120, total=235.5190909090909
+[DEBUG SCORE] vakuutusvirkailija: base=300, align=40.13881118881119, adjusted=52.2, mult=1.3, penalty=-120, total=232.18045454545455
+[DEBUG SCORE] veroasiantuntija: base=300, align=46.18776223776225, adjusted=60.0, mult=1.3, penalty=-120, total=240.04409090909093
+[DEBUG SCORE] ekonomisti: base=300, align=73.27622377622377, adjusted=95.3, mult=1.3, penalty=-120, total=275.2590909090909
+[DEBUG SCORE] liikkeenjohdon-trainee: base=300, align=76.10209790209792, adjusted=98.9, mult=1.3, penalty=-120, total=278.93272727272733
+[DEBUG SCORE] hr-koordinaattori: base=300, align=57.99370629370629, adjusted=75.4, mult=1.3, penalty=-120, total=255.39181818181817
+[DEBUG SCORE] taloushallinnon-harjoittelija: base=300, align=42.61083916083916, adjusted=55.4, mult=1.3, penalty=-120, total=235.3940909090909
+[DEBUG SCORE] hankinta-assistentti: base=300, align=46.31573426573426, adjusted=60.2, mult=1.3, penalty=-120, total=240.21045454545452
+[DEBUG SCORE] kassatyontekija: base=300, align=38.18041958041958, adjusted=49.6, mult=1.3, penalty=-120, total=229.63454545454545
+[rankCareers] NUORI age-filter: Removed "Lennonjohtaja"
+[rankCareers] NUORI age-filter: Removed "Rakennustyönjohtaja"
+[rankCareers] SKIP category priority: User has strong profile that conflicts with dominant luova
+[rankCareers] NUORI top 5 careers: Valokuvaaja (100%) - luova, Graafinen suunnittelija (100%) - luova, Verkkosuunnittelija (100%) - luova, UI/UX-suunnittelija (100%) - luova, Sisällöntuottaja (100%) - luova
+
+Category: luova (68.0% affinity)
+
+Top Strengths:
+  1. Luovuus ja innovatiivisuus
+  2. Kirjoittaminen
+  3. Taide ja kulttuuri
+  4. Vahva teknologiakiinnostus
+  5. Innovatiivisuus
+
+Top Careers:
+  1. Valokuvaaja
+  2. Graafinen suunnittelija
+  3. Verkkosuunnittelija
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+PERSONALIZED ANALYSIS TEXT:
+────────────────────────────────────────────────────────────────────────────────────────────────────
+Ammatillinen suuntautumisesi näkyy selkeästi vastauksistasi, ja voimme nähdä mihin suuntaan haluat kehittyä. Teknologia-ala näyttää olevan selkeä kiinnostuksen kohde. Vastauksesi osoittavat vahvaa suuntautumista alueelle: luovat alat.
+
+Sinussa yhdistyy luovuus ja analyyttinen ajattelu. Tämä yhdistelmä on harvinainen vahvuus. Voit ratkaista ongelmia luovasti mutta perustellen. Osaat yhdistää teknologian ja luovuuden. Olet digitaalisen aikakauden renessanssi-ihminen. Osaat kirjoittaa ja analysoida. Tutkija, analyytikko tai toimittaja voisi sopia sinulle.
+
+Ammatillisina vahvuuksinasi korostuvat selkeästi luovuus ja innovatiivisuus ja kirjoittaminen. Nämä ovat markkinoilla arvostettuja ominaisuuksia, jotka erottavat sinut muista ammattilaisista. Rakenna uraasi näiden vahvuuksien varaan ja hae tehtäviä, joissa pääset hyödyntämään niitä päivittäin. Taide ja kulttuuri on lisävahvuutesi.
+
+Alla näet ammattiehdotuksia, jotka perustuvat vastauksiisi ja profiiliisi. Erittäin vahva teknologiakiinnostuksesi takia ehdotamme sinulle IT-alan ammatteja, joissa pääset kehittämään ja luomaan digitaalisia ratkaisuja. Luovuutesi näkyy vastauksissa, joten ehdotamme ammatteja, joissa pääset ilmaisemaan itseäsi ja suunnittelemaan uutta.
+
+Näiden suositusten avulla voit hahmottaa mahdollisia urapolkuja ja suunnitella seuraavia askeleitasi. Uramuutos on prosessi, joka vaatii aikaa ja pohdintaa.
+
+⚠️ Olet vielä urasi tutkimisvaiheessa - se on täysin normaalia! Näytämme sinulle monipuolisia vaihtoehtoja eri aloilta.
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+QUALITY CHECKS:
+  Has Analysis: ✅
+  Length: 1510 characters
+  Mentions Strengths: ✅
+  Sequential Listing: ✅ None
+  Generic Phrases: ✅ None
+  Grammar Issues:
+    ❌ Contains multiple consecutive spaces
+
+  OVERALL QUALITY: EXCELLENT
+
+====================================================================================================
+TEST: NUORI: Marketing Professional
+====================================================================================================
+[generateUserProfile] Profile confidence: medium (6 strong, 24 neutral)
+[generateUserProfile] Top 3 categories: jarjestaja(53%), auttaja(46%), johtaja(40%)
+[generateUserProfile] Hybrid paths: Johtaminen + Hoiva, Monipuolinen profiili
+[generateUserProfile] ⚠️ Edge case detected: undecided
+[rankCareers] 🎯 NUORI COHORT: Using unified interest-based matching
+[rankCareers] NUORI interests: {"technology":0.5,"analytical":0.7452830188679246,"health":0.5,"people":0.6969696969696969,"business":0.5,"creative":0.5,"writing":0.5,"arts_culture":0.5,"innovation":0.5,"hands_on":0.5,"growth":1,"teaching":1,"leadership":0.5,"environment":0.5,"nature":0.5}
+[rankCareers] NUORI values: {"growth":0.8243243243243242,"financial":0.5,"work_life_balance":1,"advancement":0.5,"social_impact":0.5,"impact":0.5,"stability":1,"autonomy":0.5,"entrepreneurship":0.5,"global":0.5,"international":0.5,"social":0.5}
+[rankCareers] NUORI workstyle: {"independence":0.5,"leadership":1,"teamwork":0.5,"structure":0.5,"organization":0.5,"social":0.5,"planning":1,"precision":0.5,"performance":0.5}
+[rankCareers] NUORI category affinities: {
+  "jarjestaja": 53,
+  "auttaja": 46,
+  "johtaja": 40,
+  "innovoija": 33,
+  "visionaari": 32,
+  "rakentaja": 31,
+  "ympariston-puolustaja": 29,
+  "luova": 18
+}
+[rankCareers] NUORI dominant category: jarjestaja, top 3: jarjestaja, auttaja, johtaja
+[rankCareers] Strength profiles detected: {
+  business: true,
+  tech: true,
+  healthcare: true,
+  creative: true,
+  handsOn: false,
+  organizer: false,
+  visionary: true,
+  environment: true
+}
+[rankCareers] Using curated pool: 170 careers (from 617 total)
+[SCORE DEBUG] Graafinen suunnittelija (luova): baseScore=-110, isCreative=true
+[SCORE DEBUG] Muusikko (luova): baseScore=-110, isCreative=true
+[SCORE DEBUG] Kirjailija (luova): baseScore=-110, isCreative=true
+[SCORE DEBUG] Animaattori (luova): baseScore=-110, isCreative=true
+[SCORE DEBUG] Valokuvaaja (luova): baseScore=-110, isCreative=true
+[SCORE DEBUG] Rakennusmestari (rakentaja): baseScore=-122, isCreative=true
+[SCORE DEBUG] Putkiasentaja (rakentaja): baseScore=-122, isCreative=true
+[SCORE DEBUG] Maalari (rakentaja): baseScore=-122, isCreative=true
+[SCORE DEBUG] LVI-asentaja (rakentaja): baseScore=-122, isCreative=true
+[SCORE DEBUG] Data-insinööri (innovoija): baseScore=108, isCreative=true
+[DEBUG SCORE] ymparistokasvattaja: base=659, align=64.26465980560319, adjusted=128.5, mult=2, penalty=-130, total=657.5293196112063
+[DEBUG SCORE] tapahtumakoordinaattori: base=659, align=48.830809033733566, adjusted=97.7, mult=2, penalty=-130, total=626.6616180674671
+[DEBUG SCORE] toimistosihteeri: base=659, align=51.40431389365351, adjusted=102.8, mult=2, penalty=-130, total=631.808627787307
+[DEBUG SCORE] logistiikkakoordinaattori: base=659, align=53.841377930245855, adjusted=107.7, mult=2, penalty=-130, total=636.6827558604917
+[DEBUG SCORE] henkilostoasiantuntija: base=659, align=50.6673098913665, adjusted=101.3, mult=2, penalty=-130, total=630.334619782733
+[DEBUG SCORE] asiakaspalvelun-koordinaattori: base=659, align=49.58721841052029, adjusted=99.2, mult=2, penalty=-130, total=628.1744368210406
+[DEBUG SCORE] hallinnon-koordinaattori: base=659, align=53.80684676958263, adjusted=107.6, mult=2, penalty=-130, total=636.6136935391653
+[DEBUG SCORE] varastotyontekija: base=659, align=52.900568896512276, adjusted=105.8, mult=2, penalty=-130, total=634.8011377930245
+[DEBUG SCORE] talousasiantuntija: base=659, align=50.96869353916524, adjusted=101.9, mult=2, penalty=-130, total=630.9373870783305
+[DEBUG SCORE] projektikoordinaattori: base=659, align=46.2397770154374, adjusted=92.5, mult=2, penalty=-130, total=621.4795540308749
+[DEBUG SCORE] turvallisuusvastaava: base=659, align=58.511700971984, adjusted=117.0, mult=2, penalty=-130, total=646.023401943968
+[DEBUG SCORE] pankkivirkailija: base=659, align=56.25728702115492, adjusted=112.5, mult=2, penalty=-130, total=641.5145740423098
+[DEBUG SCORE] kirjanpitaja: base=659, align=49.9424213836478, adjusted=99.9, mult=2, penalty=-130, total=628.8848427672956
+[DEBUG SCORE] asiakkuusvastaava: base=659, align=60.8748627787307, adjusted=121.7, mult=2, penalty=-130, total=650.7497255574614
+[DEBUG SCORE] it-tukihenkilo: base=108, align=69.28286735277301, adjusted=55.4, mult=0.8, penalty=0, total=163.4262938822184
+[DEBUG SCORE] reseptionisti: base=659, align=50.517590051457965, adjusted=101.0, mult=2, penalty=-130, total=630.0351801029159
+[DEBUG SCORE] asiakaspalveluvastaava: base=659, align=62.70262149799887, adjusted=125.4, mult=2, penalty=-130, total=654.4052429959977
+[DEBUG SCORE] palvelumuotoilija: base=659, align=64.8609948542024, adjusted=129.7, mult=2, penalty=-130, total=658.7219897084049
+[DEBUG SCORE] aktuaari: base=659, align=54.8254259576901, adjusted=109.7, mult=2, penalty=-130, total=638.6508519153801
+[DEBUG SCORE] journalisti: base=659, align=48.689002287021154, adjusted=97.4, mult=2, penalty=-130, total=626.3780045740423
+[DEBUG SCORE] tutkija: base=659, align=59.39745283018868, adjusted=118.8, mult=2, penalty=-130, total=647.7949056603774
+[DEBUG SCORE] hankinta-asiantuntija: base=659, align=51.6970154373928, adjusted=103.4, mult=2, penalty=-130, total=632.3940308747856
+[DEBUG SCORE] toimitusketjuanalyytikko: base=659, align=48.78212407089765, adjusted=97.6, mult=2, penalty=-130, total=626.5642481417954
+[DEBUG SCORE] isannoitsija: base=659, align=57.03421955403088, adjusted=114.1, mult=2, penalty=-130, total=643.0684391080617
+[DEBUG SCORE] lennonjohtaja: base=659, align=50.03350485991996, adjusted=100.1, mult=2, penalty=-130, total=629.0670097198399
+[DEBUG SCORE] palkanlaskija: base=659, align=44.03350485991996, adjusted=88.1, mult=2, penalty=-130, total=617.0670097198399
+[DEBUG SCORE] markkinointiassistentti: base=659, align=55.95766152086907, adjusted=111.9, mult=2, penalty=-130, total=640.9153230417381
+[DEBUG SCORE] myyntiassistentti: base=659, align=49.327758719268154, adjusted=98.7, mult=2, penalty=-130, total=627.6555174385363
+[DEBUG SCORE] talousassistentti: base=659, align=44.88350485991996, adjusted=89.8, mult=2, penalty=-130, total=618.76700971984
+[DEBUG SCORE] tilintarkastajan-assistentti: base=659, align=48.67784448256146, adjusted=97.4, mult=2, penalty=-130, total=626.3556889651229
+[DEBUG SCORE] pankkitoimihenkilo: base=659, align=46.42209834190967, adjusted=92.8, mult=2, penalty=-130, total=621.8441966838193
+[DEBUG SCORE] vakuutusvirkailija: base=659, align=43.94634076615209, adjusted=87.9, mult=2, penalty=-130, total=616.8926815323042
+[DEBUG SCORE] veroasiantuntija: base=659, align=48.077844482561474, adjusted=96.2, mult=2, penalty=-130, total=625.155688965123
+[DEBUG SCORE] ekonomisti: base=659, align=57.32501429388223, adjusted=114.7, mult=2, penalty=-130, total=643.6500285877645
+[DEBUG SCORE] liikkeenjohdon-trainee: base=659, align=59.990680388793585, adjusted=120.0, mult=2, penalty=-130, total=648.9813607775872
+[DEBUG SCORE] hr-koordinaattori: base=659, align=52.103516295025734, adjusted=104.2, mult=2, penalty=-130, total=633.2070325900514
+[DEBUG SCORE] taloushallinnon-harjoittelija: base=659, align=43.90774728416238, adjusted=87.8, mult=2, penalty=-130, total=616.8154945683248
+[DEBUG SCORE] hankinta-assistentti: base=659, align=47.61492281303602, adjusted=95.2, mult=2, penalty=-130, total=624.229845626072
+[DEBUG SCORE] kassatyontekija: base=659, align=41.683419096626636, adjusted=83.4, mult=2, penalty=-130, total=612.3668381932532
+[rankCareers] NUORI age-filter: Removed "Lennonjohtaja"
+[rankCareers] NUORI age-filter: Removed "Rakennustyönjohtaja"
+[rankCareers] SKIP category priority: User has strong profile that conflicts with dominant jarjestaja
+[rankCareers] NUORI top 5 careers: Logistiikkakoordinaattori (100%) - jarjestaja, Palvelumuotoilija (100%) - jarjestaja, HR-koordinaattori (100%) - jarjestaja, Ympäristökasvattaja (100%) - jarjestaja, Hallinnon koordinaattori (100%) - jarjestaja
+
+Category: jarjestaja (53.0% affinity)
+
+Top Strengths:
+  1. Kasvu
+  2. Opetus
+  3. Johtaminen
+  4. Analyyttinen ajattelu
+  5. Ihmiskeskeisyys
+
+Top Careers:
+  1. Logistiikkakoordinaattori
+  2. Palvelumuotoilija
+  3. HR-koordinaattori
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+PERSONALIZED ANALYSIS TEXT:
+────────────────────────────────────────────────────────────────────────────────────────────────────
+Ammatillinen suuntautumisesi näkyy selkeästi vastauksistasi, ja voimme nähdä mihin suuntaan haluat kehittyä. Opetus ja valmennus näyttää olevan selkeä kiinnostuksen kohde. Lakiasiat näyttää olevan selkeä kiinnostuksen kohde.
+
+Profiilisi on tasapainoinen ja olet vielä löytämässä omaa suuntaasi. Tämä on täysin normaalia. Kokeile erilaisia asioita ja seuraa, mikä saa sinut innostumaan. Ajattelet analyyttisesti, mutta välität ihmisistä. Voit ratkaista ongelmia, jotka auttavat muita.
+
+Ammatillisina vahvuuksinasi korostuvat selkeästi kasvu ja opetus. Nämä ovat markkinoilla arvostettuja ominaisuuksia, jotka erottavat sinut muista ammattilaisista. Rakenna uraasi näiden vahvuuksien varaan ja hae tehtäviä, joissa pääset hyödyntämään niitä päivittäin. Johtaminen on lisävahvuutesi.
+
+Alla näet ammattiehdotuksia, jotka perustuvat vastauksiisi ja profiiliisi. Halusi opettaa ja selittää asioita näkyy vastauksistasi, joten ehdotamme opetus- ja valmennustehtäviä. Analyyttinen otteesi sopii ammatteihin, joissa ratkotaan ongelmia ja analysoidaan tietoa.
+
+Näiden suositusten avulla voit hahmottaa mahdollisia urapolkuja ja suunnitella seuraavia askeleitasi. Uramuutos on prosessi, joka vaatii aikaa ja pohdintaa.
+
+⚠️ Olet vielä urasi tutkimisvaiheessa - se on täysin normaalia! Näytämme sinulle monipuolisia vaihtoehtoja eri aloilta.
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+QUALITY CHECKS:
+  Has Analysis: ✅
+  Length: 1328 characters
+  Mentions Strengths: ✅
+  Sequential Listing: ✅ None
+  Generic Phrases: ✅ None
+  Grammar Issues:
+    ❌ Contains multiple consecutive spaces
+
+  OVERALL QUALITY: EXCELLENT
+
+
+====================================================================================================
+SUMMARY
+====================================================================================================
+
+Quality Distribution:
+  EXCELLENT: 7/7
+  GOOD: 0/7
+  FAIR: 0/7
+  POOR: 0/7
+
+Average Analysis Length: 1434 characters
+
+Profiles with Issues: 7/7
+
+✅ OVERALL ASSESSMENT: TEXT QUALITY IS GOOD
+The personalized analysis text is ready for production.
+
