@@ -5,6 +5,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { rankCareers, generateUserProfile } from '@/lib/scoring/scoringEngine';
+import { generateEnhancedPersonalizedAnalysis } from '@/lib/scoring/deepPersonalization';
 import { Cohort, TestAnswer } from '@/lib/scoring/types';
 import { COHORT_COPY } from '@/lib/scoring/cohortConfig';
 import { calculateEducationPath } from '@/lib/scoring/educationPath';
@@ -474,7 +475,26 @@ export async function POST(request: NextRequest) {
       // For other cohorts, just take top 5
       topCareers = topCareers.slice(0, 5);
     }
-    
+
+    // CRITICAL FIX: Generate personalized analysis WITH career context to ensure alignment
+    // This ensures the analysis text mentions patterns and traits that match the recommended careers
+    const personalizedAnalysis = generateEnhancedPersonalizedAnalysis(
+      unshuffledAnswers,
+      userProfile,
+      cohort,
+      topCareers.slice(0, 10)  // Pass top 10 careers for theme analysis
+    );
+
+    // Append edge case message if needed
+    const { detectEdgeCases } = require('@/lib/scoring/categoryAffinities');
+    const edgeCase = detectEdgeCases(unshuffledAnswers);
+    const finalAnalysis = edgeCase.isEdgeCase && edgeCase.message_fi
+      ? `${personalizedAnalysis}\n\n⚠️ ${edgeCase.message_fi}`
+      : personalizedAnalysis;
+
+    // Add the generated analysis to the user profile
+    userProfile.personalizedAnalysis = finalAnalysis;
+
     // Get cohort-specific copy
     const cohortCopy = COHORT_COPY[cohort];
     

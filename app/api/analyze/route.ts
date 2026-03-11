@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { rankCareers, generateUserProfile } from '@/lib/scoring/scoringEngine';
+import { generateEnhancedPersonalizedAnalysis } from '@/lib/scoring/deepPersonalization';
 import { Cohort } from '@/lib/scoring/types';
 import { createLogger } from '@/lib/logger';
 
@@ -93,6 +94,17 @@ export async function POST(request: NextRequest) {
     const cohort = group as Cohort;
     const topCareers = rankCareers(formattedAnswers, cohort, 5);
     const userProfile = generateUserProfile(formattedAnswers, cohort);
+
+    // CRITICAL FIX: Generate personalized analysis WITH career context to ensure alignment
+    const personalizedAnalysis = generateEnhancedPersonalizedAnalysis(
+      formattedAnswers,
+      userProfile,
+      cohort,
+      topCareers
+    );
+
+    // Add the generated analysis to the user profile
+    userProfile.personalizedAnalysis = personalizedAnalysis;
 
     // PHASE 2B: Alignment monitoring (Solution D1)
     // Check if personal analysis (category), education path, and careers align

@@ -4,6 +4,7 @@
  */
 
 import { generateUserProfile, rankCareers } from '../lib/scoring/scoringEngine';
+import { generateEnhancedPersonalizedAnalysis } from '../lib/scoring/deepPersonalization';
 import { Cohort, TestAnswer } from '../lib/scoring/types';
 import * as fs from 'fs';
 
@@ -149,9 +150,16 @@ async function runTests() {
     try {
       const testAnswers = convertToTestAnswers(persona.answers);
       const careers = rankCareers(testAnswers, persona.cohort, 10);
-      const profile = generateUserProfile(testAnswers, persona.cohort, careers);
+      const profile = generateUserProfile(testAnswers, persona.cohort);
 
-      const analysis = profile.personalizedAnalysis || '';
+      // CRITICAL FIX: Generate personalized analysis WITH career context
+      const analysis = generateEnhancedPersonalizedAnalysis(
+        testAnswers,
+        profile,
+        persona.cohort,
+        careers
+      );
+
       const paragraphs = analysis.split('\n').filter(p => p.trim().length > 0);
       const length = analysis.length;
       const paragraphCount = paragraphs.length;

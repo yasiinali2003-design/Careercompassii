@@ -9,7 +9,7 @@
  * 4. Connecting insights to specific career recommendations
  */
 
-import { Cohort, TestAnswer, UserProfile, DetailedDimensionScores } from './types';
+import { Cohort, TestAnswer, UserProfile, DetailedDimensionScores, CareerMatch } from './types';
 import { getQuestionMappings } from './dimensions';
 
 // ========== TYPES ==========
@@ -136,6 +136,134 @@ const QUESTION_THEMES: Record<string, Record<number, string>> = {
     29: 'työpaikan kulttuuri'
   }
 };
+
+// ========== CAREER THEME ANALYSIS ==========
+
+interface CareerThemeAnalysis {
+  dominantCategories: string[];
+  primarySubdimensions: string[];
+  careerExamples: string[];
+  categoryDistribution: Record<string, number>;
+}
+
+/**
+ * Analyzes the recommended careers to extract dominant themes
+ * This ensures personalized analysis aligns with actual career recommendations
+ */
+function analyzeCareerThemes(careers: CareerMatch[]): CareerThemeAnalysis {
+  if (!careers || careers.length === 0) {
+    return {
+      dominantCategories: [],
+      primarySubdimensions: [],
+      careerExamples: [],
+      categoryDistribution: {}
+    };
+  }
+
+  // Count career categories
+  const categoryCount: Record<string, number> = {};
+  const careerTitles: string[] = [];
+
+  careers.slice(0, 10).forEach(career => {
+    categoryCount[career.category] = (categoryCount[career.category] || 0) + 1;
+    if (careerTitles.length < 5) {
+      careerTitles.push(career.title);
+    }
+  });
+
+  // Get dominant categories (those with 2+ careers)
+  const dominantCategories = Object.entries(categoryCount)
+    .filter(([_, count]) => count >= 2)
+    .sort((a, b) => b[1] - a[1])
+    .map(([category]) => category);
+
+  // If no dominant categories, use top 2 categories
+  if (dominantCategories.length === 0) {
+    dominantCategories.push(...Object.keys(categoryCount).slice(0, 2));
+  }
+
+  // Map categories to their key subdimensions
+  const categorySubdimensionMap: Record<string, string[]> = {
+    'auttaja': ['health', 'people', 'teaching', 'social_impact', 'sports'],
+    'innovoija': ['technology', 'analytical', 'problem_solving', 'innovation'],
+    'luova': ['creative', 'arts_culture', 'writing', 'innovation'],
+    'rakentaja': ['hands_on', 'outdoor', 'precision', 'sports'],
+    'johtaja': ['leadership', 'business', 'entrepreneurship', 'people'],
+    'jarjestaja': ['organization', 'structure', 'precision', 'planning', 'analytical'],
+    'visionaari': ['global', 'international', 'innovation', 'analytical', 'leadership'],
+    'ympariston-puolustaja': ['environment', 'nature', 'outdoor', 'impact']
+  };
+
+  // Extract primary subdimensions from dominant categories
+  const primarySubdimensions = new Set<string>();
+  dominantCategories.forEach(category => {
+    const subdims = categorySubdimensionMap[category] || [];
+    subdims.forEach(subdim => primarySubdimensions.add(subdim));
+  });
+
+  return {
+    dominantCategories,
+    primarySubdimensions: Array.from(primarySubdimensions),
+    careerExamples: careerTitles,
+    categoryDistribution: categoryCount
+  };
+}
+
+/**
+ * Filters patterns to only include those that align with recommended careers
+ * This prevents mentioning "hands-on work" when all careers are digital/screen-based
+ */
+function filterRelevantPatterns(
+  patterns: ProfilePattern[],
+  careerThemes: CareerThemeAnalysis,
+  primaryCategory?: string
+): ProfilePattern[] {
+  if (!careerThemes.dominantCategories || careerThemes.dominantCategories.length === 0) {
+    // No career context - return all patterns (backward compatibility)
+    return patterns;
+  }
+
+  const relevantSubdimensions = new Set(careerThemes.primarySubdimensions);
+
+  // Pattern relevance keywords that indicate which subdimensions the pattern relates to
+  const patternKeywords: Record<string, string[]> = {
+    'käytännön työ': ['hands_on', 'outdoor', 'precision'],
+    'hands-on': ['hands_on', 'outdoor'],
+    'käsillä tekeminen': ['hands_on', 'outdoor'],
+    'opetus': ['teaching', 'people'],
+    'teknologia': ['technology', 'analytical', 'innovation'],
+    'luova': ['creative', 'arts_culture', 'innovation'],
+    'ihmiskeskeinen': ['people', 'health', 'teaching', 'social_impact'],
+    'johtaminen': ['leadership', 'business', 'people'],
+    'yrittäjyys': ['entrepreneurship', 'business', 'leadership'],
+    'ympäristö': ['environment', 'nature', 'outdoor'],
+    'organisointi': ['organization', 'structure', 'planning'],
+    'analyyttinen': ['analytical', 'problem_solving'],
+    'kansainvälinen': ['global', 'international'],
+    'urheilu': ['sports', 'health']
+  };
+
+  // Filter patterns to only those matching career subdimensions
+  return patterns.filter(pattern => {
+    const description = pattern.description.toLowerCase();
+
+    // Check if pattern mentions any relevant subdimensions
+    for (const [keyword, subdims] of Object.entries(patternKeywords)) {
+      if (description.includes(keyword)) {
+        // Check if ANY of the subdimensions are relevant
+        const isRelevant = subdims.some(subdim => relevantSubdimensions.has(subdim));
+        if (isRelevant) {
+          return true; // Keep this pattern
+        } else {
+          return false; // Filter out - doesn't match career themes
+        }
+      }
+    }
+
+    // If pattern doesn't mention specific subdimensions, keep it (generic advice)
+    return true;
+  });
+}
 
 // ========== ANSWER ANALYSIS ==========
 
@@ -883,14 +1011,28 @@ export function generateDeepPersonalizedInsights(
 /**
  * Generate the full personalized analysis text combining insights
  * Target length: 1200-1500 characters for comprehensive, personal analysis
+ *
+ * @param topCareers - Optional array of top career recommendations to align analysis with actual career matches
  */
 export function generateEnhancedPersonalizedAnalysis(
   answers: TestAnswer[],
   userProfile: UserProfile,
-  cohort: Cohort
+  cohort: Cohort,
+  topCareers?: CareerMatch[]
 ): string {
   const insights = generateDeepPersonalizedInsights(answers, userProfile, cohort);
   const { topStrengths, categoryAffinities, profileConfidence, detailedScores } = userProfile;
+
+  // CRITICAL: Analyze career themes to ensure alignment
+  const careerThemes = topCareers && topCareers.length > 0
+    ? analyzeCareerThemes(topCareers)
+    : { dominantCategories: [], primarySubdimensions: [], careerExamples: [], categoryDistribution: {} };
+
+  // Filter patterns to only show those that align with recommended careers
+  const primaryCategory = categoryAffinities?.[0]?.category;
+  if (topCareers && topCareers.length > 0) {
+    insights.patterns = filterRelevantPatterns(insights.patterns, careerThemes, primaryCategory);
+  }
 
   const paragraphs: string[] = [];
 
@@ -1006,13 +1148,36 @@ export function generateEnhancedPersonalizedAnalysis(
     paragraphs.push(growthInsights);
   }
 
-  // ===== PARAGRAPH 5: Career connection explanation =====
-  if (insights.careerConnections.length > 0) {
+  // ===== PARAGRAPH 5: Career connection explanation (with actual career names) =====
+  if (careerThemes.careerExamples.length > 0) {
+    // New: Reference actual recommended careers by name
     let careerParagraph = 'Alla näet ammattiehdotuksia, jotka perustuvat vastauksiisi ja profiiliisi. ';
-    careerParagraph += insights.careerConnections[0];
 
-    if (insights.careerConnections.length > 1) {
-      careerParagraph += ' ' + insights.careerConnections[1];
+    // Mention career categories to create strong alignment
+    const careerCategories = careerThemes.dominantCategories.slice(0, 2);
+
+    if (careerCategories.length > 0) {
+      const categoryLabels: Record<string, string> = {
+        'auttaja': 'ihmisten auttamiseen ja terveyteen',
+        'innovoija': 'teknologiaan ja innovointiin',
+        'luova': 'luovaan työhön ja suunnitteluun',
+        'rakentaja': 'käytännön tekemiseen ja rakentamiseen',
+        'johtaja': 'liiketoimintaan ja johtamiseen',
+        'jarjestaja': 'organisointiin ja hallintoon',
+        'visionaari': 'strategiseen ajatteluun ja tulevaisuuden rakentamiseen',
+        'ympariston-puolustaja': 'ympäristön suojeluun ja kestävään kehitykseen'
+      };
+
+      const categoryDescription = careerCategories.map(c => categoryLabels[c] || c).join(' ja ');
+      careerParagraph += `Profiilisi sopii hyvin ammatteihin, jotka liittyvät ${categoryDescription}. `;
+    }
+
+    // Add generic career connection if available
+    if (insights.careerConnections.length > 0) {
+      careerParagraph += insights.careerConnections[0];
+      if (insights.careerConnections.length > 1) {
+        careerParagraph += ' ' + insights.careerConnections[1];
+      }
     }
 
     // Add confidence-based context
@@ -1023,8 +1188,24 @@ export function generateEnhancedPersonalizedAnalysis(
     }
 
     paragraphs.push(careerParagraph);
+  } else if (insights.careerConnections.length > 0) {
+    // Fallback: Use generic career connections when no career data available
+    let careerParagraph = 'Alla näet ammattiehdotuksia, jotka perustuvat vastauksiisi ja profiiliisi. ';
+    careerParagraph += insights.careerConnections[0];
+
+    if (insights.careerConnections.length > 1) {
+      careerParagraph += ' ' + insights.careerConnections[1];
+    }
+
+    if (profileConfidence?.overall === 'low') {
+      careerParagraph += ' Koska profiilisi on vielä muotoutumassa, ehdotukset ovat laajempia antaaksemme sinulle näkökulmia eri aloista ja mahdollisuuksista.';
+    } else if (profileConfidence?.overall === 'high') {
+      careerParagraph += ' Vahva profiilisi antaa meille hyvän pohjan tarkkoihin suosituksiin.';
+    }
+
+    paragraphs.push(careerParagraph);
   } else {
-    // Fallback career intro - more detailed
+    // Final fallback - more detailed
     const careerIntro = cohort === 'YLA'
       ? 'Alla näet ammattiehdotuksia, jotka voivat sopia profiiliisi. Nämä ovat esimerkkejä ja inspiraation lähteitä, eivät lopullisia määräyksiä. Tutustu eri vaihtoehtoihin avoimin mielin ja mieti, mikä näistä resonoi sinun kanssasi.'
       : cohort === 'TASO2'
